@@ -1,0 +1,10 @@
+# The working tree is LF throughout and the tooling preserves whatever it finds
+# (.scripts/mint-ids.py sniffs the file's own newline and writes it back). Pinning
+# eol=lf keeps a fresh clone identical to this one and stops Git for Windows from
+# rewriting 33 files to CRLF on checkout — which would otherwise show up as a
+# whole-file diff the first time anyone edits a data bank.
+* text=auto eol=lf
+
+*.png  binary
+*.woff2 binary
+*.ico  binary
