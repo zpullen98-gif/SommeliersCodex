@@ -17,7 +17,9 @@ py C:\Users\zpull\SommeliersCodex\serve.py 8632
 Use `serve.py`, not `python -m http.server` — it sends `Cache-Control: no-cache` so edits
 appear on reload. Launch config name for the preview tool: `sommeliers-codex` (port 8632).
 
-Currently at service-worker cache **`codex-v28`**. ~2.5 MB on disk, ~1.7 MB of JS. Cold load
+Live at **https://zpullen98-gif.github.io/SommeliersCodex/** (GitHub Pages, deploy-from-branch
+on `master` — every push rebuilds). Currently at service-worker cache **`codex-v30`**.
+~2.5 MB on disk, ~1.7 MB of JS. Cold load
 ~2s; a returning user gets DOM-ready in ~53 ms with zero network (everything from the SW).
 
 ## Origin
@@ -186,41 +188,35 @@ Everything below is built, verified in-browser, and deployed:
 
 Ranked by (impact on actually passing an exam) × feasibility.
 
-1. **Apply `CONTENT-FIXES.md` — an evening.** 39 verified corrections, each adversarially
-   checked. **Now unblocked**: stem edits are safe, so all 39 can go in together rather than
-   splitting the `exp`/`accept` ones from the rest. Run `qidAudit()` afterwards to prove
-   nothing orphaned, and re-run the codex9 offline harness before touching any `ans` on a
-   list-detected question.
-
-2. **Stop the app certifying people — a weekend.** `LEVELS.master.pass` is `0.6` but the
+1. **Stop the app certifying people — a weekend.** `LEVELS.master.pass` is `0.6` but the
    Master Diploma requires 75% per section, and at Master that 60% is self-reported.
    Readiness is theory-only, so you can read "Passed" having never opened a tasting flight or
    the service ritual. Also: `resultsView` stamps "BELOW 60%" on Weakness Review, which
    deliberately serves your worst material. Show pass/fail only for mock and sim.
 
-3. **Turn the tasting flight the right way round — an evening, then a long project.** It
+2. **Turn the tasting flight the right way round — an evening, then a long project.** It
    currently prints the target grape's own descriptors and asks for a four-way guess, i.e. the
    exam task inverted. Cheap 80%: drive glass count and clock from the level config (Certified
    is two wines, not six), run a real countdown, un-gate the origin call at Advanced, strip the
    ALL-CAPS tells, reveal sight → nose → palate progressively. Full version: an "Open a Bottle"
    mode with a fillable CMS grid, self-graded against a real bottle.
 
-4. **Rebuild the home screen around one prescription — a weekend.** Twenty co-equal tiles,
+3. **Rebuild the home screen around one prescription — a weekend.** Twenty co-equal tiles,
    ten of them doors to the same bank, because eight layers each appended a row. Always render
    `studyPlan().acts[0]`; collapse into three doors (Today / Drill / Sit an exam) plus a
    reference group. New capability goes *inside* those doors — no new tiles.
 
-5. **Durability — an evening each.** `stSave()` swallows `QuotaExceededError` silently.
+4. **Durability — an evening each.** `stSave()` swallows `QuotaExceededError` silently.
    `mergeStats` sums answer counts, so a laptop→phone→laptop round trip double-counts; stamp
    exports with a uuid and refuse re-import of a seen one. (The related *rekey* hazard is
    already closed: codex10 wraps `mergeStats` to rekey an incoming payload before it merges,
    so a progress file exported from a pre-id install still lands. Verified in-browser.)
 
-6. **Service ritual is recognition, not recall — a long project.** One static list at all four
+5. **Service ritual is recognition, not recall — a long project.** One static list at all four
    levels, unscored, unclocked, never persisted to `ST`. Minimum: persist, branch per level,
    add a clock.
 
-7. **Two content projects.** `data-vintages.js` (region × year, the Advanced level note
+6. **Two content projects.** `data-vintages.js` (region × year, the Advanced level note
    promises vintages and the bank has none), and sub-region datasets for the atlas renderer —
    which is genuinely good cartography currently locked behind `activeLevel==='intro'`.
 
@@ -236,11 +232,12 @@ or the `exp` field voice — the explanatory tone is the app's best writing.
 ## Content accuracy — read before trusting the banks
 
 A multi-agent audit fact-checked the AI-authored material with adversarial verification.
-**39 errors confirmed, 6 claimed errors refuted** (the refuted ones are listed in
+**39 errors confirmed, 6 claimed errors refuted** (the refuted ones are recorded in
 `CONTENT-FIXES.md` and must not be "fixed" — each correction would introduce an error).
 
-All 39 are in the Advanced/Master material. None in the imported Intro or Certified banks —
-in one case the Certified bank was the ground truth that convicted an Advanced primer.
+**All 39 have been applied** (47 edits; see `CONTENT-FIXES.md` for the reasoning behind
+each). All were in the Advanced/Master material — none in the imported Intro or Certified
+banks; in one case the Certified bank was the ground truth that convicted an Advanced primer.
 
 They cluster into three kinds, and the pattern is diagnostic:
 
@@ -263,6 +260,11 @@ plausible relation. Two consequences worth acting on:
   way — "Name the four ingredients of sake" whose answer parsed to three.)
 - **Do not rebuild the banks.** One in six claimed errors was itself wrong. Prefer additive
   hedging, never change a defensible keyed answer, and treat `exp` as the safe place for nuance.
+- **Editing `ans` can silently change how codex9 grades.** Three of the 39 did, and none of it
+  was visible without the harness: an item longer than 40 characters drops a question out of
+  list grading entirely, and a number word in the stem that happens to equal the item count
+  hijacks `need`. Always run the harness (feed each detected question its own `ans`; it must
+  score full marks) and diff the *detected set* before and after, not just the pass count.
 
 Bottom line for the user: verify against GuildSomm or the CMS curriculum before exam-critical
 use, and use the in-app error flag (⚑ in every reveal) to collect fixes as you study.

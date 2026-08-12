@@ -109,7 +109,7 @@ facts:[
 ["Madiran","Tannat, tamed by micro-oxygenation — invented here by Patrick Ducournau in the early 1990s."],
 ["Jurançon","Gros and Petit Manseng; moelleux from passerillage (on-vine raisining), never botrytis. Pacherenc du Vic-Bilh is the neighbour."],
 ["Languedoc risers","Pic Saint-Loup, Terrasses du Larzac, Faugères (schist), Saint-Chinian, La Clape, Corbières-Boutenac (Carignan ≥30% required), Fitou, Minervois La Livinière."],
-["Roussillon VDN","Banyuls, Maury (Grenache; rimage = early-bottled vintage style), Rivesaltes (rancio in glass bonbonnes), Muscat de Rivesaltes."]],
+["Roussillon VDN","Banyuls (rimage = early-bottled vintage style), Maury (Grenache; Grenat early-bottled, Tuilé oxidative), Rivesaltes (rancio in glass bonbonnes), Muscat de Rivesaltes."]],
 traps:[
 "Jurançon's sweetness is raisining, not noble rot.",
 "Picpoul de Pinet is a white AOP for oysters, not a red.",
@@ -161,7 +161,7 @@ facts:[
 traps:[
 "Montepulciano is both a Tuscan town and an Abruzzese grape. This single fact fails more candidates than any other in Italy.",
 "Brunello must be 100% Sangiovese; Chianti Classico only 80% minimum.",
-"Carmignano has permitted Cabernet since the Medici — it was 'Super Tuscan' by law in 1716.",
+"Carmignano's 1716 delimitation was geographic — its Cabernet requirement dates to the 1975 DOC, the first in Italy.",
 "Vernaccia di San Gimignano is white, despite the red-wine company it keeps."]},
 
 {cat:"Spain",
@@ -172,7 +172,7 @@ facts:[
 ["Subzones","Rioja Alta (clay-limestone, structured), Alavesa (calcareous, perfumed), Oriental (ex-Baja; warm, Garnacha)."],
 ["Tempranillo's names","Tinto Fino / Tinta del País (Ribera), Tinta de Toro, Cencibel (La Mancha), Tinta Roriz / Aragonez (Portugal)."],
 ["Priorat","DOQ (with Rioja, Spain's only two), llicorella slate, Garnacha and Cariñena; Vi de Vila village tier pioneered here. The 1989 Gratallops group: Barbier, Palacios, Glorian, Pérez, Pastrana."],
-["Cava and the exodus","Macabeo/Xarel·lo/Parellada; 9/18/30-month tiers plus Cava de Paraje Calificado (30 months). Corpinnat seceded in 2019 (Gramona, Recaredo)."],
+["Cava and the exodus","Macabeo/Xarel·lo/Parellada; 9/18/30-month tiers plus Cava de Paraje Calificado (36 months). Corpinnat seceded in 2019 (Gramona, Recaredo)."],
 ["Sherry structure","Fino/Manzanilla under flor at ~15%; Amontillado begins under flor then oxidizes; Oloroso fortified past flor (~17%); Palo Cortado the anomaly. VOS/VORS = 20/30 years. The 2022 reforms permit unfortified flor wines."]],
 traps:[
 "Gran Reserva: five years total, two in oak. Reserva: three and one. Do not swap them.",
@@ -280,7 +280,7 @@ traps:[
 lead:"Washington is a desert, Oregon's labeling is stricter than federal law, and Canada's Icewine has a temperature written into statute. These three facts carry a surprising share of the section.",
 exam:"Willamette soils and sub-AVAs, Oregon's 90% rule, Columbia Valley geography and the Missoula Floods, Finger Lakes vinifera history, VQA Icewine rules.",
 facts:[
-["Oregon","90% varietal minimum (Cabernet family excepted at 75%). Jory (volcanic) versus Willakenzie (marine sediment). 11 nested Willamette AVAs; Van Duzer Corridor names the cooling wind."],
+["Oregon","90% varietal minimum (about 18 named varieties excepted at 75% — the Bordeaux reds plus Syrah, Grenache, Mourvedre, Marsanne, Roussanne, Viognier, Sangiovese, Tempranillo, Tannat, Zinfandel, Petite Sirah; Pinot Noir, Pinot Gris and Chardonnay stay at 90%). Jory (volcanic) versus Willakenzie (marine sediment). 11 nested Willamette AVAs; Van Duzer Corridor names the cooling wind."],
 ["Washington","Nearly all vineyards east of the Cascades in irrigated shrub-steppe. Columbia Valley umbrella over Yakima, Red Mountain (hot, tannic), Walla Walla, Horse Heaven Hills, Rocks District (basalt cobbles, savoury Syrah). Own-rooted vines are common."],
 ["The Missoula Floods","Ice-age megafloods laid the gravels and silts; loess blew in above. This is why a desert grows great wine."],
 ["Finger Lakes","Dr. Konstantin Frank proved grafted vinifera could survive (1962). Seneca and Cayuga's depth moderates; Riesling leads."],
@@ -361,7 +361,7 @@ lead:"Method, minimums, and pressure. Advanced asks you to place any bubble in t
 exam:"Method families, aging minimums by region, Crémant rules, English sparkling, pét-nat and ancestral, Asti's arrested fermentation, transfer method.",
 facts:[
 ["Methods","Traditional (Champagne, Cava, Franciacorta, Crémant, Trento, Cap Classique); tank/Charmat (Prosecco, most Lambrusco, volume Sekt); ancestral/pét-nat (one fermentation, Limoux, Bugey-Cerdon); transfer; carbonation. Asti uses a single interrupted tank fermentation."],
-["Minimums","Champagne NV 15 months/12 lees, vintage 36. Cava 9 / Reserva 18 / Gran Reserva 30 / Paraje Calificado 30. Franciacorta 18 / Millesimato 30 / Riserva 60. Crémant 9–12. Cap Classique 12."],
+["Minimums","Champagne NV 15 months/12 lees, vintage 36. Cava 9 / Reserva 18 / Gran Reserva 30 / Paraje Calificado 36. Franciacorta 18 / Millesimato 30 / Riserva 60. Crémant 9–12. Cap Classique 12."],
 ["The eight Crémants","Alsace, Bourgogne, Loire, Jura, Limoux, Die, Savoie, Bordeaux. Hand harvest and whole-cluster pressing required."],
 ["England","Same Paris-Basin chalk surfacing in the South Downs; PDO requires traditional method. Nyetimber (1988), Ridgeview, Sussex PDO (2022)."],
 ["Terminology","Col Fondo (undisgorged Prosecco, sui lieviti); Satèn (Franciacorta, white grapes, lower pressure); sur latte (undisgorged bottles traded between houses)."],
@@ -380,7 +380,7 @@ facts:[
 ["Classification and age","Chalk marks (palma, raya, palo cortado) at first classification decide the wine's life. VOS 20 years, VORS 30, carbon-dated and panel-tasted. En rama = minimally filtered."],
 ["Port","Fortified ~half-fermented with 77% aguardente. Vintage (declared, ~3× per decade, decant), LBV (4–6 years wood), Tawny with age statement (10/20/30/40), Colheita (single-vintage tawny, 7+ years wood), Crusted, Ruby, White. The beneficio caps each vineyard's Port production; the lei do terço caps annual sales."],
 ["Madeira","Estufagem (45–50°C, 3+ months) versus canteiro (slow lodge heat). Sercial → Verdelho → Bual → Malmsey; Tinta Negra for volume. Frasqueira: single vintage, 20 years cask."],
-["VDN","Mutage with 96% neutral spirit. Banyuls, Maury (rimage = early-bottled vintage), Rivesaltes (rancio in bonbonnes), Muscat de Beaumes-de-Venise."],
+["VDN","Mutage with 96% neutral spirit. Banyuls (rimage = early-bottled vintage), Maury (Grenat early-bottled, Tuilé oxidative), Rivesaltes (rancio in bonbonnes), Muscat de Beaumes-de-Venise."],
 ["Elsewhere","Marsala (Vergine unsweetened, solera; De Bartoli's unfortified Vecchio Samperi), Rutherglen Muscat's four tiers, Commandaria (Cyprus, sun-dried)."]],
 traps:[
 "The fortification strength is the whole logic: 15% for flor, 17% against it.",

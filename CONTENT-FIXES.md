@@ -5,12 +5,35 @@ instruction was to *refute* it and to default to 'the app is right' when uncerta
 39 upheld; 6 claimed errors were refuted and must NOT be 'fixed'.
 None are in the imported Intro or Certified banks.
 
-**Unblocked as of codex10** — every question now carries a minted `id` and `missKey`
-prefers it, so editing a stem no longer orphans that question's stats, SRS or notes.
-All 39 can be applied together; there is no longer any reason to split the `exp`/`accept`
-fixes from the ones that touch a stem.
+> ## ✅ ALL 39 APPLIED
+>
+> Applied in full — 47 edits across `data-advanced.js`, `data-master.js`,
+> `data-primers-advanced.js` and `data-primers-master.js`. Verified: all 4,068 ids
+> preserved (`id-drift = 0`), the codex9 list harness shows no new failures, and every
+> level renders clean in-browser. **This file is now a record, not a backlog** — keep it
+> for the reasoning, which is the part worth re-reading before touching this material
+> again.
+>
+> Where the audit offered a choice, the option that does *not* change a defensible keyed
+> answer was taken (per HANDOFF's rule), so #7, #18 and #27 were repaired by rewording
+> the stem rather than re-keying the answer.
+>
+> Three of the fixes had to be adjusted after the first pass, because they collided with
+> codex9's list detector — worth knowing about before editing any `ans`:
+>
+> - **#1** put the word "eleven" in a stem whose answer holds eleven items, so the
+>   bare-number fallback set `need = 11` on a question asking for three. The `Name three`
+>   rule never fired because `listParseNeed`'s `name|give|list` regex matched
+>   "1855 **list** beneath" first. Fixed by using the bank's idiomatic `(any three)`,
+>   which the `any\s+(\w+)` rule matches before anything else.
+> - **#6** and **#28** grew an item past codex9's 40-character clause guard, which
+>   silently dropped both questions out of list grading entirely. The extra wording moved
+>   to `exp`.
+>
+> Net effect: list-detected questions went from **78 to 79**, and #1 is now correctly
+> graded as "any three of eleven" instead of not being graded as a list at all.
 
-Working rules: never change or regenerate an existing `id`; run
+Working rules for future content edits: never change or regenerate an existing `id`; run
 `py .scripts/mint-ids.py` (dry run, exits non-zero on a problem) and `qidAudit()` in the
 console afterwards; and before editing any `ans` on a list-detected question, re-run the
 codex9 offline harness so the author's model answer still scores full marks.

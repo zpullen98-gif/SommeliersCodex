@@ -100,7 +100,7 @@ lead:"The Midi is where the examiner tests whether you studied beyond the famous
 exam:"Grape minimums, Provence's forgotten 1955 classification, Languedoc crus, Southwest specialties, Roussillon VDN styles.",
 facts:[
 ["Minimums","Bandol ≥50% Mourvèdre and 18 months wood; Cahors ≥70% Malbec; Corbières-Boutenac ≥30% Carignan."],
-["Forgotten classification","The 18 Crus Classés des Côtes de Provence (1955), never revised. Palette is Château Simone's near-monopole appellation."],
+["Forgotten classification","The Crus Classés des Côtes de Provence: 23 classified in 1955, 18 surviving, never revised. Palette is Château Simone's near-monopole appellation."],
 ["Southwest","Madiran's Tannat and micro-oxygenation (Ducournau, early 1990s); Jurançon's passerillage; Irouléguy's Basque terraces; Fronton's Négrette; Gaillac's Mauzac oddities."],
 ["Roussillon","Banyuls (rimage = early-bottled vintage), Maury, Rivesaltes with rancio in glass bonbonnes."]],
 traps:[
@@ -140,7 +140,7 @@ exam:"Brunello's crisis and rules, Chianti Classico's tiers and UGAs, Super Tusc
 facts:[
 ["Brunellopoli","2008 blending investigation, US import holds, 2009 consorzio vote retaining 100% Sangiovese. Know the chronology."],
 ["Chianti Classico","Annata 12, Riserva 24, Gran Selezione 30 with estate fruit — plus 11 UGA village names permitted on Gran Selezione from 2023."],
-["Carmignano","Delimited by Cosimo III in 1716 with Cabernet legal in the blend — Tuscany was 'Super Tuscan' by law before the rebels were born."],
+["Carmignano","Delimited by Cosimo III in 1716 — geography, not grapes; the Cabernet requirement dates to the 1975 DOC, Italy's first."],
 ["The south","Taurasi and Aglianico del Vulture; Fiano and Greco; Etna's contrade and altitude bands; Cerasuolo di Vittoria as Sicily's only DOCG."]],
 traps:[
 "The Montepulciano trap — town versus grape — under oral pressure.",
@@ -152,7 +152,7 @@ lead:"Spain's modern story is classification reform: Rioja's 2017 additions, Pri
 exam:"Rioja aging plus the new tiers, subzone soils, Priorat and Bierzo classifications, Sherry structure and reforms, Cava's schism.",
 facts:[
 ["Rioja 2017","Vino de Zona, Vino de Municipio, Viñedo Singular (35+ year vines, hand harvest, panel approval), plus Espumoso. Artadi left the DOCa in 2015 over exactly this."],
-["Sherry classification","Chalk marks decide everything: palma or una raya to the flor track at ~15%; dos or tres rayas to oloroso at ~17%; palo cortado the anomaly. Sobretablas is the resting stage before the criaderas."],
+["Sherry classification","Chalk marks decide everything: una raya to the flor track at ~15%; dos rayas to oloroso at ~17%; tres rayas to the still; palo cortado the anomaly. Sobretablas is the resting stage before the criaderas."],
 ["The 2022 reforms","Unfortified flor wines legalized at natural 15%+, zones and grapes expanded — the vino de pasto movement made official."],
 ["Modern regions","Gredos Garnacha on granite (Comando G), Canary volcanic pits (La Geria's hoyos and zocos), Ribeira Sacra's heroic terraces."]],
 traps:[
