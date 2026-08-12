@@ -41,7 +41,7 @@ this project.** That distinction matters constantly — see *Content accuracy* b
 | I · Page | `intro` | 1,778 | 31 (own taxonomy) | all multiple choice |
 | II · Squire | `certified` | 1,283 | 36 | 792 SA · 460 MC · 15 matching · 16 select-all |
 | III · Knight | `advanced` | 562 | 36 | 475 SA · 57 MC · 29 matching · 1 select-all |
-| IV · Master | `master` | 445 | 36 | 445 SA (oral-style prompts) |
+| IV · Ruler | `master` | 445 | 36 | 445 SA (oral-style prompts) |
 | **Total** | **4,068** | | |
 
 Also: 150 study chapters (39/36/36/36), 47 grape profiles (23 + 24 authored), the Intro
@@ -94,7 +94,7 @@ Levels switch by **rebinding the data globals** — every earlier layer resolves
 banks required no edits to any earlier layer. `LEVELS = {intro, certified, advanced, master}`;
 the active level persists in `localStorage.codexLevel`.
 
-Mock formats: Page 70Q/45min · Squire 45Q/38min · Knight 60Q/35min · Master =
+Mock formats: Page 70Q/45min · Squire 45Q/38min · Knight 60Q/35min · Ruler =
 `startGauntlet()`, a 50-minute all-short-answer **Oral Gauntlet** (`speechSynthesis` reads the
 prompt aloud, no text field, self-grade mandatory before advancing).
 
@@ -154,7 +154,7 @@ Six of those stores are keyed by question: `q srs flags notes grader bad`. Nothi
    `render`/`decorateHome`. Only edit earlier layers to fix bugs in them.
 
 10. **Rank names are display copy; the level KEYS are load-bearing.** The ladder reads
-    Page / Squire / Knight / Master, but the keys are still `intro / certified / advanced /
+    Page / Squire / Knight / Ruler, but the keys are still `intro / certified / advanced /
     master` — `qKey` bakes them into every stored stat key (`advanced|a-kpyi8t6m`), so
     renaming a key orphans progress exactly as the old stem-slice scheme did. Change
     `label` / `short` / `note` freely; never touch a key. The CMS names survive only in

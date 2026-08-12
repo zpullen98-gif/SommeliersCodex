@@ -1,5 +1,5 @@
 /* ============ Codex VII: the Four-Level Court ============
-   Page / Squire / Knight / Master as one app — the Court's four examinations
+   Page / Squire / Knight / Ruler as one app — the Court's four examinations
    under the Codex's own names. The level KEYS below (intro/certified/advanced/
    master) are load-bearing: qKey bakes them into every stored stat key, so only
    the display strings may ever change. Levels switch by
@@ -29,11 +29,11 @@ if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',
  primers:typeof ADV_PRIMERS!=='undefined'?ADV_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:60,secs:35*60},pass:0.6,
  note:'Knighthood is short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold — recognition is no longer enough.'};
-if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Master's Examination",short:'Master',
+if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Ruler's Examination",short:'Ruler',
  bank:MASTER_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof MASTER_PRIMERS!=='undefined'?MASTER_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:50,secs:50*60,oral:true},pass:0.6,
- note:'The master is examined aloud: fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on your honour.'};
+ note:'The ruler is examined aloud: fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on your honour.'};
 var LEVEL_ORDER=['intro','certified','advanced','master'];
 
 var activeLevel='certified';
@@ -101,12 +101,12 @@ simView=function(){
   }).join('');
   var v=el('<div><div class="viewhead"><h2>Exam Simulations</h2><div class="sub">'+LEVELS[activeLevel].label+' · stratified draws across every section, timed at exam pace (~'+Math.round(pace)+' seconds per question).</div></div>'
    +'<div class="seclist" id="simlist">'+rows+'</div>'
-   +'<div class="fmtnote" style="margin-top:14px">Every simulation draws proportionally from each section, so the mix mirrors the bank, and the exam. 60% to pass.</div></div>');
+   +'<div class="fmtnote" style="margin-top:14px">Every simulation draws proportionally from each section, so the mix mirrors the bank, and the sitting. '+Math.round(L.pass*100)+'% to pass.</div></div>');
   v.querySelectorAll('.secbtn').forEach(function(b){b.onclick=function(){startSim(+b.dataset.n);};});
   return v;
 };
 
-/* ---- the Oral Gauntlet (Master mock): rapid short-answer, self-graded ---- */
+/* ---- the Oral Gauntlet (Ruler mock): rapid short-answer, self-graded ---- */
 function startGauntlet(n){
   var pool=shuffle(QUESTIONS.filter(function(q){return q.sa&&!q.mt&&!q.sel;}));
   n=n||LEVELS[activeLevel].mock.n;
@@ -180,7 +180,7 @@ function courtStrip(){
   LEVEL_ORDER.forEach(function(lv){
     var L=LEVELS[lv];
     if(!L){
-      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Knight':'Master')+'</div><div class="cpstat">In the cellar</div></div>'));
+      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Knight':'Ruler')+'</div><div class="cpstat">In the cellar</div></div>'));
       return;
     }
     var rec=ST.court[lv]||{};
@@ -218,7 +218,7 @@ decorateHome=function(){
   var mock=document.getElementById('m-mock');
   if(mock){
     if(L.mock.oral){ mock.querySelector('h3').textContent='The Oral Gauntlet';
-      mock.querySelector('p').textContent='Fifty minutes of rapid prompts, answered in your own words and graded on your honour — the shape of the master\'s table.'; }
+      mock.querySelector('p').textContent='Fifty minutes of rapid prompts, answered in your own words and graded on your honour — the shape of the ruler\'s table.'; }
     else mock.querySelector('p').textContent=L.mock.n+' random questions, '+Math.round(L.mock.secs/60)+'-minute clock, '+Math.round(L.pass*100)+'% to pass. Drawn from every section, just like the day itself.';
   }
   /* level-true studyline */
@@ -536,8 +536,8 @@ function startClassQuiz(cty){
   S.pool=qs; S.idx=0; S.correct=0; S.results=[]; resetQ(); S.view='quiz'; render();
 }
 
-/* ═══════════ Master flights: the origin call ═══════════
-   At Master the grape alone is not a conclusion. After each variety call the
+/* ═══════════ Ruler flights: the origin call ═══════════
+   At Ruler the grape alone is not a conclusion. After each variety call the
    candidate must place the wine, as the deductive grid's final conclusion demands. */
 function ttRegionOf(g){ return String(g.regions||'').split(/[,;(]/)[0].trim(); }
 function ttOriginOpts(ti){

@@ -1,7 +1,7 @@
 # The Sommelier's Codex
 
 An offline-first, installable study hall for the four examinations of the Court —
-**Page, Squire, Knight, Master** — in one app.
+**Page, Squire, Knight, Ruler** — in one app.
 
 **[Open the Codex →](https://zpullen98-gif.github.io/SommeliersCodex/)**
 
@@ -17,7 +17,7 @@ Install it once and it works on a plane.
 | **I · Page** | 1,778 | 70 questions, 45 min, 60% | all multiple choice |
 | **II · Squire** | 1,283 | 45 questions, 38 min, 60% | 792 short answer · 460 MC · 15 matching · 16 select-all |
 | **III · Knight** | 562 | 60 questions, 35 min, 60% | 475 short answer · 57 MC · 29 matching · 1 select-all |
-| **IV · Master** | 445 | 50 min, spoken, 75% per section | oral-style prompts, self-graded |
+| **IV · Ruler** | 445 | 50 min, spoken, 75% per section | oral-style prompts, self-graded |
 | **Total** | **4,068** | | |
 
 The four ranks are the Codex's own names for the Court of Master Sommeliers' ladder —
@@ -40,7 +40,7 @@ curated video scriptorium.
   you're studying.
 - **Exam-date study plan.** Enter your sitting date and the home screen prescribes the
   single highest-priority action: days out, cards due, coverage, and per-level pace.
-- **The Oral Gauntlet.** The Master mock is fifty minutes of spoken prompts read aloud by
+- **The Oral Gauntlet.** The Ruler's mock is fifty minutes of spoken prompts read aloud by
   the browser, with no text field and a mandatory self-grade before advancing.
 - **Deductive tasting and service.** Blind flights and the service ritual checklist, because
   theory is only one of three sections.
@@ -68,8 +68,8 @@ decorating the previous one. Deploying means bumping `?v=` on changed files in `
 
 ## On accuracy
 
-The Introductory and Certified banks were imported from established material. The Advanced
-and Master banks were drafted with AI assistance and then fact-checked by an adversarial
+The Page and Squire banks were imported from established material. The Knight
+and Ruler banks were drafted with AI assistance and then fact-checked by an adversarial
 audit, which confirmed and corrected 39 errors — clustered in quantified counts,
 attribution, and near-miss technical relations.
 
