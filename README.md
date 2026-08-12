@@ -1,7 +1,7 @@
 # The Sommelier's Codex
 
-An offline-first, installable study hall for all four **Court of Master Sommeliers**
-examinations — Introductory, Certified, Advanced and Master — in one app.
+An offline-first, installable study hall for the four examinations of the Court —
+**Page, Squire, Knight, Master** — in one app.
 
 **[Open the Codex →](https://zpullen98-gif.github.io/SommeliersCodex/)**
 
@@ -12,13 +12,17 @@ Install it once and it works on a plane.
 
 ## What's in it
 
-| Level | Questions | Format |
-|---|---:|---|
-| Introductory | 1,778 | all multiple choice |
-| Certified | 1,283 | 792 short answer · 460 MC · 15 matching · 16 select-all |
-| Advanced | 562 | 475 short answer · 57 MC · 29 matching · 1 select-all |
-| Master | 445 | oral-style prompts, spoken and self-graded |
-| **Total** | **4,068** | |
+| Rank | Questions | The sitting | Format |
+|---|---:|---|---|
+| **I · Page** | 1,778 | 70 questions, 45 min, 60% | all multiple choice |
+| **II · Squire** | 1,283 | 45 questions, 38 min, 60% | 792 short answer · 460 MC · 15 matching · 16 select-all |
+| **III · Knight** | 562 | 60 questions, 35 min, 60% | 475 short answer · 57 MC · 29 matching · 1 select-all |
+| **IV · Master** | 445 | 50 min, spoken, 75% per section | oral-style prompts, self-graded |
+| **Total** | **4,068** | | |
+
+The four ranks are the Codex's own names for the Court of Master Sommeliers' ladder —
+Introductory, Certified, Advanced and Master. The app teaches the structure by making you
+climb it rather than by putting the certification body's branding on every screen.
 
 Alongside the banks: 150 study chapters, 47 grape profiles, 12 hand-drawn SVG country
 maps covering 98 regions, 12 classification pyramids, a 7-part service ritual, and a

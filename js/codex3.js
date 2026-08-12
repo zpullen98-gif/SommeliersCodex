@@ -48,13 +48,13 @@ function startSim(n){
   startMock();
 }
 function simView(){
-  const v=el('<div><div class="viewhead"><h2>Exam Simulations</h2><div class="sub">Stratified draws across all '+Object.keys(cats()).length+' sections, timed at Certified pace (~50 seconds per question).</div></div>'
+  const v=el('<div><div class="viewhead"><h2>Exam Simulations</h2><div class="sub">Stratified draws across all '+Object.keys(cats()).length+' sections, timed at a squire\'s pace (~50 seconds per question).</div></div>'
    +'<div class="seclist" id="simlist">'
    +'<button class="secbtn" data-n="20"><span>Quick Sitting \u00b7 20 questions</span><span class="n">17 min</span></button>'
-   +'<button class="secbtn" data-n="45"><span>Certified Exam \u00b7 45 questions</span><span class="n">38 min</span></button>'
+   +'<button class="secbtn" data-n="45"><span>Squire\'s Sitting \u00b7 45 questions</span><span class="n">38 min</span></button>'
    +'<button class="secbtn" data-n="50"><span>Extended \u00b7 50 questions</span><span class="n">42 min</span></button>'
    +'<button class="secbtn" data-n="100"><span>Marathon \u00b7 100 questions</span><span class="n">84 min</span></button>'
-   +'</div><div class="fmtnote" style="margin-top:14px">Every simulation draws proportionally from each section, so the mix mirrors the bank, and the exam. 60% to pass.</div></div>');
+   +'</div><div class="fmtnote" style="margin-top:14px">Every simulation draws proportionally from each section, so the mix mirrors the bank, and the sitting. '+Math.round(PASS*100)+'% to pass.</div></div>');
   v.querySelectorAll('.secbtn').forEach(function(b){b.onclick=function(){startSim(+b.dataset.n);};});
   return v;
 }

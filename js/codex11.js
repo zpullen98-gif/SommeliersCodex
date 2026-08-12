@@ -28,8 +28,8 @@ if(LEVELS.master){
   if(activeLevel==='master')PASS=LEVELS.master.pass;
 }
 
-/* Which sections each examination actually has. The Introductory is a written
-   theory paper after the two-day course — it has no tasting or service section,
+/* Which sections each examination actually has. The Page's examination (the
+   Court's Introductory) is a written theory paper — it has no tasting or service section,
    so demanding them there would invent a requirement the Court does not set. */
 var EXAM_SECTIONS={intro:['theory'],certified:['theory','tasting','service'],
                    advanced:['theory','tasting','service'],master:['theory','tasting','service']};
@@ -222,7 +222,7 @@ studyPlan=function(){
 
   if(levelHasSection(p.level,'tasting')&&r.tasting){
     if(r.tasting.state==='none')
-      add.push({t:'Pour a blind flight',d:'No tasting calls on record. '+L.short+' is examined on tasting as well as theory — no amount of paper answers this section.',go:function(){S.tt=null;S.view='tasting';render();}});
+      add.push({t:'Pour a blind flight',d:'No tasting calls on record. A '+L.short+' is examined on tasting as well as theory — no amount of paper answers this section.',go:function(){S.tt=null;S.view='tasting';render();}});
     else if(r.tasting.state==='thin')
       add.push({t:'Keep tasting',d:'Only '+r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' on record — too few to read as a trend. Ten is a beginning.',go:function(){S.tt=null;S.view='tasting';render();}});
     else if(r.tasting.state==='below')
@@ -230,7 +230,7 @@ studyPlan=function(){
   }
   if(levelHasSection(p.level,'service')&&r.service){
     if(r.service.state==='none')
-      add.push({t:'Walk the service ritual',d:'Not one movement rehearsed. The practical is examined at '+L.short+', and it lives in the hands.',go:function(){S.view='service';render();}});
+      add.push({t:'Walk the service ritual',d:'Not one movement rehearsed. The practical is examined at '+L.short+' rank, and it lives in the hands.',go:function(){S.view='service';render();}});
     else if(r.service.state==='partial')
       add.push({t:'Finish the service ritual',d:r.service.done+' of '+r.service.total+' movements rehearsed. Walk the rest before the sitting.',go:function(){S.view='service';render();}});
   }
@@ -291,9 +291,9 @@ planView=function(){
     var block=el('<div><div class="secgroup">Where you stand</div>'+readinessRows(activeLevel)
       +'<div class="fmtnote" style="margin-top:10px">'
       +(levelSections(activeLevel).length>1
-        ? 'The Court examines '+LEVELS[activeLevel].short+' on '+levelSections(activeLevel).join(', ')
+        ? 'The Court examines a '+LEVELS[activeLevel].short+' on '+levelSections(activeLevel).join(', ')
           +'. A theory score is one section of three, and the Codex will not call you ready on it alone.'
-        : 'The Introductory examination is theory only — there is no tasting or service section to measure.')
+        : "The Page's examination is theory only — there is no tasting or service section to measure.")
       +'</div></div>');
     /* sits above "Your sitting" so the standing frames the plan */
     v.insertBefore(block,head);

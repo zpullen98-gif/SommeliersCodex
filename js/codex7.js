@@ -1,5 +1,8 @@
 /* ============ Codex VII: the Four-Level Court ============
-   Introductory / Certified / Advanced / Master as one app. Levels switch by
+   Page / Squire / Knight / Master as one app — the Court's four examinations
+   under the Codex's own names. The level KEYS below (intro/certified/advanced/
+   master) are load-bearing: qKey bakes them into every stored stat key, so only
+   the display strings may ever change. Levels switch by
    rebinding the data globals (all layers resolve them at call time); stats
    namespace by key prefix — certified keys stay UNPREFIXED so existing
    progress survives untouched. */
@@ -12,25 +15,25 @@ var CORE12_NAMES=['Riesling','Chardonnay','Sauvignon Blanc','Pinot Gris / Grigio
 var INTRO_CORE12=CERT_GRAPES.filter(function(g){return CORE12_NAMES.indexOf(g.g)>=0;});
 
 var LEVELS={
- intro:{key:'intro',num:'I',label:'Introductory Examination',short:'Introductory',
+ intro:{key:'intro',num:'I',label:"The Page's Examination",short:'Page',
   bank:INTRO_QUESTIONS,grapes:INTRO_CORE12,primers:INTRO_PRIMERS,groups:INTRO_GROUPS,
   mock:{n:70,secs:45*60},pass:0.6,
-  note:'The Introductory theory exam runs 70 multiple-choice questions in 45 minutes after the two-day course: 60% passes. Foundations, the world map, and the classics — speed and certainty win it.'},
- certified:{key:'certified',num:'II',label:'Certified Examination',short:'Certified',
+  note:'A page learns the house before being trusted with the cellar: seventy questions in forty-five minutes, all multiple choice, sixty in a hundred to pass. Foundations, the world map, the classics — speed and certainty win it.'},
+ certified:{key:'certified',num:'II',label:"The Squire's Examination",short:'Squire',
   bank:CERT_QUESTIONS,grapes:CERT_GRAPES,primers:CERT_PRIMERS,groups:CERT_GROUPS,
   mock:{n:45,secs:38*60},pass:0.6,
-  note:'The Certified theory section runs 45 questions in ~38 minutes: multiple choice, matching, and short answer (you must produce the answer, not pick it). This trainer mirrors that mix and grades typed answers with fuzzy matching, with a self-grade override when you know you were right.'}
+  note:'The squire is handed the bottle and asked to name it: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer — you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}
 };
-if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',label:'Advanced Examination',short:'Advanced',
+if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',label:"The Knight's Examination",short:'Knight',
  bank:ADV_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof ADV_PRIMERS!=='undefined'?ADV_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:60,secs:35*60},pass:0.6,
- note:'Advanced theory is short-answer country: ~60 questions at 35 seconds each, deep in appellation law, producers, and vintages. Produce the answer cold — recognition is no longer enough.'};
-if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:'Master Examination',short:'Master',
+ note:'Knighthood is short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold — recognition is no longer enough.'};
+if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Master's Examination",short:'Master',
  bank:MASTER_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof MASTER_PRIMERS!=='undefined'?MASTER_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:50,secs:50*60,oral:true},pass:0.6,
- note:'The Master theory examination is oral: fifty minutes across the table from Master Sommeliers, producing answers aloud with no options to lean on. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on honor.'};
+ note:'The master is examined aloud: fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on your honour.'};
 var LEVEL_ORDER=['intro','certified','advanced','master'];
 
 var activeLevel='certified';
@@ -177,7 +180,7 @@ function courtStrip(){
   LEVEL_ORDER.forEach(function(lv){
     var L=LEVELS[lv];
     if(!L){
-      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Advanced':'Master')+'</div><div class="cpstat">In the cellar</div></div>'));
+      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Knight':'Master')+'</div><div class="cpstat">In the cellar</div></div>'));
       return;
     }
     var rec=ST.court[lv]||{};
@@ -215,8 +218,8 @@ decorateHome=function(){
   var mock=document.getElementById('m-mock');
   if(mock){
     if(L.mock.oral){ mock.querySelector('h3').textContent='The Oral Gauntlet';
-      mock.querySelector('p').textContent='Fifty minutes of rapid prompts, answered in your own words and graded on honor — the shape of the Master table.'; }
-    else mock.querySelector('p').textContent=L.mock.n+' random questions, '+Math.round(L.mock.secs/60)+'-minute clock, 60% to pass. Drawn from every section, just like exam day.';
+      mock.querySelector('p').textContent='Fifty minutes of rapid prompts, answered in your own words and graded on your honour — the shape of the master\'s table.'; }
+    else mock.querySelector('p').textContent=L.mock.n+' random questions, '+Math.round(L.mock.secs/60)+'-minute clock, '+Math.round(L.pass*100)+'% to pass. Drawn from every section, just like the day itself.';
   }
   /* level-true studyline */
   var sl=document.querySelector('.studyline');
@@ -238,7 +241,7 @@ decorateHome=function(){
     var anchor=modes[modes.length-1];
     if(anchor&&!document.getElementById('t-compendium')){
       var m7=el('<div class="modes" style="margin-top:14px"></div>');
-      m7.appendChild(el('<button class="mode" id="t-compendium"><div class="band"></div><h3>The Intro Compendium</h3><p>'
+      m7.appendChild(el('<button class="mode" id="t-compendium"><div class="band"></div><h3>The Page\'s Compendium</h3><p>'
         +INTRO_ATLAS.length+' hand-drawn country maps with '+INTRO_ATLAS.reduce(function(a,c){return a+c.r.length;},0)+' regions, classification pyramids for '+INTRO_CLASS.length+' nations, winemaking, soils, sweet wines, and all '+INTRO_GRAPES.length+' grapes.</p></button>'));
       anchor.parentNode.insertBefore(m7,anchor.nextSibling);
       m7.querySelector('#t-compendium').onclick=function(){S.cmp=null;S.view='compendium';render();};
@@ -278,7 +281,7 @@ primerList=function(){
     if(!byG[p.g]){byG[p.g]=[];groups.push(p.g);}
     byG[p.g].push(i);
   });
-  var html='<div><div class="viewhead"><h2>Study Chapters</h2><div class="sub">The Introductory course, chapter by chapter — read a region, then drill its section.</div></div>';
+  var html='<div><div class="viewhead"><h2>Study Chapters</h2><div class="sub">The Page\'s course, chapter by chapter — read a region, then drill its section.</div></div>';
   groups.forEach(function(g){
     html+='<div class="secgroup">'+g+'</div><div class="seclist">'
       +byG[g].map(function(i){return '<button class="secbtn" data-p="'+i+'"><span>'+PRIMERS[i].t+'</span><span class="n">›</span></button>';}).join('')
@@ -295,7 +298,7 @@ var _v6PrimerView=primerView;
 primerView=function(){
   var p=PRIMERS[S.primerKey];
   if(!p||!p.body)return _v6PrimerView();
-  var v=el('<div><div class="viewhead"><h2>'+p.t+'</h2><div class="sub">'+p.g+' · Introductory chapter</div></div>'
+  var v=el('<div><div class="viewhead"><h2>'+p.t+'</h2><div class="sub">'+p.g+' · a Page\'s chapter</div></div>'
     +'<div class="card primerpage chapterbody">'+p.body+'</div>'
     +'<div class="centerrow"><button class="btn ghost" id="pr-back">All chapters</button></div></div>');
   v.querySelector('#pr-back').onclick=function(){S.view='primers';render();};
@@ -354,13 +357,13 @@ var CMP_SECTIONS=[
  ['wine','🍇','Winemaking','Grape to bottle, and the signature techniques with their homes'],
  ['soil','🪨','Soil & Terroir','The famous rocks and everything that grows best in them'],
  ['dess','🍯','Dessert Wines','Sweetness by method: rot, raisin, freeze, late-pick, fortify'],
- ['grapes','✧','The Grapes','All the Introductory varieties: structure, aromas, traps']
+ ['grapes','✧','The Grapes',"Every variety on the Page's list: structure, aromas, traps"]
 ];
 function compendiumView(){
   S.cmp=S.cmp||{sec:null,idx:null,reg:null};
   var c=S.cmp;
   if(!c.sec){
-    var v=el('<div><div class="viewhead"><h2>The Intro Compendium</h2><div class="sub">The visual references of the Introductory course: study a map or a pyramid, then drill the matching section.</div></div><div class="modes" id="cmp-tiles"></div></div>');
+    var v=el('<div><div class="viewhead"><h2>The Page\'s Compendium</h2><div class="sub">The visual references of the Page\'s course: study a map or a pyramid, then drill the matching section.</div></div><div class="modes" id="cmp-tiles"></div></div>');
     var box=v.querySelector('#cmp-tiles');
     CMP_SECTIONS.forEach(function(sec){
       var b=el('<button class="mode"><div class="band"></div><h3>'+sec[2]+'</h3><p>'+sec[3]+'</p></button>');
@@ -466,7 +469,7 @@ function topicView(DB,title,c,back){
 function grapesView(c,back){
   function dots(v2){return '●●●'.slice(0,v2)+'○○○'.slice(0,3-v2);}
   var groups=[['White grapes','white'],['Red grapes','red']];
-  var html='<div><div class="viewhead"><h2>The Grapes of the Introductory List</h2><div class="sub">'+INTRO_GRAPES.length+' varieties: structure on a three-dot scale, the aromas, the regions that imply them (marked *), and the traps.</div></div>';
+  var html='<div><div class="viewhead"><h2>The Grapes of the Page\'s List</h2><div class="sub">'+INTRO_GRAPES.length+' varieties: structure on a three-dot scale, the aromas, the regions that imply them (marked *), and the traps.</div></div>';
   groups.forEach(function(g){
     html+='<div class="secgroup">'+g[0]+'</div>';
     INTRO_GRAPES.filter(function(x){return x.c===g[1];}).forEach(function(x){

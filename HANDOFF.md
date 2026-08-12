@@ -18,7 +18,7 @@ Use `serve.py`, not `python -m http.server` — it sends `Cache-Control: no-cach
 appear on reload. Launch config name for the preview tool: `sommeliers-codex` (port 8632).
 
 Live at **https://zpullen98-gif.github.io/SommeliersCodex/** (GitHub Pages, deploy-from-branch
-on `master` — every push rebuilds). Currently at service-worker cache **`codex-v31`**.
+on `master` — every push rebuilds). Currently at service-worker cache **`codex-v32`**.
 ~2.5 MB on disk, ~1.7 MB of JS. Cold load
 ~2s; a returning user gets DOM-ready in ~53 ms with zero network (everything from the SW).
 
@@ -36,12 +36,12 @@ this project.** That distinction matters constantly — see *Content accuracy* b
 
 ## Content inventory
 
-| Level | Questions | Categories | Format mix |
-|---|---|---|---|
-| Introductory | 1,778 | 31 (own taxonomy) | all multiple choice |
-| Certified | 1,283 | 36 | 792 SA · 460 MC · 15 matching · 16 select-all |
-| Advanced | 562 | 36 | 475 SA · 57 MC · 29 matching · 1 select-all |
-| Master | 445 | 36 | 445 SA (oral-style prompts) |
+| Rank | Key | Questions | Categories | Format mix |
+|---|---|---|---|---|
+| I · Page | `intro` | 1,778 | 31 (own taxonomy) | all multiple choice |
+| II · Squire | `certified` | 1,283 | 36 | 792 SA · 460 MC · 15 matching · 16 select-all |
+| III · Knight | `advanced` | 562 | 36 | 475 SA · 57 MC · 29 matching · 1 select-all |
+| IV · Master | `master` | 445 | 36 | 445 SA (oral-style prompts) |
 | **Total** | **4,068** | | |
 
 Also: 150 study chapters (39/36/36/36), 47 grape profiles (23 + 24 authored), the Intro
@@ -94,7 +94,7 @@ Levels switch by **rebinding the data globals** — every earlier layer resolves
 banks required no edits to any earlier layer. `LEVELS = {intro, certified, advanced, master}`;
 the active level persists in `localStorage.codexLevel`.
 
-Mock formats: Intro 70Q/45min · Certified 45Q/38min · Advanced 60Q/35min · Master =
+Mock formats: Page 70Q/45min · Squire 45Q/38min · Knight 60Q/35min · Master =
 `startGauntlet()`, a 50-minute all-short-answer **Oral Gauntlet** (`speechSynthesis` reads the
 prompt aloud, no text field, self-grade mandatory before advancing).
 
@@ -153,7 +153,20 @@ Six of those stores are keyed by question: `q srs flags notes grader bad`. Nothi
 9. **Layer discipline.** New features go in a **new** `codex12.js` that wraps
    `render`/`decorateHome`. Only edit earlier layers to fix bugs in them.
 
-10. **A verdict is only ever shown for `mock` and `sim`.** Every other mode is practice and
+10. **Rank names are display copy; the level KEYS are load-bearing.** The ladder reads
+    Page / Squire / Knight / Master, but the keys are still `intro / certified / advanced /
+    master` — `qKey` bakes them into every stored stat key (`advanced|a-kpyi8t6m`), so
+    renaming a key orphans progress exactly as the old stem-slice scheme did. Change
+    `label` / `short` / `note` freely; never touch a key. The CMS names survive only in
+    code comments, where a maintainer needs the mapping.
+
+11. **Possessive apostrophes break single-quoted string literals.** The rank rename put
+    "Page's" and "squire's" inside `'…'` in codex3 and codex7 and took the whole layer
+    stack down — and because the layers share one global scope, the console blamed
+    codex8 and codex11 rather than the file with the typo. Run
+    `node .scripts/check-syntax.js` after any bulk edit to the copy.
+
+12. **A verdict is only ever shown for `mock` and `sim`.** Every other mode is practice and
     reports a tally. Weakness Review in particular is *designed* to serve your worst material,
     so stamping a fail on it punishes correct use of the tool. Equally, `EXAM_SECTIONS` says
     the Introductory is theory-only — do not "helpfully" require tasting and service there;
@@ -285,6 +298,9 @@ use, and use the in-app error flag (⚑ in every reveal) to collect fixes as you
 
 ## Testing notes
 
+- Run `node .scripts/check-syntax.js` first — it parses every layer without executing it.
+  A stray character stops one file parsing, every global it defines vanishes, and the errors
+  surface in the layers *above* it. Cheapest possible check, and it has already earned itself.
 - Verify in the browser, not by reasoning. The preview tool's `javascript_tool` can drive the
   app directly: `applyLevel('master')`, `startMock()`, `submitSA()`, `stReset()`, etc.
 - **bfcache**: revisiting a URL can restore the old JS heap without re-running scripts. Always

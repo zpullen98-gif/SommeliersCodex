@@ -88,7 +88,7 @@ function tastingView(){
 function tastingIntro(){
   const life=ST.tast.n?Math.round(100*ST.tast.c/ST.tast.n):null;
   const v=el('<div><div class="viewhead"><h2>The Deductive Tasting</h2>'
-    +'<div class="sub">The Certified tasting is graded on the deductive method: describe honestly, then conclude. Study the grid, then pour a blind flight built from the examinable grapes.</div></div>'
+    +'<div class="sub">Tasting is graded on the deductive method: describe honestly, then conclude. Study the grid, then pour a blind flight built from the examinable grapes.</div></div>'
     +'<div class="statrow" style="margin:16px 0">'
     +'<div class="stat"><b>'+GRAPES.length+'</b><span>Grapes in play</span></div>'
     +'<div class="stat"><b>6</b><span>Glasses per flight</span></div>'
@@ -150,7 +150,7 @@ var TASTING_GRID=[
  ['Final conclusion',[
   ['Commit','One grape, one country, one region, vintage within the range. A specific, defensible call scores; hedging does not.'],
   ['Quality & drinkability','Sound, good, outstanding; drink now or hold. Tie it to concentration, balance, length.'],
-  ['The Certified bar','At Certified you taste two wines and are graded on method and accuracy of the major calls — variety, origin, vintage range — not on mystical precision.']]]
+  ["The squire's bar",'As a squire you taste two wines and are graded on method and on the accuracy of the major calls — variety, origin, vintage range — not on mystical precision.']]]
 ];
 function tasteGridView(){
   let html='<div><div class="viewhead"><h2>The Deductive Grid</h2><div class="sub">Speak it in this order, aloud, every time — the grid is the exam’s spine and the palate’s discipline.</div></div>';
@@ -220,7 +220,7 @@ var SERVICE=[
 ];
 function serviceView(){
   S.svc=S.svc||{};
-  let html='<div><div class="viewhead"><h2>The Service Ritual</h2><div class="sub">The Certified practical, step by step. Tick each movement as you rehearse it — the choreography must live in the hands, not the notes.</div></div>';
+  let html='<div><div class="viewhead"><h2>The Service Ritual</h2><div class="sub">The practical, step by step. Tick each movement as you rehearse it — the choreography must live in the hands, not the notes.</div></div>';
   SERVICE.forEach(function(rite,ri){
     const done=(S.svc[ri]||[]).filter(Boolean).length;
     html+='<div class="secgroup">'+rite.t+' <span class="ritecount">'+done+'/'+rite.steps.length+'</span></div>';
@@ -336,7 +336,7 @@ decorateHome=function(){
   const anchor=modes[modes.length-1];
   if(!anchor)return;
   const m6=el('<div class="modes" style="margin-top:14px"></div>');
-  const tast=ST.tast.n?Math.round(100*ST.tast.c/ST.tast.n)+'% over '+ST.tast.n+' lifetime calls.':'The second half of the Certified exam.';
+  const tast=ST.tast.n?Math.round(100*ST.tast.c/ST.tast.n)+'% over '+ST.tast.n+' lifetime calls.':'The second half of the examination.';
   m6.appendChild(el('<button class="mode" id="t-tast"><div class="band"></div><h3>Deductive Tasting</h3><p>The grid, then blind flights of six built from the '+GRAPES.length+' examinable grapes. '+tast+'</p></button>'));
   m6.appendChild(el('<button class="mode" id="t-prim"><div class="band"></div><h3>Study Primers</h3><p>'+PRIMERS.length+' written chapters — what the exam asks per section, the anchor facts, and the classic traps.</p></button>'));
   m6.appendChild(el('<button class="mode" id="t-svc"><div class="band"></div><h3>The Service Ritual</h3><p>Still, sparkling, and decanting choreography as the examiners grade it, as a rehearsal checklist.</p></button>'));

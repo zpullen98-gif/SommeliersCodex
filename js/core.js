@@ -205,7 +205,7 @@ function homeView(){
       <button class="mode" id="m-drill"><div class="band"></div><h3>Drill by Section</h3><p>Target one region or topic at a time: Burgundy, Fortified, BOS math, and more.</p></button>
       <button class="mode" id="m-endless"><div class="band"></div><h3>Endless Practice</h3><p>Untimed, reshuffles forever. Immediate answer and rationale after every question.</p></button>
       <button class="mode" id="m-terroir"><div class="band"></div><h3>Terroir Atlas</h3><p>Climate, soil, and defining features of every major region. Study first, then drill the matching section.</p></button>
-      <button class="mode" id="m-flash"><div class="band"></div><h3>Grape Flashcards</h3><p>The Certified tasting list: structure, aroma markers, and blind-tasting giveaways for every examinable grape.</p></button>
+      <button class="mode" id="m-flash"><div class="band"></div><h3>Grape Flashcards</h3><p>The examinable tasting list: structure, aroma markers, and blind-tasting giveaways for every grape you may be poured.</p></button>
       <button class="mode" id="m-prod"><div class="band"></div><h3>Producer Codex</h3><p>The icon houses of every country: signature bottlings and their tasting profiles. Then drill the matching section.</p></button>
     </div>
   </div>`);
