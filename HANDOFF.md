@@ -18,7 +18,7 @@ Use `serve.py`, not `python -m http.server` — it sends `Cache-Control: no-cach
 appear on reload. Launch config name for the preview tool: `sommeliers-codex` (port 8632).
 
 Live at **https://zpullen98-gif.github.io/SommeliersCodex/** (GitHub Pages, deploy-from-branch
-on `master` — every push rebuilds). Currently at service-worker cache **`codex-v30`**.
+on `master` — every push rebuilds). Currently at service-worker cache **`codex-v31`**.
 ~2.5 MB on disk, ~1.7 MB of JS. Cold load
 ~2s; a returning user gets DOM-ready in ~53 ms with zero network (everything from the SW).
 
@@ -68,7 +68,7 @@ Load order (order is load-bearing):
 data-questions → reference → core → codex2 → codex3 → codex4 → codex5
 → data-primers → codex6 → data-intro → data-primers-intro → data-grapes-plus
 → data-advanced → data-primers-advanced → data-master → data-primers-master
-→ codex7 → codex8 → codex9 → codex10 → boot
+→ codex7 → codex8 → codex9 → codex10 → codex11 → boot
 ```
 
 - **core.js** — state `S`, quiz engine, `render()`, `el()`, `topbar()`, `matchSA` fuzzy grader
@@ -83,6 +83,7 @@ data-questions → reference → core → codex2 → codex3 → codex4 → codex
   actionable dashboard, content error reports
 - **codex9** — list-aware short-answer grading
 - **codex10** — stable question identity: the one-time rekey migration and `qidAudit()`
+- **codex11** — honest readiness: per-section standing, and a verdict only where one belongs
 - **boot.js** — the final `render()` (layers decorate home *after* core's first render), SW
   registration, update toast
 
@@ -99,10 +100,11 @@ prompt aloud, no text field, self-grade mandatory before advancing).
 
 ### State
 
-One localStorage key, `codexStats`, holding `ST` with sixteen stores: `q days best flags srs
-ach sess hist notes tast court grader bad exam paceDays mig`. `ST_DEFAULTS` in codex8 is the
+One localStorage key, `codexStats`, holding `ST` with seventeen stores: `q days best flags srs
+ach sess hist notes tast court grader bad exam paceDays mig serv`. `ST_DEFAULTS` in codex8 is the
 canonical schema — **any new store must be added there** or the reset button will drop it.
-(codex10 registers `mig` by extending `ST_DEFAULTS` at load rather than editing codex8.)
+(codex10 registers `mig`, codex11 registers `serv`, both by extending `ST_DEFAULTS` at load
+rather than editing codex8.)
 
 Six of those stores are keyed by question: `q srs flags notes grader bad`. Nothing else is.
 
@@ -148,8 +150,14 @@ Six of those stores are keyed by question: `q srs flags notes grader bad`. Nothi
    in `sw.js`. That cache string is the entire update mechanism — installed clients get a
    "new edition is pressed" toast. New file ⇒ add to `ASSETS` in `sw.js` *and* a script tag.
 
-9. **Layer discipline.** New features go in a **new** `codex11.js` that wraps
+9. **Layer discipline.** New features go in a **new** `codex12.js` that wraps
    `render`/`decorateHome`. Only edit earlier layers to fix bugs in them.
+
+10. **A verdict is only ever shown for `mock` and `sim`.** Every other mode is practice and
+    reports a tally. Weakness Review in particular is *designed* to serve your worst material,
+    so stamping a fail on it punishes correct use of the tool. Equally, `EXAM_SECTIONS` says
+    the Introductory is theory-only — do not "helpfully" require tasting and service there;
+    the Court does not examine them at that level.
 
 ---
 
@@ -169,6 +177,14 @@ Everything below is built, verified in-browser, and deployed:
   encyclopedia, dashboard whose rows drill or open the chapter, content error reporting.
 - Accessibility: WCAG AA contrast across every view at every level, all controls labelled,
   no horizontal overflow on mobile.
+- **Honest readiness (codex11).** The Master bar is 0.75, not 0.6. A pass/fail verdict is now
+  shown only for `mock` and `sim` — practice modes report a tally, and Weakness Review says
+  outright that it serves your worst material by design. Mock results name the actual level
+  and its actual bar (an Advanced mock used to be judged as "Certified theory … 60%"), the
+  Gauntlet carries a self-reported caveat, and every mock says which sections it does *not*
+  cover. Readiness reads theory, tasting and service — the Court Standing pin says
+  "Theory passed" and only gilds to "Ready" when every examined section clears its bar.
+  The Introductory is theory-only, so it is never asked for tasting or service.
 - **Stable question identity.** All 4,068 questions carry a minted `id`; `missKey` prefers it
   and keeps the 80-char stem slice only as a legacy fallback. codex10 ships the one-time rekey
   across all six question-keyed stores — non-destructive, so a legacy key with no counterpart
@@ -188,42 +204,38 @@ Everything below is built, verified in-browser, and deployed:
 
 Ranked by (impact on actually passing an exam) × feasibility.
 
-1. **Stop the app certifying people — a weekend.** `LEVELS.master.pass` is `0.6` but the
-   Master Diploma requires 75% per section, and at Master that 60% is self-reported.
-   Readiness is theory-only, so you can read "Passed" having never opened a tasting flight or
-   the service ritual. Also: `resultsView` stamps "BELOW 60%" on Weakness Review, which
-   deliberately serves your worst material. Show pass/fail only for mock and sim.
-
-2. **Turn the tasting flight the right way round — an evening, then a long project.** It
+1. **Turn the tasting flight the right way round — an evening, then a long project.** It
    currently prints the target grape's own descriptors and asks for a four-way guess, i.e. the
    exam task inverted. Cheap 80%: drive glass count and clock from the level config (Certified
    is two wines, not six), run a real countdown, un-gate the origin call at Advanced, strip the
    ALL-CAPS tells, reveal sight → nose → palate progressively. Full version: an "Open a Bottle"
    mode with a fillable CMS grid, self-graded against a real bottle.
 
-3. **Rebuild the home screen around one prescription — a weekend.** Twenty co-equal tiles,
+2. **Rebuild the home screen around one prescription — a weekend.** Twenty co-equal tiles,
    ten of them doors to the same bank, because eight layers each appended a row. Always render
    `studyPlan().acts[0]`; collapse into three doors (Today / Drill / Sit an exam) plus a
    reference group. New capability goes *inside* those doors — no new tiles.
 
-4. **Durability — an evening each.** `stSave()` swallows `QuotaExceededError` silently.
+3. **Durability — an evening each.** `stSave()` swallows `QuotaExceededError` silently.
    `mergeStats` sums answer counts, so a laptop→phone→laptop round trip double-counts; stamp
    exports with a uuid and refuse re-import of a seen one. (The related *rekey* hazard is
    already closed: codex10 wraps `mergeStats` to rekey an incoming payload before it merges,
    so a progress file exported from a pre-id install still lands. Verified in-browser.)
 
-5. **Service ritual is recognition, not recall — a long project.** One static list at all four
-   levels, unscored, unclocked, never persisted to `ST`. Minimum: persist, branch per level,
-   add a clock.
+4. **Service ritual is recognition, not recall — a long project.** One static list at all four
+   levels, unscored and unclocked. codex11 now **persists** it (`ST.serv`) so readiness can
+   see it, but that is all: it still does not branch per level, is not timed, and ticking a
+   box is not evidence you can pour. Remaining: branch per level, add a clock, and make it
+   cost something to claim.
 
-6. **Two content projects.** `data-vintages.js` (region × year, the Advanced level note
+5. **Two content projects.** `data-vintages.js` (region × year, the Advanced level note
    promises vintages and the bank has none), and sub-region datasets for the atlas renderer —
    which is genuinely good cartography currently locked behind `activeLevel==='intro'`.
 
 ### Explicitly do not do
 
 Don't rewrite the wrapper architecture — a view/tile registry is worth doing *when you write
-codex10*, not as its own project. Don't touch: the LEVELS engine and `applyLevel`, the SRS
+codex12*, not as its own project. Don't touch: the LEVELS engine and `applyLevel`, the SRS
 scheduler, `stratMock`, codex8's "grader is unsure" mechanism, the primers, the encyclopedia,
 or the `exp` field voice — the explanatory tone is the app's best writing.
 
