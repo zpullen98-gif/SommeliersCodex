@@ -1,6 +1,6 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v33';
+const CACHE = 'codex-v34';
 
 const ASSETS = [
   './',
@@ -55,7 +55,12 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      /* Cache Storage is per-ORIGIN, not per-scope. On zpullen98-gif.github.io every
+         project page can see every other project's caches, so deleting everything
+         that is not ours would wipe the offline shells of The Bartender's Ledger,
+         First Light and Calendar For Life. Only ever reap our own prefix. */
+      .then(keys => Promise.all(
+        keys.filter(k => k.startsWith('codex-') && k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim()));
 });
 
