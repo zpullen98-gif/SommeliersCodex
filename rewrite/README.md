@@ -414,14 +414,31 @@ credentialed sommelier review at the end. The ten mechanical checks catch shape,
 coverage, template collision, negation-swallowing and self-grading failures. They
 cannot catch a wrong answer that is wrong only because of what it means.
 
+## CAT must byte-match the shipped app
+
+Rhone was nearly a silent breakage. The category is spelled `Rhône` in the
+imported bank, with a circumflex, and the app hardcodes that exact string in three
+places: the France region list in `core.js`, a topic map in `codex5.js`, and the
+Rhone Ranger badge in `codex3.js`, which tests `s.cat('Rhône') >= 80`.
+
+Writing the sensible-looking `"Rhone"` would have orphaned all 59 questions from
+the region menu and permanently broken a badge, with every mechanical check still
+reporting clean. Nothing in the build would have caught it.
+
+So the ASCII rule has exactly one exception. Question text, options and
+explanations stay pure ASCII. `CAT` is an identifier, not prose, and must be
+copied byte for byte from the bank. Verified after writing: the only non-ASCII
+character in the whole category is that one circumflex, on the `CAT` line, and it
+reaches the emitted JS only in the `cat` field.
+
 ## Scaling to the full job
 
-**Progress: 820 of 3,061 questions (26.8%), 13 of 67 categories.** Rank I: Viticulture &
+**Progress: 1,057 of 3,061 questions (34.5%), 17 of 67 categories.** Rank I: Viticulture &
 Winemaking (69), Tasting & Service (66), Sake & Spirits (64), Bordeaux (63), Burgundy (63),
-United States (61), Italy (61), Sparkling/Fortified/Sweet (61), Champagne (60). Rank II:
-Food & Pairing (65), Italy North (62), Italy Central & South (61), Service & Hospitality (64).
-All thirteen pass every check and the similarity pass. Run `py rewrite/manifest.py` for the
-live count.
+United States (61), Italy (61), Sparkling/Fortified/Sweet (61), Champagne (60), South America
+(60), Spain (59), Rhone (59), Loire (59). Rank II: Food & Pairing (65), Italy North (62),
+Italy Central & South (61), Service & Hospitality (64). All seventeen pass every check and the
+similarity pass. Run `py rewrite/manifest.py` for the live count.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|
