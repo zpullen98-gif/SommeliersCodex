@@ -9,8 +9,16 @@
    is court-wide (a wine list has no rank), so ST.cellar is unprefixed and
    survives every applyLevel; no pictorial glyphs. */
 
-if(typeof ST_DEFAULTS!=='undefined')ST_DEFAULTS.cellar=[];
+/* Deliberately NOT registered in ST_DEFAULTS: stReset walks that list, and
+   "Erase all study statistics" must not take the venue's wine list with it —
+   the list is the venue's property, not a statistic. The schema guarantee
+   the registration would have given is covered by the line below. */
 ST.cellar=ST.cellar||[];
+
+/* Every render site below builds HTML by string, and every bottle field is
+   user text — escape at the sink, always. accept[] stays raw: the grader
+   normalizes it itself and never renders it. */
+function escB(s){return escT(s==null?'':s);}
 
 /* No '|' in ids: level-prefixed stat keys split on it. */
 function mintBottleId(){
@@ -51,26 +59,31 @@ function startCellarDrill(){
   var list=ST.cellar||[];
   if(list.length<3){ if(typeof toast==='function')toast('Add three bottles first — a drill needs neighbours to confuse.'); return; }
   var qs=[];
-  var regions=list.map(function(b){return b.region;}).filter(Boolean);
-  var grapes=list.map(function(b){return b.grapes;}).filter(Boolean);
+  /* Distractor pools compare FOLDED (case/space-insensitive): the banks are
+     authored consistently, a venue list is not, and 'Chardonnay' next to
+     'chardonnay' is the same right answer wearing two coats. */
+  var fold=function(s){return String(s||'').trim().toLowerCase();};
+  var byFold=function(arr){var seen={};return arr.filter(function(x){var f=fold(x);if(!f||seen[f])return false;seen[f]=1;return true;});};
+  var regions=byFold(list.map(function(b){return b.region;}));
+  var grapes=byFold(list.map(function(b){return b.grapes;}));
   var grapeNames=(typeof GRAPES!=='undefined'&&GRAPES&&GRAPES.map)?GRAPES.map(function(g){return g&&(g.n||g.name);}).filter(Boolean):[];
   var regionFallback=['Chablis','Rioja','Barolo','Mosel','Willamette Valley','Marlborough','Stellenbosch','Mendoza'];
   list.forEach(function(b){
-    var label=bottleLabel(b);
+    var label=escB(bottleLabel(b));
     if(b.grapes){
-      var raw=uniqOpts(b.grapes,shuffle(grapes.filter(function(g){return g!==b.grapes;}).concat(shuffle(grapeNames))));
+      var raw=uniqOpts(b.grapes,shuffle(grapes.filter(function(g){return fold(g)!==fold(b.grapes);}).concat(shuffle(grapeNames.filter(function(g){return fold(g)!==fold(b.grapes);})))));
       if(raw.length===4){
         var p=shuffle([0,1,2,3]);
         qs.push({id:b.id+'-gr',cat:'Our List',q:'What is in the glass when a guest orders our '+label+'?',
-          opts:p.map(function(i){return raw[i];}),a:p.indexOf(0),exp:label+' — '+b.grapes+(b.style?'. '+b.style:'.')});
+          opts:p.map(function(i){return escB(raw[i]);}),a:p.indexOf(0),exp:label+' — '+escB(b.grapes)+(b.style?'. '+escB(b.style):'.')});
       }
     }
     if(b.region){
-      var rraw=uniqOpts(b.region,shuffle(regions.filter(function(r){return r!==b.region;}).concat(shuffle(regionFallback))));
+      var rraw=uniqOpts(b.region,shuffle(regions.filter(function(r){return fold(r)!==fold(b.region);}).concat(shuffle(regionFallback.filter(function(r){return fold(r)!==fold(b.region);})))));
       if(rraw.length===4){
         var p2=shuffle([0,1,2,3]);
         qs.push({id:b.id+'-rg',cat:'Our List',q:'Where does our '+label+' come from?',
-          opts:p2.map(function(i){return rraw[i];}),a:p2.indexOf(0),exp:label+' — '+b.region+'.'});
+          opts:p2.map(function(i){return escB(rraw[i]);}),a:p2.indexOf(0),exp:label+' — '+escB(b.region)+'.'});
       }
     }
     if(b.glass){
@@ -79,12 +92,12 @@ function startCellarDrill(){
         var p3=shuffle([0,1,2,3]);
         var shuffled=p3.map(function(i){return praw[i];});
         qs.push({id:b.id+'-pg',cat:'Our List',q:'By the glass, what does our '+label+' pour for?',
-          opts:shuffled,a:shuffled.indexOf(b.glass),exp:label+' — '+b.glass+' by the glass'+(b.bottle?', '+b.bottle+' by the bottle.':'.')});
+          opts:shuffled.map(escB),a:shuffled.indexOf(b.glass),exp:label+' — '+escB(b.glass)+' by the glass'+(b.bottle?', '+escB(b.bottle)+' by the bottle.':'.')});
       }
     }
     if(b.producer&&b.name){
-      qs.push({id:b.id+'-pr',cat:'Our List',sa:1,q:'Who makes our '+b.name+(b.vintage?' '+b.vintage:'')+'? Name the producer.',
-        accept:[b.producer],ans:b.producer,exp:b.producer+' — '+label+'.'});
+      qs.push({id:b.id+'-pr',cat:'Our List',sa:1,q:'Who makes our '+escB(b.name)+(b.vintage?' '+escB(b.vintage):'')+'? Name the producer.',
+        accept:[b.producer],ans:escB(b.producer),exp:escB(b.producer)+' — '+label+'.'});
     }
   });
   if(!qs.length){ if(typeof toast==='function')toast('The list needs grapes, regions or producers before it can ask about them.'); return; }
@@ -114,15 +127,15 @@ function cellarReciteView(){
     return done;
   }
   var b=w.deck[w.idx];
-  var prompt=b.region?'The '+b.region+' pour'+(b.glass?' at '+b.glass:'')+' — call it.':
-             b.style?'The '+b.style.toLowerCase()+' — call it.':'Pour '+(w.idx+1)+' — call it.';
+  var prompt=b.region?'The '+escB(b.region)+' pour'+(b.glass?' at '+escB(b.glass):'')+' — call it.':
+             b.style?'The '+escB(b.style.toLowerCase())+' — call it.':'Pour '+(w.idx+1)+' — call it.';
   var card='<div class="viewhead"><h2>Recite the list</h2><div class="sub">Card '+(w.idx+1)+' of '+w.deck.length+'. Say it out loud before you flip.</div></div>'
     +'<div class="secgroup">'+prompt+'</div>';
   if(w.revealed){
-    card+='<div class="dispute"><div class="mq">'+bottleLabel(b)+'</div>'
-      +(b.grapes?'<div class="ma">'+b.grapes+(b.style?' · '+b.style:'')+'</div>':'')
-      +((b.glass||b.bottle)?'<div class="mu">'+[b.glass?b.glass+' glass':'',b.bottle?b.bottle+' bottle':''].filter(Boolean).join(' · ')+'</div>':'')
-      +(b.note?'<div class="mexp">'+b.note+'</div>':'')+'</div>'
+    card+='<div class="dispute"><div class="mq">'+escB(bottleLabel(b))+'</div>'
+      +(b.grapes?'<div class="ma">'+escB(b.grapes)+(b.style?' · '+escB(b.style):'')+'</div>':'')
+      +((b.glass||b.bottle)?'<div class="mu">'+[b.glass?escB(b.glass)+' glass':'',b.bottle?escB(b.bottle)+' bottle':''].filter(Boolean).join(' · ')+'</div>':'')
+      +(b.note?'<div class="mexp">'+escB(b.note)+'</div>':'')+'</div>'
       +'<div class="sarow"><button class="btn gold" id="cw-next">'+(w.idx+1>=w.deck.length?'Finish the walk':'Next pour')+'</button></div>';
   }else{
     card+='<div class="sarow"><button class="btn gold" id="cw-flip">Flip the card</button>'
@@ -169,13 +182,13 @@ function cellarView(){
   if(list.length){
     html+='<div class="secgroup">On the list ('+list.length+')</div>';
     list.forEach(function(b){
-      html+='<div class="dispute"><div class="mq">'+bottleLabel(b)
-        +(b.glass?' <span class="lvltag">'+b.glass+' gl</span>':'')+'</div>'
-        +((b.region||b.grapes)?'<div class="ma">'+[b.region,b.grapes].filter(Boolean).join(' · ')+'</div>':'')
-        +(b.style?'<div class="mu">'+b.style+'</div>':'')
-        +(b.note?'<div class="mexp">'+b.note+'</div>':'')
-        +'<div class="sarow"><button class="btn small ghost" data-cl-edit="'+b.id+'">Edit</button>'
-        +'<button class="btn small ghost" data-cl-del="'+b.id+'">Remove</button></div></div>';
+      html+='<div class="dispute"><div class="mq">'+escB(bottleLabel(b))
+        +(b.glass?' <span class="lvltag">'+escB(b.glass)+' gl</span>':'')+'</div>'
+        +((b.region||b.grapes)?'<div class="ma">'+[b.region,b.grapes].filter(Boolean).map(escB).join(' · ')+'</div>':'')
+        +(b.style?'<div class="mu">'+escB(b.style)+'</div>':'')
+        +(b.note?'<div class="mexp">'+escB(b.note)+'</div>':'')
+        +'<div class="sarow"><button class="btn small ghost" data-cl-edit="'+escB(b.id)+'">Edit</button>'
+        +'<button class="btn small ghost" data-cl-del="'+escB(b.id)+'">Remove</button></div></div>';
     });
   }else if(!f){
     html+='<div class="sub">Nothing entered yet. Start with the by-the-glass pours — they are the ones the floor asks about.</div>';
@@ -258,14 +271,24 @@ applyLevel=function(lvl,skipRender){
 };
 
 /* The ST.serv lesson: a store nobody merges silently vanishes on import.
-   Union by bottle id, the newer edit wins. */
+   Union by bottle id, the newer edit wins. Fields are coerced to plain
+   strings on the way in — an import is a FILE, and a tampered file must
+   yield at worst a strange-looking bottle, never a strange-behaving one. */
+function cellarSanitize(b){
+  var out={id:String(b.id).slice(0,24),ts:Number(b.ts)||0};
+  ['producer','name','vintage','region','grapes','style','glass','bottle','note'].forEach(function(k){
+    out[k]=typeof b[k]==='string'?b[k].slice(0,300):'';
+  });
+  return out;
+}
 var _v12MergeStats=mergeStats;
 mergeStats=function(inc){
   var err=_v12MergeStats(inc);
   if(!err&&inc&&inc.stats&&Array.isArray(inc.stats.cellar)){
     ST.cellar=ST.cellar||[];
-    inc.stats.cellar.forEach(function(b){
-      if(!b||!b.id)return;
+    inc.stats.cellar.forEach(function(raw){
+      if(!raw||!raw.id)return;
+      var b=cellarSanitize(raw);
       var i=-1; ST.cellar.some(function(x,j){ if(x.id===b.id){i=j;return true;} return false; });
       if(i<0)ST.cellar.push(b);
       else if((b.ts||0)>(ST.cellar[i].ts||0))ST.cellar[i]=b;
@@ -273,4 +296,16 @@ mergeStats=function(inc){
     stSave();
   }
   return err;
+};
+
+/* Cellar drill answers are recorded like any others (statRecord is engine
+   plumbing), but they are the venue's list, not a rank's bank — the home
+   studyline and the readiness gauges must not count wine-list calls toward
+   Court readiness. keyOwned is the one chokepoint every rank aggregate
+   walks through; a cellar key's bare id is w-<8>-<kind> under any prefix. */
+var _v12KeyOwned=keyOwned;
+keyOwned=function(k,lvl){
+  var bare=k.indexOf('|')>-1?k.slice(k.indexOf('|')+1):k;
+  if(/^w-[a-z0-9]{8}-/.test(bare))return false;
+  return _v12KeyOwned(k,lvl);
 };
