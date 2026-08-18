@@ -86,11 +86,12 @@ def check(name):
     mod = importlib.import_module("categories.%s" % name)
     accepted = {a.lower() for a in getattr(mod, "ACCEPTED", [])}
 
+    source = getattr(mod, "SOURCE", "data-intro.js")
     ours = load_objects(os.path.join(HERE, "pilot-%s.js" % mod.SLUG))
-    src_all = load_objects(os.path.join(HERE, "..", "js", "data-intro.js"))
+    src_all = load_objects(os.path.join(HERE, "..", "js", source))
     src_cat = [q for q in src_all if q.get("cat") == mod.CAT]
 
-    print("%s — similarity vs the imported bank" % mod.CAT)
+    print("%s — similarity vs %s" % (mod.CAT, source))
     print("  rewritten            %d" % len(ours))
     print("  imported (whole)     %d" % len(src_all))
     print("  imported (this cat)  %d" % len(src_cat))

@@ -41,14 +41,27 @@ changes completely:
 
 | Path | Does |
 |---|---|
-| `categories/<name>.py` | One category: `CAT`, `SLUG`, `SYLLABUS`, `BANK`, and any `ACCEPTED` phrases a human has cleared |
-| `lib.py` | Minting, option shuffle, structural checks, template-variety check, emit |
+| `categories/<name>.py` | One category: `CAT`, `SLUG`, `SYLLABUS`, `BANK`, plus `PREFIX`/`RANK`/`SOURCE` for Rank II and any `ACCEPTED` phrases a human has cleared |
+| `lib.py` | Minting, balanced option dealing, emit, and five checks |
 | `build.py` | Driver — `py rewrite/build.py bordeaux`, or `--all` |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
 
 `ACCEPTED` records a human verdict so a reviewed false positive is not
 re-litigated every run. Adding to it is a review decision, never a way to quiet
 the checker.
+
+The five checks, all run by `build.py` and all blocking:
+
+| Check | Catches |
+|---|---|
+| `structural` | Shape, syllabus coverage, duplicate stems, id collisions, answer-position clustering, malformed accept lists |
+| `self_grading_problems` | A short answer whose own displayed answer would grade WRONG |
+| `cross_accept_problems` | An accept list broad enough to grade another question's answer |
+| `duplicate_answers` | Two questions testing the same thing |
+| `template_variety` | A stem opener used more than 15% of the time |
+
+`match_sa` is a port of `core.js` `matchSA`, so accept lists are tested the way
+the app will actually grade them rather than by eye.
 
 Ids are minted `i-<8 base36>` by the same FNV-1a 64 over `json.dumps([cat, q])` that
 `.scripts/mint-ids.py` uses, so a generated id is exactly what the real minter would produce.
@@ -144,10 +157,86 @@ used eight times; written deliberately, Bordeaux used no opener twice.
    date, assume the phrasing space is small and choose a different angle on the
    fact from the outset.
 
+## First Rank II category — Food & Pairing, 65 questions
+
+Run early, before 30 more Rank I categories were written against tooling that had
+never met a short answer. That was the right order: **Rank II has an entire class
+of bug Rank I does not.**
+
+A multiple-choice question carries its own answer. A short answer carries an
+`accept` list, which is a grading contract that can be wrong in ways nothing
+about the question text reveals. Four new checks came out of this category.
+
+### The serious one: nine questions would have marked a correct student wrong
+
+`self_grading_problems` grades every question's own displayed `ans` against its
+own `accept` list, using a port of `core.js` `matchSA` — the real branches,
+including `~`strict, numeric and containment. **Nine of 52 short answers failed
+it.** A student reads the answer on the review screen, types exactly that back
+next time, and is marked wrong for giving the answer the app showed them.
+
+Nothing else catches this. It is invisible in the question text, invisible to
+the similarity check, and it would have shipped.
+
+Because it is mechanical rather than editorial, `SA()` now guarantees it: if the
+displayed answer would not grade, it is prepended to the accept list at
+construction. The check remains as verification.
+
+### Accept lists that were too broad
+
+`cross_accept_problems` flagged six. Some were genuinely loose — `serve it`
+would have graded "serve it cooler", "serve it back to the kitchen" or anything
+else opening that way. Others revealed redundancy: `fino` was the answer to two
+different questions.
+
+Both need fixing, for different reasons — tighten the first, differentiate the
+second.
+
+### Questions that were quietly duplicates
+
+`duplicate_answers` found three questions circling the same sweetness rule.
+Neither other check could see it: cross-accept only looks at short answers, and
+the similarity check only ever compares against the source, never the bank
+against itself.
+
+It needed one refinement to be usable. Its first run flagged three Bordeaux
+pairs whose answers were identical — "Cabernet Sauvignon", "Pomerol", "Merlot" —
+which is not redundancy at all; two questions may legitimately share a one-word
+answer while testing entirely different things. **Length is the discriminator.**
+Independently writing the same nine-word sentence twice is not coincidence, so
+the check now requires a substantial answer before it fires.
+
+### Option positions are now dealt, not shuffled
+
+The pilot's per-question shuffle is independently random, which clusters at
+small counts: Food & Pairing's 13 multiple-choice questions put **seven answers
+at position C**, gameable without knowing any wine. Positions are now dealt
+round-robin across the bank and the deal itself shuffled, so the spread differs
+by at most one at any size.
+
+| | before | after |
+|---|---|---|
+| Viticulture (69 MC) | 26/17/17/12 → 18/17/17/17 |
+| Bordeaux (63 MC) | 16/18/13/16 → 16/16/16/15 |
+| Food & Pairing (13 MC) | 2/3/7/1 → 4/3/3/3 |
+
+### Similarity
+
+| | first pass | after |
+|---|---|---|
+| exact stem matches | 0 | 0 |
+| max sequence ratio | 0.632 | **0.560** |
+| longest shared word run | 6 | 5 |
+| flagged | 2 | **0** |
+
+Two collisions, both fixed by the rule Bordeaux established: change the task.
+Notably the flag count keeps falling as the rules accumulate — 11 of 69, then 3
+of 63, now 2 of 65.
+
 ## Scaling to the full job
 
-**Progress: 132 of 3,061 questions, 2 of 67 categories.** Viticulture & Winemaking (69) and
-Bordeaux (63), both Rank I, both clearing the similarity check.
+**Progress: 197 of 3,061 questions, 3 of 67 categories.** Viticulture & Winemaking (69) and
+Bordeaux (63) in Rank I, Food & Pairing (65) in Rank II. All three clear the similarity check.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|

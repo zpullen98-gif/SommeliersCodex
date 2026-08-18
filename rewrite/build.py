@@ -22,21 +22,27 @@ import lib  # noqa: E402
 def build(name):
     mod = importlib.import_module("categories.%s" % name)
     bank = [dict(e) for e in mod.BANK]
+    prefix = getattr(mod, "PREFIX", "i")
+    rank = getattr(mod, "RANK", "Rank I")
 
     # Bake the option order in before checking or emitting, so the checks run
-    # against exactly what ships.
-    for e in bank:
-        e["opts"], e["a"] = lib.shuffle(e["opts"], e["a"], e["q"])
+    # against exactly what ships. Short-answer entries have nothing to shuffle.
+    lib.bake_option_order(bank, mod.CAT)
 
-    problems, stats = lib.structural(bank, mod.SYLLABUS, mod.CAT)
+    problems, stats = lib.structural(bank, mod.SYLLABUS, mod.CAT, prefix)
     tmpl_problems, openers = lib.template_variety(bank)
     problems += tmpl_problems
+    problems += lib.self_grading_problems(bank)
+    problems += lib.cross_accept_problems(bank)
+    problems += lib.duplicate_answers(bank)
 
     target = sum(t for _, t in mod.SYLLABUS)
-    print("%s — %s" % (mod.CAT, mod.SLUG))
+    print("%s — %s (%s)" % (mod.CAT, mod.SLUG, rank))
     print("  written %d questions across %d syllabus blocks (target %d)"
           % (len(bank), len(mod.SYLLABUS), target))
-    print("  answer spread   %s" % stats["spread"])
+    print("  types           %d multiple choice, %d short answer" % (stats["mc"], stats["sa"]))
+    if stats["mc"]:
+        print("  answer spread   %s" % stats["spread"])
     print("  unique ids      %d" % stats["ids"])
     print("  distinct stem openers %d of %d questions; most common %s"
           % (len(openers), len(bank), openers.most_common(1)[0] if openers else "-"))
@@ -48,7 +54,7 @@ def build(name):
     else:
         print("  checks          all passed")
 
-    dest, size = lib.emit(bank, mod.CAT, mod.SLUG)
+    dest, size = lib.emit(bank, mod.CAT, mod.SLUG, prefix, rank)
     print("  wrote           %s (%d bytes)\n" % (os.path.basename(dest), size))
     return not problems
 
