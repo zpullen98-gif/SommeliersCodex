@@ -34,6 +34,9 @@ def build(name):
     problems += tmpl_problems
     problems += lib.banned_template_problems(bank)
     problems += lib.self_grading_problems(bank)
+    problems += lib.loose_tilde_problems(bank)
+    problems += lib.compound_answer_problems(bank)
+    problems += lib.negation_probe_problems(bank)
     problems += lib.cross_accept_problems(bank)
     problems += lib.duplicate_answers(bank)
 

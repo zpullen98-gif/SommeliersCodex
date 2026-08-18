@@ -35,8 +35,19 @@ def Q(block, q, opts, a, exp):
 def SA(block, q, ans, accept, exp, ex=False):
     """Short answer. `accept` is graded by core.js matchSA; see accept_problems.
 
-    Prefix an accept entry with '~' to demand a strict canonical match, which is
-    what you want whenever a loose one would swallow a wrong answer.
+    READ THIS BEFORE USING '~'. The tilde is NOT a strict match. core.js accepts
+    a tilde entry when the input equals it OR CONTAINS IT AS A WHOLE WORD, so a
+    single-word tilde entry matches that word anywhere in a wrong answer:
+
+        accept ['~young']  grades "old wine first, young wine second"  -> CORRECT
+        accept ['~port']   grades "tawny port"                          -> CORRECT
+        accept ['~contrast'] grades "complement not contrast"           -> CORRECT
+
+    Each of those is the opposite of the intended answer. For a one-word answer
+    the real strict mode is ex=True, which makes EVERY accept entry exact-match
+    only; then list the exact phrasings you will take, e.g.
+        SA(..., "Contrast", ["contrast", "contrasting", "by contrast"], ..., ex=True)
+    lib.loose_tilde_problems enforces this and the build fails on it.
     """
     e = {"block": block, "q": q, "sa": 1, "accept": list(accept), "ans": ans, "exp": exp}
     if ex:
@@ -167,9 +178,16 @@ def accept_problems(e):
         if n in seen:
             out.append("accept %r duplicates another entry once normalised: %s" % (a, stem))
         seen.add(n)
-        # Below four characters matchSA falls through to exact-match only, which
-        # is usually intended but worth surfacing.
-        if len(n) < 4 and not a.startswith("~"):
+        # Below four characters matchSA falls through to exact-match only. That is
+        # worth surfacing normally, but under ex=True exact matching is the whole
+        # point of the entry, so it would be pure noise.
+        # A short entry only matches exactly, which is worth surfacing unless it
+        # is a deliberate shorthand sitting alongside a fuller form in the same
+        # list ("six" beside "six half turns"), or the question is ex=True where
+        # exact matching is the whole point.
+        covered = any(other is not a and n in engine_norm(other.lstrip("~")).split()
+                      for other in acc)
+        if len(n) < 4 and not a.startswith("~") and not e.get("ex") and not covered:
             out.append("accept %r is short, so only an exact match will grade it: %s" % (a, stem))
     return out
 
@@ -222,6 +240,21 @@ def structural(bank, syllabus, cat, prefix="i"):
     }
 
 
+NEG_WORDS = {"not", "no", "never", "without", "lack", "lacks", "lacking",
+             "absence", "opposite", "rather", "wrong", "incorrect"}
+
+
+def _negated_against(input_norm, accept_norm):
+    """Mirror of core.js negatedAgainst. A containment match cannot see a "not",
+    so the guard fires when the INPUT carries a negation the accepted phrase does
+    not. Exact matches are returned before this is consulted, so an answer that
+    legitimately contains a negation still grades."""
+    toks = set(input_norm.split())
+    if not (toks & NEG_WORDS):
+        return False
+    return not (set(accept_norm.split()) & NEG_WORDS)
+
+
 def match_sa(entry, text):
     """Port of core.js matchSA, so an accept list can be tested the way the app
     will actually grade it, including the ~strict, numeric and containment
@@ -239,7 +272,7 @@ def match_sa(entry, text):
     for acc in entry.get("accept") or []:
         if acc.startswith("~"):
             nc = engine_norm(acc[1:])
-            if nc and (a == nc or (len(nc) >= 4 and
+            if nc and (a == nc or (len(nc) >= 4 and not _negated_against(a, nc) and
                                    re.search(r"(^| )%s( |$)" % re.escape(nc), a))):
                 return True
             continue
@@ -251,16 +284,16 @@ def match_sa(entry, text):
         if entry.get("ex"):
             continue
         if re.match(r"^\$?\d+(\.\d+)?%?$", acc.strip()):
-            if any(norm_num(n) == norm_num(acc) for n in input_nums):
+            if not _negated_against(a, na) and any(norm_num(n) == norm_num(acc) for n in input_nums):
                 return True
             continue
-        if len(na) >= 4 and re.search(r"(^| )%s( |$)" % re.escape(na), a):
+        if len(na) >= 4 and not _negated_against(a, na) and            re.search(r"(^| )%s( |$)" % re.escape(na), a):
             return True
         aw, nw = len(a.split()), len(na.split())
         import math
-        if len(a) >= 5 and aw >= max(1, math.ceil(nw * 0.6)) and            re.search(r"(^| )%s( |$)" % re.escape(a), na):
+        if len(a) >= 5 and not _negated_against(a, na) and aw >= max(1, math.ceil(nw * 0.6)) and            re.search(r"(^| )%s( |$)" % re.escape(a), na):
             return True
-        if len(na) >= 5 and re.search(r"[a-z]", na) and            (na in a or (a in na and len(a) >= 5 and aw >= max(1, math.ceil(nw * 0.6)))):
+        if len(na) >= 5 and not _negated_against(a, na) and re.search(r"[a-z]", na) and            (na in a or (a in na and len(a) >= 5 and aw >= max(1, math.ceil(nw * 0.6)))):
             return True
     return False
 
@@ -282,6 +315,131 @@ def self_grading_problems(bank):
     return out
 
 
+def loose_tilde_problems(bank):
+    """Flag single-word '~' accepts, which match that word anywhere in the input.
+
+    Found by an adversarial fact-check, not by any check written here: '~young'
+    on a question about serving young wine before old grades "old wine first,
+    young wine second" as correct, confirming a student in the exact reverse of
+    the rule. The tilde was documented as a strict match and is not one.
+
+    A multi-word tilde entry is far safer, since a whole phrase appearing inside
+    a wrong answer is unlikely. The single-word case is the trap, and ex=True is
+    the genuine strict mode.
+
+    Flagging EVERY single-word tilde produces mostly noise: '~coravin' is
+    harmless because no wrong answer to that question contains "coravin". The
+    discriminator is whether the word RECURS ELSEWHERE IN THE CATEGORY. If it
+    turns up in other stems, answers or explanations, it is live vocabulary in
+    this subject and a wrong answer plausibly contains it, which is exactly how
+    '~young' came to grade "old wine first, young wine second" as correct.
+    """
+    corpus = " ".join(
+        engine_norm(" ".join([e.get("q", ""), e.get("ans", ""), e.get("exp", "")] +
+                             list(e.get("opts") or [])))
+        for e in bank
+    ).split()
+    from collections import Counter
+    freq = Counter(corpus)
+
+    out = []
+    for e in bank:
+        # Deliberately NOT skipping ex=True. In core.js the '~' branch returns or
+        # continues before the ex check is ever reached, so ex=True does not make
+        # a tilde entry strict. Skipping those questions here left the riskiest
+        # combination unchecked.
+        if is_mc(e):
+            continue
+        own = set(engine_norm(" ".join([e.get("q", ""), e.get("ans", ""), e.get("exp", "")])).split())
+        for a in e.get("accept") or []:
+            if not a.startswith("~"):
+                continue
+            n = engine_norm(a[1:])
+            if not n or len(n.split()) != 1:
+                continue
+            # Occurrences beyond this question's own stem/answer/explanation.
+            elsewhere = freq[n] - (1 if n in own else 0)
+            if elsewhere >= 2:
+                out.append("accept %r is one word and %r appears %d more times in this "
+                           "category, so a wrong answer can contain it; use ex=True with "
+                           "exact phrasings: %r" % (a, n, elsewhere, e["q"][:44]))
+    return out
+
+
+# A token set rather than a regex: an escaped word-boundary in this file was
+# once written as a literal backspace byte, so the pattern silently matched
+# nothing and the check reported clean. Tokens cannot be mangled that way.
+COMPOUND_WORDS = {"two", "three", "both", "pair", "each"}
+
+
+def compound_answer_problems(bank):
+    """Flag a question demanding several items whose accept list takes one word.
+
+    The tilde-recurrence check misses this: '~fino' on "Which TWO Sherry styles
+    are served cold?" grades "fino and amontillado" correct, because the entry
+    only ever verifies half the answer. Amontillado is oxidatively aged and is
+    the opposite of what the question tests. Found by adversarial fact-check.
+    """
+    out = []
+    for e in bank:
+        if is_mc(e) or not (set(engine_norm(e.get("q", "")).split()) & COMPOUND_WORDS):
+            continue
+        for a in e.get("accept") or []:
+            n = engine_norm(a[1:] if a.startswith("~") else a)
+            if n and len(n.split()) == 1:
+                out.append("stem asks for several items but accept %r is one word, so it "
+                           "grades a half-right answer as correct: %r" % (a, e["q"][:44]))
+    return out
+
+
+NEGATION_FRAMES = [
+    "not %s", "no %s", "lack of %s", "absence of %s", "without %s",
+    "%s is wrong", "rather than %s", "opposite of %s", "never %s",
+]
+
+
+def negation_probe_problems(bank):
+    """Probe every short answer with negated forms of its own answer.
+
+    This is the general form of a bug two adversarial reviewers found and the
+    earlier heuristics only approximated. Any accept entry that core.js matches
+    by CONTAINMENT will also match a wrong answer that contains it inside a
+    negation, because containment cannot see the "not":
+
+        accept ['~vibration'] grades "absence of vibration"        -> CORRECT
+        accept ['~oxidation'] grades "reduction rather than oxidation" -> CORRECT
+        accept ['fifo']       grades "not fifo, lifo"              -> CORRECT
+
+    Rather than guessing which words are risky, construct the negations from the
+    question's own answer and accept list and check the grader rejects them. If
+    the student can be marked right for saying the opposite, the entry is unsafe
+    whatever it looks like.
+    """
+    out = []
+    for e in bank:
+        if is_mc(e):
+            continue
+        seeds = [e.get("ans", "")] + [a[1:] if a.startswith("~") else a
+                                      for a in (e.get("accept") or [])]
+        seen = set()
+        for seed in seeds:
+            n = engine_norm(seed)
+            if not n or n in seen:
+                continue
+            seen.add(n)
+            for frame in NEGATION_FRAMES:
+                probe = frame % n
+                if match_sa(e, probe):
+                    out.append("grades the NEGATION %r as correct, so a student can be "
+                               "marked right for saying the opposite: %r"
+                               % (probe, e["q"][:44]))
+                    break
+            else:
+                continue
+            break
+    return out
+
+
 def cross_accept_problems(bank):
     """Catch an accept list broad enough to grade a DIFFERENT question's answer
     correct. A loose entry like 'acid' is the classic way a bank starts marking
@@ -295,10 +453,21 @@ def cross_accept_problems(bank):
         for other in sa:
             if other is e:
                 continue
+            # Under ex=True the other question's accepts match EXACTLY, so they
+            # cannot swallow this question's answer by containment and the
+            # analysis below does not apply to them.
+            if other.get("ex"):
+                continue
             for a in other.get("accept") or []:
                 if a.startswith("~"):
                     continue
                 na = engine_norm(a[1:] if a.startswith("~") else a)
+                # An entry that simply IS its own question's answer is legitimate
+                # even when another question shares that answer: "acidity" on a
+                # question answered "Acidity" is not too broad. The real target
+                # is a generic fragment like "serve it".
+                if na == engine_norm(other.get("ans", "")):
+                    continue
                 if len(na) >= 4 and re.search(r"(^| )%s( |$)" % re.escape(na), mine):
                     out.append("accept %r on %r would also grade the answer to %r"
                                % (a, other["q"][:40], e["q"][:40]))

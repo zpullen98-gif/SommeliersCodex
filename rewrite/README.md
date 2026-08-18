@@ -302,11 +302,95 @@ have silently overwritten the Rank I output file.
 Modules are now `r1_*` / `r2_*`, slugs carry the rank, and the manifest keys on
 the pair. Cheap at three categories; expensive at thirty.
 
+## Four categories in parallel, and a defect in the shipped grader
+
+Service & Hospitality (64, Rank II), Sake & Spirits (64), United States (61) and
+Italy (61) were written concurrently, one agent per category, each given the three
+stem rules and the banned-construction list up front and hard-blocked from reading
+the imported banks. Each was then fact-checked by two independent reviewers with
+different lenses: one on factual claims, one attacking the answer keys.
+
+Writing them with the rules in hand rather than discovering the rules worked: three
+of the four came back with ZERO similarity flags on the first pass, against 11 of 69
+for the original pilot.
+
+The fact-check returned 0 critical and 10 moderate findings, with every answer key in
+all four categories confirmed correct by both lenses. The catches were specific and
+sourced: a distractor defining muroka as its exact opposite (it means WITHOUT
+filtration); the California 100 percent appellation rule contradicting a blanket
+"75 percent" claim; Sassicaia called a Bolgheri subzone when it has been an
+independent DOC since 2013; Chianti Classico implied to be a Chianti subzone when it
+has been separate since 1996.
+
+### The tilde was never a strict match
+
+The most valuable finding was about this tooling, not about wine. The tilde was
+documented here as a strict match. It is not: core.js accepts a tilde entry on
+whole-word CONTAINMENT, so a one-word tilde matches that word anywhere inside a
+wrong answer.
+
+    accept ['~young']    graded "old wine first, young wine second"
+    accept ['~contrast'] graded "complement not contrast"
+
+Both are the reverse of the intended answer, and one of them was in a category
+written here. A reviewer found it by running this repo's own match_sa against
+adversarial inputs, which none of the six checks then did.
+
+### Which led to a defect in the product itself
+
+Probing further showed the problem was never confined to the rewrite. Containment
+matching cannot see a "not", so across the three shipped short-answer banks 1,750 of
+1,773 questions graded at least one negation of their own answer as correct,
+including 947 of 950 in the Knight and Ruler banks, which are the whole paid tier.
+
+That cannot be fixed question by question, and it was fixed in js/core.js instead: a
+guard that fires when the input carries a negation the accepted phrase does not, on
+the containment and numeric branches only. Exact matches return first, so an answer
+that legitimately contains a negation still grades. Result: 1,663 false accepts
+removed, 95 percent of the defect, for 15 new false rejects, 0.9 percent.
+
+The trade is the right way round. A false reject is recoverable through the existing
+override screen, which exists precisely to record accept lists needing widening. A
+false accept silently teaches the wrong fact and nobody ever sees it.
+
+### Checks added, and one that lied
+
+Four checks came out of this: negation_probe_problems (build negations from each
+question's own answer and confirm the grader rejects them), loose_tilde_problems,
+compound_answer_problems, and a widened duplicate_answers.
+
+compound_answer_problems reported clean while it was broken. Heredoc escaping had
+written its word-boundary escape as a literal backspace byte, so the pattern matched
+nothing; cat -v showed the control character. It is now a token-set test with no
+escapes to mangle. A check that reports clean because it is broken is worse than no
+check at all.
+
+Two checks had to be retuned rather than obeyed. The first tilde check flagged all 59
+single-word entries, which is noise that gets ignored, so it now keys on whether the
+word recurs in the category. cross_accept_problems was flagging an entry that simply
+IS its own question's answer, and was ignoring that ex=True matches exactly.
+Over-firing checks get switched off, so they are worth tuning.
+
+### ex=True is not a blanket remedy
+
+The repair pass applied ex=True to 13 short answers without widening their accept
+lists, and a verifier caught that all 13 then rejected natural phrasings of their own
+answer. It also caught three flags cleared by rewriting the stem so the checker
+stopped looking, rather than by fixing the accept list.
+
+ex=True is right only where a wrong answer can contain the right one as a qualified
+phrase: tawny against vintage port, synthetic against natural cork, or "old wine
+first, young wine second". The negation guard cannot see those, because there is no
+negation word in them. It was relaxed on the nine questions that never had that
+hazard.
+
 ## Scaling to the full job
 
-**Progress: 326 of 3,061 questions (10.7%), 5 of 67 categories.** Rank I: Viticulture &
-Winemaking (69), Bordeaux (63), Tasting & Service (66), Burgundy (63). Rank II: Food & Pairing (65).
-All clear the similarity check. Run `py rewrite/manifest.py` for the live count.
+**Progress: 576 of 3,061 questions (18.8%), 9 of 67 categories.** Rank I: Viticulture &
+Winemaking (69), Tasting & Service (66), Sake & Spirits (64), Bordeaux (63), Burgundy (63),
+United States (61), Italy (61). Rank II: Food & Pairing (65), Service & Hospitality (64).
+All nine pass all nine checks and the similarity pass. Run `py rewrite/manifest.py` for the
+live count.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|
