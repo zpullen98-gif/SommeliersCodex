@@ -10,7 +10,10 @@ Written from the syllabus below. The imported bank was not read while writing.
 from lib import Q
 
 CAT = "Bordeaux"
-SLUG = "bordeaux"
+PREFIX = "i"
+RANK = "Rank I"
+SOURCE = "data-intro.js"
+SLUG = "r1-bordeaux"
 
 SYLLABUS = [
     ("Geography and the rivers", 6),
@@ -167,7 +170,7 @@ BANK = [
        "Permission to use Merlot", "An appellation of its own"], 0,
       "Pomerol has never been classified. Reputation and price do the ranking instead, which has not held its best estates back."),
     Q("Right Bank appellations",
-      "Which is the largest of the Right Bank's fine wine appellations?",
+      "Pomerol, Fronsac and Lalande-de-Pomerol are all small. Which Right Bank neighbour dwarfs them?",
       ["Saint-Emilion", "Pomerol", "Fronsac", "Lalande-de-Pomerol"], 0,
       "Saint-Emilion dwarfs its neighbours in area and number of estates, which is part of why it needs a classification and Pomerol does not."),
     Q("Right Bank appellations",

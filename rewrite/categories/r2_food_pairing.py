@@ -16,7 +16,7 @@ Written from the syllabus below. The imported bank was not read while writing.
 from lib import Q, SA
 
 CAT = "Food & Pairing"
-SLUG = "food-pairing"
+SLUG = "r2-food-pairing"
 PREFIX = "c"
 RANK = "Rank II"
 SOURCE = "data-questions.js"

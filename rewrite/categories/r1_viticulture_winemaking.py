@@ -10,7 +10,10 @@ it was read only afterwards, by check-similarity.py, to verify independence.
 from lib import Q
 
 CAT = "Viticulture & Winemaking"
-SLUG = "viticulture-winemaking"
+PREFIX = "i"
+RANK = "Rank I"
+SOURCE = "data-intro.js"
+SLUG = "r1-viticulture-winemaking"
 
 # Reviewed by a human and cleared: each is shared *topic* vocabulary, which the
 # compliance framework says is not evidence of copying. Recorded so they are not

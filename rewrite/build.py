@@ -32,6 +32,7 @@ def build(name):
     problems, stats = lib.structural(bank, mod.SYLLABUS, mod.CAT, prefix)
     tmpl_problems, openers = lib.template_variety(bank)
     problems += tmpl_problems
+    problems += lib.banned_template_problems(bank)
     problems += lib.self_grading_problems(bank)
     problems += lib.cross_accept_problems(bank)
     problems += lib.duplicate_answers(bank)

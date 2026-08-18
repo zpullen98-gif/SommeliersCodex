@@ -338,6 +338,37 @@ def duplicate_answers(bank, limit=0.85, min_words=5):
     return out
 
 
+# Stem constructions that have actually produced a collision with the imported
+# bank. Each earned its place by being flagged at least once — the point is that
+# documenting "vary your templates" in the README did not stop them being
+# reached for again, so the rule is enforced here instead of trusted.
+BANNED_TEMPLATES = [
+    ("is best described as", "flagged in Viticulture twice and Burgundy once"),
+    ("are there", "Burgundy: 'How many Beaujolais crus are there?'"),
+    ("made by which method", "Burgundy: collided with a Prosecco question"),
+    ("which is the largest", "Burgundy: collided with a Northern Rhone question"),
+    ("what share of", "Burgundy: collided with the same Grand Cru share question"),
+    ("defined as", "Tasting & Service: collided with a Vinification question"),
+]
+
+
+def banned_template_problems(bank):
+    """Flag stem constructions with a collision history.
+
+    These are not forbidden English; they are constructions that two authors
+    independently reach for when asking the same kind of question, which is
+    exactly how a stem ends up matching a source it was never read from.
+    """
+    out = []
+    for e in bank:
+        stem = " ".join(norm(e["q"]))
+        for phrase, why in BANNED_TEMPLATES:
+            if phrase in stem:
+                out.append("stem uses %r, which has collided before (%s): %r"
+                           % (phrase, why, e["q"][:60]))
+    return out
+
+
 def template_variety(bank):
     """Flag stem-template ruts, the pilot's finding.
 

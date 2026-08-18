@@ -3,7 +3,7 @@
    the imported bank it replaces. Generated file - edit the category module,
    not this. Ids use the same FNV-1a scheme as .scripts/mint-ids.py.
    ============ */
-var REWRITE_FOOD_PAIRING=[
+var REWRITE_R2_FOOD_PAIRING=[
 {"id": "c-94hoghba", "cat": "Food & Pairing", "q": "Name the two broad strategies for pairing, one matching like with like and the other setting them against each other.", "sa": 1, "accept": ["complement and contrast", "contrast and complement", "complementary and contrasting", "matching and contrasting"], "ans": "Complement and contrast", "exp": "Complement echoes a quality the dish already has; contrast supplies what it lacks. Most classic pairings are one or the other stated plainly."},
 {"id": "c-36srm90k", "cat": "Food & Pairing", "q": "Before any question of flavour, which single structural quality should be matched between dish and wine?", "sa": 1, "accept": ["~weight", "~body", "weight body", "body weight"], "ans": "Weight, or body", "exp": "A delicate wine disappears under a heavy dish and a heavy wine flattens a delicate one. Weight is the first filter and it settles most bad pairings before flavour is considered."},
 {"id": "c-i9biur1c", "cat": "Food & Pairing", "q": "A dish's sweetness sets a floor for the wine. What follows from that?", "opts": ["The wine must be at least as sweet as the dish", "The wine should be drier than the dish", "The wine should be higher in alcohol", "Sweetness in food has no bearing on wine"], "a": 0, "exp": "Sweeter food strips a wine of fruit and leaves acid and alcohol exposed. Matching or exceeding the dish's sweetness is the one near-inviolable rule of dessert pairing."},

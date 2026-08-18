@@ -43,7 +43,8 @@ changes completely:
 |---|---|
 | `categories/<name>.py` | One category: `CAT`, `SLUG`, `SYLLABUS`, `BANK`, plus `PREFIX`/`RANK`/`SOURCE` for Rank II and any `ACCEPTED` phrases a human has cleared |
 | `lib.py` | Minting, balanced option dealing, emit, and five checks |
-| `build.py` | Driver — `py rewrite/build.py bordeaux`, or `--all` |
+| `build.py` | Driver — `py rewrite/build.py r1_bordeaux`, or `--all` |
+| `manifest.py` | Progress across all 67 categories, and what is largest next |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
 
 `ACCEPTED` records a human verdict so a reviewed false positive is not
@@ -59,6 +60,7 @@ The five checks, all run by `build.py` and all blocking:
 | `cross_accept_problems` | An accept list broad enough to grade another question's answer |
 | `duplicate_answers` | Two questions testing the same thing |
 | `template_variety` | A stem opener used more than 15% of the time |
+| `banned_template_problems` | A construction with a collision history, e.g. "is best described as" |
 
 `match_sa` is a port of `core.js` `matchSA`, so accept lists are tested the way
 the app will actually grade them rather than by eye.
@@ -233,10 +235,78 @@ Two collisions, both fixed by the rule Bordeaux established: change the task.
 Notably the flag count keeps falling as the rules accumulate — 11 of 69, then 3
 of 63, now 2 of 65.
 
+## Burgundy and Tasting & Service — 129 more, and a third rule
+
+Two Rank I categories written with both existing rules applied from the start.
+Both produced findings, and neither was about wine.
+
+### Documenting a rule does not enforce it
+
+Burgundy came back with a **0.933 sequence ratio**: "Burgundy's climate is best
+described as what?" against "Burgundy's climate is best described as:". That is
+the *same construction the pilot flagged twice*, written into a new category by
+the same author who had written the rule against it into this file.
+
+The conclusion is not that the rule is wrong. It is that a rule living only in
+prose gets reached for anyway. `BANNED_TEMPLATES` in `lib.py` now holds every
+construction with a collision history, each annotated with where it collided,
+and the build fails on them.
+
+It earned its keep immediately: switching it on flagged a **latent** case in
+Bordeaux — "Which is the largest of the Right Bank's fine wine appellations?" —
+which had passed the similarity check because it happened not to collide in that
+bank, while using a construction that collided in another.
+
+### Rule three: do not lead with the subject
+
+Tasting & Service flagged seven, and every one had the same shape:
+
+| ours | source |
+|---|---|
+| "Primary aromas in wine originate from what?" | "Primary aromas in wine derive from:" |
+| "Tannin is perceived as what kind of sensation?" | "Tannin is perceived as:" |
+| "Decanting an old red is primarily done for what reason?" | "Decanting an old red wine is primarily done to:" |
+
+Every collision was a stem that **leads with the subject noun and then asks about
+it.** When the task is define-or-explain X, the subject has to come first, so
+both authors write the same opening clause — and varying the opener cannot help,
+because the opener is forced by the question type.
+
+The fix is to invert: lead with the symptom, observation or scenario, and let
+the subject become the answer.
+
+> "Tannin is perceived as what kind of sensation?"
+> becomes "Which wine component registers as touch rather than as a taste?"
+
+> "Decanting an old red is primarily done for what reason?"
+> becomes "A forty-year-old red has thrown a heavy deposit. What is the decant
+> chiefly achieving?"
+
+This also happens to be better assessment: recognising astringency from a
+description is a more useful skill than reciting which component it belongs to.
+
+| | Burgundy first pass | after | Tasting first pass | after |
+|---|---|---|---|---|
+| max sequence ratio | **0.933** | 0.545 | 0.769 | 0.533 |
+| longest shared run | 7 | 4 | 6 | 4 |
+| flagged | 6 | **0** | 7 | **0** |
+
+### Categories are namespaced by rank
+
+The manifest exposed a structural fault: **category names repeat across ranks.**
+There is a Bordeaux in Rank I (63 questions, all multiple choice) and another in
+Rank II (54, mostly short answer), and likewise Viticulture and Food & Pairing.
+Modules keyed on name alone double-counted progress, and a Rank II Bordeaux would
+have silently overwritten the Rank I output file.
+
+Modules are now `r1_*` / `r2_*`, slugs carry the rank, and the manifest keys on
+the pair. Cheap at three categories; expensive at thirty.
+
 ## Scaling to the full job
 
-**Progress: 197 of 3,061 questions, 3 of 67 categories.** Viticulture & Winemaking (69) and
-Bordeaux (63) in Rank I, Food & Pairing (65) in Rank II. All three clear the similarity check.
+**Progress: 326 of 3,061 questions (10.7%), 5 of 67 categories.** Rank I: Viticulture &
+Winemaking (69), Bordeaux (63), Tasting & Service (66), Burgundy (63). Rank II: Food & Pairing (65).
+All clear the similarity check. Run `py rewrite/manifest.py` for the live count.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|
