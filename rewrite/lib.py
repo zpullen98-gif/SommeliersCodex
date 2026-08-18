@@ -187,7 +187,11 @@ def accept_problems(e):
         # exact matching is the whole point.
         covered = any(other is not a and n in engine_norm(other.lstrip("~")).split()
                       for other in acc)
-        if len(n) < 4 and not a.startswith("~") and not e.get("ex") and not covered:
+        # A purely numeric entry ("80%", "6") is meant to be exact: matchSA has a
+        # dedicated numeric branch for it, and no spelled-out variant covers it
+        # because engine_norm keeps the percent sign.
+        numeric = re.match(r"^[\d.,%$]+$", n) is not None
+        if len(n) < 4 and not a.startswith("~") and not e.get("ex") and not covered and not numeric:
             out.append("accept %r is short, so only an exact match will grade it: %s" % (a, stem))
     return out
 
