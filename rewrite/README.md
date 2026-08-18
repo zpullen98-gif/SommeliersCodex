@@ -39,10 +39,16 @@ changes completely:
 
 ## Tooling
 
-| Script | Does |
+| Path | Does |
 |---|---|
-| `build-pilot.py` | Holds the syllabus and the questions, bakes the option shuffle, mints ids, runs structural checks, emits the bank |
-| `check-similarity.py` | Multi-test similarity against the imported bank: exact stem, longest shared word run, sequence ratio |
+| `categories/<name>.py` | One category: `CAT`, `SLUG`, `SYLLABUS`, `BANK`, and any `ACCEPTED` phrases a human has cleared |
+| `lib.py` | Minting, option shuffle, structural checks, template-variety check, emit |
+| `build.py` | Driver — `py rewrite/build.py bordeaux`, or `--all` |
+| `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
+
+`ACCEPTED` records a human verdict so a reviewed false positive is not
+re-litigated every run. Adding to it is a review decision, never a way to quiet
+the checker.
 
 Ids are minted `i-<8 base36>` by the same FNV-1a 64 over `json.dumps([cat, q])` that
 `.scripts/mint-ids.py` uses, so a generated id is exactly what the real minter would produce.
@@ -90,7 +96,58 @@ evidence of copying. Recorded here so they are not re-litigated on every run:
 The 0.60 ratio threshold is deliberately tight for short stems, so it over-flags. That is the right
 direction of error: it flags for a human to read and clears nothing on its own.
 
+## Second category — Bordeaux, 63 questions
+
+Run to test the pilot's amendment: vary stem construction *deliberately from the
+start* rather than reframing collisions afterwards. `lib.template_variety` now
+enforces it, flagging any stem opener used more than 15% of the time.
+
+It half worked, and the half that failed is the more useful result.
+
+**Opener variation is necessary but not sufficient.** Bordeaux achieved **63
+distinct stem openers across 63 questions** — perfect variety by that measure —
+and still produced three collisions on the first pass, one sharing a **seven-word
+consecutive run**:
+
+> ours: "Pauillac contains how many of the five First Growths?"
+> source: "Pauillac is home to how many of the five First Growths?"
+
+The reason is that a narrow factual question has a genuinely small phrasing
+space. There are only so many ways to ask how many First Growths sit in Pauillac.
+Varying the *opening* does not help when the convergence is in the body of the
+question.
+
+The fix is the same as before and it is the only one that works: **change the
+task, not the words.** That question became "Margaux and Haut-Brion are two of the
+five First Growths. Where are the other three?" — same competency, different
+cognitive operation, no shared run.
+
+| | first pass | after |
+|---|---|---|
+| exact stem matches | 0 | 0 |
+| max sequence ratio | 0.800 | **0.560** |
+| longest shared word run | **7** | 5 |
+| flagged for review | 3 | **0** |
+| distinct stem openers | 63 / 63 | 63 / 63 |
+
+Bordeaux clears with nothing flagged at all, which Viticulture did not manage.
+The comparison between them is the argument for doing it deliberately: written
+reactively, Viticulture ended at 62 distinct openers of 69 with "what is the"
+used eight times; written deliberately, Bordeaux used no opener twice.
+
+### Two rules for the remaining categories
+
+1. **Vary the opener deliberately.** Cheap, enforced by the build, and it
+   removes the whole class of template ruts.
+2. **Expect narrow factual questions to converge anyway, and reframe the task
+   when they do.** For any question whose answer is a number, a single name or a
+   date, assume the phrasing space is small and choose a different angle on the
+   fact from the outset.
+
 ## Scaling to the full job
+
+**Progress: 132 of 3,061 questions, 2 of 67 categories.** Viticulture & Winemaking (69) and
+Bordeaux (63), both Rank I, both clearing the similarity check.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|

@@ -1,33 +1,28 @@
-"""Rank I rewrite pilot — Viticulture & Winemaking.
+"""Rank I rewrite — Viticulture & Winemaking (69 questions).
 
-Generates 69 independent Introductory-level questions to replace the imported
-`data-intro.js` slice of the same category and count.
+The pilot category. Ported unchanged from the original rewrite/build-pilot.py;
+the emitted bank is byte-identical, which is the regression test for the port.
 
-METHOD (the point of the pilot). These were written from a syllabus of
-competencies for the category, laid out in SYLLABUS below, NOT from the source
-questions. The source slice was never read while writing them. That is the
-whole discipline: rewriting question-by-question produces paraphrases, which
-carry the same exposure as the original plus the wasted effort. The unit of
-work is a competency and a target count.
-
-Shape matches Rank I exactly: 100% four-option multiple choice, fields
-id/cat/q/opts/a/exp, ids minted `i-<8 base36>` by the same FNV-1a 64 over
-json.dumps([cat, q]) that .scripts/mint-ids.py uses, so these ids are what the
-real minter would produce.
-
-    py rewrite/build-pilot.py          # emit the bank + report coverage
+Written from the syllabus below. The imported bank was not read while writing;
+it was read only afterwards, by check-similarity.py, to verify independence.
 """
 
-import io
-import json
-import os
-import sys
-from collections import Counter
+from lib import Q
 
 CAT = "Viticulture & Winemaking"
-HERE = os.path.dirname(os.path.abspath(__file__))
+SLUG = "viticulture-winemaking"
 
-# --- the syllabus this bank was written from, and the target count per block --
+# Reviewed by a human and cleared: each is shared *topic* vocabulary, which the
+# compliance framework says is not evidence of copying. Recorded so they are not
+# re-litigated on every run. Adding to this list is a review decision, not a
+# way to quiet the checker.
+ACCEPTED = [
+    "port is fortified",              # the subject itself; no other way to name it
+    "malolactic conversion changes",  # the term itself
+    "primary purpose of",             # common construction, unavoidable topic
+    "are most associated with",       # common construction; the fact is a proper noun
+]
+
 SYLLABUS = [
     ("Vine biology and anatomy", 5),
     ("The annual growth cycle", 6),
@@ -42,11 +37,6 @@ SYLLABUS = [
     ("Fortified and sweet production", 6),
     ("Faults and stabilisation", 5),
 ]
-
-
-def Q(block, q, opts, a, exp):
-    return {"block": block, "q": q, "opts": opts, "a": a, "exp": exp}
-
 
 BANK = [
     # ---------------------------------------------------- vine biology (5) ---
@@ -394,110 +384,3 @@ BANK = [
        "Filtration always precedes fermentation"], 0,
       "Fining agents attract suspended matter into larger particles that fall out. Filtration passes wine through a physical medium. Many wines see one, both or neither."),
 ]
-
-
-# ---------------------------------------------------------------- minting ---
-def fnv1a64(s):
-    h = 0xCBF29CE484222325
-    for b in s.encode("utf-8"):
-        h ^= b
-        h = (h * 0x100000001B3) & 0xFFFFFFFFFFFFFFFF
-    return h
-
-
-def b36(n, width):
-    digits = "0123456789abcdefghijklmnopqrstuvwxyz"
-    out = ""
-    while n:
-        out = digits[n % 36] + out
-        n //= 36
-    return out.rjust(width, "0")[-width:]
-
-
-def mint(cat, q):
-    return "i-" + b36(fnv1a64(json.dumps([cat, q])), 8)
-
-
-def shuffle(opts, a, q):
-    """Deterministically permute the four options and follow the answer.
-
-    Written correct-answer-first is natural and produces a giveaway spread, so
-    the order is baked in here the way the imported bank baked its own in. The
-    seed is the stem, so a rebuild is reproducible and a stem edit reshuffles
-    only its own question. Ids are minted from [cat, q] and never from options,
-    so shuffling cannot move an id.
-    """
-    h = fnv1a64("shuffle:" + q)
-    idx = list(range(len(opts)))
-    for i in range(len(idx) - 1, 0, -1):
-        h = (h * 6364136223846793005 + 1442695040888963407) & 0xFFFFFFFFFFFFFFFF
-        j = (h >> 33) % (i + 1)
-        idx[i], idx[j] = idx[j], idx[i]
-    return [opts[k] for k in idx], idx.index(a)
-
-
-# ------------------------------------------------------------------ checks --
-problems = []
-
-# Bake the option order in before anything is checked or emitted, so the checks
-# run against exactly what ships.
-for e in BANK:
-    e["opts"], e["a"] = shuffle(e["opts"], e["a"], e["q"])
-
-counts = Counter(e["block"] for e in BANK)
-for block, target in SYLLABUS:
-    if counts[block] != target:
-        problems.append("block %r: %d written, %d targeted" % (block, counts[block], target))
-
-seen_q, seen_id = set(), {}
-for e in BANK:
-    if len(e["opts"]) != 4:
-        problems.append("not 4 options: %s" % e["q"][:60])
-    if not (0 <= e["a"] < 4):
-        problems.append("answer index out of range: %s" % e["q"][:60])
-    if len(set(e["opts"])) != 4:
-        problems.append("duplicate option text: %s" % e["q"][:60])
-    if e["q"] in seen_q:
-        problems.append("duplicate stem: %s" % e["q"][:60])
-    seen_q.add(e["q"])
-    i = mint(CAT, e["q"])
-    if i in seen_id:
-        problems.append("id collision %s" % i)
-    seen_id[i] = e["q"]
-
-answer_spread = Counter(e["a"] for e in BANK)
-
-print("Rank I rewrite pilot — %s" % CAT)
-print("  written: %d questions across %d syllabus blocks" % (len(BANK), len(SYLLABUS)))
-print("  target:  %d (matches the imported slice being replaced)" % sum(t for _, t in SYLLABUS))
-print("  answer position spread: %s" % dict(sorted(answer_spread.items())))
-print("  unique ids: %d" % len(seen_id))
-if problems:
-    print("\n  PROBLEMS:")
-    for p in problems:
-        print("   - %s" % p)
-else:
-    print("  checks: all passed")
-
-# ------------------------------------------------------------------ emit ----
-out = io.StringIO()
-out.write("/* ============ Rank I rewrite pilot: %s ============\n" % CAT)
-out.write("   Written independently from the syllabus in rewrite/build-pilot.py, NOT from the\n")
-out.write("   imported bank it replaces. Generated file — edit build-pilot.py, not this.\n")
-out.write("   Shape matches data-intro.js: four-option MC, ids minted by the same FNV-1a\n")
-out.write("   scheme .scripts/mint-ids.py uses. ============ */\n")
-out.write("var PILOT_INTRO_QUESTIONS=[\n")
-rows = []
-for e in BANK:
-    rows.append(json.dumps({
-        "id": mint(CAT, e["q"]), "cat": CAT, "q": e["q"],
-        "opts": e["opts"], "a": e["a"], "exp": e["exp"],
-    }, ensure_ascii=False))
-out.write(",\n".join(rows))
-out.write("\n];\n")
-
-dest = os.path.join(HERE, "pilot-viticulture-winemaking.js")
-io.open(dest, "w", encoding="utf-8", newline="\n").write(out.getvalue())
-print("\n  wrote %s (%d bytes)" % (os.path.basename(dest), len(out.getvalue())))
-
-sys.exit(1 if problems else 0)

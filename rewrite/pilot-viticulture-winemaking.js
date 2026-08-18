@@ -1,9 +1,9 @@
-/* ============ Rank I rewrite pilot: Viticulture & Winemaking ============
-   Written independently from the syllabus in rewrite/build-pilot.py, NOT from the
-   imported bank it replaces. Generated file — edit build-pilot.py, not this.
-   Shape matches data-intro.js: four-option MC, ids minted by the same FNV-1a
-   scheme .scripts/mint-ids.py uses. ============ */
-var PILOT_INTRO_QUESTIONS=[
+/* ============ Rank I rewrite: Viticulture & Winemaking ============
+   Written independently from the syllabus in rewrite/categories/, NOT from
+   the imported bank it replaces. Generated file - edit the category module,
+   not this. Shape matches data-intro.js; ids use the same FNV-1a scheme as
+   .scripts/mint-ids.py. ============ */
+var REWRITE_VITICULTURE_WINEMAKING=[
 {"id": "i-z24n71d9", "cat": "Viticulture & Winemaking", "q": "Which species accounts for nearly all of the world's quality wine production?", "opts": ["Vitis riparia", "Vitis rotundifolia", "Vitis labrusca", "Vitis vinifera"], "a": 3, "exp": "Vitis vinifera is the Eurasian species behind essentially every classic wine grape. The American species appear mainly as rootstock parents and in hybrid breeding."},
 {"id": "i-yhd1dndy", "cat": "Viticulture & Winemaking", "q": "What is the primary reason most of the world's vines are grafted onto American rootstock?", "opts": ["To resist phylloxera", "To reduce the need for pruning", "To speed up ripening", "To increase berry size"], "a": 0, "exp": "American Vitis species evolved alongside phylloxera and tolerate its root feeding. Grafting vinifera onto that rootstock is the durable answer to the louse."},
 {"id": "i-fuwuyhra", "cat": "Viticulture & Winemaking", "q": "In the vine, what is the main function of the leaf canopy?", "opts": ["Photosynthesis", "Nutrient fixation from the air", "Anchoring the vine", "Water storage"], "a": 0, "exp": "Leaves convert sunlight into the sugars that ripen the fruit. Canopy management is largely about giving leaves useful light without shading the fruit."},
