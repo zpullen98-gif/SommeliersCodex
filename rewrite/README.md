@@ -384,12 +384,43 @@ first, young wine second". The negation guard cannot see those, because there is
 negation word in them. It was relaxed on the nine questions that never had that
 hazard.
 
+## What automation cannot catch
+
+Three batches in, one class of grading bug has appeared in every single one, and no
+static check has ever caught it. A WRONG answer that CONTAINS the right one plus a
+distinguishing word:
+
+    accept "montepulciano d'abruzzo colline teramane"  graded "Montepulciano d'Abruzzo"
+    accept "aglianico del vulture superiore"           graded "Aglianico del Vulture"
+    accept "langhe doc"                                graded "Langhe DOC Rosso"
+    accept "eighteen months"                           graded "eighteen months in bottle"
+
+Every one is the exact confusion its question exists to test. The negation guard
+cannot see them, because there is no negation.
+
+I tried to mechanise it: append label words (rosso, riserva, in bottle) to each
+answer and check the grader rejects the result. It flagged 145 of about 300 short
+answers, nearly all nonsense - "coravin rosso", "gueridon rosso". The reason is
+structural. Containment means accept-is-a-subset-of-input ALWAYS matches, so the
+probe was really just detecting that an entry uses containment at all, which is
+true of almost every entry. The check was removed rather than shipped.
+
+The discriminator is whether the extended phrase names a REAL DIFFERENT WINE.
+"Langhe DOC Rosso" is a real wine; "coravin rosso" is not. That is domain
+knowledge, and no amount of string analysis substitutes for it.
+
+This is the strongest argument in this file for the fact-check step, and for the
+credentialed sommelier review at the end. The ten mechanical checks catch shape,
+coverage, template collision, negation-swallowing and self-grading failures. They
+cannot catch a wrong answer that is wrong only because of what it means.
+
 ## Scaling to the full job
 
-**Progress: 576 of 3,061 questions (18.8%), 9 of 67 categories.** Rank I: Viticulture &
+**Progress: 820 of 3,061 questions (26.8%), 13 of 67 categories.** Rank I: Viticulture &
 Winemaking (69), Tasting & Service (66), Sake & Spirits (64), Bordeaux (63), Burgundy (63),
-United States (61), Italy (61). Rank II: Food & Pairing (65), Service & Hospitality (64).
-All nine pass all nine checks and the similarity pass. Run `py rewrite/manifest.py` for the
+United States (61), Italy (61), Sparkling/Fortified/Sweet (61), Champagne (60). Rank II:
+Food & Pairing (65), Italy North (62), Italy Central & South (61), Service & Hospitality (64).
+All thirteen pass every check and the similarity pass. Run `py rewrite/manifest.py` for the
 live count.
 
 | Bank | File | Questions | Categories |

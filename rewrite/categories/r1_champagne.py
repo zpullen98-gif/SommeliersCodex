@@ -62,7 +62,7 @@ BANK = [
     Q("Geography and the five districts",
       "At roughly forty-nine degrees north, the region sits near the northern limit of ripening. What does that give the base wines?",
       ["High acidity and low potential alcohol", "High alcohol and low acidity",
-       "Substantial tannin", "Low acidity and very high sugar"], 0,
+       "Substantial tannin", "Deep colour and high phenolic extract"], 0,
       "Marginal ripening is the basis of the whole style. Fruit picked at modest sugar and searing acidity makes a thin still wine and an ideal sparkling base."),
     Q("Geography and the five districts",
       "Which two towns serve as the region's commercial capitals, one holding the coronation cathedral and the other the Avenue de Champagne?",
@@ -147,7 +147,7 @@ BANK = [
       "Necks are dipped into a freezing bath before the crown cap comes off. What does that achieve?",
       ["It freezes the sediment into a plug the pressure can expel", "It sterilises the wine",
        "It drives the carbon dioxide out", "It sweetens the wine"], 0,
-      "Degorgement a la glace loses only a mouthful of wine and can be done at speed on a line. The older method a la volee, disgorging unfrozen, survives only as a demonstration."),
+      "Degorgement a la glace loses only a mouthful of wine and can be done at speed on a line. The older method a la volee, disgorging unfrozen, is now the minority but stays in real use for magnums and larger formats and among some growers."),
 
     # ---------------------------------- dosage and sweetness levels (6) ------
     Q("Dosage and sweetness levels",
@@ -177,7 +177,8 @@ BANK = [
       "Seven categories, of which only the two extremes are intuitive. Extra Dry sitting between Brut and Sec is the step that catches almost everyone."),
     Q("Dosage and sweetness levels",
       "A dessert course calls for something distinctly sweet from the region. Which category fits?",
-      ["Demi-Sec, at 32 to 50 grams per litre", "Extra Brut", "Brut", "Brut Nature"], 0,
+      ["Demi-Sec, at 32 to 50 grams per litre", "Sec, at 17 to 32 grams per litre",
+       "Extra Dry, at 12 to 17 grams per litre", "Brut, under 12 grams per litre"], 0,
       "Demi-Sec is the practical dessert style, since Doux above 50 grams is now very rarely made. A Brut against a sweet dish is left tasting sour and hollow."),
 
     # --------------------------------------- the cru village system (6) ------
@@ -227,9 +228,10 @@ BANK = [
       ["MA", "NM", "RM", "SR"], 0,
       "Marque d'Acheteur, a buyer's own brand. The code says nothing at all about quality, only that the name on the front is not the name of the producer."),
     Q("Houses, growers and cooperatives",
-      "Where on the bottle should you look to find that producer code?",
+      "Where should you look to find that producer code?",
       ["In small print on the label, beside a registration number",
-       "Stamped into the base of the bottle", "On the wire cage", "Printed on the foil capsule"], 0,
+       "On the front label beside the vintage", "Stamped into the base of the bottle",
+       "Printed on the foil capsule"], 0,
       "It is required by law and very easy to miss. The number next to it identifies the individual house, grower or cooperative in the official register."),
     Q("Houses, growers and cooperatives",
       "Most of the region's planted area belongs to whom?",
@@ -265,7 +267,7 @@ BANK = [
     Q("Non-vintage, vintage and prestige cuvee",
       "Not every prestige cuvee carries a year. Which is the best-known example that does not?",
       ["Krug Grande Cuvee", "Dom Perignon", "Cristal", "Comtes de Champagne"], 0,
-      "Grande Cuvee is a multi-vintage blend of well over a hundred separate wines and sits at the very top of its house's range. A vintage date is not what defines the tier."),
+      "Grande Cuvee is a multi-vintage blend of well over a hundred separate wines and is the house's signature bottling, though its single-vineyard cuvees sit above it. A vintage date is not what defines the tier."),
 
     # ------------------------------------------ ageing requirements (5) ------
     Q("Ageing requirements",
