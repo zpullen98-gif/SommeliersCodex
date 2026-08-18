@@ -20,6 +20,21 @@ function escRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
 function cats(){ const m={}; QUESTIONS.forEach(q=>m[q.cat]=(m[q.cat]||0)+1); return m; }
 
+/* A containment match cannot see a "not". Without this guard the grader marks a
+   student CORRECT for saying the opposite of the answer: accept 'vibration'
+   matches "absence of vibration", accept 'fifo' matches "not fifo, lifo", and
+   accept 'oxidation' matches "reduction rather than oxidation". Measured across
+   the banks before this landed, 1,750 of 1,773 short answers graded at least one
+   negation of their own answer as correct.
+   Exact and numeric matches are returned before this is consulted, so an answer
+   that legitimately contains a negation (muroka = "no filtration") is unaffected,
+   and the guard only fires when the negation is in the INPUT and not in the
+   accepted phrase. */
+var NEG_RE = /(^| )(not|no|never|without|lack|lacks|lacking|absence|opposite|rather|wrong|incorrect)( |$)/;
+function negatedAgainst(input, acc){
+  return NEG_RE.test(input) && !NEG_RE.test(acc);
+}
+
 function matchSA(q, ans){
   const a = norm(ans);
   if(!a) return false;
@@ -27,7 +42,7 @@ function matchSA(q, ans){
   for(const acc of q.accept){
     if(acc.charAt(0)==='~'){                      // strict canonical accept:
       const nc = norm(acc.slice(1));              // equality or full-phrase containment only
-      if(nc && (a===nc || (nc.length>=4 && new RegExp('(^| )'+escRe(nc)+'( |$)').test(a)))) return true;
+      if(nc && (a===nc || (nc.length>=4 && !negatedAgainst(a,nc) && new RegExp('(^| )'+escRe(nc)+'( |$)').test(a)))) return true;
       continue;
     }
     const na = norm(acc);
@@ -36,16 +51,16 @@ function matchSA(q, ans){
     if(q.ex) continue;                            // exact-only questions stop here
     if(/^\$?\d+(\.\d+)?%?$/.test(acc.trim())){    // purely numeric accept:
       const target=normNum(acc);                  // match a whole number token only
-      if(inputNums.some(n=>normNum(n)===target)) return true;
+      if(!negatedAgainst(a,na) && inputNums.some(n=>normNum(n)===target)) return true;
       continue;
     }
     // phrase appears as whole words inside the input
-    if(na.length>=4 && new RegExp('(^| )'+escRe(na)+'( |$)').test(a)) return true;
+    if(na.length>=4 && !negatedAgainst(a,na) && new RegExp('(^| )'+escRe(na)+'( |$)').test(a)) return true;
     // input is a whole-word core of the accept phrase (must cover most of it)
     const aw=a.split(' ').length, nw=na.split(' ').length;
-    if(a.length>=5 && aw>=Math.max(1,Math.ceil(nw*0.6)) && new RegExp('(^| )'+escRe(a)+'( |$)').test(na)) return true;
+    if(a.length>=5 && !negatedAgainst(a,na) && aw>=Math.max(1,Math.ceil(nw*0.6)) && new RegExp('(^| )'+escRe(a)+'( |$)').test(na)) return true;
     // letter-bearing substring fallback (handles run-together like "dyquem")
-    if(na.length>=5 && /[a-z]/.test(na) && (a.includes(na) || (na.includes(a)&&a.length>=5&&aw>=Math.max(1,Math.ceil(nw*0.6))))) return true;
+    if(na.length>=5 && !negatedAgainst(a,na) && /[a-z]/.test(na) && (a.includes(na) || (na.includes(a)&&a.length>=5&&aw>=Math.max(1,Math.ceil(nw*0.6))))) return true;
   }
   return false;
 }
