@@ -1,0 +1,503 @@
+"""Rank I rewrite pilot — Viticulture & Winemaking.
+
+Generates 69 independent Introductory-level questions to replace the imported
+`data-intro.js` slice of the same category and count.
+
+METHOD (the point of the pilot). These were written from a syllabus of
+competencies for the category, laid out in SYLLABUS below, NOT from the source
+questions. The source slice was never read while writing them. That is the
+whole discipline: rewriting question-by-question produces paraphrases, which
+carry the same exposure as the original plus the wasted effort. The unit of
+work is a competency and a target count.
+
+Shape matches Rank I exactly: 100% four-option multiple choice, fields
+id/cat/q/opts/a/exp, ids minted `i-<8 base36>` by the same FNV-1a 64 over
+json.dumps([cat, q]) that .scripts/mint-ids.py uses, so these ids are what the
+real minter would produce.
+
+    py rewrite/build-pilot.py          # emit the bank + report coverage
+"""
+
+import io
+import json
+import os
+import sys
+from collections import Counter
+
+CAT = "Viticulture & Winemaking"
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+# --- the syllabus this bank was written from, and the target count per block --
+SYLLABUS = [
+    ("Vine biology and anatomy", 5),
+    ("The annual growth cycle", 6),
+    ("Climate and weather", 8),
+    ("Soil and site", 5),
+    ("Vineyard management", 8),
+    ("Hazards, pests and disease", 6),
+    ("White winemaking", 5),
+    ("Red winemaking", 6),
+    ("Oak and maturation", 4),
+    ("Sparkling production", 5),
+    ("Fortified and sweet production", 6),
+    ("Faults and stabilisation", 5),
+]
+
+
+def Q(block, q, opts, a, exp):
+    return {"block": block, "q": q, "opts": opts, "a": a, "exp": exp}
+
+
+BANK = [
+    # ---------------------------------------------------- vine biology (5) ---
+    Q("Vine biology and anatomy",
+      "Which species accounts for nearly all of the world's quality wine production?",
+      ["Vitis labrusca", "Vitis vinifera", "Vitis riparia", "Vitis rotundifolia"], 1,
+      "Vitis vinifera is the Eurasian species behind essentially every classic wine grape. The American species appear mainly as rootstock parents and in hybrid breeding."),
+    Q("Vine biology and anatomy",
+      "What is the primary reason most of the world's vines are grafted onto American rootstock?",
+      ["To increase berry size", "To resist phylloxera", "To speed up ripening", "To reduce the need for pruning"], 1,
+      "American Vitis species evolved alongside phylloxera and tolerate its root feeding. Grafting vinifera onto that rootstock is the durable answer to the louse."),
+    Q("Vine biology and anatomy",
+      "In the vine, what is the main function of the leaf canopy?",
+      ["Water storage", "Photosynthesis", "Nutrient fixation from the air", "Anchoring the vine"], 1,
+      "Leaves convert sunlight into the sugars that ripen the fruit. Canopy management is largely about giving leaves useful light without shading the fruit."),
+    Q("Vine biology and anatomy",
+      "What term describes a vine shoot in its woody, mature state after the growing season?",
+      ["Cane", "Tendril", "Rachis", "Pedicel"], 0,
+      "A green shoot lignifies into a cane over the season. The distinction matters at pruning, where the choice is between retaining canes or short spurs."),
+    Q("Vine biology and anatomy",
+      "Which part of the grape contributes the greatest share of tannin?",
+      ["The pulp", "The skins and seeds", "The stem alone", "The bloom on the skin"], 1,
+      "Tannin sits mainly in skins and seeds, with stems adding more if included. Pulp is largely water, sugar and acid, which is why most grapes give pale juice."),
+
+    # ------------------------------------------------- growth cycle (6) ------
+    Q("The annual growth cycle",
+      "What is the correct order of the vine's growing season?",
+      ["Budbreak, flowering, fruit set, veraison, harvest",
+       "Flowering, budbreak, veraison, fruit set, harvest",
+       "Budbreak, veraison, flowering, fruit set, harvest",
+       "Fruit set, flowering, budbreak, veraison, harvest"], 0,
+      "Dormancy gives way to budbreak, then flowering, then fruit set, then veraison, then harvest. Veraison is the turn from growth into ripening."),
+    Q("The annual growth cycle",
+      "What happens at veraison?",
+      ["The vine flowers", "Berries change colour and begin to accumulate sugar",
+       "The first leaves emerge", "The vine enters dormancy"], 1,
+      "At veraison berries soften, colour and start accumulating sugar while acidity falls. It is the visual marker that ripening proper has begun."),
+    Q("The annual growth cycle",
+      "In the Southern Hemisphere, harvest typically falls in which months?",
+      ["September to October", "February to April", "June to July", "November to December"], 1,
+      "The seasons invert, putting Southern Hemisphere harvest around February to April against the Northern Hemisphere's late summer into autumn."),
+    Q("The annual growth cycle",
+      "Poor weather during flowering that causes flowers to fail and drop is known as what?",
+      ["Coulure", "Veraison", "Chlorosis", "Verjus"], 0,
+      "Coulure is failure of fruit set, leaving a sparse bunch. Millerandage is the related disorder producing bunches of uneven, seedless small berries."),
+    Q("The annual growth cycle",
+      "During dormancy, what is the vine doing?",
+      ["Ripening its last fruit", "Resting with no active growth, having lost its leaves",
+       "Flowering under cover", "Producing its second crop"], 1,
+      "The vine drops its leaves and rests through winter. Cold winters that enforce true dormancy are part of why many classic regions sit where they do."),
+    Q("The annual growth cycle",
+      "What is the significance of fruit set?",
+      ["It fixes the potential size of the crop", "It marks the end of ripening",
+       "It is when the wine is pressed", "It is when the vine is grafted"], 0,
+      "Fruit set is where fertilised flowers become berries, so it effectively fixes how many berries the vine will carry. Bad weather here costs the whole vintage's volume."),
+
+    # --------------------------------------------------- climate (8) --------
+    Q("Climate and weather",
+      "Which climate type is defined by a large difference between summer and winter temperatures?",
+      ["Maritime", "Mediterranean", "Continental", "Tropical"], 2,
+      "Continental climates swing hard between hot summers and cold winters, and the growing season is short. Maritime climates are moderated by water and vary far less."),
+    Q("Climate and weather",
+      "A Mediterranean climate is best characterised by which pattern?",
+      ["Warm dry summers and mild wet winters", "Cool wet summers and dry winters",
+       "Uniform rainfall throughout the year", "Extreme temperature swings day to night in winter"], 0,
+      "Warm, dry summers with rainfall concentrated in the mild winter is the Mediterranean signature. It suits ripening but often makes water the limiting factor."),
+    Q("Climate and weather",
+      "What does a large diurnal temperature shift preserve in ripening grapes?",
+      ["Sugar", "Acidity", "Tannin", "Colour"], 1,
+      "Cold nights slow the respiration that burns off acid, so fruit can reach ripeness while retaining freshness. It is why altitude and cool nights are prized in warm regions."),
+    Q("Climate and weather",
+      "Between which approximate latitudes does most of the world's viticulture sit?",
+      ["10 and 20 degrees", "30 and 50 degrees", "55 and 70 degrees", "0 and 15 degrees"], 1,
+      "The classic bands run roughly 30 to 50 degrees in both hemispheres, where the growing season is warm enough to ripen fruit but cool enough to keep balance."),
+    Q("Climate and weather",
+      "Why is spring frost so damaging?",
+      ["It kills the roots outright", "It destroys the newly burst buds that carry the crop",
+       "It prevents the wine from fermenting", "It causes grey rot in ripe fruit"], 1,
+      "Frost after budbreak kills the tender green shoots that would have borne fruit. Secondary buds may push but usually yield less and ripen later."),
+    Q("Climate and weather",
+      "Which frost protection method works by releasing heat as water freezes on the vine?",
+      ["Wind machines", "Sprinklers", "Smudge pots", "Row covers"], 1,
+      "Water gives up latent heat as it freezes, holding the bud at around zero under a shell of ice. Wind machines instead mix warmer air down from above the inversion layer."),
+    Q("Climate and weather",
+      "Rain immediately before harvest most directly risks which two problems?",
+      ["Frost and hail", "Dilution and rot", "Coulure and millerandage", "Chlorosis and esca"], 1,
+      "Vines take up the water, swelling berries and diluting concentration, while damp bunches invite grey rot. It is the classic reason to pick before a forecast front."),
+    Q("Climate and weather",
+      "How does vineyard aspect influence ripening in a cool region?",
+      ["It has no measurable effect", "Slopes angled toward the sun receive more direct energy",
+       "North-facing slopes always ripen fastest", "Aspect only affects soil drainage"], 1,
+      "A slope tilted toward the sun intercepts light closer to perpendicular and warms more. In the Northern Hemisphere that means south-facing sites in marginal climates."),
+
+    # ----------------------------------------------------- soil (5) ---------
+    Q("Soil and site",
+      "Which soil property is generally most important for quality viticulture?",
+      ["High fertility", "Good drainage", "High clay content", "Dark colour"], 1,
+      "Vines do well on poor, well-drained soil that forces roots down and limits vigour. Rich, wet soil tends to give abundant leafy growth and diluted fruit."),
+    Q("Soil and site",
+      "The large rounded stones known as galets are most associated with which area?",
+      ["Chablis", "Chateauneuf-du-Pape", "Mosel", "Rioja"], 1,
+      "Galets are the rounded quartzite cobbles across parts of Chateauneuf-du-Pape. They store daytime heat and release it overnight, and they slow evaporation."),
+    Q("Soil and site",
+      "Slate soils are most closely identified with which region?",
+      ["Mosel", "Napa Valley", "Barossa Valley", "Loire Valley"], 0,
+      "The Mosel's steep slate slopes hold heat and shed water. Dark slate warming in the sun is part of how such a northerly region ripens Riesling at all."),
+    Q("Soil and site",
+      "What does the term terroir describe?",
+      ["A style of oak barrel", "The complete natural environment of a site and its mark on the wine",
+       "A method of pruning", "A legally defined bottle shape"], 1,
+      "Terroir gathers soil, subsoil, climate, topography and aspect into the idea that a place leaves a recognisable signature in its wine."),
+    Q("Soil and site",
+      "Why are limestone and chalk soils valued in cool regions?",
+      ["They add sugar to the fruit", "They drain well yet hold reserve moisture, and reflect light",
+       "They prevent all fungal disease", "They eliminate the need for rootstock"], 1,
+      "Chalk and limestone drain freely but retain water in their pores, giving vines a buffer in dry spells without waterlogging them."),
+
+    # ------------------------------------------ vineyard management (8) -----
+    Q("Vineyard management",
+      "What is the main purpose of canopy management?",
+      ["To increase the number of buds", "To balance sunlight and airflow around leaves and fruit",
+       "To raise the alcohol of the finished wine", "To prevent grafting failure"], 1,
+      "Positioning shoots and removing selected leaves gets light onto the fruit and air through the bunches, aiding ripening and reducing fungal pressure."),
+    Q("Vineyard management",
+      "What distinguishes cane pruning from spur pruning?",
+      ["Cane pruning retains one or two long canes; spur pruning retains short spurs of a few buds",
+       "Cane pruning is done in summer, spur pruning in winter",
+       "Cane pruning is only used on white varieties",
+       "There is no structural difference"], 0,
+      "Cane pruning keeps long one-year-old wood laid along a wire; spur pruning keeps short spurs on a permanent cordon. The choice affects vigour and frost exposure."),
+    Q("Vineyard management",
+      "Green harvest refers to which practice?",
+      ["Picking grapes before they colour", "Removing unripe bunches to concentrate the remaining crop",
+       "Harvesting at night to keep fruit cool", "Planting a cover crop between rows"], 1,
+      "Cutting away a share of the crop at or near veraison directs the vine's resources into fewer bunches. It is a quality lever, and a costly one."),
+    Q("Vineyard management",
+      "In general, what is the relationship between very high yields and wine concentration?",
+      ["Higher yields tend to reduce concentration", "Higher yields always increase concentration",
+       "Yield has no bearing on concentration", "Yield affects only colour"], 0,
+      "Spreading a vine's capacity across more fruit usually dilutes it. This is why quality appellations cap yields, though site and vine balance matter as much as the number."),
+    Q("Vineyard management",
+      "What distinguishes biodynamic viticulture from organic viticulture?",
+      ["Biodynamics permits synthetic pesticides", "Biodynamics adds prescribed preparations and a calendar to organic practice",
+       "Biodynamics forbids all ploughing", "There is no difference"], 1,
+      "Biodynamic growing is organic at its base, then adds specific preparations and a lunar and astronomical calendar drawn from Steiner's lectures."),
+    Q("Vineyard management",
+      "What is the principal advantage of hand harvesting over machine harvesting?",
+      ["It is always faster", "Pickers can select and whole bunches stay intact",
+       "It removes the need for sorting", "It is required for all red wine"], 1,
+      "Hands can choose what to take and leave, and deliver whole undamaged bunches. Machines are quicker and cheaper, and can pick cool at night, but they shake fruit free."),
+    Q("Vineyard management",
+      "In many traditional European regions, irrigation is restricted primarily because",
+      ["water is unavailable", "it can inflate yields and dilute quality",
+       "it damages rootstock", "it is impossible on slopes"], 1,
+      "Withholding water keeps vines moderately stressed and berries small. Regions with reliable rainfall have tended to treat irrigation as a route to volume rather than quality."),
+    Q("Vineyard management",
+      "Higher vine planting density is generally intended to achieve what?",
+      ["Larger berries", "Competition between vines, limiting the vigour of each",
+       "Easier mechanical harvesting", "A longer dormancy period"], 1,
+      "Crowding vines makes them compete for water and nutrients, restraining each one. It suits poor soils, and it raises the cost of establishing and working the vineyard."),
+
+    # ------------------------------------------ hazards and disease (6) -----
+    Q("Hazards, pests and disease",
+      "Phylloxera is what kind of organism?",
+      ["A fungus", "A root-feeding aphid", "A bacterium", "A virus"], 1,
+      "Phylloxera is a tiny aphid that feeds on vinifera roots, and it devastated European vineyards from the later nineteenth century. Grafting remains the answer."),
+    Q("Hazards, pests and disease",
+      "Which pair are the two most significant fungal diseases of the vine?",
+      ["Powdery and downy mildew", "Esca and eutypa", "Botrytis and phylloxera", "Chlorosis and coulure"], 0,
+      "Powdery mildew (oidium) and downy mildew (peronospora) are the chronic fungal threats, both arriving from North America in the nineteenth century."),
+    Q("Hazards, pests and disease",
+      "What is the difference between noble rot and grey rot?",
+      ["They are the same fungus in different conditions, one desirable and one destructive",
+       "Noble rot affects only red grapes", "Grey rot is a bacterium",
+       "Noble rot occurs only after fermentation"], 0,
+      "Both are Botrytis cinerea. On healthy ripe white grapes with alternating damp and dry it concentrates sugar nobly; on damaged or wet fruit it simply spoils it."),
+    Q("Hazards, pests and disease",
+      "Which condition is spread by sharpshooter insects and is a serious threat in parts of California?",
+      ["Esca", "Pierce's disease", "Fanleaf degeneration", "Downy mildew"], 1,
+      "Pierce's disease is caused by the bacterium Xylella fastidiosa, carried by sharpshooters, and it blocks the vine's water-conducting tissue. There is no cure."),
+    Q("Hazards, pests and disease",
+      "The traditional Bordeaux mixture used against mildew is based on which compound?",
+      ["Copper sulphate and lime", "Sodium chloride", "Potassium sorbate", "Calcium carbonate"], 0,
+      "Bordeaux mixture is copper sulphate with slaked lime. It is permitted in organic viticulture, though accumulating copper in soil is a live concern."),
+    Q("Hazards, pests and disease",
+      "Hail is particularly feared because it",
+      ["only affects vines in dormancy", "can destroy fruit and damage wood in minutes",
+       "improves concentration", "is easily prevented by netting at scale"], 1,
+      "A hailstorm can strip a vineyard in a few minutes, and wounded wood invites disease into later seasons. Its local, unpredictable nature makes it hard to insure against."),
+
+    # -------------------------------------------- white winemaking (5) ------
+    Q("White winemaking",
+      "In standard white winemaking, when does pressing usually occur?",
+      ["After fermentation", "Before fermentation", "During malolactic conversion", "After barrel ageing"], 1,
+      "White grapes are normally pressed first and the juice fermented off its skins. Red wine ferments on skins to extract colour and tannin, then is pressed."),
+    Q("White winemaking",
+      "Cool fermentation temperatures are used for aromatic whites mainly to",
+      ["increase tannin", "preserve delicate aromatics", "speed fermentation", "deepen colour"], 1,
+      "Cooler ferments keep volatile aromatic compounds from being driven off and favour fresh fruit character. They also run more slowly."),
+    Q("White winemaking",
+      "What is lees stirring, or batonnage?",
+      ["Filtering the wine through spent skins", "Stirring the spent yeast sediment back through the wine",
+       "Adding oak chips during fermentation", "Racking the wine off its sediment repeatedly"], 1,
+      "Stirring the fine lees back into suspension builds texture and a savoury, bready character, and gives some protection against oxidation."),
+    Q("White winemaking",
+      "Malolactic conversion changes which acid into which?",
+      ["Tartaric into lactic", "Malic into lactic", "Lactic into malic", "Citric into tartaric"], 1,
+      "Bacteria convert sharp malic acid into softer lactic acid, lowering perceived acidity and often adding a creamy note. It is routine for reds and optional for whites."),
+    Q("White winemaking",
+      "Brief skin contact before pressing a white wine is used to",
+      ["remove all colour", "extract aroma and flavour compounds from the skins",
+       "raise the acidity", "prevent fermentation"], 1,
+      "A short maceration pulls aromatic compounds sitting in the skins into the juice. Pushed too far it also pulls tannin and coarseness."),
+
+    # ---------------------------------------------- red winemaking (6) ------
+    Q("Red winemaking",
+      "A winemaker presses red grapes on arrival and ferments the juice with no skin contact. What is the most likely result?",
+      ["A pale, nearly white wine", "A deeply coloured red", "A wine unusually high in tannin", "A wine that will not ferment"], 0,
+      "Almost all grape pulp is pale, so colour comes from macerating juice with skins. Press red grapes straight away and the wine is barely coloured, which is how blanc de noirs is made."),
+    Q("Red winemaking",
+      "What are punching down and pumping over used to manage?",
+      ["The cap of skins that rises during red fermentation", "The temperature of the cellar",
+       "Sediment in the finished bottle", "The dosage in sparkling wine"], 0,
+      "Carbon dioxide pushes skins into a floating cap. Punching it down or pumping juice over it keeps skins wet and extraction going, and prevents the cap drying and spoiling."),
+    Q("Red winemaking",
+      "Compared with white wine, red wine is generally fermented at",
+      ["lower temperatures", "higher temperatures", "identical temperatures", "below freezing"], 1,
+      "Warmer ferments help extract colour and tannin from skins. Whites are kept cooler to protect aromatics, which is the opposite priority."),
+    Q("Red winemaking",
+      "Whole uncrushed clusters are sealed under carbon dioxide, and fermentation begins inside the intact berries. Which technique is this?",
+      ["Carbonic maceration", "Cold soak", "Saignee", "Batonnage"], 0,
+      "Whole clusters ferment intracellularly under carbon dioxide before being pressed. It gives bright colour, low tannin and the distinctive aromatics of Beaujolais."),
+    Q("Red winemaking",
+      "The saignee method involves",
+      ["bleeding off juice early to concentrate the remaining red wine, often producing rose",
+       "adding water to reduce alcohol", "blending press wine back into free-run wine",
+       "fermenting in sealed amphorae"], 0,
+      "Running off part of the juice early raises the skin-to-juice ratio in what remains, concentrating the red. The drawn-off juice is commonly made into rose."),
+    Q("Red winemaking",
+      "Extended maceration after fermentation has finished is used to",
+      ["restart fermentation", "further build and soften tannin structure",
+       "remove all colour", "raise the alcohol"], 1,
+      "Leaving wine on skins after the sugar is gone continues to shape tannin, with harsher tannins tending to polymerise and settle out. It is a stylistic choice with real risk."),
+
+    # ------------------------------------------------ oak (4) ---------------
+    Q("Oak and maturation",
+      "New oak barrels contribute which characteristics compared with older barrels?",
+      ["More overt oak flavour and tannin", "Greater acidity", "Deeper colour only", "Nothing measurable"], 0,
+      "A new barrel gives vanilla, spice and toast plus some tannin. Barrels lose that influence with each use, and after a few fills act mainly as vessels."),
+    Q("Oak and maturation",
+      "Why does a smaller barrel exert more influence on the wine?",
+      ["It is always made of newer wood", "It has a higher ratio of surface area to volume",
+       "It is stored at higher temperature", "It is never toasted"], 1,
+      "More wood touches less wine, so both flavour extraction and slow oxygen ingress work faster. A 225 litre barrique marks wine far more than a large old cask."),
+    Q("Oak and maturation",
+      "How does American oak typically differ from French oak in flavour?",
+      ["American tends to give more overt vanilla and coconut", "American gives more subtle spice",
+       "They are indistinguishable", "American contributes more tannin and less aroma"], 0,
+      "American white oak is generally more overt, with vanilla, dill and coconut notes, while French oak tends toward finer spice and subtler texture."),
+    Q("Oak and maturation",
+      "What does toasting a barrel refer to?",
+      ["Charring the exterior for preservation", "Heating the staves over fire during shaping, which develops flavour compounds",
+       "Rinsing with hot water before filling", "Ageing the staves in the open air"], 1,
+      "Bending staves over fire also transforms the wood chemistry. The toast level a cooper applies changes the aromatic contribution considerably."),
+
+    # ---------------------------------------------- sparkling (5) ----------
+    Q("Sparkling production",
+      "A base wine is bottled with yeast and sugar, and the carbon dioxide produced stays trapped in that same bottle. Which method is described?",
+      ["Traditional method", "Tank (Charmat) method", "Carbonation", "Continuous method"], 0,
+      "Base wine is bottled with yeast and sugar, and the second fermentation happens in that same bottle, trapping the carbon dioxide and leaving lees behind."),
+    Q("Sparkling production",
+      "What is the tank method, also called Charmat, used for?",
+      ["Producing sparkling wine with the second fermentation in a sealed tank",
+       "Ageing red wine on oak staves", "Fortifying wine during fermentation",
+       "Freezing wine to concentrate it"], 0,
+      "The second fermentation runs in a pressurised tank and the wine is filtered and bottled under pressure. It is faster and cheaper, and it preserves primary fruit aromas."),
+    Q("Sparkling production",
+      "What is disgorgement?",
+      ["Removing the frozen plug of sediment from the bottle neck", "Adding the second-fermentation yeast",
+       "Blending base wines before bottling", "Turning bottles gradually to settle lees"], 0,
+      "After riddling drives the lees into the neck, that plug is frozen and ejected by internal pressure. The bottle is then topped up before final closure."),
+    Q("Sparkling production",
+      "The dosage is added at which point, and does what?",
+      ["Before the first fermentation, to raise alcohol", "After disgorgement, setting the final sweetness",
+       "During riddling, to clarify the wine", "At harvest, to raise sugar"], 1,
+      "The liqueur d'expedition tops up the bottle after disgorgement and sets the sweetness level, from brut nature through to doux."),
+    Q("Sparkling production",
+      "Extended ageing on the lees contributes which character?",
+      ["Green apple and grass", "Bready, biscuity, autolytic character", "Vanilla and coconut", "Coarse tannin"], 1,
+      "As spent yeast cells break down they release compounds giving brioche, biscuit and toast, and they build texture. Time on lees is the main lever for that character."),
+
+    # ------------------------------------ fortified and sweet (6) ----------
+    Q("Fortified and sweet production",
+      "Port is fortified at which point?",
+      ["After fermentation is complete", "Partway through fermentation, leaving residual sugar",
+       "Before fermentation begins", "During bottling"], 1,
+      "Neutral spirit is added while sugar remains, killing the yeast and stopping fermentation. That is why Port is both sweet and high in alcohol."),
+    Q("Fortified and sweet production",
+      "What is flor?",
+      ["A film of yeast that grows on the surface of some Sherries", "A sweetening agent added at bottling",
+       "The chalky soil of Jerez", "A style of Port"], 0,
+      "Flor is a living yeast veil that grows on wine in partly filled butts, shielding it from oxygen and giving Fino and Manzanilla their distinctive tang."),
+    Q("Fortified and sweet production",
+      "Wine is drawn from the oldest tier of casks and topped up from the next youngest, on down the scale. What is this called?",
+      ["A solera", "A tirage", "A dosage", "An assemblage"], 0,
+      "Wine is drawn from the oldest tier and replaced from the next youngest, on down the scale. The result is a consistent blend that carries a fraction of much older wine."),
+    Q("Fortified and sweet production",
+      "A producer waits for a hard freeze, picks fruit still frozen on the vine and presses it solid. Which style is being made?",
+      ["Eiswein", "Trockenbeerenauslese", "Vin Santo", "Amarone"], 0,
+      "Pressing naturally frozen grapes leaves water behind as ice and releases concentrated sugary juice. It demands a hard freeze on fruit still hanging."),
+    Q("Fortified and sweet production",
+      "The passito or appassimento method involves",
+      ["drying harvested grapes to concentrate sugars before fermentation",
+       "fortifying during fermentation", "fermenting under a yeast veil",
+       "adding unfermented must to finished wine"], 0,
+      "Grapes are dried on mats or racks, losing water and concentrating everything left. Amarone and Vin Santo are made this way."),
+    Q("Fortified and sweet production",
+      "Why does noble rot concentrate sweetness?",
+      ["It adds sugar to the berry", "It punctures the skin so water evaporates, leaving sugar behind",
+       "It converts acid into sugar", "It prevents fermentation entirely"], 1,
+      "Botrytis threads pierce the skin and the berry dehydrates, concentrating sugar, acid and flavour while contributing its own honeyed character."),
+
+    # ------------------------------------------ faults (5) -----------------
+    Q("Faults and stabilisation",
+      "A wine smells of damp cardboard and wet cellar, and its fruit seems stripped out. Which compound is the most likely cause?",
+      ["TCA (2,4,6-trichloroanisole)", "Acetaldehyde", "Ethyl acetate", "Sulphur dioxide"], 0,
+      "TCA gives damp cardboard and wet dog, and strips a wine of its fruit. It can arrive by cork but also through contaminated cellar materials."),
+    Q("Faults and stabilisation",
+      "Which fault presents as vinegar and nail polish remover?",
+      ["Volatile acidity", "Reduction", "Cork taint", "Oxidation"], 0,
+      "Volatile acidity is largely acetic acid with ethyl acetate. Tiny amounts add lift; past a threshold the wine smells of vinegar and solvent."),
+    Q("Faults and stabilisation",
+      "A red wine shows barnyard, leather and sticking-plaster aromas that deepen in bottle. Which organism is the likely cause?",
+      ["Brettanomyces", "Botrytis cinerea", "Acetobacter", "Flor yeast"], 0,
+      "Brett is a yeast whose compounds read as farmyard, leather or sticking plaster. Opinion divides on trace levels; at higher levels it flattens fruit."),
+    Q("Faults and stabilisation",
+      "What is the primary purpose of sulphur dioxide in winemaking?",
+      ["To sweeten the wine", "To act as antioxidant and antimicrobial",
+       "To deepen colour", "To raise alcohol"], 1,
+      "Sulphur dioxide guards against oxidation and unwanted microbes. Managing it well is much of what keeps a wine stable from cellar to glass."),
+    Q("Faults and stabilisation",
+      "What distinguishes fining from filtration?",
+      ["Fining adds an agent that binds and settles particles; filtration physically removes them",
+       "They are the same process", "Fining is done only to red wine",
+       "Filtration always precedes fermentation"], 0,
+      "Fining agents attract suspended matter into larger particles that fall out. Filtration passes wine through a physical medium. Many wines see one, both or neither."),
+]
+
+
+# ---------------------------------------------------------------- minting ---
+def fnv1a64(s):
+    h = 0xCBF29CE484222325
+    for b in s.encode("utf-8"):
+        h ^= b
+        h = (h * 0x100000001B3) & 0xFFFFFFFFFFFFFFFF
+    return h
+
+
+def b36(n, width):
+    digits = "0123456789abcdefghijklmnopqrstuvwxyz"
+    out = ""
+    while n:
+        out = digits[n % 36] + out
+        n //= 36
+    return out.rjust(width, "0")[-width:]
+
+
+def mint(cat, q):
+    return "i-" + b36(fnv1a64(json.dumps([cat, q])), 8)
+
+
+def shuffle(opts, a, q):
+    """Deterministically permute the four options and follow the answer.
+
+    Written correct-answer-first is natural and produces a giveaway spread, so
+    the order is baked in here the way the imported bank baked its own in. The
+    seed is the stem, so a rebuild is reproducible and a stem edit reshuffles
+    only its own question. Ids are minted from [cat, q] and never from options,
+    so shuffling cannot move an id.
+    """
+    h = fnv1a64("shuffle:" + q)
+    idx = list(range(len(opts)))
+    for i in range(len(idx) - 1, 0, -1):
+        h = (h * 6364136223846793005 + 1442695040888963407) & 0xFFFFFFFFFFFFFFFF
+        j = (h >> 33) % (i + 1)
+        idx[i], idx[j] = idx[j], idx[i]
+    return [opts[k] for k in idx], idx.index(a)
+
+
+# ------------------------------------------------------------------ checks --
+problems = []
+
+# Bake the option order in before anything is checked or emitted, so the checks
+# run against exactly what ships.
+for e in BANK:
+    e["opts"], e["a"] = shuffle(e["opts"], e["a"], e["q"])
+
+counts = Counter(e["block"] for e in BANK)
+for block, target in SYLLABUS:
+    if counts[block] != target:
+        problems.append("block %r: %d written, %d targeted" % (block, counts[block], target))
+
+seen_q, seen_id = set(), {}
+for e in BANK:
+    if len(e["opts"]) != 4:
+        problems.append("not 4 options: %s" % e["q"][:60])
+    if not (0 <= e["a"] < 4):
+        problems.append("answer index out of range: %s" % e["q"][:60])
+    if len(set(e["opts"])) != 4:
+        problems.append("duplicate option text: %s" % e["q"][:60])
+    if e["q"] in seen_q:
+        problems.append("duplicate stem: %s" % e["q"][:60])
+    seen_q.add(e["q"])
+    i = mint(CAT, e["q"])
+    if i in seen_id:
+        problems.append("id collision %s" % i)
+    seen_id[i] = e["q"]
+
+answer_spread = Counter(e["a"] for e in BANK)
+
+print("Rank I rewrite pilot — %s" % CAT)
+print("  written: %d questions across %d syllabus blocks" % (len(BANK), len(SYLLABUS)))
+print("  target:  %d (matches the imported slice being replaced)" % sum(t for _, t in SYLLABUS))
+print("  answer position spread: %s" % dict(sorted(answer_spread.items())))
+print("  unique ids: %d" % len(seen_id))
+if problems:
+    print("\n  PROBLEMS:")
+    for p in problems:
+        print("   - %s" % p)
+else:
+    print("  checks: all passed")
+
+# ------------------------------------------------------------------ emit ----
+out = io.StringIO()
+out.write("/* ============ Rank I rewrite pilot: %s ============\n" % CAT)
+out.write("   Written independently from the syllabus in rewrite/build-pilot.py, NOT from the\n")
+out.write("   imported bank it replaces. Generated file — edit build-pilot.py, not this.\n")
+out.write("   Shape matches data-intro.js: four-option MC, ids minted by the same FNV-1a\n")
+out.write("   scheme .scripts/mint-ids.py uses. ============ */\n")
+out.write("var PILOT_INTRO_QUESTIONS=[\n")
+rows = []
+for e in BANK:
+    rows.append(json.dumps({
+        "id": mint(CAT, e["q"]), "cat": CAT, "q": e["q"],
+        "opts": e["opts"], "a": e["a"], "exp": e["exp"],
+    }, ensure_ascii=False))
+out.write(",\n".join(rows))
+out.write("\n];\n")
+
+dest = os.path.join(HERE, "pilot-viticulture-winemaking.js")
+io.open(dest, "w", encoding="utf-8", newline="\n").write(out.getvalue())
+print("\n  wrote %s (%d bytes)" % (os.path.basename(dest), len(out.getvalue())))
+
+sys.exit(1 if problems else 0)
