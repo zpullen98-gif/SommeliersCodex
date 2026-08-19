@@ -42,16 +42,17 @@ changes completely:
 | Path | Does |
 |---|---|
 | `categories/<name>.py` | One category: `CAT`, `SLUG`, `SYLLABUS`, `BANK`, plus `PREFIX`/`RANK`/`SOURCE` for Rank II and any `ACCEPTED` phrases a human has cleared |
-| `lib.py` | Minting, balanced option dealing, emit, and five checks |
+| `lib.py` | Minting, balanced option dealing, emit, and ten checks |
 | `build.py` | Driver — `py rewrite/build.py r1_bordeaux`, or `--all` |
 | `manifest.py` | Progress across all 67 categories, and what is largest next |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
+| `check-cross-category.py` | The rewritten categories against EACH OTHER. Takes no arguments |
 
 `ACCEPTED` records a human verdict so a reviewed false positive is not
 re-litigated every run. Adding to it is a review decision, never a way to quiet
 the checker.
 
-The five checks, all run by `build.py` and all blocking:
+The ten checks, all run by `build.py` and all blocking:
 
 | Check | Catches |
 |---|---|
@@ -61,6 +62,14 @@ The five checks, all run by `build.py` and all blocking:
 | `duplicate_answers` | Two questions testing the same thing |
 | `template_variety` | A stem opener used more than 15% of the time |
 | `banned_template_problems` | A construction with a collision history, e.g. "is best described as" |
+| `option_reference_problems` | An explanation naming an option by position, which the option deal invalidates |
+| `loose_tilde_problems` | A one-word `~` entry, which matches that word inside any wrong answer |
+| `compound_answer_problems` | A token-set collision between an accept entry and a different answer |
+| `negation_probe_problems` | An accept list that grades a negation of its own answer |
+
+`check-cross-category.py` is deliberately NOT one of them. It reads every emitted bank at once
+rather than the one being built, so it belongs beside `check-similarity.py` as a pass you run over
+the corpus, not a gate on a single category.
 
 `match_sa` is a port of `core.js` `matchSA`, so accept lists are tested the way
 the app will actually grade them rather than by eye.
@@ -431,14 +440,80 @@ copied byte for byte from the bank. Verified after writing: the only non-ASCII
 character in the whole category is that one circumflex, on the `CAT` line, and it
 reaches the emitted JS only in the `cat` field.
 
+## A review that stops early reports zero findings
+
+A usage limit killed five of the eight reviewers on the Germany / Portugal / Dessert & Sweet Wines
+/ Alsace batch. Germany was checked for facts only, Portugal and Alsace for answer keys only, and
+Dessert & Sweet Wines was never opened at all. **Its report said zero findings, and that is
+indistinguishable in the output from a clean category.**
+
+It was not clean. The re-run, with both lenses reading every question end to end, found the worst
+factual error of the batch sitting in exactly the category nobody had read: Eszencia's 450 grams
+per litre is the legal FLOOR for using the name, and the bank taught it as "can exceed 450", an
+examinable number stated backwards.
+
+So every reviewer now reports the number of questions it actually read against the total, and any
+category whose count falls short is treated as unreviewed. A silent stop is worse than a refusal,
+because it arrives wearing the same clothes as a pass.
+
+The re-run also earned its adjudication step. Two independent lenses proposed 39 findings; a third
+agent whose only brief was to REFUTE them, defaulting to refuted when unsure, killed 14 and
+rewrote the fix on 5 more. Two of those rewrites mattered: one reviewer's replacement stem would
+have put the word "demarcation" into a question whose keyed answer is "one of the world's first
+demarcated and regulated wine regions", and another would have made the correct option half again
+longer than its distractors. **Applying a wrong correction is worse than leaving a debatable
+question alone**, because it introduces an error where none existed and gives it the authority of
+a review.
+
+## Never name an option by its position
+
+`bake_option_order` deals the correct answer round-robin and orders the distractors from the stem,
+so an explanation that says "the second option" names whatever landed there at build time. Austria
+had three of them and **all three were wrong once dealt.** The worst told a student that the option
+they had just answered correctly was Germany's VDP pyramid.
+
+Unlike the classes below that resisted mechanisation, this one is exact, so it is now
+`option_reference_problems` and the build fails on it. Name the option instead.
+
+Worth recording that the shipped banks are clean here: `core.js` shuffles the question POOL and
+never the options inside a question, and no shipped explanation names a position. This defect was
+created entirely by our own dealing, and the check guards the rewrite rather than the product.
+
+## Nothing was comparing our own categories against each other
+
+`duplicate_answers` compares a bank with itself. `check-similarity.py` compares a bank with the
+imported source. **Neither ever compared two rewritten categories**, and this file predicted the
+gap years before closing it, in the sentence below about Burgundy and Classifications.
+
+At 25 categories `check-cross-category.py` found 28 candidate pairs, of which 14 were the same
+TASK with the same answer written twice. The Prosecco grape question existed in Italy and in
+Sparkling; its tank fermentation in both; the Pradikat ladder in Germany and in Dessert & Sweet
+Wines; TCA identified from wet cardboard in three separate categories. Two Rank I items were
+repeated verbatim in Rank II, which quietly breaks the rule that Certified sits above Introductory.
+
+Two things the tuning taught:
+
+**Compare answers, not just stems.** The first version missed the Prosecco tank pair entirely,
+because one author wrote "in a sealed pressure tank" and the other "in a sealed pressurised tank" —
+identical in meaning, far apart as text. A substantial answer that matches almost exactly is worth
+reading whatever the stems look like.
+
+**It still misses verbose answers.** A reframe in this very pass replaced a duplicate with a NEW
+duplicate, and the check scored the pair at 0.235 answer overlap against a 0.60 threshold because
+both answers were long sentences rather than names. A human verifier caught it. Treat the tool as
+a net with a known hole, not a proof.
+
+Nine pairs remain and are deliberate: the same answer reached by a genuinely different task, like
+Chateauneuf-du-Pape via its thirteen grapes in the Rhone and via its galets in Viticulture. Two
+questions may share an answer. They may not share a task.
+
 ## Scaling to the full job
 
-**Progress: 1,057 of 3,061 questions (34.5%), 17 of 67 categories.** Rank I: Viticulture &
-Winemaking (69), Tasting & Service (66), Sake & Spirits (64), Bordeaux (63), Burgundy (63),
-United States (61), Italy (61), Sparkling/Fortified/Sweet (61), Champagne (60), South America
-(60), Spain (59), Rhone (59), Loire (59). Rank II: Food & Pairing (65), Italy North (62),
-Italy Central & South (61), Service & Hospitality (64). All seventeen pass every check and the
-similarity pass. Run `py rewrite/manifest.py` for the live count.
+**Progress: 1,514 of 3,061 questions (49.5%), 25 of 67 categories.** Rank I is 1,152 of 1,778
+(65%) across 21 categories; Rank II is 362 of 1,283 (28%) across 4. All twenty-five pass every
+check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
+count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
+which is why it no longer lists the categories by hand.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|
@@ -451,7 +526,9 @@ and generous accept lists, calibrated against the original Advanced bank rather 
 
 Per category: write the syllabus, generate, check, reframe, accept. Then run the whole rewritten
 bank against the imported one in a single pass before deleting anything, because a question written
-for Burgundy may land near one filed under Classifications.
+for Burgundy may land near one filed under Classifications. Run `check-cross-category.py` in the
+same pass, for the same reason pointed the other way: the Burgundy question may also land near one
+of our own.
 
 **Not finished until** the imported files no longer ship, `README.md` loses both the "Personal study
 project" licence line and the "imported from established material" note, the new file headers record
