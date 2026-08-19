@@ -530,21 +530,35 @@ had never been compared. Grading all 226 rewritten short answers with the REAL e
 self-grading failures and 0 negation accepts, matching what `build.py` reports. The port can be
 trusted.
 
-**The shipped banks are worse than the estimate.** Same engine, same test, run over what actually
-ships today:
+**The shipped banks fail to grade their own answers.** Same engine, same test, run over what
+actually ships:
 
-| Bank | Short answers | Fail to grade their own displayed answer |
+| Bank | Typed short answers | Fail to grade their own displayed answer |
 |---|---|---|
 | Rewrite — Squire | 226 | **0 (0%)** |
-| Shipped — Squire, imported | 823 | 39 (4.7%) |
-| Shipped — Knight, **paid** | 505 | **257 (50.9%)** |
-| Shipped — Ruler, **paid** | 445 | **389 (87.4%)** |
+| Shipped — Squire, imported | 792 | 8 (1.0%) |
+| Shipped — Knight, **paid** | 475 | **214 (45.1%)** |
+| Shipped — Ruler, **paid** | 445 | **378 (84.9%)** |
 
-685 of 1,773, and the two worst banks are the entire paid tier. Ruler is self-graded on honour so
-its figure matters least; **Knight is machine-graded and half of it marks a student wrong for typing
-back exactly what the app showed them.** That is the single largest known content defect in the
-product, it is unrelated to the rewrite, and it now has a number measured in the real engine rather
-than an estimate.
+**Measure this on the real path, or the number is wrong.** The first run of this audit reported
+39 / 257 / 389 and both halves of that were inflated:
+
+- It called `matchSA` directly. `submitSA` is *replaced* by `codex9.js`, which grades an
+  enumeration item by item through `gradeList` and only falls through to `matchSA` when it cannot
+  read the shape. Grading a list question with `matchSA` fails it spuriously.
+- It counted every entry carrying `sa`. Matching and select questions carry `sa` too, and their
+  `ans` is an ARRAY of option indices rather than a string. They are never typed, so they cannot
+  fail a typing test. 61 questions across the banks.
+
+A grading claim measured on the wrong entry point is a guess wearing a number. Filter with
+`q.sa && !q.mt && !q.sel && typeof q.ans === 'string'`, and grade with
+`saListSpec(q) ? gradeList(sp, text).ok : matchSA(q, text)`.
+
+Ruler is self-graded on honour so its figure matters least. **Knight is machine-graded, and 45% of
+it marks a student wrong for typing back exactly the answer the app displayed.** That is the
+largest known content defect in the product, it is unrelated to the rewrite, and it is a content
+problem rather than a code one: the failing answers are long prose and multi-part strings that no
+matcher was ever going to accept.
 
 ## Scaling to the full job
 
