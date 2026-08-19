@@ -172,10 +172,11 @@ BANK = [
 
     # ---------------------------------------- classic regional pairings (9) -
     SA("Classic regional pairings",
-       "Sancerre is the classic partner for which goat cheese from the same stretch of the Loire?",
-       "Crottin de Chavignol",
-       ["crottin de chavignol", "crottin", "chavignol"],
-       "Grown and made within sight of each other, and the textbook illustration of what grows together goes together."),
+       "Duck confit and haricot beans bake for hours under a crust in the French southwest, and all that fat is what the local red was built for: its Tannat tannin has more grip than a lean dish could carry. Which appellation is being poured?",
+       "Madiran",
+       ["madiran", "madiran aoc", "madiran aop", "madiran appellation"],
+       "Tannat is among the most tannic red varieties grown in France, and the protein in the confit and the sausage binds enough of that tannin, with the fat coating the palate against what is left, for the wine to read as generous rather than punishing. Pour the same bottle beside a lean grilled fish and the tannin finds nothing to bind to, which is why this pairing only makes sense in one direction.",
+       ex=True),
     SA("Classic regional pairings",
        "Which Loire white, especially when bottled sur lie, is the traditional match for oysters?",
        "Muscadet",
