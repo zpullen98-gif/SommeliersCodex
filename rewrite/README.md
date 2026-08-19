@@ -554,11 +554,28 @@ A grading claim measured on the wrong entry point is a guess wearing a number. F
 `q.sa && !q.mt && !q.sel && typeof q.ans === 'string'`, and grade with
 `saListSpec(q) ? gradeList(sp, text).ok : matchSA(q, text)`.
 
-Ruler is self-graded on honour so its figure matters least. **Knight is machine-graded, and 45% of
-it marks a student wrong for typing back exactly the answer the app displayed.** That is the
-largest known content defect in the product, it is unrelated to the rewrite, and it is a content
-problem rather than a code one: the failing answers are long prose and multi-part strings that no
-matcher was ever going to accept.
+**Fixed in `js/codex13.js`, and the first attempt was wrong in an instructive way.** The obvious
+repair is to prepend `ans` to its own `accept` list, which is what `lib.SA()` does at construction.
+Applied to the shipped banks it took self-grading failures to zero and pushed negation accepts from
+45 to **297**. A long prose answer very often contains one of `NEG_RE`'s words — "rather", "no",
+"without" — and `negatedAgainst` deliberately stands down when the accepted phrase carries a
+negation of its own, so every such entry became reachable by "not &lt;the whole answer&gt;" through
+the containment branch. That is precisely the false-accept class `core.js` and `codex9.js` were
+each fixed for.
+
+The working repair is an exact-match short-circuit rather than an accept entry: if the normalised
+input equals the normalised `ans`, grade it correct and consult nothing else. Exact equality cannot
+smuggle in a negation, so it adds no containment surface.
+
+| | before | after |
+|---|---|---|
+| Self-grading failures, all banks | 600 | **0** |
+| Negation accepts, all banks | 45 | **45** (unchanged; all legitimate) |
+| Blank or junk accepted | 0 | 0 |
+
+The 45 that remain are answers that genuinely contain a negation — "Eiswein: healthy grapes frozen
+on the vine (no botrytis)", "'No barrique, no Berlusconi'" — which is the case the guard is
+designed to stand down for.
 
 ## Scaling to the full job
 
