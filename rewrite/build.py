@@ -33,6 +33,7 @@ def build(name):
     tmpl_problems, openers = lib.template_variety(bank)
     problems += tmpl_problems
     problems += lib.banned_template_problems(bank)
+    problems += lib.option_reference_problems(bank)
     problems += lib.self_grading_problems(bank)
     problems += lib.loose_tilde_problems(bank)
     problems += lib.compound_answer_problems(bank)

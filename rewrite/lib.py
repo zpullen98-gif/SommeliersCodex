@@ -542,6 +542,34 @@ def banned_template_problems(bank):
     return out
 
 
+# An explanation may not point at an option by POSITION. bake_option_order
+# deals the correct answer round-robin and orders the distractors from the
+# stem, so "the second option" names whatever landed there at build time,
+# which is never reliably what the author meant. In Austria all three
+# instances were wrong once dealt, and one of them told the student that the
+# option they had just got right was Germany's VDP pyramid.
+OPTION_POSITION = re.compile(
+    r"\b(?:first|second|third|fourth|last|final)\s+(?:option|answer|choice|distractor)\b"
+    r"|\b(?:option|answer|choice)\s+[abcd]\b"
+    r"|\bthe\s+(?:other\s+)?(?:two|three)\s+(?:options|answers|choices)\s+above\b",
+    re.I)
+
+
+def option_reference_problems(bank):
+    """Flag an explanation or stem that identifies an option by its position."""
+    out = []
+    for e in bank:
+        for field in ("q", "exp"):
+            m = OPTION_POSITION.search(e.get(field) or "")
+            if m:
+                out.append(
+                    "%s refers to an option by position (%r); bake_option_order "
+                    "re-deals positions, so name the option instead: %r"
+                    % ("stem" if field == "q" else "explanation",
+                       m.group(0), e["q"][:60]))
+    return out
+
+
 def template_variety(bank):
     """Flag stem-template ruts, the pilot's finding.
 
