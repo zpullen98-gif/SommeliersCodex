@@ -16,3 +16,8 @@ __pycache__/
 
 # Machine-local Claude Code settings (launch.json IS committed — it's shared config)
 .claude/settings.local.json
+
+# Generated review bundle: ~735 KB that duplicates rewrite/pilot-*.js, which ARE
+# committed. Rebuild it with `py rewrite/build-preview.py`; js/rewrite-preview.js
+# tells you to when it is missing.
+rewrite/preview-bank.js

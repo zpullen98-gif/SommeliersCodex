@@ -47,6 +47,7 @@ changes completely:
 | `manifest.py` | Progress across all 67 categories, and what is largest next |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
 | `check-cross-category.py` | The rewritten categories against EACH OTHER. Takes no arguments |
+| `build-preview.py` | Bundles every rewritten category into `preview-bank.js` for `?rewrite` |
 
 `ACCEPTED` records a human verdict so a reviewed false positive is not
 re-litigated every run. Adding to it is a review decision, never a way to quiet
@@ -507,10 +508,48 @@ Nine pairs remain and are deliberate: the same answer reached by a genuinely dif
 Chateauneuf-du-Pape via its thirteen grapes in the Rhone and via its galets in Viticulture. Two
 questions may share an answer. They may not share a task.
 
+## Reading the rewrite inside the real app
+
+    py rewrite/build-preview.py      # bundles every rewritten category
+    py serve.py 8632                 # then open http://localhost:8632/?rewrite
+
+`?rewrite` swaps the Page and Squire banks for the rewritten ones, so the questions can be read and
+drilled in the actual engine: real grading, real section menus, real review screen, real SRS.
+Without the flag `js/rewrite-preview.js` defines two names and returns, loads nothing and touches
+no global, which is why it is safe to ship. **Progress is sandboxed** — `qKey` is wrapped to prefix
+every stored key with `preview|`, and `keyOwned()` matches no such key, so drilling the rewrite
+cannot pollute real study stats. Clear the service worker first; it has served a stale shell three
+times in this project.
+
+**This closed a real gap.** 1,514 questions had passed ten build checks, a similarity pass, a
+cross-category pass and several rounds of fact-checking without one of them ever being loaded by
+the app that will ship them. Two things came out of the first run:
+
+**The Python port is faithful.** `lib.match_sa` is a hand port of `core.js` `matchSA`, and the two
+had never been compared. Grading all 226 rewritten short answers with the REAL engine gives 0
+self-grading failures and 0 negation accepts, matching what `build.py` reports. The port can be
+trusted.
+
+**The shipped banks are worse than the estimate.** Same engine, same test, run over what actually
+ships today:
+
+| Bank | Short answers | Fail to grade their own displayed answer |
+|---|---|---|
+| Rewrite — Squire | 226 | **0 (0%)** |
+| Shipped — Squire, imported | 823 | 39 (4.7%) |
+| Shipped — Knight, **paid** | 505 | **257 (50.9%)** |
+| Shipped — Ruler, **paid** | 445 | **389 (87.4%)** |
+
+685 of 1,773, and the two worst banks are the entire paid tier. Ruler is self-graded on honour so
+its figure matters least; **Knight is machine-graded and half of it marks a student wrong for typing
+back exactly what the app showed them.** That is the single largest known content defect in the
+product, it is unrelated to the rewrite, and it now has a number measured in the real engine rather
+than an estimate.
+
 ## Scaling to the full job
 
 **Progress: 1,514 of 3,061 questions (49.5%), 25 of 67 categories.** Rank I is 1,152 of 1,778
-(65%) across 21 categories; Rank II is 362 of 1,283 (28%) across 4. All twenty-five pass every
+(65%) across 19 categories; Rank II is 362 of 1,283 (28%) across 6. All twenty-five pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
