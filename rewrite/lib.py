@@ -640,9 +640,14 @@ def banned_template_problems(bank):
 # option they had just got right was Germany's VDP pyramid.
 OPTION_POSITION = re.compile(
     r"\b(?:first|second|third|fourth|last|final)\s+(?:option|answer|choice|distractor)\b"
-    r"|\b(?:option|answer|choice)\s+[abcd]\b"
     r"|\bthe\s+(?:other\s+)?(?:two|three)\s+(?:options|answers|choices)\s+above\b",
     re.I)
+
+# The lettered form has to stay case-sensitive. Lower-cased it matches ordinary
+# prose: "being an option a country weighs up" flagged a Wine Law explanation
+# that names no option at all. Anyone actually pointing at an option writes the
+# label the way the app would print it.
+OPTION_LETTER = re.compile(r"\b(?:[Oo]ption|[Aa]nswer|[Cc]hoice)\s+[ABCD]\b")
 
 
 def option_reference_problems(bank):
@@ -650,7 +655,8 @@ def option_reference_problems(bank):
     out = []
     for e in bank:
         for field in ("q", "exp"):
-            m = OPTION_POSITION.search(e.get(field) or "")
+            text = e.get(field) or ""
+            m = OPTION_POSITION.search(text) or OPTION_LETTER.search(text)
             if m:
                 out.append(
                     "%s refers to an option by position (%r); bake_option_order "

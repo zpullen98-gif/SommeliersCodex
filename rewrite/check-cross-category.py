@@ -119,9 +119,12 @@ def main():
     print("cross-category duplication")
     print("  %d questions across %d rewritten categories\n" % (len(rows), len(cats)))
 
+    words = [set(r[2]) for r in rows]        # stem word sets, for the ngram bound
+
     same_ans, near_stem = [], []
     for i in range(len(rows)):
         si, qi, ni, ai = rows[i]
+        wi = words[i]
         for j in range(i + 1, len(rows)):
             sj, qj, nj, aj = rows[j]
             if si == sj:
@@ -145,9 +148,30 @@ def main():
                         same_ans.append((jac, r, si, qi, sj, qj))
                         continue
             # -- test two: the stems alone
-            r = SequenceMatcher(None, ni, nj).ratio()
-            n, gram = longest_run(ni, nj)
+            #
+            # Both of these are expensive and almost every pair fails both, so
+            # each gets an exact cheap upper bound first. At 2,130 questions the
+            # unguarded loop ran SequenceMatcher.ratio() and longest_run() over
+            # 2.27 million pairs and took more than two minutes; the corpus ends
+            # at 3,061, which is 4.7 million. A check nobody waits for is a check
+            # nobody runs.
+            #
+            # A shared run of N consecutive words needs at least N words in
+            # common, so the set intersection bounds it exactly. quick_ratio is
+            # difflib's own multiset upper bound on ratio. Neither can hide a
+            # pair that the full test would have flagged.
+            common = len(wi & words[j])
+            need_ngram = common >= NGRAM_ALONE
+            sm = SequenceMatcher(None, ni, nj)
+            need_ratio = sm.quick_ratio() >= STEM_ALONE
+            if not (need_ngram or need_ratio):
+                continue
+            r = sm.ratio() if need_ratio else 0.0
+            n, gram = longest_run(ni, nj) if need_ngram else (0, "")
             if r >= STEM_ALONE or n >= NGRAM_ALONE:
+                if not need_ratio:
+                    r = sm.ratio()   # only for the few we actually print, so the
+                                     # reported ratio is the real one and not 0.0
                 near_stem.append((r, n, gram, si, qi, sj, qj))
 
     same_ans.sort(reverse=True, key=lambda t: (t[0], t[1]))
