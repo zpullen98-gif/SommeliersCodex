@@ -38,6 +38,7 @@ def build(name):
     problems += lib.loose_tilde_problems(bank)
     problems += lib.compound_answer_problems(bank)
     problems += lib.negation_probe_problems(bank)
+    problems += lib.comparative_probe_problems(bank)
     problems += lib.cross_accept_problems(bank)
     problems += lib.duplicate_answers(bank)
 

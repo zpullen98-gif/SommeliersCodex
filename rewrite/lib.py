@@ -444,6 +444,96 @@ def negation_probe_problems(bank):
     return out
 
 
+# A threshold answer can be inverted without any negation word at all. These
+# frames flip a minimum into a maximum and back; the grader cannot see the
+# difference because "less", "over" and "maximum" are not negations, so
+# negation_probe_problems never fires on them.
+# Only frames that are wrong in BOTH directions. "two years minimum" restates a
+# minimum and is a correct phrasing of it, so framing it as an inversion just
+# produces a false positive on every floor question; the same goes for "up to"
+# and "at most" against a ceiling. A strict comparative is wrong either way,
+# because the answer is the threshold itself and not a range excluding it.
+COMPARATIVE_FRAMES = [
+    "less than %s", "fewer than %s", "under %s", "below %s",
+    "more than %s", "over %s", "above %s", "exceeding %s", "greater than %s",
+]
+
+# Only worth probing where the answer is a threshold: a number, or a spelled
+# number. Probing "less than Chardonnay" is noise, and an over-firing check
+# gets ignored, which is how two earlier checks died.
+NUMBERISH = re.compile(
+    r"\d|\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+    r"thirteen|fourteen|fifteen|sixteen|eighteen|twenty|thirty|forty|fifty|"
+    r"sixty|seventy|eighty|ninety|hundred|thousand)\b", re.I)
+
+
+def comparative_probe_problems(bank):
+    """Probe threshold answers with inversions of their own magnitude.
+
+    negation_probe_problems catches "not X". It cannot catch "less than X",
+    because there is no negation in it. Found in Spirits & Cocktails: a question
+    asking the MINIMUM bottling strength of cachaca graded "less than 38 per
+    cent", "up to 38 per cent" and "38 per cent maximum" as correct, and a
+    question asking the MAXIMUM cask size graded "more than 700 litres".
+
+    Which direction is wrong depends on whether the stem asks for a floor or a
+    ceiling, and no string test can read that. So this does not try: it flags
+    ANY threshold answer whose accept list grades an inversion in EITHER
+    direction, and leaves a human to decide. The repair is ex=True with the
+    phrasings actually taken, which is what the docstring on SA() already
+    recommends for this shape of answer.
+    """
+    out = []
+    for e in bank:
+        if is_mc(e):
+            continue
+        ans = e.get("ans", "")
+        if not NUMBERISH.search(ans):
+            continue
+        n = engine_norm(ans)
+        if not n:
+            continue
+        listed = {engine_norm(a[1:] if a.startswith("~") else a)
+                  for a in (e.get("accept") or [])}
+        for frame in COMPARATIVE_FRAMES:
+            probe = frame % n
+            if engine_norm(probe) == n:
+                continue                      # frame vanished under norm
+            if engine_norm(probe) in listed:
+                continue                      # the author took this one deliberately
+            if match_sa(e, probe):
+                out.append("grades the INVERSION %r as correct, so a threshold "
+                           "reads the same in both directions: %r"
+                           % (probe, e["q"][:44]))
+                break
+    return out
+
+
+# THE CROSS-QUESTION GIVEAWAY, and why there is no check for it.
+#
+# One question's stem or explanation can hand over another's answer, making the
+# second free to anyone who met the first. Verifiers found four in one wave: a
+# New Zealand stem naming "Marlborough clay ... Pinot Noir" while another asked
+# which grape fills Marlborough's clay side valleys, and a South Africa
+# explanation naming Constantia as the governor's own farm and the oldest ward,
+# which is precisely the next question's answer.
+#
+# Mechanising it was tried and the numbers are recorded here so it is not tried
+# again the same way. Flagging any answer of two words or more appearing in
+# another question's stem or explanation fires on 319 of 1,824 questions, 17%,
+# almost all of it a topical bank naming its own subject. Restricting to stems
+# only gives 137, still 7.5%. Restricting further to answers of three words or
+# more gives 25, a usable 1.4% — but it MISSES BOTH REAL CASES, because "Pinot
+# Noir" is two words and "Constantia" is one.
+#
+# So the precise variants cannot see the defect and the variants that can see it
+# are noise. The signal is semantic: a stem supplying the other question's
+# defining context, not merely its answer string. That is the third class this
+# project has failed to mechanise, after the label-word probe and the first
+# tilde heuristic, and like them it stays a human-review item rather than
+# shipping as a check that would be switched off within a week.
+
+
 def cross_accept_problems(bank):
     """Catch an accept list broad enough to grade a DIFFERENT question's answer
     correct. A loose entry like 'acid' is the classic way a bank starts marking

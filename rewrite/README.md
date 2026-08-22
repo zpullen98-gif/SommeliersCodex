@@ -42,7 +42,7 @@ changes completely:
 | Path | Does |
 |---|---|
 | `categories/<name>.py` | One category: `CAT`, `SLUG`, `SYLLABUS`, `BANK`, plus `PREFIX`/`RANK`/`SOURCE` for Rank II and any `ACCEPTED` phrases a human has cleared |
-| `lib.py` | Minting, balanced option dealing, emit, and ten checks |
+| `lib.py` | Minting, balanced option dealing, emit, and eleven checks |
 | `build.py` | Driver — `py rewrite/build.py r1_bordeaux`, or `--all` |
 | `manifest.py` | Progress across all 67 categories, and what is largest next |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
@@ -53,7 +53,7 @@ changes completely:
 re-litigated every run. Adding to it is a review decision, never a way to quiet
 the checker.
 
-The ten checks, all run by `build.py` and all blocking:
+The eleven checks, all run by `build.py` and all blocking:
 
 | Check | Catches |
 |---|---|
@@ -67,6 +67,7 @@ The ten checks, all run by `build.py` and all blocking:
 | `loose_tilde_problems` | A one-word `~` entry, which matches that word inside any wrong answer |
 | `compound_answer_problems` | A token-set collision between an accept entry and a different answer |
 | `negation_probe_problems` | An accept list that grades a negation of its own answer |
+| `comparative_probe_problems` | A threshold answer that grades its own inversion, e.g. "less than nine months" |
 
 `check-cross-category.py` is deliberately NOT one of them. It reads every emitted bank at once
 rather than the one being built, so it belongs beside `check-similarity.py` as a pass you run over
@@ -579,8 +580,7 @@ designed to stand down for.
 
 ## Scaling to the full job
 
-**Progress: 1,514 of 3,061 questions (49.5%), 25 of 67 categories.** Rank I is 1,152 of 1,778
-(65%) across 19 categories; Rank II is 362 of 1,283 (28%) across 6. All twenty-five pass every
+**Progress: 1,824 of 3,061 questions (59.6%), 31 of 67 categories.** All thirty-one pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
