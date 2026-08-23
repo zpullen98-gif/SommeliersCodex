@@ -236,11 +236,35 @@ def structural(bank, syllabus, cat, prefix="i"):
         if mc and n > len(mc) * 0.5:
             problems.append("answer position %d holds %d of %d MC" % (pos, n, len(mc)))
 
+    # Can a student beat chance from option LENGTH alone? Position is dealt
+    # evenly by bake_option_order, but nothing ever looked at length, and a
+    # correct option is naturally longer because it carries the qualification
+    # that makes it true.
+    #
+    # MEASURE THE RANK, NOT "IS IT THE LONGEST". The first version of this
+    # counted keys that were the longest option, and a repair pass aimed at that
+    # number pushed exactly one distractor two characters past the key in 24
+    # questions. The count fell from 76% to 31% and the category got no harder:
+    # "pick the second-longest" now scored 55%. Ranking the four options and
+    # recording where the key lands cannot be gamed that way, because moving the
+    # key between ranks just moves the peak.
+    #
+    # With no signal the key is uniform across the four ranks at 25% each, so
+    # the worst rank share IS what a knowledge-free student scores. Reported
+    # rather than blocked: twenty categories are currently over 45% and the
+    # repair is editorial, not mechanical.
+    len_rank = [0, 0, 0, 0]
+    for e in mc:
+        order = sorted(range(len(e["opts"])), key=lambda k: -len(e["opts"][k]))
+        len_rank[order.index(e["a"])] += 1
+
     return problems, {
         "spread": dict(sorted(spread.items())),
         "ids": len(seen_id),
         "mc": len(mc),
         "sa": len(bank) - len(mc),
+        "len_rank": len_rank,
+        "len_guess": (100.0 * max(len_rank) / len(mc)) if mc else 0.0,
     }
 
 

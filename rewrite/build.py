@@ -49,6 +49,9 @@ def build(name):
     print("  types           %d multiple choice, %d short answer" % (stats["mc"], stats["sa"]))
     if stats["mc"]:
         print("  answer spread   %s" % stats["spread"])
+        print("  key by length   rank %s — a student who knows nothing scores"
+              " %.0f%% on length alone (25%% is no signal)"
+              % ("/".join(str(x) for x in stats["len_rank"]), stats["len_guess"]))
     print("  unique ids      %d" % stats["ids"])
     print("  distinct stem openers %d of %d questions; most common %s"
           % (len(openers), len(bank), openers.most_common(1)[0] if openers else "-"))

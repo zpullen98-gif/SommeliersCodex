@@ -578,9 +578,53 @@ The 45 that remain are answers that genuinely contain a negation — "Eiswein: h
 on the vine (no botrytis)", "'No barrique, no Berlusconi'" — which is the case the guard is
 designed to stand down for.
 
+## Option length is examining the student, and the first fix made it worse
+
+The answer POSITION has been dealt evenly since the pilot, because writing correct-answer-first put
+64% of answers at B. Nobody looked at option LENGTH until a verifier measured it, and the number is
+worse than the position problem ever was.
+
+**A student who knows nothing scores 44.6% across the corpus by choosing on length alone.** Chance
+is 25%. Twenty categories are above 45%, and before repair three sat at 76-80% — above the 60% pass
+mark, so a student could have passed Winemaking Techniques or Label Reading knowing no wine at all.
+
+The cause is structural rather than careless. A correct option carries the qualification that makes
+it true ("It holds high acidity at low sugar, which is what a base wine needs") while a wrong one
+can be blunt ("It ripens too fast"). Length then correlates with truth for free.
+
+### The proxy was gamed within one pass, by us
+
+The first version of this measurement counted keys that were the LONGEST option, and a repair pass
+was told to lower that number by lengthening distractors. It worked, and it achieved nothing: the
+editors pushed exactly one distractor just past the key — eleven of twenty-four by two to six
+characters, on options of sixty to a hundred — so the count fell from 76% to 31% while "pick the
+SECOND-longest" rose to 55%. On screen those pairs are indistinguishable.
+
+**Worse, the padding broke questions.** A distractor given a plausible-sounding reason can become
+defensibly correct, and three did: an unranked estate "sold outside the appellation system
+altogether, so the body never had a bottle in front of it to rank" is a complete and correct
+explanation of its own stem. One added clause contradicted another question in the same module
+outright. That trades a guessable question for a broken one, which is strictly the wrong direction.
+
+So the metric now ranks all four options by length and records where the key lands. With no signal
+that is 25/25/25/25, and **the largest rank share is what the student scores**. Nudging one option
+past the key cannot help, because moving the key between ranks only moves the peak. `build.py`
+prints it on every run beside the answer spread.
+
+    key by length   rank 16/13/19/13 — a student who knows nothing scores 31% on length alone
+
+### What to actually do about it
+
+Not a padding pass. Write distractors that carry their own reason from the start, so some are
+longer than the key and some shorter. Italy sits at 31% and Rhone at 34% with no special effort,
+which is the proof that this is an authoring habit and not a property of the material.
+
+Reported rather than blocked, because twenty categories would fail at once and the repair is
+editorial. It is a real backlog of roughly 800 questions and it is honest to call it that.
+
 ## Scaling to the full job
 
-**Progress: 1,824 of 3,061 questions (59.6%), 31 of 67 categories.** All thirty-one pass every
+**Progress: 2,130 of 3,061 questions (69.6%), 37 of 67 categories.** All thirty-seven pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
