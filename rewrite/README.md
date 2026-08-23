@@ -616,15 +616,27 @@ prints it on every run beside the answer spread.
 ### What to actually do about it
 
 Not a padding pass. Write distractors that carry their own reason from the start, so some are
-longer than the key and some shorter. Italy sits at 31% and Rhone at 34% with no special effort,
-which is the proof that this is an authoring habit and not a property of the material.
+longer than the key and some shorter.
 
-Reported rather than blocked, because twenty categories would fail at once and the repair is
-editorial. It is a real backlog of roughly 800 questions and it is honest to call it that.
+**Putting it in the writer's brief works, and nothing else has.** Wave 3 was the first written with
+this constraint stated up front, with the padding failure quoted at it as a warning. Its four
+categories came out at 28.0%, 31.5%, 32.0% and 32.0% - the four best in the corpus, all at the
+floor - and needed no length repair at all. Compare wave 2, written without it: three rounds of
+repair took 76-80% down to 55%, broke three distractors on the way, and cost more agent time than
+writing the categories had.
+
+Actionable findings fell with it, from 39 in wave 2 to 11 in wave 3, and History & Figures became
+the first category in the project to pass verification with nothing to repair.
+
+Reported rather than blocked, because the older categories would fail at once and their repair is
+editorial. That backlog is real - roughly 800 questions across twenty categories, and the corpus
+figure is still 42.1% - but it stopped growing the moment the constraint moved into the brief.
 
 ## Scaling to the full job
 
-**Progress: 2,130 of 3,061 questions (69.6%), 37 of 67 categories.** All thirty-seven pass every
+**Progress: 2,334 of 3,061 questions (76.2%), 41 of 67 categories. RANK I IS COMPLETE** - all
+1,778 Introductory questions across all 31 categories are now original work. Rank II stands at 556
+of 1,283 (43%) across 10 of its 36. All forty-one pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
