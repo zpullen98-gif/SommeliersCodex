@@ -634,9 +634,9 @@ figure is still 42.1% - but it stopped growing the moment the constraint moved i
 
 ## Scaling to the full job
 
-**Progress: 2,334 of 3,061 questions (76.2%), 41 of 67 categories. RANK I IS COMPLETE** - all
-1,778 Introductory questions across all 31 categories are now original work. Rank II stands at 556
-of 1,283 (43%) across 10 of its 36. All forty-one pass every
+**Progress: 2,513 of 3,061 questions (82.1%), 46 of 67 categories. RANK I IS COMPLETE** - all
+1,778 Introductory questions across all 31 categories are now original work. Rank II stands at 735
+of 1,283 (57%) across 15 of its 36. All forty-six pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
