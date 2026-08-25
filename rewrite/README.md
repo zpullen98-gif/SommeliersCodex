@@ -632,11 +632,49 @@ Reported rather than blocked, because the older categories would fail at once an
 editorial. That backlog is real - roughly 800 questions across twenty categories, and the corpus
 figure is still 42.1% - but it stopped growing the moment the constraint moved into the brief.
 
+## When two adjudicators disagree, neither wins — a source does
+
+A reviewer claimed the sweet szamorodni minimum had risen from 45 to 60 grams per litre, citing a
+"version 10a" December 2024 amendment of the Tokaj product specification. The adjudicator REFUTED
+it, on grounds this file itself teaches: the citation was unverifiable, its shape was exactly the
+shape a confabulated citation takes, 45 is the figure every syllabus examines, and the module's own
+Aszu question keys 120 from the same rulebook. A re-run of the same adjudication reached the
+opposite verdict and the editor applied 60.
+
+Both verdicts were internally reasonable. Both were argued from knowledge. Only one could be right,
+and nothing inside the pipeline could say which — so the question went outside it, to the primary
+source. **The citation was real.** The amendments enacted 18 December 2024 raised edes szamorodni,
+Forditas and Maslas from 45 to 60 g/L, and "version 10a" is the actual version label. The
+"confabulated-looking" citation was the truth, and the skeptical verdict — built on every heuristic
+this project rightly uses — was wrong.
+
+Verified against the document itself, not a summary of it: the 10a specification on the wine
+region council's site (tokajiborvidek.hu, "Tokaj-OEM Termekleiras 10a verzio") carries the
+amendment as tracked changes, and the analytical table on page 3 reads min. 45 struck for 60 g/L
+on edes Szamorodni, Forditas and Maslas, with late harvest still at 45, Aszu still at 120,
+Eszencia still at 450, and the volatile-acidity cap on the same four wines raised from 1.5 to
+2.0 g/L. The 10a version applies from the 1 August 2024 harvest year.
+
+Three things worth keeping from it:
+
+1. **Skepticism is a prior, not a verdict.** Defaulting to REFUTED is correct policy; refusing to
+   check a checkable citation is not. A finding that names a dated primary document is an
+   invitation to look it up, and "this looks confabulated" is a reason to look harder, not a
+   reason to stop.
+2. **"The figure every syllabus examines" and "the figure the law states" diverge**, and this bank
+   sides with the law: it already teaches the 2021 German reform and the 2017 Rioja rules on the
+   same principle. A student who answers 60 against a rulebook that says 60 must never be marked
+   wrong because the textbooks lag.
+3. **The repair created a collision the fact-check could never have seen**: rekeying the SA to 60
+   made it verbatim-identical to a distractor in the Aszu question four lines up, whose own
+   explanation routes sub-threshold wine at szamorodni. Every rekey needs the same cross-module
+   read as every explanation rewrite.
+
 ## Scaling to the full job
 
-**Progress: 2,513 of 3,061 questions (82.1%), 46 of 67 categories. RANK I IS COMPLETE** - all
-1,778 Introductory questions across all 31 categories are now original work. Rank II stands at 735
-of 1,283 (57%) across 15 of its 36. All forty-six pass every
+**Progress: 2,695 of 3,061 questions (88.0%), 51 of 67 categories. RANK I IS COMPLETE** - all
+1,778 Introductory questions across all 31 categories are now original work. Rank II stands at 917
+of 1,283 (71%) across 20 of its 36. All fifty-one pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
