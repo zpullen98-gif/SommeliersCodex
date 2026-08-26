@@ -68,10 +68,18 @@ decorating the previous one. Deploying means bumping `?v=` on changed files in `
 
 ## On accuracy
 
-The Page and Squire banks were imported from established material. The Knight
-and Ruler banks were drafted with AI assistance and then fact-checked by an adversarial
-audit, which confirmed and corrected 39 errors — clustered in quantified counts,
+All four banks are original work. The Page and Squire banks, 3,061 questions across
+67 categories, were written from syllabuses rather than from any source question, then
+put through eleven mechanical checks, a similarity pass against the material they
+replace, a cross-category pass, and several rounds of independent fact-checking and
+adversarial review. Against the replaced material they score 0 exact stem matches and a
+maximum sequence ratio of 0.400, well under the 0.60 review threshold. The Knight and
+Ruler banks were drafted with AI assistance and then fact-checked by an adversarial
+audit, which confirmed and corrected 39 errors, clustered in quantified counts,
 attribution, and near-miss technical relations.
+
+The Page and Squire banks have not yet been reviewed by a credentialed sommelier. That
+review is a launch gate, not an optional extra.
 
 Treat this as a drilling tool, not an authority. **Verify anything exam-critical against
 GuildSomm or the CMS curriculum**, and use the error flag in every answer reveal to collect
@@ -79,4 +87,6 @@ corrections as you study.
 
 ## Licence
 
-Personal study project. No affiliation with the Court of Master Sommeliers.
+© 2026 Zach Pullen. The question banks, study chapters and reference content are
+original work and all rights are reserved. No affiliation with, or endorsement by, the
+Court of Master Sommeliers.
