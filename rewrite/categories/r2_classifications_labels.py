@@ -28,9 +28,11 @@ Written from the syllabus below. The imported bank was not read while writing; i
 is read only afterwards, by check-similarity.py.
 
 Accept lists are built against lib.match_sa, a port of core.js matchSA, and were
-run rather than eyeballed. No '~' entries appear anywhere: the tilde is
-exact-OR-containment, so a one-word tilde grades any wrong answer that happens to
-carry that word. Note that core.js norm() strips 'de', 'des', 'du', 'la' and 'le',
+run rather than eyeballed. The three '~' entries all carry whole phrases of four
+words or more, for the reason set out below; no one-word tilde appears anywhere,
+because the tilde is exact-OR-containment and a one-word tilde grades any wrong
+answer that happens to carry that word. Note that core.js norm() strips 'de',
+'des', 'du', 'la' and 'le',
 which collapses several Spanish and Italian phrases into each other - 'cava de
 paraje calificado' and 'cava paraje calificado' are one string to the grader - so
 every list here was checked for entries that normalise to the same thing. The
@@ -39,6 +41,57 @@ reads the same in both directions, and each of those lists was then widened unti
 every natural form of its own answer grades: digits and words, per cent, percent
 and abv on the alcohol figure, the vessel named or left out on the durations, and
 the bare number with at least, minimum and a trailing minimum on all three.
+
+The lists were then run against check-stem-echo.py, which grades every n-gram of
+a stem with that question's own grader, and the first attempt at what it found
+did real damage, so the whole episode is recorded here. Three stems scored. Two
+were the branch that takes an input contained in an accept entry when the input
+holds 60 per cent of its words: 'on the label' paid out on the entry 'roble on
+the label', and 'growing area' on 'delimiting the growing area'. The roble entry
+was cut and nothing died with it, since the bare 'roble' still grades the whole
+sentence by containment.
+
+The growing-area entry was the mistake. It was lengthened to 'delimiting the
+growing area first', on the reasoning that a longer entry demands more words of a
+stem run than the run has. That is true, and it closed the echo. What it missed
+is that lengthening an entry also lengthens the substring the containment branch
+has to find, so the anchor stopped being three words and became four with 'first'
+nailed to the end of it. Eleven phrasings that graded before stopped grading:
+'delimiting the growing area comes first', 'you start by delimiting the growing
+area', 'delimiting the growing area before anything else' and the rest of that
+family. A student who knew the answer was told it was wrong, which is a worse
+outcome than the echo it bought.
+
+The instrument that closes an echo without closing an open class of correct
+answers is the tilde, and the branch order is the whole of the reason. matchSA
+tests a '~' entry FIRST and then moves on, so a tilde is exact match or
+whole-phrase containment and nothing else: no truncation, no 60 per cent ratio,
+no substring found inside a longer word. '~delimiting the growing area' therefore
+grades every sentence containing that phrase and still refuses 'growing area',
+which is not that phrase. The plural needs a second tilde of its own, because
+whole-phrase containment stops at a word boundary and 'areas' is not 'area'. The
+one rule these have to obey is that a tilde is never a single word: '~port' would
+grade 'tawny port', and lib.loose_tilde_problems fails the build on it. Four
+words and up is safe, and it is what an open answer wants.
+
+The passive family was widened at the same time, and beside the zone entry
+already there it now carries '~the area has to be delimited', which grades 'the
+area has to be delimited before anything can be ranked'. That phrasing was
+rejected before and should not have been. It cannot be reached by a contrarian:
+anything carrying no, not or never trips the negation guard, and 'nothing has to
+be delimited' does not contain the phrase at all.
+
+The third flag was not an accept fault. The cru stem printed first growth and
+second growth and then asked what the noun means, so the answer was legible in
+the question and no accept edit could have closed it, since the displayed answer
+is guaranteed to grade. The stem now asks through premier cru and grand cru, and
+the English rendering moved into the explanation, where it teaches after the
+grading rather than before it. That is a better question on its own merits and
+would be worth making with no checker in the room.
+
+All three echoes are closed and no phrasing that graded before the pass fails
+now, both measured by grading every accept entry, every framed form of it and
+every stem and explanation n-gram against the old lists and the new.
 
 Facts are restricted to ones that do not drift. No membership lists, no current
 holders of any rank, no ownership and no prices. Procedure, statute, the structure
@@ -253,10 +306,11 @@ BANK = [
        "It means nothing at all outside France, every other country having borrowed the word as decoration rather than writing it into a rulebook"], 0,
       "The unit is the entire content of the claim, so grand cru can mean four hectares of hillside in one glass and a whole parish in the next. Burgundy ranks ground and Beaujolais uses the word for whole appellations, while other systems rank villages or companies, and none of that is visible on the bottle."),
     SA("The cru concept compared",
-       "English wine talk borrowed first growth and second growth straight from the French, and the noun behind them travels untranslated everywhere else. What does that noun mean?",
+       "Premier cru and grand cru cross into English untranslated, and the noun they share began life as the past participle of a French verb. Rendered literally, what does that noun mean?",
        "Growth",
-       ["growth", "grown", "growth in the sense of what grew there"],
-       "Cru is the past participle of croitre, to grow, so a cru is literally a growth: the thing that grew, and by extension the ground that grew it. The word carries no rank of its own until a classification attaches one, which is why it turns up in systems that rank nothing at all."),
+       ["growth", "grown", "what grew there", "the thing that grew",
+        "growth in the sense of what grew there"],
+       "Cru is the past participle of croitre, to grow, so a cru is literally a growth: the thing that grew, and by extension the ground that grew it. English says it both ways without noticing, keeping the French noun in premier cru and translating that same noun in first growth. The word carries no rank of its own until a classification attaches one, which is why it turns up in systems that rank nothing at all."),
     SA("The cru concept compared",
        "Italian law lets one word stand in front of a vineyard name, and only where the plot is on the denomination's register and its fruit was vinified apart from everything else. Which word?",
        "Vigna",
@@ -386,7 +440,7 @@ BANK = [
     SA("Reserva, Riserva and Reserve across borders",
        "Four months in barrel leaves a Spanish red short of the lowest rung of the ageing ladder, and the bodega still wants the oak mentioned on the label. Which word does it reach for?",
        "Roble",
-       ["roble", "vino de roble", "the word roble", "roble on the label"],
+       ["roble", "vino de roble", "the word roble"],
        "Roble simply means oak, and the wine does have to have sat in oak vessels of no more than six hundred litres to carry the word, with chips and staves in a tank expressly ruled out. What no national rule fixes is how long, so four months and fourteen both read as roble unless the denomination has written a floor of its own. A guest who hears a junior rung of the crianza ladder in it has heard something that is not there."),
 
     # ------------------------ Drawing the line, and recording the ground (6) --
@@ -409,8 +463,9 @@ BANK = [
        ["delimitation", "delimitation of the area", "delimiting the area",
         "delimitation of the zone", "delimiting the region", "drawing the boundary first",
         "delimit the area", "the area must be delimited", "delimiting the vineyard area",
-        "delimiting the growing area", "the zone has to be delimited first",
-        "settling the delimitation"],
+        "~delimiting the growing area", "~delimiting the growing areas",
+        "~the area has to be delimited", "the area has to be delimited first",
+        "the zone has to be delimited first", "settling the delimitation"],
        "A rank is a statement about somewhere, so somewhere has to exist in law before anything inside it can be ranked. That order is why young regions spend a decade arguing over a boundary that looks obvious afterwards, and why the ranking, if it comes at all, arrives a generation later."),
     SA("Drawing the line, and recording the ground",
        "Cava added a tier at the top in 2017 for wine off one delimited plot, vinified separately and held on its lees for at least three years. What is that tier called?",

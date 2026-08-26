@@ -221,9 +221,17 @@ BANK = [
     SA("Rocks and the fault",
        "A dark island of Steige schist above the town of Andlau carries one small Alsace grand cru whose Riesling outlives most of the region's. Name it.",
        "Kastelberg",
-       ["kastelberg", "kastelberg grand cru", "grand cru kastelberg",
-        "kastelberg above andlau", "kastelberg at andlau",
-        "the kastelberg cru"],
+       # No entry runs to three words, because the stem supplies the other two.
+       # "kastelberg grand cru" and "grand cru kastelberg" were cut: matchSA's
+       # reverse-containment branch takes a two-word truncation of a three-word
+       # entry, so both graded a bare "grand cru", which the stem prints. The
+       # plain entry still grades every one of those phrasings by containment,
+       # so nothing legitimate went with them. "kastelberg above andlau" and
+       # "kastelberg at andlau" went the same way and for the same reason: they
+       # graded "above andlau" and "at andlau", which is the stem read back.
+       # The two-word forms are safe, since a one-word truncation of them fails
+       # matchSA's word-count floor.
+       ["kastelberg", "the kastelberg cru", "kastelberg andlau"],
        "Kastelberg is the only Alsace grand cru on schist, a sliver of the dark Steige belt pinched against the granite above Andlau, and its Riesling is famously slow: austere young, mineral for decades. The abbey town has worked the slope since the early Middle Ages, which is roughly how long the site has held its name."),
     Q("Rocks and the fault",
       "Granite crus like Brand and Sommerberg sit at the mouths of Vosges valleys, while Alsace's marl and limestone names string along the lower foothills. What arranged them that way?",

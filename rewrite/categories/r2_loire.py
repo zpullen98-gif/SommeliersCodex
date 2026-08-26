@@ -248,8 +248,9 @@ BANK = [
     SA("Cabernet Franc and the Touraine reds",
        "A cuvee from vines in the commune of Saint-Nicolas-de-Bourgueil is judged too slight to carry its own village name. Which appellation of the same ground can take it instead?",
        "Bourgueil",
-       ["bourgueil", "aoc bourgueil", "bourgueil aoc", "the bourgueil appellation",
-        "bourgueil rouge"],
+       ["bourgueil", "aoc bourgueil", "bourgueil aoc", "aop bourgueil",
+        "bourgueil aop", "bourgueil ac", "the bourgueil appellation",
+        "bourgueil rouge", "red bourgueil"],
        "Saint-Nicolas-de-Bourgueil is one of the communes inside the wider Bourgueil delimitation as well as an appellation in its own right, so the traffic runs one way only. A Saint-Nicolas grower may declassify into Bourgueil; a Bourgueil grower has no claim whatever on the village name.",
        ex=True),
 

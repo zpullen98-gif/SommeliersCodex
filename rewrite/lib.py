@@ -269,14 +269,24 @@ def structural(bank, syllabus, cat, prefix="i"):
 
 
 NEG_WORDS = {"not", "no", "never", "without", "lack", "lacks", "lacking",
-             "absence", "opposite", "rather", "wrong", "incorrect"}
+             "absence", "opposite", "rather", "wrong", "incorrect", "dont"}
 
 # Exclusion frames carrying no NEG_WORDS token: "anything but moromi" contains
 # no negation word, so the token guard never fired and the containment branch
 # graded it correct on every non-ex short answer probed. Bigrams rather than a
 # bare "but" in NEG_WORDS, because bare "but" would block correct elaborations
 # like "moromi but unpressed".
-NEG_PHRASES = ("anything but", "everything but", "all but")
+# "don't" normalises to 'don t', which no token can see, so it rides in
+# NEG_PHRASES; the verb bigrams block reversals like 'stop buying the rest
+# of the book' that carry no negation word. Bigrams rather than bare
+# stop/avoid/refuse tokens, because correct answers legitimately contain
+# those verbs ('avoid oxidation') and would be wrongly blocked.
+NEG_PHRASES = ("anything but", "everything but", "all but", "don t",
+               "stop buying", "stops buying", "stopped buying",
+               "refuse to", "refuses to", "refused to",
+               "avoid buying", "avoids buying",
+               "cease buying", "ceases buying",
+               "decline to", "declines to", "declined to")
 
 
 def _negated_against(input_norm, accept_norm):

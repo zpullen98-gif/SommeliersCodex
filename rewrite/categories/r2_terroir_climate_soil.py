@@ -18,12 +18,14 @@ Written from the syllabus below. The imported bank was not read while writing; i
 is read only afterwards, by check-similarity.py.
 
 Accept lists are built against lib.match_sa, a port of core.js matchSA, and were
-run against adversarial inputs rather than eyeballed. No '~' entries appear
-anywhere: the tilde is exact-OR-containment, so a one-word tilde grades any wrong
-answer holding that word.
+run against adversarial inputs rather than eyeballed. '~' entries appear on one
+question only and every one of them is a whole phrase of two words or more: the
+tilde is exact-OR-whole-phrase-containment, so a one-word tilde grades any wrong
+answer holding that word and is never used here.
 
-ex=True is used on exactly four questions, each one where a WRONG answer would
-otherwise contain the right one plus a distinguishing word:
+ex=True is used where containment grading would hand a point to something that
+is not the answer. Four questions are of that shape, each one where a WRONG
+answer would otherwise contain the right one plus a distinguishing word:
 
   specific heat capacity  "low specific heat capacity" is the exact inversion the
                           question tests, and it contains the right answer.
@@ -34,10 +36,46 @@ otherwise contain the right one plus a distinguishing word:
   climate                 "climate change" is a real and different thing that
                           contains "climate".
 
-Each of those lists was then widened until every natural phrasing of its own
-answer still grades, because exact matching rejects anything not written down.
-The accept lists in the code below are the record of what is taken; an
-enumeration up here only goes stale, and did.
+A word of the STEM can be a truncation of the answer as well, so retyping the
+question scores. Containment runs in both directions and the second direction is
+the one that leaks. Two of those were closed and one was not.
+
+  vintage variation   the stem says "from year to year", and the accepted
+                      phrasing "year to year variation" is long enough that the
+                      bare "year to year" grades as a subphrase of it. Closed
+                      with ex=True plus '~' entries, which is the combination
+                      this file exists to demonstrate: matchSA checks the tilde
+                      branch BEFORE it consults ex, and that branch keeps
+                      whole-phrase containment. So "significant vintage
+                      variation" and "vintage variation in quality" still grade,
+                      while the bare stem phrase does not, because "year to year"
+                      is not a whole phrase of any accepted entry.
+  loess               "wind blown loess" sat beside "loess" and graded the stem's
+                      "wind-blown" on its own. Deleting it costs nothing, since
+                      a student who writes "wind blown loess" still grades on the
+                      "loess" inside it. No exactness needed.
+  mesoclimate         NOT closed, and that is a decision rather than an
+                      oversight. The stem asks which scale of climate, and
+                      "climate" sits inside "mesoclimate" as a plain substring,
+                      so the answer's own entry grades the stem word. The entry
+                      cannot be dropped, because SA() reinserts the displayed
+                      answer when the list fails to grade it. ex=True would close
+                      the echo and then reject "mesoclimate effect", which is the
+                      wording this question's own explanation uses, along with
+                      "block mesoclimate", "his mesoclimate", "a warmer
+                      mesoclimate" and every other modifier form a student
+                      actually writes. The tilde rescue is unavailable because
+                      the answer is one word and a one-word tilde grades that
+                      word anywhere. The class of correct phrasings is open, so
+                      the echo is conceded: a student typing "climate" collects a
+                      point they did not earn, which is far cheaper than telling
+                      a student who wrote "mesoclimate effect" that they are
+                      wrong.
+
+Each ex=True list was then widened until every natural phrasing of its own answer
+still grades, because exact matching rejects anything not written down. The
+accept lists in the code below are the record of what is taken; an enumeration up
+here only goes stale, and did.
 
 Facts are restricted to ones that do not drift. No ownership, no production
 volumes, no recent denomination changes. Physics, geology, plant response and
@@ -83,7 +121,18 @@ BANK = [
     SA("Scales of climate",
        "A grower points out that his hillside block ripens a full week ahead of the valley-floor block he also owns, though the appellation and the weather station serving them are the same. Which scale of climate is he describing?",
        "Mesoclimate",
-       ["mesoclimate", "meso climate", "vineyard mesoclimate", "site mesoclimate"],
+       # Deliberately NOT ex=True. See the mesoclimate paragraph at the top of
+       # this file: exactness here closes the "climate" stem echo and rejects
+       # "mesoclimate effect", which the explanation below uses in its own voice.
+       # Kept short on purpose. Without ex, "mesoclimate" already grades every
+       # elaboration that contains it, so a longer entry adds no coverage and
+       # does add harm: "mesoclimate of the site" would grade the fragment "of
+       # the site" through the reverse-containment branch. The one spelling that
+       # must be listed separately is the spaced one, which is a different word
+       # to the matcher. "mesoscale" is deliberately absent: it would grade the
+       # bare stem word "scale".
+       ["mesoclimate", "mesoclimates", "meso climate", "meso climates",
+        "meso scale", "site climate"],
        "Mesoclimate is the climate of a particular site, running from a few metres to a few kilometres, and it is what site selection is really about. The appellation shares a macroclimate, so anything that separates two blocks inside it is a mesoclimate effect: slope, aspect, elevation, exposure, air drainage."),
     SA("Scales of climate",
        "Published thirty-year averages from a lowland weather station mislead a producer whose vines sit a hundred and fifty metres above it on a ridge. Which climatic scale do those figures actually describe?",
@@ -249,10 +298,20 @@ BANK = [
     SA("Frost, hail and vintage extremes",
        "A region whose growing-season weather barely shifts from year to year makes dependable wine but lacks something collectors prize in Burgundy and the Mosel. Name what it lacks.",
        "Vintage variation",
-       ["vintage variation", "vintage variability", "variation between vintages",
-        "variability between vintages", "year to year variation",
-        "year to year variability"],
-       "Marginal climates sit near the edge of ripening, so a degree either way rewrites the whole harvest and the vintage chart becomes worth reading. Reliability and vintage character are two ends of one trade, which is why the same weather pattern is a commercial virtue in one region and a collector's disappointment in another."),
+       # Every entry is a '~' whole phrase, and that is load bearing. matchSA
+       # tests the tilde branch before it reaches ex, so these keep whole-phrase
+       # containment while ex=True kills the truncation branch that let the bare
+       # stem phrase "year to year" score. Adjective and tail forms therefore
+       # still grade; the stem echo does not, because it is nobody's whole phrase.
+       ["~vintage variation", "~vintage variations", "~vintage variability",
+        "~variation between vintages", "~variability between vintages",
+        "~variation between years", "~variability between years",
+        "~year to year variation", "~year to year variability",
+        "~variation from year to year", "~variability from year to year",
+        "~vintage to vintage variation", "~variation from vintage to vintage",
+        "~variability from vintage to vintage"],
+       "Marginal climates sit near the edge of ripening, so a degree either way rewrites the whole harvest and the vintage chart becomes worth reading. Reliability and vintage character are two ends of one trade, which is why the same weather pattern is a commercial virtue in one region and a collector's disappointment in another.",
+       ex=True),
 
     # ----------------------------------------------- Limestone, chalk and marl (5)
     Q("Limestone, chalk and marl",
@@ -307,7 +366,7 @@ BANK = [
     SA("Clay, gravel, sand and loess",
        "Wind-blown silt piled up during the ice ages gives deep, pale, free-draining soils that are easy to work, along the Danube and in eastern Washington. Name that material.",
        "Loess",
-       ["loess", "loess soil", "wind blown loess", "aeolian loess"],
+       ["loess", "loess soil", "aeolian loess", "loess deposit"],
        "Loess is a windborne dust deposit, so its particles are uniformly fine and unsorted by water, which is why it stands in vertical faces when cut and why it drains well despite being fine-grained. It is fertile and deep, so vigour rather than drought is the problem it sets a grower."),
     SA("Clay, gravel, sand and loess",
        "A thin layer of iron-stained red clay sitting straight on a limestone pan is the whole of Coonawarra's reputation. Name that soil.",

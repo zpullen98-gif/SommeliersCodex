@@ -70,8 +70,13 @@ BANK = [
     SA("Central Otago's basins",
        "Sluicing for gold in the 1860s stripped whole hillsides above the Kawarau's southern bank, and the scarred, sun-baked amphitheatre the miners left is now the most densely planted ground in Central Otago. Name the subregion.",
        "Bannockburn",
-       ["bannockburn", "bannockburn in central otago",
-        "the bannockburn subregion", "bannockburn otago"],
+       # No entry carries the stem's own words. "bannockburn in central otago"
+       # was cut because matchSA let a student score by typing back the stem's
+       # "in central otago" alone; the plain entry still grades that full
+       # phrasing by containment, so nothing legitimate was lost. For the same
+       # reason no "bannockburn central otago" form replaces it: the stem says
+       # Central Otago, and that entry would grade the bare region name.
+       ["bannockburn", "the bannockburn subregion", "bannockburn otago"],
        "Bannockburn sits where the Kawarau meets the Cromwell Basin, and the miners' water-cannon history is still legible in bare clay cliffs and tailings among the vines. Hot by day, cold at night and nearly desert-dry, it delivers the dense, dark end of Central Otago Pinot Noir and holds the tightest concentration of plantings in the region."),
     Q("Central Otago's basins",
       "Under four hundred millimetres of rain falls in a year on parts of the Cromwell Basin, and Bendigo's deep, free-draining terraces are the thirstiest ground in it. Which intervention makes a vineyard there possible at all?",

@@ -16,12 +16,40 @@ Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py.
 
 Accept lists are built against lib.match_sa, a port of core.js matchSA, and were
-run through it rather than eyeballed. No '~' entries appear anywhere, since the
-tilde is exact-OR-containment and a one-word tilde grades any wrong answer that
-happens to carry that word. Two answers needed deliberate narrowing: "Napa
-Valley" does NOT accept a bare "Napa", because Napa County is a real and
+run through it rather than eyeballed. Exactly one answer uses '~' entries and
+both of them run to three words, because a one-word tilde grades that word
+anywhere in a wrong answer while a phrase that long cannot appear in an answer
+that does not already name the place. Two answers needed deliberate narrowing:
+"Napa Valley" does NOT accept a bare "Napa", because Napa County is a real and
 different - and in that question wrong - appellation, and the Carneros list
 accepts the place name only, never the bare word "valley".
+
+A later pass closed four lists that graded words a student could read straight
+off the stem. Three lost their long trailing entries, which carried nothing the
+short form did not already grade by containment: "goldridge sandy loam" let a
+bare "sandy loam" through, "chalone appellation" let "one appellation" through
+on the substring branch, and both of the Templeton Gap entries naming the Santa
+Lucias let a piece of the stem through. Note the shape of that last one: cutting
+the first entry only exposed the second, since a truncation that clears the
+word-count ratio grades against any long entry it sits inside, so the fix is to
+stop appending the stem's own scenery to an accept list rather than to trim one
+entry and stop.
+
+Santa Lucia Highlands could not be closed by deletion at all, because the carrier
+was the answer itself and the stem names the Santa Lucia range a few words
+earlier. Read that list with lib.match_sa open, because the pairing of ex=True
+with '~' entries is the whole of it: ex=True kills the truncation and containment
+branches, so a bare "santa lucia" copied off the stem no longer scores, while the
+tilde branch is tested BEFORE ex is consulted and so keeps whole-phrase
+containment alive. "Santa Lucia Highlands, Monterey County", "Santa Lucia
+Highlands (SLH)" and "the Santa Lucia Highlands of Monterey" all still grade.
+A first attempt at this closed the echo with a bare ex=True over an enumerated
+list instead, and that rejected nine correct phrasings, because a place name
+takes a trailing qualifier and no enumeration of those qualifiers is ever
+finished. Where the class of right answers is open, the tilde is the tool and the
+enumeration is the trap. The explanation carries a closing line separating the
+range from the appellation, since that distinction is what the question now
+actually tests.
 
 Facts are restricted to ones that do not drift. No ownership, no acreage, no
 production shares and no appellation approved in the last few years; geology,
@@ -166,7 +194,7 @@ BANK = [
     SA("Sonoma County",
        "Fine sandy loam weathered out of an uplifted seabed underlies the western Russian River Valley and is the soil named most often on a Sonoma Pinot Noir back label. Name it.",
        "Goldridge",
-       ["goldridge", "gold ridge", "goldridge soil", "goldridge sandy loam"],
+       ["goldridge", "gold ridge", "goldridge soil"],
        "It is a light, free-draining loam over sandstone, low in nutrients, so vines set small crops without much persuasion and roots run deep chasing water. The eastern side of the valley runs to heavier clay loams that hold water and push vigour, and growers treat the two as separate farming problems on the same appellation."),
     SA("Sonoma County",
        "High above Lake Sonoma, one appellation admits no vineyard below eight hundred feet, which puts every acre of it clear of the fog. Name it.",
@@ -200,13 +228,13 @@ BANK = [
     SA("Santa Cruz Mountains and Monterey",
        "Terraces cut into east-facing benches of the Santa Lucia range sit above the worst of the Salinas Valley wind and have become Monterey's most sought-after Pinot Noir ground. Name that appellation.",
        "Santa Lucia Highlands",
-       ["santa lucia highlands", "santa lucia highlands ava",
-        "santa lucia highlands appellation", "santa lucia highlands in monterey"],
-       "Facing east means the fruit takes the morning sun and is then shaded as the wind builds, which is the reverse of the usual hillside logic and exactly what that valley needs. The benches are gravelly alluvial fans, far better drained than the deep silt of the valley floor below them."),
+       ["~santa lucia highlands", "~santa lucia highland", "slh"],
+       "Facing east means the fruit takes the morning sun and is then shaded as the wind builds, which is the reverse of the usual hillside logic and exactly what that valley needs. The benches are gravelly alluvial fans, far better drained than the deep silt of the valley floor below them. Note that the range and the appellation are not the same thing: the Santa Lucias run most of the length of the Central Coast, while the appellation is the strip of benchland on their eastern flank.",
+       ex=True),
     SA("Santa Cruz Mountains and Monterey",
        "Limestone is scarce under California vineyards, but one appellation high on the Gabilan range east of the Salinas Valley is built on it and on decomposed granite. Name it.",
        "Chalone",
-       ["chalone", "chalone ava", "chalone appellation", "chalone in monterey county"],
+       ["chalone", "chalone ava", "chalone in monterey county"],
        "The Gabilan range carries a band of limestone that surfaces here and again at Mount Harlan across the county line, which is why the two are so often named in the same breath. Vineyards sit around 1,800 feet, above the fog and clear of the valley wind, on ground poor enough that yields stay minute without any deliberate restriction."),
 
     # ------------------------------------------ Paso Robles and San Luis Obispo (3)
@@ -220,8 +248,7 @@ BANK = [
     SA("Paso Robles and San Luis Obispo",
        "Marine air reaches the western half of Paso Robles through a single break in the Santa Lucia range. Name that break.",
        "The Templeton Gap",
-       ["templeton gap", "gap at templeton", "templeton gap in the santa lucia range",
-        "templeton gap in the santa lucias"],
+       ["templeton gap", "gap at templeton"],
        "Cold air off Morro Bay pushes through in the afternoon and evening and can drop temperatures thirty degrees Fahrenheit or more overnight, which is why the west side behaves like a different region from the east. Gaps of this kind are the whole story of cool-climate viticulture in a state that is otherwise walled off from its own ocean."),
     SA("Paso Robles and San Luis Obispo",
        "A small San Luis Obispo appellation takes an unobstructed sweep of marine air funnelled in from Morro Bay through the Los Osos Valley, and records one of the longest growing seasons in California. Name it.",

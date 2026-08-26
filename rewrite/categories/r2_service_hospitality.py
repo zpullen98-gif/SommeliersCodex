@@ -100,12 +100,23 @@ BANK = [
        "Replace it and put both bottles on the bill",
        "Ask the rest of the table to decide whether it stays"], 0,
       "Soundness is the test for a fault, but a disliked bottle is a commercial question rather than a technical one. Most of it can be recovered by the glass."),
+    # 'young' and 'young red' are stem words and are deliberately still taken.
+    # The stem prints BOTH labels, young and old, and only one of them grades,
+    # so a student typing a word off the page is still choosing between two and
+    # is still being tested. Refusing them costs far more: the stem calls the
+    # wine "a firm young red", so "the young red" is the likeliest thing a
+    # student who knows the rule will type, and marking that wrong teaches a
+    # falsehood. Under ex=True nothing matches by truncation, so the entries
+    # below grade only as written and the reversal "old wine first, young wine
+    # second" still fails.
     SA("Sequence of service and etiquette",
        "A firm young red and a fragile old one are poured across a single meal. Which goes into the glass first?",
        "The young wine",
-       ["young wine", "young", "young one", "young red", "younger wine", "younger one",
-        "younger red", "young wine first", "young red first", "young before old",
-        "pour the young wine first", "the young wine goes first"],
+       ["young wine", "young", "young one", "young red", "young red wine",
+        "younger wine", "younger one", "younger red", "young first",
+        "young wine first", "young red first", "young one first",
+        "young before old", "pour the young wine first",
+        "the young wine goes first", "the young red goes first"],
        "Order protects the more delicate bottle. A firm young red after an old one flattens it, while the reverse merely flatters the young wine.", ex=True),
     Q("Sequence of service and etiquette",
       "Glasses are exchanged rather than reused when a table moves from a white to a red. What is that avoiding?",
@@ -117,7 +128,12 @@ BANK = [
     SA("Sequence of service and etiquette",
        "Stations, tools and glassware are set in place before the first guest arrives. Which French term covers that preparation?",
        "Mise en place",
-       ["mise en place", "~mise", "mis en place", "miseenplace"],
+       # The run-together typing is carried under a tilde rather than plainly.
+       # A bare 'miseenplace' is one token, so the containment branch graded any
+       # substring of it and the stem's own 'place' scored. The tilde branch
+       # takes only equality or the whole phrase, so the typo grades and the
+       # stem word does not.
+       ["mise en place", "~mise", "mis en place", "~miseenplace"],
        "The phrase travels from the kitchen to the floor unchanged. A sommelier hunting for a decanter mid-service failed an hour before the doors opened."),
 
     # ----------------------------------- opening and pouring still wine (5) --
@@ -144,13 +160,20 @@ BANK = [
     SA("Opening and pouring still wine",
        "A fifty-year-old cork crumbles at the first turn of the worm. Which two-pronged extractor exists for exactly this?",
        "The Ah-So, or butlers friend",
-       ["ah so", "butlers friend", "butler s friend", "two pronged puller",
-        "twin prong extractor"],
+       # The descriptive names are tilded rather than deleted. Plainly listed,
+       # 'two pronged puller' is three words and its two-word head cleared the
+       # word floor, so the stem's own 'two pronged' scored. The tilde takes
+       # equality or the whole phrase and never a truncation, so the tool can
+       # still be described without the stem fragment grading on its own.
+       ["ah so", "butlers friend", "butler s friend",
+        "~two pronged puller", "~two prong puller", "~twin prong extractor",
+        "two prong cork puller", "two pronged cork puller",
+        "twin prong cork puller"],
        "The blades slide down either side of the cork and grip it whole, which is the only chance with a cork a worm would simply pulverise."),
     SA("Opening and pouring still wine",
        "The pour is finishing and a drop is about to run down the shoulder. Which movement of the bottle prevents it?",
        "A twist of the bottle as it is lifted",
-       ["a twist of the bottle as it is lifted", "twist of the bottle", "twist the bottle",
+       ["a twist of the bottle as it is lifted", "~twist of the bottle", "twist the bottle",
         "twisting the bottle", "rotate the bottle", "rotating the bottle",
         "turn the bottle", "twist", "twist of the wrist", "turn of the wrist",
         "twist and lift"],

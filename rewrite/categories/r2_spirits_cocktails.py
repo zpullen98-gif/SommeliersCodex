@@ -382,7 +382,7 @@ BANK = [
     SA("Classic cocktail families",
        "Rye, sugar, Peychaud's bitters and a rinse of an anise spirit make a New Orleans drink served with no ice in the glass. Name it.",
        "Sazerac",
-       ["sazerac", "sazerac cocktail", "new orleans sazerac"],
+       ["sazerac", "sazerac cocktail"],
        "The glass is chilled and rinsed with absinthe or a pastis, and the drink itself is built separately and strained in. It began on Cognac and moved to rye once phylloxera cut the brandy supply, which is why recipes for both survive."),
     SA("Classic cocktail families",
        "A spirit and a carbonated mixer over ice in a tall glass, with no citrus and no sugar added, belong to which family?",

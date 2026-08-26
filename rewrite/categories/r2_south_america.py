@@ -21,13 +21,24 @@ were verified by executing a probe script rather than by eye: every displayed
 answer and several natural phrasings of it must grade True, and every real
 wrong answer worth naming - Moscatel rosada against Moscatel de Alejandria,
 Bio-Bio against Malleco, parral against latada, limestone against caliche,
-snowmelt against groundwater - must grade False. The one '~' entry,
-'~microoxygenation', matches exact or whole-word only, and its closed-spelling
-token recurs nowhere else in the category, so it cannot swallow a wrong
-answer. ex=True is applied only where a real and different grape extends the
-right answer as a qualified phrase; the probe script is the record of what was
-tested. Facts are restricted to ones that do not drift: decrees, geology,
-varieties and founding dates rather than hectares, prices or ownership.
+snowmelt against groundwater - must grade False. The two '~' entries,
+'~microoxygenation' and '~groundwater', match exact or whole-word only, and
+neither token recurs anywhere else in the category, so neither can swallow a
+wrong answer. '~groundwater' earns its tilde: listed plainly it graded the bare
+stem word 'water' as a correct truncation, and the tilde refuses that while
+every real phrasing built on the word still grades. ex=True is applied only
+where a real and different grape extends the right answer as a qualified
+phrase; the probe script is the record of what was tested. Facts are restricted
+to ones that do not drift: decrees, geology, varieties and founding dates
+rather than hectares, prices or ownership.
+
+A note for the next pass over this file, because the mistake has been made once
+already. ex=True is NOT a general-purpose way to close a stem echo. It forfeits
+containment for every entry in the list at once, which is fatal wherever the
+correct-answer class is open rather than enumerable - the Uco irrigation
+question is the example, where the right answer can be phrased as any sentence
+naming the aquifer, the boreholes or the wells. Close such an echo on the one
+entry that carries it, with a tilde, and leave the rest of the list alone.
 """
 
 from lib import Q, SA
@@ -125,8 +136,28 @@ BANK = [
     SA("Argentina: elevation as the variable",
        "Beyond the reach of Mendoza's old surface channels, the new plantings high in the Uco had to find their own water. What supplies their drip lines?",
        "Groundwater pumped from wells",
-       ["groundwater", "wells", "boreholes", "well water", "aquifer",
-        "underground water"],
+       # The stem prints the word 'water', and a plainly listed 'groundwater'
+       # graded that bare truncation correct: matchSA's last branch takes an
+       # input that is a substring of a single-token accept entry, so 'water'
+       # rode inside 'groundwater'. The tilde is the repair. It keeps exact and
+       # whole-word matching, so 'pumped groundwater' and 'they pump
+       # groundwater' still grade, and it never reaches the substring branch,
+       # so 'water' does not.
+       #
+       # ex=True was tried here and reverted. It closes the echo but forfeits
+       # containment for EVERY entry, and the correct-answer class on this
+       # question is open: 'boreholes sunk deep into the aquifer' is the
+       # wording of this question's own explanation, and no enumeration covers
+       # the free-form sentences a student actually writes. Measured against
+       # this list, ex=True cost 260 correct phrasings.
+       #
+       # 'well' on its own is deliberately NOT listed. It is a real false
+       # reject, but the only entry that could grade it is the bare four-letter
+       # word, which then grades the whole word 'well' anywhere in an answer
+       # and takes 'melted snow as well as rain' with it. The false accept is
+       # worse than the false reject, so the singular stays out.
+       ["~groundwater", "ground water", "wells", "boreholes", "bore hole",
+        "well water", "aquifer", "underground water", "subterranean water"],
        "Boreholes sunk deep into the aquifer under the alluvial fans feed the drip network, metering water out vine by vine. Pumping is what made the high Uco plantable at all, and it is why groundwater regulation has become a live argument in Mendoza."),
     SA("Argentina: elevation as the variable",
        "High in the Calchaqui Valleys near Molinos, an estate founded in 1831 farms Malbec above 3,000 metres at its Altura Maxima site. Name the estate.",

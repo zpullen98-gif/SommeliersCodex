@@ -672,10 +672,13 @@ Three things worth keeping from it:
 
 ## Scaling to the full job
 
-**Progress: 2,849 of 3,061 questions (93.1%), 59 of 67 categories. RANK I IS COMPLETE** - all
-1,778 Introductory questions across all 31 categories are now original work. Rank II stands at
-1,071 of 1,283 (83%) across 28 of its 36. All fifty-nine pass every
-check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
+**Progress: 3,061 of 3,061 questions (100%), 67 of 67 categories. THE REWRITE IS COMPLETE** - every
+question in both banks is original work: 1,778 Introductory across 31 categories and 1,283
+Certified across 36. All sixty-seven pass every
+check, the similarity pass and the cross-category pass.
+
+Against the imported bank the finished corpus scores **0 exact stem matches** and a maximum
+sequence ratio of **0.400**, comfortably under the 0.60 review threshold, with nothing flagged. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.
 

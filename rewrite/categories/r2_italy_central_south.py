@@ -145,7 +145,7 @@ BANK = [
     SA("Coastal Tuscany and the Super Tuscans",
        "Which denomination covers Sangiovese grown broadly across the Maremma, sitting below Morellino di Scansano in the hierarchy?",
        "Maremma Toscana",
-       ["maremma toscana", "maremma toscana doc", "maremma", "maremma doc"],
+       ["maremma toscana", "maremma toscana doc"],
        "It gathers up the wide coastal plain and its hinterland under one name, in reds, whites and roses. Morellino remains the tighter, hillier zone within that country."),
     SA("Coastal Tuscany and the Super Tuscans",
        "Tignanello's sister wine from the same hillside leans on Cabernet Sauvignon rather than Sangiovese. Name it.",
@@ -257,7 +257,7 @@ BANK = [
     SA("Campania",
        "Vines on the Amalfi coast are worked on narrow terraces held by dry stone walls. Which DOC covers them?",
        "Costa d'Amalfi",
-       ["costa d'amalfi", "costa damalfi", "costa d'amalfi doc", "amalfi coast doc"],
+       ["costa d'amalfi", "costa damalfi", "costa amalfi", "costa d'amalfi doc"],
        "Furore, Ravello and Tramonti are its named subzones, all of them tended by hand because no machine can reach the terraces. Some Tramonti vines are ungrafted and well over a century old."),
 
     # ----------------------------------- Puglia, Basilicata and Calabria (7) --

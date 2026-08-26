@@ -33,6 +33,33 @@ visible in the question text. Each ex=True list was then widened until case,
 hyphenation, article and AOC-suffix variants of its own answer all still grade,
 because exact matching rejects anything not written down.
 
+A later pass ran every contiguous n-gram of each stem through that question's own
+grader, which is what check-stem-echo.py does, and three stems paid out on their
+own words. Two are closed. The combe list carried 'a combe in the cote d'or',
+which graded the bare escarpment name because matchSA also matches when the INPUT
+sits inside an accept entry; that entry was dropped, since plain 'combe' already
+grades any answer holding the word and nothing else died with it. La Romanee was
+not an accept-list fault at all: norm() strips 'la', so 'La Romanee' and 'Romanee'
+are one string to the engine and no list can take the first while refusing the
+second, so the stem now points at the monopole below rather than printing its
+name.
+
+The third is left open deliberately, and the reasoning is worth keeping. The
+metayage list grades 'share', lifted from 'a share of the crop', through the bare
+one-word entry 'sharecropping': matchSA matches when the input sits inside an
+accept entry, and a one-word entry puts the word-count floor at one. Every way of
+closing it costs more than it saves. Deleting 'sharecropping' rejects the standard
+English trade term, because under a containment list no longer entry can grade a
+bare single word. Switching to ex=True closes the echo but converts an open class
+of correct answers into a closed one, so 'metayages', 'the metayage system', 'it
+is called metayage' and every other phrasing nobody thought to write down are
+marked wrong; and because the answer is a bare noun, no multi-word '~' entry can
+carry that class either. A student who knows the word and is told they are wrong
+is the worse outcome by a distance, so the list stays on containment and the echo
+is conceded. Two real phrasings were added while the question was open: 'share
+cropping' spaced, and 'a moitie', which is the name the explanation itself teaches
+and which the list had never taken.
+
 Facts are restricted to ones that do not drift. Ownership, prices, hectare counts
 and production shares are deliberately absent; appellation rules, label mechanics,
 geology, geography and the tenancy arrangements carry the weight instead. The one
@@ -116,7 +143,7 @@ BANK = [
     SA("Climat, lieu-dit and reading the map",
        "Dry transverse valleys cut back into the Cote d'Or escarpment, swinging aspect around and funnelling cold air down onto the slope. What are they called locally?",
        "Combe",
-       ["combe", "combes", "a combe in the cote d'or"],
+       ["combe", "combes"],
        "A combe interrupts the even east-facing wall of the Cote and exposes north and south flanks within a few hundred metres of each other, which is why the vineyard quality can change so abruptly beside one. The cold air draining out of them also explains why the ground directly at a combe mouth is usually village land rather than premier cru."),
 
     # -------------------------- The Cote de Nuits commune by commune (6) -----
@@ -220,7 +247,7 @@ BANK = [
        ["clos des lambrays", "lambrays", "the clos des lambrays vineyard"],
        "The vineyard had been split among many hands after the Revolution and was patiently bought back into one piece, which is what made the case for promotion arguable at all. A tiny fragment stayed outside the reassembly, so the grand cru is very nearly but not quite a monopole."),
     SA("Grands crus and monopoles",
-       "Directly above Romanee-Conti lies a grand cru of well under a hectare, the smallest appellation in France. Name it.",
+       "Directly above the most famous monopole in Vosne lies a grand cru of well under a hectare, the smallest appellation in France. Name it.",
        "La Romanee",
        ["la romanee", "la romanee grand cru", "la romanee aoc",
         "the la romanee vineyard"],
@@ -349,7 +376,8 @@ BANK = [
     SA("Domaine, negociant and metayage",
        "An owner who no longer farms lets a grower work the vines and takes payment as a share of the crop rather than in cash. Name that arrangement.",
        "Metayage",
-       ["metayage", "en metayage", "metayage sharecropping", "sharecropping"],
+       ["metayage", "en metayage", "metayage sharecropping", "sharecropping",
+        "share cropping", "a moitie"],
        "The share was traditionally half, which is why the arrangement is also described as farming a moitie, and the tenant hands back wine rather than money. Inheritance split Burgundy into parcels too small for their owners to live off, and this is how a great deal of that land is actually worked."),
     SA("Domaine, negociant and metayage",
        "A Beaune house buys young wine in barrel, raises it in its own cellars and bottles it under its own label. Give the compound term for such a house.",
