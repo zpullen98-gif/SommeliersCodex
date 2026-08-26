@@ -4,8 +4,20 @@
     {
       "name": "sommeliers-codex",
       "runtimeExecutable": "py",
-      "runtimeArgs": ["serve.py", "8632"],
+      "runtimeArgs": [
+        "serve.py",
+        "8632"
+      ],
       "port": 8632
+    },
+    {
+      "name": "codex-verify",
+      "runtimeExecutable": "py",
+      "runtimeArgs": [
+        "serve.py",
+        "8639"
+      ],
+      "port": 8639
     }
   ]
 }

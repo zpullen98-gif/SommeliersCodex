@@ -28,7 +28,7 @@ if(LEVELS.master){
   if(activeLevel==='master')PASS=LEVELS.master.pass;
 }
 
-/* Which sections each examination actually has. The Page's examination (the
+/* Which sections each examination actually has. The Regionale examination (the
    Court's Introductory) is a written theory paper — it has no tasting or service section,
    so demanding them there would invent a requirement the Court does not set. */
 var EXAM_SECTIONS={intro:['theory'],certified:['theory','tasting','service'],
@@ -293,7 +293,7 @@ planView=function(){
       +(levelSections(activeLevel).length>1
         ? 'The Court examines a '+LEVELS[activeLevel].short+' on '+levelSections(activeLevel).join(', ')
           +'. A theory score is one section of three, and the Codex will not call you ready on it alone.'
-        : "The Page's examination is theory only — there is no tasting or service section to measure.")
+        : "The Régionale examination is theory only — there is no tasting or service section to measure.")
       +'</div></div>');
     /* sits above "Your sitting" so the standing frames the plan */
     v.insertBefore(block,head);

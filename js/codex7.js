@@ -1,6 +1,8 @@
 /* ============ Codex VII: the Four-Level Court ============
-   Page / Squire / Knight / Ruler as one app — the Court's four examinations
-   under the Codex's own names. The level KEYS below (intro/certified/advanced/
+   Regionale / Village / Premier Cru / Grand Cru as one app — the Court's four
+   examinations under the names of Burgundy's pyramid, which climbs the same way
+   a student does: the whole region, then one village, then a named parcel, then
+   the few hectares that need no further qualification. The level KEYS below (intro/certified/advanced/
    master) are load-bearing: qKey bakes them into every stored stat key, so only
    the display strings may ever change. Levels switch by
    rebinding the data globals (all layers resolve them at call time); stats
@@ -15,25 +17,25 @@ var CORE12_NAMES=['Riesling','Chardonnay','Sauvignon Blanc','Pinot Gris / Grigio
 var INTRO_CORE12=CERT_GRAPES.filter(function(g){return CORE12_NAMES.indexOf(g.g)>=0;});
 
 var LEVELS={
- intro:{key:'intro',num:'I',label:"The Page's Examination",short:'Page',
+ intro:{key:'intro',num:'I',label:"The Régionale Examination",short:'Régionale',
   bank:INTRO_QUESTIONS,grapes:INTRO_CORE12,primers:INTRO_PRIMERS,groups:INTRO_GROUPS,
   mock:{n:70,secs:45*60},pass:0.6,
-  note:'A page learns the house before being trusted with the cellar: seventy questions in forty-five minutes, all multiple choice, sixty in a hundred to pass. Foundations, the world map, the classics — speed and certainty win it.'},
- certified:{key:'certified',num:'II',label:"The Squire's Examination",short:'Squire',
+  note:'A régionale wine is the whole district in one glass, and this is the whole subject in one paper: seventy questions in forty-five minutes, all multiple choice, sixty in a hundred to pass. Foundations, the world map, the classics — speed and certainty win it.'},
+ certified:{key:'certified',num:'II',label:"The Village Examination",short:'Village',
   bank:CERT_QUESTIONS,grapes:CERT_GRAPES,primers:CERT_PRIMERS,groups:CERT_GROUPS,
   mock:{n:45,secs:38*60},pass:0.6,
-  note:'The squire is handed the bottle and asked to name it: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer — you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}
+  note:'Narrowing to a village means naming what you are given: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer — you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}
 };
-if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',label:"The Knight's Examination",short:'Knight',
+if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',label:"The Premier Cru Examination",short:'Premier Cru',
  bank:ADV_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof ADV_PRIMERS!=='undefined'?ADV_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:60,secs:35*60},pass:0.6,
- note:'Knighthood is short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold — recognition is no longer enough.'};
-if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Ruler's Examination",short:'Ruler',
+ note:'A named parcel is claimed, not guessed. Short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold — recognition is no longer enough.'};
+if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Grand Cru Examination",short:'Grand Cru',
  bank:MASTER_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof MASTER_PRIMERS!=='undefined'?MASTER_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:50,secs:50*60,oral:true},pass:0.6,
- note:'The ruler is examined aloud: fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on your honour.'};
+ note:'Grand cru needs no qualifier and neither may you: examined aloud, fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on your honour.'};
 var LEVEL_ORDER=['intro','certified','advanced','master'];
 
 var activeLevel='certified';
@@ -106,7 +108,7 @@ simView=function(){
   return v;
 };
 
-/* ---- the Oral Gauntlet (Ruler mock): rapid short-answer, self-graded ---- */
+/* ---- the Oral Gauntlet (Grand Cru mock): rapid short-answer, self-graded ---- */
 function startGauntlet(n){
   var pool=shuffle(QUESTIONS.filter(function(q){return q.sa&&!q.mt&&!q.sel;}));
   n=n||LEVELS[activeLevel].mock.n;
@@ -180,7 +182,7 @@ function courtStrip(){
   LEVEL_ORDER.forEach(function(lv){
     var L=LEVELS[lv];
     if(!L){
-      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Knight':'Ruler')+'</div><div class="cpstat">In the cellar</div></div>'));
+      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Premier Cru':'Grand Cru')+'</div><div class="cpstat">In the cellar</div></div>'));
       return;
     }
     var rec=ST.court[lv]||{};
@@ -241,7 +243,7 @@ decorateHome=function(){
     var anchor=modes[modes.length-1];
     if(anchor&&!document.getElementById('t-compendium')){
       var m7=el('<div class="modes" style="margin-top:14px"></div>');
-      m7.appendChild(el('<button class="mode" id="t-compendium"><div class="band"></div><h3>The Page\'s Compendium</h3><p>'
+      m7.appendChild(el('<button class="mode" id="t-compendium"><div class="band"></div><h3>The Régionale Compendium</h3><p>'
         +INTRO_ATLAS.length+' hand-drawn country maps with '+INTRO_ATLAS.reduce(function(a,c){return a+c.r.length;},0)+' regions, classification pyramids for '+INTRO_CLASS.length+' nations, winemaking, soils, sweet wines, and all '+INTRO_GRAPES.length+' grapes.</p></button>'));
       anchor.parentNode.insertBefore(m7,anchor.nextSibling);
       m7.querySelector('#t-compendium').onclick=function(){S.cmp=null;S.view='compendium';render();};
@@ -281,7 +283,7 @@ primerList=function(){
     if(!byG[p.g]){byG[p.g]=[];groups.push(p.g);}
     byG[p.g].push(i);
   });
-  var html='<div><div class="viewhead"><h2>Study Chapters</h2><div class="sub">The Page\'s course, chapter by chapter — read a region, then drill its section.</div></div>';
+  var html='<div><div class="viewhead"><h2>Study Chapters</h2><div class="sub">The Régionale course, chapter by chapter — read a region, then drill its section.</div></div>';
   groups.forEach(function(g){
     html+='<div class="secgroup">'+g+'</div><div class="seclist">'
       +byG[g].map(function(i){return '<button class="secbtn" data-p="'+i+'"><span>'+PRIMERS[i].t+'</span><span class="n">›</span></button>';}).join('')
@@ -298,7 +300,7 @@ var _v6PrimerView=primerView;
 primerView=function(){
   var p=PRIMERS[S.primerKey];
   if(!p||!p.body)return _v6PrimerView();
-  var v=el('<div><div class="viewhead"><h2>'+p.t+'</h2><div class="sub">'+p.g+' · a Page\'s chapter</div></div>'
+  var v=el('<div><div class="viewhead"><h2>'+p.t+'</h2><div class="sub">'+p.g+' · a Régionale chapter</div></div>'
     +'<div class="card primerpage chapterbody">'+p.body+'</div>'
     +'<div class="centerrow"><button class="btn ghost" id="pr-back">All chapters</button></div></div>');
   v.querySelector('#pr-back').onclick=function(){S.view='primers';render();};
@@ -357,13 +359,13 @@ var CMP_SECTIONS=[
  ['wine','🍇','Winemaking','Grape to bottle, and the signature techniques with their homes'],
  ['soil','🪨','Soil & Terroir','The famous rocks and everything that grows best in them'],
  ['dess','🍯','Dessert Wines','Sweetness by method: rot, raisin, freeze, late-pick, fortify'],
- ['grapes','✧','The Grapes',"Every variety on the Page's list: structure, aromas, traps"]
+ ['grapes','✧','The Grapes',"Every variety on the Régionale list: structure, aromas, traps"]
 ];
 function compendiumView(){
   S.cmp=S.cmp||{sec:null,idx:null,reg:null};
   var c=S.cmp;
   if(!c.sec){
-    var v=el('<div><div class="viewhead"><h2>The Page\'s Compendium</h2><div class="sub">The visual references of the Page\'s course: study a map or a pyramid, then drill the matching section.</div></div><div class="modes" id="cmp-tiles"></div></div>');
+    var v=el('<div><div class="viewhead"><h2>The Régionale Compendium</h2><div class="sub">The visual references of the Régionale course: study a map or a pyramid, then drill the matching section.</div></div><div class="modes" id="cmp-tiles"></div></div>');
     var box=v.querySelector('#cmp-tiles');
     CMP_SECTIONS.forEach(function(sec){
       var b=el('<button class="mode"><div class="band"></div><h3>'+sec[2]+'</h3><p>'+sec[3]+'</p></button>');
@@ -469,7 +471,7 @@ function topicView(DB,title,c,back){
 function grapesView(c,back){
   function dots(v2){return '●●●'.slice(0,v2)+'○○○'.slice(0,3-v2);}
   var groups=[['White grapes','white'],['Red grapes','red']];
-  var html='<div><div class="viewhead"><h2>The Grapes of the Page\'s List</h2><div class="sub">'+INTRO_GRAPES.length+' varieties: structure on a three-dot scale, the aromas, the regions that imply them (marked *), and the traps.</div></div>';
+  var html='<div><div class="viewhead"><h2>The Grapes of the Régionale List</h2><div class="sub">'+INTRO_GRAPES.length+' varieties: structure on a three-dot scale, the aromas, the regions that imply them (marked *), and the traps.</div></div>';
   groups.forEach(function(g){
     html+='<div class="secgroup">'+g[0]+'</div>';
     INTRO_GRAPES.filter(function(x){return x.c===g[1];}).forEach(function(x){
@@ -536,8 +538,8 @@ function startClassQuiz(cty){
   S.pool=qs; S.idx=0; S.correct=0; S.results=[]; resetQ(); S.view='quiz'; render();
 }
 
-/* ═══════════ Ruler flights: the origin call ═══════════
-   At Ruler the grape alone is not a conclusion. After each variety call the
+/* ═══════════ Grand Cru flights: the origin call ═══════════
+   At Grand Cru the grape alone is not a conclusion. After each variety call the
    candidate must place the wine, as the deductive grid's final conclusion demands. */
 function ttRegionOf(g){ return String(g.regions||'').split(/[,;(]/)[0].trim(); }
 function ttOriginOpts(ti){
