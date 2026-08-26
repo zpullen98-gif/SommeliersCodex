@@ -31,8 +31,14 @@ function cats(){ const m={}; QUESTIONS.forEach(q=>m[q.cat]=(m[q.cat]||0)+1); ret
    and the guard only fires when the negation is in the INPUT and not in the
    accepted phrase. */
 var NEG_RE = /(^| )(not|no|never|without|lack|lacks|lacking|absence|opposite|rather|wrong|incorrect)( |$)/;
+/* Exclusion frames with no negation word in them: "anything but moromi" slips
+   past NEG_RE, so the containment branch graded it correct. Bigrams rather than
+   a bare "but", which would block correct elaborations like "moromi but
+   unpressed". Mirrors NEG_PHRASES in rewrite/lib.py so app and checker grade
+   identically. */
+var NEG_PHRASES = ['anything but', 'everything but', 'all but'];
 function negatedAgainst(input, acc){
-  return NEG_RE.test(input) && !NEG_RE.test(acc);
+  return (NEG_RE.test(input) || NEG_PHRASES.some(function(p){ return input.indexOf(p) !== -1; })) && !NEG_RE.test(acc);
 }
 
 function matchSA(q, ans){
