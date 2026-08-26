@@ -29,8 +29,10 @@ vine.</p>
 
 <h4>Rank and trade</h4>
 <p>The 1855 classification ranked Left Bank estates on the prices they had long
-fetched, in five tiers that have scarcely moved since. Saint-Emilion by contrast
-rewrites its list every decade or so, and Pomerol has never had one at all.
+fetched: five tiers of red that have scarcely moved since, and a separate
+ranking of Sauternes in two tiers of classified growth under Yquem alone.
+Saint-Emilion by contrast rewrites its list every decade or so, and Pomerol has
+never had one at all.
 Other words on a label carry their own weight:
 ${INTRO_CHIP('Cru Bourgeois')}${INTRO_CHIP('Grand Cru Classe')}${INTRO_CHIP('Bordeaux Superieur')}
 Most estates sell through negociant merchants rather than to the drinker, and
@@ -50,8 +52,8 @@ the hill where the topsoil has washed away.</p>
 <h4>Four tiers of land</h4>
 <p>The hierarchy ranks ground, not estates:
 ${INTRO_CHIP('Regional')}${INTRO_CHIP('Village')}${INTRO_CHIP('Premier Cru')}${INTRO_CHIP('Grand Cru')}
-A Grand Cru stands under its vineyard name alone; a Premier Cru names the
-village first and the vineyard after. Grand Cru is a sliver of the whole and
+On the Cote d'Or a Grand Cru stands under its vineyard name alone; a Premier
+Cru names the village first and the vineyard after. Grand Cru is a sliver of the whole and
 regional Bourgogne most of it. Inheritance law split holdings among heirs for
 generations, so one celebrated vineyard may carry dozens of owners, which is why
 the grower matters as much as the address. The Cote de Nuits to the north is
@@ -60,8 +62,10 @@ and the two Montrachet villages, plus the hill of Corton.</p>
 
 <p>Chablis lies well north of the Cote d'Or, growing Chardonnay on cold,
 frost-prone Kimmeridgian limestone, and is defined by acidity and reticence with
-oak. Running south, the Cote Chalonnaise and the Maconnais supply most of the
-region's Chardonnay by volume. Beaujolais at the far end sits on granite rather
+oak; its Grand Cru is a single appellation carrying seven named climats rather
+than seven names of its own. Running south come the Cote Chalonnaise and then
+the Maconnais, the region's largest single source of Chardonnay. Beaujolais at
+the far end sits on granite rather
 than limestone, and its Gamay, often fermented in whole bunches, tastes
 unrelated to anything above it.</p>
 """),
@@ -86,7 +90,8 @@ raspberry-scented on light tannin, at Saumur-Champigny, Chinon and Bourgueil.
 Vouvray and Montlouis take Chenin across the full range from dry to sweet to
 sparkling, the grower choosing once the autumn has shown its hand. Upstream in
 the Centre, Sauvignon Blanc on chalky marl, stony limestone and flint gives
-Sancerre and Pouilly-Fume, with Pinot Noir for red and rose.</p>
+Pouilly-Fume, which is white and nothing else, and Sancerre, which adds Pinot
+Noir for red and rose.</p>
 
 <p>Chenin's acidity is what makes that range possible, and it is why the sweet
 wines of ${INTRO_CHIP('Coteaux du Layon')}${INTRO_CHIP('Quarts de Chaume')}${INTRO_CHIP('Bonnezeaux')}
@@ -108,8 +113,8 @@ Crozes-Hermitage, Saint-Joseph and Cornas. White vines were long interplanted
 among the black and picked with them, so most of these appellations still allow
 a little white in the red, provided it goes into the vat and ferments there
 rather than being blended in later: twenty percent Viognier at Cote-Rotie,
-fifteen percent Marsanne or Roussanne at Hermitage, ten percent at
-Crozes-Hermitage and Saint-Joseph. Few growers approach the ceiling, and Cornas
+fifteen percent Marsanne or Roussanne at Hermitage and at
+Crozes-Hermitage, ten percent at Saint-Joseph. Few growers approach the ceiling, and Cornas
 permits none at all. White wine itself is Viognier at Condrieu, and Marsanne
 with Roussanne elsewhere.</p>
 
@@ -152,7 +157,7 @@ fermentation, which builds roughly six atmospheres of pressure. The wine then
 rests on the spent yeast, whose slow breakdown gives the bready register and a
 finer bead. The deposit is worked into the neck, frozen, expelled, and the
 bottle topped up with a dosage that fixes the style:
-${INTRO_CHIP('Brut Nature')}${INTRO_CHIP('Extra Brut')}${INTRO_CHIP('Brut')}${INTRO_CHIP('Extra Dry')}${INTRO_CHIP('Sec')}${INTRO_CHIP('Demi-Sec')}
+${INTRO_CHIP('Brut Nature')}${INTRO_CHIP('Extra Brut')}${INTRO_CHIP('Brut')}${INTRO_CHIP('Extra Dry')}${INTRO_CHIP('Sec')}${INTRO_CHIP('Demi-Sec')}${INTRO_CHIP('Doux')}
 Extra Dry is sweeter than Brut, which catches almost everyone.</p>
 """),
 
@@ -180,7 +185,9 @@ carry the everyday wine, and Pinot Noir is the one black grape.</p>
 compulsory vintage. Two late-harvest categories are defined in law and limited
 to the noble four:
 ${INTRO_CHIP('Vendanges Tardives')}${INTRO_CHIP('Selection de Grains Nobles')}
-Elsewhere sweetness is a matter of house style, not of law. Cremant d'Alsace is
+Elsewhere the level of sweetness is house style rather than law, though since
+the 2021 vintage every other still white must declare it on the label, as sec,
+demi-sec, moelleux or doux or on a printed scale. Cremant d'Alsace is
 the bottle-fermented sparkling wine, and Edelzwicker and Gentil are the
 blends.</p>
 """),

@@ -15,8 +15,9 @@ broad geographic tier beneath them.</p>
 name and cut off from the sea. That makes it continental and slow: long autumns,
 fog in the valleys, and a harvest that runs late.</p>
 <h4>Nebbiolo takes the best hills</h4>
-<p>Nebbiolo ripens last of anything grown here, so it is planted only where the
-slope faces the sun squarely. Barolo and Barbaresco are both entirely Nebbiolo,
+<p>Nebbiolo ripens last of anything grown here, so it claims the best-exposed
+slopes and leaves the cooler aspects to everything else. Barolo and Barbaresco
+are both entirely Nebbiolo,
 which leaves site and time to separate them: Barbaresco ripens a shade earlier
 and reaches the table sooner, while Barolo must be held longer, and longer in
 wood. Expect pale garnet colour over severe tannin and acidity, the reason those
@@ -67,7 +68,7 @@ gravel fan of the Campo Rotaliano and almost nowhere else on earth.</p>
 <h4>Friuli</h4>
 <p>Collio and the Colli Orientali press against the Slovenian border. Friulano
 had to drop the first half of its old name, Tocai, once the EU reserved Tokaj
-for Hungary; the vine is in fact Sauvignonasse and is unrelated to anything
+for Hungary; the vine is Sauvignonasse and is unrelated to anything
 Hungarian. ${INTRO_CHIP('Ribolla Gialla')}${INTRO_CHIP('Verduzzo')}</p>
 <h4>Veneto</h4>
 <p>Garganega ripens late east of Verona and gives Soave its lemon and almond.
@@ -147,8 +148,10 @@ usual red; Carricante gives the sharp white. The southeast holds the only DOCG,
 Cerasuolo di Vittoria, where Frappato's perfume and red fruit lighten the colour
 and weight of Nero d'Avola. Avola in that name is a town, not an appellation. In
 the far west, Grillo, Catarratto and Inzolia feed Marsala, a fortified wine the
-British trade built up in the late eighteenth century; its Fine, Superiore and
-Vergine grades turn on ageing, while oro, ambra and rubino describe colour. Out
+British trade built up in the late eighteenth century. Its grades climb by
+ageing, Fine to Superiore to Superiore Riserva to Vergine, and Vergine alone
+refuses the cooked must and fortified mistella the others may take, so it is dry
+by definition. Oro, ambra and rubino describe colour instead. Out
 between Sicily and Tunisia, windswept Pantelleria sun-dries Zibibbo, which is
 Muscat of Alexandria, into a sweet passito.</p>
 <h4>Sardinia</h4>

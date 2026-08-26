@@ -22,10 +22,10 @@ and much of the state's better sparkling base. Mid-valley, the gravelly alluvial
 fans of Oakville and Rutherford drain fast and hold heat, which is why Cabernet
 Sauvignon took the benchland and now occupies roughly half the county's vines.
 Above the fog line the mountain appellations
-${INTRO_CHIP('Howell Mountain')}${INTRO_CHIP('Mount Veeder')}${INTRO_CHIP('Spring Mountain')}${INTRO_CHIP('Atlas Peak')}
-ripen in full sun on thin soils, giving smaller berries and firmer tannin. An
-agricultural preserve passed in 1968 zoned the valley floor for farming and is
-the reason it is not housing today.</p>
+${INTRO_CHIP('Howell Mountain')}${INTRO_CHIP('Mount Veeder')}${INTRO_CHIP('Spring Mountain District')}${INTRO_CHIP('Atlas Peak')}
+ripen in full sun on poor, free-draining soils, giving smaller berries and firmer
+tannin. An agricultural preserve passed in 1968 zoned the valley floor for
+farming and is the reason it is not housing today.</p>
 
 <h4>Sonoma and the counties north</h4>
 <p>Sonoma is the more varied county. Fog drawn up the Russian River keeps that
@@ -117,10 +117,11 @@ Umpqua Valleys are warmer and drier and grow Syrah, Tempranillo and Bordeaux
 varieties instead.</p>
 
 <h4>Washington</h4>
-<p>Washington plants almost everything east of the Cascades, where under ten
-inches of rain a year makes irrigation compulsory and therefore turns it into a
-tool: the grower decides exactly how much water the vine receives and when. The
-vast Columbia Valley covers most of the state's plantings, with
+<p>Washington plants almost everything east of the Cascades, where much of the
+Columbia basin sees under ten inches of rain a year, so irrigation is compulsory
+across most of it and therefore a tool: the grower decides exactly how much water
+the vine receives and when. The vast Columbia Valley covers most of the state's
+plantings, with
 ${INTRO_CHIP('Yakima Valley')}${INTRO_CHIP('Walla Walla Valley')}${INTRO_CHIP('Red Mountain')}
 nested inside it, while Puget Sound is the wet-side exception, cool enough that
 only early-ripening varieties finish. Ice-age floods scoured the basin and left
@@ -160,10 +161,10 @@ its thick skins holding the bunches intact into the new year.</p>
 """),
 
     CH("North America", "mexico", "México", """
-<p>Wine in the Americas starts here. Spanish missionaries planted vines in New
-Spain in the sixteenth century and carried the Mission grape, the Spanish Listan
-Prieto, north along the mission chain into what became California. The oldest
-working winery on the continent stands at Parras in Coahuila.</p>
+<p>Wine in the Americas starts here. Spanish colonists planted vines in New Spain
+from the 1520s, and missionaries later carried the Mission grape, the Spanish
+Listan Prieto, north along the mission chain into what became California. The
+oldest working winery on the continent stands at Parras in Coahuila.</p>
 
 <h4>Baja California</h4>
 <p>The modern industry is concentrated on the Baja California peninsula, and

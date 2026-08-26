@@ -37,8 +37,9 @@ the far north pair near-desert sun with morning fog.</p>
 <p>Cabernet Sauvignon overtook Pais as export markets grew. Carmenere was sold
 as Merlot until 1994, and picked at the same moment as Merlot it still tastes
 green, because it ripens weeks later. Cool coastal Syrah and Sauvignon Blanc are
-the modern signature, and old dry-farmed Pais and Carignan in Itata and Maule
-the oldest. Variety, vintage and valley each need seventy-five percent.</p>
+the modern signature. The oldest vines are dry-farmed Pais and Cinsault in
+Itata, with old dryland Carignan in Maule. Variety, vintage and valley each
+need seventy-five percent.</p>
 """),
 
     CH(GROUP, "argentina", "Argentina", """
@@ -77,27 +78,25 @@ vines are ungrafted.</p>
 
     CH(GROUP, "safrica", "South Africa", """
 <p>The Cape winelands are a narrow wedge at the foot of Africa, almost entirely
-inside the Western Cape, and they are cooled by water rather than by latitude.
-The Benguela current carries cold water north up the Atlantic seaboard, and a
-hard south-easter, nicknamed the Cape Doctor, blows across False Bay through
-summer, drying the canopy, holding rot back and dropping the temperature. Rain
-arrives in winter and barely falls while fruit is ripening, so this is a
-Mediterranean climate in which water rather than sunshine is the limiting
-factor. The Cape Fold Mountains break the
-country into separate valleys and hand growers the height and aspect that a
-plain could never offer.</p>
+inside the Western Cape, cooled by water rather than by latitude. The Benguela current carries cold water north up the
+Atlantic seaboard, and a hard south-easter, the Cape Doctor, blows across False
+Bay through summer, drying the canopy and holding back rot. Rain arrives in
+winter and barely falls while fruit ripens, so water rather than sunshine is
+the limiting factor.
+The Cape Fold Mountains break the land into separate valleys and hand growers
+height and aspect a plain never could.</p>
 
 <p>The rock beneath is ancient and long weathered, so soils are poor and vigour
-is naturally low. Decomposed granite on the mountain foot slopes holds enough
-clay to carry an unirrigated bush vine through a rainless summer; Table Mountain
-Sandstone weathers to bleached, hungry sand; Malmesbury shale lies under the
+low. Decomposed granite on mountain foot slopes holds enough clay to carry an
+unirrigated bush vine through a rainless summer; Table Mountain Sandstone
+weathers to bleached, hungry sand; Malmesbury shale lies under the
 Swartland and Bokkeveld shale under the Hemel-en-Aarde.</p>
 
 <h4>Wine of Origin</h4>
 <p>The scheme fixes where the fruit grew, never which grape may be planted. Its
-names nest inward.</p>
-<p>${INTRO_CHIP('Region')}${INTRO_CHIP('District')}${INTRO_CHIP('Ward')}</p>
-<p>Origin must be complete, while vintage and variety claims need eighty-five
+names nest inward from the Western Cape.</p>
+<p>${INTRO_CHIP('Geographical Unit')}${INTRO_CHIP('Region')}${INTRO_CHIP('District')}${INTRO_CHIP('Ward')}</p>
+<p>Origin must be complete, while vintage and variety need eighty-five
 percent, and the seal covering all three is granted only after laboratory
 analysis and a blind tasting; since 2010 it certifies sustainable farming too.
 Estate means grown and made on one registered unit; a single vineyard
@@ -106,20 +105,22 @@ is capped at six hectares of one variety; Boberg names fortified wine alone.</p>
 <h4>Districts and grapes</h4>
 <p>Stellenbosch leads for Cabernet and its blends, Paarl runs warmer further
 inland, and the Swartland dry-farms old bush-vine Chenin Blanc with Rhone reds.
-Cool sites are found seaward instead: Constantia, Durbanville, Elgin, Walker Bay
-and Elim. Chenin Blanc, long known as Steen, is the signature white. Pinotage is
-Perold's 1925 crossing of Pinot Noir with Cinsaut, and bottle-fermented sparkling
-wine is called Cap Classique.</p>
+Cool sites come from the sea or from height instead: Constantia, Durbanville,
+Walker Bay and Elim near the water, Elgin high on its plateau above the sea.
+Chenin Blanc,
+long known as Steen, is the signature white. Pinotage is Perold's 1925 crossing
+of Pinot Noir with Cinsaut, and bottle-fermented sparkling wine is called Cap
+Classique.</p>
 """),
 
     CH(GROUP, "nz", "New Zealand", """
 <p>New Zealand grows wine further from the equator than almost anywhere, on two
 narrow islands in a large cold ocean, so latitude on its own predicts nothing.
-Blenheim lies about as far south as Rome lies north and has nothing else in
-common with it. The sea keeps summers mild and nights cool while the fruit
-ripens under unusually strong ultraviolet light, and that light is a stress the
-vine answers by building phenolics and aroma compounds in the skin. Loud
-aromatics at modest ripeness follow from those two things together. Rain during
+Blenheim lies about as far south as Rome lies north, and shares nothing else
+with it. The sea keeps summers mild and nights cool while fruit ripens under
+unusually strong ultraviolet light, a stress the vine answers by building
+phenolics and aroma compounds in the skin. Loud aromatics at modest ripeness
+follow from the two together. Rain during
 the growing season makes fungal disease rather than drought the standing threat
 almost everywhere, so open canopies and spray timing rule the year, and the
 Southern Alps wring the westerlies dry, which is why every South Island vineyard
@@ -132,10 +133,9 @@ otherwise give it; the Awatere over the hills sits higher and closer to open
 ocean, picks a fortnight later and tastes greener and sharper. Hawke's Bay is
 the warmest region of consequence, and its Gimblett Gravels, a bed of stones a
 river abandoned in 1867, store enough heat to finish Bordeaux varieties and
-Syrah. Martinborough is small, wind-pruned and dry in autumn. Central Otago is
-the only inland region, planted on schist and dry enough to need drip
-irrigation, fighting frost and living on the daily temperature swing that being
-far from the sea provides.</p>
+Syrah. Martinborough is small, wind-pruned and dry in autumn. Central Otago is the only inland region, planted on schist and dry
+enough to need drip irrigation, fighting frost and living on the daily
+temperature swing distance from the sea provides.</p>
 
 <h4>Grapes and rules</h4>
 <p>The green notes in Sauvignon Blanc are pyrazines, which sun and warmth
