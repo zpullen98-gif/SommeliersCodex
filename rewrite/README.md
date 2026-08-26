@@ -672,9 +672,9 @@ Three things worth keeping from it:
 
 ## Scaling to the full job
 
-**Progress: 2,695 of 3,061 questions (88.0%), 51 of 67 categories. RANK I IS COMPLETE** - all
-1,778 Introductory questions across all 31 categories are now original work. Rank II stands at 917
-of 1,283 (71%) across 20 of its 36. All fifty-one pass every
+**Progress: 2,849 of 3,061 questions (93.1%), 59 of 67 categories. RANK I IS COMPLETE** - all
+1,778 Introductory questions across all 31 categories are now original work. Rank II stands at
+1,071 of 1,283 (83%) across 28 of its 36. All fifty-nine pass every
 check, the similarity pass and the cross-category pass. **Run `py rewrite/manifest.py` for the live
 count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
 which is why it no longer lists the categories by hand.

@@ -271,6 +271,13 @@ def structural(bank, syllabus, cat, prefix="i"):
 NEG_WORDS = {"not", "no", "never", "without", "lack", "lacks", "lacking",
              "absence", "opposite", "rather", "wrong", "incorrect"}
 
+# Exclusion frames carrying no NEG_WORDS token: "anything but moromi" contains
+# no negation word, so the token guard never fired and the containment branch
+# graded it correct on every non-ex short answer probed. Bigrams rather than a
+# bare "but" in NEG_WORDS, because bare "but" would block correct elaborations
+# like "moromi but unpressed".
+NEG_PHRASES = ("anything but", "everything but", "all but")
+
 
 def _negated_against(input_norm, accept_norm):
     """Mirror of core.js negatedAgainst. A containment match cannot see a "not",
@@ -278,7 +285,7 @@ def _negated_against(input_norm, accept_norm):
     not. Exact matches are returned before this is consulted, so an answer that
     legitimately contains a negation still grades."""
     toks = set(input_norm.split())
-    if not (toks & NEG_WORDS):
+    if not ((toks & NEG_WORDS) or any(p in input_norm for p in NEG_PHRASES)):
         return False
     return not (set(accept_norm.split()) & NEG_WORDS)
 
