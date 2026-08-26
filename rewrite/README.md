@@ -677,10 +677,23 @@ question in both banks is original work: 1,778 Introductory across 31 categories
 Certified across 36. All sixty-seven pass every
 check, the similarity pass and the cross-category pass.
 
-Against the imported bank the finished corpus scores **0 exact stem matches** and a maximum
-sequence ratio of **0.400**, comfortably under the 0.60 review threshold, with nothing flagged. **Run `py rewrite/manifest.py` for the live
-count rather than trusting this paragraph** — it has been the stalest line in this file twice now,
-which is why it no longer lists the categories by hand.
+Against the imported bank, across all 67 categories, the finished corpus scores **0 exact stem
+matches**, a longest shared run of **5 words** (the flag is 6), and a maximum sequence ratio of
+**0.667**. Four questions sit above the 0.60 review line, all four in the pilot category, and all
+four are the phrases a human already reviewed and cleared years of this file ago: *port is
+fortified*, *malolactic conversion changes*, *primary purpose of*, *are most associated with*.
+Every category reports **nothing new to review**.
+
+> An earlier version of this line said 0.400. That figure came from grepping the first category out
+> of a `--all` run and reading it as the corpus maximum. 0.667 is the real number, it is still a
+> pass, and quoting a better one would have been worse than useless the first time somebody checked.
+
+**Run `py rewrite/manifest.py` for the live count rather than trusting this paragraph** — it has
+been the stalest line in this file twice now, which is why it no longer lists the categories by hand.
+
+**The imported bank no longer ships**, so `check-similarity.py` reads it out of git at `0ecd424`,
+the last commit that carried it. Set `OOT_IMPORTED_REF` to compare against a different one. Pointing
+it at the working tree would compare the rewrite against itself and report 1.000 on every question.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|

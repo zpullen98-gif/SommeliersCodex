@@ -19,6 +19,7 @@ import io
 import json
 import os
 import re
+import subprocess
 import sys
 from difflib import SequenceMatcher
 
@@ -29,9 +30,36 @@ sys.path.insert(0, os.path.join(HERE, "categories"))
 SEQ_REVIEW = 0.60      # sequence ratio at or above this -> a human reads it
 NGRAM_REVIEW = 6       # shared run of this many words or more -> a human reads it
 
+# WHERE THE IMPORTED BANK LIVES NOW.
+#
+# It does not ship any more. js/data-intro.js and js/data-questions.js were
+# replaced by the rewrite when it went live, which means reading those files
+# today compares the rewrite against ITSELF: a ratio of 1.000 on every question,
+# alarming and exactly backwards.
+#
+# The honest comparison is against the last commit that still carried the
+# imported material. Reading it out of history keeps the evidence for this whole
+# exercise reproducible without keeping a copy of the infringing text in the
+# working tree, which is the thing the rewrite exists to stop shipping.
+IMPORTED_REF = os.environ.get("OOT_IMPORTED_REF", "0ecd424")
+REPO = os.path.join(HERE, "..")
 
-def load_objects(path, first_key='"id"'):
-    s = io.open(path, encoding="utf-8").read()
+
+def read_source(relpath):
+    """The imported bank as it stood before the swap, straight from git."""
+    p = subprocess.run(["git", "show", IMPORTED_REF + ":" + relpath],
+                       cwd=REPO, capture_output=True)
+    if p.returncode != 0:
+        raise SystemExit(
+            "\n  Could not read " + relpath + " at " + IMPORTED_REF + "."
+            "\n  The imported banks were replaced in the working tree, so this"
+            "\n  comparison has to come from history. Point OOT_IMPORTED_REF at"
+            "\n  a commit that still carries them.\n")
+    return p.stdout.decode("utf-8", "replace")
+
+
+def load_objects(path, first_key='"id"', text=None):
+    s = text if text is not None else io.open(path, encoding="utf-8").read()
     body = s[s.index("=["):]
     out, depth, start, instr, esc = [], 0, None, False, False
     for i, ch in enumerate(body):
@@ -88,10 +116,10 @@ def check(name):
 
     source = getattr(mod, "SOURCE", "data-intro.js")
     ours = load_objects(os.path.join(HERE, "pilot-%s.js" % mod.SLUG))
-    src_all = load_objects(os.path.join(HERE, "..", "js", source))
+    src_all = load_objects(None, text=read_source("js/" + source))
     src_cat = [q for q in src_all if q.get("cat") == mod.CAT]
 
-    print("%s — similarity vs %s" % (mod.CAT, source))
+    print("%s — similarity vs %s at %s" % (mod.CAT, source, IMPORTED_REF))
     print("  rewritten            %d" % len(ours))
     print("  imported (whole)     %d" % len(src_all))
     print("  imported (this cat)  %d" % len(src_cat))
