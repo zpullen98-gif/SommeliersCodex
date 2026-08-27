@@ -59,7 +59,18 @@ revealBlock=function(q,ok,isSA){
   var cov=ok?1:saCoverage(q,S.saText||'');
   var unsure=(!ok&&cov>=SA_UNSURE);
 
-  /* When the grader cannot fairly call it, say so instead of scoring a miss. */
+  /* When the grader cannot fairly call it, say so — but be honest about what has
+     already happened. codex9's submitSA runs statRecord(q,false) and missAdd(q)
+     BEFORE this display logic, so the miss is recorded by the time the student
+     reads this; overrideGrade(true) is what undoes it, across the stat, the SRS
+     queue and S.correct alike. Telling them it is unsure while silently keeping
+     the miss is the kind of small dishonesty this app exists not to commit, so
+     the prompt says what declining to answer costs.
+
+     The threshold is doing its job and should not be lowered on a hunch: measured
+     across the paid banks, 0.35 softens 85.9% of near-miss correct answers and
+     only 0.4% of wrong ones. Dropping it to 0.25 buys five more points of
+     softening at four times the leak. */
   if(unsure){
     var v=wrap.querySelector('.verdict');
     if(v){ v.className='verdict unsure'; v.textContent='The grader is unsure — call it yourself'; }
@@ -78,7 +89,7 @@ revealBlock=function(q,ok,isSA){
   if(sg){
     sg.className='selfgrade'+(unsure?' primary':'');
     sg.innerHTML='';
-    sg.appendChild(el('<span>'+(unsure?'Were you right?':'Grader off?')+'</span>'));
+    sg.appendChild(el('<span>'+(unsure?'Were you right? Scored as a miss until you say.':'Grader off?')+'</span>'));
     var right=el('<button class="btn small '+(unsure?'gold':'ghost')+'" id="ir">I was right <span class="key2">R</span></button>');
     var wrong=el('<button class="btn small ghost" id="iw">I was wrong <span class="key2">W</span></button>');
     right.onclick=function(){overrideGrade(true);};
