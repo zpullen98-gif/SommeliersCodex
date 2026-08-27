@@ -98,6 +98,16 @@ for (const [name, , varName] of BANKS) {
   rows.push({ name, n, ok, unsure, wrong });
 }
 
+// --regress [ref] CANNOT TELL A REPAIR FROM A REGRESSION, and is not meant to.
+// It reports every acceptance the edit removed; whether that is a loss or the
+// entire point is a judgement it does not make. A fact-review pass that strips
+// an accept entry BECAUSE it graded a wrong answer trips this by design: the
+// first such pass revoked 14, and all 14 were correct removals - `charmes` on a
+// card whose whole subject is that only Mazoyeres may be sold as Charmes,
+// `minimum third pinot` where the Passe-tout-grains floor is 30%, and a string
+// that collided character-for-character with another question's accept list.
+// So read every hit and decide. A non-zero count is a question, not a verdict.
+//
 // --regress [ref]: every accept entry that graded at `ref` must still grade now.
 // This is the guard the README bought the hard way - a pass that closed 33 mild
 // stem echoes with ex=True broke 23 correct answers, including phrasings taken
