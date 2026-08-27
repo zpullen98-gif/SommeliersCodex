@@ -204,8 +204,24 @@ Everything below is built, verified in-browser, and deployed:
   in the banks stays where it is rather than being dropped. Verified in-browser: rewriting a
   stem now leaves stats, SRS, notes, bookmarks and `findByKey` all intact.
 
+- **Options no longer give the answer away.** Across all 2,254 multiple-choice questions in the
+  Régionale and Village banks, a student who knows no wine at all scored **44.6%** by picking on
+  option length; eighteen categories beat 45% and three sat above the 60% pass mark, so the paper
+  could be passed knowing nothing. Now **28.1%**, with no category over 45% and the whole corpus
+  buying **+0.3 points** against **+0.7** for the categories that were written correctly from the
+  start. Ids were checked before and after: all 3,061 unchanged, so no stored progress moved.
+  `rewrite/README.md` carries the method, the three metrics `build.py` now prints, and — more
+  useful than any of it — the four ways the measurement was wrong before it was right.
+
 ### Recently fixed (don't reintroduce)
 
+- **The shipped bank had silently drifted from its source.** `js/data-intro.js` was one question
+  behind `rewrite/categories/`: a Sake & Spirits stem had been corrected from "the discarded
+  fractions" to "those two outer fractions" — heads and tails are mostly recharged into the next
+  run, not thrown away — and the fix never reached a student. Nothing reported it, because a
+  stale bank has the same count, the same categories and the same shape as a current one.
+  `ship.py` now prints which ids move on every run, and `rewrite/check-ids.py` answers the same
+  question from the source side. Run one of them after any pass that touches question data.
 - Correct oral answers were being logged as *grader errors*, poisoning the Content Report.
 - "Reset all statistics" wiped six stores it didn't know about and crashed `render()`.
 - The `W` key cleared state but never re-rendered, so the screen appeared frozen.

@@ -46,6 +46,7 @@ changes completely:
 | `build.py` | Driver — `py rewrite/build.py r1_bordeaux`, or `--all` |
 | `manifest.py` | Progress across all 67 categories, and what is largest next |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
+| `check-ids.py` | Did an edit move a question id? Stems are the identity, so this is what turns "I only touched options" into something checkable. Run it after any bulk pass |
 | `check-cross-category.py` | The rewritten categories against EACH OTHER. Takes no arguments |
 | `build-preview.py` | Bundles every rewritten category into `preview-bank.js` for `?rewrite` |
 
@@ -629,8 +630,141 @@ Actionable findings fell with it, from 39 in wave 2 to 11 in wave 3, and History
 the first category in the project to pass verification with nothing to repair.
 
 Reported rather than blocked, because the older categories would fail at once and their repair is
-editorial. That backlog is real - roughly 800 questions across twenty categories, and the corpus
-figure is still 42.1% - but it stopped growing the moment the constraint moved into the brief.
+editorial. That backlog was real - roughly 800 questions across twenty categories - but it stopped
+growing the moment the constraint moved into the brief, and the sections below close it: the
+corpus now reads **28.1%** on this metric with no category over 45%.
+
+### The rank metric had its own blind spot, and it was found the same way the first one was
+
+Working the backlog started with the six worst categories, 64-79% on the rank metric. They came
+back at 27-31%, every content check passing, and the editorial quality held: keys were trimmed by
+moving the qualification into `exp` rather than deleting it, and distractors were lengthened with
+named misconceptions rather than filler.
+
+**Then the same question was asked of the repair that had been asked of the bank: what strategy is
+nobody measuring?** Two, it turned out.
+
+    OUTLIER   pick the option whose length is furthest from the mean of the other three
+    DECISIVE  the key is longest AND at least ten characters clear of the runner-up
+
+The second is the one a human actually exploits. A one-character win is a fact about character
+counts, not something visible on a screen, so counting it overstates the problem; ten characters
+clear is a signal anyone can see.
+
+Measured against a control - the wave 3 categories, written correctly from the start - the repair
+had left a residue. "Pick the longest", the heuristic every student actually uses, had genuinely
+fallen to chance. But the editors had partly hit a flat 25/25/25/25 by pushing keys to the length
+EXTREMES - trimming some very short, leaving others very long - which the rank metric rewards and
+the control proves is unnecessary.
+
+### Then the share-of-all-questions framing turned out to be the wrong denominator
+
+Nobody applies "pick the longest" to every question. They apply it when one option obviously
+stands out. So the number that matters is conditional: **when a standout exists, is it the key?**
+
+    long standout = an option at least DECISIVE_GAP (10) characters clear of the runner-up.
+    Below that the difference is a fact about character counts, not something visible on a screen.
+
+| | standout exists in | it is the key |
+|---|---|---|
+| unrepaired backlog | 23.9% of questions | **90.4%** |
+| wave 1, rank metric only | 30.6% | **46.3%** |
+| control, written right | 14.0% | **30.0%** |
+
+That reframing reversed the decision. 46.3% on nearly a third of the questions is a real,
+intuitive, exploitable rule, and the control shows 30% is reachable - so the six DID warrant a
+follow-up, narrower than the first pass: tighten the spread so no option towers over the others.
+
+### And then the fix overshot, because a one-sided bound always does
+
+Wave 2A was briefed to keep "key is the visibly longest" under 10%. It came back at a perfect
+**0.0%** - and 0% is a signal too. A student who notices that the conspicuously long option is
+never right eliminates it and guesses from three, scoring 33% instead of 25%. The brief had given
+an upper bound and no lower bound, and the editors drove straight through it.
+
+So the metric became one number that punishes both directions. Where a standout exists the student
+uses whichever rule pays, so:
+
+    best   = max(key_rate, (100 - key_rate) / 3)          chance = 25
+    points = how often a standout exists  x  (best - 25)
+
+| | length is worth |
+|---|---|
+| unrepaired backlog | **+15.6 points** |
+| wave 1, rank metric only | +6.5 |
+| wave 2A, overshot to 0% | +1.7 |
+| control, written right | **+0.7** |
+
+**One caveat that keeps this honest: the key rate is a ratio over however many standouts a
+category happens to have, and most have few.** History & Figures - written correctly from the
+start - has seven, four of which are keys, which prints as 57% and means nothing. Below
+`STANDOUT_MIN_N` the build says "too few to steer by". The lever an editor actually controls is
+the standout COUNT, which cannot be chased into noise.
+
+### The metric was also choosing the work, and it was choosing it wrong
+
+Every repair wave was selected by rank share - "the categories above 45%". Once points existed it
+turned out the two orderings are close to unrelated, because rank share is a property of all four
+options while points is driven by how *often* one option towers over the rest.
+
+| category | rank share, how it was picked | points, what it is worth |
+|---|---|---|
+| `r1_beer` | 41%, looked ordinary | **+17.4** — 13 standouts, key longest in **100%** |
+| `r1_germany` | 41% | +14.0 |
+| `r1_united_states` | 38% | +11.9 |
+| `r1_australia` | **32%, looked healthy** | **+11.8** |
+
+`r1_australia` sat at the same rank share as the categories held up as correctly written, and
+bought a student nearly twelve points. Meanwhile every repaired category had fallen to +0.0-+3.3.
+So the backlog was never "the categories over 45%" - **`r1_beer` was handing out more free marks
+than any category the first wave repaired had at baseline**, and nothing in the selection would
+ever have reached it.
+
+Rank by points, not by rank share, and re-derive the list from `build.py` rather than from any
+list written down here.
+
+### The repair that works is almost entirely one move
+
+`r1_beer` was the worst category in the corpus: +17.4 points, thirteen standouts, and the key was
+the conspicuously long option in **all thirteen** - pick the long one and you were right every
+time. It came back at +0.0 points and 29% rank share for **fifty changed lines, not one of which
+touched a distractor.**
+
+    opts: "The temperature and duration of kilning"   ->  "How the malt is kilned"
+    exp:  "Heat drives browning reactions..."         ->  "Kilning temperature and duration
+                                                            drive browning reactions..."
+
+Trim the key, move the qualification into `exp`. The fact is not lost - `exp` is shown after the
+answer - the question gets harder, and because no wrong answer is edited there is **no way to
+make a distractor defensibly correct**, which is the failure mode that has cost this project
+three broken questions and two wasted passes. Lengthening distractors is the lever that carries
+all the risk and it is rarely the one that is needed.
+
+The corollary is that a category whose keys are already terse has nowhere to trim, and there the
+work is genuinely harder. Those are the ones to slow down on.
+
+**Trimming converges, and that is the one way it can bite.** Two editors in different waves,
+each reading only their own file, independently trimmed a key to the identical string:
+
+    r1_alsace  "A lower maximum yield and a higher minimum ripeness at picking"
+    r2_loire   "A lower maximum yield and a higher minimum ripeness than the plain appellation"
+    both   ->  "A lower maximum yield and a higher minimum ripeness"
+
+Both are true - Alsace Grand Cru and a Layon commune designation really are both bought with
+yield and ripeness - and neither editor could have seen it, because the collision is corpus-wide
+and they were each told not to run the corpus checks. It is exactly the tail that made each key
+specific to its own subject that trimming removes. One collision in 2,254 questions, so the risk
+is small, but `check-cross-category.py` is the only thing that finds it: run it after any pass
+that trims keys, and diff the result against the same run at HEAD rather than reading the count,
+since ten pairs were already there and accepted.
+
+The general lesson is the one this project keeps relearning, now four times over: **a single proxy
+will be satisfied without the underlying problem being solved, and the only reliable way to find
+out is to measure a strategy the proxy does not measure, against a control you trust.** Padding
+was caught by adding the rank metric; the rank metric was caught by the conditional; the
+conditional's one-sided bound was caught by scoring both directions. Assume there is a fifth, and
+note that three of the four failures were introduced by a repair aimed at the previous metric —
+and that the fourth was the metric quietly deciding which work got done at all.
 
 ## When two adjudicators disagree, neither wins — a source does
 
