@@ -22,6 +22,20 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # does not by itself produce varied constructions.
 OPENER_SHARE_LIMIT = 0.15
 
+# How far clear of the runner-up an option must be before its length is
+# visible to a student reading a screen. Below this, "the longest option" is a
+# fact about character counts rather than something anyone can see, so it is
+# not a signal worth repairing. See the length metrics in structural().
+DECISIVE_GAP = 10
+
+# The key-rate among standouts is a ratio over however many standouts a category
+# happens to have, and most have few. History & Figures - a category written
+# correctly from the start - has seven, four of which are keys, which prints as
+# 57% and means nothing at all. Below this count the rate is reported but must
+# not be steered by; drive the standout COUNT down instead, which is the lever an
+# editor actually controls and which cannot be chased into noise.
+STANDOUT_MIN_N = 12
+
 # core.js norm() strips these before matching, so an accept entry made only of
 # them can never match anything.
 ENGINE_STOPWORDS = {"the", "a", "an", "chateau", "domaine", "de", "du", "des", "la", "le"}
@@ -251,13 +265,68 @@ def structural(bank, syllabus, cat, prefix="i"):
     #
     # With no signal the key is uniform across the four ranks at 25% each, so
     # the worst rank share IS what a knowledge-free student scores. Reported
-    # rather than blocked: twenty categories are currently over 45% and the
-    # repair is editorial, not mechanical.
+    # rather than blocked, because when this was added eighteen categories were
+    # over 45% and the repair is editorial, not mechanical. That backlog is now
+    # closed - the corpus reads 28.1% and no category is over 45% - so a future
+    # category that trips this is a new defect, not the old one.
+    #
+    # THE RANK METRIC HAS ITS OWN BLIND SPOT, found the same way the first one
+    # was — by measuring a strategy it does not measure. A repair pass that
+    # hits a flat 25/25/25/25 by pushing keys to the length EXTREMES scores
+    # perfectly here while leaving the key easy to spot as the odd one out.
+    # Wave 1 of the option-length repair did exactly that: it took six
+    # categories from 64-79% down to 27-31% on len_guess, and the outlier
+    # strategy came out at 34.7% against 22.3% for the categories written
+    # correctly from the start. The repair was real — "pick the longest" fell
+    # to chance — but it left a signal the headline number could not see.
+    #
+    # So two more strategies are reported beside it:
+    #   len_outlier   pick the option whose length is furthest from the mean of
+    #                 the other three. Chance is 25%.
+    #   len_points    what a visible standout is actually WORTH, in points.
+    #
+    # len_points is the one to steer by, and it exists because a bound in one
+    # direction gets driven straight through. Wave 2A of the repair was briefed
+    # to keep "key is the visibly longest option" under 10%. It came back at a
+    # perfect 0.0% - and 0% is a signal too. A student who notices that the
+    # conspicuously long option is never right eliminates it and guesses from
+    # three, scoring 33% instead of 25%. So the target was never "low"; it is
+    # "indistinguishable from chance", and only a metric that punishes BOTH
+    # directions can say that. Given a standout exists, the student uses
+    # whichever rule pays:
+    #
+    #     best   = max(key_rate, (100 - key_rate) / 3)      chance = 25
+    #     points = how often a standout exists  x  (best - 25)
+    #
+    # Measured over the corpus: categories written correctly from the start buy
+    # +0.7 points, the unrepaired backlog +15.6, wave 1 (rank metric only) +6.5,
+    # wave 2A (overshot to 0%) +1.7. Under +1.5 is the floor worth chasing.
+    #
+    # Aim for the key to sit INSIDE the pack, not at either extreme.
     len_rank = [0, 0, 0, 0]
+    n_outlier = 0
+    n_standout = 0
+    n_standout_key = 0
     for e in mc:
-        order = sorted(range(len(e["opts"])), key=lambda k: -len(e["opts"][k]))
+        lens = [len(o) for o in e["opts"]]
+        order = sorted(range(len(lens)), key=lambda k: -lens[k])
         len_rank[order.index(e["a"])] += 1
 
+        others = float(len(lens) - 1)
+        dev = [abs(lens[i] - (sum(lens) - lens[i]) / others) for i in range(len(lens))]
+        if dev.index(max(dev)) == e["a"]:
+            n_outlier += 1
+
+        ranked = sorted(lens, reverse=True)
+        if ranked[0] - ranked[1] >= DECISIVE_GAP:
+            n_standout += 1
+            if order[0] == e["a"]:
+                n_standout_key += 1
+
+    pct = (lambda n: (100.0 * n / len(mc)) if mc else 0.0)
+    key_rate = (100.0 * n_standout_key / n_standout) if n_standout else 25.0
+    best = max(key_rate, (100.0 - key_rate) / 3.0)
+    freq = (float(n_standout) / len(mc)) if mc else 0.0
     return problems, {
         "spread": dict(sorted(spread.items())),
         "ids": len(seen_id),
@@ -265,6 +334,13 @@ def structural(bank, syllabus, cat, prefix="i"):
         "sa": len(bank) - len(mc),
         "len_rank": len_rank,
         "len_guess": (100.0 * max(len_rank) / len(mc)) if mc else 0.0,
+        "len_outlier": pct(n_outlier),
+        "len_standout": pct(n_standout),
+        "len_standout_n": n_standout,
+        "len_key_rate": key_rate,
+        "len_points": freq * (best - 25.0),
+        "len_rule": ("pick" if key_rate >= (100.0 - key_rate) / 3.0 else "eliminate"),
+        "len_points_solid": n_standout >= STANDOUT_MIN_N,
     }
 
 

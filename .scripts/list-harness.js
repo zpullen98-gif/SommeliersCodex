@@ -22,7 +22,10 @@
 const fs = require('fs'), vm = require('vm'), path = require('path');
 const HERE = __dirname;
 const LIVE = path.join(HERE, '..', 'js');
-const JS = process.argv[2] || LIVE;
+// Skip flags when looking for the bank directory. `--ids` used to land in
+// argv[2] and be read as a path, so the one invocation this file's own header
+// recommends died on ENOENT looking for a folder called "--ids".
+const JS = process.argv.slice(2).find(a => a.charAt(0) !== '-') || LIVE;
 
 // norm() and the list machinery always come from the live source, so the harness
 // tests the current grader against whichever bank you point it at.
@@ -30,13 +33,24 @@ const coreSrc = fs.readFileSync(path.join(LIVE, 'core.js'), 'utf8');
 const normSrc = coreSrc.slice(coreSrc.indexOf('function norm(s){'), coreSrc.indexOf('function normNum'));
 if (!normSrc.startsWith('function norm')) throw new Error('could not extract norm() from core.js');
 
+// gradeList consults negatedAgainst, so the prelude needs it and the two
+// constants behind it. This slice was missing after the exclusion-frame guard
+// was ported into the app: codex9 started calling negatedAgainst, the harness
+// prelude never gained it, and every run died with a ReferenceError before
+// printing a single line. A verification tool that cannot start is worse than
+// one that reports a failure, because nothing announces it — so if you add
+// another core.js dependency to the list machinery, extract it here too.
+const negSrc = coreSrc.slice(coreSrc.indexOf('var NEG_RE'), coreSrc.indexOf('function matchSA'));
+if (!negSrc.startsWith('var NEG_RE') || negSrc.indexOf('function negatedAgainst') === -1)
+  throw new Error('could not extract the negation guard from core.js');
+
 const c9Src = fs.readFileSync(path.join(LIVE, 'codex9.js'), 'utf8');
 const listSrc = c9Src.slice(0, c9Src.indexOf('/* ---- grade the submission ----'));
 if (!listSrc) throw new Error('could not slice the list machinery out of codex9.js');
 
 const ctx = {};
 vm.createContext(ctx);
-vm.runInContext(normSrc + '\n' + listSrc, ctx, { filename: 'harness-prelude' });
+vm.runInContext(normSrc + '\n' + negSrc + '\n' + listSrc, ctx, { filename: 'harness-prelude' });
 for (const f of ['data-questions.js', 'data-intro.js', 'data-advanced.js', 'data-master.js'])
   vm.runInContext(fs.readFileSync(path.join(JS, f), 'utf8'), ctx, { filename: f });
 

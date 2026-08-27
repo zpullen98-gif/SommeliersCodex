@@ -52,6 +52,16 @@ def build(name):
         print("  key by length   rank %s — a student who knows nothing scores"
               " %.0f%% on length alone (25%% is no signal)"
               % ("/".join(str(x) for x in stats["len_rank"]), stats["len_guess"]))
+        print("  length is worth   %+.1f points to a student who knows nothing%s"
+              % (stats["len_points"],
+                 "" if stats["len_points_solid"]
+                 else "  [only %d standouts — too few to steer by]" % stats["len_standout_n"]))
+        print("                    a visibly longer option appears in %.0f%% of questions"
+              " (%d of them) and is the key %.0f%% of the time, so the rule is %s it"
+              % (stats["len_standout"], stats["len_standout_n"],
+                 stats["len_key_rate"], stats["len_rule"].upper()))
+        print("                    outlier %.0f%% (25%% is no signal, in either direction)"
+              % stats["len_outlier"])
     print("  unique ids      %d" % stats["ids"])
     print("  distinct stem openers %d of %d questions; most common %s"
           % (len(openers), len(bank), openers.most_common(1)[0] if openers else "-"))
