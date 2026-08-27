@@ -120,7 +120,7 @@ BANK = [
     # ------------------------ Grosslage: the name that covers a county (4) ---
     Q("Grosslage: the name that covers a county",
       "Zeller Schwarze Katz and Kroever Nacktarsch were shipped by the tanker for decades and read on a label exactly like a great single site. What kind of vineyard name is each of them?",
-      ["A Grosslage, one name gathering the vineyards of many villages at once",
+      ["A Grosslage, one name gathering the vineyards of many villages",
        "An Einzellage of unusually large area",
        "A Bereich, the district a region is divided into",
        "A shipper's brand with no vineyard behind it"], 0,
@@ -152,7 +152,7 @@ BANK = [
     # ----------------------------------- The VDP and Grosses Gewachs (5) -----
     Q("The VDP and Grosses Gewachs",
       "A VDP member's dry wines are named by where they came from, while one older vocabulary is held back for a different sort of wine altogether. What does the association reserve Kabinett, Spatlese and Auslese for?",
-      ["Wines that keep a noticeable amount of residual sugar into the bottle",
+      ["Wines that keep noticeable residual sugar",
        "Wines from its top classified sites only",
        "Wines offered at the autumn auctions",
        "Wines held back five years after the vintage"], 0,

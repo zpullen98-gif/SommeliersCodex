@@ -114,7 +114,7 @@ BANK = [
     # -------------------------------- Fitou, Picpoul and the lagoon coast (3) -
     Q("Fitou, Picpoul and the lagoon coast",
       "Two separate blocks of vines, kilometres apart, share the single name Fitou. What occupies the ground between the seaside zone and the high one?",
-      ["A corridor of Corbieres hills, whose vines answer to that name instead",
+      ["A corridor of Corbieres between the two",
        "The salt lagoon of Leucate",
        "The city of Narbonne and its suburbs",
        "A military zone closed to farming since the war"], 0,

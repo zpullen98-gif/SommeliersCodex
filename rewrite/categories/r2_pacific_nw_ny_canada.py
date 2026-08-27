@@ -147,11 +147,11 @@ BANK = [
     # ------------------------- Washington's ground: floods, basalt and cold (4) --
     Q("Washington's ground: floods, basalt and cold",
       "Vines across the Columbia basin are trained with two or three trunks rising from the ground rather than one, and an own-rooted block can be brought back from the base after the worst nights. Which hazard shapes both practices?",
-      ["A hard winter freeze, which can kill the wood above ground",
+      ["A hard winter freeze that kills wood above ground",
        "Phylloxera arriving through the graft union",
        "Wind off the river snapping a single trunk",
        "Spring frost during flowering"], 0,
-      "Arctic air spilling south over the Rockies is the one thing that limits where the state can plant, and it arrives every few years rather than every year. A spare trunk means a killed one can be cut out without losing the vine, and because so much of the state is planted on its own roots, a shoot from below is the same variety and can simply be trained up as a replacement. A grafted vine's basal shoot would be rootstock, which is why the same accident costs a Napa grower a replanting."),
+      "Arctic air spilling south over the Rockies is the one thing that limits where the state can plant, and it arrives every few years rather than every year. A bad night kills a trunk or two, and a spare means the dead one can be cut out without losing the vine; the worst nights take everything above the soil, and because so much of the state is planted on its own roots, a shoot from the insulated crown below is the same variety and can simply be trained up as a replacement. A grafted vine's basal shoot would be rootstock, which is why the same accident costs a Napa grower a replanting."),
     Q("Washington's ground: floods, basalt and cold",
       "The Columbia Valley appellation does not stop at the Washington state line. Which neighbouring state does it continue into?",
       ["Oregon", "Idaho", "Montana", "British Columbia"], 0,
@@ -224,7 +224,7 @@ BANK = [
     # ------------------------------------------------------- The Finger Lakes (4)
     Q("The Finger Lakes",
       "Buds on a slope above a Finger Lake come through a night at ten below zero Fahrenheit while a planting a few miles inland is killed outright. What is the water doing?",
-      ["Giving back the heat it stored through summer, and keeping the air moving",
+      ["Giving back the heat it stored, and keeping the air moving",
        "Raising the humidity so the buds cannot desiccate",
        "Reflecting low winter sunlight back onto the slope",
        "Holding budbreak back until the frost season has ended"], 0,

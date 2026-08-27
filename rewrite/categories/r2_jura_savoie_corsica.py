@@ -173,7 +173,7 @@ BANK = [
        ex=True),
     Q("Savoie",
       "Apremont, Chignin, Arbin, Jongieux: names like these may follow Vin de Savoie on the label. What does the appended name certify?",
-      ["Fruit from a delimited cru meeting stricter yield and variety rules",
+      ["Fruit from a cru with its own yield and grape rules",
        "Bottling carried out in the named commune",
        "Membership of that village's cooperative cellar",
        "An extra year of ageing before the wine is sold"], 0,
