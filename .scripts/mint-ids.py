@@ -42,7 +42,7 @@ BANKS = [
     ("data-master.js", "MASTER_QUESTIONS", "m"),
 ]
 # Guard rails: if a count drifts, the parse went wrong -- investigate, don't --apply.
-EXPECT = {"QUESTIONS": 1283, "INTRO_QUESTIONS": 1778, "ADV_QUESTIONS": 562, "MASTER_QUESTIONS": 445}
+EXPECT = {"QUESTIONS": 1283, "INTRO_QUESTIONS": 1778, "ADV_QUESTIONS": 664, "MASTER_QUESTIONS": 523}
 
 APPLY = "--apply" in sys.argv
 STRIP = "--strip" in sys.argv
