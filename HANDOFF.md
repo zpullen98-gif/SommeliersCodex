@@ -18,7 +18,7 @@ Use `serve.py`, not `python -m http.server` — it sends `Cache-Control: no-cach
 appear on reload. Launch config name for the preview tool: `sommeliers-codex` (port 8632).
 
 Live at **https://zpullen98-gif.github.io/SommeliersCodex/** (GitHub Pages, deploy-from-branch
-on `master` — every push rebuilds). Currently at service-worker cache **`codex-v32`**.
+on `master` — every push rebuilds). Currently at service-worker cache **`codex-v49`** — grep `sw.js` rather than trusting this line.
 ~2.5 MB on disk, ~1.7 MB of JS. Cold load
 ~2s; a returning user gets DOM-ready in ~53 ms with zero network (everything from the SW).
 
@@ -36,15 +36,19 @@ this project.** That distinction matters constantly — see *Content accuracy* b
 
 ## Content inventory
 
-| Rank | Key | Questions | Categories | Format mix |
+| Rank | Key | Questions | Categories | Tier |
 |---|---|---|---|---|
-| I · Page | `intro` | 1,778 | 31 (own taxonomy) | all multiple choice |
-| II · Squire | `certified` | 1,283 | 36 | 792 SA · 460 MC · 15 matching · 16 select-all |
-| III · Knight | `advanced` | 562 | 36 | 475 SA · 57 MC · 29 matching · 1 select-all |
-| IV · Ruler | `master` | 445 | 36 | 445 SA (oral-style prompts) |
-| **Total** | **4,068** | | |
+| I · Page | `intro` | 1,778 | 31 (own taxonomy) | free |
+| II · Squire | `certified` | 1,283 | 36 | free |
+| III · Knight | `advanced` | 720 | 36 | **paid** |
+| IV · Ruler | `master` | 576 | 36 | **paid** |
+| **Total** | **4,357** | | 3,061 free · 1,296 paid |
 
-Also: 150 study chapters (39/36/36/36), 47 grape profiles (23 + 24 authored), the Intro
+Run the counts rather than trusting the table — it has been the stalest thing in this file
+twice. Ranks I and II are original work written from syllabi in `rewrite/categories/`; III and
+IV were AI-drafted in-project and have since been fully fact-reviewed.
+
+Also: 147 study chapters (39/36/36/36), 47 grape profiles (23 + 24 authored), the Intro
 Compendium (12 hand-drawn SVG country maps with 98 regions, 12 classification pyramids,
 winemaking / soil / dessert references), 91 curated video topics, a 7-part service ritual.
 
@@ -229,7 +233,59 @@ Everything below is built, verified in-browser, and deployed:
 
 ---
 
+## Content state — read this before planning content work
+
+Everything below has had a full pass and is measured, not asserted. Re-run the tools rather
+than trusting the numbers.
+
+| | state | tool |
+|---|---|---|
+| Ranks I & II questions | original work, written from syllabi | `rewrite/build.py --all` |
+| Ranks III & IV questions | all 1,296 fact-reviewed, 187 corrections | `rewrite/check-paid.py` |
+| All 4 banks: model answers | **1,964 of 1,964 grade** | `.scripts/sa-harness.js` |
+| Option length | 28.1% guessable, worth +0.3 points | printed by `build.py` |
+| Stem echoes | 6 of 807 (0.7%), each reviewed and kept | `rewrite/check-stem-echo.py` |
+| Paid study chapters | 72 reviewed, 34 corrections | — |
+| Rank II chapters | **provenance unrecorded** — see below | — |
+
+Four things are worth knowing before you touch any of it:
+
+1. **`matchSA` short-circuits on the model answer.** The displayed answer always grades. Do
+   not "tidy" it away: without it the paid banks recognised their own answer 328 times in 920,
+   and `submitSA` records the miss before the display softens the verdict.
+2. **A false reject is worse than a scoring leak**, and the checkers cannot tell you which a
+   flag is. `rewrite/paid_known.py` holds 366 flags read and deliberately left. `ex=True` is
+   the instrument that once broke 23 correct answers.
+3. **Nothing counts a correct answer that is not listed.** Every check asks whether the
+   answers it LISTS grade. Probing the reverse found 296 questions rejecting a plain reduction
+   of their own model answer; 54 were real. `.scripts/sa-probe.js` asks the real grader
+   whether a phrasing grades — use it before widening or narrowing anything.
+4. **The guards fire on legitimate change.** `mint-ids.py` has an EXPECT count,
+   `list-harness.js` slices a prelude out of source, `check-paid.py` has a baseline. When one
+   fires, confirm its parser agrees with reality *then* update it — do not assume the guard is
+   wrong, and do not assume it is right.
+
 ## What's left, in priority order
+
+Ranked by (impact on actually passing an exam) × feasibility. **Content is done** — see
+*Content state* below before adding to this list; the banks, the chapters and the grader have
+all had a full pass and the remaining items are product, not correctness.
+
+### Before selling: one compliance answer
+
+**The 36 Rank II study chapters have no recorded origin.** Not a header, not an archive
+mapping, not the authorship statement in this file, and they were not part of the rewrite.
+Every other content set in the product has a provenance line somewhere. They ship in the FREE
+tier, which the B2B pivot made the top of a commercial funnel, and
+`OutsideOfTime/COMPLIANCE.md` now carries them at 60 with the reasoning.
+
+The evidence available from the file points to in-project authorship — the chapters recorded
+as IMPORTED use `{g,id,t,body}` with HTML bodies, these use `{cat,lead,exam,facts,traps}`, the
+same native shape as the chapters recorded as authored here — but that is evidence, not proof,
+and the header says which it is. **If the owner can state where they came from, record it and
+this closes. If not, they are the next rewrite**, and the tooling to do it already exists in
+`rewrite/primers/`.
+
 
 Ranked by (impact on actually passing an exam) × feasibility.
 
