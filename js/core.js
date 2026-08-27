@@ -49,6 +49,27 @@ function negatedAgainst(input, acc){
 function matchSA(q, ans){
   const a = norm(ans);
   if(!a) return false;
+  /* The displayed answer always grades. A student reads `ans` on the reveal and
+     types it back next time; being marked wrong for giving the answer the app
+     just showed them teaches something false and costs the grader its trust.
+
+     rewrite/lib.py's SA() guarantees this at BUILD time for Rank I and II, by
+     prepending the model answer to the accept list when it does not already
+     grade — which is why those banks score 807 of 807 on .scripts/sa-harness.js.
+     Advanced and Master were hand-authored as JSON, never passed through SA(),
+     and managed 328 of 920: the grader failed to recognise its own answer on
+     592 questions, 378 of them in Master. Nothing marked them WRONG — codex8's
+     coverage rule caught them and offered a self-grade — but submitSA has
+     already run statRecord(q,false) and missAdd(q) by then, so every one of
+     them recorded a miss, queued a known question for review, and quietly cost
+     a mark on a mock the student was sitting.
+
+     Exact equality is the right shape for this, and deliberately not an accept
+     entry: it adds no containment surface, so unlike a widened list it cannot
+     smuggle in a negation or grade a neighbouring question's answer. It can
+     only ever turn a miss into a hit, and the only input it newly accepts is
+     the model answer itself. */
+  if(typeof q.ans === 'string' && q.ans && a === norm(q.ans)) return true;
   const inputNums = (a.match(/\d+(\.\d+)?/g)||[]);
   for(const acc of q.accept){
     if(acc.charAt(0)==='~'){                      // strict canonical accept:

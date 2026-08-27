@@ -71,7 +71,7 @@ def SA(block, q, ans, accept, exp, ex=False):
     # not cover it they are marked wrong for giving the answer the app showed
     # them. This is mechanical rather than editorial, so it is guaranteed here
     # instead of being left to whoever writes the list.
-    if not match_sa(e, ans):
+    if not match_sa(e, ans, exact_ans=False):
         e["accept"] = [ans.lower()] + e["accept"]
     return e
 
@@ -376,13 +376,28 @@ def _negated_against(input_norm, accept_norm):
     return not (set(accept_norm.split()) & NEG_WORDS)
 
 
-def match_sa(entry, text):
+def match_sa(entry, text, exact_ans=True):
     """Port of core.js matchSA, so an accept list can be tested the way the app
     will actually grade it, including the ~strict, numeric and containment
-    branches."""
+    branches.
+
+    `exact_ans` mirrors core.js's short-circuit: the displayed answer always
+    grades. Only SA() passes False, and it has to. SA() prepends `ans` to the
+    accept list precisely WHEN the answer does not otherwise grade, so if it
+    asked the short-circuiting matcher it would always be told the answer is
+    fine and would never prepend anything. That would quietly narrow every
+    generated accept list in Rank I and II — the entries also serve the
+    containment branch, so a student typing a superset of the model answer
+    would stop grading. Keeping SA() on the strict matcher leaves both shipped
+    banks byte-identical.
+    """
     a = engine_norm(text)
     if not a:
         return False
+    if exact_ans:
+        ans = entry.get("ans")
+        if isinstance(ans, str) and ans and a == engine_norm(ans):
+            return True
     input_nums = re.findall(r"\d+(?:\.\d+)?", a)
 
     def norm_num(x):
