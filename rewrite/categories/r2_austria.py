@@ -128,8 +128,15 @@ BANK = [
     SA("How a DAC carves its levels",
        "Zierfandler and Rotgipfler had to wait longest: their home region was the last to receive a DAC, in 2023. Name it.",
        "Thermenregion",
+       # ex=True because the answer contains the stem's own word: "region" is a
+       # substring of "thermenregion", so the containment branch grades a
+       # candidate who types the one word the question already gave them. No
+       # entry can be removed to fix that — the leak is inside the answer. The
+       # cost is bounded here in a way it is not for Mesoclimate (see
+       # r2_terroir_climate_soil): every phrasing the explanation itself uses,
+       # "Thermenregion" and "Thermenregion DAC", is listed exactly.
        ["thermenregion", "thermenregion dac", "thermenregion region"],
-       "The Thermenregion DAC arrived in 2023, the most recent of the roster. Before it, the name was an ordinary Qualitatswein origin with no agreed style behind it; now the region itself defines what may carry it, as the rest of Austria's classic names already did."),
+       "The Thermenregion DAC arrived in 2023, the most recent of the roster. Before it, the name was an ordinary Qualitatswein origin with no agreed style behind it; now the region itself defines what may carry it, as the rest of Austria's classic names already did.", ex=True),
 
     # ---------------------------------------- The Wachau's two ladders (4) ---
     Q("The Wachau's two ladders",

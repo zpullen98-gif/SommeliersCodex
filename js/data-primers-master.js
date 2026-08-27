@@ -1,4 +1,9 @@
 /* ============ Master level: the oral chapters ============
+   AUTHORED IN-PROJECT by an AI assistant, as recorded in HANDOFF.md, and
+   COMPANY_OWNED on the same footing as the Advanced and Master question banks.
+   Fact-reviewed for the first time on 27 Aug 2026, against the questions of
+   their own categories.
+
    Same {cat, lead, exam, facts, traps} format, written for the voice. Each
    chapter answers one question: what does an examiner want to HEAR when this
    subject comes up, and what separates a pass from a stammer. ============ */

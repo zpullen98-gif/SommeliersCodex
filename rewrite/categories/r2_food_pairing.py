@@ -124,7 +124,7 @@ BANK = [
     SA("Tastes and their effect on wine",
        "Serving a red too cold does what to its tannin and bitterness?",
        "Increases both",
-       ["increases both", "increases tannin and bitterness", "makes them more prominent",
+       ["increases both", "makes them more prominent",
         "accentuates them"],
        "Cold hardens tannin and sharpens bitterness while muting aroma. An over-chilled red often reads as a bad pairing when it is only a service fault."),
 
@@ -335,7 +335,7 @@ BANK = [
     SA("Service judgement at the table",
        "When a guest's stated preference conflicts with the textbook pairing, which should prevail?",
        "The guest's preference",
-       ["the guest", "guest preference", "what the guest wants", "the guests wishes"],
+       ["guest preference", "what the guest wants", "the guests wishes"],
        "Hospitality outranks theory. Offer the pairing once if invited, then pour what was asked for without further comment."),
     Q("Service judgement at the table",
       "Across a tasting menu, how should the wines generally progress?",

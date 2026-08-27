@@ -377,9 +377,14 @@ BANK = [
     SA("Domaine, negociant and metayage",
        "An owner who no longer farms lets a grower work the vines and takes payment as a share of the crop rather than in cash. Name that arrangement.",
        "Metayage",
+       # ex=True because "share" is a substring of "sharecropping", so the
+       # containment branch grades the bare stem word "share" — the question
+       # says "takes payment as a share of the crop" and then rewards it back.
+       # The leak is inside an entry rather than fixable by removing one, and
+       # the explanation's own phrase, "farming a moitie", is listed exactly.
        ["metayage", "en metayage", "metayage sharecropping", "sharecropping",
         "share cropping", "a moitie"],
-       "The share was traditionally half, which is why the arrangement is also described as farming a moitie, and the tenant hands back wine rather than money. Inheritance split Burgundy into parcels too small for their owners to live off, and this is how a great deal of that land is actually worked."),
+       "The share was traditionally half, which is why the arrangement is also described as farming a moitie, and the tenant hands back wine rather than money. Inheritance split Burgundy into parcels too small for their owners to live off, and this is how a great deal of that land is actually worked.", ex=True),
     SA("Domaine, negociant and metayage",
        "A Beaune house buys young wine in barrel, raises it in its own cellars and bottles it under its own label. Give the compound term for such a house.",
        "Negociant-eleveur",

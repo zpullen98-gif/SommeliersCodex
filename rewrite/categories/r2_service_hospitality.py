@@ -112,7 +112,7 @@ BANK = [
     SA("Sequence of service and etiquette",
        "A firm young red and a fragile old one are poured across a single meal. Which goes into the glass first?",
        "The young wine",
-       ["young wine", "young", "young one", "young red", "young red wine",
+       ["young wine", "young one", "young red", "young red wine",
         "younger wine", "younger one", "younger red", "young first",
         "young wine first", "young red first", "young one first",
         "young before old", "pour the young wine first",

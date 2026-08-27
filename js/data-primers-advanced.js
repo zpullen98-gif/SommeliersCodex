@@ -1,4 +1,10 @@
 /* ============ Advanced level: study chapters ============
+   AUTHORED IN-PROJECT by an AI assistant, as recorded in HANDOFF.md, and
+   COMPANY_OWNED on the same footing as the Advanced and Master question banks.
+   Fact-reviewed for the first time on 27 Aug 2026, against the questions of
+   their own categories — a chapter that teaches one figure while its questions
+   key another is the defect that review existed to find.
+
    Native format {cat, lead, exam, facts[[label,text]], traps[]}. Written for the
    candidate who already holds Certified: what deepens, what the short-answer
    format demands, and where Advanced candidates actually fail. ============ */
