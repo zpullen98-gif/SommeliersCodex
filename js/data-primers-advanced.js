@@ -11,14 +11,14 @@
 var ADV_PRIMERS=[
 
 {cat:"Burgundy",
-lead:"At Certified you learned the pyramid. At Advanced you are expected to walk the slope: which grand cru sits in which commune, who owns the monopoles, what a climat is, and why Mazoyères may call itself Charmes. The questions stop offering options.",
+lead:"At Certified you learned the pyramid. At Advanced you are expected to walk the slope: which grand cru sits in which commune, who owns the monopoles, what a climat is, and why Mazoyères may call itself Charmes. Most questions here stop offering options.",
 exam:"Grand cru rosters by village, monopoles and their owners, the Chablis seven, yields by tier, Beaujolais crus, négociant versus domaine, and the vocabulary — climat, lieu-dit, Tastevinage, Trois Glorieuses.",
 facts:[
 ["Memorize by commune","Gevrey nine, Morey five, Chambolle two, Vougeot one, Vosne six (Flagey's Échezeaux pair counted separately), Aloxe-Corton's hill. Recite them as a list, not a map."],
 ["Monopoles worth naming","Romanée-Conti and La Tâche (DRC), La Romanée (Liger-Belair), La Grande Rue (Lamarche), Clos de Tart (Artémis), Clos des Lambrays (near-monopole, LVMH), Musigny's white (de Vogüé)."],
-["Yields as law","Grand cru red ~35 hl/ha, white ~40; village 40–45. Advanced expects the number, not the concept."],
+["Yields as law","Côte d'Or grand cru red ~35 hl/ha, white ~40; village 40–45. Chablis is a different scale: grand cru 54, premier cru 58, Chablis and Petit Chablis 60. Advanced expects the number, not the concept."],
 ["Chablis","Seven grand cru climats on one slope (Les Clos the greatest), La Moutonne the honorary eighth held by Long-Depaquit. Kimmeridgian marl below, Portlandian above for Petit Chablis."],
-["Beaujolais' ten crus","Learn them by character, not alphabet: Moulin-à-Vent (structured), Morgon's Côte du Py (granite-iron), Fleurie (floral), Brouilly (largest), Côte de Brouilly (volcanic blue stone)."],
+["Beaujolais' ten crus","Learn them by character, not alphabet: Moulin-à-Vent (structured, pink granite), Morgon's Côte du Py (decomposed schist — 'roche pourrie' — iron and manganese), Fleurie (floral), Brouilly (largest), Côte de Brouilly (volcanic blue stone)."],
 ["The trade","Domaine bottles its own; maison/négociant buys. Micro-négoce (Leroux, Lucien Le Moine) now rivals domaines — the old quality assumption is dead."]],
 traps:[
 "Nuits-Saint-Georges, Volnay, Pommard, Chassagne reds: no grands crus. Know the famous villages without them.",
@@ -54,7 +54,7 @@ facts:[
 ["History that gets asked","1911 riots over Aube exclusion; 1927 law fixed the zone; the échelle des crus pricing died c. 1990, leaving grand/premier cru as prestige labels only."]],
 traps:[
 "Extra Dry is sweeter than Brut. Say it out loud until it stops feeling wrong.",
-"Rosé by blending red and white is legal here and almost nowhere else in AOP France.",
+"Rosé by blending red into white is banned for still wine across the EU but permitted for sparkling — every crémant may do it; Champagne is simply by far the biggest user.",
 "'Grand cru' rates entire villages in Champagne — 17 of them — not single vineyards.",
 "Meunier is a major legal grape; candidates forget it under pressure."]},
 
@@ -79,7 +79,7 @@ lead:"Alsace looks simple — varietal labels, dry whites — until Advanced ask
 exam:"51 grand cru count and exceptions, the noble four, VT/SGN, Crémant rules, and the producer philosophies (Trimbach's abstention, Deiss's field blends).",
 facts:[
 ["The crus","51 sites, each its own AOP since 2011; Kaefferkopf added last (2007). Rangen (Thann) is the southernmost, steepest, volcanic."],
-["Noble four","Riesling, Gewurztraminer, Pinot Gris, Muscat. Exceptions: Zotzenberg (Sylvaner), Altenberg de Bergheim and Kaefferkopf (blends)."],
+["Noble four","Riesling, Gewurztraminer, Pinot Gris, Muscat. Exceptions: Zotzenberg (Sylvaner), Altenberg de Bergheim and Kaefferkopf (blends), and since 2022 Pinot Noir for red at Hengst, Kirchberg de Barr and Vorbourg."],
 ["Sweetness","VT = late harvest, may finish near-dry; SGN = botrytized, always sweet. Since 2021, sweetness indication is mandatory on labels."],
 ["Crémant d'Alsace","France's second-largest traditional-method appellation; largely Pinot Blanc, rosé must be 100% Pinot Noir."],
 ["The philosophical split","Deiss champions co-planted field-blend crus; Ostertag and Trimbach argue varietal precision. Both positions are defensible — know them."],
@@ -126,7 +126,7 @@ traps:[
 lead:"Small regions, outsized exam weight. Vin Jaune's six years and three months, the clavelin's 62 cl, the difference between ouillé and sous voile — these are pure marks for anyone who studied and pure loss for anyone who didn't.",
 exam:"Vin Jaune rules and bottle, Château-Chalon's self-cancelling appellation, Jura's grapes, Savoie's crus, Corsica's grapes and their Italian identities.",
 facts:[
-["Vin Jaune","Savagnin, minimum six years three months under voile without topping up, bottled in the 62 cl clavelin. Château-Chalon is Vin Jaune only and may declare a vintage void."],
+["Vin Jaune","Savagnin, minimum six years three months in cask sans ouillage — at least 60 of those months under voile — bottled in the 62 cl clavelin. Château-Chalon is Vin Jaune only and may declare a vintage void."],
 ["Jura's grapes","Whites: Savagnin, Chardonnay. Reds: Poulsard (pale, ethereal), Trousseau (darker, peppery), Pinot Noir."],
 ["Ouillé vs sous voile","Ouillé barrels are topped up — fresh, floral, modern. Sous voile builds sotolon: curry, walnut, fenugreek."],
 ["Other Jura wines","Vin de Paille (straw-dried sweet), Macvin (mistelle with marc), Crémant du Jura (serious value)."],
@@ -146,7 +146,7 @@ facts:[
 ["Soils","Tortonian marl (La Morra, Barolo village): perfumed, earlier. Serravallian/Helvetian sandstone (Serralunga, Monforte): structured, later."],
 ["MGA","181 in Barolo, 66 in Barbaresco. Know Cannubi (Barolo), Brunate (La Morra), Vigna Rionda (Serralunga), Bussia (Monforte), Asili and Rabajà (Barbaresco)."],
 ["Nebbiolo elsewhere","Spanna in Alto Piemonte (Gattinara, Ghemme, Boca, Lessona), Chiavennasca in Valtellina (Sforzato is the dried-grape version)."],
-["Valpolicella","Corvina-led. Valpolicella → Ripasso (refermented on Amarone pomace) → Amarone (dry, appassimento, 15%+) → Recioto (sweet). No pressing before December 1."],
+["Valpolicella","Corvina-led. Valpolicella → Ripasso (refermented on Amarone pomace) → Amarone (dry, appassimento, min 14%, usually 15–16%) → Recioto (sweet). No pressing before December 1."],
 ["Method contrast","Prosecco: tank/Charmat, Glera, Valdobbiadene-Conegliano DOCG with rive and Cartizze. Franciacorta: traditional method, 18/30/60-month tiers, Satèn at lower pressure."]],
 traps:[
 "Nebbiolo is pale and floral with massive tannin — never call it light-bodied.",
@@ -155,11 +155,11 @@ traps:[
 "Gavi's grape is Cortese; Soave's is Garganega. Place name, grape name, keep them straight."]},
 
 {cat:"Italy Central & South",
-lead:"Sangiovese under four names, one town-versus-grape trap that has failed thousands of candidates, and a south that Advanced now takes seriously: Aglianico's two DOCGs, Etna's contrade, Sicily's only DOCG.",
+lead:"Sangiovese under four names, one town-versus-grape trap that has failed thousands of candidates, and a south that Advanced now takes seriously: Aglianico's three DOCGs, Etna's contrade, Sicily's only DOCG.",
 exam:"Brunello and Chianti Classico rules, the Montepulciano trap, Super Tuscan legal history, Aglianico, Etna, Primitivo's identity, Verdicchio's two zones.",
 facts:[
 ["Brunello","100% Sangiovese Grosso, 2 years in wood, released in the 5th year (6th for Riserva). Rosso di Montalcino is the younger sibling."],
-["Chianti Classico","Sangiovese ≥80%, black rooster seal. Annata 12 months, Riserva 24, Gran Selezione 30 with estate fruit — and since 2023, 11 UGA village names on Gran Selezione."],
+["Chianti Classico","Sangiovese ≥80% for Annata and Riserva, black rooster seal. Annata 12 months, Riserva 24, Gran Selezione 30 with estate fruit, ≥90% Sangiovese and native red varieties only — and since 2023, 11 UGA village names on Gran Selezione."],
 ["The Montepulciano trap","Vino Nobile di Montepulciano = Sangiovese (Prugnolo Gentile) from the Tuscan town. Montepulciano d'Abruzzo = the grape Montepulciano in Abruzzo."],
 ["Super Tuscan history","Vino da Tavola → IGT (1992 Goria law) → Bolgheri DOC (1994) and Bolgheri Sassicaia (2013, Italy's only single-estate DOC)."],
 ["The south","Taurasi DOCG (Aglianico, Campania) and Aglianico del Vulture Superiore (Basilicata); Fiano di Avellino and Greco di Tufo for whites; Primitivo di Manduria (= Zinfandel = Tribidrag)."],
@@ -167,7 +167,7 @@ facts:[
 traps:[
 "Montepulciano is both a Tuscan town and an Abruzzese grape. This single fact fails more candidates than any other in Italy.",
 "Brunello must be 100% Sangiovese; Chianti Classico only 80% minimum.",
-"Carmignano's 1716 delimitation was geographic — its Cabernet requirement dates to the 1975 DOC, the first in Italy.",
+"Carmignano's 1716 delimitation was geographic — its Cabernet requirement dates to the 1975 DOC, the first Italian appellation to require Cabernet in its blend. Italy's first DOC outright was Vernaccia di San Gimignano, 1966.",
 "Vernaccia di San Gimignano is white, despite the red-wine company it keeps."]},
 
 {cat:"Spain",
@@ -270,7 +270,7 @@ traps:[
 lead:"Advanced California means AVA fluency — bench versus mountain, which side of the valley, what the fog does — plus the labeling percentages and the history that made the market: 1976, the cult era, and the restraint backlash.",
 exam:"AVA geography and conjunctive labeling, the 85/75/95 rules, To Kalon, the Judgment of Paris details, Zinfandel's identity, Central Coast cooling.",
 facts:[
-["Labeling","AVA 85%, varietal 75%, vintage 95% (for AVA wines). Estate Bottled requires owned/controlled fruit in one AVA, crushed to bottled on site. Napa sub-AVAs must also say 'Napa Valley' (2009)."],
+["Labeling","AVA 85%, varietal 75%, vintage 95% (for AVA wines). Estate Bottled requires owned/controlled fruit in one AVA, crushed to bottled on site. Napa sub-AVAs must also say 'Napa Valley' (since 1990, California Business & Professions Code §25241)."],
 ["Napa's map","Floor and bench: Oakville (To Kalon), Rutherford (the 'dust'), Stags Leap District, St. Helena, Calistoga. Mountains: Howell, Diamond, Spring, Mount Veeder, Atlas Peak. Pritchard Hill is famous and not an AVA."],
 ["Sonoma","Russian River (Goldridge sand, fog via the Petaluma Gap — itself a wind-defined AVA), Alexander Valley, Dry Creek (Zin), Fort Ross-Seaview and West Sonoma Coast."],
 ["1976 in detail","Chateau Montelena 1973 Chardonnay (Grgich) and Stag's Leap Wine Cellars 1973 Cabernet (Winiarski) won; Ridge Monte Bello placed and won the 2006 rematch."],
@@ -280,7 +280,7 @@ traps:[
 "An AVA regulates geography only — no grape, yield or method rules.",
 "Chateau Montelena won Paris with Chardonnay; the Cabernet winner was Stag's Leap Wine Cellars.",
 "Zinfandel = Primitivo = Tribidrag/Crljenak Kaštelanski.",
-"Petite Sirah is Durif, a Syrah × Peloursin crossing."]},
+"Petite Sirah is Durif — a Peloursin × Syrah crossing (Peloursin the seed parent)."]},
 
 {cat:"Pacific NW, NY & Canada",
 lead:"Washington is a desert, Oregon's labeling is stricter than federal law, and Canada's Icewine has a temperature written into statute. These three facts carry a surprising share of the section.",
@@ -299,7 +299,7 @@ traps:[
 "Icewine's freeze must occur on the vine — artificial freezing disqualifies."]},
 
 {cat:"South America",
-lead:"Altitude in Argentina, transverse valleys in Chile, and one DNA discovery in 1994 that renamed a whole country's second grape. Advanced expects the subzones by name.",
+lead:"Altitude in Argentina, transverse valleys in Chile, and one ampelographer's identification in 1994 that renamed a whole country's second grape. Advanced expects the subzones by name.",
 exam:"Mendoza's GIs and altitude, Uco subzones and calcareous soils, Torrontés, Carmenère's history, Chile's coast/Andes labeling, Uruguay's Tannat.",
 facts:[
 ["Mendoza","Luján de Cuyo (classic) and Uco Valley (Gualtallary, Paraje Altamira, Los Chacayes, San Pablo) — soil-mapped GIs drawn by alluvial fan, with calcareous caliche the prized feature."],
@@ -339,7 +339,7 @@ facts:[
 ["Central Otago","Schist soils, semi-continental — the country's only such climate, and among the world's southernmost vineyards. Bannockburn, Gibbston, Bendigo, Alexandra."],
 ["Hawke's Bay","Gimblett Gravels is defined by the literal boundary of an 1867 river course — a soil-defined district, not a political one. Syrah and Bordeaux blends."],
 ["Martinborough","Planted after Derek Milne's 1978 DSIR report matched the site to Burgundy. Ata Rangi, Dry River."],
-["Closures and law","The 2001 Screwcap Initiative took the country to ~95%+; GIs were formalized under the 2017 Act."]],
+["Closures and law","The 2001 Screwcap Initiative took the country to ~95%+; GIs were formalized under the Geographical Indications (Wine and Spirits) Registration Act 2006, in force from 2017."]],
 traps:[
 "Central Otago is semi-continental — the exception in a maritime country.",
 "NZ Syrah is cool-climate and peppery, closer to Crozes than Barossa.",
@@ -354,7 +354,7 @@ facts:[
 ["WO system","Established 1973: 100% from the stated area; 85% for variety and vintage. Geographical Unit → Region → District → Ward."],
 ["Chenin","South Africa grows more Chenin (Steen) than France. The Old Vine Project's Certified Heritage Vineyards seal requires documented 35+ year vines with the planting date."],
 ["Swartland","Dry-farmed bush vines on schist and granite; Eben Sadie's Columella and Palladius; Mullineux bottling Syrah by soil type (granite, schist, iron)."],
-["Cool wards","Hemel-en-Aarde Valley → Upper → Ridge (Walker Bay); Elgin; Cape Agulhas. Hamilton Russell, Storm, Crystallum."],
+["Cool wards","Hemel-en-Aarde Valley → Upper → Ridge (wards of Walker Bay); Elgin (a ward of Overberg); Elim, the ward inside the Cape Agulhas district. Hamilton Russell, Storm, Crystallum."],
 ["Cap Classique","Traditional method, 12 months minimum on lees. Graham Beck, Le Lude."]],
 traps:[
 "Pinotage's parents are Pinot Noir and Cinsaut — 'Hermitage' was Cinsaut's local alias.",
@@ -374,7 +374,7 @@ facts:[
 ["Pressure","Fully sparkling ~5–6 atm; frizzante/pétillant 1–2.5, permitting lighter bottles and different closures."]],
 traps:[
 "Pét-nat has ONE fermentation — never call it a second-fermentation method.",
-"Prosecco DOCG is tank method regardless of quality tier.",
+"Prosecco DOCG is tank method in every mainstream tier, Rive and Cartizze included — the one exception is undisgorged Sui Lieviti (Col Fondo), refermented in bottle. It is still never traditional method.",
 "Cava's 9 months is the lowest minimum among the major traditional-method regions.",
 "Grower status (RM) describes sourcing, not quality."]},
 
@@ -384,7 +384,7 @@ exam:"Sherry styles and flor logic, solera mechanics and age certification, Port
 facts:[
 ["Sherry's fork","Palomino base. Fortify to ~15% and flor lives: Fino, Manzanilla (Sanlúcar only). Fortify to ~17%+ and flor dies: Oloroso. Amontillado starts under flor, finishes oxidative. Palo Cortado is the anomaly. PX and Moscatel for sweetness; Cream is sweetened Oloroso."],
 ["Classification and age","Chalk marks (palma, raya, palo cortado) at first classification decide the wine's life. VOS 20 years, VORS 30, carbon-dated and panel-tasted. En rama = minimally filtered."],
-["Port","Fortified ~half-fermented with 77% aguardente. Vintage (declared, ~3× per decade, decant), LBV (4–6 years wood), Tawny with age statement (10/20/30/40), Colheita (single-vintage tawny, 7+ years wood), Crusted, Ruby, White. The beneficio caps each vineyard's Port production; the lei do terço caps annual sales."],
+["Port","Fortified ~half-fermented with 77% aguardente. Vintage (declared, ~3× per decade, decant), LBV (4–6 years wood), Tawny with age statement (10/20/30/40/50 — the 50 added by the IVDP's 2022 revision), Colheita (single-vintage tawny, 7+ years wood), Crusted, Ruby, White. The beneficio caps each vineyard's Port production; the lei do terço caps annual sales."],
 ["Madeira","Estufagem (45–50°C, 3+ months) versus canteiro (slow lodge heat). Sercial → Verdelho → Bual → Malmsey; Tinta Negra for volume. Frasqueira: single vintage, 20 years cask."],
 ["VDN","Mutage with 96% neutral spirit. Banyuls (rimage = early-bottled vintage), Maury (Grenat early-bottled, Tuilé oxidative), Rivesaltes (rancio in bonbonnes), Muscat de Beaumes-de-Venise."],
 ["Elsewhere","Marsala (Vergine unsweetened, solera; De Bartoli's unfortified Vecchio Samperi), Rutherglen Muscat's four tiers, Commandaria (Cyprus, sun-dried)."]],
@@ -462,10 +462,10 @@ traps:[
 lead:"Sake is brewed, not distilled, and its grades measure polishing, not sweetness. Advanced expects the ratios, the starter methods, and the service logic that follows from them.",
 exam:"Seimaibuai and the grade ladder, Junmai versus alcohol-added, koji's function, kimoto/yamahai, style terms, rice varieties, service temperature.",
 facts:[
-["The ladder","Seimaibuai is the percentage REMAINING. Junmai/Honjozo ~70%, Ginjo ≤60%, Daiginjo ≤50%. Junmai = no added alcohol; Honjozo and non-Junmai Ginjo/Daiginjo add a small measure of brewer's alcohol."],
+["The ladder","Seimaibuai is the percentage REMAINING. Honjozo ≤70%, Ginjo ≤60%, Daiginjo ≤50%; Junmai carries NO polishing minimum at all — it is defined by having no added alcohol. Honjozo and non-Junmai Ginjo/Daiginjo add brewer's alcohol, capped at 10% of the weight of the white rice."],
 ["The science","Koji (Aspergillus oryzae) saccharifies rice starch while yeast ferments the sugar — multiple parallel fermentation, unique to sake. San-dan jikomi builds the mash in three stages."],
 ["Starters","Sokujō adds lactic acid; kimoto develops it naturally with pole-ramming (yama-oroshi); yamahai omits the ramming. Both give gamier, higher-acid sake."],
-["Style terms","Nigori (cloudy), Nama (unpasteurized), Genshu (undiluted), Koshu (aged), Muroka (unfiltered), Taruzake (cedar cask), Futsushu (table grade). Pressing fractions: arabashiri, nakadori, seme; shizuku is gravity drip."],
+["Style terms","Nigori (cloudy), Nama (unpasteurized), Genshu (undiluted), Koshu (aged), Muroka (no charcoal filtration), Taruzake (cedar cask), Futsushu (table grade). Pressing fractions: arabashiri, nakadori, seme; shizuku is gravity drip."],
 ["Rice and water","Yamada Nishiki is king; Gohyakumangoku, Omachi, Miyama Nishiki follow. Nada's hard miyamizu gives robust sake; Fushimi's soft water gentler. Niigata's 'tanrei karakuchi' is light and dry."],
 ["Service","Ginjo and Daiginjo chilled in wine glasses; Junmai and Honjozo warm well (nurukan). SMV (nihonshudo): positive is drier."]],
 traps:[
@@ -499,7 +499,7 @@ facts:[
 ["Binding versus decorative","Legally binding: Riserva (Italy, per DOC), Crianza/Reserva/Gran Reserva (Spain), Prädikat (Germany), estate-bottling phrases. Decorative: Reserve (US, France), Vieilles Vignes, Old Vine, Proprietor's Blend."],
 ["Percentages","EU vintage 85%. US: AVA 85%, varietal 75% (Oregon 90%), vintage 95% for AVA wines. Australia/NZ 85/85/85. South Africa WO 100% origin, 85% variety."],
 ["Estate language","Mis en bouteille au château/domaine; à la propriété (extends to co-op members); Gutsabfüllung; US 'Estate Bottled' (owned/controlled fruit, one AVA, crushed to bottled on site)."],
-["Modern additions","EU ingredient and nutrition labeling since December 2023 (QR e-labels); traditional-term protection blocks non-EU use of Port, Champagne, Château and similar."]],
+["Modern additions","EU ingredient and nutrition labeling since December 2023 (QR e-labels); traditional-term protection blocks unqualified use of Port, Champagne, Château and similar in the EU market and in treaty partners — not in the US, where pre-2006 brands still sell 'California Champagne' and 'Chateau' was never restricted."]],
 traps:[
 "'Reserve' is law in Spain and Italy, meaningless in France and the USA.",
 "An AVA tells you where, never what or how.",
@@ -543,9 +543,9 @@ lead:"Advanced service is Certified service under interrogation. The choreograph
 exam:"Full service sequences, decanting judgement, temperature by style, glassware, preservation systems, complaint handling, and salesmanship under pressure.",
 facts:[
 ["Sequence","Present label to host → announce producer, cuvée, appellation, vintage → cut below the lip → wipe → extract silently → present cork to the host's right → taste pour → serve from the right, clockwise, host last → station bottle label-out."],
-["Sparkling","Chill 42–50°F; thumb on the cork from the moment the cage loosens; 30–45° angle; twist the bottle, not the cork; a sigh, not a pop; two-stage pour to two-thirds."],
+["Sparkling","Chill 42–50°F; thumb on the cork from the moment the foil is cut and not off it until the cork is in your hand; six half-turns loosen the wire, which stays on the cork; 30–45° angle, aimed at nobody; twist the bottle, not the cork; a sigh, not a pop; two-stage pour to two-thirds. You are containing about six atmospheres, near 90 psi."],
 ["Decanting","Old wine: stand upright a day, single continuous pour over a light, stop at the first sediment. Young structured wine: for aeration. Fragile old Pinot or Nebbiolo: often better not — offer and follow the host."],
-["Temperatures","Sparkling 42–50°F; light whites and rosé 45–50; full whites 50–55; light reds 55–60; full reds 60–65. Fino cold; Vintage Port like a full red; aged Tawny lightly chilled."],
+["Temperatures","Sparkling 42–50°F, but vintage and mature Champagne cellar-cool at 50–55 so the autolytic and oxidative complexity reads; light whites and rosé 45–50; full whites 50–55; light reds 55–60; full reds 60–65. Fino coldest; Vintage Port like a full red; aged Tawny lightly chilled."],
 ["Tools","Waiter's friend as standard; ah-so for fragile corks; Durand for the very old; port tongs for fused corks. Preservation: Coravin (argon through the cork), inert gas blankets, vacuum pumps in descending effectiveness."],
 ["Recovery","A rejected bottle is replaced graciously without debate and verified away from the table. A dropped cork is acknowledged lightly and the service continues — composure is the graded skill."]],
 traps:[
@@ -562,10 +562,10 @@ facts:[
 ["Umami and heat","Umami amplifies tannin and bitterness while flattening fruit — salt is the antidote, bubbles and sake the escape. Capsaicin and ethanol both trigger TRPV1, so alcohol amplifies chilli heat; answer with low-alcohol, off-dry, cold."],
 ["The canon","Oysters and Muscadet/Chablis/Champagne; goat cheese and Sancerre; foie gras and Sauternes; duck and Pinot Noir; lamb and Bordeaux or Rioja; cassoulet and Madiran; choucroute and Alsace Riesling; Stilton and Port; Roquefort and Sauternes; chocolate and Banyuls."],
 ["Problem foods","Artichoke (cynarin falsely sweetens the next sip — answer with Fino or high-acid unoaked white), asparagus, raw vinegar, egg yolk (bubbles), very hot chilli."],
-["Cheese","White beats red across most of the board: acid versus fat with no tannin-salt fight. Blue plus sweet is the great law; hard aged cheeses can carry reds."],
+["Cheese","White beats red across most of the board: acid versus fat with no tannin-umami fight — aged cheese's glutamate amplifies tannin's bitterness and astringency, while its salt actually softens tannin. Blue plus sweet is the great law; hard aged cheeses can carry reds."],
 ["Modern doctrine","Ferment meets ferment — Sherry, orange wine, sake and gueuze with kimchi, aged rinds and funk. The 'bridge ingredient' technique moves the plate toward the wine."]],
 traps:[
-"Big reds with delicate fish is the classic scored error: weight mismatch plus tannin clash.",
+"Big reds with delicate fish is the classic scored error: weight mismatch, and the metallic fishy aftertaste comes from the wine's ferrous iron oxidising the fish's polyunsaturated fats into fishy aldehydes — not from tannin, which is why a low-iron red pairs cleanly.",
 "Sweet wine below the dessert's sweetness tastes thin and sour.",
 "'Red with all cheese' is folklore.",
 "Chilli heat is amplified by alcohol and tannin — reach for off-dry Riesling, not Shiraz."]},

@@ -79,7 +79,7 @@ lead:"Alsace rewards the candidate who can explain why its own classification un
 exam:"Grand cru count and exceptions, noble varieties, VT/SGN, producer philosophies, and the commercial critique.",
 facts:[
 ["The numbers","51 grands crus, each its own AOP since 2011; Kaefferkopf last in 2007; Rangen the steepest and volcanic."],
-["Exceptions","Zotzenberg (Sylvaner), Altenberg de Bergheim and Kaefferkopf (blends). Klevener de Heiligenstein is Savagnin Rose."],
+["Exceptions","Zotzenberg (Sylvaner), Altenberg de Bergheim and Kaefferkopf (blends); since the 2022 harvest Hengst, Kirchberg de Barr and Vorbourg may also make red from Pinot Noir. Klevener de Heiligenstein is Savagnin Rose."],
 ["The philosophies","Trimbach declines to print grand cru; Deiss argues co-planted field blends; Zind-Humbrecht maps sites (Rangen's Clos Saint-Urbain, Clos Windsbuhl, Clos Jebsal)."],
 ["The critique","Too many crus, uneven quality, top houses opting out, and decades of sweetness ambiguity — corrected only by the 2021 labeling reform."]],
 traps:[
@@ -105,7 +105,7 @@ lead:"The Midi is where the examiner tests whether you studied beyond the famous
 exam:"Grape minimums, Provence's forgotten 1955 classification, Languedoc crus, Southwest specialties, Roussillon VDN styles.",
 facts:[
 ["Minimums","Bandol ≥50% Mourvèdre and 18 months wood; Cahors ≥70% Malbec; Corbières-Boutenac ≥30% Carignan."],
-["Forgotten classification","The Crus Classés des Côtes de Provence: 23 classified in 1955, 18 surviving, never revised. Palette is Château Simone's near-monopole appellation."],
+["Forgotten classification","The Crus Classés des Côtes de Provence: 23 classified in 1955, 18 surviving, never revised. Palette is tiny, under 50 ha, and Château Simone makes about half of it — Crémade and Henri Bonnaud share the rest."],
 ["Southwest","Madiran's Tannat and micro-oxygenation (Ducournau, early 1990s); Jurançon's passerillage; Irouléguy's Basque terraces; Fronton's Négrette; Gaillac's Mauzac oddities."],
 ["Roussillon","Banyuls (rimage = early-bottled vintage), Maury, Rivesaltes with rancio in glass bonbonnes."]],
 traps:[
@@ -132,7 +132,7 @@ exam:"Aging minimums, MGA crus by commune, soil split, Amarone mechanics, method
 facts:[
 ["Aging","Barolo 38 months (18 wood), Riserva 62. Barbaresco 26, Riserva 50."],
 ["The wars","Modernists (rotofermenters, barriques) versus traditionalists (long macerations, botti) — converged in the 2000s. Bartolo Mascarello's label: 'No barrique, no Berlusconi'."],
-["Amarone","30–40% weight loss, no pressing before December 1, 15%+ finished dry. Recioto is sweet; Ripasso refermented on pomace, its own DOC since 2010."],
+["Amarone","30–40% weight loss, no pressing before December 1, min 14% total alcohol (usually 15–16%) and finished dry. Recioto is sweet; Ripasso refermented on pomace, its own DOC since 2010."],
 ["Alto Piemonte","Gattinara, Ghemme, Boca, Lessona — volcanic and glacial soils, emptied by phylloxera and industry, now reclaimed."]],
 traps:[
 "Calling Amarone sweet.",
@@ -144,8 +144,8 @@ lead:"Sangiovese's aliases, one legendary trap, and a south the examiners now ta
 exam:"Brunello's crisis and rules, Chianti Classico's tiers and UGAs, Super Tuscan legal history, Carmignano's Medici precedent, Etna's contrade.",
 facts:[
 ["Brunellopoli","2008 blending investigation, US import holds, 2009 consorzio vote retaining 100% Sangiovese. Know the chronology."],
-["Chianti Classico","Annata 12, Riserva 24, Gran Selezione 30 with estate fruit — plus 11 UGA village names permitted on Gran Selezione from 2023."],
-["Carmignano","Delimited by Cosimo III in 1716 — geography, not grapes; the Cabernet requirement dates to the 1975 DOC, Italy's first."],
+["Chianti Classico","Annata 12, Riserva 24, Gran Selezione 30 with estate fruit, ≥90% Sangiovese with no international varieties — plus 11 UGA village names permitted on Gran Selezione from 2023."],
+["Carmignano","Delimited by Cosimo III in 1716 — geography, not grapes; at DOC in 1975 it became the first Italian appellation to require Cabernet in the blend, DOCG 1990. Italy's first DOC was Vernaccia di San Gimignano, 1966."],
 ["The south","Taurasi and Aglianico del Vulture; Fiano and Greco; Etna's contrade and altitude bands; Cerasuolo di Vittoria as Sicily's only DOCG."]],
 traps:[
 "The Montepulciano trap — town versus grape — under oral pressure.",
@@ -240,7 +240,7 @@ facts:[
 ["Movements","Rhône Rangers; the 1990s cult Cabernets; In Pursuit of Balance (2011–16) arguing restraint and disbanding claiming victory."]],
 traps:[
 "Swapping the two 1976 winners — Montelena for Chardonnay, Stag's Leap Wine Cellars for Cabernet.",
-"Forgetting Napa's conjunctive labeling requirement since 2009.",
+"Forgetting Napa's conjunctive labeling requirement since 1990 (California Business & Professions Code §25241).",
 "Treating an AVA as though it regulated grapes or yields."]},
 
 {cat:"Pacific NW, NY & Canada",
@@ -293,7 +293,7 @@ facts:[
 traps:[
 "Describing NZ Syrah as Barossa-like.",
 "Forgetting Kumeu River is in Auckland, not Marlborough.",
-"Missing that GIs were only formalized under the 2017 Act."]},
+"Missing that GIs were only formalized when the Geographical Indications (Wine and Spirits) Registration Act 2006 came into force in 2017."]},
 
 {cat:"South Africa",
 lead:"Dates, and then honesty. A Master-level South Africa answer acknowledges the labour history without being asked twice.",
@@ -391,7 +391,7 @@ lead:"Sake is the modern Master's differentiator. Precision in vocabulary and co
 exam:"Grades and polishing, starter methods, pressing fractions, rice and water, the toji system, list-building strategy.",
 facts:[
 ["Pressing","Arabashiri (first free-run), nakadori (prized middle), seme (tail); shizuku is gravity drip from hanging bags."],
-["Starters","Sokujō adds lactic acid; kimoto develops it by yama-oroshi pole-ramming; yamahai omits the ramming."],
+["Starters","Sokujō adds lactic acid; in kimoto and yamahai alike ambient lactic bacteria acidify the starter. Yama-oroshi, kimoto's pole-ramming, mashes the moto to a paste so koji enzymes dissolve the rice quickly; yamahai ('yama-oroshi haishi') abandons it."],
 ["People","The toji is the master brewer, historically leading seasonal guild crews — Nanbu, Echigo, Tajima."],
 ["List strategy","Choose by style range rather than grade prestige, serve in wine glasses at the right temperature, and train the floor to pair it beyond Japanese food."]],
 traps:[
@@ -404,8 +404,8 @@ lead:"Know which words carry force of law, in which country, and how the rules g
 exam:"EU structure and national dialects, the meanings of cru, binding versus decorative terms, percentages, and the amendment process.",
 facts:[
 ["Amendment","Producer bodies petition national authorities — Chianti Classico's UGAs (2023), Bordeaux's climate varieties (2021), Rioja's 2017 tiers. Appellations are written by whoever votes."],
-["Recent law","EU ingredient and nutrition labeling from December 2023, with QR e-labels; traditional-term protection and the evocation doctrine (Glen Buchenbach, Champagner Sorbet)."],
-["Beyond Europe","Japan's 2018 'Japan Wine' rule; Switzerland's cantonal Grand Cru and Dézaley; South Africa's WO; New Zealand's 2017 GI Act."],
+["Recent law","EU ingredient and nutrition labeling from December 2023, with QR e-labels; traditional-term protection and the evocation doctrine (Glen Buchenbach, C-44/17; Queso Manchego, C-614/17). Champagner Sorbet (C-393/16) went the other way — reputation, not evocation."],
+["Beyond Europe","Japan's 2018 'Japan Wine' rule; Switzerland's cantonal Grand Cru and Dézaley; South Africa's WO; New Zealand's Geographical Indications (Wine and Spirits) Registration Act 2006, in force 27 July 2017."],
 ["Certifications","Organic and biodynamic certify inputs and practice, never resulting quality. Say so plainly if asked."]],
 traps:[
 "Treating 'Reserve' as meaningful in France or the USA.",
