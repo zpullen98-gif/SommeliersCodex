@@ -301,11 +301,41 @@ Ranked by (impact on actually passing an exam) × feasibility.
    `studyPlan().acts[0]`; collapse into three doors (Today / Drill / Sit an exam) plus a
    reference group. New capability goes *inside* those doors — no new tiles.
 
-3. **Durability — an evening each.** `stSave()` swallows `QuotaExceededError` silently.
-   `mergeStats` sums answer counts, so a laptop→phone→laptop round trip double-counts; stamp
-   exports with a uuid and refuse re-import of a seen one. (The related *rekey* hazard is
-   already closed: codex10 wraps `mergeStats` to rekey an incoming payload before it merges,
-   so a progress file exported from a pre-id install still lands. Verified in-browser.)
+3. ~~**Durability.**~~ **DONE — codex15.** Both halves, measured before and after in the
+   browser rather than argued about.
+
+   `stSave()` swallowed every failure, so once storage filled, every answer for the rest of
+   the session was lost in silence. The write still never throws; it now raises a **banner**
+   that stays up, because a toast fades while the student is reading a question. The banner
+   offers the export, which is the only action that rescues the session, and clears itself
+   the moment a save succeeds. QuotaExceededError is named separately from a browser that
+   refuses storage outright, because the student can act on the first.
+
+   `mergeStats` summed the per-question counters and `sess` while **every other store in it
+   was already idempotent** (days takes the max, srs the newer due date, hist dedupes, flags
+   and ach union, notes keep the first). Measured: a laptop→phone→laptop round trip on one
+   question turned a true 15/2 into **25/4**, and merging one file three times turned 10/2
+   into **30/6**, with `sess` 4 → 12. Now the record with **more answers in it wins, taken
+   whole** — not a max of `c` and `w` independently, which can mint a pair no device ever
+   saw (10/0 here, 0/5 there, student shown 10/5). Round trip now gives exactly 15/2 and
+   three merges equal one.
+
+   **The whole merge is therefore idempotent**, which is the property worth keeping: importing
+   the same file twice is now the same as importing it once. What it costs, stated plainly:
+   two devices that studied the *same question* apart and only then synced keep the busier
+   device's count rather than the sum. The student is under-credited, which is the safe
+   direction, and it is the trade `days` has always made. The loss-free alternative is a
+   per-device ledger on every question, i.e. a schema change to the hottest record in the app.
+
+   The export now carries an `exportId`, but note what it is **not** doing: the merge is
+   already safe without it. It is there so re-importing a file can *say so* ("already merged
+   here, nothing changed") instead of looking broken. `ST.merged` keeps the last 50, is
+   local to each device, and needs no merge clause.
+
+   (The related *rekey* hazard was already closed: codex10 wraps `mergeStats` to rekey an
+   incoming payload before it merges, so a progress file exported from a pre-id install still
+   lands. codex15 wraps codex10's wrapper and reads the payload *after* that rekey, which is
+   the only ordering that works.)
 
 4. **Service ritual is recognition, not recall — a long project.** One static list at all four
    levels, unscored and unclocked. codex11 now **persists** it (`ST.serv`) so readiness can
@@ -350,11 +380,29 @@ plausible relation. Two consequences worth acting on:
 - **The `ans` and `accept` fields are markedly more trustworthy than the stems and `exp`
   strings** — in a large share of cases the item contradicted *itself*, with the answer key
   right and the stem wrong.
-- Most remaining risk is **mechanically detectable**. Write a lint pass flagging: any numeral
-  in a stem disagreeing with the item count in its own `ans`; every superlative; every
-  ownership or founder claim; and the vocabulary of genetic relation. That will surface most
-  of what's left for a fraction of the effort. (codex9's list detector already found one this
-  way — "Name the four ingredients of sake" whose answer parsed to three.)
+- Most remaining risk is **mechanically detectable**, and the lint pass now exists:
+  `node .scripts/check-claims.js`. It reports four classes and **fails the build on only the
+  first**, because that is the only one that is certainly wrong:
+
+  | class | count today | what it means |
+  |---|---|---|
+  | stem asks for more items than its `ans` holds | **0** | certainly wrong; codex9 silently refuses to grade these |
+  | superlatives, in stems | 581 | a claim with no margin; the question is *testing* it |
+  | ownership and founder claims | 139 | the attribution shape, over stem, `ans` and `exp` |
+  | genetic relation vocabulary | 47 | sibling / cross / clone / identical |
+
+  The count check **asks codex9 rather than forming a second opinion**: it calls the shipped
+  `listParseNeed` and `listParseItems`, so it cannot disagree with the grader and a fix to the
+  parser fixes the lint for free. A first cut that counted numerals itself reported 8, and
+  **four were false** — "Sauternes and Barsac name two of the five communes. Name the three
+  others" is not a miscount. The real answer is 0.
+
+  The superlative sweep reads **stems only**. Over stem, `ans` and `exp` it returned 1517,
+  which is longer than the banks and therefore nobody's reading list; in a stem the superlative
+  is the thing being tested, and the only place where getting it wrong marks a right answer
+  wrong. The other three lists are grouped by category so they can be worked through a region
+  at a time. **The tool flags and must never fix**: one in six claimed errors last pass was
+  itself wrong.
 - **Do not rebuild the banks.** One in six claimed errors was itself wrong. Prefer additive
   hedging, never change a defensible keyed answer, and treat `exp` as the safe place for nuance.
 - **Editing `ans` can silently change how codex9 grades.** Three of the 39 did, and none of it
