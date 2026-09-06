@@ -76,32 +76,53 @@ function bindKeys(){
 function exportPayload(){
   return JSON.stringify({codex:'sommeliers-codex',v:4,exported:new Date().toISOString(),stats:ST});
 }
+/* An import is a FILE, and a file can be hand-edited or tampered with. Every
+   value is coerced on the way in, exactly as codex12's cellarSanitize does for
+   bottles: numbers through Number()||0, entries that are not objects dropped,
+   user text string-checked and capped, dates held to YYYY-MM-DD. A tampered
+   file must yield at worst a strange-looking record, never a strange-behaving
+   one, and never a script on this origin. */
+var DAY_RE=/^\d{4}-\d{2}-\d{2}$/;
+function mergeObj(x){ return !!(x&&typeof x==='object'&&!Array.isArray(x)); }
+function mergeNum(x){ return Number(x)||0; }
+function mergeStr(x,cap){ return typeof x==='string'?x.slice(0,cap):''; }
 function mergeStats(inc){
-  if(!inc||!inc.stats)return 'That file is not a Codex progress export.';
+  if(!inc||!mergeObj(inc.stats))return 'That file is not a Codex progress export.';
   const B=inc.stats;
-  Object.keys(B.q||{}).forEach(function(k){
+  Object.keys(mergeObj(B.q)?B.q:{}).forEach(function(k){
     const a=ST.q[k], b=B.q[k];
-    if(!a)ST.q[k]={c:b.c,w:b.w,s:b.s};
-    else{a.c+=b.c;a.w+=b.w;a.s=Math.max(a.s,b.s);}
+    if(!mergeObj(b))return;
+    const c=mergeNum(b.c), w=mergeNum(b.w), s=mergeNum(b.s);
+    if(!a)ST.q[k]={c:c,w:w,s:s};
+    else{a.c=mergeNum(a.c)+c;a.w=mergeNum(a.w)+w;a.s=Math.max(mergeNum(a.s),s);}
   });
-  Object.keys(B.days||{}).forEach(function(d){ ST.days[d]=Math.max(ST.days[d]||0,B.days[d]); });
-  Object.keys(B.srs||{}).forEach(function(k){
-    const a=ST.srs[k], b=B.srs[k];
+  Object.keys(mergeObj(B.days)?B.days:{}).forEach(function(d){ if(!DAY_RE.test(d))return; ST.days[d]=Math.max(ST.days[d]||0,mergeNum(B.days[d])); });
+  Object.keys(mergeObj(B.srs)?B.srs:{}).forEach(function(k){
+    const a=ST.srs[k], raw=B.srs[k];
+    if(!mergeObj(raw)||typeof raw.due!=='string'||!DAY_RE.test(raw.due))return;
+    const b={ef:Number(raw.ef)||2.5,iv:mergeNum(raw.iv),n:mergeNum(raw.n),due:raw.due};
     if(!a)ST.srs[k]=b; else if(b.due>a.due){ST.srs[k]=b;}
   });
-  (B.flags||[]).forEach(function(k){ if(ST.flags.indexOf(k)<0)ST.flags.push(k); });
-  (B.ach||[]).forEach(function(k){ if(ST.ach.indexOf(k)<0)ST.ach.push(k); });
-  Object.keys(B.notes||{}).forEach(function(k){ if(!ST.notes[k])ST.notes[k]=B.notes[k]; });
+  (Array.isArray(B.flags)?B.flags:[]).forEach(function(k){ if(typeof k==='string'&&ST.flags.indexOf(k)<0)ST.flags.push(k); });
+  (Array.isArray(B.ach)?B.ach:[]).forEach(function(k){ if(typeof k==='string'&&ST.ach.indexOf(k)<0)ST.ach.push(k); });
+  Object.keys(mergeObj(B.notes)?B.notes:{}).forEach(function(k){ const n=mergeStr(B.notes[k],2000); if(n&&!ST.notes[k])ST.notes[k]=n; });
   const seen={};
-  ST.hist=ST.hist.concat(B.hist||[]).filter(function(h){
+  const inHist=(Array.isArray(B.hist)?B.hist:[]).filter(function(h){
+    return mergeObj(h)&&typeof h.n==='number'&&isFinite(h.n)&&typeof h.c==='number'&&isFinite(h.c);
+  }).map(function(h){
+    const row={d:String(h.d).slice(0,10),m:mergeStr(h.m,24)||'practice',n:h.n,c:h.c};
+    if(h.ab)row.ab=1;
+    return row;
+  });
+  ST.hist=ST.hist.concat(inHist).filter(function(h){
     const k=h.d+'|'+h.m+'|'+h.n+'|'+h.c; if(seen[k])return false; seen[k]=1; return true;
   }).sort(function(a,b){return a.d<b.d?-1:1;}).slice(-300);
   ST.best=ST.best||{};
-  const bb=B.best||{};
-  ST.best.sudden=Math.max(ST.best.sudden||0,bb.sudden||0);
+  const bb=mergeObj(B.best)?B.best:{};
+  ST.best.sudden=Math.max(ST.best.sudden||0,mergeNum(bb.sudden));
   if(bb.perfect)ST.best.perfect=true;
   if(bb.passed)ST.best.passed=true;
-  ST.sess=(ST.sess||0)+(B.sess||0);
+  ST.sess=(ST.sess||0)+mergeNum(B.sess);
   stSave(); achCheck();
   return null;
 }
@@ -216,7 +237,7 @@ encyView=function(){
     if(!hits.length)return;
     const block=el('<div><div class="secgroup">Your Notes ('+hits.length+')</div>'
       +hits.slice(0,20).map(function(q){
-        return '<div class="encyq"><div class="encyqt">'+q.q+'</div><div class="encynote">'+noteFor(q)+'</div></div>';
+        return '<div class="encyq"><div class="encyqt">'+q.q+'</div><div class="encynote">'+escT(noteFor(q))+'</div></div>';
       }).join('')+'</div>');
     out.insertBefore(block,out.firstChild);
   };

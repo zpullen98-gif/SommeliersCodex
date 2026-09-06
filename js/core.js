@@ -354,7 +354,7 @@ function saCard(q){
     setTimeout(()=>{const i=document.getElementById('sa'); if(i){i.focus(); i.onkeydown=e=>{if(e.key==='Enter')submitSA();};}},30);
     row.querySelector('#sasub').onclick=submitSA;
   } else {
-    c.appendChild(el(`<div class="sarow"><div class="sainput" style="opacity:.85">${S.saText||'(blank)'}</div></div>`));
+    c.appendChild(el(`<div class="sarow"><div class="sainput" style="opacity:.85">${escT(S.saText||'(blank)')}</div></div>`));
     c.appendChild(revealBlock(q, S.saGraded, true));
   }
   return c;
@@ -403,7 +403,7 @@ function resultsView(){
     <div class="miss">
       <div class="mq">${r.q.q}</div>
       <div class="ma">${ansOf(r.q)}</div>
-      <div class="mu">Your answer: ${r.user}</div>
+      <div class="mu">Your answer: ${r.q.sa&&!r.q.mt&&!r.q.sel?escT(r.user):r.user}</div>
       <div class="mexp">${r.q.exp}</div>
     </div>`).join('') : '<div class="miss" style="text-align:center">Clean sweep. No misses.</div>';
 
