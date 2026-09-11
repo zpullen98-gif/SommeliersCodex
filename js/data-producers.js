@@ -411,7 +411,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-ch-leglise-clinet', p: 'Château L\'Eglise-Clinet',
+    id: 'p-ch-leglise-clinet', p: 'Château L\'Église-Clinet',
     country: 'France, Bordeaux and the South West', r: 'Pomerol', sub: 'Unclassified',
     founded: '',
     holdings: 'Under six hectares beside the church of Pomerol, including old vines that survived the 1956 frost when much of the appellation was replanted, built up by Denis Durantou.',
@@ -419,8 +419,8 @@ var WINE_PRODUCERS = [
     t: 'Dark cherry, graphite and spice: old vines the great frost missed',
     why: 'The February 1956 frost is the pivot of modern Right Bank history, and this estate is the usual example of what survived it.',
     wines: [
-      { n: 'Château L\'Eglise-Clinet', grape: 'Merlot with a significant share of Cabernet Franc', note: 'Old pre-1956 vines in the heart of the appellation' },
-      { n: 'La Petite Eglise', grape: 'Merlot and Cabernet Franc', note: 'The second label' }
+      { n: 'Château L\'Église-Clinet', grape: 'Merlot with a significant share of Cabernet Franc', note: 'Old pre-1956 vines in the heart of the appellation' },
+      { n: 'La Petite Église', grape: 'Merlot and Cabernet Franc', note: 'The second label' }
     ],
     traps: [
       'The 1956 frost devastated Pomerol and Saint-Émilion and forced mass replanting',
@@ -1221,7 +1221,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-maison-bouchard', p: 'Bouchard Pere et Fils',
+    id: 'p-maison-bouchard', p: 'Bouchard Père et Fils',
     country: 'France, Burgundy and Beaujolais', r: 'Beaune', sub: 'Côte de Beaune',
     founded: '1731',
     holdings: 'One of the largest vineyard owners on the Côte d\'Or, with grand cru in Le Corton, Chevalier-Montrachet and Montrachet, the Beaune Greves monopole parcel Vigne de l\'Enfant Jesus and the Volnay Caillerets cuvee Ancienne Cuvee Carnot. Cellars lie inside the fifteenth-century Château de Beaune.',
@@ -1229,8 +1229,8 @@ var WINE_PRODUCERS = [
     t: 'Beaune\'s old fortress cellar: red fruit, sweet spice, gentle polish',
     why: 'Among the oldest houses in the region and a rare case of a negociant holding two Côte de Beaune monopoles.',
     wines: [
-      { n: 'Beaune Greves Vigne de l\'Enfant Jesus', grape: 'Pinot Noir', note: 'Premier cru monopole and the house\'s historic signature' },
-      { n: 'Volnay Caillerets Ancienne Cuvee Carnot', grape: 'Pinot Noir', note: 'Premier cru monopole in Volnay' },
+      { n: 'Beaune Grèves Vigne de l\'Enfant Jésus', grape: 'Pinot Noir', note: 'Premier cru monopole and the house\'s historic signature' },
+      { n: 'Volnay Caillerets Ancienne Cuvée Carnot', grape: 'Pinot Noir', note: 'Premier cru monopole in Volnay' },
       { n: 'Chevalier-Montrachet La Cabotte', grape: 'Chardonnay', note: 'A named parcel within the grand cru' }
     ],
     traps: [
@@ -1275,7 +1275,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-chateau-fuisse', p: 'Chateau-Fuisse',
+    id: 'p-chateau-fuisse', p: 'Château-Fuissé',
     country: 'France, Burgundy and Beaujolais', r: 'Pouilly-Fuissé', sub: 'Mâconnais',
     founded: '',
     holdings: 'The Vincent family estate at Fuisse, with holdings across the appellation including a walled clos beside the chateau and vines at Vergisson and Chaintre.',
@@ -1284,7 +1284,7 @@ var WINE_PRODUCERS = [
     why: 'The historic reference for Pouilly-Fuissé, the appellation that gained premiers crus in 2020 after decades with none.',
     wines: [
       { n: 'Pouilly-Fuissé Le Clos', grape: 'Chardonnay', note: 'Walled parcel beside the chateau' },
-      { n: 'Pouilly-Fuissé Les Brules', grape: 'Chardonnay', note: 'A warm south-facing site' },
+      { n: 'Pouilly-Fuissé Les Brûlés', grape: 'Chardonnay', note: 'A warm south-facing site' },
       { n: 'Pouilly-Fuissé Vieilles Vignes', grape: 'Chardonnay', note: 'Old-vine bottling from across the estate' }
     ],
     traps: [
@@ -1448,7 +1448,7 @@ var WINE_PRODUCERS = [
     t: 'Stems and roses: pale Nuits of lifted perfume over a cool stone floor',
     why: 'Two monopoles in one estate, a white premier cru in red country, and insurance-group ownership of a Burgundian domaine.',
     wines: [
-      { n: 'Nuits-Saint-Georges Clos des Forets Saint-Georges', grape: 'Pinot Noir', note: 'Premier cru monopole, the estate\'s most structured red' },
+      { n: 'Nuits-Saint-Georges Clos des Forêts Saint-Georges', grape: 'Pinot Noir', note: 'Premier cru monopole, the estate\'s most structured red' },
       { n: 'Nuits-Saint-Georges Clos de l\'Arlot', grape: 'Pinot Noir', note: 'Premier cru monopole, lighter and more floral' },
       { n: 'Nuits-Saint-Georges Clos de l\'Arlot Blanc', grape: 'Chardonnay', note: 'A rare white premier cru from the Côte de Nuits' }
     ],
@@ -1791,7 +1791,7 @@ var WINE_PRODUCERS = [
     t: 'Fuisse in fine grain: white peach, crushed limestone, salt on the finish',
     why: 'Jeanne Ferret ranked her parcels as Tete de Cru and Hors Classe long before the appellation had any official hierarchy, which anticipated the 2020 premiers crus.',
     wines: [
-      { n: 'Pouilly-Fuissé Les Menetrieres', grape: 'Chardonnay', note: 'Among the sites promoted to premier cru in 2020' },
+      { n: 'Pouilly-Fuissé Les Ménétrières', grape: 'Chardonnay', note: 'Among the sites promoted to premier cru in 2020' },
       { n: 'Pouilly-Fuissé Tournant de Pouilly', grape: 'Chardonnay', note: 'Steep site below the rock of Solutre' }
     ],
     traps: [
@@ -1809,7 +1809,7 @@ var WINE_PRODUCERS = [
     why: 'The Clos de la Marechale lease is the standard question on how a monopole can appear under two producers\' labels in different decades.',
     wines: [
       { n: 'Musigny', grape: 'Pinot Noir', note: 'Just over a hectare of the grand cru' },
-      { n: 'Nuits-Saint-Georges Clos de la Marechale', grape: 'Pinot Noir', note: 'Premier cru monopole reclaimed from a long lease in 2004' },
+      { n: 'Nuits-Saint-Georges Clos de la Maréchale', grape: 'Pinot Noir', note: 'Premier cru monopole reclaimed from a long lease in 2004' },
       { n: 'Chambolle-Musigny Les Amoureuses', grape: 'Pinot Noir', note: 'Premier cru of the estate\'s purest perfume' },
       { n: 'Bonnes-Mares', grape: 'Pinot Noir', note: 'The estate\'s smallest grand cru holding' }
     ],
@@ -2110,7 +2110,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-georges-duboeuf', p: 'Georges Duboeuf',
-    country: 'France, Burgundy and Beaujolais', r: 'Romaneche-Thorins', sub: 'Beaujolais',
+    country: 'France, Burgundy and Beaujolais', r: 'Romanèche-Thorins', sub: 'Beaujolais',
     founded: '1964',
     holdings: 'A negociant house at Romaneche-Thorins buying from a very large number of growers and cooperatives across Beaujolais and the Mâconnais.',
     style: 'Bright, fruit-forward and consistent; the commercial definition of carbonic-maceration Gamay for most of the world.',
@@ -2137,7 +2137,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Vosne-Romanée Cros Parantoux', grape: 'Pinot Noir', note: 'The premier cru he made famous, roughly one hectare' },
       { n: 'Échezeaux', grape: 'Pinot Noir', note: 'His only grand cru under his own label' },
-      { n: 'Vosne-Romanée Les Brulees', grape: 'Pinot Noir', note: 'Premier cru on the Vosne and Flagey boundary' }
+      { n: 'Vosne-Romanée Les Brûlées', grape: 'Pinot Noir', note: 'Premier cru on the Vosne and Flagey boundary' }
     ],
     traps: [
       'Cros Parantoux is a premier cru, not a grand cru, despite the prices',
@@ -2170,8 +2170,8 @@ var WINE_PRODUCERS = [
     t: 'Green apple, chalk dust, cold sea: Chablis as the whole village makes it',
     why: 'Cooperatives dominate production in several French regions, and the Court asks which grand cru is effectively controlled by one in Chablis.',
     wines: [
-      { n: 'Chateau Grenouilles', grape: 'Chardonnay', note: 'From the bulk of the smallest of the seven grands crus' },
-      { n: 'Chablis Les Venerables Vieilles Vignes', grape: 'Chardonnay', note: 'The cooperative\'s old-vine village bottling' }
+      { n: 'Château Grenouilles', grape: 'Chardonnay', note: 'From the bulk of the smallest of the seven grands crus' },
+      { n: 'Chablis Les Vénérables Vieilles Vignes', grape: 'Chardonnay', note: 'The cooperative\'s old-vine village bottling' }
     ],
     traps: [
       'Grenouilles is the smallest of the seven grands crus',
@@ -2243,7 +2243,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Corton-Charlemagne', grape: 'Chardonnay', note: 'From the house\'s dominant holding on the hill' },
       { n: 'Château Corton Grancey', grape: 'Pinot Noir', note: 'A blend of the house\'s Corton parcels sold under a brand name' },
-      { n: 'Ardeche Chardonnay', grape: 'Chardonnay', note: 'An early Burgundian move into southern France' }
+      { n: 'Ardèche Chardonnay', grape: 'Chardonnay', note: 'An early Burgundian move into southern France' }
     ],
     traps: [
       'Château Corton Grancey is a brand and a building, not an appellation',
@@ -2523,9 +2523,9 @@ var WINE_PRODUCERS = [
     why: 'With Selosse and Larmandier-Bernier, one of the Côte des Blancs growers who made single-site Chardonnay a serious category.',
     wines: [
       { n: 'Les 7 Crus', grape: 'Chardonnay', note: 'the entry wine, drawn from seven villages' },
-      { n: 'Mineral', grape: 'Chardonnay', note: 'grand cru blanc de blancs named for the chalk beneath it' },
+      { n: 'Minéral', grape: 'Chardonnay', note: 'grand cru blanc de blancs named for the chalk beneath it' },
       { n: 'L\'Avizoise', grape: 'Chardonnay', note: 'deep clay-over-chalk parcels at Avize, the richest of the range' },
-      { n: 'Venus', grape: 'Chardonnay', note: 'a single Avize parcel worked by horse, the estate\'s rarest bottling' }
+      { n: 'Vénus', grape: 'Chardonnay', note: 'a single Avize parcel worked by horse, the estate\'s rarest bottling' }
     ],
     traps: [
       'Venus is named for the horse that ploughs the parcel, not for a vineyard',
@@ -2560,9 +2560,9 @@ var WINE_PRODUCERS = [
     t: 'Oak and low yields on La Moussiere: dense Sauvignon, serious Pinot Noir',
     why: 'The estate that makes the case for oak in Sancerre, and a useful counterweight to the stainless-steel picture of the appellation.',
     wines: [
-      { n: 'La Moussiere', grape: 'Sauvignon Blanc', note: 'the estate wine, the introduction to the barrel-worked style' },
+      { n: 'La Moussière', grape: 'Sauvignon Blanc', note: 'the estate wine, the introduction to the barrel-worked style' },
       { n: 'Edmond', grape: 'Sauvignon Blanc', note: 'old vines, the white flagship' },
-      { n: 'Generation XIX', grape: 'Sauvignon Blanc', note: 'the top selection, named for the generations of Alphonse Mellots' },
+      { n: 'Génération XIX', grape: 'Sauvignon Blanc', note: 'the top selection, named for the generations of Alphonse Mellots' },
       { n: 'En Grands Champs', grape: 'Pinot Noir', note: 'single-parcel Sancerre rouge made with Burgundian handling' }
     ],
     traps: [
@@ -2579,8 +2579,8 @@ var WINE_PRODUCERS = [
     t: 'Gravel to limestone in one cellar: raspberry, graphite, cool Cabernet Franc',
     why: 'The clearest single-estate demonstration that Chinon\'s soils, not its ripeness, decide the style of the wine.',
     wines: [
-      { n: 'La Croix Boissee', grape: 'Cabernet Franc', note: 'limestone at the top of the slope, the estate\'s most structured wine' },
-      { n: 'Les Grezeaux', grape: 'Cabernet Franc', note: 'old vines on gravel over clay' },
+      { n: 'La Croix Boissée', grape: 'Cabernet Franc', note: 'limestone at the top of the slope, the estate\'s most structured wine' },
+      { n: 'Les Grézeaux', grape: 'Cabernet Franc', note: 'old vines on gravel over clay' },
       { n: 'Les Granges', grape: 'Cabernet Franc', note: 'sand and gravel by the river, the early-drinking bottling' },
       { n: 'Chinon Blanc', grape: 'Chenin Blanc', note: 'a reminder that Chinon makes white as well as red' }
     ],
@@ -2598,8 +2598,8 @@ var WINE_PRODUCERS = [
     t: 'Pale strawberry and cream, mousse like silk: the reference rose of Champagne',
     why: 'The house cited for temperature control as a style decision, and the owner of one of the region\'s few walled single-vineyard Champagnes.',
     wines: [
-      { n: 'Brut Rose', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage rose used as the reference point for the style' },
-      { n: 'Cuvee Nicolas Francois', grape: 'Pinot Noir and Chardonnay', note: 'the vintage prestige cuvee' },
+      { n: 'Brut Rosé', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage rose used as the reference point for the style' },
+      { n: 'Cuvée Nicolas François', grape: 'Pinot Noir and Chardonnay', note: 'the vintage prestige cuvee' },
       { n: 'Clos Saint-Hilaire', grape: 'Pinot Noir', note: 'a single walled vineyard blanc de noirs, first made in 1995' },
       { n: 'Le Blanc de Blancs', grape: 'Chardonnay', note: 'grand cru Chardonnay in the house\'s restrained register' }
     ],
@@ -2617,10 +2617,10 @@ var WINE_PRODUCERS = [
     t: 'Pinot-powered, barrel-fermented: toast, red apple, umami richness',
     why: 'The reference for barrel-fermented Champagne and for late disgorgement as a style. R.D. and Vieilles Vignes Francaises are both standard identification questions.',
     wines: [
-      { n: 'Special Cuvee', grape: 'Pinot Noir led blend', note: 'the non-vintage that carries the barrel and reserve-magnum signature' },
+      { n: 'Special Cuvée', grape: 'Pinot Noir led blend', note: 'the non-vintage that carries the barrel and reserve-magnum signature' },
       { n: 'La Grande Année', grape: 'Pinot Noir and Chardonnay', note: 'the vintage wine, entirely barrel fermented' },
       { n: 'R.D.', grape: 'Pinot Noir and Chardonnay', note: 'the same vintage wine held far longer on lees and disgorged late; R.D. is recemment degorge' },
-      { n: 'Vieilles Vignes Francaises', grape: 'Pinot Noir', note: 'blanc de noirs from ungrafted vines propagated by layering, made in tiny quantity' }
+      { n: 'Vieilles Vignes Françaises', grape: 'Pinot Noir', note: 'blanc de noirs from ungrafted vines propagated by layering, made in tiny quantity' }
     ],
     traps: [
       'R.D. means recently disgorged, not a vineyard or a separate blend',
@@ -2629,7 +2629,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-cedric-bouchard', p: 'Cedric Bouchard, Roses de Jeanne',
+    id: 'p-cedric-bouchard', p: 'Cédric Bouchard, Roses de Jeanne',
     country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Celles-sur-Ource (Côte des Bar)',
     founded: '',
     holdings: 'A handful of very small parcels in the Côte des Bar, each bottled separately.',
@@ -2638,7 +2638,7 @@ var WINE_PRODUCERS = [
     why: 'The purest statement of single-parcel Champagne, and the reason examiners ask about the Côte des Bar, the Aube district nearer Chablis than Reims.',
     wines: [
       { n: 'Les Ursules', grape: 'Pinot Noir', note: 'a single parcel blanc de noirs, the estate\'s best known bottling' },
-      { n: 'La Boloree', grape: 'Pinot Blanc', note: 'one of the rarer permitted varieties, from a single old parcel' },
+      { n: 'La Bolorée', grape: 'Pinot Blanc', note: 'one of the rarer permitted varieties, from a single old parcel' },
       { n: 'Côte de Val Vilaine', grape: 'Pinot Noir', note: 'the most available of the parcels, and the way most candidates meet the house' }
     ],
     traps: [
@@ -2656,9 +2656,9 @@ var WINE_PRODUCERS = [
     t: 'Old reserve wines doing the work: hazelnut, toffee, mushroom, mature in youth',
     why: 'The clearest teaching example of reserve wine as the driver of a non-vintage blend, and one third of the Heidsieck naming trap.',
     wines: [
-      { n: 'Brut Reserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage that examiners use to make the point about reserve wines' },
-      { n: 'Blanc des Millenaires', grape: 'Chardonnay', note: 'the vintage blanc de blancs, released after very long ageing' },
-      { n: 'Rose Reserve', grape: 'Pinot Noir led', note: 'the rose built on the same reserve-heavy method' }
+      { n: 'Brut Réserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage that examiners use to make the point about reserve wines' },
+      { n: 'Blanc des Millénaires', grape: 'Chardonnay', note: 'the vintage blanc de blancs, released after very long ageing' },
+      { n: 'Rosé Réserve', grape: 'Pinot Noir led', note: 'the rose built on the same reserve-heavy method' }
     ],
     traps: [
       'Three separate houses carry the name: Charles Heidsieck, Piper-Heidsieck and Heidsieck & Co Monopole',
@@ -2676,7 +2676,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Clos de la Dioterie', grape: 'Cabernet Franc', note: 'old vines on clay and limestone, the estate\'s longest-lived red' },
       { n: 'Les Varennes du Grand Clos', grape: 'Cabernet Franc', note: 'gravel terrace fruit, more open and perfumed' },
-      { n: 'Clos du Chene Vert', grape: 'Cabernet Franc', note: 'a walled limestone parcel on the slope' }
+      { n: 'Clos du Chêne Vert', grape: 'Cabernet Franc', note: 'a walled limestone parcel on the slope' }
     ],
     traps: [
       'Chinon rouge is Cabernet Franc, with up to ten per cent Cabernet Sauvignon permitted; Chinon blanc is Chenin Blanc.',
@@ -2695,7 +2695,7 @@ var WINE_PRODUCERS = [
       { n: 'Le Bourg', grape: 'Cabernet Franc', note: 'a single old parcel, the most structured of the three reds' },
       { n: 'Les Poyeux', grape: 'Cabernet Franc', note: 'the perfumed parcel, on sandier soil over tuffeau' },
       { n: 'Le Clos', grape: 'Cabernet Franc', note: 'the estate wine, and the wine most candidates will have tasted' },
-      { n: 'Breze', grape: 'Chenin Blanc', note: 'Saumur blanc from the limestone hill of Breze, barrel fermented' }
+      { n: 'Brézé', grape: 'Chenin Blanc', note: 'Saumur blanc from the limestone hill of Breze, barrel fermented' }
     ],
     traps: [
       'Le Bourg and Les Poyeux are separate parcels, not a village and cru hierarchy',
@@ -2712,7 +2712,7 @@ var WINE_PRODUCERS = [
     t: 'Fine-boned Aÿ elegance: white peach, brioche, nothing raised in volume',
     why: 'An Aÿ house that answers the Pinot village with a light hand, and a reminder that ownership by another house does not merge the styles.',
     wines: [
-      { n: 'Cuvee William Deutz', grape: 'Pinot Noir led', note: 'the vintage prestige cuvee in the Pinot register' },
+      { n: 'Cuvée William Deutz', grape: 'Pinot Noir led', note: 'the vintage prestige cuvee in the Pinot register' },
       { n: 'Amour de Deutz', grape: 'Chardonnay', note: 'the blanc de blancs prestige cuvee' },
       { n: 'Brut Classic', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage' }
     ],
@@ -2743,7 +2743,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-domaine-de-lecu', p: 'Domaine de l\'Ecu',
-    country: 'France, Champagne, Loire and Alsace', r: 'Loire', sub: 'Le Landreau, Muscadet Sevre et Maine (Pays Nantais)',
+    country: 'France, Champagne, Loire and Alsace', r: 'Loire', sub: 'Le Landreau, Muscadet Sèvre et Maine (Pays Nantais)',
     founded: '',
     holdings: 'Biodynamic Melon de Bourgogne at Le Landreau, with parcels bottled separately according to the bedrock beneath them.',
     style: 'Cuvees named for rock types, many made with little or no added sulphur: lean, salty and direct.',
@@ -2760,8 +2760,8 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-pepiere', p: 'Domaine de la Pepiere',
-    country: 'France, Champagne, Loire and Alsace', r: 'Loire', sub: 'Maisdon-sur-Sevre, Muscadet Sevre et Maine (Pays Nantais)',
+    id: 'p-pepiere', p: 'Domaine de la Pépière',
+    country: 'France, Champagne, Loire and Alsace', r: 'Loire', sub: 'Maisdon-sur-Sèvre, Muscadet Sèvre et Maine (Pays Nantais)',
     founded: '1984',
     holdings: 'Old-vine Melon de Bourgogne on granite at Maisdon-sur-Sevre, including the Clos des Briords, with parcels in the Clisson and Château-Thebaud cru communal zones.',
     style: 'Sur lie ageing taken far beyond the legal minimum: salt, citrus pith and a stony grip with no oak and no fruit gloss.',
@@ -2769,9 +2769,9 @@ var WINE_PRODUCERS = [
     why: 'The estate that made Muscadet serious again, and the way in to the cru communal system that sits above Muscadet Sevre et Maine.',
     wines: [
       { n: 'Clos des Briords', grape: 'Melon de Bourgogne', note: 'old vines on granite, the bottling that made Muscadet collectable' },
-      { n: 'Muscadet Sevre et Maine Sur Lie', grape: 'Melon de Bourgogne', note: 'the estate wine, and the clearest picture of what sur lie means' },
+      { n: 'Muscadet Sèvre et Maine Sur Lie', grape: 'Melon de Bourgogne', note: 'the estate wine, and the clearest picture of what sur lie means' },
       { n: 'Clisson', grape: 'Melon de Bourgogne', note: 'a cru communal aged on lees for years before release' },
-      { n: 'Chateau-Thebaud', grape: 'Melon de Bourgogne', note: 'a cru communal on gneiss, the most mineral of the range' }
+      { n: 'Château-Thébaud', grape: 'Melon de Bourgogne', note: 'a cru communal on gneiss, the most mineral of the range' }
     ],
     traps: [
       'Muscadet is made from Melon de Bourgogne, not from Muscat and not from a grape called Muscadet',
@@ -2788,7 +2788,7 @@ var WINE_PRODUCERS = [
     t: 'Barrel-worked Chenin and a zero-everything petillant: ripe, cut, dry',
     why: 'Triple Zero is the standard illustration of the ancestral method in the Loire, and Blot links Montlouis Chenin to Bourgueil Cabernet Franc under one name.',
     wines: [
-      { n: 'Remus', grape: 'Chenin Blanc', note: 'barrel-fermented dry Montlouis from old vines' },
+      { n: 'Rémus', grape: 'Chenin Blanc', note: 'barrel-fermented dry Montlouis from old vines' },
       { n: 'Triple Zero', grape: 'Chenin Blanc', note: 'petillant with no chaptalisation, no liqueur de tirage and no dosage, made by the ancestral method' },
       { n: 'Clos Michet', grape: 'Chenin Blanc', note: 'a single walled Montlouis parcel' },
       { n: 'Domaine de la Butte Bourgueil', grape: 'Cabernet Franc', note: 'the same owner\'s Bourgueil estate, bottled by slope position' }
@@ -2827,9 +2827,9 @@ var WINE_PRODUCERS = [
     why: 'With Huet, the pair that defines Vouvray in exam answers, and the estate that shows how long dry Chenin can live.',
     wines: [
       { n: 'Vouvray Sec', grape: 'Chenin Blanc', note: 'dry Vouvray at its most uncompromising' },
-      { n: 'Vouvray Moelleux Reserve', grape: 'Chenin Blanc', note: 'botrytis-influenced sweet Chenin made only in suitable years' },
+      { n: 'Vouvray Moelleux Réserve', grape: 'Chenin Blanc', note: 'botrytis-influenced sweet Chenin made only in suitable years' },
       { n: 'Goutte d\'Or', grape: 'Chenin Blanc', note: 'the sweetest bottling, made only in exceptional vintages' },
-      { n: 'Petillant', grape: 'Chenin Blanc', note: 'traditional-method sparkling from the same parcels' }
+      { n: 'Pétillant', grape: 'Chenin Blanc', note: 'traditional-method sparkling from the same parcels' }
     ],
     traps: [
       'Goutte d\'Or here is a Vouvray cuvee, not the Meursault premier cru of the same name',
@@ -2848,7 +2848,7 @@ var WINE_PRODUCERS = [
       { n: 'Le Mont Sec', grape: 'Chenin Blanc', note: 'the flintiest and most tightly wound of the three parcels' },
       { n: 'Clos du Bourg Moelleux', grape: 'Chenin Blanc', note: 'the walled parcel on the thinnest soil, the estate\'s most concentrated sweet wine' },
       { n: 'Le Haut-Lieu Demi-Sec', grape: 'Chenin Blanc', note: 'the softest parcel, and the standard teaching example of demi-sec' },
-      { n: 'Petillant', grape: 'Chenin Blanc', note: 'traditional-method sparkling Vouvray, aged long on lees' }
+      { n: 'Pétillant', grape: 'Chenin Blanc', note: 'traditional-method sparkling Vouvray, aged long on lees' }
     ],
     traps: [
       'Sec, demi-sec and moelleux are styles, not vineyard tiers',
@@ -2904,8 +2904,8 @@ var WINE_PRODUCERS = [
     t: 'Volcanic Rangen at Clos Saint-Theobald: smoke, stone fruit, enormous length',
     why: 'One of the two estates that dominate the Rangen, the volcanic amphitheatre at Thann that is Alsace\'s steepest and southernmost grand cru.',
     wines: [
-      { n: 'Rangen de Thann Clos Saint-Theobald Riesling', grape: 'Riesling', note: 'volcanic soil on the steepest slope in Alsace' },
-      { n: 'Clos Saint-Theobald Pinot Gris', grape: 'Pinot Gris', note: 'the smoky, powerful face of Rangen' },
+      { n: 'Rangen de Thann Clos Saint-Théobald Riesling', grape: 'Riesling', note: 'volcanic soil on the steepest slope in Alsace' },
+      { n: 'Clos Saint-Théobald Pinot Gris', grape: 'Pinot Gris', note: 'the smoky, powerful face of Rangen' },
       { n: 'Harth Chasselas Vieilles Vignes', grape: 'Chasselas', note: 'old-vine Chasselas, a variety the region otherwise treats as an afterthought' }
     ],
     traps: [
@@ -2923,7 +2923,7 @@ var WINE_PRODUCERS = [
     why: 'The reference for Sancerre rouge, which the Court expects a candidate to name as Pinot Noir without hesitating.',
     wines: [
       { n: 'Les Romains', grape: 'Sauvignon Blanc', note: 'a silex parcel, the smokiest and longest-lived of the whites' },
-      { n: 'Guigne-Chevres', grape: 'Sauvignon Blanc', note: 'a single limestone parcel, barrel fermented' },
+      { n: 'Guigne-Chèvres', grape: 'Sauvignon Blanc', note: 'a single limestone parcel, barrel fermented' },
       { n: 'Belle Dame', grape: 'Pinot Noir', note: 'the estate\'s top red, and the standard answer for serious Sancerre rouge' },
       { n: 'Sancerre Blanc', grape: 'Sauvignon Blanc', note: 'the estate wine, the clearest picture of Sancerre limestone' }
     ],
@@ -2942,7 +2942,7 @@ var WINE_PRODUCERS = [
     why: 'One of the two or three estates that define the rich, aromatic side of Alsace, and a useful reminder that cuvee names here are often family names.',
     wines: [
       { n: 'Riesling Schlossberg', grape: 'Riesling', note: 'granite from the first Alsace grand cru, delimited in 1975' },
-      { n: 'Riesling Cuvee Sainte Catherine', grape: 'Riesling', note: 'Riesling from the Schlossberg, named for Saint Catherine\'s day and made from later-picked fruit.' },
+      { n: 'Riesling Cuvée Sainte Catherine', grape: 'Riesling', note: 'Riesling from the Schlossberg, named for Saint Catherine\'s day and made from later-picked fruit.' },
       { n: 'Gewürztraminer Furstentum', grape: 'Gewürztraminer', note: 'limestone at Kientzheim, the estate\'s most aromatic grand cru wine' },
       { n: 'Pinot Gris Altenbourg', grape: 'Pinot Gris', note: 'a lieu-dit rather than a grand cru, often bottled as Vendange Tardive' }
     ],
@@ -2981,10 +2981,10 @@ var WINE_PRODUCERS = [
     t: 'Four grands crus above one town, terraced by hand: broad, ripe, southern',
     why: 'Four grands crus sit above one town and one estate dominates all four: the clearest case that a cru is a place a producer can dominate without owning it outright.',
     wines: [
-      { n: 'Kitterle Riesling', grape: 'Riesling', note: 'sandstone terraces on the steepest of the four Guebwiller crus' },
+      { n: 'Kitterlé Riesling', grape: 'Riesling', note: 'sandstone terraces on the steepest of the four Guebwiller crus' },
       { n: 'Saering Riesling', grape: 'Riesling', note: 'marl and sandstone, the most elegant of the estate\'s Rieslings' },
       { n: 'Kessler Gewürztraminer', grape: 'Gewürztraminer', note: 'a warm, sheltered cru giving the estate\'s richest aromatic wine' },
-      { n: 'Les Princes Abbes', grape: 'varietal range', note: 'the village-level range that carries the house style at volume' }
+      { n: 'Les Princes Abbés', grape: 'varietal range', note: 'the village-level range that carries the house style at volume' }
     ],
     traps: [
       'Guebwiller\'s four grands crus are Kitterle, Saering, Kessler and Spiegel',
@@ -3000,7 +3000,7 @@ var WINE_PRODUCERS = [
     t: 'Chalk marl, lemon oil and smoke: the Sancerre that refuses to taste like Sancerre',
     why: 'The benchmark for Sancerre as a wine that ages, and the proof that Chavignol\'s marl behaves differently from the caillottes limestone nearer the town.',
     wines: [
-      { n: 'Clos la Neore', grape: 'Sauvignon Blanc', note: 'the estate\'s single wine, from the steep marl of Les Monts Damnés' }
+      { n: 'Clos la Néore', grape: 'Sauvignon Blanc', note: 'the estate\'s single wine, from the steep marl of Les Monts Damnés' }
     ],
     traps: [
       'Les Monts Damnés is a lieu-dit at Chavignol, not a separate appellation',
@@ -3016,7 +3016,7 @@ var WINE_PRODUCERS = [
     t: 'Ambonnay Pinot at full ripeness: red apple, smoke, years on its lees',
     why: 'The reference grower for Montagne de Reims Pinot Noir, and a convenient way in to Coteaux Champenois and Rosé des Riceys as the region\'s still appellations.',
     wines: [
-      { n: 'Les Crayeres Vieilles Vignes', grape: 'Pinot Noir', note: 'a blanc de noirs from an old-vine parcel at Ambonnay' },
+      { n: 'Les Crayères Vieilles Vignes', grape: 'Pinot Noir', note: 'a blanc de noirs from an old-vine parcel at Ambonnay' },
       { n: 'Brut Tradition Grand Cru', grape: 'Pinot Noir and Chardonnay', note: 'the house wine, aged far longer than the fifteen-month minimum' },
       { n: 'Ambonnay Rouge', grape: 'Pinot Noir', note: 'still red wine under Coteaux Champenois, the appellation for the region\'s non-sparkling wines' }
     ],
@@ -3037,7 +3037,7 @@ var WINE_PRODUCERS = [
       { n: 'Les Bournais', grape: 'Chenin Blanc', note: 'a flinty Montlouis parcel, the estate\'s most structured dry wine' },
       { n: 'Clos du Breuil', grape: 'Chenin Blanc', note: 'limestone parcel giving the tightest and most saline of the dry wines' },
       { n: 'Les Choisilles', grape: 'Chenin Blanc', note: 'the approachable dry Montlouis that introduces the appellation' },
-      { n: 'Montlouis Petillant', grape: 'Chenin Blanc', note: 'traditional-method sparkling, a large part of the appellation\'s output' }
+      { n: 'Montlouis Pétillant', grape: 'Chenin Blanc', note: 'traditional-method sparkling, a large part of the appellation\'s output' }
     ],
     traps: [
       'Montlouis-sur-Loire lies between the Cher and the Loire on the south bank; Vouvray is on the north bank',
@@ -3045,7 +3045,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-francois-cotat', p: 'Francois Cotat',
+    id: 'p-francois-cotat', p: 'François Cotat',
     country: 'France, Champagne, Loire and Alsace', r: 'Loire', sub: 'Chavignol, Sancerre (Centre-Loire)',
     founded: '',
     holdings: 'Steep Kimmeridgian parcels at Chavignol: Les Monts Damnés, Le Cul de Beaujeu and La Grande Cote.',
@@ -3055,7 +3055,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Les Monts Damnés', grape: 'Sauvignon Blanc', note: 'the steepest marl slope, the estate\'s most famous parcel' },
       { n: 'Le Cul de Beaujeu', grape: 'Sauvignon Blanc', note: 'a west-facing parcel, firmer and later to open' },
-      { n: 'La Grande Cote', grape: 'Sauvignon Blanc', note: 'the highest of the three, the most tightly wound' }
+      { n: 'La Grande Côte', grape: 'Sauvignon Blanc', note: 'the highest of the three, the most tightly wound' }
     ],
     traps: [
       'Francois Cotat and Pascal Cotat are cousins running separate estates on family parcels',
@@ -3064,7 +3064,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-gosset', p: 'Gosset',
-    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Aÿ, now Epernay',
+    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Aÿ, now Épernay',
     founded: '1584',
     holdings: '',
     style: 'Malolactic fermentation is blocked across the range: high acid, citrus peel and a firm, long finish.',
@@ -3073,7 +3073,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Grande Réserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage that carries the no-malolactic signature' },
       { n: 'Celebris Extra Brut', grape: 'Chardonnay and Pinot Noir', note: 'the vintage prestige cuvee at very low dosage' },
-      { n: 'Grand Millesime', grape: 'Chardonnay and Pinot Noir', note: 'the declared vintage wine' }
+      { n: 'Grand Millésime', grape: 'Chardonnay and Pinot Noir', note: 'the declared vintage wine' }
     ],
     traps: [
       'Ruinart is the oldest Champagne house; Gosset is the oldest wine house but began with still wine',
@@ -3129,7 +3129,7 @@ var WINE_PRODUCERS = [
     t: 'A new number every year: barrel spice, apple skin, dosage barely there',
     why: 'The house that abandoned a repeatable non-vintage in favour of one numbered cuvee per base year: the standard exam example of the argument against house style.',
     wines: [
-      { n: 'Cuvee numbered series', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'each release carries a number, the series beginning at 728 with the 2000 base year' },
+      { n: 'Cuvée numbered series', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'each release carries a number, the series beginning at 728 with the 2000 base year' },
       { n: 'Avize Champ Cain', grape: 'Chardonnay', note: 'a single Côte des Blancs parcel bottled alone' },
       { n: 'Dizy Corne Bautray', grape: 'Chardonnay', note: 'a single parcel on gravel over chalk at Dizy' },
       { n: 'Aÿ Vauzelle Terme', grape: 'Pinot Noir', note: 'a single Aÿ parcel, blanc de noirs' }
@@ -3189,7 +3189,7 @@ var WINE_PRODUCERS = [
       { n: 'Grand Siècle', grape: 'Chardonnay and Pinot Noir', note: 'a prestige cuvee deliberately blended from several declared vintages of grand cru fruit' },
       { n: 'Cuvée Rosé', grape: 'Pinot Noir', note: 'made by skin maceration rather than blending, which is unusual in a region where blending rose is legal' },
       { n: 'Ultra Brut', grape: 'Chardonnay and Pinot Noir', note: 'a zero dosage wine launched in 1981, well before the modern fashion' },
-      { n: 'La Cuvee', grape: 'Chardonnay dominant', note: 'the Chardonnay-led non-vintage' }
+      { n: 'La Cuvée', grape: 'Chardonnay dominant', note: 'the Chardonnay-led non-vintage' }
     ],
     traps: [
       'Grand Siècle is multi-vintage by design, not an undeclared vintage wine',
@@ -3224,7 +3224,7 @@ var WINE_PRODUCERS = [
     why: 'The house that farms an unusually high proportion of its own fruit among the grandes marques, and the maker of Cristal, which the Court pairs with Dom Perignon as the prestige cuvee to define.',
     wines: [
       { n: 'Cristal', grape: 'Pinot Noir and Chardonnay', note: 'created in 1876 for Tsar Alexander II, in a clear flat-bottomed bottle; always vintage' },
-      { n: 'Cristal Rose', grape: 'Pinot Noir and Chardonnay', note: 'the rose version, made in far smaller quantity' },
+      { n: 'Cristal Rosé', grape: 'Pinot Noir and Chardonnay', note: 'the rose version, made in far smaller quantity' },
       { n: 'Collection', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the numbered multi-vintage release that replaced Brut Premier' },
       { n: 'Blanc de Blancs Vintage', grape: 'Chardonnay', note: 'Côte des Blancs fruit, vintage dated' }
     ],
@@ -3236,15 +3236,15 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-moet-chandon', p: 'Moët & Chandon',
-    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Epernay',
+    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Épernay',
     founded: '1743',
     holdings: 'The largest vineyard holdings in Champagne, spread across most of the grand and premier cru villages.',
     style: 'Built for consistency at enormous volume: apple, pastry and a soft, approachable mousse.',
     t: 'The house taste of Champagne: apple, pastry, soft mousse, made by the million',
     why: 'The volume benchmark and the owner of Dom Perignon. Examiners use it to separate a house brand from its prestige cuvee and to open the question of holdings and ownership.',
     wines: [
-      { n: 'Dom Perignon', grape: 'Chardonnay and Pinot Noir', note: 'the prestige cuvee, always vintage, released again later as P2 and P3' },
-      { n: 'Moët Imperial', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage that sets the world\'s reference for house style at scale' },
+      { n: 'Dom Pérignon', grape: 'Chardonnay and Pinot Noir', note: 'the prestige cuvee, always vintage, released again later as P2 and P3' },
+      { n: 'Moët Impérial', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the non-vintage that sets the world\'s reference for house style at scale' },
       { n: 'Grand Vintage', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the declared vintage wine under the Moët name' }
     ],
     traps: [
@@ -3273,17 +3273,17 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-perrier-jouet', p: 'Perrier-Jouet',
-    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Epernay',
+    id: 'p-perrier-jouet', p: 'Perrier-Jouët',
+    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Épernay',
     founded: '1811',
     holdings: 'Estate vineyards weighted to Côte des Blancs Chardonnay, notably at Cramant and Avize.',
     style: 'Chardonnay-led, light and floral, built for delicacy rather than power.',
     t: 'Anemone glass and white flowers: Chardonnay-led Champagne at its most delicate',
     why: 'Belle Epoque is one of the named prestige cuvees a candidate is expected to place with its house, and the anemone bottle is its identification shortcut.',
     wines: [
-      { n: 'Belle Epoque', grape: 'Chardonnay led blend', note: 'the prestige cuvee in the enamelled anemone bottle, the decoration designed by Emile Galle in 1902' },
+      { n: 'Belle Époque', grape: 'Chardonnay led blend', note: 'the prestige cuvee in the enamelled anemone bottle, the decoration designed by Emile Galle in 1902' },
       { n: 'Grand Brut', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the floral non-vintage' },
-      { n: 'Blason Rose', grape: 'Pinot Noir and Chardonnay', note: 'the house rose' }
+      { n: 'Blason Rosé', grape: 'Pinot Noir and Chardonnay', note: 'the house rose' }
     ],
     traps: [
       'Belle Epoque is sold as Fleur de Champagne in some markets: it is the same wine',
@@ -3300,8 +3300,8 @@ var WINE_PRODUCERS = [
     why: 'Clos des Goisses is the answer to name a single-vineyard Champagne, and the slope is the region\'s steepest and ripest site.',
     wines: [
       { n: 'Clos des Goisses', grape: 'Pinot Noir with Chardonnay', note: 'the first Champagne bottled and sold as a single vineyard, from 1935' },
-      { n: 'Royale Reserve', grape: 'Pinot Noir led blend', note: 'the Pinot-weighted non-vintage' },
-      { n: 'Cuvee 1522', grape: 'Pinot Noir and Chardonnay', note: 'vintage grand cru wine named for the family\'s arrival at Aÿ' }
+      { n: 'Royale Réserve', grape: 'Pinot Noir led blend', note: 'the Pinot-weighted non-vintage' },
+      { n: 'Cuvée 1522', grape: 'Pinot Noir and Chardonnay', note: 'vintage grand cru wine named for the family\'s arrival at Aÿ' }
     ],
     traps: [
       'Clos des Goisses is a lieu-dit owned by Philipponnat, not an appellation',
@@ -3317,9 +3317,9 @@ var WINE_PRODUCERS = [
     t: 'Le Mesnil without oak: lime, oyster shell, and a perpetual reserve\'s depth',
     why: 'A leading récoltant-manipulant in the most famous Chardonnay village, and a clean example of a perpetual reserve as an alternative to vintage declaration.',
     wines: [
-      { n: 'Cuvee de Reserve Blanc de Blancs', grape: 'Chardonnay', note: 'the grand cru non-vintage built on the perpetual reserve' },
-      { n: 'Cuvee Speciale Les Chetillons', grape: 'Chardonnay', note: 'a single lieu-dit at Le Mesnil, vintage dated, the estate\'s benchmark' },
-      { n: 'Reserve Oubliee', grape: 'Chardonnay', note: 'drawn from the older layers of the perpetual reserve' }
+      { n: 'Cuvée de Réserve Blanc de Blancs', grape: 'Chardonnay', note: 'the grand cru non-vintage built on the perpetual reserve' },
+      { n: 'Cuvée Spéciale Les Chétillons', grape: 'Chardonnay', note: 'a single lieu-dit at Le Mesnil, vintage dated, the estate\'s benchmark' },
+      { n: 'Réserve Oubliée', grape: 'Chardonnay', note: 'drawn from the older layers of the perpetual reserve' }
     ],
     traps: [
       'Les Chetillons is a lieu-dit inside Le Mesnil-sur-Oger, not an appellation',
@@ -3328,7 +3328,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-pol-roger', p: 'Pol Roger',
-    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Epernay',
+    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Épernay',
     founded: '1849',
     holdings: 'Estate vineyards across the Côte des Blancs, Vallée de la Marne and Montagne de Reims, with unusually deep and cold cellars beneath Epernay.',
     style: 'Poised and floral rather than powerful, hand riddled, with cold cellars that slow the ageing and keep the mousse fine.',
@@ -3336,7 +3336,7 @@ var WINE_PRODUCERS = [
     why: 'Sir Winston Churchill is the prestige cuvee examiners name after Dom Perignon and Cristal, and Pol Roger is the standard answer for a house that keeps its prestige blend secret.',
     wines: [
       { n: 'Cuvée Sir Winston Churchill', grape: 'Pinot Noir dominant blend', note: 'the prestige cuvee, first made in 1975; the exact blend has never been published' },
-      { n: 'Brut Reserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the White Foil non-vintage, the house\'s volume wine' },
+      { n: 'Brut Réserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the White Foil non-vintage, the house\'s volume wine' },
       { n: 'Blanc de Blancs Vintage', grape: 'Chardonnay', note: 'vintage Côte des Blancs fruit in the house\'s restrained register' }
     ],
     traps: [
@@ -3407,8 +3407,8 @@ var WINE_PRODUCERS = [
     why: 'Comtes de Champagne is the blanc de blancs prestige cuvee the Court expects by name, and the house is the usual example of a Chardonnay-weighted grande marque.',
     wines: [
       { n: 'Comtes de Champagne Blanc de Blancs', grape: 'Chardonnay', note: 'grand cru Côte des Blancs fruit, first made in 1952, a portion aged in oak' },
-      { n: 'Comtes de Champagne Rose', grape: 'Pinot Noir led', note: 'the same prestige name on a wine that is not a blanc de blancs' },
-      { n: 'Brut Reserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the Chardonnay-leaning non-vintage' }
+      { n: 'Comtes de Champagne Rosé', grape: 'Pinot Noir led', note: 'the same prestige name on a wine that is not a blanc de blancs' },
+      { n: 'Brut Réserve', grape: 'Chardonnay, Pinot Noir, Meunier', note: 'the Chardonnay-leaning non-vintage' }
     ],
     traps: [
       'Comtes de Champagne Blanc de Blancs is Chardonnay; the Rose of the same name is Pinot-led',
@@ -3427,7 +3427,7 @@ var WINE_PRODUCERS = [
       { n: 'Clos Ste Hune', grape: 'Riesling', note: 'the estate\'s own parcel inside a grand cru, sold without the grand cru name' },
       { n: 'Cuvée Frédéric Emile', grape: 'Riesling', note: 'grand cru fruit from two slopes above Ribeauvillé, labelled simply Alsace' },
       { n: 'Gewürztraminer Cuvée des Seigneurs de Ribeaupierre', grape: 'Gewürztraminer', note: 'dry Gewürztraminer, which is rarer than the grape\'s reputation suggests' },
-      { n: 'Riesling Reserve', grape: 'Riesling', note: 'the house wine, and the reference for dry Alsace Riesling at volume' }
+      { n: 'Riesling Réserve', grape: 'Riesling', note: 'the house wine, and the reference for dry Alsace Riesling at volume' }
     ],
     traps: [
       'Clos Ste Hune lies inside the Rosacker grand cru but the label has traditionally not said so',
@@ -3446,7 +3446,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Yellow Label Brut', grape: 'Pinot Noir dominant blend', note: 'the non-vintage the world recognises by colour before it reads the label' },
       { n: 'La Grande Dame', grape: 'Pinot Noir dominant', note: 'the prestige cuvee, named for Barbe-Nicole Clicquot Ponsardin' },
-      { n: 'Vintage Rose', grape: 'Pinot Noir led', note: 'the descendant of the first known blended rose Champagne' }
+      { n: 'Vintage Rosé', grape: 'Pinot Noir led', note: 'the descendant of the first known blended rose Champagne' }
     ],
     traps: [
       'The riddling table is credited to the widow Clicquot, not to Dom Perignon',
@@ -3472,7 +3472,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'w-bollinger-vvf', p: 'Bollinger Vieilles Vignes Francaises',
+    id: 'w-bollinger-vvf', p: 'Bollinger Vieilles Vignes Françaises',
     by: 'p-bollinger',
     country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Aÿ (Vallée de la Marne)',
     founded: 'first vintage 1969',
@@ -3481,7 +3481,7 @@ var WINE_PRODUCERS = [
     t: 'Dense, savoury Pinot from vines that never met a rootstock',
     why: 'The best known surviving ungrafted vineyard in Champagne, and the fastest way for an examiner to test whether a candidate understands phylloxera and layering.',
     wines: [
-      { n: 'Vieilles Vignes Francaises', grape: 'Pinot Noir', note: 'the surviving ungrafted plots are the point of the wine, not merely the vine age' }
+      { n: 'Vieilles Vignes Françaises', grape: 'Pinot Noir', note: 'the surviving ungrafted plots are the point of the wine, not merely the vine age' }
     ],
     traps: [
       'Ungrafted, not simply old: the plots were never replanted on American rootstock',
@@ -3500,8 +3500,8 @@ var WINE_PRODUCERS = [
     why: 'A vintage prestige cuvee made wholly from estate fruit, which is unusual among the grandes marques, and the bottle whose shape carries a history question.',
     wines: [
       { n: 'Cristal', grape: 'Pinot Noir and Chardonnay', note: 'the prestige cuvee, made only in declared vintages' },
-      { n: 'Cristal Rose', grape: 'Pinot Noir and Chardonnay', note: 'the rose version, made by infusion in far smaller quantity' },
-      { n: 'Cristal Vinotheque', grape: 'Pinot Noir and Chardonnay', note: 'very late released bottles from the house cellars' }
+      { n: 'Cristal Rosé', grape: 'Pinot Noir and Chardonnay', note: 'the rose version, made by infusion in far smaller quantity' },
+      { n: 'Cristal Vinothèque', grape: 'Pinot Noir and Chardonnay', note: 'very late released bottles from the house cellars' }
     ],
     traps: [
       'Cristal is always vintage: there is no non-vintage version',
@@ -3528,18 +3528,18 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'w-dom-perignon', p: 'Dom Perignon',
+    id: 'w-dom-perignon', p: 'Dom Pérignon',
     by: 'p-moet-chandon',
-    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Epernay',
+    country: 'France, Champagne, Loire and Alsace', r: 'Champagne', sub: 'Épernay',
     founded: 'first vintage 1921, released 1936',
     holdings: 'Drawn from Moët\'s grand cru holdings, with the abbey at Hautvillers as its symbolic home.',
     style: 'Always vintage, built on roughly equal Chardonnay and Pinot Noir, held long on lees and released again later as successive plenitudes.',
     t: 'Toasted almond and white peach on chalk: the cuvee everyone else is measured against',
     why: 'Named for the Hautvillers cellarer whose work on blending founds the region\'s story. The Court wants it identified as always vintage and the plenitudes understood as later disgorgements.',
     wines: [
-      { n: 'Dom Perignon', grape: 'Chardonnay and Pinot Noir', note: 'declared only in years the house judges worthy, so some years are skipped' },
-      { n: 'Dom Perignon P2', grape: 'Chardonnay and Pinot Noir', note: 'the same vintage disgorged after a far longer stay on its lees' },
-      { n: 'Dom Perignon Rose', grape: 'Chardonnay and Pinot Noir', note: 'the rose version, made in far smaller quantity' }
+      { n: 'Dom Pérignon', grape: 'Chardonnay and Pinot Noir', note: 'declared only in years the house judges worthy, so some years are skipped' },
+      { n: 'Dom Pérignon P2', grape: 'Chardonnay and Pinot Noir', note: 'the same vintage disgorged after a far longer stay on its lees' },
+      { n: 'Dom Pérignon Rosé', grape: 'Chardonnay and Pinot Noir', note: 'the rose version, made in far smaller quantity' }
     ],
     traps: [
       'Dom Perignon did not invent sparkling wine: his contribution was blending and quality control',
@@ -4511,7 +4511,7 @@ var WINE_PRODUCERS = [
     why: 'The clearest demonstration of deliberate oxidative ageing in a Vin Doux Naturel, and the standard name for Maury as against Banyuls.',
     wines: [
       { n: 'Maury Vintage', grape: 'Grenache', note: 'the early-bottled fruit-driven style' },
-      { n: 'Maury 10 Ans d\'Age', grape: 'Grenache', note: 'the oxidative house style in full' },
+      { n: 'Maury 10 Ans d\'Âge', grape: 'Grenache', note: 'the oxidative house style in full' },
       { n: 'Maury Prestige 15 Ans', grape: 'Grenache', note: 'longer ageing, deeper rancio' },
       { n: 'Maury Sec', grape: 'Grenache with Carignan and Syrah', note: 'the dry red appellation, recognised long after the fortified wine' }
     ],
@@ -4761,8 +4761,8 @@ var WINE_PRODUCERS = [
     t: 'Alpine clarity: white peach, wet stone, a cool line through everything',
     why: 'The estate most associated with biodynamic farming in Alto Adige and with taking the region\'s Chardonnay seriously.',
     wines: [
-      { n: 'Lowengang Chardonnay', grape: 'Chardonnay', note: 'the bottling that argued for serious Chardonnay in the Alps' },
-      { n: 'Cor Romigberg', grape: 'Cabernet Sauvignon', note: 'a single-vineyard red from a warm slope' },
+      { n: 'Löwengang Chardonnay', grape: 'Chardonnay', note: 'the bottling that argued for serious Chardonnay in the Alps' },
+      { n: 'Cor Römigberg', grape: 'Cabernet Sauvignon', note: 'a single-vineyard red from a warm slope' },
       { n: 'Lagrein Lindenburg', grape: 'Lagrein', note: 'the dark native red of Bolzano' }
     ],
     traps: [
@@ -4852,8 +4852,8 @@ var WINE_PRODUCERS = [
     why: 'The other pillar of Franciacorta, and the house whose Satèn shows the appellation\'s distinctive lower-pressure blanc de blancs.',
     wines: [
       { n: 'Franciacorta Riserva Vittorio Moretti', grape: 'Chardonnay and Pinot Nero', note: 'the long-aged prestige bottling' },
-      { n: 'Franciacorta Gran Cuvee Satèn', grape: 'Chardonnay', note: 'the appellation\'s own softer, lower-pressure style' },
-      { n: 'Franciacorta Alma Cuvee Brut', grape: 'Chardonnay-led blend', note: 'the house\'s non-vintage base' }
+      { n: 'Franciacorta Gran Cuvée Satèn', grape: 'Chardonnay', note: 'the appellation\'s own softer, lower-pressure style' },
+      { n: 'Franciacorta Alma Cuvée Brut', grape: 'Chardonnay-led blend', note: 'the house\'s non-vintage base' }
     ],
     traps: [
       'Satèn is made from white grapes only and bottled at lower pressure than Brut',
@@ -4995,8 +4995,8 @@ var WINE_PRODUCERS = [
     t: 'Serralunga iron and quinine: ungrafted vines and the Chinato that began here',
     why: 'Pie Franco is the ungrafted-vine question in Barolo, and Cappellano is the name attached to the invention of Barolo Chinato.',
     wines: [
-      { n: 'Barolo Otin Fiorin Pie Rupestris', grape: 'Nebbiolo', note: 'the grafted parcel, the estate\'s standard-bearer' },
-      { n: 'Barolo Otin Fiorin Pie Franco', grape: 'Nebbiolo', note: 'ungrafted vines on their own roots, one of the rarest Barolos' },
+      { n: 'Barolo Otin Fiorin Piè Rupestris', grape: 'Nebbiolo', note: 'the grafted parcel, the estate\'s standard-bearer' },
+      { n: 'Barolo Otin Fiorin Piè Franco', grape: 'Nebbiolo', note: 'ungrafted vines on their own roots, one of the rarest Barolos' },
       { n: 'Barolo Chinato', grape: 'Nebbiolo', note: 'the aromatised Barolo the family is credited with creating' }
     ],
     traps: [
@@ -5083,7 +5083,7 @@ var WINE_PRODUCERS = [
     why: 'The estate that lets a candidate compare traditional and modern ageing with vineyard and vintage held constant.',
     wines: [
       { n: 'Barolo Gavarini Vigna Chiniera', grape: 'Nebbiolo', note: 'large-cask Monforte, the traditional half of the range' },
-      { n: 'Barolo Ginestra Vigna Casa Mate', grape: 'Nebbiolo', note: 'the firmer Ginestra parcel in the same treatment' },
+      { n: 'Barolo Ginestra Vigna Casa Maté', grape: 'Nebbiolo', note: 'the firmer Ginestra parcel in the same treatment' },
       { n: 'Barolo Runcot Riserva', grape: 'Nebbiolo', note: 'barrique-aged and made only in selected years' }
     ],
     traps: []
@@ -5116,7 +5116,7 @@ var WINE_PRODUCERS = [
     why: 'Trento DOC is Italy\'s mountain traditional-method appellation and Ferrari is its founding house.',
     wines: [
       { n: 'Giulio Ferrari Riserva del Fondatore', grape: 'Chardonnay', note: 'held on lees for a decade or more before release' },
-      { n: 'Ferrari Perle', grape: 'Chardonnay', note: 'the vintage-dated middle tier' },
+      { n: 'Ferrari Perlé', grape: 'Chardonnay', note: 'the vintage-dated middle tier' },
       { n: 'Ferrari Brut', grape: 'Chardonnay', note: 'the non-vintage wine that carries Trento DOC abroad' }
     ],
     traps: [
@@ -5282,7 +5282,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Soave Classico Vigneti di Foscarino', grape: 'Garganega', note: 'the volcanic hill in its own bottling, a step below du Lot in oak' },
       { n: 'Soave Classico Vigneto du Lot', grape: 'Garganega', note: 'barrel-fermented, the estate\'s most ambitious white' },
-      { n: 'Carmenere Piu', grape: 'Carmenere', note: 'a reminder that Carmenere survived in the Veneto as well as Chile' }
+      { n: 'Carmenère Più', grape: 'Carmenere', note: 'a reminder that Carmenere survived in the Veneto as well as Chile' }
     ],
     traps: [
       'Soave Classico is the original hill zone; the expanded flat DOC is the source of the wine\'s cheap reputation'
@@ -5632,8 +5632,8 @@ var WINE_PRODUCERS = [
     t: 'Weeks on the skins: dried rose, forest floor, tannin gone to silk',
     why: 'A traditionalist maceration regime of unusual length, and an estate holding top crus in both Barbaresco and Barolo.',
     wines: [
-      { n: 'Barbaresco Paje', grape: 'Nebbiolo', note: 'the home cru and the estate\'s clearest statement' },
-      { n: 'Barbaresco Crichet Paje', grape: 'Nebbiolo', note: 'an old-vine selection made only in exceptional years' },
+      { n: 'Barbaresco Pajé', grape: 'Nebbiolo', note: 'the home cru and the estate\'s clearest statement' },
+      { n: 'Barbaresco Crichët Pajé', grape: 'Nebbiolo', note: 'an old-vine selection made only in exceptional years' },
       { n: 'Barolo Pira', grape: 'Nebbiolo', note: 'the Castiglione Falletto holding treated identically' }
     ],
     traps: [
@@ -6253,7 +6253,7 @@ var WINE_PRODUCERS = [
     t: 'Ben Rye: dried apricot, fig, saffron and salt wind off the Pantelleria stone',
     why: 'Passito di Pantelleria is a fixed sweet wine question and Ben Rye is the bottle that represents it, made from bush vines grown in hollows against the wind.',
     wines: [
-      { n: 'Ben Rye', grape: 'Zibibbo', note: 'Passito di Pantelleria, the reference sweet wine of the Italian islands' },
+      { n: 'Ben Ryé', grape: 'Zibibbo', note: 'Passito di Pantelleria, the reference sweet wine of the Italian islands' },
       { n: 'Mille e una Notte', grape: 'Nero d\'Avola-led blend', note: 'the flagship red from Contessa Entellina' },
       { n: 'Tancredi', grape: 'Nero d\'Avola with Cabernet Sauvignon', note: 'the long-running international blend' }
     ],
@@ -6300,7 +6300,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-felsina', p: 'Fattoria di Felsina',
+    id: 'p-felsina', p: 'Fattoria di Fèlsina',
     country: 'Italy, Tuscany and the South', r: 'Chianti Classico', sub: 'Castelnuovo Berardenga',
     founded: '1966',
     holdings: 'The southern extremity of Chianti Classico at Castelnuovo Berardenga, where the zone meets the Crete Senesi; the Rancia parcel is a former monastic site.',
@@ -6710,7 +6710,7 @@ var WINE_PRODUCERS = [
     why: 'Bea is the natural-wine reference point in central Italy and the standard example of Trebbiano Spoletino and alberata tree-trained vines.',
     wines: [
       { n: 'Montefalco Sagrantino Pagliaro', grape: 'Sagrantino', note: 'the estate\'s single-vineyard Sagrantino' },
-      { n: 'Rosso de Veo', grape: 'Sagrantino', note: 'the estate\'s IGT red' },
+      { n: 'Rosso de Véo', grape: 'Sagrantino', note: 'the estate\'s IGT red' },
       { n: 'Arboreus', grape: 'Trebbiano Spoletino', note: 'skin-contact white from vines trained up trees, a revived Umbrian tradition' }
     ],
     traps: [
@@ -6800,7 +6800,7 @@ var WINE_PRODUCERS = [
     why: 'The usual answer when the examiner wants a certified biodynamic estate in Chianti Classico, and a reminder that the denomination is red only.',
     wines: [
       { n: 'Camartina', grape: 'Cabernet Sauvignon with Sangiovese', note: 'the estate\'s long-standing Super Tuscan' },
-      { n: 'Batar', grape: 'Chardonnay with Pinot Bianco', note: 'a rare serious white in a red denomination' },
+      { n: 'Batàr', grape: 'Chardonnay with Pinot Bianco', note: 'a rare serious white in a red denomination' },
       { n: 'Chianti Classico', grape: 'Sangiovese', note: 'widely used as the benchmark for biodynamic Chianti Classico' }
     ],
     traps: [
@@ -7026,7 +7026,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'w-ben-rye', p: 'Ben Rye Passito di Pantelleria',
+    id: 'w-ben-rye', p: 'Ben Ryé Passito di Pantelleria',
     by: 'p-donnafugata',
     country: 'Italy, Tuscany and the South', r: 'Sicily', sub: 'Passito di Pantelleria DOC',
     founded: '',
@@ -7035,7 +7035,7 @@ var WINE_PRODUCERS = [
     t: 'Dried apricot, fig, honey and saffron with sea salt cutting the sweetness',
     why: 'The fixed question for Italian island sweet wines, and the hook for Pantelleria\'s low bush training, which is recognised as a cultural practice.',
     wines: [
-      { n: 'Ben Rye', grape: 'Zibibbo', note: 'the reference Passito di Pantelleria in the export market' }
+      { n: 'Ben Ryé', grape: 'Zibibbo', note: 'the reference Passito di Pantelleria in the export market' }
     ],
     traps: [
       'Zibibbo is Muscat of Alexandria, not Muscat Blanc',
@@ -7220,7 +7220,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-alvaro-castro', p: 'Alvaro Castro (Quinta da Pellada and Quinta de Saes)',
+    id: 'p-alvaro-castro', p: 'Álvaro Castro (Quinta da Pellada and Quinta de Saes)',
     country: 'Spain and Portugal', r: 'Dão', sub: '',
     founded: '',
     holdings: 'Two neighbouring granite estates in the Dão, Quinta da Pellada and Quinta de Saes, with old mixed plantings.',
@@ -7239,7 +7239,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-alvaro-palacios', p: 'Alvaro Palacios',
+    id: 'p-alvaro-palacios', p: 'Álvaro Palacios',
     country: 'Spain and Portugal', r: 'Priorat', sub: 'Gratallops',
     founded: '1989',
     holdings: 'Steep llicorella terraces around Gratallops including L\'Ermita and Finca Dofi. The family also runs Palacios Remondo in Rioja and Descendientes in Bierzo.',
@@ -7267,7 +7267,7 @@ var WINE_PRODUCERS = [
     why: 'The consultant usually named as the technical driver behind serious Alvarinho, and the maker of the reference skin-contact bottling.',
     wines: [
       { n: 'Curtimenta', grape: 'Alvarinho', note: 'skin-contact Alvarinho, the standard example of the method here' },
-      { n: 'Parcela Unica', grape: 'Alvarinho', note: 'a single-parcel wine at the top of the range' },
+      { n: 'Parcela Única', grape: 'Alvarinho', note: 'a single-parcel wine at the top of the range' },
       { n: 'Muros Antigos Alvarinho', grape: 'Alvarinho', note: 'the wide-release bottling of the region\'s grape' }
     ],
     traps: [
@@ -7285,8 +7285,8 @@ var WINE_PRODUCERS = [
     t: 'Black cherry, violet and fine grain: Rioja rebuilt parcel by parcel',
     why: 'The bodega that resigned from the Rioja DOCa in 2015 over ageing categories taking precedence over site. It opens the whole Vinedo Singular argument.',
     wines: [
-      { n: 'Viña El Pison', grape: 'Tempranillo', note: 'a single walled parcel of old Tempranillo at Laguardia, bottled as one wine' },
-      { n: 'Valdegines', grape: 'Tempranillo', note: 'one of the named village parcels' },
+      { n: 'Viña El Pisón', grape: 'Tempranillo', note: 'a single walled parcel of old Tempranillo at Laguardia, bottled as one wine' },
+      { n: 'Valdeginés', grape: 'Tempranillo', note: 'one of the named village parcels' },
       { n: 'La Poza de Ballesteros', grape: 'Tempranillo', note: 'another single site in the parcel range' }
     ],
     traps: [
@@ -7296,7 +7296,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-barbeito', p: 'Barbeito',
-    country: 'Spain and Portugal', r: 'Madeira', sub: 'Camara de Lobos',
+    country: 'Spain and Portugal', r: 'Madeira', sub: 'Câmara de Lobos',
     founded: '1946',
     holdings: 'No large estate of its own: fruit is bought from the island\'s smallholders and selected by parcel and grape.',
     style: 'No caramel colouring and no sweetening adjustment, canteiro ageing, single-cask bottlings: the transparent house.',
@@ -7333,7 +7333,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-tinto-pesquera', p: 'Bodegas Alejandro Fernandez Tinto Pesquera',
+    id: 'p-tinto-pesquera', p: 'Bodegas Alejandro Fernández Tinto Pesquera',
     country: 'Spain and Portugal', r: 'Ribera del Duero', sub: 'Pesquera de Duero',
     founded: '1972',
     holdings: 'Estate vineyards around Pesquera de Duero planted to Tinto Fino alone, with further family bodegas at Condado de Haza and in La Mancha.',
@@ -7351,7 +7351,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-fefinanes', p: 'Bodegas del Palacio de Fefinanes',
+    id: 'p-fefinanes', p: 'Bodegas del Palacio de Fefiñanes',
     country: 'Spain and Portugal', r: 'Rías Baixas', sub: 'Cambados, Val do Salnés',
     founded: '',
     holdings: 'Vineyards around Cambados worked from a cellar inside the Fefinanes palace on the town square.',
@@ -7359,9 +7359,9 @@ var WINE_PRODUCERS = [
     t: 'Lemon pith, crushed shell and bay: Cambados Albariño at its plainest and best',
     why: 'The oldest bottling house in Rías Baixas and the usual answer for the origin of Albariño sold under its own name.',
     wines: [
-      { n: 'Albariño de Fefinanes', grape: 'Albariño', note: 'the plain unoaked bottling, the region\'s historic label' },
-      { n: '1583 Albariño de Fefinanes', grape: 'Albariño', note: 'partly barrel-aged, named for the palace\'s date' },
-      { n: 'Albariño de Fefinanes III Ano', grape: 'Albariño', note: 'aged about three years before release, part of that time on its lees' }
+      { n: 'Albariño de Fefiñanes', grape: 'Albariño', note: 'the plain unoaked bottling, the region\'s historic label' },
+      { n: '1583 Albariño de Fefiñanes', grape: 'Albariño', note: 'partly barrel-aged, named for the palace\'s date' },
+      { n: 'Albariño de Fefiñanes III Año', grape: 'Albariño', note: 'aged about three years before release, part of that time on its lees' }
     ],
     traps: [
       '1583 refers to the palace, not a vintage or a parcel',
@@ -7379,7 +7379,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'La Gitana Manzanilla', grape: 'Palomino', note: 'the standard reference bottling for the style' },
       { n: 'Pastrana Manzanilla Pasada', grape: 'Palomino', note: 'single-vineyard Manzanilla left until the flor thins' },
-      { n: 'Napoleon Amontillado', grape: 'Palomino', note: 'the oxidative continuation of the same base wine' }
+      { n: 'Napoleón Amontillado', grape: 'Palomino', note: 'the oxidative continuation of the same base wine' }
     ],
     traps: [
       'Manzanilla is Fino aged in Sanlúcar, not a different grape or method',
@@ -7432,7 +7432,7 @@ var WINE_PRODUCERS = [
     t: 'Wild strawberry, thyme and dry chalk: Garnacha arguing for eastern Rioja',
     why: 'The Garnacha answer inside a Tempranillo region, and the family bodega Alvaro Palacios returned to run. It also fixes Rioja Oriental on the map.',
     wines: [
-      { n: 'Quinon de Valmira', grape: 'Garnacha', note: 'a single high vineyard, the house\'s argument for Rioja Garnacha' },
+      { n: 'Quiñón de Valmira', grape: 'Garnacha', note: 'a single high vineyard, the house\'s argument for Rioja Garnacha' },
       { n: 'La Montesa', grape: 'Garnacha with Tempranillo', note: 'the everyday wine that made the Garnacha case first' },
       { n: 'Placet Valtomelloso', grape: 'Viura', note: 'an unoaked white worked on lees' }
     ],
@@ -7496,8 +7496,8 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-codorniu', p: 'Codorniu',
-    country: 'Spain and Portugal', r: 'Cava', sub: 'Sant Sadurni d\'Anoia, Penedès',
+    id: 'p-codorniu', p: 'Codorníu',
+    country: 'Spain and Portugal', r: 'Cava', sub: 'Sant Sadurní d\'Anoia, Penedès',
     founded: '1551',
     holdings: 'Deep cellars at Sant Sadurni d\'Anoia with extensive Penedès vineyards. The group also owns Raimat in Costers del Segre and Scala Dei in Priorat.',
     style: 'Traditional-method sparkling at scale from the Catalan trio, with Chardonnay used in the upper cuvees.',
@@ -7505,7 +7505,7 @@ var WINE_PRODUCERS = [
     why: 'Josep Raventos made Spain\'s first traditional-method sparkling here in 1872, which is the founding date candidates are asked for.',
     wines: [
       { n: 'Ars Collecta', grape: 'Xarel-lo, Macabeo, Parellada and Chardonnay', note: 'the long-aged top range, including Cava de Paraje Calificado bottlings' },
-      { n: 'Anna de Codorniu', grape: 'Chardonnay-led', note: 'the Chardonnay-forward house style, atypical for Cava' },
+      { n: 'Anna de Codorníu', grape: 'Chardonnay-led', note: 'the Chardonnay-forward house style, atypical for Cava' },
       { n: 'Non Plus Ultra', grape: 'the Catalan trio', note: 'the long-standing reserve bottling' }
     ],
     traps: [
@@ -7524,7 +7524,7 @@ var WINE_PRODUCERS = [
     why: 'The producers who made Sierra de Gredos examinable and reset what Spanish Garnacha is expected to taste like.',
     wines: [
       { n: 'Rumbo al Norte', grape: 'Garnacha', note: 'a very high old parcel, the most sought of the range' },
-      { n: 'Las Umbrias', grape: 'Garnacha', note: 'a north-facing site, the clearest expression of altitude' },
+      { n: 'Las Umbrías', grape: 'Garnacha', note: 'a north-facing site, the clearest expression of altitude' },
       { n: 'La Bruja de Rozas', grape: 'Garnacha', note: 'the regional wine, the usual introduction to Gredos' }
     ],
     traps: [
@@ -7533,7 +7533,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-telmo-rodriguez', p: 'Compania de Vinos Telmo Rodriguez',
+    id: 'p-telmo-rodriguez', p: 'Compañía de Vinos Telmo Rodríguez',
     country: 'Spain and Portugal', r: 'Rioja Alavesa', sub: 'Lanciego',
     founded: '1994',
     holdings: 'Lanzaga and the recovered terraces of Las Beatas at Lanciego, with projects in Toro, Rueda, Valdeorras, Cebreros and Malaga.',
@@ -7551,7 +7551,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-cvne', p: 'CVNE (Compania Vinicola del Norte de Espana)',
+    id: 'p-cvne', p: 'CVNE (Compañía Vinícola del Norte de España)',
     country: 'Spain and Portugal', r: 'Rioja', sub: 'Haro, Rioja Alta',
     founded: '1879',
     holdings: 'Three cellars: CVNE and Imperial at Haro in Rioja Alta, Vina Real above Laguardia in Rioja Alavesa, and the Contino estate at Laserna.',
@@ -7560,7 +7560,7 @@ var WINE_PRODUCERS = [
     why: 'One company, two subzones, three cellars: the cleanest way to examine Rioja Alta against Rioja Alavesa within a single house.',
     wines: [
       { n: 'Imperial Gran Reserva', grape: 'Tempranillo with Graciano and Mazuelo', note: 'Rioja Alta fruit, made only in selected years' },
-      { n: 'Vina Real Gran Reserva', grape: 'Tempranillo-led blend', note: 'the Rioja Alavesa counterpart, from a separate cellar' },
+      { n: 'Viña Real Gran Reserva', grape: 'Tempranillo-led blend', note: 'the Rioja Alavesa counterpart, from a separate cellar' },
       { n: 'Monopole', grape: 'Viura', note: 'one of Spain\'s oldest white wine brands' }
     ],
     traps: [
@@ -7571,7 +7571,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-descendientes-de-j-palacios', p: 'Descendientes de J. Palacios',
-    country: 'Spain and Portugal', r: 'Bierzo', sub: 'Corullon',
+    country: 'Spain and Portugal', r: 'Bierzo', sub: 'Corullón',
     founded: '1999',
     holdings: 'Steep slate and quartzite terraces above Corullon, farmed biodynamically and bottled as regional, village and single-vineyard wines.',
     style: 'Mencía picked for perfume rather than weight: whole clusters, large old wood, red-fruited and floral.',
@@ -7579,8 +7579,8 @@ var WINE_PRODUCERS = [
     why: 'Alvaro Palacios and his nephew Ricardo Pérez built Bierzo\'s classified ladder here, from Petalos up through village to single vineyard.',
     wines: [
       { n: 'La Faraona', grape: 'Mencía', note: 'the top single vineyard, produced in tiny quantity' },
-      { n: 'Villa de Corullon', grape: 'Mencía', note: 'the village tier below the named parcels' },
-      { n: 'Petalos del Bierzo', grape: 'Mencía', note: 'the regional wine that introduced Bierzo to the world' }
+      { n: 'Villa de Corullón', grape: 'Mencía', note: 'the village tier below the named parcels' },
+      { n: 'Pétalos del Bierzo', grape: 'Mencía', note: 'the regional wine that introduced Bierzo to the world' }
     ],
     traps: [
       'Mencía is not Cabernet Franc, despite the long-repeated claim',
@@ -7589,7 +7589,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-do-ferreiro', p: 'Do Ferreiro (Gerardo Mendez)',
+    id: 'p-do-ferreiro', p: 'Do Ferreiro (Gerardo Méndez)',
     country: 'Spain and Portugal', r: 'Rías Baixas', sub: 'Val do Salnés',
     founded: '',
     holdings: 'Small granite parcels around Meano, including Cepas Vellas, a plot of Albariño reported to be more than two hundred years old.',
@@ -7607,7 +7607,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-dominio-de-pingus', p: 'Dominio de Pingus',
-    country: 'Spain and Portugal', r: 'Ribera del Duero', sub: 'Quintanilla de Onesimo',
+    country: 'Spain and Portugal', r: 'Ribera del Duero', sub: 'Quintanilla de Onésimo',
     founded: '1995',
     holdings: 'Old bush-vine Tinto Fino parcels at La Horra, farmed biodynamically, with the winery downstream at Quintanilla de Onesimo.',
     style: 'Very low yields and gentle whole-berry handling: dense, dark, polished Tinto Fino.',
@@ -7717,7 +7717,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-gonzalez-byass', p: 'Gonzalez Byass',
+    id: 'p-gonzalez-byass', p: 'González Byass',
     country: 'Spain and Portugal', r: 'Jerez', sub: 'Jerez de la Frontera',
     founded: '1835',
     holdings: 'Substantial albariza holdings in the Jerez Superior pagos, notably Macharnudo, with the Tio Pepe solera in the city.',
@@ -7725,9 +7725,9 @@ var WINE_PRODUCERS = [
     t: 'Green almond, chalk and sea spray: the flor the whole world tastes first',
     why: 'The volume reference for Fino, and the house whose VOS and VORS range demonstrates certified average age. En Rama is the standard example of minimal handling.',
     wines: [
-      { n: 'Tio Pepe', grape: 'Palomino', note: 'the volume reference for Fino, aged under flor' },
-      { n: 'Tio Pepe En Rama', grape: 'Palomino', note: 'minimally clarified and bottled in limited spring releases' },
-      { n: 'Noe Pedro Ximénez VORS', grape: 'Pedro Ximénez', note: 'a thirty-year certified solera, the sweet extreme' }
+      { n: 'Tío Pepe', grape: 'Palomino', note: 'the volume reference for Fino, aged under flor' },
+      { n: 'Tío Pepe En Rama', grape: 'Palomino', note: 'minimally clarified and bottled in limited spring releases' },
+      { n: 'Noé Pedro Ximénez VORS', grape: 'Pedro Ximénez', note: 'a thirty-year certified solera, the sweet extreme' }
     ],
     traps: [
       'A solera is a fractional blending system, not a vintage',
@@ -7737,7 +7737,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-gramona', p: 'Gramona',
-    country: 'Spain and Portugal', r: 'Corpinnat', sub: 'Sant Sadurni d\'Anoia, Penedès',
+    country: 'Spain and Portugal', r: 'Corpinnat', sub: 'Sant Sadurní d\'Anoia, Penedès',
     founded: '1881',
     holdings: 'Family vineyards around Sant Sadurni farmed biodynamically, with a cellar holding very long-aged reserves.',
     style: 'Extreme lees ageing with the top wines sealed under cork for their second fermentation: nutty, dense and still fresh.',
@@ -7756,7 +7756,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-henriques-e-henriques', p: 'Henriques and Henriques',
-    country: 'Spain and Portugal', r: 'Madeira', sub: 'Camara de Lobos',
+    country: 'Spain and Portugal', r: 'Madeira', sub: 'Câmara de Lobos',
     founded: '1850',
     holdings: 'One of the few Madeira houses with substantial vineyards of its own, at Camara de Lobos on the south coast.',
     style: 'Firm and dry-leaning, with a strong 15 Year Old range and a reputation built on Sercial and Verdelho.',
@@ -7774,7 +7774,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-herdade-do-mouchao', p: 'Herdade do Mouchao',
+    id: 'p-herdade-do-mouchao', p: 'Herdade do Mouchão',
     country: 'Spain and Portugal', r: 'Alentejo', sub: '',
     founded: '',
     holdings: 'An old estate in the Alentejo with Alicante Bouschet planted since the nineteenth century, together with its own cork forests.',
@@ -7782,7 +7782,7 @@ var WINE_PRODUCERS = [
     t: 'Dried fig, leather and tar: the Alentejo before it turned soft',
     why: 'The traditional face of the Alentejo and the reference for Alicante Bouschet, a teinturier whose flesh and juice are red.',
     wines: [
-      { n: 'Mouchao', grape: 'Alicante Bouschet with Trincadeira', note: 'the traditional Alentejo red, made only in accepted years' },
+      { n: 'Mouchão', grape: 'Alicante Bouschet with Trincadeira', note: 'the traditional Alentejo red, made only in accepted years' },
       { n: 'Tonel 3-4', grape: 'Alicante Bouschet', note: 'a single-cask bottling from the estate\'s oldest wood' },
       { n: 'Dom Rafael', grape: 'Alentejo blend', note: 'the second label, the easier introduction' }
     ],
@@ -7794,7 +7794,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-jose-maria-da-fonseca', p: 'José Maria da Fonseca',
-    country: 'Spain and Portugal', r: 'Setúbal', sub: 'Azeitao',
+    country: 'Spain and Portugal', r: 'Setúbal', sub: 'Azeitão',
     founded: '1834',
     holdings: 'Vineyards on the Serra da Arrabida and the sandy Setúbal peninsula, with deep old stocks of Moscatel.',
     style: 'Moscatel de Setúbal fortified and then left on its skins for months, giving marmalade depth, alongside long-established table wines.',
@@ -7812,7 +7812,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-remelluri', p: 'La Granja Nuestra Senora de Remelluri',
+    id: 'p-remelluri', p: 'La Granja Nuestra Señora de Remelluri',
     country: 'Spain and Portugal', r: 'Rioja', sub: 'Labastida, Rioja Alavesa',
     founded: '',
     holdings: 'A single estate climbing the slopes below the Sierra de Toloño above Labastida, farmed organically, with a field of mixed white varieties for the Blanco.',
@@ -7840,7 +7840,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Gran Reserva 890', grape: 'Tempranillo with Graciano and Mazuelo', note: 'the top Gran Reserva, declared only in exceptional years' },
       { n: 'Gran Reserva 904', grape: 'Tempranillo with Graciano', note: 'the more frequently made Gran Reserva of the pair' },
-      { n: 'Vina Ardanza Reserva', grape: 'Tempranillo with Garnacha', note: 'the house Reserva, a tier below the numbered wines' }
+      { n: 'Viña Ardanza Reserva', grape: 'Tempranillo with Garnacha', note: 'the house Reserva, a tier below the numbered wines' }
     ],
     traps: [
       '890 and 904 are not vintages, ages or cask numbers',
@@ -7857,7 +7857,7 @@ var WINE_PRODUCERS = [
     t: 'Sour cherry, tar and a wall of tannin: Baga with nothing sanded off',
     why: 'The producer who argued for Baga as a fine grape, and a dense source of exam facts: pe franco, and the clay against sand distinction that sets Bairrada\'s style.',
     wines: [
-      { n: 'Quinta do Ribeirinho Pe Franco', grape: 'Baga on ungrafted vines', note: 'pe franco means own-rooted, and the wine is the region\'s benchmark' },
+      { n: 'Quinta do Ribeirinho Pé Franco', grape: 'Baga on ungrafted vines', note: 'pe franco means own-rooted, and the wine is the region\'s benchmark' },
       { n: 'Vinha Pan', grape: 'Baga', note: 'a clay-soil single vineyard, dense and tannic' },
       { n: 'Vinha Barrosa', grape: 'Baga', note: 'old bush vines, the traditional face of Bairrada' }
     ],
@@ -7877,7 +7877,7 @@ var WINE_PRODUCERS = [
     why: 'Named with Marqués de Riscal as one of Rioja\'s two founding bodegas of the 1850s, and the owner of Castillo Ygay, the region\'s longest-held Gran Reserva.',
     wines: [
       { n: 'Castillo Ygay Gran Reserva Especial', grape: 'Tempranillo with Mazuelo', note: 'released decades after the vintage and only in accepted years' },
-      { n: 'Capellania', grape: 'Viura', note: 'a barrel-aged white from a named parcel within the estate' },
+      { n: 'Capellanía', grape: 'Viura', note: 'a barrel-aged white from a named parcel within the estate' },
       { n: 'Dalmau', grape: 'Tempranillo with Cabernet Sauvignon and Graciano', note: 'the modern French-oak cuvee, the house counterweight to Ygay' }
     ],
     traps: [
@@ -7896,7 +7896,7 @@ var WINE_PRODUCERS = [
     why: 'The pair with Murrieta for Rioja\'s Bordeaux-influenced founding, and one of the very few Rioja estates with Cabernet Sauvignon in the ground.',
     wines: [
       { n: 'Marqués de Riscal Gran Reserva', grape: 'Tempranillo with Graciano and Mazuelo', note: 'the classical Alavesa Gran Reserva' },
-      { n: 'Baron de Chirel', grape: 'Tempranillo with old mixed varieties', note: 'the modern selection from the oldest parcels' },
+      { n: 'Barón de Chirel', grape: 'Tempranillo with old mixed varieties', note: 'the modern selection from the oldest parcels' },
       { n: 'Marqués de Riscal Rueda', grape: 'Verdejo, sometimes with Sauvignon Blanc', note: 'a Rueda wine from the same house, and a common label trap' }
     ],
     traps: [
@@ -7943,7 +7943,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-pazo-de-senorans', p: 'Pazo de Senorans',
+    id: 'p-pazo-de-senorans', p: 'Pazo de Señorans',
     country: 'Spain and Portugal', r: 'Rías Baixas', sub: 'Val do Salnés',
     founded: '1989',
     holdings: 'Estate Albariño on granite around the pazo at Meis, in the coolest and most maritime subzone.',
@@ -7951,8 +7951,8 @@ var WINE_PRODUCERS = [
     t: 'White peach, bay leaf and sea salt: Albariño proving it can wait',
     why: 'The house that demonstrated Albariño\'s capacity to age, and the clean way into the Val do Salnés subzone.',
     wines: [
-      { n: 'Pazo Senorans Seleccion de Anada', grape: 'Albariño', note: 'held on lees for years before release, the proof that Albariño ages' },
-      { n: 'Pazo Senorans Albariño', grape: 'Albariño', note: 'the house wine, the standard for Val do Salnés' }
+      { n: 'Pazo Señorans Selección de Añada', grape: 'Albariño', note: 'held on lees for years before release, the proof that Albariño ages' },
+      { n: 'Pazo Señorans Albariño', grape: 'Albariño', note: 'the house wine, the standard for Val do Salnés' }
     ],
     traps: [
       'Seleccion de Anada is a long-aged dry wine, not a late harvest',
@@ -7998,7 +7998,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-quinta-do-noval', p: 'Quinta do Noval',
-    country: 'Spain and Portugal', r: 'Douro', sub: 'Pinhao',
+    country: 'Spain and Portugal', r: 'Douro', sub: 'Pinhão',
     founded: '1715',
     holdings: 'A single terraced amphitheatre above Pinhao, containing the small ungrafted Nacional plot, with Douro table wine made from the same estate.',
     style: 'Estate-based rather than blended from purchases: floral and fine-boned vintage Port, and a serious tawny and colheita range.',
@@ -8017,7 +8017,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-quinta-do-vale-meao', p: 'Quinta do Vale Meao',
+    id: 'p-quinta-do-vale-meao', p: 'Quinta do Vale Meão',
     country: 'Spain and Portugal', r: 'Douro', sub: 'Douro Superior',
     founded: '1877',
     holdings: 'A large single property at the eastern end of the Douro, planted by Dona Antonia Adelaide Ferreira and now run by the Olazabal family.',
@@ -8025,9 +8025,9 @@ var WINE_PRODUCERS = [
     t: 'Violet, graphite and dry heat: the Douro Superior at its most composed',
     why: 'For decades the principal source of Barca Velha, and since 1999 its own wine. It fixes the Douro Superior as the hottest and driest subregion.',
     wines: [
-      { n: 'Quinta do Vale Meao', grape: 'Touriga Nacional with Touriga Franca and Tinta Roriz', note: 'its own label since 1999, after decades feeding Barca Velha' },
+      { n: 'Quinta do Vale Meão', grape: 'Touriga Nacional with Touriga Franca and Tinta Roriz', note: 'its own label since 1999, after decades feeding Barca Velha' },
       { n: 'Meandro', grape: 'Douro field blend', note: 'the second wine of the estate' },
-      { n: 'Vale Meao Vintage Port', grape: 'Douro field blend', note: 'Port from the same Superior vineyards' }
+      { n: 'Vale Meão Vintage Port', grape: 'Douro field blend', note: 'Port from the same Superior vineyards' }
     ],
     traps: [
       'The Douro\'s three subregions are Baixo Corgo, Cima Corgo and Douro Superior',
@@ -8064,7 +8064,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Viña Tondonia Reserva', grape: 'Tempranillo with Garnacha, Graciano and Mazuelo', note: 'the fixed reference for traditional Rioja, released only after years in cask and bottle' },
       { n: 'Viña Tondonia Blanco Reserva', grape: 'Viura with Malvasia', note: 'barrel-aged white Rioja: the wine that tests whether a candidate can call style rather than fault' },
-      { n: 'Vina Bosconia', grape: 'Tempranillo-led blend', note: 'the rounder of the two flagship vineyards, often taught against Tondonia' }
+      { n: 'Viña Bosconia', grape: 'Tempranillo-led blend', note: 'the rounder of the two flagship vineyards, often taught against Tondonia' }
     ],
     traps: [
       'Tondonia is a vineyard, not the company: the house is R. López de Heredia',
@@ -8092,7 +8092,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-raul-perez', p: 'Raul Pérez',
+    id: 'p-raul-perez', p: 'Raúl Pérez',
     country: 'Spain and Portugal', r: 'Bierzo', sub: 'Valtuille de Abajo',
     founded: '',
     holdings: 'Family old vines at Valtuille de Abajo under the La Vizcaina labels, with projects in Ribeira Sacra, Rías Baixas and Monterrei.',
@@ -8138,7 +8138,7 @@ var WINE_PRODUCERS = [
     why: 'The house that kept single-vineyard sherry alive. Inocente is the answer when an examiner asks for a Fino from a named pago.',
     wines: [
       { n: 'Inocente Fino', grape: 'Palomino', note: 'single-vineyard Fino from Macharnudo Alto, fermented in butt' },
-      { n: 'Tio Diego Amontillado', grape: 'Palomino', note: 'the same base wine taken past the flor stage' },
+      { n: 'Tío Diego Amontillado', grape: 'Palomino', note: 'the same base wine taken past the flor stage' },
       { n: 'Cardenal Palo Cortado VORS', grape: 'Palomino', note: 'a thirty-year certified solera of the hardest style to explain' }
     ],
     traps: [
@@ -8156,8 +8156,8 @@ var WINE_PRODUCERS = [
     t: 'Leather, tobacco, dried cherry and sweet spice: released when ready, not when due',
     why: 'The reason Ribera del Duero permits Cabernet Sauvignon, and the reference point for Spanish ageing. Reserva Especial is the detail candidates miss.',
     wines: [
-      { n: 'Unico', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'Spain\'s benchmark red, held around a decade before release' },
-      { n: 'Unico Reserva Especial', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'a blend of several vintages, sold without a vintage year' },
+      { n: 'Único', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'Spain\'s benchmark red, held around a decade before release' },
+      { n: 'Único Reserva Especial', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'a blend of several vintages, sold without a vintage year' },
       { n: 'Valbuena 5o', grape: 'Tinto Fino with Merlot', note: 'released in its fifth year from the same estate' }
     ],
     traps: [
@@ -8167,7 +8167,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-contino', p: 'Vinedos del Contino',
+    id: 'p-contino', p: 'Viñedos del Contino',
     country: 'Spain and Portugal', r: 'Rioja', sub: 'Laserna, Rioja Alavesa',
     founded: '1973',
     holdings: 'A single walled property in a bend of the Ebro at Laserna, farmed and bottled as one estate.',
@@ -8176,7 +8176,7 @@ var WINE_PRODUCERS = [
     why: 'The chateau model in a region built on blending and purchased fruit, and the standard reference for varietal Graciano.',
     wines: [
       { n: 'Contino Reserva', grape: 'Tempranillo with Graciano and Mazuelo', note: 'an early single-estate Rioja, made only from the walled property at Laserna' },
-      { n: 'Contino Vina del Olivo', grape: 'Tempranillo with Graciano', note: 'a parcel selection around the estate\'s old olive tree' },
+      { n: 'Contino Viña del Olivo', grape: 'Tempranillo with Graciano', note: 'a parcel selection around the estate\'s old olive tree' },
       { n: 'Contino Graciano', grape: 'Graciano', note: 'one of the few varietal Gracianos in Rioja' }
     ],
     traps: [
@@ -8224,7 +8224,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-wine-and-soul', p: 'Wine and Soul',
-    country: 'Spain and Portugal', r: 'Douro', sub: 'Vale de Mendiz, Pinhao',
+    country: 'Spain and Portugal', r: 'Douro', sub: 'Vale de Mendiz, Pinhão',
     founded: '2001',
     holdings: 'Old co-planted parcels above Pinhao including the Pintas vineyard, with Quinta da Manoella at Vale de Mendiz.',
     style: 'Foot-trodden in lagares from very low yields on old vines: dark, mineral, tightly wound.',
@@ -8336,7 +8336,7 @@ var WINE_PRODUCERS = [
   {
     id: 'w-la-faraona', p: 'La Faraona',
     by: 'p-descendientes-de-j-palacios',
-    country: 'Spain and Portugal', r: 'Bierzo', sub: 'Corullon',
+    country: 'Spain and Portugal', r: 'Bierzo', sub: 'Corullón',
     founded: '',
     holdings: 'A very small, steep parcel high above Corullon on slate and quartzite, farmed biodynamically.',
     style: 'Whole-cluster Mencía in large old wood: pale, floral and taut, made for perfume rather than for weight.',
@@ -8373,7 +8373,7 @@ var WINE_PRODUCERS = [
   {
     id: 'w-noval-nacional', p: 'Quinta do Noval Nacional',
     by: 'p-quinta-do-noval',
-    country: 'Spain and Portugal', r: 'Douro', sub: 'Pinhao',
+    country: 'Spain and Portugal', r: 'Douro', sub: 'Pinhão',
     founded: '',
     holdings: 'A plot of a couple of hectares inside the Noval amphitheatre above Pinhao, planted on its own ungrafted roots.',
     style: 'Vintage Port from ungrafted vines: darker, more concentrated and slower to open than the estate\'s main declaration.',
@@ -8389,7 +8389,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'w-vega-sicilia-unico', p: 'Vega Sicilia Unico',
+    id: 'w-vega-sicilia-unico', p: 'Vega Sicilia Único',
     by: 'p-vega-sicilia',
     country: 'Spain and Portugal', r: 'Ribera del Duero', sub: 'Valbuena de Duero',
     founded: '1864',
@@ -8398,8 +8398,8 @@ var WINE_PRODUCERS = [
     t: 'Tempranillo and Cabernet held a decade before release: leather, tobacco, eternal',
     why: 'Spain\'s benchmark red and the reason Cabernet Sauvignon is permitted in Ribera del Duero. Candidates must separate Unico from Reserva Especial and Valbuena.',
     wines: [
-      { n: 'Unico', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'released around a decade after the vintage, and only in accepted years' },
-      { n: 'Unico Reserva Especial', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'a blend of several vintages, sold with no vintage on the label' }
+      { n: 'Único', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'released around a decade after the vintage, and only in accepted years' },
+      { n: 'Único Reserva Especial', grape: 'Tinto Fino with Cabernet Sauvignon', note: 'a blend of several vintages, sold with no vintage on the label' }
     ],
     traps: [
       'Reserva Especial is a multi-vintage blend, not a vintage Reserva',
@@ -8408,7 +8408,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'w-vina-el-pison', p: 'Viña El Pison',
+    id: 'w-vina-el-pison', p: 'Viña El Pisón',
     by: 'p-artadi',
     country: 'Spain and Portugal', r: 'Rioja Alavesa', sub: 'Laguardia',
     founded: '',
@@ -8417,7 +8417,7 @@ var WINE_PRODUCERS = [
     t: 'Black cherry, violet and fine grain: one walled parcel above Laguardia',
     why: 'The wine behind Artadi\'s 2015 resignation from the Rioja DOCa, and therefore the entry point to the Vinedo Singular and site-over-ageing debate.',
     wines: [
-      { n: 'Viña El Pison', grape: 'Tempranillo', note: 'the parcel behind Artadi\'s 2015 resignation from the Rioja DOCa' }
+      { n: 'Viña El Pisón', grape: 'Tempranillo', note: 'the parcel behind Artadi\'s 2015 resignation from the Rioja DOCa' }
     ],
     traps: [
       'Recent vintages do not carry the Rioja DOCa on the label',
@@ -8464,7 +8464,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-brundlmayer', p: 'Brundlmayer',
+    id: 'p-brundlmayer', p: 'Bründlmayer',
     country: 'Germany, Austria and Central Europe', r: 'Kamptal', sub: 'Langenlois',
     founded: '',
     holdings: 'Major holdings on the Zöbinger Heiligenstein, plus Ried Lamm, Kaferberg and Steinmassel around Langenlois.',
@@ -8485,7 +8485,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-clemens-busch', p: 'Clemens Busch',
-    country: 'Germany, Austria and Central Europe', r: 'Mosel', sub: 'Punderich (Marienburg)',
+    country: 'Germany, Austria and Central Europe', r: 'Mosel', sub: 'Pünderich (Marienburg)',
     founded: '',
     holdings: 'A concentrated holding in the Pundericher Marienburg on the terraced lower Mosel, farmed biodynamically and divided by the colour of the slate.',
     style: 'Dry, spontaneously fermented and unfined, with each slate colour bottled separately: blue slate taut and austere, red slate broader and darker toned.',
@@ -8502,16 +8502,16 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-disznoko', p: 'Disznoko',
-    country: 'Germany, Austria and Central Europe', r: 'Tokaj', sub: 'Mezozombor',
+    id: 'p-disznoko', p: 'Disznókő',
+    country: 'Germany, Austria and Central Europe', r: 'Tokaj', sub: 'Mezőzombor',
     founded: '1992',
     holdings: 'A large contiguous vineyard on volcanic soil at the southern edge of the Tokaj region, restored from state farm condition after its purchase by AXA Millesimes in 1992',
     style: 'Clean, precise botrytis wine with lifted citrus and quince, and a serious dry Furmint alongside the Aszu.',
     t: 'Tokaji polish under French ownership: quince, honey, clean botrytis lift',
     why: 'The clearest example of the foreign capital that reopened Tokaj after 1989, and a useful cross-reference: the same owner holds Château Pichon Baron in Pauillac.',
     wines: [
-      { n: 'Tokaji Aszu 6 Puttonyos', grape: 'Furmint, Hárslevelű and Sárga Muskotály', note: 'The estate\'s flagship sweet wine' },
-      { n: 'Kapi Vineyard Aszu', grape: 'Furmint and Harslevelu', note: 'A single-vineyard Aszu from the estate\'s best parcel' },
+      { n: 'Tokaji Aszú 6 Puttonyos', grape: 'Furmint, Hárslevelű and Sárga Muskotály', note: 'The estate\'s flagship sweet wine' },
+      { n: 'Kapi Vineyard Aszú', grape: 'Furmint and Harslevelu', note: 'A single-vineyard Aszu from the estate\'s best parcel' },
       { n: 'Dry Furmint', grape: 'Furmint', note: 'Part of the modern dry Furmint movement the region now depends on' },
       { n: 'Late Harvest', grape: 'Furmint and Harslevelu', note: 'A lighter sweet style below Aszu, made without the puttonyos process' }
     ],
@@ -8542,8 +8542,8 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-domane-wachau', p: 'Domane Wachau',
-    country: 'Germany, Austria and Central Europe', r: 'Wachau', sub: 'Durnstein',
+    id: 'p-domane-wachau', p: 'Domäne Wachau',
+    country: 'Germany, Austria and Central Europe', r: 'Wachau', sub: 'Dürnstein',
     founded: '1938',
     holdings: 'A growers\' co-operative farming a very large share of the Wachau\'s terraced vineyard area, including fruit from Achleiten, Kellerberg, Singerriedel and Loibenberg.',
     style: 'Clean, precise and site-transparent at a scale no private estate can match, with the full Steinfeder to Smaragd ladder represented.',
@@ -8569,9 +8569,9 @@ var WINE_PRODUCERS = [
     t: 'Crystalline Riesling, stone fruit over volcanic-slate precision',
     why: 'The estate that made the Nahe examinable in its own right rather than as a bridge between Mosel and Rheinhessen, and the owner of the region\'s benchmark vineyard and its best known monopole.',
     wines: [
-      { n: 'Niederhauser Hermannshöhle Riesling GG', grape: 'Riesling', note: 'The Nahe\'s most celebrated vineyard, dry at the top of the VDP pyramid' },
-      { n: 'Oberhauser Brucke Riesling Spätlese', grape: 'Riesling', note: 'A monopole, the source of the estate\'s finest sweet wines and Eiswein' },
-      { n: 'Schlossbockelheimer Kupfergrube Riesling GG', grape: 'Riesling', note: 'Volcanic soil from a former copper mine, the firmest of the sites' },
+      { n: 'Niederhäuser Hermannshöhle Riesling GG', grape: 'Riesling', note: 'The Nahe\'s most celebrated vineyard, dry at the top of the VDP pyramid' },
+      { n: 'Oberhäuser Brücke Riesling Spätlese', grape: 'Riesling', note: 'A monopole, the source of the estate\'s finest sweet wines and Eiswein' },
+      { n: 'Schlossböckelheimer Kupfergrube Riesling GG', grape: 'Riesling', note: 'Volcanic soil from a former copper mine, the firmest of the sites' },
       { n: 'Norheimer Dellchen Riesling GG', grape: 'Riesling', note: 'Steep volcanic and slate terraces, spicier and broader' }
     ],
     traps: [
@@ -8588,10 +8588,10 @@ var WINE_PRODUCERS = [
     t: 'Forst basalt and biodynamics: smoke, grapefruit, Pfalz on a tight rein',
     why: 'The estate classifies its vineyards using the 1828 Bavarian land tax survey, labelling P.C. and G.C., which is the cleanest German example of a historical tax map used as a quality hierarchy.',
     wines: [
-      { n: 'Forster Kirchenstuck', grape: 'Riesling', note: 'The site the 1828 Bavarian tax map ranked at the very top of the Pfalz' },
+      { n: 'Forster Kirchenstück', grape: 'Riesling', note: 'The site the 1828 Bavarian tax map ranked at the very top of the Pfalz' },
       { n: 'Forster Pechstein', grape: 'Riesling', note: 'Black basalt, the smokiest and most savoury of the Forst sites' },
       { n: 'Forster Jesuitengarten', grape: 'Riesling', note: 'The rounder, more perfumed neighbour to Kirchenstuck' },
-      { n: 'Wachenheimer Gerumpel', grape: 'Riesling', note: 'The home village\'s leading site' }
+      { n: 'Wachenheimer Gerümpel', grape: 'Riesling', note: 'The home village\'s leading site' }
     ],
     traps: [
       'The P.C. and G.C. marks are the estate\'s own use of an 1828 survey, not a legal classification',
@@ -8608,8 +8608,8 @@ var WINE_PRODUCERS = [
     t: 'Ungrafted old vines across the great Mosel sites: spice, slate, ripe drive',
     why: 'Ernst Loosen is the most visible international advocate for Mosel Riesling and the estate is the usual example of one grower holding parcels in several of the region\'s top vineyards at once.',
     wines: [
-      { n: 'Erdener Pralat Riesling Auslese', grape: 'Riesling', note: 'The warm red-slate amphitheatre, the estate\'s most concentrated site' },
-      { n: 'Urziger Wurzgarten Riesling Spätlese', grape: 'Riesling', note: 'Red volcanic sandstone giving the spice that names the vineyard' },
+      { n: 'Erdener Prälat Riesling Auslese', grape: 'Riesling', note: 'The warm red-slate amphitheatre, the estate\'s most concentrated site' },
+      { n: 'Ürziger Würzgarten Riesling Spätlese', grape: 'Riesling', note: 'Red volcanic sandstone giving the spice that names the vineyard' },
       { n: 'Wehlener Sonnenuhr Riesling Kabinett', grape: 'Riesling', note: 'Blue slate, the classic textural counterpoint to Urzig' },
       { n: 'Erdener Treppchen Riesling GG', grape: 'Riesling', note: 'The dry VDP tier from a steep terraced site' }
     ],
@@ -8649,7 +8649,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Riesling Ried Schütt Smaragd', grape: 'Riesling', note: 'The estate\'s most distinctive site, stony and slow to open' },
       { n: 'Grüner Veltliner Ried Loibenberg Smaragd', grape: 'Grüner Veltliner', note: 'Broad, peppery Grüner from warm terraces' },
-      { n: 'Riesling Vinothekfullung', grape: 'Riesling', note: 'A late-picked selection released above Smaragd, the estate\'s own extra tier' },
+      { n: 'Riesling Vinothekfüllung', grape: 'Riesling', note: 'A late-picked selection released above Smaragd, the estate\'s own extra tier' },
       { n: 'Riesling Ried Pfaffenberg Steiner Selection', grape: 'Riesling', note: 'A Kremstal site, so it cannot carry the Wachau ladder terms' }
     ],
     traps: [
@@ -8659,7 +8659,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-emrich-schonleber', p: 'Emrich-Schonleber',
+    id: 'p-emrich-schonleber', p: 'Emrich-Schönleber',
     country: 'Germany, Austria and Central Europe', r: 'Nahe', sub: 'Monzingen',
     founded: '',
     holdings: 'Concentrated at Monzingen in the upper Nahe, principally the Halenberg on blue slate and quartzite and the Fruhlingsplatzchen on weathered volcanic soils.',
@@ -8668,7 +8668,7 @@ var WINE_PRODUCERS = [
     why: 'With Dönnhoff and Schafer-Frohlich, one of the three Nahe estates a candidate is expected to name, and the one that anchors the cooler upper stretch of the river.',
     wines: [
       { n: 'Monzinger Halenberg Riesling GG', grape: 'Riesling', note: 'The estate\'s most severe and long-lived dry wine' },
-      { n: 'Monzinger Fruhlingsplatzchen Riesling GG', grape: 'Riesling', note: 'The rounder, more openly fruited of the two Grosse Lage sites' },
+      { n: 'Monzinger Frühlingsplätzchen Riesling GG', grape: 'Riesling', note: 'The rounder, more openly fruited of the two Grosse Lage sites' },
       { n: 'Monzinger Halenberg Riesling Auslese', grape: 'Riesling', note: 'Sweet Prädikat from the same slate, made only in suitable years' }
     ],
     traps: [
@@ -8706,7 +8706,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Santorini Assyrtiko', grape: 'Assyrtiko', note: 'From the island\'s oldest vine material' },
       { n: 'Vinsanto 20 Years Barrel Aged', grape: 'Assyrtiko and Aidani', note: 'Sun-dried and cask-aged for two decades, the island\'s sweet benchmark' },
-      { n: 'Estate Argyros Cuvee Monsignori', grape: 'Assyrtiko', note: 'A single-vineyard wine from ungrafted pre-phylloxera vines' }
+      { n: 'Estate Argyros Cuvée Monsignori', grape: 'Assyrtiko', note: 'A single-vineyard wine from ungrafted pre-phylloxera vines' }
     ],
     traps: [
       'Santorini\'s vines are ungrafted because volcanic ash resists phylloxera, not because of any quarantine',
@@ -8716,7 +8716,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-fx-pichler', p: 'F.X. Pichler',
-    country: 'Germany, Austria and Central Europe', r: 'Wachau', sub: 'Durnstein and Loiben',
+    country: 'Germany, Austria and Central Europe', r: 'Wachau', sub: 'Dürnstein and Loiben',
     founded: '',
     holdings: 'Terraced parcels on primary rock at Loibenberg, Kellerberg, Steinertal and Durnsteiner Liebenberg, with loess sites for Grüner Veltliner lower down.',
     style: 'The powerful end of the Wachau: high alcohol Smaragd wines of exotic stone fruit and extract, built to age rather than to refresh.',
@@ -8744,7 +8744,7 @@ var WINE_PRODUCERS = [
     why: 'The clearest single answer to a question about Ausbruch. Rust held free-town trading privileges from the seventeenth century on the strength of this wine, which is why the category survives as a place rather than a technique.',
     wines: [
       { n: 'Ruster Ausbruch', grape: 'Furmint, Welschriesling and others', note: 'The category that exists only in Rust, made from shrivelled botrytised berries' },
-      { n: 'Ruster Ausbruch Pinot Cuvee', grape: 'Pinot family blend', note: 'A varietal reading of the same sweet category' },
+      { n: 'Ruster Ausbruch Pinot Cuvée', grape: 'Pinot family blend', note: 'A varietal reading of the same sweet category' },
       { n: 'Solitaire', grape: 'Bordeaux varieties and Blaufränkisch', note: 'The estate\'s red flagship' }
     ],
     traps: [
@@ -8811,16 +8811,16 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-georg-breuer', p: 'Georg Breuer',
-    country: 'Germany, Austria and Central Europe', r: 'Rheingau', sub: 'Rudesheim',
+    country: 'Germany, Austria and Central Europe', r: 'Rheingau', sub: 'Rüdesheim',
     founded: '',
     holdings: 'Steep quartzite parcels in Rudesheimer Berg Schlossberg, Berg Roseneck and Berg Rottland, plus the Rauenthaler Nonnenberg held as a monopole.',
     style: 'Dry throughout, fermented spontaneously, smoky and taut, deliberately labelled by vineyard alone without a Prädikat term.',
     t: 'Rudesheim quartzite: dry, smoky, taut, named by vineyard alone',
     why: 'Bernhard Breuer was central to the Charta association founded in 1984 to reassert dry Rheingau Riesling, the movement that led to the region\'s Erstes Gewächs and to the VDP\'s dry pyramid.',
     wines: [
-      { n: 'Rudesheim Berg Schlossberg', grape: 'Riesling', note: 'The steepest quartzite site above the Rhine bend, the estate\'s summit wine' },
+      { n: 'Rüdesheim Berg Schlossberg', grape: 'Riesling', note: 'The steepest quartzite site above the Rhine bend, the estate\'s summit wine' },
       { n: 'Rauenthal Nonnenberg', grape: 'Riesling', note: 'A monopole, broader and spicier than the Rudesheim wines' },
-      { n: 'Rudesheim Berg Rottland', grape: 'Riesling', note: 'The warmer of the Berg sites, rounder in fruit' }
+      { n: 'Rüdesheim Berg Rottland', grape: 'Riesling', note: 'The warmer of the Berg sites, rounder in fruit' }
     ],
     traps: [
       'The estate labels by site without a Prädikat term, so the absence of Spätlese or Kabinett is a choice, not an omission',
@@ -8922,7 +8922,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-chappaz', p: 'Marie-Therese Chappaz',
+    id: 'p-chappaz', p: 'Marie-Thérèse Chappaz',
     country: 'Germany, Austria and Central Europe', r: 'Switzerland', sub: 'Valais (Fully)',
     founded: '',
     holdings: 'Steep granite terraces at Fully in the Valais, farmed biodynamically and worked largely by hand.',
@@ -8959,7 +8959,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-meyer-nakel', p: 'Meyer-Nakel',
+    id: 'p-meyer-nakel', p: 'Meyer-Näkel',
     country: 'Germany, Austria and Central Europe', r: 'Ahr', sub: 'Dernau',
     founded: '',
     holdings: 'Steep slate terraces in the Ahr valley, including sites at Dernau, Walporzheim and Neuenahr, planted almost entirely to Spätburgunder.',
@@ -8968,7 +8968,7 @@ var WINE_PRODUCERS = [
     why: 'The Ahr is one of Germany\'s smallest regions and one of the few planted mostly to red grapes. This estate is the name that makes it examinable, and the counterweight to Baden in any German Pinot question.',
     wines: [
       { n: 'Dernauer Pfarrwingert Spätburgunder GG', grape: 'Pinot Noir', note: 'Slate-grown Pinot from the estate\'s leading site' },
-      { n: 'Walporzheimer Krauterberg Spätburgunder GG', grape: 'Pinot Noir', note: 'The warmer, more structured of the Ahr parcels' },
+      { n: 'Walporzheimer Kräuterberg Spätburgunder GG', grape: 'Pinot Noir', note: 'The warmer, more structured of the Ahr parcels' },
       { n: 'Spätburgunder Blauschiefer', grape: 'Pinot Noir', note: 'The blue slate bottling that names the region\'s geology outright' }
     ],
     traps: [
@@ -8998,7 +8998,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-movia', p: 'Movia',
-    country: 'Germany, Austria and Central Europe', r: 'Slovenia', sub: 'Goriska Brda',
+    country: 'Germany, Austria and Central Europe', r: 'Slovenia', sub: 'Goriška Brda',
     founded: '1820',
     holdings: 'Vineyards straddling the border between Goriska Brda in Slovenia and Collio in Italy, farmed biodynamically.',
     style: 'Extended skin contact, long ageing, no added sulphur and no filtration, producing amber-toned whites that ask to be read as textural wines rather than aromatic ones.',
@@ -9024,7 +9024,7 @@ var WINE_PRODUCERS = [
     t: 'Pfalz aromatics at full volume: Rieslaner, Scheurebe, Muskateller, explosive',
     why: 'The name to reach for when a question moves past Riesling into German crossings. Rieslaner and Scheurebe questions almost always route through this estate.',
     wines: [
-      { n: 'Haardter Burgergarten Riesling GG', grape: 'Riesling', note: 'The estate\'s leading dry site' },
+      { n: 'Haardter Bürgergarten Riesling GG', grape: 'Riesling', note: 'The estate\'s leading dry site' },
       { n: 'Rieslaner Auslese', grape: 'Rieslaner', note: 'The house that kept this crossing alive as a serious sweet wine' },
       { n: 'Scheurebe Kabinett', grape: 'Scheurebe', note: 'Grapefruit and blackcurrant leaf, the classic Pfalz aromatic' },
       { n: 'Muskateller trocken', grape: 'Muskateller', note: 'Dry Muscat, a useful blind-tasting decoy against Scheurebe' }
@@ -9081,9 +9081,9 @@ var WINE_PRODUCERS = [
     t: 'Kiedrich polish: citrus blossom and botrytis honey at exam-clean precision',
     why: 'The Rheingau estate that produces the full botrytis ladder every year rather than occasionally, and the usual counterweight to Egon Müller when a question asks for great German sweet wine outside the Mosel.',
     wines: [
-      { n: 'Kiedricher Grafenberg Riesling Trockenbeerenauslese', grape: 'Riesling', note: 'Germany\'s most consistently produced great botrytis Riesling' },
-      { n: 'Kiedricher Grafenberg Riesling GG', grape: 'Riesling', note: 'The dry flagship from the estate\'s Grosse Lage' },
-      { n: 'Kiedricher Grafenberg Riesling Auslese', grape: 'Riesling', note: 'Gold capsule selections sit above the standard bottling' }
+      { n: 'Kiedricher Gräfenberg Riesling Trockenbeerenauslese', grape: 'Riesling', note: 'Germany\'s most consistently produced great botrytis Riesling' },
+      { n: 'Kiedricher Gräfenberg Riesling GG', grape: 'Riesling', note: 'The dry flagship from the estate\'s Grosse Lage' },
+      { n: 'Kiedricher Gräfenberg Riesling Auslese', grape: 'Riesling', note: 'Gold capsule selections sit above the standard bottling' }
     ],
     traps: [
       'Grafenberg is in Kiedrich; do not confuse it with Rheingau sites at Erbach or Rudesheim',
@@ -9091,7 +9091,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-schafer-frohlich', p: 'Schafer-Frohlich',
+    id: 'p-schafer-frohlich', p: 'Schäfer-Fröhlich',
     country: 'Germany, Austria and Central Europe', r: 'Nahe', sub: 'Bockenau',
     founded: '',
     holdings: 'Based at Bockenau in a side valley, with Grosse Lage parcels including Bockenauer Felseneck, Schlossbockelheimer Felsenberg and Kupfergrube, and Monzinger Halenberg.',
@@ -9100,7 +9100,7 @@ var WINE_PRODUCERS = [
     why: 'The modern reference for reductive, struck-match dry German Riesling, and the reason candidates are asked to distinguish deliberate reduction from fault in blind tasting.',
     wines: [
       { n: 'Bockenauer Felseneck Riesling GG', grape: 'Riesling', note: 'The home site, the estate\'s most quoted dry bottling' },
-      { n: 'Schlossbockelheimer Kupfergrube Riesling GG', grape: 'Riesling', note: 'Volcanic soils, the firmest expression in the range' },
+      { n: 'Schlossböckelheimer Kupfergrube Riesling GG', grape: 'Riesling', note: 'Volcanic soils, the firmest expression in the range' },
       { n: 'Bockenauer Felseneck Riesling Auslese', grape: 'Riesling', note: 'Botrytis selections from the same vineyard' }
     ],
     traps: [
@@ -9136,7 +9136,7 @@ var WINE_PRODUCERS = [
     t: 'Rheingau history in a capsule colour: apple, smoke, upright acid',
     why: 'The estate carries two of German wine\'s founding stories: the 1720 replanting to Riesling alone and the 1775 late-messenger tale that named Spätlese. It is also the standard example of Prädikat declared by capsule colour.',
     wines: [
-      { n: 'Grunlack Spätlese', grape: 'Riesling', note: 'The green capsule, tied to the estate\'s claim on the origin of Spätlese' },
+      { n: 'Grünlack Spätlese', grape: 'Riesling', note: 'The green capsule, tied to the estate\'s claim on the origin of Spätlese' },
       { n: 'Silberlack Grosses Gewächs', grape: 'Riesling', note: 'The dry flagship under the VDP\'s top dry designation' },
       { n: 'Rotlack Kabinett', grape: 'Riesling', note: 'The red capsule, the entry into the estate\'s colour code' }
     ],
@@ -9165,7 +9165,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-szepsy', p: 'Szepsy',
-    country: 'Germany, Austria and Central Europe', r: 'Tokaj', sub: 'Mad',
+    country: 'Germany, Austria and Central Europe', r: 'Tokaj', sub: 'Mád',
     founded: '',
     holdings: 'Parcels across the classified sites of Mad and its neighbours, including Szent Tamás, Urban, Betsek and Nyulaszo, farmed at very low yields.',
     style: 'Dry Furmint of extreme concentration and acid, barrel fermented and site specific, alongside Aszu made only when the year permits.',
@@ -9174,7 +9174,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Szent Tamás Furmint', grape: 'Furmint', note: 'Dry single-vineyard Furmint, the model for the modern category' },
       { n: 'Urban Furmint', grape: 'Furmint', note: 'A second classified site, stonier and tighter' },
-      { n: 'Tokaji Aszu 6 Puttonyos', grape: 'Furmint and Harslevelu', note: 'Made in small quantity and only in suitable vintages' }
+      { n: 'Tokaji Aszú 6 Puttonyos', grape: 'Furmint and Harslevelu', note: 'Made in small quantity and only in suitable vintages' }
     ],
     traps: [
       'Dry Furmint carries no puttonyos and no Aszu designation',
@@ -9184,16 +9184,16 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-royal-tokaji', p: 'The Royal Tokaji Wine Company',
-    country: 'Germany, Austria and Central Europe', r: 'Tokaj', sub: 'Mad',
+    country: 'Germany, Austria and Central Europe', r: 'Tokaj', sub: 'Mád',
     founded: '1990',
     holdings: 'Parcels across the historically classified vineyards of Mad and its neighbours, including Mézes Mály, Szent Tamás, Nyulaszo and Betsek.',
     style: 'Single-vineyard Aszu bottled by site, with the apricot and orange marmalade of botrytis carried on Furmint\'s very high acid.',
     t: 'First-growth Tokaj rebuilt: apricot, orange marmalade, saline Furmint acid',
     why: 'Founded in 1990 by foreign and local partners, it was the first major post-communist investment in Tokaj and the venture that restored single-vineyard labelling to a region whose classification predates 1855 by more than a century.',
     wines: [
-      { n: 'Mézes Mály Aszu 6 Puttonyos', grape: 'Furmint and Harslevelu', note: 'Historically ranked among the very highest vineyards in Tokaj' },
-      { n: 'Szent Tamás Aszu 6 Puttonyos', grape: 'Furmint and Harslevelu', note: 'A first growth site, firmer and stonier than Mézes Mály' },
-      { n: 'Aszu 5 Puttonyos Red Label', grape: 'Furmint and Harslevelu', note: 'The widely distributed benchmark for the category' },
+      { n: 'Mézes Mály Aszú 6 Puttonyos', grape: 'Furmint and Harslevelu', note: 'Historically ranked among the very highest vineyards in Tokaj' },
+      { n: 'Szent Tamás Aszú 6 Puttonyos', grape: 'Furmint and Harslevelu', note: 'A first growth site, firmer and stonier than Mézes Mály' },
+      { n: 'Aszú 5 Puttonyos Red Label', grape: 'Furmint and Harslevelu', note: 'The widely distributed benchmark for the category' },
       { n: 'Essencia', grape: 'Furmint', note: 'Free-run nectar, produced only in suitable vintages' }
     ],
     traps: [
@@ -9230,8 +9230,8 @@ var WINE_PRODUCERS = [
     t: 'Furmint both ways: dry Mandolas stone fruit, Aszu of orange and saffron',
     why: 'The Spanish ownership makes it a cross-region question, and Mandolas is one of the bottlings a candidate should name when asked how Tokaj rebuilt itself on dry wine.',
     wines: [
-      { n: 'Tokaji Aszu 5 Puttonyos', grape: 'Furmint and Harslevelu', note: 'Long cellar ageing before release, in the Vega Sicilia manner' },
-      { n: 'Mandolas', grape: 'Furmint', note: 'An early and influential dry Furmint' }
+      { n: 'Tokaji Aszú 5 Puttonyos', grape: 'Furmint and Harslevelu', note: 'Long cellar ageing before release, in the Vega Sicilia manner' },
+      { n: 'Mandolás', grape: 'Furmint', note: 'An early and influential dry Furmint' }
     ],
     traps: [
       'Oremus is the estate name and also a historic vineyard name in the region',
@@ -9259,7 +9259,7 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-keller', p: 'Weingut Keller',
-    country: 'Germany, Austria and Central Europe', r: 'Rheinhessen', sub: 'Florsheim-Dalsheim',
+    country: 'Germany, Austria and Central Europe', r: 'Rheinhessen', sub: 'Flörsheim-Dalsheim',
     founded: '1789',
     holdings: 'Grosse Lage parcels at Westhofen, including Morstein, Kirchspiel, Abtserde within Brunnenhauschen, and the Dalsheimer Hubacker, with later acquisitions on the Roter Hang at Nierstein.',
     style: 'Dry Riesling of extreme tension built on limestone and clay, low in alcohol for its concentration, with long lees ageing and no obvious oak.',
@@ -9347,7 +9347,7 @@ var WINE_PRODUCERS = [
       { n: 'Trockenbeerenauslese Zwischen den Seen', grape: 'Welschriesling, Scheurebe and others', note: 'Neutral ageing, mango and honey without oak' },
       { n: 'Trockenbeerenauslese Nouvelle Vague', grape: 'Chardonnay, Traminer and others', note: 'New barrique, the deliberately modern counterpart' },
       { n: 'Grande Cuvée Trockenbeerenauslese', grape: 'Blend', note: 'The blended summit of the numbered collection' },
-      { n: 'Beerenauslese Cuvee', grape: 'Welschriesling and Chardonnay', note: 'The accessible entry into Neusiedlersee botrytis' }
+      { n: 'Beerenauslese Cuvée', grape: 'Welschriesling and Chardonnay', note: 'The accessible entry into Neusiedlersee botrytis' }
     ],
     traps: [
       'Zwischen den Seen and Nouvelle Vague describe ageing vessel, not sweetness level',
@@ -9446,7 +9446,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'w-hermannshohle', p: 'Niederhauser Hermannshöhle',
+    id: 'w-hermannshohle', p: 'Niederhäuser Hermannshöhle',
     by: 'p-donnhoff',
     country: 'Germany, Austria and Central Europe', r: 'Nahe', sub: 'Niederhausen',
     founded: '',
@@ -9455,9 +9455,9 @@ var WINE_PRODUCERS = [
     t: 'The Nahe\'s benchmark site: peach, wet stone, cool herbal length',
     why: 'The vineyard that establishes the Nahe as a region in its own right rather than a compromise between its neighbours. Naming it correctly, with village and site, is a standard Advanced question.',
     wines: [
-      { n: 'Niederhauser Hermannshöhle Riesling GG', grape: 'Riesling', note: 'The dry summit of the Nahe' },
-      { n: 'Niederhauser Hermannshöhle Riesling Spätlese', grape: 'Riesling', note: 'The sweet reading of the same slope' },
-      { n: 'Niederhauser Hermannshöhle Riesling Auslese', grape: 'Riesling', note: 'Botrytis selections in suitable years' }
+      { n: 'Niederhäuser Hermannshöhle Riesling GG', grape: 'Riesling', note: 'The dry summit of the Nahe' },
+      { n: 'Niederhäuser Hermannshöhle Riesling Spätlese', grape: 'Riesling', note: 'The sweet reading of the same slope' },
+      { n: 'Niederhäuser Hermannshöhle Riesling Auslese', grape: 'Riesling', note: 'Botrytis selections in suitable years' }
     ],
     traps: [
       'The Nahe is a separate anbaugebiet, not part of the Mosel or Rheinhessen',
@@ -9468,7 +9468,7 @@ var WINE_PRODUCERS = [
   {
     id: 'w-kellerberg', p: 'Ried Kellerberg',
     by: 'p-fx-pichler',
-    country: 'Germany, Austria and Central Europe', r: 'Wachau', sub: 'Durnstein and Loiben',
+    country: 'Germany, Austria and Central Europe', r: 'Wachau', sub: 'Dürnstein and Loiben',
     founded: '',
     holdings: 'A terraced primary rock site on gneiss between Durnstein and Loiben, worked by F.X. Pichler, Alzinger, Knoll, Tegernseerhof and Domane Wachau among others',
     style: 'The fullest expression of Wachau Riesling: mango and white pepper over stone, with Smaragd ripeness giving weight that stays dry and long.',
@@ -9487,7 +9487,7 @@ var WINE_PRODUCERS = [
   {
     id: 'w-zobinger-heiligenstein', p: 'Ried Zöbinger Heiligenstein',
     by: 'p-brundlmayer',
-    country: 'Germany, Austria and Central Europe', r: 'Kamptal', sub: 'Zobing (Langenlois)',
+    country: 'Germany, Austria and Central Europe', r: 'Kamptal', sub: 'Zöbing (Langenlois)',
     founded: '',
     holdings: 'A steep terraced hill of Permian desert sandstone with volcanic material near Zobing, worked by Brundlmayer, Schloss Gobelsburg, Hirsch and others.',
     style: 'Riesling of exotic stone fruit and dusty spice over a dry, faintly warm mineral base, quite unlike the cooler gneiss Rieslings of the Wachau.',
@@ -9598,7 +9598,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-beaux-freres', p: 'Beaux Freres',
+    id: 'p-beaux-freres', p: 'Beaux Frères',
     country: 'The United States and Canada', r: 'Willamette Valley', sub: 'Ribbon Ridge',
     founded: '1986',
     holdings: 'The Beaux Freres vineyard and The Upper Terrace on Ribbon Ridge, farmed biodynamically.',
@@ -9606,7 +9606,7 @@ var WINE_PRODUCERS = [
     t: 'Ribbon Ridge ripeness with biodynamic lift: black cherry, earth, sweet spice',
     why: 'Founded by Michael Etzel with his brother-in-law Robert Parker, which is what the name means. Ribbon Ridge is the smallest Willamette sub-AVA and sits entirely inside the Chehalem Mountains, a nesting relationship examiners like.',
     wines: [
-      { n: 'The Beaux Freres Vineyard', grape: 'Pinot Noir', note: 'The home vineyard on Ribbon Ridge' },
+      { n: 'The Beaux Frères Vineyard', grape: 'Pinot Noir', note: 'The home vineyard on Ribbon Ridge' },
       { n: 'The Upper Terrace', grape: 'Pinot Noir', note: 'The higher block, planted at tighter spacing' },
       { n: 'Ribbon Ridge Willamette Valley', grape: 'Pinot Noir', note: 'The appellation bottling' }
     ],
@@ -9923,7 +9923,7 @@ var WINE_PRODUCERS = [
     t: 'Burgundy\'s own reading of Dundee Hills: red cherry, iron, restrained frame',
     why: 'Robert Drouhin bought land in Oregon in 1987 after the 1980 rematch with Eyrie, and installed his daughter Veronique as winemaker. It is the clearest case of Burgundian capital validating a New World Pinot region.',
     wines: [
-      { n: 'Laurene', grape: 'Pinot Noir', note: 'The barrel selection that is the house flagship' },
+      { n: 'Laurène', grape: 'Pinot Noir', note: 'The barrel selection that is the house flagship' },
       { n: 'Louise', grape: 'Pinot Noir', note: 'A further selection made only in some years' },
       { n: 'Arthur', grape: 'Chardonnay', note: 'The estate Chardonnay' }
     ],
@@ -10337,7 +10337,7 @@ var WINE_PRODUCERS = [
     why: 'An English founder building a block-by-block Burgundian estate in a warm Sonoma appellation, which makes it a useful example of technique overriding climate expectation. Knights Valley is the AVA most candidates cannot place.',
     wines: [
       { n: 'Ma Belle-Fille', grape: 'Chardonnay', note: 'One of several named estate block Chardonnays' },
-      { n: 'Belle Cote', grape: 'Chardonnay', note: 'The neighbouring block, bottled separately' },
+      { n: 'Belle Côte', grape: 'Chardonnay', note: 'The neighbouring block, bottled separately' },
       { n: 'Les Pavots', grape: 'Bordeaux blend', note: 'The estate red from Knights Valley' }
     ],
     traps: [
@@ -10951,7 +10951,7 @@ var WINE_PRODUCERS = [
     t: 'Montevideo smallholding: Tannat of blackberry and grip, crisp Albariño',
     why: 'Canelones is where most Uruguayan wine is actually made, and Bouza is the small producer used to show that the country\'s quality is not confined to the new coastal estates.',
     wines: [
-      { n: 'Tannat Parcela Unica', grape: 'Tannat', note: 'A single-parcel Tannat, the fine-wine face of the national grape' },
+      { n: 'Tannat Parcela Única', grape: 'Tannat', note: 'A single-parcel Tannat, the fine-wine face of the national grape' },
       { n: 'Albariño', grape: 'Albariño', note: 'Canelones Albariño, leaner and more citric than Maldonado\'s' },
       { n: 'Tannat Tempranillo', grape: 'Tannat and Tempranillo', note: 'A characteristic Uruguayan blend that tempers Tannat\'s tannin' }
     ],
@@ -10981,14 +10981,14 @@ var WINE_PRODUCERS = [
   },
   {
     id: 'p-bodega-colome', p: 'Bodega Colomé',
-    country: 'Australia, New Zealand, South Africa and South America', r: 'Salta', sub: 'Calchaqui Valleys, Molinos',
+    country: 'Australia, New Zealand, South Africa and South America', r: 'Salta', sub: 'Calchaquí Valleys, Molinos',
     founded: '1831',
     holdings: 'Among Argentina\'s oldest working wineries, in the Calchaqui Valleys of Salta; holds pre-phylloxera vines dating to the 1850s and the Altura Maxima vineyard at roughly 3,100 metres, among the highest commercial vineyards in the world.',
     style: 'Extreme altitude: intense colour, thick skins and firm tannin in the Malbec, with Torrontés that smells sweetly floral and finishes dry.',
     t: 'Salta at the roof of the vineyard world: dense Malbec, floral dry Torrontés',
     why: 'Salta and the Calchaqui Valleys supply the altitude extreme and the Torrontés answer, both stock questions on Argentina beyond Mendoza.',
     wines: [
-      { n: 'Altura Maxima', grape: 'Malbec', note: 'From roughly 3,100 metres, the extreme case for the altitude argument' },
+      { n: 'Altura Máxima', grape: 'Malbec', note: 'From roughly 3,100 metres, the extreme case for the altitude argument' },
       { n: 'Colomé Estate Malbec', grape: 'Malbec', note: 'The Calchaqui house style, dense and high-toned' },
       { n: 'Colomé Torrontés', grape: 'Torrontés Riojano', note: 'Salta\'s signature white, aromatic and dry' }
     ],
@@ -11000,8 +11000,8 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-bodega-garzon', p: 'Bodega Garzon',
-    country: 'Australia, New Zealand, South Africa and South America', r: 'Maldonado', sub: 'Garzon, Uruguay',
+    id: 'p-bodega-garzon', p: 'Bodega Garzón',
+    country: 'Australia, New Zealand, South Africa and South America', r: 'Maldonado', sub: 'Garzón, Uruguay',
     founded: '',
     holdings: 'Large Uruguayan estate near Punta del Este in Maldonado, planted on decomposed granite hillsides within reach of the Atlantic, with Alberto Antonini consulting.',
     style: 'Atlantic-cooled Uruguay: Tannat with firm but ripe tannin rather than rustic grip, and saline, citric Albariño.',
@@ -11037,7 +11037,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-casa-marin', p: 'Casa Marin',
+    id: 'p-casa-marin', p: 'Casa Marín',
     country: 'Australia, New Zealand, South Africa and South America', r: 'San Antonio Valley', sub: 'Lo Abarca',
     founded: '2000',
     holdings: 'Founded by Maria Luz Marin at Lo Abarca, roughly four kilometres from the Pacific, one of Chile\'s closest vineyards to the ocean; Lo Abarca was later recognised as its own denomination of origin.',
@@ -11066,7 +11066,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Adrianna Vineyard White Bones and White Stones', grape: 'Chardonnay', note: 'Two adjacent parcels of one vineyard bottled separately, the clearest altitude and soil comparison in Argentina' },
       { n: 'Adrianna Vineyard Fortuna Terrae and Mundus Bacillus Terrae', grape: 'Malbec', note: 'Single-parcel Gualtallary Malbec, chalky and floral' },
-      { n: 'Nicolas Catena Zapata', grape: 'Cabernet Sauvignon and Malbec', note: 'The house flagship blend, the wine that reset Argentine ambition' }
+      { n: 'Nicolás Catena Zapata', grape: 'Cabernet Sauvignon and Malbec', note: 'The house flagship blend, the wine that reset Argentine ambition' }
     ],
     traps: [
       'The Uco Valley sits higher and cooler than Luján de Cuyo, so its wines are more floral and taut, not bigger',
@@ -11140,7 +11140,7 @@ var WINE_PRODUCERS = [
     why: 'The house that began Chile\'s fine wine era, and the address, Puente Alto, that examiners expect for Chile\'s best Cabernet.',
     wines: [
       { n: 'Don Melchor', grape: 'Cabernet Sauvignon', note: 'Chile\'s first icon Cabernet, from Puente Alto, first made in 1987' },
-      { n: 'Carmin de Peumo', grape: 'Carmenere', note: 'The house\'s serious argument for Carmenere, from Peumo in Cachapoal' },
+      { n: 'Carmín de Peumo', grape: 'Carmenere', note: 'The house\'s serious argument for Carmenere, from Peumo in Cachapoal' },
       { n: 'Amelia', grape: 'Chardonnay', note: 'Cool-climate Chardonnay, the house\'s premium white' },
       { n: 'Casillero del Diablo', grape: 'Various', note: 'The global commercial brand, worth knowing for scale questions' }
     ],
@@ -11214,7 +11214,7 @@ var WINE_PRODUCERS = [
     why: 'The reference for Chile\'s heritage revival: old dry-farmed País and Cinsault in the Secano Interior of Itata and Maule, and clay-vessel ageing. De Martino is credited with the first Chilean wine labelled as Carmenère, in 1996.',
     wines: [
       { n: 'Viejas Tinajas Cinsault', grape: 'Cinsault', note: 'Itata old-vine Cinsault fermented and aged in clay tinajas' },
-      { n: 'Gallardia del Itata', grape: 'País and Cinsault', note: 'The heritage varieties of the Secano Interior' },
+      { n: 'Gallardía del Itata', grape: 'País and Cinsault', note: 'The heritage varieties of the Secano Interior' },
       { n: 'Alto de Piedras Carmenere', grape: 'Carmenere', note: 'Single-vineyard Carmenere from Isla de Maipo' }
     ],
     traps: [
@@ -11307,7 +11307,7 @@ var WINE_PRODUCERS = [
     wines: [
       { n: 'Brut', grape: 'Chardonnay and Pinot Noir', note: 'The non-vintage benchmark for Cap Classique' },
       { n: 'Blanc de Blancs', grape: 'Chardonnay', note: 'Vintage Chardonnay Cap Classique from Robertson limestone' },
-      { n: 'Cuvee Clive', grape: 'Chardonnay and Pinot Noir', note: 'The prestige cuvee, made only in selected years' }
+      { n: 'Cuvée Clive', grape: 'Chardonnay and Pinot Noir', note: 'The prestige cuvee, made only in selected years' }
     ],
     traps: [
       'Cap Classique is a method designation, not a region',
@@ -11494,7 +11494,7 @@ var WINE_PRODUCERS = [
     why: 'The clearest example of French capital and consultancy remaking a Chilean site, and the wine most often paired with Almaviva when Chile\'s icons are listed.',
     wines: [
       { n: 'Clos Apalta', grape: 'Carmenere led with Cabernet Sauvignon and Merlot', note: 'Chile\'s most cited Carmenere-led icon, from old Apalta vines' },
-      { n: 'Cuvee Alexandre', grape: 'Cabernet Sauvignon, Carmenere or Chardonnay by bottling', note: 'The tier below, showing the same idiom at working scale' }
+      { n: 'Cuvée Alexandre', grape: 'Cabernet Sauvignon, Carmenere or Chardonnay by bottling', note: 'The tier below, showing the same idiom at working scale' }
     ],
     traps: [
       'Clos Apalta is Carmenere-led, while Almaviva and Don Melchor are Cabernet-led',
@@ -11853,7 +11853,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-errazuriz', p: 'Vina Errazuriz',
+    id: 'p-errazuriz', p: 'Viña Errázuriz',
     country: 'Australia, New Zealand, South Africa and South America', r: 'Aconcagua Valley', sub: 'Panquehue',
     founded: '1870',
     holdings: 'Founded by Maximiano Errazuriz at Panquehue in the Aconcagua; now run by Eduardo Chadwick, with coastal Aconcagua Costa vineyards on schist and the Viñedo Chadwick vineyard in Puente Alto, Maipo.',
@@ -11873,7 +11873,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-montes', p: 'Vina Montes',
+    id: 'p-montes', p: 'Viña Montes',
     country: 'Australia, New Zealand, South Africa and South America', r: 'Colchagua Valley', sub: 'Apalta',
     founded: '1988',
     holdings: 'Founded by Aurelio Montes and partners; holds steep hillside vineyards in the Apalta amphitheatre in Colchagua, farmed dry in places, alongside coastal Zapallar and Marchigue sites.',
@@ -11892,7 +11892,7 @@ var WINE_PRODUCERS = [
     ]
   },
   {
-    id: 'p-santa-rita', p: 'Vina Santa Rita',
+    id: 'p-santa-rita', p: 'Viña Santa Rita',
     country: 'Australia, New Zealand, South Africa and South America', r: 'Maipo Valley', sub: 'Alto Jahuel',
     founded: '1880',
     holdings: 'Historic estate at Alto Jahuel in the Maipo, with holdings across Chile; the 120 range takes its name from the 120 patriots said to have sheltered on the property in 1814.',

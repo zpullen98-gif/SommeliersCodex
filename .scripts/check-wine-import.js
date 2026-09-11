@@ -31,13 +31,16 @@
  *   4. A VINTAGE IS A YEAR THAT IS ON THE PAGE. Case numbers, bin numbers,
  *      scores and years inside words are not vintages.
  *
- * Exits non-zero on any failure. No arguments.
+ * Exits non-zero on any failure. Takes an optional js directory.
  */
 const { readFileSync } = require('node:fs');
 const { join } = require('node:path');
 const vm = require('node:vm');
 
-const JS = join(__dirname, '..', 'js');
+/* Takes a js directory, like the other gates, because this file is shared
+   with the monorepo where the wing lives at codex/js rather than at js. */
+const JS = process.argv.slice(2).find((a) => a.charAt(0) !== '-')
+  || join(__dirname, '..', 'js');
 const sandbox = {};
 vm.runInNewContext(
   readFileSync(join(JS, 'wine-parse.js'), 'utf8') + ';\n' +

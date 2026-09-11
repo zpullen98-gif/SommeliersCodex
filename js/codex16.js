@@ -429,10 +429,21 @@ keyOwned = function (k, lvl) {
 /* ═══════════ search ═══════════
    The app has had none. Five hundred producer records and a venue's own wine
    list are a filing cabinet without one. */
+/* SEARCH IS ACCENT-BLIND, AND HAS TO BE.
+   Spelling the corpus properly created this problem: Bründlmayer, Disznókő and
+   Château Lafite are now correct, and nobody is typing an umlaut into a search
+   box. Both sides are stripped of their marks before comparing, so "bundl" and
+   "bründl" find the same estate and "chateau" finds every Château. */
+function codexFold(s) {
+  var t = String(s == null ? '' : s);
+  try { t = t.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } catch (e) { }
+  return t.toLowerCase();
+}
+
 function codexFind(term) {
-  var t = String(term || '').trim().toLowerCase();
+  var t = codexFold(String(term || '').trim());
   if (t.length < 2) return null;
-  var hit = function (o) { return JSON.stringify(o).toLowerCase().indexOf(t) >= 0; };
+  var hit = function (o) { return codexFold(JSON.stringify(o)).indexOf(t) >= 0; };
   return {
     producers: prodCorpus().filter(hit).slice(0, 40),
     bottles: (ST.cellar || []).filter(hit).slice(0, 20),
