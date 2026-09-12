@@ -73,7 +73,9 @@ const LIST = [
   'Produttori del Barbaresco Riserva Montefico 2016  145',
   'Chardonnay, in the manner of Coche-Dury           30',
   'Weingut Donnhoff Oberhauser Brucke Riesling Spatlese 2019   19',
-  'Quinta do Noval Nacional Vintage Port 2011               400'
+  'Quinta do Noval Nacional Vintage Port 2011               400',
+  'Chateau Petrus 2015                                     4200',
+  'Sassicaia 2016                                          1,250'
 ].join('\n');
 
 const CORPUS = [
@@ -83,7 +85,10 @@ const CORPUS = [
   { id: 'p-coche', p: 'Coche-Dury', r: 'Meursault', sub: '', wines: [{ n: 'Meursault Perrieres', grape: 'Chardonnay' }] },
   { id: 'p-donnhoff', p: 'Donnhoff', r: 'Nahe', sub: 'Oberhausen', wines: [{ n: 'Hermannshohle', grape: 'Riesling' }] },
   { id: 'p-noval', p: 'Quinta do Noval', r: 'Douro', sub: 'Pinhao', wines: [{ n: 'Nacional', grape: 'Field blend' }] },
-  { id: 'p-noval-nac', p: 'Quinta do Noval Nacional', r: 'Douro', sub: 'Pinhao', wines: [{ n: 'Vintage Port', grape: 'Field blend' }] }
+  { id: 'p-noval-nac', p: 'Quinta do Noval Nacional', r: 'Douro', sub: 'Pinhao', wines: [{ n: 'Vintage Port', grape: 'Field blend' }] },
+  { id: 'p-petrus', p: 'Chateau Petrus', r: 'Pomerol', sub: '', wines: [{ n: 'Petrus', grape: 'Merlot' }] },
+  { id: 'p-san-guido', p: 'Tenuta San Guido', r: 'Bolgheri', sub: '', wines: [{ n: 'Sassicaia', grape: 'Cabernet Sauvignon, Cabernet Franc' }] },
+  { id: 'w-sassicaia', p: 'Sassicaia', by: 'p-san-guido', r: 'Bolgheri', sub: '', wines: [{ n: 'Sassicaia', grape: 'Cabernet Sauvignon, Cabernet Franc' }] }
 ];
 
 /* ---- 1. the parser still reads a list ---------------------------------- */
@@ -223,6 +228,49 @@ const subLeak = rows.filter((r) => r.region && CORPUS.some((c) => c.id === r.mat
 if (subLeak.length) fail.push(['a record sub field reached a bottle region field',
   subLeak.map((r) => r.raw.trim() + ' | region = "' + r.region + '"')]);
 else say.push('no bottle region carries a sub field, which is not reliably a place');
+
+/* ---- 7. a wine list prints four figures -------------------------------
+   PRICED_BARE capped a bare whole number at three digits, which is right for
+   a food menu and loses the top of a wine list. A bottle at 1250 or 4200 was
+   not a price, so either the number stayed inside the wine's name or, when
+   the line followed a priced one, the whole line was absorbed as the previous
+   bottle's tasting note and that bottle left the import in silence. The cap
+   was protecting a YEAR, so a year is what is excluded now. */
+const big = rows.find((r) => /petrus/i.test(r.raw));
+if (!big) fail.push(['the four figure price case never reached a row', []]);
+else if (big.bottle !== '4200') fail.push(['a four figure price was not read as a price',
+  [big.raw.trim() + ' | bottle = ' + JSON.stringify(big.bottle) + ', name = ' + JSON.stringify(big.name)]]);
+else if (/4200/.test(big.name)) fail.push(['the price was left inside the wine name', [big.name]]);
+else say.push('a four figure price is read as a price and leaves the wine name');
+
+const sep = rows.find((r) => /sassicaia/i.test(r.raw));
+if (sep && sep.bottle !== '1,250') fail.push(['a thousands separator defeated the price',
+  [sep.raw.trim() + ' | bottle = ' + JSON.stringify(sep.bottle)]]);
+else if (sep) say.push('a price printed with a thousands separator is read whole');
+
+/* And the thing the cap existed for still holds. */
+const vintageAsPrice = rows.filter((r) => /^(19|20)\d{2}$/.test(String(r.bottle)) || /^(19|20)\d{2}$/.test(String(r.glass)));
+if (vintageAsPrice.length) fail.push(['a vintage was read as a price',
+  vintageAsPrice.map((r) => r.raw.trim() + ' | ' + r.glass + ' / ' + r.bottle)]);
+else say.push('no vintage was read as a price');
+
+/* ---- 8. a wine looked up by its own name is not its own producer -------
+   103 corpus records exist so a candidate can find Sassicaia without knowing
+   Tenuta San Guido. Head-matching found them first, so the wine's name went
+   into the Producer field and the Wine field was left empty. The maker is in
+   the record's `by`. */
+if (sep) {
+  if (sep.producer !== 'Tenuta San Guido') {
+    fail.push(['an icon wine was imported as its own producer',
+      [sep.raw.trim() + ' | producer = ' + JSON.stringify(sep.producer) + ', wine = ' + JSON.stringify(sep.name)]]);
+  } else if (sep.name !== 'Sassicaia') {
+    fail.push(['the icon wine lost its own name', [sep.raw.trim() + ' | wine = ' + JSON.stringify(sep.name)]]);
+  } else if (sep.fromCodex.indexOf('producer') < 0) {
+    fail.push(['an inferred producer did not declare itself in fromCodex', [sep.raw.trim()]]);
+  } else {
+    say.push('a wine looked up by its own name resolves to its maker, and says the maker was inferred');
+  }
+}
 
 /* ---- report -------------------------------------------------------------- */
 console.log('\n  Checking what the wine list importer is allowed to say\n');
