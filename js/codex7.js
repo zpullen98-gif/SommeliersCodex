@@ -72,7 +72,18 @@ function applyLevel(lvl,skipRender){
 (function(){
   var stored=null;
   try{stored=localStorage.getItem('codexLevel')}catch(e){}
-  if(stored&&LEVELS[stored]&&stored!=='certified')applyLevel(stored,true);
+  if(stored&&LEVELS[stored]&&stored!=='certified'){ applyLevel(stored,true); return; }
+  if(stored) return;   /* chose Village once, and that choice stands */
+  /* NEVER CHOSEN: begin at the beginning. activeLevel is declared 'certified'
+     because certified stat keys are deliberately unprefixed and every existing
+     record depends on that, so the declaration cannot move. What moves is what
+     a device that has never chosen lands on: the second of four ranks framed
+     the whole home screen, down to "0 of 1283 questions met", for somebody who
+     had not begun the first. A device with no stored rank AND no answers in it
+     has never been used. */
+  var fresh=true;
+  try{ fresh=!(ST&&ST.q&&Object.keys(ST.q).length); }catch(e){}
+  if(fresh&&LEVELS.intro) applyLevel('intro',true);
 })();
 
 /* ---- per-level mock config (codex3's wrapper hard-codes 45/38min when S._simN is falsy) ---- */
