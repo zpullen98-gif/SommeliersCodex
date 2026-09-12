@@ -57,7 +57,12 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'data-primers-advanced.js', 'data-master.js', 'data-primers-master.js',
   'codex7.js', 'codex8.js', 'codex9.js', 'codex10.js', 'codex11.js', 'codex12.js',
   'codex13.js', 'codex14.js', 'codex15.js', 'data-producers.js', 'wine-parse.js',
-  'wine-rows.js', 'codex16.js'].concat(WITHOUT_17 ? [] : ['codex17.js']);
+  'wine-rows.js', 'codex16.js'].concat(WITHOUT_17 ? [] : ['codex17.js'])
+  /* codex18 and codex19 are part of the chain and codex19 owns a merge clause
+     of its own, so the harness has to run them or it proves nothing about the
+     newest store. codex18 injects a stylesheet at load, which is why the
+     document stub below grew createElement and a head. */
+  .concat(['codex18.js', 'codex19.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);
@@ -121,6 +126,8 @@ sandbox.document = {
   getElementById: stubEl, querySelector: stubEl, querySelectorAll: () => [],
   addEventListener() { }, removeEventListener() { },
   readyState: 'complete', title: '',
+  createElement: () => stubEl(), createTextNode: () => stubEl(),
+  get head() { return stubEl(); }, get body() { return stubEl(); },
 };
 
 let loaded = 0;
@@ -152,6 +159,7 @@ const snap = () => JSON.parse(JSON.stringify({
   q_alpha: W.ST.q['q-alpha'], sess: W.ST.sess, tast: W.ST.tast,
   grader_alpha: W.ST.grader['q-alpha'], bad_beta: W.ST.bad['q-beta'],
   serv: W.ST.serv, path: W.ST.path,
+  exams: W.ST.exams && W.ST.exams.certified && W.ST.exams.certified['secexam:Bordeaux'],
 }));
 
 const before = snap();
@@ -198,9 +206,15 @@ const other = {
     bad: { 'q-beta': { n: 1 } },                   /* lower: max keeps 2 */
     serv: { svc: { step1: true, step2: true }, ts: '2026-09-08' },  /* newer: should win */
     path: { words: 1757000000000, label: 1756000000000 },           /* one new step */
+    /* codex19: best takes the higher, n takes the larger, and neither may
+       climb on a second import of the same file. */
+    exams: { certified: { 'secexam:Bordeaux': { best: 71, last: 71, n: 2 } } },
   },
 };
 const msg2 = W.mergeStats(JSON.parse(JSON.stringify(other)));
+/* and again, because a count that sums rather than takes the larger is the
+   defect codex17 exists to answer, and ST.exams carries one. */
+W.mergeStats(JSON.parse(JSON.stringify(other)));
 if (msg2) console.log('   the app said: ' + msg2);
 const s2 = snap();
 const expect = [
@@ -209,6 +223,7 @@ const expect = [
   ['tast keeps the fuller local pair, not the thinner incoming one', s2.tast.n === 40 && s2.tast.c === 31],
   ['grader takes the fuller incoming pair', s2.grader_alpha.r === 9 && s2.grader_alpha.w === 9],
   ['bad keeps the higher count', s2.bad_beta.n === 2],
+  ['exams landed from the other device', s2.exams && s2.exams.best === 71 && s2.exams.n === 2],
   ['serv takes the newer rehearsal', !!(s2.serv && s2.serv.svc && s2.serv.svc.step2) && s2.serv.ts === '2026-09-08'],
   ['path gains the step the other device finished', !!(s2.path && s2.path.label)],
   ['path keeps the earlier stamp where both know a step', s2.path && s2.path.words === 1757000000000],
