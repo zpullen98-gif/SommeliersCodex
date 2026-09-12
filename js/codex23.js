@@ -17,8 +17,8 @@
    THE PICTURES ARE NOT PRECACHED, and this is the important part. sw.js
    installs its whole asset list in one atomic act; a missing or slow image in
    that list means the worker never installs and the reader keeps a stale app
-   or none. So the maps are fetched normally, and stored — only when the
-   reader asks — in a cache named codexmaps-v1. The name has no hyphen after
+   or none. So the maps are fetched normally, and stored, only when the
+   reader asks, in a cache named codexmaps-v1. The name has no hyphen after
    "codex" on purpose: both workers reap every cache matching their own
    prefix on activate, and a cache called codex-maps-v1 would be deleted on
    the first deploy after somebody stored nine megabytes of maps. sw.js has a
