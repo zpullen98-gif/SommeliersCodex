@@ -228,7 +228,9 @@ function topbar(){
       <div><h1>The Sommelier’s Codex</h1></div>
     </div>
   </div>`);
-  if(showHome){ const b=el('<button class="homebtn">Return</button>'); b.onclick=home; t.appendChild(b);}    
+  /* "Home", the same word the foot of the results screen uses for the same
+     destination. */
+  if(showHome){ const b=el('<button class="homebtn">Home</button>'); b.onclick=home; t.appendChild(b);}
   return t;
 }
 

@@ -1,12 +1,12 @@
 /* ============ Codex VII: the Four-Level Court ============
-   Regionale / Village / Premier Cru / Grand Cru as one app — the Court's four
+   Regionale / Village / Premier Cru / Grand Cru as one app: the Court's four
    examinations under the names of Burgundy's pyramid, which climbs the same way
    a student does: the whole region, then one village, then a named parcel, then
    the few hectares that need no further qualification. The level KEYS below (intro/certified/advanced/
    master) are load-bearing: qKey bakes them into every stored stat key, so only
    the display strings may ever change. Levels switch by
    rebinding the data globals (all layers resolve them at call time); stats
-   namespace by key prefix — certified keys stay UNPREFIXED so existing
+   namespace by key prefix: certified keys stay UNPREFIXED so existing
    progress survives untouched. */
 
 /* ---- snapshots of the certified globals (taken before any rebinding) ---- */
@@ -20,22 +20,22 @@ var LEVELS={
  intro:{key:'intro',num:'I',label:"The Régionale Examination",short:'Régionale',
   bank:INTRO_QUESTIONS,grapes:INTRO_CORE12,primers:INTRO_PRIMERS,groups:INTRO_GROUPS,
   mock:{n:70,secs:45*60},pass:0.6,
-  note:'A régionale wine is the whole district in one glass, and this is the whole subject in one paper: seventy questions in forty-five minutes, all multiple choice, sixty in a hundred to pass. Foundations, the world map, the classics — speed and certainty win it.'},
+  note:'A régionale wine is the whole district in one glass, and this is the whole subject in one paper: seventy questions in forty-five minutes, all multiple choice, sixty in a hundred to pass. Foundations, the world map, the classics: speed and certainty win it.'},
  certified:{key:'certified',num:'II',label:"The Village Examination",short:'Village',
   bank:CERT_QUESTIONS,grapes:CERT_GRAPES,primers:CERT_PRIMERS,groups:CERT_GROUPS,
   mock:{n:45,secs:38*60},pass:0.6,
-  note:'Narrowing to a village means naming what you are given: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer — you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}
+  note:'Narrowing to a village means naming what you are given: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer: you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}
 };
 if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',label:"The Premier Cru Examination",short:'Premier Cru',
  bank:ADV_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof ADV_PRIMERS!=='undefined'?ADV_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:60,secs:35*60},pass:0.6,
- note:'A named parcel is claimed, not guessed. Short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold — recognition is no longer enough.'};
+ note:'A named parcel is claimed, not guessed. Short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold; recognition is no longer enough.'};
 if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Grand Cru Examination",short:'Grand Cru',
  bank:MASTER_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof MASTER_PRIMERS!=='undefined'?MASTER_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:50,secs:50*60,oral:true},pass:0.6,
- note:'Grand cru needs no qualifier and neither may you: examined aloud, fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it — rapid prompts, your own words, self-graded on your honour.'};
+ note:'Grand cru needs no qualifier and neither may you: examined aloud, fifty minutes across the table, answers produced from memory with nothing to lean on, and seventy-five in a hundred demanded in every section. The Gauntlet mirrors it: rapid prompts, your own words, self-graded on your honour.'};
 var LEVEL_ORDER=['intro','certified','advanced','master'];
 
 var activeLevel='certified';
@@ -231,7 +231,7 @@ decorateHome=function(){
   var mock=document.getElementById('m-mock');
   if(mock){
     if(L.mock.oral){ mock.querySelector('h3').textContent='The Oral Gauntlet';
-      mock.querySelector('p').textContent='Fifty minutes of rapid prompts, answered in your own words and graded on your honour — the shape of the ruler\'s table.'; }
+      mock.querySelector('p').textContent='Fifty minutes of rapid prompts, answered in your own words and graded on your honour, the shape of the ruler\'s table.'; }
     else mock.querySelector('p').textContent=L.mock.n+' random questions, '+Math.round(L.mock.secs/60)+'-minute clock, '+Math.round(L.pass*100)+'% to pass. Drawn from every section, just like the day itself.';
   }
   /* level-true studyline */
@@ -294,7 +294,7 @@ primerList=function(){
     if(!byG[p.g]){byG[p.g]=[];groups.push(p.g);}
     byG[p.g].push(i);
   });
-  var html='<div><div class="viewhead"><h2>Study Chapters</h2><div class="sub">The Régionale course, chapter by chapter — read a region, then drill its section.</div></div>';
+  var html='<div><div class="viewhead"><h2>Study Chapters</h2><div class="sub">The Régionale course, chapter by chapter: read a region, then drill its section.</div></div>';
   groups.forEach(function(g){
     html+='<div class="secgroup">'+g+'</div><div class="seclist">'
       +byG[g].map(function(i){return '<button class="secbtn" data-p="'+i+'"><span>'+PRIMERS[i].t+'</span><span class="n">›</span></button>';}).join('')
@@ -516,7 +516,7 @@ function startClassQuiz(cty){
       var o1raw=uniqOpts(t.d,dm);
       if(o1raw.length===4){
         var perm=shuffle([0,1,2,3]);
-        qs.push({cat:'Classifications',q:x.name+' — what does “'+t.t+'” mean on a label?',opts:perm.map(function(i){return o1raw[i];}),a:perm.indexOf(0),exp:x.name+': “'+t.t+'” = '+t.d});
+        qs.push({cat:'Classifications',q:x.name+': what does “'+t.t+'” mean on a label?',opts:perm.map(function(i){return o1raw[i];}),a:perm.indexOf(0),exp:x.name+': “'+t.t+'” = '+t.d});
       }
       if(meanCount[t.d]===1&&!t.t.toLowerCase().split(/[^a-zà-ÿ]+/).some(function(w){return w.length>=4&&t.d.toLowerCase().indexOf(w)>=0;})){
         var dt=shuffle(allTerms.filter(function(y){return y.term!==t.t;}).map(function(y){return y.term;}));
@@ -585,7 +585,7 @@ tastingView=function(){
   }
   var picked=S.tt.originPicked;
   var row=rev.querySelector('.nextrow');
-  var box=el('<div class="originblock"><div class="qtext" style="font-size:17px;margin:6px 0 10px">Final conclusion — where is it from?</div><div class="opts"></div></div>');
+  var box=el('<div class="originblock"><div class="qtext" style="font-size:17px;margin:6px 0 10px">Final conclusion: where is it from?</div><div class="opts"></div></div>');
   var opts=box.querySelector('.opts'), keys=['A','B','C','D'];
   S.tt.originOpts.forEach(function(r,i){
     var b=el('<button class="opt"><span class="key">'+keys[i]+'</span><span>'+r+'</span></button>');

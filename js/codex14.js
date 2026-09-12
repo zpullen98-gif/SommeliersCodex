@@ -54,8 +54,10 @@ function organiseHome() {
     if (!mine.length) return;
 
     var wrap = el('<section class="homesec"></section>');
-    wrap.appendChild(el('<div class="homesec-head"><h3>' + name +
-      '</h3><span>' + blurb + '</span></div>'));
+    /* h2, not h3: a band sits directly under the app's h1, and the home went
+       h1 -> h3 with no h2 on the page. The style below is on the same tag. */
+    wrap.appendChild(el('<div class="homesec-head"><h2>' + name +
+      '</h2><span>' + blurb + '</span></div>'));
     var grid = el('<div class="modes homesec-grid"></div>');
     mine.forEach(function (id) {
       grid.appendChild(tiles[id]);   /* moves the node, listeners and all */
@@ -69,7 +71,7 @@ function organiseHome() {
   var strays = order.filter(function (id) { return !placed[id]; });
   if (strays.length) {
     var wrap = el('<section class="homesec"></section>');
-    wrap.appendChild(el('<div class="homesec-head"><h3>More</h3>' +
+    wrap.appendChild(el('<div class="homesec-head"><h2>More</h2>' +
       '<span>Everything else the Codex holds</span></div>'));
     var grid = el('<div class="modes homesec-grid"></div>');
     strays.forEach(function (id) { grid.appendChild(tiles[id]); });
@@ -99,7 +101,7 @@ decorateHome = function () {
     '.homesec{margin:26px 0 0}',
     '.homesec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;',
     '  margin:0 0 10px;padding-bottom:7px;border-bottom:1px solid rgba(255,255,255,.10)}',
-    '.homesec-head h3{margin:0;font-size:.78rem;letter-spacing:.20em;text-transform:uppercase;',
+    '.homesec-head h2{margin:0;font-size:.78rem;letter-spacing:.20em;text-transform:uppercase;',
     '  font-weight:600;opacity:.95}',
     '.homesec-head span{font-size:.82rem;opacity:.52;font-style:italic}',
     '.homesec-grid{margin-top:0!important}',
