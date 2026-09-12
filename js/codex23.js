@@ -539,7 +539,11 @@ try {
     '  color:var(--parch);font:inherit;overflow:hidden;transition:border-color .18s,transform .18s}',
     '.wmcard:hover{border-color:var(--gold);transform:translateY(-2px)}',
     '.wmcard:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}',
-    '.wmcard img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:rgba(0,0,0,.25)}',
+    /* contain, not cover. The sheets are not one shape: eleven are landscape,
+       four are portrait and one is neither, and every one carries its name in
+       large letters in a top corner. A cover crop takes that name off the
+       portrait ones entirely, which is the one thing a thumbnail must keep. */
+    '.wmcard img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#100e0b}',
     '.wmcard-n{font-size:1rem;color:var(--gold-soft);font-weight:600;padding:9px 11px 0}',
     '.wmcard-r{font-size:.8rem;opacity:.66;padding:2px 11px 10px}',
 
