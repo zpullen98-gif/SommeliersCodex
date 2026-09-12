@@ -71,14 +71,19 @@ const LIST = [
   'Ridge Lytton Springs 2019 - Zinfandel blend, Dry Creek     95',
   'Chateau Musar Bin 372 1000 Cases                  80',
   'Produttori del Barbaresco Riserva Montefico 2016  145',
-  'Chardonnay, in the manner of Coche-Dury           30'
+  'Chardonnay, in the manner of Coche-Dury           30',
+  'Weingut Donnhoff Oberhauser Brucke Riesling Spatlese 2019   19',
+  'Quinta do Noval Nacional Vintage Port 2011               400'
 ].join('\n');
 
 const CORPUS = [
   { id: 'p-krug', p: 'Krug', r: 'Reims', sub: 'Champagne', wines: [{ n: 'Grande Cuvee', grape: 'Chardonnay, Pinot Noir, Meunier' }] },
   { id: 'p-leflaive', p: 'Domaine Leflaive', r: 'Puligny-Montrachet', sub: '', wines: [{ n: 'Chevalier-Montrachet', grape: 'Chardonnay' }] },
   { id: 'p-domaine', p: 'Domaine', r: 'Nowhere At All', sub: '', wines: [{ n: 'Nothing', grape: 'Nonesuch' }] },
-  { id: 'p-coche', p: 'Coche-Dury', r: 'Meursault', sub: '', wines: [{ n: 'Meursault Perrieres', grape: 'Chardonnay' }] }
+  { id: 'p-coche', p: 'Coche-Dury', r: 'Meursault', sub: '', wines: [{ n: 'Meursault Perrieres', grape: 'Chardonnay' }] },
+  { id: 'p-donnhoff', p: 'Donnhoff', r: 'Nahe', sub: 'Oberhausen', wines: [{ n: 'Hermannshohle', grape: 'Riesling' }] },
+  { id: 'p-noval', p: 'Quinta do Noval', r: 'Douro', sub: 'Pinhao', wines: [{ n: 'Nacional', grape: 'Field blend' }] },
+  { id: 'p-noval-nac', p: 'Quinta do Noval Nacional', r: 'Douro', sub: 'Pinhao', wines: [{ n: 'Vintage Port', grape: 'Field blend' }] }
 ];
 
 /* ---- 1. the parser still reads a list ---------------------------------- */
@@ -186,6 +191,38 @@ if (!lef) fail.push(['the longest-match case never reached a row', []]);
 else if (lef.matched !== 'p-leflaive') fail.push(['longest match did not win',
   [lef.raw.trim() + ' | matched ' + (lef.matched || 'nothing') + ', wanted p-leflaive']]);
 else say.push('the longer producer name wins over the shorter one it contains');
+
+/* ---- 5. an estate word in front of the name ----------------------------
+   A German list writes "Weingut Donnhoff", a Portuguese one "Quinta do",
+   an Italian one "Azienda Agricola". Head-matching the raw line missed every
+   one of them and left the producer blank, which is the importer failing
+   silently rather than loudly. The wine name must survive the skip too: the
+   first cut returned the producer and an EMPTY wine, having eaten the bottle. */
+const don = rows.find((r) => /donnhoff/i.test(r.raw));
+if (!don) fail.push(['the estate-word case never reached a row, so it is untested', []]);
+else if (don.matched !== 'p-donnhoff') fail.push(['an estate word in front of the name defeated the match',
+  [don.raw.trim() + ' | matched ' + (don.matched || 'nothing')]]);
+else if (!don.name) fail.push(['the estate-word skip ate the wine name',
+  [don.raw.trim() + ' | producer ' + don.producer + ', wine is empty']]);
+else say.push('an estate word in front of the name is skipped, and the wine name survives it');
+
+/* The longer real name still beats the shorter one it contains. */
+const nac = rows.find((r) => /nacional/i.test(r.raw));
+if (nac && nac.matched !== 'p-noval-nac') fail.push(['the estate-word skip broke longest-match',
+  [nac.raw.trim() + ' | matched ' + (nac.matched || 'nothing') + ', wanted p-noval-nac']]);
+else if (nac) say.push('the longer estate name still wins after an estate word is skipped');
+
+/* ---- 6. a classification is not a region ------------------------------
+    holds a commune on 565 corpus records, a classification on 69 and
+   neither on the rest. Joining it to the region put "Premier Cru Classe
+   (1855), Margaux" into a bottle's Region field, and the cellar drill then
+   asks where that bottle comes from and grades the classification as the
+   answer. The region may only come from . */
+const subLeak = rows.filter((r) => r.region && CORPUS.some((c) => c.id === r.matched && c.sub
+  && r.region.indexOf(c.sub) >= 0 && c.sub !== c.r));
+if (subLeak.length) fail.push(['a record sub field reached a bottle region field',
+  subLeak.map((r) => r.raw.trim() + ' | region = "' + r.region + '"')]);
+else say.push('no bottle region carries a sub field, which is not reliably a place');
 
 /* ---- report -------------------------------------------------------------- */
 console.log('\n  Checking what the wine list importer is allowed to say\n');
