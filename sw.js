@@ -1,6 +1,6 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v59';
+const CACHE = 'codex-v60';
 
 const ASSETS = [
   './',
@@ -19,6 +19,7 @@ const ASSETS = [
   './js/data-intro.js',
   './js/data-primers-intro.js',
   './js/data-grapes-plus.js',
+  './js/data-tasting.js',
   './js/data-advanced.js',
   './js/data-primers-advanced.js',
   './js/data-master.js',
@@ -39,6 +40,7 @@ const ASSETS = [
   './js/codex17.js',
   './js/codex18.js',
   './js/codex19.js',
+  './js/codex20.js',
   './js/rewrite-preview.js',
   './js/boot.js',
   './fonts/cinzel-normal-400-900-latin.woff2',

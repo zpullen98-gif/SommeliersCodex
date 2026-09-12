@@ -62,7 +62,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
      of its own, so the harness has to run them or it proves nothing about the
      newest store. codex18 injects a stylesheet at load, which is why the
      document stub below grew createElement and a head. */
-  .concat(['codex18.js', 'codex19.js']);
+  .concat(['data-tasting.js', 'codex18.js', 'codex19.js', 'codex20.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);
@@ -160,6 +160,7 @@ const snap = () => JSON.parse(JSON.stringify({
   grader_alpha: W.ST.grader['q-alpha'], bad_beta: W.ST.bad['q-beta'],
   serv: W.ST.serv, path: W.ST.path,
   exams: W.ST.exams && W.ST.exams.certified && W.ST.exams.certified['secexam:Bordeaux'],
+  tgrid: W.ST.tgrid && W.ST.tgrid['Nebbiolo'],
 }));
 
 const before = snap();
@@ -209,6 +210,8 @@ const other = {
     /* codex19: best takes the higher, n takes the larger, and neither may
        climb on a second import of the same file. */
     exams: { certified: { 'secexam:Bordeaux': { best: 71, last: 71, n: 2 } } },
+    /* codex20: per grape and per component, every number takes the larger. */
+    tgrid: { 'Nebbiolo': { n: 4, c: 3, f: { acid: { n: 4, c: 4 }, tan: { n: 4, c: 2 } } } },
   },
 };
 const msg2 = W.mergeStats(JSON.parse(JSON.stringify(other)));
@@ -224,6 +227,7 @@ const expect = [
   ['grader takes the fuller incoming pair', s2.grader_alpha.r === 9 && s2.grader_alpha.w === 9],
   ['bad keeps the higher count', s2.bad_beta.n === 2],
   ['exams landed from the other device', s2.exams && s2.exams.best === 71 && s2.exams.n === 2],
+  ['tgrid landed, per grape and per component', s2.tgrid && s2.tgrid.n === 4 && s2.tgrid.f.tan.c === 2],
   ['serv takes the newer rehearsal', !!(s2.serv && s2.serv.svc && s2.serv.svc.step2) && s2.serv.ts === '2026-09-08'],
   ['path gains the step the other device finished', !!(s2.path && s2.path.label)],
   ['path keeps the earlier stamp where both know a step', s2.path && s2.path.words === 1757000000000],
