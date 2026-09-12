@@ -154,6 +154,23 @@ made with type, rule and space. This is deliberate; do not reintroduce them.
 - Guard when editing: run the sweep that walks every view at every level and reports any
   codepoint above U+2000 outside the keep-set. It caught leftovers three times.
 
+### The one exception: the world maps
+
+`maps/*.jpg` and the World Map tab (codex23) are the only raster images the UI renders, and
+they are **content, not chrome** — study material, the same as the question banks and the
+producer records, and they replaced ninety eight hand-drawn SVG pins that were the worst thing
+in the app to look at.
+
+The rule above is unchanged everywhere else. It forbids pictures used as *ornament or as a
+substitute for a word*: an icon standing in for a label, a flag standing in for a country name.
+It does not forbid the subject matter itself. If you are reaching for an image to decorate a
+control or to save typing a word, the answer is still no.
+
+Practical consequences, all of which have a reason written down in `js/codex23.js`:
+the maps are never precached; they live in a cache called `codexmaps-v1`, whose name
+deliberately matches neither worker's reap prefix; and the tab hides itself completely when the
+folder is empty, so the app ships correctly with no pictures at all.
+
 ## Contrast rule (learned the hard way)
 
 Controls rendered **inside `.card`** sit on parchment; controls on a view body sit on the dark

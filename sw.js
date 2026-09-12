@@ -1,6 +1,20 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v63';
+const CACHE = 'codex-v64';
+
+/* The world maps (maps/*.jpg) are deliberately NOT in ASSETS above.
+
+   That list is installed in one atomic addAll: one missing or slow image and
+   the worker never installs, and the reader keeps a stale app or none at all.
+   The maps are also large, and everything in ASSETS is re-downloaded in full
+   on every CACHE bump.
+
+   So they live here instead, in a cache of their own that the page fills only
+   when the reader asks for it. THE NAME HAS NO HYPHEN AFTER "codex" ON
+   PURPOSE: activate below deletes every cache matching our own prefix, and a
+   cache called codex-maps-v1 would be swept away on the first deploy after
+   somebody stored nine megabytes of maps. */
+const MAPS = 'codexmaps-v1';
 
 const ASSETS = [
   './',
@@ -22,6 +36,7 @@ const ASSETS = [
   './js/data-tasting.js',
   './js/data-floor.js',
   './js/data-pairing.js',
+  './js/data-maps.js',
   './js/data-advanced.js',
   './js/data-primers-advanced.js',
   './js/data-master.js',
@@ -45,6 +60,7 @@ const ASSETS = [
   './js/codex20.js',
   './js/codex21.js',
   './js/codex22.js',
+  './js/codex23.js',
   './js/rewrite-preview.js',
   './js/boot.js',
   './fonts/cinzel-normal-400-900-latin.woff2',
@@ -90,6 +106,15 @@ self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
   if (url.origin !== location.origin) return;
+
+  /* Served out of the maps cache, never out of CACHE, so a deploy cannot
+     throw away what the reader chose to keep. Falling through to the network
+     covers a map that is present on the server and not yet stored. */
+  if (url.pathname.indexOf('/maps/') >= 0) {
+    e.respondWith(caches.open(MAPS).then(c =>
+      c.match(e.request).then(hit => hit || fetch(e.request))));
+    return;
+  }
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then(hit =>
       hit || fetch(e.request).then(res => {

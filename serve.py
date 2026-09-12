@@ -14,6 +14,14 @@ from pathlib import Path
 
 
 class NoCacheHandler(SimpleHTTPRequestHandler):
+    # SimpleHTTPRequestHandler answers HTTP/1.0 by default, closing the
+    # connection after every response. Chrome refuses to register a service
+    # worker over that, with only "an unknown error occurred when fetching
+    # the script" to say so, and the offline shell therefore cannot be tested
+    # locally at all. HTTP/1.1 needs accurate Content-Length, which this
+    # handler already sends for every file it serves.
+    protocol_version = "HTTP/1.1"
+
     def end_headers(self):
         self.send_header("Cache-Control", "no-cache")
         super().end_headers()

@@ -62,7 +62,15 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
      of its own, so the harness has to run them or it proves nothing about the
      newest store. codex18 injects a stylesheet at load, which is why the
      document stub below grew createElement and a head. */
-  .concat(['data-tasting.js', 'codex18.js', 'codex19.js', 'codex20.js']);
+  .concat(['data-tasting.js', 'codex18.js', 'codex19.js', 'codex20.js',
+  /* Every layer after codex20 too. None of codex21, 22 or 23 owns a merge
+     clause, but this list is also the only place the whole chain is loaded in
+     order outside a browser, and that is what catches a new layer calling a
+     helper the Codex does not have. codex20 shipped with a call to First
+     Light's FL_ACTS and would have thrown on load; nothing here would have
+     said so while the list stopped short of it. */
+    'data-floor.js', 'data-pairing.js', 'codex21.js', 'codex22.js',
+    'data-maps.js', 'codex23.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);
