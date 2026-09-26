@@ -38,10 +38,10 @@ this project.** That distinction matters constantly — see *Content accuracy* b
 
 | Rank | Key | Questions | Categories | Tier |
 |---|---|---|---|---|
-| I · Page | `intro` | 1,778 | 31 (own taxonomy) | free |
-| II · Squire | `certified` | 1,283 | 36 | free |
-| III · Knight | `advanced` | 720 | 36 | **paid** |
-| IV · Ruler | `master` | 576 | 36 | **paid** |
+| I · Régionale | `intro` | 1,778 | 31 (own taxonomy) | free |
+| II · Village | `certified` | 1,283 | 36 | free |
+| III · Premier Cru | `advanced` | 720 | 36 | **paid** |
+| IV · Grand Cru | `master` | 576 | 36 | **paid** |
 | **Total** | **4,357** | | 3,061 free · 1,296 paid |
 
 Run the counts rather than trusting the table — it has been the stalest thing in this file
@@ -98,7 +98,7 @@ Levels switch by **rebinding the data globals** — every earlier layer resolves
 banks required no edits to any earlier layer. `LEVELS = {intro, certified, advanced, master}`;
 the active level persists in `localStorage.codexLevel`.
 
-Mock formats: Page 70Q/45min · Squire 45Q/38min · Knight 60Q/35min · Ruler =
+Mock formats: Régionale 70Q/45min · Village 45Q/38min · Premier Cru 60Q/35min · Grand Cru =
 `startGauntlet()`, a 50-minute all-short-answer **Oral Gauntlet** (`speechSynthesis` reads the
 prompt aloud, no text field, self-grade mandatory before advancing).
 
@@ -154,11 +154,11 @@ Six of those stores are keyed by question: `q srs flags notes grader bad`. Nothi
    in `sw.js`. That cache string is the entire update mechanism — installed clients get a
    "new edition is pressed" toast. New file ⇒ add to `ASSETS` in `sw.js` *and* a script tag.
 
-9. **Layer discipline.** New features go in a **new** `codex12.js` that wraps
-   `render`/`decorateHome`. Only edit earlier layers to fix bugs in them.
+9. **Layer discipline.** New features go in a **new** layer, the next being `codex26.js`,
+   that wraps `render`/`decorateHome`. Only edit earlier layers to fix bugs in them.
 
 10. **Rank names are display copy; the level KEYS are load-bearing.** The ladder reads
-    Page / Squire / Knight / Ruler, but the keys are still `intro / certified / advanced /
+    Régionale / Village / Premier Cru / Grand Cru, but the keys are still `intro / certified / advanced /
     master` — `qKey` bakes them into every stored stat key (`advanced|a-kpyi8t6m`), so
     renaming a key orphans progress exactly as the old stem-slice scheme did. Change
     `label` / `short` / `note` freely; never touch a key. The CMS names survive only in

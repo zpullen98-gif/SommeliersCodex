@@ -55,6 +55,22 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   `menudesk` view, a read-only review list with one-at-a-time Edit through codex16's form,
   `cellarAddMany`, the inbox band, `#live` + `say()`) and the Maître d' marks on a bottle
   (`maitre`, carried by `cellarSanitize` and the transfer merge, hers until kept).
+- `js/codex25.js`: **the four-level home**, the Codex's half of the contract it shares with the
+  World Table and the Bartender's Ledger. It takes over `homeView`, so on the home `#view` holds
+  exactly `section.levels` (four `button.level`, ids `lv-1` to `lv-4`, each `lv-num`, `lv-name`,
+  `lv-stat`; the current one `on`, with `aria-pressed` and the words "Your level") then `nav.quiet`
+  (the doors Today, Library, Record and Mine · Our Wine List), and the non-affiliation line is a
+  `footer.colophon` beside `#view`. A card reads Untouched, N% met (clamped to 1..99) or Met: the
+  MEAN of the level's counted subsections (the domains, Tasting, The Floor, Pairing, Service),
+  and a question is met once it has been answered right once. `S.view` gains `level`, `library`,
+  `record`, `mine` and `today` (the wing's), drawn by the outermost `render` wrapper with
+  codex18's landmarks, and `nav.appnav` in the topbar (Home · Levels · Library · Mine) retires the
+  Home button. Every destination is named once, in the registries `V25_TRAIN`, `V25_LIBRARY`,
+  `V25_RECORD` and `V25_MINE`; every `data-go` resolves through `V25_GO`, which calls its handler
+  by global name at click time so the wing's lock wrappers still apply. The level test is the
+  Finals made scoreless by wrappers. `codexLevelChosen` (localStorage, not `ST`) is written only
+  by a card tap. `HOME_SECTIONS` (codex14) and `V22_TILES` (codex22) are dead data from here on.
+  Gate: `node .scripts/check-home.js [jsDir]`, which runs against the wing's `codex/js` too.
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -109,7 +125,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v27`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v70`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -128,8 +144,8 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new `codex11.js` that wraps `render`/`decorateHome`
-  like its predecessors. Don't edit earlier layers except for bugs.
+- **Layer discipline**: new features go in a new layer, the next being `codex26.js`, that wraps
+  `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
   category names match the level's `groups`, or the drill/dashboard rows silently vanish. Run
