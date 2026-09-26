@@ -73,7 +73,11 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     /* codex24 reassigns cellarSanitize to carry a bottle's `maitre` and
        unions its kept lines in the merge, so the cellar joins the snapshot
        below: a bottle's kept line is a record the next import can drop. */
-    'data-maps.js', 'codex23.js', 'codex24.js']);
+    'data-maps.js', 'codex23.js', 'codex24.js',
+    /* codex25 owns no store, but it reassigns homeView and wraps the Finals
+       and render at load, and a grandfathering pass there calls applyLevel:
+       the chain has to load to the end with it in place. */
+    'codex25.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);
