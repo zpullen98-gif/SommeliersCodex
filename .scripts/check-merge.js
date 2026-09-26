@@ -56,7 +56,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-advanced.js',
   'data-primers-advanced.js', 'data-master.js', 'data-primers-master.js',
   'codex7.js', 'codex8.js', 'codex9.js', 'codex10.js', 'codex11.js', 'codex12.js',
-  'codex13.js', 'codex14.js', 'codex15.js', 'data-producers.js', 'wine-parse.js',
+  'codex13.js', 'codex14.js', 'codex15.js', 'data-producers.js', 'menu-desk.js',
   'wine-rows.js', 'codex16.js'].concat(WITHOUT_17 ? [] : ['codex17.js'])
   /* codex18 and codex19 are part of the chain and codex19 owns a merge clause
      of its own, so the harness has to run them or it proves nothing about the
@@ -70,7 +70,10 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
      Light's FL_ACTS and would have thrown on load; nothing here would have
      said so while the list stopped short of it. */
     'data-floor.js', 'data-pairing.js', 'codex21.js', 'codex22.js',
-    'data-maps.js', 'codex23.js']);
+    /* codex24 reassigns cellarSanitize to carry a bottle's `maitre` and
+       unions its kept lines in the merge, so the cellar joins the snapshot
+       below: a bottle's kept line is a record the next import can drop. */
+    'data-maps.js', 'codex23.js', 'codex24.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);
@@ -162,6 +165,17 @@ W.ST.grader['q-alpha'] = { r: 3, w: 1, t: 'a note' };
 W.ST.bad['q-beta'] = { n: 2, q: 'a stem' };
 W.ST.serv = { svc: { step1: true }, ts: '2026-09-01' };
 W.ST.path = { words: 1757000000000 };
+/* codex24: a bottle carrying her two lines, one kept, and one kept answer.
+   The merge takes the newer bottle whole (codex12) and unions `kept`. */
+W.ST.cellar = [{
+  id: 'w-aaaaaaaa', ts: 1000, producer: 'Krug', name: 'Grande Cuvee', vintage: 'NV',
+  region: 'Champagne', grapes: '', style: '', glass: '', bottle: '260', note: '',
+  maitre: {
+    say: { value: 'kroog', by: 'maitre', ts: 5 },
+    guest: { value: 'The house cuvee.', by: 'person', ts: 6 },
+    kept: [{ q: 'why', a: 'because', ts: 7 }]
+  }
+}];
 
 const snap = () => JSON.parse(JSON.stringify({
   q_alpha: W.ST.q['q-alpha'], sess: W.ST.sess, tast: W.ST.tast,
@@ -169,6 +183,7 @@ const snap = () => JSON.parse(JSON.stringify({
   serv: W.ST.serv, path: W.ST.path,
   exams: W.ST.exams && W.ST.exams.certified && W.ST.exams.certified['secexam:Bordeaux'],
   tgrid: W.ST.tgrid && W.ST.tgrid['Nebbiolo'],
+  cellar: W.ST.cellar && W.ST.cellar.find((b) => b.id === 'w-aaaaaaaa'),
 }));
 
 const before = snap();
@@ -220,6 +235,17 @@ const other = {
     exams: { certified: { 'secexam:Bordeaux': { best: 71, last: 71, n: 2 } } },
     /* codex20: per grape and per component, every number takes the larger. */
     tgrid: { 'Nebbiolo': { n: 4, c: 3, f: { acid: { n: 4, c: 4 }, tan: { n: 4, c: 2 } } } },
+    /* codex24: the same bottle, edited later on the other device (newer ts,
+       so codex12 takes it whole), with her line kept there and a different
+       answer kept there. The winner's marks win; kept is the union. */
+    cellar: [{
+      id: 'w-aaaaaaaa', ts: 2000, producer: 'Krug', name: 'Grande Cuvee', vintage: 'NV',
+      region: 'Champagne', grapes: 'Chardonnay, Pinot Noir, Meunier', style: '', glass: '', bottle: '260', note: '',
+      maitre: {
+        say: { value: 'kroog', by: 'person', ts: 8 },
+        kept: [{ q: 'pairs', a: 'oysters', ts: 9 }]
+      }
+    }],
   },
 };
 const msg2 = W.mergeStats(JSON.parse(JSON.stringify(other)));
@@ -239,6 +265,14 @@ const expect = [
   ['serv takes the newer rehearsal', !!(s2.serv && s2.serv.svc && s2.serv.svc.step2) && s2.serv.ts === '2026-09-08'],
   ['path gains the step the other device finished', !!(s2.path && s2.path.label)],
   ['path keeps the earlier stamp where both know a step', s2.path && s2.path.words === 1757000000000],
+  /* codex24: the newer bottle wins whole, so its marks are the record's and
+     the older device's kept guest line goes with the older record, exactly
+     as codex12 has always merged a bottle; what must NOT be lost is a kept
+     answer, which is unioned from both sides on ts|q and not doubled. */
+  ['cellar takes the newer bottle whole (its grapes came with it)', !!(s2.cellar && s2.cellar.ts === 2000 && s2.cellar.grapes === 'Chardonnay, Pinot Noir, Meunier')],
+  ['cellar marks are the winner\'s (say kept there, guest not carried)', !!(s2.cellar && s2.cellar.maitre && s2.cellar.maitre.say && s2.cellar.maitre.say.by === 'person' && !s2.cellar.maitre.guest)],
+  ['cellar kept answers are the union of both devices, once each', !!(s2.cellar && s2.cellar.maitre && s2.cellar.maitre.kept && s2.cellar.maitre.kept.length === 2
+    && s2.cellar.maitre.kept.some((k) => k.q === 'why') && s2.cellar.maitre.kept.some((k) => k.q === 'pairs'))],
 ];
 let bad2 = 0;
 expect.forEach(([what, ok]) => { console.log('   ' + (ok ? 'ok  ' : 'FAIL') + '  ' + what); if (!ok) bad2++; });

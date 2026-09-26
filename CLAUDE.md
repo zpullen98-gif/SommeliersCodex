@@ -46,6 +46,15 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   item by item instead of on first accept-hit
 - `js/boot.js` — final `render()` (layers decorate home after core's first render), SW registration,
   update toast
+- `js/menu-desk.js` — **GENERATED** by `WorldTable/tools/port-desk.mjs` from `src/lib/desk` (the
+  Menu Desk: reader, sorter, desk file, inbox, the desk-share words); never edit it here, regenerate
+  and re-run `check-port.mjs`. `js/wine-rows.js` is the wine half (`wineRowFromDesk`: page fields
+  first, the Producers asked only about what the page left empty, every field naming its source,
+  and a figure the page did not print blanked and named rather than filed: "4 oz" inside "3/4 oz"
+  is not on the page), gated by `.scripts/check-wine-import.js`. `js/codex24.js` is the Menu Desk's screens (the
+  `menudesk` view, a read-only review list with one-at-a-time Edit through codex16's form,
+  `cellarAddMany`, the inbox band, `#live` + `say()`) and the Maître d' marks on a bottle
+  (`maitre`, carried by `cellarSanitize` and the transfer merge, hers until kept).
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
