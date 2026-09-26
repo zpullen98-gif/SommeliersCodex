@@ -63,11 +63,17 @@
 
    THE MAÎTRE D’ HERSELF lives in the shared client, window.OOT.maitre, which
    the suite loads lazily on the one origin and which this standalone build
-   never carries. Every door here checks for her at press time: with her key
-   on this device the second engine reads the paste and says what it costs;
-   with her present and no key the door opens her settings; without her the
-   sentence says so and names the family line, so no door is ever dead and no
-   button is ever disabled.
+   never carries. Every door here asks three questions at press time and says
+   the answer in words: she is here (with her key on this device the second
+   engine reads the paste and says what it costs; with no key the door opens
+   her settings); she is not here but the suite can fetch her (the door
+   fetches her through OOT.loadShared and then opens her settings, so the
+   first press on the suite is never a dead one); or this build has no way to
+   bring her in (the sentence says so and names the family line). The trap
+   the third question guards: on the suite she is absent until a door asks
+   for her, so a door that reads only OOT.maitre would tell every suite
+   visitor she is not in this build, which is false there. No door is ever
+   dead and no button is ever disabled.
 
    THE SCREEN READER IS TOLD. index.html gains #live, a role=status region
    outside #app so no render() empties it, and say() writes every count,
@@ -109,6 +115,61 @@ function v24Shared() {
 function v24Maitre() {
   try { return (typeof OOT !== 'undefined' && OOT && OOT.maitre) ? OOT.maitre : null; }
   catch (e) { return null; }
+}
+
+/* Whether this build can fetch her when she is not here. The suite's
+   shared/oot-config.js carries OOT.loadShared, which appends a script tag
+   beside the nine that load on every page so the file wears the same ?v=
+   and the lockstep bump reaches it; the standalone build has no OOT at all.
+   That is the whole test, and it is why "not in this build" is said only
+   when this returns false. */
+function v24MaitreLoadable() {
+  try { return typeof OOT !== 'undefined' && !!OOT && typeof OOT.loadShared === 'function'; }
+  catch (e) { return false; }
+}
+
+/* Opens her key screen, fetching the client first when the suite has not
+   yet. Returns false only when this build has no way to bring her in, and
+   the caller says so; every other path ends in her screen or in one honest
+   sentence. `onHere(m)` runs once her screen is open, for a caller whose
+   row must redraw around her; `onFail(text)` gets the sentence, and by
+   default it is said and toasted, because the tile that presses this sits
+   on the home screen with no error slot of its own.
+
+   The name handed to the loader is the FILE name, 'oot-maitre.js', because
+   that is what the Ledger (ui-import.js maitreOpenSettings) and the World
+   Table (src/lib/maitre.ts MAITRE_SCRIPT) hand the same loader: one function
+   serves three wings, and a wing that asked for a different spelling would
+   be the one whose door never opens, with nothing on screen.
+
+   The loader's promise settles on the tag's own load event, after the script
+   has run, so OOT.maitre is there when it resolves; a rejection means the
+   file did not come, which on a site that never blocks its own files means
+   offline, and the loader forgets a failed load so the next press tries
+   afresh. She is still looked for after the resolve rather than assumed: a
+   copy of the file that loaded and defined nothing would otherwise open
+   nothing and say nothing. */
+function v24OpenMaitre(onHere, onFail) {
+  var fail = function (text) {
+    say(text);
+    if (typeof toast === 'function') toast(text);
+    if (typeof onFail === 'function') onFail(text);
+  };
+  var open = function (her) {
+    her.openSettings();
+    if (typeof onHere === 'function') onHere(her);
+  };
+  var m = v24Maitre();
+  if (m) { open(m); return true; }
+  if (!v24MaitreLoadable()) return false;
+  var p = null;
+  try { p = OOT.loadShared('oot-maitre.js'); } catch (e) { p = null; }
+  if (!p || typeof p.then !== 'function') { fail(V24_ONLINE_ONLY); return true; }
+  p.then(function () {
+    var her = v24Maitre();
+    if (her) open(her); else fail(V24_ONLINE_ONLY);
+  }, function () { fail(V24_ONLINE_ONLY); });
+  return true;
 }
 
 function v24Inbox() {
@@ -368,18 +429,25 @@ function v24FromLine(desk) {
 var V24_NOT_IN_BUILD = 'The Maître d’ is not in this build: this copy of the Codex reads lists on its own.';
 var V24_FAMILY = 'Bring her in with a key of your own on the family site, or ask whoever runs the menu to send you theirs.';
 var V24_ASK_ELSEWHERE = 'Ask her on the World Table, where the whole menu is.';
+var V24_ONLINE_ONLY = 'The Maître d’ is online only. Read it here for now.';
+var V24_HERS = 'Her key, her models, her cap and her ledger, for this device.';
 
+/* The engine row under the paste box, in the three states the header names.
+   "Not here yet" with the bring-her door covers both a client that is here
+   with no key and one the suite has yet to fetch: the press is the same act
+   either way, and the row cannot tell a fetched client with no key from an
+   unfetched one without fetching, which is what the press is for. */
 function v24EngineHtml(text) {
   var m = v24Maitre();
+  var bring = '<span class="desk-note">The Maître d’ is not here yet.</span>'
+    + '<button class="btn ghost" type="button" data-act="bring-her">Bring her in</button>';
   if (!m) {
+    if (v24MaitreLoadable()) return bring;
     return '<span class="desk-note">' + v24Esc(V24_NOT_IN_BUILD) + ' ' + v24Esc(V24_FAMILY) + '</span>';
   }
   var hasKey = false;
   try { hasKey = !!m.settings.hasKey(); } catch (e) { hasKey = false; }
-  if (!hasKey) {
-    return '<span class="desk-note">The Maître d’ is not here yet.</span>'
-      + '<button class="btn ghost" type="button" data-act="bring-her">Bring her in</button>';
-  }
+  if (!hasKey) return bring;
   var line = '';
   try {
     var est = m.estimate('read', { text: text || '' });
@@ -489,7 +557,16 @@ function v24PasteClick(v, e) {
   else if (act === 'look-inbox') v24OpenDesk('inbox');
   else if (act === 'ask-her') v24AskHer(v, false);
   else if (act === 'ask-her-anyway') v24AskHer(v, true);
-  else if (act === 'bring-her') { var m = v24Maitre(); if (m) m.openSettings(); }
+  else if (act === 'bring-her') {
+    /* The row redraws around her once she is here, so a key already on this
+       device shows the ask door without a keystroke in the box; the failure
+       lands in the row's own error slot as well as the live region. */
+    var redraw = function () {
+      var her = v.querySelector('#dk-her'), ta = v.querySelector('#dk-text');
+      if (her) her.innerHTML = v24EngineHtml(ta ? ta.value : '');
+    };
+    if (!v24OpenMaitre(redraw, function (t) { v24Err(v, t); })) v24Err(v, V24_NOT_IN_BUILD);
+  }
   else if (act === 'fetch') v24Fetch(v);
   else if (act === 'cancel') { S._desk = null; S.view = 'cellar'; render(); }
 }
@@ -598,7 +675,7 @@ function v24AskHer(v, confirmed) {
   var hasKey = false;
   try { hasKey = !!m.settings.hasKey(); } catch (e) { hasKey = false; }
   if (!hasKey) { m.openSettings(); return; }
-  if (!m.online()) { v24Err(v, 'The Maître d’ is online only. Read it here for now.'); return; }
+  if (!m.online()) { v24Err(v, V24_ONLINE_ONLY); return; }
   S._deskText = text;
   v24Err(v, 'Asking the Maître d’.');
   m.readMenu({ text: text }, {
@@ -1352,14 +1429,16 @@ function v24Tile() {
   var anchor = modes[modes.length - 1];
   if (!anchor || !anchor.parentNode) return;
   var m24 = el('<div class="modes" style="margin-top:14px"></div>');
-  var m = v24Maitre();
+  /* The tile's line is decided by whether a press can reach her screen, not
+     by whether she has been fetched yet: on the suite she is absent until
+     asked for, and a tile that read only her presence would tell every
+     suite visitor she is not in this build. */
+  var can = v24Maitre() || v24MaitreLoadable();
   m24.appendChild(el('<button class="mode" id="t-maitre"><div class="band"></div><h3>The Maître d’</h3><p>'
-    + (m ? 'Her key, her models, her cap and her ledger, for this device.'
-      : v24Esc(V24_NOT_IN_BUILD)) + '</p></button>'));
+    + v24Esc(can ? V24_HERS : V24_NOT_IN_BUILD) + '</p></button>'));
   anchor.parentNode.insertBefore(m24, anchor.nextSibling);
   m24.querySelector('#t-maitre').onclick = function () {
-    var her = v24Maitre();
-    if (her) { her.openSettings(); return; }
+    if (v24OpenMaitre()) return;
     S.view = 'maitre'; render();
   };
 }
@@ -1393,22 +1472,25 @@ if (_v24DecorateHome) {
 }
 
 /* The Maître d’ tile's screen when she is not in this build: the sentence,
-   the family line, and where to ask her. Never a dead door. */
+   the family line, and where to ask her. Never a dead door. Reached on the
+   suite only through a stale view name in a saved state, since the tile
+   opens her screen directly there; it still asks the same three questions,
+   so that path ends at her settings too. */
 function maitreView() {
-  var m = v24Maitre();
+  var can = v24Maitre() || v24MaitreLoadable();
   var html = '<div><div class="viewhead"><h2>The Maître d’</h2>'
     + '<div class="sub">Optional. Online. Your own key.</div></div>'
     + '<div class="wimp-band"><div class="wimp-note" style="font-style:normal;opacity:.9">'
-    + v24Esc(m ? 'Her key, her models, her cap and her ledger, for this device.' : V24_NOT_IN_BUILD) + '</div>'
+    + v24Esc(can ? V24_HERS : V24_NOT_IN_BUILD) + '</div>'
     + '<div class="wimp-note" style="font-style:normal;opacity:.9">' + v24Esc(V24_FAMILY) + '</div>'
     + '<div class="wimp-note" style="font-style:normal;opacity:.9">' + v24Esc(V24_ASK_ELSEWHERE) + '</div>'
     + '<div class="wimp-note" style="font-style:normal;opacity:.9">Every line she writes on a bottle is hers until you keep it, '
     + 'and your progress export never carries a key.</div></div>'
-    + '<div class="sarow">' + (m ? '<button class="btn gold" type="button" id="mt-open">Her settings</button>' : '')
+    + '<div class="sarow">' + (can ? '<button class="btn gold" type="button" id="mt-open">Her settings</button>' : '')
     + '<button class="btn ghost" type="button" id="mt-back">Home</button></div></div>';
   var v = el(html);
   var open = v.querySelector('#mt-open');
-  if (open) open.onclick = function () { var her = v24Maitre(); if (her) her.openSettings(); };
+  if (open) open.onclick = function () { v24OpenMaitre(); };
   v.querySelector('#mt-back').onclick = function () { home(); };
   return v;
 }
