@@ -57,7 +57,8 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   (`maitre`, carried by `cellarSanitize` and the transfer merge, hers until kept).
 - `js/codex25.js`: **the four-level home**, the Codex's half of the contract it shares with the
   World Table and the Bartender's Ledger. It takes over `homeView`, so on the home `#view` holds
-  exactly `section.levels` (four `button.level`, ids `lv-1` to `lv-4`, each `lv-num`, `lv-name`,
+  exactly `section.levels` (four `button.level`, ids `lv-1` to `lv-4`, each a hidden `sr-only`
+  "Level I" label (no numeral on sight since 26 Sep 2026, the owner's call), `lv-name`,
   `lv-stat`; the current one `on`, with `aria-pressed` and the words "Your level") then `nav.quiet`
   (the doors Today, Library, Record and Mine · Our Wine List), and the non-affiliation line is a
   `footer.colophon` beside `#view`. A card reads Untouched, N% met (clamped to 1..99) or Met: the
@@ -125,7 +126,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v70`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v71`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 

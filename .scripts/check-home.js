@@ -13,7 +13,8 @@
  *      as the MEAN of its counted subsections (not a pooled sum); the lowest
  *      level not yet met
  *   3. the home: exactly section.levels then nav.quiet; four button.level
- *      with lv-num, lv-name and lv-stat; exactly one "on", with aria-pressed
+ *      with a hidden "Level I" label, lv-name and lv-stat and no numeral on
+ *      sight; exactly one "on", with aria-pressed
  *      and the words "Your level"; four doors with their names; the Today
  *      line naming the level it deals from
  *   4. the level page: h1 then the blurb then twelve subsections, each with
@@ -363,11 +364,12 @@ KEYS.forEach((key, i) => {
   check('[' + NUMS[i] + '] four button.level, data-level 1 to 4, ids lv-1 to lv-4', shape);
   if (cards.length !== 4) return;
   const statsOk = cards.every((c, j) => {
-    const num = byClass(c, 'lv-num')[0], name = byClass(c, 'lv-name')[0], stat = byClass(c, 'lv-stat')[0];
-    return num && name && stat && text(num) === NUMS[j] && text(name) === NAMES[j]
+    const label = byClass(c, 'sr-only')[0], name = byClass(c, 'lv-name')[0], stat = byClass(c, 'lv-stat')[0];
+    /* no numeral on sight: "Level I" is hidden text for a screen reader */
+    return label && name && stat && !byClass(c, 'lv-num').length && text(label) === 'Level ' + NUMS[j] && text(name) === NAMES[j]
       && STAT_RE.test(text(stat)) && text(stat) === G('v25LevelStat(' + JSON.stringify(KEYS[j]) + ').word');
   });
-  check('[' + NUMS[i] + '] each card is lv-num, lv-name and lv-stat, the stat the shared figure', statsOk,
+  check('[' + NUMS[i] + '] each card is a hidden Level label, lv-name and lv-stat with no numeral on sight, the stat the shared figure', statsOk,
     cards.map((c) => squash(text(c))).join(' | '));
   const on = cards.filter((c) => hasClass(c, 'on'));
   check('[' + NUMS[i] + '] exactly one card is on, and it is ' + NAMES[i],
