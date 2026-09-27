@@ -57,8 +57,7 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) â€
   (`maitre`, carried by `cellarSanitize` and the transfer merge, hers until kept).
 - `js/codex25.js`: **the four-level home**, the Codex's half of the contract it shares with the
   World Table and the Bartender's Ledger. It takes over `homeView`, so on the home `#view` holds
-  exactly `section.levels` (four `button.level`, ids `lv-1` to `lv-4`, each a hidden `sr-only`
-  "Level I" label (no numeral on sight since 26 Sep 2026, the owner's call), `lv-name`,
+  exactly `section.levels` (four `button.level`, ids `lv-1` to `lv-4`, each `lv-name` and
   `lv-stat`; the current one `on`, with `aria-pressed` and the words "Your level") then `nav.quiet`
   (the doors Today, Library, Record and Mine Â· Our Wine List), and the non-affiliation line is a
   `footer.colophon` beside `#view`. A card reads Untouched, N% met (clamped to 1..99) or Met: the
@@ -71,7 +70,13 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) â€
   by global name at click time so the wing's lock wrappers still apply. The level test is the
   Finals made scoreless by wrappers. `codexLevelChosen` (localStorage, not `ST`) is written only
   by a card tap. `HOME_SECTIONS` (codex14) and `V22_TILES` (codex22) are dead data from here on.
-  Gate: `node .scripts/check-home.js [jsDir]`, which runs against the wing's `codex/js` too.
+  **Named, never numbered** (the owner, 27 Sep 2026): no I to IV is shown or read aloud anywhere,
+  hidden text included. The cards, the level page's h1, the Today line, the test ("The Village
+  test"), the way back ("Back to Village"), the header seal (codex7, now a lozenge that fits
+  Premier Cru) and the Court Standing strip all say the name; the integers 1 to 4 stay in ids,
+  `data-level` and storage only.
+  Gate: `node .scripts/check-home.js [jsDir]`, which runs against the wing's `codex/js` too and
+  fails on any "Level" followed by a roman numeral in what the layer draws.
 - `sw.js` â€” cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -126,7 +131,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v71`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v72`). This is the whole update
    mechanism â€” installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 

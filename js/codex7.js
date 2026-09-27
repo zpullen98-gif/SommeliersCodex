@@ -16,22 +16,27 @@ var CORE12_NAMES=['Riesling','Chardonnay','Sauvignon Blanc','Pinot Gris / Grigio
  'Pinot Noir','Cabernet Sauvignon','Merlot','Syrah / Shiraz','Zinfandel','Sangiovese'];
 var INTRO_CORE12=CERT_GRAPES.filter(function(g){return CORE12_NAMES.indexOf(g.g)>=0;});
 
+/* No numerals. The four ranks are named, not numbered (the owner, 27 Sep
+   2026): the seal beside the title and the strip read Régionale, Village,
+   Premier Cru, Grand Cru, which is what anyone in hospitality calls them. A
+   roman numeral asked the reader to decode a glyph to learn something the
+   word already said. */
 var LEVELS={
- intro:{key:'intro',num:'I',label:"The Régionale Examination",short:'Régionale',
+ intro:{key:'intro',label:"The Régionale Examination",short:'Régionale',
   bank:INTRO_QUESTIONS,grapes:INTRO_CORE12,primers:INTRO_PRIMERS,groups:INTRO_GROUPS,
   mock:{n:70,secs:45*60},pass:0.6,
   note:'A régionale wine is the whole district in one glass, and this is the whole subject in one paper: seventy questions in forty-five minutes, all multiple choice, sixty in a hundred to pass. Foundations, the world map, the classics: speed and certainty win it.'},
- certified:{key:'certified',num:'II',label:"The Village Examination",short:'Village',
+ certified:{key:'certified',label:"The Village Examination",short:'Village',
   bank:CERT_QUESTIONS,grapes:CERT_GRAPES,primers:CERT_PRIMERS,groups:CERT_GROUPS,
   mock:{n:45,secs:38*60},pass:0.6,
   note:'Narrowing to a village means naming what you are given: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer: you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}
 };
-if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',num:'III',label:"The Premier Cru Examination",short:'Premier Cru',
+if(typeof ADV_QUESTIONS!=='undefined')LEVELS.advanced={key:'advanced',label:"The Premier Cru Examination",short:'Premier Cru',
  bank:ADV_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof ADV_PRIMERS!=='undefined'?ADV_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:60,secs:35*60},pass:0.6,
  note:'A named parcel is claimed, not guessed. Short-answer country: some sixty questions at thirty-five seconds each, deep in appellation law, producers and vintages. Produce the answer cold; recognition is no longer enough.'};
-if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',num:'IV',label:"The Grand Cru Examination",short:'Grand Cru',
+if(typeof MASTER_QUESTIONS!=='undefined')LEVELS.master={key:'master',label:"The Grand Cru Examination",short:'Grand Cru',
  bank:MASTER_QUESTIONS,grapes:CERT_GRAPES.concat(typeof GRAPES_PLUS!=='undefined'?GRAPES_PLUS:[]),
  primers:typeof MASTER_PRIMERS!=='undefined'?MASTER_PRIMERS:CERT_PRIMERS,groups:CERT_GROUPS,
  mock:{n:50,secs:50*60,oral:true},pass:0.6,
@@ -174,13 +179,15 @@ finish=function(){
 var _v6AchCheck=achCheck;
 achCheck=function(){ if(activeLevel==='certified')_v6AchCheck(); };
 
-/* ---- the seal carries the active level, so the title can stand alone ---- */
+/* ---- the seal carries the active level, so the title can stand alone ----
+   It names the level in words (codex.css widens the disc to fit the longest,
+   Premier Cru), never a numeral. */
 var _v6Topbar=topbar;
 topbar=function(){
   var t=_v6Topbar();
   var pin=t.querySelector('.pin');
   if(pin){
-    pin.textContent=LEVELS[activeLevel].num;
+    pin.textContent=LEVELS[activeLevel].short;
     pin.title=LEVELS[activeLevel].label;
     pin.setAttribute('aria-label',LEVELS[activeLevel].label);
   }
@@ -193,7 +200,7 @@ function courtStrip(){
   LEVEL_ORDER.forEach(function(lv){
     var L=LEVELS[lv];
     if(!L){
-      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpnum">'+(lv==='advanced'?'III':'IV')+'</div><div class="cpname">'+(lv==='advanced'?'Premier Cru':'Grand Cru')+'</div><div class="cpstat">In the cellar</div></div>'));
+      wrap.appendChild(el('<div class="courtpin sealed"><div class="cpname">'+(lv==='advanced'?'Premier Cru':'Grand Cru')+'</div><div class="cpstat">In the cellar</div></div>'));
       return;
     }
     var rec=ST.court[lv]||{};
@@ -206,7 +213,7 @@ function courtStrip(){
     var cov=Math.round(100*seenN/L.bank.length);
     var on=lv===activeLevel;
     var p=el('<button class="courtpin'+(on?' on':'')+(rec.passed?' gilded':'')+'">'
-      +'<div class="cpnum">'+L.num+'</div><div class="cpname">'+L.short+'</div>'
+      +'<div class="cpname">'+L.short+'</div>'
       +'<div class="cpstat">'+(rec.passed?'Passed':(rec.best?('Best '+rec.best+'%'):(cov?cov+'% faced':'Untouched')))+'</div></button>');
     p.onclick=function(){ if(lv!==activeLevel)applyLevel(lv); };
     wrap.appendChild(p);

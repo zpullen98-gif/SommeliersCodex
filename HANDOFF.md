@@ -182,8 +182,9 @@ Six of those stores are keyed by question: `q srs flags notes grader bad`. Nothi
 
 Everything below is built, verified in-browser, and deployed:
 
-- Four levels with a Court Standing strip (roman-numeral pins showing coverage / best mock,
-  gilding on a passed mock). The level numeral also sits in the header seal.
+- Four levels with a Court Standing strip (named pins showing coverage / best mock, gilding
+  on a passed mock). The level's name also sits in the header seal. Named, never numbered
+  (the owner, 27 Sep 2026): no I to IV anywhere a reader can see or hear it.
 - Exam-date **study plan**: enter a date and home shows a prescription — days out, SRS due,
   coverage, per-level pace, and the single highest-priority action.
 - **Honest short-answer grading**: coverage-based "the grader is unsure" state for long-form

@@ -12,20 +12,23 @@
  *   2. the met arithmetic: Untouched, N% met clamped to 1..99, Met; the card
  *      as the MEAN of its counted subsections (not a pooled sum); the lowest
  *      level not yet met
- *   3. the home: exactly section.levels then nav.quiet; four button.level
- *      with a hidden "Level I" label, lv-name and lv-stat and no numeral on
- *      sight; exactly one "on", with aria-pressed
+ *   3. the home: exactly section.levels then nav.quiet; four button.level,
+ *      each lv-name and lv-stat and no numeral, seen or hidden (the owner's
+ *      rule of 27 Sep 2026: a level is named, never numbered, so the name is
+ *      the card's label); exactly one "on", with aria-pressed
  *      and the words "Your level"; four doors with their names; the Today
  *      line naming the level it deals from
- *   4. the level page: h1 then the blurb then twelve subsections, each with
- *      an h2, "N at this level", its word and its training doors; every
- *      data-go resolvable; the level test last
+ *   4. the level page: an h1 that is the name alone, then the blurb, then
+ *      twelve subsections, each with an h2, "N at this level", its word and
+ *      its training doors; every data-go resolvable; the level test last,
+ *      named for the level ("The Village test")
  *   5. the chosen-level flag: never written by a load, written by a card tap,
  *      and a device with answers grandfathered on the level it had
  *   6. the level test, sat end to end in the VM: every answer wrong, and the
  *      report says what was missed with the right answers and no score
  *   7. voice: no long dash, no double hyphen, none of the retired study word,
- *      and no pictorial codepoint, in the layer's source or anything it draws
+ *      no pictorial codepoint and no level numeral ("Level" and a roman
+ *      numeral), in the layer's source or anything it draws
  *
  *   node .scripts/check-home.js            the standalone tree
  *   node .scripts/check-home.js <jsDir>    another tree, such as the Outside
@@ -57,7 +60,8 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
 
 /* The plan's words, verbatim, as the source of truth the layer is held to. */
 const NAMES = ['Régionale', 'Village', 'Premier Cru', 'Grand Cru'];
-const NUMS = ['I', 'II', 'III', 'IV'];
+/* A level shown or read aloud by number: named, never numbered. */
+const NUMERAL_RE = /\bLevel\s+(I|II|III|IV)\b/;
 const KEYS = ['intro', 'certified', 'advanced', 'master'];
 const BLURBS = [
   'The whole district in one glass: the foundations, the world map and the classics, all of it multiple choice, and speed and certainty win it.',
@@ -233,6 +237,7 @@ function voiceProblems(s) {
   if (s.indexOf('\u2014') >= 0) out.push('a long dash (U+2014)');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
   if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);
     if ((c >= 0x2190 && c <= 0x2BFF) || (c >= 0x1F000) || c === 0xFE0F || (c >= 0xE000 && c <= 0xF8FF)) {
@@ -351,48 +356,50 @@ KEYS.forEach((key, i) => {
   const root = tryParse('the home at ' + NAMES[i], html);
   if (!root) return;
   const top = kids(root);
-  check('[' + NUMS[i] + '] #view holds exactly section.levels then nav.quiet',
+  check('[' + NAMES[i] + '] #view holds exactly section.levels then nav.quiet',
     top.length === 2 && top[0].tag === 'section' && hasClass(top[0], 'levels') && top[1].tag === 'nav' && hasClass(top[1], 'quiet'),
     top.map((n) => n.tag + '.' + classes(n).join('.')).join(', '));
   if (top.length !== 2) return;
-  check('[' + NUMS[i] + '] the levels are labelled Levels and the doors Doors',
+  check('[' + NAMES[i] + '] the levels are labelled Levels and the doors Doors',
     top[0].attrs['aria-label'] === 'Levels' && top[1].attrs['aria-label'] === 'Doors');
-  check('[' + NUMS[i] + '] no heading on the home', !all(root, (n) => /^h[1-6]$/.test(n.tag)).length);
+  check('[' + NAMES[i] + '] no heading on the home', !all(root, (n) => /^h[1-6]$/.test(n.tag)).length);
   const cards = kids(top[0]);
   const shape = cards.length === 4 && cards.every((c, j) => c.tag === 'button' && hasClass(c, 'level')
     && c.attrs['data-level'] === String(j + 1) && c.attrs.id === 'lv-' + (j + 1) && c.attrs.type === 'button');
-  check('[' + NUMS[i] + '] four button.level, data-level 1 to 4, ids lv-1 to lv-4', shape);
+  check('[' + NAMES[i] + '] four button.level, data-level 1 to 4, ids lv-1 to lv-4', shape);
   if (cards.length !== 4) return;
   const statsOk = cards.every((c, j) => {
-    const label = byClass(c, 'sr-only')[0], name = byClass(c, 'lv-name')[0], stat = byClass(c, 'lv-stat')[0];
-    /* no numeral on sight: "Level I" is hidden text for a screen reader */
-    return label && name && stat && !byClass(c, 'lv-num').length && text(label) === 'Level ' + NUMS[j] && text(name) === NAMES[j]
+    const name = byClass(c, 'lv-name')[0], stat = byClass(c, 'lv-stat')[0];
+    /* named, never numbered: no numeral on sight and none hidden for a screen
+       reader either, so the visible name is the card's label */
+    const parts = kids(c).map((k) => classes(k).join('.')).join(' ');
+    return name && stat && /^lv-name lv-stat( lv-here)?$/.test(parts)
+      && !byClass(c, 'sr-only').length && !byClass(c, 'lv-num').length && text(name) === NAMES[j]
       && STAT_RE.test(text(stat)) && text(stat) === G('v25LevelStat(' + JSON.stringify(KEYS[j]) + ').word');
   });
-  check('[' + NUMS[i] + '] each card is a hidden Level label, lv-name and lv-stat with no numeral on sight, the stat the shared figure', statsOk,
+  check('[' + NAMES[i] + '] each card is lv-name and lv-stat alone, no numeral seen or hidden, the stat the shared figure', statsOk,
     cards.map((c) => squash(text(c))).join(' | '));
   const on = cards.filter((c) => hasClass(c, 'on'));
-  check('[' + NUMS[i] + '] exactly one card is on, and it is ' + NAMES[i],
+  check('[' + NAMES[i] + '] exactly one card is on, and it is ' + NAMES[i],
     on.length === 1 && on[0].attrs['data-level'] === String(i + 1));
-  check('[' + NUMS[i] + '] aria-pressed is true on it and false on the others',
+  check('[' + NAMES[i] + '] aria-pressed is true on it and false on the others',
     cards.every((c) => c.attrs['aria-pressed'] === (hasClass(c, 'on') ? 'true' : 'false')));
   const here = byClass(top[0], 'lv-here');
-  check('[' + NUMS[i] + '] the words "Your level" are on that card and no other',
+  check('[' + NAMES[i] + '] the words "Your level" are on that card and no other',
     here.length === 1 && text(here[0]) === 'Your level' && on.length === 1 && byClass(on[0], 'lv-here').length === 1);
   const doors = kids(top[1]);
-  check('[' + NUMS[i] + '] four doors, ids ' + DOOR_IDS.join(', '),
+  check('[' + NAMES[i] + '] four doors, ids ' + DOOR_IDS.join(', '),
     doors.length === 4 && doors.every((d, j) => hasClass(d, 'door') && d.attrs.id === DOOR_IDS[j]));
-  check('[' + NUMS[i] + '] the door names are ' + DOOR_NAMES.join(', '),
+  check('[' + NAMES[i] + '] the door names are ' + DOOR_NAMES.join(', '),
     doors.length === 4 && doors.every((d, j) => byClass(d, 'door-name')[0] && text(byClass(d, 'door-name')[0]) === DOOR_NAMES[j]),
     doors.map((d) => byClass(d, 'door-name')[0] ? text(byClass(d, 'door-name')[0]) : '?').join(', '));
-  check('[' + NUMS[i] + '] every door has a line', doors.every((d) => byClass(d, 'door-line')[0] && text(byClass(d, 'door-line')[0]).length));
+  check('[' + NAMES[i] + '] every door has a line', doors.every((d) => byClass(d, 'door-line')[0] && text(byClass(d, 'door-line')[0]).length));
   const todayLine = doors[0] && byClass(doors[0], 'door-line')[0] ? text(byClass(doors[0], 'door-line')[0]) : '';
-  check('[' + NUMS[i] + '] the Today line says "Today deals from Level ' + NUMS[i] + '"',
-    /^Today deals from Level (I|II|III|IV)/.test(todayLine)
-    && new RegExp('^Today deals from Level ' + NUMS[i] + '(?![IV])').test(todayLine), todayLine);
+  check('[' + NAMES[i] + '] the Today line says "Today deals from ' + NAMES[i] + '"',
+    todayLine === 'Today deals from ' + NAMES[i] || todayLine.indexOf('Today deals from ' + NAMES[i] + ' · ') === 0, todayLine);
   const gos = all(root, (n) => n.attrs && n.attrs['data-go'] !== undefined).map((n) => n.attrs['data-go']);
   const bad = gos.filter((g) => G('typeof V25_GO[' + JSON.stringify(g) + ']') !== 'function');
-  check('[' + NUMS[i] + '] every data-go on the home is in V25_GO', !bad.length, bad.join(', '));
+  check('[' + NAMES[i] + '] every data-go on the home is in V25_GO', !bad.length, bad.join(', '));
 });
 
 /* 4. ------------------------------------------------------------------ */
@@ -405,27 +412,30 @@ KEYS.forEach((key, i) => {
   if (!root) return;
   const top = kids(root);
   const h1 = top[0];
-  check('[' + NUMS[i] + '] it opens on an h1 carrying the numeral and the name',
-    h1 && h1.tag === 'h1' && byClass(h1, 'lv-num')[0] && text(byClass(h1, 'lv-num')[0]) === NUMS[i]
-    && squash(text(h1)) === NUMS[i] + ' ' + NAMES[i], h1 ? squash(text(h1)) : 'none');
-  check('[' + NUMS[i] + '] then the blurb, verbatim from the plan',
+  check('[' + NAMES[i] + '] it opens on an h1 that is the name alone, no numeral',
+    h1 && h1.tag === 'h1' && !byClass(h1, 'lv-num').length && !kids(h1).length
+    && squash(text(h1)) === NAMES[i], h1 ? squash(text(h1)) : 'none');
+  const mainName = G('v25MainName()');
+  rendered.push(mainName);
+  check('[' + NAMES[i] + '] the page\'s main landmark is named ' + NAMES[i] + ', no numeral', mainName === NAMES[i], mainName);
+  check('[' + NAMES[i] + '] then the blurb, verbatim from the plan',
     top[1] && top[1].tag === 'p' && text(top[1]) === BLURBS[i], top[1] ? text(top[1]) : 'none');
   const ol = top[2];
-  check('[' + NUMS[i] + '] then ol.subsections', ol && ol.tag === 'ol' && hasClass(ol, 'subsections'));
+  check('[' + NAMES[i] + '] then ol.subsections', ol && ol.tag === 'ol' && hasClass(ol, 'subsections'));
   if (!ol) return;
   const subs = kids(ol);
   const expectN = G('v25Domains(' + JSON.stringify(key) + ').length') + 5;
-  check('[' + NUMS[i] + '] ' + expectN + ' li.subsection' + (key === 'certified' ? ' (twelve at Village)' : ''),
+  check('[' + NAMES[i] + '] ' + expectN + ' li.subsection' + (key === 'certified' ? ' (twelve at Village)' : ''),
     subs.length === expectN && subs.every((s) => s.tag === 'li' && hasClass(s, 'subsection'))
     && (key !== 'certified' || subs.length === 12), String(subs.length));
   const names = subs.map((s) => { const h = kids(s)[0]; return h && h.tag === 'h2' ? text(h) : '?'; });
-  check('[' + NUMS[i] + '] each subsection opens on an h2, the last five The whole paper, Tasting, The Floor, Pairing, Service',
+  check('[' + NAMES[i] + '] each subsection opens on an h2, the last five The whole paper, Tasting, The Floor, Pairing, Service',
     names.every((n) => n !== '?' && n.length) && names.slice(-5).join('|') === 'The whole paper|Tasting|The Floor|Pairing|Service',
     names.join(' | '));
-  check('[' + NUMS[i] + '] the first ' + (expectN - 5) + ' are the domains of examDomains()',
+  check('[' + NAMES[i] + '] the first ' + (expectN - 5) + ' are the domains of examDomains()',
     JSON.stringify(names.slice(0, expectN - 5)) === JSON.stringify(G('examDomains().map(function(d){return d[0];})')));
-  check('[' + NUMS[i] + '] each says "N at this level"', subs.every((s) => /[\d,]+ at this level/.test(text(s))));
-  check('[' + NUMS[i] + '] each carries its word and figure, and the uncounted whole paper words in place of one',
+  check('[' + NAMES[i] + '] each says "N at this level"', subs.every((s) => /[\d,]+ at this level/.test(text(s))));
+  check('[' + NAMES[i] + '] each carries its word and figure, and the uncounted whole paper words in place of one',
     subs.every((s) => {
       const st = byClass(s, 'sub-stat')[0];
       if (!st) return false;
@@ -433,32 +443,32 @@ KEYS.forEach((key, i) => {
       return STAT_RE.test(text(st)) || text(st) === 'Nothing to meet here yet';
     }),
     subs.map((s) => byClass(s, 'sub-stat')[0] ? text(byClass(s, 'sub-stat')[0]) : '?').join(' | '));
-  check('[' + NUMS[i] + '] each has at least one training door', subs.every((s) => byClass(s, 'train').length >= 1));
-  check('[' + NUMS[i] + '] headings are h1 then h2 only', !all(root, (n) => /^h[3-6]$/.test(n.tag)).length
+  check('[' + NAMES[i] + '] each has at least one training door', subs.every((s) => byClass(s, 'train').length >= 1));
+  check('[' + NAMES[i] + '] headings are h1 then h2 only', !all(root, (n) => /^h[3-6]$/.test(n.tag)).length
     && byTag(root, 'h1').length === 1);
   const gos = all(root, (n) => n.attrs && n.attrs['data-go'] !== undefined);
   const bad = gos.map((n) => n.attrs['data-go']).filter((g) => G('typeof V25_GO[' + JSON.stringify(g) + ']') !== 'function');
-  check('[' + NUMS[i] + '] every data-go (' + gos.length + ') is in V25_GO', !bad.length, bad.join(', '));
+  check('[' + NAMES[i] + '] every data-go (' + gos.length + ') is in V25_GO', !bad.length, bad.join(', '));
   const cats = G('Object.keys(cats())');
   const catArgs = gos.filter((n) => ['drill', 'secexam', 'chapter'].indexOf(n.attrs['data-go']) >= 0);
-  check('[' + NUMS[i] + '] every section door names a real section of this level',
+  check('[' + NAMES[i] + '] every section door names a real section of this level',
     catArgs.length && catArgs.every((n) => cats.indexOf(n.attrs['data-arg']) >= 0));
   const doms = G('examDomains().map(function(d){return d[0];})');
-  check('[' + NUMS[i] + '] every domain exam names a real domain',
+  check('[' + NAMES[i] + '] every domain exam names a real domain',
     gos.filter((n) => n.attrs['data-go'] === 'domexam').every((n) => doms.indexOf(n.attrs['data-arg']) >= 0));
   const chapters = gos.filter((n) => n.attrs['data-go'] === 'chapter');
-  check('[' + NUMS[i] + '] every Chapter door opens a chapter that exists (' + chapters.length + ')',
+  check('[' + NAMES[i] + '] every Chapter door opens a chapter that exists (' + chapters.length + ')',
     chapters.every((n) => G('v25HasChapter(' + JSON.stringify(n.attrs['data-arg']) + ', ' + JSON.stringify(key) + ')')));
   const tests = byClass(root, 'leveltest');
   const last = tests[tests.length - 1];
-  check('[' + NUMS[i] + '] the last thing is button.leveltest "The Level ' + NUMS[i] + ' test"',
-    last && last.tag === 'button' && text(last) === 'The Level ' + NUMS[i] + ' test' && last.attrs['data-go'] === 'leveltest'
+  check('[' + NAMES[i] + '] the last thing is button.leveltest "The ' + NAMES[i] + ' test"',
+    last && last.tag === 'button' && text(last) === 'The ' + NAMES[i] + ' test' && last.attrs['data-go'] === 'leveltest'
     && top[top.length - 1] && byClass(top[top.length - 1], 'leveltest').length === 1, last ? text(last) : 'none');
   if (key === 'certified') {
     const line = byClass(root, 'lt-line')[0];
-    check('[II] the level test line is the plan\'s, verbatim', line && text(line) === TEST_LINE_VILLAGE, line ? text(line) : 'none');
+    check('[Village] the level test line is the plan\'s, verbatim', line && text(line) === TEST_LINE_VILLAGE, line ? text(line) : 'none');
   }
-  check('[' + NUMS[i] + '] the level test line carries no digit', byClass(root, 'lt-line')[0] && !/\d/.test(text(byClass(root, 'lt-line')[0])));
+  check('[' + NAMES[i] + '] the level test line carries no digit', byClass(root, 'lt-line')[0] && !/\d/.test(text(byClass(root, 'lt-line')[0])));
 });
 
 /* the other pages, and the nav */
@@ -475,9 +485,13 @@ G('applyLevel("certified", true);');
   if (name === 'Library') {
     check('the Library carries the search box, #cf-in and #cf-out',
       all(root, (n) => n.attrs.id === 'cf-in').length === 1 && all(root, (n) => n.attrs.id === 'cf-out').length === 1);
+    check('the Library counts the chapters at Village, by name', /\d chapters? at Village/.test(squash(text(root))), squash(text(root)));
+  }
+  if (name === 'Record') {
+    check('the Record measures readiness at Village, by name', squash(text(root)).indexOf('readiness at Village') >= 0);
   }
   if (name === 'Today') {
-    check('the Today page names the level it deals from', squash(text(root)).indexOf('Today deals from Level II') >= 0);
+    check('the Today page names the level it deals from', squash(text(root)).indexOf('Today deals from Village.') >= 0);
   }
 });
 [['home', 'Home'], ['level', 'Levels'], ['library', 'Library'], ['mine', 'Mine'], ['record', 'Mine'], ['quiz', 'Levels']].forEach(([view, word]) => {
@@ -517,7 +531,7 @@ section('the level test, sat end to end at Village, every answer wrong');
 freshRecord();
 G('applyLevel("certified", true); S.view = "level";');
 G('startFinals()');
-check('the Finals is renamed The Level II test', G('MODE_LABEL.finals') === 'The Level II test' && G('MODE_NOUNS.finals') === 'The Level II test');
+check('the Finals is renamed The Village test', G('MODE_LABEL.finals') === 'The Village test' && G('MODE_NOUNS.finals') === 'The Village test');
 check('the theory paper is under way untimed', G('S.mode') === 'finals' && G('S.view') === 'quiz' && G('S.timer') === null);
 const asked = G('S.pool.length');
 let guard = 0;
@@ -568,7 +582,8 @@ const twice = G('(function(){ var by = {}; S._v25lt.theory.forEach(function(m){ 
 check('a Drill door for every section missed twice (' + twice.length + '), and none for a section missed once',
   twice.every((c) => report.indexOf('data-arg="' + c.replace(/&/g, '&amp;') + '"') >= 0)
   && (report.match(/data-go="drill"/g) || []).length === twice.length);
-check('the report offers Back to Level II and Home', report.indexOf('Back to Level II') >= 0 && report.indexOf('data-go="home"') >= 0);
+check('the report is headed The Village test and offers Back to Village and Home',
+  report.indexOf('<h2>The Village test</h2>') >= 0 && report.indexOf('>Back to Village</button>') >= 0 && report.indexOf('data-go="home"') >= 0);
 check('the sitting is still recorded, for the Record', !!G('ST.exams.certified && ST.exams.certified["finals:The Finals"]'));
 G('S._v25lt = null; S._fin = null;');
 check('outside a test the grid keeps its tally', G('gridTally({ struct: { n: 4, c: 2 }, concl: { n: 4, c: 2 }, missed: [] })').indexOf('%') >= 0);
@@ -583,7 +598,7 @@ G('S._v25lt = { lv: "certified", gridSat: true, floorSat: true,'
 const fixture = G('v25TestReportHtml()');
 rendered.push(fixture);
 const fixRoot = tryParse('the report on a fixture', fixture);
-check('the report carries no percentage and no "n of m" score', !/%/.test(fixture) && !/\d+\s*(of|\/)\s*\d+/.test(fixture.replace(/Level [IV]+/g, '')));
+check('the report carries no percentage and no "n of m" score', !/%/.test(fixture) && !/\d+\s*(of|\/)\s*\d+/.test(fixture));
 check('typed answers are escaped in the report', fixture.indexOf('&lt;b&gt;typed&lt;/b&gt;') >= 0 && fixture.indexOf('<b>typed</b>') < 0);
 check('a section missed twice earns its Drill door on the fixture', fixture.indexOf('Drill Burgundy') >= 0);
 G('S._v25lt = { lv: "certified", gridSat: true, floorSat: true, theory: [], grid: [], floor: [] };');
@@ -597,7 +612,7 @@ G('S._v25lt = null;');
 section('voice');
 const src = fs.readFileSync(path.join(JS, 'codex25.js'), 'utf8');
 const srcProblems = voiceProblems(src);
-check('codex25.js itself: no long dash, no double hyphen, no retired word, no glyph', !srcProblems.length, srcProblems.join(', '));
+check('codex25.js itself: no long dash, no double hyphen, no retired word, no glyph, no level numeral',!srcProblems.length, srcProblems.join(', '));
 /* the gate holds itself to the rule it enforces */
 const selfProblems = voiceProblems(fs.readFileSync(__filename, 'utf8'));
 check('check-home.js itself: the same', !selfProblems.length, selfProblems.join(', '));
