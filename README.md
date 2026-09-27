@@ -45,6 +45,22 @@ curated video scriptorium.
 - **Deductive tasting and service.** Blind flights and the service ritual checklist, because
   theory is only one of three sections.
 
+## Outside Of Time house design
+
+The Codex shares the Ledger and World Table's forest-green, gold and parchment
+identity. A new wine-library panorama frames the home, with a compact masthead on
+interior views. `js/codex26.js` is the presentation layer, loaded after codex25 and
+before boot. `css/house.css`, `css/house-surfaces.css` and `css/house-study.css` provide
+the matching home, reference, kitchen-list and study treatments. The artwork is a
+392 KB WebP in `assets/`, included in the offline install. Existing fonts are reused.
+
+The three stylesheets, presentation script and artwork are maintained identically
+in the standalone and `OutsideOfTime/codex`. The underlying apps intentionally
+differ; do not copy either entire tree over the other. Preserve navigation handlers,
+named levels, existing records, wine-map geometry, and wine-colour teaching swatches.
+The new layer also hides the inactive flashcard face from assistive technology and
+makes Pairing selection and answer states explicit without changing grading.
+
 ## Running it locally
 
 ```bash

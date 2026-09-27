@@ -131,7 +131,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v72`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v73`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -150,7 +150,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex26.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex27.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
@@ -168,7 +168,24 @@ illuminated-theme overrides supersede them — Georgia fallback covers the rest;
 (scratch script: render 512/192/180 + maskable at 80% on the dark felt).
 Gotcha: gradients on zero-width strokes vanish in resvg — use filled rects for straight lines.
 
-## Interface rule: typography, not pictures
+## House art direction, 27 September 2026
+
+The owner requested the Outside Of Time artistic identity throughout the Codex.
+`js/codex26.js`, after codex25 and before boot, adds a decorative wine-library masthead
+around the existing title and navigation. It also exposes only the active flashcard
+face to assistive technology and gives Pairing choices explicit selected/answer states.
+The original flashcard controls appear above the card so long profiles remain easy to use on phones. Wine-editor fields receive accessible names from their existing captions.
+No study records or grading rules change. Keep this layer and the three `css/house*.css`
+files identical in the standalone and `OutsideOfTime/codex` copies.
+
+The house styles use forest green, warm gold and parchment, with existing self-hosted
+type. The versioned `assets/codex-library-v1.webp` is decorative and precached; actual
+wine-map images keep their original on-demand cache. The screen rules are separated
+from print. New house art is an intentional exception to the earlier ornament rule
+below, following the owner's request. Controls still use words, and wine-colour
+teaching swatches must not be recoloured as branding.
+
+## Earlier interface rule: typography, not pictures
 
 The UI carries **no pictorial icons** — no emoji, dingbats, fleurons or emblems. Hierarchy is
 made with type, rule and space. This is deliberate; do not reintroduce them.
