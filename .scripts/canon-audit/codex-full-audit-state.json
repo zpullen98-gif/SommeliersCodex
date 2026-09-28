@@ -1,0 +1,1464 @@
+{
+ "note": "Codex full question audit, run wf_c9df0a97-431, stopped at the session limit 2026-09-28. examinedBatches have findings (unverified unless a verdict below matches by id); missingBatches were never examined. Batch files: codex-full/batch-NNN.json.",
+ "examinedBatches": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  76,
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94,
+  95,
+  96,
+  97,
+  98,
+  99,
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107,
+  108,
+  109,
+  110,
+  111,
+  112,
+  113,
+  114,
+  115,
+  116,
+  117,
+  118,
+  119,
+  120,
+  121,
+  122,
+  123,
+  124,
+  125,
+  126,
+  127,
+  128,
+  129,
+  130,
+  131,
+  132,
+  133,
+  134,
+  135,
+  136,
+  137,
+  138,
+  139,
+  140,
+  141,
+  142,
+  143,
+  144,
+  145,
+  146,
+  147,
+  148,
+  149,
+  150,
+  151,
+  152,
+  155,
+  156,
+  158,
+  159,
+  160,
+  162
+ ],
+ "missingBatches": [
+  153,
+  154,
+  157,
+  161,
+  163,
+  164,
+  165,
+  166,
+  167,
+  168,
+  169,
+  170,
+  171,
+  172,
+  173,
+  174,
+  175,
+  176,
+  177,
+  178,
+  179,
+  180,
+  181,
+  182,
+  183,
+  184,
+  185,
+  186,
+  187,
+  188,
+  189,
+  190,
+  191,
+  192,
+  193,
+  194,
+  195,
+  196,
+  197,
+  198,
+  199,
+  200,
+  201,
+  202,
+  203,
+  204,
+  205,
+  206,
+  207,
+  208,
+  209,
+  210,
+  211,
+  212,
+  213,
+  214,
+  215,
+  216,
+  217,
+  218,
+  219,
+  220,
+  221,
+  222,
+  223,
+  224,
+  225,
+  226,
+  227,
+  228,
+  229,
+  230,
+  231,
+  232,
+  233,
+  234,
+  235,
+  236,
+  237,
+  238,
+  239,
+  240,
+  241,
+  242,
+  243,
+  244,
+  245,
+  246,
+  247,
+  248,
+  249,
+  250,
+  251,
+  252,
+  253,
+  254,
+  255,
+  256,
+  257,
+  258,
+  259,
+  260,
+  261,
+  262,
+  263,
+  264
+ ],
+ "findings": [
+  {
+   "id": "a-pyf6f91v",
+   "kind": "outdated",
+   "claim": "Keyed option \"55 hl/ha\" and explanation \"Alsace Grand Cru is set at 55 hl/ha\"",
+   "because": "The arrêté of 9 May 2022 (JORF 13 May 2022) amending the Alsace grand cru cahier des charges lowered the rendement for white grand cru wines from 55 to 50 hl/ha, and the rendement butoir from 66 to 60 hl/ha. Red is 40 hl/ha, SGN 40 hl/ha. The 2021 opposition draft shows 55 struck through for 50, and the 2024 consolidated text carries 50 and 60. Under current law the keyed answer is wrong and no option is right. It was correct only up to the 2021 vintage.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000045792474",
+    "https://extranet.inao.gouv.fr/fichier/PNO-cdc-Alsacegrandcru-cn200617-210603-AG210706.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "fix": "Replace option index 1 \"55 hl/ha\" with \"50 hl/ha\" and keep a:1. In exp, change \"set at 55 hl/ha\" to \"set at 50 hl/ha (lowered from 55 by the arrêté of 9 May 2022; butoir 60)\" and change \"55 hl/ha is generous\" to \"50 hl/ha is generous\".",
+   "batch": 1
+  },
+  {
+   "id": "a-qe25zf0w",
+   "kind": "accept-list",
+   "claim": "accept entry \"riesling and muscat lower\"",
+   "because": "The app's own grader (js/core.js matchSA, the 'input is a whole-word core of the accept phrase' rule) marks the wrong answer \"Riesling and Muscat\" correct against this entry. I tested it: matchSA returns true for 'Riesling and Muscat'. The question asks which two varieties carry the HIGHER bar, and those are Gewurztraminer and Pinot Gris.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "fix": "accept: [\"gewurztraminer and pinot gris\", \"gewurztraminer pinot gris\", \"gewurz pinot gris higher\", \"pinot gris and gewurztraminer\"] (drop \"riesling and muscat lower\")",
+   "batch": 1
+  },
+  {
+   "id": "a-qe25zf0w",
+   "kind": "wrong-explanation",
+   "claim": "VT: 235 g/L for Riesling and Muscat, 257 g/L for Gewurztraminer and Pinot Gris",
+   "because": "The current Alsace grand cru cahier des charges sets these Vendanges Tardives minimums: 270 g/L (16%) for Gewurztraminer and Pinot Gris, and 244 g/L (14.5%) for Riesling and the Muscats. The 235/257 figures are the older 1984-era minimums. The 2016-modified text reproduced in the 2021 INAO opposition document already carries 270/244, and the 2024 text keeps them. The SGN figures of 306 and 276 are still correct.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-cdc-Alsacegrandcru-cn200617-210603-AG210706.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://www.thedrinksbusiness.com/2019/04/alsace-closer-than-ever-to-imposing-legal-sweetness-guides/"
+   ],
+   "fix": "VT: 244 g/L for Riesling and Muscat, 270 g/L for Gewurztraminer and Pinot Gris; SGN: 276 and 306 g/L respectively.",
+   "batch": 1
+  },
+  {
+   "id": "a-98j4a9aj",
+   "kind": "ambiguous-stem",
+   "claim": "Alsace has a trio of grand crus permitted to grow non-noble white varieties by exception.",
+   "because": "Under the cahier des charges, Kaefferkopf may use only Gewurztraminer, Riesling, Pinot Gris and the Muscats, all noble, alone or blended. Its exception is blending, not non-noble grapes. Only Zotzenberg (Sylvaner) and Altenberg de Bergheim (Chasselas and Pinot Blanc as accessory varieties in blends, vines planted before 26 March 2005) admit non-noble whites. Read as written, the stem makes the accepted answer 'kaefferkopf' wrong. The model answer itself treats Kaefferkopf as a blend exception.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://fr.wikipedia.org/wiki/Kaefferkopf"
+   ],
+   "fix": "Alsace has a trio of grand crus that bend the single-noble-variety rule by exception (Sylvaner, or field blends). Name any one.",
+   "batch": 1
+  },
+  {
+   "id": "a-k9j3pgie",
+   "kind": "wrong-explanation",
+   "claim": "Eden and Clare screwcapped their whole category in 2000.",
+   "because": "In 2000 a group of 13 or 14 Clare Valley producers, led by Jeffrey Grosset, jointly bottled their Rieslings under Stelvin screwcap. It was one group of producers, not the whole Riesling category, and not a joint Eden Valley and Clare decision. The Eden Valley link for this question is earlier: Yalumba's own screwcap trials with Pewsey Vale Riesling in the 1970s.",
+   "sources": [
+    "https://ozwinereview.com/2023/02/turning-point-21-years-of-clare-riesling-in-screwcap.html",
+    "https://www.winewithseth.com/winewiki/screwcap-revolution/",
+    "https://www.therealreview.com/2022/11/07/clare-valley-celebrates-20-years-of-screwcapped-riesling/"
+   ],
+   "fix": "Yalumba trialled screwcaps on Pewsey Vale Riesling in the 1970s; in 2000 a group of Clare Valley producers led by Jeffrey Grosset moved their Rieslings to screwcap together.",
+   "batch": 2
+  },
+  {
+   "id": "a-mxyvoeyq",
+   "kind": "wrong-explanation",
+   "claim": "McLaren Vale's geology map identifies some nineteen distinct geologies across a small region",
+   "because": "Nineteen is the number of proposed McLaren Vale districts (McLaren Vale Districts Working Group), not geologies. The 2010 Geology of the McLaren Vale Wine Region map (Fairburn, Olliver, Preiss, White) shows more than 40 geological units, and the regional body now says more than 55 unique geologies.",
+   "sources": [
+    "https://mclarenvalewine.au/geology-map",
+    "https://ozwinereview.com/2013/07/what-is-mclaren-vale-scarce-ear.html",
+    "https://tigchandler.com/2012/01/12/rock-on-exciting-developments-in-mapping-the-geology-of-the-mclaren-vale-wine-region/"
+   ],
+   "fix": "McLaren Vale's geology map identifies more than 40 geological units (the region now counts over 55) across a small region, grouped into some nineteen proposed districts, and it is that map, not the GI line, that the Scarce Earth single-site Shiraz project is built on.",
+   "batch": 3
+  },
+  {
+   "id": "a-cuhow6p5",
+   "kind": "outdated",
+   "claim": "Austria's DAC count has grown to cover most regions. What does a regional name WITHOUT DAC status imply on a label?",
+   "because": "Thermenregion DAC, from the 2023 vintage, was the last specific growing region to join. Austrian Wine says the system is complete, with 18 DACs covering every specific region. So no specific-region name exists without DAC status any more. The regional names still used without DAC status are the Landwein areas Weinland, Steirerland and Bergland, so a careful expert could reasonably answer 'Landwein'. The keyed idea is still right: a non-DAC Qualitätswein from a DAC area falls back to the state name.",
+   "sources": [
+    "https://www.austrianwine.com/presse-multimedia/news-2023/news/article/austrias-thermenregion-finalises-the-dac-implementation-phase",
+    "https://magazine.wein.plus/news/all-wine-growing-regions-of-austria-now-in-the-dac-system-thermenregion-defines-wines-typical-of-their-origin",
+    "https://www.austrianwine.com/our-wine/wine-law/categories-of-wine-according-to-origin/wine-with-protected-geographical-indication"
+   ],
+   "fix": "Stem: Since Thermenregion joined in 2023, every Austrian specific wine-growing region is a DAC. How must a Qualitätswein from a DAC area be labelled if it does not meet the DAC rules (for example, a non-typical variety)?",
+   "batch": 3
+  },
+  {
+   "id": "a-exgg1a3q",
+   "kind": "wrong-explanation",
+   "claim": "Moric's old vines re-argued the grape as 'the Pinot of the East'.",
+   "because": "In a question that keys Leithaberg, this line presents Moric as the Leithaberg example. Roland Velich's old-vine Blaufränkisch single sites are Neckenmarkt and Lutzmannsburg, both in Mittelburgenland, and the stem expressly sets Mittelburgenland aside. That puts one hill's history on another.",
+   "sources": [
+    "https://www.vinography.com/2014/08/moric_the_apogee_of_blaufrnkis",
+    "https://cellarhand.com.au/producers/moric/"
+   ],
+   "fix": "Leithaberg DAC red must be Blaufränkisch, grown on the limestone and schist of the Leitha hills; Moric's old vines at Neckenmarkt and Lutzmannsburg (Mittelburgenland) made the wider case for the grape as 'the Pinot of the East'.",
+   "batch": 3
+  },
+  {
+   "id": "a-whttgn1d",
+   "kind": "wrong-explanation",
+   "claim": "The trap is the name: Austria's 'Veltliner' grapes (Roter, Frühroter, Brauner, Grüner) are a family only on the label, and Grüner is not a Silvaner relative despite a century of textbooks saying so.",
+   "because": "The key (Traminer × St. Georgener-Rebe) is right, but two statements in the explanation are false. Silvaner is Traminer × Österreichisch Weiss (per DNA fingerprinting), so Silvaner and Grüner Veltliner share Traminer as a parent and are half-siblings. Some of the Veltliners are also related to each other: Frühroter Veltliner is Roter Veltliner × Silvaner, a parent and child. What is true is that Grüner has no known link to Roter or Frühroter Veltliner. A smaller point: the St. Georgen vine was found in 2000 and the parentage was confirmed by DNA only in 2007, not 'shortly after'.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gr%C3%BCner_Veltliner",
+    "https://en.wikipedia.org/wiki/Silvaner",
+    "https://en.wikipedia.org/wiki/Fr%C3%BChroter_Veltliner"
+   ],
+   "fix": "The trap is the name: Grüner has no known genetic link to Roter, Frühroter or Brauner Veltliner, despite the shared label. Silvaner is not a parent either, though it is a half-sibling, since Silvaner is Traminer × Österreichisch Weiss. (Parent vine found in 2000; parentage confirmed by DNA in 2007.)",
+   "batch": 4
+  },
+  {
+   "id": "a-gfz1r7rx",
+   "kind": "wrong-explanation",
+   "claim": "Zierfandler and Rotgipfler are siblings — both natural Traminer × Roter Veltliner offspring",
+   "because": "DNA work shows Rotgipfler is Traminer (Savagnin) × Roter Veltliner. For Zierfandler, only Roter Veltliner is confirmed as a parent; the other parent has never been identified and is only thought to be Traminer-like, possibly a Savagnin relative. The two grapes are therefore at most half-siblings through Roter Veltliner, not proven full siblings. The Thermenregion answer and the Spätrot-Rotgipfler blend are correct.",
+   "sources": [
+    "https://gregorysmith.wine/2023/03/29/the-grape-varieties-of-austria-part-2/",
+    "https://www.grapecollective.com/zierfandler-and-rotgipfler-austrias-native-grape-power-couple/",
+    "https://en.wikipedia.org/wiki/Zierfandler",
+    "https://en.wikipedia.org/wiki/Rotgipfler"
+   ],
+   "fix": "Zierfandler and Rotgipfler share Roter Veltliner as a parent: Rotgipfler is Traminer × Roter Veltliner, while Zierfandler's second parent is unidentified but thought to be Traminer-like",
+   "batch": 4
+  },
+  {
+   "id": "a-ncyfeuav",
+   "kind": "wrong-explanation",
+   "claim": "Bittersweet vintage apples: Dabinett, Kingston Black, Yarlington Mill.",
+   "because": "Kingston Black is the classic bittersharp (high tannin and high acid), not a bittersweet; Dabinett and Yarlington Mill are bittersweets.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kingston_Black",
+    "https://www.cumminsnursery.com/learn-trees/cider-apple-types",
+    "https://www.orangepippin.com/varieties/apples/kingston-black"
+   ],
+   "fix": "Vintage cider apples: the bittersweets Dabinett and Yarlington Mill, and the bittersharp Kingston Black.",
+   "batch": 5
+  },
+  {
+   "id": "a-et2u93tn",
+   "kind": "wrong-explanation",
+   "claim": "Domfront demands a majority of Plant de Blanc from standard orchards",
+   "because": "The Poiré Domfront AOP rule is a minimum of 40% Plant de Blanc, not a majority (INAO product sheet: Plant de Blanc enters at more than 40%; AOC approved by arrêté of 20 December 2002).",
+   "sources": [
+    "https://inao.gouv.fr/produit/domfront-23083",
+    "https://www.calyce-cidre.com/cider-geek/poire-domfront/"
+   ],
+   "fix": "Domfront demands at least 40% Plant de Blanc from standard orchards",
+   "batch": 5
+  },
+  {
+   "id": "a-kbk4i21a",
+   "kind": "ambiguous-stem",
+   "claim": "Which two second growths are known as the 'Super Seconds' of Saint-Julien's Léoville trio? ... Léoville-Las-Cases and Léoville-Barton",
+   "because": "The canonical super-second list (Wine Spectator glossary: Cos d'Estournel, Ducru-Beaucaillou, Léoville Las Cases, Palmer, Pichon Lalande) names only one Léoville, Las Cases. Barton and Poyferré are both only sometimes added, so a candidate answering Las Cases and Poyferré is as defensible as Las Cases and Barton; the stem's 'two' has no single right answer.",
+   "sources": [
+    "https://www.winespectator.com/glossary/show/id/super_second",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_L%C3%A9oville-Las_Cases"
+   ],
+   "fix": "Stem: Which Léoville is the Saint-Julien estate classically counted among the 'Super Seconds'? Answer: Léoville-Las-Cases (Barton and Poyferré are sometimes added). Accept: ['leoville las cases', 'las cases']",
+   "batch": 5
+  },
+  {
+   "id": "a-wspnxw1o",
+   "kind": "accept-list",
+   "claim": "'escanciado high pour'",
+   "because": "Escanciado is the Asturian ritual of pouring bottled sidra from overhead. The Basque txotx ritual is different: the cider is caught in the glass from a thin stream shot out of a freshly tapped barrel at the sagardotegi. So the accept list credits the Asturian practice as the Basque answer. The model answer's 'long high pour' has the same conflation.",
+   "sources": [
+    "https://thecraftycask.com/craft-cider/basque-cider/",
+    "https://vinepair.com/articles/asturian-cider-pouring-method/"
+   ],
+   "fix": "Model answer: Caught in the glass from a thin stream shot from a freshly tapped barrel (txotx) to aerate its still, sharp body. Accept: ['caught from the barrel stream txotx', 'txotx from the barrel']",
+   "batch": 5
+  },
+  {
+   "id": "a-jzvq813j",
+   "kind": "accept-list",
+   "claim": "accept: \"pichon longueville\"",
+   "because": "The question asks for both second growths of the Pichon split, but \"Pichon Longueville\" alone names only one of them. It was the name on Pichon Baron's own label until 2012 (\"Château Pichon-Longueville\" at the top, \"Baron de Pichon-Longueville\" at the base). A candidate who names only the Baron would be graded correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Pichon_Longueville_Baron",
+    "https://www.thewinecellarinsider.com/bordeaux-wine-producer-profiles/bordeaux/pauillac/pichon-longueville-baron/"
+   ],
+   "fix": "accept: [\"pichon baron and pichon lalande\", \"pichon baron and pichon comtesse\", \"pichon-longueville baron and comtesse de lalande\"] (drop \"pichon longueville\")",
+   "batch": 6
+  },
+  {
+   "id": "a-bg3f0jo1",
+   "kind": "outdated",
+   "claim": "Six others are shared; these two are DRC's alone.",
+   "because": "The count of six held only from the 2009 vintage, when Corton (from Prince Florent de Merode's vines) was added, up to the 2018 vintage. It stopped being true when Corton-Charlemagne, from vines leased from Bonneau du Martray, joined the range with the 2019 vintage. DRC now releases seven shared grands crus besides its two monopoles: Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne and Montrachet. It also owns about 0.17 ha of Bâtard-Montrachet, which it does not sell.",
+   "sources": [
+    "https://www.sothebys.com/en/articles/domaine-de-la-romanee-conti-a-collectors-guide-to-the-renowned-burgundy-wines",
+    "https://www.corneyandbarrow.com/domaine-de-la-romanee-conti",
+    "https://en.wikipedia.org/wiki/Domaine_de_la_Roman%C3%A9e-Conti"
+   ],
+   "fix": "Its other grands crus (Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne from 2019, Montrachet, and a tiny unreleased Bâtard-Montrachet) are shared; these two are DRC's alone.",
+   "batch": 7
+  },
+  {
+   "id": "a-q4wv3dx8",
+   "kind": "wrong-explanation",
+   "claim": "held by Mommessin for a century",
+   "because": "The Mommessin family bought Clos de Tart in 1932 and sold it to François Pinault's Artémis Domaines at the end of 2017, with the sale completed in 2018. That is about 85 years, not a century.",
+   "sources": [
+    "https://www.decanter.com/wine-news/clos-de-tart-sold-latour-owner-pinault-378848/",
+    "https://en.wikipedia.org/wiki/Clos_de_Tart",
+    "https://www.corneyandbarrow.com/clos-de-tart"
+   ],
+   "fix": "held by the Mommessin family from 1932 to 2017",
+   "batch": 7
+  },
+  {
+   "id": "a-pnip9bif",
+   "kind": "outdated",
+   "claim": "Seven total; Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.",
+   "because": "The Champagne cahier des charges has changed twice. From December 2022 (INAO approval, published in the JORF on 10 Dec 2022) the resistant hybrid Voltis is allowed as a 'variété d'intérêt à fins d'adaptation', capped at 5% of vineyard area and 10% of a blend. The arrêté of 31 July 2025 then added Chardonnay Rosé as a main variety, which the Comité Champagne calls the eighth recognised grape. 'Seven total' has therefore been wrong since 2022 at the latest. The stem's 'the four permitted ... beyond the big three' still holds only if it is read as the four traditional minor grapes.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052045089",
+    "https://www.champagne.fr/system/files/2025-10/Communique%CC%81%20de%20presse%20-%20Chardonnay%20Rose.pdf",
+    "https://www.thedrinksbusiness.com/2025/10/pink-chardonnay-joins-champagnes-list-of-authorised-grape-varieties/",
+    "https://piwi-international.org/en/2022/02/grape-variety-voltis-was-released-for-the-production-of-champagne-aoc/"
+   ],
+   "fix": "stem: 'Name the four traditional minor Champagne grapes beyond the big three (any two).' exp: 'The historic seven; since 2022 the hybrid Voltis is allowed as an adaptation variety (max 5% of plantings, 10% of a blend), and since July 2025 Chardonnay Rosé is a main variety, so the rulebook now lists more than seven. Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.'",
+   "batch": 10
+  },
+  {
+   "id": "a-63od6qe1",
+   "kind": "wrong-explanation",
+   "claim": "further work tied that to Tribidrag, documented in Croatian records from the early sixteenth century",
+   "because": "Tribidrag is documented in the fifteenth century, not the sixteenth. The name appears in 1444 in a record by don Juraj Radičević, priest at Vodice in Dalmatia. The same grape appears earlier still, as Cratosia (Kratošija), in the Statute of Budva of 1426–1442.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zinfandel"
+   ],
+   "fix": "further work tied that to Tribidrag, documented in Dalmatian records from the fifteenth century (1444)",
+   "batch": 10
+  },
+  {
+   "id": "a-d9erb66c",
+   "kind": "wrong-explanation",
+   "claim": "Château de Beaucastel cuttings imported in 1989 spent three years in USDA quarantine",
+   "because": "Tablas Creek's own history page says the partners bought the land in 1989 and the first cuttings were imported from France in January 1990. After three years of USDA indexing they were available in 1993, and planting of the estate vineyard began in 1994.",
+   "sources": [
+    "https://tablascreek.com/story/history"
+   ],
+   "fix": "Château de Beaucastel cuttings imported in January 1990 (the land was bought in 1989) spent three years in USDA quarantine; the estate vineyard followed from 1994.",
+   "batch": 10
+  },
+  {
+   "id": "a-iag39d6o",
+   "kind": "ambiguous-stem",
+   "claim": "The 'Eleven' AVAs of Napa's floor",
+   "because": "No official or standard grouping counts eleven valley-floor AVAs in Napa. Napa Valley has 17 nested AVAs (Crystal Springs of Napa Valley became the 17th in November 2024), and most of them are mountain or hillside AVAs. Only a handful straddle the floor between Highway 29 and the Silverado Trail: Oak Knoll, Yountville, Oakville, Rutherford, St. Helena and Calistoga, with Stags Leap lying east of the Trail. A candidate would learn a false count from this stem. The keyed answer itself is right.",
+   "sources": [
+    "https://napavintners.com/napa_valley/crystal-springs-ava/",
+    "https://en.wikipedia.org/wiki/Napa_Valley_AVA"
+   ],
+   "fix": "The valley-floor AVAs of Napa (Oakville, Rutherford, St. Helena and their neighbours) are bisected by which two roads used in tasting shorthand?",
+   "batch": 10
+  },
+  {
+   "id": "a-uhsq0145",
+   "kind": "wrong-explanation",
+   "claim": "Contrast 1855, which has never expired and has been altered once.",
+   "because": "The 1855 Médoc list has been altered twice: Château Cantemerle was added as a Fifth Growth in 1856, and Mouton Rothschild was promoted to First Growth in 1973. 'Only one change' is a common simplification that experts correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855",
+    "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Cantemerle"
+   ],
+   "fix": "Contrast 1855, which has never expired and has been altered only twice (Cantemerle added in 1856, Mouton Rothschild promoted in 1973).",
+   "batch": 12
+  },
+  {
+   "id": "a-p9dbm43t",
+   "kind": "wrong-explanation",
+   "claim": "ans: \"Protected terms (Château, Clos, Cru, Vintage/Port, Classic…)\"; exp: \"Why an Aussie 'Port' became Tawny and 'Sherry' became Apera at home too.\"",
+   "because": "Port (Porto) and Sherry (Jerez-Xérès-Sherry) are protected geographical indications, not traditional terms. Australia dropped them under the GI provisions of the 2008 EU–Australia Agreement on Trade in Wine, which came into force in 2010. The same agreement expressly lets Australia keep the traditional expressions tawny, ruby, cream and vintage. So the name change came from GI protection, and 'Vintage' is a term non-EU wines can use under agreements, as the 2006 US–EU agreement also allows Château, Clos and Vintage for US wines.",
+   "sources": [
+    "https://piperalderman.com.au/insight/australian-european-community-agreement-on-trade-in-wine/",
+    "https://www.wineaustralia.com/getmedia/c981e769-b05e-410f-ab8a-715683f56dd0/document(1).pdf"
+   ],
+   "fix": "ans: \"Protected traditional terms (Château, Clos, Cru, Classic…) in the EU market unless a bilateral agreement authorises them\"; exp: \"Distinct from GI protection: Port and Sherry are protected geographical indications, which is why Australian 'Port' became Tawny and 'Sherry' became Apera under the 2008 EU–Australia wine agreement.\"",
+   "batch": 12
+  },
+  {
+   "id": "a-1sstd67g",
+   "kind": "wrong-explanation",
+   "claim": "Metallic clash risk comes from tannin and oak, not white wine per se.",
+   "because": "Tamura et al. (J. Agric. Food Chem. 2009) showed that the fishy-metallic aftertaste in wine and seafood pairings is driven by ferrous iron in the wine, not by tannin: adding Fe2+ to model wine raised it, chelating iron in red wine suppressed it, and intensity tracked total iron and ferrous ion. The bank's own explanation for a-9x83xbqa already says the aftertaste \"tracks the wine's iron\", so the two explanations contradict each other.",
+   "sources": [
+    "https://pubs.acs.org/doi/10.1021/jf901656k",
+    "https://www.sciencedaily.com/releases/2009/10/091021115013.htm"
+   ],
+   "fix": "The fishy-metallic clash tracks the wine's iron content (Tamura 2009), not tannin, oak or white wine as such; low-iron, unoaked, high-acid whites are the safe choice.",
+   "batch": 13
+  },
+  {
+   "id": "a-z612m4x4",
+   "kind": "wrong-explanation",
+   "claim": "A quiet revolution: flor wine without the spirit returns to legality.",
+   "because": "The 2022 revision of the Jerez-Xérès-Sherry pliego put the ageing-zone expansion, the six old grape varieties, pagos, Fino Viejo and the en rama definition into effect. The Consejo's own page lists optional fortification (natural 15%+) separately, as 'Pending EU approval'. The European Commission approved it on 29 July 2025, and it took effect after publication in the Official Journal in August 2025. The model answer and explanation present unfortified Sherry as legal from the 2022 reform, but it was not legal until 2025.",
+   "sources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://winewitandwisdomswe.com/2025/08/07/unfortified-sherry-approved-at-last/",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do"
+   ],
+   "fix": "exp: \"The 2022 revision expanded the ageing zone to the whole production zone, readmitted six pre-phylloxera grapes, and defined pagos, Fino Viejo and en rama. Optional fortification (wines reaching 15% naturally) was submitted in the same package but only approved by the EU on 29 July 2025, in force August 2025.\" ans: \"Expanded the ageing zone and permitted grapes, and formalized categories (pagos, Fino Viejo, en rama); unfortified wines at a natural 15%+ were proposed then and legal from 2025\"",
+   "batch": 14
+  },
+  {
+   "id": "a-2h2elgy6",
+   "kind": "accept-list",
+   "claim": "accept: \"superiore riserva vergine soleras\"",
+   "because": "Under the Marsala DOC the ageing ladder is Fine (1 yr), Superiore (2), Superiore Riserva (4), Vergine/Soleras (5), Vergine Stravecchio/Riserva (10+). The two top tiers are Vergine and Vergine Stravecchio/Riserva, as the model answer says. Superiore Riserva sits below both, so this accept entry takes a wrong answer: Superiore Riserva given as a peak tier.",
+   "sources": [
+    "https://italianwinecentral.com/denomination/marsala-doc/",
+    "https://en.wikipedia.org/wiki/Marsala_wine"
+   ],
+   "fix": "Replace the accept entry \"superiore riserva vergine soleras\" with \"vergine soleras and vergine stravecchio riserva\"",
+   "batch": 15
+  },
+  {
+   "id": "a-9ojxmc0c",
+   "kind": "wrong-fact-in-option",
+   "claim": "ans: \"Dönnhoff (Niederhausen)\"",
+   "because": "Weingut Hermann Dönnhoff is based at Bahnhofstraße 11, 55585 Oberhausen an der Nahe. Niederhausen is the village of the Hermannshöhle vineyard, not the estate's home, so the parenthesis puts the estate in the wrong village.",
+   "sources": [
+    "https://wineguide.wein.plus/weingut-hermann-doennhoff",
+    "https://de.wikipedia.org/wiki/Weingut_D%C3%B6nnhoff",
+    "https://www.weine-wuttke.de/shop/deutschland/weingut-doennhoff-oberhausen-nahe/"
+   ],
+   "fix": "Dönnhoff (Oberhausen; the Hermannshöhle lies in neighbouring Niederhausen)",
+   "batch": 15
+  },
+  {
+   "id": "a-bam6b8ud",
+   "kind": "outdated",
+   "claim": "Grosser Ring (VDP Mosel) auctions in Trier each September",
+   "because": "The Grosser Ring (founded 1908) held its auction in Trier every September until recently. The VDP has now moved it to spring for private collectors. The next auction, for the 2025 vintage, is set for 9 May 2027, and the venue is not yet announced. The keyed answer and the 1908 date are right.",
+   "sources": [
+    "https://www.vdp.de/en/events/veranstaltung/2215-weinversteigerung-auktion-grosser-ring-vdp-mosel-saar-ruwer-08-05-2027",
+    "https://glossary.wein.plus/grosser-ring-vdp-mosel-2",
+    "https://magazine.wein.plus/news/auction-of-the-great-ring-vdp-mosel-saar-ruwer-now-in-spring-strategic-realignment-focused-on-private-collectors"
+   ],
+   "fix": "Grosser Ring (VDP Mosel) held its auction in Trier each September for decades; from 2027 it moves to May. Goldkapsel lots soar.",
+   "batch": 16
+  },
+  {
+   "id": "a-bam6b8ud",
+   "kind": "ambiguous-stem",
+   "claim": "unite under which acronym founded 1908?",
+   "because": "'Grosser Ring' is not an acronym. VDP is the only acronym among the options, and the Grosser Ring is today VDP Mosel-Saar-Ruwer, so the word 'acronym' points a careful candidate toward VDP. The VDP's forerunner, the Verband Deutscher Naturweinversteigerer, was founded in 1910, not 1908. Only the date separates the keyed answer from VDP.",
+   "sources": [
+    "https://glossary.wein.plus/grosser-ring-vdp-mosel-2",
+    "https://en.wikipedia.org/wiki/Verband_Deutscher_Pr%C3%A4dikatsweing%C3%BCter"
+   ],
+   "fix": "The historic auction estates of the Mosel, Saar and Ruwer unite under which association, founded 1908?",
+   "batch": 16
+  },
+  {
+   "id": "a-ih3g5con",
+   "kind": "outdated",
+   "claim": "minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).",
+   "because": "Under the current Eger PDO product specification (termékleírás), Egri Bikavér (Classicus) must blend at least four varieties, each above 5%, with Kékfrankos at 30-65% and the largest component. So Kékfrankos may exceed 50%. The old 'no variety above 50%' cap comes from the earlier rules, where the minimum was three varieties. The Eger wine route's summary of the specification gives the same four-variety, 30-65% rule for Superior and Grand Superior. Producers' labels bear this out: Bukolyi's Nagy-Eged Grand Superior is 60% Kékfrankos with four varieties. That means both the 50% cap and 'Superior requires five' are no longer current.",
+   "sources": [
+    "https://egriborut.hu/2021/03/18/az-egri-bikaver-keszites-szabalyai-az-egri-termekleirasaban/",
+    "https://hungarianwines.eu/bloody-legends-and-crystal-clear-regulations/",
+    "https://www.winewithseth.com/winewiki/bikaver-varieties-permitted-hungarys-bulls-blood-blend-regulations/",
+    "https://bukolyimarcell.hu/termek/egri-bikaver-nagy-eged-grand-superior/"
+   ],
+   "fix": "Kékfrankos (Blaufränkisch): 30-65% of the blend and always the largest component, in a blend of at least four permitted varieties, each above 5%.",
+   "batch": 17
+  },
+  {
+   "id": "a-qnmekbf5",
+   "kind": "accept-list",
+   "claim": "accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\"",
+   "because": "The stem asks for Puglia's DOCGs, and there are four: Castel del Monte Bombino Nero, Castel del Monte Nero di Troia Riserva, Castel del Monte Rosso Riserva and Primitivo di Manduria Dolce Naturale. The model answer itself lists all four. This accept entry names only two of them and leaves out both Castel del Monte Riserva DOCGs, so the grader passes an answer that is half missing. The other entries each cover all four, either by name or as 'three Castel del Monte DOCGs'.",
+   "sources": [
+    "https://www.quattrocalici.it/denominazioni/castel-del-monte-bombino-nero-docg/",
+    "https://www.assovini.it/italia/puglia/item/377-castel-del-monte-bombino-nero-docg",
+    "https://it.wikipedia.org/wiki/Castel_del_Monte_Bombino_Nero"
+   ],
+   "fix": "Delete the accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\".",
+   "batch": 19
+  },
+  {
+   "id": "a-ez6nm4ot",
+   "kind": "wrong-explanation",
+   "claim": "The only bottle size permitted for Vin Jaune.",
+   "because": "The Arbois cahier des charges (INAO, 2022, ch. I, VIII 3°b) reads the other way round. It reserves the 62 cl clavelin to wines carrying the 'vin jaune' mention; it does not make the clavelin compulsory for vin jaune. Only the Château-Chalon AOP requires that its wine be sold in the 62 cl clavelin alone (INAO product page). Arbois and Côtes du Jura vin jaune is also sold in magnums (150 cl).",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf",
+    "https://www.inao.gouv.fr/produit/chateau-chalon-12233",
+    "https://onshorecellars.com/products/fruitiere-vinicole-darbois-vin-jaune-arbois"
+   ],
+   "fix": "The 62 cl clavelin is reserved by law for vin jaune; in Château-Chalon it is the only bottle allowed.",
+   "batch": 20
+  },
+  {
+   "id": "a-g6h7pdjl",
+   "kind": "accept-list",
+   "claim": "\"six years\" in the accept list",
+   "because": "Under the Arbois cahier des charges, vin jaune stays in oak without topping up until 15 December of the sixth year after the harvest, with at least 60 months of that under voile. From harvest that is about six years and three months, not six years. The stem asks for both the total and the months under voile, but the grader accepts a bare 'six years', which is short of the legal minimum and says nothing about the voile.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf"
+   ],
+   "fix": "Remove \"six years\" from accept; keep \"six years and three months\", \"6 years 3 months\", \"75 months\".",
+   "batch": 20
+  },
+  {
+   "id": "a-yj5nor7h",
+   "kind": "wrong-explanation",
+   "claim": "Bonnezeaux and Coteaux du Layon surround it.",
+   "because": "Quarts de Chaume Grand Cru lies within part of a single commune, Rochefort-sur-Loire, on the right bank of the Layon. It is surrounded by Coteaux du Layon, including the Chaume premier cru. Bonnezeaux is a separate enclave at Thouarcé, about 13 km to the southeast, and does not border it.",
+   "sources": [
+    "https://www.vinsdeloire.fr/en/loire-wines/quarts-chaume-grand-cru/all-about-quarts-chaume-grand-cru",
+    "https://www.wine-searcher.com/regions-bonnezeaux",
+    "https://www.wine-searcher.com/regions-quarts+de+chaume"
+   ],
+   "fix": "Minimum 298 g/L must weight; Coteaux du Layon (with its Chaume premier cru) surrounds it, and Bonnezeaux lies about 13 km upstream at Thouarcé.",
+   "batch": 21
+  },
+  {
+   "id": "a-qyluccep",
+   "kind": "outdated",
+   "claim": "ans: \"Chasselas (Sauvignon Blanc is permitted as a minority partner)\"; accept: \"chasselas with sauvignon a permitted minority partner\", \"chasselas led with some sauvignon\"",
+   "because": "The Pouilly-sur-Loire cahier des charges (Décret n° 2011-784 of 28 June 2011) sets the encépagement as Chasselas B alone. Sauvignon B keeps the appellation only as a transitional exception: mixed plantings of Chasselas with some Sauvignon vines that were in place on 31 July 2009 stay eligible until they are grubbed up. Sauvignon has not been a permitted blending partner since the 2011 cahier.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000024278489",
+    "https://www.inao.gouv.fr/produit/pouilly-sur-loire-17634"
+   ],
+   "fix": "ans: \"Chasselas (the only permitted variety; Sauvignon survives only in mixed parcels planted before 31 July 2009, until they are pulled up); Pouilly-Fumé is Sauvignon Blanc\". Delete \"chasselas with sauvignon a permitted minority partner\" and \"chasselas led with some sauvignon\" from accept.",
+   "batch": 22
+  },
+  {
+   "id": "a-steh6v5s",
+   "kind": "ambiguous-stem",
+   "claim": "\"Which Centre-Loire appellation is uniquely allowed to make its rosé from Pinot Gris?\" / exp: \"one of French appellation law's genuine one-offs\"",
+   "because": "Reuilly is not the only one allowed Pinot Gris in its rosé. Châteaumeillant, which the explanation itself lists as a Centre-Loire satellite, permits Pinot Gris G as an accessory variety in its rosé (gris), up to 15% of the plantings, alongside Gamay (at least 60%) and Pinot Noir. The Touraine AOP rosé list also includes Pinot Gris G. What sets Reuilly apart is that its rosé may be 100% Pinot Gris.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Ch%C3%A2teaumeillant_(AOC)",
+    "https://www.inao.gouv.fr/produit/chateaumeillant-gris-22895",
+    "https://extranet.inao.gouv.fr/fichier/CDC-Touraine---PNO-2024.pdf",
+    "https://en.wikipedia.org/wiki/Reuilly_AOC"
+   ],
+   "fix": "Stem: \"Which Centre-Loire appellation may make its rosé entirely from Pinot Gris?\" In exp, replace \"one of French appellation law's genuine one-offs\" with \"unusual in French appellation law (Châteaumeillant allows Pinot Gris only as up to 15% of a Gamay-led gris)\".",
+   "batch": 22
+  },
+  {
+   "id": "a-xfj7yurk",
+   "kind": "wrong-explanation",
+   "claim": "Marsanne, Roussanne, Viognier, Semillon, Sangiovese",
+   "because": "OAR 845-010-0915 lists 18 varieties allowed at 75%: Cabernet Franc, Cabernet Sauvignon, Carmenere, Durif (Petite Sirah), Grenache, Malbec, Marsanne, Merlot, Mourvedre, Petit Verdot, Roussanne, Sangiovese, Sauvignon Blanc (Fume Blanc), Semillon, Syrah, Tannat, Tempranillo, Zinfandel. Viognier is not on it, so it needs 90%. Sauvignon Blanc is on it and the explanation leaves it out.",
+   "sources": [
+    "https://oregon.public.law/rules/oar_845-010-0915",
+    "https://www.dwt.com/-/media/files/events/2025/2025-wvlr/2025-oregon-wine-labeling.pdf"
+   ],
+   "fix": "Replace 'Viognier' with 'Sauvignon Blanc' in the list: '...plus Syrah, Grenache, Mourvedre, Marsanne, Roussanne, Sauvignon Blanc, Semillon, Sangiovese, Tempranillo, Tannat, Zinfandel and Petite Sirah.'",
+   "batch": 23
+  },
+  {
+   "id": "a-nnsm0jnb",
+   "kind": "wrong-explanation",
+   "claim": "after his death Clive Paton took material to Martinborough",
+   "because": "Clive Paton bought young Abel-clone vines (about 3,000 cuttings) from Malcolm Abel in 1980 while Abel was alive, and planted them at Ata Rangi. He worked the 1981 vintage with Abel, who died suddenly in 1981. The explanation reverses that order.",
+   "sources": [
+    "https://www.nzwine.com/en/media/our-people/phyll-pattie-and-clive-paton/",
+    "https://worldoffinewine.com/news-features/abel-clone-mystery-new-zealand-pinot-noir"
+   ],
+   "fix": "in 1980, shortly before Abel's sudden death in 1981, Clive Paton bought vines from him and planted them in Martinborough",
+   "batch": 23
+  },
+  {
+   "id": "a-fl5ija36",
+   "kind": "accept-list",
+   "claim": "\"marlborough hawkes bay central otago\"",
+   "because": "The question asks for five regions. This accept entry passes an answer that names only three and leaves out North Canterbury and Gisborne. NZ Winegrowers' Vineyard Report 2024 confirms the full order: Marlborough 29,970 ha, Hawke's Bay 4,623, Central Otago 2,115, North Canterbury 1,467, Gisborne 1,239 (then Wairarapa 1,081 and Nelson 1,069). The same report puts Marlborough at about 71% (29,970 of 41,991 ha producing), not the explanation's '32,000 of 44,000'.",
+   "sources": [
+    "https://www.nzwine.com/media/4dsdmxpy/vineyard-report-2024.pdf"
+   ],
+   "fix": "Remove \"marlborough hawkes bay central otago\" from accept, and keep only the two five-region entries.",
+   "batch": 23
+  },
+  {
+   "id": "a-vw995u1q",
+   "kind": "wrong-explanation",
+   "claim": "A Ukrainian-born PhD washing dishes at Geneva station until Charles Fournier listened.",
+   "because": "Frank washed dishes at night in Manhattan after arriving in December 1951. He came to the New York State Agricultural Experiment Station in Geneva in April 1952 as a researcher on field nursery practices under Karl Brase, not as a dishwasher. He met Fournier at a Geneva seminar in 1953, and Fournier hired him at Gold Seal in 1954.",
+   "sources": [
+    "https://www.drfrankwines.com/konstantins-story/",
+    "https://en.wikipedia.org/wiki/Konstantin_Frank"
+   ],
+   "fix": "A Ukrainian-born PhD who washed dishes in Manhattan, then worked in obscurity at the Geneva station until Charles Fournier of Gold Seal listened.",
+   "batch": 24
+  },
+  {
+   "id": "a-zy5xnk9q",
+   "kind": "wrong-explanation",
+   "claim": "Idaho's second AVA, Lewis-Clark Valley (2016), likewise straddles a state line, into Washington.",
+   "because": "Idaho's second AVA is Eagle Foothills, established by TTB on 25 November 2015 as the first sub-AVA of Snake River Valley and the first AVA entirely inside Idaho. Lewis-Clark Valley came next, on 20 April 2016, as Idaho's third AVA.",
+   "sources": [
+    "https://www.federalregister.gov/documents/2015/11/25/2015-29986/establishment-of-the-eagle-foothills-viticultural-area",
+    "https://greatnorthwestwine.com/2015/11/25/ttb-establishes-eagle-foothills-ava-for-idaho-wine-industry/",
+    "https://greatnorthwestwine.com/2016/04/20/feds-establish-lewis-clark-valley-ava-modify-columbia-valley/"
+   ],
+   "fix": "Idaho's second AVA, Eagle Foothills (2015), is a sub-AVA inside Snake River Valley; its third, Lewis-Clark Valley (2016), straddles the state line into Washington.",
+   "batch": 25
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "kind": "wrong-key",
+   "claim": "DOC Vinho de Talha",
+   "because": "Vinho de Talha is not a DOC of its own. Portaria 296/2010 (1 June 2010) recognised talha winemaking as a traditional method that may carry the designation 'Vinho de Talha' inside DOC Alentejo, and the CVRA certifies it as DOC Alentejo Vinho de Talha. The DOC is therefore Alentejo.",
+   "sources": [
+    "https://dre.pt/pesquisa/-/search/332677/details/maximized",
+    "https://www.vinhosdoalentejo.pt/pt/vinhos/detalhe/piteira-doc-talha-branco/"
+   ],
+   "fix": "DOC Alentejo, using the traditional designation 'Vinho de Talha' (since 2010): fermentation and skin maceration in clay talhas, with a layer of olive oil on top of the wine; a Roman continuity",
+   "batch": 25
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "kind": "accept-list",
+   "claim": "\"amphora fermentation\"",
+   "because": "The question asks for the DOC and the vessels. 'Amphora fermentation' names neither the DOC (Alentejo) nor the talha, and the grader would pass it anyway, so a candidate is credited for an answer that names neither thing asked for.",
+   "sources": [
+    "https://dre.pt/pesquisa/-/search/332677/details/maximized"
+   ],
+   "fix": "Remove \"amphora fermentation\" from accept and add \"alentejo vinho de talha\".",
+   "batch": 25
+  },
+  {
+   "id": "a-hafues4n",
+   "kind": "wrong-explanation",
+   "claim": "Châteauneuf-du-Pape's minimum natural alcohol, the highest of any French appellation, is:",
+   "because": "The keyed 12.5% is correct (the CdP cahier des charges sets a minimum natural alcohol of 12.5%). But it is not the highest minimum in France. The Sauternes cahier des charges sets a minimum natural alcohol of 15%, with grapes of at least 221 g/l sugar. Even among southern Rhône dry reds, the Gigondas cahier also requires 12.5%, so Châteauneuf does not stand alone at that figure either. A candidate who learns 'highest in France' will get any comparison question wrong.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/4-CDC-Sauternes-PNO.pdf",
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021188787/2009-10-24",
+    "https://extranet.inao.gouv.fr/fichier/PNO2022AOPGigondas.pdf"
+   ],
+   "fix": "Châteauneuf-du-Pape's minimum natural alcohol, set in its 1936 decree, is:",
+   "batch": 28
+  },
+  {
+   "id": "a-ulyq5wk0",
+   "kind": "wrong-explanation",
+   "claim": "very top or top shoulder is normal for a 1950s wine, upper to mid shoulder is drinkable but a genuine risk ... (exp) mid-shoulder in a 1959 usually means heat",
+   "because": "The standard auction ullage scales (Broadbent's guide, as reproduced in Wikipedia's Ullage (wine) article, and the merchant and auction condition scales) call top shoulder normal for Bordeaux over about 15 years. They call upper shoulder acceptable and common for wines over 20, 'usually not a problem'. So for a 67-year-old 1959, upper shoulder is a normal fill, not a genuine risk. Mid shoulder is the level those scales mark as higher than normal risk. They describe it as more common past 30 to 40 years through natural ageing and a weakening cork, and none of them say it usually means heat.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ullage_(wine)",
+    "https://www.santarosafinewine.com/winecondition.php"
+   ],
+   "fix": "ans: 'very top or top shoulder is normal for a 1950s wine, upper shoulder is acceptable at that age, mid shoulder is drinkable but a genuine risk, and low shoulder is a gamble.' exp: 'mid-shoulder in a 1959 points to a tired cork or poor storage, and such a wine can fade in the glass within minutes of pouring.'",
+   "batch": 30
+  },
+  {
+   "id": "a-ki9wx6x5",
+   "kind": "wrong-explanation",
+   "claim": "Before 2017 Constantia and Durbanville were free-floating wards inside the Coastal Region with no district above them.",
+   "because": "Durbanville (a ward since 1989) and Philadelphia were wards of the Tygerberg district. The June 2017 Cape Town district replaced Tygerberg and also took in the district-less wards Constantia and Hout Bay. Only Constantia and Hout Bay were without a district before 2017.",
+   "sources": [
+    "https://www.winewithseth.com/winewiki/durbanville/",
+    "https://www.wine-searcher.com/regions-tygerberg"
+   ],
+   "fix": "Before 2017 Durbanville and Philadelphia were wards of the Tygerberg district, while Constantia and Hout Bay were wards directly under the Coastal Region with no district; the Cape Town district replaced Tygerberg and gathered all four.",
+   "batch": 31
+  },
+  {
+   "id": "a-9gacn1qu",
+   "kind": "wrong-fact-in-option",
+   "claim": "Boekenhoutskloof — \"Franschhoek Syrah & The Chocolate Block\"",
+   "because": "Boekenhoutskloof is based in Franschhoek, but its Syrah is not Franschhoek fruit. It comes from its two Swartland home farms, about 70% Porseleinberg and 30% Goldmine, and was earlier a Wellington single vineyard. The Syrah is labelled WO Swartland.",
+   "sources": [
+    "https://www.thewinesociety.com/product/boekenhoutskloof-syrah-swartland-2019/",
+    "https://wineanorak.com/2020/03/16/in-south-africa-boekenhoutskloof/"
+   ],
+   "fix": "Pair text: \"Franschhoek estate: Swartland Syrah & The Chocolate Block\"; ans: \"Boekenhoutskloof–Franschhoek estate, Swartland Syrah\"",
+   "batch": 31
+  },
+  {
+   "id": "a-22blfud9",
+   "kind": "outdated",
+   "claim": "Rosa Kruger's registry; ~4,000 ha qualify.",
+   "because": "The Old Vine Project now reports 5,417 ha of old vines (35+ years) in South Africa. Old-vine area grew from 2,952 ha in 2016 to 5,159 ha in 2024, so the ~4,000 ha figure is roughly 2019-2020 data. Also, the Old Vine Project was founded by Rosa Kruger and certifies wines; it does not hold her personal registry.",
+   "sources": [
+    "https://www.oldvineproject.co.za/",
+    "https://cluboenologique.com/story/south-africa-old-vine-project-certified-heritage-wines/"
+   ],
+   "fix": "Old Vine Project, founded by Rosa Kruger; more than 5,000 ha of vines aged 35+ now qualify.",
+   "batch": 31
+  },
+  {
+   "id": "a-nxik8e6j",
+   "kind": "wrong-explanation",
+   "claim": "Almaviva, Don Melchor, Viñedo Chadwick — the 2004 Berlin Tasting's winners grew here.",
+   "because": "At the Berlin Tasting of 23 January 2004 the top two were Viñedo Chadwick 2000 (first) and Seña 2001 (second). Seña is an Aconcagua wine, not a Puente Alto wine. Neither Almaviva nor Don Melchor placed among the winners. Of the three wines the explanation names, only Viñedo Chadwick won.",
+   "sources": [
+    "https://vinedochadwick.cl/the-berlin-tasting",
+    "https://blog.iwfs.org/2017/04/chile-beats-france-the-berlin-tasting-of-2004-and-its-impact-on-the-world-of-wine/",
+    "https://wine-partners.at/en/news/20-years-berlin-tasting"
+   ],
+   "fix": "Almaviva, Don Melchor and Viñedo Chadwick all grow here; Viñedo Chadwick 2000 took first place at the 2004 Berlin Tasting (Seña 2001, from Aconcagua, was second).",
+   "batch": 32
+  },
+  {
+   "id": "a-rniv2eb8",
+   "kind": "wrong-explanation",
+   "claim": "But the EU and the US both demand 85%, so almost every Chilean bottle you will ever see is made to 85%",
+   "because": "27 CFR 4.23(b) sets the US minimum for a single-variety name at 75%, and it applies to imported wine as well as domestic wine (51% for labrusca). The 85% figure is the EU rule. It is not a US rule.",
+   "sources": [
+    "https://www.ecfr.gov/current/title-27/chapter-I/subchapter-A/part-4/subpart-C/section-4.23",
+    "https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/grape-variety-designations-on-american-wine-labels"
+   ],
+   "fix": "But the EU demands 85% (the US, like Chile, takes 75%), so wine bound for Europe, and much Chilean export wine besides, is made to 85%. That is why the textbook figure and the shelf reality can disagree. Quote the law, then note the export practice.",
+   "batch": 32
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "outdated",
+   "claim": "Gran Reserva: 24 months for reds, 12 months for whites and rosés",
+   "because": "INV Resolución C.11/2011 originally set Gran Reserva tintos at 24 months. INV Resolución 26/2021 (Boletín Oficial, 7 January 2022), Article 7, amended Punto 1°, inciso e), apartado ii of C.11/2011 so that the minimum for Gran Reserva tintos 'pasará a ser de DIECIOCHO (18) meses'. Reserva is unchanged at 12 months for reds and 6 for whites and rosés. The 12-month figure for Gran Reserva whites and rosés is the original C.11/2011 text; the Boletín Oficial text of Article 7 amends only the red figure. So the model answer's 24 months for red Gran Reserva has been wrong since January 2022.",
+   "sources": [
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion",
+    "https://www.memo.com.ar/economia/norma-etiquetado-vinos-argentina/"
+   ],
+   "fix": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds (cut from 24 by INV Resolución 26/2021), 12 months for whites and rosés",
+   "batch": 33
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "accept-list",
+   "claim": "\"reserva 12 months red and 6 white gran reserva 24 red and 12 white\", \"12 months reds 6 months whites for reserva twice that for gran reserva\", \"reserva one year for reds gran reserva two years for reds\", \"twelve and six months for reserva twenty four and twelve for gran reserva\"",
+   "because": "Every accept entry grades 24 months (two years, twice twelve) for red Gran Reserva as correct. Since INV Resolución 26/2021 the minimum is 18 months, and no entry takes the correct figure.",
+   "sources": [
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107"
+   ],
+   "fix": "Replace the accept list with: \"reserva 12 months red and 6 white gran reserva 18 red and 12 white\", \"reserva one year for reds gran reserva eighteen months for reds\", \"twelve and six months for reserva eighteen and twelve for gran reserva\"",
+   "batch": 33
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "wrong-explanation",
+   "claim": "Argentina legislated these terms (INV Resolution C.32/2011)",
+   "because": "The resolution that defines Reserva and Gran Reserva is INV Resolución C.11, dated 11 March 2011, which amended C.20/04 and repealed C.22/2008. It was later amended by Resolución 26/2021.",
+   "sources": [
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion"
+   ],
+   "fix": "Argentina legislated these terms (INV Resolución C.11/2011, amended by Resolución 26/2021)",
+   "batch": 33
+  },
+  {
+   "id": "a-k6lsq8t6",
+   "kind": "wrong-explanation",
+   "claim": "glacial soils Henri Enjalbert declared grand-cru-worthy in 1970",
+   "because": "The estate's own history says the Guiberts found the property in 1970, but Professor Henri Enjalbert visited and assessed the soils in 1971 (July 1971 in other accounts).",
+   "sources": [
+    "https://www.daumas-gassac.com/en/mas-de-daumas-gassac-history/"
+   ],
+   "fix": "glacial soils Henri Enjalbert declared grand-cru-worthy in 1971",
+   "batch": 33
+  },
+  {
+   "id": "a-3wdv5vgc",
+   "kind": "accept-list",
+   "claim": "accept: \"equipo navazos territory\"",
+   "because": "The stem asks which DO allows unfortified flor-aged Palomino. Equipo Navazos is a négociant bottler, not a DO or any legal territory, so this entry marks a non-answer as correct. The DO is Jerez-Xérès-Sherry, alongside Manzanilla-Sanlúcar de Barrameda. Unfortified Fino and Manzanilla at a natural minimum of 15% were admitted by the regulation changes that took effect on 10 October 2022 (SherryNotes, 'New regulations for sherry in the D.O. Jerez-Xérès-Sherry').",
+   "sources": [
+    "https://www.sherrynotes.com/2021/background/new-regulations-do-jerez-xeres-sherry/",
+    "https://spanishwinelover.com/cambios-en-jerez-fin-del-encabezado-obligatorio-y-una-do-para-blancos"
+   ],
+   "fix": "accept: [\"jerez\", \"jerez-xeres-sherry\", \"jerez unfortified\", \"manzanilla-sanlucar de barrameda\", \"sanlucar manzanilla pasto\"] (drop \"equipo navazos territory\")",
+   "batch": 35
+  },
+  {
+   "id": "a-mr3cgziz",
+   "kind": "accept-list",
+   "claim": "accept: \"pinot nero chardonnay 90 percent millesimato always riserva at 36 months\"",
+   "because": "The Alta Langa disciplinare sets the base minimum at thirty months on the lees and 36 months only for Riserva. The third point the question asks for is the 30-month minimum, and this accept entry leaves it out. Read as 'always riserva at 36 months', it credits an answer that says every Alta Langa is a 36-month Riserva, which is false. (Consorzio disciplinare: 'trenta mesi'; Riserva '36 mesi'; vintage compulsory.)",
+   "sources": [
+    "https://www.altalangadocg.com/consorzio-alta-langa/disciplinare-produzione/",
+    "https://it.wikipedia.org/wiki/Alta_Langa_(vino)"
+   ],
+   "fix": "pinot nero chardonnay 90 percent millesimato always 30 months on lees riserva 36",
+   "batch": 36
+  },
+  {
+   "id": "a-vfe0dybz",
+   "kind": "wrong-explanation",
+   "claim": "Raumland's 'triple brut' program showed the way.",
+   "because": "Raumland's own site and trade listings show no 'triple brut' programme. Raumland's flagship is the Triumvirat Grande Cuvée, and the house calls itself the first VDP.Sektgut. The VDP.SEKT.STATUT was adopted in 2020 and introduced in 2021, and Raumland released the first VDP.Sekt.Prestige collection.",
+   "sources": [
+    "https://raumland.de/",
+    "https://www.vdp.de/de/vdpsektstatut",
+    "https://www.nikos-weinwelten.de/beitrag/sekthaus_raumland_erste_vdp_sekt_prestige_kollektion/"
+   ],
+   "fix": "Raumland, the first VDP.Sektgut, released the first VDP.Sekt.Prestige collection; its long-lees Triumvirat showed the way.",
+   "batch": 36
+  },
+  {
+   "id": "a-mmnywoua",
+   "kind": "wrong-explanation",
+   "claim": "milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present (and accept entry \"ancestral keeps the fibres and uses clay pots\")",
+   "because": "NOM-070-SCFI-2016 section 4.4.3 (Mezcal Ancestral) allows milling \"con mazo, tahona, molino chileno o egipcio\", so the Chilean and Egyptian mills also qualify. For fermentation and distillation it says the process \"puede incluir la fibra del maguey o agave (bagazo)\": the fibres MAY be included, they are not required. The Artesanal class (4.4.2) uses the same \"puede incluir\" wording, so keeping the fibres does not set Ancestral apart. Ancestral differs from Artesanal in its pit oven only (no masonry oven), its mills (no trapiche or desgarradora) and its clay-pot distillation over direct fire (no copper).",
+   "sources": [
+    "https://agavestyle.com/normas-del-mezcal-nom-070-scfi-2016/",
+    "https://www.mezcalistas.com/nom-70-the-full-proposal/"
+   ],
+   "fix": "In ans, replace \"milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present\" with \"milled by mallet, tahona, or Chilean or Egyptian mill, fermented in stone, earth, trunk, masonry, wood, clay or hide (the fibres may be included)\". In accept, replace \"ancestral artesanal and plain mezcal ancestral keeps the fibres and uses clay pots\" with \"ancestral artesanal and plain mezcal ancestral uses pit ovens and clay pots\".",
+   "batch": 37
+  },
+  {
+   "id": "a-bpga3b5q",
+   "kind": "accept-list",
+   "claim": "accept: \"chaume\"",
+   "because": "The third member of the trio is the Coteaux du Layon appellation. Chaume is only its premier cru, named in law as \"Coteaux du Layon Premier Cru Chaume\" since November 2011, so \"Chaume\" on its own does not name the appellation. It is also a substring of \"Quarts de Chaume\", which the stem already gives, so a candidate who simply repeats Quarts de Chaume, or confuses the Grand Cru with its neighbour, is graded correct. INAO's product page and Vins de Loire both register the name as Coteaux du Layon premier cru Chaume, a denomination inside Coteaux du Layon, while Quarts de Chaume is a separate Grand Cru AOC.",
+   "sources": [
+    "https://www.inao.gouv.fr/produit/coteaux-du-layon-premier-cru-chaume-23140",
+    "https://www.vinsdeloire.fr/en/loire-wines/coteaux-du-layon-1er-cru-chaume/all-about-coteaux-du-layon-1er-cru-chaume",
+    "https://en.wikipedia.org/wiki/Coteaux_du_Layon"
+   ],
+   "fix": "accept: [\"coteaux du layon\", \"coteaux du layon premier cru chaume\"] (remove the bare \"chaume\")",
+   "batch": 38
+  },
+  {
+   "id": "a-i9i4z2gy",
+   "kind": "ambiguous-stem",
+   "claim": "A soil report from a prospective plot returns 20% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?",
+   "because": "The site values sit inside 140 Ruggeri's published tolerance: Plantgrape (IFV/INRAE/Montpellier SupAgro) and the Pépinière Richard aptitude table both rate 140 Ru to 20% active lime and IPC 90. At 20% / IPC 60, 140 Ru is not ruled out, so option C ('110R or 140 Ruggeri') is half-viable and the soil does not 'force' 41B/Fercal. A careful examiner could defend 140 Ru on this plot. (41B is 40% / IPC 60 and Fercal 40% / IPC 120 in the same sources, so the key is right once the numbers exceed 140 Ru's limit.)",
+   "sources": [
+    "https://www.plantgrape.fr/en/varieties/rootstock-varieties/22",
+    "http://www.pepiniere-richard.ch/aptitudes.php"
+   ],
+   "fix": "Change the stem to 'A soil report from a prospective plot returns 30% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?' That puts the plot above 140 Ru's 20% and 110R's 17%, and still inside 41B (40%, IPC 60) and Fercal (40%, IPC 120). Keep the key at index 1.",
+   "batch": 40
+  },
+  {
+   "id": "i-ywwxv1nq",
+   "kind": "wrong-explanation",
+   "claim": "Since the 2022 vintage Pinot Noir may also be bottled as a red at Hengst, Kirchberg de Barr and Vorbourg.",
+   "because": "Only Hengst and Kirchberg de Barr were admitted for Pinot Noir from the 2022 vintage (Journal Officiel, 13 May 2022). Vorbourg was added later, by the arrêté of 4 July 2024 amending the Alsace Grand Cru cahier des charges (published 7 July 2024), and applies from the 2024 vintage.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049892619",
+    "https://harpers.co.uk/news/fullstory.php/aid/33060/AOC_Alsace_Grand_Cru_appellation_now_includes_Grand_Cru_Vorbourg.html",
+    "https://www.thedrinksbusiness.com/2024/07/vorbourg-added-to-aoc-alsace-grand-cru-appellation-for-pinot-noir/",
+    "https://www.wine-searcher.com/m/2022/05/alsace-grands-crus-go-red"
+   ],
+   "fix": "Pinot Noir may also be bottled as a red at Hengst and Kirchberg de Barr since the 2022 vintage, and at Vorbourg since the 2024 vintage.",
+   "batch": 45
+  },
+  {
+   "id": "i-rd9v46db",
+   "kind": "wrong-explanation",
+   "claim": "Rangen is the only Grand Cru on volcanic soil",
+   "because": "The CIVA's own Grand Cru Kitterlé page (Guebwiller) describes a sandstone and volcanic terroir: at its western end the soil is volcanic-sedimentary Carboniferous grauwacke, the same kind of rock as Rangen's. The key (Rangen, the steepest and southernmost) still stands, but the word 'only' is false.",
+   "sources": [
+    "https://www.vinsalsace.com/fr/grands-crus/kitterle/",
+    "https://www.francebleu.fr/emissions/ma-plus-belle-adresse-par-nicolas-rieffel/le-grand-cru-kitterle-a-guebwiller-un-terroir-exceptionnel-7254492"
+   ],
+   "fix": "Rangen is the best known of the Grands Crus on volcanic rock, and its slope is severe enough that growers carry washed-out soil back up the hill after storms. The wines are smoky and austere in youth.",
+   "batch": 45
+  },
+  {
+   "id": "i-6c7nyiqo",
+   "kind": "wrong-explanation",
+   "claim": "The wines may not be sold until eighteen months have passed",
+   "because": "The AOC Alsace cahier des charges (INAO, section on élevage and mise en marché) does not set a period in months. It requires VT and SGN wines to be aged at least until 1 June of the second year after the harvest, and they may reach consumers only from that date. For an October harvest that is about 20 months, not a flat eighteen. The keyed option, 'About eighteen months', is still the closest choice, so the key stands. The explanation, though, states a rule the law does not contain.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNOCDCAlsace.pdf"
+   ],
+   "fix": "The wines must be aged at least until 1 June of the second year after the harvest and may not reach consumers before that date, which is roughly eighteen to twenty months. Both categories must also pass an official tasting before the term is granted.",
+   "batch": 46
+  },
+  {
+   "id": "i-3vtklgvr",
+   "kind": "wrong-explanation",
+   "claim": "The style began in Victoria's Great Western and survives almost nowhere else on earth.",
+   "because": "The Shiraz-based sparkling red style is usually credited to Edmond Mazure at Auldana, near Adelaide in South Australia, around 1894-95, and he is the pioneer candidates are taught. Great Western in Victoria was a parallel pioneer: Hans Irvine made a sparkling red there from Pinot in the early 1890s, and Seppelt moved it to Shiraz later. An earlier pink 'sparkling burgundy' came from the Victorian Champagne Company in Melbourne. So it is false to say the style began at Great Western.",
+   "sources": [
+    "https://australianfoodtimeline.com.au/sparkling-burgundy-australia/",
+    "https://en.wikipedia.org/wiki/Sparkling_Shiraz",
+    "https://www.cellars.com.au/2026/06/09/sparkling-shiraz-how-australia-invented-the-worlds-most-iconic-festive-red-fizz/"
+   ],
+   "fix": "The style took shape in the 1890s, when Edmond Mazure at Auldana in South Australia and Hans Irvine at Great Western in Victoria both made sparkling reds, and it survives almost nowhere else on earth.",
+   "batch": 50
+  },
+  {
+   "id": "i-8vs3sb9z",
+   "kind": "outdated",
+   "claim": "Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder, and its name comes from breaking the shrivelled berries out of the bunch.",
+   "because": "That was the old Pradikat (27 KMW). Under the current Weingesetz 2009, §11, Ausbruch is no longer a separate step. A Trockenbeerenauslese (minimum 30 KMW) from the Freistadt Rust may be labelled 'Ruster Ausbruch', and the name may only be used together with 'Rust'. This restriction has applied since 2016. The Ruster Ausbruch DAC Verordnung also sets a minimum must weight of 30 KMW, from botrytised berries shrivelled naturally on the vine and picked by selective hand harvest.",
+   "sources": [
+    "https://www.jusline.at/gesetz/weing/paragraf/11",
+    "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20011292",
+    "https://de.wikipedia.org/wiki/Ausbruch_(Wein)"
+   ],
+   "fix": "Ausbruch once sat between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder; today the name belongs to Rust alone and requires Trockenbeerenauslese must weight (30 KMW). The name comes from breaking the shrivelled berries out of the bunch.",
+   "batch": 53
+  },
+  {
+   "id": "i-rs30nxyg",
+   "kind": "wrong-explanation",
+   "claim": "Mouton's elevation in 1973 is the only substantive change ever made to the red classification",
+   "because": "The red list has changed twice. Chateau Cantemerle was added as a Fifth Growth in 1856, after being left out of the original ranking, and Mouton was promoted from Second to First Growth in 1973. Mouton's promotion is the only promotion, not the only change.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855",
+    "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Cantemerle"
+   ],
+   "fix": "Mouton's elevation in 1973 is the only promotion ever made to the red classification (the only other change was Cantemerle's addition as a Fifth Growth in 1856), and it took decades of pressure to win.",
+   "batch": 58
+  },
+  {
+   "id": "i-3de6pbe3",
+   "kind": "wrong-explanation",
+   "claim": "The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise",
+   "because": "Santenay is not the southern extremity of the Cote de Beaune. Maranges (Cheilly-, Dezize- and Sampigny-les-Maranges, its own village AOC since 1989) lies south-west of Santenay and is the southernmost appellation of the Cote de Beaune. Louis Latour and burgundywine.com both give Maranges as the southern tip. The keyed answer, the southern end, still stands.",
+   "sources": [
+    "https://www.louislatour.com/en/wines/67/maranges",
+    "https://www.burgundywine.com/blog/maranges-and-santenay/",
+    "https://en.wikipedia.org/wiki/C%C3%B4te_de_Beaune"
+   ],
+   "fix": "Toward the southern tip, with only Maranges beyond it before the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value.",
+   "batch": 63
+  },
+  {
+   "id": "i-d32r25hi",
+   "kind": "wrong-explanation",
+   "claim": "Mercurey is predominantly red and the best known of the four village appellations there.",
+   "because": "The Cote Chalonnaise has five village appellations: Bouzeron, Rully, Mercurey, Givry and Montagny. Bouzeron has been a village AOC since the 1997/1998 change, and question i-fxjrv9gh in this same bank teaches it as one. The key (Mercurey, the largest) is correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/C%C3%B4te_Chalonnaise",
+    "https://www.le-bourguignon.fr/en/content/48-cote-chalonnaise"
+   ],
+   "fix": "Mercurey is predominantly red and the largest and best known of the five village appellations there (Bouzeron, Rully, Mercurey, Givry, Montagny).",
+   "batch": 64
+  },
+  {
+   "id": "i-q0b7jqzx",
+   "kind": "outdated",
+   "claim": "often as a single cuvee drawing on all seven permitted varieties",
+   "because": "Since the revised Champagne cahier des charges was published in the Journal Officiel on 10 December 2022, after INAO approved it in November 2022, the fungus-resistant hybrid Voltis has also been authorised. It is on a trial basis, limited to 5% of an estate's vineyard area and 10% of a blend. So Champagne now has eight permitted varieties, not seven. The multi-variety cuvees the explanation has in mind are built on the seven historic varieties.",
+   "sources": [
+    "https://winewitandwisdomswe.com/2022/12/15/a-glass-of-voltis-champagne-might-be-in-your-future/",
+    "https://piwi-international.org/en/2022/02/grape-variety-voltis-was-released-for-the-production-of-champagne-aoc/",
+    "https://magazine.wein.plus/news/piwi-grape-variety-voltis-is-planted-out-in-champagne-test-cultivation-on-five-hectares-by-2033"
+   ],
+   "fix": "often as a single cuvee drawing on all seven historic varieties (the hybrid Voltis has also been permitted on trial since 2022)",
+   "batch": 66
+  },
+  {
+   "id": "i-whkcs973",
+   "kind": "wrong-explanation",
+   "claim": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand nearly four thousand kilometres apart",
+   "because": "Kelowna and Niagara Falls are about 3,250 km apart in a straight line (2,023 miles). About 4,100 km is the driving distance, so 'stand apart' overstates the gap by roughly a fifth.",
+   "sources": [
+    "https://www.airmilescalculator.com/distance/ylw-to-iag/",
+    "https://www.distancefromto.net/distance-from-kelowna-ca-to-niagara-falls-ca"
+   ],
+   "fix": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand more than three thousand kilometres apart",
+   "batch": 77
+  },
+  {
+   "id": "i-z9obqip9",
+   "kind": "wrong-explanation",
+   "claim": "Madeira lies some seven hundred kilometres off the coast of Morocco and close to a thousand from Lisbon",
+   "because": "Madeira lies about 520 km west of Morocco (the nearest African coast), not about 700 km. The figure of roughly 1,000 km from Lisbon is right. The key (Madeira) is unaffected.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Madeira"
+   ],
+   "fix": "Madeira lies some five hundred kilometres off the coast of Morocco and close to a thousand from Lisbon",
+   "batch": 78
+  },
+  {
+   "id": "i-pvm5q4dz",
+   "kind": "wrong-explanation",
+   "claim": "the filling was done at the producer's own premises, at a co-operative's, or by a firm inside the denominated zone",
+   "because": "Under the Italian labelling decree (DM 13 agosto 2012, art. 56, continuing DM 23 dicembre 2009 art. 3), 'imbottigliato all'origine' is reserved for bottling at the producer's own facility or at an association of producers (cantina sociale, produttori riuniti). Bottling by any firm inside the zone is a separate, broader claim, 'imbottigliato nella zona di produzione' or 'imbottigliato in [DOP/IGP]', which does not require the bottler to have made the wine. For the same reason the keyed option ('bottled in the zone where it was made') describes the zone term rather than the producer-bottling term, though it remains the best of the four options.",
+   "sources": [
+    "https://www.lavinium.it/imbottigliato-allorigine-si-forse-non-so-dipende/",
+    "https://www.masaf.gov.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/5367",
+    "https://faolex.fao.org/docs/pdf/ita116381.pdf"
+   ],
+   "fix": "Explanation: 'the filling was done at the premises of the producer who made the wine, or of its co-operative or producers' association, and the words are reserved for DOP and IGP wines. A firm that merely bottles inside the zone uses the separate phrase imbottigliato nella zona di produzione.' Option 1 could read: 'The wine was bottled by the producer who made it, or its co-operative, not tankered away and filled elsewhere'.",
+   "batch": 92
+  },
+  {
+   "id": "i-5q8g52c6",
+   "kind": "wrong-explanation",
+   "claim": "Keyed option \"The wine was blended from wine grown in two or more member states\" and explanation \"Once wine or fruit has crossed a border and been blended, no single country can be claimed\"",
+   "because": "Commission Delegated Regulation (EU) 2019/33, Art. 45(1) allows 'European Union wine' in two cases. Point (b) covers wine blended from wines of several Member States. Point (c) covers wine made in one Member State from grapes harvested in another, with no blending needed. So the line does not tell the buyer that the wine is a blend. Grapes that crossed a border and were vinified unblended carry it too, and both the keyed option and the explanation leave out that second case.",
+   "sources": [
+    "https://www.legislation.gov.uk/eur/2019/33/chapter/IV/2020-01-31/data.xht",
+    "https://eur-lex.europa.eu/eli/reg_del/2019/33/oj/eng"
+   ],
+   "fix": "Option 3: \"The wine was blended from wines of two or more member states, or made in one member state from grapes harvested in another\". Explanation opening: \"Once wine is blended across member states, or grapes from one member state are made into wine in another, no single country can be claimed, so the union as a whole becomes the provenance.\"",
+   "batch": 94
+  },
+  {
+   "id": "i-07xtmux2",
+   "kind": "wrong-explanation",
+   "claim": "Gouveio the citrus, the last being the grape Madeira calls Verdelho.",
+   "because": "Gouveio is the Douro name for Godello, the same variety as Verdelho do Dão. It is a different variety from Madeira's Verdelho. Older ampelography, such as Truel (1984), wrongly treated Gouveio as a synonym of Madeira Verdelho, and Portuguese Portaria 428/2000 renamed it Gouveio to end that confusion. DNA profiling confirms that Godello/Gouveio and Madeira Verdelho are separate varieties. The error also matters here because Verdelho appears in distractor D.",
+   "sources": [
+    "https://www.vinetowinecircle.com/castas_post/gouveio-godello/",
+    "https://www.wine-searcher.com/grape-2191-godello",
+    "https://en.wikipedia.org/wiki/Verdelho",
+    "https://en.wikipedia.org/wiki/Godello"
+   ],
+   "fix": "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Spain calls Godello (and not, despite an old confusion, the Verdelho of Madeira).",
+   "batch": 103
+  },
+  {
+   "id": "i-1ta494cv",
+   "kind": "wrong-explanation",
+   "claim": "honours a customer who drank the house's wine devotedly from 1944 until his death",
+   "because": "The fact is in the stem, not an option. Churchill drank Pol Roger from 1908. His wine merchant's invoices that year record the 1895 vintage in bottles and half bottles. 1944 is when he met Odette Pol-Roger at the British Embassy party in Paris, which began the close friendship with the family, not when he began drinking the wine.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pol_Roger",
+    "https://winstonchurchill.org/old-site/learn/book-reviews/pol-roger/",
+    "https://www.majestic.co.uk/blog/majestic-news/pol-roger-champagne-and-winston-churchill-a-150-year-legacy"
+   ],
+   "fix": "Cuvee Sir Winston Churchill honours a customer who drank the house's wine from 1908 until his death and became a friend of the family after 1944. Which house bottles it?",
+   "batch": 106
+  },
+  {
+   "id": "i-gbr6y31o",
+   "kind": "wrong-explanation",
+   "claim": "The building is a medieval hermitage above the terraces",
+   "because": "The chapel of Saint-Christophe on the Hermitage hill was built in 1864. A primitive chapel had stood there since about 1100, but the building on the label is nineteenth century. Paul Jaboulet Aine has owned it since 1919.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Chapelle_Saint-Christophe_de_Tain-l'Hermitage"
+   ],
+   "fix": "The chapel above the terraces was rebuilt in 1864 on the site of a medieval hermitage, and the house has owned it since 1919; its image goes on the label.",
+   "batch": 106
+  },
+  {
+   "id": "i-2kscg7k8",
+   "kind": "wrong-explanation",
+   "claim": "since the 2011 vintage, when the winery became the first in the United States to do it",
+   "because": "Ridge's own history says it began ingredient labels with the 2011 vintage and calls itself only 'one of the first California wineries' to do so. Paul Draper writes there that in 2008 a Santa Cruz Mountains neighbour had already put out wines with ingredients listed on the label, with federal approval. That neighbour was Bonny Doon (Randall Grahm), which disclosed winemaking inputs from about 2008-2009. Ridge was therefore not first in the United States.",
+   "sources": [
+    "https://www.ridgewine.com/about/news/ingredient-labeling-a-look-back-by-paul-draper/",
+    "https://www.ridgewine.com/about/explore/ingredient-labeling/"
+   ],
+   "fix": "since the 2011 vintage, making it one of the first wineries in California to list every ingredient on all its labels",
+   "batch": 108
+  },
+  {
+   "id": "i-ojr8uz8e",
+   "kind": "wrong-explanation",
+   "claim": "the longest-running of Chile's icon Cabernets (stem); Chile's whole icon category began with it, and every other major producer answered within a decade (explanation)",
+   "because": "Errázuriz's Don Maximiano Founder's Reserve, a Cabernet-led icon, has a first vintage in 1983 or 1984 by different accounts (World of Fine Wine tasted the 1984 as the first vintage). Either way it came before Don Melchor's 1987. World of Fine Wine dates Chile's first luxury wines to the 1980s and credits Chadwick's Don Maximiano Founder's Reserve, alongside Don Melchor and Casa Real. Don Melchor did not start the category alone, and it is not the longest-running. Errázuriz is also one of the options, which makes the false framing worse. The key (Concha y Toro) stands.",
+   "sources": [
+    "https://worldoffinewine.com/tasting-notes/fine-chilean-red-wines-errazuriz",
+    "https://www.decanter.com/premium/vina-errazuriz-150th-anniversary-tasting-of-don-maximiano-450423/"
+   ],
+   "fix": "Stem: 'Don Melchor, first bottled in 1987 from a single estate in Puente Alto and one of Chile's first icon Cabernets, belongs to which producer?' Explanation: replace the last sentence with 'With Errázuriz's Don Maximiano and Santa Rita's Casa Real, it led the first generation of Chilean icon reds.'",
+   "batch": 108
+  },
+  {
+   "id": "i-d51zy58x",
+   "kind": "wrong-explanation",
+   "claim": "the river swings west there and the hill ends up facing due south",
+   "because": "At Tain the Rhône turns east, not west. For a short stretch it flows west to east, and that is why the hill on its east bank faces south. Berry Bros. & Rudd says Hermitage sits on the east bank where the river 'suddenly veers in that direction' at Tain and Tournon. Decanter describes the hill rising 'above a kink in the river as it briefly flows west to east'.",
+   "sources": [
+    "https://www.bbr.com/editorial/2023/rhone/understanding-cote-rotie-and-hermitage",
+    "https://www.decanter.com/premium/know-white-hermitage-420271/"
+   ],
+   "fix": "the river swings east there, briefly flowing west to east, and the hill ends up facing due south",
+   "batch": 109
+  },
+  {
+   "id": "i-5u8wquhp",
+   "kind": "ambiguous-stem",
+   "claim": "The minimum alcohol demanded there is the highest of any French appellation.",
+   "because": "The 12.5% key is correct: the Chateauneuf-du-Pape cahier des charges sets a titre alcoometrique volumique naturel minimum of 12.5%. But it is not the highest in France. The Gigondas cahier des charges sets the same 12.5% minimum, so it is at best shared. Sweet appellations such as Sauternes demand far higher minimum natural potential alcohol. A candidate who learns the stem as written learns a false superlative.",
+   "sources": [
+    "https://www2.inao.gouv.fr/var/inao_site/storage/repository/editeur/files/pdf/CDC-AOP/AOC%20Ch%C3%A2teaneuf-du-Pape_20111116.pdf",
+    "http://www.gigondas-vin.com/wp-content/uploads/2016/02/AOC-Gigondas_cahier-des-charges.pdf"
+   ],
+   "fix": "The minimum natural alcohol demanded there, among the highest set for any French dry wine appellation, is what?",
+   "batch": 111
+  },
+  {
+   "id": "i-39lv3zjg",
+   "kind": "ambiguous-stem",
+   "claim": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which variety?",
+   "because": "The stem names two Muscats, the Rhône's single one and Roussillon's 'second, coarser' one, then asks 'Which variety?' without saying which. Both are among the options. Under the Muscat de Rivesaltes cahier des charges (INAO), the permitted varieties are muscat à petits grains blancs and muscat d'Alexandrie. So a careful candidate could read the question as asking for the 'second, coarser Muscat' and choose Muscat of Alexandria (option 3), which is correct under that reading. The key, Muscat Blanc a Petits Grains, is right only if the question asks which Muscat the Rhône admits.",
+   "sources": [
+    "https://www.inao.gouv.fr/produit/muscat-de-rivesaltes-7767",
+    "https://extranet.inao.gouv.fr/fichier/PNO2022AOPRivesaltes.pdf",
+    "https://en.wikipedia.org/wiki/Muscat_de_Rivesaltes_AOC"
+   ],
+   "fix": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which single Muscat does the Rhone version admit?",
+   "batch": 112
+  },
+  {
+   "id": "i-m8jz4sdq",
+   "kind": "outdated",
+   "claim": "the label reads Wine of Origin Estate",
+   "because": "Estate is no longer a Wine of Origin unit or designation of geographic origin. Current rules allow only the production term \"estate wine\", for wine whose grapes were grown, made and bottled on the same registered unit. The change came with the revision of the scheme usually dated to 2004. The keyed answer is still right, but a current Cape label cannot read \"Wine of Origin Estate\".",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wine_of_Origin",
+    "https://en.wikipedia.org/wiki/South_African_wine"
+   ],
+   "fix": "Stem: \"A visitor buys a bottle at a cellar door and the label reads Estate Wine. What has that term committed the producer to?\" Explanation, first sentence: \"Estate wine must come from units registered for estate production, so the claim is that the grapes were grown and the wine made and bottled in the same place; since the 2004 revision estate is no longer a unit of origin in its own right.\"",
+   "batch": 120
+  },
+  {
+   "id": "i-ywvdks0p",
+   "kind": "ambiguous-stem",
+   "claim": "A label names a single pocket of ground inside a district rather than the district itself, telling the buyer the fruit came off that one patch. (option \"A single vineyard\")",
+   "because": "A registered single vineyard is also a certified origin claim under the scheme. It is a single parcel under 6 ha, so \"that one patch\" describes it more literally than it describes a ward. A careful candidate could reasonably key option 0 instead of the ward. The scheme's nested geographical tiers are geographical unit, region, district and ward.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wine_of_Origin"
+   ],
+   "fix": "Replace option 0 \"A single vineyard\" with \"A geographical unit\" (key stays 3), or change the stem ending to \"Which geographical tier of the Wine of Origin scheme, demarcated on soil, climate and ecology, is that tighter name?\"",
+   "batch": 120
+  },
+  {
+   "id": "i-lftfxaqs",
+   "kind": "wrong-explanation",
+   "claim": "The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines.",
+   "because": "Vines came before the orchards or at the same time, not after. Humberto Canale was founded in 1909 and helped build Patagonian winemaking. Agrarian-history studies of the valley describe the 1910s as an alfalfa economy with small areas of vines and fruit trees, mixed alfalfa/vine/fruit farms, and alfalfa being replaced by vines, pears and apples by the mid-1920s. Apple and pear growing only became the valley's main business around 1930. The bank's own explanation for i-ue88uyhi also says some Rio Negro vines are a century old, which contradicts this sentence.",
+   "sources": [
+    "https://www.bodegahcanale.com/",
+    "https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1514-68712019000100157&lng=es&nrm=iso&tlng=es",
+    "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-22532022000200004",
+    "https://repositorio.inta.gob.ar/handle/20.500.12123/9674"
+   ],
+   "fix": "The Alto Valle del Rio Negro grew vines alongside alfalfa and fruit from the early 1900s, and later became better known for its apple and pear orchards.",
+   "batch": 123
+  },
+  {
+   "id": "i-xezz75wk",
+   "kind": "wrong-fact-in-option",
+   "claim": "Five years of ageing, at least two in cask and three more in bottle, earn a red Rioja which designation?",
+   "because": "The Consejo Regulador's classification defines red Gran Reserva as a 5-year minimum ageing, 2 of them in 225-litre oak barrels plus 2 years in bottle (60 months total, 24 in oak, 24 in bottle). The remaining year may be spent in either vessel, so the 'three more in bottle' stated in the stem is not the rule. The key (Gran Reserva) stays correct.",
+   "sources": [
+    "https://riojawine.com/en-gb/the-designation/classification/"
+   ],
+   "fix": "Five years of ageing, at least two in cask and at least two in bottle, earn a red Rioja which designation?",
+   "batch": 128
+  },
+  {
+   "id": "i-a455nccq",
+   "kind": "wrong-explanation",
+   "claim": "Dorado was aged in glass demijohns and part-filled barrels under a film of yeast, closer to a light Sherry than to any modern white.",
+   "because": "The D.O. Rueda defines Rueda Dorado by crianza oxidativa (oxidative ageing), with at least the last two years before sale in oak barrel. Ageing under a film of yeast (crianza biologica) belongs to the other traditional style, Rueda Palido, which needs at least three years in oak. The explanation says Dorado aged under flor, which contradicts the keyed option itself ('an oxidatively aged white'), and a candidate would learn the two Rueda styles the wrong way round.",
+   "sources": [
+    "https://dorueda.com/vinos/",
+    "https://es.wikipedia.org/wiki/Denominación_de_Origen_Rueda"
+   ],
+   "fix": "Dorado was aged oxidatively, traditionally in glass demijohns left out in the sun and then in oak, with no film of yeast, so it was closer to an old Oloroso than to any modern white. Today's rule asks for at least two years in oak before sale; its biologically aged sibling, under flor, is Rueda Palido. A little of both is still made.",
+   "batch": 129
+  },
+  {
+   "id": "i-lfjnphqw",
+   "kind": "wrong-explanation",
+   "claim": "A butt marked for Fino loses its flor without ever being refortified",
+   "because": "A Palo Cortado loses its flor on its own rather than because it was refortified, but once the capataz sees this and marks the butt with the cut stick, the wine is normally refortified to about 17.5% so it can age oxidatively without spoiling. 'Without ever being refortified' is therefore false. The key (Palo Cortado) is still right.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Palo_cortado"
+   ],
+   "fix": "A butt marked for Fino loses its flor on its own, not because it was refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?",
+   "batch": 130
+  },
+  {
+   "id": "i-vmbhu5o6",
+   "kind": "wrong-explanation",
+   "claim": "Several states, Oregon among them, hold their producers to a stricter figure.",
+   "because": "The question is about a Cabernet Sauvignon label. Oregon's stricter rule is 90 percent, but OAR 845-010-0915 lists Cabernet Sauvignon among the grapes that may still be labelled at 75 percent. The others on that list are Cabernet Franc, Carmenère, Durif, Grenache, Malbec, Marsanne, Merlot, Mourvèdre, Petit Verdot, Roussanne, Sangiovese, Sauvignon Blanc, Sémillon, Syrah, Tannat, Tempranillo and Zinfandel. So an Oregon Cabernet has the same 75 percent floor as the federal rule. As written, the explanation teaches that it needs more.",
+   "sources": [
+    "https://oregon.public.law/rules/oar_845-010-0915"
+   ],
+   "fix": "Federal law sets the varietal floor at 75 percent, so a quarter of the blend can be something else entirely. Some states go further: Oregon asks 90 percent for most varieties, though Cabernet Sauvignon is one of the grapes it still allows at 75.",
+   "batch": 138
+  },
+  {
+   "id": "i-49gsa9yv",
+   "kind": "wrong-explanation",
+   "claim": "Within twenty years Burgundian houses were buying land nearby.",
+   "because": "Lett planted in 1965; the first Burgundian house to buy in the Dundee Hills was Maison Joseph Drouhin, which established Domaine Drouhin Oregon in 1987, 22 years later (domainedrouhin.com, 'Our Story'). Other Burgundian investment, such as Jadot's Résonance in 2013, came decades after that, so the plural 'houses' within twenty years is also wrong.",
+   "sources": [
+    "https://www.domainedrouhin.com/our-story"
+   ],
+   "fix": "Twenty-two years later, in 1987, the Burgundian house of Joseph Drouhin bought land nearby in the Dundee Hills.",
+   "batch": 140
+  },
+  {
+   "id": "m-hgn6gjdf",
+   "kind": "outdated",
+   "claim": "The house holds that its names (Clos Sainte-Hune, Frédéric Émile) guarantee more than the cru system's politics — so the labels omit 'grand cru'",
+   "because": "Trimbach now bottles and labels four grand crus: Riesling Grand Cru Geisberg (first vintage 2009, released 2015), Grand Cru Schlossberg (2014, released 2017), Grand Cru Mandelberg (2016) and Grand Cru Brand (2018), according to Trimbach's own wine list. The house still keeps Clos Sainte-Hune (in Rosacker) and Frédéric Émile (Geisberg and Osterberg) off the grand cru label, so the stance survives only for those two brands. The accept item 'brands trump crus' is also no longer a fair summary of the house's position.",
+   "sources": [
+    "https://www.trimbach.fr/en/vins-alsace",
+    "https://en.wikipedia.org/wiki/Maison_Trimbach"
+   ],
+   "fix": "The house long held that its own names (Clos Sainte-Hune in Rosacker, Frédéric Émile from Geisberg and Osterberg) guarantee more than the cru system, so those flagships still omit 'grand cru'. Since the 2009 Geisberg (released 2015) it has also bottled Grand Cru Geisberg, Schlossberg, Mandelberg and Brand under the cru name.",
+   "batch": 152
+  },
+  {
+   "id": "m-4wr9fay5",
+   "kind": "accept-list",
+   "claim": "accept: \"alsace grand cru cremant\"",
+   "because": "No AOP called 'Alsace Grand Cru Crémant' exists. Crémant d'Alsace is the third regional AOP, and the grand crus are still wines by law, so this accept item gives credit for a made-up appellation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC"
+   ],
+   "fix": "accept: [\"cremant d'alsace\", \"cremant\"]",
+   "batch": 152
+  },
+  {
+   "id": "m-t7chvy1o",
+   "kind": "ambiguous-stem",
+   "claim": "Which grand cru's name means 'sorcerers' hill', beloved of Gewurztraminer at Zind-Humbrecht?",
+   "because": "None of the 51 Alsace grand crus has a name meaning sorcerers' or witches' hill, and there is no Hexenberg on the list. Zind-Humbrecht's Gewurztraminer grand crus are Hengst (stallion) and Goldert (golden). The stem assumes a false premise, the model answer admits it is a 'trap', and the accept strings ('hexenberg no sorcerer goldert brand hengst') are not an answer a grader can match fairly.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC"
+   ],
+   "fix": "q: \"Which Wintzenheim grand cru, whose name means 'stallion', is a Zind-Humbrecht Gewurztraminer site?\"; ans: \"Hengst\"; accept: [\"hengst\"]",
+   "batch": 152
+  },
+  {
+   "id": "m-qoaqguzr",
+   "kind": "wrong-explanation",
+   "claim": "Each of the three requires a minimum of 85% Blaufränkisch.",
+   "because": "Only Leithaberg DAC red is 'min 85% Blaufränkisch' (up to 15% Zweigelt, St. Laurent or Pinot Noir). The Mittelburgenland DAC regulation says the wines 'müssen aus der Qualitätswein-Rebsorte Blaufränkisch hergestellt sein', which means 100% Blaufränkisch. The Eisenberg DAC regulation says 'Jeglicher Verschnitt mit einer anderen Rebsorte ist unzulässig', so no blending is allowed.",
+   "sources": [
+    "https://de.wikipedia.org/wiki/Districtus_Austriae_Controllatus",
+    "https://en.wikipedia.org/wiki/Districtus_Austriae_Controllatus"
+   ],
+   "fix": "Leithaberg requires a minimum of 85% Blaufränkisch; Mittelburgenland and Eisenberg require 100% Blaufränkisch, with no blending permitted.",
+   "batch": 155
+  },
+  {
+   "id": "m-qoaqguzr",
+   "kind": "outdated",
+   "claim": "it is also the one DAC of the three with a white wine, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger",
+   "because": "The current Eisenberg DAC regulation lets the wines be made from Blaufränkisch 'oder Welschriesling (nur bei Angabe einer Ried)'. That means Eisenberg now also has a white DAC wine, a Welschriesling that must carry a Ried name, so Leithaberg is no longer the only one of the three with a white. The Welschriesling category came in with a later amendment to the Eisenberg rules; the original 2009 DAC was Blaufränkisch only.",
+   "sources": [
+    "https://de.wikipedia.org/wiki/Districtus_Austriae_Controllatus"
+   ],
+   "fix": "it is also the one DAC of the three with a full white category (Grüner Veltliner, Weissburgunder, Chardonnay, Neuburger); Eisenberg now also allows a single-Ried Welschriesling",
+   "batch": 155
+  },
+  {
+   "id": "m-tndpwqdb",
+   "kind": "outdated",
+   "claim": "Current holders: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) and Zundert in the Netherlands; Engelszell in Austria; Tre Fontane in Italy; Mount St Bernard's Tynt Meadow in England; and Cardena in Spain — around ten or eleven (also the accept entry naming 'zundert engelszell ... and cardena')",
+   "because": "The International Trappist Association's own ATP-label page now lists eight beer holders only: Chimay, La Trappe, Orval, Rochefort, Tre Fontane, Tynt Meadow, Westmalle, Westvleteren. Zundert's abbey announced on 13 May 2025 that it would close for lack of brothers and the beer would lose its Trappist label. Engelszell announced the dissolution of the monastery in May 2023. Cardeña's beer is brewed off-site and has never held the ATP label.",
+   "sources": [
+    "https://www.trappist.be/en/about-ita/atp-label/",
+    "https://en.wikipedia.org/wiki/Zundert_(beer)",
+    "https://en.wikipedia.org/wiki/Trappist_beer"
+   ],
+   "fix": "Current holders (per the ITA): Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) in the Netherlands; Tre Fontane in Italy; and Mount St Bernard's Tynt Meadow in England. That makes eight, and the number moves: Achel lost the label when its last monks left, Spencer stopped brewing in 2022, Engelszell's community was dissolved from 2023, and Zundert closed in 2025. Cardeña's beer is brewed off-site and never carried the hexagon. In the accept list, replace the third entry with 'authentic trappist product certifies governance not style five belgian breweries plus la trappe tre fontane and tynt meadow'.",
+   "batch": 156
+  },
+  {
+   "id": "m-vo4t4643",
+   "kind": "wrong-explanation",
+   "claim": "The only substantive 1855 change in 170 years.",
+   "because": "Mouton's 1973 promotion is not the only change to the 1855 Médoc list. Cantemerle was added as a fifth growth in 1856, and the Margaux third growth Dubignon has since vanished into Malescot St-Exupéry. Mouton is the only promotion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855"
+   ],
+   "fix": "The only promotion in the classification's history; apart from it, the only change was Cantemerle's addition as a fifth growth in 1856.",
+   "batch": 156
+  },
+  {
+   "id": "m-bs31ukhw",
+   "kind": "wrong-explanation",
+   "claim": "Invented in Catalonia (girasol) for Cava — a cross-region oral favorite.",
+   "because": "The gyropalette was invented by two Frenchmen, Claude Cazals and Jacques Ducoin, who filed the patent in 1968. Catalonia did not invent it: it was first used at scale in Spain in the mid-1970s, and Codorníu was its first big user. The girasol is a separate device, the manual cage that the Cava houses used before the machine.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gyropalette"
+   ],
+   "fix": "Patented in France in 1968 by Claude Cazals and Jacques Ducoin, but first adopted at scale by Cava (Codorníu, mid-1970s), with the manual girasol cage before it. A cross-region oral favorite.",
+   "batch": 160
+  }
+ ],
+ "verdicts": []
+}
