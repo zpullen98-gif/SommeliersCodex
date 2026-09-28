@@ -300,7 +300,7 @@ BANK = [
        "All four were drafted together by a single commission in Brussels",
        "All four were modelled on a ripeness ladder",
        "The resemblance is coincidental, since each was built in isolation"], 0,
-      "France wrote the modern pattern first, a delimited place bound to a production rulebook, and its neighbours adopted it over the following decades, long before any European harmonisation existed. The later European layer then tidied the categories without disturbing the shape underneath, which is why a student who learns one of the four can read the others quickly."),
+      "France set the modern pattern: a delimited place bound to a production rulebook. It was sketched in the laws of 1905 and 1919 and made complete by the AOC law of 1935. Spain (the Estatuto del Vino of 1932, recast in 1970) and Italy (DOC, 1963) built their national systems on the same idea. Portugal, whose Douro had been demarcated as early as 1756, recast its demarcated regions as DOCs under its 1985 framework law as it joined the EEC in 1986. The European layer, itself drawn largely from the French model, then tidied the categories without changing the shape underneath, which is why a student who learns one of the four can read the others quickly."),
     Q("Ladders, rungs and national variations",
       "An estate makes one of its country's most admired and expensive reds and sells it under the humblest geographical tier available. What does that reveal about the tiers?",
       ["A tier records only compliance with a rulebook",

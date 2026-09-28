@@ -1,0 +1,39 @@
+{
+ "file": "rewrite/categories/r1_geography_maps.py",
+ "findings": [
+  {
+   "id": "i-whkcs973",
+   "kind": "wrong-explanation",
+   "claim": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand nearly four thousand kilometres apart",
+   "because": "Kelowna and Niagara Falls are about 3,250 km apart in a straight line (2,023 miles). About 4,100 km is the driving distance, so 'stand apart' overstates the gap by roughly a fifth.",
+   "sources": [
+    "https://www.airmilescalculator.com/distance/ylw-to-iag/",
+    "https://www.distancefromto.net/distance-from-kelowna-ca-to-niagara-falls-ca"
+   ],
+   "fix": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand more than three thousand kilometres apart",
+   "batch": 77,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation says the Okanagan and Niagara \"stand nearly four thousand kilometres apart\", which describes a straight-line gap. That gap is about 3,150 km. distancefromto.net gives 3,152 km (1,959 mi) from Kelowna to Niagara Falls. My own haversine check (Kelowna 49.89N 119.50W to Niagara 43.09N 79.07W) also gives about 3,150 km, and measuring from Oliver in the south Okanagan changes it very little. Only the road distance comes near 4,000 km (about 4,100), and \"stand apart\" does not describe a road route. As written, the figure is too high by roughly a fifth. The proposed wording, \"more than three thousand kilometres apart\", is true whether the reader takes straight-line or road distance, and it keeps the point that the country is thinly planted. The keyed answer, Canada, is not affected. airmilescalculator.com returned 403, so I could not open it.",
+   "verifySources": [
+    "https://www.distancefromto.net/distance-from-kelowna-ca-to-niagara-falls-ca",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-077.json (i-whkcs973, line 42)"
+   ],
+   "finalFix": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand more than three thousand kilometres apart",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-whkcs973",
+    "cat": "Geography & Maps",
+    "q": "Benches above a long narrow lake in the west, and a peninsula beside a Great Lake in the east, hold the two main vineyard areas of one country. Which is it?",
+    "opts": [
+     "Russia",
+     "Argentina",
+     "Canada",
+     "The United States"
+    ],
+    "a": 2,
+    "exp": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand nearly four thousand kilometres apart, which is a fair measure of how thinly a very large country is planted. Both depend on a body of water deep enough to hold off the worst of a continental winter."
+   }
+  }
+ ]
+}

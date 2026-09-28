@@ -1,0 +1,291 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-xyavnii6",
+   "kind": "wrong-key",
+   "claim": "The model answer dates the Consorzio vote that kept Brunello at 100% Sangiovese to 2009 ('2009 consorzio referendum'), and the first accept-list entry repeats '2009 vote'.",
+   "because": "The Consorzio members voted in October 2008, six months after the Siena seizures and in the same year as the US import threat. About 96% voted to keep 100% Sangiovese. There was no 2009 referendum.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Brunellopoli",
+    "https://www.winespectator.com/articles/brunello-will-remain-100-percent-sangiovese-4432"
+   ],
+   "fix": "ans: \"2008: Siena prosecutors probe illegal blending (Brunellopoli); the US threatens to block imports without proof of 100% Sangiovese; October 2008: the Consorzio votes (about 96%) to keep Brunello 100% Sangiovese, affirming its purity\"; accept[0]: \"brunellopoli 2008 blending investigation 2008 vote kept 100 percent sangiovese\"",
+   "batch": 165,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. According to Wine Spectator's article of 28 October 2008, 96 percent of the 250 producers in the Consorzio del Brunello di Montalcino voted to leave the DOCG rules unchanged. The meeting was held in Montalcino on the Monday before, which was 27 October 2008. The Wikipedia Brunellopoli article also gives the vote as October 2008, with only 4% voting for change, and it records no 2009 referendum. So the model answer's '2009 consorzio referendum' and the '2009 vote' in accept[0] are wrong, and a student would learn the wrong year. The rest of the item stands. The investigation, and the US threat to hold imports without proof of 100% Sangiovese, both date to 2008. The explanation says Rosso di Montalcino was floated as a way to relieve pressure and rejected; that refers to the separate later vote on Rosso, and the explanation gives no date for it, so it is not wrong. The examiner's fix corrects the year, keeps the original sense and grades correctly: the exact model answer always passes in matchSA, and accept[1] still takes the short form. My web search budget was used up, so the evidence is only the two pages I fetched.",
+   "verifySources": [
+    "https://www.winespectator.com/articles/brunello-will-remain-100-percent-sangiovese-4432",
+    "https://en.wikipedia.org/wiki/Brunellopoli",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-165.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "ans: \"2008: Siena prosecutors probe illegal blending (Brunellopoli); the US threatens to block imports without proof of 100% Sangiovese; October 2008: the Consorzio votes (about 96%) to keep Brunello 100% Sangiovese, affirming its purity\"; accept[0]: \"brunellopoli 2008 blending investigation 2008 vote kept 100 percent sangiovese\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-xyavnii6",
+    "cat": "Italy Central & South",
+    "q": "Recite Brunello's modern crisis chronology: the 2008 scandal, the vote, the outcome.",
+    "sa": 1,
+    "accept": [
+     "brunellopoli 2008 blending investigation 2009 vote kept 100 percent sangiovese",
+     "consorzio voted to retain purity"
+    ],
+    "ans": "2008 Siena prosecutors probe illegal blending; US holds imports; 2009 consorzio referendum retains 100% Sangiovese — purity affirmed",
+    "exp": "Rosso di Montalcino was floated as the pressure valve and rejected."
+   }
+  },
+  {
+   "id": "m-utc42cp6",
+   "kind": "wrong-key",
+   "claim": "The model answer says the Tokaj vineyard classes were 'a Rákóczi-era survey formalized by royal decree in 1737'.",
+   "because": "The 11 October 1737 decree of Charles VI delimited Tokaj as a closed wine region with fixed borders. It did not formalise the vineyard classes. The classification was developed separately: Matolai's work around 1720-1730, then the national censuses of 1765 and 1772 that sorted vineyards into first, second and third class. The 1707 Rákóczi-era national certification ranked whole regions, with Tokaj placed as 'First Growth', not individual vineyards.",
+   "sources": [
+    "https://www.winesoftokaj.hu/en/wine-region/history",
+    "https://en.wikipedia.org/wiki/Tokaj_wine_region"
+   ],
+   "fix": "ans: \"Vineyards were graded into classes (first, second, third) on soil, aspect and proven quality, a classification begun around 1720-1730 (Matolai) and completed by the censuses of 1765 and 1772; separately, the 1737 royal decree of Charles VI delimited Tokaj as a closed wine region\"; q: \"Explain how Tokaj's eighteenth-century vineyard classification worked.\"",
+   "batch": 165,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The Tokaj wine region's own site (winesoftokaj.hu) credits the vineyard grouping system to János Matolai in about 1720. It gives 1707 as the year when whole lands were ranked in five groups, with Tokaj as First Growth, and it says the 1737 decree declared Tokaj a delimited wine region with borders, not a vineyard ranking. Wikipedia's Tokaji and Tokaj wine region articles agree. They say vineyard classification began in 1730 and was completed by the national censuses of 1765 and 1772, and that a royal decree of 1737 (or 1757) established a closed production district. So the model answer's claim that the classes were \"a Rákóczi-era survey formalized by royal decree in 1737\" is false. Rákóczi's War had ended in 1711, before the classification began, and the decree did not formalise the classes. The stem's \"1700–1737\" repeats the same wrong frame. The examiner's replacement answer and stem are right. What they left out: the first accept entry still contains \"rakoczi survey\", which rewards the false claim, so it should be changed as well.",
+   "verifySources": [
+    "https://www.winesoftokaj.hu/en/wine-region/history",
+    "https://en.wikipedia.org/wiki/Tokaji",
+    "https://en.wikipedia.org/wiki/Tokaj_wine_region",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-165.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "q: \"Explain how Tokaj's eighteenth-century vineyard classification worked.\"; ans: \"Vineyards were graded into classes (first, second, third) on soil, aspect and proven quality, a classification begun around 1720-1730 (Matolai) and completed by the national censuses of 1765 and 1772; separately, the 1737 royal decree of Charles VI delimited Tokaj as a closed wine region\"; accept: [\"first second third class vineyards soil aspect\", \"classified into classes by quality\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-utc42cp6",
+    "cat": "Hungary & Greece",
+    "q": "Explain how Tokaj's vineyard classification of 1700–1737 worked.",
+    "sa": 1,
+    "accept": [
+     "first second third class vineyards rakoczi survey soil aspect",
+     "classified into classes by quality"
+    ],
+    "ans": "Vineyards were graded into classes (first, second, third) on soil, aspect and proven quality — a Rákóczi-era survey formalized by royal decree in 1737",
+    "exp": "Predating both the 1855 Médoc and Burgundy's formal climat rankings."
+   }
+  },
+  {
+   "id": "m-n2tazel2",
+   "kind": "wrong-explanation",
+   "claim": "The explanation calls Zitsa (Debina) 'Greece's other sparkling appellation', implying that Amyndeon and Zitsa are the only Greek PDOs for sparkling wine.",
+   "because": "PDO Rhodes has covered sparkling white and sparkling rosé wines since 2011, from brut nature to doux. Rhodes is in fact the historic leader in Greek bottle-fermented sparkling wine (CAIR). Amyndeon is still the only PDO for rosé Xinomavro, but Zitsa is not the only other sparkling PDO.",
+   "sources": [
+    "https://winesofgreece.org/pdo/pdo-rhodes/",
+    "https://www.winewithseth.com/winewiki/rhodes-pdo-dodecanese/"
+   ],
+   "fix": "exp: replace \", Zitsa (from Debina) being Greece's other sparkling appellation.\" with \"; Zitsa (Debina) and Rhodes (Athiri) are Greece's other PDOs that permit sparkling wine.\"",
+   "batch": 165,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, but its fix is incomplete. The explanation calls Zitsa \"Greece's other sparkling appellation\", which means Amyndeon and Zitsa are the only Greek PDOs that allow sparkling wine. That is false. The Wines of Greece page for PDO Rhodes lists sparkling white and sparkling rosé in every style from brut nature to doux, and calls Rhodes the long-time leader in Greek bottle-fermented sparkling wine. The PDO Mantinia page lists sparkling white made from Moschofilero, by the traditional or tank method. PDO Zitsa does allow dry and semi-dry sparkling white from Debina, so that part is right. The examiner's fix names Rhodes but leaves out Mantinia, so it would still read as a full list and still be wrong. It also calls Rhodes an Athiri wine, when the rule is at least 70% Athiri, Assyrtiko and Malagousia combined. The better fix names all three and says \"among\", so it does not claim to be a complete list. The rest of the question stands: Amyndeon is still the only PDO for rosé Xinomavro, and Rhodes rosé is made from Mandilaria (Amorgiano), not Xinomavro.",
+   "verifySources": [
+    "https://winesofgreece.org/pdo/pdo-rhodes/",
+    "https://winesofgreece.org/pdo/pdo-mantinia/",
+    "https://winesofgreece.org/pdo/pdo-zitsa/"
+   ],
+   "finalFix": "exp: replace \", Zitsa (from Debina) being Greece's other sparkling appellation.\" with \"; Zitsa (Debina), Mantinia (Moschofilero) and Rhodes (chiefly Athiri) are among the other Greek PDOs that permit sparkling wine, but none of them for Xinomavro.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-n2tazel2",
+    "cat": "Hungary & Greece",
+    "q": "Compare Xinomavro as it is expressed in Naoussa, Amyndeon and Goumenissa.",
+    "sa": 1,
+    "accept": [
+     "naoussa is pure xinomavro and the most structured amyndeon is high cold and sandy goumenissa blends negoska",
+     "naoussa full and tannic amyndeon lighter and permitted for rose and sparkling goumenissa softened with negoska",
+     "three northern greek pdos for xinomavro with negoska only in the goumenissa blend",
+     "same grape three appellations differing by altitude soil and blending partner"
+    ],
+    "ans": "Naoussa is the benchmark and is monovarietal Xinomavro, grown on the south-east facing slopes of Mount Vermio at roughly 150 to 400 metres - warmer than Amyndeon, and the fullest, most tannic, longest-lived and most classically Nebbiolo-like of the three, all dried tomato, olive and dried flowers over ferocious tannin. Amyndeon sits on the plateau on the other side of Vermio, at roughly 570 to 750 metres, distinctly colder, with sandy soils in which some ungrafted vines survived phylloxera; the wines are paler, higher-toned, more red-fruited and earlier-drinking, and it is the only Greek PDO that permits still and sparkling rosé Xinomavro. Goumenissa, on the slopes of Mount Paiko from about 150 metres up, is the blend: Xinomavro with a minimum 20% Negoska - the familiar 80/20 formula - Negoska being a fleshier, lower-acid, softer-tannin variety that fills the middle palate and rounds the finish. Same grape, three answers - structure in Naoussa, aromatics and lift in Amyndeon, flesh in Goumenissa.",
+    "exp": "Xinomavro's name means 'acid black', and every one of these zones is a different strategy for managing that. If a blind glass shows the Nebbiolo signature with unexpected softness, Goumenissa is the answer the room is waiting for; if it shows the signature at rosé weight, think Amyndeon - the one PDO where sparkling and still rosé Xinomavro are legal, Zitsa (from Debina) being Greece's other sparkling appellation."
+   }
+  },
+  {
+   "id": "m-fsnkd9q1",
+   "kind": "outdated",
+   "claim": "The explanation says 'Trebbiano bulks the blend; the Malvasia carries the perfume.'",
+   "because": "The Frascati DOC rules have changed twice. The 2004 revision (Gazzetta Ufficiale 04A07912) set Malvasia bianca di Candia at 50% or more and capped Trebbiano Toscano at 10-20%. The current rules (last changed 30 Nov 2011, with DM 07.03.2014) require at least 70% Malvasia bianca di Candia and/or Malvasia del Lazio. Trebbiano is now only one of the optional grapes (Bellone, Bombino, Greco, Trebbiano), which together may make up at most 30%. Trebbiano could bulk out the old 1966-era blend, but it has not been able to since 2004, and certainly not since 2011.",
+   "sources": [
+    "https://italianwinecentral.com/denomination/frascati-doc/",
+    "https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticolo?art.progressivo=0&art.idArticolo=1&art.versione=1&art.codiceRedazionale=04A07912&art.dataPubblicazioneGazzetta=2004-08-09&art.idGruppo=0&art.idSottoArticolo1=10&art.idSottoArticolo=1&art.flagTipoArticolo=1",
+    "https://it.wikipedia.org/wiki/Frascati_(vino)",
+    "https://www.disciplinare.it/frascati-doc.html"
+   ],
+   "fix": "Since 2011 Malvasia (di Candia and/or del Lazio) must make up at least 70% of Frascati; Trebbiano is now only an optional grape within the 30% maximum, and the Malvasia del Lazio carries the perfume.",
+   "batch": 166,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, so I could not refute it. Article 2 of the current Frascati DOC disciplinare requires at least 70% Malvasia bianca di Candia and/or Malvasia del Lazio. Trebbiano Toscano and Trebbiano Giallo are only optional grapes. They share a 30% maximum with Greco, Bellone and Bombino Bianco. Italian Wine Central gives the same figures and dates the last change to 30 Nov 2011, when Cannellino di Frascati and Frascati Superiore became separate classifications. Under those rules Trebbiano cannot \"bulk the blend\", so the explanation describes the old blend as if it were current. The question, the model answer and the accept list are fine; only the explanation is wrong. The examiner's fix is right in substance. I rephrased it so it matches the legal text: it names both Trebbianos and all the optional grapes, and dates the rule to the current disciplinare as revised in 2011. I did not open the 2004 Gazzetta Ufficiale text myself, so the fix cites only the rules I confirmed.",
+   "verifySources": [
+    "https://www.disciplinare.it/frascati-doc.html",
+    "https://italianwinecentral.com/denomination/frascati-doc/"
+   ],
+   "finalFix": "Under the current disciplinare (revised 2011), Malvasia bianca di Candia and/or Malvasia del Lazio must make up at least 70% of Frascati; Trebbiano (Toscano or Giallo) is now only an optional grape, sharing the remaining 30% at most with Bellone, Bombino Bianco and Greco, and the Malvasia, above all the del Lazio, carries the perfume.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-fsnkd9q1",
+    "cat": "Italy Central & South",
+    "q": "Name Lazio's revived white grape of Frascati and its historical papal trap.",
+    "sa": 1,
+    "accept": [
+     "malvasia del lazio puntinata est est est montefiascone",
+     "malvasia puntinata",
+     "~malvasia del lazio"
+    ],
+    "ans": "Malvasia del Lazio (puntinata); the 'Est! Est!! Est!!!' legend belongs to Montefiascone's bishop's servant",
+    "exp": "Trebbiano bulks the blend; the Malvasia carries the perfume."
+   }
+  },
+  {
+   "id": "m-fsnkd9q1",
+   "kind": "ambiguous-stem",
+   "claim": "The stem asks for Frascati's 'historical papal trap', but the model answer gives the Est! Est!! Est!!! legend and admits it belongs to Montefiascone, not Frascati.",
+   "because": "The Est! Est!! Est!!! legend belongs to Montefiascone, in northern Lazio (a bishop's servant on the road to Rome), so it is not part of Frascati. Frascati has no recognised 'papal trap'. A careful candidate could answer with Frascati's real papal link instead: the Castelli Romani villas and Castel Gandolfo as the popes' summer retreat. That answer does not match the key. The stem asks for something the answer itself says belongs to a different appellation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Frascati_DOC",
+    "https://italianwinecentral.com/denomination/frascati-doc/"
+   ],
+   "fix": "Name Frascati's revived aromatic white grape, and the Lazio appellation whose name comes from a bishop's servant's legend.",
+   "batch": 166,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The stem asks for Frascati's \"historical papal trap\", but no such thing exists. The model answer itself admits that the Est! Est!! Est!!! legend belongs to Montefiascone. That legend is not papal either: in the usual telling, the German bishop Johann Fugger was travelling to Rome around 1110-1111 for Henry V's imperial coronation, and his majordomo marked the good inns with \"Est\". Frascati's real papal link is as a favourite wine of the Renaissance popes, and a careful candidate could reasonably answer that instead. So the stem cannot be answered as written.\n\nThe examiner's fix for the stem is sound, but it leaves two faults in place:\n1. The explanation is wrong under the current Frascati DOC rules. It says Trebbiano \"bulks the blend\", but the rules require at least 70% Malvasia Bianca di Candia and/or Malvasia del Lazio, and allow at most 30% of Bellone, Bombino Bianco, Greco and/or Trebbiano. Trebbiano cannot be the bulk.\n2. The accept list passes the grape alone (\"malvasia puntinata\", \"~malvasia del lazio\"), so a two-part question would be graded right with only half the answer.\n\nThe better fix below replaces the stem, the model answer, the accept list and the explanation together.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Est!_Est!!_Est!!!_di_Montefiascone",
+    "https://en.wikipedia.org/wiki/Frascati_DOC",
+    "https://italianwinecentral.com/denomination/frascati-doc/"
+   ],
+   "finalFix": "q: \"Name the aromatic native white grape revived as the quality heart of Frascati, and the northern Lazio DOC whose name comes from a bishop's servant's legend.\" | ans: \"Malvasia del Lazio (Malvasia Puntinata); Est! Est!! Est!!! di Montefiascone\" | accept: [\"malvasia del lazio est est est montefiascone\", \"malvasia puntinata est est est montefiascone\", \"malvasia del lazio est est est\", \"malvasia puntinata est est est\"] | exp: \"Frascati DOC requires at least 70% Malvasia Bianca di Candia and/or Malvasia del Lazio; the perfumed Puntinata is the grape quality producers revived. The Montefiascone name recalls Bishop Fugger's servant, who chalked 'Est' on inns with good wine on the road to Rome and wrote it three times there.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-fsnkd9q1",
+    "cat": "Italy Central & South",
+    "q": "Name Lazio's revived white grape of Frascati and its historical papal trap.",
+    "sa": 1,
+    "accept": [
+     "malvasia del lazio puntinata est est est montefiascone",
+     "malvasia puntinata",
+     "~malvasia del lazio"
+    ],
+    "ans": "Malvasia del Lazio (puntinata); the 'Est! Est!! Est!!!' legend belongs to Montefiascone's bishop's servant",
+    "exp": "Trebbiano bulks the blend; the Malvasia carries the perfume."
+   }
+  },
+  {
+   "id": "m-9u3kpxgx",
+   "kind": "accept-list",
+   "claim": "The accept entry \"delle venezie pinot grigio\" gives full credit to a candidate who names Delle Venezie as Italy's largest DOC by volume, which is wrong.",
+   "because": "matchSA passes any input that contains an accept phrase, so the answer \"Delle Venezie Pinot Grigio\" alone grades as correct. Prosecco DOC is the largest by volume: 660 million bottles in 2024 and 667 million in 2025, per the Consorzio. Pinot Grigio Delle Venezie makes about 230 million bottles a year. The model answer also puts Prosecco first and Delle Venezie only in parentheses.",
+   "sources": [
+    "https://www.prosecco.wine/en/prosecco-doc-667-million-bottles-in-2025/",
+    "https://www.thedrinksbusiness.com/2025/01/prosecco-doc-reaches-660-million-bottles/",
+    "https://www.thedrinksbusiness.com/2024/07/pinot-powerhouse/"
+   ],
+   "fix": "accept: [\"prosecco doc delle venezie pinot grigio volume versus quality\", \"prosecco doc\", \"prosecco\"] (remove \"delle venezie pinot grigio\")",
+   "batch": 167,
+   "verdict": "confirmed",
+   "verifyReason": "The examiner is right. The question asks for Italy's largest DOC by volume. The accept list holds only two entries. The first is an 8-word phrase nobody will type. The second, \"delle venezie pinot grigio\", names the wrong DOC. matchSA passes an input that contains an accept phrase as whole words, or that contains it as a substring (core.js lines 90 and 95). So the answer \"Delle Venezie Pinot Grigio\" gets full credit, and a candidate who types the right answer, \"Prosecco DOC\", fails. I checked the fetchable volume figure on the Consorzio's own page: Prosecco DOC made 667 million bottles in 2025 (606.9M white plus 60.4M rosé), up 1.1% on about 660M in 2024. The Delle Venezie consortium page confirms it covers about 85% of Italy's Pinot Grigio but gives no bottle count. I could not open the drinksbusiness article for its roughly 230M figure (HTTP 403). The industry figure of about 200–250M bottles a year is well below Prosecco's in any case. The model answer itself puts Prosecco DOC first. The fix is sound: remove \"delle venezie pinot grigio\" and add \"prosecco doc\" and \"prosecco\". Two leaks remain. \"prosecco\" will also grade \"Conegliano Valdobbiadene Prosecco DOCG\", and the substring fallback lets \"prosecco docg\" pass through \"prosecco doc\". Both are small next to the current fault, which is keyed to the wrong appellation and cannot be accepted, so I do not propose a different fix.",
+   "verifySources": [
+    "https://www.prosecco.wine/en/prosecco-doc-667-million-bottles-in-2025/",
+    "https://www.dellevenezie.it/en/",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 49-97)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-167.json"
+   ],
+   "finalFix": "accept: [\"prosecco doc delle venezie pinot grigio volume versus quality\", \"prosecco doc\", \"prosecco\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-9u3kpxgx",
+    "cat": "Italy North",
+    "q": "Name Italy's largest DOC by volume and the region's reputational paradox.",
+    "sa": 1,
+    "accept": [
+     "prosecco doc delle venezie pinot grigio volume versus quality",
+     "delle venezie pinot grigio"
+    ],
+    "ans": "Prosecco DOC (and delle Venezie DOC for Pinot Grigio) — vast volume alongside the northeast's finest artisanal whites",
+    "exp": "The same map holds Gravner's amphorae and an ocean of supermarket Grigio."
+   }
+  },
+  {
+   "id": "m-8ze3n0a9",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says Domaine Belluard is now in a \"Dominique Lucas era\" and describes Ayze sparkling as \"often ancestral\", with Belluard as the reference. Both claims are false, and the accept list requires the word \"ancestral\".",
+   "because": "Dominique Belluard died in 2021. Four partners bought the domaine (Vincent Ruiz, Franck Balthazar, Raphaël Bennour and Miguel Sarzies) and renamed it Domaine du Gringet; Dominique Lucas has no part in it, and the new owners do not plan to make sparkling wine. Belluard's reference sparklings, Mont Blanc Brut Zéro and Les Perles du Mont Blanc, are méthode traditionnelle, not ancestral. Because both accept entries need \"ancestral\", a correct answer such as \"Ayze, Gringet, traditional method\" is refused.",
+   "sources": [
+    "https://wineanorak.com/2024/11/18/domaine-du-gringet-taking-over-the-reins-of-domaine-belluard-making-remarkable-savoie-wines/",
+    "https://www.ozwinereview.com/2011/10/domaine-belluard-vin-de-savoie-ayse.html",
+    "https://www.closdesmillesimes.com/26088-clos-des-millesimes-domaine-belluard---les-perles-du-mont-blanc---methode-traditionnelle-2017.html",
+    "https://www.inao.gouv.fr/produit/vin-de-savoie-ayze-mousseux-de-qualite-17464"
+   ],
+   "fix": "ans: \"Ayze (Vin de Savoie Ayze): Gringet-based sparkling, bottle-fermented (Belluard's méthode traditionnelle Mont Blanc and Les Perles du Mont Blanc were the reference; since Dominique Belluard's death in 2021 the domaine is Domaine du Gringet)\"; accept: [\"ayze gringet\", \"ayse gringet\", \"ayze\", \"ayse\"]",
+   "batch": 167,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The model answer says Domaine Belluard is now in a \"Dominique Lucas era\". Wine Anorak (2024) says Dominique Belluard died in 2021 and that four partners (Ruiz, Balthazar, Bennour, Sarzies) bought the estate and renamed it Domaine du Gringet. Dominique Lucas is not mentioned and has no part in it; he makes wine at his own Savoie domaine. So the explanation states a false fact.\n\nThe model answer also calls Ayze sparkling \"often ancestral\" with Belluard as the reference, but Belluard's reference sparklings are labelled méthode traditionnelle. Oz Wine Review lists \"Ayse Mont-Blanc Méthode Traditionnelle Brut-Zéro 2006\", and Clos des Millésimes sells Les Perles du Mont Blanc as 100% Gringet, \"méthode traditionnelle\", aged two years sur lattes. That claim is also wrong.\n\nBoth accept entries contain \"ancestral\", and matchSA (core.js lines 74-95) grades by whole-phrase containment. So the correct answer \"Ayze, Gringet, traditional method\" matches neither entry and is refused, which is a real accept-list fault.\n\nThe INAO product page I opened does not give the method details, and I could not open the cahier des charges, so I rely on the producer evidence rather than the legal text. The examiner's fix corrects all three faults. Its accept list is lenient (a bare \"ayze\" is accepted), but that does not grade a wrong answer as right, because Ayze is the cru being asked for.",
+   "verifySources": [
+    "https://wineanorak.com/2024/11/18/domaine-du-gringet-taking-over-the-reins-of-domaine-belluard-making-remarkable-savoie-wines/",
+    "https://www.ozwinereview.com/2011/10/domaine-belluard-vin-de-savoie-ayse.html",
+    "https://www.closdesmillesimes.com/26088-clos-des-millesimes-domaine-belluard---les-perles-du-mont-blanc---methode-traditionnelle-2017.html",
+    "https://www.inao.gouv.fr/produit/vin-de-savoie-ayze-mousseux-de-qualite-17464",
+    "C:/Users/zpull/SommeliersCodex/js/core.js",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-167.json"
+   ],
+   "finalFix": "ans: \"Ayze (Vin de Savoie Ayze): Gringet-based sparkling, bottle-fermented (Belluard's méthode traditionnelle Mont Blanc and Les Perles du Mont Blanc were the reference; since Dominique Belluard's death in 2021 the domaine is Domaine du Gringet)\"; accept: [\"ayze gringet\", \"ayse gringet\", \"ayze\", \"ayse\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-8ze3n0a9",
+    "cat": "Jura, Savoie & Corsica",
+    "q": "Name Savoie's cru with sparkling monopoly by tradition and its method.",
+    "sa": 1,
+    "accept": [
+     "ayze ancestral gringet",
+     "ayse gringet ancestral"
+    ],
+    "ans": "Ayze — Gringet-based, often ancestral (Belluard the reference, now Dominique Lucas era)",
+    "exp": "Gringet grows nowhere else on earth."
+   }
+  },
+  {
+   "id": "m-ci32v4uf",
+   "kind": "wrong-key",
+   "claim": "The model answer and accept list credit François Chidaine and Jacky Blot with getting Montlouis 'pétillant originel' written into the appellation in 2007.",
+   "because": "The 2007 date is right: INAO authorised the mention that year. The attribution is not. The Montlouis-sur-Loire AOC's own page says the syndicate added it to the AOC in 2007 after a collective discussion, and it names no individual grower. Vitisphère credits Damien Delecheneau (Domaine de la Grange Tiphaine), president of the syndicate's technical commission, and names Jousset, Weisskopf, Mathur and Delecheneau as its producers. Neither source mentions Chidaine or Blot. Blot's 'Triple Zéro' is a separate bottling and not the legal category. The stem is also muddled: it asks for one 'biodynamic figure', while the answer names two growers and Blot is not usually described as biodynamic. A candidate who learns 'Chidaine/Blot' learns a wrong attribution.",
+   "sources": [
+    "https://www.vinsmontlouissurloire.fr/about/nosvins/le-petillant-originel/",
+    "https://vitisphere.com/actualite-56235-Un-Petillant-originel-entre-naturel-et-technique-a-Montlouis.htm"
+   ],
+   "fix": "q: \"When and how did 'pétillant originel' become a legal mention of Montlouis-sur-Loire?\" ans: \"In 2007, when INAO authorised it at the request of the Montlouis growers' syndicate: a single-fermentation (ancestral-method) sparkling Chenin with no added sugar, yeast or liqueur. The syndicate calls it a collective initiative, led by its technical commission under Damien Delecheneau of La Grange Tiphaine.\" accept: [\"2007\", \"2007 montlouis syndicate\", \"2007 ancestral method no added sugar\", \"collective syndicate 2007\", \"delecheneau 2007\"]",
+   "batch": 168,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The Montlouis-sur-Loire AOC's own page says the syndicate chose to bring Pétillant Originel into the AOC in 2007 and calls it \"le fruit d'une réflexion collective\". It names no grower. Vitisphère confirms that INAO first authorised the mention in 2007. It quotes Damien Delecheneau (La Grange Tiphaine) as president of the technical commission and names Jousset, Weisskopf, Mathur and Delecheneau as producers. Neither source mentions Chidaine or Blot. So the Chidaine/Blot attribution in the model answer and accept list has no support. The stem is garbled (\"split ... into legal existence\"), and it asks for one biodynamic figure but keys two growers.\n\nThe examiner's fix is only partly right. Vitisphère gives Delecheneau's role at the time of that article; it does not say he led the 2007 request. Crediting him for it, and accepting \"delecheneau 2007\", repeats the same kind of unsupported attribution. The fix also calls the wine a single-fermentation \"ancestral-method\" wine, but the appellation page does not call it ancestral. Its rules are: gas from the alcoholic fermentation only, and no added yeast, no chaptalisation, and no tirage or expedition liqueur. The better fix keeps to what the sources state.",
+   "verifySources": [
+    "https://www.vinsmontlouissurloire.fr/about/nosvins/le-petillant-originel/",
+    "https://vitisphere.com/actualite-56235-Un-Petillant-originel-entre-naturel-et-technique-a-Montlouis.htm"
+   ],
+   "finalFix": "q: \"In what year did 'Pétillant Originel' become a legal mention of the Montlouis-sur-Loire AOC, and what defines it?\" ans: \"2007, when INAO authorised it at the request of the Montlouis growers' syndicate, which calls it a collective initiative. It is a Chenin Blanc sparkling wine whose bubbles come only from the gas of its own alcoholic fermentation: no added yeast, no chaptalisation, no liqueur de tirage and no liqueur d'expédition, with a minimum of 9 months sur lattes.\" accept: [\"2007\", \"2007 single fermentation\", \"2007 no liqueur\", \"2007 no added sugar\", \"2007 syndicate\", \"2007 inao\"] exp: \"The appellation's syndicate presents Pétillant Originel as the fruit of a collective reflection among Montlouis growers. It is not credited to any single producer.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-ci32v4uf",
+    "cat": "Loire",
+    "q": "Which biodynamic Montlouis/Vouvray figure split 'petillant originel' into legal existence?",
+    "sa": 1,
+    "accept": [
+     "jacky blot francois chidaine",
+     "chidaine blot"
+    ],
+    "ans": "François Chidaine and Jacky Blot's generation forced the Montlouis ancestral category (pétillant originel, 2007)",
+    "exp": "Montlouis outran Vouvray in regulatory daring."
+   }
+  }
+ ]
+}

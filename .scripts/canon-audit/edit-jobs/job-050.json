@@ -1,0 +1,75 @@
+{
+ "file": "rewrite/categories/r2_service_hospitality.py",
+ "findings": [
+  {
+   "id": "c-rbec5kxw",
+   "kind": "accept-list",
+   "claim": "Natural wordings of the model answer, such as \"steam then polish\", \"steam, polish\" and \"steaming then polishing\", are graded wrong.",
+   "because": "norm() turns \"steam then polish\" into a 3-word string. It is not an exact match for any accept entry and contains none of them. The reverse containment check against \"steam then polish with a cloth\" needs at least ceil(6*0.6)=4 words, and the substring fallback has the same word-count guard. \"steam polish\" matches nothing. Only inputs that contain the literal phrase \"steam and polish\" (or one of the other listed phrases) pass.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA lines 89-95 and norm lines 11-17"
+   ],
+   "fix": "Add to accept: \"steam then polish\", \"steam polish\", \"steaming then polishing\", \"steam it then polish\", \"polish over steam\"",
+   "batch": 239,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, but not for every example the examiner gives. I ran the live grader (matchSA in C:/Users/zpull/SommeliersCodex/js/core.js) against the live question in js/data-questions.js, whose accept list is the same as the one in batch 239.\n\nThe examiner's lead example, \"steam then polish\", is already graded correct. norm() drops the article \"a\", so the accept entry \"steam then polish with a cloth\" becomes 5 words, not 6. The reverse-containment check then needs only ceil(5*0.6)=3 words, and the 3-word input passes (tested: true).\n\nThese plainly right answers are graded wrong (all tested false):\n- \"steam, polish\"\n- \"steam polish\"\n- \"steaming then polishing\"\n- \"steam it then polish\"\n- \"polish over steam\"\n\nSo the accept list refuses correct answers, and a student who writes \"steaming then polishing\" is marked wrong.\n\nThe fix: add \"steam polish\" (it also covers the comma form, which norm() reduces to \"steam polish\"), \"steaming then polishing\", \"steam it then polish\" and \"polish over steam\". \"steam then polish\" is not needed.\n\nI tested the widened list. It accepts all the right wordings above, and it still refuses:\n- the negations \"no steam polish\" and \"dont steam then polish\"\n- the wrong order \"polish then steam\"\n- the wrong steps \"rinse and polish\", \"steam and buff\"\n- either step alone, \"steam\" or \"polish\"\n\nThis is a grading fix only; the content (steam, then polish with a lint-free cloth) is not in question.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17, negatedAgainst, matchSA lines 49-95), run in node against the question",
+    "C:/Users/zpull/SommeliersCodex/js/data-questions.js (live copy of c-rbec5kxw)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-239.json"
+   ],
+   "finalFix": "[\"steam and polish\", \"steam it and polish\", \"steaming and polishing\", \"hold it over steam then polish\", \"steam then polish with a cloth\", \"steam polish\", \"steaming then polishing\", \"steam it then polish\", \"polish over steam\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-rbec5kxw",
+    "cat": "Service & Hospitality",
+    "q": "A glass leaves the machine carrying a faint chalky bloom. Which two-step remedy is standard before it goes to a table?",
+    "sa": 1,
+    "accept": [
+     "steam and polish",
+     "steam it and polish",
+     "steaming and polishing",
+     "hold it over steam then polish",
+     "steam then polish with a cloth"
+    ],
+    "ans": "Steam and polish with a lint-free cloth",
+    "exp": "Detergent bloom and water spots survive a machine cycle. Steam softens the film so linen lifts it away instead of smearing it around the bowl."
+   }
+  },
+  {
+   "id": "c-svkhgbox",
+   "kind": "accept-list",
+   "claim": "The accept list takes \"service trolley\", but the stem asks for the French term.",
+   "because": "The question asks \"Which French term names the trolley or side table...\". \"Service trolley\" is an English description, not the French term, so a candidate who does not know the word \"gueridon\" can still be graded correct. The other entries (\"gueridon\", \"gueridon trolley\", \"gueridon table\") all contain the term being tested.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-243.json (stem and accept list)"
+   ],
+   "fix": "[\"gueridon\", \"gueridon trolley\", \"gueridon table\"]",
+   "batch": 243,
+   "verdict": "confirmed",
+   "verifyReason": "The stem asks for the French term (\"Which French term names the trolley or side table...\"), yet the accept list includes \"service trolley\". That is an English description, not the French word. I traced it through matchSA in C:/Users/zpull/SommeliersCodex/js/core.js. norm(\"service trolley\") equals the accept entry exactly (line 82), so a candidate who types \"service trolley\" without knowing \"gueridon\" is marked correct. That is a wrong answer to the question as asked. Removing the entry breaks nothing a correct candidate needs. The model answer \"The gueridon\" normalises to \"gueridon\", which matches the first entry exactly and also passes the exact-model-answer check (line 72). Any input containing \"gueridon\" still matches through whole-word containment (line 90), and norm strips the accent from \"guéridon\". A bare \"trolley\" was never accepted: under the core-of-phrase rule, one word cannot cover a two-word entry. So the proposed list is correct as given. No web source is needed here, because this depends on how the grader matches answers, not on a fact about wine. \"Guéridon\" is the standard French service term for this piece of equipment, and \"service trolley\" is its plain English equivalent.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-243.json (lines 104-118: stem, accept list, ans \"The gueridon\")",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17; matchSA lines 49-98, exact match at 82, containment at 90, core-of-phrase at 93)"
+   ],
+   "finalFix": "[\"gueridon\", \"gueridon trolley\", \"gueridon table\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-svkhgbox",
+    "cat": "Service & Hospitality",
+    "q": "Which French term names the trolley or side table used for finishing and serving beside the guest?",
+    "sa": 1,
+    "accept": [
+     "gueridon",
+     "gueridon trolley",
+     "gueridon table",
+     "service trolley"
+    ],
+    "ans": "The gueridon",
+    "exp": "Decanting, carving and flaming all happen there rather than on the guest's own table. It keeps the work visible without putting equipment among the plates."
+   }
+  }
+ ]
+}

@@ -155,7 +155,7 @@ BANK = [
        "Alvarinho, Loureiro, Trajadura and Avesso",
        "Sercial, Verdelho, Boal and Malvasia",
        "Antao Vaz, Roupeiro, Perrum and Diagalves"], 0,
-      "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Madeira calls Verdelho. Altitude does most of the work, since the best white parcels sit six hundred metres up or on north-facing schist where the fruit never bakes."),
+      "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Spain calls Godello (and not, despite an old confusion, the Verdelho of Madeira). Altitude does most of the work, since the best white parcels sit six hundred metres up or on north-facing schist where the fruit never bakes."),
 
     # ------------------------------------------------- Dao and Bairrada (8) --
     Q("Dao and Bairrada",

@@ -1,0 +1,223 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-3wdv5vgc",
+   "kind": "accept-list",
+   "claim": "accept: \"equipo navazos territory\"",
+   "because": "The stem asks which DO allows unfortified flor-aged Palomino. Equipo Navazos is a négociant bottler, not a DO or any legal territory, so this entry marks a non-answer as correct. The DO is Jerez-Xérès-Sherry, alongside Manzanilla-Sanlúcar de Barrameda. Unfortified Fino and Manzanilla at a natural minimum of 15% were admitted by the regulation changes that took effect on 10 October 2022 (SherryNotes, 'New regulations for sherry in the D.O. Jerez-Xérès-Sherry').",
+   "sources": [
+    "https://www.sherrynotes.com/2021/background/new-regulations-do-jerez-xeres-sherry/",
+    "https://spanishwinelover.com/cambios-en-jerez-fin-del-encabezado-obligatorio-y-una-do-para-blancos"
+   ],
+   "fix": "accept: [\"jerez\", \"jerez-xeres-sherry\", \"jerez unfortified\", \"manzanilla-sanlucar de barrameda\", \"sanlucar manzanilla pasto\"] (drop \"equipo navazos territory\")",
+   "batch": 35,
+   "verdict": "confirmed",
+   "verifyReason": "Short-answer question a-3wdv5vgc in batch-035.json asks which DO ages Palomino under flor without fortification. Its accept list includes \"equipo navazos territory\". Equipo Navazos is a négociant bottler set up in 2005 by Barquín and Ojeda. It buys selected casks from existing bodegas. It is not a DO or any legal territory. The entry actually grades. matchSA in js/core.js has a \"whole-word core\" rule: an input of at least 2 of the accept phrase's 3 words, found inside it, scores as correct. So a student who types \"Equipo Navazos\", a producer's name, is marked right on a question asking for an appellation. That is a wrong answer being accepted. The right answer stays the one in the model answer: DO Jerez-Xérès-Sherry, with DO Manzanilla-Sanlúcar de Barrameda. The Consejo Regulador approved unfortified Fino and Manzanilla at a natural 15% in its 2021 amendment to the pliego de condiciones, which is outside this finding. The proposed fix drops the bad entry and keeps valid ones. \"jerez\" already covers \"jerez-xeres-sherry\" by containment, and \"manzanilla-sanlucar de barrameda\" correctly adds the sibling DO. Nothing wrong is admitted, so the fix is sound.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-035.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm)",
+    "https://www.armitwines.co.uk/about-us/blog/equipo-navazos",
+    "https://www.rosenthalwinemerchant.com/growers/equipo-navazos-93819/",
+    "https://www.sherrynotes.com/2021/background/new-regulations-do-jerez-xeres-sherry/"
+   ],
+   "finalFix": "accept: [\"jerez\", \"jerez-xeres-sherry\", \"jerez unfortified\", \"manzanilla-sanlucar de barrameda\", \"sanlucar manzanilla pasto\"]",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-3wdv5vgc",
+    "cat": "Spain",
+    "q": "Which DO ages Palomino under flor unfortified, its 'vinos de pasto' rewriting Andalusian whites?",
+    "sa": 1,
+    "accept": [
+     "jerez unfortified",
+     "equipo navazos territory",
+     "sanlucar manzanilla pasto",
+     "jerez"
+    ],
+    "ans": "DO Jerez-Xérès-Sherry, with its sibling DO Manzanilla-Sanlúcar de Barrameda — since the 2022 revision of the pliego de condiciones, unfortified flor-aged Palomino is legal inside the DO; the vino de pasto pioneers' earlier bottlings had to be sold as VT Cádiz",
+    "exp": "Equipo Navazos, Luis Pérez, Muchada-Léclapart lead the tide."
+   }
+  },
+  {
+   "id": "a-mr3cgziz",
+   "kind": "accept-list",
+   "claim": "accept: \"pinot nero chardonnay 90 percent millesimato always riserva at 36 months\"",
+   "because": "The Alta Langa disciplinare sets the base minimum at thirty months on the lees and 36 months only for Riserva. The third point the question asks for is the 30-month minimum, and this accept entry leaves it out. Read as 'always riserva at 36 months', it credits an answer that says every Alta Langa is a 36-month Riserva, which is false. (Consorzio disciplinare: 'trenta mesi'; Riserva '36 mesi'; vintage compulsory.)",
+   "sources": [
+    "https://www.altalangadocg.com/consorzio-alta-langa/disciplinare-produzione/",
+    "https://it.wikipedia.org/wiki/Alta_Langa_(vino)"
+   ],
+   "fix": "pinot nero chardonnay 90 percent millesimato always 30 months on lees riserva 36",
+   "batch": 36,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. I checked the Consorzio's disciplinare. It sets the minimum for Alta Langa at \"trenta mesi\" (30 months) on the lees, and 36 months only for Riserva. It requires Pinot Nero and/or Chardonnay at 90 to 100% of the blend, and it makes the vintage compulsory. The accept entry \"pinot nero chardonnay 90 percent millesimato always riserva at 36 months\" never states the 30-month minimum. Read as written, it says every Alta Langa is a 36-month Riserva, which is false. matchSA (C:/Users/zpull/SommeliersCodex/js/core.js) grades any input that contains this phrase as a whole, and nothing in the phrase trips the negation guard. So a student who writes it gets full credit for a wrong third point, and the list teaches the error. The proposed replacement names all three points correctly: grapes and the 90% share, compulsory vintage, and 30 months with Riserva at 36. It has no negation words, so the grader will still accept it.",
+   "verifySources": [
+    "https://www.altalangadocg.com/consorzio-alta-langa/disciplinare-produzione/",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-036.json (a-mr3cgziz)"
+   ],
+   "finalFix": "pinot nero chardonnay 90 percent millesimato always 30 months on lees riserva 36",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-mr3cgziz",
+    "cat": "Sparkling Wine World",
+    "q": "Alta Langa DOCG's rules set it apart from every other Italian traditional-method zone in three ways. Name them.",
+    "sa": 1,
+    "accept": [
+     "pinot nero and chardonnay only always vintage dated thirty months on the lees",
+     "only pinot nero or chardonnay with a compulsory vintage and 30 months minimum",
+     "vintage is mandatory grapes are pinot nero chardonnay and lees ageing is 30 months",
+     "pinot nero chardonnay 90 percent millesimato always riserva at 36 months"
+    ],
+    "ans": "Pinot Nero and/or Chardonnay only, a minimum 90% of the blend; the vintage is always compulsory; and a minimum 30 months on the lees, rising to 36 for Riserva",
+    "exp": "Piedmont's serious fizz — DOCG since 2011, planted above 250 metres across Alessandria, Asti and Cuneo. The compulsory vintage is the detail to hold: no other major Italian metodo classico forces it. The appellation exists because Piedmont's houses spent a century growing Pinot Nero base wine for other people's bottles and finally claimed a name of their own."
+   }
+  },
+  {
+   "id": "a-vfe0dybz",
+   "kind": "wrong-explanation",
+   "claim": "Raumland's 'triple brut' program showed the way.",
+   "because": "Raumland's own site and trade listings show no 'triple brut' programme. Raumland's flagship is the Triumvirat Grande Cuvée, and the house calls itself the first VDP.Sektgut. The VDP.SEKT.STATUT was adopted in 2020 and introduced in 2021, and Raumland released the first VDP.Sekt.Prestige collection.",
+   "sources": [
+    "https://raumland.de/",
+    "https://www.vdp.de/de/vdpsektstatut",
+    "https://www.nikos-weinwelten.de/beitrag/sekthaus_raumland_erste_vdp_sekt_prestige_kollektion/"
+   ],
+   "fix": "Raumland, the first VDP.Sektgut, released the first VDP.Sekt.Prestige collection; its long-lees Triumvirat showed the way.",
+   "batch": 36,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The keyed answer is right: VDP.Sekt.Prestige requires at least 36 months on the fine lees, the traditional method is mandatory, and the classification was introduced in December 2020. The explanation is the problem. Raumland has no \"triple brut\" programme. Raumland's own site and press page do not mention one, and neither does any trade listing I searched. Its range is organised as Tradition, Réserve and Grand Réserve (plus Méthode Ancestrale), and its top cuvée is Triumvirat. Raumland's own press release says it was the first pure Sekthaus admitted to the VDP. It launched the first VDP.Sekt.Prestige collection and committed to selling only Sekt aged at least 36 months on the lees. So the explanation states a false fact. The examiner's fix is mostly right, but its closing clause (\"its long-lees Triumvirat showed the way\") is an editorial claim no source supports. The better fix below keeps to the documented facts.",
+   "verifySources": [
+    "https://raumland.de/press/raumland-praesentiert-erste-vdp-sektkollektion",
+    "https://raumland.de/",
+    "https://www.meininger.de/wein/erzeuger/raumland-praesentiert-erste-vdp-kollektion",
+    "https://www.nikos-weinwelten.de/beitrag/sekthaus_raumland_erste_vdp_sekt_prestige_kollektion/",
+    "https://www.vinum.eu/de/news/vinophiles/sekthaus-raumland-lanciert-erste-kollektion-nach-neuer-vdp-klassifizierung/"
+   ],
+   "finalFix": "Raumland, the first pure Sekthaus admitted to the VDP, released the first VDP.Sekt.Prestige collection and now sells only Sekt aged at least 36 months on the lees.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-vfe0dybz",
+    "cat": "Sparkling Wine World",
+    "q": "Sekt b.A. with 'Erstes Gewächs'-style ambitions led the VDP to define Sekt tiers in 2020 requiring what minimum lees for the top?",
+    "sa": 1,
+    "accept": [
+     "36 months",
+     "prestige 36"
+    ],
+    "ans": "36 months for VDP.Sekt Prestige (traditional method mandatory)",
+    "exp": "Raumland's 'triple brut' program showed the way."
+   }
+  },
+  {
+   "id": "a-mmnywoua",
+   "kind": "wrong-explanation",
+   "claim": "milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present (and accept entry \"ancestral keeps the fibres and uses clay pots\")",
+   "because": "NOM-070-SCFI-2016 section 4.4.3 (Mezcal Ancestral) allows milling \"con mazo, tahona, molino chileno o egipcio\", so the Chilean and Egyptian mills also qualify. For fermentation and distillation it says the process \"puede incluir la fibra del maguey o agave (bagazo)\": the fibres MAY be included, they are not required. The Artesanal class (4.4.2) uses the same \"puede incluir\" wording, so keeping the fibres does not set Ancestral apart. Ancestral differs from Artesanal in its pit oven only (no masonry oven), its mills (no trapiche or desgarradora) and its clay-pot distillation over direct fire (no copper).",
+   "sources": [
+    "https://agavestyle.com/normas-del-mezcal-nom-070-scfi-2016/",
+    "https://www.mezcalistas.com/nom-70-the-full-proposal/"
+   ],
+   "fix": "In ans, replace \"milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present\" with \"milled by mallet, tahona, or Chilean or Egyptian mill, fermented in stone, earth, trunk, masonry, wood, clay or hide (the fibres may be included)\". In accept, replace \"ancestral artesanal and plain mezcal ancestral keeps the fibres and uses clay pots\" with \"ancestral artesanal and plain mezcal ancestral uses pit ovens and clay pots\".",
+   "batch": 37,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. I opened NOM-070-SCFI-2016 as published in the Diario Oficial (DOF, 23 Feb 2017). Section 4.4.3, Mezcal Ancestral, says:\n- Cooking: pit ovens only (\"hornos de pozo\").\n- Milling: \"con mazo, tahona, molino chileno o egipcio\", so the Chilean and Egyptian mills count as well as mallet and tahona.\n- Fermentation: \"oquedades en piedra, suelo o tronco, piletas de mampostería, recipientes de madera o barro, pieles de animal, cuyo proceso puede incluir la fibra del maguey o agave (bagazo)\".\n- Distillation: \"con fuego directo en olla de barro y montera de barro o madera; cuyo proceso puede incluir la fibra...\".\n\nThe fibres are allowed, not required, and Artesanal (4.4.2) uses the same \"puede incluir\" wording. So the model answer's \"with the fibres present\" is false as a requirement. Its milling list (mallet or tahona only) and fermentation list (leaves out soil, trunk and masonry) are also too narrow. The accept entry \"ancestral keeps the fibres and uses clay pots\" credits the fibres as what sets Ancestral apart, which is false.\n\nWhat really separates Ancestral from Artesanal is:\n- pit oven only, with no raised masonry oven;\n- no trapiche or desgarradora;\n- clay-pot distillation, with a clay or wood cap, over direct fire, and no copper.\n\nThe proposed fix states this correctly.",
+   "verifySources": [
+    "https://dof.gob.mx/nota_detalle.php?codigo=5472787&fecha=23/02/2017",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-037.json",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-058.json"
+   ],
+   "finalFix": "In ans, replace \"milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present\" with \"milled by mallet, tahona, or Chilean or Egyptian mill, fermented in stone, earth, trunk, masonry, wood, clay or hide (the fibres may be included)\". In accept, replace \"ancestral artesanal and plain mezcal ancestral keeps the fibres and uses clay pots\" with \"ancestral artesanal and plain mezcal ancestral uses pit ovens and clay pots\".",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-mmnywoua",
+    "cat": "Spirits & Cocktails",
+    "q": "NOM-070 recognises three production classes of Mezcal. Name them, and state what forces a bottle into the strictest one.",
+    "sa": 1,
+    "accept": [
+     "mezcal artesanal and ancestral with ancestral requiring clay pot distillation",
+     "three classes and ancestral demands pit roasting and clay pot stills",
+     "mezcal mezcal artesanal mezcal ancestral clay still and direct fire for ancestral",
+     "ancestral artesanal and plain mezcal ancestral keeps the fibres and uses clay pots"
+    ],
+    "ans": "Mezcal, Mezcal Artesanal and Mezcal Ancestral. Ancestral is the strictest: agave cooked in an earthen pit, milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present, and distilled in clay pots over direct fire — no copper column anywhere in the process",
+    "exp": "The plain 'Mezcal' class is the permissive one: autoclaves, diffusers and column stills are all legal there, which is how industrial mezcal reaches supermarket price points without lying on the label. Artesanal sits between — pit or masonry oven, copper or clay pot still. Reading the class on the back label tells you more about the liquid in front of you than the agave species does."
+   }
+  },
+  {
+   "id": "a-bpga3b5q",
+   "kind": "accept-list",
+   "claim": "accept: \"chaume\"",
+   "because": "The third member of the trio is the Coteaux du Layon appellation. Chaume is only its premier cru, named in law as \"Coteaux du Layon Premier Cru Chaume\" since November 2011, so \"Chaume\" on its own does not name the appellation. It is also a substring of \"Quarts de Chaume\", which the stem already gives, so a candidate who simply repeats Quarts de Chaume, or confuses the Grand Cru with its neighbour, is graded correct. INAO's product page and Vins de Loire both register the name as Coteaux du Layon premier cru Chaume, a denomination inside Coteaux du Layon, while Quarts de Chaume is a separate Grand Cru AOC.",
+   "sources": [
+    "https://www.inao.gouv.fr/produit/coteaux-du-layon-premier-cru-chaume-23140",
+    "https://www.vinsdeloire.fr/en/loire-wines/coteaux-du-layon-1er-cru-chaume/all-about-coteaux-du-layon-1er-cru-chaume",
+    "https://en.wikipedia.org/wiki/Coteaux_du_Layon"
+   ],
+   "fix": "accept: [\"coteaux du layon\", \"coteaux du layon premier cru chaume\"] (remove the bare \"chaume\")",
+   "batch": 38,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, and I checked it by running the real grader. norm() drops \"de\", so \"Quarts de Chaume\" becomes \"quarts chaume\". The bare accept \"chaume\" then matches it as a whole word. Running matchSA from C:/Users/zpull/SommeliersCodex/js/core.js on this question (a-bpga3b5q, batch-038.json) grades \"Quarts de Chaume\" and \"quarts de chaume grand cru\" as correct. That is simply the stem's own first answer typed back. INAO registers the name as \"Coteaux du Layon premier cru Chaume\", a named premier cru inside Coteaux du Layon. Quarts de Chaume is a separate AOC. So the keyed third member is Coteaux du Layon, and bare \"chaume\" has to go. Marking it strict (\"~chaume\") would not help, because strict matching still finds whole-phrase containment inside \"quarts chaume\".\n\nThe examiner's fix removes the leak (tested: Quarts de Chaume is now false and Coteaux du Layon is still true). But it also refuses \"Chaume premier cru\" and \"1er Cru Chaume\". The model answer itself names that premier cru, so those are fair answers. Adding strict premier-cru phrases keeps them passing without letting Quarts de Chaume back in. Tested: they pass; Quarts de Chaume, bare Chaume and a negated answer fail. One small detail in the finding is wrong, and it does not affect the fix: INAO dates the Chaume designation to a decree of 21 Feb 2007, not November 2011. The Vins de Loire page returned 403, so I did not rely on it.",
+   "verifySources": [
+    "https://www.inao.gouv.fr/produit/coteaux-du-layon-premier-cru-chaume-23140",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-038.json (a-bpga3b5q)"
+   ],
+   "finalFix": "\"accept\": [\"coteaux du layon\", \"coteaux du layon premier cru chaume\", \"~premier cru chaume\", \"~chaume premier cru\", \"~1er cru chaume\", \"~chaume 1er cru\"]",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-bpga3b5q",
+    "cat": "Sweet Wines",
+    "q": "The great sweet Chenin trio of Anjou is Quarts de Chaume, Bonnezeaux and:",
+    "sa": 1,
+    "accept": [
+     "coteaux du layon",
+     "chaume"
+    ],
+    "ans": "Coteaux du Layon (with the Chaume premier cru)",
+    "exp": "Layon's mists off the little river mirror Sauternes' mechanics."
+   }
+  },
+  {
+   "id": "a-i9i4z2gy",
+   "kind": "ambiguous-stem",
+   "claim": "A soil report from a prospective plot returns 20% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?",
+   "because": "The site values sit inside 140 Ruggeri's published tolerance: Plantgrape (IFV/INRAE/Montpellier SupAgro) and the Pépinière Richard aptitude table both rate 140 Ru to 20% active lime and IPC 90. At 20% / IPC 60, 140 Ru is not ruled out, so option C ('110R or 140 Ruggeri') is half-viable and the soil does not 'force' 41B/Fercal. A careful examiner could defend 140 Ru on this plot. (41B is 40% / IPC 60 and Fercal 40% / IPC 120 in the same sources, so the key is right once the numbers exceed 140 Ru's limit.)",
+   "sources": [
+    "https://www.plantgrape.fr/en/varieties/rootstock-varieties/22",
+    "http://www.pepiniere-richard.ch/aptitudes.php"
+   ],
+   "fix": "Change the stem to 'A soil report from a prospective plot returns 30% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?' That puts the plot above 140 Ru's 20% and 110R's 17%, and still inside 41B (40%, IPC 60) and Fercal (40%, IPC 120). Keep the key at index 1.",
+   "batch": 40,
+   "verdict": "confirmed",
+   "verifyReason": "I agree with the finding. I opened both sources myself. Plantgrape (IFV/INRAE) rates 140 Ruggeri to \"20% of active limestone\" and \"an ICP of 90\". Pépinière Richard's table gives the same figures for 140 Ru (20% active lime, 50% total lime, IPC 90), and 41B at 40% / IPC 60, Fercal at 40% / IPC 120, and 110R at 17% / IPC 30.\n\nThe stem's plot is 20% active lime with IPC 60. That is exactly 140 Ru's lime ceiling and well inside its IPC tolerance. So 140 Ru is still a defensible choice, and the soil does not \"force\" 41B or Fercal. The question's own explanation even puts the Ruggeri lime ceilings \"near 17-20%\". An expert could therefore reasonably defend option C, at least for its 140 Ru half, so the stem is ambiguous.\n\nThe proposed fix works. At 30% active lime with IPC 60, the plot is above 140 Ru's 20% and 110R's 17%, and still within 41B (40%, IPC 60) and Fercal (40%, IPC 120). Options A and D stay clearly wrong. The IPC cannot go above 60, or 41B would fall out. The key stays at index 1 and the explanation still reads correctly.",
+   "verifySources": [
+    "https://www.plantgrape.fr/en/varieties/rootstock-varieties/22",
+    "http://www.pepiniere-richard.ch/aptitudes.php",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-040.json",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-060.json"
+   ],
+   "finalFix": "A soil report from a prospective plot returns 30% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-i9i4z2gy",
+    "cat": "Terroir: Climate & Soil",
+    "q": "A soil report from a prospective plot returns 20% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?",
+    "opts": [
+     "3309 Couderc, whose limit is nearer 11% lime",
+     "41B or Fercal, bred for high active lime",
+     "110R or 140 Ruggeri, chosen for drought",
+     "Riparia Gloire, chosen for low vigour"
+    ],
+    "a": 1,
+    "exp": "Total limestone is not the number that matters — active (soluble) lime and the IPC (indice de pouvoir chlorosant) are, because they govern iron availability and therefore lime-induced chlorosis. 41B (Chasselas x Berlandieri) is rated to roughly 40% active lime and IPC 60, which is why it is Champagne's chalk rootstock; Fercal goes higher still (IPC ~120). 110R and 140 Ruggeri are drought specialists whose lime ceilings sit near 17-20%; 3309C is about 11%, Riparia Gloire about 6%. Match the rootstock to the limiting constraint of the site, not to its reputation."
+   }
+  }
+ ]
+}

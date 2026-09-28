@@ -1,0 +1,294 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-wspnxw1o",
+   "kind": "accept-list",
+   "claim": "'escanciado high pour'",
+   "because": "Escanciado is the Asturian ritual of pouring bottled sidra from overhead. The Basque txotx ritual is different: the cider is caught in the glass from a thin stream shot out of a freshly tapped barrel at the sagardotegi. So the accept list credits the Asturian practice as the Basque answer. The model answer's 'long high pour' has the same conflation.",
+   "sources": [
+    "https://thecraftycask.com/craft-cider/basque-cider/",
+    "https://vinepair.com/articles/asturian-cider-pouring-method/"
+   ],
+   "fix": "Model answer: Caught in the glass from a thin stream shot from a freshly tapped barrel (txotx) to aerate its still, sharp body. Accept: ['caught from the barrel stream txotx', 'txotx from the barrel']",
+   "batch": 5,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The examiner is right that an accept entry is wrong. The question is a-wspnxw1o in batch-005 (data-advanced.js:ADV_QUESTIONS), with the stem \"Basque sidra is served by:\". Its accept list includes \"escanciado high pour\". Escanciado, with the bottle held overhead and the glass at the waist, is the Asturian technique (eatingasturias.com: \"pour cider into the glass in the Asturian manner\"). The Basque cider body's own serving guide (sagardoa.eus) points the other way. It says bottled Basque cider is ideally poured \"from a height of 5 to 10 cm\". The signature Basque service is the txotx, where cider goes straight from the kupela (barrel) into the glass for its txinparta (sparkle). Wikipedia describes the txotx stream being caught in a glass 3 to 6 feet from the barrel.\n\nmatchSA in C:/Users/zpull/SommeliersCodex/js/core.js makes this worse. Its whole-word core rule means the input \"high pour\" alone matches the escanciado entry, so the grader credits the Asturian overhead pour as the Basque answer.\n\nThe model answer is only partly off. The txotx stream really is a long jet caught at a distance, but \"high pour\" is inaccurate. Wikipedia's loose line that Basque bottled cider is \"poured from height\" is not enough to save it against the Basque body's 5 to 10 cm guidance.\n\nThe examiner's fix needs two changes. First, their accept phrases are long (four words once normalised), so a candidate who types just \"txotx\", the most likely correct answer, would fail under the 60 percent word-coverage rule. A strict canonical entry \"~txotx\" fixes that. Second, the examiner's answer text calls the cider sharp, but a fix does not need to restate the taste.",
+   "verifySources": [
+    "https://www.sagardoa.eus/en/12.basque-cider",
+    "https://en.wikipedia.org/wiki/Basque_cider",
+    "https://eatingasturias.com/wiki/Escanciar",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-005.json"
+   ],
+   "finalFix": "Model answer (ans): \"Txotx: a thin stream shot from a freshly opened barrel (kupela) and caught in the glass from a distance, to aerate the still cider\". Accept: [\"~txotx\", \"from the barrel\", \"straight from the barrel\", \"stream from the barrel\", \"from the kupela\"]. Remove both \"escanciado high pour\" and \"long pour from height txotx\".",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-wspnxw1o",
+    "cat": "Beer & Cider",
+    "q": "Basque sidra is served by:",
+    "sa": 1,
+    "accept": [
+     "long pour from height txotx",
+     "escanciado high pour"
+    ],
+    "ans": "The long high pour (txotx culture) to aerate its still, sharp body",
+    "exp": "Sagardotegi season: cod omelets and barrels opened to a shout."
+   }
+  },
+  {
+   "id": "a-jzvq813j",
+   "kind": "accept-list",
+   "claim": "accept: \"pichon longueville\"",
+   "because": "The question asks for both second growths of the Pichon split, but \"Pichon Longueville\" alone names only one of them. It was the name on Pichon Baron's own label until 2012 (\"Château Pichon-Longueville\" at the top, \"Baron de Pichon-Longueville\" at the base). A candidate who names only the Baron would be graded correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Pichon_Longueville_Baron",
+    "https://www.thewinecellarinsider.com/bordeaux-wine-producer-profiles/bordeaux/pauillac/pichon-longueville-baron/"
+   ],
+   "fix": "accept: [\"pichon baron and pichon lalande\", \"pichon baron and pichon comtesse\", \"pichon-longueville baron and comtesse de lalande\"] (drop \"pichon longueville\")",
+   "batch": 6,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. I ran matchSA from C:/Users/zpull/SommeliersCodex/js/core.js against the bank entry a-jzvq813j, which asks for both Pichon second growths. The entry \"pichon longueville\" matches any input that contains that phrase. So \"Pichon Longueville\", \"Pichon Longueville Baron\" and \"Pichon Longueville Comtesse de Lalande\" all grade CORRECT, even though each names only one estate or neither. That is a real accept-list fault. The question itself is right: both estates are 1855 Deuxièmes Crus in Pauillac, split from the Rauzan/Pichon property in 1850. The sister estate is Château Pichon Longueville Comtesse de Lalande. Pichon Baron is now sold simply as \"Château Pichon Baron\".\n\nThe examiner's fix is off, though. With only its three entries, the grader refuses plainly right answers that the old list took. Tested:\n- \"Pichon Baron and Pichon Longueville Comtesse de Lalande\" (the two estates' current names) is refused.\n- \"Château Pichon Baron and Château Pichon Longueville Comtesse de Lalande\" is refused.\n- \"Pichon-Longueville Baron and Pichon-Longueville Comtesse\" is refused.\n- \"Pichon Longueville Baron and Pichon Lalande\" is refused.\n- Either pair in reverse order, e.g. \"Pichon Lalande and Pichon Baron\", is refused.\n\nThe replacement list below keeps every entry naming both estates. Tested with node, it:\n- refuses every one-estate input and the \"not ...\" negation;\n- refuses \"Pichon Baron and Lynch-Bages\";\n- accepts all the correct two-estate forms above;\n- still accepts the model answer exactly.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm, lines 11-96)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-006.json (a-jzvq813j)",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Pichon_Longueville_Baron"
+   ],
+   "finalFix": "accept: [\"pichon baron and pichon lalande\", \"pichon lalande and pichon baron\", \"pichon baron and pichon comtesse\", \"pichon comtesse and pichon baron\", \"pichon longueville baron and pichon longueville comtesse\", \"pichon longueville comtesse and pichon longueville baron\", \"pichon longueville baron and comtesse de lalande\", \"pichon longueville baron and pichon lalande\", \"pichon baron and pichon longueville comtesse de lalande\", \"pichon baron and comtesse de lalande\"] (drop \"pichon longueville\")",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-jzvq813j",
+    "cat": "Bordeaux",
+    "q": "Name the two Pauillac second growths of the Pichon family split.",
+    "sa": 1,
+    "accept": [
+     "pichon baron and pichon lalande",
+     "pichon-longueville baron and comtesse de lalande",
+     "pichon longueville"
+    ],
+    "ans": "Pichon-Longueville Baron and Pichon-Longueville Comtesse de Lalande",
+    "exp": "They face each other across the D2 at Latour's shoulder."
+   }
+  },
+  {
+   "id": "a-bg3f0jo1",
+   "kind": "outdated",
+   "claim": "Six others are shared; these two are DRC's alone.",
+   "because": "The count of six held only from the 2009 vintage, when Corton (from Prince Florent de Merode's vines) was added, up to the 2018 vintage. It stopped being true when Corton-Charlemagne, from vines leased from Bonneau du Martray, joined the range with the 2019 vintage. DRC now releases seven shared grands crus besides its two monopoles: Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne and Montrachet. It also owns about 0.17 ha of Bâtard-Montrachet, which it does not sell.",
+   "sources": [
+    "https://www.sothebys.com/en/articles/domaine-de-la-romanee-conti-a-collectors-guide-to-the-renowned-burgundy-wines",
+    "https://www.corneyandbarrow.com/domaine-de-la-romanee-conti",
+    "https://en.wikipedia.org/wiki/Domaine_de_la_Roman%C3%A9e-Conti"
+   ],
+   "fix": "Its other grands crus (Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne from 2019, Montrachet, and a tiny unreleased Bâtard-Montrachet) are shared; these two are DRC's alone.",
+   "batch": 7,
+   "verdict": "confirmed",
+   "verifyReason": "The answer (Romanée-Conti and La Tâche) and the accept list are correct. The explanation's count of \"six others\" is wrong today. Besides its two monopoles, DRC makes and releases seven grands crus that other owners also hold: Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Montrachet, Corton (first vintage 2009, from vines leased from the Prince de Mérode) and Corton-Charlemagne. Corton-Charlemagne comes from about 2.5 ha leased from Bonneau du Martray's new owners, with the lease starting in November 2018 and 2019 as the first vintage. DRC also owns about 0.17 ha of Bâtard-Montrachet, which it keeps for its own use and does not sell (Wikipedia). With Corton-Charlemagne added in 2019, \"six\" is no longer true on any count. It is seven for the released wines and eight if Bâtard is included, so the explanation became out of date with the 2019 vintage. The examiner's replacement lists these holdings correctly, puts the correct date on Corton-Charlemagne, and keeps the point that the two monopoles are DRC's alone.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Domaine_de_la_Roman%C3%A9e-Conti",
+    "https://winehog.org/news-new-wine-from-domaine-de-la-romanee-conti-35653/",
+    "https://www.decanter.com/premium/domaine-de-la-romanee-conti-2019-wines-rated-and-reviewed-452689/",
+    "https://www.luxuriousmagazine.com/domaine-de-la-romanee-conti-2019/"
+   ],
+   "finalFix": "Its other grands crus (Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne from 2019, Montrachet, and a tiny unreleased Bâtard-Montrachet) are shared; these two are DRC's alone.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-bg3f0jo1",
+    "cat": "Burgundy",
+    "q": "Give the two monopole grands crus owned entirely by Domaine de la Romanée-Conti.",
+    "sa": 1,
+    "accept": [
+     "romanee-conti and la tache",
+     "la tache and romanee-conti",
+     "romanee conti la tache"
+    ],
+    "ans": "Romanée-Conti and La Tâche",
+    "exp": "Six others are shared; these two are DRC's alone."
+   }
+  },
+  {
+   "id": "a-q4wv3dx8",
+   "kind": "wrong-explanation",
+   "claim": "held by Mommessin for a century",
+   "because": "The Mommessin family bought Clos de Tart in 1932 and sold it to François Pinault's Artémis Domaines at the end of 2017, with the sale completed in 2018. That is about 85 years, not a century.",
+   "sources": [
+    "https://www.decanter.com/wine-news/clos-de-tart-sold-latour-owner-pinault-378848/",
+    "https://en.wikipedia.org/wiki/Clos_de_Tart",
+    "https://www.corneyandbarrow.com/clos-de-tart"
+   ],
+   "fix": "held by the Mommessin family from 1932 to 2017",
+   "batch": 7,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The keyed answer (Clos des Lambrays) is right; the fault is in the explanation. Clos de Tart's own history page says Henri Mommessin bought it at auction from the Marey-Monge family in 1932, and that the Pinault family's Artémis Domaines acquired it in 2018. The sale was agreed and announced at the end of 2017 and completed in 2018. That makes the Mommessin tenure about 85 years, so \"held by Mommessin for a century\" states a false fact. The examiner's fix, \"from 1932 to 2017\", matches the announcement date but not the estate's own date of 2018. The better fix gives 1932 and the 2017-18 sale so it agrees with both. The explanation's other claims were not part of this finding.",
+   "verifySources": [
+    "https://www.clos-de-tart.com/en/history",
+    "https://en.wikipedia.org/wiki/Clos_de_Tart",
+    "https://www.edmond-de-rothschild.com/en/news/show/1092-13895-edmond-de-rothschild-corporate-finance-advises-the-mommessin-family-on-the-sale-of-their-burgundy-vineyard-clos-de-tart-to-artemis",
+    "https://www.corneyandbarrow.com/clos-de-tart"
+   ],
+   "finalFix": "Clos de Tart, its neighbor, is a true monopole, held by the Mommessin family from 1932 until its sale to Pinault's Artémis Domaines in 2017-18. Morey's smallest grand cru is Clos Saint-Denis (~6.6 ha).",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-q4wv3dx8",
+    "cat": "Burgundy",
+    "q": "Which Morey-Saint-Denis grand cru is the commune's second-largest and a near-monopole of Domaine des Lambrays?",
+    "sa": 1,
+    "accept": [
+     "clos des lambrays",
+     "lambrays"
+    ],
+    "ans": "Clos des Lambrays (near-monopole)",
+    "exp": "Clos de Tart, its neighbor, is a true monopole — held by Mommessin for a century, now Pinault's Artémis. Morey's smallest grand cru is Clos Saint-Denis (~6.6 ha)."
+   }
+  },
+  {
+   "id": "a-pnip9bif",
+   "kind": "outdated",
+   "claim": "Seven total; Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.",
+   "because": "The Champagne cahier des charges has changed twice. From December 2022 (INAO approval, published in the JORF on 10 Dec 2022) the resistant hybrid Voltis is allowed as a 'variété d'intérêt à fins d'adaptation', capped at 5% of vineyard area and 10% of a blend. The arrêté of 31 July 2025 then added Chardonnay Rosé as a main variety, which the Comité Champagne calls the eighth recognised grape. 'Seven total' has therefore been wrong since 2022 at the latest. The stem's 'the four permitted ... beyond the big three' still holds only if it is read as the four traditional minor grapes.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052045089",
+    "https://www.champagne.fr/system/files/2025-10/Communique%CC%81%20de%20presse%20-%20Chardonnay%20Rose.pdf",
+    "https://www.thedrinksbusiness.com/2025/10/pink-chardonnay-joins-champagnes-list-of-authorised-grape-varieties/",
+    "https://piwi-international.org/en/2022/02/grape-variety-voltis-was-released-for-the-production-of-champagne-aoc/"
+   ],
+   "fix": "stem: 'Name the four traditional minor Champagne grapes beyond the big three (any two).' exp: 'The historic seven; since 2022 the hybrid Voltis is allowed as an adaptation variety (max 5% of plantings, 10% of a blend), and since July 2025 Chardonnay Rosé is a main variety, so the rulebook now lists more than seven. Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.'",
+   "batch": 10,
+   "verdict": "confirmed",
+   "verifyReason": "I opened the current Champagne cahier des charges, homologated by the arrêté of 31 July 2025 and published in the JORF on 5 August 2025. Chapter I, V.1 lists eight principal varieties: Arbane, Chardonnay, Chardonnay rose, Meunier, Petit Meslier, Pinot blanc, Pinot gris and Pinot noir. It also lists Voltis B as a 'variété d'intérêt à fin d'adaptation', held to 5% or less of the plantings on each holding and 10% or less of a blend. Voltis first entered the text through the arrêté of 30 November 2022 (JORF, 10 December 2022). The Comité Champagne press release of 16 October 2025 says Chardonnay rose has been a principal variety since 31 July 2025, 'portant à huit le nombre de cépages champenois' (bringing the number of Champagne grapes to eight). So the explanation's 'Seven total' is out of date: it has been wrong since December 2022 once Voltis is counted, and wrong on principal varieties alone since July 2025. The stem's 'the four permitted ... beyond the big three' is also no longer literally true, because Chardonnay rose is now a fifth minor principal variety and Voltis is allowed as well. The examiner's fix keeps the question on the four traditional minor grapes and states the dates and caps correctly, so the existing accept list still grades it properly.",
+   "verifySources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052045089",
+    "https://www.sgv-champagne.fr/wp-content/uploads/2025/08/CDC_Champagne_.pdf",
+    "https://www.champagne.fr/system/files/2025-10/Communique%CC%81%20de%20presse%20-%20Chardonnay%20Rose.pdf",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046719121"
+   ],
+   "finalFix": "stem: 'Name the four traditional minor Champagne grapes beyond the big three (any two).' exp: 'The historic seven; since 2022 the hybrid Voltis is allowed as an adaptation variety (max 5% of plantings, 10% of a blend), and since July 2025 Chardonnay Rosé is a main variety, so the rulebook now lists more than seven. Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.'",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-pnip9bif",
+    "cat": "Champagne",
+    "q": "Name the four permitted Champagne grapes beyond the big three (any two).",
+    "sa": 1,
+    "accept": [
+     "arbane",
+     "petit meslier",
+     "pinot blanc",
+     "pinot gris",
+     "fromenteau",
+     "arbanne"
+    ],
+    "ans": "Arbane, Petit Meslier, Pinot Blanc, Pinot Gris (Fromenteau)",
+    "exp": "Seven total; Duval-Leroy and Laherte bottle curiosity cuvées from the rare four."
+   }
+  },
+  {
+   "id": "a-63od6qe1",
+   "kind": "wrong-explanation",
+   "claim": "further work tied that to Tribidrag, documented in Croatian records from the early sixteenth century",
+   "because": "Tribidrag is documented in the fifteenth century, not the sixteenth. The name appears in 1444 in a record by don Juraj Radičević, priest at Vodice in Dalmatia. The same grape appears earlier still, as Cratosia (Kratošija), in the Statute of Budva of 1426–1442.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zinfandel"
+   ],
+   "fix": "further work tied that to Tribidrag, documented in Dalmatian records from the fifteenth century (1444)",
+   "batch": 10,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The error is real. The explanation says Tribidrag is documented from the early sixteenth century, but the name goes back to the fifteenth. ZAP's history page (Zinfandel Advocates & Producers, drawing on the Croatian research) cites a 1488 record of a barrel of Tribidrag shipped from Split to Puglia. Its 1518, 1529 and 1546 records are later references, not the first. Wikipedia gives an even earlier record: 1444, from don Juraj Radičević of Vodice. It also cites the Budva Statute (1426–1442) under the name Cratosia. The question, the model answer and the accept list are all correct; only the explanation is wrong. The examiner's fix is right about the century but pins the date to 1444. That year comes from one secondary source, while ZAP and the Croatian research literature cite 1488 as the earliest. The safer fix names the century and drops the disputed year.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Zinfandel",
+    "https://zinfandel.org/learn/history/",
+    "https://www.exoticwinetravel.com/tribidrag-crljenak-kastelanski-zinfandel/"
+   ],
+   "finalFix": "further work tied that to Tribidrag, documented in Dalmatian records from the fifteenth century",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-63od6qe1",
+    "cat": "California",
+    "q": "Zinfandel's DNA trail ends at which Croatian variety, and what is that grape's historical name?",
+    "sa": 1,
+    "accept": [
+     "crljenak kastelanski also known as tribidrag",
+     "tribidrag or crljenak kastelanski from croatia",
+     "crljenak kastelanski the same grape as primitivo",
+     "tribidrag from dalmatia identical to primitivo",
+     "crljenak kastelanski tribidrag kratosija",
+     "a croatian grape called crljenak kastelanski whose old name is tribidrag"
+    ],
+    "ans": "Crljenak Kaštelanski, later shown to be the ancient Dalmatian variety Tribidrag (Kratošija in Montenegro) — the same grape as Italy's Primitivo",
+    "exp": "Carole Meredith's UC Davis lab matched Zinfandel to Primitivo in 1994, then in December 2001 found a handful of surviving vines called Crljenak Kaštelanski in a garden at Kaštela on the Dalmatian coast; further work tied that to Tribidrag, documented in Croatian records from the early sixteenth century. The takeaway for a candidate is that Zinfandel is an old Adriatic variety with an American career, not an American variety — which is why Primitivo tastes like a cousin rather than a copy."
+   }
+  },
+  {
+   "id": "a-d9erb66c",
+   "kind": "wrong-explanation",
+   "claim": "Château de Beaucastel cuttings imported in 1989 spent three years in USDA quarantine",
+   "because": "Tablas Creek's own history page says the partners bought the land in 1989 and the first cuttings were imported from France in January 1990. After three years of USDA indexing they were available in 1993, and planting of the estate vineyard began in 1994.",
+   "sources": [
+    "https://tablascreek.com/story/history"
+   ],
+   "fix": "Château de Beaucastel cuttings imported in January 1990 (the land was bought in 1989) spent three years in USDA quarantine; the estate vineyard followed from 1994.",
+   "batch": 10,
+   "verdict": "confirmed",
+   "verifyReason": "The keyed answer (Adelaida District) and the accept list are correct. The problem is the explanation, which says the Beaucastel cuttings were \"imported in 1989.\" Tablas Creek's own history page says they bought the land in 1989 and that \"In January 1990, the first vine cuttings were imported from France.\" The same page confirms the three-year USDA indexing and that planting at the estate began in 1994. So the import year in the explanation is wrong, and the proposed fix matches the producer's own account.",
+   "verifySources": [
+    "https://tablascreek.com/story/history",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-010.json",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-020.json"
+   ],
+   "finalFix": "Château de Beaucastel cuttings imported in January 1990 (the land was bought in 1989) spent three years in USDA quarantine; the estate vineyard followed from 1994.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-d9erb66c",
+    "cat": "California",
+    "q": "Which Paso Robles district's calcareous hills host Tablas Creek, the Perrin-Haas Rhône project?",
+    "sa": 1,
+    "accept": [
+     "adelaida",
+     "adelaida district west side"
+    ],
+    "ans": "Adelaida District (west side)",
+    "exp": "Château de Beaucastel cuttings imported in 1989 spent three years in USDA quarantine; the estate vineyard followed from 1994."
+   }
+  },
+  {
+   "id": "a-iag39d6o",
+   "kind": "ambiguous-stem",
+   "claim": "The 'Eleven' AVAs of Napa's floor",
+   "because": "No official or standard grouping counts eleven valley-floor AVAs in Napa. Napa Valley has 17 nested AVAs (Crystal Springs of Napa Valley became the 17th in November 2024), and most of them are mountain or hillside AVAs. Only a handful straddle the floor between Highway 29 and the Silverado Trail: Oak Knoll, Yountville, Oakville, Rutherford, St. Helena and Calistoga, with Stags Leap lying east of the Trail. A candidate would learn a false count from this stem. The keyed answer itself is right.",
+   "sources": [
+    "https://napavintners.com/napa_valley/crystal-springs-ava/",
+    "https://en.wikipedia.org/wiki/Napa_Valley_AVA"
+   ],
+   "fix": "The valley-floor AVAs of Napa (Oakville, Rutherford, St. Helena and their neighbours) are bisected by which two roads used in tasting shorthand?",
+   "batch": 10,
+   "verdict": "confirmed",
+   "verifyReason": "The stem, \"The 'Eleven' AVAs of Napa's floor\", puts a count in quotes as if it were a known grouping, and no such grouping exists. Napa Vintners lists 17 nested AVAs, with Crystal Springs of Napa Valley added in 2024. Most of them are mountain or upland AVAs (Atlas Peak, Chiles Valley, Diamond Mountain, Howell Mountain, Mount Veeder, Spring Mountain, Wild Horse Valley, Crystal Springs). Even a generous count of the floor AVAs gives at most nine: Carneros, Coombsville, Oak Knoll, Yountville, Stags Leap, Oakville, Rutherford, St. Helena and Calistoga. A search for \"eleven\" floor AVAs found no source using the figure. The stem therefore teaches a false number, and it also calls the Silverado Trail a highway. The model answer (Highway 29 on the west, Silverado Trail on the east) and the accept list are correct. The examiner has one small point wrong: the Silverado Trail runs through the Stags Leap District rather than west of it. That does not change the ruling. The proposed fix removes the false count and says \"roads\", which is correct.",
+   "verifySources": [
+    "https://napavintners.com/napa_valley/crystal-springs-ava/",
+    "https://napawineauthority.com/napa-sub-appellations",
+    "https://en.wikipedia.org/wiki/Silverado_Trail"
+   ],
+   "finalFix": "The valley-floor AVAs of Napa (Oakville, Rutherford, St. Helena and their neighbours) are bisected by which two roads used in tasting shorthand?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-iag39d6o",
+    "cat": "California",
+    "q": "The 'Eleven' AVAs of Napa's floor are bisected by which two highways used in tasting shorthand?",
+    "sa": 1,
+    "accept": [
+     "highway 29 and silverado trail",
+     "29 and silverado"
+    ],
+    "ans": "Highway 29 (west) and the Silverado Trail (east)",
+    "exp": "West-bench dust versus east-side structure is the somm's mental map."
+   }
+  }
+ ]
+}

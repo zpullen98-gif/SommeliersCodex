@@ -1,0 +1,42 @@
+{
+ "file": "rewrite/categories/r1_wine_law.py",
+ "findings": [
+  {
+   "id": "i-mgb8n6a5",
+   "kind": "wrong-explanation",
+   "claim": "its neighbours adopted it over the following decades, long before any European harmonisation existed",
+   "because": "This is false for Portugal. Portugal's DOC/IPR structure came in with its entry to the EEC in 1986; it replaced the older Região Demarcada system. So the Portuguese framework was built together with European harmonisation, not decades before it. Portugal also had a delimited, regulated wine region first: Pombal demarcated the Douro in 1756, long before the French AOC law of 1935. The keyed answer (the other three follow the French model) is still the best of the four options, so only the explanation needs to change.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Denominação_de_Origem_Controlada",
+    "https://www.winewithseth.com/winewiki/31-docs-14-vinho-regionais-igps-portugals-complex-wine-legal-framework/",
+    "IVDP / Oxford Companion to Wine, 'Douro' (1756 Pombaline demarcation)"
+   ],
+   "fix": "France wrote the modern pattern first in 1935: a delimited place bound to a production rulebook. Spain (1932 Estatuto del Vino, reworked in 1970) and Italy (DOC, 1963) built their systems on that model. Portugal, whose Douro had been demarcated as early as 1756, rebuilt its Região Demarcada system into DOCs on the same pattern when it joined the EEC in 1986. The European layer then tidied the categories without changing the shape underneath, which is why a student who learns one of the four can read the others quickly.",
+   "batch": 6,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The explanation says the neighbours adopted the French model \"long before any European harmonisation existed\", and that is false for Portugal. Lei 8/85 (4 June 1985), the framework law for demarcated regions, was passed explicitly to adapt Portuguese law to Community regulation. Portugal's DOC/IPR system followed its accession to the EEC in 1986 and replaced the early-20th-century Região Demarcada system. The claim is also shaky for Italy: its DOC law (DPR 930/1963) came one year after the EEC's first wine market regulation (Reg. 24/1962). The keyed answer (option 1) is still the only defensible choice, so only the explanation needs to change.\n\nThe examiner's fix, however, has a chronology fault of its own. It says France wrote the pattern \"first in 1935\" and that Spain built on that model in 1932. Spain's 1932 law came before 1935, and Rioja's DO was recognised in 1925, with its Consejo Regulador following in 1926. The French pattern should be dated from its 1905 and 1919 laws, which the 1935 AOC law completed. The fix should also avoid restating the \"before harmonisation\" idea for Italy and Portugal. The better fix keeps the examiner's Portugal correction (the 1756 Douro demarcation, and DOCs arriving with EEC entry) and repairs the dating.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Denominação_de_Origem_Controlada (DOC established following EU entry in 1986; replaced the earlier Região Demarcada system)",
+    "https://pt.wikipedia.org/wiki/Denomina%C3%A7%C3%B5es_de_origem_portuguesas",
+    "https://www.wipo.int/wipolex/en/legislation/details/8050 (Portuguese framework law, Lei 8/85, adapting to Community regulation)",
+    "Oxford Companion to Wine, 'Douro' (1756 Pombaline demarcation), 'Rioja' (DO 1925, Consejo Regulador 1926), 'appellation contrôlée' (1905/1919 laws, 1935 decree-law)"
+   ],
+   "finalFix": "France set the modern pattern: a delimited place bound to a production rulebook. It was sketched in the laws of 1905 and 1919 and made complete by the AOC law of 1935. Spain (the Estatuto del Vino of 1932, recast in 1970) and Italy (DOC, 1963) built their national systems on the same idea. Portugal, whose Douro had been demarcated as early as 1756, recast its demarcated regions as DOCs under its 1985 framework law as it joined the EEC in 1986. The European layer, itself drawn largely from the French model, then tidied the categories without changing the shape underneath, which is why a student who learns one of the four can read the others quickly.",
+   "source": "pilot",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-mgb8n6a5",
+    "cat": "Wine Law",
+    "q": "Set the French, Italian, Spanish and Portuguese systems side by side and the vocabulary differs completely while the structure matches almost step for step. What accounts for that?",
+    "opts": [
+     "All four were drafted together by a single commission in Brussels",
+     "The other three were built on the French model and share one framework",
+     "The resemblance is coincidental, since each was built in isolation",
+     "All four were modelled on a ripeness ladder"
+    ],
+    "a": 1,
+    "exp": "France wrote the modern pattern first, a delimited place bound to a production rulebook, and its neighbours adopted it over the following decades, long before any European harmonisation existed. The later European layer then tidied the categories without disturbing the shape underneath, which is why a student who learns one of the four can read the others quickly."
+   }
+  }
+ ]
+}

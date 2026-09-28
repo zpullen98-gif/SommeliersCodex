@@ -1,0 +1,298 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-qoaqguzr",
+   "kind": "wrong-explanation",
+   "claim": "Each of the three requires a minimum of 85% Blaufränkisch.",
+   "because": "Only Leithaberg DAC red is 'min 85% Blaufränkisch' (up to 15% Zweigelt, St. Laurent or Pinot Noir). The Mittelburgenland DAC regulation says the wines 'müssen aus der Qualitätswein-Rebsorte Blaufränkisch hergestellt sein', which means 100% Blaufränkisch. The Eisenberg DAC regulation says 'Jeglicher Verschnitt mit einer anderen Rebsorte ist unzulässig', so no blending is allowed.",
+   "sources": [
+    "https://de.wikipedia.org/wiki/Districtus_Austriae_Controllatus",
+    "https://en.wikipedia.org/wiki/Districtus_Austriae_Controllatus"
+   ],
+   "fix": "Leithaberg requires a minimum of 85% Blaufränkisch; Mittelburgenland and Eisenberg require 100% Blaufränkisch, with no blending permitted.",
+   "batch": 155,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The explanation is wrong, but only for Eisenberg, so the examiner's fix brings in a new error. Eisenberg: the DAC-Verordnung (consolidated text of 18.09.2024 from bundeskellereiinspektion.at, which reproduces RIS) says in § 7(1) that the Gebietswein \"muss zur Gänze aus der Rebsorte Blaufränkisch gewonnen werden; jeglicher Verschnitt mit anderen Rebsorten ist unzulässig\". So the claim of 85% minimum is false there. Leithaberg: the red is at least 85% Blaufränkisch, with up to 15% Zweigelt, St. Laurent or Pinot Noir (LKO/ÖWM material, producer pages). That part of the explanation is right. Mittelburgenland: the DAC-Verordnung in RIS, § 1, says the wine must be made from Blaufränkisch, and \"ein bezeichnungsunschädlicher Verschnitt ist zu tolerieren\". Under Austrian wine law that tolerance is the standard 15% for a varietal designation. So Mittelburgenland is in effect at least 85% Blaufränkisch, not the 100% the examiner claims. The German Wikipedia summary he relied on leaves out that tolerance. A related point outside this finding: the model answer calls Leithaberg \"the one DAC of the three with a white wine\". But the same Eisenberg regulation, § 7(2)-(3), now allows Welschriesling at Ortswein and Riedenwein level. That parenthetical is outdated and should also be corrected (for example: \"Leithaberg and Eisenberg also have whites: Leithaberg from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger, Eisenberg a Welschriesling at village and single-vineyard level\").",
+   "verifySources": [
+    "https://www.bundeskellereiinspektion.at/downloads/dac_vo/dac_vo_eisenberg.pdf",
+    "https://ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&Anlage=&Artikel=&FassungVom=2026-02-04&Gesetzesnummer=20012292&Paragraf=7&Uebergangsrecht=",
+    "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20006694",
+    "https://www.lko.at/media.php?id=2500%2C%2C%2C%2CZmlsZW5hbWU9ZG93bmxvYWQlM0QlMkYyMDA5LjA5LjAyJTJGMTI1MTg4NTAyNC5wZGYmcm49UHJlc3NlaW5mb3JtYXRpb24rLStMZWl0aGFiZXJnK0RBQysyU0VQVDIwMDkrXzNfLnBkZg",
+    "https://de.wikipedia.org/wiki/Districtus_Austriae_Controllatus"
+   ],
+   "finalFix": "Leithaberg red must be at least 85% Blaufränkisch, with up to 15% Zweigelt, St. Laurent or Pinot Noir; Mittelburgenland must be Blaufränkisch, with only the standard 15% labelling tolerance for other varieties; Eisenberg must be 100% Blaufränkisch, and any blend with another variety is forbidden.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-qoaqguzr",
+    "cat": "Austria",
+    "q": "Compare the three DACs whose reds are defined by Blaufränkisch — Leithaberg, Mittelburgenland and Eisenberg — on soil, climate and resulting style.",
+    "sa": 1,
+    "accept": [
+     "leithaberg limestone and schist taut, mittelburgenland clay loam ripe and broad, eisenberg iron slate lean and peppery",
+     "limestone schist versus heavy clay versus iron-rich slate, cool to warm to cool again",
+     "leithaberg mineral and saline, mittelburgenland warm and full, eisenberg ferrous and peppery",
+     "leithaberg on the leithagebirge, mittelburgenland blaufrankischland clay, eisenberg slate in the south"
+    ],
+    "ans": "Leithaberg sits on the limestone and mica-schist of the Leithagebirge above the Neusiedlersee, its reds at least 85% Blaufränkisch: taut, saline, cool-fruited and the most mineral of the three (it is also the one DAC of the three with a white wine, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger). Mittelburgenland — the Blaufränkischland — is deep, heavy clay-loam in the warmest Pannonian pocket, sheltered on three sides: dark, ripe, broad-shouldered wines, historically the most oaked. Eisenberg, in the cooler, wetter far south, is iron-rich loam over slate and green schist: the leanest and most peppery, with a ferrous, herbal edge and lower alcohol. One grape, three readings.",
+    "exp": "Blaufränkisch is a natural cross of Blaue Zimmettraube and Weisser Heunisch (Gouais Blanc) — no relation to Pinot or Gamay — and it is Lemberger in Germany, Kékfrankos in Hungary. It buds early and ripens very late, so heat and the soil's water-holding capacity dominate its style more than winemaking does; that is exactly why three DACs for one grape is not redundancy but a soil map. Each of the three requires a minimum of 85% Blaufränkisch. A candidate who adds Rosalia DAC, created for the 2017 vintage, is right to: it also bottles varietal Blaufränkisch, but shares the stage with Zweigelt rather than being built on Blaufränkisch alone."
+   }
+  },
+  {
+   "id": "m-qoaqguzr",
+   "kind": "outdated",
+   "claim": "it is also the one DAC of the three with a white wine, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger",
+   "because": "The current Eisenberg DAC regulation lets the wines be made from Blaufränkisch 'oder Welschriesling (nur bei Angabe einer Ried)'. That means Eisenberg now also has a white DAC wine, a Welschriesling that must carry a Ried name, so Leithaberg is no longer the only one of the three with a white. The Welschriesling category came in with a later amendment to the Eisenberg rules; the original 2009 DAC was Blaufränkisch only.",
+   "sources": [
+    "https://de.wikipedia.org/wiki/Districtus_Austriae_Controllatus"
+   ],
+   "fix": "it is also the one DAC of the three with a full white category (Grüner Veltliner, Weissburgunder, Chardonnay, Neuburger); Eisenberg now also allows a single-Ried Welschriesling",
+   "batch": 155,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding is right: the model answer is out of date. The consolidated Eisenberg DAC regulation (BGBl. II Nr. 191/2023, amended by BGBl. II Nr. 250/2024, version of 18.09.2024) keeps the Gebietswein 100% Blaufränkisch under § 7(1). But § 7(2) and § 7(3) let an Ortswein or a Riedenwein be made entirely from Blaufränkisch \"oder Welschriesling\". The ministry's page says the amendment took effect on 18 September 2024 and applies \"nur in der Orts- und Riedenwein-Kategorie\". So Leithaberg is no longer the only one of the three DACs with a white wine. Mittelburgenland is still Blaufränkisch only. The examiner's fix is off in one detail: it says Eisenberg allows only a \"single-Ried\" Welschriesling, but village wines (Ortswein) qualify too, with any of the six permitted village names. The Wikipedia summary the examiner cited misses this; the legal text settles it. Leithaberg's white varieties (Grüner Veltliner, Weissburgunder, Chardonnay, Neuburger) are correct as written. A side issue outside this finding: the explanation says \"Each of the three requires a minimum of 85% Blaufränkisch\". Eisenberg (§ 7) actually requires 100% at every level, and Mittelburgenland is also varietal Blaufränkisch, so the explanation should say that only Leithaberg allows up to 15% of other grapes.",
+   "verifySources": [
+    "https://www.bundeskellereiinspektion.at/downloads/dac_vo/dac_vo_eisenberg.pdf",
+    "https://www.bmluk.gv.at/themen/landwirtschaft/landwirtschaft-in-oesterreich/pflanzliche-produktion/wein/eisenberg-dac-um-welschriesling-erweitert.html",
+    "https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20012292&FassungVom=2026-04-03&Artikel=&Paragraf=1&Anlage=&Uebergangsrecht=",
+    "https://magazine.wein.plus/news/welschriesling-from-eisenberg-receives-dac-status-single-vineyard-wines-available-from-2024",
+    "https://www.oesterreichwein.at/unser-wein/strategie-des-herkunftmarketings/dac-districtus-austriae-controllatus/dac-gebiete/mittelburgenland-dac"
+   ],
+   "finalFix": "(it also has the fullest white category of the three, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger; since the September 2024 amendment Eisenberg also allows a 100% Welschriesling, but only as an Ortswein or Riedenwein, its Gebietswein staying 100% Blaufränkisch)",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-qoaqguzr",
+    "cat": "Austria",
+    "q": "Compare the three DACs whose reds are defined by Blaufränkisch — Leithaberg, Mittelburgenland and Eisenberg — on soil, climate and resulting style.",
+    "sa": 1,
+    "accept": [
+     "leithaberg limestone and schist taut, mittelburgenland clay loam ripe and broad, eisenberg iron slate lean and peppery",
+     "limestone schist versus heavy clay versus iron-rich slate, cool to warm to cool again",
+     "leithaberg mineral and saline, mittelburgenland warm and full, eisenberg ferrous and peppery",
+     "leithaberg on the leithagebirge, mittelburgenland blaufrankischland clay, eisenberg slate in the south"
+    ],
+    "ans": "Leithaberg sits on the limestone and mica-schist of the Leithagebirge above the Neusiedlersee, its reds at least 85% Blaufränkisch: taut, saline, cool-fruited and the most mineral of the three (it is also the one DAC of the three with a white wine, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger). Mittelburgenland — the Blaufränkischland — is deep, heavy clay-loam in the warmest Pannonian pocket, sheltered on three sides: dark, ripe, broad-shouldered wines, historically the most oaked. Eisenberg, in the cooler, wetter far south, is iron-rich loam over slate and green schist: the leanest and most peppery, with a ferrous, herbal edge and lower alcohol. One grape, three readings.",
+    "exp": "Blaufränkisch is a natural cross of Blaue Zimmettraube and Weisser Heunisch (Gouais Blanc) — no relation to Pinot or Gamay — and it is Lemberger in Germany, Kékfrankos in Hungary. It buds early and ripens very late, so heat and the soil's water-holding capacity dominate its style more than winemaking does; that is exactly why three DACs for one grape is not redundancy but a soil map. Each of the three requires a minimum of 85% Blaufränkisch. A candidate who adds Rosalia DAC, created for the 2017 vintage, is right to: it also bottles varietal Blaufränkisch, but shares the stage with Zweigelt rather than being built on Blaufränkisch alone."
+   }
+  },
+  {
+   "id": "m-tndpwqdb",
+   "kind": "outdated",
+   "claim": "Current holders: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) and Zundert in the Netherlands; Engelszell in Austria; Tre Fontane in Italy; Mount St Bernard's Tynt Meadow in England; and Cardena in Spain — around ten or eleven (also the accept entry naming 'zundert engelszell ... and cardena')",
+   "because": "The International Trappist Association's own ATP-label page now lists eight beer holders only: Chimay, La Trappe, Orval, Rochefort, Tre Fontane, Tynt Meadow, Westmalle, Westvleteren. Zundert's abbey announced on 13 May 2025 that it would close for lack of brothers and the beer would lose its Trappist label. Engelszell announced the dissolution of the monastery in May 2023. Cardeña's beer is brewed off-site and has never held the ATP label.",
+   "sources": [
+    "https://www.trappist.be/en/about-ita/atp-label/",
+    "https://en.wikipedia.org/wiki/Zundert_(beer)",
+    "https://en.wikipedia.org/wiki/Trappist_beer"
+   ],
+   "fix": "Current holders (per the ITA): Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) in the Netherlands; Tre Fontane in Italy; and Mount St Bernard's Tynt Meadow in England. That makes eight, and the number moves: Achel lost the label when its last monks left, Spencer stopped brewing in 2022, Engelszell's community was dissolved from 2023, and Zundert closed in 2025. Cardeña's beer is brewed off-site and never carried the hexagon. In the accept list, replace the third entry with 'authentic trappist product certifies governance not style five belgian breweries plus la trappe tre fontane and tynt meadow'.",
+   "batch": 156,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The ITA's own ATP-label page lists eight beer holders only: Chimay, La Trappe, Orval, Rochefort, Tre Fontane, Tynt Meadow, Westmalle and Westvleteren. That page lists Cardeña only for a Trappist liqueur, never for beer. Zundert is gone: Maria Toevlucht announced its closure in May 2025, and the General Chapter ended monastic life there in September 2025. The abbey's own spokesman said the beer can no longer be called Trappist. Engelszell is gone too: its dissolution was announced in May 2023, and the ATP logo on its bottles was replaced by the monastery's coat of arms. So the answer's list ('Zundert', 'Engelszell', 'Cardena', 'around ten or eleven') is out of date and partly wrong. The third accept entry names three breweries that do not hold the label. The examiner's corrected facts are right. The fix is rewritten here because the examiner mixed an instruction into it, and it is now given as two exact replacement strings.",
+   "verifySources": [
+    "https://www.trappist.be/en/about-ita/atp-label/",
+    "https://nltimes.nl/2025/05/14/trappist-brewery-zundert-set-close-citing-lack-occupancy",
+    "https://www.dutchnews.nl/2025/05/too-few-monks-spoil-the-brew-the-dutch-lose-a-trappist-beer/",
+    "https://www.inside.beer/news/detail/netherlands-trappist-beer-zundert-loses-authentic-status",
+    "https://www.thedrinksbusiness.com/2023/05/another-trappist-brewery-set-to-close/",
+    "https://en.wikipedia.org/wiki/Engelszell_Abbey",
+    "https://en.wikipedia.org/wiki/Trappist_beer"
+   ],
+   "finalFix": "In \"ans\", replace the text from \"Current holders:\" through \"ceased brewing in 2022.\" with: \"Current holders, per the International Trappist Association: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) in the Netherlands; Tre Fontane in Italy; and Mount St Bernard's Tynt Meadow in England. That makes eight, and the number moves. Achel lost the label in 2021 when its last monks left. Spencer in the United States stopped brewing in 2022. Engelszell in Austria dropped the hexagon after its community was dissolved from 2023. Zundert in the Netherlands lost it when its abbey closed in 2025. Cardeña in Spain holds the label for a liqueur, never for its beer.\" Replace accept[2] with: \"authentic trappist product certifies governance not style five belgian breweries plus la trappe tre fontane and tynt meadow\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-tndpwqdb",
+    "cat": "Beer & Cider",
+    "q": "What must a brewery satisfy to carry the Authentic Trappist Product hexagon, and which breweries hold it today?",
+    "sa": 1,
+    "accept": [
+     "brewed inside the monastery walls under monastic supervision with income supporting the community and charity",
+     "the three international trappist association criteria on location supervision and non commercial purpose",
+     "authentic trappist product certifies governance not style five belgian breweries plus la trappe zundert engelszell tre fontane mount st bernard and cardena"
+    ],
+    "ans": "Three conditions set by the International Trappist Association, founded in 1997: the beer must be brewed within the walls of a Trappist monastery; it must be brewed by or under the direct supervision of the monastic community; and the brewery must be subordinate to the monastery, run without a profit motive, with income covering the community's needs and the remainder going to charity and social work. It is a governance mark, not a style and not a quality guarantee — it says nothing about how the beer tastes. Current holders: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) and Zundert in the Netherlands; Engelszell in Austria; Tre Fontane in Italy; Mount St Bernard's Tynt Meadow in England; and Cardena in Spain — around ten or eleven, and the number moves. Achel lost the label in 2021 when its last monks left, and Spencer in the United States ceased brewing in 2022. 'Abbey beer' is an entirely separate commercial category: beers using a monastery's name under licence, or carrying the Belgian Brewers' certified Abbey Beer logo, brewed by ordinary commercial breweries anywhere.",
+    "exp": "The hexagon is regularly mis-sold to guests as a quality tier. Point out that Orval and Westmalle Tripel share nothing stylistically, that the ATP also covers cheese, bread and cosmetics, and that plenty of secular abbey beers outdrink Trappists. Knowing that the roster changes — and why Achel and Spencer left it — is what distinguishes current knowledge from a memorised list."
+   }
+  },
+  {
+   "id": "m-bs31ukhw",
+   "kind": "wrong-explanation",
+   "claim": "Invented in Catalonia (girasol) for Cava — a cross-region oral favorite.",
+   "because": "The gyropalette was invented by two Frenchmen, Claude Cazals and Jacques Ducoin, who filed the patent in 1968. Catalonia did not invent it: it was first used at scale in Spain in the mid-1970s, and Codorníu was its first big user. The girasol is a separate device, the manual cage that the Cava houses used before the machine.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gyropalette"
+   ],
+   "fix": "Patented in France in 1968 by Claude Cazals and Jacques Ducoin, but first adopted at scale by Cava (Codorníu, mid-1970s), with the manual girasol cage before it. A cross-region oral favorite.",
+   "batch": 160,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The explanation is wrong. Three sources agree that the gyropalette was patented in 1968 by two French winegrowers, Claude Cazals and Jacques Ducoin, with trials at Pierry. The Union des Maisons de Champagne adds that the first prototype came in 1973 and the automated version was sold from 1975. Catalonia did not invent it. Codorníu was an early big user from the mid-1970s, so the Cava link is only about adoption. The examiner's fix is also off. It calls the girasol a separate manual cage used before the machine. wein.plus and Wikipedia both say \"girasol\" (\"sunflower\") is simply the Spanish name for the gyropalette itself, so the replacement should not describe two different devices. The model answer (about 1 week in 504-bottle cages against about 6 weeks by hand) was not challenged, and I leave it alone.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Gyropalette",
+    "https://maisons-champagne.com/en/appellation/stages-in-winemaking/article/the-history-of-riddling-remuage",
+    "https://glossary.wein.plus/gyropalette"
+   ],
+   "finalFix": "Patented in France in 1968 by Claude Cazals and Jacques Ducoin and developed in Champagne, it was taken up at scale from the mid-1970s, with the Cava house Codorníu among the first big users; in Spain it is called the girasol ('sunflower'). A cross-region oral favorite.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-bs31ukhw",
+    "cat": "Champagne",
+    "q": "What is 'gyropalette' throughput versus hand riddling?",
+    "sa": 1,
+    "accept": [
+     "one week vs six weeks",
+     "days versus weeks 500 bottle cages"
+    ],
+    "ans": "Machine riddling: ~1 week in 504-bottle cages vs ~6 weeks by hand on pupitres",
+    "exp": "Invented in Catalonia (girasol) for Cava — a cross-region oral favorite."
+   }
+  },
+  {
+   "id": "m-kz5j60nv",
+   "kind": "outdated",
+   "claim": "The model answer and an accept entry say the INAO accepted the Alsace premier cru principle in 2022 and that assessment has continued since.",
+   "because": "No INAO decision in 2022 can be found. INAO doctrine (set 2002, reaffirmed 2013) does not allow a 'premier cru' mention on a regional appellation such as AOC Alsace, and that is the obstacle Decanter's 2016 piece describes. The milestone that actually happened came at the CNAOV meeting of 11-12 June 2025. It approved a guideline letting 'cru' be used for additional geographical names at lieu-dit scale, plus an admissibility grid and a two-stage appraisal method. The AVA then filed seven first applications. So the current route is a lieu-dit 'cru' mention, not a 'premier cru' tier, and the date is 2025, not 2022.",
+   "sources": [
+    "https://www.inao.gouv.fr/en/cnaov-12-06-2025",
+    "https://www.decanterchina.com/en/knowledge/trivia/alsace-s-1ers-crus-classification"
+   ],
+   "fix": "Replace the last sentence of ans with: \"In June 2025 the INAO national committee approved a guideline allowing a 'cru' mention for lieux-dits within AOC Alsace, rather than a 'premier cru' label, which INAO doctrine reserves for non-regional appellations, and the AVA filed its first seven applications; I would date any status claim I make.\" Replace the accept entry \"inao accepted the principle in 2022 and the lieux-dit assessment continues\" with \"inao approved a cru mention for lieux-dits in 2025 and the site assessments continue\".",
+   "batch": 153,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, but its fix needs changing. INAO's own summary of the CNAOV meeting of 11-12 June 2025 is titled \"Reconnaissance des 'crus' en Alsace : lancement de la phase opérationnelle\". At that meeting the committee approved a guideline allowing a \"cru\" mention for additional geographical names at lieu-dit scale, \"in compliance with national rules\". It also validated the admissibility grid and a two-stage appraisal method, and the AVA's first seven files were underway. The page does not mention \"premier cru\" for Alsace. I could find no INAO act from 2022 accepting a premier cru principle. The Decanter piece is from 2016 and still describes the project as waiting for INAO to validate it. My web search tool had hit its limit and the other search engines returned little, so I cannot fully rule out a 2022 step. Either way, the model answer's present-tense status (\"accepted the principle in 2022 and the assessment has continued since\") is now out of date: the 2025 decision is the real milestone, and the tool granted is \"cru\", not \"premier cru\". The examiner's fix goes further than the evidence on one point. A Bing News snippet of L'Alsace (13 Sep 2025, the article itself could not be fetched) says the long-hoped-for \"premier cru\" appellation \"passera d'abord par l'instauration préliminaire de 'crus'\". So \"cru\" is a first step toward premier cru, not a replacement for it. The examiner's reason (a doctrine reserving \"premier cru\" for non-regional appellations) is not confirmed by any source I opened. The better fix drops that reason, keeps the 2025 date, the lieu-dit \"cru\" mention and the seven files, and presents premier cru as the stated later goal.",
+   "verifySources": [
+    "https://www.inao.gouv.fr/en/cnaov-12-06-2025",
+    "https://www.inao.gouv.fr/cnaov-12-06-2025",
+    "https://www.decanterchina.com/en/knowledge/trivia/alsace-s-1ers-crus-classification",
+    "https://fr.wikipedia.org/wiki/Alsace_(AOC)",
+    "https://www.lalsace.fr/economie/2025/09/13/c-etait-le-cheval-de-bataille-d-une-tres-large-partie-de-la-profession-desireuse-d-acceder-a-la (Bing News snippet only; the article could not be fetched)"
+   ],
+   "finalFix": "In ans, replace \"The INAO accepted the principle in 2022 and the site-by-site assessment has continued since; I would date any status claim I make.\" with \"In June 2025 the INAO wine committee (CNAOV) approved, as a first step, a 'cru' mention for named lieux-dits within AOC Alsace, together with an admissibility grid and a two-stage site appraisal, and the AVA filed its first seven applications; a true premier cru tier remains the later goal, and I would date any status claim I make.\" In accept, replace \"inao accepted the principle in 2022 and the lieux-dit assessment continues\" with \"in 2025 the inao approved a cru mention for lieux-dits as a first step toward premier cru\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-kz5j60nv",
+    "cat": "Alsace",
+    "q": "Alsace has spent years trying to insert a Premier Cru tier between AOC Alsace and Grand Cru. Make the case for it, then say what stands in the way.",
+    "sa": 1,
+    "accept": [
+     "premier cru would give legal standing to the lieux-dits already being bottled",
+     "the obstacle is agreeing which sites qualify because boundaries are land value",
+     "a third tier risks making an already crowded alsace label less legible",
+     "inao accepted the principle in 2022 and the lieux-dit assessment continues"
+    ],
+    "ans": "The case is that the real quality signal in Alsace already exists and has no legal standing. Hundreds of named lieux-dits are bottled every year by serious growers with nothing behind the name, while the tier above them is over-broad: fifty-one crus, some of them large and internally uneven, a base yield of fifty-five hectolitres, and a boycott by two of the region's most famous houses. A premier cru rung would give the good non-grand-cru sites recognition, restore a hierarchy a Burgundy-literate customer can read, and shift the market's attention from variety to place, which is the region's stated ambition. Against it: deciding which lieux-dits qualify and where the lines fall is a land-value fight in which every grower is an interested party, and Alsace has already shown it settles such fights by including people. A third tier also risks making a label that already carries variety, village, lieu-dit, sweetness indication and possibly grand cru less legible rather than more. And the deepest objection is that the grand cru tier's problem was never a missing rung — it was enforcement and credibility, neither of which a new category fixes. The INAO accepted the principle in 2022 and the site-by-site assessment has continued since; I would date any status claim I make.",
+    "exp": "This is a judgement question, not a recall one — the examiner wants to hear you argue both sides and then place yourself. The historical warning is built in: the grand cru tier grew from one site in 1975 to fifty-one, which is what happens when a classification is negotiated among the people being classified. Say plainly that regulatory status moves, and date your information rather than asserting a fixed present."
+   }
+  },
+  {
+   "id": "m-wpornxe8",
+   "kind": "ambiguous-stem",
+   "claim": "The question asks for Penfolds' 'luxury trio' beneath Grange, but no such fixed trio exists.",
+   "because": "Penfolds' own luxury and flagship releases below Grange are Bin 707, RWT, St Henri and Magill Estate Shiraz, with Yattarna and Reserve Bin A as the whites. All of them come out in the same annual release. A careful expert could name Magill Estate in place of St Henri or RWT, and the accept list would mark that answer wrong.",
+   "sources": [
+    "https://us.penfolds.com/pages/our-wines",
+    "https://chrisshanahan.com/articles/2011/penfolds-releases-grange-st-henri-magill-rwt-and-bin-707/"
+   ],
+   "fix": "Stem: \"Name Penfolds' luxury reds released alongside Grange (name at least three).\" Add these accept entries: \"~707 rwt magill\", \"~707 st henri magill\", \"~rwt st henri magill\". Model answer: \"Bin 707 Cabernet, RWT (Barossa Shiraz, French oak), St Henri (no new oak) and Magill Estate Shiraz, with Yattarna in white\".",
+   "batch": 153,
+   "verdict": "confirmed",
+   "verifyReason": "The stem asks for the \"three members of Penfolds' 'luxury trio' beneath Grange\". I could not find that trio anywhere as a fixed or recognised grouping. Penfolds' annual luxury release, as reported alongside Grange, is six wines: Yattarna, Reserve Bin A Chardonnay, St Henri, Magill Estate Shiraz, RWT and Bin 707. Magill Estate belongs in the same group as St Henri and RWT, so an expert could fairly give it as one of the three. Penfolds' own current range page makes the \"trio\" framing weaker still: it lists Bin 707 as a flagship next to Grange and Yattarna, and puts St Henri and RWT in \"The Penfolds Collection\". Both the grouping and \"beneath Grange\" are therefore unfixed.\n\nUnder matchSA, an answer such as \"Bin 707, RWT, Magill Estate\" matches none of the current accept entries and would be marked wrong. The examiner's fix handles this. It reworded the stem to \"luxury reds released alongside Grange (name at least three)\", added the missing combinations that include Magill as strict (~) accepts, and put Magill in the model answer. The model answer still grades because matchSA always accepts an exact match of the model answer. I checked the rest of the fix against the sources and found nothing wrong. My web search budget ran out, so the evidence is the two pages I opened and read directly.",
+   "verifySources": [
+    "https://chrisshanahan.com/articles/2011/penfolds-releases-grange-st-henri-magill-rwt-and-bin-707/",
+    "https://us.penfolds.com/pages/our-wines",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-153.json"
+   ],
+   "finalFix": "Stem: \"Name Penfolds' luxury reds released alongside Grange (name at least three).\" Keep the existing accepts and add: \"~707 rwt magill\", \"~707 st henri magill\", \"~rwt st henri magill\". Model answer: \"Bin 707 Cabernet, RWT (Barossa Shiraz, French oak), St Henri (no new oak) and Magill Estate Shiraz, with Yattarna in white\".",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-wpornxe8",
+    "cat": "Australia",
+    "q": "Name the three members of Penfolds' 'luxury trio' beneath Grange historically.",
+    "sa": 1,
+    "accept": [
+     "bin 707 rwt st henri",
+     "707 rwt st henri yattarna",
+     "~707 rwt and st henri",
+     "~707 cabernet rwt st henri"
+    ],
+    "ans": "Bin 707 Cabernet, RWT (Barossa Shiraz, French oak), St Henri (no new oak) — with Yattarna in white",
+    "exp": "St Henri: the counter-Grange — large old vats, claret build."
+   }
+  },
+  {
+   "id": "m-igulsgq9",
+   "kind": "outdated",
+   "claim": "The model answer names De Bortoli as a current member of Australia's First Families of Wine.",
+   "because": "De Bortoli and McWilliam's were founding members in 2009 but are no longer in the group. Best's Great Western and Clonakilla joined in June 2024 to bring it back to twelve. The AFFW's own site lists the current twelve as Best's, Brown Brothers, Campbells, Clonakilla, d'Arenberg, Henschke, Howard Park, Jim Barry, Tahbilk, Tyrrell's, Yalumba and the Taylor family. De Bortoli is not among them. Yalumba, Henschke, Taylors and Tyrrell's, also named in the answer, are still members.",
+   "sources": [
+    "https://www.australiasfirstfamiliesofwine.com.au/",
+    "https://theshout.com.au/two-new-additions-to-australias-first-families-of-wine/",
+    "https://en.wikipedia.org/wiki/Australia's_First_Families_of_Wine"
+   ],
+   "fix": "ans: \"A dozen multigenerational family estates marketing collectively (Yalumba, Henschke, Taylors, Tyrrell's, Tahbilk, Brown Brothers…); founding members De Bortoli and McWilliam's have since left, and Best's Great Western and Clonakilla joined in 2024\"",
+   "batch": 154,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The model answer for m-igulsgq9 names De Bortoli as a current member of Australia's First Families of Wine, and it is not one.\n\n- **AFFW's own site** calls the group \"twelve\" family wineries and lists them: Best's Great Western, Brown Brothers, Campbells, Clonakilla, d'Arenberg, Howard Park, Jim Barry, Tahbilk, Henschke, the Taylor family, Tyrrell's and Yalumba. De Bortoli is not on it.\n- **Wikipedia** lists McWilliam's and De Bortoli as inaugural members who are no longer in the group. It gives no dates for when they left.\n- **The Shout** confirms that Best's Great Western and Clonakilla joined in June 2024, which brought the group back to twelve.\n\nThe other four members the answer names are still in: Yalumba, Henschke, Taylors and Tyrrell's. The accept list does not include De Bortoli, so the grader is unaffected. The fault is in the model answer the candidate studies, which teaches a false current member.\n\nThe examiner's fix is accurate. It correctly gives no date for the departures, because no source I opened states one.",
+   "verifySources": [
+    "https://www.australiasfirstfamiliesofwine.com.au/",
+    "https://theshout.com.au/two-new-additions-to-australias-first-families-of-wine/",
+    "https://en.wikipedia.org/wiki/Australia's_First_Families_of_Wine"
+   ],
+   "finalFix": "ans: \"A dozen multigenerational family estates marketing collectively (Yalumba, Henschke, Taylors, Tyrrell's, Tahbilk, Brown Brothers…); founding members De Bortoli and McWilliam's have since left, and Best's Great Western and Clonakilla joined in 2024\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-igulsgq9",
+    "cat": "Australia",
+    "q": "Explain 'Australian First Families of Wine' and one member.",
+    "sa": 1,
+    "accept": [
+     "twelve multigenerational family wineries taylors henschke yalumba",
+     "first families marketing alliance"
+    ],
+    "ans": "A dozen multigenerational family estates marketing collectively (Yalumba, Henschke, Taylors, Tyrrell's, De Bortoli…)",
+    "exp": "Yalumba, founded 1849, is Australia's oldest family-owned winery."
+   }
+  },
+  {
+   "id": "m-fzyx1y25",
+   "kind": "accept-list",
+   "claim": "The accept entry \"area halved quality rose\" grades a false claim as correct, and the explanation's figure for today's vineyard area is slightly too high.",
+   "because": "Austria's vineyard area peaked at 59,545 ha in 1980 and stood at 44,728 ha in 2022. That is a fall of about 25%, not a halving. The explanation says there are 45,000 to 48,000 ha now, but the 2022 survey figure is below that whole range.",
+   "sources": [
+    "https://wineguide.wein.plus/wine-regions/austria",
+    "https://www.austrianwine.com/fileadmin/user_upload/PDF/Doku/Austrian_Wine_Statistics_Report.pdf"
+   ],
+   "fix": "accept: replace \"area halved quality rose\" with \"area shrank by a quarter quality rose\"; exp: \"About 44,700 ha (2022), down from a peak of 59,545 ha in 1980.\"",
+   "batch": 154,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. Wein.plus gives Austria's largest modern vineyard area as 59,545 ha in 1980 and 44,728 ha in 2022. Wikipedia gives 44,210 ha in 2024. That is a fall of about a quarter since the 1980 peak, not a halving. The accept entry \"area halved quality rose\" therefore grades a false figure as correct. matchSA makes this worse (core.js line 93): an input covering 60% of an accept phrase's words also passes, so \"halved quality rose\" alone scores. The explanation's \"roughly 45,000 to 48,000 ha now\" sits above every recent figure (44,728 in 2022, 44,210 in 2024), and 48,000 is plainly too high. The examiner's fix is not quite right, for two reasons. First, \"area shrank by a quarter quality rose\" is too specific for a student to type, and it builds a precise fraction into the grader. \"area shrank quality rose\" is true, can be typed, and keeps the model answer's point. Second, the exp should give the latest figure rather than the 2022 one. Austrian Wine's own statistics pages returned 403, so I could not open them. The two sources I did open agree on both the 1980 peak and the roughly 44,000 ha figure today.",
+   "verifySources": [
+    "https://wineguide.wein.plus/wine-regions/austria",
+    "https://en.wikipedia.org/wiki/Austrian_wine",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 49-98)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-154.json"
+   ],
+   "finalFix": "accept: [\"post-scandal contraction focus on quality small holdings\", \"area shrank quality rose\"]; exp: \"About 44,000 ha now (44,210 ha in 2024), down from a peak of 59,545 ha in 1980: a fall of roughly a quarter, almost all of it bulk production.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-fzyx1y25",
+    "cat": "Austria",
+    "q": "Explain why Austria's vineyard area shrank and what that did to quality.",
+    "sa": 1,
+    "accept": [
+     "post-scandal contraction focus on quality small holdings",
+     "area halved quality rose"
+    ],
+    "ans": "Post-1985 contraction removed bulk production; what remained was small-holding, quality-focused and export-priced — scarcity by reform",
+    "exp": "Roughly 45,000–48,000 ha now, against a much larger bulk-era figure."
+   }
+  }
+ ]
+}

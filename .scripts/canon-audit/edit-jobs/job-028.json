@@ -1,0 +1,42 @@
+{
+ "file": "rewrite/categories/r1_champagne.py",
+ "findings": [
+  {
+   "id": "i-q0b7jqzx",
+   "kind": "outdated",
+   "claim": "often as a single cuvee drawing on all seven permitted varieties",
+   "because": "Since the revised Champagne cahier des charges was published in the Journal Officiel on 10 December 2022, after INAO approved it in November 2022, the fungus-resistant hybrid Voltis has also been authorised. It is on a trial basis, limited to 5% of an estate's vineyard area and 10% of a blend. So Champagne now has eight permitted varieties, not seven. The multi-variety cuvees the explanation has in mind are built on the seven historic varieties.",
+   "sources": [
+    "https://winewitandwisdomswe.com/2022/12/15/a-glass-of-voltis-champagne-might-be-in-your-future/",
+    "https://piwi-international.org/en/2022/02/grape-variety-voltis-was-released-for-the-production-of-champagne-aoc/",
+    "https://magazine.wein.plus/news/piwi-grape-variety-voltis-is-planted-out-in-champagne-test-cultivation-on-five-hectares-by-2033"
+   ],
+   "fix": "often as a single cuvee drawing on all seven historic varieties (the hybrid Voltis has also been permitted on trial since 2022)",
+   "batch": 66,
+   "verdict": "confirmed",
+   "verifyReason": "The question's key is fine: Petit Meslier is a legal Champagne variety, and Gamay, Sylvaner and Aligoté are not. The fault is in the explanation, which calls the seven varieties \"all seven permitted varieties\". Under the current AOC Champagne rules (cahier des charges, approved by the arrêté of 31 July 2025, JORF 5 August 2025), section V lists the principal varieties (Arbane, Chardonnay, Chardonnay rose, Meunier, Petit Meslier, Pinot blanc, Pinot gris, Pinot noir). It also lists a separate \"variété d'intérêt à fin d'adaptation\" (a variety allowed on trial for climate adaptation): Voltis B. Voltis requires a signed agreement with INAO and the grower body (ODG), may cover no more than 5% of an estate's vines, and may make up no more than 10% of a blend. La Champagne Viticole confirms Voltis has been in the appellation since 2022. So seven is no longer the full count of permitted varieties. The well-known seven-variety cuvées use the seven historic varieties, and the examiner's fix says exactly that.",
+   "verifySources": [
+    "https://www.sgv-champagne.fr/wp-content/uploads/2025/08/CDC_Champagne_.pdf",
+    "https://lachampagneviticole.fr/vers-une-prochaine-modification-des-cahiers-des-charges-aoc-champagne-et-coteaux-champenois/",
+    "https://lachampagneviticole.fr/en/vifa-une-obligation-declarative-indispensable-a-la-revendication-de-laoc/",
+    "https://www.vitisphere.com/actualite-95979-la-champagne-premier-vignoble-aoc-a-tester-un-cepage-resistant-au-mildiou-et-a-loidium.html"
+   ],
+   "finalFix": "often as a single cuvee drawing on all seven historic varieties (the hybrid Voltis has also been permitted on trial since 2022)",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-q0b7jqzx",
+    "cat": "Champagne",
+    "q": "Beyond the famous three, several near-extinct varieties remain legal in the appellation. Which is one of them?",
+    "opts": [
+     "Gamay",
+     "Sylvaner",
+     "Petit Meslier",
+     "Aligote"
+    ],
+    "a": 2,
+    "exp": "Arbane, Petit Meslier, Pinot Blanc and Pinot Gris survive in tiny plantings. A handful of growers now bottle them, often as a single cuvee drawing on all seven permitted varieties."
+   }
+  }
+ ]
+}

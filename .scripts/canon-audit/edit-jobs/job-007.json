@@ -1,0 +1,305 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-k9j3pgie",
+   "kind": "wrong-explanation",
+   "claim": "Eden and Clare screwcapped their whole category in 2000.",
+   "because": "In 2000 a group of 13 or 14 Clare Valley producers, led by Jeffrey Grosset, jointly bottled their Rieslings under Stelvin screwcap. It was one group of producers, not the whole Riesling category, and not a joint Eden Valley and Clare decision. The Eden Valley link for this question is earlier: Yalumba's own screwcap trials with Pewsey Vale Riesling in the 1970s.",
+   "sources": [
+    "https://ozwinereview.com/2023/02/turning-point-21-years-of-clare-riesling-in-screwcap.html",
+    "https://www.winewithseth.com/winewiki/screwcap-revolution/",
+    "https://www.therealreview.com/2022/11/07/clare-valley-celebrates-20-years-of-screwcapped-riesling/"
+   ],
+   "fix": "Yalumba trialled screwcaps on Pewsey Vale Riesling in the 1970s; in 2000 a group of Clare Valley producers led by Jeffrey Grosset moved their Rieslings to screwcap together.",
+   "batch": 2,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The explanation \"Eden and Clare screwcapped their whole category in 2000\" is false. The Real Review names the 14 wineries that signed up to the 2000 screwcap move: Mount Horrocks, Mitchell, Taylors, Olssen, Stringy Brae, Clos Clare, Knappstein, Grosset, Leasingham, Wilson, Tim Gramp, Stephen John, Kirribilly and Eldredge. All 14 are Clare Valley producers, and it was a voluntary group led by Jeffrey Grosset. Eden Valley was not part of it, and it did not cover the whole Riesling category (Wikipedia on Grosset and Wine Australia agree).\n\nThe stem and the model answer are right. Pewsey Vale was planted by Joseph Gilbert in 1847 and replanted in contoured rows by the Hill-Smith (Yalumba) family from 1961. The Contours block of the oldest vines has been made as its own wine since 1995 and is released with bottle age. Pewsey Vale first bottled Riesling under screwcap in 1977, so the examiner's point about Yalumba's 1970s trials is accurate.\n\nThe examiner's fix is factually correct but still says nothing about the question itself. The better fix below keeps the corrected screwcap history and also explains the answer.",
+   "verifySources": [
+    "https://www.therealreview.com/2022/11/07/clare-valley-celebrates-20-years-of-screwcapped-riesling/",
+    "https://en.wikipedia.org/wiki/Grosset_Wines",
+    "https://www.wineaustralia.com/riesling",
+    "https://en.wikipedia.org/wiki/Pewsey_Vale",
+    "https://www.decanter.com/premium/pewsey-vale-eden-valley-riesling-393442/",
+    "https://thewinedetective.co.uk/the-garden-of-eden-171-years-old-pewsey-vale-riesling-a-retrospective/"
+   ],
+   "finalFix": "Pewsey Vale, planted by Joseph Gilbert in 1847 and replanted in contoured rows by the Hill-Smith (Yalumba) family from 1961, makes The Contours from its oldest block and releases it with bottle age. Pewsey Vale first bottled Riesling under screwcap in 1977; in 2000 a group of Clare Valley producers led by Jeffrey Grosset moved their Rieslings to screwcap together.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-k9j3pgie",
+    "cat": "Australia",
+    "q": "Yalumba's Eden Valley Riesling vineyard, planted 1847 and replanted 1961, releases its museum-aged Riesling under which label?",
+    "sa": 1,
+    "accept": [
+     "pewsey vale contours",
+     "the contours"
+    ],
+    "ans": "Pewsey Vale 'The Contours' (museum-release Riesling)",
+    "exp": "Eden and Clare screwcapped their whole category in 2000."
+   }
+  },
+  {
+   "id": "a-mxyvoeyq",
+   "kind": "wrong-explanation",
+   "claim": "McLaren Vale's geology map identifies some nineteen distinct geologies across a small region",
+   "because": "Nineteen is the number of proposed McLaren Vale districts (McLaren Vale Districts Working Group), not geologies. The 2010 Geology of the McLaren Vale Wine Region map (Fairburn, Olliver, Preiss, White) shows more than 40 geological units, and the regional body now says more than 55 unique geologies.",
+   "sources": [
+    "https://mclarenvalewine.au/geology-map",
+    "https://ozwinereview.com/2013/07/what-is-mclaren-vale-scarce-ear.html",
+    "https://tigchandler.com/2012/01/12/rock-on-exciting-developments-in-mapping-the-geology-of-the-mclaren-vale-wine-region/"
+   ],
+   "fix": "McLaren Vale's geology map identifies more than 40 geological units (the region now counts over 55) across a small region, grouped into some nineteen proposed districts, and it is that map, not the GI line, that the Scarce Earth single-site Shiraz project is built on.",
+   "batch": 3,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation for the Blewitt Springs Grenache question (batch-003) says the McLaren Vale geology map shows \"some nineteen distinct geologies\". That mixes up two numbers. The 2010 Geology of the McLaren Vale Wine Region map shows more than 40 unique geological units, and the regional association now says more than 55 unique geologies. Nineteen is the number of districts that the McLaren Vale geology committee drew from that map, using geology, topography, elevation and climate. The mclarenvalewine.au geology page says \"More than 55 unique geologies\" and does not mention nineteen. WBM Online gives both numbers: 40+ units and 19 districts. The examiner's fix corrects the count, keeps the nineteen districts in their proper place, and leaves the rest of the explanation as it was.",
+   "verifySources": [
+    "https://mclarenvalewine.au/geology-map",
+    "https://wbmonline.com.au/mclaren-vale-geology-what-a-difference-a-district-makes/",
+    "https://trade.mclarenvale.info/geology/geology-map"
+   ],
+   "finalFix": "McLaren Vale's geology map identifies more than 40 geological units (the region now counts over 55) across a small region, grouped into some nineteen proposed districts, and it is that map, not the GI line, that the Scarce Earth single-site Shiraz project is built on.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-mxyvoeyq",
+    "cat": "Australia",
+    "q": "Which McLaren Vale district, on deep sand over clay and ironstone, gives the region's most perfumed old-vine Grenache?",
+    "sa": 1,
+    "accept": [
+     "blewitt springs",
+     "blewitt springs deep sand",
+     "blewitt springs on maslin sand",
+     "the blewitt springs district"
+    ],
+    "ans": "Blewitt Springs — deep Maslin sands in the cooler, higher north-eastern corner of the vale",
+    "exp": "Sand gives lighter colour and finer tannin, so Blewitt Springs Grenache reads high-toned and red-fruited where the heavier ironstone and clay sites toward Seaview build weight. McLaren Vale's geology map identifies some nineteen distinct geologies across a small region, and it is that map, not the GI line, that the Scarce Earth single-site Shiraz project is built on."
+   }
+  },
+  {
+   "id": "a-cuhow6p5",
+   "kind": "outdated",
+   "claim": "Austria's DAC count has grown to cover most regions. What does a regional name WITHOUT DAC status imply on a label?",
+   "because": "Thermenregion DAC, from the 2023 vintage, was the last specific growing region to join. Austrian Wine says the system is complete, with 18 DACs covering every specific region. So no specific-region name exists without DAC status any more. The regional names still used without DAC status are the Landwein areas Weinland, Steirerland and Bergland, so a careful expert could reasonably answer 'Landwein'. The keyed idea is still right: a non-DAC Qualitätswein from a DAC area falls back to the state name.",
+   "sources": [
+    "https://www.austrianwine.com/presse-multimedia/news-2023/news/article/austrias-thermenregion-finalises-the-dac-implementation-phase",
+    "https://magazine.wein.plus/news/all-wine-growing-regions-of-austria-now-in-the-dac-system-thermenregion-defines-wines-typical-of-their-origin",
+    "https://www.austrianwine.com/our-wine/wine-law/categories-of-wine-according-to-origin/wine-with-protected-geographical-indication"
+   ],
+   "fix": "Stem: Since Thermenregion joined in 2023, every Austrian specific wine-growing region is a DAC. How must a Qualitätswein from a DAC area be labelled if it does not meet the DAC rules (for example, a non-typical variety)?",
+   "batch": 3,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. Wein.plus says every Austrian wine-growing region is now in the DAC system, and that Thermenregion, the last to join, did so from the 2023 vintage. So the stem's premise that DACs cover \"most regions\" is out of date. Its question about \"a regional name WITHOUT DAC status\" also points at something that no longer exists for any specific wine-growing region. The only regional names left without DAC status are the Landwein areas (Weinland, Steirerland, Bergland). A careful expert could therefore answer \"Landwein\" and not the keyed \"state designation\". The keyed idea is still correct under current law. Austrian Wine's DAC pages, as the search summary reports them, say Qualitätswein that does not meet the DAC rules must carry the name of the generic wine-growing region, which is the federal state (for example Niederösterreich). The examiner's replacement stem keeps that answer and removes both the outdated premise and the ambiguity, so the existing ans and accept list still fit it. Caveat: the austrianwine.com Thermenregion press release returned 403, so the DAC-completion fact rests on the Wein.plus article, and the labelling rule on the search summary.",
+   "verifySources": [
+    "https://magazine.wein.plus/news/all-wine-growing-regions-of-austria-now-in-the-dac-system-thermenregion-defines-wines-typical-of-their-origin",
+    "https://www.austrianwine.com/our-wine/strategy-for-origin-marketing/qualitaetswein-with-regional-typicity-dac",
+    "https://www.austrianwine.com/our-wine/strategy-for-origin-marketing/designations-of-origin-for-qualitaetswein",
+    "https://wineindustryadvisor.com/2023/06/01/austrias-thermenregion-finalises-the-dac-implementation-phase/"
+   ],
+   "finalFix": "Since Thermenregion joined in 2023, every Austrian specific wine-growing region is a DAC. How must a Qualitätswein from a DAC area be labelled if it does not meet the DAC rules (for example, a non-typical variety)?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-cuhow6p5",
+    "cat": "Austria",
+    "q": "Austria's DAC count has grown to cover most regions. What does a regional name WITHOUT DAC status imply on a label?",
+    "sa": 1,
+    "accept": [
+     "generic wine outside typical style",
+     "non-typical variety sold under state name",
+     "falls back to the state designation"
+    ],
+    "ans": "Wines outside the DAC's typical varieties/styles label under the broader state (e.g., Niederösterreich)",
+    "exp": "DAC ties region to typicity; everything else steps down a level."
+   }
+  },
+  {
+   "id": "a-whttgn1d",
+   "kind": "wrong-explanation",
+   "claim": "The trap is the name: Austria's 'Veltliner' grapes (Roter, Frühroter, Brauner, Grüner) are a family only on the label, and Grüner is not a Silvaner relative despite a century of textbooks saying so.",
+   "because": "The key (Traminer × St. Georgener-Rebe) is right, but two statements in the explanation are false. Silvaner is Traminer × Österreichisch Weiss (per DNA fingerprinting), so Silvaner and Grüner Veltliner share Traminer as a parent and are half-siblings. Some of the Veltliners are also related to each other: Frühroter Veltliner is Roter Veltliner × Silvaner, a parent and child. What is true is that Grüner has no known link to Roter or Frühroter Veltliner. A smaller point: the St. Georgen vine was found in 2000 and the parentage was confirmed by DNA only in 2007, not 'shortly after'.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gr%C3%BCner_Veltliner",
+    "https://en.wikipedia.org/wiki/Silvaner",
+    "https://en.wikipedia.org/wiki/Fr%C3%BChroter_Veltliner"
+   ],
+   "fix": "The trap is the name: Grüner has no known genetic link to Roter, Frühroter or Brauner Veltliner, despite the shared label. Silvaner is not a parent either, though it is a half-sibling, since Silvaner is Traminer × Österreichisch Weiss. (Parent vine found in 2000; parentage confirmed by DNA in 2007.)",
+   "batch": 4,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The key (option 2, Traminer × St. Georgener-Rebe) is correct. The explanation is wrong in two places. (1) It says Grüner \"is not a Silvaner relative\". DNA work gives Silvaner as Traminer (Savagnin) × Österreichisch Weiss, and Grüner as Traminer × St. Georgener-Rebe, so the two are half-siblings through Traminer. What is true is that Silvaner is not a parent of Grüner. (2) It says the Veltliners are \"a family only on the label\". But Frühroter Veltliner is a spontaneous cross of Roter Veltliner × Silvaner, so Roter is its parent. What is true is that Grüner has no known direct link to Roter Veltliner, and the old grandparent theory has lost support. Also, \"confirmed shortly after\" is loose: the vine was found in 2000, and Regner's DNA confirmation came in 2007. The examiner's fix is close, but it says Grüner has \"no known genetic link\" to Frühroter. That is itself slightly wrong: Frühroter's parent Silvaner is Grüner's half-sibling, so the two are distant kin through Traminer. The better fix limits the claim to parent-child links and keeps the original's Traminer/spice line.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Gr%C3%BCner_Veltliner",
+    "https://en.wikipedia.org/wiki/Silvaner",
+    "https://en.wikipedia.org/wiki/Fr%C3%BChroter_Veltliner",
+    "https://en.wikipedia.org/wiki/Roter_Veltliner",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-004.json"
+   ],
+   "finalFix": "The second parent was found in 2000 as a single ancient vine at St. Georgen am Leithagebirge in Burgenland, and DNA analysis confirmed the cross in 2007. Traminer's fingerprints explain Grüner's spice. The trap is the name: Grüner has no known parent-child link to Roter, Frühroter or Brauner Veltliner, even though Frühroter really is Roter Veltliner's offspring (Roter Veltliner × Silvaner). Nor is Silvaner a parent of Grüner, though the two are half-siblings, since Silvaner is Traminer × Österreichisch Weiss.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-whttgn1d",
+    "cat": "Austria",
+    "q": "DNA analysis has settled Grüner Veltliner's parentage. What is it?",
+    "opts": [
+     "Silvaner × Roter Veltliner, the grapes in its name",
+     "Traminer × Sankt Georgener-Rebe, a lone old vine",
+     "Riesling × Silvaner, an early Klosterneuburg crossing",
+     "Weissburgunder × Blauer Portugieser, bred in 1922"
+    ],
+    "a": 1,
+    "exp": "The second parent was found in 2000 as a single ancient vine at St. Georgen am Leithagebirge in Burgenland, and the cross was confirmed shortly after — Traminer's fingerprints explain Grüner's spice. The trap is the name: Austria's 'Veltliner' grapes (Roter, Frühroter, Brauner, Grüner) are a family only on the label, and Grüner is not a Silvaner relative despite a century of textbooks saying so."
+   }
+  },
+  {
+   "id": "a-gfz1r7rx",
+   "kind": "wrong-explanation",
+   "claim": "Zierfandler and Rotgipfler are siblings — both natural Traminer × Roter Veltliner offspring",
+   "because": "DNA work shows Rotgipfler is Traminer (Savagnin) × Roter Veltliner. For Zierfandler, only Roter Veltliner is confirmed as a parent; the other parent has never been identified and is only thought to be Traminer-like, possibly a Savagnin relative. The two grapes are therefore at most half-siblings through Roter Veltliner, not proven full siblings. The Thermenregion answer and the Spätrot-Rotgipfler blend are correct.",
+   "sources": [
+    "https://gregorysmith.wine/2023/03/29/the-grape-varieties-of-austria-part-2/",
+    "https://www.grapecollective.com/zierfandler-and-rotgipfler-austrias-native-grape-power-couple/",
+    "https://en.wikipedia.org/wiki/Zierfandler",
+    "https://en.wikipedia.org/wiki/Rotgipfler"
+   ],
+   "fix": "Zierfandler and Rotgipfler share Roter Veltliner as a parent: Rotgipfler is Traminer × Roter Veltliner, while Zierfandler's second parent is unidentified but thought to be Traminer-like",
+   "batch": 4,
+   "verdict": "confirmed",
+   "verifyReason": "The question (a-gfz1r7rx, batch-004) is keyed correctly: the region is the Thermenregion around Gumpoldskirchen, and the Zierfandler and Rotgipfler blend is Spätrot-Rotgipfler. The accept list is fine too. The fault is in the explanation, which says the two grapes are siblings and that both are \"natural Traminer × Roter Veltliner offspring\". That holds for Rotgipfler only. Microsatellite work by Sefc et al. (1998, Theoretical and Applied Genetics) showed Rotgipfler is a natural Traminer (Savagnin) × Roter Veltliner cross. Zierfandler's pedigree is not confirmed. Its VIVC passport (13443) marks \"Pedigree confirmed by markers\" as NO and names no parents; it only records a parent-offspring link. The reference sources hedge: Wikipedia says Zierfandler is \"probably a cross between Roter Veltliner and something like Traminer\", and wein.plus calls it \"probably\" Traminer × Roter Veltliner. So presenting the two as proven full siblings is a false statement. Saying they share Roter Veltliner, with Zierfandler's other parent unidentified and thought to be Traminer-like, is supported. The examiner's fix is right; it replaces only the opening clause of the explanation, and the rest of the explanation stays.",
+   "verifySources": [
+    "https://www.vivc.de/index.php?r=passport/view&id=13443",
+    "https://en.wikipedia.org/wiki/Zierfandler",
+    "https://glossary.wein.plus/zierfandler",
+    "https://en.wikipedia.org/wiki/Rotgipfler",
+    "https://www.grapecollective.com/zierfandler-and-rotgipfler-austrias-native-grape-power-couple/"
+   ],
+   "finalFix": "Zierfandler and Rotgipfler share Roter Veltliner as a parent: Rotgipfler is Traminer × Roter Veltliner, while Zierfandler's second parent is unidentified but thought to be Traminer-like",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-gfz1r7rx",
+    "cat": "Austria",
+    "q": "Which region south of Vienna builds its whites on Zierfandler and Rotgipfler, and what is the traditional blend of the two called?",
+    "sa": 1,
+    "accept": [
+     "thermenregion gumpoldskirchen spatrot-rotgipfler",
+     "thermenregion, blended as spatrot rotgipfler",
+     "thermenregion south of vienna, the blend is spatrot-rotgipfler",
+     "gumpoldskirchen in the thermenregion, spatrot rotgipfler"
+    ],
+    "ans": "The Thermenregion, centred on Gumpoldskirchen — the pair is co-blended as Spätrot-Rotgipfler (Zierfandler is locally called Spätrot)",
+    "exp": "Zierfandler and Rotgipfler are siblings — both natural Traminer × Roter Veltliner offspring — and virtually the entire world planting of each sits in this one region, which is why they never appear in a blind-tasting grid but always in an oral. Zierfandler brings acid and spice, Rotgipfler weight and stone fruit. Zierfandler has no connection whatever to Zinfandel; the Thermenregion also grows serious Pinot Noir and St. Laurent around Tattendorf."
+   }
+  },
+  {
+   "id": "a-ncyfeuav",
+   "kind": "wrong-explanation",
+   "claim": "Bittersweet vintage apples: Dabinett, Kingston Black, Yarlington Mill.",
+   "because": "Kingston Black is the classic bittersharp (high tannin and high acid), not a bittersweet; Dabinett and Yarlington Mill are bittersweets.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kingston_Black",
+    "https://www.cumminsnursery.com/learn-trees/cider-apple-types",
+    "https://www.orangepippin.com/varieties/apples/kingston-black"
+   ],
+   "fix": "Vintage cider apples: the bittersweets Dabinett and Yarlington Mill, and the bittersharp Kingston Black.",
+   "batch": 5,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation for question a-ncyfeuav (batch-005.json) reads \"Bittersweet vintage apples: Dabinett, Kingston Black, Yarlington Mill.\" Under the Long Ashton classification, which sorts cider apples into sweet, bittersweet, sharp and bittersharp, Kingston Black is the textbook bittersharp. Wikipedia says it \"is classed as a 'bittersharp' in the standard classification of cider apples, being high in both tannin and acid\", and the BJCP cider-exam material lists it with the bittersharps next to Foxwhelp. Dabinett and Yarlington Mill are both medium bittersweets. So calling Kingston Black a bittersweet is a false fact. The keyed answer (English West Country cider) is not in dispute. The examiner's fix names each apple's class correctly and keeps the rest of the explanation.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Kingston_Black",
+    "https://en.wikipedia.org/wiki/Cider_apple",
+    "https://www.bjcp.org/exam-certification/cider-judge-program/cider-exam/7-cider-apples-and-perry-pears/",
+    "https://en.wikipedia.org/wiki/Dabinett",
+    "https://en.wikipedia.org/wiki/Yarlington_Mill",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-005.json"
+   ],
+   "finalFix": "Vintage cider apples: the bittersweets Dabinett and Yarlington Mill, and the bittersharp Kingston Black.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-ncyfeuav",
+    "cat": "Beer & Cider",
+    "q": "Which cider style is fermented from apples grown in Herefordshire's traditional orchards and typically bone dry and tannic?",
+    "opts": [
+     "Normandy cidre doux",
+     "English West Country cider",
+     "Basque sidra",
+     "Quebec ice cider"
+    ],
+    "a": 1,
+    "exp": "Bittersweet vintage apples: Dabinett, Kingston Black, Yarlington Mill."
+   }
+  },
+  {
+   "id": "a-et2u93tn",
+   "kind": "wrong-explanation",
+   "claim": "Domfront demands a majority of Plant de Blanc from standard orchards",
+   "because": "The Poiré Domfront AOP rule is a minimum of 40% Plant de Blanc, not a majority (INAO product sheet: Plant de Blanc enters at more than 40%; AOC approved by arrêté of 20 December 2002).",
+   "sources": [
+    "https://inao.gouv.fr/produit/domfront-23083",
+    "https://www.calyce-cidre.com/cider-geek/poire-domfront/"
+   ],
+   "fix": "Domfront demands at least 40% Plant de Blanc from standard orchards",
+   "batch": 5,
+   "verdict": "confirmed",
+   "verifyReason": "I opened the Domfront AOP cahier des charges on INAO's extranet (the version with the modifications the CNAO adopted on 11–12 June 2025). In section 5.2, the blend of perry going to bottle for its second fermentation must contain Plant de Blanc at \"supérieure ou égale à 40%\", which means 40% or more. No complementary variety may pass 25%, and unlisted varieties may not pass 10%. The inspection table gives the same figures: 40% or more for Plant de Blanc in each cuvée, and at least 20% of the trees in each orchard. So the rule is a 40% minimum, not a majority, and the explanation's \"demands a majority of Plant de Blanc\" is false. A 45% Plant de Blanc blend is legal even though it is not a majority. The rest of the sentence holds. Section 5.1.2 requires high-stem (\"haute tige\") orchards, which is what \"standard orchards\" means in English. The only exception is a transitional allowance for low-stem trees planted before 20 December 2002, which runs until the 2030 harvest. Section 6 says the trees can take more than fifteen years to bear fruit, which supports \"a generation to crop\". The examiner's fix corrects exactly the false fact. The model answer and the accept list are not affected.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO2025-CDC-DOMFRONT.pdf",
+    "https://inao.gouv.fr/produit/domfront-23083",
+    "https://www.idac-aoc.fr/en/ciders-and-perry-appellation/the-domfront-perry.html"
+   ],
+   "finalFix": "Domfront demands at least 40% Plant de Blanc from standard orchards",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-et2u93tn",
+    "cat": "Beer & Cider",
+    "q": "Name three French cider or perry AOCs and the region of each.",
+    "sa": 1,
+    "accept": [
+     "pays d auge cornouaille cotentin and poire domfront",
+     "cidre pays d auge in normandy and cidre cornouaille in brittany",
+     "pays d auge cornouaille and domfront for perry"
+    ],
+    "ans": "Cidre Pays d'Auge (Normandy, 1996), Cidre Cornouaille (Brittany, 1996), Cidre Cotentin (Normandy, 2016), and for perry, Poire Domfront (the Domfrontais in Normandy, 2002, built on the Plant de Blanc pear).",
+    "exp": "The appellations exist to separate real cider from the industrial category. They require whole-fruit pressing from listed cider varieties, no added sugar, no concentrate, and carbonation generated by the fruit's own residual sugar in bottle or tank rather than injected — which is exactly the ground on which a somm defends a cider's place next to wine. Pays d'Auge is bittersweet, keeved, richly bitter and often bottle-fermented; Cornouaille is slower and more tannic; Domfront demands a majority of Plant de Blanc from standard orchards whose trees take a generation to crop, which is why perry is the rarer and harder craft."
+   }
+  },
+  {
+   "id": "a-kbk4i21a",
+   "kind": "ambiguous-stem",
+   "claim": "Which two second growths are known as the 'Super Seconds' of Saint-Julien's Léoville trio? ... Léoville-Las-Cases and Léoville-Barton",
+   "because": "The canonical super-second list (Wine Spectator glossary: Cos d'Estournel, Ducru-Beaucaillou, Léoville Las Cases, Palmer, Pichon Lalande) names only one Léoville, Las Cases. Barton and Poyferré are both only sometimes added, so a candidate answering Las Cases and Poyferré is as defensible as Las Cases and Barton; the stem's 'two' has no single right answer.",
+   "sources": [
+    "https://www.winespectator.com/glossary/show/id/super_second",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_L%C3%A9oville-Las_Cases"
+   ],
+   "fix": "Stem: Which Léoville is the Saint-Julien estate classically counted among the 'Super Seconds'? Answer: Léoville-Las-Cases (Barton and Poyferré are sometimes added). Accept: ['leoville las cases', 'las cases']",
+   "batch": 5,
+   "verdict": "confirmed",
+   "verifyReason": "I found the question (a-kbk4i21a, batch-005) exactly as the examiner quotes it. It asks which \"two\" of the three Léovilles are the Super Seconds and keys Las Cases and Barton, with Poyferré \"close behind\". The term has no official list. The Wine Spectator glossary, which I opened, names Cos d'Estournel, Ducru-Beaucaillou, Léoville Las Cases, Palmer and Pichon-Longueville-Lalande. Las Cases is the only Léoville on it. Trade sources in the search results agree that Las Cases is universally counted. They say Barton, Poyferré and others are \"also often referred to\" as Super Seconds, so neither has the stronger claim. A candidate who answers \"Las Cases and Poyferré\" is as defensible as the key. The stem's \"two\" therefore has no single right answer. Las Cases is the one Léoville every source names, so the examiner's fix, keyed on Las Cases alone, is correct. Under matchSA, \"las cases\" is a whole-word containment accept. That means a longer answer naming Las Cases still grades, and \"Barton\" or \"Poyferré\" alone does not. The explanation \"Las Cases' Grand Enclos abuts Latour\" is accurate and can stay.",
+   "verifySources": [
+    "https://www.winespectator.com/glossary/show/id/super_second",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_L%C3%A9oville-Las_Cases",
+    "https://www.bighammerwines.com/blogs/vine-blog/second-growth-bordeaux-futures",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)"
+   ],
+   "finalFix": "Stem: Which Léoville is the Saint-Julien estate classically counted among the 'Super Seconds'? Answer: Léoville-Las-Cases (Barton and Poyferré are sometimes added). Accept: ['leoville las cases', 'las cases']",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-kbk4i21a",
+    "cat": "Bordeaux",
+    "q": "Which two second growths are known as the 'Super Seconds' of Saint-Julien's Léoville trio?",
+    "sa": 1,
+    "accept": [
+     "leoville las cases",
+     "leoville-las-cases and leoville-barton",
+     "las cases barton"
+    ],
+    "ans": "Léoville-Las-Cases and Léoville-Barton (with Léoville-Poyferré close behind)",
+    "exp": "Las Cases' Grand Enclos abuts Latour."
+   }
+  }
+ ]
+}

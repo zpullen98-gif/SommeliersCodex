@@ -1,0 +1,110 @@
+{
+ "file": "rewrite/categories/r1_spain.py",
+ "findings": [
+  {
+   "id": "i-xezz75wk",
+   "kind": "wrong-fact-in-option",
+   "claim": "Five years of ageing, at least two in cask and three more in bottle, earn a red Rioja which designation?",
+   "because": "The Consejo Regulador's classification defines red Gran Reserva as a 5-year minimum ageing, 2 of them in 225-litre oak barrels plus 2 years in bottle (60 months total, 24 in oak, 24 in bottle). The remaining year may be spent in either vessel, so the 'three more in bottle' stated in the stem is not the rule. The key (Gran Reserva) stays correct.",
+   "sources": [
+    "https://riojawine.com/en-gb/the-designation/classification/"
+   ],
+   "fix": "Five years of ageing, at least two in cask and at least two in bottle, earn a red Rioja which designation?",
+   "batch": 128,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The stem gives the rule as two years in cask plus three in bottle. That was Rioja's old Gran Reserva rule. On 11 November 2016 the Consejo Regulador's plenary replaced it, and the pliego now in force reads: at least 60 months in total, at least 24 of them in 225-litre oak barrels, then at least 24 in bottle. The fifth year can be spent in either barrel or bottle. The Consejo's classification page gives the same figures (5 years total, 2 in oak, 2 in bottle). A wine with two years in cask and three in bottle still qualifies, so the key (Gran Reserva) stays right. The fault is that the stem teaches three years in bottle as the requirement, which has been outdated since the 2016/17 change. A candidate asked for the minimum bottle time would answer 36 months instead of 24. The examiner's fix states the current rule correctly. The explanation (\"the long spell in bottle\") is still true and can stay.",
+   "verifySources": [
+    "https://riojawine.com/en-gb/the-designation/classification/",
+    "https://riojawine.com/es/noticias/pleno-del-consejo-regulador-acuerdos-sobe-variedades-blancas-y-requisitos-para-envejecimiento-de-reservas-y-grandes-reservas/",
+    "https://riojawine.com/wp-content/uploads/2023/07/pliego-de-condiciones-de-la-doca-rioja-en-vigor.pdf",
+    "https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:52020XC0507(02)"
+   ],
+   "finalFix": "Five years of ageing, at least two in cask and at least two in bottle, earn a red Rioja which designation?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-xezz75wk",
+    "cat": "Spain",
+    "q": "Five years of ageing, at least two in cask and three more in bottle, earn a red Rioja which designation?",
+    "opts": [
+     "Reserva",
+     "Crianza",
+     "Joven",
+     "Gran Reserva"
+    ],
+    "a": 3,
+    "exp": "Most houses declare it only in vintages they believe will repay the wait. The long spell in bottle is why a Gran Reserva often reaches the table already mature."
+   }
+  },
+  {
+   "id": "i-a455nccq",
+   "kind": "wrong-explanation",
+   "claim": "Dorado was aged in glass demijohns and part-filled barrels under a film of yeast, closer to a light Sherry than to any modern white.",
+   "because": "The D.O. Rueda defines Rueda Dorado by crianza oxidativa (oxidative ageing), with at least the last two years before sale in oak barrel. Ageing under a film of yeast (crianza biologica) belongs to the other traditional style, Rueda Palido, which needs at least three years in oak. The explanation says Dorado aged under flor, which contradicts the keyed option itself ('an oxidatively aged white'), and a candidate would learn the two Rueda styles the wrong way round.",
+   "sources": [
+    "https://dorueda.com/vinos/",
+    "https://es.wikipedia.org/wiki/Denominación_de_Origen_Rueda"
+   ],
+   "fix": "Dorado was aged oxidatively, traditionally in glass demijohns left out in the sun and then in oak, with no film of yeast, so it was closer to an old Oloroso than to any modern white. Today's rule asks for at least two years in oak before sale; its biologically aged sibling, under flor, is Rueda Palido. A little of both is still made.",
+   "batch": 129,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The D.O. Rueda's own wine page (dorueda.com/vinos) says Rueda Dorado \"se obtiene por crianza oxidativa\" and must spend at least the last two years before sale in oak barrel. Rueda Pálido \"se obtiene por crianza biológica\", meaning under a film of flor yeast, with at least three years in oak. Both categories came back in the 2019 pliego de condiciones: Pálido had been dropped from the rules in 2008, and Dorado needs at least four years of ageing in total. The current explanation says Dorado aged \"under a film of yeast\", which gives Dorado Pálido's biological ageing and contradicts the keyed option (\"an oxidatively aged white\"). The keyed answer (index 3) is still correct; only the explanation is wrong. The examiner's fix is accurate: Dorado is aged oxidatively, traditionally in glass demijohns in the sun and then in wood, with at least two years in oak before sale, and Pálido is the flor-aged style.",
+   "verifySources": [
+    "https://dorueda.com/vinos/",
+    "https://nosvamosdevinos.com/los-vinos-palidos-y-dorados-de-rueda-ya-son-vinos-generosos/",
+    "https://www.vinetur.com/2021051664601/desvelan-el-secreto-del-vino-palido.html",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-129.json"
+   ],
+   "finalFix": "Dorado was aged oxidatively, traditionally in glass demijohns left out in the sun and then in oak, with no film of yeast, so it was closer to an old Oloroso than to any modern white. Today's rule asks for at least two years in oak before sale; its biologically aged sibling, under flor, is Rueda Palido. A little of both is still made.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-a455nccq",
+    "cat": "Spain",
+    "q": "Before Verdejo was replanted, Rueda's reputation rested on a very different wine. What was it?",
+    "opts": [
+     "A sweet botrytised white",
+     "A traditional-method sparkling wine",
+     "A dark, tannic red",
+     "An oxidatively aged white called dorado"
+    ],
+    "a": 3,
+    "exp": "Dorado was aged in glass demijohns and part-filled barrels under a film of yeast, closer to a light Sherry than to any modern white. A little of it is still made."
+   }
+  },
+  {
+   "id": "i-lfjnphqw",
+   "kind": "wrong-explanation",
+   "claim": "A butt marked for Fino loses its flor without ever being refortified",
+   "because": "A Palo Cortado loses its flor on its own rather than because it was refortified, but once the capataz sees this and marks the butt with the cut stick, the wine is normally refortified to about 17.5% so it can age oxidatively without spoiling. 'Without ever being refortified' is therefore false. The key (Palo Cortado) is still right.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Palo_cortado"
+   ],
+   "fix": "A butt marked for Fino loses its flor on its own, not because it was refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?",
+   "batch": 130,
+   "verdict": "confirmed",
+   "verifyReason": "The stem says the butt loses its flor \"without ever being refortified\". The Consejo Regulador's own Palo Cortado page says the opposite. Once the tasters re-mark the cask, \"the wine is then again fortified to above 17% by volume\" to send it into oxidative ageing. Wikipedia says the same thing (about 17.5%). The flor fades on its own, but the wine is then refortified, so \"never refortified\" is a false fact that a candidate would learn. The key (Palo Cortado) and the explanation are both right. The examiner's fix keeps the true contrast (the flor fades on its own and is not killed by fortification, as it is in an Amontillado) and drops the false claim.",
+   "verifySources": [
+    "https://www.sherry.wine/sherry-wine/dry-sherry-wines/palo-cortado",
+    "https://en.wikipedia.org/wiki/Palo_cortado",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-130.json"
+   ],
+   "finalFix": "A butt marked for Fino loses its flor on its own, not because it was refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-lfjnphqw",
+    "cat": "Spain",
+    "q": "A butt marked for Fino loses its flor without ever being refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?",
+    "opts": [
+     "Oloroso",
+     "Cream",
+     "Palo Cortado",
+     "Amontillado"
+    ],
+    "a": 2,
+    "exp": "An Amontillado is refortified on purpose to kill its flor, while a Palo Cortado arrives there by accident. It carries the aromatic delicacy of the one over the body of an Oloroso, and it is the rarest of the dry styles."
+   }
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "file": "rewrite/categories/r1_south_africa.py",
+ "findings": [
+  {
+   "id": "i-m8jz4sdq",
+   "kind": "outdated",
+   "claim": "the label reads Wine of Origin Estate",
+   "because": "Estate is no longer a Wine of Origin unit or designation of geographic origin. Current rules allow only the production term \"estate wine\", for wine whose grapes were grown, made and bottled on the same registered unit. The change came with the revision of the scheme usually dated to 2004. The keyed answer is still right, but a current Cape label cannot read \"Wine of Origin Estate\".",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wine_of_Origin",
+    "https://en.wikipedia.org/wiki/South_African_wine"
+   ],
+   "fix": "Stem: \"A visitor buys a bottle at a cellar door and the label reads Estate Wine. What has that term committed the producer to?\" Explanation, first sentence: \"Estate wine must come from units registered for estate production, so the claim is that the grapes were grown and the wine made and bottled in the same place; since the 2004 revision estate is no longer a unit of origin in its own right.\"",
+   "batch": 120,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. WOSA's own industry overview says \"In 2004, a new dispensation did away with the traditional 'estate' and focuses instead on 'estate wine'\", and all previously registered estates were re-registered as units for the production of estate wine. WOSA's Wine of Origin scheme page now defines estate wine as a production term, not as a tier of origin: grapes grown only on that registered unit, and the wine made and bottled there. So the stem's phrase \"Wine of Origin Estate\" belongs to the scheme before 2004. A label today cannot carry it, and a candidate who learns it as a current label term learns something wrong. The keyed option (grown and made on the registered unit) is still correct, and no other option becomes correct. The examiner's fix changes the stem to \"Estate Wine\" and rewrites the first sentence of the explanation. That fix is accurate and keeps the key at index 1. The rest of the explanation (the term says nothing about quality, and wines from bought-in fruit cannot use it) stays true.",
+   "verifySources": [
+    "https://www.wosa.co.za/The-Industry/Overview/",
+    "https://www.wosa.co.za/The-Industry/Wines-Of-Origin/Wine-Of-Origin-scheme/",
+    "https://en.wikipedia.org/wiki/Wine_of_Origin"
+   ],
+   "finalFix": "Stem: \"A visitor buys a bottle at a cellar door and the label reads Estate Wine. What has that term committed the producer to?\" Explanation, first sentence: \"Estate wine must come from units registered for estate production, so the claim is that the grapes were grown and the wine made and bottled in the same place; since the 2004 revision estate is no longer a unit of origin in its own right.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-m8jz4sdq",
+    "cat": "South Africa",
+    "q": "A visitor buys a bottle at a cellar door and the label reads Wine of Origin Estate. What has that phrase committed the producer to?",
+    "opts": [
+     "The whole property lies inside a single ward",
+     "The grapes were grown and the wine made on the registered unit",
+     "The wine was bottled on site but the fruit may have been bought in",
+     "The property has been in one family for at least three generations"
+    ],
+    "a": 1,
+    "exp": "An estate is registered as a production unit, so the claim is about farming and vinification happening in the same place. It says nothing whatever about quality, and a great many of the Cape's best wines are made from bought-in fruit and cannot use the term at all."
+   }
+  },
+  {
+   "id": "i-ywvdks0p",
+   "kind": "ambiguous-stem",
+   "claim": "A label names a single pocket of ground inside a district rather than the district itself, telling the buyer the fruit came off that one patch. (option \"A single vineyard\")",
+   "because": "A registered single vineyard is also a certified origin claim under the scheme. It is a single parcel under 6 ha, so \"that one patch\" describes it more literally than it describes a ward. A careful candidate could reasonably key option 0 instead of the ward. The scheme's nested geographical tiers are geographical unit, region, district and ward.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wine_of_Origin"
+   ],
+   "fix": "Replace option 0 \"A single vineyard\" with \"A geographical unit\" (key stays 3), or change the stem ending to \"Which geographical tier of the Wine of Origin scheme, demarcated on soil, climate and ecology, is that tighter name?\"",
+   "batch": 120,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. WOSA's own page on the Wine of Origin scheme lists the estate unit and the single vineyard as levels of the scheme, with the single vineyard below the ward: \"the smallest production unit and may not exceed six hectares\". wine.co.za says the same: \"The smallest wine growing unit recognised, is the Single Vineyard. This is one vineyard block\". The stem's wording, \"a single pocket of ground inside a district... that one patch... tighter name\", fits a registered single vineyard at least as well as it fits a ward, so a careful candidate could key option 0.\n\nThe explanation is also wrong in one respect. It calls the ward the tightest tier and the place where a Cape label gets \"closest to naming a piece of ground\", but that describes the single vineyard. WOSA also says a ward is \"usually, but not necessarily\" part of a district.\n\nThe examiner's fix only swaps option 0. That leaves the stem's \"that one patch\" wording, which still points at a vineyard block or an estate farm, and it leaves the wrong claim in the explanation. The better fix below rewrites the stem so that only the ward fits, replaces option 0, and corrects the explanation. The key stays 3.",
+   "verifySources": [
+    "https://www.wosa.co.za/The-Industry/Wines-Of-Origin/Wine-Of-Origin-Scheme/",
+    "https://news.wine.co.za/news.aspx?NEWSID=30361",
+    "https://www.sawis.co.za/cert/download/wineoforiginbooklet201604.pdf"
+   ],
+   "finalFix": "q: \"A label names a demarcated viticultural area smaller than a district, drawn on its natural factors of soil, climate and ecology and taking in whatever farms fall inside it. Which geographical tier of the Wine of Origin scheme is that name?\" | opts[0]: \"A geographical unit\" (the other options stay: \"A subregion\", \"An estate\", \"A ward\"; a stays 3) | exp: \"The scheme's geographical tiers nest from geographical unit through region and district down to ward, the smallest of them: a relatively small area with a fairly uniform set of natural factors, usually but not always inside a district. Below the ward sit two production units rather than geographical tiers: the estate (one or more adjoining farms run as a unit with their own cellar) and the registered single vineyard (one block of one variety, no more than six hectares), which is the smallest unit of origin of all.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-ywvdks0p",
+    "cat": "South Africa",
+    "q": "A label names a single pocket of ground inside a district rather than the district itself, telling the buyer the fruit came off that one patch. Which Wine of Origin tier is that tighter name?",
+    "opts": [
+     "A single vineyard",
+     "A subregion",
+     "An estate",
+     "A ward"
+    ],
+    "a": 3,
+    "exp": "The scheme nests geographical unit, region, district and ward, with the ward as the tightest tier and the one defined on soil, climate and ecology rather than on administrative convenience. A ward is where a Cape label gets closest to naming a piece of ground."
+   }
+  }
+ ]
+}

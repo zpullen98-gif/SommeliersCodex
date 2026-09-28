@@ -285,7 +285,7 @@ BANK = [
        "Neutral grape spirit poured over them, as in a fortified wine",
        "Water heated enough to dissolve the sugar out of the skins",
        "Sugar syrup made from concentrated must, added at the press"], 0,
-      "Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder, and its name comes from breaking the shrivelled berries out of the bunch. The historic definition allowed only must or wine off the same vineyard and the same harvest, which is what kept the practice from being plain dilution. Rust's own designation no longer allows the addition at all, so the modern wine is pressed from the dried fruit alone."),
+      "Ausbruch once sat between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder; today the name belongs to Rust alone and requires Trockenbeerenauslese must weight (30 KMW). The name comes from breaking the shrivelled berries out of the bunch. The historic definition allowed only must or wine off the same vineyard and the same harvest, which is what kept the practice from being plain dilution. Rust's own designation no longer allows the addition at all, so the modern wine is pressed from the dried fruit alone."),
     Q("Burgenland, botrytis and Rust",
       "Bunches are laid out on reed mats or straw and left to dry for months before they see a press. Which Austrian Pradikat does that produce?",
       ["Strohwein", "Eiswein", "Ausbruch", "Beerenauslese"], 0,

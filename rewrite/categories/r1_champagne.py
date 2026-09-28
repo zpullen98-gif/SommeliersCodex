@@ -92,7 +92,7 @@ BANK = [
     Q("The three principal grapes",
       "Beyond the famous three, several near-extinct varieties remain legal in the appellation. Which is one of them?",
       ["Petit Meslier", "Aligote", "Gamay", "Sylvaner"], 0,
-      "Arbane, Petit Meslier, Pinot Blanc and Pinot Gris survive in tiny plantings. A handful of growers now bottle them, often as a single cuvee drawing on all seven permitted varieties."),
+      "Arbane, Petit Meslier, Pinot Blanc and Pinot Gris survive in tiny plantings. A handful of growers now bottle them, often as a single cuvee drawing on all seven historic varieties (the hybrid Voltis has also been permitted on trial since 2022)."),
     Q("The three principal grapes",
       "Rose here may legally be produced by a route forbidden in most French appellations. What is it?",
       ["Blending in still red wine",

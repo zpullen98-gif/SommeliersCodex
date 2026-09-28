@@ -1,0 +1,79 @@
+{
+ "file": "rewrite/categories/r2_fortified_wines.py",
+ "findings": [
+  {
+   "id": "c-1wqv57fb",
+   "kind": "wrong-key",
+   "claim": "The question calls three years the minimum ageing for any Madeira. It is not. Three years is the rule only for canteiro wine. Estufagem wine may be bottled and sold from 31 October of the second year after the vintage, which is about two years, so the explanation's claim that three years is the floor for all Madeira is also wrong.",
+   "because": "IVBAM's own Vinho Madeira site (Vinificação e Envelhecimento) says estufagem wines can never be bottled and sold before 31 October of the second year after the vintage. Canteiro wines may only be sold after at least 3 years, counted from 1 January of the year after the vintage. So the least-aged Madeira on sale is about two years old, not three, and a candidate who learns 'three years for all Madeira' has learned the wrong law.",
+   "sources": [
+    "https://vinhomadeira.com/o-vinho-madeira/vinificacao-e-envelhecimento"
+   ],
+   "fix": "Stem: 'A Madeira aged by the canteiro method may not be sold until it has served a minimum period of ageing, counted from 1 January after the vintage. How long?' (key stays 0, Three years). Explanation: 'Canteiro wine must wait at least three years from 1 January after the vintage. Estufagem wine may be bottled and sold from 31 October of the second year after the harvest, so the heated everyday blends reach the market sooner.'",
+   "batch": 212,
+   "verdict": "confirmed",
+   "verifyReason": "I opened IVBAM's own Vinho Madeira page on vinification and ageing, and it supports the examiner. It says estufagem wines may never be bottled and sold before 31 October of the second year after the harvest (\"nunca podem ser engarrafados e comercializados antes de 31 de Outubro do segundo ano seguinte à vindima\"). It says canteiro wines may only be sold after at least 3 years, counted from 1 January of the year after the harvest. So the stem is wrong when it says nothing may be bottled and sold as Madeira before a single minimum period, keyed as three years. The heated everyday wines reach the market after roughly two years, and none of the four options (1, 3, 5, 10) matches that. The explanation calls three years \"a floor\" and leans on the same wrong premise. Narrowing the stem to canteiro keeps key 0 (Three years) correct. The proposed explanation matches the IVBAM text. I found no reason to change the fix.",
+   "verifySources": [
+    "https://vinhomadeira.com/o-vinho-madeira/vinificacao-e-envelhecimento"
+   ],
+   "finalFix": "Stem: 'A Madeira aged by the canteiro method may not be sold until it has served a minimum period of ageing, counted from 1 January after the vintage. How long?' (key stays 0, Three years). Explanation: 'Canteiro wine must wait at least three years from 1 January after the vintage. Estufagem wine may be bottled and sold from 31 October of the second year after the harvest, so the heated everyday blends reach the market sooner.'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-1wqv57fb",
+    "cat": "Fortified Wines",
+    "q": "Nothing may be bottled and sold as Madeira until it has served a minimum period of ageing. How long?",
+    "opts": [
+     "Three years",
+     "Five years",
+     "Ten years",
+     "One year"
+    ],
+    "a": 0,
+    "exp": "That is a floor rather than an average, so a wine on the bottom rung may well hold older material blended into it without being allowed to say so. The ladder above climbs in fives and tens, and each step up it is a claim the certifying body has to approve before the label may carry it."
+   }
+  },
+  {
+   "id": "c-v5wloo6x",
+   "kind": "wrong-fact-in-option",
+   "claim": "The stem says Madeira declares sweetness in four steps, and the explanation says the scale runs seco, meio seco, meio doce, doce. IVBAM lists five: Extra Seco, Seco, Meio Seco, Meio Doce, Doce. The keyed answer, meio doce, is still correct.",
+   "because": "The sweetness table on IVBAM's Vinho Madeira site (Tipos e Categorias) has five sweetness levels, beginning with Extra Seco. It marks the sugar figures as only a guide.",
+   "sources": [
+    "https://vinhomadeira.com/o-vinho-madeira/tipos-categorias"
+   ],
+   "fix": "Stem: 'Sweetness on a Madeira label is declared in words rather than left to a grape name to imply. Give the step that sits one drier than doce.' Explanation first sentence: 'The scale runs extra seco, seco, meio seco, meio doce, doce, and English labels render the upper four as dry, medium dry, medium sweet (or medium rich) and sweet (or rich).'",
+   "batch": 212,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. I opened the Tipos e Categorias page of IVBAM, the Madeira wine regulator. It lists five sweetness levels: Extra Seco (under 49 g/L), Seco (49-65), Meio Seco (57-80), Meio Doce (80-96) and Doce (over 96). It also marks the sugar figures as \"Valores meramente indicativos\", meaning they are only a guide. So the stem is wrong to say the scale has \"four steps\", and the explanation is wrong to start the scale at seco. The keyed answer, meio doce, is still the step one drier than doce, and the accept list is fine. The examiner's fix is correct: it takes the step count out of the stem and adds extra seco to the explanation, and the English renderings of the upper four are accurate. I could not open the Portuguese legal text itself because my search budget ran out. IVBAM's own table is the primary regulatory source for Madeira, so I rely on it.",
+   "verifySources": [
+    "https://vinhomadeira.com/o-vinho-madeira/tipos-categorias"
+   ],
+   "finalFix": "Stem: 'Sweetness on a Madeira label is declared in words rather than left to a grape name to imply. Give the step that sits one drier than doce.' Explanation first sentence: 'The scale runs extra seco, seco, meio seco, meio doce, doce, and English labels render the upper four as dry, medium dry, medium sweet (or medium rich) and sweet (or rich).'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-v5wloo6x",
+    "cat": "Fortified Wines",
+    "q": "Sweetness on a Madeira label is declared in four steps rather than left to a grape name to imply. Give the step that sits one drier than doce.",
+    "sa": 1,
+    "accept": [
+     "meio doce",
+     "medium sweet",
+     "medium rich",
+     "meio doce medium sweet",
+     "medium sweet meio doce",
+     "meio doce medium rich",
+     "medium rich meio doce",
+     "meio doce or medium sweet",
+     "medium sweet or meio doce",
+     "meio doce or medium rich",
+     "medium rich or meio doce",
+     "meio doce step"
+    ],
+    "ans": "Meio doce",
+    "ex": 1,
+    "exp": "The scale runs seco, meio seco, meio doce, doce, and English labels render those as dry, medium dry, medium rich and sweet. It matters because most of the island's wine comes from a variety that implies no sweetness at all, so the label has to say in words what a noble variety name once said by itself."
+   }
+  }
+ ]
+}

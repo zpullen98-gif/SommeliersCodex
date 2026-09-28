@@ -1,0 +1,111 @@
+{
+ "file": "rewrite/categories/r1_rhone.py",
+ "findings": [
+  {
+   "id": "i-d51zy58x",
+   "kind": "wrong-explanation",
+   "claim": "the river swings west there and the hill ends up facing due south",
+   "because": "At Tain the Rhône turns east, not west. For a short stretch it flows west to east, and that is why the hill on its east bank faces south. Berry Bros. & Rudd says Hermitage sits on the east bank where the river 'suddenly veers in that direction' at Tain and Tournon. Decanter describes the hill rising 'above a kink in the river as it briefly flows west to east'.",
+   "sources": [
+    "https://www.bbr.com/editorial/2023/rhone/understanding-cote-rotie-and-hermitage",
+    "https://www.decanter.com/premium/know-white-hermitage-420271/"
+   ],
+   "fix": "the river swings east there, briefly flowing west to east, and the hill ends up facing due south",
+   "batch": 109,
+   "verdict": "confirmed",
+   "verifyReason": "The question and its key (Hermitage and Crozes-Hermitage on the left bank) are right, but the explanation gets the river's direction backwards. At Tain the Rhône turns east (left), not west. For a short stretch it flows west to east along the foot of the hill, so the hill on the left (north/east) bank faces south. Berry Bros. & Rudd, which I opened, says the river \"suddenly veers in that direction\" (east) at Tain and Tournon, which lets the vineyards face south and south-west. A web search surfaced a wine guide saying the hillside faces south over a short section where the river flows west to east, not north to south. The Decanter page was cut off when fetched, so I did not use it. A river swinging west could not give a south-facing slope on its left bank. The examiner's fix is right.",
+   "verifySources": [
+    "https://www.bbr.com/editorial/2023/rhone/understanding-cote-rotie-and-hermitage",
+    "https://flatiron-wines.com/blogs/the-latest/guide-to-hermitage",
+    "https://en.wikipedia.org/wiki/Hermitage_AOC"
+   ],
+   "finalFix": "the river swings east there, briefly flowing west to east, and the hill ends up facing due south",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-d51zy58x",
+    "cat": "Rhône",
+    "q": "Almost every cru of the northern valley sits on the right bank of the river. Which two look back at them from the left?",
+    "opts": [
+     "Hermitage and Crozes-Hermitage",
+     "Cote-Rotie and Saint-Joseph",
+     "Cornas and Saint-Peray",
+     "Condrieu and Chateau-Grillet"
+    ],
+    "a": 0,
+    "exp": "The hill of Hermitage and the flatter land around it are the exception, which is part of why Hermitage catches so much sun: the river swings west there and the hill ends up facing due south."
+   }
+  },
+  {
+   "id": "i-5u8wquhp",
+   "kind": "ambiguous-stem",
+   "claim": "The minimum alcohol demanded there is the highest of any French appellation.",
+   "because": "The 12.5% key is correct: the Chateauneuf-du-Pape cahier des charges sets a titre alcoometrique volumique naturel minimum of 12.5%. But it is not the highest in France. The Gigondas cahier des charges sets the same 12.5% minimum, so it is at best shared. Sweet appellations such as Sauternes demand far higher minimum natural potential alcohol. A candidate who learns the stem as written learns a false superlative.",
+   "sources": [
+    "https://www2.inao.gouv.fr/var/inao_site/storage/repository/editeur/files/pdf/CDC-AOP/AOC%20Ch%C3%A2teaneuf-du-Pape_20111116.pdf",
+    "http://www.gigondas-vin.com/wp-content/uploads/2016/02/AOC-Gigondas_cahier-des-charges.pdf"
+   ],
+   "fix": "The minimum natural alcohol demanded there, among the highest set for any French dry wine appellation, is what?",
+   "batch": 111,
+   "verdict": "confirmed",
+   "verifyReason": "The question sits in the Châteauneuf-du-Pape run of the intro bank, so \"there\" means Châteauneuf-du-Pape, and the 12.5% key is right. I opened the Châteauneuf-du-Pape cahier des charges and ch. VII 2°b reads: \"Les vins présentent un titre alcoométrique volumique naturel minimum de 12,5 %\". The superlative in the stem is false, though. The Sauternes rules on Légifrance require a titre alcoométrique volumique naturel moyen minimum of 15% (and grapes of at least 221 g/l), so 12.5% is not the highest minimum of any French appellation. The explanation is fine. The examiner's fix narrows the claim to dry wines and hedges it to \"among the highest\", which holds up and keeps the same options and key.",
+   "verifySources": [
+    "https://www2.inao.gouv.fr/var/inao_site/storage/repository/editeur/files/pdf/CDC-AOP/AOC%20Ch%C3%A2teaneuf-du-Pape_20111116.pdf",
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021061148/2009-09-23",
+    "C:/Users/zpull/SommeliersCodex/js/data-intro.js:1120"
+   ],
+   "finalFix": "The minimum natural alcohol demanded there, among the highest set for any French dry wine appellation, is what?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-5u8wquhp",
+    "cat": "Rhône",
+    "q": "The minimum alcohol demanded there is the highest of any French appellation. What is it?",
+    "opts": [
+     "11.5 percent",
+     "10.5 percent",
+     "12.5 percent",
+     "14 percent"
+    ],
+    "a": 2,
+    "exp": "In practice most wines land far above it, and fifteen percent is unremarkable. The floor was set to keep out thin wine from over-cropped vines rather than to encourage power."
+   }
+  },
+  {
+   "id": "i-39lv3zjg",
+   "kind": "ambiguous-stem",
+   "claim": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which variety?",
+   "because": "The stem names two Muscats, the Rhône's single one and Roussillon's 'second, coarser' one, then asks 'Which variety?' without saying which. Both are among the options. Under the Muscat de Rivesaltes cahier des charges (INAO), the permitted varieties are muscat à petits grains blancs and muscat d'Alexandrie. So a careful candidate could read the question as asking for the 'second, coarser Muscat' and choose Muscat of Alexandria (option 3), which is correct under that reading. The key, Muscat Blanc a Petits Grains, is right only if the question asks which Muscat the Rhône admits.",
+   "sources": [
+    "https://www.inao.gouv.fr/produit/muscat-de-rivesaltes-7767",
+    "https://extranet.inao.gouv.fr/fichier/PNO2022AOPRivesaltes.pdf",
+    "https://en.wikipedia.org/wiki/Muscat_de_Rivesaltes_AOC"
+   ],
+   "fix": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which single Muscat does the Rhone version admit?",
+   "batch": 112,
+   "verdict": "confirmed",
+   "verifyReason": "The facts in the question are right. The Muscat de Rivesaltes cahier des charges (Légifrance/INAO) allows exactly two varieties: muscat à petits grains blancs B and muscat d'Alexandrie B. Muscat de Beaumes-de-Venise allows only Muscat à Petits Grains, whose red-berried form counts as the same variety. The key (option 1) is therefore correct for the Rhône. The problem is the wording. The stem names two Muscats, the Rhône's single one and Roussillon's \"second, coarser\" one, and then asks only \"Which variety?\". Muscat of Alexandria (option 3) is among the options and is the true answer if the question means the second, coarser Muscat. A careful candidate could reasonably pick it, so the stem is ambiguous. The examiner's fix removes the ambiguity by asking which single Muscat the Rhône version admits, and it keeps the key and explanation unchanged.",
+   "verifySources": [
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021174193/2009-12-01",
+    "https://www.inao.gouv.fr/produit/muscat-de-rivesaltes-7767",
+    "https://extranet.inao.gouv.fr/fichier/PNOCDCRivesaltes.doc"
+   ],
+   "finalFix": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which single Muscat does the Rhone version admit?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-39lv3zjg",
+    "cat": "Rhône",
+    "q": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which variety?",
+    "opts": [
+     "Muscat Ottonel",
+     "Muscat Blanc a Petits Grains",
+     "Muscat Hamburg",
+     "Muscat of Alexandria"
+    ],
+    "a": 1,
+    "exp": "The small-berried white Muscat is the perfumed one, orange blossom and crushed grape, and it is all the Rhone appellation will take, its red-berried form counting as the same variety. Rivesaltes and its neighbours lean on Muscat of Alexandria as well, which is fatter and less floral. Muscat Ottonel is a nineteenth-century crossing grown in Alsace and central Europe, and Muscat Hamburg is a table grape."
+   }
+  }
+ ]
+}

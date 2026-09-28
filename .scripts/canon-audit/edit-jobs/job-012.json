@@ -1,0 +1,315 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-9gacn1qu",
+   "kind": "wrong-fact-in-option",
+   "claim": "Boekenhoutskloof — \"Franschhoek Syrah & The Chocolate Block\"",
+   "because": "Boekenhoutskloof is based in Franschhoek, but its Syrah is not Franschhoek fruit. It comes from its two Swartland home farms, about 70% Porseleinberg and 30% Goldmine, and was earlier a Wellington single vineyard. The Syrah is labelled WO Swartland.",
+   "sources": [
+    "https://www.thewinesociety.com/product/boekenhoutskloof-syrah-swartland-2019/",
+    "https://wineanorak.com/2020/03/16/in-south-africa-boekenhoutskloof/"
+   ],
+   "fix": "Pair text: \"Franschhoek estate: Swartland Syrah & The Chocolate Block\"; ans: \"Boekenhoutskloof–Franschhoek estate, Swartland Syrah\"",
+   "batch": 31,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. Boekenhoutskloof's cellar is in Franschhoek, but its Syrah has never been Franschhoek fruit. It was first a Wellington single vineyard. It is now WO Swartland: the producer's own fact sheets give about 80-90% Porseleinberg and 10-20% Goldmine, near Riebeek-Kasteel. The Chocolate Block is also Swartland-sourced. So the clue \"Franschhoek Syrah\" is a false fact. The examiner's pair text is right. But the fix gives only a fragment of `ans`, and `ans` is one combined string covering all four pairs, so here it is in full. Keeping \"Franschhoek estate\" in the clue stops it clashing with the Mullineux Swartland Syrah clue.",
+   "verifySources": [
+    "https://www.boekenhoutskloof.co.za/wp-content/uploads/2024/03/Boekenhoutskloof-Syrah-2021.pdf",
+    "https://www.boekenhoutskloof.co.za/wp-content/uploads/2026/02/Boekenhoutskloof-Syrah-2023.pdf",
+    "https://www.bbr.com/products-20228115216-2022-boekenhoutskloof-syrah-swartland-south-africa",
+    "https://wineanorak.com/2020/03/16/in-south-africa-boekenhoutskloof/"
+   ],
+   "finalFix": "pairs[2]: [\"Boekenhoutskloof\", \"Franschhoek estate: Swartland Syrah & The Chocolate Block\"]; ans: \"Mullineux–soil Syrahs · Alheit–Cartology · Boekenhoutskloof–Franschhoek estate, Swartland Syrah · Hamilton Russell–Pinot\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-9gacn1qu",
+    "cat": "South Africa",
+    "q": "Match producer to signature.",
+    "mt": 1,
+    "sa": 1,
+    "accept": [
+     "match"
+    ],
+    "pairs": [
+     [
+      "Mullineux",
+      "Swartland Syrah by soil (Granite/Schist/Iron)"
+     ],
+     [
+      "Alheit",
+      "Old-vine Chenin (Cartology)"
+     ],
+     [
+      "Boekenhoutskloof",
+      "Franschhoek Syrah & The Chocolate Block"
+     ],
+     [
+      "Hamilton Russell",
+      "Hemel-en-Aarde Pinot"
+     ]
+    ],
+    "ans": "Mullineux–soil Syrahs · Alheit–Cartology · Boekenhoutskloof–Franschhoek · Hamilton Russell–Pinot",
+    "exp": "Mullineux bottles the same variety off three soils — a masterclass in terroir argument."
+   }
+  },
+  {
+   "id": "a-22blfud9",
+   "kind": "outdated",
+   "claim": "Rosa Kruger's registry; ~4,000 ha qualify.",
+   "because": "The Old Vine Project now reports 5,417 ha of old vines (35+ years) in South Africa. Old-vine area grew from 2,952 ha in 2016 to 5,159 ha in 2024, so the ~4,000 ha figure is roughly 2019-2020 data. Also, the Old Vine Project was founded by Rosa Kruger and certifies wines; it does not hold her personal registry.",
+   "sources": [
+    "https://www.oldvineproject.co.za/",
+    "https://cluboenologique.com/story/south-africa-old-vine-project-certified-heritage-wines/"
+   ],
+   "fix": "Old Vine Project, founded by Rosa Kruger; more than 5,000 ha of vines aged 35+ now qualify.",
+   "batch": 31,
+   "verdict": "confirmed",
+   "verifyReason": "The question itself is right: the seal requires vines at least 35 years old, and the vineyard's planting year is printed on it. The explanation's \"~4,000 ha qualify\" is out of date. The Old Vine Project's own home page now gives 5,417 ha of old vine. The SAWIS figures reported for the project show old-vine area rising from 2,952 ha in 2016 to 5,159 ha in 2024. So the ~4,000 ha figure dates from around 2019 to 2020. \"Rosa Kruger's registry\" is also loose. Kruger founded the Old Vine Project in 2002. It is a non-profit company that certifies heritage vineyards, and the hectare counts come from SAWIS records, not from a personal register of hers. The examiner's fix is accurate. It also avoids naming an exact year's figure, so it will stay true as the area keeps growing.",
+   "verifySources": [
+    "https://www.oldvineproject.co.za/",
+    "https://oldvineproject.co.za/old-vine-vineyards/",
+    "https://cluboenologique.com/story/south-africa-old-vine-project-certified-heritage-wines/",
+    "https://www.wosa.co.za/Sustainability/Environmentally-Sustainable/Old-Vines-Project/"
+   ],
+   "finalFix": "Old Vine Project, founded by Rosa Kruger; more than 5,000 ha of vines aged 35+ now qualify.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-22blfud9",
+    "cat": "South Africa",
+    "q": "What does the Certified Heritage Vineyards seal (Old Vine Project) require?",
+    "sa": 1,
+    "accept": [
+     "35 year old vines",
+     "vines 35+ years documented"
+    ],
+    "ans": "Documented vines 35+ years old, with the planting date on the seal",
+    "exp": "Rosa Kruger's registry; ~4,000 ha qualify."
+   }
+  },
+  {
+   "id": "a-nxik8e6j",
+   "kind": "wrong-explanation",
+   "claim": "Almaviva, Don Melchor, Viñedo Chadwick — the 2004 Berlin Tasting's winners grew here.",
+   "because": "At the Berlin Tasting of 23 January 2004 the top two were Viñedo Chadwick 2000 (first) and Seña 2001 (second). Seña is an Aconcagua wine, not a Puente Alto wine. Neither Almaviva nor Don Melchor placed among the winners. Of the three wines the explanation names, only Viñedo Chadwick won.",
+   "sources": [
+    "https://vinedochadwick.cl/the-berlin-tasting",
+    "https://blog.iwfs.org/2017/04/chile-beats-france-the-berlin-tasting-of-2004-and-its-impact-on-the-world-of-wine/",
+    "https://wine-partners.at/en/news/20-years-berlin-tasting"
+   ],
+   "fix": "Almaviva, Don Melchor and Viñedo Chadwick all grow here; Viñedo Chadwick 2000 took first place at the 2004 Berlin Tasting (Seña 2001, from Aconcagua, was second).",
+   "batch": 32,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The question asks about Puente Alto (Alto Maipo), and its key and accept list are fine. The explanation is what is wrong: it says Almaviva, Don Melchor and Viñedo Chadwick were \"the 2004 Berlin Tasting's winners.\" At that tasting (Ritz-Carlton Berlin, 23 January 2004, 16 wines from France, Italy and Chile), Viñedo Chadwick 2000 came first and Seña 2001 second. Seña 2000 tied for fourth with Château Margaux 2001. Viñedo Chadwick 2001 tied for sixth with Château Margaux 2000 and Château Latour 2000. The only Chilean wines entered came from the Errázuriz/Chadwick family, so Almaviva and Don Melchor did not compete at all. Seña grows in Aconcagua (Ocoa), not Puente Alto. Of the three wines the explanation names, only Viñedo Chadwick won anything. The proposed fix is accurate: all three vineyards are in Puente Alto, Viñedo Chadwick 2000 won, and Seña 2001, from Aconcagua, was second.",
+   "verifySources": [
+    "https://wine-partners.at/en/news/20-years-berlin-tasting",
+    "https://blog.iwfs.org/2017/04/chile-beats-france-the-berlin-tasting-of-2004-and-its-impact-on-the-world-of-wine/",
+    "https://www.errazuriz.com/en/winery/berlin-tasting",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-032.json"
+   ],
+   "finalFix": "Almaviva, Don Melchor and Viñedo Chadwick all grow here; Viñedo Chadwick 2000 took first place at the 2004 Berlin Tasting (Seña 2001, from Aconcagua, was second).",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-nxik8e6j",
+    "cat": "South America",
+    "q": "Which Maipo subzone at the Andes' feet is called the 'Pauillac of South America'?",
+    "sa": 1,
+    "accept": [
+     "puente alto",
+     "alto maipo"
+    ],
+    "ans": "Puente Alto (Alto Maipo)",
+    "exp": "Almaviva, Don Melchor, Viñedo Chadwick — the 2004 Berlin Tasting's winners grew here."
+   }
+  },
+  {
+   "id": "a-rniv2eb8",
+   "kind": "wrong-explanation",
+   "claim": "But the EU and the US both demand 85%, so almost every Chilean bottle you will ever see is made to 85%",
+   "because": "27 CFR 4.23(b) sets the US minimum for a single-variety name at 75%, and it applies to imported wine as well as domestic wine (51% for labrusca). The 85% figure is the EU rule. It is not a US rule.",
+   "sources": [
+    "https://www.ecfr.gov/current/title-27/chapter-I/subchapter-A/part-4/subpart-C/section-4.23",
+    "https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/grape-variety-designations-on-american-wine-labels"
+   ],
+   "fix": "But the EU demands 85% (the US, like Chile, takes 75%), so wine bound for Europe, and much Chilean export wine besides, is made to 85%. That is why the textbook figure and the shelf reality can disagree. Quote the law, then note the export practice.",
+   "batch": 32,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The key (75%) is right, but the explanation is wrong. It says \"the EU and the US both demand 85%\". I opened 27 CFR 4.23 (the Cornell LII copy and the govinfo CFR XML for Part 4). Section 4.23(b) sets the US single-variety floor at \"not less than 75 percent\", with a 51% exception for labrusca and for strongly flavoured varieties in 4.23(c). Part 4 governs imported wine as well as domestic wine; its Subpart E covers wine withdrawn from customs custody. So there is no US 85% rule, and 85% is the EU figure only. The finding holds. However, the examiner's fix adds \"and much Chilean export wine besides, is made to 85%\". I could not verify that claim, so the better fix drops it and keeps only what the law supports. The first sentence of the explanation (Chile's 75% for variety, vintage and origin) is not in dispute and stays.",
+   "verifySources": [
+    "https://www.law.cornell.edu/cfr/text/27/4.23",
+    "https://www.govinfo.gov/content/pkg/CFR-2019-title27-vol1/xml/CFR-2019-title27-vol1-part4.xml",
+    "https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/grape-variety-designations-on-american-wine-labels",
+    "https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/labelreqimportedwine"
+   ],
+   "finalFix": "75% is the domestic legal floor, and the same 75% applies to vintage and to stated origin. The US takes 75% too, but the EU demands 85% for a single variety named on the label, so Chilean wine bound for Europe is made to 85%. That is why the textbook figure and the shelf reality can disagree. Quote the law, then note the export practice.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-rniv2eb8",
+    "cat": "South America",
+    "q": "Chilean law requires a varietally labelled wine to contain at least what proportion of the named grape?",
+    "opts": [
+     "65%",
+     "75%",
+     "85%",
+     "95%"
+    ],
+    "a": 1,
+    "exp": "75% is the domestic legal floor, and the same 75% applies to vintage and to stated origin. But the EU and the US both demand 85%, so almost every Chilean bottle you will ever see is made to 85% — which is why the textbook figure and the shelf reality disagree. Quote the law, then note the export practice."
+   }
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "outdated",
+   "claim": "Gran Reserva: 24 months for reds, 12 months for whites and rosés",
+   "because": "INV Resolución C.11/2011 originally set Gran Reserva tintos at 24 months. INV Resolución 26/2021 (Boletín Oficial, 7 January 2022), Article 7, amended Punto 1°, inciso e), apartado ii of C.11/2011 so that the minimum for Gran Reserva tintos 'pasará a ser de DIECIOCHO (18) meses'. Reserva is unchanged at 12 months for reds and 6 for whites and rosés. The 12-month figure for Gran Reserva whites and rosés is the original C.11/2011 text; the Boletín Oficial text of Article 7 amends only the red figure. So the model answer's 24 months for red Gran Reserva has been wrong since January 2022.",
+   "sources": [
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion",
+    "https://www.memo.com.ar/economia/norma-etiquetado-vinos-argentina/"
+   ],
+   "fix": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds (cut from 24 by INV Resolución 26/2021), 12 months for whites and rosés",
+   "batch": 33,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I could not refute it. The model answer's 24 months for red Gran Reserva is outdated. I opened the original INV Resolución C.11/2011 on Infoleg. Punto 1, e), ii set Gran Reserva tintos at \"VEINTICUATRO (24) meses\" and whites and rosés at \"DOCE (12) meses\". Reserva is 12 months for reds and 6 for whites and rosés, and that has not changed.\n\nArticle 7 of Resolución 26/2021 (B.O. 7/1/2022) does say the red Gran Reserva minimum \"pasará a ser de DIECIOCHO (18) meses\", as the examiner quotes. But the change is older than the examiner says. Article 7 of INV Resolución 14/2019 (B.O. 5/12/2019) already has the same wording, and Res. 20/2020 (B.O. 21/5/2020) repeats it. So 24 months has been wrong since December 2019, not January 2022. That is the reason for the better fix.\n\nInfoleg's consolidated text lists no later change to this paragraph, although it records other amendments to C.11/2011 as late as 2024. That consolidated text also shows 18 months for Gran Reserva whites and rosés. Every amending article I read touches only the red figure, though. So I keep 12 months for whites and rosés, as the examiner does, and treat Infoleg's 18 as a consolidation slip. That is not certain.\n\nTwo other fixes go with this one:\n- The accept list still takes the 24-month answer. Replace it with, for example, \"reserva 12 months red and 6 white gran reserva 18 red and 12 white\", \"reserva one year for reds gran reserva eighteen months for reds\" and \"twelve and six months for reserva eighteen and twelve for gran reserva\". Drop \"twice that for gran reserva\".\n- The explanation cites \"INV Resolution C.32/2011\". The rules are in Resolución C.11/2011, which also repealed C.22/2008. Change it to \"INV Resolution C.11/2011, red Gran Reserva cut to 18 months by Res. 14/2019\".",
+   "verifySources": [
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion",
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107",
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/222961/20191205",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-337824/texto"
+   ],
+   "finalFix": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds (cut from 24 by INV Resolución 14/2019, December 2019, and restated by Res. 26/2021), 12 months for whites and rosés",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-gq4vpgi7",
+    "cat": "South America",
+    "q": "Under Argentina's INV rules, what minimum ageing must a wine have to be labelled 'Reserva', and what for 'Gran Reserva'?",
+    "sa": 1,
+    "accept": [
+     "reserva 12 months red and 6 white gran reserva 24 red and 12 white",
+     "12 months reds 6 months whites for reserva twice that for gran reserva",
+     "reserva one year for reds gran reserva two years for reds",
+     "twelve and six months for reserva twenty four and twelve for gran reserva"
+    ],
+    "ans": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 24 months for reds, 12 months for whites and rosés",
+    "exp": "Argentina legislated these terms (INV Resolution C.32/2011) precisely because they had been decorative, and what the resolution fixes is a stated number of months. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period — so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap."
+   }
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "accept-list",
+   "claim": "\"reserva 12 months red and 6 white gran reserva 24 red and 12 white\", \"12 months reds 6 months whites for reserva twice that for gran reserva\", \"reserva one year for reds gran reserva two years for reds\", \"twelve and six months for reserva twenty four and twelve for gran reserva\"",
+   "because": "Every accept entry grades 24 months (two years, twice twelve) for red Gran Reserva as correct. Since INV Resolución 26/2021 the minimum is 18 months, and no entry takes the correct figure.",
+   "sources": [
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107"
+   ],
+   "fix": "Replace the accept list with: \"reserva 12 months red and 6 white gran reserva 18 red and 12 white\", \"reserva one year for reds gran reserva eighteen months for reds\", \"twelve and six months for reserva eighteen and twelve for gran reserva\"",
+   "batch": 33,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. Under the original INV Resolución C.11/2011 (11 March 2011), a red Gran Reserva needed 24 months of crianza and a white or rosé 12. Article 7 of INV Resolución 26/2021, published in the Boletín Oficial on 7 January 2022, cut the red Gran Reserva minimum to eighteen (18) months. Its annex restates the terms as: Reserva, 12 months for reds and 6 for whites and rosés; Gran Reserva, 18 months for reds and 12 for whites and rosés (plus 135 kg and 140 kg of grapes per 100 L). The new INV Digesto Normativo (Resolución 37/2025, in force 1 January 2026, section 1.5.2) keeps 18 months for red and 12 for white and rosé. All four accept entries therefore grade the superseded 24-month red figure (\"24\", \"two years\", \"twice that\", \"twenty four\") and none takes 18. The examiner's fix is incomplete, though. The model answer \"ans\" also says 24 months, and matchSA always grades \"ans\" by exact equality, so the wrong figure would still be shown and accepted. The explanation cites \"INV Resolution C.32/2011\", but the defining resolution is C.11/2011. One caution: the Infoleg consolidated text of C.11/2011 shows 18 months for white and rosé Gran Reserva. That is a consolidation slip, because 26/2021 and 37/2025 both say 12 months.",
+   "verifySources": [
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107",
+    "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-26-2021-359334/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-11-2011-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-359334/actualizacion",
+    "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-37-2025-419909/texto",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)"
+   ],
+   "finalFix": "ans: \"Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds, 12 months for whites and rosés\"\naccept: [\"reserva 12 months red and 6 white gran reserva 18 red and 12 white\", \"reserva 12 red 6 white gran reserva 18 red 12 white\", \"reserva one year for reds gran reserva eighteen months for reds\", \"twelve and six months for reserva eighteen and twelve for gran reserva\"]\nexp: \"Argentina legislated these terms (INV Resolution C.11/2011) precisely because they had been decorative, and what the rule fixes is a stated number of months counted from when the wine is enologically stable (with minimum grape-to-wine ratios of 135 kg and 140 kg per 100 litres). Gran Reserva reds originally needed 24 months; INV Resolution 26/2021 (in force January 2022) cut that to 18, and the 2025 INV Digesto (Resolution 37/2025, in force 2026) keeps 18 months for reds and 12 for whites and rosés. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period, so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-gq4vpgi7",
+    "cat": "South America",
+    "q": "Under Argentina's INV rules, what minimum ageing must a wine have to be labelled 'Reserva', and what for 'Gran Reserva'?",
+    "sa": 1,
+    "accept": [
+     "reserva 12 months red and 6 white gran reserva 24 red and 12 white",
+     "12 months reds 6 months whites for reserva twice that for gran reserva",
+     "reserva one year for reds gran reserva two years for reds",
+     "twelve and six months for reserva twenty four and twelve for gran reserva"
+    ],
+    "ans": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 24 months for reds, 12 months for whites and rosés",
+    "exp": "Argentina legislated these terms (INV Resolution C.32/2011) precisely because they had been decorative, and what the resolution fixes is a stated number of months. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period — so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap."
+   }
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "wrong-explanation",
+   "claim": "Argentina legislated these terms (INV Resolution C.32/2011)",
+   "because": "The resolution that defines Reserva and Gran Reserva is INV Resolución C.11, dated 11 March 2011, which amended C.20/04 and repealed C.22/2008. It was later amended by Resolución 26/2021.",
+   "sources": [
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion"
+   ],
+   "fix": "Argentina legislated these terms (INV Resolución C.11/2011, amended by Resolución 26/2021)",
+   "batch": 33,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The citation is wrong. The official Argentine register shows that the resolution defining Reserva and Gran Reserva ageing is INV Resolución C.11, dated 11 March 2011 (norma 180304). Its original text sets Reserva at 12 months for reds and 6 for whites and rosés, and Gran Reserva at 24 for reds and 12 for whites and rosés. I found no C.32/2011 on ageing. The nearby numbers are C.30/2011 (minimum alcohol) and 32/2012 (the grape variety list).\n\nThe examiner's fix names the right resolution but leaves a bigger problem unstated. Article 7 of Resolución 26/2021 (Boletín Oficial, 7 January 2022) rewrote point 1(e)(ii) of C.11/2011, cutting the Gran Reserva red minimum from 24 to 18 months from enological stability. Whites and rosés stay at 12. The question's model answer (\"24 months for reds\") and its accept strings (\"gran reserva 24 red\", \"twice that for gran reserva\", \"gran reserva two years for reds\", \"twenty four ... for gran reserva\") have been outdated since January 2022. The explanation should say so. Separately, the model answer should become: \"Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds, 12 months for whites and rosés\". The 24-month and \"twice that\" accept strings should be replaced with 18-month versions.",
+   "verifySources": [
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/texto",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-180304/actualizacion",
+    "https://www.argentina.gob.ar/normativa/nacional/norma-359334/texto",
+    "https://www.boletinoficial.gob.ar/detalleAviso/primera/255833/20220107"
+   ],
+   "finalFix": "Argentina legislated these terms (INV Resolución C.11/2011; Resolución 26/2021, in force January 2022, cut the Gran Reserva red minimum from 24 to 18 months)",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-gq4vpgi7",
+    "cat": "South America",
+    "q": "Under Argentina's INV rules, what minimum ageing must a wine have to be labelled 'Reserva', and what for 'Gran Reserva'?",
+    "sa": 1,
+    "accept": [
+     "reserva 12 months red and 6 white gran reserva 24 red and 12 white",
+     "12 months reds 6 months whites for reserva twice that for gran reserva",
+     "reserva one year for reds gran reserva two years for reds",
+     "twelve and six months for reserva twenty four and twelve for gran reserva"
+    ],
+    "ans": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 24 months for reds, 12 months for whites and rosés",
+    "exp": "Argentina legislated these terms (INV Resolution C.32/2011) precisely because they had been decorative, and what the resolution fixes is a stated number of months. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period — so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap."
+   }
+  },
+  {
+   "id": "a-k6lsq8t6",
+   "kind": "wrong-explanation",
+   "claim": "glacial soils Henri Enjalbert declared grand-cru-worthy in 1970",
+   "because": "The estate's own history says the Guiberts found the property in 1970, but Professor Henri Enjalbert visited and assessed the soils in 1971 (July 1971 in other accounts).",
+   "sources": [
+    "https://www.daumas-gassac.com/en/mas-de-daumas-gassac-history/"
+   ],
+   "fix": "glacial soils Henri Enjalbert declared grand-cru-worthy in 1971",
+   "batch": 33,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation for a-k6lsq8t6 in batch-033 says Enjalbert judged the soils in 1970. The estate's own history page, which I opened, gives two separate dates. The Guiberts toured the Hérault looking for a family house in 1970. Professor Enjalbert visited in 1971 and found glacial sandstone comparable to the best Côte d'Or terroirs. So the 1970 in the explanation is the year the property was found, not the year of Enjalbert's assessment. I found no source placing his visit in 1970. The keyed answer (IGP / Vin de Pays) and the accept list are not affected. The examiner's fix only changes the year, which is correct.",
+   "verifySources": [
+    "https://www.daumas-gassac.com/en/mas-de-daumas-gassac-history/",
+    "https://www.daumas-gassac.com/en/mas-de-daumas-gassac-history/terroir/"
+   ],
+   "finalFix": "Cabernet-led on glacial soils Henri Enjalbert declared grand-cru-worthy in 1971.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-k6lsq8t6",
+    "cat": "Southern France",
+    "q": "Mas de Daumas Gassac, the 'Lafite of the Languedoc', bottles under which humble designation?",
+    "sa": 1,
+    "accept": [
+     "igp",
+     "vin de pays",
+     "igp saint-guilhem-le-desert",
+     "vin de pays de l'herault"
+    ],
+    "ans": "IGP (Vin de Pays de l'Hérault / Saint-Guilhem-le-Désert)",
+    "exp": "Cabernet-led on glacial soils Henri Enjalbert declared grand-cru-worthy in 1970."
+   }
+  }
+ ]
+}

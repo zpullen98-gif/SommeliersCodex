@@ -1,0 +1,40 @@
+{
+ "file": "rewrite/categories/r1_austria.py",
+ "findings": [
+  {
+   "id": "i-8vs3sb9z",
+   "kind": "outdated",
+   "claim": "Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder, and its name comes from breaking the shrivelled berries out of the bunch.",
+   "because": "That was the old Pradikat (27 KMW). Under the current Weingesetz 2009, §11, Ausbruch is no longer a separate step. A Trockenbeerenauslese (minimum 30 KMW) from the Freistadt Rust may be labelled 'Ruster Ausbruch', and the name may only be used together with 'Rust'. This restriction has applied since 2016. The Ruster Ausbruch DAC Verordnung also sets a minimum must weight of 30 KMW, from botrytised berries shrivelled naturally on the vine and picked by selective hand harvest.",
+   "sources": [
+    "https://www.jusline.at/gesetz/weing/paragraf/11",
+    "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20011292",
+    "https://de.wikipedia.org/wiki/Ausbruch_(Wein)"
+   ],
+   "fix": "Ausbruch once sat between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder; today the name belongs to Rust alone and requires Trockenbeerenauslese must weight (30 KMW). The name comes from breaking the shrivelled berries out of the bunch.",
+   "batch": 53,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation says, in the present tense, that Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder. That is outdated. I checked the current Weingesetz 2009 §11 on jusline. It lists the Prädikat categories as Spätlese 19, Auslese 21, Beerenauslese 25, Eiswein 25, Strohwein/Schilfwein 25 and Trockenbeerenauslese 30 KMW. Ausbruch is not a step on that list. Instead, a wine from Freistadt Rust that meets the Trockenbeerenauslese conditions may be labelled \"Ruster Ausbruch\" in place of \"Trockenbeerenauslese\", and the word \"Ausbruch\" may not be used on any other wine. German Wikipedia dates the restriction to Rust to 2016, puts the minimum at 30 KMW, and adds that Ruster Ausbruch DAC has existed since October 2020. The old separate Ausbruch Prädikat, with its 27 KMW minimum, is what placed it between the two. The finding does not question the question's keyed answer (fresh must or wine from the same vineyard, as the traditional method), and that answer stands. The examiner's fix corrects only the outdated sentence and keeps the etymology.",
+   "verifySources": [
+    "https://www.jusline.at/gesetz/weing/paragraf/11",
+    "https://de.wikipedia.org/wiki/Ausbruch_(Wein)"
+   ],
+   "finalFix": "Ausbruch once sat between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder; today the name belongs to Rust alone and requires Trockenbeerenauslese must weight (30 KMW). The name comes from breaking the shrivelled berries out of the bunch.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-8vs3sb9z",
+    "cat": "Austria",
+    "q": "Shrivelled botrytis berries are often too dry to yield anything under the press. What did the traditional Ruster method add to get them moving?",
+    "opts": [
+     "Sugar syrup made from concentrated must, added at the press",
+     "Neutral grape spirit poured over them, as in a fortified wine",
+     "Fresh must or wine from healthy grapes of the same vineyard",
+     "Water heated enough to dissolve the sugar out of the skins"
+    ],
+    "a": 2,
+    "exp": "Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder, and its name comes from breaking the shrivelled berries out of the bunch. The historic definition allowed only must or wine off the same vineyard and the same harvest, which is what kept the practice from being plain dilution. Rust's own designation no longer allows the addition at all, so the modern wine is pressed from the dried fruit alone."
+   }
+  }
+ ]
+}

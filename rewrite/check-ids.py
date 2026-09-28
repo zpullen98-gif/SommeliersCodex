@@ -63,7 +63,7 @@ def load_at_ref(name, ref):
 
 def ids_of(mod):
     prefix = getattr(mod, "PREFIX", "i")
-    return [lib.mint(mod.CAT, e["q"], prefix) for e in mod.BANK]
+    return [lib.ident(mod.CAT, e, prefix) for e in mod.BANK]
 
 
 def main():

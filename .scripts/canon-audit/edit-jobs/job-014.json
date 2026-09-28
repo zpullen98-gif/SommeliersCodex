@@ -1,0 +1,291 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-m7eg1sls",
+   "kind": "wrong-key",
+   "claim": "Catalonia's cava industry, 1970s — mechanized riddling that conquered Champagne itself (exp: 'Technology flowed north for once.')",
+   "because": "The gyropalette was patented in Champagne in 1968 by two French growers, Jacques Ducoin and Claude Cazals. The first prototype was built in 1973 and trialled at Pierry, and wide adoption followed Piper-Heidsieck's large order in 1978 (Union des Maisons de Champagne, 'The history of riddling'). Wikipedia records the same 1968 patent and says the machine reached Spain in the mid-1970s, with Codorníu as its first big user. 'Girasol' is the Spanish name for the machine and marks where it was adopted early, not where it was invented. The Catalan invention story is a disputed local claim. Teaching it as the answer to 'inventors and country' is wrong.",
+   "sources": [
+    "https://maisons-champagne.com/en/appellation/stages-in-winemaking/article/the-history-of-riddling-remuage",
+    "https://en.wikipedia.org/wiki/Gyropalette"
+   ],
+   "fix": "ans: 'Claude Cazals and Jacques Ducoin, Champagne growers, France (patent 1968, prototype 1973). Catalan cava houses led by Codorníu were the first large-scale users from the mid-1970s, and girasol is the Spanish name for the machine.' exp: 'It is French by patent and Catalan by adoption. Cava's early large-scale use helped push the machine back into Champagne from 1978.' Accept list: 'cazals ducoin france champagne 1968' and 'france champagne'.",
+   "batch": 13,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I could not refute the finding. The Union des Maisons de Champagne's history of riddling says Champagne growers Jacques Ducoin and Claude Cazals patented the riddling cage in 1968. Trials began at Pierry that year, the first \"gyro\" prototype was built in 1973, and the Station Oenotechnique de Champagne was the main place it was developed. Wikipedia's Gyropalette article also gives the 1968 French patent by Cazals and Ducoin, and says the machine reached Spain in the mid-1970s with Codorníu as its first big user. The idea that Catalonia invented it appears only in secondary sources: Wikipedia's Cava article and marketing sites. That is a local claim about popularising the girasol, and no patent or dated invention supports it. So the keyed answer (\"Catalonia's cava industry, 1970s\") and the explanation (\"Technology flowed north for once\") teach the wrong inventors and the wrong country for a question that asks for exactly those.\n\nThe examiner's fix goes further than the evidence in two places, so it needs trimming.\n(1) The UMC source says the first commercial order came from Italy in 1976 (19 machines). The fix calls Catalan houses the first large-scale users, and only Wikipedia's \"first big user in Spain\" wording supports that.\n(2) The fix says cava's use \"helped push the machine back into Champagne from 1978.\" The UMC credits Champagne's adoption to Piper-Heidsieck's order of 221 machines at Christmas 1978, followed by Taittinger's order of 231, and draws no causal link to cava. That line should come out.",
+   "verifySources": [
+    "https://maisons-champagne.com/en/appellation/stages-in-winemaking/article/the-history-of-riddling-remuage",
+    "https://en.wikipedia.org/wiki/Gyropalette",
+    "https://en.wikipedia.org/wiki/Cava_(Spanish_wine)"
+   ],
+   "finalFix": "ans: \"Claude Cazals and Jacques Ducoin, Champagne growers, France (patented 1968; first prototype 1973).\" exp: \"The gyropalette is French by patent. 'Girasol' (sunflower) is its Spanish name. Catalan cava houses, Codorníu first among them, took it up early from the mid-1970s, which is where the Catalan invention legend comes from. Champagne adopted it widely after Piper-Heidsieck ordered 221 machines at the end of 1978.\" accept: [\"cazals ducoin france champagne 1968\", \"cazals ducoin france\", \"france champagne\"]. Remove the Catalan-invention accept strings (\"cava spain rovellats claim catalan invention 1970s\", \"catalonia 1970s\").",
+   "source": "pilot",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-m7eg1sls",
+    "cat": "Sparkling Wine World",
+    "q": "The gyrasol/girasol's inventors and country:",
+    "sa": 1,
+    "accept": [
+     "cava spain rovellats claim catalan invention 1970s",
+     "catalonia 1970s"
+    ],
+    "ans": "Catalonia's cava industry, 1970s — mechanized riddling that conquered Champagne itself",
+    "exp": "Technology flowed north for once."
+   }
+  },
+  {
+   "id": "m-y1wlpslu",
+   "kind": "ambiguous-stem",
+   "claim": "Margaret River's 'Gladstones papers' successor debate now focuses on which climate metric? / Harvest compression under warming",
+   "because": "Harvest compression is something that happens to a harvest. It is not a climate metric, so the key does not answer the question as asked. The climate metric tied to Gladstones is his biologically effective degree days (BEDD, Gladstones 1992), and an examiner could reasonably key that, or growing degree days. Wikipedia's Margaret River article and the regional body's climate pages record Gladstones' site selection and his 1999 subregion proposal. Neither mentions a 'successor debate' that centres on harvest compression, so the key cannot be checked against any source.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Margaret_River_(wine_region)",
+    "https://margaretriver.wine/climate-soils/",
+    "https://link.springer.com/article/10.1007/s00484-017-1370-9"
+   ],
+   "fix": "Rewrite the stem so it asks for the phenomenon, not a metric. For example: 'Under a warming climate, which harvest-timing problem do Margaret River growers now discuss, as a sequel to Gladstones' original site-selection work?' Keep 'harvest compression' as the answer. Or keep the metric wording and key Gladstones' biologically effective degree days (BEDD).",
+   "batch": 13,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "This is a short-answer item (sa:1). The stem asks for \"which climate metric\", but the key is \"harvest compression under warming\", which is a phenomenon and not a metric. A candidate who answers with a real metric tied to Gladstones would be marked wrong, because the accept list is only [\"ocean warming harvest compression\", \"harvest compression earlier vintages\"]. Real metrics here would be his biologically effective degree days (BEDD), growing degree days (GDD) or mean January temperature. So the stem is faulty as the examiner says.\n\nI could not find any published \"Gladstones papers successor debate\". The phrase appears to be the Codex's own invention.\n\nThe key content itself is real. Wines of WA's Margaret River 2024 vintage report calls the vintage \"compressed and fast-paced\": whites were picked over two weeks instead of the usual four, all varieties reached maturity early, and optimal ripeness \"came and went quickly\".\n\nThe examiner's fix is partly off:\n(a) The first rewrite keeps the unsourced framing, \"as a sequel to Gladstones' original site-selection work\".\n(b) The alternative, keying BEDD, has no support. No source says the current Margaret River warming debate centres on BEDD. Keying it would swap one invented claim for another.",
+   "verifySources": [
+    "https://winewa.asn.au/margaret-river-vintage-report-2024/",
+    "https://www.thedrinksbusiness.com/2025/05/how-margaret-river-winemakers-are-protecting-their-textbook-perfect-region/",
+    "https://margaretriver.wine/climate/",
+    "https://en.wikipedia.org/wiki/Margaret_River_(wine_region)"
+   ],
+   "finalFix": "Replace the stem and drop the invented \"Gladstones papers successor debate\" framing. New stem: \"Under recent warm vintages (e.g. 2024, when whites were picked over about two weeks instead of the usual four), what harvest-timing problem do Margaret River producers now discuss?\"\n\nKeep the key: \"Harvest compression: vintages start earlier and varieties ripen close together, straining pickers and winery capacity\".\n\nKeep the accept list, and add the plain \"harvest compression\".\n\nDo not re-key to BEDD: no source ties the current warming discussion to that metric.",
+   "source": "pilot",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-y1wlpslu",
+    "cat": "Australia",
+    "q": "Margaret River's 'Gladstones papers' successor debate now focuses on which climate metric?",
+    "sa": 1,
+    "accept": [
+     "ocean warming harvest compression",
+     "harvest compression earlier vintages"
+    ],
+    "ans": "Harvest compression under warming — varieties ripening simultaneously, straining wineries",
+    "exp": "A modern-viticulture oral thread; have one intelligent sentence ready."
+   }
+  },
+  {
+   "id": "m-nn8i2t8m",
+   "kind": "outdated",
+   "claim": "leading houses (Trimbach, Hugel) decline to use it",
+   "because": "Both houses now put Grand Cru on their labels. Trimbach released its first Grand Cru Geisberg, the 2009 vintage, in 2014 and still sells it under that name. Hugel dropped its long refusal in 2015, when Grand Cru Sporen appeared on a label, and its Grossi Laüe wines are now sold as Riesling Grand Cru Schoenenbourg and Gewurztraminer/Pinot Gris Grand Cru Sporen. Refusing the designation was their stance until the 2010s, but it is no longer true of either house.",
+   "sources": [
+    "https://www.wine-searcher.com/m/2017/05/hugel-finally-joins-the-grand-cru-class",
+    "https://www.wine-searcher.com/m/2020/02/trimbach-warms-to-grand-cru-designation",
+    "https://www.thewinesociety.com/product/riesling-grossi-laue-grand-cru-schoenenbourg-famille-hugel-2015/",
+    "https://www.thewinesociety.com/product/riesling-grand-cru-geisberg-trimbach-2016"
+   ],
+   "fix": "Rapid expansion diluted the concept, quality varies widely within crus, and for decades leading houses (Trimbach, Hugel) refused to use it, labelling their best wines by brand instead (Clos Ste Hune, Jubilee). Both came round only recently (Trimbach Geisberg from the 2009 vintage, Hugel from 2015), which left the market unconvinced. Also change the accepted answer 'top houses opting out' to 'top houses long opting out'.",
+   "batch": 14,
+   "verdict": "confirmed",
+   "verifyReason": "The model answer uses the present tense (\"leading houses (Trimbach, Hugel) decline to use it\"), and that is no longer true of either house. Hugel: World of Fine Wine, in its note on the 2011 Grossi Laüe Gewurztraminer, says Jean Hugel's ban on the words \"grand cru\" on a Hugel label was \"finally abandoned by the family in 2015, when 'Grand Cru Sporen' appeared on the label\". Hugel's own authentication pages and The Wine Society now list Grossi Laüe Riesling Grand Cru Schoenenbourg and Gewurztraminer and Pinot Gris Grand Cru Sporen. Trimbach: its first separate Grand Cru Geisberg bottling is the 2009 vintage, from the Couvent de Ribeauvillé vines it took over in 2008, and it is sold under that name (merchant listings from K&L, Wine.com and Palm Bay, plus a James Suckling tasting note). Before 2009 Trimbach's Geisberg fruit went into Cuvée Frédéric Emile. So calling the refusal a current stance is outdated, and the question teaches it as a reason. The underlying argument still holds: expansion diluted the concept, and the long refusal hurt the category's credibility. So the examiner's fix is right, recasting the refusal as a long-standing past stance, with both reversal dates correct. The two wine-searcher sources did not load (403), so the finding rests on World of Fine Wine and the producer and merchant pages above.",
+   "verifySources": [
+    "https://worldoffinewine.com/news-features/2011-hugel-grossi-laue-gewurztraminer",
+    "https://m.hugel.com/W819YE",
+    "https://m.hugel.com/91HCYE",
+    "https://www.thewinesociety.com/product/riesling-grossi-laue-grand-cru-schoenenbourg-famille-hugel-2015/",
+    "https://www.thewinesociety.com/product/gewurztraminer-grossi-laue-grand-cru-sporen-famille-hugel-2015/",
+    "https://www.klwines.com/p/i?i=1228208",
+    "https://www.jamessuckling.com/tasting-notes/45131/trimbach-riesling-alsace-grand-cru-geisberg-2009/",
+    "https://www.wine.com/product/trimbach-geisberg-riesling-grand-cru-2009/214183"
+   ],
+   "finalFix": "ans: \"Rapid expansion diluted the concept, quality varies widely within crus, and for decades leading houses (Trimbach, Hugel) refused to use it, labelling their best wines by brand instead (Clos Ste Hune, Jubilee). Both came round only recently (Trimbach Grand Cru Geisberg from the 2009 vintage, Hugel from 2015 with Grossi Laüe Grand Cru Sporen), which left the market unconvinced.\" In accept, change 'dilution of the concept and top houses opting out' to 'dilution of the concept and top houses long opting out'.",
+   "source": "pilot",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-nn8i2t8m",
+    "cat": "Alsace",
+    "q": "Explain why Alsace's 'grand cru' system underperforms commercially despite its 51 sites.",
+    "sa": 1,
+    "accept": [
+     "too many crus inconsistent quality producers ignore it varietal confusion",
+     "dilution of the concept and top houses opting out"
+    ],
+    "ans": "Rapid expansion diluted the concept, quality varies widely within crus, and leading houses (Trimbach, Hugel) decline to use it — leaving the market unconvinced",
+    "exp": "A market-analysis question as much as a wine one."
+   }
+  },
+  {
+   "id": "m-p4lgwdgz",
+   "kind": "wrong-key",
+   "claim": "accept: \"saumur vouvray cremant de loire montlouis\"",
+   "because": "The keyed answer (Crémant de Loire, Saumur, Vouvray, Montlouis) is correct, but the grader also accepts an order that puts Saumur and Vouvray above Crémant de Loire. That order is wrong. Crémant de Loire makes about 132,000 to 150,000 hl (17 to 23 million bottles) and is the Loire's largest sparkling appellation. Saumur makes just under 80,000 hl, Vouvray sparkling about 62,000 hl and Montlouis about 9,400 hl. A candidate who gives the wrong order is marked correct.",
+   "sources": [
+    "https://www.europeancellars.com/loire-valley-bubbles/",
+    "https://www.wine-searcher.com/regions-cremant+de+loire"
+   ],
+   "fix": "Remove the accept string \"saumur vouvray cremant de loire montlouis\" and keep only \"cremant de loire saumur vouvray montlouis\".",
+   "batch": 15,
+   "verdict": "confirmed",
+   "verifyReason": "The examiner is right. The question (m-p4lgwdgz, MASTER_QUESTIONS, short-answer) asks for the Loire's four sparkling centres in descending volume. Its own model answer (\"ans\") gives Crémant de Loire, Saumur, Vouvray, Montlouis. But the first accept string, \"saumur vouvray cremant de loire montlouis\", puts Crémant de Loire third, so a candidate who gives that wrong order is marked correct.\n\nThe production figures agree with the model answer:\n- Crémant de Loire is the largest. European Cellars puts it at close to 150,000 hl and calls it \"the largest sparkling wine designation in the Loire\". Other reports give 132,000 hl (17 million bottles), and 23 million bottles in 2022. Meininger's search summary gives it about 83% of Loire sparkling output.\n- Saumur comes second, just under 80,000 hl (about 12% of output).\n- Vouvray comes third, about 62,000 hl (about 5%).\n- Montlouis comes last, about 9,400 hl.\n\nNothing supports ranking Saumur or Vouvray above Crémant de Loire, so the extra accept string is simply wrong. I could not open the Interloire page or the Meininger's page directly (both returned 403), but the search summaries of both agree with the figures above.",
+   "verifySources": [
+    "https://www.europeancellars.com/loire-valley-bubbles/",
+    "https://www.meiningers-international.com/wine/analysis/loire-sparkles",
+    "https://www.vinsdeloire.fr/en/loire-valley-wine-styles/sparkling-wines",
+    "https://france3-regions.franceinfo.fr/pays-de-la-loire/maine-et-loire/saumur/frais-leger-facile-a-deguster-voici-pourquoi-le-cremant-de-loire-et-ses-fines-bulles-montent-en-gamme-3225149.html"
+   ],
+   "finalFix": "In data-master.js MASTER_QUESTIONS, id m-p4lgwdgz: delete \"saumur vouvray cremant de loire montlouis\" from the accept list and keep only \"cremant de loire saumur vouvray montlouis\". That matches the \"ans\" field (Crémant de Loire, Saumur, Vouvray, Montlouis).",
+   "source": "pilot",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-p4lgwdgz",
+    "cat": "Loire",
+    "q": "Name the Loire's four sparkling centers in descending volume.",
+    "sa": 1,
+    "accept": [
+     "saumur vouvray cremant de loire montlouis",
+     "cremant de loire saumur vouvray montlouis"
+    ],
+    "ans": "Crémant de Loire (region-wide, Saumur-centered), Saumur, Vouvray, Montlouis",
+    "exp": "Montlouis' pétillant originel (ancestral) is the somm darling."
+   }
+  },
+  {
+   "id": "m-muwun092",
+   "kind": "wrong-fact-in-option",
+   "claim": "WIETA fair-trade certification",
+   "because": "WIETA (Wine and Agricultural Ethical Trade Association, founded 2002) is a South African ethical-trade and labour-audit body, and its seal (launched 2012) is a Fair Labour Certification. It is not Fairtrade. Fairtrade is a separate international certification with different rules; only Fairtrade requires a living wage. Calling WIETA 'fair-trade certification' confuses the two schemes.",
+   "sources": [
+    "https://www.wosa.co.za/Sustainability/Socially-Sustainable/WIETA/About-WIETA/",
+    "https://sustainable-agri-trade.eu/ethical-trade-initiatives-in-the-south-african-wine-industry-a-brief-comparison/",
+    "https://wieta.org.za/"
+   ],
+   "fix": "Replace 'WIETA fair-trade certification' with 'WIETA ethical-trade (Fair Labour) certification, alongside separate Fairtrade-certified producers'.",
+   "batch": 15,
+   "verdict": "confirmed",
+   "verifyReason": "The model answer calls WIETA \"fair-trade certification\", and that is wrong. WOSA's own WIETA page gives the full name as the Wine and Agricultural Industry Ethical Trade Association. It calls the scheme a multi-stakeholder social standard, and its seal the \"Fair Labour Certification seal\". The page also says the seal is \"a parallel effort to Fair Trade or Fair for Life\", so WIETA itself treats Fairtrade as a separate scheme. WIETA's seal policy (Version 4, 2022) and its Fair Labour Practice Wine Seal page use the same name. The seal was introduced in 2012. South Africa is also the world's largest producer of Fairtrade wine, under the separate international Fairtrade scheme, so mixing the two up is an error an examiner would catch. The point is small but real. The examiner's fix is accurate. The clause about separate Fairtrade producers is optional but correct. The accept keywords do not depend on this wording and need no change.",
+   "verifySources": [
+    "https://www.wosa.co.za/Sustainability/Socially-Sustainable/WIETA/About-WIETA/",
+    "https://wieta.org.za/fair-labour-practice-wine-seal/",
+    "https://wieta.org.za/wp-content/uploads/2022/02/Fair-Labour-Certification-Seal-Policy-update_2022.pdf",
+    "https://drinksint.com/news/fullstory.php/aid/2946/South_Africa_launches_new_seal_to_guarantee_ethical_practice.html"
+   ],
+   "finalFix": "In \"ans\", replace \"WIETA fair-trade certification\" with \"WIETA ethical-trade (Fair Labour) certification, alongside separate Fairtrade-certified producers\".",
+   "source": "pilot",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-muwun092",
+    "cat": "South Africa",
+    "q": "Explain the ethical dimension every Master-level South Africa answer must acknowledge.",
+    "sa": 1,
+    "accept": [
+     "dop system legacy labor equity transformation black ownership",
+     "apartheid labor history transformation initiatives"
+    ],
+    "ans": "The legacy of the dop (alcohol-wage) system and apartheid labor, and the ongoing transformation work — equity schemes, black-owned brands, WIETA fair-trade certification",
+    "exp": "Master candidates are expected to speak about this fluently and honestly."
+   }
+  },
+  {
+   "id": "m-hgn6gjdf",
+   "kind": "outdated",
+   "claim": "The house holds that its names (Clos Sainte-Hune, Frédéric Émile) guarantee more than the cru system's politics — so the labels omit 'grand cru'",
+   "because": "Trimbach now bottles and labels four grand crus: Riesling Grand Cru Geisberg (first vintage 2009, released 2015), Grand Cru Schlossberg (2014, released 2017), Grand Cru Mandelberg (2016) and Grand Cru Brand (2018), according to Trimbach's own wine list. The house still keeps Clos Sainte-Hune (in Rosacker) and Frédéric Émile (Geisberg and Osterberg) off the grand cru label, so the stance survives only for those two brands. The accept item 'brands trump crus' is also no longer a fair summary of the house's position.",
+   "sources": [
+    "https://www.trimbach.fr/en/vins-alsace",
+    "https://en.wikipedia.org/wiki/Maison_Trimbach"
+   ],
+   "fix": "The house long held that its own names (Clos Sainte-Hune in Rosacker, Frédéric Émile from Geisberg and Osterberg) guarantee more than the cru system, so those flagships still omit 'grand cru'. Since the 2009 Geisberg (released 2015) it has also bottled Grand Cru Geisberg, Schlossberg, Mandelberg and Brand under the cru name.",
+   "batch": 152,
+   "verdict": "confirmed",
+   "verifyReason": "Trimbach's own wine list (trimbach.fr/en/vins-alsace) now shows four bottlings labelled Grand Cru: Riesling Grand Cru Geisberg (first vintage 2009, released 2015, from the Vignoble du Couvent), Grand Cru Schlossberg (first vintage 2014, released 2017), Grand Cru Mandelberg (formerly Cuvée M) and Grand Cru Brand (first vintage 2018). That makes the model answer's flat claim that \"the labels omit 'grand cru'\" out of date. Clos Sainte Hune (Rosacker) and Frédéric Emile (Geisberg and Osterberg) are the only wines still sold under the house names with no cru named, and Trimbach's own pages say so. The house's brand-over-cru stance is therefore only partly true now. A candidate who argues that Trimbach does not put 'grand cru' on its labels would be wrong about the range as it stands today. The examiner's fix matches the producer's own statements and gives the correct dates.",
+   "verifySources": [
+    "https://www.trimbach.fr/en/vins-alsace",
+    "https://www.trimbach.fr/en/all-about-clos-sainte-hune",
+    "https://alsacewinetravel.wordpress.com/2015/05/04/maison-f-e-trimbach-ribeauville/"
+   ],
+   "finalFix": "The house long held that its own names (Clos Sainte-Hune in Rosacker, Frédéric Émile from Geisberg and Osterberg) guarantee more than the cru system, so those flagships still omit 'grand cru'. Since the 2009 Geisberg (released 2015) it has also bottled Grand Cru Geisberg, Schlossberg, Mandelberg and Brand under the cru name.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-hgn6gjdf",
+    "cat": "Alsace",
+    "q": "Argue the Trimbach position on grand cru labeling in one sentence.",
+    "sa": 1,
+    "accept": [
+     "house name over cru brand consistency",
+     "brands trump crus clos sainte hune exception"
+    ],
+    "ans": "The house holds that its names (Clos Sainte-Hune, Frédéric Émile) guarantee more than the cru system's politics — so the labels omit 'grand cru'",
+    "exp": "Master orals ask you to argue producers' philosophies, not just recite."
+   }
+  },
+  {
+   "id": "m-4wr9fay5",
+   "kind": "accept-list",
+   "claim": "accept: \"alsace grand cru cremant\"",
+   "because": "No AOP called 'Alsace Grand Cru Crémant' exists. Crémant d'Alsace is the third regional AOP, and the grand crus are still wines by law, so this accept item gives credit for a made-up appellation.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC"
+   ],
+   "fix": "accept: [\"cremant d'alsace\", \"cremant\"]",
+   "batch": 152,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The question is m-4wr9fay5 in batch-152: \"Name the third Alsace wine AOP beside Alsace and Alsace Grand Cru.\" The fact behind it holds. Vins d'Alsace lists three appellations: Alsace, Alsace Grand Cru and Crémant d'Alsace (created 1976). The 51 grand crus became separate appellations in 2011. No AOP called \"Alsace Grand Cru Crémant\" exists, so that accept entry is wrong.\n\nThe entry also does real damage in the grader. I ran matchSA from C:/Users/zpull/SommeliersCodex/js/core.js against it. Because of the \"whole-word core\" rule (input covering at least 60% of the accept phrase's words), \"Alsace Grand Cru\" and \"grand cru cremant\" both grade CORRECT. \"Alsace Grand Cru\" is one of the two AOPs the stem itself rules out.\n\nThe examiner's fix, [\"cremant d'alsace\", \"cremant\"], is also faulty. A bare \"cremant\" matches by whole-word containment, so \"Crémant de Bourgogne\" (and every other crémant) grades correct.\n\nMy replacement is [\"cremant d'alsace\", \"alsace cremant\", \"cremant alsace\"]. Tested with matchSA, it:\n- accepts \"Crémant d'Alsace\", \"Alsace crémant\" and \"cremant alsace\";\n- rejects \"Alsace Grand Cru\", \"grand cru cremant\", \"Crémant de Bourgogne\", bare \"alsace\" and bare \"cremant\".\n\nBare \"cremant\" is left out on purpose: accepting it would also accept every other crémant.",
+   "verifySources": [
+    "https://www.vinsalsace.com/en/gouts-et-couleurs/aoc/",
+    "https://www.vinsalsace.com/fr/gouts-et-couleurs/aoc/aoc-alsace-grands-crus/",
+    "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-152.json (m-4wr9fay5)"
+   ],
+   "finalFix": "accept: [\"cremant d'alsace\", \"alsace cremant\", \"cremant alsace\"]",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-4wr9fay5",
+    "cat": "Alsace",
+    "q": "Name the third Alsace wine AOP beside Alsace and Alsace Grand Cru.",
+    "sa": 1,
+    "accept": [
+     "cremant d'alsace",
+     "alsace grand cru cremant"
+    ],
+    "ans": "Crémant d'Alsace (and, structurally, the 51 individual Grand Cru AOPs since 2011)",
+    "exp": "Three historic AOPs; the crus' independence made it 53 by legal count."
+   }
+  },
+  {
+   "id": "m-t7chvy1o",
+   "kind": "ambiguous-stem",
+   "claim": "Which grand cru's name means 'sorcerers' hill', beloved of Gewurztraminer at Zind-Humbrecht?",
+   "because": "None of the 51 Alsace grand crus has a name meaning sorcerers' or witches' hill, and there is no Hexenberg on the list. Zind-Humbrecht's Gewurztraminer grand crus are Hengst (stallion) and Goldert (golden). The stem assumes a false premise, the model answer admits it is a 'trap', and the accept strings ('hexenberg no sorcerer goldert brand hengst') are not an answer a grader can match fairly.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC"
+   ],
+   "fix": "q: \"Which Wintzenheim grand cru, whose name means 'stallion', is a Zind-Humbrecht Gewurztraminer site?\"; ans: \"Hengst\"; accept: [\"hengst\"]",
+   "batch": 152,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The question's premise is false, and the grader can never mark a right answer. Wikipedia lists all 51 Alsace grand crus, and none is called Hexenberg or has a name meaning sorcerers' or witches' hill. The model answer admits the question is a trap and is not a real answer. The two accept strings are run-on phrases (\"hexenberg no sorcerer goldert brand hengst\", \"hengst means stallion goldert\"), so a candidate who types a plain \"Hengst\" is refused. Only an exact copy of those phrases grades. Zind-Humbrecht's own site and its importer Kobrand show that its Gewurztraminer grand crus are Goldert (Gueberschwihr) and Hengst (Wintzenheim). Hengst is the German word for stallion. The examiner's replacement stem and accept list are right, but the fix leaves the old explanation (\"Master examiners play etymology games; compose, don't freeze\"), which would no longer fit the question. So the better fix also replaces exp.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC",
+    "https://www.zindhumbrecht.fr/en/our-bio-dynamic-wines/372-gewurztraminer-goldert-grand-cru-2018.html",
+    "https://www.kobrandwineandspirits.com/product/zind_humbrecht_gewurztraminer_hengst_grand_cru/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-152.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "q: \"Which Wintzenheim grand cru, whose name means 'stallion', is a Zind-Humbrecht Gewurztraminer site?\"; ans: \"Hengst\"; accept: [\"hengst\"]; exp: \"Hengst ('stallion' in German) is the grand cru of Wintzenheim, long reputed for Gewurztraminer on calcareous marl. Zind-Humbrecht also makes Gewurztraminer from Goldert ('golden') in Gueberschwihr. No Alsace grand cru has a name meaning sorcerers' or witches' hill.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-t7chvy1o",
+    "cat": "Alsace",
+    "q": "Which grand cru's name means 'sorcerers' hill', beloved of Gewurztraminer at Zind-Humbrecht?",
+    "sa": 1,
+    "accept": [
+     "hexenberg no sorcerer goldert brand hengst",
+     "hengst means stallion goldert"
+    ],
+    "ans": "(The trap: 'Hexenbückel' is folklore) — accept discussion; Hengst = stallion, Goldert = golden slope: etymologies are oral fodder",
+    "exp": "Master examiners play etymology games; compose, don't freeze."
+   }
+  }
+ ]
+}

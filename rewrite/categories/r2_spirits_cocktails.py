@@ -347,7 +347,7 @@ BANK = [
        "Vermouth di Torino",
        ["vermouth di torino", "vermouth of turin", "torino", "turin",
         "vermouth di torino ig"],
-       "The wine must be Italian and the production must happen in Piedmont, with the Superiore tier adding that the Artemisia itself be grown there. Turin is where the commercial category began in the eighteenth century, which is why the aromatised wine trade and the Italian bitters trade grew up in the same city."),
+       "The wine must be Italian, the production must happen in Piedmont, and the Artemisia (absinthium and/or pontica) must be grown or gathered in Piedmont. The Superiore tier adds a minimum of 17 percent alcohol, at least half the volume from Piedmontese wine, and other Piedmont-grown herbs besides the wormwood. Turin is where the commercial category began in the eighteenth century, which is why the aromatised wine trade and the Italian bitters trade grew up in the same city."),
     SA("Vermouth, amari and aperitifs",
        "A family of French aperitif wines takes its name from the bark that bitters it. Name the family.",
        "Quinquina",

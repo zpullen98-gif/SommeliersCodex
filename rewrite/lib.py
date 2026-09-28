@@ -41,12 +41,21 @@ STANDOUT_MIN_N = 12
 ENGINE_STOPWORDS = {"the", "a", "an", "chateau", "domaine", "de", "du", "des", "la", "le"}
 
 
-def Q(block, q, opts, a, exp):
-    """Multiple choice."""
-    return {"block": block, "q": q, "opts": opts, "a": a, "exp": exp}
+def Q(block, q, opts, a, exp, pin=None):
+    """Multiple choice.
+
+    `pin` keeps a shipped id when a stem is CORRECTED: ids are minted from
+    [cat, q], so a corrected stem would otherwise get a new id and strand every
+    reader's history on the question (see ident()). Pin only a correction of the
+    same question, never a new question in an old slot.
+    """
+    e = {"block": block, "q": q, "opts": opts, "a": a, "exp": exp}
+    if pin:
+        e["pin"] = pin
+    return e
 
 
-def SA(block, q, ans, accept, exp, ex=False):
+def SA(block, q, ans, accept, exp, ex=False, pin=None):
     """Short answer. `accept` is graded by core.js matchSA; see accept_problems.
 
     READ THIS BEFORE USING '~'. The tilde is NOT a strict match. core.js accepts
@@ -66,6 +75,8 @@ def SA(block, q, ans, accept, exp, ex=False):
     e = {"block": block, "q": q, "sa": 1, "accept": list(accept), "ans": ans, "exp": exp}
     if ex:
         e["ex"] = 1
+    if pin:
+        e["pin"] = pin
     # The displayed answer must always grade as correct. A student reads `ans`
     # on the review screen and types it back next time; if the accept list does
     # not cover it they are marked wrong for giving the answer the app showed
@@ -101,6 +112,18 @@ def b36(n, width):
 def mint(cat, q, prefix="i"):
     """Same scheme as .scripts/mint-ids.py, so these are the real minter's ids."""
     return prefix + "-" + b36(fnv1a64(json.dumps([cat, q])), 8)
+
+
+def ident(cat, e, prefix="i"):
+    """The id a bank entry ships under: its pin when a corrected stem kept the
+    shipped id, else the mint of [cat, q]. Every writer and checker uses this,
+    so a pinned correction reads as the same question everywhere."""
+    pin = e.get("pin")
+    if pin:
+        if not pin.startswith(prefix + "-"):
+            raise ValueError(f"pin {pin!r} does not carry the prefix {prefix!r}")
+        return pin
+    return mint(cat, e["q"], prefix)
 
 
 def shuffle(opts, a, q):
@@ -239,7 +262,7 @@ def structural(bank, syllabus, cat, prefix="i"):
         if e["q"] in seen_q:
             problems.append("duplicate stem: %s" % stem)
         seen_q.add(e["q"])
-        i = mint(cat, e["q"], prefix)
+        i = ident(cat, e, prefix)
         if i in seen_id:
             problems.append("id collision %s" % i)
         seen_id[i] = e["q"]
@@ -825,7 +848,7 @@ def emit(bank, cat, slug, prefix="i", rank="Rank I", varname=None):
     out.write("var %s=[\n" % varname)
     rows = []
     for e in bank:
-        row = {"id": mint(cat, e["q"], prefix), "cat": cat, "q": e["q"]}
+        row = {"id": ident(cat, e, prefix), "cat": cat, "q": e["q"]}
         if is_mc(e):
             row["opts"] = e["opts"]
             row["a"] = e["a"]

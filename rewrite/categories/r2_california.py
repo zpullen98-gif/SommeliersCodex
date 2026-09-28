@@ -117,11 +117,11 @@ BANK = [
        "Federal law asks only 75 percent for a county or state name, which would let a Sonoma County bottling be topped up from anywhere. California overrides that: a wine carrying any Californian appellation of origin must be made entirely from Californian fruit. It is one of several places where state law is stricter than the federal floor rather than merely different from it.",
        ex=True),
     SA("AVA law and the American label",
-       "Fruit grown in one state is blended in a cellar with fruit from another, leaving the broadest appellation on the books as the only one available. What may the label no longer state?",
-       "The vintage",
-       ["vintage", "vintage date", "vintage year", "year of harvest", "harvest year",
-        "harvest date", "the year the grapes were harvested", "the year the grapes were picked"],
-       "Two or three states that are contiguous can share an appellation of their own, with the percentage from each printed on the label, and a wine carrying it keeps its vintage. Where that is not available the wine falls back to American, which is a country-level appellation, and a vintage date is permitted only when the appellation is something other than a country. So the harvest year is the price of the fallback. It is a useful reminder that the appellation on an American label controls far more than geography."),
+       "Fruit from two non-contiguous states is blended, so the only appellation left is American. If the label shows a vintage, what share of the wine must come from that year's harvest?",
+       "85 percent",
+       ["85", "85%", "85 percent", "eighty-five percent", "eighty five percent"],
+       "A country appellation such as American counts as an appellation other than a viticultural area, so 27 CFR 4.27(a)(2) sets the vintage threshold at 85 percent; an AVA would need 95. Until TTB amended 4.27 in 2012, a country appellation did not qualify for vintage labeling at all, which is why older references still say American wine cannot carry a vintage.",
+       pin="c-ijf6g9l0"),
 
     # ------------------------------------------------------ Napa Valley floor (5)
     Q("Napa Valley floor",

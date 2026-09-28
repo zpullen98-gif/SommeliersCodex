@@ -1,0 +1,303 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-ih3g5con",
+   "kind": "outdated",
+   "claim": "minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).",
+   "because": "Under the current Eger PDO product specification (termékleírás), Egri Bikavér (Classicus) must blend at least four varieties, each above 5%, with Kékfrankos at 30-65% and the largest component. So Kékfrankos may exceed 50%. The old 'no variety above 50%' cap comes from the earlier rules, where the minimum was three varieties. The Eger wine route's summary of the specification gives the same four-variety, 30-65% rule for Superior and Grand Superior. Producers' labels bear this out: Bukolyi's Nagy-Eged Grand Superior is 60% Kékfrankos with four varieties. That means both the 50% cap and 'Superior requires five' are no longer current.",
+   "sources": [
+    "https://egriborut.hu/2021/03/18/az-egri-bikaver-keszites-szabalyai-az-egri-termekleirasaban/",
+    "https://hungarianwines.eu/bloody-legends-and-crystal-clear-regulations/",
+    "https://www.winewithseth.com/winewiki/bikaver-varieties-permitted-hungarys-bulls-blood-blend-regulations/",
+    "https://bukolyimarcell.hu/termek/egri-bikaver-nagy-eged-grand-superior/"
+   ],
+   "fix": "Kékfrankos (Blaufränkisch): 30-65% of the blend and always the largest component, in a blend of at least four permitted varieties, each above 5%.",
+   "batch": 17,
+   "verdict": "confirmed",
+   "verifyReason": "I checked the official product specification and could not refute the finding. The document is the \"EGRI BIKAVÉR oltalom alatt álló eredetmegjelölés termékleírása\", original version, published on boraszat.kormany.hu. Egri Bikavér is now its own PDO, and this specification applies to wines marketed from the 2023/2024 wine year.\n\nSection III sets the same blending rules for Classicus, Superior and Grand Superior:\n- at least four varieties (\"legalább négy szőlőfajta\"), each above 5%;\n- Kékfrankos between 30% and 65% (\"30 és 65% között\") and the largest component (\"ennek a fajtának kell a legnagyobb arányban jelen lennie\");\n- Turán (and Bíbor kadarka for Classicus) capped at 10%.\n\nThere is no longer a 50% cap on any single variety, since Kékfrankos may reach 65%, and Superior does not require five varieties. Both clauses in the model answer come from earlier Eger PDO rules, where the minimum was three varieties and no variety could pass 50% (hungarianwines.eu still describes those old rules). The 30-65%, four-variety rule was already in the Eger specification when egriborut.hu summarised it in March 2021. It was carried into the stand-alone Egri Bikavér PDO specification from the 2023/2024 wine year. Kékfrankos is still the keyed grape and the accept list (kekfrankos, blaufrankisch) is fine. The only problem is the outdated detail in the model answer, and the examiner's fix states the current rule correctly.",
+   "verifySources": [
+    "https://boraszat.kormany.hu/download/3/72/23000/EGRI%20BIKAV%C3%89R%20term%C3%A9kle%C3%ADr%C3%A1s_honlapra.pdf",
+    "https://boraszat.kormany.hu/download/d/c7/63000/Eger_OEM_term%C3%A9kle%C3%ADr%C3%A1s_v6.pdf",
+    "https://egriborut.hu/2021/03/18/az-egri-bikaver-keszites-szabalyai-az-egri-termekleirasaban/",
+    "https://hungarianwines.eu/bloody-legends-and-crystal-clear-regulations/"
+   ],
+   "finalFix": "Kékfrankos (Blaufränkisch): 30-65% of the blend and always the largest component, in a blend of at least four permitted varieties, each above 5%.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-ih3g5con",
+    "cat": "Hungary & Greece",
+    "q": "Egri Bikavér must be built around which grape today?",
+    "sa": 1,
+    "accept": [
+     "kekfrankos",
+     "blaufrankisch"
+    ],
+    "ans": "Kékfrankos (Blaufränkisch) — minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).",
+    "exp": "The 'Bull's Blood' siege legend of Eger, 1552."
+   }
+  },
+  {
+   "id": "a-qnmekbf5",
+   "kind": "accept-list",
+   "claim": "accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\"",
+   "because": "The stem asks for Puglia's DOCGs, and there are four: Castel del Monte Bombino Nero, Castel del Monte Nero di Troia Riserva, Castel del Monte Rosso Riserva and Primitivo di Manduria Dolce Naturale. The model answer itself lists all four. This accept entry names only two of them and leaves out both Castel del Monte Riserva DOCGs, so the grader passes an answer that is half missing. The other entries each cover all four, either by name or as 'three Castel del Monte DOCGs'.",
+   "sources": [
+    "https://www.quattrocalici.it/denominazioni/castel-del-monte-bombino-nero-docg/",
+    "https://www.assovini.it/italia/puglia/item/377-castel-del-monte-bombino-nero-docg",
+    "https://it.wikipedia.org/wiki/Castel_del_Monte_Bombino_Nero"
+   ],
+   "fix": "Delete the accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\".",
+   "batch": 19,
+   "verdict": "confirmed",
+   "verifyReason": "Puglia has four DOCGs: Castel del Monte Bombino Nero, Castel del Monte Nero di Troia Riserva, Castel del Monte Rosso Riserva and Primitivo di Manduria Dolce Naturale. The model answer lists all four. The accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\" names only two. In matchSA (C:/Users/zpull/SommeliersCodex/js/core.js), an input that normalizes to that phrase is an exact match, and any longer input containing it matches by whole-phrase containment. So a student who leaves out both Castel del Monte Riserva DOCGs is graded correct. Deleting the entry costs nothing: the full answer is still graded by the model-answer equality check and by the first accept entry, and the \"three castel del monte docgs plus...\" entry and the grape-list entry both cover all four. The other facts in the question check out: the three Castel del Monte DOCGs date from 2011, Bombino Nero is made only as rosato, and Primitivo di Manduria Dolce Naturale is a DOCG while dry Primitivo di Manduria stays DOC.",
+   "verifySources": [
+    "https://lestradedelvinopuglia.com/en/doc-igt-docg/docg/",
+    "https://www.assovini.it/italia/puglia/item/377-castel-del-monte-bombino-nero-docg",
+    "https://www.agraria.org/vini/castel-del-monte-bombino.htm",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)"
+   ],
+   "finalFix": "Delete the accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\".",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-qnmekbf5",
+    "cat": "Italy Central & South",
+    "q": "Name Puglia's DOCGs.",
+    "sa": 1,
+    "accept": [
+     "castel del monte bombino nero castel del monte nero di troia riserva castel del monte rosso riserva and primitivo di manduria dolce naturale",
+     "three castel del monte docgs plus primitivo di manduria dolce naturale",
+     "castel del monte bombino nero and primitivo di manduria dolce naturale",
+     "bombino nero rosato nero di troia riserva rosso riserva dolce naturale"
+    ],
+    "ans": "Castel del Monte Bombino Nero, Castel del Monte Nero di Troia Riserva, Castel del Monte Rosso Riserva, and Primitivo di Manduria Dolce Naturale.",
+    "exp": "All four were elevated in 2011, which is why they are so often missed. Castel del Monte Bombino Nero is a rosato DOCG - Italy's only one - and that is the fact most likely to be asked. Note equally what is not DOCG: Primitivo di Manduria itself, Salice Salentino, Copertino and Gioia del Colle are all DOC, so the sweet Dolce Naturale sits above the dry wine that made the zone famous."
+   }
+  },
+  {
+   "id": "a-ez6nm4ot",
+   "kind": "wrong-explanation",
+   "claim": "The only bottle size permitted for Vin Jaune.",
+   "because": "The Arbois cahier des charges (INAO, 2022, ch. I, VIII 3°b) reads the other way round. It reserves the 62 cl clavelin to wines carrying the 'vin jaune' mention; it does not make the clavelin compulsory for vin jaune. Only the Château-Chalon AOP requires that its wine be sold in the 62 cl clavelin alone (INAO product page). Arbois and Côtes du Jura vin jaune is also sold in magnums (150 cl).",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf",
+    "https://www.inao.gouv.fr/produit/chateau-chalon-12233",
+    "https://onshorecellars.com/products/fruitiere-vinicole-darbois-vin-jaune-arbois"
+   ],
+   "fix": "The 62 cl clavelin is reserved by law for vin jaune; in Château-Chalon it is the only bottle allowed.",
+   "batch": 20,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The Arbois cahier des charges (INAO, national opposition procedure following the CNAO opinion of 10 Feb 2022, ch. I, IX 3° b) says the 62 cl clavelin, or \"bouteille à vin jaune\", \"est réservée au conditionnement des seuls vins ... bénéficiant de la mention « vin jaune »\". So the law reserves the bottle for vin jaune. It does not require vin jaune to go into it. The Château-Chalon cahier (IX 3° b) likewise reserves the clavelin, stamped with the appellation's seal, \"exclusivement\" for Château-Chalon. The INAO product page for Château-Chalon goes further and says the AOP can be sold only in the clavelin, with a single capacity of 62 cl. Vin jaune from Arbois and the other AOCs does appear in 150 cl magnums (retail listings, e.g. a Jacques Tissot Arbois magnum). The explanation \"The only bottle size permitted for Vin Jaune\" is therefore false for Arbois, Côtes du Jura and L'Étoile vin jaune. The examiner's fix is correct and matches the sources. The model answer, accept list and stem are fine: the cahier's own lien section says 62 cl is what remains of 1 litre after 6 years of élevage without topping up.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf",
+    "https://www.sv-jura.com/medias/aoc/cahier-des-charges/CDC_CHATEAU_CHALON_V2.pdf",
+    "https://www.inao.gouv.fr/produit/chateau-chalon-12233",
+    "https://www.vinatis.com/achat-jura-vin-jaune"
+   ],
+   "finalFix": "The 62 cl clavelin is reserved by law for vin jaune; in Château-Chalon it is the only bottle allowed.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-ez6nm4ot",
+    "cat": "Jura, Savoie & Corsica",
+    "q": "Why does the clavelin hold exactly 62 cl?",
+    "sa": 1,
+    "accept": [
+     "what remains of a liter after aging",
+     "evaporation from one liter",
+     "the share lost to the angels"
+    ],
+    "ans": "Legend: what survives of a liter after six-plus years of evaporation",
+    "exp": "The only bottle size permitted for Vin Jaune."
+   }
+  },
+  {
+   "id": "a-yj5nor7h",
+   "kind": "wrong-explanation",
+   "claim": "Bonnezeaux and Coteaux du Layon surround it.",
+   "because": "Quarts de Chaume Grand Cru lies within part of a single commune, Rochefort-sur-Loire, on the right bank of the Layon. It is surrounded by Coteaux du Layon, including the Chaume premier cru. Bonnezeaux is a separate enclave at Thouarcé, about 13 km to the southeast, and does not border it.",
+   "sources": [
+    "https://www.vinsdeloire.fr/en/loire-wines/quarts-chaume-grand-cru/all-about-quarts-chaume-grand-cru",
+    "https://www.wine-searcher.com/regions-bonnezeaux",
+    "https://www.wine-searcher.com/regions-quarts+de+chaume"
+   ],
+   "fix": "Minimum 298 g/L must weight; Coteaux du Layon (with its Chaume premier cru) surrounds it, and Bonnezeaux lies about 13 km upstream at Thouarcé.",
+   "batch": 21,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The explanation for a-yj5nor7h (batch 021) is wrong, as the examiner says. French Wikipedia places Quarts de Chaume south of the hamlet of Chaume, at the lieu-dit \"les Quarts\" on the Layon, in Rochefort-sur-Loire. It says the vineyard is \"enclavé au milieu des coteaux-du-layon\" (an enclave inside Coteaux du Layon) and names no Bonnezeaux neighbour. Bonnezeaux has been confined since 2021 to the delegated commune of Thouarcé (Bellevigne-en-Layon), further up the Layon. The two do not border each other, so \"Bonnezeaux and Coteaux du Layon surround it\" is false. The 298 g/L figure is correct: the cahier des charges says the must must reach at least 298 g/L of sugar before fermentation. The 2011 date is also correct: the November 2011 change added \"grand cru\". The keyed answer and accept list are fine. The only problem is the explanation. The examiner's fix is right in substance, but I could not confirm its \"about 13 km\" figure, so the better fix leaves the distance out. It also names Bonnezeaux as an appellation in its own right rather than an enclave, since that is all the sources support.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Quarts-de-chaume",
+    "https://fr.wikipedia.org/wiki/Bonnezeaux_(AOC)",
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021144302",
+    "https://www.inao.gouv.fr/produit/quarts-de-chaume-17035",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-021.json"
+   ],
+   "finalFix": "Minimum 298 g/L sugar in the must; it lies at Rochefort-sur-Loire, enclosed by Coteaux du Layon (including its Chaume premier cru), while Bonnezeaux is a separate appellation upstream at Thouarcé.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-yj5nor7h",
+    "cat": "Loire",
+    "q": "Quarts de Chaume gained which unique Loire distinction in 2011?",
+    "sa": 1,
+    "accept": [
+     "grand cru",
+     "first loire grand cru",
+     "grand cru status"
+    ],
+    "ans": "The Loire's only Grand Cru AOP (botrytized Chenin)",
+    "exp": "Minimum 298 g/L must weight; Bonnezeaux and Coteaux du Layon surround it."
+   }
+  },
+  {
+   "id": "a-qyluccep",
+   "kind": "outdated",
+   "claim": "ans: \"Chasselas (Sauvignon Blanc is permitted as a minority partner)\"; accept: \"chasselas with sauvignon a permitted minority partner\", \"chasselas led with some sauvignon\"",
+   "because": "The Pouilly-sur-Loire cahier des charges (Décret n° 2011-784 of 28 June 2011) sets the encépagement as Chasselas B alone. Sauvignon B keeps the appellation only as a transitional exception: mixed plantings of Chasselas with some Sauvignon vines that were in place on 31 July 2009 stay eligible until they are grubbed up. Sauvignon has not been a permitted blending partner since the 2011 cahier.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000024278489",
+    "https://www.inao.gouv.fr/produit/pouilly-sur-loire-17634"
+   ],
+   "fix": "ans: \"Chasselas (the only permitted variety; Sauvignon survives only in mixed parcels planted before 31 July 2009, until they are pulled up); Pouilly-Fumé is Sauvignon Blanc\". Delete \"chasselas with sauvignon a permitted minority partner\" and \"chasselas led with some sauvignon\" from accept.",
+   "batch": 22,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The Pouilly-sur-Loire cahier des charges says \"Les vins sont issus du seul cépage chasselas B\" (section V), and I found the same rule in both the October 2009 text and the current Décret 2011-784. Sauvignon B keeps the appellation only through a transitional measure: plots of Chasselas B already in place on 31 July 2009 that contain some Sauvignon B vines in mixture stay eligible until they are grubbed up. So Sauvignon is not a permitted minority partner, and the model answer and the two accept entries teach an outdated rule. One correction to the examiner's dating: Chasselas-only started with the homologation decree of 27 October 2009 (Décret 2009-1307), not with the 2011 cahier; before that, Sauvignon could be blended in. The proposed fix gives no year, so it stands as written. INAO's product page also describes the vineyard as \"planté du seul cépage chasselas\". The remaining accept entries (\"chasselas\", \"pouilly-sur-loire is chasselas\") still take the right answer, so deleting the two Sauvignon entries loses no correct answer.",
+   "verifySources": [
+    "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000024278489",
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021207346/2009-12-17",
+    "https://www.inao.gouv.fr/produit/pouilly-sur-loire-17634",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-022.json"
+   ],
+   "finalFix": "ans: \"Chasselas (the only permitted variety; Sauvignon survives only in mixed parcels planted before 31 July 2009, until they are pulled up); Pouilly-Fumé is Sauvignon Blanc\". Delete \"chasselas with sauvignon a permitted minority partner\" and \"chasselas led with some sauvignon\" from accept.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-qyluccep",
+    "cat": "Loire",
+    "q": "A grower in Pouilly makes a wine labelled Pouilly-sur-Loire rather than Pouilly-Fumé. What grape is in the bottle?",
+    "sa": 1,
+    "accept": [
+     "chasselas",
+     "chasselas with sauvignon a permitted minority partner",
+     "pouilly-sur-loire is chasselas",
+     "chasselas led with some sauvignon"
+    ],
+    "ans": "Chasselas (Sauvignon Blanc is permitted as a minority partner); Pouilly-Fumé is Sauvignon Blanc",
+    "exp": "Two appellations share one village. Chasselas was the region's grape before Sauvignon displaced it — a low-acid table variety that survives on a handful of hectares only because the AOP protects it. The wine is soft, light and best drunk locally and young; its value to a candidate is as proof that appellation names describe places, not grapes. The same trap exists at Cheverny/Cour-Cheverny."
+   }
+  },
+  {
+   "id": "a-steh6v5s",
+   "kind": "ambiguous-stem",
+   "claim": "\"Which Centre-Loire appellation is uniquely allowed to make its rosé from Pinot Gris?\" / exp: \"one of French appellation law's genuine one-offs\"",
+   "because": "Reuilly is not the only one allowed Pinot Gris in its rosé. Châteaumeillant, which the explanation itself lists as a Centre-Loire satellite, permits Pinot Gris G as an accessory variety in its rosé (gris), up to 15% of the plantings, alongside Gamay (at least 60%) and Pinot Noir. The Touraine AOP rosé list also includes Pinot Gris G. What sets Reuilly apart is that its rosé may be 100% Pinot Gris.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Ch%C3%A2teaumeillant_(AOC)",
+    "https://www.inao.gouv.fr/produit/chateaumeillant-gris-22895",
+    "https://extranet.inao.gouv.fr/fichier/CDC-Touraine---PNO-2024.pdf",
+    "https://en.wikipedia.org/wiki/Reuilly_AOC"
+   ],
+   "fix": "Stem: \"Which Centre-Loire appellation may make its rosé entirely from Pinot Gris?\" In exp, replace \"one of French appellation law's genuine one-offs\" with \"unusual in French appellation law (Châteaumeillant allows Pinot Gris only as up to 15% of a Gamay-led gris)\".",
+   "batch": 22,
+   "verdict": "confirmed",
+   "verifyReason": "I couldn't refute the finding. Châteaumeillant is a Centre-Loire appellation, and the question's own explanation lists it among the Centre-Loire satellites. Its rules allow Pinot gris G in its gris (rosé) wine, up to 15% of the plantings, with Gamay at a minimum of 60%. So the stem's \"uniquely allowed to make its rosé from Pinot Gris\" is false as worded, and the explanation's \"one of French appellation law's genuine one-offs\" overclaims. Reuilly is still the right answer to the tightened question. Its rosé comes from Pinot gris G and Pinot noir N with no fixed proportions, so it can be 100% Pinot Gris (the Domaines Tatin Gris de Reuilly is an example). No other Centre-Loire rosé allows that: Sancerre and Menetou-Salon rosé are Pinot Noir, and Coteaux du Giennois rosé is Gamay and Pinot Noir. The examiner's fix, \"entirely from Pinot Gris\" plus the Châteaumeillant contrast in the explanation, is accurate and keeps the model answer and accept list valid. Touraine is not Centre-Loire, so it doesn't matter for this stem.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Ch%C3%A2teaumeillant_(AOC)",
+    "https://www.inao.gouv.fr/produit/chateaumeillant-gris-22895",
+    "https://www.vins-centre-loire.com/fr/les-vins-de-chateaumeillant/",
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021206500/2009-10-29",
+    "https://www.domaines-tatin.com/en/le-gris-de-reuilly/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-022.json"
+   ],
+   "finalFix": "Stem: \"Which Centre-Loire appellation may make its rosé entirely from Pinot Gris?\" In exp, replace \"one of French appellation law's genuine one-offs\" with \"unusual in French appellation law (Châteaumeillant allows Pinot Gris only as up to 15% of a Gamay-led gris)\".",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-steh6v5s",
+    "cat": "Loire",
+    "q": "Which Centre-Loire appellation is uniquely allowed to make its rosé from Pinot Gris?",
+    "sa": 1,
+    "accept": [
+     "reuilly",
+     "reuilly pinot gris rose",
+     "reuilly makes rose from pinot gris"
+    ],
+    "ans": "Reuilly (Pinot Gris rosé, alongside Sauvignon Blanc whites and Pinot Noir reds)",
+    "exp": "Reuilly's pale, faintly spicy Pinot Gris rosé is one of French appellation law's genuine one-offs, made off sandy and limestone soils west of Bourges. Group the Centre-Loire satellites in your head — Quincy (white only, Sauvignon, on sand and gravel), Reuilly (three colours), Menetou-Salon (three colours on Kimmeridgian marl), Coteaux du Giennois, Châteaumeillant (red and rosé only) — and know which colours each is permitted."
+   }
+  },
+  {
+   "id": "a-xfj7yurk",
+   "kind": "wrong-explanation",
+   "claim": "Marsanne, Roussanne, Viognier, Semillon, Sangiovese",
+   "because": "OAR 845-010-0915 lists 18 varieties allowed at 75%: Cabernet Franc, Cabernet Sauvignon, Carmenere, Durif (Petite Sirah), Grenache, Malbec, Marsanne, Merlot, Mourvedre, Petit Verdot, Roussanne, Sangiovese, Sauvignon Blanc (Fume Blanc), Semillon, Syrah, Tannat, Tempranillo, Zinfandel. Viognier is not on it, so it needs 90%. Sauvignon Blanc is on it and the explanation leaves it out.",
+   "sources": [
+    "https://oregon.public.law/rules/oar_845-010-0915",
+    "https://www.dwt.com/-/media/files/events/2025/2025-wvlr/2025-oregon-wine-labeling.pdf"
+   ],
+   "fix": "Replace 'Viognier' with 'Sauvignon Blanc' in the list: '...plus Syrah, Grenache, Mourvedre, Marsanne, Roussanne, Sauvignon Blanc, Semillon, Sangiovese, Tempranillo, Tannat, Zinfandel and Petite Sirah.'",
+   "batch": 23,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The question's key is right: Pinot Noir must be at least 90%, and 90/90% is accepted. The explanation is wrong, though. The current rule, OAR 845-010-0915(2), lists 18 varieties that may be labeled at 75%: Cabernet Franc, Cabernet Sauvignon, Carmenère, Durif (Petite Sirah), Grenache (Garnacha), Malbec, Marsanne, Merlot, Mourvèdre, Petit Verdot, Roussanne, Sangiovese, Sauvignon Blanc (Fumé Blanc), Sémillon, Syrah, Tannat, Tempranillo and Zinfandel. Viognier is not on that list, so a Viognier label needs 90%. The explanation includes Viognier and leaves out Sauvignon Blanc. The 2023 labeling handout from Davis Wright Tremaine (DWT) and the Oregon Winegrowers summary give the same 18 varieties, with Sauvignon Blanc in and Viognier out. Making the swap in the fix gives the correct 18.",
+   "verifySources": [
+    "https://oregon.public.law/rules/oar_845-010-0915",
+    "https://www.dwt.com/-/media/files/ows/2023-wine-guidelines/2023-oregon-wine-labeling.pdf",
+    "https://www.dwt.com/-/media/files/events/2025/2025-wvlr/2025-oregon-wine-labeling.pdf"
+   ],
+   "finalFix": "About 18 named varieties are excepted at 75% — the Bordeaux reds (Cabernet Sauvignon, Cabernet Franc, Merlot, Malbec, Petit Verdot, Carmenere) plus Syrah, Grenache, Mourvedre, Marsanne, Roussanne, Sauvignon Blanc, Semillon, Sangiovese, Tempranillo, Tannat, Zinfandel and Petite Sirah. Pinot Noir, Pinot Gris and Chardonnay stay at 90%.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-xfj7yurk",
+    "cat": "Pacific NW, NY & Canada",
+    "q": "Oregon's varietal labeling requires what minimum for Pinot Noir?",
+    "sa": 1,
+    "accept": [
+     "90",
+     "90%"
+    ],
+    "ans": "90% (stricter than the federal 75%)",
+    "exp": "About 18 named varieties are excepted at 75% — the Bordeaux reds (Cabernet Sauvignon, Cabernet Franc, Merlot, Malbec, Petit Verdot, Carmenere) plus Syrah, Grenache, Mourvedre, Marsanne, Roussanne, Viognier, Semillon, Sangiovese, Tempranillo, Tannat, Zinfandel and Petite Sirah. Pinot Noir, Pinot Gris and Chardonnay stay at 90%."
+   }
+  },
+  {
+   "id": "a-nnsm0jnb",
+   "kind": "wrong-explanation",
+   "claim": "after his death Clive Paton took material to Martinborough",
+   "because": "Clive Paton bought young Abel-clone vines (about 3,000 cuttings) from Malcolm Abel in 1980 while Abel was alive, and planted them at Ata Rangi. He worked the 1981 vintage with Abel, who died suddenly in 1981. The explanation reverses that order.",
+   "sources": [
+    "https://www.nzwine.com/en/media/our-people/phyll-pattie-and-clive-paton/",
+    "https://worldoffinewine.com/news-features/abel-clone-mystery-new-zealand-pinot-noir"
+   ],
+   "fix": "in 1980, shortly before Abel's sudden death in 1981, Clive Paton bought vines from him and planted them in Martinborough",
+   "batch": 23,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation says Clive Paton took Abel material to Martinborough after Malcolm Abel's death, and that order is wrong. World of Fine Wine says Paton bought young vines from Abel in 1980 and planted them in Martinborough. It also says Abel died suddenly in 1981, aged 38. New Zealand Wine's profile of Paton and Pattie says Paton bought the vines from Abel and worked the 1981 vintage with him, and that Abel died soon after. Other search results say Paton bought 3,000 cuttings and that Abel died a year later. Every source puts the purchase while Abel was alive, so the phrase in the explanation is false. The rest of the question, including the answer and the accept list, is fine. The examiner's fix is a replacement phrase that reads correctly after the semicolon.",
+   "verifySources": [
+    "https://worldoffinewine.com/news-features/abel-clone-mystery-new-zealand-pinot-noir",
+    "https://www.nzwine.com/en/media/our-people/phyll-pattie-and-clive-paton/"
+   ],
+   "finalFix": "in 1980, shortly before Abel's sudden death in 1981, Clive Paton bought vines from him and planted them in Martinborough",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-nnsm0jnb",
+    "cat": "New Zealand",
+    "q": "Which Pinot Noir selection, reputedly seized from a traveller at Auckland airport by a customs officer and later propagated by Ata Rangi, became New Zealand's most storied clone?",
+    "sa": 1,
+    "accept": [
+     "abel clone",
+     "abel",
+     "abel clone also called the gumboot clone",
+     "ata rangi clone",
+     "gumboot clone",
+     "abel or gumboot clone"
+    ],
+    "ans": "The Abel clone — also called the Ata Rangi clone or the 'gumboot' clone",
+    "exp": "Malcolm Abel, a customs officer and small Kumeu winemaker, sent the confiscated cuttings to the Te Kauwhata research station for quarantine in the mid-1970s; after his death Clive Paton took material to Martinborough, and the wood's supposed hiding place gave the 'gumboot' nickname. The Domaine de la Romanee-Conti provenance is folklore, not record. What matters at the exam is why it is prized: small berries, dark fruit and structure, a counterweight to the aromatic Dijon clones (114, 115, 667, 777) and the older UCD5/10-5 that dominate elsewhere. Most serious New Zealand Pinot is a blend of Abel with Dijon material."
+   }
+  }
+ ]
+}

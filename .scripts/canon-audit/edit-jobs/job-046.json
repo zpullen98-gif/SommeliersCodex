@@ -1,0 +1,98 @@
+{
+ "file": "rewrite/categories/r2_hungary_greece.py",
+ "findings": [
+  {
+   "id": "c-98c4i3oo",
+   "kind": "outdated",
+   "claim": "The keyed answer is 'Fifty per cent', presented as the cap on any one variety in Egri Bikaver. That cap was dropped for grapes harvested from 2017 onward.",
+   "because": "Eger PDO specification versions 1 and 2 (harvests up to 31 July 2016) said no variety may exceed 50% ('egy fajta borának aránya sem haladhatja meg az 50%-ot'). Version 3 (2016 harvest) replaced this with Kekfrankos at 30 to 50%. Version 4 (harvests after 1 August 2017), version 5 and the current version 6 (harvests after 1 August 2023) all say, for Classicus, Superior and Grand Superior Bikaver: at least four varieties, each above 5%, and 'a Kékfrankos fajta arányának 30-65% között kell lennie', with Kekfrankos the largest share. So one variety may now make up 65% of the blend. The 50% cap in the current text applies only to the white Egri Csillag tiers. None of the four options is 65%, so the question has no correct answer under current law.",
+   "sources": [
+    "https://boraszat.kormany.hu/eger",
+    "https://boraszat.kormany.hu/download/b/b5/93000/Eger_termékleírás_v6_kn.pdf",
+    "https://boraszat.kormany.hu/download/f/5d/82000/Eger_OEM_v4_boraszat_200215.pdf",
+    "https://boraszat.kormany.hu/download/d/55/91000/Eger_OEM_v2.pdf"
+   ],
+   "fix": "Stem: 'Kekfrankos must lead every Egri Bikaver blend, and the rules set the most of it the blend may hold. Where is that ceiling?' Options: ['Sixty-five per cent','Fifty per cent','Thirty per cent','Ten per cent'], a: 0. Explanation to add: the floor is 30%, at least four varieties must each exceed 5%, and Kekfrankos must be the largest component. The ceiling was 50% for any one variety until the 2016 harvest and has been 65% for Kekfrankos since the 2017 harvest.",
+   "batch": 216,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I could not refute the finding. I downloaded the Eger PDO specifications from boraszat.kormany.hu and read the text myself.\n\n- **Version 2 (harvests 1 Aug 2012 to 31 Jul 2016):** the Bikavér rule says \"egy fajta borának aránya sem haladhatja meg az 50%-ot\", so no variety could exceed 50%. At that time Superior asked for five varieties, with Kékfrankos at 30 to 50% and every other variety at 30% or less.\n- **Version 4 (harvests after 1 Aug 2017):** Classicus, Superior and Grand Superior Bikavér now read \"legalább négy szőlőfajta ... meg kell haladnia külön-külön az 5%-ot\" and \"a Kékfrankos fajta arányának 30-65% között kell lennie, a házasításban ennek a fajtának kell a legnagyobb arányban jelen lennie\". In plain terms: at least four varieties, each above 5%; Kékfrankos between 30 and 65% and the largest part of the blend.\n- **Version 6 (current, harvests after 1 Aug 2023):** the same text appears word for word for all three Bikavér tiers.\n- The 50% cap on any one variety now appears only in the white Egri Csillag tiers (Classicus, Superior and Grand Superior Csillag).\n\nSo under current law Kékfrankos may make up 65% of an Egri Bikavér. The keyed \"Fifty per cent\" is out of date, and no option in the question is correct. I did not open version 3, so I cannot confirm the examiner's 2016-harvest detail. The fix below uses only the dates I checked.\n\nThe examiner's fix is right, but it leaves one more outdated line standing. The explanation says \"stricter tiers asking for more varieties\". Under current law all three Bikavér tiers require at least four varieties. Superior needing more (five) was the version 2 rule. The Grand Superior line still holds: version 6 section j says \"A grand superior borokon kötelező a dűlőnév feltüntetése\" (the vineyard name must appear on the label). The better fix below also replaces the explanation.",
+   "verifySources": [
+    "https://boraszat.kormany.hu/download/b/b5/93000/Eger_termékleírás_v6_kn.pdf",
+    "https://boraszat.kormany.hu/download/f/5d/82000/Eger_OEM_v4_boraszat_200215.pdf",
+    "https://boraszat.kormany.hu/download/d/55/91000/Eger_OEM_v2.pdf"
+   ],
+   "finalFix": "q: \"Kekfrankos must lead every Egri Bikaver blend, and the rules also cap how much of the blend it may take. Where does that ceiling sit?\" opts: [\"Sixty-five per cent\", \"Fifty per cent\", \"Thirty per cent\", \"Ten per cent\"], a: 0. exp: \"Under the Eger PDO specification for harvests from 2017 onward, Classicus, Superior and Grand Superior Bikaver alike need at least four varieties, each above 5%, with Kekfrankos between 30% and 65% and the largest part of the blend. Until the 2016 harvest no variety could exceed 50%. The higher tiers are stricter on skin contact, time in oak and yield, and a Grand Superior must name its vineyard (dulo) on the label. The 50% cap on any one variety now applies only to the white Egri Csillag.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-98c4i3oo",
+    "cat": "Hungary & Greece",
+    "q": "No single grape may take over an Egri Bikaver: the rules cap what any one variety may contribute to the blend. Where does that ceiling sit?",
+    "opts": [
+     "Fifty per cent",
+     "Seventy-five per cent",
+     "Thirty per cent",
+     "Ten per cent"
+    ],
+    "a": 0,
+    "exp": "The cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for more varieties, lower yields and, at the top, fruit from one named site."
+   }
+  },
+  {
+   "id": "c-tu50swzo",
+   "kind": "wrong-key",
+   "claim": "The model answer says five puttonyos is the lowest number an Aszu label may now carry, and the explanation says three and four puttonyos 'went'. The current Tokaj PDO specification still lists 3, 4, 5 and 6 puttonyos as permitted label terms.",
+   "because": "The clean (unmarked) Tokaj PDO specification, version 10a, labelling section VIII 1 d) ii), reads: 'Az aszú bortípus esetében: muzeális bor, borkülönlegesség. Aszú (3)(4)(5)(6) puttonyos (a „6 puttonyos” kifejezés csak azokon az aszúkon jelölhető, amelyek maradékcukor-tartalma legalább 150 g/l).' The same wording appears in the 2017 eighth version and in the version 11 draft. In the tracked-changes 10a PDF this line carries no strike-through, whereas the struck 45 g/L figures on page 3 do. What the 2013 amendment (E) actually removed was the separate 3-, 4- and 5-puttonyos analytical rows (60, 90 and 120 g/L), replacing them with a single Aszu row at a minimum of 120 g/L. The only label term with its own sugar condition is '6 puttonyos'. The claim that 3 and 4 were abolished is widely taught but is not what the legal text says, so a careful examiner working from the rulebook cannot key 'five'.",
+   "sources": [
+    "https://boraszat.kormany.hu/download/8/85/53000/TOKAJ%20term%C3%A9kle%C3%ADr%C3%A1s%20%2810a%20v%C3%A1ltozat%29%20kn.pdf",
+    "https://boraszat.kormany.hu/download/d/d9/a0000/TOKAJ_termekleiras_eredeti.pdf",
+    "https://boraszat.kormany.hu/download/2/e9/a0000/TOKAJ_termekleiras+modositas_E_jelolt.pdf",
+    "https://winesoftokaj.hu/hu/tbht/termekleirasok/tokaj-oem"
+   ],
+   "fix": "Replace with: q 'Since the 2013 reform every Tokaji Aszu must reach 120 g/L of residual sugar, and the puttonyos number is optional. One puttonyos term still has its own higher sugar floor. What must a wine reach to be labelled 6 puttonyos?' ans '150 grams per litre', accept ['150 grams per litre','150 grams per liter','150 g/l','150g/l','150','at least 150 grams per litre','a minimum of 150 grams per litre','minimum 150 g/l','150 grams']. Drop the sentence 'Three and four puttonyos went' from the explanation.",
+   "batch": 216,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I downloaded and extracted the legal text myself. Every Tokaj PDO specification since the 2013 amendment E still lists all four puttonyos numbers as permitted label terms, in section VIII 1 d) ii): \"Az aszú bortípus esetében: muzeális bor, borkülönlegesség. Aszú (3)(4)(5)(6) puttonyos (a „6 puttonyos” kifejezés csak azokon az aszúkon jelölhető, amelyek maradékcukor-tartalma legalább 150 g/l)\". That is the \"6 puttonyos\" condition. This wording appears in:\n- the 2017 eighth version;\n- the current 10a version;\n- the version 11 draft.\n\nIn the tracked amendment E document, this ii) line is new text that the amendment itself introduced. So the 2013 reform deliberately kept 3 and 4 as label terms. What the reform removed were the separate analytical rows for 3, 4 and 5 puttonyos (60, 90 and 120 g/L). It replaced them with one Aszu row at a minimum of 120 g/L, dropped the heading \"(3)(4)(5)(6) puttonyos\" from the list of wine types, and made the number optional (\"Jelölhető\"). The 2025 district rules (rendtartás) add no further restriction on puttonyos. The consortium's own English page also mentions only the 6 puttonyos condition at 150 g/L.\n\nSo \"five\" as the lowest number a label may carry has no support in the rulebook. The explanation is also false where it says \"Three and four puttonyos went\" and \"leaving only the top of the old scale in use\". The examiner's replacement question is accurate. However, the proposed fix only drops one sentence, and the false clause \"leaving only the top of the old scale in use\" sits in that same sentence. The rest of the explanation also has to be rewritten, so I give a full replacement below.\n\nI could not open the EU eAmbrosia single document (web search budget exhausted). The Hungarian specification I read is the text filed as the PDO specification.",
+   "verifySources": [
+    "https://boraszat.kormany.hu/download/8/85/53000/TOKAJ%20term%C3%A9kle%C3%ADr%C3%A1s%20%2810a%20v%C3%A1ltozat%29%20kn.pdf",
+    "https://boraszat.kormany.hu/download/2/e9/a0000/TOKAJ_termekleiras+modositas_E_jelolt.pdf",
+    "https://boraszat.kormany.hu/download/d/d9/a0000/TOKAJ_termekleiras_eredeti.pdf",
+    "https://winesoftokaj.hu/hu/tbht/termekleirasok/a-tokaj-oltalom-alatt-allo-eredetmegjeloles-termekleirasa-2017-8-valtozat/download",
+    "https://winesoftokaj.hu/hu/tbht/termekleirasok/tokaj-termekleiras-11-valtozat-tervezet/download",
+    "https://winesoftokaj.hu/hu/tbht/rendtartas/borvide-ki-rendtarta-s-2025-aprilis-v04/download",
+    "https://winesoftokaj.hu/en/the-aszu/in-the-bottle"
+   ],
+   "finalFix": "q: \"Since the 2013 reform every Tokaji Aszu must reach 120 g/L of residual sugar, and the puttonyos number on the label is optional. One puttonyos term still carries its own higher sugar floor. What residual sugar must an Aszu reach to be labelled 6 puttonyos?\" ans: \"150 grams per litre\" accept: [\"150 grams per litre\",\"150 grams per liter\",\"150 g/l\",\"150g/l\",\"150\",\"at least 150 grams per litre\",\"at least 150 g/l\",\"a minimum of 150 grams per litre\",\"minimum 150 g/l\",\"150 grams\"] exp: \"The 2013 amendment replaced the old sliding scale (60, 90, 120 and 150 g/L for 3 to 6 puttonyos) with a single Aszu minimum of 120 g/L, and made the puttonyos number optional, so many bottles now print none. The specification still lists 3, 4, 5 and 6 puttonyos as terms that may appear, but only '6 puttonyos' has its own condition: at least 150 g/L of residual sugar.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-tu50swzo",
+    "cat": "Hungary & Greece",
+    "q": "Sweetness rungs below a certain number of hods disappeared from Tokaji Aszu labels with the 2013 reform. Give the lowest number a bottle may now carry.",
+    "sa": 1,
+    "accept": [
+     "five puttonyos",
+     "5 puttonyos",
+     "five",
+     "5",
+     "puttonyos five",
+     "at least five puttonyos",
+     "at least 5 puttonyos",
+     "a minimum of five puttonyos",
+     "a minimum of 5 puttonyos",
+     "five puttonyos minimum",
+     "5 puttonyos minimum",
+     "minimum five puttonyos",
+     "minimum 5 puttonyos",
+     "five puttonyos or more",
+     "5 puttonyos or more",
+     "five hods",
+     "5 hods"
+    ],
+    "ans": "Five puttonyos",
+    "ex": 1,
+    "exp": "Three and four puttonyos went, leaving only the top of the old scale in use, and the indication itself became optional, so plenty of bottles now print no number at all. Anything below the surviving level is sold under a different name rather than as a weaker Aszu, which is the change the reform was really making."
+   }
+  }
+ ]
+}

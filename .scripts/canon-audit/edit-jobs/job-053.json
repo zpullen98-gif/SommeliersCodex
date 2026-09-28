@@ -1,0 +1,42 @@
+{
+ "file": "rewrite/categories/r2_spirits_cocktails.py",
+ "findings": [
+  {
+   "id": "c-u0bmyr5t",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says 'the Superiore tier adding that the Artemisia itself be grown there'.",
+   "because": "Under the Ministerial Decree of 22 March 2017 (the Vermut di Torino specification), the Artemisia used in ALL Vermouth di Torino must be grown and/or harvested in Piedmont, not only in Superiore. The absinthium and/or pontica species are compulsory, at a minimum of 0.5 g of dried plant per litre. Superiore adds three different conditions: at least 17% abv, at least 50% of the finished product from wine produced in Piedmont, and flavouring that includes Piedmont-grown or Piedmont-harvested herbs other than wormwood. The explanation gets both the base rule and the Superiore rule wrong. The keyed answer and accept list are fine.",
+   "sources": [
+    "https://www.gazzettaufficiale.it/eli/id/2017/04/03/17A02417/sg (DM 22 marzo 2017, disciplinare Vermut di Torino, sections c and g)",
+    "https://www.vermouthditorino.org/en/the-heritage-of-vermouth-di-torino/"
+   ],
+   "fix": "The wine must be Italian, the production must happen in Piedmont, and the Artemisia (absinthium and/or pontica) must be grown or gathered in Piedmont. The Superiore tier adds a minimum of 17 percent alcohol, at least half the volume from Piedmontese wine, and other Piedmont-grown herbs besides the wormwood. Turin is where the commercial category began in the eighteenth century, which is why the aromatised wine trade and the Italian bitters trade grew up in the same city.",
+   "batch": 253,
+   "verdict": "confirmed",
+   "verifyReason": "The examiner is right: the explanation misstates both the base rule and the Superiore rule. I read the disciplinare itself, DM n. 1826 of 22 March 2017, Allegato A, from the PDF the Consorzio hosts.\n\n- **Base rule, section g(A):** the Artemisia used for any Vermut di Torino \"devono essere coltivate e/o raccolte nell'intero territorio della Regione Piemonte\" (must be grown and/or gathered anywhere in the Piedmont region). This applies to every Vermouth di Torino, not only Superiore. The absinthium and/or pontica species are compulsory, at a minimum of 0.5 g of dried plant (flowering tops) per litre of finished product.\n- **Superiore, section c:** the term may be used only if the vermouth has at least 17% alcohol, at least 50% of the finished volume is wine produced in Piedmont, and it is flavoured, though not exclusively, with herbs other than wormwood (\"diverse dall'Assenzio\") grown and/or gathered in Piedmont.\n\nSo the explanation's line \"the Superiore tier adding that the Artemisia itself be grown there\" is false twice over. Every Vermouth di Torino must use Piedmont Artemisia, and Superiore's extra herb rule is about herbs other than wormwood.\n\nThe rest of the explanation holds. Section c says the wine must be Italian, section d puts production and packaging in Piedmont, and section e dates the category to the end of the eighteenth century. The keyed answer and the accept list are also fine. The examiner's fix is accurate.",
+   "verifySources": [
+    "https://www.vermouthditorino.org/wp-content/uploads/2026/06/2017-Disciplinare-DM-1826-22-03-2017-Vermouth-Torino.pdf (DM 1826 of 22/03/2017, Allegato A, sections c, d, e, g)",
+    "https://www.vermouthditorino.org/il-consorzio-del-vermouth-di-torino/",
+    "https://www.vermouthditorino.org/leredita-del-vermouth-di-torino/"
+   ],
+   "finalFix": "The wine must be Italian, the production must happen in Piedmont, and the Artemisia (absinthium and/or pontica) must be grown or gathered in Piedmont. The Superiore tier adds a minimum of 17 percent alcohol, at least half the volume from Piedmontese wine, and other Piedmont-grown herbs besides the wormwood. Turin is where the commercial category began in the eighteenth century, which is why the aromatised wine trade and the Italian bitters trade grew up in the same city.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-u0bmyr5t",
+    "cat": "Spirits & Cocktails",
+    "q": "One style of vermouth carries a geographical indication tying it to a northern Italian city and the region around it. Name that indication.",
+    "sa": 1,
+    "accept": [
+     "vermouth di torino",
+     "vermouth of turin",
+     "torino",
+     "turin",
+     "vermouth di torino ig"
+    ],
+    "ans": "Vermouth di Torino",
+    "exp": "The wine must be Italian and the production must happen in Piedmont, with the Superiore tier adding that the Artemisia itself be grown there. Turin is where the commercial category began in the eighteenth century, which is why the aromatised wine trade and the Italian bitters trade grew up in the same city."
+   }
+  }
+ ]
+}

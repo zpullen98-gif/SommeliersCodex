@@ -135,12 +135,13 @@ BANK = [
        ["macvin du jura", "macvin"],
        "Macvin du Jura is a mistelle: the marc's strength stops fermentation before it starts, so the sweetness is grape sugar that never met a working yeast. The AOC arrived in 1991, all three colours are made, and most of it is poured cold as an aperitif in its home region."),
     Q("The wider Jura",
-      "Five varieties, and only five, may enter the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?",
+      "Five varieties are the traditional grapes of the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?",
       ["Poulsard, Trousseau and Pinot Noir",
        "Poulsard, Trousseau and Gamay",
        "Poulsard, Mondeuse Noire and Pinot Noir",
        "Trousseau, Gamay and Mondeuse Noire"], 0,
-      "Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never earned a place despite Burgundy sitting an hour away, and every appellation of the region, still or sparkling, builds from some arrangement of the five."),
+      "Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never became one of the region's grapes despite Burgundy sitting an hour away, and the Jura's wines are built from some arrangement of the five. The law has small exceptions: Cremant du Jura also admits Pinot Gris, and since 2022 the Arbois and Cotes du Jura rules allow a few trial varieties, capped at 10% of a blend.",
+      pin="c-kjm5utxp"),
 
     # ------------------------------------------------------------ Savoie (7) -
     SA("Savoie",

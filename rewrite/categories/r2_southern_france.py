@@ -204,7 +204,7 @@ BANK = [
        "Freedom from any yield limit at all",
        "The right to buy finished wine from anywhere in France and blend it in",
        "An exemption from every analysis and tasting control"], 0,
-      "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-facing blends of Cabardes and Malepere, so a wine sold on its grape name needs the IGP either way. Nearly every other appellation works from a fixed Mediterranean variety list, and one region runs two wine economies side by side."),
+      "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-influenced western corner, in Cabardes, Malepere and the Merlot-led Limoux rouge, so a wine sold on its grape name needs the IGP either way. Nearly every other appellation works from a fixed Mediterranean variety list, and one region runs two wine economies side by side."),
     Q("Pays d'Oc and the Catalan coast",
       "Down where the Pyrenees drop into the sea, Grenache fermented dry rather than muted goes out as Collioure, once a red alone. Which colours may the label claim today?",
       ["Red, rose or white alike",

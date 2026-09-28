@@ -1,0 +1,74 @@
+{
+ "file": "rewrite/categories/r1_united_states.py",
+ "findings": [
+  {
+   "id": "i-vmbhu5o6",
+   "kind": "wrong-explanation",
+   "claim": "Several states, Oregon among them, hold their producers to a stricter figure.",
+   "because": "The question is about a Cabernet Sauvignon label. Oregon's stricter rule is 90 percent, but OAR 845-010-0915 lists Cabernet Sauvignon among the grapes that may still be labelled at 75 percent. The others on that list are Cabernet Franc, Carmenère, Durif, Grenache, Malbec, Marsanne, Merlot, Mourvèdre, Petit Verdot, Roussanne, Sangiovese, Sauvignon Blanc, Sémillon, Syrah, Tannat, Tempranillo and Zinfandel. So an Oregon Cabernet has the same 75 percent floor as the federal rule. As written, the explanation teaches that it needs more.",
+   "sources": [
+    "https://oregon.public.law/rules/oar_845-010-0915"
+   ],
+   "fix": "Federal law sets the varietal floor at 75 percent, so a quarter of the blend can be something else entirely. Some states go further: Oregon asks 90 percent for most varieties, though Cabernet Sauvignon is one of the grapes it still allows at 75.",
+   "batch": 138,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The question and its key are right: the federal varietal floor is 75 percent (27 CFR 4.23). The explanation is wrong, though. The question is about a Cabernet Sauvignon label, and the explanation says \"Several states, Oregon among them, hold their producers to a stricter figure.\" OAR 845-010-0915 sets Oregon's floor at 90 percent, but it names Cabernet Sauvignon among the traditionally blended varieties that may still be labelled at 75 percent. So an Oregon Cabernet has the same floor as the federal rule, and the explanation teaches the opposite. \"Several states\" is also unsupported for varietal labelling. Oregon is the only state stricter than the federal varietal rule; California's and Washington's stricter rules are about appellation of origin, not variety. The examiner's fix still opens with \"Some states go further,\" which keeps the plural. The better fix names Oregon alone.",
+   "verifySources": [
+    "https://oregon.public.law/rules/oar_845-010-0915",
+    "https://trade.oregonwine.org/resources/labeling-regulations/",
+    "https://www.winespectator.com/articles/oregon-wine-labeling-regulations-explainer"
+   ],
+   "finalFix": "Federal law sets the varietal floor at 75 percent, so a quarter of the blend can be something else entirely. Oregon goes further and asks 90 percent for most varieties, but Cabernet Sauvignon is one of the grapes it still allows at 75.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-vmbhu5o6",
+    "cat": "United States",
+    "q": "A bottle says Cabernet Sauvignon on the front label. Under federal rules, how much of that grape must be in the wine?",
+    "opts": [
+     "All of it",
+     "At least 85 percent",
+     "At least 75 percent",
+     "At least 51 percent"
+    ],
+    "a": 2,
+    "exp": "Federal law sets the varietal floor at 75 percent, so a quarter of the blend can be something else entirely. Several states, Oregon among them, hold their producers to a stricter figure."
+   }
+  },
+  {
+   "id": "i-49gsa9yv",
+   "kind": "wrong-explanation",
+   "claim": "Within twenty years Burgundian houses were buying land nearby.",
+   "because": "Lett planted in 1965; the first Burgundian house to buy in the Dundee Hills was Maison Joseph Drouhin, which established Domaine Drouhin Oregon in 1987, 22 years later (domainedrouhin.com, 'Our Story'). Other Burgundian investment, such as Jadot's Résonance in 2013, came decades after that, so the plural 'houses' within twenty years is also wrong.",
+   "sources": [
+    "https://www.domainedrouhin.com/our-story"
+   ],
+   "fix": "Twenty-two years later, in 1987, the Burgundian house of Joseph Drouhin bought land nearby in the Dundee Hills.",
+   "batch": 140,
+   "verdict": "confirmed",
+   "verifyReason": "The question and its key are right: David Lett planted in 1965 and founded The Eyrie Vineyards. The explanation's last sentence is wrong on two counts. Domaine Drouhin Oregon's own \"Our Story\" page says the family established the winery in the Willamette Valley in 1987. That is 22 years after 1965, not \"within twenty years\". Drouhin's 1987 land purchase in the Dundee Hills is widely reported as the first time any Burgundy house made wine outside France. The other Burgundians came much later (Jadot's Résonance in 2013, then Bouchard, Liger-Belair, Méo-Camuzet), so the plural \"houses\" is also false. The error is small but it is a false fact, and the examiner's fix states it correctly.",
+   "verifySources": [
+    "https://www.domainedrouhin.com/our-story",
+    "https://cluboenologique.com/story/domaine-drouhin-oregon-a-new-world-pioneer/",
+    "https://www.wineenthusiast.com/culture/wine/oregons-french-winemakers/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-140.json"
+   ],
+   "finalFix": "David Lett judged the valley's latitude and cool, damp climate closer to Burgundy than California was. Twenty-two years later, in 1987, the Burgundian house of Joseph Drouhin bought land nearby in the Dundee Hills.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-49gsa9yv",
+    "cat": "United States",
+    "q": "In 1965 a grower planted Pinot Noir in the Willamette Valley against the advice of nearly everyone. Which winery did he go on to found?",
+    "opts": [
+     "The Eyrie Vineyards",
+     "Domaine Drouhin Oregon",
+     "Adelsheim Vineyard",
+     "Ponzi Vineyards"
+    ],
+    "a": 0,
+    "exp": "David Lett judged the valley's latitude and cool, damp climate closer to Burgundy than California was. Within twenty years Burgundian houses were buying land nearby."
+   }
+  }
+ ]
+}

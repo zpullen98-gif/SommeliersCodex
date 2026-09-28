@@ -1,0 +1,118 @@
+{
+ "file": "rewrite/categories/r2_loire.py",
+ "findings": [
+  {
+   "id": "c-tm40i5yq",
+   "kind": "outdated",
+   "claim": "The keyed answer Cabernet de Saumur is no longer an appellation. From the 2016 vintage it was folded into the Saumur AOC as Saumur Rosé. That makes the explanation's contrast wrong too: it says Saumur Rosé is a separate, dry wine from the same cellar.",
+   "because": "French Wikipedia's Saumur (AOC) article says 'En juillet 2016, l'appellation cabernet de Saumur est intégré comme saumur rosé'. English Wikipedia lists Cabernet de Saumur only for rosés made before 2015 and gives 'Saumur Rosé for 2016 and after'. The current Saumur rules allow rosé from Cabernet Franc and Cabernet Sauvignon with no blending constraint. A candidate taught Cabernet de Saumur as the current answer would be marked wrong.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Saumur_(AOC)",
+    "https://fr.wikipedia.org/wiki/Cabernet_de_Saumur",
+    "https://en.wikipedia.org/wiki/Cabernet_de_Saumur"
+   ],
+   "fix": "Stem: 'Since the 2016 vintage, a pink wine from Saumur made from Cabernet Franc is sold under which appellation?' Key a: 3 (Saumur Rose). exp: 'Cabernet de Saumur, the old name for the zone's Cabernet-based rose, was folded into the Saumur appellation in July 2016 and is now labelled Saumur Rose, from Cabernet Franc and Cabernet Sauvignon. Rose de Loire is the regional dry rose and Cremant de Loire Rose is sparkling.'",
+   "batch": 228,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. On Legifrance, the arrêté of 19 July 2016 (JORF 29 July 2016) approves a new cahier des charges for the AOC Saumur only. Its Article 2 repeals décret 2011-1360, the decree that covered both \"Saumur\" and \"Cabernet de Saumur\". French Wikipedia (the Cabernet de Saumur and Saumur AOC articles) says the name became Saumur rosé in 2016, and English Wikipedia says the same. So Cabernet de Saumur is no longer a current answer, and the explanation is wrong to set it beside Saumur Rosé as a separate wine from the same cellar. The examiner's fix is off, though. Its stem asks which appellation covers \"a pink wine from Saumur made from Cabernet Franc\" since 2016. Rosé de Loire, one of the options, is a regional rosé whose zone includes the Saumurois and which allows Cabernet Franc, so it is a second correct option. The better stem asks for the name that replaced Cabernet de Saumur, and swaps that option for a real distractor. I could not open the 2016 Saumur cahier itself (the ministry server refused the connection) or the old sugar limits, so the fix makes no claim about sweetness.",
+   "verifySources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000032945205",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000024717966",
+    "https://fr.wikipedia.org/wiki/Cabernet_de_Saumur",
+    "https://fr.wikipedia.org/wiki/Saumur_(AOC)",
+    "https://en.wikipedia.org/wiki/Cabernet_de_Saumur"
+   ],
+   "finalFix": "q: \"Since the 2016 vintage, the still Cabernet-based rose once sold as Cabernet de Saumur carries which name on the label?\" opts: [\"Cabernet d'Anjou\", \"Cremant de Loire Rose\", \"Rose de Loire\", \"Saumur Rose\"] a: 3 exp: \"The arrete of 19 July 2016 that approved the new Saumur cahier des charges repealed the 2011 decree covering both Saumur and Cabernet de Saumur, and the zone's Cabernet-based pink has been labelled Saumur Rose ever since, from Cabernet Franc and Cabernet Sauvignon. Cabernet d'Anjou is the off-dry Anjou pink, Rose de Loire is the regional dry rose open to Saumur growers too, and Cremant de Loire Rose is sparkling.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-tm40i5yq",
+    "cat": "Loire",
+    "q": "A pink wine from Saumur arrives noticeably sweet on the finish and is made from Cabernet Franc. Which appellation covers it?",
+    "opts": [
+     "Cabernet de Saumur",
+     "Cremant de Loire Rose",
+     "Rose de Loire",
+     "Saumur Rose"
+    ],
+    "a": 0,
+    "exp": "Cabernet de Saumur is the medium-dry pink of the zone, the counterpart to Cabernet d'Anjou a little downstream, and both are built on the Cabernets rather than on Grolleau. A Saumur Rose from the same cellar is finished dry, so a list carrying both names is drawing a sweetness distinction and not a geographical one."
+   }
+  },
+  {
+   "id": "c-ne65k86o",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the Touraine appellation leans on Gamay for its red, and that a wine labelled simply Touraine is Gamay-based. Under the current cahier des charges, plain Touraine rouge has no Gamay in it. A Gamay red has to be labelled Touraine Gamay.",
+   "because": "French Wikipedia's Touraine (AOC) article quotes the current cahier des charges. Touraine rouge: 'issus du côt N comme cépage principal à concurrence minimale de 40 % et des cépages cabernet franc N, cabernet sauvignon N et pinot noir N comme cépages accessoires'. Touraine Gamay: 'issu du gamay N (minimum 75 %)'. So a Touraine red with no Cabernet Franc could also be a Côt-led Touraine rouge. The stem's hint (light, purple, juicy) still points to Gamay, but the stated rule is false.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Touraine_(AOC)"
+   ],
+   "fix": "exp: 'Gamay reds in Touraine are sold as Touraine Gamay, which must be at least 75% Gamay, and they are the light, juicy carafe wines of the district. A red labelled simply Touraine is now led by Cot (at least 40%) with Cabernet Franc, Cabernet Sauvignon and Pinot Noir, and contains no Gamay.' Add 'touraine gamay' to accept, and consider changing the stem to 'A carafe of Touraine Gamay...'.",
+   "batch": 228,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I opened French Wikipedia's Touraine (AOC) article. It quotes the cahier des charges approved by the arrêté of 1 September 2025 (JORF, 5 September 2025), and Légifrance's search lists the same 1 September 2025 arrêté. Under that text, plain Touraine rouge is led by Côt (at least 40%), with Cabernet Franc, Cabernet Sauvignon and Pinot Noir as the accessory grapes. Gamay is not in the list. Gamay appears only in the separate 'Touraine Gamay' category (at least 75% Gamay). The explanation's claim that 'a wine labelled simply Touraine' is a Gamay red is therefore false. So is its picture of Côt as a minor partner beside Gamay. The keyed answer, Gamay, still holds, because the stem's 'light, purple, juicy carafe' describes Touraine Gamay. Two parts of the examiner's fix need changing. First, 'touraine gamay' does not need adding to the accept list. matchSA already accepts any input that contains the accept entry 'gamay' as a whole word, so 'Touraine Gamay' already grades. Second, the absolute 'contains no Gamay' goes further than the quoted text, because the cahier has special rules for estates west of the Tours meridian that I could not open. The replacement below avoids that claim. The stem should also stop saying 'Touraine red' with no Cabernet Franc, because a Côt-led Touraine rouge also fits that description. Stem suggestion: 'A carafe of red from the Touraine appellation is poured that is light, purple and juicy, and its label names its grape after the word Touraine. Which grape is it?' I could not open the INAO PDF (it needs an extranet login) or the Loire interprofession site (403 and certificate errors). The English Wikipedia article is out of date.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Touraine_(AOC)",
+    "https://www.legifrance.gouv.fr/search/all?query=cahier%20des%20charges%20appellation%20Touraine",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-228.json"
+   ],
+   "finalFix": "exp: \"The light, purple, juicy carafe red of Touraine is Gamay, sold under its own label as Touraine Gamay, which must be at least 75% Gamay. A red labelled simply Touraine is a different wine: under the current cahier des charges it is led by Cot (at least 40%), with Cabernet Franc, Cabernet Sauvignon and Pinot Noir in support, and the white is Sauvignon Blanc. That is why the district's wines taste nothing like Chinon or Vouvray.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-ne65k86o",
+    "cat": "Loire",
+    "q": "A carafe of Touraine red is poured that is light, purple and juicy, and it holds no Cabernet Franc at all. Which grape fills the district's everyday red?",
+    "sa": 1,
+    "accept": [
+     "gamay",
+     "gamay noir",
+     "gamay noir a jus blanc"
+    ],
+    "ans": "Gamay",
+    "exp": "The district appellation leans on Gamay for red and on Sauvignon Blanc for white, which is why a wine labelled simply Touraine tastes nothing like Chinon or Vouvray. Cot appears in the reds as well, and the Gamay is usually the fresher and the cheaper of the two."
+   }
+  },
+  {
+   "id": "c-3c6zm8rq",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the Coteaux du Giennois rule that reds and rosés must blend Gamay and Pinot Noir is 'a requirement no other appellation of the Centre imposes'.",
+   "because": "The Coteaux du Giennois rule itself is correct: the cahier des charges says reds and rosés cannot come from a single variety, with at least 20% of each grape. But Orléans AOC, a Centre-Loire appellation (the same batch lists Orléans-Cléry among the Centre options in c-j23quq1r), also requires red wine to be a blend. Its cahier des charges sets Pinot Meunier as the main grape at 70 to 90%, with Pinot Noir as the accessory grape, and French Wikipedia, citing that cahier, states that blending Meunier with Pinot Noir is obligatory for red Orléans. So Coteaux du Giennois is not the only Centre appellation that forces a blend. I opened the Orléans cahier PDF linked from that Wikipedia page, but it is a scanned image and I could not read the clause directly. The claim therefore rests on the Wikipedia article's citation of the cahier.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Coteaux-du-giennois",
+    "https://fr.wikipedia.org/wiki/Orléans_(AOC)",
+    "https://fr.wikipedia.org/w/index.php?title=Orléans_(AOC)&action=raw",
+    "https://www.vigneronsdelatouraine.com/_files/ugd/82a54b_6d2abec5e04f4222821db5f11c79b53f.pdf",
+    "https://fr.wikipedia.org/wiki/Châteaumeillant_(AOC)"
+   ],
+   "fix": "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes, with at least 20 percent of each, rather than use either on its own; Sancerre, Menetou-Salon and Reuilly let a red stand on Pinot Noir alone. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted.",
+   "batch": 229,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds, and I confirmed it from legal text rather than relying only on Wikipedia. The INAO cahier des charges for AOP Orléans (the modified text the CNAO adopted on 18 June 2026, which carries forward the 2011 structure that Wikipedia cites) says three things. Section V gives red Orléans Meunier N as the principal grape and Pinot Noir N as the complementary grape. The proportion rules set Meunier at 70% to 90% of the vineyard planting. Section IX.1.a says: \"Les vins proviennent de l'assemblage de raisins ou de vins dans les mêmes proportions que celles prévues pour l'encépagement\". So a red Orléans must be a Meunier and Pinot Noir blend with 10 to 30% Pinot Noir. Orléans is a Centre-Loire appellation, which makes the explanation's claim that no other appellation of the Centre imposes such a requirement false. The Coteaux du Giennois rule itself is right: neither Gamay nor Pinot Noir may exceed 80%, so each is at least 20%, and a single-variety red or rosé is not allowed. The proposed fix drops the false exclusivity claim and adds the correct 20% minimum. Its contrast with Sancerre, Menetou-Salon and Reuilly also holds, since all three make red from Pinot Noir alone. The question, model answer and accept list are unaffected.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/7-PNO-CDC-Orleans-2026.pdf",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054323758",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000024720652",
+    "https://fr.wikipedia.org/w/index.php?title=Orléans_(AOC)&action=raw",
+    "https://fr.wikipedia.org/wiki/Coteaux-du-giennois"
+   ],
+   "finalFix": "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes, with at least 20 percent of each, rather than use either on its own; Sancerre, Menetou-Salon and Reuilly let a red stand on Pinot Noir alone. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-3c6zm8rq",
+    "cat": "Loire",
+    "q": "Between Sancerre and the town of Gien the vineyard runs along either side of the Loire, making whites from Sauvignon Blanc and reds from Gamay with Pinot Noir. Name the appellation.",
+    "sa": 1,
+    "accept": [
+     "coteaux du giennois",
+     "giennois",
+     "aoc coteaux du giennois"
+    ],
+    "ans": "Coteaux du Giennois",
+    "exp": "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes rather than use either on its own, which is a requirement no other appellation of the Centre imposes. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted."
+   }
+  }
+ ]
+}

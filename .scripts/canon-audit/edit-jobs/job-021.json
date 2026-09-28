@@ -1,0 +1,296 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-nzcx4m2h",
+   "kind": "accept-list",
+   "claim": "The second accept entry says 'organic since 1960s'. The model answer, correctly, says organic since 1950. The grader will pass a student who types the wrong decade.",
+   "because": "Accounts of the estate (BBR, Onshore Cellars) say the Perrins farmed organically from 1950 and biodynamically from 1974, which is what the model answer says, not the 1960s.",
+   "sources": [
+    "https://www.bbr.com/producer-717-chateau-de-beaucastel",
+    "https://onshorecellars.com/blogs/100-iconic-wines-for-your-super-yacht/chateau-de-beaucastel-pioneer-of-biodynamic-viticulture-in-rhone-france"
+   ],
+   "fix": "Replace the second accept entry with 'flash heating thirteen varieties organic since 1950'",
+   "batch": 173,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. In batch-173.json the question m-nzcx4m2h has the second accept entry \"flash pasteurization must thirteen varieties organic since 1960s\". The model answer says organic since 1950 and biodynamic since 1974. Berry Bros & Rudd's producer page, which I opened, says the Perrins adopted \"organic practices as early as 1950 and biodynamics in 1974\". No account I found dates the start to the 1960s. The Beaucastel and Perrin pages would not load (404 and connection refused), so the check rests on BBR, but it matches the model answer.\n\nThe error matters because of how the grader works. matchSA in C:/Users/zpull/SommeliersCodex/js/core.js accepts a typed answer when it contains a whole accept phrase or matches most of one. A student who types this entry, wrong decade included, is marked correct, so the app confirms a false date.\n\nThe proposed fix works. The new entry \"flash heating thirteen varieties organic since 1950\" puts the right decade in. \"flash heating\" also matches the model answer's wording, and the Perrins heat the grapes, not the must.",
+   "verifySources": [
+    "https://www.bbr.com/producer-717-chateau-de-beaucastel",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-173.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "flash heating thirteen varieties organic since 1950",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-nzcx4m2h",
+    "cat": "Rhône",
+    "q": "Beaucastel's signature technical eccentricities (name two):",
+    "sa": 1,
+    "accept": [
+     "all 13 varieties mourvedre heavy flash heating vinification",
+     "flash pasteurization must thirteen varieties organic since 1960s"
+    ],
+    "ans": "All thirteen varieties planted (Mourvèdre-heavy blend); brief thermo-treatment (flash-heating) of the harvest at reception; organic farming since 1950 and biodynamic since 1974 — among the earliest in France",
+    "exp": "The 'flash' treatment is their oxidase answer — controversial, effective."
+   }
+  },
+  {
+   "id": "m-wy7k7xto",
+   "kind": "accept-list",
+   "claim": "The second accept entry, 'screaming eagle 1992 debut', passes an answer that only covers Screaming Eagle. The question asks for both Screaming Eagle's and Harlan's vintages, so half an answer is marked correct.",
+   "because": "matchSA passes any input that contains the whole accept phrase. The model answer's facts check out: Harlan's first vintage was 1990, released in 1996, and the 1994 scored 100 from Parker. The accept entry simply never asks for Harlan.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Harlan_Estate",
+    "https://www.decanter.com/wine/producer-profiles/producer-profile-harlan-estate-245825/"
+   ],
+   "fix": "Replace 'screaming eagle 1992 debut' with 'screaming eagle 1992 harlan 1994'",
+   "batch": 173,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I ran the real matchSA from C:/Users/zpull/SommeliersCodex/js/core.js against this question in a scratch harness, and the defect is real. With the current list, \"Screaming Eagle 1992 debut\", \"screaming eagle 1992\" and \"1992 screaming eagle\" all pass, even though none of them names Harlan. The wrong-order answer \"screaming eagle 1994 harlan\" also passes.\n\nThe two current entries leak in different ways:\n- 'screaming eagle 1992 debut' passes any answer that contains it.\n- '1992 screaming eagle 1994 harlan' passes any three-word slice of itself, because the grader's partial-phrase rule accepts an input that covers at least 60% of an accept phrase.\n\nThe examiner's fix does not stop the half answers. With 'screaming eagle 1992 harlan 1994' as a plain entry, \"screaming eagle 1992\", \"1992 screaming eagle\", \"screaming eagle 1994 harlan\" and \"screaming eagle 1992 harlan\" still pass. The fix also leaves the leaky first entry in place.\n\nEntries marked strict with '~' only pass on an exact match or when the input contains the whole phrase. I ran the same inputs against strict versions of both the answer and the list:\n- Rejected: \"screaming eagle 1992\", \"1992 screaming eagle\", \"screaming eagle 1994 harlan\", \"screaming eagle 1992 harlan\" and \"1992 and 1994\".\n- Accepted: \"Screaming Eagle 1992, Harlan 1994\", \"Harlan 1994, Screaming Eagle 1992\", \"Screaming Eagle 1992; Harlan 1990\" and the model answer. The model answer passes through the exact-match check that runs before the list.\n\nA few forms joined with \"and\" are not accepted by any of the three lists, so the better fix adds strict \"and\" variants too.\n\nI could not re-check the vintage facts on the web because this session's search budget is used up. The facts are not in dispute, though: the examiner confirmed the model answer (Screaming Eagle's 1992 debut; Harlan's first vintage 1990, released 1996, with the 1994 as its breakthrough), and I rule only on the grading mechanics, which I tested directly.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm, negatedAgainst; run in a scratch node harness)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-173.json (m-wy7k7xto)",
+    "https://en.wikipedia.org/wiki/Harlan_Estate (examiner's source, not reopened)",
+    "https://www.decanter.com/wine/producer-profiles/producer-profile-harlan-estate-245825/ (examiner's source, not reopened)"
+   ],
+   "finalFix": "\"accept\": [\"~screaming eagle 1992 harlan 1994\", \"~screaming eagle 1992 and harlan 1994\", \"~screaming eagle 1992 harlan 1990\", \"~screaming eagle 1992 and harlan 1990\", \"~1992 screaming eagle 1994 harlan\", \"~1992 screaming eagle and 1994 harlan\", \"~harlan 1994 screaming eagle 1992\", \"~harlan 1990 screaming eagle 1992\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-wy7k7xto",
+    "cat": "Producers & Icons",
+    "q": "Which vintage made Screaming Eagle's reputation, and which made Harlan's?",
+    "sa": 1,
+    "accept": [
+     "1992 screaming eagle 1994 harlan",
+     "screaming eagle 1992 debut"
+    ],
+    "ans": "Screaming Eagle's 1992 debut; Harlan's 1990 first release (held back, released 1996) and 1994 breakthrough",
+    "exp": "Napa's cult era dates precisely from these bottlings."
+   }
+  },
+  {
+   "id": "m-qbb5zteh",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer says the crus 'sit between roughly 35 and 40 hl/ha', with 'the northern crus nearer 40'. One accept line says the same: 'crus around 35 to 40'.",
+   "because": "Crozes-Hermitage, the northern Rhône's largest cru, has a target yield of 45 hl/ha for both red and white, with a 50 hl/ha rendement butoir, under the cahier des charges amended in December 2024. The INAO search result and the French Wikipedia AOC page both quote the cahier with this figure. So the biggest northern cru falls well outside the stated range. A candidate who recites '35 to 40, northern crus nearer 40' gets the largest cru's figure wrong. The same sources confirm the lower rungs of the ladder as keyed: 51, 44 and 41 hl/ha.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Crozes-hermitage_(AOC)",
+    "https://extranet.inao.gouv.fr/fichier/PNO2024AOPCrozesHermitage.pdf",
+    "https://www.rayon-boissons.com/actu-flash/vins-le-rendement-du-cotes-du-rhone-est-porte-a-54-hlha"
+   ],
+   "fix": "Then the crus, which drop the Côtes du Rhône name entirely and mostly sit between roughly 35 and 45 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, the northern crus at about 40 (Crozes-Hermitage higher, at 45). Change the accept line to 'regional at 51 villages at 44 named commune at 41 and crus around 35 to 45'.",
+   "batch": 174,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I opened the INAO Crozes-Hermitage cahier des charges (PNO2024) and read section VIII. It says: \"Le rendement ... est fixé à 45 hectolitres par hectare\", with a rendement butoir of 50 hl/ha. Plots with rows 2.50 to 2.75 m apart are held to 40. French Wikipedia quotes the same 45/50 for red and white. Crozes-Hermitage is the largest northern cru, so the model answer's \"between roughly 35 and 40 hl/ha ... the northern crus nearer 40\" gets its figure wrong, and so do two accept lines. The examiner's fix corrects the model answer and one of them, but it leaves the fourth accept line (\"the crus at thirty-five to forty hectolitres\") still teaching the wrong range. The better fix below changes both lines. The lower rungs as keyed are right. The rayon-boissons article shows the Côtes du Rhône figure of 54 was a one-off for the 2014 vintage; the cahier's base yield stays 51 hl/ha.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO2024AOPCrozesHermitage.pdf",
+    "https://fr.wikipedia.org/wiki/Crozes-hermitage_(AOC)",
+    "https://www.rayon-boissons.com/actu-flash/vins-le-rendement-du-cotes-du-rhone-est-porte-a-54-hlha"
+   ],
+   "finalFix": "In ans, replace \"Then the crus, which drop the Côtes du Rhône name entirely and sit between roughly 35 and 40 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, the northern crus nearer 40.\" with \"Then the crus, which drop the Côtes du Rhône name entirely and mostly sit between roughly 35 and 45 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, most northern crus at about 40, Crozes-Hermitage higher at 45.\" In accept, replace \"regional at 51 villages at 44 named commune at 41 and crus around 35 to 40\" with \"regional at 51 villages at 44 named commune at 41 and crus around 35 to 45\", and replace \"51 then 44 then 41 then the crus at thirty-five to forty hectolitres\" with \"51 then 44 then 41 then the crus at thirty-five to forty-five hectolitres\".",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-qbb5zteh",
+    "cat": "Rhône",
+    "q": "Walk up the Côtes du Rhône ladder, tier by tier, with the yields.",
+    "sa": 1,
+    "accept": [
+     "cotes du rhone then villages then named villages then crus with yields falling",
+     "regional at 51 villages at 44 named commune at 41 and crus around 35 to 40",
+     "four tiers with the named-commune rung between villages and the crus",
+     "51 then 44 then 41 then the crus at thirty-five to forty hectolitres"
+    ],
+    "ans": "Four rungs. Côtes du Rhône, the regional appellation covering both north and south, at about 51 hl/ha. Côtes du Rhône Villages at 44. Côtes du Rhône Villages with a named commune — some twenty-odd villages including Plan de Dieu, Sablet, Séguret, Laudun, Chusclan — at 41. Then the crus, which drop the Côtes du Rhône name entirely and sit between roughly 35 and 40 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, the northern crus nearer 40. Yield falls at every step, along with permitted vigour and, in the crus, the right to certain varieties or colours. A named village that performs gets promoted — Vinsobres in 2006, Rasteau's dry reds in 2010, Cairanne in 2016.",
+    "exp": "Candidates routinely skip the named-commune rung, which is the one the examiner is listening for. Note also what the ladder is not: a cru is a separate appellation, not a grade of Côtes du Rhône, so declassified cru fruit falls to Côtes du Rhône rather than stepping down one rung to Villages."
+   }
+  },
+  {
+   "id": "m-mq38eic4",
+   "kind": "outdated",
+   "claim": "The accept list takes \"seven wards including simonsberg-stellenbosch and jonkershoek valley\", and the model answer says only that \"further wards\" have been registered since, without naming the one that was.",
+   "because": "Stellenbosch now has eight wards. Vlottenburg became the eighth when the Wine and Spirit Board promulgated it on 24 January 2020 (Government Gazette 42967). So the grader accepts a count that has been wrong since 2020. The ward that was added is Vlottenburg, the home of Spier, and it is one ward, not several, so the model answer should name it.",
+   "sources": [
+    "https://winewitandwisdomswe.com/2020/08/02/vlottenburg-an-eighth-ward-for-stellenbosch/",
+    "https://www.winewithseth.com/winewiki/vlottenburg/",
+    "https://stellenboschcabernet.co.za/wards/"
+   ],
+   "fix": "Accept entry: \"eight wards including simonsberg-stellenbosch jonkershoek valley and vlottenburg\". Model answer, opening sentence: \"The eight wards are Banghoek, Bottelary, Devon Valley, Jonkershoek Valley, Papegaaiberg, Polkadraai Hills, Simonsberg-Stellenbosch and Vlottenburg (the newest, registered in 2020).\"",
+   "batch": 176,
+   "verdict": "confirmed",
+   "verifyReason": "I could not refute the finding. Vlottenburg is a registered ward of the Stellenbosch district. The Wine and Spirit Board promulgated it on 24 January 2020 in Government Gazette 42967, which makes it the eighth ward. There are now eight: Banghoek, Bottelary, Devon Valley, Jonkershoek Valley, Papegaaiberg, Polkadraai Hills, Simonsberg-Stellenbosch and Vlottenburg. Three sources agree on this.\n- A 2020 article counts eight wards and names Vlottenburg as the new one.\n- WineWithSeth gives the gazette date and number.\n- The Stellenbosch Cabernet Collective lists \"Vlottenburg Ward\" among the wards.\n\nThe question asks the candidate to \"name Stellenbosch's registered wards\". The accept list still takes \"seven wards\", a count that has been wrong since 2020. The model answer names only the seven older wards and says \"further wards registered since\", but only one ward was added. That is out of date as the examiner says. The fix is sound: it replaces the stale count entry and has the opening sentence name all eight wards. The fix's accept entry is a plain phrase, which matchSA in core.js handles like the list's existing entries. I could not open the WOSA page because it returned an error page, so the check rests on the sources above.",
+   "verifySources": [
+    "https://winewitandwisdomswe.com/2020/08/02/vlottenburg-an-eighth-ward-for-stellenbosch/",
+    "https://www.winewithseth.com/winewiki/vlottenburg/",
+    "https://stellenboschcabernet.co.za/wards/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-176.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "Accept entry: \"eight wards including simonsberg-stellenbosch jonkershoek valley and vlottenburg\". Model answer, opening sentence: \"The eight wards are Banghoek, Bottelary, Devon Valley, Jonkershoek Valley, Papegaaiberg, Polkadraai Hills, Simonsberg-Stellenbosch and Vlottenburg (the newest, registered in 2020).\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-mq38eic4",
+    "cat": "South Africa",
+    "q": "Name Stellenbosch's registered wards and characterise three of them.",
+    "sa": 1,
+    "accept": [
+     "bottelary devon valley papegaaiberg polkadraai hills jonkershoek banghoek simonsberg-stellenbosch",
+     "simonsberg-stellenbosch jonkershoek valley banghoek polkadraai bottelary",
+     "seven wards including simonsberg-stellenbosch and jonkershoek valley",
+     "banghoek bottelary devon valley papegaaiberg polkadraai"
+    ],
+    "ans": "The long-established wards are Bottelary, Devon Valley, Papegaaiberg, Polkadraai Hills, Jonkershoek Valley, Banghoek and Simonsberg-Stellenbosch, with further wards registered since. Simonsberg-Stellenbosch: north-eastern, decomposed-granite slopes facing the mountain, the district's Cabernet and Pinotage heartland — Kanonkop, Rustenberg, Thelema. Jonkershoek Valley: a narrow, steep, cool amphitheatre with high rainfall and late ripening, giving structured Cabernet from Neil Ellis and Stark-Condé. Polkadraai Hills: south-west, the closest to False Bay and the most wind-cooled, now the source of the district's finest Sauvignon and Chenin. Bottelary lies on sandy granitic hills with old bush-vine Pinotage and Cinsaut; Devon Valley is a small clay-rich bowl; Papegaaiberg is the tiny hill at the town's edge.",
+    "exp": "Stellenbosch is not one place, and a Master candidate is expected to break it apart aloud — granite versus shale, mountain versus bay, and which producer proves each point. Anchoring each ward to an aspect, a soil and a name is the difference between recitation and argument."
+   }
+  },
+  {
+   "id": "m-zb8jbpoj",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer lists Gualtallary among Mendoza's soil-mapped GIs, and the first accept entry reads 'paraje altamira gualtallary igs'.",
+   "because": "Gualtallary is not an approved IG. The INV has issued no resolution recognising it. The name was registered as a private trademark, and the owner of that trademark has blocked the producers' 2016 IG application, including its proposed sub-IGs. Only temporary use of the name is allowed, and not as an IG. The approved examples are Paraje Altamira (2013, the first to be drawn from a soil study, extended 2016), Los Chacayes and San Pablo. A candidate who names Gualtallary as an IG in an oral exam is wrong.",
+   "sources": [
+    "https://geografiadelvino.com/2024/03/20/hay-que-hacer-algo-con-gualtallary/",
+    "https://bonvivir.com/notas-y-tips/indicaciones-geograficas-en-argentina",
+    "https://catenazapata.com/river-2022/"
+   ],
+   "fix": "ans: \"Soil-mapped GIs: Paraje Altamira (2013, the first drawn from a soil study), Los Chacayes, San Pablo; Gualtallary's IG application is still blocked by a private trademark.\" accept: replace \"paraje altamira gualtallary igs\" with \"paraje altamira los chacayes san pablo igs\".",
+   "batch": 177,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, so I confirm it. The model answer lists Gualtallary alongside Paraje Altamira, Los Chacayes and San Pablo as one of Mendoza's soil-mapped GIs, and the first accept entry takes \"paraje altamira gualtallary igs\". Gualtallary is not a recognised IG. Geografia del Vino (March 2024) says producers filed a 2016 study with the INV (Argentina's wine regulator) proposing a Gualtallary IG split into sub-IGs, and that it remains blocked by a third party who holds the trademark and will not release it: \"trabada su Indicación Geográfica por un tercero que se sentó sobre la marca\". Bonvivir says Gualtallary still \"esperan la validación final del Instituto Nacional de Vitivinicultura\", meaning it awaits the INV's final approval. Bonvivir also confirms that Paraje Altamira was approved in 2013 and extended in 2016, and that Los Chacayes is a definitive IG after Lurton gave up the Chacayes trademark. The Catena Zapata page the examiner cited only uses Gualtallary as a vineyard location and says nothing either way. I could not open the INV's own list of IGs (404), and my web search budget was spent, so I could not check whether anything changed after 2024. For that reason the answer should not claim the application is \"still\" blocked in 2026. A safer wording is that Gualtallary is famous but not a recognised IG, with the trademark as the reason it has been held up. The examiner's accept-list change is right: \"paraje altamira los chacayes san pablo igs\" names only approved IGs.",
+   "verifySources": [
+    "https://geografiadelvino.com/2024/03/20/hay-que-hacer-algo-con-gualtallary/",
+    "https://bonvivir.com/notas-y-tips/indicaciones-geograficas-en-argentina",
+    "https://catenazapata.com/river-2022/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-177.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "ans: \"Soil-mapped GIs: Paraje Altamira (2013, the first drawn from a soil study, extended 2016), Los Chacayes, San Pablo. Gualtallary, though famous, is not a recognised IG: its application has been held up by a private trademark on the name\" | accept: [\"paraje altamira los chacayes san pablo igs\", \"geographic indications paraje altamira los chacayes\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-zb8jbpoj",
+    "cat": "South America",
+    "q": "Name Mendoza's GI ladder innovation of 2010s and its flagship examples.",
+    "sa": 1,
+    "accept": [
+     "paraje altamira gualtallary igs",
+     "geographic indications paraje altamira los chacayes"
+    ],
+    "ans": "Soil-mapped GIs: Paraje Altamira (the first, science-drawn), Gualtallary, Los Chacayes, San Pablo…",
+    "exp": "Argentina redrew boundaries by alluvial fan, not township — a world first at scale."
+   }
+  },
+  {
+   "id": "m-ynbx625f",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the 2017 reforms renamed Rioja Baja. In fact the 2017 reform only proposed the rename. The Consejo Regulador approved it in April 2018.",
+   "because": "The Consejo's own news item of 11 August 2017, which announced the pueblo and zona reform, says only that renaming Rioja Baja as Rioja Oriental would be looked at for legal and commercial viability in the coming months. The adoption came in April 2018.",
+   "sources": [
+    "https://www.riojawine.com/noticias/los-vinos-de-pueblo-y-los-de-zona-completan-la-renovacion-del-actual-sistema-de-rioja/",
+    "https://www.cellartours.com/destinations/rioja/wine-regions/rioja-oriental",
+    "https://riojawine.com/en-us/production-areas/rioja-oriental/"
+   ],
+   "fix": "The rename was proposed with the 2017 reforms and approved by the Consejo Regulador in April 2018, to shed the implication of inferiority.",
+   "batch": 178,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation says the 2017 reforms renamed Rioja Baja, and that is wrong. I opened the Consejo Regulador's own news item of 11 August 2017, which announced the pueblo and zona reform. It says only that the rename \"se ha planteado\" (has been proposed). It adds that the rename's legal and commercial viability \"se explorará en los próximos meses\" (will be explored in the coming months). So in 2017 the rename was a proposal, not an act.\n\nFor the approval date I found one secondary source. Cellar Tours says the Consejo Regulador approved the change in April 2018. The Consejo's current Rioja Oriental page says only \"formerly known as Rioja Baja\" and gives no date. My web search budget was used up, so I could not reach the 2018 plenary notice or the amended pliego. Nothing I opened contradicts 2018, and the 2017 item itself rules out 2017 as the date of the rename.\n\nThe error matters because a candidate asked when Rioja Baja became Rioja Oriental would answer 2017 and be wrong. The rest of the question is sound: the three-zone summary, the reason for the rename, and the accept lists are fine. The examiner's fix is correct as written.",
+   "verifySources": [
+    "https://www.riojawine.com/noticias/los-vinos-de-pueblo-y-los-de-zona-completan-la-renovacion-del-actual-sistema-de-rioja/",
+    "https://www.cellartours.com/destinations/rioja/wine-regions/rioja-oriental",
+    "https://riojawine.com/en-us/production-areas/rioja-oriental/"
+   ],
+   "finalFix": "The rename was proposed with the 2017 reforms and approved by the Consejo Regulador in April 2018, to shed the implication of inferiority.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-ynbx625f",
+    "cat": "Spain",
+    "q": "Explain the 'Rioja Alta vs Alavesa vs Oriental' triad in soils and style.",
+    "sa": 1,
+    "accept": [
+     "alta clay limestone alavesa calcareous higher oriental warmer alluvial garnacha",
+     "alavesa limestone alta mixed oriental warm"
+    ],
+    "ans": "Alta: clay-limestone/ferrous, structured; Alavesa: calcareous, higher, perfumed; Oriental (ex-Baja): warm, alluvial, Garnacha's home",
+    "exp": "The 2017 reforms renamed Baja to shed the implication of inferiority."
+   }
+  },
+  {
+   "id": "m-wwr9zet9",
+   "kind": "accept-list",
+   "claim": "Two accept entries give full credit to an answer that names none of the Muscat VDNs, even though naming them is the main thing the question asks for.",
+   "because": "matchSA passes any input that contains an accept phrase as whole words. The entry 'mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar' defines mutage only. The entry 'muscat blanc a petits grains for all but rivesaltes, mutage is fortifying the fermenting must with neutral spirit' names no appellation except Rivesaltes. A candidate who cannot list Frontignan, Mireval, Lunel, Saint-Jean-de-Minervois or Cap Corse is still marked right.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, whole-word containment rule)"
+   ],
+   "fix": "Remove 'mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar' and 'muscat blanc a petits grains for all but rivesaltes, mutage is fortifying the fermenting must with neutral spirit' from accept. Keep the two entries that name the appellations.",
+   "batch": 178,
+   "verdict": "confirmed",
+   "verifyReason": "I checked this against the grader itself. I loaded norm, negatedAgainst and matchSA from C:/Users/zpull/SommeliersCodex/js/core.js (lines 11-98) into node and ran them on m-wwr9zet9. The live copy in js/data-master.js line 480 has the same accept list as the batch file.\n\n- **Mutage-only answers pass.** \"mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar\" returns true, and so does the shorter \"mutage adds grape spirit mid ferment up to 10 percent of volume\". The shorter one gets through the reverse-core branch at line 93, which accepts an input covering 60% of an accept phrase's words. Neither names a single Muscat VDN.\n- **An answer that names only Rivesaltes passes.** \"Muscat blanc a petits grains for all but Rivesaltes. Mutage is fortifying the fermenting must with neutral spirit.\" returns true through the exact normalised match. It never mentions Frontignan, Mireval, Lunel, Saint-Jean-de-Minervois or Cap Corse. The entry contains \"all but\", which is in NEG_PHRASES, so it can only ever match close to verbatim. That does not change the defect: it gives full credit to an answer missing the main thing the question asks for.\n- **What the question asks.** The stem asks for three things: the appellations, the Muscat each may use, and mutage. These two entries give full credit for mutage alone, or for mutage plus the grape rule, with the appellation list, the main thing asked, missing. A candidate who cannot list the Muscat VDNs is marked right, which is the accept-list fault the examiner describes.\n\nThe fix is sound: removing the two entries leaves the model answer, which always grades (line 72), and the two appellation-naming entries.\n\nTwo things I noticed but am not ruling on:\n- The kept entries are still partial. Entry 1 leaves out Cap Corse and mutage; entry 3 leaves out the grape rule.\n- A full correct answer in the candidate's own words already fails (my test: \"frontignan, mireval, lunel, saint-jean-de-minervois, rivesaltes, cap corse; petits grains everywhere, rivesaltes may add alexandria; mutage is adding spirit during fermentation\" returns false). That was true before this fix. The app's coverage rule offers a self-grade in that case, and removing these two entries does not make it worse.\n\nI did not use web sources: this finding is only about how the grader behaves, and the facts in the model answer are not in dispute.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17, NEG_RE/NEG_PHRASES/negatedAgainst lines 33-47, matchSA lines 49-98; executed in node against the question)",
+    "C:/Users/zpull/SommeliersCodex/js/data-master.js line 480 (live entry m-wwr9zet9)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-178.json (lines 146-160)"
+   ],
+   "finalFix": "Remove \"mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar\" and \"muscat blanc a petits grains for all but rivesaltes, mutage is fortifying the fermenting must with neutral spirit\" from accept. The remaining accept list is: [\"frontignan mireval lunel saint-jean-de-minervois and rivesaltes, muscat blanc a petits grains except rivesaltes which may add alexandria\", \"frontignan lunel mireval st jean de minervois rivesaltes cap corse, spirit added during fermentation to keep sugar\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-wwr9zet9",
+    "cat": "Southern France",
+    "q": "Name the Muscat vins doux naturels of the Languedoc, Roussillon and Corsica, say which Muscat each may use, and explain mutage.",
+    "sa": 1,
+    "accept": [
+     "frontignan mireval lunel saint-jean-de-minervois and rivesaltes, muscat blanc a petits grains except rivesaltes which may add alexandria",
+     "muscat blanc a petits grains for all but rivesaltes, mutage is fortifying the fermenting must with neutral spirit",
+     "frontignan lunel mireval st jean de minervois rivesaltes cap corse, spirit added during fermentation to keep sugar",
+     "mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar"
+    ],
+    "ans": "In the Languedoc: Muscat de Frontignan, Muscat de Mireval, Muscat de Lunel and Muscat de Saint-Jean-de-Minervois, all 100% Muscat Blanc à Petits Grains. In Roussillon: Muscat de Rivesaltes, the only one that may blend Petits Grains with Muscat of Alexandria. Corsica adds Muscat du Cap Corse, again Petits Grains. Mutage is the fortification step: neutral grape spirit of around 96% is run into the fermenting must, killing the yeast and leaving the grape's own sugar unfermented. The spirit must fall between 5% and 10% of the volume; the wines finish at roughly 15–18% alcohol with at least 100 g/l of residual sugar, and the best Muscats are bottled early and protectively to keep the grape aroma.",
+    "exp": "Two distinctions win the point. First, vin doux naturel is fortified during fermentation (like Port) whereas vin de liqueur — Pineau des Charentes, Floc de Gascogne, Macvin — is fortified before it starts. Second, the Muscats are made reductively for freshness while the Grenache-based VDN of Banyuls, Maury and Rivesaltes are the oxidative, rancio side of the same law. A candidate who adds Muscat de Beaumes-de-Venise is correct — same VDN law, same Petits Grains, but in the southern Rhône rather than the Midi. The technique is credited to Arnau de Vilanova at Montpellier in the thirteenth century."
+   }
+  },
+  {
+   "id": "m-3wd87c3s",
+   "kind": "accept-list",
+   "claim": "The accept list grades Airén as the answer ('airen la mancha castilla', 'airén central plateau'), although the model answer says Tempranillo has led since the 2021 survey.",
+   "because": "MAPA's potential-vineyard report with data to 31 July 2021 put Tempranillo first for the first time (202,917 ha against Airén's 200,084 ha). The 2024 report still has Tempranillo ahead, at 195,076 ha against 185,614 ha. A candidate who answers Airén gives the superseded answer and should not be graded correct. The 2021 figures in ans/exp are also no longer the latest: in 2024 Tempranillo had about 195,000 ha and Airén about 186,000 ha.",
+   "sources": [
+    "https://www.mapa.gob.es/es/prensa/ultimas-noticias/detalle_noticias/la-uva-tempranillo-se-convierte-en-la--principal-variedad-de-vinificacion-plantada-en-espana/e3114104-67f6-4b29-8fd0-049c5e06eb3a",
+    "https://www.tecnovino.com/la-variedad-tempranillo-se-convierte-en-la-uva-de-vinificacion-mas-plantada-en-espana-con-202-917-hectareas/",
+    "https://www.agronewscastillayleon.com/ministerio-vinedo-nuevas/"
+   ],
+   "fix": "accept: [\"tempranillo\", \"tempranillo la mancha rioja ribera\", \"tempranillo overtook airen\"] (remove \"airen la mancha castilla\" and \"airén central plateau\")",
+   "batch": 179,
+   "verdict": "confirmed",
+   "verifyReason": "The model answer and explanation both key Tempranillo. MAPA's own release on data to 31 July 2021 says Tempranillo (202,917 ha) overtook Airén (200,084 ha) for the first time. MAPA's 2024 figures still put Tempranillo ahead, at 195,076 ha against 185,614 ha. So Airén is the superseded answer and should not grade.\n\nThe accept list still contains 'airen la mancha castilla' and 'airén central plateau'. I checked these against matchSA in js/core.js. A bare 'Airén' happens to fail, because it covers too few of each phrase's words. But answers like 'Airén, La Mancha', 'Airén central' or 'Airén, central plateau' pass the whole-word core rule (at least 60% of the words) or the exact-match rule, so the wrong answer is graded correct.\n\nRemoving both entries fixes it. 'tempranillo overtook airen' does not let a bare 'Airén' through, for the same coverage reason. The 2021 figures in ans/exp are explicitly dated to that survey and remain historically accurate, so they are not a separate fault.",
+   "verifySources": [
+    "https://www.mapa.gob.es/es/prensa/ultimas-noticias/detalle_noticias/la-uva-tempranillo-se-convierte-en-la--principal-variedad-de-vinificacion-plantada-en-espana/e3114104-67f6-4b29-8fd0-049c5e06eb3a",
+    "https://www.agronewscastillayleon.com/ministerio-vinedo-nuevas/",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-179.json"
+   ],
+   "finalFix": "accept: [\"tempranillo\", \"tempranillo la mancha rioja ribera\", \"tempranillo overtook airen\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-3wd87c3s",
+    "cat": "Spain",
+    "q": "Which grape dominates Spanish acreage by hectare, and where?",
+    "sa": 1,
+    "accept": [
+     "tempranillo",
+     "tempranillo la mancha rioja ribera",
+     "tempranillo overtook airen",
+     "airen la mancha castilla",
+     "airén central plateau"
+    ],
+    "ans": "Tempranillo — c. 203,000 ha massed across Castilla-La Mancha, Rioja and Ribera del Duero, ahead of Airén (c. 200,000 ha) since MAPA's survey with data to 31 July 2021. Airén, the vast dry-farmed plateau white of Castilla-La Mancha (much of it distilled to brandy), held the title for decades and remains much the largest white.",
+    "exp": "Spain has the world's largest vineyard area, and these two varieties are roughly two-fifths of it. Airén led for decades, but MAPA's plantings survey (data to 31 July 2021) put Tempranillo at 202,917 ha against Airén's 200,084 ha — Airén has shed some 138,000 ha since 2000 while Tempranillo has gained about 80,000."
+   }
+  }
+ ]
+}

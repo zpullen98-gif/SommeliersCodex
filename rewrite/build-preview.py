@@ -58,7 +58,7 @@ def main():
         lib.bake_option_order(bank, mod.CAT)
 
         for e in bank:
-            row = {"id": lib.mint(mod.CAT, e["q"], prefix), "cat": mod.CAT, "q": e["q"]}
+            row = {"id": lib.ident(mod.CAT, e, prefix), "cat": mod.CAT, "q": e["q"]}
             if lib.is_mc(e):
                 row["opts"] = e["opts"]
                 row["a"] = e["a"]

@@ -1,0 +1,286 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-sv6l6vgf",
+   "kind": "wrong-explanation",
+   "claim": "The model answer credits the 2018 labelling rule with formalising the Yamanashi and Hokkaido GIs, and the stem calls it a 'law of 2018'.",
+   "because": "The NTA labelling standard was issued on 30 October 2015 and took effect on 30 October 2018. The GIs have nothing to do with it: Yamanashi was designated on 16 July 2013, under the separate GI notification, and Hokkaido on 27 June 2018. The standard's own provisions are the 'Japan Wine' term (grapes grown in Japan and wine made in Japan) and the 85% rule for naming a region on the label.",
+   "sources": [
+    "https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=New+Wine+Labeling+Standards+Become+Effective_Tokyo_Japan_11-2-2018.pdf",
+    "http://english.agrinews.co.jp/?p=8888"
+   ],
+   "fix": "q: \"Japan's wine-labelling standard (issued 2015, in force 30 October 2018) established:\" ans: \"'Japan Wine' (Nihon wine) = 100% Japanese-grown grapes, made in Japan; a region may be named on the label only with at least 85% of the grapes from it (the Yamanashi GI dates from 2013, Hokkaido's from June 2018, under the separate GI system)\"",
+   "batch": 161,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The USDA FAS GAIN report JA8092 (2 Nov 2018), which I opened and read in full, confirms the examiner. The NTA issued its \"Labelling Standards for Manufacturing Process and Quality of Wine\" in 2015, and they were enforced from 30 October 2018. Those standards created \"Japan Wine\" (grapes harvested in Japan, wine produced and bottled in Japan) in place of the old \"Domestic Wine\" term. They also set the 85% threshold for naming a region, a variety or a vintage. The GIs came under a separate track: the NTA set up its alcoholic-beverage GI guidelines on 30 October 2015, designated Yamanashi on 16 July 2013 and Hokkaido on 27 June 2018. So the model answer is wrong to say the 2018 labelling standard \"formalized\" those GIs; Yamanashi is five years older. Calling it a \"law of 2018\" only because it took effect that year is a minor imprecision. The examiner's replacement answer is correct, but it leaves the accept entry \"nihon wine domestic grapes only gi yamanashi\" in place. That entry keeps the false GI link in the list of answers the grader takes, so the accept list needs fixing too, and the model answer should be shorter so a student can type it back.",
+   "verifySources": [
+    "https://apps.fas.usda.gov/newgainapi/api/report/downloadreportbyfilename?filename=New+Wine+Labeling+Standards+Become+Effective_Tokyo_Japan_11-2-2018.pdf",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)"
+   ],
+   "finalFix": "q: \"Japan's national wine-labelling standard (issued by the NTA in 2015, enforced from 30 October 2018) established:\" ans: \"'Japan Wine' = 100% Japanese-grown grapes, made and bottled in Japan; a region, variety or vintage on the label needs at least 85%\" accept: [\"japan wine 100 percent japanese grapes\", \"nihon wine domestic grapes only\", \"japan wine 100 percent domestic grapes 85 percent region\"] exp: \"Before 2018 'Domestic Wine' could be made from imported concentrate or bulk wine. The 2015 NTA standard, enforced from 30 October 2018, reserved 'Japan Wine' for Japanese grapes. The GIs are a separate system: Yamanashi was designated in 2013 and Hokkaido in June 2018.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-sv6l6vgf",
+    "cat": "Classifications & Labels",
+    "q": "Japan's wine-labeling law of 2018 established:",
+    "sa": 1,
+    "accept": [
+     "nihon wine domestic grapes only gi yamanashi",
+     "japan wine 100 percent japanese grapes"
+    ],
+    "ans": "'Japan Wine' = 100% domestically grown grapes; GIs like Yamanashi and Hokkaido formalized",
+    "exp": "Koshu's international push required legal hygiene first."
+   }
+  },
+  {
+   "id": "m-8jxfmh46",
+   "kind": "wrong-explanation",
+   "claim": "The stem and model answer treat 'Deutscher Crémant' as a German label category and say it requires whole-bunch pressing.",
+   "because": "Under EU Delegated Regulation 2019/33, 'Crémant' may only be used on a quality sparkling wine with a PDO. The term must appear together with the name of the geographical unit behind that PDO, so in Germany the wine is a Sekt b.A. labelled as, for example, 'Crémant' with 'Pfalz' or 'Baden'. There is no national 'Deutscher Crémant' designation. The same regulation allows pressing of whole or destemmed grapes (at most 100 litres per 150 kg), so whole-bunch pressing is not a legal requirement.",
+   "sources": [
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02019R0033-20231208",
+    "https://www.winesofgermany.com/our-wine/wine-products/wine-product/259/sparkling-wine"
+   ],
+   "fix": "Stem: '...Sekt, Deutscher Sekt, Sekt b.A., Winzersekt and Crémant each guarantee?' Answer sentence: \"'Crémant' (always paired with the region's name, e.g. Crémant from the Pfalz, and therefore always a Sekt b.A.) follows the EU Crémant rules: hand-harvesting, pressing of whole or destemmed grapes at no more than 100 litres per 150 kg, traditional method, at least nine months on lees.\"",
+   "batch": 164,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds on both counts. (1) German law has no \"Deutscher Crémant\" category. WeinV 1995 § 34a allows the word \"Crémant\" only on a Sekt b.A. that meets Art. 53(5) of Delegated Regulation (EU) 2019/33, and the label must also carry the protected origin name. Art. 53(5) says \"Crémant\" appears alongside the name of the geographical unit. So the wine is a regional Crémant (for example from the Pfalz), not a national \"Deutscher\" one. (2) Art. 53(5)(b) requires must \"obtained by pressing whole or destemmed grapes\", with no more than 100 litres per 150 kg. Whole-bunch pressing is therefore permitted but not required, so the model answer's \"whole-bunch pressing\" is a false statement of the legal rule. The examiner's fix is accurate: manual harvest (53(5)(a)), whole or destemmed grapes at 100 L/150 kg, traditional method with at least nine months on lees (through 53(4)), always a Sekt b.A. with the region named. The accept list does not mention Crémant and needs no change. The VDP sentence describes a private statute and is outside this finding.",
+   "verifySources": [
+    "https://www.gesetze-im-internet.de/weinv_1995/__34a.html",
+    "https://www.legislation.gov.uk/eur/2019/33/article/53",
+    "https://www.gesetze-im-internet.de/weinv_1995/"
+   ],
+   "finalFix": "Stem: \"Read a German sparkling label: what do Sekt, Deutscher Sekt, Sekt b.A., Winzersekt and Crémant each guarantee?\" Replace the answer's Crémant sentence with: \"'Crémant' (always paired with the region's name, e.g. Crémant from the Pfalz, and therefore always a Sekt b.A.) follows the EU Crémant rules: hand-harvesting, pressing of whole or destemmed grapes at no more than 100 litres per 150 kg, traditional method, at least nine months on lees.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-8jxfmh46",
+    "cat": "Germany",
+    "q": "Read a German sparkling label: what do Sekt, Deutscher Sekt, Sekt b.A., Winzersekt and Deutscher Cremant each guarantee?",
+    "sa": 1,
+    "accept": [
+     "sekt may use imported base wine deutscher sekt is all german sekt ba comes from one named region winzersekt is estate fruit by the traditional method",
+     "winzersekt means the grower's own fruit bottle fermented with at least nine months on the lees",
+     "deutscher sekt guarantees german grapes and sekt ba guarantees one of the thirteen regions"
+    ],
+    "ans": "'Sekt' on its own guarantees almost nothing about origin: the base wine may be bought anywhere in the EU and for the big industrial brands it is, typically Italian, Spanish or French; expect tank method, minimal ageing and a wine sold on brand rather than place. 'Deutscher Sekt' means the grapes are 100% German. 'Sekt b.A.' — bestimmter Anbaugebiete — means all the fruit comes from a single one of the thirteen designated regions, which must be named on the label. 'Winzersekt' is the grower tier: estate's own fruit, traditional method, bottle-fermented and aged a minimum of nine months on the lees, with vintage and variety declared. 'Deutscher Cremant' follows the EU Cremant rules — whole-bunch pressing at a restricted juice yield, traditional method, at least nine months on lees. Above all of it sits the VDP's own Sekt statute, which requires hand-harvesting, whole-bunch pressing and substantially longer lees ageing than the law asks. The working shortcut for a list: if the label does not say Winzersekt, Cremant, or 'traditionelle Flaschengarung' with a named grower behind it, treat it as industrial.",
+    "exp": "Germany drinks more sparkling wine per head than almost anywhere and the overwhelming majority of it tells you nothing about where it grew — which is exactly why the label hierarchy is worth knowing cold. The grower tier is genuinely serious and still underpriced: Raumland, Griesel, Barth, Solter and Schembs make traditional-method wine at a quality that would cost twice as much with a Champagne address, and Riesling Sekt is a category with no real competitor."
+   }
+  },
+  {
+   "id": "m-k3kcrfrz",
+   "kind": "accept-list",
+   "claim": "The strict entries '~and royal tokaji', '~and disznoko', '~and oremus' and '~and hetszolo' pass an answer that names only one correct estate.",
+   "because": "Each of those entries matches any input ending in 'and <estate>', so the first name is never checked. Tested with matchSA: 'Szepsy and Oremus' and 'Tokaj Kereskedőház and Royal Tokaji' (the latter is the state-owned trading house) both grade correct, although the question asks for two foreign-investment estates.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, tested in a node harness)"
+   ],
+   "fix": "Remove '~and royal tokaji', '~and disznoko', '~and oremus', '~and hetszolo'; add '~royal tokaji and disznoko', '~royal tokaji and oremus', '~royal tokaji and hetszolo', '~disznoko and oremus', '~disznoko and hetszolo', '~oremus and hetszolo', '~disznoko and royal tokaji', '~oremus and royal tokaji', '~hetszolo and royal tokaji', '~oremus and disznoko', '~hetszolo and disznoko', '~hetszolo and oremus'",
+   "batch": 164,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The defect is real. I ran the live matchSA from C:/Users/zpull/SommeliersCodex/js/core.js in a node harness against the question in batch-164.json. The four strict entries '~and <estate>' match any input that ends in 'and <estate>', so the first name is never checked. With the current list, 'Szepsy and Oremus', 'Tokaj Kereskedőház and Royal Tokaji', 'Kereskedohaz and Disznoko', 'Hugh Johnson and Oremus' and 'Szepsy and Royal Tokaji' all grade correct, but each names only one foreign-investment estate. Szepsy is a Hungarian grower, Kereskedőház is the state trading house, and Hugh Johnson is a person, not an estate.\n\nThe examiner's fix closes that hole but makes the grader refuse plainly right answers that pass today. Under the proposed list these grade wrong: 'Royal Tokaji Wine Company and Disznókő' (the name the app's own model answer uses), 'Royal Tokaji Wine Co. and Oremus', 'Oremus (Vega Sicilia) and Disznókő (AXA)' and 'Disznókő (AXA) and Oremus (Vega Sicilia)'. Every '~A and B' entry needs A to sit directly before 'and'. So it breaks whenever the first estate carries its full company name or an owner in brackets.\n\nBoth lists also refuse 'Hetszolo, Royal Tokaji', because the plain pairs cover only 7 of the 12 orders. My fix drops every strict entry and generates all 12 ordered pairs of the four estates. Each pair appears joined by a space and by 'and', and the first estate also appears in its variant forms: Royal Tokaji Wine Company or Wine Co, Disznókő AXA, Oremus Vega Sicilia.\n\nTested on the fixed list:\n- All the right answers above grade correct, including the displayed model answer.\n- All five single-estate inputs above are refused.\n- 'Oremus' alone is refused, and so are the negations 'not Oremus and not Disznoko' and 'Oremus but not Disznoko'.\n\nNo web sources were needed, because the finding is about grader behaviour, not wine facts.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm, negatedAgainst; run in a node harness)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-164.json (question m-k3kcrfrz)",
+    "C:/Users/zpull/AppData/Local/Temp/claude/C--Users-zpull--claude/ee375187-7803-4126-b577-0cdfe403a999/scratchpad/k3kcrfrz-harness.js (current vs proposed vs better list)"
+   ],
+   "finalFix": "[\"royal tokaji disznoko oremus vega sicilia hetszolo\",\"royal tokaji hugh johnson vinding-diers disznoko\",\"~royal tokaji disznoko\",\"~royal tokaji and disznoko\",\"~royal tokaji wine company disznoko\",\"~royal tokaji wine company and disznoko\",\"~royal tokaji wine co disznoko\",\"~royal tokaji wine co and disznoko\",\"~royal tokaji oremus\",\"~royal tokaji and oremus\",\"~royal tokaji wine company oremus\",\"~royal tokaji wine company and oremus\",\"~royal tokaji wine co oremus\",\"~royal tokaji wine co and oremus\",\"~royal tokaji hetszolo\",\"~royal tokaji and hetszolo\",\"~royal tokaji wine company hetszolo\",\"~royal tokaji wine company and hetszolo\",\"~royal tokaji wine co hetszolo\",\"~royal tokaji wine co and hetszolo\",\"~disznoko royal tokaji\",\"~disznoko and royal tokaji\",\"~disznoko axa royal tokaji\",\"~disznoko axa and royal tokaji\",\"~disznoko oremus\",\"~disznoko and oremus\",\"~disznoko axa oremus\",\"~disznoko axa and oremus\",\"~disznoko hetszolo\",\"~disznoko and hetszolo\",\"~disznoko axa hetszolo\",\"~disznoko axa and hetszolo\",\"~oremus royal tokaji\",\"~oremus and royal tokaji\",\"~oremus vega sicilia royal tokaji\",\"~oremus vega sicilia and royal tokaji\",\"~oremus disznoko\",\"~oremus and disznoko\",\"~oremus vega sicilia disznoko\",\"~oremus vega sicilia and disznoko\",\"~oremus hetszolo\",\"~oremus and hetszolo\",\"~oremus vega sicilia hetszolo\",\"~oremus vega sicilia and hetszolo\",\"~hetszolo royal tokaji\",\"~hetszolo and royal tokaji\",\"~hetszolo disznoko\",\"~hetszolo and disznoko\",\"~hetszolo oremus\",\"~hetszolo and oremus\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-k3kcrfrz",
+    "cat": "Hungary & Greece",
+    "q": "Name the Tokaj estates that led the post-1989 foreign-investment revival (any two).",
+    "sa": 1,
+    "accept": [
+     "royal tokaji disznoko oremus vega sicilia hetszolo",
+     "royal tokaji hugh johnson vinding-diers disznoko",
+     "~and royal tokaji",
+     "~and disznoko",
+     "~and oremus",
+     "~and hetszolo",
+     "~royal tokaji disznoko",
+     "~royal tokaji oremus",
+     "~royal tokaji hetszolo",
+     "~disznoko oremus",
+     "~disznoko hetszolo",
+     "~oremus hetszolo",
+     "~disznoko royal tokaji",
+     "~oremus disznoko",
+     "~hetszolo oremus"
+    ],
+    "ans": "The Royal Tokaji Wine Company (Hugh Johnson with Peter Vinding-Diers and Ben Howkins; István Szepsy among the Hungarian founding partners), Disznókő (AXA Millésimes), Oremus (Vega Sicilia), Hétszőlő",
+    "exp": "István Szepsy bridges both camps — a Royal Tokaji founding partner and, under his own label, dry Furmint's prophet."
+   }
+  },
+  {
+   "id": "m-vsfjov91",
+   "kind": "accept-list",
+   "claim": "The grader rejects plainly correct answers that use the spelling 'litre' or leave out the word Gönc.",
+   "because": "Tested with matchSA: 'A 136-litre barrel from Gönc; puttonyos were counted per gönci', '136 litre barrel' and 'gonci barrel of 136 liters' are all graded wrong. The accept phrases need 'liter' spelled exactly and in a fixed word order.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, tested in a node harness)"
+   ],
+   "fix": "Add accepts '~136 litre', '~136 liter', '~136 litres', '~136 liters', '~136 l'",
+   "batch": 164,
+   "verdict": "confirmed",
+   "verifyReason": "I ran matchSA from C:/Users/zpull/SommeliersCodex/js/core.js in a node harness against the question's real accept list. It marks as wrong every example the examiner gave: \"A 136-litre barrel from Gönc; puttonyos were counted per gönci\", \"136 litre barrel\" and \"gonci barrel of 136 liters\". It also marks as wrong \"136 liter barrel\", \"gonci barrel 136 litres\", \"136-liter gonci barrel\", \"136 l barrel\" and a correct full-sentence answer. It passes only near-verbatim copies of \"gonci barrel 136 liters\" and of the model answer.\n\nThe cause is in norm. It keeps \"litre\" and \"liter\" as different words and turns the hyphen in \"136-litre\" into a space, so the words do not line up. The containment check then needs one accept phrase in its exact word order, and the fallback rule needs the input to cover at least 60% of a phrase's words.\n\nThe existing accept \"gonci barrel 136 liters\" already grades on the size alone, so accepting the barrel's size is intended. The fact itself is standard: the Oxford Companion to Wine gives the gönci cask as 136 litres. I could not re-open a source online because this session's web search budget is used up. The finding is about the grader, not the fact, and the local test settles it.\n\nI tested the proposed fix: the five \"~\" strict-canonical accepts. Every correct variant above now passes. \"not 136 liters\" and \"225 liters, not 136 liters\" are still refused, because the strict branch runs the negation guard. The fix is right as given.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, negatedAgainst, matchSA lines 11-97, run in a node harness)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-164.json (m-vsfjov91)",
+    "Oxford Companion to Wine, 'Tokaji' / gönci cask of 136 l (from background knowledge; not re-opened, web search budget exhausted)"
+   ],
+   "finalFix": "Add accepts '~136 litre', '~136 liter', '~136 litres', '~136 liters', '~136 l'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-vsfjov91",
+    "cat": "Hungary & Greece",
+    "q": "What is 'gönci' and why does it matter to Aszú arithmetic?",
+    "sa": 1,
+    "accept": [
+     "136 liter barrel from gonc puttonyos measured against it",
+     "gonci barrel 136 liters"
+    ],
+    "ans": "The 136-litre Gönc barrel — puttonyos counted hods of aszú per gönci cask",
+    "exp": "Change the barrel, change the sweetness scale: the unit is the law."
+   }
+  },
+  {
+   "id": "m-bck0m71i",
+   "kind": "accept-list",
+   "claim": "The grader rejects 'Calmont, 65°' and 'Calmont about 65 degrees', both of which are right.",
+   "because": "Tested with matchSA: without the word 'Bremmer', no input reaches the 60% word-coverage threshold, so the site plus its gradient is graded wrong. Sources give the gradient as up to 65 to 68 degrees.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, tested in a node harness)",
+    "https://www.winesofgermany.com/our-regions/highlight-of-wine-culture/159/the-bremmer-calmont-vineyard"
+   ],
+   "fix": "Add accepts '~calmont 65', '~calmont about 65', '~calmont up to 65', '~calmont 68'",
+   "batch": 164,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I ran the real matchSA from core.js in node, against accept [\"bremmer calmont 65 degrees\",\"calmont steepest in europe\"]. The grader rejects \"Calmont, 65°\", \"Calmont about 65 degrees\", \"Calmont up to 65\" and \"Calmont up to 68 degrees\", so the finding holds. It does accept \"Calmont 65 degrees\" and \"Bremmer Calmont, 65°\". The site and the gradient are both right: German Wikipedia (Bremmer Calmont) gives a slope of up to 68° (about 248%) and calls it Europe's steepest vineyard site, alongside the small Engelsfelsen. Wines of Germany also calls the Calmont Europe's steepest vineyard. So \"up to ~65°\" in the model answer is a fair approximation, and 68 is also right. The examiner's fix does accept both numbers, but it is inconsistent: it adds a bare '~calmont 68' without the 'about' and 'up to' forms it gives 65. With that fix, \"Calmont up to 68 degrees\" and \"Calmont about 68°\" are still rejected. The better fix adds those two forms. I tested it: all the correct phrasings above pass. \"Calmont\" alone, \"calmont 45\", \"calmont 60\", \"calmont not 65\", \"calmont no 65\" and \"Uhlen 65\" still fail.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, run in a node harness at scratchpad/t164.js and t164b.js)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-164.json",
+    "https://de.wikipedia.org/wiki/Bremmer_Calmont",
+    "https://www.winesofgermany.com/our-regions/highlight-of-wine-culture/159/the-bremmer-calmont-vineyard"
+   ],
+   "finalFix": "\"accept\": [\"bremmer calmont 65 degrees\", \"calmont steepest in europe\", \"~calmont 65\", \"~calmont about 65\", \"~calmont up to 65\", \"~calmont 68\", \"~calmont about 68\", \"~calmont up to 68\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-bck0m71i",
+    "cat": "Germany",
+    "q": "Mosel's steepest vineyard and its gradient:",
+    "sa": 1,
+    "accept": [
+     "bremmer calmont 65 degrees",
+     "calmont steepest in europe"
+    ],
+    "ans": "Bremmer Calmont — up to ~65°, Europe's steepest vineyard",
+    "exp": "Every operation by hand and winch; the wines are almost incidental to the feat."
+   }
+  },
+  {
+   "id": "m-yc3r58oh",
+   "kind": "accept-list",
+   "claim": "The grader rejects the standard wording of the claim, 'Tokaj became the world's first closed wine region'.",
+   "because": "Tested with matchSA: 'It delimited Tokaj as the world's first closed wine region' is graded wrong. The accepts need either the full phrase 'closed production district first classified wine region 1737' or 'royal decree delimited tokaj'.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, tested in a node harness)"
+   ],
+   "fix": "Add accepts '~first closed wine region', '~first closed wine district', '~first delimited wine region', '~closed production district'",
+   "batch": 164,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I confirmed the grader fault myself. I loaded matchSA from C:/Users/zpull/SommeliersCodex/js/core.js into a node harness and tested the live accept list, which is [\"closed production district first classified wine region 1737\", \"royal decree delimited tokaj\"]. It grades these answers WRONG: \"It delimited Tokaj as the world's first closed wine region\", \"Tokaj became the world's first closed wine region\", \"closed production district\" and \"The 1737 decree of Charles VI made Tokaj the first closed wine district\". The reason is that neither accept is contained in these answers, and neither answer covers 60% of the longer accept. With the proposed '~' accepts added, all of these grade correct. A negation (\"It was not the first closed wine region\") is still refused, and so is an off-target answer (\"Tokaj was the first appellation\"). One part of the fix is off, though. '~first delimited wine region' would grade a disputed claim as correct. Wikipedia's Tokaj wine region article says Tokaj's appellation claim \"is disputed by Chianti, whose territory was defined in 1716\", so the world-first claim that holds up is specifically the first CLOSED district (zárt borvidék). That entry should be left out. The other three are safe as strict (~) accepts. One side note, not part of this ruling: Wikipedia gives the decree year as \"1737 or 1757\" (the Tokaji article says 1757), while the Codex, its primers and most wine references use 1737. That is outside this finding and I did not find enough to report it.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 49-89, run in a node harness on the live and fixed accept lists)",
+    "C:/Users/zpull/SommeliersCodex/js/data-master.js line 351 (m-yc3r58oh)",
+    "https://en.wikipedia.org/wiki/Tokaj_wine_region (royal decree 1737 or 1757 made a closed production district; world-first appellation claim disputed by Chianti 1716)",
+    "https://en.wikipedia.org/wiki/Tokaji (closed production district; classification began 1730)"
+   ],
+   "finalFix": "\"accept\": [\"closed production district first classified wine region 1737\", \"royal decree delimited tokaj\", \"~first closed wine region\", \"~first closed wine district\", \"~closed production district\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-yc3r58oh",
+    "cat": "Hungary & Greece",
+    "q": "Explain Tokaj's 1737 royal decree and its world-first claim.",
+    "sa": 1,
+    "accept": [
+     "closed production district first classified wine region 1737",
+     "royal decree delimited tokaj"
+    ],
+    "ans": "A royal decree delimited Tokaj as a closed production district — with vineyard classification predating Bordeaux's 1855 by over a century",
+    "exp": "1700 Rákóczi-era classification arguments push the claim earlier still."
+   }
+  },
+  {
+   "id": "m-uh35zhgm",
+   "kind": "accept-list",
+   "claim": "The grader rejects a correct restatement of the VDP rule.",
+   "because": "Tested with matchSA: 'Pradikat terms are reserved for sweet wines; dry wines from top sites are GG' and 'dry wines drop Pradikat, GG instead' are both graded wrong. The two accepts are long compressed strings that normal prose does not contain.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, tested in a node harness)"
+   ],
+   "fix": "Add accepts '~pradikat terms are reserved for sweet wines', '~pradikat only for sweet wines', '~pradikat reserved for wines with residual sugar', '~dry wines drop pradikat'",
+   "batch": 164,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I reproduced the finding. I loaded matchSA from lines 1 to 98 of C:/Users/zpull/SommeliersCodex/js/core.js into a node harness and ran it on the live question (m-uh35zhgm, accept = ['dry wines drop pradikat use gg erste lage only sweet keep', 'gg has no pradikat on label']). It rejects every correct prose restatement I tried, including both of the examiner's: 'Pradikat terms are reserved for sweet wines; dry wines from top sites are GG', 'dry wines drop Pradikat, GG instead', 'Prädikat only for sweet wines, dry top wines are Grosses Gewächs', 'VDP reserves Prädikat for wines with residual sugar' and 'Only sweet wines carry Prädikat'. The two accepts are compressed keyword strings that normal prose never contains, and a student marked wrong for a right answer records a miss.\n\nThe examiner's four accepts fix their two test sentences and still refuse the negations I tried ('not reserved for sweet wines', 'dry wines do not drop pradikat', 'dry wines keep pradikat'). They miss three common phrasings, though: 'VDP reserves Prädikat for wines with residual sugar', 'Only sweet wines carry Prädikat' and 'Prädikat names only on sweet wines'. With the three extra strict accepts below added as well, all of these pass and the negations still fail.\n\nOne leak is left, a contrived case: '...only for sweet wines is false' still grades as right. No new fact is being judged here: every added accept only restates the question's own model answer (the VDP keeps Prädikat for wines with residual sugar and labels dry top-site wines GG). My web search budget was used up, so I made no new web check. The ruling rests on the grader test alone.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA lines 49-98, run in a node harness on the live question and on the proposed accept lists)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-164.json (question m-uh35zhgm)"
+   ],
+   "finalFix": "\"accept\": [\"dry wines drop pradikat use gg erste lage only sweet keep\", \"gg has no pradikat on label\", \"~pradikat terms are reserved for sweet wines\", \"~pradikat only for sweet wines\", \"~pradikat reserved for wines with residual sugar\", \"~dry wines drop pradikat\", \"~only sweet wines carry pradikat\", \"~pradikat names only on sweet wines\", \"~pradikat for wines with residual sugar\", \"~pradikat only on sweet wines\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-uh35zhgm",
+    "cat": "Germany",
+    "q": "Explain the VDP's stance on Prädikat terms for dry wines.",
+    "sa": 1,
+    "accept": [
+     "dry wines drop pradikat use gg erste lage only sweet keep",
+     "gg has no pradikat on label"
+    ],
+    "ans": "VDP members reserve Prädikat terms for wines with residual sugar; dry wines from top sites label GG/Erstes Gewächs without them",
+    "exp": "Ending the 'Spätlese trocken' confusion within the association."
+   }
+  },
+  {
+   "id": "m-qajdxz6a",
+   "kind": "accept-list",
+   "claim": "The grader rejects 'Müller-Thurgau: Riesling and Madeleine Royale' and 'Rivaner, Riesling x Madeleine Royale', both of which are right.",
+   "because": "Tested with matchSA: writing 'and' in place of 'x' breaks the containment match, and the model answer itself gives Rivaner as the synonym, yet 'Rivaner' is not accepted.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, tested in a node harness)"
+   ],
+   "fix": "Add accepts '~riesling and madeleine royale', '~rivaner riesling x madeleine royale', '~rivaner riesling and madeleine royale'",
+   "batch": 164,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I ran the live matchSA from C:/Users/zpull/SommeliersCodex/js/core.js in a node harness. With the current accept list, three correct answers fail: \"Müller-Thurgau: Riesling and Madeleine Royale\", \"Rivaner, Riesling x Madeleine Royale\" and \"Rivaner, Riesling and Madeleine Royale\". Rivaner is the synonym the model answer itself gives. Riesling × Madeleine Royale is the DNA-established parentage (Dettweiler et al. 2000, Oxford Companion to Wine, VIVC), so this is a real refusal of a plainly right answer. I could not open a web source this session because the search budget ran out, but the ruling depends only on the grader's behaviour, which I tested directly, and on facts the question already states.\n\nThe examiner's fix is too loose. The entry '~riesling and madeleine royale' contains no grape name, so it also accepts \"Silvaner, Riesling and Madeleine Royale\". That names the old misattribution as the grape, which is wrong on the very point the question tests, and the current grader rejects it. The examiner's fix also still rejects \"Rivaner: Riesling × Madeleine Royale\", because norm() drops the × and leaves \"rivaner riesling madeleine royale\". The better fix below accepts every right variant tested and rejects the Silvaner and Kerner answers.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, negatedAgainst, matchSA; run in a node harness against the current, proposed and alternative accept lists)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-164.json (m-qajdxz6a)",
+    "Oxford Companion to Wine, entry Müller-Thurgau (parentage Riesling x Madeleine Royale; synonym Rivaner)"
+   ],
+   "finalFix": "Add accepts '~muller thurgau riesling and madeleine royale', '~rivaner riesling x madeleine royale', '~rivaner riesling and madeleine royale', '~rivaner riesling madeleine royale'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-qajdxz6a",
+    "cat": "Germany",
+    "q": "Name Germany's most-planted white grape after Riesling, and the crossing's parents:",
+    "sa": 1,
+    "accept": [
+     "muller-thurgau riesling madeleine royale",
+     "müller-thurgau riesling x madeleine royale"
+    ],
+    "ans": "Müller-Thurgau (Rivaner) — Riesling × Madeleine Royale (long misattributed to Silvaner)",
+    "exp": "Hermann Müller's 1882 crossing built postwar volume and postwar reputation problems."
+   }
+  }
+ ]
+}

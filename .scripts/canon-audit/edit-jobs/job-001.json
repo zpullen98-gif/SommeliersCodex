@@ -1,0 +1,112 @@
+{
+ "file": "rewrite/categories/r2_italy_north.py",
+ "findings": [
+  {
+   "id": "c-kkromzge",
+   "kind": "wrong-explanation",
+   "claim": "including a passito dried for years",
+   "because": "The Erbaluce di Caluso DOCG disciplinare says the grapes are dried on racks until they reach at least 29% sugar. That drying takes months, normally from the harvest into late winter. The years belong to the aging that follows: 36 months from 1 November after the harvest (48 for Riserva), with release from 1 November of the third year. A candidate who learns 'dried for years' has mixed up drying and aging. The keyed answer, Erbaluce, is correct.",
+   "sources": [
+    "https://www.agraria.org/vini/disciplinareerbalucedicaluso.htm",
+    "https://www.regione.piemonte.it/web/sites/default/files/media/documenti/2019-01/docg_erbaluce_di_caluso_o_caluso.pdf"
+   ],
+   "fix": "High acidity is what makes the grape work in every register, including a passito whose grapes dry on racks for months and whose wine then ages at least three years (four for Riserva).",
+   "batch": 1,
+   "verdict": "confirmed",
+   "verifyReason": "I could not refute this finding. The explanation says the Caluso passito is \"a passito dried for years\", and that is false. The disciplinare (Art. 5, from the agraria.org transcription) says the selected grapes must be dried (\"appassimento\") until they reach at least 29% sugar. It sets no length of time. The years in the rule belong to aging: 36 months from 1 November after the harvest, or 48 for Riserva, with release from 1 November of the third year (fourth for Riserva). Producers, the FISAR Milano sources and the agraria.org DOCG page all describe the drying the same way. The bunches rest in airy lofts called passitaie for about five months, from harvest to February or mid-March, and pressing starts in March. So the drying takes months and the years are aging, as the examiner says. The keyed answer, Erbaluce, and the stem are correct. The proposed fix states both facts correctly: months of drying, then at least three years of aging (four for Riserva).",
+   "verifySources": [
+    "https://www.agraria.org/vini/disciplinareerbalucedicaluso.htm",
+    "https://www.regione.piemonte.it/web/sites/default/files/media/documenti/2019-01/docg_erbaluce_di_caluso_o_caluso.pdf",
+    "https://www.agraria.org/vini/erbalucedicaluso.htm",
+    "https://www.fisarmilano.org/magazine/2019/03/erbaluce-di-caluso-passito/",
+    "http://www.ferrandovini.it/passito.html"
+   ],
+   "finalFix": "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito whose grapes dry on racks for months and whose wine then ages at least three years (four for Riserva).",
+   "source": "pilot",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-kkromzge",
+    "cat": "Italy North",
+    "q": "North of Turin one white grape serves for a dry wine, for a metodo classico and for a passito, all under a single denomination. Which grape?",
+    "opts": [
+     "Erbaluce",
+     "Favorita",
+     "Arneis",
+     "Nascetta"
+    ],
+    "a": 0,
+    "exp": "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito dried for years."
+   }
+  },
+  {
+   "id": "c-pvaad5sa",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the Euganean Hills are old volcanic intrusions that never erupted through the surface.",
+   "because": "The Euganean Hills formed in two volcanic phases. In the first, in the Eocene about 43 million years ago, basalt lava erupted onto the sea floor through open fractures. In the second, in the Oligocene, viscous trachytic and rhyolitic magma built laccoliths and domes. Some of that magma stayed underground as laccoliths, but the Eocene basalts were real eruptions. So 'never erupted' is false. The keyed answer, Colli Euganei, is correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Euganean_Hills"
+   ],
+   "fix": "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are the remains of Eocene submarine basalt eruptions and later Oligocene trachyte and rhyolite domes and laccoliths, left standing isolated above flat farmland once the softer sediments around them wore away.",
+   "batch": 224,
+   "verdict": "confirmed",
+   "verifyReason": "The keyed answer, Colli Euganei, is correct. The explanation's geology is wrong. The Parco Regionale Colli Euganei's own volcanic-rocks page says the first event, about 43 million years ago, produced fluid basaltic lava that spread as submarine flows. It says the highest cones probably rose above sea level as a small volcanic archipelago. It also says that in places the lava lifted the overlying cover, broke through to the surface and pooled above the vent as domes, while elsewhere it formed laccoliths under the sediments. Italian and English Wikipedia agree: submarine basaltic eruptions in the Eocene, then viscous trachytic magma in the Oligocene. Some of the hills are laccoliths that never broke through, but 'intrusions that never erupted through the surface' is false for the hills as a whole. The examiner's replacement text is accurate: Eocene submarine basalt eruptions, then Oligocene trachyte and rhyolite domes and laccoliths, left standing as the softer sediments around them eroded.",
+   "verifySources": [
+    "https://www.parcocollieuganei.com/pagina.php?id=28",
+    "https://it.wikipedia.org/wiki/Colli_Euganei",
+    "https://en.wikipedia.org/wiki/Euganean_Hills"
+   ],
+   "finalFix": "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are the remains of Eocene submarine basalt eruptions and later Oligocene trachyte and rhyolite domes and laccoliths, left standing isolated above flat farmland once the softer sediments around them wore away.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-pvaad5sa",
+    "cat": "Italy North",
+    "q": "Volcanic cones rise straight out of the plain southwest of Padua and carry a DOCG for sweet Moscato Giallo. Name those hills.",
+    "sa": 1,
+    "accept": [
+     "colli euganei",
+     "euganei",
+     "euganean hills",
+     "colli euganei docg"
+    ],
+    "ans": "Colli Euganei",
+    "exp": "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are old volcanic intrusions that never erupted through the surface, so they stand isolated above flat farmland."
+   }
+  },
+  {
+   "id": "c-vz9zxdcb",
+   "kind": "wrong-explanation",
+   "claim": "The explanation places Isera \"south of Rovereto\".",
+   "because": "Isera is on the right (west) bank of the Adige, directly west of Rovereto and at the same latitude: Isera is at 45°53′N 11°01′E and Rovereto at 45°53′N 11°03′E. The two are neighbouring comuni. The key (Marzemino) is correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Isera",
+    "https://en.wikipedia.org/wiki/Rovereto"
+   ],
+   "fix": "Isera in the Vallagarina is its stronghold, on basalt soils just west of Rovereto across the Adige. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept.",
+   "batch": 225,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. Wikipedia gives Isera at 45°53′N 11°01′E and Rovereto at 45°53′N 11°03′E. They sit at the same latitude and share a border. Italian Wikipedia places Isera on the right (west) bank of the Adige, opposite Rovereto, so Isera lies west of Rovereto, not south of it, and the explanation's \"south of Rovereto\" is wrong. The key (Marzemino) is right. Isera's Marzemino is the wine Mozart names in Don Giovanni, and the town's coat of arms carries a Marzemino bunch. The accept list is fine. The examiner's fix only corrects the direction and keeps the rest of the text, so it is accepted as written.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Isera",
+    "https://en.wikipedia.org/wiki/Rovereto",
+    "https://it.wikipedia.org/wiki/Isera"
+   ],
+   "finalFix": "Isera in the Vallagarina is its stronghold, on basalt soils just west of Rovereto across the Adige. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-vz9zxdcb",
+    "cat": "Italy North",
+    "q": "Mozart's Don Giovanni calls for a dark, soft red from Trentino by name in its final act. Name the grape.",
+    "sa": 1,
+    "accept": [
+     "marzemino",
+     "marzemino grape",
+     "marzemino d'isera"
+    ],
+    "ans": "Marzemino",
+    "exp": "Isera in the Vallagarina is its stronghold, on basalt soils south of Rovereto. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept."
+   }
+  }
+ ]
+}

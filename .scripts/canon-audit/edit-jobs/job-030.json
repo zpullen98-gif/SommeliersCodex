@@ -1,0 +1,79 @@
+{
+ "file": "rewrite/categories/r1_label_reading.py",
+ "findings": [
+  {
+   "id": "i-pvm5q4dz",
+   "kind": "wrong-explanation",
+   "claim": "the filling was done at the producer's own premises, at a co-operative's, or by a firm inside the denominated zone",
+   "because": "Under the Italian labelling decree (DM 13 agosto 2012, art. 56, continuing DM 23 dicembre 2009 art. 3), 'imbottigliato all'origine' is reserved for bottling at the producer's own facility or at an association of producers (cantina sociale, produttori riuniti). Bottling by any firm inside the zone is a separate, broader claim, 'imbottigliato nella zona di produzione' or 'imbottigliato in [DOP/IGP]', which does not require the bottler to have made the wine. For the same reason the keyed option ('bottled in the zone where it was made') describes the zone term rather than the producer-bottling term, though it remains the best of the four options.",
+   "sources": [
+    "https://www.lavinium.it/imbottigliato-allorigine-si-forse-non-so-dipende/",
+    "https://www.masaf.gov.it/flex/cm/pages/ServeBLOB.php/L/IT/IDPagina/5367",
+    "https://faolex.fao.org/docs/pdf/ita116381.pdf"
+   ],
+   "fix": "Explanation: 'the filling was done at the premises of the producer who made the wine, or of its co-operative or producers' association, and the words are reserved for DOP and IGP wines. A firm that merely bottles inside the zone uses the separate phrase imbottigliato nella zona di produzione.' Option 1 could read: 'The wine was bottled by the producer who made it, or its co-operative, not tankered away and filled elsewhere'.",
+   "batch": 92,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding is right. I read DM 13 agosto 2012, art. 3(1), which applies art. 56(2) of Reg. 607/2009 and carries forward DM 23 dicembre 2009 art. 3. Letter (a) lists \"imbottigliato all'origine da / dalla cantina sociale / dai produttori riuniti / dall'associazione dei produttori\" for bottling \"nell'azienda del produttore o di un'associazione di produttori\", and these words are tied to the agricultural entrepreneur under art. 2135 c.c. Bottling by any firm in the zone sits under a different heading, letter (b): \"imbottigliato nella zona di produzione\" or \"imbottigliato in [DOP/IGP]\", done in the zone or its immediate vicinity. So the explanation's \"or by a firm inside the denominated zone\" is wrong. It merges the two claims.\n\nThe later DM 7 dicembre 2023 deals only with ingredient and nutrition labelling. It does not replace art. 3, and trade circulars still cite that rule. The rest of the explanation holds: DOP/IGP only, \"integralmente prodotto\" for vines owned by the estate, and \"imbottigliato da\" for the bottler's name.\n\nThe keyed option (1) is still the best of the four, so the key stays at a=1. But its wording, \"bottled in the zone where it was made\", is really the zone term, letter (b). It should be reworded so the option and the explanation agree. The examiner's fix is right but only partial: it drops the explanation's last sentence and leaves the option change optional. The fix below gives the full replacement text for both.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-092.json (i-pvm5q4dz)",
+    "https://www.tuttocamere.it/files/agricol/2012_08_13.pdf (DM 13 agosto 2012, GU n. 200 del 28/08/2012, art. 3 comma 1 lettere a-c)",
+    "https://faolex.fao.org/docs/pdf/ita116381.pdf",
+    "https://www.lavinium.it/imbottigliato-allorigine-si-forse-non-so-dipende/",
+    "https://consulenzaagricola.it/circolari/vitivinicolo/7103-circ-n-33-2017-vino-imbottigliato-all-origine",
+    "https://www.disciplinare.it/etichettatura-dei-prodotti-vitivinicoli.html (DM 7 dicembre 2023, ingredients/nutrition only)"
+   ],
+   "finalFix": "opts[1]: \"The wine was bottled by the grower-producer who made it, or by its co-operative or producers' association, not tankered away and filled elsewhere\" (a stays 1). exp: \"Bulk wine can be moved anywhere before it is packaged, and this phrase is the Italian answer to that: the filling was done at the premises of the grower-producer who made the wine, or of its cantina sociale or producers' association, and the words are reserved for DOP and IGP wines. A firm that merely bottles inside the zone may not use it and says imbottigliato nella zona di produzione instead. They say nothing about who owned the vines, which is the separate claim integralmente prodotto, while a producer wanting to state only who filled the bottle uses imbottigliato da followed by a name.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-pvm5q4dz",
+    "cat": "Label Reading",
+    "q": "Along the foot of an Italian label runs the phrase imbottigliato all'origine. What is being claimed?",
+    "opts": [
+     "The wine was bottled in the year of the harvest",
+     "The wine was bottled in the zone where it was made, not tankered away and filled elsewhere",
+     "The wine was bottled straight from the cask, with neither filtration nor fining before filling",
+     "Every grape came from vineyards the bottler owns"
+    ],
+    "a": 1,
+    "exp": "Bulk wine can be moved anywhere before it is packaged, and this phrase is the Italian answer to that: the filling was done at the producer's own premises, at a co-operative's, or by a firm inside the denominated zone, and the words are reserved for DOP and IGP wines. They say nothing about who owned the vines, which is the separate claim integralmente prodotto, while a producer wanting to state only who filled the bottle uses imbottigliato da followed by a name."
+   }
+  },
+  {
+   "id": "i-5q8g52c6",
+   "kind": "wrong-explanation",
+   "claim": "Keyed option \"The wine was blended from wine grown in two or more member states\" and explanation \"Once wine or fruit has crossed a border and been blended, no single country can be claimed\"",
+   "because": "Commission Delegated Regulation (EU) 2019/33, Art. 45(1) allows 'European Union wine' in two cases. Point (b) covers wine blended from wines of several Member States. Point (c) covers wine made in one Member State from grapes harvested in another, with no blending needed. So the line does not tell the buyer that the wine is a blend. Grapes that crossed a border and were vinified unblended carry it too, and both the keyed option and the explanation leave out that second case.",
+   "sources": [
+    "https://www.legislation.gov.uk/eur/2019/33/chapter/IV/2020-01-31/data.xht",
+    "https://eur-lex.europa.eu/eli/reg_del/2019/33/oj/eng"
+   ],
+   "fix": "Option 3: \"The wine was blended from wines of two or more member states, or made in one member state from grapes harvested in another\". Explanation opening: \"Once wine is blended across member states, or grapes from one member state are made into wine in another, no single country can be claimed, so the union as a whole becomes the provenance.\"",
+   "batch": 94,
+   "verdict": "confirmed",
+   "verifyReason": "The question is i-5q8g52c6 (data-intro.js INTRO_QUESTIONS, batch-094). It keys \"The wine was blended from wine grown in two or more member states\", and its explanation says the wine or fruit \"crossed a border and been blended\".\n\nI opened Commission Delegated Regulation (EU) 2019/33, Art. 45(1). It allows \"European Union wine\" in two separate cases:\n- (b): a blend of wines from several Member States.\n- (c): wine made in one Member State from grapes harvested in another, with no blending needed.\n\nSo the keyed option overstates what the line tells a buyer: an unblended wine made across a border carries the same words. The explanation's \"and been blended\" is wrong for case (c).\n\nKeyed option 3 is still the best of the four, because the three distractors are plainly false. The fault is a wrong fact in the keyed option and the explanation, not a wrong key. The examiner's fix covers both cases and is correct.",
+   "verifySources": [
+    "https://www.legislation.gov.uk/eur/2019/33/chapter/IV/2020-01-31/data.xht",
+    "https://eur-lex.europa.eu/eli/reg_del/2019/33/oj/eng",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-094.json"
+   ],
+   "finalFix": "Option 3: \"The wine was blended from wines of two or more member states, or made in one member state from grapes harvested in another\". Explanation opening: \"Once wine is blended across member states, or grapes from one member state are made into wine in another, no single country can be claimed, so the union as a whole becomes the provenance.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-5q8g52c6",
+    "cat": "Label Reading",
+    "q": "Wine of the European Union appears where a country of origin would normally sit. What does that line tell a buyer?",
+    "opts": [
+     "The wine was bottled inside the union from grapes grown outside it",
+     "The wine carries a designation covering the whole union",
+     "The wine comes from a member state that forbids its own name on labels",
+     "The wine was blended from wine grown in two or more member states"
+    ],
+    "a": 3,
+    "exp": "Once wine or fruit has crossed a border and been blended, no single country can be claimed, so the union as a whole becomes the provenance. It is the broadest origin statement available, which is why such wines lean so heavily on a brand name instead."
+   }
+  }
+ ]
+}

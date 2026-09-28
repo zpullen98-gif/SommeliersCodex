@@ -1,0 +1,184 @@
+{
+ "file": "rewrite/categories/r2_alsace.py",
+ "findings": [
+  {
+   "id": "c-nkjhjlij",
+   "kind": "wrong-key",
+   "claim": "The key says 260 g/L Pinot Gris qualifies for Vendanges Tardives. It does not, because the VT minimum for Gewurztraminer and Pinot Gris is now 270 g/L. The 257 g/L figure is outdated.",
+   "because": "The arrêté of 20 June 2016 amending the 51 Alsace grand cru cahiers replaced the VT/SGN table: Gewurztraminer and Pinot Gris now need 270 g/L for VT and 306 for SGN; Riesling and Muscat need 244 for VT and 276 for SGN. The current Alsace grand cru cahier (CNAO text of 11 Sept 2024, homologated May 2025) has the same figures, and so does the AOC Alsace cahier. The older 2012 AOC Alsace text had 257/235. Clean Pinot Gris at 260 g/L therefore reaches neither term.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000032791392",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsace-cn240911.pdf",
+    "https://www.legifrance.gouv.fr/eli/arrete/2025/5/26/AGRT2508588A/jo/texte"
+   ],
+   "fix": "a: 3 (Neither term). exp: The Vendanges Tardives floor for Pinot Gris has stood at 270 grams per litre since the 2016 amendment (it was 257), so 260 falls short. Selection de Grains Nobles asks 306 and shrivelled, nobly rotted berries besides, so neither term is open to this fruit.",
+   "batch": 186,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. I opened the current AOC Alsace cahier des charges (the INAO text from the national opposition procedure after the CNAO of 11 September 2024) and extracted its VT/SGN table from the PDF. The row \"gewurztraminer Rs / pinot gris G\" requires 270 g/L and 16% for vendanges tardives, and 306 g/L and 18.2% for sélection de grains nobles. The row for the muscats and riesling requires 244 g/L and 14.5% for VT, and 276 g/L and 16.4% for SGN. The arrêté of 20 June 2016, which amended the 51 Alsace grand cru cahiers, also carries 270/306 and 244/276. The fetch summary put Pinot Gris in the lower row, but that looks like a misreading of the table layout; the INAO table text plainly groups Pinot Gris with Gewurztraminer. So clean Pinot Gris at 260 g/L falls short of the 270 g/L VT floor and far short of SGN, and the key \"Vendanges Tardives only\" is wrong: the right answer is \"Neither term\" (index 3). The explanation's figure of 257 g/L is the superseded older one. The examiner's fix is right on the key. The one weak point is its explanation, which says the floor has stood at 270 \"since the 2016 amendment\". I confirmed the 2016 date only for the grand cru cahiers, not for the AOC Alsace cahier itself, so the better fix leaves the date out and cites the current cahier.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsace-cn240911.pdf",
+    "https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000032791392",
+    "https://www.legifrance.gouv.fr/eli/arrete/2025/5/26/AGRT2508588A/jo/texte"
+   ],
+   "finalFix": "a: 3 (Neither term). exp: Under the current Alsace cahier des charges, Vendanges Tardives Pinot Gris needs at least 270 grams of sugar per litre of must (the older figure of 257 no longer applies), so 260 falls short. Selection de Grains Nobles asks 306 grams, and shrivelled, nobly rotted berries besides, so neither term is open to this fruit.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-nkjhjlij",
+    "cat": "Alsace",
+    "q": "A parcel of clean, late-picked Alsace Pinot Gris comes in at 260 grams of sugar per litre of must. Which of the region's two late-harvest terms is within reach?",
+    "opts": [
+     "Selection de Grains Nobles only",
+     "Vendanges Tardives only",
+     "Either term",
+     "Neither term"
+    ],
+    "a": 1,
+    "exp": "The Vendanges Tardives floor for Pinot Gris stands at 257 grams per litre, so 260 clears it with a little in hand. Selection de Grains Nobles sits far above such fruit for the same grape and expects shrivelled, nobly rotted berries besides, so clean bunches at this ripeness leave one word open and one out of reach."
+   }
+  },
+  {
+   "id": "c-75uok2dx",
+   "kind": "outdated",
+   "claim": "The model answer and accept list give 235 g/L as the Riesling VT minimum. The current minimum is 244 g/L. The explanation's 257 for Gewurztraminer and Pinot Gris is also out of date; the current figure is 270.",
+   "because": "The arrêté of 20 June 2016 replaced the Alsace grand cru VT/SGN table with 244 g/L (14.5% natural) for Riesling and Muscat and 270 g/L (16%) for Gewurztraminer and Pinot Gris. The current AOC Alsace cahier and the current Alsace grand cru cahier both show 244/270. The 235/257 figures date from the 2001 rules and last appear in the 2012 text.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000032791392",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsace-cn240911.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "fix": "ans: 244 grams per litre; replace every '235' in the accept list with '244' (e.g. '244 grams per litre', '244 g/l', '244', 'at least 244 grams per litre'). exp: Riesling and Muscat qualify for Vendanges Tardives at 244 grams of natural sugar per litre of must, while Gewurztraminer and Pinot Gris face 270; the figures were raised from 235 and 257 by the 2016 amendment. Chaptalisation is banned outright for the term.",
+   "batch": 186,
+   "verdict": "confirmed",
+   "verifyReason": "I could not refute the finding. The question keys 235 g/L as the Riesling Vendanges Tardives minimum, and the explanation says that level has applied since 2001. Legifrance shows that the arrêté of 20 June 2016 amended the AOC Alsace cahier des charges (JORFTEXT000032791368, published in the JO on 29 June 2016). A second arrêté of the same date amended the Alsace grand cru cahier (JORFTEXT000032791392). Both set VT at 270 g/L (16%) for Gewurztraminer and 244 g/L (14.5%) for Riesling and the Muscats. SGN stays at 306 g/L (18.2%) and 276 g/L (16.4%). I also opened the September 2024 PNO texts of both cahiers on INAO's extranet and extracted the tables myself. They still give 244 g/L at 14.5% and 270 g/L at 16%, so the 2016 figures have not been reversed.\n\nOne caveat on Pinot Gris: the table cells are merged, so the text extraction is ambiguous. One Legifrance summary grouped Pinot Gris with the Muscats. Two things place it with Gewurztraminer at 270 VT and 306 SGN: in the extracted grand cru table, the 270/306 values sit between the Gewurztraminer and Pinot Gris rows; and the long-standing Gewurztraminer and Pinot Gris pairing at 306 SGN is unchanged. The 2024 AOC Alsace PNO also confirms that VT and SGN wines may not be enriched in any way, so the explanation's line on chaptalisation stands.\n\nThe question's own answer is therefore outdated since the 2016 harvest rules: a candidate who answers 235 is wrong under current law. The examiner's fix is correct. The fix should replace every '235' in the accept list, including '235 grammes per litre', '235 g', 'at least 235' and 'minimum 235', and keep every phrasing variant.",
+   "verifySources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000032791368",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000032791392",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsace-cn240911.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-186.json"
+   ],
+   "finalFix": "ans: 244 grams per litre; accept: replace every '235' with '244' in all variants ('244 grams per litre', '244 grams per liter', '244 grams of sugar per litre', '244 grams of sugar per liter', '244 grams per litre of sugar', '244 g/l', '244g/l', '244 g per litre', '244 g per liter', '244 grams', '244 g', '244', 'at least 244 grams per litre', 'minimum 244 grams per litre', '244 grams per litre minimum', 'at least 244 g/l', 'minimum of 244 grams per litre', '244 g/l minimum', '244 grams/litre', 'minimum 244 g/l', 'at least 244', 'minimum 244', '244 g/l of sugar', '244 grams per litre of must', '244 grammes per litre'). exp: Riesling and Muscat qualify for Vendanges Tardives at 244 grams of natural sugar per litre of must (14.5% potential alcohol), while Gewurztraminer and Pinot Gris, which fatten far more easily, face 270 (16%); the arrêtés of 20 June 2016 raised the figures from 235 and 257. Chaptalisation is banned outright for the term, so every gram must hang on the vine into the autumn.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-75uok2dx",
+    "cat": "Alsace",
+    "q": "Picking for Vendanges Tardives, a Riesling grower in Alsace needs the must to reach a legal minimum sugar concentration. Give the figure.",
+    "sa": 1,
+    "accept": [
+     "235 grams per litre",
+     "235 grams per liter",
+     "235 grams of sugar per litre",
+     "235 grams of sugar per liter",
+     "235 grams per litre of sugar",
+     "235 g/l",
+     "235g/l",
+     "235 g per litre",
+     "235 g per liter",
+     "235 grams",
+     "235 g",
+     "235",
+     "at least 235 grams per litre",
+     "minimum 235 grams per litre",
+     "235 grams per litre minimum",
+     "at least 235 g/l",
+     "minimum of 235 grams per litre",
+     "235 g/l minimum",
+     "235 grams/litre",
+     "minimum 235 g/l",
+     "at least 235",
+     "minimum 235",
+     "235 g/l of sugar",
+     "235 grams per litre of must",
+     "235 grammes per litre"
+    ],
+    "ans": "235 grams per litre",
+    "ex": 1,
+    "exp": "Riesling and Muscat qualify for Vendanges Tardives at 235 grams of natural sugar per litre of must, while Gewurztraminer and Pinot Gris, which fatten far more easily, face 257; the figures were raised to those levels in 2001. Chaptalisation is banned outright for the term, so every gram must hang on the vine into the autumn."
+   }
+  },
+  {
+   "id": "c-6e06db4w",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says Zotzenberg 'keeps the noble four alongside' Sylvaner. It does not: Muscat is not permitted on Zotzenberg.",
+   "because": "Alsace grand cru cahier, V 1° c): wines of AOC Alsace grand cru Zotzenberg come from a single one of gewurztraminer, pinot gris, riesling and sylvaner. Muscat is absent, and the cahier's alcohol table for Zotzenberg likewise lists only Riesling, Gewurztraminer, Pinot gris and Sylvaner.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://fr.wikipedia.org/wiki/Zotzenberg"
+   ],
+   "fix": "exp last sentence: The concession is strictly local: on no other cru may the word Sylvaner appear, and on Zotzenberg it stands beside Riesling, Pinot Gris and Gewurztraminer, while Muscat is not admitted there.",
+   "batch": 186,
+   "verdict": "confirmed",
+   "verifyReason": "I opened the INAO cahier des charges for AOC Alsace grand cru (the text put to national opposition after the CNAOC opinion of 11 September 2024). Chapter I, V 1° c) says that Zotzenberg wines come from a single one of \"gewurztraminer Rs, pinot gris G, riesling B, sylvaner B\". The other crus get a separate list that includes the three muscats. The minimum-alcohol table follows the same split. It gives Zotzenberg its own rows for Riesling, Gewurztraminer, Pinot gris and Sylvaner only, while the general rows that include Muscat explicitly exclude Zotzenberg. The Zotzenberg section on the link to origin agrees: \"A la base, les seuls cépages retenus sont les suivants: riesling B, gewurztraminer Rs, pinot gris G, et sylvaner B.\" So the explanation's claim that Zotzenberg \"keeps the noble four alongside\" Sylvaner is false, because Muscat is not admitted there. The keyed answer (Sylvaner) and the accept list are correct. Only the last sentence of the explanation is wrong, and the examiner's replacement text is accurate.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "finalFix": "The concession is strictly local: on no other cru may the word Sylvaner appear, and on Zotzenberg it stands beside Riesling, Pinot Gris and Gewurztraminer, while Muscat is not admitted there.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-6e06db4w",
+    "cat": "Alsace",
+    "q": "A 2005 amendment let one Alsace grand cru, Zotzenberg, write a grape from outside the noble four into its rules, honouring what its growers had always done best. Which grape?",
+    "sa": 1,
+    "accept": [
+     "sylvaner",
+     "silvaner",
+     "sylvaner grape",
+     "it is sylvaner",
+     "gruner sylvaner"
+    ],
+    "ans": "Sylvaner",
+    "exp": "Sylvaner had grown on Zotzenberg's marl and limestone for generations while the noble-grape rule kept its name off the label, and the 2005 amendment recognised the tradition rather than inventing one. The concession is strictly local: on no other cru may the word Sylvaner appear, and Zotzenberg keeps the noble four alongside it."
+   }
+  },
+  {
+   "id": "c-rnipehwm",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says a single-variety Altenberg de Bergheim 'still carries its grape'. That is not a legal requirement: naming the variety on an Alsace grand cru is optional, so a missing grape name does not by law prove a blend.",
+   "because": "Alsace grand cru cahier, II 1°: the appellation name 'peut être complété' (may be completed) by one of the variety names in use. Only VT and SGN wines must carry a variety name (II 2° and XII 2° e). Altenberg de Bergheim permits single-variety Gewurztraminer, Pinot Gris or Riesling as well as the Riesling-led blend.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "fix": "exp: Altenberg de Bergheim and Kaefferkopf are the crus whose rules sanction a blend, and a blended grand cru may name no variety at all: the site is the whole claim. Naming the grape is optional rather than compulsory, but single-variety bottlings from the slope almost always carry it, so in practice the absent line points to the blend.",
+   "batch": 186,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I opened the current Alsace grand cru cahier des charges (INAO, national opposition procedure of 11 September 2024). Chapter I, II 1° says the appellation name \"peut être complété\" (may be completed) by one of the variety names in use (Gewurztraminer, Muscat, Muscat Ottonel, Pinot gris, Riesling, Sylvaner, Pinot noir). The same rule allows a variety name only when the wine comes exclusively from that variety. The labelling chapter XII 2° makes a variety name compulsory only for VT and SGN (e). Rule d) requires the sugar-content statement, not the variety. So the examiner is right on the law: a single-variety grand cru does not have to name its grape. The explanation's claim that such a bottle \"still carries its grape\", followed by \"so the absent line is information\", presents as settled a fact the law does not guarantee. The key itself (a blend) stays defensible, because it is the intended and most probable reading and a blend could not carry any variety name. The examiner's fix goes wrong in one place: it weakens \"names no variety at all\" to \"may name no variety at all\". Under II 1° a variety name requires 100% of that variety. A blend therefore cannot carry one, and the original's firm wording on blends was correct. \"Almost always\" also claims a market frequency nobody verified. The better fix keeps the blend rule firm and makes the single-variety label optional.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf (Chapter I, II 1° and 2°; V 1° varieties for Altenberg de Bergheim; XII 2° b, d, e)"
+   ],
+   "finalFix": "exp: Altenberg de Bergheim and Kaefferkopf are the crus whose rules sanction a blend, and a blended grand cru can name no variety at all, because a variety name is allowed only when the wine comes wholly from that grape: the site is the whole claim. Naming the grape on a single-variety grand cru is optional rather than compulsory (only VT and SGN must carry one), but producers usually print it, so the missing grape name most likely points to the blend.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-rnipehwm",
+    "cat": "Alsace",
+    "q": "Site, vintage and the words Alsace Grand Cru appear on a bottle of Altenberg de Bergheim, yet nowhere does it name a grape. What does that silence say about what is in the bottle?",
+    "sa": 1,
+    "accept": [
+     "it is a blend of varieties",
+     "it is a blend",
+     "blend",
+     "a blend of grapes",
+     "a blend of varieties",
+     "the wine is a blend",
+     "field blend",
+     "a blend of several varieties",
+     "blended from several varieties",
+     "a blend of permitted varieties",
+     "a mix of several grapes",
+     "a mix of varieties",
+     "a mix of grapes",
+     "a mix of grape varieties",
+     "multiple grape varieties",
+     "multiple varieties",
+     "more than one variety"
+    ],
+    "ans": "A blend of several grapes",
+    "exp": "Altenberg de Bergheim and Kaefferkopf are the crus whose rules sanction a blend, and a blended grand cru names no variety at all: the site is the whole claim. A single-variety bottling from the same slope still carries its grape, so the absent line is information, not an oversight."
+   }
+  }
+ ]
+}

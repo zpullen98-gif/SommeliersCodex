@@ -1,0 +1,38 @@
+{
+ "file": "rewrite/categories/r2_southern_france.py",
+ "findings": [
+  {
+   "id": "c-it3pllyk",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says Merlot and Cabernet reach the Languedoc appellation map \"only in the Atlantic-facing blends of Cabardes and Malepere\".",
+   "because": "Limoux AOC has had a still red since 2004 (the June 2004 decree). It must be at least 50% Merlot and may include Cabernet Sauvignon and Cabernet Franc. So Merlot and Cabernet also have an appellation home at Limoux, the same place the explanation already names for Chardonnay.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Limoux_(AOC)"
+   ],
+   "fix": "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-influenced western corner, in Cabardes, Malepere and the Merlot-led Limoux rouge, so a wine sold on its grape name needs the IGP either way.",
+   "batch": 247,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. Limoux AOC has included a still red since the June 2004 decree. That red must be at least 50% Merlot, and Cabernet Sauvignon and Cabernet Franc are allowed up to 20% together. At least 30% must come from Côt, Grenache, Syrah and Carignan. So Merlot and Cabernet are not confined to Cabardès and Malepère on the Languedoc appellation map, and the explanation's word \"only\" is false. The keyed answer (option 3: varietal labels, and grapes the appellation decrees shut out) is unaffected. The examiner's fix is accurate: Limoux sits in the western, Atlantic-influenced upper Aude, and the fix still keeps the point that a wine labelled by grape needs the IGP. I could not open the INAO cahier des charges (the INAO URL returned 404), and my Legifrance attempt landed on an unrelated text. The French and English Wikipedia articles agree on the decree date and the grape rules. Both are secondary sources, not the legal text itself.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Limoux_(AOC)",
+    "https://en.wikipedia.org/wiki/Limoux_AOC"
+   ],
+   "finalFix": "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-influenced western corner, in Cabardes, Malepere and the Merlot-led Limoux rouge, so a wine sold on its grape name needs the IGP either way. Nearly every other appellation works from a fixed Mediterranean variety list, and one region runs two wine economies side by side.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-it3pllyk",
+    "cat": "Southern France",
+    "q": "Merlot and Chardonnay with the grape named on the front label built the Midi's export revival. What does IGP Pays d'Oc offer that the appellations of the hills do not?",
+    "opts": [
+     "Freedom from any yield limit at all",
+     "The right to buy finished wine from anywhere in France and blend it in",
+     "An exemption from every analysis and tasting control",
+     "Varietal labels, and grapes the appellation decrees shut out"
+    ],
+    "a": 3,
+    "exp": "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-facing blends of Cabardes and Malepere, so a wine sold on its grape name needs the IGP either way. Nearly every other appellation works from a fixed Mediterranean variety list, and one region runs two wine economies side by side."
+   }
+  }
+ ]
+}

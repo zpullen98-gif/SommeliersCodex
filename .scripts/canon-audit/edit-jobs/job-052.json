@@ -1,0 +1,160 @@
+{
+ "file": "rewrite/categories/r2_spain.py",
+ "findings": [
+  {
+   "id": "c-c436rybo",
+   "kind": "wrong-explanation",
+   "claim": "The stem says Rioja lets a label name a zone \"only when the fruit comes wholly from it\".",
+   "because": "The current DOCa Rioja pliego de condiciones (consolidated 15-02-2024) keeps the 100% rule as the norm. It also allows an exception: the wine may include up to 15% grapes from registered vineyards in municipalities bordering the operator's zone, provided the operator has had exclusive rights to that fruit for at least 10 uninterrupted years. The keyed answer (vinification, then ageing and bottling in the zone) is correct, but the premise as written teaches an absolute rule that the law does not state.",
+   "sources": [
+    "https://riojawine.com/wp-content/uploads/2024/08/pliego-de-condiciones-am12-consolidado-15-02-2024.pdf"
+   ],
+   "fix": "Rioja lets a label name a zone only when the fruit comes from it (bar a tightly controlled 15% from bordering municipalities), and the cellar steps must happen inside that same zone as well. Name the one that comes first.",
+   "batch": 247,
+   "verdict": "confirmed",
+   "verifyReason": "I extracted the text of the DOCa Rioja pliego de condiciones (consolidated 15-02-2024) and checked the labelling section. It sets the norm the stem describes: a zone name may be used only when the wine comes exclusively from that zone's grapes and its vinification, any ageing, and bottling take place there. The next paragraph adds an exception. The wine still counts as coming from the zone if it includes up to 15% grapes from registered vineyards in municipalities bordering the operator's zone, provided the operator can show exclusive rights to that fruit for at least 10 uninterrupted years. The same exception applies to \"Vino de\" municipality wines. The stem says \"wholly\", which states an absolute rule the law does not. A candidate who learns it would miss a question on the 15% allowance. The keyed answer (vinification), the accept list and the explanation are all correct. The examiner's fix is accurate and keeps the question working.",
+   "verifySources": [
+    "https://riojawine.com/wp-content/uploads/2024/08/pliego-de-condiciones-am12-consolidado-15-02-2024.pdf"
+   ],
+   "finalFix": "Rioja lets a label name a zone only when the fruit comes from it (bar a tightly controlled 15% from bordering municipalities), and the cellar steps must happen inside that same zone as well. Name the one that comes first.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-c436rybo",
+    "cat": "Spain",
+    "q": "Rioja lets a label name a zone only when the fruit comes wholly from it, and the cellar steps must happen inside that same zone as well. Name the one that comes first.",
+    "sa": 1,
+    "accept": [
+     "vinification",
+     "vinified",
+     "winemaking",
+     "fermentation",
+     "fermented",
+     "vinifying",
+     "fermenting",
+     "making the wine",
+     "wine making",
+     "vinification in the zone",
+     "fermentation in the zone",
+     "winemaking in the zone",
+     "vinified in the zone",
+     "fermented in the zone",
+     "made in the zone",
+     "vinified there",
+     "fermented there",
+     "made there",
+     "the wine must be vinified there",
+     "the wine must be vinified in the zone",
+     "it must be vinified in the zone",
+     "the wine has to be made in the zone",
+     "the wine must be made in the zone",
+     "it must be made in the zone",
+     "must be made in the zone"
+    ],
+    "ans": "Vinification",
+    "ex": 1,
+    "exp": "A winery outside the boundary cannot print the zone even if every grape came from inside it, which stops a name being attached to fruit trucked anywhere convenient. Vinification is only the first step the rule catches, since the ageing and the bottling have to happen inside the zone as well. That is why the zone names took so long to appear on labels at all, plenty of established bodegas drawing fruit from more than one of the three."
+   }
+  },
+  {
+   "id": "c-lalvjliu",
+   "kind": "outdated",
+   "claim": "The explanation says plain Rueda needs half the blend to be Verdejo, with the rest Viura or another permitted white.",
+   "because": "That was the rule before the 2019 amendment. The DO Rueda pliego (PDO-ES-A0889) changed in 2019 to require at least 50% of the principal varieties, Verdejo and Sauvignon Blanc, so from then on a plain Rueda needed no Verdejo at all. The current pliego (revision AM05, 2025, section 3.c) is looser still. It requires 'un mínimo del 75% de las variedades blancas consideradas como principales', and section 6 now counts Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier as principal. So a plain Rueda can legally contain no Verdejo at all. The pliego no longer sets its own floor for a wine labelled Verdejo. The 85% key still stands, but on the EU general rule for varietal labelling (Reg. (EU) 2019/33, art. 50), not on a Rueda rule. The consejo's own Verdejo page gives a different figure (75%), which is one more reason the explanation should say where the 85% comes from.",
+   "sources": [
+    "https://dorueda.com/reglamento/ (Pliego de condiciones D.O.P. Rueda 2025, sections 3.c and 6, and the amendment history table)",
+    "https://dorueda.com/vinos/",
+    "https://dorueda.com/vinos/blancos/verdejo/"
+   ],
+   "fix": "Plain Rueda has no Verdejo minimum. Since the latest amendment it must be at least 75% principal white varieties (Verdejo, Sauvignon Blanc, Viura, Chardonnay, Viognier), and from 2019 until then it had to be at least 50% Verdejo and/or Sauvignon Blanc. A varietal name on the label brings in the EU rule: at least 85% of the named grape. The same 85% applies to a Rueda labelled Sauvignon Blanc, so the bottle with no grape name is the one to ask about.",
+   "batch": 248,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding is right: the explanation is out of date. The key (85%) and the accept list are fine. I downloaded the current DOP Rueda pliego (PDO-ES-A0889, the '2025' edition on dorueda.com/reglamento).\n- Section 3.c says 'Vino Blanco: elaborado con un mínimo del 75% de las variedades blancas consideradas como principales'.\n- Section 6.2 names the principal white varieties as Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier.\n- So a plain Rueda white needs no Verdejo at all. The explanation's 'Plain Rueda needs half the blend to be Verdejo' is no longer law.\n- The pliego's amendment table dates the change. Revision 2 (8/3/2019) made Sauvignon Blanc a principal variety and updated 3.c. The 2024/2025 revision rewrote 3.c as a percentage of the principal white varieties and made Viura, Chardonnay and Viognier principal as well.\n- The consejo's own wines page applies the rule: '75% de las variedades principales ... 25% de secundarias'.\n\nThe pliego sets no varietal-label floor of its own. The 85% comes from the EU varietal-labelling rule (Reg. (EU) 2019/33 art. 50), so the key and the stem still hold: 85% is more than zero. The consejo's Verdejo page says 75% for a wine labelled Verdejo. A regulator's web page cannot go below the EU minimum, so 85% stays correct.\n\nWhy a better fix: the examiner's fix says the rule from 2019 until the latest amendment was '50% Verdejo and/or Sauvignon Blanc'. I could not open the 2019 text to confirm that figure. The replacement below gives only what the current pliego and its amendment table show, and keeps the question's original closing point.",
+   "verifySources": [
+    "https://dorueda.com/reglamento/ (downloaded Pliego de condiciones DOP Rueda 2025, PDO-ES-A0889: amendment table p.1-2, section 3.c p.8, section 6.2 p.13)",
+    "https://dorueda.com/download/pliego-de-condiciones-d-o-p-rueda-2025/?wpdmdl=9419",
+    "https://dorueda.com/vinos/",
+    "https://dorueda.com/vinos/blancos/verdejo/"
+   ],
+   "finalFix": "Plain Rueda sets no Verdejo floor at all. The current pliego asks only that a white be at least 75% principal white varieties, and Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier all count. The old rule of at least half Verdejo went in the 2019 amendment, when Sauvignon Blanc became a principal variety. Naming the grape brings in the EU varietal-labelling rule of at least 85% of the named variety. The same figure governs a Rueda labelled Sauvignon Blanc, so the two varietal claims on a shelf are stronger than they look, and the unnamed bottle is the one to ask about.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-lalvjliu",
+    "cat": "Spain",
+    "q": "Putting Verdejo on a Rueda label commits a bodega to more of the grape than the denomination name alone does. Give the minimum a varietal label demands.",
+    "sa": 1,
+    "accept": [
+     "eighty five percent verdejo",
+     "85% verdejo",
+     "85 percent verdejo",
+     "eighty five percent",
+     "85%",
+     "85 percent",
+     "85",
+     "eighty five",
+     "eighty five per cent",
+     "85 per cent",
+     "eighty five per cent verdejo",
+     "85 per cent verdejo",
+     "at least eighty five percent",
+     "at least 85 percent",
+     "at least 85%",
+     "minimum 85%",
+     "minimum eighty five percent",
+     "at least eighty five percent verdejo",
+     "at least 85% verdejo",
+     "a minimum of 85 percent verdejo",
+     "a minimum of eighty five percent verdejo",
+     "a minimum of 85%",
+     "a minimum of eighty five percent",
+     "minimum eighty five percent verdejo",
+     "minimum 85 percent verdejo",
+     "85 percent of the blend"
+    ],
+    "ans": "Eighty-five percent Verdejo",
+    "ex": 1,
+    "exp": "Plain Rueda needs half the blend to be Verdejo and the rest may be Viura or another permitted white; naming the grape lifts the floor. The same figure governs a Rueda labelled Sauvignon, so the two claims on a shelf are stronger than they look and the unnamed bottle is the one to ask about."
+   }
+  },
+  {
+   "id": "c-0uupg0b0",
+   "kind": "wrong-key",
+   "claim": "The model answer 'Palma' is wrong. At the first classification, a wine chosen for biological ageing gets a single slash, which is called a palo (Jeffs calls it una raya). The palma is a later mark for especially fine finos. The explanation has two more errors. The oloroso-bound mark is a circle (historically a double stroke), not a horizontal raya. The Palo Cortado mark is a palo (the slash) crossed by a line, not a palma struck through.",
+   "because": "The Consejo Regulador's fortification page says: 'their tanks are marked with a single vertical slash (/) known as a palo', and batches with more gordura are 'earmarked... for the production of oloroso sherry, and their tanks marked with the corresponding circle symbol'. Its Palo Cortado page says the casks are 'marked with a palo, or slash' and that a potential Palo Cortado is marked 'by drawing a horizontal line across the original slash mark'. Sherry Notes says the same: 'its Fino mark, a vertical line or palo, would then be crossed or cortado'. Wikipedia describes the traditional post-fermentation marks as a single stroke (/) for Fino/Amontillado and a stroke with a dot for Oloroso. A candidate who answers 'palo' or 'raya' is graded wrong, and one who answers 'palma' is marked right.",
+   "sources": [
+    "https://www.sherry.wine/sherry-wine/production/fortification",
+    "https://www.sherry.wine/sherry-wine/dry-sherry-wines/palo-cortado",
+    "https://www.sherrynotes.com/sherry-guide/palo-cortado/",
+    "https://en.wikipedia.org/wiki/Sherry"
+   ],
+   "fix": "ans: \"Palo (a single slash, traditionally una raya)\"; accept: [\"palo\", \"un palo\", \"the palo mark\", \"raya\", \"una raya\", \"slash\", \"a slash\", \"single slash\", \"single stroke\", \"a single stroke\"]; exp: \"A single vertical stroke, the palo or una raya, says the wine is pale, delicate and clean and will be lightly fortified to keep its veil alive. Fuller wines are marked with a circle and sent the oxidative way. The palma is a later mark for especially fine finos. Palo Cortado takes its name from the palo cut through by a cross-stroke, meaning the cellar master changed his mind about the butt.\"",
+   "batch": 249,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The Consejo Regulador's fortification page says that at the first classification, wines destined for biological ageing get tanks \"marked with a single vertical slash (/) known as a palo\". Wines for oloroso get a circle. The palma is applied only later, at the sobretablas or second classification, to show fineness. So the model answer \"Palma\" is wrong for a question about the first classification. The Consejo's Palo Cortado page says those casks are first \"marked with a 'palo,' or slash\". A potential Palo Cortado is then marked \"by drawing a horizontal line across the original slash mark\". That means the explanation is wrong twice. The Palo Cortado mark is not \"a palma struck through\", and the oloroso-bound mark is not a horizontal raya. Traditionally the finest musts were marked una raya (/) and the fuller ones dos rayas, so the examiner's una raya alias is sound. The question is exact-only (ex:1). In matchSA, the check against ans and the accept entries is then an exact normalized match, so the proposed ans and accept list grade correctly. Neither can match \"palo cortado\" or \"dos rayas\" by containment.",
+   "verifySources": [
+    "https://www.sherry.wine/sherry-wine/production/fortification",
+    "https://www.sherry.wine/sherry-wine/dry-sherry-wines/palo-cortado",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 49-98)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-249.json"
+   ],
+   "finalFix": "ans: \"Palo (a single slash, traditionally una raya)\"; accept: [\"palo\", \"un palo\", \"the palo mark\", \"raya\", \"una raya\", \"slash\", \"a slash\", \"single slash\", \"single stroke\", \"a single stroke\"]; exp: \"A single vertical stroke, the palo or una raya, says the wine is pale, delicate and clean and will be lightly fortified to keep its veil alive. Fuller wines are marked with a circle and sent the oxidative way. The palma is a later mark for especially fine finos. Palo Cortado takes its name from the palo cut through by a cross-stroke, meaning the cellar master changed his mind about the butt.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-0uupg0b0",
+    "cat": "Spain",
+    "q": "At the first classification the capataz chalks a mark on the butt, and one mark sends the young wine down the biological road. Name that mark.",
+    "sa": 1,
+    "accept": [
+     "palma",
+     "una palma",
+     "the palma mark"
+    ],
+    "ans": "Palma",
+    "ex": 1,
+    "exp": "A stroke like a palm frond says the wine is delicate and clean and will be lightly fortified to keep its veil alive. A raya, a plain horizontal bar, sends a fuller wine the oxidative way, and the crossed mark that gives Palo Cortado its name is a palma struck through, meaning the cellar master changed his mind about it."
+   }
+  }
+ ]
+}

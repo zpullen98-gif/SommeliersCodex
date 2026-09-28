@@ -1,0 +1,111 @@
+{
+ "file": "rewrite/categories/r2_food_pairing.py",
+ "findings": [
+  {
+   "id": "c-wyt9rwrh",
+   "kind": "accept-list",
+   "claim": "The grader refuses 'off-dry Riesling' and 'off-dry Gewurztraminer', the textbook examples of the keyed style, and also 'medium-sweet white'.",
+   "because": "Input 'off dry riesling' does not contain 'off dry white' or any other accept phrase, and is not a substring of one, so matchSA returns false. The question's own explanation says 'off-dry aromatic whites are the reflex recommendation'. Naming the archetypal off-dry aromatic white is a plainly right answer for someone told to pour a wine.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 89-95)"
+   ],
+   "fix": "accept: [\"off-dry, low-alcohol aromatic white\", \"off dry white\", \"low alcohol off dry white\", \"off dry aromatic white\", \"slightly sweet aromatic white\", \"off dry riesling\", \"off dry gewurztraminer\", \"medium sweet white\", \"medium dry white\"]",
+   "batch": 208,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I ran the real matchSA from core.js against the current list, and the finding holds. \"off-dry Riesling\", \"off dry riesling\", \"Off-dry Gewurztraminer\", \"medium-sweet white\" and \"medium dry white\" are all graded false. Off-dry, low-alcohol Riesling (Kabinett style) is the standard answer for hot curry and fits the model answer exactly, so refusing it is an accept-list defect. (The web search budget was used up, so this style point rests on standard pairing doctrine and not on a new citation. The grader behaviour itself was reproduced locally.)\n\nThe examiner's fix is off, though. The grader's \"input is a whole-word core of the accept phrase\" branch (core.js line 93) turns plain accept entries into loose ones:\n- Adding plain \"off dry riesling\" makes \"dry riesling\" grade correct. That is the opposite style.\n- Adding plain \"medium sweet white\" makes \"sweet white\" grade correct, which lets in dessert wines.\n- The existing plain \"off dry white\" already grades \"dry white\" as correct, which is a wrong answer the current list accepts.\n\nI tested a better fix, with the grape and medium entries and \"off dry white\" given the strict '~' prefix. Graded correct: off-dry Riesling, off dry riesling, off-dry Gewurztraminer, medium-sweet white, medium dry white, \"an off-dry Riesling Kabinett\", off-dry white, off-dry aromatic white, and the model answer. Graded false: dry white, dry riesling, sweet white, riesling, off-dry red, medium sweet red, and \"not off dry riesling\".\n\nOne trade-off: bare \"off dry\" is now refused. Before, it passed through the same loose branch that also passes \"dry white\".\n\nSide note, not a defect: the question's stored exp does not contain the sentence the examiner quotes.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17, negatedAgainst lines 33-47, matchSA lines 49-98; core-of-accept branch line 93, strict '~' branch lines 75-78)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-208.json (c-wyt9rwrh, lines 132-147)",
+    "Local test run of matchSA on the current and proposed accept lists: C:/Users/zpull/AppData/Local/Temp/claude/C--Users-zpull--claude/ee375187-7803-4126-b577-0cdfe403a999/scratchpad/t208.js"
+   ],
+   "finalFix": "accept: [\"off-dry, low-alcohol aromatic white\", \"~off dry white\", \"low alcohol off dry white\", \"off dry aromatic white\", \"slightly sweet aromatic white\", \"~off dry riesling\", \"~off dry gewurztraminer\", \"~medium sweet white\", \"~medium dry white\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-wyt9rwrh",
+    "cat": "Food & Pairing",
+    "q": "Faced with a fiercely hot curry, which style of wine would you pour?",
+    "sa": 1,
+    "accept": [
+     "off-dry, low-alcohol aromatic white",
+     "off dry white",
+     "low alcohol off dry white",
+     "off dry aromatic white",
+     "slightly sweet aromatic white"
+    ],
+    "ans": "Off-dry, low-alcohol aromatic white",
+    "exp": "Sugar tempers capsaicin and low alcohol avoids feeding it. Tannin and high alcohol are the two things to avoid outright."
+   }
+  },
+  {
+   "id": "c-825hnfrv",
+   "kind": "wrong-explanation",
+   "claim": "The explanation credits both keyed wines with \"low alcohol so the heat is not amplified\", but Gewurztraminer, one of the two model answers, is a notably high-alcohol variety.",
+   "because": "Gewurztraminer ripens fast and builds high sugar. Alsace and other examples typically run about 13.5 to 15% ABV. Low alcohol is a reason to choose off-dry German Riesling (Kabinett or Spätlese, often 7 to 10%). It is not a trait of Gewurztraminer, which is one of the white wines most likely to amplify chilli heat. A candidate who learns that Gewurztraminer is low in alcohol would get the grape's structure wrong in theory and in deductive tasting.",
+   "sources": [
+    "https://winefolly.com/grapes/gewurztraminer/ (typical 13.5-15% ABV, 'can have higher levels of alcohol, as it ripens quickly')",
+    "https://en.wikipedia.org/wiki/Gewürztraminer ('high natural sugar', low acidity in warm climates)"
+   ],
+   "fix": "Aromatic intensity to meet the dish and a touch of sweetness to handle chilli. Off-dry German Riesling adds low alcohol, which keeps the heat from being amplified; with Gewurztraminer, which runs high in alcohol, choose an off-dry example and keep the chilli moderate.",
+   "batch": 209,
+   "verdict": "confirmed",
+   "verifyReason": "The model answer is \"Off-dry Riesling or Gewurztraminer\". The explanation gives three reasons for both wines together, and one of them is \"low alcohol so the heat is not amplified\". That reason is true only of off-dry German Riesling: Kabinett and Spätlese usually run about 7 to 10% ABV. Gewurztraminer ripens early and builds high natural sugar, so it is typically 13.5 to 15% ABV. Alsace examples are full-bodied, high in alcohol and low in acidity (standard Oxford Companion / WSET teaching). Read as written, the explanation teaches that Gewurztraminer is low in alcohol, which is false and would mislead a candidate in deductive tasting. The keyed answer and the accept list are fine; only the explanation is wrong. The examiner's fix is accurate: it keeps the aromatics and sweetness reasons, ties low alcohol to Riesling only, and says plainly that Gewurztraminer is high in alcohol. I could not open the Alsace interprofession page (404) or run a search (the session's search budget was used up). The two pages I did open support the claim, and the fact is uncontroversial.",
+   "verifySources": [
+    "https://winefolly.com/grapes/gewurztraminer/ (typical 13.5-15% ABV; 'higher levels of alcohol, as it ripens quickly')",
+    "https://en.wikipedia.org/wiki/Gew%C3%BCrztraminer ('high natural sugar'; not enough acidity to balance it in hot climates)"
+   ],
+   "finalFix": "Aromatic intensity to meet the dish and a touch of sweetness to handle chilli. Off-dry German Riesling adds low alcohol, which keeps the heat from being amplified; with Gewurztraminer, which runs high in alcohol, choose an off-dry example and keep the chilli moderate.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-825hnfrv",
+    "cat": "Food & Pairing",
+    "q": "Aromatic Southeast Asian dishes are usually matched with which Alsace or German style?",
+    "sa": 1,
+    "accept": [
+     "off dry riesling",
+     "gewurztraminer",
+     "riesling",
+     "off dry gewurztraminer"
+    ],
+    "ans": "Off-dry Riesling or Gewurztraminer",
+    "exp": "Aromatic intensity to meet the dish, sweetness to handle chilli, and low alcohol so the heat is not amplified."
+   }
+  },
+  {
+   "id": "c-wgifeyxj",
+   "kind": "wrong-key",
+   "claim": "The model answer 'Serve it slightly cooler, or decant it' and the accept entries 'serve it cooler', 'chill it slightly' and 'lower the temperature' tell the candidate to cool a red that is already too tannic, and cooling makes it worse.",
+   "because": "Lower serving temperatures make tannin and acidity seem stronger. The question's own explanation says 'cold hardens tannin'. A red that shows too tannic against the food should be aerated or decanted and served at the proper red-wine temperature, not chilled. The grader currently gives full marks for 'chill it slightly', which is wrong. Wikipedia's Wine tasting article says: 'Lower temperatures emphasize acidity and tannins while muting the aromatics. Higher temperatures minimize acidity and tannins'.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wine_tasting"
+   ],
+   "fix": "ans: \"Decant it, and make sure it is not served too cold\"; accept: [\"decant it\", \"decanting\", \"aerate it\", \"give it air\", \"serve it less cold\"]; exp: \"Air softens young tannin. Cold hardens tannin and warmth exaggerates alcohol, so serve the wine at proper cellar-to-room red temperature rather than chilling it.\"",
+   "batch": 210,
+   "verdict": "confirmed",
+   "verifyReason": "The question (c-wgifeyxj, batch-210) sets ans \"Serve it slightly cooler, or decant it\" and accepts \"serve it cooler\", \"chill it slightly\" and \"lower the temperature\" for a red that shows too tannic with the food. Lower serving temperature makes tannin and acidity seem stronger, not softer. Wikipedia's Wine tasting article, which I opened, says: \"Lower temperatures emphasize acidity and tannins while muting the aromatics. Higher temperatures minimize acidity and tannins while increasing the aromatics.\" The question's own explanation says \"cold hardens tannin\", so the keyed answer contradicts itself. The Oxford Companion and standard CMS service teaching say the same. The two pages I tried for a second source did not load (Wine Folly returned 404, Jancis Robinson returned 403). Decanting is the correct half of the answer and should stay.\n\nUnder matchSA as it stands, \"chill it slightly\" or \"lower the temperature\" gets full marks, which teaches the wrong service move. The examiner's fix removes the cooling entries and keeps the decant and aerate entries. I checked it against matchSA's containment rules. \"serve it less cold\" does not match the input \"serve it cold\": it is not a substring, and the short-input core rule needs at least 3 of its 4 words. \"decant it\", \"decanting\", \"aerate it\" and \"give it air\" all grade whole-phrase inputs, and negatedAgainst blocks \"don't decant\". A candidate who types the old model answer still passes, because it contains \"decant it\". The fix is sound as proposed.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Wine_tasting",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-210.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "ans: \"Decant it, and make sure it is not served too cold\"; accept: [\"decant it\", \"decanting\", \"aerate it\", \"give it air\", \"serve it less cold\"]; exp: \"Air softens young tannin. Cold hardens tannin and warmth exaggerates alcohol, so serve the wine at proper cellar-to-room red temperature rather than chilling it.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-wgifeyxj",
+    "cat": "Food & Pairing",
+    "q": "Which service adjustment can rescue a red that is showing too tannic against the food?",
+    "sa": 1,
+    "accept": [
+     "serve it cooler",
+     "chill it slightly",
+     "decant it",
+     "lower the temperature"
+    ],
+    "ans": "Serve it slightly cooler, or decant it",
+    "exp": "Warmth exaggerates alcohol and cold hardens tannin, so the useful range is narrow. Air softens young tannin as well."
+   }
+  }
+ ]
+}

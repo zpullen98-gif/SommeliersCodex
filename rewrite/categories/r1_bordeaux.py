@@ -111,7 +111,7 @@ BANK = [
     Q("The 1855 Classification",
       "Baron Philippe de Rothschild campaigned for half a century over his estate's rank. Which chateau was it?",
       ["Mouton Rothschild", "Palmer", "Lynch-Bages", "Pontet-Canet"], 0,
-      "Mouton's elevation in 1973 is the only substantive change ever made to the red classification, and it took decades of pressure to win."),
+      "Mouton's elevation in 1973 is the only promotion ever made to the red classification (the only other change was Cantemerle's addition as a Fifth Growth in 1856), and it took decades of pressure to win."),
     Q("The 1855 Classification",
       "At its creation, the 1855 list named how many First Growths?",
       ["Four", "Three", "Five", "Six"], 0,

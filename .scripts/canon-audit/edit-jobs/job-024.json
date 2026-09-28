@@ -1,0 +1,43 @@
+{
+ "file": "rewrite/categories/r1_australia.py",
+ "findings": [
+  {
+   "id": "i-3vtklgvr",
+   "kind": "wrong-explanation",
+   "claim": "The style began in Victoria's Great Western and survives almost nowhere else on earth.",
+   "because": "The Shiraz-based sparkling red style is usually credited to Edmond Mazure at Auldana, near Adelaide in South Australia, around 1894-95, and he is the pioneer candidates are taught. Great Western in Victoria was a parallel pioneer: Hans Irvine made a sparkling red there from Pinot in the early 1890s, and Seppelt moved it to Shiraz later. An earlier pink 'sparkling burgundy' came from the Victorian Champagne Company in Melbourne. So it is false to say the style began at Great Western.",
+   "sources": [
+    "https://australianfoodtimeline.com.au/sparkling-burgundy-australia/",
+    "https://en.wikipedia.org/wiki/Sparkling_Shiraz",
+    "https://www.cellars.com.au/2026/06/09/sparkling-shiraz-how-australia-invented-the-worlds-most-iconic-festive-red-fizz/"
+   ],
+   "fix": "The style took shape in the 1890s, when Edmond Mazure at Auldana in South Australia and Hans Irvine at Great Western in Victoria both made sparkling reds, and it survives almost nowhere else on earth.",
+   "batch": 50,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I agree the explanation is wrong. The question sits in batch-050 (i-3vtklgvr) and keys Sparkling Shiraz, which is correct. The problem is the explanation, which says the style \"began in Victoria's Great Western.\" The sources I opened credit Edmond Mazure instead: he made the first Shiraz-based \"sparkling Burgundy\" around 1894-95 at Auldana, near Adelaide in South Australia. Wikipedia gives Mazure and 1895. Quill & Pad names Mazure at Auldana in 1894 as the first Shiraz-based version. The Victorian Champagne Company's 1878-81 wine came earlier but was pink, not red. Great Western came later: Quill & Pad says Hans Irvine released his first sparkling Burgundy about ten years after Mazure. Seppelt, which bought Great Western in 1916-18, moved to Shiraz after that and is credited with keeping the style alive. The date of Irvine's first sparkling red is disputed. One source says his 1893 wine won an award in Bordeaux in 1895, the other says around 1904. The examiner's fix states as fact that Irvine made a sparkling red in the 1890s, so it rests on a contested date. My better fix credits Mazure and gives Great Western the role everyone agrees on: carrying the style. It keeps the rest of the explanation.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Sparkling_Shiraz",
+    "https://australianfoodtimeline.com.au/sparkling-burgundy-australia/",
+    "https://quillandpad.com/2020/09/15/sparkling-burgundy-spurgles-cold-duck-from-detroit-rene-pogel-spell-it-backwards-and-other-australian-oddities-if-they-are-your-thing-youll-never-regret-it/",
+    "https://en.wikipedia.org/wiki/Hans_Irvine",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-050.json"
+   ],
+   "finalFix": "The style is usually credited to Edmond Mazure at Auldana, near Adelaide, in the 1890s; Great Western in Victoria, first under Hans Irvine and then Seppelt, carried it through the twentieth century, and it survives almost nowhere else on earth. A full red base takes a second fermentation for pressure, and the dosage leaves just enough sugar to carry the tannin, which is why it is served cool rather than cellar-warm.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-3vtklgvr",
+    "cat": "Australia",
+    "q": "Poured cool with turkey at a midsummer Christmas, a dark foaming full-bodied red just off dry has been an Australian fixture since the nineteenth century. What is it?",
+    "opts": [
+     "Sparkling Grenache",
+     "A sweet red made in the Lambrusco manner",
+     "Sparkling Shiraz",
+     "Sparkling Cabernet Sauvignon"
+    ],
+    "a": 2,
+    "exp": "The style began in Victoria's Great Western and survives almost nowhere else on earth. A full red base takes a second fermentation for pressure, and the dosage leaves just enough sugar to carry the tannin, which is why it is served cool rather than cellar-warm."
+   }
+  }
+ ]
+}

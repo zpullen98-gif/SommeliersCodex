@@ -166,7 +166,7 @@ BANK = [
     Q("Which country holds which region",
       "Benches above a long narrow lake in the west, and a peninsula beside a Great Lake in the east, hold the two main vineyard areas of one country. Which is it?",
       ["Canada", "The United States", "Russia", "Argentina"], 0,
-      "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand nearly four thousand kilometres apart, which is a fair measure of how thinly a very large country is planted. Both depend on a body of water deep enough to hold off the worst of a continental winter."),
+      "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand more than three thousand kilometres apart, which is a fair measure of how thinly a very large country is planted. Both depend on a body of water deep enough to hold off the worst of a continental winter."),
     Q("Which country holds which region",
       "Nemea, Naoussa and Santorini appear together on an importer's list. Which country do all three belong to?",
       ["Greece", "Turkey", "Cyprus", "Italy"], 0,

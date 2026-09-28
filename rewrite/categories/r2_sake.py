@@ -197,7 +197,12 @@ BANK = [
         "below twenty two percent", "less than twenty two percent",
         "22", "twenty two", "22 percent abv", "22 abv", "22 percent alcohol",
         "22 percent alcohol by volume", "22% abv", "22 degrees",
-        "twenty two degrees", "less than 22%", "under 22%", "below 22%"],
+        "twenty two degrees", "less than 22%", "under 22%", "below 22%",
+        "under 22", "below 22", "less than 22", "under twenty two",
+        "below twenty two", "less than twenty two", "under 22 degrees",
+        "below 22 degrees", "less than 22 degrees",
+        "under twenty two degrees", "below twenty two degrees",
+        "less than twenty two degrees"],
        "The same definition demands that the fermenting mash be strained, which is why doburoku, the unstrained farm brew, is legally not sake at all, and why even the murkiest nigori has passed through at least a coarse mesh. The ceiling is also the outer legal wall for undiluted genshu: a rice brew at twenty-two or above changes legal identity, though in practice the yeast gives out first and most genshu land between seventeen and twenty percent.",
        ex=True),
 ]

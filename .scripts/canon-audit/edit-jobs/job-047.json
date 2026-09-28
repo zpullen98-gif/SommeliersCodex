@@ -1,0 +1,45 @@
+{
+ "file": "rewrite/categories/r2_jura_savoie_corsica.py",
+ "findings": [
+  {
+   "id": "c-kjm5utxp",
+   "kind": "wrong-explanation",
+   "claim": "The stem says 'Five varieties, and only five, may enter the Jura's appellation wines', and the explanation says every appellation of the region, still or sparling, is built from the five. Crémant du Jura also permits Pinot Gris.",
+   "because": "The current Crémant du Jura cahier des charges (homologated by the decree of 21 October 2019, JORF 31 October 2019) lists six varieties: chardonnay B, savagnin B, pinot gris G, pinot noir N, poulsard N and trousseau N. Pinot Gris is an accessory variety for the sparkling wine. The keyed trio (Poulsard, Trousseau, Pinot Noir) is still the right answer for the five traditional varieties. The error is only the absolute 'only five' in the stem and the 'still or sparkling' claim in the explanation. The interprofession's summary page lists only the five, so a candidate who knows the cahier could fault the stem. I could not open the cahier PDF itself (the BO-agri server refused the connection), so this rests on the French Wikipedia article, which quotes and cites the cahier directly.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Crémant_du_Jura (quotes the cahier: 'chardonnay B, savagnin B, pinot gris G, pinot noir N, poulsard N ... et trousseau N'; cites the cahier homologated 21 Oct 2019, JORF 31 Oct 2019)",
+    "https://www.jura-vins.com/aoc-cremant-du-jura.htm (interprofession summary, lists only five)"
+   ],
+   "fix": "Stem: \"Five varieties build the Jura's still appellation wines. Savagnin and Chardonnay are two; which trio completes the list?\" Explanation, last sentence: \"Gamay never earned a place despite Burgundy sitting an hour away, and every still appellation of the region builds from some arrangement of the five; only Crémant du Jura admits a sixth, Pinot Gris, as a minor accessory grape.\"",
+   "batch": 226,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, and the fault goes further than the examiner says. The key (Poulsard, Trousseau, Pinot Noir) is right. The problem is the absolute wording, \"Five varieties, and only five, may enter the Jura's appellation wines\", and the explanation's claim that every appellation, \"still or sparkling\", is built from the five.\n\n1. Crémant du Jura. I could not open the cahier des charges myself: the BO-agri server refused the connection from WebFetch and from curl, and the INAO extranet returned nothing. French Wikipedia quotes the current cahier (arrêté of 21 October 2019, JORF 31 October 2019) word for word: \"chardonnay B, savagnin B, pinot gris G, pinot noir N, poulsard N ... et trousseau N\". The same text sets the rosé rule as \"cépages noirs ou gris\" at 50% or more of the cuvée. That rule only makes sense if a grey-skinned variety is allowed, and Pinot Gris is the only one on the list. The interprofession page and the crémant federation page list only the five, but they are summaries, not the legal text.\n\n2. The examiner's own fix is also wrong. It says \"every still appellation of the region builds from some arrangement of the five\" and keeps \"Gamay never earned a place\". The current Arbois cahier (arrêté of 2 September 2022, confirmed on Légifrance as JORFTEXT000046269900) and the Côtes du Jura cahier (20 September 2022) now list trial grapes called VIFA (varieties of interest for adaptation). They are allowed subject to approval by the INAO and the Jura wine interprofession (CIVJ), and are capped at 5% of the vineyard and 10% of the blend. For whites the list is aligoté, chenin, enfariné, (gringet), marsanne, roussanne and sacy. For reds it is béclan, enfariné, franc noir de la Haute-Saône and gamay. Wikipedia's VIFA article also dates VIFA amendments for Château-Chalon (August 2026) and L'Étoile (September 2026).\n\nSo \"only five\" has been out of date for the still wines since September 2022, and for the sparkling wine it was already wrong under the 2019 cahier. The better fix keeps the same key and removes the absolute claims.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Crémant_du_Jura (quotes the cahier homologated 21 Oct 2019: 'chardonnay B, savagnin B, pinot gris G, pinot noir N, poulsard N ... et trousseau N'; rosé rule 'cépages noirs ou gris' >= 50%)",
+    "https://fr.wikipedia.org/wiki/Arbois_(AOC) (cahier homologated by arrêté of 2 Sept 2022; VIFA whites aligoté, chenin, enfariné, marsanne, roussanne, sacy; reds béclan, enfariné, franc noir de la Haute-Saône, gamay, subject to approval)",
+    "https://fr.wikipedia.org/wiki/Côtes-du-jura_(AOC) (cahier of 20 Sept 2022; VIFA 'sous réserve d'un accord de l'INAO et du CIVJ')",
+    "https://fr.wikipedia.org/wiki/VIFA_(cépage) (VIFA capped at 5% of vineyard, 10% of blend; Jura appellations and dates)",
+    "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000046269900 (arrêté du 2 septembre 2022 homologuant le cahier des charges de l'AOP Arbois)",
+    "https://www.legifrance.gouv.fr/search/all?query=crémant du jura cahier des charges (arrêté du 21 octobre 2019 homologating the Crémant du Jura cahier, in force)",
+    "https://www.jura-vins.com/aoc-cremant-du-jura.htm (interprofession summary, lists five only)",
+    "https://cremants.com/cremant-du-jura/ (federation summary, lists five only)"
+   ],
+   "finalFix": "Stem: \"Five varieties are the traditional grapes of the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?\" Explanation: \"Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never became one of the region's grapes despite Burgundy sitting an hour away, and the Jura's wines are built from some arrangement of the five. The law has small exceptions: Crémant du Jura also admits Pinot Gris, and since 2022 the Arbois and Côtes du Jura rules allow a few trial varieties, capped at 10% of a blend.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-kjm5utxp",
+    "cat": "Jura, Savoie & Corsica",
+    "q": "Five varieties, and only five, may enter the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?",
+    "opts": [
+     "Poulsard, Trousseau and Pinot Noir",
+     "Poulsard, Mondeuse Noire and Pinot Noir",
+     "Trousseau, Gamay and Mondeuse Noire",
+     "Poulsard, Trousseau and Gamay"
+    ],
+    "a": 0,
+    "exp": "Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never earned a place despite Burgundy sitting an hour away, and every appellation of the region, still or sparkling, builds from some arrangement of the five."
+   }
+  }
+ ]
+}

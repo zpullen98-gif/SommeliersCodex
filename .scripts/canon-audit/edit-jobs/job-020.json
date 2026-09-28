@@ -1,0 +1,281 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-3hqt2hc1",
+   "kind": "outdated",
+   "claim": "The model answer defines Garrafeira as three to six years in wood, then at least eight years in glass demijohns, and says Niepoort is effectively the only producer.",
+   "because": "The IVDP's special-categories rules were rewritten by Regulamento 3/2022 (4 January 2022). The IVDP page now gives Garrafeira as 4 to 8 years in wood, then glass, with the wine not to be sold before 15 years after harvest. World of Fine Wine confirms that this stricter definition dates from 2022 and that Niepoort and Quevedo both make Garrafeira today. The 3–6-year wood figure is the pre-2022 definition.",
+   "sources": [
+    "https://www.ivdp.pt/pt/vinhos/vinhos-do-porto/categorias-especiais/",
+    "https://worldoffinewine.com/tasting-notes/garrafeira-port",
+    "https://dre.tretas.org/dre/4759685/regulamento-extrato-3-2022-de-4-de-janeiro"
+   ],
+   "fix": "Garrafeira is a rare, legally distinct single-vintage category. Since the IVDP's 2022 regulation it spends four to eight years in wood, then a further period (in practice at least eight years) in large glass demijohns, and it may not be sold until at least 15 years after the harvest; the label shows both the harvest year and the bottling date. Niepoort is the historic keeper of the category, and Quevedo now makes one too.",
+   "batch": 171,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The IVDP special-categories page (Portuguese version, opened) now gives Garrafeira as \"Em madeira: entre 4 a 8 anos. Posteriormente em vidro: mínimo 15 anos\", and the label must show the harvest year and the final bottling year. World of Fine Wine (opened) says this definition dates from 2022, pushed through by Dirk Niepoort: one year's grapes, four to eight years in wood, then glass, and no sale sooner than 15 years after the harvest. It also says Niepoort and Quevedo both make Garrafeira today. So the model answer's \"three to six years in wood, then a minimum of eight years in glass\" is the pre-2022 rule, and \"Niepoort is effectively the only house\" is out of date too. The Crusted half is right: the IVDP gives a blend of vintages with at least 3 years in bottle and a crust. The examiner's fix is a little off. Its \"in practice at least eight years\" in glass has no current source: under the 15-years-from-harvest reading, eight years in wood leaves only seven in glass. The IVDP page and WFW also read the 15-year figure differently: the IVDP page puts it against the glass stage, while WFW reads it as total age before sale. I could not open the regulation itself (tretas.org returned 403 and the DRE page came back empty). So the better fix says only what is true under both readings. Also, accept item 3 (\"garrafeira spends at least eight years in glass\") repeats the old rule and should become \"crusted needs three years bottle age garrafeira spends four to eight years in wood then glass\".",
+   "verifySources": [
+    "https://www.ivdp.pt/pt/vinhos/vinhos-do-porto/categorias-especiais/",
+    "https://worldoffinewine.com/tasting-notes/garrafeira-port",
+    "https://www.ivdp.pt/en/wines/port-wines/special-categories/"
+   ],
+   "finalFix": "Garrafeira is a rare and legally distinct single-vintage category. Under the IVDP rules of 2022 it spends four to eight years in wood, then further ageing in glass (in practice large demijohns, the bonbonnes), with a 15-year minimum set by the IVDP, so it cannot reach the market until at least 15 years after the harvest; the label shows both the harvest year and the year of final bottling. The glass halts oxidative development and gives a nutty, delicate, almost Colheita-like wine with a fine soft deposit. Niepoort kept the category alive and pressed for the 2022 definition; Niepoort and Quevedo are the houses making it today.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-3hqt2hc1",
+    "cat": "Portugal",
+    "q": "Define Crusted Port and Garrafeira Port, and say who makes each.",
+    "sa": 1,
+    "accept": [
+     "crusted is an unfiltered multi vintage blend with three years in bottle garrafeira is single vintage aged in glass demijohns",
+     "crusted blends vintages unfiltered while garrafeira ages in demijohn and is made by niepoort",
+     "crusted needs three years bottle age garrafeira spends at least eight years in glass"
+    ],
+    "ans": "Crusted is a blend of several vintages, bottled young and without filtration, then required to rest a minimum of three years in bottle before release. It throws a crust — hence the name — needs decanting, and carries a bottling date rather than a vintage. It is essentially a British trade invention designed to give Vintage character at a Reserve price, and survives as a house style at Graham's, Dow's, Fonseca and Churchill's. Garrafeira is a rare and legally distinct single-vintage category: three to six years in wood, then a minimum of eight years in large glass demijohns, the bonbonnes, before bottling. The non-porous glass halts oxidative development and produces a nutty, delicate, almost Colheita-like wine with a fine soft deposit. Niepoort is effectively the only house that has kept the category alive.",
+    "exp": "Both exist to test whether you have read the IVDP's category list rather than a shipper's marketing. Garrafeira is also conceptually interesting: it is the only Port style deliberately matured in a vessel that admits no oxygen, which is precisely why it tastes unlike any cask-aged tawny of comparable age."
+   }
+  },
+  {
+   "id": "m-3hqt2hc1",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says Garrafeira is 'the only Port style deliberately matured in a vessel that admits no oxygen'.",
+   "because": "Vintage Port, Crusted and traditional unfiltered LBV also do most of their maturing in sealed glass bottles, and this same batch's Vintage question says so ('does every remaining year of its ageing in bottle'). What makes Garrafeira unique is its long reductive ageing in large demijohns after years of oxidative ageing in wood, not the use of glass itself.",
+   "sources": [
+    "https://www.ivdp.pt/pt/vinhos/vinhos-do-porto/categorias-especiais/",
+    "https://www.ivdp.pt/en/wines/port-wines/special-categories/"
+   ],
+   "fix": "Garrafeira is also conceptually interesting: it is the only Port style that follows years of oxidative ageing in wood with a long reductive rest in large glass demijohns before bottling, which is why it tastes unlike any cask-aged tawny of comparable age.",
+   "batch": 171,
+   "verdict": "confirmed",
+   "verifyReason": "The finding stands. The explanation says Garrafeira is \"the only Port style deliberately matured in a vessel that admits no oxygen\", and that is false. The IVDP's own special-categories page says Vintage Port \"ages in bottle\": it is bottled two to three years after the harvest and then develops for 10 to 50 years. It also says Crusted is \"kept in bottle for at least three years before being sold\". So at least two other official categories are deliberately matured in sealed glass.\n\nWhat only Garrafeira does is follow its years in wood with a long rest in large glass demijohns before bottling. The model answer in the same question already describes that correctly. The examiner's fix keeps the explanation's point (it tastes unlike any cask-aged tawny of comparable age) and puts the claim of uniqueness on that wood-then-demijohn sequence, where it holds.\n\nI found nothing wrong in the answer or the accept list for this finding to cover.",
+   "verifySources": [
+    "https://www.ivdp.pt/en/wines/port-wines/special-categories/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-171.json"
+   ],
+   "finalFix": "Both exist to test whether you have read the IVDP's category list rather than a shipper's marketing. Garrafeira is also conceptually interesting: it is the only Port style that follows years of oxidative ageing in wood with a long reductive rest in large glass demijohns before bottling, which is why it tastes unlike any cask-aged tawny of comparable age.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-3hqt2hc1",
+    "cat": "Portugal",
+    "q": "Define Crusted Port and Garrafeira Port, and say who makes each.",
+    "sa": 1,
+    "accept": [
+     "crusted is an unfiltered multi vintage blend with three years in bottle garrafeira is single vintage aged in glass demijohns",
+     "crusted blends vintages unfiltered while garrafeira ages in demijohn and is made by niepoort",
+     "crusted needs three years bottle age garrafeira spends at least eight years in glass"
+    ],
+    "ans": "Crusted is a blend of several vintages, bottled young and without filtration, then required to rest a minimum of three years in bottle before release. It throws a crust — hence the name — needs decanting, and carries a bottling date rather than a vintage. It is essentially a British trade invention designed to give Vintage character at a Reserve price, and survives as a house style at Graham's, Dow's, Fonseca and Churchill's. Garrafeira is a rare and legally distinct single-vintage category: three to six years in wood, then a minimum of eight years in large glass demijohns, the bonbonnes, before bottling. The non-porous glass halts oxidative development and produces a nutty, delicate, almost Colheita-like wine with a fine soft deposit. Niepoort is effectively the only house that has kept the category alive.",
+    "exp": "Both exist to test whether you have read the IVDP's category list rather than a shipper's marketing. Garrafeira is also conceptually interesting: it is the only Port style deliberately matured in a vessel that admits no oxygen, which is precisely why it tastes unlike any cask-aged tawny of comparable age."
+   }
+  },
+  {
+   "id": "m-unpee2wt",
+   "kind": "ambiguous-stem",
+   "claim": "The stem asks for 'Azorean and Madeiran' vine-training walls that protect against Atlantic salt. It assumes Madeira uses the same walled system as Pico.",
+   "because": "Madeira's vineyards sit on 'poios' bench terraces and are trained high on 'latada' pergolas. The basalt currais that shelter low-trained vines from wind and salt spray belong to Pico in the Azores. A candidate who knows Madeira could reasonably answer 'poios' or 'latada' for the Madeiran half of the question.",
+   "sources": [
+    "https://www.madeirawinecompany.com/en/madeira/terroir-and-vineyards.html",
+    "https://blandys.com/en/about-madeira-wine/",
+    "https://guidetotheazores.pt/azores-pico-vineyards-unesco-wine-heritage-guide/"
+   ],
+   "fix": "Which Azorean vine-training walls protect the vines against Atlantic wind and salt spray, and what are they called on Pico?",
+   "batch": 171,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The stem says the walls are \"Azorean and Madeiran\", and that is false. The currais are dry-stone enclosures of black basalt, built to shelter the vines from wind and salt sea spray, and they belong to Pico, a UNESCO site. Madeira grows its vines on poios, basalt terraces like the Douro's, trained on latada trellises. Madeira has no currais. A candidate who knows Madeira could fairly answer \"poios\" or \"latada\" for the Madeira half, so the stem is ambiguous and teaches a false fact.\n\nThe examiner's fix removes Madeira, which is right, but it has two faults. It keeps \"vine-training walls\", and the currais shelter the vines rather than train them. It also asks for the name twice (\"which walls ... and what are they called\"). The better fix below corrects both. The model answer and explanation can stay as they are.\n\nA separate accept-list fault, outside this finding: under matchSA (core.js lines 89-95), a bare \"currais\" is refused. Both accept phrases are three words long, and the core-match rule needs at least two of them in the input. Adding \"currais\" (or \"~currais\") to the accept list would fix that.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Landscape_of_the_Pico_Island_Vineyard_Culture",
+    "https://en.wikipedia.org/wiki/Madeira_wine",
+    "C:/Users/zpull/SommeliersCodex/js/core.js",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-171.json"
+   ],
+   "finalFix": "On Pico in the Azores, what are the small dry-stone basalt enclosures that shelter low-grown vines from Atlantic wind and salt spray called?",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-unpee2wt",
+    "cat": "Portugal",
+    "q": "Which Azorean and Madeiran vine-training walls protect against Atlantic salt, and what are they called on Pico?",
+    "sa": 1,
+    "accept": [
+     "currais lajido basalt corrals",
+     "currais stone corrals"
+    ],
+    "ans": "Currais — basalt corrals on the lajido lava fields of Pico (UNESCO listed)",
+    "exp": "Verdelho, Arinto dos Açores, Terrantez do Pico grow inside them."
+   }
+  },
+  {
+   "id": "m-k1buaxx5",
+   "kind": "wrong-fact-in-option",
+   "claim": "The stem calls Osborne's 'Sibarita' a Palo Cortado. Sibarita is Osborne's Oloroso VORS: Palomino with about 2% Pedro Ximénez, from a solera founded in 1792. Osborne's Palo Cortado VORS is Capuchino, which the model answer itself names.",
+   "because": "The stem states a false style for the wine the whole question turns on, so a candidate learns that Sibarita is a Palo Cortado. That is wrong on any label or list since about 2003.",
+   "sources": [
+    "https://www.sherrynotes.com/2019/reviews/oloroso/sibarita-oloroso-vors-osborne/",
+    "https://www.wine.com/product/osborne-sibarita-1792-vors-oloroso-sherry-500ml/147466"
+   ],
+   "fix": "Which Sherry bodega's Rare Sherry range, including the Oloroso 'Sibarita' and the Palo Cortado 'Capuchino' among its age-dated VORS wines, revived the category commercially?",
+   "batch": 172,
+   "verdict": "confirmed",
+   "verifyReason": "The stem calls Osborne's Sibarita a Palo Cortado. It is not one today. Sherry Notes' review of Osborne Sibarita VORS lists it as Osborne's Oloroso VORS, from a solera founded in 1792. It says Sibarita began as a Fino, turned Amontillado and then grew heavier, and was once labelled as a Palo Cortado. It has been sold as an Oloroso since about 2003. The same review names Osborne's Palo Cortado VORS as Capuchino, from a 1790 solera, and the model answer names it too. So the stem teaches a style that has been wrong for about 20 years. You could also call this \"outdated\", but the finding holds either way. I could not open Osborne's own page (it returned only the brand name) or the wine.com listing (HTTP 403), so this rests on the Sherry Notes review. Nothing else in the question disagrees with it. The examiner's fix names each wine by its right style and keeps \"Osborne\" as the answer, so the key and the accept list still work.",
+   "verifySources": [
+    "https://www.sherrynotes.com/2019/reviews/oloroso/sibarita-oloroso-vors-osborne/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-172.json"
+   ],
+   "finalFix": "Which Sherry bodega's Rare Sherry range, including the Oloroso 'Sibarita' and the Palo Cortado 'Capuchino' among its age-dated VORS wines, revived the category commercially?",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-k1buaxx5",
+    "cat": "Producers & Icons",
+    "q": "Which Sherry bodega's Palo Cortado 'Sibarita' and age-dated VORS range revived the category commercially?",
+    "sa": 1,
+    "accept": [
+     "osborne",
+     "gonzalez byass rare lustau almacenista osborne sibarita"
+    ],
+    "ans": "Osborne's Rare Sherry range (Sibarita, Capuchino…) — with Lustau's almacenista program the twin revival engines",
+    "exp": "Know an almacenista: a private stockholder whose butts Lustau bottles."
+   }
+  },
+  {
+   "id": "m-zq3b6ola",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says DRC has 'Nine with Charlemagne now', and the model answer leaves out Bâtard-Montrachet. DRC owns about 0.17 ha of Bâtard-Montrachet grand cru and has made it since at least 1987; it is bottled for private use and never sold. That makes ten grand crus, and the second accept entry itself mentions 'batard'.",
+   "because": "When asked to recite the holdings, a candidate who gives the count as nine, or leaves Bâtard out, has missed a known holding. The bank's own accept list shows the author knew about it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Domaine_de_la_Roman%C3%A9e-Conti",
+    "https://winehog.org/terroir-insight-domaine-de-la-romanee-conti-batard-montrachet-2-41881/"
+   ],
+   "fix": "ans: Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased from 2009), Corton-Charlemagne (from 2019), plus a tiny 0.17 ha of Bâtard-Montrachet bottled for private use and not sold; exp: Nine commercial grand crus with Charlemagne, ten counting the unsold Bâtard.",
+   "batch": 172,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The bank item (batch-172, m-zq3b6ola) asks the candidate to \"Recite DRC's grand cru holdings\". Its model answer lists nine grand crus, and the explanation says \"Nine with Charlemagne now\". Two sources I opened show DRC also holds a 0.1746 ha parcel of Bâtard-Montrachet grand cru. Wikipedia lists it among DRC's holdings, with about 50 cases a year, \"Not sold, only for private consumption\". Winehog cites Gert Crum (2012) for the same parcel size and for DRC making the wine since at least 1987. Because the stem asks for holdings, not for wines on sale, the count of nine is wrong: the true count is ten, and the model answer leaves out a known holding. The bank's own second accept entry (\"corton since 2009 batard tiny\") shows the author knew about the parcel, so the model answer and explanation contradict their own accept list. The examiner's fix fixes both: it adds Bâtard with its size and not-sold status, and it separates nine commercial grand crus from ten holdings. The rest of the answer stands: Corton leased from 2009, Corton-Charlemagne from 2019, and the Romanée-Conti and La Tâche monopoles. My one extra WebSearch did not run (the session's search budget is spent), so this ruling rests on the two pages above.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Domaine_de_la_Roman%C3%A9e-Conti",
+    "https://winehog.org/terroir-insight-domaine-de-la-romanee-conti-batard-montrachet-2-41881/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-172.json"
+   ],
+   "finalFix": "ans: Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased from 2009), Corton-Charlemagne (from 2019), plus a tiny 0.17 ha of Bâtard-Montrachet bottled for private use and not sold; exp: Nine commercial grand crus with Charlemagne, ten counting the unsold Bâtard.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-zq3b6ola",
+    "cat": "Producers & Icons",
+    "q": "Recite DRC's grand cru holdings.",
+    "sa": 1,
+    "accept": [
+     "romanee-conti la tache richebourg romanee-saint-vivant grands echezeaux echezeaux montrachet corton",
+     "corton since 2009 batard tiny"
+    ],
+    "ans": "Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased 2009; + Corton-Charlemagne 2019)",
+    "exp": "Nine with Charlemagne now — currency for any Master conversation."
+   }
+  },
+  {
+   "id": "m-zq3b6ola",
+   "kind": "accept-list",
+   "claim": "The accept entry 'corton since 2009 batard tiny' is a fragment. matchSA accepts any input that covers 60% of its words as a contiguous phrase, so 'corton since 2009' or 'since 2009 batard' alone grades correct.",
+   "because": "The question asks for DRC's full list of grand crus, so an answer naming only Corton and a date is wrong but is marked right.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, whole-word-core rule at line 93)"
+   ],
+   "fix": "Remove the entry 'corton since 2009 batard tiny' and add 'romanee-conti la tache richebourg romanee-saint-vivant grands echezeaux echezeaux montrachet corton corton-charlemagne batard-montrachet'",
+   "batch": 172,
+   "verdict": "confirmed",
+   "verifyReason": "I ran the real matchSA from C:/Users/zpull/SommeliersCodex/js/core.js on the live accept list for m-zq3b6ola (data-master.js line 100). It marks 'corton since 2009', 'since 2009 batard' and '2009 batard tiny' correct. They pass through the whole-word-core rule at line 93: 3 contiguous words out of 5 meets the 60% threshold. Each of those inputs names at most one or two vineyards and a date, not DRC's grand cru holdings, so the grader rewards a wrong answer. With the proposed fix applied, the same three fragments grade false, and the full list (Romanée-Conti, La Tâche, Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton, Corton-Charlemagne, Bâtard-Montrachet) still grades true. A trailing fragment such as 'montrachet corton corton charlemagne batard montrachet' is refused. The replacement entry's facts hold. DRC owns a 0.17 ha Bâtard-Montrachet parcel that it keeps for private use and does not sell (per the Wikipedia DRC article). The Corton lease from 2009 and the Corton-Charlemagne from 2019 match the question's own model answer. The fix is correct as written.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA lines 49-98, whole-word-core rule line 93; executed with node against the live accept list and the fixed list)",
+    "C:/Users/zpull/SommeliersCodex/js/data-master.js line 100 (m-zq3b6ola)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-172.json",
+    "https://en.wikipedia.org/wiki/Domaine_de_la_Romanée-Conti (grand cru holdings incl. Bâtard-Montrachet 0.1746 ha, not sold)"
+   ],
+   "finalFix": "Remove the accept entry 'corton since 2009 batard tiny' and add 'romanee-conti la tache richebourg romanee-saint-vivant grands echezeaux echezeaux montrachet corton corton-charlemagne batard-montrachet'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-zq3b6ola",
+    "cat": "Producers & Icons",
+    "q": "Recite DRC's grand cru holdings.",
+    "sa": 1,
+    "accept": [
+     "romanee-conti la tache richebourg romanee-saint-vivant grands echezeaux echezeaux montrachet corton",
+     "corton since 2009 batard tiny"
+    ],
+    "ans": "Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased 2009; + Corton-Charlemagne 2019)",
+    "exp": "Nine with Charlemagne now — currency for any Master conversation."
+   }
+  },
+  {
+   "id": "m-jcjgoahm",
+   "kind": "accept-list",
+   "claim": "The accept entry 'david lett calera josh jensen' begins with David Lett. Under matchSA's 60%-of-words rule, the input 'david lett calera' (3 of 5 words) grades correct, even though the model answer says the legend belongs to Josh Jensen and not to Lett.",
+   "because": "A candidate who names David Lett, the exact mistake the question is built to catch, is marked right.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, whole-word-core rule at line 93)",
+    "https://www.alcoholprofessor.com/blog-posts/suitcase-clones",
+    "https://www.calerawine.com/our-story/josh-jensen"
+   ],
+   "fix": "Replace 'david lett calera josh jensen' with 'josh jensen calera'",
+   "batch": 172,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I confirmed the grader flaw by running the real matchSA from C:/Users/zpull/SommeliersCodex/js/core.js against this question in node. Line 93 is the whole-word-core rule: the input needs at least ceil(5*0.6)=3 of the accept phrase's 5 words and must appear inside it as whole words. That rule grades \"David Lett, Calera\" and \"david lett calera\" CORRECT against the accept entry 'david lett calera josh jensen'. This question's own model answer exists to catch that mistake: the legend belongs to Josh Jensen, and Lett took Davis clones to Oregon. The examiner's fix, 'josh jensen calera', does close that hole. Run through the same grader, \"David Lett, Calera\" goes false. But it also accepts a bare \"Josh Jensen\" (2 of 3 words), and the stem asks both who and where. A better replacement is 'jensen calera'. Tested with matchSA, it accepts \"Josh Jensen, Calera\", \"Jensen, Calera\", \"Josh Jensen, Calera, Mount Harlan\" and \"Jensen Calera Mt Harlan\". It refuses \"David Lett, Calera\", \"David Lett, Calera, not Jensen\", \"Josh Jensen\", \"Jensen\" and \"Calera\". The fact behind the question (the Calera/Jensen suitcase-cuttings legend) is not in dispute and is left as it is. I could not re-open web sources because the session's search budget ran out. This ruling rests on running the grader code, not on the wine fact. One smaller issue with the untouched second entry 'josh jensen calera mount harlan': it also takes \"Calera Mount Harlan\" with no person named. That is not part of this finding.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17, matchSA lines 49-98, whole-word-core rule line 93)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-172.json (m-jcjgoahm, lines 162-174)",
+    "node execution of matchSA: current list grades 'David Lett, Calera' true; with 'jensen calera' it grades false and 'Josh Jensen, Calera' true"
+   ],
+   "finalFix": "jensen calera",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-jcjgoahm",
+    "cat": "Producers & Icons",
+    "q": "Which American Pinot pioneer is said — so the legend goes — to have carried Romanée-Conti cuttings home, and where did he plant them?",
+    "sa": 1,
+    "accept": [
+     "david lett calera josh jensen",
+     "josh jensen calera mount harlan"
+    ],
+    "ans": "The legend belongs to Josh Jensen (Calera, Mt. Harlan limestone) — Lett carried Davis clones to Oregon",
+    "exp": "'Suitcase clones' lore: repeat it carefully, label it lore."
+   }
+  },
+  {
+   "id": "m-z7es9auq",
+   "kind": "wrong-key",
+   "claim": "The model answer says Jamet's Côte-Rôtie blends about 25 lieux-dits. The 25 is the number of plots, and those plots lie in about 17 lieux-dits. The second accept entry, '25 lieux-dits blended whole cluster traditional', carries the same error. The stem also asks 'which lieu-dit', singular, when the point is that the wine is a blend of many sites.",
+   "because": "Rare Wine Co.'s producer page says Jamet owns 25 plots spread across 17 lieux-dits and uses mostly whole clusters. K&L's notes on the 2023 also call it a blend of 17 lieux-dits.",
+   "sources": [
+    "https://www.rare.wine/producer/jamet-cote-rotie/",
+    "https://shop.klwines.com/products/details/1980792"
+   ],
+   "fix": "q: 'Across how many Côte-Rôtie sites does Jamet's classic cuvée draw, and what defines the domaine's method?' ans: 'Jamet blends about 25 plots in some 17 lieux-dits across the slope, largely whole-cluster: the anti-single-vineyard argument'. accept: ['25 parcels 17 lieux-dits whole cluster', '17 lieux-dits blended whole cluster traditional', 'twenty-five parcels whole cluster']",
+   "batch": 173,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. I opened Rare Wine Co.'s Jamet producer page, and it quotes Jean-Paul Jamet directly: \"We have 25 plots spread across 17 lieux-dits.\" The same page says fermentation uses \"mostly whole clusters\". So the model answer, which says the wine blends about 25 lieux-dits, mixes up the plot count with the lieu-dit count. The accept entry '25 lieux-dits blended whole cluster traditional' repeats that error and would teach it. The stem is also broken. \"Which Côte-Rôtie lieu-dit does Jamet's village blend famously span\" asks for one site, but the point of the wine is that it is a blend of many. I could not open the K&L page (HTTP 403), so the confirmation rests on the importer's quote from Jamet himself.\n\nThe examiner's fix is correct in substance, but it needs two changes:\n1. Its stem, \"Across how many Côte-Rôtie sites\", can be read as asking for either the plots or the lieux-dits. The better stem asks for both numbers by name.\n2. Its accept list refuses plainly right answers that give the counts in other words. matchSA takes an accept entry only when the whole phrase appears in the answer (or the answer covers most of the entry). So \"17 lieux-dits, mostly whole cluster\" and \"25 plots across 17 lieux-dits\" both fail against every entry the examiner proposed. The better list adds those phrasings, and every entry still names whole clusters.",
+   "verifySources": [
+    "https://www.rare.wine/producer/jamet-cote-rotie/",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 49-98)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-173.json"
+   ],
+   "finalFix": "q: 'Jamet's classic Côte-Rôtie is a blend, not a single site: roughly how many plots and how many lieux-dits does it draw on, and what defines the domaine's method?' ans: 'About 25 plots spread across some 17 lieux-dits on the slope, fermented largely whole-cluster: the anti-single-vineyard argument' accept: ['25 plots 17 lieux-dits whole cluster', '25 parcels 17 lieux-dits whole cluster', '17 lieux-dits whole cluster', '17 lieux-dits mostly whole cluster', 'seventeen lieux-dits whole cluster', 'twenty-five parcels whole cluster', '25 plots whole cluster', '25 parcels whole cluster'] exp: 'Jamet farms about 25 plots in some 17 lieux-dits and blends them into one Côte-Rôtie, mostly whole-cluster. Guigal's La-Las set single sites against Jamet's assemblage, and that is the appellation's philosophical axis.'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-z7es9auq",
+    "cat": "Rhône",
+    "q": "Which Côte-Rôtie lieu-dit does Jamet's village blend famously span, and what defines the domaine's method?",
+    "sa": 1,
+    "accept": [
+     "twenty-five parcels whole cluster",
+     "25 lieux-dits blended whole cluster traditional"
+    ],
+    "ans": "Jamet blends ~25 lieux-dits across the slope, largely whole-cluster — the anti-single-vineyard argument",
+    "exp": "Guigal's La-Las vs Jamet's assemblage is the appellation's philosophical axis."
+   }
+  }
+ ]
+}

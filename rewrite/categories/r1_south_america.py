@@ -106,7 +106,7 @@ BANK = [
       "Constant wind, very low humidity and a long cool season along an irrigated river valley describe Argentina's southern vineyards. Which region?",
       ["Rio Negro in Patagonia", "Cafayate in Salta", "Tulum in San Juan",
        "Chilecito in La Rioja"], 0,
-      "The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines. Wind thickens skins and holds disease down, and the latitude gives slow, even ripening."),
+      "The Alto Valle del Rio Negro grew vines alongside alfalfa and fruit from the early 1900s, and later became better known for its apple and pear orchards. Wind thickens skins and holds disease down, and the latitude gives slow, even ripening."),
     Q("Argentina beyond Mendoza",
       "Desert scrub irrigated from a dammed river around San Patricio del Chanar carries Patagonia's newest large plantings. Which province?",
       ["Neuquen", "Chubut", "Cordoba", "Entre Rios"], 0,

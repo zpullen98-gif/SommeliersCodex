@@ -1,0 +1,50 @@
+{
+ "file": "rewrite/categories/r2_california.py",
+ "findings": [
+  {
+   "id": "c-ijf6g9l0",
+   "kind": "outdated",
+   "claim": "The model answer 'The vintage' is wrong under current law, and so is the explanation's claim that 'a vintage date is permitted only when the appellation is something other than a country'. A wine that falls back to 'American' may still show a vintage, subject to the 85 percent same-year rule.",
+   "because": "Until 2012, 27 CFR 4.27(a) read that the wine 'must be labeled with an appellation of origin other than a country (which does not qualify for vintage labeling)'. That wording is still in the 2008 and 2012 annual CFR editions. T.D. TTB-105 (77 FR 56541, 13 Sept 2012) removed it. The 2016 edition and the current text say only 'The wine must be labeled with an appellation of origin', and 4.27(a)(2) sets 85 percent from the labeled year for any appellation other than a viticultural area. Under 4.25(a)(1)(i) 'The United States' is an American appellation of origin, so an 'American' wine can be vintage dated today.",
+   "sources": [
+    "https://www.govinfo.gov/content/pkg/CFR-2008-title27-vol1/xml/CFR-2008-title27-vol1-sec4-27.xml",
+    "https://www.govinfo.gov/content/pkg/CFR-2012-title27-vol1/xml/CFR-2012-title27-vol1-sec4-27.xml",
+    "https://www.govinfo.gov/content/pkg/CFR-2016-title27-vol1/xml/CFR-2016-title27-vol1-sec4-27.xml",
+    "https://www.ecfr.gov/api/versioner/v1/full/2025-01-01/title-27.xml?part=4&section=4.27",
+    "https://www.ecfr.gov/api/versioner/v1/full/2025-01-01/title-27.xml?part=4&section=4.25"
+   ],
+   "fix": "q: \"Fruit from two non-contiguous states is blended, so the only appellation left is American. If the label shows a vintage, what share of the wine must come from that year's harvest?\"; ans: \"85 percent\"; accept: [\"85\",\"85%\",\"85 percent\",\"eighty-five percent\",\"eighty five percent\"]; exp: \"A country appellation such as American counts as an appellation other than a viticultural area, so 27 CFR 4.27(a)(2) sets the vintage threshold at 85 percent; an AVA would need 95. Before T.D. TTB-105 (September 2012) a country appellation could not carry a vintage at all, which is why older references still say American wine is non-vintage.\"",
+   "batch": 199,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The question is outdated, as the examiner says. The April 2012 CFR edition of 27 CFR 4.27(a) still read \"The wine must be labeled with an appellation of origin other than a country (which does not qualify for vintage labeling)\". The 2008 edition has the same restriction. The 2016 edition and the current eCFR text (2025-01-01) say only \"The wine must be labeled with an appellation of origin\". Under 4.27(a)(2) any appellation other than a viticultural area needs 85 percent from the labeled year. So an \"American\" wine can carry a vintage today, and the model answer \"The vintage\" is wrong. So is the explanation's claim that a country appellation cannot be vintage dated. The examiner's replacement question and accept list are sound: matchSA grades a purely numeric accept such as \"85\" on a whole-number token. I could not open the amending rule itself: the Federal Register document number given did not resolve to the TTB rule. So the explanation should date the change by what the CFR editions show, not cite T.D. TTB-105 and September 2012 as fact.",
+   "verifySources": [
+    "https://www.govinfo.gov/content/pkg/CFR-2008-title27-vol1/xml/CFR-2008-title27-vol1-sec4-27.xml",
+    "https://www.govinfo.gov/content/pkg/CFR-2012-title27-vol1/xml/CFR-2012-title27-vol1-sec4-27.xml",
+    "https://www.govinfo.gov/content/pkg/CFR-2016-title27-vol1/xml/CFR-2016-title27-vol1-sec4-27.xml",
+    "https://www.ecfr.gov/api/versioner/v1/full/2025-01-01/title-27.xml?part=4&section=4.27",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "q: \"Fruit from two non-contiguous states is blended, so the only appellation left is American. If the label shows a vintage, what share of the wine must come from that year's harvest?\"; ans: \"85 percent\"; accept: [\"85\",\"85%\",\"85 percent\",\"eighty-five percent\",\"eighty five percent\"]; exp: \"A country appellation such as American counts as an appellation other than a viticultural area, so 27 CFR 4.27(a)(2) sets the vintage threshold at 85 percent; an AVA would need 95. Until TTB amended 4.27 in 2012, a country appellation did not qualify for vintage labeling at all, which is why older references still say American wine cannot carry a vintage.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-ijf6g9l0",
+    "cat": "California",
+    "q": "Fruit grown in one state is blended in a cellar with fruit from another, leaving the broadest appellation on the books as the only one available. What may the label no longer state?",
+    "sa": 1,
+    "accept": [
+     "vintage",
+     "vintage date",
+     "vintage year",
+     "year of harvest",
+     "harvest year",
+     "harvest date",
+     "the year the grapes were harvested",
+     "the year the grapes were picked"
+    ],
+    "ans": "The vintage",
+    "exp": "Two or three states that are contiguous can share an appellation of their own, with the percentage from each printed on the label, and a wine carrying it keeps its vintage. Where that is not available the wine falls back to American, which is a country-level appellation, and a vintage date is permitted only when the appellation is something other than a country. So the harvest year is the price of the fallback. It is a useful reminder that the appellation on an American label controls far more than geography."
+   }
+  }
+ ]
+}

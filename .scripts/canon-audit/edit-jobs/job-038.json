@@ -1,0 +1,38 @@
+{
+ "file": "rewrite/categories/r2_australia.py",
+ "findings": [
+  {
+   "id": "c-j3tfw36p",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says soil is \"deliberately absent from the test\" and that \"the law measures where, never how or what\".",
+   "because": "Section 57(1) of the Wine Australia Regulations 2018 lists the factors the Geographical Indications Committee must weigh when it determines an area and draws its boundaries. One of them, 57(1)(i), is how uniform the area's geological formation is and how it differs from neighbouring areas. Others are uniform climate (j), harvest dates (k), a single drainage basin (l), irrigation water (m) and elevation (n). So geology is part of the test, even though no single unbroken soil type is required. The keyed option B is still right and option D is still wrong. Only the explanation's claim about soil is false.",
+   "sources": [
+    "https://www.legislation.gov.au/F2018L00286/2025-01-01/2025-01-01/text/original/epub/OEBPS/document_1/document_1.html (Wine Australia Regulations 2018, s 57(1)(a)-(p))",
+    "https://www.wineaustralia.com/labelling/register-of-protected-gis-and-other-terms/geographical-indications-committee"
+   ],
+   "fix": "Style is deliberately absent from the test, and soil appears only as one factor among many: the Committee weighs how uniform the geology, climate, harvest dates and elevation are, but it never requires a single soil type or asks what the wine tastes like. The law measures where, never how the wine is made.",
+   "batch": 187,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I opened the Wine Australia Regulations 2018. Section 57(1) lists what the Geographical Indications Committee must weigh when it decides whether to determine an area and where to draw its boundaries. Paragraph (i) is \"the degree to which the geological formation of the area is (i) uniform; and (ii) different from the geological formation of neighbouring areas.\" So the explanation is wrong to say soil (geology) is \"deliberately absent from the test\". The key still holds. Paragraphs (a) to (d) are the 500 tonnes, the five vineyards of at least 5 ha with no common ownership, a single tract of land, and grape-growing attributes that are uniform and different from the neighbours', so B is right. D is still wrong because geology is only one factor to weigh; the law never requires one unbroken soil type. C is wrong because no tasting or style test exists. A is wrong because history is a factor (e, q) but no fifty-year minimum exists. The examiner's fix is off in two ways. It says \"soil\" when the regulation says \"geological formation\". It also replaces only part of the explanation and drops the accurate first sentence. My better fix keeps that sentence, words the geology point as the regulation does, and notes that these are factors to weigh, not pass-or-fail conditions.",
+   "verifySources": [
+    "https://www.legislation.gov.au/F2018L00286/2025-01-01/2025-01-01/text/original/epub/OEBPS/document_1/document_1.html (Wine Australia Regulations 2018, s 57(1)(a)-(q))"
+   ],
+   "finalFix": "The regulations ask for a single tract of land, discrete from its neighbours and homogeneous in its growing attributes, with the five-vineyard, five-hectare and five-hundred-tonne figures as the floor of scale: five separately owned vineyards, each of at least five hectares, and in the order of five hundred tonnes of grapes produced in a year. Geology is one factor among many the Committee weighs, alongside climate, harvest dates, drainage, irrigation water and elevation, but no single unbroken soil type is required. Style is deliberately absent from the test: the law measures where, never how the wine is made or what it tastes like.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-j3tfw36p",
+    "cat": "Australia",
+    "q": "Before the register will call a district a region, its applicants must show far more than lines on a map. What is the test?",
+    "opts": [
+     "Fifty years of continuous documented viticulture inside the proposed line, proven from parish, council and company records",
+     "Homogeneity in grape growing, at least five independent vineyards of five hectares each, and five hundred tonnes of grapes a year",
+     "A panel tasting finding that wines grown inside the line share a recognisable style that stops at the boundary",
+     "A soil survey establishing that one mapped soil type runs unbroken across the whole area"
+    ],
+    "a": 1,
+    "exp": "The regulations ask for a single tract of land, discrete from its neighbours and homogeneous in its growing attributes, with the five-vineyard, five-hectare and five-hundred-tonne figures as the floor of scale: five separately owned vineyards, each of at least five hectares, and in the order of five hundred tonnes of grapes produced in a year. Style and soil are deliberately absent from the test, which is the system in miniature: the law measures where, never how or what."
+   }
+  }
+ ]
+}

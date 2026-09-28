@@ -179,9 +179,9 @@ BANK = [
 
     # --------------------------- Saumur, its rock and its appellations (4) ----
     Q("Saumur, its rock and its appellations",
-      "A pink wine from Saumur arrives noticeably sweet on the finish and is made from Cabernet Franc. Which appellation covers it?",
-      ["Cabernet de Saumur", "Saumur Rose", "Rose de Loire", "Cremant de Loire Rose"], 0,
-      "Cabernet de Saumur is the medium-dry pink of the zone, the counterpart to Cabernet d'Anjou a little downstream, and both are built on the Cabernets rather than on Grolleau. A Saumur Rose from the same cellar is finished dry, so a list carrying both names is drawing a sweetness distinction and not a geographical one."),
+      "Since the 2016 vintage, the still Cabernet-based rose once sold as Cabernet de Saumur carries which name on the label?",
+      ["Cabernet d'Anjou", "Cremant de Loire Rose", "Rose de Loire", "Saumur Rose"], 3,
+      "The arrete of 19 July 2016 that approved the new Saumur cahier des charges repealed the 2011 decree covering both Saumur and Cabernet de Saumur, and the zone's Cabernet-based pink has been labelled Saumur Rose ever since, from Cabernet Franc and Cabernet Sauvignon. Cabernet d'Anjou is the off-dry Anjou pink, Rose de Loire is the regional dry rose open to Saumur growers too, and Cremant de Loire Rose is sparkling.", pin="c-tm40i5yq"),
     Q("Saumur, its rock and its appellations",
       "A grower inside the Saumur-Champigny boundary presses Chenin Blanc from a plot lying among the Cabernet Franc. Under which name must that white be sold?",
       ["Saumur Blanc", "Saumur-Champigny Blanc", "Touraine Blanc", "Vin de France"], 0,
@@ -217,10 +217,10 @@ BANK = [
         "petillant originel montlouis"],
        "Petillant Originel is Montlouis' own designation for the ancestral method, and the wine keeps both its sediment and its low pressure. It sits outside the Cremant de Loire framework altogether, since a Cremant demands hand-picked whole bunches and a second fermentation in bottle, so the two are different wines under different rulebooks rather than two grades of one thing."),
     SA("Vouvray, Montlouis and the Touraine appellations",
-       "A carafe of Touraine red is poured that is light, purple and juicy, and it holds no Cabernet Franc at all. Which grape fills the district's everyday red?",
+       "A carafe of red from the Touraine appellation is poured that is light, purple and juicy, and its label names its grape after the word Touraine. Which grape is it?",
        "Gamay",
        ["gamay", "gamay noir", "gamay noir a jus blanc"],
-       "The district appellation leans on Gamay for red and on Sauvignon Blanc for white, which is why a wine labelled simply Touraine tastes nothing like Chinon or Vouvray. Cot appears in the reds as well, and the Gamay is usually the fresher and the cheaper of the two."),
+       "The light, purple, juicy carafe red of Touraine is Gamay, sold under its own label as Touraine Gamay, which must be at least 75% Gamay. A red labelled simply Touraine is a different wine: under the current cahier des charges it is led by Cot (at least 40%), with Cabernet Franc, Cabernet Sauvignon and Pinot Noir in support, and the white is Sauvignon Blanc. That is why the district's wines taste nothing like Chinon or Vouvray.", pin="c-ne65k86o"),
 
     # -------------------------------- Cabernet Franc and the Touraine reds (5)
     Q("Cabernet Franc and the Touraine reds",
@@ -289,7 +289,7 @@ BANK = [
        "Between Sancerre and the town of Gien the vineyard runs along either side of the Loire, making whites from Sauvignon Blanc and reds from Gamay with Pinot Noir. Name the appellation.",
        "Coteaux du Giennois",
        ["coteaux du giennois", "giennois", "aoc coteaux du giennois"],
-       "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes rather than use either on its own, which is a requirement no other appellation of the Centre imposes. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted."),
+       "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes, with at least 20 percent of each, rather than use either on its own; Sancerre, Menetou-Salon and Reuilly let a red stand on Pinot Noir alone. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted."),
     SA("The Centre beyond Sancerre",
        "West of Bourges, away from the Loire altogether, a pair of Centre appellations works sand and gravel terraces on the Cher and its tributary the Arnon. Name them.",
        "Quincy and Reuilly",

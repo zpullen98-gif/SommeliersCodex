@@ -1,0 +1,115 @@
+{
+ "file": "rewrite/categories/r2_bordeaux.py",
+ "findings": [
+  {
+   "id": "c-v46nukpw",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says both 2012 promotions, Angelus and Pavie, were contested in court.",
+   "because": "In January 2013 three estates took the 2012 classification to the Bordeaux administrative tribunal. La Tour du Pin Figeac and Corbin-Michotte challenged their own demotion or declassification, and Croque-Michotte challenged being refused promotion. The litigation concerned procedure and the estates that lost out, not the elevation of Angelus and Pavie to Premier Grand Cru Classe A. The keyed answer, Angelus and Pavie, is correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Classification_of_Saint-Émilion_wine"
+   ],
+   "fix": "The 2012 classification as a whole was challenged in court by estates that were demoted or left out, which is the recurring feature of this classification rather than an accident: because rank is revisable it is worth suing over, and because it is written into the appellation rules the state ends up in the argument. The 1855 list attracts no litigation for the opposite reason.",
+   "batch": 192,
+   "verdict": "confirmed",
+   "verifyReason": "The keyed answer, Angelus and Pavie, is correct. The explanation's first sentence is not. The court challenges to the 2012 classification were brought in January 2013 by three estates that lost out: La Tour du Pin Figeac (demoted in 2006 and not reinstated), Croque-Michotte (refused promotion) and Corbin-Michotte (declassified). They argued the procedure was flawed. None of those cases targeted the promotion of Pavie. On Angelus, the only link to a court is indirect: its co-owner, Hubert de Boüard, was charged in 2018 with trying to influence the rankings in his own favour. That was a criminal case against a person, not a challenge to the promotion, and nothing ties it to Pavie. So \"Both promotions were contested in court\" is false. The examiner's replacement keeps the author's point and wording and makes the facts right: the classification as a whole was challenged by estates that were demoted or left out.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Classification_of_Saint-Émilion_wine",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Ang%C3%A9lus",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-192.json"
+   ],
+   "finalFix": "The 2012 classification as a whole was challenged in court by estates that were demoted or left out, which is the recurring feature of this classification rather than an accident: because rank is revisable it is worth suing over, and because it is written into the appellation rules the state ends up in the argument. The 1855 list attracts no litigation for the opposite reason.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-v46nukpw",
+    "cat": "Bordeaux",
+    "q": "Ausone and Cheval Blanc held the top rank of the Saint-Emilion classification alone for decades. In the 2012 revision, which two estates were raised to join them?",
+    "sa": 1,
+    "accept": [
+     "angelus and pavie",
+     "pavie and angelus",
+     "angelus pavie",
+     "pavie angelus"
+    ],
+    "ans": "Angelus and Pavie",
+    "ex": 1,
+    "exp": "Both promotions were contested in court, which is the recurring feature of this classification rather than an accident: because rank is revisable it is worth suing over, and because it is written into the appellation rules the state ends up in the argument. The 1855 list attracts no litigation for the opposite reason."
+   }
+  },
+  {
+   "id": "c-eew914t0",
+   "kind": "outdated",
+   "claim": "The explanation says five communes share the Margaux name, and treats Cantenac as a separate commune.",
+   "because": "On 1 January 2017 Margaux and Cantenac merged into a single commune, Margaux-Cantenac. The appellation now covers four communes: Margaux-Cantenac, Soussans, Arsac and Labarde. It still covers the same ground as the historic five villages. The keyed option is still the best answer.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Margaux-Cantenac"
+   ],
+   "fix": "The five historic villages all share the name (Margaux and Cantenac merged into the single commune of Margaux-Cantenac in 2017), which is much of why Margaux is the least uniform of the four in soil and in style. An address in Cantenac or Labarde is labelled Margaux with nothing on the bottle to say so.",
+   "batch": 192,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. On 1 January 2017 Margaux and Cantenac merged into the new commune of Margaux-Cantenac (fr.wikipedia, Margaux-Cantenac article). The French article on the Margaux AOC now says the appellation covers four communes: Arsac, Labarde, Margaux-Cantenac (Cantenac and Margaux merged in 2017) and Soussans. So the explanation's \"Five communes in all share the name\" is out of date as an administrative fact, although the ground covered is the same five historic villages. The keyed option C (Cantenac, Soussans, Arsac and Labarde) is still plainly the best answer. None of the distractors is correct: Listrac, Moulis and Avensan, Macau, Ludon and Saint-Laurent, and Cussac, Lamarque and Arcins all lie outside the Margaux AOC. The key does not change. The proposed fix keeps the teaching point, says \"historic villages\" instead of \"communes\", and dates the merger, so it is correct. I could not open the INAO cahier des charges (the page I tried returned 404, and the web-search budget was used up), but the merger itself is not in doubt.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Margaux-Cantenac",
+    "https://fr.wikipedia.org/wiki/Margaux_(AOC)"
+   ],
+   "finalFix": "The five historic villages all share the name (Margaux and Cantenac merged into the single commune of Margaux-Cantenac in 2017), which is much of why Margaux is the least uniform of the four in soil and in style. An address in Cantenac or Labarde is labelled Margaux with nothing on the bottle to say so.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-eew914t0",
+    "cat": "Bordeaux",
+    "q": "Only one of the Medoc's great communal appellations extends well beyond the village that names it. Which group of communes does Margaux also cover?",
+    "opts": [
+     "Listrac, Moulis and Avensan",
+     "Macau, Ludon and Saint-Laurent",
+     "Cantenac, Soussans, Arsac and Labarde",
+     "Cussac, Lamarque and Arcins"
+    ],
+    "a": 2,
+    "exp": "Five communes in all share the name, which is much of why Margaux is the least uniform of the four in soil and in style. An address in Cantenac or Labarde is labelled Margaux with nothing on the bottle to say so."
+   }
+  },
+  {
+   "id": "c-b42arsxv",
+   "kind": "wrong-key",
+   "claim": "The question keys Cot as the old local name for Malbec \"still used in the Medoc\", and the explanation implies the grape's four names are Cot (Medoc), Pressac (Right Bank), Auxerrois (Cahors) and Malbec.",
+   "because": "The Medoc name is Malbec itself. French Wikipedia's Cot article says the name Malbec (1783-84) comes from a merchant called Malbeck who spread the vine in the Medoc, and it lists the regional names as Malbec for the Medoc and Bordeaux, Noir de Pressac for the Libournais, Auxerrois for Cahors and Cot for the Loire. Plantgrape (IFV/INRAE) gives Cot as the official French prime name and Malbec as its official synonym. Cot is therefore the Loire name and the official name, not the Medoc name. A candidate who learns 'Medoc = Cot' is learning a false pairing, and the one correct answer to the question as written (Malbec) is also the word the stem uses to name the grape, so the item cannot be rescued by adding it to the accept list.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Malbec",
+    "https://www.plantgrape.fr/fr/cepage/Cot",
+    "https://en.wikipedia.org/wiki/Malbec"
+   ],
+   "fix": "q: \"Around Saint-Emilion and the rest of the Libournais, Malbec has long gone by a local name quite different from the one used in the Medoc. What is it?\"; ans: \"Pressac\"; accept: [\"pressac\", \"noir de pressac\", \"pressac or noir de pressac\"]; exp: \"Pressac, or Noir de Pressac, is the Right Bank name, said to come from the nurseryman who spread the vine around Saint-Emilion. Malbec itself is the Medoc name, taken from a merchant called Malbeck who spread it there in the eighteenth century. Cot is the official French name and the one used in the Loire, and Auxerrois is the Cahors name. One variety with four names is a standard trap on a blind tasting sheet.\"",
+   "batch": 193,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The question keys Cot as the name \"still used in the Medoc\", but the Medoc name is Malbec itself. French Wikipedia's Malbec article lists the regional names as Malbec for Médoc/Bordeaux, Noir de Pressac for the Libournais, Auxerrois for Quercy/Cahors and Cot/Côt for the Loire. It also says the name Malbec (1783-84) comes from a négociant called Malbeck who spread the vine in the Médoc. Plantgrape (IFV/INRAE) gives Cot as the official French name, with Malbec as an official synonym. English Wikipedia also puts Côt in the Loire and Pressac in the Libournais. So Cot is the Loire and official name, not the Médoc name. The only right answer to the stem as written is Malbec, which is the word the stem itself uses, so changing the accept list cannot save the item. It has to be rewritten, and the examiner's rewrite around Pressac is sound. One change is needed in the explanation: its claim that Pressac comes from \"the nurseryman who spread the vine\" could not be confirmed. English Wikipedia gives no origin for the name, and Plantgrape does not mention it. That clause is dropped here rather than swapping one unverified story for another. The rest of the explanation is supported by the sources opened.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Malbec",
+    "https://www.plantgrape.fr/fr/cepage/Cot",
+    "https://en.wikipedia.org/wiki/Malbec"
+   ],
+   "finalFix": "q: \"Around Saint-Emilion and the rest of the Libournais, Malbec has long gone by a local name quite different from the one used in the Medoc. What is it?\"; ans: \"Pressac\"; accept: [\"pressac\", \"noir de pressac\", \"pressac or noir de pressac\"]; exp: \"Pressac, or Noir de Pressac, is the old Right Bank name. Malbec itself is the Medoc name, taken from a merchant called Malbeck who spread the vine there in the eighteenth century. Cot is the official French name and the one used in the Loire, and Auxerrois is the Cahors name. One variety with four names is a standard trap on a blind tasting sheet.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-b42arsxv",
+    "cat": "Bordeaux",
+    "q": "Bordeaux growers have an old local name for Malbec, still used in the Medoc and quite different from the one used on the Right Bank. What is the Medoc name?",
+    "sa": 1,
+    "accept": [
+     "cot",
+     "cot in the medoc",
+     "cot or pressac",
+     "pressac or cot",
+     "cot also called pressac",
+     "cot malbec",
+     "cot the medoc name for malbec"
+    ],
+    "ans": "Cot",
+    "ex": 1,
+    "exp": "Pressac is the Right Bank name, said to come from the family that spread the vine around Saint-Emilion, and Auxerrois is what the same grape is called in Cahors. One variety with four names is a standard trap on a blind tasting sheet."
+   }
+  }
+ ]
+}

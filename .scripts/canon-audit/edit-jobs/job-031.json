@@ -1,0 +1,43 @@
+{
+ "file": "rewrite/categories/r1_portugal.py",
+ "findings": [
+  {
+   "id": "i-07xtmux2",
+   "kind": "wrong-explanation",
+   "claim": "Gouveio the citrus, the last being the grape Madeira calls Verdelho.",
+   "because": "Gouveio is the Douro name for Godello, the same variety as Verdelho do Dão. It is a different variety from Madeira's Verdelho. Older ampelography, such as Truel (1984), wrongly treated Gouveio as a synonym of Madeira Verdelho, and Portuguese Portaria 428/2000 renamed it Gouveio to end that confusion. DNA profiling confirms that Godello/Gouveio and Madeira Verdelho are separate varieties. The error also matters here because Verdelho appears in distractor D.",
+   "sources": [
+    "https://www.vinetowinecircle.com/castas_post/gouveio-godello/",
+    "https://www.wine-searcher.com/grape-2191-godello",
+    "https://en.wikipedia.org/wiki/Verdelho",
+    "https://en.wikipedia.org/wiki/Godello"
+   ],
+   "fix": "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Spain calls Godello (and not, despite an old confusion, the Verdelho of Madeira).",
+   "batch": 103,
+   "verdict": "confirmed",
+   "verifyReason": "The question is i-07xtmux2 in batch-103. Its keyed answer (C) is right, but the explanation says Gouveio is \"the grape Madeira calls Verdelho\", and that is false. Gouveio is the Douro name for Godello (Wikipedia's Godello page says the Gouveio of northern Portugal is thought to be the same grape). The Portuguese ampelography page on Gouveio/Godello (vinetowinecircle) makes three points: Portaria 428/2000 took the name \"Verdelho\" off this variety to avoid a clash of names with the Verdelho of Madeira; Truel (1984) was wrong to call Gouveio a synonym of Madeira Verdelho; and \"Verdelho\" was only ever a local Douro synonym. So the two are separate varieties. The error also sets a trap, because Madeira's Verdelho is one of the grapes in distractor D. The examiner's fix corrects the claim and keeps the rest of the sentence.",
+   "verifySources": [
+    "https://www.vinetowinecircle.com/castas_post/gouveio-godello/",
+    "https://en.wikipedia.org/wiki/Godello",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-103.json",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-074.json"
+   ],
+   "finalFix": "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Spain calls Godello (and not, despite an old confusion, the Verdelho of Madeira).",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-07xtmux2",
+    "cat": "Portugal",
+    "q": "White wine from the Douro has turned serious in the last generation, grown high up or on slopes facing away from the sun. Which grapes carry it?",
+    "opts": [
+     "Antao Vaz, Roupeiro, Perrum and Diagalves",
+     "Alvarinho, Loureiro, Trajadura and Avesso",
+     "Viosinho, Rabigato, Gouveio and Codega do Larinho",
+     "Sercial, Verdelho, Boal and Malvasia"
+    ],
+    "a": 2,
+    "exp": "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Madeira calls Verdelho. Altitude does most of the work, since the best white parcels sit six hundred metres up or on north-facing schist where the fruit never bakes."
+   }
+  }
+ ]
+}

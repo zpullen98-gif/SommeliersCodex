@@ -1,0 +1,160 @@
+{
+ "file": "rewrite/categories/r2_wine_fundamentals.py",
+ "findings": [
+  {
+   "id": "c-r7d5apwy",
+   "kind": "accept-list",
+   "claim": "The accept list refuses 16.8, the standard rounded form of the divisor it already accepts as 16.83.",
+   "because": "The question is marked ex:1, so matchSA in js/core.js only accepts exact matches after normalisation. norm() turns '16.8' into '16 8' and '16.8 g/l' into '16 8 g l', and neither is on the list, although '16 83' and '16 83 g l' are. The explanation's own arithmetic (15.44 / 0.92 = 16.8) gives 16.8, and 16.8 is the figure textbooks usually quote for the 16.83 g/L conversion. A candidate who types 16.8 is marked wrong for a plainly right answer.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, matchSA: ex questions exact-match only)",
+    "batch-261.json c-r7d5apwy accept list and explanation (0.51 g ethanol/g sugar, 92% yield gives 16.8)"
+   ],
+   "fix": "Add to accept: \"16 8\", \"about 16 8\", \"16 8 g l\", \"16 8 grams per litre\", \"divide by 16 8\"",
+   "batch": 261,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I confirmed the grader behaviour by running matchSA itself (copied from C:/Users/zpull/SommeliersCodex/js/core.js) against the live bank entry in C:/Users/zpull/SommeliersCodex/js/data-questions.js. The question has ex:1, so after the \"ans\" check only exact normalised matches count. With the current list, \"16.8\", \"16.8 g/L\", \"divide by 16.8\" and \"16.8 grams per litre\" are all marked WRONG, while \"16.83\" and \"17\" are marked right.\n\nThe rounding claim holds. The list already takes 16.83 (the common EU-style conversion factor) and 17, and 16.8 is just 16.83 to one decimal place. The explanation's own figures also give it: 0.51 x 0.92 = 0.469 g of ethanol per g of sugar, and 7.89 g/L of ethanol per 1% vol / 0.469 = 16.8. A number that sits between two accepted answers and comes out of the question's own working is plainly right, so the list refuses a correct answer.\n\nI could not do an outside web check because this session's web search budget was used up. Nothing in the finding needs a source beyond the bank's own accepted 16.83 and its own arithmetic.\n\nThe examiner's fix works: I tested it and \"16.8\", \"16.8 g/L\", \"about 16.8\", \"16.8 grams per litre\" and \"divide by 16.8\" are then all accepted. It still misses the run-together \"16.8g/l\", which normalises to \"16 8g l\". The list already carries the same form for 17 (\"17g l\"), so I added it.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17; matchSA lines 49-97, where 'if(q.ex) continue' allows exact matches only)",
+    "C:/Users/zpull/SommeliersCodex/js/data-questions.js line 1249 (c-r7d5apwy live entry, ex:1, accept has '16 83' and '16 83 g l' but no 16.8 form)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-261.json (c-r7d5apwy)",
+    "Local node run of matchSA: '16.8' false, '16.83' true, '17' true; with the fix, '16.8'/'16.8 g/L'/'about 16.8'/'divide by 16.8' true, '16.8g/l' still false"
+   ],
+   "finalFix": "Add to accept: \"16 8\", \"about 16 8\", \"16 8 g l\", \"16 8g l\", \"16 8 grams per litre\", \"divide by 16 8\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-r7d5apwy",
+    "cat": "Wine Fundamentals",
+    "q": "Cellars turn grams of sugar per litre into potential alcohol by dividing by a single figure, close enough for planning a harvest. Give that divisor.",
+    "sa": 1,
+    "accept": [
+     "about seventeen grams per litre",
+     "seventeen grams per litre",
+     "about 17 grams per litre",
+     "17 grams per litre",
+     "seventeen",
+     "17",
+     "about 17",
+     "about seventeen",
+     "roughly 17",
+     "16 83",
+     "17 g l",
+     "17g l",
+     "divide by 17",
+     "divide by seventeen",
+     "about 17 g l",
+     "17 grams litre",
+     "17 grams per litre of sugar",
+     "seventeen grams of sugar per litre",
+     "17 g per litre",
+     "roughly seventeen grams per litre",
+     "roughly 17 grams per litre",
+     "approximately 17 grams per litre",
+     "about 17 grams of sugar per litre",
+     "17 g l of sugar",
+     "divide by about 17",
+     "seventeen grams a litre",
+     "about seventeen grams a litre",
+     "16 83 g l"
+    ],
+    "ans": "About seventeen grams per litre",
+    "ex": 1,
+    "exp": "Stoichiometry alone would ask for about fifteen and a half grams a litre, since a gram of sugar yields at most 0.51 grams of ethanol. A real ferment returns only about ninety-two per cent of that, because some of the sugar goes to glycerol, biomass and the ferment's own acids, so the sugar actually needed for each per cent climbs to a shade under seventeen and cellars round it. Two hundred and twenty grams a litre therefore points at around thirteen per cent, which is why a refractometer reading at the vineyard gate is enough to say whether a lot will need correcting before it is picked."
+   }
+  },
+  {
+   "id": "c-agg8mhfn",
+   "kind": "accept-list",
+   "claim": "The accept list refuses 'seed', 'seeds', 'the seeds', 'pips' and 'from the seeds', all plainly right answers to which fraction of the tannin was added.",
+   "because": "The question is marked ex:1, so only exact normalised matches grade. norm('the seeds') gives 'seeds', and none of 'seed', 'seeds', 'pip', 'pips', 'from seeds' or 'from the seeds' (normalised to 'from seeds') is on the list. The list only takes phrasings that contain the word 'tannin', but a candidate who names the seed fraction has given the answer.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm strips 'the'; matchSA returns early for ex questions)",
+    "batch-261.json c-agg8mhfn accept list"
+   ],
+   "fix": "Add to accept: \"seed\", \"seeds\", \"pip\", \"pips\", \"grape seeds\", \"from seeds\", \"from pips\", \"seed fraction\"",
+   "batch": 261,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I confirmed this against the code and the question data. Question c-agg8mhfn has \"ex\": 1. In matchSA, the only checks before the `if(q.ex) continue;` line are the exact match against the model answer (norm('Seed tannin') = 'seed tannin') and exact normalised matches against each accept entry. norm() drops 'the', so 'the seeds' becomes 'seeds' and 'from the seeds' becomes 'from seeds'. Every accept entry contains 'tannin'. As a result 'seed', 'seeds', 'the seeds', 'pips', 'grape seeds' and 'from the seeds' are all marked wrong. The stem asks which fraction of the tannin was added, so naming the seeds (pips) is a complete, correct answer, and marking it wrong records a miss. The chemistry in the key and the explanation holds: hard pressing cracks the seeds and releases the smaller, more galloylated and more bitter seed tannins. The examiner's additions are right. The better fix also adds 'grape seed' (the singular of the proposed 'grape seeds') and 'pip fraction', to match 'seed fraction'. None of these can accept a wrong answer, because ex:1 grades only exact matches.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js lines 11-17 (norm strips the/a/an) and 49-82 (matchSA: exact ans match, exact accept match, then `if(q.ex) continue;`)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-261.json c-agg8mhfn (ex: 1; every accept entry contains 'tannin'; ans 'Seed tannin')"
+   ],
+   "finalFix": "Add to accept: \"seed\", \"seeds\", \"grape seed\", \"grape seeds\", \"pip\", \"pips\", \"from seeds\", \"from pips\", \"from grape seeds\", \"seed fraction\", \"pip fraction\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-agg8mhfn",
+    "cat": "Wine Fundamentals",
+    "q": "Squeezed hard at the end of the press cycle, a red picks up a green, bitter drying quality that a gentle cycle avoids altogether. Which fraction of the wine's tannin has just been added?",
+    "sa": 1,
+    "accept": [
+     "seed tannin",
+     "seed tannins",
+     "grape seed tannin",
+     "grape seed tannins",
+     "pip tannin",
+     "pip tannins",
+     "seed derived tannin",
+     "seed derived tannins",
+     "tannin from the seed",
+     "tannin from the seeds",
+     "tannins from the seeds",
+     "tannin from the pips",
+     "tannins from the pips",
+     "seed tannin fraction",
+     "seed tannins fraction",
+     "tannin fraction from the seeds",
+     "tannins from the seed",
+     "tannin from grape seeds",
+     "tannins from grape seeds"
+    ],
+    "ans": "Seed tannin",
+    "ex": 1,
+    "exp": "Seed tannins are smaller, more heavily decorated with gallic acid and markedly more bitter than the tannins in the skin, and the seeds only give them up once there is alcohol in the vat or a press has cracked them. It is why press fractions are kept apart and tasted before any of them is blended back, and why a slow press and an intact seed are worth the extra hours."
+   }
+  },
+  {
+   "id": "c-fzvm469u",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the ratio of 4-ethylphenol to its partner 4-ethylguaiacol is 'roughly constant, which is why a laboratory can report one figure and a cellar can act on it.'",
+   "because": "The ratio is not constant. It changes with grape variety and with how much p-coumaric acid versus ferulic acid the wine starts with. A survey of Brazilian reds found that 4-EP:4-EG ran from 1.37 to 21.98. It was higher in Cabernet Sauvignon, and the paper cites published ratios of 10:1 for Cabernet Sauvignon and 8:1 for Merlot. Laboratories such as ETS report both compounds separately for exactly this reason. The rest of the question and the key (4-ethylphenol) are correct.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3804181/",
+    "https://en.wikipedia.org/wiki/4-Ethylguaiacol"
+   ],
+   "fix": "Replace the last sentence of exp with: \"Its partner, 4-ethylguaiacol, reads as smoke and clove rather than farmyard. The ratio between the two varies widely with the grape and the wine's hydroxycinnamic acids (roughly 8 to 10 to one in Cabernet and Merlot, much lower in some other wines), which is why a laboratory usually reports both.\"",
+   "batch": 262,
+   "verdict": "confirmed",
+   "verifyReason": "I checked the question (c-fzvm469u). The key and the accept list are right: 4-ethylphenol is the Brett phenol that gives the horse-and-farmyard note. The explanation's last sentence is wrong, though. It says the 4-EP:4-EG ratio is \"roughly constant, which is why a laboratory can report one figure.\" I opened the PMC paper myself. It measured ratios in Brazilian reds running from 1.37 to 21.98, and it says that matches the 1.6 to 38 range reported by Pollnitz et al. (2000) and Henschke et al. (2004). It also found a statistically significant difference between Cabernet Sauvignon (9.24) and Merlot (7.51). It cites 10:1 for Cabernet and 8:1 for Merlot (Pollnitz), 8:1 for Bordeaux (Chatonnet 1992) and about 9:1 for Chilean wines. It puts the variation down to how much of each precursor the wine has, which depends on region and grape variety. A ratio that varies more than tenfold is not roughly constant, and it is why laboratories report both compounds. The examiner's replacement is accurate and keeps the rest of the explanation as it is.",
+   "verifySources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3804181/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-262.json"
+   ],
+   "finalFix": "Its partner, 4-ethylguaiacol, reads as smoke and clove rather than farmyard. The ratio between the two varies widely with the grape and the wine's hydroxycinnamic acids (roughly 8 to 10 to one in Cabernet and Merlot, much lower in some other wines), which is why a laboratory usually reports both.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-fzvm469u",
+    "cat": "Wine Fundamentals",
+    "q": "Asked to confirm Brettanomyces in a suspect barrel, a laboratory reports the volatile phenol that carries the horse-and-farmyard note, in micrograms per litre. Name that compound.",
+    "sa": 1,
+    "accept": [
+     "4 ethylphenol",
+     "ethylphenol",
+     "4 ethyl phenol",
+     "ethyl phenol",
+     "4ep",
+     "4 ep",
+     "four ethylphenol",
+     "para ethylphenol",
+     "4 ethylphenol 4 ep",
+     "4 ep 4 ethylphenol"
+    ],
+    "ans": "4-ethylphenol",
+    "ex": 1,
+    "exp": "The yeast decarboxylates a hydroxycinnamic acid that every red already carries and then reduces the product, and the analysis is far more reliable than a plate count because the cells can be scarce while the compound is not. Its partner reads as smoke and clove rather than farmyard, and the ratio between the two is roughly constant, which is why a laboratory can report one figure and a cellar can act on it."
+   }
+  }
+ ]
+}

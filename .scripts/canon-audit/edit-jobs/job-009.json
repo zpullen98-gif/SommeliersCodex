@@ -1,0 +1,295 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-uhsq0145",
+   "kind": "wrong-explanation",
+   "claim": "Contrast 1855, which has never expired and has been altered once.",
+   "because": "The 1855 Médoc list has been altered twice: Château Cantemerle was added as a Fifth Growth in 1856, and Mouton Rothschild was promoted to First Growth in 1973. 'Only one change' is a common simplification that experts correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855",
+    "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Cantemerle"
+   ],
+   "fix": "Contrast 1855, which has never expired and has been altered only twice (Cantemerle added in 1856, Mouton Rothschild promoted in 1973).",
+   "batch": 12,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation for a-uhsq0145 (batch-012) ends \"Contrast 1855, which has never expired and has been altered once.\" That is false. The standard account names two changes to the 1855 Médoc list. Château Cantemerle was added as a Fifth Growth in 1856; accounts differ on whether it was left off by oversight or added as an afterthought. Château Mouton Rothschild was promoted from Second to First Growth in 1973. Wikipedia's article on the 1855 classification says outright that there has been a change \"only twice since the 1855 classification\". Trade guides (Fine+Rare, Corney & Barrow, The Wine Cellar Insider) give the same two-change count. Some sources also mention Château Dubignon, which disappeared when it was absorbed into Malescot St. Exupéry. That is not a formal alteration, so it does not change the count. A candidate asked how many times the 1855 list has changed would be marked wrong for answering \"once\". The model answer and the accept list are not affected. The examiner's replacement sentence is accurate.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855",
+    "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+    "https://www.corneyandbarrow.com/blog/decoding-the-1855-bordeaux-classification",
+    "https://www.thewinecellarinsider.com/bordeaux-wine-producer-profiles/bordeaux/1855-bordeaux-classification/"
+   ],
+   "finalFix": "Contrast 1855, which has never expired and has been altered only twice (Cantemerle added in 1856, Mouton Rothschild promoted in 1973).",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-uhsq0145",
+    "cat": "Classifications & Labels",
+    "q": "Describe the Cru Bourgeois du Médoc classification as it has worked since its 2020 relaunch.",
+    "sa": 1,
+    "accept": [
+     "three tiers of cru bourgeois revalidated every five years",
+     "cru bourgeois superieur and exceptionnel awarded on a five year cycle",
+     "tiered classification with an audit and a five year expiry",
+     "three levels that expire and must be re-earned"
+    ],
+    "ans": "Three tiers — Cru Bourgeois, Cru Bourgeois Supérieur and Cru Bourgeois Exceptionnel — awarded to the château on blind tasting plus an audit of production, traceability and environmental practice, and revalidated on a five-year cycle instead of held for life",
+    "exp": "The history explains the design. The 2003 classification was annulled by the French courts in 2007 as procedurally unfair to the excluded; from 2010 to 2018 the name survived only as an annual selection of individual wines, not of estates. The 2020 return to a classification of estates works precisely because it expires — a ranking that must be re-earned is far harder to sue over than one held in perpetuity. Contrast 1855, which has never expired and has been altered once."
+   }
+  },
+  {
+   "id": "a-p9dbm43t",
+   "kind": "wrong-explanation",
+   "claim": "ans: \"Protected terms (Château, Clos, Cru, Vintage/Port, Classic…)\"; exp: \"Why an Aussie 'Port' became Tawny and 'Sherry' became Apera at home too.\"",
+   "because": "Port (Porto) and Sherry (Jerez-Xérès-Sherry) are protected geographical indications, not traditional terms. Australia dropped them under the GI provisions of the 2008 EU–Australia Agreement on Trade in Wine, which came into force in 2010. The same agreement expressly lets Australia keep the traditional expressions tawny, ruby, cream and vintage. So the name change came from GI protection, and 'Vintage' is a term non-EU wines can use under agreements, as the 2006 US–EU agreement also allows Château, Clos and Vintage for US wines.",
+   "sources": [
+    "https://piperalderman.com.au/insight/australian-european-community-agreement-on-trade-in-wine/",
+    "https://www.wineaustralia.com/getmedia/c981e769-b05e-410f-ab8a-715683f56dd0/document(1).pdf"
+   ],
+   "fix": "ans: \"Protected traditional terms (Château, Clos, Cru, Classic…) in the EU market unless a bilateral agreement authorises them\"; exp: \"Distinct from GI protection: Port and Sherry are protected geographical indications, which is why Australian 'Port' became Tawny and 'Sherry' became Apera under the 2008 EU–Australia wine agreement.\"",
+   "batch": 12,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The examiner is right. Port (Porto) and Sherry (Jerez-Xérès-Sherry) are geographical indications, not traditional terms. Australia gave up those names under the GI provisions of the EU–Australia Agreement on Trade in Wine, signed 1 December 2008 and in force from 1 September 2010. The \"sensitive\" GIs, which include Port and Sherry, were protected one year after that. The same agreement lets Australia keep using the traditional expressions cream, ruby, tawny and vintage. So the model answer is wrong to list \"Vintage/Port\" as a traditional term a non-EU wine may not use. The explanation is also wrong to give traditional-terms protection as the reason Aussie Port became Tawny and Sherry became Apera: GI protection caused that change. The examiner's fix corrects both points. But it drops \"without qualifying\", which covers the EU's general route for third-country wines that meet the conditions, and narrows it to bilateral agreements alone. It also leaves the accept entry \"protected terms like clos or vintage port\", which still grades the Port error as correct. The better fix keeps \"without qualifying\" and replaces that accept entry.",
+   "verifySources": [
+    "https://piperalderman.com.au/insight/australian-european-community-agreement-on-trade-in-wine/",
+    "https://www.wineaustralia.com/getmedia/c981e769-b05e-410f-ab8a-715683f56dd0/document(1).pdf",
+    "https://www.decanter.com/wine-news/australia-banned-from-using-champagne-sherry-and-port-on-labels-49840/",
+    "https://www.vo.eu/news/eu-australia-wine-trade-agreement-in-force/"
+   ],
+   "finalFix": "ans: \"Protected traditional terms (Château, Clos, Cru, Classic…) in the EU market without qualifying (meeting the EU conditions or a bilateral agreement)\"; accept: [\"chateau clos cru reserve in eu market\", \"protected terms like clos or cru\"]; exp: \"Not the same as GI protection: Port and Sherry are protected geographical indications, which is why Australian 'Port' became Tawny and 'Sherry' became Apera under the 2008 EU–Australia wine agreement (in force 1 September 2010), which also lets Australia keep tawny, ruby, cream and vintage.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-p9dbm43t",
+    "cat": "Classifications & Labels",
+    "q": "The EU's 'traditional terms' protection means a non-EU wine may not label as:",
+    "sa": 1,
+    "accept": [
+     "chateau clos cru reserve in eu market",
+     "protected terms like clos or vintage port"
+    ],
+    "ans": "Protected terms (Château, Clos, Cru, Vintage/Port, Classic…) in the EU market without qualifying",
+    "exp": "Why an Aussie 'Port' became Tawny and 'Sherry' became Apera at home too."
+   }
+  },
+  {
+   "id": "a-1sstd67g",
+   "kind": "wrong-explanation",
+   "claim": "Metallic clash risk comes from tannin and oak, not white wine per se.",
+   "because": "Tamura et al. (J. Agric. Food Chem. 2009) showed that the fishy-metallic aftertaste in wine and seafood pairings is driven by ferrous iron in the wine, not by tannin: adding Fe2+ to model wine raised it, chelating iron in red wine suppressed it, and intensity tracked total iron and ferrous ion. The bank's own explanation for a-9x83xbqa already says the aftertaste \"tracks the wine's iron\", so the two explanations contradict each other.",
+   "sources": [
+    "https://pubs.acs.org/doi/10.1021/jf901656k",
+    "https://www.sciencedaily.com/releases/2009/10/091021115013.htm"
+   ],
+   "fix": "The fishy-metallic clash tracks the wine's iron content (Tamura 2009), not tannin, oak or white wine as such; low-iron, unoaked, high-acid whites are the safe choice.",
+   "batch": 13,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. Question a-1sstd67g's model answer is fine (Muscadet, Chablis, Fino and brut nature with oysters). Its explanation says \"Metallic clash risk comes from tannin and oak, not white wine per se\". That is the traditional belief, and Tamura et al. (J. Agric. Food Chem. 2009, 57(18):8550-8556) disproved it. Across the red and white wines they tasted with scallops, the fishy aftertaste tracked total iron and ferrous iron. Adding Fe2+ to model wine made it stronger, and binding the iron in red wine suppressed it. Ferrous iron speeds up the oxidation of the seafood's unsaturated fats into aldehydes such as hexanal, heptanal and 1-octen-3-one. The authors conclude that even tannic reds can suit seafood when their iron is low, so \"tannin and oak\" is the wrong cause. The same batch also contradicts itself: the explanation for a-9x83xbqa already says the aftertaste \"tracks the wine's iron\". The examiner's fix is right in substance but slightly off. It lists oak as something the paper ruled out (the paper never tested oak), and it treats \"unoaked\" as part of avoiding the metallic clash, when unoaked is really a matter of style. The better fix names iron as the cause and keeps the oyster-matching logic separate. I could not open the ACS page (403) or PubMed (CAPTCHA). The abstract's findings were confirmed through the ScienceDaily/ACS press release and the abstract quoted in search results.",
+   "verifySources": [
+    "https://www.sciencedaily.com/releases/2009/10/091021115013.htm",
+    "https://pubs.acs.org/doi/10.1021/jf901656k",
+    "https://www.researchgate.net/publication/26768695_Iron_Is_an_Essential_Cause_of_Fishy_Aftertaste_Formation_in_Wine_and_Seafood_Pairing",
+    "https://phys.org/news/2009-10-scientific-basis-golden-pairing-wines.html",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-013.json"
+   ],
+   "finalFix": "High acid and a saline, mineral echo match the oyster's brine, and no oak with modest alcohol keeps the wine from swamping its delicacy. The fishy-metallic clash tracks the wine's iron (Tamura 2009), not tannin, oak or colour as such.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-1sstd67g",
+    "cat": "Food & Pairing",
+    "q": "Best structural logic for raw oysters:",
+    "sa": 1,
+    "accept": [
+     "high acid saline no oak low alcohol",
+     "acid salt echo minerality"
+    ],
+    "ans": "High acid, saline echo, no oak, modest alcohol: Muscadet sur lie, Chablis, Fino, brut nature fizz",
+    "exp": "Metallic clash risk comes from tannin and oak, not white wine per se."
+   }
+  },
+  {
+   "id": "a-z612m4x4",
+   "kind": "wrong-explanation",
+   "claim": "A quiet revolution: flor wine without the spirit returns to legality.",
+   "because": "The 2022 revision of the Jerez-Xérès-Sherry pliego put the ageing-zone expansion, the six old grape varieties, pagos, Fino Viejo and the en rama definition into effect. The Consejo's own page lists optional fortification (natural 15%+) separately, as 'Pending EU approval'. The European Commission approved it on 29 July 2025, and it took effect after publication in the Official Journal in August 2025. The model answer and explanation present unfortified Sherry as legal from the 2022 reform, but it was not legal until 2025.",
+   "sources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://winewitandwisdomswe.com/2025/08/07/unfortified-sherry-approved-at-last/",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do"
+   ],
+   "fix": "exp: \"The 2022 revision expanded the ageing zone to the whole production zone, readmitted six pre-phylloxera grapes, and defined pagos, Fino Viejo and en rama. Optional fortification (wines reaching 15% naturally) was submitted in the same package but only approved by the EU on 29 July 2025, in force August 2025.\" ans: \"Expanded the ageing zone and permitted grapes, and formalized categories (pagos, Fino Viejo, en rama); unfortified wines at a natural 15%+ were proposed then and legal from 2025\"",
+   "batch": 14,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The Consejo Regulador's own page is sherry.wine/recent-regulatory-changes, dated 21 Nov 2022 (BOJA, 10 Oct 2022). It says the 2022 pliego changes came into force but optional fortification was a \"major\" change that still needed EU approval. Wines reaching 15% naturally for Fino/Manzanilla, or 17% for Oloroso, would no longer have to be fortified. The European Commission approved that change on 29 July 2025, and it came into force on 25 August 2025 after publication in the Official Journal (Spanish Wine Lover, Wine Wit and Wisdom). So the question's model answer and explanation are wrong to present unfortified Sherry as legal under the 2022 reform. The examiner's fix corrects ans and exp but leaves the accept list as it is. Two of its three entries (\"unfortified allowed vineyard zones expanded\", \"fino may be unfortified if 15% natural\") still teach the same error as a correct answer. The better fix replaces the accept list as well.",
+   "verifySources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do",
+    "https://winewitandwisdomswe.com/2025/08/07/unfortified-sherry-approved-at-last/",
+    "https://lustau.es/en/blog/sherry-new-regulations-2023/"
+   ],
+   "finalFix": "ans: \"Expanded the ageing zone to the whole production zone, readmitted six traditional grapes, and formalized categories (pagos, Fino Viejo, en rama); optional fortification was proposed then but only approved by the EU in 2025\"\naccept: [\"ageing zone expanded grapes added\", \"ageing zone expanded to whole production zone\", \"expanded ageing zone new grapes en rama definition\", \"six old grape varieties readmitted ageing zone expanded\", \"pagos fino viejo en rama defined\"]\nexp: \"The 2022 pliego (BOJA, October 2022) expanded the ageing zone to the whole production zone, readmitted six pre-phylloxera grapes, and defined pagos, Fino Viejo and en rama. Optional fortification for wines reaching 15% naturally (17% for Oloroso) was a major amendment in the same package. The EU approved it on 29 July 2025 and it came into force on 25 August 2025.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-z612m4x4",
+    "cat": "Fortified Wines",
+    "q": "Sherry's 2022 reforms changed the region how?",
+    "sa": 1,
+    "accept": [
+     "unfortified allowed vineyard zones expanded",
+     "fino may be unfortified if 15% natural",
+     "expanded zone allowed en rama definitions"
+    ],
+    "ans": "Permitting unfortified wines at natural 15%+, expanding zones/grapes, formalizing categories",
+    "exp": "A quiet revolution: flor wine without the spirit returns to legality."
+   }
+  },
+  {
+   "id": "a-2h2elgy6",
+   "kind": "accept-list",
+   "claim": "accept: \"superiore riserva vergine soleras\"",
+   "because": "Under the Marsala DOC the ageing ladder is Fine (1 yr), Superiore (2), Superiore Riserva (4), Vergine/Soleras (5), Vergine Stravecchio/Riserva (10+). The two top tiers are Vergine and Vergine Stravecchio/Riserva, as the model answer says. Superiore Riserva sits below both, so this accept entry takes a wrong answer: Superiore Riserva given as a peak tier.",
+   "sources": [
+    "https://italianwinecentral.com/denomination/marsala-doc/",
+    "https://en.wikipedia.org/wiki/Marsala_wine"
+   ],
+   "fix": "Replace the accept entry \"superiore riserva vergine soleras\" with \"vergine soleras and vergine stravecchio riserva\"",
+   "batch": 15,
+   "verdict": "confirmed",
+   "verifyReason": "The examiner is right: the accept entry grades a wrong answer as correct.\n\n**The law.** The Marsala DOC disciplinare sets these ageing categories:\n- Fine: at least 1 year\n- Superiore: at least 2 years\n- Superiore Riserva: at least 4 years\n- Vergine e/o Soleras: at least 5 years\n- Vergine e/o Soleras Stravecchio or Riserva: at least 10 years\n\nSo the two top tiers are Vergine/Soleras and Vergine Stravecchio/Riserva, which is what the model answer says. Superiore Riserva is a separate category below both.\n\n**The grader.** In `matchSA` (`C:/Users/zpull/SommeliersCodex/js/core.js`), the entry \"superiore riserva vergine soleras\" matches as a whole phrase. Its \"core\" rule also accepts any run of 3 or more whole words taken from it. That means \"Superiore Riserva and Vergine/Soleras\" is marked correct, and so is \"superiore riserva vergine\". Both name Superiore Riserva as a peak tier, which is false.\n\n**The fix.** Replacing the entry with \"vergine soleras and vergine stravecchio riserva\" works. Because it is 6 words long, the core rule's 4-word minimum stops short fragments like \"vergine and\" from being accepted. Correct answers such as \"Vergine/Soleras and Vergine Stravecchio/Riserva\" still grade.",
+   "verifySources": [
+    "https://italianwinecentral.com/denomination/marsala-doc/",
+    "http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2183",
+    "https://www.agraria.org/vini/marsala-doc.htm",
+    "C:/Users/zpull/SommeliersCodex/js/core.js",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-015.json"
+   ],
+   "finalFix": "vergine soleras and vergine stravecchio riserva",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-2h2elgy6",
+    "cat": "Fortified Wines",
+    "q": "Marsala's quality tiers peak with which two terms?",
+    "sa": 1,
+    "accept": [
+     "superiore riserva vergine soleras",
+     "vergine and vergine stravecchio"
+    ],
+    "ans": "Vergine (unsweetened, solera) and Vergine Stravecchio/Riserva (10+ years)",
+    "exp": "Marco De Bartoli's Vecchio Samperi champions the unfortified ancestor style."
+   }
+  },
+  {
+   "id": "a-9ojxmc0c",
+   "kind": "wrong-fact-in-option",
+   "claim": "ans: \"Dönnhoff (Niederhausen)\"",
+   "because": "Weingut Hermann Dönnhoff is based at Bahnhofstraße 11, 55585 Oberhausen an der Nahe. Niederhausen is the village of the Hermannshöhle vineyard, not the estate's home, so the parenthesis puts the estate in the wrong village.",
+   "sources": [
+    "https://wineguide.wein.plus/weingut-hermann-doennhoff",
+    "https://de.wikipedia.org/wiki/Weingut_D%C3%B6nnhoff",
+    "https://www.weine-wuttke.de/shop/deutschland/weingut-doennhoff-oberhausen-nahe/"
+   ],
+   "fix": "Dönnhoff (Oberhausen; the Hermannshöhle lies in neighbouring Niederhausen)",
+   "batch": 15,
+   "verdict": "confirmed",
+   "verifyReason": "German Wikipedia says Weingut Hermann Dönnhoff \"liegt in Oberhausen an der Nahe\" (is in Oberhausen an der Nahe). It names the Hermannshöhle as \"die Niederhäuser Hermannshöhle\", so the vineyard is in Niederhausen but the estate is not. The model answer \"Dönnhoff (Niederhausen)\" therefore puts the estate in the wrong village. The accept list [\"donnhoff\"] is not affected. The explanation's Brücke (Oberhäuser Brücke) is in Oberhausen, which also fits the fix. The examiner's fix is correct and keeps the Niederhausen link for the vineyard.",
+   "verifySources": [
+    "https://de.wikipedia.org/wiki/Weingut_D%C3%B6nnhoff",
+    "https://www.doennhoff.com/"
+   ],
+   "finalFix": "Dönnhoff (Oberhausen; the Hermannshöhle lies in neighbouring Niederhausen)",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-9ojxmc0c",
+    "cat": "Germany",
+    "q": "Which Nahe estate's Hermannshöhle GGs set the modern benchmark for the region?",
+    "sa": 1,
+    "accept": [
+     "donnhoff"
+    ],
+    "ans": "Dönnhoff (Niederhausen)",
+    "exp": "Helmut, now Cornelius; Brücke ice-wines beside it."
+   }
+  },
+  {
+   "id": "a-bam6b8ud",
+   "kind": "outdated",
+   "claim": "Grosser Ring (VDP Mosel) auctions in Trier each September",
+   "because": "The Grosser Ring (founded 1908) held its auction in Trier every September until recently. The VDP has now moved it to spring for private collectors. The next auction, for the 2025 vintage, is set for 9 May 2027, and the venue is not yet announced. The keyed answer and the 1908 date are right.",
+   "sources": [
+    "https://www.vdp.de/en/events/veranstaltung/2215-weinversteigerung-auktion-grosser-ring-vdp-mosel-saar-ruwer-08-05-2027",
+    "https://glossary.wein.plus/grosser-ring-vdp-mosel-2",
+    "https://magazine.wein.plus/news/auction-of-the-great-ring-vdp-mosel-saar-ruwer-now-in-spring-strategic-realignment-focused-on-private-collectors"
+   ],
+   "fix": "Grosser Ring (VDP Mosel) held its auction in Trier each September for decades; from 2027 it moves to May. Goldkapsel lots soar.",
+   "batch": 16,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The key (Grosser Ring, 1908) is right, but the explanation \"auctions in Trier each September\" is out of date, and it has been for longer than the examiner says. The auction was held in Trier in mid-September for many years; the 2019 sale ran on 20 and 21 September. It moved to early November from 2021: 8 November 2021, then 7 November 2024 and 7 November 2025. On 28 January 2026 the VDP announced another move, to spring. The next sale, for the 2025 vintage, is on Sunday 9 May 2027, and Weinland Mosel says it stays in Trier. The examiner's fix says September \"for decades\" and then May from 2027, which leaves out the November years of 2021 to 2025, so the fix itself is wrong.",
+   "verifySources": [
+    "https://magazine.wein.plus/news/auction-of-the-great-ring-vdp-mosel-saar-ruwer-now-in-spring-strategic-realignment-focused-on-private-collectors",
+    "https://www.vdp.de/en/events/veranstaltung/2215-weinversteigerung-auktion-grosser-ring-vdp-mosel-saar-ruwer-08-05-2027",
+    "https://www.weinland-mosel.de/de/aktuelles/show/riesling-auktion-in-trier-findet-kuenftig-im-mai-statt",
+    "https://www.vdp.de/de/termine/veranstaltung/2215-weinversteigerung-auction-grosser-ring-vdp-mosel-saar-ruwer-06-11-2025",
+    "https://www.vdp.de/de/termine/kalender/veranstaltung/32-vdp-mosel-saar-ruwer-3-grosse-gewaechse-versteigerung-grosser-ring-11-11-2021",
+    "https://www.vdp.de/de/termine/veranstaltung/2215-137-praedikatsweinversteigerung-6-grosse-gewaechse-versteigerung-grosser-ring-vdp-mosel-saar-ruwer-07-11-2024"
+   ],
+   "finalFix": "Grosser Ring (VDP Mosel) holds its auction in Trier: long in September, in November from 2021, and from 2027 in May. Goldkapsel lots soar.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-bam6b8ud",
+    "cat": "Germany",
+    "q": "The historic auction houses of the Mosel unite under which acronym founded 1908?",
+    "opts": [
+     "VDP",
+     "Bernkasteler Ring",
+     "Grosser Ring",
+     "Erzeugergemeinschaft"
+    ],
+    "a": 2,
+    "exp": "Grosser Ring (VDP Mosel) auctions in Trier each September; goldkapsel lots soar."
+   }
+  },
+  {
+   "id": "a-bam6b8ud",
+   "kind": "ambiguous-stem",
+   "claim": "unite under which acronym founded 1908?",
+   "because": "'Grosser Ring' is not an acronym. VDP is the only acronym among the options, and the Grosser Ring is today VDP Mosel-Saar-Ruwer, so the word 'acronym' points a careful candidate toward VDP. The VDP's forerunner, the Verband Deutscher Naturweinversteigerer, was founded in 1910, not 1908. Only the date separates the keyed answer from VDP.",
+   "sources": [
+    "https://glossary.wein.plus/grosser-ring-vdp-mosel-2",
+    "https://en.wikipedia.org/wiki/Verband_Deutscher_Pr%C3%A4dikatsweing%C3%BCter"
+   ],
+   "fix": "The historic auction estates of the Mosel, Saar and Ruwer unite under which association, founded 1908?",
+   "batch": 16,
+   "verdict": "confirmed",
+   "verifyReason": "The dates in the question are correct. The Grosser Ring was founded in Trier in 1908 as the \"Trierer Verein der Weingutsbesitzer der Mosel, Saar und Ruwer\". The national body that became the VDP was founded two years later, in 1910, as the Verband Deutscher Naturweinversteigerer. So the key (Grosser Ring) and the date both hold.\n\nThe problem is the word \"acronym\". \"Grosser Ring\" is not an acronym. VDP is the only acronym among the options, and the Mosel estates really are united under the VDP today as VDP.Mosel. A careful candidate who reads \"acronym\" literally has good reason to pick VDP, so the stem points two ways and only the date decides it.\n\nThe stem also says \"auction houses\", but the members are wine estates that sell their wines at auction, not auction houses. The examiner's fix removes \"acronym\" and names the members as estates of the Mosel, Saar and Ruwer, which removes the conflict.",
+   "verifySources": [
+    "https://glossary.wein.plus/grosser-ring-vdp-mosel-saar-ruwer-2",
+    "https://en.wikipedia.org/wiki/Verband_Deutscher_Pr%C3%A4dikatsweing%C3%BCter",
+    "http://www.moselfinewines.com/grosser-ring-the-mosel-branch-of-the-vdp.php",
+    "https://www.vdp.de/en/vdp/geschichte/history-of-the-national-association?type=98"
+   ],
+   "finalFix": "The historic auction estates of the Mosel, Saar and Ruwer unite under which association, founded 1908?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-bam6b8ud",
+    "cat": "Germany",
+    "q": "The historic auction houses of the Mosel unite under which acronym founded 1908?",
+    "opts": [
+     "VDP",
+     "Bernkasteler Ring",
+     "Grosser Ring",
+     "Erzeugergemeinschaft"
+    ],
+    "a": 2,
+    "exp": "Grosser Ring (VDP Mosel) auctions in Trier each September; goldkapsel lots soar."
+   }
+  }
+ ]
+}

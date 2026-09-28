@@ -1,0 +1,62 @@
+{
+ "file": "rewrite/categories/r2_sake.py",
+ "findings": [
+  {
+   "id": "c-d0p0j8f4",
+   "kind": "accept-list",
+   "claim": "The question is exact-only (ex:1), so plainly right answers such as \"under 22\", \"below 22\" and \"less than 22\" are marked wrong. The list accepts \"22\" on its own and \"under 22 percent\", but not these bare forms.",
+   "because": "In matchSA (C:/Users/zpull/SommeliersCodex/js/core.js), q.ex stops grading after the exact normalized comparison, so no containment or number-token matching runs. None of the accept entries equals norm(\"under 22\"), norm(\"below 22\") or norm(\"less than 22\"). The keyed fact itself is correct: Liquor Tax Act Art. 3(7) defines seishu as a strained rice brew under 22 degrees alcohol.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA lines 49-98 (q.ex branch at line 83)",
+    "Japan Liquor Tax Act (酒税法) Art. 3 item 7, seishu definition: アルコール分が二十二度未満"
+   ],
+   "fix": "Add to accept: \"under 22\", \"below 22\", \"less than 22\", \"under twenty two\", \"below twenty two\", \"less than twenty two\"",
+   "batch": 239,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The live entry in js/data-questions.js is the same as the batch copy: ex:1, and the accept list has \"22\", \"22 degrees\", \"under 22 percent\" and \"under 22%\", but no bare \"under/below/less than 22\" forms. I loaded the actual matchSA and norm from core.js into node and ran it on this question. \"22\", \"22 percent\", \"under 22%\" and \"twenty-two percent\" grade true. \"under 22\", \"below 22\", \"less than 22\" and \"under twenty two\" all grade false. That is because the q.ex branch skips the numeric-token and containment checks, and norm(\"under 22\") matches no accept entry exactly. \"under 22 degrees\" also grades false, even though \"22 degrees\" is accepted, which is the same flaw with the unit the Act itself uses (二十二度未満). The keyed fact is not disputed: Liquor Tax Act Art. 3(7) puts seishu under 22 degrees alcohol. The examiner's fix is right but misses the degree forms, so the better fix adds those too.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (the q.ex check `if(q.ex) continue;` runs before the numeric and containment branches)",
+    "C:/Users/zpull/SommeliersCodex/js/data-questions.js entry c-d0p0j8f4 (live copy, same as batch-239.json)",
+    "node run of the real matchSA: 'under 22'/'below 22'/'less than 22'/'under twenty two'/'under 22 degrees' -> false; '22'/'under 22%' -> true",
+    "Japan Liquor Tax Act (酒税法) Art. 3 item 7: seishu is アルコール分が二十二度未満"
+   ],
+   "finalFix": "Add to accept: \"under 22\", \"below 22\", \"less than 22\", \"under twenty two\", \"below twenty two\", \"less than twenty two\", \"under 22 degrees\", \"below 22 degrees\", \"less than 22 degrees\", \"under twenty two degrees\", \"below twenty two degrees\", \"less than twenty two degrees\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-d0p0j8f4",
+    "cat": "Sake",
+    "q": "Japan's Liquor Tax Act refuses the name seishu to any rice brew at or above a certain strength. Where does that ceiling sit?",
+    "sa": 1,
+    "accept": [
+     "twenty two percent",
+     "22 percent",
+     "22%",
+     "22 per cent",
+     "twenty two per cent",
+     "under 22 percent",
+     "below 22 percent",
+     "less than 22 percent",
+     "under twenty two percent",
+     "below twenty two percent",
+     "less than twenty two percent",
+     "22",
+     "twenty two",
+     "22 percent abv",
+     "22 abv",
+     "22 percent alcohol",
+     "22 percent alcohol by volume",
+     "22% abv",
+     "22 degrees",
+     "twenty two degrees",
+     "less than 22%",
+     "under 22%",
+     "below 22%"
+    ],
+    "ans": "Twenty-two percent",
+    "ex": 1,
+    "exp": "The same definition demands that the fermenting mash be strained, which is why doburoku, the unstrained farm brew, is legally not sake at all, and why even the murkiest nigori has passed through at least a coarse mesh. The ceiling is also the outer legal wall for undiluted genshu: a rice brew at twenty-two or above changes legal identity, though in practice the yeast gives out first and most genshu land between seventeen and twenty percent."
+   }
+  }
+ ]
+}

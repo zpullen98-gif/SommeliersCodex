@@ -1,0 +1,287 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-9ec17myd",
+   "kind": "wrong-key",
+   "claim": "The model answer says rebêche belongs to 'Champagne, not Burgundy', and the accept list only takes answers that deny Burgundy.",
+   "because": "The current Crémant de Bourgogne cahier des charges (homologated by arrêté of 2 December 2021) regulates rebêches directly. It sets a minimum rebêche rate of 0 to 10% of the settled must. It requires new press sites to fractionate into three tanks ('cuvées, tailles et rebêches') and to record rebêche volumes in the press book. The term is Champagne's in origin, but it is used in Burgundian law, so 'not Burgundy' is false. The accept list also refuses the plain answer 'Champagne' (tested against matchSA).",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNOCDC-CremantDeBourgogne.pdf",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044411478"
+   ],
+   "fix": "q: \"Explain 'rebêche' and the region whose pressing law created the term.\" ans: \"Champagne: the final press fraction after the cuvée and taille, excluded from the AOC and sent to distillation; the crémant appellations, Crémant de Bourgogne included, have since adopted it\". accept: [\"~champagne\", \"champagne pressing final cut\", \"champagne term last press fraction\"]",
+   "batch": 157,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. I pulled the text out of the INAO Crémant de Bourgogne cahier des charges PDF. Section 5°b says: 'Le taux de « rebêches » visé à l'article D. 644-34 du code rural est un minimum d'extraction fixé entre 0 % et 10 % de la quantité de moûts débourbés'. The fractionation rule requires every new press site to have at least three tanks, 'cuvées, tailles et rebêches'. The carnet de pressoir must record 'les volumes de rebêches'. The PDF itself is the 2010 PNO draft, v2.2. Legifrance confirms that JORFTEXT000044411478 is the 'Arrêté du 2 décembre 2021 homologuant le cahier des charges de l'AOC « Crémant de Bourgogne »'. So the rebêche is regulated under Burgundian appellation law, and a model answer of 'Champagne, not Burgundy', keyed as a 'trick question', teaches something false. The term does come from Champagne pressing practice, so the core of the answer survives once the reframing is fixed. I also checked the accept-list claim against matchSA. A bare 'champagne' matches no entry: the ~ entries need the whole phrase 'champagne not burgundy' inside the input, and the plain entries need 'champagne term last press fraction' or 'champagne pressing final cut not burgundy'. So the plain right answer is refused. The examiner's fix is mostly right, but its stem says Champagne's 'pressing law created the term'. That overstates it: the word is older than the law and came from Champagne practice. The fix should also replace the explanation, which still says the question cross-wires regions. My better fix keeps the '~champagne' accept, which is guarded by negatedAgainst, and states only what the cahier supports.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/PNOCDC-CremantDeBourgogne.pdf",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044411478",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-157.json"
+   ],
+   "finalFix": "q: \"Explain 'rebêche': what is it, and in which region did the term originate?\" ans: \"Champagne: the final press fraction after the cuvée and taille, excluded from the appellation and sent to distillation; Crémant de Bourgogne also regulates it (a rebêche rate of 0 to 10% of settled must)\" accept: [\"~champagne\", \"champagne final press fraction\", \"champagne term last press fraction\", \"champagne pressing final cut\"] exp: \"Rebêche is a Champagne pressing term for the last, harshest juice, which may not be made into appellation wine. Burgundy uses it too: the Crémant de Bourgogne cahier des charges (homologated 2 December 2021) sets a rebêche rate of 0 to 10% of settled must, requires new press sites to fractionate into cuvées, tailles and rebêches, and has rebêche volumes recorded in the press book.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-9ec17myd",
+    "cat": "Burgundy",
+    "q": "Explain 'rebêche' — trick question: where does the term actually belong?",
+    "sa": 1,
+    "accept": [
+     "champagne pressing final cut not burgundy",
+     "champagne term last press fraction",
+     "~champagne not burgundy",
+     "~champagne term not burgundy"
+    ],
+    "ans": "Champagne, not Burgundy — the final press fraction after the cuvée and taille, sent to distillation",
+    "exp": "Masters exams cross-wire regions to test composure."
+   }
+  },
+  {
+   "id": "m-ld9efw5y",
+   "kind": "outdated",
+   "claim": "The stem asks for the 'current legal curiosity', and the answer says de Vogüé's Musigny Blanc has been declassified to Bourgogne Blanc since 1994, still in the present tense.",
+   "because": "The declassification covered the 1994 to 2014 vintages. The Musigny Blanc Grand Cru label returned with the 2015 vintage, after 22 vintages as Bourgogne Blanc. The declassification ended with the 2015 vintage, so it is no longer current, and the accept list ('vogue declassifies to bourgogne blanc') grades the out-of-date answer.",
+   "sources": [
+    "https://www.idealwine.info/musigny-blanc/",
+    "https://www.wineberserkers.com/t/confirmed-musigny-blanc-grand-cru-is-back-for-the-2015-vintage/130451"
+   ],
+   "fix": "q: \"Give the producer of 'Musigny Blanc' and the legal curiosity of its 1994–2014 vintages.\" ans: \"Comte Georges de Vogüé, the only white Musigny; declassified to Bourgogne Blanc from 1994 to 2014 while replanted vines matured, and back as Musigny Blanc Grand Cru from the 2015 vintage\". accept: [\"de vogue bourgogne blanc\", \"vogue declassified to bourgogne blanc until 2015\"]",
+   "batch": 157,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. iDealwine's Musigny Blanc page says de Vogüé bottled its Musigny Blanc as Bourgogne Blanc from 1994 to 2014 while replanted vines matured. The last Grand Cru vintage before that was 1993, and the label came back with the 2015 vintage (2,277 bottles). The stem asks for the \"current legal curiosity\", and the answer says \"declassified to Bourgogne Blanc since 1994\", so it teaches as current something that stopped with the 2015 vintage (released around 2017-18). The model answer's closing \"(returning as Musigny)\" is not enough, because it still frames the return as unfinished. The examiner's fix corrects the dates. However, it drops the appellation from the stem, while the original asks for \"appellation and producer\". It also never names the appellation, Musigny Grand Cru (Chambolle-Musigny), in the answer. The better fix below keeps both and states that the declassification is over. I could not reopen the Wine Berserkers thread (web search budget exhausted); the iDealwine page was enough.",
+   "verifySources": [
+    "https://www.idealwine.info/musigny-blanc/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-157.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "q: \"Give the appellation and producer of 'Musigny Blanc', and the legal curiosity of its 1994 to 2014 vintages.\" ans: \"Musigny Grand Cru (Chambolle-Musigny), Comte Georges de Vogüé, the only white Musigny; its 1994 to 2014 vintages were voluntarily declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage\" accept: [\"de vogue bourgogne blanc\", \"vogue declassified to bourgogne blanc\", \"vogue bourgogne blanc until 2015\"] exp: \"A grand cru estate voluntarily labelling its wine as regional for 21 vintages, a paradox Masters love; the Grand Cru label returned in 2015.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-ld9efw5y",
+    "cat": "Burgundy",
+    "q": "Give the appellation and producer of 'Musigny Blanc' and its current legal curiosity.",
+    "sa": 1,
+    "accept": [
+     "de vogue bourgogne blanc",
+     "vogue declassifies to bourgogne blanc"
+    ],
+    "ans": "Comte Georges de Vogüé — the only white Musigny; declassified to Bourgogne Blanc since 1994 while young vines mature (returning as Musigny)",
+    "exp": "A grand cru estate voluntarily labeling regional — Masters love the paradox."
+   }
+  },
+  {
+   "id": "m-2dnnzjvn",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says Clos de Bèze may be labelled 'Chambertin' 'under the 1936 decree'.",
+   "because": "The Chambertin and Chambertin-Clos de Bèze AOCs were created by the decree of 31 July 1937, published in the Journal Officiel on 11 August 1937. The 1936 date is wrong.",
+   "sources": [
+    "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chambertin-clos-de-beze,2458,9253.html?args=Y29tcF9pZD0yMjc4JmFjdGlvbj12aWV3RmljaGUmaWQ9MjY2Jnw%3D"
+   ],
+   "fix": "ans: \"The Abbey of Bèze planted it c. 630, the oldest documented Burgundy cru; under the 1937 decree it may be labelled simply 'Chambertin', though Chambertin may never be sold as Clos de Bèze\"",
+   "batch": 157,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds: the model answer has the wrong year. Chambertin and Chambertin-Clos de Bèze were recognised together by the decree of 31 July 1937, not in 1936. Two sources state the 1937 date. Bourgogne Wines (BIVB) says Grand Cru status was granted on 31 July 1937. French Wikipedia says the two appellations were recognised together by the decree of 31 July 1937. It adds that Clos de Bèze may be labelled 'Clos de Bèze', 'Chambertin' or 'Clos de Bèze-Chambertin', which matches the rest of the answer. The rest of the answer stands: the Abbey of Bèze c. 630, and Chambertin may not be sold as Clos de Bèze. The proposed fix changes only the year and replaces the em-dash with a comma, so it is correct. The accept list is not affected.",
+   "verifySources": [
+    "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chambertin-clos-de-beze,2458,9253.html?args=Y29tcF9pZD0yMjc4JmFjdGlvbj12aWV3RmljaGUmaWQ9MjY2Jnw%3D",
+    "https://fr.wikipedia.org/wiki/Chambertin-clos-de-b%C3%A8ze_(AOC)"
+   ],
+   "finalFix": "ans: \"The Abbey of Bèze planted it c. 630, the oldest documented Burgundy cru; under the 1937 decree it may be labelled simply 'Chambertin', though Chambertin may never be sold as Clos de Bèze\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-2dnnzjvn",
+    "cat": "Burgundy",
+    "q": "Which abbey planted Clos de Bèze and when, and under what shorter grand cru name may its wine legally be sold?",
+    "sa": 1,
+    "accept": [
+     "abbey of beze 630",
+     "bèze abbey 7th century",
+     "monks of beze",
+     "chambertin"
+    ],
+    "ans": "The Abbey of Bèze planted it c. 630 — the oldest documented Burgundy cru; under the 1936 decree it may be labelled simply 'Chambertin', though Chambertin may never be sold as Clos de Bèze",
+    "exp": "Bertin's field ('champ Bertin') next door borrowed the fame."
+   }
+  },
+  {
+   "id": "m-2dnnzjvn",
+   "kind": "accept-list",
+   "claim": "The accept entry 'chambertin' passes the one-word answer 'Chambertin', which ignores the abbey and the date. It also passes a wrong abbey.",
+   "because": "Tested against matchSA in js/core.js: 'Chambertin' returns true, and 'Cistercians of Citeaux, Chambertin' returns true. The entry 'monks of beze' likewise passes an answer with no sale name. The question asks for two things, and each bare entry grades either half alone.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "fix": "accept: [\"abbey of beze 630 chambertin\", \"beze abbey 7th century chambertin\", \"monks of beze chambertin\", \"beze 630 chambertin\"]",
+   "batch": 157,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, but the examiner's fix does not work.\n\nI loaded norm, negatedAgainst and matchSA from C:/Users/zpull/SommeliersCodex/js/core.js into node and graded test answers against them.\n\nCurrent list: every entry grades one part alone. \"Chambertin\" passes, \"Monks of Beze\" passes, \"Cistercians of Citeaux, Chambertin\" passes, and \"Cluny 910 Chambertin\" passes. A three-part question (abbey, date, sale name) gives full marks for any one part.\n\nThe examiner's replacement list fails in both directions:\n- It still takes half-answers. \"Monks of Beze\" and \"Abbey of Beze 630\" pass through the rule on core.js line 93 that accepts an input covering most of an accept phrase: 2 of 3 words and 3 of 4 words are enough.\n- It refuses right answers, because containment only works when the words come in exactly the listed order. These all fail: \"Abbey of Bèze, 7th century, Chambertin\", \"Monks of Bèze, 630 AD, Chambertin\", \"Beze abbey c 630 chambertin\", \"Abbey of Bèze, 630 AD, labelled Chambertin\".\n\nNo accept list can require all three parts, because matchSA passes on the first entry that matches. The app already has a way to require every part: the declared list shape {list:1, items, need} in js/codex9.js, graded by gradeList. No bank uses it yet.\n\nI tested that shape with items [\"Abbey of Bèze (Bèze)\", \"630 (7th century)\", \"Chambertin\"] and need 3:\n- Rejected: bare \"Chambertin\", \"Monks of Beze\", \"Abbey of Beze 630\", Cluny/910, 1630, \"Cluny, 630, Chambertin-Clos de Bèze\", and a negated answer.\n- Accepted: the order and wording variants above, \"Abbaye de Bèze\", \"7th century\" and \"c. 630\".\n- Two limits remain:\n  - When one comma-separated entry holds two parts, such as \"Abbey of Beze in 630; Chambertin\", only one part is counted, so it scores 2 of 3.\n  - \"Charmes-Chambertin\" still counts as Chambertin. The current list lets that through as well.\n\nThe model answer has to change too. gradeList fails today's prose answer (0 of 3): the word \"never\" in it trips the whole-submission negation guard, and its 630 sits in the same comma-separated entry as the abbey, so it cannot also count as the date. The answer \"Abbey of Bèze, c. 630, Chambertin\" passes 3 of 3, so the prose moves into exp.\n\nA separate error in the prose: it says \"1936 decree\". The Chambertin and Chambertin-Clos de Bèze AOCs date from 1937, so the new exp says 1937. The facts themselves check out: the Abbey of Bèze got the land from Duke Amalgaire c. 630, and the wine may be labelled Chambertin but not the reverse.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, negatedAgainst, matchSA lines 11-98; tested in node)",
+    "C:/Users/zpull/SommeliersCodex/js/codex9.js (saListSpec declared {list,items,need}, listAlts, gradeList; tested in node)",
+    "C:/Users/zpull/SommeliersCodex/js/codex13.js (exact-answer wrapper applies only to matchSA, not gradeList)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-157.json (question m-2dnnzjvn)",
+    "https://en.wikipedia.org/wiki/Chambertin-Clos_de_B%C3%A8ze (Abbey of Bèze c. 630; may be labelled Chambertin; AOC 1937)"
+   ],
+   "finalFix": "list: 1, items: [\"Abbey of Bèze (Bèze)\", \"630 (7th century)\", \"Chambertin\"], need: 3, accept: [\"abbey of beze 630 chambertin\"], ans: \"Abbey of Bèze, c. 630, Chambertin\", exp: \"Duke Amalgaire gave the land to the Abbey of Bèze c. 630, which makes Clos de Bèze the oldest documented Burgundy cru. Under the 1937 AOC decree its wine may be labelled simply 'Chambertin'; the reverse is not allowed, so Chambertin may not be sold as Clos de Bèze. Bertin's field ('champ Bertin') next door borrowed the fame.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-2dnnzjvn",
+    "cat": "Burgundy",
+    "q": "Which abbey planted Clos de Bèze and when, and under what shorter grand cru name may its wine legally be sold?",
+    "sa": 1,
+    "accept": [
+     "abbey of beze 630",
+     "bèze abbey 7th century",
+     "monks of beze",
+     "chambertin"
+    ],
+    "ans": "The Abbey of Bèze planted it c. 630 — the oldest documented Burgundy cru; under the 1936 decree it may be labelled simply 'Chambertin', though Chambertin may never be sold as Clos de Bèze",
+    "exp": "Bertin's field ('champ Bertin') next door borrowed the fame."
+   }
+  },
+  {
+   "id": "m-efo2as8e",
+   "kind": "accept-list",
+   "claim": "The accept entry 'la grande rue' passes a one-name answer to 'recite the six grands crus'. It also passes the exact trap the explanation warns about.",
+   "because": "Tested against matchSA: 'La Grande Rue' returns true, and 'Echezeaux, Grands Echezeaux, La Grande Rue' returns true, even though Échezeaux and Grands Échezeaux are in Flagey-Échezeaux, not Vosne-Romanée.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "fix": "accept: [\"romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue\"]",
+   "batch": 157,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, but it matters less in the live app than the examiner says, and the proposed fix leaves one gap open.\n\nThe question's facts are right: Vosne-Romanée has six grands crus (Romanée-Conti, La Tâche, Richebourg, Romanée-Saint-Vivant, La Romanée, La Grande Rue). The explanation is also right that Échezeaux and Grands-Échezeaux lie in Flagey-Échezeaux.\n\nThe accept entry \"la grande rue\" is still wrong for a question that asks for all six. After norm() it becomes \"grande rue\", so core.js matchSA passes a lone \"La Grande Rue\". It also passes the trap answer \"Echezeaux, Grands Echezeaux, La Grande Rue\". I re-ran both through matchSA in node and both return true.\n\nMitigation the examiner missed: in the live app, codex9.js replaces submitSA. saListSpec finds six items in this question (need 6), so the question is graded by gradeList, not matchSA. gradeList refuses both inputs (1 of 6 found) and accepts all six in any order. So the answers are not graded wrong in practice.\n\nThe entry still does harm in two places:\n- codex8.js shows it to the student under \"Accepted phrasings\", which suggests one name is an acceptable answer to \"recite the six\".\n- matchSA is the fallback grader and the stated grader, and it takes the wrong answer.\n\nThe proposed fix (drop \"la grande rue\", keep the plain six-name phrase) is right in direction but not tight under matchSA. Its \"core of the accept phrase\" rule still passes a contiguous span of 4 of the 6 names: \"Richebourg, Romanée-Saint-Vivant, La Romanée, La Grande Rue\" returns true in my test. Prefixing the entry with \"~\" makes it a strict canonical accept (equality or full-phrase containment only). With that, the one-name answer, the trap answer and the 4-of-6 span all return false in matchSA, and the full answer still passes. gradeList still handles any-order recitals, and saAcceptList strips the \"~\" for display, so nothing changes on screen except that \"la grande rue\" is gone.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, matchSA; tested in node)",
+    "C:/Users/zpull/SommeliersCodex/js/codex9.js (saListSpec, gradeList, submitSA override; tested in node)",
+    "C:/Users/zpull/SommeliersCodex/js/codex8.js (saAcceptList shown as 'Accepted phrasings')",
+    "C:/Users/zpull/SommeliersCodex/js/codex13.js (matchSA exact-answer wrapper)",
+    "C:/Users/zpull/SommeliersCodex/index.html (script load order)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-157.json"
+   ],
+   "finalFix": "accept: [\"~romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-efo2as8e",
+    "cat": "Burgundy",
+    "q": "Recite the six grands crus of Vosne-Romanée, in any order.",
+    "sa": 1,
+    "accept": [
+     "romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue",
+     "la grande rue"
+    ],
+    "ans": "Romanée-Conti, La Tâche, Richebourg, Romanée-Saint-Vivant, La Romanée, La Grande Rue",
+    "exp": "Échezeaux and Grands Échezeaux belong to Flagey — the classic follow-up trap."
+   }
+  },
+  {
+   "id": "m-o0uj0uoy",
+   "kind": "accept-list",
+   "claim": "The accept entry 'clos de beze' passes a one-name answer to 'name all nine grands crus of Gevrey-Chambertin'.",
+   "because": "Tested against matchSA: the input 'Clos de Beze' returns true, so a student who names one of nine grands crus is marked correct.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "fix": "accept: [\"chambertin clos de beze chapelle charmes griotte latricieres mazis mazoyeres ruchottes\"]",
+   "batch": 157,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. norm() drops \"de\", so the accept entry \"clos de beze\" becomes \"clos beze\", and a bare \"Clos de Beze\" (or \"Chambertin-Clos de Bèze\") exactly matches it. matchSA therefore marks one name out of nine correct. I reproduced this in node against js/core.js.\n\nThe proposed fix is off in two ways, both tested against the real matchSA:\n(1) It refuses a plainly right answer. The standard full spelling \"Chambertin, Chambertin-Clos de Bèze, Chapelle-Chambertin, Charmes-Chambertin, Griotte-Chambertin, Latricières-Chambertin, Mazis-Chambertin, Mazoyères-Chambertin, Ruchottes-Chambertin\" returns false once \"clos de beze\" is removed. Today it only passes through that very entry.\n(2) The remaining entry still grades partial lists. Its 10 normalized words let the \"input is a core of the accept\" rule take any 6 or more contiguous words, so \"Clos de Beze Chapelle Charmes Griotte Latricieres\" (5 of 9) returns true.\n\nMarking both full-list entries strict (the \"~\" prefix: equality or full-phrase containment only) fixes both. Tested:\n- rejected: the single name, the 5-name list, and an 8-name list;\n- accepted: the short-form list, the fully suffixed list, and the model answer.\n\nThe keyed nine grands crus and the explanation are correct: Clos de Bèze may be sold as Chambertin, and Mazoyères as Charmes-Chambertin.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, matchSA, including the strict '~' accept branch)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-157.json (m-o0uj0uoy)",
+    "Local node test of matchSA with the current, proposed and replacement accept lists"
+   ],
+   "finalFix": "accept: [\"~chambertin clos de beze chapelle charmes griotte latricieres mazis mazoyeres ruchottes\", \"~chambertin chambertin clos de beze chapelle chambertin charmes chambertin griotte chambertin latricieres chambertin mazis chambertin mazoyeres chambertin ruchottes chambertin\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-o0uj0uoy",
+    "cat": "Burgundy",
+    "q": "Name all nine grands crus of Gevrey-Chambertin.",
+    "sa": 1,
+    "accept": [
+     "chambertin clos de beze chapelle charmes griotte latricieres mazis mazoyeres ruchottes",
+     "clos de beze"
+    ],
+    "ans": "Chambertin, Chambertin-Clos de Bèze, Chapelle-, Charmes-, Griotte-, Latricières-, Mazis-, Mazoyères-, Ruchottes-Chambertin",
+    "exp": "Clos de Bèze may sell as plain Chambertin; Mazoyères as Charmes."
+   }
+  },
+  {
+   "id": "m-hvg4oc1c",
+   "kind": "accept-list",
+   "claim": "The stem asks for 'any two' appellations, but the grader refuses correct pairs such as 'Loupiac and Cadillac' and 'Loupiac, Sainte-Croix-du-Mont'.",
+   "because": "Tested against matchSA: 'Loupiac and Cadillac' returns false, and 'Loupiac, Sainte-Croix-du-Mont' returns false. Only 'Cadillac, Sainte-Croix-du-Mont', which happens to be a contiguous run of the first accept entry, grades.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "fix": "accept: [\"loupiac cadillac sainte-croix-du-mont\", \"sainte croix du mont loupiac\", \"loupiac cadillac\", \"cadillac loupiac\", \"loupiac and cadillac\", \"cadillac and loupiac\", \"loupiac sainte croix du mont\", \"loupiac and sainte croix du mont\", \"cadillac sainte croix du mont\", \"cadillac and sainte croix du mont\", \"sainte croix du mont cadillac\", \"sainte croix du mont and cadillac\", \"sainte croix du mont and loupiac\"]",
+   "batch": 157,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, and it is worse than the examiner says. I ran the live matchSA from C:/Users/zpull/SommeliersCodex/js/core.js in node against the current accept list [\"loupiac cadillac sainte-croix-du-mont\", \"sainte croix du mont loupiac\"]. The stem asks for \"any two\", yet these correct pairs all grade false: \"Loupiac and Cadillac\", \"Loupiac, Sainte-Croix-du-Mont\", \"Loupiac & Cadillac\", \"Cadillac, Loupiac\", \"Sainte-Croix-du-Mont and Loupiac\" and \"Cadillac and Sainte Croix du Mont\". The cause is how the grader matches. norm() keeps \"and\", so a joined pair never appears inside the three-name entry. The core-match rule also needs about 60% of the entry's words (3 of 5 after \"du\" is stripped), which a two-name answer cannot reach. The same test found a leak the examiner missed: \"Sainte-Croix-du-Mont\" on its own grades true, through the core match against \"sainte croix du mont loupiac\". That is one name for a question that asks for two. The examiner's proposed list fixes the refusals, but I tested it and it keeps this leak, because it still contains the loose entries (single-name input still returns true). The facts in the question are right: Sainte-Croix-du-Mont, Loupiac and Cadillac are the sweet white appellations on the right bank of the Garonne, facing Sauternes and Barsac (Wikipedia's Sainte-Croix-du-Mont AOC page confirms the right-bank position opposite Sauternes). The model answer and the stem stand; only the accept list is faulty. The better fix makes every entry strict (~). A strict entry grades only on equality or on the full phrase appearing in the answer, never on a partial core match. The list covers each ordered pair, with and without \"and\", plus the \"Ste-\" abbreviation. Tested: every correct pair grades true, as does the full triple in any order or punctuation. A single name (\"Loupiac\", \"Cadillac\", \"Sainte-Croix-du-Mont\"), wrong pairs (\"Barsac and Cérons\", \"Loupiac, Barsac\", \"Sauternes and Barsac\") and negated answers (\"Not Loupiac and Cadillac\") all grade false. Because the model answer always grades through the exact-match line in matchSA, the display answer still works.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, negatedAgainst, matchSA; executed in node against the current, proposed and strict accept lists)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-157.json (question m-hvg4oc1c)",
+    "https://en.wikipedia.org/wiki/Sainte-Croix-du-Mont_AOC"
+   ],
+   "finalFix": "accept: [\"~loupiac cadillac\", \"~loupiac and cadillac\", \"~cadillac loupiac\", \"~cadillac and loupiac\", \"~loupiac sainte croix du mont\", \"~loupiac and sainte croix du mont\", \"~loupiac ste croix du mont\", \"~loupiac and ste croix du mont\", \"~sainte croix du mont loupiac\", \"~sainte croix du mont and loupiac\", \"~ste croix du mont loupiac\", \"~ste croix du mont and loupiac\", \"~cadillac sainte croix du mont\", \"~cadillac and sainte croix du mont\", \"~cadillac ste croix du mont\", \"~cadillac and ste croix du mont\", \"~sainte croix du mont cadillac\", \"~sainte croix du mont and cadillac\", \"~ste croix du mont cadillac\", \"~ste croix du mont and cadillac\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-hvg4oc1c",
+    "cat": "Bordeaux",
+    "q": "Name the sweet appellations of the right bank facing Sauternes across the Garonne (any two).",
+    "sa": 1,
+    "accept": [
+     "loupiac cadillac sainte-croix-du-mont",
+     "sainte croix du mont loupiac"
+    ],
+    "ans": "Sainte-Croix-du-Mont, Loupiac, Cadillac",
+    "exp": "Same mists, humbler prices — the somm's by-the-glass botrytis answer."
+   }
+  },
+  {
+   "id": "m-so6zmuo3",
+   "kind": "outdated",
+   "claim": "The model answer says AOC wines 'must pass the agrément — an analytical and tasting approval', and that failing it means declassification.",
+   "because": "The systematic agrément and its certificate were abolished by the INAO reform (ordonnance of December 2006, in force from 1 July 2008). In its place came habilitation of every operator by INAO, a control plan for each appellation, and analytical and organoleptic product checks run by independent inspection or certification bodies (OI/OC). Those checks are targeted and risk-based, and the wine no longer has to pass a tasting before it can be sold. A wine can still be downgraded after a failed check, but the pre-sale agrément described in the answer has not existed since 2008.",
+   "sources": [
+    "https://www.vitisphere.com/actualite-76693-reforme-de-linao-ce-qui-va-changer.html",
+    "https://dico-du-vin.com/agrement-2/"
+   ],
+   "fix": "ans: \"Since the 2008 INAO reform every operator must hold a habilitation and follow the appellation's control plan; independent inspection bodies (OI/OC) run analytical and tasting checks on samples. A failed product check means the wine is downgraded, and repeated failure or a breach of the cahier des charges can cost the operator its habilitation, and with it the right to the name. (Before 2008 this was the systematic agrément.)\" Add accept entries \"~habilitation\", \"~product control\" and \"~failed control\", and keep the agrément entries as historical answers.",
+   "batch": 161,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. Two sources say the systematic agrément and its certificate were abolished by the INAO reform (ordonnance of December 2006, applied in 2008 and 2009): Vitisphere's piece on the reform and dico-du-vin's \"Agrément\" entry. In its place, every operator (grower, winemaker, blender, bottler) must hold an INAO habilitation, each appellation has a control plan proposed by its ODG, and certification or inspection bodies (OC/OI) run the product checks. Those checks are made at each transaction, by sampling and at a frequency set by risk, not systematically. So the model answer is outdated: \"wines must pass the agrément\", with failure meaning declassification, describes the pre-2008 system as if it were current. Its core idea still holds. A failed product check leads to downgrading, and a breach of the cahier des charges can cost the operator its habilitation. The proposed replacement answer is accurate. I checked the accept entries against matchSA, where \"~\" means a whole-phrase match with a negation guard: \"~habilitation\", \"~product control\" and \"~failed control\" grade correctly. Keeping the agrément entries as historical answers is reasonable, since the new model answer names the pre-2008 system.",
+   "verifySources": [
+    "https://www.vitisphere.com/actualite-76693-reforme-de-linao-ce-qui-va-changer.html",
+    "https://dico-du-vin.com/agrement-2/",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-161.json"
+   ],
+   "finalFix": "ans: \"Since the 2008 INAO reform every operator must hold a habilitation and follow the appellation's control plan; independent inspection bodies (OI/OC) run analytical and tasting checks on samples. A failed product check means the wine is downgraded, and repeated failure or a breach of the cahier des charges can cost the operator its habilitation, and with it the right to the name. (Before 2008 this was the systematic agrément.)\" Add accept entries \"~habilitation\", \"~product control\" and \"~failed control\", and keep the agrément entries as historical answers.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-so6zmuo3",
+    "cat": "Classifications & Labels",
+    "q": "Explain how a producer can lose the right to use an appellation.",
+    "sa": 1,
+    "accept": [
+     "failing the agrément tasting panel rejection loss of aoc status",
+     "panel tasting can refuse",
+     "~pass the agrément",
+     "~failing the agrément",
+     "~fail the agrément"
+    ],
+    "ans": "Wines must pass the agrément — an analytical and tasting approval. Failure means declassification; persistent failure or rule breach can cost a producer the right to the name",
+    "exp": "Which is how a grower ends up in Vin de France by force rather than choice."
+   }
+  }
+ ]
+}

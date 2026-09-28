@@ -102,7 +102,7 @@ BANK = [
     Q("Piedmont beyond Nebbiolo",
       "North of Turin one white grape serves for a dry wine, for a metodo classico and for a passito, all under a single denomination. Which grape?",
       ["Erbaluce", "Arneis", "Favorita", "Nascetta"], 0,
-      "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito dried for years."),
+      "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito whose grapes dry on racks for months and whose wine then ages at least three years (four for Riserva)."),
     Q("Piedmont beyond Nebbiolo",
       "Raspberry and rose scent a sweet, lightly sparkling red made around Acqui Terme. Which grape is pressed for it?",
       ["Brachetto", "Freisa", "Bonarda Piemontese", "Croatina"], 0,
@@ -273,7 +273,7 @@ BANK = [
        "Volcanic cones rise straight out of the plain southwest of Padua and carry a DOCG for sweet Moscato Giallo. Name those hills.",
        "Colli Euganei",
        ["colli euganei", "euganei", "euganean hills", "colli euganei docg"],
-       "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are old volcanic intrusions that never erupted through the surface, so they stand isolated above flat farmland."),
+       "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are the remains of Eocene submarine basalt eruptions and later Oligocene trachyte and rhyolite domes and laccoliths, left standing isolated above flat farmland once the softer sediments around them wore away."),
 
     # ------------------------------------------------- Friuli-Venezia Giulia (6)
     Q("Friuli-Venezia Giulia",
@@ -333,7 +333,7 @@ BANK = [
        "Mozart's Don Giovanni calls for a dark, soft red from Trentino by name in its final act. Name the grape.",
        "Marzemino",
        ["marzemino", "marzemino grape", "marzemino d'isera"],
-       "Isera in the Vallagarina is its stronghold, on basalt soils south of Rovereto. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept."),
+       "Isera in the Vallagarina is its stronghold, on basalt soils just west of Rovereto across the Adige. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept."),
 
     # ---------------------------------------------- Liguria and Emilia-Romagna (4)
     Q("Liguria and Emilia-Romagna",

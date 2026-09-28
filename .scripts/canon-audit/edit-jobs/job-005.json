@@ -1,0 +1,96 @@
+{
+ "file": "js/data-intro.js",
+ "findings": [
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (Spain, 'Spain's top tier (DOCa/DOQ) is held by only which two regions?')",
+   "kind": "wrong-explanation",
+   "claim": "Only Rioja (DOCa, 1991) and Priorat (DOQ, 2009).",
+   "because": "The Generalitat de Catalunya granted Priorat DOQ status in 2000; the Regulations of the DO Qualificada Priorat were approved on 18 December 2000. What came in 2009 (6 July 2009) was Spain's national recognition of Priorat as DOCa. DOQ and DOCa are the same status, in Catalan and in Castilian. So 'DOQ, 2009' gives the wrong date for the DOQ. The keyed answer, Rioja and Priorat, is correct.",
+   "sources": [
+    "https://www.doqpriorat.org/en/regulatory-board/",
+    "https://en.wikipedia.org/wiki/Priorat_DOQ",
+    "https://www.foodswinesfromspain.com/en/wine/regions/the-mediterranean-coast/priorat-doca"
+   ],
+   "fix": "Only Rioja (DOCa, 1991) and Priorat (DOQ from the Catalan government in 2000, recognised nationally as DOCa in 2009).",
+   "batch": 7,
+   "verdict": "confirmed",
+   "verifyReason": "The key (Rioja and Priorat) is correct, and no other Spanish region has DOCa/DOQ status. The explanation's date for Priorat is wrong. The DOQ Priorat regulatory board says Catalonia's Department of Agriculture approved the Regulations of the DO Qualificada Priorat on 18 December 2000. Spain's national government recognised it as a DOCa only on 6 July 2009. DOQ and DOCa are the same legal status, named in Catalan and in Castilian. So \"DOQ, 2009\" puts the Catalan name next to the national date. A candidate asked when Priorat became DOQ would answer 2009 when the answer is 2000. Rioja's DOCa in 1991 is correct. The examiner's fix is accurate and keeps the key unchanged.",
+   "verifySources": [
+    "https://www.doqpriorat.org/en/regulatory-board/",
+    "https://en.wikipedia.org/wiki/Priorat_DOQ",
+    "https://www.wine-searcher.com/regions-priorat"
+   ],
+   "finalFix": "exp: \"Only Rioja (DOCa, 1991) and Priorat (DOQ granted by the Catalan government in 2000; recognised nationally as DOCa in 2009).\"",
+   "source": "pilot",
+   "question": null
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (Spain, 'Spanish ‘Gran Reserva’ indicates:')",
+   "kind": "wrong-fact-in-option",
+   "claim": "Keyed option: \"The longest aging, made only in top vintages\"; explanation: \"declared only in strong vintages.\"",
+   "because": "The law fixes only minimum aging for Gran Reserva: for reds, 60 months in total with at least 18 months in oak under national rules, and at least 24 months in oak in Rioja. No law limits Gran Reserva to particular vintages. Making it only in exceptional years is a tradition that each producer chooses whether to follow. Both texts present that custom as part of the legal definition, and this bank exists to teach legal meanings (the next question contrasts legal 'Reserva' with the US 'Reserve'). The keyed option is still the best of the four.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Reserve_wine",
+    "https://www.bodegasmontecillo.com/en/news/what-is-a-gran-reserva-wine-according-to-the-d-o-ca-rioja/",
+    "https://winefolly.com/deep-dive/rioja-wine-from-crianza-to-gran-reserva/"
+   ],
+   "fix": "Option: \"The longest legal aging category (traditionally made only in top vintages)\". Explanation: \"Gran Reserva has the longest legal aging minimums (reds 60 months, at least 18 in oak nationally and 24 in Rioja). Keeping it for strong vintages is a custom, not a legal rule.\"",
+   "batch": 7,
+   "verdict": "confirmed",
+   "verifyReason": "I could not refute the finding. The legal definition of Gran Reserva sets only minimum aging, plus a minimum alcohol level in Rioja. Nothing in it limits the term to particular vintages.\n\n- **Rioja:** I opened the DOCa Rioja pliego de condiciones currently in force (riojawine.com PDF) and extracted its text. For red Gran Reserva it requires at least 60 months in oak barrel and bottle together, with at least 24 months in barrel followed by at least 24 months in bottle. Whites and rosés need 48 months, with at least 6 in barrel. Reserva and Gran Reserva must also reach a minimum alcohol of 12% vol for reds and 11% for whites and rosés. No clause ties Gran Reserva to a vintage rating or to exceptional years. The only vintage-linked term in the pliego is 'Gran Añada', and that applies to sparkling wine.\n- **National rule:** The general Spanish rule for reds is 60 months, at least 18 of them in oak. It first came from Ley 24/2003, art. 3. The BOE consolidated text shows that article was repealed by Ley 6/2015 (in force 2 June 2015). Secondary sources say the same 60/18 rule still applies, but I did not open a current legal text that confirms it.\n\nMaking Gran Reserva only in top years is a producer custom, not law. Both the keyed option and the explanation present it as part of what the term legally means. That is a false fact in a bank that exists to teach legal meanings; the next question contrasts legal Reserva with the US 'Reserve'. Option A is still the only defensible answer, so this is not a wrong key. It is a false fact in the option and in the explanation. The examiner's fix is accurate. The Rioja figures in it are confirmed from the pliego. The national 18-month figure fits the long-standing general rule, but my support for it being current is secondary sources only.",
+   "verifySources": [
+    "https://riojawine.com/wp-content/uploads/2023/07/pliego-de-condiciones-de-la-doca-rioja-en-vigor.pdf",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2003-13864",
+    "https://noticias.juridicas.com/base_datos/Admin/l24-2003.t1.html",
+    "https://laprensadelrioja.com/denominacion-rioja/nuevos-requisitos-en-el-envejecimiento-de-reservas-y-grandes-reservas/"
+   ],
+   "finalFix": "Option: \"The longest legal aging category (traditionally made only in top vintages)\". Explanation: \"Gran Reserva has the longest legal aging minimums: for reds, 60 months in total, with at least 18 in oak under the general Spanish rule, and in Rioja at least 24 in barrel plus 24 in bottle. Keeping it for strong vintages is a producer custom, not a legal rule.\"",
+   "source": "pilot",
+   "question": null
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ / Argentina 'On an Argentine label, Reserva is:'",
+   "kind": "wrong-key",
+   "claim": "Keyed option: 'Loosely defined (not a strict legal tier)'; explanation: 'Argentina's Reserva is loosely used, unlike Spain's legally-defined Reserva.'",
+   "because": "Argentina's INV regulates Reserva as a legal labelling term. Its labelling rules say Reserva may be used only for wines made from the quality varieties listed in INV Resolution 22 of 6 June 2025. They set a minimum of 12 months' aging for reds, counted from oenological stability, and 6 months for whites and rosés, with at least 135 kg of grapes per 100 L. Gran Reserva is also regulated: 18 months for reds, 12 months for whites and rosés, and 140 kg per 100 L. Gran Reserva (Argentina) is registered as a protected traditional term in the UK, registered 2 July 2025. The confusion probably comes from the US, where 'Reserve' is unregulated. For Argentina, the keyed answer is false. No option is correct, since B (a 5-year rule) is also false.",
+   "sources": [
+    "https://www.argentina.gob.ar/inv/consultas-inv/etiquetado-de-productos-vitivinicolas",
+    "https://www.gov.uk/protected-food-drink-names/gran-reserva-argentina",
+    "https://www.napareserva.com/2014/08/wine-aging-classification-of-chile-and-argentina/"
+   ],
+   "fix": "Replace option A with 'A legal term: reds aged at least 12 months, whites and rosés at least 6 months' and keep a=0. Replace the explanation with: 'Argentina's INV regulates Reserva: quality varieties only, at least 12 months' aging for reds and 6 for whites and rosés (Gran Reserva: 18 and 12 months). It is shorter than Spain's rules, but it is not unregulated like US Reserve.'",
+   "batch": 8,
+   "verdict": "confirmed",
+   "verifyReason": "I opened the INV's own labelling page (argentina.gob.ar/inv, \"Etiquetado de productos vitivinícolas\"). It defines Reserva as a regulated labelling term with four conditions:\n- The wine must be made only from the grape varieties listed in INV Resolución N° 22 of 6 June 2025.\n- It needs at least 135 kg of grapes per 100 L.\n- Reds need at least 12 months' aging and whites and rosés at least 6 months, counted from when the wine is oenologically stable.\n- Gran Reserva needs 140 kg per 100 L, with 18 months for reds and 12 months for whites and rosés. In blends of several vintages, every component must meet the minimums.\n\nSo Reserva is a legal term under Argentine law, and the keyed option, \"Loosely defined (not a strict legal tier)\", is false. The explanation's contrast with Spain is also wrong. Spain's minimums are longer, but Argentina's term is still legally defined. The \"loosely used\" idea is true of US \"Reserve\", not of Argentine Reserva. The distractors (a 5-year rule, a sparkling category, a single-vineyard term) are all false, so after the fix option A is the only right answer. The examiner's fix states the INV minimums accurately, so I accept it as written.",
+   "verifySources": [
+    "https://www.argentina.gob.ar/inv/consultas-inv/etiquetado-de-productos-vitivinicolas"
+   ],
+   "finalFix": "Option A becomes: 'A legal term: reds aged at least 12 months, whites and rosés at least 6 months'. Keep a=0. The explanation becomes: 'Argentina's INV regulates Reserva: quality varieties only, at least 12 months' aging for reds and 6 for whites and rosés (Gran Reserva: 18 and 12 months). It is shorter than Spain's rules, but it is not unregulated like US Reserve.'",
+   "source": "pilot",
+   "question": null
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (St-Émilion 'Grand Cru' question)",
+   "kind": "second-correct-option",
+   "claim": "Option D 'Outside the classification entirely' (keyed A 'Near the bottom — a broad entry tier'); exp 'St-Émilion ‘Grand Cru’ is the broad base tier'",
+   "because": "Saint-Émilion Grand Cru is an appellation (AOC), not a tier of the Classement des vins de Saint-Émilion. The classification has only Grand Cru Classé and Premier Grand Cru Classé (A/B), and a wine labelled simply 'Grand Cru' is unclassified. D is therefore literally correct, and many examiners would key it. The Saint-Émilion wine council says the Grand Cru appellation 'also allows' the titles Grand Cru Classé and Premier Grand Cru Classé. The trade guides (Vinfolio, BBR, Wine-Searcher) also say Saint-Émilion Grand Cru 'is not a classification but an appellation'.",
+   "sources": [
+    "https://vins-saint-emilion.com/en/welcome-in-the-vineyard/saint-emilion-and-grand-cru/",
+    "https://www.vinfolio.com/editorial/your-guide-to-the-saint-emilion-classification",
+    "https://www.bbr.com/articles/collecting/st-emilion-classification"
+   ],
+   "fix": "Key D, 'An appellation (AOC Saint-Émilion Grand Cru), not a rank in the classification', and replace A with a clearly wrong option such as 'Between Grand Cru Classé and Premier Grand Cru Classé B'. Exp: 'Saint-Émilion Grand Cru is an appellation with stricter yields and ageing; only Grand Cru Classé and Premier Grand Cru Classé (A/B) are ranks of the classification.'",
+   "batch": 9,
+   "verdict": "confirmed",
+   "verifyReason": "I'm upholding the finding. The question is in sample-09.json, bank data-intro.js:INTRO_CLASS_TRAPQ. It asks where a St-Émilion wine labelled simply \"Grand Cru\" sits, keys A (\"Near the bottom — a broad entry tier\") and also offers D (\"Outside the classification entirely\"). Saint-Émilion Grand Cru is its own AOC, not a rank in the Classement des vins de Saint-Émilion. The Classement has only two ranks, Grand Cru Classé and Premier Grand Cru Classé (A/B), and the Saint-Émilion wine council's own page says so: \"Saint-Émilion Grand Cru ... also allows the following titles: Grand Cru classé and Premier Grand Cru classé\". Berry Bros. & Rudd agrees: \"'St Emilion Grand Cru' is simply another St Emilion appellation\". It says the roughly 600 châteaux using the term only need 0.5% more alcohol and slightly lower yields than basic St-Émilion. That makes D literally correct, and in the Court's terms it is the precise answer. A is still defensible if you read \"hierarchy\" loosely as the whole ladder from AOC St-Émilion up to Premier Grand Cru Classé A. So the question has two right answers, and a careful candidate would pick D. The proposed fix is sound: key the appellation answer, turn A into a clearly wrong position (between Grand Cru Classé and Premier Grand Cru Classé B), and rewrite the explanation. The fix's mention of Premier Grand Cru Classé A as a rank remains accurate under the 2022 classification.",
+   "verifySources": [
+    "https://vins-saint-emilion.com/en/welcome-in-the-vineyard/saint-emilion-and-grand-cru/",
+    "https://www.bbr.com/articles/collecting/st-emilion-classification",
+    "C:/Users/zpull/AppData/Local/Temp/claude/C--Users-zpull--claude/ee375187-7803-4126-b577-0cdfe403a999/scratchpad/codex-audit/sample-09.json"
+   ],
+   "finalFix": "Make D the keyed answer: \"An appellation (AOC Saint-Émilion Grand Cru), not a rank in the classification\". Replace A with a clearly wrong option: \"Between Grand Cru Classé and Premier Grand Cru Classé B\". Keep B and C. New explanation: \"Saint-Émilion Grand Cru is an appellation with slightly stricter rules than plain Saint-Émilion (lower yields, higher minimum alcohol, longer ageing). Only Grand Cru Classé and Premier Grand Cru Classé (A/B) are ranks of the classification, so a label reading simply 'Grand Cru' means unclassified.\"",
+   "source": "pilot",
+   "question": null
+  }
+ ]
+}

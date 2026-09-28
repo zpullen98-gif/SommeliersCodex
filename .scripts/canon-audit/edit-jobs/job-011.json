@@ -1,0 +1,288 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-fl5ija36",
+   "kind": "accept-list",
+   "claim": "\"marlborough hawkes bay central otago\"",
+   "because": "The question asks for five regions. This accept entry passes an answer that names only three and leaves out North Canterbury and Gisborne. NZ Winegrowers' Vineyard Report 2024 confirms the full order: Marlborough 29,970 ha, Hawke's Bay 4,623, Central Otago 2,115, North Canterbury 1,467, Gisborne 1,239 (then Wairarapa 1,081 and Nelson 1,069). The same report puts Marlborough at about 71% (29,970 of 41,991 ha producing), not the explanation's '32,000 of 44,000'.",
+   "sources": [
+    "https://www.nzwine.com/media/4dsdmxpy/vineyard-report-2024.pdf"
+   ],
+   "fix": "Remove \"marlborough hawkes bay central otago\" from accept, and keep only the two five-region entries.",
+   "batch": 23,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, but the proposed fix does not work. The question and ranking are right. NZ Winegrowers Vineyard Report 2024, table 1.1 (producing ha, 2024), gives: Marlborough 30,444 (72%), Hawke's Bay 4,574, Central Otago 2,163, North Canterbury 1,501, Gisborne 1,226, then Wairarapa 1,105 and Nelson 1,077. The total is 42,519. So the model answer's order is correct.\n\nThe accept entry \"marlborough hawkes bay central otago\" is a real fault. I ran the answer \"Marlborough, Hawkes Bay, Central Otago\" through matchSA from js/core.js and it grades CORRECT on a five-region question.\n\nThe examiner's fix is not enough, for three reasons, all tested in node against the real matchSA:\n(1) Removing that entry does not close the hole. matchSA's \"whole-word core\" rule accepts any input that covers at least 60% of an accept phrase's words. That is 5 of the 7 words in \"marlborough hawkes bay central otago canterbury gisborne\", so \"Marlborough, Hawkes Bay, Central Otago\" still grades CORRECT after the fix, and so does a four-region answer.\n(2) The fixed list refuses the plainly right \"Marlborough, Hawkes Bay, Central Otago, North Canterbury, Gisborne\". \"north canterbury\" breaks the contiguous phrase, and the current list only took that answer through the three-region entry.\n(3) norm() turns \"Hawke's Bay\" into \"hawke s bay\". So any typed answer with the apostrophe fails every accept entry. Only an exact copy of the model answer passes.\n\nStrict \"~\" entries, which match only on equality or full-phrase containment, fix all three. With them, the three- and four-region answers fail and every correct five-region spelling passes.\n\nA separate problem: the explanation's \"about 32,000 ha of some 44,000 ha\" does not match the report. It gives 29,970 of 41,991 ha in 2023 and 30,444 of 42,519 ha (72%) in 2024.",
+   "verifySources": [
+    "https://www.nzwine.com/media/4dsdmxpy/vineyard-report-2024.pdf",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-023.json (a-fl5ija36)"
+   ],
+   "finalFix": "\"accept\": [\"~marlborough hawkes bay central otago canterbury gisborne\", \"~marlborough hawkes bay central otago north canterbury gisborne\", \"~marlborough hawkes bay central otago waipara gisborne\", \"~marlborough hawke s bay central otago canterbury gisborne\", \"~marlborough hawke s bay central otago north canterbury gisborne\", \"~marlborough hawke s bay central otago waipara gisborne\"], \"ans\": \"Marlborough (about 72%), Hawke's Bay, Central Otago, North Canterbury/Waipara, Gisborne\", \"exp\": \"Marlborough is roughly 72% of national plantings (about 30,400 ha of some 42,500 ha producing, NZ Winegrowers Vineyard Report 2024), which is the industry's strength and its risk. Gisborne has shrunk since the 2008 glut and now sits behind North Canterbury; Wairarapa and Nelson follow just below.\"",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-fl5ija36",
+    "cat": "New Zealand",
+    "q": "Name New Zealand's five largest wine regions by planted area.",
+    "sa": 1,
+    "accept": [
+     "marlborough hawkes bay central otago canterbury gisborne",
+     "marlborough hawkes bay central otago waipara gisborne",
+     "marlborough hawkes bay central otago"
+    ],
+    "ans": "Marlborough (about 73%), Hawke's Bay, Central Otago, North Canterbury/Waipara, Gisborne",
+    "exp": "Marlborough is roughly 73% of national plantings (about 32,000 ha of some 44,000 ha, NZ Winegrowers Vineyard Report) — the industry's strength and its risk. Gisborne has shrunk since the 2008 glut and now sits behind North Canterbury; Nelson and Wairarapa follow just below."
+   }
+  },
+  {
+   "id": "a-vw995u1q",
+   "kind": "wrong-explanation",
+   "claim": "A Ukrainian-born PhD washing dishes at Geneva station until Charles Fournier listened.",
+   "because": "Frank washed dishes at night in Manhattan after arriving in December 1951. He came to the New York State Agricultural Experiment Station in Geneva in April 1952 as a researcher on field nursery practices under Karl Brase, not as a dishwasher. He met Fournier at a Geneva seminar in 1953, and Fournier hired him at Gold Seal in 1954.",
+   "sources": [
+    "https://www.drfrankwines.com/konstantins-story/",
+    "https://en.wikipedia.org/wiki/Konstantin_Frank"
+   ],
+   "fix": "A Ukrainian-born PhD who washed dishes in Manhattan, then worked in obscurity at the Geneva station until Charles Fournier of Gold Seal listened.",
+   "batch": 24,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The explanation for a-vw995u1q (batch-024) says Frank was washing dishes at Geneva station. The Dr. Frank winery's own history page says otherwise. After arriving on 15 December 1951 he worked nights as a dishwasher in Lower Manhattan. In early April 1952 he arrived at the Geneva Experiment Station, where he held a research post exploring field nursery practices with Karl Brase in the Pomology Division. He is believed to have met Charles Fournier at a station seminar in 1953, and Gold Seal hired him in 1954 as director of vineyard research. Wikipedia also puts the dishwashing in New York City, not at Geneva. So the dishwashing was in Manhattan, and the explanation merges the two places into one false fact. The examiner's fix is accurate: it contains no em-dash, and saying Frank worked in obscurity at Geneva fits a junior research post. The keyed answer itself (grafted vinifera survives Finger Lakes winters) is not disputed by this finding.",
+   "verifySources": [
+    "https://www.drfrankwines.com/konstantins-story/",
+    "https://en.wikipedia.org/wiki/Konstantin_Frank",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-024.json"
+   ],
+   "finalFix": "A Ukrainian-born PhD who washed dishes in Manhattan, then worked in obscurity at the Geneva station until Charles Fournier of Gold Seal listened.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-vw995u1q",
+    "cat": "Pacific NW, NY & Canada",
+    "q": "Dr. Konstantin Frank's 1962 breakthrough in the Finger Lakes proved:",
+    "sa": 1,
+    "accept": [
+     "vinifera survives with rootstock",
+     "vinifera could survive cold climates grafted",
+     "european vines viable in new york"
+    ],
+    "ans": "That grafted vinifera could survive Finger Lakes winters — against the hybrid orthodoxy",
+    "exp": "A Ukrainian-born PhD washing dishes at Geneva station until Charles Fournier listened."
+   }
+  },
+  {
+   "id": "a-zy5xnk9q",
+   "kind": "wrong-explanation",
+   "claim": "Idaho's second AVA, Lewis-Clark Valley (2016), likewise straddles a state line, into Washington.",
+   "because": "Idaho's second AVA is Eagle Foothills, established by TTB on 25 November 2015 as the first sub-AVA of Snake River Valley and the first AVA entirely inside Idaho. Lewis-Clark Valley came next, on 20 April 2016, as Idaho's third AVA.",
+   "sources": [
+    "https://www.federalregister.gov/documents/2015/11/25/2015-29986/establishment-of-the-eagle-foothills-viticultural-area",
+    "https://greatnorthwestwine.com/2015/11/25/ttb-establishes-eagle-foothills-ava-for-idaho-wine-industry/",
+    "https://greatnorthwestwine.com/2016/04/20/feds-establish-lewis-clark-valley-ava-modify-columbia-valley/"
+   ],
+   "fix": "Idaho's second AVA, Eagle Foothills (2015), is a sub-AVA inside Snake River Valley; its third, Lewis-Clark Valley (2016), straddles the state line into Washington.",
+   "batch": 25,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The explanation's last sentence calls Lewis-Clark Valley Idaho's second AVA, and that is wrong. TTB established Eagle Foothills on 25 November 2015. It was the first sub-AVA of Snake River Valley and the first AVA entirely within Idaho, which makes it Idaho's second AVA after Snake River Valley (2007). TTB established Lewis-Clark Valley on 20 April 2016 (effective 20 May 2016). It was the nation's 235th AVA, Washington's ninth and Idaho's third, and it straddles the Idaho-Washington line. The question stem, its options and the keyed answer (elevation) are not in dispute. Only the closing fact in the explanation is false. The examiner's replacement sentence is accurate.",
+   "verifySources": [
+    "https://greatnorthwestwine.com/2015/11/25/ttb-establishes-eagle-foothills-ava-for-idaho-wine-industry/",
+    "https://www.federalregister.gov/documents/2016/04/20/2016-09264/establishment-of-the-lewis-clark-valley-viticultural-area-and-realignment-of-the-columbia-valley",
+    "https://en.wikipedia.org/wiki/Lewis-Clark_Valley_AVA",
+    "https://greatnorthwestwine.com/2016/04/20/feds-establish-lewis-clark-valley-ava-modify-columbia-valley/"
+   ],
+   "finalFix": "Idaho's second AVA, Eagle Foothills (2015), is a sub-AVA inside Snake River Valley; its third, Lewis-Clark Valley (2016), straddles the state line into Washington.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-zy5xnk9q",
+    "cat": "Pacific NW, NY & Canada",
+    "q": "Idaho's Snake River Valley AVA keeps its nights cold chiefly because of:",
+    "opts": [
+     "Elevation of roughly 2,500 to 3,000 feet",
+     "Marine air drawn inland through the Cascades",
+     "Deep glacial lakes holding the summer's heat",
+     "Fog rolling up the valley from the Pacific"
+    ],
+    "a": 0,
+    "exp": "Approved in 2007 as Idaho's first AVA, Snake River Valley reaches west across the state line into Malheur County, Oregon, and its vineyards sit on the bed of ancient Lake Idaho at around 43.5°N. Nothing maritime reaches this far inland — height alone delivers the diurnal swing, with warm days and nights that drop 30–40°F, which is why the wines keep acid at desert latitudes. The real constraint is not summer heat but winter cold and spring frost, so sites are chosen above the valley floor where cold air drains away. Idaho's second AVA, Lewis-Clark Valley (2016), likewise straddles a state line, into Washington."
+   }
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "kind": "wrong-key",
+   "claim": "DOC Vinho de Talha",
+   "because": "Vinho de Talha is not a DOC of its own. Portaria 296/2010 (1 June 2010) recognised talha winemaking as a traditional method that may carry the designation 'Vinho de Talha' inside DOC Alentejo, and the CVRA certifies it as DOC Alentejo Vinho de Talha. The DOC is therefore Alentejo.",
+   "sources": [
+    "https://dre.pt/pesquisa/-/search/332677/details/maximized",
+    "https://www.vinhosdoalentejo.pt/pt/vinhos/detalhe/piteira-doc-talha-branco/"
+   ],
+   "fix": "DOC Alentejo, using the traditional designation 'Vinho de Talha' (since 2010): fermentation and skin maceration in clay talhas, with a layer of olive oil on top of the wine; a Roman continuity",
+   "batch": 25,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds, and the examiner's fix is right. There is no standalone \"DOC Vinho de Talha\". Portaria n.º 296/2010 (1 June 2010), the DO Alentejo regulation, lists talha fermentation among the traditional winemaking methods of DO \"Alentejo\". Wines made that way may carry the designation \"vinho de talha\" if they follow the certifying body's rules. That body is the CVRA (Comissão Vitivinícola Regional Alentejana), which approved its talha production rules on 25 October 2010 and later updated the framework under Portaria 224/2014. The CVRA certifies these wines as \"DOC Alentejo - Vinho de Talha\". The model answer \"DOC Vinho de Talha\" names an appellation that does not exist, so the key is wrong. The fix names DOC Alentejo with the traditional designation Vinho de Talha. It also describes the olive oil more accurately than \"sealed\": it is a layer floating on top of the wine. The accept entry \"~vinho de talha\" can stay.",
+   "verifySources": [
+    "https://dre.pt/pesquisa/-/search/332677/details/maximized",
+    "https://www.wipo.int/wipolex/en/legislation/details/7922",
+    "https://www.vinhosdoalentejo.pt/media/cvra/lista-produtos-vinicos-certificados-cvra.pdf",
+    "https://grandesescolhas.com/alentejo-vinhas-velhas-e-centenarias-e-certificacao-do-vinho-de-talha/"
+   ],
+   "finalFix": "DOC Alentejo, using the traditional designation 'Vinho de Talha' (since 2010): fermentation and skin maceration in clay talhas, with a layer of olive oil on top of the wine; a Roman continuity",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-nr0zmwjc",
+    "cat": "Portugal",
+    "q": "Alentejo has a DOC protecting a Roman-era practice of fermenting and macerating in large clay vessels sealed with olive oil. Name the DOC and the vessels.",
+    "sa": 1,
+    "accept": [
+     "amphora fermentation",
+     "talha clay pot wine",
+     "~vinho de talha"
+    ],
+    "ans": "DOC Vinho de Talha — fermentation and skin maceration in clay talhas (amphorae), traditionally sealed with olive oil; Roman continuity",
+    "exp": "Granite-country José de Sousa (José Maria da Fonseca) kept it industrial-scale."
+   }
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "kind": "accept-list",
+   "claim": "\"amphora fermentation\"",
+   "because": "The question asks for the DOC and the vessels. 'Amphora fermentation' names neither the DOC (Alentejo) nor the talha, and the grader would pass it anyway, so a candidate is credited for an answer that names neither thing asked for.",
+   "sources": [
+    "https://dre.pt/pesquisa/-/search/332677/details/maximized"
+   ],
+   "fix": "Remove \"amphora fermentation\" from accept and add \"alentejo vinho de talha\".",
+   "batch": 25,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. Portaria n.º 296/2010 (Art. 8.3) recognises talha vinification as a traditional method inside the DO \"Alentejo\"; the CVRA certifies it as DOC Alentejo \"Vinho de Talha\". The stem asks for the DOC and the vessels. \"Amphora fermentation\" names neither the DOC (Alentejo, or its Vinho de Talha designation) nor the talha, yet I ran matchSA from js/core.js and it passes that answer. The same run found a second leak: the accept entry \"talha clay pot wine\" also passes \"clay pot wine\", because a 3-word input covers 60% of the 4-word entry, and \"clay pot wine\" is just as empty. It also found a refusal: the answer the examiner's own reading calls right, \"DOC Alentejo, talhas\", fails under the current list. The proposed \"alentejo vinho de talha\" adds nothing, since \"~vinho de talha\" already grades it. Better accept list, tested with matchSA: [\"~vinho de talha\", \"~alentejo talha\", \"~alentejo talhas\"]. It refuses \"amphora fermentation\", \"clay pot wine\", \"amphora\", \"talha\" alone and \"Alentejo\" alone. It passes \"Alentejo Vinho de Talha\", \"vinho de talha, talhas\", \"DOC Alentejo, talhas\", \"Alentejo talha\", and the model answer, which grades by exact match.",
+   "verifySources": [
+    "https://dre.pt/pesquisa/-/search/332677/details/maximized (Portaria n.º 296/2010, Art. 8.3)",
+    "https://www.vinhosdoalentejo.pt/media/cvra/lista-produtos-vinicos-certificados-cvra.pdf",
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (lines 49-98), exercised locally"
+   ],
+   "finalFix": "\"accept\": [\"~vinho de talha\", \"~alentejo talha\", \"~alentejo talhas\"]",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-nr0zmwjc",
+    "cat": "Portugal",
+    "q": "Alentejo has a DOC protecting a Roman-era practice of fermenting and macerating in large clay vessels sealed with olive oil. Name the DOC and the vessels.",
+    "sa": 1,
+    "accept": [
+     "amphora fermentation",
+     "talha clay pot wine",
+     "~vinho de talha"
+    ],
+    "ans": "DOC Vinho de Talha — fermentation and skin maceration in clay talhas (amphorae), traditionally sealed with olive oil; Roman continuity",
+    "exp": "Granite-country José de Sousa (José Maria da Fonseca) kept it industrial-scale."
+   }
+  },
+  {
+   "id": "a-hafues4n",
+   "kind": "wrong-explanation",
+   "claim": "Châteauneuf-du-Pape's minimum natural alcohol, the highest of any French appellation, is:",
+   "because": "The keyed 12.5% is correct (the CdP cahier des charges sets a minimum natural alcohol of 12.5%). But it is not the highest minimum in France. The Sauternes cahier des charges sets a minimum natural alcohol of 15%, with grapes of at least 221 g/l sugar. Even among southern Rhône dry reds, the Gigondas cahier also requires 12.5%, so Châteauneuf does not stand alone at that figure either. A candidate who learns 'highest in France' will get any comparison question wrong.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/4-CDC-Sauternes-PNO.pdf",
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000021188787/2009-10-24",
+    "https://extranet.inao.gouv.fr/fichier/PNO2022AOPGigondas.pdf"
+   ],
+   "fix": "Châteauneuf-du-Pape's minimum natural alcohol, set in its 1936 decree, is:",
+   "batch": 28,
+   "verdict": "confirmed",
+   "verifyReason": "The keyed 12.5% is right, but the stem's aside, that this is the highest minimum of any French appellation, is false. I opened the INAO Sauternes cahier des charges. It requires grapes of at least 221 g/l sugar and sets a minimum natural alcohol of 15%, well above 12.5%. The Gigondas cahier (the 2022 amended text, which I also opened) sets 12.5% for its reds and rosés, so Châteauneuf does not stand alone even among southern Rhône dry reds. A candidate who learns 'highest in France' would answer any comparison question wrongly. The explanation text makes no such claim, so it can stay. The examiner's fix removes the false superlative and keeps the 1936 decree, which the explanation also cites. The stem then reads correctly and the 12.5% key stands.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/4-CDC-Sauternes-PNO.pdf",
+    "https://extranet.inao.gouv.fr/fichier/PNO2022AOPGigondas.pdf"
+   ],
+   "finalFix": "Châteauneuf-du-Pape's minimum natural alcohol, set in its 1936 decree, is:",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-hafues4n",
+    "cat": "Rhône",
+    "q": "Châteauneuf-du-Pape's minimum natural alcohol, the highest of any French appellation, is:",
+    "opts": [
+     "11.5%",
+     "12%",
+     "12.5%",
+     "13%"
+    ],
+    "a": 2,
+    "exp": "12.5%, written into Baron Le Roy's 1936 decree when ripeness was both a mark of quality and genuinely hard to reach in cool years. Today it is cleared by mid-September and the real struggle is holding wines under 15.5%. Pair it with the 35 hl/ha yield ceiling — among the lowest in France for an appellation of that size — and you have the two numbers that shape the cru's structure and its modern predicament."
+   }
+  },
+  {
+   "id": "a-ulyq5wk0",
+   "kind": "wrong-explanation",
+   "claim": "very top or top shoulder is normal for a 1950s wine, upper to mid shoulder is drinkable but a genuine risk ... (exp) mid-shoulder in a 1959 usually means heat",
+   "because": "The standard auction ullage scales (Broadbent's guide, as reproduced in Wikipedia's Ullage (wine) article, and the merchant and auction condition scales) call top shoulder normal for Bordeaux over about 15 years. They call upper shoulder acceptable and common for wines over 20, 'usually not a problem'. So for a 67-year-old 1959, upper shoulder is a normal fill, not a genuine risk. Mid shoulder is the level those scales mark as higher than normal risk. They describe it as more common past 30 to 40 years through natural ageing and a weakening cork, and none of them say it usually means heat.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ullage_(wine)",
+    "https://www.santarosafinewine.com/winecondition.php"
+   ],
+   "fix": "ans: 'very top or top shoulder is normal for a 1950s wine, upper shoulder is acceptable at that age, mid shoulder is drinkable but a genuine risk, and low shoulder is a gamble.' exp: 'mid-shoulder in a 1959 points to a tired cork or poor storage, and such a wine can fade in the glass within minutes of pouring.'",
+   "batch": 30,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I could not refute the finding. Broadbent's scale, as reproduced on Wikipedia, says upper shoulder is \"generally okay in older wines, especially those over 20 years\" and puts only mid shoulder at possible oxidation. The Santa Rosa Fine Wine scale says upper shoulder is \"acceptable and common for wines 20 years or older\" and that mid shoulder is \"more common in wines exceeding 30 to 40 years\". Wine Consigners quotes Christie's 2013 guidance that mid shoulder \"isn't abnormal for a 30 to 40-year-old wine\", with the cause being slow evaporation through the cork. That makes two errors. First, the model answer calls upper shoulder \"a genuine risk\", which is too strong for a 67-year-old bottle. Second, the explanation says mid shoulder in a 1959 \"usually means heat\", and none of the scales say that. Heat is one possible cause, but at this age evaporation through an ageing cork is the normal one. The examiner's fix is right about the answer text. Its explanation still says mid shoulder \"points to a tired cork or poor storage\", which reads it as a fault signal when the sources call it expected at this age. So I have adjusted the explanation so it says both what is normal and why the risk is real.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Ullage_(wine)",
+    "https://www.santarosafinewine.com/winecondition.php",
+    "https://wineconsigners.com/pages/ullage"
+   ],
+   "finalFix": "ans (replace the fill clause): \"into neck or bottom neck is exceptional at that age, very top or top shoulder is normal for a 1950s wine, upper shoulder is acceptable and common at that age, mid shoulder is not unusual for a wine this old but carries a real risk of oxidation, and low shoulder is a gamble.\" exp (replace the first sentence): \"Ullage is evaporation past the cork, so it is partly a measure of age and partly of how the bottle was stored; mid-shoulder is not unusual in a 1959 after decades of evaporation through an ageing cork, though warm or poor storage speeds it, and either way the extra air means a wine that can fade in the glass within minutes of pouring.\" (The rest of exp is unchanged.)",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-ulyq5wk0",
+    "cat": "Service & Hospitality",
+    "q": "A guest orders a 1959 Bordeaux from your reserve list. Describe how you read the fill level, and what you say to the table before you open it.",
+    "sa": 1,
+    "accept": [
+     "into neck bottom neck top shoulder upper shoulder mid shoulder low shoulder",
+     "read the ullage against the shoulder and warn the guest before the cork comes out",
+     "top shoulder is normal for a 1959 and mid shoulder is a real risk",
+     "show the fill and agree the sold as is conversation before opening"
+    ],
+    "ans": "Fill is read against the neck and shoulder: into neck or bottom neck is exceptional at that age, very top or top shoulder is normal for a 1950s wine, upper to mid shoulder is drinkable but a genuine risk, and low shoulder is a gamble. Older and Burgundy-shaped bottles are often quoted instead in centimetres measured from the base of the cork. I show the guest the fill, the capsule and any seepage, note the condition on the check, say plainly that a bottle of this age is sold as it stands unless it is faulty, and offer to open it at the table so we assess it together — with an alternative already chosen in case it has gone.",
+    "exp": "Ullage is evaporation past the cork and therefore a proxy for how the bottle was stored; mid-shoulder in a 1959 usually means heat, and heat means a wine that fades in the glass within minutes of pouring. The commercial point is the sequence: the conversation you have before the cork comes out is a courtesy, and the identical conversation afterwards is a negotiation. Auction-condition vocabulary is Advanced currency because reserve lists are now sourced at auction."
+   }
+  },
+  {
+   "id": "a-ki9wx6x5",
+   "kind": "wrong-explanation",
+   "claim": "Before 2017 Constantia and Durbanville were free-floating wards inside the Coastal Region with no district above them.",
+   "because": "Durbanville (a ward since 1989) and Philadelphia were wards of the Tygerberg district. The June 2017 Cape Town district replaced Tygerberg and also took in the district-less wards Constantia and Hout Bay. Only Constantia and Hout Bay were without a district before 2017.",
+   "sources": [
+    "https://www.winewithseth.com/winewiki/durbanville/",
+    "https://www.wine-searcher.com/regions-tygerberg"
+   ],
+   "fix": "Before 2017 Durbanville and Philadelphia were wards of the Tygerberg district, while Constantia and Hout Bay were wards directly under the Coastal Region with no district; the Cape Town district replaced Tygerberg and gathered all four.",
+   "batch": 31,
+   "verdict": "confirmed",
+   "verifyReason": "I could not refute it; the finding holds. The question and its model answer (Cape Town district, created 1 June 2017) are correct, but the first sentence of the explanation is wrong. It says Constantia and Durbanville were both district-less wards before 2017. In fact Durbanville became a ward in 1989 and was placed in the Tygerberg district, as was Philadelphia. Only Constantia and Hout Bay sat directly under the Coastal Region with no district. The new Cape Town district replaced Tygerberg and took in all four wards. WinePaths confirms that before 2017 the four wards fell under two separate districts, which fits the Tygerberg account and rules out all four being district-less. Some secondary sources mention an older 'Cape Peninsula' district, but no source I opened places Durbanville outside Tygerberg, so the error stands. The examiner's fix is accurate and replaces only that sentence; the rest of the explanation stays. I could not load the Wine-Searcher page the examiner cited (it returned HTTP 403), and I did not open any SAWIS legal text, so this rests on the secondary sources listed.",
+   "verifySources": [
+    "https://www.winewithseth.com/winewiki/durbanville/",
+    "https://www.winepaths.com/articles/editorial/south-africa/cape-town-s-new-wine-of-origin-region",
+    "https://www.winespectator.com/articles/new-south-africa-cape-town-wo-appellation",
+    "https://www.winewithseth.com/winewiki/constantia/"
+   ],
+   "finalFix": "Before 2017 Durbanville and Philadelphia were wards of the Tygerberg district, while Constantia and Hout Bay were wards directly under the Coastal Region with no district; the Cape Town district replaced Tygerberg and gathered all four.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-ki9wx6x5",
+    "cat": "South Africa",
+    "q": "Which Wine of Origin district was created in 2017 to gather the wards of Constantia, Durbanville, Hout Bay and Philadelphia?",
+    "sa": 1,
+    "accept": [
+     "cape town district",
+     "district of cape town",
+     "wo cape town coastal region"
+    ],
+    "ans": "Cape Town (a district of the Coastal Region)",
+    "exp": "Before 2017 Constantia and Durbanville were free-floating wards inside the Coastal Region with no district above them. Grouping them as the Cape Town district gave the city's cool, maritime, largely Sauvignon-and-Semillon vineyards a single marketable name and tidied the four-tier hierarchy (geographical unit, region, district, ward). Candidates who learned the map a decade ago routinely miss it."
+   }
+  }
+ ]
+}

@@ -1,0 +1,292 @@
+{
+ "file": "rewrite/categories/r2_food_pairing.py",
+ "findings": [
+  {
+   "id": "c-0nn04c75",
+   "kind": "accept-list",
+   "claim": "The question is exact-only (ex:1), so the accept list refuses 'protein' on its own, and also 'proteins and fats'. The stem asks for a single food element, and protein is the textbook answer.",
+   "because": "The stem is singular ('Which food element'), and the explanation opens with protein as the mechanism ('Tannin binds with protein'). Run through matchSA in js/core.js, 'protein' -> false, 'proteins and fats' -> false, 'fat' -> false; only the listed pairs pass. A candidate who gives the standard single answer is marked wrong.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (tested with node against this batch)"
+   ],
+   "fix": "Add to accept: \"protein\", \"proteins\", \"proteins and fats\", \"fats and proteins\", \"fat\"",
+   "batch": 207,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The examiner is right. The stem asks for one food element (\"Which food element\"), but the question is exact-only (ex:1) and the accept list holds only protein-and-fat pairs. I checked matchSA in js/core.js: with ex:1, any accept entry that is not an exact match after norm() is skipped with `continue`. norm() does not turn plurals into singulars. So \"protein\", \"proteins\" and \"proteins and fats\" are all marked wrong. Protein is the standard answer and the mechanism the question's own explanation gives first (\"Tannin binds with protein\"). The general reference agrees: tannins react with proteins, and in protein- and fat-rich dishes such as red meat the tannins bind to the proteins and seem softer. A candidate who gives the textbook single answer is marked wrong, so the accept list is faulty.\n\nThe proposed fix goes one step too far with bare \"fat\". The stem says \"most reliably\". Binding to protein is the established mechanism. Fat coating the palate is a secondary effect, and the sources treat it as working alongside protein, not in its place. Accepting \"fat\" alone would grade a weaker answer to a \"most reliably\" question as correct. It is also not needed to fix the problem. My fix adds protein on its own, plus the plural spellings of the pair the question already accepts, and leaves bare \"fat\" out. The model answer (\"Protein and fat\") and the explanation are correct and stay as they are.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (the q.ex exact-only branch, line 83) and norm (lines 11-17, no plural folding)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-207.json (c-0nn04c75)",
+    "https://en.wikipedia.org/wiki/Wine_and_food_matching: tannins react with proteins; in protein- and fat-rich dishes they bind to the proteins and seem softer"
+   ],
+   "finalFix": "\"accept\": [\"protein and fat\", \"fat and protein\", \"protein or fat\", \"fat or protein\", \"protein fat\", \"fat protein\", \"protein\", \"proteins\", \"proteins and fats\", \"fats and proteins\", \"proteins and fat\", \"protein and fats\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-0nn04c75",
+    "cat": "Food & Pairing",
+    "q": "Which food element most reliably softens the perception of tannin?",
+    "sa": 1,
+    "accept": [
+     "protein and fat",
+     "fat and protein",
+     "protein or fat",
+     "fat or protein",
+     "protein fat",
+     "fat protein"
+    ],
+    "ans": "Protein and fat",
+    "ex": 1,
+    "exp": "Tannin binds with protein, which is why a rare steak makes a young tannic red seem rounder. Fat coats the palate and blunts the same astringency."
+   }
+  },
+  {
+   "id": "c-q7tsbnp9",
+   "kind": "accept-list",
+   "claim": "The accept list refuses the plainest correct answers: 'high acidity', 'higher acidity', 'more acidity', 'high acid' and 'equal or greater acidity'.",
+   "because": "Tested with matchSA, every one of these returns false. Only 'at least as much acid(ity)', 'matching acid(ity)' and the listed phrasings pass. The standard teaching (WSET) is that the wine must be at least as high in acidity as the food, so 'high/higher acidity' is plainly right.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (tested with node against this batch)"
+   ],
+   "fix": "Add to accept: \"high acidity\", \"higher acidity\", \"more acidity\", \"high acid\", \"higher acid\", \"equal or greater acidity\"",
+   "batch": 207,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I ran matchSA from js/core.js in node against the live accept list ([\"matching acidity\", \"equal or higher acidity\", \"more acid than the dish\", \"at least as much acidity\"]). \"high acidity\", \"higher acidity\", \"more acidity\", \"high acid\", \"higher acid\", \"more acid\", \"equal or greater acidity\", \"higher acidity than the dish\" and \"the wine needs higher acidity\" all return false. One part of the claim is wrong: \"equal or higher acidity\" is already on the list and passes. The rule these answers state is the question's own model answer (at least as much acidity), and the list already takes \"more acid than the dish\", so refusing \"higher acidity\" or \"more acid\" is plainly wrong. A student who gives the standard pairing answer is marked wrong and the miss is recorded. I could not open a WSET page to cite: the web search budget was used up and two WSET blog URLs returned 404. The ruling rests on the grader test and the question's own model answer, not on an outside source. I tested the widened list. Every right phrasing passes. \"not high acidity\", \"low acid\", \"less acid\", \"lower acidity\", \"low acidity\", \"high tannin\" and a bare \"acidity\" still fail, because the negation guard and word-boundary containment hold. The better fix adds \"more acid\", since the examiner's list leaves out that short form.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA and norm/negatedAgainst (run in node against the current and the widened accept list)",
+    "C:/Users/zpull/SommeliersCodex/js/data-questions.js line 361 (c-q7tsbnp9)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-207.json"
+   ],
+   "finalFix": "\"accept\": [\"matching acidity\", \"equal or higher acidity\", \"more acid than the dish\", \"at least as much acidity\", \"high acidity\", \"higher acidity\", \"more acidity\", \"high acid\", \"higher acid\", \"more acid\", \"equal or greater acidity\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-q7tsbnp9",
+    "cat": "Food & Pairing",
+    "q": "A dish high in acidity demands what of the wine, if the wine is not to taste flat?",
+    "sa": 1,
+    "accept": [
+     "matching acidity",
+     "equal or higher acidity",
+     "more acid than the dish",
+     "at least as much acidity"
+    ],
+    "ans": "At least as much acidity",
+    "exp": "Acid in the dish resets the palate and makes a lower-acid wine taste dull and flabby. Meeting it keeps the wine tasting fresh."
+   }
+  },
+  {
+   "id": "c-dmqcaws5",
+   "kind": "accept-list",
+   "claim": "The accept list refuses correct paraphrases of 'they amplify each other': 'they intensify each other', 'they reinforce each other', 'they compound', 'amplify' and 'amplifies'.",
+   "because": "Tested with matchSA, all of these return false. Only 'additive/additively', 'they add up', 'increases bitterness' and the exact 'they amplify each other' pass. Intensify, compound and amplify are the same answer as the model answer, 'Additively, amplifying each other'.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (tested with node against this batch)"
+   ],
+   "fix": "Add to accept: \"intensify each other\", \"amplify\", \"amplifies\", \"compound\", \"reinforce each other\", \"cumulative\"",
+   "batch": 207,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I couldn't refute this. I pulled matchSA out of js/core.js and ran it in node against the current accept list. It rejects \"they intensify each other\", \"they reinforce each other\", \"they compound\", \"amplify\", \"amplifies\", \"amplifying\", \"they amplify\", \"cumulative\", \"bitterness increases\" and \"more bitter\". Each of these says the same thing as the model answer, \"Additively, amplifying each other\", and the question's own explanation uses the word \"compound\". The fact behind the key is sound: in food-and-wine pairing, bitterness in the food and in the wine add together rather than cancel. So the key is right and only the accept list is at fault. The examiner's fix mostly works, but it leaves gaps. With it, the bare word \"intensify\" still fails, because the whole-word core rule needs at least 60% of the words in \"intensify each other\". \"Intensifies\" fails too, because -ies does not contain \"intensify\", and \"bitterness increases\" and \"more bitter\" still fail. The list below passes all of those. It still rejects \"they cancel out\", \"they cancel each other\", \"they reduce each other\", \"they neutralise each other\", \"do not amplify\" and \"not cumulative\", and it adds no wrong-answer matches. One gap remains that the list cannot fix: \"they don't cancel, they amplify\" fails because the negation guard trips on \"dont\". That is a grader-wide limit, not something this question can solve.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA, norm, negatedAgainst (run in node with the current and the proposed accept lists)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-207.json (c-dmqcaws5)"
+   ],
+   "finalFix": "\"accept\": [\"they amplify each other\", \"additive\", \"they add up\", \"increases bitterness\", \"amplify\", \"amplifies\", \"intensify\", \"intensifies\", \"compound\", \"reinforce\", \"cumulative\", \"more bitter\", \"bitterness increases\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-dmqcaws5",
+    "cat": "Food & Pairing",
+    "q": "Bitterness in the food and bitterness in the wine combine in what way?",
+    "sa": 1,
+    "accept": [
+     "they amplify each other",
+     "additive",
+     "they add up",
+     "increases bitterness"
+    ],
+    "ans": "Additively, amplifying each other",
+    "exp": "Unlike salt or acid, bitterness does not cancel. Two bitter elements compound, which is why radicchio or charred greens punish a tannic red."
+   }
+  },
+  {
+   "id": "c-cqyity5s",
+   "kind": "accept-list",
+   "claim": "The accept list refuses the standard textbook phrasing 'increases bitterness (and astringency)', and also 'more bitter' and 'harder'.",
+   "because": "Tested with matchSA, 'increases bitterness' -> false, 'increases bitterness and astringency' -> false, 'more bitter' -> false, 'harder' -> false, while 'harsher' passes. The model answer itself is 'Makes it seem harder and more bitter', and WSET's food-and-wine interaction teaching describes umami as increasing bitterness and astringency in wine.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js matchSA (tested with node against this batch)"
+   ],
+   "fix": "Add to accept: \"increases bitterness\", \"increases bitterness and astringency\", \"more bitter\", \"harder\", \"more astringent\"",
+   "batch": 207,
+   "verdict": "confirmed",
+   "verifyReason": "The key is correct. Umami that salt does not balance makes a red wine's tannin seem harder and more bitter, and that is the standard teaching. The fault is in the grader. I extracted matchSA and norm from the live js/core.js and ran them in node against the accept list for c-cqyity5s, which is the same in js/data-questions.js line 366 as in batch-207. It returns false for \"more bitter\", \"harder\", \"increases bitterness\", \"increases bitterness and astringency\", \"more astringent\" and \"tannins seem harder\". Only \"harsher\", the exact model answer and the other listed phrases pass. So the grader refuses answers that are plainly right, including \"more bitter\", which is half of the model answer. With the proposed five entries added, all of those answers pass. The inputs that should fail still fail: \"less bitter\", \"softer\", \"not more bitter\", \"not harder\" and \"makes it softer and less bitter\". The negation guard and the substring rules let no wrong answer in. \"increases bitterness and astringency\" is already covered by containment under \"increases bitterness\", so it is redundant but harmless. I could not open a WSET page to cite (the pages returned 404 and 403, and the web search budget was spent), but the finding does not depend on it: the defect is in the grader and the key itself is not disputed.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm, negatedAgainst; run in node before and after the fix)",
+    "C:/Users/zpull/SommeliersCodex/js/data-questions.js line 366 (live entry c-cqyity5s)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-207.json"
+   ],
+   "finalFix": "Add to accept: \"increases bitterness\", \"increases bitterness and astringency\", \"more bitter\", \"harder\", \"more astringent\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-cqyity5s",
+    "cat": "Food & Pairing",
+    "q": "Umami in a dish, with no salt to balance it, tends to do what to a red wine's tannin?",
+    "sa": 1,
+    "accept": [
+     "makes it seem harder and more bitter",
+     "makes tannin harsher",
+     "harsher",
+     "more bitter and drying",
+     "accentuates tannin"
+    ],
+    "ans": "Makes it seem harder and more bitter",
+    "exp": "Glutamates push tannin toward bitterness and metal. Adding salt to the dish is often the quickest repair to a pairing failing this way."
+   }
+  },
+  {
+   "id": "c-i5db573l",
+   "kind": "accept-list",
+   "claim": "The grader refuses 'fishy taste' and 'fishy aftertaste', though the model answer itself is 'A metallic, fishy taste'.",
+   "because": "matchSA uses containment. Input 'fishy taste' or 'fishy aftertaste' does not contain any accept phrase ('metallic taste', 'metallic', 'fishy metallic taste', 'tinny'). Neither is a whole-word core of 'fishy metallic taste', and a bare 'fishy' fails the 60% word-coverage rule (1 word of 3). 'Fishy aftertaste' is the exact term the research literature uses for this fault, and Wikipedia describes the same effect of fish oils on tannic wines.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 49-98)",
+    "https://en.wikipedia.org/wiki/Wine_and_food_pairing"
+   ],
+   "fix": "accept: [\"metallic taste\", \"metallic\", \"fishy metallic taste\", \"tinny\", \"fishy\", \"fishy taste\", \"fishy aftertaste\"]",
+   "batch": 208,
+   "verdict": "confirmed",
+   "verifyReason": "I ran matchSA from C:/Users/zpull/SommeliersCodex/js/core.js against the question in batch-208.json with node, and the finding holds. With the current accept list ['metallic taste','metallic','fishy metallic taste','tinny'], the answers 'fishy taste', 'fishy aftertaste' and 'fishy' all grade false. 'Fishy taste' is not contained in any accept phrase. It is also not a whole-word core of 'fishy metallic taste', because the words are not contiguous. A bare 'fishy' fails the 60% coverage rule (1 of 3 words). All three are plainly right, since the question's own model answer is 'A metallic, fishy taste'. The literature name for this fault is 'fishy aftertaste': Tamura et al. 2009 found iron to be its essential cause, which matches the explanation. I could not re-open that paper because this session's web-search budget is used up, but the fault here lives in the grader and the app's own model answer, not in wine law. I then re-ran the same inputs with the proposed list. 'fishy taste', 'fishy aftertaste' and 'fishy' now grade true, while 'not fishy' (negation guard) and 'bitter' still grade false. 'metallic fishy' and the model answer still grade true. The fix is correct and opens no false positive in these tests. Strictly, adding 'fishy' alone covers the other two by containment, but listing them does no harm.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17, matchSA lines 49-98, executed with node)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-208.json (id c-i5db573l, lines 150-162)"
+   ],
+   "finalFix": "accept: [\"metallic taste\", \"metallic\", \"fishy metallic taste\", \"tinny\", \"fishy\", \"fishy taste\", \"fishy aftertaste\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-i5db573l",
+    "cat": "Food & Pairing",
+    "q": "Oily fish such as mackerel with a heavily tannic red produces which specific fault?",
+    "sa": 1,
+    "accept": [
+     "metallic taste",
+     "metallic",
+     "fishy metallic taste",
+     "tinny"
+    ],
+    "ans": "A metallic, fishy taste",
+    "exp": "Iron in the wine reacting with the fish oils is the usual explanation. The effect is unmistakable and it is why the old white-with-fish rule persists."
+   }
+  },
+  {
+   "id": "c-495v2qxh",
+   "kind": "accept-list",
+   "claim": "This exact-only question (ex:1) refuses Banyuls, the classic French fortified partner for dark chocolate, and Maury, a Roussillon vin doux naturel of the same kind.",
+   "because": "The question asks which fortified wine is the traditional partner for dark chocolate. Banyuls is a fortified vin doux naturel whose best-known food match is chocolate. The French Wikipedia entry for the AOC says Banyuls is first a dessert wine that goes well with chocolate or blue cheese. Because of ex:1, only exact accept entries grade, so a candidate who answers 'Banyuls' is marked wrong.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Banyuls_(AOC)",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, q.ex branch line 83)"
+   ],
+   "fix": "accept: [\"ruby or lbv port\", \"ruby port\", \"lbv port\", \"late bottled vintage port\", \"ruby or late bottled vintage port\", \"port\", \"banyuls\", \"maury\"]",
+   "batch": 208,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The stem asks which fortified wine is the \"traditional partner\" for dark chocolate. Banyuls is a textbook answer to that. The French Wikipedia entry for the AOC says Banyuls and Banyuls Grand Cru are reserved for vins doux naturels, and that Banyuls VDN are first dessert wines that go well with chocolate or blue cheese. The English entry confirms that alcohol is added to the must to stop fermentation, which makes it a fortified wine. Maury is a Roussillon VDN made the same way and is also a recognised chocolate match. The question is exact-only (ex:1), and in core.js matchSA stops at `if(q.ex) continue;` after the exact test, so the only answers that grade are the model answer and the literal accept entries. An expert who writes \"Banyuls\" is therefore marked wrong. The examiner's fix is right but incomplete: under exact-only matching, \"Banyuls Grand Cru\" and \"Banyuls Rimage\" would still be refused, so the better fix adds them too. The model answer (Ruby or LBV Port) can stay, since Port is also a classic partner. I could not open a second pairing source because the web-search budget was used up, but the AOC text and the grader code are enough to decide the claim.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Banyuls_(AOC)",
+    "https://en.wikipedia.org/wiki/Banyuls_AOC",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, line 83: if(q.ex) continue;)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-208.json (c-495v2qxh)"
+   ],
+   "finalFix": "accept: [\"ruby or lbv port\", \"ruby port\", \"lbv port\", \"late bottled vintage port\", \"ruby or late bottled vintage port\", \"port\", \"banyuls\", \"banyuls grand cru\", \"banyuls rimage\", \"maury\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-495v2qxh",
+    "cat": "Food & Pairing",
+    "q": "Which fortified wine is the traditional partner for dark chocolate?",
+    "sa": 1,
+    "accept": [
+     "ruby or lbv port",
+     "ruby port",
+     "lbv port",
+     "late bottled vintage port",
+     "ruby or late bottled vintage port",
+     "port"
+    ],
+    "ans": "Ruby or LBV Port",
+    "ex": 1,
+    "exp": "Chocolate's bitterness and fat need sweetness and body to stand against them. A young, fruit-forward Port has both."
+   }
+  },
+  {
+   "id": "c-ft0o9d72",
+   "kind": "accept-list",
+   "claim": "The grader refuses 'acidity and tannin' and 'acid and tannin', the most natural way to name the two responses.",
+   "because": "Every accept entry joins the pair with 'or'. Input 'acidity and tannin' neither contains an accept phrase nor is a whole-word substring of one, so matchSA returns false even though the candidate named both correct responses.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 89-95)"
+   ],
+   "fix": "accept: [\"acidity to cut it, or tannin to scour it\", \"acidity or tannin\", \"tannin or acidity\", \"acid or tannin\", \"high acid or firm tannin\", \"acidity and tannin\", \"acid and tannin\", \"tannin and acidity\", \"tannin and acid\"]",
+   "batch": 208,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I ran matchSA from C:/Users/zpull/SommeliersCodex/js/core.js in node against the question's real accept list. It returns false for \"acidity and tannin\", \"acid and tannin\", \"tannin and acidity\" and \"acidity, tannin\", so a candidate who names both correct responses is marked wrong. The finding holds.\n\nThe examiner's fix is off, though. With the new entries as plain accepts, the grader's \"input is a whole-word core of the accept phrase\" branch takes a 2-word input against a 3-word accept phrase. In the same harness, the examiner's list graded \"acidity and\", \"and tannin\" and \"acid and\" as CORRECT: each names only one of the two responses.\n\nMarking the new entries strict with the \"~\" prefix fixes that, because strict entries match only on equality or when the whole phrase appears in the answer. In the harness, the corrected list below grades all of these true: \"acidity and tannin\", \"Acid and tannin.\", \"tannin and acid\", \"acidity, tannin\", \"acidity and tannins\", \"high acidity and tannin\" and the model answer. It grades all of these false: \"acidity and\", \"and tannin\", \"acid and\", \"acidity\", \"not acidity and tannin\", \"no acidity and tannin\" and \"sweetness and tannin\". The pairing principle itself (acid cuts fat, tannin binds it) is standard and not in dispute; this is purely a grader finding.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, negatedAgainst, matchSA incl. the ~strict branch, lines 11-95)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-208.json (c-ft0o9d72)",
+    "node harness runs of matchSA on the current and proposed accept lists (scratchpad t208*.js)"
+   ],
+   "finalFix": "accept: [\"acidity to cut it, or tannin to scour it\", \"acidity or tannin\", \"tannin or acidity\", \"acid or tannin\", \"high acid or firm tannin\", \"~acidity and tannin\", \"~acid and tannin\", \"~tannin and acidity\", \"~tannin and acid\", \"~acidity and tannins\", \"~acid and tannins\", \"~acidity tannin\", \"~tannin acidity\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-ft0o9d72",
+    "cat": "Food & Pairing",
+    "q": "Fat in a dish invites which two possible responses in the wine?",
+    "sa": 1,
+    "accept": [
+     "acidity to cut it, or tannin to scour it",
+     "acidity or tannin",
+     "tannin or acidity",
+     "acid or tannin",
+     "high acid or firm tannin"
+    ],
+    "ans": "Acidity to cut it, or tannin to scour it",
+    "exp": "Two routes to the same end. Acidity refreshes the palate between bites; tannin binds the fat and clears it."
+   }
+  },
+  {
+   "id": "c-6eypoycg",
+   "kind": "accept-list",
+   "claim": "The grader refuses plainly right answers such as 'increases them', 'increases', 'accentuates both', 'heightens them' and 'makes them harsher'.",
+   "because": "The accept entries are two-word phrases ('increases both', 'accentuates them'). A one-word input like 'increases' fails the 60% word-coverage rule (it needs 2 words). 'Increases them' and 'accentuates both' are not substrings of any entry, and no entry is contained in them. The negation guard in matchSA already handles 'does not increase', so single-word accepts are safe here.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, lines 33-47 and 89-95)"
+   ],
+   "fix": "accept: [\"increases both\", \"makes them more prominent\", \"accentuates them\", \"increases\", \"increase\", \"accentuates\", \"heightens\", \"emphasizes\", \"amplifies\", \"harsher\", \"more bitter\"]",
+   "batch": 208,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I confirmed the finding by running the real matchSA from js/core.js in node against the current accept list. The grader refuses plainly right answers: \"increases\", \"increases them\", \"accentuates both\", \"heightens them\", \"heightens both\", \"amplifies them\", \"emphasizes them\", \"makes them harsher\", \"makes them more pronounced\", \"harder and more bitter\" and \"it increases them\" are all graded false. The keyed answer itself is correct: cold hardens tannin and sharpens bitterness, which is standard serving-temperature doctrine.\n\nThe proposed fix is off, though, because its single-word entries open holes that it says the negation guard closes. The guard does not catch \"doesn't\": norm turns it into \"doesn t\", and neither NEG_RE nor NEG_PHRASES contains \"doesn\" (only \"dont\" and \"don t\"). With the examiner's list, \"doesn't increase them\" grades CORRECT through the bare \"increase\" entry. The same list also passes \"increases fruitiness\" and \"decreases tannin, increases fruit\". A bare \"more pronounced\" would also pass \"more pronounced aroma\".\n\nThe replacement below keeps the entries to verb + both/them pairs and full phrases, plus the plural-only bare \"increases\". I tested it in node:\n- Every right phrasing above grades true.\n- \"doesn't increase them\", \"does not increase them\", \"softens them\", \"reduces both\", \"less prominent\", \"makes them less pronounced\" and \"more pronounced aroma\" all grade false.\n- The only residual leak is the bare \"increases\" (it passes \"increases fruitiness\"). I accept that trade because a one-word \"increases\" is a plainly right answer to this stem.\n\nOutside this finding: the \"doesn't\"/\"doesn t\" gap in NEG_RE is a grader-wide flaw in core.js and deserves its own fix.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, NEG_RE, NEG_PHRASES, negatedAgainst, matchSA), run in node against the current and proposed accept lists",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-208.json (question c-6eypoycg)"
+   ],
+   "finalFix": "accept: [\"increases both\", \"increases them\", \"increases\", \"both increase\", \"accentuates them\", \"accentuates both\", \"heightens them\", \"heightens both\", \"amplifies them\", \"amplifies both\", \"emphasizes them\", \"emphasizes both\", \"makes them more prominent\", \"makes them more pronounced\", \"makes them harsher\", \"harsher and more bitter\", \"harder and more bitter\", \"more tannic and more bitter\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-6eypoycg",
+    "cat": "Food & Pairing",
+    "q": "Serving a red too cold does what to its tannin and bitterness?",
+    "sa": 1,
+    "accept": [
+     "increases both",
+     "makes them more prominent",
+     "accentuates them"
+    ],
+    "ans": "Increases both",
+    "exp": "Cold hardens tannin and sharpens bitterness while muting aroma. An over-chilled red often reads as a bad pairing when it is only a service fault."
+   }
+  }
+ ]
+}

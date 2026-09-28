@@ -1,0 +1,80 @@
+{
+ "file": "rewrite/categories/r2_burgundy.py",
+ "findings": [
+  {
+   "id": "c-d6r40j8q",
+   "kind": "accept-list",
+   "claim": "The accept list refuses \"La Vigne Blanche\", which is the land-registry name (lieu-dit) of the vineyard the question asks for. The question is exact-match only (ex:1), and after norm() strips the article that answer becomes \"vigne blanche\", which matches no entry.",
+   "because": "The Vougeot premier cru Le Clos Blanc covers the lieu-dit La Vigne Blanche, and that is also the name under which the plot appears in the 1855 classification. A candidate who names the vineyard by that name has named the right vineyard and is marked wrong.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Vougeot_(AOC)",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm, matchSA)"
+   ],
+   "fix": "Add to accept: \"la vigne blanche\", \"vigne blanche\"",
+   "batch": 195,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. French Wikipedia's page on the Vougeot AOC follows the cahier des charges, and it names the premier cru \"Le Clos Blanc\" as the climat covering the lieu-dit \"La Vigne Blanche\". English Wikipedia's Vougeot wine page lists the four premier crus as Les Cras, La Vigne Blanche, Les Petits Vougeots and Clos de la Perrière, so it uses La Vigne Blanche as the premier cru's own name. That makes \"La Vigne Blanche\" a plainly right way to name the vineyard the stem asks for. The question has ex:1, so matchSA only takes an exact normalized match. norm() strips \"la\", so the answer becomes \"vigne blanche\", and no accept entry matches it. The ans field \"Clos Blanc de Vougeot\" normalizes to \"clos blanc vougeot\", which does not match either. So a candidate who names the right vineyard is marked wrong. I could not confirm the examiner's point about the 1855 classification, but the finding does not rest on it: the lieu-dit and premier-cru naming alone support it. The proposed fix is correct. Both entries normalize to \"vigne blanche\", so one is redundant but harmless. Adding them opens no containment path, because the question is exact-only.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Vougeot_(AOC)",
+    "https://en.wikipedia.org/wiki/Vougeot_wine",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (norm lines 11-17, matchSA exact/ex branch)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-195.json"
+   ],
+   "finalFix": "Add to accept: \"la vigne blanche\", \"vigne blanche\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-d6r40j8q",
+    "cat": "Burgundy",
+    "q": "Inside the Vougeot commune a walled premier cru has been planted to white grapes since the Cistercians held it. Name that vineyard.",
+    "sa": 1,
+    "accept": [
+     "clos blanc de vougeot",
+     "clos blanc",
+     "vougeot clos blanc",
+     "clos blanc de vougeot premier cru",
+     "the clos blanc de vougeot vineyard"
+    ],
+    "ans": "Clos Blanc de Vougeot",
+    "ex": 1,
+    "exp": "It sits just outside the wall of the grand cru and has grown Chardonnay for something close to nine hundred years, which makes it the oldest white plot of the Cote de Nuits. White at grand cru level here is confined to Musigny, so a white Vougeot can rise no higher than premier cru."
+   }
+  },
+  {
+   "id": "c-3seiuffu",
+   "kind": "wrong-explanation",
+   "claim": "The stem says Bouzeron 'insists on' the golden-berried form of Aligote, and the explanation says Bouzeron's rules were written around the golden strain.",
+   "because": "The Bouzeron cahier des charges (Decree 2011-1496 of 9 November 2011) allows one variety, 'aligoté B'. It does not name or require Aligoté Doré, and INAO does not tell the two forms apart. Aligoté Doré is the form Bouzeron growers prefer by tradition (Aubert de Villaine argued for it), not a legal requirement. The keyed answer 'Aligote Dore' is still right as the name of the form. What is false is the claim that the rules demand it, and a candidate would learn a law that does not exist.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Bouzeron_(AOC) (quotes the cahier: 'Le seul cépage autorisé par le cahier des charges pour produire l'appellation est l'aligoté B')",
+    "https://en.wikipedia.org/wiki/Bouzeron_AOC ('The AOC regulations require 100% Aligoté for Bouzeron')",
+    "https://www.legifrance.gouv.fr/search/all?query=cahier+des+charges+appellation+Bouzeron (Décret n° 2011-1496 du 9 novembre 2011)"
+   ],
+   "fix": "Stem: \"Bouzeron's growers favour one of Aligote's two forms, the golden-berried and lower-yielding one, though the appellation rules name only Aligote. Name it.\" Last sentence of the explanation: \"The appellation rules say only Aligote, but Bouzeron's leading growers chose the golden strain to make the case that Aligote can be a serious wine.\"",
+   "batch": 197,
+   "verdict": "confirmed",
+   "verifyReason": "The Bouzeron rules name only 'aligoté B' as the permitted variety. The French Wikipedia page quotes the cahier des charges: \"Le seul cépage autorisé par le cahier des charges pour produire l'appellation est l'aligoté B\". English Wikipedia says only that the rules require 100% Aligoté. No source I opened says the rules name or require Aligoté Doré, and French variety law lists Aligoté as a single variety, with no doré/vert split. The golden form is what growers prefer by tradition (de Villaine argued for it); it is not a legal rule. So the stem ('insists on') and the explanation ('rules were written around the golden strain') teach a law that does not exist. The answer 'Aligote Dore' still stands as the name of the form, so the accept list is fine. The examiner's fix keeps the answer and moves the preference from the law to the growers, which is right. Limits: I could not open the INAO page or the Légifrance text of Decree 2011-1496 directly (404 and a homepage). The web search budget was used up, and the Jancis Robinson page returned 403. The ruling therefore rests on the cahier text as French Wikipedia quotes it, plus the fact that no source mentions a doré requirement.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Bouzeron_(AOC)",
+    "https://en.wikipedia.org/wiki/Bouzeron_AOC",
+    "https://en.wikipedia.org/wiki/Aligot%C3%A9"
+   ],
+   "finalFix": "Stem: \"Bouzeron's growers favour one of Aligote's two forms, the golden-berried and lower-yielding one, though the appellation rules name only Aligote. Name it.\" Last sentence of the explanation: \"The appellation rules say only Aligote, but Bouzeron's leading growers chose the golden strain to make the case that Aligote can be a serious wine.\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-3seiuffu",
+    "cat": "Burgundy",
+    "q": "Bouzeron insists on one of Aligote's two forms, the golden-berried and lower-yielding one. Name it.",
+    "sa": 1,
+    "accept": [
+     "aligote dore",
+     "dore aligote",
+     "the golden aligote dore"
+    ],
+    "ans": "Aligote Dore",
+    "exp": "The other form, Aligote Vert, crops far more heavily and gives the thin, sharp wine that gave the grape its reputation as something to drown in cassis. Bouzeron's rules were written around the golden strain precisely to make the case that Aligote can be a serious wine."
+   }
+  }
+ ]
+}

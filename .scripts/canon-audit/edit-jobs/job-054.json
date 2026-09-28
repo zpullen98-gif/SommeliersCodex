@@ -1,0 +1,84 @@
+{
+ "file": "rewrite/categories/r2_sweet_wines.py",
+ "findings": [
+  {
+   "id": "c-lhlvmye7",
+   "kind": "wrong-explanation",
+   "claim": "The explanation ends by saying the acidity clause is why high-acid Chenin so often carries less sweetness on its label than the palate reports.",
+   "because": "The rule works the other way round. Under EU Reg. 2019/33 Annex III Part B, dry can go up to 9 g/L when total acidity is no more than 2 g/L below the sugar, and medium dry up to 18 g/L when acidity is no more than 10 g/L below. The explanation itself says the reason is that high acidity makes the wine taste drier. So the label word and the palate agree. The measurement that shows more sugar than the label word suggests is the lab analysis, not the palate. As written, the sentence tells a candidate that acidity makes these wines taste sweeter than their label, which is backwards.",
+   "sources": [
+    "EU Commission Delegated Regulation (EU) 2019/33, Annex III Part B (sugar-content terms for products other than sparkling wine)",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0033"
+   ],
+   "fix": "...which is why high-acid Chenin so often carries less sweetness on its label than a lab analysis would suggest, while tasting just as dry as the label says.",
+   "batch": 254,
+   "verdict": "confirmed",
+   "verifyReason": "The question's key (option 2, acidity within two grams of the sugar) is right, and so are the numbers in the explanation. Reg. (EU) 2019/33 Annex III Part B says dry means up to 4 g/L, or up to 9 g/L when total acidity (as tartaric acid) is no more than 2 g/L below the residual sugar. Medium dry means up to 12 g/L, or up to 18 g/L when total acidity is no more than 10 g/L below the sugar. The last clause is the problem. It says high-acid Chenin carries less sweetness on its label \"than the palate reports\". That clashes with the explanation's own reason for the rule, which is that high acidity makes the wine taste drier. When acid masks sugar, the label word and the palate agree. The gap is between the label word and the measured sugar. As written, the clause tells a candidate that these wines taste sweeter than their label, which is backwards. The examiner's fix, pointing to the lab analysis instead of the palate, is correct.",
+   "verifySources": [
+    "https://www.legislation.gov.uk/eur/2019/33/annex/III (Reg. (EU) 2019/33 Annex III Part B: definitions of dry and medium dry, including the acidity conditions)",
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0033 (the EUR-Lex HTML version could not be fetched, so this was not opened; the legislation.gov.uk copy of the same annex was used)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-254.json (question c-lhlvmye7, lines 258-269)"
+   ],
+   "finalFix": "...which is why high-acid Chenin so often carries less sweetness on its label than a lab analysis would suggest, while tasting just as dry as the label says.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-lhlvmye7",
+    "cat": "Sweet Wines",
+    "q": "Nine grams of sugar sit in a still white that legally wears the word sec. What bought it the room above the usual four-gram line?",
+    "opts": [
+     "Bottling done before the current rule took effect",
+     "A vintage the authorities declared hot enough for a broader band",
+     "Acidity high enough to come within two grams of the sugar",
+     "Alcohol above thirteen percent, which reads dry"
+    ],
+    "a": 2,
+    "exp": "Balance is the point of the concession: the band stretches to nine grams when total acidity trails the sugar by no more than two grams per litre, because nine against seven of tartaric tastes drier than five against three. A parallel clause with a looser test, total acidity no more than ten grams below the sugar, stretches demi-sec from twelve grams to eighteen, which is why high-acid Chenin so often carries less sweetness on its label than the palate reports."
+   }
+  },
+  {
+   "id": "c-pt8hz6tw",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the sugar in a botrytis wine is a jam-sense preservative that denies microbes the water they need in the open bottle.",
+   "because": "That is false at wine sugar levels. A botrytis wine holds roughly 100 to 200 g/L of sugar, which is 10 to 20 percent. Jam and honey are 60 to 80 percent sugar, and it takes that much to push water activity below the thresholds that stop microbes (Wikipedia, Water activity: honey aw 0.5 to 0.7, most moulds stopped at 0.80). At the concentrations found in sweet wine, residual sugar feeds spoilage yeasts rather than starving them. Z. bailii grows faster at 10% glucose than at 1% and is most resistant to preservatives at 10 to 20% sugar, and wine is on its list of spoiled products. This is why sweet wines are prone to refermentation and are allowed, and routinely given, much more SO2 than dry wines. Wikipedia's Sulfite article: sweeter wines contain more sulfites than drier ones. An opened sweet wine lasts because the sugar masks early oxidation, helped by acidity, alcohol and its high sulphur dioxide. Osmotic starvation of microbes plays no part. The keyed answer (sugar) can stay.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zygosaccharomyces_bailii",
+    "https://en.wikipedia.org/wiki/Water_activity",
+    "https://en.wikipedia.org/wiki/Sulfite"
+   ],
+   "fix": "exp: \"The sugar's weight and richness mask the first flavour costs of oxidation, so the wine still tastes whole days after a dry white has gone flat and tired. Acidity keeps it lively, and the high sulphur dioxide that sweet wines carry (they need it because residual sugar is food for spoilage yeasts) slows oxidation further. The practical consequence is that sweet wine is among the safest by-the-glass categories in the building, holding days longer than anything dry.\"",
+   "batch": 255,
+   "verdict": "confirmed",
+   "verifyReason": "The question (c-pt8hz6tw, batch-255.json line 123) explains the long life of an open botrytis wine as sugar acting \"in the jam sense\", denying microbes the water they need. That mechanism is false at wine sugar levels. Sauternes or Tokaji at 100 to 200 g/L sugar has a water activity of about 0.97 to 0.98. That is far above the thresholds in the Water activity article (most moulds stopped at 0.80, the most tolerant bacteria at 0.86, nothing grows below 0.60). Honey reaches 0.5 to 0.7 only because it is about 80 percent sugar. At wine concentrations, sugar feeds spoilage yeasts rather than starving them. The Z. bailii article says its resistance to preservatives, sulphur dioxide included, peaks at 10 to 20 percent sugar, and calls it \"one of the main spoilers in wines\". That is why sweet wines are prone to refermentation and are allowed, and given, much more SO2 than dry wines. My web search budget was used up, so I did not open the EU additive limit text for this; the high-SO2 point rests on the examiner's Sulfite source and on standard knowledge.\n\nWhat really buys the time: the sugar hides the first signs of oxidation, and acidity, alcohol and the high SO2 do the protecting. The keyed answer (sugar) and the accept list stay correct. The examiner's replacement explanation is accurate and keeps the practical point.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Zygosaccharomyces_bailii",
+    "https://en.wikipedia.org/wiki/Water_activity",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-255.json"
+   ],
+   "finalFix": "The sugar's weight and richness mask the first flavour costs of oxidation, so the wine still tastes whole days after a dry white has gone flat and tired. Acidity keeps it lively, and the high sulphur dioxide that sweet wines carry (they need it because residual sugar is food for spoilage yeasts) slows oxidation further. The practical consequence is that sweet wine is among the safest by-the-glass categories in the building, holding days longer than anything dry.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-questions.js:QUESTIONS",
+    "id": "c-pt8hz6tw",
+    "cat": "Sweet Wines",
+    "q": "Recorked and refrigerated, a botrytis wine can pour honestly for a week or more after opening, long after a dry white would have faded. What in the wine buys that time?",
+    "sa": 1,
+    "accept": [
+     "sugar",
+     "its sugar",
+     "residual sugar",
+     "high sugar",
+     "sugar content",
+     "all that sugar",
+     "high residual sugar",
+     "sugar level",
+     "sweetness",
+     "its sweetness",
+     "residual sweetness"
+    ],
+    "ans": "Its sugar",
+    "exp": "Concentrated sugar is a preservative in the jam sense: it denies microbes the water they need to work in the open bottle, and with the wine's acidity behind it, the sweetness also masks the first flavour costs of oxidation. The practical consequence is that sweet wine is the safest by-the-glass category in the building, holding days longer than anything dry."
+   }
+  }
+ ]
+}

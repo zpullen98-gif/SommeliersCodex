@@ -1,0 +1,263 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-7uila2vu",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the solera's 'mathematical average age climbs indefinitely', and the accept list takes 'running wine down through the scales raises the average age indefinitely'.",
+   "because": "With a fixed fraction drawn each year, a solera's average age rises toward a limit (about 1 + K/α, where K is the number of scales and α the fraction moved) and levels off there. It does not keep rising. For example, a three-scale solera drawing a third a year settles at about five years.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Solera"
+   ],
+   "fix": "ans: replace 'the mathematical average age climbs indefinitely' with 'the average age rises toward a stable equilibrium set by the number of scales and the fraction drawn'; accept: remove 'running wine down through the scales raises the average age indefinitely'",
+   "batch": 179,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. I opened the question, m-7uila2vu in batch-179.json. Its model answer says \"the mathematical average age climbs indefinitely\", and accept[2] takes \"running wine down through the scales raises the average age indefinitely\". Both are false. When a solera draws a fixed fraction each year and refreshes the top scale with new wine, the average age rises only toward an equilibrium and never passes it.\n\nI checked this by working the system out as a steady state. A single scale drawing a fraction f each year settles where A = (1-f)(A+1), so A = (1-f)/f. With K scales, the average age at steady state is roughly K divided by the fraction drawn, plus one, depending on when in the year you measure. That is a limit, not unbounded growth.\n\nWikipedia's Solera article, which I opened, says the same: the average age \"asymptotically approaches ... (1 + K/α)\" and \"asymptotically converges on five years as the solera continues\". The traces of very old vintages never disappear, but they shrink exponentially and do not keep raising the mean. Cycling wine through the scales produces a stable average, not an ever-rising one.\n\nOne caution: the examiner's worked example, a three-scale solera drawing a third a year settling at about five years, does not check out. By my calculation that setup settles nearer nine years, so the five-year figure must come from a different setup. The fix does not use that number, so it still stands. It removes a false statement and a false accept entry. The other three accept entries still let a correct answer through.\n\nOutside this finding: the stem's premise that a sherry's \"average age can exceed the age of any barrel in it\", and accept[0], look questionable and may deserve their own review.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-179.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js",
+    "https://en.wikipedia.org/wiki/Solera"
+   ],
+   "finalFix": "ans: replace \"the mathematical average age climbs indefinitely\" with \"the average age rises toward a stable equilibrium set by the number of scales and the fraction drawn\"; accept: remove \"running wine down through the scales raises the average age indefinitely\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-7uila2vu",
+    "cat": "Spain",
+    "q": "Explain the criaderas y solera system, and why a sherry's average age can exceed the age of any barrel in it.",
+    "sa": 1,
+    "accept": [
+     "fractional blending through scales so the average age exceeds any single barrel",
+     "solera and criaderas refreshed in sequence by saca and rocio",
+     "running wine down through the scales raises the average age indefinitely",
+     "nothing is ever emptied so a trace of every vintage remains"
+    ],
+    "ans": "The wine is held in scales: the solera on the floor, the criaderas stacked above it in order of increasing youth. Wine for sale is drawn from the solera — the saca, and only a fraction of each butt is taken — that scale is topped up from the first criadera, which is topped up from the second, and so on to the youngest scale, which receives the new vintage, the rocío. Nothing is ever emptied, so every butt retains an exponentially decaying trace of every year that has ever entered it: the mathematical average age climbs indefinitely, while no barrel anywhere in the system holds unblended old wine. That fractional blending has three purposes — it erases vintage variation so the house style is reproducible, it keeps biological wines supplied with the fresh nutrients flor needs to survive, and it lets a small stock of very old wine season a much larger volume. Jerez requires a minimum of two years' ageing.",
+    "exp": "Two consequences to have ready: flor is a living organism that starves without refreshment, which is the practical reason finos are run so often; and consistency, not age, is the system's original commercial purpose — it was built to satisfy a shipping trade that wanted the same wine every year."
+   }
+  },
+  {
+   "id": "m-nqy0svcx",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the reform's recognition of unfortified wines 'legitimised the vino de pasto movement'. It also says vintage-dated wines may 'now' be labelled, and the accept list takes 'vino de pasto was legalised'.",
+   "because": "The reform removed compulsory fortification only for wines that reach the DO's minimum strength naturally: 15% for fino and manzanilla, 17% for oloroso and similar styles. The low-alcohol vino de pasto (Palomino table wine) is expressly left outside the DO and is being handled as a separate proposed DO ('Vino de Albariza'). The Consejo's own summary of the reform lists the ageing zone, the six varieties, pagos, Fino Viejo and sugar limits. It does not list vintage labelling as new.",
+   "sources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://www.sherrynotes.com/2021/background/new-regulations-do-jerez-xeres-sherry/",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do"
+   ],
+   "fix": "ans: 'Fortification stopped being compulsory for wines that reach the DO minimums naturally (15% for fino and manzanilla, 17% for oloroso), but low-alcohol vino de pasto remains outside the DO and is being pursued as a separate DO for albariza whites. Pago names may now be labelled when at least 85% of the grapes come from that pago.' (drop the vintage claim); accept: replace 'the triangle was opened up and vino de pasto was legalised' with 'the triangle was opened up and fortification was no longer compulsory'",
+   "batch": 179,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I could not refute the finding. The Consejo's own summary of the reform (sherry.wine, November 2022) says fortification is no longer compulsory only \"if the wines reach naturally the ABV required for each type (15% for finos and manzanillas, 17% for olorosos, etc.)\". Sherry Notes says the lower-strength table wines \"have been kept outside of the current negotiations\" and are now being handled as a separate D.O. Vino de Albariza. So the vino de pasto movement (Palomino whites at 11-13%) was not brought into the DO. The model answer's \"legitimised the vino de pasto movement\" is false, and so is the accept entry \"vino de pasto was legalised\".\n\nThe Consejo's list of changes is: ageing zone, no compulsory fortification, six pre-phylloxera varieties, pagos on labels, Jerez Superior, Fino Viejo and extended Manzanilla Pasada, sugar thresholds, and en rama. Vintage labelling is not on it, and añada sherries were sold long before the reform. So \"vintage-dated wines may now be labelled\" should come out, along with the fourth accept entry's \"vintage\".\n\nThe examiner's fix needs two corrections. First, both Sherry Notes and Spanish Wine Lover report that a 2025 amendment lowered the minimum for fino, manzanilla and pale cream to 14% (effective 25 August 2025), so a flat \"15%\" is already out of date. The safer wording is \"the minimum strength for each style\" plus the note about 14%. Second, the \"85% of the grapes from that pago\" figure is not in any source I opened, so I left it out. The rest of the model answer (the towns, the six varieties, pagos) matches the sources.",
+   "verifySources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://www.sherrynotes.com/2021/background/new-regulations-do-jerez-xeres-sherry/",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do"
+   ],
+   "finalFix": "ans: 'It reopened the region to its own history. The ageing zone had been confined to Jerez de la Frontera, El Puerto de Santa María and Sanlúcar (the famous triangle) and was extended across the wider production zone, so towns like Trebujena, Chipiona, Chiclana and Rota that had always grown grapes may now age wine under the DO. Fortification stopped being compulsory for wines that reach the minimum strength for their style naturally (then 15% for fino and manzanilla and 17% for oloroso; a 2025 amendment lowered fino, manzanilla and pale cream to 14%). The low-alcohol vino de pasto whites remain outside the DO and are being pursued as a separate DO, Vino de Albariza. Named pagos, the traditional delimited vineyard districts, may now appear on labels. And historic varieties beyond Palomino, Pedro Ximénez and Moscatel (Beba, Perruno, Vejeriego, Cañocazo and the two Mantúos) were restored to the permitted list. Taken together it converts a set of rules describing a 20th-century shipping business into rules describing a place.' accept: replace 'the triangle was opened up and vino de pasto was legalised' with 'the triangle was opened up and fortification was no longer compulsory'; replace 'brought vineyard identity vintage and old varieties back into the do' with 'brought vineyard identity and old varieties back into the do'; replace 'recognised unfortified pasto wines vineyard pago names and historic grapes' with 'recognised naturally strong unfortified wines vineyard pago names and historic grapes'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-nqy0svcx",
+    "cat": "Spain",
+    "q": "Explain what the recent reform of the Jerez DO changed.",
+    "sa": 1,
+    "accept": [
+     "the ageing zone was widened unfortified wines allowed and old varieties restored",
+     "the triangle was opened up and vino de pasto was legalised",
+     "recognised unfortified pasto wines vineyard pago names and historic grapes",
+     "brought vineyard identity vintage and old varieties back into the do"
+    ],
+    "ans": "It reopened the region to its own history. The ageing zone had been confined to Jerez de la Frontera, El Puerto de Santa María and Sanlúcar — the famous triangle — and was extended across the wider production zone, so towns like Trebujena, Chipiona, Chiclana and Rota that had always grown grapes may now age wine under the DO. Unfortified wines were recognised, which legitimised the vino de pasto movement that had been forced to sell its Palomino as table wine outside the appellation. Single-vineyard pago names and vintage-dated wines may now be labelled. And historic varieties beyond Palomino, Pedro Ximénez and Moscatel — among them Beba, Perruno, Vejeriego, Cañocazo and the Mantúos — were restored to the permitted list. Taken together it converts a set of rules describing a 20th-century shipping business into rules describing a place.",
+    "exp": "The trade-off is real: the DO gives up some brand control — a guarantee that sherry means fortified wine aged in three specific towns — in exchange for terroir language it needs to compete for attention. Equipo Navazos, Luis Pérez and Muchada-Léclapart had already proved the market existed outside the rules."
+   }
+  },
+  {
+   "id": "m-d1jdvtdf",
+   "kind": "outdated",
+   "claim": "The model answer says making generosos with no fortification is 'legally impossible in Jerez'.",
+   "because": "The Jerez-Xérès-Sherry pliego was amended so that fortification is no longer compulsory when the wine reaches the minimum strength naturally (15% for fino/manzanilla, 17% for oloroso). The Consejo announced the change in 2022, and EU approval took effect on 25 August 2025. Jerez can now legally release unfortified fino, amontillado, oloroso and palo cortado.",
+   "sources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do"
+   ],
+   "fix": "ans: replace 'which is legally impossible in Jerez' with 'which Jerez has only recently permitted (since the pliego reform took effect in 2022–2025), and only when its wines reach 15% naturally, which Palomino rarely does'",
+   "batch": 179,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds, and \"legally impossible in Jerez\" is now wrong. The Consejo Regulador's own page (21 Nov 2022) says the amended pliego makes adding alcohol optional when a wine reaches its type's minimum strength naturally: 15% for fino and manzanilla, 17% for oloroso. Before that, every sherry was a liqueur wine and fortification was mandatory. The same page says this was a major amendment that needed EU approval. Spanish Wine Lover reports the Commission approved it on 29 Jul 2025, in force 25 Aug 2025. Unfortified fino, manzanilla, amontillado, oloroso and palo cortado are now allowed, labelled simply as wine. Spanish press coverage supports this: Diario de Jerez (Nov 2023) called EU approval the \"penultimate hurdle\", and Diario de Sevilla (Feb 2025) reported Brussels approving the fino change. I could not open the Official Journal regulation itself (EUR-Lex would not load), so the exact dates rest on one secondary source. That does not affect the ruling, because the answer's claim is false under current rules either way. The examiner's fix needs two corrections. It says \"15% naturally\", but the threshold depends on the type (oloroso needs 17%). And \"took effect in 2022–2025\" blurs the dates: the Consejo approved the change in 2022 and EU approval took effect in 2025. So the contrast is now about practice, not law. Montilla does this routinely; in Jerez it is newly allowed and Palomino rarely gets there. The explanation's \"real point of difference\" still works as a statement about practice.",
+   "verifySources": [
+    "https://www.sherry.wine/recent-regulatory-changes",
+    "https://spanishwinelover.com/jerez-redefines-itself-end-of-compulsory-fortification-and-new-do",
+    "Diario de Jerez, 19 Nov 2023, 'El vino de Jerez no fortificado y el fin del fino de Sanlucar superan su penultimo escollo' (via Google News)",
+    "Diario de Sevilla, 10 Feb 2025, 'Bruselas aprueba por sorpresa la bajada de graduacion del vino Fino' (via Google News)"
+   ],
+   "finalFix": "ans: replace \"which is legally impossible in Jerez\" with \"which Jerez forbade until its pliego reform (approved by the Consejo in 2022, in force under EU approval since August 2025) and even now allows only when a wine reaches its type's minimum strength naturally (15% for fino, 17% for oloroso), which Palomino rarely does\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-d1jdvtdf",
+    "cat": "Spain",
+    "q": "Make the case for Montilla-Moriles as something more than a cheaper Jerez.",
+    "sa": 1,
+    "accept": [
+     "pedro ximenez based unfortified generosos aged in tinajas in cordoba",
+     "px ripens to fifteen percent so fortification is unnecessary",
+     "inland cordoba making unfortified finos and the greatest px",
+     "same solera system but px instead of palomino and no fortification"
+    ],
+    "ans": "It lies inland in Córdoba, hotter and far more continental than the coast, with albariza in its best sites — the Sierra de Montilla and Moriles Alto. Its grape is Pedro Ximénez, not Palomino, and it ripens to such sugar that the base wines reach around fifteen per cent alcohol naturally, so its generosos — fino, amontillado, oloroso — are traditionally made with no fortification at all, which is legally impossible in Jerez. It ferments in tinajas, the tall earthenware jars, it runs the same criaderas y solera system, and it makes the greatest Pedro Ximénez in Spain, having supplied Jerez with sweetening wine for generations. What it lacks is the Atlantic: without Sanlúcar's humidity and cool the flor grows thinner, so the finos are broader, nuttier and shorter-lived under flor than a manzanilla.",
+    "exp": "The unfortified generoso is the real point of difference and the easiest sell on a list: a fino that never saw spirit. Know also that the historic export of Montilla PX into Jerez has been progressively closed off, which is part of why the region now argues its own case."
+   }
+  },
+  {
+   "id": "m-0xtpo4wo",
+   "kind": "accept-list",
+   "claim": "The stem asks for three Armagnac grapes, but the accept entry 'baco 22a folle blanche' names only two. Because matchSA accepts an entry that appears as a phrase inside the answer, a candidate who writes just 'Baco 22A, Folle Blanche' is marked correct.",
+   "because": "matchSA in js/core.js marks an answer correct when the accept phrase appears as whole words inside it. An answer of exactly those two grapes contains the full entry, so it passes even though it names two of the three grapes the stem asks for. The fact itself is sound: the ten permitted grapes include Ugni Blanc, Baco 22A, Folle Blanche and Colombard.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA phrase-containment branch)",
+    "Armagnac AOC cahier des charges (ten authorised varieties incl. Ugni blanc, Baco 22A, Folle blanche, Colombard)"
+   ],
+   "fix": "accept: [\"ugni blanc baco folle blanche colombard\", \"baco 22a folle blanche ugni blanc\", \"baco 22a folle blanche colombard\", \"ugni blanc folle blanche colombard\"]",
+   "batch": 180,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The defect is real. I ran the live matchSA from js/core.js on this question. \"Baco 22A, Folle Blanche\" normalizes to exactly the second accept entry, so it is marked correct even though it names two grapes. The core-of-phrase branch also passes other partial answers such as \"blanc baco folle blanche\".\n\nThe examiner's fix does not solve it and adds new errors. With the proposed list:\n- \"Baco 22A, Folle Blanche\" still passes, because it is a 4-word whole-word core of the 6-word entry \"baco 22a folle blanche ugni blanc\" (4 is at least 60% of 6).\n- \"Folle Blanche, Colombard\" now passes too, again two grapes.\n- \"Ugni Blanc, Baco 22A, Folle Blanche\", a correct three-grape answer, is now refused.\n\nThe better fix uses strict entries (the '~' prefix). These allow only equality or full-phrase containment, never the partial-core branch. Tested with that list: every two-grape answer fails, and every three-grape answer in canonical order passes, with or without the \"22A\". The grape fact itself (Ugni Blanc, Baco 22A, Folle Blanche and Colombard are among the ten varieties allowed by the Armagnac AOC) is not disputed and does not affect this ruling. My web-search budget was used up, so the ruling rests on running the grader. The exact model answer still grades on its own, through the q.ans equality check.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA lines 49-98: exact, '~' strict, containment, 60% core and substring branches; run in a node harness against current, proposed and strict lists)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-180.json (m-0xtpo4wo)",
+    "Armagnac AOC cahier des charges (ten authorised varieties incl. Ugni blanc, Baco 22A, Folle blanche, Colombard), as cited by the examiner; not re-opened, because the web-search budget was used up"
+   ],
+   "finalFix": "accept: [\"~ugni blanc baco 22a folle blanche colombard\", \"~ugni blanc baco folle blanche colombard\", \"~ugni blanc baco 22a folle blanche\", \"~ugni blanc baco folle blanche\", \"~ugni blanc folle blanche colombard\", \"~ugni blanc baco 22a colombard\", \"~ugni blanc baco colombard\", \"~baco 22a folle blanche colombard\", \"~baco folle blanche colombard\"]",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-0xtpo4wo",
+    "cat": "Spirits & Cocktails",
+    "q": "Armagnac's grape roster (name three).",
+    "sa": 1,
+    "accept": [
+     "ugni blanc baco folle blanche colombard",
+     "baco 22a folle blanche"
+    ],
+    "ans": "Ugni Blanc, Baco 22A (the hybrid exception), Folle Blanche, Colombard",
+    "exp": "Baco is the only hybrid in a French AOC spirit — pure exam gold."
+   }
+  },
+  {
+   "id": "m-bvvtanrk",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the 1855 classification, 'like the Médoc list it stands today exactly as drawn', and the first accept entry calls it 'unchanged since 1855'.",
+   "because": "The Médoc list has not stood exactly as drawn. Cantemerle was added in 1856, and Mouton Rothschild was promoted from Second to First Growth in 1973, the best-known fact about the classification. The Sauternes list itself has changed through subdivisions: 9 original Premiers Crus are now 11, and 11 original Deuxièmes are now 15. The answer admits this in its own opening sentence. A candidate who says 'unchanged since 1855' in an oral will be corrected.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855",
+    "https://www.vinfolio.com/editorial/your-guide-to-the-1855-classification",
+    "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Mouton_Rothschild"
+   ],
+   "fix": "In the answer, replace 'and like the Médoc list it stands today exactly as drawn' with 'and apart from the subdivision of estates it has never been revised (the Médoc list, by contrast, admitted Cantemerle in 1856 and promoted Mouton Rothschild in 1973)'. In the accept list, replace 'yquem alone as premier cru superieur then eleven firsts and fifteen seconds unchanged since 1855' with 'yquem alone as premier cru superieur then eleven firsts and fifteen seconds'.",
+   "batch": 182,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The model answer says the Sauternes list, \"like the Médoc list\", stands \"exactly as drawn\". That is false for the Médoc. Wikipedia's article on the 1855 classification, which I opened, lists two formal changes: Cantemerle was added as a Fifth Growth in 1856, and Mouton Rothschild was raised from Second to First Growth in 1973. It also notes the lesser-known disappearance of Château Dubignon. The Sauternes list has never been formally revised, but its membership has moved. The original 1855 list had Yquem plus 9 Premiers Crus and 11 Deuxièmes. Estates split later (Rabaud, Peyraguey, Doisy and others), which is why there are now 11 and 15, and the answer's own opening sentence admits this. The accept entry \"unchanged since 1855\" repeats the error. The examiner's fix is almost right, but its caveat \"apart from the subdivision of estates\" leaves out that estates also merged: Pexoto was absorbed into the Rabaud estate. My fix says \"division and merging\" instead. The rest of the answer checks out: Barsac is one of the five Sauternes communes, holds its own AOC and may label as either, and Climens and Coutet are Barsac Premiers Crus.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855"
+   ],
+   "finalFix": "In the answer, replace 'and like the Médoc list it stands today exactly as drawn' with 'and apart from the division and merging of estates it has never been revised (the Médoc list, by contrast, admitted Cantemerle in 1856 and promoted Mouton Rothschild to First Growth in 1973)'. In the accept list, replace 'yquem alone as premier cru superieur then eleven firsts and fifteen seconds unchanged since 1855' with 'yquem alone as premier cru superieur then eleven firsts and fifteen seconds'.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-bvvtanrk",
+    "cat": "Sweet Wines",
+    "q": "Set out the 1855 Sauternes classification and explain the Barsac wrinkle.",
+    "sa": 1,
+    "accept": [
+     "yquem alone as premier cru superieur then eleven firsts and fifteen seconds unchanged since 1855",
+     "one superior first growth then first and second growths from 1855",
+     "barsac estates may label as barsac or sauternes",
+     "climens and coutet are classified barsac properties"
+    ],
+    "ans": "One Premier Cru Supérieur standing alone — Château d'Yquem — then, after a century and a half of divisions among the original properties, eleven Premiers Crus, including Climens, Coutet, Suduiraut, Guiraud, Rieussec, La Tour Blanche, Lafaurie-Peyraguey, Clos Haut-Peyraguey, Rabaud-Promis, Sigalas-Rabaud and Rayne Vigneau, and fifteen Deuxièmes Crus. It was drawn up alongside the Médoc reds for the 1855 Exposition, on the basis of the prices the wines had been fetching, and like the Médoc list it stands today exactly as drawn. The wrinkle: Barsac is one of the five communes entitled to the Sauternes appellation but also holds its own, so a Barsac estate may label its wine either Barsac or Sauternes as it chooses. Climens and Coutet are classified properties sitting in Barsac, on flatter ground with more limestone beneath, which is the usual explanation for Barsac's comparatively lighter, more incisive style.",
+    "exp": "Sweet Bordeaux is classified territory and the structure is examinable in itself; the Barsac dual-labelling right is the part candidates fumble. Be ready to add that the classification is a price list from 1855 and predicts quality today only loosely — Yquem's position, however, has stood unchallenged throughout."
+   }
+  },
+  {
+   "id": "m-zonewzhb",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer says that besides tartaric, \"malic, lactic and citric are also permitted\" for acidification, with citric held to 1 g/L. The explanation adds that lactic acid \"barely moves pH at all\".",
+   "because": "Under Annex VIII Part I Section C of Reg. (EU) 1308/2013, supplemented by Reg. (EU) 2019/934, three acids are authorised for acidifying musts and wines: L(+) tartaric, malic (L or DL) and DL-lactic. Citric acid is not an acidifying agent under EU law. Its 1 g/L ceiling is a limit on its use as a stabiliser (against iron casse). The same Laffort regulatory sheet gives the maximum dose as 4 g/L as tartaric (53.3 meq/L), which agrees with the answer, and it rates lactic's effect on pH (++) the same as malic's, below tartaric (+++). So lactic does move pH, only less efficiently than tartaric. A student who names citric as an EU acidifier would be marked wrong. The answer's zone split (A and B deacidify, C acidifies) comes from the pre-2021 text, and the 4 g/L single ceiling it quotes comes from the later amended text. That point is left for separate checking because the amended EUR-Lex text could not be opened.",
+   "sources": [
+    "https://laffort.com/wp-content/uploads/Protocols/PCOL_EN_Acidification.pdf (LAFFORT Protocol, Tools for acidification in musts and wines, 17.05.23: 'Three acids are authorised... tartaric, malic, lactic'; regulatory standpoint citing Annex VIII Part I Section C of 1308/2013 and 2019/934)",
+    "https://www.legislation.gov.uk/eur/2013/1308/annex/VIII/2013-12-17 (original Annex VIII Part I Section C, with zones and limits)"
+   ],
+   "fix": "Model answer: \"Acidification normally means adding tartaric acid (L-malic, DL-malic and lactic are also authorised; citric acid is not an EU acidifier and is permitted only as a stabiliser, up to 1 g/L), up to a maximum of 4 g/L expressed as tartaric.\" In the explanation, replace \"and lactic barely moves pH at all\" with \"and lactic, a weaker monoacid, lowers pH less efficiently than tartaric\".",
+   "batch": 184,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds on the main point, which is the one that matters. Reg. (EU) 2019/934 Annex I, Part A, Table 2, Section 1 lists the acidity regulators as rows 1.1 to 1.9. Tartaric acid L(+), malic acid (D,L and L) and lactic acid are the only acids there; the rest are potassium tartrate, potassium bicarbonate, calcium carbonate, calcium tartrate, calcium sulphate and potassium carbonate. Citric acid is not in that section. It appears only in Section 6, 'Stabilising agents', as row 6.3 (E 330), with a limit of 1 g/l in the finished wine. The current legislation.gov.uk version does show a row 1.10 'Citric acid' among the acidity regulators, but it is marked (England) (Wales) (Scotland). That row is a post-Brexit UK amendment, not EU law. The question explicitly asks about EU law, so a model answer that lists citric as an EU acidifier with a 1 g/L ceiling mixes up the stabiliser limit with acidification. The 4 g/L tartaric maximum in the answer is correct. On lactic acid: it is a weaker monoacid (pKa about 3.86, against about 3.0 for tartaric's first dissociation), so it lowers pH less efficiently than tartaric. It is still an authorised acidifier and does lower pH, so 'barely moves pH at all' overstates the case. I did not independently re-verify the Laffort pH ratings (the PDF would not render), but the chemistry supports the examiner's correction. The accept list does not mention citric, so no accept-list change is needed.",
+   "verifySources": [
+    "https://www.legislation.gov.uk/eur/2019/934/annex/I/adopted (Reg. 2019/934 Annex I Part A Table 2 as adopted: acidity regulators 1.1-1.9 = tartaric, malic, lactic, K tartrate, K bicarbonate, Ca carbonate, Ca tartrate, Ca sulphate, K carbonate; citric acid only at 6.3 stabilising agents, max 1 g/l)",
+    "https://www.legislation.gov.uk/eur/2019/934/annex/I (current UK-retained version: row 1.10 citric acid added as acidity regulator for England, Wales, Scotland only)",
+    "https://laffort.com/wp-content/uploads/Protocols/PCOL_EN_Acidification.pdf (opened; PDF text not extractable)"
+   ],
+   "finalFix": "Model answer: \"Acidification normally means adding tartaric acid (L-malic, DL-malic and lactic are also authorised; citric acid is not an EU acidifier and is permitted only as a stabiliser, up to 1 g/L), up to a maximum of 4 g/L expressed as tartaric.\" In the explanation, replace \"and lactic barely moves pH at all\" with \"and lactic, a weaker monoacid, lowers pH less efficiently than tartaric\".",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-zonewzhb",
+    "cat": "Viticulture & Winemaking",
+    "q": "Explain acidification and deacidification: the materials used, and how EU law rations them by wine zone.",
+    "sa": 1,
+    "accept": [
+     "tartaric acid up to 4 g/l calcium carbonate to deacidify the north enriches the south acidifies",
+     "add tartaric acid in warm zones deacidify in cool zones and enrichment excludes acidification in the same wine",
+     "enrichment and acidification of the same wine are forbidden",
+     "the eu wine zones decide who may chaptalize and who may acidify",
+     "zone a to zone c ladder with tartaric acid as the acidifier"
+    ],
+    "ans": "Acidification normally means adding tartaric acid — malic, lactic and citric are also permitted, citric constrained by a 1 g/L ceiling in the finished wine — up to a maximum of 4 g/L expressed as tartaric. Deacidification removes acid with calcium carbonate, potassium bicarbonate or potassium tartrate, capped at 1 g/L expressed as tartaric. The EU divides its vineyard into zones A through C: the cool north (A and B) gets the largest enrichment allowances and may deacidify, while the warm south (Zone C) may acidify — with exceptional-year derogations now blurring both edges. The governing principle is that enrichment and acidification of the same product are mutually exclusive: you may not add sugar and acid to the same wine.",
+    "exp": "Two things to say aloud. First the arithmetic of the ladder — enrichment ceilings fall as you go south, roughly 3% potential alcohol in Zone A, 2% in B and 1.5% in Zone C, because the law was written for a 1970s climate and assumed the south had sugar to spare. That assumption is what warming has broken, hence the pressure for acidification derogations in Zone B. Second, why tartaric is the acid of choice: it is the grape's own acid, microbially stable, and lowers pH efficiently, whereas malic feeds spoilage bacteria unless malolactic conversion is completed, and lactic barely moves pH at all."
+   }
+  },
+  {
+   "id": "m-zsrv9gk4",
+   "kind": "accept-list",
+   "claim": "The stem asks for the single campaign every merchant cites, but the accept list takes only 2010 wording and refuses 2011, which is the campaign most often cited as the en primeur flop.",
+   "because": "2011 Bordeaux was released at prices that then fell sharply, and it is routinely named as the failed campaign (Liv-ex's 'Pricing Bordeaux 2011'; Decanter's review of 20 years of Bordeaux hits and misses). Liv-ex also found that en primeur buyers lost money on every vintage since 2008 except 2012. The model answer's own 'the 2010-era campaigns' covers 2011, yet an answer of '2011' or 'Bordeaux 2011' is graded wrong. Also, the accept entry '2008 rebound examples' is not an answer to the question.",
+   "sources": [
+    "https://www.liv-ex.com/2012/03/pricing-bordeaux-2011/",
+    "https://www.decanter.com/learn/bordeaux-wine-investment-20-years-438877/"
+   ],
+   "fix": "Add to accept: \"~2011 vintage\", \"~2011 campaign\", \"~bordeaux 2011\", \"~2011 bordeaux\", \"~2011 en primeur\", \"~2010 and 2011\"; change ans to \"The 2010 and 2011 campaigns, wines later obtainable below their futures price, rewired buyer skepticism\".",
+   "batch": 185,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The accept-list defect is real. The model answer is \"the 2010-era campaigns\", but under matchSA in C:/Users/zpull/SommeliersCodex/js/core.js every year-bearing accept entry is a tilde phrase (\"~2010 vintage\", \"~bordeaux 2010\" and so on), so \"2011\", \"2011 vintage\" and \"Bordeaux 2011\" all grade wrong. The bare \"2010\" also grades wrong, because the only untilded entry fails the length and word-coverage rules on a 4-character input. On the facts: Wikipedia's En primeur article says the record 2009 and 2010 release prices, and the failure to bring prices down over the next two years (2011 and 2012), \"effectively killed demand\", and that buyers of the 2009s and 2010s faced losses for four years afterwards. So a campaign of 2011 falls squarely inside \"the 2010-era campaigns\" and is a plainly right answer. I could not open either of the examiner's sources: the Liv-ex URL returns 404, and the Decanter page came back truncated. The core claim stands on the Wikipedia passage and the model answer's own wording. The examiner's fix is right in direction but leaves out the bare years. It also keeps the junk entry \"2010 pricing 2008 rebound examples\", which is not an answer to the question. It is harmless under the grader but should go. The stem (\"which campaign every merchant cites\") is loose, so the key should accept the whole 2010-to-2011 window.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/En_primeur",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, norm)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-185.json",
+    "https://www.liv-ex.com/2012/03/pricing-bordeaux-2011/ (404 when opened)",
+    "https://www.decanter.com/learn/bordeaux-wine-investment-20-years-438877/ (truncated when opened)"
+   ],
+   "finalFix": "\"q\": \"'En primeur washout' risk was proven by which Bordeaux campaigns, the ones merchants still cite?\", \"accept\": [\"overpriced 2010s cheaper on release\", \"~2010\", \"~2011\", \"~2010 era\", \"~2010 campaign\", \"~2010 campaigns\", \"~2010 en primeur\", \"~2010 vintage\", \"~bordeaux 2010\", \"~2010 bordeaux\", \"~2011 campaign\", \"~2011 vintage\", \"~2011 en primeur\", \"~bordeaux 2011\", \"~2011 bordeaux\", \"~2010 and 2011\", \"~2010 11\", \"~2010 2011\"], \"ans\": \"The 2010 and 2011 campaigns, wines later obtainable below their futures price, rewired buyer skepticism\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-zsrv9gk4",
+    "cat": "Wine Trade & Aging",
+    "q": "'En primeur washout' risk was proven by which campaign example every merchant cites?",
+    "sa": 1,
+    "accept": [
+     "2010 pricing 2008 rebound examples",
+     "overpriced 2010s cheaper on release",
+     "~2010 era",
+     "~2010 campaign",
+     "~2010 campaigns",
+     "~2010 en primeur",
+     "~2010 vintage",
+     "~bordeaux 2010",
+     "~2010 bordeaux"
+    ],
+    "ans": "The 2010-era campaigns — wines later obtainable below futures price — rewired buyer skepticism",
+    "exp": "Answer with the mechanism; specific châteaux optional diplomacy."
+   }
+  }
+ ]
+}

@@ -1,0 +1,182 @@
+{
+ "file": "rewrite/categories/r1_producers_icons.py",
+ "findings": [
+  {
+   "id": "i-abrgf0ao",
+   "kind": "wrong-explanation",
+   "claim": "Stem: \"one family that has farmed the hill of Hermitage since the fifteenth century\"; explanation: \"none of them can show vines held by one family for five centuries.\"",
+   "because": "The Chave family's 1481 origin is a hillside at Lemps on the west bank, north of Mauves. That is Saint-Joseph country, not the hill of Hermitage. The family bought its first Hermitage parcels in 1865, during the phylloxera years. They have grown vines in the Rhône for five centuries, but they have held Hermitage for about 160 years. The keyed answer (Chave) is still the only right option; the fact given to reach it is false.",
+   "sources": [
+    "https://grandcruselections.com/domaine-jeanlouis-chave",
+    "https://www.erwineshop.com/producer-portraits/domaine-jean-louis-chave"
+   ],
+   "fix": "Stem: \"Rather than bottle its parcels separately, a family that has grown vines in the Rhône since 1481, and on the hill of Hermitage since 1865, assembles fruit from right across the hill into a single red each year. Which domaine?\" Last sentence of the explanation: \"The negociant houses of the hill assemble across the slope as well, but none of them is a single family that has grown vines in the valley since 1481.\"",
+   "batch": 4,
+   "verdict": "confirmed",
+   "verifyReason": "I could not refute the finding. Several sources agree on the history. The Chave line is documented to 1481, when Charles Chave was granted a hillside at Lemps, near Mauves on the west (Saint-Joseph) bank. The family bought its first parcels on the hill of Hermitage in 1865, around the time of phylloxera. Grand Cru Selections, the domaine's importer, says so directly: the family acquired its first parcels on the hill of Hermitage in 1865. The stem says the family has \"farmed the hill of Hermitage since the fifteenth century\", and the explanation says it holds \"vines held by one family for five centuries\". Both are false for Hermitage. The family has held vines in the Rhône for five centuries, but on the hill for about 160 years. The key is still right: Chave's single Hermitage rouge, blended from Bessards, Méal, L'Hermite and other lieux-dits, is the only fitting option. Vieux Télégraphe and Rayas are in Châteauneuf, and Jaboulet is a négociant house, not a centuries-old family on the hill. The examiner's fix is accurate. It keeps the clue unique and states the dates correctly.",
+   "verifySources": [
+    "https://grandcruselections.com/domaine-jeanlouis-chave",
+    "https://www.erwineshop.com/producer-portraits/domaine-jean-louis-chave",
+    "https://sommselect.com/blogs/tasting-notes/domaine-jean-louis-chave",
+    "https://www.decanter.com/learn/wine-legend-jl-chave-cathelin-ermitage-1990-297936/"
+   ],
+   "finalFix": "Stem: \"Rather than bottle its parcels separately, a family that has grown vines in the Rhône since 1481, and on the hill of Hermitage since 1865, assembles fruit from right across the hill into a single red each year. Which domaine?\" Replace the last sentence of the explanation with: \"The negociant houses of the hill assemble across the slope as well, but none of them is a single family that has grown vines in the valley since 1481.\" Key unchanged (index 2, Domaine Jean-Louis Chave).",
+   "source": "pilot",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-abrgf0ao",
+    "cat": "Producers & Icons",
+    "q": "Rather than bottle its parcels separately, one family that has farmed the hill of Hermitage since the fifteenth century assembles fruit from right across it into a single red each year. Which domaine?",
+    "opts": [
+     "Domaine du Vieux Telegraphe",
+     "Chateau Rayas",
+     "Domaine Jean-Louis Chave",
+     "Paul Jaboulet Aine"
+    ],
+    "a": 2,
+    "exp": "The blend draws on Les Bessards, Le Meal, L'Hermite and other named sectors of the slope, and putting them together is treated as the whole art of the appellation, because each supplies something the others cannot. The negociant houses of the hill assemble across the slope as well, but none of them can show vines held by one family for five centuries."
+   }
+  },
+  {
+   "id": "i-1ta494cv",
+   "kind": "wrong-explanation",
+   "claim": "honours a customer who drank the house's wine devotedly from 1944 until his death",
+   "because": "The fact is in the stem, not an option. Churchill drank Pol Roger from 1908. His wine merchant's invoices that year record the 1895 vintage in bottles and half bottles. 1944 is when he met Odette Pol-Roger at the British Embassy party in Paris, which began the close friendship with the family, not when he began drinking the wine.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pol_Roger",
+    "https://winstonchurchill.org/old-site/learn/book-reviews/pol-roger/",
+    "https://www.majestic.co.uk/blog/majestic-news/pol-roger-champagne-and-winston-churchill-a-150-year-legacy"
+   ],
+   "fix": "Cuvee Sir Winston Churchill honours a customer who drank the house's wine from 1908 until his death and became a friend of the family after 1944. Which house bottles it?",
+   "batch": 106,
+   "verdict": "confirmed",
+   "verifyReason": "The key (Pol Roger) is right, but the stem's claim that Churchill drank the house's wine \"from 1944\" is false. Wikipedia says Pol Roger was his favourite champagne \"since 1908\". The International Churchill Society review says he became a customer in 1908 and ordered a case of the 1895 vintage. 1944 (or the Duff Cooper lunch in November 1945) is when he met Odette Pol-Roger and the family friendship began, not when he started drinking the wine. A student would learn the wrong date. The examiner's fix is accurate: he drank it from 1908 and became a family friend in the mid-1940s, and it keeps Pol Roger as the only correct answer.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Pol_Roger",
+    "https://winstonchurchill.org/old-site/learn/book-reviews/pol-roger/",
+    "https://www.majestic.co.uk/blog/majestic-news/pol-roger-champagne-and-winston-churchill-a-150-year-legacy (search snippet: 1908 invoice for the 1895 vintage)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-106.json"
+   ],
+   "finalFix": "Cuvee Sir Winston Churchill honours a customer who drank the house's wine from 1908 until his death and became a friend of the family after 1944. Which house bottles it?",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-1ta494cv",
+    "cat": "Producers & Icons",
+    "q": "Cuvee Sir Winston Churchill honours a customer who drank the house's wine devotedly from 1944 until his death. Which house bottles it?",
+    "opts": [
+     "Charles Heidsieck",
+     "Pol Roger",
+     "Bollinger",
+     "Louis Roederer"
+    ],
+    "a": 1,
+    "exp": "It is released only in vintage years and only in bottle and magnum, never in half bottles. The style is deliberately Pinot-led and firm rather than delicate, which the house says answers what he actually liked to drink."
+   }
+  },
+  {
+   "id": "i-gbr6y31o",
+   "kind": "wrong-explanation",
+   "claim": "The building is a medieval hermitage above the terraces",
+   "because": "The chapel of Saint-Christophe on the Hermitage hill was built in 1864. A primitive chapel had stood there since about 1100, but the building on the label is nineteenth century. Paul Jaboulet Aine has owned it since 1919.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Chapelle_Saint-Christophe_de_Tain-l'Hermitage"
+   ],
+   "fix": "The chapel above the terraces was rebuilt in 1864 on the site of a medieval hermitage, and the house has owned it since 1919; its image goes on the label.",
+   "batch": 106,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The key is right: Paul Jaboulet Aîné makes Hermitage La Chapelle. The explanation is wrong, though, because it calls the building \"a medieval hermitage\". French Wikipedia says the present chapel was built in 1864. The Drôme department's heritage register says it was rebuilt in 1864, on the site of a first chapel from the Middle Ages (recorded around 1100). Several sources confirm Jaboulet has owned the chapel since 1919. The examiner's fix is essentially correct, but it only replaces the first sentence. It also says a \"medieval hermitage\" stood on the site, when the sources describe a medieval chapel and treat the hermit Sterimberg as legend. The better fix below is a complete replacement for exp, and it keeps the accurate second sentence.",
+   "verifySources": [
+    "https://fr.wikipedia.org/wiki/Chapelle_Saint-Christophe_de_Tain-l'Hermitage",
+    "https://cartepatrimoine.ladrome.fr/notice-1500",
+    "https://jaboulet.com/fr/our-history/",
+    "https://www.routard.com/fr/guide/france/ardeche-drome/drome/tain-l-hermitage/chapelle-saint-christophe"
+   ],
+   "finalFix": "The chapel of Saint-Christophe above the terraces was rebuilt in 1864 on the site of a medieval chapel; the house has owned it since 1919 and its image goes on the label. The wine is drawn from parcels across the whole slope and has long been the bottling against which the appellation is measured.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-gbr6y31o",
+    "cat": "Producers & Icons",
+    "q": "Hermitage La Chapelle takes its name from the small white chapel standing at the top of the hill. Which house bottles it?",
+    "opts": [
+     "Delas Freres",
+     "M. Chapoutier",
+     "Paul Jaboulet Aine",
+     "Domaine Jean-Louis Chave"
+    ],
+    "a": 2,
+    "exp": "The building is a medieval hermitage above the terraces and its image goes on the label. The wine is drawn from parcels across the whole slope and has long been the bottling against which the appellation is measured."
+   }
+  },
+  {
+   "id": "i-2kscg7k8",
+   "kind": "wrong-explanation",
+   "claim": "since the 2011 vintage, when the winery became the first in the United States to do it",
+   "because": "Ridge's own history says it began ingredient labels with the 2011 vintage and calls itself only 'one of the first California wineries' to do so. Paul Draper writes there that in 2008 a Santa Cruz Mountains neighbour had already put out wines with ingredients listed on the label, with federal approval. That neighbour was Bonny Doon (Randall Grahm), which disclosed winemaking inputs from about 2008-2009. Ridge was therefore not first in the United States.",
+   "sources": [
+    "https://www.ridgewine.com/about/news/ingredient-labeling-a-look-back-by-paul-draper/",
+    "https://www.ridgewine.com/about/explore/ingredient-labeling/"
+   ],
+   "fix": "since the 2011 vintage, making it one of the first wineries in California to list every ingredient on all its labels",
+   "batch": 108,
+   "verdict": "confirmed",
+   "verifyReason": "I reopened Ridge's own page. It says Ridge began listing ingredients \"with the vintage of 2011\" and calls Ridge only \"one of the first California wineries to list every ingredient used in making a wine on all its labels\". The same page says that in 2008 a Santa Cruz Mountains neighbour (Bonny Doon) had already released wines with ingredients listed on the labels, with federal approval. So the explanation's claim that Ridge was \"the first in the United States\" is false by the winery's own account. The keyed answer, Ridge, is still correct, and the proposed fix uses Ridge's own wording.",
+   "verifySources": [
+    "https://www.ridgewine.com/about/news/ingredient-labeling-a-look-back-by-paul-draper/",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-108.json"
+   ],
+   "finalFix": "since the 2011 vintage, making it one of the first wineries in California to list every ingredient on all its labels",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-2kscg7k8",
+    "cat": "Producers & Icons",
+    "q": "Back labels listing every ingredient used, at a time when American law required none of it, are the habit of which Santa Cruz Mountains winery?",
+    "opts": [
+     "Heitz Cellar",
+     "Ridge Vineyards",
+     "Rhys Vineyards",
+     "Mount Eden Vineyards"
+    ],
+    "a": 1,
+    "exp": "Grapes, yeast, oak and every addition have been printed on the label since the 2011 vintage, when the winery became the first in the United States to do it, and it treats the practice as a matter of principle rather than marketing. Its Monte Bello Cabernet comes from a ridge-top vineyard above the fog line, and it also made a name for old-vine Zinfandel."
+   }
+  },
+  {
+   "id": "i-ojr8uz8e",
+   "kind": "wrong-explanation",
+   "claim": "the longest-running of Chile's icon Cabernets (stem); Chile's whole icon category began with it, and every other major producer answered within a decade (explanation)",
+   "because": "Errázuriz's Don Maximiano Founder's Reserve, a Cabernet-led icon, has a first vintage in 1983 or 1984 by different accounts (World of Fine Wine tasted the 1984 as the first vintage). Either way it came before Don Melchor's 1987. World of Fine Wine dates Chile's first luxury wines to the 1980s and credits Chadwick's Don Maximiano Founder's Reserve, alongside Don Melchor and Casa Real. Don Melchor did not start the category alone, and it is not the longest-running. Errázuriz is also one of the options, which makes the false framing worse. The key (Concha y Toro) stands.",
+   "sources": [
+    "https://worldoffinewine.com/tasting-notes/fine-chilean-red-wines-errazuriz",
+    "https://www.decanter.com/premium/vina-errazuriz-150th-anniversary-tasting-of-don-maximiano-450423/"
+   ],
+   "fix": "Stem: 'Don Melchor, first bottled in 1987 from a single estate in Puente Alto and one of Chile's first icon Cabernets, belongs to which producer?' Explanation: replace the last sentence with 'With Errázuriz's Don Maximiano and Santa Rita's Casa Real, it led the first generation of Chilean icon reds.'",
+   "batch": 108,
+   "verdict": "confirmed",
+   "verifyReason": "The key, Concha y Toro, is correct, and so is \"first bottled in 1987\". The framing is wrong, though. Errázuriz's Don Maximiano Founder's Reserve, a Cabernet-based icon, predates Don Melchor. Robert Parker lists a 1983 vintage, Falstaff and World of Fine Wine list 1984, and either date comes before 1987. So Don Melchor is not \"the longest-running of Chile's icon Cabernets\". It also did not start the whole category on its own. World of Fine Wine says Chile's first luxury wines appeared in the 1980s: Don Maximiano Founder's Reserve, Don Melchor and Santa Rita's Casa Real. Errázuriz is one of the answer options, so the false stem pushes the candidate away from a fact they need. The examiner's fix is accurate and supported by these sources.",
+   "verifySources": [
+    "https://worldoffinewine.com/tasting-notes/fine-chilean-red-wines-errazuriz",
+    "https://www.robertparker.com/wines/MmKjSTH3T33b3Xmou/errazuriz-don-maximiano-founder-s-reserve-1983",
+    "https://www.falstaff.com/en/wines/vina-errazuriz-1984-errazuriz-don-maximiano-founders-reserve"
+   ],
+   "finalFix": "Stem: 'Don Melchor, first bottled in 1987 from a single estate in Puente Alto and one of Chile's first icon Cabernets, belongs to which producer?' Explanation: 'It comes from one estate close to the Andes and is now made and cellared apart from the rest of the company's range, with its own team. With Errázuriz's Don Maximiano and Santa Rita's Casa Real, it led the first generation of Chilean icon reds.'",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-ojr8uz8e",
+    "cat": "Producers & Icons",
+    "q": "Don Melchor, first bottled in 1987 and the longest-running of Chile's icon Cabernets, belongs to which producer?",
+    "opts": [
+     "Errazuriz",
+     "Santa Rita",
+     "Undurraga",
+     "Concha y Toro"
+    ],
+    "a": 3,
+    "exp": "It comes from one estate close to the Andes and is now made and cellared apart from the rest of the company's range, with its own team. Chile's whole icon category began with it, and every other major producer answered within a decade."
+   }
+  }
+ ]
+}

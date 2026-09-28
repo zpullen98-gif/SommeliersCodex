@@ -1,0 +1,43 @@
+{
+ "file": "rewrite/categories/r1_south_america.py",
+ "findings": [
+  {
+   "id": "i-lftfxaqs",
+   "kind": "wrong-explanation",
+   "claim": "The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines.",
+   "because": "Vines came before the orchards or at the same time, not after. Humberto Canale was founded in 1909 and helped build Patagonian winemaking. Agrarian-history studies of the valley describe the 1910s as an alfalfa economy with small areas of vines and fruit trees, mixed alfalfa/vine/fruit farms, and alfalfa being replaced by vines, pears and apples by the mid-1920s. Apple and pear growing only became the valley's main business around 1930. The bank's own explanation for i-ue88uyhi also says some Rio Negro vines are a century old, which contradicts this sentence.",
+   "sources": [
+    "https://www.bodegahcanale.com/",
+    "https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1514-68712019000100157&lng=es&nrm=iso&tlng=es",
+    "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1405-22532022000200004",
+    "https://repositorio.inta.gob.ar/handle/20.500.12123/9674"
+   ],
+   "fix": "The Alto Valle del Rio Negro grew vines alongside alfalfa and fruit from the early 1900s, and later became better known for its apple and pear orchards.",
+   "batch": 123,
+   "verdict": "confirmed",
+   "verifyReason": "The claim in the explanation for i-lftfxaqs, that the Alto Valle was \"planted with fruit orchards before anyone planted vines,\" is false. It also contradicts the bank's own explanation for i-ue88uyhi, which says some Rio Negro vines are a century old. Humberto Canale's own site says the winery was founded in 1909 and helped build Patagonian winemaking. The agrarian-history paper on SciELO Argentina describes the valley's first cycle, from the 1900s to the 1930s, as an alfalfa economy with small areas of vines and fruit trees mixed in. Fruit growing took over only as alfalfa declined, from around 1930 to the late 1930s. Regional summaries also place large-scale viticulture in the late 19th and early 20th centuries, before the apple and pear boom. So the vines came before the orchards took over, or at the same time. The keyed answer (Rio Negro) and the wind and latitude sentences are sound. Only the first sentence needs replacing, and the examiner's wording is accurate.",
+   "verifySources": [
+    "https://www.bodegahcanale.com/",
+    "https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1514-68712019000100157&lng=es&nrm=iso&tlng=es",
+    "https://www.cellartours.com/argentina/wine-regions/rio-negro",
+    "https://www.welcomeargentina.com/generalroca/production-great-valley.html"
+   ],
+   "finalFix": "The Alto Valle del Rio Negro grew vines alongside alfalfa and fruit from the early 1900s, and later became better known for its apple and pear orchards.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-lftfxaqs",
+    "cat": "South America",
+    "q": "Constant wind, very low humidity and a long cool season along an irrigated river valley describe Argentina's southern vineyards. Which region?",
+    "opts": [
+     "Cafayate in Salta",
+     "Tulum in San Juan",
+     "Rio Negro in Patagonia",
+     "Chilecito in La Rioja"
+    ],
+    "a": 2,
+    "exp": "The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines. Wind thickens skins and holds disease down, and the latitude gives slow, even ripening."
+   }
+  }
+ ]
+}

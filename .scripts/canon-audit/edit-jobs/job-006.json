@@ -1,0 +1,299 @@
+{
+ "file": "js/data-advanced.js",
+ "findings": [
+  {
+   "id": "a-0lzn2s1n",
+   "kind": "outdated",
+   "claim": "Stem: 'Austria's vineyard classification is being written privately before it is written into law'; exp: 'The state's own contribution is the Riedenwein tier, which protects the site name but ranks nothing ... the law only guarantees that the name on the bottle is a real vineyard.'",
+   "because": "Since the Weinrecht-Sammelverordnung 2023 (August 2023, signed by Agriculture Minister Totschnig), Austrian wine law defines 'Erste Lage' and 'Große Lage'. It reserves both terms for DAC wines from officially classified Rieden, with lower maximum yields and hand harvest. Regional wine committees propose the classifications, and a site can become Große Lage no sooner than five years after Erste Lage. First statutory classifications were expected from the 2025 vintage. The ÖTW model was written into law, so the law now does rank sites and the claim that it ranks nothing is out of date.",
+   "sources": [
+    "https://wine-partners.at/en/news/otw-site-classification",
+    "https://steiermark.wine/grundlage-fuer-lagenklassifizierung-geschaffen/",
+    "https://www.gaultmillau.at/news/die-lagenklassifikation-wird-offiziell",
+    "https://www.traditionsweingueter.at/de/lagenklassifikation/"
+   ],
+   "fix": "Stem: 'Austria's private vineyard classifications preceded the legal one. Which association classified Erste Lage sites along the Danube, and which classifies Erste STK Ried and Grosse STK Ried in Styria?' Replace the last exp sentence with: 'Since the Weinrecht-Sammelverordnung 2023, the law itself provides Erste Lage and Große Lage tiers for DAC wines from officially classified Rieden, proposed by the regional wine committees on the ÖTW model (Große Lage no sooner than five years after Erste Lage; first statutory classifications from the 2025 vintage at the earliest).' Keep the ÖTW and STK answers.",
+   "batch": 9,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. The Weinrecht-Sammelverordnung 2023 added a chapter to Austrian labelling law that creates two legal site tiers, \"Erste Lage\" and \"Große Lage\". Both terms are reserved for DAC wines from officially classified Rieden, and only in regions whose DAC already has the three levels Gebietswein, Ortswein and Riedenwein. The classified wines need lower maximum yields and hand harvest. A Ried can become Große Lage no sooner than five years after it became Erste Lage. The Regional Wine Committee starts the process and the National Wine Committee approves it. So the explanation's line that the state's Riedenwein tier \"ranks nothing\" and that \"the law only guarantees that the name on the bottle is a real vineyard\" has been out of date since 2023. The keyed answers (ÖTW for the Danube, STK for Styria) are still correct. The original stem is still defensible, because as of the 2024 reporting no region had actually classified any site under the law. The private classifications are still the working ones, and the legal framework is only an offer to the regions. The examiner's fix needs one correction. It says the first statutory classifications come \"from the 2025 vintage at the earliest\", but the sources only say that no classifications were expected before 2025 (a calendar year, not a vintage). The fix should also say that the National Wine Committee gives final approval.",
+   "verifySources": [
+    "https://www.gaultmillau.at/news/die-lagenklassifikation-wird-offiziell",
+    "https://www.der-winzer.at/verband/leitartikel/2024/lagenklassifizierung.html",
+    "https://www.der-winzer.at/verband/leitartikel/2023/lagenklassifikation-tritt-in-kraft.html",
+    "https://www.vinaria.at/magazin/artikeldetailseite/gesetzliche-grundlage-fuer-lagenklassifikation-tritt-in-kraft",
+    "https://www.falstaff.com/at/news/gesetzliche-grundlage-fuer-ein-offizielles-landesweites-klassifikationssystem-geschaffen",
+    "https://steiermark.wine/grundlage-fuer-lagenklassifizierung-geschaffen/",
+    "https://www.traditionsweingueter.at/de/lagenklassifikation/"
+   ],
+   "finalFix": "Stem: \"Austria's vineyard classifications were written privately before the law made room for one. Which association classifies Erste Lage sites in the Danube regions, and which classifies Erste STK Ried and Grosse STK Ried in Styria?\" Keep the accepted answers (ÖTW, STK). Replace the exp from \"The state's own contribution...\" onward with: \"The Riedenwein tier on its own only protects the site name. Since the Weinrecht-Sammelverordnung 2023, however, the law provides two ranked tiers, Erste Lage and Große Lage. They are reserved for DAC wines from officially classified Rieden, and only in regions whose DAC has the Gebietswein, Ortswein and Riedenwein levels. They require lower yields and hand harvest. The Regional Wine Committee proposes the sites and the National Wine Committee approves them, and a Ried can become Große Lage no sooner than five years after it became Erste Lage. No statutory classification was expected before 2025, so in practice the working hierarchy is still the associations' own, largely on the ÖTW model.\"",
+   "source": "pilot",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-0lzn2s1n",
+    "cat": "Austria",
+    "q": "Austria's vineyard classification is being written privately before it is written into law. Which association classifies Erste Lage sites in the Danube regions, and which classifies Erste STK Ried and Grosse STK Ried in Styria?",
+    "sa": 1,
+    "accept": [
+     "otw osterreichische traditionsweinguter and stk steirische terroir und klassikweinguter",
+     "otw for the danube, stk for styria",
+     "osterreichische traditionsweinguter and the styrian stk growers",
+     "otw erste lage and stk steirische terroir klassikweinguter"
+    ],
+    "ans": "The ÖTW (Österreichische Traditionsweingüter) along the Danube, and the STK (Steirische Terroir- und Klassikweingüter) in Steiermark",
+    "exp": "Both are private growers' associations on the VDP model, not INAO-style law: ÖTW began classifying Erste Lage sites in Kamptal and Kremstal in 2010 and spread to Traisental, Wagram, Carnuntum and Wien, marking approved sites with its 1ÖTW logo; STK runs a pyramid rising to Grosse STK Ried. The state's own contribution is the Riedenwein tier, which protects the site name but ranks nothing — the takeaway is that in Austria the hierarchy of sites is association work, and the law only guarantees that the name on the bottle is a real vineyard."
+   }
+  },
+  {
+   "id": "a-i4v99uox",
+   "kind": "ambiguous-stem",
+   "claim": "Stem asks for 'one benchmark for bitter-orange Milanese style'; answer 'e.g., Ramazzotti/Averna (dark), Montenegro (floral), Campari the aperitivo pole' and accept list 'digestivo averna montenegro campari ramazzotti' / 'digestif bitter liqueur'",
+   "because": "Only Ramazzotti (first made in Milan in 1815) and Campari (Milan) are Milanese. Averna is made in Caltanissetta, Sicily (1868), and Montenegro in Bologna (1885). The keyed answer pairs Averna with Ramazzotti as if both were the Milanese benchmark. The accept list would credit Averna or Montenegro, or even a generic 'digestif bitter liqueur', as the Milanese benchmark the stem asks for.",
+   "sources": [
+    "https://it.wikipedia.org/wiki/Amaro_Ramazzotti",
+    "https://en.wikipedia.org/wiki/Amaro_Averna",
+    "https://saltandwind.com/introduction-italian-amaro-types/"
+   ],
+   "fix": "Answer: 'Digestivi (after-dinner bitters); the Milanese bitter-orange benchmark is Ramazzotti (Milan, 1815), with Campari the Milanese aperitivo pole. Averna (Sicily) and Montenegro (Bologna) are other styles.' Accept: 'digestivo ramazzotti', 'digestif ramazzotti', 'digestivo campari'. Remove averna and montenegro as answers to the Milanese part.",
+   "batch": 10,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The stem asks for \"one benchmark for bitter-orange Milanese style\". The model answer puts \"Ramazzotti/Averna (dark)\" side by side and names Montenegro as a second style, which tells the student that Averna and Montenegro are Milanese benchmarks. They are not. Averna has been made in Caltanissetta, Sicily, since 1868. Montenegro was first made in 1885 by Cobianchi in Bologna and is still produced at San Lazzaro di Savena, near Bologna. Ramazzotti is the real Milanese benchmark: it was first made in Milan in 1815, and its main botanicals include Sicilian orange peel, which fits the \"bitter-orange\" wording. Campari is a Milanese bitter, and its orange-driven profile makes it the aperitivo pole.\n\nThe accept list makes this worse. I checked the grader in core.js. Because of its whole-word and core-phrase rules, \"digestif bitter\" or \"digestif bitter liqueur\" gets full credit without naming any Milanese benchmark. \"averna montenegro campari\" also passes. So a student who answers the Milanese part wrongly still gets the mark.\n\nThe proposed fix is correct. The new answer string grades itself, because core.js line 72 always accepts the displayed answer. The accept phrases \"digestivo ramazzotti\" and \"digestif ramazzotti\" match as whole phrases. One small point, which does not change the ruling: \"digestivo campari\" is a slightly odd accept, because Campari is an aperitivo, not a digestivo. It is harmless, since Campari is Milanese and bitter-orange-led.",
+   "verifySources": [
+    "https://it.wikipedia.org/wiki/Amaro_Ramazzotti",
+    "https://en.wikipedia.org/wiki/Amaro_Averna",
+    "https://en.wikipedia.org/wiki/Amaro_Montenegro",
+    "C:/Users/zpull/SommeliersCodex/js/core.js (accept grading logic, lines 50-98)",
+    "C:/Users/zpull/AppData/Local/Temp/claude/C--Users-zpull--claude/ee375187-7803-4126-b577-0cdfe403a999/scratchpad/codex-audit/sample-10.json (a-i4v99uox)"
+   ],
+   "finalFix": "Answer: \"Digestivi (after-dinner bitters); the Milanese bitter-orange benchmark is Ramazzotti (Milan, 1815), with Campari the Milanese aperitivo pole. Averna (Sicily) and Montenegro (Bologna) are other styles.\" Accept: \"digestivo ramazzotti\", \"digestif ramazzotti\", \"digestivo campari\". Remove \"digestivo averna montenegro campari ramazzotti\" and \"digestif bitter liqueur\", so that neither Averna, Montenegro nor a generic answer earns credit for the Milanese part.",
+   "source": "pilot",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-i4v99uox",
+    "cat": "Spirits & Cocktails",
+    "q": "Amaro's role in the modern somm bar, and one benchmark for bitter-orange Milanese style:",
+    "sa": 1,
+    "accept": [
+     "digestivo averna montenegro campari ramazzotti",
+     "digestif bitter liqueur"
+    ],
+    "ans": "Digestivi; e.g., Ramazzotti/Averna (dark), Montenegro (floral), Campari the aperitivo pole",
+    "exp": "Fernet-Branca is the bartender's handshake."
+   }
+  },
+  {
+   "id": "a-0va1va21",
+   "kind": "outdated",
+   "claim": "De Vogüé also makes the only Musigny Blanc, currently declassified to Bourgogne Blanc while young vines mature.",
+   "because": "De Vogüé bottled its young-vine Musigny Chardonnay as Bourgogne Blanc from 1994 to 2014. With the 2015 vintage the vines were judged mature, and the wine went back on the label as Musigny Blanc Grand Cru, about 2,300 bottles released after 22 vintages away. It has been labelled grand cru ever since, so 'currently declassified' has been wrong for a decade.",
+   "sources": [
+    "https://www.idealwine.info/musigny-blanc/",
+    "https://www.wineberserkers.com/t/confirmed-musigny-blanc-grand-cru-is-back-for-the-2015-vintage/130451",
+    "https://www.burgundy-report.com/burgundy-report-extra/03-2017/a-visit-to-de-vogue/"
+   ],
+   "fix": "De Vogüé also makes the only Musigny Blanc. From 1994 to 2014 it was declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage.",
+   "batch": 11,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The keyed answer, Comte Georges de Vogüé, is correct; the problem is the explanation. iDealwine says 1993 was the last Musigny Blanc before the gap. The 1994 to 2014 vintages were sold as Bourgogne Blanc while the replanted vines matured, and 2015 was the first Musigny Blanc Grand Cru in 22 years. K&L Wines, Wine-Searcher and winehog list the 2015 and later vintages as Musigny Blanc Grand Cru. So \"currently declassified to Bourgogne Blanc\" has been out of date since the 2015 vintage, which was released around 2017. The examiner's fix gives the right years.",
+   "verifySources": [
+    "https://www.idealwine.info/musigny-blanc/",
+    "https://en.wikipedia.org/wiki/Musigny_AOC",
+    "https://www.wine-searcher.com/find/dom+comte+george+de+vogue+musigny+blanc+grand+cru+cote+nuit+le+chambolle+burgundy+france",
+    "https://winehog.org/domaine-comte-de-vogue-musigny-blanc-2015-33445/"
+   ],
+   "finalFix": "De Vogüé also makes the only Musigny Blanc. From 1994 to 2014 it was declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage.",
+   "source": "pilot",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-0va1va21",
+    "cat": "Burgundy",
+    "q": "Musigny grand cru is almost a monopole of which domaine, holding ~7.2 of its ~10.7 hectares?",
+    "sa": 1,
+    "accept": [
+     "comte georges de vogue",
+     "de vogue"
+    ],
+    "ans": "Domaine Comte Georges de Vogüé",
+    "exp": "De Vogüé also makes the only Musigny Blanc, currently declassified to Bourgogne Blanc while young vines mature."
+   }
+  },
+  {
+   "id": "a-3mg5x4zg",
+   "kind": "wrong-explanation",
+   "claim": "Hanzell planted Burgundian clones in 1953",
+   "because": "Hanzell's 1953 Chardonnay was the Wente clone, a California selection. The cuttings came through Stony Hill, which took them from Wente's Livermore vineyard in 1948. The Pinot Noir was the Martin Ray clone. What made Hanzell Burgundian was the winemaking: Brad Webb's small French oak barrels, induced malolactic and temperature-controlled stainless steel. The clones were not Burgundian.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hanzell_Vineyards",
+    "https://www.princeofpinot.com/article/131/",
+    "https://winereviewonline.com/hanzell-the-gold-standard-of-california-chardonnay/"
+   ],
+   "fix": "Hanzell (planted 1953) brought Burgundian winemaking to California, with small French oak barrels and induced malolactic, using Wente-clone Chardonnay by way of Stony Hill; the 'new California' movement circled back to them.",
+   "batch": 11,
+   "verdict": "confirmed",
+   "verifyReason": "The explanation says \"Hanzell planted Burgundian clones in 1953\", and that is wrong. Hanzell's 1953 Chardonnay was the Wente clone, a California heritage selection. It reached Hanzell through the McCreas' Stony Hill vineyard, which took its cuttings from Wente's Livermore vineyard in 1948. The Pinot Noir came from Martin Ray estate cuttings, now called the Mount Eden clone. Both vines were California selections. They were not clones brought in from Burgundy. The Mount Eden Pinot has a legend of a Burgundian ancestor, but that does not save the claim, and the Chardonnay, which is what this question is about, has no Burgundy link at all. What was Burgundian about Hanzell was its aim and its winemaking. James Zellerbach was among the first in California to use French oak barrels, and he paired them with temperature-controlled stainless-steel tanks. His winemaker Brad Webb is widely credited with inducing malolactic fermentation; I did not reopen a source for that point, but the fix does not depend on it. The keyed answer, the classicist restrained Chardonnay lineage, is not in dispute. Only the explanation needs correcting. The examiner's fix is accurate and matches the sources I opened.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Hanzell_Vineyards",
+    "https://www.princeofpinot.com/article/131/"
+   ],
+   "finalFix": "exp: \"Hanzell (planted 1953) brought Burgundian winemaking to California, with small French oak barrels and induced malolactic, using Wente-clone Chardonnay by way of Stony Hill; the 'new California' movement circled back to them.\"",
+   "source": "pilot",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-3mg5x4zg",
+    "cat": "California",
+    "q": "Hanzell, Stony Hill and Mayacamas represent which stylistic lineage?",
+    "sa": 1,
+    "accept": [
+     "old california restrained chardonnay",
+     "pre-modern mountain chardonnay",
+     "classic low-oak long-lived chardonnay"
+    ],
+    "ans": "California's classicist Chardonnay lineage — restrained, long-lived, lightly oaked",
+    "exp": "Hanzell planted Burgundian clones in 1953; the 'new California' movement circled back to them."
+   }
+  },
+  {
+   "id": "a-pyf6f91v",
+   "kind": "outdated",
+   "claim": "Keyed option \"55 hl/ha\" and explanation \"Alsace Grand Cru is set at 55 hl/ha\"",
+   "because": "The arrêté of 9 May 2022 (JORF 13 May 2022) amending the Alsace grand cru cahier des charges lowered the rendement for white grand cru wines from 55 to 50 hl/ha, and the rendement butoir from 66 to 60 hl/ha. Red is 40 hl/ha, SGN 40 hl/ha. The 2021 opposition draft shows 55 struck through for 50, and the 2024 consolidated text carries 50 and 60. Under current law the keyed answer is wrong and no option is right. It was correct only up to the 2021 vintage.",
+   "sources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000045792474",
+    "https://extranet.inao.gouv.fr/fichier/PNO-cdc-Alsacegrandcru-cn200617-210603-AG210706.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "fix": "Replace option index 1 \"55 hl/ha\" with \"50 hl/ha\" and keep a:1. In exp, change \"set at 55 hl/ha\" to \"set at 50 hl/ha (lowered from 55 by the arrêté of 9 May 2022; butoir 60)\" and change \"55 hl/ha is generous\" to \"50 hl/ha is generous\".",
+   "batch": 1,
+   "verdict": "confirmed",
+   "verifyReason": "The question keys \"55 hl/ha\" and the explanation says Alsace Grand Cru \"is set at 55 hl/ha\". That figure is out of date. The arrêté of 9 May 2022 changed section VIII of the cahier des charges for the 51 Alsace grand cru AOCs and set the yield for white wines at 50 hl/ha. I opened the Légifrance text: VT whites are also 50 and SGN is 40. The INAO cahier des charges from the 11 September 2024 procedure matches it: white 50, red 40, VT 50, SGN 40, butoir 60 for white and 48 for red, and a maximum production yield of 77. So 55 was the rule before 2022, and under current law no option is correct. The fix replaces option 1 with \"50 hl/ha\" and keeps a:1. The distractors stay wrong: 40 is the red and SGN figure, not the base yield, and 66 is the old butoir. The explanation edits are right too; the 80 hl/ha for regional white AOC Alsace is unchanged.",
+   "verifySources": [
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000045792474",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "finalFix": "Replace option index 1 \"55 hl/ha\" with \"50 hl/ha\" and keep a:1. In exp, change \"set at 55 hl/ha\" to \"set at 50 hl/ha (lowered from 55 by the arrêté of 9 May 2022; butoir 60)\" and change \"55 hl/ha is generous\" to \"50 hl/ha is generous\".",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-pyf6f91v",
+    "cat": "Alsace",
+    "q": "AOC Alsace Grand Cru caps yields well below the regional appellation. Its base yield is:",
+    "opts": [
+     "40 hl/ha",
+     "55 hl/ha",
+     "66 hl/ha",
+     "80 hl/ha"
+    ],
+    "a": 1,
+    "exp": "Alsace Grand Cru is set at 55 hl/ha, against 80 hl/ha for white AOC Alsace, with Vendanges Tardives and Sélection de Grains Nobles lower still. The number is worth carrying because it is the heart of the case against the system: 55 hl/ha is generous for a top tier, the serious growers work at half of it voluntarily, and the law does not oblige anyone to. A hierarchy that does not bite on yield is a hierarchy the market is entitled to distrust."
+   }
+  },
+  {
+   "id": "a-qe25zf0w",
+   "kind": "accept-list",
+   "claim": "accept entry \"riesling and muscat lower\"",
+   "because": "The app's own grader (js/core.js matchSA, the 'input is a whole-word core of the accept phrase' rule) marks the wrong answer \"Riesling and Muscat\" correct against this entry. I tested it: matchSA returns true for 'Riesling and Muscat'. The question asks which two varieties carry the HIGHER bar, and those are Gewurztraminer and Pinot Gris.",
+   "sources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "fix": "accept: [\"gewurztraminer and pinot gris\", \"gewurztraminer pinot gris\", \"gewurz pinot gris higher\", \"pinot gris and gewurztraminer\"] (drop \"riesling and muscat lower\")",
+   "batch": 1,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. I ran the real matchSA code from C:/Users/zpull/SommeliersCodex/js/core.js against question a-qe25zf0w (batch-001.json). With the current accept list, the wrong answer \"Riesling and Muscat\" grades as correct. The input has 3 words, and the accept entry \"riesling and muscat lower\" has 4. That meets the 60% threshold (ceil(4*0.6)=3), so the \"whole-word core of the accept phrase\" rule matches it. The current list also refuses \"Pinot Gris and Gewurztraminer\" and \"gewurztraminer pinot gris\". The key itself is right: the Alsace VT minimums are 15.3% potential alcohol (about 257 g/L) for Gewurztraminer and Pinot Gris and 14% (about 235 g/L) for Riesling and Muscat, so Gewurztraminer and Pinot Gris carry the higher bar. I tested the proposed list too. It refuses \"Riesling and Muscat\" and \"riesling muscat\", and it takes \"Gewurztraminer and Pinot Gris\", \"Pinot Gris and Gewurztraminer\", \"gewurztraminer pinot gris\" and \"Gewurztraminer & Pinot Gris\". The model answer still grades through the exact-equality path.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA, executed in node against the question)",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-001.json (a-qe25zf0w)",
+    "https://en.wikipedia.org/wiki/Vendange_tardive",
+    "https://www.vinsalsace.com/en/gouts-et-couleurs/aoc/vendanges-tardives/",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+   ],
+   "finalFix": "[\"gewurztraminer and pinot gris\", \"gewurztraminer pinot gris\", \"gewurz pinot gris higher\", \"pinot gris and gewurztraminer\"]",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-qe25zf0w",
+    "cat": "Alsace",
+    "q": "Vendanges Tardives minimum must weights are set per variety. Which two varieties carry the higher bar?",
+    "sa": 1,
+    "accept": [
+     "riesling and muscat lower",
+     "gewurztraminer and pinot gris",
+     "gewurz pinot gris higher"
+    ],
+    "ans": "Gewurztraminer and Pinot Gris (higher); Riesling and Muscat (lower)",
+    "exp": "VT: 235 g/L for Riesling and Muscat, 257 g/L for Gewurztraminer and Pinot Gris; SGN: 276 and 306 g/L respectively."
+   }
+  },
+  {
+   "id": "a-qe25zf0w",
+   "kind": "wrong-explanation",
+   "claim": "VT: 235 g/L for Riesling and Muscat, 257 g/L for Gewurztraminer and Pinot Gris",
+   "because": "The current Alsace grand cru cahier des charges sets these Vendanges Tardives minimums: 270 g/L (16%) for Gewurztraminer and Pinot Gris, and 244 g/L (14.5%) for Riesling and the Muscats. The 235/257 figures are the older 1984-era minimums. The 2016-modified text reproduced in the 2021 INAO opposition document already carries 270/244, and the 2024 text keeps them. The SGN figures of 306 and 276 are still correct.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-cdc-Alsacegrandcru-cn200617-210603-AG210706.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://www.thedrinksbusiness.com/2019/04/alsace-closer-than-ever-to-imposing-legal-sweetness-guides/"
+   ],
+   "fix": "VT: 244 g/L for Riesling and Muscat, 270 g/L for Gewurztraminer and Pinot Gris; SGN: 276 and 306 g/L respectively.",
+   "batch": 1,
+   "verdict": "confirmed",
+   "verifyReason": "Question a-qe25zf0w (batch-001) is keyed correctly: Gewurztraminer and Pinot Gris do carry the higher Vendanges Tardives bar. The fault is in the explanation, whose VT figures are out of date. It gives 235 g/L for Riesling and Muscat and 257 g/L for Gewurztraminer and Pinot Gris. Those were the old figures, still printed in the 2012 opposition text of the Alsace AOC cahier (PNOCDCAlsace.pdf, which I opened: 257 / 235, SGN 306 / 276). The arrêté of 20 June 2016 raised the VT minimums for Alsace AOC, and I checked two Alsace grand cru texts. The 2020/2021 opposition text sets VT at 270 g/L (16%) for Gewurztraminer and Pinot Gris and 244 g/L (14.5%) for the Muscats and Riesling, with SGN at 306 (18.2%) and 276 (16.4%). The 11 September 2024 text keeps the same figures. I extracted the text of both PDFs locally. The Légifrance page for the 2016 arrêté gives the same 270 / 244 / 306 / 276 values. The SGN figures in the explanation are still right; only the VT numbers are outdated, since 2016. The examiner's replacement text matches the law.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/PNO-cdc-Alsacegrandcru-cn200617-210603-AG210706.pdf",
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://extranet.inao.gouv.fr/fichier/PNOCDCAlsace.pdf",
+    "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000032791368"
+   ],
+   "finalFix": "VT: 244 g/L for Riesling and Muscat, 270 g/L for Gewurztraminer and Pinot Gris; SGN: 276 and 306 g/L respectively.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-qe25zf0w",
+    "cat": "Alsace",
+    "q": "Vendanges Tardives minimum must weights are set per variety. Which two varieties carry the higher bar?",
+    "sa": 1,
+    "accept": [
+     "riesling and muscat lower",
+     "gewurztraminer and pinot gris",
+     "gewurz pinot gris higher"
+    ],
+    "ans": "Gewurztraminer and Pinot Gris (higher); Riesling and Muscat (lower)",
+    "exp": "VT: 235 g/L for Riesling and Muscat, 257 g/L for Gewurztraminer and Pinot Gris; SGN: 276 and 306 g/L respectively."
+   }
+  },
+  {
+   "id": "a-98j4a9aj",
+   "kind": "ambiguous-stem",
+   "claim": "Alsace has a trio of grand crus permitted to grow non-noble white varieties by exception.",
+   "because": "Under the cahier des charges, Kaefferkopf may use only Gewurztraminer, Riesling, Pinot Gris and the Muscats, all noble, alone or blended. Its exception is blending, not non-noble grapes. Only Zotzenberg (Sylvaner) and Altenberg de Bergheim (Chasselas and Pinot Blanc as accessory varieties in blends, vines planted before 26 March 2005) admit non-noble whites. Read as written, the stem makes the accepted answer 'kaefferkopf' wrong. The model answer itself treats Kaefferkopf as a blend exception.",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "https://fr.wikipedia.org/wiki/Kaefferkopf"
+   ],
+   "fix": "Alsace has a trio of grand crus that bend the single-noble-variety rule by exception (Sylvaner, or field blends). Name any one.",
+   "batch": 1,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. I extracted the text of the Alsace grand cru cahier des charges (INAO, procédure nationale d'opposition, CNAOC of 11 Sept 2024), section V.1.\n\nKaefferkopf (V.1.d) is made either from a single one of gewurztraminer, pinot gris or riesling, or from a blend. In the blend, gewurztraminer is the principal variety, riesling the complementary one, and the accessory varieties are the three muscats and pinot gris. All of these are noble, and the historical section (line ~1999) confirms it.\n\nOnly two grand crus admit non-noble whites:\n- Zotzenberg (V.1.c) admits sylvaner as a single variety.\n- Altenberg de Bergheim (V.1.b) admits chasselas and pinot blanc as accessory varieties in blends, for vines planted before 26 March 2005.\n\nSo the stem, read as written (\"permitted to grow non-noble white varieties\"), makes the accepted answer \"kaefferkopf\" wrong, while the model answer itself treats Kaefferkopf as a blend exception. The trio is real only as \"exceptions to the single-noble-variety rule for white wine.\"\n\nThe examiner's fix is close but needs two changes:\n1. \"Field blends\" is not the legal term. The cahier speaks of an assemblage, with conformity judged across all of the grower's parcels, so \"blends\" is the accurate word.\n2. Red Pinot Noir grand crus (Hengst, Kirchberg de Barr, Vorbourg) also bend the noble-variety rule. The stem therefore has to say \"white\" or \"trio\" is ambiguous.\n\nThe accept list (zotzenberg, altenberg de bergheim, kaefferkopf) and the model answer are fine once the stem is fixed.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-004.json",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-001.json"
+   ],
+   "finalFix": "For white wine, Alsace has a trio of grand crus that are exceptions to the single-noble-variety rule: one admits Sylvaner, and two admit blends. Name any one.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-advanced.js:ADV_QUESTIONS",
+    "id": "a-98j4a9aj",
+    "cat": "Alsace",
+    "q": "Alsace has a trio of grand crus permitted to grow non-noble white varieties by exception. Name any one.",
+    "sa": 1,
+    "accept": [
+     "zotzenberg",
+     "altenberg de bergheim",
+     "kaefferkopf"
+    ],
+    "ans": "Zotzenberg (Sylvaner); Altenberg de Bergheim & Kaefferkopf (blends)",
+    "exp": "The noble-grape rule bends here — and separately, Pinot Noir now makes red Alsace Grand Cru at Hengst and Kirchberg de Barr (from 2022), joined by Vorbourg in 2024."
+   }
+  }
+ ]
+}

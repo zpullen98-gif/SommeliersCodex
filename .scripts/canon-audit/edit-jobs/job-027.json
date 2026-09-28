@@ -1,0 +1,79 @@
+{
+ "file": "rewrite/categories/r1_burgundy.py",
+ "findings": [
+  {
+   "id": "i-3de6pbe3",
+   "kind": "wrong-explanation",
+   "claim": "The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise",
+   "because": "Santenay is not the southern extremity of the Cote de Beaune. Maranges (Cheilly-, Dezize- and Sampigny-les-Maranges, its own village AOC since 1989) lies south-west of Santenay and is the southernmost appellation of the Cote de Beaune. Louis Latour and burgundywine.com both give Maranges as the southern tip. The keyed answer, the southern end, still stands.",
+   "sources": [
+    "https://www.louislatour.com/en/wines/67/maranges",
+    "https://www.burgundywine.com/blog/maranges-and-santenay/",
+    "https://en.wikipedia.org/wiki/C%C3%B4te_de_Beaune"
+   ],
+   "fix": "Toward the southern tip, with only Maranges beyond it before the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value.",
+   "batch": 63,
+   "verdict": "confirmed",
+   "verifyReason": "Question i-3de6pbe3 (batch 063) keys \"The southern end\" for Santenay, and that key is correct. The explanation's phrase \"The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise\" is false as stated. Maranges lies south-west of Santenay and is the southernmost appellation of the Cote de Beaune. It covers the three communes Cheilly-, Dezize- and Sampigny-les-Maranges, which sold their wine as Cote de Beaune-Villages until they got their own village AOC in May 1989. The slope only passes to the Cote Chalonnaise beyond Maranges. Louis Latour, burgundywine.com and Wine-Searcher all place Maranges at the southern tip, south-west of Santenay. Exams do ask which village is the southernmost in the Cote de Beaune, so a candidate who learned \"Santenay is the extremity\" would give the wrong answer. The fix keeps the correct key, puts Maranges where it belongs, and keeps the note on value.",
+   "verifySources": [
+    "https://www.louislatour.com/en/wines/67/maranges",
+    "https://www.burgundywine.com/appellations/maranges/",
+    "https://www.burgundywine.com/blog/maranges-and-santenay1/",
+    "https://www.wine-searcher.com/regions-maranges",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-063.json"
+   ],
+   "finalFix": "Toward the southern tip, with only Maranges beyond it before the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value.",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-3de6pbe3",
+    "cat": "Burgundy",
+    "q": "Santenay lies at which end of the Cote de Beaune?",
+    "opts": [
+     "It is not in the Cote de Beaune",
+     "The northern end",
+     "The southern end",
+     "The centre"
+    ],
+    "a": 2,
+    "exp": "The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value."
+   }
+  },
+  {
+   "id": "i-d32r25hi",
+   "kind": "wrong-explanation",
+   "claim": "Mercurey is predominantly red and the best known of the four village appellations there.",
+   "because": "The Cote Chalonnaise has five village appellations: Bouzeron, Rully, Mercurey, Givry and Montagny. Bouzeron has been a village AOC since the 1997/1998 change, and question i-fxjrv9gh in this same bank teaches it as one. The key (Mercurey, the largest) is correct.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/C%C3%B4te_Chalonnaise",
+    "https://www.le-bourguignon.fr/en/content/48-cote-chalonnaise"
+   ],
+   "fix": "Mercurey is predominantly red and the largest and best known of the five village appellations there (Bouzeron, Rully, Mercurey, Givry, Montagny).",
+   "batch": 64,
+   "verdict": "confirmed",
+   "verifyReason": "The key is right: Mercurey is the largest Chalonnaise village AOC and mostly red. The explanation is wrong, though. It says Mercurey is one of \"four village appellations\" there, but the Cote Chalonnaise has five: Bouzeron, Rully, Mercurey, Givry and Montagny. Bouzeron became a village AOC by the 1997 decree, in force from the 1998 vintage. The bank already teaches this in question i-fxjrv9gh (batch-064.json, line 186), which calls Bouzeron Burgundy's only village appellation for Aligote. So the two questions contradict each other. The web results I checked (Wikipedia on the Cote Chalonnaise, le-bourguignon.fr) list five villages and name Mercurey as the largest producer, nearly all red. The examiner's fix corrects the count and keeps the key.",
+   "verifySources": [
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-064.json (lines 144-155 and 186-197)",
+    "https://en.wikipedia.org/wiki/C%C3%B4te_Chalonnaise",
+    "https://www.le-bourguignon.fr/en/content/48-cote-chalonnaise",
+    "https://www.achalon.com/en/homepage-tourism/discovering-the-grand-chalon/on-the-burgundy-wine-trail/all-about-cote-chalonnaise-wines/cote-chalonnaise-and-maranges-appellations/"
+   ],
+   "finalFix": "Mercurey is predominantly red and the largest and best known of the five village appellations there (Bouzeron, Rully, Mercurey, Givry, Montagny).",
+   "source": "full-first",
+   "question": {
+    "bank": "data-intro.js:INTRO_QUESTIONS",
+    "id": "i-d32r25hi",
+    "cat": "Burgundy",
+    "q": "Rully, Givry and Montagny sit in the Cote Chalonnaise. Which neighbour outsizes them all?",
+    "opts": [
+     "Mercurey",
+     "Givry",
+     "Rully",
+     "Montagny"
+    ],
+    "a": 0,
+    "exp": "Mercurey is predominantly red and the best known of the four village appellations there."
+   }
+  }
+ ]
+}

@@ -1,0 +1,294 @@
+{
+ "file": "js/data-master.js",
+ "findings": [
+  {
+   "id": "m-ikmb0hw1",
+   "kind": "wrong-explanation",
+   "claim": "The model answer ranks Chaume Premier Cru below Bonnezeaux by concentration. It also says Quarts de Chaume has 'the region's highest must weight requirement at 298 g/L'.",
+   "because": "The Coteaux du Layon cahier des charges sets 272 g/L minimum grape sugar for Premier Cru Chaume and 323 g/L for Sélection de Grains Nobles. The Bonnezeaux cahier sets 238 g/L, amended to 255 g/L in the current draft. So Chaume is richer than Bonnezeaux, not poorer, and Coteaux du Layon SGN at 323 g/L is above Quarts de Chaume's 298 g/L. The first accept entry repeats the wrong order ('chaume premier cru then bonnezeaux and quarts de chaume').",
+   "sources": [
+    "https://extranet.inao.gouv.fr/fichier/PNOCDCCoteauxDuLayon.pdf",
+    "https://extranet.inao.gouv.fr/fichier/3.3-CDC-Bonnezeaux-PNO.pdf",
+    "https://extranet.inao.gouv.fr/fichier/3.11-CDC-Quarts-de-Chaume-modifi%C3%A9.pdf"
+   ],
+   "fix": "Replace the ladder in the model answer with: 'Ascending by minimum must weight: Coteaux du Layon (221 g/L); Coteaux du Layon + village name (238 g/L); Bonnezeaux (238, now 255 g/L, 25 hl/ha); Coteaux du Layon Premier Cru Chaume (272 g/L); Quarts de Chaume Grand Cru (298 g/L before fermentation, 20 hl/ha, the lowest yield). Coteaux du Layon Sélection de Grains Nobles requires 323 g/L.' Delete 'the region's highest must weight requirement'. Change the first accept entry to 'layon then bonnezeaux then chaume premier cru then quarts de chaume with aubance and anjou coteaux de la loire outside'.",
+   "batch": 169,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I opened the three INAO texts and they back the examiner. Coteaux du Layon cahier (PNO text, version 1 of 02/03/2011), minimum grape sugar: Coteaux du Layon 221 g/L, Coteaux du Layon + commune 238, Premier Cru Chaume 272 (25 hl/ha), Sélection de Grains Nobles 323. Bonnezeaux cahier (homologated 10/10/2019; PNO of 2 June 2022): 238 g/L, with the 2022 draft changing it to 255 g/L; yield 25 hl/ha. Quarts de Chaume cahier (decree 2011-1614): 298 g/L, 20 hl/ha. French Wikipedia also gives Chaume at 272 and SGN at 323.\n\nThe answer's own explanation calls the list \"a ladder of required concentration\". On that ladder Bonnezeaux (238, or 255 under the draft) sits below Chaume Premier Cru (272), not above it. Coteaux du Layon SGN at 323 g/L is above Quarts de Chaume's 298, so \"the region's highest must weight requirement\" is false. Quarts de Chaume does have the lowest yield, 20 hl/ha, so that part stands. The third accept entry (\"bonnezeaux beside it\") repeats the wrong grouping.\n\nThe examiner's replacement is off in one way. It pins Coteaux du Layon at 221 and the commune wines at 238. Those figures come from the 2011 text. Wikipedia now gives 238 and 255, which suggests they were raised in the same revision that lifted Bonnezeaux, so the examiner's figures may be out of date. My fix leaves those base figures out and gives only the numbers I confirmed. It also corrects the third accept entry.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/PNOCDCCoteauxDuLayon.pdf",
+    "https://extranet.inao.gouv.fr/fichier/3.3-CDC-Bonnezeaux-PNO.pdf",
+    "https://extranet.inao.gouv.fr/fichier/3.11-CDC-Quarts-de-Chaume-modifi%C3%A9.pdf",
+    "https://fr.wikipedia.org/wiki/Coteaux-du-layon"
+   ],
+   "finalFix": "ans: \"Ascending by required must weight: Coteaux du Layon, then Coteaux du Layon followed by one of its named villages such as Rablay, Beaulieu, Saint-Aubin and Saint-Lambert; then Bonnezeaux, the enclave on the three hills above Thouarcé (at least 238 g/L, raised to 255 g/L in the 2022 revision, 25 hl/ha); then Coteaux du Layon Premier Cru Chaume (272 g/L, 25 hl/ha, successive hand-picked tries); then Quarts de Chaume, promoted in 2011 to the Loire's only Grand Cru (298 g/L and the lowest yield, 20 hl/ha). Coteaux du Layon Sélection de Grains Nobles sits apart as a mention, with the highest must-weight minimum of all at 323 g/L. Outside the Layon valley altogether: Coteaux de l'Aubance, on the little Aubance river between the Layon and Angers, and Anjou-Coteaux de la Loire, on the Loire itself around and above Savennières. All are Chenin, all on Armorican schist, and all depend on autumn mist off small rivers, the same mechanism as the Ciron at Sauternes on a smaller scale.\" accept[0]: \"layon then bonnezeaux then chaume premier cru then quarts de chaume with aubance and anjou coteaux de la loire outside\". accept[2]: \"quarts de chaume grand cru at the top chaume premier cru below it\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-ikmb0hw1",
+    "cat": "Loire",
+    "q": "Set out the Anjou sweet-Chenin appellations in ascending order of concentration, and name the two that lie outside the Layon valley.",
+    "sa": 1,
+    "accept": [
+     "layon then chaume premier cru then bonnezeaux and quarts de chaume with aubance and anjou coteaux de la loire outside",
+     "coteaux de l'aubance and anjou coteaux de la loire lie outside the layon",
+     "quarts de chaume grand cru at the top bonnezeaux beside it",
+     "chaume premier cru sits above coteaux du layon"
+    ],
+    "ans": "Ascending: Coteaux du Layon, with its named villages such as Rablay, Beaulieu, Saint-Aubin and Saint-Lambert; then Coteaux du Layon Premier Cru Chaume, which demands successive hand-picked tries and a far higher residual sugar; then the two enclaves that stand alone — Bonnezeaux, on the three hills above Thouarcé, and Quarts de Chaume, promoted in 2011 to the Loire's only Grand Cru, with the region's highest must weight requirement at 298 g/L and its lowest yields. Outside the Layon valley altogether: Coteaux de l'Aubance, on the little Aubance river between the Layon and Angers, and Anjou-Coteaux de la Loire, on the Loire itself around and above Savennières. All are Chenin, all on Armorican schist, and all depend on autumn mist off small rivers — the same mechanism as the Ciron at Sauternes, at a smaller scale.",
+    "exp": "The hierarchy is a ladder of required concentration and falling yield, and the two outliers are what catch candidates who memorised only the Layon. Coteaux de l'Aubance in particular is a value hunting-ground worth naming on a floor."
+   }
+  },
+  {
+   "id": "m-sx76oos5",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the Farr Vintners blind tastings placed Kumeu River's Chardonnays ahead of grand cru Burgundy.",
+   "because": "Farr Vintners' own account of the 11 May 2015 London tasting says Kumeu River's four Chardonnays were set against Premier Cru and village Burgundies from top producers (Leflaive, Lafon, Sauzet and others). No grand crus were in it. Kumeu River won three flights and tied the fourth.",
+   "sources": [
+    "https://www.farrvintners.com/blog/post.php?post=1209",
+    "https://finewinelibrary.nl/blog/2024-02-17/judgement-of-london-blind-tasting-kumeu-river"
+   ],
+   "fix": "London blind tastings (Farr Vintners, 2015) placing its Chardonnays ahead of top premier cru and village white Burgundy",
+   "batch": 169,
+   "verdict": "confirmed",
+   "verifyReason": "I opened Farr Vintners' own write-up of the 11 May 2015 London tasting. It had four flights. Two were 2012 and 2009 village and Perrières Meursault/Puligny/Chassagne. Two were 2010 and 2007 premier cru Chassagne and Puligny, including Leflaive, Drouhin Pucelles and Carillon Champ Canet. No grand cru was in the line-up. Kumeu River won the 2012, 2010 and 2007 flights and tied the 2009 flight with Bouchard Meursault Perrières. The second source, Fine Wine Library, also lists no grand crus. The Kumeu River site and its news page do not mention any Farr Vintners tasting against grand cru Burgundy either. So \"ahead of grand cru Burgundy\" is unsupported and overstates the result. \"Repeated\" is also unsupported: the documented Farr Vintners event is the single 2015 tasting. The examiner's fix matches the primary source and drops both problems. The accept list (\"beat burgundy blind tastings farr vintners\" and \"london blind tastings versus white burgundy\") still matches the corrected answer, so it does not need changing.",
+   "verifySources": [
+    "https://www.farrvintners.com/blog/post.php?post=1209",
+    "https://finewinelibrary.nl/blog/2024-02-17/judgement-of-london-blind-tasting-kumeu-river",
+    "https://www.kumeuriver.co.nz/",
+    "https://www.kumeuriver.co.nz/blogs/news"
+   ],
+   "finalFix": "London blind tastings (Farr Vintners, 2015) placing its Chardonnays ahead of top premier cru and village white Burgundy",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-sx76oos5",
+    "cat": "New Zealand",
+    "q": "Kumeu River's proof-of-place moment:",
+    "sa": 1,
+    "accept": [
+     "beat burgundy blind tastings farr vintners",
+     "london blind tastings versus white burgundy"
+    ],
+    "ans": "Repeated London blind tastings (Farr Vintners) placing its Chardonnays ahead of grand cru Burgundy",
+    "exp": "Michael Brajkovich MW — the country's first Master of Wine."
+   }
+  },
+  {
+   "id": "m-jf68lure",
+   "kind": "ambiguous-stem",
+   "claim": "The stem rests on a false premise. No Anjou AOP grows 'within sight of the Atlantic', and there is no '2011 appellation contiguity oddity'. The model answer is only '(Accept reasoned answers)', so the question has no gradable key.",
+   "because": "Savennières, the AOP the answer names, lies on the north bank of the Loire in the communes of Savennières, Bouchemaine and La Possonnière, beside Angers and roughly 100 km inland from the ocean. The only Loire-attached AOP near the Atlantic, Fiefs Vendéens, is not in Anjou, and the accept list itself says so. A careful candidate cannot answer the question as written.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Savenni%C3%A8res_AOC"
+   ],
+   "fix": "Stem: 'Which Anjou AOP is the district's western outpost on the north bank of the Loire, in the communes of Savennières, Bouchemaine and La Possonnière?' Model answer: 'Savennières'. Accept: ['savennieres']",
+   "batch": 169,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The question is broken as the examiner says. Its premise is false. Savennières AOC covers Savennières, Bouchemaine and La Possonnière on the right (north-west) bank of the Loire, just downstream of Angers and over 100 km inland, so it is not \"within sight of the Atlantic\". No \"2011 appellation contiguity oddity\" exists in any Loire appellation rule that I know of, and Wikipedia says nothing about one. There is also no real key: the model answer reads \"(Accept reasoned answers)\". The accept entries are strings like \"savennieres no fiefs vendeens anjou brissac\". matchSA (C:/Users/zpull/SommeliersCodex/js/core.js) only grades exact matches or whole-phrase containment, so a candidate who types \"Savennières\" is marked wrong. The examiner's replacement fixes all of that, but its stem names the commune \"Savennières\", which gives the answer away. The better fix below keeps the geography and removes the giveaway. My web-search budget was used up, so I could open only the Wikipedia page for the commune list and the bank. The distance from the Atlantic is ordinary map knowledge. Nothing I found supports the 2011 claim.",
+   "verifySources": [
+    "https://en.wikipedia.org/wiki/Savenni%C3%A8res_AOC",
+    "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-169.json",
+    "C:/Users/zpull/SommeliersCodex/js/core.js"
+   ],
+   "finalFix": "Stem: 'Which Anjou AOP for dry Chenin Blanc sits on the north bank of the Loire just downstream of Angers, and is home to the Roche aux Moines and Coulée de Serrant crus?' Model answer: 'Savennières'. Accept: ['savennieres', 'savennières']. Explanation: 'Savennières (communes of Savennières, Bouchemaine and La Possonnière) lies on the right bank of the Loire west of Angers; it is well inland, not near the Atlantic.'",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-jf68lure",
+    "cat": "Loire",
+    "q": "The Loire's 2011 'appellation contiguity' oddity: which AOP grows within sight of the Atlantic yet belongs to the Anjou district?",
+    "sa": 1,
+    "accept": [
+     "savennieres no fiefs vendeens anjou brissac",
+     "fiefs vendeens is not it savennieres anjou"
+    ],
+    "ans": "(Accept reasoned answers) — the exam's point: know the district borders; Savennières is Anjou's western outpost above the river",
+    "exp": "Orals probe map fluency; argue the geography aloud."
+   }
+  },
+  {
+   "id": "m-supq5mbl",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the name Breton 'commemorates the Abbé Breton', Richelieu's steward in the seventeenth century.",
+   "because": "Rabelais already wrote of 'bon vin breton' from the Chinon country in Gargantua (1534), a century before the Abbé. So the name cannot come from him, and the Abbé story is a later legend. The answer's own mention of Rabelais contradicts its etymology.",
+   "sources": [
+    "https://dico-du-vin.com/breton-cabernet-franc-loire/"
+   ],
+   "fix": "Breton is the Loire's local name for Cabernet Franc. Tradition credits the Abbé Breton, Richelieu's steward, with spreading the vine through Chinon and Bourgueil in the seventeenth century, but Rabelais already praised 'vin breton' from Chinon in 1534, so the name is older than the Abbé.",
+   "batch": 169,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds. In Gargantua, chapter XIII (1534/35), Rabelais has Grandgousier promise \"the good Breton wine, not that which grows in Britain, but in the good country of Verron\". The Véron is the land where the Loire meets the Vienne beside Chinon. I confirmed this in the Project Gutenberg text of the Urquhart translation, line 3371. Dico-du-vin makes the same point against the Abbé Breton story. The Abbé was a seventeenth-century figure at Saint-Nicolas-de-Bourgueil and is tied to Richelieu. English Wikipedia still repeats the story, and French Wikipedia lists \"plant de l'abbé Breton\" as a synonym, so the tradition is real. But the name was in use a century before him, so it cannot commemorate him. The model answer states the eponym as fact (\"It commemorates the Abbé Breton\") and then mentions Rabelais only as praising \"the wine of Chinon\". It never notices that Rabelais used the word \"breton\" itself, so a student learns a false etymology. The examiner's fix is right in substance. Two changes make it better: the fix should replace the whole model answer so the DNA and parentage part is kept, and it should say \"the Véron near Chinon\", which is what Rabelais wrote. No etymology is asserted in its place, because the true origin is not settled. The accept list's legend-based entries could stay as reported tradition, but the answer must not present the legend as fact.",
+   "verifySources": [
+    "https://www.gutenberg.org/cache/epub/1200/pg1200.txt (Rabelais, Gargantua ch. XIII, Urquhart translation: 'the good Breton wine, not that which grows in Britain, but in the good country of Verron')",
+    "https://dico-du-vin.com/breton-cabernet-franc-loire/",
+    "https://en.wikipedia.org/wiki/Cabernet_Franc",
+    "https://fr.wikipedia.org/wiki/Cabernet_franc"
+   ],
+   "finalFix": "Breton is the Loire's local name for Cabernet Franc. Tradition credits the Abbé Breton, steward to Cardinal Richelieu, with propagating the vine through Chinon and Bourgueil in the seventeenth century and so giving it his name. But Rabelais had already written of 'the good Breton wine' of the Véron by Chinon in Gargantua (1534), a century earlier, so the name is older than the Abbé and the story is legend. The DNA matters more than the folklore: Cabernet Franc crossed with Sauvignon Blanc produced Cabernet Sauvignon, and crossed with Magdeleine Noire des Charentes produced Merlot; it is also a parent of Carmenère. In other words the Loire's grape is the ancestor of Bordeaux's, not a poor relation of them — the argument you make when someone calls Chinon a lesser claret.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-supq5mbl",
+    "cat": "Loire",
+    "q": "What is 'Breton', where does the name come from, and what is Cabernet Franc's place in the family tree?",
+    "sa": 1,
+    "accept": [
+     "breton is cabernet franc named for abbe breton parent of cabernet sauvignon and merlot",
+     "abbe breton richelieu's steward planted it in chinon and bourgueil",
+     "cabernet franc is the parent of cabernet sauvignon with sauvignon blanc and of merlot",
+     "called breton in the loire and it is bordeaux's ancestor"
+    ],
+    "ans": "Breton is the Loire's local name for Cabernet Franc. It commemorates the Abbé Breton, steward to Cardinal Richelieu, who propagated the vine through Chinon and Bourgueil in the seventeenth century — though Rabelais had already praised the wine of Chinon a century before that. The DNA matters more than the folklore: Cabernet Franc crossed with Sauvignon Blanc produced Cabernet Sauvignon, and crossed with Magdeleine Noire des Charentes produced Merlot; it is also a parent of Carmenère. In other words the Loire's grape is the ancestor of Bordeaux's, not a poor relation of them — the argument you make when someone calls Chinon a lesser claret.",
+    "exp": "Orals reward the answer that turns a nomenclature question into an argument. The parentage is also examinable on its own: know both crossings and the fact that Cabernet Franc's home ground is the Loire and the Basque country, not the Médoc."
+   }
+  },
+  {
+   "id": "m-nfea4ihb",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says Vouvray and Montlouis are both 'one hundred per cent Chenin Blanc'.",
+   "because": "The Vouvray cahier des charges makes Chenin the principal variety and still allows Orbois (Menu Pineau) as an accessory variety. It is rarely used, but it is legal, so Vouvray is not 100% Chenin by law. Montlouis-sur-Loire is Chenin only.",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Vouvray_(AOC)",
+    "https://extranet.inao.gouv.fr/fichier/4-CDCPNOvouvray.pdf"
+   ],
+   "fix": "Both are Chenin Blanc on tuffeau (Montlouis exclusively; Vouvray also permits a small accessory share of Orbois/Menu Pineau, now rarely used), and both run the full ladder from sec to moelleux plus pétillant and mousseux.",
+   "batch": 169,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. The current INAO cahier des charges for Vouvray (the version that went to national opposition after the CNAOC opinion of 16 June 2020) says in Section V.1.a that the wines come from Chenin B as the principal variety and Orbois B as an accessory variety. Section V.2 caps Orbois B at 5% or less of the encépagement, counted per holding. So the model answer is wrong to call Vouvray \"one hundred per cent Chenin Blanc\" by law. Montlouis-sur-Loire allows Chenin B only. The examiner's fix is right. It avoids giving a percentage, which is sensible: French Wikipedia still says 10%, but the cahier I opened says 5% of plantings, not a share of the blend. If the owner wants a number, the fix can say \"up to 5% of plantings\". The rest of the answer and the accept list are not affected. I extracted the text from the INAO PDF locally after the web summary could not read it.",
+   "verifySources": [
+    "https://extranet.inao.gouv.fr/fichier/4-CDCPNOvouvray.pdf",
+    "https://fr.wikipedia.org/wiki/Vouvray_(AOC)",
+    "https://fr.wikipedia.org/wiki/Montlouis-sur-Loire_(AOC)"
+   ],
+   "finalFix": "Both are Chenin Blanc on tuffeau (Montlouis exclusively; Vouvray also permits a small accessory share of Orbois/Menu Pineau, now rarely used), and both run the full ladder from sec to moelleux plus pétillant and mousseux.",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-nfea4ihb",
+    "cat": "Loire",
+    "q": "Compare Vouvray and Montlouis-sur-Loire.",
+    "sa": 1,
+    "accept": [
+     "both chenin vouvray north bank larger montlouis between the loire and cher",
+     "montlouis split from vouvray in 1938 sandier and more radical",
+     "vouvray larger and sweeter montlouis drier and ancestral method",
+     "montlouis smaller warmer soils earlier ripening"
+    ],
+    "ans": "Both are one hundred per cent Chenin Blanc on tuffeau, and both run the full ladder from sec to moelleux plus pétillant and mousseux. Vouvray lies on the north bank of the Loire and is roughly five times the size, with deeper clay-with-flint perruches and limestone-rich aubuis over the tuffeau, colder sites, later ripening and the greater sweet-wine reputation — Huet and Foreau are its monuments. Montlouis occupies the plateau between the Loire and the Cher, on sandier, warmer, faster-draining soils that ripen earlier and lend themselves to dry wine and sparkling. It only separated from Vouvray in 1938, having been sold as Vouvray before, and took the name Montlouis-sur-Loire in 2002. It has since been by far the more daring appellation: Chidaine, Blot and their generation legislated pétillant originel, the ancestral method, into existence in 2007, and Montlouis is now the centre of the region's dry-Chenin avant-garde.",
+    "exp": "The comparison rewards structure: same grape, same rock, different river position, different soil depth, different regulatory temperament. The last point is the interesting one — Montlouis outran its famous neighbour by writing new law rather than defending old."
+   }
+  },
+  {
+   "id": "m-061ar78u",
+   "kind": "outdated",
+   "claim": "The model answer and the first accept string say Columbia Valley holds 'roughly seventeen nested AVAs'.",
+   "because": "Seventeen was right while Washington had 20 AVAs (Puget Sound, Columbia Gorge and Lewis-Clark Valley sit outside Columbia Valley). TTB approved Beverly, Washington as the state's 21st AVA on 29 October 2024, and it lies wholly inside Columbia Valley, so the nested count is now 18. The batch's own sister question m-0tw3fsqx already says the state count 'now exceeds 20'.",
+   "sources": [
+    "https://wineindustryadvisor.com/2024/10/30/washington-welcomes-21st-american-viticultural-area/",
+    "https://www.thedrinksbusiness.com/2025/01/washington-state-announces-first-new-ava-in-five-years/"
+   ],
+   "fix": "ans: \"Columbia Valley — an umbrella holding the great majority of the state's plantings, with eighteen nested AVAs (Beverly, 2024, the latest) and still growing\"; accept[0]: \"columbia valley roughly eighteen nested avas\"",
+   "batch": 170,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "The finding holds that \"roughly seventeen\" is stale, but the examiner's fix is itself wrong, so the better fix replaces it.\n\nBeverly, Washington is real. The eCFR lists it at 27 CFR 9.297, effective 29 Nov 2024, and Wine Industry Advisor reports it as Washington's 21st AVA, lying wholly within Columbia Valley.\n\nThe examiner's arithmetic is off. Twenty state AVAs minus the three outside Columbia Valley (Puget Sound, Columbia Gorge, Lewis-Clark Valley) leaves 17, but that 17 includes Columbia Valley itself. So before Beverly there were 16 Washington AVAs nested inside it, or 17 counting Oregon's Rocks District of Milton-Freewater. After Beverly the figure was 17 or 18.\n\nThe fix's claim that Beverly is \"the latest\" is now false. The eCFR search shows 27 CFR 9.301 \"Columbia Hills\" (Klickitat County, WA), effective 16 Sep 2026. Wikipedia calls it the state's 22nd AVA and the Columbia Valley's eighteenth nested one, and now counts 22 Washington AVAs. The boundary text in 9.301 does not itself mention Columbia Valley. So the count is now about 18 (Washington only) or 19 (with the Rocks District).\n\n\"Roughly seventeen\" undercounts, and it still names no year. The fix should state the count loosely and date it, rather than pin a single \"latest\" AVA. The keyed name, Columbia Valley, and the \"still growing\" trend are both correct.",
+   "verifySources": [
+    "https://wineindustryadvisor.com/2024/10/30/washington-welcomes-21st-american-viticultural-area/",
+    "https://www.ecfr.gov/api/search/v1/results?query=%22Beverly%2C%20Washington%22&hierarchy[title]=27",
+    "https://www.ecfr.gov/api/search/v1/results?query=%22Columbia%20Hills%22&hierarchy[title]=27",
+    "https://www.ecfr.gov/api/versioner/v1/full/2026-09-20/title-27.xml?part=9&section=9.301",
+    "https://en.wikipedia.org/wiki/Columbia_Hills_AVA",
+    "https://en.wikipedia.org/wiki/Washington_wine",
+    "https://en.wikipedia.org/wiki/Columbia_Valley_AVA"
+   ],
+   "finalFix": "ans: \"Columbia Valley — an umbrella holding the great majority of the state's plantings, with some eighteen nested AVAs as of 2026 (Beverly 2024 and Columbia Hills 2026 among the newest) and still growing\"; accept[0]: \"columbia valley roughly eighteen nested avas\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-061ar78u",
+    "cat": "Pacific NW, NY & Canada",
+    "q": "Name Washington's largest AVA and the sub-AVA count trend.",
+    "sa": 1,
+    "accept": [
+     "columbia valley roughly seventeen nested avas",
+     "columbia valley umbrella",
+     "columbia valley many nested avas growing"
+    ],
+    "ans": "Columbia Valley — an umbrella holding the great majority of the state's plantings, with roughly seventeen nested AVAs and still growing",
+    "exp": "Yakima Valley was the state's first (1983)."
+   }
+  },
+  {
+   "id": "m-pe79ielp",
+   "kind": "outdated",
+   "claim": "The model answer says that to carry the AMW seal a wine must 'respect a yield cap'.",
+   "because": "AMW's early 'Integrity' criterion capped cropping levels (Spy Valley, 2021). In June 2024 AMW members adopted a minimum ripeness of 18 Brix at harvest for Sauvignon Blanc. The current AMW FAQ lists origin (100% Marlborough, inside the AMW-defined area), 18 Brix ripeness, bottling in New Zealand, sustainability certification and a blind sensory assessment. It sets no yield limit, and AMW says on the Wine Blast podcast that it dropped tonnage caps in favour of a ripeness rule.",
+   "sources": [
+    "https://www.appellationmarlboroughwine.co.nz/about/frequently-asked-questions",
+    "https://harpers.co.uk/news/fullstory.php/aid/32912/Appellation_Marlborough_Wine_tightens_certification_standards.html",
+    "https://spyvalleywine.co.nz/blogs/secret-missions/appellation-marlborough-wine"
+   ],
+   "fix": "Replace \"respect a yield cap\" with \"meet a minimum ripeness of 18 Brix at harvest (the original yield caps were replaced by this ripeness rule in 2024), pass a blind sensory panel\"",
+   "batch": 170,
+   "verdict": "confirmed-with-better-fix",
+   "verifyReason": "I could not refute the finding. AMW's own current FAQ lists five criteria: 100% Marlborough fruit from inside AMW's defined area, a minimum of 18 Brix at harvest for Sauvignon Blanc, bottling in New Zealand, a sustainability certification (SWNZ, BioGro or equivalent), and a blind sensory assessment by a winemaker panel. None of them is a yield, cropping or tonnage limit, and the AMW home page does not mention one either. Spy Valley's post of 22 Sep 2021 shows that the original Integrity standard did cap cropping, at levels set by season and soil, and let a panel approve over-cropped wines. Harpers says members unanimously adopted the 18 Brix rule and a tighter area in 2024. So \"respect a yield cap\" is outdated. The model answer also leaves out the ripeness rule and the sensory panel, both of which are now core criteria. The examiner's fix goes further than the evidence I could open: Harpers does not say the yield caps were removed or replaced, and I could not check the podcast. The better fix therefore says only what the sources support: yield limits in the original standard, a ripeness minimum and no yield limit in the current one, which was revised in 2024. The rest of the answer holds (voluntary, industry-led, launched 2018, sustainability, bottled in NZ).",
+   "verifySources": [
+    "https://www.appellationmarlboroughwine.co.nz/about/frequently-asked-questions",
+    "https://www.appellationmarlboroughwine.co.nz/",
+    "https://harpers.co.uk/news/fullstory.php/aid/32912/Appellation_Marlborough_Wine_tightens_certification_standards.html",
+    "https://spyvalleywine.co.nz/blogs/secret-missions/appellation-marlborough-wine"
+   ],
+   "finalFix": "Replace \"respect a yield cap\" with \"be made from grapes picked at a minimum ripeness (18 Brix for Sauvignon Blanc, a rule members adopted in 2024; the original 2018 standard set cropping limits instead, and the current criteria set no yield limit), pass a blind sensory assessment by a panel of winemakers\"",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-pe79ielp",
+    "cat": "New Zealand",
+    "q": "What is Appellation Marlborough Wine, and what problem was it created to solve?",
+    "sa": 1,
+    "accept": [
+     "a voluntary marlborough certification requiring 100 percent marlborough fruit bottled in new zealand",
+     "the amw seal created against bulk shipped marlborough sauvignon",
+     "appellation marlborough wine an industry mark launched in 2018",
+     "certification protecting marlborough from wine bottled offshore"
+    ],
+    "ans": "It is a voluntary industry certification, launched in 2018 by a group of Marlborough producers rather than by government. To carry the seal a wine must be made entirely from Marlborough fruit, come from sustainability-certified vineyards, respect a yield cap, and be bottled in New Zealand. The problem it addresses is bulk: enormous volumes of Marlborough Sauvignon Blanc had been shipped in flexitanks and bottled offshore under supermarket labels, sold cheap and often blended to a price, which was hollowing out the region's name at exactly the moment that name was its most valuable asset. The bottling clause is the sharp end of the scheme. It sits alongside, not instead of, the legal framework — Marlborough is a registered geographical indication under the Geographical Indications Act in force from 2017, registered in 2018, and the 85% labelling rules still apply nationally.",
+    "exp": "The examiner is testing whether a candidate can distinguish a statutory geographical indication from a private quality mark, and whether they understand why a region with one dominant variety polices its own name. Compare it to the Gimblett Gravels trademark in Hawke's Bay, which likewise defends a boundary the law never drew. The through-line for New Zealand answers is that the 2008 glut taught the industry that volume without control destroys premium positioning."
+   }
+  },
+  {
+   "id": "m-pijuxhjo",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer says 'Only Niagara Peninsula subdivides further'.",
+   "because": "Lake Erie North Shore also has a sub-appellation. South Islands (the nine islands of the Town of Pelee Island) was declared a sub-appellation of Lake Erie North Shore in July 2015, according to the VQA Ontario appellation authority's own page.",
+   "sources": [
+    "https://vqaontario.ca/ontario-appellations/lake-erie-north-shore/south-islands/",
+    "https://www.vqaontario.ca/Appellations/LakeErieNorthShore/SouthIslands"
+   ],
+   "fix": "Below the provincial 'Ontario' appellation sit the Designated Viticultural Areas: Niagara Peninsula, Lake Erie North Shore and Prince Edward County. Lake Erie North Shore contains one sub-appellation, South Islands (Pelee Island, 2015). Niagara Peninsula subdivides into regional appellations (Niagara Escarpment, Niagara-on-the-Lake) and then ten sub-appellations, among them Beamsville Bench, Twenty Mile Bench, Short Hills Bench, Creek Shores, Four Mile Creek and St. David's Bench",
+   "batch": 171,
+   "verdict": "confirmed",
+   "verifyReason": "The finding holds. VQA Ontario's own page for the appellation says \"South Islands was declared a sub-appellation in July 2015\". The same page describes South Islands as the nine islands of the Town of Pelee Island and places them within the Lake Erie North Shore appellation. So the model answer is wrong when it says \"Only Niagara Peninsula subdivides further\": since 2015, Lake Erie North Shore also has a sub-appellation. The rest of the answer is correct: the three DVAs (Designated Viticultural Areas), Niagara's two regional appellations, and its ten sub-appellations. The accept list does not depend on the \"only Niagara\" claim, so it needs no change. The examiner's fix corrects the false claim and keeps the true content. I could not load the text of Ontario Regulation 406/00 on e-Laws (the page returned only its header), so this rests on the appellation authority's own page.",
+   "verifySources": [
+    "https://vqaontario.ca/ontario-appellations/lake-erie-north-shore/south-islands/"
+   ],
+   "finalFix": "Below the provincial 'Ontario' appellation sit the Designated Viticultural Areas: Niagara Peninsula, Lake Erie North Shore and Prince Edward County. Lake Erie North Shore contains one sub-appellation, South Islands (Pelee Island, 2015). Niagara Peninsula subdivides into regional appellations (Niagara Escarpment, Niagara-on-the-Lake) and then ten sub-appellations, among them Beamsville Bench, Twenty Mile Bench, Short Hills Bench, Creek Shores, Four Mile Creek and St. David's Bench",
+   "source": "full-resume",
+   "question": {
+    "bank": "data-master.js:MASTER_QUESTIONS",
+    "id": "m-pijuxhjo",
+    "cat": "Pacific NW, NY & Canada",
+    "q": "Explain Ontario's appellation structure below the provincial level.",
+    "sa": 1,
+    "accept": [
+     "niagara peninsula regional appellations sub-appellations beamsville bench twenty mile",
+     "niagara sub-appellations",
+     "~designated viticultural areas",
+     "~designated viticultural area"
+    ],
+    "ans": "Below the provincial 'Ontario' appellation sit the Designated Viticultural Areas — Niagara Peninsula, Lake Erie North Shore and Prince Edward County. Only Niagara Peninsula subdivides further: into regional appellations (Niagara Escarpment, Niagara-on-the-Lake) and then ten sub-appellations, among them Beamsville Bench, Twenty Mile Bench, Short Hills Bench, Creek Shores, Four Mile Creek and St. David's Bench",
+    "exp": "A Burgundian nesting on a Canadian map."
+   }
+  }
+ ]
+}

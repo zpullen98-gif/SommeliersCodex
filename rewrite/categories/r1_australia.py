@@ -353,5 +353,5 @@ BANK = [
       "Poured cool with turkey at a midsummer Christmas, a dark foaming full-bodied red just off dry has been an Australian fixture since the nineteenth century. What is it?",
       ["Sparkling Shiraz", "Sparkling Grenache",
        "Sparkling Cabernet Sauvignon", "A sweet red made in the Lambrusco manner"], 0,
-      "The style began in Victoria's Great Western and survives almost nowhere else on earth. A full red base takes a second fermentation for pressure, and the dosage leaves just enough sugar to carry the tannin, which is why it is served cool rather than cellar-warm."),
+      "The style is usually credited to Edmond Mazure at Auldana, near Adelaide, in the 1890s; Great Western in Victoria, first under Hans Irvine and then Seppelt, carried it through the twentieth century, and it survives almost nowhere else on earth. A full red base takes a second fermentation for pressure, and the dosage leaves just enough sugar to carry the tannin, which is why it is served cool rather than cellar-warm."),
 ]
