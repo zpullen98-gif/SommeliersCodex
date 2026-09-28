@@ -1,0 +1,13 @@
+{
+ "id": "a-pyf6f91v",
+ "kind": "outdated",
+ "claim": "Keyed option \"55 hl/ha\" and explanation \"Alsace Grand Cru is set at 55 hl/ha\"",
+ "because": "The arrêté of 9 May 2022 (JORF 13 May 2022) amending the Alsace grand cru cahier des charges lowered the rendement for white grand cru wines from 55 to 50 hl/ha, and the rendement butoir from 66 to 60 hl/ha. Red is 40 hl/ha, SGN 40 hl/ha. The 2021 opposition draft shows 55 struck through for 50, and the 2024 consolidated text carries 50 and 60. Under current law the keyed answer is wrong and no option is right. It was correct only up to the 2021 vintage.",
+ "sources": [
+  "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000045792474",
+  "https://extranet.inao.gouv.fr/fichier/PNO-cdc-Alsacegrandcru-cn200617-210603-AG210706.pdf",
+  "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+ ],
+ "fix": "Replace option index 1 \"55 hl/ha\" with \"50 hl/ha\" and keep a:1. In exp, change \"set at 55 hl/ha\" to \"set at 50 hl/ha (lowered from 55 by the arrêté of 9 May 2022; butoir 60)\" and change \"55 hl/ha is generous\" to \"50 hl/ha is generous\".",
+ "batch": 1
+}

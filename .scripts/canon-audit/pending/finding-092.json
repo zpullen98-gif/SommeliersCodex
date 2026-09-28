@@ -1,0 +1,11 @@
+{
+ "id": "m-t7chvy1o",
+ "kind": "ambiguous-stem",
+ "claim": "Which grand cru's name means 'sorcerers' hill', beloved of Gewurztraminer at Zind-Humbrecht?",
+ "because": "None of the 51 Alsace grand crus has a name meaning sorcerers' or witches' hill, and there is no Hexenberg on the list. Zind-Humbrecht's Gewurztraminer grand crus are Hengst (stallion) and Goldert (golden). The stem assumes a false premise, the model answer admits it is a 'trap', and the accept strings ('hexenberg no sorcerer goldert brand hengst') are not an answer a grader can match fairly.",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Alsace_Grand_Cru_AOC"
+ ],
+ "fix": "q: \"Which Wintzenheim grand cru, whose name means 'stallion', is a Zind-Humbrecht Gewurztraminer site?\"; ans: \"Hengst\"; accept: [\"hengst\"]",
+ "batch": 152
+}

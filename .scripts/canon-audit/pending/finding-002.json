@@ -1,0 +1,12 @@
+{
+ "id": "a-qe25zf0w",
+ "kind": "accept-list",
+ "claim": "accept entry \"riesling and muscat lower\"",
+ "because": "The app's own grader (js/core.js matchSA, the 'input is a whole-word core of the accept phrase' rule) marks the wrong answer \"Riesling and Muscat\" correct against this entry. I tested it: matchSA returns true for 'Riesling and Muscat'. The question asks which two varieties carry the HIGHER bar, and those are Gewurztraminer and Pinot Gris.",
+ "sources": [
+  "C:/Users/zpull/SommeliersCodex/js/core.js (matchSA)",
+  "https://extranet.inao.gouv.fr/fichier/pno-cdc-Alsacegrandcru-cn240911.pdf"
+ ],
+ "fix": "accept: [\"gewurztraminer and pinot gris\", \"gewurztraminer pinot gris\", \"gewurz pinot gris higher\", \"pinot gris and gewurztraminer\"] (drop \"riesling and muscat lower\")",
+ "batch": 1
+}
