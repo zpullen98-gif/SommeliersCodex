@@ -1,0 +1,138 @@
+[
+ {
+  "id": "a-exgg1a3q",
+  "kind": "wrong-explanation",
+  "claim": "Moric's old vines re-argued the grape as 'the Pinot of the East'.",
+  "because": "In a question that keys Leithaberg, this line presents Moric as the Leithaberg example. Roland Velich's old-vine Blaufränkisch single sites are Neckenmarkt and Lutzmannsburg, both in Mittelburgenland, and the stem expressly sets Mittelburgenland aside. That puts one hill's history on another.",
+  "sources": [
+   "https://www.vinography.com/2014/08/moric_the_apogee_of_blaufrnkis",
+   "https://cellarhand.com.au/producers/moric/"
+  ],
+  "fix": "Leithaberg DAC red must be Blaufränkisch, grown on the limestone and schist of the Leitha hills; Moric's old vines at Neckenmarkt and Lutzmannsburg (Mittelburgenland) made the wider case for the grape as 'the Pinot of the East'.",
+  "batch": 3,
+  "verdict": "refuted",
+  "verifyReason": "The question (a-exgg1a3q, batch-003) keys Leithaberg, which is correct. The explanation says only \"Moric's old vines re-argued the grape as 'the Pinot of the East'.\" That statement is true. Roland Velich's Moric made the modern case for Blaufränkisch as an elegant, Burgundian-style grape, and the Pinot comparison is his. The explanation never says the old vines are in Leithaberg. The examiner has not shown a false fact, only a supposed misplacement of the example, and even that framing is weaker than claimed: Moric's winery is in Großhöflein near Eisenstadt, inside the Leithaberg DAC zone (Falstaff; Wine Anorak), while its famous old-vine sites are Neckenmarkt and Lutzmannsburg in Mittelburgenland. So naming Moric beside Leithaberg is not naming \"another hill's history\" out of nowhere. At most the explanation is loosely tied to the stem, which is a style point, not a wrong-explanation finding. The proposed fix adds context, but it corrects no error.",
+  "verifySources": [
+   "https://www.falstaff.com/en/wineries/weingut-moric",
+   "https://wineanorak.com/2022/12/15/the-wines-of-roland-velich-moric-the-master-of-blaufrankisch/",
+   "https://www.vinography.com/2014/08/moric_the_apogee_of_blaufrnkis",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-003.json",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-008.json"
+  ],
+  "finalFix": ""
+ },
+ {
+  "id": "a-g6h7pdjl",
+  "kind": "accept-list",
+  "claim": "\"six years\" in the accept list",
+  "because": "Under the Arbois cahier des charges, vin jaune stays in oak without topping up until 15 December of the sixth year after the harvest, with at least 60 months of that under voile. From harvest that is about six years and three months, not six years. The stem asks for both the total and the months under voile, but the grader accepts a bare 'six years', which is short of the legal minimum and says nothing about the voile.",
+  "sources": [
+   "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf"
+  ],
+  "fix": "Remove \"six years\" from accept; keep \"six years and three months\", \"6 years 3 months\", \"75 months\".",
+  "batch": 20,
+  "verdict": "refuted",
+  "verifyReason": "I opened the Arbois cahier des charges the examiner cites (INAO PNO-CdcArbois). Its rule (chapter I, part VIII, 2 a) says vin jaune is aged in oak without topping up \"jusqu'au 15 décembre de la 6ème année qui suit celle de la récolte, dont 60 mois au moins sous voile\". That comes to about six years and two or three months from harvest, so the model answer \"six years and three months (60 months under voile)\" is sound. But the same legal text, in its link-to-origin section, also calls the ageing \"une durée minimale de 6 ans en fût de chêne\". So \"six years\" is the appellation's own wording for the minimum. It is less precise than 6y3m, but it is not a wrong answer, and a grader that accepts it is not taking a false fact.\n\nThe examiner's other point, that \"six years\" says nothing about the voile, would apply just as much to every accept entry they propose to keep (\"six years and three months\", \"6 years 3 months\", \"75 months\"). None of those mentions the 60 months either, so removing \"six years\" would not fix that. The fix only makes the grader stricter about a figure the cahier itself uses. This is a precision quibble, not a faulty accept list.",
+  "verifySources": [
+   "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-020.json",
+   "C:/Users/zpull/SommeliersCodex/js/core.js"
+  ],
+  "finalFix": ""
+ },
+ {
+  "id": "i-6c7nyiqo",
+  "kind": "wrong-explanation",
+  "claim": "The wines may not be sold until eighteen months have passed",
+  "because": "The AOC Alsace cahier des charges (INAO, section on élevage and mise en marché) does not set a period in months. It requires VT and SGN wines to be aged at least until 1 June of the second year after the harvest, and they may reach consumers only from that date. For an October harvest that is about 20 months, not a flat eighteen. The keyed option, 'About eighteen months', is still the closest choice, so the key stands. The explanation, though, states a rule the law does not contain.",
+  "sources": [
+   "https://extranet.inao.gouv.fr/fichier/PNOCDCAlsace.pdf"
+  ],
+  "fix": "The wines must be aged at least until 1 June of the second year after the harvest and may not reach consumers before that date, which is roughly eighteen to twenty months. Both categories must also pass an official tasting before the term is granted.",
+  "batch": 46,
+  "verdict": "refuted",
+  "verifyReason": "The examiner says the cahier des charges \"does not set a period in months\". That is false. The source the examiner cites, the AOC Alsace cahier des charges (INAO PNOCDCAlsace.pdf), states the rule in months itself. Its terroir section says these wines \"doivent respecter un élevage minimum de 18 mois\". Elsewhere it sets the exact date: élevage \"au moins jusqu'au 1er juin de la 2ème année qui suit celle de la récolte\", and release \"à destination du consommateur à partir du 1er juin de la 2ème année\". Eighteen months is therefore the legal text's own summary of that date rule. At most it is an approximation of roughly 18 to 20 months, and the question itself asks \"roughly\". The keyed answer is right, and the explanation says nothing false. Calling it a flat eighteen months is a quibble, not a wrong fact.",
+  "verifySources": [
+   "https://extranet.inao.gouv.fr/fichier/PNOCDCAlsace.pdf (Chapter I, VIII.2 'Dispositions par type de produit'; IX.5.a 'Date de mise en marché'; X 'Lien avec la zone géographique': 'élevage minimum de 18 mois')"
+  ],
+  "finalFix": ""
+ },
+ {
+  "id": "i-z9obqip9",
+  "kind": "wrong-explanation",
+  "claim": "Madeira lies some seven hundred kilometres off the coast of Morocco and close to a thousand from Lisbon",
+  "because": "Madeira lies about 520 km west of Morocco (the nearest African coast), not about 700 km. The figure of roughly 1,000 km from Lisbon is right. The key (Madeira) is unaffected.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Madeira"
+  ],
+  "fix": "Madeira lies some five hundred kilometres off the coast of Morocco and close to a thousand from Lisbon",
+  "batch": 78,
+  "verdict": "refuted",
+  "verifyReason": "The claim is only that the explanation's \"some seven hundred kilometres\" is wrong. Wikipedia does give 520 km to the African coast. Published figures disagree widely, though: search results show 520, 560, 600 and 700 km, depending on which points are measured. I computed great-circle distances from Funchal (32.65N, 16.91W). To Tarfaya, the nearest point of Morocco proper, it is about 650 km. To Cap Ghir it is about 700 km, and to Essaouira about 685 km. Even from Porto Santo, the nearest the main islands come to Morocco is about 650 km. The 520 km figure seems to count the outlying Selvagens, or to be loose. So \"some seven hundred kilometres\" is a fair round figure for Madeira Island, and arguably closer than 520 km. The examiner also says the Lisbon figure (close to a thousand km) and the key (Madeira) are correct. The explanation's real point, an isolated oceanic island unlike the three Mediterranean options, stands either way. At most this is a quibble over an approximate distance, not a false fact.",
+  "verifySources": [
+   "https://en.wikipedia.org/wiki/Madeira",
+   "https://portugalwander.com/where-is-madeira",
+   "https://www.quora.com/How-far-is-Madeira-from-Morocco",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-078.json"
+  ],
+  "finalFix": "No change: keep \"Madeira lies some seven hundred kilometres off the coast of Morocco and close to a thousand from Lisbon\"."
+ },
+ {
+  "id": "m-vo4t4643",
+  "kind": "wrong-explanation",
+  "claim": "The only substantive 1855 change in 170 years.",
+  "because": "Mouton's 1973 promotion is not the only change to the 1855 Médoc list. Cantemerle was added as a fifth growth in 1856, and the Margaux third growth Dubignon has since vanished into Malescot St-Exupéry. Mouton is the only promotion.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855"
+  ],
+  "fix": "The only promotion in the classification's history; apart from it, the only change was Cantemerle's addition as a fifth growth in 1856.",
+  "batch": 156,
+  "verdict": "refuted",
+  "verifyReason": "The question (m-vo4t4643, batch-156) is right: Jacques Chirac, then Minister of Agriculture, signed the 1973 decree, and the motto changed from \"Premier ne puis...\" to \"Premier je suis, second je fus, Mouton ne change\". The finding is aimed only at the explanation, \"The only substantive 1855 change in 170 years.\"\n\nThe examiner's own source, Wikipedia, calls the Mouton promotion the more significant change. It describes Cantemerle's 1856 entry as either an oversight or an afterthought, and calls the Dubignon removal a less known \"change\" in quotation marks, because that estate was absorbed into Malescot St-Exupéry and never reclassified. Trade guides (Vinfolio, FINE+RARE) note that Cantemerle's 1856 addition is often overlooked. Search summaries built on these guides call it a correction to the original list, and call Mouton's promotion the only substantive reclassification.\n\nThe explanation says \"the only substantive change\", not \"the only change\". That qualifier is the standard framing and it holds. The Cantemerle and Dubignon points are extra facts, not a false statement. A candidate who learns this line will not miss an exam answer on it, and whether Cantemerle's addition counts as \"substantive\" is a matter of wording, not a factual error. Under the default-to-refuted rule this does not qualify as a wrong explanation.",
+  "verifySources": [
+   "https://en.wikipedia.org/wiki/Bordeaux_Wine_Official_Classification_of_1855",
+   "https://www.vinfolio.com/editorial/your-guide-to-the-1855-classification",
+   "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-156.json",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/pending/finding-096.json"
+  ],
+  "finalFix": ""
+ },
+ {
+  "id": "m-juqt3djs",
+  "kind": "outdated",
+  "claim": "The model answer and explanation treat 'Piesporter Michelsberg' as the current Grosslage label that misleads buyers and say it is 'still on shelves'. The German wine law reform ends that labelling.",
+  "because": "Under the reformed German wine law (2021), which is binding from the 2026 vintage, Grosslage wines must carry the word 'Region' before the Grosslage name. A village name may no longer be used on them unless at least 85% of the grapes come from that village. So from the 2026 vintage the label reads 'Region Michelsberg', not 'Piesporter Michelsberg'. Only older vintages still show the misleading form. A candidate sitting an exam now is expected to know this change.",
+  "sources": [
+   "https://germanwinesociety.org/new-german-wine-law/",
+   "https://www.bkwine.com/features/wine-regions/new-german-wine-classification/ (search summary: 'Instead of \"Piesporter Michelsberg\" it will say on the label \"Region Michelsberg\"')"
+  ],
+  "fix": "ans: \"Einzellage = single vineyard; Grosslage = large collective zone. 'Piesporter Michelsberg' (Grosslage) misleads buyers seeking Piesporter Goldtröpfchen (Einzellage); from the 2026 vintage the reformed law requires Grosslage wines to be labelled 'Region Michelsberg', with no village name unless 85% of the grapes come from that village\" — exp: \"The 1971 law's original sin, still on shelves in pre-2026 vintages.\"",
+  "batch": 163,
+  "verdict": "refuted",
+  "verifyReason": "The reform facts are right. The German Wine Society page says Grosslage wines must carry \"Region\" before the name, may not use a village name unless at least 85% of the grapes come from that village, and that this is binding from the 2026 vintage. But nothing in the question is wrong now. The stem asks for \"the classic misleading example\", which is a historical fact about the 1971 law, and Piesporter Michelsberg (Grosslage) set against Piesporter Goldtröpfchen (Einzellage) is still that example. The explanation says the form is \"still on shelves\", and that is true today (2026-09-28): the 2026 vintage is only being harvested now, so every German wine on sale is 2025 or older and can legally carry \"Piesporter Michelsberg\". Nothing in the answer claims the form is permitted for future vintages. The proposed fix only adds a fact the answer does not need, which the task rules say is not a finding. The accept list and grading are unaffected.",
+  "verifySources": [
+   "https://germanwinesociety.org/new-german-wine-law/",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-163.json"
+  ],
+  "finalFix": ""
+ },
+ {
+  "id": "m-mf893np0",
+  "kind": "wrong-explanation",
+  "claim": "The explanation says Kurniawan was caught by paper and glass, not by taste.",
+  "because": "The cases that exposed him turned on bottles that could not exist. Laurent Ponsot pulled consigned Domaine Ponsot Clos Saint-Denis from 1945 to 1971, although the domaine made no Clos Saint-Denis before 1982. Eight magnums of 1947 Lafleur were offered when only five were made. Bill Koch's 2009 lawsuit added pressure. The labels, corks and stamps were found in his house by the FBI after his 2012 arrest; they were not what first detected him.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rudy_Kurniawan"
+  ],
+  "fix": "Kurniawan was caught by impossible bottles checked against the estates' records (Ponsot Clos Saint-Denis from vintages before the domaine made it, more 1947 Lafleur magnums than were produced), not by taste; the FBI then found his labels, corks and stamps.",
+  "batch": 185,
+  "verdict": "refuted",
+  "verifyReason": "The explanation is a one-line gloss on a question about authentication checks, and nothing in it is false. The examiner's own evidence supports it. Kurniawan was exposed by documents and physical bottles, not by tasting. The Ponsot Clos Saint-Denis bottles (vintages 1945 to 1971, from a domaine that made none before 1982) and the eight 1947 Lafleur magnums (only five made) were caught against estate and production records, which is the paper trail. Château Le Pin also identified bottles consigned to Christie's as fake. The physical evidence was labels, corks and stamps, which is paper and glass. The fakes famously fooled tasters, so \"not by taste\" is right. The explanation does not claim that labels found in his house detected him. It only contrasts documentary and physical checks with taste, and that matches the answer the question keys (provenance, glass, label printing, cork, then the estate's records). The examiner's objection is about emphasis and adds detail; it is a quibble, not a false fact.",
+  "verifySources": [
+   "https://en.wikipedia.org/wiki/Rudy_Kurniawan",
+   "C:/Users/zpull/SommeliersCodex-canon-audit/.scripts/canon-audit/codex-full/batch-185.json"
+  ],
+  "finalFix": ""
+ }
+]
