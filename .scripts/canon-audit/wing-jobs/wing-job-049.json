@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "c-d0p0j8f4",
+   "kind": "accept-list",
+   "claim": "The question is exact-only (ex:1), so plainly right answers such as \"under 22\", \"below 22\" and \"less than 22\" are marked wrong. The list accepts \"22\" on its own and \"under 22 percent\", but not these bare forms.",
+   "finalFix": "Add to accept: \"under 22\", \"below 22\", \"less than 22\", \"under twenty two\", \"below twenty two\", \"less than twenty two\", \"under 22 degrees\", \"below 22 degrees\", \"less than 22 degrees\", \"under twenty two degrees\", \"below twenty two degrees\", \"less than twenty two degrees\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-d0p0j8f4",
+   "standaloneFile": "rewrite/categories/r2_sake.py",
+   "oldText": "        \"twenty two degrees\", \"less than 22%\", \"under 22%\", \"below 22%\"],",
+   "newText": "        \"twenty two degrees\", \"less than 22%\", \"under 22%\", \"below 22%\",\n        \"under 22\", \"below 22\", \"less than 22\", \"under twenty two\",\n        \"below twenty two\", \"less than twenty two\", \"under 22 degrees\",\n        \"below 22 degrees\", \"less than 22 degrees\",\n        \"under twenty two degrees\", \"below twenty two degrees\",\n        \"less than twenty two degrees\"],",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

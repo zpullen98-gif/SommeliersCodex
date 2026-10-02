@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "i-q0b7jqzx",
+   "kind": "outdated",
+   "claim": "often as a single cuvee drawing on all seven permitted varieties",
+   "finalFix": "often as a single cuvee drawing on all seven historic varieties (the hybrid Voltis has also been permitted on trial since 2022)"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-q0b7jqzx",
+   "standaloneFile": "rewrite/categories/r1_champagne.py",
+   "oldText": "often as a single cuvee drawing on all seven permitted varieties.\"),",
+   "newText": "often as a single cuvee drawing on all seven historic varieties (the hybrid Voltis has also been permitted on trial since 2022).\"),",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

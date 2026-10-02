@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "i-8vs3sb9z",
+   "kind": "outdated",
+   "claim": "Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder, and its name comes from breaking the shrivelled berries out of the bunch.",
+   "finalFix": "Ausbruch once sat between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder; today the name belongs to Rust alone and requires Trockenbeerenauslese must weight (30 KMW). The name comes from breaking the shrivelled berries out of the bunch."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-8vs3sb9z",
+   "standaloneFile": "rewrite/categories/r1_austria.py",
+   "oldText": "\"Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder, and its name comes from breaking the shrivelled berries out of the bunch.",
+   "newText": "\"Ausbruch once sat between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder; today the name belongs to Rust alone and requires Trockenbeerenauslese must weight (30 KMW). The name comes from breaking the shrivelled berries out of the bunch.",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

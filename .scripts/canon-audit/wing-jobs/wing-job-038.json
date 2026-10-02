@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "c-j3tfw36p",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says soil is \"deliberately absent from the test\" and that \"the law measures where, never how or what\".",
+   "finalFix": "The regulations ask for a single tract of land, discrete from its neighbours and homogeneous in its growing attributes, with the five-vineyard, five-hectare and five-hundred-tonne figures as the floor of scale: five separately owned vineyards, each of at least five hectares, and in the order of five hundred tonnes of grapes produced in a year. Geology is one factor among many the Committee weighs, alongside climate, harvest dates, drainage, irrigation water and elevation, but no single unbroken soil type is required. Style is deliberately absent from the test: the law measures where, never how the wine is made or what it tastes like."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-j3tfw36p",
+   "standaloneFile": "rewrite/categories/r2_australia.py",
+   "oldText": "Style and soil are deliberately absent from the test, which is the system in miniature: the law measures where, never how or what.\"),",
+   "newText": "Geology is one factor among many the Committee weighs, alongside climate, harvest dates, drainage, irrigation water and elevation, but no single unbroken soil type is required. Style is deliberately absent from the test: the law measures where, never how the wine is made or what it tastes like.\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

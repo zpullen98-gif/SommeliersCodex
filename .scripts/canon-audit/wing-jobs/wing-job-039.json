@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "c-v46nukpw",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says both 2012 promotions, Angelus and Pavie, were contested in court.",
+   "finalFix": "The 2012 classification as a whole was challenged in court by estates that were demoted or left out, which is the recurring feature of this classification rather than an accident: because rank is revisable it is worth suing over, and because it is written into the appellation rules the state ends up in the argument. The 1855 list attracts no litigation for the opposite reason."
+  },
+  {
+   "id": "c-eew914t0",
+   "kind": "outdated",
+   "claim": "The explanation says five communes share the Margaux name, and treats Cantenac as a separate commune.",
+   "finalFix": "The five historic villages all share the name (Margaux and Cantenac merged into the single commune of Margaux-Cantenac in 2017), which is much of why Margaux is the least uniform of the four in soil and in style. An address in Cantenac or Labarde is labelled Margaux with nothing on the bottle to say so."
+  },
+  {
+   "id": "c-b42arsxv",
+   "kind": "wrong-key",
+   "claim": "The question keys Cot as the old local name for Malbec \"still used in the Medoc\", and the explanation implies the grape's four names are Cot (Medoc), Pressac (Right Bank), Auxerrois (Cahors) and Malbec.",
+   "finalFix": "q: \"Around Saint-Emilion and the rest of the Libournais, Malbec has long gone by a local name quite different from the one used in the Medoc. What is it?\"; ans: \"Pressac\"; accept: [\"pressac\", \"noir de pressac\", \"pressac or noir de pressac\"]; exp: \"Pressac, or Noir de Pressac, is the old Right Bank name. Malbec itself is the Medoc name, taken from a merchant called Malbeck who spread the vine there in the eighteenth century. Cot is the official French name and the one used in the Loire, and Auxerrois is the Cahors name. One variety with four names is a standard trap on a blind tasting sheet.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-v46nukpw",
+   "standaloneFile": "rewrite/categories/r2_bordeaux.py",
+   "oldText": "\"Both promotions were contested in court, which is the recurring feature",
+   "newText": "\"The 2012 classification as a whole was challenged in court by estates that were demoted or left out, which is the recurring feature",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-eew914t0",
+   "standaloneFile": "rewrite/categories/r2_bordeaux.py",
+   "oldText": "\"Five communes in all share the name, which is much of why Margaux",
+   "newText": "\"The five historic villages all share the name (Margaux and Cantenac merged into the single commune of Margaux-Cantenac in 2017), which is much of why Margaux",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-b42arsxv",
+   "standaloneFile": "rewrite/categories/r2_bordeaux.py",
+   "oldText": "       \"Bordeaux growers have an old local name for Malbec, still used in the Medoc and quite different from the one used on the Right Bank. What is the Medoc name?\",\n       \"Cot\",\n       [\"cot\", \"cot in the medoc\", \"cot or pressac\", \"pressac or cot\",\n        \"cot also called pressac\", \"cot malbec\", \"cot the medoc name for malbec\"],\n       \"Pressac is the Right Bank name, said to come from the family that spread the vine around Saint-Emilion, and Auxerrois is what the same grape is called in Cahors. One variety with four names is a standard trap on a blind tasting sheet.\",\n       ex=True),",
+   "newText": "       \"Around Saint-Emilion and the rest of the Libournais, Malbec has long gone by a local name quite different from the one used in the Medoc. What is it?\",\n       \"Pressac\",\n       [\"pressac\", \"noir de pressac\", \"pressac or noir de pressac\"],\n       \"Pressac, or Noir de Pressac, is the old Right Bank name. Malbec itself is the Medoc name, taken from a merchant called Malbeck who spread the vine there in the eighteenth century. Cot is the official French name and the one used in the Loire, and Auxerrois is the Cahors name. One variety with four names is a standard trap on a blind tasting sheet.\",\n       ex=True, pin=\"c-b42arsxv\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

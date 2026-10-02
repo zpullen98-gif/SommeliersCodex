@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "i-whkcs973",
+   "kind": "wrong-explanation",
+   "claim": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand nearly four thousand kilometres apart",
+   "finalFix": "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand more than three thousand kilometres apart"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-whkcs973",
+   "standaloneFile": "rewrite/categories/r1_geography_maps.py",
+   "oldText": "Niagara Peninsula in Ontario stand nearly four thousand kilometres apart",
+   "newText": "Niagara Peninsula in Ontario stand more than three thousand kilometres apart",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

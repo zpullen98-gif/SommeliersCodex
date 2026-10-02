@@ -1,0 +1,110 @@
+{
+ "findings": [
+  {
+   "id": "m-m7eg1sls",
+   "kind": "wrong-key",
+   "claim": "Catalonia's cava industry, 1970s — mechanized riddling that conquered Champagne itself (exp: 'Technology flowed north for once.')",
+   "finalFix": "ans: \"Claude Cazals and Jacques Ducoin, Champagne growers, France (patented 1968; first prototype 1973).\" exp: \"The gyropalette is French by patent. 'Girasol' (sunflower) is its Spanish name. Catalan cava houses, Codorníu first among them, took it up early from the mid-1970s, which is where the Catalan invention legend comes from. Champagne adopted it widely after Piper-Heidsieck ordered 221 machines at the end of 1978.\" accept: [\"cazals ducoin france champagne 1968\", \"cazals ducoin france\", \"france champagne\"]. Remove the Catalan-invention accept strings (\"cava spain rovellats claim catalan invention 1970s\", \"catalonia 1970s\")."
+  },
+  {
+   "id": "m-y1wlpslu",
+   "kind": "ambiguous-stem",
+   "claim": "Margaret River's 'Gladstones papers' successor debate now focuses on which climate metric? / Harvest compression under warming",
+   "finalFix": "Replace the stem and drop the invented \"Gladstones papers successor debate\" framing. New stem: \"Under recent warm vintages (e.g. 2024, when whites were picked over about two weeks instead of the usual four), what harvest-timing problem do Margaret River producers now discuss?\"\n\nKeep the key: \"Harvest compression: vintages start earlier and varieties ripen close together, straining pickers and winery capacity\".\n\nKeep the accept list, and add the plain \"harvest compression\".\n\nDo not re-key to BEDD: no source ties the current warming discussion to that metric."
+  },
+  {
+   "id": "m-nn8i2t8m",
+   "kind": "outdated",
+   "claim": "leading houses (Trimbach, Hugel) decline to use it",
+   "finalFix": "ans: \"Rapid expansion diluted the concept, quality varies widely within crus, and for decades leading houses (Trimbach, Hugel) refused to use it, labelling their best wines by brand instead (Clos Ste Hune, Jubilee). Both came round only recently (Trimbach Grand Cru Geisberg from the 2009 vintage, Hugel from 2015 with Grossi Laüe Grand Cru Sporen), which left the market unconvinced.\" In accept, change 'dilution of the concept and top houses opting out' to 'dilution of the concept and top houses long opting out'."
+  },
+  {
+   "id": "m-p4lgwdgz",
+   "kind": "wrong-key",
+   "claim": "accept: \"saumur vouvray cremant de loire montlouis\"",
+   "finalFix": "In data-master.js MASTER_QUESTIONS, id m-p4lgwdgz: delete \"saumur vouvray cremant de loire montlouis\" from the accept list and keep only \"cremant de loire saumur vouvray montlouis\". That matches the \"ans\" field (Crémant de Loire, Saumur, Vouvray, Montlouis)."
+  },
+  {
+   "id": "m-muwun092",
+   "kind": "wrong-fact-in-option",
+   "claim": "WIETA fair-trade certification",
+   "finalFix": "In \"ans\", replace \"WIETA fair-trade certification\" with \"WIETA ethical-trade (Fair Labour) certification, alongside separate Fairtrade-certified producers\"."
+  },
+  {
+   "id": "m-hgn6gjdf",
+   "kind": "outdated",
+   "claim": "The house holds that its names (Clos Sainte-Hune, Frédéric Émile) guarantee more than the cru system's politics — so the labels omit 'grand cru'",
+   "finalFix": "The house long held that its own names (Clos Sainte-Hune in Rosacker, Frédéric Émile from Geisberg and Osterberg) guarantee more than the cru system, so those flagships still omit 'grand cru'. Since the 2009 Geisberg (released 2015) it has also bottled Grand Cru Geisberg, Schlossberg, Mandelberg and Brand under the cru name."
+  },
+  {
+   "id": "m-4wr9fay5",
+   "kind": "accept-list",
+   "claim": "accept: \"alsace grand cru cremant\"",
+   "finalFix": "accept: [\"cremant d'alsace\", \"alsace cremant\", \"cremant alsace\"]"
+  },
+  {
+   "id": "m-t7chvy1o",
+   "kind": "ambiguous-stem",
+   "claim": "Which grand cru's name means 'sorcerers' hill', beloved of Gewurztraminer at Zind-Humbrecht?",
+   "finalFix": "q: \"Which Wintzenheim grand cru, whose name means 'stallion', is a Zind-Humbrecht Gewurztraminer site?\"; ans: \"Hengst\"; accept: [\"hengst\"]; exp: \"Hengst ('stallion' in German) is the grand cru of Wintzenheim, long reputed for Gewurztraminer on calcareous marl. Zind-Humbrecht also makes Gewurztraminer from Goldert ('golden') in Gueberschwihr. No Alsace grand cru has a name meaning sorcerers' or witches' hill.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-m7eg1sls",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"cava spain rovellats claim catalan invention 1970s\",\"catalonia 1970s\"],\"ans\":\"Catalonia's cava industry, 1970s — mechanized riddling that conquered Champagne itself\",\"exp\":\"Technology flowed north for once.\"}",
+   "newText": "\"accept\":[\"cazals ducoin france champagne 1968\",\"cazals ducoin france\",\"ducoin france\",\"cazals france\",\"france champagne\",\"champagne france\"],\"ans\":\"Claude Cazals and Jacques Ducoin, Champagne growers, France (patented 1968; first prototype 1973)\",\"exp\":\"The gyropalette is French by patent. 'Girasol' (sunflower) is its Spanish name. Catalan cava houses, Codorníu first among them, took it up early from the mid-1970s, which is where the Catalan invention legend comes from. Champagne adopted it widely after Piper-Heidsieck ordered 221 machines at the end of 1978.\"}",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-y1wlpslu",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Margaret River's 'Gladstones papers' successor debate now focuses on which climate metric?\",\"sa\":1,\"accept\":[\"ocean warming harvest compression\",\"harvest compression earlier vintages\"],\"ans\":\"Harvest compression under warming — varieties ripening simultaneously, straining wineries\"",
+   "newText": "\"q\":\"Under recent warm vintages (e.g. 2024, when whites were picked over about two weeks instead of the usual four), what harvest-timing problem do Margaret River producers now discuss?\",\"sa\":1,\"accept\":[\"ocean warming harvest compression\",\"harvest compression earlier vintages\",\"harvest compression\"],\"ans\":\"Harvest compression: vintages start earlier and varieties ripen close together, straining pickers and winery capacity\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-nn8i2t8m",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"dilution of the concept and top houses opting out\"],\"ans\":\"Rapid expansion diluted the concept, quality varies widely within crus, and leading houses (Trimbach, Hugel) decline to use it — leaving the market unconvinced\"",
+   "newText": "\"dilution of the concept and top houses long opting out\"],\"ans\":\"Rapid expansion diluted the concept, quality varies widely within crus, and for decades leading houses (Trimbach, Hugel) refused to use it, labeling their best wines by brand instead (Clos Ste Hune, Jubilee). Both came around only recently (Trimbach Grand Cru Geisberg from the 2009 vintage, Hugel from 2015 with Grossi Laüe Grand Cru Sporen), which left the market unconvinced\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-p4lgwdgz",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"saumur vouvray cremant de loire montlouis\",\"cremant de loire saumur vouvray montlouis\"]",
+   "newText": "\"accept\":[\"cremant de loire saumur vouvray montlouis\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-muwun092",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "black-owned brands, WIETA fair-trade certification\"",
+   "newText": "black-owned brands, WIETA ethical-trade (Fair Labour) certification, alongside separate Fairtrade-certified producers\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-hgn6gjdf",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"ans\":\"The house holds that its names (Clos Sainte-Hune, Frédéric Émile) guarantee more than the cru system's politics — so the labels omit 'grand cru'\"",
+   "newText": "\"ans\":\"The house long held that its own names (Clos Sainte-Hune in Rosacker, Frédéric Émile from Geisberg and Osterberg) guarantee more than the cru system, so those flagships still omit 'grand cru'. Since the 2009 Geisberg (released 2015) it has also bottled Grand Cru Geisberg, Schlossberg, Mandelberg and Brand under the cru name\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-4wr9fay5",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"cremant d'alsace\",\"alsace grand cru cremant\"]",
+   "newText": "\"accept\":[\"cremant d'alsace\",\"alsace cremant\",\"cremant alsace\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-t7chvy1o",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Which grand cru's name means 'sorcerers' hill', beloved of Gewurztraminer at Zind-Humbrecht?\",\"sa\":1,\"accept\":[\"hexenberg no sorcerer goldert brand hengst\",\"hengst means stallion goldert\"],\"ans\":\"(The trap: 'Hexenbückel' is folklore) — accept discussion; Hengst = stallion, Goldert = golden slope: etymologies are oral fodder\",\"exp\":\"Master examiners play etymology games; compose, don't freeze.\"",
+   "newText": "\"q\":\"Which Wintzenheim grand cru, whose name means 'stallion', is a Zind-Humbrecht Gewurztraminer site?\",\"sa\":1,\"accept\":[\"hengst\"],\"ans\":\"Hengst\",\"exp\":\"Hengst ('stallion' in German) is the grand cru of Wintzenheim, long reputed for Gewurztraminer on calcareous marl. Zind-Humbrecht also makes Gewurztraminer from Goldert ('golden') in Gueberschwihr. No Alsace grand cru has a name meaning sorcerers' or witches' hill.\"",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

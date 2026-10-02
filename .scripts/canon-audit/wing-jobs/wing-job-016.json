@@ -1,0 +1,103 @@
+{
+ "findings": [
+  {
+   "id": "m-9ec17myd",
+   "kind": "wrong-key",
+   "claim": "The model answer says rebêche belongs to 'Champagne, not Burgundy', and the accept list only takes answers that deny Burgundy.",
+   "finalFix": "q: \"Explain 'rebêche': what is it, and in which region did the term originate?\" ans: \"Champagne: the final press fraction after the cuvée and taille, excluded from the appellation and sent to distillation; Crémant de Bourgogne also regulates it (a rebêche rate of 0 to 10% of settled must)\" accept: [\"~champagne\", \"champagne final press fraction\", \"champagne term last press fraction\", \"champagne pressing final cut\"] exp: \"Rebêche is a Champagne pressing term for the last, harshest juice, which may not be made into appellation wine. Burgundy uses it too: the Crémant de Bourgogne cahier des charges (homologated 2 December 2021) sets a rebêche rate of 0 to 10% of settled must, requires new press sites to fractionate into cuvées, tailles and rebêches, and has rebêche volumes recorded in the press book.\""
+  },
+  {
+   "id": "m-ld9efw5y",
+   "kind": "outdated",
+   "claim": "The stem asks for the 'current legal curiosity', and the answer says de Vogüé's Musigny Blanc has been declassified to Bourgogne Blanc since 1994, still in the present tense.",
+   "finalFix": "q: \"Give the appellation and producer of 'Musigny Blanc', and the legal curiosity of its 1994 to 2014 vintages.\" ans: \"Musigny Grand Cru (Chambolle-Musigny), Comte Georges de Vogüé, the only white Musigny; its 1994 to 2014 vintages were voluntarily declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage\" accept: [\"de vogue bourgogne blanc\", \"vogue declassified to bourgogne blanc\", \"vogue bourgogne blanc until 2015\"] exp: \"A grand cru estate voluntarily labelling its wine as regional for 21 vintages, a paradox Masters love; the Grand Cru label returned in 2015.\""
+  },
+  {
+   "id": "m-2dnnzjvn",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says Clos de Bèze may be labelled 'Chambertin' 'under the 1936 decree'.",
+   "finalFix": "ans: \"The Abbey of Bèze planted it c. 630, the oldest documented Burgundy cru; under the 1937 decree it may be labelled simply 'Chambertin', though Chambertin may never be sold as Clos de Bèze\""
+  },
+  {
+   "id": "m-2dnnzjvn",
+   "kind": "accept-list",
+   "claim": "The accept entry 'chambertin' passes the one-word answer 'Chambertin', which ignores the abbey and the date. It also passes a wrong abbey.",
+   "finalFix": "list: 1, items: [\"Abbey of Bèze (Bèze)\", \"630 (7th century)\", \"Chambertin\"], need: 3, accept: [\"abbey of beze 630 chambertin\"], ans: \"Abbey of Bèze, c. 630, Chambertin\", exp: \"Duke Amalgaire gave the land to the Abbey of Bèze c. 630, which makes Clos de Bèze the oldest documented Burgundy cru. Under the 1937 AOC decree its wine may be labelled simply 'Chambertin'; the reverse is not allowed, so Chambertin may not be sold as Clos de Bèze. Bertin's field ('champ Bertin') next door borrowed the fame.\""
+  },
+  {
+   "id": "m-efo2as8e",
+   "kind": "accept-list",
+   "claim": "The accept entry 'la grande rue' passes a one-name answer to 'recite the six grands crus'. It also passes the exact trap the explanation warns about.",
+   "finalFix": "accept: [\"~romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue\"]"
+  },
+  {
+   "id": "m-o0uj0uoy",
+   "kind": "accept-list",
+   "claim": "The accept entry 'clos de beze' passes a one-name answer to 'name all nine grands crus of Gevrey-Chambertin'.",
+   "finalFix": "accept: [\"~chambertin clos de beze chapelle charmes griotte latricieres mazis mazoyeres ruchottes\", \"~chambertin chambertin clos de beze chapelle chambertin charmes chambertin griotte chambertin latricieres chambertin mazis chambertin mazoyeres chambertin ruchottes chambertin\"]"
+  },
+  {
+   "id": "m-hvg4oc1c",
+   "kind": "accept-list",
+   "claim": "The stem asks for 'any two' appellations, but the grader refuses correct pairs such as 'Loupiac and Cadillac' and 'Loupiac, Sainte-Croix-du-Mont'.",
+   "finalFix": "accept: [\"~loupiac cadillac\", \"~loupiac and cadillac\", \"~cadillac loupiac\", \"~cadillac and loupiac\", \"~loupiac sainte croix du mont\", \"~loupiac and sainte croix du mont\", \"~loupiac ste croix du mont\", \"~loupiac and ste croix du mont\", \"~sainte croix du mont loupiac\", \"~sainte croix du mont and loupiac\", \"~ste croix du mont loupiac\", \"~ste croix du mont and loupiac\", \"~cadillac sainte croix du mont\", \"~cadillac and sainte croix du mont\", \"~cadillac ste croix du mont\", \"~cadillac and ste croix du mont\", \"~sainte croix du mont cadillac\", \"~sainte croix du mont and cadillac\", \"~ste croix du mont cadillac\", \"~ste croix du mont and cadillac\"]"
+  },
+  {
+   "id": "m-so6zmuo3",
+   "kind": "outdated",
+   "claim": "The model answer says AOC wines 'must pass the agrément — an analytical and tasting approval', and that failing it means declassification.",
+   "finalFix": "ans: \"Since the 2008 INAO reform every operator must hold a habilitation and follow the appellation's control plan; independent inspection bodies (OI/OC) run analytical and tasting checks on samples. A failed product check means the wine is downgraded, and repeated failure or a breach of the cahier des charges can cost the operator its habilitation, and with it the right to the name. (Before 2008 this was the systematic agrément.)\" Add accept entries \"~habilitation\", \"~product control\" and \"~failed control\", and keep the agrément entries as historical answers."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-9ec17myd",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "{\"id\":\"m-9ec17myd\",\"cat\":\"Burgundy\",\"q\":\"Explain 'rebêche' — trick question: where does the term actually belong?\",\"sa\":1,\"accept\":[\"champagne pressing final cut not burgundy\",\"champagne term last press fraction\",\"~champagne not burgundy\",\"~champagne term not burgundy\"],\"ans\":\"Champagne, not Burgundy — the final press fraction after the cuvée and taille, sent to distillation\",\"exp\":\"Masters exams cross-wire regions to test composure.\"}",
+   "newText": "{\"id\":\"m-9ec17myd\",\"cat\":\"Burgundy\",\"q\":\"Explain 'rebêche': what is it, and in which region did the term originate?\",\"sa\":1,\"accept\":[\"~champagne\",\"~champagne final press fraction\",\"~champagne term last press fraction\",\"~champagne pressing final cut\"],\"ans\":\"Champagne: the final press fraction after the cuvée and taille, excluded from the appellation and sent to distillation; Crémant de Bourgogne also regulates it (a rebêche rate of 0 to 10% of settled must)\",\"exp\":\"Rebêche is a Champagne pressing term for the last, harshest juice, which may not be made into appellation wine. Burgundy uses it too: the Crémant de Bourgogne cahier des charges (homologated 2 December 2021) sets a rebêche rate of 0 to 10% of settled must, requires new press sites to fractionate into cuvées, tailles and rebêches, and has rebêche volumes recorded in the press book.\"}",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-ld9efw5y",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "{\"id\":\"m-ld9efw5y\",\"cat\":\"Burgundy\",\"q\":\"Give the appellation and producer of 'Musigny Blanc' and its current legal curiosity.\",\"sa\":1,\"accept\":[\"de vogue bourgogne blanc\",\"vogue declassifies to bourgogne blanc\"],\"ans\":\"Comte Georges de Vogüé — the only white Musigny; declassified to Bourgogne Blanc since 1994 while young vines mature (returning as Musigny)\",\"exp\":\"A grand cru estate voluntarily labeling regional — Masters love the paradox.\"}",
+   "newText": "{\"id\":\"m-ld9efw5y\",\"cat\":\"Burgundy\",\"q\":\"Give the appellation and producer of 'Musigny Blanc', and the legal curiosity of its 1994 to 2014 vintages.\",\"sa\":1,\"accept\":[\"~de vogue bourgogne blanc\",\"~vogue declassified to bourgogne blanc\",\"~vogue sold as bourgogne blanc\",\"~vogue bourgogne blanc until 2015\"],\"ans\":\"Musigny Grand Cru (Chambolle-Musigny), Comte Georges de Vogüé, the only white Musigny; its 1994 to 2014 vintages were voluntarily declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage\",\"exp\":\"A grand cru estate voluntarily labeling its wine as regional for 21 vintages, a paradox Masters love; the Grand Cru label returned in 2015.\"}",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-2dnnzjvn",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "{\"id\":\"m-2dnnzjvn\",\"cat\":\"Burgundy\",\"q\":\"Which abbey planted Clos de Bèze and when, and under what shorter grand cru name may its wine legally be sold?\",\"sa\":1,\"accept\":[\"abbey of beze 630\",\"bèze abbey 7th century\",\"monks of beze\",\"chambertin\"],\"ans\":\"The Abbey of Bèze planted it c. 630 — the oldest documented Burgundy cru; under the 1936 decree it may be labelled simply 'Chambertin', though Chambertin may never be sold as Clos de Bèze\",\"exp\":\"Bertin's field ('champ Bertin') next door borrowed the fame.\"}",
+   "newText": "{\"id\":\"m-2dnnzjvn\",\"cat\":\"Burgundy\",\"q\":\"Which abbey planted Clos de Bèze and when, and under what shorter grand cru name may its wine legally be sold?\",\"sa\":1,\"list\":1,\"items\":[\"Abbey of Bèze (Bèze)\",\"630 (7th century)\",\"Chambertin\"],\"need\":3,\"accept\":[\"abbey of beze 630 chambertin\"],\"ans\":\"Abbey of Bèze, c. 630, Chambertin\",\"exp\":\"Duke Amalgaire gave the land to the Abbey of Bèze c. 630, which makes Clos de Bèze the oldest documented Burgundy cru. Under the 1937 AOC decree its wine may be labeled simply 'Chambertin'; the reverse is not allowed, so Chambertin may not be sold as Clos de Bèze. Bertin's field ('champ Bertin') next door borrowed the fame.\"}",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-efo2as8e",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue\",\"la grande rue\"]",
+   "newText": "\"accept\":[\"~romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-o0uj0uoy",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"chambertin clos de beze chapelle charmes griotte latricieres mazis mazoyeres ruchottes\",\"clos de beze\"]",
+   "newText": "\"accept\":[\"~chambertin clos de beze chapelle charmes griotte latricieres mazis mazoyeres ruchottes\",\"~chambertin chambertin clos de beze chapelle chambertin charmes chambertin griotte chambertin latricieres chambertin mazis chambertin mazoyeres chambertin ruchottes chambertin\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-hvg4oc1c",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"loupiac cadillac sainte-croix-du-mont\",\"sainte croix du mont loupiac\"]",
+   "newText": "\"accept\":[\"~loupiac cadillac\",\"~loupiac and cadillac\",\"~cadillac loupiac\",\"~cadillac and loupiac\",\"~loupiac sainte croix du mont\",\"~loupiac and sainte croix du mont\",\"~loupiac ste croix du mont\",\"~loupiac and ste croix du mont\",\"~sainte croix du mont loupiac\",\"~sainte croix du mont and loupiac\",\"~ste croix du mont loupiac\",\"~ste croix du mont and loupiac\",\"~cadillac sainte croix du mont\",\"~cadillac and sainte croix du mont\",\"~cadillac ste croix du mont\",\"~cadillac and ste croix du mont\",\"~sainte croix du mont cadillac\",\"~sainte croix du mont and cadillac\",\"~ste croix du mont cadillac\",\"~ste croix du mont and cadillac\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-so6zmuo3",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"~fail the agrément\"],\"ans\":\"Wines must pass the agrément — an analytical and tasting approval. Failure means declassification; persistent failure or rule breach can cost a producer the right to the name\"",
+   "newText": "\"~fail the agrément\",\"~habilitation\",\"~product control\",\"~failed control\"],\"ans\":\"Since the 2008 INAO reform every operator must hold a habilitation and follow the appellation's control plan; independent inspection bodies (OI/OC) run analytical and tasting checks on samples. A failed product check means the wine is downgraded, and repeated failure or a breach of the cahier des charges can cost the operator its habilitation, and with it the right to the name. (Before 2008 this was the systematic agrément.)\"",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

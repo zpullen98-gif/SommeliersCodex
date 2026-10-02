@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "i-lftfxaqs",
+   "kind": "wrong-explanation",
+   "claim": "The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines.",
+   "finalFix": "The Alto Valle del Rio Negro grew vines alongside alfalfa and fruit from the early 1900s, and later became better known for its apple and pear orchards."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-lftfxaqs",
+   "standaloneFile": "rewrite/categories/r1_south_america.py",
+   "oldText": "\"The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines. Wind",
+   "newText": "\"The Alto Valle del Rio Negro grew vines alongside alfalfa and fruit from the early 1900s, and later became better known for its apple and pear orchards. Wind",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "findings": [
+  {
+   "id": "m-ikmb0hw1",
+   "kind": "wrong-explanation",
+   "claim": "The model answer ranks Chaume Premier Cru below Bonnezeaux by concentration. It also says Quarts de Chaume has 'the region's highest must weight requirement at 298 g/L'.",
+   "finalFix": "ans: \"Ascending by required must weight: Coteaux du Layon, then Coteaux du Layon followed by one of its named villages such as Rablay, Beaulieu, Saint-Aubin and Saint-Lambert; then Bonnezeaux, the enclave on the three hills above Thouarcé (at least 238 g/L, raised to 255 g/L in the 2022 revision, 25 hl/ha); then Coteaux du Layon Premier Cru Chaume (272 g/L, 25 hl/ha, successive hand-picked tries); then Quarts de Chaume, promoted in 2011 to the Loire's only Grand Cru (298 g/L and the lowest yield, 20 hl/ha). Coteaux du Layon Sélection de Grains Nobles sits apart as a mention, with the highest must-weight minimum of all at 323 g/L. Outside the Layon valley altogether: Coteaux de l'Aubance, on the little Aubance river between the Layon and Angers, and Anjou-Coteaux de la Loire, on the Loire itself around and above Savennières. All are Chenin, all on Armorican schist, and all depend on autumn mist off small rivers, the same mechanism as the Ciron at Sauternes on a smaller scale.\" accept[0]: \"layon then bonnezeaux then chaume premier cru then quarts de chaume with aubance and anjou coteaux de la loire outside\". accept[2]: \"quarts de chaume grand cru at the top chaume premier cru below it\""
+  },
+  {
+   "id": "m-sx76oos5",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the Farr Vintners blind tastings placed Kumeu River's Chardonnays ahead of grand cru Burgundy.",
+   "finalFix": "London blind tastings (Farr Vintners, 2015) placing its Chardonnays ahead of top premier cru and village white Burgundy"
+  },
+  {
+   "id": "m-jf68lure",
+   "kind": "ambiguous-stem",
+   "claim": "The stem rests on a false premise. No Anjou AOP grows 'within sight of the Atlantic', and there is no '2011 appellation contiguity oddity'. The model answer is only '(Accept reasoned answers)', so the question has no gradable key.",
+   "finalFix": "Stem: 'Which Anjou AOP for dry Chenin Blanc sits on the north bank of the Loire just downstream of Angers, and is home to the Roche aux Moines and Coulée de Serrant crus?' Model answer: 'Savennières'. Accept: ['savennieres', 'savennières']. Explanation: 'Savennières (communes of Savennières, Bouchemaine and La Possonnière) lies on the right bank of the Loire west of Angers; it is well inland, not near the Atlantic.'"
+  },
+  {
+   "id": "m-supq5mbl",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the name Breton 'commemorates the Abbé Breton', Richelieu's steward in the seventeenth century.",
+   "finalFix": "Breton is the Loire's local name for Cabernet Franc. Tradition credits the Abbé Breton, steward to Cardinal Richelieu, with propagating the vine through Chinon and Bourgueil in the seventeenth century and so giving it his name. But Rabelais had already written of 'the good Breton wine' of the Véron by Chinon in Gargantua (1534), a century earlier, so the name is older than the Abbé and the story is legend. The DNA matters more than the folklore: Cabernet Franc crossed with Sauvignon Blanc produced Cabernet Sauvignon, and crossed with Magdeleine Noire des Charentes produced Merlot; it is also a parent of Carmenère. In other words the Loire's grape is the ancestor of Bordeaux's, not a poor relation of them — the argument you make when someone calls Chinon a lesser claret."
+  },
+  {
+   "id": "m-nfea4ihb",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says Vouvray and Montlouis are both 'one hundred per cent Chenin Blanc'.",
+   "finalFix": "Both are Chenin Blanc on tuffeau (Montlouis exclusively; Vouvray also permits a small accessory share of Orbois/Menu Pineau, now rarely used), and both run the full ladder from sec to moelleux plus pétillant and mousseux."
+  },
+  {
+   "id": "m-061ar78u",
+   "kind": "outdated",
+   "claim": "The model answer and the first accept string say Columbia Valley holds 'roughly seventeen nested AVAs'.",
+   "finalFix": "ans: \"Columbia Valley — an umbrella holding the great majority of the state's plantings, with some eighteen nested AVAs as of 2026 (Beverly 2024 and Columbia Hills 2026 among the newest) and still growing\"; accept[0]: \"columbia valley roughly eighteen nested avas\""
+  },
+  {
+   "id": "m-pe79ielp",
+   "kind": "outdated",
+   "claim": "The model answer says that to carry the AMW seal a wine must 'respect a yield cap'.",
+   "finalFix": "Replace \"respect a yield cap\" with \"be made from grapes picked at a minimum ripeness (18 Brix for Sauvignon Blanc, a rule members adopted in 2024; the original 2018 standard set cropping limits instead, and the current criteria set no yield limit), pass a blind sensory assessment by a panel of winemakers\""
+  },
+  {
+   "id": "m-pijuxhjo",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer says 'Only Niagara Peninsula subdivides further'.",
+   "finalFix": "Below the provincial 'Ontario' appellation sit the Designated Viticultural Areas: Niagara Peninsula, Lake Erie North Shore and Prince Edward County. Lake Erie North Shore contains one sub-appellation, South Islands (Pelee Island, 2015). Niagara Peninsula subdivides into regional appellations (Niagara Escarpment, Niagara-on-the-Lake) and then ten sub-appellations, among them Beamsville Bench, Twenty Mile Bench, Short Hills Bench, Creek Shores, Four Mile Creek and St. David's Bench"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-ikmb0hw1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"ans\":\"Ascending: Coteaux du Layon, with its named villages such as Rablay, Beaulieu, Saint-Aubin and Saint-Lambert; then Coteaux du Layon Premier Cru Chaume, which demands successive hand-picked tries and a far higher residual sugar; then the two enclaves that stand alone — Bonnezeaux, on the three hills above Thouarcé, and Quarts de Chaume, promoted in 2011 to the Loire's only Grand Cru, with the region's highest must weight requirement at 298 g/L and its lowest yields. Outside the Layon valley altogether: Coteaux de l'Aubance, on the little Aubance river between the Layon and Angers, and Anjou-Coteaux de la Loire, on the Loire itself around and above Savennières. All are Chenin, all on Armorican schist, and all depend on autumn mist off small rivers — the same mechanism as the Ciron at Sauternes, at a smaller scale.\"",
+   "newText": "\"ans\":\"Ascending by required must weight: Coteaux du Layon, then Coteaux du Layon followed by one of its named villages such as Rablay, Beaulieu, Saint-Aubin and Saint-Lambert; then Bonnezeaux, the enclave on the three hills above Thouarcé (at least 238 g/L, raised to 255 g/L in the 2022 revision, 25 hl/ha); then Coteaux du Layon Premier Cru Chaume (272 g/L, 25 hl/ha, successive hand-picked tries); then Quarts de Chaume, promoted in 2011 to the Loire's only Grand Cru (298 g/L and the lowest yield, 20 hl/ha). Coteaux du Layon Sélection de Grains Nobles sits apart as a mention, with the highest must-weight minimum of all at 323 g/L. Outside the Layon valley altogether: Coteaux de l'Aubance, on the little Aubance river between the Layon and Angers, and Anjou-Coteaux de la Loire, on the Loire itself around and above Savennières. All are Chenin, all on Armorican schist, and all depend on autumn mist off small rivers, the same mechanism as the Ciron at Sauternes on a smaller scale.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-ikmb0hw1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"layon then chaume premier cru then bonnezeaux and quarts de chaume with aubance and anjou coteaux de la loire outside\"",
+   "newText": "\"layon then bonnezeaux then chaume premier cru then quarts de chaume with aubance and anjou coteaux de la loire outside\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-ikmb0hw1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"quarts de chaume grand cru at the top bonnezeaux beside it\"",
+   "newText": "\"quarts de chaume grand cru at the top chaume premier cru below it\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-sx76oos5",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"ans\":\"Repeated London blind tastings (Farr Vintners) placing its Chardonnays ahead of grand cru Burgundy\"",
+   "newText": "\"ans\":\"London blind tastings (Farr Vintners, 2015) placing its Chardonnays ahead of top premier cru and village white Burgundy\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-jf68lure",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"The Loire's 2011 'appellation contiguity' oddity: which AOP grows within sight of the Atlantic yet belongs to the Anjou district?\",\"sa\":1,\"accept\":[\"savennieres no fiefs vendeens anjou brissac\",\"fiefs vendeens is not it savennieres anjou\"],\"ans\":\"(Accept reasoned answers) — the exam's point: know the district borders; Savennières is Anjou's western outpost above the river\",\"exp\":\"Orals probe map fluency; argue the geography aloud.\"",
+   "newText": "\"q\":\"Which Anjou AOP for dry Chenin Blanc sits on the north bank of the Loire just downstream of Angers, and is home to the Roche aux Moines and Coulée de Serrant crus?\",\"sa\":1,\"accept\":[\"savennieres\",\"savennières\"],\"ans\":\"Savennières\",\"exp\":\"Savennières (communes of Savennières, Bouchemaine and La Possonnière) lies on the right bank of the Loire west of Angers; it is well inland, not near the Atlantic.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-supq5mbl",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "It commemorates the Abbé Breton, steward to Cardinal Richelieu, who propagated the vine through Chinon and Bourgueil in the seventeenth century — though Rabelais had already praised the wine of Chinon a century before that.",
+   "newText": "Tradition credits the Abbé Breton, steward to Cardinal Richelieu, with propagating the vine through Chinon and Bourgueil in the seventeenth century and so giving it his name. But Rabelais had already written of 'the good Breton wine' of the Véron by Chinon in Gargantua (1534), a century earlier, so the name is older than the Abbé and the story is legend.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-nfea4ihb",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Both are one hundred per cent Chenin Blanc on tuffeau, and both run",
+   "newText": "Both are Chenin Blanc on tuffeau (Montlouis exclusively; Vouvray also permits a small accessory share of Orbois/Menu Pineau, now rarely used), and both run",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-061ar78u",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "with roughly seventeen nested AVAs and still growing",
+   "newText": "with some eighteen nested AVAs as of 2026 (Beverly 2024 and Columbia Hills 2026 among the newest) and still growing",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-061ar78u",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"columbia valley roughly seventeen nested avas\"",
+   "newText": "\"columbia valley roughly eighteen nested avas\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-pe79ielp",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "respect a yield cap,",
+   "newText": "be made from grapes picked at a minimum ripeness (18 Brix for Sauvignon Blanc, a rule members adopted in 2024; the original 2018 standard set cropping limits instead, and the current criteria set no yield limit), pass a blind sensory assessment by a panel of winemakers,",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-pijuxhjo",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Designated Viticultural Areas — Niagara Peninsula, Lake Erie North Shore and Prince Edward County. Only Niagara Peninsula subdivides further: into regional",
+   "newText": "Designated Viticultural Areas: Niagara Peninsula, Lake Erie North Shore and Prince Edward County. Lake Erie North Shore contains one sub-appellation, South Islands (Pelee Island, 2015). Niagara Peninsula subdivides into regional",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "findings": [
+  {
+   "id": "i-pvm5q4dz",
+   "kind": "wrong-explanation",
+   "claim": "the filling was done at the producer's own premises, at a co-operative's, or by a firm inside the denominated zone",
+   "finalFix": "opts[1]: \"The wine was bottled by the grower-producer who made it, or by its co-operative or producers' association, not tankered away and filled elsewhere\" (a stays 1). exp: \"Bulk wine can be moved anywhere before it is packaged, and this phrase is the Italian answer to that: the filling was done at the premises of the grower-producer who made the wine, or of its cantina sociale or producers' association, and the words are reserved for DOP and IGP wines. A firm that merely bottles inside the zone may not use it and says imbottigliato nella zona di produzione instead. They say nothing about who owned the vines, which is the separate claim integralmente prodotto, while a producer wanting to state only who filled the bottle uses imbottigliato da followed by a name.\""
+  },
+  {
+   "id": "i-5q8g52c6",
+   "kind": "wrong-explanation",
+   "claim": "Keyed option \"The wine was blended from wine grown in two or more member states\" and explanation \"Once wine or fruit has crossed a border and been blended, no single country can be claimed\"",
+   "finalFix": "Option 3: \"The wine was blended from wines of two or more member states, or made in one member state from grapes harvested in another\". Explanation opening: \"Once wine is blended across member states, or grapes from one member state are made into wine in another, no single country can be claimed, so the union as a whole becomes the provenance.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-pvm5q4dz",
+   "standaloneFile": "rewrite/categories/r1_label_reading.py",
+   "oldText": "      [\"The wine was bottled in the zone where it was made, not tankered away and filled elsewhere\",\n       \"The wine was bottled straight from the cask, with neither filtration nor fining before filling\",",
+   "newText": "      [\"The wine was bottled by the producer who made it or its co-operative, not tankered away and filled elsewhere\",\n       \"The wine was bottled straight from the cask, with neither filtration nor fining before filling\",",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-pvm5q4dz",
+   "standaloneFile": "rewrite/categories/r1_label_reading.py",
+   "oldText": "the filling was done at the producer's own premises, at a co-operative's, or by a firm inside the denominated zone, and the words are reserved for DOP and IGP wines. They say nothing",
+   "newText": "the filling was done at the premises of the grower-producer who made the wine, or of its cantina sociale or producers' association, and the words are reserved for DOP and IGP wines. A firm that merely bottles inside the zone may not use it and says imbottigliato nella zona di produzione instead. They say nothing",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-5q8g52c6",
+   "standaloneFile": "rewrite/categories/r1_label_reading.py",
+   "oldText": "      [\"The wine was blended from wine grown in two or more member states\",\n       \"The wine comes from a member state that forbids its own name on labels\",",
+   "newText": "      [\"The wine was blended across member states, or made in one from grapes grown in another\",\n       \"The wine comes from a member state that forbids its own name on labels\",",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-5q8g52c6",
+   "standaloneFile": "rewrite/categories/r1_label_reading.py",
+   "oldText": "\"Once wine or fruit has crossed a border and been blended, no single country can be claimed,",
+   "newText": "\"Once wine is blended across member states, or grapes from one member state are made into wine in another, no single country can be claimed,",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

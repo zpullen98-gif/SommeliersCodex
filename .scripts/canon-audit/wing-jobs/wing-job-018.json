@@ -1,0 +1,110 @@
+{
+ "findings": [
+  {
+   "id": "m-xyavnii6",
+   "kind": "wrong-key",
+   "claim": "The model answer dates the Consorzio vote that kept Brunello at 100% Sangiovese to 2009 ('2009 consorzio referendum'), and the first accept-list entry repeats '2009 vote'.",
+   "finalFix": "ans: \"2008: Siena prosecutors probe illegal blending (Brunellopoli); the US threatens to block imports without proof of 100% Sangiovese; October 2008: the Consorzio votes (about 96%) to keep Brunello 100% Sangiovese, affirming its purity\"; accept[0]: \"brunellopoli 2008 blending investigation 2008 vote kept 100 percent sangiovese\""
+  },
+  {
+   "id": "m-utc42cp6",
+   "kind": "wrong-key",
+   "claim": "The model answer says the Tokaj vineyard classes were 'a Rákóczi-era survey formalized by royal decree in 1737'.",
+   "finalFix": "q: \"Explain how Tokaj's eighteenth-century vineyard classification worked.\"; ans: \"Vineyards were graded into classes (first, second, third) on soil, aspect and proven quality, a classification begun around 1720-1730 (Matolai) and completed by the national censuses of 1765 and 1772; separately, the 1737 royal decree of Charles VI delimited Tokaj as a closed wine region\"; accept: [\"first second third class vineyards soil aspect\", \"classified into classes by quality\"]"
+  },
+  {
+   "id": "m-n2tazel2",
+   "kind": "wrong-explanation",
+   "claim": "The explanation calls Zitsa (Debina) 'Greece's other sparkling appellation', implying that Amyndeon and Zitsa are the only Greek PDOs for sparkling wine.",
+   "finalFix": "exp: replace \", Zitsa (from Debina) being Greece's other sparkling appellation.\" with \"; Zitsa (Debina), Mantinia (Moschofilero) and Rhodes (chiefly Athiri) are among the other Greek PDOs that permit sparkling wine, but none of them for Xinomavro.\""
+  },
+  {
+   "id": "m-fsnkd9q1",
+   "kind": "outdated",
+   "claim": "The explanation says 'Trebbiano bulks the blend; the Malvasia carries the perfume.'",
+   "finalFix": "Under the current disciplinare (revised 2011), Malvasia bianca di Candia and/or Malvasia del Lazio must make up at least 70% of Frascati; Trebbiano (Toscano or Giallo) is now only an optional grape, sharing the remaining 30% at most with Bellone, Bombino Bianco and Greco, and the Malvasia, above all the del Lazio, carries the perfume."
+  },
+  {
+   "id": "m-fsnkd9q1",
+   "kind": "ambiguous-stem",
+   "claim": "The stem asks for Frascati's 'historical papal trap', but the model answer gives the Est! Est!! Est!!! legend and admits it belongs to Montefiascone, not Frascati.",
+   "finalFix": "q: \"Name the aromatic native white grape revived as the quality heart of Frascati, and the northern Lazio DOC whose name comes from a bishop's servant's legend.\" | ans: \"Malvasia del Lazio (Malvasia Puntinata); Est! Est!! Est!!! di Montefiascone\" | accept: [\"malvasia del lazio est est est montefiascone\", \"malvasia puntinata est est est montefiascone\", \"malvasia del lazio est est est\", \"malvasia puntinata est est est\"] | exp: \"Frascati DOC requires at least 70% Malvasia Bianca di Candia and/or Malvasia del Lazio; the perfumed Puntinata is the grape quality producers revived. The Montefiascone name recalls Bishop Fugger's servant, who chalked 'Est' on inns with good wine on the road to Rome and wrote it three times there.\""
+  },
+  {
+   "id": "m-9u3kpxgx",
+   "kind": "accept-list",
+   "claim": "The accept entry \"delle venezie pinot grigio\" gives full credit to a candidate who names Delle Venezie as Italy's largest DOC by volume, which is wrong.",
+   "finalFix": "accept: [\"prosecco doc delle venezie pinot grigio volume versus quality\", \"prosecco doc\", \"prosecco\"]"
+  },
+  {
+   "id": "m-8ze3n0a9",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says Domaine Belluard is now in a \"Dominique Lucas era\" and describes Ayze sparkling as \"often ancestral\", with Belluard as the reference. Both claims are false, and the accept list requires the word \"ancestral\".",
+   "finalFix": "ans: \"Ayze (Vin de Savoie Ayze): Gringet-based sparkling, bottle-fermented (Belluard's méthode traditionnelle Mont Blanc and Les Perles du Mont Blanc were the reference; since Dominique Belluard's death in 2021 the domaine is Domaine du Gringet)\"; accept: [\"ayze gringet\", \"ayse gringet\", \"ayze\", \"ayse\"]"
+  },
+  {
+   "id": "m-ci32v4uf",
+   "kind": "wrong-key",
+   "claim": "The model answer and accept list credit François Chidaine and Jacky Blot with getting Montlouis 'pétillant originel' written into the appellation in 2007.",
+   "finalFix": "q: \"In what year did 'Pétillant Originel' become a legal mention of the Montlouis-sur-Loire AOC, and what defines it?\" ans: \"2007, when INAO authorised it at the request of the Montlouis growers' syndicate, which calls it a collective initiative. It is a Chenin Blanc sparkling wine whose bubbles come only from the gas of its own alcoholic fermentation: no added yeast, no chaptalisation, no liqueur de tirage and no liqueur d'expédition, with a minimum of 9 months sur lattes.\" accept: [\"2007\", \"2007 single fermentation\", \"2007 no liqueur\", \"2007 no added sugar\", \"2007 syndicate\", \"2007 inao\"] exp: \"The appellation's syndicate presents Pétillant Originel as the fruit of a collective reflection among Montlouis growers. It is not credited to any single producer.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-xyavnii6",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"brunellopoli 2008 blending investigation 2009 vote kept 100 percent sangiovese\",\"consorzio voted to retain purity\"],\"ans\":\"2008 Siena prosecutors probe illegal blending; US holds imports; 2009 consorzio referendum retains 100% Sangiovese — purity affirmed\"",
+   "newText": "\"accept\":[\"brunellopoli 2008 blending investigation 2008 vote kept 100 percent sangiovese\",\"consorzio voted to retain purity\"],\"ans\":\"2008: Siena prosecutors probe illegal blending (Brunellopoli); the US threatens to block imports without proof of 100% Sangiovese; October 2008: the Consorzio votes (about 96%) to keep Brunello 100% Sangiovese, affirming its purity\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-utc42cp6",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Explain how Tokaj's vineyard classification of 1700–1737 worked.\",\"sa\":1,\"accept\":[\"first second third class vineyards rakoczi survey soil aspect\",\"classified into classes by quality\"],\"ans\":\"Vineyards were graded into classes (first, second, third) on soil, aspect and proven quality — a Rákóczi-era survey formalized by royal decree in 1737\"",
+   "newText": "\"q\":\"Explain how Tokaj's eighteenth-century vineyard classification worked.\",\"sa\":1,\"accept\":[\"first second third class vineyards soil aspect\",\"classified into classes by quality\"],\"ans\":\"Vineyards were graded into classes (first, second, third) on soil, aspect and proven quality, a classification begun around 1720-1730 (Matolai) and completed by the national censuses of 1765 and 1772; separately, the 1737 royal decree of Charles VI delimited Tokaj as a closed wine region\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-n2tazel2",
+   "standaloneFile": "js/data-master.js",
+   "oldText": ", Zitsa (from Debina) being Greece's other sparkling appellation.",
+   "newText": "; Zitsa (Debina), Mantinia (Moschofilero) and Rhodes (chiefly Athiri) are among the other Greek PDOs that permit sparkling wine, but none of them for Xinomavro.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-fsnkd9q1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"exp\":\"Trebbiano bulks the blend; the Malvasia carries the perfume.\"",
+   "newText": "\"exp\":\"Under the current disciplinare (revised 2011), Malvasia Bianca di Candia and/or Malvasia del Lazio must make up at least 70% of Frascati; Trebbiano (Toscano or Giallo) is now only an optional grape, sharing the remaining 30% at most with Bellone, Bombino Bianco and Greco. The perfumed Puntinata is the grape quality producers revived. The Montefiascone name recalls Bishop Fugger's servant, who chalked 'Est' on inns with good wine on the road to Rome and wrote it three times there.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-fsnkd9q1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Name Lazio's revived white grape of Frascati and its historical papal trap.\",\"sa\":1,\"accept\":[\"malvasia del lazio puntinata est est est montefiascone\",\"malvasia puntinata\",\"~malvasia del lazio\"],\"ans\":\"Malvasia del Lazio (puntinata); the 'Est! Est!! Est!!!' legend belongs to Montefiascone's bishop's servant\"",
+   "newText": "\"q\":\"Name the aromatic native white grape revived as the quality heart of Frascati, and the northern Lazio DOC whose name comes from a bishop's servant's legend.\",\"sa\":1,\"accept\":[\"~malvasia del lazio est est est\",\"~malvasia puntinata est est est\",\"~puntinata est est est\",\"~malvasia del lazio and est est est\",\"~malvasia puntinata and est est est\"],\"ans\":\"Malvasia del Lazio (Malvasia Puntinata); Est! Est!! Est!!! di Montefiascone\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-9u3kpxgx",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"prosecco doc delle venezie pinot grigio volume versus quality\",\"delle venezie pinot grigio\"]",
+   "newText": "\"accept\":[\"prosecco doc delle venezie pinot grigio volume versus quality\",\"prosecco doc\",\"prosecco\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-8ze3n0a9",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"ayze ancestral gringet\",\"ayse gringet ancestral\"],\"ans\":\"Ayze — Gringet-based, often ancestral (Belluard the reference, now Dominique Lucas era)\"",
+   "newText": "\"accept\":[\"ayze gringet\",\"ayse gringet\",\"ayze\",\"ayse\"],\"ans\":\"Ayze (Vin de Savoie Ayze): Gringet-based sparkling, bottle-fermented (Belluard's méthode traditionnelle Mont Blanc and Les Perles du Mont Blanc were the reference; since Dominique Belluard's death in 2021 the domaine is Domaine du Gringet)\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-ci32v4uf",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Which biodynamic Montlouis/Vouvray figure split 'petillant originel' into legal existence?\",\"sa\":1,\"accept\":[\"jacky blot francois chidaine\",\"chidaine blot\"],\"ans\":\"François Chidaine and Jacky Blot's generation forced the Montlouis ancestral category (pétillant originel, 2007)\",\"exp\":\"Montlouis outran Vouvray in regulatory daring.\"",
+   "newText": "\"q\":\"In what year did 'Pétillant Originel' become a legal mention of the Montlouis-sur-Loire AOC, and what defines it?\",\"sa\":1,\"accept\":[\"2007\",\"2007 single fermentation\",\"2007 no liqueur\",\"2007 no added sugar\",\"2007 syndicate\",\"2007 inao\"],\"ans\":\"2007, when INAO authorized it at the request of the Montlouis growers' syndicate, which calls it a collective initiative. It is a Chenin Blanc sparkling wine whose bubbles come only from the gas of its own alcoholic fermentation: no added yeast, no chaptalization, no liqueur de tirage and no liqueur d'expédition, with a minimum of 9 months sur lattes.\",\"exp\":\"The appellation's syndicate presents Pétillant Originel as the fruit of a collective reflection among Montlouis growers. It is not credited to any single producer.\"",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

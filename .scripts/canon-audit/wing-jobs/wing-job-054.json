@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "c-lhlvmye7",
+   "kind": "wrong-explanation",
+   "claim": "The explanation ends by saying the acidity clause is why high-acid Chenin so often carries less sweetness on its label than the palate reports.",
+   "finalFix": "...which is why high-acid Chenin so often carries less sweetness on its label than a lab analysis would suggest, while tasting just as dry as the label says."
+  },
+  {
+   "id": "c-pt8hz6tw",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the sugar in a botrytis wine is a jam-sense preservative that denies microbes the water they need in the open bottle.",
+   "finalFix": "The sugar's weight and richness mask the first flavour costs of oxidation, so the wine still tastes whole days after a dry white has gone flat and tired. Acidity keeps it lively, and the high sulphur dioxide that sweet wines carry (they need it because residual sugar is food for spoilage yeasts) slows oxidation further. The practical consequence is that sweet wine is among the safest by-the-glass categories in the building, holding days longer than anything dry."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-lhlvmye7",
+   "standaloneFile": "rewrite/categories/r2_sweet_wines.py",
+   "oldText": "which is why high-acid Chenin so often carries less sweetness on its label than the palate reports.\"",
+   "newText": "which is why high-acid Chenin so often carries less sweetness on its label than a lab analysis would suggest, while tasting just as dry as the label says.\"",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-pt8hz6tw",
+   "standaloneFile": "rewrite/categories/r2_sweet_wines.py",
+   "oldText": "\"Concentrated sugar is a preservative in the jam sense: it denies microbes the water they need to work in the open bottle, and with the wine's acidity behind it, the sweetness also masks the first flavour costs of oxidation. The practical consequence is that sweet wine is the safest by-the-glass category in the building, holding days longer than anything dry.\"",
+   "newText": "\"The sugar's weight and richness mask the first flavour costs of oxidation, so the wine still tastes whole days after a dry white has gone flat and tired. Acidity keeps it lively, and the high sulphur dioxide that sweet wines carry (they need it because residual sugar is food for spoilage yeasts) slows oxidation further. The practical consequence is that sweet wine is among the safest by-the-glass categories in the building, holding days longer than anything dry.\"",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

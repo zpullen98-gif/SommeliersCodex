@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "c-kkromzge",
+   "kind": "wrong-explanation",
+   "claim": "including a passito dried for years",
+   "finalFix": "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito whose grapes dry on racks for months and whose wine then ages at least three years (four for Riserva)."
+  },
+  {
+   "id": "c-pvaad5sa",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the Euganean Hills are old volcanic intrusions that never erupted through the surface.",
+   "finalFix": "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are the remains of Eocene submarine basalt eruptions and later Oligocene trachyte and rhyolite domes and laccoliths, left standing isolated above flat farmland once the softer sediments around them wore away."
+  },
+  {
+   "id": "c-vz9zxdcb",
+   "kind": "wrong-explanation",
+   "claim": "The explanation places Isera \"south of Rovereto\".",
+   "finalFix": "Isera in the Vallagarina is its stronghold, on basalt soils just west of Rovereto across the Adige. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-kkromzge",
+   "standaloneFile": "rewrite/categories/r2_italy_north.py",
+   "oldText": "including a passito dried for years.\"",
+   "newText": "including a passito whose grapes dry on racks for months and whose wine then ages at least three years (four for Riserva).\"",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-pvaad5sa",
+   "standaloneFile": "rewrite/categories/r2_italy_north.py",
+   "oldText": "The hills are old volcanic intrusions that never erupted through the surface, so they stand isolated above flat farmland.",
+   "newText": "The hills are the remains of Eocene submarine basalt eruptions and later Oligocene trachyte and rhyolite domes and laccoliths, left standing isolated above flat farmland once the softer sediments around them wore away.",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-vz9zxdcb",
+   "standaloneFile": "rewrite/categories/r2_italy_north.py",
+   "oldText": "on basalt soils south of Rovereto.",
+   "newText": "on basalt soils just west of Rovereto across the Adige.",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

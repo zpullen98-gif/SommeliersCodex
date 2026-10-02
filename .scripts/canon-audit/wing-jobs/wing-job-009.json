@@ -1,0 +1,110 @@
+{
+ "findings": [
+  {
+   "id": "a-uhsq0145",
+   "kind": "wrong-explanation",
+   "claim": "Contrast 1855, which has never expired and has been altered once.",
+   "finalFix": "Contrast 1855, which has never expired and has been altered only twice (Cantemerle added in 1856, Mouton Rothschild promoted in 1973)."
+  },
+  {
+   "id": "a-p9dbm43t",
+   "kind": "wrong-explanation",
+   "claim": "ans: \"Protected terms (Château, Clos, Cru, Vintage/Port, Classic…)\"; exp: \"Why an Aussie 'Port' became Tawny and 'Sherry' became Apera at home too.\"",
+   "finalFix": "ans: \"Protected traditional terms (Château, Clos, Cru, Classic…) in the EU market without qualifying (meeting the EU conditions or a bilateral agreement)\"; accept: [\"chateau clos cru reserve in eu market\", \"protected terms like clos or cru\"]; exp: \"Not the same as GI protection: Port and Sherry are protected geographical indications, which is why Australian 'Port' became Tawny and 'Sherry' became Apera under the 2008 EU–Australia wine agreement (in force 1 September 2010), which also lets Australia keep tawny, ruby, cream and vintage.\""
+  },
+  {
+   "id": "a-1sstd67g",
+   "kind": "wrong-explanation",
+   "claim": "Metallic clash risk comes from tannin and oak, not white wine per se.",
+   "finalFix": "High acid and a saline, mineral echo match the oyster's brine, and no oak with modest alcohol keeps the wine from swamping its delicacy. The fishy-metallic clash tracks the wine's iron (Tamura 2009), not tannin, oak or colour as such."
+  },
+  {
+   "id": "a-z612m4x4",
+   "kind": "wrong-explanation",
+   "claim": "A quiet revolution: flor wine without the spirit returns to legality.",
+   "finalFix": "ans: \"Expanded the ageing zone to the whole production zone, readmitted six traditional grapes, and formalized categories (pagos, Fino Viejo, en rama); optional fortification was proposed then but only approved by the EU in 2025\"\naccept: [\"ageing zone expanded grapes added\", \"ageing zone expanded to whole production zone\", \"expanded ageing zone new grapes en rama definition\", \"six old grape varieties readmitted ageing zone expanded\", \"pagos fino viejo en rama defined\"]\nexp: \"The 2022 pliego (BOJA, October 2022) expanded the ageing zone to the whole production zone, readmitted six pre-phylloxera grapes, and defined pagos, Fino Viejo and en rama. Optional fortification for wines reaching 15% naturally (17% for Oloroso) was a major amendment in the same package. The EU approved it on 29 July 2025 and it came into force on 25 August 2025.\""
+  },
+  {
+   "id": "a-2h2elgy6",
+   "kind": "accept-list",
+   "claim": "accept: \"superiore riserva vergine soleras\"",
+   "finalFix": "vergine soleras and vergine stravecchio riserva"
+  },
+  {
+   "id": "a-9ojxmc0c",
+   "kind": "wrong-fact-in-option",
+   "claim": "ans: \"Dönnhoff (Niederhausen)\"",
+   "finalFix": "Dönnhoff (Oberhausen; the Hermannshöhle lies in neighbouring Niederhausen)"
+  },
+  {
+   "id": "a-bam6b8ud",
+   "kind": "outdated",
+   "claim": "Grosser Ring (VDP Mosel) auctions in Trier each September",
+   "finalFix": "Grosser Ring (VDP Mosel) holds its auction in Trier: long in September, in November from 2021, and from 2027 in May. Goldkapsel lots soar."
+  },
+  {
+   "id": "a-bam6b8ud",
+   "kind": "ambiguous-stem",
+   "claim": "unite under which acronym founded 1908?",
+   "finalFix": "The historic auction estates of the Mosel, Saar and Ruwer unite under which association, founded 1908?"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-uhsq0145",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Contrast 1855, which has never expired and has been altered once.",
+   "newText": "Contrast 1855, which has never expired and has been altered only twice (Cantemerle added in 1856, Mouton Rothschild promoted in 1973).",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-p9dbm43t",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"chateau clos cru reserve in eu market\",\"protected terms like clos or vintage port\"],\"ans\":\"Protected terms (Château, Clos, Cru, Vintage/Port, Classic…) in the EU market without qualifying\",\"exp\":\"Why an Aussie 'Port' became Tawny and 'Sherry' became Apera at home too.\"",
+   "newText": "\"accept\":[\"chateau clos cru reserve in eu market\",\"protected terms like clos or cru\"],\"ans\":\"Protected traditional terms (Château, Clos, Cru, Classic…) in the EU market without qualifying under EU conditions or a bilateral agreement\",\"exp\":\"Not the same as GI protection: Port and Sherry are protected geographical indications, which is why Australian 'Port' became Tawny and 'Sherry' became Apera under the 2008 EU-Australia wine agreement (in force 1 September 2010), which also lets Australia keep tawny, ruby, cream and vintage.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-1sstd67g",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Metallic clash risk comes from tannin and oak, not white wine per se.\"",
+   "newText": "\"exp\":\"High acid and a saline, mineral echo match the oyster's brine, and no oak with modest alcohol keeps the wine from swamping its delicacy. The fishy-metallic clash tracks the wine's iron (Tamura 2009), not tannin, oak or color as such.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-z612m4x4",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"unfortified allowed vineyard zones expanded\",\"fino may be unfortified if 15% natural\",\"expanded zone allowed en rama definitions\"],\"ans\":\"Permitting unfortified wines at natural 15%+, expanding zones/grapes, formalizing categories\",\"exp\":\"A quiet revolution: flor wine without the spirit returns to legality.\"",
+   "newText": "\"accept\":[\"aging zone expanded grapes added\",\"ageing zone expanded grapes added\",\"aging zone expanded to whole production zone\",\"ageing zone expanded to whole production zone\",\"expanded aging zone new grapes en rama definition\",\"six old grape varieties readmitted aging zone expanded\",\"pagos fino viejo en rama defined\"],\"ans\":\"Expanded the aging zone to the whole production zone, readmitted six traditional grapes, and formalized categories (pagos, Fino Viejo, en rama); unfortified wines at a natural 15%+ were proposed then but only approved by the EU in 2025\",\"exp\":\"The 2022 pliego (BOJA, October 2022) expanded the aging zone to the whole production zone, readmitted six pre-phylloxera grapes, and defined pagos, Fino Viejo and en rama. Optional fortification for wines reaching 15% naturally (17% for Oloroso) was a major amendment in the same package; the EU approved it on 29 July 2025 and it came into force on 25 August 2025.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-2h2elgy6",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"superiore riserva vergine soleras\"",
+   "newText": "\"vergine soleras and vergine stravecchio riserva\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-9ojxmc0c",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"ans\":\"Dönnhoff (Niederhausen)\"",
+   "newText": "\"ans\":\"Dönnhoff (Oberhausen; the Hermannshöhle lies in neighboring Niederhausen)\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-bam6b8ud",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"The historic auction houses of the Mosel unite under which acronym founded 1908?\"",
+   "newText": "\"q\":\"The historic auction estates of the Mosel, Saar and Ruwer unite under which association, founded 1908?\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-bam6b8ud",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Grosser Ring (VDP Mosel) auctions in Trier each September; goldkapsel lots soar.\"",
+   "newText": "\"exp\":\"Grosser Ring (VDP Mosel) holds its auction in Trier: long in September, in November from 2021, and from 2027 in May. Goldkapsel lots soar.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

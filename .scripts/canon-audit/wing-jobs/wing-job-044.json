@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "c-wyt9rwrh",
+   "kind": "accept-list",
+   "claim": "The grader refuses 'off-dry Riesling' and 'off-dry Gewurztraminer', the textbook examples of the keyed style, and also 'medium-sweet white'.",
+   "finalFix": "accept: [\"off-dry, low-alcohol aromatic white\", \"~off dry white\", \"low alcohol off dry white\", \"off dry aromatic white\", \"slightly sweet aromatic white\", \"~off dry riesling\", \"~off dry gewurztraminer\", \"~medium sweet white\", \"~medium dry white\"]"
+  },
+  {
+   "id": "c-825hnfrv",
+   "kind": "wrong-explanation",
+   "claim": "The explanation credits both keyed wines with \"low alcohol so the heat is not amplified\", but Gewurztraminer, one of the two model answers, is a notably high-alcohol variety.",
+   "finalFix": "Aromatic intensity to meet the dish and a touch of sweetness to handle chilli. Off-dry German Riesling adds low alcohol, which keeps the heat from being amplified; with Gewurztraminer, which runs high in alcohol, choose an off-dry example and keep the chilli moderate."
+  },
+  {
+   "id": "c-wgifeyxj",
+   "kind": "wrong-key",
+   "claim": "The model answer 'Serve it slightly cooler, or decant it' and the accept entries 'serve it cooler', 'chill it slightly' and 'lower the temperature' tell the candidate to cool a red that is already too tannic, and cooling makes it worse.",
+   "finalFix": "ans: \"Decant it, and make sure it is not served too cold\"; accept: [\"decant it\", \"decanting\", \"aerate it\", \"give it air\", \"serve it less cold\"]; exp: \"Air softens young tannin. Cold hardens tannin and warmth exaggerates alcohol, so serve the wine at proper cellar-to-room red temperature rather than chilling it.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-wyt9rwrh",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"off dry white\", \"low alcohol off dry white\", \"off dry aromatic white\",\n        \"slightly sweet aromatic white\"],",
+   "newText": "       [\"~off dry white\", \"low alcohol off dry white\", \"off dry aromatic white\",\n        \"slightly sweet aromatic white\", \"~off dry riesling\", \"~off dry gewurztraminer\",\n        \"~medium sweet white\", \"~medium dry white\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-825hnfrv",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       \"Aromatic intensity to meet the dish, sweetness to handle chilli, and low alcohol so the heat is not amplified.\"),",
+   "newText": "       \"Aromatic intensity to meet the dish and a touch of sweetness to handle chilli. Off-dry German Riesling adds low alcohol, which keeps the heat from being amplified; with Gewurztraminer, which runs high in alcohol, choose an off-dry example and keep the chilli moderate.\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-wgifeyxj",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       \"Serve it slightly cooler, or decant it\",\n       [\"serve it cooler\", \"chill it slightly\", \"decant it\", \"lower the temperature\"],\n       \"Warmth exaggerates alcohol and cold hardens tannin, so the useful range is narrow. Air softens young tannin as well.\"),",
+   "newText": "       \"Decant it, and serve it at proper red temperature\",\n       [\"decant it\", \"decanting\", \"aerate it\", \"give it air\", \"serve it less cold\"],\n       \"Air softens young tannin. Cold hardens tannin and warmth exaggerates alcohol, so serve the wine at proper cellar-to-room red temperature rather than chilling it.\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

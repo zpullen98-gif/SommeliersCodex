@@ -1,0 +1,124 @@
+{
+ "findings": [
+  {
+   "id": "m-3hqt2hc1",
+   "kind": "outdated",
+   "claim": "The model answer defines Garrafeira as three to six years in wood, then at least eight years in glass demijohns, and says Niepoort is effectively the only producer.",
+   "finalFix": "Garrafeira is a rare and legally distinct single-vintage category. Under the IVDP rules of 2022 it spends four to eight years in wood, then further ageing in glass (in practice large demijohns, the bonbonnes), with a 15-year minimum set by the IVDP, so it cannot reach the market until at least 15 years after the harvest; the label shows both the harvest year and the year of final bottling. The glass halts oxidative development and gives a nutty, delicate, almost Colheita-like wine with a fine soft deposit. Niepoort kept the category alive and pressed for the 2022 definition; Niepoort and Quevedo are the houses making it today."
+  },
+  {
+   "id": "m-3hqt2hc1",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says Garrafeira is 'the only Port style deliberately matured in a vessel that admits no oxygen'.",
+   "finalFix": "Both exist to test whether you have read the IVDP's category list rather than a shipper's marketing. Garrafeira is also conceptually interesting: it is the only Port style that follows years of oxidative ageing in wood with a long reductive rest in large glass demijohns before bottling, which is why it tastes unlike any cask-aged tawny of comparable age."
+  },
+  {
+   "id": "m-unpee2wt",
+   "kind": "ambiguous-stem",
+   "claim": "The stem asks for 'Azorean and Madeiran' vine-training walls that protect against Atlantic salt. It assumes Madeira uses the same walled system as Pico.",
+   "finalFix": "On Pico in the Azores, what are the small dry-stone basalt enclosures that shelter low-grown vines from Atlantic wind and salt spray called?"
+  },
+  {
+   "id": "m-k1buaxx5",
+   "kind": "wrong-fact-in-option",
+   "claim": "The stem calls Osborne's 'Sibarita' a Palo Cortado. Sibarita is Osborne's Oloroso VORS: Palomino with about 2% Pedro Ximénez, from a solera founded in 1792. Osborne's Palo Cortado VORS is Capuchino, which the model answer itself names.",
+   "finalFix": "Which Sherry bodega's Rare Sherry range, including the Oloroso 'Sibarita' and the Palo Cortado 'Capuchino' among its age-dated VORS wines, revived the category commercially?"
+  },
+  {
+   "id": "m-zq3b6ola",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says DRC has 'Nine with Charlemagne now', and the model answer leaves out Bâtard-Montrachet. DRC owns about 0.17 ha of Bâtard-Montrachet grand cru and has made it since at least 1987; it is bottled for private use and never sold. That makes ten grand crus, and the second accept entry itself mentions 'batard'.",
+   "finalFix": "ans: Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased from 2009), Corton-Charlemagne (from 2019), plus a tiny 0.17 ha of Bâtard-Montrachet bottled for private use and not sold; exp: Nine commercial grand crus with Charlemagne, ten counting the unsold Bâtard."
+  },
+  {
+   "id": "m-zq3b6ola",
+   "kind": "accept-list",
+   "claim": "The accept entry 'corton since 2009 batard tiny' is a fragment. matchSA accepts any input that covers 60% of its words as a contiguous phrase, so 'corton since 2009' or 'since 2009 batard' alone grades correct.",
+   "finalFix": "Remove the accept entry 'corton since 2009 batard tiny' and add 'romanee-conti la tache richebourg romanee-saint-vivant grands echezeaux echezeaux montrachet corton corton-charlemagne batard-montrachet'"
+  },
+  {
+   "id": "m-jcjgoahm",
+   "kind": "accept-list",
+   "claim": "The accept entry 'david lett calera josh jensen' begins with David Lett. Under matchSA's 60%-of-words rule, the input 'david lett calera' (3 of 5 words) grades correct, even though the model answer says the legend belongs to Josh Jensen and not to Lett.",
+   "finalFix": "jensen calera"
+  },
+  {
+   "id": "m-z7es9auq",
+   "kind": "wrong-key",
+   "claim": "The model answer says Jamet's Côte-Rôtie blends about 25 lieux-dits. The 25 is the number of plots, and those plots lie in about 17 lieux-dits. The second accept entry, '25 lieux-dits blended whole cluster traditional', carries the same error. The stem also asks 'which lieu-dit', singular, when the point is that the wine is a blend of many sites.",
+   "finalFix": "q: 'Jamet's classic Côte-Rôtie is a blend, not a single site: roughly how many plots and how many lieux-dits does it draw on, and what defines the domaine's method?' ans: 'About 25 plots spread across some 17 lieux-dits on the slope, fermented largely whole-cluster: the anti-single-vineyard argument' accept: ['25 plots 17 lieux-dits whole cluster', '25 parcels 17 lieux-dits whole cluster', '17 lieux-dits whole cluster', '17 lieux-dits mostly whole cluster', 'seventeen lieux-dits whole cluster', 'twenty-five parcels whole cluster', '25 plots whole cluster', '25 parcels whole cluster'] exp: 'Jamet farms about 25 plots in some 17 lieux-dits and blends them into one Côte-Rôtie, mostly whole-cluster. Guigal's La-Las set single sites against Jamet's assemblage, and that is the appellation's philosophical axis.'"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-3hqt2hc1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Garrafeira is a rare and legally distinct single-vintage category: three to six years in wood, then a minimum of eight years in large glass demijohns, the bonbonnes, before bottling. The non-porous glass halts oxidative development and produces a nutty, delicate, almost Colheita-like wine with a fine soft deposit. Niepoort is effectively the only house that has kept the category alive.",
+   "newText": "Garrafeira is a rare and legally distinct single-vintage category. Under the IVDP rules of 2022 it spends four to eight years in wood, then further aging in glass (in practice large demijohns, the bonbonnes), with a 15-year minimum set by the IVDP, so it cannot reach the market until at least 15 years after the harvest; the label shows both the harvest year and the year of final bottling. The glass halts oxidative development and gives a nutty, delicate, almost Colheita-like wine with a fine soft deposit. Niepoort kept the category alive and pressed for the 2022 definition; Niepoort and Quevedo are the houses making it today.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-3hqt2hc1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"crusted needs three years bottle age garrafeira spends at least eight years in glass\"",
+   "newText": "\"crusted needs three years bottle age garrafeira spends four to eight years in wood then glass\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-3hqt2hc1",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "the only Port style deliberately matured in a vessel that admits no oxygen, which is precisely why",
+   "newText": "the only Port style that follows years of oxidative aging in wood with a long reductive rest in large glass demijohns before bottling, which is why",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-unpee2wt",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Which Azorean and Madeiran vine-training walls protect against Atlantic salt, and what are they called on Pico?\"",
+   "newText": "\"q\":\"On Pico in the Azores, what are the small dry-stone basalt enclosures that shelter low-grown vines from Atlantic wind and salt spray called?\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-unpee2wt",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"currais stone corrals\"]",
+   "newText": "\"currais stone corrals\",\"currais\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-k1buaxx5",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Which Sherry bodega's Palo Cortado 'Sibarita' and age-dated VORS range revived the category commercially?\"",
+   "newText": "\"q\":\"Which Sherry bodega's Rare Sherry range, including the Oloroso 'Sibarita' and the Palo Cortado 'Capuchino' among its age-dated VORS wines, revived the category commercially?\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zq3b6ola",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"ans\":\"Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased 2009; + Corton-Charlemagne 2019)\",\"exp\":\"Nine with Charlemagne now — currency for any Master conversation.\"",
+   "newText": "\"ans\":\"Romanée-Conti, La Tâche (monopoles), Richebourg, Romanée-Saint-Vivant, Grands Échezeaux, Échezeaux, Montrachet, Corton (leased from 2009), Corton-Charlemagne (from 2019), plus a tiny 0.17 ha of Bâtard-Montrachet bottled for private use and not sold\",\"exp\":\"Nine commercial grand crus with Charlemagne, ten counting the unsold Bâtard.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zq3b6ola",
+   "standaloneFile": "js/data-master.js",
+   "oldText": ",\"corton since 2009 batard tiny\"]",
+   "newText": ",\"romanee-conti la tache richebourg romanee-saint-vivant grands echezeaux echezeaux montrachet corton corton-charlemagne batard-montrachet\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-jcjgoahm",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"david lett calera josh jensen\"",
+   "newText": "\"jensen calera\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-z7es9auq",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Which Côte-Rôtie lieu-dit does Jamet's village blend famously span, and what defines the domaine's method?\",\"sa\":1,\"accept\":[\"twenty-five parcels whole cluster\",\"25 lieux-dits blended whole cluster traditional\"],\"ans\":\"Jamet blends ~25 lieux-dits across the slope, largely whole-cluster — the anti-single-vineyard argument\",\"exp\":\"Guigal's La-Las vs Jamet's assemblage is the appellation's philosophical axis.\"",
+   "newText": "\"q\":\"Jamet's classic Côte-Rôtie is a blend, not a single site: roughly how many plots and how many lieux-dits does it draw on, and what defines the domaine's method?\",\"sa\":1,\"accept\":[\"~25 plots 17 lieux-dits whole cluster\",\"~25 parcels 17 lieux-dits whole cluster\",\"~17 lieux-dits whole cluster\",\"~17 lieux-dits mostly whole cluster\",\"~seventeen lieux-dits whole cluster\",\"~twenty-five parcels whole cluster\",\"~25 plots whole cluster\",\"~25 parcels whole cluster\"],\"ans\":\"About 25 plots spread across some 17 lieux-dits on the slope, fermented largely whole-cluster: the anti-single-vineyard argument\",\"exp\":\"Jamet farms about 25 plots in some 17 lieux-dits and blends them into one Côte-Rôtie, mostly whole-cluster. Guigal's La-Las set single sites against Jamet's assemblage, and that is the appellation's philosophical axis.\"",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

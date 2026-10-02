@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "c-98c4i3oo",
+   "kind": "outdated",
+   "claim": "The keyed answer is 'Fifty per cent', presented as the cap on any one variety in Egri Bikaver. That cap was dropped for grapes harvested from 2017 onward.",
+   "finalFix": "q: \"Kekfrankos must lead every Egri Bikaver blend, and the rules also cap how much of the blend it may take. Where does that ceiling sit?\" opts: [\"Sixty-five per cent\", \"Fifty per cent\", \"Thirty per cent\", \"Ten per cent\"], a: 0. exp: \"Under the Eger PDO specification for harvests from 2017 onward, Classicus, Superior and Grand Superior Bikaver alike need at least four varieties, each above 5%, with Kekfrankos between 30% and 65% and the largest part of the blend. Until the 2016 harvest no variety could exceed 50%. The higher tiers are stricter on skin contact, time in oak and yield, and a Grand Superior must name its vineyard (dulo) on the label. The 50% cap on any one variety now applies only to the white Egri Csillag.\""
+  },
+  {
+   "id": "c-tu50swzo",
+   "kind": "wrong-key",
+   "claim": "The model answer says five puttonyos is the lowest number an Aszu label may now carry, and the explanation says three and four puttonyos 'went'. The current Tokaj PDO specification still lists 3, 4, 5 and 6 puttonyos as permitted label terms.",
+   "finalFix": "q: \"Since the 2013 reform every Tokaji Aszu must reach 120 g/L of residual sugar, and the puttonyos number on the label is optional. One puttonyos term still carries its own higher sugar floor. What residual sugar must an Aszu reach to be labelled 6 puttonyos?\" ans: \"150 grams per litre\" accept: [\"150 grams per litre\",\"150 grams per liter\",\"150 g/l\",\"150g/l\",\"150\",\"at least 150 grams per litre\",\"at least 150 g/l\",\"a minimum of 150 grams per litre\",\"minimum 150 g/l\",\"150 grams\"] exp: \"The 2013 amendment replaced the old sliding scale (60, 90, 120 and 150 g/L for 3 to 6 puttonyos) with a single Aszu minimum of 120 g/L, and made the puttonyos number optional, so many bottles now print none. The specification still lists 3, 4, 5 and 6 puttonyos as terms that may appear, but only '6 puttonyos' has its own condition: at least 150 g/L of residual sugar.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-98c4i3oo",
+   "standaloneFile": "rewrite/categories/r2_hungary_greece.py",
+   "oldText": "      \"No single grape may take over an Egri Bikaver: the rules cap what any one variety may contribute to the blend. Where does that ceiling sit?\",\n      [\"Fifty per cent\", \"Thirty per cent\", \"Seventy-five per cent\",\n       \"Ten per cent\"], 0,\n      \"The cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for more varieties, lower yields and, at the top, fruit from one named site.\"),",
+   "newText": "      \"Kekfrankos must lead every Egri Bikaver blend, and the rules also cap how much of the blend it may take. Where does that ceiling sit?\",\n      [\"Sixty-five per cent\", \"Fifty per cent\", \"Thirty per cent\",\n       \"Ten per cent\"], 0,\n      \"Under the Eger PDO specification for harvests from 2017 onward, Classicus, Superior and Grand Superior Bikaver alike need at least four varieties, each above 5%, with Kekfrankos between 30% and 65% and the largest part of the blend. Until the 2016 harvest no variety could exceed 50%. The higher tiers are stricter on skin contact, time in oak and yield, and a Grand Superior must name its vineyard (dulo) on the label. The 50% cap on any one variety now applies only to the white Egri Csillag.\",\n      pin=\"c-98c4i3oo\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-tu50swzo",
+   "standaloneFile": "rewrite/categories/r2_hungary_greece.py",
+   "oldText": "       \"Sweetness rungs below a certain number of hods disappeared from Tokaji Aszu labels with the 2013 reform. Give the lowest number a bottle may now carry.\",\n       \"Five puttonyos\",\n       [\"five puttonyos\", \"5 puttonyos\", \"five\", \"5\", \"puttonyos five\",\n        \"at least five puttonyos\", \"at least 5 puttonyos\",\n        \"a minimum of five puttonyos\", \"a minimum of 5 puttonyos\",\n        \"five puttonyos minimum\", \"5 puttonyos minimum\",\n        \"minimum five puttonyos\", \"minimum 5 puttonyos\",\n        \"five puttonyos or more\", \"5 puttonyos or more\",\n        \"five hods\", \"5 hods\"],\n       \"Three and four puttonyos went, leaving only the top of the old scale in use, and the indication itself became optional, so plenty of bottles now print no number at all. Anything below the surviving level is sold under a different name rather than as a weaker Aszu, which is the change the reform was really making.\",\n       ex=True),",
+   "newText": "       \"Since the 2013 reform every Tokaji Aszu must reach 120 g/L of residual sugar, and the puttonyos number on the label is optional. One puttonyos term still carries its own higher sugar floor. What residual sugar must an Aszu reach to be labelled 6 puttonyos?\",\n       \"150 grams per litre\",\n       [\"150 grams per litre\", \"150 grams per liter\", \"150 g/l\", \"150g/l\",\n        \"150\", \"150 grams\", \"150 g per litre\", \"150 g/litre\",\n        \"150 grams/litre\", \"at least 150 grams per litre\",\n        \"at least 150 g/l\", \"at least 150 grams\",\n        \"a minimum of 150 grams per litre\", \"a minimum of 150 g/l\",\n        \"minimum 150 g/l\", \"minimum of 150 g/l\"],\n       \"The 2013 amendment replaced the old sliding scale (60, 90, 120 and 150 g/L for 3 to 6 puttonyos) with a single Aszu minimum of 120 g/L, and made the puttonyos number optional, so many bottles now print none. The specification still lists 3, 4, 5 and 6 puttonyos as terms that may appear, but only '6 puttonyos' has its own condition: at least 150 g/L of residual sugar.\",\n       ex=True, pin=\"c-tu50swzo\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

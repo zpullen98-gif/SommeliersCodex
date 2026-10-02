@@ -1,0 +1,91 @@
+{
+ "findings": [
+  {
+   "id": "a-3wdv5vgc",
+   "kind": "accept-list",
+   "claim": "accept: \"equipo navazos territory\"",
+   "finalFix": "accept: [\"jerez\", \"jerez-xeres-sherry\", \"jerez unfortified\", \"manzanilla-sanlucar de barrameda\", \"sanlucar manzanilla pasto\"]"
+  },
+  {
+   "id": "a-mr3cgziz",
+   "kind": "accept-list",
+   "claim": "accept: \"pinot nero chardonnay 90 percent millesimato always riserva at 36 months\"",
+   "finalFix": "pinot nero chardonnay 90 percent millesimato always 30 months on lees riserva 36"
+  },
+  {
+   "id": "a-vfe0dybz",
+   "kind": "wrong-explanation",
+   "claim": "Raumland's 'triple brut' program showed the way.",
+   "finalFix": "Raumland, the first pure Sekthaus admitted to the VDP, released the first VDP.Sekt.Prestige collection and now sells only Sekt aged at least 36 months on the lees."
+  },
+  {
+   "id": "a-mmnywoua",
+   "kind": "wrong-explanation",
+   "claim": "milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present (and accept entry \"ancestral keeps the fibres and uses clay pots\")",
+   "finalFix": "In ans, replace \"milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present\" with \"milled by mallet, tahona, or Chilean or Egyptian mill, fermented in stone, earth, trunk, masonry, wood, clay or hide (the fibres may be included)\". In accept, replace \"ancestral artesanal and plain mezcal ancestral keeps the fibres and uses clay pots\" with \"ancestral artesanal and plain mezcal ancestral uses pit ovens and clay pots\"."
+  },
+  {
+   "id": "a-bpga3b5q",
+   "kind": "accept-list",
+   "claim": "accept: \"chaume\"",
+   "finalFix": "\"accept\": [\"coteaux du layon\", \"coteaux du layon premier cru chaume\", \"~premier cru chaume\", \"~chaume premier cru\", \"~1er cru chaume\", \"~chaume 1er cru\"]"
+  },
+  {
+   "id": "a-i9i4z2gy",
+   "kind": "ambiguous-stem",
+   "claim": "A soil report from a prospective plot returns 20% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?",
+   "finalFix": "A soil report from a prospective plot returns 30% active lime and a chlorosis index (IPC) of 60. Which rootstock decision does that force?"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-3wdv5vgc",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"jerez unfortified\",\"equipo navazos territory\",\"sanlucar manzanilla pasto\",\"jerez\"]",
+   "newText": "\"accept\":[\"jerez\",\"jerez-xeres-sherry\",\"jerez unfortified\",\"manzanilla-sanlucar de barrameda\",\"sanlucar manzanilla pasto\"]",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-mr3cgziz",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"pinot nero chardonnay 90 percent millesimato always riserva at 36 months\"",
+   "newText": "\"pinot nero chardonnay 90 percent millesimato always 30 months on lees riserva 36\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-vfe0dybz",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Raumland's 'triple brut' program showed the way.\"",
+   "newText": "\"exp\":\"Raumland, the first pure Sekthaus admitted to the VDP, released the first VDP.Sekt.Prestige collection and now sells only Sekt aged at least 36 months on the lees.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-mmnywoua",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "milled by mallet or tahona, fermented in stone, wood, clay or hide with the fibres present",
+   "newText": "milled by mallet, tahona, or Chilean or Egyptian mill, fermented in stone, earth, trunk, masonry, wood, clay or hide (the fibres may be included)",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-mmnywoua",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"ancestral artesanal and plain mezcal ancestral keeps the fibres and uses clay pots\"",
+   "newText": "\"ancestral artesanal and plain mezcal ancestral uses pit ovens and clay pots\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-bpga3b5q",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"coteaux du layon\",\"chaume\"]",
+   "newText": "\"accept\":[\"coteaux du layon\",\"coteaux du layon premier cru chaume\",\"~premier cru chaume\",\"~chaume premier cru\",\"~1er cru chaume\",\"~chaume 1er cru\"]",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-i9i4z2gy",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"A soil report from a prospective plot returns 20% active lime and a chlorosis index (IPC) of 60.",
+   "newText": "\"q\":\"A soil report from a prospective plot returns 30% active lime and a chlorosis index (IPC) of 60.",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

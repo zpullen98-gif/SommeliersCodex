@@ -1,0 +1,110 @@
+{
+ "findings": [
+  {
+   "id": "c-0nn04c75",
+   "kind": "accept-list",
+   "claim": "The question is exact-only (ex:1), so the accept list refuses 'protein' on its own, and also 'proteins and fats'. The stem asks for a single food element, and protein is the textbook answer.",
+   "finalFix": "\"accept\": [\"protein and fat\", \"fat and protein\", \"protein or fat\", \"fat or protein\", \"protein fat\", \"fat protein\", \"protein\", \"proteins\", \"proteins and fats\", \"fats and proteins\", \"proteins and fat\", \"protein and fats\"]"
+  },
+  {
+   "id": "c-q7tsbnp9",
+   "kind": "accept-list",
+   "claim": "The accept list refuses the plainest correct answers: 'high acidity', 'higher acidity', 'more acidity', 'high acid' and 'equal or greater acidity'.",
+   "finalFix": "\"accept\": [\"matching acidity\", \"equal or higher acidity\", \"more acid than the dish\", \"at least as much acidity\", \"high acidity\", \"higher acidity\", \"more acidity\", \"high acid\", \"higher acid\", \"more acid\", \"equal or greater acidity\"]"
+  },
+  {
+   "id": "c-dmqcaws5",
+   "kind": "accept-list",
+   "claim": "The accept list refuses correct paraphrases of 'they amplify each other': 'they intensify each other', 'they reinforce each other', 'they compound', 'amplify' and 'amplifies'.",
+   "finalFix": "\"accept\": [\"they amplify each other\", \"additive\", \"they add up\", \"increases bitterness\", \"amplify\", \"amplifies\", \"intensify\", \"intensifies\", \"compound\", \"reinforce\", \"cumulative\", \"more bitter\", \"bitterness increases\"]"
+  },
+  {
+   "id": "c-cqyity5s",
+   "kind": "accept-list",
+   "claim": "The accept list refuses the standard textbook phrasing 'increases bitterness (and astringency)', and also 'more bitter' and 'harder'.",
+   "finalFix": "Add to accept: \"increases bitterness\", \"increases bitterness and astringency\", \"more bitter\", \"harder\", \"more astringent\""
+  },
+  {
+   "id": "c-i5db573l",
+   "kind": "accept-list",
+   "claim": "The grader refuses 'fishy taste' and 'fishy aftertaste', though the model answer itself is 'A metallic, fishy taste'.",
+   "finalFix": "accept: [\"metallic taste\", \"metallic\", \"fishy metallic taste\", \"tinny\", \"fishy\", \"fishy taste\", \"fishy aftertaste\"]"
+  },
+  {
+   "id": "c-495v2qxh",
+   "kind": "accept-list",
+   "claim": "This exact-only question (ex:1) refuses Banyuls, the classic French fortified partner for dark chocolate, and Maury, a Roussillon vin doux naturel of the same kind.",
+   "finalFix": "accept: [\"ruby or lbv port\", \"ruby port\", \"lbv port\", \"late bottled vintage port\", \"ruby or late bottled vintage port\", \"port\", \"banyuls\", \"banyuls grand cru\", \"banyuls rimage\", \"maury\"]"
+  },
+  {
+   "id": "c-ft0o9d72",
+   "kind": "accept-list",
+   "claim": "The grader refuses 'acidity and tannin' and 'acid and tannin', the most natural way to name the two responses.",
+   "finalFix": "accept: [\"acidity to cut it, or tannin to scour it\", \"acidity or tannin\", \"tannin or acidity\", \"acid or tannin\", \"high acid or firm tannin\", \"~acidity and tannin\", \"~acid and tannin\", \"~tannin and acidity\", \"~tannin and acid\", \"~acidity and tannins\", \"~acid and tannins\", \"~acidity tannin\", \"~tannin acidity\"]"
+  },
+  {
+   "id": "c-6eypoycg",
+   "kind": "accept-list",
+   "claim": "The grader refuses plainly right answers such as 'increases them', 'increases', 'accentuates both', 'heightens them' and 'makes them harsher'.",
+   "finalFix": "accept: [\"increases both\", \"increases them\", \"increases\", \"both increase\", \"accentuates them\", \"accentuates both\", \"heightens them\", \"heightens both\", \"amplifies them\", \"amplifies both\", \"emphasizes them\", \"emphasizes both\", \"makes them more prominent\", \"makes them more pronounced\", \"makes them harsher\", \"harsher and more bitter\", \"harder and more bitter\", \"more tannic and more bitter\"]"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-0nn04c75",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"protein and fat\", \"fat and protein\", \"protein or fat\", \"fat or protein\",\n        \"protein fat\", \"fat protein\"],",
+   "newText": "       [\"protein and fat\", \"fat and protein\", \"protein or fat\", \"fat or protein\",\n        \"protein fat\", \"fat protein\", \"protein\", \"proteins\", \"proteins and fats\",\n        \"fats and proteins\", \"proteins and fat\", \"protein and fats\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-q7tsbnp9",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"matching acidity\", \"equal or higher acidity\", \"more acid than the dish\",\n        \"at least as much acidity\"],",
+   "newText": "       [\"matching acidity\", \"equal or higher acidity\", \"more acid than the dish\",\n        \"at least as much acidity\", \"high acidity\", \"higher acidity\", \"more acidity\",\n        \"high acid\", \"higher acid\", \"more acid\", \"equal or greater acidity\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-dmqcaws5",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"they amplify each other\", \"additive\", \"they add up\", \"increases bitterness\"],",
+   "newText": "       [\"they amplify each other\", \"additive\", \"they add up\", \"increases bitterness\",\n        \"amplify\", \"amplifies\", \"intensify\", \"intensifies\", \"compound\", \"reinforce\",\n        \"cumulative\", \"more bitter\", \"bitterness increases\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-cqyity5s",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"makes tannin harsher\", \"harsher\", \"more bitter and drying\", \"accentuates tannin\"],",
+   "newText": "       [\"makes tannin harsher\", \"harsher\", \"more bitter and drying\", \"accentuates tannin\",\n        \"increases bitterness\", \"increases bitterness and astringency\", \"more bitter\",\n        \"harder\", \"more astringent\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-i5db573l",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"metallic taste\", \"metallic\", \"fishy metallic taste\", \"tinny\"],",
+   "newText": "       [\"metallic taste\", \"metallic\", \"fishy metallic taste\", \"tinny\", \"fishy\",\n        \"fishy taste\", \"fishy aftertaste\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-495v2qxh",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "        \"ruby or late bottled vintage port\", \"port\"],",
+   "newText": "        \"ruby or late bottled vintage port\", \"port\", \"banyuls\", \"banyuls grand cru\",\n        \"banyuls rimage\", \"maury\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-ft0o9d72",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"acidity or tannin\", \"tannin or acidity\", \"acid or tannin\", \"high acid or firm tannin\"],",
+   "newText": "       [\"acidity or tannin\", \"tannin or acidity\", \"acid or tannin\", \"high acid or firm tannin\",\n        \"~acidity and tannin\", \"~acid and tannin\", \"~tannin and acidity\", \"~tannin and acid\",\n        \"~acidity and tannins\", \"~acid and tannins\", \"~acidity tannin\", \"~tannin acidity\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-6eypoycg",
+   "standaloneFile": "rewrite/categories/r2_food_pairing.py",
+   "oldText": "       [\"increases both\", \"makes them more prominent\",\n        \"accentuates them\"],",
+   "newText": "       [\"increases both\", \"increases them\", \"both increase\",\n        \"accentuates them\", \"accentuates both\", \"heightens them\", \"heightens both\",\n        \"amplifies them\", \"amplifies both\", \"emphasizes them\", \"emphasizes both\",\n        \"makes them more prominent\", \"makes them more pronounced\", \"makes them harsher\",\n        \"harsher and more bitter\", \"harder and more bitter\", \"more tannic and more bitter\"],",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

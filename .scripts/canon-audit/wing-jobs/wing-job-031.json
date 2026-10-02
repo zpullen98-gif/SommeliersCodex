@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "i-07xtmux2",
+   "kind": "wrong-explanation",
+   "claim": "Gouveio the citrus, the last being the grape Madeira calls Verdelho.",
+   "finalFix": "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Spain calls Godello (and not, despite an old confusion, the Verdelho of Madeira)."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-07xtmux2",
+   "standaloneFile": "rewrite/categories/r1_portugal.py",
+   "oldText": "the last being the grape Madeira calls Verdelho.",
+   "newText": "the last being the grape Spain calls Godello (and not, despite an old confusion, the Verdelho of Madeira).",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

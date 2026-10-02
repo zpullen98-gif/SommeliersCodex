@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "i-rs30nxyg",
+   "kind": "wrong-explanation",
+   "claim": "Mouton's elevation in 1973 is the only substantive change ever made to the red classification",
+   "finalFix": "Mouton's elevation in 1973 is the only promotion ever made to the red classification (the only other change was Cantemerle's addition as a Fifth Growth in 1856), and it took decades of pressure to win."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-rs30nxyg",
+   "standaloneFile": "rewrite/categories/r1_bordeaux.py",
+   "oldText": "\"Mouton's elevation in 1973 is the only substantive change ever made to the red classification, and it took decades of pressure to win.\"",
+   "newText": "\"Mouton's elevation in 1973 is the only promotion ever made to the red classification (the only other change was Cantemerle's addition as a Fifth Growth in 1856), and it took decades of pressure to win.\"",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

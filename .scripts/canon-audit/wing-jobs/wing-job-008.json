@@ -1,0 +1,117 @@
+{
+ "findings": [
+  {
+   "id": "a-wspnxw1o",
+   "kind": "accept-list",
+   "claim": "'escanciado high pour'",
+   "finalFix": "Model answer (ans): \"Txotx: a thin stream shot from a freshly opened barrel (kupela) and caught in the glass from a distance, to aerate the still cider\". Accept: [\"~txotx\", \"from the barrel\", \"straight from the barrel\", \"stream from the barrel\", \"from the kupela\"]. Remove both \"escanciado high pour\" and \"long pour from height txotx\"."
+  },
+  {
+   "id": "a-jzvq813j",
+   "kind": "accept-list",
+   "claim": "accept: \"pichon longueville\"",
+   "finalFix": "accept: [\"pichon baron and pichon lalande\", \"pichon lalande and pichon baron\", \"pichon baron and pichon comtesse\", \"pichon comtesse and pichon baron\", \"pichon longueville baron and pichon longueville comtesse\", \"pichon longueville comtesse and pichon longueville baron\", \"pichon longueville baron and comtesse de lalande\", \"pichon longueville baron and pichon lalande\", \"pichon baron and pichon longueville comtesse de lalande\", \"pichon baron and comtesse de lalande\"] (drop \"pichon longueville\")"
+  },
+  {
+   "id": "a-bg3f0jo1",
+   "kind": "outdated",
+   "claim": "Six others are shared; these two are DRC's alone.",
+   "finalFix": "Its other grands crus (Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne from 2019, Montrachet, and a tiny unreleased Bâtard-Montrachet) are shared; these two are DRC's alone."
+  },
+  {
+   "id": "a-q4wv3dx8",
+   "kind": "wrong-explanation",
+   "claim": "held by Mommessin for a century",
+   "finalFix": "Clos de Tart, its neighbor, is a true monopole, held by the Mommessin family from 1932 until its sale to Pinault's Artémis Domaines in 2017-18. Morey's smallest grand cru is Clos Saint-Denis (~6.6 ha)."
+  },
+  {
+   "id": "a-pnip9bif",
+   "kind": "outdated",
+   "claim": "Seven total; Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.",
+   "finalFix": "stem: 'Name the four traditional minor Champagne grapes beyond the big three (any two).' exp: 'The historic seven; since 2022 the hybrid Voltis is allowed as an adaptation variety (max 5% of plantings, 10% of a blend), and since July 2025 Chardonnay Rosé is a main variety, so the rulebook now lists more than seven. Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.'"
+  },
+  {
+   "id": "a-63od6qe1",
+   "kind": "wrong-explanation",
+   "claim": "further work tied that to Tribidrag, documented in Croatian records from the early sixteenth century",
+   "finalFix": "further work tied that to Tribidrag, documented in Dalmatian records from the fifteenth century"
+  },
+  {
+   "id": "a-d9erb66c",
+   "kind": "wrong-explanation",
+   "claim": "Château de Beaucastel cuttings imported in 1989 spent three years in USDA quarantine",
+   "finalFix": "Château de Beaucastel cuttings imported in January 1990 (the land was bought in 1989) spent three years in USDA quarantine; the estate vineyard followed from 1994."
+  },
+  {
+   "id": "a-iag39d6o",
+   "kind": "ambiguous-stem",
+   "claim": "The 'Eleven' AVAs of Napa's floor",
+   "finalFix": "The valley-floor AVAs of Napa (Oakville, Rutherford, St. Helena and their neighbours) are bisected by which two roads used in tasting shorthand?"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-wspnxw1o",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"long pour from height txotx\",\"escanciado high pour\"],\"ans\":\"The long high pour (txotx culture) to aerate its still, sharp body\"",
+   "newText": "\"accept\":[\"~txotx\",\"from the barrel\",\"straight from the barrel\",\"stream from the barrel\",\"from the kupela\"],\"ans\":\"Txotx: a thin stream shot from a freshly opened barrel (kupela) and caught in the glass from a distance, to aerate the still cider\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-jzvq813j",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"pichon baron and pichon lalande\",\"pichon-longueville baron and comtesse de lalande\",\"pichon longueville\"]",
+   "newText": "\"accept\":[\"pichon baron and pichon lalande\",\"pichon lalande and pichon baron\",\"pichon baron and pichon comtesse\",\"pichon comtesse and pichon baron\",\"pichon longueville baron and pichon longueville comtesse\",\"pichon longueville comtesse and pichon longueville baron\",\"pichon longueville baron and comtesse de lalande\",\"comtesse de lalande and pichon longueville baron\",\"pichon longueville baron and pichon lalande\",\"pichon lalande and pichon longueville baron\",\"pichon baron and pichon longueville comtesse de lalande\",\"pichon longueville comtesse de lalande and pichon baron\",\"pichon longueville comtesse de lalande and pichon longueville baron\",\"pichon baron and comtesse de lalande\"]",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-bg3f0jo1",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Six others are shared; these two are DRC's alone.\"",
+   "newText": "\"exp\":\"Its other grands crus (Richebourg, Romanée-Saint-Vivant, Grands-Échézeaux, Échézeaux, Corton, Corton-Charlemagne from 2019, Montrachet, and a tiny unreleased Bâtard-Montrachet) are shared; these two are DRC's alone.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-q4wv3dx8",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Clos de Tart, its neighbor, is a true monopole — held by Mommessin for a century, now Pinault's Artémis. Morey's smallest grand cru is Clos Saint-Denis (~6.6 ha).",
+   "newText": "Clos de Tart, its neighbor, is a true monopole, held by the Mommessin family from 1932 until its sale to Pinault's Artémis Domaines in 2017-18. Morey's smallest grand cru is Clos Saint-Denis (~6.6 ha).",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-pnip9bif",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"Name the four permitted Champagne grapes beyond the big three (any two).\",\"sa\":1",
+   "newText": "\"q\":\"Name the four traditional minor Champagne grapes beyond the big three (any two).\",\"sa\":1",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-pnip9bif",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Seven total; Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.\"",
+   "newText": "\"exp\":\"The historic seven; since 2022 the hybrid Voltis is allowed as an adaptation variety (max 5% of plantings, 10% of a blend), and since July 2025 Chardonnay Rosé is a main variety, so the rulebook now lists more than seven. Duval-Leroy and Laherte bottle curiosity cuvées from the rare four.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-63od6qe1",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "documented in Croatian records from the early sixteenth century",
+   "newText": "documented in Dalmatian records from the fifteenth century",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-d9erb66c",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Château de Beaucastel cuttings imported in 1989 spent three years in USDA quarantine; the estate vineyard followed from 1994.",
+   "newText": "Château de Beaucastel cuttings imported in January 1990 (the land was bought in 1989) spent three years in USDA quarantine; the estate vineyard followed from 1994.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-iag39d6o",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"The 'Eleven' AVAs of Napa's floor are bisected by which two highways used in tasting shorthand?\"",
+   "newText": "\"q\":\"The valley-floor AVAs of Napa (Oakville, Rutherford, St. Helena and their neighbors) are bisected by which two roads used in tasting shorthand?\"",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

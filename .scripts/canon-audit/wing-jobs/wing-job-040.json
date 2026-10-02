@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "c-d6r40j8q",
+   "kind": "accept-list",
+   "claim": "The accept list refuses \"La Vigne Blanche\", which is the land-registry name (lieu-dit) of the vineyard the question asks for. The question is exact-match only (ex:1), and after norm() strips the article that answer becomes \"vigne blanche\", which matches no entry.",
+   "finalFix": "Add to accept: \"la vigne blanche\", \"vigne blanche\""
+  },
+  {
+   "id": "c-3seiuffu",
+   "kind": "wrong-explanation",
+   "claim": "The stem says Bouzeron 'insists on' the golden-berried form of Aligote, and the explanation says Bouzeron's rules were written around the golden strain.",
+   "finalFix": "Stem: \"Bouzeron's growers favour one of Aligote's two forms, the golden-berried and lower-yielding one, though the appellation rules name only Aligote. Name it.\" Last sentence of the explanation: \"The appellation rules say only Aligote, but Bouzeron's leading growers chose the golden strain to make the case that Aligote can be a serious wine.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-d6r40j8q",
+   "standaloneFile": "rewrite/categories/r2_burgundy.py",
+   "oldText": "        \"the clos blanc de vougeot vineyard\"],",
+   "newText": "        \"the clos blanc de vougeot vineyard\",\n        \"la vigne blanche\", \"vigne blanche\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-3seiuffu",
+   "standaloneFile": "rewrite/categories/r2_burgundy.py",
+   "oldText": "       \"Bouzeron insists on one of Aligote's two forms, the golden-berried and lower-yielding one. Name it.\",\n       \"Aligote Dore\",\n       [\"aligote dore\", \"dore aligote\", \"the golden aligote dore\"],\n       \"The other form, Aligote Vert, crops far more heavily and gives the thin, sharp wine that gave the grape its reputation as something to drown in cassis. Bouzeron's rules were written around the golden strain precisely to make the case that Aligote can be a serious wine.\"),",
+   "newText": "       \"Bouzeron's growers favour one of Aligote's two forms, the golden-berried and lower-yielding one, though the appellation rules name only Aligote. Name it.\",\n       \"Aligote Dore\",\n       [\"aligote dore\", \"dore aligote\", \"the golden aligote dore\"],\n       \"The other form, Aligote Vert, crops far more heavily and gives the thin, sharp wine that gave the grape its reputation as something to drown in cassis. The appellation rules say only Aligote, but Bouzeron's leading growers chose the golden strain to make the case that Aligote can be a serious wine.\",\n       pin=\"c-3seiuffu\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

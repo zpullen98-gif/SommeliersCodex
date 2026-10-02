@@ -1,0 +1,131 @@
+{
+ "findings": [
+  {
+   "id": "m-qoaqguzr",
+   "kind": "wrong-explanation",
+   "claim": "Each of the three requires a minimum of 85% Blaufränkisch.",
+   "finalFix": "Leithaberg red must be at least 85% Blaufränkisch, with up to 15% Zweigelt, St. Laurent or Pinot Noir; Mittelburgenland must be Blaufränkisch, with only the standard 15% labelling tolerance for other varieties; Eisenberg must be 100% Blaufränkisch, and any blend with another variety is forbidden."
+  },
+  {
+   "id": "m-qoaqguzr",
+   "kind": "outdated",
+   "claim": "it is also the one DAC of the three with a white wine, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger",
+   "finalFix": "(it also has the fullest white category of the three, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger; since the September 2024 amendment Eisenberg also allows a 100% Welschriesling, but only as an Ortswein or Riedenwein, its Gebietswein staying 100% Blaufränkisch)"
+  },
+  {
+   "id": "m-tndpwqdb",
+   "kind": "outdated",
+   "claim": "Current holders: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) and Zundert in the Netherlands; Engelszell in Austria; Tre Fontane in Italy; Mount St Bernard's Tynt Meadow in England; and Cardena in Spain — around ten or eleven (also the accept entry naming 'zundert engelszell ... and cardena')",
+   "finalFix": "In \"ans\", replace the text from \"Current holders:\" through \"ceased brewing in 2022.\" with: \"Current holders, per the International Trappist Association: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) in the Netherlands; Tre Fontane in Italy; and Mount St Bernard's Tynt Meadow in England. That makes eight, and the number moves. Achel lost the label in 2021 when its last monks left. Spencer in the United States stopped brewing in 2022. Engelszell in Austria dropped the hexagon after its community was dissolved from 2023. Zundert in the Netherlands lost it when its abbey closed in 2025. Cardeña in Spain holds the label for a liqueur, never for its beer.\" Replace accept[2] with: \"authentic trappist product certifies governance not style five belgian breweries plus la trappe tre fontane and tynt meadow\""
+  },
+  {
+   "id": "m-bs31ukhw",
+   "kind": "wrong-explanation",
+   "claim": "Invented in Catalonia (girasol) for Cava — a cross-region oral favorite.",
+   "finalFix": "Patented in France in 1968 by Claude Cazals and Jacques Ducoin and developed in Champagne, it was taken up at scale from the mid-1970s, with the Cava house Codorníu among the first big users; in Spain it is called the girasol ('sunflower'). A cross-region oral favorite."
+  },
+  {
+   "id": "m-kz5j60nv",
+   "kind": "outdated",
+   "claim": "The model answer and an accept entry say the INAO accepted the Alsace premier cru principle in 2022 and that assessment has continued since.",
+   "finalFix": "In ans, replace \"The INAO accepted the principle in 2022 and the site-by-site assessment has continued since; I would date any status claim I make.\" with \"In June 2025 the INAO wine committee (CNAOV) approved, as a first step, a 'cru' mention for named lieux-dits within AOC Alsace, together with an admissibility grid and a two-stage site appraisal, and the AVA filed its first seven applications; a true premier cru tier remains the later goal, and I would date any status claim I make.\" In accept, replace \"inao accepted the principle in 2022 and the lieux-dit assessment continues\" with \"in 2025 the inao approved a cru mention for lieux-dits as a first step toward premier cru\""
+  },
+  {
+   "id": "m-wpornxe8",
+   "kind": "ambiguous-stem",
+   "claim": "The question asks for Penfolds' 'luxury trio' beneath Grange, but no such fixed trio exists.",
+   "finalFix": "Stem: \"Name Penfolds' luxury reds released alongside Grange (name at least three).\" Keep the existing accepts and add: \"~707 rwt magill\", \"~707 st henri magill\", \"~rwt st henri magill\". Model answer: \"Bin 707 Cabernet, RWT (Barossa Shiraz, French oak), St Henri (no new oak) and Magill Estate Shiraz, with Yattarna in white\"."
+  },
+  {
+   "id": "m-igulsgq9",
+   "kind": "outdated",
+   "claim": "The model answer names De Bortoli as a current member of Australia's First Families of Wine.",
+   "finalFix": "ans: \"A dozen multigenerational family estates marketing collectively (Yalumba, Henschke, Taylors, Tyrrell's, Tahbilk, Brown Brothers…); founding members De Bortoli and McWilliam's have since left, and Best's Great Western and Clonakilla joined in 2024\""
+  },
+  {
+   "id": "m-fzyx1y25",
+   "kind": "accept-list",
+   "claim": "The accept entry \"area halved quality rose\" grades a false claim as correct, and the explanation's figure for today's vineyard area is slightly too high.",
+   "finalFix": "accept: [\"post-scandal contraction focus on quality small holdings\", \"area shrank quality rose\"]; exp: \"About 44,000 ha now (44,210 ha in 2024), down from a peak of 59,545 ha in 1980: a fall of roughly a quarter, almost all of it bulk production.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-qoaqguzr",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Each of the three requires a minimum of 85% Blaufränkisch.",
+   "newText": "Leithaberg red must be at least 85% Blaufränkisch, with up to 15% Zweigelt, St. Laurent or Pinot Noir; Mittelburgenland must be Blaufränkisch, with only the standard 15% labeling tolerance for other varieties; Eisenberg must be 100% Blaufränkisch, and any blend with another variety is forbidden.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-qoaqguzr",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "(it is also the one DAC of the three with a white wine, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger)",
+   "newText": "(it also has the fullest white category of the three, from Grüner Veltliner, Weissburgunder, Chardonnay and Neuburger; since the September 2024 amendment Eisenberg also allows a 100% Welschriesling, but only as an Ortswein or Riedenwein, its Gebietswein staying 100% Blaufränkisch)",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-tndpwqdb",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Current holders: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) and Zundert in the Netherlands; Engelszell in Austria; Tre Fontane in Italy; Mount St Bernard's Tynt Meadow in England; and Cardena in Spain — around ten or eleven, and the number moves. Achel lost the label in 2021 when its last monks left, and Spencer in the United States ceased brewing in 2022.",
+   "newText": "Current holders, per the International Trappist Association: Chimay, Orval, Rochefort, Westmalle and Westvleteren in Belgium; La Trappe (Koningshoeven) in the Netherlands; Tre Fontane in Italy; and Mount St Bernard's Tynt Meadow in England. That makes eight, and the number moves. Achel lost the label in 2021 when its last monks left. Spencer in the United States stopped brewing in 2022. Engelszell in Austria dropped the hexagon after its community was dissolved from 2023. Zundert in the Netherlands lost it when its abbey closed in 2025. Cardeña in Spain holds the label for a liqueur, never for its beer.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-tndpwqdb",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"authentic trappist product certifies governance not style five belgian breweries plus la trappe zundert engelszell tre fontane mount st bernard and cardena\"",
+   "newText": "\"authentic trappist product certifies governance not style five belgian breweries plus la trappe tre fontane and tynt meadow\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-bs31ukhw",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"exp\":\"Invented in Catalonia (girasol) for Cava — a cross-region oral favorite.\"",
+   "newText": "\"exp\":\"Patented in France in 1968 by Claude Cazals and Jacques Ducoin and developed in Champagne, it was taken up at scale from the mid-1970s, with the Cava house Codorníu among the first big users; in Spain it is called the girasol ('sunflower'). A cross-region oral favorite.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-kz5j60nv",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "The INAO accepted the principle in 2022 and the site-by-site assessment has continued since; I would date any status claim I make.",
+   "newText": "In June 2025 the INAO wine committee (CNAOV) approved, as a first step, a 'cru' mention for named lieux-dits within AOC Alsace, together with an admissibility grid and a two-stage site appraisal, and the AVA filed its first seven applications; a true premier cru tier remains the later goal, and I would date any status claim I make.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-kz5j60nv",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"inao accepted the principle in 2022 and the lieux-dit assessment continues\"",
+   "newText": "\"in 2025 the inao approved a cru mention for lieux-dits as a first step toward premier cru\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-wpornxe8",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Name the three members of Penfolds' 'luxury trio' beneath Grange historically.\",\"sa\":1,\"accept\":[\"bin 707 rwt st henri\",\"707 rwt st henri yattarna\",\"~707 rwt and st henri\",\"~707 cabernet rwt st henri\"],\"ans\":\"Bin 707 Cabernet, RWT (Barossa Shiraz, French oak), St Henri (no new oak) — with Yattarna in white\"",
+   "newText": "\"q\":\"Name Penfolds' luxury reds released alongside Grange (name at least three).\",\"sa\":1,\"accept\":[\"bin 707 rwt st henri\",\"707 rwt st henri yattarna\",\"~707 rwt and st henri\",\"~707 cabernet rwt st henri\",\"~707 rwt magill\",\"~707 st henri magill\",\"~rwt st henri magill\",\"~707 rwt and magill\",\"~707 st henri and magill\",\"~rwt st henri and magill\"],\"ans\":\"Bin 707 Cabernet, RWT (Barossa Shiraz, French oak), St Henri (no new oak) and Magill Estate Shiraz, with Yattarna in white\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-igulsgq9",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"ans\":\"A dozen multigenerational family estates marketing collectively (Yalumba, Henschke, Taylors, Tyrrell's, De Bortoli…)\"",
+   "newText": "\"ans\":\"A dozen multigenerational family estates marketing collectively (Yalumba, Henschke, Taylors, Tyrrell's, Tahbilk, Brown Brothers…); founding members De Bortoli and McWilliam's have since left, and Best's Great Western and Clonakilla joined in 2024\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-fzyx1y25",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"area halved quality rose\"",
+   "newText": "\"area shrank quality rose\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-fzyx1y25",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"exp\":\"Roughly 45,000–48,000 ha now, against a much larger bulk-era figure.\"",
+   "newText": "\"exp\":\"About 44,000 ha now (44,210 ha in 2024), down from a peak of 59,545 ha in 1980: a fall of roughly a quarter, almost all of it bulk production.\"",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

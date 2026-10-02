@@ -1,0 +1,58 @@
+{
+ "findings": [
+  {
+   "id": "c-nkjhjlij",
+   "kind": "wrong-key",
+   "claim": "The key says 260 g/L Pinot Gris qualifies for Vendanges Tardives. It does not, because the VT minimum for Gewurztraminer and Pinot Gris is now 270 g/L. The 257 g/L figure is outdated.",
+   "finalFix": "a: 3 (Neither term). exp: Under the current Alsace cahier des charges, Vendanges Tardives Pinot Gris needs at least 270 grams of sugar per litre of must (the older figure of 257 no longer applies), so 260 falls short. Selection de Grains Nobles asks 306 grams, and shrivelled, nobly rotted berries besides, so neither term is open to this fruit."
+  },
+  {
+   "id": "c-75uok2dx",
+   "kind": "outdated",
+   "claim": "The model answer and accept list give 235 g/L as the Riesling VT minimum. The current minimum is 244 g/L. The explanation's 257 for Gewurztraminer and Pinot Gris is also out of date; the current figure is 270.",
+   "finalFix": "ans: 244 grams per litre; accept: replace every '235' with '244' in all variants ('244 grams per litre', '244 grams per liter', '244 grams of sugar per litre', '244 grams of sugar per liter', '244 grams per litre of sugar', '244 g/l', '244g/l', '244 g per litre', '244 g per liter', '244 grams', '244 g', '244', 'at least 244 grams per litre', 'minimum 244 grams per litre', '244 grams per litre minimum', 'at least 244 g/l', 'minimum of 244 grams per litre', '244 g/l minimum', '244 grams/litre', 'minimum 244 g/l', 'at least 244', 'minimum 244', '244 g/l of sugar', '244 grams per litre of must', '244 grammes per litre'). exp: Riesling and Muscat qualify for Vendanges Tardives at 244 grams of natural sugar per litre of must (14.5% potential alcohol), while Gewurztraminer and Pinot Gris, which fatten far more easily, face 270 (16%); the arrêtés of 20 June 2016 raised the figures from 235 and 257. Chaptalisation is banned outright for the term, so every gram must hang on the vine into the autumn."
+  },
+  {
+   "id": "c-6e06db4w",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says Zotzenberg 'keeps the noble four alongside' Sylvaner. It does not: Muscat is not permitted on Zotzenberg.",
+   "finalFix": "The concession is strictly local: on no other cru may the word Sylvaner appear, and on Zotzenberg it stands beside Riesling, Pinot Gris and Gewurztraminer, while Muscat is not admitted there."
+  },
+  {
+   "id": "c-rnipehwm",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says a single-variety Altenberg de Bergheim 'still carries its grape'. That is not a legal requirement: naming the variety on an Alsace grand cru is optional, so a missing grape name does not by law prove a blend.",
+   "finalFix": "exp: Altenberg de Bergheim and Kaefferkopf are the crus whose rules sanction a blend, and a blended grand cru can name no variety at all, because a variety name is allowed only when the wine comes wholly from that grape: the site is the whole claim. Naming the grape on a single-variety grand cru is optional rather than compulsory (only VT and SGN must carry one), but producers usually print it, so the missing grape name most likely points to the blend."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-nkjhjlij",
+   "standaloneFile": "rewrite/categories/r2_alsace.py",
+   "oldText": "      [\"Vendanges Tardives only\", \"Selection de Grains Nobles only\",\n       \"Either term\", \"Neither term\"], 0,\n      \"The Vendanges Tardives floor for Pinot Gris stands at 257 grams per litre, so 260 clears it with a little in hand. Selection de Grains Nobles sits far above such fruit for the same grape and expects shrivelled, nobly rotted berries besides, so clean bunches at this ripeness leave one word open and one out of reach.\"),",
+   "newText": "      [\"Vendanges Tardives only\", \"Selection de Grains Nobles only\",\n       \"Either term\", \"Neither term\"], 3,\n      \"Under the current Alsace cahier des charges, Vendanges Tardives Pinot Gris needs at least 270 grams of sugar per litre of must (the older figure of 257 no longer applies), so 260 falls short. Selection de Grains Nobles asks 306 grams, and shrivelled, nobly rotted berries besides, so neither term is open to this fruit.\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-75uok2dx",
+   "standaloneFile": "rewrite/categories/r2_alsace.py",
+   "oldText": "       \"235 grams per litre\",\n       [\"235 grams per litre\", \"235 grams per liter\",\n        \"235 grams of sugar per litre\", \"235 grams of sugar per liter\",\n        \"235 grams per litre of sugar\", \"235 g/l\", \"235g/l\",\n        \"235 g per litre\", \"235 g per liter\", \"235 grams\", \"235 g\", \"235\",\n        \"at least 235 grams per litre\", \"minimum 235 grams per litre\",\n        \"235 grams per litre minimum\", \"at least 235 g/l\",\n        \"minimum of 235 grams per litre\", \"235 g/l minimum\",\n        \"235 grams/litre\", \"minimum 235 g/l\", \"at least 235\",\n        \"minimum 235\", \"235 g/l of sugar\", \"235 grams per litre of must\",\n        \"235 grammes per litre\"],\n       \"Riesling and Muscat qualify for Vendanges Tardives at 235 grams of natural sugar per litre of must, while Gewurztraminer and Pinot Gris, which fatten far more easily, face 257; the figures were raised to those levels in 2001. Chaptalisation is banned outright for the term, so every gram must hang on the vine into the autumn.\",",
+   "newText": "       \"244 grams per litre\",\n       [\"244 grams per litre\", \"244 grams per liter\",\n        \"244 grams of sugar per litre\", \"244 grams of sugar per liter\",\n        \"244 grams per litre of sugar\", \"244 g/l\", \"244g/l\",\n        \"244 g per litre\", \"244 g per liter\", \"244 grams\", \"244 g\", \"244\",\n        \"at least 244 grams per litre\", \"minimum 244 grams per litre\",\n        \"244 grams per litre minimum\", \"at least 244 g/l\",\n        \"minimum of 244 grams per litre\", \"244 g/l minimum\",\n        \"244 grams/litre\", \"minimum 244 g/l\", \"at least 244\",\n        \"minimum 244\", \"244 g/l of sugar\", \"244 grams per litre of must\",\n        \"244 grammes per litre\"],\n       \"Riesling and Muscat qualify for Vendanges Tardives at 244 grams of natural sugar per litre of must (14.5% potential alcohol), while Gewurztraminer and Pinot Gris, which fatten far more easily, face 270 (16%); the arretes of 20 June 2016 raised the figures from 235 and 257. Chaptalisation is banned outright for the term, so every gram must hang on the vine into the autumn.\",",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-6e06db4w",
+   "standaloneFile": "rewrite/categories/r2_alsace.py",
+   "oldText": "The concession is strictly local: on no other cru may the word Sylvaner appear, and Zotzenberg keeps the noble four alongside it.\"),",
+   "newText": "The concession is strictly local: on no other cru may the word Sylvaner appear, and on Zotzenberg it stands beside Riesling, Pinot Gris and Gewurztraminer, while Muscat is not admitted there.\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-rnipehwm",
+   "standaloneFile": "rewrite/categories/r2_alsace.py",
+   "oldText": "\"Altenberg de Bergheim and Kaefferkopf are the crus whose rules sanction a blend, and a blended grand cru names no variety at all: the site is the whole claim. A single-variety bottling from the same slope still carries its grape, so the absent line is information, not an oversight.\"),",
+   "newText": "\"Altenberg de Bergheim and Kaefferkopf are the crus whose rules sanction a blend, and a blended grand cru can name no variety at all, because a variety name is allowed only when the wine comes wholly from that grape: the site is the whole claim. Naming the grape on a single-variety grand cru is optional rather than compulsory (only VT and SGN must carry one), but producers usually print it, so the missing grape name most likely points to the blend.\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

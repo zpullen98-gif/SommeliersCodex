@@ -1,0 +1,118 @@
+{
+ "findings": [
+  {
+   "id": "m-7uila2vu",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the solera's 'mathematical average age climbs indefinitely', and the accept list takes 'running wine down through the scales raises the average age indefinitely'.",
+   "finalFix": "ans: replace \"the mathematical average age climbs indefinitely\" with \"the average age rises toward a stable equilibrium set by the number of scales and the fraction drawn\"; accept: remove \"running wine down through the scales raises the average age indefinitely\""
+  },
+  {
+   "id": "m-nqy0svcx",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the reform's recognition of unfortified wines 'legitimised the vino de pasto movement'. It also says vintage-dated wines may 'now' be labelled, and the accept list takes 'vino de pasto was legalised'.",
+   "finalFix": "ans: 'It reopened the region to its own history. The ageing zone had been confined to Jerez de la Frontera, El Puerto de Santa María and Sanlúcar (the famous triangle) and was extended across the wider production zone, so towns like Trebujena, Chipiona, Chiclana and Rota that had always grown grapes may now age wine under the DO. Fortification stopped being compulsory for wines that reach the minimum strength for their style naturally (then 15% for fino and manzanilla and 17% for oloroso; a 2025 amendment lowered fino, manzanilla and pale cream to 14%). The low-alcohol vino de pasto whites remain outside the DO and are being pursued as a separate DO, Vino de Albariza. Named pagos, the traditional delimited vineyard districts, may now appear on labels. And historic varieties beyond Palomino, Pedro Ximénez and Moscatel (Beba, Perruno, Vejeriego, Cañocazo and the two Mantúos) were restored to the permitted list. Taken together it converts a set of rules describing a 20th-century shipping business into rules describing a place.' accept: replace 'the triangle was opened up and vino de pasto was legalised' with 'the triangle was opened up and fortification was no longer compulsory'; replace 'brought vineyard identity vintage and old varieties back into the do' with 'brought vineyard identity and old varieties back into the do'; replace 'recognised unfortified pasto wines vineyard pago names and historic grapes' with 'recognised naturally strong unfortified wines vineyard pago names and historic grapes'"
+  },
+  {
+   "id": "m-d1jdvtdf",
+   "kind": "outdated",
+   "claim": "The model answer says making generosos with no fortification is 'legally impossible in Jerez'.",
+   "finalFix": "ans: replace \"which is legally impossible in Jerez\" with \"which Jerez forbade until its pliego reform (approved by the Consejo in 2022, in force under EU approval since August 2025) and even now allows only when a wine reaches its type's minimum strength naturally (15% for fino, 17% for oloroso), which Palomino rarely does\""
+  },
+  {
+   "id": "m-0xtpo4wo",
+   "kind": "accept-list",
+   "claim": "The stem asks for three Armagnac grapes, but the accept entry 'baco 22a folle blanche' names only two. Because matchSA accepts an entry that appears as a phrase inside the answer, a candidate who writes just 'Baco 22A, Folle Blanche' is marked correct.",
+   "finalFix": "accept: [\"~ugni blanc baco 22a folle blanche colombard\", \"~ugni blanc baco folle blanche colombard\", \"~ugni blanc baco 22a folle blanche\", \"~ugni blanc baco folle blanche\", \"~ugni blanc folle blanche colombard\", \"~ugni blanc baco 22a colombard\", \"~ugni blanc baco colombard\", \"~baco 22a folle blanche colombard\", \"~baco folle blanche colombard\"]"
+  },
+  {
+   "id": "m-bvvtanrk",
+   "kind": "wrong-explanation",
+   "claim": "The model answer says the 1855 classification, 'like the Médoc list it stands today exactly as drawn', and the first accept entry calls it 'unchanged since 1855'.",
+   "finalFix": "In the answer, replace 'and like the Médoc list it stands today exactly as drawn' with 'and apart from the division and merging of estates it has never been revised (the Médoc list, by contrast, admitted Cantemerle in 1856 and promoted Mouton Rothschild to First Growth in 1973)'. In the accept list, replace 'yquem alone as premier cru superieur then eleven firsts and fifteen seconds unchanged since 1855' with 'yquem alone as premier cru superieur then eleven firsts and fifteen seconds'."
+  },
+  {
+   "id": "m-zonewzhb",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer says that besides tartaric, \"malic, lactic and citric are also permitted\" for acidification, with citric held to 1 g/L. The explanation adds that lactic acid \"barely moves pH at all\".",
+   "finalFix": "Model answer: \"Acidification normally means adding tartaric acid (L-malic, DL-malic and lactic are also authorised; citric acid is not an EU acidifier and is permitted only as a stabiliser, up to 1 g/L), up to a maximum of 4 g/L expressed as tartaric.\" In the explanation, replace \"and lactic barely moves pH at all\" with \"and lactic, a weaker monoacid, lowers pH less efficiently than tartaric\"."
+  },
+  {
+   "id": "m-zsrv9gk4",
+   "kind": "accept-list",
+   "claim": "The stem asks for the single campaign every merchant cites, but the accept list takes only 2010 wording and refuses 2011, which is the campaign most often cited as the en primeur flop.",
+   "finalFix": "\"q\": \"'En primeur washout' risk was proven by which Bordeaux campaigns, the ones merchants still cite?\", \"accept\": [\"overpriced 2010s cheaper on release\", \"~2010\", \"~2011\", \"~2010 era\", \"~2010 campaign\", \"~2010 campaigns\", \"~2010 en primeur\", \"~2010 vintage\", \"~bordeaux 2010\", \"~2010 bordeaux\", \"~2011 campaign\", \"~2011 vintage\", \"~2011 en primeur\", \"~bordeaux 2011\", \"~2011 bordeaux\", \"~2010 and 2011\", \"~2010 11\", \"~2010 2011\"], \"ans\": \"The 2010 and 2011 campaigns, wines later obtainable below their futures price, rewired buyer skepticism\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-7uila2vu",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"running wine down through the scales raises the average age indefinitely\",",
+   "newText": "",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-7uila2vu",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "the mathematical average age climbs indefinitely, while",
+   "newText": "the average age rises toward a stable equilibrium set by the number of scales and the fraction drawn, while",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-nqy0svcx",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"the triangle was opened up and vino de pasto was legalised\",\"recognised unfortified pasto wines vineyard pago names and historic grapes\",\"brought vineyard identity vintage and old varieties back into the do\"],\"ans\":\"It reopened the region to its own history. The ageing zone had been confined to Jerez de la Frontera, El Puerto de Santa María and Sanlúcar — the famous triangle — and was extended across the wider production zone, so towns like Trebujena, Chipiona, Chiclana and Rota that had always grown grapes may now age wine under the DO. Unfortified wines were recognised, which legitimised the vino de pasto movement that had been forced to sell its Palomino as table wine outside the appellation. Single-vineyard pago names and vintage-dated wines may now be labelled. And historic varieties beyond Palomino, Pedro Ximénez and Moscatel — among them Beba, Perruno, Vejeriego, Cañocazo and the Mantúos — were restored to the permitted list.",
+   "newText": "\"the triangle was opened up and fortification was no longer compulsory\",\"recognised naturally strong unfortified wines vineyard pago names and historic grapes\",\"brought vineyard identity and old varieties back into the do\"],\"ans\":\"It reopened the region to its own history. The ageing zone had been confined to Jerez de la Frontera, El Puerto de Santa María and Sanlúcar (the famous triangle) and was extended across the wider production zone, so towns like Trebujena, Chipiona, Chiclana and Rota that had always grown grapes may now age wine under the DO. Fortification stopped being compulsory for wines that reach the minimum strength for their style naturally (then 15% for fino and manzanilla and 17% for oloroso; a 2025 amendment lowered fino, manzanilla and pale cream to 14%). The low-alcohol vino de pasto whites remain outside the DO and are being pursued as a separate DO, Vino de Albariza. Named pagos, the traditional delimited vineyard districts, may now appear on labels. And historic varieties beyond Palomino, Pedro Ximénez and Moscatel (Beba, Perruno, Vejeriego, Cañocazo and the two Mantúos) were restored to the permitted list.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-d1jdvtdf",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "which is legally impossible in Jerez.",
+   "newText": "which Jerez forbade until its pliego reform (approved by the Consejo in 2022, in force under EU approval since August 2025) and even now allows only when a wine reaches its type's minimum strength naturally (14% for fino, 17% for oloroso), which Palomino rarely does.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-0xtpo4wo",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"ugni blanc baco folle blanche colombard\",\"baco 22a folle blanche\"]",
+   "newText": "\"accept\":[\"~ugni blanc baco 22a folle blanche colombard\",\"~ugni blanc baco folle blanche colombard\",\"~ugni blanc baco 22a folle blanche\",\"~ugni blanc baco folle blanche\",\"~ugni blanc folle blanche colombard\",\"~ugni blanc baco 22a colombard\",\"~ugni blanc baco colombard\",\"~baco 22a folle blanche colombard\",\"~baco folle blanche colombard\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-bvvtanrk",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"yquem alone as premier cru superieur then eleven firsts and fifteen seconds unchanged since 1855\"",
+   "newText": "\"yquem alone as premier cru superieur then eleven firsts and fifteen seconds\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-bvvtanrk",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "and like the Médoc list it stands today exactly as drawn.",
+   "newText": "and apart from the division and merging of estates it has never been revised (the Médoc list, by contrast, admitted Cantemerle in 1856 and promoted Mouton Rothschild to First Growth in 1973).",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zonewzhb",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Acidification normally means adding tartaric acid — malic, lactic and citric are also permitted, citric constrained by a 1 g/L ceiling in the finished wine — up to a maximum of 4 g/L expressed as tartaric.",
+   "newText": "Acidification normally means adding tartaric acid (L-malic, DL-malic and lactic are also authorised; citric acid is not an EU acidifier and is permitted only as a stabiliser, up to 1 g/L), up to a maximum of 4 g/L expressed as tartaric.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zonewzhb",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "and lactic barely moves pH at all.",
+   "newText": "and lactic, a weaker monoacid, lowers pH less efficiently than tartaric.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zsrv9gk4",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"'En primeur washout' risk was proven by which campaign example every merchant cites?\",\"sa\":1,\"accept\":[\"2010 pricing 2008 rebound examples\",\"overpriced 2010s cheaper on release\",\"~2010 era\",\"~2010 campaign\",\"~2010 campaigns\",\"~2010 en primeur\",\"~2010 vintage\",\"~bordeaux 2010\",\"~2010 bordeaux\"],\"ans\":\"The 2010-era campaigns — wines later obtainable below futures price — rewired buyer skepticism\"",
+   "newText": "\"q\":\"'En primeur washout' risk was proven by which Bordeaux campaigns, the ones merchants still cite?\",\"sa\":1,\"accept\":[\"overpriced 2010s cheaper on release\",\"~2010\",\"~2011\",\"~2010 era\",\"~2010 campaign\",\"~2010 campaigns\",\"~2010 en primeur\",\"~2010 vintage\",\"~bordeaux 2010\",\"~2010 bordeaux\",\"~2011 campaign\",\"~2011 vintage\",\"~2011 en primeur\",\"~bordeaux 2011\",\"~2011 bordeaux\",\"~2010 and 2011\",\"~2010 11\",\"~2010 2011\"],\"ans\":\"The 2010 and 2011 campaigns, wines later obtainable below their futures price, rewired buyer skepticism\"",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

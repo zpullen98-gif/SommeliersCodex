@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "c-r7d5apwy",
+   "kind": "accept-list",
+   "claim": "The accept list refuses 16.8, the standard rounded form of the divisor it already accepts as 16.83.",
+   "finalFix": "Add to accept: \"16 8\", \"about 16 8\", \"16 8 g l\", \"16 8g l\", \"16 8 grams per litre\", \"divide by 16 8\""
+  },
+  {
+   "id": "c-agg8mhfn",
+   "kind": "accept-list",
+   "claim": "The accept list refuses 'seed', 'seeds', 'the seeds', 'pips' and 'from the seeds', all plainly right answers to which fraction of the tannin was added.",
+   "finalFix": "Add to accept: \"seed\", \"seeds\", \"grape seed\", \"grape seeds\", \"pip\", \"pips\", \"from seeds\", \"from pips\", \"from grape seeds\", \"seed fraction\", \"pip fraction\""
+  },
+  {
+   "id": "c-fzvm469u",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the ratio of 4-ethylphenol to its partner 4-ethylguaiacol is 'roughly constant, which is why a laboratory can report one figure and a cellar can act on it.'",
+   "finalFix": "Its partner, 4-ethylguaiacol, reads as smoke and clove rather than farmyard. The ratio between the two varies widely with the grape and the wine's hydroxycinnamic acids (roughly 8 to 10 to one in Cabernet and Merlot, much lower in some other wines), which is why a laboratory usually reports both."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-r7d5apwy",
+   "standaloneFile": "rewrite/categories/r2_wine_fundamentals.py",
+   "oldText": "        \"about seventeen grams a litre\", \"16 83 g l\"],",
+   "newText": "        \"about seventeen grams a litre\", \"16 83 g l\",\n        \"16 8\", \"about 16 8\", \"16 8 g l\", \"16 8g l\",\n        \"16 8 grams per litre\", \"divide by 16 8\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-agg8mhfn",
+   "standaloneFile": "rewrite/categories/r2_wine_fundamentals.py",
+   "oldText": "        \"tannin from grape seeds\", \"tannins from grape seeds\"],",
+   "newText": "        \"tannin from grape seeds\", \"tannins from grape seeds\",\n        \"seed\", \"seeds\", \"grape seed\", \"grape seeds\", \"pip\", \"pips\",\n        \"from seeds\", \"from pips\", \"from grape seeds\",\n        \"seed fraction\", \"pip fraction\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-fzvm469u",
+   "standaloneFile": "rewrite/categories/r2_wine_fundamentals.py",
+   "oldText": "Its partner reads as smoke and clove rather than farmyard, and the ratio between the two is roughly constant, which is why a laboratory can report one figure and a cellar can act on it.",
+   "newText": "Its partner, 4-ethylguaiacol, reads as smoke and clove rather than farmyard. The ratio between the two varies widely with the grape and the wine's hydroxycinnamic acids (roughly 8 to 10 to one in Cabernet and Merlot, much lower in some other wines), which is why a laboratory usually reports both.",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "c-rbec5kxw",
+   "kind": "accept-list",
+   "claim": "Natural wordings of the model answer, such as \"steam then polish\", \"steam, polish\" and \"steaming then polishing\", are graded wrong.",
+   "finalFix": "[\"steam and polish\", \"steam it and polish\", \"steaming and polishing\", \"hold it over steam then polish\", \"steam then polish with a cloth\", \"steam polish\", \"steaming then polishing\", \"steam it then polish\", \"polish over steam\"]"
+  },
+  {
+   "id": "c-svkhgbox",
+   "kind": "accept-list",
+   "claim": "The accept list takes \"service trolley\", but the stem asks for the French term.",
+   "finalFix": "[\"gueridon\", \"gueridon trolley\", \"gueridon table\"]"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-rbec5kxw",
+   "standaloneFile": "rewrite/categories/r2_service_hospitality.py",
+   "oldText": "        \"hold it over steam then polish\", \"steam then polish with a cloth\"],",
+   "newText": "        \"hold it over steam then polish\", \"steam then polish with a cloth\",\n        \"steam polish\", \"steaming then polishing\", \"steam it then polish\",\n        \"polish over steam\"],",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-svkhgbox",
+   "standaloneFile": "rewrite/categories/r2_service_hospitality.py",
+   "oldText": "[\"gueridon\", \"gueridon trolley\", \"gueridon table\", \"service trolley\"],",
+   "newText": "[\"gueridon\", \"gueridon trolley\", \"gueridon table\"],",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "c-it3pllyk",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says Merlot and Cabernet reach the Languedoc appellation map \"only in the Atlantic-facing blends of Cabardes and Malepere\".",
+   "finalFix": "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-influenced western corner, in Cabardes, Malepere and the Merlot-led Limoux rouge, so a wine sold on its grape name needs the IGP either way. Nearly every other appellation works from a fixed Mediterranean variety list, and one region runs two wine economies side by side."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-it3pllyk",
+   "standaloneFile": "rewrite/categories/r2_southern_france.py",
+   "oldText": "reach the appellation map only in the Atlantic-facing blends of Cabardes and Malepere, so",
+   "newText": "reach the appellation map only in the Atlantic-influenced western corner, in Cabardes, Malepere and the Merlot-led Limoux rouge, so",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

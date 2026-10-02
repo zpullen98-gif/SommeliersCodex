@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "i-vmbhu5o6",
+   "kind": "wrong-explanation",
+   "claim": "Several states, Oregon among them, hold their producers to a stricter figure.",
+   "finalFix": "Federal law sets the varietal floor at 75 percent, so a quarter of the blend can be something else entirely. Oregon goes further and asks 90 percent for most varieties, but Cabernet Sauvignon is one of the grapes it still allows at 75."
+  },
+  {
+   "id": "i-49gsa9yv",
+   "kind": "wrong-explanation",
+   "claim": "Within twenty years Burgundian houses were buying land nearby.",
+   "finalFix": "David Lett judged the valley's latitude and cool, damp climate closer to Burgundy than California was. Twenty-two years later, in 1987, the Burgundian house of Joseph Drouhin bought land nearby in the Dundee Hills."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-vmbhu5o6",
+   "standaloneFile": "rewrite/categories/r1_united_states.py",
+   "oldText": "Several states, Oregon among them, hold their producers to a stricter figure.",
+   "newText": "Oregon goes further and asks 90 percent for most varieties, but Cabernet Sauvignon is one of the grapes it still allows at 75.",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-49gsa9yv",
+   "standaloneFile": "rewrite/categories/r1_united_states.py",
+   "oldText": "Within twenty years Burgundian houses were buying land nearby.",
+   "newText": "Twenty-two years later, in 1987, the Burgundian house of Joseph Drouhin bought land nearby in the Dundee Hills.",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

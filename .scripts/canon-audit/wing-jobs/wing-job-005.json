@@ -1,0 +1,58 @@
+{
+ "findings": [
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (Spain, 'Spain's top tier (DOCa/DOQ) is held by only which two regions?')",
+   "kind": "wrong-explanation",
+   "claim": "Only Rioja (DOCa, 1991) and Priorat (DOQ, 2009).",
+   "finalFix": "exp: \"Only Rioja (DOCa, 1991) and Priorat (DOQ granted by the Catalan government in 2000; recognised nationally as DOCa in 2009).\""
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (Spain, 'Spanish ‘Gran Reserva’ indicates:')",
+   "kind": "wrong-fact-in-option",
+   "claim": "Keyed option: \"The longest aging, made only in top vintages\"; explanation: \"declared only in strong vintages.\"",
+   "finalFix": "Option: \"The longest legal aging category (traditionally made only in top vintages)\". Explanation: \"Gran Reserva has the longest legal aging minimums: for reds, 60 months in total, with at least 18 in oak under the general Spanish rule, and in Rioja at least 24 in barrel plus 24 in bottle. Keeping it for strong vintages is a producer custom, not a legal rule.\""
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ / Argentina 'On an Argentine label, Reserva is:'",
+   "kind": "wrong-key",
+   "claim": "Keyed option: 'Loosely defined (not a strict legal tier)'; explanation: 'Argentina's Reserva is loosely used, unlike Spain's legally-defined Reserva.'",
+   "finalFix": "Option A becomes: 'A legal term: reds aged at least 12 months, whites and rosés at least 6 months'. Keep a=0. The explanation becomes: 'Argentina's INV regulates Reserva: quality varieties only, at least 12 months' aging for reds and 6 for whites and rosés (Gran Reserva: 18 and 12 months). It is shorter than Spain's rules, but it is not unregulated like US Reserve.'"
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (St-Émilion 'Grand Cru' question)",
+   "kind": "second-correct-option",
+   "claim": "Option D 'Outside the classification entirely' (keyed A 'Near the bottom — a broad entry tier'); exp 'St-Émilion ‘Grand Cru’ is the broad base tier'",
+   "finalFix": "Make D the keyed answer: \"An appellation (AOC Saint-Émilion Grand Cru), not a rank in the classification\". Replace A with a clearly wrong option: \"Between Grand Cru Classé and Premier Grand Cru Classé B\". Keep B and C. New explanation: \"Saint-Émilion Grand Cru is an appellation with slightly stricter rules than plain Saint-Émilion (lower yields, higher minimum alcohol, longer ageing). Only Grand Cru Classé and Premier Grand Cru Classé (A/B) are ranks of the classification, so a label reading simply 'Grand Cru' means unclassified.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (Spain, 'Spain's top tier (DOCa/DOQ) is held by only which two regions?')",
+   "standaloneFile": "js/data-intro.js",
+   "oldText": "exp:\"Only Rioja (DOCa, 1991) and Priorat (DOQ, 2009).\"",
+   "newText": "exp:\"Only Rioja (DOCa, 1991) and Priorat (DOQ granted by the Catalan government in 2000; recognized nationally as DOCa in 2009).\"",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (Spain, 'Spanish ‘Gran Reserva’ indicates:')",
+   "standaloneFile": "js/data-intro.js",
+   "oldText": "opts:[\"The longest aging, made only in top vintages\",\"A young wine bottled with little or no oak\",\"A traditional-method sparkling style\",\"A fortified sweet dessert wine\"],a:0,exp:\"Gran Reserva ≈5 years aging; declared only in strong vintages.\"",
+   "newText": "opts:[\"The longest legal aging minimums of any tier\",\"A young wine bottled with little or no oak\",\"A traditional-method sparkling style\",\"A fortified sweet dessert wine\"],a:0,exp:\"Gran Reserva has the longest legal aging minimums: for reds, 60 months in total, with at least 18 in oak under the general Spanish rule, and in Rioja at least 24 in barrel plus 24 in bottle. Keeping it for strong vintages is a producer custom, not a legal rule.\"",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ / Argentina 'On an Argentine label, Reserva is:'",
+   "standaloneFile": "js/data-intro.js",
+   "oldText": "opts:[\"Loosely defined (not a strict legal tier)\",\"A strict 5-year aging rule\",\"A sparkling category\",\"A single-vineyard term\"],a:0,exp:\"Argentina's ‘Reserva’ is loosely used, unlike Spain's legally-defined Reserva.\"",
+   "newText": "opts:[\"A legal term: reds aged at least 12 months\",\"A strict 5-year aging rule\",\"A sparkling category\",\"A single-vineyard term\"],a:0,exp:\"Argentina's INV regulates Reserva: quality varieties only, at least 12 months' aging for reds and 6 for whites and rosés (Gran Reserva: 18 and 12 months). Its minimums are shorter than Spain's, but unlike US Reserve it is a regulated term.\"",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "data-intro.js:INTRO_CLASS_TRAPQ (St-Émilion 'Grand Cru' question)",
+   "standaloneFile": "js/data-intro.js",
+   "oldText": "opts:[\"Near the bottom — a broad entry tier\",\"At the very top of the hierarchy\",\"Above Premier Grand Cru Classé\",\"Outside the classification entirely\"],a:0,exp:\"St-Émilion ‘Grand Cru’ is the broad base tier; the top is Premier Grand Cru Classé A.\"",
+   "newText": "opts:[\"Between Grand Cru Classé and Premier Grand Cru Classé B\",\"At the very top of the hierarchy\",\"Above Premier Grand Cru Classé\",\"An appellation, not a rank in the classification\"],a:3,exp:\"Saint-Émilion Grand Cru is an appellation with slightly stricter rules than plain Saint-Émilion (lower yields, higher minimum alcohol, longer aging). Only Grand Cru Classé and Premier Grand Cru Classé (A/B) are ranks of the classification, so a label reading simply ‘Grand Cru’ means unclassified.\"",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

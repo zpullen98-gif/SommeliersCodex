@@ -1,0 +1,103 @@
+{
+ "findings": [
+  {
+   "id": "a-9gacn1qu",
+   "kind": "wrong-fact-in-option",
+   "claim": "Boekenhoutskloof — \"Franschhoek Syrah & The Chocolate Block\"",
+   "finalFix": "pairs[2]: [\"Boekenhoutskloof\", \"Franschhoek estate: Swartland Syrah & The Chocolate Block\"]; ans: \"Mullineux–soil Syrahs · Alheit–Cartology · Boekenhoutskloof–Franschhoek estate, Swartland Syrah · Hamilton Russell–Pinot\""
+  },
+  {
+   "id": "a-22blfud9",
+   "kind": "outdated",
+   "claim": "Rosa Kruger's registry; ~4,000 ha qualify.",
+   "finalFix": "Old Vine Project, founded by Rosa Kruger; more than 5,000 ha of vines aged 35+ now qualify."
+  },
+  {
+   "id": "a-nxik8e6j",
+   "kind": "wrong-explanation",
+   "claim": "Almaviva, Don Melchor, Viñedo Chadwick — the 2004 Berlin Tasting's winners grew here.",
+   "finalFix": "Almaviva, Don Melchor and Viñedo Chadwick all grow here; Viñedo Chadwick 2000 took first place at the 2004 Berlin Tasting (Seña 2001, from Aconcagua, was second)."
+  },
+  {
+   "id": "a-rniv2eb8",
+   "kind": "wrong-explanation",
+   "claim": "But the EU and the US both demand 85%, so almost every Chilean bottle you will ever see is made to 85%",
+   "finalFix": "75% is the domestic legal floor, and the same 75% applies to vintage and to stated origin. The US takes 75% too, but the EU demands 85% for a single variety named on the label, so Chilean wine bound for Europe is made to 85%. That is why the textbook figure and the shelf reality can disagree. Quote the law, then note the export practice."
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "outdated",
+   "claim": "Gran Reserva: 24 months for reds, 12 months for whites and rosés",
+   "finalFix": "Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds (cut from 24 by INV Resolución 14/2019, December 2019, and restated by Res. 26/2021), 12 months for whites and rosés"
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "accept-list",
+   "claim": "\"reserva 12 months red and 6 white gran reserva 24 red and 12 white\", \"12 months reds 6 months whites for reserva twice that for gran reserva\", \"reserva one year for reds gran reserva two years for reds\", \"twelve and six months for reserva twenty four and twelve for gran reserva\"",
+   "finalFix": "ans: \"Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds, 12 months for whites and rosés\"\naccept: [\"reserva 12 months red and 6 white gran reserva 18 red and 12 white\", \"reserva 12 red 6 white gran reserva 18 red 12 white\", \"reserva one year for reds gran reserva eighteen months for reds\", \"twelve and six months for reserva eighteen and twelve for gran reserva\"]\nexp: \"Argentina legislated these terms (INV Resolution C.11/2011) precisely because they had been decorative, and what the rule fixes is a stated number of months counted from when the wine is enologically stable (with minimum grape-to-wine ratios of 135 kg and 140 kg per 100 litres). Gran Reserva reds originally needed 24 months; INV Resolution 26/2021 (in force January 2022) cut that to 18, and the 2025 INV Digesto (Resolution 37/2025, in force 2026) keeps 18 months for reds and 12 for whites and rosés. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period, so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap.\""
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "kind": "wrong-explanation",
+   "claim": "Argentina legislated these terms (INV Resolution C.32/2011)",
+   "finalFix": "Argentina legislated these terms (INV Resolución C.11/2011; Resolución 26/2021, in force January 2022, cut the Gran Reserva red minimum from 24 to 18 months)"
+  },
+  {
+   "id": "a-k6lsq8t6",
+   "kind": "wrong-explanation",
+   "claim": "glacial soils Henri Enjalbert declared grand-cru-worthy in 1970",
+   "finalFix": "Cabernet-led on glacial soils Henri Enjalbert declared grand-cru-worthy in 1971."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-9gacn1qu",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "[\"Boekenhoutskloof\",\"Franschhoek Syrah & The Chocolate Block\"]",
+   "newText": "[\"Boekenhoutskloof\",\"Franschhoek estate: Swartland Syrah & The Chocolate Block\"]",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-9gacn1qu",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Boekenhoutskloof–Franschhoek · Hamilton Russell–Pinot",
+   "newText": "Boekenhoutskloof–Franschhoek estate, Swartland Syrah · Hamilton Russell–Pinot",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-22blfud9",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Rosa Kruger's registry; ~4,000 ha qualify.\"",
+   "newText": "\"exp\":\"Old Vine Project, founded by Rosa Kruger; more than 5,000 ha of vines aged 35+ now qualify.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-nxik8e6j",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Almaviva, Don Melchor, Viñedo Chadwick — the 2004 Berlin Tasting's winners grew here.\"",
+   "newText": "\"exp\":\"Almaviva, Don Melchor and Viñedo Chadwick all grow here; Viñedo Chadwick 2000 took first place at the 2004 Berlin Tasting (Seña 2001, from Aconcagua, was second).\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-rniv2eb8",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "But the EU and the US both demand 85%, so almost every Chilean bottle you will ever see is made to 85% — which is why the textbook figure and the shelf reality disagree. Quote the law, then note the export practice.",
+   "newText": "The US takes 75% too, but the EU demands 85% for a single variety named on the label, so Chilean wine bound for Europe is made to 85%. That is why the textbook figure and the shelf reality can disagree. Quote the law, then note the export practice.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"reserva 12 months red and 6 white gran reserva 24 red and 12 white\",\"12 months reds 6 months whites for reserva twice that for gran reserva\",\"reserva one year for reds gran reserva two years for reds\",\"twelve and six months for reserva twenty four and twelve for gran reserva\"],\"ans\":\"Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 24 months for reds, 12 months for whites and rosés\",\"exp\":\"Argentina legislated these terms (INV Resolution C.32/2011) precisely because they had been decorative, and what the resolution fixes is a stated number of months. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period — so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap.\"",
+   "newText": "\"accept\":[\"reserva 12 months red and 6 white gran reserva 18 red and 12 white\",\"reserva 12 red 6 white gran reserva 18 red 12 white\",\"reserva one year for reds gran reserva eighteen months for reds\",\"twelve and six months for reserva eighteen and twelve for gran reserva\"],\"ans\":\"Reserva: 12 months for reds, 6 months for whites and rosés. Gran Reserva: 18 months for reds, 12 months for whites and rosés\",\"exp\":\"Argentina legislated these terms (INV Resolution C.11/2011) precisely because they had been decorative, and what the rule fixes is a stated number of months counted from when the wine is enologically stable (with minimum grape-to-wine ratios of 135 kg and 140 kg per 100 liters). Gran Reserva reds originally needed 24 months; INV Resolution 14/2019 cut that to 18, Resolution 26/2021 (in force January 2022) restated it, and the 2025 INV Digesto (Resolution 37/2025, in force 2026) keeps 18 months for reds and 12 for whites and rosés. Contrast Chile, whose Reserva family hangs on minimum alcohol above the legal floor and on demonstrable oak character rather than any stated ageing period, so 'Reserva' on a Chilean label promises less about elapsed ageing than the same word on an Argentine one. The comparison is a standard trap.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-k6lsq8t6",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "grand-cru-worthy in 1970.",
+   "newText": "grand-cru-worthy in 1971.",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

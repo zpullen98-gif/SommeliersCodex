@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "c-tm40i5yq",
+   "kind": "outdated",
+   "claim": "The keyed answer Cabernet de Saumur is no longer an appellation. From the 2016 vintage it was folded into the Saumur AOC as Saumur Rosé. That makes the explanation's contrast wrong too: it says Saumur Rosé is a separate, dry wine from the same cellar.",
+   "finalFix": "q: \"Since the 2016 vintage, the still Cabernet-based rose once sold as Cabernet de Saumur carries which name on the label?\" opts: [\"Cabernet d'Anjou\", \"Cremant de Loire Rose\", \"Rose de Loire\", \"Saumur Rose\"] a: 3 exp: \"The arrete of 19 July 2016 that approved the new Saumur cahier des charges repealed the 2011 decree covering both Saumur and Cabernet de Saumur, and the zone's Cabernet-based pink has been labelled Saumur Rose ever since, from Cabernet Franc and Cabernet Sauvignon. Cabernet d'Anjou is the off-dry Anjou pink, Rose de Loire is the regional dry rose open to Saumur growers too, and Cremant de Loire Rose is sparkling.\""
+  },
+  {
+   "id": "c-ne65k86o",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the Touraine appellation leans on Gamay for its red, and that a wine labelled simply Touraine is Gamay-based. Under the current cahier des charges, plain Touraine rouge has no Gamay in it. A Gamay red has to be labelled Touraine Gamay.",
+   "finalFix": "exp: \"The light, purple, juicy carafe red of Touraine is Gamay, sold under its own label as Touraine Gamay, which must be at least 75% Gamay. A red labelled simply Touraine is a different wine: under the current cahier des charges it is led by Cot (at least 40%), with Cabernet Franc, Cabernet Sauvignon and Pinot Noir in support, and the white is Sauvignon Blanc. That is why the district's wines taste nothing like Chinon or Vouvray.\""
+  },
+  {
+   "id": "c-3c6zm8rq",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the Coteaux du Giennois rule that reds and rosés must blend Gamay and Pinot Noir is 'a requirement no other appellation of the Centre imposes'.",
+   "finalFix": "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes, with at least 20 percent of each, rather than use either on its own; Sancerre, Menetou-Salon and Reuilly let a red stand on Pinot Noir alone. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-tm40i5yq",
+   "standaloneFile": "rewrite/categories/r2_loire.py",
+   "oldText": "      \"A pink wine from Saumur arrives noticeably sweet on the finish and is made from Cabernet Franc. Which appellation covers it?\",\n      [\"Cabernet de Saumur\", \"Saumur Rose\", \"Rose de Loire\", \"Cremant de Loire Rose\"], 0,\n      \"Cabernet de Saumur is the medium-dry pink of the zone, the counterpart to Cabernet d'Anjou a little downstream, and both are built on the Cabernets rather than on Grolleau. A Saumur Rose from the same cellar is finished dry, so a list carrying both names is drawing a sweetness distinction and not a geographical one.\"),",
+   "newText": "      \"Since the 2016 vintage, the still Cabernet-based rose once sold as Cabernet de Saumur carries which name on the label?\",\n      [\"Cabernet d'Anjou\", \"Cremant de Loire Rose\", \"Rose de Loire\", \"Saumur Rose\"], 3,\n      \"The arrete of 19 July 2016 that approved the new Saumur cahier des charges repealed the 2011 decree covering both Saumur and Cabernet de Saumur, and the zone's Cabernet-based pink has been labelled Saumur Rose ever since, from Cabernet Franc and Cabernet Sauvignon. Cabernet d'Anjou is the off-dry Anjou pink, Rose de Loire is the regional dry rose open to Saumur growers too, and Cremant de Loire Rose is sparkling.\", pin=\"c-tm40i5yq\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-ne65k86o",
+   "standaloneFile": "rewrite/categories/r2_loire.py",
+   "oldText": "       \"A carafe of Touraine red is poured that is light, purple and juicy, and it holds no Cabernet Franc at all. Which grape fills the district's everyday red?\",\n       \"Gamay\",\n       [\"gamay\", \"gamay noir\", \"gamay noir a jus blanc\"],\n       \"The district appellation leans on Gamay for red and on Sauvignon Blanc for white, which is why a wine labelled simply Touraine tastes nothing like Chinon or Vouvray. Cot appears in the reds as well, and the Gamay is usually the fresher and the cheaper of the two.\"),",
+   "newText": "       \"A carafe of red from the Touraine appellation is poured that is light, purple and juicy, and its label names its grape after the word Touraine. Which grape is it?\",\n       \"Gamay\",\n       [\"gamay\", \"gamay noir\", \"gamay noir a jus blanc\"],\n       \"The light, purple, juicy carafe red of Touraine is Gamay, sold under its own label as Touraine Gamay, which must be at least 75% Gamay. A red labelled simply Touraine is a different wine: under the current cahier des charges it is led by Cot (at least 40%), with Cabernet Franc, Cabernet Sauvignon and Pinot Noir in support, and the white is Sauvignon Blanc. That is why the district's wines taste nothing like Chinon or Vouvray.\", pin=\"c-ne65k86o\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-3c6zm8rq",
+   "standaloneFile": "rewrite/categories/r2_loire.py",
+   "oldText": "Its reds and roses must blend the two black grapes rather than use either on its own, which is a requirement no other appellation of the Centre imposes.",
+   "newText": "Its reds and roses must blend the two black grapes, with at least 20 percent of each, rather than use either on its own; Sancerre, Menetou-Salon and Reuilly let a red stand on Pinot Noir alone.",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

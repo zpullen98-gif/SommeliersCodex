@@ -1,0 +1,39 @@
+{
+ "findings": [
+  {
+   "id": "i-m8jz4sdq",
+   "kind": "outdated",
+   "claim": "the label reads Wine of Origin Estate",
+   "finalFix": "Stem: \"A visitor buys a bottle at a cellar door and the label reads Estate Wine. What has that term committed the producer to?\" Explanation, first sentence: \"Estate wine must come from units registered for estate production, so the claim is that the grapes were grown and the wine made and bottled in the same place; since the 2004 revision estate is no longer a unit of origin in its own right.\""
+  },
+  {
+   "id": "i-ywvdks0p",
+   "kind": "ambiguous-stem",
+   "claim": "A label names a single pocket of ground inside a district rather than the district itself, telling the buyer the fruit came off that one patch. (option \"A single vineyard\")",
+   "finalFix": "q: \"A label names a demarcated viticultural area smaller than a district, drawn on its natural factors of soil, climate and ecology and taking in whatever farms fall inside it. Which geographical tier of the Wine of Origin scheme is that name?\" | opts[0]: \"A geographical unit\" (the other options stay: \"A subregion\", \"An estate\", \"A ward\"; a stays 3) | exp: \"The scheme's geographical tiers nest from geographical unit through region and district down to ward, the smallest of them: a relatively small area with a fairly uniform set of natural factors, usually but not always inside a district. Below the ward sit two production units rather than geographical tiers: the estate (one or more adjoining farms run as a unit with their own cellar) and the registered single vineyard (one block of one variety, no more than six hectares), which is the smallest unit of origin of all.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-ywvdks0p",
+   "standaloneFile": "rewrite/categories/r1_south_africa.py",
+   "oldText": "      \"A label names a single pocket of ground inside a district rather than the district itself, telling the buyer the fruit came off that one patch. Which Wine of Origin tier is that tighter name?\",\n      [\"A ward\", \"A subregion\", \"An estate\", \"A single vineyard\"], 0,\n      \"The scheme nests geographical unit, region, district and ward, with the ward as the tightest tier and the one defined on soil, climate and ecology rather than on administrative convenience. A ward is where a Cape label gets closest to naming a piece of ground.\"),",
+   "newText": "      \"A label names a demarcated viticultural area smaller than a district, drawn on its natural factors of soil, climate and ecology and taking in whatever farms fall inside it. Which geographical tier of the Wine of Origin scheme is that name?\",\n      [\"A ward\", \"A subregion\", \"An estate\", \"A geographical unit\"], 0,\n      \"The scheme's geographical tiers nest from geographical unit through region and district down to ward, the smallest of them: a relatively small area with a fairly uniform set of natural factors, usually but not always inside a district. Below the ward sit two production units rather than geographical tiers: the estate (one or more adjoining farms run as a unit with their own cellar) and the registered single vineyard (one block of one variety, no more than six hectares), which is the smallest unit of origin of all.\", pin=\"i-ywvdks0p\"),",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-m8jz4sdq",
+   "standaloneFile": "rewrite/categories/r1_south_africa.py",
+   "oldText": "      \"A visitor buys a bottle at a cellar door and the label reads Wine of Origin Estate. What has that phrase committed the producer to?\",",
+   "newText": "      \"A visitor buys a bottle at a cellar door and the label reads Estate Wine. What has that term committed the producer to?\",",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-m8jz4sdq",
+   "standaloneFile": "rewrite/categories/r1_south_africa.py",
+   "oldText": "       \"The wine was bottled on site but the fruit may have been bought in\"], 0,\n      \"An estate is registered as a production unit, so the claim is about farming and vinification happening in the same place. It says nothing",
+   "newText": "       \"The wine was bottled on site but the fruit may have been bought in\"], 0,\n      \"Estate wine must come from units registered for estate production, so the claim is that the grapes were grown and the wine made and bottled in the same place; since the 2004 revision estate is no longer a unit of origin in its own right. It says nothing",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

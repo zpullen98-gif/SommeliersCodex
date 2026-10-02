@@ -1,0 +1,92 @@
+{
+ "findings": [
+  {
+   "id": "i-abrgf0ao",
+   "kind": "wrong-explanation",
+   "claim": "Stem: \"one family that has farmed the hill of Hermitage since the fifteenth century\"; explanation: \"none of them can show vines held by one family for five centuries.\"",
+   "finalFix": "Stem: \"Rather than bottle its parcels separately, a family that has grown vines in the Rhône since 1481, and on the hill of Hermitage since 1865, assembles fruit from right across the hill into a single red each year. Which domaine?\" Replace the last sentence of the explanation with: \"The negociant houses of the hill assemble across the slope as well, but none of them is a single family that has grown vines in the valley since 1481.\" Key unchanged (index 2, Domaine Jean-Louis Chave)."
+  },
+  {
+   "id": "i-1ta494cv",
+   "kind": "wrong-explanation",
+   "claim": "honours a customer who drank the house's wine devotedly from 1944 until his death",
+   "finalFix": "Cuvee Sir Winston Churchill honours a customer who drank the house's wine from 1908 until his death and became a friend of the family after 1944. Which house bottles it?"
+  },
+  {
+   "id": "i-gbr6y31o",
+   "kind": "wrong-explanation",
+   "claim": "The building is a medieval hermitage above the terraces",
+   "finalFix": "The chapel of Saint-Christophe above the terraces was rebuilt in 1864 on the site of a medieval chapel; the house has owned it since 1919 and its image goes on the label. The wine is drawn from parcels across the whole slope and has long been the bottling against which the appellation is measured."
+  },
+  {
+   "id": "i-2kscg7k8",
+   "kind": "wrong-explanation",
+   "claim": "since the 2011 vintage, when the winery became the first in the United States to do it",
+   "finalFix": "since the 2011 vintage, making it one of the first wineries in California to list every ingredient on all its labels"
+  },
+  {
+   "id": "i-ojr8uz8e",
+   "kind": "wrong-explanation",
+   "claim": "the longest-running of Chile's icon Cabernets (stem); Chile's whole icon category began with it, and every other major producer answered within a decade (explanation)",
+   "finalFix": "Stem: 'Don Melchor, first bottled in 1987 from a single estate in Puente Alto and one of Chile's first icon Cabernets, belongs to which producer?' Explanation: 'It comes from one estate close to the Andes and is now made and cellared apart from the rest of the company's range, with its own team. With Errázuriz's Don Maximiano and Santa Rita's Casa Real, it led the first generation of Chilean icon reds.'"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-abrgf0ao",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "one family that has farmed the hill of Hermitage since the fifteenth century assembles fruit from right across it into a single red each year.",
+   "newText": "a family that has grown vines in the Rhone since 1481, and on the hill of Hermitage since 1865, assembles fruit from right across the hill into a single red each year.",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-abrgf0ao",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "none of them can show vines held by one family for five centuries.\"),",
+   "newText": "none of them is a single family that has grown vines in the valley since 1481.\", pin=\"i-abrgf0ao\"),",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-1ta494cv",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "drank the house's wine devotedly from 1944 until his death. Which house bottles it?",
+   "newText": "drank the house's wine from 1908 until his death and became a friend of the family after 1944. Which house bottles it?",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-1ta494cv",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "which the house says answers what he actually liked to drink.\"),",
+   "newText": "which the house says answers what he actually liked to drink.\", pin=\"i-1ta494cv\"),",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-gbr6y31o",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "The building is a medieval hermitage above the terraces and its image goes on the label.",
+   "newText": "The chapel of Saint-Christophe above the terraces was rebuilt in 1864 on the site of a medieval chapel; the house has owned it since 1919 and its image goes on the label.",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-2kscg7k8",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "since the 2011 vintage, when the winery became the first in the United States to do it, and",
+   "newText": "since the 2011 vintage, when the winery became one of the first in California to list every ingredient on all its labels, and",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-ojr8uz8e",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "first bottled in 1987 and the longest-running of Chile's icon Cabernets, belongs",
+   "newText": "first bottled in 1987 from a single estate in Puente Alto and one of Chile's first icon Cabernets, belongs",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-ojr8uz8e",
+   "standaloneFile": "rewrite/categories/r1_producers_icons.py",
+   "oldText": "Chile's whole icon category began with it, and every other major producer answered within a decade.\"),",
+   "newText": "With Errazuriz's Don Maximiano and Santa Rita's Casa Real, it led the first generation of Chilean icon reds.\", pin=\"i-ojr8uz8e\"),",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

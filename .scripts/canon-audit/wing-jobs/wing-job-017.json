@@ -1,0 +1,117 @@
+{
+ "findings": [
+  {
+   "id": "m-sv6l6vgf",
+   "kind": "wrong-explanation",
+   "claim": "The model answer credits the 2018 labelling rule with formalising the Yamanashi and Hokkaido GIs, and the stem calls it a 'law of 2018'.",
+   "finalFix": "q: \"Japan's national wine-labelling standard (issued by the NTA in 2015, enforced from 30 October 2018) established:\" ans: \"'Japan Wine' = 100% Japanese-grown grapes, made and bottled in Japan; a region, variety or vintage on the label needs at least 85%\" accept: [\"japan wine 100 percent japanese grapes\", \"nihon wine domestic grapes only\", \"japan wine 100 percent domestic grapes 85 percent region\"] exp: \"Before 2018 'Domestic Wine' could be made from imported concentrate or bulk wine. The 2015 NTA standard, enforced from 30 October 2018, reserved 'Japan Wine' for Japanese grapes. The GIs are a separate system: Yamanashi was designated in 2013 and Hokkaido in June 2018.\""
+  },
+  {
+   "id": "m-8jxfmh46",
+   "kind": "wrong-explanation",
+   "claim": "The stem and model answer treat 'Deutscher Crémant' as a German label category and say it requires whole-bunch pressing.",
+   "finalFix": "Stem: \"Read a German sparkling label: what do Sekt, Deutscher Sekt, Sekt b.A., Winzersekt and Crémant each guarantee?\" Replace the answer's Crémant sentence with: \"'Crémant' (always paired with the region's name, e.g. Crémant from the Pfalz, and therefore always a Sekt b.A.) follows the EU Crémant rules: hand-harvesting, pressing of whole or destemmed grapes at no more than 100 litres per 150 kg, traditional method, at least nine months on lees.\""
+  },
+  {
+   "id": "m-k3kcrfrz",
+   "kind": "accept-list",
+   "claim": "The strict entries '~and royal tokaji', '~and disznoko', '~and oremus' and '~and hetszolo' pass an answer that names only one correct estate.",
+   "finalFix": "[\"royal tokaji disznoko oremus vega sicilia hetszolo\",\"royal tokaji hugh johnson vinding-diers disznoko\",\"~royal tokaji disznoko\",\"~royal tokaji and disznoko\",\"~royal tokaji wine company disznoko\",\"~royal tokaji wine company and disznoko\",\"~royal tokaji wine co disznoko\",\"~royal tokaji wine co and disznoko\",\"~royal tokaji oremus\",\"~royal tokaji and oremus\",\"~royal tokaji wine company oremus\",\"~royal tokaji wine company and oremus\",\"~royal tokaji wine co oremus\",\"~royal tokaji wine co and oremus\",\"~royal tokaji hetszolo\",\"~royal tokaji and hetszolo\",\"~royal tokaji wine company hetszolo\",\"~royal tokaji wine company and hetszolo\",\"~royal tokaji wine co hetszolo\",\"~royal tokaji wine co and hetszolo\",\"~disznoko royal tokaji\",\"~disznoko and royal tokaji\",\"~disznoko axa royal tokaji\",\"~disznoko axa and royal tokaji\",\"~disznoko oremus\",\"~disznoko and oremus\",\"~disznoko axa oremus\",\"~disznoko axa and oremus\",\"~disznoko hetszolo\",\"~disznoko and hetszolo\",\"~disznoko axa hetszolo\",\"~disznoko axa and hetszolo\",\"~oremus royal tokaji\",\"~oremus and royal tokaji\",\"~oremus vega sicilia royal tokaji\",\"~oremus vega sicilia and royal tokaji\",\"~oremus disznoko\",\"~oremus and disznoko\",\"~oremus vega sicilia disznoko\",\"~oremus vega sicilia and disznoko\",\"~oremus hetszolo\",\"~oremus and hetszolo\",\"~oremus vega sicilia hetszolo\",\"~oremus vega sicilia and hetszolo\",\"~hetszolo royal tokaji\",\"~hetszolo and royal tokaji\",\"~hetszolo disznoko\",\"~hetszolo and disznoko\",\"~hetszolo oremus\",\"~hetszolo and oremus\"]"
+  },
+  {
+   "id": "m-vsfjov91",
+   "kind": "accept-list",
+   "claim": "The grader rejects plainly correct answers that use the spelling 'litre' or leave out the word Gönc.",
+   "finalFix": "Add accepts '~136 litre', '~136 liter', '~136 litres', '~136 liters', '~136 l'"
+  },
+  {
+   "id": "m-bck0m71i",
+   "kind": "accept-list",
+   "claim": "The grader rejects 'Calmont, 65°' and 'Calmont about 65 degrees', both of which are right.",
+   "finalFix": "\"accept\": [\"bremmer calmont 65 degrees\", \"calmont steepest in europe\", \"~calmont 65\", \"~calmont about 65\", \"~calmont up to 65\", \"~calmont 68\", \"~calmont about 68\", \"~calmont up to 68\"]"
+  },
+  {
+   "id": "m-yc3r58oh",
+   "kind": "accept-list",
+   "claim": "The grader rejects the standard wording of the claim, 'Tokaj became the world's first closed wine region'.",
+   "finalFix": "\"accept\": [\"closed production district first classified wine region 1737\", \"royal decree delimited tokaj\", \"~first closed wine region\", \"~first closed wine district\", \"~closed production district\"]"
+  },
+  {
+   "id": "m-uh35zhgm",
+   "kind": "accept-list",
+   "claim": "The grader rejects a correct restatement of the VDP rule.",
+   "finalFix": "\"accept\": [\"dry wines drop pradikat use gg erste lage only sweet keep\", \"gg has no pradikat on label\", \"~pradikat terms are reserved for sweet wines\", \"~pradikat only for sweet wines\", \"~pradikat reserved for wines with residual sugar\", \"~dry wines drop pradikat\", \"~only sweet wines carry pradikat\", \"~pradikat names only on sweet wines\", \"~pradikat for wines with residual sugar\", \"~pradikat only on sweet wines\"]"
+  },
+  {
+   "id": "m-qajdxz6a",
+   "kind": "accept-list",
+   "claim": "The grader rejects 'Müller-Thurgau: Riesling and Madeleine Royale' and 'Rivaner, Riesling x Madeleine Royale', both of which are right.",
+   "finalFix": "Add accepts '~muller thurgau riesling and madeleine royale', '~rivaner riesling x madeleine royale', '~rivaner riesling and madeleine royale', '~rivaner riesling madeleine royale'"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-sv6l6vgf",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"q\":\"Japan's wine-labeling law of 2018 established:\",\"sa\":1,\"accept\":[\"nihon wine domestic grapes only gi yamanashi\",\"japan wine 100 percent japanese grapes\"],\"ans\":\"'Japan Wine' = 100% domestically grown grapes; GIs like Yamanashi and Hokkaido formalized\",\"exp\":\"Koshu's international push required legal hygiene first.\"",
+   "newText": "\"q\":\"Japan's national wine-labeling standard (issued by the NTA in 2015, enforced from 30 October 2018) established:\",\"sa\":1,\"accept\":[\"japan wine 100 percent japanese grapes\",\"nihon wine domestic grapes only\",\"japan wine 100 percent domestic grapes 85 percent region\",\"~japan wine 100% japanese grapes\",\"~japan wine 100% japanese grown grapes\"],\"ans\":\"'Japan Wine' = 100% Japanese-grown grapes, made and bottled in Japan; a region, variety or vintage on the label needs at least 85%\",\"exp\":\"Before 2018 'Domestic Wine' could be made from imported concentrate or bulk wine. The 2015 NTA standard, enforced from 30 October 2018, reserved 'Japan Wine' for Japanese grapes. The GIs are a separate system: Yamanashi was designated in 2013 and Hokkaido in June 2018.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-8jxfmh46",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Winzersekt and Deutscher Cremant each guarantee?",
+   "newText": "Winzersekt and Cremant each guarantee?",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-8jxfmh46",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "'Deutscher Cremant' follows the EU Cremant rules — whole-bunch pressing at a restricted juice yield, traditional method, at least nine months on lees.",
+   "newText": "'Cremant' (always paired with the region's name, e.g. Cremant from the Pfalz, and therefore always a Sekt b.A.) follows the EU Cremant rules: hand-harvesting, pressing of whole or destemmed grapes at no more than 100 liters per 150 kg, traditional method, at least nine months on lees.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-k3kcrfrz",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"royal tokaji disznoko oremus vega sicilia hetszolo\",\"royal tokaji hugh johnson vinding-diers disznoko\",\"~and royal tokaji\",\"~and disznoko\",\"~and oremus\",\"~and hetszolo\",\"~royal tokaji disznoko\",\"~royal tokaji oremus\",\"~royal tokaji hetszolo\",\"~disznoko oremus\",\"~disznoko hetszolo\",\"~oremus hetszolo\",\"~disznoko royal tokaji\",\"~oremus disznoko\",\"~hetszolo oremus\"]",
+   "newText": "\"accept\":[\"royal tokaji disznoko oremus vega sicilia hetszolo\",\"royal tokaji hugh johnson vinding-diers disznoko\",\"~royal tokaji disznoko\",\"~royal tokaji and disznoko\",\"~royal tokaji wine company disznoko\",\"~royal tokaji wine company and disznoko\",\"~royal tokaji wine co disznoko\",\"~royal tokaji wine co and disznoko\",\"~royal tokaji oremus\",\"~royal tokaji and oremus\",\"~royal tokaji wine company oremus\",\"~royal tokaji wine company and oremus\",\"~royal tokaji wine co oremus\",\"~royal tokaji wine co and oremus\",\"~royal tokaji hetszolo\",\"~royal tokaji and hetszolo\",\"~royal tokaji wine company hetszolo\",\"~royal tokaji wine company and hetszolo\",\"~royal tokaji wine co hetszolo\",\"~royal tokaji wine co and hetszolo\",\"~disznoko royal tokaji\",\"~disznoko and royal tokaji\",\"~disznoko axa royal tokaji\",\"~disznoko axa and royal tokaji\",\"~disznoko oremus\",\"~disznoko and oremus\",\"~disznoko axa oremus\",\"~disznoko axa and oremus\",\"~disznoko hetszolo\",\"~disznoko and hetszolo\",\"~disznoko axa hetszolo\",\"~disznoko axa and hetszolo\",\"~oremus royal tokaji\",\"~oremus and royal tokaji\",\"~oremus vega sicilia royal tokaji\",\"~oremus vega sicilia and royal tokaji\",\"~oremus disznoko\",\"~oremus and disznoko\",\"~oremus vega sicilia disznoko\",\"~oremus vega sicilia and disznoko\",\"~oremus hetszolo\",\"~oremus and hetszolo\",\"~oremus vega sicilia hetszolo\",\"~oremus vega sicilia and hetszolo\",\"~hetszolo royal tokaji\",\"~hetszolo and royal tokaji\",\"~hetszolo disznoko\",\"~hetszolo and disznoko\",\"~hetszolo oremus\",\"~hetszolo and oremus\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-vsfjov91",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"136 liter barrel from gonc puttonyos measured against it\",\"gonci barrel 136 liters\"]",
+   "newText": "\"accept\":[\"136 liter barrel from gonc puttonyos measured against it\",\"gonci barrel 136 liters\",\"~136 litre\",\"~136 liter\",\"~136 litres\",\"~136 liters\",\"~136 l\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-bck0m71i",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"bremmer calmont 65 degrees\",\"calmont steepest in europe\"]",
+   "newText": "\"accept\":[\"bremmer calmont 65 degrees\",\"calmont steepest in europe\",\"~calmont 65\",\"~calmont about 65\",\"~calmont up to 65\",\"~calmont 68\",\"~calmont about 68\",\"~calmont up to 68\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-yc3r58oh",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"closed production district first classified wine region 1737\",\"royal decree delimited tokaj\"]",
+   "newText": "\"accept\":[\"closed production district first classified wine region 1737\",\"royal decree delimited tokaj\",\"~first closed wine region\",\"~first closed wine district\",\"~closed production district\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-uh35zhgm",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"dry wines drop pradikat use gg erste lage only sweet keep\",\"gg has no pradikat on label\"]",
+   "newText": "\"accept\":[\"dry wines drop pradikat use gg erste lage only sweet keep\",\"gg has no pradikat on label\",\"~pradikat terms are reserved for sweet wines\",\"~pradikat only for sweet wines\",\"~pradikat reserved for wines with residual sugar\",\"~dry wines drop pradikat\",\"~only sweet wines carry pradikat\",\"~pradikat names only on sweet wines\",\"~pradikat for wines with residual sugar\",\"~pradikat only on sweet wines\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-qajdxz6a",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"muller-thurgau riesling madeleine royale\",\"müller-thurgau riesling x madeleine royale\"]",
+   "newText": "\"accept\":[\"muller-thurgau riesling madeleine royale\",\"müller-thurgau riesling x madeleine royale\",\"~muller thurgau riesling and madeleine royale\",\"~rivaner riesling x madeleine royale\",\"~rivaner riesling and madeleine royale\",\"~rivaner riesling madeleine royale\"]",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

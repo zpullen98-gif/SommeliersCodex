@@ -1,0 +1,110 @@
+{
+ "findings": [
+  {
+   "id": "a-k9j3pgie",
+   "kind": "wrong-explanation",
+   "claim": "Eden and Clare screwcapped their whole category in 2000.",
+   "finalFix": "Pewsey Vale, planted by Joseph Gilbert in 1847 and replanted in contoured rows by the Hill-Smith (Yalumba) family from 1961, makes The Contours from its oldest block and releases it with bottle age. Pewsey Vale first bottled Riesling under screwcap in 1977; in 2000 a group of Clare Valley producers led by Jeffrey Grosset moved their Rieslings to screwcap together."
+  },
+  {
+   "id": "a-mxyvoeyq",
+   "kind": "wrong-explanation",
+   "claim": "McLaren Vale's geology map identifies some nineteen distinct geologies across a small region",
+   "finalFix": "McLaren Vale's geology map identifies more than 40 geological units (the region now counts over 55) across a small region, grouped into some nineteen proposed districts, and it is that map, not the GI line, that the Scarce Earth single-site Shiraz project is built on."
+  },
+  {
+   "id": "a-cuhow6p5",
+   "kind": "outdated",
+   "claim": "Austria's DAC count has grown to cover most regions. What does a regional name WITHOUT DAC status imply on a label?",
+   "finalFix": "Since Thermenregion joined in 2023, every Austrian specific wine-growing region is a DAC. How must a Qualitätswein from a DAC area be labelled if it does not meet the DAC rules (for example, a non-typical variety)?"
+  },
+  {
+   "id": "a-whttgn1d",
+   "kind": "wrong-explanation",
+   "claim": "The trap is the name: Austria's 'Veltliner' grapes (Roter, Frühroter, Brauner, Grüner) are a family only on the label, and Grüner is not a Silvaner relative despite a century of textbooks saying so.",
+   "finalFix": "The second parent was found in 2000 as a single ancient vine at St. Georgen am Leithagebirge in Burgenland, and DNA analysis confirmed the cross in 2007. Traminer's fingerprints explain Grüner's spice. The trap is the name: Grüner has no known parent-child link to Roter, Frühroter or Brauner Veltliner, even though Frühroter really is Roter Veltliner's offspring (Roter Veltliner × Silvaner). Nor is Silvaner a parent of Grüner, though the two are half-siblings, since Silvaner is Traminer × Österreichisch Weiss."
+  },
+  {
+   "id": "a-gfz1r7rx",
+   "kind": "wrong-explanation",
+   "claim": "Zierfandler and Rotgipfler are siblings — both natural Traminer × Roter Veltliner offspring",
+   "finalFix": "Zierfandler and Rotgipfler share Roter Veltliner as a parent: Rotgipfler is Traminer × Roter Veltliner, while Zierfandler's second parent is unidentified but thought to be Traminer-like"
+  },
+  {
+   "id": "a-ncyfeuav",
+   "kind": "wrong-explanation",
+   "claim": "Bittersweet vintage apples: Dabinett, Kingston Black, Yarlington Mill.",
+   "finalFix": "Vintage cider apples: the bittersweets Dabinett and Yarlington Mill, and the bittersharp Kingston Black."
+  },
+  {
+   "id": "a-et2u93tn",
+   "kind": "wrong-explanation",
+   "claim": "Domfront demands a majority of Plant de Blanc from standard orchards",
+   "finalFix": "Domfront demands at least 40% Plant de Blanc from standard orchards"
+  },
+  {
+   "id": "a-kbk4i21a",
+   "kind": "ambiguous-stem",
+   "claim": "Which two second growths are known as the 'Super Seconds' of Saint-Julien's Léoville trio? ... Léoville-Las-Cases and Léoville-Barton",
+   "finalFix": "Stem: Which Léoville is the Saint-Julien estate classically counted among the 'Super Seconds'? Answer: Léoville-Las-Cases (Barton and Poyferré are sometimes added). Accept: ['leoville las cases', 'las cases']"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-k9j3pgie",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Eden and Clare screwcapped their whole category in 2000.\"",
+   "newText": "\"exp\":\"Pewsey Vale, planted by Joseph Gilbert in 1847 and replanted in contoured rows by the Hill-Smith (Yalumba) family from 1961, makes The Contours from its oldest block and releases it with bottle age. Pewsey Vale first bottled Riesling under screwcap in 1977; in 2000 a group of Clare Valley producers led by Jeffrey Grosset moved their Rieslings to screwcap together.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-mxyvoeyq",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "some nineteen distinct geologies across a small region",
+   "newText": "more than 40 geological units (the region now counts over 55) across a small region, grouped into some nineteen proposed districts",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-cuhow6p5",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"Austria's DAC count has grown to cover most regions. What does a regional name WITHOUT DAC status imply on a label?\"",
+   "newText": "\"q\":\"Since Thermenregion joined in 2023, every Austrian specific wine-growing region is a DAC. How must a Qualitätswein from a DAC area be labelled if it does not meet the DAC rules (for example, a non-typical variety)?\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-whttgn1d",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "and the cross was confirmed shortly after — Traminer's fingerprints explain Grüner's spice. The trap is the name: Austria's 'Veltliner' grapes (Roter, Frühroter, Brauner, Grüner) are a family only on the label, and Grüner is not a Silvaner relative despite a century of textbooks saying so.",
+   "newText": "and DNA analysis confirmed the cross in 2007. Traminer's fingerprints explain Grüner's spice. The trap is the name: Grüner has no known parent-child link to Roter, Frühroter or Brauner Veltliner, even though Frühroter really is Roter Veltliner's offspring (Roter Veltliner × Silvaner). Nor is Silvaner a parent of Grüner, though the two are half-siblings, since Silvaner is Traminer × Österreichisch Weiss.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-gfz1r7rx",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Zierfandler and Rotgipfler are siblings — both natural Traminer × Roter Veltliner offspring — and virtually",
+   "newText": "Zierfandler and Rotgipfler share Roter Veltliner as a parent: Rotgipfler is Traminer × Roter Veltliner, while Zierfandler's second parent is unidentified but thought to be Traminer-like. Virtually",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-ncyfeuav",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Bittersweet vintage apples: Dabinett, Kingston Black, Yarlington Mill.\"",
+   "newText": "\"exp\":\"Vintage cider apples: the bittersweets Dabinett and Yarlington Mill, and the bittersharp Kingston Black.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-et2u93tn",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Domfront demands a majority of Plant de Blanc",
+   "newText": "Domfront demands at least 40% Plant de Blanc",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-kbk4i21a",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"Which two second growths are known as the 'Super Seconds' of Saint-Julien's Léoville trio?\",\"sa\":1,\"accept\":[\"leoville las cases\",\"leoville-las-cases and leoville-barton\",\"las cases barton\"],\"ans\":\"Léoville-Las-Cases and Léoville-Barton (with Léoville-Poyferré close behind)\"",
+   "newText": "\"q\":\"Which Léoville is the Saint-Julien estate classically counted among the 'Super Seconds'?\",\"sa\":1,\"accept\":[\"leoville las cases\",\"las cases\"],\"ans\":\"Léoville-Las-Cases (Barton and Poyferré are sometimes added)\"",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

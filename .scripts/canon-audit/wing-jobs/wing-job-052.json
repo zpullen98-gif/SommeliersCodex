@@ -1,0 +1,52 @@
+{
+ "findings": [
+  {
+   "id": "c-c436rybo",
+   "kind": "wrong-explanation",
+   "claim": "The stem says Rioja lets a label name a zone \"only when the fruit comes wholly from it\".",
+   "finalFix": "Rioja lets a label name a zone only when the fruit comes from it (bar a tightly controlled 15% from bordering municipalities), and the cellar steps must happen inside that same zone as well. Name the one that comes first."
+  },
+  {
+   "id": "c-lalvjliu",
+   "kind": "outdated",
+   "claim": "The explanation says plain Rueda needs half the blend to be Verdejo, with the rest Viura or another permitted white.",
+   "finalFix": "Plain Rueda sets no Verdejo floor at all. The current pliego asks only that a white be at least 75% principal white varieties, and Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier all count. The old rule of at least half Verdejo went in the 2019 amendment, when Sauvignon Blanc became a principal variety. Naming the grape brings in the EU varietal-labelling rule of at least 85% of the named variety. The same figure governs a Rueda labelled Sauvignon Blanc, so the two varietal claims on a shelf are stronger than they look, and the unnamed bottle is the one to ask about."
+  },
+  {
+   "id": "c-0uupg0b0",
+   "kind": "wrong-key",
+   "claim": "The model answer 'Palma' is wrong. At the first classification, a wine chosen for biological ageing gets a single slash, which is called a palo (Jeffs calls it una raya). The palma is a later mark for especially fine finos. The explanation has two more errors. The oloroso-bound mark is a circle (historically a double stroke), not a horizontal raya. The Palo Cortado mark is a palo (the slash) crossed by a line, not a palma struck through.",
+   "finalFix": "ans: \"Palo (a single slash, traditionally una raya)\"; accept: [\"palo\", \"un palo\", \"the palo mark\", \"raya\", \"una raya\", \"slash\", \"a slash\", \"single slash\", \"single stroke\", \"a single stroke\"]; exp: \"A single vertical stroke, the palo or una raya, says the wine is pale, delicate and clean and will be lightly fortified to keep its veil alive. Fuller wines are marked with a circle and sent the oxidative way. The palma is a later mark for especially fine finos. Palo Cortado takes its name from the palo cut through by a cross-stroke, meaning the cellar master changed his mind about the butt.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-c436rybo",
+   "standaloneFile": "rewrite/categories/r2_spain.py",
+   "oldText": "\"Rioja lets a label name a zone only when the fruit comes wholly from it, and the cellar steps must happen inside that same zone as well. Name the one that comes first.\",",
+   "newText": "\"Rioja lets a label name a zone only when the fruit comes from it (bar a tightly controlled 15% from bordering municipalities), and the cellar steps must happen inside that same zone as well. Name the one that comes first.\",",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-c436rybo",
+   "standaloneFile": "rewrite/categories/r2_spain.py",
+   "oldText": "more than one of the three.\",\n       ex=True),",
+   "newText": "more than one of the three.\",\n       ex=True, pin=\"c-c436rybo\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-lalvjliu",
+   "standaloneFile": "rewrite/categories/r2_spain.py",
+   "oldText": "\"Plain Rueda needs half the blend to be Verdejo and the rest may be Viura or another permitted white; naming the grape lifts the floor. The same figure governs a Rueda labelled Sauvignon, so the two claims on a shelf are stronger than they look and the unnamed bottle is the one to ask about.\",",
+   "newText": "\"Plain Rueda sets no Verdejo floor at all. The current pliego asks only that a white be at least 75% principal white varieties, and Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier all count. The old rule of at least half Verdejo went in the 2019 amendment, when Sauvignon Blanc became a principal variety. Naming the grape brings in the EU varietal-labelling rule of at least 85% of the named variety. The same figure governs a Rueda labelled Sauvignon Blanc, so the two varietal claims on a shelf are stronger than they look, and the unnamed bottle is the one to ask about.\",",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-0uupg0b0",
+   "standaloneFile": "rewrite/categories/r2_spain.py",
+   "oldText": "       \"Palma\",\n       [\"palma\", \"una palma\", \"the palma mark\"],\n       \"A stroke like a palm frond says the wine is delicate and clean and will be lightly fortified to keep its veil alive. A raya, a plain horizontal bar, sends a fuller wine the oxidative way, and the crossed mark that gives Palo Cortado its name is a palma struck through, meaning the cellar master changed his mind about it.\",",
+   "newText": "       \"Palo (a single slash, traditionally una raya)\",\n       [\"palo\", \"un palo\", \"the palo mark\", \"raya\", \"una raya\", \"slash\",\n        \"a slash\", \"single slash\", \"single stroke\", \"a single stroke\"],\n       \"A single vertical stroke, the palo or una raya, says the wine is pale, delicate and clean and will be lightly fortified to keep its veil alive. Fuller wines are marked with a circle and sent the oxidative way. The palma is a later mark for especially fine finos. Palo Cortado takes its name from the palo cut through by a cross-stroke, meaning the cellar master changed his mind about the butt.\",",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

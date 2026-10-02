@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "i-3de6pbe3",
+   "kind": "wrong-explanation",
+   "claim": "The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise",
+   "finalFix": "Toward the southern tip, with only Maranges beyond it before the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value."
+  },
+  {
+   "id": "i-d32r25hi",
+   "kind": "wrong-explanation",
+   "claim": "Mercurey is predominantly red and the best known of the four village appellations there.",
+   "finalFix": "Mercurey is predominantly red and the largest and best known of the five village appellations there (Bouzeron, Rully, Mercurey, Givry, Montagny)."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-3de6pbe3",
+   "standaloneFile": "rewrite/categories/r1_burgundy.py",
+   "oldText": "\"The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value.\"",
+   "newText": "\"Toward the southern tip, with only Maranges beyond it before the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value.\"",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-d32r25hi",
+   "standaloneFile": "rewrite/categories/r1_burgundy.py",
+   "oldText": "\"Mercurey is predominantly red and the best known of the four village appellations there.\"",
+   "newText": "\"Mercurey is predominantly red and the largest and best known of the five village appellations there (Bouzeron, Rully, Mercurey, Givry, Montagny).\"",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

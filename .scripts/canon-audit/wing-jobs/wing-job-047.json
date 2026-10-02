@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "c-kjm5utxp",
+   "kind": "wrong-explanation",
+   "claim": "The stem says 'Five varieties, and only five, may enter the Jura's appellation wines', and the explanation says every appellation of the region, still or sparling, is built from the five. Crémant du Jura also permits Pinot Gris.",
+   "finalFix": "Stem: \"Five varieties are the traditional grapes of the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?\" Explanation: \"Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never became one of the region's grapes despite Burgundy sitting an hour away, and the Jura's wines are built from some arrangement of the five. The law has small exceptions: Crémant du Jura also admits Pinot Gris, and since 2022 the Arbois and Côtes du Jura rules allow a few trial varieties, capped at 10% of a blend.\""
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-kjm5utxp",
+   "standaloneFile": "rewrite/categories/r2_jura_savoie_corsica.py",
+   "oldText": "      \"Five varieties, and only five, may enter the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?\",\n      [\"Poulsard, Trousseau and Pinot Noir\",\n       \"Poulsard, Trousseau and Gamay\",\n       \"Poulsard, Mondeuse Noire and Pinot Noir\",\n       \"Trousseau, Gamay and Mondeuse Noire\"], 0,\n      \"Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never earned a place despite Burgundy sitting an hour away, and every appellation of the region, still or sparkling, builds from some arrangement of the five.\"),",
+   "newText": "      \"Five varieties are the traditional grapes of the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?\",\n      [\"Poulsard, Trousseau and Pinot Noir\",\n       \"Poulsard, Trousseau and Gamay\",\n       \"Poulsard, Mondeuse Noire and Pinot Noir\",\n       \"Trousseau, Gamay and Mondeuse Noire\"], 0,\n      \"Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never became one of the region's grapes despite Burgundy sitting an hour away, and the Jura's wines are built from some arrangement of the five. The law has small exceptions: Cremant du Jura also admits Pinot Gris, and since 2022 the Arbois and Cotes du Jura rules allow a few trial varieties, capped at 10% of a blend.\",\n      pin=\"c-kjm5utxp\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

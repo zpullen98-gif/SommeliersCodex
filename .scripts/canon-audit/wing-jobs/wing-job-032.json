@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "i-d51zy58x",
+   "kind": "wrong-explanation",
+   "claim": "the river swings west there and the hill ends up facing due south",
+   "finalFix": "the river swings east there, briefly flowing west to east, and the hill ends up facing due south"
+  },
+  {
+   "id": "i-5u8wquhp",
+   "kind": "ambiguous-stem",
+   "claim": "The minimum alcohol demanded there is the highest of any French appellation.",
+   "finalFix": "The minimum natural alcohol demanded there, among the highest set for any French dry wine appellation, is what?"
+  },
+  {
+   "id": "i-39lv3zjg",
+   "kind": "ambiguous-stem",
+   "claim": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which variety?",
+   "finalFix": "Roussillon may blend a second, coarser Muscat into its fortified sweet wines, while the Rhone version admits a single Muscat and no other. Which single Muscat does the Rhone version admit?"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-d51zy58x",
+   "standaloneFile": "rewrite/categories/r1_rhone.py",
+   "oldText": "the river swings west there and the hill ends up facing due south.\"),",
+   "newText": "the river swings east there, briefly flowing west to east, and the hill ends up facing due south.\"),",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-5u8wquhp",
+   "standaloneFile": "rewrite/categories/r1_rhone.py",
+   "oldText": "      \"The minimum alcohol demanded there is the highest of any French appellation. What is it?\",\n      [\"12.5 percent\", \"10.5 percent\", \"11.5 percent\", \"14 percent\"], 0,\n      \"In practice most wines land far above it, and fifteen percent is unremarkable. The floor was set to keep out thin wine from over-cropped vines rather than to encourage power.\"),",
+   "newText": "      \"The minimum natural alcohol demanded there, among the highest set for any French dry wine appellation, is what?\",\n      [\"12.5 percent\", \"10.5 percent\", \"11.5 percent\", \"14 percent\"], 0,\n      \"In practice most wines land far above it, and fifteen percent is unremarkable. The floor was set to keep out thin wine from over-cropped vines rather than to encourage power.\", pin=\"i-5u8wquhp\"),",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-39lv3zjg",
+   "standaloneFile": "rewrite/categories/r1_rhone.py",
+   "oldText": "while the Rhone version admits a single Muscat and no other. Which variety?\",\n      [\"Muscat Blanc a Petits Grains\", \"Muscat of Alexandria\", \"Muscat Ottonel\",\n       \"Muscat Hamburg\"], 0,\n      \"The small-berried white Muscat is the perfumed one, orange blossom and crushed grape, and it is all the Rhone appellation will take, its red-berried form counting as the same variety. Rivesaltes and its neighbours lean on Muscat of Alexandria as well, which is fatter and less floral. Muscat Ottonel is a nineteenth-century crossing grown in Alsace and central Europe, and Muscat Hamburg is a table grape.\"),",
+   "newText": "while the Rhone version admits a single Muscat and no other. Which single Muscat does the Rhone version admit?\",\n      [\"Muscat Blanc a Petits Grains\", \"Muscat of Alexandria\", \"Muscat Ottonel\",\n       \"Muscat Hamburg\"], 0,\n      \"The small-berried white Muscat is the perfumed one, orange blossom and crushed grape, and it is all the Rhone appellation will take, its red-berried form counting as the same variety. Rivesaltes and its neighbours lean on Muscat of Alexandria as well, which is fatter and less floral. Muscat Ottonel is a nineteenth-century crossing grown in Alsace and central Europe, and Muscat Hamburg is a table grape.\", pin=\"i-39lv3zjg\"),",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

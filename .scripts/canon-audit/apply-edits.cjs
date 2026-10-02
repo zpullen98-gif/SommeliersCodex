@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const ROOT = path.resolve(__dirname, '..', '..');
+const ROOT = process.argv[3] && !process.argv[3].startsWith('--') ? path.resolve(process.argv[3]) : path.resolve(__dirname, '..', '..');
 const [, , runPath] = process.argv;
 const dry = process.argv.includes('--dry');
 const top = JSON.parse(fs.readFileSync(runPath, 'utf8'));

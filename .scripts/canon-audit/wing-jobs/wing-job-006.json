@@ -1,0 +1,131 @@
+{
+ "findings": [
+  {
+   "id": "a-0lzn2s1n",
+   "kind": "outdated",
+   "claim": "Stem: 'Austria's vineyard classification is being written privately before it is written into law'; exp: 'The state's own contribution is the Riedenwein tier, which protects the site name but ranks nothing ... the law only guarantees that the name on the bottle is a real vineyard.'",
+   "finalFix": "Stem: \"Austria's vineyard classifications were written privately before the law made room for one. Which association classifies Erste Lage sites in the Danube regions, and which classifies Erste STK Ried and Grosse STK Ried in Styria?\" Keep the accepted answers (ÖTW, STK). Replace the exp from \"The state's own contribution...\" onward with: \"The Riedenwein tier on its own only protects the site name. Since the Weinrecht-Sammelverordnung 2023, however, the law provides two ranked tiers, Erste Lage and Große Lage. They are reserved for DAC wines from officially classified Rieden, and only in regions whose DAC has the Gebietswein, Ortswein and Riedenwein levels. They require lower yields and hand harvest. The Regional Wine Committee proposes the sites and the National Wine Committee approves them, and a Ried can become Große Lage no sooner than five years after it became Erste Lage. No statutory classification was expected before 2025, so in practice the working hierarchy is still the associations' own, largely on the ÖTW model.\""
+  },
+  {
+   "id": "a-i4v99uox",
+   "kind": "ambiguous-stem",
+   "claim": "Stem asks for 'one benchmark for bitter-orange Milanese style'; answer 'e.g., Ramazzotti/Averna (dark), Montenegro (floral), Campari the aperitivo pole' and accept list 'digestivo averna montenegro campari ramazzotti' / 'digestif bitter liqueur'",
+   "finalFix": "Answer: \"Digestivi (after-dinner bitters); the Milanese bitter-orange benchmark is Ramazzotti (Milan, 1815), with Campari the Milanese aperitivo pole. Averna (Sicily) and Montenegro (Bologna) are other styles.\" Accept: \"digestivo ramazzotti\", \"digestif ramazzotti\", \"digestivo campari\". Remove \"digestivo averna montenegro campari ramazzotti\" and \"digestif bitter liqueur\", so that neither Averna, Montenegro nor a generic answer earns credit for the Milanese part."
+  },
+  {
+   "id": "a-0va1va21",
+   "kind": "outdated",
+   "claim": "De Vogüé also makes the only Musigny Blanc, currently declassified to Bourgogne Blanc while young vines mature.",
+   "finalFix": "De Vogüé also makes the only Musigny Blanc. From 1994 to 2014 it was declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage."
+  },
+  {
+   "id": "a-3mg5x4zg",
+   "kind": "wrong-explanation",
+   "claim": "Hanzell planted Burgundian clones in 1953",
+   "finalFix": "exp: \"Hanzell (planted 1953) brought Burgundian winemaking to California, with small French oak barrels and induced malolactic, using Wente-clone Chardonnay by way of Stony Hill; the 'new California' movement circled back to them.\""
+  },
+  {
+   "id": "a-pyf6f91v",
+   "kind": "outdated",
+   "claim": "Keyed option \"55 hl/ha\" and explanation \"Alsace Grand Cru is set at 55 hl/ha\"",
+   "finalFix": "Replace option index 1 \"55 hl/ha\" with \"50 hl/ha\" and keep a:1. In exp, change \"set at 55 hl/ha\" to \"set at 50 hl/ha (lowered from 55 by the arrêté of 9 May 2022; butoir 60)\" and change \"55 hl/ha is generous\" to \"50 hl/ha is generous\"."
+  },
+  {
+   "id": "a-qe25zf0w",
+   "kind": "accept-list",
+   "claim": "accept entry \"riesling and muscat lower\"",
+   "finalFix": "[\"gewurztraminer and pinot gris\", \"gewurztraminer pinot gris\", \"gewurz pinot gris higher\", \"pinot gris and gewurztraminer\"]"
+  },
+  {
+   "id": "a-qe25zf0w",
+   "kind": "wrong-explanation",
+   "claim": "VT: 235 g/L for Riesling and Muscat, 257 g/L for Gewurztraminer and Pinot Gris",
+   "finalFix": "VT: 244 g/L for Riesling and Muscat, 270 g/L for Gewurztraminer and Pinot Gris; SGN: 276 and 306 g/L respectively."
+  },
+  {
+   "id": "a-98j4a9aj",
+   "kind": "ambiguous-stem",
+   "claim": "Alsace has a trio of grand crus permitted to grow non-noble white varieties by exception.",
+   "finalFix": "For white wine, Alsace has a trio of grand crus that are exceptions to the single-noble-variety rule: one admits Sylvaner, and two admit blends. Name any one."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-0lzn2s1n",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Austria's vineyard classification is being written privately before it is written into law.",
+   "newText": "Austria's vineyard classifications were written privately before the law made room for one.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-0lzn2s1n",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "The state's own contribution is the Riedenwein tier, which protects the site name but ranks nothing — the takeaway is that in Austria the hierarchy of sites is association work, and the law only guarantees that the name on the bottle is a real vineyard.",
+   "newText": "The Riedenwein tier on its own only protects the site name. Since the Weinrecht-Sammelverordnung 2023, however, the law provides two ranked tiers, Erste Lage and Große Lage. They are reserved for DAC wines from officially classified Rieden, and only in regions whose DAC has the Gebietswein, Ortswein and Riedenwein levels. They require lower yields and hand harvest. The Regional Wine Committee proposes the sites and the National Wine Committee approves them, and a Ried can become Große Lage no sooner than five years after it became Erste Lage. No statutory classification was expected before 2025, so in practice the working hierarchy is still the associations' own, largely on the ÖTW model.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-i4v99uox",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"digestivo averna montenegro campari ramazzotti\",\"digestif bitter liqueur\"],\"ans\":\"Digestivi; e.g., Ramazzotti/Averna (dark), Montenegro (floral), Campari the aperitivo pole\"",
+   "newText": "\"accept\":[\"digestivo ramazzotti\",\"digestif ramazzotti\",\"digestivi ramazzotti\",\"digestivo campari\"],\"ans\":\"Digestivi (after-dinner bitters); the Milanese bitter-orange benchmark is Ramazzotti (Milan, 1815), with Campari the Milanese aperitivo pole. Averna (Sicily) and Montenegro (Bologna) are other styles.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-0va1va21",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "De Vogüé also makes the only Musigny Blanc, currently declassified to Bourgogne Blanc while young vines mature.",
+   "newText": "De Vogüé also makes the only Musigny Blanc. From 1994 to 2014 it was declassified to Bourgogne Blanc while replanted vines matured, and it returned as Musigny Blanc Grand Cru with the 2015 vintage.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-3mg5x4zg",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Hanzell planted Burgundian clones in 1953; the 'new California' movement circled back to them.",
+   "newText": "Hanzell (planted 1953) brought Burgundian winemaking to California, with small French oak barrels and induced malolactic, using Wente-clone Chardonnay by way of Stony Hill; the 'new California' movement circled back to them.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-pyf6f91v",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"opts\":[\"40 hl/ha\",\"55 hl/ha\",\"66 hl/ha\",\"80 hl/ha\"]",
+   "newText": "\"opts\":[\"40 hl/ha\",\"50 hl/ha\",\"66 hl/ha\",\"80 hl/ha\"]",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-pyf6f91v",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Alsace Grand Cru is set at 55 hl/ha, against",
+   "newText": "Alsace Grand Cru is set at 50 hl/ha (lowered from 55 by the arrêté of 9 May 2022; butoir 60), against",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-pyf6f91v",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "55 hl/ha is generous for a top tier",
+   "newText": "50 hl/ha is generous for a top tier",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-qe25zf0w",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"riesling and muscat lower\",\"gewurztraminer and pinot gris\",\"gewurz pinot gris higher\"]",
+   "newText": "\"accept\":[\"gewurztraminer and pinot gris\",\"~gewurztraminer pinot gris\",\"~gewurz pinot gris\",\"pinot gris and gewurztraminer\",\"~pinot gris gewurztraminer\"]",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-qe25zf0w",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "VT: 235 g/L for Riesling and Muscat, 257 g/L for Gewurztraminer and Pinot Gris",
+   "newText": "VT: 244 g/L for Riesling and Muscat, 270 g/L for Gewurztraminer and Pinot Gris",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-98j4a9aj",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Alsace has a trio of grand crus permitted to grow non-noble white varieties by exception. Name any one.",
+   "newText": "For white wine, Alsace has a trio of grand crus that are exceptions to the single-noble-variety rule: one admits Sylvaner, and two admit blends. Name any one.",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

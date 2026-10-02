@@ -1,0 +1,117 @@
+{
+ "findings": [
+  {
+   "id": "a-fl5ija36",
+   "kind": "accept-list",
+   "claim": "\"marlborough hawkes bay central otago\"",
+   "finalFix": "\"accept\": [\"~marlborough hawkes bay central otago canterbury gisborne\", \"~marlborough hawkes bay central otago north canterbury gisborne\", \"~marlborough hawkes bay central otago waipara gisborne\", \"~marlborough hawke s bay central otago canterbury gisborne\", \"~marlborough hawke s bay central otago north canterbury gisborne\", \"~marlborough hawke s bay central otago waipara gisborne\"], \"ans\": \"Marlborough (about 72%), Hawke's Bay, Central Otago, North Canterbury/Waipara, Gisborne\", \"exp\": \"Marlborough is roughly 72% of national plantings (about 30,400 ha of some 42,500 ha producing, NZ Winegrowers Vineyard Report 2024), which is the industry's strength and its risk. Gisborne has shrunk since the 2008 glut and now sits behind North Canterbury; Wairarapa and Nelson follow just below.\""
+  },
+  {
+   "id": "a-vw995u1q",
+   "kind": "wrong-explanation",
+   "claim": "A Ukrainian-born PhD washing dishes at Geneva station until Charles Fournier listened.",
+   "finalFix": "A Ukrainian-born PhD who washed dishes in Manhattan, then worked in obscurity at the Geneva station until Charles Fournier of Gold Seal listened."
+  },
+  {
+   "id": "a-zy5xnk9q",
+   "kind": "wrong-explanation",
+   "claim": "Idaho's second AVA, Lewis-Clark Valley (2016), likewise straddles a state line, into Washington.",
+   "finalFix": "Idaho's second AVA, Eagle Foothills (2015), is a sub-AVA inside Snake River Valley; its third, Lewis-Clark Valley (2016), straddles the state line into Washington."
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "kind": "wrong-key",
+   "claim": "DOC Vinho de Talha",
+   "finalFix": "DOC Alentejo, using the traditional designation 'Vinho de Talha' (since 2010): fermentation and skin maceration in clay talhas, with a layer of olive oil on top of the wine; a Roman continuity"
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "kind": "accept-list",
+   "claim": "\"amphora fermentation\"",
+   "finalFix": "\"accept\": [\"~vinho de talha\", \"~alentejo talha\", \"~alentejo talhas\"]"
+  },
+  {
+   "id": "a-hafues4n",
+   "kind": "wrong-explanation",
+   "claim": "Châteauneuf-du-Pape's minimum natural alcohol, the highest of any French appellation, is:",
+   "finalFix": "Châteauneuf-du-Pape's minimum natural alcohol, set in its 1936 decree, is:"
+  },
+  {
+   "id": "a-ulyq5wk0",
+   "kind": "wrong-explanation",
+   "claim": "very top or top shoulder is normal for a 1950s wine, upper to mid shoulder is drinkable but a genuine risk ... (exp) mid-shoulder in a 1959 usually means heat",
+   "finalFix": "ans (replace the fill clause): \"into neck or bottom neck is exceptional at that age, very top or top shoulder is normal for a 1950s wine, upper shoulder is acceptable and common at that age, mid shoulder is not unusual for a wine this old but carries a real risk of oxidation, and low shoulder is a gamble.\" exp (replace the first sentence): \"Ullage is evaporation past the cork, so it is partly a measure of age and partly of how the bottle was stored; mid-shoulder is not unusual in a 1959 after decades of evaporation through an ageing cork, though warm or poor storage speeds it, and either way the extra air means a wine that can fade in the glass within minutes of pouring.\" (The rest of exp is unchanged.)"
+  },
+  {
+   "id": "a-ki9wx6x5",
+   "kind": "wrong-explanation",
+   "claim": "Before 2017 Constantia and Durbanville were free-floating wards inside the Coastal Region with no district above them.",
+   "finalFix": "Before 2017 Durbanville and Philadelphia were wards of the Tygerberg district, while Constantia and Hout Bay were wards directly under the Coastal Region with no district; the Cape Town district replaced Tygerberg and gathered all four."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-fl5ija36",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"marlborough hawkes bay central otago canterbury gisborne\",\"marlborough hawkes bay central otago waipara gisborne\",\"marlborough hawkes bay central otago\"],\"ans\":\"Marlborough (about 73%), Hawke's Bay, Central Otago, North Canterbury/Waipara, Gisborne\",\"exp\":\"Marlborough is roughly 73% of national plantings (about 32,000 ha of some 44,000 ha, NZ Winegrowers Vineyard Report) — the industry's strength and its risk.",
+   "newText": "\"accept\":[\"~marlborough hawkes bay central otago canterbury gisborne\",\"~marlborough hawkes bay central otago north canterbury gisborne\",\"~marlborough hawkes bay central otago waipara gisborne\",\"~marlborough hawkes bay central otago north canterbury waipara gisborne\",\"~marlborough hawke s bay central otago canterbury gisborne\",\"~marlborough hawke s bay central otago north canterbury gisborne\",\"~marlborough hawke s bay central otago waipara gisborne\",\"~marlborough hawke s bay central otago north canterbury waipara gisborne\",\"~marlborough hawkes bay central otago canterbury and gisborne\",\"~marlborough hawkes bay central otago north canterbury and gisborne\",\"~marlborough hawkes bay central otago waipara and gisborne\",\"~marlborough hawkes bay central otago north canterbury waipara and gisborne\",\"~marlborough hawke s bay central otago canterbury and gisborne\",\"~marlborough hawke s bay central otago north canterbury and gisborne\",\"~marlborough hawke s bay central otago waipara and gisborne\",\"~marlborough hawke s bay central otago north canterbury waipara and gisborne\"],\"ans\":\"Marlborough (about 72%), Hawke's Bay, Central Otago, North Canterbury/Waipara, Gisborne\",\"exp\":\"Marlborough is roughly 72% of national plantings (about 30,400 ha of some 42,500 ha producing, NZ Winegrowers Vineyard Report 2024), which is the industry's strength and its risk.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-fl5ija36",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "now sits behind North Canterbury; Nelson and Wairarapa follow just below.\"",
+   "newText": "now sits behind North Canterbury; Wairarapa and Nelson follow just below.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-vw995u1q",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"A Ukrainian-born PhD washing dishes at Geneva station until Charles Fournier listened.\"",
+   "newText": "\"exp\":\"A Ukrainian-born PhD who washed dishes in Manhattan, then worked in obscurity at the Geneva station until Charles Fournier of Gold Seal listened.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-zy5xnk9q",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Idaho's second AVA, Lewis-Clark Valley (2016), likewise straddles a state line, into Washington.\"",
+   "newText": "Idaho's second AVA, Eagle Foothills (2015), is a sub-AVA inside Snake River Valley; its third, Lewis-Clark Valley (2016), straddles the state line into Washington.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"amphora fermentation\",\"talha clay pot wine\",\"~vinho de talha\"],\"ans\":\"DOC Vinho de Talha — fermentation and skin maceration in clay talhas (amphorae), traditionally sealed with olive oil; Roman continuity\"",
+   "newText": "\"accept\":[\"~vinho de talha\",\"~alentejo talha\",\"~alentejo talhas\",\"~alentejo doc talha\",\"~alentejo doc talhas\",\"~alentejo clay talha\",\"~alentejo clay talhas\"],\"ans\":\"DOC Alentejo, using the traditional designation 'Vinho de Talha' (since 2010): fermentation and skin maceration in clay talhas, with a layer of olive oil on top of the wine; a Roman continuity\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-hafues4n",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"Châteauneuf-du-Pape's minimum natural alcohol, the highest of any French appellation, is:\"",
+   "newText": "\"q\":\"Châteauneuf-du-Pape's minimum natural alcohol, set in its 1936 decree, is:\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-ulyq5wk0",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "upper to mid shoulder is drinkable but a genuine risk, and low shoulder is a gamble.",
+   "newText": "upper shoulder is acceptable and common at that age, mid shoulder is not unusual for a wine this old but carries a real risk of oxidation, and low shoulder is a gamble.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-ulyq5wk0",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Ullage is evaporation past the cork and therefore a proxy for how the bottle was stored; mid-shoulder in a 1959 usually means heat, and heat means a wine that fades in the glass within minutes of pouring.",
+   "newText": "\"exp\":\"Ullage is evaporation past the cork, so it is partly a measure of age and partly of how the bottle was stored; mid-shoulder is not unusual in a 1959 after decades of evaporation through an ageing cork, though warm or poor storage speeds it, and either way the extra air means a wine that can fade in the glass within minutes of pouring.",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-ki9wx6x5",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Before 2017 Constantia and Durbanville were free-floating wards inside the Coastal Region with no district above them.",
+   "newText": "\"exp\":\"Before 2017 Durbanville and Philadelphia were wards of the Tygerberg district, while Constantia and Hout Bay were wards directly under the Coastal Region with no district; the Cape Town district replaced Tygerberg and gathered all four.",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

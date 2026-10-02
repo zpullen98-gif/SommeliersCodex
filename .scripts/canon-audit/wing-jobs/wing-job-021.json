@@ -1,0 +1,138 @@
+{
+ "findings": [
+  {
+   "id": "m-nzcx4m2h",
+   "kind": "accept-list",
+   "claim": "The second accept entry says 'organic since 1960s'. The model answer, correctly, says organic since 1950. The grader will pass a student who types the wrong decade.",
+   "finalFix": "flash heating thirteen varieties organic since 1950"
+  },
+  {
+   "id": "m-wy7k7xto",
+   "kind": "accept-list",
+   "claim": "The second accept entry, 'screaming eagle 1992 debut', passes an answer that only covers Screaming Eagle. The question asks for both Screaming Eagle's and Harlan's vintages, so half an answer is marked correct.",
+   "finalFix": "\"accept\": [\"~screaming eagle 1992 harlan 1994\", \"~screaming eagle 1992 and harlan 1994\", \"~screaming eagle 1992 harlan 1990\", \"~screaming eagle 1992 and harlan 1990\", \"~1992 screaming eagle 1994 harlan\", \"~1992 screaming eagle and 1994 harlan\", \"~harlan 1994 screaming eagle 1992\", \"~harlan 1990 screaming eagle 1992\"]"
+  },
+  {
+   "id": "m-qbb5zteh",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer says the crus 'sit between roughly 35 and 40 hl/ha', with 'the northern crus nearer 40'. One accept line says the same: 'crus around 35 to 40'.",
+   "finalFix": "In ans, replace \"Then the crus, which drop the Côtes du Rhône name entirely and sit between roughly 35 and 40 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, the northern crus nearer 40.\" with \"Then the crus, which drop the Côtes du Rhône name entirely and mostly sit between roughly 35 and 45 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, most northern crus at about 40, Crozes-Hermitage higher at 45.\" In accept, replace \"regional at 51 villages at 44 named commune at 41 and crus around 35 to 40\" with \"regional at 51 villages at 44 named commune at 41 and crus around 35 to 45\", and replace \"51 then 44 then 41 then the crus at thirty-five to forty hectolitres\" with \"51 then 44 then 41 then the crus at thirty-five to forty-five hectolitres\"."
+  },
+  {
+   "id": "m-mq38eic4",
+   "kind": "outdated",
+   "claim": "The accept list takes \"seven wards including simonsberg-stellenbosch and jonkershoek valley\", and the model answer says only that \"further wards\" have been registered since, without naming the one that was.",
+   "finalFix": "Accept entry: \"eight wards including simonsberg-stellenbosch jonkershoek valley and vlottenburg\". Model answer, opening sentence: \"The eight wards are Banghoek, Bottelary, Devon Valley, Jonkershoek Valley, Papegaaiberg, Polkadraai Hills, Simonsberg-Stellenbosch and Vlottenburg (the newest, registered in 2020).\""
+  },
+  {
+   "id": "m-zb8jbpoj",
+   "kind": "wrong-fact-in-option",
+   "claim": "The model answer lists Gualtallary among Mendoza's soil-mapped GIs, and the first accept entry reads 'paraje altamira gualtallary igs'.",
+   "finalFix": "ans: \"Soil-mapped GIs: Paraje Altamira (2013, the first drawn from a soil study, extended 2016), Los Chacayes, San Pablo. Gualtallary, though famous, is not a recognised IG: its application has been held up by a private trademark on the name\" | accept: [\"paraje altamira los chacayes san pablo igs\", \"geographic indications paraje altamira los chacayes\"]"
+  },
+  {
+   "id": "m-ynbx625f",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says the 2017 reforms renamed Rioja Baja. In fact the 2017 reform only proposed the rename. The Consejo Regulador approved it in April 2018.",
+   "finalFix": "The rename was proposed with the 2017 reforms and approved by the Consejo Regulador in April 2018, to shed the implication of inferiority."
+  },
+  {
+   "id": "m-wwr9zet9",
+   "kind": "accept-list",
+   "claim": "Two accept entries give full credit to an answer that names none of the Muscat VDNs, even though naming them is the main thing the question asks for.",
+   "finalFix": "Remove \"mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar\" and \"muscat blanc a petits grains for all but rivesaltes, mutage is fortifying the fermenting must with neutral spirit\" from accept. The remaining accept list is: [\"frontignan mireval lunel saint-jean-de-minervois and rivesaltes, muscat blanc a petits grains except rivesaltes which may add alexandria\", \"frontignan lunel mireval st jean de minervois rivesaltes cap corse, spirit added during fermentation to keep sugar\"]"
+  },
+  {
+   "id": "m-3wd87c3s",
+   "kind": "accept-list",
+   "claim": "The accept list grades Airén as the answer ('airen la mancha castilla', 'airén central plateau'), although the model answer says Tempranillo has led since the 2021 survey.",
+   "finalFix": "accept: [\"tempranillo\", \"tempranillo la mancha rioja ribera\", \"tempranillo overtook airen\"]"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "m-nzcx4m2h",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"flash pasteurization must thirteen varieties organic since 1960s\"",
+   "newText": "\"flash heating thirteen varieties organic since 1950\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-wy7k7xto",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"1992 screaming eagle 1994 harlan\",\"screaming eagle 1992 debut\"]",
+   "newText": "\"accept\":[\"~screaming eagle 1992 harlan 1994\",\"~screaming eagle 1992 and harlan 1994\",\"~screaming eagle 1992 harlan 1990\",\"~screaming eagle 1992 and harlan 1990\",\"~1992 screaming eagle 1994 harlan\",\"~1992 screaming eagle and 1994 harlan\",\"~harlan 1994 screaming eagle 1992\",\"~harlan 1990 screaming eagle 1992\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-qbb5zteh",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"regional at 51 villages at 44 named commune at 41 and crus around 35 to 40\"",
+   "newText": "\"regional at 51 villages at 44 named commune at 41 and crus around 35 to 45\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-qbb5zteh",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"51 then 44 then 41 then the crus at thirty-five to forty hectolitres\"",
+   "newText": "\"51 then 44 then 41 then the crus at thirty-five to forty-five hectolitres\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-qbb5zteh",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "Then the crus, which drop the Côtes du Rhône name entirely and sit between roughly 35 and 40 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, the northern crus nearer 40.",
+   "newText": "Then the crus, which drop the Côtes du Rhône name entirely and mostly sit between roughly 35 and 45 hl/ha: Châteauneuf-du-Pape at 35, Gigondas at 36, most northern crus at about 40, Crozes-Hermitage higher at 45.",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-mq38eic4",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"seven wards including simonsberg-stellenbosch and jonkershoek valley\"",
+   "newText": "\"eight wards including simonsberg-stellenbosch jonkershoek valley and vlottenburg\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-mq38eic4",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "The long-established wards are Bottelary, Devon Valley, Papegaaiberg, Polkadraai Hills, Jonkershoek Valley, Banghoek and Simonsberg-Stellenbosch, with further wards registered since.",
+   "newText": "The eight wards are Banghoek, Bottelary, Devon Valley, Jonkershoek Valley, Papegaaiberg, Polkadraai Hills, Simonsberg-Stellenbosch and Vlottenburg (the newest, registered in 2020).",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zb8jbpoj",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"accept\":[\"paraje altamira gualtallary igs\",",
+   "newText": "\"accept\":[\"paraje altamira los chacayes san pablo igs\",",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-zb8jbpoj",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"ans\":\"Soil-mapped GIs: Paraje Altamira (the first, science-drawn), Gualtallary, Los Chacayes, San Pablo…\"",
+   "newText": "\"ans\":\"Soil-mapped GIs: Paraje Altamira (2013, the first drawn from a soil study, extended 2016), Los Chacayes, San Pablo. Gualtallary, though famous, is not a recognised IG: its application has been held up by a private trademark on the name\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-ynbx625f",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"exp\":\"The 2017 reforms renamed Baja to shed the implication of inferiority.\"",
+   "newText": "\"exp\":\"The rename was proposed with the 2017 reforms and approved by the Consejo Regulador in April 2018, to shed the implication of inferiority.\"",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-wwr9zet9",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"muscat blanc a petits grains for all but rivesaltes, mutage is fortifying the fermenting must with neutral spirit\",\"frontignan lunel mireval st jean de minervois rivesaltes cap corse, spirit added during fermentation to keep sugar\",\"mutage adds grape spirit mid-ferment, up to 10 percent of volume, leaving 100 grams of sugar\"]",
+   "newText": "\"frontignan lunel mireval st jean de minervois rivesaltes cap corse, spirit added during fermentation to keep sugar\"]",
+   "wingFile": "codex/js/data-master.js"
+  },
+  {
+   "id": "m-3wd87c3s",
+   "standaloneFile": "js/data-master.js",
+   "oldText": "\"tempranillo overtook airen\",\"airen la mancha castilla\",\"airén central plateau\"]",
+   "newText": "\"tempranillo overtook airen\"]",
+   "wingFile": "codex/js/data-master.js"
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "findings": [
+  {
+   "id": "a-ih3g5con",
+   "kind": "outdated",
+   "claim": "minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).",
+   "finalFix": "Kékfrankos (Blaufränkisch): 30-65% of the blend and always the largest component, in a blend of at least four permitted varieties, each above 5%."
+  },
+  {
+   "id": "a-qnmekbf5",
+   "kind": "accept-list",
+   "claim": "accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\"",
+   "finalFix": "Delete the accept entry \"castel del monte bombino nero and primitivo di manduria dolce naturale\"."
+  },
+  {
+   "id": "a-ez6nm4ot",
+   "kind": "wrong-explanation",
+   "claim": "The only bottle size permitted for Vin Jaune.",
+   "finalFix": "The 62 cl clavelin is reserved by law for vin jaune; in Château-Chalon it is the only bottle allowed."
+  },
+  {
+   "id": "a-yj5nor7h",
+   "kind": "wrong-explanation",
+   "claim": "Bonnezeaux and Coteaux du Layon surround it.",
+   "finalFix": "Minimum 298 g/L sugar in the must; it lies at Rochefort-sur-Loire, enclosed by Coteaux du Layon (including its Chaume premier cru), while Bonnezeaux is a separate appellation upstream at Thouarcé."
+  },
+  {
+   "id": "a-qyluccep",
+   "kind": "outdated",
+   "claim": "ans: \"Chasselas (Sauvignon Blanc is permitted as a minority partner)\"; accept: \"chasselas with sauvignon a permitted minority partner\", \"chasselas led with some sauvignon\"",
+   "finalFix": "ans: \"Chasselas (the only permitted variety; Sauvignon survives only in mixed parcels planted before 31 July 2009, until they are pulled up); Pouilly-Fumé is Sauvignon Blanc\". Delete \"chasselas with sauvignon a permitted minority partner\" and \"chasselas led with some sauvignon\" from accept."
+  },
+  {
+   "id": "a-steh6v5s",
+   "kind": "ambiguous-stem",
+   "claim": "\"Which Centre-Loire appellation is uniquely allowed to make its rosé from Pinot Gris?\" / exp: \"one of French appellation law's genuine one-offs\"",
+   "finalFix": "Stem: \"Which Centre-Loire appellation may make its rosé entirely from Pinot Gris?\" In exp, replace \"one of French appellation law's genuine one-offs\" with \"unusual in French appellation law (Châteaumeillant allows Pinot Gris only as up to 15% of a Gamay-led gris)\"."
+  },
+  {
+   "id": "a-xfj7yurk",
+   "kind": "wrong-explanation",
+   "claim": "Marsanne, Roussanne, Viognier, Semillon, Sangiovese",
+   "finalFix": "About 18 named varieties are excepted at 75% — the Bordeaux reds (Cabernet Sauvignon, Cabernet Franc, Merlot, Malbec, Petit Verdot, Carmenere) plus Syrah, Grenache, Mourvedre, Marsanne, Roussanne, Sauvignon Blanc, Semillon, Sangiovese, Tempranillo, Tannat, Zinfandel and Petite Sirah. Pinot Noir, Pinot Gris and Chardonnay stay at 90%."
+  },
+  {
+   "id": "a-nnsm0jnb",
+   "kind": "wrong-explanation",
+   "claim": "after his death Clive Paton took material to Martinborough",
+   "finalFix": "in 1980, shortly before Abel's sudden death in 1981, Clive Paton bought vines from him and planted them in Martinborough"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "a-ih3g5con",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"ans\":\"Kékfrankos (Blaufränkisch) — minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).\"",
+   "newText": "\"ans\":\"Kékfrankos (Blaufränkisch): 30-65% of the blend and always the largest component, in a blend of at least four permitted varieties, each above 5%.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-qnmekbf5",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": ",\"castel del monte bombino nero and primitivo di manduria dolce naturale\"",
+   "newText": "",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-ez6nm4ot",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"The only bottle size permitted for Vin Jaune.\"",
+   "newText": "\"exp\":\"The 62 cl clavelin is reserved by law for vin jaune; in Château-Chalon it is the only bottle allowed.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-yj5nor7h",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"exp\":\"Minimum 298 g/L must weight; Bonnezeaux and Coteaux du Layon surround it.\"",
+   "newText": "\"exp\":\"Minimum 298 g/L sugar in the must; it lies at Rochefort-sur-Loire, enclosed by Coteaux du Layon (including its Chaume premier cru), while Bonnezeaux is a separate appellation upstream at Thouarcé.\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-qyluccep",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"accept\":[\"chasselas\",\"chasselas with sauvignon a permitted minority partner\",\"pouilly-sur-loire is chasselas\",\"chasselas led with some sauvignon\"],\"ans\":\"Chasselas (Sauvignon Blanc is permitted as a minority partner); Pouilly-Fumé is Sauvignon Blanc\"",
+   "newText": "\"accept\":[\"chasselas\",\"pouilly-sur-loire is chasselas\"],\"ans\":\"Chasselas (the only permitted variety; Sauvignon survives only in mixed parcels planted before 31 July 2009, until they are pulled up); Pouilly-Fumé is Sauvignon Blanc\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-steh6v5s",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "\"q\":\"Which Centre-Loire appellation is uniquely allowed to make its rosé from Pinot Gris?\"",
+   "newText": "\"q\":\"Which Centre-Loire appellation may make its rosé entirely from Pinot Gris?\"",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-steh6v5s",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "is one of French appellation law's genuine one-offs",
+   "newText": "is unusual in French appellation law (Châteaumeillant allows Pinot Gris only as up to 15% of a Gamay-led gris)",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-xfj7yurk",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "Roussanne, Viognier, Semillon",
+   "newText": "Roussanne, Sauvignon Blanc, Semillon",
+   "wingFile": "codex/js/data-advanced.js"
+  },
+  {
+   "id": "a-nnsm0jnb",
+   "standaloneFile": "js/data-advanced.js",
+   "oldText": "after his death Clive Paton took material to Martinborough",
+   "newText": "in 1980, shortly before Abel's sudden death in 1981, Clive Paton bought vines from him and planted them in Martinborough",
+   "wingFile": "codex/js/data-advanced.js"
+  }
+ ]
+}

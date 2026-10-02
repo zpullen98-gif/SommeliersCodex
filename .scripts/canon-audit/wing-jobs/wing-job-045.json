@@ -1,0 +1,46 @@
+{
+ "findings": [
+  {
+   "id": "c-1wqv57fb",
+   "kind": "wrong-key",
+   "claim": "The question calls three years the minimum ageing for any Madeira. It is not. Three years is the rule only for canteiro wine. Estufagem wine may be bottled and sold from 31 October of the second year after the vintage, which is about two years, so the explanation's claim that three years is the floor for all Madeira is also wrong.",
+   "finalFix": "Stem: 'A Madeira aged by the canteiro method may not be sold until it has served a minimum period of ageing, counted from 1 January after the vintage. How long?' (key stays 0, Three years). Explanation: 'Canteiro wine must wait at least three years from 1 January after the vintage. Estufagem wine may be bottled and sold from 31 October of the second year after the harvest, so the heated everyday blends reach the market sooner.'"
+  },
+  {
+   "id": "c-v5wloo6x",
+   "kind": "wrong-fact-in-option",
+   "claim": "The stem says Madeira declares sweetness in four steps, and the explanation says the scale runs seco, meio seco, meio doce, doce. IVBAM lists five: Extra Seco, Seco, Meio Seco, Meio Doce, Doce. The keyed answer, meio doce, is still correct.",
+   "finalFix": "Stem: 'Sweetness on a Madeira label is declared in words rather than left to a grape name to imply. Give the step that sits one drier than doce.' Explanation first sentence: 'The scale runs extra seco, seco, meio seco, meio doce, doce, and English labels render the upper four as dry, medium dry, medium sweet (or medium rich) and sweet (or rich).'"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-1wqv57fb",
+   "standaloneFile": "rewrite/categories/r2_fortified_wines.py",
+   "oldText": "      \"Nothing may be bottled and sold as Madeira until it has served a minimum period of ageing. How long?\",\n      [\"Three years\", \"One year\", \"Five years\", \"Ten years\"], 0,\n      \"That is a floor rather than an average, so a wine on the bottom rung may well hold older material blended into it without being allowed to say so. The ladder above climbs in fives and tens, and each step up it is a claim the certifying body has to approve before the label may carry it.\"),",
+   "newText": "      \"A Madeira aged by the canteiro method may not be sold until it has served a minimum period of ageing, counted from 1 January after the vintage. How long?\",\n      [\"Three years\", \"One year\", \"Five years\", \"Ten years\"], 0,\n      \"Canteiro wine must wait at least three years from 1 January after the vintage. Estufagem wine may be bottled and sold from 31 October of the second year after the harvest, so the heated everyday blends reach the market sooner.\", pin=\"c-1wqv57fb\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-v5wloo6x",
+   "standaloneFile": "rewrite/categories/r2_fortified_wines.py",
+   "oldText": "       \"Sweetness on a Madeira label is declared in four steps rather than left to a grape name to imply. Give the step that sits one drier than doce.\",",
+   "newText": "       \"Sweetness on a Madeira label is declared in words rather than left to a grape name to imply. Give the step that sits one drier than doce.\",",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-v5wloo6x",
+   "standaloneFile": "rewrite/categories/r2_fortified_wines.py",
+   "oldText": "       \"The scale runs seco, meio seco, meio doce, doce, and English labels render those as dry, medium dry, medium rich and sweet. It matters",
+   "newText": "       \"The scale runs extra seco, seco, meio seco, meio doce, doce, and English labels render the upper four as dry, medium dry, medium sweet (or medium rich) and sweet (or rich). It matters",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-v5wloo6x",
+   "standaloneFile": "rewrite/categories/r2_fortified_wines.py",
+   "oldText": "said by itself.\",\n       ex=True),",
+   "newText": "said by itself.\",\n       ex=True, pin=\"c-v5wloo6x\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

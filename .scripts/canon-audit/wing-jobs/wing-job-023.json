@@ -1,0 +1,32 @@
+{
+ "findings": [
+  {
+   "id": "i-ywwxv1nq",
+   "kind": "wrong-explanation",
+   "claim": "Since the 2022 vintage Pinot Noir may also be bottled as a red at Hengst, Kirchberg de Barr and Vorbourg.",
+   "finalFix": "Pinot Noir may also be bottled as a red at Hengst and Kirchberg de Barr since the 2022 vintage, and at Vorbourg since the 2024 vintage."
+  },
+  {
+   "id": "i-rd9v46db",
+   "kind": "wrong-explanation",
+   "claim": "Rangen is the only Grand Cru on volcanic soil",
+   "finalFix": "Rangen is the best known of the Grands Crus on volcanic rock, and its slope is severe enough that growers carry washed-out soil back up the hill after storms. The wines are smoky and austere in youth."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-ywwxv1nq",
+   "standaloneFile": "rewrite/categories/r1_alsace.py",
+   "oldText": "Since the 2022 vintage Pinot Noir may also be bottled as a red at Hengst, Kirchberg de Barr and Vorbourg.",
+   "newText": "Pinot Noir may also be bottled as a red at Hengst and Kirchberg de Barr since the 2022 vintage, and at Vorbourg since the 2024 vintage.",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-rd9v46db",
+   "standaloneFile": "rewrite/categories/r1_alsace.py",
+   "oldText": "Rangen is the only Grand Cru on volcanic soil, and its slope",
+   "newText": "Rangen is the best known of the Grands Crus on volcanic rock, and its slope",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}

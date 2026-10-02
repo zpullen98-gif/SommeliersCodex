@@ -1,0 +1,46 @@
+{
+ "findings": [
+  {
+   "id": "c-xba125m0",
+   "kind": "wrong-fact-in-option",
+   "claim": "One Barossa house has kept a workshop inside its winery since the 1940s",
+   "finalFix": "In the stem, replace \"has kept a workshop inside its winery since the 1940s\" with \"has kept a workshop inside its winery for more than a century\". The rest of the question, the answer and the explanation stay as they are."
+  },
+  {
+   "id": "c-hl5fhle1",
+   "kind": "outdated",
+   "claim": "The stem calls Cheval des Andes's Bordeaux partner (Château Cheval Blanc) \"a Saint-Emilion first growth\". Cheval Blanc no longer holds any Saint-Emilion rank.",
+   "finalFix": "A Saint-Emilion estate that was Premier Grand Cru Classé A until it stayed out of the 2022 classification shares, with a Mendoza estate, a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-xba125m0",
+   "standaloneFile": "rewrite/categories/r2_producers_icons.py",
+   "oldText": "\"One Barossa house has kept a workshop inside its winery since the 1940s, turning out",
+   "newText": "\"One Barossa house has kept a workshop inside its winery for more than a century, turning out",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-xba125m0",
+   "standaloneFile": "rewrite/categories/r2_producers_icons.py",
+   "oldText": "one winery needs only a few hundred barrels a year.\",\n       ex=True),",
+   "newText": "one winery needs only a few hundred barrels a year.\",\n       ex=True, pin=\"c-xba125m0\"),",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-hl5fhle1",
+   "standaloneFile": "rewrite/categories/r2_producers_icons.py",
+   "oldText": "\"A Saint-Emilion first growth and a Mendoza estate share a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine.\",",
+   "newText": "\"A Saint-Emilion estate that was Premier Grand Cru Classe A until it stayed out of the 2022 classification shares, with a Mendoza estate, a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine.\",",
+   "wingFile": "codex/js/data-questions.js"
+  },
+  {
+   "id": "c-hl5fhle1",
+   "standaloneFile": "rewrite/categories/r2_producers_icons.py",
+   "oldText": "cuttings of that quality no longer exist in the variety's homeland.\"),",
+   "newText": "cuttings of that quality no longer exist in the variety's homeland.\", pin=\"c-hl5fhle1\"),",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

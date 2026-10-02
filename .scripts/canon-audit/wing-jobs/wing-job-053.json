@@ -1,0 +1,19 @@
+{
+ "findings": [
+  {
+   "id": "c-u0bmyr5t",
+   "kind": "wrong-explanation",
+   "claim": "The explanation says 'the Superiore tier adding that the Artemisia itself be grown there'.",
+   "finalFix": "The wine must be Italian, the production must happen in Piedmont, and the Artemisia (absinthium and/or pontica) must be grown or gathered in Piedmont. The Superiore tier adds a minimum of 17 percent alcohol, at least half the volume from Piedmontese wine, and other Piedmont-grown herbs besides the wormwood. Turin is where the commercial category began in the eighteenth century, which is why the aromatised wine trade and the Italian bitters trade grew up in the same city."
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "c-u0bmyr5t",
+   "standaloneFile": "rewrite/categories/r2_spirits_cocktails.py",
+   "oldText": "The wine must be Italian and the production must happen in Piedmont, with the Superiore tier adding that the Artemisia itself be grown there.",
+   "newText": "The wine must be Italian, the production must happen in Piedmont, and the Artemisia (absinthium and/or pontica) must be grown or gathered in Piedmont. The Superiore tier adds a minimum of 17 percent alcohol, at least half the volume from Piedmontese wine, and other Piedmont-grown herbs besides the wormwood.",
+   "wingFile": "codex/js/data-questions.js"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "findings": [
+  {
+   "id": "i-xezz75wk",
+   "kind": "wrong-fact-in-option",
+   "claim": "Five years of ageing, at least two in cask and three more in bottle, earn a red Rioja which designation?",
+   "finalFix": "Five years of ageing, at least two in cask and at least two in bottle, earn a red Rioja which designation?"
+  },
+  {
+   "id": "i-a455nccq",
+   "kind": "wrong-explanation",
+   "claim": "Dorado was aged in glass demijohns and part-filled barrels under a film of yeast, closer to a light Sherry than to any modern white.",
+   "finalFix": "Dorado was aged oxidatively, traditionally in glass demijohns left out in the sun and then in oak, with no film of yeast, so it was closer to an old Oloroso than to any modern white. Today's rule asks for at least two years in oak before sale; its biologically aged sibling, under flor, is Rueda Palido. A little of both is still made."
+  },
+  {
+   "id": "i-lfjnphqw",
+   "kind": "wrong-explanation",
+   "claim": "A butt marked for Fino loses its flor without ever being refortified",
+   "finalFix": "A butt marked for Fino loses its flor on its own, not because it was refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?"
+  }
+ ],
+ "standaloneEdits": [
+  {
+   "id": "i-xezz75wk",
+   "standaloneFile": "rewrite/categories/r1_spain.py",
+   "oldText": "      \"Five years of ageing, at least two in cask and three more in bottle, earn a red Rioja which designation?\",\n      [\"Gran Reserva\", \"Reserva\", \"Crianza\", \"Joven\"], 0,\n      \"Most houses declare it only in vintages they believe will repay the wait. The long spell in bottle is why a Gran Reserva often reaches the table already mature.\"),",
+   "newText": "      \"Five years of ageing, at least two in cask and at least two in bottle, earn a red Rioja which designation?\",\n      [\"Gran Reserva\", \"Reserva\", \"Crianza\", \"Joven\"], 0,\n      \"Most houses declare it only in vintages they believe will repay the wait. The long spell in bottle is why a Gran Reserva often reaches the table already mature.\", pin=\"i-xezz75wk\"),",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-a455nccq",
+   "standaloneFile": "rewrite/categories/r1_spain.py",
+   "oldText": "\"Dorado was aged in glass demijohns and part-filled barrels under a film of yeast, closer to a light Sherry than to any modern white. A little of it is still made.\"",
+   "newText": "\"Dorado was aged oxidatively, traditionally in glass demijohns left out in the sun and then in oak, with no film of yeast, so it was closer to an old Oloroso than to any modern white. Today's rule asks for at least two years in oak before sale; its biologically aged sibling, under flor, is Rueda Palido. A little of both is still made.\"",
+   "wingFile": "codex/js/data-intro.js"
+  },
+  {
+   "id": "i-lfjnphqw",
+   "standaloneFile": "rewrite/categories/r1_spain.py",
+   "oldText": "      \"A butt marked for Fino loses its flor without ever being refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?\",\n      [\"Palo Cortado\", \"Amontillado\", \"Oloroso\", \"Cream\"], 0,\n      \"An Amontillado is refortified on purpose to kill its flor, while a Palo Cortado arrives there by accident. It carries the aromatic delicacy of the one over the body of an Oloroso, and it is the rarest of the dry styles.\"),",
+   "newText": "      \"A butt marked for Fino loses its flor on its own, not because it was refortified, and finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?\",\n      [\"Palo Cortado\", \"Amontillado\", \"Oloroso\", \"Cream\"], 0,\n      \"An Amontillado is refortified on purpose to kill its flor, while a Palo Cortado arrives there by accident. It carries the aromatic delicacy of the one over the body of an Oloroso, and it is the rarest of the dry styles.\", pin=\"i-lfjnphqw\"),",
+   "wingFile": "codex/js/data-intro.js"
+  }
+ ]
+}
