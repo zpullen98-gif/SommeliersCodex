@@ -1,0 +1,388 @@
+{
+ "app": "codex",
+ "written": "2026-10-02",
+ "note": "Expansion plan for the top level, from a read-only map, a planner and a critic (run wf_e17cf55c-593). Not started.",
+ "map": {
+  "contentModel": "I only read files; nothing was edited. The standalone is C:/Users/zpull/SommeliersCodex-canon-audit on branch canon-audit, HEAD d289e07. The suite is C:/Users/zpull/OOT-canon-audit/codex on branch canon-audit, HEAD 918fb9685.\n\nThe level is registered in js/codex7.js. `LEVELS.master` holds:\n- `bank`: MASTER_QUESTIONS\n- `grapes`: CERT_GRAPES.concat(GRAPES_PLUS)\n- `primers`: MASTER_PRIMERS\n- `groups`: CERT_GROUPS, the same seven bands as `DRILL_GROUPS` in core.js:275\n- `mock`: {n:50, secs:3000, oral:true}\n- `pass`: 0.6 in codex7, raised to 0.75 by js/codex11.js:25-28\n\n`V25_LEVELS[3]` in js/codex25.js:86 is {n:4, key:'master', name:'Grand Cru', blurb}. check-home holds the blurb verbatim. The level page is built by `v25Subs('master')`, which gives 7 domains, then The whole paper (not counted), then Tasting, The Floor, Pairing and Service. That makes 11 counted subsections. The card shows the mean of their shares, clamped to 1..99.\n\n**1. Theory: MASTER_QUESTIONS in js/data-master.js** (450 KB, 643 lines, one JSON object per line, under `/* ---- Cat ---- */` blocks)\n- There are 576 entries. Every one has `id`, `cat`, `q`, `sa:1`, `accept[]`, `ans` and `exp`. One entry also has `list:1, items[], need`.\n- 0 multiple choice, 0 matching, 0 select, 0 `ex` flags.\n- 16 per category in 34 categories, 17 in Producers & Icons, 15 in Southern France.\n- Ids look like `m-` plus 8 base36 characters, all unique.\n- Example: {\"id\":\"m-efo2as8e\",\"cat\":\"Burgundy\",\"q\":\"Recite the six grands crus of Vosne-Romanée, in any order.\",\"sa\":1,\"accept\":[\"~romanee-conti la tache richebourg romanee-saint-vivant la romanee la grande rue\"],\"ans\":\"Romanée-Conti, La Tâche, …\",\"exp\":\"…\"}\n- In `accept`, `~` means strict whole-phrase matching (core.js:75). A bare number matches a whole number token. `ans` always grades by exact normalised equality (core.js:72).\n- The block order in the file is historical: per-country blocks, then themed blocks such as \"Vintage command\" and \"Blind tasting mastery\", then \"Second pass\" blocks. The engine reads only `cat`.\n\n**2. Chapters: MASTER_PRIMERS in js/data-primers-master.js** (40.6 KB)\n- 36 objects, one per category, each {cat, lead, exam, facts:[[label,text]×4], traps:[×3]}.\n- Example: {cat:\"Burgundy\", lead:\"Burgundy at Master level is recitation under pressure…\", exam:\"Full grand cru lists, monopole ownership…\", facts:[[\"Recite, don't reconstruct\",\"Gevrey's nine and Vosne's six…\"],…], traps:[\"Confusing Flagey-Échezeaux's two grands crus with Vosne's six.\",…]}.\n- The Chapter door finds a chapter by `cat`.\n\n**3. The Floor: FLOOR in js/data-floor.js** (`const`, shared by all levels, picked by `lvl`)\n- Fields: `id` (f- slug, the key for ST.floor), `lvl`, `s`, `opts[4]`, `best`, `why`.\n- 4 entries have lvl 'master', out of 28. Example: id \"f-va-over-line\", lvl \"master\", s \"A regular orders SP68 from Arianna Occhipinti…\".\n\n**4. Pairing: PAIRS in js/data-pairing.js**\n- Fields: `id` (p- slug, the key for ST.pairs), `lvl`, `dish`, `needs[]` drawn from the fixed set acid / tannin / low-tannin / sweet / body / low-alc / bubbles / oak / low-oak, `wines[4]`, `best`, `why`.\n- 4 entries have lvl 'master', out of 26.\n\n**5. Tasting**\n- TASTE in js/data-tasting.js: 47 entries of {g, acid, tan, body, alc, oak (0-3), sweet (0-2), world, clim, age}.\n- GRAPES_PLUS in js/data-grapes-plus.js: 24 profiles, 8 fields each (g, c, st, fruit, other, tell, regions, confuse).\n- Grand Cru has no grape list of its own. Its pool is the same 47 grapes as Premier Cru.\n- Progress is ST.tgrid, keyed by grape for every level together. The grid is codex20's `gridStart`. Grand Cru's origin call (codex7.js:565-635) appears only in the older \"Blind flight\" (`startTastingFlight`).\n\n**6. Service: SERVICE in js/codex6.js:172**\n- 7 parts with 40 steps: {t, ic, steps:[[step, why]]}.\n- It has no `lvl` field, and `serviceReadiness()` (codex11.js:95) takes no level argument.\n- Progress is ST.serv.svc[partIndex][stepIndex], so it is keyed by position.\n\n**7. The oral mock**\n- `startGauntlet` (codex7.js:128) plus codex8's oral mode (`oralActive`, `speechSynthesis`, `ST.oralVoice`). No content of its own; it draws from MASTER_QUESTIONS.\n\n**8. The suite copy**\n- It mirrors the standalone file for file, except: codex13.js and rewrite-preview.js are missing, and data-firstpath.js is added.\n- The text is hand-re-written with no em dashes. The standalone data-master.js has 702 em dashes; the suite copy has 0. data-master.js differs on 414 lines and data-primers-master.js on 54.\n- The suite's core.js has the `saConjHit` conjunction rule (3 hits); the standalone has 0. The two copies therefore grade differently.\n- data-floor.js, data-pairing.js, data-tasting.js, codex19, codex20, codex21, codex25 and codex26 are byte-identical in both trees.",
+  "authoring": "**A. A new Grand Cru question** (the main kind)\n\nStandalone:\n1. Write a one-line object without `id` in C:/Users/zpull/SommeliersCodex-canon-audit/js/data-master.js. Either append a new `/* ═══════ … ═══════ */` block before the closing `];` (the current last line carries no trailing comma, so add one), or insert it into the category's block.\n2. Fields: `\"cat\"` must be one of the 36 names in core.js `DRILL_GROUPS` exactly. Any other name falls into a \"More\" domain and changes the level page. Then `\"q\"`, `\"sa\":1`, `\"accept\":[…]` (lower-case, accents folded; `~` for strict phrases), `\"ans\"`, `\"exp\"`, and for lists `\"list\":1,\"items\":[…],\"need\":N`.\n3. Keep `|` out of stems. No two stems may share their first 80 characters.\n4. Update `EXPECT[\"MASTER_QUESTIONS\"]` (576) in .scripts/mint-ids.py:45. Otherwise the dry run reports COUNT MISMATCH. Note that `--apply` still writes despite the mismatch.\n5. Run `py .scripts/mint-ids.py` (dry run), then `py .scripts/mint-ids.py --apply`. The id is seeded from json.dumps([cat,q]) and is added only to objects that have none. Never re-mint or strip.\n6. Bump `js/data-master.js?v=5` in index.html and `CACHE='codex-v73'` in sw.js. The file is already precached (sw.js:46).\n7. Refresh the counts in CLAUDE.md and the HANDOFF.md table. CLAUDE.md still says 489 and 391.\n\nSuite:\n1. Write the same object into C:/Users/zpull/OOT-canon-audit/codex/js/data-master.js with the minted `id` copied verbatim from the standalone.\n2. Re-word every em dash in the suite's own voice; do not swap characters mechanically.\n3. Never mint in the suite. Its re-worded stem would seed a different id.\n4. Bump `js/data-master.js?v=7` in codex/index.html and `CACHE='oot-codex-v107'` in codex/sw.js.\n5. Commit, then publish through the `_publish` mirror (a plain `git push origin main` there). Do not `git add -A` there before publish.mjs prints its staged-files line.\n6. For bulk work, .scripts/canon-audit/apply-edits.cjs takes an optional root as argv[3] and applies exact find/replace jobs, checking that each find appears once and that the JS still parses.\n\n**B. A chapter fact or trap**\n- Add `[\"Label\",\"text\"]` to `facts`, or a string to `traps`, of the matching `cat` object in js/data-primers-master.js.\n- Make the same change, without em dashes, in codex/js/data-primers-master.js.\n- Bump `?v=3` in the standalone and `?v=4` in the suite, plus both CACHE values.\n- No content gate reads chapters.\n\n**C. A floor scenario**\n- Add `{ id: \"f-<slug>\", lvl: \"master\", s, opts:[4], best, why }` to FLOOR in js/data-floor.js. The ids are hand-made, permanent slugs; never renumber.\n- The file is byte-identical in both trees: copy it, then bump `data-floor.js?v=1` in both index.html files and both CACHE values.\n- The file header's rule applies: four believable options, then a second pass whose job is to refute.\n\n**D. A pairing**\n- Add `{ id: \"p-<slug>\", lvl: \"master\", dish, needs:[levers from the fixed set], wines:[4], best, why }` to PAIRS in js/data-pairing.js.\n- Same two-tree copy and version bumps as C.\n\n**E. A Grand Cru tasting set**\n- Today this is impossible without code. `LEVELS.master.grapes` is the Premier Cru list.\n- Any new grape needs both a GRAPES_PLUS record with all 8 fields (`st` segments separated by `·`) and a TASTE profile whose `g` matches exactly.\n- A separate Grand Cru pool, or origin, appellation or vintage calls in the grid, needs a new layer. By the layer rule that is js/codex27.js, added to index.html, sw.js ASSETS and the check-home FILES list, in both trees.\n\n**F. Service steps**\n- Steps can only be appended, at the end of a part's `steps` or as a new part at the end of SERVICE. Progress is keyed by position, so inserting in the middle moves every saved tick.\n- Any change alters all four levels.\n- SERVICE is in codex6.js, an earlier layer, so a change belongs in a new layer.\n\n**G. A Gauntlet door on the level page** (if wanted)\n- Do it in a new layer, codex27.js, that wraps codex25's level page. It must not edit codex25.js.\n- `data-go` must resolve through `V25_GO`, or check-home fails.\n- Do not restyle anything. Visuals belong to ChatGPT (codex26 and the house*.css files).",
+  "gates": "Results below are from today's runs on the canon-audit tree.\n\n**Standalone**, all run from C:/Users/zpull/SommeliersCodex-canon-audit:\n1. `node .scripts/check-syntax.js`: every file in js/ must parse. Passes, 45 files.\n2. `py .scripts/mint-ids.py` (dry run): checks counts against EXPECT, duplicate ids, `|` in a stem, and shared 80-character stem openings. Passes: 4,357 distinct ids.\n3. `node .scripts/sa-harness.js master` (and `adv`): the app's own grader must accept every `ans`. It exits 1 on any WRONG. Passes: master 576/576, adv 581/581, 0 unsure.\n4. `node .scripts/list-harness.js <jsDir>`: every question codex9 grades as a list must score full marks on its own `ans`. Compare the detected count before and after an edit.\n   - **Already failing (exit 1) before this work:** 3 Advanced questions (a-62mb28xz, a-egn9hhiq, a-xrebfxf7).\n   - Master: 18 detected, 18 full marks. That was 17 at 098c957.\n5. `node .scripts/check-claims.js <jsDir>`: fails only when a stem asks for more items than its `ans` holds. Currently 0. It also lists, without failing, 578 superlatives, 138 ownership claims and 48 genetic-relation claims across all banks; Master's share is 31, 13 and 10.\n6. `py rewrite/check-paid.py`: runs the eleven content checks from rewrite/lib.py on the Advanced and Master banks (self-grading, cross_accept, duplicate_answers, loose_tilde, compound_answer, negation_probe, comparative_probe, option_reference, banned_template, accept_list). It fails on anything not recorded in rewrite/paid_known.py.\n   - **Currently failing (exit 1): 38 new problems.** Master has 22: 9 comparative_probe, 6 cross_accept, 3 loose_tilde, 3 negation_probe, 1 accept_list. Advanced has 16.\n   - It also reports that 22 recorded problems no longer occur.\n   - It was green at 098c957 (\"no new problems\", 366 recorded), so commit 83b705a, the canon-audit corrections, introduced these.\n   - This is the only Python gate that reads data-master.js. check-ids, check-regression, check-stem-echo, check-similarity and check-cross-category cover only the generated Régionale and Village banks.\n7. `node .scripts/check-home.js <jsDir>`: the four-level home and level page contract. It checks the blurbs verbatim, domains+5 subsections, every `data-go` in `V25_GO`, an \"N at this level\" line, no level numerals, no long dash and no glyph. Passes, 189/189. It loads a hard-coded FILES list, so a new codex27.js must be added there.\n8. `node .scripts/check-merge.js`: progress import is re-runnable. Passes. Any new ST store must be added to its snapshot and to `ST_DEFAULTS`.\n9. check-producers, check-drill and check-wine-import: content outside this level; all pass.\n   - check-drill's default path is the MAIN checkout C:/Users/zpull/SommeliersCodex/js, so always pass the worktree's js directory.\n10. In the browser console, `qidAudit()`, after the service worker has been cleared.\n\n**Suite**:\n1. `node .scripts/check-grading.mjs` in OOT-canon-audit: every short answer grades its own `ans` with the suite's own matchSA. Passes: 1,964, of which master is 576.\n2. `node <standalone>/.scripts/check-home.js C:/Users/zpull/OOT-canon-audit/codex/js`: passes, 190/190.\n3. check-claims and list-harness against codex/js: Master 20/20 detected. list-harness builds its list machinery from the standalone core.js, which lacks saConjHit.\n4. publish.mjs preflight, through .scripts/check-publish.mjs. Its dash gate counts U+2014, `&mdash;`, `&#8212;` and \" -- \" against a baseline, so an em dash pasted into codex/ fails the publish.",
+  "gaps": "Measured against the level's own claims (the codex7 note, the codex25 blurb, codex11's 75% standard) and against Premier Cru, the level below it.\n\n1. **Theory bank: 576 questions against Premier Cru's 720.**\n   - 16 per category, against about 20 for Premier Cru.\n   - Reaching 20 in every category needs 144 more: 4 in each of 34 categories, 5 in Southern France, 3 in Producers & Icons.\n   - Every question is short answer. Only 1 carries an explicit `list`; codex9 detects 18 as lists in the standalone and 20 in the suite. HANDOFF says 16.\n   - The lint still lists 31 superlatives, 13 ownership claims and 10 genetic-relation claims in this bank.\n   - 22 check-paid problems are unresolved.\n\n2. **Chapters: 36 × (4 facts, 3 traps) = 144 facts and 108 traps, about 1,100 characters each, 40.6 KB in all.**\n   - Premier Cru has 216 facts and 144 traps, about 1,805 characters each, 66.6 KB. Régionale's chapters are 75.6 KB.\n   - Matching Premier Cru needs 72 more facts and 36 more traps.\n   - Several chapters are about exam technique rather than content; Wine Fundamentals is entirely oral-exam technique.\n   - The chapters were fact-reviewed once, on 27 Aug 2026. The canon audit covered questions only, and no gate reads chapters.\n\n3. **The Floor: 4 scenarios at this level** (Premier Cru 9, Village 11, Régionale 4).\n   - The drill asks for 8 (`floorStart(8)`) and gets 4.\n   - The level test asks for 6 and gets 4.\n   - At 4 the level sits exactly on `byLevel`'s threshold, so losing one would widen the drill to every level.\n   - About 5 more would match Premier Cru.\n\n4. **Pairing: 4 dishes** (Premier Cru 9, Village 9).\n   - The drill asks for 6 and gets 4.\n   - About 5 more would match Premier Cru.\n\n5. **Tasting: no Grand Cru-specific content.**\n   - It uses the same 47 grapes and the same grid as Premier Cru.\n   - Progress (ST.tgrid) is shared across levels, so meeting Premier Cru's Tasting also meets Grand Cru's.\n   - The grid asks only Old/New World, climate and grape. There is no appellation or vintage call.\n   - The origin call, the one Grand Cru-specific tasting feature, exists only in the older Blind flight.\n   - `tastingReadiness` asks 75%, but it reads ST.tast, which is also shared by every level.\n\n6. **Service: the same 7-part, 40-step checklist at every level.**\n   - There is no Grand Cru service content and no grading; codex11 calls grading \"still open work\".\n   - The Service chapter promises \"Full service under interrogation\", but nothing exercises it.\n\n7. **The oral format is not reachable from the level page.**\n   - The level note promises \"examined aloud, fifty minutes across the table\" and the blurb promises \"every answer from memory… graded on your honour\".\n   - The Gauntlet (`startGauntlet`, `mock.oral`, codex8's spoken mode) has no door on the codex25 home or level page; codex19 hid m-mock and t-sim.\n   - The level test is the Finals: about 40 typed questions, a 4-glass grid and 4 floor situations, untimed and unspoken.\n   - The 75% standard is met only through the codex19 exams.\n\n8. **Shipping state.**\n   - The canon-audit corrections are committed in both trees, but `?v=` and CACHE have not been bumped in either tree (standalone codex-v73, suite oot-codex-v107).\n   - The plan is to ship after the atlas branch.",
+  "risks": "1. **Two gates are failing right now.** Any expansion should first triage the 38 new check-paid problems (22 in Master) introduced by 83b705a, either by fixing them or by recording them in rewrite/paid_known.py as a deliberate decision. Otherwise new problems hide among them. list-harness has 3 long-standing Advanced failures that predate this work.\n\n2. **Ids.** Mint only in the standalone and copy the id verbatim to the suite. A stem re-worded for the suite would mint a different id and lose progress. mint-ids `--apply` writes even when the count is wrong, so update EXPECT first and read the dry run.\n\n3. **Two graders.** The suite's core.js has the `saConjHit` rule and the standalone (and rewrite/lib.py) does not. A new accept list must pass sa-harness in the standalone and check-grading.mjs in the suite. The list counts already differ (18 against 20). Use sa-probe.js before widening or narrowing an accept list. A false reject is the worst defect: `ex`-style narrowing once broke 23 correct answers.\n\n4. **Editing `ans` changes list grading.** An item over 40 characters drops the question out of list grading, and a number word in the stem can become `need`. Compare the detected count before and after, not only the pass count.\n\n5. **Dashes.** Standalone text carries em dashes (702 in data-master.js). Copying them into codex/ fails publish.mjs's dash gate. The suite's text has to be re-worded by hand, and CFL voice rules apply.\n\n6. **Shared lists.** FLOOR, PAIRS, TASTE and SERVICE are used by all four levels. A grape or service step added for Grand Cru changes Premier Cru's and Village's Tasting/Service totals and their \"met\" figures. Service progress is keyed by position, so only append.\n\n7. **Layer discipline and visuals.** New behaviour (a Gauntlet door, a Grand Cru tasting pool, grid origin calls) belongs in codex27.js in both trees. Add it to index.html, sw.js ASSETS and the check-home FILES list, and register any ST store in ST_DEFAULTS and check-merge. The house art (codex26, css/house*.css) is ChatGPT's and must not be restyled. check-home holds the four blurbs and the subsection layout verbatim.\n\n8. **Accuracy.** This content was AI-written in the project; about one claimed error in six was itself wrong. Never change a defensible keyed answer, put nuance in `exp`, and send new material through an examiner pass and then a refute pass (the data-floor.js method).\n\n9. **Trees and branches.** Do not touch C:/Users/zpull/SommeliersCodex (the main checkout holds another author's uncommitted atlas work). Work stays on canon-audit in both worktrees, and shipping waits for the atlas branch. Publish through the `_publish` mirror with a plain push, and clear service workers before checking in a browser (`?nosw` does not stop an installed worker).\n\n10. **Stale documents.** CLAUDE.md (489/391) and HANDOFF.md (codex-v49, \"16 Master\" list questions) give wrong counts. Run the counts rather than trusting them."
+ },
+ "critique": {
+  "ok": false,
+  "problems": [
+   {
+    "problem": "The theory topic lists (W1 to W6) largely duplicate Premier Cru, and some duplicate Grand Cru itself, although the summary says covered topics were dropped. Running every planned topic against ADV_QUESTIONS and MASTER_QUESTIONS in the canon-audit tree turned up over 40 near-verbatim Premier Cru stems. Examples: Sancerre's three soils; Savennières' Coulée de Serrant and Roche aux Moines; the Muscadet crus' lees minimum; the Zotzenberg/Kaefferkopf exceptions; Crémant d'Alsace rosé grape; Bandol's and Cahors' minimums; Limoux's Saint-Hilaire claim and Blanquette against Crémant; Macvin; vin de paille du Jura; Chignin-Bergeron; Sciaccarellu on granite; Côte Brune/Blonde and Côte-Rôtie's Viognier share; Guigal's three LaLas with their slopes; La Place's actors and its non-Bordeaux icons; Cru Bourgeois since 2020; the minor Champagne grapes; Barolo's soil split; Gravner's qvevri; Soave Classico; Bolgheri Sassicaia DOC 2013; Primitivo=Tribidrag (twice); the Gratallops pioneers and llicorella; the Rías Baixas subzones; Bierzo's 2017 ladder; Cava de Paraje; the Douro's subzones, A-to-F grading and beneficio; Colares; talha; Roter Hang; Dönnhoff; the Thermenregion; Bikavér's blend rule; Retsina's resin; Lalou's domaines; Cros Parantoux; Monfortino/Francia; the Paris 1976 winemakers; Konstantin Frank; the Berlin Tasting; Chile's 2011 labelling; the Old Vine Charter's top tier; Waiheke; the MCC rules and name change; VOS/VORS; Eiswein and Icewine law; vin de liqueur against VDN; Cognac's crus; bourbon's pillars; light-strike; keeving; sake class polishing ratios; hiyaoroshi; TDN; Vino de Pago. Grand Cru itself already asks Willamette's nested AVAs ('name four subs'), Prosecco's full hierarchy, Madeira's ageing categories, Stellenbosch's wards, Crusted/Garrafeira Port and the botrytis chemistry.",
+    "fix": "Re-select the topics. Each one is KEEP (verified absent at both levels), CONVERT (Premier Cru asks the fact, so Grand Cru asks the full recitation, the numbers or an argued position, and drops the Premier Cru fact) or REPLACE. The revised W1 to W6 lists carry these tags, and a new overlap gate (W0b) must clear every item before minting."
+   },
+   {
+    "problem": "The 'level step-up check' is a grep an author is asked to do, and no gate enforces it. mint-ids only catches stems that share their first 80 characters, so a paraphrase of a Premier Cru question passes every gate.",
+    "fix": "Add W0b, a committed .scripts/check-overlap.js. It compares new Master items with ADV_QUESTIONS and MASTER_QUESTIONS on token overlap of q+ans and fails above a threshold, unless a sidecar file names the Premier Cru id the item deliberately deepens. It runs per wave before the mint dry run, and in primer mode against ADV_PRIMERS and MASTER_PRIMERS."
+   },
+   {
+    "problem": "Many planned stems are single-fact recall. The Grand Cru bank is written as examiner prompts (Recite, Explain, Compare, Make the case), and the level is oral and from memory. The critic also never checks that a stem reads well aloud, although codex8's oral mode speaks `q` through speechSynthesis.",
+    "fix": "Every new stem must be a full recitation (list:1, items, need), a number set or an argued position. The critic adds an oral check: no slashes, no bracketed asides, no unexpanded abbreviations such as 'VT/SGN' or 'MCC' in q."
+   },
+   {
+    "problem": "Recitations written with single-word accept entries are the exact shape check-paid fails on now. The Advanced 'four traditional minor Champagne grapes' and Alsace 'trio' questions produce cross_accept and compound_answer lines today. New village, cru and grape recitations will collide with existing accept lists.",
+    "fix": "Grade recitations through list:1/items/need (codex9), never single-word accepts. Expect new cross_accept lines against old questions each wave and resolve them one by one within that wave."
+   },
+   {
+    "problem": "W0 plans to 'remove the 22 recorded problems that no longer occur'. `--update-baseline` rewrites paid_known.py from everything currently found, so it also baselines every unresolved new problem. Problem keys embed stem and accept text, so editing a baselined question shows up as one new problem plus one gone. check-paid also runs for over two minutes, longer than the default tool timeout.",
+    "fix": "Fix first. Run --update-baseline only once every remaining NEW line has a written keep-decision, and list those decisions in the commit message. Run check-paid in the background, and read the gone/new pairs that come from edits."
+   },
+   {
+    "problem": "The pipeline runs sa-probe in the critic step, before minting. sa-probe.js addresses a question by its minted id.",
+    "fix": "Order each wave as: critic text pass, then update EXPECT, mint dry run and --apply once, then sa-probe paraphrases by id. Accept-list edits after minting are safe, because ids are only added and never re-seeded."
+   },
+   {
+    "problem": "Suite paraphrase grading is unverified. check-grading.mjs only grades each question's own ans, and sa-probe and list-harness are built from the standalone core.js, which lacks saConjHit. W11's 'run check-grading.mjs against the same paraphrase set' is not something that tool can do.",
+    "fix": "Add a scratch suite probe built from codex/js core.js, codex8 and codex9. Each wave's paraphrase file must get the same OK/WRONG verdict from it as from sa-probe on every new id."
+   },
+   {
+    "problem": "W7 says to 'replace the oral-technique balance' in Wine Fundamentals. That contradicts its own append-only target and would delete the only content serving the level's oral standard. W7's labels also name topics that are now dropped (La Place and the Crus Bourgeois, Côte-Rôtie's slopes, Bikavér law and others). check-primer-similarity.py is the intro-rewrite comparator and does not read the Master primers.",
+    "fix": "Append only and keep the oral facts. Generate the labels from the revised, refuted topics. De-duplicate with check-overlap.js primer mode against ADV_PRIMERS and MASTER_PRIMERS."
+   },
+   {
+    "problem": "W9 has three problems. f-sediment-on-demand repeats f-fragile-seventy-eight (master: old red, fill into the shoulder, decanting) and the Grand Cru Service question 'A table of six orders a 1990 Barolo you know is fragile'. f-wrong-bottle-opened sits close to f-wrong-vintage-up (Premier Cru). The legal checks cite the US FDA, but the floor file is set in pounds sterling.",
+    "fix": "Replace the sediment scenario with f-suspect-carry-in: a regular's famous old bottle at corkage looks counterfeit. Pitch f-wrong-bottle-opened on owning the error at the house's cost. Check allergen and pricing law against UK sources."
+   },
+   {
+    "problem": "W10's p-poulet-vin-jaune-morilles, with Jura Savagnin as best, would make three of nine Grand Cru bests Jura Savagnin or vin jaune (p-comte-thirty and p-vinaigrette-comte already are), plus Premier Cru's Vacherin. A dish cooked in its own answer wine is also guessable.",
+    "fix": "Replace it with p-ris-de-veau-morilles, whose best is not Jura. Add the rules that no dish is cooked in its own best wine and that no best repeats a region already used as best at this level."
+   },
+   {
+    "problem": "Topping every category up to 20 to match Premier Cru's count is parity, not the level's standard. Treated as a quota, it forces padding once duplicates are removed.",
+    "fix": "Treat 144 as a ceiling. A category with no sourced, non-overlapping item stays short, the shortfall is recorded, and EXPECT is set to the real total per wave."
+   },
+   {
+    "problem": "The version bumps are hard-coded (codex-v73 to v74, oot-codex-v107 to v108). The canon-audit corrections are committed but unbumped and are due to ship after the atlas branch, which may itself touch index.html and sw.js.",
+    "fix": "At ship time, fetch and rebase onto the atlas work, then read ?v= and CACHE fresh. Ship under one bump if canon-audit has not shipped yet; otherwise bump from what is live."
+   },
+   {
+    "problem": "W8 says only 'port by hand'. The suite's data-primers-master.js already differs on 54 lines, so corrections located by find-text will not land.",
+    "fix": "Port by meaning, keep a claim-to-line map for both trees, and diff it so every confirmed correction is shown to land in both."
+   }
+  ]
+ },
+ "plan": {
+  "summary": "Plan for expanding Grand Cru (key master) in the Sommelier Codex. Planning only; nothing has been edited. Work happens on canon-audit in C:/Users/zpull/SommeliersCodex-canon-audit (HEAD d289e07) and is ported to C:/Users/zpull/OOT-canon-audit/codex (HEAD 918fb9685). The main checkout C:/Users/zpull/SommeliersCodex is never touched.\n\nThe content model is unchanged and no new code layer is needed:\n- up to 144 theory questions in data-master.js;\n- 72 facts and 36 traps appended to data-primers-master.js;\n- 5 Floor scenarios and 5 Pairing dishes appended to the shared data-floor.js and data-pairing.js, which are byte-identical in both trees;\n- a first fact check of the 252 existing chapter items.\n\nTwo gate steps come first:\n- W0 clears check-paid, which is red with 38 new problems (22 in Master) from 83b705a.\n- W0b adds a cross-level overlap gate, check-overlap.js. Checks against the real banks showed the original topic list duplicated over 40 Premier Cru stems and several existing Grand Cru stems, and nothing currently stops that.\n\nTheory topics are tagged:\n- KEEP: verified absent at both levels;\n- CONVERT: Premier Cru asks the fact, so Grand Cru asks the full recitation, the numbers or an argued position;\n- REPLACE: the original was a duplicate. A 'gate-check' candidate is provisional until check-overlap.js clears it.\n\nRules for every new question:\n- Recitations use list:1/items/need, never single-word accept entries.\n- Stems must read well aloud for codex8's oral mode.\n- 144 is a ceiling, not a quota.\n\nLeft out on purpose, because each needs a codex27.js layer in both trees and the owner's sign-off: a Grand Cru tasting pool or origin/appellation/vintage calls; a Gauntlet or oral door on the level page; Service grading or Grand Cru service steps. No TASTE or GRAPES_PLUS additions and no restyling.\n\nExpected counts afterwards:\n- MASTER_QUESTIONS 576 + N, where N ≤ 144.\n- sa-harness master all OK.\n- list-harness master detected = 18 + the intended list items.\n- check-paid: no new problems, every kept problem justified.\n- check-overlap clean.\n- check-home 189/189 standalone and 190/190 suite.\n- Suite check-grading 1,964 + N, and the suite paraphrase probe agrees with sa-probe on every new id.",
+  "workstreams": [
+   {
+    "name": "W0 Gate triage: clear check-paid before adding anything",
+    "kind": "gate fix (question corrections or recorded decisions)",
+    "target": "Standalone: js/data-master.js and js/data-advanced.js, only where a fix is right; rewrite/paid_known.py for problems kept on purpose. Suite: the same meaning-level edits in codex/js/data-master.js and data-advanced.js, re-worded without em dashes, keeping ids.",
+    "count": 38,
+    "topics": [
+     "Master, 6 cross_accept: 'prosecco' and 'prosecco doc' on 'Name Italy's largest DOC by volume' also grade two Prosecco questions. '2007' on the Pétillant Originel question also grades three others. Lengthen to strict phrases and probe each sibling.",
+     "Master, 3 loose_tilde ('~champagne', '~2010', '~2011'): lengthen the phrase. Do not reach for ex=True without sa-probe, because ex narrowing once broke 23 correct answers.",
+     "Master, 3 negation_probe (Pétillant Originel, the Port liberalisation, authentic Trappist): add a guard or record the item with a reason.",
+     "Master, 9 comparative_probe ('less than …' inversions on the Crémant press fraction, Ayze, Japan Wine 85%, en primeur 2010-11, Bremmer Calmont, the Tokaj gönci, Columbia Valley, Ontario DVAs, INAO habilitation): usually record each with a reason.",
+     "Master, 1 accept_list: 'savennières' is duplicated once normalised. Drop the duplicate.",
+     "Advanced, 16: most come from 'four traditional minor Champagne grapes' and the Alsace 'trio of exceptions'. Converting both to list:1/items/need clears the compound_answer and cross_accept lines. Then handle the Steiermark cross_accept and the Chasselas, Talha and Kékfrankos inversions.",
+     "Run --update-baseline only after every remaining NEW line has a written keep-decision, because it re-records everything found.",
+     "Record the baseline: sa-harness master 576/576, adv 581/581, list-harness master detected 18 (Advanced's 3 known failures unchanged), check-claims 0, check-home 189/190."
+    ],
+    "pipeline": "1. Run check-paid in the background and save the 38 lines.\n2. A fixer agent proposes a fix or a keep-decision with a reason for each.\n3. A refuter runs sa-probe on each touched id with 3 right paraphrases and 2 wrong answers. A narrowing that rejects a right answer is refused.\n4. A critic reads every keep-decision.\n5. Run --update-baseline once, then confirm 'no new problems'.\n6. Gates: check-syntax; sa-harness master and adv; list-harness (Advanced detected rises only by the converted items); check-claims.\n7. Suite: hand port, check-grading.mjs, the suite paraphrase probe.\n8. One commit per tree, before any new content.",
+    "whyItMatters": "The only Python gate that reads data-master.js is red. Until it is green, new problems cannot be told apart from 83b705a's."
+   },
+   {
+    "name": "W0b Cross-level overlap gate",
+    "kind": "gate tool (script)",
+    "target": "Standalone: new .scripts/check-overlap.js plus a sidecar .scripts/overlap-stepups.json (new-item key mapped to the Premier Cru id it deliberately deepens). It reads the standalone banks; no suite copy is needed.",
+    "count": 1,
+    "topics": [
+     "Input: a wave file of unminted objects, or the minted bank with a list of new ids.",
+     "For each new item: the three nearest stems in ADV_QUESTIONS and MASTER_QUESTIONS by normalised token overlap on q+ans, with stop-words removed.",
+     "Fail above a calibrated threshold unless the sidecar names the deepened Premier Cru id and the stem is a recitation, a number set or an argument.",
+     "Primer mode: the same comparison for new facts and traps against ADV_PRIMERS and MASTER_PRIMERS.",
+     "Must run in under 30 seconds."
+    ],
+    "pipeline": "1. AUTHOR the script.\n2. REFUTE: run it on the original plan's topic stubs. It must flag the duplicates in this critique (for example 'three soil types of Sancerre' and the minor Champagne grapes) and must not flag the KEEP items.\n3. CRITIC: estimate false positives on 20 random existing pairs.\n4. GATES: check-syntax. Commit in the standalone.",
+    "whyItMatters": "No current gate compares new Master items with Premier Cru, so a paraphrase passes everything. This is the failure the original topic list showed."
+   },
+   {
+    "name": "W1 Theory, France (Burgundy to Corsica)",
+    "kind": "question (short answer; recitations as list:1)",
+    "target": "Standalone: js/data-master.js, one block '/* ═══════ Grand Cru expansion: France ═══════ */' before the closing ]; (add the comma to the current last line). cat exactly as in core.js DRILL_GROUPS. Suite: codex/js/data-master.js, minted ids verbatim, re-worded without em dashes.",
+    "count": 33,
+    "topics": [
+     "Burgundy KEEP: recite Chablis's seven grands crus (list, need 7). Leave out La Moutonne, which Premier Cru asks.",
+     "Burgundy KEEP: the five Montrachet-family grands crus, each with its commune or communes (list).",
+     "Burgundy CONVERT: recite Morey-Saint-Denis's grands crus, including its slice of Bonnes-Mares (list). Drop the sale dates.",
+     "Burgundy REPLACE (was premox): the Côte Chalonnaise's five village AOPs north to south and the defining grape of each (list).",
+     "Bordeaux KEEP: recite Margaux's ten 1855 third growths (list, need 8).",
+     "Bordeaux KEEP: the second wine of each first growth (list, need 5).",
+     "Bordeaux REPLACE (was Cru Bourgeois): the 1959 Graves classification against 1855, and the estates classed for both colours (list; verify).",
+     "Bordeaux REPLACE (was La Place): the four Saint-Émilion satellites and the 2009 Côtes de Bordeaux family (list; verify).",
+     "Champagne KEEP: recite the seventeen grand cru villages (list, need 12).",
+     "Champagne KEEP: match seven prestige cuvées to their houses (list).",
+     "Champagne KEEP: the houses that block malolactic conversion (verify Lanson), and the effect on ageing.",
+     "Champagne REPLACE (was the minor grapes): Coteaux Champenois and Rosé des Riceys. What each permits, and argue why still Champagne is rising.",
+     "Loire CONVERT: Sancerre from terres blanches to caillottes to silex, with a village or site for each and what each gives in the glass.",
+     "Loire REPLACE (was Savennières): Chinon, Bourgueil and Saint-Nicolas-de-Bourgueil compared on gravel, sand and tuffeau.",
+     "Loire CONVERT: recite Muscadet's approved crus communaux (list; verify the count).",
+     "Loire REPLACE (was Jasnières): Quarts de Chaume Grand Cru's rules (yield, hand tries, must weight, no chaptalisation).",
+     "Alsace CONVERT: VT and SGN minimum must weights by grape group, in numbers (verify).",
+     "Alsace REPLACE (was Zotzenberg/Kaefferkopf): the communale and lieu-dit tiers and the status of the premier cru project (verify).",
+     "Alsace REPLACE (was Crémant d'Alsace): the Alsace sweetness-indication rules on the label (verify).",
+     "Alsace KEEP: red grand cru Pinot Noir in Hengst and Kirchberg de Barr (verify the year).",
+     "Rhône KEEP: recite the seventeen Rhône crus (list, need 14).",
+     "Rhône REPLACE (was Guigal's LaLas): the southern crus promoted since 2005, with year and colours (list; gate-check).",
+     "Rhône REPLACE (was Côte Brune/Blonde and Viognier): Saint-Joseph's delimitation history and the return to the granite slopes (verify; gate-check).",
+     "Rhône KEEP: Condrieu's near-extinction in the 1960s and its revival, with numbers.",
+     "Southern France CONVERT: argue Bandol's Mourvèdre and 18 months in wood: what the grape does on the restanques, and the trade-off.",
+     "Southern France CONVERT: Cahors's terraces against the causse, and what each gives.",
+     "Southern France REPLACE (was Limoux): the Languedoc ladder from AOP to Grand Vin to Cru, and recite its crus (list; gate-check).",
+     "Southern France KEEP: Bellet and Palette as Provence's coastal and limestone survivors (gate-check).",
+     "Southern France CONVERT: Collioure, the dry wines of the Banyuls zone, and why one schist makes both.",
+     "Jura, Savoie & Corsica REPLACE (was Macvin): Trousseau and Poulsard, where each excels and what each demands in the cellar.",
+     "Jura, Savoie & Corsica REPLACE (was vin de paille): Bugey's crus (Cerdon, Manicle, Montagnieu) and what each makes.",
+     "Jura, Savoie & Corsica CONVERT: recite the Vin de Savoie crus and the grape bound to each (list; verify).",
+     "Jura, Savoie & Corsica CONVERT: recite the Vin de Corse subregions and the grape that leads in each (list; verify)."
+    ],
+    "pipeline": "THE THEORY PIPELINE (W1 to W6 all use it).\n\n1. SELECT:\n- Each topic stub goes through check-overlap.js.\n- A colliding REPLACE or gate-check item is swapped from the category's pre-checked reserve.\n- Shortfalls are recorded, not padded.\n\n2. AUTHOR (one agent per category):\n- Write the object without an id: cat, q, sa:1, accept[] (lower-case, accents folded, ~ only on long strict phrases), ans, exp. Recitations use list:1/items/need.\n- Write examiner prompts; nuance goes in exp.\n- Cite a primary source per claim (INAO/eAmbrosia, TTB, IVDP, the Consejo Regulador, VDP, Wine Australia, SAWIS/WOSA, the NZ GI register, NTA), otherwise the Oxford Companion 5th edition, Wine Grapes or the World Atlas 8th edition.\n- No '|' in stems.\n\n3. REFUTE:\n- Two refuters with web access quote the source line; an arbiter settles disagreements.\n- Superlative, ownership and genetic claims need a dated source.\n\n4. CORRECT:\n- Apply confirmed findings only and never change a defensible key.\n- An item that cannot be sourced is replaced from the reserve.\n\n5. CRITIC (text pass):\n- Grand Cru need, ambiguity, recitable in under a minute.\n- Reads aloud: no slashes, bracketed asides or abbreviations in q.\n- Rerun check-overlap.\n\n6. MINT:\n- Update EXPECT['MASTER_QUESTIONS'] in .scripts/mint-ids.py.\n- Clean dry run, then --apply once. Never re-mint.\n\n7. PROBE:\n- sa-probe.js by id with 3 right paraphrases and 2 near misses. A false reject is a blocker.\n- Accept-list fixes after minting keep the id.\n\n8. GATES:\n- check-syntax.\n- sa-harness master: 0 WRONG, 0 unsure.\n- list-harness: detected count rises by exactly the intended list items, all at full marks.\n- check-claims: 0 failures; read the new lint lines.\n- check-paid in the background: new cross_accept lines are fixed or given a written decision.\n- check-overlap.\n- check-home 189/189.\n\n9. SUITE PORT (W11), then commit both trees.",
+    "whyItMatters": "The real French gaps are full recitations: Chablis, the Montrachets, Margaux's thirds, the second wines, the seventeen villages and crus, the Savoie and Corsica crus. Rule sets such as Quarts de Chaume Grand Cru, the VT/SGN numbers and Graves 1959 are gaps too. The facts Premier Cru already asks are not."
+   },
+   {
+    "name": "W2 Theory, Europe and Icons",
+    "kind": "question (short answer; recitations as list:1)",
+    "target": "Standalone: js/data-master.js block '/* ═══════ Grand Cru expansion: Europe ═══════ */'. Suite: codex/js/data-master.js, ids verbatim, no em dashes.",
+    "count": 31,
+    "topics": [
+     "Italy North CONVERT: recite Barolo's eleven communes and name the five core ones (list).",
+     "Italy North REPLACE (was Friuli skin contact): Valtellina Superiore's five sottozone and how Sforzato differs (list).",
+     "Italy North CONVERT: Soave's 33 UGA of 2019, what they are, and name four (list; verify).",
+     "Italy North KEEP: Lugana's Turbiana and its identity with Verdicchio (genetic claim, dated source).",
+     "Italy Central & South KEEP: Gran Selezione after 2021: the 11 UGAs, at least 90% Sangiovese, native grapes only.",
+     "Italy Central & South REPLACE (was the Bolgheri Sassicaia DOC): Verdicchio dei Castelli di Jesi against Matelica, and both Riserva DOCGs (gate-check).",
+     "Italy Central & South CONVERT: Montepulciano the grape against Vino Nobile the town, Colline Teramane DOCG, and Vino Nobile's Pievi (verify).",
+     "Italy Central & South REPLACE (was Primitivo genetics): Cerasuolo di Vittoria's blend proportions, its Classico zone and its single-DOCG status (gate-check).",
+     "Spain REPLACE (was the Gratallops pioneers): Priorat's Vi de Vila and Vinya Classificada tiers (verify).",
+     "Spain CONVERT: recite Rías Baixas's five subzones and argue what separates Salnés from Condado and O Rosal (list).",
+     "Spain REPLACE (was Bierzo): Ribeira Sacra's five subzones and its heroic viticulture (list).",
+     "Spain REPLACE (was Cava de Paraje): the Duero sequence west to east (Toro, Rueda, Ribera del Duero), with grape, altitude and style (gate-check).",
+     "Portugal CONVERT: argue how an A-to-F grade becomes a beneficio allocation, and why the system is under pressure.",
+     "Portugal REPLACE (was the Douro subzones): Port's dated tawny categories and Colheita's minimum in wood (verify; gate-check; keep only one of this and W4's Port item).",
+     "Portugal REPLACE (was Colares): the Alentejo DOC's eight subregions, and why Portalegre is the outlier (list).",
+     "Portugal REPLACE (was talha): Moscatel de Setúbal and Moscatel Roxo, with their ageing categories (gate-check).",
+     "Germany CONVERT: recite the Roter Hang's sites across Nierstein and Nackenheim, and explain Rotliegend (list).",
+     "Germany CONVERT: recite the Mittelhaardt's great villages north to south (list; verify). Drop the three Bs.",
+     "Germany REPLACE (was Dönnhoff): VDP Grosses Gewächs, Grosse against Erste Lage, and how the 2021 law's origin pyramid maps onto them.",
+     "Germany REPLACE (was the Ruwer estates): gate-check candidate the Ahr's Spätburgunder on slate and the 2021 flood.",
+     "Austria KEEP: Grüner Veltliner's parentage and the St. Georgen rediscovery (dated genetic source).",
+     "Austria KEEP: Styria's three DACs and Weststeiermark Schilcher from Blauer Wildbacher.",
+     "Austria REPLACE (was the Thermenregion): recite Austria's DACs and the Gebietswein, Ortswein, Riedenwein pyramid (list; verify; gate-check).",
+     "Austria CONVERT: how the ÖTW's Erste Lage and any Grosse Lage step sit beside DAC Riedenwein law (verify).",
+     "Hungary & Greece REPLACE (was Bikavér): gate-check candidate Kadarka's revival in Szekszárd and on the Great Plain.",
+     "Hungary & Greece CONVERT: Villányi Franc's premium and super-premium rules, in numbers (verify).",
+     "Hungary & Greece KEEP: Malagousia's revival by Evangelos Gerovassiliou, framed as the revival story.",
+     "Hungary & Greece CONVERT: Retsina as a Traditional Designation: legal basis, grapes, the modern revival.",
+     "Producers & Icons CONVERT: Lalou Bize-Leroy's co-management of DRC and its end in 1992 (dated).",
+     "Producers & Icons CONVERT: Henri Jayer's cellar method and his heirs (Méo-Camuzet, Emmanuel Rouget).",
+     "Producers & Icons CONVERT: Monfortino's release regime and Roberto Conterno's later acquisitions (dated)."
+    ],
+    "pipeline": "The theory pipeline in W1. Italian and Spanish rules are checked against the disciplinari and pliegos de condiciones, German sites against the VDP Grosse Lage lists, Austrian law against the DAC regulations.",
+    "whyItMatters": "These are the rule updates and full recitations neither bank holds: Gran Selezione, GG, the UGAs, the subzone lists, Alentejo's subregions and Grüner's parentage. The Icons get Grand Cru depth on figures Premier Cru only names."
+   },
+   {
+    "name": "W3 Theory, New World",
+    "kind": "question (short answer; recitations as list:1)",
+    "target": "Standalone: js/data-master.js block '/* ═══════ Grand Cru expansion: New World ═══════ */'. Suite: codex/js/data-master.js, ids verbatim, no em dashes.",
+    "count": 24,
+    "topics": [
+     "California CONVERT: the 1976 Paris tasting's full results and the later rematches; argue what it did and did not prove.",
+     "California KEEP: Napa's mountain AVAs and valley-floor benches (list; gate-check against the Mayacamas question).",
+     "California KEEP: Paso Robles's eleven sub-AVAs of 2014 and Tablas Creek's Beaucastel cuttings (list).",
+     "California KEEP: West Sonoma Coast AVA (2022) against Fort Ross-Seaview (gate-check).",
+     "Pacific NW, NY & Canada CONVERT: Oregon's founding: Eyrie 1965, the 1979 Olympiades, Drouhin's Dundee Hills purchase (dated).",
+     "Pacific NW, NY & Canada CONVERT: the Rocks District as a Walla Walla sub-AVA lying wholly in Oregon, and what that means on a label.",
+     "Pacific NW, NY & Canada REPLACE (was Konstantin Frank): Finger Lakes Riesling, the deep-lake effect, Seneca against Keuka, and the IRF scale (gate-check).",
+     "Pacific NW, NY & Canada REPLACE (was the Willamette sub-AVAs, already in Grand Cru): the Okanagan's sub-GIs and BC's VQA structure (list; gate-check).",
+     "South America CONVERT: Salta's Calchaquí Valleys in numbers: altitude, Torrontés Riojano, high-altitude Malbec.",
+     "South America CONVERT: argue whether Chile's Costa / Entre Cordilleras / Andes split explains Chilean wine better than the north-south valleys.",
+     "South America REPLACE (was the Berlin Tasting): Uruguay's Tannat, Canelones against Maldonado (gate-check).",
+     "South America KEEP: Chile's phylloxera-free status and the SAG border regime.",
+     "Australia CONVERT: recite the Old Vine Charter's four tiers with their ages (list).",
+     "Australia KEEP: Margaret River's founders and the Gin Gin clone.",
+     "Australia KEEP: the Yarra Valley icons: Mount Mary, Yarra Yering under Bailey Carrodus, the Dry Reds.",
+     "Australia REPLACE (was the GI ladder and 85% rule): Langton's Classification, its tiers and Exceptional wines (list; verify the edition).",
+     "New Zealand KEEP: Marlborough's Wairau, Southern Valleys and Awatere compared (gate-check).",
+     "New Zealand REPLACE (was Waiheke): North Canterbury and Waipara, limestone and Pyramid Valley (gate-check).",
+     "New Zealand KEEP: Gisborne and Millton; verify the biodynamic 'first' claim (gate-check).",
+     "New Zealand KEEP: SWNZ and the certified share of the vineyard, with the year dated in exp (gate-check).",
+     "South Africa KEEP: Hemel-en-Aarde's three wards and Hamilton Russell (list).",
+     "South Africa REPLACE (was MCC): gate-check candidate the Cape South Coast's wards beyond Hemel-en-Aarde, Elgin and Elim. Stellenbosch's wards are already in Grand Cru.",
+     "South Africa CONVERT: Chenin's share of the Cape vineyard (dated) and the Certified Heritage Vineyards seal (gate-check).",
+     "South Africa KEEP: the Swartland Independent Producers and their rules (verify)."
+    ],
+    "pipeline": "The theory pipeline in W1. Sources: TTB AVA petitions and final rules (27 CFR part 9), Wine Australia's GI register, the NZ GI register and SWNZ reports, SAWIS/WOSA and the Wine of Origin scheme, SAG and the 2011 Chilean decree, Langton's published edition. Statistics carry a dated year in exp, and no key depends on a figure that changes yearly.",
+    "whyItMatters": "The New World is examined on AVA and GI structure, legal labels and founding events. The founding stories Premier Cru already tells are dropped in favour of structures and recitations it lacks."
+   },
+   {
+    "name": "W4 Theory, Styles (Sparkling, Fortified, Sweet, Terroir)",
+    "kind": "question (short answer; recitations as list:1)",
+    "target": "Standalone: js/data-master.js block '/* ═══════ Grand Cru expansion: Styles ═══════ */'. Suite: codex/js/data-master.js, ids verbatim, no em dashes.",
+    "count": 16,
+    "topics": [
+     "Sparkling CONVERT: recite the rules every French Crémant shares, in numbers.",
+     "Sparkling KEEP: Asti against Moscato d'Asti: pressure, alcohol, single fermentation (gate-check).",
+     "Sparkling KEEP: Martinotti against Charmat, and 'Metodo Martinotti lungo'.",
+     "Sparkling KEEP: Lambrusco di Sorbara, Grasparossa and Salamino compared.",
+     "Fortified REPLACE (was mistelle against VDN): Port's age-indicated tawnies and Colheita (verify; keep only one of this and W2's Port item).",
+     "Fortified CONVERT: recite the Rivesaltes categories (list).",
+     "Fortified CONVERT: canteiro against estufagem, the chemistry and the legal temperature and time. Drop Frasqueira, which Grand Cru covers.",
+     "Fortified REPLACE (was VOS/VORS): gate-check candidate Sherry's añada exception and biological ageing of old Fino.",
+     "Sweet REPLACE (was Eiswein/Icewine): Passito di Pantelleria, Vin Santo and Recioto compared by drying method (gate-check).",
+     "Sweet CONVERT: the Prädikat ladder in Oechsle with the regional ranges (verify; gate-check).",
+     "Sweet KEEP: Vin de Constance and Klein Constantia's 1986 revival (gate-check).",
+     "Sweet CONVERT: Recioto della Valpolicella, di Soave and di Gambellara compared.",
+     "Terroir REPLACE (was Winkler bands): soil water, field capacity and wilting point, and moderate post-véraison stress (gate-check).",
+     "Terroir KEEP: altitude in numbers: lapse rate, diurnal range, UV.",
+     "Terroir REPLACE (was stones as heat stores): gate-check candidate the Huglin index against Winkler at European latitudes.",
+     "Terroir KEEP: aspect and latitude: why slope matters more away from the equator."
+    ],
+    "pipeline": "The theory pipeline in W1. Number-heavy keys are checked against the legal text: the INAO crémant cahiers, DOCG disciplinari, the Weinverordnung, IVDP/IVBAM, the Consejo Regulador Jerez. Accept lists take the number alone and with its unit.",
+    "whyItMatters": "Styles are examined as numbers and mechanisms. These fill gaps neither bank covers, without repeating Premier Cru's Eiswein, VOS/VORS and VDN items."
+   },
+   {
+    "name": "W5 Theory, Beyond Wine (Spirits & Cocktails, Beer & Cider, Sake)",
+    "kind": "question (short answer; recitations as list:1)",
+    "target": "Standalone: js/data-master.js block '/* ═══════ Grand Cru expansion: Beyond Wine ═══════ */'. Suite: codex/js/data-master.js, ids verbatim, no em dashes.",
+    "count": 12,
+    "topics": [
+     "Spirits CONVERT: recite Cognac's six crus, Fine Champagne's rule and the VS, VSOP and XO minimums (list).",
+     "Spirits CONVERT: the Bottled-in-Bond Act 1897, 'straight', and Tennessee's Lincoln County process.",
+     "Spirits KEEP: tequila categories, the 51% mixto rule and the NOM; mezcal, artesanal and ancestral.",
+     "Spirits KEEP: Japanese whisky's 2021 standard and its compliance date.",
+     "Beer & Cider REPLACE (was light-strike): hop chemistry, isomerisation and dry-hop biotransformation (gate-check).",
+     "Beer & Cider KEEP: Burton's gypsum against Pilsen's soft water (gate-check).",
+     "Beer & Cider KEEP: the Long Ashton cider apple classes (list; gate-check).",
+     "Beer & Cider REPLACE (was keeving): Poiré Domfrontais and why perry pears differ (gate-check against Grand Cru's perry question).",
+     "Sake CONVERT: recite the eight special-designation classes with their polishing ratios (list).",
+     "Sake KEEP: the great sake rices and shinpaku (gate-check).",
+     "Sake CONVERT: recite the pasteurisation labels (list).",
+     "Sake REPLACE (was Nada against Fushimi, if it collides): honkaku against korui shochu, and awamori."
+    ],
+    "pipeline": "The theory pipeline in W1. Spirits law is checked against the BNIC cahier, TTB 27 CFR 5, the Bottled-in-Bond Act, NOM-006 and NOM-070, and JSLMA; sake against NTA notices. The critic adds the head-bartender check.",
+    "whyItMatters": "Grand Cru's Beyond Wine lacks the full legal definitions and classifications a Master candidate recites. Premier Cru's single-fact versions stay where they are."
+   },
+   {
+    "name": "W6 Theory, The Craft (Fundamentals, Labels, Viticulture, Trade, Service, Pairing, Business)",
+    "kind": "question (short answer; recitations as list:1)",
+    "target": "Standalone: js/data-master.js block '/* ═══════ Grand Cru expansion: The Craft ═══════ */'. Suite: codex/js/data-master.js, ids verbatim, no em dashes.",
+    "count": 28,
+    "topics": [
+     "Wine Fundamentals REPLACE (was TDN): reductive sulfur compounds, copper fining, and why disulfides resist it.",
+     "Wine Fundamentals KEEP: the Brett markers 4-EP, 4-EG and isovaleric acid, each with its aroma.",
+     "Wine Fundamentals CONVERT: TBA and TeCA from cellar materials against TCA from cork, with thresholds (gate-check).",
+     "Wine Fundamentals KEEP: volatile acidity, the EU and US limits, and ethyl acetate.",
+     "Classifications & Labels REPLACE (was US percentages): EU ingredient and nutrition labelling since December 2023 and the e-label (gate-check).",
+     "Classifications & Labels CONVERT: the Vinos de Pago by region, with the current count (verify).",
+     "Classifications & Labels KEEP: 'Château' and 'Clos' as EU traditional terms.",
+     "Classifications & Labels KEEP: South Africa's 'estate wine' and 'single vineyard' terms (gate-check).",
+     "Viticulture & Winemaking KEEP: grapevine trunk diseases and Simonit & Sirch sap-flow pruning.",
+     "Viticulture & Winemaking KEEP: oak by forest, grain, seasoning and toast, and whisky lactone.",
+     "Viticulture & Winemaking CONVERT: co-inoculation against sequential malolactic, and diacetyl management.",
+     "Viticulture & Winemaking KEEP: cold soak against post-ferment maceration.",
+     "Wine Trade & Aging CONVERT: storage science in numbers (gate-check).",
+     "Wine Trade & Aging KEEP: the US three-tier system and franchise laws (gate-check).",
+     "Wine Trade & Aging CONVERT: a worked landed cost under EXW, FOB and DDP.",
+     "Wine Trade & Aging CONVERT: recite the fill-level vocabulary for Bordeaux and Burgundy bottles and its auction meaning (list).",
+     "Service & Hospitality KEEP: service temperatures by style, in degrees (gate-check).",
+     "Service & Hospitality CONVERT: fining agents and allergen disclosure, and what a sommelier can promise (distinct from W9).",
+     "Service & Hospitality KEEP: recite the large formats with their volumes, and how to decant one (list).",
+     "Service & Hospitality REPLACE (was guéridon and the unpublished 'CMS service standards'): gate-check candidate opening and serving a 1990s Champagne.",
+     "Food & Pairing KEEP: salt against bitterness and astringency (gate-check).",
+     "Food & Pairing KEEP: iron and fish (Tamura et al. 2009).",
+     "Food & Pairing KEEP: cheese families by mechanism, with a wine and reason for each (gate-check).",
+     "Food & Pairing KEEP: pair to the sauce: beurre blanc, beurre rouge, bordelaise.",
+     "Business of the Sommelier KEEP: FIFO against weighted average, depletion, variance.",
+     "Business of the Sommelier KEEP: stepped markup against a flat percentage at three cost points.",
+     "Business of the Sommelier KEEP: truth in menu and vintage substitution.",
+     "Business of the Sommelier REPLACE (was BTG yield, covered twice in Grand Cru): allocation management and what it earns (gate-check)."
+    ],
+    "pipeline": "The theory pipeline in W1. Fundamentals and Viticulture are checked against AJEV, J. Agric. Food Chem. or the AWRI. Legal numbers against EU Reg 2019/934, 2019/33 and 2021/2117, TTB 27 CFR 4 and 24, and the WO scheme. The critic recomputes every worked figure, and accept lists take the number with and without the currency or unit.",
+    "whyItMatters": "The Craft is where floor work meets theory. The gaps are fault chemistry, legal limits, oak and maceration, large formats, the iron and sauce mechanisms, valuation and truth in menu. TDN, US label percentages and BTG maths are already held."
+   },
+   {
+    "name": "W7 Chapters: two facts and one trap per Grand Cru chapter",
+    "kind": "primer fact and trap",
+    "target": "Standalone: js/data-primers-master.js, appending [label,text] to facts and a string to traps of each cat object. Nothing existing is replaced, and labels are not repeated. Suite: codex/js/data-primers-master.js, re-worded without em dashes.",
+    "count": 108,
+    "topics": [
+     "Every chapter: fact 1 condenses the category's new, refuted recitations, and fact 2 the mechanism or law. The trap is the commonest wrong answer refuters met.",
+     "Labels are written only after the revised questions clear refutation. The original label list is discarded because it names dropped topics.",
+     "Wine Fundamentals: keep all four oral-technique facts and three traps. Append 'Reduction chemistry' and 'Faults in numbers', plus a trap on 4-EP against 4-EG.",
+     "Facts run about 250 to 400 characters, bringing chapters toward Premier Cru's 6 facts and 4 traps.",
+     "Every new fact passes check-overlap primer mode against ADV_PRIMERS and MASTER_PRIMERS."
+    ],
+    "pipeline": "1. AUTHOR after the category's questions pass refutation.\n2. REFUTE against the corrected questions' sources.\n3. CORRECT.\n4. CRITIC reads the whole chapter for contradiction, repetition and level fit.\n5. GATES: check-syntax; check-overlap primer mode; check-home; a Chapter door read in the browser with service workers cleared. check-primer-similarity.py does not apply.\n6. SUITE: re-word without em dashes; the dash gate stays at baseline.",
+    "whyItMatters": "Grand Cru chapters are about two-thirds of Premier Cru's. A chapter must teach what the new questions test without losing the oral technique the level is built on."
+   },
+   {
+    "name": "W8 Chapter audit: first fact check of the existing Grand Cru chapters",
+    "kind": "primer audit (fact and trap verification)",
+    "target": "Standalone: js/data-primers-master.js, the 144 existing facts and 108 traps, edited in place only on confirmed error. Suite: codex/js/data-primers-master.js, which already differs on 54 lines, so corrections are made by meaning.",
+    "count": 252,
+    "topics": [
+     "Every existing fact and trap, checked claim by claim against a source.",
+     "Priority 1: numbers and dates.",
+     "Priority 2: ownership and first/only/largest claims.",
+     "Priority 3: contradictions with the 205 canon-audited questions' corrected ans or exp.",
+     "Keep a claim-to-line map for both trees."
+    ],
+    "pipeline": "1. AUDIT: one auditor per domain gives a verdict and source per claim.\n2. REFUTE every 'wrong' verdict.\n3. CORRECT confirmed claims only, keeping labels.\n4. CRITIC reads each changed chapter whole.\n5. GATES: check-syntax, check-home, a Chapter door read; diff the claim map across trees.\n6. SUITE: port by meaning, no em dashes.\nRuns alongside W1 to W6.",
+    "whyItMatters": "No gate reads chapters, and the canon audit changed 205 questions without re-reading them, so a chapter may now teach what the bank marks wrong."
+   },
+   {
+    "name": "W9 The Floor: five Grand Cru scenarios",
+    "kind": "floor scenario",
+    "target": "js/data-floor.js FLOOR, byte-identical in both trees: append { id:'f-<slug>', lvl:'master', s, opts:[4], best (index), why }. Ids are permanent. Bump data-floor.js?v= in both index.html files at release.",
+    "count": 5,
+    "topics": [
+     "f-wrong-bottle-opened: a junior opens a four-figure Burgundy for the wrong table. Own it at the house's cost, salvage the bottle, coach after service. Pitched on ownership, unlike f-wrong-vintage-up.",
+     "f-fining-allergy: a guest with a severe egg or fish allergy asks about fining you cannot confirm for that bottle. Steer to verifiable wines. Check against retained Reg 1169/2011 and 579/2012 and the Food Information Regulations 2014.",
+     "f-list-price-typo: the printed list shows a first growth at a tenth of its price. Decide the house's response and the words at the table. Distinct from f-price-dispute. Check against UK pricing law (CPUT/CRA 2015).",
+     "f-suspect-carry-in (replaces f-sediment-on-demand): a regular brings a famous old bottle for corkage, and the capsule, label and fill look wrong; the table is celebrating. Distinct from f-cloudy-carry-in.",
+     "f-menu-changed-after-pairing: at 6 pm the kitchen swaps a sauce after the pairing is printed and the wines pulled. Re-pair, brief the floor, tell the guests."
+    ],
+    "pipeline": "Follow the data-floor.js header method.\n1. AUTHOR: four believable options with no straw men; why also explains the nearest miss; money in pounds.\n2. REFUTE: two refuters argue for another option and check every legal or allergen claim against UK sources. If a refuter wins, rewrite.\n3. CORRECT.\n4. CRITIC: the owner's three-star floor read, and distinct from every existing scenario at every level.\n5. GATES: check-syntax in both trees; check-home; in the browser with service workers cleared, the Floor drill deals 8 and the Finals 6 from the master pool, and the count line no longer widens; check-merge unchanged.\n6. Copy byte for byte to the suite; keep it free of em dashes.",
+    "whyItMatters": "Grand Cru has 4 scenarios against Premier Cru's 9. The drill asks for 8 and the test for 6, and at 4 the level sits on byLevel's threshold."
+   },
+   {
+    "name": "W10 Pairing: five Grand Cru dishes",
+    "kind": "pairing",
+    "target": "js/data-pairing.js PAIRS, byte-identical in both trees: append { id:'p-<slug>', lvl:'master', dish, needs:[from acid, tannin, low-tannin, sweet, body, low-alc, bubbles, oak, low-oak], wines:[4], best (index), why }. Bump data-pairing.js?v= in both index.html files at release.",
+    "count": 5,
+    "topics": [
+     "p-ris-de-veau-morilles (replaces p-poulet-vin-jaune-morilles): veal sweetbreads, morels, Madeira cream. needs acid, body, low-tannin. Best is not Jura; set it against mature white Burgundy, aged Savennières and a red Burgundy premier cru.",
+     "p-pigeon-salmis: roast pigeon with a blood-and-liver salmis. needs tannin, acid, body.",
+     "p-oursin-raw: raw sea urchin on toasted brioche. needs acid, low-oak, bubbles; why carries the iron and iodine logic.",
+     "p-peking-duck: pancakes, hoisin, cucumber, spring onion. needs low-tannin, acid, sweet.",
+     "p-tarte-tatin-creme-fraiche: needs sweet, acid. A sweet Chenin as best, against Sauternes, Tokaji and Moscato d'Asti."
+    ],
+    "pipeline": "1. AUTHOR:\n- levers only from the fixed set;\n- four real wines;\n- best and why argued on mechanism.\nRules: no dish is cooked in its own best wine, and no best repeats a region already used as best at Grand Cru (Chablis, Jura, Mosel).\n2. REFUTE: two refuters each argue for a rejected wine; check each dish against Escoffier or Larousse Gastronomique.\n3. CORRECT.\n4. CRITIC: would a Master examiner accept the best without argument?\n5. GATES: check-syntax in both trees; check-home; the Pairing drill deals 6 from the master pool; check-merge unchanged.\n6. Copy byte for byte to the suite.",
+    "whyItMatters": "Grand Cru has 4 dishes against Premier Cru's 9, and the drill asks for 6. Today's set has no classical sauce, no game with blood, no raw shellfish and no dessert."
+   },
+   {
+    "name": "W11 Suite port, gates and ship",
+    "kind": "release (port, version bumps, docs)",
+    "target": "Standalone C:/Users/zpull/SommeliersCodex-canon-audit and suite C:/Users/zpull/OOT-canon-audit/codex, both on canon-audit, then the OutsideOfTime/_publish mirror.",
+    "count": 252,
+    "topics": [
+     "Port each wave's questions with ids copied verbatim (never mint in the suite), and the chapter items, re-worded by hand without em dashes in the CFL voice.",
+     "Build a scratch suite paraphrase probe from codex/js core.js, codex8 and codex9 (with saConjHit). Its verdicts must match the standalone sa-probe on every new id.",
+     "At ship: fetch, check status, rebase onto the landed atlas work, then read ?v= (data-master, data-primers-master, data-floor, data-pairing) and CACHE in both trees and bump once. If canon-audit has not shipped, ship both under one bump.",
+     "Refresh CLAUDE.md (489/391) and HANDOFF.md (codex-v49, '16 Master') from fresh counts.",
+     "Full gate run recorded in the commit message: mint-ids, sa-harness, list-harness, check-claims, check-paid, check-overlap, check-home 189/190, check-merge, check-syntax, check-grading.mjs, the suite probe, the publish dash gate.",
+     "Publish through the _publish mirror with a plain git push origin main. Never git add -A there before publish.mjs prints its staged-files line. Clear service workers, then run qidAudit()."
+    ],
+    "pipeline": "1. Run per theory wave, not once at the end. W9 and W10 port as a byte copy.\n2. One commit per tree per wave, with the Co-Authored-By trailer.\n3. A final critic diffs the trees:\n- ids and counts identical;\n- no em dashes in codex/;\n- paraphrase verdicts agree;\n- list-harness detected counts explained (18 against 20 today, because of saConjHit).\n4. Bump once, at release.",
+    "whyItMatters": "The level only improves when both trees carry it and the service worker serves it. The trees use different graders and wording, so a port is a gated step, not a copy."
+   }
+  ],
+  "order": "1. W0 first, alone. check-paid must print 'no new problems', the baseline is re-recorded only after every keep-decision is written, the baseline counts are recorded, and both trees are committed.\n\n2. W0b next. Build and calibrate check-overlap.js and commit it. No topic is authored before it exists.\n\n3. Then three things in parallel:\n- The theory waves W1 to W6 in domain order. Each wave runs: select through check-overlap; author; two refuters plus an arbiter; correct; critic text and oral pass; update EXPECT; mint dry run then --apply once; sa-probe by id; gates (check-paid in the background). Then its W11 port with the suite paraphrase probe, and a commit in both trees before the next wave mints.\n- W8, the chapter audit.\n- W9 Floor and W10 Pairing (any time after W0).\n\n4. W7 chapters per category, after that category's questions pass refutation. Labels come from the revised topics, and Wine Fundamentals keeps its oral facts.\n\n5. Release (W11). Wait for the atlas branch. Fetch and rebase, read ?v= and CACHE fresh in both trees and bump once (together with canon-audit if it has not shipped). Refresh the CLAUDE.md and HANDOFF.md counts. Publish through the _publish mirror with a plain push, clear service workers and run qidAudit().\n\nOut of scope until the owner decides, because each needs a codex27.js layer in both trees: a Grand Cru tasting pool or origin/appellation/vintage calls; a Gauntlet or oral door on the level page; Service grading or Grand Cru service steps."
+ }
+}
