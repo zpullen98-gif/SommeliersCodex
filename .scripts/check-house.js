@@ -24,6 +24,17 @@
  *   5. no OOT at all: the chain loads, the row's show() is false, the sync
  *      is a no-op, and codex27 reads no `location` (the merge harness has
  *      none with a pathname)
+ *   6. read and keep, over the engine's fixture house imported as a pack:
+ *      a Keep on the profile lands on the engine as by 'person'; an edit
+ *      over the cap shows the over-cap word and saves; Discard removes the
+ *      mark; the service note goes through setItemField and never onto
+ *      ST.cellar; the picker offers only house dishes; the list rows and
+ *      the form draw every mark with Keep, Edit, Discard and Keep all; the
+ *      two shared screens (Hers, to look over under its step chips, and
+ *      the read view under the house view's doors) draw over the fixture
+ *      with codex27's hooks and a press on them reaches the engine; every
+ *      drawn string is clean; and with no OOT the row hides, the form
+ *      block is empty and every door is a no-op
  *
  *   node .scripts/check-house.js [jsDir]
  *   OOT_SHARED=<dir holding oot-house.js>   default ../worldtable/static/shared
@@ -39,9 +50,14 @@ const JS = process.argv.slice(2).find((a) => a.charAt(0) !== '-')
 const SHARED = process.env.OOT_SHARED
   || path.join(__dirname, '..', '..', 'worldtable', 'static', 'shared');
 const ENGINE = path.join(SHARED, 'oot-house.js');
-if (!fs.existsSync(ENGINE)) {
-  console.error('check-house: no oot-house.js at ' + SHARED + ' (set OOT_SHARED)');
-  process.exit(1);
+const UI_FILE = path.join(SHARED, 'oot-house-ui.js');
+/* The engine's own fixture house, copied here so the gate runs on a machine that holds this repo alone. */
+const FIXTURE = path.join(__dirname, 'fixtures', 'house-min.json');
+for (const f of [ENGINE, UI_FILE]) {
+  if (!fs.existsSync(f)) {
+    console.error('check-house: no ' + path.basename(f) + ' at ' + SHARED + ' (set OOT_SHARED)');
+    process.exit(1);
+  }
 }
 
 const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js']);
@@ -108,7 +124,9 @@ function makeSandbox(seed, opts) {
     querySelector: () => NODE, querySelectorAll: () => [],
     closest: () => NODE, contains: () => false, cloneNode: () => NODE,
     get parentNode() { return NODE; }, get parentElement() { return NODE; },
-    get firstChild() { return NODE; }, get firstElementChild() { return NODE; },
+    /* null, as an empty element answers: the shared screens clear a root with
+       `while (root.firstChild)`, and a node that is its own first child never ends */
+    get firstChild() { return null; }, get firstElementChild() { return NODE; },
     get lastChild() { return null; }, get nextSibling() { return null; },
     get innerHTML() { return ''; }, set innerHTML(v) { },
     get textContent() { return ''; }, set textContent(v) { },
@@ -179,6 +197,81 @@ function loadChain(H) {
 
 const tick = (ms) => new Promise((r) => setTimeout(r, ms || 10));
 
+/* ---------------- a document with real nodes, for the two shared screens ----------------
+   oot-house-ui.js draws plain DOM and reads it back on a press, so the NODE
+   stub above (one node standing for every node) cannot show what it drew.
+   This is the least of a document the file needs: elements with children,
+   attributes, listeners that bubble, textContent, and the one-part
+   selectors the file writes (a tag, classes, attribute tests, no
+   combinators). The same shape tools/check-house-ui.mjs holds the file to. */
+function parseSelector(sel) {
+  return sel.split(',').map((raw) => {
+    const s = raw.trim();
+    const m = /^([a-zA-Z0-9]*)((?:\.[\w-]+)*)((?:\[[^\]]+\])*)$/.exec(s);
+    if (!m) throw new Error('stub: a selector it does not read: ' + s);
+    const classes = m[2] ? m[2].split('.').filter(Boolean) : [];
+    const attrs = [];
+    const re = /\[([^\]=]+)(?:=("?)([^\]"]*)\2)?\]/g;
+    let a;
+    while ((a = re.exec(m[3]))) attrs.push({ name: a[1], value: a[3] === undefined ? null : a[3] });
+    return { tag: m[1].toUpperCase(), classes, attrs };
+  });
+}
+function matchOne(n, p) {
+  if (p.tag && n.tagName !== p.tag) return false;
+  const cls = (n.getAttribute('class') || '').split(/\s+/);
+  for (const c of p.classes) if (!cls.includes(c)) return false;
+  for (const a of p.attrs) {
+    const v = n.getAttribute(a.name);
+    if (v === null) return false;
+    if (a.value !== null && v !== a.value) return false;
+  }
+  return true;
+}
+class StubNode {
+  constructor(kind, tag, text) {
+    this.kind = kind; this.tagName = tag.toUpperCase(); this.text = text;
+    this.childNodes = []; this.parentNode = null; this.attrs = {}; this.listeners = {}; this.value = '';
+  }
+  get firstChild() { return this.childNodes.length ? this.childNodes[0] : null; }
+  appendChild(n) { if (n.parentNode) n.parentNode.removeChild(n); n.parentNode = this; this.childNodes.push(n); return n; }
+  removeChild(n) { const i = this.childNodes.indexOf(n); if (i < 0) throw new Error('stub: removeChild of a stranger'); this.childNodes.splice(i, 1); n.parentNode = null; return n; }
+  setAttribute(k, v) { this.attrs[k] = String(v); }
+  getAttribute(k) { return Object.prototype.hasOwnProperty.call(this.attrs, k) ? this.attrs[k] : null; }
+  get textContent() { return this.kind === 'text' ? this.text : this.childNodes.map((c) => c.textContent).join(''); }
+  addEventListener(type, fn) { (this.listeners[type] = this.listeners[type] || []).push(fn); }
+  dispatch(type) {
+    const ev = { type, target: this, preventDefault() { } };
+    for (let n = this; n; n = n.parentNode) for (const fn of (n.listeners[type] || []).slice()) fn.call(n, ev);
+  }
+  click() { this.dispatch('click'); }
+  focus() { }
+  matches(sel) { return parseSelector(sel).some((p) => matchOne(this, p)); }
+  closest(sel) { for (let n = this; n; n = n.parentNode) if (n.kind === 'element' && n.matches(sel)) return n; return null; }
+  querySelectorAll(sel) {
+    const out = [];
+    const walk = (n) => { for (const c of n.childNodes) { if (c.kind === 'element' && c.matches(sel)) out.push(c); walk(c); } };
+    walk(this);
+    return out;
+  }
+  querySelector(sel) { const all = this.querySelectorAll(sel); return all.length ? all[0] : null; }
+}
+/* The shared screens in a context of their own, over the document above. */
+function loadUI() {
+  const doc = {
+    head: new StubNode('element', 'head', ''), body: new StubNode('element', 'body', ''),
+    createElement: (tag) => new StubNode('element', tag, ''),
+    createTextNode: (s) => new StubNode('text', '#text', String(s)),
+  };
+  const sandbox = { document: doc, console };
+  sandbox.window = sandbox;
+  vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync(UI_FILE, 'utf8'), sandbox, { filename: 'oot-house-ui.js' });
+  const root = () => { const r = doc.createElement('div'); doc.body.appendChild(r); return r; };
+  return { ui: sandbox.OOT.houseUI, doc, root };
+}
+
+
 /* The wine rows the house holds before the chain loads, each through the
    api's own door so they are items in the engine's shape. */
 const ROW = (id, producer, name, vintage, extra) => Object.assign({
@@ -192,6 +285,9 @@ async function main() {
   const H = makeSandbox(null, {});
   vm.runInContext(fs.readFileSync(ENGINE, 'utf8'), H.ctx, { filename: 'oot-house.js' });
   check('oot-house.js installs OOT.house and OOT.houseLib', H.G('typeof OOT.house === "object" && typeof OOT.houseLib === "object"'));
+  /* the shared screens beside it, as the wing's shell loads them; they draw nothing until asked */
+  vm.runInContext(fs.readFileSync(UI_FILE, 'utf8'), H.ctx, { filename: 'oot-house-ui.js' });
+  check('oot-house-ui.js installs OOT.houseUI beside it', H.G('typeof OOT.houseUI === "object" && typeof OOT.houseUI.review === "function"'));
   const lib = H.G('OOT.houseLib');
   const backing = new Map();
   const api = lib.createHouseApi(lib.mapStorage(backing), { win: H.sandbox, now: () => NOW, rand: seeded(7), from: 'codex' });
@@ -388,6 +484,213 @@ async function main() {
   check('Export builds the pack of the current house', G('(function () { var p = OOT.house.buildPack("codex"); return p && p.pack.house.id; })()') === houseId);
 
   /* ================================================================ */
+  section('read and keep: her marks on a bottle, the review, the read view');
+  /* The engine's fixture house (the Lantern Room: two dishes, one wine with
+     every mark, two cocktails, the lists), imported as a pack through
+     codex27's own door, with a handful of marks flipped back to hers so
+     there is something to keep, edit and discard. */
+  const fx = JSON.parse(fs.readFileSync(FIXTURE, 'utf8'));
+  const fxWine = fx.wines[0];
+  for (const f of ['say', 'guest', 'why', 'profile', 'goesWith', 'lines']) fxWine[f].by = 'maitre';
+  fx.dishes[0].lines.by = 'maitre';
+  const FX_TS = fxWine.profile.ts;
+  H.sandbox.FX = JSON.stringify(lib.buildPack(fx, 'codex', NOW + 40));
+  await G('v27TakePack(FX)');
+  check('the fixture house imports as a pack', !!G('S._v27').added && G('S._v27').added.name === fx.name, G('S._v27').live);
+  await G('v27Switch(S._v27.added.id)');
+  check('and is the current house, its wine on the list', api.currentId() === fx.id && !!row(fxWine.id) && row(fxWine.id).producer === fxWine.producer);
+  const wine = () => api.current().wines.find((w) => w.id === fxWine.id) || null;
+  check('the list row carries her say under maitre, hers', row(fxWine.id).maitre && row(fxWine.id).maitre.say && row(fxWine.id).maitre.say.by === 'maitre');
+
+  /* the Mine row */
+  check('V25_MINE carries Hers, to look over second', G('V25_MINE[1].key') === 'housereview' && G('V25_MINE[1].name') === 'Hers, to look over' && G('V25_MINE[1].show()') === true);
+  check('the row resolves through V25_GO, V25_AREA, V25_HUB and V25_VIEWS', G('typeof V25_GO.housereview') === 'function' && G('V25_AREA.housereview') === 'mine' && G('V25_HUB.housereview') === 'mine' && G('V25_VIEWS.housereview === v27ReviewView'));
+  const revLine = G('V25_MINE[1].line()');
+  check('the row counts the lines of hers that wait', /^\d+ lines of hers to look over$/.test(revLine), revLine);
+  drawn.push(G('v25MineHtml()'));
+
+  /* the list rows before any press */
+  const rowsHtml = G('v27RowLinesHtml(ST.cellar.filter(function (b) { return b.id === ' + JSON.stringify(fxWine.id) + '; })[0], OOT.house.current().wines[0], false)');
+  drawn.push(rowsHtml);
+  check('a list row draws her lines with the eyebrow, Keep, Edit and Discard per mark and Keep all per bottle',
+    rowsHtml.indexOf('Hers, not yet kept') >= 0 && rowsHtml.indexOf('data-h27="keep" data-kind="wine" data-id="' + fxWine.id + '" data-field="profile"') >= 0
+    && rowsHtml.indexOf('data-h27="edit"') >= 0 && rowsHtml.indexOf('data-h27="discard"') >= 0 && rowsHtml.indexOf('Keep all on this bottle') >= 0);
+  check('a kept mark is drawn under the word Kept with no Keep chip', rowsHtml.indexOf('>Kept<') >= 0 && rowsHtml.indexOf('data-h27="keep" data-kind="wine" data-id="' + fxWine.id + '" data-field="serve"') < 0);
+  check('the first picks are drawn by dish name', rowsHtml.indexOf(fx.dishes[0].name) >= 0);
+  check('the timed lines are drawn with their counts', /Ten seconds \(\d+ of 25 words\)/.test(rowsHtml));
+  const frozenHtml = G('v27RowLinesHtml(ST.cellar[0], OOT.house.current().wines[0], true)');
+  check('while the form or a run is open the lines show and the chips wait', frozenHtml.indexOf('Hers, not yet kept') >= 0 && frozenHtml.indexOf('data-h27=') < 0);
+  G('S._v27edit = { id: ' + JSON.stringify(fxWine.id) + ', field: "lines" }');
+  const editHtml = G('v27RowLinesHtml(ST.cellar.filter(function (b) { return b.id === ' + JSON.stringify(fxWine.id) + '; })[0], OOT.house.current().wines[0], false)');
+  drawn.push(editHtml);
+  check('Edit on the timed lines opens three boxes with a count each and Save and Cancel', editHtml.indexOf('data-h27-editor="lines"') >= 0 && (editHtml.match(/data-h27-count=/g) || []).length === 3 && editHtml.indexOf('data-h27="save"') >= 0 && editHtml.indexOf('data-h27="cancel"') >= 0);
+  G('S._v27edit = null');
+
+  /* Keep, Edit, Discard through the doors */
+  check('Keep on the profile lands on the engine as by person with a fresh stamp', (await G('v27Keep("wine", ' + JSON.stringify(fxWine.id) + ', "profile")')) === true
+    && wine().profile.by === 'person' && wine().profile.value === fxWine.profile.value && wine().profile.ts > FX_TS);
+  check('Keep on a kept mark is a no-op', (await G('v27Keep("wine", ' + JSON.stringify(fxWine.id) + ', "profile")')) === false);
+  await G('v27Keep("wine", ' + JSON.stringify(fxWine.id) + ', "say")');
+  check('Keep on a floor line lands on the engine and on the row under maitre', wine().say.by === 'person' && row(fxWine.id).maitre.say.by === 'person' && row(fxWine.id).maitre.say.value === fxWine.say.value);
+  const over = 'one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty one two three four five six';
+  check('a line over its cap shows the over-cap word in the count', G('v27CountText("s10", ' + JSON.stringify(over) + ')') === '26 of 25 words. Over its cap');
+  check('and a line under it does not', G('v27CountText("s10", "Dry and bright.")') === '3 of 25 words');
+  H.sandbox.OVER = { s10: over, s20: fxWine.lines.value.s20, s45: fxWine.lines.value.s45 };
+  check('an edit over the cap saves as the person\'s', (await G('v27Edit("wine", ' + JSON.stringify(fxWine.id) + ', "lines", OVER)')) === true
+    && wine().lines.by === 'person' && wine().lines.value.s10 === over);
+  const probs = G('v27Problems("wine", ' + JSON.stringify(fxWine.id) + ')');
+  check('problems() names the line over its cap as { field, said }', JSON.stringify(probs) === JSON.stringify([{ field: 'lines', said: 'Ten seconds: 26 of 25 words' }]), JSON.stringify(probs));
+  check('Discard removes the mark from the engine', (await G('v27Discard("wine", ' + JSON.stringify(fxWine.id) + ', "serve")')) === true && !('serve' in wine()));
+  await G('v27Discard("wine", ' + JSON.stringify(fxWine.id) + ', "why")');
+  check('Discard on a floor line takes it off the row too', !('why' in wine()) && !row(fxWine.id).maitre.why);
+  check('Keep all keeps every line of hers on the bottle', (await G('v27KeepAll("wine", ' + JSON.stringify(fxWine.id) + ')')) === 2
+    && wine().guest.by === 'person' && wine().goesWith.by === 'person' && row(fxWine.id).maitre.guest.by === 'person');
+
+  /* the form over the fixture wine */
+  G('OOT.house.current().wines[0].goesWith.by = "maitre"');   /* one of hers again, for the chip */
+  const formHtml = G('v27FormHouseHtml(' + JSON.stringify(fxWine.id) + ')');
+  drawn.push(formHtml);
+  check('the form carries profile, goes with and serve as mark fields with a state word each', ['profile', 'goesWith', 'serve'].every((f) => formHtml.indexOf('id="cl-h-' + f + '"') >= 0 && formHtml.indexOf('data-h27-state="' + f + '"') >= 0));
+  check('a mark of hers in the form gets Keep and Discard, a kept one Discard alone, an empty one neither',
+    formHtml.indexOf('data-h27="keep" data-kind="wine" data-id="' + fxWine.id + '" data-field="goesWith"') >= 0
+    && formHtml.indexOf('data-h27="keep" data-kind="wine" data-id="' + fxWine.id + '" data-field="profile"') < 0
+    && formHtml.indexOf('data-h27="discard" data-kind="wine" data-id="' + fxWine.id + '" data-field="profile"') >= 0
+    && formHtml.indexOf('data-field="serve"') < 0);
+  const picks = (formHtml.match(/data-cl-pick="([^"]+)"/g) || []).map((m) => m.slice(14, -1));
+  check('the first-picks picker offers the house\'s dishes by name and nothing else', picks.length === fx.dishes.length && picks.every((id) => id.indexOf('d-') === 0)
+    && fx.dishes.every((d) => picks.indexOf(d.id) >= 0 && formHtml.indexOf(d.name) >= 0) && picks.indexOf(fxWine.id) < 0 && picks.indexOf(fx.cocktails[0].id) < 0, picks.join(','));
+  check('with the fixture\'s pick checked', new RegExp('data-cl-pick="' + fx.dishes[0].id + '" checked').test(formHtml));
+  const parts = lib.WINE_PARTS;
+  check('the five parts carry the WINE_PARTS labels', ['main', 'technique', 'sauce', 'sides', 'taste'].every((k) => formHtml.indexOf('>' + parts[k] + '</label>') >= 0 && formHtml.indexOf('id="cl-h-part-' + k + '"') >= 0));
+  check('the three timed lines carry a live count against LINE_CAPS', ['s10', 's20', 's45'].every((k) => formHtml.indexOf('id="cl-h-line-' + k + '"') >= 0 && formHtml.indexOf('data-h27-count="' + k + '"') >= 0)
+    && formHtml.indexOf('26 of 25 words. Over its cap') >= 0);
+  check('the service note is a textarea under the fixed eyebrow', formHtml.indexOf('Your words. Allergens: confirm at lineup.') >= 0 && formHtml.indexOf('<textarea class="sainput" id="cl-h-note"') >= 0);
+  check('the form writes no allergen field and reads none', !/allergen/i.test(formHtml.replace('Allergens: confirm at lineup.', '')));
+  const newHtml = G('v27FormHouseHtml("")');
+  drawn.push(newHtml);
+  check('a new bottle gets the boxes and no chips', newHtml.indexOf('id="cl-h-note"') >= 0 && newHtml.indexOf('data-h27=') < 0 && newHtml.indexOf('Nothing yet') >= 0);
+
+  /* the save: the typed values onto the house, the note through setItemField */
+  H.sandbox.TYPED = {
+    profile: 'A new profile, typed.', goesWith: '', serve: 'Cold, in a big glass.',
+    firstPickIds: [fx.dishes[1].id, fxWine.id, 'd-nothere0'],
+    parts: { main: 'Bacchus from the slope', technique: '', sauce: '', sides: '', taste: '' },
+    lines: { s10: 'Ten words here.', s20: '', s45: '' },
+    serviceNote: 'Ask the chef before the oysters go out.'
+  };
+  const cellarBefore = JSON.stringify(G('ST.cellar'));
+  check('the save runs', (await G('v27SaveHouseFields(' + JSON.stringify(fxWine.id) + ', TYPED)')) === true);
+  check('a typed value is the person\'s', wine().profile.by === 'person' && wine().profile.value === 'A new profile, typed.' && wine().serve.by === 'person' && wine().serve.value === 'Cold, in a big glass.');
+  check('an emptied one goes', !('goesWith' in wine()));
+  check('the picks saved are house dishes only', JSON.stringify(wine().firstPickIds.value) === JSON.stringify([fx.dishes[1].id]) && wine().firstPickIds.by === 'person');
+  check('the parts and the lines land as the person\'s', wine().parts.by === 'person' && wine().parts.value.main === 'Bacchus from the slope' && wine().lines.by === 'person' && wine().lines.value.s10 === 'Ten words here.');
+  check('the note goes through setItemField onto the house wine', wine().serviceNote === 'Ask the chef before the oysters go out.');
+  check('and never onto ST.cellar', JSON.stringify(G('ST.cellar')).indexOf('before the oysters') < 0 && !('serviceNote' in row(fxWine.id)));
+  check('cellarSanitize drops a serviceNote that arrives in a file', !('serviceNote' in G('cellarSanitize({ id: "w-s5", ts: 1, serviceNote: "x" })')));
+  check('a save with nothing changed changes nothing', (await G('v27SaveHouseFields(' + JSON.stringify(fxWine.id) + ', TYPED)')) === true && wine().serviceNote === 'Ask the chef before the oysters go out.');
+  const partial = JSON.stringify(wine());
+  await G('v27SaveHouseFields(' + JSON.stringify(fxWine.id) + ', { serviceNote: "Ask the chef before the oysters go out." })');
+  check('a key the save was not handed is not touched', JSON.stringify(wine()) === partial);
+  check('the note with nothing in it clears the field', (await G('v27SaveHouseFields(' + JSON.stringify(fxWine.id) + ', { serviceNote: "" })')) === true && wine().serviceNote === '');
+  await G('v27SaveHouseFields(' + JSON.stringify(fxWine.id) + ', { serviceNote: "Confirm the shellfish at lineup." })');
+  check('the list rows were not rewritten by any of it', JSON.stringify(G('ST.cellar')) === cellarBefore);
+  check('setItemField refuses a shared field or a mark', (await api.setItemField('wine', fxWine.id, { name: 'x' })) === false && (await api.setItemField('wine', fxWine.id, { profile: 'x' })) === false);
+
+  /* the two screens */
+  const reviewHtml = G('v27ReviewHtml()');
+  drawn.push(reviewHtml);
+  check('Hers, to look over draws five step chips and the review root', ['formula', 'pairings', 'wines', 'lexicon', 'scenarios'].every((s) => reviewHtml.indexOf('data-h27-step="' + s + '"') >= 0)
+    && ['The formula', 'The pairings', 'The wines', 'The words', 'The table'].every((w) => reviewHtml.indexOf('>' + w + '<') >= 0) && reviewHtml.indexOf('id="h27-review"') >= 0);
+  check('the current step is pressed, by a word on the attribute', reviewHtml.indexOf('data-h27-step="formula" aria-pressed="true"') >= 0);
+  G('v27ReviewState().step = "wines"');
+  drawn.push(G('v27ReviewHtml()'));
+  const houseHtml2 = G('v27HouseHtml()');
+  drawn.push(houseHtml2);
+  check('the house view draws the read view\'s root under its doors', houseHtml2.indexOf('id="h27-read"') >= 0 && houseHtml2.indexOf('id="h27-read"') > houseHtml2.indexOf('Import a pack'));
+
+  /* The shared screens themselves, drawn over the fixture with codex27's
+     hooks, in a document stub that holds real nodes, so what they draw can
+     be read and a chip can be pressed. */
+  const UI = loadUI();
+  check('oot-house-ui.js installs OOT.houseUI', typeof UI.ui.readView === 'function' && typeof UI.ui.review === 'function');
+  const hooks = G('v27Hooks()');
+  check('the hooks are the three the screens take', typeof hooks.setMark === 'function' && typeof hooks.discard === 'function' && typeof hooks.problems === 'function');
+  const readRoot = UI.root();
+  UI.ui.readView(readRoot, api.current(), hooks);
+  const readText = readRoot.textContent;
+  drawn.push(readText);
+  check('the read view draws the house over the fixture', readText.indexOf(fx.name) >= 0 && readText.indexOf('Ask at lineup') >= 0 && readText.indexOf(fx.dishes[0].name) >= 0);
+  /* hers again: the origin for a Keep, the lines, over their cap once more, for the problem */
+  await G('v27Edit("wine", ' + JSON.stringify(fxWine.id) + ', "lines", OVER)');
+  G('OOT.house.current().wines[0].origin.by = "maitre"; OOT.house.current().wines[0].lines.by = "maitre";');
+  const revRoot = UI.root();
+  UI.ui.review(revRoot, api.current(), 'wines', hooks);
+  const revText = revRoot.textContent;
+  drawn.push(revText);
+  check('the review draws the wine step with the lines of hers', revText.indexOf('Hers, not yet kept') >= 0 && revText.indexOf(fxWine.origin.value) >= 0);
+  check('and the hook\'s problem on the timed lines, beside the screen\'s own count', revText.indexOf('Ten seconds: 26 of 25 words') >= 0 && revText.indexOf('Over its cap') >= 0);
+  const keepChip = revRoot.querySelectorAll('[data-h="keep"]').filter((b) => b.getAttribute('data-id') === fxWine.id && b.getAttribute('data-field') === 'origin')[0];
+  check('the wine\'s unkept mark has a Keep chip', !!keepChip && keepChip.textContent === 'Keep');
+  keepChip.click();
+  await tick(30);
+  check('Keep on the shared screen lands on the engine as by person, and on the row', wine().origin.by === 'person' && wine().origin.value === fxWine.origin.value && row(fxWine.id).maitre.origin.by === 'person');
+  drawn.push(revRoot.textContent);
+  G('OOT.house.current().wines[0].pairs.by = "maitre"');
+  UI.ui.review(revRoot, api.current(), 'wines', hooks);
+  const discardChip = revRoot.querySelectorAll('[data-h="discard"]').filter((b) => b.getAttribute('data-id') === fxWine.id && b.getAttribute('data-field') === 'pairs')[0];
+  check('a floor line of hers has a Discard chip', !!discardChip);
+  discardChip.click();
+  await tick(30);
+  check('Discard on the shared screen removes the mark from the engine and the row', !('pairs' in wine()) && !(row(fxWine.id).maitre && row(fxWine.id).maitre.pairs));
+  drawn.push(revRoot.textContent);
+  for (const step of ['formula', 'pairings', 'lexicon', 'scenarios']) {
+    const r = UI.root();
+    UI.ui.review(r, api.current(), step, hooks);
+    drawn.push(r.textContent);
+  }
+  check('every drawn chip is a button with words on it', UI.doc.body.querySelectorAll('button').every((b) => b.textContent.trim().length > 0 && b.getAttribute('type') === 'button'));
+
+  /* the render: the house's changes redraw the screens that show it, never an open form */
+  G('S.view = "cellar"; S._cellarForm = { producer: "x" }; S._cellarEdit = ' + JSON.stringify(fxWine.id) + ';');
+  G('RENDERS = 0; var _rr = render; render = function () { RENDERS++; return _rr.apply(this, arguments); };');
+  await G('v27Keep("wine", ' + JSON.stringify(fxWine.id) + ', "pairs")');
+  await tick(30);
+  check('a write under an open form does not redraw it', G('RENDERS') === 0);
+  G('S._cellarForm = null; S._cellarEdit = null;');
+  await G('v27Edit("wine", ' + JSON.stringify(fxWine.id) + ', "pairs", "The chicken, first.")');
+  await tick(30);
+  check('a write with the list on screen redraws it once', G('RENDERS') === 1, String(G('RENDERS')));
+
+  /* ---- the verifier's cases: writes that race, a render that wipes ----
+     Every engine write runs over the house in memory and that copy moves
+     only when its save resolves, so two writes started in one tick are
+     each computed over the same base and the second save overwrites the
+     first. codex27 fires its writes with no queue and its hooks hand the
+     shared screens nothing to await, so Keep all on a shared screen, two
+     Keeps pressed quickly, or a Keep pressed while a wake is in flight
+     lose a write. A row editor open on the list is not a form to
+     v27Redraw, so a sync from another tab redraws over the typed text. */
+  G('render = _rr;');
+  const RACE = ['guest', 'profile', 'say', 'pairs'];
+  for (const f of RACE) { if (!wine()[f]) await api.setMark('wine', fxWine.id, f, { value: 'hers, for the race', by: 'maitre', ts: NOW }); wine()[f].by = 'maitre'; }
+  G('(function () { var hk = v27Hooks(); ' + JSON.stringify(RACE) + '.forEach(function (f) { var m = OOT.house.current().wines[0][f]; hk.setMark("wine", ' + JSON.stringify(fxWine.id) + ', f, { value: m.value, by: "person", ts: Date.now() }); }); })()');
+  await tick(50);
+  check('four Keeps pressed in one tick through the hooks (Keep all on a shared screen) all land as by person',
+    RACE.every((f) => wine()[f] && wine()[f].by === 'person'), RACE.map((f) => f + '=' + (wine()[f] ? wine()[f].by : 'none')).join(' '));
+  wine().guest.by = 'maitre';
+  G('var RR = ST.cellar.filter(function (b) { return b.id === ' + JSON.stringify(fxWine.id) + '; })[0]; RR.region = "Kent, above the harbour"; RR.ts = Date.now() + 9000; S._cellarForm = null; S._wimp = null; S.view = "home";');
+  const inFlight = G('v27Sync()');
+  const keptMeanwhile = G('v27Keep("wine", ' + JSON.stringify(fxWine.id) + ', "guest")');
+  await keptMeanwhile; await inFlight; await tick(50);
+  check('a Keep pressed while a wake is in flight loses neither the Keep nor what the wake carried',
+    wine().guest.by === 'person' && wine().region === 'Kent, above the harbour', 'guest=' + wine().guest.by + ' region=' + wine().region);
+  G('RENDERS = 0; render = function () { RENDERS++; }; S.view = "cellar"; S._cellarForm = null; S._wimp = null; S._v27edit = { id: ' + JSON.stringify(fxWine.id) + ', field: "profile" }; v27Redraw();');
+  check('a sync that lands from another tab does not redraw over an open row editor', G('RENDERS') === 0, String(G('RENDERS')) + ' render(s)');
+  G('S._v27edit = null;');
+  G('render = _rr;');
+  await G('v27Switch(' + JSON.stringify(houseId) + ')');
+
+  /* ================================================================ */
   section('voice');
   const src = fs.readFileSync(path.join(JS, 'codex27.js'), 'utf8');
   const srcProblems = voiceProblems(src);
@@ -397,6 +700,8 @@ async function main() {
   check('codex27.js names no level by number', !/\bLevel\s+(I|II|III|IV)\b/.test(src));
   const selfProblems = voiceProblems(fs.readFileSync(__filename, 'utf8'));
   check('check-house.js itself: the same', !selfProblems.length, selfProblems.join(', '));
+  const fixtureProblems = voiceProblems(fs.readFileSync(FIXTURE, 'utf8'));
+  check('the fixture house itself: the same', !fixtureProblems.length, fixtureProblems.join(', '));
   const drawnProblems = voiceProblems(drawn.join('\n'));
   check('every string the house view draws (' + drawn.length + ' pages): the same', !drawnProblems.length, drawnProblems.join(', '));
   const rowStrings = G('V25_MINE.map(function (r) { return r.name + " " + r.line(); }).join("\\n")');
@@ -416,6 +721,14 @@ async function main() {
   N.G('S.view = "house"');
   const bare = N.G('v27HouseHtml()');
   check('the house view says the engine is not in this build', /not in this build/.test(bare) && !voiceProblems(bare).length);
+  check('Hers, to look over does not show', N.G('V25_MINE[1].key') === 'housereview' && N.G('V25_MINE[1].show()') === false);
+  check('the form block is empty', N.G('v27FormHouseHtml("w-aaaaaaaa")') === '');
+  check('the list rows draw no lines', N.G('v27RowLinesHtml(ST.cellar[0], null, false)') === '');
+  const bareReview = N.G('v27ReviewHtml()');
+  check('the review says the engine is not in this build', /not in this build/.test(bareReview) && !voiceProblems(bareReview).length);
+  check('every door is a no-op', (await N.G('v27Keep("wine", "w-aaaaaaaa", "say")')) === false && (await N.G('v27Discard("wine", "w-aaaaaaaa", "say")')) === false
+    && (await N.G('v27SaveHouseFields("w-aaaaaaaa", { serviceNote: "x" })')) === false && JSON.stringify(N.G('v27Problems("wine", "w-aaaaaaaa")')) === '[]'
+    && typeof N.G('v27Hooks()').setMark === 'function');
   check('the merge still keeps house with no OOT', (() => {
     N.G('mergeStats({ codex: "sommeliers-codex", v: 4, stats: { cellar: [{ id: "w-aaaaaaaa", ts: 2, producer: "Krug", name: "Grande Cuvee", vintage: "NV" }] } })');
     return N.G('ST.cellar[0].ts') === 2 && N.G('ST.cellar[0].house') === 'h-elsewhere';

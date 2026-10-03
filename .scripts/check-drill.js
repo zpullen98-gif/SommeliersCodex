@@ -29,7 +29,8 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const JS = process.argv[2] || 'C:/Users/zpull/SommeliersCodex/js';
+/* The js folder beside this script, unless one is named: the old default was one machine's path. */
+const JS = process.argv[2] || path.join(__dirname, '..', 'js');
 const box = {
   window: {}, console,
   document: { createElement: () => ({ style: {}, appendChild() { } }), head: { appendChild() { } } },
