@@ -35,6 +35,16 @@
  *      with codex27's hooks and a press on them reaches the engine; every
  *      drawn string is clean; and with no OOT the row hides, the form
  *      block is empty and every door is a no-op
+ *   7. the house drills, over the engine's drill fixture: the cellar drill's
+ *      house kinds (first pick, serve, goes with, the section) and Pair the
+ *      menu (first pick, without alcohol) are every one dealt by the
+ *      engine's dealQuestion, every option a house item, four distinct, and
+ *      no stem carrying its answer; answers land in ST.q under h- keys that
+ *      keyOwned keeps out of every level, with the pace, the history and
+ *      the perfect round put back; Our list by heart is a flip deck that
+ *      records nothing; Say the pour opens nothing; a house over her unkept
+ *      lines alone deals nothing and each row's line says so; and with no
+ *      OOT the rows hide and the drills deal nothing
  *
  *   node .scripts/check-house.js [jsDir]
  *   OOT_SHARED=<dir holding oot-house.js>   default ../worldtable/static/shared
@@ -53,6 +63,8 @@ const ENGINE = path.join(SHARED, 'oot-house.js');
 const UI_FILE = path.join(SHARED, 'oot-house-ui.js');
 /* The engine's own fixture house, copied here so the gate runs on a machine that holds this repo alone. */
 const FIXTURE = path.join(__dirname, 'fixtures', 'house-min.json');
+/* The engine's drill fixture, copied the same way: enough dishes, wines and drinks for every kind to deal. */
+const DRILL_FIXTURE = path.join(__dirname, 'fixtures', 'house-drill.json');
 for (const f of [ENGINE, UI_FILE]) {
   if (!fs.existsSync(f)) {
     console.error('check-house: no ' + path.basename(f) + ' at ' + SHARED + ' (set OOT_SHARED)');
@@ -691,6 +703,231 @@ async function main() {
   await G('v27Switch(' + JSON.stringify(houseId) + ')');
 
   /* ================================================================ */
+  section('the house drills: dealt by the engine, kept marks only, never counted');
+  /* The engine's drill fixture (the Lantern Room again, five wines, seven
+     dishes, five drinks), given its own id so it imports as a second house,
+     with every wine's section made distinct and a kept serve line on four
+     more wines, so all four of the cellar drill's house kinds can deal. */
+  const dx = JSON.parse(fs.readFileSync(DRILL_FIXTURE, 'utf8'));
+  dx.id = 'h-drillrm1'; dx.name = 'The Drill Room';
+  const SECTIONS = ['By the glass', 'Whites of the coast', 'Reds of the hearth', 'Pink and pale', 'Bubbles'];
+  const SERVES = [null, 'Cellar cool, decanted an hour ahead.', 'Ice bucket, poured small.', 'Flute, straight from the fridge.', 'Room temperature, a big bowl.'];
+  dx.wines.forEach((w, i) => {
+    w.section = SECTIONS[i];
+    if (SERVES[i]) w.serve = { value: SERVES[i], by: 'person', ts: NOW };
+  });
+  const drillPack = JSON.stringify(lib.buildPack(dx, 'codex', NOW + 50));
+  H.sandbox.DRILLPACK = drillPack;
+  await G('v27TakePack(DRILLPACK)');
+  check('the drill fixture imports as a pack', !!G('S._v27').added && G('S._v27').added.name === 'The Drill Room', G('S._v27').live);
+  await G('v27Switch(S._v27.added.id)');
+  check('and is the current house, its five wines on the list', api.currentId() === 'h-drillrm1' && G('ST.cellar.length') === 5, String(G('ST.cellar.length')));
+
+  const unesc = (s) => String(s).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+  const fold = (s) => String(s == null ? '' : s).trim().toLowerCase().replace(/\s+/g, ' ');
+  const cur = () => api.current();
+  const wineNames = () => cur().wines.map((w) => w.name);
+  const drinkNames = () => cur().cocktails.map((c) => c.name);
+  const sectionNames = () => cur().wines.map((w) => w.section).filter(Boolean);
+  /* the stem a question shows: what follows the label */
+  const stemOf = (q) => unesc(String(q.q).split('<br>').slice(1).join('<br>'));
+  const kindOf = (q) => String(q.id).replace(/^h-[a-z]+-[a-z0-9]+-/, '');
+  const fieldFor = (kind) => (kind === 'zeroProofFor' ? drinkNames() : kind === 'section' ? sectionNames() : wineNames());
+  function holdsTheRules(qs, label) {
+    const bad = [];
+    for (const q of qs) {
+      const kind = kindOf(q);
+      const opts = q.opts.map(unesc);
+      const field = fieldFor(kind);
+      if (opts.length !== 4 || new Set(opts.map(fold)).size !== 4) bad.push(q.id + ': not four distinct options');
+      else if (!(q.a >= 0 && q.a < 4)) bad.push(q.id + ': the answer out of range');
+      else if (!opts.every((o) => field.indexOf(o) >= 0)) bad.push(q.id + ': an option that is not an item of this house: ' + opts.filter((o) => field.indexOf(o) < 0).join(', '));
+      else if (fold(stemOf(q)).indexOf(fold(opts[q.a])) >= 0) bad.push(q.id + ': the stem carries its answer');
+    }
+    check(label + ': every option is a house item, four distinct, and no stem carries its answer (' + qs.length + ' questions)', qs.length > 0 && !bad.length, bad.slice(0, 4).join(' / '));
+  }
+
+  /* the engine's dealer, watched: every question this file hands the quiz was dealt by it */
+  G('var DEALT = []; var _realDeal = OOT.houseLib.dealQuestion; OOT.houseLib.dealQuestion = function (h, k, r) { var q = _realDeal(h, k, r); if (q) DEALT.push(q); return q; };');
+  const cellarQs = G('v27CellarHouseQs()');
+  const dealtCellar = G('DEALT.splice(0)');
+  check('the cellar drill\'s house questions deal all four kinds: first pick, serve, goes with, the section',
+    ['firstPickFor', 'serve', 'wineGoesWith', 'section'].every((k) => cellarQs.some((q) => kindOf(q) === k)), [...new Set(cellarQs.map(kindOf))].join(','));
+  check('each is recorded under h-<itemId>-<kind> and filed under Our List', cellarQs.every((q) => /^h-[a-z]-[a-z0-9]+-(firstPickFor|serve|wineGoesWith|section)$/.test(q.id) && q.cat === 'Our List'),
+    cellarQs.map((q) => q.id).join(','));
+  check('every one of them was dealt by OOT.houseLib.dealQuestion, never a second dealer',
+    cellarQs.every((q) => dealtCellar.some((d) => fold(d.stem) === fold(stemOf(q)) && JSON.stringify(d.options) === JSON.stringify(q.opts.map(unesc)) && d.options[q.a] === d.answer)));
+  check('no item is asked twice for one kind', new Set(cellarQs.map((q) => q.id)).size === cellarQs.length);
+  holdsTheRules(cellarQs, 'the cellar drill');
+  const serveQs = cellarQs.filter((q) => kindOf(q) === 'serve');
+  check('the serve line is the stem and the answer is the wine it is kept on', serveQs.length === 5
+    && serveQs.every((q) => { const w = cur().wines.find((x) => x.serve && x.serve.value === stemOf(q)); return !!w && unesc(q.opts[q.a]) === w.name; }));
+  const sectionQs = cellarQs.filter((q) => kindOf(q) === 'section');
+  check('the section is asked of each wine by name and answered with its own section', sectionQs.length === 5
+    && sectionQs.every((q) => { const w = cur().wines.find((x) => x.name === stemOf(q)); return !!w && unesc(q.opts[q.a]) === w.section; }));
+  check('the house record is untouched by the views the dealer is asked over', cur().wines.every((w) => !Array.isArray(w.goesWith) && (!w.goesWith || w.goesWith.value !== (w.serve && w.serve.value))) && Array.isArray(cur().wines[0].grapes));
+
+  /* the wrapped startCellarDrill */
+  G('ST.cellarDrillN = "all"; S.mode = ""; S.section = ""; S.view = "cellar";');
+  G('startCellarDrill()');
+  const pool = G('S.pool');
+  check('Drill the list starts a run holding the list\'s questions and the house\'s', G('S.view') === 'quiz' && G('S.section') === 'Our List'
+    && pool.some((q) => /^h-/.test(q.id)) && pool.some((q) => /^w-/.test(q.id)), pool.map((q) => q.id).slice(0, 6).join(','));
+  G('ST.cellarDrillN = 15; startCellarDrill()');
+  check('and the drill length still cuts it', G('S.pool.length') === 15);
+  G('S.mode = ""; S.section = ""; S.view = "mine";');
+
+  /* Pair the menu */
+  const pairQs = G('v27PairQuestions()');
+  const dealtPair = G('DEALT.splice(0)');
+  holdsTheRules(pairQs, 'Pair the menu');
+  check('Pair the menu deals the first pick among the house wines and rounds without alcohol among the house drinks',
+    pairQs.some((q) => kindOf(q) === 'firstPickFor') && pairQs.some((q) => kindOf(q) === 'zeroProofFor')
+    && pairQs.filter((q) => kindOf(q) === 'firstPickFor').every((q) => q.opts.map(unesc).every((o) => wineNames().indexOf(o) >= 0)));
+  check('the first pick it asks is the kept pairing\'s', pairQs.filter((q) => kindOf(q) === 'firstPickFor').every((q) => {
+    const dishId = String(q.id).slice(2).replace(/-firstPickFor$/, '');
+    const d = cur().dishes.find((x) => x.id === dishId);
+    const w = d && d.pairing && d.pairing.by === 'person' ? cur().wines.find((x) => x.id === d.pairing.value.wineId) : null;
+    return !!w && unesc(q.opts[q.a]) === w.name;
+  }));
+  check('a dish whose pairing nobody kept is never asked', !pairQs.some((q) => q.id.indexOf('d-unkept01') >= 0 || q.id.indexOf('d-beetrt01') >= 0));
+  check('and every one was dealt by the engine', pairQs.every((q) => dealtPair.some((d) => fold(d.stem) === fold(stemOf(q)) && JSON.stringify(d.options) === JSON.stringify(q.opts.map(unesc)))));
+  G('OOT.houseLib.dealQuestion = _realDeal;');
+  check('startHousePairDrill is a top-level function and starts a round through the quiz engine',
+    G('typeof startHousePairDrill') === 'function' && G('startHousePairDrill()') === true && G('S.view') === 'quiz' && G('S.mode') === 'drill' && G('S.section') === 'Pair the menu'
+    && G('S.pool.every(function (q) { return /^h-/.test(q.id); })'));
+  check('Redrill on the results screen deals Pair the menu again', (() => { G('S.pool = []; startDrill("Pair the menu")'); return G('S.section') === 'Pair the menu' && G('S.pool.length') > 0; })());
+
+  /* never counted */
+  const q0 = G('S.pool[0]');
+  const paceBefore = JSON.stringify(G('ST.paceDays || {}'));
+  const histBefore = G('(ST.hist || []).length');
+  G('ST.best = ST.best || {}; delete ST.best.perfect;');
+  G('statRecord(S.pool[0], true)');
+  /* the key the engine's plumbing writes: the h- id under the active level's
+     prefix (this device has only answers that belong to no level, so it
+     landed where a fresh device lands) */
+  const q0key = G('qKey(S.pool[0])');
+  check('an answer is recorded in ST.q under its h- key', /(^|\|)h-/.test(q0key) && G('ST.q[' + JSON.stringify(q0key) + '] && ST.q[' + JSON.stringify(q0key) + '].c') === 1, q0key);
+  check('keyOwned keeps the h- key out of every level, prefixed or not', ['certified', 'intro', 'advanced', 'master'].every((lv) =>
+    G('keyOwned(' + JSON.stringify(q0.id) + ', ' + JSON.stringify(lv) + ')') === false && G('keyOwned(' + JSON.stringify(lv + '|' + q0.id) + ', ' + JSON.stringify(lv) + ')') === false));
+  check('while a bank key still belongs to its level', G('keyOwned(missKey(QUESTIONS[0]), "certified")') === true);
+  check('the level\'s pace did not move for a house answer', JSON.stringify(G('ST.paceDays || {}')) === paceBefore, paceBefore + ' then ' + JSON.stringify(G('ST.paceDays')));
+  const tally = G('JSON.stringify(v25CatTally(activeLevel))');
+  G('ST.q[' + JSON.stringify(q0key) + '].c = 50');
+  check('the level\'s met figures read the same with the house answer in ST.q', G('JSON.stringify(v25CatTally(activeLevel))') === tally);
+  G('S.results = S.pool.slice(0, 20).map(function (q) { return { q: q, ok: true, user: "" }; }); S.correct = S.results.length;');
+  G('finish()');
+  check('a finished house round leaves the session history and the perfect round as they were', G('(ST.hist || []).length') === histBefore && G('"perfect" in ST.best') === false,
+    'hist ' + G('(ST.hist || []).length') + ' perfect ' + G('ST.best.perfect'));
+  G('S.mode = ""; S.section = ""; S.view = "mine"; S.results = []; S.pool = [];');
+
+  /* Our list by heart */
+  const deck = G('v27ReciteDeck(OOT.house.current())');
+  check('Our list by heart deals a deck of calls over the kept pairings and the regions', deck.length > 0 && deck.some((c) => /^With the /.test(c.call)) && deck.some((c) => /^The .+ pour$/.test(c.call)), JSON.stringify(deck.slice(0, 3)));
+  check('no call carries the bottle it asks for', deck.every((c) => { const w = cur().wines.find((x) => x.id === c.wineId); return !!w && fold(c.call).indexOf(fold(w.name)) < 0; }));
+  const qBefore = JSON.stringify(G('ST.q'));
+  check('startHouseRecite is a top-level function and opens the flip deck', G('typeof startHouseRecite') === 'function' && G('startHouseRecite()') === true && G('S.view') === 'houserecite');
+  drawn.push(G('v27ReciteHtml()'));
+  G('S._v27hr.revealed = true');
+  const back = G('v27ReciteHtml()');
+  drawn.push(back);
+  check('turning the card shows the bottle, and the deck grades nothing and records nothing', /Next call|Finish the walk/.test(back) && JSON.stringify(G('ST.q')) === qBefore);
+  G('S._v27hr.idx = S._v27hr.deck.length');
+  drawn.push(G('v27ReciteHtml()'));
+  check('the deck is registered with codex25\'s render and its controls are buttons with words', G('V25_VIEWS.houserecite === v27ReciteView') && /type="button" id="hr-again">Walk it again</.test(G('v27ReciteHtml()')));
+  G('S._v27hr = null; S.view = "mine";');
+
+  /* the rows */
+  const rowKeys = G('V25_MINE.map(function (r) { return r.key; })');
+  const at = rowKeys.indexOf('cellarrecite');
+  check('Mine gains Our list by heart, Pair the menu and Say the pour after Recite our list', rowKeys.slice(at + 1, at + 4).join(',') === 'houserecite,housepair,housesay', rowKeys.join(','));
+  check('each resolves through V25_GO, V25_AREA and V25_HUB', ['houserecite', 'housepair', 'housesay'].every((k) => G('typeof V25_GO.' + k) === 'function' && G('V25_AREA.' + k) === 'mine' && G('V25_HUB.' + k) === 'mine'));
+  const pairLine = G('V25_MINE.filter(function (r) { return r.key === "housepair"; })[0].line()');
+  check('the Pair the menu line counts what it asks', /dishes to the first pick/.test(pairLine) && /to a drink without alcohol/.test(pairLine), pairLine);
+  const sayRow = G('V25_MINE.filter(function (r) { return r.key === "housesay"; })[0].line()');
+  check('Say the pour says it needs the Maitre d\'', /needs the Ma.tre d/.test(sayRow), sayRow);
+  G('S.view = "mine"; v25Go("housesay")');
+  check('and opens nothing in this piece', G('S.view') === 'mine' && G('S.mode') !== 'drill');
+  drawn.push(G('v25MineHtml()'));
+
+  /* hers alone */
+  const hx = JSON.parse(fs.readFileSync(DRILL_FIXTURE, 'utf8'));
+  hx.id = 'h-hersonly'; hx.name = 'Her Room';
+  hx.wines.forEach((w, i) => { w.section = SECTIONS[i]; if (SERVES[i]) w.serve = { value: SERVES[i], by: 'person', ts: NOW }; });
+  const unkeep = (v) => { if (Array.isArray(v)) v.forEach(unkeep); else if (v && typeof v === 'object') { if (v.by === 'person') v.by = 'maitre'; Object.keys(v).forEach((k) => unkeep(v[k])); } };
+  unkeep(hx);
+  H.sandbox.HERSPACK = JSON.stringify(lib.buildPack(hx, 'codex', NOW + 60));
+  await G('v27TakePack(HERSPACK)');
+  await G('v27Switch(S._v27.added.id)');
+  check('a house over her unkept lines alone is current', api.currentId() === 'h-hersonly' && !G('v27HasKept(OOT.house.current())'));
+  check('a drill over hers alone deals nothing: no cellar question, no pairing, no call',
+    G('v27CellarHouseQs().length') === 0 && G('v27PairQuestions().length') === 0 && G('v27ReciteDeck(OOT.house.current()).length') === 0);
+  G('S.view = "mine"; S.mode = "";');
+  check('Pair the menu and Our list by heart open nothing over hers', G('startHousePairDrill()') === false && G('startHouseRecite()') === false && G('S.view') === 'mine');
+  const hersLines = G('V25_MINE.filter(function (r) { return r.key === "housepair" || r.key === "houserecite"; }).map(function (r) { return r.line(); })');
+  check('and each row\'s line says so', hersLines.length === 2 && hersLines.every((l) => l === 'Nothing kept yet: her lines deal nothing until you keep them.'), hersLines.join(' / '));
+  G('ST.cellarDrillN = "all"; startCellarDrill()');
+  check('Drill the list over hers asks the list\'s own questions and no house question', G('S.pool.some(function (q) { return /^h-/.test(q.id); })') === false);
+  G('S.mode = ""; S.section = ""; S.view = "mine"; ST.cellarDrillN = 15;');
+  drawn.push(G('v25MineHtml()'));
+
+  /* ---- the verifier's cases: each one names a hole the review found ---- */
+  section('the house drills: the verifier\'s cases');
+  /* Twins: two wines carry the same kept serve line, and two wines with a
+     kept mark share a region. A serve question must not offer the twin as a
+     wrong option (it is as right as the answer), and a call of the deck must
+     name one bottle. */
+  const tx = JSON.parse(fs.readFileSync(DRILL_FIXTURE, 'utf8'));
+  tx.id = 'h-twinsrm1'; tx.name = 'The Twin Room';
+  tx.wines.forEach((w, i) => { w.section = SECTIONS[i]; if (SERVES[i]) w.serve = { value: SERVES[i], by: 'person', ts: NOW }; });
+  tx.wines[0].serve = { value: SERVES[2], by: 'person', ts: NOW };
+  tx.wines[1].region = tx.wines[0].region;
+  H.sandbox.TWINPACK = JSON.stringify(lib.buildPack(tx, 'codex', NOW + 70));
+  await G('v27TakePack(TWINPACK)');
+  await G('v27Switch(S._v27.added.id)');
+  const twinBad = [];
+  for (let n = 0; n < 40; n++) {
+    for (const q of G('v27CellarHouseQs()').filter((x) => kindOf(x) === 'serve')) {
+      const stem = fold(stemOf(q));
+      q.opts.map(unesc).forEach((o, i) => {
+        if (i === q.a) return;
+        const w = cur().wines.find((x) => x.name === o);
+        if (w && w.serve && w.serve.by === 'person' && fold(w.serve.value) === stem) twinBad.push(q.id + ' offers ' + o + ' as wrong');
+      });
+    }
+  }
+  check('a serve question never marks wrong a house wine that carries the same kept serve line', !twinBad.length, twinBad.slice(0, 2).join(' / '));
+  const twinDeck = G('v27ReciteDeck(OOT.house.current())');
+  const callTo = {};
+  twinDeck.forEach((c) => { (callTo[c.call] = callTo[c.call] || new Set()).add(c.wineId); });
+  const twoBottles = Object.keys(callTo).filter((k) => callTo[k].size > 1);
+  check('a call of Our list by heart names one bottle, never two', !twoBottles.length, twoBottles.join(' / '));
+
+  /* A finished session that mixes the bank with one house question (Review
+     Misses holds both) still keeps the bank's session in the history, and a
+     house answer puts nothing into the daily review's rotation, as codex17
+     keeps producer calls out of ST.srs. */
+  const hq = G('v27CellarHouseQs()')[0];
+  H.sandbox.HQ = hq;
+  const srsBefore = G('Object.keys(ST.srs).filter(function (k) { return /(^|\\|)h-/.test(k); }).length');
+  G('statRecord(HQ, true)');
+  check('a house answer adds nothing to ST.srs, the daily review\'s rotation', G('Object.keys(ST.srs).filter(function (k) { return /(^|\\|)h-/.test(k); }).length') === srsBefore);
+  const histMixed = G('(ST.hist || []).length');
+  G('S.mode = "review"; S.results = QUESTIONS.slice(0, 20).map(function (q) { return { q: q, ok: true, user: "" }; }).concat([{ q: HQ, ok: true, user: "" }]); S.correct = S.results.length;');
+  G('finish()');
+  check('a mixed session keeps the bank\'s answers in the session history', G('(ST.hist || []).length') === histMixed + 1, 'hist ' + histMixed + ' then ' + G('(ST.hist || []).length'));
+  G('S.mode = ""; S.section = ""; S.view = "mine"; S.results = []; S.pool = [];');
+
+  /* An engine with no drills section (an older oot-house.js) over a house
+     that holds kept marks: the Pair the menu line must not claim nothing is kept. */
+  G('var _rk = OOT.houseLib.readyKinds; OOT.houseLib.readyKinds = undefined;');
+  const oldEngineLine = G('v27PairLine()');
+  G('OOT.houseLib.readyKinds = _rk;');
+  check('with kept marks and an engine that cannot deal, the line does not say nothing is kept', G('v27HasKept(OOT.house.current())') && oldEngineLine !== 'Nothing kept yet: her lines deal nothing until you keep them.', oldEngineLine);
+  await G('v27Switch(' + JSON.stringify(houseId) + ')');
+
+  /* ================================================================ */
   section('voice');
   const src = fs.readFileSync(path.join(JS, 'codex27.js'), 'utf8');
   const srcProblems = voiceProblems(src);
@@ -702,6 +939,10 @@ async function main() {
   check('check-house.js itself: the same', !selfProblems.length, selfProblems.join(', '));
   const fixtureProblems = voiceProblems(fs.readFileSync(FIXTURE, 'utf8'));
   check('the fixture house itself: the same', !fixtureProblems.length, fixtureProblems.join(', '));
+  const drillFixtureProblems = voiceProblems(fs.readFileSync(DRILL_FIXTURE, 'utf8'));
+  check('the drill fixture itself: the same', !drillFixtureProblems.length, drillFixtureProblems.join(', '));
+  check('a house drill answer keyed on a wine follows the wine\'s new id', G('v27RekeyOne("intro|h-w-aaaaaaaa-serve", "w-aaaaaaaa", "w-bbbbbbbb")') === 'intro|h-w-bbbbbbbb-serve'
+    && G('v27RekeyOne("h-d-chicken1-firstPickFor", "w-aaaaaaaa", "w-bbbbbbbb")') === null);
   const drawnProblems = voiceProblems(drawn.join('\n'));
   check('every string the house view draws (' + drawn.length + ' pages): the same', !drawnProblems.length, drawnProblems.join(', '));
   const rowStrings = G('V25_MINE.map(function (r) { return r.name + " " + r.line(); }).join("\\n")');
@@ -729,6 +970,20 @@ async function main() {
   check('every door is a no-op', (await N.G('v27Keep("wine", "w-aaaaaaaa", "say")')) === false && (await N.G('v27Discard("wine", "w-aaaaaaaa", "say")')) === false
     && (await N.G('v27SaveHouseFields("w-aaaaaaaa", { serviceNote: "x" })')) === false && JSON.stringify(N.G('v27Problems("wine", "w-aaaaaaaa")')) === '[]'
     && typeof N.G('v27Hooks()').setMark === 'function');
+  check('the three drill rows do not show', ['houserecite', 'housepair', 'housesay'].every((k) => N.G('V25_MINE.filter(function (r) { return r.key === "' + k + '"; })[0].show()') === false));
+  check('the house drills deal nothing and open nothing', N.G('typeof startHousePairDrill') === 'function' && N.G('startHousePairDrill()') === false
+    && N.G('startHouseRecite()') === false && N.G('v27CellarHouseQs().length') === 0 && N.G('S.view') !== 'quiz');
+  check('keyOwned still keeps an h- key out with no OOT', N.G('keyOwned("h-d-chicken1-firstPickFor", "certified")') === false);
+  check('Drill the list is codex12\'s own with no OOT', (() => { N.G('startCellarDrill()'); return N.G('S.view') !== 'quiz'; })());
+  /* the verifier's case: a device whose only answers are house answers has
+     never studied a level, so it lands on the level a fresh device lands on */
+  {
+    const F0 = makeSandbox({}, {});
+    loadChain(F0);
+    const F1 = makeSandbox({ codexStats: JSON.stringify({ q: { 'h-d-chicken1-firstPickFor': { c: 3, w: 0, s: 3 } } }) }, {});
+    loadChain(F1);
+    check('house answers alone do not move the level a fresh device lands on', F1.G('activeLevel') === F0.G('activeLevel'), F0.G('activeLevel') + ' then ' + F1.G('activeLevel'));
+  }
   check('the merge still keeps house with no OOT', (() => {
     N.G('mergeStats({ codex: "sommeliers-codex", v: 4, stats: { cellar: [{ id: "w-aaaaaaaa", ts: 2, producer: "Krug", name: "Grande Cuvee", vintage: "NV" }] } })');
     return N.G('ST.cellar[0].ts') === 2 && N.G('ST.cellar[0].house') === 'h-elsewhere';
