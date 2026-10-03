@@ -65,7 +65,9 @@ const UI_FILE = path.join(SHARED, 'oot-house-ui.js');
 const FIXTURE = path.join(__dirname, 'fixtures', 'house-min.json');
 /* The engine's drill fixture, copied the same way: enough dishes, wines and drinks for every kind to deal. */
 const DRILL_FIXTURE = path.join(__dirname, 'fixtures', 'house-drill.json');
-for (const f of [ENGINE, UI_FILE]) {
+/* The shipped Brennan's pack, beside the engine, as the wing's boot fetches it. */
+const PACK_FILE = path.join(SHARED, 'packs', 'brennans-new-orleans.v1.oothouse.json');
+for (const f of [ENGINE, UI_FILE, PACK_FILE]) {
   if (!fs.existsSync(f)) {
     console.error('check-house: no ' + path.basename(f) + ' at ' + SHARED + ' (set OOT_SHARED)');
     process.exit(1);
@@ -841,14 +843,20 @@ async function main() {
   /* the rows */
   const rowKeys = G('V25_MINE.map(function (r) { return r.key; })');
   const at = rowKeys.indexOf('cellarrecite');
-  check('Mine gains Our list by heart, Pair the menu and Say the pour after Recite our list', rowKeys.slice(at + 1, at + 4).join(',') === 'houserecite,housepair,housesay', rowKeys.join(','));
-  check('each resolves through V25_GO, V25_AREA and V25_HUB', ['houserecite', 'housepair', 'housesay'].every((k) => G('typeof V25_GO.' + k) === 'function' && G('V25_AREA.' + k) === 'mine' && G('V25_HUB.' + k) === 'mine'));
+  check('Mine gains Our list by heart, Pair the menu, Say the pour and Guest at the table after Recite our list', rowKeys.slice(at + 1, at + 5).join(',') === 'houserecite,housepair,housesay,houseguest', rowKeys.join(','));
+  check('each resolves through V25_GO, V25_AREA and V25_HUB', ['houserecite', 'housepair', 'housesay', 'houseguest'].every((k) => G('typeof V25_GO.' + k) === 'function' && G('V25_AREA.' + k) === 'mine' && G('V25_HUB.' + k) === 'mine'));
   const pairLine = G('V25_MINE.filter(function (r) { return r.key === "housepair"; })[0].line()');
   check('the Pair the menu line counts what it asks', /dishes to the first pick/.test(pairLine) && /to a drink without alcohol/.test(pairLine), pairLine);
   const sayRow = G('V25_MINE.filter(function (r) { return r.key === "housesay"; })[0].line()');
-  check('Say the pour says it needs the Maitre d\'', /needs the Ma.tre d/.test(sayRow), sayRow);
+  const keptLineWines = G('OOT.houseLib.drills.sayable(OOT.house.current(), "wine").length');
+  check('Say the pour counts the wines with a kept timed line, offline and with no key', !/Ma.tre d/.test(sayRow) && sayRow.indexOf(keptLineWines + ' wine') === 0, sayRow);
   G('S.view = "mine"; v25Go("housesay")');
-  check('and opens nothing in this piece', G('S.view') === 'mine' && G('S.mode') !== 'drill');
+  check('and opens its own screen, no drill started', G('S.view') === 'housesay' && G('S.mode') !== 'drill');
+  drawn.push(G('v27SayHtml()'));
+  G('S.view = "mine"; v25Go("houseguest")');
+  check('Guest at the table opens its own screen too', G('S.view') === 'houseguest' && G('S.mode') !== 'drill');
+  drawn.push(G('v27GuestHtml()'));
+  G('S.view = "mine"; S._v27say = null; S._v27guest = null;');
   drawn.push(G('v25MineHtml()'));
 
   /* hers alone */
@@ -928,6 +936,308 @@ async function main() {
   await G('v27Switch(' + JSON.stringify(houseId) + ')');
 
   /* ================================================================ */
+  section('the shipped pack at boot: Brennan\'s loads itself');
+  {
+  /* A device is the engine over a Map plus the localStorage the chain
+     reads. bootDevice loads the engine and the chain over them as the
+     wing's shell does, with fetch answering the one same-origin pack and
+     recording what it was asked; a second boot is a new sandbox over the
+     same two stores. */
+  const packText = fs.readFileSync(PACK_FILE, 'utf8');
+  const packJson = JSON.parse(packText);
+  const PACK_PATH = '../shared/packs/brennans-new-orleans.v1.oothouse.json';
+  function bootDevice(backing, seed, text, opts) {
+    const o = opts || {};
+    const D = makeSandbox(seed, {});
+    vm.runInContext(fs.readFileSync(ENGINE, 'utf8'), D.ctx, { filename: 'oot-house.js' });
+    vm.runInContext(fs.readFileSync(UI_FILE, 'utf8'), D.ctx, { filename: 'oot-house-ui.js' });
+    const dlib = D.G('OOT.houseLib');
+    const dapi = dlib.createHouseApi(dlib.mapStorage(backing), { win: D.sandbox, now: () => o.now || NOW, rand: seeded(o.seed || 21), from: 'codex' });
+    D.sandbox.OOT.house = dapi;
+    const asked = [];
+    if (o.offline) D.sandbox.navigator.onLine = false;
+    D.sandbox.fetch = (url, fo) => {
+      /* codex23 asks after the maps on its own; only the pack is this file's question */
+      if (/\.oothouse\.json$/.test(String(url))) asked.push({ url, opts: fo });
+      if (o.fail) return Promise.reject(new Error('no network'));
+      /* the verifier's: a slow network, answered only when the case releases it */
+      if (o.hold && /\.oothouse\.json$/.test(String(url))) return new Promise((r) => { o.release = () => r({ ok: true, status: 200, text: () => Promise.resolve(text) }); });
+      return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(text) });
+    };
+    loadChain(D);
+    return { D, api: dapi, asked };
+  }
+  async function settle(dev) {
+    await dev.D.G('V27_LAST');
+    await dev.D.G('V27_BOOT_PACK');
+    await tick(30);
+    await dev.D.G('V27_WRITING');
+    await tick(10);
+  }
+  const snap = (backing) => JSON.stringify([...backing.entries()].sort());
+  const cellarOf = (store) => JSON.stringify((JSON.parse(store.codexStats || '{}').cellar) || []);
+
+  const B1 = new Map();
+  const dev1 = bootDevice(B1, {}, packText);
+  await settle(dev1);
+  const boot1 = await dev1.D.G('V27_BOOT_PACK');
+  check('the boot asks for the one same-origin pack, once, with cache no-cache', dev1.asked.length === 1 && dev1.asked[0].url === PACK_PATH && dev1.asked[0].opts && dev1.asked[0].opts.cache === 'no-cache',
+    JSON.stringify(dev1.asked));
+  check('V27_DEFAULT_PACK is the one constant naming it', dev1.D.G('V27_DEFAULT_PACK') === PACK_PATH);
+  check('on an empty device ensurePack adds Brennan\'s and makes it current', !!boot1 && boot1.action === 'added' && boot1.current === true, JSON.stringify(boot1));
+  const bh = dev1.api.current();
+  check('the current house is the pack\'s edition', !!bh && bh.pack && bh.pack.id === 'brennans-new-orleans' && bh.id === packJson.house.id);
+  check('its wines are on Our Wine List through the switch, every bottle stamped with the house', dev1.D.G('ST.cellar.length') === packJson.house.wines.length
+    && dev1.D.G('ST.cellar.every(function (b) { return b.house === ' + JSON.stringify(bh.id) + '; })'), String(dev1.D.G('ST.cellar.length')));
+  const loadedLine = dev1.D.G('V25_MINE.filter(function (r) { return r.key === "house"; })[0].line()');
+  const wantLine = packJson.house.name + ' is loaded: ' + packJson.house.dishes.length + ' dishes, ' + packJson.house.cocktails.length + ' drinks, ' + packJson.house.wines.length + ' wines';
+  check('one quiet line rides on the house line', loadedLine.indexOf(wantLine) >= 0, loadedLine);
+  check('and the line is clean', !voiceProblems(loadedLine).length);
+  dev1.D.G('S.view = "mine"; render(); render();');
+  check('it is drawn once, then gone', dev1.D.G('V27_AUTO_NOTE') === '' && dev1.D.G('V25_MINE.filter(function (r) { return r.key === "house"; })[0].line()').indexOf('loaded') < 0);
+
+  const before2 = snap(B1);
+  const cellar2 = cellarOf(dev1.D.store);
+  const dev2 = bootDevice(B1, Object.assign({}, dev1.D.store), packText);
+  await settle(dev2);
+  const boot2 = await dev2.D.G('V27_BOOT_PACK');
+  check('a second boot finds the edition current', !!boot2 && boot2.action === 'current', JSON.stringify(boot2));
+  check('and writes nothing: the house store is byte for byte the same', snap(B1) === before2);
+  check('and the list is the same', cellarOf(dev2.D.store) === cellar2 && dev2.D.G('ST.cellar.length') === packJson.house.wines.length);
+  check('and says nothing', dev2.D.G('V27_AUTO_NOTE') === '');
+
+  const devOff = bootDevice(new Map(), {}, packText, { offline: true });
+  await settle(devOff);
+  check('offline the pack is not asked for and the boot stands', devOff.asked.length === 0 && (await devOff.D.G('V27_BOOT_PACK')) === null && devOff.api.current() === null && devOff.D.G('typeof render') === 'function');
+  const devFail = bootDevice(new Map(), {}, packText, { fail: true });
+  await settle(devFail);
+  check('a failed fetch is quiet: no house, no line, no throw', devFail.asked.length === 1 && (await devFail.D.G('V27_BOOT_PACK')) === null && devFail.api.current() === null && devFail.D.G('V27_AUTO_NOTE') === '');
+
+  /* ================================================================ */
+  section('a newer edition refreshes, and a bottle the person edited stands');
+  /* The edition before this one, made from the shipped pack: every stamp the
+     edition carries moved a day back, one wine's style as it was printed
+     then, and one lexicon term the newer edition adds. */
+  const NEW_AT = Date.parse(packJson.house.pack.builtAt);
+  const OLD_AT = NEW_AT - 86400000;
+  const oldPack = JSON.parse(packText);
+  const restamp = (v) => {
+    if (Array.isArray(v)) return v.forEach(restamp);
+    if (v && typeof v === 'object') Object.keys(v).forEach((k) => { if (v[k] === NEW_AT) v[k] = OLD_AT; else restamp(v[k]); });
+  };
+  restamp(oldPack.house);
+  oldPack.house.pack.builtAt = new Date(OLD_AT).toISOString();
+  const shippedW1 = packJson.house.wines[0];
+  const w1 = oldPack.house.wines[0].id;
+  const w2 = oldPack.house.wines[1].id;
+  oldPack.house.wines[0].style = 'As printed the day before';
+  const addedTerm = oldPack.house.lexicon.pop();
+  const B3 = new Map();
+  const dev3 = bootDevice(B3, {}, JSON.stringify(oldPack));
+  await settle(dev3);
+  check('the older edition is on the device and current', dev3.api.current() && dev3.api.current().pack.builtAt === oldPack.house.pack.builtAt && dev3.D.G('ST.cellar.length') === oldPack.house.wines.length);
+  /* the person edits the second bottle: its style on the list, its profile on the house */
+  dev3.D.G('(function () { var b = v27BottleById(' + JSON.stringify(w2) + '); b.style = "My own words on the style"; b.ts = ' + (NOW + 5) + '; stSave(); })()');
+  await dev3.D.G('v27Put(v27BottleById(' + JSON.stringify(w2) + '))');
+  await dev3.D.G('v27Edit("wine", ' + JSON.stringify(w2) + ', "profile", "My own profile of this bottle")');
+  const w2item = dev3.api.current().wines.find((w) => w.id === w2);
+  check('the edit is on the house', w2item.style === 'My own words on the style' && w2item.profile.value === 'My own profile of this bottle' && w2item.profile.by === 'person');
+  /* the verifier's: the person takes a third bottle off the list (the
+     list's Remove, then the house's tombstone) and rewrites a fourth's say
+     line, both before the newer edition lands */
+  const w3 = oldPack.house.wines[2].id;
+  const w4 = oldPack.house.wines[3].id;
+  dev3.D.G('(function () { var i = v27IndexOf(' + JSON.stringify(w3) + '); ST.cellar.splice(i, 1); stSave(); })()');
+  await dev3.D.G('v27Remove(' + JSON.stringify(w3) + ')');
+  await dev3.D.G('v27Edit("wine", ' + JSON.stringify(w4) + ', "say", "My own way of saying it")');
+  const dev4 = bootDevice(B3, Object.assign({}, dev3.D.store), packText, { now: NOW + 100 });
+  await settle(dev4);
+  const boot4 = await dev4.D.G('V27_BOOT_PACK');
+  check('the newer edition refreshes the copy on the device', !!boot4 && boot4.action === 'refreshed' && boot4.counts && boot4.counts.added >= 1, JSON.stringify(boot4));
+  const h4 = dev4.api.current();
+  check('the term the edition adds is on the house', h4.lexicon.some((x) => x.id === addedTerm.id));
+  check('the wine nobody touched takes the edition\'s value, on the house and on the list',
+    h4.wines.find((w) => w.id === w1).style === shippedW1.style && dev4.D.G('v27BottleById(' + JSON.stringify(w1) + ').style') === shippedW1.style,
+    h4.wines.find((w) => w.id === w1).style);
+  const w2after = h4.wines.find((w) => w.id === w2);
+  check('the bottle the person edited keeps their style, on the house and on the list',
+    w2after.style === 'My own words on the style' && dev4.D.G('v27BottleById(' + JSON.stringify(w2) + ').style') === 'My own words on the style');
+  check('and keeps their profile, kept as theirs', w2after.profile && w2after.profile.value === 'My own profile of this bottle' && w2after.profile.by === 'person');
+  const refLine = dev4.D.G('V25_MINE.filter(function (r) { return r.key === "house"; })[0].line()');
+  check('one quiet line says what the edition brought', refLine.indexOf(packJson.house.name + ' updated: ' + boot4.counts.added + ' new') >= 0, refLine);
+  check('the pointer did not move', dev4.api.currentId() === packJson.house.id);
+
+  /* ================================================================ */
+  section('the verifier: the shipped pack never moves the list under the person');
+  check('a bottle the person removed stays off the list and off the house after the refresh',
+    dev4.D.G('v27IndexOf(' + JSON.stringify(w3) + ')') < 0 && !h4.wines.some((w) => w.id === w3));
+  const w4after = h4.wines.find((w) => w.id === w4);
+  check('a say line the person rewrote stands after the refresh, kept as theirs',
+    !!w4after && w4after.say && w4after.say.value === 'My own way of saying it' && w4after.say.by === 'person');
+  /* A slow network: the pack lands while the cellar form is open on a
+     bottle. v27Busy exists so no sync moves the list under a form or an Our
+     List drill; the auto-load's switch must keep that rule too, and leave
+     the list as it stood until the form is closed. */
+  const holdOpts = { hold: true };
+  const devBusy = bootDevice(new Map(), {}, packText, holdOpts);
+  await tick(30);
+  devBusy.D.G('S.view = "cellar"; S._cellarForm = { id: "" };');
+  const busyBefore = devBusy.D.G('JSON.stringify(ST.cellar || [])');
+  if (holdOpts.release) holdOpts.release();
+  await devBusy.D.G('V27_BOOT_PACK');
+  await tick(30);
+  check('a pack that lands while the cellar form is open leaves the list as it stood until the form closes',
+    devBusy.D.G('JSON.stringify(ST.cellar || [])') === busyBefore, String(devBusy.D.G('(ST.cellar || []).length')) + ' rows under an open form');
+  check('the held pack writes nothing to the device while the form is open', devBusy.api.list().length === 0 && !devBusy.api.currentId());
+  devBusy.D.G('S._cellarForm = null; S.view = "home"; render();');
+  await settle(devBusy);
+  check('and once the form closes, the next render loads it and the list follows',
+    devBusy.api.currentId() === packJson.house.id && devBusy.D.G('(ST.cellar || []).length') === packJson.house.wines.length,
+    String(devBusy.D.G('(ST.cellar || []).length')));
+
+  /* The quiet line is drawn once: a render of a screen that does not show
+     the house line must not spend it, or the person never sees it. */
+  const devHome = bootDevice(new Map(), {}, packText);
+  devHome.D.G('S.view = "home";');
+  await settle(devHome);
+  const homeHtml = devHome.D.G('S.view = "home"; v25HomeHtml()');
+  devHome.D.G('S.view = "home"; render(); render();');
+  const homeNote = devHome.D.G('V27_AUTO_NOTE');
+  const homeLine = devHome.D.G('V25_MINE.filter(function (r) { return r.key === "house"; })[0].line()');
+  check('the pack\'s quiet line is shown on the home screen or still waits for the house line after home renders',
+    homeHtml.indexOf('is loaded') >= 0 || (homeNote !== '' && homeLine.indexOf('is loaded') >= 0), 'note now: ' + JSON.stringify(homeNote));
+
+  /* A device that holds the person's own bottles and no house: the
+     shipped pack is the restaurant's list, and the person's own cellar must
+     not be filed into it (it would ride out in every Brennan's pack this
+     device exports, and deal in the house's drills as a house wine). */
+  const OWN = { id: 'w-own00001', ts: 5, producer: 'Krug', name: 'Grande Cuvee', vintage: 'NV', region: 'Champagne', grapes: '', style: '', glass: '', bottle: '', note: '' };
+  const devOwn = bootDevice(new Map(), { codexStats: JSON.stringify({ cellar: [OWN] }) }, packText);
+  await settle(devOwn);
+  const ownHouse = devOwn.api.current();
+  check('the person\'s own bottle with no house is not adopted into the shipped Brennan\'s house',
+    !!ownHouse && !ownHouse.wines.some((w) => w.producer === 'Krug' && /Grande Cuvee/.test(w.name)),
+    ownHouse ? ownHouse.wines.length + ' wines on Brennan\'s, the pack ships ' + packJson.house.wines.length : 'no house');
+  const ownStub = devOwn.api.list().find((x) => x.name === 'My own bottles');
+  const ownKept = ownStub ? await devOwn.api.switchTo(ownStub.id) : null;
+  check('the person\'s bottle is kept in a house of their own, and Brennan\'s is still the house open',
+    !!ownKept && ownKept.wines.some((w) => w.producer === 'Krug') && !!ownHouse && ownHouse.id === packJson.house.id && ownHouse.wines.length === packJson.house.wines.length);
+  const ownLine = devOwn.D.G('V27_AUTO_NOTE');
+  check('and the quiet line says where they are', /Your own bottles are kept as My own bottles, under The house/.test(ownLine), ownLine);
+
+  /* ================================================================ */
+  section('Say the pour: offline, graded by the engine, recorded only on Record it');
+  const SD = dev2.D;
+  const sapi = dev2.api;
+  SD.G('var GRADED = []; var _realSaid = OOT.houseLib.drills.gradeSaid; OOT.houseLib.drills.gradeSaid = function (h, id, len, said) { var g = _realSaid(h, id, len, said); GRADED.push({ id: id, len: len, said: said, verdict: g && g.verdict }); return g; };');
+  const sayItems = SD.G('v27SayItems()');
+  check('every wine of the edition has a kept timed line to say back', sayItems.length === packJson.house.wines.length && sayItems.every((x) => x.kind === 'wine' && x.lengths.join(',') === 's10,s20,s45'), String(sayItems.length));
+  const sayLine = SD.G('V25_MINE.filter(function (r) { return r.key === "housesay"; })[0].line()');
+  check('the row counts them', sayLine.indexOf(sayItems.length + ' wines with kept lines') === 0, sayLine);
+  SD.G('S.view = "mine"; v25Go("housesay")');
+  check('the row opens Say the pour', SD.G('S.view') === 'housesay');
+  const sayFirst = SD.G('v27SayHtml()');
+  const sectionsShown = [...new Set(sayItems.map((x) => x.section))];
+  check('the list is drawn by the house\'s sections, with Next for a random one', sectionsShown.every((sct) => sayFirst.indexOf('<optgroup label="' + sct.replace(/&/g, '&amp;') + '"') >= 0) && /id="hs-next">Next wine</.test(sayFirst));
+  check('the three lengths are chips in words, the chosen one saying so', /10 seconds/.test(sayFirst) && /20 seconds, chosen/.test(sayFirst) && /45 seconds/.test(sayFirst));
+  check('a live count against the cap, and Check', /id="hs-count"[^>]*>0 of 50 words/.test(sayFirst) && /id="hs-check">Check</.test(sayFirst));
+  check('no Record it before a Check', sayFirst.indexOf('id="hs-record"') < 0);
+  check('no Speak where the browser has no speech recognition', sayFirst.indexOf('Speak') < 0);
+  check('the screen leaves allergens to the kitchen', /Allergens are the kitchen/.test(sayFirst));
+  SD.sandbox.webkitSpeechRecognition = function () { };
+  const saySpeak = SD.G('v27SayHtml()');
+  check('Speak shows where it exists, saying where the voice goes', /id="hs-speak"[^>]*>Speak</.test(saySpeak) && saySpeak.indexOf('Your voice goes to your browser\'s speech service, not to Anthropic.') >= 0);
+  delete SD.sandbox.webkitSpeechRecognition;
+  const sayId = SD.G('S._v27say.id');
+  const sayWine = sapi.current().wines.find((w) => w.id === sayId);
+  if (sayWine.serviceNote) check('a wine\'s service note sits under the fixed eyebrow', sayFirst.indexOf('Your words. Allergens: confirm at lineup.') >= 0);
+  const qBeforeSay = JSON.stringify(SD.G('ST.q'));
+  const keptLine = sayWine.lines.value.s20;
+  const good = SD.G('v27SayCheck(' + JSON.stringify(keptLine) + ')');
+  const graded = SD.G('GRADED.splice(0)');
+  check('Check grades the typed line through houseLib.drills.gradeSaid', graded.length === 1 && graded[0].id === sayId && graded[0].len === 's20' && graded[0].said === keptLine);
+  check('the kept line said back is Met', !!good && good.verdict === 'met', good && good.verdict);
+  check('and Check writes nothing', JSON.stringify(SD.G('ST.q')) === qBeforeSay);
+  const sayRes = SD.G('v27SayHtml()');
+  check('the verdict is a word, each part Hit or Missed with its label, the kept line beside what was said',
+    /Verdict: Met/.test(sayRes) && good.parts.every((p) => sayRes.indexOf(p.label) >= 0) && /Hit/.test(sayRes)
+    && /Your kept line/.test(sayRes) && /What you said/.test(sayRes) && /id="hs-record">Record it</.test(sayRes) && /id="hs-again">Try again</.test(sayRes));
+  check('and the notes are drawn', good.notes.every((n) => sayRes.indexOf(n.replace(/&/g, '&amp;').replace(/'/g, '\'')) >= 0 || sayRes.indexOf(n.replace(/&/g, '&amp;')) >= 0));
+  const sayKey = SD.G('v27SayRecord()');
+  check('Record it writes ST.q through the quiz engine under h-<wineId>-say-<length>', /(^|\|)h-w-[a-z0-9]+-say-s20$/.test(sayKey) && sayKey.indexOf(sayId) >= 0 && SD.G('ST.q[' + JSON.stringify(sayKey) + '].c') === 1, sayKey);
+  check('once: a second Record it writes nothing', SD.G('v27SayRecord()') === null && SD.G('ST.q[' + JSON.stringify(sayKey) + '].c') === 1);
+  check('the screen then says Recorded in words', /Recorded/.test(SD.G('v27SayHtml()')) && SD.G('v27SayHtml()').indexOf('id="hs-record"') < 0);
+  check('keyOwned keeps the say key out of every level', ['certified', 'intro', 'advanced', 'master'].every((lv) => SD.G('keyOwned(' + JSON.stringify(sayKey) + ', ' + JSON.stringify(lv) + ')') === false));
+  check('and nothing of it reaches the daily review', SD.G('Object.keys(ST.srs || {}).some(function (k) { return /(^|\\|)h-/.test(k); })') === false);
+  SD.G('v27SayAgain(); v27SayLength("s10")');
+  const weak = SD.G('v27SayCheck("It is a nice wine.")');
+  check('a weak pour is graded too, its verdict a word', !!weak && weak.verdict !== 'met' && /Verdict: (Close|Missed)/.test(SD.G('v27SayHtml()')) && /Missed/.test(SD.G('v27SayHtml()')));
+  const qBeforeWeak = JSON.stringify(SD.G('ST.q'));
+  SD.G('v27SayAgain()');
+  check('Try again clears the grade and records nothing', SD.G('S._v27say.grade') === null && JSON.stringify(SD.G('ST.q')) === qBeforeWeak);
+  const before10 = SD.G('Object.keys(ST.q).length');
+  SD.G('v27SayCheck("It is a nice wine.")');
+  const weakKey = SD.G('v27SayRecord()');
+  check('a weak pour recorded is a wrong answer under its own length', /-say-s10$/.test(weakKey) && SD.G('ST.q[' + JSON.stringify(weakKey) + '].w') === 1 && SD.G('Object.keys(ST.q).length') === before10 + 1);
+  const nextId = SD.G('v27SayPick("")');
+  check('Next deals another wine, and the grade starts afresh', !!nextId && nextId !== sayId && SD.G('S._v27say.grade') === null);
+  drawn.push(sayFirst, sayRes);
+  SD.G('OOT.houseLib.drills.gradeSaid = _realSaid;');
+
+  /* ================================================================ */
+  section('Guest at the table: the wine first, graded by the engine, recorded only on Record it');
+  SD.G('var PLAYED = []; var _realScen = OOT.houseLib.drills.gradeScenario; OOT.houseLib.drills.gradeScenario = function (h, id, said) { var g = _realScen(h, id, said); PLAYED.push({ id: id, said: said, verdict: g && g.verdict }); return g; };');
+  const gh = sapi.current();
+  const ghWines = new Set(gh.wines.map((w) => w.id));
+  const keptScen = gh.scenarios.filter((x) => x.you && x.you.by === 'person');
+  const keptMix = gh.mixUps.filter((m) => m.ask && m.ask.by === 'person' && m.difference && m.difference.by === 'person');
+  const gdeck = SD.G('v27GuestDeck(OOT.house.current())');
+  check('the deck holds every kept scenario and every kept mix-up', gdeck.length === keptScen.length + keptMix.length, gdeck.length + ' of ' + (keptScen.length + keptMix.length));
+  const rank = (x) => (x.wine ? 0 : 2) + (x.mix ? 1 : 0);
+  check('the scenarios that name a wine come first, then the rest, the mix-ups after each', gdeck.every((x, i) => i === 0 || rank(gdeck[i - 1]) <= rank(x))
+    && gdeck.filter((x) => !x.mix && x.wine).length === keptScen.filter((x) => x.itemIds.some((id) => ghWines.has(id))).length
+    && gdeck.filter((x) => !x.mix && x.wine).length > 0 && gdeck[0].wine === true);
+  SD.G('S.view = "mine"; v25Go("houseguest")');
+  check('the row opens Guest at the table', SD.G('S.view') === 'houseguest');
+  const dealt = SD.G('S._v27guest.deck');
+  check('the dealt round keeps that order', dealt.length === gdeck.length && dealt.every((x, i) => i === 0 || rank(dealt[i - 1]) <= rank(x)));
+  const card = SD.G('v27GuestCard()');
+  const sc = gh.scenarios.find((x) => x.id === card.id);
+  const guestFirst = SD.G('v27GuestHtml()');
+  check('the guest\'s words are shown, with a box, a count and Check, and no Record it yet',
+    guestFirst.indexOf('The guest says') >= 0 && guestFirst.indexOf(sc.guest.replace(/&/g, '&amp;').replace(/"/g, '&quot;')) >= 0 && /id="hg-check">Check</.test(guestFirst) && guestFirst.indexOf('id="hg-record"') < 0);
+  check('and leaves allergens to the kitchen', /Allergens are the kitchen/.test(guestFirst));
+  const qBeforeGuest = JSON.stringify(SD.G('ST.q'));
+  const gg = SD.G('v27GuestCheck(' + JSON.stringify(sc.you.value) + ')');
+  const played = SD.G('PLAYED.splice(0)');
+  check('Check grades the answer through houseLib.drills.gradeScenario', played.length === 1 && played[0].id === sc.id && played[0].said === sc.you.value);
+  check('the kept answer said back is Met, and Check writes nothing', !!gg && gg.verdict === 'met' && JSON.stringify(SD.G('ST.q')) === qBeforeGuest);
+  const guestRes = SD.G('v27GuestHtml()');
+  check('the result shows the verdict in a word, the kept answer and the principle',
+    /Verdict: Met/.test(guestRes) && /Your kept answer/.test(guestRes) && /The principle/.test(guestRes) && /id="hg-record">Record it</.test(guestRes));
+  const guestKey = SD.G('v27GuestRecord()');
+  check('Record it writes ST.q under h-<scenarioId>-guest', /(^|\|)h-s-[a-z0-9]+-guest$/.test(guestKey) && guestKey.indexOf(sc.id) >= 0 && SD.G('ST.q[' + JSON.stringify(guestKey) + '].c') === 1, guestKey);
+  check('once only', SD.G('v27GuestRecord()') === null && SD.G('ST.q[' + JSON.stringify(guestKey) + '].c') === 1);
+  check('keyOwned keeps the guest key out of every level', ['certified', 'intro', 'advanced', 'master'].every((lv) => SD.G('keyOwned(' + JSON.stringify(guestKey) + ', ' + JSON.stringify(lv) + ')') === false));
+  if (keptMix.length) {
+    const mx = keptMix[0];
+    const mcard = SD.G('v27GuestPick(' + JSON.stringify(mx.id) + ')');
+    check('a mix-up is dealt as a which is which ask', !!mcard && mcard.mix === true && /^Which is which: /.test(mcard.title) && mcard.guest === mx.ask.value);
+    const mg = SD.G('v27GuestCheck(' + JSON.stringify(mx.difference.value) + ')');
+    const mplayed = SD.G('PLAYED.splice(0)');
+    check('and graded by gradeScenario against the kept difference', mplayed.length === 1 && mplayed[0].id === mx.id && !!mg && mg.verdict === 'met' && mg.keptYou === mx.difference.value);
+    const mkey = SD.G('v27GuestRecord()');
+    check('recorded under h-<mixUpId>-guest', /(^|\|)h-m-[a-z0-9]+-guest$/.test(mkey));
+    drawn.push(SD.G('v27GuestHtml()'));
+  }
+  const moved = SD.G('v27GuestMove(1)');
+  check('Next guest moves on and starts afresh', !!moved && SD.G('S._v27guest.grade') === null);
+  drawn.push(guestFirst, guestRes);
+  SD.G('OOT.houseLib.drills.gradeScenario = _realScen;');
+  check('the house record is untouched by every grade', snap(B1) === before2);
+  }
+
+  /* ================================================================ */
   section('voice');
   const src = fs.readFileSync(path.join(JS, 'codex27.js'), 'utf8');
   const srcProblems = voiceProblems(src);
@@ -970,9 +1280,14 @@ async function main() {
   check('every door is a no-op', (await N.G('v27Keep("wine", "w-aaaaaaaa", "say")')) === false && (await N.G('v27Discard("wine", "w-aaaaaaaa", "say")')) === false
     && (await N.G('v27SaveHouseFields("w-aaaaaaaa", { serviceNote: "x" })')) === false && JSON.stringify(N.G('v27Problems("wine", "w-aaaaaaaa")')) === '[]'
     && typeof N.G('v27Hooks()').setMark === 'function');
-  check('the three drill rows do not show', ['houserecite', 'housepair', 'housesay'].every((k) => N.G('V25_MINE.filter(function (r) { return r.key === "' + k + '"; })[0].show()') === false));
+  check('the four drill rows do not show', ['houserecite', 'housepair', 'housesay', 'houseguest'].every((k) => N.G('V25_MINE.filter(function (r) { return r.key === "' + k + '"; })[0].show()') === false));
   check('the house drills deal nothing and open nothing', N.G('typeof startHousePairDrill') === 'function' && N.G('startHousePairDrill()') === false
     && N.G('startHouseRecite()') === false && N.G('v27CellarHouseQs().length') === 0 && N.G('S.view') !== 'quiz');
+  check('Say the pour and Guest at the table grade nothing and record nothing with no OOT', N.G('v27SayCheck("anything")') === null && N.G('v27SayRecord()') === null
+    && N.G('v27GuestCheck("anything")') === null && N.G('v27GuestRecord()') === null && N.G('Object.keys(ST.q).some(function (k) { return /(^|\\|)h-/.test(k); })') === false);
+  check('and their screens say there is no house, cleanly', /No house yet/.test(N.G('v27SayHtml()')) && /No house yet/.test(N.G('v27GuestHtml()'))
+    && !voiceProblems(N.G('v27SayHtml()') + N.G('v27GuestHtml()')).length);
+  check('the shipped pack is not asked for with no OOT', N.G('V27_BOOT_PACK') === null);
   check('keyOwned still keeps an h- key out with no OOT', N.G('keyOwned("h-d-chicken1-firstPickFor", "certified")') === false);
   check('Drill the list is codex12\'s own with no OOT', (() => { N.G('startCellarDrill()'); return N.G('S.view') !== 'quiz'; })());
   /* the verifier's case: a device whose only answers are house answers has
@@ -997,6 +1312,13 @@ async function main() {
   console.log('check-house: all ' + passed + ' checks pass');
   process.exit(0);
 }
+
+/* the verifier's: a promise that never settles drains the loop and Node
+   exits 0 with no summary, so a hung case would read as a pass */
+process.on('beforeExit', () => {
+  console.error('check-house: the run ended before its summary (a case never settled)');
+  process.exit(1);
+});
 
 main().catch((e) => {
   console.error('check-house: ' + (e && e.stack ? e.stack : e));
