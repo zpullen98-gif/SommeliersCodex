@@ -409,8 +409,9 @@ pin('Ch. Margaux: the classification in sub never reaches the region', !!marg &&
 pin('Lynch-Bages: a house the corpus lacks keeps the page\'s spelling', !!lynch && lynch.producer === 'Ch. Lynch-Bages' && lynch.matched === '');
 pin('Bin 389: the bin stays in the wine name and is neither a price nor a vintage', !!bin389 && /Bin 389/.test(bin389.name) && bin389.vintage === '2018' && bin389.bottle === '1600');
 pin('Grange: the icon resolves to Penfolds, declared, and keeps its own name', !!grange && grange.matched === 'p-penfolds' && grange.producer === 'Penfolds' && grange.name === 'Grange' && grange.fromCodex.indexOf('producer') >= 0);
-/* Each draft through the shipped coercion: nine fields, id, ts, and nothing of the draft's scaffolding. */
-const ALLOWED = ['id', 'ts', 'producer', 'name', 'vintage', 'region', 'grapes', 'style', 'glass', 'bottle', 'note', 'maitre'];
+/* Each draft through the shipped coercion: nine fields, id, ts, and nothing of the draft's scaffolding.
+   `house` is the id of the House a bottle belongs to (codex27 carries it when set); a stray key is still refused. */
+const ALLOWED = ['id', 'ts', 'producer', 'name', 'vintage', 'region', 'grapes', 'style', 'glass', 'bottle', 'note', 'maitre', 'house'];
 desk.forEach((r) => {
   const rec = C.cellarSanitize(Object.assign({ id: 'w-test0001', ts: 1 }, r));
   const stray = Object.keys(rec).filter((k) => ALLOWED.indexOf(k) < 0);
@@ -443,7 +444,7 @@ const dirty = C.cellarSanitize({
   maitre: {
     say: { value: 'kroog', by: 'robot', ts: '5' },
     guest: { value: '', by: 'person', ts: 6 },
-    why: { value: 'x'.repeat(700), by: 'person', ts: 9, model: 'claude-opus-5' },
+    why: { value: 'x'.repeat(4100), by: 'person', ts: 9, model: 'claude-opus-5' },
     kept: [{ q: 'why', a: 'because', ts: 7 }, { q: 'no answer' }],
     allergens: 'none'
   }
@@ -452,7 +453,8 @@ if (!dirty.maitre) mbad.push('maitre was dropped by the coercion');
 else {
   if (!dirty.maitre.say || dirty.maitre.say.by !== 'maitre' || dirty.maitre.say.ts !== 5) mbad.push('say: an unknown `by` must become hers, ts a number: ' + JSON.stringify(dirty.maitre.say));
   if (dirty.maitre.guest) mbad.push('guest: an empty value must not survive');
-  if (!dirty.maitre.why || dirty.maitre.why.value.length !== 600 || dirty.maitre.why.model !== 'claude-opus-5') mbad.push('why: capped at 600 with its model kept: ' + JSON.stringify(dirty.maitre.why && dirty.maitre.why.value.length));
+  /* 4000 since 3 Oct 2026: the House's prose cap, raised from 600 beside its reason in codex24. */
+  if (!dirty.maitre.why || dirty.maitre.why.value.length !== 4000 || dirty.maitre.why.model !== 'claude-opus-5') mbad.push('why: capped at 4000 with its model kept: ' + JSON.stringify(dirty.maitre.why && dirty.maitre.why.value.length));
   if (!dirty.maitre.kept || dirty.maitre.kept.length !== 1) mbad.push('kept: one sound answer, the unanswered one dropped: ' + JSON.stringify(dirty.maitre.kept));
 }
 if (/allerg/i.test(JSON.stringify(dirty))) mbad.push('an allergen key rode through cellarSanitize: ' + JSON.stringify(dirty));

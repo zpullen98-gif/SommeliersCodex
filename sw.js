@@ -1,6 +1,6 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v74';
+const CACHE = 'codex-v75';
 
 /* The world maps (maps/*.jpg) are deliberately NOT in ASSETS above.
 
@@ -69,6 +69,7 @@ const ASSETS = [
   './js/codex25.js',
   './js/rewrite-preview.js',
   './js/codex26.js',
+  './js/codex27.js',
   './js/boot.js',
   './fonts/cinzel-normal-400-900-latin.woff2',
   './fonts/cinzel-normal-400-900-latin-ext.woff2',

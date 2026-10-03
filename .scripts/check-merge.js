@@ -77,7 +77,11 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     /* codex25 owns no store, but it reassigns homeView and wraps the Finals
        and render at load, and a grandfathering pass there calls applyLevel:
        the chain has to load to the end with it in place. */
-    'codex25.js']);
+    'codex25.js',
+    /* codex27 carries a bottle's `house` through cellarSanitize and puts it
+       back after the merge when the newer bottle arrived without one; with
+       no OOT in this sandbox its sync is a no-op and it must still load. */
+    'codex27.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);
@@ -174,6 +178,9 @@ W.ST.path = { words: 1757000000000 };
 W.ST.cellar = [{
   id: 'w-aaaaaaaa', ts: 1000, producer: 'Krug', name: 'Grande Cuvee', vintage: 'NV',
   region: 'Champagne', grapes: '', style: '', glass: '', bottle: '260', note: '',
+  /* codex27: the House the bottle belongs to, carried through cellarSanitize
+     and put back when a newer bottle arrives without it. */
+  house: 'h-testhous',
   maitre: {
     say: { value: 'kroog', by: 'maitre', ts: 5 },
     guest: { value: 'The house cuvee.', by: 'person', ts: 6 },
@@ -275,6 +282,9 @@ const expect = [
      answer, which is unioned from both sides on ts|q and not doubled. */
   ['cellar takes the newer bottle whole (its grapes came with it)', !!(s2.cellar && s2.cellar.ts === 2000 && s2.cellar.grapes === 'Chardonnay, Pinot Noir, Meunier')],
   ['cellar marks are the winner\'s (say kept there, guest not carried)', !!(s2.cellar && s2.cellar.maitre && s2.cellar.maitre.say && s2.cellar.maitre.say.by === 'person' && !s2.cellar.maitre.guest)],
+  /* codex27: the other device's newer bottle arrived with no house stamp, and
+     the stamp this device had must survive its winning whole. */
+  ['cellar keeps the house of this device when the newer bottle has none', !!(s2.cellar && s2.cellar.house === 'h-testhous')],
   ['cellar kept answers are the union of both devices, once each', !!(s2.cellar && s2.cellar.maitre && s2.cellar.maitre.kept && s2.cellar.maitre.kept.length === 2
     && s2.cellar.maitre.kept.some((k) => k.q === 'why') && s2.cellar.maitre.kept.some((k) => k.q === 'pairs'))],
 ];

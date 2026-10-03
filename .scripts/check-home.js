@@ -56,7 +56,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'boot.js'];
 
 /* The plan's words, verbatim, as the source of truth the layer is held to. */
 const NAMES = ['Régionale', 'Village', 'Premier Cru', 'Grand Cru'];
