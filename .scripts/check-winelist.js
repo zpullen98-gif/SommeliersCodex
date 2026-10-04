@@ -428,7 +428,24 @@ async function main() {
   /* ================================================================ */
   section('the worker, the shell and the gates');
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
-  check('sw.js keeps the list in codexlist-v1, which activate never reaps', /const LIST = 'codexlist-v1';/.test(sw) && /k\.startsWith\('codex-'\)/.test(sw));
+  const shell = (sw.match(/const CACHE = '((?:oot-)?codex-v\d+)';/) || [])[1];
+  let listSurvives = false;
+  if (shell && /const LIST = 'codexlist-v1';/.test(sw)) {
+    const prefix = shell.startsWith('oot-') ? 'oot-codex-' : 'codex-';
+    const otherPrefix = prefix === 'codex-' ? 'oot-codex-' : 'codex-';
+    const oldShell = prefix + 'v0', removed = [], handlers = {};
+    const location = new URL('https://example.test/' + (prefix === 'codex-' ? 'SommeliersCodex/' : 'codex/') + 'sw.js');
+    const kept = [shell, oldShell, otherPrefix + 'v0', 'codexlist-v1', 'codexmaps-v2-fixture'];
+    vm.runInNewContext(sw, { URL, location,
+      self: { location, addEventListener(type, fn) { handlers[type] = fn; }, clients: { claim() { return Promise.resolve(); } } },
+      caches: { keys() { return Promise.resolve(kept.slice()); }, delete(name) { removed.push(name); return Promise.resolve(true); } }
+    }, { filename: 'sw.js' });
+    let activation;
+    if (handlers.activate) handlers.activate({ waitUntil(promise) { activation = promise; } });
+    await activation;
+    listSurvives = removed.length === 1 && removed[0] === oldShell;
+  }
+  check('sw.js activation reaps only its own old shell, preserving codexlist-v1, maps and the other installation', listSurvives);
   check('network first: the fetch is tried before the kept copy', /LIST_RE\.test\((?:url|new URL\(e\.request\.url\))\.pathname\)[\s\S]*fetch\(e\.request\)\.then[\s\S]*catch\(\(\) => c\.match/.test(sw));
   const fetchAt = sw.indexOf("addEventListener('fetch'");
   check('the list rule is the first rule of the fetch handler, so a three-way merge into the site\'s copy keeps it above that copy\'s network first rule for every pack',
