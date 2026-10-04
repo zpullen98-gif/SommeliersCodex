@@ -74,7 +74,7 @@ for (const f of [ENGINE, UI_FILE, PACK_FILE]) {
   }
 }
 
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -83,7 +83,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'boot.js'];
 
 /* A fixed clock and fixed dice, so stamps and ids are the same every run. */
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');

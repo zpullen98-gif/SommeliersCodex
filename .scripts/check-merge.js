@@ -88,7 +88,10 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     /* codex29 owns no store either; it wraps codex28's card, deck and list
        functions, render and v25MainName at load, registers the full list's
        view and its Mine row, and fetches nothing until that view opens. */
-    'codex29.js']);
+    'codex29.js',
+    /* codex30 owns no store; it wraps codex28's card and study view to draw
+       the house's videos as links out, and draws nothing with no OOT. */
+    'codex30.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

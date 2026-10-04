@@ -54,7 +54,7 @@ if (!fs.existsSync(path.join(JS, 'codex29.js'))) {
   process.exit(0);
 }
 
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex30.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -63,7 +63,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-04T14:02:00.000Z');
 function seeded(start) {
@@ -436,7 +436,7 @@ async function main() {
   check('the pattern takes the list file and no pack', (() => { const m = sw.match(/const LIST_RE = (\/.*\/);/); if (!m) return false; const re = vm.runInNewContext(m[1]); return re.test('/shared/packs/brennans-new-orleans.winelist.v1.json') && !re.test('/shared/packs/brennans-new-orleans.v1.oothouse.json'); })());
   check('codex29.js and its stylesheet are in ASSETS', sw.indexOf("'./js/codex29.js'") > 0 && sw.indexOf("'./css/house-fulllist.css'") > 0);
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  check('index.html loads codex29 after codex28 and before boot, and its stylesheet', /codex28\.js\?v=\d+"><\/script>\s*<script src="js\/codex29\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(index) && /css\/house-fulllist\.css\?v=\d+/.test(index));
+  check('index.html loads codex29 after codex28 and before boot (a later layer between), and its stylesheet', /codex28\.js\?v=\d+"><\/script>\s*<script src="js\/codex29\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex3\d\.js\?v=\d+"><\/script>\s*)*<script src="js\/boot\.js/.test(index) && /css\/house-fulllist\.css\?v=\d+/.test(index));
   ['check-home.js', 'check-merge.js'].forEach((f) => {
     check(f + ' loads codex29.js in its chain', fs.readFileSync(path.join(__dirname, f), 'utf8').indexOf("'codex29.js'") > 0);
   });
