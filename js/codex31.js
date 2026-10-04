@@ -1,4 +1,4 @@
-/* Codex XXVII: the teaching atlas.
+/* Codex XXXI: the teaching atlas.
    Geography is rendered from reviewed map metadata. Existing course records
    remain readable, and no study identity, answer or progress field is changed. */
 var V31 = { query: '', viewer: null };

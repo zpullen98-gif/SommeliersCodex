@@ -161,4 +161,54 @@ check('image failure keeps readable key and disables zoom', !second.querySelecto
 ctx.V31.viewer.close(); closedEvents.splice(0).forEach((fn) => fn());
 check('map reading never grades or reorders the card', JSON.stringify(ctx.S.fc) === before);
 check('all original map/course data remain unchanged', JSON.stringify(ctx.MAP_SHEETS.map((s) => ctx.mapRegions(s.id))) === original);
-console.log(checks + ' atlas UI contract checks passed (mock DOM; no rendered layout assertion).');
+/* Reuse the House study gate's trusted device fixture, but load the ACTUAL
+   index.html script chain. This catches namespace/render collisions that an
+   isolated atlas fixture cannot. No shared source is copied into the app. */
+async function checkHouseIntegration() {
+  const shared = process.env.OOT_SHARED || path.resolve(ROOT, '..', 'WorldTable', 'static', 'shared');
+  const required = ['oot-house.js', 'oot-house-ui.js', 'packs/brennans-new-orleans.v1.oothouse.json'];
+  if (!required.every((file) => fs.existsSync(path.join(shared, file)))) {
+    console.log('House integration not run: set OOT_SHARED to the current shared engine and pack.');
+    return;
+  }
+  const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const scripts = [...index.matchAll(/<script src="js\/([^"?]+)(?:\?[^\"]*)?"><\/script>/g)].map((m) => m[1]);
+  const sequence = ['codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'boot.js'];
+  const at = scripts.indexOf('codex27.js');
+  check('the real shell loads House layers before atlas data/cache/UI and boot', at >= 0 &&
+    JSON.stringify(scripts.slice(at, at + sequence.length)) === JSON.stringify(sequence) &&
+    sequence.every((file) => scripts.filter((s) => s === file).length === 1));
+  const studyPath = path.join(__dirname, 'check-study.js');
+  const source = fs.readFileSync(studyPath, 'utf8');
+  const boundary = source.indexOf('\nasync function main()');
+  check('House fixture exposes its device setup before the test runner', boundary > 0);
+  const prefix = source.slice(0, boundary).replace(/const FILES = \[[\s\S]*?\];/, 'const FILES = ' + JSON.stringify(scripts) + ';');
+  const fixture = vm.createContext({ require, __dirname, console, URL, Blob, TextEncoder, Buffer,
+    setTimeout, clearTimeout, setInterval, clearInterval,
+    process: { argv: ['node', studyPath, path.join(ROOT, 'js')], env: { ...process.env, OOT_SHARED: shared },
+      exit(code) { throw new Error('House fixture exited with ' + code); } } });
+  vm.runInContext(prefix, fixture, { filename: studyPath });
+  const device = vm.runInContext("bootDevice({location:{href:'https://example.test/codex/',pathname:'/codex/',search:'',hash:''}})", fixture);
+  fixture.__atlasDevice = device;
+  await vm.runInContext('settle(__atlasDevice)', fixture);
+  const G = device.G;
+  check('House sync and atlas inventory survive one complete shipped chain', G('v28Wines(v28House()).length') > 0 && G('v31Sheets().length') === 17);
+  G('v27Say("House announcement remains separate"); v31Say("Atlas announcement");');
+  check('atlas announcements cannot replace House state', G('v27State().live') === 'House announcement remains separate');
+  G('var __atlasWine = v28House().wines.filter(function(w){return /Berres/.test(w.name);})[0];');
+  check('fixture has the real Mosel wine used by the House card', !!G('__atlasWine'));
+  const sheet = G('v28Map(__atlasWine, v28Terroir(__atlasWine))');
+  check('House wine card resolves its reviewed Germany map', sheet && sheet.id === 'germany');
+  G('S.view="cellar"; S._v25area="mine"; v28Open(__atlasWine.id, false);');
+  const wineId = G('__atlasWine.id'), record = G('JSON.stringify(ST)'), historyBefore = device.hist.pushed.length;
+  G('v28Act("map", { getAttribute: function(name) { return name === "data-k" ? "germany" : null; } });');
+  check('House map door renders the atlas with the versioned SVG', G('S.view') === 'worldmap' && G('S.wmap') === 'germany' && G('mapFile(S.wmap)') === 'maps/atlas-v2/germany.svg');
+  check('House map door retains one return entry and the originating card', device.hist.pushed.length === historyBefore + 1 && G('S._v28.door') === wineId);
+  G('v28OnPop({state:{v28:__atlasWine.id}});');
+  check('Back from the atlas restores the same wine card and Mine area', G('S.view') === 'cellar' && G('S._v28.open') === wineId && G('S._v25area') === 'mine');
+  check('House card and map round trip never changes study records', G('JSON.stringify(ST)') === record);
+  check('full-list and video extensions remain installed', G('typeof v29ListView') === 'function' && G('typeof v30WatchHtml') === 'function');
+}
+checkHouseIntegration().then(() => {
+  console.log(checks + ' atlas UI contract checks passed (mock DOM; no rendered layout assertion).');
+}).catch((error) => { console.error(error); process.exitCode = 1; });

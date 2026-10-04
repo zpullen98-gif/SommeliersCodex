@@ -77,7 +77,7 @@ const orphans = [];
     check('offline shell includes ' + file, assets.includes('./' + file));
   }
   const index = read('index.html'), scripts = Array.from(index.matchAll(/<script\b[^>]*src="([^"?]+)(?:\?[^"]*)?"/g), (m) => m[1]);
-  const order = ['js/codex26.js', 'js/data-atlas-v2.js', 'js/atlas-cache.js', 'js/codex31.js', 'js/boot.js'];
+  const order = ['js/codex26.js', 'js/codex27.js', 'js/codex28.js', 'js/codex29.js', 'js/codex30.js', 'js/data-atlas-v2.js', 'js/atlas-cache.js', 'js/codex31.js', 'js/boot.js'];
   check('classic script override order is exact', order.every((file, i) => scripts.filter((s) => s === file).length === 1 && (!i || scripts.indexOf(file) > scripts.indexOf(order[i - 1]))));
   check('gallery stylesheet is explicitly linked', /href="css\/house-maps\.css\?v=\d+"/.test(index));
   execFileSync(process.execPath, [path.join(__dirname, 'build-atlas-sources.cjs'), root, '--check'], { stdio: 'pipe' }); checks++;
