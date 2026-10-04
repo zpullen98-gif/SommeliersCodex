@@ -13,8 +13,17 @@ then extended with the Intro import and authored Advanced/Master banks.
 never question/card runs. See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Existing atlas-v2 geometry, joins and offline map keys remain unchanged.
-Source worker is `codex-v88`; its two teaching imports have query versions which
+Source worker is `codex-v89`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer.
+
+`js/codex34.js` adds colour/rim reading at Sight in Study the grid, bottle shapes
+at Compendium > Winemaking and beside the house's full-list door, and the Pinot
+Noir portrait only in that Compendium grape entry. It qualifies the grid's old
+colour shortcuts as observations rather than proof of grape or age. No teaching
+art is added to flashcard fronts, quizzes or blind flights. The unnumbered Pinot
+portrait uses an unordered reading list. Its botanical reference is Plantgrape,
+with Wine Australia on variability; VIVC photographs could not be independently
+retrieved for this edition and must not be described as verified.
 
 The install icon master keeps its original wine colour/mark on house forest
 green and antique gold. Regenerate its four PNGs with
@@ -188,7 +197,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v84`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v89`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -207,7 +216,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex33.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex35.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that

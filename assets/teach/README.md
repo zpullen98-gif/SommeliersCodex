@@ -18,8 +18,18 @@ unverified restaurant cellar claim is added, and cork pieces are not TCA taint.
 Library chapters and the grid reference. It never mounts them in question runs,
 tasting flights or flashcard faces. No image URL enters the document until the
 reader opens its guide. Its key remains readable offline without the image.
-The three full images total 328,572 bytes; their 540-pixel thumbnails total
-66,406 bytes. Exact delivery sizes and full-image checksums live in the manifest.
+`js/codex34.js` extends the reference views with colour/rim reading in Study the
+grid, bottle shapes in Winemaking and beside the house's full-list door, and a
+Pinot Noir portrait only inside that grape's Compendium entry. The portrait has
+no numbered callouts, so its reading list is unordered. All three remain closed
+until requested, with no art on quiz, flashcard or blind-flight screens. Colour
+is not a grape/age verdict, bottle shape and punt depth are not quality rules,
+and one botanical specimen is not representative of every Pinot clone.
+Exact delivery sizes and full-image checksums live in the manifest.
+The colour, bottle-shape and Pinot additions total 408,660 bytes across their
+three full images and three thumbnails. The colour plate uses an angled
+overhead view so the standing glasses remain physically legible; its numbered
+colour/rim key is unchanged. The bottle plate omits fixed punt-depth cutaways.
 When a device has saved only one rendition, offline rotation and enlargement
 keep using that rendition. The viewer says when only the smaller copy is saved.
 
@@ -64,5 +74,5 @@ bounded to **24 files** at 256,000 bytes each. Do not add them to `ATLAS_V2`, ch
 `mapFile`, split an existing `regions[]` record or reuse `codexmaps-v2-*`. The
 seventeen reviewed SVGs, their joins and stored map collection are independent.
 Any future map requires geographical review against authoritative data and a
-bibliography entry before publication; these three service illustrations make
+bibliography entry before publication; these reading illustrations make
 no geographic changes.
