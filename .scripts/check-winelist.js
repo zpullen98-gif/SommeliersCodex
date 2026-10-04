@@ -428,7 +428,24 @@ async function main() {
   /* ================================================================ */
   section('the worker, the shell and the gates');
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
-  check('sw.js keeps the list in codexlist-v1, which activate never reaps', /const LIST = 'codexlist-v1';/.test(sw) && /k\.startsWith\('codex-'\)/.test(sw));
+  const shell = (sw.match(/const CACHE = '((?:oot-)?codex-v\d+)';/) || [])[1];
+  let listSurvives = false;
+  if (shell && /const LIST = 'codexlist-v1';/.test(sw)) {
+    const prefix = shell.startsWith('oot-') ? 'oot-codex-' : 'codex-';
+    const otherPrefix = prefix === 'codex-' ? 'oot-codex-' : 'codex-';
+    const oldShell = prefix + 'v0', removed = [], handlers = {};
+    const location = new URL('https://example.test/' + (prefix === 'codex-' ? 'SommeliersCodex/' : 'codex/') + 'sw.js');
+    const kept = [shell, oldShell, otherPrefix + 'v0', 'codexlist-v1', 'codexmaps-v2-fixture'];
+    vm.runInNewContext(sw, { URL, location,
+      self: { location, addEventListener(type, fn) { handlers[type] = fn; }, clients: { claim() { return Promise.resolve(); } } },
+      caches: { keys() { return Promise.resolve(kept.slice()); }, delete(name) { removed.push(name); return Promise.resolve(true); } }
+    }, { filename: 'sw.js' });
+    let activation;
+    if (handlers.activate) handlers.activate({ waitUntil(promise) { activation = promise; } });
+    await activation;
+    listSurvives = removed.length === 1 && removed[0] === oldShell;
+  }
+  check('sw.js activation reaps only its own old shell, preserving codexlist-v1, maps and the other installation', listSurvives);
   check('network first: the fetch is tried before the kept copy', /LIST_RE\.test\((?:url|new URL\(e\.request\.url\))\.pathname\)[\s\S]*fetch\(e\.request\)\.then[\s\S]*catch\(\(\) => c\.match/.test(sw));
   const fetchAt = sw.indexOf("addEventListener('fetch'");
   check('the list rule is the first rule of the fetch handler, so a three-way merge into the site\'s copy keeps it above that copy\'s network first rule for every pack',
@@ -436,7 +453,12 @@ async function main() {
   check('the pattern takes the list file and no pack', (() => { const m = sw.match(/const LIST_RE = (\/.*\/);/); if (!m) return false; const re = vm.runInNewContext(m[1]); return re.test('/shared/packs/brennans-new-orleans.winelist.v1.json') && !re.test('/shared/packs/brennans-new-orleans.v1.oothouse.json'); })());
   check('codex29.js and its stylesheet are in ASSETS', sw.indexOf("'./js/codex29.js'") > 0 && sw.indexOf("'./css/house-fulllist.css'") > 0);
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  check('index.html loads codex29 after codex28 and before boot (a later layer between), and its stylesheet', /codex28\.js\?v=\d+"><\/script>\s*<script src="js\/codex29\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex3\d\.js\?v=\d+"><\/script>\s*)*<script src="js\/boot\.js/.test(index) && /css\/house-fulllist\.css\?v=\d+/.test(index));
+  const scripts = [...index.matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
+  const expected = ['codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'boot.js'];
+  const at = scripts.indexOf('codex28.js');
+  check('index.html preserves list layers, atlas data/cache/UI, then boot in exact order, and its stylesheet', at >= 0 &&
+    JSON.stringify(scripts.slice(at, at + expected.length)) === JSON.stringify(expected) &&
+    expected.every((file) => scripts.filter((name) => name === file).length === 1) && /css\/house-fulllist\.css\?v=\d+/.test(index));
   ['check-home.js', 'check-merge.js'].forEach((f) => {
     check(f + ' loads codex29.js in its chain', fs.readFileSync(path.join(__dirname, f), 'utf8').indexOf("'codex29.js'") > 0);
   });

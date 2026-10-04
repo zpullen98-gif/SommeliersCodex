@@ -95,7 +95,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     /* codex31 owns no store either (its three slots are per device and
        never exported); it reassigns the nav, the home, the level page and
        the router at load, and must load with no OOT and no pathname. */
-    'codex31.js']);
+    'codex31.js', 'codex32.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

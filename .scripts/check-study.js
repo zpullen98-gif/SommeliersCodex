@@ -534,17 +534,17 @@ async function main() {
   }
 
   /* ================================================================ */
-  section('the card\'s single Back, with the consolidation (codex31) on top');
-  if (fs.existsSync(path.join(JS, 'codex31.js'))) {
-    const withNav = FILES.slice(0, FILES.indexOf('boot.js')).concat(['codex31.js', 'boot.js']);
+  section('the card\'s single Back, with the consolidation (codex32) on top');
+  if (fs.existsSync(path.join(JS, 'codex32.js'))) {
+    const withNav = FILES.slice(0, FILES.indexOf('boot.js')).concat(['codex32.js', 'boot.js']);
     const N = bootDevice({ files: withNav, location: { href: 'http://localhost/codex/', pathname: '/codex/', search: '', hash: '' } });
     await settle(N);
     const nb = N.G('v28CardHtml(' + JSON.stringify(BERRES) + ')');
     check('the card draws no way back of its own: the Back control is the one', nb.length > 0 && nb.indexOf('data-v28="back"') < 0 && nb.indexOf('Back to the list') < 0);
     check('closing the card, the deck or the full list is the Back control\'s press',
-      N.G('String(v28CloseCard)').indexOf('v31Back') >= 0 && N.G('String(v28DeckClose)').indexOf('v31Back') >= 0 && N.G('String(v29Close)').indexOf('v31Back') >= 0);
-    check('codex28\'s popstate listener is replaced by codex31\'s one router', N.listeners.popstate.indexOf(N.G('v28OnPop')) < 0);
-  } else check('no codex31 in this tree, so the card keeps its own way back', true);
+      N.G('String(v28CloseCard)').indexOf('v32Back') >= 0 && N.G('String(v28DeckClose)').indexOf('v32Back') >= 0 && N.G('String(v29Close)').indexOf('v32Back') >= 0);
+    check('codex28\'s popstate listener is replaced by codex32\'s one router', N.listeners.popstate.indexOf(N.G('v28OnPop')) < 0);
+  } else check('no codex32 in this tree, so the card keeps its own way back', true);
 
   console.log('');
   if (failed) {

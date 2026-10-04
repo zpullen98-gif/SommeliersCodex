@@ -13,12 +13,12 @@
  *      as the MEAN of its counted subsections (not a pooled sum); the lowest
  *      level not yet met
  *   3. the home: exactly section.levels and nothing else (the doors went
- *      with the consolidation, codex31, 4 Oct 2026); four button.level,
+ *      with the consolidation, codex32, 4 Oct 2026); four button.level,
  *      each lv-name and lv-stat and no numeral, seen or hidden (the owner's
  *      rule of 27 Sep 2026: a level is named, never numbered, so the name is
  *      the card's label); exactly one "on", with aria-pressed
  *      and the words "Your level"
- *   4. the level page (codex31's): an h1 that is the name alone, then the
+ *   4. the level page (codex32's): an h1 that is the name alone, then the
  *      blurb, then Today's study, My restaurant and Search as h2, then a
  *      closed What {Level} holds with every subsection, each with its h3,
  *      "N at this level" and its word; every data-go resolvable; the level
@@ -49,7 +49,7 @@ const JS = process.argv.slice(2).find((a) => a.charAt(0) !== '-')
 /* The chain in index.html's order. The two optional files are the ones the
    two trees differ on: codex13 is the standalone's, data-firstpath the
    wing's. Everything else is required. */
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex31.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -58,7 +58,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex31.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'boot.js'];
 
 /* The plan's words, verbatim, as the source of truth the layer is held to. */
 const NAMES = ['Régionale', 'Village', 'Premier Cru', 'Grand Cru'];
@@ -396,10 +396,10 @@ KEYS.forEach((key, i) => {
 
 /* 4. ------------------------------------------------------------------ */
 section('the level page, at each level');
-check('the level page is codex31\'s', G('V25_VIEWS.level === v31LevelView && V25_VIEWS.today === v31LevelView') === true);
+check('the level page is codex32\'s', G('V25_VIEWS.level === v32LevelView && V25_VIEWS.today === v32LevelView') === true);
 KEYS.forEach((key, i) => {
   G('applyLevel(' + JSON.stringify(key) + ', true); S.view = "level";');
-  const html = G('v31LevelHtml()');
+  const html = G('v32LevelHtml()');
   rendered.push(html);
   const root = tryParse('the level page at ' + NAMES[i], html);
   if (!root) return;
@@ -424,13 +424,13 @@ KEYS.forEach((key, i) => {
   check('[' + NAMES[i] + '] Today\'s study rows: Due today, Quick quiz, Next reading',
     rowNames.slice(0, 3).join('|') === 'Due today|Quick quiz|Next reading', rowNames.join(' | '));
   const dueLine = today ? text(byClass(today, 'v25row-line')[0] || { text: '' }) : '';
-  check('[' + NAMES[i] + '] the Due today line is the one count (' + dueLine + ')', dueLine === G('v31DueLine()'));
-  const next = all(root, (n) => n.attrs && n.attrs.id === 'v31-next')[0];
-  if (next && next.attrs['data-v31'] === 'chapter') {
+  check('[' + NAMES[i] + '] the Due today line is the one count (' + dueLine + ')', dueLine === G('v32DueLine()'));
+  const next = all(root, (n) => n.attrs && n.attrs.id === 'v32-next')[0];
+  if (next && next.attrs['data-v32'] === 'chapter') {
     check('[' + NAMES[i] + '] Next reading opens a chapter this level has',
       G('v25HasChapter(' + JSON.stringify(next.attrs['data-cat']) + ', ' + JSON.stringify(key) + ')') === true, next.attrs['data-cat']);
   }
-  const holds = byTag(root, 'details').filter((d) => hasClass(d, 'v31holds'))[0];
+  const holds = byTag(root, 'details').filter((d) => hasClass(d, 'v32holds'))[0];
   const sum = holds ? byTag(holds, 'summary')[0] : null;
   check('[' + NAMES[i] + '] a closed What ' + NAMES[i] + ' holds, its summary in words',
     holds && !('open' in holds.attrs) && sum && text(sum) === 'Show what ' + NAMES[i] + ' holds', sum ? text(sum) : 'none');
@@ -447,7 +447,7 @@ KEYS.forEach((key, i) => {
     subs.every((x) => /[\d,]+ at this level/.test(text(x)) && byClass(x, 'sub-stat')[0]
       && (hasClass(x, 'sub-paper') ? text(byClass(x, 'sub-stat')[0]) === 'Counted in the domains above'
         : (STAT_RE.test(text(byClass(x, 'sub-stat')[0])) || text(byClass(x, 'sub-stat')[0]) === 'Nothing to meet here yet'))));
-  const chapters = all(root, (n) => n.attrs && n.attrs['data-v31'] === 'chapter');
+  const chapters = all(root, (n) => n.attrs && n.attrs['data-v32'] === 'chapter');
   check('[' + NAMES[i] + '] every chapter link opens a chapter that exists (' + chapters.length + ')',
     chapters.length > 0 && chapters.every((n) => G('v25HasChapter(' + JSON.stringify(n.attrs['data-cat']) + ', ' + JSON.stringify(key) + ')')));
   check('[' + NAMES[i] + '] headings are one h1, then h2 and h3 only', byTag(root, 'h1').length === 1
@@ -461,10 +461,10 @@ KEYS.forEach((key, i) => {
   rendered.push(tl);
   if (key === 'certified') check('[Village] the level test line is the plan\'s, verbatim', tl === TEST_LINE_VILLAGE, tl);
   check('[' + NAMES[i] + '] the level test line carries no digit', !/\d/.test(tl));
-  const qz = G('v31QuizzesHtml()');
+  const qz = G('v32QuizzesHtml()');
   rendered.push(qz);
   check('[' + NAMES[i] + '] the last row of Quizzes is "The ' + NAMES[i] + ' test"',
-    qz.lastIndexOf('The ' + NAMES[i] + ' test') > qz.lastIndexOf('v31-qz-hands'));
+    qz.lastIndexOf('The ' + NAMES[i] + ' test') > qz.lastIndexOf('v32-qz-hands'));
 });
 
 /* the other pages, and the nav */
@@ -501,7 +501,7 @@ G('applyLevel("certified", true);');
   const word0 = (b) => { const t = b.children.filter((c) => c.text !== undefined).map((c) => c.text).join(''); return t.trim(); };
   check('on ' + view + ': nav.appnav reads Home, Flashcards, Quizzes, Library, then the quiet More, with aria-current on ' + word,
     nav && nav.tag === 'nav' && hasClass(nav, 'appnav') && btns.map(word0).join('|') === NAV_WORDS.join('|')
-    && hasClass(btns[4], 'v31more') && btns.slice(0, 4).every((b) => !hasClass(b, 'v31more'))
+    && hasClass(btns[4], 'v32more') && btns.slice(0, 4).every((b) => !hasClass(b, 'v32more'))
     && btns.filter((b) => b.attrs['aria-current'] === 'page').map(word0).join('|') === word,
     btns.map((b) => text(b) + (b.attrs['aria-current'] ? '*' : '')).join(' '));
 });
@@ -581,9 +581,9 @@ const twice = G('(function(){ var by = {}; S._v25lt.theory.forEach(function(m){ 
 check('a Drill door for every section missed twice (' + twice.length + '), and none for a section missed once',
   twice.every((c) => report.indexOf('data-arg="' + c.replace(/&/g, '&amp;') + '"') >= 0)
   && (report.match(/data-go="drill"/g) || []).length === twice.length);
-check('the report is headed The Village test, offers Home, and its old Back to Village is one codex31 strips as the screen is drawn',
+check('the report is headed The Village test, offers Home, and its old Back to Village is one codex32 strips as the screen is drawn',
   report.indexOf('<h2>The Village test</h2>') >= 0 && report.indexOf('>Back to Village</button>') >= 0 && report.indexOf('data-go="home"') >= 0
-  && G('V31_OLD_BACK.test("Back to Village")') === true);
+  && G('V32_OLD_BACK.test("Back to Village")') === true);
 check('the sitting is still recorded, for the Record', !!G('ST.exams.certified && ST.exams.certified["finals:The Finals"]'));
 G('S._v25lt = null; S._fin = null;');
 check('outside a test the grid keeps its tally', G('gridTally({ struct: { n: 4, c: 2 }, concl: { n: 4, c: 2 }, missed: [] })').indexOf('%') >= 0);

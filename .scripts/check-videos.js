@@ -332,8 +332,12 @@ async function main() {
     const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
     const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
     check('sw.js lists codex30.js in ASSETS', sw.indexOf("'./js/codex30.js'") > 0);
-    /* codex31 (the consolidation) sits between codex30 and boot: the layers after codex30 are allowed, boot is still last */
-    check('index.html loads codex30 after codex29 and before boot', /codex29\.js\?v=\d+"><\/script>\s*<script src="js\/codex30\.js\?v=\d+"><\/script>\s*(<script src="js\/codex3\d\.js\?v=\d+"><\/script>\s*)*<script src="js\/boot\.js/.test(index));
+    const scripts = [...index.matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
+    const expected = ['codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'boot.js'];
+    const at = scripts.indexOf('codex29.js');
+    check('index.html preserves codex29, codex30, atlas data/cache/UI, the consolidation, then boot in exact order', at >= 0 &&
+      JSON.stringify(scripts.slice(at, at + expected.length)) === JSON.stringify(expected) &&
+      expected.every((file) => scripts.filter((name) => name === file).length === 1));
   }
   ['check-home.js', 'check-house.js', 'check-merge.js', 'check-study.js', 'check-winelist.js'].forEach((f) => {
     const p = path.join(__dirname, f);

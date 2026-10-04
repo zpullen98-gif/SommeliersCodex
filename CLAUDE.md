@@ -94,31 +94,31 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   Styles in `css/house-list.css`; the card's and the deck's bars are padded 64px clear of the suite badge.
   Measured on Brennan's at Village: 19 of 20 wines link a chapter, 15 a grape, three a producer (Leflaive, Jadot,
   Inglenook). Gate: `node .scripts/check-study.js [jsDir]`.
-- `js/codex31.js`: **the consolidation** (WorldTable `docs/consolidation-design.md`, sections 2 and 5, 4 Oct 2026).
-  The bar reads Home, Flashcards, Quizzes, Library and a quiet More (`V25_NAV` reassigned; More is `.v31more`, the
-  ghost ink); the lit word is `V31_OWNER[S.view]`; Flashcards carries the Due today count as a pill. Home is
+- `js/codex32.js`: **the consolidation** (WorldTable `docs/consolidation-design.md`, sections 2 and 5, 4 Oct 2026).
+  The bar reads Home, Flashcards, Quizzes, Library and a quiet More (`V25_NAV` reassigned; More is `.v32more`, the
+  ghost ink); the lit word is `V32_OWNER[S.view]`; Flashcards carries the Due today count as a pill. Home is
   `section.levels` alone (`v25HomeHtml` reassigned). The level page (`V25_VIEWS.level`, and `today` and `mine` land on
   the level page and More) is Today's study (Due today, Quick quiz, Next reading, Your first week), My restaurant
   (three study doors, the sections as chips to `#/v/cellar/section/{slug}`, quiet setup links), Search and a closed
   What {Level} holds. New views: `flashcards`, `deck`, `quizzes`, `more`, `housevideos`, `firstweek`; `housedeck` and
-  `flash` are ONE card screen (`v31CardView`) for every deck (`v31DeckDef`: list, list:{slug}, list-weak, one:{id},
+  `flash` are ONE card screen (`v32CardView`) for every deck (`v32DeckDef`: list, list:{slug}, list-weak, one:{id},
   bottles, bottles:{slug}, menu-words, grapes, grapes:r/w, grapes-all, misses, due); `startHouseDeck` opens the deck
   screen and `startFlash` starts a grape run there. Grape answers, which kept nothing before, go to the per-device
-  slot `oot-codex-grapecards-v1` (never exported). `v31DueToday()` is the one count for the row, the root and the pill:
+  slot `oot-codex-grapecards-v1` (never exported). `v32DueToday()` is the one count for the row, the root and the pill:
   the house's weak wines, else up to ten unseen in menu order, then codex3's `startDaily` exactly as it deals.
-  **The router**: every render writes `#/...` (grammar in `v31Route`/`v31Parse`): a push when the screen key changes,
+  **The router**: every render writes `#/...` (grammar in `v32Route`/`v32Parse`): a push when the screen key changes,
   a replace within a screen or when a run moves on; each entry carries `ootd` (the depth), mirrored to
   sessionStorage `oot-nav-codex-v1`, scroll in `oot-scroll-codex-v1`. A popstate applies the hash; a run renders from
-  memory only while memory holds it (`state.run` looked up in `V31.toks`, the token each run number was made for, so
+  memory only while memory holds it (`state.run` looked up in `V32.toks`, the token each run number was made for, so
   the results under a pushed Study the misses still draw), else its parent; run numbers begin past `Date.now()` at
   load, so an entry from an earlier load never names a run of this one. The scope chip's level choice puts `S.view`
-  back after `applyLevel` (which sends it home) and replaces in place. The search queries live in `S._v31q` (per box,
-  `v31Query`), so a Back redraws the results before the scroll returns; the opener of a move is remembered by id or,
-  for codex28's rows, by `data-v28`/`data-id` (`v31FocusKey`), and Back focuses it. codex28's and codex29's
+  back after `applyLevel` (which sends it home) and replaces in place. The search queries live in `S._v32q` (per box,
+  `v32Query`), so a Back redraws the results before the scroll returns; the opener of a move is remembered by id or,
+  for codex28's rows, by `data-v28`/`data-id` (`v32FocusKey`), and Back focuses it. codex28's and codex29's
   popstate listeners are REMOVED at load and `v28Push`/`v28Replace` only mark the next render, so one action makes one
-  entry. Back (`#v31-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home:
-  depth above 0 is `history.back()`, depth 0 replaces to `V31_PARENT`. Every older "Back to ..." button is stripped
-  from `#view` as it is drawn (`V31_OLD_BACK`). Gate: `node .scripts/check-nav.js [jsDir] [--mutations]`.
+  entry. Back (`#v32-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home:
+  depth above 0 is `history.back()`, depth 0 replaces to `V32_PARENT`. Every older "Back to ..." button is stripped
+  from `#view` as it is drawn (`V32_OLD_BACK`). Gate: `node .scripts/check-nav.js [jsDir] [--mutations]`.
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -192,7 +192,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex32.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex33.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
@@ -226,6 +226,39 @@ wine-map images keep their original on-demand cache. The screen rules are separa
 from print. New house art is an intentional exception to the earlier ornament rule
 below, following the owner's request. Controls still use words, and wine-colour
 teaching swatches must not be recoloured as branding.
+
+## Reviewed teaching atlas, 27 September 2026
+
+The owner requested a deep review and uniform artistic treatment of every teaching map.
+`js/data-atlas-v2.js`, `js/atlas-cache.js`, `js/codex31.js` and `css/house-maps.css`
+replace the old JPG presentation with seventeen geographic SVG plates and readable guides.
+Load the three scripts in that order after codex30 and before boot. Keep these new files,
+`maps/atlas-v2/`, `atlas-sources.html`, and both `assets/codex-atlas-*-v2.webp` assets paired
+with `codex/` in the current public site checkout. Do not copy whole divergent trees over one another.
+
+Generate geography from `.scripts/atlas-v2/`; sources and limitations are documented in
+`maps/README.md`. Outlines, rivers and lakes use Natural Earth; editorial locations are
+approximate representative points, never legal appellation polygons. The decorative
+atlas-room image and embedded footer vignette are generated art, not geographic evidence.
+All 115 mapped study headings remain. Virginia and Texas remain under Beyond this map
+on the New York reading page. Original JPGs are retained for rollback but no longer shown
+as current lessons. Course-bank IDs, progress, notes, grading and storage schemas are unchanged.
+
+The SVGs remain optional downloads, outside the shell precache. Their cache is
+`codexmaps-v2-` plus the encoded installation directory. Saved-state checks use exact URLs;
+removal affects only that installation, including its own exact JPG keys in the old shared
+cache. A future map revision must change the versioned asset paths/cache contract, not just
+overwrite saved atlas-v2 files. Rebuild the bibliography after metadata changes with
+`node .scripts/build-atlas-sources.cjs`; it must match the exact sources in the data module.
+
+Verification: `node .scripts/check-atlas-cache.js`, `node .scripts/check-atlas-data.js`,
+`node .scripts/check-atlas-ui.js`, and the existing home/syntax gates. The new gates accept
+the other installation's root as an argument. Also verify browser layout, focus/zoom and
+offline saving. Integrate committed source changes with the current site's
+`tools/sync-wing.mjs codex`, manually copy new runtime maps/art/bibliography that the sync
+intentionally skips, bump the wing worker and run `tools/check-all.mjs` before a normal
+public-repo push. Follow that site's CLAUDE.md. The old private workshop and its staging
+script are retired and must not overwrite the current public site; never push its history.
 
 ## Earlier interface rule: typography, not pictures
 
