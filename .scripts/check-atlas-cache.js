@@ -142,7 +142,10 @@ async function responseFrom(w, url) {
   await unavailable.c.v23Probe(); await unavailable.c.v23StoreAll(button, () => {});
   check('unavailable Cache API does not hide lessons or claim a save', unavailable.c.V23.have.length === 17 && /not available/.test(unavailable.c.V23.lastMessage));
 
-  const installPath = /OutsideOfTime/i.test(ROOT) ? '/codex/' : '/SommeliersCodex/';
+  const workerSource = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  const shellName = workerSource.match(/const CACHE\s*=\s*['"]((?:oot-)?codex-v\d+)['"]/);
+  assert.ok(shellName, 'worker declares the expected standalone or wing cache name');
+  const installPath = shellName[1].startsWith('oot-codex-') ? '/codex/' : '/SommeliersCodex/';
   const own = page('https://example.test' + installPath, shared);
   const sw = worker('https://example.test' + installPath + 'sw.js', shared);
   check('worker and page derive the identical installation cache', vm.runInContext('MAPS', sw.context) === own.c.ATLAS_CACHE_NAME);
