@@ -81,7 +81,10 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     /* codex27 carries a bottle's `house` through cellarSanitize and puts it
        back after the merge when the newer bottle arrived without one; with
        no OOT in this sandbox its sync is a no-op and it must still load. */
-    'codex27.js']);
+    'codex27.js',
+    /* codex28 owns no store; it wraps cellarView, render and applyLevel at
+       load and must load with no OOT and no pathname. */
+    'codex28.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

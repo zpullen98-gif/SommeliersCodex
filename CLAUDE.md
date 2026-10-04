@@ -77,6 +77,23 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   `data-level` and storage only.
   Gate: `node .scripts/check-home.js [jsDir]`, which runs against the wing's `codex/js` too and
   fails on any "Level" followed by a roman numeral in what the layer draws.
+- `js/codex28.js`: **Our List, to study** (WorldTable `docs/study-menus-design.md`, sections 1, 2.4, 4.3). With a
+  current house holding wines, `cellarView` returns the study view (header, the shift filter, a sticky search and
+  section chips, compact rows, a card per wine); "Edit the list" (`S._v28edit`, never stored) shows codex27's list
+  unchanged. The card draws KEPT marks only and links the grape profiles, the Terroir row, the level's chapter, the
+  map sheet and the producer, each matched at runtime and drawn only when its target exists; cross-room links only
+  on a `/codex` path. `#wine=<id>` and `#list` are read once at load (behind typeof and try) into `V28_WANT`.
+  `startHouseDeck(scope)` is the house flash deck, recording `h-<id>-card` through `v27RecordHouse`;
+  "Drill the list" and `startHouseSectionDrill` are codex27's house rounds and never call `startCellarDrill`.
+  Opening a card or the deck pushes one history entry; a `popstate` closes it, or switches to the card the popped
+  entry names. A step (Next, Previous) replaces only an entry the card itself pushed. A door followed from a card (the
+  grape cards, the atlas, a chapter, the map, a producer, Say it, Guest) pushes `{v28:'door'}`, so back returns to the card;
+  the atlas door lands on the card's region row. The 2.1 house door ("The house: must-knows, words and the table") calls
+  `OOT.houseUI.readView(root, house, hooks, { study: true })` and stands only once the shared readView takes that option
+  (a fourth parameter or `houseUI.study`); today's readView draws Kept, Edit and Discard, so the door is hidden.
+  Styles in `css/house-list.css`; the card's and the deck's bars are padded 64px clear of the suite badge.
+  Measured on Brennan's at Village: 19 of 20 wines link a chapter, 15 a grape, three a producer (Leflaive, Jadot,
+  Inglenook). Gate: `node .scripts/check-study.js [jsDir]`. The next layer is `codex29.js`.
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -131,7 +148,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v78`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v80`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -150,7 +167,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex27.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex29.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
