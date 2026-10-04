@@ -332,7 +332,8 @@ async function main() {
     const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
     const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
     check('sw.js lists codex30.js in ASSETS', sw.indexOf("'./js/codex30.js'") > 0);
-    check('index.html loads codex30 after codex29 and before boot', /codex29\.js\?v=\d+"><\/script>\s*<script src="js\/codex30\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(index));
+    /* codex31 (the consolidation) sits between codex30 and boot: the layers after codex30 are allowed, boot is still last */
+    check('index.html loads codex30 after codex29 and before boot', /codex29\.js\?v=\d+"><\/script>\s*<script src="js\/codex30\.js\?v=\d+"><\/script>\s*(<script src="js\/codex3\d\.js\?v=\d+"><\/script>\s*)*<script src="js\/boot\.js/.test(index));
   }
   ['check-home.js', 'check-house.js', 'check-merge.js', 'check-study.js', 'check-winelist.js'].forEach((f) => {
     const p = path.join(__dirname, f);

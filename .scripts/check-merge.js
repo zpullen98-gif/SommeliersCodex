@@ -91,7 +91,11 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     'codex29.js',
     /* codex30 owns no store; it wraps codex28's card and study view to draw
        the house's videos as links out, and draws nothing with no OOT. */
-    'codex30.js']);
+    'codex30.js',
+    /* codex31 owns no store either (its three slots are per device and
+       never exported); it reassigns the nav, the home, the level page and
+       the router at load, and must load with no OOT and no pathname. */
+    'codex31.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

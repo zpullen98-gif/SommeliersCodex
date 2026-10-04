@@ -93,7 +93,32 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   (a fourth parameter or `houseUI.study`); today's readView draws Kept, Edit and Discard, so the door is hidden.
   Styles in `css/house-list.css`; the card's and the deck's bars are padded 64px clear of the suite badge.
   Measured on Brennan's at Village: 19 of 20 wines link a chapter, 15 a grape, three a producer (Leflaive, Jadot,
-  Inglenook). Gate: `node .scripts/check-study.js [jsDir]`. The next layer is `codex29.js`.
+  Inglenook). Gate: `node .scripts/check-study.js [jsDir]`.
+- `js/codex31.js`: **the consolidation** (WorldTable `docs/consolidation-design.md`, sections 2 and 5, 4 Oct 2026).
+  The bar reads Home, Flashcards, Quizzes, Library and a quiet More (`V25_NAV` reassigned; More is `.v31more`, the
+  ghost ink); the lit word is `V31_OWNER[S.view]`; Flashcards carries the Due today count as a pill. Home is
+  `section.levels` alone (`v25HomeHtml` reassigned). The level page (`V25_VIEWS.level`, and `today` and `mine` land on
+  the level page and More) is Today's study (Due today, Quick quiz, Next reading, Your first week), My restaurant
+  (three study doors, the sections as chips to `#/v/cellar/section/{slug}`, quiet setup links), Search and a closed
+  What {Level} holds. New views: `flashcards`, `deck`, `quizzes`, `more`, `housevideos`, `firstweek`; `housedeck` and
+  `flash` are ONE card screen (`v31CardView`) for every deck (`v31DeckDef`: list, list:{slug}, list-weak, one:{id},
+  bottles, bottles:{slug}, menu-words, grapes, grapes:r/w, grapes-all, misses, due); `startHouseDeck` opens the deck
+  screen and `startFlash` starts a grape run there. Grape answers, which kept nothing before, go to the per-device
+  slot `oot-codex-grapecards-v1` (never exported). `v31DueToday()` is the one count for the row, the root and the pill:
+  the house's weak wines, else up to ten unseen in menu order, then codex3's `startDaily` exactly as it deals.
+  **The router**: every render writes `#/...` (grammar in `v31Route`/`v31Parse`): a push when the screen key changes,
+  a replace within a screen or when a run moves on; each entry carries `ootd` (the depth), mirrored to
+  sessionStorage `oot-nav-codex-v1`, scroll in `oot-scroll-codex-v1`. A popstate applies the hash; a run renders from
+  memory only while memory holds it (`state.run` looked up in `V31.toks`, the token each run number was made for, so
+  the results under a pushed Study the misses still draw), else its parent; run numbers begin past `Date.now()` at
+  load, so an entry from an earlier load never names a run of this one. The scope chip's level choice puts `S.view`
+  back after `applyLevel` (which sends it home) and replaces in place. The search queries live in `S._v31q` (per box,
+  `v31Query`), so a Back redraws the results before the scroll returns; the opener of a move is remembered by id or,
+  for codex28's rows, by `data-v28`/`data-id` (`v31FocusKey`), and Back focuses it. codex28's and codex29's
+  popstate listeners are REMOVED at load and `v28Push`/`v28Replace` only mark the next render, so one action makes one
+  entry. Back (`#v31-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home:
+  depth above 0 is `history.back()`, depth 0 replaces to `V31_PARENT`. Every older "Back to ..." button is stripped
+  from `#view` as it is drawn (`V31_OLD_BACK`). Gate: `node .scripts/check-nav.js [jsDir] [--mutations]`.
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -148,7 +173,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v80`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v84`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -167,7 +192,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex29.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex32.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
