@@ -131,7 +131,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v73`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v74`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -150,7 +150,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex27.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex28.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
@@ -184,6 +184,36 @@ wine-map images keep their original on-demand cache. The screen rules are separa
 from print. New house art is an intentional exception to the earlier ornament rule
 below, following the owner's request. Controls still use words, and wine-colour
 teaching swatches must not be recoloured as branding.
+
+## Reviewed teaching atlas, 27 September 2026
+
+The owner requested a deep review and uniform artistic treatment of every teaching map.
+`js/data-atlas-v2.js`, `js/atlas-cache.js`, `js/codex31.js` and `css/house-maps.css`
+replace the old JPG presentation with seventeen geographic SVG plates and readable guides.
+Load the three scripts in that order after codex26 and before boot. Keep these new files,
+`maps/atlas-v2/`, `atlas-sources.html`, and both `assets/codex-atlas-*-v2.webp` assets paired
+with `OutsideOfTime/codex`. Do not copy whole divergent trees over one another.
+
+Generate geography from `.scripts/atlas-v2/`; sources and limitations are documented in
+`maps/README.md`. Outlines, rivers and lakes use Natural Earth; editorial locations are
+approximate representative points, never legal appellation polygons. The decorative
+atlas-room image and embedded footer vignette are generated art, not geographic evidence.
+All 115 mapped study headings remain. Virginia and Texas remain under Beyond this map
+on the New York reading page. Original JPGs are retained for rollback but no longer shown
+as current lessons. Course-bank IDs, progress, notes, grading and storage schemas are unchanged.
+
+The SVGs remain optional downloads, outside the shell precache. Their cache is
+`codexmaps-v2-` plus the encoded installation directory. Saved-state checks use exact URLs;
+removal affects only that installation, including its own exact JPG keys in the old shared
+cache. A future map revision must change the versioned asset paths/cache contract, not just
+overwrite saved atlas-v2 files. Rebuild the bibliography after metadata changes with
+`node .scripts/build-atlas-sources.cjs`; it must match the exact sources in the data module.
+
+Verification: `node .scripts/check-atlas-cache.js`, `node .scripts/check-atlas-data.js`,
+`node .scripts/check-atlas-ui.js`, and the existing home/syntax gates. The new gates accept
+the other installation's root as an argument. Also verify browser layout, focus/zoom and
+offline saving. Publish the suite only through its staging script and a normal public-repo
+push; the private workshop repository must never be pushed.
 
 ## Earlier interface rule: typography, not pictures
 
