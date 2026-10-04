@@ -68,6 +68,7 @@ const orphans = [];
   check('original117 rows preserved including Virginia and Texas', preservedRows === 117 && JSON.stringify(orphans) === JSON.stringify(['Virginia', 'Texas']));
   const handlers = {};
   const worker = vm.createContext({ URL, self: { location: new URL('https://example.test/codex/sw.js'), addEventListener: (event, fn) => { handlers[event] = fn; } } });
+  worker.importScripts = (...files) => files.forEach((file) => vm.runInContext(read(file.split('?')[0]), worker));
   vm.runInContext(read('sw.js'), worker);
   const assets = Array.from(vm.runInContext('ASSETS', worker));
   check('no map image is in the shell install', !assets.some((asset) => /(?:^|\/)maps\//.test(asset)));

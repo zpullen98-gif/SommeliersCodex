@@ -53,10 +53,11 @@ function worker(url, store) {
   const listeners = {}, requests = [];
   const loc = new URL(url);
   const context = vm.createContext({
-    URL, Request, Response, Promise, location: loc, caches: store.caches,
+    URL, Request, Response, Promise, AbortController, setTimeout, clearTimeout, location: loc, caches: store.caches,
     fetch: async (request) => { requests.push(request.url); return svg(); },
     self: { location: loc, clients: { claim: async () => {} }, addEventListener: (type, fn) => { listeners[type] = fn; } }
   });
+  context.importScripts = (...files) => files.forEach((file) => vm.runInContext(fs.readFileSync(path.join(ROOT, file.split('?')[0]), 'utf8'), context));
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8'), context);
   return { context, listeners, requests };
 }

@@ -16,7 +16,7 @@ render();
      toast below is the one signal that this page wants a reload. */
   var swWantReload=false;
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('sw.js').then(function(reg){
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function(reg){
       if(reg.waiting&&navigator.serviceWorker.controller){offerUpdate(reg.waiting,reg);}
       reg.addEventListener('updatefound',function(){
         const nw=reg.installing;

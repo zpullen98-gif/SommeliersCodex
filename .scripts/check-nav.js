@@ -601,7 +601,7 @@ async function main() {
   const index = path.join(JS, '..', 'index.html');
   const sw = path.join(JS, '..', 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
-    check('index.html loads codex32 after codex30 (and the atlas layers) and before boot', /codex30\.js\?v=\d+"><\/script>\s*(<script src="js\/(?:data-atlas-v2|atlas-cache|codex31)\.js\?v=\d+"><\/script>\s*)*<script src="js\/codex32\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
+    check('index.html loads codex32 after codex30 and atlas, then teaching layers before boot', /codex30\.js\?v=\d+"><\/script>\s*(<script src="js\/(?:data-atlas-v2|atlas-cache|codex31)\.js\?v=\d+"><\/script>\s*)*<script src="js\/codex32\.js\?v=\d+"><\/script>\s*<script src="js\/data-teaching-images\.js\?v=\d+"><\/script>\s*<script src="js\/teaching-cache\.js\?v=\d+"><\/script>\s*<script src="js\/codex33\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
     check('sw.js lists codex32.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex32.js'") > 0);
   }
 }

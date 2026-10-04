@@ -6,6 +6,21 @@ frameworks, no build step. Split from the single-file
 `Downloads/cms-certified-practice-exam_22_1.html` into this project (Aug 2026),
 then extended with the Intro import and authored Advanced/Master banks.
 
+## Illustrated reading guides (codex33, October 2026)
+
+`js/data-teaching-images.js`, `js/teaching-cache.js`, `js/codex33.js` and
+`css/house-teaching.css` add optional, closed teaching guides to reference views,
+never question/card runs. See `assets/teach/README.md` for the exact image budget,
+caption and versioning contract, separate future zoom-map collection and source
+checks. Existing atlas-v2 geometry, joins and offline map keys remain unchanged.
+Source worker is `codex-v88`; its two teaching imports have query versions which
+must follow the matching index versions. New work belongs in the next layer.
+
+The install icon master keeps its original wine colour/mark on house forest
+green and antique gold. Regenerate its four PNGs with
+`node .scripts/render-icons.cjs [path to @resvg/resvg-js]`; do not recolour raster
+files separately. The renderer may be installed in scratch outside this repo.
+
 ## Run it
 
 ```bash
