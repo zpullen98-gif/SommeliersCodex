@@ -15,7 +15,16 @@ caption and versioning contract, separate future zoom-map collection and source
 checks. Existing atlas-v2 geometry, joins and offline map keys remain unchanged.
 Source worker is `codex-v89`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex35: codex34 is the components layer below).
+(codex36: codex34 is the colour and bottle-shape layer, codex35 the components layer).
+
+`js/codex34.js` adds colour/rim reading at Sight in Study the grid, bottle shapes
+at Compendium > Winemaking and beside the house's full-list door, and the Pinot
+Noir portrait only in that Compendium grape entry. It qualifies the grid's old
+colour shortcuts as observations rather than proof of grape or age. No teaching
+art is added to flashcard fronts, quizzes or blind flights. The unnumbered Pinot
+portrait uses an unordered reading list. Its botanical reference is Plantgrape,
+with Wine Australia on variability; VIVC photographs could not be independently
+retrieved for this edition and must not be described as verified.
 
 The install icon master keeps its original wine colour/mark on house forest
 green and antique gold. Regenerate its four PNGs with
@@ -135,10 +144,10 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   entry. Back (`#v32-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home:
   depth above 0 is `history.back()`, depth 0 replaces to `V32_PARENT`. Every older "Back to ..." button is stripped
   from `#view` as it is drawn (`V32_OLD_BACK`). Gate: `node .scripts/check-nav.js [jsDir] [--mutations]`.
-- `js/codex34.js`: **what a wine is made of, and Compare with** (the component deep dive, 5 October 2026; WorldTable
+- `js/codex35.js`: **what a wine is made of, and Compare with** (the component deep dive, 5 October 2026; WorldTable
   CLAUDE.md, "The components and the comparisons"). Wraps `v28CardHtml` to draw, before the five parts, the wine's
   components grouped Ingredients, Techniques, Stories (each a closed `v28-q` disclosure: say, explanation, card, videos
-  through codex30's `v30Item`) with Flash these components (`v34flash` in a wrapped `v28Act`), and Compare with: a grape
+  through codex30's `v30Item`) with Flash these components (`v35flash` in a wrapped `v28Act`), and Compare with: a grape
   on the level's list through codex28's `grape` door, a house wine through `open`, a producer and a chapter through their
   doors, a Table technique or recipe and a Ledger cocktail as links on the suite's path, a classic as words. Wraps
   codex32's `v32DeckDef`, `v32Learnt`, `v32StartRun`, `v32Grade`, `v32CardFace` and `v32FlashcardsHtml` for the decks
@@ -199,7 +208,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v84`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v89`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -218,7 +227,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex33.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex35.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that

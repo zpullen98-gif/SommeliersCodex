@@ -457,7 +457,7 @@ async function main() {
   check('codex29.js and its stylesheet are in ASSETS', sw.indexOf("'./js/codex29.js'") > 0 && sw.indexOf("'./css/house-fulllist.css'") > 0);
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   const scripts = [...index.matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
-  const expected = ['codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'boot.js'];
+  const expected = ['codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'boot.js'];
   const at = scripts.indexOf('codex28.js');
   check('index.html preserves list layers, atlas data/cache/UI, then boot in exact order, and its stylesheet', at >= 0 &&
     JSON.stringify(scripts.slice(at, at + expected.length)) === JSON.stringify(expected) &&

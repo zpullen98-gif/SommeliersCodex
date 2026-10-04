@@ -191,7 +191,7 @@ async function checkHouseIntegration() {
   }
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   const scripts = [...index.matchAll(/<script src="js\/([^"?]+)(?:\?[^\"]*)?"><\/script>/g)].map((m) => m[1]);
-  const sequence = ['codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'boot.js'];
+  const sequence = ['codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'boot.js'];
   const at = scripts.indexOf('codex27.js');
   check('the real shell loads House layers before atlas data/cache/UI and boot', at >= 0 &&
     JSON.stringify(scripts.slice(at, at + sequence.length)) === JSON.stringify(sequence) &&

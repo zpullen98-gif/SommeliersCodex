@@ -96,10 +96,10 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
        never exported); it reassigns the nav, the home, the level page and
        the router at load, and must load with no OOT and no pathname. */
     'codex31.js', 'codex32.js',
-    /* codex34 owns no store: its grades go through statRecord as a word's
+    /* codex35 owns no store: its grades go through statRecord as a word's
        do, and it wraps codex28's card and act and codex32's decks at load,
        drawing nothing with no OOT and no pathname. */
-    'codex34.js']);
+    'codex35.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

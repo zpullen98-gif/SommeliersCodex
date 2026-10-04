@@ -1,11 +1,11 @@
 /**
  * WHAT IS IT MADE OF, AND WHAT DO WE COMPARE IT WITH?
  *
- * codex34 (the component deep dive, 5 October 2026) draws, on a house wine's
+ * codex35 (the component deep dive, 5 October 2026) draws, on a house wine's
  * card, the wine's components grouped Ingredients, Techniques, Stories and
  * its one or two comparisons; deals the component decks on codex32's one card
  * screen; and opens a grape, producer or primer named by #ref= from another
- * room. This loads the SHIPPED chain with codex32 and codex34 on top of the
+ * room. This loads the SHIPPED chain with codex32 and codex35 on top of the
  * SHIPPED engine and the shipped Brennan's pack, with two components and a
  * comparison put on the C.H. Berres Riesling here, over a Map storage, and
  * asks:
@@ -24,7 +24,7 @@
  *   4. the Flashcards root lists a deck per kind under What it's made of
  *   5. #ref=Riesling opens the grape run on Riesling and takes the hash away
  *   6. a wine with no components and a house with none draw nothing new
- *   7. codex34.js: no dash, no arrow, var and function only, no glyph, nobody
+ *   7. codex35.js: no dash, no arrow, var and function only, no glyph, nobody
  *      named, and index.html and sw.js carry it after codex33 and before boot
  *
  *   node .scripts/check-components.js [jsDir]
@@ -50,8 +50,8 @@ for (const f of [ENGINE, UI_FILE, PACK_FILE]) {
     process.exit(1);
   }
 }
-if (!fs.existsSync(path.join(JS, 'codex34.js'))) {
-  console.log('check-components: no codex34.js in ' + JS + ', SKIPPED');
+if (!fs.existsSync(path.join(JS, 'codex35.js'))) {
+  console.log('check-components: no codex35.js in ' + JS + ', SKIPPED');
   process.exit(0);
 }
 
@@ -65,7 +65,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
   'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js',
-  'codex30.js', 'codex32.js', 'codex34.js', 'boot.js'];
+  'codex30.js', 'codex32.js', 'codex35.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -254,10 +254,10 @@ async function settle(D) {
   await tick(20);
 }
 
-/* Only what codex34 drew: its two sections, cut out of a card. */
+/* Only what codex35 drew: its two sections, cut out of a card. */
 function blocks(html) {
   const out = [];
-  const re = /<section class="v28-block v34-(?:madeof|compare)"[\s\S]*?<\/section>/g;
+  const re = /<section class="v28-block v35-(?:madeof|compare)"[\s\S]*?<\/section>/g;
   let m;
   while ((m = re.exec(html))) out.push(m[0]);
   return out.join('');
@@ -270,26 +270,26 @@ async function main() {
   const G = D.G;
   check('the house carries the test components', G('v28House().components.length') >= 3);
   const card = G('v28CardHtml(' + JSON.stringify(BERRES) + ')');
-  const at = card.indexOf('id="v34-madeof-h"');
-  check('the block is drawn, headed What it\u2019s made of', card.indexOf('<h3 class="secgroup" id="v34-madeof-h">What it\u2019s made of</h3>') >= 0);
+  const at = card.indexOf('id="v35-madeof-h"');
+  check('the block is drawn, headed What it\u2019s made of', card.indexOf('<h3 class="secgroup" id="v35-madeof-h">What it\u2019s made of</h3>') >= 0);
   check('before the five parts, after the wine block', at > 0 && at < card.indexOf('<h3 class="secgroup">The five parts</h3>') && card.indexOf('The wine') < at, String(at));
   const kinds = (card.match(/data-kind="([a-z]+)"/g) || []).map((s) => s.slice(11, -1));
   check('the kinds in order: Ingredients, Techniques, Stories', JSON.stringify(kinds) === JSON.stringify(['ingredient', 'technique', 'story']), kinds.join(','));
-  check('each component a closed disclosure named by its name', /<li data-component="c-testgr01"><details class="v28-q v34-comp"><summary>Riesling<\/summary>/.test(card) && !/v34-comp" open/.test(card));
+  check('each component a closed disclosure named by its name', /<li data-component="c-testgr01"><details class="v28-q v35-comp"><summary>Riesling<\/summary>/.test(card) && !/v35-comp" open/.test(card));
   check('opening to how to say it, the explanation in paragraphs and the card', card.indexOf('Say it:</span> REES-ling.') >= 0 && card.indexOf('<p>On the Mosel it grows on slate.</p>') >= 0
     && card.indexOf('<dt>On the card</dt><dd>What is Riesling?</dd>') >= 0);
   check('and the video that teaches it, a link out in a new tab', /data-component="c-testgr01">[\s\S]*?class="v28-link v30-title" href="https:[^"]+" target="_blank" rel="noopener"[\s\S]*?<\/details>/.test(card));
   check('a component with nothing but words shows its words and no card', /data-component="c-testnc01">[\s\S]*?<p>No card.<\/p><\/div>/.test(card));
-  check('Flash these components, a gold button', card.indexOf('data-v28="v34flash" data-id="' + BERRES + '">Flash these components</button>') >= 0);
+  check('Flash these components, a gold button', card.indexOf('data-v28="v35flash" data-id="' + BERRES + '">Flash these components</button>') >= 0);
 
   section('compare with');
   check('a grape on the level\'s list opens through codex28\'s grape door', card.indexOf('data-v28="grape" data-g="Riesling">The Riesling grape card</button> <span class="v28-soft">The grape card</span>') >= 0);
   check('a house wine opens its card', card.indexOf('data-v28="open" data-id="' + AUSLESE + '">Our Auslese half bottle</button> <span class="v28-soft">On our list</span>') >= 0);
   check('with what is the same and what differs', card.indexOf('<span class="v28-soft">The same:</span> Racy acidity and slate.') >= 0 && card.indexOf('<span class="v28-soft">What differs:</span> Sweet and aged.') >= 0);
   const aus = G('v28CardHtml(' + JSON.stringify(AUSLESE) + ')');
-  check('a Table technique and a Ledger cocktail are links into their rooms on the suite\'s path', aus.indexOf('<a class="v28-link v34-label" href="/table/technique/hollandaise">A Library technique</a> <span class="v28-soft">in the World Table</span>') >= 0
+  check('a Table technique and a Ledger cocktail are links into their rooms on the suite\'s path', aus.indexOf('<a class="v28-link v35-label" href="/table/technique/hollandaise">A Library technique</a> <span class="v28-soft">in the World Table</span>') >= 0
     && aus.indexOf('href="/ledger/#/library/sazerac">The canon Sazerac</a> <span class="v28-soft">in the Ledger</span>') >= 0);
-  check('the Auslese has no components and so no block', aus.indexOf('v34-madeof-h') < 0 && aus.indexOf('v34-compare-h') >= 0);
+  check('the Auslese has no components and so no block', aus.indexOf('v35-madeof-h') < 0 && aus.indexOf('v35-compare-h') >= 0);
   const champ = G('v28CardHtml(v28House().wines.filter(function (w) { return /Essential/.test(w.name); })[0].id)');
   check('a producer opens through its door', champ.indexOf('data-v28="producer" data-k="p-ch-angelus">A producer</button>') >= 0);
   G('applyLevel("certified", true)');
@@ -297,10 +297,10 @@ async function main() {
   check('a chapter opens through its door at the level that holds it', champV.indexOf('data-v28="primer" data-k="Germany">A chapter</button> <span class="v28-soft">The chapter</span>') >= 0);
   G('applyLevel("intro", true)');
   const laf = G('v28CardHtml(v28House().wines.filter(function (w) { return /Lafitte/.test(w.name); })[0].id)');
-  check('a classic is written out, no link', laf.indexOf('<span class="v34-label">A grower Champagne</span> <span class="v28-soft">A classic, for comparison</span>') >= 0 && !/v34-compare[\s\S]*<a [^>]*>A grower/.test(laf));
+  check('a classic is written out, no link', laf.indexOf('<span class="v35-label">A grower Champagne</span> <span class="v28-soft">A classic, for comparison</span>') >= 0 && !/v35-compare[\s\S]*<a [^>]*>A grower/.test(laf));
   G('location.pathname = "/"');
   const off = G('v28CardHtml(' + JSON.stringify(AUSLESE) + ')');
-  check('off the suite\'s path the other rooms are words', blocks(off).indexOf('href="/table/') < 0 && blocks(off).indexOf('href="/ledger/') < 0 && blocks(off).indexOf('<span class="v34-label">A Library technique</span>') >= 0);
+  check('off the suite\'s path the other rooms are words', blocks(off).indexOf('href="/table/') < 0 && blocks(off).indexOf('href="/ledger/') < 0 && blocks(off).indexOf('<span class="v35-label">A Library technique</span>') >= 0);
   G('location.pathname = "/codex/"');
   const drawn = blocks(card) + blocks(aus) + blocks(champ) + blocks(laf);
   check('every string the blocks draw passes the voice sweep', drawn.length > 1000 && voiceProblems(drawn).length === 0, voiceProblems(drawn).join(', '));
@@ -314,7 +314,7 @@ async function main() {
   const one = JSON.parse(G('JSON.stringify(v32DeckDef("item-components:' + BERRES + '"))'));
   check('one wine\'s components in the card\'s order', one.cards.map((c) => c.id).join(',') === 'c-testgr01,c-testst01' && /: what it is made of$/.test(one.name), one.cards.map((c) => c.id).join(','));
   check('a kind that is not one, and a wine id that is not one, deal nothing', G('v32DeckDef("components:garnish").kind') === 'house' && G('v32DeckDef("components:garnish").cards.length') === 0);
-  G('v28Act("v34flash", { getAttribute: function (k) { return k === "data-id" ? ' + JSON.stringify(BERRES) + ' : null; } })');
+  G('v28Act("v35flash", { getAttribute: function (k) { return k === "data-id" ? ' + JSON.stringify(BERRES) + ' : null; } })');
   check('Flash these components starts the run at once, in order', G('S.view') === 'housedeck' && G('S._v32run.deckId') === 'item-components:' + BERRES && G('S._v32run.deck.join(",")') === '0,1');
   const face = G('v32CardFace(v32RunCard(), S._v32run)');
   check('the face names the kind and asks the question', face.indexOf('Front \u00b7 Ingredients') >= 0 && face.indexOf('What is Riesling?') >= 0 && face.indexOf('racy acidity, here') < 0);
@@ -325,9 +325,9 @@ async function main() {
   check('and the card counts as learnt', G('v32DeckDef("components:ingredient").learnt') === 1);
   G('S._v32run = null; S.view = "flashcards"');
   const root = G('v32FlashcardsHtml()');
-  check('the Flashcards root lists a deck per kind under What it\u2019s made of, before the words', root.indexOf('id="v34-fc-made">What it\u2019s made of</h3>') >= 0
+  check('the Flashcards root lists a deck per kind under What it\u2019s made of, before the words', root.indexOf('id="v35-fc-made">What it\u2019s made of</h3>') >= 0
     && root.indexOf('data-deck="components:ingredient"') >= 0 && root.indexOf('data-deck="components:story"') >= 0 && root.indexOf('data-deck="components:technique"') < 0
-    && (root.indexOf('v32-fc-words') < 0 || root.indexOf('v34-fc-made') < root.indexOf('v32-fc-words')));
+    && (root.indexOf('v32-fc-words') < 0 || root.indexOf('v35-fc-made') < root.indexOf('v32-fc-words')));
   check('the deck screen starts in order too', G('(function () { S._v32deck = "item-components:' + BERRES + '"; v32StartRun(S._v32deck, { push: true }); return S._v32run.deck.join(","); })()') === '0,1');
 
   section('the door from another room');
@@ -346,28 +346,28 @@ async function main() {
   const N = bootDevice({ pack: JSON.stringify(bare), location: { href: 'http://localhost/codex/', pathname: '/codex/', search: '', hash: '' } });
   await settle(N);
   const plain = N.G('v28CardHtml(' + JSON.stringify(BERRES) + ')');
-  check('no component block and no comparison block', plain.indexOf('v34-madeof-h') < 0 && plain.indexOf('v34-compare-h') < 0 && plain.indexOf('id="v28-h"') > 0);
-  check('no component deck and no row on the root', N.G('v32DeckDef("components").cards.length') === 0 && N.G('v32FlashcardsHtml()').indexOf('v34-fc-made') < 0);
+  check('no component block and no comparison block', plain.indexOf('v35-madeof-h') < 0 && plain.indexOf('v35-compare-h') < 0 && plain.indexOf('id="v28-h"') > 0);
+  check('no component deck and no row on the root', N.G('v32DeckDef("components").cards.length') === 0 && N.G('v32FlashcardsHtml()').indexOf('v35-fc-made') < 0);
 
   section('the shipped edition');
   const E = bootDevice({ pack: JSON.stringify(shipped), location: { href: 'http://localhost/codex/', pathname: '/codex/', search: '', hash: '' } });
   await settle(E);
   const real = E.G('v28CardHtml(' + JSON.stringify(BERRES) + ')');
   const realCards = (shipped.house.components || []).filter((c) => c.card && c.card.value).length;
-  check('the shipped Berres card draws its own components and comparison', real.indexOf('v34-madeof-h') > 0 && real.indexOf('v34-compare-h') > 0);
+  check('the shipped Berres card draws its own components and comparison', real.indexOf('v35-madeof-h') > 0 && real.indexOf('v35-compare-h') > 0);
   check('the shipped components deal as one deck, a card each', realCards > 0 && E.G('v32DeckDef("components").cards.length') === realCards, String(E.G('v32DeckDef("components").cards.length')) + ' of ' + realCards);
 
   section('the file and its wiring');
-  const src = fs.readFileSync(path.join(JS, 'codex34.js'), 'utf8');
+  const src = fs.readFileSync(path.join(JS, 'codex35.js'), 'utf8');
   const unescaped = src.replace(/\\u([0-9a-fA-F]{4})/g, (m, h) => String.fromCharCode(parseInt(h, 16)));
-  check('codex34.js: no dash, no glyph, no level numeral (its escapes read as what they are)', voiceProblems(unescaped).length === 0, voiceProblems(unescaped).join(', '));
-  check('codex34.js declares with var and function only, no arrow', !/^\s*(let|const|class)\s/m.test(src) && src.indexOf('=>') < 0);
-  check('codex34.js names nobody', !/Lizzy/.test(src));
+  check('codex35.js: no dash, no glyph, no level numeral (its escapes read as what they are)', voiceProblems(unescaped).length === 0, voiceProblems(unescaped).join(', '));
+  check('codex35.js declares with var and function only, no arrow', !/^\s*(let|const|class)\s/m.test(src) && src.indexOf('=>') < 0);
+  check('codex35.js names nobody', !/Lizzy/.test(src));
   const index = path.join(ROOT, 'index.html');
   const sw = path.join(ROOT, 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
-    check('index.html loads codex34 after codex33 and before boot', /codex33\.js\?v=\d+"><\/script>\s*<script src="js\/codex34\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
-    check('sw.js lists codex34.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex34.js'") > 0);
+    check('index.html loads codex35 after codex33 and codex34 and before boot', /codex33\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex34\.js\?v=\d+"><\/script>\s*)?<script src="js\/codex35\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
+    check('sw.js lists codex35.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex35.js'") > 0);
   }
 
   console.log('');

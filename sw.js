@@ -1,7 +1,7 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v89';
-importScripts('./js/data-teaching-images.js?v=1', './js/teaching-cache.js?v=1');
+const CACHE = 'codex-v90';
+importScripts('./js/data-teaching-images.js?v=2', './js/teaching-cache.js?v=1');
 
 /* Both the reviewed SVG atlas and original JPG maps stay out of ASSETS.
 
@@ -101,6 +101,7 @@ const ASSETS = [
   './js/teaching-cache.js',
   './js/codex33.js',
   './js/codex34.js',
+  './js/codex35.js',
   './js/boot.js',
   './fonts/cinzel-normal-400-900-latin.woff2',
   './fonts/cinzel-normal-400-900-latin-ext.woff2',

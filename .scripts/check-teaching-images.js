@@ -36,10 +36,10 @@ async function ask(d, relative) {
 }
 (async () => {
   const d = device(), items = d.api.entries();
-  check('three delivered condition guides with unique ids', items.length === 3 && new Set(items.map(x => x.id)).size === 3);
+  check('six reviewed teaching guides with unique ids', items.length === 6 && new Set(items.map(x => x.id)).size === 6);
   for (const item of items) {
     check(item.id + ': complete accessible metadata', d.api.entry(item.id) && item.alt.length > 60 && item.caption.length > 60 && item.key.every(x => x.length === 2 && x.every(Boolean)));
-    check(item.id + ': primary source links', item.sources.every(x => /^https:\/\/(?:www\.)?(?:christies.com|wsetglobal.com|awri.com.au|inspection.canada.ca)\//.test(x.url)));
+    check(item.id + ': primary source links', item.sources.every(x => /^https:\/\/(?:www\.)?(?:christies.com|wsetglobal.com|awri.com.au|inspection.canada.ca|plantgrape.fr|wineaustralia.com|bourgogne-wines.com|verallia.com|champagne.fr|wset-uat-integr8.azurewebsites.net)\//.test(x.url)));
     const asset = path.join(ROOT, item.file);
     if (REQUIRE_ART) check(item.id + ': release art exists', fs.existsSync(asset));
     if (fs.existsSync(asset)) {
@@ -62,9 +62,14 @@ async function ask(d, relative) {
   check('ullage guide gives all six named levels', items[0].key.length === 6);
   check('heat clue guide explicitly refuses diagnosis from appearance', /appearance alone cannot/i.test(items[1].caption));
   check('particles guide distinguishes TCA', /do not mean.*TCA/i.test(items[2].key[2][1]));
+  const colour = d.api.entry('grid-colour-rim'), bottles = d.api.entry('bottle-shapes'), pinot = d.api.entry('pinot-noir');
+  check('colour key describes seven observations, never a grape or age diagnosis', colour.key.length === 7 && /cannot prove grape variety or age/.test(colour.note));
+  check('bottle guide has four shapes and no fixed punt-depth claim', bottles.key.length === 4 && /not fixed by bottle shape/.test(bottles.note) && /does not tell you.*quality/.test(bottles.note));
+  check('portrait reading is unnumbered and acknowledges variable leaves', pinot.numbered === false && /unlobed or have three or five lobes/.test(pinot.key[1][1]));
+  check('nested grape image is an exact approved asset', d.api.match(new URL(pinot.file, d.base).href, d.base) === pinot && !d.api.match(new URL(pinot.file + '?other=1', d.base).href, d.base));
   const assets = vm.runInContext('ASSETS', d.c);
   check('pictures are not in atomic precache', !assets.some(x => /assets\/teach\/|atlas-zoom-v/.test(x)));
-  check('text, UI and policy are precached', ['data-teaching-images', 'teaching-cache', 'codex33'].every(x => assets.includes('./js/' + x + '.js')));
+  check('text, UI and policy are precached', ['data-teaching-images', 'teaching-cache', 'codex33', 'codex34'].every(x => assets.includes('./js/' + x + '.js')));
   const first = items[0], url = new URL(first.file, d.base).href;
   await ask(d, first.file);
   const teach = d.api.cacheName('teach', d.base);
@@ -90,7 +95,9 @@ async function ask(d, relative) {
   check('map requests still use original exact map policy', !d.api.owns(new URL('maps/atlas-v2/france.svg', d.base).href, d.base));
   const other = device('https://example.test/SommeliersCodex/sw.js', d.cache);
   other.c.fetch = async () => { throw new Error('other installation offline'); };
-  await assert.rejects(ask(other, first.file), /other installation/); checks++;
+  // The public worker deliberately yields an out-of-wing URL to the browser.
+  // Exercise the shared policy directly to prove no sibling installation hit.
+  await assert.rejects(other.api.respond(new Request(new URL(first.file, other.base)), other.base), /other installation/); checks++;
   check('installation caches are distinct', other.api.cacheName('teach', other.base) !== teach);
   check('teaching namespaces cannot capture another installation', !d.api.owns(new URL(first.file, other.base).href, d.base));
   check('teaching cache names survive both shell prefixes', !/^(?:oot-)?codex-/.test(teach) && !/^(?:oot-)?codex-/.test(zoom));

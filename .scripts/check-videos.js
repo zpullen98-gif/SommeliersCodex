@@ -333,7 +333,7 @@ async function main() {
     const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
     check('sw.js lists codex30.js in ASSETS', sw.indexOf("'./js/codex30.js'") > 0);
     const scripts = [...index.matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
-    const expected = ['codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'boot.js'];
+    const expected = ['codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'boot.js'];
     const at = scripts.indexOf('codex29.js');
     check('index.html preserves codex29, codex30, atlas data/cache/UI, the consolidation, then boot in exact order', at >= 0 &&
       JSON.stringify(scripts.slice(at, at + expected.length)) === JSON.stringify(expected) &&
