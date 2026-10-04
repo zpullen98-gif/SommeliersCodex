@@ -244,19 +244,24 @@ async function main() {
 
   /* ================================================================ */
   section('the header, the rows, the short line, the price');
-  const glass = house.wines.filter((w) => w.list !== 'bottle');
+  /* the pack's own read date, written the way the study view writes it, so a new edition needs no edit here */
+  const READ_ON = (iso) => { const [y, m, d] = String(iso).split('-').map(Number); return d + ' ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m - 1] + ' ' + y; };
+  const menuBottle = (w) => w.list !== 'bottle' && !w.glass && !!w.bottle;
+  const glass = house.wines.filter((w) => w.list !== 'bottle' && !menuBottle(w));
+  const menuBottles = house.wines.filter(menuBottle).length;
   const priced = glass.filter((w) => (w.prices || []).some((p) => p && p.printed)).length;
   const poured = glass.filter((w) => !(w.prices || []).some((p) => p && p.printed)
     && (house.tastings || []).some((t) => (t.courses || []).some((c) => c.pourId === w.id))).length;
   const study = G('v28StudyHtml()');
-  const want = 'By the glass, as the server guide prints it: ' + glass.length + ' wines, ' + priced + ' with a glass price and ' + poured + ' poured on the tastings.';
-  check('the header sentence counts the list from the house (' + glass.length + ', ' + priced + ', ' + poured + ')', study.indexOf(want) >= 0 && glass.length === 20 && priced === 14 && poured === 6, want);
+  const want = 'By the glass, as the house menus print it: ' + glass.length + ' wines, ' + priced + ' with a glass price and ' + poured + ' poured on the tastings.'
+    + (menuBottles ? ' Bottles the menus print: ' + menuBottles + ', half bottles, large formats and the Bubbles rosés among them.' : '');
+  check('the header sentence counts the list from the house (' + glass.length + ', ' + priced + ', ' + poured + ', ' + menuBottles + ' bottles)', study.indexOf(G('v28Esc(' + JSON.stringify(want) + ')')) >= 0 && glass.length === priced + poured && priced >= 14 && poured === 6, want);
   check('one row per house wine, each a button that opens its card', (study.match(/class="v28-row" data-v28="open"/g) || []).length === house.wines.length);
   const order = house.wines.map((w) => w.id);
   const drawnOrder = (study.match(/class="v28-row" data-v28="open" data-id="([^"]+)"/g) || []).map((m) => m.replace(/.*data-id="/, '').replace('"', ''));
   check('in the house\'s order', JSON.stringify(drawnOrder) === JSON.stringify(order));
-  check('the search box is labelled and the chips carry aria-pressed', /<label class="sr-only" for="v28-q">Find a wine<\/label>/.test(study) && /data-v28="sec" data-s="" aria-pressed="true">All 20</.test(study));
-  check('the house and the menus\' date in the sub line', study.indexOf('menus read 26 September 2026') >= 0);
+  check('the search box is labelled and the chips carry aria-pressed', /<label class="sr-only" for="v28-q">Find a wine<\/label>/.test(study) && study.indexOf('data-v28="sec" data-s="" aria-pressed="true">All ' + house.wines.length + '<') >= 0);
+  check('the house and the menus\' date in the sub line', study.indexOf('menus read ' + READ_ON(house.menusReadOn)) >= 0);
   check('the edit switch is a quiet text button', /class="v28-switch" data-v28="editall">Edit the list</.test(study));
   check('no allergen box, no tick, no checked attribute', !/checked|type="checkbox"/.test(study));
   check('the Berres short line drops the name it repeats', G('v28ShortLine(v28Find(v28House().wines, ' + JSON.stringify(BERRES) + '))') === 'Light, racy and off-dry, our glass for anything spicy.',
@@ -290,7 +295,7 @@ async function main() {
   check('the Berres card links the Riesling grape profile', /data-v28="grape" data-g="Riesling">Open Riesling in the grape cards</.test(berres) && /<p class="v28-refname">Riesling<\/p>/.test(berres));
   check('and draws the Mosel entry of the Terroir Atlas with its door', /<p class="v28-refname">Mosel<\/p>/.test(berres) && /Blue &amp; red slate/.test(berres) && /data-v28="terroir"/.test(berres));
   check('and the Germany chapter at the current level', /data-v28="primer" data-k="Germany">Read Germany, a chapter at /.test(berres));
-  check('its price once, with the date it was printed', (berres.match(/\$14 glass/g) || []).length >= 1 && /Prices as printed on 26 September 2026\. Confirm before quoting\./.test(berres));
+  check('its price once, with the date it was printed', (berres.match(/\$14 glass/g) || []).length >= 1 && berres.indexOf('Prices as printed on ' + READ_ON(house.menusReadOn) + '. Confirm before quoting.') >= 0);
   check('Say it over the kept value, verbatim', /Say it<\/p><p class="v28-sayit">C\.H\. Berres: BEH-ress\.<\/p>/.test(berres));
   check('the fixed eyebrow for the service note', berres.indexOf('Your words. Allergens: confirm at lineup.') >= 0);
   check('a part the profile already holds is left out, by containment after folding', G('(function () { var w = JSON.parse(JSON.stringify(v28Find(v28House().wines, ' + JSON.stringify(BERRES) + ')));'
@@ -317,7 +322,7 @@ async function main() {
   const st = JSON.parse(stats);
   check('at least 17 wines link a chapter (' + st.primer + ')', st.primer >= 17);
   check('at least 15 wines link a grape (' + st.grape + ')', st.grape >= 15);
-  check('the three producers the Producers hold, and no other (' + st.prod.join(', ') + ')', st.prod.length === 3
+  check('the producers the Producers hold, the three glass ones among them (' + st.prod.join(', ') + ')', st.prod.length >= 3
     && st.prod.some((p) => /Leflaive/.test(p)) && st.prod.some((p) => /Jadot/.test(p)) && st.prod.some((p) => /Inglenook/.test(p)));
   G('applyLevel("intro", true)');
   const introStats = JSON.parse(G('(function () { var n = 0; v28Wines(v28House()).forEach(function (w) { if (v28Primer(w)) n++; }); return JSON.stringify({ n: n, berres: v28Primer(v28Find(v28House().wines, ' + JSON.stringify(BERRES) + ')) }); })()'));

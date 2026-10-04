@@ -1,6 +1,6 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v80';
+const CACHE = 'codex-v81';
 
 /* The world maps (maps/*.jpg) are deliberately NOT in ASSETS above.
 
