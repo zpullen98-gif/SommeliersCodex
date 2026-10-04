@@ -47,7 +47,7 @@ const JS = process.argv.slice(2).find((a) => a.charAt(0) !== '-')
 /* The chain in index.html's order. The two optional files are the ones the
    two trees differ on: codex13 is the standalone's, data-firstpath the
    wing's. Everything else is required. */
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -56,7 +56,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'boot.js'];
 
 /* The plan's words, verbatim, as the source of truth the layer is held to. */
 const NAMES = ['Régionale', 'Village', 'Premier Cru', 'Grand Cru'];

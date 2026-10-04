@@ -84,7 +84,11 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
     'codex27.js',
     /* codex28 owns no store; it wraps cellarView, render and applyLevel at
        load and must load with no OOT and no pathname. */
-    'codex28.js']);
+    'codex28.js',
+    /* codex29 owns no store either; it wraps codex28's card, deck and list
+       functions, render and v25MainName at load, registers the full list's
+       view and its Mine row, and fetches nothing until that view opens. */
+    'codex29.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

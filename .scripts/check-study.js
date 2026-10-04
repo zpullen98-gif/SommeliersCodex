@@ -58,7 +58,7 @@ if (!fs.existsSync(path.join(JS, 'codex28.js'))) {
   process.exit(0);
 }
 
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex29.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -67,7 +67,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -278,7 +278,9 @@ async function main() {
   G('localStorage.removeItem("oot-study-meal-v1")');
   G('S._v28.q = "riesling"');
   const found = G('v28StudyHtml()');
-  check('the search keeps the wines carrying the grape, and the live region says so', (found.match(/class="v28-row"/g) || []).length === 2 && /2 found for riesling/.test(found));
+  /* the menus' two Rieslings, and the floor's Riesling bottles with them: the count is read off the rows, never pinned */
+  const rieslings = (found.match(/class="v28-row"/g) || []).length;
+  check('the search keeps the wines carrying the grape, and the live region says so', rieslings >= 2 && new RegExp(rieslings + ' found for riesling').test(found) && /Berres/.test(found) && /Erdener/.test(found), rieslings + ' rows');
   G('S._v28.q = "sazerac"');
   const away = G('v28StudyHtml()');
   check('a search that is another room\'s finds it under Elsewhere in the house', /Nothing matches sazerac\./.test(away) && /Elsewhere in the house/.test(away) && /Classic Sazerac.*in the Ledger/.test(away));
