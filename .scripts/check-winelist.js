@@ -436,10 +436,13 @@ async function main() {
     const oldShell = prefix + 'v0', removed = [], handlers = {};
     const location = new URL('https://example.test/' + (prefix === 'codex-' ? 'SommeliersCodex/' : 'codex/') + 'sw.js');
     const kept = [shell, oldShell, otherPrefix + 'v0', 'codexlist-v1', 'codexmaps-v2-fixture'];
-    vm.runInNewContext(sw, { URL, location,
+    const worker = vm.createContext({ URL, location,
       self: { location, addEventListener(type, fn) { handlers[type] = fn; }, clients: { claim() { return Promise.resolve(); } } },
       caches: { keys() { return Promise.resolve(kept.slice()); }, delete(name) { removed.push(name); return Promise.resolve(true); } }
-    }, { filename: 'sw.js' });
+    });
+    /* the worker imports the teaching images' cache layer; run it in the same scope, as a worker would */
+    worker.importScripts = (...files) => files.forEach((file) => vm.runInContext(fs.readFileSync(path.join(ROOT, file.split('?')[0]), 'utf8'), worker));
+    vm.runInContext(sw, worker, { filename: 'sw.js' });
     let activation;
     if (handlers.activate) handlers.activate({ waitUntil(promise) { activation = promise; } });
     await activation;
@@ -454,7 +457,7 @@ async function main() {
   check('codex29.js and its stylesheet are in ASSETS', sw.indexOf("'./js/codex29.js'") > 0 && sw.indexOf("'./css/house-fulllist.css'") > 0);
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   const scripts = [...index.matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
-  const expected = ['codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'boot.js'];
+  const expected = ['codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'boot.js'];
   const at = scripts.indexOf('codex28.js');
   check('index.html preserves list layers, atlas data/cache/UI, then boot in exact order, and its stylesheet', at >= 0 &&
     JSON.stringify(scripts.slice(at, at + expected.length)) === JSON.stringify(expected) &&

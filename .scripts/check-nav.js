@@ -85,7 +85,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
   'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js',
-  'codex30.js', 'codex32.js', 'boot.js'];
+  'codex30.js', 'codex32.js', 'codex34.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -601,7 +601,7 @@ async function main() {
   const index = path.join(JS, '..', 'index.html');
   const sw = path.join(JS, '..', 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
-    check('index.html loads codex32 after codex30 and atlas, then teaching layers before boot', /codex30\.js\?v=\d+"><\/script>\s*(<script src="js\/(?:data-atlas-v2|atlas-cache|codex31)\.js\?v=\d+"><\/script>\s*)*<script src="js\/codex32\.js\?v=\d+"><\/script>\s*<script src="js\/data-teaching-images\.js\?v=\d+"><\/script>\s*<script src="js\/teaching-cache\.js\?v=\d+"><\/script>\s*<script src="js\/codex33\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
+    check('index.html loads codex32 after codex30 and atlas, then teaching layers before boot', /codex30\.js\?v=\d+"><\/script>\s*(<script src="js\/(?:data-atlas-v2|atlas-cache|codex31)\.js\?v=\d+"><\/script>\s*)*<script src="js\/codex32\.js\?v=\d+"><\/script>\s*<script src="js\/data-teaching-images\.js\?v=\d+"><\/script>\s*<script src="js\/teaching-cache\.js\?v=\d+"><\/script>\s*<script src="js\/codex33\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex34\.js\?v=\d+"><\/script>\s*)?<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
     check('sw.js lists codex32.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex32.js'") > 0);
   }
 }

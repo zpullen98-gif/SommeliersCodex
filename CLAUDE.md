@@ -13,8 +13,9 @@ then extended with the Intro import and authored Advanced/Master banks.
 never question/card runs. See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Existing atlas-v2 geometry, joins and offline map keys remain unchanged.
-Source worker is `codex-v88`; its two teaching imports have query versions which
-must follow the matching index versions. New work belongs in the next layer.
+Source worker is `codex-v89`; its two teaching imports have query versions which
+must follow the matching index versions. New work belongs in the next layer
+(codex35: codex34 is the components layer below).
 
 The install icon master keeps its original wine colour/mark on house forest
 green and antique gold. Regenerate its four PNGs with
@@ -134,6 +135,16 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) â€
   entry. Back (`#v32-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home:
   depth above 0 is `history.back()`, depth 0 replaces to `V32_PARENT`. Every older "Back to ..." button is stripped
   from `#view` as it is drawn (`V32_OLD_BACK`). Gate: `node .scripts/check-nav.js [jsDir] [--mutations]`.
+- `js/codex34.js`: **what a wine is made of, and Compare with** (the component deep dive, 5 October 2026; WorldTable
+  CLAUDE.md, "The components and the comparisons"). Wraps `v28CardHtml` to draw, before the five parts, the wine's
+  components grouped Ingredients, Techniques, Stories (each a closed `v28-q` disclosure: say, explanation, card, videos
+  through codex30's `v30Item`) with Flash these components (`v34flash` in a wrapped `v28Act`), and Compare with: a grape
+  on the level's list through codex28's `grape` door, a house wine through `open`, a producer and a chapter through their
+  doors, a Table technique or recipe and a Ledger cocktail as links on the suite's path, a classic as words. Wraps
+  codex32's `v32DeckDef`, `v32Learnt`, `v32StartRun`, `v32Grade`, `v32CardFace` and `v32FlashcardsHtml` for the decks
+  `components`, `components:{kind}` and `item-components:{id}` (dealt in the card's order; grades under
+  `h-{id}-component` through `v27RecordHouse`). `#ref={grape|producer|primer}` is read once at load and opened on the
+  first render (the outermost `render`). Gate: `node .scripts/check-components.js [jsDir]`.
 - `sw.js` â€” cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)

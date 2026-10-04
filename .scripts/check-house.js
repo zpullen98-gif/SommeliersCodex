@@ -1019,7 +1019,8 @@ async function main() {
      edition carries moved a day back, one wine's style as it was printed
      then, and one lexicon term the newer edition adds. */
   const NEW_AT = Date.parse(packJson.house.pack.builtAt);
-  const OLD_AT = NEW_AT - 86400000;
+  /* a day back, and never later than the device's clock: the person's edits below come after it */
+  const OLD_AT = Math.min(NEW_AT, NOW) - 86400000;
   const oldPack = JSON.parse(packText);
   const restamp = (v) => {
     if (Array.isArray(v)) return v.forEach(restamp);
