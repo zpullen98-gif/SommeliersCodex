@@ -260,6 +260,23 @@ intentionally skips, bump the wing worker and run `tools/check-all.mjs` before a
 public-repo push. Follow that site's CLAUDE.md. The old private workshop and its staging
 script are retired and must not overwrite the current public site; never push its history.
 
+## Shared day and night service
+
+`js/oot-service.js` is copied exactly from the canonical
+`WorldTable/static/service/oot-service.js`. Update the canonical controller
+first. It shares the device preference `oot.service.v1`, applies
+`html[data-service="day"|"night"]`, and exposes `OOT.service.get/set/subscribe`.
+`css/service-day.css` supplies the Codex day palette, including controls,
+reference accents, results and the atlas viewer. Its screen-only rules keep
+art headers dark and leave the actual atlas/wine-colour teaching images alone.
+Both files belong in the shell cache.
+
+The atlas helper in codex31 also recognises codex32's unified grape run
+through `v32RunCard()`. Its deck indexes are not indexes into `GRAPES`.
+Map links appear only after revealing an exactly matched profile; the native
+map viewer must leave the card, deck and marks untouched. The atlas UI gate
+checks both the legacy and unified card shapes.
+
 ## Earlier interface rule: typography, not pictures
 
 The UI carries **no pictorial icons** — no emoji, dingbats, fleurons or emblems. Hierarchy is

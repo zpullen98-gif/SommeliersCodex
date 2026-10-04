@@ -82,6 +82,7 @@ ctx.window = ctx;
 ctx.render = function () {
   document.body.innerHTML = '';
   if (ctx.S.view === 'worldmap') document.body.appendChild(ctx.worldMapView());
+  else if (ctx.S._v32run?.v32) document.body.appendChild(ctx.el('<div class="v32card"><div id="v32-face"></div><button id="grade">Got it</button></div>'));
   else document.body.appendChild(ctx.el('<div><div class="fcstage"><div id="fcard"></div></div><button id="grade">Got it</button></div>'));
 };
 vm.createContext(ctx);
@@ -160,6 +161,23 @@ second.querySelector('img').fire('error');
 check('image failure keeps readable key and disables zoom', !second.querySelector('.v31-viewer-fail').hidden && second.querySelector('[data-viewer="in"]').disabled && second.querySelector('.v31-viewer-key'));
 ctx.V31.viewer.close(); closedEvents.splice(0).forEach((fn) => fn());
 check('map reading never grades or reorders the card', JSON.stringify(ctx.S.fc) === before);
+/* The consolidation uses its own card index and markup. Read the exact
+   current card through its public helper, never index GRAPES with that id. */
+ctx.v32RunCard = () => ctx.S._v32run.cards[ctx.S._v32run.deck[0]] || null;
+ctx.S._v32run = { v32: 1, cards: [{ kind: 'grape', g: { g: 'Nebbiolo' } }], deck: [0], flip: false, done: 0, again: 0 };
+ctx.S.fc = ctx.S._v32run; ctx.S.view = 'flash'; ctx.render();
+check('unified unrevealed grape card receives no geographic answer hint', !document.querySelector('.v31-flash-maps'));
+ctx.S._v32run.flip = true; ctx.render();
+const unified = document.querySelector('.v31-flash-maps');
+check('unified revealed grape uses its exact current profile', unified && unified.querySelectorAll('[data-flash-map]').length === 1 && unified.querySelector('[data-flash-map="italy"]'));
+const unifiedBefore = JSON.stringify(ctx.S._v32run), unifiedOpen = unified.querySelector('[data-flash-map]');
+unifiedOpen.focus(); unifiedOpen.onclick(); ctx.V31.viewer.close();
+check('unified map round trip preserves card, deck, flip, marks and focus', JSON.stringify(ctx.S._v32run) === unifiedBefore && document.activeElement === unifiedOpen && ctx.S.view === 'flash');
+ctx.S._v32run.cards[0] = { kind: 'grape', g: { g: 'No exact mapping' } }; ctx.render();
+check('unmapped unified grape receives no guessed map', !document.querySelector('.v31-flash-maps'));
+ctx.S.view = 'housedeck'; ctx.S._v32run.cards[0] = { kind: 'house', g: { g: 'Nebbiolo' } }; ctx.render();
+check('house wine cards never inherit a grape map by accident', !document.querySelector('.v31-flash-maps'));
+delete ctx.S._v32run;
 check('all original map/course data remain unchanged', JSON.stringify(ctx.MAP_SHEETS.map((s) => ctx.mapRegions(s.id))) === original);
 /* Reuse the House study gate's trusted device fixture, but load the ACTUAL
    index.html script chain. This catches namespace/render collisions that an
@@ -208,6 +226,8 @@ async function checkHouseIntegration() {
   check('Back from the atlas restores the same wine card and Mine area', G('S.view') === 'cellar' && G('S._v28.open') === wineId && G('S._v25area') === 'mine');
   check('House card and map round trip never changes study records', G('JSON.stringify(ST)') === record);
   check('full-list and video extensions remain installed', G('typeof v29ListView') === 'function' && G('typeof v30WatchHtml') === 'function');
+  G('v32StartRun("grapes-all", { first:"Nebbiolo" });');
+  check('shipped unified grape engine exposes the exact active grape and its own card id', G('S.view') === 'flash' && G('v32RunCard().g.g') === 'Nebbiolo' && G('v32CardHtml().indexOf("id=\\"v32-face\\"") >= 0'));
 }
 checkHouseIntegration().then(() => {
   console.log(checks + ' atlas UI contract checks passed (mock DOM; no rendered layout assertion).');
