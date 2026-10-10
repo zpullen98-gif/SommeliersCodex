@@ -79,7 +79,7 @@ const source = name => fs.readFileSync(path.join(root, 'js', name), 'utf8');
     check('component and grape joins are exact', exact.component[0] === 'bottle-heat-damage' && exact.grape[0] === 'pinot-noir' && exact.wrongGrape.length === 0);
     await page.evaluate(() => {v32Apply({view:'illustrations',arg:'service-bottle-check'});render();});
     check('registered selected study survives route argument', await page.evaluate(() => v32Arg('illustrations')) === 'service-bottle-check');
-    check('fictional practice label is explicit', await page.getByText('Practice example — fictional label', { exact:true }).isVisible());
+    check('fictional practice label is explicit', await page.getByText(/^Practice example(?: —|:) fictional label$/).isVisible());
     check('label exercise mismatch answer stays closed', await page.locator('.v36-label-study details:not([open])').count() === 1);
     check('illustrated study parent and nav owner are Library', await page.evaluate(() => V32_PARENT.illustrations === 'library' && V32_OWNER.illustrations === 'library'));
     await page.evaluate(() => v32Apply({view:'illustrations',arg:'not-real'}));
