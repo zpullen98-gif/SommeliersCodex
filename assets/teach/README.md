@@ -8,6 +8,14 @@ belong beside each image in ordinary app text.
 
 ## Current guides
 
+The culinary companion adds two six-part aroma references and reuses two
+reviewed World Table plates as local, versioned Codex assets: six sauces and
+Eggs Hussarde components. Those reused files retain their original bytes.
+The fourteen guides remain on demand; neither full images nor thumbnails enter
+the shell precache. Aroma pictures teach vocabulary rather than identity or
+chemistry, and the food studies do not establish current house plating.
+The five guided lessons live in layer 37 and preserve existing study records.
+
 `js/data-teaching-images.js` holds the exact approved file inventory, alt text,
 captions, numbered keys and primary-source reading. The first three guides cover
 ullage, condition clues and crystals/sediment/cork. Their captions distinguish

@@ -15,8 +15,8 @@ const data = c.CODEX_VISUAL_STUDIES, entries = c.CodexTeachingCache.entries();
 const house = JSON.parse(fs.readFileSync(packPath, 'utf8')).house;
 const ids = entries.map(e => e.id), grouped = data.groups.flatMap(g => g.ids);
 const equalSet = (a, b) => a.length === b.length && new Set(a).size === a.length && [...a].sort().join('|') === [...b].sort().join('|');
-check('ten registered teaching entries, each with a unique ID', ids.length === 10 && new Set(ids).size === 10 && ids.every(id => c.CodexTeachingCache.entry(id)));
-check('three uniquely named collections', data.groups.length === 3 && new Set(data.groups.map(g => g.id)).size === 3 && data.groups.every(g => g.id && g.title && g.ids.length));
+check('fourteen registered teaching entries, each with a unique ID', ids.length === 14 && new Set(ids).size === 14 && ids.every(id => c.CodexTeachingCache.entry(id)));
+check('four uniquely named collections', data.groups.length === 4 && new Set(data.groups.map(g => g.id)).size === 4 && data.groups.every(g => g.id && g.title && g.ids.length));
 check('collections cover each manifest entry exactly once', equalSet(grouped, ids));
 check('every guide has exactly one purpose', equalSet(Object.keys(data.purposes), ids) && ids.every(id => typeof data.purposes[id] === 'string' && data.purposes[id].trim()));
 check('every guide has question, answer and practice', equalSet(Object.keys(data.recall), ids) && ids.every(id => ['question', 'answer', 'practise'].every(k => typeof data.recall[id][k] === 'string' && data.recall[id][k].trim())));
@@ -56,4 +56,4 @@ check('all current wine joins round-trip through the runtime helper', wines.ever
 check('missing wine or identity draws no door', c.v36WineGuides(null).length === 0 && c.v36WineGuides({ name: wines[0].name }).length === 0);
 const oldLayer = fs.readFileSync(path.join(root, 'js', 'codex33.js'), 'utf8');
 check('reference wine cards delegate to the exact mapping helper', /v36WineGuides\(item\)/.test(oldLayer) && !/Rubicon\.\*2010|Chardonnay\|Burgundy\|Bourgogne\|Chablis\|Rubicon/.test(oldLayer));
-console.log('Visual study data: ' + checks + ' checks passed; 10 guides, 271 wine joins, ' + Object.keys(data.componentGuides).length + ' component joins, 34 menu service routes.');
+console.log('Visual study data: ' + checks + ' checks passed; 14 guides, 271 wine joins, ' + Object.keys(data.componentGuides).length + ' component joins, 34 menu service routes.');

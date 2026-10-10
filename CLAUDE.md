@@ -15,17 +15,27 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v93`; its two teaching imports have query versions which
+Source worker is `codex-v94`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex37: codex34 is the colour/bottle-shape layer, codex35 the components layer,
-codex36 the illustrated study index and reviewed lesson/card connections).
+(codex38: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+codex36 the illustrated study index, codex37 the culinary companion).
 
 Layer 36 uses `data-visual-studies.js` for exact reviewed IDs and introduces no
 new persisted state. Card dialogs preserve the current run and grade, isolate
-keyboard shortcuts and restore focus. The 10 guides include four service
+keyboard shortcuts and restore focus. The 14 guides include four service
 studies; captions distinguish generic practice from Brennan's current SOP.
 The components overview defaults to wine-linked material; its full collection
 remains accessible. Grape aliases and regional-overview links are explicit.
+
+Layer 37 adds `data-culinary-studies.js`, `codex37.js` and
+`css/house-culinary-studies.css`: five guided lessons at `#/v/culinary`, two
+aroma-reference plates and two reused World Table sauce/component plates.
+Dish alternatives are unscored, distinguish printed menus from proposed
+pairings, and never promise live bottle availability. Exact wine, component,
+grape and primer IDs connect the lessons. Rehearsal text lives only in the
+current screen; no stored marks, schema or question IDs change. Card dialogs
+preserve the run and focus. Gates: `check-culinary-study-data.cjs`,
+`check-culinary-studies.cjs` and `check-culinary-routes.cjs` under `.scripts/`.
 
 `js/codex34.js` adds colour/rim reading at Sight in Study the grid, bottle shapes
 at Compendium > Winemaking and beside the house's full-list door, and the Pinot
@@ -218,7 +228,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v89`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v94`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -237,7 +247,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex35.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex38.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
