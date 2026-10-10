@@ -308,7 +308,7 @@ async function main() {
 
   section('the decks');
   const all = JSON.parse(G('JSON.stringify(v32DeckDef("components"))'));
-  check('every component with a kept card, kind component', all.kind === 'component' && all.cards.length === 2 && all.name === 'Every component');
+  check('every wine component with a kept card, kind component', all.kind === 'component' && all.cards.length === 2 && all.name === 'Wine components');
   const tech = JSON.parse(G('JSON.stringify(v32DeckDef("components:ingredient"))'));
   check('a deck per kind', tech.name === 'Ingredients' && tech.cards.length === 1 && tech.cards[0].front === 'What is Riesling?');
   const one = JSON.parse(G('JSON.stringify(v32DeckDef("item-components:' + BERRES + '"))'));
@@ -354,8 +354,11 @@ async function main() {
   await settle(E);
   const real = E.G('v28CardHtml(' + JSON.stringify(BERRES) + ')');
   const realCards = (shipped.house.components || []).filter((c) => c.card && c.card.value).length;
+  const wineIds = new Set(shipped.house.wines.map((w) => w.id));
+  const wineCards = (shipped.house.components || []).filter((c) => c.card && c.card.value && (c.itemIds || []).some((id) => wineIds.has(id))).length;
   check('the shipped Berres card draws its own components and comparison', real.indexOf('v35-madeof-h') > 0 && real.indexOf('v35-compare-h') > 0);
-  check('the shipped components deal as one deck, a card each', realCards > 0 && E.G('v32DeckDef("components").cards.length') === realCards, String(E.G('v32DeckDef("components").cards.length')) + ' of ' + realCards);
+  check('the shipped wine components are the default deck', wineCards > 0 && E.G('v32DeckDef("components").cards.length') === wineCards, String(E.G('v32DeckDef("components").cards.length')) + ' of ' + wineCards);
+  check('all house components remain an explicit deck', E.G('v32DeckDef("components-all").cards.length') === realCards, String(E.G('v32DeckDef("components-all").cards.length')) + ' of ' + realCards);
 
   section('the file and its wiring');
   const src = fs.readFileSync(path.join(JS, 'codex35.js'), 'utf8');
@@ -366,7 +369,10 @@ async function main() {
   const index = path.join(ROOT, 'index.html');
   const sw = path.join(ROOT, 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
-    check('index.html loads codex35 after codex33 and codex34 and before boot', /codex33\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex34\.js\?v=\d+"><\/script>\s*)?<script src="js\/codex35\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
+    const scripts = [...fs.readFileSync(index, 'utf8').matchAll(/<script src="js\/([^"?]+)(?:\?[^\"]*)?"><\/script>/g)].map((m) => m[1]);
+    const layers = ['codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'boot.js'];
+    const start = scripts.indexOf(layers[0]);
+    check('index.html loads teaching, components and visual studies in order before boot', start >= 0 && JSON.stringify(scripts.slice(start, start + layers.length)) === JSON.stringify(layers) && layers.every(file => scripts.filter(s => s === file).length === 1));
     check('sw.js lists codex35.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex35.js'") > 0);
   }
 

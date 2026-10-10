@@ -9,13 +9,23 @@ then extended with the Intro import and authored Advanced/Master banks.
 ## Illustrated reading guides (codex33, October 2026)
 
 `js/data-teaching-images.js`, `js/teaching-cache.js`, `js/codex33.js` and
-`css/house-teaching.css` add optional, closed teaching guides to reference views,
-never question/card runs. See `assets/teach/README.md` for the exact image budget,
+`css/house-teaching.css` add optional, closed teaching guides to reference views.
+Layer 36 also links guides from revealed cards, never question/card fronts.
+See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
-checks. Existing atlas-v2 geometry, joins and offline map keys remain unchanged.
-Source worker is `codex-v89`; its two teaching imports have query versions which
+checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
+installation-specific offline map keys.
+Source worker is `codex-v93`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex36: codex34 is the colour and bottle-shape layer, codex35 the components layer).
+(codex37: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+codex36 the illustrated study index and reviewed lesson/card connections).
+
+Layer 36 uses `data-visual-studies.js` for exact reviewed IDs and introduces no
+new persisted state. Card dialogs preserve the current run and grade, isolate
+keyboard shortcuts and restore focus. The 10 guides include four service
+studies; captions distinguish generic practice from Brennan's current SOP.
+The components overview defaults to wine-linked material; its full collection
+remains accessible. Grape aliases and regional-overview links are explicit.
 
 `js/codex34.js` adds colour/rim reading at Sight in Study the grid, bottle shapes
 at Compendium > Winemaking and beside the house's full-list door, and the Pinot
