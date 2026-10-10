@@ -22,11 +22,11 @@ vm.runInContext(oldCache.slice(0, oldCache.indexOf('function v23Open')), context
 vm.runInContext(read('js/atlas-cache.js'), context);
 const atlas = context.ATLAS_V2;
 const ids = Array.from(context.MAP_SHEETS, (sheet) => sheet.id);
-check('seventeen exact registered sheets, in established order', atlas.version === '2' &&
+check('seventeen exact registered sheets, in established order', atlas.version === '3' &&
   JSON.stringify(Object.keys(atlas.sheets)) === JSON.stringify(ids) && ids.length === 17);
 const originalNames = fs.readdirSync(path.join(root, 'maps')).filter((file) => /\.jpg$/.test(file)).sort();
 check('all seventeen original JPGs remain', JSON.stringify(originalNames) === JSON.stringify(ids.map((id) => id + '.jpg').sort()));
-const currentNames = fs.readdirSync(path.join(root, 'maps/atlas-v2')).filter((file) => /\.svg$/.test(file)).sort();
+const currentNames = fs.readdirSync(path.join(root, 'maps/atlas-v3')).filter((file) => /\.svg$/.test(file)).sort();
 check('all seventeen current SVGs exist without a hidden eighteenth', JSON.stringify(currentNames) === JSON.stringify(ids.map((id) => id + '.svg').sort()));
 const gitRoot = execFileSync('git', ['rev-parse', '--show-toplevel'], { cwd: root, encoding: 'utf8' }).trim();
 let regions = 0, preservedRows = 0, mapBytes = 0, references = 0;
@@ -39,7 +39,7 @@ const orphans = [];
     check(id + ': exact mapped row names and order', JSON.stringify(Array.from(sheet.regions, (row) => row.name)) ===
       JSON.stringify(rows.filter((row) => !row.orphan).map((row) => row.n)));
     regions += sheet.regions.length;
-    check(id + ': explicit local versioned path and dimensions', sheet.file === 'maps/atlas-v2/' + id + '.svg' && sheet.width === 1200 && sheet.height === 1500 && context.mapFile(id) === sheet.file);
+    check(id + ': explicit local versioned path and dimensions', sheet.file === 'maps/atlas-v3/' + id + '.svg' && sheet.width === 1200 && sheet.height === 1500 && context.mapFile(id) === sheet.file);
     check(id + ': readable introduction, scope and reading list', !!sheet.title && !!sheet.intro && !!sheet.scope && Array.isArray(sheet.reading) && sheet.reading.length > 0);
     check(id + ': cited primary reading list', Array.isArray(sheet.sources) && sheet.sources.length > 0 && sheet.sources.every((source) => {
       const url = new URL(source.url); references++;
@@ -58,7 +58,7 @@ const orphans = [];
     await context.atlasCacheValidate(new Response(svg, { headers: { 'content-type': 'image/svg+xml' } })); checks++;
     const vignette = Array.from(svg.matchAll(/\b(?:href|src)="data:image\/webp;base64,([A-Za-z0-9+/=]+)"/g));
     check(id + ': exactly one embedded owned house illustration', vignette.length === 1 &&
-      Buffer.from(vignette[0][1], 'base64').equals(fs.readFileSync(path.join(root, 'assets/codex-atlas-vignette-v2.webp'))));
+      Buffer.from(vignette[0][1], 'base64').equals(fs.readFileSync(path.join(root, 'assets/codex-atlas-frame-v3.webp'))));
     const originalPath = path.join(root, 'maps', id + '.jpg');
     const gitPath = path.relative(gitRoot, originalPath).replace(/\\/g, '/');
     const original = execFileSync('git', ['show', 'HEAD:' + gitPath], { cwd: gitRoot, maxBuffer: 2 * 1024 * 1024 });
@@ -85,7 +85,7 @@ const orphans = [];
   const bibliography = read('atlas-sources.html');
   check('bibliography has all17 source sections and no JavaScript', (bibliography.match(/data-atlas-source-sheet=/g) || []).length === 17 && !/<script\b/i.test(bibliography));
   if (other) {
-    for (const file of ['js/data-atlas-v2.js', 'js/atlas-cache.js', 'js/codex31.js', 'css/house-maps.css', 'assets/codex-atlas-room-v2.webp', 'assets/codex-atlas-vignette-v2.webp', ...ids.map((id) => atlas.sheets[id].file)]) {
+    for (const file of ['js/data-atlas-v2.js', 'js/atlas-cache.js', 'js/codex31.js', 'css/house-maps.css', 'assets/codex-atlas-room-v2.webp', 'assets/codex-atlas-frame-v3.webp', ...ids.map((id) => atlas.sheets[id].file)]) {
       check('paired file parity: ' + file, fs.readFileSync(path.join(root, file)).equals(fs.readFileSync(path.join(other, file))));
     }
     const otherBibliography = fs.readFileSync(path.join(other, 'atlas-sources.html'), 'utf8');

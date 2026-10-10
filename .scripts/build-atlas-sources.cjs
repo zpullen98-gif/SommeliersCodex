@@ -8,7 +8,7 @@ const input = fs.readFileSync(path.join(root, 'js/data-atlas-v2.js'), 'utf8');
 const match = /^\s*(?:\/\*[\s\S]*?\*\/\s*)?var\s+ATLAS_V2\s*=\s*([\s\S]+);\s*$/.exec(input);
 if (!match) throw new Error('Atlas metadata must be one JSON-compatible ATLAS_V2 declaration');
 const atlas = JSON.parse(match[1]);
-if (atlas.version !== '2' || !atlas.sheets || Object.keys(atlas.sheets).length !== 17) throw new Error('Expected all seventeen reviewed atlas sheets');
+if (atlas.version !== '3' || !atlas.sheets || Object.keys(atlas.sheets).length !== 17) throw new Error('Expected all seventeen reviewed atlas sheets');
 const escape = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const style = (name) => {
@@ -58,10 +58,9 @@ const html = `<!doctype html>
 <body>
 <main class="wrap atlas-bibliography">
   <header>
-    <p class="house-brand">OUTSIDE OF TIME HOSPITALITY</p>
     <h1>Sources of the Wine Atlas</h1>
     <p>Geography and regional reading for all seventeen sheets. Place markers identify study locations; they do not draw legal appellation boundaries.</p>
-    <p>Reviewed 27 September 2026. External references need a connection; this bibliography stays available with the Codex.</p>
+    <p>Reviewed 10 October 2026. External references need a connection; this bibliography stays available with the Codex.</p>
     <a class="return" href="index.html">Back to the Codex</a>
     <nav aria-label="Atlas source sheets">${sheets.map(([id, sheet]) => '<a href="#' + id + '">' + escape(sheet.title) + '</a>').join('')}</nav>
   </header>

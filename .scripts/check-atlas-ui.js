@@ -94,6 +94,10 @@ const original = JSON.stringify(ctx.MAP_SHEETS.map((s) => ctx.mapRegions(s.id)))
 ctx.render();
 check('all seventeen maps are discoverable without cached artwork', document.querySelectorAll('.v31-map-card').length === 17);
 check('source bibliography is linked from gallery', document.querySelector('[href="atlas-sources.html"]'));
+ctx.V23.olderStored = true; ctx.v31RefreshStorage();
+check('a prior atlas edition remains explicitly removable before current maps are saved', !document.querySelector('#atlas-remove').disabled && /earlier edition/.test(document.querySelector('#atlas-storage-status').textContent));
+ctx.V23.olderStored = false; ctx.v31RefreshStorage();
+check('no maps saved disables the removal control', document.querySelector('#atlas-remove').disabled);
 const france = document.querySelector('[data-map="france"]');
 const gallery = document.querySelector('.v31-atlas');
 ctx.v31Filter(gallery, 'Rioja');
@@ -220,7 +224,7 @@ async function checkHouseIntegration() {
   G('S.view="cellar"; S._v25area="mine"; v28Open(__atlasWine.id, false);');
   const wineId = G('__atlasWine.id'), record = G('JSON.stringify(ST)'), historyBefore = device.hist.pushed.length;
   G('v28Act("map", { getAttribute: function(name) { return name === "data-k" ? "germany" : null; } });');
-  check('House map door renders the atlas with the versioned SVG', G('S.view') === 'worldmap' && G('S.wmap') === 'germany' && G('mapFile(S.wmap)') === 'maps/atlas-v2/germany.svg');
+  check('House map door renders the atlas with the versioned SVG', G('S.view') === 'worldmap' && G('S.wmap') === 'germany' && G('mapFile(S.wmap)') === 'maps/atlas-v3/germany.svg');
   check('House map door retains one return entry and the originating card', device.hist.pushed.length === historyBefore + 1 && G('S._v28.door') === wineId);
   G('v28OnPop({state:{v28:__atlasWine.id}});');
   check('Back from the atlas restores the same wine card and Mine area', G('S.view') === 'cellar' && G('S._v28.open') === wineId && G('S._v25area') === 'mine');
