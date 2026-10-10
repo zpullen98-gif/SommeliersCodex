@@ -38,7 +38,9 @@
  *   7. the house drills, over the engine's drill fixture: the cellar drill's
  *      house kinds (first pick, serve, goes with, the section) and Pair the
  *      menu (first pick, without alcohol) are every one dealt by the
- *      engine's dealQuestion, every option a house item, four distinct, and
+ *      engine (dealRound, or dealQuestion on an engine without it), a round
+ *      of fifteen dealing only the fifteen it shows, every option a house
+ *      item, four distinct, and
  *      no stem carrying its answer; answers land in ST.q under h- keys that
  *      keyOwned keeps out of every level, with the pace, the history and
  *      the perfect round put back; Our list by heart is a flip deck that
@@ -750,14 +752,16 @@ async function main() {
   }
 
   /* the engine's dealer, watched: every question this file hands the quiz was dealt by it */
-  G('var DEALT = []; var _realDeal = OOT.houseLib.dealQuestion; OOT.houseLib.dealQuestion = function (h, k, r) { var q = _realDeal(h, k, r); if (q) DEALT.push(q); return q; };');
+  G('var DEALT = []; var _realDeal = OOT.houseLib.dealQuestion; OOT.houseLib.dealQuestion = function (h, k, r) { var q = _realDeal(h, k, r); if (q) DEALT.push(q); return q; };'
+    + ' var _realRound = OOT.houseLib.dealRound; if (_realRound) OOT.houseLib.dealRound = function (h, k, r, n) { var qs = _realRound(h, k, r, n); qs.forEach(function (q) { DEALT.push(q); }); return qs; };');
+  check('the engine deals a whole round in one pass (dealRound) and sizes one (drillableCount)', G('typeof _realRound') === 'function' && G('typeof OOT.houseLib.drillableCount') === 'function');
   const cellarQs = G('v27CellarHouseQs()');
   const dealtCellar = G('DEALT.splice(0)');
   check('the cellar drill\'s house questions deal all four kinds: first pick, serve, goes with, the section',
     ['firstPickFor', 'serve', 'wineGoesWith', 'section'].every((k) => cellarQs.some((q) => kindOf(q) === k)), [...new Set(cellarQs.map(kindOf))].join(','));
   check('each is recorded under h-<itemId>-<kind> and filed under Our List', cellarQs.every((q) => /^h-[a-z]-[a-z0-9]+-(firstPickFor|serve|wineGoesWith|section)$/.test(q.id) && q.cat === 'Our List'),
     cellarQs.map((q) => q.id).join(','));
-  check('every one of them was dealt by OOT.houseLib.dealQuestion, never a second dealer',
+  check('every one of them was dealt by the engine (dealRound or dealQuestion), never a second dealer',
     cellarQs.every((q) => dealtCellar.some((d) => fold(d.stem) === fold(stemOf(q)) && JSON.stringify(d.options) === JSON.stringify(q.opts.map(unesc)) && d.options[q.a] === d.answer)));
   check('no item is asked twice for one kind', new Set(cellarQs.map((q) => q.id)).size === cellarQs.length);
   holdsTheRules(cellarQs, 'the cellar drill');
@@ -768,6 +772,28 @@ async function main() {
   check('the section is asked of each wine by name and answered with its own section', sectionQs.length === 5
     && sectionQs.every((q) => { const w = cur().wines.find((x) => x.name === stemOf(q)); return !!w && unesc(q.opts[q.a]) === w.section; }));
   check('the house record is untouched by the views the dealer is asked over', cur().wines.every((w) => !Array.isArray(w.goesWith) && (!w.goesWith || w.goesWith.value !== (w.serve && w.serve.value))) && Array.isArray(cur().wines[0].grapes));
+
+  /* a round of fifteen deals only what it shows, every question still the engine's, the four kinds still asked */
+  G('DEALT.splice(0)');
+  const round15 = G('v27CellarRound(15, [])');
+  const dealt15 = G('DEALT.splice(0)');
+  check('a round of fifteen deals fifteen questions and only those, each dealt by the engine', round15.length === 15 && dealt15.length === 15
+    && round15.every((q) => dealt15.some((d) => fold(d.stem) === fold(stemOf(q)) && JSON.stringify(d.options) === JSON.stringify(q.opts.map(unesc)) && d.options[q.a] === d.answer)),
+    round15.length + ' shown, ' + dealt15.length + ' dealt');
+  check('and holds no item twice for one kind', new Set(round15.map((q) => q.id)).size === round15.length);
+  holdsTheRules(round15, 'a round of fifteen');
+  const roundAll = G('v27CellarRound(0, [])');
+  G('DEALT.splice(0)');
+  check('a round of the whole list holds every house question once', roundAll.length === cellarQs.length && new Set(roundAll.map((q) => q.id)).size === roundAll.length);
+  /* an engine without dealRound: the questions one at a time, as before */
+  G('OOT.houseLib.dealRound = undefined; var _realCount = OOT.houseLib.drillableCount; OOT.houseLib.drillableCount = undefined;');
+  const oldQs = G('v27CellarHouseQs()');
+  const dealtOld = G('DEALT.splice(0)');
+  const oldRound = G('v27CellarRound(15, [])');
+  G('DEALT.splice(0); OOT.houseLib.dealRound = _realRound ? function (h, k, r, n) { var qs = _realRound(h, k, r, n); qs.forEach(function (q) { DEALT.push(q); }); return qs; } : _realRound; OOT.houseLib.drillableCount = _realCount;');
+  check('an engine without dealRound still deals all four kinds, one question at a time, every one its own', ['firstPickFor', 'serve', 'wineGoesWith', 'section'].every((k) => oldQs.some((q) => kindOf(q) === k))
+    && oldQs.length === cellarQs.length && oldQs.every((q) => dealtOld.some((d) => fold(d.stem) === fold(stemOf(q)) && JSON.stringify(d.options) === JSON.stringify(q.opts.map(unesc)))));
+  check('and its round of fifteen is still fifteen', oldRound.length === 15);
 
   /* the wrapped startCellarDrill */
   G('ST.cellarDrillN = "all"; S.mode = ""; S.section = ""; S.view = "cellar";');
@@ -794,7 +820,7 @@ async function main() {
   }));
   check('a dish whose pairing nobody kept is never asked', !pairQs.some((q) => q.id.indexOf('d-unkept01') >= 0 || q.id.indexOf('d-beetrt01') >= 0));
   check('and every one was dealt by the engine', pairQs.every((q) => dealtPair.some((d) => fold(d.stem) === fold(stemOf(q)) && JSON.stringify(d.options) === JSON.stringify(q.opts.map(unesc)))));
-  G('OOT.houseLib.dealQuestion = _realDeal;');
+  G('OOT.houseLib.dealQuestion = _realDeal; if (_realRound) OOT.houseLib.dealRound = _realRound;');
   check('startHousePairDrill is a top-level function and starts a round through the quiz engine',
     G('typeof startHousePairDrill') === 'function' && G('startHousePairDrill()') === true && G('S.view') === 'quiz' && G('S.mode') === 'drill' && G('S.section') === 'Pair the menu'
     && G('S.pool.every(function (q) { return /^h-/.test(q.id); })'));
