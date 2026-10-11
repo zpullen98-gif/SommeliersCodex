@@ -1,0 +1,70 @@
+{
+  "$comment": "The contract for the regions in depth (codex39). One fragment per atlas sheet at .scripts/regions/fragments/<sheet>.json, plus mapless.json. build-regions.cjs merges them into js/data-regions.js; check-fragment.cjs proves one fragment, check-regions.js the built file. Every string is British, dash free (no U+2014, no U+2013, no entity, no spaced double hyphen), carries nothing at or above U+2190, and never the word practice or practise (use rehearse, drill, study). An empty field is a true answer: write nothing you are not sure of.",
+  "fragment": {
+    "sheet": "the atlas sheet id (france, italy, spain, portugal, germany, austria, california, oregon, washington, new-york, argentina, chile, australia, new-zealand, south-africa, hungary, greece); mapless.json has no sheet and holds countries only",
+    "country": "a country record (below)",
+    "regions": "one region record per ATLAS_V2.sheets[sheet].regions entry, in map order",
+    "aliases": "an object: folded alias (lower case, accents stripped, punctuation out) to a slug or a country key, for every sub-region, appellation, village or district a house wine's region string or a question might name (medoc, pauillac, cote de nuits, chablis, langhe, rioja alta, ...). A name that is itself an article's name needs no alias.",
+    "terroirRows": "an object: the exact TERROIR row name (its r field) to a slug, for every TERROIR row of this country",
+    "cats": "an object: a Village PRIMERS cat or a Regionale INTRO_PRIMERS id that names a place in this country, to the list of slugs it covers"
+  },
+  "region": {
+    "slug": "unique across the whole file, /^[a-z0-9-]+$/, the region's folded name (burgundy, cote-du-rhone is wrong, use rhone), prefixed by the country only when two countries share a name",
+    "name": "exactly ATLAS_V2's region name for this index",
+    "sheet": "the sheet id",
+    "index": "the region's position in ATLAS_V2.sheets[sheet].regions, from 0",
+    "asked": "the levels whose exam asks about this region: a non-empty subset of [\"intro\",\"certified\",\"advanced\",\"master\"], in that order",
+    "summary": "60 to 120 words: what a server must hold in the head, in four to six sentences",
+    "terroir": {
+      "climate": "15 to 120 words",
+      "soils": "15 to 120 words",
+      "topography": "15 to 120 words",
+      "water": "0 to 120 words: rivers, lakes, seas and their effect, or empty"
+    },
+    "grapes": [{ "name": "a grape name as GRAPES, GRAPES_PLUS or INTRO_GRAPES spell it, else plain: 1", "plain": "1 only when the name is in no grape list", "role": "lead | blending | minor | rising", "styles": "one or two sentences on what it makes here" }],
+    "wines": [{ "style": "the wine as the list names it (Chablis, Barolo, Brut NV)", "colour": "white | red | rose | sparkling | sweet | fortified | orange", "note": "one to three sentences: what it tastes like, how it is served, what it goes with" }],
+    "made": {
+      "viticulture": "60 to 250 words: training, density, harvest, the hazards, the choices that mark the region",
+      "winemaking": "60 to 250 words: the techniques that mark the region (method, vessel, lees, oak, blending, ageing rules, sweetening, fortification)"
+    },
+    "law": {
+      "classification": "40 to 200 words: the system in prose",
+      "tiers": [["tier name", "what it means, with the rule that matters on an exam"]],
+      "labels": [["label term", "its meaning"]]
+    },
+    "places": [{ "name": "a sub-region, village, district or cru", "note": "one to four sentences", "depth": "optional: advanced | master when the exam asks it only from that level", "places": "optional nested places of the same shape" }],
+    "producers": [{ "id": "a WINE_PRODUCERS id when the Codex holds the house (p-...), else omitted", "name": "the house's name", "why": "one sentence: why a sommelier knows it" }],
+    "exam": ["3 to 8 lines: what the exam asks about this region, as a study prescription"],
+    "traps": ["3 to 8 lines: the confusions and the false friends"],
+    "say": [["a word a server says", "its respelling in the house style: mar-SHAHN duh VAN, burr BLAHN, caps on the stressed syllable"]],
+    "cards": [{ "f": "a flashcard front, one ask", "b": "its back, at most 40 words" }],
+    "questions": "6 to 8, at least 3 multiple choice. MC: {cat, q, opts: [4 strings], a: index, exp}. SA: {cat, q, sa: 1, accept: [2 to 8 strings the grader accepts, the canonical answer first, accents both ways], ans: 'the canonical answer', exp}. cat is the region's name. No id: the builder mints r- ids. One fact per stem; no NOT, EXCEPT or all of the above; distractors of one kind and each a real thing; exp says why in one or two sentences",
+    "sources": [{ "title": "the reference", "url": "optional", "asOf": "YYYY-MM-DD or YYYY" }]
+  },
+  "country": {
+    "key": "the sheet id, or for a mapless country its folded name (canada, england, switzerland, eastern-europe, lebanon, uruguay, mexico)",
+    "name": "the country's name as a reader says it",
+    "sheet": "the sheet id, or omitted for a mapless country",
+    "mapless": "1 for a country with no map sheet, else omitted",
+    "summary": "80 to 160 words",
+    "overview": "200 to 500 words in paragraphs separated by a blank line: the country's wine story, its geography, the shape of its law, what the exam leans on",
+    "ladder": [["tier", "note"]],
+    "labels": [["label term", "its meaning"]],
+    "regionsOrder": "for a sheet: every region slug of the sheet in map order; for a mapless country: empty",
+    "places": "mapless countries only: the regions, as region-shaped place entries [{name, note, depth?, places?}]",
+    "grapes": "as a region's grapes",
+    "exam": ["3 to 8 lines"],
+    "traps": ["3 to 8 lines"],
+    "say": [["word", "respelling"]],
+    "cards": "6 to 10, as a region's",
+    "questions": "6 to 8, as a region's; cat is the country's name",
+    "sources": "as a region's"
+  },
+  "floors": {
+    "region.prose.total": "900 to 1,600 words over summary, terroir, made, law.classification, wines notes and places notes",
+    "country.prose.total": "400 to 1,200 words over summary, overview and places notes",
+    "card.back": "at most 40 words",
+    "question.exp": "10 to 60 words",
+    "file": "js/data-regions.js at most 2,000,000 bytes"
+  }
+}

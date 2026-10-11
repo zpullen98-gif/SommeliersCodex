@@ -104,7 +104,12 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
        statRecord as a word's do, and it wraps codex28's card, act and study
        view, codex29's rows, codex32's decks and router at load, drawing
        nothing with no OOT and no pathname. */
-    'codex38.js']);
+    'codex38.js',
+    /* codex39 owns no store either: its drill and deck grades go through
+       statRecord as a word's do. data-regions.js rides in the chain before
+       it as the shell loads it, and the layer must load with no OOT, no
+       pathname and no SERVICE_REF. */
+    'data-regions.js', 'codex39.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

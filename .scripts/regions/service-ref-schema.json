@@ -1,0 +1,33 @@
+{
+  "$comment": "js/data-service-ref.js declares var SERVICE_REF, drawn by codex39's serviceref view as a chip strip over tables. Every string British, dash free, nothing at or above U+2190, never practice or practise. Facts only where sure; a row's cell may be empty.",
+  "SERVICE_REF": {
+    "version": 1,
+    "tables": [
+      {
+        "key": "faults | glassware | bottles | temperatures | decanting | sparkling | aperitifs | digestifs | spirits | cocktails",
+        "title": "Wine faults",
+        "line": "one sentence under the title",
+        "columns": ["four column headings, short"],
+        "rows": [["one string per column; the first cell is the row's name"]],
+        "notes": ["0 to 6 lines under the table"],
+        "say": [["word", "respelling, stressed syllable in capitals"]],
+        "sources": [{ "title": "reference", "asOf": "YYYY-MM-DD or YYYY" }]
+      }
+    ],
+    "cards": [{ "f": "a flashcard front", "b": "its back, at most 40 words" }],
+    "questions": [{ "id": "s- plus eight base36, minted once from the stem by mintServiceId in build-regions.cjs and never re-minted", "cat": "Service references", "q": "stem", "opts": ["four"], "a": 0, "exp": "10 to 60 words" }]
+  },
+  "tables_required": {
+    "faults": ["Fault", "Smells or looks of", "Cause", "At the table"],
+    "glassware": ["Glass", "Shape and size", "Pour", "Used for"],
+    "bottles": ["Name", "Volume", "Standard bottles", "Where the name is used"],
+    "temperatures": ["Wine", "Serve at", "Why", "How to get there"],
+    "decanting": ["Wine", "Decant", "When", "Why and how"],
+    "sparkling": ["Step", "What to do", "Why", "The examiner watches for"],
+    "aperitifs": ["Drink", "What it is", "Serve", "Say it"],
+    "digestifs": ["Drink", "What it is", "Serve", "Say it"],
+    "spirits": ["Spirit", "Made from", "Where and how", "Styles to know"],
+    "cocktails": ["Cocktail", "Spec", "Method and glass", "Garnish"]
+  },
+  "floors": { "rows per table": "8 to 40", "cards": "20 to 40", "questions": "12 to 24, all multiple choice" }
+}

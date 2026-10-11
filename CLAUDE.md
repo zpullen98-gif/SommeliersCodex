@@ -15,10 +15,11 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v95`; its two teaching imports have query versions which
+Source worker is `codex-v96`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex39: codex34 is the colour/bottle-shape layer, codex35 the components layer,
-codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer).
+(codex40: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
+codex39 the regions in depth).
 
 Layer 36 uses `data-visual-studies.js` for exact reviewed IDs and introduces no
 new persisted state. Card dialogs preserve the current run and grade, isolate
@@ -219,6 +220,74 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   `h-{item id}-{key}`. Nothing is drawn with no OOT or no wine producer. Gate:
   `node .scripts/check-producers-house.js [jsDir]`, on a fixture built from the shipped pack (its wine producers
   taken off, Domaine Leflaive, Domaine Fichet and Maison Louis Jadot under two names put on, two more for the quiz).
+- `js/codex39.js`: **the regions in depth** (the regions edition, October 2026). `js/data-regions.js` is BUILT by
+  `node .scripts/regions/build-regions.cjs` from the writers' fragments under `.scripts/regions/fragments/` (one per atlas
+  sheet, or parts of one carrying `part: {indices, country}`, and the map-less countries; `schema.json` and `BRIEF.md`
+  beside them are the contract, `check-fragment.cjs` proves one fragment, `--check` proves the files are the build of the
+  fragments and `--partial` builds what exists) and is never edited by hand. **The build is split in two** (11 October
+  2026: as one file it was 2.9 MB in the shell precache). `js/data-regions.js` (version 2) is the INDEX, in ASSETS: the
+  join, the sheets, and for every record its names, place, levels, summary, grapes cut to name and role, cards and
+  questions, so every deck and drill works from install, plus `REGIONS.parts`, the stamp (FNV-1a 64 of the bytes) of each
+  READING file: `js/regions/<sheet>.json`, one per atlas sheet with its articles and its country, and
+  `js/regions/mapless.json`, holding every other field. codex39 fetches a file the first time a page of that sheet opens
+  (`v39LoadPart`, prefetched when the atlas sheet is drawn) and merges it into the index's records (`v39TakePart`); a page
+  waiting on its file draws its head, summary and doors at once and the rest in place when the file lands, says in words
+  when it is not on the device yet (Try again), and the regions index offers Keep every region on this device. The
+  worker never precaches the reading: it serves `js/regions/` from its own cache, `codexregions-v1-` plus the installation
+  folder (no `codex-` prefix, so a bump never reaps it), by exact address, dropping a file's older copy when a new stamp
+  is stored and answering with the last copy when offline. The shell precache is about 8.3 MB over 99 ASSETS (10.2 MB
+  with the single file). A writer who rewords a question's stem pins its old id in the fragment (`"id": "r-..."`), since
+  the builder mints from the stem only when no id is given. `REGIONS.regions` holds one article per
+  `ATLAS_V2` region at its index, named as the atlas names it: summary, terroir, grapes, wines, how it is made, the law,
+  its places nested as the geography nests (a place the exam asks only from Premier Cru or Grand Cru carries `depth`),
+  producers, exam lines, traps, respellings, cards and questions; `REGIONS.countries` one record per sheet key and
+  map-less key; `REGIONS.join` the aliases, the terroir rows, the chapters (`cats`), the grapes and the country-only
+  keys. Question ids are `r-` plus eight base36 of FNV-1a 64 over the slug (or key) and the stem, minted by the builder
+  once and never re-minted. The layer opens an article from the atlas sheet, the Terroir row, the level's chapter and a
+  house wine's card, each matched through the one resolver, `v39SlugFor`; deals the region and country cards as decks
+  on codex32's card screen; drills the `r-` questions; runs The Village tasting, which is codex20's `gridStart(2)`: two
+  GRAPES profiles of the level dealt to the written grid (never the regions' wines) under a 25 minute clock that reads a
+  word when it is up and never stops the run; says on the Quick quiz row what it deals (five from our list, three from
+  the level, two from the regions; eight from the level and two from the regions with no house), wrapping codex32's
+  `v32QuickLine`; keeps an article's or a country page's open sections across a door, noted against its address when
+  codex32 saves the scroll and opened again before Back restores it (`V39_OPEN`, codex38's pattern); wraps `v27Redraw`
+  (as codex38 does for its view) so the regions, a country page and an article are drawn again in place when the house
+  lands, the open sections, the scroll and the focus kept, so a first visit on an article's address gains On our list;
+  draws a wine's colour `rose` as rosé (`V39_WORDS.colour_rose`; the data keeps `rose`); and draws the
+  service references (`js/data-service-ref.js`, `SERVICE_REF`: faults, glassware, bottles, temperatures, decanting,
+  sparkling service, aperitifs, digestifs, spirits and cocktails, each a table with four columns, with their own cards
+  and questions, per `.scripts/regions/service-ref-schema.json`). The references are dealt too: the deck `service`
+  (Service references, its own group on the Flashcards root beside The regions, graded in the per-device slot
+  `oot-codex-servicecards-v1`, never exported, as the region cards are in `oot-codex-regioncards-v1`), the drill Service
+  references on Quizzes (`V25_GO.servicedrill`, every question through the core engine as `v39StartDrill` deals), and
+  Flash these and Drill these on the references page. Every service question carries an `s-` id (eight base36 of
+  FNV-1a 64 over `["service", stem]`, `mintServiceId` in build-regions.cjs), written into the data once and never
+  re-minted; one without is never dealt. An `s-` key, like an `r-` key, is never level progress (`keyOwned`), never
+  scheduled (`srsRecord`) and never an orphan to `qidAudit`. The builder closes each article's `asked` upwards (a
+  region asked at Village is asked at Premier Cru and Grand Cru too), so the Quick quiz's region picks at a level hold
+  every region a lower level asks. `v39SlugFor` is the mirror of
+  `.scripts/regions/regions-join.cjs` step for step: fold, split on commas; find the string's country from the parts
+  right to left (a country key, name or alias to one, or usa, us or united states; the four US sheets are one country);
+  then MOST SPECIFIC FIRST, the parts left to right, an exact region name, alias or terroir row to an article of that
+  country (another country's refused), then containment, then the country. So Elgin, Cape South Coast, South Africa is
+  Elgin and Rioja Alta, La Rioja, Spain is Rioja. The index keeps a list of targets per folded key, and `join.aliases`
+  holds one target or, for a key that names a place in each of two or more countries, a list (san rafael, central
+  valley; la rioja is Spain's Rioja by alias and the Argentine La Rioja by name); the builder refuses two targets of one key in one country, and an alias whose key is another
+  article's folded name in its own country. The two copies are proved equal by resolving every house string through
+  both. The builder also deals the multiple choice answers round robin within each article and country
+  (`bakeOptionOrder`, deterministic, ids untouched), since the engine never shuffles options. Gate: `node .scripts/check-regions.js [jsDir]
+  [--pack <path>]`, which holds the index under 1,100,000 bytes and each reading file under 400,000, proves every file's
+  stamp, part and voice, no stray file, every record's reading present and no field told twice, merges the two and holds
+  the whole to check-fragment's rules (per cent and towards in prose, an accept list taking either), proves every join
+  entry, every id (every service question an `s-` id, the one to pin named when it is missing), `asked` closed upwards,
+  the even deal of the keyed positions within each article and country, codex39's merge of every file, the layer's own
+  dealing in a sandbox (the service deck in its slot, the service drill of every `s-` question, neither scheduled nor
+  level progress, both doors on the references page, the house landing drawing the region views again, rose as rosé),
+  the shell, the worker's reading rule and the seven gate lists, and counts the house's wines through the resolver ("house wines: n of N resolve,
+  a to an article, c to a country"), failing below 100 per cent. It runs on the wing's `codex/js` too and finds the
+  site's pack beside it by default; the site's `tools/check-wings.mjs` runs it so. `check-home.js` loads
+  `data-service-ref.js` in the chain and, when codex39 is there, holds the Quick quiz line to a real deal at every level
+  and deals the service deck and drill through the real codex32 and core.
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -273,7 +342,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v95`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v96`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -292,7 +361,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex39.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex40.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that

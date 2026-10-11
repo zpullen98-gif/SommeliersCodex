@@ -65,7 +65,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
   'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js',
-  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'boot.js'];
+  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'codex39.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -370,7 +370,7 @@ async function main() {
   const sw = path.join(ROOT, 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
     const scripts = [...fs.readFileSync(index, 'utf8').matchAll(/<script src="js\/([^"?]+)(?:\?[^\"]*)?"><\/script>/g)].map((m) => m[1]);
-    const layers = ['codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'boot.js'];
+    const layers = ['codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'boot.js'];
     const start = scripts.indexOf(layers[0]);
     check('index.html loads teaching, components and visual studies in order before boot', start >= 0 && JSON.stringify(scripts.slice(start, start + layers.length)) === JSON.stringify(layers) && layers.every(file => scripts.filter(s => s === file).length === 1));
     check('sw.js lists codex35.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex35.js'") > 0);

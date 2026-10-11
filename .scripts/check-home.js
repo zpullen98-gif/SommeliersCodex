@@ -49,7 +49,7 @@ const JS = process.argv.slice(2).find((a) => a.charAt(0) !== '-')
 /* The chain in index.html's order. The two optional files are the ones the
    two trees differ on: codex13 is the standalone's, data-firstpath the
    wing's. Everything else is required. */
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -58,7 +58,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'boot.js'];
 
 /* The plan's words, verbatim, as the source of truth the layer is held to. */
 const NAMES = ['Régionale', 'Village', 'Premier Cru', 'Grand Cru'];
@@ -465,6 +465,20 @@ KEYS.forEach((key, i) => {
   rendered.push(qz);
   check('[' + NAMES[i] + '] the last row of Quizzes is "The ' + NAMES[i] + ' test"',
     qz.lastIndexOf('The ' + NAMES[i] + ' test') > qz.lastIndexOf('v32-qz-hands'));
+  /* the Quick quiz row says what the quiz deals: with codex39, two of the ten places go to the regions, so the line
+     is held to a real deal (h- from the list, r- from the regions, the rest from the level), in words, no digit */
+  if (G('typeof v39QuickCount') === 'function') {
+    const quick = G('v32QuickLine()');
+    rendered.push(quick);
+    const ids = G('v32QuickPool().map(function (q) { return q && q.id ? String(q.id) : ""; })');
+    const nh = ids.filter((x) => x.indexOf('h-') === 0).length;
+    const nr = ids.filter((x) => x.indexOf('r-') === 0).length;
+    const nl = ids.length - nh - nr;
+    const W = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+    const want = 'Ten questions: ' + (nh ? W[nh] + ' from our list, ' + W[nl] + ' from ' + NAMES[i] + ' and ' : W[nl] + ' from ' + NAMES[i] + ' and ') + W[nr] + ' from the regions.';
+    check('[' + NAMES[i] + '] the Quick quiz line says what the quiz deals (' + nh + ' from the list, ' + nl + ' from the level, ' + nr + ' from the regions)',
+      ids.length === 10 && quick === want && !/\d/.test(quick), quick + ' (dealt: ' + nh + '/' + nl + '/' + nr + ')');
+  }
 });
 
 /* the other pages, and the nav */
@@ -505,6 +519,29 @@ G('applyLevel("certified", true);');
     && btns.filter((b) => b.attrs['aria-current'] === 'page').map(word0).join('|') === word,
     btns.map((b) => text(b) + (b.attrs['aria-current'] ? '*' : '')).join(' '));
 });
+/* the service references, dealt through the real chain when codex39 and its data are loaded: a deck on the
+   Flashcards root on codex32's card screen, and a drill on Quizzes through the core engine, kept as an s- answer
+   and never scheduled nor counted towards the level */
+if (G('typeof v39StartServiceDrill') === 'function' && G('typeof SERVICE_REF') === 'object') {
+  const nCards = G('SERVICE_REF.cards.length');
+  const nQs = G('SERVICE_REF.questions.length');
+  const fc = G('v32FlashcardsHtml()');
+  rendered.push(fc);
+  check('Flashcards carries the Service references deck, every service card dealt on the card screen (' + nCards + ')',
+    fc.indexOf('data-deck="service"') >= 0 && G('v32StartRun("service")') === true && G('S.view') === 'housedeck' && G('S._v32run.cards.length') === nCards && G('S._v32run.kind') === 'service');
+  const face = G('v32CardHtml()');
+  rendered.push(face);
+  const qzs = G('v32QuizzesHtml()');
+  rendered.push(qzs);
+  G('V25_GO.servicedrill()');
+  const sid = G('S.pool[0] && S.pool[0].id');
+  const level0 = G('lvlAgg("certified").n');
+  G('pickMC(S.pool[0].a)');
+  check('Quizzes carries the Service references drill, every service question dealt through the engine (' + nQs + '), kept as an s- answer, never scheduled, never level progress',
+    qzs.indexOf('data-go="servicedrill"') >= 0 && G('S.mode') === 'drill' && G('S.pool.length') === nQs && /^s-[0-9a-z]{8}$/.test(sid || '')
+    && G('!!(ST.q[' + JSON.stringify(sid) + '] && ST.q[' + JSON.stringify(sid) + '].c === 1)') && G('!(ST.srs && ST.srs[' + JSON.stringify(sid) + '])') && G('lvlAgg("certified").n') === level0, String(sid));
+  G('home();');
+}
 rendered.push(G('V25_NONAFFIL'));
 rendered.push(G('Object.keys(V25_TRAIN).map(function(k){return V25_TRAIN[k].label;}).join(" | ")'));
 check('the colophon carries the non-affiliation line', /Not affiliated with, endorsed by, or connected to the Court of Master Sommeliers\./.test(G('V25_NONAFFIL')));
