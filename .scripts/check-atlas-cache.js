@@ -44,7 +44,7 @@ function page(url, store = storage(), network = async () => svg()) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/data-maps.js'), 'utf8'), context);
   const old = fs.readFileSync(path.join(ROOT, 'js/codex23.js'), 'utf8');
   vm.runInContext(old.slice(0, old.indexOf('function v23Open')), context);
-  context.ATLAS_V2 = { version: '2', sheets: Object.fromEntries(context.MAP_SHEETS.map((s) => [s.id, { file: 'maps/atlas-v2/' + s.id + '.svg' }])) };
+  context.ATLAS_V2 = { version: '3', sheets: Object.fromEntries(context.MAP_SHEETS.map((s) => [s.id, { file: 'maps/atlas-v3/' + s.id + '.svg' }])) };
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/atlas-cache.js'), 'utf8'), context);
   return { c: context, requests, events, store };
 }
@@ -75,21 +75,33 @@ async function responseFrom(w, url) {
   check('cold offline probe retains the full inventory without HEAD/GET requests', standalone.requests.length === 0 && standalone.c.V23.have.length === 17);
   check('installation cache names differ on the same origin', standalone.c.ATLAS_CACHE_NAME !== wing.c.ATLAS_CACHE_NAME);
   check('map caches survive both shell reap prefixes', !standalone.c.ATLAS_CACHE_NAME.startsWith('codex-') && !standalone.c.ATLAS_CACHE_NAME.startsWith('oot-codex-'));
+  check('new edition has a different installation cache from atlas v2', standalone.c.ATLAS_CACHE_NAME !== standalone.c.ATLAS_PREVIOUS_CACHE && standalone.c.ATLAS_CACHE_NAME.startsWith('codexmaps-v3-'));
   await keep(shared, ['codexmaps-v1', 'https://example.test/SommeliersCodex/maps/france.jpg'], new Response('old source', { headers: { 'content-type': 'image/jpeg' } }));
   await keep(shared, ['codexmaps-v1', 'https://example.test/codex/maps/france.jpg'], new Response('old wing', { headers: { 'content-type': 'image/jpeg' } }));
-  check('old JPG is not mistaken for the new SVG', Object.keys(await standalone.c.v23ReadStored()).length === 0);
+  const oldSourceUrl = 'https://example.test/SommeliersCodex/maps/atlas-v2/france.svg';
+  const oldWingUrl = 'https://example.test/codex/maps/atlas-v2/france.svg';
+  await keep(shared, [standalone.c.ATLAS_PREVIOUS_CACHE, oldSourceUrl]);
+  await keep(shared, [standalone.c.ATLAS_PREVIOUS_CACHE, oldWingUrl]);
+  await keep(shared, [wing.c.ATLAS_PREVIOUS_CACHE, oldWingUrl]);
+  await standalone.c.v23Probe();
+  check('old JPG and v2 SVG never count as current edition saves', Object.keys(standalone.c.V23.stored).length === 0);
+  check('old edition is recognised for explicit removal without new saves', standalone.c.V23.olderStored);
   const button = { disabled: false }, messages = [];
   await standalone.c.v23StoreAll(button, (s) => messages.push(s));
   check('all current maps save and the operation settles', Object.keys(standalone.c.V23.stored).length === 17 && !button.disabled && !standalone.c.V23.busy);
   check('manual save fetches each map once', standalone.requests.length === 17);
-  check('requests refuse redirects and other origins', standalone.requests.every((r) => r.options.redirect === 'error' && r.options.mode === 'same-origin' && r.request.startsWith('https://example.test/SommeliersCodex/maps/atlas-v2/')));
+  check('requests refuse redirects and other origins', standalone.requests.every((r) => r.options.redirect === 'error' && r.options.mode === 'same-origin' && r.request.startsWith('https://example.test/SommeliersCodex/maps/atlas-v3/')));
   check('progress and final status survive without rerendering', messages.some((s) => s.includes('Saving 1 of 17')) && /All 17 maps/.test(standalone.c.V23.lastMessage));
   check('upgrade never removes original saved maps', shared.tables.get('codexmaps-v1').size === 2);
+  check('upgrade retains v2 maps without overwriting their bytes', shared.tables.get(standalone.c.ATLAS_PREVIOUS_CACHE).size === 2 && shared.tables.get(wing.c.ATLAS_PREVIOUS_CACHE).size === 1);
   check('other installation cannot claim these saved maps', Object.keys(await wing.c.v23ReadStored()).length === 0);
   await wing.c.v23StoreAll({ disabled: false }, () => {});
   await standalone.c.v23Forget(button, () => {});
   check('removal clears only this installation current cache', !shared.tables.has(standalone.c.ATLAS_CACHE_NAME) && shared.tables.get(wing.c.ATLAS_CACHE_NAME).size === 17);
   check('legacy removal uses exact own URLs only', shared.tables.get('codexmaps-v1').size === 1 && shared.tables.get('codexmaps-v1').has('https://example.test/codex/maps/france.jpg'));
+  check('v2 removal deletes only own exact URLs even in a mispopulated cache', !shared.tables.get(standalone.c.ATLAS_PREVIOUS_CACHE).has(oldSourceUrl) && shared.tables.get(standalone.c.ATLAS_PREVIOUS_CACHE).has(oldWingUrl) && shared.tables.get(wing.c.ATLAS_PREVIOUS_CACHE).has(oldWingUrl));
+  await standalone.c.v23Probe();
+  check('other installation archive cannot enable removal or claim a saved edition', !standalone.c.V23.olderStored);
   check('removed maps remain discoverable', standalone.c.V23.have.length === 17 && Object.keys(standalone.c.V23.stored).length === 0);
   check('cache work leaves study records unchanged', standalone.c.ST.progress === 'untouched');
 
@@ -123,16 +135,27 @@ async function responseFrom(w, url) {
   ]) { await assert.rejects(partial.c.atlasCacheValidate(res)); checks++; }
   await partial.c.atlasCacheValidate(new Response('<svg><defs><linearGradient id="gold"/></defs><path fill="url(#gold)"/><use href="#gold"/></svg>', { headers: { 'content-type': 'image/svg+xml' } })); checks++;
   const embedded = 'data:image/webp;base64,' + Buffer.from('RIFF0000WEBPVP8 decorative fixture').toString('base64');
+  const frame = (size) => {
+    const bytes = Buffer.alloc(size); bytes.write('RIFF'); bytes.writeUInt32LE(size - 8, 4); bytes.write('WEBPVP8 ', 8);
+    return 'data:image/webp;base64,' + bytes.toString('base64');
+  };
   const embeddedResponse = (value, twice = false) => new Response('<svg><image href="' + value + '"/>' + (twice ? '<image href="' + value + '"/>' : '') + '</svg>', { headers: { 'content-type': 'image/svg+xml' } });
   await partial.c.atlasCacheValidate(embeddedResponse(embedded)); checks++;
+  await partial.c.atlasCacheValidate(embeddedResponse(frame(320 * 1024))); checks++;
   for (const response of [
     embeddedResponse(embedded, true),
     embeddedResponse('data:image/webp;base64,' + Buffer.from('<html>not WebP</html>').toString('base64')),
     embeddedResponse(embedded.replace('image/webp', 'image/svg+xml')),
-    embeddedResponse('data:image/webp;base64,' + Buffer.concat([Buffer.from('RIFF0000WEBP'), Buffer.alloc(128 * 1024)]).toString('base64'))
+    embeddedResponse(frame(320 * 1024 + 1))
   ]) { await assert.rejects(partial.c.atlasCacheValidate(response)); checks++; }
   partial.c.ATLAS_V2.sheets.france.file = 'https://unlisted.example/map.svg';
   await assert.rejects(partial.c.atlasCacheFetch('france')); checks++;
+  partial.c.ATLAS_V2.sheets.france.file = 'maps/atlas-v2/france.svg';
+  check('a stale file path cannot be admitted into the new collection', partial.c.atlasCacheUrl('france') === null);
+  partial.c.ATLAS_V2.sheets.france.file = 'maps/atlas-v3/france.svg';
+  partial.c.ATLAS_V2.version = '2';
+  check('a stale manifest cannot claim the new edition', partial.c.atlasCacheUrl('france') === null);
+  partial.c.ATLAS_V2.version = '3';
   check('unknown map id has no fetchable URL', partial.c.atlasCacheUrl('not-registered') === null);
   const stalled = page('https://example.test/codex/', storage(), () => new Promise(() => {}));
   stalled.c.ATLAS_FETCH_TIMEOUT_MS = 5;
@@ -150,6 +173,14 @@ async function responseFrom(w, url) {
   const own = page('https://example.test' + installPath, shared);
   const sw = worker('https://example.test' + installPath + 'sw.js', shared);
   check('worker and page derive the identical installation cache', vm.runInContext('MAPS', sw.context) === own.c.ATLAS_CACHE_NAME);
+  check('worker and page agree on the preceding edition archive', vm.runInContext('PREVIOUS_MAPS', sw.context) === own.c.ATLAS_PREVIOUS_CACHE);
+  const previousUrl = 'https://example.test' + installPath + 'maps/atlas-v2/france.svg';
+  await keep(shared, [own.c.ATLAS_PREVIOUS_CACHE, previousUrl], new Response('previous edition', { headers: { 'content-type': 'image/svg+xml' } }));
+  check('worker serves an exact v2 map from its old cache to an older tab', await (await responseFrom(sw, previousUrl)).text() === 'previous edition' && sw.requests.length === 0);
+  await (await shared.caches.open(own.c.ATLAS_CACHE_NAME)).delete(own.c.atlasCacheUrl('france'));
+  await responseFrom(sw, own.c.atlasCacheUrl('france'));
+  check('v2 cache cannot satisfy a v3 map request', sw.requests.length === 1 && sw.requests[0] === own.c.atlasCacheUrl('france'));
+  sw.requests.length = 0;
   await keep(shared, [own.c.ATLAS_CACHE_NAME, own.c.atlasCacheUrl('france')]);
   await responseFrom(sw, own.c.atlasCacheUrl('france'));
   check('worker serves a current saved map without network', sw.requests.length === 0);
@@ -160,7 +191,7 @@ async function responseFrom(w, url) {
   await shared.caches.open(ownShell); await shared.caches.open(ownShell.replace(/\d+$/, '1'));
   let activation;
   sw.listeners.activate({ waitUntil(promise) { activation = promise; } }); await activation;
-  check('shell activation preserves current maps and legacy archive', shared.tables.has(own.c.ATLAS_CACHE_NAME) && shared.tables.has('codexmaps-v1'));
+  check('shell activation preserves current maps and both legacy archives', shared.tables.has(own.c.ATLAS_CACHE_NAME) && shared.tables.has(own.c.ATLAS_PREVIOUS_CACHE) && shared.tables.has('codexmaps-v1'));
   check('shell activation removes only its prior shell', shared.tables.has(ownShell) && !shared.tables.has(ownShell.replace(/\d+$/, '1')));
   console.log('check-atlas-cache: all ' + checks + ' checks pass (' + ROOT + ')');
 })().catch((error) => { console.error(error); process.exitCode = 1; });
