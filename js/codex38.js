@@ -1,4 +1,4 @@
-/* ================== CODEX XXXVI: WHO MAKES IT ==================
+/* ================== CODEX XXXVIII: WHO MAKES IT ==================
 
    The producers deep dive (WorldTable plan, October 2026, section 3): the
    owner asked to know who stands behind every wine on the list, in words a
@@ -8,7 +8,7 @@
    and the engine deals it (buildFlashcards' producer kind, dealQuestion's
    producer kinds). The World Table and the Bartender's Ledger draw their
    halves; this layer is the Codex's. codex35 holds the components; new work
-   belongs in the next layer, so this is codex36.
+   belongs in the next layer, so this is codex38.
 
    WHAT IT DOES, and the rule each part keeps:
 
@@ -74,7 +74,7 @@
 
 /* =========== the words =========== */
 
-var V36_WORDS = {
+var V38_WORDS = {
   whoMakes: 'Who makes it',
   flashThese: 'Flash these producers',
   allProducers: 'All producers',
@@ -112,7 +112,7 @@ var V36_WORDS = {
 /* The regions, in the order the view and the root list them. A producer
    stands under the first whose words name its first wine's region (whole
    words, folded), the rest of the world when none does. */
-var V36_GROUPS = [
+var V38_GROUPS = [
   { key: 'champagne', label: 'Champagne', words: ['champagne'] },
   { key: 'burgundy', label: 'Burgundy', words: ['burgundy', 'bourgogne', 'beaujolais', 'chablis', 'maconnais', 'macon', 'cote de beaune', 'cote de nuits', 'cote chalonnaise', 'cote d or'] },
   { key: 'bordeaux', label: 'Bordeaux', words: ['bordeaux', 'medoc', 'haut medoc', 'sauternes', 'barsac', 'pomerol', 'saint emilion', 'st emilion', 'graves', 'pessac leognan', 'margaux', 'pauillac', 'saint julien', 'saint estephe', 'fronsac', 'entre deux mers'] },
@@ -124,41 +124,41 @@ var V36_GROUPS = [
   { key: 'united-states', label: 'The United States', words: ['united states', 'usa', 'california', 'oregon', 'washington', 'new york', 'napa', 'sonoma', 'willamette', 'santa barbara', 'paso robles', 'virginia', 'texas', 'finger lakes'] },
   { key: 'world', label: 'The rest of the world', words: [] }
 ];
-var V36_GROUP_RE = /^(champagne|burgundy|bordeaux|rhone|france|germany-austria|italy|spain-portugal|united-states|world)$/;
-var V36_CID_RE = /^c-[a-z0-9]{8}$/;
+var V38_GROUP_RE = /^(champagne|burgundy|bordeaux|rhone|france|germany-austria|italy|spain-portugal|united-states|world)$/;
+var V38_CID_RE = /^c-[a-z0-9]{8}$/;
 
-function v36W(key, vars) {
+function v38W(key, vars) {
   var v = vars || {};
-  return String(V36_WORDS[key] || key).replace(/\{(\w+)\}/g, function (m, k) { return Object.prototype.hasOwnProperty.call(v, k) ? String(v[k]) : m; });
+  return String(V38_WORDS[key] || key).replace(/\{(\w+)\}/g, function (m, k) { return Object.prototype.hasOwnProperty.call(v, k) ? String(v[k]) : m; });
 }
-function v36Esc(s) { return (typeof v28Esc === 'function') ? v28Esc(s) : String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-function v36Str(s) { return typeof s === 'string' ? s.trim() : ''; }
-function v36Kept(m) { return m && typeof m === 'object' && m.by === 'person' && m.value !== undefined && m.value !== null ? m.value : null; }
-function v36House() { try { return (typeof v28House === 'function') ? v28House() : null; } catch (e) { return null; } }
-function v36HouseLib() {
+function v38Esc(s) { return (typeof v28Esc === 'function') ? v28Esc(s) : String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function v38Str(s) { return typeof s === 'string' ? s.trim() : ''; }
+function v38Kept(m) { return m && typeof m === 'object' && m.by === 'person' && m.value !== undefined && m.value !== null ? m.value : null; }
+function v38House() { try { return (typeof v28House === 'function') ? v28House() : null; } catch (e) { return null; } }
+function v38HouseLib() {
   try { return (typeof OOT !== 'undefined' && OOT && OOT.houseLib) ? OOT.houseLib : null; } catch (e) { return null; }
 }
-function v36Fold(s) {
+function v38Fold(s) {
   if (typeof v28Fold === 'function') return v28Fold(s);
   var t = String(s == null ? '' : s).toLowerCase();
   try { t = t.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } catch (e) { }
   return ' ' + t.replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim() + ' ';
 }
-function v36Paras(s) {
+function v38Paras(s) {
   return String(s == null ? '' : s).split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean)
-    .map(function (p) { return '<p>' + v36Esc(p) + '</p>'; }).join('');
+    .map(function (p) { return '<p>' + v38Esc(p) + '</p>'; }).join('');
 }
-function v36List(v) { return Array.isArray(v) ? v.map(v36Str).filter(Boolean) : []; }
-function v36Plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
-function v36Group(key) {
-  var hit = V36_GROUPS[V36_GROUPS.length - 1];
-  V36_GROUPS.some(function (g) { if (g.key === key) { hit = g; return true; } return false; });
+function v38List(v) { return Array.isArray(v) ? v.map(v38Str).filter(Boolean) : []; }
+function v38Plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+function v38Group(key) {
+  var hit = V38_GROUPS[V38_GROUPS.length - 1];
+  V38_GROUPS.some(function (g) { if (g.key === key) { hit = g; return true; } return false; });
   return hit;
 }
 
 /* The who as a question names it: up to its first bracket or comma, the engine's shortWho. */
-function v36ShortWho(who) {
-  var w = v36Str(who);
+function v38ShortWho(who) {
+  var w = v38Str(who);
   var cut = w.split(/\s*\(|,\s/)[0].trim();
   return cut || w;
 }
@@ -170,19 +170,19 @@ function v36ShortWho(who) {
    family word a label prints in the estate word's place (Famille, Familia,
    Familie) is read as one of them: the house's glass page prints Famille
    Durand where the list prints Domaine Durand for the same Loire glass. */
-var V36_ESTATE = /^(?:domaine|domaines|chateau|maison|weingut|bodega|bodegas|tenuta|cantina|quinta|champagne|famille|familia|familie) (?:(?:des|de la|de l|du|de|d) )?/;
-function v36Whole(s) { return v36Fold(s).replace(/ et(?= )/g, ' and').trim(); }
-function v36Bare(s) {
-  var f = v36Whole(s);
-  var b = f.replace(V36_ESTATE, '').trim();
+var V38_ESTATE = /^(?:domaine|domaines|chateau|maison|weingut|bodega|bodegas|tenuta|cantina|quinta|champagne|famille|familia|familie) (?:(?:des|de la|de l|du|de|d) )?/;
+function v38Whole(s) { return v38Fold(s).replace(/ et(?= )/g, ' and').trim(); }
+function v38Bare(s) {
+  var f = v38Whole(s);
+  var b = f.replace(V38_ESTATE, '').trim();
   return b || f;
 }
 
 /* The region a text names, by the first group whose words stand in it. */
-function v36GroupOf(text) {
-  var f = v36Fold(text);
+function v38GroupOf(text) {
+  var f = v38Fold(text);
   var hit = 'world';
-  V36_GROUPS.some(function (g) {
+  V38_GROUPS.some(function (g) {
     return g.words.some(function (w) { if (f.indexOf(' ' + w + ' ') >= 0) { hit = g.key; return true; } return false; });
   });
   return hit;
@@ -193,10 +193,10 @@ function v36GroupOf(text) {
 /* The names a record of WINE_PRODUCERS answers to: its own, then the
    names a label or a list prints for the same estate that the record keeps
    in aka (Thierry et Pascale Matrot for Domaine Matrot, as its trap says). */
-function v36LibNames(r) {
+function v38LibNames(r) {
   var out = [];
   if (r && typeof r.p === 'string' && r.p.trim()) out.push(r.p.trim());
-  (r && Array.isArray(r.aka) ? r.aka : []).forEach(function (n) { var t = v36Str(n); if (t && out.indexOf(t) < 0) out.push(t); });
+  (r && Array.isArray(r.aka) ? r.aka : []).forEach(function (n) { var t = v38Str(n); if (t && out.indexOf(t) < 0) out.push(t); });
   return out;
 }
 
@@ -205,33 +205,33 @@ function v36LibNames(r) {
    with an aside (Do Ferreiro (Gerardo Méndez)) is read bare up to its
    bracket or comma too, as the who is. The wine records (ids w-) are
    wines, not houses, and are left out as codex28 leaves them. */
-var V36_LIB = null;
-function v36LibIndex() {
+var V38_LIB = null;
+function v38LibIndex() {
   if (typeof WINE_PRODUCERS === 'undefined' || !Array.isArray(WINE_PRODUCERS)) return null;
-  if (V36_LIB && V36_LIB.list === WINE_PRODUCERS && V36_LIB.n === WINE_PRODUCERS.length) return V36_LIB;
+  if (V38_LIB && V38_LIB.list === WINE_PRODUCERS && V38_LIB.n === WINE_PRODUCERS.length) return V38_LIB;
   var whole = {}, bare = {};
   var putBare = function (b, r) { if (b) bare[b] = Object.prototype.hasOwnProperty.call(bare, b) && bare[b] !== r ? false : r; };
   WINE_PRODUCERS.forEach(function (r) {
     if (!r || typeof r.p !== 'string' || !r.id || String(r.id).indexOf('w-') === 0) return;
-    v36LibNames(r).forEach(function (n) {
-      var w = v36Whole(n);
+    v38LibNames(r).forEach(function (n) {
+      var w = v38Whole(n);
       if (w && !Object.prototype.hasOwnProperty.call(whole, w)) whole[w] = r;
-      putBare(v36Bare(n), r);
+      putBare(v38Bare(n), r);
     });
-    var s = v36ShortWho(r.p);
-    if (s && s !== r.p.trim()) putBare(v36Bare(s), r);
+    var s = v38ShortWho(r.p);
+    if (s && s !== r.p.trim()) putBare(v38Bare(s), r);
   });
-  V36_LIB = { list: WINE_PRODUCERS, n: WINE_PRODUCERS.length, whole: whole, bare: bare };
-  return V36_LIB;
+  V38_LIB = { list: WINE_PRODUCERS, n: WINE_PRODUCERS.length, whole: whole, bare: bare };
+  return V38_LIB;
 }
 /* The record one of the names holds, whole names first; null when none does. */
-function v36Library(names) {
-  var ix = v36LibIndex();
+function v38Library(names) {
+  var ix = v38LibIndex();
   if (!ix) return null;
   var hit = null;
-  names.some(function (n) { var w = v36Whole(n); if (w && ix.whole[w]) { hit = ix.whole[w]; return true; } return false; });
+  names.some(function (n) { var w = v38Whole(n); if (w && ix.whole[w]) { hit = ix.whole[w]; return true; } return false; });
   if (hit) return hit;
-  names.some(function (n) { var b = v36Bare(n); if (b && ix.bare[b]) { hit = ix.bare[b]; return true; } return false; });
+  names.some(function (n) { var b = v38Bare(n); if (b && ix.bare[b]) { hit = ix.bare[b]; return true; } return false; });
   return hit;
 }
 
@@ -242,80 +242,80 @@ function v36Library(names) {
    reaches. Kept against the house object it was read from: the engine hands
    back a new one for every saved change, and a screen asks several times a
    paint (read them, never change them). */
-var V36_MEMO = { h: null, rows: [], byName: null };
-function v36Rows(h) {
+var V38_MEMO = { h: null, rows: [], byName: null };
+function v38Rows(h) {
   if (!h) return [];
-  if (V36_MEMO.h === h && V36_MEMO.lib === (typeof WINE_PRODUCERS !== 'undefined' && Array.isArray(WINE_PRODUCERS) ? WINE_PRODUCERS.length : 0)) return V36_MEMO.rows;
+  if (V38_MEMO.h === h && V38_MEMO.lib === (typeof WINE_PRODUCERS !== 'undefined' && Array.isArray(WINE_PRODUCERS) ? WINE_PRODUCERS.length : 0)) return V38_MEMO.rows;
   var wines = {};
-  (Array.isArray(h.wines) ? h.wines : []).forEach(function (w) { if (w && typeof w.id === 'string' && v36Str(w.name)) wines[w.id] = w; });
+  (Array.isArray(h.wines) ? h.wines : []).forEach(function (w) { if (w && typeof w.id === 'string' && v38Str(w.name)) wines[w.id] = w; });
   var rows = [];
   (Array.isArray(h.components) ? h.components : []).forEach(function (c) {
     if (!c || typeof c.id !== 'string') return;
-    var p = v36Kept(c.producer);
-    if (!p || typeof p !== 'object' || Array.isArray(p) || !v36Str(p.who)) return;
+    var p = v38Kept(c.producer);
+    if (!p || typeof p !== 'object' || Array.isArray(p) || !v38Str(p.who)) return;
     var mine = [];
     (Array.isArray(c.itemIds) ? c.itemIds : []).forEach(function (id) { var w = wines[id]; if (w && mine.indexOf(w) < 0) mine.push(w); });
     if (!mine.length) return;
-    var who = v36Str(p.who);
+    var who = v38Str(p.who);
     var row = {
-      id: c.id, name: v36Str(c.name), who: who, short: v36ShortWho(who), type: v36Str(p.type), where: v36Str(p.where), founded: v36Str(p.founded),
-      sayIt: v36Str(p.sayIt), facts: v36List(p.facts), history: v36Str(p.history), notes: v36List(p.notes), ask: v36List(p.askKitchen),
-      wines: mine.map(function (w) { return { id: w.id, name: v36Str(w.name), producer: v36Str(w.producer), wine: v36Str(w.wine), vintage: v36Str(w.vintage), region: v36Str(w.region) }; })
+      id: c.id, name: v38Str(c.name), who: who, short: v38ShortWho(who), type: v38Str(p.type), where: v38Str(p.where), founded: v38Str(p.founded),
+      sayIt: v38Str(p.sayIt), facts: v38List(p.facts), history: v38Str(p.history), notes: v38List(p.notes), ask: v38List(p.askKitchen),
+      wines: mine.map(function (w) { return { id: w.id, name: v38Str(w.name), producer: v38Str(w.producer), wine: v38Str(w.wine), vintage: v38Str(w.vintage), region: v38Str(w.region) }; })
     };
     var placed = '';
     row.wines.some(function (w) { if (w.region) { placed = w.region; return true; } return false; });
-    row.group = v36GroupOf(placed || row.where);
+    row.group = v38GroupOf(placed || row.where);
     /* each wine's producer as the house prints it, and up to its aside as the
        who is read (Pazo das Bruxas (Familia Torres) is Pazo das Bruxas too) */
-    row.names = [row.who, row.short].concat(row.wines.map(function (w) { return w.producer; }), row.wines.map(function (w) { return v36ShortWho(w.producer); })).filter(function (n, i, all) { return n && all.indexOf(n) === i; });
-    row.lib = v36Library(row.names);
+    row.names = [row.who, row.short].concat(row.wines.map(function (w) { return w.producer; }), row.wines.map(function (w) { return v38ShortWho(w.producer); })).filter(function (n, i, all) { return n && all.indexOf(n) === i; });
+    row.lib = v38Library(row.names);
     /* the names the Codex's own record answers to, read by the full list's
        rows alone: the list may print the estate as the record does */
-    row.alias = row.lib ? v36LibNames(row.lib) : [];
+    row.alias = row.lib ? v38LibNames(row.lib) : [];
     rows.push(row);
   });
-  V36_MEMO = { h: h, rows: rows, byName: null, lib: (typeof WINE_PRODUCERS !== 'undefined' && Array.isArray(WINE_PRODUCERS) ? WINE_PRODUCERS.length : 0) };
+  V38_MEMO = { h: h, rows: rows, byName: null, lib: (typeof WINE_PRODUCERS !== 'undefined' && Array.isArray(WINE_PRODUCERS) ? WINE_PRODUCERS.length : 0) };
   return rows;
 }
-function v36RowById(h, cid) {
+function v38RowById(h, cid) {
   var hit = null;
-  v36Rows(h).some(function (r) { if (r.id === cid) { hit = r; return true; } return false; });
+  v38Rows(h).some(function (r) { if (r.id === cid) { hit = r; return true; } return false; });
   return hit;
 }
 /* The producers behind one wine, in the house's order. */
-function v36RowsFor(h, wid) {
-  return v36Rows(h).filter(function (r) { return r.wines.some(function (w) { return w.id === wid; }); });
+function v38RowsFor(h, wid) {
+  return v38Rows(h).filter(function (r) { return r.wines.some(function (w) { return w.id === wid; }); });
 }
 /* The house's producer a name names, by the same whole then bare rule, over
    its own names and its Codex record's; a name two producers share answers
    neither. */
-function v36RowByName(h, name) {
-  var rows = v36Rows(h);
-  if (!rows.length || !v36Str(name)) return null;
-  if (!V36_MEMO.byName) {
+function v38RowByName(h, name) {
+  var rows = v38Rows(h);
+  if (!rows.length || !v38Str(name)) return null;
+  if (!V38_MEMO.byName) {
     var whole = {}, bare = {};
     var put = function (map, k, r) { if (!k) return; map[k] = Object.prototype.hasOwnProperty.call(map, k) && map[k] !== r ? false : r; };
-    rows.forEach(function (r) { r.names.concat(r.alias || []).forEach(function (n) { put(whole, v36Whole(n), r); put(bare, v36Bare(n), r); }); });
-    V36_MEMO.byName = { whole: whole, bare: bare };
+    rows.forEach(function (r) { r.names.concat(r.alias || []).forEach(function (n) { put(whole, v38Whole(n), r); put(bare, v38Bare(n), r); }); });
+    V38_MEMO.byName = { whole: whole, bare: bare };
   }
-  var ix = V36_MEMO.byName;
-  var w = v36Whole(name);
+  var ix = V38_MEMO.byName;
+  var w = v38Whole(name);
   if (w && ix.whole[w]) return ix.whole[w];
   if (Object.prototype.hasOwnProperty.call(ix.whole, w)) return null;
-  var b = v36Bare(name);
+  var b = v38Bare(name);
   return b && ix.bare[b] ? ix.bare[b] : null;
 }
 /* The rows by region, in the groups' order, each group sorted by its bare name. */
-function v36ByGroup(rows) {
-  return V36_GROUPS.map(function (g) {
+function v38ByGroup(rows) {
+  return V38_GROUPS.map(function (g) {
     var mine = rows.filter(function (r) { return r.group === g.key; }).slice().sort(function (a, b) {
-      var x = v36Bare(a.short), y = v36Bare(b.short);
+      var x = v38Bare(a.short), y = v38Bare(b.short);
       return x < y ? -1 : x > y ? 1 : 0;
     });
     return { key: g.key, label: g.label, rows: mine };
   }).filter(function (g) { return g.rows.length; });
 }
-function v36WineCount(rows) {
+function v38WineCount(rows) {
   var seen = {};
   rows.forEach(function (r) { r.wines.forEach(function (w) { seen[w.id] = 1; }); });
   return Object.keys(seen).length;
@@ -326,46 +326,46 @@ function v36WineCount(rows) {
 /* where and since when, how to say it, the facts, the story, the notes,
    Ask the sommelier, and the Codex's own entry when it holds one; door is the
    attribute that opens that entry (codex28's on a card, this view's here) */
-function v36BodyHtml(r, door) {
+function v38BodyHtml(r, door) {
   var dl = [];
-  if (r.where) dl.push('<dt>' + v36W('where') + '</dt><dd>' + v36Esc(r.where) + '</dd>');
-  if (r.founded) dl.push('<dt>' + v36W('founded') + '</dt><dd>' + v36Esc(r.founded) + '</dd>');
+  if (r.where) dl.push('<dt>' + v38W('where') + '</dt><dd>' + v38Esc(r.where) + '</dd>');
+  if (r.founded) dl.push('<dt>' + v38W('founded') + '</dt><dd>' + v38Esc(r.founded) + '</dd>');
   var list = function (key, items) {
-    return items.length ? '<h4 class="v28-eyebrow">' + v36W(key) + '</h4><ul class="v28-list">' + items.map(function (t) { return '<li>' + v36Esc(t) + '</li>'; }).join('') + '</ul>' : '';
+    return items.length ? '<h4 class="v28-eyebrow">' + v38W(key) + '</h4><ul class="v28-list">' + items.map(function (t) { return '<li>' + v38Esc(t) + '</li>'; }).join('') + '</ul>' : '';
   };
   return (dl.length ? '<dl class="v28-dl">' + dl.join('') + '</dl>' : '')
-    + (r.sayIt ? '<p><span class="v28-soft">' + v36W('say') + ':</span> ' + v36Esc(r.sayIt) + '</p>' : '')
+    + (r.sayIt ? '<p><span class="v28-soft">' + v38W('say') + ':</span> ' + v38Esc(r.sayIt) + '</p>' : '')
     + list('facts', r.facts)
-    + (r.history ? '<h4 class="v28-eyebrow">' + v36W('story') + '</h4>' + v36Paras(r.history) : '')
+    + (r.history ? '<h4 class="v28-eyebrow">' + v38W('story') + '</h4>' + v38Paras(r.history) : '')
     + list('notes', r.notes)
     + list('ask', r.ask)
-    + (r.lib && r.lib.id ? '<p><button type="button" class="v28-link v35-door v36-lib" ' + door + ' data-k="' + v36Esc(r.lib.id) + '">' + v36W('inLibrary') + '</button></p>' : '');
+    + (r.lib && r.lib.id ? '<p><button type="button" class="v28-link v35-door v38-lib" ' + door + ' data-k="' + v38Esc(r.lib.id) + '">' + v38W('inLibrary') + '</button></p>' : '');
 }
 
 /* Who makes it, on a wine's card: nothing when no kept producer reaches it. */
-function v36WhoHtml(h, wid) {
-  var rows = v36RowsFor(h, wid);
+function v38WhoHtml(h, wid) {
+  var rows = v38RowsFor(h, wid);
   if (!rows.length) return '';
-  var cards = v36ItemCards(h, wid).length;
-  return '<section class="v28-block v36-who" aria-labelledby="v36-who-h"><h3 class="secgroup" id="v36-who-h">' + v36W('whoMakes') + '</h3><ul class="v35-comps v36-prods">'
+  var cards = v38ItemCards(h, wid).length;
+  return '<section class="v28-block v38-who" aria-labelledby="v38-who-h"><h3 class="secgroup" id="v38-who-h">' + v38W('whoMakes') + '</h3><ul class="v35-comps v38-prods">'
     + rows.map(function (r) {
-      return '<li data-producer="' + v36Esc(r.id) + '"><details class="v28-q v35-comp v36-prod"><summary>' + v36Esc(r.who) + '</summary><div class="v35-body">'
-        + v36BodyHtml(r, 'data-v28="producer" id="v36-lib-' + v36Esc(r.id) + '"') + '</div></details></li>';
+      return '<li data-producer="' + v38Esc(r.id) + '"><details class="v28-q v35-comp v38-prod"><summary>' + v38Esc(r.who) + '</summary><div class="v35-body">'
+        + v38BodyHtml(r, 'data-v28="producer" id="v38-lib-' + v38Esc(r.id) + '"') + '</div></details></li>';
     }).join('') + '</ul>'
     + '<div class="v28-btnrow">'
-    + (cards ? '<button type="button" class="btn gold" data-v28="v36flash" data-id="' + v36Esc(wid) + '">' + v36W('flashThese') + '</button>' : '')
-    + '<button type="button" class="btn ghost" data-v28="v36all">' + v36W('allProducers') + '</button></div></section>';
+    + (cards ? '<button type="button" class="btn gold" data-v28="v38flash" data-id="' + v38Esc(wid) + '">' + v38W('flashThese') + '</button>' : '')
+    + '<button type="button" class="btn ghost" data-v28="v38all">' + v38W('allProducers') + '</button></div></section>';
 }
 
 /* Above What it's made of when the card shows it, else before the five
    parts, else before the service note, as codex35 places its own. */
 if (typeof v28CardHtml === 'function') {
-  var _v36CardHtml = v28CardHtml;
+  var _v38CardHtml = v28CardHtml;
   v28CardHtml = function (id) {
-    var html = _v36CardHtml(id);
-    var h = v36House();
+    var html = _v38CardHtml(id);
+    var h = v38House();
     if (!html || !h) return html;
-    var block = v36WhoHtml(h, id);
+    var block = v38WhoHtml(h, id);
     if (!block) return html;
     var at = html.indexOf('<section class="v28-block v35-madeof"');
     if (at < 0 && typeof v28W === 'function') at = html.indexOf('<section class="v28-block"><h3 class="secgroup">' + v28W('parts') + '</h3>');
@@ -384,20 +384,20 @@ if (typeof v28CardHtml === 'function') {
    Domaine Leflaive). A component with a film stays, so the film is still
    on the card. Its card stays in the component decks of the Flashcards. */
 if (typeof v35Groups === 'function') {
-  var _v36Groups = v35Groups;
+  var _v38Groups = v35Groups;
   v35Groups = function (h, id) {
-    var groups = _v36Groups.apply(this, arguments);
+    var groups = _v38Groups.apply(this, arguments);
     var told = {}, names = {};
-    (h && id ? v36RowsFor(h, id) : []).forEach(function (r) {
+    (h && id ? v38RowsFor(h, id) : []).forEach(function (r) {
       told[r.id] = 1;
-      [r.name, r.short].forEach(function (n) { var f = v36Whole(n); if (f) names[f] = 1; });
+      [r.name, r.short].forEach(function (n) { var f = v38Whole(n); if (f) names[f] = 1; });
     });
     var films = function (c) { return typeof v35Videos === 'function' && v35Videos(h, c.id).length > 0; };
     var drop = function (c) {
       if (!c || films(c)) return false;
-      if (v36Kept(c.producer) && !v36Str(v36Kept(c.say)) && !v36Str(v36Kept(c.explain)) && !v36Kept(c.card)) return true;
+      if (v38Kept(c.producer) && !v38Str(v38Kept(c.say)) && !v38Str(v38Kept(c.explain)) && !v38Kept(c.card)) return true;
       if (told[c.id]) return true;
-      return c.kind === 'story' && Object.prototype.hasOwnProperty.call(names, v36Whole(c.name));
+      return c.kind === 'story' && Object.prototype.hasOwnProperty.call(names, v38Whole(c.name));
     };
     return (Array.isArray(groups) ? groups : []).map(function (g) {
       var out = {};
@@ -413,7 +413,7 @@ if (typeof v35Groups === 'function') {
 /* The house as the engine should read it for the wine producers: the wines
    those producers reach and only their components, so a card's list of
    wines and a question's wrong answers are the list's own. */
-function v36WineView(h, rows) {
+function v38WineView(h, rows) {
   var keep = {}, reach = {};
   rows.forEach(function (r) { keep[r.id] = 1; r.wines.forEach(function (w) { reach[w.id] = 1; }); });
   var out = {};
@@ -425,33 +425,33 @@ function v36WineView(h, rows) {
 }
 
 /* The engine's own rules for a card's back, said here for an older engine. */
-var V36_MONTH = /^(?:January|February|March|April|May|June|July|August|September|October|November|December)\b/;
-function v36FoundedSentence(founded) {
-  var f = v36Str(founded).replace(/[\s.]+$/, '');
+var V38_MONTH = /^(?:January|February|March|April|May|June|July|August|September|October|November|December)\b/;
+function v38FoundedSentence(founded) {
+  var f = v38Str(founded).replace(/[\s.]+$/, '');
   if (!f) return '';
-  return /^[0-9a-z]/.test(f) || V36_MONTH.test(f) ? 'Founded ' + f : f;
+  return /^[0-9a-z]/.test(f) || V38_MONTH.test(f) ? 'Founded ' + f : f;
 }
-function v36JoinSentences(parts) {
-  var kept = parts.map(function (p) { return v36Str(p).replace(/[\s.]+$/, ''); }).filter(Boolean);
+function v38JoinSentences(parts) {
+  var kept = parts.map(function (p) { return v38Str(p).replace(/[\s.]+$/, ''); }).filter(Boolean);
   return kept.length ? kept.join('. ') + '.' : '';
 }
-function v36FirstSentence(text) {
-  var t = v36Str(String(text || '').split(/\n\s*\n/)[0]);
+function v38FirstSentence(text) {
+  var t = v38Str(String(text || '').split(/\n\s*\n/)[0]);
   var m = /^[\s\S]*?[.!?](?=\s|$)/.exec(t);
-  return v36Str(m ? m[0] : t);
+  return v38Str(m ? m[0] : t);
 }
-function v36SayList(names) {
+function v38SayList(names) {
   if (names.length < 2) return names.join('');
   return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
 }
-function v36CardsLocal(rows) {
+function v38CardsLocal(rows) {
   var out = [];
   rows.forEach(function (r) {
-    var who = v36JoinSentences([r.where, v36FoundedSentence(r.founded)]);
+    var who = v38JoinSentences([r.where, v38FoundedSentence(r.founded)]);
     if (who) out.push({ kind: 'producer', front: r.short + (r.founded ? ': where, and since when?' : ': where from?'), back: who, itemId: r.id, n: 0 });
-    var point = r.facts[0] || v36FirstSentence(r.history);
+    var point = r.facts[0] || v38FirstSentence(r.history);
     if (point) out.push({ kind: 'producer', front: r.short + ': one thing to know', back: point, itemId: r.id, n: 1 });
-    if (r.wines.length) out.push({ kind: 'producer', front: r.short + v36W('whichWines'), back: v36SayList(r.wines.map(function (w) { return w.name; })) + '.', itemId: r.id, n: 2 });
+    if (r.wines.length) out.push({ kind: 'producer', front: r.short + v38W('whichWines'), back: v38SayList(r.wines.map(function (w) { return w.name; })) + '.', itemId: r.id, n: 2 });
   });
   return out;
 }
@@ -459,37 +459,37 @@ function v36CardsLocal(rows) {
 /* Every producer card of the house, in the house's order: the engine's
    buildFlashcards when it deals the producer kind, else the same three made
    here; each as the card screen deals it, { kind, id, n, front, back, label, group }. */
-var V36_CARDS = { h: null, cards: [] };
-function v36Cards(h) {
+var V38_CARDS = { h: null, cards: [] };
+function v38Cards(h) {
   if (!h) return [];
-  if (V36_CARDS.h === h) return V36_CARDS.cards;
-  var rows = v36Rows(h);
+  if (V38_CARDS.h === h) return V38_CARDS.cards;
+  var rows = v38Rows(h);
   var raw = [];
   if (rows.length) {
-    var lib = v36HouseLib();
+    var lib = v38HouseLib();
     var kinds = lib && lib.drills && Array.isArray(lib.drills.FLASHCARD_KINDS) ? lib.drills.FLASHCARD_KINDS : [];
     var build = kinds.indexOf('producer') >= 0 ? (typeof lib.buildFlashcards === 'function' ? lib.buildFlashcards : (lib.drills && typeof lib.drills.buildFlashcards === 'function' ? lib.drills.buildFlashcards : null)) : null;
-    try { raw = build ? (build(v36WineView(h, rows)) || []).filter(function (c) { return c && c.kind === 'producer'; }) : v36CardsLocal(rows); }
-    catch (e) { raw = v36CardsLocal(rows); }
+    try { raw = build ? (build(v38WineView(h, rows)) || []).filter(function (c) { return c && c.kind === 'producer'; }) : v38CardsLocal(rows); }
+    catch (e) { raw = v38CardsLocal(rows); }
   }
   var cards = [];
   raw.forEach(function (c) {
     var row = null;
     rows.some(function (r) { if (r.id === c.itemId) { row = r; return true; } return false; });
-    var front = v36Str(c.front), back = v36Str(c.back);
+    var front = v38Str(c.front), back = v38Str(c.back);
     if (!row || !front || !back) return;
     /* the engine asks of drinks; the Codex asks of its wines */
-    if (c.n === 2) front = front.replace(/: which drinks\?$/, v36W('whichWines'));
-    cards.push({ kind: 'producer', id: row.id, n: c.n, front: front, back: back, label: v36W('cardLabel'), group: row.group });
+    if (c.n === 2) front = front.replace(/: which drinks\?$/, v38W('whichWines'));
+    cards.push({ kind: 'producer', id: row.id, n: c.n, front: front, back: back, label: v38W('cardLabel'), group: row.group });
   });
-  V36_CARDS = { h: h, cards: cards };
+  V38_CARDS = { h: h, cards: cards };
   return cards;
 }
 /* One wine's producer cards, its producers in the card's order. */
-function v36ItemCards(h, wid) {
-  var cards = v36Cards(h);
+function v38ItemCards(h, wid) {
+  var cards = v38Cards(h);
   var out = [];
-  v36RowsFor(h, wid).forEach(function (r) { cards.forEach(function (c) { if (c.id === r.id) out.push(c); }); });
+  v38RowsFor(h, wid).forEach(function (r) { cards.forEach(function (c) { if (c.id === r.id) out.push(c); }); });
   return out;
 }
 
@@ -497,12 +497,12 @@ function v36ItemCards(h, wid) {
    card-producer-{n} under the component: h-{component id}-producer-{n},
    n the card's place among the producer's three (who and where, one thing
    to know, which of our wines). */
-function v36CardKey(c) { return 'h-' + c.id + '-producer-' + (Number(c.n) || 0); }
+function v38CardKey(c) { return 'h-' + c.id + '-producer-' + (Number(c.n) || 0); }
 
 /* The newest verdict on every producer card, read in one pass over the
    records: again when its key holds a wrong answer and no streak, got it
    when anything was answered; { 'component id/n': 'got' | 'again' }. */
-function v36Verdicts() {
+function v38Verdicts() {
   var q = (typeof ST !== 'undefined' && ST && ST.q) ? ST.q : {};
   var out = {};
   Object.keys(q).forEach(function (k) {
@@ -517,80 +517,80 @@ function v36Verdicts() {
   return out;
 }
 /* One card's verdict, or null when it was never answered. */
-function v36Latest(c) { return c ? v36Verdicts()[c.id + '/' + (Number(c.n) || 0)] || null : null; }
+function v38Latest(c) { return c ? v38Verdicts()[c.id + '/' + (Number(c.n) || 0)] || null : null; }
 
 /* =========== the decks =========== */
 
 if (typeof v32DeckDef === 'function') {
-  var _v36DeckDef = v32DeckDef;
+  var _v38DeckDef = v32DeckDef;
   v32DeckDef = function (id) {
     var s = String(id || '');
     var m = null;
     if (s === 'producers' || (m = /^producers:([a-z-]+)$/.exec(s)) || (m = /^item-producers:(w-[a-z0-9]{8})$/.exec(s))) {
-      if (m && s.indexOf('producers:') === 0 && !V36_GROUP_RE.test(m[1])) return _v36DeckDef(id);
-      var h = v36House();
+      if (m && s.indexOf('producers:') === 0 && !V38_GROUP_RE.test(m[1])) return _v38DeckDef(id);
+      var h = v38House();
       var def = { id: s, name: '', cards: [], kind: 'producer' };
-      if (s === 'producers') { def.name = v36W('everyProducer'); def.cards = v36Cards(h); }
-      else if (s.indexOf('producers:') === 0) { def.name = v36W('groupDeck', { group: v36Group(m[1]).label }); def.cards = v36Cards(h).filter(function (c) { return c.group === m[1]; }); }
+      if (s === 'producers') { def.name = v38W('everyProducer'); def.cards = v38Cards(h); }
+      else if (s.indexOf('producers:') === 0) { def.name = v38W('groupDeck', { group: v38Group(m[1]).label }); def.cards = v38Cards(h).filter(function (c) { return c.group === m[1]; }); }
       else {
         var w = h && Array.isArray(h.wines) ? h.wines.filter(function (x) { return x && x.id === m[1]; })[0] : null;
-        def.name = v36W('itemDeck', { name: w ? w.name : 'One wine' });
-        def.cards = v36ItemCards(h, m[1]);
+        def.name = v38W('itemDeck', { name: w ? w.name : 'One wine' });
+        def.cards = v38ItemCards(h, m[1]);
       }
       def.learnt = v32Learnt(def);
       return def;
     }
-    return _v36DeckDef(id);
+    return _v38DeckDef(id);
   };
 }
 if (typeof v32Learnt === 'function') {
-  var _v36Learnt = v32Learnt;
+  var _v38Learnt = v32Learnt;
   v32Learnt = function (def) {
-    if (def && def.kind === 'producer') { var v = v36Verdicts(); return def.cards.filter(function (c) { return v[c.id + '/' + (Number(c.n) || 0)] === 'got'; }).length; }
-    return _v36Learnt(def);
+    if (def && def.kind === 'producer') { var v = v38Verdicts(); return def.cards.filter(function (c) { return v[c.id + '/' + (Number(c.n) || 0)] === 'got'; }).length; }
+    return _v38Learnt(def);
   };
 }
 /* One wine's producers are dealt in the order its card shows them. */
 if (typeof v32StartRun === 'function') {
-  var _v36StartRun = v32StartRun;
+  var _v38StartRun = v32StartRun;
   v32StartRun = function (deckId, opts) {
     var o = opts || {};
     if (/^item-producers:/.test(String(deckId || ''))) o.keepOrder = true;
-    return _v36StartRun(deckId, o);
+    return _v38StartRun(deckId, o);
   };
 }
 /* A producer card's grade is recorded as a word's is, under the card's own key. */
 if (typeof v32Grade === 'function') {
-  var _v36Grade = v32Grade;
+  var _v38Grade = v32Grade;
   v32Grade = function (got) {
     var r = S._v32run;
     var c = r && r.flip && r.deck && r.deck.length ? r.cards[r.deck[0]] : null;
-    if (c && c.kind === 'producer' && typeof v27RecordHouse === 'function') v27RecordHouse(v36CardKey(c), 'Our List', c.front, !!got);
-    return _v36Grade(got);
+    if (c && c.kind === 'producer' && typeof v27RecordHouse === 'function') v27RecordHouse(v38CardKey(c), 'Our List', c.front, !!got);
+    return _v38Grade(got);
   };
 }
 if (typeof v32CardFace === 'function') {
-  var _v36CardFace = v32CardFace;
+  var _v38CardFace = v32CardFace;
   v32CardFace = function (c, run) {
-    if (!c || c.kind !== 'producer') return _v36CardFace(c, run);
-    var head = '<span class="v28-eyebrow v28-ink">' + v32W('front') + (c.label ? ' \u00b7 ' + v36Esc(c.label) : '') + '</span>';
-    if (!run.flip) return '<button type="button" class="card v28-front" data-v32="flip" id="v32-face">' + head + '<span class="v28-fname">' + v36Esc(c.front) + '</span></button>';
-    return '<div class="card v28-back" id="v32-face"><p class="v28-eyebrow v28-ink">' + v32W('answer') + (c.label ? ' \u00b7 ' + v36Esc(c.label) : '') + '</p>'
-      + '<h3 class="v28-bname" tabindex="-1" id="v32-ans">' + v36Esc(c.front) + '</h3><p>' + v36Esc(c.back) + '</p></div>';
+    if (!c || c.kind !== 'producer') return _v38CardFace(c, run);
+    var head = '<span class="v28-eyebrow v28-ink">' + v32W('front') + (c.label ? ' \u00b7 ' + v38Esc(c.label) : '') + '</span>';
+    if (!run.flip) return '<button type="button" class="card v28-front" data-v32="flip" id="v32-face">' + head + '<span class="v28-fname">' + v38Esc(c.front) + '</span></button>';
+    return '<div class="card v28-back" id="v32-face"><p class="v28-eyebrow v28-ink">' + v32W('answer') + (c.label ? ' \u00b7 ' + v38Esc(c.label) : '') + '</p>'
+      + '<h3 class="v28-bname" tabindex="-1" id="v32-ans">' + v38Esc(c.front) + '</h3><p>' + v38Esc(c.back) + '</p></div>';
   };
 }
 /* The Flashcards root: every producer and a deck per region, under the house. */
 if (typeof v32FlashcardsHtml === 'function') {
-  var _v36FlashcardsHtml = v32FlashcardsHtml;
+  var _v38FlashcardsHtml = v32FlashcardsHtml;
   v32FlashcardsHtml = function () {
-    var html = _v36FlashcardsHtml();
-    var h = v36House();
+    var html = _v38FlashcardsHtml();
+    var h = v38House();
     if (!h || typeof v32Group !== 'function' || typeof v32DeckRow !== 'function') return html;
-    var rows = v36Rows(h);
+    var rows = v38Rows(h);
     if (!rows.length) return html;
-    var decks = v32DeckRow('producers', v36W('everyProducer'))
-      + v36ByGroup(rows).map(function (g) { return v32DeckRow('producers:' + g.key, g.label); }).join('');
-    var group = v32Group(v36W('fcGroup'), decks, 'v36-fc-prod');
+    var decks = v32DeckRow('producers', v38W('everyProducer'))
+      + v38ByGroup(rows).map(function (g) { return v32DeckRow('producers:' + g.key, g.label); }).join('');
+    var group = v32Group(v38W('fcGroup'), decks, 'v38-fc-prod');
     if (!group) return html;
     var rest = html.indexOf('aria-labelledby="v32-fc-rest"');
     var at = rest >= 0 ? html.indexOf('</section>', rest) : -1;
@@ -607,24 +607,24 @@ if (typeof v32FlashcardsHtml === 'function') {
 /* =========== the quiz =========== */
 
 /* The engine's dealer, when it knows the producer kinds. */
-function v36Dealer() {
-  var lib = v36HouseLib();
+function v38Dealer() {
+  var lib = v38HouseLib();
   return lib && typeof lib.dealQuestion === 'function' && lib.drills && Array.isArray(lib.drills.PRODUCER_KINDS) ? lib : null;
 }
 /* A wine named without its maker: its own name and vintage, else the name
    the list prints, whichever carries none of its producers' names. */
-function v36Stem(w, rows) {
+function v38Stem(w, rows) {
   var names = [];
   var add = function (n) {
-    [v36Whole(n), v36Bare(n)].forEach(function (f) { if (f.length >= 3 && names.indexOf(f) < 0) names.push(f); });
+    [v38Whole(n), v38Bare(n)].forEach(function (f) { if (f.length >= 3 && names.indexOf(f) < 0) names.push(f); });
   };
   rows.forEach(function (r) { r.names.forEach(add); });
   if (w.producer) add(w.producer);
-  var tries = [[v36Str(w.wine), v36Str(w.vintage)].filter(Boolean).join(' '), v36Str(w.name)];
+  var tries = [[v38Str(w.wine), v38Str(w.vintage)].filter(Boolean).join(' '), v38Str(w.name)];
   var hit = '';
   tries.some(function (t) {
     if (!t) return false;
-    var f = v36Fold(t);
+    var f = v38Fold(t);
     if (names.some(function (n) { return f.indexOf(' ' + n + ' ') >= 0; })) return false;
     hit = t;
     return true;
@@ -638,22 +638,22 @@ function v36Stem(w, rows) {
    Champagne, whose labels differ only in a straight and a curly
    apostrophe, are one answer, never two options), each with the producers
    it is theirs. */
-var V36_QV = { h: null, base: null, pour: null };
-function v36QuizMemo(h) {
-  if (V36_QV.h !== h) V36_QV = { h: h, base: undefined, pour: undefined };
-  return V36_QV;
+var V38_QV = { h: null, base: null, pour: null };
+function v38QuizMemo(h) {
+  if (V38_QV.h !== h) V38_QV = { h: h, base: undefined, pour: undefined };
+  return V38_QV;
 }
-function v36ProducerBase(h) {
-  var memo = v36QuizMemo(h);
+function v38ProducerBase(h) {
+  var memo = v38QuizMemo(h);
   if (memo.base !== undefined) return memo.base;
-  var rows = v36Rows(h);
+  var rows = v38Rows(h);
   if (rows.length < 2) { memo.base = null; return null; }
   var by = {};
-  var named = v36WineView(h, rows).wines.map(function (w) {
+  var named = v38WineView(h, rows).wines.map(function (w) {
     var mine = rows.filter(function (r) { return r.wines.some(function (x) { return x.id === w.id; }); });
-    var stem = v36Stem(w, mine);
+    var stem = v38Stem(w, mine);
     var who = mine.map(function (r) { return r.id; }).sort().join('|');
-    var key = v36Whole(stem);
+    var key = v38Whole(stem);
     if (stem) { if (!by[key]) by[key] = {}; by[key][who] = 1; }
     return { w: w, stem: stem, key: key, owners: mine.map(function (r) { return r.id; }) };
   });
@@ -677,21 +677,21 @@ function v36ProducerBase(h) {
    reading the whole view, so a list of two hundred producers is asked about
    a dozen at a time: each call draws its own dozen, and every wrong answer
    is another of the list's wine producers. */
-var V36_SAMPLE = 12;
-function v36Sample(rows) {
-  if (rows.length <= V36_SAMPLE) return rows.slice();
+var V38_SAMPLE = 12;
+function v38Sample(rows) {
+  if (rows.length <= V38_SAMPLE) return rows.slice();
   var pick = (typeof shuffle === 'function') ? shuffle(rows.slice()) : rows.slice();
-  return pick.slice(0, V36_SAMPLE);
+  return pick.slice(0, V38_SAMPLE);
 }
 /* The view the three producer kinds deal over: a dozen of the list's wine
    producers, only their components and only their wines, named as the base
    names them. */
-function v36ProducerView(h) {
-  if (!h || !v36Dealer()) return null;
-  var base = v36ProducerBase(h);
+function v38ProducerView(h) {
+  if (!h || !v38Dealer()) return null;
+  var base = v38ProducerBase(h);
   if (!base) return null;
   var keep = {};
-  v36Sample(base.rows).forEach(function (r) { keep[r.id] = 1; });
+  v38Sample(base.rows).forEach(function (r) { keep[r.id] = 1; });
   var view = {};
   Object.keys(h).forEach(function (k) { view[k] = h[k]; });
   view.dishes = []; view.cocktails = []; view.lexicon = []; view.mixUps = []; view.scenarios = []; view.tastings = [];
@@ -702,11 +702,11 @@ function v36ProducerView(h) {
 /* The view the pour question deals over: the dishes as they are, and each
    wine a kept producer reaches named by its producer, so the engine's first
    pick round asks whose wine it is. */
-function v36PourView(h) {
-  if (!h || !v36Dealer()) return null;
-  var memo = v36QuizMemo(h);
+function v38PourView(h) {
+  if (!h || !v38Dealer()) return null;
+  var memo = v38QuizMemo(h);
   if (memo.pour !== undefined) return memo.pour;
-  var rows = v36Rows(h);
+  var rows = v38Rows(h);
   if (rows.length < 2) { memo.pour = null; return null; }
   var whose = {};
   rows.forEach(function (r) { r.wines.forEach(function (w) { if (!whose[w.id]) whose[w.id] = r.short; }); });
@@ -723,157 +723,157 @@ function v36PourView(h) {
   memo.pour = out;
   return out;
 }
-var V36_KINDS = [
-  { key: 'producerOf', kind: 'producerOf', view: v36ProducerView, label: function () { return v36W('qOf'); } },
-  { key: 'producerWhere', kind: 'producerWhere', view: v36ProducerView, label: function () { return v36W('qWhere'); } },
-  { key: 'producerDish', kind: 'producerDish', view: v36ProducerView, label: function () { return v36W('qDish'); } },
-  { key: 'producerPour', kind: 'firstPickFor', view: v36PourView, label: function () { return v36W('qPour'); } }
+var V38_KINDS = [
+  { key: 'producerOf', kind: 'producerOf', view: v38ProducerView, label: function () { return v38W('qOf'); } },
+  { key: 'producerWhere', kind: 'producerWhere', view: v38ProducerView, label: function () { return v38W('qWhere'); } },
+  { key: 'producerDish', kind: 'producerDish', view: v38ProducerView, label: function () { return v38W('qDish'); } },
+  { key: 'producerPour', kind: 'firstPickFor', view: v38PourView, label: function () { return v38W('qPour'); } }
 ];
 (function () {
   if (typeof V27_CELLAR_KINDS === 'undefined' || !V27_CELLAR_KINDS || typeof V27_CELLAR_KINDS.push !== 'function') return;
-  V36_KINDS.forEach(function (k) { if (!V27_CELLAR_KINDS.some(function (x) { return x && x.key === k.key; })) V27_CELLAR_KINDS.push(k); });
+  V38_KINDS.forEach(function (k) { if (!V27_CELLAR_KINDS.some(function (x) { return x && x.key === k.key; })) V27_CELLAR_KINDS.push(k); });
 })();
 
 /* =========== the house's producers, a view of its own =========== */
 
-function v36State() {
-  if (!S._v36 || typeof S._v36 !== 'object') S._v36 = { open: null, g: '' };
-  return S._v36;
+function v38State() {
+  if (!S._v38 || typeof S._v38 !== 'object') S._v38 = { open: null, g: '' };
+  return S._v38;
 }
 
-function v36Head(title, sub) {
+function v38Head(title, sub) {
   if (typeof v32Head === 'function') return v32Head(title, sub);
-  return '<div class="viewhead"><h2 tabindex="-1">' + v36Esc(title) + '</h2>' + (sub ? '<div class="sub">' + v36Esc(sub) + '</div>' : '') + '</div>';
+  return '<div class="viewhead"><h2 tabindex="-1">' + v38Esc(title) + '</h2>' + (sub ? '<div class="sub">' + v38Esc(sub) + '</div>' : '') + '</div>';
 }
 
-function v36ListHtml(h, rows, st) {
-  var groups = v36ByGroup(rows);
+function v38ListHtml(h, rows, st) {
+  var groups = v38ByGroup(rows);
   if (st.g && !groups.some(function (g) { return g.key === st.g; })) st.g = '';
   var shown = st.g ? groups.filter(function (g) { return g.key === st.g; }) : groups;
-  var html = '<p class="v32-line">' + v36Esc(v36W('countLine', { n: v36Plural(rows.length, 'producer', 'producers'), m: v36Plural(v36WineCount(rows), 'wine', 'wines') })) + '</p>';
-  html += '<div class="v32chips v36-chips" role="group" aria-label="' + v36W('regions') + '">'
-    + '<button type="button" class="v28-chip" id="v36-g-all" data-v36="group" data-g="" aria-pressed="' + (!st.g ? 'true' : 'false') + '">' + v36W('allChip', { n: rows.length }) + '</button>'
+  var html = '<p class="v32-line">' + v38Esc(v38W('countLine', { n: v38Plural(rows.length, 'producer', 'producers'), m: v38Plural(v38WineCount(rows), 'wine', 'wines') })) + '</p>';
+  html += '<div class="v32chips v38-chips" role="group" aria-label="' + v38W('regions') + '">'
+    + '<button type="button" class="v28-chip" id="v38-g-all" data-v38="group" data-g="" aria-pressed="' + (!st.g ? 'true' : 'false') + '">' + v38W('allChip', { n: rows.length }) + '</button>'
     + groups.map(function (g) {
-      return '<button type="button" class="v28-chip" id="v36-g-' + g.key + '" data-v36="group" data-g="' + g.key + '" aria-pressed="' + (st.g === g.key ? 'true' : 'false') + '">' + v36Esc(g.label) + ' ' + g.rows.length + '</button>';
+      return '<button type="button" class="v28-chip" id="v38-g-' + g.key + '" data-v38="group" data-g="' + g.key + '" aria-pressed="' + (st.g === g.key ? 'true' : 'false') + '">' + v38Esc(g.label) + ' ' + g.rows.length + '</button>';
     }).join('') + '</div>';
   var deck = st.g ? 'producers:' + st.g : 'producers';
   var def = typeof v32DeckDef === 'function' ? v32DeckDef(deck) : null;
-  if (def && def.cards.length) html += '<div class="v28-btnrow"><button type="button" class="btn gold" id="v36-flash" data-v36="flash" data-deck="' + deck + '">' + v36W('flashThese') + '</button></div>';
+  if (def && def.cards.length) html += '<div class="v28-btnrow"><button type="button" class="btn gold" id="v38-flash" data-v38="flash" data-deck="' + deck + '">' + v38W('flashThese') + '</button></div>';
   shown.forEach(function (g) {
     var items = g.rows.map(function (r) {
-      var line = [r.where, v36Plural(r.wines.length, 'wine', 'wines') + ' on our list'].filter(Boolean).join(' \u00b7 ');
-      return '<li><button class="v25row" type="button" id="v36-p-' + v36Esc(r.id) + '" data-v36="open" data-k="' + v36Esc(r.id) + '">'
-        + '<span class="v25row-name">' + v36Esc(r.who) + '</span><span class="v25row-line">' + v36Esc(line) + '</span></button></li>';
+      var line = [r.where, v38Plural(r.wines.length, 'wine', 'wines') + ' on our list'].filter(Boolean).join(' \u00b7 ');
+      return '<li><button class="v25row" type="button" id="v38-p-' + v38Esc(r.id) + '" data-v38="open" data-k="' + v38Esc(r.id) + '">'
+        + '<span class="v25row-name">' + v38Esc(r.who) + '</span><span class="v25row-line">' + v38Esc(line) + '</span></button></li>';
     }).join('');
-    html += '<section class="v32-group" aria-labelledby="v36-h-' + g.key + '"><h3 class="secgroup v32-gh" id="v36-h-' + g.key + '">' + v36Esc(g.label) + '</h3>'
+    html += '<section class="v32-group" aria-labelledby="v38-h-' + g.key + '"><h3 class="secgroup v32-gh" id="v38-h-' + g.key + '">' + v38Esc(g.label) + '</h3>'
       + '<ul class="v25rows v32rows">' + items + '</ul></section>';
   });
   return html;
 }
 
-function v36ProfileHtml(h, r) {
-  var name = v36Str(h && h.name);
-  var html = '<div class="v25page v28 v36 v36-profile" id="v36">'
-    + v36Head(r.who, [name, v36Group(r.group).label].filter(Boolean).join(' \u00b7 '))
-    + '<div class="v36-body">' + v36BodyHtml(r, 'data-v36="lib" id="v36-lib"') + '</div>'
-    + '<section class="v32-group" aria-labelledby="v36-onlist"><h3 class="secgroup v32-gh" id="v36-onlist">' + v36W('onList') + '</h3>'
-    + '<div class="v36-wines" role="group" aria-label="' + v36W('onList') + '">'
-    + r.wines.map(function (w) { return '<button type="button" class="v28-chip" id="v36-w-' + v36Esc(w.id) + '" data-v36="wine" data-id="' + v36Esc(w.id) + '">' + v36Esc(w.name) + '</button>'; }).join('')
+function v38ProfileHtml(h, r) {
+  var name = v38Str(h && h.name);
+  var html = '<div class="v25page v28 v38 v38-profile" id="v38">'
+    + v38Head(r.who, [name, v38Group(r.group).label].filter(Boolean).join(' \u00b7 '))
+    + '<div class="v38-body">' + v38BodyHtml(r, 'data-v38="lib" id="v38-lib"') + '</div>'
+    + '<section class="v32-group" aria-labelledby="v38-onlist"><h3 class="secgroup v32-gh" id="v38-onlist">' + v38W('onList') + '</h3>'
+    + '<div class="v38-wines" role="group" aria-label="' + v38W('onList') + '">'
+    + r.wines.map(function (w) { return '<button type="button" class="v28-chip" id="v38-w-' + v38Esc(w.id) + '" data-v38="wine" data-id="' + v38Esc(w.id) + '">' + v38Esc(w.name) + '</button>'; }).join('')
     + '</div></section>';
   return html + '</div>';
 }
 
-function v36ViewHtml() {
-  var h = v36House();
-  var st = v36State();
-  var rows = v36Rows(h);
+function v38ViewHtml() {
+  var h = v38House();
+  var st = v38State();
+  var rows = v38Rows(h);
   if (st.open && h) {
-    var r = v36RowById(h, st.open);
-    if (r) return v36ProfileHtml(h, r);
+    var r = v38RowById(h, st.open);
+    if (r) return v38ProfileHtml(h, r);
     st.open = null;
   }
-  var html = '<div class="v25page v28 v36" id="v36">' + v36Head((h && v36Str(h.name)) || v36W('viewName'), v36W('viewSub'));
-  if (!h) return html + '<p class="v32-line">' + v36W('noHouse') + '</p></div>';
-  if (!rows.length) return html + '<p class="v32-line">' + v36W('noneYet') + '</p></div>';
-  return html + v36ListHtml(h, rows, st) + '</div>';
+  var html = '<div class="v25page v28 v38" id="v38">' + v38Head((h && v38Str(h.name)) || v38W('viewName'), v38W('viewSub'));
+  if (!h) return html + '<p class="v32-line">' + v38W('noHouse') + '</p></div>';
+  if (!rows.length) return html + '<p class="v32-line">' + v38W('noneYet') + '</p></div>';
+  return html + v38ListHtml(h, rows, st) + '</div>';
 }
 
-function v36FocusId(id) {
+function v38FocusId(id) {
   try { var n = document.getElementById(id); if (n && typeof n.focus === 'function') n.focus({ preventScroll: true }); } catch (e) { }
 }
-function v36Pend(mode) { try { if (typeof V32 !== 'undefined' && V32) V32.pend = mode; } catch (e) { } }
-function v36Remember(node) { try { if (typeof v32Remember === 'function') v32Remember(node); } catch (e) { } }
+function v38Pend(mode) { try { if (typeof V32 !== 'undefined' && V32) V32.pend = mode; } catch (e) { } }
+function v38Remember(node) { try { if (typeof v32Remember === 'function') v32Remember(node); } catch (e) { } }
 
 /* Opens the view, on one producer's profile when a component id is given. */
-function v36Open(cid) {
-  var st = v36State();
-  st.open = cid && V36_CID_RE.test(cid) ? cid : null;
+function v38Open(cid) {
+  var st = v38State();
+  st.open = cid && V38_CID_RE.test(cid) ? cid : null;
   if (!st.open) st.g = '';
   try { if (typeof v32PushOpener === 'function') v32PushOpener(); } catch (e) { }
   S._v28edit = false;
   S.view = 'houseproducers';
-  v36Pend('push');
+  v38Pend('push');
   render();
   if (typeof v25FocusMain === 'function') { try { v25FocusMain(); } catch (e) { } }
   return true;
 }
 
-function v36Act(act, node) {
+function v38Act(act, node) {
   var get = function (k) { return node && typeof node.getAttribute === 'function' ? (node.getAttribute(k) || '') : ''; };
-  var st = v36State();
+  var st = v38State();
   switch (act) {
     case 'open': {
       var k = get('data-k');
-      if (!V36_CID_RE.test(k)) return;
-      v36Remember(node);
+      if (!V38_CID_RE.test(k)) return;
+      v38Remember(node);
       st.open = k;
-      v36Pend('push'); render();
+      v38Pend('push'); render();
       if (typeof v25FocusMain === 'function') { try { v25FocusMain(); } catch (e) { } }
       return;
     }
     case 'group': {
       var g = get('data-g');
-      st.g = V36_GROUP_RE.test(g) ? g : '';
-      v36Pend('replace'); render();
-      v36FocusId(st.g ? 'v36-g-' + st.g : 'v36-g-all');
+      st.g = V38_GROUP_RE.test(g) ? g : '';
+      v38Pend('replace'); render();
+      v38FocusId(st.g ? 'v38-g-' + st.g : 'v38-g-all');
       return;
     }
     case 'flash':
-      v36Remember(node);
+      v38Remember(node);
       if (typeof v32StartRun === 'function') v32StartRun(get('data-deck'), { push: true });
       return;
     case 'wine': {
       var id = get('data-id');
-      v36Remember(node);
+      v38Remember(node);
       if (typeof v32OpenWine === 'function') { v32OpenWine(id); return; }
       if (typeof v28State === 'function' && typeof v28Open === 'function') { var vs = v28State(); vs.q = ''; vs.sec = ''; S.view = 'cellar'; v28Open(id, false); }
       return;
     }
     case 'lib':
-      v36Remember(node);
+      v38Remember(node);
       if (typeof v28Act === 'function') v28Act('producer', node);
       return;
     default: return;
   }
 }
 
-function v36Wire(box) {
+function v38Wire(box) {
   if (!box || typeof box.addEventListener !== 'function') return;
   box.addEventListener('click', function (e) {
     var t = e && e.target;
-    var node = t && typeof t.closest === 'function' ? t.closest('[data-v36]') : null;
+    var node = t && typeof t.closest === 'function' ? t.closest('[data-v38]') : null;
     if (!node || node.disabled) return;
     if (typeof e.preventDefault === 'function') e.preventDefault();
-    v36Act(node.getAttribute('data-v36'), node);
+    v38Act(node.getAttribute('data-v38'), node);
   });
 }
 
-function v36View() {
-  var html = v36ViewHtml();
-  if (typeof v32Build === 'function') return v32Build(html, v36Wire);
+function v38View() {
+  var html = v38ViewHtml();
+  if (typeof v32Build === 'function') return v32Build(html, v38Wire);
   var box = document.createElement('div');
   box.innerHTML = html;
-  v36Wire(box);
+  v38Wire(box);
   return box;
 }
 
@@ -881,38 +881,38 @@ function v36View() {
 
 /* A card's two buttons. */
 if (typeof v28Act === 'function') {
-  var _v36Act = v28Act;
+  var _v38Act = v28Act;
   v28Act = function (act, node) {
-    if (act === 'v36flash') {
+    if (act === 'v38flash') {
       var id = node && typeof node.getAttribute === 'function' ? node.getAttribute('data-id') || '' : '';
       if (typeof v32StartRun === 'function') v32StartRun('item-producers:' + id, { push: true, keepOrder: true });
       return;
     }
-    if (act === 'v36all') { v36Open(null); return; }
-    return _v36Act(act, node);
+    if (act === 'v38all') { v38Open(null); return; }
+    return _v38Act(act, node);
   };
 }
 
 /* Our Wine List: Our producers among its buttons. */
 if (typeof v28StudyHtml === 'function') {
-  var _v36StudyHtml = v28StudyHtml;
+  var _v38StudyHtml = v28StudyHtml;
   v28StudyHtml = function () {
-    var html = _v36StudyHtml.apply(this, arguments);
-    if (!html || !v36Rows(v36House()).length) return html;
+    var html = _v38StudyHtml.apply(this, arguments);
+    if (!html || !v38Rows(v38House()).length) return html;
     var at = html.indexOf('<div class="v28-actions">');
     var end = at >= 0 ? html.indexOf('</div>', at) : -1;
     if (end < 0) return html;
-    return html.slice(0, end) + '<button type="button" class="btn small ghost" data-v28="v36all">' + v36W('ourProducers') + '</button>' + html.slice(end);
+    return html.slice(0, end) + '<button type="button" class="btn small ghost" data-v28="v38all">' + v38W('ourProducers') + '</button>' + html.slice(end);
   };
 }
 
 /* The level page's My restaurant: The producers among its quiet links. */
 if (typeof v32RestaurantHtml === 'function') {
-  var _v36RestaurantHtml = v32RestaurantHtml;
+  var _v38RestaurantHtml = v32RestaurantHtml;
   v32RestaurantHtml = function () {
-    var html = _v36RestaurantHtml.apply(this, arguments);
-    if (!html || !v36Rows(v36House()).length) return html;
-    var link = '<button type="button" class="v32quiet" data-go="houseproducers">' + v36W('theProducers') + '</button>';
+    var html = _v38RestaurantHtml.apply(this, arguments);
+    if (!html || !v38Rows(v38House()).length) return html;
+    var link = '<button type="button" class="v32quiet" data-go="houseproducers">' + v38W('theProducers') + '</button>';
     var at = html.indexOf('<div class="v32quietrow">');
     var end = at >= 0 ? html.indexOf('</div>', at) : -1;
     if (end >= 0) return html.slice(0, end) + link + html.slice(end);
@@ -927,12 +927,12 @@ if (typeof v32RestaurantHtml === 'function') {
    producer and no other is that producer, however the list prints its
    name (Duckhorn for Duckhorn Vineyards, Banfi for Castello Banfi); a key
    whose cards reach two answers neither. Read once per list and house. */
-var V36_PK = { rows: null, list: null, map: null };
-function v36ByListKey(h, pk) {
-  var rows = v36Rows(h);
+var V38_PK = { rows: null, list: null, map: null };
+function v38ByListKey(h, pk) {
+  var rows = v38Rows(h);
   var list = (typeof V29_LIST !== 'undefined' && V29_LIST && Array.isArray(V29_LIST.rows)) ? V29_LIST.rows : null;
   if (!pk || !list || !rows.length) return null;
-  if (V36_PK.rows !== rows || V36_PK.list !== list) {
+  if (V38_PK.rows !== rows || V38_PK.list !== list) {
     var byWine = {};
     rows.forEach(function (r) { r.wines.forEach(function (w) { (byWine[w.id] = byWine[w.id] || []).push(r); }); });
     var map = {};
@@ -941,9 +941,9 @@ function v36ByListKey(h, pk) {
       var m = Object.prototype.hasOwnProperty.call(map, x.pk) ? map[x.pk] : (map[x.pk] = []);
       byWine[x.card].forEach(function (r) { if (m.indexOf(r) < 0) m.push(r); });
     });
-    V36_PK = { rows: rows, list: list, map: map };
+    V38_PK = { rows: rows, list: list, map: map };
   }
-  var hit = Object.prototype.hasOwnProperty.call(V36_PK.map, pk) ? V36_PK.map[pk] : null;
+  var hit = Object.prototype.hasOwnProperty.call(V38_PK.map, pk) ? V38_PK.map[pk] : null;
   return hit && hit.length === 1 ? hit[0] : null;
 }
 
@@ -952,12 +952,12 @@ function v36ByListKey(h, pk) {
    label Château d'Issan makes outside Margaux). A list name of two words or
    more that opens the label of a house wine, word for word, is that wine's
    producer; a name whose labels reach two producers answers neither. */
-function v36ByLabel(h, name) {
-  var f = v36Whole(name);
+function v38ByLabel(h, name) {
+  var f = v38Whole(name);
   if (!f || f.split(' ').length < 2) return null;
   var hit = [];
-  v36Rows(h).forEach(function (r) {
-    if (r.wines.some(function (w) { var l = v36Whole(w.wine); return l === f || l.indexOf(f + ' ') === 0; }) && hit.indexOf(r) < 0) hit.push(r);
+  v38Rows(h).forEach(function (r) {
+    if (r.wines.some(function (w) { var l = v38Whole(w.wine); return l === f || l.indexOf(f + ' ') === 0; }) && hit.indexOf(r) < 0) hit.push(r);
   });
   return hit.length === 1 ? hit[0] : null;
 }
@@ -967,9 +967,9 @@ function v36ByLabel(h, name) {
    else the list's own word for its producer (another bottle of the same
    key with a card), so a name the house prints wins over a key, and last
    the list's name as the opening of a house wine's label. */
-function v36ListRowProducer(r) {
-  var h = v36House();
-  var rows = v36Rows(h);
+function v38ListRowProducer(r) {
+  var h = v38House();
+  var rows = v38Rows(h);
   if (!rows.length || !r) return null;
   if (r.card) {
     var hit = null;
@@ -977,17 +977,17 @@ function v36ListRowProducer(r) {
     if (hit) return hit;
   }
   var p = (typeof V29_LIST !== 'undefined' && V29_LIST && V29_LIST.producers) ? V29_LIST.producers[r.pk] : null;
-  var byName = p && v36Str(p.name) ? v36RowByName(h, p.name) : null;
-  return byName || v36ByListKey(h, r.pk) || (p && v36Str(p.name) ? v36ByLabel(h, p.name) : null);
+  var byName = p && v38Str(p.name) ? v38RowByName(h, p.name) : null;
+  return byName || v38ByListKey(h, r.pk) || (p && v38Str(p.name) ? v38ByLabel(h, p.name) : null);
 }
 if (typeof v29DetailHtml === 'function') {
-  var _v36DetailHtml = v29DetailHtml;
+  var _v38DetailHtml = v29DetailHtml;
   v29DetailHtml = function (r) {
-    var html = _v36DetailHtml.apply(this, arguments);
+    var html = _v38DetailHtml.apply(this, arguments);
     var row = null;
-    try { row = v36ListRowProducer(r); } catch (e) { row = null; }
+    try { row = v38ListRowProducer(r); } catch (e) { row = null; }
     if (!row) return html;
-    var btn = '<div class="v28-btnrow v36-listrow"><button type="button" class="btn small gold" data-v29="v36prof" data-k="' + v36Esc(row.id) + '">' + v36W('readProfile') + '</button></div>';
+    var btn = '<div class="v28-btnrow v38-listrow"><button type="button" class="btn small gold" data-v29="v38prof" data-k="' + v38Esc(row.id) + '">' + v38W('readProfile') + '</button></div>';
     var marks = typeof v29W === 'function' ? ['<h4 class="v28-eyebrow">' + v29W('placeHead') + '</h4>', '<h4 class="v28-eyebrow">' + v29W('hereHead') + '</h4>'] : [];
     var at = -1;
     marks.some(function (m) { at = html.indexOf(m); return at >= 0; });
@@ -995,17 +995,17 @@ if (typeof v29DetailHtml === 'function') {
   };
 }
 if (typeof v29Act === 'function') {
-  var _v36V29Act = v29Act;
+  var _v38V29Act = v29Act;
   v29Act = function (act, node, box) {
-    if (act === 'v36prof') {
+    if (act === 'v38prof') {
       var k = node && typeof node.getAttribute === 'function' ? node.getAttribute('data-k') || '' : '';
-      if (!V36_CID_RE.test(k)) return;
+      if (!V38_CID_RE.test(k)) return;
       /* the list's place is kept and its entry pushed, so Back comes back to the open row */
       if (typeof v29Door === 'function') v29Door();
-      v36Open(k);
+      v38Open(k);
       return;
     }
-    return _v36V29Act.apply(this, arguments);
+    return _v38V29Act.apply(this, arguments);
   };
 }
 
@@ -1019,41 +1019,41 @@ if (typeof v29Act === 'function') {
    the card when the door was followed are noted against the card's address
    and opened again on the way back, before codex32 restores the scroll and
    focuses the door: the same card, the same height, the same place. */
-var V36_OPEN = {};
-function v36CardDetails() {
+var V38_OPEN = {};
+function v38CardDetails() {
   try {
     var box = document.getElementById('view');
     return box && typeof box.querySelectorAll === 'function' ? Array.prototype.slice.call(box.querySelectorAll('details')) : [];
   } catch (e) { return []; }
 }
-function v36KeepOpen() {
+function v38KeepOpen() {
   try {
     var st = typeof v28State === 'function' ? v28State() : null;
     if (S.view !== 'cellar' || !st || !st.open || typeof location === 'undefined' || !location) return;
-    var all = v36CardDetails();
+    var all = v38CardDetails();
     var open = [];
     all.forEach(function (d, i) { if (d && d.open) open.push(i); });
-    V36_OPEN[location.href] = { card: st.open, n: all.length, open: open };
+    V38_OPEN[location.href] = { card: st.open, n: all.length, open: open };
   } catch (e) { }
 }
-function v36PutOpen() {
+function v38PutOpen() {
   try {
     if (typeof location === 'undefined' || !location) return;
-    var k = V36_OPEN[location.href];
+    var k = V38_OPEN[location.href];
     var st = typeof v28State === 'function' ? v28State() : null;
     if (!k || S.view !== 'cellar' || !st || st.open !== k.card) return;
-    var all = v36CardDetails();
+    var all = v38CardDetails();
     if (all.length !== k.n) return;
     k.open.forEach(function (i) { if (all[i]) all[i].open = true; });
   } catch (e) { }
 }
 if (typeof v28DoorPush === 'function') {
-  var _v36DoorPush = v28DoorPush;
-  v28DoorPush = function () { v36KeepOpen(); return _v36DoorPush.apply(this, arguments); };
+  var _v38DoorPush = v28DoorPush;
+  v28DoorPush = function () { v38KeepOpen(); return _v38DoorPush.apply(this, arguments); };
 }
 if (typeof v32RestoreScroll === 'function') {
-  var _v36RestoreScroll = v32RestoreScroll;
-  v32RestoreScroll = function () { v36PutOpen(); return _v36RestoreScroll.apply(this, arguments); };
+  var _v38RestoreScroll = v32RestoreScroll;
+  v32RestoreScroll = function () { v38PutOpen(); return _v38RestoreScroll.apply(this, arguments); };
 }
 
 /* =========== the house arriving: this view drawn again ===========
@@ -1062,10 +1062,10 @@ if (typeof v32RestoreScroll === 'function') {
    on a producer's address saw no house until a reload. This view is drawn
    again too: it holds no form to lose. */
 if (typeof v27Redraw === 'function') {
-  var _v36Redraw = v27Redraw;
+  var _v38Redraw = v27Redraw;
   v27Redraw = function () {
     if (typeof S !== 'undefined' && S && S.view === 'houseproducers') { try { render(); } catch (e) { } return; }
-    return _v36Redraw.apply(this, arguments);
+    return _v38Redraw.apply(this, arguments);
   };
 }
 
@@ -1075,55 +1075,55 @@ if (typeof v27Redraw === 'function') {
   if (typeof V32_OWNER !== 'undefined' && V32_OWNER) V32_OWNER.houseproducers = 'home';
   if (typeof V32_PARENT !== 'undefined' && V32_PARENT) V32_PARENT.houseproducers = 'cellar';
   if (typeof V25_UNDER !== 'undefined' && V25_UNDER) V25_UNDER.houseproducers = 'home';
-  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) V25_VIEWS.houseproducers = function () { return v36View(); };
-  if (typeof V25_GO !== 'undefined' && V25_GO) V25_GO.houseproducers = function () { v36Open(null); };
+  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) V25_VIEWS.houseproducers = function () { return v38View(); };
+  if (typeof V25_GO !== 'undefined' && V25_GO) V25_GO.houseproducers = function () { v38Open(null); };
 })();
 
 /* The address: a producer open is a screen of its own (a push), a region
    chosen is the same screen (a replace). */
 if (typeof v32Route === 'function') {
-  var _v36Route = v32Route;
+  var _v38Route = v32Route;
   v32Route = function () {
     if (S.view === 'houseproducers') {
-      var st = v36State();
+      var st = v38State();
       if (st.open) return { view: 'houseproducers', key: 'houseproducers/' + st.open, hash: '#/v/houseproducers/' + st.open };
       return { view: 'houseproducers', key: 'houseproducers', hash: '#/v/houseproducers' + (st.g ? '/g/' + st.g : '') };
     }
-    return _v36Route.apply(this, arguments);
+    return _v38Route.apply(this, arguments);
   };
 }
 /* An address read back: codex32 parses #/v/houseproducers/{arg}; the arg is put back here. */
 if (typeof v32Apply === 'function') {
-  var _v36Apply = v32Apply;
+  var _v38Apply = v32Apply;
   v32Apply = function (r, state) {
-    var out = _v36Apply.apply(this, arguments);
+    var out = _v38Apply.apply(this, arguments);
     if (r && r.view === 'houseproducers') {
-      var st = v36State();
+      var st = v38State();
       var a = String(r.arg || '');
       var m = /^g\/([a-z-]+)$/.exec(a);
-      if (V36_CID_RE.test(a)) st.open = a;
-      else { st.open = null; st.g = m && V36_GROUP_RE.test(m[1]) ? m[1] : ''; }
+      if (V38_CID_RE.test(a)) st.open = a;
+      else { st.open = null; st.g = m && V38_GROUP_RE.test(m[1]) ? m[1] : ''; }
     }
     return out;
   };
 }
 /* Back at depth 0: a profile climbs to the list (its region kept), the list to Our Wine List. */
 if (typeof v32ParentRoute === 'function') {
-  var _v36ParentRoute = v32ParentRoute;
+  var _v38ParentRoute = v32ParentRoute;
   v32ParentRoute = function () {
     if (S.view === 'houseproducers') {
-      var st = v36State();
+      var st = v38State();
       if (st.open) return { view: 'houseproducers', arg: st.g ? 'g/' + st.g : '' };
       return { view: 'cellar' };
     }
-    return _v36ParentRoute.apply(this, arguments);
+    return _v38ParentRoute.apply(this, arguments);
   };
 }
 if (typeof v25MainName === 'function') {
-  var _v36MainName = v25MainName;
+  var _v38MainName = v25MainName;
   v25MainName = function () {
-    if (S && S.view === 'houseproducers') return v36W('viewName');
-    return _v36MainName.apply(this, arguments);
+    if (S && S.view === 'houseproducers') return v38W('viewName');
+    return _v38MainName.apply(this, arguments);
   };
 }
 /* A reload on the view: codex32 read the address before this view was
@@ -1143,11 +1143,11 @@ if (typeof v25MainName === 'function') {
 (function () {
   if (typeof document === 'undefined' || !document || typeof document.createElement !== 'function') return;
   var css = document.createElement('style');
-  css.id = 'v36-style';
+  css.id = 'v38-style';
   css.textContent = [
-    '.wrap .v36-wines{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}',
-    '.wrap .v36-wines .v28-chip{white-space:normal;text-align:left;max-width:100%}',
-    '.wrap .v36-body{margin-top:6px}'
+    '.wrap .v38-wines{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}',
+    '.wrap .v38-wines .v28-chip{white-space:normal;text-align:left;max-width:100%}',
+    '.wrap .v38-body{margin-top:6px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();

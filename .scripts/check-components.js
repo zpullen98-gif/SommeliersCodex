@@ -65,7 +65,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
   'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js',
-  'codex30.js', 'codex32.js', 'codex35.js', 'codex36.js', 'boot.js'];
+  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -366,7 +366,7 @@ async function main() {
   const index = path.join(ROOT, 'index.html');
   const sw = path.join(ROOT, 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
-    check('index.html loads codex35 after codex33 and codex34 and before boot', /codex33\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex34\.js\?v=\d+"><\/script>\s*)?<script src="js\/codex35\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex36\.js\?v=\d+"><\/script>\s*)?<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
+    check('index.html loads codex35 after codex33 and codex34 and before boot', /codex33\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex34\.js\?v=\d+"><\/script>\s*)?<script src="js\/codex35\.js\?v=\d+"><\/script>\s*(?:<script src="js\/codex38\.js\?v=\d+"><\/script>\s*)?<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
     check('sw.js lists codex35.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex35.js'") > 0);
   }
 

@@ -35,7 +35,7 @@
 
    A record may carry aka: the names a label or a wine list prints for the
    same estate, each one the record's own text already gives (a trap, the
-   holdings) or the house's profile of it names. codex36 reads them to link
+   holdings) or the house's profile of it names. codex38 reads them to link
    a house producer to its record; nothing asks a question of them.
 
    By country:

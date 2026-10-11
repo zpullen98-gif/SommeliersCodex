@@ -100,11 +100,11 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
        do, and it wraps codex28's card and act and codex32's decks at load,
        drawing nothing with no OOT and no pathname. */
     'codex35.js',
-    /* codex36 owns no store either: its producer grades go through
+    /* codex38 owns no store either: its producer grades go through
        statRecord as a word's do, and it wraps codex28's card, act and study
        view, codex29's rows, codex32's decks and router at load, drawing
        nothing with no OOT and no pathname. */
-    'codex36.js']);
+    'codex38.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

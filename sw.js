@@ -103,7 +103,7 @@ const ASSETS = [
   './js/codex33.js',
   './js/codex34.js',
   './js/codex35.js',
-  './js/codex36.js',
+  './js/codex38.js',
   './js/boot.js',
   './fonts/cinzel-normal-400-900-latin.woff2',
   './fonts/cinzel-normal-400-900-latin-ext.woff2',
