@@ -710,7 +710,11 @@ async function main() {
   const index = path.join(ROOT, 'index.html');
   const sw = path.join(ROOT, 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
-    check('index.html loads codex38 after codex35 and before boot, with ?v=', /<script src="js\/codex35\.js\?v=\d+"><\/script>\s*<script src="js\/codex38\.js\?v=\d+"><\/script>\s*<script src="js\/boot\.js/.test(fs.readFileSync(index, 'utf8')));
+    check('index.html loads codex38 after codex35 (and any later layers) and right before boot, with ?v=', (() => {
+      const scripts = [...fs.readFileSync(index, 'utf8').matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
+      const at = scripts.indexOf('codex38.js');
+      return at > scripts.indexOf('codex35.js') && scripts.indexOf('codex35.js') >= 0 && scripts[at + 1] === 'boot.js' && scripts.filter((n) => n === 'codex38.js').length === 1;
+    })());
     const swSrc = fs.readFileSync(sw, 'utf8');
     check('sw.js lists codex38.js in ASSETS after codex35.js', swSrc.indexOf("'./js/codex38.js'") > swSrc.indexOf("'./js/codex35.js'") && swSrc.indexOf("'./js/codex35.js'") > 0);
     const n = Number((swSrc.match(/const CACHE = '(?:oot-)?codex-v(\d+)';/) || [])[1]);

@@ -14,6 +14,10 @@ from pathlib import Path
 
 
 class NoCacheHandler(SimpleHTTPRequestHandler):
+    # Windows registry mappings can label WebP as application/octet-stream,
+    # which the optional teaching-image cache correctly refuses. Match Pages.
+    extensions_map = {**SimpleHTTPRequestHandler.extensions_map, '.webp': 'image/webp'}
+
     # SimpleHTTPRequestHandler answers HTTP/1.0 by default, closing the
     # connection after every response. Chrome refuses to register a service
     # worker over that, with only "an unknown error occurred when fetching

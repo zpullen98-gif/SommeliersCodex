@@ -36,10 +36,10 @@ async function ask(d, relative) {
 }
 (async () => {
   const d = device(), items = d.api.entries();
-  check('six reviewed teaching guides with unique ids', items.length === 6 && new Set(items.map(x => x.id)).size === 6);
+  check('fourteen reviewed teaching guides with unique ids', items.length === 14 && new Set(items.map(x => x.id)).size === 14);
   for (const item of items) {
     check(item.id + ': complete accessible metadata', d.api.entry(item.id) && item.alt.length > 60 && item.caption.length > 60 && item.key.every(x => x.length === 2 && x.every(Boolean)));
-    check(item.id + ': primary source links', item.sources.every(x => /^https:\/\/(?:www\.)?(?:christies.com|wsetglobal.com|awri.com.au|inspection.canada.ca|plantgrape.fr|wineaustralia.com|bourgogne-wines.com|verallia.com|champagne.fr|wset-uat-integr8.azurewebsites.net)\//.test(x.url)));
+    check(item.id + ': primary source links', item.sources.every(x => /^https:\/\/(?:www\.)?(?:christies.com|wsetglobal.com|awri.com.au|inspection.canada.ca|plantgrape.fr|wineaustralia.com|bourgogne-wines.com|verallia.com|champagne.fr|mastersommeliers.org|brennansneworleans.com|resources.escoffier.edu)\//.test(x.url)));
     const asset = path.join(ROOT, item.file);
     if (REQUIRE_ART) check(item.id + ': release art exists', fs.existsSync(asset));
     if (fs.existsSync(asset)) {
@@ -69,7 +69,7 @@ async function ask(d, relative) {
   check('nested grape image is an exact approved asset', d.api.match(new URL(pinot.file, d.base).href, d.base) === pinot && !d.api.match(new URL(pinot.file + '?other=1', d.base).href, d.base));
   const assets = vm.runInContext('ASSETS', d.c);
   check('pictures are not in atomic precache', !assets.some(x => /assets\/teach\/|atlas-zoom-v/.test(x)));
-  check('text, UI and policy are precached', ['data-teaching-images', 'teaching-cache', 'codex33', 'codex34'].every(x => assets.includes('./js/' + x + '.js')));
+  check('text, UI and policy are precached', ['data-teaching-images', 'teaching-cache', 'codex33', 'codex34', 'data-visual-studies', 'codex36', 'data-culinary-studies', 'codex37'].every(x => assets.includes('./js/' + x + '.js')));
   const first = items[0], url = new URL(first.file, d.base).href;
   await ask(d, first.file);
   const teach = d.api.cacheName('teach', d.base);

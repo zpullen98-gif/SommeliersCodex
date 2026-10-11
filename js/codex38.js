@@ -406,6 +406,20 @@ if (typeof v35Groups === 'function') {
       return out;
     }).filter(function (g) { return g.components.length; });
   };
+  /* The wine's own component deck keeps every kept component, the producer's
+     among them: the trim above is for what the card draws, and the deck is
+     built from the untrimmed groups, in the same order codex35 deals them. */
+  if (typeof v35ItemCards === 'function' && typeof v35Cards === 'function') {
+    v35ItemCards = function (h, id) {
+      if (!h || !Array.isArray(h.wines) || !h.wines.some(function (w) { return w && w.id === id; })) return [];
+      var cards = v35Cards(h, 'all');
+      var out = [];
+      _v38Groups(h, id).forEach(function (g) {
+        g.components.forEach(function (c) { cards.forEach(function (x) { if (x.id === c.id) out.push(x); }); });
+      });
+      return out;
+    };
+  }
 }
 
 /* =========== the cards =========== */
