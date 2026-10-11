@@ -15,7 +15,8 @@ caption and versioning contract, separate future zoom-map collection and source
 checks. Existing atlas-v2 geometry, joins and offline map keys remain unchanged.
 Source worker is `codex-v89`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex36: codex34 is the colour and bottle-shape layer, codex35 the components layer).
+(codex37: codex34 is the colour and bottle-shape layer, codex35 the components layer, codex36 the
+producers layer).
 
 `js/codex34.js` adds colour/rim reading at Sight in Study the grid, bottle shapes
 at Compendium > Winemaking and beside the house's full-list door, and the Pinot
@@ -141,7 +142,9 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   `v32Query`), so a Back redraws the results before the scroll returns; the opener of a move is remembered by id or,
   for codex28's rows, by `data-v28`/`data-id` (`v32FocusKey`), and Back focuses it. codex28's and codex29's
   popstate listeners are REMOVED at load and `v28Push`/`v28Replace` only mark the next render, so one action makes one
-  entry. Back (`#v32-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home:
+  entry. Back (`#v32-back`, sticky, moved to x 64 once stuck) is drawn by the outermost render on every view but home;
+  stuck is read from the sentinel above it (`v32StuckNow`) on every scroll, after the place is put back and by the
+  IntersectionObserver, so a jump scroll never paints a frame with the stuck Back under the suite's badge:
   depth above 0 is `history.back()`, depth 0 replaces to `V32_PARENT`. Every older "Back to ..." button is stripped
   from `#view` as it is drawn (`V32_OLD_BACK`). Gate: `node .scripts/check-nav.js [jsDir] [--mutations]`.
 - `js/codex35.js`: **what a wine is made of, and Compare with** (the component deep dive, 5 October 2026; WorldTable
@@ -154,6 +157,49 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   `components`, `components:{kind}` and `item-components:{id}` (dealt in the card's order; grades under
   `h-{id}-component` through `v27RecordHouse`). `#ref={grape|producer|primer}` is read once at load and opened on the
   first render (the outermost `render`). Gate: `node .scripts/check-components.js [jsDir]`.
+- `js/codex36.js`: **who makes it** (the producers deep dive, section 3, October 2026). A component's kept producer
+  mark (type, who, where, founded, history, facts, notes, sayIt, askKitchen) whose `itemIds` reach a house wine is a
+  wine producer (`v36Rows`, memoised on the house object; the kitchen's and the bar's producers never show here). On
+  the card, above codex35's What it's made of, Who makes it: each a closed `v28-q` disclosure (where, founded, say it,
+  facts, the story in paragraphs, notes for the floor, Ask the sommelier only when `askKitchen` holds a question) and
+  "In the Codex's producers" through codex28's `producer` door when `WINE_PRODUCERS` holds the house. That match is
+  the folded whole name (the French et read as the and the fold makes of &, so Bouchard Père & Fils is Bouchard Père
+  et Fils), else the same name with the estate word at the front taken off (Domaine, Château, Maison, Weingut and
+  kin, the family words Famille, Familia and Familie among them, with de, du or des): Fichet is never Jean-Philippe Fichet, Comtes Lafon never Les Héritiers du Comte Lafon,
+  Leflaive & Associés never Domaine Leflaive; a bare name two records share answers neither. A record also answers
+  to its name up to an aside (Do Ferreiro (Gerardo Méndez) is Do Ferreiro, bare) and to the names in its optional
+  `aka` list, each one a name its own text or the house's profile gives the estate (Thierry et Pascale Matrot for
+  Domaine Matrot); 197 of the 200 Brennan's wine producers link, the three left being wines (`w-`) by design. Each
+  card door carries its own id (`v36-lib-{c-id}`). Flash these producers (`item-producers:{id}`, in the card's order)
+  and All producers under it. A producer is told once on a card: What it's made of (a `v35Groups` wrapper) leaves out
+  the component of a producer Who makes it draws (its explanation is the opening of the profile's story) and a story
+  under that producer's own name, unless it carries a film; their cards stay in the component decks. A door followed
+  from a card (`v28DoorPush`) notes the card's open disclosures against its address and Back (`v32RestoreScroll`)
+  opens them again before the scroll returns, so the page is as tall as it was and the pressed door takes focus. The view `houseproducers` (Our
+  Wine List's Our producers, the level page's quiet The producers, `V25_GO.houseproducers`) is titled with the house's
+  name, grouped by the region of each producer's first wine (`V36_GROUPS`: Champagne, Burgundy, Bordeaux, Rhône, the
+  rest of France, Germany and Austria, Italy, Spain and Portugal, the United States, the rest of the world), region
+  chips filter in place; a producer opens its profile with its wines as chips. Router: `v32Route`, `v32Apply` and
+  `v32ParentRoute` are wrapped and `V32_OWNER`/`V32_PARENT` gain the view (owner home, parent cellar):
+  `#/v/houseproducers/{c-id}` is a push, `#/v/houseproducers/g/{region}` a replace, and a reload on the view is read
+  again at load; `v27Redraw` is wrapped so the view is drawn again when the house lands (a first visit on a
+  producer's address). codex29's full list rows gain Read the full profile (the row's own card first, else its
+  producer by the same name rule over the house's names (each wine's producer read whole and up to its aside, so
+  Pazo das Bruxas (Familia Torres) answers to Pazo das Bruxas) and its Codex record's, else the list's own key: the
+  other bottles of the row's producer key whose cards reach one house producer and no other, `v36ByListKey`; Duckhorn
+  for Duckhorn Vineyards, Banfi for Castello Banfi; else the list's name, two words or more, as the opening of a house
+  wine's label, `v36ByLabel`: Moulin d'Issan is Château d'Issan's whatever the vintage). Every one of the fourteen
+  glasses offers its producer's profile. Decks `producers`, `producers:{region}`, `item-producers:{id}`
+  on codex32's card screen, the engine's `buildFlashcards` producer cards (made here by the same rule for an older
+  engine), each card graded on its own under `h-{component id}-producer-{n}` (the Table's card-producer-{n}), so a
+  deck's learnt count is the cards answered; a group Who makes our wines on the Flashcards root under the house. `V27_CELLAR_KINDS`
+  gains four kinds dealt by the engine over views (`v36ProducerView`: only the wines a kept producer reaches, each
+  named without its maker, stems that two producers would share dropped and two wines of the same producers that
+  fold to one stem kept once, so the glass and the bottle of one Champagne are never two options; `v36PourView`: each such wine named by its
+  producer, for the first pick round): producerOf, producerWhere, producerDish, producerPour, recorded under
+  `h-{item id}-{key}`. Nothing is drawn with no OOT or no wine producer. Gate:
+  `node .scripts/check-producers-house.js [jsDir]`, on a fixture built from the shipped pack (its wine producers
+  taken off, Domaine Leflaive, Domaine Fichet and Maison Louis Jadot under two names put on, two more for the quiz).
 - `sw.js` — cache-first service worker, explicit precache list
 
 ## The four-level engine (codex7.js)
@@ -208,7 +254,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v89`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v93`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -227,7 +273,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex35.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex37.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
