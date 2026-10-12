@@ -1,13 +1,13 @@
-"""Rank II rewrite - Wine Fundamentals (32 questions: 10 MC, 22 short answer).
+"""Village rewrite - Wine Fundamentals (32 questions: 10 MC, 22 short answer).
 
 Certified level, and deliberately the MECHANISM rather than the vocabulary. Rank
 I's Viticulture & Winemaking says sulphur dioxide protects wine; this asks why a
-wine at pH 3.8 needs more of it than the same wine at pH 3.3. Rank I's Tasting &
+wine at pH 3.8 needs more of it than the same wine at pH 3.3. Regionale's Tasting &
 Service says a corked bottle smells of damp cardboard; this asks how a cleaning
 product sprayed on cellar timber years earlier became the molecule that does it.
-Rank II Terroir owns the physics of climate and soil, Rank I Winemaking
+Village Terroir owns the physics of climate and soil, Regionale Winemaking
 Techniques owns the named cellar operation and what it changes in the glass, and
-Rank II Service & Hospitality owns the fault at the table and the guest's
+Village Service & Hospitality owns the fault at the table and the guest's
 recourse. What is left, and what is written here, is the chemistry: which
 molecule, by what route, and what measurement a cellar reads to know.
 
@@ -91,7 +91,7 @@ the sentence in front of the student rather than being the misconception the
 question tests.
 
 Facts are restricted to ones that do not drift: reaction pathways, dissociation
-behaviour, molecular structure and long-settled analytical practice. The three
+behaviour, molecular structure and long-settled analytical method. The three
 numbers that appear - the tenfold decade of the pH scale, the roughly even split
 of sugar's weight between ethanol and carbon dioxide, and the seventeen grams
 per litre of sugar behind one per cent of alcohol - are arithmetic and
@@ -155,7 +155,7 @@ BANK = [
        "The total weight of acid the wine contains",
        "The share of the acidity contributed by the volatile acids",
        "The proportion of the acid that has already precipitated"], 0,
-      "A titration neutralises every acid group in the sample and reports the total, whether those groups were doing anything or not. The meter reports only the hydrogen ions loose in solution, and that is the number that governs microbial stability, colour and how hard the preservative works, which is why a wine can be generously acidic on paper and defenceless in practice."),
+      "A titration neutralises every acid group in the sample and reports the total, whether those groups were doing anything or not. The meter reports only the hydrogen ions loose in solution, and that is the number that governs microbial stability, colour and how hard the preservative works, which is why a wine can be generously acidic on paper and defenceless in the cellar."),
     SA("Titratable acidity, pH and what each measures",
        "A hot-climate red comes back from the laboratory with respectable total acidity and a pH of 3.9, and the cause is a cation the vine drew out of the soil and packed into the fruit. Name that element.",
        "Potassium",
@@ -199,7 +199,7 @@ BANK = [
        "Dissolved more pigment out of the suspended solids",
        "Bleached the brown compounds that had been masking it",
        "Bound the pigment onto tannin and deepened the hue"], 0,
-      "Anthocyanins exist as several forms in equilibrium, and only one of them is strongly red; acid conditions push the balance toward it and a rising pH pushes it back toward colourless and blue-tinged forms. This is why a high-pH red looks dull and slightly blue however much pigment it holds, and why acidification is a colour decision as much as a taste one."),
+      "Anthocyanins exist as several forms in equilibrium, and only one of them is strongly red; acid conditions push the balance towards it and a rising pH pushes it back towards colourless and blue-tinged forms. This is why a high-pH red looks dull and slightly blue however much pigment it holds, and why acidification is a colour decision as much as a taste one."),
     SA("Phenolics, pigment and tannin",
        "Twenty years turn a red paler and softer at once, as pigment and tannin join into ever larger molecules that eventually fall out as sediment. Name that reaction.",
        "Polymerisation",
@@ -218,7 +218,7 @@ BANK = [
         "condensation and polymerisation", "polymerised", "polymerized",
         "polymerisation reaction", "polymerization reaction",
         "tannin polymerisation and precipitation"],
-       "It takes a molecule with several points of attachment to bind the proteins that lubricate the mouth, so it is the mid-sized tannins that grip hardest and the single units that are merely bitter. Keep joining them and two things happen at once: pigment locks onto the chain and blunts its reactivity toward those proteins, and the chain eventually grows past the size at which it stays in solution and drops out of the wine altogether. The pigment goes with it, which is why softening and fading are one process rather than two, and why the deposit in an old bottle is coloured.",
+       "It takes a molecule with several points of attachment to bind the proteins that lubricate the mouth, so it is the mid-sized tannins that grip hardest and the single units that are merely bitter. Keep joining them and two things happen at once: pigment locks onto the chain and blunts its reactivity towards those proteins, and the chain eventually grows past the size at which it stays in solution and drops out of the wine altogether. The pigment goes with it, which is why softening and fading are one process rather than two, and why the deposit in an old bottle is coloured.",
        ex=True),
     SA("Phenolics, pigment and tannin",
        "Condensed tannin is a chain of repeating flavan-3-ol units, and a single one of them free in the wine tastes bitter rather than astringent. Name that unit.",
@@ -250,7 +250,7 @@ BANK = [
     Q("Sugar into alcohol",
       "A fermenting vat gets measurably lighter as it works, because sugar leaves it as two products and only one of them stays in the wine. Which figure comes closest to the share of the sugar's weight that departs as gas?",
       ["About half of it",
-       "Almost all of it, since the gas escapes and the liquid stays",
+       "Nearly all of it",
        "About a quarter of it",
        "Under a tenth"], 0,
       "A molecule of sugar gives two of ethanol and two of carbon dioxide, and the two products come out at roughly the same weight, so close to half the sugar leaves the building. That is also why an enclosed fermentation hall is genuinely dangerous and why a sealed tank must be vented: the gas is heavy, invisible and produced by the tonne."),
@@ -274,7 +274,7 @@ BANK = [
     Q("Sulphur dioxide: free, bound and molecular",
       "A tech sheet gives total sulphur dioxide at 110 milligrams per litre and free at 28, and the winemaker says the missing 82 is gone for good. What has happened to it, and why can it not be recovered?",
       ["It has combined with carbonyl compounds the ferment left behind, and almost none of it returns",
-       "It has escaped as gas through the bung, and the only remedy is to top the barrel up more often than this cellar has been doing",
+       "It has escaped as gas through the bung, which closer topping up would have prevented",
        "It has been consumed by the yeast as a nutrient and turned into cell material during the ferment",
        "It has settled into the lees and is racked away"], 0,
       "Sulphur dioxide reacts with several compounds a ferment leaves behind, and the strongest of those bonds is effectively permanent: that sulphur neither preserves nor can be counted on. The weaker adducts, on pigment and on the keto acids, hand a little back as the free fraction is used up, which is why bound sulphur is discounted rather than ignored. A wine that binds heavily needs a larger total addition to reach the same free reading, which is why dirty or rot-affected fruit is expensive in sulphur long before anyone tastes the wine."),
@@ -340,8 +340,8 @@ BANK = [
     # --------------------------------------- Oxygen given and oxygen taken (3) --
     Q("Oxygen given and oxygen taken",
       "Vitamin C goes into a white at bottling as an oxygen scavenger, and every textbook warns against using it in a wine short of sulphur dioxide. What is the danger?",
-      ["Scavenging leaves hydrogen peroxide behind, which does the worse damage",
-       "It strips the colour out of a white within days of bottling and leaves it looking tired",
+      ["It leaves hydrogen peroxide behind, which does worse damage",
+       "It strips the colour out of a white within days of bottling",
        "It feeds any yeast that survived the filtration",
        "It binds whatever free sulphur dioxide is left"], 0,
       "Ascorbic acid takes up oxygen readily, and the product of that reaction is a peroxide that goes on to oxidise the wine faster than the oxygen it removed would have. Sulphur dioxide mops the peroxide up, so the pair are used together or not at all, and a bottle dosed with the vitamin alone can brown within months."),
@@ -383,21 +383,21 @@ BANK = [
        ["4 ethylphenol", "ethylphenol", "4 ethyl phenol", "ethyl phenol", "4ep",
         "4 ep", "four ethylphenol", "para ethylphenol",
         "4 ethylphenol 4 ep", "4 ep 4 ethylphenol"],
-       "The yeast decarboxylates a hydroxycinnamic acid that every red already carries and then reduces the product, and the analysis is far more reliable than a plate count because the cells can be scarce while the compound is not. Its partner reads as smoke and clove rather than farmyard, and the ratio between the two is roughly constant, which is why a laboratory can report one figure and a cellar can act on it.",
+       "The yeast decarboxylates a hydroxycinnamic acid that every red already carries and then reduces the product, and the analysis is far more reliable than a plate count because the cells can be scarce while the compound is not. Its partner, 4-ethylguaiacol, reads as smoke and clove rather than farmyard, and because the balance between the two follows the precursors in the grape it shifts from one variety to another, which is why a laboratory usually reports both.",
        ex=True),
     Q("The chemistry of the faults",
       "Vinegar and nail varnish arrive together on a red left in an ullaged barrel, and the laboratory reports an acid and its ethyl ester side by side. Which organism made them, and out of what?",
-      ["Acetobacter, from ethanol and air",
-       "Lactic acid bacteria, out of the last grams of residual sugar left in the barrel",
+      ["Acetobacter, out of ethanol and oxygen",
+       "Lactic acid bacteria, out of residual sugar",
        "Brettanomyces, working on the wine's glycerol",
-       "Wine yeast, out of the sulphur compounds sitting in the lees"], 0,
+       "Wine yeast, out of sulphur compounds in the lees"], 0,
       "Acetobacter and its relatives need oxygen, so the fault is a storage failure rather than a fermentation one: a barrel left short, a tank with a leaking valve, a cap allowed to dry out. The ester that smells of solvent is formed afterwards from the acid and the wine's own alcohol, which is why the two markers climb together and why the solvent note is often the first thing a taster catches."),
     SA("The chemistry of the faults",
        "A length of copper wire dropped into a tank that smells of rotten eggs clears the smell within minutes, leaving a black precipitate behind. Name the compound the copper has taken out.",
        "Hydrogen sulphide",
        ["hydrogen sulphide", "hydrogen sulfide", "h2s", "hydrogen sulphide h2s",
         "hydrogen sulfide h2s"],
-       "Copper and sulphide form an insoluble black salt that drops out of solution, which is the whole of the trick. The treatment is far less reliable than it looks, because the heavier thiols and disulphides that give struck rubber and drains are not removed the same way and some of them are only masked, so a trial is run on a bench sample and the copper left in the wine is capped by law."),
+       "Copper and sulphide form an insoluble black salt that drops out of solution, which is the whole of the trick. The treatment is far less reliable than it looks, because once thiols have paired up into disulphides, which smell of cabbage and drains, copper no longer takes them out, and they can later split back into the thiols. A trial is therefore run on a bench sample first, and the copper left in the wine is capped by law."),
     SA("The chemistry of the faults",
        "Left standing under a retailer's fluorescent tubes in clear glass, a rose picks up cooked cabbage and wet wool within weeks, and the reaction starts from a vitamin the wine carries. Name that fault.",
        "Lightstrike",
@@ -408,11 +408,11 @@ BANK = [
     # ---------------------------------------- What a bottle does afterwards (2) --
     Q("What a bottle does afterwards",
       "Fifteen years under screwcap leave a Riesling honeyed and complex, and the total oxygen admitted over that time would not fill a teaspoon. What does that establish about maturation in glass?",
-      ["Most of it is rearrangement among compounds already in the wine, not reaction with air",
+      ["Most of it is chemistry within the wine, needing no air",
        "Oxygen must be passing through the glass itself",
        "The wine had to have been oxidised deliberately before bottling",
        "A screwcap admits far more oxygen than a cork does over that span"], 0,
-      "Aroma compounds sit in a young wine bound to sugars and hidden, and the wine's own acidity slowly cuts them loose without any oxygen involved; acids and alcohols also drift toward an equilibrium of esters over years. Oxygen matters at the margin and matters enormously once it is excessive, but the honeyed development of a well-sealed white is a rearrangement of what was already in the bottle."),
+      "Aroma compounds sit in a young wine bound to sugars and hidden, and the wine's own acidity slowly cuts them loose without any oxygen involved; acids and alcohols also drift towards an equilibrium of esters over years. Oxygen matters at the margin and matters enormously once it is excessive, but the honeyed development of a well-sealed white is a rearrangement of what was already in the bottle."),
     SA("What a bottle does afterwards",
        "Sun exposure in the vineyard and years in bottle together build the petrol note of a mature Riesling out of carotenoid precursors laid down in the berry. Give the name of the compound responsible, or its usual abbreviation.",
        "TDN",

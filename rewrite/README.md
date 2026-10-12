@@ -46,9 +46,12 @@ changes completely:
 | `build.py` | Driver — `py rewrite/build.py r1_bordeaux`, or `--all` |
 | `manifest.py` | Progress across all 67 categories, and what is largest next |
 | `check-similarity.py` | Multi-test similarity against the imported bank — `--all` also works |
-| `check-ids.py` | Did an edit move a question id? Stems are the identity, so this is what turns "I only touched options" into something checkable. Run it after any bulk pass |
-| `check-cross-category.py` | The rewritten categories against EACH OTHER. Takes no arguments |
+| `check-ids.py` | Did an edit move a question id? Stems are the identity, so this is what turns "I only touched options" into something checkable. Run it after any bulk pass. `--logged <applied file>` accepts a move only when the file's `movedIds.rows` names that exact old and new id for that module; any other move still fails |
+| `check-regression.py` | Did an edit make a correct answer wrong? Grades the accept list at the reference commit against the current question. `--logged <applied file>` accepts a lost answer only when the file's `revokedProbes` names that exact string on that question; any other still fails |
+| `check-cross-category.py` | The rewritten categories against EACH OTHER. Takes no arguments. `REVIEWED` holds the human verdicts on pairs already read, keyed by both ids, so a reworded stem puts its pair back in front of a reader; only an unread pair fails |
 | `build-preview.py` | Bundles every rewritten category into `preview-bank.js` for `?rewrite` |
+| `build-primers.py` | Assembles the study chapters in `primers/` into `js/data-primers-intro.js` |
+| `check-primer-similarity.py` | The rewritten chapters against the imported ones, read out of git at `8d535c8^` (`--ref` or `OOT_PRIMER_REF` to change it) |
 
 `ACCEPTED` records a human verdict so a reviewed false positive is not
 re-litigated every run. Adding to it is a review decision, never a way to quiet
@@ -828,6 +831,25 @@ been the stalest line in this file twice now, which is why it no longer lists th
 **The imported bank no longer ships**, so `check-similarity.py` reads it out of git at `0ecd424`,
 the last commit that carried it. Set `OOT_IMPORTED_REF` to compare against a different one. Pointing
 it at the working tree would compare the rewrite against itself and report 1.000 on every question.
+
+The study chapters went the same way. `js/data-primers-intro.js` has held the rewrite itself since
+`8d535c8`, so `check-primer-similarity.py`, which used to read that file from the working tree, compared
+the chapters with themselves and reported 1.000 on every one, a pass that could never fail and a flag
+that could never clear. It now reads the imported chapters out of git at `8d535c8^`, the last commit
+that carried them; `--ref <commit>` or `OOT_PRIMER_REF=<commit>` names another, and it refuses a ref
+whose file is the rewrite (its header says ORIGINAL WORK) rather than report the false 1.000. The
+thresholds are unchanged: a ratio of 0.60, a shared run of eight words, any shared sentence of six.
+Measured at the review edition (11 October 2026): 39 chapters, maximum ratio 0.227, longest shared
+run 6 words, no shared sentence, nothing to review.
+
+**Until an edition is committed, `check-ids.py` and `check-regression.py` exit 1 against HEAD** by
+design: every reworded stem is a moved id and every corrected key a lost answer. An edition that
+logs them runs both with `--logged .scripts/review/applied-rewrite.json`, which accepts exactly the
+moves named old to new in `movedIds.rows` and exactly the strings named per question in
+`revokedProbes`, and still fails on anything else. The default run is unchanged, and once the edition
+is committed both pass against the new HEAD with no flag (the logged rows then read as notes). The
+review edition measured: 52 moves and 54 revoked answers, each logged; 10 cross-category pairs, each
+read and given a verdict in `check-cross-category.py`'s `REVIEWED`.
 
 | Bank | File | Questions | Categories |
 |---|---|---|---|

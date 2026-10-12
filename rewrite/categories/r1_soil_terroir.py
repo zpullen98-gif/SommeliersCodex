@@ -1,4 +1,4 @@
-"""Rank I rewrite - Soil & Terroir (50 questions, all multiple choice).
+"""Regionale rewrite - Soil & Terroir (50 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -10,10 +10,10 @@ and what a stone or a shade of colour does to the warmth and the light around
 the fruit.
 
 Two neighbours crowd this category and the fences were drawn before a word was
-written. Rank II "Terroir: Climate & Soil" sits above it and owns the physics:
+written. Village "Terroir: Climate & Soil" sits above it and owns the physics:
 scales of climate, the metrics that separate climate models, cold-air drainage,
 water stress and vigour, rootstock as a soil decision, and the argument about
-what terroir explains. Rank I "Viticulture & Winemaking" owns the general soil
+what terroir explains. Regionale "Viticulture & Winemaking" owns the general soil
 concepts in its "Soil and site" block. What is left, and what this category
 takes, is the ground itself: what each material physically does, and how to read
 it off a vineyard floor before anyone names it for you.
@@ -33,7 +33,7 @@ about: the soil arrives as the answer, reached from a handful of earth, a trench
 wall, a morning after a storm.
 
 Facts are restricted to ones that do not drift. Geology, soil physics and long
-settled practice carry the weight; there are no volumes, no owners and no
+settled custom carry the weight; there are no volumes, no owners and no
 rankings.
 """
 
@@ -277,16 +277,15 @@ BANK = [
       ["Roots cannot get through the pan, and water sits on it instead of draining away",
        "Roots are driven deeper to escape it, which generally improves the wine",
        "Very little, since a vine's roots grow only in the top few centimetres",
-       "It raises the vine's vigour, since a firm bed gives the roots something to anchor against"], 0,
+       "It raises the vine's vigour, since a firm bed anchors the roots"], 0,
       "Compaction squeezes the air out of a soil, and roots need that air as much as they need water. It is worst on wet clay and on the headlands where machinery turns, and undoing it means ripping the ground open, which is far more disruptive than avoiding it in the first place."),
     Q("Looking after the ground",
       "Decayed plant and animal material worked into a soil binds the fine particles into crumbs and holds several times its own weight in water. What is that fraction called?",
-      ["Humus, the organic matter of the soil", "Active lime",
-       "The clay fraction", "The parent rock"], 0,
-      "Organic matter is what turns dust into structure: it glues particles into crumbs so the soil can hold air and water at once rather than one or the other. It also feeds the fungi and bacteria that make nutrients available, and it is the part of a soil a grower can genuinely rebuild."),
+      ["Humus", "Active lime", "Clay", "Parent rock"], 0,
+      "Humus, the soil's organic matter, is what turns dust into structure: it glues particles into crumbs so the soil can hold air and water at once rather than one or the other. It also feeds the fungi and bacteria that make nutrients available, and it is the part of a soil a grower can genuinely rebuild."),
     Q("Looking after the ground",
       "A hillside is cut into level steps before a single vine goes into it. Beyond making the ground workable, what does the terrace achieve?",
-      ["It stops water running straight down the slope, so the soil stays where it is",
+      ["It stops water running straight down and carrying the soil off",
        "It raises the temperature of the whole slope by several degrees",
        "It allows the vines to be planted very much closer together",
        "It removes the need to graft the vines onto any rootstock"], 0,
@@ -310,20 +309,20 @@ BANK = [
     Q("Warmth and light at the vineyard floor",
       "Under a covering of large stones the soil stays damp well into a hot dry summer, while the bare earth alongside has baked out. What are the stones doing?",
       ["Acting as a mulch, cutting the evaporation of water from the surface",
-       "Drawing water up from the water table by capillary action through the gaps between them",
-       "Feeding the soil beneath them with minerals as they dissolve away over the course of a season",
-       "Shading the vine's leaves from the worst of the afternoon sun and the heat that comes with it"], 0,
+       "Drawing water up from the water table by capillary action between them",
+       "Feeding the soil beneath them with minerals as they slowly dissolve",
+       "Shading the vine's leaves from the worst of the afternoon sun"], 0,
       "A stone layer breaks the contact between wet soil and dry air, so water that would have evaporated stays where a root can still reach it. That is one of the reasons a stony vineyard floor is valued in hot dry country, and why growers there think twice before clearing the stones off."),
     Q("Warmth and light at the vineyard floor",
       "Two blocks at the same latitude, one on dark stony ground and one on cold heavy clay, and the stony block buds a week earlier every year. What does that early start also bring?",
       ["A greater exposure to damage from a late spring frost",
-       "A reduced risk of frost damage, since the buds harden as soon as they open",
+       "A reduced risk of damage from a spring frost",
        "A markedly higher incidence of powdery mildew in the canopy",
        "A harvest date noticeably later than the neighbouring block"], 0,
       "Warm ground brings the whole cycle forward, which is a gift at the end of the season and a hazard at the beginning of it. The block that buds first is the one holding tender green shoots when a late frost arrives, so the property that ripens the fruit reliably can also cost the crop outright."),
     Q("Warmth and light at the vineyard floor",
       "White pebbles are spread beneath low-trained vines in a cool region. Beyond warmth, what does the vine gain?",
-      ["Light bounced up onto the shaded underside of the canopy and the fruit",
+      ["Light reflected up onto the shaded side of the fruit",
        "A measurable drop in the acidity of the ripening grapes",
        "Some protection for the fruit against a summer hailstorm",
        "Calcium, which the leaves take up directly from the dust"], 0,

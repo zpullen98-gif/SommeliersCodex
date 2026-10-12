@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""France study chapters. Written from the competency list in the Rank I
+"""France study chapters. Written from the competency list in the Regionale
 question modules, not from the chapter this replaces."""
 from primerlib import CH
 
@@ -19,24 +19,35 @@ in the cellar every year.</p>
 the region divides along that water. Left Bank soils are deep gravel that drains
 fast and stores the day's heat, which is what lets late-ripening Cabernet
 Sauvignon finish this far north; the Medoc communes run northward from Margaux
-through Saint-Julien and Pauillac to Saint-Estephe, and Pessac-Leognan holds the
-same gravel south of the city. The Right Bank is cooler clay and limestone, so
-earlier Merlot leads at Saint-Emilion and Pomerol, with Cabernet Franc beside
-it. Whites pair Sauvignon Blanc, for aroma and acidity, with Semillon for
-weight: dry in Entre-Deux-Mers and Pessac-Leognan, sweet in Sauternes, where
-mist off the cold Ciron brings the noble rot that shrivels Semillon on the
-vine.</p>
+through Saint-Julien and Pauillac to Saint-Estephe. South of the city the gravel
+carries on into Graves, the district named after it, whose northern end has been
+the separate appellation of Pessac-Leognan since 1987. The Right Bank is cooler
+clay and limestone, so earlier Merlot leads at Saint-Emilion and Pomerol, with
+Cabernet Franc beside it. Petit Verdot, Malbec and, rarely, Carmenere complete
+the six traditional red grapes. Whites pair Sauvignon Blanc, for aroma and
+acidity, with Semillon for weight, sometimes with a little Muscadelle: dry in
+Entre-Deux-Mers and Pessac-Leognan, sweet in Sauternes and Barsac, where mist
+off the cold Ciron brings the noble rot that shrivels Semillon on the vine.</p>
 
 <h4>Rank and trade</h4>
 <p>The 1855 classification ranked Left Bank estates on the prices they had long
 fetched: five tiers of red that have scarcely moved since, and a separate
-ranking of Sauternes in two tiers of classified growth under Yquem alone.
+ranking of Sauternes in two tiers of classified growth under Yquem alone. Its
+First Growths are Lafite Rothschild, Latour, Margaux, Mouton Rothschild and
+Haut-Brion. Haut-Brion is the one red from outside the Medoc, in Graves, and
+Mouton's promotion in 1973 is the only change ever made at the top.
 Saint-Emilion by contrast rewrites its list every decade or so, and Pomerol has
-never had one at all.
-Other words on a label carry their own weight:
+never had one at all.</p>
+<p>Other words on a label carry their own weight:
 ${INTRO_CHIP('Cru Bourgeois')}${INTRO_CHIP('Grand Cru Classe')}${INTRO_CHIP('Bordeaux Superieur')}
-Most estates sell through negociant merchants rather than to the drinker, and
-the sought-after wines are offered as futures while still in barrel.</p>
+Cru Bourgeois ranks Medoc estates left out of 1855, in three tiers since 2020,
+reviewed every five years. On a Saint-Emilion label, Grand Cru Classe names a
+classified estate, while Saint-Emilion Grand Cru alone is an appellation with
+stricter rules than plain Saint-Emilion and no classification behind it.
+Bordeaux Superieur is the same ground as Bordeaux, held to lower yields and
+riper fruit, not a better address. Most estates sell through negociant merchants
+rather than to the drinker, and the sought-after wines are offered as futures,
+en primeur, while still in barrel.</p>
 """),
 
     CH("France", "burgundy", "Burgundy", """
@@ -52,9 +63,12 @@ the hill where the topsoil has washed away.</p>
 <h4>Four tiers of land</h4>
 <p>The hierarchy ranks ground, not estates:
 ${INTRO_CHIP('Regional')}${INTRO_CHIP('Village')}${INTRO_CHIP('Premier Cru')}${INTRO_CHIP('Grand Cru')}
-On the Cote d'Or a Grand Cru stands under its vineyard name alone; a Premier
-Cru names the village first and the vineyard after. Grand Cru is a sliver of the whole and
-regional Bourgogne most of it. Inheritance law split holdings among heirs for
+On the Cote d'Or a Grand Cru such as Chambertin or Montrachet stands under its
+vineyard name alone; a Premier Cru names the village first and the vineyard
+after. Many villages long ago joined their own name to that of their most famous
+vineyard, so Gevrey-Chambertin on a label is a village wine and Chambertin the
+Grand Cru, which is worth a second look on any list. Grand Cru is a sliver of
+the whole and regional Bourgogne most of it. Inheritance law split holdings among heirs for
 generations, so one celebrated vineyard may carry dozens of owners, which is why
 the grower matters as much as the address. The Cote de Nuits to the north is
 almost entirely red; the Cote de Beaune makes the great whites around Meursault
@@ -64,10 +78,14 @@ and the two Montrachet villages, plus the hill of Corton.</p>
 frost-prone Kimmeridgian limestone, and is defined by acidity and reticence with
 oak; its Grand Cru is a single appellation carrying seven named climats rather
 than seven names of its own. Running south come the Cote Chalonnaise and then
-the Maconnais, the region's largest single source of Chardonnay. Beaujolais at
-the far end sits on granite rather
-than limestone, and its Gamay, often fermented in whole bunches, tastes
-unrelated to anything above it.</p>
+the Maconnais, a broad source of approachable Chardonnay with Pouilly-Fuisse at
+its head; since the 2020 vintage Pouilly-Fuisse has named Premiers Crus, the
+first in the Maconnais. Keep it apart from the Loire's Pouilly-Fume, which is
+Sauvignon Blanc. Beaujolais at the far end sits on granite rather than
+limestone, and its Gamay, often fermented in whole bunches, tastes unrelated to
+anything above it. Ten crus, Morgon, Fleurie and Moulin-a-Vent among them, stand
+at the top and lead with the village name; Beaujolais Nouveau, at the other end,
+is released on the third Thursday of November, weeks after the picking.</p>
 """),
 
     CH("France", "loire", "Loire Valley", """
@@ -91,11 +109,15 @@ Vouvray and Montlouis take Chenin across the full range from dry to sweet to
 sparkling, the grower choosing once the autumn has shown its hand. Upstream in
 the Centre, Sauvignon Blanc on chalky marl, stony limestone and flint gives
 Pouilly-Fume, which is white and nothing else, and Sancerre, which adds Pinot
-Noir for red and rose.</p>
+Noir for red and rose. Pouilly-Fume is not Pouilly-Fuisse, the Chardonnay of
+southern Burgundy: one shared word, two grapes, two regions.</p>
 
 <p>Chenin's acidity is what makes that range possible, and it is why the sweet
 wines of ${INTRO_CHIP('Coteaux du Layon')}${INTRO_CHIP('Quarts de Chaume')}${INTRO_CHIP('Bonnezeaux')}
-taste fresh rather than cloying after decades.</p>
+taste fresh rather than cloying after decades. Two more names fill a wine list:
+Anjou sells a great deal of off-dry pink as Rose d'Anjou and Cabernet d'Anjou,
+and Cremant de Loire, fermented a second time in its bottle, comes from Anjou,
+Saumur and Touraine.</p>
 """),
 
     CH("France", "rhone", "Rhône Valley", """
@@ -112,19 +134,23 @@ Cote-Rotie above Ampuis, on the granite hill of Hermitage behind Tain, and at
 Crozes-Hermitage, Saint-Joseph and Cornas. White vines were long interplanted
 among the black and picked with them, so most of these appellations still allow
 a little white in the red, provided it goes into the vat and ferments there
-rather than being blended in later: twenty percent Viognier at Cote-Rotie,
-fifteen percent Marsanne or Roussanne at Hermitage and at
-Crozes-Hermitage, ten percent at Saint-Joseph. Few growers approach the ceiling, and Cornas
-permits none at all. White wine itself is Viognier at Condrieu, and Marsanne
-with Roussanne elsewhere.</p>
+rather than being blended in later: twenty per cent Viognier at Cote-Rotie,
+fifteen per cent Marsanne or Roussanne at Hermitage and at
+Crozes-Hermitage, ten per cent at Saint-Joseph. Few growers approach the ceiling, and Cornas
+permits none at all. White wine itself is Viognier at Condrieu and at
+Chateau-Grillet, a single-estate appellation enclosed by it, and Marsanne with
+Roussanne elsewhere.</p>
 
 <h4>The Mediterranean south</h4>
 <p>South of the gap the valley opens out, the climate turns Mediterranean and
 the mistral funnels down it, cold and dry, keeping the canopy dry and fungal
 disease in check. Heat suits bush-trained Grenache, joined by Syrah for colour
-and pepper and Mourvedre for tannin and savour. Blends grow long:
-Chateauneuf-du-Pape permits thirteen named varieties, and part of its ground is
-covered in galets, rounded stones that hold the day's heat into the night.
+and pepper and Mourvedre for tannin and savour, the trio New World labels
+shorten to GSM. Blends grow long: Chateauneuf-du-Pape, named for the summer
+castle of the fourteenth-century popes at Avignon, permits thirteen named
+varieties, and part of its ground is covered in galets, rounded stones that
+hold the day's heat into the night. Rules its growers drew up for themselves in
+the 1920s became a model for France's national appellation law.
 Labels climb a ladder from Cotes du Rhone to Villages, then Villages with a
 named commune, then the crus, which drop the regional name entirely:
 ${INTRO_CHIP('Gigondas')}${INTRO_CHIP('Vacqueyras')}${INTRO_CHIP('Tavel')}${INTRO_CHIP('Lirac')}${INTRO_CHIP('Rasteau')}
@@ -140,7 +166,8 @@ the best slopes lies deep chalk, which banks winter rain, drains a wet summer
 and throws light back into the canopy; galleries quarried out of it under Reims
 and Epernay hold bottles at a steady ten degrees. Since any one harvest this far
 north can disappoint, the traditional unit of quality is the blend rather than
-the vineyard, assembled across villages, grapes and years.</p>
+the vineyard, assembled across villages, grapes and years, which is why most
+bottles carry no vintage.</p>
 
 <h4>Grapes and districts</h4>
 <p>Chardonnay dominates the Cote des Blancs and brings acidity and long life;
@@ -148,17 +175,23 @@ Pinot Noir rules the Montagne de Reims and the Cote des Bar and brings body;
 Meunier fills the frost-prone Vallee de la Marne, budding late and ripening
 early. Blanc de Blancs means white grapes only, Blanc de Noirs black grapes
 only. Cru rank here attaches to an entire village rather than to a parcel, and
-seventeen villages hold Grand Cru.</p>
+seventeen villages hold Grand Cru. A rose is usually made by blending a little
+still red wine into the white before the second fermentation.</p>
 
 <h4>How the bubbles arrive</h4>
 <p>Bunches reach the press whole, so the juice runs clean and black skins give
 up no colour. The blended base wine is bottled with sugar and yeast for a second
 fermentation, which builds roughly six atmospheres of pressure. The wine then
 rests on the spent yeast, whose slow breakdown gives the bready register and a
-finer bead. The deposit is worked into the neck, frozen, expelled, and the
-bottle topped up with a dosage that fixes the style:
+finer bead: at least fifteen months from bottling to sale for a wine without a
+vintage, twelve of them on the lees, and three years for a vintage wine.
+Riddling, by hand or by machine, works the deposit into the neck, where it is
+frozen and expelled at disgorgement, and the bottle is topped up with a dosage
+that fixes the style:
 ${INTRO_CHIP('Brut Nature')}${INTRO_CHIP('Extra Brut')}${INTRO_CHIP('Brut')}${INTRO_CHIP('Extra Dry')}${INTRO_CHIP('Sec')}${INTRO_CHIP('Demi-Sec')}${INTRO_CHIP('Doux')}
-Extra Dry is sweeter than Brut, which catches almost everyone.</p>
+Extra Dry is sweeter than Brut, which catches almost everyone. The same process
+elsewhere is the traditional method, never the methode champenoise, a phrase
+reserved to Champagne.</p>
 """),
 
     CH("France", "alsace", "Alsace", """
@@ -170,11 +203,14 @@ why grapes we think of as German ripen fully here. The vineyards occupy foothill
 slopes facing east and south-east, above the frost-prone plain and below the
 cold forest. When the Rhine valley dropped along its fault, the shoulder left
 behind was shattered, so granite, sandstone, limestone, marl, schist and
-volcanic rock all turn up within a few kilometres.</p>
+volcanic rock all turn up within a few kilometres. History adds the rest: the
+region changed hands between France and Germany four times between 1871 and
+1945, which is why its names, grapes and tall bottles look German.</p>
 
 <h4>The label names the grape</h4>
 <p>Almost alone in France, Alsace puts the variety on the front of the bottle,
-and a wine sold as a variety must be that variety entire. Riesling is fermented
+which by law is the slender flute, and a wine sold as a variety must be that
+variety entire. Riesling is fermented
 dry, taut and citrus-driven; Gewurztraminer is deep gold, low in acid and heady
 with lychee and rose; Pinot Gris is broad and smoky; Muscat smells of fresh
 grapes and still finishes dry. Those four are the noble varieties and normally

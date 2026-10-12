@@ -1,4 +1,4 @@
-"""Rank II rewrite - Wine Trade & Aging (27 questions: 10 MC, 17 short answer).
+"""Village rewrite - Wine Trade & Aging (27 questions: 10 MC, 17 short answer).
 
 Certified level. The subject is the fine-wine market and the craft of keeping,
 seen from outside the cellar door: what a buyer, a cataloguer and a broker can
@@ -8,15 +8,15 @@ trade for decades without moving or being taxed; the fill of an old bottle read
 as evidence; the drinking window read as a trajectory rather than a date; and
 the formats, lists and futures logic that decide who gets scarce wine at all.
 
-Boundaries were read before writing and are kept. Rank II Bordeaux owns La
+Boundaries were read before writing and are kept. Village Bordeaux owns La
 Place, en primeur and the courtier-negociant chain, so futures appear here only
 generically, and the question asked about them is the buyer's exposure rather
 than the machinery. The business category in this wave owns the venue's own
-economics, so nothing here prices a list or pours a glass. Rank II Wine
-Fundamentals owns the chemistry of aging, so bottles here develop, shut down,
+economics, so nothing here prices a list or pours a glass. Village Wine
+Fundamentals owns the chemistry of ageing, so bottles here develop, shut down,
 fade and vary without a molecule being named; what is tested is the verdict a
 taster or a trader reaches, not the reaction underneath it. Classifications &
-Labels owns the cellar register and the law of ageing words. Rank I Label
+Labels owns the cellar register and the law of ageing words. Regionale Label
 Reading owns the branded cork, the bubble seal and the magnum's identity, so
 none of those tasks is repeated here; where this category meets the same
 objects it asks a different question of them.
@@ -66,7 +66,7 @@ and is told they are wrong learns something false; a student who scores by
 copying the question merely gains a point they did not earn.
 
 Facts are restricted to ones that do not drift: the ullage scale's conventions,
-the logic of bond, premium and brokerage, and trade practice old enough to have
+the logic of bond, premium and brokerage, and trade custom old enough to have
 a vocabulary. No prices, no named houses or platforms, no percentage of the
 market, and the only figures anywhere are the premium's rough fifth-to-quarter
 and the centimetre readings of a Burgundy fill, both conventions of
@@ -162,7 +162,7 @@ BANK = [
       "Under a loupe, the label of a supposed 1920s bottle resolves into the tidy rosette of dots a modern press lays down. What has the examiner established?",
       ["That the label was printed by a modern process never used on wine labels of the claimed era",
        "That the paper was artificially aged, regular dots being the mark bleach leaves as it breaks down the fibres of a modern sheet",
-       "That the ink has faded evenly, which is what six decades in a dark cellar produces",
+       "That the ink has faded evenly, which is what a century in a dark cellar produces",
        "That the label is a legitimate replacement, reissued by the estate for damaged stock"], 0,
       "Labels of that era were printed by letterpress or stone lithography, which lay down solid areas of ink; the even rosette of dots is the mark of modern offset and digital presses, which wine labels only met decades later. The finding condemns the label absolutely and the bottle almost as surely, since a genuine bottle has little reason to wear paper from the wrong half of the century, and it is the kind of physical evidence no story about the wine can argue with."),
     Q("Counterfeits and the authentication toolkit",

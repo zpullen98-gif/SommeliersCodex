@@ -1,4 +1,4 @@
-"""Rank II rewrite - Jura, Savoie & Corsica (24 questions: 5 MC, 19 short answer).
+"""Village rewrite - Jura, Savoie & Corsica (24 questions: 5 MC, 19 short answer).
 
 France's mountain and island fringe at Certified level. The Jura carries half the
 weight because its rules are the examinable ones: what may become vin jaune, how
@@ -102,7 +102,7 @@ BANK = [
     Q("Vin jaune and the clavelin",
       "Chardonnay grown inside Chateau-Chalon's boundary can never be sold as Chateau-Chalon. Which appellation takes it as a still, unfortified wine instead?",
       ["Cotes du Jura", "Arbois", "L'Etoile", "Macvin du Jura"], 0,
-      "Chateau-Chalon's decree admits one wine only, Savagnin aged under the voile, so there is no white, red or sparkling version to fall back on. As still wine, Chardonnay from those marls sells under the regional Cotes du Jura, the name that catches what the stricter appellations exclude; the fruit's only other legal exits are the sparkling Cremant du Jura and the mistelle Macvin du Jura."),
+      "Chateau-Chalon's decree admits one wine only, Savagnin aged under the voile, so there is no white, red or sparkling version to fall back on. As still wine, Chardonnay from those marls sells under the regional Cotes du Jura, the name that catches what the stricter appellations exclude; its other appellation routes are the sparkling Cremant du Jura and the mistelle Macvin du Jura."),
     SA("Vin jaune and the clavelin",
        "Pear, white flowers and not a walnut in sight: a modern Arbois Savagnin spent its cask life topped full to the bung. What word on the label announces that choice?",
        "Ouille",
@@ -122,7 +122,7 @@ BANK = [
        "Warm gravels around Montigny-les-Arsures suit the Jura's most demanding red grape, darker and firmer than its famous pale neighbour. Name it.",
        "Trousseau",
        ["trousseau", "trousseau noir", "trousseau grape"],
-       "Trousseau is the Jura's late ripener, and it concentrates on the warm, well-drained gravels around Montigny-les-Arsures, the village that calls itself its capital. It has been a quiet winner from the warming summers, and plantings are creeping up again.",
+       "Trousseau is the Jura's late ripener, and it concentrates on the warm, well-drained gravels around Montigny-les-Arsures, the village that calls itself its capital. Its thicker skins give the colour and tannin Poulsard lacks, and in a cool year it can struggle to ripen fully, which is why it keeps to the warmest ground.",
        ex=True),
     SA("The wider Jura",
        "Fossilised star-shaped segments of sea lilies litter the marl around one village near Lons-le-Saunier, and its white-wine appellation is named for them. Which appellation?",
@@ -135,12 +135,12 @@ BANK = [
        ["macvin du jura", "macvin"],
        "Macvin du Jura is a mistelle: the marc's strength stops fermentation before it starts, so the sweetness is grape sugar that never met a working yeast. The AOC arrived in 1991, all three colours are made, and most of it is poured cold as an aperitif in its home region."),
     Q("The wider Jura",
-      "Five varieties, and only five, may enter the Jura's appellation wines. Savagnin and Chardonnay are two; which trio completes the list?",
+      "Five varieties carry the Jura's still appellation wines. Savagnin and Chardonnay are two; which trio completes the list?",
       ["Poulsard, Trousseau and Pinot Noir",
        "Poulsard, Trousseau and Gamay",
        "Poulsard, Mondeuse Noire and Pinot Noir",
        "Trousseau, Gamay and Mondeuse Noire"], 0,
-      "Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never earned a place despite Burgundy sitting an hour away, and every appellation of the region, still or sparkling, builds from some arrangement of the five."),
+      "Pinot Noir is the fifth, grown in the Jura for centuries as a blending partner and increasingly on its own. Gamay never earned a place despite Burgundy sitting an hour away, and every still appellation of the region builds from some arrangement of the five; only the sparkling Cremant du Jura reaches further, admitting Pinot Gris beside them."),
 
     # ------------------------------------------------------------ Savoie (7) -
     SA("Savoie",
@@ -169,7 +169,7 @@ BANK = [
        "Arbin has staked its name on a deep-hued, white-peppered red with real tannin, the exception in a region of featherweights. Name the variety.",
        "Mondeuse",
        ["mondeuse", "mondeuse noire", "mondeuse grape"],
-       "Mondeuse Noire is Savoie's structural red, dark and peppery where the rest of the region runs light, and Arbin bottles it to the exclusion of everything else. Warm recent vintages have moved the wines from rustic toward genuinely serious, and the cru anchors the case that Savoie can make reds that age.",
+       "Mondeuse Noire is Savoie's structural red, dark and peppery where the rest of the region runs light, and Arbin bottles it to the exclusion of everything else. Warm recent vintages have moved the wines from rustic towards genuinely serious, and the cru anchors the case that Savoie can make reds that age.",
        ex=True),
     Q("Savoie",
       "Apremont, Chignin, Arbin, Jongieux: names like these may follow Vin de Savoie on the label. What does the appended name certify?",
@@ -181,7 +181,7 @@ BANK = [
     Q("Savoie",
       "France's alpine wine country holds one appellation whose vines face each other across the Rhone itself, one bank in Ain and the other in Haute-Savoie. Which is it?",
       ["Seyssel", "Chautagne", "Ripaille", "Marignan"], 0,
-      "Seyssel is two towns of the same name facing each other across the river, and the appellation, granted in 1942, takes in both banks. The local Molette grape survives largely in its traditional sparkling wine, which the town has bottled since the nineteenth century."),
+      "Seyssel is two towns of the same name facing each other across the river, and the appellation, granted in 1942, takes in both banks. The local Molette grape survives largely in its traditional sparkling wine, which the town has bottled for well over a century."),
     SA("Savoie",
        "Roussette de Savoie, with or without a village after it, must now be pressed from a single variety. Name that grape.",
        "Altesse",
@@ -201,7 +201,7 @@ BANK = [
        "Sciaccarello, the name usually glossed as crunchy, makes reds of modest colour with red fruit and white pepper, and some of the island's best rose. France grows it nowhere but Corsica, and Corsica grows it best on its western side, which is why Ajaccio has made it the house grape."),
     Q("Corsica",
       "Beneath its maquis, Corsica splits into two great blocks of rock, and the island's growers farm both. How does the split run?",
-      ["Granite through the west and south, schist across the northeast",
+      ["Granite through the west and south, with schist across the northeast",
        "Schist through the west and south, with granite across the northeast",
        "Limestone through the west and south, with basalt across the northeast",
        "Granite along every coastline, with schist confined to the high interior"], 0,

@@ -1,0 +1,178 @@
+{
+  "batch": "regionale-8",
+  "modules": [
+    "rewrite/categories/r1_alsace.py",
+    "rewrite/categories/r1_dessert_sweet.py"
+  ],
+  "readCount": 116,
+  "total": 116,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "Berries that ripen a dull pinkish grey rather",
+      "field": "opts",
+      "problem": "The stem asks for the parent among red grapes ('a mutation of a familiar red grape'), but two distractors, Chardonnay and Savagnin, are white varieties, so the options are not of one kind and the question shrinks to a choice between Pinot Noir and Gamay.",
+      "fix": "Replaced Chardonnay and Savagnin with Syrah and Cabernet Franc, two familiar black grapes with no grey mutation in common use (Grenache, Merlot, Mondeuse, Trousseau and Schiava were avoided because each has a grey form).",
+      "source": "Ampelography: Pinot Gris is the grey-berried mutation of Pinot Noir; Syrah and Cabernet Franc are black varieties with no recognised grey mutation in commerce.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "Two label terms differing by a single letter,",
+      "field": "exp",
+      "problem": "The exp said Savagnin Rose is grown in a handful of Bas-Rhin communes 'and nowhere else in France', an absolute plantings claim that cannot be supported; what is restricted is the name Klevener de Heiligenstein, not the vine.",
+      "fix": "Exp now says the name belongs only to Heiligenstein and a handful of neighbouring Bas-Rhin communes.",
+      "source": "AOC Alsace cahier des charges: the Klevener de Heiligenstein denomination is confined to Heiligenstein, Bourgheim, Gertwiller, Goxwiller and Obernai.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "One old variety, as much a table grape",
+      "field": "exp",
+      "problem": "The exp restated the stem almost word for word ('as much a table grape as a wine grape', 'what is left of it disappears into Edelzwicker') and so taught nothing the student had not just read.",
+      "fix": "Exp rewritten to teach why: early ripening, soft and neutral, it adds volume rather than character, so few growers bottle it alone; Switzerland, where it is the most planted white grape, is where it is taken seriously.",
+      "source": "Standard ampelography of Chasselas; Swiss vineyard statistics, where Chasselas leads the white varieties.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "The steepest of the Grands Crus, and the",
+      "field": "exp",
+      "problem": "The exp called Rangen 'the only Grand Cru on volcanic soil', but Kitterle at Guebwiller, one of this question's own distractors, is described by the region's council as sandstone with volcanic rock, so the exp taught a false uniqueness and contradicted a distractor.",
+      "fix": "Exp now says Rangen's volcanic and volcano-sedimentary rock is rare among the Grands Crus; the stem's discriminators (steepest, southernmost, above Thann) still point to Rangen alone.",
+      "source": "CIVA Grand Cru terroir descriptions: Rangen volcanic and volcano-sedimentary; Kitterle sandstone with volcanic rock.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "Two Grands Crus depart from the single-variety rule and",
+      "field": "exp",
+      "problem": "The exp used the banned word ('their decrees preserve the practice').",
+      "fix": "Now reads 'so their decrees keep that tradition alive'.",
+      "source": "House rule: never the word practice or practise in shipped text.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "A blended white sold under an Alsatian word",
+      "field": "exp",
+      "problem": "The exp used the banned word ('though in practice this is the everyday carafe wine').",
+      "fix": "Now reads 'though in the glass this is the everyday carafe wine'.",
+      "source": "House rule: never the word practice or practise in shipped text.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_alsace.py",
+      "stemStart": "Full AOC status arrived here far later than",
+      "field": "exp",
+      "problem": "The exp said two annexations and two wars left the rules unwritten 'while the rest of France was being classified in the 1930s', which is anachronistic: in the 1930s the region had been French since 1918, and the second annexation came only in 1940. It also never said why 1945, a distractor, is wrong.",
+      "fix": "Exp now gives the order: French again from 1918 and rebuilding a vineyard German rule had turned to bulk wine, broken off by the 1940 annexation; a 1945 ordinance first defined the appellation, full AOC status came in 1962, and the Grand Cru tier from 1975 is younger still.",
+      "source": "Ordonnance of 2 November 1945 defining the appellation d'origine Vin d'Alsace; AOC Alsace decree of 1962; first Grand Cru decree of 1975 (the module's own Grand Cru question).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_dessert_sweet.py",
+      "stemStart": "Bunches are laid out in an airy loft for",
+      "field": "stem",
+      "problem": "The stem used the banned word ('What is that Italian practice called?'). It was also the same task, with the same answer and three of the same options, as r1_sparkling_fortified_sweet's 'Bunches are laid on racks in an airy loft for months ... Which Italian practice is that?', and its distractor Saignee was the one French term in a question asking for an Italian one.",
+      "fix": "Stem reframed to a different task: 'Amarone, Recioto della Valpolicella and Valtellina's Sforzato all depend on one step taken in the months between harvest and pressing. What does an Italian cellar call it?' Saignee replaced by Salasso, the Italian word for it, so all four options are Italian cellar terms; exp carries the drying detail (three or four months, a third or more of the weight lost, winter pressing) and glosses salasso. Similarity re-run: nothing flagged (max ratio 0.364, run 4); the cross-category pass shows no pair for it.",
+      "source": "House rule on practice; Amarone, Recioto della Valpolicella and Sforzato di Valtellina disciplinari all require dried grapes; salasso is the standard Italian term for bleeding juice off red must.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_dessert_sweet.py",
+      "stemStart": "Reed mats or straw hold the bunches for",
+      "field": "exp",
+      "problem": "The exp used the banned word ('cover the same practice').",
+      "fix": "Now reads 'name the same method'.",
+      "source": "House rule: never the word practice or practise in shipped text.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_dessert_sweet.py",
+      "stemStart": "Between Beerenauslese and Trockenbeerenauslese, Austria's ladder holds a",
+      "field": "exp",
+      "problem": "Strohwein is also an Austrian Pradikat that Germany lacks, and lists of the Austrian ladder often print it between Beerenauslese and Trockenbeerenauslese, yet the exp never said why it is not the answer; the key holds only on must weight, which the exp did not give.",
+      "fix": "Exp now gives the numbers: Ausbruch needs 27 degrees KMW, above Beerenauslese at 25 and below Trockenbeerenauslese at 30; Strohwein asks only the Beerenauslese minimum, Eiswein stands on both ladders, and Smaragd is a Wachau term rather than a legal Pradikat. Consistent with r1_austria's own exp ('Ausbruch sits between Beerenauslese and Trockenbeerenauslese on the Austrian must-weight ladder').",
+      "source": "Austrian Weingesetz Pradikat minima: Beerenauslese, Eiswein and Strohwein 25 KMW, Ausbruch 27 KMW, Trockenbeerenauslese 30 KMW.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_dessert_sweet.py",
+      "stemStart": "Berries left hanging on the vine simply shrivel",
+      "field": "exp",
+      "problem": "The exp said passerillage concentrates sugar 'exactly as noble rot does', which is wrong and contradicts the module's own noble rot explanation that the fungus consumes a share of the sugar and acid and adds glycerol; passerillage is plain loss of water through an intact skin.",
+      "fix": "Exp now says passerillage concentrates sugar by plain loss of water through an intact skin, so the flavours stay purer and more apricot-like, without the fungus's honeyed, savoury layer.",
+      "source": "Viticulture of botrytis versus passerillage; the module's own question on what happens inside a nobly rotten berry.",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Berries that ripen a dull pinkish grey rather",
+      "verdict": "kept",
+      "why": "The stem asks for a red parent, so Chardonnay and Savagnin fell out on colour alone. Syrah and Cabernet Franc are familiar black grapes with no grey form in commerce, the key is unchanged and the stem untouched."
+    },
+    {
+      "stemStart": "Two label terms differing by a single letter,",
+      "verdict": "kept",
+      "why": "The original 'nowhere else in France' was an unsupportable plantings claim; what the cahier des charges restricts is the denomination, to Heiligenstein, Bourgheim, Gertwiller, Goxwiller and Obernai, which the new wording states exactly."
+    },
+    {
+      "stemStart": "One old variety, as much a table grape",
+      "verdict": "kept",
+      "why": "The old exp echoed the stem. The new one teaches why the grape lost ground; Chasselas has led Switzerland's white plantings for generations by a margin no realistic shift will close, so the statistic is not volatile."
+    },
+    {
+      "stemStart": "The steepest of the Grands Crus, and the",
+      "verdict": "kept",
+      "why": "Kitterle, a distractor in this very question, is described as sandstone with volcanic rock, so 'the only Grand Cru on volcanic soil' overclaimed. 'Rare among the Grands Crus' is true and the stem's Thann and southernmost cues still single out Rangen."
+    },
+    {
+      "stemStart": "Two Grands Crus depart from the single-variety rule and",
+      "verdict": "kept",
+      "why": "Banned word removed with no change of meaning; Altenberg de Bergheim and Kaefferkopf remain the two blend Grands Crus."
+    },
+    {
+      "stemStart": "A blended white sold under an Alsatian word",
+      "verdict": "kept",
+      "why": "Banned word removed; 'in the glass' keeps the contrast between the noble name and the everyday carafe wine."
+    },
+    {
+      "stemStart": "Full AOC status arrived here far later than",
+      "verdict": "kept",
+      "why": "The original set the two annexations against a 1930s France in which Alsace was already French. The new order (French from 1918, German-era bulk vineyard, 1940 annexation, 1945 ordinance, 1962 AOC, 1975 Grand Cru) is correct and now says why 1945 is not the answer."
+    },
+    {
+      "stemStart": "Bunches are laid out in an airy loft for",
+      "verdict": "kept",
+      "why": "A one-word stem fix would have cleared the banned word but left a near twin of r1_sparkling_fortified_sweet's loft question (same task, key and three options), so the reframe earns its orphaned id. Salasso is the Italian cellar word for saignee, all three named wines require dried grapes, and similarity and cross-category passes are clean."
+    },
+    {
+      "stemStart": "Reed mats or straw hold the bunches for",
+      "verdict": "kept",
+      "why": "Banned word removed; Strohwein and Schilfwein do name one method."
+    },
+    {
+      "stemStart": "Between Beerenauslese and Trockenbeerenauslese, Austria's ladder holds a",
+      "verdict": "amended",
+      "why": "The fix stated a repealed rule as current: BGBl. I Nr. 47/2016 (in force 14 June 2016) struck Ausbruch from the Pradikat list, folded it into Trockenbeerenauslese and reserved the name for Ruster Ausbruch, so there is no 27 KMW rung today and the unchanged stem's 'holds a rung' was false too. Stem put in the past tense ('long held a rung that Germany's never had. What was it called?'), which orphans one id knowingly since no exp can make a present-tense falsehood true; exp now gives the old 25/27/30 ladder, the 2016 change and Ruster Ausbruch, and keeps the reviewer's Strohwein, Eiswein and Smaragd reasoning. Key and options unchanged."
+    },
+    {
+      "stemStart": "Berries left hanging on the vine simply shrivel",
+      "verdict": "kept",
+      "why": "'Exactly as noble rot does' was wrong, since botrytis also consumes sugar and acid and adds glycerol; plain water loss through an intact skin is the accurate contrast and matches the module's own botrytis question."
+    }
+  ]
+}

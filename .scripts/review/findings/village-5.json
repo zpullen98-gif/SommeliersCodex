@@ -1,0 +1,454 @@
+{
+  "batch": "village-5",
+  "modules": [
+    "rewrite/categories/r2_burgundy.py",
+    "rewrite/categories/r2_producers_icons.py",
+    "rewrite/categories/r2_germany.py",
+    "rewrite/categories/r2_south_america.py"
+  ],
+  "readCount": 150,
+  "total": 150,
+  "findings": [
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Regional Bourgogne may be grown almost anywhere in",
+      "field": "exp",
+      "problem": "Explanation contrasted the escarpment with 'the flat land beyond the motorway' carrying 'the same three words'; regional Bourgogne in the Cote d'Or lies mostly between the D974 and the A31, not beyond the motorway, and the real contrast before 2017 was with Bourgogne from anywhere else in the region.",
+      "fix": "Now reads: a Bourgogne grown on the escarpment had no way of saying so, while one grown anywhere else in the region carried exactly the same name.",
+      "source": "Bourgogne Cote d'Or DGC (2017) geography; regional Bourgogne covers the whole region",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Monks walled parcels of the Cote d'Or to",
+      "field": "stem",
+      "problem": "Stem carried the banned word 'practice' (house rule: never practice or practise).",
+      "fix": "'the practice left a word behind' became 'the habit left a word behind'. Similarity re-run: 0 flagged.",
+      "source": "Codex house rules",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Burgundian growers still size a plot in an",
+      "field": "exp",
+      "problem": "Arithmetic wrong: an ouvree is about 4.28 ares, so a hectare holds about 23.3 ouvrees, not 'something like twenty-four'.",
+      "fix": "Now: 'and a hectare holds a little over twenty-three of them'.",
+      "source": "1 ouvree = 428.5 square metres; 10,000 / 428.5 = 23.3",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Dry transverse valleys cut back into the Cote",
+      "field": "exp",
+      "problem": "Explanation said cold air alone makes ground at a combe mouth 'usually' village land; the usual explanation is mainly the gravel outwash fan, and 'usually' overstated it (premier crus lie on combe flanks, as at Gevrey).",
+      "fix": "Now: the cold air draining out, and the gravel they have washed down, help explain why the ground at a combe mouth is often village land.",
+      "source": "Cote d'Or geomorphology: alluvial cones at combe mouths",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Inside the Vougeot commune a walled premier cru",
+      "field": "accept",
+      "problem": "ex=True list refused La Vigne Blanche, the climat's standard alternative name, so a correct student was marked wrong.",
+      "fix": "Added 'la vigne blanche' (normalises to 'vigne blanche'). Probed: La Vigne Blanche and vigne blanche grade; Clos de Vougeot and Vougeot still do not.",
+      "source": "Vougeot premier cru Le Clos Blanc / La Vigne Blanche, the same monopole",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Gevrey-Chambertin's most sought-after premier cru sits above the",
+      "field": "exp",
+      "problem": "Explanation stated a price claim ('routinely outprices several of the grand crus'), which is volatile and against the module's own no-prices rule.",
+      "fix": "Now: 'is routinely ranked alongside the grand crus it was passed over for'.",
+      "source": "House rule: nothing volatile stated as fact",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Tucked in a valley behind the Montrachet hill,",
+      "field": "exp",
+      "problem": "Explanation said En Remilly and Murgers des Dents de Chien 'run right up to the Chevalier-Montrachet boundary', a precise adjacency that is not safe for En Remilly, and called the side valley 'the whole reason' for the price.",
+      "fix": "Now: they 'lie within a short walk of Montrachet and Chevalier-Montrachet', and the side valley is 'much of the reason'.",
+      "source": "Saint-Aubin premier cru map; softened to what is certainly true",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "A guest asks why they cannot compare one",
+      "field": "exp",
+      "problem": "Explanation said the Cistercian nuns 'planted' Clos de Tart; they acquired an existing vineyard in 1141.",
+      "fix": "'planted it' became 'acquired it'.",
+      "source": "Clos de Tart history: bought by the nuns of Notre-Dame de Tart in 1141",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Directly above the most famous monopole in Vosne",
+      "field": "exp",
+      "problem": "Unverifiable dimension claim: 'no wider than a tennis court is long' (under 24 metres) cannot be stood behind for a 0.85 ha strip.",
+      "fix": "Now: 'a narrow strip of slope under a hectare in all'.",
+      "source": "La Romanee, 0.85 ha; claim reduced to the appellation's size",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Besides Pouilly-Fuisse, the Maconnais carries the Pouilly name",
+      "field": "exp",
+      "problem": "Distance wrong: Pouilly-sur-Loire is roughly 180 km in a straight line from the Maconnais Pouillys, not 'three hundred kilometres'.",
+      "fix": "Now: 'lie far to the north-west on the Loire and are made from Sauvignon Blanc and Chasselas'.",
+      "source": "Coordinates of Pouilly-sur-Loire (47.28N 2.96E) and Vinzelles (46.27N 4.78E)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Beaujolais held nine crus until 1988, when a",
+      "field": "exp",
+      "problem": "Explanation called Regnie 'the lightest and most floral of the crus'; Chiroubles is the usual lightest and Fleurie the usual most floral, so the superlative is wrong.",
+      "fix": "Now: 'gives one of the lighter, fruit-forward crus'.",
+      "source": "Standard cru profiles (Chiroubles lightest, Fleurie most floral)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "A red co-fermented from Pinot Noir and Gamay",
+      "field": "exp",
+      "problem": "Explanation carried the banned word 'practice'.",
+      "fix": "'old peasant practice' became 'old peasant custom'.",
+      "source": "Codex house rules",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_burgundy",
+      "stemStart": "Pinot Gris survives in old Burgundian plantings under",
+      "field": "exp",
+      "problem": "Explanation said Pinot Gris is permitted in 'several white appellations'; its common legal place is as an accessory grape in reds (up to 15 percent), and in whites only in some (Coteaux Bourguignons and a few others).",
+      "fix": "Now: 'the rules still allow it in small amounts, as an accessory grape in many reds as well as in some whites'.",
+      "source": "Cote d'Or cahiers (accessory varieties in reds); Coteaux Bourguignons white varieties",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "A guest compares two vintages of one classified",
+      "field": "opts",
+      "problem": "Key was visibly the longest option (121 characters against a runner-up of 90), a length giveaway.",
+      "fix": "Key trimmed to 'Each year's selection for the grand vin, set by how each variety fared that season' (81); the qualification moved into exp as its opening sentence. No option is now ten clear of the runner-up.",
+      "source": "README length rule: trim the key, move the qualification into exp",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "Growers in one Jura appellation submit their wine",
+      "field": "exp",
+      "problem": "Explanation said the wine 'spends more than six years in cask'; the rule is at least 60 months under veil with bottling no earlier than about six years and three months after harvest, so the cask time is overstated. The 'work long since done' clause also assumed the refusal comes after ageing.",
+      "fix": "Now: 'may not be bottled until more than six years after the harvest, most of that time in cask under a veil of yeast, so a refused year costs its growers dearly'.",
+      "source": "Vin jaune rules: 60 months under veil, release from 15 December of the sixth year after harvest",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "A Napa estate founded as a Franco-American partnership",
+      "field": "exp",
+      "problem": "Explanation said blending several years 'into one red is ordinary in Champagne' (Champagne is not red), and stated as current that the wine is 'sold largely at the winery', a distribution fact that drifts.",
+      "fix": "Now 'into one wine', and 'It was long sold only at the winery'.",
+      "source": "Overture's history as a cellar-door multi-vintage wine; house rule on volatile facts",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "A Saint-Emilion first growth and a Mendoza estate",
+      "field": "stem",
+      "problem": "Cheval Blanc withdrew from the Saint-Emilion classification in 2021 and is no longer a classified first growth, so the stem stated a fact that has changed.",
+      "fix": "Stem now: 'A Saint-Emilion estate famed for its Cabernet Franc and a Mendoza estate share a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine.' Similarity re-run: 0 flagged.",
+      "source": "Cheval Blanc and Ausone withdrew from the 2022 Saint-Emilion classification (announced 2021)",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "A Saint-Emilion first growth and a Mendoza estate",
+      "field": "exp",
+      "problem": "Explanation called Cabernet Sauvignon 'the Bordeaux partner's contribution' (Cheval Blanc is a Cabernet Franc and Merlot estate), and claimed cuttings of that quality 'no longer exist' in the homeland, an overstatement.",
+      "fix": "Now: 'a Bordeaux-style blend built on a grape Argentina had long bottled on its own', and old ungrafted vines 'are rare in the variety's French homeland'.",
+      "source": "Cheval Blanc's planting; Mendoza ungrafted Malbec",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "Northern Rhone cellars often raise Syrah in a",
+      "field": "exp",
+      "problem": "Explanation credited the demi-muid's gentler oak to a 'wider stave'; the relevant property is the thicker stave (with the lower wood-to-wine ratio).",
+      "fix": "'wider stave' became 'thicker stave'.",
+      "source": "Cooperage: demi-muid staves are thicker than a barrique's",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "Merchants who want a case of one Vosne-Romanee",
+      "field": "stem",
+      "problem": "Stem carried the banned word 'practice'.",
+      "fix": "'What does that practice achieve' became 'What does that arrangement achieve'. Similarity re-run: 0 flagged.",
+      "source": "Codex house rules",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "Merchants who want a case of one Vosne-Romanee",
+      "field": "exp",
+      "problem": "Explanation said 'A village Vosne-Romanee is a harder sell than a grand cru', but the lesser wines the famous allocation ties in are themselves grand crus (Echezeaux and its kin), not a village wine.",
+      "fix": "Now: 'The lesser wines are a harder sell than the most famous one, and tying them together means the cellar never has to discount any of them.'",
+      "source": "The Vosne monopole allocation as the trade knows it",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "One Barossa house has kept a workshop inside",
+      "field": "stem",
+      "problem": "Stem dated the cooperage 'since the 1940s'; Yalumba says coopering has been done at the winery for over a century, coopers since about 1890.",
+      "fix": "'since the 1940s' became 'for more than a century'. Similarity re-run: 0 flagged.",
+      "source": "yalumba.com/the-cooperage (WebSearch)",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_producers_icons",
+      "stemStart": "One Barossa house has kept a workshop inside",
+      "field": "exp",
+      "problem": "Explanation claimed the craft 'takes a cooper's whole working life to learn' and that the house buys 'standing timber', neither safe as stated.",
+      "fix": "Now: 'choose its own timber' and 'a cooper takes years to train'; the few-hundred-barrels clause stays, matching Yalumba's own output of about 300 to 350 a year.",
+      "source": "Yalumba cooperage pages (WebSearch)",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_germany",
+      "stemStart": "Zeller Schwarze Katz and Kroever Nacktarsch were shipped",
+      "field": "opts",
+      "problem": "Key said each name gathers 'the vineyards of many villages', but both Grosslagen gather the sites of essentially one village (Zell with Merl and Kaimt; Kroev), as the explanation itself says. The key was also a length standout (62 against 48).",
+      "fix": "Key now 'A Grosslage, one name gathering several single sites' (51).",
+      "source": "Weinbergsrolle: Grosslage Schwarze Katz (Zell), Grosslage Nacktarsch (Kroev)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_germany",
+      "stemStart": "One Mosel collective name was the reverse of",
+      "field": "exp",
+      "problem": "Explanation dated Badstube's conversion to a single vineyard to 2025; the sources found already treat Badstube as an Einzellage before then (VDP lists it as a Grosse Lage, which the VDP grants only to single sites, with 2020-vintage Grosse Lage bottlings; a 2023 estate report calls it one of its Einzellagen), so the year is unsupported and is the kind of recent date the module rules out.",
+      "fix": "Now: 'the collective has since been dissolved and the name remade as a single vineyard', with no year.",
+      "source": "vdp.de vineyard page 4010 Badstube; estate vintage reports (WebSearch)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_germany",
+      "stemStart": "A VDP member's dry wines are named by",
+      "field": "exp",
+      "problem": "Explanation used spaced hyphens as dashes ('origin - estate, then village ... site - and'), against the house voice of comma, colon or full stop.",
+      "fix": "Now: 'by origin, from estate to village to the two classes of site, and keep'.",
+      "source": "Codex voice rule",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_germany",
+      "stemStart": "A member estate wants to bottle Sauvignon Blanc",
+      "field": "exp",
+      "problem": "Explanation gave 'Riesling in the Rheingau' as the permitted list, but Rheingau classified sites also admit Spatburgunder (Assmannshausen), and said the law cares 'not at all' about what is planted, which overstates it.",
+      "fix": "Now: 'Riesling and Spatburgunder in the Rheingau, Silvaner among others in Franken, the Pinot family in Baden', and 'since the law ties no variety to a site'.",
+      "source": "VDP classification rules by region",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_germany",
+      "stemStart": "Leading German estates banded together in 1910 to",
+      "field": "stem",
+      "problem": "Stem carried the banned word 'practice'.",
+      "fix": "'Which practice did that name rule out?' became 'What did that name rule out?'. Similarity re-run: 0 flagged.",
+      "source": "Codex house rules",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_germany",
+      "stemStart": "Several Mosel sites carry Sonnenuhr in their names,",
+      "field": "exp",
+      "problem": "Explanation dated every vineyard sundial to the nineteenth century; Wehlen's is 1842, but not every dial is safely of that century.",
+      "fix": "'They went up' became 'Most went up'.",
+      "source": "Wehlener Sonnenuhr dial 1842; hedge for the others",
+      "confidence": "low",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Regional Bourgogne may be grown almost anywhere in",
+      "verdict": "kept",
+      "why": "exp: the original's 'flat land beyond the motorway' misplaced regional Bourgogne, much of which lies between the D974 and the A31 and is inside the 2017 Bourgogne Cote d'Or area; the real contrast was with Bourgogne from the rest of the region, which the fix now states."
+    },
+    {
+      "stemStart": "Monks walled parcels of the Cote d'Or to",
+      "verdict": "kept",
+      "why": "stem: the banned word sat in the stem itself, so only a stem edit could remove it; 'habit' keeps the sense, similarity re-run flags nothing."
+    },
+    {
+      "stemStart": "Burgundian growers still size a plot in an",
+      "verdict": "kept",
+      "why": "exp: 10,000 square metres over an ouvree of about 428.5 is 23.3, so 'a little over twenty-three' is right and 'something like twenty-four' was not."
+    },
+    {
+      "stemStart": "Dry transverse valleys cut back into the Cote",
+      "verdict": "amended",
+      "why": "exp: the hedge to 'help explain' and 'often' is right, but naming gravel as a reason for lower rank teaches the wrong lesson, since gravel is usually a virtue; the usual reason is the depth of the outwash fan. Now reads 'the deep spread of stones and soil they have washed down'."
+    },
+    {
+      "stemStart": "Inside the Vougeot commune a walled premier cru",
+      "verdict": "kept",
+      "why": "accept: La Vigne Blanche is the climat's official name and Clos Blanc de Vougeot the trade name. Probed with match_sa (ex=True): La Vigne Blanche, vigne blanche, clos blanc grade; Clos de Vougeot, Vougeot, vigne, blanche, la vigne, Les Petits Vougeots, Clos de la Perriere do not."
+    },
+    {
+      "stemStart": "Gevrey-Chambertin's most sought-after premier cru sits above the",
+      "verdict": "kept",
+      "why": "exp: a price comparison is volatile and the module's header bars prices; 'ranked alongside' keeps the argument without a figure."
+    },
+    {
+      "stemStart": "Tucked in a valley behind the Montrachet hill,",
+      "verdict": "kept",
+      "why": "exp: neither En Remilly nor Murgers des Dents de Chien safely abuts Chevalier-Montrachet (Murgers borders Puligny premier cru ground, En Remilly the Chassagne side); 'a short walk' and 'much of the reason' are what can be stood behind."
+    },
+    {
+      "stemStart": "A guest asks why they cannot compare one",
+      "verdict": "kept",
+      "why": "exp: the Bernardine nuns of Tart bought an existing vineyard in 1141, so 'acquired' is right and 'planted' was not."
+    },
+    {
+      "stemStart": "Directly above the most famous monopole in Vosne",
+      "verdict": "kept",
+      "why": "exp: the tennis-court width could not be stood behind; 0.85 ha against Romanee-Conti's 1.81 ha keeps 'more than twice the size' true."
+    },
+    {
+      "stemStart": "Besides Pouilly-Fuisse, the Maconnais carries the Pouilly name",
+      "verdict": "kept",
+      "why": "exp: Pouilly-sur-Loire to Vinzelles is about 180 km in a straight line, so 'three hundred kilometres' was wrong; 'far to the north-west' is right in direction and needs no figure."
+    },
+    {
+      "stemStart": "Beaujolais held nine crus until 1988, when a",
+      "verdict": "kept",
+      "why": "exp: Regnie is not the usual lightest (Chiroubles) nor the usual most floral (Fleurie); 'one of the lighter, fruit-forward crus' is safe."
+    },
+    {
+      "stemStart": "A red co-fermented from Pinot Noir and Gamay",
+      "verdict": "kept",
+      "why": "exp: banned word removed with 'custom', same sense, no stem touched."
+    },
+    {
+      "stemStart": "Pinot Gris survives in old Burgundian plantings under",
+      "verdict": "kept",
+      "why": "exp: Pinot Gris is an accessory variety (to 15 percent) in most Cote d'Or reds and a white variety only in a few appellations such as Coteaux Bourguignons; the fix matches the rules and still agrees with the stem's 'may still be blended into a white Burgundy'."
+    },
+    {
+      "stemStart": "A guest compares two vintages of one classified",
+      "verdict": "kept",
+      "why": "opts: key 81 against a runner-up of 90 removes the giveaway, the trimmed key is still the only true option, and the qualification now opens the exp; build passes."
+    },
+    {
+      "stemStart": "Growers in one Jura appellation submit their wine",
+      "verdict": "kept",
+      "why": "exp: vin jaune needs 60 months under veil and no bottling before mid-December of the sixth year after harvest, so 'more than six years after the harvest, most of that time in cask' is exact; the Chateau-Chalon refusals were made at harvest, so dropping 'work long since done' was right."
+    },
+    {
+      "stemStart": "A Napa estate founded as a Franco-American partnership",
+      "verdict": "kept",
+      "why": "exp: Champagne is not a red, so 'one wine' is right; 'was long sold only at the winery' states history rather than current distribution."
+    },
+    {
+      "stemStart": "A Saint-Emilion first growth and a Mendoza estate",
+      "verdict": "kept",
+      "why": "stem: Cheval Blanc left the Saint-Emilion classification (announced 2021), so 'first growth' had become false in the present tense and no exp edit could fix a stem claim; the new description still points to one estate, and similarity flags nothing."
+    },
+    {
+      "stemStart": "A Saint-Emilion first growth and a Mendoza estate",
+      "verdict": "kept",
+      "why": "exp: Cheval Blanc is a Cabernet Franc and Merlot estate, so calling the Cabernet Sauvignon its contribution was wrong; 'rare in the variety's French homeland' replaces an overstatement."
+    },
+    {
+      "stemStart": "Northern Rhone cellars often raise Syrah in a",
+      "verdict": "kept",
+      "why": "exp: demi-muid staves are thicker than a barrique's (roughly 40 to 50 mm against 22 to 27), which with the lower wood-to-wine ratio is what slows oxygen; stave width does nothing of the kind."
+    },
+    {
+      "stemStart": "Merchants who want a case of one Vosne-Romanee",
+      "verdict": "kept",
+      "why": "stem: banned word in the stem; 'arrangement' is the minimal change, similarity flags nothing."
+    },
+    {
+      "stemStart": "Merchants who want a case of one Vosne-Romanee",
+      "verdict": "kept",
+      "why": "exp: the lesser wines tied to the allocation are themselves grand crus, not a village wine, so the original was wrong; the fix names no domaine and states no price."
+    },
+    {
+      "stemStart": "One Barossa house has kept a workshop inside",
+      "verdict": "kept",
+      "why": "stem: confirmed by WebSearch: Yalumba's cooperage page says coopers have worked there since about 1890 and its origins predate the records, so 'since the 1940s' was wrong and only a stem edit could fix it."
+    },
+    {
+      "stemStart": "One Barossa house has kept a workshop inside",
+      "verdict": "kept",
+      "why": "exp: the same search supports a few hundred barrels a year (about 300 to 350); 'choose its own timber' and 'takes years to train' replace two claims that could not be stood behind."
+    },
+    {
+      "stemStart": "Zeller Schwarze Katz and Kroever Nacktarsch were shipped",
+      "verdict": "kept",
+      "why": "opts: Schwarze Katz gathers Zell with Merl and Kaimt and Nacktarsch only Kroev's sites, as the exp itself says, so 'many villages' was wrong; the new key is still the only right option and 51 against 48 removes the length signal."
+    },
+    {
+      "stemStart": "One Mosel collective name was the reverse of",
+      "verdict": "kept",
+      "why": "exp: WebSearch found no dated record of the conversion but did find the VDP listing Badstube as a Grosse Lage and an estate calling it an Einzellage, so the yearless 'has since been dissolved' is supported and the 2025 date was not."
+    },
+    {
+      "stemStart": "A VDP member's dry wines are named by",
+      "verdict": "kept",
+      "why": "exp: spaced hyphens served as dashes; commas carry the same list and the sense is unchanged."
+    },
+    {
+      "stemStart": "A member estate wants to bottle Sauvignon Blanc",
+      "verdict": "kept",
+      "why": "exp: Rheingau Grosse Lage admits Spatburgunder (Assmannshausen) as well as Riesling, and German law does keep approved-variety lists, so 'not at all' overstated it; 'ties no variety to a site' is accurate."
+    },
+    {
+      "stemStart": "Leading German estates banded together in 1910 to",
+      "verdict": "kept",
+      "why": "stem: banned word in the stem; 'What did that name rule out?' still leads to chaptalisation through 'how it had been made', and the accept list is untouched."
+    },
+    {
+      "stemStart": "Several Mosel sites carry Sonnenuhr in their names,",
+      "verdict": "kept",
+      "why": "exp: 'Most' is a fair hedge; Wehlen's dial is 1842 but at least Zeltingen's is reputedly older, so 'They' claimed too much. No better date could be stood behind."
+    }
+  ],
+  "verdictNotes": [
+    "An unlogged edit in r2_burgundy.py replaced an em dash in a code comment (the metayage ex=True note) with a colon; kept, as it removes a dash and changes no shipped text.",
+    "r2_south_america.py has no diff and no findings in this batch."
+  ]
+}

@@ -1,4 +1,4 @@
-"""Rank I rewrite - Wine Law (55 questions, all multiple choice).
+"""Regionale rewrite - Wine Law (55 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -14,7 +14,7 @@ outside Europe, and last the inspection that makes any of it mean anything.
 The national ladders themselves belong to the country categories and are only
 named here as examples of a framework, never taken apart. Decoding the wording
 on a particular bottle belongs to Label Reading, grape synonyms to Grapes &
-Labels, and the mechanics of revising a classification to Rank II.
+Labels, and the mechanics of revising a classification to Village.
 
 Every stem opener is distinct, the constructions in lib.BANNED_TEMPLATES are
 avoided by design, and where the answer is an institution, a country or a term
@@ -104,11 +104,11 @@ BANK = [
       "The regulation closes off translation, transliteration and the words style, type, method and imitation alongside outright misuse. The test is whether the protected name is being called to mind at all, not whether any particular buyer was actually deceived, so an honest statement of the true origin makes no difference to the outcome."),
     Q("Indication, brand and the right to a name",
       "Wine names won formal recognition as a species of intellectual property, sitting alongside patents and trademarks, in a world trade agreement concluded in 1994. Which agreement?",
-      ["The TRIPS agreement of the World Trade Organization",
-       "The Treaty of Rome, which founded the European Economic Community in 1957",
-       "The Madrid Protocol, which handles trademark registrations",
-       "The Bretton Woods agreement"], 0,
-      "Trade-Related Aspects of Intellectual Property Rights, administered by the World Trade Organization, obliges member states to give geographical indications legal means of protection, and it singles out wine and spirits for a stricter standard than other goods. It is the reason a producer in a country with no appellation tradition of its own can still be stopped from using a European wine name."),
+      ["The TRIPS Agreement",
+       "The Treaty of Rome",
+       "The Madrid Protocol",
+       "The Lisbon Agreement"], 0,
+      "Trade-Related Aspects of Intellectual Property Rights, administered by the World Trade Organization, obliges every member to give geographical indications legal means of protection, and it singles out wine and spirits for a stricter standard than other goods. The older Lisbon Agreement also protects appellations of origin, but only among the states that joined it. TRIPS left exceptions for names long in use or already generic in a country, which is why bilateral wine agreements were still needed afterwards."),
     Q("Indication, brand and the right to a name",
       "Somebody applies to register the name of a famous wine village as a trademark for wine made a thousand miles from it. What is the usual outcome?",
       ["Refusal, because a mark that misleads the public about geographical origin cannot be registered",
@@ -129,12 +129,12 @@ BANK = [
        "A four-tier system written specifically for wine and used nowhere else",
        "Purely national classifications, with the European layer abolished",
        "A points system in which official panels scored every wine before release"], 0,
-      "Wine was given the same pair of categories the food scheme already used for Parmigiano Reggiano and Prosciutto di Parma, and the two strands have since been drawn into one European register and, since 2024, one regulation. Nothing on the ground moved when it happened: the zones and rulebooks already in force were carried straight across into the new categories, so the reform was a change of framework rather than of boundary."),
+      "Wine was given the same pair of categories the food scheme already used for Parmigiano Reggiano and Prosciutto di Parma, and the two strands have since been drawn into one European register and, since 2024, one regulation governing how the names are registered and protected. Nothing on the ground moved when it happened: the zones and rulebooks already in force were carried straight across into the new categories, so the reform was a change of framework rather than of boundary."),
     Q("The European framework",
       "A protected designation of origin requires its grapes to come from inside the named zone. What proportion?",
-      ["Every one of them", "At least eighty-five percent", "At least seventy-five percent",
+      ["Every one of them", "At least eighty-five per cent", "At least seventy-five per cent",
        "At least half"], 0,
-      "Origin is absolute at this level, and it is the sharpest line between the two protected categories: the broader indication tolerates a fifteen percent margin from outside its boundary while the designation tolerates none. The rules on production and processing tighten in step."),
+      "Origin is absolute at this level, and it is the sharpest line between the two protected categories: the broader indication tolerates a fifteen per cent margin from outside its boundary while the designation tolerates none. The rules on production and processing tighten in step."),
     Q("The European framework",
       "A producer wants a longer list of permitted varieties and a wider boundary than his designation of origin allows, and still wants to name a real region on the label. Which European category takes that wine?",
       ["A protected geographical indication",
@@ -197,12 +197,12 @@ BANK = [
        "Those foods were added to the wine register as an exception in the 1990s",
        "Those foods sit on a separate register that merely shares the institute's name",
        "Only products fermented or matured over time may hold an appellation"], 0,
-      "The same reasoning applies wherever a place, a breed or a practice leaves a mark a buyer can rely on, so butter, lentils and olive oil sit on the register beside the wines. Wine supplied the earliest delimitations and by far the most elaborate rulebooks, but the first French appellation of origin of all was granted to a cheese in 1925, a decade before the wine decrees."),
+      "The same reasoning applies wherever a place, a breed or a local craft leaves a mark a buyer can rely on, so butter, lentils and olive oil sit on the register beside the wines. Wine supplied the earliest delimitations and by far the most elaborate rulebooks, but the first French appellation of origin of all was granted to a cheese in 1925, a decade before the wine decrees."),
     Q("France and the appellation model",
       "Vin de pays was the French name for an entire tier until European harmonisation renamed it. What is that tier called now?",
       ["Indication Geographique Protegee", "Appellation d'Origine Protegee",
-       "Vin de Qualite Superieure", "Vin de Table Regional"], 0,
-      "The change was terminological rather than substantive: the same zones, broadly the same rules, a European name in place of a French one. Many producers still print the older wording alongside the new, so a single label can carry both at once and a buyer meets two names for one tier."),
+       "Vin de France", "Vin de Table"], 0,
+      "The change was largely one of wording, broadly the same zones and rules under a European name, while the old table-wine tier beneath it became Vin de France. Vin de pays survives as a protected traditional term, so a label may still carry the older wording and a buyer meets two names for one tier."),
     Q("France and the appellation model",
       "France once operated a fourth tier for regions working their way toward full appellation status, and abolished it with the 2011 vintage. What was it called?",
       ["Vin Delimite de Qualite Superieure", "Appellation d'Origine Controlee",
@@ -232,7 +232,7 @@ BANK = [
        "The make of tractor and the spraying schedule"], 0,
       "Both are proxies for how hard the vine is made to work: close spacing forces roots down and holds each plant to a modest crop, while a pruning rule caps the number of buds and therefore of bunches. It is how a rulebook reaches into the vineyard without ever tasting anything."),
     Q("What a rulebook controls",
-      "Watering the vines is ordinary practice in Australia and California and restricted or forbidden across much of appellation Europe. What is the reasoning behind the restriction?",
+      "Watering the vines is routine in Australia and California and restricted or forbidden across much of appellation Europe. What is the reasoning behind the restriction?",
       ["Irrigation loosens the tie between the season and the size of the crop",
        "Irrigation water is thought to carry disease into the vineyard",
        "European aquifers are legally reserved for household use",
@@ -256,14 +256,14 @@ BANK = [
     # ------------------------------ percentages, volumes and tolerances (5) --
     Q("Percentages, volumes and tolerances",
       "European law will not let a bottle print a single grape name unless eighty-five percent of the wine is that grape, and American federal law asks for less than that. What does it ask for?",
-      ["Seventy-five percent of the wine", "Ninety percent of the wine",
-       "Fifty-one percent of the wine", "The same eighty-five percent that Europe asks"], 0,
-      "A quarter of an American varietal wine may be something else entirely, and none of it need be declared anywhere, so a varietal label is a majority claim rather than a purity claim on either side of the Atlantic. The federal figure is a floor rather than a settlement: individual states may hold their own growers above it and several do, while no European appellation may go below the European figure."),
+      ["Seventy-five per cent of the wine", "Eighty per cent of the wine",
+       "Fifty-one per cent of the wine", "Two-thirds of the wine"], 0,
+      "A quarter of an American varietal wine may be something else entirely and need not be declared, so a varietal label is a majority claim rather than a purity claim on either side of the Atlantic. The federal floor stood at fifty-one per cent until the early 1980s, and it still does for native labrusca grapes such as Concord, provided the label states the share. A state may hold its own growers above the federal figure, while no European appellation may go below the European one."),
     Q("Percentages, volumes and tolerances",
       "A cask in a European cellar is topped up each year from the harvest that follows, and the producer still means to print one year on the label. How much of the wine may come from other years?",
-      ["Fifteen percent of the volume", "Five percent of the volume",
-       "Twenty-five percent of the volume", "None of it whatever"], 0,
-      "European rules ask that eighty-five percent of a bottle carrying a year come from that harvest, and the margin exists so that a small topping-up from an adjacent year does not cost a wine its vintage. Other countries set their own figures, so a producer selling into several markets has to work to the strictest of them rather than to the rule at home. It matters most for wines held in cask and drawn on gradually, and a wine that cannot meet the figure simply goes out without a year on it."),
+      ["Fifteen per cent of the volume", "Five per cent of the volume",
+       "Twenty-five per cent of the volume", "None of it whatever"], 0,
+      "European rules ask that eighty-five per cent of a bottle carrying a year come from that harvest, and the margin exists so that a small topping-up from an adjacent year does not cost a wine its vintage. Other countries set their own figures, so a producer selling into several markets has to work to the strictest of them rather than to the rule at home. It matters most for wines held in cask and drawn on gradually, and a wine that cannot meet the figure simply goes out without a year on it."),
     Q("Percentages, volumes and tolerances",
       "A laboratory in Bordeaux finds 13.9 percent alcohol in a bottle whose label states 13.5 percent, and no offence has been committed. Why not?",
       ["The labelled strength carries a legal tolerance of half a percentage point",
@@ -300,7 +300,7 @@ BANK = [
        "All four were drafted together by a single commission in Brussels",
        "All four were modelled on a ripeness ladder",
        "The resemblance is coincidental, since each was built in isolation"], 0,
-      "France wrote the modern pattern first, a delimited place bound to a production rulebook, and its neighbours adopted it over the following decades, long before any European harmonisation existed. The later European layer then tidied the categories without disturbing the shape underneath, which is why a student who learns one of the four can read the others quickly."),
+      "France wrote the modern pattern first, a delimited place bound to a production rulebook, and its neighbours adopted it over the following decades, each in a national law of its own before the European categories applied to it. The later European layer then tidied the categories without disturbing the shape underneath, which is why a student who learns one of the four can read the others quickly."),
     Q("Ladders, rungs and national variations",
       "An estate makes one of its country's most admired and expensive reds and sells it under the humblest geographical tier available. What does that reveal about the tiers?",
       ["A tier records only compliance with a rulebook",
@@ -336,7 +336,7 @@ BANK = [
        "Must weight can no longer be measured accurately in warm conditions",
        "European law now forbids ladders based on must weight",
        "Growers deliberately pick unripe to avoid the higher rungs"], 0,
-      "A rung means something only while it is hard to reach, and warming has made the middle of such a ladder attainable in most sites in most years. That pressure is why growers' associations built vineyard hierarchies of their own from the 1990s, and why a ripeness ladder is now typically set alongside an origin pyramid that narrows from a region through a sub-region and a village down to a single vineyard, rather than being replaced by one."),
+      "A rung means something only while it is hard to reach, and warming has made the middle of such a ladder attainable in most sites in most years. That pressure, added to an older complaint that the ladder said nothing about the site, helped push growers' associations to build vineyard hierarchies of their own from the 1990s, and it is why a ripeness ladder is now typically set alongside an origin pyramid that narrows from a region through a sub-region and a village down to a single vineyard, rather than being replaced by one."),
 
     # -------------------------------------- frameworks beyond europe (6) -----
     Q("Frameworks beyond Europe",
@@ -350,7 +350,7 @@ BANK = [
       "Before rules settled in 2015, a bottle sold as Japanese wine could be made from imported bulk juice and never see a Japanese grape. What did those rules require?",
       ["That Japan Wine must be from grapes grown there",
        "That every bottle carry a tasting panel number",
-       "That imported juice be capped at fifteen percent of any blend sold at home",
+       "That imported juice be capped at fifteen per cent of any blend sold at home",
        "That the grape variety always be stated on the front label"], 0,
       "Wine bottled domestically from foreign juice now has to say so, which separated a small quality sector from a large blending trade at a stroke. The standard was set in 2015 and came into force three years later, after a transition that let the old labels run out. It is a recent instance of the oldest idea in wine law: make the label say where the fruit actually grew."),
     Q("Frameworks beyond Europe",
@@ -361,7 +361,7 @@ BANK = [
        "Stop making those styles altogether"], 0,
       "It is geographical-indication protection in its most practical form: a word treated as a style description for a century turned out to belong to somebody else. Some of the replacement terms have since become respected names in their own right, which was not obvious at the time."),
     Q("Frameworks beyond Europe",
-      "American labels once carried the words Chablis, Burgundy and Champagne on wine grown nowhere near any of those places. What closed the practice to new brands?",
+      "American labels once carried the words Chablis, Burgundy and Champagne on wine grown nowhere near any of those places. What closed that door to new brands?",
       ["A 2006 trade agreement between the United States and the European Union",
        "A Supreme Court ruling on consumer deception",
        "The registration of those names as American trademarks",
@@ -380,7 +380,7 @@ BANK = [
        "Their governments lacked the constitutional power to regulate farming",
        "European law forbade them from adopting production rules of their own",
        "Their climates are so reliable that production rules would serve no purpose"], 0,
-      "A European appellation codifies what growers were already doing, and a region with no settled practice gives a rulebook nothing to write down; a newer scheme records instead where growers turned out to be doing well. That difference in order, rather than any difference in seriousness, is the honest account of why one kind of system dictates the grape and the other does not."),
+      "A European appellation codifies what growers were already doing, and a region with no settled custom gives a rulebook nothing to write down; a newer scheme records instead where growers turned out to be doing well. That difference in order, rather than any difference in seriousness, is the honest account of why one kind of system dictates the grape and the other does not."),
 
     # ------------- inspection, enforcement and the limits of the law (6) -----
     Q("Inspection, enforcement and the limits of the law",
@@ -410,14 +410,14 @@ BANK = [
        "A prohibition on all added sulphur dioxide",
        "A requirement that the wine be sold unfiltered, so that nothing is stripped out after fermentation",
        "A ban on exporting organic wine outside the union"], 0,
-      "Certification had stopped at the winery door, so nothing in law said what could be done to the fruit once it arrived. Fixing permitted cellar practices completed the claim and turned a farming certificate into a description of the wine itself."),
+      "Certification had stopped at the winery door, so nothing in law said what could be done to the fruit once it arrived. Fixing what the cellar may do completed the claim and turned a farming certificate into a description of the wine itself."),
     Q("Inspection, enforcement and the limits of the law",
       "A merchant leaves a case of classified wine beside a radiator for a summer and pours it, cooked, to a guest. What does the appellation's rulebook say about that?",
       ["Nothing at all, since its requirements are spent once the wine has left the producer",
        "The name is forfeited automatically as soon as a bottle is found in poor condition",
        "The producer must replace any bottle spoiled in storage",
        "Storage temperature is fixed by the rulebook all the way down to the glass"], 0,
-      "A wine that satisfied every requirement in the vineyard and the cellar can still be destroyed in a hot warehouse or a sunlit window, and no origin law reaches that far. Everything after the sale is left to trade practice and to ordinary consumer law, which is why a merchant's and a sommelier's own handling matters more to what the guest tastes than any letters on the label do."),
+      "A wine that satisfied every requirement in the vineyard and the cellar can still be destroyed in a hot warehouse or a sunlit window, and no origin law reaches that far. Everything after the sale is left to the trade's own care and to ordinary consumer law, which is why a merchant's and a sommelier's own handling matters more to what the guest tastes than any letters on the label do."),
     Q("Inspection, enforcement and the limits of the law",
       "Inspections, laboratory work and the administration behind a European denomination all cost money. Who pays for them?",
       ["The producers, through levies on their wine",

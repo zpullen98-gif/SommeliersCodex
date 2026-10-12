@@ -1,0 +1,674 @@
+{
+  "batch": "village-1",
+  "modules": [
+    "r2_food_pairing",
+    "r2_service_hospitality",
+    "r2_southern_france"
+  ],
+  "readCount": 150,
+  "total": 150,
+  "findings": [
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Which service adjustment can rescue a red that",
+      "field": "ans",
+      "problem": "The keyed answer told the student to serve a too-tannic red cooler, which is backwards: cold hardens tannin, as this module's own red-too-cold question and the original explanation both state. The accept list graded 'chill it' and 'lower the temperature'.",
+      "fix": "ans 'Decant it, or serve it a touch warmer'; accept drops every cooler, chill and lower-temperature entry and takes decant, aerate and warmer phrasings; exp rewritten to say that air softens tannin and a too-cool red gains from a few degrees.",
+      "source": "Tannin and bitterness are perceived more strongly at low temperature (standard service teaching); the module's own question 'Serving a red too cold does what to its tannin and bitterness?' keys 'Increases both'.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "A dish's sweetness sets a floor for the",
+      "field": "opts",
+      "problem": "The stem's word 'floor' gives away the key ('at least as sweet'), and the distractor 'Sweetness in food has no bearing' contradicts the stem's own premise, so the question could be answered from its wording.",
+      "fix": "Two distractors replaced with floor-shaped misconceptions ('The wine's acidity must at least match the dish's sugar', 'The wine needs alcohol enough to stand up to the sugar'); key lengthened to 'The wine must be at least as sweet as the dish itself' so the four sit within 3 characters; exp extended to cover acidity and alcohol.",
+      "source": "standard pairing teaching (WSET and CMS food and wine principles); README rule that a stem must not be answerable from its own words",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Asparagus is difficult with wine because of which",
+      "field": "exp",
+      "problem": "The explanation contradicted itself: it said the pyrazines in asparagus and Sauvignon Blanc compound each other, then called Sauvignon the escape.",
+      "fix": "exp rewritten: asparagus carries the same green pyrazines that mark Sauvignon, that vegetal edge thins most wines, and Sauvignon escapes by echoing the greenness.",
+      "source": "standard pairing teaching (WSET and CMS food and wine principles) (Sauvignon Blanc with asparagus is the textbook complement)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Why is white wine often a better partner",
+      "field": "opts",
+      "problem": "Two distractors were not real misconceptions ('Red wine is always served too cold for cheese', 'Cheese contains no fat to speak of'), leaving the key as the only plausible option.",
+      "fix": "Replaced with 'Salt in cheese strips a red of its fruit' and 'Whites carry more tannin to bind the protein', both false and plausible; exp adds that salt, if anything, flatters a red's fruit.",
+      "source": "standard pairing teaching (WSET and CMS food and wine principles) (salt lifts fruit and softens tannin; whites carry little tannin)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Melon with which style of sweet French fortified",
+      "field": "accept",
+      "problem": "Bare 'muscat' graded 'Muscat d'Alsace', a dry unfortified wine (the wrong-answer-contains-right class the README describes). Pineau des Charentes, the vin de liqueur traditionally poured with Charentais melon, was rejected.",
+      "fix": "Bare 'muscat' replaced with the fortified Muscats (de Rivesaltes, de Frontignan, de Lunel, de Mireval, fortified muscat, muscat vdn); 'pineau des charentes' added; exp names Pineau as a vin de liqueur playing the same part. Bare 'beaumes de venise' deliberately not added, since it would grade the dry red Rhone cru.",
+      "source": "lib.match_sa probe: 'muscat d alsace' graded before, rejected after; Pineau des Charentes is a vin de liqueur (grape must fortified with Cognac)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Which fortified wine is the traditional partner for",
+      "field": "accept",
+      "problem": "Banyuls and Maury, the classic French partners for dark chocolate, were marked wrong.",
+      "fix": "accept adds 'banyuls' and 'maury' (exact, under the existing ex=True); exp names them as the red vins doux naturels of Roussillon.",
+      "source": "standard pairing teaching (WSET and CMS food and wine principles); Banyuls with chocolate is a textbook pairing",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Fat in a dish invites which two possible",
+      "field": "exp",
+      "problem": "The explanation said tannin 'binds the fat'; tannin binds protein, and its effect on fat is the sensory offset of astringency against a slick coating. The accept list also rejected 'acidity and tannin'.",
+      "fix": "exp now says tannin's drying grip offsets the coating fat leaves; accept adds the 'and' forms of acidity and tannin.",
+      "source": "Tannin-protein binding is the established mechanism (the module's own 'Tannin binding with protein' question); astringency and fattiness are opposing sensations",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Which food element most reliably softens the perception",
+      "field": "accept",
+      "problem": "Under ex=True, 'protein', the primary mechanism and the module's own answer elsewhere, was marked wrong.",
+      "fix": "accept adds 'protein', 'proteins', 'proteins and fat' (exact).",
+      "source": "Tannin binding with protein (module's own question on rare beef)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "A dish high in acidity demands what of",
+      "field": "accept",
+      "problem": "'higher acidity', 'more acidity' and 'equal acidity' were all rejected.",
+      "fix": "accept adds those three. 'high acidity' was tried and dropped: cross_accept showed it would grade the Muscadet, Chablis and Champagne answer.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Salt in a dish does what to a",
+      "field": "accept",
+      "problem": "Natural two-part phrasings such as 'softens tannin and enhances fruit' were rejected.",
+      "fix": "accept adds five two-part phrasings, singular and plural.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Umami in a dish, with no salt to",
+      "field": "accept",
+      "problem": "'more bitter' and 'increases bitterness', direct restatements of the answer, were rejected.",
+      "fix": "accept adds 'more bitter', 'harder and more bitter', 'increases bitterness', 'accentuates bitterness'; probes confirm 'less bitter' still fails.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Which two food tastes are broadly wine-friendly, tending",
+      "field": "accept",
+      "problem": "The basic taste names 'salt and sour' and 'salty and sour', plus 'acidity and salt', were rejected.",
+      "fix": "accept adds those orders; 'sweet and sour' still fails.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Which two food tastes are broadly wine-hostile?",
+      "field": "accept",
+      "problem": "'umami and sugar' was rejected while 'sugar and umami' graded.",
+      "fix": "accept adds 'umami and sugar'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Serving a red too cold does what to",
+      "field": "accept",
+      "problem": "'increases them', 'accentuates both' and 'more prominent' were rejected.",
+      "fix": "accept adds six phrasings; 'decreases both' and 'less prominent' still fail.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Muscadet, Chablis and Champagne share which structural feature",
+      "field": "accept",
+      "problem": "Under ex=True, 'high acid' and 'high acidity, unoaked' were rejected.",
+      "fix": "accept adds 'high acid', 'high acidity unoaked', 'unoaked high acidity', 'unoaked with high acidity'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Hard aged cheeses such as Comte suit which",
+      "field": "accept",
+      "problem": "'nutty', half of the keyed answer, was rejected, as were 'oxidised' and 'amontillado'.",
+      "fix": "accept adds 'nutty', 'nuttiness', 'oxidised', 'amontillado'; 'not nutty' and 'fruity' still fail.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Goat cheese and Sauvignon Blanc succeed because both",
+      "field": "accept",
+      "problem": "'acidity and grassiness' and similar phrasings were rejected.",
+      "fix": "accept adds three acidity-and-green phrasings.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Manchego alongside which fortified wine is a fixture",
+      "field": "accept",
+      "problem": "The explanation names Fino and Amontillado, yet under ex=True both were marked wrong.",
+      "fix": "accept adds fino, manzanilla, amontillado and oloroso, bare and with 'sherry'; 'cream sherry' and 'pale cream' still fail.",
+      "source": "The question's own explanation; lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "The same chicken poached and then grilled calls",
+      "field": "accept",
+      "problem": "'method' alone and 'cooking technique' were rejected.",
+      "fix": "accept adds 'method', 'cooking technique', 'technique'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Grilling and searing add which flavour dimension that",
+      "field": "accept",
+      "problem": "Under ex=True, 'browning', 'charred' and 'maillard reaction' were rejected.",
+      "fix": "accept adds six exact phrasings.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "A young tannic red with rare beef works",
+      "field": "accept",
+      "problem": "Plural forms such as 'tannins bind to proteins' were rejected.",
+      "fix": "accept adds four singular and plural phrasings.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Smoked foods sit badly with heavily oaked wine",
+      "field": "accept",
+      "problem": "'they amplify each other' and 'they clash' were rejected.",
+      "fix": "accept adds those and 'smoke on smoke'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Poaching, steaming and raw preparations call for wines",
+      "field": "accept",
+      "problem": "'light bodied' and 'light wines' were rejected.",
+      "fix": "accept adds four light and delicate phrasings; 'full bodied' still fails.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Mint sauce with lamb is difficult for which",
+      "field": "accept",
+      "problem": "'vinegar' alone was rejected, though the explanation itself calls it a vinegar problem.",
+      "fix": "accept adds 'vinegar' and 'vinegar and menthol'.",
+      "source": "The question's own explanation; lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Which treatment can turn a wine-hostile vegetable into",
+      "field": "accept",
+      "problem": "'browning' (part of the keyed answer) and 'grilling' were rejected.",
+      "fix": "accept adds both; 'steaming' and 'boiling' still fail.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "A fiercely hot dish with a tannic, high-alcohol",
+      "field": "accept",
+      "problem": "Reversed orders such as 'alcohol and heat', and the spelling 'chili', were rejected.",
+      "fix": "accept adds six orders and spellings; 'alcohol and acidity' still fails.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "When a guest's stated preference conflicts with the",
+      "field": "accept",
+      "problem": "Possessive forms such as 'guest's wishes' and 'guests preference' were rejected.",
+      "fix": "accept adds four phrasings. Bare 'the guest' deliberately not added.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Why is a by-the-glass programme built around food-friendly",
+      "field": "accept",
+      "problem": "'it must suit many dishes' and similar natural answers were rejected.",
+      "fix": "accept adds 'many dishes', 'many different dishes', 'wide range of dishes'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "A guest orders a big Cabernet with sole.",
+      "field": "accept",
+      "problem": "'serve it as ordered' and 'respect their choice' were rejected.",
+      "fix": "accept adds three phrasings; 'serve it without comment' was dropped after negation_probe flagged its 'without'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "Why does a dry sparkling wine struggle against",
+      "field": "accept",
+      "problem": "The cause, 'the dessert is sweeter than the wine', the most natural answer to a why question, was rejected.",
+      "fix": "accept adds 'dessert is sweeter than the wine' and 'the wine is less sweet than the dessert'; the inversion 'the wine is sweeter than the dessert' still fails. 'not sweet enough' was dropped after negation_probe flagged it.",
+      "source": "lib.match_sa probe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_food_pairing",
+      "stemStart": "A fruit tart, as opposed to a chocolate",
+      "field": "accept",
+      "problem": "'botrytised' alone and the spelling 'botrytized' were rejected.",
+      "fix": "accept adds 'botrytised', 'botrytized', 'botrytis wine'.",
+      "source": "lib.match_sa probe",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "Warming a brandy balloon over a flame at",
+      "field": "opts",
+      "problem": "The keyed option read 'Poor practice, as heat coarsens the aroma', breaking the house rule against the word.",
+      "fix": "Key now 'A poor habit, as heat coarsens the aroma' (39 characters against 41, so the length spread is unchanged).",
+      "source": "House rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "Bottles are laid on their sides for a",
+      "field": "exp",
+      "problem": "The explanation used 'the practice', breaking the house rule.",
+      "fix": "Now 'so lying them down does nothing for them'.",
+      "source": "House rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "The label is turned toward one person at",
+      "field": "exp",
+      "problem": "'Once the capsule is cut the bottle belongs to the restaurant' is unclear and reads as false, since an opened bottle is the guest's.",
+      "fix": "Now 'Once the capsule is cut, a wrong bottle is the restaurant's loss', which states the intended point.",
+      "source": "Plain reading; standard presentation and service teaching",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "Ice alone chills a bottle slowly and unevenly.",
+      "field": "exp",
+      "problem": "'dry ice cubes' reads as solid carbon dioxide.",
+      "fix": "Now 'ice on its own touches only a fraction of the glass'.",
+      "source": "Plain reading",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "Every listed wine has a minimum quantity below",
+      "field": "accept",
+      "problem": "The stem defines the level below which a wine must be reordered, which many inventory systems call the reorder point; that answer was rejected.",
+      "fix": "accept adds 'reorder point', 'reorder level', 'minimum stock level'; exp notes that some systems call the trigger the reorder point.",
+      "source": "Hospitality inventory usage: par level and reorder point are used side by side, and par is often defined as the minimum on hand between deliveries",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "Ginjo and daiginjo are separated from ordinary sake",
+      "field": "accept",
+      "problem": "The spaced romanisation 'seimai buai', plus 'milling ratio' and 'polishing rate', were rejected.",
+      "fix": "accept adds all three.",
+      "source": "lib.match_sa probe; common romanisations",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "A loud report and a plume of foam",
+      "field": "accept",
+      "problem": "'a gentle hiss', the usual alternative description of a correct opening, was rejected.",
+      "fix": "accept adds 'gentle hiss', 'soft hiss', 'quiet hiss'; 'a loud pop' still fails.",
+      "source": "Standard sparkling service teaching",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_service_hospitality",
+      "stemStart": "Bottled unfiltered and throwing a heavy crust, which",
+      "field": "accept",
+      "problem": "Under ex=True, 'single quinta vintage port', which is a vintage Port, was rejected.",
+      "fix": "accept adds it (exact); bare 'port' and 'tawny port' still fail.",
+      "source": "Port category rules",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_southern_france",
+      "stemStart": "Merlot and Chardonnay with the grape named on",
+      "field": "exp",
+      "problem": "The explanation said Merlot and Cabernet reach the appellation map 'only' in Cabardes and Malepere. Limoux rouge is Merlot-led (45 to 70 per cent of the blend, Cabernet up to 35).",
+      "fix": "exp rewritten: the international varieties appear in appellations only where a decree makes room, with Chardonnay leading Limoux whites, Merlot leading Limoux reds and joining Cabernet in Cabardes and Malepere.",
+      "source": "Limoux interprofession (limoux-aoc.com, AOP Limoux rouge) and decree 2011-1788; WebSearch",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_southern_france",
+      "stemStart": "Old bush-vine Carignan is not merely tolerated but",
+      "field": "ans",
+      "problem": "The appellation was renamed Boutenac (EU approval 14 March 2024), so the displayed answer named a superseded appellation. The explanation's blend figures for plantings, the 70 per cent group and the 80 per cent ceiling could not be confirmed (secondary sources disagree).",
+      "fix": "ans 'Boutenac, first named Corbieres-Boutenac' (accept already takes both names; bare 'Corbieres' still fails); exp keeps the confirmed 30 per cent Carignan floor and the four grapes, drops the unconfirmed figures, and records the 2024 rename.",
+      "source": "EU approval of the name change, March 2024 (trade reports and INAO 2020 Corbieres-Boutenac specification found by WebSearch)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_southern_france",
+      "stemStart": "A hilltop village of the Minervois earned in",
+      "field": "exp",
+      "problem": "The explanation named only Minervois-La-Liviniere, but the appellation has been La Liviniere since EU publication in March 2024 (and the old name was hyphenated wrongly).",
+      "fix": "exp now reads 'Minervois-La Liviniere' for 1999 and adds that since 2024 the appellation has carried the name La Liviniere alone; the keyed fact, the first village cru, is unchanged.",
+      "source": "EU Official Journal publication, March 2024, reported by trade and producer sources (WebSearch)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_southern_france",
+      "stemStart": "Pine woods ring a few dozen hectares of",
+      "field": "exp",
+      "problem": "'still farms about half the delimited ground' states a volatile ownership share as fact, against the house rule and the module's own header (no ownership, no volumes); 'dozens of' varieties was likewise unverifiable.",
+      "fix": "exp now says the estate is the name most drinkers know the appellation by and keeps a long list of old permitted varieties.",
+      "source": "House rule: nothing volatile stated as fact",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_southern_france",
+      "stemStart": "Whatever else goes into the vat, a Bandol",
+      "field": "ans",
+      "problem": "The displayed answer used the US form 'percent'.",
+      "fix": "ans 'Fifty per cent' (already in the ex=True accept list, so it still grades).",
+      "source": "House rule: British spelling; the Codex's prose rule of 'per cent'",
+      "confidence": "low",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Which service adjustment can rescue a red that",
+      "verdict": "amended",
+      "why": "The original key was wrong (cold hardens tannin) and the new key and explanation are right, but the containment list still graded the old backwards advice: match_sa took 'serve it slightly cooler, or decant it' and 'decant it and chill it' through the bare 'decant it' entry. Now ex=True with an exact list of decant, aerate and warmer phrasings and their two-part forms; probes confirm the cooler, chill and colder forms fail and the displayed answer grades."
+    },
+    {
+      "stemStart": "A dish's sweetness sets a floor for the",
+      "verdict": "kept",
+      "why": "'Sweetness in food has no bearing' did contradict the stem. The two new distractors are false, floor-shaped and close in length to the key, and the explanation's claim that sugar in food makes a strong dry wine taste hot matches standard teaching. The stem and id are unchanged."
+    },
+    {
+      "stemStart": "Asparagus is difficult with wine because of which",
+      "verdict": "kept",
+      "why": "The old explanation did say the pyrazines compound each other and then called Sauvignon the escape. The new text is consistent with the stem and the module's complement teaching."
+    },
+    {
+      "stemStart": "Why is white wine often a better partner",
+      "verdict": "kept",
+      "why": "Both old distractors were throwaways. The new ones are false and plausible, and the explanation's line on salt agrees with the module's own salt question (softens tannin, lifts fruit)."
+    },
+    {
+      "stemStart": "Melon with which style of sweet French fortified",
+      "verdict": "kept",
+      "why": "Bare 'muscat' did grade 'Muscat d'Alsace'. Refusing bare 'muscat' is defensible, since it names a grape rather than the style asked for. Pineau with Charentais melon is a real tradition, and the explanation calls it a vin de liqueur. One note: the finding says bare 'beaumes de venise' is not graded, but the 60 per cent containment branch grades it through 'muscat de beaumes de venise', as it did before the fix. That is harmless, because the stem already says sweet and fortified."
+    },
+    {
+      "stemStart": "Which fortified wine is the traditional partner for",
+      "verdict": "amended",
+      "why": "Banyuls and Maury with dark chocolate is textbook, and the exact accept entries are right. But 'the red vins doux naturels of Roussillon' reads as the complete set, and Rivesaltes also makes red vins doux naturels (Grenat, Tuile). Now 'two red vins doux naturels of Roussillon'."
+    },
+    {
+      "stemStart": "Fat in a dish invites which two possible",
+      "verdict": "kept",
+      "why": "Tannin binds protein, not fat, so the corrected mechanism is right. The 'and' forms name the same two responses. Probes reject the sweetness and alcohol pairs and 'neither acidity nor tannin'."
+    },
+    {
+      "stemStart": "Which food element most reliably softens the perception",
+      "verdict": "kept",
+      "why": "The stem asks for a single element, so exact 'protein' should grade. Bare 'fat' still fails, which is a fair line."
+    },
+    {
+      "stemStart": "A dish high in acidity demands what of",
+      "verdict": "kept",
+      "why": "Probes: 'higher', 'more' and 'equal acidity' grade; 'less acidity', 'lower acidity than the dish', 'no more acidity than the dish' and bare 'high acidity' fail."
+    },
+    {
+      "stemStart": "Salt in a dish does what to a",
+      "verdict": "kept",
+      "why": "Every addition restates the key. 'Hardens tannin and dulls fruit', 'more tannic and less fruity' and 'harder tannin and less fruit' still fail."
+    },
+    {
+      "stemStart": "Umami in a dish, with no salt to",
+      "verdict": "kept",
+      "why": "The additions are restatements. 'Less bitter', 'reduces bitterness' and 'makes it softer, not more bitter' fail."
+    },
+    {
+      "stemStart": "Which two food tastes are broadly wine-friendly, tending",
+      "verdict": "kept",
+      "why": "Sour is the taste name for acid. 'Sweet and sour', 'sweet and salty' and 'bitter and sour' fail."
+    },
+    {
+      "stemStart": "Which two food tastes are broadly wine-hostile?",
+      "verdict": "kept",
+      "why": "A reversed order of an entry that already grades. 'Salt and acid' fails."
+    },
+    {
+      "stemStart": "Serving a red too cold does what to",
+      "verdict": "kept",
+      "why": "The additions are restatements. 'Decreases both', 'less prominent', 'makes them softer' and 'reduces both' fail."
+    },
+    {
+      "stemStart": "Muscadet, Chablis and Champagne share which structural feature",
+      "verdict": "kept",
+      "why": "Exact restatements under ex=True. 'Oaked high acidity' and 'low acidity' fail."
+    },
+    {
+      "stemStart": "Hard aged cheeses such as Comte suit which",
+      "verdict": "kept",
+      "why": "Nutty is half the key, and amontillado sits beside the oloroso already listed. 'Non-oxidised' grades, because 'non' is not an engine negation word, but that is the same hole the original 'oxidative' entry already had ('non-oxidative' grades at HEAD). It is not new to this fix."
+    },
+    {
+      "stemStart": "Goat cheese and Sauvignon Blanc succeed because both",
+      "verdict": "kept",
+      "why": "The additions are restatements. 'Sweetness and grassiness' and 'fat and grassiness' fail."
+    },
+    {
+      "stemStart": "Manchego alongside which fortified wine is a fixture",
+      "verdict": "kept",
+      "why": "The explanation itself names Fino and Amontillado, and every added style is a dry or naturally dry Sherry. Under ex=True, cream, pale cream, Port and Madeira fail."
+    },
+    {
+      "stemStart": "The same chicken poached and then grilled calls",
+      "verdict": "kept",
+      "why": "'Method' and 'technique' are the variable named in the key. The sauce, the protein, serving temperature, seasoning and the cut all fail."
+    },
+    {
+      "stemStart": "Grilling and searing add which flavour dimension that",
+      "verdict": "kept",
+      "why": "Exact restatements of char and Maillard browning. Bare 'smoke', 'sweetness' and 'umami' fail."
+    },
+    {
+      "stemStart": "A young tannic red with rare beef works",
+      "verdict": "kept",
+      "why": "Plural forms of the same mechanism. 'Tannin binds fat' and 'fat coats tannin' fail."
+    },
+    {
+      "stemStart": "Smoked foods sit badly with heavily oaked wine",
+      "verdict": "amended",
+      "why": "'They amplify each other' and 'smoke on smoke' state the keyed reason. 'They clash' gives no reason at all, since it only restates the stem's 'sit badly', so it is removed. 'Smoke and oak clash', at HEAD, names the two elements and stays."
+    },
+    {
+      "stemStart": "Poaching, steaming and raw preparations call for wines",
+      "verdict": "kept",
+      "why": "The additions are restatements. 'Full bodied', 'heavy wines' and 'oaked and full bodied' fail. 'Light bodied and heavily oaked' grades, which is a minor half-wrong case of the containment branch that the original list shared in kind."
+    },
+    {
+      "stemStart": "Mint sauce with lamb is difficult for which",
+      "verdict": "kept",
+      "why": "The explanation calls it a vinegar problem. 'The fat', 'sugar' and 'sweetness' fail."
+    },
+    {
+      "stemStart": "Which treatment can turn a wine-hostile vegetable into",
+      "verdict": "kept",
+      "why": "Browning is in the key, and grilling browns as charring does. 'Steaming', 'boiling', 'boiling rather than grilling', 'pickling' and 'braising' fail."
+    },
+    {
+      "stemStart": "A fiercely hot dish with a tannic, high-alcohol",
+      "verdict": "kept",
+      "why": "Reversed orders and the chili spelling. 'Alcohol and acidity', 'acidity and heat' and 'sweetness and heat' fail."
+    },
+    {
+      "stemStart": "When a guest's stated preference conflicts with the",
+      "verdict": "kept",
+      "why": "Possessive forms of the key. 'The guest', 'the textbook pairing', 'the sommelier' and 'the host's preference' fail."
+    },
+    {
+      "stemStart": "Why is a by-the-glass programme built around food-friendly",
+      "verdict": "kept",
+      "why": "'It cannot suit many dishes' grades, but in this stem it is a correct reason (a distinctive wine cannot), so it is no false positive. 'Few dishes' and 'they are cheaper' fail."
+    },
+    {
+      "stemStart": "A guest orders a big Cabernet with sole.",
+      "verdict": "kept",
+      "why": "Restatements of serving as ordered. 'Suggest a white instead', 'refuse' and 'correct them' fail."
+    },
+    {
+      "stemStart": "Why does a dry sparkling wine struggle against",
+      "verdict": "kept",
+      "why": "The cause is a fair answer to a why question. Both inversions ('the wine is sweeter than the dessert', 'the dessert is less sweet than the wine') fail."
+    },
+    {
+      "stemStart": "A fruit tart, as opposed to a chocolate",
+      "verdict": "kept",
+      "why": "Spelling and short forms of the key. 'Port', 'tawny port' and 'late harvest red' fail."
+    },
+    {
+      "stemStart": "Warming a brandy balloon over a flame at",
+      "verdict": "kept",
+      "why": "The house rule bans the word, and the new key keeps the meaning and the length spread."
+    },
+    {
+      "stemStart": "Bottles are laid on their sides for a",
+      "verdict": "amended",
+      "why": "Removing the banned word was right, but 'lying them down' uses the intransitive verb transitively, and its 'them' pointed at the closures. Now 'so laying their bottles down does nothing for them'."
+    },
+    {
+      "stemStart": "The label is turned toward one person at",
+      "verdict": "kept",
+      "why": "The old line read as false (an opened bottle is the guest's). The new line states the real point: a wrong bottle opened is the house's loss."
+    },
+    {
+      "stemStart": "Ice alone chills a bottle slowly and unevenly.",
+      "verdict": "kept",
+      "why": "'Dry ice' means solid carbon dioxide, so the fix is right."
+    },
+    {
+      "stemStart": "Every listed wine has a minimum quantity below",
+      "verdict": "amended",
+      "why": "The stem's definition, the level that triggers a reorder, is exactly what inventory usage calls the reorder point, so accepting it is right. But 'minimum stock level' let the bare non-term 'stock level' grade through the 60 per cent containment branch. It is replaced by 'minimum stock', which still grades 'minimum stock level'. 'Stock level' and 'maximum stock' now fail."
+    },
+    {
+      "stemStart": "Ginjo and daiginjo are separated from ordinary sake",
+      "verdict": "kept",
+      "why": "Seimai buai is a common romanisation. 'Alcohol content', 'smv' and 'sake meter value' fail."
+    },
+    {
+      "stemStart": "A loud report and a plume of foam",
+      "verdict": "kept",
+      "why": "A soft hiss is the usual alternative description. 'A loud hiss', 'a loud pop', 'a pop' and 'a bang' fail."
+    },
+    {
+      "stemStart": "Bottled unfiltered and throwing a heavy crust, which",
+      "verdict": "kept",
+      "why": "A single quinta vintage Port is a vintage Port. 'Port', 'tawny port', 'lbv' and 'late bottled vintage port' still fail under ex=True."
+    },
+    {
+      "stemStart": "Merlot and Chardonnay with the grape named on",
+      "verdict": "kept",
+      "why": "Limoux rouge is Merlot-led, so the old 'only in Cabardes and Malepere' was wrong. The new sentence is accurate and claims no figures."
+    },
+    {
+      "stemStart": "Old bush-vine Carignan is not merely tolerated but",
+      "verdict": "kept",
+      "why": "The rename is confirmed: AOP Boutenac, OJEU 14 March 2024 (WebSearch). The accept list already takes both names, and the reduced blend claim (Carignan at least thirty per cent, beside Grenache, Mourvedre and Syrah) is the safe core. The stem's 'percent' stays, since changing it would move the id."
+    },
+    {
+      "stemStart": "A hilltop village of the Minervois earned in",
+      "verdict": "kept",
+      "why": "The rename is confirmed: AOP La Liviniere, OJEU 26 March 2024 (WebSearch). 'Minervois-La Liviniere' is the official hyphenation, and the keyed fact is untouched."
+    },
+    {
+      "stemStart": "Pine woods ring a few dozen hectares of",
+      "verdict": "kept",
+      "why": "A land share is volatile, and the module header bars ownership facts. The new line is safe and still true."
+    },
+    {
+      "stemStart": "Whatever else goes into the vat, a Bandol",
+      "verdict": "kept",
+      "why": "British 'per cent' in displayed text. 'Fifty per cent' is an exact accept entry, so it grades."
+    }
+  ]
+}

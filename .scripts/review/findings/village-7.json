@@ -1,0 +1,471 @@
+{
+ "batch": "village-7",
+ "modules": [
+  "rewrite/categories/r2_pacific_nw_ny_canada.py",
+  "rewrite/categories/r2_rhone.py",
+  "rewrite/categories/r2_wine_fundamentals.py",
+  "rewrite/categories/r2_portugal.py",
+  "rewrite/categories/r2_sparkling_wine_world.py"
+ ],
+ "readCount": 149,
+ "total": 149,
+ "findings": [
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "Vines across the Columbia basin are trained with",
+   "field": "stem",
+   "problem": "The stem ended 'Which hazard shapes both practices?', and the house rule bars the word practice in any form from shipped text.",
+   "fix": "Ended the stem 'Which hazard lies behind both?' instead. Nothing else in the question changed. Its id moves from c-byck0b8m to c-v1acfb3h, and check-similarity is clean (max ratio 0.333, longest run 3).",
+   "source": "Codex house rule (never the word practice or practise)",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "Idaho's vineyards run hot by day, freeze hard",
+   "field": "exp",
+   "problem": "The exp said Idaho's vineyards sit 'well above two thousand feet, higher than anything planted in Washington'. That is true of the Snake River Valley, but the Lewis-Clark Valley AVA in north Idaho is planted far lower, and the absolute ranking against every Washington site cannot be supported.",
+   "fix": "Now reads 'Most of the state's vineyard sits between two and three thousand feet, well above the bulk of Washington's'. It does not name the Snake River Valley, which is the next question's answer.",
+   "source": "Snake River Valley elevations of roughly 2,100 to 3,000 ft as Idaho's wine commission gives them; Lewis-Clark Valley AVA (2016), planted around 700 to 1,500 ft",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "Vines in Idaho cluster in one appellation southwest",
+   "field": "accept",
+   "problem": "The ex=True list did not take bare 'snake river', the short form a student naturally writes, although sibling lists take 'yakima', 'seneca' and 'applegate' the same way.",
+   "fix": "Added 'snake river'. It matches exactly only, and no other answer in the module is that string.",
+   "source": "lib.match_sa under ex=True; module's own accept conventions",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "Delimited in 1988, the first appellation ever nested",
+   "field": "exp",
+   "problem": "The closing clause 'everything outside the two of them carries the regional name alone' states the present roster of nested Finger Lakes AVAs as a fact, and it goes stale with any new petition.",
+   "fix": "Replaced it with 'again following its shoreline slopes', so the exp keeps only the dated history (Cayuga Lake 1988, Seneca Lake 2003).",
+   "source": "House rule: nothing volatile stated as fact",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "Federal law lets a wine made from Concord",
+   "field": "opts",
+   "problem": "Three options were percentages and the fourth was 'Every grape in the bottle'. It was of a different kind and visibly the longest option (25 characters against 10).",
+   "fix": "Replaced it with '100 percent', so all four are figures of one kind.",
+   "source": "Option-shape standard in the brief; build.py length metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "In 1988 British Columbia paid its growers to",
+   "field": "opts",
+   "problem": "The phylloxera distractor ran 86 characters against 49 to 51 for the others. It was one of the module's three long standouts, none of them the key, so eliminating the long option paid (+2.1 points).",
+   "fix": "Trimmed it to 'Phylloxera reached the valley and forced a replanting'. Together with the labrusca option fix, the module's length signal falls to +0.7 with one standout.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_pacific_nw_ny_canada.py",
+   "stemStart": "Temperature at picking is only half of Canada's",
+   "field": "accept",
+   "problem": "The list took the bare figure '35' but not its spelled form, while the Oregon threshold list takes both '95' and 'ninety five'.",
+   "fix": "Added 'thirty five'. The list is ex=True, so it matches exactly only.",
+   "source": "Module's own accept conventions",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "A sweet Condrieu appears on a list and",
+   "field": "opts",
+   "problem": "The key ran 87 characters, 14 clear of the runner-up. It was the module's one key that stood out as the longest option, so the question could be answered from shape.",
+   "fix": "Trimmed the key to 'The decree allows a sweet style, and a little is made most years'. 'Late-picked' moved into exp, which now says the decree still allows late-picked sweet wine.",
+   "source": "rewrite/README.md, option-length section",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "One black grape planted in quantity right across",
+   "field": "exp",
+   "problem": "The exp said Carignan is permitted 'in most of the southern crus'. Gigondas, and as far as I know Vacqueyras, exclude it from their accessory varieties, so 'most' is unsupported.",
+   "fix": "Now reads 'permitted in Cotes du Rhone and across the river in Lirac and Tavel, but never here'.",
+   "source": "Gigondas cahier des charges (accessory varieties: the Cotes du Rhone list except Carignan); Lirac and Tavel cahiers (Carignan as an accessory variety, capped at 10 percent)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "Seven communes make Condrieu, and they fall in",
+   "field": "exp",
+   "problem": "The exp said the Loire department 'has nothing to do with the Loire Valley's wines'. The same department holds Cote Roannaise and Cotes du Forez, which are classed with the Loire Valley.",
+   "fix": "Now reads 'the department named for the river's upper course through the Massif Central, not the Loire Valley wine region'.",
+   "source": "INAO: Cote Roannaise and Cotes du Forez lie in the Loire department and fall under the Loire Valley wine region",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "Saint-Peray's vineyard runs up to a crag crowned",
+   "field": "exp",
+   "problem": "The exp gave Cornas as 'granite throughout', but limestone and clay appear in pockets toward its southern end against Saint-Peray.",
+   "fix": "Now reads 'granite almost throughout'.",
+   "source": "Northern Rhone soil surveys as summarised in standard references (Livingstone-Learmonth)",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "Every Chateauneuf-du-Pape grower must set aside a portion",
+   "field": "exp",
+   "problem": "The exp told the student to 'carry the current figure with its date attached' but never gave a date, so the instruction cannot be followed.",
+   "fix": "Now reads 'Learn the current figure, and set it beside...'. The keyed 2 percent and the rest of the exp are unchanged (see notes: I could not verify the figure).",
+   "source": "Internal coherence of the exp",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "Between the 1960s and the 1980s the delimited",
+   "field": "opts",
+   "problem": "The distractor 'Alluvial islands and river flats lying at the foot of the terraces' stood 10 characters clear of the rest and was never the key. It was one of two such standouts, so eliminating the long option paid (+1.1 points after the key trim).",
+   "fix": "Trimmed it to 'Alluvial river flats at the foot of the terraces'.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_rhone.py",
+   "stemStart": "In the northern crus a white grape entering",
+   "field": "opts",
+   "problem": "The distractor 'They are allowed only where the parcel is planted with both colours mixed together' ran 82 characters against a key of 69. It was a long standout and never the key.",
+   "fix": "Trimmed it to 'They are allowed only where a parcel has both colours planted together' (70 characters). The module now shows no length standouts (+0.0, down from +1.7).",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "Six and a half grams per litre on",
+   "field": "exp",
+   "problem": "The exp ended 'defenceless in practice', which uses the banned word.",
+   "fix": "Now ends 'defenceless in the cellar'.",
+   "source": "Codex house rule (never the word practice or practise)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "Asked to confirm Brettanomyces in a suspect barrel,",
+   "field": "exp",
+   "problem": "The exp said the ratio of 4-ethylphenol to its partner is 'roughly constant', so a laboratory can report one figure. That is false: the ratio follows the hydroxycinnamic precursors in the grape and varies by variety, and laboratories report both compounds.",
+   "fix": "Named the partner as 4-ethylguaiacol and said the balance between the two shifts from one variety to another, which is why a laboratory usually reports both.",
+   "source": "Chatonnet et al. on volatile phenols (about 8:1 in Cabernet Sauvignon, about 3.5:1 in Pinot Noir); AWRI Brettanomyces guidance",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "A length of copper wire dropped into a",
+   "field": "exp",
+   "problem": "The exp said copper does not remove 'the heavier thiols'. Copper does remove hydrogen sulphide and the simple thiols (mercaptans). It is the disulphides formed from them that copper cannot touch, and those can later reduce back to thiols.",
+   "fix": "Rewrote that sentence: once thiols have paired up into disulphides, which smell of cabbage and drains, copper no longer takes them out, and they can later split back into the thiols. A bench trial comes first, and residual copper is capped by law.",
+   "source": "Standard oenology on copper fining and sulphur compounds (AWRI; Waterhouse, Sacks and Jeffery, Understanding Wine Chemistry)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "Fifteen years under screwcap leave a Riesling honeyed",
+   "field": "opts",
+   "problem": "The key ran 86 characters, 21 clear of the runner-up, so it was the visibly longest option.",
+   "fix": "Trimmed it to 'Most of it is chemistry within the wine, needing no air'. The exp already explains how.",
+   "source": "rewrite/README.md, option-length section",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "Vitamin C goes into a white at bottling",
+   "field": "opts",
+   "problem": "The distractor 'It strips the colour out of a white within days of bottling and leaves it looking tired' ran 87 characters against a key of 71. It was a long standout and never the key, and this module's long option was never the key at all.",
+   "fix": "Trimmed that distractor to 'It strips the colour out of a white within days of bottling' and the key to 'It leaves hydrogen peroxide behind, which does worse damage' (59 and 58), so neither stands out.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "A tech sheet gives total sulphur dioxide at",
+   "field": "opts",
+   "problem": "One distractor ran 126 characters against 94 to 96, padded with 'and the only remedy is to top the barrel up more often than this cellar has been doing'. It was a long standout and never the key.",
+   "fix": "Trimmed it to 'It has escaped as gas through the bung, which closer topping up would have prevented'.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "A fermenting vat gets measurably lighter as it",
+   "field": "opts",
+   "problem": "The distractor 'Almost all of it, since the gas escapes and the liquid stays' ran 60 characters against 13 to 21, so it stood out and was never the key.",
+   "fix": "Trimmed it to 'Nearly all of it'.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_fundamentals.py",
+   "stemStart": "Vinegar and nail varnish arrive together on a",
+   "field": "opts",
+   "problem": "The distractor 'Lactic acid bacteria, out of the last grams of residual sugar left in the barrel' ran 80 characters against 33 to 60 and stood out. Trimming it alone would have left the yeast distractor standing out instead.",
+   "fix": "Trimmed the lactic and yeast distractors ('Lactic acid bacteria, out of residual sugar'; 'Wine yeast, out of sulphur compounds in the lees') and reworded the key to 'Acetobacter, out of ethanol and oxygen', which matches the exp's point that the organism needs oxygen. After these opts fixes the module shows no length standouts (+0.0).",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_portugal.py",
+   "stemStart": "Beside plain Vinho Verde, an importer's book lists",
+   "field": "opts",
+   "problem": "The key ran 83 characters, 11 clear of the runner-up. It was the module's one key that stood out as the longest option.",
+   "fix": "Trimmed it to 'Fruit from the named subregion alone, of its recommended varieties'.",
+   "source": "rewrite/README.md, option-length section",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_portugal.py",
+   "stemStart": "Thirteen percent of alcohol in a Moncao e",
+   "field": "opts",
+   "problem": "The distractor about leaving the DOC ran 102 characters against a key of 81, so it stood out and was never the key. Once the key trim above removed the module's only key standout, eliminating the long option paid +2.1 points.",
+   "fix": "Trimmed it to 'Nothing does; above eleven and a half percent it must sell as Minho regional'.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_portugal.py",
+   "stemStart": "A 2003 rewrite of Bairrada's DOC rules still",
+   "field": "opts",
+   "problem": "The distractor about Baga at 85 percent ran 98 characters against a key of 83. It was a long standout, never the key, padded with 'squeezing the rest out'.",
+   "fix": "Trimmed it to 'Made Baga compulsory at eighty-five percent of every red carrying the name'.",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_portugal.py",
+   "stemStart": "Neighbours a few hundred metres apart near Sintra",
+   "field": "opts",
+   "problem": "The trench-planting distractor ran 89 characters against 68 to 79. It was a long standout and never the key.",
+   "fix": "Trimmed it to 'The DOC requires trench planting by hand, and one grower used a machine'. After these opts fixes the module shows no length standouts (+0.0).",
+   "source": "rewrite/README.md, option-length section; build.py points metric",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_portugal.py",
+   "stemStart": "Three letters, CVR, open the name of most",
+   "field": "exp",
+   "problem": "The exp named only two certifiers outside the CVR pattern, Vinho Verde and the Algarve. Bairrada's body is the Comissao Vitivinicola da Bairrada (CVB), which also has no Regional in its name.",
+   "fix": "Now says three break the pattern: the Vinho Verde body, and the Comissao Vitivinicola da Bairrada and the Comissao Vitivinicola do Algarve, with no Regional in either name.",
+   "source": "Comissao Vitivinicola da Bairrada (CVB), the Bairrada certifying body's own name; IVV list of CVRs",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_portugal.py",
+   "stemStart": "Between 1931 and the 1990s no grower could",
+   "field": "exp",
+   "problem": "The exp said the Adega 'still makes and ages much of what little Colares exists', which states a present production share as fact.",
+   "fix": "Now reads 'the Adega still makes and ages Colares beside them'.",
+   "source": "House rule: nothing volatile stated as fact",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_sparkling_wine_world.py",
+   "stemStart": "Most of England's vineyard crowds into the southeastern",
+   "field": "exp",
+   "problem": "The exp said 'with Hampshire next and Essex climbing fastest'. A county ranking by planted area is volatile, and recent WineGB counts have put Essex level with or past Hampshire.",
+   "fix": "Now reads 'though planting has spread well beyond them, to Hampshire, Essex and further west'.",
+   "source": "House rule: nothing volatile stated as fact; WineGB annual industry reports",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_sparkling_wine_world.py",
+   "stemStart": "In 1988 a West Sussex estate planted Chardonnay,",
+   "field": "exp",
+   "problem": "The exp dated Nyetimber's first releases to the mid-1990s, but the first vintage (1992) reached the market and won its trophy in the later 1990s.",
+   "fix": "Now reads 'Its first releases in the 1990s'.",
+   "source": "Nyetimber's published history (first vintage 1992, the 1992 Blanc de Blancs and its IWSC trophy)",
+   "confidence": "low",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "Vines across the Columbia basin are trained with",
+   "verdict": "kept",
+   "why": "The banned word sat in the stem itself, so no exp or option edit could have removed it; 'Which hazard lies behind both?' still points cleanly at the two training habits, and the id move is the unavoidable cost."
+  },
+  {
+   "stemStart": "Idaho's vineyards run hot by day, freeze hard",
+   "verdict": "kept",
+   "why": "The original was wrong as worded: the Lewis-Clark Valley in Idaho is planted far below two thousand feet and Naches Heights in Washington reaches about that height. The Snake River Valley, which holds most of Idaho's vineyard, sits roughly 2,100 to 3,000 feet, so 'most of the state's vineyard' and 'the bulk of Washington's' are both safe, and the next question's answer is not given away."
+  },
+  {
+   "stemStart": "Vines in Idaho cluster in one appellation southwest",
+   "verdict": "kept",
+   "why": "Tested with lib.match_sa: 'Snake River', 'snake river valley' and 'Snake River Valley AVA' grade; 'Snake', 'Snake River Plain', 'Columbia River' and 'Lewis-Clark Valley' do not. The list is ex=True, and the leniency matches 'yakima' and 'applegate' in the same module."
+  },
+  {
+   "stemStart": "Delimited in 1988, the first appellation ever nested",
+   "verdict": "amended",
+   "why": "Dropping the present roster clause was right, but the replacement repeated 'its shoreline slopes' from the sentence before (and the stem) word for word. Now reads 'The second nested appellation was drawn the same way fifteen years later, around a neighbouring lake', which keeps only the dated history (1988, 2003)."
+  },
+  {
+   "stemStart": "Federal law lets a wine made from Concord",
+   "verdict": "kept",
+   "why": "'100 percent' is plainly wrong against the 51 percent labrusca allowance and puts all four options in one form; the key is untouched."
+  },
+  {
+   "stemStart": "In 1988 British Columbia paid its growers to",
+   "verdict": "kept",
+   "why": "A trim of a distractor only; it still reads as a plausible wrong cause and the key and exp are untouched."
+  },
+  {
+   "stemStart": "Temperature at picking is only half of Canada's",
+   "verdict": "kept",
+   "why": "Tested with lib.match_sa under ex=True: 'thirty five', 'thirty-five' and '35' grade, while 'thirty', 'twenty five', '25' and 'thirty-two' do not. The bare figure was already accepted, so the spelled form adds no wrong answer."
+  },
+  {
+   "stemStart": "A sweet Condrieu appears on a list and",
+   "verdict": "kept",
+   "why": "The key still states the true position (the decree allows a sweet Condrieu), now at 64 characters against 56 to 72; 'late-picked' survives in the exp, so nothing was lost."
+  },
+  {
+   "stemStart": "One black grape planted in quantity right across",
+   "verdict": "kept",
+   "why": "Verified: the Lirac cahier des charges caps Carignan at 10 percent for reds and roses, and Tavel lists it as an accessory variety at up to 10 percent. Both lie across the river from Chateauneuf-du-Pape. Gigondas and Vacqueyras exclude it, so 'most of the southern crus' was at best unsupported; the new wording claims only what is checkable."
+  },
+  {
+   "stemStart": "Seven communes make Condrieu, and they fall in",
+   "verdict": "kept",
+   "why": "The original was wrong: Cote Roannaise and Cotes du Forez lie in the Loire department and are classed with the Loire Valley wines. The fix keeps the point (the department is not the Loire Valley region) without the false absolute."
+  },
+  {
+   "stemStart": "Saint-Peray's vineyard runs up to a crag crowned",
+   "verdict": "kept",
+   "why": "Cornas is granite for the most part, with pockets of limestone and clay toward Saint-Peray and alluvium near the river; 'almost throughout' is the honest hedge and the contrast with Saint-Peray still stands."
+  },
+  {
+   "stemStart": "Every Chateauneuf-du-Pape grower must set aside a portion",
+   "verdict": "kept",
+   "why": "Harmless wording change. Checked the keyed figure: the Cotes du Rhone syndicate's 2025 campaign measures still give the minimum rape as 2 percent of the volume claimed, so the key is sound and the exp's history (5 percent in the older rules) can stand."
+  },
+  {
+   "stemStart": "Between the 1960s and the 1980s the delimited",
+   "verdict": "kept",
+   "why": "Distractor trim only; still a plausible wrong place for the extension (the plateau is the key) and no longer a length standout."
+  },
+  {
+   "stemStart": "In the northern crus a white grape entering",
+   "verdict": "kept",
+   "why": "Distractor trim only; meaning unchanged and the key untouched. build.py reports no length standouts."
+  },
+  {
+   "stemStart": "Six and a half grams per litre on",
+   "verdict": "kept",
+   "why": "'defenceless in the cellar' removes the banned word and keeps the sense (high TA, high pH, poor microbial protection)."
+  },
+  {
+   "stemStart": "Asked to confirm Brettanomyces in a suspect barrel,",
+   "verdict": "kept",
+   "why": "The original was wrong: the 4-ethylphenol to 4-ethylguaiacol ratio follows the p-coumaric and ferulic precursors and varies by variety (roughly 8:1 in Cabernet Sauvignon, nearer 3.5:1 in Pinot Noir). Naming the partner gives away no other answer in the module, and the hyphen in the compound name is not a dash."
+  },
+  {
+   "stemStart": "A length of copper wire dropped into a",
+   "verdict": "kept",
+   "why": "Copper takes out hydrogen sulphide and the simple mercaptans but not disulphides, which can later reduce back to thiols; the fix states that correctly and keeps the bench trial and the legal cap on residual copper. The original's 'heavier thiols' was vague to the point of misleading."
+  },
+  {
+   "stemStart": "Fifteen years under screwcap leave a Riesling honeyed",
+   "verdict": "kept",
+   "why": "The trimmed key keeps the tested idea (maturation in glass is mostly reaction among the wine's own compounds) and no longer stands out at 55 characters against 47 to 65."
+  },
+  {
+   "stemStart": "Vitamin C goes into a white at bottling",
+   "verdict": "kept",
+   "why": "Both trims keep their meaning: ascorbic acid yields hydrogen peroxide as it scavenges oxygen, and the colour distractor is still wrong. Key 58 against 59, neither a standout."
+  },
+  {
+   "stemStart": "A tech sheet gives total sulphur dioxide at",
+   "verdict": "kept",
+   "why": "Distractor trim only; it still offers the tempting wrong mechanism (loss as gas) and the key is untouched."
+  },
+  {
+   "stemStart": "A fermenting vat gets measurably lighter as it",
+   "verdict": "kept",
+   "why": "'Nearly all of it' is still wrong against roughly half by weight, and it now matches the other figures in form."
+  },
+  {
+   "stemStart": "Vinegar and nail varnish arrive together on a",
+   "verdict": "kept",
+   "why": "'Out of ethanol and oxygen' is as true as 'from ethanol and air' and matches the exp; the distractors keep their meaning. The key is now the shortest option (38 against 43 to 48), which build.py does not flag as a signal."
+  },
+  {
+   "stemStart": "Beside plain Vinho Verde, an importer's book lists",
+   "verdict": "kept",
+   "why": "The trimmed key says the same thing (fruit wholly from the subregion, of its recommended varieties) and no longer stands out."
+  },
+  {
+   "stemStart": "Thirteen percent of alcohol in a Moncao e",
+   "verdict": "kept",
+   "why": "Distractor trim only; meaning unchanged."
+  },
+  {
+   "stemStart": "A 2003 rewrite of Bairrada's DOC rules still",
+   "verdict": "kept",
+   "why": "Distractor trim only; still the plausible inverse of what the 2003 revision did."
+  },
+  {
+   "stemStart": "Neighbours a few hundred metres apart near Sintra",
+   "verdict": "kept",
+   "why": "Distractor trim only; meaning unchanged and no length standout remains."
+  },
+  {
+   "stemStart": "Three letters, CVR, open the name of most",
+   "verdict": "kept",
+   "why": "Right: the Bairrada certifier is the Comissao Vitivinicola da Bairrada, with no Regional in its name, alongside the Algarve's Comissao Vitivinicola do Algarve and the Vinho Verde commission; the accept list is untouched."
+  },
+  {
+   "stemStart": "Between 1931 and the 1990s no grower could",
+   "verdict": "kept",
+   "why": "A present production share was volatile; 'still makes and ages Colares beside them' keeps only the durable point that the Adega continues alongside the independents."
+  },
+  {
+   "stemStart": "Most of England's vineyard crowds into the southeastern",
+   "verdict": "kept",
+   "why": "A county ranking by planted area is volatile and Essex has been overtaking Hampshire in recent WineGB counts; the new clause keeps the stable claim (Kent and Sussex lead) and drops the ranking."
+  },
+  {
+   "stemStart": "In 1988 a West Sussex estate planted Chardonnay,",
+   "verdict": "kept",
+   "why": "The first vintage (1992) was released and won its trophy in the later 1990s, so 'mid-1990s' was loose; 'in the 1990s' is safe."
+  },
+  {
+   "stemStart": "(module docstring) Facts are restricted to ones that do not drift",
+   "verdict": "kept",
+   "why": "Not in the findings log: the reviewer also replaced the banned word in the r2_wine_fundamentals docstring, so it now reads 'long-settled analytical method'. The docstring does not ship, but the change alters no meaning and leaves the module clean."
+  }
+ ]
+}

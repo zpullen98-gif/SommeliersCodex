@@ -1,11 +1,11 @@
-"""Rank II rewrite - Fortified Wines (35 questions: 17 MC, 18 short answer).
+"""Village rewrite - Fortified Wines (35 questions: 17 MC, 18 short answer).
 
-Certified level, and pitched at the RULES rather than at the styles. Rank I
+Certified level, and pitched at the RULES rather than at the styles. Regionale
 already teaches that spirit stops the ferment, that a tawny browns in wood and
 that canteiro is the slow route on Madeira; this category asks what the licence
 caps, what the label has to say, how many years the ladder demands and which
 route a wine must have taken to be allowed the claim at all. Nothing here
-repeats a Rank I task.
+repeats a Regionale task.
 
 The running order is built around one idea: a fortified wine is defined by a
 decision taken before it is made and by a rule that governs it afterwards. So
@@ -70,8 +70,8 @@ BANK = [
       "The beneficio is a market control before it is a quality control: the authorities weigh the stock sitting in the lodges against what the trade has been selling, release only that much fortification, and then divide it among growers by the graded score of each parcel. Whatever is not licensed is fermented out dry and sold as unfortified Douro wine, which is why one vineyard feeds two entirely separate trades."),
     Q("The Douro rules and the beneficio",
       "Roughly one part spirit goes into four or five parts of fermenting must, and the distillate is bought at a strength the regulations fix rather than one the shipper prefers. Which strength?",
-      ["Seventy-seven percent", "Forty percent",
-       "Ninety-six percent", "Sixty percent"], 0,
+      ["Seventy-seven per cent", "Forty per cent",
+       "Ninety-six per cent", "Sixty per cent"], 0,
       "Aguardente vinica at that strength is deliberately not neutral. It carries congeners of its own, so the choice of spirit seasons the wine and is argued over in the trade as hotly as the fruit is. A spirit taken up to ninety-six, which is about as neutral as a spirit can be made, would add alcohol and nothing else, and that is what a producer wants when the grape is supposed to do all the talking."),
     SA("The Douro rules and the beneficio",
        "Douro stocks, contracts and the annual fortification allowance are all counted in a traditional cask measure of five hundred and fifty litres. Name that measure.",
@@ -100,7 +100,7 @@ BANK = [
        ex=True),
     SA("The Douro rules and the beneficio",
        "Whatever the style in the bottle, the finished wine has to land inside a narrow alcohol band written into the Port regulations. Give that band.",
-       "Nineteen to twenty-two percent",
+       "Nineteen to twenty-two per cent",
        ["nineteen to twenty two percent", "nineteen to twenty two per cent",
         "nineteen to twenty two", "between nineteen and twenty two percent",
         "nineteen to twenty two percent alcohol",
@@ -113,7 +113,7 @@ BANK = [
         "19 to 22 abv", "between 19 and 22 percent abv", "between 19% and 22%",
         "from 19 to 22 percent", "19 and 22 percent", "19% abv to 22% abv",
         "19 to 22 percent by volume", "19 to 22 percent alcohol by volume",
-        "nineteen and twenty two percent"],
+        "nineteen and twenty two percent", "between nineteen and twenty two per cent", "nineteen to twenty two per cent alcohol", "nineteen to twenty two per cent abv", "between 19 and 22 per cent", "19-22 per cent", "19 to 22 per cent alcohol", "19 to 22 per cent abv", "19-22 per cent abv", "between 19 and 22 per cent abv", "from 19 to 22 per cent", "19 and 22 per cent", "19 to 22 per cent by volume", "19 to 22 per cent alcohol by volume", "nineteen and twenty two per cent"],
        "A wine that ferments too far to take enough spirit, or takes too little, is simply not Port and has to be sold as something else. The one exception the rules make is for the light dry white, which may come in at sixteen and a half so that it can be poured long over ice without flooring a guest before dinner.",
        ex=True),
 
@@ -124,7 +124,7 @@ BANK = [
        "The valley cask has aged more slowly, since dry heat seals the staves and keeps air out",
        "The Gaia cask has aged faster, since damp sea air drives oxygen through the wood",
        "Neither has moved, as a cask works on the wine only through the age of its own oak"], 0,
-      "Heat drives everything a cask does, and a Douro summer up the valley is far fiercer than one at the river mouth. Wine raised up the valley browns sooner, concentrates faster and loses far more to evaporation, while the estuary lodges are cool and humid enough to hold a wine for decades without cooking it. That is why the trade grew up at the river mouth in the first place, and why choosing where to lay a lot down is a decision about style rather than about storage."),
+      "Heat drives everything a cask does, and a Douro summer up the valley is far fiercer than one at the river mouth. Wine raised up the valley browns sooner, concentrates faster and loses far more to evaporation, while the estuary lodges are cool and humid enough to hold a wine for decades without cooking it, so choosing where to lay a lot down is a decision about style rather than about storage. The lodges stood at the river mouth because the ships did, and the cool, damp air there was a happy accident."),
     Q("Wood ageing and the lodges of Gaia",
       "Red colour drains out of a Port ageing in cask while a wine bottled at two years holds its own for decades. What is becoming of the pigment?",
       ["Air polymerises it and it falls out as sediment in the cask",
@@ -140,13 +140,13 @@ BANK = [
         "reserva port", "ruby reserve", "tawny reserve", "white reserve",
         "white reserva", "ruby reserva", "tawny reserva", "reserva reserve",
         "porto reserve", "reserve designation"],
-       "It is a quality claim rather than a stated age: the sample either passes the tasting panel or it does not, and a tawny carrying the word puts no number of years on the label, whatever spell in wood its own colour category demands before the claim is allowed. It occupies the step between the cheapest bottling and the wines that declare an age, which is where most of the trade in serious Port actually sits.",
+       "It is a quality claim rather than a stated age: the sample either passes the tasting panel or it does not, and a tawny carrying the word puts no number of years on the label, whatever spell in wood its own colour category demands before the claim is allowed. It occupies the step between the standard bottlings and the wines that declare an age.",
        ex=True),
     SA("Wood ageing and the lodges of Gaia",
        "One rare Port style spends a few years in wood and then many years in sealed glass demijohns rather than cask, so it develops with almost no air at all. Name the style.",
        "Garrafeira",
        ["garrafeira", "garrafeira port", "port garrafeira", "garrafeira style"],
-       "Glass gives up none of the oxygen wood does, so the wine stops taking on cask character and goes somewhere neither a bottle-aged nor a cask-aged Port arrives at, keeping fruit while turning silky. The rules ask for a spell in wood and then a long minimum in demijohn before the wine may be sold, and the two or three houses that still bother routinely leave it there for decades longer than that."),
+       "Glass gives up none of the oxygen wood does, so the wine stops taking on cask character and goes somewhere neither a bottle-aged nor a cask-aged Port arrives at, keeping fruit while turning silky. The rules ask for a spell in wood and then a long minimum in demijohn before the wine may be sold, and the few houses that still make it routinely leave it there for decades longer than that."),
 
     # ---------------------------- Vintage, late bottled and crusted (3) ------
     Q("Vintage, late bottled and crusted",
@@ -155,7 +155,7 @@ BANK = [
        "In the harvest year itself, before the ferment has even been muted",
        "In the fourth year, once the wine has passed three winters in wood",
        "At bottling, whenever in the wine's life the house chooses to bottle"], 0,
-      "Notice goes in during the second year and the wine must be in bottle before the third year is out, which is what makes a Vintage Port bottle-aged by definition rather than by anyone's choice. A house that declines to declare may still bottle a vintage-dated wine from one of its own properties, and those single quinta bottlings run to exactly the same calendar."),
+      "Notice goes in during the second year, and the wine must be bottled between 1 July of that year and 30 June of the third, which is what makes a Vintage Port bottle-aged by definition rather than by anyone's choice. A house that declines to declare may still bottle a vintage-dated wine from one of its own properties, and those single quinta bottlings run to exactly the same calendar."),
     Q("Vintage, late bottled and crusted",
       "Two late bottled vintages of one year sit on the list, and the dearer of the two says unfiltered. What follows for the guest who orders it?",
       ["It will throw a deposit, so it wants decanting, and it can still improve",
@@ -172,11 +172,11 @@ BANK = [
     # ------------- White, rose and the Douro's other fortified wine (3) ------
     Q("White, rose and the Douro's other fortified wine",
       "A pink Port poured cold over ice is the newest thing in the category. Which description fits the way it is made?",
-      ["A short maceration draws just enough colour, and the wine sees no wood at all",
+      ["A short maceration for colour, and no wood ageing at all",
        "White Port is blended with a little ruby just before bottling",
        "A tawny is drawn off the cask before it has finished browning",
        "The wine rests in old red casks until it takes up their pigment"], 0,
-      "Everything about it is aimed at colour and fruit rather than at development: brief skin contact, protection from air throughout, early bottling and no cask ageing whatever. It is the one Port the rules treat as a wine to be drunk on release and never laid down."),
+      "Everything about it is aimed at colour and fruit rather than at development: brief skin contact, protection from air throughout, early bottling and no cask ageing whatever. It is made to be drunk young and cold, and nothing in the method rewards keeping it."),
     SA("White, rose and the Douro's other fortified wine",
        "At the sweet end of the white Port range sits a style whose name means tear. Name it.",
        "Lagrima",
@@ -206,7 +206,7 @@ BANK = [
        "A blend that has come out drier than the house wants can be sweetened with must that was fortified before it ever fermented. Give the island's name for that sweetening wine.",
        "Vinho surdo",
        ["vinho surdo", "surdo", "surdo wine", "vinho surdo madeira"],
-       "Muting a must before the yeast touches it keeps every gram of its sugar, and what strength it has comes from the spirit rather than from fermentation, so a small dose lifts sweetness without watering the blend down. It is the ordinary tool for holding a house style steady from one harvest to the next, and something equivalent exists in every region that fortifies."),
+       "Muting a must before the yeast touches it keeps every gram of its sugar, and what strength it has comes from the spirit rather than from fermentation, so a small dose lifts sweetness without watering the blend down. It is the ordinary tool for holding a house style steady from one harvest to the next, and most regions that fortify keep an equivalent of their own."),
     SA("Madeira: the heat and the rules",
        "Certification of the island's wine sits with a public institute whose remit also covers embroidery and handicrafts. Give the initials it goes by.",
        "IVBAM",
@@ -217,7 +217,7 @@ BANK = [
     # -------------- Madeira: varieties, sweetness and single harvests (5) ----
     Q("Madeira: varieties, sweetness and single harvests",
       "Printing a grape name on a Madeira label commits the producer to a minimum share of that variety in the bottle. What does the rule ask for?",
-      ["Eighty-five percent from the named grape",
+      ["Eighty-five per cent from the named grape",
        "Three quarters of it, and no less than that",
        "Half, with the balance from any permitted grape",
        "All of it, since no blending is allowed here"], 0,
@@ -329,7 +329,7 @@ BANK = [
     Q("Vins de liqueur and the oxidative styles",
       "A Charentais grower who wants to make Pineau des Charentes cannot simply buy in a case of brandy for the job. What does the rule demand?",
       ["Cognac and juice from the grower's own holding",
-       "Neutral spirit at ninety-six percent, the same as a vin doux naturel takes",
+       "Neutral spirit at ninety-six per cent, the same as a vin doux naturel takes",
        "Any Cognac bought inside the delimited region, from whichever house has it",
        "Armagnac of at least three years"], 0,
       "Spirit and juice have to come off the same property, which makes Pineau a farm product in a way that very little fortified wine is. The Cognac must carry some age before it is used and the blend then spends time in cask, so a bottle represents two crops from one holding rather than a purchase."),

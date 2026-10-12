@@ -1,11 +1,11 @@
-"""Rank II rewrite - Alsace (19 questions: 9 MC, 10 short answer).
+"""Village rewrite - Alsace (19 questions: 9 MC, 10 short answer).
 
-Certified level, pitched deliberately above the Rank I Alsace category. Where
-Rank I teaches that four noble grapes own the grand cru tier, this asks about
-the holes punched in that rule; where Rank I says the 2021 sweetness reform
-exists, this asks for its exact terms and its exemptions; where Rank I dates
+Certified level, pitched deliberately above the Regionale Alsace category. Where
+Regionale teaches that four noble grapes own the grand cru tier, this asks about
+the holes punched in that rule; where Regionale says the 2021 sweetness reform
+exists, this asks for its exact terms and its exemptions; where Regionale dates
 the tier's birth, this follows the 2011 change that made every cru an
-appellation of its own. Nothing here repeats a Rank I task.
+appellation of its own. Nothing here repeats a Regionale task.
 
 The running order is built around one idea: Alsace at this level is a study in
 exceptions. The bank walks downhill from the top of the label - the cru rules
@@ -72,7 +72,7 @@ BANK = [
        "Sylvaner",
        ["sylvaner", "silvaner", "sylvaner grape", "it is sylvaner",
         "gruner sylvaner"],
-       "Sylvaner had grown on Zotzenberg's marl and limestone for generations while the noble-grape rule kept its name off the label, and the 2005 amendment recognised the tradition rather than inventing one. The concession is strictly local: on no other cru may the word Sylvaner appear, and Zotzenberg keeps the noble four alongside it."),
+       "Sylvaner had grown on Zotzenberg's marl and limestone for generations while the noble-grape rule kept its name off the label, and the 2005 amendment recognised the tradition rather than inventing one. The concession is strictly local: on no other cru may the word Sylvaner appear, and Zotzenberg keeps its noble grapes alongside it."),
     SA("The grand cru exceptions",
        "Site, vintage and the words Alsace Grand Cru appear on a bottle of Altenberg de Bergheim, yet nowhere does it name a grape. What does that silence say about what is in the bottle?",
        "A blend of several grapes",
@@ -237,7 +237,7 @@ BANK = [
       "Granite crus like Brand and Sommerberg sit at the mouths of Vosges valleys, while Alsace's marl and limestone names string along the lower foothills. What arranged them that way?",
       ["Valley streams sawed through the sedimentary skin to the old crystalline rock beneath",
        "Ice-age glaciers ferried granite blocks down from the summits and dumped them where the valleys open",
-       "Limestone was laid down by the Rhine in terraces wherever the slope flattens toward the plain",
+       "Limestone was laid down by the Rhine in terraces wherever the slope flattens towards the plain",
        "The abbeys held the marl under ancient planting rights while the towns worked the granite"], 0,
       "The foothill belt is the champ de fractures, a staircase of fault-dropped blocks whose limestone, marl and sandstone once roofed the whole range, and a valley is where a stream has cut clean through that roof into the granite and gneiss beneath. Which rock a cru sits on is therefore mostly a question of how much cover its patch of hillside has lost."),
 ]

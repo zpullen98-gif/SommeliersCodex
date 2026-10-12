@@ -1,4 +1,4 @@
-"""Rank I rewrite - Food & Pairing (54 questions, all multiple choice).
+"""Regionale rewrite - Food & Pairing (54 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -11,9 +11,9 @@ protein - then heat and green bitterness, then the marriages that have outlived
 every fashion, the handful of foods that defeat wine, and finally the shape of a
 meal from the first glass to the last.
 
-The Rank II Food & Pairing category owns the chemistry: why tannin binds with
+The Village Food & Pairing category owns the chemistry: why tannin binds with
 protein, what cynarin does to a sweet receptor, which interaction explains a
-classic. This one stops at the rule and the recommendation. Where Rank II asks
+classic. This one stops at the rule and the recommendation. Where Village asks
 what is happening, this asks what to pour, and several dishes appear here whose
 mechanism is deliberately left to the category above.
 
@@ -69,11 +69,11 @@ BANK = [
        "A heavy, high-alcohol wine to match the volume",
        "Firm tannin and a long spell in new oak",
        "Enough sweetness to coat the palate"], 0,
-      "Weight and intensity are separate axes, and a dish can be extreme on one while modest on the other. An aromatic white at twelve percent carries plenty of flavour without the mass that would flatten raw fish, which is exactly the combination this plate is asking for."),
+      "Weight and intensity are separate axes, and a dish can be extreme on one while modest on the other. An aromatic white at twelve per cent carries plenty of flavour without the mass that would flatten raw fish, which is exactly the combination this plate is asking for."),
     Q("Weight, intensity and the two strategies",
       "A cod fillet arrives blanketed in a butter and cream sauce. Which white is the sounder call?",
       ["A white with body and a ripe, rounded texture",
-       "A thin, neutral white at eleven percent, served very cold",
+       "A thin, neutral white at eleven per cent, served very cold",
        "A sweet late-harvest white",
        "An intensely aromatic off-dry white"], 0,
       "Cream and butter add weight the fish alone does not have, so a wine that suited the plain poached version now tastes watery beside it. Sweetness is the wrong axis entirely here, and a loudly aromatic wine argues with the sauce instead of supporting it."),
@@ -103,7 +103,7 @@ BANK = [
     Q("Fat, richness and the fryer",
       "Duck rillettes and a coarse pork terrine are set out with cornichons and mustard. Which red is the easier partner?",
       ["A light, high-acid red served slightly cool",
-       "A heavily oaked red at fifteen percent",
+       "A heavily oaked red at fifteen per cent",
        "An old and delicate red at the peak of its life",
        "A sweet red made from grapes dried on straw mats"], 0,
       "Fat and salt want freshness set against them rather than more weight, and a light chill sharpens a simple red further. The old bottle is the real trap on a list like this: a coarse terrine with mustard beside it tramples a wine whose whole appeal is subtlety."),
@@ -125,7 +125,7 @@ BANK = [
       "Fried chicken is ordered at the bar and the guest wants red rather than white. Which suggestion does the least damage?",
       ["A juicy, low-tannin red served cool",
        "A young red with firm, drying tannin",
-       "A heavily oaked red at fifteen percent",
+       "A heavily oaked red at fifteen per cent",
        "A sweet red dessert wine"], 0,
       "A stated preference is worth working with rather than around, and a red can be made to fit here by choosing one that behaves like a white: cool, fruity and light on grip. Tannin and oak are what turn fried food harsh in the mouth, so the recommendation is really about avoiding those two."),
 
@@ -135,13 +135,13 @@ BANK = [
       ["An unoaked white with firm acidity",
        "A richly oaked, buttery white",
        "A sweet botrytised white",
-       "A warm, high-alcohol white at fifteen percent"], 0,
+       "A warm, high-alcohol white at fifteen per cent"], 0,
       "Two lots of smoke do not cancel each other, they accumulate, so a barrel-heavy wine beside smoked fish tastes acrid within a couple of mouthfuls. Keeping the wine clean and sharp leaves the smoke where the cook put it, and gives the oil in the fish something to be cut by."),
     Q("Salt, smoke and cured food",
       "Ribs come out of the smoker lacquered in a sweet, sticky sauce. Which red suits them?",
       ["A ripe, fruit-forward red with soft tannin",
        "A lean, austere red with searing acidity",
-       "A pale, delicate red at twelve percent",
+       "A pale, delicate red at twelve per cent",
        "A tannic red from a cool climate, aged in new oak"], 0,
       "A sauce with sugar in it needs a wine whose fruit reads sweet, or the wine turns hard and sour beside it. Lean and austere is exactly the wrong direction here, and firm tannin against smoke and char comes across as bitter rather than as structure."),
     Q("Salt, smoke and cured food",
@@ -187,11 +187,11 @@ BANK = [
        "Its acidity outruns any sweet wine",
        "It contains no sugar to speak of",
        "Its fat binds with tannin"], 0,
-      "A very cold spoonful shuts the palate down for a moment, so whatever follows registers faintly and an expensive glass is wasted. Pouring alongside rather than after, and choosing something intensely flavoured, are the two usual ways around it."),
+      "A very cold spoonful shuts the palate down for a moment, so whatever follows registers faintly and an expensive glass is wasted. Pouring a very sweet wine straight over the scoop, as Spanish bars do with Pedro Ximenez, and choosing something intensely flavoured to sip are the two usual ways round it."),
     Q("Sugar on the plate",
       "Strawberries and cream close a long summer lunch. Which pour is the safest?",
       ["A gently sweet sparkling wine",
-       "A sweet, nutty fortified white at eighteen percent",
+       "A sweet, nutty fortified white at eighteen per cent",
        "A dry tannic red",
        "An oaked dry white"], 0,
       "Fruit at the end of a meal reads sweet, so the glass has to bring at least as much sugar or it turns tart in the mouth. Sugar on its own is not the whole answer, though, because the wine also has to stay light and fresh: a warming, nutty style buries fruit this delicate whatever its sweetness. Demi-sec sparkling wine and Moscato d'Asti both do the job at very different prices."),
@@ -214,7 +214,7 @@ BANK = [
     Q("Protein, tannin and the red meat reflex",
       "Rare steak is ordered and the guest asks for white wine rather than red. Which white gives the dish the best chance?",
       ["A full-bodied white with oak and some grip",
-       "A light, neutral white at eleven percent",
+       "A light, neutral white at eleven per cent",
        "A sweet botrytised white",
        "An off-dry aromatic white"], 0,
       "White wine carries far too little tannin to meet the protein the way a red does, so the match has to be made on weight and texture instead, and a barrel-aged white has both, with a little grip of its own from the oak. Anything light or sweet is simply flattened by the meat, and the guest concludes that white with steak cannot be done."),
@@ -236,10 +236,10 @@ BANK = [
     # ------------------------------------------- heat, spice and pepper (5) --
     Q("Heat, spice and pepper",
       "A fiery Sichuan dish reaches the table and four bottles are already open. Which one will make the burn worse?",
-      ["A tannic red at fifteen percent",
-       "An off-dry white at eight percent",
+      ["A tannic red at fifteen per cent",
+       "An off-dry white at eight per cent",
        "A dry sparkling wine served very cold",
-       "A lightly sweet rose at eleven percent"], 0,
+       "A lightly sweet rose at eleven per cent"], 0,
       "Alcohol and tannin both sharpen the sensation of heat, so the strongest and grippiest bottle on the table is the one to keep well away from the chilli. Cold, low in alcohol and faintly sweet is the direction that helps, and all three of the others sit somewhere along it."),
     Q("Heat, spice and pepper",
       "Ground black pepper crusts a steak thickly. Unlike chilli heat, what does this kind of spice allow?",
@@ -295,7 +295,7 @@ BANK = [
     Q("Green things and the bitter edge",
       "Aubergine, courgette and peppers are stewed down in olive oil and served warm. Which is the natural pour?",
       ["A dry rose or a light red served cool",
-       "A powerful red at fifteen percent, aged in oak",
+       "A powerful red at fifteen per cent, aged in oak",
        "A sweet late-harvest wine",
        "A heavily oaked white"], 0,
       "Olive oil and long, slow cooking give these vegetables a weight no salad has, and nothing like the depth a meat dish brings. The plate therefore sits in the gap between white-wine and red-wine territory rather than squarely in either. Rose and a lightly chilled red both live in that gap, which is much of why they suit a Mediterranean table."),
@@ -407,7 +407,7 @@ BANK = [
        "Poached turbot",
        "Grilled sole",
        "Steamed cod"], 0,
-      "The oil in a fish of this kind reacting with the wine is the usual explanation, and the taste is unmistakable once it has been met. Lean white fish does not produce it at all, which shows the fault belongs to the oil rather than to fish in general."),
+      "The oil in a fish of this kind reacting with the wine is the usual explanation, and the taste is unmistakable once it has been met. Lean white fish produces far less of it, which is why the oily species are the ones to keep a tannic red away from."),
     Q("The standard traps",
       "Fresh pineapple and lime finish the meal, and the sweet wine beside them tastes thick and flat. What is the difficulty?",
       ["The fruit is sharper than the wine",

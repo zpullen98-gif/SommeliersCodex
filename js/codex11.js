@@ -2,7 +2,7 @@
    Three separate ways the app told a candidate they were ready when they were not.
 
    1. `LEVELS.master.pass` was 0.6. The Master Diploma requires 75% in each
-      section — and at Master the score is self-reported, since the Gauntlet is
+      section, and at Master the score is self-reported, since the Gauntlet is
       spoken and graded on honour. A self-awarded 60% was being displayed with
       the same authority as a real result.
 
@@ -15,7 +15,7 @@
 
    3. Readiness read theory alone. Certified, Advanced and Master are each
       examined on theory, tasting AND service, so "Passed" could be shown to
-      someone who had never opened a tasting flight — and the service rehearsal
+      someone who had never opened a tasting flight, and the service rehearsal
       was never persisted at all, so there was nothing to read even in principle.
 
    The fix is not to hide the score. It is to say which section it belongs to,
@@ -29,7 +29,7 @@ if(LEVELS.master){
 }
 
 /* Which sections each examination actually has. The Regionale examination (the
-   Court's Introductory) is a written theory paper — it has no tasting or service section,
+   Court's Introductory) is a written theory paper: it has no tasting or service section,
    so demanding them there would invent a requirement the Court does not set. */
 var EXAM_SECTIONS={intro:['theory'],certified:['theory','tasting','service'],
                    advanced:['theory','tasting','service'],master:['theory','tasting','service']};
@@ -39,7 +39,7 @@ function levelHasSection(lvl,s){ return levelSections(lvl).indexOf(s)>=0; }
 /* ---- 2. persist the service rehearsal ----
    codex6 keeps the ticked steps in S.svc, which dies with the session, so the
    readiness model had no service signal to read. This does not turn the ritual
-   into a graded exercise (that is still open work) — it just remembers it. */
+   into a graded exercise (that is still open work); it just remembers it. */
 if(typeof ST_DEFAULTS!=='undefined')ST_DEFAULTS.serv={};
 ST.serv=ST.serv||{};
 
@@ -121,13 +121,13 @@ function readinessLine(lvl){
   if(r.ready)return 'Every examined section has a record that clears the bar.';
   if(r.missing.length===levelSections(r.lvl).length)return 'No section has been measured yet.';
   return 'Measured on '+(levelSections(r.lvl).length-r.missing.length)+' of '
-    +levelSections(r.lvl).length+' sections — '+r.missing.join(' and ')+' still unproven.';
+    +levelSections(r.lvl).length+' sections: '+r.missing.join(' and ')+' still unproven.';
 }
 
 /* ---- 4. a verdict only where a verdict belongs ---- */
 function isExamMode(){ return S.mode==='mock'||S.mode==='sim'; }
 var MODE_NOUNS={review:'Weakness Review',weak:'Weakness Review',daily:'Daily Review',
-  drill:'Section Drill',endless:'Endless Practice',flagged:'Bookmark Review',
+  drill:'Section Drill',endless:'Endless',flagged:'Bookmark Review',
   lightning:'Lightning Round',sudden:'Sudden Death'};
 
 var _v10ResultsView=resultsView;
@@ -146,7 +146,7 @@ resultsView=function(){
       pf.className='passfail '+(ok?'pass':'fail');
       pf.textContent=(ok?'PASS':'BELOW '+need+'%')+' · '+score+'/'+done;
     }else{
-      /* practice is not an examination; report the tally and nothing more */
+      /* study is not an examination; report the tally and nothing more */
       pf.className='passfail neutral';
       pf.textContent=score+' of '+done+' correct';
     }
@@ -159,16 +159,16 @@ resultsView=function(){
         ? name+' mock · that clears the '+need+'% theory bar for '+name+'.'
         : name+' mock · '+name+' theory needs '+need+'% in one sitting. Keep drilling.';
     }else{
-      var noun=MODE_NOUNS[S.mode]||'Practice';
+      var noun=MODE_NOUNS[S.mode]||'Study';
       sub.textContent=noun+' · not an examination, so no pass mark is given'
-        +((S.mode==='review'||S.mode==='weak')?' — this mode serves your worst material by design.':'.');
+        +((S.mode==='review'||S.mode==='weak')?': this mode serves your worst material by design.':'.');
     }
   }
   /* the Gauntlet is spoken and self-graded; say so wherever a figure is shown */
   if(isExamMode()&&L&&L.mock&&L.mock.oral){
     var hero=v.querySelector('.result-hero');
     if(hero&&!hero.querySelector('.selfnote'))
-      hero.appendChild(el('<div class="sub2 selfnote">Self-reported — you graded these aloud. The Court awards this section across the table, at 75% per section.</div>'));
+      hero.appendChild(el('<div class="sub2 selfnote">Self-reported: you graded these aloud. The Court awards this section across the table, at 75% per section.</div>'));
   }
   /* what this result does NOT cover */
   if(isExamMode()){
@@ -200,11 +200,11 @@ if(_v10CourtStrip){
       var rec=(ST.court&&ST.court[lv])||{};
       if(!rec.passed)return;                     /* untouched / best-% text is already honest */
       var r=sectionReadiness(lv);
-      if(r.ready){ stat.textContent='Ready'; pin.title=LEVELS[lv].label+' — every section measured'; }
+      if(r.ready){ stat.textContent='Ready'; pin.title=LEVELS[lv].label+': every section measured'; }
       else{
         stat.textContent='Theory passed';
         pin.classList.remove('gilded');          /* gilding is for a whole examination */
-        pin.title=LEVELS[lv].label+' — '+readinessLine(lv);
+        pin.title=LEVELS[lv].label+': '+readinessLine(lv);
       }
     });
     return wrap;
@@ -222,9 +222,9 @@ studyPlan=function(){
 
   if(levelHasSection(p.level,'tasting')&&r.tasting){
     if(r.tasting.state==='none')
-      add.push({t:'Pour a blind flight',d:'No tasting calls on record. A '+L.short+' is examined on tasting as well as theory — no amount of paper answers this section.',go:function(){S.tt=null;S.view='tasting';render();}});
+      add.push({t:'Pour a blind flight',d:'No tasting calls on record. A '+L.short+' is examined on tasting as well as theory: no amount of paper answers this section.',go:function(){S.tt=null;S.view='tasting';render();}});
     else if(r.tasting.state==='thin')
-      add.push({t:'Keep tasting',d:'Only '+r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' on record — too few to read as a trend. Ten is a beginning.',go:function(){S.tt=null;S.view='tasting';render();}});
+      add.push({t:'Keep tasting',d:'Only '+r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' on record: too few to read as a trend. Ten is a beginning.',go:function(){S.tt=null;S.view='tasting';render();}});
     else if(r.tasting.state==='below')
       add.push({t:'Tasting is your weakest section',d:'Calling '+r.tasting.acc+'% across '+r.tasting.calls+' flights, against a '+r.tasting.need+'% bar. Theory will not carry it.',go:function(){S.tt=null;S.view='tasting';render();}});
   }
@@ -259,12 +259,12 @@ function readinessRows(lvl){
   };
   var t=r.theory;
   add('Theory',t.state,
-    t.state==='ok'?('passed at '+t.best+'%'+(t.oral?' — self-reported':'')):
-    t.state==='none'?('no mock sat — '+t.need+'% to pass'):
+    t.state==='ok'?('passed at '+t.best+'%'+(t.oral?', self-reported':'')):
+    t.state==='none'?('no mock sat: '+t.need+'% to pass'):
     ('best '+t.best+'%, needs '+t.need+'%'));
   if(r.tasting)add('Tasting',r.tasting.state,
     r.tasting.state==='none'?'no calls on record':
-    r.tasting.state==='thin'?(r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' — too few to read'):
+    r.tasting.state==='thin'?(r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+': too few to read'):
     (r.tasting.acc+'% over '+r.tasting.calls+' calls, needs '+r.tasting.need+'%'));
   if(r.service)add('Service',r.service.state,
     r.service.state==='none'?'not rehearsed':
@@ -293,7 +293,7 @@ planView=function(){
       +(levelSections(activeLevel).length>1
         ? 'The Court examines a '+LEVELS[activeLevel].short+' on '+levelSections(activeLevel).join(', ')
           +'. A theory score is one section of three, and the Codex will not call you ready on it alone.'
-        : "The Régionale examination is theory only — there is no tasting or service section to measure.")
+        : "The Régionale examination is theory only: there is no tasting or service section to measure.")
       +'</div></div>');
     /* sits above "Your sitting" so the standing frames the plan */
     v.insertBefore(block,head);

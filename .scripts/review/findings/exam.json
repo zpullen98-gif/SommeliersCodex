@@ -1,0 +1,262 @@
+{
+  "readCount": 92,
+  "total": 92,
+  "findings": [
+    {
+      "file": "js/codex39.js",
+      "line": 159,
+      "current": "tastingLine: 'two wines, the written grid, 25 minutes',",
+      "proposed": "tastingLine: 'four wines, two white and two red, the written grid, 45 minutes',",
+      "source": "The Certified tasting is four wines, two white and two red, described and identified in writing in 45 minutes. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 1993,
+      "current": "gridStart(2);",
+      "proposed": "gridStart(4); then, after the existing guard on line 1994, deal two whites then two reds: var pool = gridPool(); var whites = shuffle(pool.filter(function (g) { return g.c === 'w'; })).slice(0, 2); var reds = shuffle(pool.filter(function (g) { return g.c === 'r'; })).slice(0, 2); if (whites.length === 2 && reds.length === 2) { S.tg.deck = whites.concat(reds); S.tg.idx = 0; gridDealOpts(); } (gridStart deals a random slice of gridPool with no regard to colour; the names avoid v39W, which is already the layer's words function. Whites first follows the guide's advice to finish the whites by halfway.)",
+      "source": "Four wines, two white and two red. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 1995,
+      "current": "S.tg.clock = 25 * 60;",
+      "proposed": "S.tg.clock = 45 * 60;",
+      "source": "The tasting is timed at 45 minutes and submits itself at the end. Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf); the Court’s candidate portal page for the Certified examination; read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 1996,
+      "current": "S.tg.shape = 'two-wines';",
+      "proposed": "S.tg.shape = 'four-wines'; and the same identifier on line 2006 (tg.shape === 'four-wines'), so the clock is still drawn",
+      "source": "Internal identifier only, renamed so the code says what it deals; follows the four wine finding. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/).",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 1967,
+      "current": "/* =========== the Village tasting: two wines, the grid, 25 minutes =========== */",
+      "proposed": "/* =========== the Village tasting: four wines, two white and two red, the grid, 45 minutes =========== */",
+      "source": "Comment follows the run. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf).",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 48,
+      "current": "per sheet and The Village tasting: codex20's gridStart(2), two GRAPES\nprofiles of the level to the written grid, with a 25 minute countdown",
+      "proposed": "per sheet and The Village tasting: codex20's gridStart(4), two white and two red GRAPES\n      profiles of the level to the written grid, with a 45 minute countdown",
+      "source": "Header comment follows the run. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf).",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 163,
+      "current": "clockUp: 'Time is up: finish your calls',",
+      "proposed": "clockUp: 'Time is up: on the day, the paper submits itself now',",
+      "source": "At the Court the tasting submits itself at 45 minutes with no extra time to finish entering it; the Codex keeps its run open by design, so only the words change. Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "low"
+    },
+    {
+      "file": "js/codex39.js",
+      "line": 1993,
+      "current": "gridStart(2); (the Village tasting run has no sale step)",
+      "proposed": "Add an unscored closing step to each Village tasting wine: sell it to a guest in two sentences or fewer, shown beside the reveal.",
+      "source": "The published Certified deductive tasting grid ends by asking for a sale of the wine to a guest in two sentences or fewer (mastersommeliers.org/wp-content/uploads/2023/12/CMS-A-Certified-Sommelier-Deductive-Tasting-Grid.pdf); seen only in a search extract, and whether it is scored on the current exam is not confirmed.",
+      "confidence": "low"
+    },
+    {
+      "file": "CLAUDE.md",
+      "line": 248,
+      "current": "on codex32's card screen; drills the `r-` questions; runs The Village tasting, which is codex20's `gridStart(2)`: two\nGRAPES profiles of the level dealt to the written grid (never the regions' wines) under a 25 minute clock that reads a",
+      "proposed": "runs The Village tasting, which is codex20's `gridStart(4)` re-dealt as two whites then two reds: four GRAPES profiles of the level dealt to the written grid (never the regions' wines) under a 45 minute clock that reads a",
+      "source": "Project notes follow the run. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); Certified Sommelier Exam Guide (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Guide-What-to-Expect.pdf).",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex21.js",
+      "line": 319,
+      "current": "gridStart(4);",
+      "proposed": "Deal the Finals grid as two whites and two reds (the same re-deal as the Village tasting), at least at Village.",
+      "source": "The Court pours two white and two red at the Certified tasting. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); read through search extracts on 11 October 2026; direct page reads failed in this session. Low because the Finals is an untimed self check by design and does not claim to copy the day.",
+      "confidence": "low"
+    },
+    {
+      "file": "js/codex7.js",
+      "line": 32,
+      "current": "note:'Narrowing to a village means naming what you are given: forty-five questions in thirty-eight minutes, mixing multiple choice, matching and short answer: you must produce the answer, not pick it. The Codex mirrors that mix and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}",
+      "proposed": "note:'Narrowing to a village means naming what you are given: forty-five questions in thirty-eight minutes, mixing multiple choice, matching, short answer and simple arithmetic: you must produce the answer, not pick it. On the day the paper sits beside a written tasting of four wines and a service floor, and each of the three needs sixty in a hundred at the one sitting. The Codex mirrors the mix of the paper and grades typed answers by fuzzy match, with a self-grade override for when you know you were right.'}",
+      "source": "The theory is 45 questions in 38 minutes of multiple choice, short answer, simple maths and matching; the exam has three sections, each passed at 60 per cent within one sitting. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); Certified Sommelier Exam Syllabus (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Syllabus.pdf); read through search extracts on 11 October 2026; direct page reads failed in this session. Note: the site wing copy (codex/js/codex7.js) reads \"multiple choice and short answer\", dropping matching, which the Court lists; the sync should carry this sentence.",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex25.js",
+      "line": 83,
+      "current": "blurb: 'Narrowing to a village means naming what you are given: multiple choice, matching and short answer, so you produce the answer rather than pick it.' },",
+      "proposed": "blurb: 'Narrowing to a village means naming what you are given: a theory paper of multiple choice, matching, short answer and simple arithmetic, a written tasting of four wines and a service floor, so you produce the answer rather than pick it.' },",
+      "source": "The Certified is three sections: theory (multiple choice, short answer, simple maths, matching), a written four wine tasting, and a service practical. Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); read through search extracts on 11 October 2026; direct page reads failed in this session. The home gate holds this blurb verbatim, so .scripts/check-home.js line 70 must change in the same edit.",
+      "confidence": "medium"
+    },
+    {
+      "file": ".scripts/check-home.js",
+      "line": 70,
+      "current": "'Narrowing to a village means naming what you are given: multiple choice, matching and short answer, so you produce the answer rather than pick it.',",
+      "proposed": "'Narrowing to a village means naming what you are given: a theory paper of multiple choice, matching, short answer and simple arithmetic, a written tasting of four wines and a service floor, so you produce the answer rather than pick it.',",
+      "source": "Gate twin of the js/codex25.js line 83 finding; BLURBS is compared verbatim with the drawn blurb.",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex6.js",
+      "line": 216,
+      "current": "['Expect theory fired at you mid-pour','Classic cocktail builds, spirit bases, vintages, and pairing calls come as conversation while your hands stay busy. The pour must not waver.'],",
+      "proposed": "['Expect theory fired at you mid-pour','Classic cocktail builds, spirit bases, beer, aperitifs, digestifs, fortified wines, vintages and pairing calls come as conversation while your hands stay busy. The pour must not waver.'],",
+      "source": "The syllabus lists cocktail, beer, aperitif, digestif and fortified wine knowledge for the service section, with pairing sales; the Court page names recommending cocktails or spirits and discussing pairings. Certified Sommelier Exam Syllabus (mastersommeliers.org/wp-content/uploads/2023/12/Certified-Sommelier-Exam-Syllabus.pdf); Court of Master Sommeliers, Americas: Certified Sommelier Examination page (mastersommeliers.org/certification/certification-levels/certified-sommelier-examination/); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex6.js",
+      "line": 201,
+      "current": "['Agree the purpose before decanting','Separating sediment and adding air are different aims. Assess this bottle and the guest’s preference; age or appellation alone does not decide. Fragile wine needs particular care.'],",
+      "proposed": "['Agree the purpose before decanting','Separating sediment, adding air and bringing a wine to temperature are different aims. Assess this bottle and the guest’s preference; age or appellation alone does not decide. Fragile wine needs particular care.'],",
+      "source": "The 2025 Advanced and Master Hospitality and Service standards give three purposes for decanting: aeration, removing sediment and adjusting temperature (mastersommeliers.org/wp-content/uploads/2025/05/2025-ADV-MS-HS-Standards-and-Guidlines-FINAL.pdf); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "medium"
+    },
+    {
+      "file": "js/codex6.js",
+      "line": 224,
+      "current": "<a href=\"https://www.mastersommeliers.org/wp-content/uploads/2023/12/CMS-Hospitality-Service-Standards.pdf\" target=\"_blank\" rel=\"noopener\">CMS general service standards</a>",
+      "proposed": "Link text \"CMS general service standards\" becomes \"Court’s Hospitality and Service Standards (2023)\"; the URL and the rest of the line are unchanged.",
+      "source": "The 2023 PDF is titled Hospitality and Service Standards, and the Court calls them the only service standards accepted at any of its examinations (mastersommeliers.org/wp-content/uploads/2023/12/CMS-Hospitality-Service-Standards.pdf); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "low"
+    },
+    {
+      "file": "js/codex6.js",
+      "line": 176,
+      "current": "['Waiter’s corkscrew, matches or a lighter, and a pen in the pocket','A sommelier borrows nothing mid-service: the corkscrew opens, the flame lights the decanting candle, the pen takes the order. The two-step (double-hinged) corkscrew is the professional standard.'],",
+      "proposed": "['Waiter’s corkscrew, matches or a lighter, a pen and a pad in the pocket','A sommelier borrows nothing mid-service: the corkscrew opens, the flame lights the decanting candle, the pen and pad take the order. The two-step (double-hinged) corkscrew is the professional standard.'],",
+      "source": "The Court’s exam FAQ asks candidates to bring their own corkscrew, a pen and paper (mastersommeliers.org/certification/exams/exam-faqs/); read through search extracts on 11 October 2026; direct page reads failed in this session.",
+      "confidence": "low"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 5,
+      "current": "section \u2014 and at Master the score is self-reported, since the Gauntlet is",
+      "proposed": "section, and at Master the score is self-reported, since the Gauntlet is",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 18,
+      "current": "someone who had never opened a tasting flight \u2014 and the service rehearsal",
+      "proposed": "someone who had never opened a tasting flight, and the service rehearsal",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 32,
+      "current": "Court's Introductory) is a written theory paper \u2014 it has no tasting or service section,",
+      "proposed": "Court's Introductory) is a written theory paper: it has no tasting or service section,",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 42,
+      "current": "into a graded exercise (that is still open work) \u2014 it just remembers it. */",
+      "proposed": "into a graded exercise (that is still open work); it just remembers it. */",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 124,
+      "current": "+levelSections(r.lvl).length+' sections \u2014 '+r.missing.join(' and ')+' still unproven.';",
+      "proposed": "+levelSections(r.lvl).length+' sections: '+r.missing.join(' and ')+' still unproven.';",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 164,
+      "current": "+((S.mode==='review'||S.mode==='weak')?' \u2014 this mode serves your worst material by design.':'.');",
+      "proposed": "+((S.mode==='review'||S.mode==='weak')?': this mode serves your worst material by design.':'.');",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 171,
+      "current": "hero.appendChild(el('<div class=\"sub2 selfnote\">Self-reported \u2014 you graded these aloud. The Court awards this section across the table, at 75% per section.</div>'));",
+      "proposed": "hero.appendChild(el('<div class=\"sub2 selfnote\">Self-reported: you graded these aloud. The Court awards this section across the table, at 75% per section.</div>'));",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 203,
+      "current": "if(r.ready){ stat.textContent='Ready'; pin.title=LEVELS[lv].label+' \u2014 every section measured'; }",
+      "proposed": "if(r.ready){ stat.textContent='Ready'; pin.title=LEVELS[lv].label+': every section measured'; }",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 207,
+      "current": "pin.title=LEVELS[lv].label+' \u2014 '+readinessLine(lv);",
+      "proposed": "pin.title=LEVELS[lv].label+': '+readinessLine(lv);",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 225,
+      "current": "add.push({t:'Pour a blind flight',d:'No tasting calls on record. A '+L.short+' is examined on tasting as well as theory \u2014 no amount of paper answers this section.',go:function(){S.tt=null;S.view='tasting';render();}});",
+      "proposed": "add.push({t:'Pour a blind flight',d:'No tasting calls on record. A '+L.short+' is examined on tasting as well as theory: no amount of paper answers this section.',go:function(){S.tt=null;S.view='tasting';render();}});",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 227,
+      "current": "add.push({t:'Keep tasting',d:'Only '+r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' on record \u2014 too few to read as a trend. Ten is a beginning.',go:function(){S.tt=null;S.view='tasting';render();}});",
+      "proposed": "add.push({t:'Keep tasting',d:'Only '+r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' on record: too few to read as a trend. Ten is a beginning.',go:function(){S.tt=null;S.view='tasting';render();}});",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 262,
+      "current": "t.state==='ok'?('passed at '+t.best+'%'+(t.oral?' \u2014 self-reported':'')):",
+      "proposed": "t.state==='ok'?('passed at '+t.best+'%'+(t.oral?', self-reported':'')):",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 263,
+      "current": "t.state==='none'?('no mock sat \u2014 '+t.need+'% to pass'):",
+      "proposed": "t.state==='none'?('no mock sat: '+t.need+'% to pass'):",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 267,
+      "current": "r.tasting.state==='thin'?(r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+' \u2014 too few to read'):",
+      "proposed": "r.tasting.state==='thin'?(r.tasting.calls+' call'+(r.tasting.calls===1?'':'s')+': too few to read'):",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    },
+    {
+      "file": "js/codex11.js",
+      "line": 296,
+      "current": ": \"The Régionale examination is theory only \u2014 there is no tasting or service section to measure.\")",
+      "proposed": ": \"The Régionale examination is theory only: there is no tasting or service section to measure.\")",
+      "source": "Codex house rule: no em dash anywhere shipped. The proposed words are those already in the site wing copy, zpullen98-gif.github.io/codex/js/codex11.js, at the same line.",
+      "confidence": "high"
+    }
+  ]
+}

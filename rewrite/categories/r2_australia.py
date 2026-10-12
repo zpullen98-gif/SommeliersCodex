@@ -1,7 +1,7 @@
-"""Rank II rewrite - Australia (24 questions: 10 MC, 14 short answer).
+"""Village rewrite - Australia (24 questions: 10 MC, 14 short answer).
 
-Certified level, pitched deliberately above the Rank I "Australia" category,
-which was read end to end before a word of this was written. Rank I owns the
+Certified level, pitched deliberately above the Regionale "Australia" category,
+which was read end to end before a word of this was written. Regionale owns the
 eighty-five percent label rule, the zone-region-subregion ladder, the cigar of
 red ground at Coonawarra and the naming of every headline region; nothing here
 repeats one of those tasks. What is asked instead is what a professional knows
@@ -89,7 +89,7 @@ BANK = [
        "A yield ceiling: production caps inside the line prop up the price of every grower's fruit",
        "Water: in a shortage, South Australian irrigation allocations are cut along GI boundaries",
        "Rates: land inside a declared region is assessed and taxed as premium agricultural ground"], 0,
-      "The premium attaches to the word on the label rather than to anything the rules make the wine do, so being drawn outside the line reprices a vineyard overnight. That is the inversion at the heart of the system: French law fights over practices, Australian law only ever fights over maps."),
+      "The premium attaches to the word on the label rather than to anything the rules make the wine do, so being drawn outside the line reprices a vineyard overnight. That is the inversion at the heart of the system: French law fights over how a wine is made, Australian law only ever fights over maps."),
 
     # ----------- Barossa floor, Eden altitude and the Old Vine Charter (4) ---
     Q("Barossa floor, Eden altitude and the Old Vine Charter",
@@ -113,7 +113,7 @@ BANK = [
         "survivor vine tier", "survivor tier"],
        "The rungs sit at thirty-five, seventy, one hundred and one hundred and twenty-five years of continuous production, so a Survivor block has stood through at least seventy vintages. Age is counted from planting and has to be documented, which is much of the point: an old vineyard with papers is worth keeping in the ground."),
     SA("Barossa floor, Eden altitude and the Old Vine Charter",
-       "In the mid-1980s a South Australian government program paid growers to rip vineyards out, and Shiraz planted in the 1880s went with them. Name the program.",
+       "In the mid-1980s a South Australian government programme paid growers to rip vineyards out, and Shiraz planted in the 1880s went with them. Name the programme.",
        "The Vine Pull Scheme",
        ["vine pull scheme", "vine pull", "vine pull program",
         "1985 vine pull scheme", "south australian vine pull scheme"],
@@ -122,7 +122,7 @@ BANK = [
     # ------------------------- Hunter Semillon and the Riesling valleys (5) --
     Q("Hunter Semillon and the Riesling valleys",
       "Mid-January, while most of the country's whites hang weeks from picking, pickers strip Hunter Semillon at barely ten and a half baume. What has the winemaker gained by refusing to wait?",
-      ["Ferocious acid, alcohol near eleven percent, and the crop in before the February rains break",
+      ["Ferocious acid, alcohol near eleven per cent, and the crop in before the February rains break",
        "The green capsicum edge the style is built on, which another fortnight of sun would burn away",
        "A base lean enough to fortify economically, in the manner of the old Hunter trade",
        "Bunches still firm enough for the machine harvesters the contracts require"], 0,
@@ -226,7 +226,7 @@ BANK = [
        "Basalt caps the highest planted ground on the Mornington Peninsula, holding its coolest and latest vineyards, and the trade names that whole band of high country after one small township on it. Name the township.",
        "Red Hill",
        ["red hill", "red hill south", "red hill district"],
-       "The township is named for the iron-rich soil the basalt weathers to, which holds water into summer and sits high enough that picking runs weeks behind the sandier country toward Moorooduc, where the fruit ripens earlier and broader. The peninsula's tastings are organised by elevation as much as by producer, and Red Hill is the top of that ladder."),
+       "The township is named for the iron-rich soil the basalt weathers to, which holds water into summer and sits high enough that picking runs weeks behind the sandier country towards Moorooduc, where the fruit ripens earlier and broader. The peninsula's tastings are organised by elevation as much as by producer, and Red Hill is the top of that ladder."),
 
     # ------------------------- Rutherglen, the river and the show bench (5) --
     SA("Rutherglen, the river and the show bench",

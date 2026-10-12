@@ -1,0 +1,239 @@
+{
+ "batch": "grand-chapters",
+ "bank": "js/data-primers-master.js",
+ "global": "MASTER_PRIMERS",
+ "categories": [
+  "Burgundy",
+  "Bordeaux",
+  "Champagne",
+  "Loire",
+  "Alsace",
+  "Rhône",
+  "Southern France",
+  "Jura, Savoie & Corsica",
+  "Producers & Icons",
+  "Italy North",
+  "Italy Central & South",
+  "Spain",
+  "Portugal",
+  "Germany",
+  "Austria",
+  "Hungary & Greece",
+  "California",
+  "Pacific NW, NY & Canada",
+  "South America",
+  "Australia",
+  "New Zealand",
+  "South Africa",
+  "Sparkling Wine World",
+  "Fortified Wines",
+  "Sweet Wines",
+  "Terroir: Climate & Soil",
+  "Spirits & Cocktails",
+  "Beer & Cider",
+  "Sake",
+  "Wine Fundamentals",
+  "Classifications & Labels",
+  "Viticulture & Winemaking",
+  "Wine Trade & Aging",
+  "Service & Hospitality",
+  "Food & Pairing",
+  "Business of the Sommelier"
+ ],
+ "readCount": 36,
+ "total": 36,
+ "changedChapters": 35,
+ "unchanged": [
+  "Loire"
+ ],
+ "substantive": 19,
+ "stemChanges": [],
+ "searches": [
+  "Etna DOCG: the consortium's bid (voted November 2023) is still pending in the latest reporting found; Cerasuolo di Vittoria (2005) remains Sicily's only DOCG, so 'only' was dated rather than kept as permanent",
+  "Gualtallary as an Argentine geographical indication: no INV resolution found (Spanish search)",
+  "Gualtallary as an Argentine geographical indication: still not recognised; trade reporting in 2026 has producers pressing for it, and the nearby Tupungato GI that does exist is El Peral (INV resolution 1/2022)"
+ ],
+ "findings": [
+  {
+   "id": "Alsace",
+   "field": "facts[Exceptions]",
+   "problem": "Wrong date. The chapter said Hengst, Kirchberg de Barr and Vorbourg have all been allowed to make red grand cru from Pinot Noir 'since the 2022 harvest'. Vorbourg was added in 2024; only Hengst and Kirchberg de Barr date from 2022. The Advanced bank (a-98j4a9aj) already says so.",
+   "fix": "Now reads 'Pinot Noir may also make red grand cru at Hengst and Kirchberg de Barr (from 2022) and at Vorbourg (from 2024).'",
+   "source": "premier-1 batch WebSearch (Vorbourg Pinot Noir grand cru approval, confirmed 2024); js/data-advanced.js a-98j4a9aj exp.",
+   "confidence": "high"
+  },
+  {
+   "id": "Alsace",
+   "field": "facts[The philosophies]",
+   "problem": "Stale. 'Trimbach declines to print grand cru' is no longer true of the house: its Schlossberg has carried Grand Cru since the 2014 vintage, and only the flagships (Clos Sainte-Hune, Frédéric Émile) go by their own names. The reviewed bank (m-hgn6gjdf, m-nn8i2t8m) already says so.",
+   "fix": "Now 'Trimbach keeps grand cru off its flagship labels, though its Schlossberg has carried it since the 2014 vintage'.",
+   "source": "grand-1 batch WebSearch (Trimbach Schlossberg Grand Cru, inaugural vintage 2014; Clos Sainte-Hune labelled by name within Rosacker).",
+   "confidence": "high"
+  },
+  {
+   "id": "Burgundy",
+   "field": "facts[Ownership is examinable]",
+   "problem": "Musigny Blanc was 'declassified since 1994', which is stale: de Vogüé sold it as Bourgogne Blanc from the 1994 vintage until the 2015 vintage restored the Musigny name. 'Liger-Belair' alone is ambiguous between two domaines; La Romanée is the Comte Liger-Belair monopole. The corporate owners of Clos de Tart and Clos des Lambrays were given as standing facts rather than dated purchases.",
+   "fix": "Now 'La Romanée (Comte Liger-Belair), Clos de Tart (bought by Artémis in 2017), Clos des Lambrays (LVMH, 2014), Musigny Blanc (de Vogüé, declassified to Bourgogne Blanc from 1994 until the 2015 vintage)'.",
+   "source": "Domaine Comte Georges de Vogüé (Musigny Blanc returned with the 2015 vintage), as recorded by grand-1 (m-ld9efw5y) and premier-1 (a-0va1va21); Artémis purchase of Clos de Tart, 2017; LVMH purchase of Clos des Lambrays, 2014; premier-1's revoked accept string on the two Liger-Belair domaines.",
+   "confidence": "high"
+  },
+  {
+   "id": "Italy Central & South",
+   "field": "facts[Brunellopoli]",
+   "problem": "Wrong date. The consorzio's vote to keep Brunello 100% Sangiovese came in October 2008, not 2009. The chapter contradicted the reviewed bank (m-xyavnii6).",
+   "fix": "Now 'and the consorzio's vote late in 2008 retaining 100% Sangiovese'.",
+   "source": "Consorzio del Vino Brunello di Montalcino assembly, October 2008, as recorded by grand-1 (m-xyavnii6).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Italy Central & South",
+   "field": "facts[The south]",
+   "problem": "Volatile fact stated as permanent. 'Cerasuolo di Vittoria as Sicily's only DOCG' will date the moment Etna's application, lodged after the consortium's November 2023 vote, is ratified.",
+   "fix": "Now 'Cerasuolo di Vittoria, Sicily's first DOCG (2005), with Etna's bid to be the second lodged in 2023', true whichever way the ratification goes.",
+   "source": "WebSearch 1 of 3: Decanter, 'Sicily's Etna region gears up for DOCG status'; The Drinks Business, February 2025, 'Is DOCG status the answer for Etna?' (bid still pending). Matches regionale-3 and village-2.",
+   "confidence": "medium"
+  },
+  {
+   "id": "Spain",
+   "field": "lead + facts[The 2022 reforms]",
+   "problem": "Wrong date and overstated. The lead called it 'Sherry's 2022 liberalization' and the fact said unfortified flor wines were 'legalized' in 2022 with 'the vino de pasto movement made official'. The change was sent to Brussels in 2022 and took effect in 2025, and it covers only a fino or manzanilla that reaches 15% naturally after at least two years under flor; lighter pasto wines still sell outside the DO. The reviewed banks (m-nqy0svcx, a-3wdv5vgc) already say so. American spelling, and an em dash.",
+   "fix": "Lead: 'the Sherry reform in force from 2025'. Fact renamed 'The Sherry reform': 'Sent to Brussels in 2022 and in force from 2025: a fino or manzanilla that reaches 15% naturally after two years under flor may go unfortified, and the ageing zone and the permitted grapes widen. A nod to the vino de pasto movement, though lighter pasto wines still sell outside the DO.'",
+   "source": "premier-2 batch WebSearch (proposed to the EU in 2022, in force from 2025); grand-1 batch WebSearch (The Drinks Business, September 2021; revised pliego, Junta de Andalucía).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Fortified Wines",
+   "field": "facts[Unfortified rebels]",
+   "problem": "Same error as the Spain chapter: 'Jerez's 2022 vino de pasto legalization' gives the wrong year and overstates what the reform allows.",
+   "fix": "Now 'Jerez's reform, in force from 2025, letting fino and manzanilla that reach 15% naturally go unfortified.'",
+   "source": "As for the Spain chapter (premier-2 and grand-1 searches).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Germany",
+   "field": "facts[AP number]",
+   "problem": "Wrong digits. The chapter said 'the final digits give the year of application, distinguishing multiple bottlings'. The last two digits are the year of application; the group before them is the producer's own submission number, and that is what tells apart several bottlings of the same Prädikat and vineyard.",
+   "fix": "Now 'The final two digits give the year of application; the group before them numbers the producer's submissions, telling apart several bottlings of the same Prädikat and vineyard.'",
+   "source": "German wine law, structure of the Amtliche Prüfungsnummer (testing station, village, producer, submission number, year of application).",
+   "confidence": "high"
+  },
+  {
+   "id": "South America",
+   "field": "facts[Soil-mapped GIs]",
+   "problem": "Wrong fact. Gualtallary was listed with Los Chacayes and San Pablo as soil-mapped GIs that 'followed' Paraje Altamira. No INV resolution recognising a Gualtallary GI can be found, and 2026 trade reporting has its producers still pressing for one. An em dash as well.",
+   "fix": "Now 'Los Chacayes and San Pablo followed; Gualtallary, as famous as any, has sought the same recognition.' The dash became a comma, as in the site's copy.",
+   "source": "WebSearch 2 and 3 of 3: no INV or Boletín Oficial resolution for Gualtallary; The Drinks Business, July 2026, on Mendoza's sub-regions (producers pushing for GI status); Marval, El Peral GI (INV resolution 1/2022) as the Tupungato GI that does exist.",
+   "confidence": "medium"
+  },
+  {
+   "id": "South America",
+   "field": "traps[0]",
+   "problem": "The trap marked a true statement as the error. It warned against 'describing Uco Valley as warmer or bigger than Luján de Cuyo', but Uco (Tupungato, Tunuyán and San Carlos together) has about twice Luján de Cuyo's vineyard area, and far more land. What separates them is height and cool.",
+   "fix": "Now 'Describing Uco Valley as warmer or lower than Luján de Cuyo.'",
+   "source": "INV vineyard registry by department (Valle de Uco roughly 28,000 to 30,000 ha against Luján de Cuyo roughly 13,000 to 15,000 ha); reviewer knowledge, no search spent.",
+   "confidence": "medium"
+  },
+  {
+   "id": "Beer & Cider",
+   "field": "facts[Definitions]",
+   "problem": "Wrong mechanism. 'Lambic ferments spontaneously in a coolship.' The coolship is the shallow open vessel where the hot wort cools overnight and picks up wild yeast and bacteria; the fermentation itself takes place in wooden casks and foeders.",
+   "fix": "Now 'Lambic wort is inoculated overnight in an open coolship, then ferments spontaneously in wood.'",
+   "source": "Lambic production (HORAL; standard brewing references): coolship inoculation, then barrel fermentation.",
+   "confidence": "high"
+  },
+  {
+   "id": "Wine Trade & Aging",
+   "field": "facts[Authentication]",
+   "problem": "Inaccurate. 'Kurniawan was caught on paper and glass.' He was exposed by vintages that never existed (the Ponsot Clos Saint-Denis lot of 1945 to 1971, when the domaine first made it in 1982) and convicted on the labels, corks and stamps found in his house, not by glass.",
+   "fix": "Now 'Kurniawan was exposed by vintages the estate never made and convicted on the labels and corks found in his house.'",
+   "source": "United States v. Kurniawan (SDNY, 2013); the withdrawn Ponsot lot at Acker Merrall, April 2008.",
+   "confidence": "medium"
+  },
+  {
+   "id": "California",
+   "field": "facts[To Kalon]",
+   "problem": "Volatile fact stated as permanent, and incomplete. 'Today split between Constellation/Mondavi, Beckstoffer, MacDonald and Detert' names a corporate owner as a standing fact and gives a closed list of owners that leaves others out. An em dash as well.",
+   "fix": "Now 'since divided among several owners, the Robert Mondavi Winery and Beckstoffer among them, and the name has been litigated.'",
+   "source": "House rule (nothing volatile stated as fact); reviewer knowledge of the vineyard's divided ownership.",
+   "confidence": "medium"
+  },
+  {
+   "id": "Jura, Savoie & Corsica",
+   "field": "facts[The market]",
+   "problem": "Volatile fact stated as permanent. 'Overnoy and Ganevat trade like grand cru' states a market price as a present, standing fact. An em dash as well.",
+   "fix": "Now 'Overnoy and Ganevat bottles have fetched grand cru prices', with a colon for the dash.",
+   "source": "House rule (nothing volatile stated as fact).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Rhône",
+   "field": "facts[Châteauneuf]",
+   "problem": "Imprecise mechanism. 'Beaucastel ... treats must thermally': the estate's vinification à chaud flash-heats the destemmed whole berries (to about 80°C, then cools them) before fermentation, which is not the same as heating must.",
+   "fix": "Now 'briefly heats the destemmed berries before fermentation'.",
+   "source": "Château de Beaucastel's description of its vinification à chaud.",
+   "confidence": "medium"
+  },
+  {
+   "id": "Champagne",
+   "field": "facts[Codes and history]",
+   "problem": "Incomplete history. 'The 1911 Aube riots' leaves out the Marne riots of the same year, including the sacking of Aÿ, the best-known of them.",
+   "fix": "Now 'the 1911 riots in the Marne and the Aube'.",
+   "source": "History of the Champagne riots, January to April 1911 (Damery and Hautvillers, Aÿ; Bar-sur-Aube and the Aube protests).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Pacific NW, NY & Canada",
+   "field": "facts[Geology]",
+   "problem": "Overstated. 'Irrigation is mandatory' reads as a legal rule. No law requires it; it is a necessity in fact across most of eastern Washington, and some dry-farmed sites exist.",
+   "fix": "Now 'Irrigation is all but essential.'",
+   "source": "Reviewer knowledge (Columbia Valley rainfall roughly 150 to 250 mm a year; no irrigation mandate in TTB or Washington rules).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Classifications & Labels",
+   "field": "facts[Certifications]",
+   "problem": "House rule: the fact used the one word the house rules ban, straight after 'certify inputs and'.",
+   "fix": "Now 'certify inputs and methods'.",
+   "source": "Codex house rules (the banned word, in either spelling).",
+   "confidence": "high"
+  },
+  {
+   "id": "Sparkling Wine World",
+   "field": "facts[Minimums to hand]",
+   "problem": "The Crémant minimum was written as 9, en dash, 12, which reads as a range, when it is two separate minimums: 9 months on lees and 12 months from tirage to release.",
+   "fix": "Now 'Crémant 9 on lees, 12 to release'.",
+   "source": "French Crémant rules (9 months on lees, 12 months before release).",
+   "confidence": "high"
+  },
+  {
+   "id": "(33 chapters)",
+   "field": "lead, exam, facts, traps",
+   "problem": "56 em dashes and 11 en dashes in shipped prose; the en dashes all wrote ranges (the Amarone weight loss and alcohol, the Grange years in two chapters, In Pursuit of Balance, the cadastro letters, the Winkler regions, the Federspiel band, the BA must weight, the 1970s and 80s, the Crémant minimums).",
+   "fix": "Every em dash replaced by a comma, colon, semicolon or full stop. Where the line changed for nothing else, the wording is the site's own dash-free copy (codex/js/data-primers-master.js), word for word, so 42 lines now match that copy and will merge cleanly. Every en dash range is now written with 'to' (30 to 40%, 1957 to 1959, 2011 to 2016, A to F, Regions I to V, 11.5 to 12.5%, 110 to 128° Oe), and the 1970s and 80s are written out.",
+   "source": "Codex house rule (no em dash, en dash, dash entity or spaced double hyphen in shipped prose).",
+   "confidence": "high"
+  },
+  {
+   "id": "(15 chapters)",
+   "field": "lead, exam, facts, traps",
+   "problem": "American spelling in the Codex's own prose: aging and Aging (8), labeling and labeled (7), percent, liberalization, legalized, legalization, formalized, polymerizes, toward (2), and the US date 'December 1'.",
+   "fix": "Now ageing, labelling and labelled, per cent, formalised, polymerises, towards and 1 December; the other words left with the lines rewritten for the Spain and Fortified Wines findings. The category 'Wine Trade & Aging' is left byte for byte as the bank's category.",
+   "source": "Codex house rule (British spelling in the Codex's own prose).",
+   "confidence": "high"
+  }
+ ],
+ "leftForTheOwner": [
+  "The bank still teaches Gualtallary as a GI: js/data-master.js, the South America question whose ans begins 'Soil-mapped GIs: Paraje Altamira (the first, science-drawn), Gualtallary, Los Chacayes, San Pablo' (its accept 'paraje altamira gualtallary igs' grades it), and js/data-advanced.js a-sn2ih4hj, whose exp says 'Gualtallary and Paraje Altamira are Geographic Indications (IGs)'. Neither file was part of this assignment.",
+  "The banks disagree on the Alsace red grands crus: js/data-intro.js (an Alsace exp) and js/data-primers-advanced.js (facts 'Noble four') say all three since 2022, while js/data-advanced.js a-98j4a9aj and now this chapter give Vorbourg as 2024.",
+  "Unverified and left as written: Palette's 'Crémade and Henri Bonnaud share the rest' (it lists the other producers as if there were no more); the 2021 date for Alsace's sweetness labelling; 'a world first at scale' for Paraje Altamira (the bank's exp says the same); 'Italy's only single-estate DOC' for Bolgheri Sassicaia; Madeira Frasqueira as 'single noble grape' now that Tinta Negra may be named; 'La Place now sells Opus One and Masseto' (mildly volatile, not wrong).",
+  "'Master level' and 'Master-level' are kept: they name the real CMS examination this chapter set describes, not a Codex level, and the reviewed bank uses the same words.",
+  "Twelve changed lines differ from the site's copy (codex/js/data-primers-master.js) on both sides, because the site copy removed the dash but kept American spelling, an en dash or the old fact: lines 16, 84, 86, 114, 123, 161, 187, 198, 237, 263, 407 and 461. tools/sync-wing.mjs codex will report them as conflicts until they are taken from the source by hand. The other 37 changed lines are source-only and merge cleanly."
+ ],
+ "checks": {
+  "check-syntax": "all 67 JS files parse",
+  "check-paid": "exits on 3 negation_probe flags in js/data-master.js, which this batch did not touch; check-paid reads only data-advanced.js and data-master.js, so the chapters cannot add a flag, and none was introduced here",
+  "sa-harness master": "576 of 576 model answers grade, 0 unsure, 0 wrong",
+  "list-harness": "Master 20 of 20 at full marks; the 3 Advanced failures (a-62mb28xz, a-egn9hhiq, a-xrebfxf7) are the harness's own documented long-standing cases, untouched here"
+ }
+}

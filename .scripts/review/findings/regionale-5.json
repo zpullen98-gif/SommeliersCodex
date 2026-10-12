@@ -1,0 +1,303 @@
+{
+  "batch": "regionale-5",
+  "modules": [
+    "r1_champagne",
+    "r1_south_america"
+  ],
+  "readCount": 120,
+  "total": 120,
+  "findings": [
+    {
+      "module": "r1_champagne",
+      "stemStart": "Frost-prone valley floors reward a variety that buds",
+      "field": "stem",
+      "problem": "The stem's word 'valley' points straight at the only 'Vallee' option, so it can be answered from its own words. It also repeated the frost and late-budding task of the Meunier variety question in the same block.",
+      "fix": "Stem reframed to an applied task with no clue: 'A grower whose vineyard is mostly Meunier most likely farms in which district?' Options unchanged. The exp now carries the frost reason itself, since it can no longer point back to the stem.",
+      "source": "District plantings: Meunier is the majority variety only in the Vallee de la Marne. The brief says a stem must not be answerable from its own words.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Ranged around a wooded plateau south of Reims,",
+      "field": "stem",
+      "problem": "'South of Reims' names the key: only one option contains 'Reims'. 'Dominated by' also overstates things, since Pinot Noir leads the Montagne de Reims by plurality, at roughly two fifths of plantings.",
+      "fix": "Stem now reads 'Ranged around a low wooded plateau, which district is best known for its Pinot Noir?' The Cote des Bar, which grows an even higher share of Pinot Noir, is not among the options, so the key stays unique.",
+      "source": "District plantings: the Montagne de Reims grows roughly 40 percent Pinot Noir and the rest Meunier and Chardonnay. The brief bars stems answerable from their own words.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Which two towns serve as the region's commercial",
+      "field": "exp",
+      "problem": "The exp gives Reims 'the largest chalk cellars', an unsupported superlative. The longest single network usually cited is in Epernay, under the Avenue de Champagne.",
+      "fix": "Changed to 'Reims has the cathedral and the great Gallo-Roman chalk pits', which is true without ranking the two towns.",
+      "source": "Standard regional descriptions: the Gallo-Roman crayeres are at Reims, and the longest house galleries are under the Avenue in Epernay.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "A label reading Blanc de Blancs tells a",
+      "field": "exp",
+      "problem": "'The terms are used interchangeably' (Blanc de Blancs and Chardonnay) overstates casual usage as if it were fact.",
+      "fix": "Changed to 'Chardonnay supplies nearly every Blanc de Blancs', keeping the note on the rare white varieties.",
+      "source": "Appellation rules: a Blanc de Blancs may be made from any permitted white variety.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Beyond the famous three, several near-extinct varieties remain",
+      "field": "exp",
+      "problem": "'All seven permitted varieties' is out of date. Voltis, a disease-resistant variety, entered the Champagne specification in late 2022 under the experimental VIFA route: at most 5 percent of a holding and 10 percent of a blend, on trial until 2033.",
+      "fix": "Now reads 'all seven traditional varieties', followed by 'Voltis, a disease-resistant newcomer, has since been admitted on a trial basis.' The stem ('several near-extinct varieties remain legal') stays true.",
+      "source": "WebSearch: wein.plus news on Voltis's approval in Champagne, Wine Spectator 'Champagne Experiments With New Grape', and WSET's 2025 blog on Champagne grape varieties (INAO sign-off November 2022, specification in the Journal Officiel).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "The first 2,050 litres to run from that",
+      "field": "stem",
+      "problem": "'From that press' points back to the previous question's 4,000-kilogram marc. The app shuffles the question pool, so the stem reaches a student with nothing for 'that' to refer to.",
+      "fix": "Stem now reads 'The first 2,050 litres to run from a 4,000-kilogram press load carry which name?'",
+      "source": "README: core.js shuffles the pool. A stem must stand alone.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Bottling for the second fermentation includes an addition",
+      "field": "exp",
+      "problem": "Listing 'cane sugar' in the liqueur de tirage implies a cane-only rule. Cane or beet sucrose is permitted.",
+      "fix": "Changed 'cane sugar' to 'sugar'.",
+      "source": "Champagne specification: the tirage liqueur is sucrose dissolved in wine, with no restriction on the plant it comes from.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "A guest assumes Extra Dry is the driest",
+      "field": "opts",
+      "problem": "The key ('Sweeter than Brut, at 12 to 17 grams per litre') was the only option with a figure, set against three vague ones: the lone-specific tell the brief names.",
+      "fix": "Key trimmed to 'Between Brut and Sec', the same kind of answer as the three other scale positions. The 12 to 17 g/L figure moved into the exp.",
+      "source": "EU sweetness terms for sparkling wine: Extra Dry is 12 to 17 g/L, between Brut (under 12) and Sec (17 to 32).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "A guest asks you to walk the dosage",
+      "field": "opts",
+      "problem": "One distractor was the key read backwards (Doux down to Brut Nature). The mirrored pair narrows the choice to two on shape alone, and the intuitive 'Brut Nature is driest' then picks the key without knowing the scale.",
+      "fix": "Replaced the reversed option with 'Brut Nature, Extra Brut, Extra Dry, Brut, Sec, Demi-Sec, Doux'. That is the real trap (Extra Dry put below Brut), which the exp already names.",
+      "source": "EU sweetness scale for sparkling wine. Brief: the stem must not be answerable from the options' shape.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Unlike the Burgundian arrangement, the cru ranking here",
+      "field": "exp",
+      "problem": "'Which is why single-vineyard bottlings are a recent development' is both a causal overclaim and inaccurate. Clos des Goisses has been bottled since 1935, and Clos du Mesnil since 1979.",
+      "fix": "Changed to 'which is one reason single-vineyard bottlings remain the exception'.",
+      "source": "Well-documented single-vineyard Champagnes long predate any recent trend.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "The old echelle des crus rated each village",
+      "field": "exp",
+      "problem": "'Dropped as a pricing mechanism in the 2000s' gets the date wrong. Fixed interprofessional grape pricing ended around 1990, and the scale was formally retired in 2010, when the Grand Cru and Premier Cru village lists moved into the appellation rules. Neither date falls in the 2000s.",
+      "fix": "Rewritten without a date: 'The scale once set the price a grower was paid per kilogram of fruit. That pricing role has gone, but the Grand Cru and Premier Cru village lists it produced live on in the appellation rules and on labels.'",
+      "source": "History of the echelle des crus: pricing role ended in the early 1990s, formal abolition in 2010, with the cru mentions kept in the AOC specification.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Villages rated between ninety and ninety-nine on that",
+      "field": "stem",
+      "problem": "'On that scale' points back to the previous question's echelle des crus, which a shuffled pool never guarantees the student has just seen.",
+      "fix": "Stem now reads 'Villages rated between ninety and ninety-nine on the echelle des crus earned which designation?'",
+      "source": "README: core.js shuffles the pool. A stem must stand alone.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Where should you look to find that producer",
+      "field": "stem",
+      "problem": "'Where should you look to find that producer code?' has no referent at all once the pool is shuffled.",
+      "fix": "Stem reframed to an applied task: 'A guest wants to know whether a bottle comes from a grower or a house. Where on the bottle do you look?' Options and key unchanged. The exp now opens 'The two-letter producer code is required by law...' so it names what 'it' was.",
+      "source": "README: core.js shuffles the pool. A stem must stand alone.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_champagne",
+      "stemStart": "Opening a bottle safely begins with a thumb",
+      "field": "exp",
+      "problem": "'Frees the cage on every muselet made' is an unverifiable universal.",
+      "fix": "Changed to 'on a standard muselet'.",
+      "source": "Six half-turns is the standard construction, not a law of nature.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_america",
+      "stemStart": "Snowmelt reaches the vines along open channels that",
+      "field": "exp",
+      "problem": "'Rights to it are worth as much in Mendoza as the land they feed' has a broken referent: rights do not feed land. It also misstates the law. In Mendoza a water right is inherent to the land it serves, not a separate asset of equal value.",
+      "fix": "Changed to 'Mendoza's water law ties the right to that water to the land itself, so ground without it is worth little.'",
+      "source": "Mendoza provincial constitution art. 186 and the 1884 General Water Law (the inherence principle).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_america",
+      "stemStart": "Constant wind, very low humidity and a long",
+      "field": "exp",
+      "problem": "'Planted with fruit orchards before anyone planted vines' is unsupported. It also contradicts the module's own Semillon question, which calls the old vines a legacy of the settlers who first irrigated the valley. Vines and orchards arrived together from the early 1900s.",
+      "fix": "Changed to 'The Alto Valle del Rio Negro is apple and pear country, and vines have grown among its orchards since the early twentieth century.'",
+      "source": "Alto Valle settlement history: irrigation and the first wineries date from the 1900s and 1910s, alongside the orchards. Internal consistency with the Semillon question.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_america",
+      "stemStart": "Rainfall across Chile's wine country changes steadily along",
+      "field": "exp",
+      "problem": "'Irrigation is compulsory in Limari' reads as a legal requirement. It is a physical necessity in near-desert rainfall.",
+      "fix": "Changed 'compulsory' to 'essential'.",
+      "source": "Chilean rules impose no irrigation mandate. Limari receives roughly 100 mm of rain a year.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_america",
+      "stemStart": "Running from north to south, which order correctly",
+      "field": "opts",
+      "problem": "One distractor was the key read backwards (Maule to Maipo), the same mirror-pair shape tell: two options are reverses, so one must be right.",
+      "fix": "Replaced it with 'Maipo, Curico, Rapel, Maule', a plausible single swap in the middle of the order.",
+      "source": "Chilean DO zoning, Valle Central from north to south: Maipo, Rapel, Curico, Maule. Brief: no answer from the options' shape.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_america",
+      "stemStart": "Peppery, tightly wound reds from Chile's cool coastal",
+      "field": "exp",
+      "problem": "'Carmenere would never finish ripening in any of those places' is an absolute that fails: Carmenere is grown and bottled in Elqui, one of the three places named.",
+      "fix": "Changed to 'Late-ripening Carmenere struggles to reach full ripeness in sites that cool.'",
+      "source": "Elqui producers bottle Carmenere (for example Falernia). Carmenere's late ripening is well documented.",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Frost-prone valley floors reward a variety that buds",
+      "verdict": "amended",
+      "why": "The stem change was needed: 'valley floors' led straight to the only Vallee option, no option edit could remove a word from an official district name, and the same frost and late-budding task is already asked by the Meunier question in the block. The key stays unique on 'most likely', since the Marne valley holds by far the most Meunier even though the Petite Montagne grows plenty. Amended two small things at no further id cost (the stem is unshipped, so the id moves once either way): 'vineyard is mostly Meunier most likely' jingled, now 'vines are chiefly Meunier most likely'; and 'because frost settles' claimed a single cause where clay-rich soils also favour Meunier, now 'largely because', the same standard the batch applied to the single-vineyard line. Build and check-similarity clean."
+    },
+    {
+      "stemStart": "Ranged around a wooded plateau south of Reims,",
+      "verdict": "kept",
+      "why": "Only a stem change could serve: the key is The Montagne de Reims and 'south of Reims' handed it over; the district name cannot lose its town. 'Dominated by' was loose for a district where Pinot Noir leads by plurality, and 'best known for its Pinot Noir' is safe with the Cote des Bar absent from the options. The new 'low wooded plateau' gives nothing away (the name says mountain). Id move accepted knowingly pre-ship; check-similarity clean (max 0.526)."
+    },
+    {
+      "stemStart": "Which two towns serve as the region's commercial",
+      "verdict": "kept",
+      "why": "'The largest chalk cellars' was an unsupported superlative (the longest single house network is in Epernay). The replacement agrees with the module's own Crayeres question (quarries cut by the Gallo-Romans) and ranks nothing."
+    },
+    {
+      "stemStart": "A label reading Blanc de Blancs tells a",
+      "verdict": "kept",
+      "why": "'Used interchangeably' overstated loose talk as fact; 'Chardonnay supplies nearly every Blanc de Blancs' is true and keeps the note that the rare white varieties are permitted."
+    },
+    {
+      "stemStart": "Beyond the famous three, several near-extinct varieties remain",
+      "verdict": "kept",
+      "why": "Confirmed by two searches: Voltis entered the Champagne specification under the VIFA trial route (Journal Officiel, 10 December 2022; at most 5 percent of a holding and 10 percent of a blend), and coverage to April 2026 still describes it as on trial, with a decision on full admission due around 2032. So 'seven permitted varieties' had become false, 'traditional' is right, and 'admitted on a trial basis' states a past event that stays true whatever the trial decides. The stem and distractors are untouched."
+    },
+    {
+      "stemStart": "The first 2,050 litres to run from that",
+      "verdict": "kept",
+      "why": "'That press' had no referent in a shuffled pool, so the stem had to change. 2,050 litres from a 4,000-kilogram marc is the cuvee under the current rules, with 500 litres of taille after it. The mild hint toward the 2,550 litre question is no worse than the original's dependence on it. Id move accepted knowingly."
+    },
+    {
+      "stemStart": "Bottling for the second fermentation includes an addition",
+      "verdict": "kept",
+      "why": "Cane or beet sucrose may be used for the tirage; 'sugar' is correct and loses nothing."
+    },
+    {
+      "stemStart": "A guest assumes Extra Dry is the driest",
+      "verdict": "kept",
+      "why": "The key was the only option with a figure, a test-wise tell. 'Between Brut and Sec' is the same kind of answer as the other three positions, all three remain wrong, and the 12 to 17 g/L figure (EU sparkling terms, unchanged) now sits in the exp, which reads correctly."
+    },
+    {
+      "stemStart": "A guest asks you to walk the dosage",
+      "verdict": "kept",
+      "why": "The reversed option was a mirror of the key, and the stem's 'upward' then picked the key on direction alone. The replacement is the real Extra Dry trap the exp already names. Checked the convergence guess across the four sequences: the position-by-position majority now points at the new distractor at places three and four, not at the key, so no new shape tell."
+    },
+    {
+      "stemStart": "Unlike the Burgundian arrangement, the cru ranking here",
+      "verdict": "kept",
+      "why": "Clos des Goisses and Clos du Mesnil long predate any recent trend, so 'recent development' was wrong and 'which is why' overclaimed a single cause; 'one reason ... remain the exception' is true and stable."
+    },
+    {
+      "stemStart": "The old echelle des crus rated each village",
+      "verdict": "kept",
+      "why": "Fixed grape pricing ended around 1990 and the scale was formally retired in 2010, so 'in the 2000s' fitted neither. The date-free rewrite is accurate: the pricing role has gone and the Grand Cru and Premier Cru village lists live on in the appellation rules and on labels."
+    },
+    {
+      "stemStart": "Villages rated between ninety and ninety-nine on that",
+      "verdict": "kept",
+      "why": "'On that scale' dangled in a shuffled pool; naming the echelle des crus is the minimal fix and the only kind possible. Ninety to ninety-nine is Premier Cru. Id move accepted knowingly; check-similarity clean."
+    },
+    {
+      "stemStart": "Where should you look to find that producer",
+      "verdict": "kept",
+      "why": "'That producer code' had no referent at all, so the stem had to change. The applied reframe has one right place among the four, and the exp now names the two-letter code so its opening has a subject. Id move accepted knowingly."
+    },
+    {
+      "stemStart": "Opening a bottle safely begins with a thumb",
+      "verdict": "kept",
+      "why": "'Every muselet made' was an unverifiable universal; 'a standard muselet' keeps the teaching point."
+    },
+    {
+      "stemStart": "Snowmelt reaches the vines along open channels that",
+      "verdict": "kept",
+      "why": "Mendoza's 1884 water law and provincial constitution make a water right inherent to the land it serves, so 'worth as much as the land' implied a separate asset that the law does not allow. The new sentence is accurate and its 'it' reads cleanly as the water right."
+    },
+    {
+      "stemStart": "Constant wind, very low humidity and a long",
+      "verdict": "kept",
+      "why": "Vines were among the first crops after the Alto Valle was irrigated in the 1910s (an early winery dates from 1909) and pome fruit spread from the 1930s, so 'orchards before anyone planted vines' was unsupported. The new line agrees with the module's Semillon and Neuquen questions (century-old vines, the settlers who first irrigated)."
+    },
+    {
+      "stemStart": "Rainfall across Chile's wine country changes steadily along",
+      "verdict": "kept",
+      "why": "'Compulsory' read as a legal mandate; there is none. 'Essential' states the physical fact."
+    },
+    {
+      "stemStart": "Running from north to south, which order correctly",
+      "verdict": "amended",
+      "why": "The distractor fix is right: the reversed option left a mirror pair, and knowing only that Maipo is at the top picked the key. The single swap now makes Rapel's place the thing tested. But the exp explained only the two ends, so a student who chose the new swap learnt nothing from it; it now places Rapel (Cachapoal and Colchagua) before Curico and Curico before Maule. Build passes."
+    },
+    {
+      "stemStart": "Peppery, tightly wound reds from Chile's cool coastal",
+      "verdict": "amended",
+      "why": "The absolute 'would never finish ripening' failed (Carmenere is bottled from Elqui), so the hedge is right. But 'in sites that cool' can be misread as a relative clause (sites that cool something); now 'in sites as cool as these'. Build passes."
+    },
+    {
+      "stemStart": "(syllabus block) Vineyard methods and label law, formerly the banned word",
+      "verdict": "kept",
+      "why": "Not in the findings log, but in the diff: the block name carried the banned word. The block is used only inside the module (structural check and the four Q entries, all renamed together); it is not emitted, no id is minted from it, and nothing else in the repository names it. 'Methods' is accurate."
+    }
+  ]
+}

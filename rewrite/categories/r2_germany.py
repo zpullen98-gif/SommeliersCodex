@@ -1,10 +1,10 @@
-"""Rank II rewrite - Germany (37 questions: 13 MC, 24 short answer).
+"""Village rewrite - Germany (37 questions: 13 MC, 24 short answer).
 
-Certified level, pitched deliberately above the Rank I "Germany" category. Where
-Rank I asks what Spatlese records, this asks what the growers' association demands
-of the fruit before a dry wine may claim its top site; where Rank I places the
+Certified level, pitched deliberately above the Regionale "Germany" category. Where
+Regionale asks what Spatlese records, this asks what the growers' association demands
+of the fruit before a dry wine may claim its top site; where Regionale places the
 Mosel and the Rheingau, this asks what separates one block of a vineyard from the
-larger site around it. Nothing here repeats a Rank I task.
+larger site around it. Nothing here repeats a Regionale task.
 
 The running order is built around the one thing a German label has always been
 asked to do two ways at once: state how ripe the fruit was, and state how tightly
@@ -120,7 +120,7 @@ BANK = [
     # ------------------------ Grosslage: the name that covers a county (4) ---
     Q("Grosslage: the name that covers a county",
       "Zeller Schwarze Katz and Kroever Nacktarsch were shipped by the tanker for decades and read on a label exactly like a great single site. What kind of vineyard name is each of them?",
-      ["A Grosslage, one name gathering the vineyards of many villages",
+      ["A Grosslage, one name gathering several single sites",
        "An Einzellage of unusually large area",
        "A Bereich, the district a region is divided into",
        "A shipper's brand with no vineyard behind it"], 0,
@@ -129,7 +129,7 @@ BANK = [
       "One Mosel collective name was the reverse of the usual complaint: it took in only a handful of the steepest sites around a single town, so the wine under it was reliably serious. Which name?",
       ["Bernkasteler Badstube", "Bernkasteler Kurfurstlay", "Graacher Munzlay",
        "Piesporter Michelsberg"], 0,
-      "Badstube covered the steep slate immediately around Bernkastel and behaved more like a village name than a regional blend, and in 2025 the growers there had it dissolved and the name remade as a single vineyard. Kurfurstlay wraps around it and reaches far up the valley and out onto the flat, and on a shelf the two looked identical in form."),
+      "Badstube covered the steep slate immediately around Bernkastel and behaved more like a village name than a regional blend, and the collective has since been dissolved and the name remade as a single vineyard. Kurfurstlay wraps around it and reaches far up the valley and out onto the flat, and on a shelf the two looked identical in form."),
     SA("Grosslage: the name that covers a county",
        "The most notorious collective name in Rheinhessen borrows a celebrated river village's name for a blend drawn mostly from villages well inland of it. Name that collective site.",
        "Niersteiner Gutes Domtal",
@@ -156,14 +156,14 @@ BANK = [
        "Wines from its top classified sites only",
        "Wines offered at the autumn auctions",
        "Wines held back five years after the vintage"], 0,
-      "Members label dry wine by origin - estate, then village, then the two classes of site - and keep the ripeness words for bottles where sugar survives into the glass, so the word is a promise about taste rather than about juice. German law asks for nothing of the sort, which is why a Spatlese trocken from a non-member is perfectly correct."),
+      "Members label dry wine by origin, from estate to village to the two classes of site, and keep the ripeness words for bottles where sugar survives into the glass, so the word is a promise about taste rather than about juice. German law asks for nothing of the sort, which is why a Spatlese trocken from a non-member is perfectly correct."),
     Q("The VDP and Grosses Gewachs",
       "A member estate wants to bottle Sauvignon Blanc off its best classified parcel and is told the top tier is closed to it. What rule stops the wine?",
       ["Classified sites admit only the varieties the association counts as traditional in that region",
        "The top tier is open to Riesling alone, in every region of Germany",
        "The top tier is closed to any variety bred in a laboratory",
        "The vines must have stood on that particular parcel for at least fifty years before the tier opens"], 0,
-      "The permitted list changes from region to region: Riesling in the Rheingau, Silvaner in Franken, the Pinot family in Baden. A grower planting outside it keeps the vineyard's rank and loses the right to print it on that particular wine, which is the clearest way the rulebook is stricter than the law, since the law cares about ripeness and not at all about what is planted."),
+      "The permitted list changes from region to region: Riesling and Spatburgunder in the Rheingau, Silvaner among others in Franken, the Pinot family in Baden. A grower planting outside it keeps the vineyard's rank and loses the right to print it on that particular wine, which is one clear way the rulebook is stricter than the law, since the law ties no variety to a site."),
     SA("The VDP and Grosses Gewachs",
        "Fruit for a VDP Grosse Lage wine must be picked by hand and cropped well below what German law would allow. What yield ceiling does the association set for that class?",
        "Fifty hectolitres per hectare",
@@ -189,7 +189,7 @@ BANK = [
        "The must weight behind that rung differs by region and by grape, so the requirement is a floor that moves rather than one figure on the Oechsle scale. It matters because the wine is dry: the sugar the rung records is fermented away, and what the estate has bought with it is ripeness of flavour.",
        ex=True),
     SA("The VDP and Grosses Gewachs",
-       "Leading German estates banded together in 1910 to sell wine at auction under a name that promised one thing about how it had been made. Which practice did that name rule out?",
+       "Leading German estates banded together in 1910 to sell wine at auction under a name that promised one thing about how it had been made. What did that name rule out?",
        "Chaptalisation",
        ["chaptalisation", "chaptalization", "chaptalising", "chaptalizing",
         "adding sugar", "addition of sugar", "sugar addition", "beet sugar",
@@ -200,7 +200,7 @@ BANK = [
     Q("Placing the thirteen and their specialities",
       "Between Bingen and Bonn the river runs through a gorge lined with castles, and the terraces above it are so steep that a great deal of the vineyard has gone out of production. Which Anbaugebiet is this?",
       ["Mittelrhein", "Ahr", "Nahe", "Sachsen"], 0,
-      "The Mittelrhein runs from the edge of Rheinhessen down past the Lorelei toward the Siebengebirge, and it is Riesling on slate almost throughout. It is the clearest case in Germany of a region whose vineyard keeps shrinking while the wine from what survives keeps improving."),
+      "The Mittelrhein runs from the edge of Rheinhessen down past the Lorelei towards the Siebengebirge, and it is Riesling on slate almost throughout. It is the clearest case in Germany of a region whose vineyard keeps shrinking while the wine from what survives keeps improving."),
     SA("Placing the thirteen and their specialities",
        "The western end of Franken sits on red sandstone rather than on the shell limestone around Wurzburg, and it grows a surprising amount of Spatburgunder. Which of the region's districts is that?",
        "Mainviereck",
@@ -225,7 +225,7 @@ BANK = [
        "To mark where one owner's parcel ended and the next began",
        "To measure how much sun the site takes in over a season",
        "To display the owner's arms to the river"], 0,
-      "They went up in the nineteenth century for pickers and pruners who were a long walk from any church clock, and the wall carrying the dial is usually the warmest stone on the slope. The names then stuck to the ground around them, so Wehlen and Zeltingen each have a Sonnenuhr on the label as well as on the hill."),
+      "Most went up in the nineteenth century for pickers and pruners who were a long walk from any church clock, and the wall carrying the dial is usually the warmest stone on the slope. The names then stuck to the ground around them, so Wehlen and Zeltingen each have a Sonnenuhr on the label as well as on the hill."),
     SA("Great sites of the Mosel and Rheingau",
        "Erbach and Hattenheim spent much of the nineteenth century arguing over which of them could print the name of the vineyard around a boundary spring between them. Name the vineyard.",
        "Marcobrunn",

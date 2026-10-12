@@ -1,0 +1,684 @@
+{
+ "batch": "regionale-14",
+ "modules": [
+  "rewrite/categories/r1_label_reading.py",
+  "rewrite/categories/r1_producers_icons.py",
+  "rewrite/categories/r1_soil_terroir.py"
+ ],
+ "readCount": 150,
+ "total": 150,
+ "findings": [
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A number followed by a percentage sign and",
+   "field": "exp",
+   "problem": "Explanation uses 'practised', a form of the banned word practise.",
+   "fix": "'a practised buyer' became 'a seasoned buyer'.",
+   "source": "House rule in the batch brief: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A number followed by a percentage sign and",
+   "field": "opts",
+   "problem": "Option shape: a padded distractor (76 characters against 48, 49 and 38) stood visibly longest and was wrong; the module carried 20 length standouts (a distractor ten or more characters clear of every other option) and none was ever the key, so eliminating the long option paid (+3.3 points by build.py); a further hidden pattern, two long options against two short ones with the key in the long pair 10 of 11 times at HEAD, paid more again.",
+   "fix": "Trimmed it to 'The proportion of the named grape in the blend'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Beside 75 cl on a European label stands",
+   "field": "opts",
+   "problem": "Option shape: the organic distractor was padded to 97 characters against 45 to 47 and stood out as the eliminable option.",
+   "fix": "Trimmed to 'That the wine is certified organic'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A short code such as L3021 is printed",
+   "field": "opts",
+   "problem": "Option shape: key (74) and a padded distractor (85) towered over the other two (51, 46), the long-pair tell.",
+   "fix": "Key trimmed to 'Identifying one bottling run, so it can be traced' (recall stays in exp); distractor trimmed to 'Recording how many bottles the estate declared that year'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Two German bottles stand side by side, one",
+   "field": "opts",
+   "problem": "Option shape: key (99) and one padded distractor (103) far longer than the other two (64, 50), key in the long pair.",
+   "fix": "Key now 'Gutsabfullung, which requires the estate's own vines and a qualified winemaker'; the village distractor and the single-vineyard distractor trimmed or evened so all three named options sit at 70 to 78.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Along the foot of an Italian label runs",
+   "field": "opts",
+   "problem": "Option shape: key (90) and padded distractor (94) against 48 and 47, key in the long pair.",
+   "fix": "Key trimmed to 'The wine was bottled in the zone where it was made' (the tankering point is already in exp); cask distractor trimmed to 'The wine was bottled straight from the cask, unfiltered'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "No turret, no manor and no gatehouse stand",
+   "field": "opts",
+   "problem": "Option shape: key (96) and padded distractor (99) against 70 and 37, key in the long pair.",
+   "fix": "Key now 'Yes; the word marks a holding whose wine is made there, not a building'; listed-building distractor trimmed to 71 characters.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "The largest words on a supermarket bottle are",
+   "field": "opts",
+   "problem": "Option shape: a padded distractor (65) stood out against the key (50); trimming it alone left key and distractor as a long pair against 24 and 22.",
+   "fix": "Key trimmed to 'A brand name owned by the seller', distractor to 'A protected traditional term'; all four now 22 to 32.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Two place names compete for attention on an",
+   "field": "opts",
+   "problem": "Option shape: key (92) and padded distractor (99) against 45 and 42, key in the long pair; the key's examples also visibly marked it as the specific one.",
+   "fix": "Key trimmed to 'A legal designation printed alongside it' (the formulas are named in exp); distractor to 'The name printed closest to the vintage'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "The bottler's address on a French label names",
+   "field": "opts",
+   "problem": "Option shape: padded distractor of 90 characters against 34 to 46.",
+   "fix": "Trimmed to 'That the appellation has been claimed in error'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A producer line reads Cave Cooperative on one",
+   "field": "opts",
+   "problem": "Option shape: merchant distractor padded to 66 against 44 to 51.",
+   "fix": "Trimmed to 'A merchant blending bought-in wine under its own name'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "No year appears anywhere on a bottle of",
+   "field": "opts",
+   "problem": "Option shape: a 105 character distractor against 40 to 73.",
+   "fix": "Trimmed to 'The wine was bottled before the authorities could confirm its harvest year'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Sweetness is stated on every sparkling wine sold",
+   "field": "opts",
+   "problem": "Option shape: 105 character distractor stood out; key (74) and another padded distractor (77) then formed a long pair.",
+   "fix": "Key now 'The law requires it for sparkling wine but not for still'; distractors trimmed to 58 and 63 characters.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "American labels may print the words Table Wine",
+   "field": "opts",
+   "problem": "Option shape: key (68) and padded distractor (73) against 48 and 46, key in the long pair.",
+   "fix": "Key now 'That the wine is seven to fourteen percent alcohol'; distractor 'That the wine is the lowest American quality grade'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A small pictogram of a pregnant woman inside",
+   "field": "exp",
+   "problem": "Explanation states as fact that comparable requirements have spread through other European countries; that is unsupported and volatile (several national schemes have been proposed and postponed).",
+   "fix": "Replaced with the durable reason the symbol is seen abroad: many producers print it on every bottle whatever the market.",
+   "source": "Batch rule: nothing volatile stated as fact; the French 2007 requirement itself is kept.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "No added sulfites is printed on a back",
+   "field": "opts",
+   "problem": "Option shape: a 95 character distractor stood out; after trimming, key (77) and distractor (68) formed a long pair against 49 and 45.",
+   "fix": "Key trimmed to 'Deliberate addition, not what fermentation produces' (the yeast by-product is in exp); distractor to 'Any sulphur dioxide at all, whatever its source'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Demeter appears in small type beneath a producer's",
+   "field": "opts",
+   "problem": "Option shape: key (81) and padded distractor (72) against 51 and 38, key in the long pair.",
+   "fix": "Key trimmed to 'Certification by a private biodynamic body' (the organic baseline is in exp); distractor to 'A vineyard ranking granted by the appellation'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A circular symbol of two interlocking arrows sits",
+   "field": "opts",
+   "problem": "Option shape: deposit distractor padded to 100 characters against 41 to 53.",
+   "fix": "Trimmed to 'A guarantee that the bottle can be returned for a deposit'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A numbered adhesive seal holding a random scatter",
+   "field": "opts",
+   "problem": "A distractor used 'practices', a form of the banned word; another was padded to 82 characters against 34 to 40.",
+   "fix": "'Certify the vineyard's farming practices' became '... farming methods'; the temperature distractor became 'Show the bottle has been kept cool'.",
+   "source": "House rule (never practice or practise) and rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Nothing on the front of a European bottle",
+   "field": "opts",
+   "problem": "Option shape: key (100) and padded distractor (103) against 65 and 62, key in the long pair.",
+   "fix": "Key now 'No; they need only be readable together without turning the bottle'; distractor 'Yes; the bottler's name and address must stand apart from the rest'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "An American bottle carries a small printed strip",
+   "field": "opts",
+   "problem": "Option shape: key (79) and padded distractor (77) against 57 and 47, key in the long pair.",
+   "fix": "Key trimmed to 'The importer, to add what the American market requires'; distractor to 'The producer, to correct a printing error'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "The first digits of a bottle's bar code",
+   "field": "opts",
+   "problem": "Option shape: key (101) and padded distractor (107) against 35 and 34, the clearest long-pair tell in the module.",
+   "fix": "Key now 'The one where the number's owner is registered' (the not-where-made point is in exp); distractor 'The one into which the wine was imported'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "The vintage is printed on a narrow band",
+   "field": "opts",
+   "problem": "Option shape: an 89 character distractor against 32 to 55.",
+   "fix": "Trimmed to 'The year can be changed after release'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Drawing the cork from an old bottle reveals",
+   "field": "opts",
+   "problem": "Option shape: a 101 character distractor against 43 to 59.",
+   "fix": "Trimmed to 'Proof that the wine has never been recorked'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Raised letters and numbers are moulded into the",
+   "field": "opts",
+   "problem": "Option shape: a 77 character distractor against 28 to 34.",
+   "fix": "Trimmed to 'The size of the bottling run'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "Raised letters and numbers are moulded into the",
+   "field": "exp",
+   "problem": "Explanation says glass dated later than the vintage is a sign of a fake; wine is routinely bottled one or more years after the vintage, often in glass made that later year, so this teaches a false test. The real tell is glass made after the wine could have been bottled.",
+   "fix": "Now reads 'glass made years after the wine could have been bottled is a well-known sign of a fake'.",
+   "source": "Ordinary bottling timelines (Bordeaux typically bottles 18 to 24 months after harvest); counterfeit cases turn on glass postdating any plausible bottling date.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "The label is mould-stained and cockled and has",
+   "field": "opts",
+   "problem": "Option shape: leak distractor padded to 89 characters against 36 to 48.",
+   "fix": "Trimmed to 'That wine has leaked past the cork onto the label'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_label_reading",
+   "stemStart": "A regular guest insists a bottle is not",
+   "field": "opts",
+   "problem": "Option shape: market distractor padded to 68 against 37 to 53.",
+   "fix": "Trimmed to 'The bottle holds a different blend made for another market'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Cuvee Sir Winston Churchill honours a customer who",
+   "field": "exp",
+   "problem": "The stem's 'from 1944' reads as the start of his custom, but he was buying the house's wine decades earlier; 1944 is when the friendship with the family began. The exp also carried an unverified claim about bottle formats.",
+   "fix": "Exp now says he bought the wine long before the war and that the attachment was sealed by the friendship begun in liberated Paris in 1944; format claim dropped. Stem left, since it is literally true.",
+   "source": "Pol Roger's own history of the Churchill connection (custom from 1908, friendship with Odette Pol-Roger from November 1944).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Base wines are fermented in small oak casks rather",
+   "field": "stem",
+   "problem": "Stem uses the banned word 'practice'.",
+   "fix": "'a practice this house kept' became 'a habit this house kept'. Id moves from i-wv3rts71 to i-5tnwrvpw; check-similarity clean.",
+   "source": "House rule in the batch brief: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Visitors arriving at Chateau Cos d'Estournel in Saint-Estephe",
+   "field": "exp",
+   "problem": "Exp says the estate is still nicknamed the Maharajah of Saint-Estephe; the nickname belonged to its founder, Louis-Gaspard d'Estournel.",
+   "fix": "Nickname now attached to him; the no-living-quarters point kept.",
+   "source": "Standard histories of Cos d'Estournel (Louis-Gaspard, 'le Maharadjah de Saint-Estephe').",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "After tasting Willamette Valley Pinot Noir in the",
+   "field": "exp",
+   "problem": "Exp states current management as fact ('has been run by a member of the family since it opened'), a volatile claim.",
+   "fix": "Replaced with the durable historical fact: a member of the family made the wine there from the first vintage.",
+   "source": "Batch rule: nothing volatile stated as fact.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Three single-vineyard Cote-Rotie bottlings, each with a name",
+   "field": "exp",
+   "problem": "Exp gives the new-oak time for the La La wines as around three years; the house's figure is 42 months.",
+   "fix": "Now 'about three and a half years'.",
+   "source": "E. Guigal technical sheets for La Mouline, La Landonne and La Turque (42 months in new oak).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Every label from one Rhone house has carried",
+   "field": "exp",
+   "problem": "Exp uses the banned word 'practice'.",
+   "fix": "'The practice began' became 'Braille labelling began'.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Vargellas, high up the valley where the Douro",
+   "field": "exp",
+   "problem": "Exp calls vintage Port's style 'dry', which misleads about a sweet fortified wine, and says 'British and Scottish', which is a category error (Scots are British).",
+   "fix": "Now 'a firm, austere style' and 'English and Scottish merchant families'.",
+   "source": "Basic Port style; plain usage.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Back labels listing every ingredient used, at a",
+   "field": "exp",
+   "problem": "Exp says Ridge was the first winery in the United States to list ingredients; Bonny Doon Vineyard was doing so from the 2007 vintage, years before Ridge's 2011 start. The sentence also used the banned word 'practice'.",
+   "fix": "Dropped the first-in-the-country claim; 'treats the practice' became 'treats the disclosure'.",
+   "source": "Bonny Doon's ingredient labelling from 2007 (widely reported at the time); house rule on practice.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "A long adobe arch and bell tower beside",
+   "field": "opts",
+   "problem": "The key alone carried a leading 'The' ('The Robert Mondavi Winery') against three bare names, a small shape cue.",
+   "fix": "Key now 'Robert Mondavi Winery'.",
+   "source": "Batch standard: options of one kind, no shape cue.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_producers_icons",
+   "stemStart": "Don Melchor, first bottled in 1987 and the longest-running",
+   "field": "stem",
+   "problem": "Stem calls Don Melchor the longest-running of Chile's icon Cabernets, and exp says the icon category began with it; Errazuriz, one of the distractors, has made its Cabernet-based Don Maximiano Founder's Reserve since the 1983 vintage. The exp also stated the current team arrangement, a volatile fact.",
+   "fix": "Stem now 'Don Melchor, a Cabernet first bottled in 1987 from vineyards at Puente Alto in the upper Maipo, belongs to which producer?'; exp rewritten around Puente Alto and the wine's role in founding the category. Id moves from i-ojr8uz8e to i-iae0bgl4; check-similarity clean.",
+   "source": "Errazuriz's published history of Don Maximiano (first vintage 1983); batch rule against volatile facts.",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "r1_soil_terroir",
+   "stemStart": "A tractor takes the same wheel track down",
+   "field": "opts",
+   "problem": "Option shape: the vigour distractor was padded to 89 characters against 70 to 79.",
+   "fix": "Trimmed to 'It raises the vine's vigour, since a firm bed anchors the roots'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_soil_terroir",
+   "stemStart": "Decayed plant and animal material worked into a",
+   "field": "opts",
+   "problem": "Key 'Humus, the organic matter of the soil' stood 20 characters clear of the rest and its gloss restated the stem ('decayed plant and animal material'), so the question answered itself.",
+   "fix": "Options now 'Humus', 'Active lime', 'Clay', 'Parent rock'; exp opens by naming humus as the soil's organic matter so the link is still taught.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order; batch standard that a stem cannot be answered from its own words",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_soil_terroir",
+   "stemStart": "A hillside is cut into level steps before",
+   "field": "opts",
+   "problem": "Option shape: key (77) was the visible standout against 57 to 63.",
+   "fix": "Key trimmed to 'It stops water running straight down and carrying the soil off' (62).",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_soil_terroir",
+   "stemStart": "Under a covering of large stones the soil",
+   "field": "opts",
+   "problem": "Option shape: three padded distractors (87, 93, 93) left the key (68) as the lone short option.",
+   "fix": "Distractors trimmed to 61, 67 and 70 characters, each still wrong.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_soil_terroir",
+   "stemStart": "Two blocks at the same latitude, one on",
+   "field": "opts",
+   "problem": "Option shape: frost-risk distractor padded to 74 against 53 to 59.",
+   "fix": "Trimmed to 'A reduced risk of damage from a spring frost'.",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r1_soil_terroir",
+   "stemStart": "White pebbles are spread beneath low-trained vines in",
+   "field": "opts",
+   "problem": "Option shape: key (70) was the visible standout against 55 and 56.",
+   "fix": "Key now 'Light reflected up onto the shaded side of the fruit' (52).",
+   "source": "rewrite/README.md, option length sections (trim, never pad; aim the key inside the pack) and lib.structural len_points; measured before and after with a scratch script over the baked option order",
+   "confidence": "medium",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "A number followed by a percentage sign and",
+   "verdict": "kept",
+   "why": "Kept: the old adjective was a form of the banned word, and 'seasoned' carries the same sense in the voice."
+  },
+  {
+   "stemStart": "A number followed by a percentage sign and",
+   "verdict": "kept",
+   "why": "Kept: 'The proportion of the named grape in the blend' stays wrong and now sits inside the pack (46 against 38 to 49)."
+  },
+  {
+   "stemStart": "Beside 75 cl on a European label stands",
+   "verdict": "kept",
+   "why": "Kept: the organic distractor stays wrong (the e mark is a metrology mark). It is now the short one at 34, but the README forbids padding and lib counts only long standouts, so no cue is left to steer by."
+  },
+  {
+   "stemStart": "A short code such as L3021 is printed",
+   "verdict": "kept",
+   "why": "Kept: 'so it can be traced' still states the purpose of lot marking; the recall point sits in exp, and the declared-bottles distractor stays wrong."
+  },
+  {
+   "stemStart": "Two German bottles stand side by side, one",
+   "verdict": "kept",
+   "why": "Kept: Gutsabfullung does require estate-farmed vines, wine made on the estate and an oenologically trained holder or manager; 'a qualified winemaker' is a fair Regionale reading of that. Both Erzeugerabfullung distractors stay wrong."
+  },
+  {
+   "stemStart": "Along the foot of an Italian label runs",
+   "verdict": "kept",
+   "why": "Kept: bottling in the zone of production is the claim; the tankering contrast is still taught in exp, and 'straight from the cask, unfiltered' stays wrong."
+  },
+  {
+   "stemStart": "No turret, no manor and no gatehouse stand",
+   "verdict": "kept",
+   "why": "Kept: the Chateau term is tied to a holding whose wine is made there, which the trimmed key still says; the listed-building distractor stays wrong."
+  },
+  {
+   "stemStart": "The largest words on a supermarket bottle are",
+   "verdict": "kept",
+   "why": "Kept: 'owned by the seller' covers producer and retailer; options now 22 to 32 with no standout."
+  },
+  {
+   "stemStart": "Two place names compete for attention on an",
+   "verdict": "kept",
+   "why": "Kept: the key loses its examples but exp names the formulas and their exceptions; the vintage distractor stays wrong."
+  },
+  {
+   "stemStart": "The bottler's address on a French label names",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "A producer line reads Cave Cooperative on one",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "No year appears anywhere on a bottle of",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "Sweetness is stated on every sparkling wine sold",
+   "verdict": "kept",
+   "why": "Kept: EU rules make the sugar term compulsory for sparkling wine and optional for still, which the new key states; 'always sweetened' stays wrong since brut nature takes no dosage."
+  },
+  {
+   "stemStart": "American labels may print the words Table Wine",
+   "verdict": "kept",
+   "why": "Kept: TTB lets 'table wine' stand in for the figure between 7 and 14 percent ABV; the key says exactly that. The 'percent' spelling is the module's own, untouched by the fix."
+  },
+  {
+   "stemStart": "A small pictogram of a pregnant woman inside",
+   "verdict": "kept",
+   "why": "Kept: no harmonised European pregnancy pictogram rule exists and national schemes keep being proposed and deferred, so the original sentence was unsupported; single-label production for every market is the durable reason the mark travels."
+  },
+  {
+   "stemStart": "No added sulfites is printed on a back",
+   "verdict": "kept",
+   "why": "Kept: the key still distinguishes added sulphur dioxide from what yeast produces; the yeast point stays in exp."
+  },
+  {
+   "stemStart": "Demeter appears in small type beneath a producer's",
+   "verdict": "kept",
+   "why": "Kept: private biodynamic certification is the key; the organic baseline is still in exp."
+  },
+  {
+   "stemStart": "A circular symbol of two interlocking arrows sits",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "A numbered adhesive seal holding a random scatter",
+   "verdict": "kept",
+   "why": "Kept: the old noun was the banned word; 'methods' is exact, and the trimmed temperature distractor stays wrong."
+  },
+  {
+   "stemStart": "Nothing on the front of a European bottle",
+   "verdict": "kept",
+   "why": "Kept: Reg. 2019/33 asks for the particulars in one field of vision, readable without turning the container, bottler included; the new distractor misstates that and stays wrong."
+  },
+  {
+   "stemStart": "An American bottle carries a small printed strip",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "The first digits of a bottle's bar code",
+   "verdict": "kept",
+   "why": "Kept: the GS1 prefix follows the issuing organisation where the number's owner is registered; the not-where-made point stays in exp."
+  },
+  {
+   "stemStart": "The vintage is printed on a narrow band",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "Drawing the cork from an old bottle reveals",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "Raised letters and numbers are moulded into the",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "Raised letters and numbers are moulded into the",
+   "verdict": "kept",
+   "why": "Kept: the original taught a false test, since wine is routinely bottled one to two years after the vintage in glass made that later year; 'years after the wine could have been bottled' is the real tell and allows for late bottling."
+  },
+  {
+   "stemStart": "The label is mould-stained and cockled and has",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "A regular guest insists a bottle is not",
+   "verdict": "kept",
+   "why": "Kept: trimmed text is still plainly wrong (or, for a key, still right and complete with the detail kept in exp), no fact lost, and build.py passes with no long standout keyed."
+  },
+  {
+   "stemStart": "Cuvee Sir Winston Churchill honours a customer who",
+   "verdict": "kept",
+   "why": "Kept: Churchill's custom ran from 1908 and the friendship with Odette Pol-Roger began in Paris in November 1944, so the exp now explains the stem's date; the bottle-format line was unverifiable and ironic given his imperial pints. Stem left alone rightly: it is literally true and a stem change would move the id for no gain."
+  },
+  {
+   "stemStart": "Base wines are fermented in small oak casks rather",
+   "verdict": "kept",
+   "why": "Kept: the banned word sat in the stem, so only a stem change could serve; Krug's small old casks are right and the id move is the unavoidable cost."
+  },
+  {
+   "stemStart": "Visitors arriving at Chateau Cos d'Estournel in Saint-Estephe",
+   "verdict": "kept",
+   "why": "Kept: 'le Maharadjah de Saint-Estephe' was Louis-Gaspard's own nickname, not the estate's; the no-living-quarters point is kept."
+  },
+  {
+   "stemStart": "After tasting Willamette Valley Pinot Noir in the",
+   "verdict": "amended",
+   "why": "Fix right: a family member making the wine since the first vintage is historical, where 'has been run by' was a current state. Amended because 'It followed rather than led' had lost its antecedent once 'The Oregon operation' went; now 'The venture followed rather than led'."
+  },
+  {
+   "stemStart": "Three single-vineyard Cote-Rotie bottlings, each with a name",
+   "verdict": "kept",
+   "why": "Kept: Guigal's sheets give 42 months in new oak for the La La wines; 'about three and a half years' is right and hedged."
+  },
+  {
+   "stemStart": "Every label from one Rhone house has carried",
+   "verdict": "kept",
+   "why": "Kept: banned word removed, 'labelling' is British, the head of the house stays unnamed."
+  },
+  {
+   "stemStart": "Vargellas, high up the valley where the Douro",
+   "verdict": "amended",
+   "why": "Fix right: vintage Port is sweet, so 'dry' misled, and Scots are British. Amended because 'English and Scottish ... families ... gave so many of the shippers English surnames' left Graham, Cockburn and Sandeman under the wrong label; now 'British surnames'."
+  },
+  {
+   "stemStart": "Back labels listing every ingredient used, at a",
+   "verdict": "kept",
+   "why": "Kept: Bonny Doon listed ingredients before Ridge's 2011 start, so 'the first in the United States' was false; dropping it and the banned word is right. Bonny Doon is not among the options, so the stem still has one key."
+  },
+  {
+   "stemStart": "A long adobe arch and bell tower beside",
+   "verdict": "kept",
+   "why": "Kept: the leading 'The' was a shape cue unique to the key; 'Robert Mondavi Winery' matches its form in the Heitz question."
+  },
+  {
+   "stemStart": "Don Melchor, first bottled in 1987 and the longest-running",
+   "verdict": "amended",
+   "why": "Stem change was necessary: Errazuriz's Don Maximiano dates from the 1983 or 1984 vintage, before Don Melchor's 1987, so 'longest-running' was false and sat in the stem. Amended: 'first bottled in 1987' became 'first made in 1987', since 1987 is the first vintage and it was bottled later (the id moves to i-b72qf5n1 rather than i-iae0bgl4, no extra cost against HEAD; check-similarity clean); and the exp's present-tense 'now runs through every large Chilean house' became the historical 'soon drew in most of Chile's large houses'."
+  },
+  {
+   "stemStart": "A tractor takes the same wheel track down",
+   "verdict": "kept",
+   "why": "Kept: the vigour distractor stays wrong; the key (79) now leads by 8, under the decisive gap, and build reports no standout."
+  },
+  {
+   "stemStart": "Decayed plant and animal material worked into a",
+   "verdict": "kept",
+   "why": "Kept: the key's gloss restated the stem and stood 20 characters clear; bare names leave a real choice and exp still ties humus to organic matter. 'Clay' stays wrong since the stem names decayed organic material."
+  },
+  {
+   "stemStart": "A hillside is cut into level steps before",
+   "verdict": "kept",
+   "why": "Kept: erosion control is still the key and now sits inside the pack."
+  },
+  {
+   "stemStart": "Under a covering of large stones the soil",
+   "verdict": "kept",
+   "why": "Kept: each trimmed distractor stays wrong (stones break capillary rise, release negligible minerals, cannot shade leaves); the key is no longer the lone short one."
+  },
+  {
+   "stemStart": "Two blocks at the same latitude, one on",
+   "verdict": "kept",
+   "why": "Kept: the reduced-frost distractor stays wrong; it is now the shortest, but padding is barred and only long standouts carry a cue."
+  },
+  {
+   "stemStart": "White pebbles are spread beneath low-trained vines in",
+   "verdict": "kept",
+   "why": "Kept: reflected light onto the shaded fruit is what exp teaches (light from below colours and ripens the skins)."
+  },
+  {
+   "stemStart": "(r1_producers_icons docstring)",
+   "verdict": "kept",
+   "why": "Unlogged change: the banned noun became 'a habit' twice in the module docstring. Not shipped, but the banned word is gone and the sense holds."
+  },
+  {
+   "stemStart": "(r1_soil_terroir docstring)",
+   "verdict": "kept",
+   "why": "Unlogged change: the banned noun became 'custom' in 'long settled custom' in the module docstring. Not shipped; banned word gone, sense holds."
+  }
+ ]
+}

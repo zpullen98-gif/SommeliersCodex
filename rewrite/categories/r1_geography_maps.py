@@ -1,4 +1,4 @@
-"""Rank I rewrite - Geography & Maps (50 questions, all multiple choice).
+"""Regionale rewrite - Geography & Maps (50 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -16,7 +16,7 @@ narrow on purpose. Twenty-two regional categories are already committed and each
 one owns its own interior: the order of the Douro's sub-regions, the commune
 south of Pauillac, the four Loire regions inland from the sea, the meanders of
 the Mosel, the Chilean labels that read Costa and Andes. Soil & Terroir owns
-soil-to-place, and Rank II "Terroir: Climate & Soil" owns every climate metric,
+soil-to-place, and Village "Terroir: Climate & Soil" owns every climate metric,
 the lapse rate, orographic lift and continentality. What is left, and what this
 category takes, is position: what lies north of what, what a river connects, what
 a range stands between, which country a name belongs to, and how far a place sits
@@ -99,7 +99,7 @@ BANK = [
        "The Bordeaux, by about six months",
        "The Chilean, by two or three weeks",
        "Neither of them, since picking dates are set by ripeness rather than by the calendar"], 0,
-      "Seasons invert across the equator, so a southern crop labelled with a given year came in during the first months of that year while the northern crop of the same year came in toward its end. Two bottles sharing a vintage number were therefore never grown in the same weather, which is why a good year in one hemisphere says nothing about the other."),
+      "Seasons invert across the equator, so a southern crop labelled with a given year came in during the first months of that year while the northern crop of the same year came in towards its end. Two bottles sharing a vintage number were therefore never grown in the same weather, which is why a good year in one hemisphere says nothing about the other."),
     Q("Hemispheres and the harvest calendar",
       "A grower in Chile and a grower in Germany each point out the sunny side of the hill as their best ground. Which way does each of those slopes face?",
       ["The Chilean block faces north, the German block south",
@@ -121,7 +121,7 @@ BANK = [
       ["South of the equator", "North of the equator, in an unusually early season",
        "Within a few degrees of the equator, where the vine never rests",
        "On the equator itself, where day length swings widest through the year"], 0,
-      "Budbreak follows the local spring, so a September start puts the vineyard in Chile, Argentina, South Africa, Australia or New Zealand. Reading a vineyard diary is the quickest way to place a wine on the globe when nothing on the label says where it came from."),
+      "Budbreak follows the local spring, so a September start puts the vineyard in the southern hemisphere, in a country such as Chile, Argentina, South Africa, Australia or New Zealand. Reading a vineyard diary is the quickest way to place a wine on the globe when nothing on the label says where it came from."),
 
     # ---------------------------------- rivers and the regions along them (6) --
     Q("Rivers and the regions along them",
@@ -135,11 +135,11 @@ BANK = [
     Q("Rivers and the regions along them",
       "Before it ever enters France, the river that ends in the Camargue delta on the Mediterranean passes through a large Alpine lake with terraced vineyards above its northern shore. Which lake?",
       ["Lake Geneva", "Lake Constance", "Lake Garda", "Lake Neuchatel"], 0,
-      "The Rhone rises in the Swiss Alps, runs the length of the Valais, crosses Lake Geneva and only then turns south toward Lyon. The terraces of Lavaux stand above that northern shore, which puts Swiss vineyards on the same water as French ones several hundred kilometres downstream."),
+      "The Rhone rises in the Swiss Alps, runs the length of the Valais, crosses Lake Geneva and only then heads for Lyon and the south. The terraces of Lavaux stand above that northern shore, which puts Swiss vineyards on the same water as French ones several hundred kilometres downstream."),
     Q("Rivers and the regions along them",
       "From the Cantabrian mountains to a delta on the Mediterranean below Tortosa, one river runs the whole length of Rioja. Name that river.",
       ["The Ebro", "The Duero", "The Tagus", "The Guadalquivir"], 0,
-      "The Ebro is the one large Spanish river draining east to the Mediterranean, while the Duero, the Tagus and the Guadalquivir all run west to the Atlantic. It rises barely forty kilometres from the Bay of Biscay and then spends its whole length travelling in the opposite direction."),
+      "The Ebro is the one large Spanish river draining east to the Mediterranean, while the Duero, the Tagus and the Guadalquivir all run west to the Atlantic. It rises less than fifty kilometres from the Bay of Biscay and then spends its whole length travelling in the opposite direction."),
     Q("Rivers and the regions along them",
       "Bottles of Riesling grown along a single river valley can carry a French, a Luxembourgish or a German address. Which river runs through all three countries?",
       ["The Moselle", "The Saar", "The Meuse", "The Rhine"], 0,
@@ -154,7 +154,7 @@ BANK = [
     Q("Which country holds which region",
       "A high plateau lying between two parallel mountain ranges, planted through a long history of conflict, produces the wines of the Bekaa Valley. Which country is that?",
       ["Lebanon", "Israel", "Turkey", "Syria"], 0,
-      "The Bekaa sits between the Lebanon and Anti-Lebanon ranges at around a thousand metres, and that height supplies the cool nights the summer heat would otherwise deny it. It is one of the oldest continuously planted wine districts anywhere, and altitude there does the work that distance from the equator does elsewhere."),
+      "The Bekaa sits between the Lebanon and Anti-Lebanon ranges at around a thousand metres, and that height supplies the cool nights the summer heat would otherwise deny it. Wine has been made in the valley since antiquity, and altitude there does the work that distance from the equator does elsewhere."),
     Q("Which country holds which region",
       "East of the Black Sea and south of the Caucasus watershed lies a country whose principal wine province is Kakheti. Name the country.",
       ["Georgia", "Armenia", "Bulgaria", "Moldova"], 0,
@@ -166,7 +166,7 @@ BANK = [
     Q("Which country holds which region",
       "Benches above a long narrow lake in the west, and a peninsula beside a Great Lake in the east, hold the two main vineyard areas of one country. Which is it?",
       ["Canada", "The United States", "Russia", "Argentina"], 0,
-      "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand nearly four thousand kilometres apart, which is a fair measure of how thinly a very large country is planted. Both depend on a body of water deep enough to hold off the worst of a continental winter."),
+      "The Okanagan Valley in British Columbia and the Niagara Peninsula in Ontario stand more than three thousand kilometres apart, which is a fair measure of how thinly a very large country is planted. Both depend on a body of water deep enough to hold off the worst of a continental winter."),
     Q("Which country holds which region",
       "Nemea, Naoussa and Santorini appear together on an importer's list. Which country do all three belong to?",
       ["Greece", "Turkey", "Cyprus", "Italy"], 0,
@@ -188,12 +188,12 @@ BANK = [
     Q("Neighbours and shared borders",
       "One lake in the northern Alps has vineyards on shores belonging to three different countries. Which lake?",
       ["Lake Constance", "Lake Geneva", "Lake Balaton", "Lake Neuchatel"], 0,
-      "Germany, Switzerland and Austria all reach the water the Germans call the Bodensee, and vines grow on each of their shores. The lake is deep enough to carry warmth into the autumn, which is the only reason vineyards work at that height and that far north."),
+      "Germany, Switzerland and Austria all reach the water the Germans call the Bodensee, and vines grow on each of their shores. The lake is deep enough to carry warmth into the autumn, which is a large part of why vineyards work at that height and that far north."),
     Q("Neighbours and shared borders",
       "Two Californian counties famous for wine lie side by side, divided by a single line of hills running roughly north to south. Name that ridge.",
       ["The Mayacamas Mountains", "The Santa Lucia Highlands", "The Vaca range",
        "The Sierra Nevada"], 0,
-      "The Mayacamas separate Napa from Sonoma, while the Vaca range closes Napa on its eastern side, so the valley sits in a trough with a wall on either hand. The divide matters because one side is open to ocean air and the other is not, so a few kilometres across a ridge changes the whole growing season."),
+      "The Mayacamas separate Napa from Sonoma, while the Vaca range closes Napa on its eastern side, so the valley sits in a trough with a wall on either hand. The divide matters because one side is more open to cool ocean air than the other, so a few kilometres across a ridge changes the whole growing season."),
     Q("Neighbours and shared borders",
       "Cross the line east of Saint-Emilion and the same grapes grow on similar ground under a different appellation and a far lower price. Which region has been entered?",
       ["Bergerac", "Cahors", "Madiran", "Gaillac"], 0,
@@ -208,7 +208,7 @@ BANK = [
     Q("Mountain ranges and what they shelter",
       "A single chain runs from the Atlantic to the Mediterranean and separates the vineyards of two countries along its whole length. Which chain?",
       ["The Pyrenees", "The Alps", "The Apennines", "The Cantabrian mountains"], 0,
-      "The Pyrenees run about four hundred and fifty kilometres from the Bay of Biscay to the Mediterranean, with France on the northern side and Spain on the southern. Vines sit at both ends of the chain and hardly any in the middle, where it is at its highest and least hospitable."),
+      "The Pyrenees run about four hundred and fifty kilometres from the Bay of Biscay to the Mediterranean, with France on the northern side and Spain on the southern. Vines keep to the foothills on either flank and to the two ends of the chain, never to the high central crest, which is its least hospitable ground."),
     Q("Mountain ranges and what they shelter",
       "Two countries grow wine on opposite flanks of the same chain, one facing the Pacific and one turned away from it. Which chain, and which country lies on the eastern side?",
       ["The Andes, with Argentina to the east", "The Andes, with Chile to the east",
@@ -240,7 +240,7 @@ BANK = [
        "On the eastern coast of any continent",
        "On the western coast in the north and the eastern coast in the south",
        "It depends on latitude alone rather than on which coast"], 0,
-      "Cold currents run toward the equator up the western side of the continents in both hemispheres, and the water is colder still where wind drags deeper water to the surface. That is why the cool corners of California, Chile, southern Africa and Portugal all face west, while an eastern seaboard at the same latitude is warm and humid instead."),
+      "Cold currents run towards the equator up the western side of the continents in both hemispheres, and the water is colder still where wind drags deeper water to the surface. That is why the cool corners of California, Chile, southern Africa and Portugal all face west, while an eastern seaboard at the same latitude is warm and humid instead."),
     Q("Oceans, seas and the coast",
       "Four island wine regions come up in one conversation: Sicily, Corsica, Crete and Madeira. Which of them stands in the open Atlantic rather than in an enclosed sea?",
       ["Madeira", "Sicily", "Corsica", "Crete"], 0,
@@ -248,7 +248,7 @@ BANK = [
     Q("Oceans, seas and the coast",
       "A sommelier describes a wine as coming from Italy's eastern seaboard. Which sea is that coast on?",
       ["The Adriatic", "The Tyrrhenian", "The Ligurian", "The Aegean"], 0,
-      "The Adriatic runs up the eastern side of the peninsula toward Venice, with Croatia and Albania facing it from the far shore. The Tyrrhenian is the western sea between the mainland, Sardinia and Sicily, the Ligurian the north-western corner, and the Aegean lies away to the east with no Italian shore on it at all."),
+      "The Adriatic runs up the eastern side of the peninsula towards Venice, with Croatia and Albania facing it from the far shore. The Tyrrhenian is the western sea between the mainland, Sardinia and Sicily, the Ligurian the north-western corner, and the Aegean lies away to the east with no Italian shore on it at all."),
 
     # ----------------------- north to south, and distance from the equator (5) --
     Q("North to south, and distance from the equator",
@@ -285,12 +285,12 @@ BANK = [
     Q("Distance from the sea and the inland extremes",
       "Of Bordeaux, Tokaj, Rias Baixas and the Douro, which vineyards lie furthest from any ocean?",
       ["Tokaj", "Bordeaux", "Rias Baixas", "The Douro"], 0,
-      "Tokaj sits in the far north-east of Hungary, several hundred kilometres from the nearest sea in any direction, which is why its winters bite and its summers are hot. The other three all lie within an hour or two of the Atlantic, and each of them is moderated by it."),
+      "Tokaj sits in the far north-east of Hungary, several hundred kilometres from the nearest sea in any direction, which is why its winters bite and its summers are hot. Bordeaux and Rias Baixas lie close to the Atlantic and are moderated by it, and even the Douro, shielded from most of that ocean air by the Marao range, begins less than a hundred kilometres from the coast."),
     Q("Distance from the sea and the inland extremes",
       "Vines in one region are unearthed each spring and buried again each autumn, because no sea lies near enough to soften the winter. Which region works that way?",
       ["Ningxia, in northern China", "Mendoza, in western Argentina",
        "Stellenbosch, in South Africa", "Marlborough, in New Zealand"], 0,
-      "Ningxia lies on the edge of the Gobi, more than a thousand kilometres from the coast, and midwinter there falls far below anything a dormant vine will survive uncovered. Burying the rows is the only defence, and the labour it takes sets that region's costs apart from anything in a maritime climate."),
+      "Ningxia lies on the edge of the Gobi, about a thousand kilometres from the coast, and midwinter there falls far below anything a dormant vine will survive uncovered. Burying the rows is the only defence, and the labour it takes sets that region's costs apart from anything in a maritime climate."),
     Q("Distance from the sea and the inland extremes",
       "Four wine countries appear on a list and one of them has no coastline at all. Which?",
       ["Austria", "Portugal", "Chile", "Greece"], 0,

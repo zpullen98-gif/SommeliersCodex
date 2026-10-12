@@ -1,10 +1,10 @@
-"""Rank I rewrite - Sparkling/Fortified/Sweet (61 questions).
+"""Regionale rewrite - Sparkling/Fortified/Sweet (61 questions).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
 
 Champagne is deliberately held to the minimum needed for contrast, since it has
-its own Rank I category. The budget goes to the other sparkling regions, to the
+its own Regionale category. The budget goes to the other sparkling regions, to the
 four fortified families, and to the three routes to concentration in a sweet
 wine: noble rot, freezing and drying.
 
@@ -37,7 +37,7 @@ BANK = [
       "Fine, persistent bead and a bready character in the glass point to a second fermentation carried out where?",
       ["In the same bottle the wine is sold in", "In a sealed pressure tank",
        "In an open wooden vat", "In a cask under a veil of yeast"], 0,
-      "That is the traditional method, and the wine then rests on its spent yeast inside that bottle for a year or more. The pressure and the toasty flavour both come from there."),
+      "That is the traditional method, and the wine then rests on its spent yeast inside that bottle for months, often for years. The pressure and the toasty flavour both come from there."),
     Q("Sparkling method and vocabulary",
       "Gas is pumped into a finished still wine under pressure, exactly as it is into a soft drink. What gives that away in the glass?",
       ["A coarse bubble that dies fast",
@@ -58,7 +58,7 @@ BANK = [
        "Chaptalisation"], 0,
       "The dosage, also called the liqueur d'expedition, sets the final sweetness and rounds off the acidity. The liqueur de tirage is the other end of the process, the sugar and yeast that began the second fermentation."),
     Q("Sparkling method and vocabulary",
-      "Quarter bottles and jeroboams are often filled from wine that fermented in an ordinary bottle, was emptied under pressure into a tank, filtered and bottled again. Which method is that?",
+      "Quarter bottles and the giant formats beyond a jeroboam are often filled from wine that fermented in an ordinary bottle, was emptied under pressure into a tank, filtered and bottled again. Which method is that?",
       ["The transfer method", "The traditional method", "The tank method",
        "The ancestral method"], 0,
       "Riddling and disgorging an awkward format one bottle at a time is slow and wasteful, so the wine is decanted under pressure and the sediment filtered out instead. Because it leaves the bottle it fermented in, such a wine may be labelled bottle fermented but never traditional method."),
@@ -111,7 +111,7 @@ BANK = [
       ["Cremant", "Mousseux", "Perlant", "Petillant"], 0,
       "Cremant d'Alsace, de Bourgogne, de Loire and the rest share rules on hand harvesting, whole-bunch pressing and a minimum time on the lees."),
     Q("Sparkling regions of the world",
-      "Which country turned a sparkling red made from Shiraz into a national specialty?",
+      "Which country turned a sparkling red made from Shiraz into a national speciality?",
       ["Australia", "Argentina", "South Africa", "New Zealand"], 0,
       "Usually off dry, soft in tannin and served lightly chilled. It is a fixture of an Australian Christmas table, where the holiday falls in high summer."),
     Q("Sparkling regions of the world",
@@ -121,7 +121,7 @@ BANK = [
     Q("Sparkling regions of the world",
       "Served cool alongside the cured pork and Parmigiano of Emilia, which frothy red is the local staple?",
       ["Lambrusco", "Bardolino", "Freisa", "Brachetto"], 0,
-      "Lambrusco is a family of related varieties grown around Modena and Reggio. The good bottles are dry and tank made, and their acidity and light tannin cut straight through fat."),
+      "Lambrusco is a group of distinct local varieties sharing one name, grown around Modena and Reggio. The best are usually dry, whether tank made or refermented in bottle, and their acidity and light tannin cut straight through fat."),
 
     # ------------------------------------------------------------- port (9) -
     Q("Port",
@@ -129,7 +129,7 @@ BANK = [
       ["It stops the ferment and leaves sugar",
        "It removes sugar and raises the acidity", "It starts a second fermentation",
        "It strips colour out of the must"], 0,
-      "Fermentation is stopped at around six or seven percent alcohol and the spirit takes the wine close to twenty. The sweetness is grape sugar the yeast never reached."),
+      "Fermentation is stopped at around six or seven per cent alcohol and the spirit takes the wine close to twenty. The sweetness is grape sugar the yeast never reached."),
     Q("Port",
       "Port's vineyards climb the terraced schist of which river valley?",
       ["The Douro", "The Tejo", "The Minho", "The Mondego"], 0,
@@ -189,8 +189,8 @@ BANK = [
       ["Flor cannot survive the higher strength",
        "Higher alcohol makes the flor grow faster",
        "The extra spirit is what makes the wine sweet",
-       "No wine may enter a solera below seventeen percent"], 0,
-      "Fino is fortified to about fifteen percent, which the yeast tolerates. Oloroso goes to seventeen or above, which kills any flor, and the wine darkens and turns nutty from oxygen instead."),
+       "No wine may enter a solera below seventeen per cent"], 0,
+      "Fino is fortified to about fifteen per cent, which the yeast tolerates. Oloroso goes to seventeen or above, which kills any flor, and the wine darkens and turns nutty from oxygen instead."),
     Q("Sherry",
       "A wine that started life under flor, lost it, and finished its ageing exposed to air is sold as what?",
       ["Amontillado", "Fino", "Pedro Ximenez", "Cream"], 0,
@@ -218,7 +218,8 @@ BANK = [
       "Between the two ways of warming Madeira, which is reserved for the finest wines?",
       ["Canteiro, years of gentle warmth in cask under the roof",
        "Estufa, tanks held near fifty degrees for months",
-       "Chilling the wine below freezing", "Burying the casks in sand"], 0,
+       "Canteiro, tanks held near fifty degrees for months",
+       "Estufa, years of gentle warmth in cask under the roof"], 0,
       "Canteiro relies on the natural heat of the lodge and takes years. The estufa tanks do a cruder version of the same job in months, and serve everyday bottlings."),
     Q("Madeira and Marsala",
       "Sercial, Verdelho, Bual and Malmsey appear on Madeira labels. What do those names record?",
@@ -244,7 +245,7 @@ BANK = [
     Q("Vins doux naturels",
       "Spirit goes in partway through fermentation and nothing sweet is ever added. Which French category does that describe?",
       ["Vin doux naturel", "Vin de liqueur", "Vin de paille", "Vin jaune"], 0,
-      "The sweetness is grape sugar the yeast never reached, exactly as in Port. Most sit between fifteen and eighteen percent alcohol. A vin de liqueur differs in that the spirit goes into unfermented must."),
+      "The sweetness is grape sugar the yeast never reached, exactly as in Port. Most sit between fifteen and eighteen per cent alcohol. A vin de liqueur differs in that the spirit goes into unfermented must."),
     Q("Vins doux naturels",
       "Which southern Rhone village is as well known for a sweet fortified Muscat as for its red wine?",
       ["Beaumes-de-Venise", "Gigondas", "Vacqueyras", "Cairanne"], 0,
@@ -287,8 +288,8 @@ BANK = [
       "Noble rot spreads through a vineyard unevenly, so each pass takes only what has shrivelled. Those passes are the tries, and there can be half a dozen across several weeks. Yields fall to a fraction of a dry white's, which is most of why the wine costs what it does."),
     Q("Botrytis and late harvest",
       "Which German Pradikat level calls for individually selected, shrivelled botrytised berries?",
-      ["Trockenbeerenauslese", "Kabinett", "Spatlese", "Auslese"], 0,
-      "Beerenauslese sits just below it and Eiswein alongside. All of them depend on the season, so they are made only in favourable years and in tiny quantities."),
+      ["Trockenbeerenauslese", "Beerenauslese", "Spatlese", "Auslese"], 0,
+      "Trocken here means dried: the selected berries must have shrivelled almost to raisins under noble rot. Beerenauslese, one rung below, takes botrytised or overripe berries without demanding that shrivelling, and its minimum must weight is the one Eiswein has to reach. All three depend on the season, so they are made only in favourable years and in tiny quantities."),
     Q("Botrytis and late harvest",
       "A Hungarian label gives a number of puttonyos. What does that number record?",
       ["The sweetness of a Tokaji Aszu", "The years the wine spent in cask",
@@ -309,7 +310,7 @@ BANK = [
       ["Vidal", "Chardonnay", "Gewurztraminer", "Zinfandel"], 0,
       "Vidal has thick skins that survive months hanging into winter without splitting. Riesling and Cabernet Franc are also used, in far smaller quantities."),
     Q("Ice wine and dried-grape wines",
-      "Bunches are laid on racks in an airy loft for months, losing water and gaining concentration. Which Italian practice is that?",
+      "Bunches are laid on racks in an airy loft for months, losing water and gaining concentration. What name do Italian growers give it?",
       ["Appassimento", "Governo", "Ripasso", "Estufagem"], 0,
       "Valpolicella dries Corvina and its partners this way over the winter. Fermented out the result is Amarone; stopped while still sweet it is Recioto."),
     Q("Ice wine and dried-grape wines",

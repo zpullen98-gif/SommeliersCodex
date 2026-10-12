@@ -1,11 +1,11 @@
-"""Rank II rewrite - Beer & Cider (20 questions: 7 MC, 13 short answer).
+"""Village rewrite - Beer & Cider (20 questions: 7 MC, 13 short answer).
 
 Certified level, written for a beverage director rather than a server. The
-committed Rank I Beer category owns the families, the raw materials, the
+committed Regionale Beer category owns the families, the raw materials, the
 ale/lager split and the numbers on a spec sheet, and it deliberately left cider
 and the deeper chemistry alone; this category is what it left. Distilled apples
 and pears belong to Spirits & Cocktails and stay out entirely. Nothing here
-repeats a Rank I task.
+repeats a Regionale task.
 
 The running order follows the questions as they reach a director's desk: first
 what the brewhouse did to the wort, then what the fermenting room and the
@@ -83,7 +83,7 @@ BANK = [
        "It was written into European Union law, so every beer brewed in a member state must comply with its ingredient list",
        "It binds every beer sold in Germany today, imported bottles included",
        "It lapsed entirely, leaving German brewers free of any ingredient rules"], 0,
-      "The 1516 Bavarian text is a historical document; what operates now is Germany's provisional beer law of 1993, which holds bottom-fermented beer sold as Bier to malted barley, hops, yeast and water while allowing other malts and sugars in top-fermented styles. The European Court of Justice ruled in 1987 that purity rules could not be used to shut out beer lawfully made elsewhere, so the decree lives on as a domestic standard and a marketing story rather than as a general law."),
+      "The 1516 Bavarian text is a historical document; what operates now is modern German beer law, descended from the provisional beer law of 1993, which holds bottom-fermented beer sold as Bier to malted barley, hops, yeast and water while allowing other malts and sugars in top-fermented styles. The European Court of Justice ruled in 1987 that purity rules could not be used to shut out beer lawfully made elsewhere, so the decree lives on as a domestic standard and a marketing story rather than as a general law."),
     SA("Fermentation and conditioning",
        "Near the end of a lager's primary fermentation the brewer lets the tank rise a few degrees and holds it there, so the yeast reabsorbs its own vicinal diketones before the long chill. What is that holding step called?",
        "Diacetyl rest",
@@ -101,7 +101,7 @@ BANK = [
       ["It must still be conditioning on its own live yeast in the vessel it is served from, without applied gas pressure",
        "It must be dispensed through a handpump behind the bar, since gravity pours straight from the cask tap are not recognised",
        "It must be brewed from malted barley alone",
-       "It must stay below five percent alcohol"], 0,
+       "It must stay below five per cent alcohol"], 0,
       "Real ale is defined by a secondary fermentation continuing in the container it is served from and by dispense without extraneous carbon dioxide, and a gravity pour straight from the tap qualifies exactly as a handpump does. Brewery filtration, force carbonation or gas pushing the beer to the tap each move it into keg territory, whatever the vessel looks like from outside."),
     SA("Cask against keg",
        "Two days before a cask goes on sale the cellar manager taps a porous peg into the shive and lets the excess condition hiss away through it. Name the peg.",
@@ -124,7 +124,7 @@ BANK = [
        "Flour-cloudy wort, rich in raw starch and unfermentable dextrin, is exactly what a lambic brewhouse wants: rations for years of slow wild fermentation. Which mashing regime produces it?",
        "Turbid mash",
        ["turbid mash", "turbid mashing"],
-       "Milky, starchy liquid is pulled off early in the mash and the grist leans on a large share of unmalted wheat, leaving material a clean single-strain fermentation could never use. The organisms that arrive over the following years in the barrel can, and the regime remains standard practice in every traditional lambic brewhouse."),
+       "Milky, starchy liquid is pulled off early in the mash and the grist leans on a large share of unmalted wheat, leaving material a clean single-strain fermentation could never use. The organisms that arrive over the following years in the barrel can, and the regime remains the standard method in every traditional lambic brewhouse."),
     SA("Lambic and gueuze",
        "One word, protected across the EU as a traditional guarantee, sits in front of Geuze or Lambik on serious lists and separates the old-method article from its sweetened, filtered namesakes. Which word?",
        "Oude",
@@ -136,7 +136,7 @@ BANK = [
       "Sharps, sweets, bittersharps and bittersweets: the traditional Long Ashton scheme files every cider apple into one of four classes. Which two juice measurements draw the boundaries?",
       ["Acidity and tannin", "Sugar and total acidity", "Sugar and tannin",
        "Pectin and nitrogen"], 0,
-      "The thresholds sit near two grams a litre of tannin and four and a half of malic acid, and the two lines cut the fruit into four quadrants. Sugar hardly separates cider fruit at all, since nearly everything grown for the press ferments fully; what a blender is balancing is bite against structure."),
+      "The thresholds sit near two grams a litre of tannin and four and a half of malic acid, and the two lines cut the fruit into four quadrants. Sugar plays no part in the scheme, so a sweet is simply fruit low in both acid and tannin rather than unusually sugary; what a blender is balancing is bite against structure."),
     SA("Cider apples and perry",
        "Low in malic acid and heavy in tannin, fruit of one class is the backbone of the classic West Country and Norman blends, giving a structure no dessert apple can. Which class is it?",
        "Bittersweet",
@@ -180,5 +180,5 @@ BANK = [
        "Wide at the rim, usually stemmed, often printed with an abbey crest: one glass shape anchors the service standard for Trappist and abbey ales. Name the shape.",
        "Goblet",
        ["goblet", "chalice", "goblet or chalice", "chalice or goblet"],
-       "A wide mouth lets the dense head settle to a thin cap and lifts the yeast and spice aromatics to the nose, and the open bowl gives a nine percent beer room to warm and unfold as it sits. The stem keeps the hand off the bowl, for the same reason it does on a wine glass: these are beers served closer to cellar than to fridge."),
+       "A wide mouth lets the dense head settle to a thin cap and lifts the yeast and spice aromatics to the nose, and the open bowl gives a nine per cent beer room to warm and unfold as it sits. The stem keeps the hand off the bowl, for the same reason it does on a wine glass: these are beers served closer to cellar than to fridge."),
 ]

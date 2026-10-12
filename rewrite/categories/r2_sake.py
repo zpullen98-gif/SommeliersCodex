@@ -1,8 +1,8 @@
-"""Rank II rewrite - Sake (20 questions: 9 MC, 11 short answer).
+"""Village rewrite - Sake (20 questions: 9 MC, 11 short answer).
 
-Certified level, pitched deliberately above the Rank I "Sake & Spirits"
-category. Where Rank I asks what the seimaibuai figure means, this asks what
-floor the koji-rice ratio sets beneath every premium grade; where Rank I names
+Certified level, pitched deliberately above the Regionale "Sake & Spirits"
+category. Where Regionale asks what the seimaibuai figure means, this asks what
+floor the koji-rice ratio sets beneath every premium grade; where Regionale names
 sokujo from its added lactic acid, this asks which organisms the traditional
 starters wait for and which of kimoto and yamahai still swings the poles.
 Shochu and everything distilled stays with Spirits & Cocktails, which
@@ -58,7 +58,7 @@ BANK = [
     Q("Polishing and the designations",
       "Of the eight premium designations, one has carried no minimum polishing requirement at all since a 2004 rule change. Which is it?",
       ["Junmai", "Honjozo", "Ginjo", "Junmai ginjo"], 0,
-      "Until the 2004 revision junmai carried the same 70 percent bar as honjozo; the revision dropped the polishing bar alone, so the rule now asks that the rice be graded, that the koji floor be met, and that nothing but rice, water and koji go in. The change freed brewers to work deliberately low-polish styles, so a junmai with no milling figure on its label is not hiding anything."),
+      "Until the 2004 revision junmai carried the same 70 per cent bar as honjozo; the revision dropped the polishing bar alone, so the rule now asks that the rice be graded, that the koji floor be met, and that nothing but rice, water and koji go in. The change freed brewers to work deliberately low-polish styles, so a junmai may now print a polishing figure well above seventy per cent and keep its name."),
     Q("Polishing and the designations",
       "Top daiginjo brewers dose the mash with a little distilled alcohol even when economy is no object. What are they buying with it?",
       ["Aroma carried out of the lees and a lighter, drier finish",
@@ -68,21 +68,21 @@ BANK = [
       "Ginjo esters dissolve more readily in alcohol than in water, so a dose added just before pressing pulls aroma out of the lees that would otherwise be discarded with them, and it dries and lightens the finish. At the premium designations the quantity is tightly capped, which is what separates aruten brewing from the volume-stretching triple sake of the postwar shortage years."),
     SA("Polishing and the designations",
        "Milling is not the only bar a premium designation must clear: a floor is also set on how much of the total rice must go through the mould room as koji rice. What is that floor?",
-       "Fifteen percent",
+       "At least fifteen per cent",
        ["fifteen percent", "15 percent", "15%", "15 per cent", "fifteen per cent",
         "at least 15 percent", "at least fifteen percent", "15 percent or more",
         "fifteen percent or more", "15", "fifteen", "a minimum of 15 percent",
         "15 percent minimum", "15 percent koji rice", "fifteen percent koji rice",
         "15% or more", "15 percent of the rice", "at least 15%",
-        "minimum 15 percent", "15% minimum", "15 percent of total rice"],
-       "The floor stops a brewery skimping on the most laborious stage: koji rice is worked grain by grain in the warm room while the rest of the charge is simply steamed. Fall below fifteen percent and the sake drops out of the premium system entirely, whatever its polish.",
+        "minimum 15 percent", "15% minimum", "15 percent of total rice", "at least 15 per cent", "at least fifteen per cent", "15 per cent or more", "fifteen per cent or more", "a minimum of 15 per cent", "15 per cent minimum", "15 per cent koji rice", "fifteen per cent koji rice", "15 per cent of the rice", "minimum 15 per cent", "15 per cent of total rice"],
+       "The floor stops a brewery skimping on the most laborious stage: koji rice is worked grain by grain in the warm room while the rest of the charge is simply steamed. Fall below fifteen per cent and the sake drops out of the premium system entirely, whatever its polish.",
        ex=True),
     SA("Polishing and the designations",
        "Junmai, honjozo, ginjo and their compound grades sit together under one collective legal term for premium sake. Give that term.",
        "Tokutei meisho-shu",
        ["tokutei meisho shu", "tokutei meishoshu", "tokutei meisho",
         "tokutei meisho sake", "special designation sake", "special designation"],
-       "The tokutei meisho system took its present shape in 1990 and holds eight names: junmai, junmai ginjo, junmai daiginjo and tokubetsu junmai on the pure-rice side, honjozo, ginjo, daiginjo and tokubetsu honjozo on the other. Everything outside the eight is futsu-shu, which answers to far looser rules and fills most of the market."),
+       "The tokutei meisho system was introduced in 1990 and holds eight names: junmai, junmai ginjo, junmai daiginjo and tokubetsu junmai on the pure-rice side, honjozo, ginjo, daiginjo and tokubetsu honjozo on the other. Everything outside the eight is futsu-shu, which answers to far looser rules and fills most of the market."),
 
     # ---------------------------------------- Koji, moto and the ferment (4) --
     Q("Koji, moto and the ferment",
@@ -137,15 +137,18 @@ BANK = [
        "A misprint, since equal readings must taste identical",
        "Added alcohol in the drier one, which the meter reads as sugar",
        "Warmer storage of the sweeter bottle, building extra sugar"], 0,
-      "The meter is a hydrometer, so residual sugar and density are all it can report, and acid never moves it. Acidity is what turns a given sugar level crisp or cloying on the palate, which is why the trade reads the two figures together and why quoting the meter value alone is guessing."),
+      "The meter is a hydrometer: it reads density, which sugar raises and alcohol lowers, and the small amount of acid in sake barely registers. Acidity is what turns a given sugar level crisp or cloying on the palate, which is why the trade reads the two figures together and why quoting the meter value alone is guessing."),
     SA("The meter and the acid",
        "A guest wants the driest sake on the list, and the menu prints every bottle's meter value. Toward which end of the scale should the recommendation move?",
        "The positive end",
        ["positive end", "positive", "plus", "plus end", "positive side",
-        "plus side", "positive numbers", "toward positive", "toward positive end",
-        "toward plus", "toward plus end", "higher smv", "positive smv",
+        "plus side", "positive numbers", "toward positive", "towards positive",
+        "toward positive end", "towards positive end",
+        "toward plus", "towards plus", "toward plus end", "towards plus end",
+        "higher smv", "positive smv",
         "plus direction", "positive direction", "higher", "higher end",
-        "high end", "higher numbers", "toward higher numbers", "up the scale",
+        "high end", "higher numbers", "toward higher numbers",
+        "towards higher numbers", "up the scale",
         "into positive numbers", "plus territory", "positive territory",
         "higher sake meter value"],
        "Zero is anchored at the density of water: sugar-rich sake is denser and buoys the float higher, putting the waterline at the negative figures, while drier sake lets the float sink and the reading climbs into positive ones. Most premium sake sits between about minus two and plus ten, so a plus sign after the number is the quickest dryness signal a list can carry.",
@@ -187,17 +190,17 @@ BANK = [
        "Taxed and labelled as a wine, exactly like a grape wine",
        "Taxed and labelled as a beer in every respect",
        "Treated as a spirit because of its strength"], 0,
-      "The Internal Revenue Code writes sake into its definition of beer, since it is brewed from a grain, so it pays brewery excise; the labelling side runs under the Federal Alcohol Administration Act, which treats sake of seven percent or more like a wine. The split is why sake sits on wine lists and in wine competitions while being taxed like an ale."),
+      "The Internal Revenue Code writes sake into its definition of beer, since it is brewed from a grain, so it pays brewery excise; the labelling side runs under the Federal Alcohol Administration Act, which treats sake of seven per cent or more like a wine. The split is why sake sits on wine lists and in wine competitions while being taxed like an ale."),
     SA("Service and the law",
        "Japan's Liquor Tax Act refuses the name seishu to any rice brew at or above a certain strength. Where does that ceiling sit?",
-       "Twenty-two percent",
+       "Twenty-two per cent",
        ["twenty two percent", "22 percent", "22%", "22 per cent",
         "twenty two per cent", "under 22 percent", "below 22 percent",
         "less than 22 percent", "under twenty two percent",
         "below twenty two percent", "less than twenty two percent",
         "22", "twenty two", "22 percent abv", "22 abv", "22 percent alcohol",
         "22 percent alcohol by volume", "22% abv", "22 degrees",
-        "twenty two degrees", "less than 22%", "under 22%", "below 22%"],
-       "The same definition demands that the fermenting mash be strained, which is why doburoku, the unstrained farm brew, is legally not sake at all, and why even the murkiest nigori has passed through at least a coarse mesh. The ceiling is also the outer legal wall for undiluted genshu: a rice brew at twenty-two or above changes legal identity, though in practice the yeast gives out first and most genshu land between seventeen and twenty percent.",
+        "twenty two degrees", "less than 22%", "under 22%", "below 22%", "under 22 per cent", "below 22 per cent", "less than 22 per cent", "under twenty two per cent", "below twenty two per cent", "less than twenty two per cent", "22 per cent abv", "22 per cent alcohol", "22 per cent alcohol by volume"],
+       "The same definition demands that the fermenting mash be strained, which is why doburoku, the unstrained farm brew, is legally not sake at all, and why even the murkiest nigori has passed through at least a coarse mesh. The ceiling is also the outer legal wall for undiluted genshu: a rice brew at twenty-two or above changes legal identity, though the yeast usually gives out first and most genshu land between seventeen and twenty per cent.",
        ex=True),
 ]

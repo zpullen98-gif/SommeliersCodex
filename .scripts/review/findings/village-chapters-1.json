@@ -1,0 +1,438 @@
+{
+ "batch": "village-chapters-1",
+ "file": "js/data-primers.js",
+ "readCount": 18,
+ "total": 18,
+ "chaptersRead": [
+  "Burgundy",
+  "Bordeaux",
+  "Champagne",
+  "Loire",
+  "Alsace",
+  "Rhône",
+  "Southern France",
+  "Jura, Savoie & Corsica",
+  "Italy North",
+  "Italy Central & South",
+  "Spain",
+  "Portugal",
+  "Germany",
+  "Austria",
+  "Hungary & Greece",
+  "Producers & Icons",
+  "California",
+  "Pacific NW, NY & Canada"
+ ],
+ "unchanged": [],
+ "findings": [
+  {
+   "cat": "all 18 chapters",
+   "field": "lead, exam, facts, traps",
+   "problem": "Every chapter broke the shipped-prose rules: about 120 lines carried an em dash, ranges used an en dash (0 to 3 g/L, 7.5 to 9 per cent), ladders used arrows (U+2192), Chianti used the sign for 'at least' and Eiswein and Icewine a typographic minus, both inside the glyph range check-home refuses, and the prose used American spelling (color, labeled, favorite, liter, flavor, savory, aging, colored, botrytized), the percent sign, a tilde for 'about', slashes and 'vs'.",
+   "fix": "Rewritten in British spelling with commas, colons and full stops; ladders as words; 'per cent', 'about', 'minus 7°C', 'at least'; slashes and 'vs' spelled out. A lint over the block now finds no dash, entity, double hyphen, arrow, maths sign, percent sign or American spelling.",
+   "source": "Codex CLAUDE.md and the review's house rules; .scripts/check-home.js voiceProblems.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Southern France",
+   "field": "facts: Bandol",
+   "problem": "The Bandol row used the retired word: 'min ~50%, in practice more'.",
+   "fix": "Now 'at least 50 per cent Mourvèdre, often far more, with at least 18 months in wood'.",
+   "source": "House rule: never the word practice or practise; Bandol AOP rules (Mourvèdre minimum 50 per cent for red, 18 months in wood).",
+   "confidence": "high"
+  },
+  {
+   "cat": "Bordeaux",
+   "field": "facts: Right Bank",
+   "problem": "Ausone and Cheval Blanc were offered as the top of the Saint-Émilion classification. Both withdrew in 2021 and Angélus in 2022, and the 2022 revision named Figeac and Pavie its only Premiers Grands Crus Classés A.",
+   "fix": "Row now says so, dated, and keeps 'revised about once a decade'; added the trap that Saint-Émilion Grand Cru is an appellation while Grand Cru Classé is the classification.",
+   "source": "2022 Saint-Émilion classification (published September 2022); the estates' withdrawals of 2021 and 2022. Consistent with the bank item c-v46nukpw, which asks only about 2012.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Bordeaux",
+   "field": "facts: 1855 First Growths",
+   "problem": "The exam line promises the First Growths' communes but the row gave none.",
+   "fix": "Communes added (Pauillac for Lafite, Latour and Mouton; Margaux; Pessac-Léognan for Haut-Brion), with the 61 châteaux in five growths and Mouton's 1973 rise as the one promotion; 'All Left Bank' kept.",
+   "source": "1855 Classification as it stands (Cantemerle was added in 1856, not promoted).",
+   "confidence": "high"
+  },
+  {
+   "cat": "Bordeaux",
+   "field": "facts: The grapes",
+   "problem": "The grape list stopped at the historic eight, though Bordeaux and Bordeaux Supérieur have admitted climate-adaptation varieties since 2021.",
+   "fix": "Added: a few heat-tolerant newcomers such as Marselan and Touriga Nacional, up to a tenth of the blend, in Bordeaux and Bordeaux Supérieur only.",
+   "source": "INAO approval of the varieties of interest for adaptation for Bordeaux and Bordeaux Supérieur, 2021 (capped at 5 per cent of plantings and 10 per cent of the blend). Not searched this run.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Bordeaux",
+   "field": "facts",
+   "problem": "Graves lacked its classification dates and Pessac-Léognan's creation, and Entre-Deux-Mers, a staple Certified question, had no row.",
+   "fix": "Graves row: classified 1953, revised 1959, every classified estate within Pessac-Léognan (1987), 'Home of Haut-Brion' kept. New row: Entre-Deux-Mers is a dry white appellation; its reds sell as Bordeaux or Bordeaux Supérieur.",
+   "source": "Graves classification and Pessac-Léognan AOC (1987); Entre-Deux-Mers AOC rules.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Burgundy",
+   "field": "lead",
+   "problem": "'One hillside' and 'Côte de Nuits for red' gave a false picture: Burgundy runs from Chablis to Beaujolais, and the Côte de Nuits has whites (Musigny blanc, Clos Blanc de Vougeot).",
+   "fix": "Lead now 'a thousand named plots', the Côte de Nuits 'chiefly red', and names the Chalonnaise, Mâconnais and Beaujolais to the south.",
+   "source": "Burgundy geography (BIVB region map).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Burgundy",
+   "field": "facts: Chablis",
+   "problem": "'Usually unoaked' overstated (many Premiers and Grands Crus see oak), and the row lacked the four tiers and the seven Grand Cru names that the paper asks.",
+   "fix": "Now 'often unoaked'; Petit Chablis (Portlandian), Chablis, Premier Cru and Grand Cru; the seven climats named, Les Clos kept as the most famous, on the south-west-facing slope across the Serein.",
+   "source": "Chablis AOC rules; BIVB Chablis material.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Burgundy",
+   "field": "facts: Beaujolais",
+   "problem": "'Gamay on granite' was given for all Beaujolais; the south is clay and limestone. The three tiers and the Nouveau release date were missing.",
+   "fix": "Now 'the best of it from the granite of the north'; Beaujolais, Beaujolais-Villages and the ten crus (listed north to south); Nouveau on the third Thursday of November.",
+   "source": "Inter Beaujolais appellation material; Beaujolais Nouveau release rule.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Burgundy",
+   "field": "facts",
+   "problem": "The Côte Chalonnaise row lacked Montagny, the fifth village name, and the Mâconnais lacked Pouilly-Fuissé's Premier Cru climats, new since the 2020 vintage.",
+   "fix": "Split into two rows: Bouzeron, Rully, Mercurey, Givry and Montagny; Mâcon-Villages, Viré-Clessé, Saint-Véran and Pouilly-Fuissé with Premiers Crus from 2020.",
+   "source": "Pouilly-Fuissé Premier Cru decree (first vintage 2020); bank item on the five Chalonnaise villages.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Burgundy",
+   "field": "facts",
+   "problem": "No row covered the slope, the meaning of climat and monopole, the regional appellations or the number of Grands Crus; the Côte de Nuits row omitted Flagey-Échezeaux and Bonnes-Mares.",
+   "fix": "Added 'The slope' (Jurassic limestone and marl, mid-slope Grands Crus, climat and monopole); the pyramid row names the regional appellations, Bourgogne Côte d'Or (2017) among them, and 33 Grands Crus with Chablis Grand Cru as one; Flagey-Échezeaux and Bonnes-Mares added.",
+   "source": "BIVB appellation list; Bourgogne Côte d'Or AOC (from the 2017 vintage).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Burgundy",
+   "field": "traps",
+   "problem": "'Musigny is the rare Côte de Nuits Grand Cru allowing a white' read as a uniqueness claim the rules do not support, and the no-Grand-Cru trap left out Meursault.",
+   "fix": "Now 'known for a white as well as its red'; Meursault added to the no-Grand-Cru trap; new trap on Gevrey-Chambertin (village) against Chambertin (Grand Cru).",
+   "source": "Burgundy Grand Cru AOC rules; village name history (Gevrey took Chambertin's name in 1847).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Champagne",
+   "field": "facts: Subregions",
+   "problem": "The Côte des Bar was left under the chapter's 'chalk soils' picture; its soil is Kimmeridgian marl.",
+   "fix": "Row says 'Pinot Noir on Kimmeridgian marl, nearer Chablis than Reims', with 17 Grand Cru villages and some forty Premier Cru; a new trap makes the point.",
+   "source": "CIVC terroir material on the Aube.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Champagne",
+   "field": "traps",
+   "problem": "'Rosé by blending is legal in Champagne and almost nowhere else in AOP France' was inaccurate: EU rules let sparkling cuvées blend; the ban is on still rosé.",
+   "fix": "Now 'allowed in Champagne; EU rules forbid it for still rosé'.",
+   "source": "EU winemaking rules on blending red and white wine for rosé (exception for sparkling cuvées).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Champagne",
+   "field": "facts",
+   "problem": "The method row was garbled ('starts fermentation two in bottle', 'in this bottle'), and the label codes, the rare four grapes, the still wines and the full bottle ladder were missing.",
+   "fix": "Method rewritten step by step; new rows for the seven grapes with Coteaux Champenois and Rosé des Riceys, and the NM, RM, CM, RC, SR, ND and MA codes; bottle ladder from half bottle to Nebuchadnezzar; La Grande Dame added to the prestige cuvées.",
+   "source": "Champagne AOC rules; CIVC label code list.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Loire",
+   "field": "facts: Structure signature",
+   "problem": "'The Loire is France's northern white limit outside Champagne' is false: Chablis and Alsace lie further north.",
+   "fix": "Now 'a cool, northerly climate, Atlantic at the river's mouth and more continental upstream'.",
+   "source": "Latitudes: Nantes about 47.2 N, Chablis about 47.8 N, Colmar about 48.1 N.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Loire",
+   "field": "facts and traps",
+   "problem": "Saumur-Champigny, Cabernet d'Anjou, Cour-Cheverny's Romorantin, Coulée de Serrant, the crus communaux and the dry Rosé de Loire were missing.",
+   "fix": "Added to the Anjou-Saumur, Touraine and Pays Nantais rows; new trap that Rosé d'Anjou and Cabernet d'Anjou are off-dry while Rosé de Loire must be dry.",
+   "source": "Loire AOC rules (InterLoire).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Alsace",
+   "field": "facts: The noble four",
+   "problem": "'Only these (with tiny exceptions like Zotzenberg Sylvaner) go into Alsace Grand Cru' is out of date: Pinot Noir became Grand Cru in Hengst and Kirchberg de Barr from the 2022 vintage, and in Vorbourg by a decree of July 2024.",
+   "fix": "Row lists the exceptions (Zotzenberg Sylvaner, the Altenberg de Bergheim and Kaefferkopf blends, Pinot Noir in three Grands Crus) and a trap flags older cards. The lead now says the noble four hold almost all of the 51.",
+   "source": "WebSearch 1 of 3: drinks business (August 2022) and Harper's on the INAO approval for Hengst and Kirchberg de Barr from 2022 and the Vorbourg decree of 4 July 2024. Matches the bank item c-se3gyec3.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Alsace",
+   "field": "facts",
+   "problem": "Pinot Noir, Sylvaner and the blends had no place, and the rule that Vendanges Tardives and Sélection de Grains Nobles come only from the noble four was missing.",
+   "fix": "New row 'The other grapes'; Edelzwicker and Gentil in Labelling; the noble-four rule in Styles; Crémant rosé all Pinot Noir; 'France's clearest labels' and the second-only-to-Champagne standing kept.",
+   "source": "Alsace AOC rules (CIVA).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Rhône",
+   "field": "facts",
+   "problem": "The mistral, the southern grapes and the full list of southern crus were missing; Châteauneuf's thirteen-or-eighteen count and its place in AOC history were not explained.",
+   "fix": "New row 'Climate and grapes'; the ladder now lists all nine dry crus (Vinsobres, Cairanne, Beaumes-de-Venise added); Châteauneuf row gives the thirteen/eighteen count, the 1920s rules as a model for AOC and keeps the papal keys; a trap squares the two counts.",
+   "source": "Rhône AOC rules (Inter Rhône); Châteauneuf-du-Pape grape list of 2009.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Southern France",
+   "field": "facts: Roussillon",
+   "problem": "'Rivesaltes for Muscat' was wrong: Rivesaltes AOP is chiefly Grenache; the Muscat is Muscat de Rivesaltes.",
+   "fix": "Row now separates the two, adds Collioure as Banyuls's dry wine, and a trap makes the distinction.",
+   "source": "Rivesaltes and Muscat de Rivesaltes AOP rules.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Southern France",
+   "field": "facts",
+   "problem": "Limoux, IGP Pays d'Oc, Minervois and Corbières, and the wider Southwest (Bergerac, Monbazillac, Gaillac, Irouléguy) were missing; 'Rivesaltes' and 'Limoux' are paper staples.",
+   "fix": "Added rows for Limoux and the wider Southwest; Minervois, Corbières and Pays d'Oc in the Languedoc row; Cassis in Provence.",
+   "source": "Languedoc and Southwest AOC rules.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Jura, Savoie & Corsica",
+   "field": "facts: Corsica",
+   "problem": "'Sciacarello' is misspelt and its appellation was missing.",
+   "fix": "Now 'Sciaccarello, pale and peppery, in Ajaccio'.",
+   "source": "Corsican AOC rules (Ajaccio).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Jura, Savoie & Corsica",
+   "field": "facts",
+   "problem": "'6+ years' understated Vin Jaune's rule; Chignin-Bergeron (Roussanne), Arbois's 1936 AOC and Vin de Paille's drying and half bottles were missing.",
+   "fix": "Vin Jaune: at least six years and three months, most of it under the veil; Savoie row names Chignin-Bergeron; Arbois among the first AOCs of 1936; Vin de Paille dried at least six weeks, sold in half bottles.",
+   "source": "Jura AOC rules (Vin Jaune release from 15 December of the sixth year).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Italy North",
+   "field": "facts: Amarone",
+   "problem": "'Fermented dry to 15%+' misstated the rule (the minimum is 14 per cent), and 'dried months on mats' left out the modern drying lofts.",
+   "fix": "Now 'dry for months in lofts (appassimento) and then ferment dry to at least 14 per cent alcohol, often more'; Rondinella named; Ripasso on Amarone or Recioto skins.",
+   "source": "Amarone della Valpolicella DOCG disciplinare.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Italy North",
+   "field": "facts: Prosecco",
+   "problem": "Asolo, the second Prosecco DOCG, was missing, the DOCG was named in the wrong order, and Prosecco Rosé (DOC since 2020) was absent.",
+   "fix": "Now 'Conegliano Valdobbiadene and Asolo are the DOCGs, with Cartizze the most prized hill'; Prosecco Rosé, Glera with 10 to 15 per cent Pinot Nero, from 2020.",
+   "source": "Prosecco DOC and DOCG disciplinari; Prosecco DOC Rosé modification of 2020.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Italy North",
+   "field": "facts",
+   "problem": "Barbaresco's wood and Riserva minimums, the MGAs, Franciacorta's lees minimum and Trento DOC were missing.",
+   "fix": "Barbaresco 26 months with 9 in wood, Riserva 50; Barolo Riserva 62 months; MGAs named; Franciacorta 18 months on the lees, Satèn kept as its softer style; new Trentino-Alto Adige row (Trento DOC, Lagrein, Schiava, Teroldego).",
+   "source": "Barolo, Barbaresco, Franciacorta and Trento disciplinari.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Italy Central & South",
+   "field": "traps",
+   "problem": "'Croatia's Crljenak/Tribidrag is the parent' of Primitivo and Zinfandel is wrong: DNA shows they are one variety, Tribidrag being its oldest name.",
+   "fix": "Trap now 'one grape, and Croatia's Tribidrag (Crljenak Kaštelanski) is that same variety under its oldest name, not its parent'.",
+   "source": "Published DNA identification of Zinfandel, Primitivo and Crljenak Kaštelanski / Tribidrag (Maletić and others, Meredith).",
+   "confidence": "high"
+  },
+  {
+   "cat": "Italy Central & South",
+   "field": "facts: Super Tuscans",
+   "problem": "Ornellaia was listed among wines 'sold as IGT Toscana' (it is Bolgheri DOC), and Tignanello was implied to be a Bordeaux-variety wine (it is Sangiovese-led).",
+   "fix": "Now: wines first made outside the DOC rules, often with Bordeaux varieties; Sassicaia has its own DOC; Ornellaia is Bolgheri; Tignanello (Sangiovese-led) and Solaia are IGT Toscana.",
+   "source": "Bolgheri and Bolgheri Sassicaia DOC; producers' published labelling.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Italy Central & South",
+   "field": "facts: Chianti Classico",
+   "problem": "Gran Selezione was given only as 'estate fruit'; its 30 months, the coming 90 per cent Sangiovese rule with native grapes only, and the UGAs were missing.",
+   "fix": "Row now carries 30 months, at least 90 per cent Sangiovese with native grapes only from the 2027 vintage, and the eleven UGAs such as Radda and Panzano.",
+   "source": "WebSearch 3 of 3: Harper's (UGA on Gran Selezione labels; 90 per cent from the 2027 vintage), Decanter and Italian Wine Central on the 2021 to 2023 reforms.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Italy Central & South",
+   "field": "facts",
+   "problem": "Chianti (separate from Classico), Vernaccia di San Gimignano, Verdicchio, Sagrantino, Sicily's DOCG and the whole of Sardinia were missing.",
+   "fix": "New rows: Chianti; Central whites and neighbours; Sicily and Sardinia (Cerasuolo di Vittoria, Marsala, Cannonau as Grenache, Vermentino di Gallura); trap that only the Classico wears the black rooster. 'Sangiovese Grosso' kept as the historic name.",
+   "source": "Italian DOC/DOCG register (Vernaccia di San Gimignano, first DOC 1966; Cerasuolo di Vittoria, Sicily's first DOCG, 2005).",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Spain",
+   "field": "facts",
+   "problem": "The exam line named the DO and DOCa system but no row taught it, and Rioja's three zones (with the 2018 change from Rioja Baja to Rioja Oriental) were missing.",
+   "fix": "New rows 'The ladder' (Vino de Pago, DOCa, DO, Vino de Calidad, Vino de la Tierra, Vino) and 'Rioja' (zones, grapes); Gran Reserva now 'two in oak and two in bottle'; trap on the zone's two names.",
+   "source": "Spanish wine law (Ley 24/2003); DOCa Rioja reglamento (Rioja Oriental from 2018; Gran Reserva 24 months oak, 24 bottle).",
+   "confidence": "high"
+  },
+  {
+   "cat": "Spain",
+   "field": "facts",
+   "problem": "Cava's single-site tier and the Catalan name for Tempranillo were missing; Navarra and Toro had no mention.",
+   "fix": "Cava de Paraje Calificado (36 months) added; Ull de Llebre in the aliases; Navarra rosado and Toro in 'Rueda and the rest'; Montsant beside Priorat.",
+   "source": "DO Cava reglamento (2020 reform); Spanish DO rules.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Portugal",
+   "field": "facts",
+   "problem": "The heading 'Setúbal & snacks' made no sense; 'Portugal's noblest white' was an unsupported superlative; the Douro's three subregions, Colares, Jaen as Mencía and the label tiers were missing.",
+   "fix": "Heading now 'Setúbal and the coast' with Colares; Encruzado 'one of Portugal's finest whites'; Douro row names Baixo Corgo, Cima Corgo and Douro Superior; Jaen glossed as Mencía; new 'The labels' row; trap on Douro DOC against Porto.",
+   "source": "IVDP and IVV appellation material.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Germany",
+   "field": "facts: VDP pyramid",
+   "problem": "'The eagle on the capsule' was given as the mark of GG; the VDP eagle is on every member estate's capsule, and GG is marked by the letters GG.",
+   "fix": "Now 'The eagle on the capsule marks a VDP member estate; GG bottles carry the letters GG', with a matching trap.",
+   "source": "VDP classification and labelling material.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Germany",
+   "field": "lead and facts",
+   "problem": "'Single-digit alcohol Kabinetts' is false for the many trocken Kabinetts at 11 per cent or more, and 'Germany is the world's #3 Pinot producer' is a volatile ranking.",
+   "fix": "Lead now 'featherweight Mosel Kabinetts'; Pinot row now 'among the world's biggest growers of Pinot Noir'.",
+   "source": "German wine law on Kabinett (no alcohol ceiling for trocken styles); planting rankings change.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Germany",
+   "field": "facts",
+   "problem": "The thirteen regions and Franken's Silvaner in the Bocksbeutel, both staple questions, were missing; the Prädikat ladder lacked the tiers below it.",
+   "fix": "New rows 'The regions' (Rheinhessen the largest) and 'Franken'; the ladder row adds Qualitätswein, Landwein and Deutscher Wein; Rheingau row explains the westward stretch of the Rhine; 'healthy grapes' kept for Eiswein.",
+   "source": "German wine law (Weingesetz) and the 13 Anbaugebiete.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Austria",
+   "field": "facts",
+   "problem": "Styria's Sauvignon Blanc, Wiener Gemischter Satz, the Wachau DAC of 2020, the DAC origin tiers and Ruster Ausbruch's own DAC were all missing.",
+   "fix": "New row 'Styria and Vienna'; Wachau ladder row notes the 2020 DAC; DAC row adds Gebietswein, Ortswein and Riedenwein; Sweet Austria gives Ruster Ausbruch its DAC.",
+   "source": "Austrian Wine Marketing Board DAC material (Wachau DAC 2020, Ruster Ausbruch DAC 2020, Südsteiermark DAC); bank items on the Wachau DAC and Ruster Ausbruch agree.",
+   "confidence": "high"
+  },
+  {
+   "cat": "Austria",
+   "field": "exam",
+   "problem": "'Synonym-free identity' was unclear and not true (Grüner has old synonyms).",
+   "fix": "Exam line rewritten to Grüner Veltliner's profile and homes, with the DAC tiers and Styrian Sauvignon Blanc added.",
+   "source": "Editorial.",
+   "confidence": "low"
+  },
+  {
+   "cat": "Hungary & Greece",
+   "field": "facts: Nemea",
+   "problem": "'Greece's most planted red' is a volatile and contested statistic.",
+   "fix": "Now 'one of Greece's most planted reds'.",
+   "source": "Planting statistics vary by source and year.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Hungary & Greece",
+   "field": "facts: Santorini",
+   "problem": "Vinsanto was called 'red-hued'; it is made from white grapes (Assyrtiko and Aidani) and darkens to amber or mahogany with age.",
+   "fix": "Now 'from sun-dried Assyrtiko and Aidani, the island's sweet, amber-to-mahogany wine'; vines never grafted added.",
+   "source": "Santorini PDO rules for Vinsanto.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Hungary & Greece",
+   "field": "facts",
+   "problem": "Eszencia's 'hundreds of grams' was vague; Szamorodni's two styles and Moschofilero (Mantinia) were missing.",
+   "fix": "Eszencia at least 450 g/L; Szamorodni dry or sweet from whole bunches; new Mantinia row; Aszú puttonyos number optional.",
+   "source": "Tokaj product specification (Aszú at least 120 g/L; Eszencia at least 450 g/L); Mantinia PDO.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Producers & Icons",
+   "field": "facts and traps",
+   "problem": "Two volatile or overstated claims: Egon Müller's TBA as 'the world's priciest white', and López de Heredia releasing 'decades late'.",
+   "fix": "Now 'among the world's most expensive whites' and 'releases late on purpose, after long ageing'.",
+   "source": "Auction prices move; López de Heredia's Gran Reservas are released after long but varying ageing.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Producers & Icons",
+   "field": "facts",
+   "problem": "Champagne, Loire and Alsace icons, often asked, had no row.",
+   "fix": "New rows: Champagne (Krug, Salon, Bollinger, Cristal, Dom Pérignon) and Loire and Alsace (Huet, Clos Rougeard, Coulée de Serrant, Didier Dagueneau, Trimbach's Clos Sainte Hune, Zind-Humbrecht); new trap on the Right Bank pairs.",
+   "source": "Producers' own published histories; no living person is named as an owner or winemaker.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "California",
+   "field": "facts: Labelling law",
+   "problem": "The parenthetical '(California state law for county/state labels: 100% Californian fruit)' blurred the county and state rules, and non-AVA vintage dating was missing.",
+   "fix": "Rewritten: AVA 85, variety 75, county 75, 'California' every grape from the state, vintage 95 with an AVA and 85 otherwise.",
+   "source": "27 CFR 4.25 and 4.27; California state labelling law.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "California",
+   "field": "facts and traps",
+   "problem": "Prohibition, Los Carneros, Calistoga and Napa's conjunctive labelling were missing.",
+   "fix": "New 'History' row (Prohibition 1920 to 1933, Robert Mondavi's 1966 winery); Napa row adds Carneros, Calistoga and the Napa Valley conjunctive rule; new trap on Stag's Leap Wine Cellars, Stags' Leap Winery and Stags Leap District.",
+   "source": "Napa County conjunctive labelling law; TTB AVA list.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Pacific NW, NY & Canada",
+   "field": "traps",
+   "problem": "'Its wines ride with Walla Walla, Washington' misdescribed the Rocks District, which is a sub-AVA of the Walla Walla Valley AVA, an AVA shared by both states.",
+   "fix": "Trap now says exactly that.",
+   "source": "TTB establishment of The Rocks District of Milton-Freewater AVA (2015) within the Walla Walla Valley AVA.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Pacific NW, NY & Canada",
+   "field": "facts: Oregon law",
+   "problem": "'Cabernet and a few others excepted at 75%' understated the exception list, and Oregon's 95 per cent AVA rule was missing.",
+   "fix": "Now 'a list of commonly blended varieties, Cabernet Sauvignon and Syrah among them, held at the federal 75; an AVA named needs 95 per cent'.",
+   "source": "WebSearch 2 of 3: Wine Spectator's Oregon labelling explainer and 'Revised Rules in Oregon' (90 per cent with 18 exempt varieties at 75). The OAR text itself was not read.",
+   "confidence": "medium"
+  },
+  {
+   "cat": "Pacific NW, NY & Canada",
+   "field": "facts",
+   "problem": "'Pinot Noir on volcanic Jory soil' overgeneralised the valley; Chateau Ste. Michelle as 'the world's largest Riesling producer' is a volatile superlative; Long Island and Washington's flood soils were missing.",
+   "fix": "Willamette row gives Jory, marine sediment and loess by sub-AVA, all six sub-AVAs kept, and dates Lett's first planting in the valley to 1965; Washington rows add the Missoula Floods and say 'Riesling made at scale'; New York row adds the North Fork.",
+   "source": "Oregon Wine Board AVA material; Washington State Wine Commission.",
+   "confidence": "medium"
+  }
+ ],
+ "searches": 3,
+ "stemChanges": 0,
+ "checks": {
+  "node .scripts/check-syntax.js": "all 67 JS files parse",
+  "node .scripts/check-home.js": "all 193 checks pass",
+  "structure": "36 chapters, cat order and bytes unchanged, every chapter {cat,lead,exam,facts,traps}, the 18 chapters outside the batch identical to before",
+  "lint over the batch": "no em or en dash, dash entity, spaced double hyphen, practice/practise, arrow or maths glyph, percent sign, tilde or American spelling"
+ },
+ "notes": [
+  "Every chapter was rewritten in place in the same shape; nothing true was cut, and facts rows grew from 122 to 145, traps from 72 to 85.",
+  "Publish carry-forward, outside this assignment: bump js/data-primers.js ?v= in index.html and CACHE in sw.js (codex-v96).",
+  "The site's codex/js/data-primers.js carries the old wording with only its dashes swapped out, so tools/sync-wing.mjs codex will see both sides change the same lines and refuse on conflict. These chapters are dash free, so the fix is to take the source's chapter block whole into the wing copy.",
+  "Out of batch: the other 18 chapters of data-primers.js (South America to Business of the Sommelier) still carry em dashes, arrows and American spelling for the second chapters batch.",
+  "Out of batch: the file's header comment speaks of 'rank 2' and 'Rank I'; it is a comment and never drawn, but it numbers the levels.",
+  "Out of batch: codex6.js draws the primer page's 'Drill X' button with an arrow, and its Study Primers tile text has an em dash.",
+  "Searches (3 of 3): Alsace Pinot Noir Grand Cru; Oregon varietal rule; Chianti Classico Gran Selezione reform."
+ ]
+}

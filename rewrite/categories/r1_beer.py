@@ -1,4 +1,4 @@
-"""Rank I rewrite - Beer (56 questions, all multiple choice).
+"""Regionale rewrite - Beer (56 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -8,7 +8,7 @@ actually carries, and finally the cellar, the glass and the plate. A server who
 works through it in order meets each fact at the moment it becomes useful.
 
 Cider is left almost entirely alone and the process chemistry is kept shallow,
-because a Rank II Beer & Cider category has to sit above this one.
+because a Village Beer & Cider category has to sit above this one.
 
 Every stem opener is distinct, the constructions in lib.BANNED_TEMPLATES are
 avoided by design rather than by later reframing, and where the answer is a style
@@ -41,7 +41,7 @@ SYLLABUS = [
 BANK = [
     # ------------------------------------------- the four raw materials (5) --
     Q("The four raw materials",
-      "Brewers at Burton-on-Trent drew on a well water heavy in calcium sulphate, and the pale ales made there gained a notably dry, sharpened bitterness. What is the practice of dosing water elsewhere to imitate that called?",
+      "Brewers at Burton-on-Trent drew on a well water heavy in calcium sulphate, and the pale ales made there gained a notably dry, sharpened bitterness. A brewer elsewhere adds gypsum to copy that water. What is the treatment called?",
       ["Burtonisation", "Krausening", "Decoction", "Fining"], 0,
       "Sulphate accentuates hop bitterness and dryness, while carbonate-rich water suits dark roasted grain instead, which is part of why Dublin became a stout town and Burton a pale ale one. Modern brewers build whatever profile they want by adding salts to stripped water."),
     Q("The four raw materials",
@@ -83,7 +83,7 @@ BANK = [
     Q("Malting and kilning",
       "A grist is built from one malt supplying almost all the fermentable extract, with small additions of darker malts for colour and flavour. What is the bulk component called?",
       ["Base malt", "Speciality malt", "Crystal malt", "Roasted barley"], 0,
-      "Pale ale malt and pilsner malt are the usual bases, and they carry the enzyme load that has to convert the whole mash. Speciality malts are seasoning, and a few percent will change the colour of the finished beer completely."),
+      "Pale ale malt and pilsner malt are the usual bases, and they carry the enzyme load that has to convert the whole mash. Speciality malts are seasoning, and a few per cent will change the colour of the finished beer completely."),
     Q("Malting and kilning",
       "The dry coffee and bitter-chocolate bite of an Irish stout, and its near-black colour, come from one part of the grist. Which?",
       ["Roasted unmalted barley",
@@ -141,7 +141,7 @@ BANK = [
       ["Diacetyl", "Acetaldehyde", "Ethyl acetate", "Isoamyl acetate"], 0,
       "Yeast makes diacetyl during fermentation and reabsorbs it afterwards if left warm long enough, a step brewers call the diacetyl rest. Acetaldehyde is the green apple fault and comes from the same impatience."),
     Q("Yeast, fermentation and conditioning",
-      "A fine sediment sits in the bottom of the bottle, and the beer carbonated itself in the package rather than in a tank. Which practice produced that?",
+      "A fine sediment sits in the bottom of the bottle, and the beer carbonated itself in the package rather than in a tank. Which method produced that?",
       ["Bottle conditioning",
        "Forced carbonation from a gas cylinder",
        "Pasteurisation after filling",
@@ -156,7 +156,7 @@ BANK = [
     Q("Lagers of Bohemia and Germany",
       "Weeks or months of near-freezing storage after the main fermentation drop out haze and round off the harshness of a young beer. What is that period called?",
       ["Lagering", "Sparging", "Mashing", "Fining"], 0,
-      "Lagern is simply German for to store, and the whole family of beers took its name from the practice. The long cold rest is also when residual diacetyl and sulphur compounds are scrubbed away."),
+      "Lagern is simply German for to store, and the whole family of beers took its name from that storage. The long cold rest is also when residual diacetyl and sulphur compounds are scrubbed away."),
     Q("Lagers of Bohemia and Germany",
       "Copies of one 1842 original are sold all over the world under shortenings of its town's name. Which beer are all of them reaching back to?",
       ["The pale golden lager of Plzen",
@@ -179,7 +179,7 @@ BANK = [
     Q("Lagers of Bohemia and Germany",
       "Monks in Munich brewed a strong dark lager to carry them through a fasting Lent, and its descendants almost all bear names ending in -ator. Which style is that?",
       ["Doppelbock", "Maibock", "Schwarzbier", "Altbier"], 0,
-      "Liquid bread was the idea: heavy in malt, sweetish and generally seven to nine percent. Bock is the strong lager family and doppelbock its stronger branch, the suffix following the original Salvator."),
+      "Liquid bread was the idea: heavy in malt, sweetish and generally seven to nine per cent. Bock is the strong lager family and doppelbock its stronger branch, the suffix following the original Salvator."),
     Q("Lagers of Bohemia and Germany",
       "A jet-black German lager reaches the table and the guest braces for something heavy and sweet, but it is dry, clean and light in body. Which style is in the glass?",
       ["Schwarzbier", "Doppelbock", "Imperial stout", "Dubbel"], 0,
@@ -204,7 +204,7 @@ BANK = [
     Q("Wheat beers, German and Belgian",
       "German rules set a floor on how much of the grist must be wheat malt before a beer may be sold as Weissbier. Where does that floor sit?",
       ["At least half", "At least a fifth", "At least four fifths", "No minimum is specified"], 0,
-      "Most weissbiers in practice run between fifty and seventy percent wheat, with barley malt making up the balance for its enzymes and its husk. Wheat alone would leave the brewer with a mash that has no filter bed at all."),
+      "Most weissbiers on the market run between fifty and seventy per cent wheat, with barley malt making up the balance for its enzymes and its husk. Wheat alone would leave the brewer with a mash that has no filter bed at all."),
 
     # --------------------------------- abbey, trappist, saison and lambic (6) --
     Q("Abbey, Trappist, saison and lambic",
@@ -212,7 +212,7 @@ BANK = [
       ["The beer is brewed in the monastery",
        "The beer is bottle conditioned",
        "The abbey stands in Belgium",
-       "The beer exceeds six percent alcohol"], 0,
+       "The beer exceeds six per cent alcohol"], 0,
       "Brewing on the premises under the monks' supervision, with the proceeds supporting the community and charitable work, are the tests that matter. Trappist breweries exist well outside Belgium, in the Netherlands, Italy and England among others, and the roster shifts as communities open, close or lose the label."),
     Q("Abbey, Trappist, saison and lambic",
       "A commercial brewery licenses a monastery's name and brews the beer at its own plant some distance away. What may the result be called?",
@@ -279,7 +279,7 @@ BANK = [
     Q("Numbers on the spec sheet",
       "A guest wants two or three glasses across a long evening without losing the thread of the conversation. Which figure on your list should guide the recommendation?",
       ["Alcohol by volume", "Bitterness units", "Original gravity", "The colour rating"], 0,
-      "Beer covers an enormous range, from a three percent mild to a fourteen percent barleywine, so strength is the number that governs the pace of an evening. A serving size that is sensible for one of those is reckless for the other."),
+      "Beer covers an enormous range, from a three per cent mild to a fourteen per cent barleywine, so strength is the number that governs the pace of an evening. A serving size that is sensible for one of those is reckless for the other."),
     Q("Numbers on the spec sheet",
       "One beer measures sixty-five bitterness units and tastes balanced, while another measures forty and tastes searing. What explains the reversal?",
       ["Residual sweetness and body mask perceived bitterness",
@@ -334,5 +334,5 @@ BANK = [
        "The dessert has stripped the carbonation out of the beer",
        "The sugar has raised the actual alcohol content of the beer",
        "The cold of the dessert has muted the malt"], 0,
-      "Sweetness in the food pushes up the perceived bitterness and acidity of whatever is drunk alongside it, exactly as it does with a dry wine. A pudding wants a beer at least as sweet as itself, which is why a doppelbock or a fruit lambic answers better."),
+      "Sweetness in the food pushes up the perceived bitterness and acidity of whatever is drunk alongside it, exactly as it does with a dry wine. A pudding wants a beer at least as sweet as itself, which is why a doppelbock or a sweetened fruit lambic answers better."),
 ]

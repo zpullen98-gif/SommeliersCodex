@@ -1,9 +1,9 @@
-"""Rank II rewrite - Portugal (29 questions: 12 MC, 17 short answer).
+"""Village rewrite - Portugal (29 questions: 12 MC, 17 short answer).
 
 Certified level, and confined to UNFORTIFIED Portugal. The committed Fortified
 Wines category owns Port and Madeira outright - the beneficio as a fortification
 licence, the lodges, the ladder, Terrantez - so the beneficio appears here only
-as the economic shadow it throws over Douro table wine. Rank I's Portugal owns
+as the economic shadow it throws over Douro table wine. Regionale's Portugal owns
 the Introductory layer: the cooperative history of the Dao, the sand and cane
 screens of Colares, the walled currais of Pico, cork. Nothing here repeats a
 task from either, and nothing here NAMES the answers they own. Currais and
@@ -103,7 +103,7 @@ BANK = [
     # ---------------------------------------- Vinho Verde and the Minho (5) --
     Q("Vinho Verde and the Minho",
       "Beside plain Vinho Verde, an importer's book lists a Vinho Verde Sousa and a Vinho Verde Moncao e Melgaco. What has each of those producers taken on?",
-      ["Fruit drawn entirely from the named subregion, and from the varieties it recommends",
+      ["Fruit from the named subregion alone, of its recommended varieties",
        "A vintage declaration, which plain Vinho Verde is not permitted to carry",
        "Estate bottling, since subregion names are closed to merchant blends",
        "A minimum year in bottle before release, to justify the longer name"], 0,
@@ -111,10 +111,10 @@ BANK = [
     Q("Vinho Verde and the Minho",
       "Thirteen percent of alcohol in a Moncao e Melgaco Alvarinho startles a guest who knows Vinho Verde as a feather-light spritz. What makes the wine legal?",
       ["Varietal Alvarinho is given its own higher alcohol band than ordinary Vinho Verde",
-       "Nothing does; above eleven and a half percent the wine has to leave the DOC and sell as Minho regional",
+       "Nothing does; above eleven and a half per cent it must sell as Minho regional",
        "The producer declassified it to espumante, where strength is uncapped",
        "A dispensation bought vintage by vintage from the regional commission"], 0,
-      "Ordinary Vinho Verde is capped at eleven and a half percent, where its light style lives, while varietal Alvarinho may climb to fourteen. Moncao e Melgaco sits in the warm, dry lee of the mountains along the Spanish border, and the ripeness Alvarinho finds there is the whole reason the exception exists."),
+      "Ordinary Vinho Verde is capped at eleven and a half per cent, where its light style lives, while varietal Alvarinho may climb to fourteen. Moncao e Melgaco sits in the warm, dry lee of the mountains along the Spanish border, and the ripeness Alvarinho finds there is the whole reason the exception exists."),
     SA("Vinho Verde and the Minho",
        "From Moncao e Melgaco in the north down to Baiao on the Douro's doorstep, subregions partition the whole of Vinho Verde. Give the count.",
        "Nine",
@@ -200,7 +200,7 @@ BANK = [
     Q("Dao and Bairrada",
       "A 2003 rewrite of Bairrada's DOC rules still divides the region's growers. What did it do?",
       ["Opened the DOC's reds to outside varieties, Cabernet Sauvignon and Syrah among them",
-       "Made Baga compulsory at eighty-five percent of every red carrying the name, squeezing the rest out",
+       "Made Baga compulsory at eighty-five per cent of every red carrying the name",
        "Stripped sparkling wine out of the DOC and handed it a separate denomination",
        "Closed the DOC to purchased fruit, ending the merchant trade overnight"], 0,
       "Before 2003 a Bairrada red meant Baga above all; the revision admitted Touriga Nacional, Cabernet Sauvignon, Merlot and Syrah, and traditionalists read it as the region trading its identity for easy ripeness. The dissenters' answer was Baga Friends, a growers' alliance pledged to the old grape, and some celebrated estates still prefer the Beira Atlantico regional label to the widened DOC."),
@@ -263,7 +263,7 @@ BANK = [
     Q("Bucelas and Colares",
       "Neighbours a few hundred metres apart near Sintra grow the same grapes, yet one label reads Colares and the other must say Lisboa. What separates the two?",
       ["Only vines rooted in the deep dune sand, the chao de areia, may claim the DOC",
-       "The DOC requires trench planting by hand, and one grower cut corners with a machine auger",
+       "The DOC requires trench planting by hand, and one grower used a machine",
        "One vineyard stands grafted, and Colares admits only ungrafted stock",
        "One parcel falls inside protected Sintra parkland that the appellation excludes"], 0,
       "Colares is delimited by its soil: the DOC belongs to the wind-blown sand that defeated phylloxera, while the firm clay ground behind it, the chao rijo, grows the same Ramisco and Malvasia de Colares for the regional label. The sand is the appellation, and everything else about the place follows from it."),
@@ -271,13 +271,13 @@ BANK = [
        "Sharp enough that its name means dog-strangler, the traditional second grape of white Bucelas is the same variety Madeira grows as Sercial. Give the mainland name.",
        "Esgana Cao",
        ["esgana cao", "esgana"],
-       "Esgana Cao keeps its acid in real heat, which earned it both the name and its place beside Arinto, the grape that must itself supply at least seventy-five percent of any white Bucelas. Rabo de Ovelha is the other traditional supporting variety in this small, white-only appellation."),
+       "Esgana Cao keeps its acid in real heat, which earned it both the name and its place beside Arinto, the grape that must itself supply at least seventy-five per cent of any white Bucelas. Rabo de Ovelha is the other traditional supporting variety in this small, white-only appellation."),
     SA("Bucelas and Colares",
        "Between 1931 and the 1990s no grower could sell Colares at all without passing the wine through a single institution's cellars. Name it.",
        "Adega Regional de Colares",
        ["adega regional de colares", "adega de colares", "colares regional adega",
         "regional adega of colares", "adega regional of colares"],
-       "The Adega Regional de Colares was founded in 1931 and held a legal monopoly on vinifying the appellation for six decades, which is why old Colares carries one cellar's stamp whoever grew the fruit. Liberalisation in the 1990s let independent producers emerge, and the Adega still makes and ages much of what little Colares exists."),
+       "The Adega Regional de Colares was founded in 1931 and held a legal monopoly on vinifying the appellation for six decades, which is why old Colares carries one cellar's stamp whoever grew the fruit. Liberalisation in the 1990s let independent producers emerge, and the Adega still makes and ages Colares beside them."),
 
     # ------------------------------------------ The islands unfortified (4) --
     Q("The islands unfortified",
@@ -325,5 +325,5 @@ BANK = [
        "Three letters, CVR, open the name of most of Portugal's certifying bodies for wine, the ones answering for Lisboa and the Tejo among them. Write the Portuguese out in full.",
        "Comissao Vitivinicola Regional",
        ["comissao vitivinicola regional", "comissoes vitivinicolas regionais"],
-       "Each Comissao Vitivinicola Regional is funded by its growers and trade, runs the tasting panels, and polices both the DOC and the regional wine of its area, issuing the numbered guarantee seals. Two of them wear older names: the Vinho Verde body, founded in 1926 and the model the rest were built on, is still the Comissao de Viticultura da Regiao dos Vinhos Verdes, and the Algarve's certifier is the Comissao Vitivinicola do Algarve, with no Regional in it at all."),
+       "Each Comissao Vitivinicola Regional is funded by its growers and trade, runs the tasting panels, and polices both the DOC and the regional wine of its area, issuing the numbered guarantee seals. Three of them break the pattern: the Vinho Verde body, founded in 1926 and the model the rest were built on, is still the Comissao de Viticultura da Regiao dos Vinhos Verdes, while the Bairrada and Algarve certifiers are the Comissao Vitivinicola da Bairrada and the Comissao Vitivinicola do Algarve, with no Regional in either name."),
 ]

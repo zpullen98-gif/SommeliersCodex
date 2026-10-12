@@ -1,0 +1,418 @@
+{
+ "batch": "regionale-1",
+ "modules": [
+  "rewrite/categories/r1_viticulture_winemaking.py",
+  "rewrite/categories/r1_tasting_service.py"
+ ],
+ "readCount": 135,
+ "total": 135,
+ "findings": [
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "What is the significance of fruit set?",
+   "field": "opts",
+   "problem": "The key 'It sets the potential crop size' echoes 'fruit set' in the stem, so the word match answers it without the fact.",
+   "fix": "Key now 'It decides the potential crop size'. Same meaning, no echo, not a length standout.",
+   "source": "Item construction rule: the stem must not be answerable from its own words.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "What is the significance of fruit set?",
+   "field": "exp",
+   "problem": "'Bad weather here costs the whole vintage's volume' reads as poor weather at fruit set losing the entire crop, which overstates it: it reduces the crop.",
+   "fix": "Now 'Poor weather at this stage cuts the vintage's volume, however good the rest of the season.'",
+   "source": "Standard viticulture: poor set (coulure, millerandage) reduces yield; it does not normally destroy the whole crop.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "What does a large diurnal temperature shift preserve",
+   "field": "opts",
+   "problem": "The distractor 'Colour' is defensibly also right: cool nights favour anthocyanin accumulation and warm nights degrade it, so a large diurnal range is widely credited with keeping colour as well as acid.",
+   "fix": "Replaced 'Colour' with 'Bitterness', a taste component nobody credits to cool nights. Key and exp unchanged.",
+   "source": "Viticulture research on night temperature and anthocyanins (high night temperatures reduce berry anthocyanins); usual teaching that diurnal range keeps acidity and colour.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Which frost protection method works by releasing heat",
+   "field": "exp",
+   "problem": "'Wind machines instead mix warmer air down from above the inversion layer' misplaces the warm air: in a radiation frost the warm air IS the inversion lying over the cold ground layer, and air above the inversion is cooler again.",
+   "fix": "Now 'Wind machines instead stir down the warmer air that lies over the cold layer at ground level on a still night.'",
+   "source": "Basic meteorology of radiation frost and temperature inversions; how vineyard wind machines work.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Green harvest refers to which practice?",
+   "field": "stem",
+   "problem": "The stem uses the word 'practice', which the house voice never permits in shipped text.",
+   "fix": "Stem now 'What does a grower do in a green harvest?' Options, key and exp unchanged (the gerund options still read). Id moves i-qs3r2oaa to i-0r5rvkbt; check-similarity clean.",
+   "source": "House rule in the batch brief: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Which pair are the two most significant fungal",
+   "field": "exp",
+   "problem": "The exp calls both mildews 'the chronic fungal threats', but downy mildew (Plasmopara viticola) is an oomycete, a water mould, not a true fungus.",
+   "fix": "First sentence now says 'the chronic threats'; added 'Downy mildew is strictly a water mould rather than a true fungus, though viticulture has always counted it among the fungal diseases.' Stem and key unchanged, since the convention of calling it fungal is universal in wine teaching.",
+   "source": "Plant pathology: Plasmopara viticola is an oomycete; Erysiphe necator (powdery) is a true fungus.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Hail is particularly feared because it",
+   "field": "exp",
+   "problem": "'Its local, unpredictable nature makes it hard to insure against' is doubtful: hail cover is one of the commonest crop insurances; the real difficulties are forecasting and the cost of protection.",
+   "fix": "Now 'Storms are local and unpredictable, so they are hard to forecast, and netting a whole vineyard is costly.' This also answers the netting distractor.",
+   "source": "General knowledge of vineyard hail risk (hail insurance is widely sold; nets are effective but expensive at scale).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Cool fermentation temperatures are used for aromatic whites",
+   "field": "opts",
+   "problem": "The key 'preserve delicate aromatics' echoes 'aromatic whites' in the stem, and the other three options are reverse truths, so the word match answers it.",
+   "fix": "Key now 'keep fresh fruit character' (26 characters, under the visible-gap line against 'speed fermentation'). Exp unchanged; it already teaches volatile aromatics.",
+   "source": "Item construction rule: no stem word echoed only in the key.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "What is lees stirring, or batonnage?",
+   "field": "opts",
+   "problem": "The stem glosses itself: 'lees stirring' answers to the only option that begins 'Stirring', so a student who knows nothing picks it.",
+   "fix": "All four options now describe stirring something real (the cap of skins, the spent yeast, oak chips, bentonite), so the item tests what lees are. Exp gains 'Lees are the spent yeast cells left by fermentation.' Stem unchanged, id kept.",
+   "source": "Standard winemaking: lees are dead yeast cells; punching down, oak chips and bentonite fining are all real cellar operations.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "A base wine is bottled with yeast and",
+   "field": "exp",
+   "problem": "The exp restated the stem almost word for word and taught nothing beyond it.",
+   "fix": "Now 'A second fermentation in the very bottle that is sold is the traditional method of Champagne, Cava and Cremant. The lees it leaves must then be riddled into the neck and disgorged, which is the labour the tank method avoids.'",
+   "source": "Standard sparkling production.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Port is fortified at which point?",
+   "field": "exp",
+   "problem": "'Neutral spirit is added' is wrong for Port: it is fortified with aguardente, a grape spirit of about 77 per cent, not a neutral rectified spirit.",
+   "fix": "Now 'Grape spirit, the aguardente, is added while sugar remains, killing the yeast and stopping fermentation.'",
+   "source": "IVDP rules for Port: fortification with aguardente vinica at about 77% abv.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "A wine smells of damp cardboard and wet",
+   "field": "stem",
+   "problem": "Same task, same answer as Tasting & Service's 'A wine smelling of wet cardboard, damp cellar and muted fruit is showing what?' (descriptor to TCA). The de-duplication pass of 19 Aug removed the Portugal and Service & Hospitality twins but never saw this pair, because the Tasting key string differs.",
+   "fix": "Reframed onto the winemaking cause, which the 'Faults and stabilisation' block owns: 'Moulds growing on treated timber can taint a whole winery, so that bottles under screwcap carry the fault too. Which compound is responsible?' Options unchanged; exp now teaches chlorophenols, cellar timber and the parts-per-trillion threshold. Deliberately no 'chloro' word in the stem, which would have matched the TCA option by shape. Id moves i-zf5qyl8l to i-z3zwz2kk; check-similarity clean.",
+   "source": "README rule 'Two questions may share an answer. They may not share a task'; commit bf792ee; TCA chemistry (chlorophenols methylated by moulds; winery-wide contamination).",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "Which fault presents as vinegar and nail polish",
+   "field": "stem",
+   "problem": "Near-verbatim twin of Tasting & Service's 'Nail varnish and vinegar on the nose indicate which fault?', same key. Also used the American 'nail polish remover'.",
+   "fix": "Reframed onto prevention: 'Barrels are kept topped up to the bung partly to starve the air-loving bacteria that would otherwise sour the wine. Which fault does that guard against?' Distractor 'Oxidation' replaced by 'Heat damage', because topping up also guards against oxidation and would have made two options right. Stem avoids 'acid', which would echo 'Volatile acidity'. Id moves i-7cril28x to i-19nx9klq; check-similarity clean.",
+   "source": "README de-duplication rule; Acetobacter is aerobic and topping up limits it.",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_viticulture_winemaking.py",
+   "stemStart": "A red wine shows barnyard, leather and sticking-plaster",
+   "field": "stem",
+   "problem": "Same task, same answer as Tasting & Service's 'Barnyard, sticking plaster and leather notes are usually attributed to what?' (descriptor to Brettanomyces).",
+   "fix": "Reframed onto the cellar conditions: 'A spoilage yeast hides in the wood of old barrels that are hard to sanitise, and thrives where free sulphur dioxide runs low. Which is it?' Options unchanged; exp explains why Botrytis (a mould), Acetobacter (a bacterium) and flor (wanted in Sherry) are not it. Id moves i-53jv5xfh to i-q3z55w2j; check-similarity clean.",
+   "source": "README de-duplication rule; standard Brett biology (lodges in barrel wood, favoured by low free SO2).",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "Palate fatigue during a long tasting is best",
+   "field": "exp",
+   "problem": "The exp used the banned word 'practice' ('Spitting is professional practice'), and its claim that water 'resets more than bread does' is contestable and did not address the strongly-flavoured-food distractor.",
+   "fix": "Now 'Spitting is the professional norm rather than a show of restraint, and plain water between flights clears the palate where strongly flavoured food would coat it.'",
+   "source": "House rule in the batch brief; ordinary tasting-room guidance.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "The tears or legs running down a glass",
+   "field": "opts",
+   "problem": "The key 'Alcohol and glycerol content' repeats a myth: tears are a Marangoni effect driven by evaporating alcohol, and glycerol at wine concentrations plays little part.",
+   "fix": "Key now 'Chiefly the alcohol level', which is right on either view. Exp names the alcohol mechanism and adds that glycerol is often credited but plays little part, though a very sweet wine does run thicker (so 'Sweetness alone' stays wrong).",
+   "source": "Physics of tears of wine (Gibbs-Marangoni effect driven by ethanol evaporation).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "A young unoaked white smells of lemon, green",
+   "field": "opts",
+   "problem": "The distractor 'Quaternary, from bottling' is not a real aroma class, so one option is not a real thing.",
+   "fix": "Replaced with 'Reductive, from the closure', a real aroma family that lemon, green apple and elderflower are not.",
+   "source": "Standard primary/secondary/tertiary aroma classification; reductive notes under low-oxygen closures.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "Perceived sweetness in a dry wine can be",
+   "field": "opts",
+   "problem": "The key 'High alcohol or ripe fruit character' was the only compound option and 21 characters clear of the rest, a visible length tell.",
+   "fix": "Key now 'High alcohol', parallel with 'High acidity', 'Firm tannin', 'Low temperature'. Exp unchanged; it still teaches ripe fruit.",
+   "source": "README option-length rule; build length metric.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "A wine that seems hollow in the middle",
+   "field": "opts",
+   "problem": "The key 'Mid-palate fruit or concentration' stood 26 characters clear of 'Acidity', 'Alcohol', 'Colour' and echoed 'middle' in the stem.",
+   "fix": "Key now 'Concentration'. Exp gains 'the mid-palate lacks fruit and concentration'.",
+   "source": "README option-length rule; item construction rule against stem echo.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "Alcohol is assessed by which sensation?",
+   "field": "opts",
+   "problem": "The key 'Warmth at the back of the mouth and throat' stood 27 characters clear of three short options, a visible length tell.",
+   "fix": "Key now 'Warmth in the throat'. Exp now opens 'The burn at the back of the mouth and throat is the clue'.",
+   "source": "README option-length rule; build length metric.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "A white wine that is deep gold, flat",
+   "field": "exp",
+   "problem": "The exp said oxidation is 'deliberate in Sherry and Vin Jaune, a fault in an unfortified table wine', but Vin Jaune is itself unfortified, so the contrast contradicts itself.",
+   "fix": "Now 'Deliberate in Sherry and Vin Jaune, a fault in a white made to be drunk fresh.'",
+   "source": "Jura AOC rules: Vin Jaune is an unfortified Savagnin aged under a yeast veil.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "Which fortified wine is conventionally served chilled?",
+   "field": "opts",
+   "problem": "The distractor 'Tawny Port at cellar temperature' was arguably also right (tawny is commonly served lightly chilled, and cellar temperature is cool), and its lone qualifier made it a 20-character standout.",
+   "fix": "Replaced with 'Ruby Port', conventionally served near room temperature. Key and exp unchanged.",
+   "source": "Common Port service guidance (tawny lightly chilled, ruby and vintage near room temperature).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "A guest brings their own bottle and the",
+   "field": "opts",
+   "problem": "The stem asks what the fee is called, but every option was a gloss and the key ('A fee for serving wine a guest has brought') restated the stem, so the item could be answered from its own words and never taught the term corkage.",
+   "fix": "Options are now four real charges: 'Corkage', 'Cover charge', 'Service charge', 'Excise duty'. Exp now names corkage and says how a cover charge and a service charge differ. Stem unchanged, id kept.",
+   "source": "Restaurant service terminology.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "Why is a wine glass tapered inward at",
+   "field": "opts",
+   "problem": "Length balance. Trimming the three long keys above left ten visibly longer options, none of them a key, which teaches 'eliminate the long one' (build: +1.3 points). This distractor stood 15 characters clear of the key.",
+   "fix": "'The narrower rim strengthens the glass against knocks' trimmed to 'It strengthens the rim against knocks'. Still wrong; the exp already says a fine rim is the most fragile part.",
+   "source": "README: a one-sided length bound overshoots; drive the standout count down.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "A young Barolo is closed and grippy on",
+   "field": "opts",
+   "problem": "Length balance, as above: a 15-character standout distractor.",
+   "fix": "'To remove the heavy deposit a young Barolo throws' trimmed to 'To remove its heavy deposit'. Still wrong; the exp says a wine this young has thrown little.",
+   "source": "README length rules.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "After the host approves the wine, in what",
+   "field": "opts",
+   "problem": "Length balance, as above: a 19-character standout distractor.",
+   "fix": "'The host first, since they ordered and approved the wine' trimmed to 'The host first, having approved it'. Still wrong.",
+   "source": "README length rules.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_tasting_service.py",
+   "stemStart": "A guest declares a wine faulty and you",
+   "field": "opts",
+   "problem": "Length balance, as above: a 14-character standout distractor.",
+   "fix": "'Refuse the complaint and charge for the bottle' trimmed to 'Refuse and charge for the bottle'. Still wrong.",
+   "source": "README length rules.",
+   "confidence": "medium",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "What is the significance of fruit set?",
+   "verdict": "kept",
+   "why": "Opts: 'It sets' echoed 'fruit set', a real word-match giveaway. 'It decides the potential crop size' keeps the fact, the other three stay plainly wrong, no length tell."
+  },
+  {
+   "stemStart": "What is the significance of fruit set?",
+   "verdict": "kept",
+   "why": "Exp: the old line could be read as poor set wiping out the whole crop. The new wording (poor weather cuts the volume) matches coulure and millerandage, which reduce yield rather than destroy it."
+  },
+  {
+   "stemStart": "What does a large diurnal temperature shift preserve",
+   "verdict": "kept",
+   "why": "Cool nights favour anthocyanin accumulation and warm nights degrade it, so 'Colour' was defensibly a second key. 'Bitterness' is credited to no night temperature effect; key and exp untouched."
+  },
+  {
+   "stemStart": "Which frost protection method works by releasing heat",
+   "verdict": "kept",
+   "why": "In a radiation frost the warm air is the inversion itself, over the cold ground layer; 'from above the inversion layer' was the loose popular phrasing. The fix is accurate and in the voice."
+  },
+  {
+   "stemStart": "Green harvest refers to which practice?",
+   "verdict": "kept",
+   "why": "The banned word sat in the stem, so only a stem change could remove it; the id move is unavoidable. Gerund options still answer 'What does a grower do'; build, similarity and cross-category clean."
+  },
+  {
+   "stemStart": "Which pair are the two most significant fungal",
+   "verdict": "kept",
+   "why": "Plasmopara viticola is an oomycete; the added sentence is true and keeps the universal convention the stem relies on, so the key is not disturbed."
+  },
+  {
+   "stemStart": "Hail is particularly feared because it",
+   "verdict": "kept",
+   "why": "Hail cover is one of the oldest crop insurances, and a local, uncorrelated risk is what makes it insurable, so the old claim ran backwards. The new line (hard to forecast, costly to net) is right and answers the netting distractor."
+  },
+  {
+   "stemStart": "Cool fermentation temperatures are used for aromatic whites",
+   "verdict": "kept",
+   "why": "'preserve delicate aromatics' echoed 'aromatic whites'. 'keep fresh fruit character' is still the true reason, the three reverse truths stay wrong, no length tell."
+  },
+  {
+   "stemStart": "What is lees stirring, or batonnage?",
+   "verdict": "kept",
+   "why": "The only option opening 'Stirring' answered a stem that glosses itself. All four now name real cellar operations (punching down, lees, oak chips, bentonite fining), none of them defensibly batonnage; exp gains the definition of lees."
+  },
+  {
+   "stemStart": "A base wine is bottled with yeast and",
+   "verdict": "kept",
+   "why": "Old exp only restated the stem. New exp is accurate: Champagne, Cava and Cremant all require the traditional method, and riddling and disgorging are what the tank method avoids. ASCII 'Cremant' matches the rest of the corpus."
+  },
+  {
+   "stemStart": "Port is fortified at which point?",
+   "verdict": "kept",
+   "why": "Port is fortified with aguardente, a wine-derived grape spirit of about 77 per cent, not an unspecified neutral spirit. The fix is precise and not volatile."
+  },
+  {
+   "stemStart": "A wine smells of damp cardboard and wet",
+   "verdict": "kept",
+   "why": "A real twin of Tasting & Service's descriptor-to-TCA item, one the 19 Aug pass named but missed here. The reframe moves the fact to winemaking cause, which this block owns; the chlorophenol and parts-per-trillion claims are right, the stem does not echo the key, and no Rank II task is duplicated (the Rank II items ask for the source and the mechanism, not the compound)."
+  },
+  {
+   "stemStart": "Which fault presents as vinegar and nail polish",
+   "verdict": "kept",
+   "why": "A near-verbatim twin of the Tasting & Service VA item, with an American 'nail polish'. The prevention reframe is sound: acetic bacteria need oxygen. Swapping 'Oxidation' for 'Heat damage' was needed, since topping up also guards against oxidation. Reduction stays wrong because topping up favours it."
+  },
+  {
+   "stemStart": "A red wine shows barnyard, leather and sticking-plaster",
+   "verdict": "kept",
+   "why": "Same descriptor-to-Brett task as Tasting & Service (and Rank II service). The cause reframe is accurate: Brett lodges in stave wood and is held back by molecular SO2. 'Flor yeast' carries the word yeast, which makes it a trap rather than a giveaway."
+  },
+  {
+   "stemStart": "Palate fatigue during a long tasting is best",
+   "verdict": "kept",
+   "why": "Removes the banned word and drops the contestable water-against-bread claim. The new line addresses the strongly flavoured food distractor directly."
+  },
+  {
+   "stemStart": "The tears or legs running down a glass",
+   "verdict": "kept",
+   "why": "Tears are a Marangoni effect driven by evaporating ethanol, and glycerol at wine levels barely matters. 'Chiefly the alcohol level' is right on the textbook view and on the physics; 'Sweetness alone' stays wrong."
+  },
+  {
+   "stemStart": "A young unoaked white smells of lemon, green",
+   "verdict": "kept",
+   "why": "'Quaternary' is not an established class. 'Reductive, from the closure' points to sulphide notes, which lemon, apple and elderflower are not, so no second key is created."
+  },
+  {
+   "stemStart": "Perceived sweetness in a dry wine can be",
+   "verdict": "kept",
+   "why": "A compound key with a 21-character standout. Trimming it to 'High alcohol' keeps the truth, and exp still teaches ripe fruit. This is the README's preferred move: trim the key, keep the qualification in exp."
+  },
+  {
+   "stemStart": "A wine that seems hollow in the middle",
+   "verdict": "kept",
+   "why": "The key was a length standout and echoed 'middle'. 'Concentration' is right; exp carries the mid-palate fruit."
+  },
+  {
+   "stemStart": "Alcohol is assessed by which sensation?",
+   "verdict": "kept",
+   "why": "The key was a 27-character standout. 'Warmth in the throat' is still the right sensation; exp carries the back of the mouth."
+  },
+  {
+   "stemStart": "A white wine that is deep gold, flat",
+   "verdict": "kept",
+   "why": "Vin Jaune is unfortified, so the old contrast contradicted itself. 'A white made to be drunk fresh' is the correct boundary."
+  },
+  {
+   "stemStart": "Which fortified wine is conventionally served chilled?",
+   "verdict": "kept",
+   "why": "Tawny is commonly served lightly chilled, and 'cellar temperature' is cool, so that distractor was arguably a second key. Ruby is conventionally served at about 16 to 18 C, below room temperature but not chilled, so Fino stays the one answer."
+  },
+  {
+   "stemStart": "A guest brings their own bottle and the",
+   "verdict": "amended",
+   "why": "The diagnosis was right (gloss options answered a stem asking for a name, and the key restated the stem). But the fix made the item a twin of Rank II Service & Hospitality's 'Bringing their own bottle ... Name that charge.' (Corkage): same task, same answer, which is the README rule the reviewer applied to three items in this batch. No options-only repair escapes that, because the stem asks for the name. The stem is reframed onto where corkage falls ('A party brings a bottle from home and orders a second from the list. Where does the corkage charge fall?'). Options: the bottle from home only (key), the list bottle only, both alike, each guest per head. Exp keeps what corkage covers and names the cover charge. Id moves i-4upsxjmx to i-7euv778x, accepted knowingly before launch; build, similarity and cross-category clean, no option standout."
+  },
+  {
+   "stemStart": "Why is a wine glass tapered inward at",
+   "verdict": "kept",
+   "why": "A distractor trim cannot make the option right, and 'It strengthens the rim against knocks' is still contradicted by exp. Standouts fell from 14 to 6, with points under one, too few to steer by."
+  },
+  {
+   "stemStart": "A young Barolo is closed and grippy on",
+   "verdict": "kept",
+   "why": "'To remove its heavy deposit' is still wrong for a young wine, and exp says so."
+  },
+  {
+   "stemStart": "After the host approves the wine, in what",
+   "verdict": "kept",
+   "why": "'The host first, having approved it' is still wrong and parallel with the key."
+  },
+  {
+   "stemStart": "A guest declares a wine faulty and you",
+   "verdict": "kept",
+   "why": "'Refuse and charge for the bottle' is still wrong and reads clearly beside the other three."
+  }
+ ]
+}

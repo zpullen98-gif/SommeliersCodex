@@ -1,0 +1,1345 @@
+{
+ "batch": "premier-3",
+ "bank": "js/data-advanced.js",
+ "categories": [
+  "South America",
+  "Australia",
+  "New Zealand",
+  "South Africa",
+  "Sparkling Wine World",
+  "Fortified Wines",
+  "Sweet Wines",
+  "Terroir: Climate & Soil",
+  "Spirits & Cocktails"
+ ],
+ "readCount": 179,
+ "total": 179,
+ "changedQuestions": 129,
+ "substantive": 32,
+ "stemChanges": [
+  "a-pao9awwm",
+  "a-x2fwfj4a",
+  "a-rgr1pjvc"
+ ],
+ "searches": [
+  "Argentina DOCs: still two, Luján de Cuyo and San Rafael (argentina.gob.ar IG/DOC register page; INV 2023 report; southamericawineguide.com); a-sn2ih4hj confirmed, no change",
+  "Cap Classique lees minimum: 12 months now legal, raised from 9 (Decanter, Majestic, winewithseth); a-4bwei1u8 and a-fabxkvde confirmed, a-4bwei1u8 exp rewritten around it; the search did not confirm the dropping of Méthode from the name",
+  "Margaret River subregions: Wilyabrup interim determination 2019, no final determination in 2020, the six Gladstones districts still unregistered (amrtimes.com.au, margaretriver.wine 2023 media kit); a-1ppm0dd6 confirmed, no change"
+ ],
+ "revokedAcceptStrings": [
+  "a-mr3cgziz: pinot nero chardonnay 90 percent millesimato always riserva at 36 months (graded an answer that makes every Alta Langa a Riserva and omits the 30-month base), replaced by the same string with 30 months riserva 36"
+ ],
+ "leftForTheOwner": [
+  "Two stems keep American spelling, left because a stem is the question's identity and spelling is not an error of fact (the grand-1 and premier-2 convention): a-e9zhjbiz (labeling), a-7d9btfdp (weaponizes). a-a0xw0dkz's accept list holds 'flavor', a grader string, not prose, left.",
+  "a-dvqr5zfj: the stem says New Zealand's 2001 screwcap initiative was 'led by which region's Rieslings'; the New Zealand Screwcap Wine Seal Initiative was Marlborough-led but covered every variety, so the Riesling premise is loose. Left (a stem change at medium confidence); ans keeps the stem's framing.",
+  "Unverified and left as written: a-705vcklt calls Frasqueira single-noble-variety (Tinta Negra may now be named on labels and may qualify); a-rnttapi6's gloss of bota punta as an end-of-row butt; a-bq89zz5y's carbon dating for VOS and VORS; a-mxyvoeyq's nineteen McLaren Vale geologies; a-fabxkvde's rename from Méthode Cap Classique to Cap Classique (not confirmed by search).",
+  "Volatile figures left with their hedges: a-fl5ija36 (the fifth-largest region, Gisborne against Nelson and Wairarapa, moves year to year; the exp cites the Vineyard Report), a-29c1a6io (Sauvignon share), a-db0pvmwm (SWNZ ~96%), a-22blfud9 (~4,000 ha Old Vine Project area), a-l7oovruq (Bonarda as Argentina's second red), a-vwwcx8zh (Cloudy Bay 'Now LVMH').",
+  "a-i9i4z2gy: 140 Ruggeri is often rated to about 20% active lime, so at exactly 20% it sits at its limit; 41B or Fercal remains the only safe answer and the key stands.",
+  "a-fnmzg76h, a-zd5kjeat and a-p58jhl2j take the site copy's repair word for word for a clean merge, though its punctuation is loose in places (a missing comma after a parenthesis; ', Syrah.'; a colon then a semicolon in parallel clauses).",
+  "Merge note: 129 changed lines; 68 now equal the site copy line for line and will merge cleanly in sync-wing. The other 61 differ from it: the en-dash repairs (matching answers joined with the arrow, ranges written with to or a hyphen), the spelling and fact fixes, and the site's own option reorders on twelve lines this sweep also edits (a-1ppm0dd6, a-iyu6yacx, a-kg3gmum4, a-8htg2p15, a-546vtcje, a-t3tcvzq7, a-q8q5fi1q, a-onacxmck, a-di9u97w3, a-mj87dcm3, a-b6nir3rs, a-s4ldmjkz; a-t3tcvzq7's options are edited on both sides); those lines need a hand merge there."
+ ],
+ "checks": {
+  "check-syntax": "all 67 JS files parse",
+  "check-paid": "adv flags unchanged by this sweep (256 before, 256 after, none new, none gone, measured with the gate's own checks on the adv bank alone). The full gate exits 1 on three NEW master/negation_probe flags in js/data-master.js, a file this batch never touched (one was present before this sweep began, two appeared while another batch was editing the master bank).",
+  "sa-harness adv": "581 of 581 model answers grade",
+  "list-harness": "Advanced 24 of 27 full marks, the three long-standing (a-62mb28xz, a-egn9hhiq, a-xrebfxf7) outside this batch"
+ },
+ "findings": [
+  {
+   "id": "a-qmxfhkb1",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-05i4eud4",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8ksbhmdx",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: called the Zonda a ripening accelerator; it blows mostly from late winter into spring, so its harm is desiccation and disrupted flowering, and the bank's own a-gwul3cjo says so; em dash.",
+   "fix": "ans: season and effect stated as they are.",
+   "source": "Zonda climatology (a-gwul3cjo in this bank)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-m0eu8z9m",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash and American spelling (color).",
+   "fix": "ans: em dash replaced as the site copy has it; British spelling.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-l7oovruq",
+   "cat": "South America",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-e9zhjbiz",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nxik8e6j",
+   "cat": "South America",
+   "field": "exp",
+   "problem": "exp: said the 2004 Berlin Tasting's winners grew in Puente Alto; only the winner, Viñedo Chadwick 2000, did (the runner-up, Seña 2001, is Aconcagua fruit); em dash.",
+   "fix": "exp: names the Puente Alto estates and the one winner.",
+   "source": "Berlin Tasting 2004 results; a-qpwxclnx in this bank",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nu52ys83",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-zmz1aphr",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-kixvi19c",
+   "cat": "South America",
+   "field": "ans+exp",
+   "problem": "ans: en dash. exp: em dash.",
+   "fix": "ans: pairs joined with the app's own arrow. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-sn2ih4hj",
+   "cat": "South America",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-rniv2eb8",
+   "cat": "South America",
+   "field": "exp",
+   "problem": "exp: said the US as well as the EU demands 85%; the US federal varietal minimum is 75%, like Chile's, and only the EU asks 85%; the banned p-word; em dash.",
+   "fix": "exp: the EU alone at 85%, the US at 75%; closing line reworded without the banned word.",
+   "source": "27 CFR 4.23 (US varietal 75%); EU Reg. 2019/33 art. 50 (85%); house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-jbrw7can",
+   "cat": "South America",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-wk8f3csu",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-gq4vpgi7",
+   "cat": "South America",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-n2tz412e",
+   "cat": "South America",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-fr92p32h",
+   "cat": "South America",
+   "field": "ans",
+   "problem": "ans: em dash and en dash.",
+   "fix": "ans: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-6aljapak",
+   "cat": "South America",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash and en dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-lvkqryf3",
+   "cat": "Australia",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-k9j3pgie",
+   "cat": "Australia",
+   "field": "exp",
+   "problem": "exp: 'Eden and Clare screwcapped their whole category in 2000' overstates it: a group of Clare Valley Riesling makers moved together in 2000 and Eden Valley followed, not the whole category of both at once.",
+   "fix": "exp: the 2000 move stated as a group's.",
+   "source": "Clare Valley screwcap initiative, 2000",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-dose7foa",
+   "cat": "Australia",
+   "field": "ans",
+   "problem": "ans: dated all three varieties to the 1890s; the 1890s date belongs to the oldest vines (Shiraz), not to every variety named.",
+   "fix": "ans: the 1890s attached to the oldest vines only; accept list untouched and still grades it.",
+   "source": "Wendouree vineyard history",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-qf7q7e5m",
+   "cat": "Australia",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-qmikpg4f",
+   "cat": "Australia",
+   "field": "ans",
+   "problem": "ans: en dash.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-giwi2gin",
+   "cat": "Australia",
+   "field": "ans",
+   "problem": "ans: em dash and American spelling (labeling).",
+   "fix": "ans: em dash replaced as the site copy has it; British spelling.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-7rs9k929",
+   "cat": "Australia",
+   "field": "exp",
+   "problem": "exp: 'neighbor' (American).",
+   "fix": "exp: 'neighbour'.",
+   "source": "house rule (British spelling)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mjp0ivsq",
+   "cat": "Australia",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3077kj3l",
+   "cat": "Australia",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mxyvoeyq",
+   "cat": "Australia",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-1ppm0dd6",
+   "cat": "Australia",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-iyu6yacx",
+   "cat": "Australia",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vwwcx8zh",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: 'globalized' (American).",
+   "fix": "exp: 'globalised'.",
+   "source": "house rule (British spelling)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-4bc4uip1",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-kg3gmum4",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-12nj6iry",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: 'An hour's ferry from Auckland'; the Waiheke ferry takes about forty minutes.",
+   "fix": "exp: 'Some forty minutes by ferry'.",
+   "source": "Auckland-Waiheke ferry timetable",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-dvqr5zfj",
+   "cat": "New Zealand",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-27emxqhe",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-2cbrn3th",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-4bwei1u8",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: 'the term replaced Méthode Cap Classique branding debates' is garbled and teaches nothing; the useful fact is that the legal floor rose from nine months to twelve.",
+   "fix": "exp: rewritten around the twelve-month floor and its rise from nine.",
+   "source": "WebSearch: Cap Classique lees minimum (Decanter, Majestic, winewithseth): 12 months now, 9 before",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-9gacn1qu",
+   "cat": "South Africa",
+   "field": "pairs+ans",
+   "problem": "pairs: 'Franschhoek Syrah' for Boekenhoutskloof, whose Syrah is sourced outside Franschhoek although the house stands there; ans: en dashes join the matched pairs.",
+   "fix": "pairs: 'Franschhoek house: Syrah & The Chocolate Block', true either way; ans joined with the app's own arrow.",
+   "source": "Boekenhoutskloof sourcing; house rule",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8htg2p15",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-a87o1yda",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ki9wx6x5",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: said Constantia and Durbanville were both free-floating wards before 2017; Durbanville and Philadelphia sat in the Tygerberg district, which the Cape Town district replaced, and only Constantia and Hout Bay had no district.",
+   "fix": "exp: the pre-2017 map stated correctly.",
+   "source": "Wine of Origin scheme, Coastal Region districts before and after 2017",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-546vtcje",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: names an option by position ('option three'); em dash.",
+   "fix": "exp: names the Muscadel family instead; dash as the site copy repairs it.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-cs7v73lz",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ejiec9hy",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash and en dash.",
+   "fix": "exp: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vy85ogky",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-5xi8x5ym",
+   "cat": "South Africa",
+   "field": "exp",
+   "problem": "exp: 'mandatory-in-[the banned p-word]' carries the banned word; em dash.",
+   "fix": "exp: 'near-universal'; dash as the site copy repairs it.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-pgsaoqb9",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: '(recently raised tiers)' is an unsupported, dated claim; Satèn and Rosé (24 months) were missing from the ladder it gives.",
+   "fix": "exp: the parenthesis replaced by the 24-month Satèn and Rosé tier.",
+   "source": "Franciacorta DOCG disciplinare",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ija52933",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-6i47ct0u",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: offered Nyetimber's 1988 planting as proof of the chalk link, but Nyetimber's original West Sussex vineyard is on greensand, not chalk.",
+   "fix": "exp: Nyetimber proved the English case on greensand; chalk estates (Domaine Evremond) followed.",
+   "source": "Nyetimber vineyard geology",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-y4sbn1nw",
+   "cat": "Sparkling Wine World",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-9d9krnzc",
+   "cat": "Sparkling Wine World",
+   "field": "ans+exp",
+   "problem": "ans: en dash. exp: em dash.",
+   "fix": "ans: pairs joined with the app's own arrow. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vfe0dybz",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: 'Raumland's triple brut program' names a programme that does not appear to exist, and spells programme the American way.",
+   "fix": "exp: Raumland's long-aged traditional-method Sekt credited instead.",
+   "source": "VDP Sekt Statut; house rule (British spelling)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8xpsvhjx",
+   "cat": "Sparkling Wine World",
+   "field": "ans",
+   "problem": "ans: en dash in '9[en dash]12 months lees minimums', which also blurred two different minimums.",
+   "fix": "ans: 'at least 9 months on the lees, 12 before release'.",
+   "source": "Crémant AOC cahiers des charges; house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-tqb03c3w",
+   "cat": "Sparkling Wine World",
+   "field": "ans",
+   "problem": "ans: 'pressurized' (American).",
+   "fix": "ans: 'pressurised'.",
+   "source": "house rule (British spelling)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-gz2gry0y",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-fnmzg76h",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-kba3f3dw",
+   "cat": "Sparkling Wine World",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-pao9awwm",
+   "cat": "Sparkling Wine World",
+   "field": "stem+ans+exp",
+   "problem": "stem, ans and exp: em dashes; ans also an en dash in 10[en dash]15%.",
+   "fix": "stem, ans and exp as the site copy repairs them; ans range written 10-15% (a hyphen keeps the grader's normalised text); stem change logged, id kept.",
+   "source": "house rule; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Prosecco DOC Rosé, legal only since 2020, requires which second grape, in what proportion and vinified how [em dash] and what else is compulsory on the label?",
+   "newStem": "Prosecco DOC Rosé, legal only since 2020, requires which second grape, in what proportion and vinified how, and what else is compulsory on the label?"
+  },
+  {
+   "id": "a-3mqsngqs",
+   "cat": "Sparkling Wine World",
+   "field": "exp",
+   "problem": "exp: em dash and en dash.",
+   "fix": "exp: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ilmo2vk1",
+   "cat": "Sparkling Wine World",
+   "field": "opts+exp",
+   "problem": "opts and exp: en dashes in every range; one distractor (6 to 12 g/L) was not an EU band, so the four options were not each a real thing.",
+   "fix": "opts: four real EU bands (brut nature, extra dry, sec, demi-sec), key unchanged as 12 to 17 g/L, now index 1; ranges written with 'to'.",
+   "source": "EU Reg. 2019/33 Annex III; house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-fabxkvde",
+   "cat": "Sparkling Wine World",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mr3cgziz",
+   "cat": "Sparkling Wine World",
+   "field": "accept+exp",
+   "problem": "accept: 'pinot nero chardonnay 90 percent millesimato always riserva at 36 months' graded a wrong answer (Alta Langa is not always Riserva; the base minimum is 30 months); exp: em dash.",
+   "fix": "accept: that string now reads 'pinot nero chardonnay 90 percent millesimato 30 months riserva 36'; exp dash as the site copy repairs it.",
+   "source": "Alta Langa DOCG disciplinare",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-z612m4x4",
+   "cat": "Fortified Wines",
+   "field": "ans+exp",
+   "problem": "ans: 'formalizing' (American); exp: said flor wine 'returns to legality' with no date, while the change was sent to Brussels in 2022 and took effect only in 2025, as premier-2 found for a-3wdv5vgc.",
+   "fix": "ans: 'formalising'; exp dated to match a-3wdv5vgc.",
+   "source": "premier-2 WebSearch on the Sherry pliego (a-3wdv5vgc); house rule",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-369f3n5m",
+   "cat": "Fortified Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-bq89zz5y",
+   "cat": "Fortified Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-rnttapi6",
+   "cat": "Fortified Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-dvecz07y",
+   "cat": "Fortified Wines",
+   "field": "ans+exp",
+   "problem": "ans: 'authorization' (American) and an en dash in 'A[en dash]F'; exp: em dash.",
+   "fix": "ans: 'authorisation', 'A to F'; exp as the site copy repairs it.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-q03hqdl1",
+   "cat": "Fortified Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-85yqekhm",
+   "cat": "Fortified Wines",
+   "field": "ans+exp",
+   "problem": "ans: en dash. exp: em dash.",
+   "fix": "ans: pairs joined with the app's own arrow. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vwlts13j",
+   "cat": "Fortified Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-t3tcvzq7",
+   "cat": "Fortified Wines",
+   "field": "opts+exp",
+   "problem": "opts and exp: en dash in 45[en dash]50°C.",
+   "fix": "'45 to 50°C' in both; key unchanged.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-q8q5fi1q",
+   "cat": "Fortified Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ufrpsyvg",
+   "cat": "Fortified Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-kux0rwwn",
+   "cat": "Fortified Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-onacxmck",
+   "cat": "Fortified Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-5rvhzm3f",
+   "cat": "Fortified Wines",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-h33wep5s",
+   "cat": "Sweet Wines",
+   "field": "ans+exp",
+   "problem": "ans: em dash; exp: 'shriveled' (American).",
+   "fix": "ans as the site copy repairs it; exp 'shrivelled'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mp82t4m5",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-qgz4ed40",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: en dashes in both Oechsle ranges.",
+   "fix": "ans: hyphenated ranges, which keep the baselined check-paid text unchanged.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-n4f0bpze",
+   "cat": "Sweet Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-o2bbifkl",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-pnqq3q3y",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8tynhpo0",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: en dash.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-wog30wi1",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: em dash and American spelling (botrytized).",
+   "fix": "ans: em dash replaced as the site copy has it; British spelling.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-o04icl1p",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-7d9btfdp",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans",
+   "problem": "ans: em dash and en dash.",
+   "fix": "ans: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-x2fwfj4a",
+   "cat": "Terroir: Climate & Soil",
+   "field": "stem",
+   "problem": "stem: en dash in 'Regions I[en dash]V'.",
+   "fix": "stem: 'Regions I to V'; stem change logged, id kept.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Which climate classification system counts growing-degree days into Regions I[en dash]V?",
+   "newStem": "Which climate classification system counts growing-degree days into Regions I to V?"
+  },
+  {
+   "id": "a-kz5iz61q",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3ygxzwnh",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-azj0m9bl",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans+exp",
+   "problem": "ans: en dash. exp: em dash.",
+   "fix": "ans: pairs joined with the app's own arrow. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-7t6a42ic",
+   "cat": "Terroir: Climate & Soil",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-yftdggzo",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans+exp",
+   "problem": "ans: em dash; exp: 'favorite' (American).",
+   "fix": "ans as the site copy repairs it; exp 'favourite'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-aipnvg6m",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans",
+   "problem": "ans: 'savor' (American).",
+   "fix": "ans: 'savour'.",
+   "source": "house rule (British spelling)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vl3y4qak",
+   "cat": "Terroir: Climate & Soil",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-i9i4z2gy",
+   "cat": "Terroir: Climate & Soil",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-zd5kjeat",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-p58jhl2j",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-fawmibbt",
+   "cat": "Terroir: Climate & Soil",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-rgr1pjvc",
+   "cat": "Terroir: Climate & Soil",
+   "field": "stem",
+   "problem": "stem: two em dashes around the definition.",
+   "fix": "stem: commas, word for word as the site copy has it; stem change logged, id kept.",
+   "source": "house rule; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Cation exchange capacity [em dash] the soil's ability to hold nutrients against leaching [em dash] is highest in:",
+   "newStem": "Cation exchange capacity, the soil's ability to hold nutrients against leaching, is highest in:"
+  },
+  {
+   "id": "a-gwul3cjo",
+   "cat": "Terroir: Climate & Soil",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-jw6mbbue",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-rzgwd07p",
+   "cat": "Terroir: Climate & Soil",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-cudehgbc",
+   "cat": "Spirits & Cocktails",
+   "field": "ans",
+   "problem": "ans: en dash.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nzvjcc6p",
+   "cat": "Spirits & Cocktails",
+   "field": "ans+exp",
+   "problem": "ans: 'barreled' (American); exp: 'labeling' (American).",
+   "fix": "'barrelled', 'labelling'.",
+   "source": "house rule (British spelling)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nlkq7g7e",
+   "cat": "Spirits & Cocktails",
+   "field": "ans",
+   "problem": "ans: em dash and American spelling (barreling).",
+   "fix": "ans: em dash replaced as the site copy has it; British spelling.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ib8gb06i",
+   "cat": "Spirits & Cocktails",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-q16tnu0c",
+   "cat": "Spirits & Cocktails",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-himiptl4",
+   "cat": "Spirits & Cocktails",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mmnywoua",
+   "cat": "Spirits & Cocktails",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-di9u97w3",
+   "cat": "Spirits & Cocktails",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-lz14wbkj",
+   "cat": "Spirits & Cocktails",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mj87dcm3",
+   "cat": "Spirits & Cocktails",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-0elwbhah",
+   "cat": "Spirits & Cocktails",
+   "field": "ans+exp",
+   "problem": "ans: em dash and en dash. exp: em dash.",
+   "fix": "ans: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined). exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-fl5ija36",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-29c1a6io",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-rybz8euj",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nnsm0jnb",
+   "cat": "New Zealand",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-aqfz650v",
+   "cat": "New Zealand",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-llucb484",
+   "cat": "New Zealand",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-b6nir3rs",
+   "cat": "New Zealand",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-i6q5qasl",
+   "cat": "Sweet Wines",
+   "field": "ans+exp",
+   "problem": "ans: 'botrytized' (American); exp: em dash.",
+   "fix": "ans 'botrytised'; exp as the site copy repairs it.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ml5xm96a",
+   "cat": "Sweet Wines",
+   "field": "ans",
+   "problem": "ans: em dash and en dash.",
+   "fix": "ans: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mewe625e",
+   "cat": "Sweet Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mo9fcszu",
+   "cat": "Sweet Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-s4ldmjkz",
+   "cat": "Sweet Wines",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-q0h6ary9",
+   "cat": "Sweet Wines",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; British spelling; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8b1vnf2d",
+   "cat": "Sweet Wines",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash and en dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-no8xk2qb",
+   "cat": "Sweet Wines",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash and en dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: em dash replaced as the site copy has it; en dash range written with 'to' (or a hyphen in an ans whose check-paid text is baselined).",
+   "source": "House rule: no em or en dash in shipped prose; British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  }
+ ]
+}

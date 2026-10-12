@@ -1,0 +1,469 @@
+{
+  "reviewer": "grape profiles, master sommelier pass",
+  "date": "2026-10-11",
+  "readCount": 100,
+  "total": 100,
+  "files": [
+    "js/reference.js (GRAPES, 23)",
+    "js/data-grapes-plus.js (GRAPES_PLUS, 24)",
+    "js/data-intro.js (INTRO_GRAPES, 53)"
+  ],
+  "untouched": "g and n names (keys for data-tasting, codex28, codex29, codex32, codex35 and the regions checker); c fields; field set (reg2 kept)",
+  "checks": [
+    "node .scripts/check-syntax.js: all 67 JS files parse",
+    "node .scripts/check-learning-links.cjs: 41 passed",
+    "node .scripts/check-home.js: all 193 checks pass",
+    "node .scripts/check-atlas-ui.js: 269 passed"
+  ],
+  "searches": 0,
+  "findings": [
+    {
+      "grape": "all 23 GRAPES",
+      "field": "st, regions, other",
+      "problem": "En dashes throughout (light\u2013med, low\u2013mod, mint\u2013eucalyptus, bell pepper\u2013jalapeño, ~8\u201310%), which the house forbids anywhere shipped.",
+      "fix": "Ranges written with \"to\" (Body light to medium, Alc med(+) to high); joined descriptors written with \"and\".",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Albariño, Chardonnay, Chenin Blanc, Grüner Veltliner, Muscat Blanc, Pinot Gris / Grigio, Riesling, Sauvignon Blanc, Torrontés, Viognier",
+      "field": "st",
+      "problem": "Ten whites carried no colour segment, so the blind flight fell back to the generic sight line and colour gave no clue.",
+      "fix": "Added a sight segment to each (pale lemon with green tints, lemon to gold, deep lemon to gold and so on) worded so TT_COLORS routes it to Sight and no palate segment does.",
+      "source": "js/codex6.js ttSplit, TT_COLORS and ttOptions",
+      "confidence": "high"
+    },
+    {
+      "grape": "Gamay",
+      "field": "regions",
+      "problem": "First phrase \"Beaujolais: Nouveau\" because a colon is not a split character, so the Grand Cru origin call offered \"Beaujolais: Nouveau\" as the answer; also Nouveau called pure carbonic.",
+      "fix": "\"Beaujolais (semi-carbonic for most, from Nouveau up to the ten crus...)\", first phrase Beaujolais.",
+      "source": "js/codex7.js ttRegionOf (splits on comma, semicolon, open bracket)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Zinfandel",
+      "field": "regions",
+      "problem": "First phrase \"California: Dry Creek\" for the same colon reason.",
+      "fix": "\"California (Dry Creek Valley and Sonoma, Lodi, Paso Robles, Amador and the Sierra Foothills: old vines), Puglia as Primitivo..., Croatia as Tribidrag\".",
+      "source": "js/codex7.js ttRegionOf (splits on comma, semicolon, open bracket)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Grenache / Garnacha",
+      "field": "regions",
+      "problem": "First phrase \"Châteauneuf-du-Pape & S. Rhône blends\" (the ampersand does not split), an unwieldy origin answer.",
+      "fix": "Southern Rhône first (Châteauneuf-du-Pape, Gigondas, Côtes du Rhône), then Priorat, Spain as Garnacha, Sardinia as Cannonau, McLaren Vale and Barossa.",
+      "source": "js/codex7.js ttRegionOf (splits on comma, semicolon, open bracket)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Chardonnay",
+      "field": "regions, other",
+      "problem": "First phrase Chablis rather than the classic home, Burgundy; struck match attributed to Chablis, where it belongs to reductive Côte de Beaune.",
+      "fix": "Burgundy first (Chablis, Côte de Beaune, Mâconnais in brackets); struck match to reductive Côte de Beaune, oyster shell and chalk kept for Chablis.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Chenin Blanc",
+      "field": "regions, fruit, other",
+      "problem": "First phrase \"Vouvray & Savennières\" as one answer; chamomile and honey sat in fruit; \"South Africa: baked apple, smoke\" mixed fruit into other.",
+      "fix": "First phrase Vouvray, then Montlouis, Savennières and the sweet Layon wines; fruit is quince, apple, pear, lemon, pineapple; other holds lanolin, wax, chamomile, honey, oak note.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Muscat Blanc",
+      "field": "regions, fruit, other",
+      "problem": "First phrase Alsace, shared with Gewürztraminer and Pinot Gris though the grape's classic home is Piedmont (Moscato d'Asti); orange blossom and musk listed as fruit.",
+      "fix": "Piedmont first, then Alsace (one of its four noble grapes), Beaumes-de-Venise and Frontignan VDN, Rutherglen (from the red-skinned form); blossom and musk moved to other.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Viognier",
+      "field": "regions",
+      "problem": "First phrase \"Condrieu & Château-Grillet (100%)\".",
+      "fix": "First phrase Condrieu, with Château-Grillet in brackets; added Languedoc, Virginia, Eden Valley.",
+      "source": "js/codex7.js ttRegionOf (splits on comma, semicolon, open bracket)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Gewürztraminer",
+      "field": "fruit, other, st, confuse",
+      "problem": "Rose petal and ginger listed as fruit; the copper-pink tint sat in other (a nose field); \"Deep gold\" overstated for young wine; confuse said Viognier has more acid.",
+      "fix": "Fruit is lychee, pink grapefruit, mango, tangerine; rose, Turkish delight and spice in other; colour moved to st as deep lemon to gold with a copper-pink glint; confuse rewritten.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Riesling",
+      "field": "st, other",
+      "problem": "\"Never oaked\" is false: old large casks (Fuder, Stück) are traditional in the Mosel and Rheingau; petrol given only with age.",
+      "fix": "\"No new oak\"; petrol \"with age or a hot site\"; honey and ginger with botrytis added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Nebbiolo",
+      "field": "tell, st, confuse",
+      "problem": "Tell was circular (\"grips like Barolo\"); \"Full structure\" is no grid term; confuse was a comma splice.",
+      "fix": "Tell: looks like Pinot Noir, grips like nothing else; st gains Body med(+) to full; confuse rewritten with Grenache as the other pale red.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Cabernet Franc",
+      "field": "other, tell, regions",
+      "problem": "En dash in bell pepper\u2013jalapeño; \"chili\" is American; tell abbreviated Cabernet Sauvignon; Bordeaux role understated as \"supporting\".",
+      "fix": "Pyrazine line rewritten, chilli flake; tell names Cabernet Sauvignon; Right Bank (Saint-Émilion, with Merlot) and New York added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Cabernet Sauvignon",
+      "field": "other, regions",
+      "problem": "Mint and eucalyptus credited to \"Napa hillsides\" generally; regions stopped at three.",
+      "fix": "Mint and eucalyptus for Coonawarra and some Napa; Margaret River, Maipo, Washington and Bolgheri added after the classic three.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Chardonnay, Cabernet Franc, Merlot, Syrah / Shiraz, Tempranillo, Muscat Blanc, Pinot Gris / Grigio, Torrontés, Viognier, Zinfandel",
+      "field": "confuse",
+      "problem": "Abbreviations (Cab Sauv, Cab, Chard, Gewürz, Zin, Garnacha) never match, because ttOptions and codex20 look for the first word of each grape's name, so the real neighbours were not dealt as distractors.",
+      "fix": "Every neighbour spelled as the list names it (Cabernet Sauvignon, Gewürztraminer, Zinfandel, Grenache (Garnacha)); each GRAPES grape now matches two to seven same-colour neighbours.",
+      "source": "js/codex6.js ttSplit, TT_COLORS and ttOptions; js/codex20.js line 89",
+      "confidence": "high"
+    },
+    {
+      "grape": "Zinfandel",
+      "field": "confuse",
+      "problem": "\"Port-like heat but dry\" is no confusion.",
+      "fix": "Malbec (plusher, violet, no raisin) and Amarone (raisin with sour cherry and bitter almond) added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Grenache, Malbec, Nebbiolo, Pinot Noir, Zinfandel, Syrah / Shiraz, Merlot",
+      "field": "tell, confuse, other",
+      "problem": "American spelling: color, savory, licorice, soft-centered.",
+      "fix": "colour, savoury, liquorice, soft-centred.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Tempranillo",
+      "field": "st, regions",
+      "problem": "Colour given only as garnet (young Tempranillo is ruby); regions said Ribera uses French oak (both are used) and gave no synonyms.",
+      "fix": "Ruby when young, garnet and bricking with age; Ribera as Tinto Fino, Toro as Tinta de Toro, Douro and Alentejo as Tinta Roriz and Aragonez; the ageing ladder named.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Pinot Gris / Grigio",
+      "field": "st, other",
+      "problem": "The copper tint sat in other; st held two palate segments and no sight.",
+      "fix": "Sight segment pale lemon (Grigio) to gold with a copper tint (Gris); other is almond and blossom (Grigio), smoke, honey, ginger (Alsace).",
+      "source": "js/codex6.js ttSplit, TT_COLORS and ttOptions",
+      "confidence": "high"
+    },
+    {
+      "grape": "Albariño",
+      "field": "other",
+      "problem": "\"no oak\" stated absolutely.",
+      "fix": "\"lees texture at times, rarely any oak\".",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Torrontés",
+      "field": "st",
+      "problem": "Acid given as med(+) only, alcohol absent.",
+      "fix": "Acid medium to med(+), Alc med(+).",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Sangiovese",
+      "field": "fruit",
+      "problem": "Fig given as a primary fruit.",
+      "fix": "Dried cherry and fig with age; cranberry added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Sauvignon Blanc",
+      "field": "regions, confuse",
+      "problem": "Bordeaux missing; Verdejo, its closest Spanish neighbour, absent.",
+      "fix": "Bordeaux (with Sémillon) and Styria added; Verdejo added to confuse.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Assyrtiko, Sémillon, Melon de Bourgogne, Verdejo, Savagnin (Jura), Marsanne, Petit Manseng, Xinomavro, Mencía, Aglianico, Blaufränkisch, Nerello Mascalese, Touriga Nacional, Mourvèdre / Monastrell, Barbera, Corvina (Valpolicella), Sagrantino, Tannat, Carmenère",
+      "field": "tell, st, fruit, other, regions",
+      "problem": "Twenty em dashes.",
+      "fix": "Replaced by a colon or comma, the sense kept.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Savagnin (Jura)",
+      "field": "regions, st",
+      "problem": "First phrase \"Jura: Vin Jaune\"; colour given as deep amber-gold only, though ouillé wines are pale and Vin Jaune is deep gold, not amber.",
+      "fix": "First phrase Jura (Vin Jaune from Château-Chalon, L'Étoile, Arbois, Côtes du Jura); st lemon (ouillé) to deep gold (Vin Jaune).",
+      "source": "js/codex7.js ttRegionOf (splits on comma, semicolon, open bracket)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Blaufränkisch",
+      "field": "regions",
+      "problem": "First phrase Mittelburgenland, a subregion, as the classic home.",
+      "fix": "Burgenland first (Mittelburgenland, Leithaberg, Eisenberg); Kékfrankos in Sopron and Egri Bikavér; Lemberger in Württemberg.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Sémillon",
+      "field": "regions, st, fruit",
+      "problem": "First phrase Hunter Valley rather than the classic home, Bordeaux; st segment \"Body low-alc light OR full sweet\" garbled; toast and lanolin listed as fruit.",
+      "fix": "Bordeaux first (Sauternes and Barsac, dry Graves blends), then Hunter Valley; st body light (Hunter) to full (Sauternes), acid medium to high; fruit is citrus and apple young, marmalade and apricot aged.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Carignan",
+      "field": "regions, other",
+      "problem": "First phrase Priorat, a Garnacha-led blend; licorice and \"blood-savor\".",
+      "fix": "Languedoc-Roussillon first, then Priorat and Montsant (as Cariñena), Rioja (as Mazuelo), Sardinia, Maule; liquorice and \"a meaty savour\".",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Petit Manseng",
+      "field": "other, tell, confuse",
+      "problem": "\"never botrytis\" absolute; \"alpine acid\" for a Pyrenean grape; confuse matched no grape in the list.",
+      "fix": "Rarely botrytis; mountain acid; confuse names Sémillon, Riesling Auslese and sweet Chenin Blanc from the Layon.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Assyrtiko",
+      "field": "other, confuse",
+      "problem": "\"rarely oaked\" ignores Nykteri, the traditional oaked Santorini style; Chablis named without its grape so it never matched.",
+      "fix": "Mostly unoaked, Nykteri the traditional oaked style; Chablis (Chardonnay); Albariño added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Sagrantino",
+      "field": "st, tell",
+      "problem": "Highest tannin in Italy and most tannic grape in the world stated as fact.",
+      "fix": "\"often called\" in both places.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Furmint, Sémillon, Savagnin (Jura), Xinomavro, Aglianico, Touriga Nacional, Carignan, Carmenère, Nerello Mascalese, Barbera, Mourvèdre / Monastrell, file header",
+      "field": "fruit, other, tell, st, regions, confuse",
+      "problem": "American spelling: botrytized, oxidized, savor, savory, licorice, color, colored, aging; header comment \"color words\".",
+      "fix": "botrytised, oxidised, savour, savoury, liquorice, colour, coloured, ageing.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Pinotage, Carmenère, Melon de Bourgogne, Godello, Mencía",
+      "field": "confuse",
+      "problem": "Shiraz, Cab Franc, Cab Sauv, Chablis and white Burgundy never match a grape name, so ttOptions dealt no neighbour.",
+      "fix": "Syrah (Shiraz), Cabernet Franc, Cabernet Sauvignon, Chablis (Chardonnay), white Burgundy (Chardonnay); Pinot Noir added to Mencía.",
+      "source": "js/codex6.js ttSplit, TT_COLORS and ttOptions",
+      "confidence": "high"
+    },
+    {
+      "grape": "Carmenère",
+      "field": "fruit, regions",
+      "problem": "\"red bell pepper over-tone\" listed as fruit; em dash before the 1994 rediscovery.",
+      "fix": "Fruit is black plum, blackberry, black cherry, raspberry; pepper moved to other; Maipo added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Verdejo",
+      "field": "other, field order",
+      "problem": "\"BAY-LAUREL herbality\" is not a word; confuse came before regions.",
+      "fix": "Bay laurel, herbal; fields in schema order.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Savagnin (Jura), Barbera",
+      "field": "confuse",
+      "problem": "One neighbour each from the list.",
+      "fix": "Jura Chardonnay added to Savagnin; Sangiovese (shared acid, more tannin, tomato leaf) added to Barbera.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Marsanne",
+      "field": "regions, confuse",
+      "problem": "\"Crozes\" truncated; \"ancient vines\"; \"oak-malo\".",
+      "fix": "Crozes-Hermitage; very old vines at Tahbilk; oak and malolactic signature; Roussanne added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Furmint",
+      "field": "regions",
+      "problem": "\"Hungary's flag\"; Hárslevelű and Slovenia absent.",
+      "fix": "Tokaj with Hárslevelű; Hungary's flagship white, also Slovenia as Šipon.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "INTRO_GRAPES (31 rows)",
+      "field": "syn",
+      "problem": "An em dash \"\u2014\" used as the empty synonym placeholder.",
+      "fix": "Empty string; codex7 grapesView hides a falsy syn exactly as it hid the dash.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test); js/codex7.js line 504",
+      "confidence": "high"
+    },
+    {
+      "grape": "INTRO_GRAPES (40 rows) and the header comment",
+      "field": "clim",
+      "problem": "En-dash ranges (\"Cool \u2013 moderate\"), and \"0\u20133 scale\" in the comment.",
+      "fix": "\"Cool to moderate\" and so on; \"0 to 3 scale\". clim is read by no code (codex20 reads TASTE), so the words are free.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "INTRO_GRAPES (26 rows)",
+      "field": "trap, aroma, wines, reg",
+      "problem": "Em dashes in prose.",
+      "fix": "Colons or commas.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Chardonnay (Intro)",
+      "field": "reg, trap",
+      "problem": "Champagne carried the star that means the region implies the grape, but Champagne also means Pinot Noir and Meunier; \"Most-planted noble white\" is a shifting acreage ranking; \"Blanc de Blancs = Chardonnay\" absolute.",
+      "fix": "Champagne (Blanc de Blancs) unstarred; ranking removed; \"almost always all Chardonnay\".",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Riesling (Intro)",
+      "field": "trap",
+      "problem": "\"Petrol = aged Riesling\" overclaims: sunny sites such as Clare show TDN young.",
+      "fix": "Petrol usually means bottle age, though a hot, sunny site such as Clare shows it young; \"trocken means dry\" added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Pinot Noir (Intro)",
+      "field": "trap",
+      "problem": "\"Color belies its finesse, not power\" is garbled and American.",
+      "fix": "\"Judge it by finesse, not by colour or power.\"",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Nebbiolo (Intro)",
+      "field": "body",
+      "problem": "Body 2 contradicts the trap (\"drinks powerful\") and the GRAPES profile.",
+      "fix": "Body 3.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Corvina (Intro)",
+      "field": "tan",
+      "problem": "Tannin 2 for a thin-skinned, low-tannin grape (GRAPES_PLUS says low-medium).",
+      "fix": "Tannin 1; trap says light tannin.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Chenin Blanc (Intro)",
+      "field": "sweet, reg",
+      "problem": "\"Dry → sweet → sparkling\" puts a style on a sweetness scale; reg starred nothing though Vouvray implies the grape.",
+      "fix": "\"Dry → sweet; also sparkling\"; Vouvray starred, Montlouis and Coteaux du Layon added.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Cabernet Sauvignon (Intro)",
+      "field": "reg, trap",
+      "problem": "Star placed after \"Bordeaux\" for the Left Bank only; \"Cassis + bell pepper is the classic marker\" leaves out cedar.",
+      "fix": "Bordeaux Left Bank ★ (Médoc, Graves); cassis and cedar the markers, green pepper when cool.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Muscat (Intro)",
+      "field": "clim",
+      "problem": "\"Warm\" for a family grown in Alsace and Asti.",
+      "fix": "Moderate to warm.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Barbera (Intro)",
+      "field": "aroma",
+      "problem": "\"sour-tart finish\" is not an aroma.",
+      "fix": "Sour red and black cherry, plum, dried herb; a tart finish.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    },
+    {
+      "grape": "Roussanne (Intro)",
+      "field": "syn",
+      "problem": "No synonym, though Savoie calls it Bergeron.",
+      "fix": "Bergeron (Savoie).",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Sangiovese, Tempranillo, Nebbiolo (Intro)",
+      "field": "syn",
+      "problem": "Sangiovese synonyms called clones without places; Tempranillo lacked its Spanish names; Nebbiolo synonyms unplaced.",
+      "fix": "Sangiovese Grosso, Prugnolo Gentile, Morellino, Nielluccio; Tinto Fino, Tinta del País, Tinta de Toro; Spanna (Alto Piemonte), Chiavennasca (Valtellina).",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Furmint (Intro)",
+      "field": "aroma, trap",
+      "problem": "\"botrytis\" listed as an aroma; \"botrytized\".",
+      "fix": "Honey and apricot with botrytis; botrytised.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Grüner Veltliner, Syrah, Sangiovese, Pinot Noir, Nebbiolo, Touriga Nacional, Petit Verdot, Tempranillo, Barbera, Carignan, Nero d’Avola, Dolcetto, Tannat (Intro)",
+      "field": "trap, aroma",
+      "problem": "American spelling: savory, color, aging, neighbor, licorice.",
+      "fix": "savoury, colour, ageing, neighbour, liquorice.",
+      "source": "house rules (Codex CLAUDE.md, check-fragment.cjs dash test)",
+      "confidence": "high"
+    },
+    {
+      "grape": "Vermentino (Intro)",
+      "field": "wines",
+      "problem": "\"Sardinian Vermentino, Ligurian;\" left Ligurian dangling.",
+      "fix": "Vermentino di Gallura and Sardinian Vermentino, Ligurian Vermentino, Corsican whites; Rolle in Provence.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "high"
+    },
+    {
+      "grape": "Sauvignon Blanc, Grüner Veltliner, Cabernet Franc (Intro)",
+      "field": "reg",
+      "problem": "Marlborough unstarred though it implies the grape; Weinviertel and Saumur-Champigny absent.",
+      "fix": "Marlborough ★; Weinviertel; Saumur-Champigny and Saint-Émilion.",
+      "source": "own knowledge: CMS deductive grid and standard references",
+      "confidence": "medium"
+    }
+  ]
+}

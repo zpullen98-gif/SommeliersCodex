@@ -1,0 +1,1214 @@
+{
+  "batch": "premier-1",
+  "bank": "js/data-advanced.js",
+  "categories": [
+    "Burgundy",
+    "Bordeaux",
+    "Champagne",
+    "Loire",
+    "Alsace",
+    "Rhône",
+    "Southern France",
+    "Jura, Savoie & Corsica",
+    "Producers & Icons"
+  ],
+  "readCount": 186,
+  "total": 186,
+  "changedQuestions": 94,
+  "substantive": 44,
+  "stemChanges": [
+    "a-owsdgcwj",
+    "a-7egsj8r5",
+    "a-3c02srf1",
+    "a-sgpisog5",
+    "a-snavle1q",
+    "a-hafues4n",
+    "a-g6h7pdjl",
+    "a-o4jzcpxh",
+    "a-enaotoev"
+  ],
+  "searches": [
+    "Voltis in the Champagne cahier des charges (INAO, 2022)",
+    "Touraine Amboise and Chenonceaux: the Côt rule in the renewed specification",
+    "Vorbourg Pinot Noir grand cru approval date (confirmed 2024; exp kept)"
+  ],
+  "revokedAcceptStrings": [
+    "a-mjrkw9kz: liger-belair (graded Domaine Thibault Liger-Belair, a different domaine)",
+    "a-qe25zf0w: riesling and muscat lower (graded the wrong answer \"Riesling and Muscat\")"
+  ],
+  "addedAcceptStrings": [
+    "a-r1a9susv: seventy per cent",
+    "a-ez6nm4ot: what remains of a litre after ageing; evaporation from one litre"
+  ],
+  "leftForTheOwner": [
+    "Eight stems keep American spelling, left because spelling is not an error of fact and a stem is the question's identity (and two of them key reviewed check-paid entries): a-zaksjdys (lees-aging, aging), a-w1ko9qpt (systematized), a-lvo59p83 (labeled; its stem keys the reviewed \"vvf\" accept_list entry), a-4e9yyrtb (lees-aging), a-l4ohqmmh (amphitheater), a-ai26rjzz (mold), a-1pyxpmf3 (mythologized), a-zd35sg9x (labeled).",
+    "a-pnip9bif: the stem still says \"the four permitted Champagne grapes beyond the big three\"; Voltis has been allowed on trial since December 2022. The exp now says so. A stem edit would re-key three reviewed check-paid entries (cross_accept and compound_answer) in rewrite/paid_known.py, which this batch may not edit; if the owner wants \"traditional\" in the stem, those three keys move with it.",
+    "a-sgpisog5: the stem calls Chavignol a \"commune\"; it is a village within the commune of Sancerre. Kept for the same check-paid key reason.",
+    "a-62mb28xz: list-harness still reports it at 4 of 5 (need 2), the long-standing \"(also X, Y)\" tail the harness notes itself; it grades correctly for candidates. Untouched.",
+    "Unverified and left as written: a-a1zlv30o gives 1984 for Overnoy's first sulphur-free wine (some sources say 1986); a-ez6nm4ot and a-hl64q8ql say the clavelin is the only Vin Jaune bottle; a-hl64q8ql lists Trousseau among vin de paille grapes; a-0yro7q57 lists four Lake Geneva Chasselas crus and may omit Féternes; a-x51q289u's stem names the Le Lous family as restorers since 2019 (a current owner, dated in the stem).",
+    "Sync note: 65 of this batch's lines were already changed in the site copy (dash-free wording, and on the MC items rotated options). Dash-only fixes take the site's wording word for word where it was house-compliant, but every line with a substantive fix, a spelling fix the site lacks, or a rotated option list will still meet a different line in the copy, so sync-wing will need those lines resolved by hand.",
+    "Incident: a shared-scratchpad filename collision made this run execute another agent's apply.js once (scratchpad/apply.js, 20:53 UTC). It rewrote /home/user/worldtable/tools/house/brennans/research/cellar-review-2026-10-11-house-floor-2.json with that script's own fixed values (three entries' reason and source, and the verdicts array). If that agent edited those fields after 20:43, check them; nothing else was touched."
+  ],
+  "findings": [
+    {
+      "id": "a-7rjwjkqo",
+      "cat": "Burgundy",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-bg3f0jo1",
+      "cat": "Burgundy",
+      "field": "exp",
+      "problem": "\"Six others are shared\" is a stale count: the domaine has since added red Corton (from the 2009 vintage) and Corton-Charlemagne (from 2019) to Richebourg, Romanée-Saint-Vivant, Échezeaux, Grands Échezeaux, Montrachet and its sliver of Bâtard.",
+      "fix": "Count dropped: \"The domaine's other grands crus are shared with other owners; these two are its alone.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-mjrkw9kz",
+      "cat": "Burgundy",
+      "field": "accept",
+      "problem": "Accept \"liger-belair\" graded \"Domaine Thibault Liger-Belair\", a different Nuits-Saint-Georges domaine that does not own La Romanée.",
+      "fix": "Removed \"liger-belair\"; kept \"comte liger-belair\" and \"vicomte liger-belair\". Simulated with core.js matchSA: \"Thibault Liger-Belair\" now false, \"Liger-Belair\", \"Comte Liger Belair\" and the model answer still true.",
+      "source": "Grader simulation against js/core.js matchSA; Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-0va1va21",
+      "cat": "Burgundy",
+      "field": "exp",
+      "problem": "\"the only Musigny Blanc, currently declassified to Bourgogne Blanc\" is stale: de Vogüé labelled it Musigny again from the 2015 vintage; \"only\" also overclaims.",
+      "fix": "\"De Vogüé also makes Musigny Blanc, sold as Bourgogne Blanc while replanted vines matured and labelled Musigny again from the 2015 vintage.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-jecxigqb",
+      "cat": "Burgundy",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-q4wv3dx8",
+      "cat": "Burgundy",
+      "field": "exp",
+      "problem": "Em dash; American \"neighbor\"; \"now Pinault's Artémis\" names a living person's company as current owner (volatile), and \"for a century\" overstates the Mommessin tenure.",
+      "fix": "\"Clos de Tart, its neighbour, is a true monopole, held by the Mommessin family from 1932 to 2017.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-3gmnnleu",
+      "cat": "Burgundy",
+      "field": "ans",
+      "problem": "En dashes as pair separators in the matching answer.",
+      "fix": "Arrows, the separator the app itself draws for matching answers.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-6rgrc7n0",
+      "cat": "Burgundy",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-owsdgcwj",
+      "cat": "Burgundy",
+      "field": "q",
+      "problem": "Stem stated a living person as the current operator (\"run by Lalou Bize-Leroy\"), a volatile fact.",
+      "fix": "Stem now \"Name the two Burgundy domaines built by Lalou Bize-Leroy.\" Key, accept and exp unchanged and still true.",
+      "source": "House rule: no living person named as a volatile fact. Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "id": "a-dtzy92en",
+      "cat": "Bordeaux",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-kbk4i21a",
+      "cat": "Bordeaux",
+      "field": "exp",
+      "problem": "The exp left the Barton half of the key unexplained though the super-second pairing is contested: Las Cases is on every list, while Barton and Poyferré each have advocates. The accept already grades any answer naming Las Cases.",
+      "fix": "\"Las Cases is on every list of super seconds, its Grand Enclos abutting Latour; Barton and Poyferré each have their champions for the second place.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-7egsj8r5",
+      "cat": "Bordeaux",
+      "field": "q",
+      "problem": "\"commands the appellation's highest prices\" is a volatile market claim stated as fact, and Le Pin regularly trades level with or above Pétrus.",
+      "fix": "Stem now \"...ranks among the appellation's most expensive wines, from ~11.5 ha of blue clay?\"; the Moueix and blue-clay clues still single out Pétrus.",
+      "source": "House rule: nothing volatile stated as fact. Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "id": "a-h660y823",
+      "cat": "Bordeaux",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-mbnmc6qn",
+      "cat": "Bordeaux",
+      "field": "pairs",
+      "problem": "Right-hand label \"Libournais côtes\" is not a real appellation family, so one of the four targets was not a real thing.",
+      "fix": "Pair label now \"A standalone Libournais AOP\", which the exp already says Fronsac is.",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-mbnmc6qn",
+      "cat": "Bordeaux",
+      "field": "ans",
+      "problem": "En dashes as pair separators, and the Fronsac target named a non-existent \"Libournais\" family.",
+      "fix": "Arrows, the separator the app itself draws; Fronsac now goes to \"a standalone Libournais AOP\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-cuwwn5vl",
+      "cat": "Bordeaux",
+      "field": "exp",
+      "problem": "American spelling \"favored\" in exp.",
+      "fix": "\"favoured\".",
+      "source": "House rule: British spelling in the Codex's own prose.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-x51q289u",
+      "cat": "Bordeaux",
+      "field": "exp",
+      "problem": "Em dash.",
+      "fix": "Site copy wording: \"Cantenac Brown: John Lewis Brown's legacy;\". Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-3c02srf1",
+      "cat": "Bordeaux",
+      "field": "q",
+      "problem": "Two em dashes and American \"neighbor\" in the stem.",
+      "fix": "Stem now \"Haut-Brion Blanc's neighbour and rival on the Pessac plateau, the classified white of the pair, is:\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). British spelling.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-3c02srf1",
+      "cat": "Bordeaux",
+      "field": "exp",
+      "problem": "Em dash, and \"only Laville/La Mission Blanc appears\" read as if it were the only white classified growth.",
+      "fix": "\"...unclassified; of the pair, only Laville (now La Mission Blanc) appears among the nine crus classés de Graves for white.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-pnip9bif",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "\"Seven total\" is stale: since the amended cahier des charges (Journal Officiel, 10 December 2022) the disease-resistant Voltis is allowed on trial, capped at 5% of a holding and 10% of a blend, under review in 2033.",
+      "fix": "Exp now says \"Seven traditional varieties in all, and since 2022 the disease-resistant Voltis has been allowed on trial, capped at 10% of a blend\". Stem left: its first 44 characters key three reviewed check-paid entries that this batch may not re-key, and \"the four\" still names the historic quartet the key lists.",
+      "source": "WebSearch 1 (11 October 2026): wein.plus news \"PIWI grape variety Voltis approved in Champagne\"; WSET blog \"The grape varieties of Champagne\" (2025); Loki Wine \"Voltis in Champagne, a new grape on trial\".",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-fxvrru3w",
+      "cat": "Champagne",
+      "field": "ans",
+      "problem": "\"percentile scale\" is the wrong term (the échelle is a percentage scale, not a ranking), and the range carried an en dash.",
+      "fix": "\"The percentage scale rating villages (grand cru = 100%, premier cru 90 to 99%) for grape pricing\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ownge5hc",
+      "cat": "Champagne",
+      "field": "ans",
+      "problem": "Em dash and American \"aging\".",
+      "fix": "\"Récemment Dégorgé: extended lees ageing, disgorged shortly before release\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). British spelling.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-az76j9r8",
+      "cat": "Champagne",
+      "field": "ans",
+      "problem": "En dashes as pair separators in the matching answer.",
+      "fix": "Arrows, the separator the app itself draws for matching answers.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-az76j9r8",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-29lnf67j",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "\"~28 récoltant members\" is a volatile membership count, and \"RM on the foil\" misplaces the code, which is printed on the label.",
+      "fix": "\"The members are growers who make their own wine, and each candidate must pass the club's own tasting panel before it may wear the bottle.\"",
+      "source": "House rule: nothing volatile stated as fact. Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dyyfizu5",
+      "cat": "Champagne",
+      "field": "ans",
+      "problem": "En dash range.",
+      "fix": "\"0-6 g/L dosage\" (a hyphen range is not a dash; it keeps the reviewed check-paid key unchanged).",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dyyfizu5",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "En dash range.",
+      "fix": "\"0 to 3\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ppnosrqf",
+      "cat": "Champagne",
+      "field": "ans",
+      "problem": "American \"aging\" in the model answer.",
+      "fix": "\"during ageing\"; the answer still grades by exact match.",
+      "source": "House rule: British spelling. sa-harness adv 581 of 581.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ppnosrqf",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "Banned word \"practice\", an em dash, and an unverified claim that Salon and Jacques Selosse cite poignettage.",
+      "fix": "\"A rare, laborious step that stirs the lees back through the wine in bottle, the sparkling cellar's answer to bâtonnage in barrel.\"",
+      "source": "House rules (no \"practice\", no dash). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ubyyg5my",
+      "cat": "Champagne",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ubyyg5my",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-8mfcjnyu",
+      "cat": "Champagne",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-8q0bp0m1",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Em dash; names a living person as owner (\"Nicolas Joly's\"); \"the Montrachet of the Loire\" is not Curnonsky's phrase as given.",
+      "fix": "\"Coulée de Serrant is the Joly family's biodynamic monopole, which Curnonsky counted among France's five greatest white wines.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-yj5nor7h",
+      "cat": "Loire",
+      "field": "ans",
+      "problem": "American \"botrytized\" in the model answer.",
+      "fix": "\"botrytised\".",
+      "source": "House rule: British spelling (the Codex writes -ise).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-yj5nor7h",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "\"Bonnezeaux and Coteaux du Layon surround it\" is wrong: Quarts de Chaume sits within Coteaux du Layon (Chaume) at Rochefort-sur-Loire, while Bonnezeaux is a separate enclave upstream near Thouarcé.",
+      "fix": "\"Minimum 298 g/L must weight; Coteaux du Layon surrounds it, while Bonnezeaux is a separate enclave upstream.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-sgpisog5",
+      "cat": "Loire",
+      "field": "q",
+      "problem": "Two em dashes in the stem.",
+      "fix": "Commas. Chavignol is strictly a village within the commune of Sancerre, but \"commune's\" was kept because the stem's first 40 characters key two reviewed check-paid entries.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-sgpisog5",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-a72t6rkp",
+      "cat": "Loire",
+      "field": "ans",
+      "problem": "En dashes as pair separators in the matching answer.",
+      "fix": "Arrows, the separator the app itself draws for matching answers.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-a72t6rkp",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "\"Romorantin survives only in Cour-Cheverny\" overstates: the vine is also grown outside the appellation (Vin de France, including old ungrafted vines in the Sologne); François I planting it is legend, not record.",
+      "fix": "\"Cour-Cheverny is Romorantin's only appellation; legend credits François I with bringing the vine to the Sologne.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-4e9yyrtb",
+      "cat": "Loire",
+      "field": "opts",
+      "problem": "Key \"~24 months\" was the only option carrying a tilde, a visible tell against three plain figures.",
+      "fix": "Key now \"24 months\" (Clisson's minimum); a stays 2.",
+      "source": "Item construction rule: the options' shape must not reveal the key. Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-4e9yyrtb",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "An en dash range (17 to 24+) and an imprecise floor for the cru named in the stem.",
+      "fix": "\"Clisson asks for at least 24 months on lees and the other crus set long minimums of their own; the wines taste like it, saline, tensile and age-worthy.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-emzvqq1u",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "American \"canonized\".",
+      "fix": "\"canonised\".",
+      "source": "House rule: British spelling (the Codex writes -ise).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-a8839s6e",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Exp said Amboise only \"leans Côt\"; the renewed specification makes Côt the sole red grape of Touraine Amboise, which is what makes it the dedicated Côt island, and Chenonceaux's \"Sauvignon/Côt quality tier\" was vague.",
+      "fix": "\"Touraine Amboise now makes its reds from Côt alone; Chenonceaux blends Côt with Cabernet Franc for red and makes Sauvignon whites.\"",
+      "source": "WebSearch 2 (11 October 2026): iDealwine \"Malbec de Loire, pari de nouvelle AOC Amboise\"; Réussir Vigne \"Côt d'Amboise et malbec de Cahors, même combat\"; INAO CDC Touraine (2024 and 2026 draft). Chenonceaux blend from reviewer knowledge.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-qyluccep",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-steh6v5s",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-0j6m8nph",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-20hhj0ea",
+      "cat": "Loire",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-30m4yyl6",
+      "cat": "Loire",
+      "field": "exp",
+      "problem": "Em dash, and two rules the mention does not carry (\"one bottling per lot, no returning wine to lees later\", plus a bottling year).",
+      "fix": "Sentence now ends \"be drawn straight off them at bottling, at the property where it was made.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-98j4a9aj",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-j20zbpjo",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "\"Trimbach declines to print the grand cru name on principle\" is stale: the house now bottles grand cru labelled Rieslings (Geisberg, Schlossberg). Clos Sainte-Hune itself still names the clos, not Rosacker.",
+      "fix": "\"~1.67 ha; the label names the clos and not the grand cru, a long-standing Trimbach choice.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent. Matches the grand-1 batch's search on Trimbach grand cru labelling.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-1mqh3iqa",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-qe25zf0w",
+      "cat": "Alsace",
+      "field": "accept",
+      "problem": "Accept \"riesling and muscat lower\" graded the wrong answer \"Riesling and Muscat\": the core-match rule takes an input covering three of its four words.",
+      "fix": "Removed. Simulated with core.js matchSA: \"Riesling and Muscat\" now false; \"Gewurztraminer and Pinot Gris\" and the model answer still true.",
+      "source": "Grader simulation against js/core.js matchSA.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-39uld2ve",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Em dash, American \"labeled\", and \"per house doctrine\" is stale now that Trimbach bottles grand cru labelled Rieslings.",
+      "fix": "\"Trimbach again, labelled without the cru names.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-syrv4tut",
+      "cat": "Alsace",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-syrv4tut",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "American \"chiseled\".",
+      "fix": "\"chiselled\".",
+      "source": "House rule: British spelling.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-w8kwrehn",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-l4ohqmmh",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-gzri428x",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "\"Chapoutier bottles all as selections parcellaires\" is wrong: Chapoutier bottles Le Méal, L'Ermite and Les Greffieux as parcellaires; its Bessards fruit goes into Le Pavillon, not a Bessards label.",
+      "fix": "\"L'Ermite (also Les Greffieux and Les Rocoules)\". Accept unchanged.",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-7k3880nq",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-abiy7rbq",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-snavle1q",
+      "cat": "Rhône",
+      "field": "q",
+      "problem": "En dash range in the stem.",
+      "fix": "\"in the 2005 to 2016 era\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-bckec82j",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "En dashes as pair separators in the matching answer.",
+      "fix": "Arrows, the separator the app itself draws for matching answers.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-hfo7rpz6",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "\"France's only all-rosé cru\" overreaches: Rosé des Riceys and Cabernet d'Anjou are also rosé-only appellations.",
+      "fix": "\"Nine; Tavel remains the Rhône's only all-rosé cru.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-1i7som6n",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Two em dashes and \"percent\" twice.",
+      "fix": "Colons; \"per cent\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Per cent in prose (Codex CLAUDE.md).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dmgn356h",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-nkyxd2ps",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ifo5ggrj",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ifo5ggrj",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-hafues4n",
+      "cat": "Rhône",
+      "field": "q",
+      "problem": "Stem's \"the highest of any French appellation\" is false: Sauternes requires 13% minimum natural alcohol, and the sweet Loire crus far more.",
+      "fix": "Stem now \"...minimum natural alcohol, among the highest for a dry French red, is:\". Key 12.5% unchanged.",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-hafues4n",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-gip0mgzu",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-gip0mgzu",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-5z4aiiu1",
+      "cat": "Rhône",
+      "field": "ans",
+      "problem": "Em dash and \"toward\".",
+      "fix": "Site copy wording, with \"towards\". Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-5z4aiiu1",
+      "cat": "Rhône",
+      "field": "exp",
+      "problem": "Em dash, and \"now largely worked by Gonon and Chave\" states current operators as fact.",
+      "fix": "\"...Saint-Jean-de-Muzols, the ground Raymond Trollat made famous.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). House rule: nothing volatile stated as fact.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-o2v369f3",
+      "cat": "Southern France",
+      "field": "exp",
+      "problem": "\"Léon Barral farms it biodynamically\" treats the grandfather the domaine is named for as its living farmer, and the certification claim is unverified.",
+      "fix": "\"Domaine Léon Barral is its most cited name; the wines carry a smoky garrigue char.\"",
+      "source": "Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-r0zgpemo",
+      "cat": "Southern France",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-r1a9susv",
+      "cat": "Southern France",
+      "field": "accept",
+      "problem": "The British spelling of the keyed answer, \"seventy per cent\", was refused (only \"seventy percent\" and the digits were taken).",
+      "fix": "Added \"seventy per cent\". It grades nothing the existing entries did not.",
+      "source": "House rule (per cent in prose); grader simulation against js/core.js matchSA.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-e0grc90d",
+      "cat": "Southern France",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-g6h7pdjl",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "q",
+      "problem": "Em dash in the stem.",
+      "fix": "Comma; the first 44 characters, which key a reviewed check-paid entry, are unchanged.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-ez6nm4ot",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "accept",
+      "problem": "Accept took only the American \"liter\" and \"aging\" phrasings.",
+      "fix": "Added \"what remains of a litre after ageing\" and \"evaporation from one litre\" beside the originals.",
+      "source": "House rule: an accept list takes every spelling a grader should.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ez6nm4ot",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "American \"liter\" in the model answer.",
+      "fix": "\"what survives of a litre after six-plus years of evaporation\".",
+      "source": "House rule: British spelling.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-otaahb6q",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "exp",
+      "problem": "Em dash, and \"Bartolo of the mountains\" is wrong: Trousseau is the grape Portugal calls Bastardo.",
+      "fix": "\"Trousseau: darker, peppery, and the same grape as Portugal's Bastardo.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-omnkl4kb",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-5e325qdi",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-a1zlv30o",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-xcjt3fmx",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Names a living person as current winemaker (\"Roberto Conterno continues it\"), a volatile fact.",
+      "fix": "\"Made only in great years, raised for years in large botti and released when the family judges it ready.\"",
+      "source": "House rule: no living person named as a volatile fact.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-o4jzcpxh",
+      "cat": "Producers & Icons",
+      "field": "q",
+      "problem": "Stem's \"the world's most expensive regularly produced white wine\" is a volatile price ranking stated as fact (and a TBA is not made every year).",
+      "fix": "Stem now \"...Trockenbeerenauslese is among the world's most expensive white wines?\".",
+      "source": "House rule: nothing volatile stated as fact.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "id": "a-1pyxpmf3",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Names a living person as current holder (\"Emmanuel Rouget continues the holdings\").",
+      "fix": "\"Jayer cleared and replanted it after the war, when it had been given over to artichokes.\"",
+      "source": "House rule: no living person named as a volatile fact. Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-9nviy00c",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-nyz0nykk",
+      "cat": "Producers & Icons",
+      "field": "ans",
+      "problem": "En dashes as pair separators in the matching answer.",
+      "fix": "Arrows, the separator the app itself draws for matching answers.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-n830vz3f",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-7hn93tub",
+      "cat": "Producers & Icons",
+      "field": "ans",
+      "problem": "Em dashes, and \"released in 2007\" is doubtful for the Clos d'Ambonnay 1995 (generally reported as a 2008 release).",
+      "fix": "Colons for the dashes; \"first vintage 1995, released more than a decade later\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-7hn93tub",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Em dashes, and \"the family's argument\" for an LVMH-owned house.",
+      "fix": "Brackets for the dashes; \"the house's argument\".",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-wxadpw08",
+      "cat": "Producers & Icons",
+      "field": "ans",
+      "problem": "Em dash, and names living persons as current operators with a quality claim (\"his children Louis-Benjamin and Charlotte have run the domaine since without a drop in standard\").",
+      "fix": "Colon for the dash; final clause now \"and his family carried the domaine on.\"",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). House rule: no living person named as a volatile fact.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-wxadpw08",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-5c58io5j",
+      "cat": "Producers & Icons",
+      "field": "exp",
+      "problem": "Names a living person as current winemaker (\"Klaus-Peter Keller at Flörsheim-Dalsheim\").",
+      "fix": "\"Weingut Keller at Flörsheim-Dalsheim, first vintage 2001, the name assembled from two generations of the family, Georg and Maximilian.\" Rest unchanged.",
+      "source": "House rule: no living person named as a volatile fact.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-4gm5hnm1",
+      "cat": "Alsace",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-q0kyx66f",
+      "cat": "Alsace",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-f7fkrg2e",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-p9khims7",
+      "cat": "Alsace",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-p9khims7",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-31bt3x8n",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ctelk81p",
+      "cat": "Alsace",
+      "field": "ans",
+      "problem": "Spaced hyphens standing in for dashes in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ctelk81p",
+      "cat": "Alsace",
+      "field": "exp",
+      "problem": "Spaced hyphens standing in for dashes in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dpuf4mbu",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-v3zex5h4",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "Em dash, and the geology was wrong: the Jurassic sequence does not surface across the Bresse plain, it dips beneath it and resurfaces in the Côte d'Or.",
+      "fix": "\"Jurassic marl and limestone: the same sequence that dips under the Bresse plain and resurfaces in Burgundy's Côte d'Or\". Accept unchanged; the answer still grades.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Reviewer knowledge (master sommelier sweep, 11 October 2026); no search spent.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-hl64q8ql",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-tozwymby",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-hlbincl5",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-fvkofs4d",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-fvkofs4d",
+      "cat": "Jura, Savoie & Corsica",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-yptwilt4",
+      "cat": "Southern France",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-enaotoev",
+      "cat": "Southern France",
+      "field": "q",
+      "problem": "Em dash in the stem.",
+      "fix": "Comma.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-enaotoev",
+      "cat": "Southern France",
+      "field": "ans",
+      "problem": "Em or en dash in ans.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dk6gbx6e",
+      "cat": "Southern France",
+      "field": "exp",
+      "problem": "Em dash and \"toward\".",
+      "fix": "Wording from the site copy, with \"towards\". Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule). Towards in prose (Codex CLAUDE.md).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-8pz0qje4",
+      "cat": "Southern France",
+      "field": "exp",
+      "problem": "Em or en dash in exp.",
+      "fix": "Dash replaced with a comma, colon, semicolon, full stop or brackets; no other change. Where the site copy (zpullen98-gif.github.io/codex/js/data-advanced.js) already carried a dash-free wording of the same field, that wording was taken word for word so a later sync-wing merge meets equal lines.",
+      "source": "House rule: no em dash, en dash, dash entity or dash stand-in in shipped prose (Codex CLAUDE.md and the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    }
+  ]
+}

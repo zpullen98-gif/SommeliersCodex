@@ -1,0 +1,479 @@
+{
+  "batch": "regionale-13",
+  "modules": [
+    "rewrite/categories/r1_geography_maps.py",
+    "rewrite/categories/r1_grapes_labels.py",
+    "rewrite/categories/r1_history_figures.py"
+  ],
+  "readCount": 150,
+  "total": 150,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "Vineyard notes record budbreak in September, flowering in",
+      "field": "exp",
+      "problem": "The explanation lists Chile, Argentina, South Africa, Australia and New Zealand as if they were the only places a September budbreak could point to, leaving out Uruguay, Brazil and the rest of the southern hemisphere.",
+      "fix": "Now reads: puts the vineyard in the southern hemisphere, in a country such as Chile, Argentina, South Africa, Australia or New Zealand.",
+      "source": "Southern hemisphere growing calendar; Uruguay and southern Brazil are established producers.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "Before it ever enters France, the river that",
+      "field": "exp",
+      "problem": "Says the Rhone turns south toward Lyon after Lake Geneva, but Lyon lies west-south-west of Geneva. The river heads for Lyon and only turns south there.",
+      "fix": "Now reads: crosses Lake Geneva and only then heads for Lyon and the south.",
+      "source": "Course of the Rhone: Geneva, then Seyssel, then Lyon, where it turns south.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "From the Cantabrian mountains to a delta on",
+      "field": "exp",
+      "problem": "Says the Ebro rises barely forty kilometres from the Bay of Biscay. Measured great-circle from the source at Fontibre, the nearest Cantabrian coast is about 44 to 49 km away.",
+      "fix": "Now reads: less than fifty kilometres.",
+      "source": "Haversine distance from Fontibre (43.0N 4.19W) to Comillas and Suances.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "A high plateau lying between two parallel mountain",
+      "field": "exp",
+      "problem": "Calls the Bekaa one of the oldest continuously planted wine districts anywhere. Winemaking there is ancient, but it was largely interrupted under Ottoman rule and revived from the mid-nineteenth century, so 'continuously' cannot be supported.",
+      "fix": "Replaced with: Wine has been made in the valley since antiquity.",
+      "source": "Lebanese wine history: Roman temple of Bacchus at Baalbek; modern revival at Ksara from 1857.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "Benches above a long narrow lake in the",
+      "field": "exp",
+      "problem": "Says the Okanagan and Niagara stand nearly four thousand kilometres apart. The great-circle distance from Kelowna to St Catharines is about 3,130 km. Four thousand is roughly the road distance.",
+      "fix": "Now reads: more than three thousand kilometres apart.",
+      "source": "Haversine distances from Kelowna and Oliver to the Niagara Peninsula.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "One lake in the northern Alps has vineyards",
+      "field": "exp",
+      "problem": "Says the lake's stored warmth is the only reason vines work at that height and latitude. Baden and Alsace ripen grapes at similar latitudes with no lake, so the lake helps but is not the only reason.",
+      "fix": "Now reads: which is a large part of why vineyards work at that height and that far north.",
+      "source": "Comparative latitudes: Lake Constance about 47.6N, Freiburg and Colmar about 48N.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "Two Californian counties famous for wine lie side",
+      "field": "exp",
+      "problem": "Says one side of the Mayacamas is open to ocean air and the other is not. Napa also takes cool marine air and fog from San Pablo Bay through Carneros, so the difference is one of degree.",
+      "fix": "Now reads: one side is more open to cool ocean air than the other.",
+      "source": "Napa climate: San Pablo Bay influence on Carneros and the southern valley.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "A single chain runs from the Atlantic to",
+      "field": "exp",
+      "problem": "Says vines sit at both ends of the Pyrenees and hardly any in the middle. Somontano lies in the central southern foothills and Jurancon in the north-central foothills, so it is the high crest, not the middle of the chain, that has no vines.",
+      "fix": "Now reads: Vines keep to the foothills on either flank and to the two ends of the chain, never to the high central crest, which is its least hospitable ground.",
+      "source": "Positions of Somontano (Huesca) and Jurancon (Pau).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "Of Bordeaux, Tokaj, Rias Baixas and the Douro,",
+      "field": "exp",
+      "problem": "Says all three non-keyed regions lie within an hour or two of the Atlantic and are each moderated by it. The Douro is known for being shielded from Atlantic influence by the Serra do Marao, which is why its summers are hot and dry, and the Douro Superior is well over two hours from the coast.",
+      "fix": "Now reads: Bordeaux and Rias Baixas lie close to the Atlantic and are moderated by it, and even the Douro, shielded from most of that ocean air by the Marao range, begins less than a hundred kilometres from the coast.",
+      "source": "Douro climate and the Marao and Montemuro ranges; Regua about 70 to 75 km from Porto.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_geography_maps.py",
+      "stemStart": "Vines in one region are unearthed each spring",
+      "field": "exp",
+      "problem": "Says Ningxia is more than a thousand kilometres from the coast. Yinchuan is about 990 km from the nearest Bohai coast.",
+      "fix": "Now reads: about a thousand kilometres from the coast.",
+      "source": "Haversine distance from Yinchuan to Huanghua and Tianjin on the Bohai coast.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "Cuttings travelled with growers, soldiers and monks for",
+      "field": "opts",
+      "problem": "The key says a variety turns up under a different name in nearly every country that took it up. That overclaims: Chardonnay, Cabernet Sauvignon and Merlot carry one name almost everywhere.",
+      "fix": "Key now reads: One variety can carry a different name in each country that took it up (69 characters, close to the other options).",
+      "source": "Synonym registers such as VIVC: many old varieties carry many names, but by no means every variety does.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "Growers in Chinon call the grape Breton, and",
+      "field": "exp",
+      "problem": "Says Bouchet survives inside several estate names around Libourne. No source supports this, and no estate comes to mind.",
+      "fix": "Cut back to: Bouchet is the old Libournais word for it.",
+      "source": "Bouchet is documented as a Libournais synonym of Cabernet Franc; the estate-name claim cannot be verified.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "An Italian list offers Riesling Renano and Riesling",
+      "field": "exp",
+      "problem": "The house's banned word appears: 'was ordinary practice'.",
+      "fix": "Now reads: was once commonplace.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "A section of an English wine list is",
+      "field": "exp",
+      "problem": "Says Claret binds nobody to anything and so turns up as a fanciful name on bottles from other countries. That is out of date. The EU protects Claret as a traditional expression, and Australia had to stop using it from 1 September 2011 under the EU-Australia wine agreement (signed 2008, in force 2010).",
+      "fix": "Now reads: Europe now guards it as a traditional expression, and Australia, which once printed it on its own reds, gave it up under its wine agreement with Europe.",
+      "source": "EU-Australia Agreement on trade in wine (signed 1 December 2008, in force 1 September 2010); EU summary lists Amontillado, Claret and Auslese as terms Australia could not use from 1 September 2011 (WebSearch).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "Twenty countries stand side by side on one",
+      "field": "exp",
+      "problem": "The house's banned word appears: 'the practice spread'.",
+      "fix": "Now reads: the convention spread.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "A grape name fills the front of a",
+      "field": "opts",
+      "problem": "The key was the visibly longest option, 62 characters against a runner-up of 51, and the module's only decisive key standout.",
+      "fix": "Key cut to 'Nothing, since a variety name carries no origin'. The explanation still carries the reasoning.",
+      "source": "README length rule: the decisive gap is 10 characters; trim the key and let exp carry the qualification.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "A by-the-glass list is arranged by grape, and",
+      "field": "opts",
+      "problem": "The stem does not say the appellation permits only one grape, so the distractor 'It cannot honestly be listed by variety at all' is defensibly right for a multi-variety appellation, which the very next question in the block teaches.",
+      "fix": "Replaced that distractor with 'Under the grape most widely planted in the wine's country', which is clearly wrong and the same kind of option. The explanation's last sentence now covers the multi-grape case: the producer's technical sheet decides the heading.",
+      "source": "Same module, block 'Labelling by place', question 'Told that a place name implies a grape': several appellations permit many grapes.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "Vineyards in a European village were planted to",
+      "field": "stem",
+      "problem": "The house's banned word appears in the stem: 'whatever local practice required'.",
+      "fix": "Stem now reads: 'Vineyards in a European village were planted to whatever local custom required, and every buyer for miles knew what that was. What did that leave worth printing on the bottle?' The id moves. check-similarity is clean (max ratio 0.312, nothing flagged).",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "A Californian back label calls the wine a",
+      "field": "exp",
+      "problem": "Says such phrases carry no legal weight anywhere, which contradicts the explanation's own closing point that the region's name is protected. The claim that the phrase is far commoner on labels for other markets is unsupported.",
+      "fix": "Now says the phrase gives the wine no claim on the region's name. Closes with: on a label in Europe the wording runs into the region's protection, and American producers coined Meritage to name the same recipe without borrowing the region's name.",
+      "source": "EU PDO protection extends to 'style' and 'type' evocations; Meritage coined by American producers in 1988 for Bordeaux-variety blends (WebSearch).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "An estate sells its single varieties cheaply and",
+      "field": "exp",
+      "problem": "Says most of the classic wines of Europe are blends. Burgundy, Barolo, Barbaresco, Chablis, Sancerre, Mosel Riesling and Alsace are single-variety, so 'most' cannot be supported.",
+      "fix": "Now reads: Many of the classic wines of Europe are blends and most of those never say so on the label.",
+      "source": "General knowledge of the classic European appellations.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_grapes_labels.py",
+      "stemStart": "A southern French white is labelled Grenache Blanc",
+      "field": "exp",
+      "problem": "Says Grenache Blanc is fuller and lower in acid than its black counterpart. Comparing a white's body with a full red's is unsupported, and Grenache Noir is itself low in acid.",
+      "fix": "Now reads: This one gives full-bodied, fairly low-acid whites and is a mainstay of the white blends of the Mediterranean south.",
+      "source": "Standard variety profiles: Grenache Blanc is full-bodied, high in alcohol and low in acid.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "Records of which parcels ripened first and which",
+      "field": "opts",
+      "problem": "The key was a lone specific, 70 characters against 42, 30 and 26, so a student could pick it on length alone.",
+      "fix": "Key cut to 'They were literate and outlived any one owner'. The explanation already carries the corporate-body reasoning.",
+      "source": "README length rule; the build reported this question as a decisive key standout.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "Engineers from the Low Countries were hired in",
+      "field": "stem",
+      "problem": "The stem answered itself: 'Engineers from the Low Countries' points straight to the Dutch, and the only other Low Countries option was labelled as weavers. The distractors also carried job labels (weavers, merchants) that ruled them out for engineering work.",
+      "fix": "Stem reframed to: 'Channels cut through the marshes north of Bordeaux in the seventeenth century drained the ground and uncovered the gravel banks that now carry its best vineyards. Which people supplied the engineers?' Options are now The Dutch, The Venetians, The Genoese, The English, all one kind. The id moves. check-similarity is clean (max ratio 0.278, nothing flagged).",
+      "source": "Review standard: a stem must not be answerable from its own words. Medoc drainage by Dutch engineers after the edict of 1599.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "Popular history credits a Benedictine cellarer at Hautvillers",
+      "field": "opts",
+      "problem": "The key was visibly longest, 76 characters against a runner-up of 62.",
+      "fix": "Key cut to 'Blending many parcels, and pressing black grapes for white wine' (63). The explanation still explains assemblage and fast pressing.",
+      "source": "README length rule; the build reported this question as a decisive key standout.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "A paper read to the Royal Society in",
+      "field": "stem",
+      "problem": "The house's banned word appears in the stem: 'decades before the practice is recorded in France'.",
+      "fix": "Stem now reads: '...decades before the method is recorded in France. Who presented it?' The id moves. check-similarity is clean.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "A young widow took over her husband's Champagne",
+      "field": "opts",
+      "problem": "The key, a full triple name of 31 characters, stood 10 clear of the runner-up (21) as the only long option.",
+      "fix": "Key now reads 'Barbe-Nicole Clicquot' (21), the form she is commonly known by, level with 'Camille Olry-Roederer'.",
+      "source": "README length rule; the build reported this question as a key standout.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "Adding sugar to must before fermentation, so that",
+      "field": "exp",
+      "problem": "The house's banned word appears: 'put the practice in front of every grower'.",
+      "fix": "Now reads: put the method in front of every grower.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "A physician was commissioned by the French government",
+      "field": "exp",
+      "problem": "Says Guyot training became the default across France. The south relies on gobelet and cordon, and Champagne on Chablis and cordon training, so 'default' overclaims.",
+      "fix": "Now reads: became one of the commonest systems in France and far beyond it.",
+      "source": "French training systems by region; Champagne's permitted systems (Chablis, cordon, Guyot, Vallee de la Marne).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "France decorated a Texan nurseryman in 1888 for",
+      "field": "exp",
+      "problem": "The house's banned word appears: 'made the cure work in practice'.",
+      "fix": "Now reads: made the cure work in the vineyard.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "Production fell so far during the crisis that",
+      "field": "opts",
+      "problem": "The key was visibly longest, 62 characters against a runner-up of 46.",
+      "fix": "Key cut to 'It defined wine as fermented fresh grapes alone' (47). The fact is unchanged (loi Griffe, 14 August 1889).",
+      "source": "README length rule; the build reported this question as a decisive key standout.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_history_figures.py",
+      "stemStart": "An intergovernmental body founded in Paris in 1924",
+      "field": "exp",
+      "problem": "Says OIV methods are written into the law of many countries that are not even members. That is unsupported, and membership changes over time, so it is volatile.",
+      "fix": "Now reads: Its analytical methods and product definitions are written into European wine law and borrowed by national rules well beyond Europe.",
+      "source": "EU wine regulation adopts OIV methods of analysis and winemaking standards by reference; member states outside Europe (Australia, Argentina, Chile, South Africa) apply them.",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Vineyard notes record budbreak in September, flowering in",
+      "verdict": "kept",
+      "why": "A September budbreak only places the vineyard south of the equator; naming the hemisphere first and the countries as examples removes the false closed list."
+    },
+    {
+      "stemStart": "Before it ever enters France, the river that",
+      "verdict": "kept",
+      "why": "From Geneva the Rhone runs south-west through the Jura to Lyon and only turns south there; the new wording is accurate and harmless."
+    },
+    {
+      "stemStart": "From the Cantabrian mountains to a delta on",
+      "verdict": "kept",
+      "why": "Fontibre to the nearest coast at Comillas measures about 43 km, so barely forty overstated the closeness; less than fifty is true."
+    },
+    {
+      "stemStart": "A high plateau lying between two parallel mountain",
+      "verdict": "kept",
+      "why": "Continuous planting cannot be shown across the Ottoman centuries; since antiquity keeps the point without the overclaim and the sentence still reads cleanly."
+    },
+    {
+      "stemStart": "Benches above a long narrow lake in the",
+      "verdict": "kept",
+      "why": "Kelowna to St Catharines is about 3,130 km great circle, Oliver to Niagara about 3,140 km; more than three thousand is right and nearly four thousand was not."
+    },
+    {
+      "stemStart": "One lake in the northern Alps has vineyards",
+      "verdict": "kept",
+      "why": "Baden and Alsace ripen grapes at similar latitudes without a lake, so the only reason was an overclaim; a large part of why is defensible."
+    },
+    {
+      "stemStart": "Two Californian counties famous for wine lie side",
+      "verdict": "kept",
+      "why": "Carneros and the southern Napa Valley take bay air and fog, so the difference across the Mayacamas is one of degree; the fix says so."
+    },
+    {
+      "stemStart": "A single chain runs from the Atlantic to",
+      "verdict": "kept",
+      "why": "Somontano and Jurancon sit in the central foothills, so hardly any in the middle was wrong; the fix places vines on the flanks and ends and off the crest."
+    },
+    {
+      "stemStart": "Of Bordeaux, Tokaj, Rias Baixas and the Douro,",
+      "verdict": "kept",
+      "why": "The Douro is known for the Marao shelter, and the Douro Superior is far inland; the fix keeps Tokaj as the clear answer and Regua at about 75 km from the coast supports the hundred kilometre figure."
+    },
+    {
+      "stemStart": "Vines in one region are unearthed each spring",
+      "verdict": "kept",
+      "why": "Yinchuan to the Bohai coast measures about 986 km, so more than a thousand was marginally wrong; about a thousand is safe."
+    },
+    {
+      "stemStart": "Cuttings travelled with growers, soldiers and monks for",
+      "verdict": "kept",
+      "why": "Chardonnay and Merlot carry one name nearly everywhere, so nearly every country overclaimed; can carry keeps the key right and the build shows no length standout."
+    },
+    {
+      "stemStart": "Growers in Chinon call the grape Breton, and",
+      "verdict": "kept",
+      "why": "Bouchet is a documented Libournais synonym, but no estate name carrying it can be shown; cutting the unverifiable clause is right and the sentence stands."
+    },
+    {
+      "stemStart": "An Italian list offers Riesling Renano and Riesling",
+      "verdict": "kept",
+      "why": "Removes the banned word without altering the claim; once commonplace reads naturally."
+    },
+    {
+      "stemStart": "A section of an English wine list is",
+      "verdict": "kept",
+      "why": "Search confirms Claret is a protected traditional term under the Bordeaux PDO, and Australia gave it up under the 2008 agreement; binds nobody to anything was out of date. The fix claims nothing about grandfathered American labels, so it stays true."
+    },
+    {
+      "stemStart": "Twenty countries stand side by side on one",
+      "verdict": "kept",
+      "why": "Banned word removed; convention carries the same meaning."
+    },
+    {
+      "stemStart": "A grape name fills the front of a",
+      "verdict": "kept",
+      "why": "Key trimmed to 47 against 50, 37 and 51, so it no longer stands out, and the reasoning is unchanged."
+    },
+    {
+      "stemStart": "A by-the-glass list is arranged by grape, and",
+      "verdict": "amended",
+      "why": "The distractor swap is right, since cannot honestly be listed was defensible for a multi-grape appellation, but the reviewer dropped the sentence that justified the key (check the rulebook behind the name, not the label). Amended to keep that point and still cover the several-grape case: What the heading claims is checked against the rulebook behind the name rather than the label alone, and where that rulebook allows several grapes the producer's own technical sheet decides it."
+    },
+    {
+      "stemStart": "Vineyards in a European village were planted to",
+      "verdict": "kept",
+      "why": "The banned word sat in the stem, so only a stem change could serve; custom matches the exp's opening and check-similarity is clean (max 0.312)."
+    },
+    {
+      "stemStart": "A Californian back label calls the wine a",
+      "verdict": "amended",
+      "why": "The fix rightly removes the contradiction between no legal weight anywhere and the protected name, and Meritage (1988) is accurate. The last clause ended without borrowing the region's at all, an elliptical possessive that reads like a slip after three uses of the region's name; amended to without borrowing that name at all."
+    },
+    {
+      "stemStart": "An estate sells its single varieties cheaply and",
+      "verdict": "kept",
+      "why": "Burgundy, Barolo, Chablis, Sancerre and Mosel Riesling are single-variety, so most was unsupported; many is right."
+    },
+    {
+      "stemStart": "A southern French white is labelled Grenache Blanc",
+      "verdict": "kept",
+      "why": "Comparing a white's body with a red's was unsound and Grenache Noir is itself low in acid; the new wording states the white's own profile correctly."
+    },
+    {
+      "stemStart": "Records of which parcels ripened first and which",
+      "verdict": "kept",
+      "why": "Key now 45 against 42, 30 and 26, no standout; the exp already explains that a monastery does not divide its land among heirs, so the corporate-body sense survives."
+    },
+    {
+      "stemStart": "Engineers from the Low Countries were hired in",
+      "verdict": "kept",
+      "why": "The old stem named the Low Countries and job labels ruled out the distractors, so the stem had to change; the new options are one kind, the English and Venetians are plausible, Dutch drainage of the Medoc is sound and check-similarity is clean (max 0.278)."
+    },
+    {
+      "stemStart": "Popular history credits a Benedictine cellarer at Hautvillers",
+      "verdict": "kept",
+      "why": "Key now 63 against 62, no standout; the fact is unchanged and the exp still covers assemblage and fast pressing."
+    },
+    {
+      "stemStart": "A paper read to the Royal Society in",
+      "verdict": "kept",
+      "why": "The banned word was in the stem, so the stem change was needed; method is accurate and the answer is unchanged."
+    },
+    {
+      "stemStart": "A young widow took over her husband's Champagne",
+      "verdict": "kept",
+      "why": "Barbe-Nicole Clicquot is her married name and a standard form; level with Olry-Roederer at 21 characters, no standout."
+    },
+    {
+      "stemStart": "Adding sugar to must before fermentation, so that",
+      "verdict": "amended",
+      "why": "Removing the banned word was right, but method now sat one sentence before careful cellar method; amended to put the technique in front of every grower in France to avoid the echo."
+    },
+    {
+      "stemStart": "A physician was commissioned by the French government",
+      "verdict": "kept",
+      "why": "Gobelet and cordon dominate the south and Champagne relies on Chablis and cordon training, so default overclaimed; one of the commonest systems is right."
+    },
+    {
+      "stemStart": "France decorated a Texan nurseryman in 1888 for",
+      "verdict": "kept",
+      "why": "Banned word removed; in the vineyard fits the soil-matching point exactly."
+    },
+    {
+      "stemStart": "Production fell so far during the crisis that",
+      "verdict": "kept",
+      "why": "Key now 47 against 46; the loi Griffe defined wine as the product of fermenting fresh grapes, and fermented fresh grapes alone keeps that sense."
+    },
+    {
+      "stemStart": "An intergovernmental body founded in Paris in 1924",
+      "verdict": "kept",
+      "why": "Many countries that are not even members was unsupported and tied to shifting membership; EU law does adopt OIV methods by reference, and the new wording is stable."
+    }
+  ]
+}

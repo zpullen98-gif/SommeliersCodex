@@ -1,0 +1,1460 @@
+{
+ "edition": "the review edition, 11 October 2026",
+ "integrator": "the rewrite chain (Regionale and Village banks, Regionale chapters)",
+ "readFirst": [
+  "CLAUDE.md",
+  "rewrite/README.md (whole)",
+  "15 regionale-*.json, 9 village-*.json, 2 regionale-chapters-*.json logs, every amended verdict checked against its module"
+ ],
+ "banks": {
+  "regionale": {
+   "file": "js/data-intro.js (INTRO_QUESTIONS, shipped by rewrite/ship.py)",
+   "modules": 31,
+   "questions": 1778,
+   "questionsEditedSinceHEAD": 363,
+   "fieldsEdited": {
+    "exp": 256,
+    "opts": 159,
+    "q": 37,
+    "a": 1
+   },
+   "stemsChanged": 37,
+   "stemsChangedIds": [
+    {
+     "old": "i-p59b7mzy",
+     "new": "i-us7ohd88"
+    },
+    {
+     "old": "i-nzgahjb4",
+     "new": "i-alfnbukb"
+    },
+    {
+     "old": "i-hgo938yq",
+     "new": "i-yj0eq59m"
+    },
+    {
+     "old": "i-0lr26p46",
+     "new": "i-ozgmi8m6"
+    },
+    {
+     "old": "i-5k10uv5o",
+     "new": "i-rt52ovdu"
+    },
+    {
+     "old": "i-z5ejgjdl",
+     "new": "i-owqbwiuq"
+    },
+    {
+     "old": "i-aky269gf",
+     "new": "i-43fynnnb"
+    },
+    {
+     "old": "i-3j6rfbvw",
+     "new": "i-4eo5m2u6"
+    },
+    {
+     "old": "i-pobni5gi",
+     "new": "i-bi2eqb47"
+    },
+    {
+     "old": "i-r1vwiw6w",
+     "new": "i-1aya0ec1"
+    },
+    {
+     "old": "i-l4vhbbdo",
+     "new": "i-pdrbw134"
+    },
+    {
+     "old": "i-zvjayoof",
+     "new": "i-wbdovjdg"
+    },
+    {
+     "old": "i-3s9etfs4",
+     "new": "i-2hzipf62"
+    },
+    {
+     "old": "i-73dtjtza",
+     "new": "i-2gr7cvw3"
+    },
+    {
+     "old": "i-iafv8wtx",
+     "new": "i-g7repqc3"
+    },
+    {
+     "old": "i-5lindigg",
+     "new": "i-t0zr7pwb"
+    },
+    {
+     "old": "i-7vl84191",
+     "new": "i-mw88gbqt"
+    },
+    {
+     "old": "i-mwp5qzbt",
+     "new": "i-ua2bzjrx"
+    },
+    {
+     "old": "i-wv3rts71",
+     "new": "i-5tnwrvpw"
+    },
+    {
+     "old": "i-ojr8uz8e",
+     "new": "i-b72qf5n1"
+    },
+    {
+     "old": "i-r7oiahek",
+     "new": "i-rpjplmmc"
+    },
+    {
+     "old": "i-psu8g0ya",
+     "new": "i-tl2y299x"
+    },
+    {
+     "old": "i-5u8wquhp",
+     "new": "i-dd77fiqp"
+    },
+    {
+     "old": "i-5l51h256",
+     "new": "i-ibk1g4b6"
+    },
+    {
+     "old": "i-q4lvyony",
+     "new": "i-y5iqq0ws"
+    },
+    {
+     "old": "i-xezz75wk",
+     "new": "i-xu5rcg8m"
+    },
+    {
+     "old": "i-lfjnphqw",
+     "new": "i-jdo79slb"
+    },
+    {
+     "old": "i-5okaggzr",
+     "new": "i-qqmopi1g"
+    },
+    {
+     "old": "i-6qh3iwzm",
+     "new": "i-4jkw2zst"
+    },
+    {
+     "old": "i-9hj9ch3h",
+     "new": "i-0xd19gwz"
+    },
+    {
+     "old": "i-4upsxjmx",
+     "new": "i-7euv778x"
+    },
+    {
+     "old": "i-qs3r2oaa",
+     "new": "i-0r5rvkbt"
+    },
+    {
+     "old": "i-zf5qyl8l",
+     "new": "i-z3zwz2kk"
+    },
+    {
+     "old": "i-7cril28x",
+     "new": "i-19nx9klq"
+    },
+    {
+     "old": "i-53jv5xfh",
+     "new": "i-q3z55w2j"
+    },
+    {
+     "old": "i-rvzcjdmx",
+     "new": "i-evp2z1h8"
+    },
+    {
+     "old": "i-dqeofhjg",
+     "new": "i-2li4a6sj"
+    }
+   ],
+   "reframedForSimilarity": 0,
+   "reviewLog": {
+    "files": 15,
+    "findings": 298,
+    "stemChangedInLog": 33,
+    "verdicts": {
+     "kept": 268,
+     "amended": 33
+    }
+   }
+  },
+  "village": {
+   "file": "js/data-questions.js (QUESTIONS, shipped by rewrite/ship.py)",
+   "modules": 36,
+   "questions": 1283,
+   "questionsEditedSinceHEAD": 288,
+   "fieldsEdited": {
+    "exp": 210,
+    "opts": 58,
+    "q": 15,
+    "accept": 61,
+    "ans": 25,
+    "ex": 2
+   },
+   "stemsChanged": 15,
+   "stemsChangedIds": [
+    {
+     "old": "c-7438gxxk",
+     "new": "c-j6yfhx4o"
+    },
+    {
+     "old": "c-b42arsxv",
+     "new": "c-i4swdjlm"
+    },
+    {
+     "old": "c-323kebz3",
+     "new": "c-q5yz7fse"
+    },
+    {
+     "old": "c-mla6psej",
+     "new": "c-vujwy6tz"
+    },
+    {
+     "old": "c-ijf6g9l0",
+     "new": "c-il084y1r"
+    },
+    {
+     "old": "c-j6p46gg1",
+     "new": "c-j1q6661e"
+    },
+    {
+     "old": "c-dfm7v11n",
+     "new": "c-syz3aneb"
+    },
+    {
+     "old": "c-6lchw3zi",
+     "new": "c-qac50yy1"
+    },
+    {
+     "old": "c-jf1kaqyi",
+     "new": "c-a297vhms"
+    },
+    {
+     "old": "c-kjm5utxp",
+     "new": "c-poc6ykgq"
+    },
+    {
+     "old": "c-byck0b8m",
+     "new": "c-v1acfb3h"
+    },
+    {
+     "old": "c-hl5fhle1",
+     "new": "c-ud8xt1sq"
+    },
+    {
+     "old": "c-nyvmy41t",
+     "new": "c-jm3u8fk6"
+    },
+    {
+     "old": "c-xba125m0",
+     "new": "c-971lj44y"
+    },
+    {
+     "old": "c-ss6ahhuh",
+     "new": "c-etal8e49"
+    }
+   ],
+   "reframedForSimilarity": 0,
+   "reviewLog": {
+    "files": 9,
+    "findings": 233,
+    "stemChangedInLog": 14,
+    "verdicts": {
+     "amended": 25,
+     "kept": 211
+    }
+   }
+  },
+  "similarityNote": "No stem in this pass was reframed because check-similarity flagged it: every stem change was for a fact, an echo, a cross-category twin or the banned word, and each was checked clean afterwards. The final --all run flags nothing new in any of the 67 categories."
+ },
+ "integrationEdits": {
+  "britishForms (lead's note 6)": {
+   "rewriteModules": "'percent' to 'per cent' and 'toward' to 'towards' in 115 exp, 20 ans and 144 option strings; stems and accept entries untouched; 137 'per cent' (or old displayed) forms added to accept lists where match_sa would not already grade them, so nothing accepted at HEAD is revoked",
+   "chapters": "21 replacements in the Regionale chapter modules (beyond_wine, north_america, southern), rebuilt into js/data-primers-intro.js; the Village, Premier Cru and Grand Cru chapter files hold neither word",
+   "otherData": "'toward' to 'towards' in js/data-grapes-plus.js (1), js/reference.js (1) and the Introductory reference rows of js/data-intro.js (3); js/data-floor.js, js/data-pairing.js and js/data-service-ref.js hold neither word",
+   "leftForTheDirectIntegrator": "the two upper banks (js/data-advanced.js 35 'percent' and 4 'toward', js/data-master.js 34 and 7): their ans text seeds check-paid's baselined probe keys, so the direct integrator, whose gate check-paid is, should make that change with its re-key rule in hand",
+   "answersRestatedToClearCrossCategory": [
+    "r2_spirits_cocktails American blended whiskey floor: 'At least twenty per cent'",
+    "r2_southern_france Bandol Mourvedre minimum: 'At least fifty per cent'",
+    "r2_new_zealand Gimblett Gravels share: 'At least 95 per cent'",
+    "r2_sake koji rice floor: 'At least fifteen per cent'",
+    "r2_spain Rueda Verdejo: 'At least eighty-five per cent Verdejo'",
+    "r2_spain Rias Baixas Albarino: 'All of it, one hundred per cent Albarino'"
+   ]
+  },
+  "ausbruch (lead's note 2)": [
+   "r1_dessert_sweet i-wbdovjdg (was i-zvjayoof) exp: the 2016 change, the name reserved for Rust, and from the 2020 vintage Ruster Ausbruch DAC at Trockenbeerenauslese weight",
+   "r1_austria: the Ruster method exp and the Kabinett exp no longer state the old rung as current",
+   "js/data-intro.js Austria reference rows (the Pradikatswein ladder, the Ausbruch ageing row, the Ausbruch trap)",
+   "js/data-advanced.js a-myht4v5h stem now 'Before the 2016 reform...' (id frozen, nothing orphaned) and exp; a-wll0dylk exp ladder",
+   "js/data-master.js m-k4jzv9l0 ans, accept and exp (the old 'ausbruch between ba and tba' accept entry replaced by current-law forms)",
+   "js/data-primers.js Austria and the German and Austrian tiers fact; js/data-primers-advanced.js and js/data-primers-master.js sweet ladders",
+   "js/data-producers.js two traps that stated the old rung (not named in the note, the same error)",
+   "the region fragments, r2_austria and the Regionale cellar and Iberia chapters already stated the current law and were left"
+  ],
+  "riojaGranReserva (lead's note 3)": {
+   "settled": "red Rioja Gran Reserva: at least 60 months, at least 24 in cask and at least 24 in bottle (the remainder either); Reserva 36 months with 12 in cask and 6 in bottle",
+   "how": "one WebSearch (Spanish sources disagreed: 24 against 36 months in bottle, none the pliego itself); the Consejo's own site is blocked by this machine's proxy. Settled on the current rule as the region article (sourced to the Consejo Regulador), the Village chapter and the Premier Cru bank (a-r87zd1yx) already state it; 'two in cask and three in bottle' is the older teaching",
+   "changed": [
+    "r1_spain stem 'two more in bottle' (id i-xezz75wk to i-xu5rcg8m)",
+    "rewrite/primers/spain.py: 'at least two in cask and two in bottle'",
+    ".scripts/regions/fragments/spain.1.json: two unverified 'since 2019' dates softened to 'under the current rules' (the bottle figures already agreed), then build-regions and check-regions"
+   ],
+   "alreadyAgreed": [
+    "js/data-primers.js Spain chapter",
+    "js/data-advanced.js a-r87zd1yx",
+    "the region article's ageing terms and Rioja Gran Reserva note"
+   ]
+  },
+  "checkPrimerSimilarity (lead's note 4)": "rewrite/check-primer-similarity.py reads js/data-primers-intro.js out of git at 8d535c8^ by default, --ref <commit> or OOT_PRIMER_REF=<commit> to change it, and refuses a ref whose file is the rewrite (ORIGINAL WORK header) instead of reporting 1.000; thresholds unchanged; documented in rewrite/README.md (tooling table and the paragraph after 'The imported bank no longer ships')",
+  "checkPaidBaseline (lead's note 5)": "re-keyed only m-9ec17myd (rebeche negation_probe) and m-1eyzh7av (contribution margin negation_probe), each the same probe on the same question with the stem prefix moved by a removed em dash; m-3pcqoger's flag changed its probe text (the banned word left the accept entry), so it was not re-keyed but closed in js/data-master.js with ex=True and an exact list of natural phrasings",
+  "houseRuleSweep (lead's note 7)": [
+   "every rewrite module docstring: em dashes gone, 'Rank I' and 'Rank II' named Regionale and Village, the banned word gone (RANK identifiers untouched); r1_rhone's syllabus block renamed 'Soils, mistral and vineyard work'",
+   "shipped bank strings from the modules: no em or en dash, dash entity, spaced double hyphen, banned word, numbered level or non-ASCII prose (CAT keys excepted)",
+   "js/data-intro.js reference data after INTRO_QUESTIONS: 218 em dashes and 16 en dashes rewritten (colon, comma, semicolon or parentheses by context; ranges as 'a to b'), one banned word, and the INTRO_DESS comment; its data glyphs (the region star codex7 renders as *, the arrows, the approximately and comparison signs, and the unrendered flag and ic emoji) are left",
+   "js/codex11.js: the fifteen em-dash lines take the site wing copy's dash-free wording byte for byte; beyond the wing, 'Endless Practice' became 'Endless' (codex25 already renames it at runtime), the fallback noun 'Practice' became 'Study' and its comment likewise",
+   "js/codex6.js: TASTING_GRID dash lines take the wing's wording, the age range reads '1 to 3 years, 3 to 5', 'Practice standard' became 'Rehearsal standard', the arrows leave the Next glass and Tally buttons, the primer Drill button and the non-fruit line; the Study Primers tile's em dash is a colon; SERVICE (the direct integrator's exam lines) untouched; the unrendered SERVICE ic glyphs, the comment banners and the service checklist tick are left",
+   "js/data-primers.js header comment: 'rank 2' (inside the owner's quoted words, now reported rather than quoted) and 'Rank I' named",
+   "accept strings 'misleading practices law' and 'unfair commercial practices' (r2_classifications_labels) are never shown and are left as they are"
+  ],
+  "regressionRepair": "r2_italy_north Petite Arvine: the review's ex=True refused 'it is petite arvine' and two more natural forms; the plain entry is now '~petite arvine' (Grosse Arvine, Cornalin and 'not petite arvine' still fail)"
+ },
+ "chaptersRebuilt": {
+  "file": "js/data-primers-intro.js",
+  "built": 39,
+  "changedSinceHEAD": 38,
+  "chapters": [
+   {
+    "group": "Foundations",
+    "id": "vit",
+    "title": "Grape Growing: Viticulture"
+   },
+   {
+    "group": "Foundations",
+    "id": "vin",
+    "title": "Winemaking: Vinification"
+   },
+   {
+    "group": "France",
+    "id": "bordeaux",
+    "title": "Bordeaux"
+   },
+   {
+    "group": "France",
+    "id": "burgundy",
+    "title": "Burgundy"
+   },
+   {
+    "group": "France",
+    "id": "loire",
+    "title": "Loire Valley"
+   },
+   {
+    "group": "France",
+    "id": "rhone",
+    "title": "Rhône Valley"
+   },
+   {
+    "group": "France",
+    "id": "champagne",
+    "title": "Champagne"
+   },
+   {
+    "group": "France",
+    "id": "alsace",
+    "title": "Alsace"
+   },
+   {
+    "group": "Italy",
+    "id": "piedmont",
+    "title": "Piedmont"
+   },
+   {
+    "group": "Italy",
+    "id": "lombardy",
+    "title": "Lombardy & Emilia-Romagna"
+   },
+   {
+    "group": "Italy",
+    "id": "northeast",
+    "title": "Trentino-Alto Adige / Friuli / Veneto"
+   },
+   {
+    "group": "Italy",
+    "id": "tuscany",
+    "title": "Tuscany"
+   },
+   {
+    "group": "Italy",
+    "id": "southitaly",
+    "title": "Central & Southern Italy"
+   },
+   {
+    "group": "Spain",
+    "id": "galicia",
+    "title": "Galicia"
+   },
+   {
+    "group": "Spain",
+    "id": "rioja",
+    "title": "La Rioja"
+   },
+   {
+    "group": "Spain",
+    "id": "castilla",
+    "title": "Castilla y León"
+   },
+   {
+    "group": "Spain",
+    "id": "catalonia",
+    "title": "Catalonia"
+   },
+   {
+    "group": "Iberia & Central Europe",
+    "id": "portugal",
+    "title": "Portugal"
+   },
+   {
+    "group": "Iberia & Central Europe",
+    "id": "germany",
+    "title": "Germany"
+   },
+   {
+    "group": "Iberia & Central Europe",
+    "id": "austria",
+    "title": "Austria"
+   },
+   {
+    "group": "Iberia & Central Europe",
+    "id": "hungary",
+    "title": "Hungary"
+   },
+   {
+    "group": "North America",
+    "id": "calnorth",
+    "title": "California: North Coast"
+   },
+   {
+    "group": "North America",
+    "id": "calcentral",
+    "title": "California: Central Coast"
+   },
+   {
+    "group": "North America",
+    "id": "newyork",
+    "title": "New York State"
+   },
+   {
+    "group": "North America",
+    "id": "pnw",
+    "title": "Pacific Northwest"
+   },
+   {
+    "group": "North America",
+    "id": "canada",
+    "title": "Canada"
+   },
+   {
+    "group": "North America",
+    "id": "mexico",
+    "title": "México"
+   },
+   {
+    "group": "South America & Southern Hemisphere",
+    "id": "chile",
+    "title": "Chile"
+   },
+   {
+    "group": "South America & Southern Hemisphere",
+    "id": "argentina",
+    "title": "Argentina"
+   },
+   {
+    "group": "South America & Southern Hemisphere",
+    "id": "safrica",
+    "title": "South Africa"
+   },
+   {
+    "group": "South America & Southern Hemisphere",
+    "id": "nz",
+    "title": "New Zealand"
+   },
+   {
+    "group": "South America & Southern Hemisphere",
+    "id": "australia",
+    "title": "Australia"
+   },
+   {
+    "group": "Across the Cellar",
+    "id": "sparkling",
+    "title": "World Sparkling Wines"
+   },
+   {
+    "group": "Across the Cellar",
+    "id": "sweet",
+    "title": "Sweet Wines"
+   },
+   {
+    "group": "Across the Cellar",
+    "id": "fortified",
+    "title": "Fortified Wines"
+   },
+   {
+    "group": "Beyond Wine",
+    "id": "beer",
+    "title": "Beer"
+   },
+   {
+    "group": "Beyond Wine",
+    "id": "sake",
+    "title": "Sake"
+   },
+   {
+    "group": "Beyond Wine",
+    "id": "spirits",
+    "title": "Spirits & Liqueurs"
+   }
+  ],
+  "reviewLog": {
+   "files": 2,
+   "findings": 59,
+   "stemChangedInLog": 0,
+   "verdicts": {}
+  }
+ },
+ "movedIds": {
+  "count": 52,
+  "note": "Every Regionale or Village question whose stem changed starts fresh: its id is minted from the stem. The upper banks' ids are frozen literals and moved nowhere.",
+  "rows": [
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_australia",
+    "category": "Australia",
+    "old": "i-p59b7mzy",
+    "new": "i-us7ohd88",
+    "newStemStarts": "Blending Shiraz from three separate regions before bottling",
+    "log": "regionale-9.json",
+    "reason": "The stem used the word practice, which the house rules forbid everywhere. One distractor, 'A legal requirement that applies above a certain alcohol level', is not something blending can buy, so it did not answer the stem and was a different kind of option. The exp also said a multi-region label must list the regions with their percentages. The rule asks for the regions in descending order of share, not for printed..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_beer",
+    "category": "Beer",
+    "old": "i-nzgahjb4",
+    "new": "i-alfnbukb",
+    "newStemStarts": "Brewers at Burton-on-Trent drew on a well water",
+    "log": "regionale-10.json",
+    "reason": "Stem asked 'What is the practice of dosing water elsewhere...', breaking the house rule against the word practice. FIX: Stem reframed as an applied task: 'A brewer elsewhere adds gypsum to copy that water. What is the treatment called?' Options, key and exp unchanged; check-similarity clean (max ratio 0.359, run 3)."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_beer",
+    "category": "Beer",
+    "old": "i-hgo938yq",
+    "new": "i-yj0eq59m",
+    "newStemStarts": "A fine sediment sits in the bottom of",
+    "log": "regionale-10.json",
+    "reason": "Stem ended 'Which practice produced that?', breaking the house rule against the word practice. FIX: Ending now 'Which method produced that?'; options, key and exp unchanged; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_bordeaux",
+    "category": "Bordeaux",
+    "old": "i-0lr26p46",
+    "new": "i-ozgmi8m6",
+    "newStemStarts": "Pickers in Sauternes go through the same vineyard",
+    "log": "regionale-2.json",
+    "reason": "The stem used the one word the house rules ban outright (the noun for a habitual method), and 'through' twice. FIX: Stem now reads 'Pickers in Sauternes go through the same vineyard several times over one harvest. What are those passes called?' Options and exp unchanged. Id moves i-0lr26p46 to i-ozgmi8m6; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_burgundy",
+    "category": "Burgundy",
+    "old": "i-5k10uv5o",
+    "new": "i-rt52ovdu",
+    "newStemStarts": "La Tache is a monopole. Which domaine holds",
+    "log": "regionale-3.json",
+    "reason": "The stem named Romanee-Conti and the key was Domaine de la Romanee-Conti, so the answer was printed in the question and nothing was tested. FIX: Stem reframed to 'La Tache is a monopole. Which domaine holds the whole of it?' Domaine Leflaive was replaced by Domaine du Comte Liger-Belair, holder of the La Romanee monopole, a real trap. The exp now says the domaine holds two Grands Crus outright. Id moves i-5k10uv5o..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_burgundy",
+    "category": "Burgundy",
+    "old": "i-z5ejgjdl",
+    "new": "i-owqbwiuq",
+    "newStemStarts": "Red is the rule among the Grands Crus",
+    "log": "regionale-3.json",
+    "reason": "The village name in the stem contains the key, Musigny, and two of the three distractors (Clos de Vougeot, Echezeaux) were ruled out by the stem's 'of Chambolle-Musigny', so the echo settled a two-way choice. FIX: Stem reframed to 'Red is the rule among the Grands Crus of the Cote de Nuits. Which one may also be made white?' Same options, which are now all real competitors. The exp names Chambolle. Id moves i-z5ej..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_champagne",
+    "category": "Champagne",
+    "old": "i-aky269gf",
+    "new": "i-43fynnnb",
+    "newStemStarts": "A grower whose vines are chiefly Meunier most",
+    "log": "regionale-5.json",
+    "reason": "The stem's word 'valley' points straight at the only 'Vallee' option, so it can be answered from its own words. It also repeated the frost and late-budding task of the Meunier variety question in the same block. FIX: Stem reframed to an applied task with no clue: 'A grower whose vineyard is mostly Meunier most likely farms in which district?' Options unchanged. The exp now carries the frost reason itself, since it..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_champagne",
+    "category": "Champagne",
+    "old": "i-3j6rfbvw",
+    "new": "i-4eo5m2u6",
+    "newStemStarts": "Ranged around a low wooded plateau, which district",
+    "log": "regionale-5.json",
+    "reason": "'South of Reims' names the key: only one option contains 'Reims'. 'Dominated by' also overstates things, since Pinot Noir leads the Montagne de Reims by plurality, at roughly two fifths of plantings. FIX: Stem now reads 'Ranged around a low wooded plateau, which district is best known for its Pinot Noir?' The Cote des Bar, which grows an even higher share of Pinot Noir, is not among the options, so the key stays u..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_champagne",
+    "category": "Champagne",
+    "old": "i-pobni5gi",
+    "new": "i-bi2eqb47",
+    "newStemStarts": "The first 2,050 litres to run from a",
+    "log": "regionale-5.json",
+    "reason": "'From that press' points back to the previous question's 4,000-kilogram marc. The app shuffles the question pool, so the stem reaches a student with nothing for 'that' to refer to. FIX: Stem now reads 'The first 2,050 litres to run from a 4,000-kilogram press load carry which name?'"
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_champagne",
+    "category": "Champagne",
+    "old": "i-r1vwiw6w",
+    "new": "i-1aya0ec1",
+    "newStemStarts": "Villages rated between ninety and ninety-nine on the",
+    "log": "regionale-5.json",
+    "reason": "'On that scale' points back to the previous question's echelle des crus, which a shuffled pool never guarantees the student has just seen. FIX: Stem now reads 'Villages rated between ninety and ninety-nine on the echelle des crus earned which designation?'"
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_champagne",
+    "category": "Champagne",
+    "old": "i-l4vhbbdo",
+    "new": "i-pdrbw134",
+    "newStemStarts": "A guest wants to know whether a bottle",
+    "log": "regionale-5.json",
+    "reason": "'Where should you look to find that producer code?' has no referent at all once the pool is shuffled. FIX: Stem reframed to an applied task: 'A guest wants to know whether a bottle comes from a grower or a house. Where on the bottle do you look?' Options and key unchanged. The exp now opens 'The two-letter producer code is required by law...' so it names what 'it' was."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_dessert_sweet",
+    "category": "Dessert & Sweet Wines",
+    "old": "i-zvjayoof",
+    "new": "i-wbdovjdg",
+    "newStemStarts": "Between Beerenauslese and Trockenbeerenauslese, Austria's ladder long held",
+    "log": null,
+    "reason": "Ausbruch: the refuter put the stem in the past tense (regionale-8, amended), since BGBl. I Nr. 47/2016 took the 27 KMW rung off the ladder and a present-tense stem could not be made true by any exp; this integration also brought the exp to the 2020 Ruster Ausbruch DAC rule (lead's note 2)."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_dessert_sweet",
+    "category": "Dessert & Sweet Wines",
+    "old": "i-3s9etfs4",
+    "new": "i-2hzipf62",
+    "newStemStarts": "Amarone, Recioto della Valpolicella and Valtellina's Sforzato all",
+    "log": "regionale-8.json",
+    "reason": "The stem used the banned word ('What is that Italian practice called?'). It was also the same task, with the same answer and three of the same options, as r1_sparkling_fortified_sweet's 'Bunches are laid on racks in an airy loft for months ... Which Italian practice is that?', and its distractor Saignee was the one French term in a question asking for an Italian one. FIX: Stem reframed to a different task: 'Amaron..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_germany",
+    "category": "Germany",
+    "old": "i-73dtjtza",
+    "new": "i-2gr7cvw3",
+    "newStemStarts": "A German list carries both a Rulander and",
+    "log": "regionale-6.json",
+    "reason": "The stem used the banned word practice (old stem: 'Grauburgunder and Rulander appear on German labels for one and the same grape. What separates the two names in practice?'). FIX: Reframed the stem as a wine-list scene: 'A German list carries both a Rulander and a Grauburgunder, made from one and the same grape. What does the choice of name usually signal?' Options, key and exp unchanged. check-similarity clean (0..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_grapes_labels",
+    "category": "Grapes & Labels",
+    "old": "i-iafv8wtx",
+    "new": "i-g7repqc3",
+    "newStemStarts": "Vineyards in a European village were planted to",
+    "log": "regionale-13.json",
+    "reason": "The house's banned word appears in the stem: 'whatever local practice required'. FIX: Stem now reads: 'Vineyards in a European village were planted to whatever local custom required, and every buyer for miles knew what that was. What did that leave worth printing on the bottle?' The id moves. check-similarity is clean (max ratio 0.312, nothing flagged)."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_history_figures",
+    "category": "History & Figures",
+    "old": "i-5lindigg",
+    "new": "i-t0zr7pwb",
+    "newStemStarts": "Channels cut through the marshes north of Bordeaux",
+    "log": "regionale-13.json",
+    "reason": "The stem answered itself: 'Engineers from the Low Countries' points straight to the Dutch, and the only other Low Countries option was labelled as weavers. The distractors also carried job labels (weavers, merchants) that ruled them out for engineering work. FIX: Stem reframed to: 'Channels cut through the marshes north of Bordeaux in the seventeenth century drained the ground and uncovered the gravel banks that n..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_history_figures",
+    "category": "History & Figures",
+    "old": "i-7vl84191",
+    "new": "i-mw88gbqt",
+    "newStemStarts": "A paper read to the Royal Society in",
+    "log": "regionale-13.json",
+    "reason": "The house's banned word appears in the stem: 'decades before the practice is recorded in France'. FIX: Stem now reads: '...decades before the method is recorded in France. Who presented it?' The id moves. check-similarity is clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_italy",
+    "category": "Italy",
+    "old": "i-mwp5qzbt",
+    "new": "i-ua2bzjrx",
+    "newStemStarts": "Sicily's first DOCG blends Nero d'Avola with a",
+    "log": null,
+    "reason": "Sicily: 'only DOCG' was a volatile claim in the stem (Etna's DOCG pending), so the stem now says 'first DOCG' (regionale-3, amended)."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_producers_icons",
+    "category": "Producers & Icons",
+    "old": "i-wv3rts71",
+    "new": "i-5tnwrvpw",
+    "newStemStarts": "Base wines are fermented in small oak casks",
+    "log": "regionale-14.json",
+    "reason": "Stem uses the banned word 'practice'. FIX: 'a practice this house kept' became 'a habit this house kept'. Id moves from i-wv3rts71 to i-5tnwrvpw; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_producers_icons",
+    "category": "Producers & Icons",
+    "old": "i-ojr8uz8e",
+    "new": "i-b72qf5n1",
+    "newStemStarts": "Don Melchor, a Cabernet first made in 1987",
+    "log": "regionale-14.json",
+    "reason": "Stem calls Don Melchor the longest-running of Chile's icon Cabernets, and exp says the icon category began with it; Errazuriz, one of the distractors, has made its Cabernet-based Don Maximiano Founder's Reserve since the 1983 vintage. The exp also stated the current team arrangement, a volatile fact. FIX: Stem now 'Don Melchor, a Cabernet first bottled in 1987 from vineyards at Puente Alto in the upper Maipo, belo..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_rhone",
+    "category": "Rhône",
+    "old": "i-r7oiahek",
+    "new": "i-rpjplmmc",
+    "newStemStarts": "Cote-Rotie growers co-ferment only a little Viognier, though",
+    "log": "regionale-7.json",
+    "reason": "The stem carried the banned word ('only a little Viognier in practice'). FIX: Dropped 'in practice': 'Cote-Rotie growers co-ferment only a little Viognier, though the rules permit a good deal more. What is the legal ceiling?' Options, key (twenty percent) and exp unchanged. Id moves i-r7oiahek to i-rpjplmmc; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_rhone",
+    "category": "Rhône",
+    "old": "i-psu8g0ya",
+    "new": "i-tl2y299x",
+    "newStemStarts": "Fermenting Syrah with a proportion of its stems",
+    "log": "regionale-7.json",
+    "reason": "The stem carried the banned word ('is common practice in the north'). FIX: Now: '...left in the vat is common in the north. What does whole-bunch inclusion usually contribute?' Options, key and exp unchanged. Id moves i-psu8g0ya to i-tl2y299x; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_rhone",
+    "category": "Rhône",
+    "old": "i-5u8wquhp",
+    "new": "i-dd77fiqp",
+    "newStemStarts": "A red from the papal village that falls",
+    "log": "regionale-7.json",
+    "reason": "The stem stated that Chateauneuf's 12.5 percent minimum is 'the highest of any French appellation'. That is false today: Sauternes and Barsac require 13 percent natural potential alcohol, and the vins doux naturels require far more. The exp also used the banned word ('In practice'). FIX: Stem now: 'A red from the papal village that falls short of a set natural alcohol may not carry the name. What is that minimum?'..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_sake_spirits",
+    "category": "Sake & Spirits",
+    "old": "i-5l51h256",
+    "new": "i-ibk1g4b6",
+    "newStemStarts": "A Cognac house wants eaux-de-vie from the cru",
+    "log": "regionale-2.json",
+    "reason": "The stem's own words ('which of them', the two Champagne crus) rule out Borderies and Fins Bois, so the four-option question was really a two-way choice between Grande and Petite Champagne, and the names give that away. FIX: Stem reframed as an applied task with no restricting clause: 'A Cognac house wants eaux-de-vie from the cru known for the most delicate, longest-lived spirit of all six. Which cru should it bu..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_spain",
+    "category": "Spain",
+    "old": "i-q4lvyony",
+    "new": "i-y5iqq0ws",
+    "newStemStarts": "A traditional Rioja Gran Reserva smells of coconut,",
+    "log": "regionale-7.json",
+    "reason": "The stem carried the banned word ('Which cellar practice accounts for that?'). FIX: Now ends 'What in the cellar accounts for that?' Options, key and exp unchanged. Id moves i-q4lvyony to i-y5iqq0ws; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_spain",
+    "category": "Spain",
+    "old": "i-xezz75wk",
+    "new": "i-xu5rcg8m",
+    "newStemStarts": "Five years of ageing, at least two in",
+    "log": "this integration",
+    "reason": "Rioja Gran Reserva (lead's note 3): the stem stated the old ladder, three years in bottle, as current; the current Rioja rule is at least 60 months with at least 24 in cask and 24 in bottle, as the region article, the Village chapter and the Premier Cru bank already said."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_spain",
+    "category": "Spain",
+    "old": "i-lfjnphqw",
+    "new": "i-jdo79slb",
+    "newStemStarts": "A butt set aside for Fino loses its",
+    "log": "regionale-7.json",
+    "reason": "The stem said a Palo Cortado loses its flor 'without ever being refortified'. That is wrong: once the flor fails and the cellar master reclassifies the butt, it is fortified to about 17 percent or more to age oxidatively. The exp implied the same thing. FIX: Stem now: 'A butt set aside for Fino loses its flor early and unbidden, then finishes with the nose of an Amontillado over the body of an Oloroso. Which style..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_sparkling_fortified_sweet",
+    "category": "Sparkling/Fortified/Sweet",
+    "old": "i-5okaggzr",
+    "new": "i-qqmopi1g",
+    "newStemStarts": "Quarter bottles and the giant formats beyond a",
+    "log": "regionale-4.json",
+    "reason": "Old stem: 'Quarter bottles and jeroboams are often filled from wine that fermented in an ordinary bottle, ...'. In Champagne the jeroboam (3 L) is the largest format that must stay in the bottle it fermented in. Transfer is allowed only below the half bottle and above the jeroboam, so the stem taught the boundary the wrong way round. FIX: Stem now reads 'Quarter bottles and the giant formats beyond a jeroboam are..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_sparkling_fortified_sweet",
+    "category": "Sparkling/Fortified/Sweet",
+    "old": "i-6qh3iwzm",
+    "new": "i-4jkw2zst",
+    "newStemStarts": "Which country turned a sparkling red made from",
+    "log": "regionale-4.json",
+    "reason": "The stem used the American spelling 'specialty' in the Codex's own prose. The same module's exp elsewhere has 'speciality'. FIX: 'national specialty' became 'national speciality'. Nothing else changed. Id moves i-6qh3iwzm to i-4jkw2zst; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_sparkling_fortified_sweet",
+    "category": "Sparkling/Fortified/Sweet",
+    "old": "i-9hj9ch3h",
+    "new": "i-0xd19gwz",
+    "newStemStarts": "Bunches are laid on racks in an airy",
+    "log": "regionale-4.json",
+    "reason": "The stem ended 'Which Italian practice is that?', using the word the house rules ban outright. FIX: Last sentence now reads 'What name do Italian growers give it?' Options, key and exp unchanged. Id moves i-9hj9ch3h to i-0xd19gwz; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_tasting_service",
+    "category": "Tasting & Service",
+    "old": "i-4upsxjmx",
+    "new": "i-7euv778x",
+    "newStemStarts": "A party brings a bottle from home and",
+    "log": null,
+    "reason": "Corkage: the fix made the item a twin of Village Service & Hospitality's corkage question, so the refuter reframed the stem onto where the charge falls (regionale-1, amended)."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_viticulture_winemaking",
+    "category": "Viticulture & Winemaking",
+    "old": "i-qs3r2oaa",
+    "new": "i-0r5rvkbt",
+    "newStemStarts": "What does a grower do in a green",
+    "log": "regionale-1.json",
+    "reason": "The stem uses the word 'practice', which the house voice never permits in shipped text. FIX: Stem now 'What does a grower do in a green harvest?' Options, key and exp unchanged (the gerund options still read). Id moves i-qs3r2oaa to i-0r5rvkbt; check-similarity clean."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_viticulture_winemaking",
+    "category": "Viticulture & Winemaking",
+    "old": "i-zf5qyl8l",
+    "new": "i-z3zwz2kk",
+    "newStemStarts": "Moulds growing on treated timber can taint a",
+    "log": "regionale-1.json",
+    "reason": "Same task, same answer as Tasting & Service's 'A wine smelling of wet cardboard, damp cellar and muted fruit is showing what?' (descriptor to TCA). The de-duplication pass of 19 Aug removed the Portugal and Service & Hospitality twins but never saw this pair, because the Tasting key string differs. FIX: Reframed onto the winemaking cause, which the 'Faults and stabilisation' block owns: 'Moulds growing on treated..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_viticulture_winemaking",
+    "category": "Viticulture & Winemaking",
+    "old": "i-7cril28x",
+    "new": "i-19nx9klq",
+    "newStemStarts": "Barrels are kept topped up to the bung",
+    "log": "regionale-1.json",
+    "reason": "Near-verbatim twin of Tasting & Service's 'Nail varnish and vinegar on the nose indicate which fault?', same key. Also used the American 'nail polish remover'. FIX: Reframed onto prevention: 'Barrels are kept topped up to the bung partly to starve the air-loving bacteria that would otherwise sour the wine. Which fault does that guard against?' Distractor 'Oxidation' replaced by 'Heat damage', because topping up al..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_viticulture_winemaking",
+    "category": "Viticulture & Winemaking",
+    "old": "i-53jv5xfh",
+    "new": "i-q3z55w2j",
+    "newStemStarts": "A spoilage yeast hides in the wood of",
+    "log": "regionale-1.json",
+    "reason": "Same task, same answer as Tasting & Service's 'Barnyard, sticking plaster and leather notes are usually attributed to what?' (descriptor to Brettanomyces). FIX: Reframed onto the cellar conditions: 'A spoilage yeast hides in the wood of old barrels that are hard to sanitise, and thrives where free sulphur dioxide runs low. Which is it?' Options unchanged; exp explains why Botrytis (a mould), Acetobacter (a bacteri..."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_wine_law",
+    "category": "Wine Law",
+    "old": "i-rvzcjdmx",
+    "new": "i-evp2z1h8",
+    "newStemStarts": "Watering the vines is routine in Australia and",
+    "log": "regionale-12.json",
+    "reason": "The stem used the banned word 'practice' ('Watering the vines is ordinary practice in Australia and California...'). FIX: Now: 'Watering the vines is routine in Australia and California...'. The rest of the stem, the options, the key and the exp are unchanged. The id moves from i-rvzcjdmx to i-evp2z1h8. check-similarity on the module flags nothing (max ratio 0.364, run 4)."
+   },
+   {
+    "bank": "Regionale (js/data-intro.js)",
+    "module": "r1_wine_law",
+    "category": "Wine Law",
+    "old": "i-dqeofhjg",
+    "new": "i-2li4a6sj",
+    "newStemStarts": "American labels once carried the words Chablis, Burgundy",
+    "log": "regionale-12.json",
+    "reason": "The stem used the banned word 'practice' ('What closed the practice to new brands?'). FIX: The last sentence now reads 'What closed that door to new brands?'. The options, the key and the exp are unchanged, and the exp's own 'close the door on the new' fits the new wording. The id moves from i-dqeofhjg to i-2li4a6sj. check-similarity flags nothing."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_australia",
+    "category": "Australia",
+    "old": "c-7438gxxk",
+    "new": "c-j6yfhx4o",
+    "newStemStarts": "In the mid-1980s a South Australian government programme",
+    "log": "village-8.json",
+    "reason": "The stem used the American spelling 'program' twice in the Codex's own prose. The corpus elsewhere has 'programme' 22 times, and the only other 'program' is the proper name Label Integrity Program, which stays. FIX: Both instances changed to 'programme'. The answer is unchanged, and the existing 'vine pull' accept entry grades 'vine pull programme' by containment, so the accept list was not widened. check-similari..."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_bordeaux",
+    "category": "Bordeaux",
+    "old": "c-b42arsxv",
+    "new": "c-i4swdjlm",
+    "newStemStarts": "Old Libournais growers knew Malbec by a name",
+    "log": "village-3.json",
+    "reason": "The premise was false: Cot is not the Medoc name for Malbec. 'Malbec' is itself the Bordeaux name, traditionally traced to a Monsieur Malbeck in the Medoc. Cot is the official French register name and the Loire's, Pressac the old Libournais name and Auxerrois Cahors's. The accept list also took hedges such as 'cot or pressac'. A first repair that kept Cot as the answer would have repeated r1_loire's Touraine Cot t..."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_burgundy",
+    "category": "Burgundy",
+    "old": "c-323kebz3",
+    "new": "c-q5yz7fse",
+    "newStemStarts": "Monks walled parcels of the Cote d'Or to",
+    "log": "village-5.json",
+    "reason": "Stem carried the banned word 'practice' (house rule: never practice or practise). FIX: 'the practice left a word behind' became 'the habit left a word behind'. Similarity re-run: 0 flagged."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_business_sommelier",
+    "category": "Business of the Sommelier",
+    "old": "c-mla6psej",
+    "new": "c-vujwy6tz",
+    "newStemStarts": "With no preservation behind it, a bottle opened",
+    "log": "village-8.json",
+    "reason": "The stem gave its own answer away. It described the page as 'quick-selling' and then asked what the page's length is matched to (the answer: how fast each wine sells). A student could reply 'how quickly they sell' just by echoing the stem. FIX: The stem now states the open bottle's few days and asks for the other term: 'With no preservation behind it, a bottle opened for the glass list stays honest for only a few..."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_california",
+    "category": "California",
+    "old": "c-ijf6g9l0",
+    "new": "c-il084y1r",
+    "newStemStarts": "Fruit grown in one state is blended in",
+    "log": null,
+    "reason": "Vintage on a multi-state blend: T.D. TTB-105 (2012) amended 27 CFR 4.27, so the old stem had no single right answer under current law; the stem now asks what the rule cost the label until the 2012 federal change (village-3, amended)."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_champagne",
+    "category": "Champagne",
+    "old": "c-j6p46gg1",
+    "new": "c-j1q6661e",
+    "newStemStarts": "A grower bottling all seven traditional varieties together",
+    "log": "village-6.json",
+    "reason": "The stem said 'all seven permitted varieties'. Since the December 2022 amendment admitted Voltis on trial, the permitted count is eight, so the stem stated a fact that is no longer true. FIX: Stem now reads 'all seven traditional varieties'; nothing else in it changed. The explanation adds that a disease-resistant newcomer, Voltis, has been admitted on trial since 2022. check-similarity flags nothing (max ratio 0...."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_germany",
+    "category": "Germany",
+    "old": "c-dfm7v11n",
+    "new": "c-syz3aneb",
+    "newStemStarts": "Leading German estates banded together in 1910 to",
+    "log": "village-5.json",
+    "reason": "Stem carried the banned word 'practice'. FIX: 'Which practice did that name rule out?' became 'What did that name rule out?'. Similarity re-run: 0 flagged."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_italy_central_south",
+    "category": "Italy Central & South",
+    "old": "c-6lchw3zi",
+    "new": "c-qac50yy1",
+    "newStemStarts": "Some producers restart a finished wine with dried,",
+    "log": "village-2.json",
+    "reason": "The stem used the banned word 'practice' ('What is that Tuscan practice called?'). FIX: Stem now ends 'What is that Tuscan technique called?'. The id moves. check-similarity on the module is clean."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_italy_central_south",
+    "category": "Italy Central & South",
+    "old": "c-jf1kaqyi",
+    "new": "c-a297vhms",
+    "newStemStarts": "Guado al Tasso and Ornellaia share a denomination",
+    "log": "village-2.json",
+    "reason": "The stem ('Which two lead it in practice?') and exp ('lead by practice rather than by rule') used the banned word. FIX: Stem now ends 'Which two varieties usually lead its blends?' and exp says 'by custom rather than by rule'. The id moves. check-similarity is clean."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_jura_savoie_corsica",
+    "category": "Jura, Savoie & Corsica",
+    "old": "c-kjm5utxp",
+    "new": "c-poc6ykgq",
+    "newStemStarts": "Five varieties carry the Jura's still appellation wines.",
+    "log": "village-9.json",
+    "reason": "The stem said five varieties 'and only five' may enter the Jura's appellation wines. That is false: the Cremant du Jura specification also lists Pinot Gris. The explanation repeated the error ('every appellation of the region, still or sparkling'). FIX: Stem now reads: 'Five varieties carry the Jura's still appellation wines. Savagnin and Chardonnay are two; which trio completes the list?' The task, options and ke..."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_pacific_nw_ny_canada",
+    "category": "Pacific NW, NY & Canada",
+    "old": "c-byck0b8m",
+    "new": "c-v1acfb3h",
+    "newStemStarts": "Vines across the Columbia basin are trained with",
+    "log": "village-7.json",
+    "reason": "The stem ended 'Which hazard shapes both practices?', and the house rule bars the word practice in any form from shipped text. FIX: Ended the stem 'Which hazard lies behind both?' instead. Nothing else in the question changed. Its id moves from c-byck0b8m to c-v1acfb3h, and check-similarity is clean (max ratio 0.333, longest run 3)."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_producers_icons",
+    "category": "Producers & Icons",
+    "old": "c-hl5fhle1",
+    "new": "c-ud8xt1sq",
+    "newStemStarts": "A Saint-Emilion estate famed for its Cabernet Franc",
+    "log": "village-5.json",
+    "reason": "Cheval Blanc withdrew from the Saint-Emilion classification in 2021 and is no longer a classified first growth, so the stem stated a fact that has changed. FIX: Stem now: 'A Saint-Emilion estate famed for its Cabernet Franc and a Mendoza estate share a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine.' Similarity re-run: 0 flagged."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_producers_icons",
+    "category": "Producers & Icons",
+    "old": "c-nyvmy41t",
+    "new": "c-jm3u8fk6",
+    "newStemStarts": "Merchants who want a case of one Vosne-Romanee",
+    "log": "village-5.json",
+    "reason": "Stem carried the banned word 'practice'. FIX: 'What does that practice achieve' became 'What does that arrangement achieve'. Similarity re-run: 0 flagged."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_producers_icons",
+    "category": "Producers & Icons",
+    "old": "c-xba125m0",
+    "new": "c-971lj44y",
+    "newStemStarts": "One Barossa house has kept a workshop inside",
+    "log": "village-5.json",
+    "reason": "Stem dated the cooperage 'since the 1940s'; Yalumba says coopering has been done at the winery for over a century, coopers since about 1890. FIX: 'since the 1940s' became 'for more than a century'. Similarity re-run: 0 flagged."
+   },
+   {
+    "bank": "Village (js/data-questions.js)",
+    "module": "r2_viticulture_winemaking",
+    "category": "Viticulture & Winemaking",
+    "old": "c-ss6ahhuh",
+    "new": "c-etal8e49",
+    "newStemStarts": "Instead of ordering a thousand plants of one",
+    "log": "village-8.json",
+    "reason": "The stem ended 'Name the practice.', the one word the house rules ban outright. FIX: Last sentence now reads 'Name the method.' Answer, accept list and explanation are unchanged. The id moves. check-similarity shows nothing flagged (max ratio 0.233)."
+   }
+  ]
+ },
+ "gates": [
+  {
+   "gate": "python3 rewrite/build.py --all",
+   "result": "pass",
+   "exit": 0,
+   "note": "67 of 67 modules, every one of the eleven checks passed"
+  },
+  {
+   "gate": "python3 rewrite/check-cross-category.py",
+   "result": "pass (exits 1 by design, as at HEAD)",
+   "exit": 1,
+   "note": "exits 1 whenever any candidate exists; 10 pairs, the same 10 accepted pairs as at HEAD (compared against a HEAD copy of the categories and pilot banks in the scratchpad); six new 'per cent' answer clashes from this pass were fixed in the modules that introduced them, none added to ACCEPTED"
+  },
+  {
+   "gate": "python3 rewrite/check-similarity.py --all (OOT_IMPORTED_REF default 0ecd424)",
+   "result": "pass",
+   "exit": 0,
+   "note": "67 of 67 categories 'nothing new to review'; only the 4 long-accepted Viticulture phrases sit above 0.60"
+  },
+  {
+   "gate": "python3 rewrite/ship.py --dry-run, then ship.py",
+   "result": "pass",
+   "exit": 0,
+   "note": "52 ids moved on the ship (37 Regionale, 15 Village), all listed in movedIds; a dry run now reports every id unchanged, so the shipped banks are the modules' build"
+  },
+  {
+   "gate": "python3 rewrite/check-ids.py",
+   "result": "fail (expected and accepted)",
+   "exit": 1,
+   "note": "exits 1 whenever an id moved: 30 categories, 52 ids, every one a stem change logged by a reviewer, a refuter or this integration and accepted knowingly before launch"
+  },
+  {
+   "gate": "python3 rewrite/check-regression.py",
+   "result": "fail (expected and accepted)",
+   "exit": 1,
+   "note": "exits 1: 54 lost probes, every one an intended revocation of a wrong answer the review corrected (42 'ten years' forms on the DOCG seven-year rule, Law 238/2016 art. 33 as amended 2020; 10 'serve it cooler' forms on the tannic red, which cold hardens; bare 'muscat', which graded dry Muscat d'Alsace; 'the national appellation body', a stem echo). The one false reject the pass introduced (Petite Arvine phrasings lost to ex=True) is restored with '~petite arvine'"
+  },
+  {
+   "gate": "python3 rewrite/check-stem-echo.py",
+   "result": "pass",
+   "exit": 0,
+   "note": "6 flags, the same 6 as at HEAD"
+  },
+  {
+   "gate": "python3 rewrite/build-primers.py --dry-run, then build-primers.py",
+   "result": "pass",
+   "exit": 0,
+   "note": "39 chapters, every check passed"
+  },
+  {
+   "gate": "python3 rewrite/check-primer-similarity.py (now against 8d535c8^)",
+   "result": "pass",
+   "exit": 0,
+   "note": "max ratio 0.227, longest shared run 6 words, no shared sentence, nothing to review"
+  },
+  {
+   "gate": "node .scripts/regions/build-regions.cjs, then --check",
+   "result": "pass",
+   "exit": 0,
+   "note": "the Rioja article's unverified '2019' dates softened; the index and the Spain reading file rebuilt"
+  },
+  {
+   "gate": "python3 rewrite/check-paid.py",
+   "result": "pass",
+   "exit": 0,
+   "note": "no new problems after re-keying the two stem-prefix-only flags (m-9ec17myd rebeche, m-1eyzh7av contribution margin) and closing m-3pcqoger's changed flag in the bank (ex=True with an exact list); 8 baselined problems no longer occur and are left for a deliberate --update-baseline"
+  },
+  {
+   "gate": "qidAudit in a VM (check-home's chain and sandbox, codexStats seeded)",
+   "result": "pass",
+   "note": "fixture of every question of all four banks answered (4,357 keys, 873 scheduled, 219 flagged, notes and grader overrides) plus r- and s- keys: 0 missing ids, 0 duplicate ids, 0 orphans. The same fixture built from the HEAD banks orphans exactly the 52 moved ids (q 52, srs 14, grader 1, flags 3) and nothing else; the upper banks' ids are frozen and orphan nothing"
+  },
+  {
+   "gate": "node .scripts/check-syntax.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-claims.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/sa-harness.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/list-harness.js",
+   "result": "fail (pre-existing)",
+   "exit": 1,
+   "note": "exits 1 on the three long-standing '(also X, Y)' tails it names itself (a-62mb28xz, a-egn9hhiq, a-xrebfxf7), which predate this pass and grade correctly for candidates; the premier-1 and premier-4 logs left them too"
+  },
+  {
+   "gate": "node .scripts/check-home.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-nav.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-nav.js --mutations",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-merge.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-components.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-learning-links.cjs",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-regions.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-atlas-ui.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-atlas-data.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-atlas-cache.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-videos.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-winelist.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-producers-house.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-producers.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-study.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-house.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-drill.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-wine-import.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-teaching-images.js",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-teaching-accuracy.cjs",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-visual-study-data.cjs",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-visual-studies.cjs <root> /opt/node-tools/node_modules/playwright",
+   "result": "pass",
+   "exit": 0,
+   "note": "WorldTable's Playwright 1.62.1 wants a Chromium build (1234) this machine lacks; run with /opt/node-tools Playwright 1.56.1, whose build (1194) is installed"
+  },
+  {
+   "gate": "node .scripts/check-visual-study-routes.cjs <root> /opt/node-tools/node_modules/playwright",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-culinary-study-data.cjs",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-culinary-studies.cjs <root> /opt/node-tools/node_modules/playwright",
+   "result": "pass",
+   "exit": 0
+  },
+  {
+   "gate": "node .scripts/check-culinary-routes.cjs <root> <WorldTable pack> /opt/node-tools/node_modules/playwright",
+   "result": "pass",
+   "exit": 0
+  }
+ ],
+ "shippedCodexFilesChanged": {
+  "files": [
+   "index.html",
+   "js/codex11.js",
+   "js/codex21.js",
+   "js/codex6.js",
+   "js/data-advanced.js",
+   "js/data-floor.js",
+   "js/data-grapes-plus.js",
+   "js/data-intro.js",
+   "js/data-master.js",
+   "js/data-pairing.js",
+   "js/data-primers-advanced.js",
+   "js/data-primers-intro.js",
+   "js/data-primers-master.js",
+   "js/data-primers.js",
+   "js/data-producers.js",
+   "js/data-questions.js",
+   "js/data-regions.js",
+   "js/reference.js",
+   "js/regions/spain.json",
+   "sw.js"
+  ],
+  "handMerge": [
+   "js/data-primers.js",
+   "js/data-advanced.js",
+   "js/data-master.js",
+   "js/data-intro.js",
+   "js/codex6.js",
+   "js/codex11.js"
+  ],
+  "note": "The site's codex/ copies of data-primers.js, data-advanced.js, data-master.js, data-intro.js, codex6.js and codex11.js carry their own dash-free wording, so they need hand merges; codex11.js now differs from the wing copy only at lines 130, 149 and 162 (the banned word). js/data-regions.js and js/regions/spain.json are builds of the fragments. Nothing was written on the site.",
+  "versions": "index.html ?v= bumped for data-questions.js, data-intro.js, data-primers-intro.js, data-primers.js, data-advanced.js, data-primers-advanced.js, data-master.js, data-primers-master.js, data-producers.js, data-regions.js, data-grapes-plus.js, reference.js, codex6.js and codex11.js; sw.js CACHE codex-v96 to codex-v97 (bytewise). js/data-floor.js, js/data-pairing.js and js/codex21.js were changed by the review pass and not by this integration; their ?v= is the direct integrator's. The Codex CLAUDE.md still says codex-v96 at lines 18 and 345; the direct integrator, who edits CLAUDE.md, should move both to codex-v97"
+ },
+ "leftForTheOwner": [
+  "66 shipped stems keep American 'percent' or 'toward' (37 Regionale, 29 Village), since a stem edit moves the id: i-n61akloz, i-p907gamj, i-tc6mkqd0, i-87zzd5fv, i-qmz3vpov, i-gb8ol1rl, i-in3agi5i, i-5q4kbk4b, i-cq8u1o5b, i-pzsoa3es, i-7bmfe6h8, i-rahubs3x, i-95hsbzsk, i-uwxkhp74, i-fd3sbpjs, i-5u524f34, i-33u498fo, i-jfuh2po0, i-0oqtkvuq, i-gx8tgo8t, i-juvl5aie, i-nfdctcp4, i-kzdn8sjf, i-jgz2q080, i-073qtlea, i-4jhk1f7c, i-tjdhc32d, i-tqymci1r, i-hpp5wmfo, i-2b5hjhir, i-e59x00dr, i-2oe7v96j, i-p8t7lrjp, i-rjmmt9pa, i-q1lh407q, i-dqbsaipo, i-jk6nubyt, c-51hqbsbm, c-mo4zz800, c-mvsl404g, c-01t3aebc, c-d3mz0vyw, c-pwhjfdlv, c-wpxpyzl1, c-uwewpdli, c-2vlwxgrz, c-a8dhg66e, c-b12aptls, c-51qtgqjj, c-x16dzww3, c-8i9ii382, c-5eybknsb, c-2ln0b4lp, c-wyzj7w6o, c-2f45qwbd, c-bib6prhv, c-xew8txq9, c-r7tozsvu, c-0qqyjfiu, c-uhl3ec8a, c-t922zwef, c-flogy0v5, c-1qy2upks, c-bj9ubry6, c-nqs5ixsa, c-5kuzfy6n",
+  "check-regression's 54 lost probes are corrections of wrong keys (listed under gates); no allowlist exists, so it will keep exiting 1 against this HEAD until the edition is committed",
+  "check-paid's 8 baselined problems that no longer occur are left for a deliberate --update-baseline",
+  "r2_italy_north's '~petite arvine' also grades the hedge 'petite arvine or grosse arvine', the price of restoring 'it is petite arvine'"
+ ],
+ "notMine": [
+  "Lead's note 1 (the four-wine Village tasting: v39GridStart, the 45 minute clock, V39_WORDS, the Quizzes row, the check-regions and check-home pins, the CLAUDE.md codex39 paragraph) is the direct integrator's, by the note's own words",
+  "Lead's note 8 (p-gilda) needs no change",
+  "Lead's note 10 (the house) is the house integrator's: nothing under WorldTable or the site was touched",
+  "Lead's note 6 for the two upper banks, as above"
+ ],
+ "revokedProbes": [
+  {
+   "module": "r2_bordeaux",
+   "id": "c-t3j8ph76",
+   "ans": "The INAO",
+   "probes": [
+    "the national appellation body"
+   ],
+   "reason": "A stem echo: the stem names the national appellation body, so the phrase graded the question's own words back (check-stem-echo). The INAO, by name, is what the question asks."
+  },
+  {
+   "module": "r2_classifications_labels",
+   "id": "c-uaee3v0y",
+   "ans": "Seven years",
+   "probes": [
+    "ten years",
+    "ten years as a doc",
+    "ten years at doc level",
+    "ten years at doc",
+    "10 years",
+    "10 years as a doc",
+    "10 years at doc level",
+    "10 years at doc",
+    "at least ten years",
+    "at least ten years as a doc",
+    "at least ten years at doc level",
+    "at least ten years at doc",
+    "at least 10 years",
+    "at least 10 years as a doc",
+    "at least 10 years at doc level",
+    "at least 10 years at doc",
+    "minimum ten years",
+    "minimum ten years as a doc",
+    "minimum ten years at doc level",
+    "minimum ten years at doc",
+    "minimum 10 years",
+    "minimum 10 years as a doc",
+    "minimum 10 years at doc level",
+    "minimum 10 years at doc",
+    "ten years minimum",
+    "ten years minimum as a doc",
+    "ten years minimum at doc level",
+    "ten years minimum at doc",
+    "10 years minimum",
+    "10 years minimum as a doc",
+    "10 years minimum at doc level",
+    "10 years minimum at doc",
+    "ten",
+    "10",
+    "a decade",
+    "ten full years",
+    "at least a decade",
+    "a decade at doc level",
+    "a decade minimum",
+    "Ten years",
+    "the ten years",
+    "a ten years"
+   ],
+   "reason": "A wrong key the review corrected: Law 238/2016 art. 33 (as replaced by DL 76/2020) asks seven years as a DOC before DOCG, not ten, so every ten-year and decade form now grades wrong."
+  },
+  {
+   "module": "r2_food_pairing",
+   "id": "c-wgifeyxj",
+   "ans": "Decant it, or serve it a touch warmer",
+   "probes": [
+    "serve it cooler",
+    "chill it slightly",
+    "lower the temperature",
+    "Serve it slightly cooler, or decant it",
+    "serve it slightly cooler, or decant it",
+    "the serve it slightly cooler, or decant it",
+    "a serve it slightly cooler, or decant it",
+    "it is serve it slightly cooler, or decant it",
+    "that is serve it slightly cooler, or decant it",
+    "it is called serve it slightly cooler, or decant it"
+   ],
+   "reason": "A wrong key the review corrected: cold hardens tannin, so serving a tannic red cooler makes the problem worse; decanting or a touch warmer is the answer."
+  },
+  {
+   "module": "r2_food_pairing",
+   "id": "c-gp7qj8t4",
+   "ans": "Vin doux naturel, such as Muscat de Beaumes-de-Venise",
+   "probes": [
+    "muscat"
+   ],
+   "reason": "Too broad: bare muscat also graded a dry Muscat such as Muscat d'Alsace, which is not the sweet fortified answer the question asks for."
+  }
+ ],
+ "revokedProbesNote": "The 54 answers check-regression finds lost against HEAD, each an intended revocation of a wrong or over-broad accept entry. python3 rewrite/check-regression.py --logged .scripts/review/applied-rewrite.json accepts exactly these strings on exactly these questions and fails on any other lost answer; the default run against HEAD still exits 1 until the edition is committed. The one question check-regression reports unmatched (r2_bordeaux, answer Cot) is the logged move c-b42arsxv to c-i4swdjlm: its premise was false (Cot is not the Medoc name for Malbec), so the stem and the answer were both rewritten and its old accept list has no question left to grade against.",
+ "verifierRepair": {
+  "when": "12 October 2026, after the verifier's pass over both integrations",
+  "movedIds": "none: every Regionale and Village id is unchanged by this repair (ship.py: all 1,778 and all 1,283 unchanged), and the Premier Cru and Grand Cru ids are frozen literals",
+  "done": [
+   "r1_alsace i-ywwxv1nq exp: Pinot Noir may be bottled red at Hengst and Kirchberg de Barr since the 2022 vintage, and at Vorbourg since 2024 (an exp, so the id holds)",
+   "r2_sake c-2ln0b4lp and r2_business_sommelier c-rnb661bv: the eight towards twins of the toward accept entries; the British forms now grade wherever the American ones do (it moves towards higher numbers grades no more than it moves toward higher numbers, under ex=1)",
+   "js/data-intro.js Regionale reference rows (INTRO_GRAPES, INTRO_ATLAS, INTRO_CLASS, INTRO_CLASS_TRAPQ, INTRO_WINE, INTRO_SOIL, INTRO_DESS): 103 glyphs at or above U+2190 in words (63 arrows to 'to', commas or a clause, 23 at least, 10 about, 5 is not, 1 at most, 1 minus); aging to ageing in 46 strings (the aging: property names kept); labeled and labeling to labelled and labelling; the star and the flag and ic fields left as data codex7 never shows",
+   "js/data-intro.js Spain: the ageing tiers state the national minimums with Rioja's (Crianza 24 months with 6 in oak, 12 in Rioja; Reserva 36 with 12; Gran Reserva 60 with 18, in Rioja at least 24 in cask and 24 in bottle); Gran Reserva is usually declared only in strong vintages by custom, not by law, in the aging row, the trap and the TRAPQ question, whose keyed option now reads 'The longest ageing tier: 60 months for a red Rioja'",
+   "js/data-producers.js: the 15 uses of the banned word reworded (custom, in effect, farmed biodynamically, at work, cultural tradition, cellar methods, methods, by the house's own custom, in the glass, the usual Burgundian layout); per cent for percent (26), towards (8), savoury (17), ageing (23), sulphur (2) in shown strings",
+   "js/reference.js PRODUCERS and TERROIR rows: ageing (2) and savoury (2)",
+   "js/codex39.js: the 45 minute clock counts from a stored end time, so a render never resets it and a running timer is never restarted; leaving the grid holds what is left. Pour another flight (codex20's gridAgain) deals the Village tasting again, wrapped behind codex21's Finals branch; any other grid keeps codex20's again",
+   "js/data-advanced.js: a-0gnetwz9 ans uses ASCII <= and >= (the normalised answer, and so the baselined probe key, is unchanged); a-62mb28xz, a-egn9hhiq and a-xrebfxf7 write their extras as '; also ...' instead of '(also ...)', the same normalised text, so codex9 grades each model answer at full marks (list-harness 52 of 52, Advanced 27 of 27, the detected count unchanged); a comment banner's box-drawing rules in ASCII",
+   "rewrite/check-ids.py and rewrite/check-regression.py: an explicit --logged <applied file> mode that accepts exactly the moves named old to new in movedIds.rows and exactly the strings named per question in revokedProbes (54, added to applied-rewrite.json with their reasons), and still fails on any other; the default run against HEAD is unchanged and still exits 1 until the edition is committed",
+   "rewrite/check-cross-category.py: REVIEWED records a verdict on each of the ten pairs read (keyed by both ids, so a reworded stem asks again); a reviewed pair is still printed with its verdict, and only an unread pair fails",
+   ".scripts/check-regions.js item 9 and .scripts/check-home.js: the clock against a controlled Date (3.5 seconds idle reads 2697, ten answers 0.7 seconds apart read 2690 with no second timer, a minute away holds it), Pour another flight dealing the tasting again, the Finals branch first, any other grid keeping codex20's again; the new pins fail against the old clock and pass now",
+   "rewrite/README.md and CLAUDE.md: the logged runs, REVIEWED and the codex39 clock and again"
+  ],
+  "shippedCodexFilesChanged": [
+   "index.html",
+   "sw.js",
+   "js/data-intro.js",
+   "js/data-questions.js",
+   "js/data-producers.js",
+   "js/reference.js",
+   "js/codex39.js",
+   "js/data-advanced.js"
+  ],
+  "versions": "index.html ?v=: data-questions.js 6, reference.js 4, data-intro.js 7, data-advanced.js 8, data-producers.js 5, codex39.js 3; sw.js CACHE codex-v97 to codex-v98 (CLAUDE.md lines 41 and 373 follow)",
+  "handMerge": [
+   "js/data-intro.js",
+   "js/data-questions.js",
+   "js/data-advanced.js"
+  ],
+  "cleanMerge": [
+   "js/data-producers.js",
+   "js/reference.js",
+   "js/codex39.js"
+  ],
+  "mergeNote": "The site's codex/ copies of data-producers.js, reference.js and codex39.js equal the source HEAD, so sync-wing carries them whole once the edition is committed; data-intro.js, data-questions.js and data-advanced.js carry the wing's own dash-free wording and need hand merges. The site's codex/sw.js needs oot-codex-v140 to v141 for the shared pack change (bump-shared plans it; not applied: nothing on the site was written but shared/packs)",
+  "house": "Brennan's pack, through 27 new replace entries in WorldTable tools/house/brennans/overrides.json (entries 3999 to 4025) with their note research/cellar-review-2026-10-12-verifier.md: the Piper-Heidsieck bottle card labeled for us, not made for us, and said as the glass card says it; Roulot, Dupont-Fahn, Loimer and both Stein cards no longer name who runs the estate today, Coche-Dury dates its change of hands to 2010; the Stein Weihwasser keeps only its sourced steep slate in kept notes and parts. engine.mjs: the 23:30 comment no longer claims no living person in a present role, and EDITION_BUILT_AT moves to 2026-10-12T01:00:00.000Z (date -u read 01:11). Chain re-run, second build byte-identical, pack mirrored to the site's shared/packs byte for byte",
+  "left": [
+   "the Stein Weihwasser comparison rows (old vines at Alf; old vine Mosel Riesling beside the Berres) live in WorldTable components/wines.json, which no override reaches: for the owner",
+   "codex7.js draws the heading 'Aging & ripeness' over INTRO_CLASS's aging rows; codex7.js was not named in this repair, so the American heading is left for the owner",
+   "never-shown accept strings keep their forms: 'misleading practices law' and 'unfair commercial practices' (r2_classifications_labels, data-questions.js) and a-x0evsqvv's '−7°c' (a baselined accept_list flag)",
+   "INTRO_CLASS's 'Label Integrity Program' is the Australian programme's proper name and stays"
+  ]
+ }
+}

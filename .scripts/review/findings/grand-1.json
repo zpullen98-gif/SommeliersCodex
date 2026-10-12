@@ -1,0 +1,1571 @@
+{
+ "batch": "grand-1",
+ "bank": "js/data-master.js",
+ "categories": [
+  "Burgundy",
+  "Bordeaux",
+  "Champagne",
+  "Loire",
+  "Alsace",
+  "Rhône",
+  "Southern France",
+  "Jura, Savoie & Corsica",
+  "Producers & Icons",
+  "Italy North",
+  "Italy Central & South",
+  "Spain"
+ ],
+ "readCount": 192,
+ "total": 192,
+ "changedQuestions": 150,
+ "substantive": 37,
+ "stemChanges": [
+  "m-9ec17myd",
+  "m-h6gxgouz",
+  "m-kxb9o2w6",
+  "m-xff1fn2s",
+  "m-xzjo10hj",
+  "m-efbxf58z",
+  "m-jcjgoahm",
+  "m-k1buaxx5",
+  "m-qgp8u2eo",
+  "m-ccu3el9h",
+  "m-gdcw1hpp",
+  "m-pr38vrc6",
+  "m-f4ni435f"
+ ],
+ "searches": [
+  "Trimbach grand cru labelling (Clos Sainte-Hune, Schlossberg) and Hugel",
+  "Jerez DO reform: unfortified fino and manzanilla, ageing zone, historic varieties",
+  "Alsace premier cru status at the INAO"
+ ],
+ "revokedAcceptStrings": [
+  "m-l7cvsztx: morey-saint-denis is not it arbois (debris with a negation)",
+  "m-jf68lure: savennieres no fiefs vendeens anjou brissac; fiefs vendeens is not it savennieres anjou (debris, false premise)",
+  "m-t7chvy1o: hexenberg no sorcerer goldert brand hengst (debris)",
+  "m-xyavnii6: brunellopoli 2008 blending investigation 2009 vote kept 100 percent sangiovese (wrong date, now 2008)",
+  "m-nqy0svcx: the triangle was opened up and vino de pasto was legalised (overstatement)"
+ ],
+ "leftForTheOwner": [
+  "Twelve stems keep American spelling, left because a stem is the question's identity and spelling is not an error of fact: m-p4lgwdgz (centers), m-hgn6gjdf, m-evwwn7j4, m-n6yenw4m, m-tsawmkkk (labeling), m-c0qlkqi6 (colors), m-ev77jwxt (maneuver), m-wd7pzyvz, m-ihztf8pb, m-7f57cq19 (Characterize), m-yte5jtst, m-gqwt5r7n (aging).",
+  "Three answers keep spaced single hyphens as clause breaks (m-2byt0r48, m-bozfsodz, m-8mifufv6); the house list bans em and en dashes and the spaced double hyphen, not these.",
+  "Unverified and left as written: m-kxb9o2w6 calls the CRD capsule the seal on French retail bottles (check whether it is still compulsory); m-bozfsodz gives the Vin Santo del Chianti Classico grape floor as 60%; m-nqy0svcx says pago names and vintages may now be labelled; m-d1jdvtdf says the Montilla PX supply to Jerez has been closed off; m-9cq6hysd calls Martinenga Barbaresco's only monopole.",
+  "check-paid: one flag in this batch is not in the baseline, and it is a re-key, not a new defect. The reviewed negation_probe entry for m-9ec17myd (rebeche) is keyed on the stem's first 44 characters, and removing the stem's em dash moved the key from \"Explain 'rebêche' [em dash] trick question: where do\" to \"Explain 'rebêche', trick question: where doe\". rewrite/paid_known.py, which this batch may not edit, needs that one key updated. Closing the flag itself would mean ex=True or dropping \"~champagne not burgundy\", which would refuse the most natural right answer.",
+  "The 150 changed lines will meet the site copy in sync-wing: the dash-only lines now match the copy word for word, but lines with a further fix differ from both base and copy and will need a hand merge there."
+ ],
+ "findings": [
+  {
+   "id": "m-efo2as8e",
+   "cat": "Burgundy",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-hbx1rszm",
+   "cat": "Burgundy",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-l7cvsztx",
+   "cat": "Burgundy",
+   "field": "accept",
+   "problem": "The bare right answer 'Arbois' did not grade (the only short entry was 'arbois 1936', and a one-word input cannot cover 60% of it), and one entry was authoring debris carrying a negation ('morey-saint-denis is not it arbois'). Ans and exp also carried an em dash and American spelling (honored, favorite).",
+   "fix": "Replaced the debris entry with '~arbois'. So that the new entry raises no comparative-probe flag, the ans now leads with Arbois and carries no year ('Arbois, usually named first among the wines of the first decrees, alongside Cassis, Chateauneuf-du-Pape, Monbazillac and Tavel; Burgundy followed within months'), and the exp opens 'The 1935 law created the system and the first decrees followed in May 1936.' No dash; honoured, favourite.",
+   "source": "INAO's first AOC decrees of 15 May 1936 (Arbois, Cassis, Chateauneuf-du-Pape, Monbazillac, Tavel); grader probe through the shipped matchSA.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-uz68okp9",
+   "cat": "Burgundy",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-cjtd8ndd",
+   "cat": "Burgundy",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-2dnnzjvn",
+   "cat": "Burgundy",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-ld9efw5y",
+   "cat": "Burgundy",
+   "field": "ans",
+   "problem": "Stale: the answer said de Vogue's white was still declassified to Bourgogne Blanc 'while young vines mature'. It has been labelled Musigny again since the 2015 vintage. The producer alone, the key fact, also failed to grade.",
+   "fix": "Ans now gives Musigny Grand Cru, Comte Georges de Vogue as its only producer, and the curiosity as history (declassified for years, the Musigny name since restored). Exp carries the dates (from the 1994 vintage until the 2015 vintage restored the name), labelled not labeling; the years sit in the exp so the new accept raises no comparative-probe flag. Accept gains '~de vogue'.",
+   "source": "Domaine Comte Georges de Vogue: Musigny Blanc returned with the 2015 vintage (released 2019).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-8dsrjqfv",
+   "cat": "Burgundy",
+   "field": "ans",
+   "problem": "The level was written in its numbered form ('1er cru').",
+   "fix": "Written out as 'premier cru'.",
+   "source": "House rule: levels are named, never numbered.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-9ec17myd",
+   "cat": "Burgundy",
+   "field": "stem+ans",
+   "problem": "em dash in stem and ans. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Explain 'rebêche' [em dash] trick question: where does the term actually belong?"
+  },
+  {
+   "id": "m-h6gxgouz",
+   "cat": "Burgundy",
+   "field": "exp",
+   "problem": "Exp said the Macon 'waited a century' for premiers crus, which is untrue (the AOC system itself dates from 1936). The stem also carried an em dash.",
+   "fix": "Exp now says the Macon waited until 2020; the stem takes the site's dash-free wording.",
+   "source": "Pouilly-Fuisse premiers crus decree, 2020 (first vintage 2020); AOC law of 1935, first decrees 1936.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Which Mâconnais village AOP was promoted with premiers crus in 2020 [em dash] the first in the Mâcon?"
+  },
+  {
+   "id": "m-56ryihy1",
+   "cat": "Burgundy",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-mo74ijjx",
+   "cat": "Bordeaux",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-vo4t4643",
+   "cat": "Bordeaux",
+   "field": "exp",
+   "problem": "'The only substantive 1855 change in 170 years' ages every year and was already wrong in 2026.",
+   "fix": "Now 'The only substantive change to the 1855 red list since it was drawn up.'",
+   "source": "1855 classification; Mouton's promotion, 1973.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-rcoxf6qb",
+   "cat": "Bordeaux",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-f1pkpvfc",
+   "cat": "Bordeaux",
+   "field": "ans",
+   "problem": "Ans used the banned word practice ('hermitage practice'), and carried two em dashes.",
+   "fix": "Practice became custom; the dashes take the site's wording.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-kxb9o2w6",
+   "cat": "Bordeaux",
+   "field": "stem+ans",
+   "problem": "em dash in stem and ans. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "What is the 'placomusophile' question's Bordeaux equivalent [em dash] the strip label over the cork called?"
+  },
+  {
+   "id": "m-flkli3us",
+   "cat": "Bordeaux",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-9fz5r330",
+   "cat": "Bordeaux",
+   "field": "ans",
+   "problem": "American spelling in ans.",
+   "fix": "spelling made British (sulphur).",
+   "source": "House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-jjb7749d",
+   "cat": "Bordeaux",
+   "field": "exp",
+   "problem": "American spelling in exp.",
+   "fix": "spelling made British (honouring).",
+   "source": "House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-hvg4oc1c",
+   "cat": "Bordeaux",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-d077yslc",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-i9si96sy",
+   "cat": "Champagne",
+   "field": "ans+exp",
+   "problem": "em dash in exp; en dash in a range.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; range written with 'to'.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-xff1fn2s",
+   "cat": "Champagne",
+   "field": "stem+ans",
+   "problem": "em dash in stem and ans. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Name the four towns of the medieval Champagne fairs [em dash] the medieval commerce answer."
+  },
+  {
+   "id": "m-6f0suvfm",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-exj3wvgb",
+   "cat": "Champagne",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-rk387n9d",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-bs31ukhw",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "Exp stated as fact that machine riddling was invented in Catalonia; the credit is contested (the French gyropalette dates from the late 1960s), so a flat claim is not safe. American spelling (favorite) and an em dash too.",
+   "fix": "Exp now says machine riddling is 'usually credited' to Catalonia's girasol, built for Cava in the 1970s; favourite; no dash.",
+   "source": "Standard Champagne and Cava histories (girasol, 1970s; Cazals and Ducoin gyropalette, 1968).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-83vtsdjy",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "American spelling in exp.",
+   "fix": "spelling made British (catalogues).",
+   "source": "House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-oeilg4bm",
+   "cat": "Champagne",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-pgwwavp3",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-p4lgwdgz",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "American spelling in ans.",
+   "fix": "spelling made British (centred).",
+   "source": "House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-y6681hhy",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "em dash in ans; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (botrytised).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-44f8ebnq",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "em dash in ans; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (ageing).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-jtae0exy",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-rx8egs5c",
+   "cat": "Loire",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-jf68lure",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "False premise with a non-answer. No Anjou AOP lies within sight of the Atlantic: Savennieres, the old answer, is roughly 100 km inland. The answer read '(Accept reasoned answers)', and both accept entries were authoring debris that no candidate would type.",
+   "fix": "Ans now names the trap: the coastal AOP is Fiefs Vendeens, promoted from VDQS, and it belongs with the Pays Nantais, not Anjou. Exp gives the 2011 promotion as the stem's date and says to name a false premise. Accept is now multi-word with no negation word, which clears the loose-tilde and negation probes: 'none of them', 'there is none', 'it is a trap', 'false premise', 'pays nantais'. A bare Fiefs Vendeens or Savennieres is refused (probed).",
+   "source": "Fiefs Vendeens AOC decree 2011; InterLoire's Nantes vineyards grouping.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-qso08k3i",
+   "cat": "Loire",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-hgn6gjdf",
+   "cat": "Alsace",
+   "field": "ans",
+   "problem": "Too absolute. 'The labels omit grand cru' is no longer true of the house as a whole: Trimbach's Schlossberg has carried Grand Cru since its 2014 vintage. Only the flagships (Clos Sainte-Hune, Frederic Emile) go by proprietary name. The ans also carried an em dash.",
+   "fix": "Ans now says the flagship labels omit 'grand cru', even though newer single-site bottlings such as its Schlossberg carry it.",
+   "source": "WebSearch: Trimbach producer pages and trade notes (Schlossberg Grand Cru, inaugural vintage 2014; Clos Sainte-Hune labelled by name within Rosacker).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-t7chvy1o",
+   "cat": "Alsace",
+   "field": "ans",
+   "problem": "No Alsace grand cru name means 'sorcerers' hill'. The answer was muddled ('Hexenbuckel is folklore; accept discussion') and the first accept entry was debris.",
+   "fix": "Ans now states the trap plainly: no such grand cru, and the house in the stem grows its Gewurztraminer grands crus on Hengst, Goldert and Rangen. The house's name stays out of the ans so another question's accept 'zind-humbrecht' does not grade it. Accept is now 'none of them', 'there is none', 'it is a trap', 'false premise' and the old 'hengst means stallion goldert'; Hengst or Goldert offered as the sorcerers' hill is refused (probed).",
+   "source": "The 51 Alsace grand cru names and their meanings.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-u03q8z1l",
+   "cat": "Alsace",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-q4u3oolx",
+   "cat": "Alsace",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-8y4nq4u8",
+   "cat": "Alsace",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-3o8t2vod",
+   "cat": "Rhône",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-dqwcjnxw",
+   "cat": "Rhône",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-z7es9auq",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-tf070543",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-6wua5iaa",
+   "cat": "Rhône",
+   "field": "ans+exp",
+   "problem": "em dash in exp; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (sanitises).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-dasde3k1",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "Ans named a living owner (Pinault) as a current fact. It also carried an em dash.",
+   "fix": "The owner is now Artemis, 'the holding company that also owns Chateau Latour', and the person is no longer named.",
+   "source": "House rule: no living person named as a volatile fact. Artemis purchase of Chateau-Grillet, 2011.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-wyy9vt1v",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (sulphur).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nzcx4m2h",
+   "cat": "Rhône",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-c0qlkqi6",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-5bqvc8gm",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-xzjo10hj",
+   "cat": "Southern France",
+   "field": "stem+ans",
+   "problem": "em dash in stem and ans; American spelling in ans. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (polymerise).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Explain 'micro-oxygenation' [em dash] invented where, by whom, for what?"
+  },
+  {
+   "id": "m-tyyp4quq",
+   "cat": "Southern France",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-l00y929c",
+   "cat": "Southern France",
+   "field": "exp",
+   "problem": "American spelling in exp.",
+   "fix": "spelling made British (colours).",
+   "source": "House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-ioqix0ku",
+   "cat": "Southern France",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-2iau9ate",
+   "cat": "Southern France",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-efbxf58z",
+   "cat": "Southern France",
+   "field": "stem",
+   "problem": "Stem typo in the appellation's name ('Frontons's'). Old stem: \"Frontons's signature grape and its aroma calling card:\". The ans also carried an em dash.",
+   "fix": "Stem now reads \"Fronton's signature grape and its aroma calling card:\". The id is unchanged.",
+   "source": "AOP Fronton.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Frontons's signature grape and its aroma calling card:"
+  },
+  {
+   "id": "m-2n8ryi0d",
+   "cat": "Southern France",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-myzwhge6",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "Ans contrasted Jura's 'cool cellars' with Sherry's 'hot ones'. Vin jaune casks often age in lofts that ride the seasons, and bodegas are built to stay cool, so the contrast misleads. Exp called curry and fenugreek the shared tell, when acetaldehyde is the marker the two share. The ans also carried an en dash.",
+   "fix": "Ans now says: same film-yeast metabolism making acetaldehyde, voile on unfortified wine at about 13 to 14%, flor on wine fortified to about 15%. Exp names acetaldehyde as the shared tell and says sotolon builds with long ageing in both.",
+   "source": "Vin jaune cahier des charges; Consejo Regulador Jerez (fino fortified to 15%).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-t55nw3nv",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-8ze3n0a9",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "Volatile current-winemaker claim ('now Dominique Lucas era'), which could not be confirmed after Dominique Belluard's death in 2021. The ans also carried an em dash.",
+   "fix": "Now 'Domaine Belluard made the reference wines'.",
+   "source": "House rule: nothing volatile stated as fact; no living person named as a current winemaker.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-aj8wnc3y",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "Ans never answered the stem's 'which adopted successor'. Exp said 'proof at scale' of a famously tiny estate, and carried an em dash.",
+   "fix": "Ans now opens 'Emmanuel Houillon, who took over in 2001 (the labels read Overnoy-Houillon, Pupillin)'. Exp: 'Proof that wine with no added sulphur can age: bottles from the 1980s still sing.'",
+   "source": "Overnoy-Houillon: Emmanuel Houillon succeeded Pierre Overnoy in 2001.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-n8a9kw81",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "em dash in ans; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (colonised).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-s8jgymfj",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-zq3b6ola",
+   "cat": "Producers & Icons",
+   "field": "exp",
+   "problem": "Exp counted nine grands crus without DRC's sliver of Batard-Montrachet, which its own accept list mentions. It also carried an em dash.",
+   "fix": "Exp now says nine with Corton-Charlemagne, plus a sliver of Batard-Montrachet kept for the house rather than sold.",
+   "source": "Domaine de la Romanee-Conti holdings (Batard-Montrachet c. 0.17 ha, not commercialised).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-x68vp0uw",
+   "cat": "Producers & Icons",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-4mjpr7zf",
+   "cat": "Producers & Icons",
+   "field": "exp",
+   "problem": "Exp named current winemakers as a present fact ('Name the winemakers: Raphael Coche, Jean-Marc Roulot'), and carried an em dash.",
+   "fix": "Now told as history: Jean-Francois Coche built Coche-Dury's renown; at Roulot the actor-vigneron is Jean-Marc Roulot, who took charge of the family domaine in 1989.",
+   "source": "House rule: no living person named as a volatile fact.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-tsawmkkk",
+   "cat": "Producers & Icons",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-jcjgoahm",
+   "cat": "Producers & Icons",
+   "field": "stem+ans",
+   "problem": "em dash in stem and ans. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Which American Pinot pioneer is said [em dash] so the legend goes [em dash] to have carried Romanée-Conti cuttings home, and where did he plant them?"
+  },
+  {
+   "id": "m-k1buaxx5",
+   "cat": "Producers & Icons",
+   "field": "stem",
+   "problem": "Wrong fact in the stem. Osborne's Sibarita is an Oloroso VORS (lifted with a little Pedro Ximenez), not a Palo Cortado; the range's Palo Cortados are Capuchino and PDP. Old stem: \"Which Sherry bodega's Palo Cortado 'Sibarita' and age-dated VORS range revived the category commercially?\". The ans also carried an em dash and American spelling (program).",
+   "fix": "Stem now reads Oloroso 'Sibarita' (id unchanged). Ans: programme; no dash.",
+   "source": "Osborne Rare Sherry range (Sibarita Oloroso VORS; Capuchino and PDP Palo Cortado VORS).",
+   "confidence": "medium",
+   "stemChanged": true,
+   "oldStem": "Which Sherry bodega's Palo Cortado 'Sibarita' and age-dated VORS range revived the category commercially?"
+  },
+  {
+   "id": "m-ju7fo0o0",
+   "cat": "Producers & Icons",
+   "field": "ans+exp",
+   "problem": "em dash in exp; en dash in a range.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; range written with 'to'.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nj1ho4ay",
+   "cat": "Producers & Icons",
+   "field": "exp",
+   "problem": "Exp named a living current winemaker as a present fact ('Maria Teresa continues').",
+   "fix": "Exp: 'After his death in 2005 his daughter kept the single-blend Barolo; the label is the philosophy.'",
+   "source": "House rule: no living person named as a volatile fact. Bartolo Mascarello died in 2005.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-9cq6hysd",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "Santo Stefano is not an MGA. It is a vineyard within Neive's Albesani MGA, and the stem asks for MGAs. The ans also carried an em dash in exp.",
+   "fix": "Ans now reads 'Albesani (with its Santo Stefano) and Gallina in Neive'.",
+   "source": "Barbaresco DOCG disciplinare, MGA list (Albesani, Gallina in Neive).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-cx14e3nt",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "en dash in a range.",
+   "fix": "range written with 'to'.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-z8w1unnf",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-bm287t9g",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-mvf8kt98",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-9u3kpxgx",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-qguz5u11",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "Stale name. The DOCG has been Colli Bolognesi Classico Pignoletto since 2014, when the wider Pignoletto DOC was drawn around it. The exp's 'still or frizzante' could not be confirmed for the current DOCG. The ans also carried an em dash.",
+   "fix": "Ans gives the current name ('the DOCG's current name'), with no year, so the accept 'pignoletto' raises no comparative-probe flag. Exp keeps 2010 as the creation date under the old name, adds the 2014 change and drops the style claim.",
+   "source": "Italian DOCG register (Colli Bolognesi Classico Pignoletto); Pignoletto DOC, 2014.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-xyavnii6",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "Wrong date. The consorzio's vote to keep Brunello 100% Sangiovese came in October 2008, not 2009. Exp left the Rosso di Montalcino rejection undated (the vote was in 2011). One accept entry carried the wrong date, and the ans carried an em dash.",
+   "fix": "Ans: 'late in 2008 the consorzio votes to keep Brunello 100% Sangiovese'. Exp: 'and a 2011 vote rejected that too'. In the accept entry, '2009 vote' became '2008 vote'.",
+   "source": "Consorzio del Vino Brunello di Montalcino assembly, October 2008; Rosso di Montalcino vote, September 2011.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-7113bncq",
+   "cat": "Italy Central & South",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-ydqy1fbj",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "The stem's 'from 1970s IGT exile' is anachronistic: IGT did not exist until the 1992 Goria law, and the 1970s exile was Vino da Tavola. The ans already said so but the exp did not flag it. The ans also used American spelling (legitimized).",
+   "fix": "Exp opens with: 'Note the trap in the wording: there was no IGT in the 1970s, so the exile was Vino da Tavola.' The stem is left alone. Ans: legitimised.",
+   "source": "Law 164/1992 (Goria); Bolgheri DOC 1983 and 1994; Bolgheri Sassicaia DOC 2013.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-tn95fvto",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "Exp gave an uncertain date for Masseto's separate cellar ('since 2018'; the cellar is usually dated to 2019). It also carried an em dash.",
+   "fix": "Exp now reads 'Masseto now runs as a standalone estate with its own cellar', with no date.",
+   "source": "Masseto estate history.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-gmqsouay",
+   "cat": "Italy Central & South",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-vmdyfm7m",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-hhprz1ez",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "en dash in a range.",
+   "fix": "range written with 'to'.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-qgp8u2eo",
+   "cat": "Italy Central & South",
+   "field": "stem",
+   "problem": "The stem used the banned word practice. Old stem: \"Pantelleria's viticulture is UNESCO-listed for which practice?\". The ans also carried an em dash.",
+   "fix": "Stem now reads \"...UNESCO-listed for which tradition?\" (id unchanged).",
+   "source": "House rule: never the word practice or practise. UNESCO Intangible Heritage, 2014.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Pantelleria's viticulture is UNESCO-listed for which practice?"
+  },
+  {
+   "id": "m-osevxrt0",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-go8qtbqw",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-ccu3el9h",
+   "cat": "Italy Central & South",
+   "field": "stem",
+   "problem": "em dash in stem. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Sardinia's Cannonau, Carignano del Sulcis and Vermentino di Gallura [em dash] give each its status quirk."
+  },
+  {
+   "id": "m-qkvlfwv8",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "em dash in ans; en dash in a range; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; range written with 'to'; spelling made British (ageing).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-gdcw1hpp",
+   "cat": "Spain",
+   "field": "stem+ans",
+   "problem": "em dash in stem; American spelling in ans. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (towards).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Sherry is chalk-marked twice. Explain both sets of marks [em dash] those of the first classification and the palmas of the second [em dash] and what each decides."
+  },
+  {
+   "id": "m-zqovmzh9",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "em dash in ans; American spelling in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (ageing).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-pv4z58v8",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "Exp implied Alion and Pintia are the family's only other estates (Macan and Oremus are theirs too). The ans also carried an em dash.",
+   "fix": "Exp now says 'Alion and Pintia are among the family's other estates.'",
+   "source": "Tempos Vega Sicilia estates.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-3wd87c3s",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-bjoq14bo",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-9uq9aekp",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-wd7pzyvz",
+   "cat": "Bordeaux",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-yvhe7yeb",
+   "cat": "Bordeaux",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-ihztf8pb",
+   "cat": "Burgundy",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-spipm39a",
+   "cat": "Burgundy",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-y8fyb7c0",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "Exp stated a volatile market fact as permanent ('the connoisseur's current chase').",
+   "fix": "Now 'became a connoisseur's chase'.",
+   "source": "House rule: nothing volatile stated as fact.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-7f57cq19",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nn8i2t8m",
+   "cat": "Alsace",
+   "field": "ans",
+   "problem": "Ans said Trimbach declines to use the grand cru tier, which is no longer true across its range (Schlossberg Grand Cru since 2014). It also carried an em dash.",
+   "fix": "Ans now reads 'leading houses such as Hugel, and Trimbach for its flagship wines, have long kept it off their best labels'.",
+   "source": "WebSearch: Trimbach (Schlossberg Grand Cru, 2014); Decanter on Trimbach, Hugel and Beyer's opposition to the grand cru system.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-zf6jp55w",
+   "cat": "Loire",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp; en dash in a range; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; range written with 'to'; spelling made British (distil).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nfea4ihb",
+   "cat": "Loire",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-ikmb0hw1",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-2h1reyeb",
+   "cat": "Loire",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-supq5mbl",
+   "cat": "Loire",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-hludnu9h",
+   "cat": "Rhône",
+   "field": "ans+exp",
+   "problem": "em dash in ans; American spelling in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (centre).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-b0ruo2so",
+   "cat": "Rhône",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (towards).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-qbb5zteh",
+   "cat": "Rhône",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-76elvbbz",
+   "cat": "Rhône",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-wdl1vpqr",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "em dash in exp; American spelling in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (Chaptalisation).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-sv2dmoq7",
+   "cat": "Champagne",
+   "field": "exp",
+   "problem": "Exp used the banned word practice ('lees contact practices'), and carried an em dash.",
+   "fix": "Now 'lees-contact techniques'.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nainqcfz",
+   "cat": "Champagne",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (towards).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-qaq8brmi",
+   "cat": "Bordeaux",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-yte5jtst",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-7uila2vu",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nqy0svcx",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "Overstated. The reform lets a fino or manzanilla go unfortified when it reaches the 15% minimum naturally after at least two years under flor; lighter vino de pasto wines still sit outside the DO. The ans said the pasto movement was 'legitimised', and one accept entry ('vino de pasto was legalised') graded that overstatement.",
+   "fix": "That sentence of the ans now states the 15% condition and that lighter pasto wines still sell outside the DO. In the accept entry, 'vino de pasto was legalised' became 'unfortified fino was allowed'.",
+   "source": "WebSearch: The Drinks Business (Sept 2021) on the sherry rule changes; sherry.wine 'recent regulatory changes'; revised pliego (Junta de Andalucia).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-eilch9q7",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-1ra41rpk",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-d1jdvtdf",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-nxnpz5v5",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "American spelling in ans.",
+   "fix": "spelling made British (industrialisation).",
+   "source": "House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-a5ya8otr",
+   "cat": "Italy North",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (Ageing, ageing).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-gqwt5r7n",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "The category names were misspelt ('Saten and Rose'). The ans also used American spelling (aging) and carried an em dash.",
+   "fix": "Now 'Saten' and 'Rose' with their accents (Satèn, Rosé); ageing; no dash.",
+   "source": "Franciacorta DOCG disciplinare.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-w3mscwhh",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-bozfsodz",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "Ans used the banned word practice ('which in practice means').",
+   "fix": "Now 'which in effect means'.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-780tid6n",
+   "cat": "Southern France",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-p8cfu2ef",
+   "cat": "Southern France",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-wwr9zet9",
+   "cat": "Southern France",
+   "field": "ans+exp",
+   "problem": "em dash in exp; en dash in a range.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; range written with 'to'.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-qzjjxa57",
+   "cat": "Southern France",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-sbn1rine",
+   "cat": "Southern France",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-jwonhrtj",
+   "cat": "Producers & Icons",
+   "field": "ans",
+   "problem": "em dash in ans; American spelling in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it; spelling made British (sulphur).",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly. House rule: British spelling in the Codex's own prose (accept strings, which are student input, left alone).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-v71gok47",
+   "cat": "Alsace",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-waxx7l9c",
+   "cat": "Alsace",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-os975lam",
+   "cat": "Alsace",
+   "field": "ans",
+   "problem": "The ans carried an en dash in a range (500 en dash 600 mm) and an em dash.",
+   "fix": "The range is now written '500-600 mm' with a plain hyphen. That matches the accept entries ('~500-600') and keeps the reviewed comparative-probe baseline key unchanged; 'to' would have re-keyed it. The em dash takes the site's wording.",
+   "source": "House rule: no em or en dash in shipped prose (a hyphen in a numeric range is not a dash); rewrite/paid_known.py baseline key.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-etfk36ss",
+   "cat": "Alsace",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-3pfq2se2",
+   "cat": "Alsace",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-pr38vrc6",
+   "cat": "Alsace",
+   "field": "stem+ans+exp",
+   "problem": "em dash in stem and ans and exp. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Describe how Alsace's wine business is actually structured [em dash] who grows, who makes, who sells [em dash] and what that means for a buyer."
+  },
+  {
+   "id": "m-kz5j60nv",
+   "cat": "Alsace",
+   "field": "ans",
+   "problem": "Two claims were out of date or unverified. 'A boycott by two of the region's most famous houses' no longer holds whole (Trimbach labels its Schlossberg grand cru). 'The INAO accepted the principle in 2022' could not be confirmed, and no approved premier cru list exists. The ans also carried em dashes.",
+   "fix": "Ans now says 'a long refusal by some of the region's most famous houses to print it on their flagship wines' and 'The dossier has been with the INAO for years and the site-by-site assessment continues; I would date any status claim I make.'",
+   "source": "WebSearch: Decanter and Decanter China on the Alsace premier cru dossier (still pending; no approved list); Trimbach Schlossberg, 2014.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-m8rbb2gr",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "exp",
+   "problem": "Exp used the banned word practice ('Overnoy's practice'). The ans used American spelling (sulfur-free) and carried an em dash.",
+   "fix": "Exp: 'Jules Chauvet supplied the theory; Overnoy's bottles supplied the proof.' Ans: sulphur-free.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-dp7kmkfo",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "'Under 2,000 ha today' understates the Jura vineyard, which is usually given as about 2,000 to 2,100 ha. The ans also carried an em dash.",
+   "fix": "Now 'to about 2,000 today'.",
+   "source": "CIVJ (Jura wine committee) vineyard area.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "m-mr01qchq",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-c5o14rcy",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans+exp",
+   "problem": "em dash in ans and exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-2y9oha1h",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "ans",
+   "problem": "Seyssel straddles the Rhone between Haute-Savoie and the Ain, not Savoie. The old phrasing also joined the two names with an en dash.",
+   "fix": "Now 'straddles the Rhone where Haute-Savoie meets the Ain'.",
+   "source": "AOP Seyssel (communes of Seyssel, Haute-Savoie, and Seyssel, Ain).",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-hhh9d4tf",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "exp",
+   "problem": "em dash in exp.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "m-f4ni435f",
+   "cat": "Jura, Savoie & Corsica",
+   "field": "stem+ans+exp",
+   "problem": "em dash in stem and ans and exp. The dash sat in the stem, which ships, so the stem changes (id kept).",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "You are opening a mature Château-Chalon for a table. Talk through service [em dash] temperature, glassware, timing [em dash] and what you would put beside it."
+  },
+  {
+   "id": "m-ef9ki267",
+   "cat": "Producers & Icons",
+   "field": "ans",
+   "problem": "em dash in ans.",
+   "fix": "dash replaced with a comma, colon, semicolon, full stop or brackets, word for word as the site's dash-free copy has it.",
+   "source": "House rule: no em or en dash in shipped prose. The dash-free wording is taken word for word from the site's copy (codex/js/data-master.js), so these replacements match the site copy exactly.",
+   "confidence": "high",
+   "stemChanged": false
+  }
+ ]
+}

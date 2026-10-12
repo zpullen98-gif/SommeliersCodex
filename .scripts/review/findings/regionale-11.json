@@ -1,0 +1,208 @@
+{
+  "batch": "regionale-11",
+  "modules": [
+    "rewrite/categories/r1_south_africa.py",
+    "rewrite/categories/r1_new_zealand.py"
+  ],
+  "readCount": 111,
+  "total": 111,
+  "findings": [
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Two ocean currents pass the southern tip of",
+      "field": "opts",
+      "problem": "The stem describes one current as cold and one as warm, and the options repeated those words ('carries cold water north', 'brings warm Indian Ocean water'), so the question could be answered from its own wording. 'The Mozambique Channel drift' is also not a named current.",
+      "fix": "The options are now just the names: Benguela, Agulhas, Humboldt and Canary currents. The Humboldt and the Canary are cold currents too, so knowing 'cold' is not enough without knowing which one is South Africa's. The exp now names the Benguela as the cold west-coast current and places the other two.",
+      "source": "Standard oceanography: the Benguela is the cold current off the west coast, the Agulhas the warm one; the Humboldt runs off South America and the Canary off north-west Africa. Brief rule: a stem must not be answerable from its own words.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "A label names a single pocket of ground",
+      "field": "opts",
+      "problem": "'A single pocket of ground ... that one patch' fits a registered single vineyard (at most 6 ha, one variety) at least as well as a ward, and arguably fits an estate too. Two distractors could therefore be defended as correct.",
+      "fix": "'An estate' and 'A single vineyard' are replaced with 'A region' and 'A geographical unit', both real Wine of Origin tiers ('A subregion' stays). The exp now says estates and single vineyards are registered units of production, not tiers, and that the scheme has no subregion.",
+      "source": "Wine of Origin scheme: geographical unit, region, district, ward; estates and single vineyards are registered units of production (single vineyard capped at 6 ha).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Since 2010 the sticker sealing a certified Cape",
+      "field": "exp",
+      "problem": "The exp said the scheme 'audits farming and cellar practice', and 'practice' is a banned word under the house rules.",
+      "fix": "Changed to 'audits farming and cellar methods'.",
+      "source": "Codex house rule (never practice or practise)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Clay-rich soils weathered from a rock quite unlike",
+      "field": "opts",
+      "problem": "'Cape granite' could be defended as correct. Decomposed granite gives clay-rich soils on the upper Hemel-en-Aarde wards (Upper Valley and Ridge), and question 17 in this same module teaches that weathered granite is a clay soil that holds winter rain. So a student who learned that question could fairly pick granite here.",
+      "fix": "'Cape granite' is replaced with 'Witteberg quartzite', a real Cape Supergroup rock that weathers to sand. The exp now contrasts the hungry, free-draining sand from sandstone and quartzite with the clay from Bokkeveld shale.",
+      "source": "Hemel-en-Aarde soils: Bokkeveld-shale clays in the valley, with granite and Table Mountain Sandstone soils higher up; question 17 in the same module.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Semi-desert country beyond the mountain passes grows Touriga",
+      "field": "exp",
+      "problem": "The exp's last sentence called the Klein Karoo 'the same district'. The Klein Karoo is a Wine of Origin region, and Calitzdorp is the district.",
+      "fix": "Changed 'The same district' to 'The same region'.",
+      "source": "Wine of Origin scheme: Klein Karoo region, Calitzdorp district.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Swartland growers talk constantly about the shale beneath",
+      "field": "opts",
+      "problem": "The stem asks 'Which shale?', but two options were a marl (Kimmeridgian) and a tillite (Dwyka). The four options were not of one kind, and those two could be ruled out without knowing any geology.",
+      "fix": "Replaced with 'Ecca shale' and 'Cederberg shale', both real South African shales, beside Malmesbury and Bokkeveld. The exp gains one sentence: the other three are all far younger, laid down after shelled animals appeared, which is what the stem's clue tests.",
+      "source": "South African stratigraphy: Malmesbury Group (Neoproterozoic), Cederberg Formation (Table Mountain Group), Bokkeveld Group (Devonian), Ecca Group (Karoo, Permian).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Vineyards around Hermanus ripen slowly because of the",
+      "field": "exp",
+      "problem": "The exp said Cabernet Sauvignon 'does not' work in Walker Bay. The district includes warmer inland wards (Bot River, Sunday's Glen and others) where Bordeaux and Rhone varieties are grown and bottled.",
+      "fix": "Now: Pinot Noir and Chardonnay lead nearest the water, and the warmer inland wards are left to Bordeaux and Rhone varieties.",
+      "source": "Walker Bay district wards and their plantings (Bot River, Sunday's Glen, Stanford Foothills).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_south_africa",
+      "stemStart": "Old dryland bush vines turned a bulk-farming district",
+      "field": "exp",
+      "problem": "The exp said Swartland reds are 'usually' blended in the southern Rhone manner. Varietal Syrah is as much a Swartland flagship as the blends, so 'usually' overstates it.",
+      "fix": "Changed 'usually' to 'often'.",
+      "source": "General knowledge of Swartland styles: varietal Syrah and Rhone-style blends both prominent.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_new_zealand",
+      "stemStart": "A bottle certified organic in New Zealand has",
+      "field": "opts",
+      "problem": "The key, at 106 characters, was the longest option and 11 characters clear of the next (95). That is a visible length standout under the DECISIVE_GAP rule.",
+      "fix": "Key trimmed to 'Organic rules ban synthetic agrichemicals outright, where the sustainability scheme limits them' (95 characters). The options now run 95/94/88/60, so the key is no longer a standout. The meaning is unchanged, and the 'only limits' contrast is still in the exp.",
+      "source": "rewrite/README.md length rules (DECISIVE_GAP, trim the key, never pad a distractor)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_new_zealand",
+      "stemStart": "Ordering the classic Hawke's Bay red, a guest",
+      "field": "exp",
+      "problem": "The exp said the Right Bank model holds 'even on the warmest gravels'. That contradicts this module's own Gimblett Gravels question, whose exp says most of the country's serious Cabernet blends come from that ground. Cabernet-led blends are common on the Gravels.",
+      "fix": "Now: only on the warmest gravels does Cabernet Sauvignon regularly take the lead, so the usual model is the Right Bank rather than the Medoc.",
+      "source": "Internal consistency with the module's question 'Bare stones across a vineyard floor soak up'; Gimblett Gravels Cabernet-led blends.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_new_zealand",
+      "stemStart": "North of Christchurch a valley lies behind a",
+      "field": "exp",
+      "problem": "Two problems in the exp. It stated as fact that North Canterbury is 'the name most labels now carry', which is volatile and unverified (Waipara Valley is still widely labelled). It also said Waipara is warmer than Christchurch 'at the same latitude', but Waipara lies about half a degree further north.",
+      "fix": "Now: warmer than the plains around Christchurch to the south. It lies inside the North Canterbury region. The label-share claim is dropped.",
+      "source": "Geography (Waipara about 43.05 S, Christchurch about 43.5 S); brief rule: nothing volatile stated as fact.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_new_zealand",
+      "stemStart": "Croatian families who came to dig kauri gum",
+      "field": "exp",
+      "problem": "The exp said most Dalmatian-founded companies 'still keep their head offices around Auckland'. That is a volatile corporate fact; several of those companies have since been sold or restructured.",
+      "fix": "Now: their descendants founded several of the country's best-known wine companies. The Kumeu Chardonnay sentence is kept.",
+      "source": "Brief rule: nothing volatile stated as fact.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_new_zealand",
+      "stemStart": "A single mountain chain runs almost the whole",
+      "field": "exp",
+      "problem": "The exp called the West Coast 'one of the wettest inhabited places on earth'. The West Coast's towns are very wet, but nowhere near the world's wettest inhabited places, so the claim is overstated.",
+      "fix": "Now: so the west coast is drenched while Marlborough and Central Otago are among the driest corners of the country.",
+      "source": "Rainfall norms (Hokitika about 2.9 m a year, against more than 11 m at the world's wettest inhabited places).",
+      "confidence": "low",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Two ocean currents pass the southern tip of",
+      "verdict": "amended",
+      "why": "The original options did repeat the stem's cold and warm, and 'Mozambique Channel drift' is not a current's name, so bare names with the Humboldt and the Canary as cold distractors are right. The new exp ran two unrelated clauses together after a 'which is why', so the Humboldt and Canary point is now its own sentence ('they run off South America and north-west Africa')."
+    },
+    {
+      "stemStart": "A label names a single pocket of ground",
+      "verdict": "kept",
+      "why": "'That one patch' does fit a registered single vineyard, so the original carried a defensible second answer. Region and geographical unit are real tiers a student must place against district, subregion is not a tier at all, and the exp's units-of-production line is accurate. Distractor swap rather than a stem change, ids unchanged."
+    },
+    {
+      "stemStart": "Since 2010 the sticker sealing a certified Cape",
+      "verdict": "kept",
+      "why": "House rule: the banned word is gone and 'methods' keeps the meaning."
+    },
+    {
+      "stemStart": "Clay-rich soils weathered from a rock quite unlike",
+      "verdict": "kept",
+      "why": "Decomposed granite does give clay-bearing soils in the upper Hemel-en-Aarde wards, and the module's own weathered-granite question teaches granite as the clay that holds winter rain, so the original had a second defensible key. Witteberg quartzite is a real Cape Supergroup rock that weathers to sand; the exp is accurate."
+    },
+    {
+      "stemStart": "Semi-desert country beyond the mountain passes grows Touriga",
+      "verdict": "kept",
+      "why": "The Klein Karoo is a Wine of Origin region and Calitzdorp a district within it, so 'the same district' was wrong."
+    },
+    {
+      "stemStart": "Swartland growers talk constantly about the shale beneath",
+      "verdict": "kept",
+      "why": "A marl and a tillite could be dropped by a student reading only 'Which shale?'. Ecca (Permian) and Cederberg (late Ordovician) are real shales, both laid down after the Cambrian rise of shelled animals, so the added exp sentence holds."
+    },
+    {
+      "stemStart": "Vineyards around Hermanus ripen slowly because of the",
+      "verdict": "amended",
+      "why": "'Cabernet Sauvignon does not' was too absolute for a district that takes in warmer inland wards. But 'the warmer inland wards left to Bordeaux and Rhone varieties' overstated it the other way: those wards also grow Chenin Blanc, Pinotage, Sauvignon Blanc and Pinot Noir. Now 'while the warmer inland wards also grow Bordeaux and Rhone varieties'."
+    },
+    {
+      "stemStart": "Old dryland bush vines turned a bulk-farming district",
+      "verdict": "kept",
+      "why": "Varietal Syrah stands beside the Rhone-style blends as a Swartland flagship, so 'often' is right where 'usually' overstated it."
+    },
+    {
+      "stemStart": "A bottle certified organic in New Zealand has",
+      "verdict": "kept",
+      "why": "The 106 to 95 gap was a standout under the DECISIVE_GAP rule. The trimmed key, 95 against 94, 88 and 60, keeps the meaning, and the exp still says the scheme limits but does not prohibit. The build reports two standouts in the module, neither of them the key."
+    },
+    {
+      "stemStart": "Ordering the classic Hawke's Bay red, a guest",
+      "verdict": "amended",
+      "why": "'Even on the warmest gravels' did contradict the module's Gimblett Gravels exp. But 'Only on the warmest gravels does Cabernet Sauvignon regularly take the lead' overclaims too: Hawke's Bay's best-known Cabernet-led blend comes from the Havelock North hills, not the Gravels. Now 'On the warmest gravels Cabernet Sauvignon often takes the lead, but the usual model is the Right Bank', which also drops the faulty 'so'."
+    },
+    {
+      "stemStart": "North of Christchurch a valley lies behind a",
+      "verdict": "kept",
+      "why": "Waipara lies about half a degree north of Christchurch, so 'at the same latitude' was loose. Which name 'most labels now carry' is a market claim that can change, and both Waipara Valley and North Canterbury are registered geographical indications. The new wording matches the stem's 'plains around it'."
+    },
+    {
+      "stemStart": "Croatian families who came to dig kauri gum",
+      "verdict": "amended",
+      "why": "Dropping the head-office clause was right, because company ownership and seats change. But the reviewer also swapped 'oldest' for 'best-known' without logging it, and the original was right: Pleasant Valley (1895) and Babich (1916) are among the country's oldest surviving wine companies. 'Oldest' is a fixed historical fact, where 'best-known' is a judgement that can shift, so 'oldest' is restored from HEAD."
+    },
+    {
+      "stemStart": "A single mountain chain runs almost the whole",
+      "verdict": "kept",
+      "why": "West Coast towns get about three metres of rain a year, far short of the world's wettest inhabited places, so the superlative overstated it. 'Drenched' keeps the contrast the exp needs."
+    }
+  ]
+}

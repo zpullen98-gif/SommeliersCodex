@@ -1,4 +1,4 @@
-"""Rank I rewrite - Rhone (59 questions, all multiple choice).
+"""Regionale rewrite - Rhone (59 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -29,7 +29,7 @@ SYLLABUS = [
     ("Chateauneuf-du-Pape", 10),
     ("Southern crus and sweet wines", 8),
     ("Cotes du Rhone and the regional tiers", 4),
-    ("Soils, mistral and vineyard practice", 4),
+    ("Soils, mistral and vineyard work", 4),
 ]
 
 BANK = [
@@ -51,7 +51,7 @@ BANK = [
       "Almost every cru of the northern valley sits on the right bank of the river. Which two look back at them from the left?",
       ["Hermitage and Crozes-Hermitage", "Cornas and Saint-Peray",
        "Condrieu and Chateau-Grillet", "Cote-Rotie and Saint-Joseph"], 0,
-      "The hill of Hermitage and the flatter land around it are the exception, which is part of why Hermitage catches so much sun: the river swings west there and the hill ends up facing due south."),
+      "The hill of Hermitage and the flatter land around it are the exception, which is part of why Hermitage catches so much sun: the hill runs east to west, so its main slope faces due south."),
     Q("Northern Rhone geography and climate",
       "Red wine in every northern appellation that makes one must be built on a single black grape. Which one?",
       ["Syrah", "Grenache", "Mourvedre", "Carignan"], 0,
@@ -65,11 +65,11 @@ BANK = [
     Q("Cote-Rotie and Condrieu",
       "Whole clusters of a white grape may legally go into the fermenter alongside the Syrah in that northernmost cru. Which white grape?",
       ["Viognier", "Marsanne", "Roussanne", "Clairette"], 0,
-      "The two are often interplanted, so the practice began as a matter of convenience rather than theory. Picked together they also ripen together, which is why the tradition survived."),
+      "The two are often interplanted, so the habit began as a matter of convenience rather than theory. It survived because co-fermenting with the white fixes the red's colour and lifts its perfume, even though Viognier usually ripens ahead of Syrah."),
     Q("Cote-Rotie and Condrieu",
-      "Cote-Rotie growers co-ferment only a little Viognier in practice, though the rules permit a good deal more. What is the legal ceiling?",
-      ["Twenty percent", "Five percent", "Fifty percent", "Two percent"], 0,
-      "Most growers use nothing like the maximum, and many use none at all. A few percent is enough to change the aroma without turning the wine pale."),
+      "Cote-Rotie growers co-ferment only a little Viognier, though the rules permit a good deal more. What is the legal ceiling?",
+      ["Twenty per cent", "Five per cent", "Fifty per cent", "Two per cent"], 0,
+      "Most growers use nothing like the maximum, and many use none at all. A few per cent is enough to change the aroma without turning the wine pale."),
     Q("Cote-Rotie and Condrieu",
       "Local legend divides the hill above Ampuis between a landowner's two daughters, one fair and one dark. What are the two sectors called?",
       ["Cote Blonde and Cote Brune", "Les Bessards and Les Greffieux",
@@ -87,7 +87,7 @@ BANK = [
     Q("Cote-Rotie and Condrieu",
       "An estate of barely more than three hectares holds an entire appellation to itself, enclosed within the boundaries of Condrieu. Which appellation?",
       ["Chateau-Grillet", "Coulee de Serrant", "Chateau-Chalon", "Cornas"], 0,
-      "One of the smallest appellations in France, a single south-facing granite amphitheatre planted to Viognier. A whole appellation in one owner's hands is very nearly unique in the country."),
+      "One of the smallest appellations in France, a single south-facing granite amphitheatre planted to Viognier. A whole appellation in one owner's hands is rare in the country: La Romanee-Conti in Burgundy and Coulee de Serrant on the Loire are two of the very few others."),
     Q("Cote-Rotie and Condrieu",
       "Fermenting the white grapes together with the black, rather than blending two finished wines, achieves what?",
       ["The colour is stabilised", "The alcohol rises sharply",
@@ -107,7 +107,7 @@ BANK = [
     Q("Hermitage and Crozes-Hermitage",
       "Growers on the hill above Tain keep one parcel at its western end, a spine of hard granite under almost no topsoil, for their firmest and slowest-maturing red. Which parcel is that?",
       ["Les Bessards", "Les Greffieux", "Le Meal", "Les Rocoules"], 0,
-      "Bare granite means small crops and tannin that arrives hard and fine, so wine from there needs the longest in bottle. Les Greffieux sits lower on clay and gravel and gives perfume and suppleness instead, while Les Rocoules is the parcel growers reserve for white."),
+      "Bare granite means small crops and tannin that arrives hard and fine, so wine from there needs the longest in bottle. Les Greffieux sits lower on clay and gravel and gives perfume and suppleness instead, while Les Rocoules is best known for its white."),
     Q("Hermitage and Crozes-Hermitage",
       "A label may add Les Bessards, Le Meal or L'Hermite beneath the appellation name. What are those?",
       ["Named parcels on the hill", "Villages within Crozes-Hermitage",
@@ -126,7 +126,7 @@ BANK = [
       "The northern sector around Gervans and Larnage is hillside granite; the southern sector is flat alluvial ground. Knowing which half a wine comes from tells you more than the vintage does."),
     Q("Hermitage and Crozes-Hermitage",
       "Blending a little Marsanne or Roussanne into the red is legal on the hill of Tain. Up to what proportion?",
-      ["Fifteen percent", "Twenty percent", "Five percent",
+      ["Fifteen per cent", "Twenty per cent", "Five per cent",
        "None is permitted"], 0,
       "Very few producers use it now, though the tradition is old and was once thought to soften the tannin. The allowance is a permission rather than an instruction."),
 
@@ -149,7 +149,7 @@ BANK = [
       "It gives the weight and the waxy texture; its partner gives perfume and acidity but is a nuisance in the vineyard. Most blends lean heavily on the easier grape."),
     Q("Saint-Joseph, Cornas and Saint-Peray",
       "Reds from that long right-bank ribbon may take a small share of white grapes, less than Hermitage allows. What is the limit?",
-      ["Ten percent", "Fifteen percent", "Twenty-five percent", "None is allowed"], 0,
+      ["Ten per cent", "Fifteen per cent", "Twenty-five per cent", "None is allowed"], 0,
       "The rule mirrors Hermitage at a lower level, and as there it is used sparingly. Cornas alone among the northern reds permits nothing at all."),
     Q("Saint-Joseph, Cornas and Saint-Peray",
       "Bubbles in the sparkling wine of Saint-Peray come from a second fermentation carried out where?",
@@ -163,7 +163,7 @@ BANK = [
 
     # ------------------------------- northern grapes and winemaking (6) ------
     Q("Northern grapes and winemaking",
-      "Fermenting Syrah with a proportion of its stems left in the vat is common practice in the north. What does whole-bunch inclusion usually contribute?",
+      "Fermenting Syrah with a proportion of its stems left in the vat is common in the north. What does whole-bunch inclusion usually contribute?",
       ["Aromatic lift and a firmer tannic frame", "Extra sweetness from sugar in the stems",
        "A deeper, more saturated colour", "Immunity from malolactic conversion"], 0,
       "Green stems can add a bitter, stalky note, so the decision turns on how ripe the wood is. Stems also absorb some colour, so the wine often ends up a shade lighter rather than darker."),
@@ -181,11 +181,11 @@ BANK = [
       "The same grape, and the name is now a rough style signal: the French spelling tends to promise pepper and restraint, the Australian one ripeness and sweet fruit."),
     Q("Northern grapes and winemaking",
       "Traditional northern cellars matured Syrah in large old casks rather than in new barriques. What is such a cask called?",
-      ["A foudre", "A barrique", "A pupitre", "An amphora"], 0,
-      "Big and old means slow, gentle oxygen exchange and almost no oak flavour. Many estates that experimented with new barrels have drifted back toward larger wood."),
+      ["A foudre", "A feuillette", "A concrete egg", "An amphora"], 0,
+      "Big and old means slow, gentle oxygen exchange and almost no oak flavour. Many estates that experimented with new barrels have drifted back towards larger wood."),
     Q("Northern grapes and winemaking",
       "Plantings of one northern white had fallen to a few hectares by the late 1960s before a worldwide revival. Which grape?",
-      ["Viognier", "Marsanne", "Roussanne", "Counoise"], 0,
+      ["Viognier", "Marsanne", "Roussanne", "Grenache Blanc"], 0,
       "It came within a generation of disappearing, then became fashionable and was planted from California to Australia. Condrieu remains the reference point for what it can do."),
 
     # -------------------------------------------- Chateauneuf-du-Pape (10) ---
@@ -219,9 +219,9 @@ BANK = [
        "Chaptalisation of any must below the minimum"], 0,
       "The sorting must throw out a share of the picking, and the discarded fruit cannot be made into appellation wine at all. Combined with very low permitted yields, it is one of the more demanding sets of rules in France."),
     Q("Chateauneuf-du-Pape",
-      "The minimum alcohol demanded there is the highest of any French appellation. What is it?",
-      ["12.5 percent", "10.5 percent", "11.5 percent", "14 percent"], 0,
-      "In practice most wines land far above it, and fifteen percent is unremarkable. The floor was set to keep out thin wine from over-cropped vines rather than to encourage power."),
+      "A red from the papal village that falls short of a set natural alcohol may not carry the name. What is that minimum?",
+      ["12.5 per cent", "10.5 per cent", "11.5 per cent", "14 per cent"], 0,
+      "Most wines land far above it, and fifteen per cent is unremarkable. The floor was set to keep out thin wine from over-cropped vines rather than to encourage power."),
     Q("Chateauneuf-du-Pape",
       "Why does the village carry a papal name at all?",
       ["The fourteenth-century popes at Avignon kept a castle there",
@@ -240,7 +240,7 @@ BANK = [
       "Whites are a small part of the village's output. Which description fits them?",
       ["Full-bodied and broad, with modest acidity", "Light and sharply acidic",
        "Sweet and fortified", "Aged oxidatively under a film of yeast"], 0,
-      "Grenache Blanc, Clairette, Roussanne and Bourboulenc give weight rather than tension. They are usually drunk young, though the best go quiet for several years and then return."),
+      "Grenache Blanc, Clairette and Roussanne give weight rather than tension, with Bourboulenc lending some freshness. They are usually drunk young, though the best go quiet for several years and then return."),
 
     # ----------------------------- southern crus and sweet wines (8) ---------
     Q("Southern crus and sweet wines",
@@ -292,7 +292,7 @@ BANK = [
        "The wine comes from a single estate",
        "The commune has been promoted to cru status",
        "The wine may be sold only within France"], 0,
-      "The ground is tighter and the yields lower than for plain Villages. The named communes are the waiting room for promotion, several current crus passed through it, and they are reliably the best value in the valley."),
+      "The ground is tighter and the yields lower than for plain Villages. The named communes are the waiting room for promotion, several current crus passed through it, and they often give good value."),
     Q("Cotes du Rhone and the regional tiers",
       "May a grower in the northern half of the valley label a wine Cotes du Rhone?",
       ["Yes, it covers the whole valley",
@@ -304,29 +304,29 @@ BANK = [
       "Which trio of grapes forms the backbone of most red Cotes du Rhone?",
       ["Grenache, Syrah and Mourvedre", "Grenache, Cinsault and Carignan",
        "Syrah, Marsanne and Roussanne", "Cabernet Sauvignon, Merlot and Grenache"], 0,
-      "Grenache brings the sweet fruit and alcohol, Syrah the colour and pepper, Mourvedre the tannin and savour. The abbreviation has followed the blend around the world."),
+      "Grenache brings the sweet fruit and alcohol, Syrah the colour and pepper, Mourvedre the tannin and savour. The abbreviation GSM has followed the blend around the world."),
 
-    # -------------------- soils, mistral and vineyard practice (4) -----------
-    Q("Soils, mistral and vineyard practice",
+    # -------------------- soils, mistral and vineyard work (4) ---------------
+    Q("Soils, mistral and vineyard work",
       "A cold, dry wind funnels down the valley from the north, sometimes for days on end. What is it called?",
       ["The mistral", "The tramontane", "The sirocco", "The foehn"], 0,
       "It accelerates as the valley narrows and can blow at over a hundred kilometres an hour. Locals blame it for a great deal more than viticulture."),
-    Q("Soils, mistral and vineyard practice",
+    Q("Soils, mistral and vineyard work",
       "Growers put up with that wind for one clear benefit. What is it?",
       ["It dries the vines and holds fungal disease in check",
        "It ripens the grapes by warming the vineyard",
        "It raises humidity around the bunches",
        "It carries mineral dust onto the leaves"], 0,
       "A dry canopy is why organic farming is so much easier here than in a damp maritime region. The cost is broken shoots and vines under stress in a hard spring."),
-    Q("Soils, mistral and vineyard practice",
+    Q("Soils, mistral and vineyard work",
       "Low bush-trained vines carrying neither wire nor stake are the classic southern answer to that wind. What is that training called?",
       ["Gobelet", "Guyot", "Cordon de Royat", "Echalas"], 0,
       "The short trunk keeps the vine stable and its own canopy shades the fruit from fierce sun. Newer plantings are often trellised instead, so that machines can work the rows."),
-    Q("Soils, mistral and vineyard practice",
+    Q("Soils, mistral and vineyard work",
       "Thin, free-draining rock on the steep northern slopes against deep beds of stone on the southern plain. Which pairing names the two?",
       ["Granite in the north and galets roules in the south",
        "Chalk in the north and clay in the south",
        "Volcanic basalt in the north and limestone in the south",
        "Sand in the north and slate in the south"], 0,
-      "Granite gives the taut, mineral frame of northern Syrah; the stones of the south store heat and push Grenache toward ripeness and alcohol. The contrast explains most of the difference in the glass."),
+      "Granite gives the taut, mineral frame of northern Syrah; the stones of the south store heat and push Grenache towards ripeness and alcohol. The contrast explains most of the difference in the glass."),
 ]

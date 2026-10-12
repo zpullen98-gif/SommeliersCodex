@@ -1,0 +1,1405 @@
+{
+  "batch": "premier-4",
+  "bank": "js/data-advanced.js",
+  "categories": [
+    "Beer & Cider",
+    "Sake",
+    "Wine Fundamentals",
+    "Classifications & Labels",
+    "Viticulture & Winemaking",
+    "Wine Trade & Aging",
+    "Service & Hospitality",
+    "Food & Pairing",
+    "Business of the Sommelier"
+  ],
+  "readCount": 175,
+  "total": 175,
+  "changedQuestions": 136,
+  "substantive": 11,
+  "stemChanges": [
+    "a-zv0q9oyv",
+    "a-siiw3vi0",
+    "a-xpxox66h",
+    "a-c0rnq3io"
+  ],
+  "searches": [
+    "Poiré Domfront Plant de Blanc minimum (INAO PNO2025 documents: at least 40% in the blend, so 'a majority' was wrong)",
+    "Whether the Domfront specification homologated on 7 October 2025 renamed the appellation (inconclusive; 'Poiré Domfront' kept, with its accent restored)",
+    "Penfolds on La Place de Bordeaux (confirmed: icon wines distributed there since January 2024, after Bin 169 had been there two years), so the 'penfolds' accept entry on a-et4ph1uc stands"
+  ],
+  "revokedAcceptStrings": [],
+  "rewordedAcceptStrings": [
+    "a-ju26pgy6: 'federal alcohol administration act trade practice rules on tied house' became 'federal alcohol administration act trade rules on tied house' (house word removed; nothing added)"
+  ],
+  "leftForTheOwner": [
+    "Stems that keep American spelling, left because a stem is the question's identity and spelling is not an error of fact (the earlier batches' convention): a-c8r5cxvf (Meter, inside the proper name Sake Meter Value), a-75yl78kx (Chaptalization), a-pmugr8ss (toward), a-xylek7fn (labeling), a-kh8dsknb (aging), a-7yjpiini (aging), a-p7tr6hj8 (gray), a-iiazw8j0 (program), a-a9nxseld (program). The category name 'Wine Trade & Aging' is the taxonomy's and was not touched.",
+    "list-harness still reports a-egn9hhiq (4 of 5, need 3) and a-xrebfxf7 (5 of 6, need 3): the long-standing '(also X, Y)' tail the harness notes itself; both grade correctly for candidates. Untouched, as premier-1 left a-62mb28xz.",
+    "check-paid still exits 1, on three NEW Master negation_probe flags that were there before this batch ran and lie outside it. A scoped run (the whole Advanced bank as it stands against the same bank with only this batch's lines reverted) shows this batch introduces no check-paid problem and removes none.",
+    "a-p9dbm43t's ans still lists 'Vintage/Port' among traditional terms; 'Vintage' is the traditional term (for Port), Port itself the PDO. The exp now draws the line; the ans was left because its accept lists key on that wording.",
+    "a-ulyq5wk0 ('note the condition on the check') and a-ythx82ji keep the American 'check' for the bill: vocabulary, not spelling.",
+    "Unverified and left as written: a-et2u93tn's AOC years (Pays d'Auge and Cornouaille 1996, Domfront 2002, Cotentin 2016) and whether the October 2025 Domfront specification changed the appellation's name; a-gf7dagu2's '4 to 8 times a year' turnover band; a-uzq298r5's description of what the CMS Advanced service exam adds (soft, not checked against the current CMS candidate guide).",
+    "Sync note: like premier-1 and premier-2, dash-only fixes take the site copy's wording word for word where it was house-compliant. The site copy also rotated the options on this batch's multiple choice items and kept American spellings and en dash ranges that this batch fixed, so those lines will meet different lines when sync-wing next runs."
+  ],
+  "findings": [
+    {
+      "id": "a-bs1dkn7t",
+      "cat": "Beer & Cider",
+      "field": "exp",
+      "problem": "exp: em dash; and 'marketing shorthand today' denies the rule any legal force, when its ingredient rule for bottom-fermented beer still stands in Germany's beer law.",
+      "fix": "exp: dash removed; now says the 1516 text is long superseded but its rule lives on in Germany's beer law for bottom-fermented beer.",
+      "source": "Vorlaeufiges Biergesetz (1993), section 9, and the Biersteuer rules that carry the Reinheitsgebot forward",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-p9dbm43t",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: offered Port and Sherry as examples of traditional terms; they are protected designations of origin, covered by the same EU wine agreements but not traditional terms.",
+      "fix": "exp: says Port and Sherry are protected names of origin rather than traditional terms, and that the same EU agreements cover both.",
+      "source": "EU Regulation 2019/33 (traditional terms) and the 2008 EU and Australia wine agreement",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-uhsq0145",
+      "cat": "Classifications & Labels",
+      "field": "ans, exp",
+      "problem": "ans: em dashes, and the house-banned word 'practice' ('environmental practice'). exp: em dash.",
+      "fix": "ans: dashes to brackets and 'environmental management'; exp takes the site copy's dash-free wording.",
+      "source": "House rules (never the word practice; no em dash).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-jb5oizqp",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans, exp",
+      "problem": "ans: em dashes. exp: em dash, the house-banned word 'practice' ('in practice') and American 'toward' twice.",
+      "fix": "ans: site copy's dash-free wording. exp: dash to a semicolon, 'in effect', 'towards'.",
+      "source": "House rules (never the word practice; British spelling; no em dash).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-1sstd67g",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: said the metallic clash with oysters comes from tannin and oak, contradicting the bank's own iron lesson (a-0cdasvzc, a-9x83xbqa): the fishy, metallic aftertaste tracks the wine's iron.",
+      "fix": "exp: the clash tracks iron in the wine rather than its colour; oak and tannin only add weight and bitterness the oyster cannot carry.",
+      "source": "Tamura et al., J. Agric. Food Chem. 2009 (iron and the fishy aftertaste of wine with scallop)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-9x83xbqa",
+      "cat": "Food & Pairing",
+      "field": "ans, exp",
+      "problem": "ans: em dash. exp: em dash; and 'high-iron, tannic reds are the clash' put tannin back in as a cause, against the iron finding the same exp states.",
+      "fix": "ans: site copy's wording. exp: dash to a colon; 'high-iron reds are the clash, not reds as a class'.",
+      "source": "Tamura et al., J. Agric. Food Chem. 2009",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "id": "a-75fum35e",
+      "cat": "Business of the Sommelier",
+      "field": "exp",
+      "problem": "exp: em dashes and en dashes; and 'so most Port and Sherry' in the 16 to 21% band, when fino and manzanilla at about 15% fall in the lowest band.",
+      "fix": "exp: dashes removed, ranges written 'to'; '(so Port and the stronger Sherries; a 15% fino sits in the lowest band)'.",
+      "source": "26 USC 5041(b) wine excise rates",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ju26pgy6",
+      "cat": "Business of the Sommelier",
+      "field": "accept, ans, exp",
+      "problem": "ans: em dashes and the house-banned word 'practice' ('trade-practice provisions'); one accept entry also carried 'trade practice'. exp: em dash.",
+      "fix": "ans: 'unfair-competition provisions' (the FAA Act's own heading for these rules), dashes to a colon and commas; accept entry reworded to 'federal alcohol administration act trade rules on tied house' (no word added, so no widening); exp takes the site's wording.",
+      "source": "House rules; FAA Act section 105 (27 USC 205), 'Unfair competition and unlawful practices'.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ncyfeuav",
+      "cat": "Beer & Cider",
+      "field": "opts, exp",
+      "problem": "Key 'English West Country cider' for Herefordshire: Herefordshire is one of the Three Counties, not the West Country (whose PDO, West Country Farmhouse Cider, covers Somerset, Devon, Dorset and Cornwall); exp also filed Kingston Black, a bittersharp, under bittersweet apples.",
+      "fix": "Key option now 'English Three Counties cider' (position unchanged); exp names the Three Counties and keeps only bittersweet examples (Dabinett, Yarlington Mill).",
+      "source": "UK protected names: Herefordshire Cider (PGI), West Country Farmhouse Cider (PDO); Long Ashton cider apple classification",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-et2u93tn",
+      "cat": "Beer & Cider",
+      "field": "ans, exp",
+      "problem": "ans: 'Poire Domfront' drops the accent that makes it perry (poiré) rather than pear. exp: em dash; and 'demands a majority of Plant de Blanc' overstates the rule, which is at least 40 per cent in the blend.",
+      "fix": "ans: 'Poiré Domfront'. exp: dash removed; 'demands at least 40 per cent Plant de Blanc in the blend'.",
+      "source": "INAO, Domfront specification (PNO2025 documents; minimum 40% Plant de Blanc in the blend)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-6ytu5nin",
+      "cat": "Sake",
+      "field": "exp",
+      "problem": "exp: named an option by position ('option 4', which the option re-deal makes wrong and the option_reference regex misses because it is a digit); said the 60% figure reappears only at Tokubetsu Junmai, when Junmai Ginjo also needs 60% or lower; and two spaced hyphens used as dashes.",
+      "fix": "exp: the option is named by its content (the 30% polishing requirement as the pre-2004 rule); 'The 60% figure returns at Junmai Ginjo and Tokubetsu Junmai'; spaced hyphens removed.",
+      "source": "National Tax Agency, Seishu no seiho hinshitsu hyoji kijun (tokutei meishoshu table)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ay5i1d3y",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-jsrpi13j",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-vaxf0dkj",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: matched pairs joined with an arrow, the convention the earlier batches used. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ygy9hnxj",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-wspnxw1o",
+      "cat": "Beer & Cider",
+      "field": "exp",
+      "problem": "exp: American spelling (omelets).",
+      "fix": "exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-s8i8o85m",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-xhvjez1m",
+      "cat": "Beer & Cider",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-4h4ldvdz",
+      "cat": "Sake",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-0ulhhvqr",
+      "cat": "Sake",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-cvxp1zri",
+      "cat": "Sake",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-uex9u0it",
+      "cat": "Sake",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (unpasteurized).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-r51i4aru",
+      "cat": "Sake",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-yxdd3d7w",
+      "cat": "Sake",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: matched pairs joined with an arrow, the convention the earlier batches used. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-loyr3p08",
+      "cat": "Sake",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-24nydaq0",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-kqqx5o6g",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: matched pairs joined with an arrow, the convention the earlier batches used. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-sy34u3ek",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ul1hlgwx",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-75yl78kx",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-pmugr8ss",
+      "cat": "Classifications & Labels",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-a0p96pxo",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: American spelling (aging).",
+      "fix": "exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-5tyl226u",
+      "cat": "Classifications & Labels",
+      "field": "opts",
+      "problem": "opts: American spelling (aging).",
+      "fix": "opts: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ygmnxtlh",
+      "cat": "Classifications & Labels",
+      "field": "pairs, ans",
+      "problem": "pairs: em or en dash; American spelling (aging). ans: em or en dash.",
+      "fix": "pairs: rewritten by hand, British spelling. ans: matched pairs joined with an arrow, the convention the earlier batches used. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-h1r7n2m9",
+      "cat": "Classifications & Labels",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash; American spelling (favorite).",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dgtl098f",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-j5va0rn8",
+      "cat": "Classifications & Labels",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-y2s7ztdg",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-bhkwzv72",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-grkh5u5s",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-0ejkmymp",
+      "cat": "Classifications & Labels",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-1oi729zw",
+      "cat": "Viticulture & Winemaking",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-gyugzaem",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ysl9qjm3",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (aging, hydrolyze).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-clk0myhe",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: American spelling (vigor).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-d83k8xdc",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: em or en dash; en dash in a numeric range.",
+      "fix": "ans: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-rx1idba6",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (color).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-d3xogps9",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: matched pairs joined with an arrow, the convention the earlier batches used. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-kh8dsknb",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-zv0q9oyv",
+      "cat": "Viticulture & Winemaking",
+      "field": "q, exp",
+      "problem": "q: em dash in the stem. exp: American 'labeling'.",
+      "fix": "q: dash to a colon (the site copy's wording); logged as a stem change. exp: 'labelling'.",
+      "source": "House rule: no em dash anywhere shipped.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-uz5bzeuu",
+      "cat": "Viticulture & Winemaking",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-b1j0p5lc",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-363rta2l",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash; en dash in a numeric range.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-oxt4hd4u",
+      "cat": "Viticulture & Winemaking",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-k9m26rf4",
+      "cat": "Viticulture & Winemaking",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-6appmcyh",
+      "cat": "Wine Trade & Aging",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-et4ph1uc",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: rewritten by hand. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-tl2zz7r7",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-wyahwo7s",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (liter).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-7yjpiini",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (color, stabilizes).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-waif8h85",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash; en dash in a numeric range.",
+      "fix": "ans: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-72g6c5x1",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-p7tr6hj8",
+      "cat": "Wine Trade & Aging",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: American spelling (gray).",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-501kf9rk",
+      "cat": "Wine Trade & Aging",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: American spelling (skeptical).",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-8nye3m4x",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (molding).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-3spr0x2c",
+      "cat": "Wine Trade & Aging",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-9lzsh25k",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-mjsqd3xc",
+      "cat": "Wine Trade & Aging",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-u77d8cxu",
+      "cat": "Wine Trade & Aging",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-siiw3vi0",
+      "cat": "Wine Trade & Aging",
+      "field": "q, exp",
+      "problem": "q: two em dashes in the stem. exp: em dash.",
+      "fix": "q: dashes to commas (the site copy's wording); logged as a stem change. exp: site copy's dash-free wording.",
+      "source": "House rule: no em dash anywhere shipped.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-2khvrer1",
+      "cat": "Wine Trade & Aging",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-4kta4hwx",
+      "cat": "Wine Trade & Aging",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-isezkczv",
+      "cat": "Wine Trade & Aging",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-edvvtyo9",
+      "cat": "Wine Trade & Aging",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-lr9bvmfb",
+      "cat": "Wine Trade & Aging",
+      "field": "exp",
+      "problem": "exp: em dashes.",
+      "fix": "exp: the aside in brackets (the site's commas made a run-on).",
+      "source": "House rule: no em dash.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-g1fwohuv",
+      "cat": "Service & Hospitality",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-9vmjk523",
+      "cat": "Service & Hospitality",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-hrs9ybx4",
+      "cat": "Service & Hospitality",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: American spelling (Theater).",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-nihw2phk",
+      "cat": "Service & Hospitality",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-zvzm65lc",
+      "cat": "Service & Hospitality",
+      "field": "pairs, ans",
+      "problem": "pairs: em or en dash; en dash in a numeric range. ans: em or en dash.",
+      "fix": "pairs: rewritten by hand, ranges written with \"to\". ans: matched pairs joined with an arrow, the convention the earlier batches used. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-t25kvfsm",
+      "cat": "Service & Hospitality",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (savoring).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-oj8vjac4",
+      "cat": "Service & Hospitality",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-p64axjov",
+      "cat": "Service & Hospitality",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: American spelling (honored).",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-iiazw8j0",
+      "cat": "Service & Hospitality",
+      "field": "exp",
+      "problem": "exp: American spelling (program, programs).",
+      "fix": "exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ulyq5wk0",
+      "cat": "Service & Hospitality",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-lsyxadmu",
+      "cat": "Service & Hospitality",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ul8lvrvf",
+      "cat": "Service & Hospitality",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-93rfqjei",
+      "cat": "Service & Hospitality",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-vp4lp2mv",
+      "cat": "Service & Hospitality",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash; American spelling (toward). exp: em or en dash.",
+      "fix": "ans: rewritten by hand, British spelling. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-04997acj",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-7jw4y8m8",
+      "cat": "Food & Pairing",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-wk4tfofn",
+      "cat": "Food & Pairing",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: matched pairs joined with an arrow, the convention the earlier batches used. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-4uxk9sla",
+      "cat": "Food & Pairing",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-51xevzh8",
+      "cat": "Food & Pairing",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (flavor).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-6acbzsm8",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-6k3i18ut",
+      "cat": "Food & Pairing",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (harmonizing).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-5sdlh0vv",
+      "cat": "Food & Pairing",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-e6xpqbxx",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: em or en dash; American spelling (favors).",
+      "fix": "exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-xpxox66h",
+      "cat": "Food & Pairing",
+      "field": "q, exp",
+      "problem": "q: two em dashes in the stem. exp: em dashes.",
+      "fix": "q: dashes to brackets (the site copy's wording); logged as a stem change. exp: site copy's dash-free wording.",
+      "source": "House rule: no em dash anywhere shipped.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-u0cu6eiv",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: rewritten by hand. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-0cdasvzc",
+      "cat": "Food & Pairing",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-8ih1ogwt",
+      "cat": "Food & Pairing",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-naov5p4j",
+      "cat": "Food & Pairing",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-w27yu78b",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-m8qwfm0i",
+      "cat": "Food & Pairing",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ythx82ji",
+      "cat": "Business of the Sommelier",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-lh5qlak8",
+      "cat": "Business of the Sommelier",
+      "field": "exp",
+      "problem": "exp: em or en dash; en dash in a numeric range; American spelling (livable).",
+      "fix": "exp: rewritten by hand, ranges written with \"to\", British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-gf7dagu2",
+      "cat": "Business of the Sommelier",
+      "field": "opts",
+      "problem": "opts: em or en dash; en dash in a numeric range.",
+      "fix": "opts: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ruja5v5c",
+      "cat": "Business of the Sommelier",
+      "field": "exp",
+      "problem": "exp: em or en dash; American spelling (Programs).",
+      "fix": "exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-6asygf47",
+      "cat": "Business of the Sommelier",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: rewritten by hand. exp: rewritten by hand. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-87dgp0jo",
+      "cat": "Business of the Sommelier",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-awgaxim6",
+      "cat": "Business of the Sommelier",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ffseprj3",
+      "cat": "Business of the Sommelier",
+      "field": "ans",
+      "problem": "ans: en dash in a numeric range.",
+      "fix": "ans: '~25-30' with a hyphen. Written first as '25 to 30', which let the '~25 to 30' accept entry grade the inversion 'less than 25 to 30' (a new check-paid comparative_probe flag); the hyphen keeps the old normalisation and the flag is gone.",
+      "source": "House rule: no en dash; rewrite/check-paid.py comparative_probe.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-lsm24c18",
+      "cat": "Business of the Sommelier",
+      "field": "exp",
+      "problem": "exp: em or en dash; en dash in a numeric range.",
+      "fix": "exp: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-z8zbc1qs",
+      "cat": "Business of the Sommelier",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-twnzsn9w",
+      "cat": "Business of the Sommelier",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash. exp: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-ad5yv8e5",
+      "cat": "Wine Fundamentals",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash; en dash in a numeric range. exp: em or en dash.",
+      "fix": "ans: rewritten by hand, ranges written with \"to\". exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-1o0y7sl6",
+      "cat": "Wine Fundamentals",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash; en dash in a numeric range; American spelling (color). exp: em or en dash.",
+      "fix": "ans: rewritten by hand, ranges written with \"to\", British spelling. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-o40gk6pf",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-tm9xr4sf",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-dhkc8tqx",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: American spelling (aging).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-06sxmd6g",
+      "cat": "Wine Fundamentals",
+      "field": "opts, exp",
+      "problem": "opts: American spelling (Color). exp: em or en dash.",
+      "fix": "opts: rewritten by hand, British spelling. exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-t4mwftka",
+      "cat": "Wine Fundamentals",
+      "field": "ans",
+      "problem": "ans: em or en dash; American spelling (flavor).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-jlfapt33",
+      "cat": "Wine Fundamentals",
+      "field": "opts, exp",
+      "problem": "opts: American spelling (Volatilize). exp: em or en dash; American spelling (volatilizes).",
+      "fix": "opts: rewritten by hand, British spelling. exp: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-bpi6uoud",
+      "cat": "Beer & Cider",
+      "field": "ans, exp",
+      "problem": "ans: em or en dash; en dash in a numeric range. exp: em or en dash.",
+      "fix": "ans: rewritten by hand, ranges written with \"to\". exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-iesftyyi",
+      "cat": "Beer & Cider",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-920c5ira",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-q20qcgqd",
+      "cat": "Beer & Cider",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-asqyl0ki",
+      "cat": "Beer & Cider",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-nfh3bj5q",
+      "cat": "Sake",
+      "field": "exp",
+      "problem": "exp: em or en dash.",
+      "fix": "exp: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-zrhgld9i",
+      "cat": "Sake",
+      "field": "ans",
+      "problem": "ans: em or en dash.",
+      "fix": "ans: site copy's dash-free wording taken word for word. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-65kayopr",
+      "cat": "Sake",
+      "field": "ans",
+      "problem": "ans: em or en dash; en dash in a numeric range.",
+      "fix": "ans: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-fdl4e9s4",
+      "cat": "Sake",
+      "field": "opts, exp",
+      "problem": "opts: em or en dash; en dash in a numeric range. exp: em or en dash; en dash in a numeric range.",
+      "fix": "opts: rewritten by hand, ranges written with \"to\". exp: rewritten by hand, ranges written with \"to\". No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-xg3b0u65",
+      "cat": "Sake",
+      "field": "ans",
+      "problem": "ans: American spelling (pasteurized).",
+      "fix": "ans: rewritten by hand, British spelling. No other change.",
+      "source": "House rules: no em dash, en dash, dash entity or dash stand-in in shipped prose; British spelling in the Codex's own prose (Codex CLAUDE.md, the site dash rule).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "id": "a-c0rnq3io",
+      "cat": "Sake",
+      "field": "q",
+      "problem": "q: a spaced hyphen standing in for a dash in the stem.",
+      "fix": "q: 'What are honjozo's two numerical limits (polishing and alcohol addition)?'; the first forty characters are unchanged, so the reviewed cross_accept key in rewrite/paid_known.py still matches. Logged as a stem change.",
+      "source": "House rule: no dash or dash stand-in in shipped prose.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "id": "a-2wf5yii4",
+      "cat": "Sake",
+      "field": "ans, exp",
+      "problem": "ans: a spaced hyphen used as a dash, and 'a cleaner wine' for sake, which is brewed. exp: two spaced hyphens used as dashes.",
+      "fix": "ans: hyphen to a colon, 'a cleaner sake'. exp: the aside in brackets. Hyphenated ranges (20-25%) left, as hyphens are not dashes.",
+      "source": "House rule: no dash or dash stand-in in shipped prose.",
+      "confidence": "high",
+      "stemChanged": false
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-"""Rank I rewrite - Winemaking Techniques (50 questions, all multiple choice).
+"""Regionale rewrite - Winemaking Techniques (50 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
-This category is the vocabulary of the cellar, not the process. Rank I's
+This category is the vocabulary of the cellar, not the process. Regionale's
 Viticulture & Winemaking already owns how a white is made, how a red is made and
 how a sparkling wine is made, and it defines carbonic maceration, saignee,
 batonnage and extended maceration in those terms. What is left, and what is
@@ -18,7 +18,7 @@ and the lees, then the vessel, the oxygen, the clarification and finally the
 press and the blend.
 
 Where a term already belongs to another category as an answer - soutirage and
-ouillage and egg white to Rank II Bordeaux, sur lie to the Loire, foudre to the
+ouillage and egg white to Village Bordeaux, sur lie to the Loire, foudre to the
 Rhone, talha to Portugal, mutage to Dessert & Sweet Wines - it appears here only
 as a distractor or not at all. Every stem opener is distinct, no stem leads with
 the subject noun where the subject is the answer, and the constructions in
@@ -56,8 +56,8 @@ BANK = [
       "Crushed black grapes are held at eight degrees for four days and the yeast are kept from starting. What is chiefly being drawn out of the skins in that window?",
       ["Colour and aroma, with little tannin",
        "Tannin and structure, with little colour",
-       "Sugar out of the pulp inside the berry",
-       "Sharp acidity out of the seeds"], 0,
+       "Colour and tannin in equal measure",
+       "Acidity and sugar, with little colour"], 0,
       "Grape pigment dissolves readily in water while tannin needs alcohol to come out in quantity, so a cold soak loads colour and fruit aroma without hardening the wine. There is no alcohol in the vat yet to defend it, which is why the step is run cold and under a protective gas."),
     Q("Before the ferment begins",
       "Freshly pressed white juice is left overnight in a chilled tank and the bright fraction is drawn off a sludge of pulp and skin fragments in the morning. What is that step called?",
@@ -168,7 +168,7 @@ BANK = [
        "Adding water to the tank until the reading falls, without thinning it",
        "Chilling the wine until the alcohol freezes out and is skimmed off",
        "Filtering the wine through a pad fine enough to hold the alcohol back"], 0,
-      "The membrane separates a thin watery fraction from the wine, the alcohol is taken out of that fraction alone, and what is left goes back, which is why the flavour survives the operation. A spinning cone reaches the same end by vacuum distillation at a temperature low enough not to cook anything. Simply watering a wine back from sixteen and a half to fourteen would take something like a seventh of its volume in water, which hollows the wine out even where the law allows it."),
+      "The membrane separates a thin watery fraction from the wine, the alcohol is taken out of that fraction alone, and what is left goes back, which is why the flavour survives the operation. A spinning cone reaches the same end by vacuum distillation at a temperature low enough not to cook anything. Simply watering a wine back from sixteen and a half to fourteen would mean adding water equal to more than a sixth of its volume, which hollows the wine out even where the law allows it."),
     Q("Adjusting the must and the wine",
       "A thin, hollow red is dosed before ageing with a powder extracted from grape skins, seeds and oak. What is that addition there to do?",
       ["Add structure and help hold the colour in place",
@@ -246,7 +246,7 @@ BANK = [
        "The roused barrel tastes distinctly sweeter than its neighbour",
        "The undisturbed barrel finishes higher in alcohol",
        "The roused barrel ends up deeper in colour"], 0,
-      "Putting the sediment back into suspension multiplies the wine's contact with it, and the compounds released build weight across the middle of the palate. It is a lever with a price, since a heavily worked barrel trades some of its aromatic lift for that texture, and fashion has swung back towards restraint."),
+      "Putting the sediment back into suspension multiplies the wine's contact with it, and the compounds released build weight across the middle of the palate. It is a lever with a price, since a heavily worked barrel trades some of its aromatic lift for that texture, so how often to stir is a judgement of style rather than a routine."),
 
     # ---------------------------------------------- vessels and what they give (5) --
     Q("Vessels and what they give",
@@ -336,7 +336,7 @@ BANK = [
        "A refermentation in the bottle later on",
        "The wine browning on the shop shelf",
        "A protein haze in warm weather"], 0,
-      "Potassium bitartrate is far less soluble in cold wine, so chilling forces it out where it can be removed rather than leaving it to appear on a cold shelf months later. More producers skip the step each year, on the grounds that the deposit is a cosmetic matter and the chilling costs the wine some aroma."),
+      "Potassium bitartrate is far less soluble in cold wine, so chilling forces it out where it can be removed rather than leaving it to appear on a cold shelf months later. Some producers skip the step and accept the deposit as harmless, or use an additive that stops the crystals forming, since holding a whole tank that cold for days costs a good deal of energy."),
     Q("Clarifying and stabilising",
       "Two filters stand in the bottling room: one traps particles inside a thick pad of medium, the other has a rated pore size that nothing larger can pass. Which one alone can be relied on to hold a sweet wine stable in bottle, and why?",
       ["The rated membrane, because it removes every live yeast cell",
@@ -387,7 +387,7 @@ BANK = [
        "The time the wine spent in barrel afterwards",
        "The time the wine spent on its own sediment",
        "The time between bottling and release to the trade"], 0,
-      "The figure covers the whole span in the fermenting vessel with the solids, taking in any cold soak beforehand and any maceration after the sugar has gone. A number well beyond the length of the ferment itself is therefore a signal that the cellar macerated afterwards."),
+      "The figure covers the whole span in the fermenting vessel with the solids, taking in any cold soak beforehand and any maceration after the sugar has gone. A number well beyond the length of the ferment itself is therefore a signal of a cold soak before it, a long maceration after it, or both."),
     Q("Pressing, blending and the finished wine",
       "A grower says the wine will not be bottled for eighteen months, during which it will be racked, topped up, blended and fined. Which single French word covers that whole span?",
       ["Elevage", "Soutirage", "Assemblage", "Mutage"], 0,

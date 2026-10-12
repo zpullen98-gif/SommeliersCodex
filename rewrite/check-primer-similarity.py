@@ -2,6 +2,8 @@
 """The rewritten study chapters against the ones they replace.
 
     py rewrite/check-primer-similarity.py
+    py rewrite/check-primer-similarity.py --ref 8d535c8^    # any commit
+    OOT_PRIMER_REF=<commit> py rewrite/check-primer-similarity.py
 
 This is the only place the imported chapters are read. Everyone writing a
 chapter is blocked from opening js/data-primers-intro.js, for the same reason
@@ -27,6 +29,7 @@ human to read; they clear nothing on their own.
 import io
 import os
 import re
+import subprocess
 import sys
 from difflib import SequenceMatcher
 
@@ -41,7 +44,18 @@ RATIO_FLAG = 0.60
 NGRAM_FLAG = 8
 SENT_WORDS = 6
 
-SOURCE = os.path.join(REPO, "js", "data-primers-intro.js")
+SOURCE = "js/data-primers-intro.js"
+
+# WHERE THE IMPORTED CHAPTERS LIVE NOW.
+#
+# They do not ship any more. Commit 8d535c8 replaced js/data-primers-intro.js
+# with the rewrite, so reading the working tree compares the rewrite against
+# ITSELF and reports a ratio of 1.000 on every chapter, alarming and exactly
+# backwards. The honest comparison is against the last commit that still
+# carried the imported text, read out of history the way check-similarity.py
+# reads the imported question bank (its OOT_IMPORTED_REF). Set OOT_PRIMER_REF,
+# or pass --ref, to compare against a different commit.
+IMPORTED_REF = os.environ.get("OOT_PRIMER_REF", "8d535c8^")
 ENTRY = re.compile(r'\{g:"([^"]*)",\s*id:"([^"]*)",\s*t:"([^"]*)",\s*body:`(.*?)`\s*\}', re.S)
 
 
@@ -58,12 +72,22 @@ def longest_run(a, b):
     return m.size, " ".join(a[m.a:m.a + m.size])
 
 
-def load_source():
-    if not os.path.exists(SOURCE):
-        return {}
-    text = io.open(SOURCE, encoding="utf-8").read()
-    if "ORIGINAL WORK" in text.split("\n")[1:4][0] if text else False:
-        pass
+def load_source(ref=None):
+    """The imported chapters as they stood at `ref`, straight from git."""
+    ref = ref or IMPORTED_REF
+    p = subprocess.run(["git", "show", ref + ":" + SOURCE], cwd=REPO, capture_output=True)
+    if p.returncode != 0:
+        raise SystemExit(
+            "\n  Could not read " + SOURCE + " at " + ref + "."
+            "\n  The imported chapters were replaced in the working tree, so this"
+            "\n  comparison has to come from history. Point OOT_PRIMER_REF (or"
+            "\n  --ref) at a commit that still carries them.\n")
+    text = p.stdout.decode("utf-8", "replace")
+    if "ORIGINAL WORK" in "\n".join(text.split("\n")[:4]):
+        raise SystemExit(
+            "\n  " + SOURCE + " at " + ref + " is the rewrite itself, not the imported"
+            "\n  chapters; comparing against it would report 1.000 everywhere. Point"
+            "\n  OOT_PRIMER_REF (or --ref) at a commit before 8d535c8.\n")
     out = {}
     for g, id_, t, body in ENTRY.findall(text):
         out[id_] = primerlib.plain({"body": body})
@@ -90,14 +114,20 @@ if __name__ == "__main__":
             continue
         ours += mod.CHAPTERS
 
-    src = load_source()
+    ref = None
+    if "--ref" in sys.argv:
+        i = sys.argv.index("--ref")
+        if i + 1 >= len(sys.argv):
+            raise SystemExit("  --ref needs a commit")
+        ref = sys.argv[i + 1]
+    src = load_source(ref)
     if not src:
         print("\n  no source chapters found; nothing to compare against.")
         sys.exit(0)
 
     print("")
-    print("  comparing %d rewritten chapter(s) against %d source chapter(s)"
-          % (len(ours), len(src)))
+    print("  comparing %d rewritten chapter(s) against %d source chapter(s) at %s"
+          % (len(ours), len(src), ref or IMPORTED_REF))
 
     flagged = []
     worst_ratio, worst_ngram = 0.0, 0

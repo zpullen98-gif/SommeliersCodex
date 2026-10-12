@@ -1,0 +1,283 @@
+{
+ "batch": "regionale-7",
+ "modules": [
+  "rewrite/categories/r1_rhone.py",
+  "rewrite/categories/r1_spain.py"
+ ],
+ "readCount": 118,
+ "total": 118,
+ "findings": [
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Almost every cru of the northern valley sits",
+   "field": "exp",
+   "problem": "The exp said the river 'swings west' at Tain to explain the hill's southern aspect. I cannot back the direction of the bend, and the aspect really comes from the hill running east to west across the river's line.",
+   "fix": "Now: 'the hill runs east to west, so its main slope faces due south.'",
+   "source": "Geography of the Hermitage hill: an east-west granite ridge on the left bank, its vineyard face turned south over Tain",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Whole clusters of a white grape may legally",
+   "field": "exp",
+   "problem": "Exp used the banned word ('so the practice began').",
+   "fix": "Now: 'so the habit began'.",
+   "source": "House rule: never practice or practise",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Cote-Rotie growers co-ferment only a little Viognier in",
+   "field": "stem",
+   "problem": "The stem carried the banned word ('only a little Viognier in practice').",
+   "fix": "Dropped 'in practice': 'Cote-Rotie growers co-ferment only a little Viognier, though the rules permit a good deal more. What is the legal ceiling?' Options, key (twenty percent) and exp unchanged. Id moves i-r7oiahek to i-rpjplmmc; check-similarity clean.",
+   "source": "House rule: never practice or practise",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "An estate of barely more than three hectares",
+   "field": "exp",
+   "problem": "The exp called a whole appellation in one owner's hands 'very nearly unique in the country'. That overstates it: La Romanee-Conti, La Tache, La Grande Rue and Clos de Tart are monopole appellations in Burgundy, and so is Coulee de Serrant, one of the distractors.",
+   "fix": "Now: 'rare in France: La Romanee-Conti in Burgundy and Coulee de Serrant on the Loire are two of the very few others.' This also explains why that distractor looks plausible.",
+   "source": "Monopole AOCs: La Romanee-Conti (Burgundy grand cru) and Coulee de Serrant (AOC since 2011, held by one family)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Growers on the hill above Tain keep one",
+   "field": "exp",
+   "problem": "The exp said Les Rocoules is 'the parcel growers reserve for white'. Rocoules is best known for Marsanne, but Syrah grows there too, so 'reserve' overstates it.",
+   "fix": "Now: 'while Les Rocoules is best known for its white.'",
+   "source": "Hermitage lieux-dits: Rocoules is planted mostly, not only, to white varieties",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Fermenting Syrah with a proportion of its stems",
+   "field": "stem",
+   "problem": "The stem carried the banned word ('is common practice in the north').",
+   "fix": "Now: '...left in the vat is common in the north. What does whole-bunch inclusion usually contribute?' Options, key and exp unchanged. Id moves i-psu8g0ya to i-tl2y299x; check-similarity clean.",
+   "source": "House rule: never practice or practise",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Traditional northern cellars matured Syrah in large old",
+   "field": "opts",
+   "problem": "The stem says the cellars used large old casks 'rather than in new barriques', so 'A barrique' was ruled out by the stem's own words. 'A pupitre' is a riddling rack, not a vessel. That left foudre against amphora, which a student could get by elimination. The exp also used the US 'toward'.",
+   "fix": "Distractors now 'A feuillette' (a small cask of about 130 litres) and 'A concrete egg', so all four are wine vessels and only one is a large wooden cask. Key and its length unchanged. In the exp, 'toward' is now 'towards'.",
+   "source": "Cooperage terms: foudre (large cask or vat), feuillette (small cask of roughly 114 to 136 litres)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Plantings of one northern white had fallen to",
+   "field": "opts",
+   "problem": "The stem asks which northern white nearly died out, but one distractor (Counoise) is a black grape. That makes the options of mixed kind, and a student can drop it without knowing anything.",
+   "fix": "Counoise replaced by Clairette, a southern white that was never close to extinction. Key and exp unchanged.",
+   "source": "Ampelography: Counoise is black; Clairette is white and widely planted in the south",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "The minimum alcohol demanded there is the highest",
+   "field": "stem",
+   "problem": "The stem stated that Chateauneuf's 12.5 percent minimum is 'the highest of any French appellation'. That is false today: Sauternes and Barsac require 13 percent natural potential alcohol, and the vins doux naturels require far more. The exp also used the banned word ('In practice').",
+   "fix": "Stem now: 'A red from the papal village that falls short of a set natural alcohol may not carry the name. What is that minimum?' Key 12.5 percent and options unchanged. The exp opens 'Most wines land far above it'. Id moves i-5u8wquhp to i-dd77fiqp; check-similarity clean.",
+   "source": "Chateauneuf-du-Pape cahier des charges (12.5 percent natural minimum for red); Sauternes cahier des charges (13 percent natural minimum)",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Whites are a small part of the village's",
+   "field": "exp",
+   "problem": "The exp grouped Bourboulenc with the grapes that 'give weight rather than tension'. Bourboulenc is the one grown in the south mainly for its freshness and acidity.",
+   "fix": "Now: 'Grenache Blanc, Clairette and Roussanne give weight rather than tension, with Bourboulenc lending some freshness.'",
+   "source": "Variety profile: Bourboulenc keeps its acidity late and is valued for freshness (Chateauneuf, La Clape)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Adding a commune name such as Sablet or",
+   "field": "exp",
+   "problem": "The exp stated as fact that the named-village wines 'are reliably the best value in the valley'. That is a price judgement, which can go out of date and is not a rule.",
+   "fix": "Now: 'and they often give good value.'",
+   "source": "House rule: nothing volatile stated as fact",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Which trio of grapes forms the backbone of",
+   "field": "exp",
+   "problem": "The exp said 'The abbreviation has followed the blend' without ever giving the abbreviation, so the sentence teaches nothing to a student who has not met it.",
+   "fix": "Now: 'The abbreviation GSM has followed the blend around the world.'",
+   "source": "Internal coherence of the exp",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_rhone.py",
+   "stemStart": "Thin, free-draining rock on the steep northern slopes",
+   "field": "exp",
+   "problem": "The exp used the US 'toward'.",
+   "fix": "Now 'towards'.",
+   "source": "House rule: British spelling",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_spain.py",
+   "stemStart": "A traditional Rioja Gran Reserva smells of coconut,",
+   "field": "stem",
+   "problem": "The stem carried the banned word ('Which cellar practice accounts for that?').",
+   "fix": "Now ends 'What in the cellar accounts for that?' Options, key and exp unchanged. Id moves i-q4lvyony to i-y5iqq0ws; check-similarity clean.",
+   "source": "House rule: never practice or practise",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_spain.py",
+   "stemStart": "Frost can strike in late May and again",
+   "field": "exp",
+   "problem": "The exp gave Ribera del Duero's vineyards as running 'from roughly 750 to 900 metres'. The top of that range is too low: the Soria end and the higher Burgos sites go past 1,000 metres.",
+   "fix": "Now: 'Vineyards sit mostly between about 750 and 1,000 metres'.",
+   "source": "Ribera del Duero DO: vineyards from about 750 metres to over 1,000 metres",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_spain.py",
+   "stemStart": "Before Verdejo was replanted, Rueda's reputation rested on",
+   "field": "exp",
+   "problem": "The exp said dorado was aged 'under a film of yeast'. That contradicts its own key ('An oxidatively aged white called dorado'). Rueda Dorado is the oxidative style; the flor-aged style is Rueda Palido.",
+   "fix": "Now: 'Dorado was aged oxidatively, first in glass demijohns left out in the sun and then in cask, which brings it closer to a Sherry than to any modern white. A little is still made, beside a flor-aged cousin called Palido.'",
+   "source": "Rueda DO pliego de condiciones: Dorado (oxidative ageing) and Palido (biological ageing under flor)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r1_spain.py",
+   "stemStart": "A butt marked for Fino loses its flor",
+   "field": "stem",
+   "problem": "The stem said a Palo Cortado loses its flor 'without ever being refortified'. That is wrong: once the flor fails and the cellar master reclassifies the butt, it is fortified to about 17 percent or more to age oxidatively. The exp implied the same thing.",
+   "fix": "Stem now: 'A butt set aside for Fino loses its flor early and unbidden, then finishes with the nose of an Amontillado over the body of an Oloroso. Which style is it?' The exp now says a Palo Cortado 'loses its flor by accident and is fortified only afterwards, to age with oxygen'. Options and key unchanged. Id moves i-lfjnphqw to i-jdo79slb; check-similarity clean.",
+   "source": "Consejo Regulador Jerez-Xeres-Sherry account of Palo Cortado: reclassified from the biological line and fortified for oxidative ageing",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r1_spain.py",
+   "stemStart": "Montilla-Moriles in Cordoba province supplies much of the",
+   "field": "exp",
+   "problem": "The exp ended 'That raisined must is what sweetens a Cream Sherry'. It never named the sweet wine the stem asks about (Pedro Ximenez Sherry), and it presented PX as the only sweetener of a Cream when concentrated must is used too.",
+   "fix": "Now: 'Jerez bottles that raisined wine on its own as Pedro Ximenez, and it is the classic sweetener of a Cream.'",
+   "source": "Sherry styles: PX bottled as a varietal sweet wine; Creams usually sweetened with PX, sometimes with concentrated must",
+   "confidence": "medium",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "Almost every cru of the northern valley sits",
+   "verdict": "kept",
+   "why": "The direction of the river's bend at Tain is told both ways in print, so dropping it was wise. The replacement is plain geography: the vineyard runs from Les Bessards in the west to the eastern lieux-dits, so the face looks south over Tain, and it agrees with the module's own 'western end' Bessards question."
+  },
+  {
+   "stemStart": "Whole clusters of a white grape may legally",
+   "verdict": "kept",
+   "why": "Banned word removed in the exp only, no id cost; 'habit' sits well beside 'tradition' in the next sentence."
+  },
+  {
+   "stemStart": "Cote-Rotie growers co-ferment only a little Viognier in",
+   "verdict": "kept",
+   "why": "The banned word was in the stem, so no fix outside the stem existed; the shorter stem still asks the same thing and twenty percent remains the legal ceiling. The id loss is logged knowingly and check-similarity is clean."
+  },
+  {
+   "stemStart": "An estate of barely more than three hectares",
+   "verdict": "amended",
+   "why": "The fix is right: monopole appellations are few but more than one (La Romanee-Conti, La Tache, La Grande Rue, Clos de Tart, La Romanee, Coulee de Serrant), and a search confirms Coulee de Serrant is still one family's whole appellation, so naming it explains the distractor while the stem's 'within the boundaries of Condrieu' still decides it. Amended only for voice: 'rare in France' followed 'smallest appellations in France' in the sentence before, so it now reads 'rare in the country'."
+  },
+  {
+   "stemStart": "Growers on the hill above Tain keep one",
+   "verdict": "kept",
+   "why": "Rocoules is mostly Marsanne with some Syrah, so 'reserve for white' overstated it and 'best known for its white' is accurate. Exp only, no id cost."
+  },
+  {
+   "stemStart": "Fermenting Syrah with a proportion of its stems",
+   "verdict": "kept",
+   "why": "Banned word in the stem, no other route; 'is common in the north' says the same and whole-bunch inclusion is indeed traditional there. Id loss logged and accepted."
+  },
+  {
+   "stemStart": "Traditional northern cellars matured Syrah in large old",
+   "verdict": "kept",
+   "why": "The original was answerable by elimination: the stem itself ruled out the barrique and a pupitre is a riddling rack. A feuillette is a real small cask, so a student must know foudre means large; concrete egg and amphora are real vessels. The build reports no length signal and 'towards' is the British form."
+  },
+  {
+   "stemStart": "Plantings of one northern white had fallen to",
+   "verdict": "amended",
+   "why": "Removing Counoise was right (a black grape among whites answers itself). But Clairette made this question's four options identical to the co-ferment question's, with the same Viognier key, and to the Marsanne question's as well, so a student could answer by recognising the set. Grenache Blanc, a widely planted southern white never near extinction, does the same work without the repeat; key and exp unchanged."
+  },
+  {
+   "stemStart": "The minimum alcohol demanded there is the highest",
+   "verdict": "kept",
+   "why": "The superlative was false (Sauternes asks 13 percent natural, the vins doux naturels far more) and sat in the stem, so the stem had to change; 'there' also had no referent in a shuffled pool and 'the papal village' does. Twelve and a half percent natural remains the Chateauneuf minimum, and 'a natural alcohol' is ordinary trade usage. The banned word left the exp too."
+  },
+  {
+   "stemStart": "Whites are a small part of the village's",
+   "verdict": "kept",
+   "why": "Bourboulenc is the southern white grown for its acidity and freshness, so setting it apart from the weightier three is right and still fits the key's 'modest acidity'."
+  },
+  {
+   "stemStart": "Adding a commune name such as Sablet or",
+   "verdict": "kept",
+   "why": "A price verdict stated as fact is volatile; 'often give good value' is a fair hedge and the teaching point (tighter rules, waiting room for cru status) is intact."
+  },
+  {
+   "stemStart": "Which trio of grapes forms the backbone of",
+   "verdict": "kept",
+   "why": "The sentence named an abbreviation it never gave; supplying GSM makes it teach something, and it is shown only after the answer."
+  },
+  {
+   "stemStart": "Thin, free-draining rock on the steep northern slopes",
+   "verdict": "kept",
+   "why": "'Towards' is the British form; exp only, matching earlier batches' verdicts."
+  },
+  {
+   "stemStart": "A traditional Rioja Gran Reserva smells of coconut,",
+   "verdict": "kept",
+   "why": "Banned word in the stem, so the stem had to move; 'What in the cellar accounts for that?' keeps the question intact and the American oak key stands. Id loss logged and accepted."
+  },
+  {
+   "stemStart": "Frost can strike in late May and again",
+   "verdict": "kept",
+   "why": "'Run from 750 to 900' gave the whole range, and its top is too low: the Soria end and higher Burgos sites pass 1,000 metres. 'Mostly between about 750 and 1,000' is accurate and hedged."
+  },
+  {
+   "stemStart": "Before Verdejo was replanted, Rueda's reputation rested on",
+   "verdict": "kept",
+   "why": "The original contradicted its own key. A search confirms the Rueda rules keep Dorado as oxidative ageing (at least four years, the last two in oak) and Palido as biological ageing under flor, both still made; the demijohns in the sun are the traditional first stage."
+  },
+  {
+   "stemStart": "A butt marked for Fino loses its flor",
+   "verdict": "kept",
+   "why": "'Without ever being refortified' was wrong: once the flor fails and the butt is reclassified it is fortified to about 17 percent or more for oxidative ageing. The error was in the stem, so the stem had to change; the new stem and exp state the accident and the later fortification correctly. 'Marked' to 'set aside' was incidental to a needed rewrite."
+  },
+  {
+   "stemStart": "Montilla-Moriles in Cordoba province supplies much of the",
+   "verdict": "kept",
+   "why": "The exp now names the wine the stem points to, PX bottled on its own (Jerez may use Montilla PX), and calls it the classic rather than the only sweetener of a Cream, which allows for concentrated must."
+  }
+ ]
+}

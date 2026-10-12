@@ -1,10 +1,10 @@
-"""Rank II rewrite - Champagne (35 questions: 14 MC, 21 short answer).
+"""Village rewrite - Champagne (35 questions: 14 MC, 21 short answer).
 
-Certified level, pitched deliberately above the Rank I "Champagne" category.
-Where Rank I names the district and its grape, this asks why a slope facing away
-from the sun is ranked at the top of the scale; where Rank I names the cuvee and
+Certified level, pitched deliberately above the Regionale "Champagne" category.
+Where Regionale names the district and its grape, this asks why a slope facing away
+from the sun is ranked at the top of the scale; where Regionale names the cuvee and
 the taille, this asks what a house is giving up when it sells its allowance of
-the second one. Nothing here repeats a Rank I task.
+the second one. Nothing here repeats a Regionale task.
 
 The running order follows the wine forward from the ground: where the fruit
 grows and how the ground was ranked, then the press house, then the blending
@@ -85,7 +85,7 @@ BANK = [
        "The Aube",
        ["aube", "the aube department", "department of the aube", "l aube",
         "the aube region"],
-       "The excluded growers were a hundred kilometres south of the Marne heartland, and the disturbances of 1911 turned as much on merchants buying fruit from outside Champagne altogether as on where the line fell. The 1927 law fixed the outer limit commune by commune, and that boundary is essentially the one in force now.",
+       "The excluded growers were a hundred kilometres south of the Marne heartland, and the disturbances of 1911 turned as much on merchants buying fruit from outside Champagne altogether as on where the line fell. The 1927 law fixed the outer limit commune by commune, and every later revision of the area has started from that line.",
        ex=True),
 
     # ------------------- The echelle des crus and the village ranking (4) ----
@@ -95,7 +95,7 @@ BANK = [
        "A single figure per kilogram published each spring by the trade body and binding on every village in the appellation",
        "The village rating, converted into a fixed sum per kilogram and revised whenever a village is promoted",
        "The yield ceiling declared for the harvest, with the price rising as the permitted crop falls"], 0,
-      "The scale survived the loss of its job. Grand cru and premier cru still identify villages and still go on labels, but nothing is calculated from the percentages any more, and prices vary village by village and buyer by buyer. A fashionable grower's fruit can now cost several times what the old rating would ever have allowed."),
+      "The scale survived the loss of its job. Grand cru and premier cru still identify villages and still go on labels, but nothing is calculated from the percentages any more, and prices vary village by village and buyer by buyer. Two villages of the same rank can therefore fetch quite different sums per kilogram."),
     Q("The echelle des crus and the village ranking",
       "A cuvee is drawn from two grand cru villages and one premier cru village, with nothing else in it at all. What rank may the label claim?",
       ["Premier Cru, since every village in the blend holds at least that rank",
@@ -118,7 +118,7 @@ BANK = [
        ["chouilly", "the village of chouilly", "chouilly in the cote des blancs",
         "chouilly grand cru", "grand cru chouilly",
         "chouilly grand cru for chardonnay"],
-       "It stood at a hundred percent for white grapes and ninety-five for black, so under the scale its Chardonnay ranked at the top and its Pinot Noir did not. Tours-sur-Marne was the mirror case out in the valley, rated at the full hundred for black grapes only. Once the percentages stopped doing any work the distinction went with them: the cahier des charges now simply lists the seventeen communes entitled to grand cru, Chouilly and Tours-sur-Marne among them, without separating them by grape colour. The flat list of villages every student recites is the current legal position, and a simplification of the scale that produced it.",
+       "It stood at a hundred per cent for white grapes and ninety-five for black, so under the scale its Chardonnay ranked at the top and its Pinot Noir did not. Tours-sur-Marne was the mirror case out in the valley, rated at the full hundred for black grapes only. Once the percentages stopped doing any work the distinction went with them: the cahier des charges now simply lists the seventeen communes entitled to grand cru, Chouilly and Tours-sur-Marne among them, without separating them by grape colour.",
        ex=True),
 
     # ----------------------------- The press house and its fractions (4) ----
@@ -151,7 +151,7 @@ BANK = [
     # ------------- Assemblage, reserve wines and the perpetual reserve (4) ---
     Q("Assemblage, reserve wines and the perpetual reserve",
       "A generous harvest brings in more fruit than the trade has agreed to market that year. What may a grower do with the surplus, under a provision unusual in French appellation law?",
-      ["Press it, make it into wine and lock it away in a personal reserve to be released in a short year",
+      ["Vinify it and hold it in a blocked reserve, to be released in a short year",
        "Carry it forward as a credit against the following harvest's yield ceiling",
        "Sell it as base wine to a cremant producer outside the region",
        "Distil it and sell the spirit under the appellation name"], 0,
@@ -198,7 +198,7 @@ BANK = [
         "around 24 grams", "24g per litre", "24 grams litre",
         "24 grams sugar per litre", "24 g/l of sugar", "around 24",
         "approximately 24"],
-       "Around four grams per litre generates one further atmosphere, so twenty-four takes a bottle to roughly six. The same fermentation lifts the alcohol by a little over one percent and leaves the spent yeast behind as the deposit the wine will then spend years on.",
+       "Around four grams per litre generates one further atmosphere, so twenty-four takes a bottle to roughly six. The same fermentation lifts the alcohol by a little over one per cent and leaves the spent yeast behind as the deposit the wine will then spend years on.",
        ex=True),
     SA("Tirage, dosage and the sugar scale",
        "A label reads Extra Brut. Give the band of residual sugar, in grams per litre, that the term permits.",
@@ -215,7 +215,7 @@ BANK = [
         "0-6 grams per liter", "between 0 and 6 grams per litre",
         "between zero and six grams per litre", "between 0 and 6 g/l",
         "0 to 6 grams", "zero to six grams"],
-       "Extra Brut sits between Brut Nature and Brut, and a wine at the top of the band is only marginally drier than a lightly dosed Brut. The category has grown because a well-ripened base wine no longer needs much sugar to be palatable, which was not true at all when the scale was written.",
+       "Extra Brut sits between Brut Nature and Brut, and a wine at the top of the band is only marginally drier than a lightly dosed Brut. Low dosage suits a base wine picked fully ripe, which needs far less sugar to taste balanced than a lean one does.",
        ex=True),
     SA("Tirage, dosage and the sugar scale",
        "Cane sugar dissolved in wine is the old way of sweetening a dosage. Name the colourless concentrated grape syrup that many houses now use in its place.",
@@ -236,14 +236,14 @@ BANK = [
        "A minimum of six years on the lees and fruit drawn only from grand cru villages",
        "Fruit from villages rated at the full hundred on the old percentage scale",
        "A declared vintage and riddling done entirely by hand"], 0,
-      "Tete de cuvee and prestige cuvee are trade language for a house's flagship, and each house writes its own rules for what qualifies. In practice such wines are usually vintage-dated, long-aged and drawn from the best crus, but none of that is required and the words on their own promise a buyer nothing."),
+      "Tete de cuvee and prestige cuvee are trade language for a house's flagship, and each house writes its own rules for what qualifies. Such wines are usually vintage-dated, long-aged and drawn from the best crus, but none of that is required and the words on their own promise a buyer nothing."),
     Q("Ageing minima and the prestige tier",
       "Even in an outstanding year a house may not turn its whole crop into vintage wine. How much of the harvest has to be held back?",
-      ["At least twenty percent, which goes into reserve for non-vintage blending",
+      ["At least twenty per cent, which goes into reserve for non-vintage blending",
        "Whatever the trade body fixes for that year, since the figure moves with the size of the crop",
        "None, provided the house declares its intention before the harvest is pressed",
        "At least half, so that the non-vintage blend is never short of base wine"], 0,
-      "Vintage declaration is capped at eighty percent of a year's crop, so a fifth of even the finest harvest is set aside. The reasoning is commercial: non-vintage is the region's living, and a run of fine years in which every house declared everything would leave the blends starved of good reserve wine exactly when the next poor year arrived."),
+      "Vintage declaration is capped at eighty per cent of a year's crop, so a fifth of even the finest harvest is set aside. The reasoning is commercial: non-vintage is the region's living, and a run of fine years in which every house declared everything would leave the blends starved of good reserve wine exactly when the next poor year arrived."),
     SA("Ageing minima and the prestige tier",
        "Champagne's ageing minima are counted in months, and the count begins neither at harvest nor at the end of the first fermentation. From what event does it run?",
        "Tirage",
@@ -267,14 +267,14 @@ BANK = [
        "Bidule",
        ["bidule", "bidule cup", "plastic bidule", "the plastic bidule cup",
         "bidule plastic cup"],
-       "The word is French for thingamajig, which is about the ceremony it commands, but it does a job the older closures did badly. The sediment settles inside the cup and leaves with it; without one it freezes against the glass and the neck has to be cleaned by hand before the wine can be dosed.",
+       "The word is French slang for a thingamajig, a modest name for a useful part. Once riddling has brought the deposit down onto it, the cup holds the sediment together so that it leaves cleanly in the frozen plug with little wine lost alongside it.",
        ex=True),
     SA("Riddling, disgorgement and the back label",
        "A producer may buy bottles from another that have finished their second fermentation and are still lying on their lees, then disgorge, dose and label them as its own. Give the term for wine traded in that state.",
        "Sur lattes",
        ["sur lattes", "sur latte", "sold sur lattes", "wine sold sur lattes",
         "bottles sold sur lattes"],
-       "The name comes from the wooden laths the bottles rest on while they age. Nothing on the finished label reveals it, which is why the trade dislikes the practice and why the negociant houses agreed among themselves to stop trading sur lattes with one another from 2004, leaving purchases from growers and cooperatives as what survives of it. It is still the usual explanation offered when a brand appears from nowhere in quantity.",
+       "The name comes from the wooden laths the bottles rest on while they age. Nothing on the finished label has to reveal it, which is why the trade has long been uneasy about such sales, and why a brand that appears from nowhere in quantity invites the question of who made the wine.",
        ex=True),
     SA("Riddling, disgorgement and the back label",
        "A few houses still run the second fermentation under a natural cork rather than a crown cap, and that cork has to be clamped down against the pressure building beneath it. Name the metal clip that holds it.",
@@ -331,11 +331,11 @@ BANK = [
     Q("The varieties beyond the famous three",
       "A Champagne grower's planting declaration lists a grey-berried mutation of Pinot Noir under a local synonym rather than under the name the rest of France uses. Which name?",
       ["Fromenteau", "Beaunois", "Auvernat", "Morillon"], 0,
-      "Fromenteau is what Champagne calls Pinot Gris, one of the seven principal varieties the appellation permits. Beaunois is what Chablis calls Chardonnay and Morillon is what Styria calls the same grape, so all of these are regional synonyms; only one of them belongs to this region."),
+      "Fromenteau is what Champagne calls Pinot Gris, one of the appellation's seven traditional varieties. Beaunois is what Chablis calls Chardonnay and Morillon is what Styria calls the same grape, so all of these are regional synonyms; only one of them belongs to this region."),
     SA("The varieties beyond the famous three",
-       "A grower bottling all seven permitted varieties together needs a late-ripening white grape, once widespread in the south of the region and now down to a few hectares, with piercing acidity and a floral, almost herbal scent. Name it.",
+       "A grower bottling all seven traditional varieties together needs a late-ripening white grape, once widespread in the south of the region and now down to a few hectares, with piercing acidity and a floral, almost herbal scent. Name it.",
        "Arbane",
        ["arbane", "arbanne", "the arbane grape", "l arbane"],
-       "It ripens so late and crops so unreliably that it was very nearly abandoned, and the handful of growers who keep it do so partly as a museum piece and partly because it puts a nervy top note into a cuvee that nothing else supplies. Petit Meslier, Pinot Blanc and Pinot Gris are the other survivors alongside the famous three.",
+       "It ripens so late and crops so unreliably that it was very nearly abandoned, and the handful of growers who keep it do so partly as a museum piece and partly because it puts a nervy top note into a cuvee that nothing else supplies. Petit Meslier, Pinot Blanc and Pinot Gris are the other survivors alongside the famous three, and since 2022 a disease-resistant newcomer, Voltis, has been admitted on trial beside them.",
        ex=True),
 ]

@@ -1,10 +1,10 @@
-"""Rank II rewrite - Bordeaux (54 questions: 20 MC, 34 short answer).
+"""Village rewrite - Bordeaux (54 questions: 20 MC, 34 short answer).
 
-Certified level, pitched deliberately above the Rank I "Bordeaux" category.
-Where Rank I names the First Growths, this asks what the brokers of 1855 were
-actually ranking and what has moved since; where Rank I says Sauternes owes its
+Certified level, pitched deliberately above the Regionale "Bordeaux" category.
+Where Regionale names the First Growths, this asks what the brokers of 1855 were
+actually ranking and what has moved since; where Regionale says Sauternes owes its
 sweetness to noble rot, this asks what botrytis does that raisining does not and
-why cryoextraction is argued about. Nothing here repeats a Rank I task.
+why cryoextraction is argued about. Nothing here repeats a Regionale task.
 
 The running order is built around one idea: a Bordeaux label is a claim about
 three separate things - a place, a rank and a trading arrangement - and a
@@ -88,13 +88,13 @@ BANK = [
         "deuxieme cru classe and premier cru classe",
         "premier cru classe deuxieme cru classe",
         "premiers crus classes and deuxiemes crus classes"],
-       "Yquem sits alone above them as Premier Cru Superieur, a tier invented for it. The reds got five tiers and the sweet wines two, which tells you how much finer the price gradations were thought to be on the Left Bank.",
+       "Yquem sits alone above them as Premier Cru Superieur, a tier invented for it. The reds got five tiers and the sweet wines two, which tells you how much finer the brokers thought the price gradations among the reds were.",
        ex=True),
     SA("The 1855 list as a document",
        "Suppose a classified chateau buys vineyard from an unclassified neighbour. Which national body decides whether that ground is entitled to the appellation the classified wine carries?",
        "The INAO",
        ["inao", "institut national de l'origine et de la qualite",
-        "the national appellation body", "institut national des appellations d'origine"],
+        "institut national des appellations d'origine"],
        "The rank is a private nineteenth-century verdict, but the appellation on the same label is a state matter, and parcel eligibility is settled by the INAO against the delimited zone. So the classification cannot be enlarged by purchase alone: the land has to already be inside the right appellation."),
     SA("The 1855 list as a document",
        "Moving an estate between tiers of the 1855 reds needed something the trade could not grant on its own. What instrument finally did it in 1973?",
@@ -132,7 +132,7 @@ BANK = [
         "cru bourgeois superieur exceptionnel",
         "cru bourgeois then superieur then exceptionnel",
         "bourgeois superieur and exceptionnel"],
-       "The tiers were abolished in the 2000s after litigation, leaving a flat annual selection of individual wines, and were restored when the system was rebuilt around estate-level assessment. Exceptionnel is the smallest group and carries requirements on vineyard management and cellar practice, not only on the tasting.",
+       "The tiers were abolished in the 2000s after litigation, leaving a flat annual selection of individual wines, and were restored when the system was rebuilt around estate-level assessment. Exceptionnel is the smallest group and carries requirements on vineyard management and cellar work, not only on the tasting.",
        ex=True),
     SA("Graves, Saint-Emilion and Cru Bourgeois",
        "Unlike an 1855 growth, a Cru Bourgeois estate holds its standing only for a fixed run of harvests before it must reapply. How long does the award now run?",
@@ -145,7 +145,7 @@ BANK = [
        "Ausone and Cheval Blanc held the top rank of the Saint-Emilion classification alone for decades. In the 2012 revision, which two estates were raised to join them?",
        "Angelus and Pavie",
        ["angelus and pavie", "pavie and angelus", "angelus pavie", "pavie angelus"],
-       "Both promotions were contested in court, which is the recurring feature of this classification rather than an accident: because rank is revisable it is worth suing over, and because it is written into the appellation rules the state ends up in the argument. The 1855 list attracts no litigation for the opposite reason.",
+       "The 2012 list was itself taken to court by estates demoted or left off it, which is the recurring feature of this classification: because rank is revisable it is worth suing over, while the fixed 1855 list attracts no litigation. Ausone, Cheval Blanc and Angelus all withdrew from the 2022 revision, so the top tier this question describes belongs to the 2012 edition only.",
        ex=True),
 
     # --------------------------- Communal appellations of the Left Bank (6) --
@@ -157,7 +157,7 @@ BANK = [
     Q("Communal appellations of the Left Bank",
       "One of the four famous Medoc communes holds no First Growth at all, yet nearly all of its vineyard is classified. Which commune is that?",
       ["Saint-Julien", "Saint-Estephe", "Margaux", "Pauillac"], 0,
-      "Saint-Julien is small, tightly drawn and dominated by classified estates, so the average bottle carrying the name is a serious wine. Saint-Estephe is larger and has proportionally far more unclassified land, which is why its name alone tells you less."),
+      "Saint-Julien is small, tightly drawn and dominated by classified estates, so the average bottle carrying the name is a serious wine. Saint-Estephe has no First Growth either, but it is larger and has proportionally far more unclassified land, which is why its name alone tells you less."),
     SA("Communal appellations of the Left Bank",
        "Wines from the northernmost of the four great communes are firmer and slower than their neighbours because a water-retaining layer sits under the gravel. Name that layer.",
        "Clay",
@@ -167,7 +167,7 @@ BANK = [
        "Great Medoc sites are almost all built on a low mound of gravel standing a few metres proud of the surrounding land. What is the local term for such a mound?",
        "Croupe",
        ["croupe", "croupes", "gravel croupe"],
-       "The height is trivial in absolute terms and decisive in practice: it puts the water table further below the roots and lets cold air drain away downslope. The old Medoc saying that the best vines see the river is really a statement about being on a croupe."),
+       "The height is trivial in absolute terms and decisive on the ground: it puts the water table further below the roots and lets cold air drain away downslope. The old Medoc saying that the best vines see the river is really a statement about being on a croupe."),
     SA("Communal appellations of the Left Bank",
        "Running north from the city, the Haut-Medoc appellation stops where the plain Medoc appellation begins. Which commune marks that northern boundary?",
        "Saint-Seurin-de-Cadourne",
@@ -200,17 +200,17 @@ BANK = [
        "A modest stream runs east to west across the Right Bank, marking the northern limit of Pomerol and of Saint-Emilion, with the satellite appellations lying beyond it. Name that stream.",
        "The Barbanne",
        ["barbanne", "barbanne stream", "riviere barbanne", "the barbanne river"],
-       "It is small enough to step across and it is nonetheless one of the most consequential lines in Bordeaux, because Lalande-de-Pomerol and the four Saint-Emilion satellites all begin on the far side of it. Old local lore held that the good wine was on the southern bank and the witches on the northern one."),
+       "It is small enough to step across and it is nonetheless one of the most consequential lines in Bordeaux, because Lalande-de-Pomerol and the four Saint-Emilion satellites all begin on the far side of it."),
     SA("The appellations sommeliers forget",
        "Inside Fronsac sits a smaller appellation drawn around two limestone hills above the Dordogne. Name that inner appellation.",
        "Canon-Fronsac",
        ["canon fronsac", "canon fronsac aoc", "the canon fronsac appellation"],
-       "It covers the slopes of the Canon and Saint-Michel hills, where molasse and limestone replace the sandier ground of Fronsac proper. Any grower in Canon-Fronsac may declassify to Fronsac; the reverse is not possible, which is the practical test of which sits above the other."),
+       "It takes in parts of the communes of Fronsac and Saint-Michel-de-Fronsac, where molasse and limestone replace the sandier ground of Fronsac proper. Any grower in Canon-Fronsac may declassify to Fronsac; the reverse is not possible, which is the practical test of which sits above the other."),
     SA("The appellations sommeliers forget",
        "Looking across the estuary at the Medoc, one Right Bank cotes appellation has kept a real planting of a red variety now scarce elsewhere in Bordeaux. Which variety?",
        "Malbec",
        ["malbec", "cot", "malbec cot", "malbec or cot", "malbec grape"],
-       "Cotes de Bourg is the one place in the region where the grape is still treated as a serious blending component rather than a relic. Its early budding and poor fruit set are why the rest of Bordeaux replanted to Merlot after the 1956 frost."),
+       "Cotes de Bourg is the one place in the region where the grape is still treated as a serious blending component rather than a relic. Its sensitivity to frost and its poor fruit set are why the rest of Bordeaux replanted to Merlot after the 1956 frost."),
     SA("The appellations sommeliers forget",
        "North of the Barbanne lies an appellation of its own that absorbed the neighbouring commune of Neac and is often sold as a cheaper route to Merlot on clay. Name it.",
        "Lalande-de-Pomerol",
@@ -259,8 +259,8 @@ BANK = [
     # --------------------------------------- Varieties and the permitted list (6)
     Q("Varieties and the permitted list",
       "Six new varieties were admitted to the Bordeaux and Bordeaux Superieur appellations in 2021 as an adaptation to a warming climate. What limits came with them?",
-      ["Five percent of the planted area, ten percent of the blend",
-       "No limit on planting, but no more than twenty percent of the blend",
+      ["Five per cent of the planted area, ten per cent of the blend",
+       "No limit on planting, but no more than twenty per cent of the blend",
        "They may be used in second wines only",
        "They may be used for rose and clairet only"], 0,
       "Those figures are ceilings rather than targets, and they are what make the change conservative: the varieties are there to be trialled, not to remake the blend. They are also confined to the two regional appellations, so a communal wine such as Pauillac or Margaux may not use them at all."),
@@ -281,13 +281,12 @@ BANK = [
        "A pink-skinned mutation of Sauvignon Blanc is permitted for white Bordeaux and valued for the weight and stone-fruit character it adds. Name it.",
        "Sauvignon Gris",
        ["sauvignon gris", "sauvignon gris grape", "gris de sauvignon"],
-       "It gives lower acidity and a broader palate than Sauvignon Blanc, so it is used the way Semillon is, to fill out the middle. Several Pessac-Leognan whites carry a few percent of it and never mention it on the label."),
+       "It gives lower acidity and a broader palate than Sauvignon Blanc, so it is used the way Semillon is, to fill out the middle. Several Pessac-Leognan whites carry a few per cent of it and never mention it on the label."),
     SA("Varieties and the permitted list",
-       "Bordeaux growers have an old local name for Malbec, still used in the Medoc and quite different from the one used on the Right Bank. What is the Medoc name?",
-       "Cot",
-       ["cot", "cot in the medoc", "cot or pressac", "pressac or cot",
-        "cot also called pressac", "cot malbec", "cot the medoc name for malbec"],
-       "Pressac is the Right Bank name, said to come from the family that spread the vine around Saint-Emilion, and Auxerrois is what the same grape is called in Cahors. One variety with four names is a standard trap on a blind tasting sheet.",
+       "Old Libournais growers knew Malbec by a name of their own, taken by tradition from the estate near Saint-Emilion where they first grew it. What was it?",
+       "Pressac",
+       ["pressac", "noir de pressac", "pressac grape"],
+       "Tradition traces the name to Chateau de Pressac, where the vine is said to have been planted in the eighteenth century. Malbec itself is the Bordeaux name, Cot is the one the official French register and the Loire use, and Auxerrois is heard in Cahors, so one variety carries four names on a theory paper.",
        ex=True),
     SA("Varieties and the permitted list",
        "Around Saint-Emilion, Cabernet Franc goes by a local name that older growers still use in conversation. What is that name?",
@@ -412,14 +411,14 @@ BANK = [
        "Bottled wine already in the chateau's own cellar, held there until he calls for it",
        "An option to buy later at whatever the market price turns out to be",
        "A share of the vintage settled in cash rather than in wine"], 0,
-      "The money reaches the chateau long before the wine is bottled, which is the whole commercial point of the system. The buyer takes the risk that the wine will be cheaper on release, and the price is normally quoted in bond, so duty and VAT still fall due when the wine is taken out of the warehouse."),
+      "The money reaches the chateau long before the wine is bottled, which is the whole commercial point of the system. The buyer takes the risk that the wine will be cheaper once it is bottled and on the market, and the price is normally quoted in bond, so duty and VAT still fall due when the wine is taken out of the warehouse."),
     Q("The trade, en primeur and second wines",
       "Standing between a chateau and the merchant who buys from it is a second intermediary who never takes ownership of the wine. What does that party do?",
       ["Brokers the sale and samples the wine for a small commission",
        "Buys the wine outright and resells it at a margin",
        "Bottles and labels the wine on the chateau's behalf",
        "Sets the release price and announces it to the market"], 0,
-      "The courtier knows both cellars and books, matches wine to merchant and guarantees the sample matches the lot, and takes about two percent for it. The negociant is the one taking title and risk, and the chateau alone sets the price."),
+      "The courtier knows both cellars and books, matches wine to merchant and guarantees the sample matches the lot, and takes about two per cent for it. The negociant is the one taking title and risk, and the chateau alone sets the price."),
     SA("The trade, en primeur and second wines",
        "Merchants on the Place cannot simply order what they want from a sought-after chateau; a house holds a fixed share of the crop, year in and year out. What is that entitlement called?",
        "An allocation",

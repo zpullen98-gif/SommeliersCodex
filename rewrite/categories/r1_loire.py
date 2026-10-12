@@ -1,4 +1,4 @@
-"""Rank I rewrite - Loire (59 questions, all multiple choice).
+"""Regionale rewrite - Loire (59 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -60,8 +60,8 @@ BANK = [
       "The Loir is a separate river from the Loire, and Jasnieres is its best-known appellation: a thin strip of south-facing tuffeau making severe, long-lived dry Chenin."),
     Q("The river and its regions",
       "Wine grown along the valley but outside any district or village appellation is sold under which regional name?",
-      ["IGP Val de Loire", "AOC Val de Loire", "Vin de France", "IGP Pays d'Oc"], 0,
-      "The regional IGP covers the whole basin and is where varietal labelling and experimental plantings live. Vin de France carries no geographical claim at all, and Pays d'Oc belongs to the Languedoc."),
+      ["IGP Val de Loire", "AOC Coteaux du Loir", "Vin de France", "IGP Pays d'Oc"], 0,
+      "The regional IGP covers the whole basin and is where varietal labelling and experimental plantings live. Vin de France carries no geographical claim at all, Coteaux du Loir is a single district appellation on the Loir, a different river, and Pays d'Oc belongs to the Languedoc."),
 
     # ------------------------------------- Pays Nantais and Muscadet (8) -----
     Q("Pays Nantais and Muscadet",
@@ -87,8 +87,8 @@ BANK = [
     Q("Pays Nantais and Muscadet",
       "Two small rivers south-east of Nantes lend their names to the most important of the Muscadet appellations. Which is it?",
       ["Muscadet Sevre et Maine", "Muscadet Coteaux de la Loire",
-       "Muscadet Cotes de Grandlieu", "Muscadet Coteaux d'Ancenis"], 0,
-      "The Sevre Nantaise and the Maine drain the heart of the vineyard. Coteaux de la Loire and Cotes de Grandlieu are the other two named zones, and Coteaux d'Ancenis is a separate appellation entirely."),
+       "Muscadet Cotes de Grandlieu", "Muscadet"], 0,
+      "The Sevre Nantaise and the Maine drain the heart of the vineyard. Coteaux de la Loire and Cotes de Grandlieu are the other two named zones, and plain Muscadet is the regional appellation beneath all three."),
     Q("Pays Nantais and Muscadet",
       "A bottle of Clisson has rested on its lees far longer than a standard Muscadet, yet the words sur lie appear nowhere on the label. Why are they absent?",
       ["The cru rules require lees ageing beyond the sur lie limit",
@@ -116,8 +116,8 @@ BANK = [
       "Poor rock, low yields and full southern exposure make a wine that can be almost forbidding in youth. Ten years usually turns the austerity into honey, quince and wet wool."),
     Q("Anjou and dry Chenin",
       "One Savennieres vineyard was granted an appellation in its own name and sits as a single walled amphitheatre of vines above the river. Which is it?",
-      ["Coulee de Serrant", "Le Clos du Papillon", "Les Monts Damnes", "Clos Rougeard"], 0,
-      "Coulee de Serrant and Roche aux Moines are the two named crus carved out of Savennieres. Clos du Papillon is a celebrated lieu-dit but not an appellation of its own."),
+      ["Coulee de Serrant", "Le Clos du Papillon", "Les Monts Damnes", "Le Clos de l'Echo"], 0,
+      "Coulee de Serrant and Roche aux Moines are the two named crus carved out of Savennieres. Clos du Papillon is a celebrated lieu-dit but not an appellation of its own. Les Monts Damnes is a Sancerre slope and Le Clos de l'Echo a Chinon vineyard."),
     Q("Anjou and dry Chenin",
       "Growers around Angers speak of Anjou noir and Anjou blanc. What does that pair of names distinguish?",
       ["Dark schist to the west against pale tuffeau limestone to the east",
@@ -156,7 +156,7 @@ BANK = [
     Q("Saumur and sparkling Loire",
       "One Loire sparkling appellation may draw grapes from Anjou, Saumur and Touraine alike, and requires hand harvesting and whole-bunch pressing. Which is it?",
       ["Cremant de Loire", "Saumur Mousseux", "Vouvray Mousseux", "Touraine Mousseux"], 0,
-      "Cremant de Loire is the valley-wide appellation with the tighter rulebook: compulsory hand picking into crates, whole-bunch pressing and a press yield capped at 100 litres of must per 150 kilos of fruit. Those are its genuine extra demands rather than the lees minimum, which Vouvray Mousseux matches."),
+      "Cremant de Loire is the valley-wide appellation, drawing on Anjou, Saumur, Touraine and Cheverny where the other three are each tied to one place. Its rulebook asks for hand picking, whole-bunch pressing and a press yield capped at 100 litres of must per 150 kilos of fruit."),
     Q("Saumur and sparkling Loire",
       "Piercing acidity and orchard-fruit character make one variety the natural base for Loire sparkling wine. Which grape?",
       ["Chenin Blanc", "Chardonnay", "Melon de Bourgogne", "Sauvignon Blanc"], 0,
@@ -198,7 +198,7 @@ BANK = [
       "A fifty-year-old Quarts de Chaume still tastes fresh rather than cloying. Which quality of the grape explains that?",
       ["Its very high natural acidity", "Its high tannin",
        "Its high alcohol", "The new oak it was raised in"], 0,
-      "Sugar without acid tastes flabby within a decade. Chenin holds enough acidity to carry two hundred grams of residual sugar and still finish clean, which is why these wines outlive most Sauternes drinkers expect them to."),
+      "Sugar without acid tastes flabby within a decade. Chenin holds enough acidity to carry two hundred grams of residual sugar and still finish clean, which is why the best of these wines last for decades."),
 
     # --------------------- Vouvray, Montlouis and Touraine whites (7) --------
     Q("Vouvray, Montlouis and Touraine whites",
@@ -225,8 +225,8 @@ BANK = [
       "Sparkling wine is written into the rules of Vouvray and Montlouis, as it is at Saumur and in Anjou, so the village name carries the fizz on its own label. Sancerre, Muscadet and Chinon have no sparkling category of their own. Sancerre and Muscadet also lie outside the Cremant de Loire zone, so a grower there who wants bubbles has to leave appellation wine altogether, while a Chinon grower at least sits inside that zone and can declassify into Cremant de Loire."),
     Q("Vouvray, Montlouis and Touraine whites",
       "A single obscure white grape survives in one small appellation near Blois and almost nowhere else on earth. Which variety?",
-      ["Romorantin", "Orbois", "Folle Blanche", "Pineau d'Aunis"], 0,
-      "Cour-Cheverny exists solely to protect it. The wine is lean, waxy and slow to open, and neighbouring Cheverny uses Sauvignon Blanc instead."),
+      ["Romorantin", "Orbois", "Folle Blanche", "Tressallier"], 0,
+      "Cour-Cheverny exists solely to protect it. The wine is lean, waxy and slow to open, and neighbouring Cheverny uses Sauvignon Blanc instead. Tressallier is a comparable survivor, but far upstream at Saint-Pourcain in the Allier."),
     Q("Vouvray, Montlouis and Touraine whites",
       "Two levels of fizz are permitted in Vouvray and Montlouis, and the gentler one carries markedly lower pressure. Which term marks it?",
       ["Petillant", "Mousseux", "Cremant", "Tranquille"], 0,
@@ -236,7 +236,7 @@ BANK = [
     Q("Cabernet Franc in Touraine",
       "Local growers call it Breton, a name with no connection to Brittany at all. Which variety?",
       ["Cabernet Franc", "Gamay", "Cot", "Pineau d'Aunis"], 0,
-      "The origin of the name is disputed: it appears in Rabelais in 1534, well before the abbot Breton usually credited with it, and one account ties it instead to vines arriving through a Breton port. It buds and ripens early, which is what lets it work this far north."),
+      "The name is usually credited to an abbot called Breton, but Rabelais was already praising Breton wine in 1534, well before him, and said it grew round Chinon rather than in Brittany. Cabernet Franc ripens earlier than Cabernet Sauvignon, which is what lets it work this far north."),
     Q("Cabernet Franc in Touraine",
       "Vines along the Vienne, just above its confluence with the Loire, feed which red appellation?",
       ["Chinon", "Bourgueil", "Saint-Nicolas-de-Bourgueil", "Saumur-Champigny"], 0,
@@ -257,12 +257,12 @@ BANK = [
     Q("Cabernet Franc in Touraine",
       "Sandier soils on the western edge of the Bourgueil zone give lighter, earlier-drinking Cabernet Franc under a name of its own. Which?",
       ["Saint-Nicolas-de-Bourgueil", "Chinon", "Touraine-Amboise", "Anjou-Villages"], 0,
-      "It is a separate appellation covering a single commune, generally more perfumed and quicker to open than Bourgueil itself. In practice the styles overlap heavily from producer to producer."),
+      "It is a separate appellation covering a single commune, generally more perfumed and quicker to open than Bourgueil itself. In the glass the styles overlap heavily from producer to producer."),
     Q("Cabernet Franc in Touraine",
       "A light-bodied red arrives with raspberry, violet, pencil shavings and a green-pepper edge, on fine tannin and high acidity. Which grape and origin?",
       ["Cabernet Franc from Touraine", "Gamay from Beaujolais",
        "Pinot Noir from Sancerre", "Merlot from Pomerol"], 0,
-      "The herbaceous note comes from pyrazines that ripeness reduces but never quite erases this far north. It is a signature rather than a fault, and it is why these wines take a light chill so well."),
+      "The herbaceous note comes from pyrazines that ripeness reduces but never quite erases this far north. It is a signature rather than a fault. The light body, fine tannin and high acidity, not the herbaceous note, are why these wines take a light chill so well."),
     Q("Cabernet Franc in Touraine",
       "A dark, plummy Touraine red is labelled with the old French name for the variety Argentina calls Malbec. What is that name?",
       ["Cot", "Grolleau", "Pineau d'Aunis", "Breton"], 0,

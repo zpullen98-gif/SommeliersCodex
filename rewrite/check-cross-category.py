@@ -30,6 +30,14 @@ That was lib.duplicate_answers' finding and it applies here too.
 
 Read-only. It prints candidates for a human to read and clears nothing on
 its own.
+
+REVIEWED below records a human verdict on a pair already read, the way a
+module's ACCEPTED records one for check-similarity, so a reviewed pair is not
+re-litigated on every run. It is keyed by BOTH question ids, and an id is minted
+from the stem, so rewording either stem puts the pair back in front of a reader.
+A reviewed pair is still printed, with its verdict; only a pair nobody has read
+fails the run. Adding to it is a review decision, never a way to quiet the
+checker: read both questions whole and write why they set different tasks.
 """
 
 import io
@@ -52,6 +60,41 @@ ANS_MIN_WORDS = 2      # shorter answers are legitimately shared
 STEM_SAME_ANS = 0.40   # with a similar answer, stems this close -> flag
 STEM_ALONE = 0.72      # regardless of answer, stems this close -> flag
 NGRAM_ALONE = 7        # or a shared consecutive run this long
+
+# Pairs a human has read and judged to set different tasks (review edition,
+# 11 October 2026). Keyed by both ids; the verdict says why.
+REVIEWED = {
+    frozenset(("i-za5ja7ux", "i-cjolpyjv")):
+        "Chateauneuf-du-Pape answers both, but one asks for the appellation of thirteen grapes "
+        "and the other for the galets: two different facts about one place.",
+    frozenset(("i-kg5kw4ho", "c-3i8ky62n")):
+        "Regionale asks which categories became law in 1984; Village asks which stand outside "
+        "the 2021 sweetness-labelling rule. Same two names, two different rules.",
+    frozenset(("i-06gzb6jh", "i-e02yb2ia")):
+        "One asks for Margaret River's signature white blend, the other for the base of white "
+        "Bordeaux: the Australian question tests the copy, the Bordeaux one the original.",
+    frozenset(("i-7irscmb9", "c-erek37i5")):
+        "Regionale names the wine from dried Garganega; Village asks for Veneto's first DOCG of "
+        "1998. The second tests the classification history, not the method.",
+    frozenset(("i-nny2fmxc", "i-76odp6jd")):
+        "Zibibbo on Pantelleria against the DNA parent of Torrontes: the same grape reached "
+        "from two unrelated facts.",
+    frozenset(("i-xmvm1i97", "i-osfs6v9y")):
+        "Loire tuffeau cellars against Bairrada's sparkling with leitao: one asks what a cellar "
+        "suits, the other what a dish is paired with.",
+    frozenset(("i-0nuz9341", "i-oa42up64")):
+        "Two countries' ladders: the Austrian base tier is Wein and the German Deutscher Wein, "
+        "and telling the two systems apart is the point of setting both.",
+    frozenset(("i-55p91ojs", "c-0tdbku2z")):
+        "Regionale asks which commune has an appellation of its own (Barsac); Village asks "
+        "for the three other communes. The shared run is the appellation's own definition.",
+    frozenset(("i-fqj9q1nw", "c-mq61v321")):
+        "Godello in Valdeorras against Schioppettino in Friuli: the shared run is a common "
+        "piece of history, the grapes and the places differ.",
+    frozenset(("i-67129uf8", "c-nb7s3xai")):
+        "Dornfelder bred for colour against Corvinone proved distinct from Corvina: the "
+        "shared run is a stock phrase about grape identity.",
+}
 
 
 def load(path):
@@ -177,6 +220,13 @@ def main():
     same_ans.sort(reverse=True, key=lambda t: (t[0], t[1]))
     near_stem.sort(reverse=True)
 
+    def verdict(qa, qb):
+        return REVIEWED.get(frozenset((qa.get("id"), qb.get("id"))))
+    reviewed = [(t[3], t[5]) for t in same_ans if verdict(t[3], t[5])]
+    reviewed += [(t[4], t[6]) for t in near_stem if verdict(t[4], t[6])]
+    same_ans = [t for t in same_ans if not verdict(t[3], t[5])]
+    near_stem = [t for t in near_stem if not verdict(t[4], t[6])]
+
     print("=" * 78)
     print("SAME ANSWER, SAME QUESTION  (answer overlap >= %.2f, stem ratio >= %.2f)"
           % (ANS_JACCARD, STEM_SAME_ANS))
@@ -202,8 +252,21 @@ def main():
     if not near_stem:
         print("none.")
 
+    if reviewed:
+        print()
+        print("=" * 78)
+        print("REVIEWED  (a human verdict on file, keyed by both ids)")
+        print("=" * 78)
+        for qa, qb in reviewed:
+            print("\n  %s  %s" % (qa.get("id"), qa.get("q", "")[:60]))
+            print("  %s  %s" % (qb.get("id"), qb.get("q", "")[:60]))
+            print("     verdict: %s" % verdict(qa, qb))
+    stale = len(REVIEWED) - len(reviewed)
+    if stale > 0:
+        print("\nnote: %d reviewed pair(s) no longer flag (a stem moved, or the pair cleared)." % stale)
+
     total = len(same_ans) + len(near_stem)
-    print("\n%d candidate pair(s) for review." % total)
+    print("\n%d candidate pair(s) for review, %d reviewed." % (total, len(reviewed)))
     print("Shared topic vocabulary is expected; two questions setting the same")
     print("TASK are not. Read each pair and reframe one side, or accept it.")
     sys.exit(1 if total else 0)

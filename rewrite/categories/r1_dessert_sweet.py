@@ -1,4 +1,4 @@
-"""Rank I rewrite - Dessert & Sweet Wines (58 questions, all multiple choice).
+"""Regionale rewrite - Dessert & Sweet Wines (58 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -205,13 +205,13 @@ BANK = [
       ["The Neusiedlersee", "The Attersee", "The Bodensee", "The Wolfgangsee"], 0,
       "Water barely a metre or two deep evaporates readily and blankets the flat land around Rust and Illmitz in mist. Botrytis is close to an annual event there, which is unusual anywhere in the world."),
     Q("Germany and Austria",
-      "Between Beerenauslese and Trockenbeerenauslese, Austria's ladder holds a rung that Germany's does not. What is it called?",
+      "Between Beerenauslese and Trockenbeerenauslese, Austria's ladder long held a rung that Germany's never had. What was it called?",
       ["Ausbruch", "Strohwein", "Smaragd", "Eiswein"], 0,
-      "Ausbruch is the speciality of Rust on the Neusiedlersee, traditionally made by pouring fresh must or wine over botrytised berries to draw their sugar out. Smaragd is a Wachau ripeness term rather than a legal Pradikat."),
+      "Ausbruch sat at 27 degrees KMW, above Beerenauslese at 25 and below Trockenbeerenauslese at 30, until a 2016 change to the wine law folded it into Trockenbeerenauslese and reserved the name for Rust; from the 2020 vintage it lives on only as Ruster Ausbruch DAC, picked at Trockenbeerenauslese weight. Strohwein is Austrian too but asks only the Beerenauslese minimum, Eiswein stands on both ladders, and Smaragd is a Wachau ripeness term rather than a legal Pradikat."),
     Q("Germany and Austria",
       "Reed mats or straw hold the bunches for at least three months of drying under an Austrian Pradikat of its own. Which one?",
       ["Strohwein", "Ausbruch", "Eiswein", "Bergwein"], 0,
-      "Strohwein and its synonym Schilfwein cover the same practice, reed being the local alternative to straw around the Neusiedlersee. Bergwein is not a ripeness level at all but a designation for fruit off steep slopes."),
+      "Strohwein and its synonym Schilfwein name the same method, reed being the local alternative to straw around the Neusiedlersee. Bergwein is not a ripeness level at all but a designation for fruit off steep slopes."),
 
     # ---------------------------------------------- Eiswein and Icewine (6) --
     Q("Eiswein and Icewine",
@@ -254,9 +254,9 @@ BANK = [
 
     # -------------------------------------- dried-grape wines of Italy (6) ---
     Q("Dried-grape wines of Italy",
-      "Bunches are laid out in an airy loft for three or four months after harvest and lose a third of their weight. What is that Italian practice called?",
-      ["Appassimento", "Governo", "Ripasso", "Saignee"], 0,
-      "The dried fruit is pressed in the depths of winter, giving a must so concentrated that fermentation is slow and stubborn. Governo and ripasso both add something back to a finished wine, and saignee bleeds juice off red skins."),
+      "Amarone, Recioto della Valpolicella and Valtellina's Sforzato all depend on one step taken in the months between harvest and pressing. What does an Italian cellar call it?",
+      ["Appassimento", "Governo", "Ripasso", "Salasso"], 0,
+      "All three start from bunches dried in airy lofts for three or four months until they lose a third or more of their weight, then pressed in the depths of winter into a must so concentrated that fermentation is slow and stubborn. Governo and ripasso both add something back to a finished wine, and salasso, the Italian word for saignee, bleeds juice off red skins."),
     Q("Dried-grape wines of Italy",
       "A sweet red from the hills north of Verona comes from grapes dried until midwinter, with the fermentation halted while sugar remains. Which wine?",
       ["Recioto della Valpolicella", "Amarone della Valpolicella",
@@ -295,7 +295,7 @@ BANK = [
     Q("Drying beyond Italy",
       "Berries left hanging on the vine simply shrivel in dry autumn air, with no fungus involved at all. What is that called in French?",
       ["Passerillage", "Pourriture noble", "Mutage", "Debourbage"], 0,
-      "Passerillage concentrates sugar exactly as noble rot does, but the flavours stay purer and more apricot-like without the honeyed, savoury layer the fungus adds. Pourriture noble is the French name for noble rot itself."),
+      "Passerillage concentrates sugar by plain loss of water through an intact skin, so the flavours stay purer and more apricot-like, without the honeyed, savoury layer the fungus adds. Pourriture noble is the French name for noble rot itself."),
     Q("Drying beyond Italy",
       "A Cape wine made from Muscat raisined on the vine was among the most prized bottles in Europe two centuries ago. Which wine?",
       ["Constantia", "Madeira Malmsey", "Tokaji Aszu", "Marsala"], 0,

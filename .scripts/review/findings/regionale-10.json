@@ -1,0 +1,238 @@
+{
+  "batch": "regionale-10",
+  "modules": [
+    "rewrite/categories/r1_austria.py",
+    "rewrite/categories/r1_beer.py"
+  ],
+  "readCount": 113,
+  "total": 113,
+  "findings": [
+    {
+      "module": "r1_austria",
+      "stemStart": "Entry-level Sekt Austria may be produced in tank",
+      "field": "key",
+      "problem": "Keyed Six months, with an exp claiming six months in tank and nine in bottle. Every source on the Sekt g.U. pyramid, both the original Klassik rules and the post-rename Sekt Austria rules, gives a flat minimum of nine months on the lees for the base tier whatever the method; the six/nine split is the EU minimum production time for quality sparkling wine (tank against bottle), not the Austrian lees rule. Nine months, a distractor, was the right answer.",
+      "fix": "Key moved to Nine months (options unchanged, Six months now a distractor); exp rewritten: any method, tank included, but the same nine months on the lees for all.",
+      "source": "Three web searches (Sekt g.U. Klassik/Sekt Austria rules: Decanter and pressflex reports of the 2015 pyramid, starwinelist, napavalleywineacademy, Meininger 'Sekt Austria', WKO Sektbezeichnung notice): all give nine months for the base tier, none six; EU Reg. 2019/934 for the 6/9 production-time rule",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "The dinner-table weight of Wachau white runs between",
+      "field": "exp",
+      "problem": "Exp used 'practised' (a nod to the sport once practised on these cliffs), breaking the house rule against practice/practise in any form.",
+      "fix": "Now: a nod to the falconers who once hunted along these cliffs.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "Shrivelled botrytis berries are often too dry to",
+      "field": "exp",
+      "problem": "Exp used 'the practice' (house rule), and its last sentence asserted that Rust's DAC no longer allows the must addition at all, a rule claim I could not verify.",
+      "fix": "'practice' replaced by 'method'; the unverified final sentence dropped (the stem asks only about the traditional method, so nothing the question needs is lost).",
+      "source": "Codex house rule; caution on an unverified legal claim",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "Before the DAC scheme arrived, a Lower Austrian",
+      "field": "exp",
+      "problem": "Exp ran to five sentences against the one-to-three rule, and its claim that site ranking, yields and ageing are all settled region by region and came later is loose (Austria's yield ceiling is national and predates the DACs).",
+      "fix": "Trimmed to three sentences: the Romance model, each region setting the typicity standard and permitted varieties, and that the scheme changed whose name leads the label rather than how sites, yields or cask time are regulated.",
+      "source": "Austrian wine law (national yield ceiling, state tasting); house exp length rule",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "Origin can be drawn at three widths inside",
+      "field": "exp",
+      "problem": "Exp said yields and ripeness requirements tighten at each step up; that is not true of every DAC (most tiers differ by release date, hand harvesting and similar rules, and yield ceilings are not tiered everywhere).",
+      "fix": "Now: each DAC sets stricter rules as the origin narrows. The 2022 Sekt rebranding sentence left as is.",
+      "source": "Austrian DAC regulations vary by region",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "Austrian sparkling wine of protected origin climbs three",
+      "field": "exp",
+      "problem": "Exp said each step tightens origin, method and lees time together, but the base tier and Reserve share the same origin (one federal state); only Grosse Reserve narrows it, to a single municipality, as the module's own Grosse Reserve exp says.",
+      "fix": "Now: each step asks more of the method and of the time on the lees, and the top step narrows the origin from a federal state to a single municipality.",
+      "source": "Sekt g.U. pyramid (search results above); internal consistency with the Grosse Reserve question",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "Terraced vineyards follow a river that enters Lower",
+      "field": "exp",
+      "problem": "Exp called the Mur an Alpine river well away from the classic vineyards, but the Mur runs past Graz and through Vulkanland Steiermark (Kloch, Bad Radkersburg).",
+      "fix": "Now: the Inn meets the Danube at Passau and the Mur crosses Styria towards Slovenia, so neither comes near Krems or Vienna.",
+      "source": "Austrian geography",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "A Roman legionary town on the Danube east",
+      "field": "exp",
+      "problem": "Exp stated planting shares as fact (Zweigelt better than a quarter, Gruner Veltliner second, close to half the region white), figures that move with each vineyard survey and that I could not confirm.",
+      "fix": "Softened to rankings without figures: Zweigelt the most planted variety, Blaufrankisch the DAC's other red, Gruner Veltliner widely grown and a good share of the region white.",
+      "source": "House rule against volatile facts stated as fact",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "At roughly forty-seven to forty-eight degrees north, Austrian",
+      "field": "exp",
+      "problem": "Exp said Champagne sits a degree or more north, which is untrue of the Cote des Bar in the Aube (about 48 N, inside the stem's own band).",
+      "fix": "Now: Champagne's heartland around Reims and Epernay sits about a degree north again. Key and stem untouched; Burgundy remains the only standard answer.",
+      "source": "Latitudes: Vienna 48.2, Chablis 47.8, Epernay 49.0, Reims 49.3, Les Riceys 48.0",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_austria",
+      "stemStart": "Limestone and mica schist on a range of",
+      "field": "exp",
+      "problem": "Exp put Rust at the southern end of the western shore; Morbisch lies south of it, nearer the Hungarian border.",
+      "fix": "Now: Rust sits further south on the same shore.",
+      "source": "Burgenland geography",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_beer",
+      "stemStart": "Brewers at Burton-on-Trent drew on a well water",
+      "field": "stem",
+      "problem": "Stem asked 'What is the practice of dosing water elsewhere...', breaking the house rule against the word practice.",
+      "fix": "Stem reframed as an applied task: 'A brewer elsewhere adds gypsum to copy that water. What is the treatment called?' Options, key and exp unchanged; check-similarity clean (max ratio 0.359, run 3).",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_beer",
+      "stemStart": "A fine sediment sits in the bottom of",
+      "field": "stem",
+      "problem": "Stem ended 'Which practice produced that?', breaking the house rule against the word practice.",
+      "fix": "Ending now 'Which method produced that?'; options, key and exp unchanged; check-similarity clean.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_beer",
+      "stemStart": "Weeks or months of near-freezing storage after the",
+      "field": "exp",
+      "problem": "Exp said the family took its name 'from the practice' (house rule).",
+      "fix": "Now: took its name from that long rest.",
+      "source": "Codex house rule",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_beer",
+      "stemStart": "German rules set a floor on how much",
+      "field": "exp",
+      "problem": "Exp said 'in practice' (house rule).",
+      "fix": "Now: Most weissbiers on the market run between fifty and seventy percent wheat.",
+      "source": "Codex house rule",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_beer",
+      "stemStart": "A hop-forward beer poured beside a sweet dessert",
+      "field": "exp",
+      "problem": "Exp recommended 'a fruit lambic' for a pudding on the ground that it is at least as sweet, but a traditional fruit lambic (kriek refermented on whole cherries, as the module's own gueuze exp describes) is dry and sour; only the sweetened commercial versions fit.",
+      "fix": "Now: a doppelbock or a sweetened fruit lambic.",
+      "source": "Lambic production (traditional kriek is fully fermented and dry); internal consistency with the gueuze question",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Entry-level Sekt Austria may be produced in tank",
+      "verdict": "kept",
+      "why": "Original was wrong: the base tier (formerly Klassik) owes at least nine months on the lees whatever the method, tank included; six against nine is the EU production-time minimum for tank and bottle, not the Austrian lees rule. One search confirmed nine months regardless of method (Meininger, pressflex, starwinelist). Key index 1 bakes correctly; build passes."
+    },
+    {
+      "stemStart": "The dinner-table weight of Wachau white runs between",
+      "verdict": "kept",
+      "why": "Removes the banned word; the falconry lure story stands and the new clause is accurate and in the voice."
+    },
+    {
+      "stemStart": "Shrivelled botrytis berries are often too dry to",
+      "verdict": "kept",
+      "why": "The banned word becomes 'method' cleanly; dropping the unverified claim about Rust's current DAC loses nothing the stem asks (it asks the traditional method) and leaves two sound sentences."
+    },
+    {
+      "stemStart": "Before the DAC scheme arrived, a Lower Austrian",
+      "verdict": "kept",
+      "why": "The cut sentence wrongly implied yields are set region by region (the ceiling is national); the trimmed exp keeps the Romance model, the state tasting, the permitted-variety point and the 'first' qualifier, and now sits within three sentences."
+    },
+    {
+      "stemStart": "Origin can be drawn at three widths inside",
+      "verdict": "kept",
+      "why": "'Yields and ripeness tighten at each step' overclaimed; 'each DAC sets stricter rules as the origin narrows' is true of the Gebiet, Ort, Ried pyramid wherever a DAC uses it."
+    },
+    {
+      "stemStart": "Austrian sparkling wine of protected origin climbs three",
+      "verdict": "kept",
+      "why": "Original said origin tightens at every step, but the base tier and Reserve both take one federal state (confirmed by search); only Grosse Reserve narrows to a single Gemeinde, as the module's own Grosse Reserve exp says. Method and lees time do rise at each step."
+    },
+    {
+      "stemStart": "Terraced vineyards follow a river that enters Lower",
+      "verdict": "kept",
+      "why": "The Mur runs past Graz and the Vulkanland vineyards, so 'well away from the classic vineyards' was loose; the Inn meeting the Danube at Passau and the Mur crossing Styria are both right and answer the stem's Krems and Vienna clue."
+    },
+    {
+      "stemStart": "A Roman legionary town on the Danube east",
+      "verdict": "kept",
+      "why": "Search of the vineyard tables confirms Zweigelt leads (about 26 to 28 percent) with Gruner Veltliner second and white near 40 percent, so the original's 'close to half' was loose; the softened ranking without figures is right and avoids a volatile number."
+    },
+    {
+      "stemStart": "At roughly forty-seven to forty-eight degrees north, Austrian",
+      "verdict": "kept",
+      "why": "The Cote des Bar sits near 48 N, inside the stem's band, so 'Champagne a degree or more north' was untrue of all Champagne; naming Reims and Epernay (49.0 to 49.3) makes it accurate. Burgundy remains the only fit for 47 to 48."
+    },
+    {
+      "stemStart": "Limestone and mica schist on a range of",
+      "verdict": "kept",
+      "why": "Morbisch lies south of Rust on the same shore and the lake's southern end is in Hungary, so 'southern end' was wrong; 'further south on the same shore' is accurate."
+    },
+    {
+      "stemStart": "Brewers at Burton-on-Trent drew on a well water",
+      "verdict": "kept",
+      "why": "The banned word sat in the stem, so a stem change was unavoidable and any wording moves the id (check-ids: one id orphaned, accepted knowingly pre-ship). The applied reframe is correct (Burtonisation is dosing with gypsum, calcium sulphate) and gives nothing away; build and similarity clean."
+    },
+    {
+      "stemStart": "A fine sediment sits in the bottom of",
+      "verdict": "kept",
+      "why": "Minimal one-word stem fix for a banned word; the id move is unavoidable and accepted pre-ship. Key and options unaffected."
+    },
+    {
+      "stemStart": "Weeks or months of near-freezing storage after the",
+      "verdict": "amended",
+      "why": "Removing the banned word was right, but 'took its name from that long rest. The long cold rest is also' repeated the phrase across two sentences; now 'took its name from that storage', which ties back to Lagern, to store."
+    },
+    {
+      "stemStart": "German rules set a floor on how much",
+      "verdict": "kept",
+      "why": "'on the market' replaces the banned phrase with the same meaning; the fifty to seventy percent band is a fair description of commercial weissbier."
+    },
+    {
+      "stemStart": "A hop-forward beer poured beside a sweet dessert",
+      "verdict": "kept",
+      "why": "Traditional kriek and framboise are fully fermented, dry and sour, so 'sweetened fruit lambic' is the accurate recommendation and agrees with the module's gueuze explanation."
+    }
+  ]
+}

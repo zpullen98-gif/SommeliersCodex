@@ -1,0 +1,373 @@
+{
+  "batch": "regionale-6",
+  "modules": [
+    "rewrite/categories/r1_germany.py",
+    "rewrite/categories/r1_loire.py"
+  ],
+  "readCount": 118,
+  "total": 118,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "A German list carries both a Rulander and",
+      "field": "stem",
+      "problem": "The stem used the banned word practice (old stem: 'Grauburgunder and Rulander appear on German labels for one and the same grape. What separates the two names in practice?').",
+      "fix": "Reframed the stem as a wine-list scene: 'A German list carries both a Rulander and a Grauburgunder, made from one and the same grape. What does the choice of name usually signal?' Options, key and exp unchanged. check-similarity clean (0 flagged, max ratio 0.417 for the module).",
+      "source": "The Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "Growers in one Mittelhaardt village have carted crushed",
+      "field": "exp",
+      "problem": "The exp used the banned word practice ('the sites that made the practice famous').",
+      "fix": "Changed to 'the sites that made the custom famous'.",
+      "source": "The Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "Two German regions sit far to the east",
+      "field": "opts",
+      "problem": "The stem names the Saale and the key is the only option containing Saale-Unstrut, so it can be answered from the stem's own words with no knowledge.",
+      "fix": "Replaced the distractors with balanced pairs so each region appears exactly twice: Saale-Unstrut and Ahr, Sachsen and Mittelrhein, Mittelrhein and Ahr. A student must now know both eastern regions.",
+      "source": "Item-writing standard: the stem must not answer itself; the Ahr and Mittelrhein lay in West Germany",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "A guest asks for the lightest serious white",
+      "field": "opts",
+      "problem": "The guest asks for a white, but one distractor was a Baden Spatburgunder, a red, eliminable on its face; the exp's 'the other three are all dry and considerably fuller' assumes whites.",
+      "fix": "Replaced 'A Baden Spatburgunder' with 'A Baden Grauburgunder', a dry and fuller white.",
+      "source": "Spatburgunder is Pinot Noir; Baden Grauburgunder is typically a dry, full white",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "Eiswein and Beerenauslese reach comparable must weights, yet",
+      "field": "opts",
+      "problem": "The key stated freedom from noble rot as a legal condition ('must be healthy and free of noble rot'), which German law does not impose; the law requires only that the grapes be frozen when picked and pressed. The key was also the visibly longest option, 13 characters clear.",
+      "fix": "Key trimmed to 'Its grapes must be frozen when picked and pressed'; exp now says growers keep Eiswein fruit as healthy and rot-free as they can, so the teaching on rot is kept as a preference, not a rule.",
+      "source": "German Weinverordnung definition of Eiswein (grapes frozen at harvest and pressing, Beerenauslese must weight); README length rule",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "Frozen fruit is picked before dawn on a",
+      "field": "exp",
+      "problem": "The exp said 'German rules set a minimum of minus seven degrees Celsius at picking'. German law names no temperature; minus seven is the practical threshold growers wait for.",
+      "fix": "Now: 'The law names no temperature, only that the grapes be frozen when picked and pressed; in the vineyard that usually means waiting for about minus seven degrees Celsius'.",
+      "source": "German wine law Eiswein definition; DWI describes minus seven as the conditions needed, not a legal floor",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "One Nahe vineyard was terraced early in the",
+      "field": "exp",
+      "problem": "The exp ended 'a smoky, mineral cast that has nothing to do with the vine', which makes no sense (wine flavour always involves the vine).",
+      "fix": "Replaced with 'The site is prized for wines of a smoky, mineral cast.'",
+      "source": "Plain reading of the sentence",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "The English word hock, used for a century",
+      "field": "exp",
+      "problem": "The exp implied Queen Victoria's fondness for Hochheim spread the word hock, but hock (from hockamore) was in English use by the seventeenth century, two centuries before her.",
+      "fix": "Exp now says the shortened name was already in English use by the seventeenth century and soon covered all German white, and that Victoria's fondness two centuries later only fixed it in place.",
+      "source": "OED dating of hock and hockamore to the seventeenth century; Victoria's Hochheim visit was 1850",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "One German region lies far to the south,",
+      "field": "exp",
+      "problem": "The exp said Baden runs 'from the Bodensee up to Heidelberg', but Baden reaches well north of that to the Tauber valley, which the Bocksbeutel question in the same module names as Baden's northern pocket.",
+      "fix": "Now: 'stretching some four hundred kilometres from the Bodensee north to the Tauber valley'.",
+      "source": "Baden Anbaugebiet extent, Bodensee to Tauberfranken (Badisches Frankenland)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "A steep, crumbling cliff of iron-stained red slate",
+      "field": "opts",
+      "problem": "The stem's 'red' points a student who knows rot means red straight at Roter Hang, the only option with that root.",
+      "fix": "Replaced 'The Haardt' with 'The Rotenfels', the real red volcanic cliff above the Nahe, so the colour cue no longer settles it; exp adds one sentence placing the Rotenfels.",
+      "source": "Rotenfels at Bad Munster am Stein, rhyolite cliff over the Nahe",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "A dry German white shows quiet pear and",
+      "field": "exp",
+      "problem": "The exp said Riesling's acidity 'tramples' white asparagus, which overstates it: dry Riesling is a widely served Spargel partner alongside Silvaner and Weissburgunder.",
+      "fix": "Softened to 'A dry Riesling can work too, but its sharper acidity, like Scheurebe's grapefruit, is a louder partner for so delicate a vegetable.'",
+      "source": "Common German Spargelzeit pairing guidance (Silvaner, Weissburgunder, dry Riesling)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "Many German estates now put a word on",
+      "field": "exp",
+      "problem": "The exp called lieblich a term for 'genuinely sweet wine'; lieblich is the medium-sweet band (up to 45 g/L), with suss above it.",
+      "fix": "Now: 'lieblich and suss are the legal terms for medium-sweet and sweet wine'.",
+      "source": "EU sweetness terms (medium sweet / lieblich, sweet / suss)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "The Mosel doubles back on itself again and",
+      "field": "exp",
+      "problem": "'The steep southern flank of a bend' is ambiguous and can be read as the side that faces north; the famous sites face south.",
+      "fix": "Changed to 'the steep, south-facing flank of a bend'.",
+      "source": "Mosel site aspect (Sonnenuhr, Doctor, Goldtropfchen face south)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "Nothing on the steepest slate slopes can be",
+      "field": "opts",
+      "problem": "A distractor named Tafelwein, a German category retired in 2009 in favour of Deutscher Wein; the module teaches the current pyramid elsewhere.",
+      "fix": "Changed to 'The wine must legally be sold as Landwein or Deutscher Wein'. Still wrong, now in current terms.",
+      "source": "German wine categories since the 2009 EU reform",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_germany.py",
+      "stemStart": "A generation of growers took over family estates",
+      "field": "exp",
+      "problem": "'For decades most of it went into Liebfraumilch' overstates; Liebfraumilch took a large share of Rheinhessen's output but not most of its vineyard.",
+      "fix": "Changed 'most' to 'much'.",
+      "source": "Liebfraumilch drew on four regions at its peak; Rheinhessen also produced other bulk blends and varietal wine",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "Sandier soils on the western edge of the",
+      "field": "exp",
+      "problem": "The exp used the banned word practice ('In practice the styles overlap').",
+      "fix": "Changed to 'In the glass the styles overlap heavily from producer to producer.'",
+      "source": "The Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "Wine grown along the valley but outside any",
+      "field": "opts",
+      "problem": "Distractor 'AOC Val de Loire' is not a real appellation; every option must be a real thing.",
+      "fix": "Replaced with 'IGP Atlantique' (real, the IGP for Gironde, Dordogne and the Charentes); exp adds 'Atlantique covers the country around Bordeaux and Cognac'.",
+      "source": "INAO list of IGPs; no AOC Val de Loire exists",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "Two small rivers south-east of Nantes lend their",
+      "field": "opts",
+      "problem": "Distractor 'Muscadet Coteaux d'Ancenis' is not a real appellation (Coteaux d'Ancenis is a separate AOC for Gamay and Malvoisie, and Muscadet from that area is Muscadet Coteaux de la Loire).",
+      "fix": "Replaced with plain 'Muscadet', the real regional appellation; exp now says plain Muscadet is the regional appellation beneath the three named zones.",
+      "source": "Muscadet AOC structure: Muscadet, Sevre et Maine, Coteaux de la Loire, Cotes de Grandlieu",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "A fifty-year-old Quarts de Chaume still tastes fresh",
+      "field": "exp",
+      "problem": "The exp's last clause ('these wines outlive most Sauternes drinkers expect them to') is ungrammatical and unclear.",
+      "fix": "Now: 'which is why the best of these wines last for decades.'",
+      "source": "Plain reading of the sentence",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "A light-bodied red arrives with raspberry, violet, pencil",
+      "field": "exp",
+      "problem": "The exp said the pyrazine note 'is why these wines take a light chill so well', a false causal link; light body and high acidity are the reason.",
+      "fix": "Now: 'It is a signature rather than a fault. The light body and high acidity, not the herbaceous note, are why these wines take a light chill so well.'",
+      "source": "Service principle: light-bodied, high-acid, low-tannin reds take a chill",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "One Loire sparkling appellation may draw grapes from",
+      "field": "exp",
+      "problem": "The exp said hand picking was among Cremant de Loire's 'genuine extra demands' over Vouvray Mousseux, but Vouvray's own rules also require hand harvesting, so the comparison was untrue and unneeded.",
+      "fix": "Removed the comparison. The exp now says what sets Cremant de Loire apart (it draws on Anjou, Saumur, Touraine and Cheverny where the other three are each tied to one place) and gives its rulebook without ranking it against Vouvray.",
+      "source": "Vouvray AOC cahier des charges (manual harvest); INAO description of the Cremant de Loire area (Anjou, Saumur, Touraine, Cheverny)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "Local growers call it Breton, a name with",
+      "field": "exp",
+      "problem": "The exp contradicted its own stem: the stem says the name has no connection to Brittany, yet the exp offered an account tying it to a Breton port. 'It buds and ripens early' was also imprecise; Cabernet Franc ripens mid-season, earlier than Cabernet Sauvignon.",
+      "fix": "Now: 'The name is usually credited to an abbot called Breton, though it already appears in Rabelais in 1534, well before him. Cabernet Franc ripens earlier than Cabernet Sauvignon, which is what lets it work this far north.'",
+      "source": "Standard ampelography (Cabernet Franc ripens about a week before Cabernet Sauvignon); internal consistency with the stem",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "One Savennieres vineyard was granted an appellation in",
+      "field": "opts",
+      "problem": "Distractor 'Clos Rougeard' is a Saumur-Champigny estate, not a vineyard, so the options were not of one kind.",
+      "fix": "Replaced with 'Le Clos de l'Echo', a real Chinon vineyard; exp adds 'Les Monts Damnes is a Sancerre slope and Le Clos de l'Echo a Chinon vineyard.'",
+      "source": "Clos Rougeard is a domaine; Clos de l'Echo is a Chinon lieu-dit",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_loire.py",
+      "stemStart": "A single obscure white grape survives in one",
+      "field": "opts",
+      "problem": "The stem asks for a white grape, but distractor Pineau d'Aunis is red, eliminable on its face.",
+      "fix": "Replaced with 'Tressallier', a real obscure white Loire-basin grape that survives almost only at Saint-Pourcain, so the stem's 'near Blois' now does the work; exp adds where Tressallier grows.",
+      "source": "Tressallier, white variety of Saint-Pourcain AOC (Allier)",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "A German list carries both a Rulander and",
+      "verdict": "amended",
+      "why": "The stem change was unavoidable, since the banned word sat in the stem itself, and the fact is right: Rulander is the conventional name for the richer, sweeter style. But the new stem asked what the name would 'signal' and only the key answered with 'signals', a word echo a test-wise student can follow. The stem now ends 'usually tell the guest?'; the key, options and exp are as at HEAD. Build and similarity clean."
+    },
+    {
+      "stemStart": "Growers in one Mittelhaardt village have carted crushed",
+      "verdict": "kept",
+      "why": "Only the banned word went. 'Custom' fits a generations-old habit of carting basalt onto the vineyards, and nothing else changed."
+    },
+    {
+      "stemStart": "Two German regions sit far to the east",
+      "verdict": "kept",
+      "why": "The original was a giveaway: the stem names the Saale and only the key held Saale-Unstrut. In the new set each region appears exactly twice, so neither the stem cue nor the shared-element trick finds the key, and every distractor holds at least one western region, so none can be defended."
+    },
+    {
+      "stemStart": "A guest asks for the lightest serious white",
+      "verdict": "kept",
+      "why": "A red among the options to a request for a white was eliminable on its face. A Baden Grauburgunder is a dry, fuller white, which is what the exp's 'the other three are all dry and considerably fuller' already said. It cannot be argued as the lightest."
+    },
+    {
+      "stemStart": "Eiswein and Beerenauslese reach comparable must weights, yet",
+      "verdict": "kept",
+      "why": "German law defines Eiswein by grapes frozen at harvest and pressing, at Beerenauslese must weight, and imposes no freedom from botrytis. The trimmed key is the legal wording, sits in the middle of the lengths, and the exp keeps the teaching on rot as a grower's preference."
+    },
+    {
+      "stemStart": "Frozen fruit is picked before dawn on a",
+      "verdict": "kept",
+      "why": "Checked with one search: the statute requires only that the grapes be frozen when picked and pressed. Minus seven degrees is the working figure growers and a 2014 Rhineland-Palatinate appeal court use, not a legal minimum. The new exp says exactly that."
+    },
+    {
+      "stemStart": "One Nahe vineyard was terraced early in the",
+      "verdict": "kept",
+      "why": "'Nothing to do with the vine' made no sense. The replacement claims only that the site is prized for that style, which is safe."
+    },
+    {
+      "stemStart": "The English word hock, used for a century",
+      "verdict": "amended",
+      "why": "The correction is right: hock was in English use by the 1600s, two centuries before Victoria's visit in the 1840s. But 'soon stretched to cover everything German and white' asserted a timing nothing supports, and 'Rhenish' was the general word for a long while after. It now reads 'in time stretched', and Victoria's fondness 'helped fix it in place' rather than 'only fixed', so the soft causal claim stays soft and the stem's 'used for a century' is not contradicted."
+    },
+    {
+      "stemStart": "One German region lies far to the south,",
+      "verdict": "kept",
+      "why": "Baden's northern pocket is Tauberfranken. The module's own Bocksbeutel exp names the Taubertal as a Baden pocket, which 'up to Heidelberg' contradicted, and some four hundred kilometres is the length usually given."
+    },
+    {
+      "stemStart": "A steep, crumbling cliff of iron-stained red slate",
+      "verdict": "kept",
+      "why": "With the Rotenfels in, 'red' no longer settles the question by itself. It is a real red volcanic cliff over the Nahe, with a Traiser Rotenfels vineyard below, so the distractor is a real thing, and it cannot be defended for a cliff at Nierstein and Nackenheim on the Rhine. Removing the Haardt costs nothing, since the Pfalz rain-shadow question still teaches it."
+    },
+    {
+      "stemStart": "A dry German white shows quiet pear and",
+      "verdict": "kept",
+      "why": "'Trample' was wrong: dry Riesling with Spargel is a standard German pairing, in the Rheingau above all. The softened line keeps Silvaner as the traditional answer, and the stem's moderate acidity still rules Riesling out."
+    },
+    {
+      "stemStart": "Many German estates now put a word on",
+      "verdict": "kept",
+      "why": "Lieblich is the medium-sweet band and suss the sweet one, so 'genuinely sweet' was wrong for lieblich. The halbtrocken figures in the same exp are correct."
+    },
+    {
+      "stemStart": "The Mosel doubles back on itself again and",
+      "verdict": "kept",
+      "why": "'South-facing flank' says what was meant and agrees with the following clause, where the ground facing the great sites is left bare."
+    },
+    {
+      "stemStart": "Nothing on the steepest slate slopes can be",
+      "verdict": "kept",
+      "why": "Tafelwein has been Deutscher Wein since 2009, and the module's own pyramid question uses the current names. The distractor stays plainly wrong."
+    },
+    {
+      "stemStart": "A generation of growers took over family estates",
+      "verdict": "kept",
+      "why": "'Most of it' overstated Liebfraumilch's share of Rheinhessen's vineyard; 'much' is safe and the teaching is unchanged."
+    },
+    {
+      "stemStart": "Sandier soils on the western edge of the",
+      "verdict": "kept",
+      "why": "Only the banned word went; 'in the glass' carries the meaning."
+    },
+    {
+      "stemStart": "Wine grown along the valley but outside any",
+      "verdict": "amended",
+      "why": "Replacing the invented 'AOC Val de Loire' was right, since the house wants four real options. But with IGP Atlantique the key became the only option naming the Loire, so in a Loire drill a student who knows nothing could pick it from the category alone. The reviewer's own Saale-Unstrut finding objects to exactly that kind of giveaway. The distractor is now 'AOC Coteaux du Loir', real and named for the Loir. It brings back the AOC against IGP contrast the original tested, and it cannot be defended because it is itself a district appellation. The exp names it as a single district on a different river. Build clean."
+    },
+    {
+      "stemStart": "Two small rivers south-east of Nantes lend their",
+      "verdict": "kept",
+      "why": "'Muscadet Coteaux d'Ancenis' is not a real appellation. Plain Muscadet is real, carries no river name and is not the most important, so it cannot be defended, and the exp now teaches the hierarchy correctly."
+    },
+    {
+      "stemStart": "A fifty-year-old Quarts de Chaume still tastes fresh",
+      "verdict": "kept",
+      "why": "The old clause was garbled; the new one is plain, true and consistent with the stem's fifty-year-old bottle."
+    },
+    {
+      "stemStart": "A light-bodied red arrives with raspberry, violet, pencil",
+      "verdict": "amended",
+      "why": "The causal correction is right, since pyrazines have nothing to do with taking a chill. But it left out tannin, which matters most when a red is chilled because cold sharpens it, and the stem itself gives 'fine tannin'. Now: 'The light body, fine tannin and high acidity, not the herbaceous note, are why...'"
+    },
+    {
+      "stemStart": "One Loire sparkling appellation may draw grapes from",
+      "verdict": "kept",
+      "why": "Vouvray's rules also require hand harvesting, so the old claim about the Cremant's 'genuine extra demands' was unsafe. The new exp gives the valley-wide area (Anjou, Saumur, Touraine, Cheverny, consistent with the module's own Sancerre and Muscadet line) and the 150 kg to 100 L press rule without ranking it."
+    },
+    {
+      "stemStart": "Local growers call it Breton, a name with",
+      "verdict": "amended",
+      "why": "The fix rightly removed the Breton-port account, which contradicted a stem that cannot be changed without moving the id, and the ripening line is now accurate. But the exp still gave no grounds for the stem's 'no connection to Brittany at all'. The earliest source does: in Gargantua, Rabelais placed his 'Breton' wine in the country round Chinon, not in Brittany. The exp now says so, in our own words, and keeps the abbot as the usual but too-late credit."
+    },
+    {
+      "stemStart": "One Savennieres vineyard was granted an appellation in",
+      "verdict": "kept",
+      "why": "Clos Rougeard is a domaine, so the options were not of one kind. Le Clos de l'Echo is a real Chinon vineyard, and the exp names no owner."
+    },
+    {
+      "stemStart": "A single obscure white grape survives in one",
+      "verdict": "kept",
+      "why": "A red grape answering a request for a white was eliminable on its face. Tressallier is a real, obscure white surviving at Saint-Pourcain, so it fits everything in the stem except 'near Blois', which now does the work, and 'far upstream' is right for the Sioule and the Allier."
+    }
+  ]
+}

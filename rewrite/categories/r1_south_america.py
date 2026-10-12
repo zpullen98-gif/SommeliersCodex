@@ -1,4 +1,4 @@
-"""Rank I rewrite - South America (60 questions, all multiple choice).
+"""Regionale rewrite - South America (60 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -32,7 +32,7 @@ SYLLABUS = [
     ("Chile's coastal and southern valleys", 6),
     ("Chilean grape varieties", 7),
     ("Uruguay and Brazil", 5),
-    ("Vineyard practice and label law", 4),
+    ("Vineyard methods and label law", 4),
 ]
 
 BANK = [
@@ -47,7 +47,7 @@ BANK = [
     Q("Mendoza and its sub-regions",
       "Snowmelt reaches the vines along open channels that the Huarpe people began and the Spanish extended. What are those channels called?",
       ["Acequias", "Quebradas", "Parrales", "Bodegas"], 0,
-      "The acequia network still governs who draws water and on which day. Rights to it are worth as much in Mendoza as the land they feed."),
+      "The acequia network still governs who draws water and on which day. Mendoza's water law ties the right to that water to the land itself, so ground without it is worth little."),
     Q("Mendoza and its sub-regions",
       "Argentina's first delimited appellation was created in 1989 on the terraces above the Mendoza river and built around Malbec. Which zone earned it?",
       ["Lujan de Cuyo", "Tupungato", "Cafayate", "Rivadavia"], 0,
@@ -106,7 +106,7 @@ BANK = [
       "Constant wind, very low humidity and a long cool season along an irrigated river valley describe Argentina's southern vineyards. Which region?",
       ["Rio Negro in Patagonia", "Cafayate in Salta", "Tulum in San Juan",
        "Chilecito in La Rioja"], 0,
-      "The Alto Valle del Rio Negro was planted with fruit orchards before anyone planted vines. Wind thickens skins and holds disease down, and the latitude gives slow, even ripening."),
+      "The Alto Valle del Rio Negro is apple and pear country, and vines have grown among its orchards since the early twentieth century. Wind thickens skins and holds disease down, and the latitude gives slow, even ripening."),
     Q("Argentina beyond Mendoza",
       "Desert scrub irrigated from a dammed river around San Patricio del Chanar carries Patagonia's newest large plantings. Which province?",
       ["Neuquen", "Chubut", "Cordoba", "Entre Rios"], 0,
@@ -164,7 +164,7 @@ BANK = [
       ["From north to south", "From south to north",
        "It changes very little from one end to the other",
        "It peaks in the middle and falls away at both ends"], 0,
-      "The north shades into the Atacama desert and the far south is genuinely wet. That gradient is why irrigation is compulsory in Limari and optional or unnecessary in Itata."),
+      "The north shades into the Atacama desert and the far south is genuinely wet. That gradient is why irrigation is essential in Limari and optional or unnecessary in Itata."),
     Q("Chile: land and climate",
       "Chilean labels may add Costa, Entre Cordilleras or Andes beside the valley name. What do those three words tell a buyer?",
       ["Where it sits between ocean and mountains",
@@ -215,9 +215,9 @@ BANK = [
       "Carignan was brought in to add colour and acid to Pais after the quake wrecked the region's cellars. VIGNO now bottles it from old unirrigated vines and has made Maule a serious name again."),
     Q("Chile's Central Valley",
       "Running from north to south, which order correctly places the four sub-regions of Chile's Central Valley?",
-      ["Maipo, Rapel, Curico, Maule", "Maule, Curico, Rapel, Maipo",
+      ["Maipo, Rapel, Curico, Maule", "Maipo, Curico, Rapel, Maule",
        "Rapel, Maipo, Maule, Curico", "Curico, Maule, Maipo, Rapel"], 0,
-      "Santiago sits at the northern end beside Maipo, and Maule marks the southern boundary of the Central Valley proper. Everything below it belongs to the Southern Regions."),
+      "Santiago sits at the northern end beside Maipo, Rapel with its Cachapoal and Colchagua comes next, and Curico lies between Rapel and Maule. Maule marks the southern boundary of the Central Valley proper; everything below it belongs to the Southern Regions."),
 
     # -------------------------- Chile's coastal and southern valleys (6) -----
     Q("Chile's coastal and southern valleys",
@@ -277,7 +277,7 @@ BANK = [
     Q("Chilean grape varieties",
       "Peppery, tightly wound reds from Chile's cool coastal and far northern sites have made the case for which variety?",
       ["Syrah", "Carmenere", "Pais", "Merlot"], 0,
-      "Syrah from Limari, Elqui and Aconcagua Costa tastes closer to the northern Rhone than to Australia. Carmenere would never finish ripening in any of those places."),
+      "Syrah from Limari, Elqui and Aconcagua Costa tastes closer to the northern Rhone than to Australia. Late-ripening Carmenere struggles to reach full ripeness in sites as cool as these."),
 
     # ------------------------------------------- Uruguay and Brazil (5) -----
     Q("Uruguay and Brazil",
@@ -305,23 +305,23 @@ BANK = [
       ["Vale do Sao Francisco", "Serra Gaucha", "Campanha", "Santa Catarina"], 0,
       "Irrigation from the Sao Francisco river lets the grower decide when to prune and therefore when to pick. It is one of very few places on earth where a vineyard runs on a tropical rather than a seasonal calendar."),
 
-    # ------------------------------- Vineyard practice and label law (4) -----
-    Q("Vineyard practice and label law",
+    # -------------------------------- Vineyard methods and label law (4) -----
+    Q("Vineyard methods and label law",
       "A Chilean label naming a variety, a vintage and a valley must draw at least what proportion of the wine from each?",
-      ["Seventy-five percent", "Fifty-one percent", "Sixty percent", "One hundred percent"], 0,
-      "Seventy-five percent is the domestic minimum, while wine bound for the European Union has to meet a stricter eighty-five. Most producers work comfortably above either figure."),
-    Q("Vineyard practice and label law",
+      ["Seventy-five per cent", "Fifty-one per cent", "Sixty per cent", "One hundred per cent"], 0,
+      "Seventy-five per cent is the domestic minimum, while wine bound for the European Union has to meet a stricter eighty-five. Most producers work comfortably above either figure."),
+    Q("Vineyard methods and label law",
       "Overhead canopies of wire on high posts, with the fruit hanging in shade beneath, are the traditional Argentine training system. What is it called?",
       ["Parral", "Guyot", "Gobelet", "Lyre"], 0,
       "Parral suits table grapes and high-yielding Criolla, and it shelters fruit from a fierce sun. Quality plantings have largely moved to vertical trellising for better exposure and airflow."),
-    Q("Vineyard practice and label law",
+    Q("Vineyard methods and label law",
       "Argentina has phylloxera in its soils, yet most of its vines are still ungrafted. Which explanation is the accepted one?",
       ["Sandy soils and flood irrigation keep the insect's damage in check",
        "The Andes stop the insect from crossing into the country",
        "Argentine vines are American hybrids the insect cannot feed on",
        "Winter cold kills the insect off every year"], 0,
       "Phylloxera struggles in sand and fares badly under periodic flooding, and both are ordinary conditions in Mendoza. Chile's position is different again, since the pest never arrived there at all."),
-    Q("Vineyard practice and label law",
+    Q("Vineyard methods and label law",
       "Flood channels fed the rows for generations, but newer high-altitude plantings in the Uco Valley mostly use what instead?",
       ["Drip irrigation", "Overhead sprinklers", "No irrigation at all",
        "Furrow flooding each season"], 0,

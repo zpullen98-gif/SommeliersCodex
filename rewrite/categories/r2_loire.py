@@ -1,14 +1,14 @@
-"""Rank II rewrite - Loire (37 questions: 15 MC, 22 short answer).
+"""Village rewrite - Loire (37 questions: 15 MC, 22 short answer).
 
-Certified level, pitched deliberately above the Rank I "Loire" category. Where
-Rank I names the grape of Muscadet, this asks which rock lies under the village
-whose name is on the label; where Rank I places Savennieres on its schist, this
-asks what the appellation still permits that its reputation denies; where Rank I
+Certified level, pitched deliberately above the Regionale "Loire" category. Where
+Regionale names the grape of Muscadet, this asks which rock lies under the village
+whose name is on the label; where Regionale places Savennieres on its schist, this
+asks what the appellation still permits that its reputation denies; where Regionale
 identifies the sweet wines of the Layon, this asks what the rulebook demands
-before a commune name may be printed after them. Nothing here repeats a Rank I
+before a commune name may be printed after them. Nothing here repeats a Regionale
 task.
 
-The running order is the same journey upriver that Rank I uses, because the
+The running order is the same journey upriver that Regionale uses, because the
 geology insists on it, but the question at every stop is different: not what is
 made here, but what the rulebook asks of it. So the bank moves from the granite
 and gabbro of the Nantais, through the schist of Anjou and the Layon ladder, on
@@ -67,7 +67,7 @@ BANK = [
     Q("The valley end to end",
       "A list needs one Loire district able to pour Sauvignon Blanc, Chenin Blanc, Cabernet Franc and Pinot Noir, every one of them from its own appellations. Which district?",
       ["Touraine", "The Pays Nantais", "Anjou-Saumur", "The Centre"], 0,
-      "Touraine reaches from the Cabernet Franc of Chinon and Bourgueil in the west to the light sandy country in the east, where Pinot Noir appears. Anjou-Saumur has Chenin and Cabernet Franc but no Sauvignon of consequence, the Centre has Sauvignon and Pinot Noir but no Chenin anywhere and only one Cabernet Franc appellation, the tiny red-only Orleans-Clery, and the Pays Nantais is in practice a one-grape region."),
+      "Touraine reaches from the Cabernet Franc of Chinon and Bourgueil in the west to the light sandy country in the east, where Pinot Noir appears. Anjou-Saumur has Chenin and Cabernet Franc but no Sauvignon of consequence, the Centre has Sauvignon and Pinot Noir but no Chenin anywhere and only one Cabernet Franc appellation, the tiny red-only Orleans-Clery, and the Pays Nantais is all but a one-grape region."),
     SA("The valley end to end",
        "Before the regional country-wine name was standardised as an IGP, unappellated Loire wine went out under a phrase that called the whole valley a garden. Give that phrase.",
        "Jardin de la France",
@@ -209,7 +209,7 @@ BANK = [
        "Perruches is the clay-limestone and aubuis the flinty clay",
        "Aubuis is the clay-limestone and varennes the flinty clay",
        "Silex is the clay-limestone and perruches the flinty clay"], 0,
-      "Aubuis holds its water and keeps Chenin ripening slowly, which is why parcels destined for sweet wine tend to sit on it, while perruches drains and warms fast and suits the earlier styles. Both words belong to Touraine and appear in growers' conversation far more often than on labels."),
+      "Aubuis holds its water and keeps Chenin ripening slowly, while perruches drains and warms fast, so neighbouring parcels on the two can give noticeably different wines. Both words belong to Touraine and appear in growers' conversation far more often than on labels."),
     SA("Vouvray, Montlouis and the Touraine appellations",
        "A Montlouis sparkling is bottled before its first fermentation has finished, so there is no second fermentation, no disgorging and no dosage. Which label term does the appellation give it?",
        "Petillant Originel",
@@ -220,7 +220,7 @@ BANK = [
        "A carafe of Touraine red is poured that is light, purple and juicy, and it holds no Cabernet Franc at all. Which grape fills the district's everyday red?",
        "Gamay",
        ["gamay", "gamay noir", "gamay noir a jus blanc"],
-       "The district appellation leans on Gamay for red and on Sauvignon Blanc for white, which is why a wine labelled simply Touraine tastes nothing like Chinon or Vouvray. Cot appears in the reds as well, and the Gamay is usually the fresher and the cheaper of the two."),
+       "The district appellation builds its plain red on Cot and Cabernet Franc and its white on Sauvignon Blanc, which is why a wine labelled simply Touraine tastes nothing like Vouvray and is lighter than Chinon. A Gamay-led red carries the name Touraine Gamay, usually the fresher and the cheaper bottle."),
 
     # -------------------------------- Cabernet Franc and the Touraine reds (5)
     Q("Cabernet Franc and the Touraine reds",
@@ -289,7 +289,7 @@ BANK = [
        "Between Sancerre and the town of Gien the vineyard runs along either side of the Loire, making whites from Sauvignon Blanc and reds from Gamay with Pinot Noir. Name the appellation.",
        "Coteaux du Giennois",
        ["coteaux du giennois", "giennois", "aoc coteaux du giennois"],
-       "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes rather than use either on its own, which is a requirement no other appellation of the Centre imposes. So a grower here who wants a straight varietal red has to sell it outside the appellation altogether, and the rule shapes what leaves the cellar rather than merely describing what is planted."),
+       "Coteaux du Giennois reaches north from the Sancerre boundary to Gien and works the same Sauvignon Blanc on far less celebrated ground. Its reds and roses must blend the two black grapes rather than use either on its own, so a grower here who wants a straight varietal red has to sell it outside the appellation altogether."),
     SA("The Centre beyond Sancerre",
        "West of Bourges, away from the Loire altogether, a pair of Centre appellations works sand and gravel terraces on the Cher and its tributary the Arnon. Name them.",
        "Quincy and Reuilly",

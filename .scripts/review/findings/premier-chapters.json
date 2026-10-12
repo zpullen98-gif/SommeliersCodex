@@ -1,0 +1,301 @@
+{
+ "batch": "premier-chapters",
+ "bank": "js/data-primers-advanced.js",
+ "global": "ADV_PRIMERS",
+ "categories": [
+  "Burgundy",
+  "Bordeaux",
+  "Champagne",
+  "Loire",
+  "Alsace",
+  "Rhône",
+  "Southern France",
+  "Jura, Savoie & Corsica",
+  "Producers & Icons",
+  "Italy North",
+  "Italy Central & South",
+  "Spain",
+  "Portugal",
+  "Germany",
+  "Austria",
+  "Hungary & Greece",
+  "California",
+  "Pacific NW, NY & Canada",
+  "South America",
+  "Australia",
+  "New Zealand",
+  "South Africa",
+  "Sparkling Wine World",
+  "Fortified Wines",
+  "Sweet Wines",
+  "Terroir: Climate & Soil",
+  "Spirits & Cocktails",
+  "Beer & Cider",
+  "Sake",
+  "Wine Fundamentals",
+  "Classifications & Labels",
+  "Viticulture & Winemaking",
+  "Wine Trade & Aging",
+  "Service & Hospitality",
+  "Food & Pairing",
+  "Business of the Sommelier"
+ ],
+ "readCount": 36,
+ "total": 36,
+ "changedChapters": 36,
+ "unchanged": [],
+ "substantive": 27,
+ "stemChanges": [],
+ "searches": [
+  "Willamette Valley nested AVAs: no approval after Mount Pisgah, Polk County (2022) found, so the count of 11 (original six, Van Duzer Corridor, Tualatin Hills, Laurelwood District, Lower Long Tom, Mount Pisgah) stands and matches the Master bank; left unchanged",
+  "Elgin's Wine of Origin status: once a ward of Overberg, now a stand-alone district of the Cape South Coast (elevated around 2011 per wine-guide sources; a gov.za notice records the Elgin Ward to Elgin District amendment); the chapter was corrected",
+  "La Place de Bordeaux and Opus One: the September 2025 hors Bordeaux campaign released Opus One, Almaviva and Masseto, so 'La Place now sells Opus One, Masseto and Almaviva' (Bordeaux and Wine Trade & Aging chapters) is current and was left"
+ ],
+ "findings": [
+  {
+   "id": "Burgundy",
+   "field": "facts[Monopoles worth naming]",
+   "problem": "'La Romanée (Liger-Belair)' is ambiguous between two domaines (the monopole is the Comte Liger-Belair's), and the corporate owners of Clos de Tart (Artémis) and Clos des Lambrays (LVMH) were stated as standing facts rather than dated purchases.",
+   "fix": "Now 'La Romanée (Comte Liger-Belair) ... Clos de Tart (bought by Artémis in 2017), Clos des Lambrays (near-monopole, LVMH since 2014)', the wording the reviewed Master chapter uses.",
+   "source": "js/data-primers-master.js facts[Ownership is examinable], as reviewed in the grand-chapters batch.",
+   "confidence": "high"
+  },
+  {
+   "id": "Bordeaux",
+   "field": "facts[1855 structure]",
+   "problem": "'Only change since: Mouton, 1973' overlooks Cantemerle's addition to the fifth growths in 1856, which the bank itself names (a-grkh5u5s: Mouton is 'the single change of rank', Cantemerle's addition corrected an omission).",
+   "fix": "Now 'Only change of rank since: Mouton, 1973, signed by Chirac.'",
+   "source": "js/data-advanced.js a-grkh5u5s exp.",
+   "confidence": "high"
+  },
+  {
+   "id": "Champagne",
+   "field": "facts[History that gets asked]",
+   "problem": "Incomplete history. '1911 riots over Aube exclusion' leaves out the Marne riots of the same year (the sacking of Aÿ among them), which were over fraud and the Aube's readmission; the Master chapter was corrected for the same omission.",
+   "fix": "Now '1911 riots in the Marne and the Aube over fraud and who belonged in the zone'.",
+   "source": "grand-chapters finding on js/data-primers-master.js facts[Codes and history]; general Champagne history.",
+   "confidence": "high"
+  },
+  {
+   "id": "Champagne",
+   "field": "traps[1]",
+   "problem": "Sweeping claim. 'Every crémant may do it' (rosé by blending red into white): the EU derogation covers sparkling wine in general, but each appellation's own rules decide whether its rosé may be made that way; the bank's answer (a-ubyyg5my) says only that the derogation covers sparkling wine and that Champagne is its main user.",
+   "fix": "Now 'permitted for sparkling: any sparkling wine whose own rules allow it may do it; Champagne is simply by far the biggest user.'",
+   "source": "js/data-advanced.js a-ubyyg5my ans; EU winemaking practices regulation (the rosé blending ban and its sparkling cuvée derogation).",
+   "confidence": "medium"
+  },
+  {
+   "id": "Loire",
+   "field": "facts[Sancerre's three soils]",
+   "problem": "Overstated. Silex was called 'dominant across the river at Pouilly-Fumé'. Pouilly-Fumé's vineyards lie mostly on Kimmeridgian marl and limestone; flinty clay is the famous minority soil (the bank's a-emzvqq1u is about its reputation, not its extent).",
+   "fix": "Now 'silex (flint, smoke, famous across the river at Pouilly-Fumé)'.",
+   "source": "Pouilly-Fumé appellation soils (Kimmeridgian marl, limestone, clay with flint); js/data-advanced.js a-emzvqq1u.",
+   "confidence": "medium"
+  },
+  {
+   "id": "Loire",
+   "field": "facts[Oddities to know]",
+   "problem": "Legend stated as fact. 'Romorantin, planted by François I': the bank (a-a72t6rkp) correctly gives it as legend.",
+   "fix": "Now 'Cour-Cheverny (Romorantin, which legend says François I brought)'.",
+   "source": "js/data-advanced.js a-a72t6rkp exp ('legend credits François I with bringing the vine to the Sologne').",
+   "confidence": "high"
+  },
+  {
+   "id": "Alsace",
+   "field": "lead",
+   "problem": "Stale. 'Why Trimbach refuses to print grand cru at all' is no longer true: its Schlossberg has carried Grand Cru since the 2014 vintage, and only the flagships go by their own names (the reviewed Master bank, m-hgn6gjdf, says so).",
+   "fix": "Now 'and why Trimbach long kept 'grand cru' off its labels.' The exam line's 'Trimbach's abstention' and the Clos Sainte-Hune trap remain true and are kept.",
+   "source": "js/data-master.js m-hgn6gjdf; grand-chapters finding on the Master Alsace chapter.",
+   "confidence": "high"
+  },
+  {
+   "id": "Alsace",
+   "field": "facts[Noble four]",
+   "problem": "Wrong date. Hengst, Kirchberg de Barr and Vorbourg were all given red grand cru Pinot Noir 'since 2022'; Vorbourg followed in 2024. This was the disagreement the grand-chapters batch left for the owner; the bank (a-98j4a9aj) and the Master chapter now both say 2024.",
+   "fix": "Now 'and Pinot Noir for red at Hengst and Kirchberg de Barr (from 2022) and at Vorbourg (from 2024).'",
+   "source": "js/data-advanced.js a-98j4a9aj exp; premier-1 batch WebSearch confirming Vorbourg in 2024.",
+   "confidence": "high"
+  },
+  {
+   "id": "Rhône",
+   "field": "facts[The southern ladder]",
+   "problem": "Wrong fact and an incomplete roster. Plan de Dieu was offered as a 'named commune'; it is a delimited plain shared by four villages (the Certified bank's c-arbflrot teaches exactly this), and the law speaks of Villages with a geographical name. The cru list also left out Châteauneuf-du-Pape.",
+   "fix": "Now 'Villages with a geographical name (Séguret, Sablet, Plan de Dieu) → cru (Châteauneuf-du-Pape, Gigondas, ...)'.",
+   "source": "js/data-questions.js c-arbflrot exp; Côtes du Rhône Villages rules (nom géographique).",
+   "confidence": "high"
+  },
+  {
+   "id": "Rhône",
+   "field": "traps[1]",
+   "problem": "Volatile fact stated as permanent: 'Château-Grillet ... owned by Artémis' names a corporate owner as a standing fact.",
+   "fix": "Now 'bought by Artémis in 2011'.",
+   "source": "Purchase by the Pinault family's Artémis in 2011.",
+   "confidence": "high"
+  },
+  {
+   "id": "Italy North",
+   "field": "traps[2]",
+   "problem": "Stale and contradicted by the Sparkling chapter's own trap. 'Prosecco DOCG is still tank method' ignores the bottle-fermented Sui Lieviti the DOCG now admits.",
+   "fix": "Now 'Prosecco DOCG is still tank method, bar the bottle-fermented Sui Lieviti: quality tier does not change the method.'",
+   "source": "js/data-primers-advanced.js Sparkling Wine World traps[1]; js/data-advanced.js a-5tccbf3d.",
+   "confidence": "high"
+  },
+  {
+   "id": "Italy Central & South",
+   "field": "lead + facts[Sicily]",
+   "problem": "Volatile fact stated as permanent. 'Sicily's only DOCG' (lead) and 'Cerasuolo di Vittoria is Sicily's only DOCG' will date the moment Etna's application, lodged after the consortium's November 2023 vote, is ratified.",
+   "fix": "Lead: 'Sicily's first DOCG'. Fact: 'Cerasuolo di Vittoria (Nero d'Avola + Frappato) is Sicily's first DOCG (2005), with Etna's bid to be the second lodged in 2023', the reviewed Master chapter's wording.",
+   "source": "grand-chapters batch WebSearch (Etna DOCG still pending in the latest reporting); js/data-primers-master.js facts[The south].",
+   "confidence": "high"
+  },
+  {
+   "id": "Italy Central & South",
+   "field": "facts[Super Tuscan history]",
+   "problem": "Contradicts the bank. 'Bolgheri DOC (1994)' gives the DOC's creation as 1994; it was created in 1983 for bianco and rosato and rewritten in 1994 to admit the Bordeaux reds (m-ydqy1fbj).",
+   "fix": "Now 'Bolgheri DOC (reds admitted 1994)'.",
+   "source": "js/data-master.js m-ydqy1fbj ans.",
+   "confidence": "high"
+  },
+  {
+   "id": "Spain",
+   "field": "facts[Sherry structure]",
+   "problem": "Wrong date and overstated. 'The 2022 reforms permit unfortified flor wines': the revision was sent to Brussels in 2022 and took effect in 2025, and it covers a fino or manzanilla that reaches 15% naturally, not unfortified flor wines at large. The bank (a-3wdv5vgc) and the Master chapter say so.",
+   "fix": "Now 'The reform in force from 2025 lets a fino or manzanilla that reaches 15% naturally go unfortified.'",
+   "source": "js/data-advanced.js a-3wdv5vgc exp; js/data-primers-master.js facts[The Sherry reform].",
+   "confidence": "high"
+  },
+  {
+   "id": "Portugal",
+   "field": "facts[Island oddities]",
+   "problem": "Wrong label. The heading called all three oddities island ones, but Colares (Sintra's dunes) and Setúbal are on the mainland; only Pico is an island.",
+   "fix": "Heading now 'Coastal and island oddities'; the text is unchanged.",
+   "source": "Portuguese geography.",
+   "confidence": "high"
+  },
+  {
+   "id": "Germany",
+   "field": "facts[Reading labels]",
+   "problem": "Wrong digits. 'The AP number's final digits give the year of application, distinguishing multiple bottlings': the last two digits are the year of application, and the group before them, the producer's submission number, is what tells several bottlings apart.",
+   "fix": "Now 'The AP number's final two digits give the year of application, and the group before them numbers the producer's submissions, telling apart several bottlings; Goldkapsel ...'.",
+   "source": "grand-chapters finding on js/data-primers-master.js facts[AP number]; German AP number structure.",
+   "confidence": "high"
+  },
+  {
+   "id": "South America",
+   "field": "facts[Mendoza]",
+   "problem": "Wrong fact. Gualtallary was listed with Paraje Altamira, Los Chacayes and San Pablo as soil-mapped GIs; no INV resolution recognising a Gualtallary GI exists, and 2026 reporting has its producers still pressing for one. An em dash as well.",
+   "fix": "Now 'Uco Valley (Paraje Altamira, Los Chacayes and San Pablo, soil-mapped GIs drawn by alluvial fan; Gualtallary, as famous as any, has sought the same recognition), with calcareous caliche the prized feature.'",
+   "source": "grand-chapters batch WebSearch on Gualtallary's GI status; js/data-primers-master.js facts[Soil-mapped GIs].",
+   "confidence": "high"
+  },
+  {
+   "id": "South Africa",
+   "field": "facts[Swartland]",
+   "problem": "A living person named as the current maker: 'Eben Sadie's Columella and Palladius'.",
+   "fix": "Now 'Sadie Family's Columella and Palladius', the estate's name as the Producers & Icons chapter gives it.",
+   "source": "House rule: no living person named as a volatile fact.",
+   "confidence": "high"
+  },
+  {
+   "id": "South Africa",
+   "field": "facts[Cool wards]",
+   "problem": "Stale. 'Elgin (a ward of Overberg)': Elgin was elevated to a Wine of Origin district of the Cape South Coast (around 2011), which also made the heading 'Cool wards' wrong for it. The Codex's regions edition already calls Elgin a district.",
+   "fix": "Heading now 'Cool sites'; the fact reads 'Elgin (once a ward of Overberg, now a district of its own)'.",
+   "source": "WebSearch 2 of 3 (Wine regions of South Africa; Wines of Elgin; gov.za notice 'Elgin Ward to Elgin District'); js/data-regions.js Elgin summary ('the Cape's best-known cool upland district').",
+   "confidence": "high"
+  },
+  {
+   "id": "Sparkling Wine World",
+   "field": "facts[Minimums]",
+   "problem": "'Crémant 9', en dash, '12' reads as a range, when it is two separate minimums: 9 months on lees and 12 from tirage to release.",
+   "fix": "Now 'Crémant 9 on lees, 12 to release', as in the reviewed Master chapter.",
+   "source": "Crémant rules; js/data-primers-master.js facts[Minimums to hand].",
+   "confidence": "high"
+  },
+  {
+   "id": "Sparkling Wine World",
+   "field": "traps[2]",
+   "problem": "Wrong superlative. 'Cava's 9 months is the lowest minimum among the major traditional-method regions', but Crémant's lees minimum is also 9 months (the chapter's own Minimums fact), so Cava ties rather than stands alone.",
+   "fix": "Now 'Cava's 9 months, matched by Crémant's time on lees, is the lowest minimum among the major traditional-method regions.'",
+   "source": "Crémant and Cava rules; facts[Minimums] in the same chapter.",
+   "confidence": "high"
+  },
+  {
+   "id": "Spirits & Cocktails",
+   "field": "facts[Others]",
+   "problem": "Stale rule. 'Vodka: neutral by definition': the US removed 'without distinctive character, aroma, taste, or color' from its vodka standard of identity in 2020.",
+   "fix": "Now 'Vodka: neutral spirit at heart, though the US dropped 'without distinctive character' from its definition in 2020.'",
+   "source": "TTB final rule T.D. TTB-158 (2020), amending 27 CFR 5.22.",
+   "confidence": "high"
+  },
+  {
+   "id": "Beer & Cider",
+   "field": "facts[Wild Brussels]",
+   "problem": "Wrong mechanism. 'Lambic ferments spontaneously in a coolship': the coolship is the open vessel where the hot wort cools overnight and picks up wild yeast and bacteria; fermentation takes place in wood. The Master chapter was corrected for the same error.",
+   "fix": "Now 'Lambic wort is inoculated overnight in an open coolship by Senne valley microflora, then ferments spontaneously for years in barrel.'",
+   "source": "grand-chapters finding on js/data-primers-master.js facts[Definitions].",
+   "confidence": "high"
+  },
+  {
+   "id": "Beer & Cider",
+   "field": "traps[0]",
+   "problem": "Wrong category. 'Trappist is a legal designation of origin': the Authentic Trappist Product label is the International Trappist Association's protected mark, granted for monastic brewing, not a geographical appellation.",
+   "fix": "Now 'Trappist is a protected name policed by the International Trappist Association, not an appellation; 'abbey-style' is marketing.'",
+   "source": "International Trappist Association (Authentic Trappist Product criteria); js/data-advanced.js a-b1n88w8l exp.",
+   "confidence": "medium"
+  },
+  {
+   "id": "Sake",
+   "field": "facts[The science]",
+   "problem": "Wrong fact. Multiple parallel fermentation was called 'unique to sake'; Chinese huangjiu and Korean makgeolli, made with qu and nuruk, ferment the same way. The bank calls it sake's defining trick, which is true.",
+   "fix": "Now 'multiple parallel fermentation, the defining trait of sake brewing'. The em dash became a colon, as in the site's copy.",
+   "source": "js/data-advanced.js (koji question exp: 'Sake's defining trick'); rice-wine brewing generally.",
+   "confidence": "high"
+  },
+  {
+   "id": "Wine Trade & Aging",
+   "field": "traps[2]",
+   "problem": "House rule: 'not global practice' uses the one word the house bans.",
+   "fix": "Now 'The three-tier system is American law, not a global norm.'",
+   "source": "Codex house rule: never the word practice or practise.",
+   "confidence": "high"
+  },
+  {
+   "id": "Business of the Sommelier",
+   "field": "lead",
+   "problem": "House rule: 'Practise until cost percentage ...' uses the banned word.",
+   "fix": "Now 'Drill until cost percentage, markup and inventory turns are reflexive.'",
+   "source": "Codex house rule: never the word practice or practise.",
+   "confidence": "high"
+  },
+  {
+   "id": "(all 36 chapters and the header comment)",
+   "field": "lead, exam, facts, traps",
+   "problem": "93 em dashes and 34 en dashes in shipped text. The en dashes all wrote ranges (village yields, the dosage bands, the Muscadet lees minimums, the Amarone alcohol, the cadastro letters, the Madeira estufagem heat twice, the BA must weight twice, the Federspiel band, In Pursuit of Balance, the Uco altitude, the Grange years, the Crémant minimums, sparkling pressure, the LBV years, the Winkler regions, cask ale temperature, cellar humidity, the service temperatures, the bottle angle, the inventory turns).",
+   "fix": "Every em dash replaced by a comma, colon, semicolon, parentheses or full stop. Where the line changed for nothing else, the wording is the site's own dash-free copy (codex/js/data-primers-advanced.js) word for word, so 73 changed lines now equal that copy and will merge cleanly. Every en dash range is now written with 'to' (Crémant as two minimums, above).",
+   "source": "House rule: no em dash, en dash, dash entity or spaced double hyphen in shipped text (Codex CLAUDE.md, the site's dash rule).",
+   "confidence": "high"
+  },
+  {
+   "id": "(22 chapters)",
+   "field": "lead, exam, facts",
+   "problem": "American spelling in the Codex's own prose: aging and Aging (13, two of them fact headings), labeling and Labeling (7), memorize, Memorize and memorized (3), botrytized (2), chaptalization (2), color, oxidizes, mechanized, formalized, unpasteurized, de-alcoholization, toward (2), and the US date 'December 1'.",
+   "fix": "Now ageing, labelling, memorise and memorised, botrytised, chaptalisation, colour, oxidises, mechanised, formalised, unpasteurised, de-alcoholisation, towards and '1 December'. The category 'Wine Trade & Aging' is left byte for byte as the bank's category; 'sulfites' in the US organic trap is the US rule's own word and the Codex uses both spellings, so it is left.",
+   "source": "House rule: British spelling in the Codex's own prose.",
+   "confidence": "high"
+  }
+ ],
+ "leftForTheOwner": [
+  "Unverified and left as written: 'Since 2021, sweetness indication is mandatory' on Alsace labels; Oregon's 'about 18 named varieties excepted at 75%' (the list as written names 17); VOS and VORS as 'carbon-dated'; 'Italy's only single-estate DOC' for Bolgheri Sassicaia (the bank's exp says the same); 'Coquard basket presses keep skins off juice' (loose: the shallow bed drains juice off the skins quickly); the Muscadet crus communaux minimums kept at '17 to 24 months or more'.",
+  "Kept although arguable: Jurançon's sweetness 'never botrytis' (an absolute; the trap says the same); 'Kumeu River makes the country's most acclaimed Chardonnay' (reputational, and the bank's exp says the same); the Loire lead's 'Cabernet Franc villages of Touraine' while the fact lists Saumur-Champigny, which is Saumurois; the Classifications fact that groups Port and Champagne (protected names) with 'Château' (a traditional term).",
+  "Thirteen changed lines differ from the site's copy (codex/js/data-primers-advanced.js) on both sides, because the site copy removed the em dash but kept American spelling, an en dash or the old fact: lines 46, 57, 66, 78, 154, 212, 270, 305, 387, 466, 494, 502 and 566. tools/sync-wing.mjs codex will report them as conflicts until they are taken from the source by hand. The other 70 changed lines are source-only and merge cleanly, and 73 now equal the site copy.",
+  "Publishing was outside this assignment: the ?v= stamp on data-primers-advanced.js in index.html and the codex-v96 CACHE in sw.js still need their bump in the coordinated release."
+ ],
+ "checks": {
+  "check-syntax": "all 67 JS files parse",
+  "check-paid": "exits 1 on 3 master/negation_probe flags in js/data-master.js that were already present in the run before any edit here; check-paid reads only js/data-advanced.js and js/data-master.js, so the chapters cannot add a flag, and none was introduced",
+  "sa-harness adv": "581 of 581 model answers grade, 0 unsure, 0 wrong (the harness reads the question banks, not the chapters)",
+  "list-harness": "Advanced 24 of 27 at full marks, Master 20 of 20, Certified 5 of 5; the 3 Advanced failures (a-62mb28xz, a-egn9hhiq, a-xrebfxf7) are the harness's own documented long-standing cases, untouched here",
+  "shape": "36 chapters, every cat byte-identical to the original, keys, fact and trap counts unchanged, every fact a [heading, text] pair; 0 em dashes, 0 en dashes, 0 dash entities, no practice or practise, no numbered level"
+ }
+}

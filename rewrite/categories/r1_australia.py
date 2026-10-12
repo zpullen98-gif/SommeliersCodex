@@ -1,4 +1,4 @@
-"""Rank I rewrite - Australia (57 questions, all multiple choice).
+"""Regionale rewrite - Australia (57 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -62,7 +62,7 @@ BANK = [
        "The Southern Ocean, which lies only a few kilometres away",
        "Persistent cloud drifting down from the tropics",
        "Irrigation drawn from cold mountain rivers"], 0,
-      "Every hundred metres of elevation costs roughly half a degree of mean temperature, and nights at height fall further still. Australia uses altitude the way Europe uses latitude, which is how a region well north of Melbourne ends up cooler than one south of it."),
+      "Every hundred metres of elevation costs roughly half a degree of mean temperature, and nights at height fall further still. Australia uses altitude the way Europe uses latitude, which is how a region on much the same latitude as the warm Hunter Valley makes wine of a far cooler cast."),
     Q("Vineyard geography and climate",
       "Three hot districts strung along one inland river system depend entirely on irrigation and supply the fruit behind a great deal of everyday Australian wine. Which three?",
       ["Riverland, Murray Darling and Riverina",
@@ -107,9 +107,9 @@ BANK = [
       "South Eastern Australia takes in the whole of New South Wales, Victoria and Tasmania along with the grape-growing parts of Queensland and South Australia. It exists to give the cross-state blend a legal name, and it is why one brand can hold its style through a difficult vintage anywhere."),
     Q("Geographical Indications and labelling",
       "A winemaker wants Coonawarra, a single vintage year and Cabernet Sauvignon all printed on the front label. Each of those three claims must hold true of at least how much of the wine?",
-      ["Eighty-five percent", "Seventy-five percent",
-       "Ninety-five percent", "All of it"], 0,
-      "One threshold covers origin, vintage and variety alike, so a Coonawarra Cabernet may legitimately carry fifteen percent of another grape from another place. The claim is verified through the winery's records rather than by tasting the wine."),
+      ["Eighty-five per cent", "Seventy-five per cent",
+       "Ninety-five per cent", "All of it"], 0,
+      "One threshold covers origin, vintage and variety alike, so a Coonawarra Cabernet may legitimately carry fifteen per cent of another grape from another place. The claim is verified through the winery's records rather than by tasting the wine."),
     Q("Geographical Indications and labelling",
       "A label reads Semillon Sauvignon Blanc rather than Sauvignon Blanc Semillon, and the wine inside is those same two grapes either way. What does the running order tell a buyer?",
       ["The varieties are listed from the largest component down",
@@ -120,8 +120,8 @@ BANK = [
     Q("Geographical Indications and labelling",
       "Vintage, variety and origin claims on an Australian label are checked by auditing a winery's own paperwork rather than by judging the wine in the glass. What is that audit scheme called?",
       ["The Label Integrity Program", "The Geographical Indications Committee",
-       "The Australian Wine Show Register", "The Winemakers Code of Practice"], 0,
-      "The Label Integrity Program follows fruit from the weighbridge to the bottle, so a false claim is caught in the records rather than by a panel. The Geographical Indications Committee is a real body doing a different job: it determines boundaries, it does not police labels."),
+       "The Australian Wine Research Institute", "Sustainable Winegrowing Australia"], 0,
+      "The Label Integrity Program follows fruit from the weighbridge to the bottle, so a false claim is caught in the records rather than by a panel. The Geographical Indications Committee determines boundaries rather than policing labels, the Australian Wine Research Institute is a research body, and Sustainable Winegrowing Australia certifies how vineyards and wineries are farmed and run."),
 
     # ------------------------------------- Barossa and Eden Valley (7) -------
     Q("Barossa and Eden Valley",
@@ -132,7 +132,7 @@ BANK = [
     Q("Barossa and Eden Valley",
       "Climb east out of the Barossa floor into hills a few hundred metres higher, and the calling card changes from a broad red to a dry white of lime and chalky grip. Which region have you reached?",
       ["Eden Valley", "Clare Valley", "Adelaide Hills", "McLaren Vale"], 0,
-      "Eden Valley shares the Barossa zone with the valley floor but sits higher, cooler and on ancient weathered granite, and Riesling rather than Shiraz is what it is known for. Two neighbouring regions inside one zone produce wines with almost nothing in common."),
+      "Eden Valley shares the Barossa zone with the valley floor but sits higher and cooler on thin, rocky, low-fertility soils, and Riesling rather than Shiraz is what it is known for. Two neighbouring regions inside one zone produce wines with almost nothing in common."),
     Q("Barossa and Eden Valley",
       "Lutheran families from Silesia and Prussia settled one Australian valley from 1842, and their village names, bakeries and smokehouses are still in place. Which valley did they plant?",
       ["The Barossa Valley", "The Hunter Valley",
@@ -140,9 +140,9 @@ BANK = [
       "German-speaking settlers gave the Barossa its Bethany, its Langmeil and its Krondorf, and they put vines in beside the wheat. Six generations of unbroken farming on the same blocks is why so much of that original planting material is still in the ground."),
     Q("Barossa and Eden Valley",
       "Old Shiraz in the Barossa often stands as a low free-standing shrub, with no wire, no post and no trellis anywhere near it. What is that training form called?",
-      ["Bush vine, also known as head training", "Vertical shoot positioning",
+      ["Bush vine", "Vertical shoot positioning",
        "Scott Henry", "Geneva Double Curtain"], 0,
-      "A head-trained bush vine carries its own canopy without any support, and its own leaves shade the fruit from a fierce sun. It suits a dry-grown, low-yielding old block and is far too labour-intensive for anything planted with a machine harvester in mind."),
+      "Bush vine training, also called head training, has the vine carry its own canopy without any support, and its own leaves shade the fruit from a fierce sun. It suits a dry-grown, low-yielding old block and is far too labour-intensive for anything planted with a machine harvester in mind."),
     Q("Barossa and Eden Valley",
       "Alongside Shiraz, two other heat-tolerant varieties came to the Barossa in the nineteenth century and are now blended with it under a three-letter shorthand. Which two?",
       ["Grenache and Mataro", "Nebbiolo and Barbera",
@@ -189,7 +189,7 @@ BANK = [
       "Two named subregions inside the Adelaide Hills appear on labels for cool-climate Chardonnay and Pinot Noir. Which pair?",
       ["Lenswood and Piccadilly Valley", "Watervale and Polish Hill River",
        "High Eden and Moppa", "Blewitt Springs and Seaview"], 0,
-      "Lenswood and Piccadilly Valley are the only two subregions the Adelaide Hills has registered, and both sit high and cold enough for a long slow ripening. Watervale and Polish Hill River belong to Clare, and Blewitt Springs and Seaview to McLaren Vale."),
+      "Lenswood and Piccadilly Valley were registered as subregions of the Adelaide Hills around the turn of the century, and both sit high and cold enough for a long slow ripening. Watervale and Polish Hill River belong to Clare, and Blewitt Springs and Seaview to McLaren Vale."),
 
     # ------------------------- Coonawarra and the Limestone Coast (5) --------
     Q("Coonawarra and the Limestone Coast",
@@ -294,7 +294,7 @@ BANK = [
     Q("Western Australia",
       "Of the five Great Southern subregions, one lies furthest inland along a river, runs warmest and driest, and is planted heavily to Shiraz and Cabernet. Which?",
       ["Frankland River", "Albany", "Denmark", "Porongurup"], 0,
-      "Distance from the coast makes Frankland River the most continental of the five, with warmer days, colder nights and less rain. Albany and Denmark sit on the water, and their cooler, wetter conditions push them toward Pinot Noir and Chardonnay."),
+      "Distance from the coast makes Frankland River the most continental of the five, with warmer days, colder nights and less rain. Albany and Denmark sit on the water, and their cooler, wetter conditions push them towards Pinot Noir and Chardonnay."),
 
     # ------------------------------------------------------ Tasmania (4) ----
     Q("Tasmania",
@@ -311,7 +311,7 @@ BANK = [
     Q("Tasmania",
       "Tasmania's most planted variety gives a still red that is pale to medium in colour, red-fruited and high in acid. Which variety?",
       ["Pinot Noir", "Shiraz", "Cabernet Sauvignon", "Merlot"], 0,
-      "Pinot Noir serves two purposes on the island: it is the backbone of the sparkling wine and it makes the most convincing still red. Cabernet is planted only in the warmest pockets and fails to ripen in most years."),
+      "Pinot Noir serves two purposes on the island: it is the backbone of the sparkling wine and it makes the most convincing still red. Cabernet is planted only in the warmest pockets and ripens fully only in the better years."),
     Q("Tasmania",
       "Almost all Tasmanian vineyards sit along the north coast or down the eastern side, and the west carries none. What rules the west out?",
       ["It takes the full force of the westerlies and their rainfall",
@@ -338,12 +338,12 @@ BANK = [
        "Sulphur dioxide escaping through the closure"], 0,
       "A taut dry Riesling exposes a tainted or prematurely oxidised bottle more brutally than almost any other wine, and the Clare growers were losing bottles at random. Australian trials in the 1970s had already put premium Riesling under screwcap and been dropped when buyers balked, so this was a revival rather than a first. It stuck: the screwcap now seals most Australian wine at every price, and the argument has moved on to how much oxygen a liner should admit."),
     Q("Grapes, styles and closures",
-      "Blending Shiraz from three separate regions before bottling is treated in Australia as a craft rather than as a compromise. What does the practice buy the winemaker?",
+      "Blending Shiraz from three separate regions before bottling is treated in Australia as a craft rather than as a compromise. What does that blending buy the winemaker?",
       ["Components with different strengths, which hold a house style steady",
        "Exemption from auditing of the label's claims",
        "The right to print any regional name on the label",
-       "A legal requirement that applies above a certain alcohol level"], 0,
-      "One region brings colour and tannin, another perfume, another acidity, and no single site delivers all of them every season. The trade is that no one region can be named alone unless it supplies at least eighty-five percent of the wine. The label must otherwise list the regions in descending order with their percentages, or fall back on a broad Geographical Indication such as South Eastern Australia."),
+       "Fruit that ripens earlier than any single region could manage"], 0,
+      "One region brings colour and tannin, another perfume, another acidity, and no single site delivers all of them every season. The trade is that no one region can be named alone unless it supplies at least eighty-five per cent of the wine. The label must otherwise name the regions in descending order of their share, or fall back on a broader Geographical Indication such as South Eastern Australia."),
     Q("Grapes, styles and closures",
       "A fortified wine from north-east Victoria was called Tokay until an agreement with the European Union obliged Australia to surrender the name. What is it called now, and what is it made from?",
       ["Topaque, from Muscadelle", "Apera, from Palomino",
@@ -353,5 +353,5 @@ BANK = [
       "Poured cool with turkey at a midsummer Christmas, a dark foaming full-bodied red just off dry has been an Australian fixture since the nineteenth century. What is it?",
       ["Sparkling Shiraz", "Sparkling Grenache",
        "Sparkling Cabernet Sauvignon", "A sweet red made in the Lambrusco manner"], 0,
-      "The style began in Victoria's Great Western and survives almost nowhere else on earth. A full red base takes a second fermentation for pressure, and the dosage leaves just enough sugar to carry the tannin, which is why it is served cool rather than cellar-warm."),
+      "The style is most closely tied to Great Western in Victoria, and full-bodied sparkling red of this kind is rare outside Australia. A full red base takes a second fermentation for pressure, and the dosage leaves just enough sugar to carry the tannin, which is why it is served cool rather than cellar-warm."),
 ]

@@ -1,12 +1,12 @@
-"""Rank II rewrite - Pacific NW, NY & Canada (33 questions: 12 MC, 21 short answer).
+"""Village rewrite - Pacific NW, NY & Canada (33 questions: 12 MC, 21 short answer).
 
 Certified level, covering North America outside California: Oregon, Washington,
-Idaho, New York and Canada. Pitched deliberately above the committed Rank I
-"United States" category, which was read first. Where Rank I asks which soil is
+Idaho, New York and Canada. Pitched deliberately above the committed Regionale
+"United States" category, which was read first. Where Regionale asks which soil is
 the calling card of the Dundee Hills, this asks what the pale sedimentary ground
-north of it is called and which rivers named it; where Rank I says the Finger
+north of it is called and which rivers named it; where Regionale says the Finger
 Lakes keep vines alive, this asks which lake the prevailing wind crosses before
-it reaches the mildest shore in the region. Nothing here repeats a Rank I task.
+it reaches the mildest shore in the region. Nothing here repeats a Regionale task.
 California is left alone entirely - the committed r2_california.py owns the AVA
 system, the 85 percent rule and every Californian place - and the two answers
 another committed category has already taken in this territory, the Niagara
@@ -81,7 +81,7 @@ BANK = [
       "The rule sits beside the fruit percentage in the same body of federal regulation, and it exists so that an appellation claim cannot be assembled in a cellar a thousand miles from the vineyard. Cellar treatment and blending that does not change the class or type of the wine are the only steps allowed elsewhere. Where an appellation straddles a state line, finishing in either of them satisfies the rule, which is why a cross-border name is the usual way around the problem."),
     SA("Oregon's stricter label law",
        "Fifteen percent of a Dundee Hills bottling is fruit grown outside that boundary, which federal law would wave through. The state it sits in will not. Where does that state set its own minimum?",
-       "Ninety-five percent",
+       "Ninety-five per cent",
        ["ninety five percent", "95 percent", "95%", "95 per cent", "ninety five per cent",
         "95", "ninety five",
         "at least 95 percent", "at least 95%", "at least ninety five percent",
@@ -91,8 +91,8 @@ BANK = [
         "95 percent or more", "no less than 95 percent", "must be 95 percent",
         "95 percent of the fruit", "95 percent of the grapes",
         "ninety five percent of the fruit", "ninety five percent of the grapes",
-        "95 percent from the appellation", "ninety five percent from the appellation"],
-       "Federal law asks 85 percent of the fruit for an AVA name and Oregon demands ninety-five, so a blend that would ship happily from another state has to be relabelled to a broader name here. The same instinct runs through the state's other rules, which is why Oregon labels tend to carry either a very precise place or a frankly regional one and little in between.",
+        "95 percent from the appellation", "ninety five percent from the appellation", "at least 95 per cent", "at least ninety five per cent", "a minimum of 95 per cent", "a minimum of ninety five per cent", "minimum 95 per cent", "95 per cent or more", "no less than 95 per cent", "must be 95 per cent", "95 per cent of the fruit", "95 per cent of the grapes", "ninety five per cent of the fruit", "ninety five per cent of the grapes", "95 per cent from the appellation", "ninety five per cent from the appellation"],
+       "Federal law asks 85 per cent of the fruit for an AVA name and Oregon demands ninety-five, so a blend that would ship happily from another state has to be relabelled to a broader name here. The same instinct runs through the state's other rules, which is why Oregon labels tend to carry either a very precise place or a frankly regional one and little in between.",
        ex=True),
 
     # --------------------------- The Willamette Valley and its nested AVAs (5) --
@@ -146,7 +146,7 @@ BANK = [
 
     # ------------------------- Washington's ground: floods, basalt and cold (4) --
     Q("Washington's ground: floods, basalt and cold",
-      "Vines across the Columbia basin are trained with two or three trunks rising from the ground rather than one, and an own-rooted block can be brought back from the base after the worst nights. Which hazard shapes both practices?",
+      "Vines across the Columbia basin are trained with two or three trunks rising from the ground rather than one, and an own-rooted block can be brought back from the base after the worst nights. Which hazard lies behind both?",
       ["A hard winter freeze that kills wood above ground",
        "Phylloxera arriving through the graft union",
        "Wind off the river snapping a single trunk",
@@ -198,7 +198,7 @@ BANK = [
        "Horse Heaven Hills",
        ["horse heaven hills", "horse heaven", "horse heaven hills ava",
         "the horse heaven hills appellation"],
-       "The ground runs down toward the river in a single tilted sheet, so the aspect is uniform and the wind has nothing to break it. That wind is a working tool rather than a nuisance: it shrinks berries and raises the skin to juice ratio, and it dries the canopy fast enough that fungal disease is close to unknown there."),
+       "The ground runs down towards the river in a single tilted sheet, so the aspect is uniform and the wind has nothing to break it. That wind is a working tool rather than a nuisance: it shrinks berries and raises the skin to juice ratio, and it dries the canopy fast enough that fungal disease is close to unknown there."),
     SA("Washington's nested appellations",
        "One Washington appellation sees barely six inches of rain in a year, and every acre of it is planted where canal water can be lifted onto a single unbroken incline below the Saddle Mountains. Name it.",
        "Wahluke Slope",
@@ -212,11 +212,11 @@ BANK = [
        "A rain shadow cast by the Coast Range, which strips the marine air out before it arrives",
        "Latitude north of the forty-seventh parallel, further north than any Washington vineyard",
        "A valley floor that opens directly onto the Pacific and takes the weather first"], 0,
-      "Vineyards there sit well above two thousand feet, higher than anything planted in Washington, and thin air at that height sheds the day's heat fast once the sun goes down. The result is a diurnal swing wide enough to hold acidity through a hot afternoon, a winter cold enough to demand hardy training, and a frost-free window short enough that late-ripening varieties are a gamble."),
+      "Most of the state's vineyard sits between two and three thousand feet, well above the bulk of Washington's, and thin air at that height sheds the day's heat fast once the sun goes down. The result is a diurnal swing wide enough to hold acidity through a hot afternoon, a winter cold enough to demand hardy training, and a frost-free window short enough that late-ripening varieties are a gamble."),
     SA("Idaho and the Snake River",
        "Vines in Idaho cluster in one appellation southwest of Boise, floored by the sediments of a lake that drained away in the Pliocene, and it reaches west across the state line. Name it.",
        "Snake River Valley",
-       ["snake river valley", "snake river valley ava", "snake river valley appellation",
+       ["snake river valley", "snake river", "snake river valley ava", "snake river valley appellation",
         "snake river valley in idaho"],
        "The old lake bed left silts and sands over basalt, and the appellation crosses into eastern Oregon because the same basin does. Growers plant on the slopes and terraces above the river rather than on the flat, since cold air pools on the floor in winter and the difference between a bench and the ground below it can decide whether a block survives.",
        ex=True),
@@ -251,14 +251,14 @@ BANK = [
        ["cayuga lake", "lake cayuga", "cayuga", "cayuga lake ava", "lake cayuga ava",
         "cayuga lake appellation", "cayuga lake in the finger lakes",
         "cayuga lake new york", "cayuga lake in new york"],
-       "It runs some thirty-eight miles north to south, longer than any of its neighbours though not the deepest, and the appellation follows its shoreline slopes rather than the country between the lakes. The second nested appellation was drawn fifteen years later around a neighbouring lake, and everything outside the two of them carries the regional name alone.",
+       "It runs some thirty-eight miles north to south, longer than any of its neighbours though not the deepest, and the appellation follows its shoreline slopes rather than the country between the lakes. The second nested appellation was drawn the same way fifteen years later, around a neighbouring lake.",
        ex=True),
 
     # -------------------------------------- Long Island, hybrids and labrusca (3)
     Q("Long Island, hybrids and labrusca",
       "Federal law lets a wine made from Concord or Niagara print its variety at a lower minimum than a Chardonnay needs. What is the figure for those native varieties?",
-      ["51 percent", "75 percent", "85 percent", "Every grape in the bottle"], 0,
-      "The allowance exists because labrusca character is so assertive that a bare majority of it already dominates a blend, and the wines were traditionally softened with something neutral. A label using it has to carry an appellation of origin as well, and the ordinary 75 percent minimum still applies to everything else, so a Riesling and a Concord standing side by side on a New York shelf are held to different rules."),
+      ["51 per cent", "75 per cent", "85 per cent", "100 per cent"], 0,
+      "The allowance exists because labrusca character is so assertive that a bare majority of it already dominates a blend, and the wines were traditionally softened with something neutral. A label using it has to carry an appellation of origin as well, and the ordinary 75 per cent minimum still applies to everything else, so a Riesling and a Concord standing side by side on a New York shelf are held to different rules."),
     SA("Long Island, hybrids and labrusca",
        "Sand and gravel dumped at the edge of an ice sheet floor the strip of Long Island that carries almost all of the island's vineyard, and that strip holds an appellation distinct from the umbrella one. Name it.",
        "The North Fork of Long Island",
@@ -279,7 +279,7 @@ BANK = [
     Q("British Columbia and the Okanagan",
       "In 1988 British Columbia paid its growers to tear out roughly two thirds of the province's vines inside a single season. What forced that?",
       ["A trade agreement opened the border to cheaper wine",
-       "Phylloxera reached the valley and forced a wholesale replanting on resistant rootstock",
+       "Phylloxera reached the valley and forced a replanting",
        "Two winters in a row killed the vineyard outright",
        "A federal ban on the use of hybrid grapes for wine"], 0,
       "The vineyard at the time was mostly hybrid and labrusca material planted for volume, and it could not survive being priced against imports. The pull-out looks brutal on paper and was the making of the modern industry: what went back in was vinifera on the warmest sites, and the appellation system that followed a couple of years later was written to protect the replanting."),
@@ -314,7 +314,7 @@ BANK = [
        "Temperature at picking is only half of Canada's icewine rule: the juice coming off the press has to reach a stated concentration as well. Give that minimum must weight.",
        "Thirty-five degrees Brix",
        ["thirty five degrees brix", "35 degrees brix", "35 brix", "thirty five brix",
-        "35",
+        "35", "thirty five",
         "minimum 35 brix", "35 brix minimum", "at least 35 brix",
         "at least thirty five brix", "a minimum of 35 brix",
         "minimum 35 degrees brix", "35 degrees brix minimum",

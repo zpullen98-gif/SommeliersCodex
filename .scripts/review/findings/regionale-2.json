@@ -1,0 +1,283 @@
+{
+  "batch": "regionale-2",
+  "modules": [
+    "rewrite/categories/r1_sake_spirits.py",
+    "rewrite/categories/r1_bordeaux.py"
+  ],
+  "readCount": 127,
+  "total": 127,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "Saccharification and alcoholic fermentation run at the same",
+      "field": "opts",
+      "problem": "The distractor 'Solera fermentation' is not a real term (a solera is a fractional ageing system, not a fermentation), so one option is not a real thing.",
+      "fix": "Replaced it with 'Spontaneous fermentation', a real fermentation term that cannot describe saccharification and fermentation running together.",
+      "source": "Standard winemaking and brewing terminology: solera is an ageing system; spontaneous fermentation means ambient yeast.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "Where is the mould propagated during the two",
+      "field": "opts",
+      "problem": "The key 'In the koji muro, a warm and humid dedicated room' was the only option carrying a named term (a lone specific against three vague places) and echoed the stem's word koji.",
+      "fix": "All four options are now plain descriptions of a place ('In a warm, humid room built for the purpose' and three wrong rooms or vessels, none visibly longer); the exp now names the room as the koji muro.",
+      "source": "The brief's rule against a lone specific key; koji making in the muro is standard sake brewing.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "A bottle carries no grade beyond the brewery",
+      "field": "opts",
+      "problem": "The key 'Futsu-shu, ordinary sake' carried a gloss that restates the stem (no grade, the bulk) and stood 16 characters clear of every other option, a visible length standout.",
+      "fix": "Key trimmed to 'Futsu-shu'; the exp already says ordinary sake sits outside the eight special designations.",
+      "source": "Build length metrics (decisive standout) and the brief's answerable-from-shape rule.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "An opened bottle is going back into the",
+      "field": "exp",
+      "problem": "The exp told the reader to treat open sake like open white wine 'or more carefully still' and to finish it within a few days, which overstates it; most sake guidance gives a refrigerated, stoppered bottle about a week, with nama the most fragile.",
+      "fix": "Exp now says the fresh aromas begin to fade from the first day, and to keep it cold and stoppered and finish it within a week or so, sooner still for unpasteurised nama. The key stands.",
+      "source": "General sake service guidance (brewers' associations and sake educators): refrigerate after opening, drink within about a week, nama sooner.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "Two of the six Cognac crus carry the",
+      "field": "stem",
+      "problem": "The stem's own words ('which of them', the two Champagne crus) rule out Borderies and Fins Bois, so the four-option question was really a two-way choice between Grande and Petite Champagne, and the names give that away.",
+      "fix": "Stem reframed as an applied task with no restricting clause: 'A Cognac house wants eaux-de-vie from the cru known for the most delicate, longest-lived spirit of all six. Which cru should it buy from?' Options unchanged; the exp now teaches Grande Champagne's chalk, Petite Champagne next, and the Fine Champagne rule (at least half Grande Champagne). Id moves i-5l51h256 to i-ibk1g4b6; check-similarity clean.",
+      "source": "BNIC cru hierarchy and the Fine Champagne definition (a blend of Grande and Petite Champagne with at least 50 percent Grande Champagne).",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "A label reads VSOP. What is the minimum",
+      "field": "exp",
+      "problem": "The exp claimed age statements on blended spirits 'always' describe the youngest component; that is not true of every spirit everywhere (some solera-aged rums state an average or the oldest).",
+      "fix": "Exp narrowed to 'On Cognac, as on Scotch, an age statement describes the youngest spirit in the blend, never the average.'",
+      "source": "Cognac compte rules and the Scotch Whisky Regulations 2009; solera rum labelling outside the EU.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "Casks used to mature bourbon can be filled",
+      "field": "opts",
+      "problem": "The stem's 'filled only once' rules out 'Used sherry butts' and 'Refilled bourbon barrels' on its own words, leaving a two-way choice.",
+      "fix": "Options are now all new casks: 'New oak, charred inside' (key), 'New oak, toasted but not charred', 'New chestnut, charred inside', 'New acacia, lightly toasted'. The exp now opens with the legal requirement (new charred oak containers).",
+      "source": "US Standards of Identity, 27 CFR 5.143: bourbon is stored in charred new oak containers.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sake_spirits.py",
+      "stemStart": "Brazil's national spirit is pressed and fermented from",
+      "field": "exp",
+      "problem": "The exp said aged cachaca rests in native woods, implying only native woods; oak is also widely used.",
+      "fix": "Exp now says aged versions rest in oak or in native Brazilian woods.",
+      "source": "Brazilian cachaca production norms and the woods producers commonly use (oak, amburana, jequitiba and others).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Entre-Deux-Mers sits between which two rivers?",
+      "field": "exp",
+      "problem": "The exp said the appellation is used for dry white wine only. Since the cahier des charges homologated in August 2023, Entre-Deux-Mers also covers red wine from the 2023 vintage.",
+      "fix": "Exp now says the appellation was long reserved for dry white and has covered red as well since the 2023 vintage.",
+      "source": "WebSearch: Entre-Deux-Mers specification homologated 16 August 2023, published 25 August 2023 (Jane Anson; Wine Business International 'Entre-deux-Mers turns red'; Guide Hachette 2026 lists an Entre-deux-Mers rouge 2023).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Baron Philippe de Rothschild campaigned for half a",
+      "field": "opts",
+      "problem": "The stem names Rothschild and only the key 'Mouton Rothschild' carried that word, so the question could be answered by matching words.",
+      "fix": "Options are now 'Mouton', 'Lafite', 'Clerc Milon', 'Lynch-Bages': Lafite is the other Rothschild Pauillac and Clerc Milon an estate the Baron bought, so knowledge, not word matching, decides. The exp says why each trap is wrong (Lafite a First Growth from 1855; Clerc Milon, bought in 1970, still a Fifth Growth).",
+      "source": "1855 classification and the 1973 amendment; Clerc Milon acquired by Baron Philippe in 1970 (historical, not a current-ownership claim).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Pomerol, Fronsac and Lalande-de-Pomerol are all small. Which",
+      "field": "opts",
+      "problem": "Three of the four options were the very appellations the stem names as the small ones, so only the key survived the stem's own words.",
+      "fix": "Distractors replaced with smaller Right Bank appellations the stem does not name: Canon-Fronsac, Puisseguin-Saint-Emilion, Francs Cotes de Bordeaux (none larger than Pomerol by much, so none can dwarf it). Exp adds a line on them.",
+      "source": "Approximate appellation areas: Saint-Emilion about 5,400 ha; Pomerol about 800; Canon-Fronsac about 300; Puisseguin about 750; Francs about 500.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Montagne-Saint-Emilion is an example of what?",
+      "field": "opts",
+      "problem": "The key 'A Saint-Emilion satellite' echoed the stem's own word, and the distractors (a First Growth, a sweet wine appellation, a negociant house) were not of one kind with it.",
+      "fix": "All four options now name Saint-Emilion: 'A satellite appellation beside Saint-Emilion' (key), 'A classified estate within Saint-Emilion', 'A commune inside the Saint-Emilion appellation', 'A negociant house based in Saint-Emilion'. Exp says the satellites lie north of the Barbanne, outside the appellation and its classification.",
+      "source": "INAO appellation boundaries: the four satellites lie outside AOC Saint-Emilion, north of the Barbanne.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Pomerol's plateau is known for a distinctive soil",
+      "field": "exp",
+      "problem": "The exp called the crasse de fer a band of iron-bearing clay; it is an iron-cemented hardpan (ferruginous sand and gravel) beneath the clay and gravel.",
+      "fix": "Exp now says the plateau's clay is laced with iron and that beneath the best of it lies an iron-cemented hardpan, the crasse de fer. Key 'Iron-rich clay' stands.",
+      "source": "Standard Pomerol soil descriptions (crasse de fer as iron pan); consistent with the module's own soil exp, which says 'the iron pan'.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Across the Garonne from Sauternes lies which sweet",
+      "field": "opts",
+      "problem": "The distractors (Pomerol, Listrac, Saint-Emilion) are all red appellations, so the stem's 'sweet white' alone picked out the key and the options were not of one kind.",
+      "fix": "Distractors are now sweet white appellations on the same bank as Sauternes: Cerons, Barsac, Graves Superieures. Exp says they share Sauternes' bank.",
+      "source": "Bordeaux appellation map: Loupiac, Cadillac and Sainte-Croix-du-Mont on the right bank of the Garonne; Barsac, Cerons and Graves Superieures on the left.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Pickers in Sauternes pass through the vineyard repeatedly",
+      "field": "stem",
+      "problem": "The stem used the one word the house rules ban outright (the noun for a habitual method), and 'through' twice.",
+      "fix": "Stem now reads 'Pickers in Sauternes go through the same vineyard several times over one harvest. What are those passes called?' Options and exp unchanged. Id moves i-0lr26p46 to i-ozgmi8m6; check-similarity clean.",
+      "source": "House rules in the batch brief.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "The Entre-Deux-Mers appellation may be used for which",
+      "field": "key",
+      "problem": "The keyed answer 'Dry white only' has been wrong since the 2023 specification added red; no option was correct.",
+      "fix": "Re-keyed to 'Dry white and red', with 'Dry white only' kept as the textbook-lag trap and 'Red only' and 'Sweet white only' as the other distractors ('Any style' dropped). Exp rewritten: red since the 2023 vintage, older books out of date, sweet whites from the same land sold as Loupiac, Cadillac and kin.",
+      "source": "Same sources as the Entre-Deux-Mers exp finding (specification homologated August 2023; 2023 rouge bottlings in the Guide Hachette 2026). The README sides with the law over lagging textbooks.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "Buying a wine as futures, before it is",
+      "field": "opts",
+      "problem": "The distractor 'Negoce direct' is not a real trade term.",
+      "fix": "Replaced with 'Vin de garde', a real French wine term (wine for keeping) that does not mean buying futures.",
+      "source": "Standard French wine terminology.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_bordeaux.py",
+      "stemStart": "A label reading simply Bordeaux AOC tells you",
+      "field": "exp",
+      "problem": "The exp said the majority of Bordeaux by volume is sold under it; Bordeaux AOC alone is the largest single appellation but nearer half than a clear majority, and the widely quoted majority figure counts Bordeaux Superieur with it.",
+      "fix": "Exp now says more Bordeaux is sold under it than under any other appellation.",
+      "source": "CIVB production share figures (Bordeaux and Bordeaux Superieur together a little over half).",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Saccharification and alcoholic fermentation run at the same",
+      "verdict": "kept",
+      "why": "Solera is an ageing system, so the old distractor was an invented term a student could strike as fake; spontaneous fermentation is real, means ambient yeast, and cannot name the simultaneous arrangement. No standout introduced."
+    },
+    {
+      "stemStart": "Where is the mould propagated during the two",
+      "verdict": "kept",
+      "why": "The old key repeated the stem's word koji and was the only named term; the new four are plain places of similar length, the warm room is right for koji (roughly 48 hours), and the exp now teaches the name muro."
+    },
+    {
+      "stemStart": "A bottle carries no grade beyond the brewery",
+      "verdict": "amended",
+      "why": "Trimming the key removed a real 16 character standout, but the exp never tied the word futsu-shu to ordinary sake, so the gloss was deleted rather than moved. Exp now opens 'Futsu-shu, ordinary sake, sits outside the eight special designations'."
+    },
+    {
+      "stemStart": "An opened bottle is going back into the",
+      "verdict": "kept",
+      "why": "The original few days was conservative rather than wrong, but the new exp is equally defensible (cold, stoppered, about a week, nama sooner), still supports the key that sake oxidises quickly, and adds the nama point. Not a wrong correction, so it stands."
+    },
+    {
+      "stemStart": "Two of the six Cognac crus carry the",
+      "verdict": "kept",
+      "why": "The old stem's 'which of them' left Grande against Petite with the names giving it away, and no option set can repair a stem that restricts four options to two, so a stem change was the only fix. The new stem drops the word Champagne, its descriptors match the BNIC account of Grande Champagne (finesse, long ageing), and the exp's Fine Champagne rule (at least half Grande Champagne) is right."
+    },
+    {
+      "stemStart": "A label reads VSOP. What is the minimum",
+      "verdict": "kept",
+      "why": "'Always' was false across all blended spirits (solera rum and brandy labelling); Cognac counts and the Scotch rules both state the youngest component, and VS two years, VSOP four is right."
+    },
+    {
+      "stemStart": "Casks used to mature bourbon can be filled",
+      "verdict": "kept",
+      "why": "'Filled only once' did strike out refilled and used casks on the stem's own words. The new four are all new casks; only new charred oak meets 27 CFR 5.143, toasted but uncharred oak and non-oak woods fail it, and no length standout appears."
+    },
+    {
+      "stemStart": "Brazil's national spirit is pressed and fermented from",
+      "verdict": "kept",
+      "why": "Oak is the commonest wood for aged cachaca alongside amburana, jequitiba and other native woods, so 'native woods' alone misled; the fix is accurate and minimal."
+    },
+    {
+      "stemStart": "Entre-Deux-Mers sits between which two rivers?",
+      "verdict": "kept",
+      "why": "Verified by one WebSearch: the Entre-Deux-Mers specification homologated 16 August 2023 (JORF 25 August 2023) admits red from the 2023 vintage (Jane Anson; Wine Business International; the INAO cahier). The old 'dry white only' line is now false."
+    },
+    {
+      "stemStart": "Baron Philippe de Rothschild campaigned for half a",
+      "verdict": "kept",
+      "why": "The old key alone carried the stem's word Rothschild. Mouton is standard shorthand; Lafite (Rothschild since 1868, a First Growth in 1855) and Clerc Milon (bought by the Baron in 1970, a Fifth Growth) are traps that need knowledge, and both are historical, not current-ownership claims. Not a lone length standout."
+    },
+    {
+      "stemStart": "Pomerol, Fronsac and Lalande-de-Pomerol are all small. Which",
+      "verdict": "kept",
+      "why": "Three options were the stem's own named appellations. Canon-Fronsac, Puisseguin and Francs are each smaller than Lalande-de-Pomerol, so only Saint-Emilion dwarfs the three; no standout."
+    },
+    {
+      "stemStart": "Montagne-Saint-Emilion is an example of what?",
+      "verdict": "kept",
+      "why": "All four options now carry Saint-Emilion, so the echo no longer marks the key; 'a commune inside the Saint-Emilion appellation' is false because Montagne lies north of the Barbanne outside AOC Saint-Emilion, and the satellites are outside its classification, so the exp is right."
+    },
+    {
+      "stemStart": "Pomerol's plateau is known for a distinctive soil",
+      "verdict": "kept",
+      "why": "The crasse de fer is an iron-cemented hardpan, not a clay band; the new exp says so, keeps the key 'Iron-rich clay' true, and matches the module's own soil exp ('the iron pan')."
+    },
+    {
+      "stemStart": "Across the Garonne from Sauternes lies which sweet",
+      "verdict": "kept",
+      "why": "Red distractors let 'sweet white' alone pick the key. Cerons, Barsac and Graves Superieures are the left-bank sweet appellations and are correctly wrong. The fix adds one non-key length standout (Graves Superieures, 11 clear), which cannot be avoided because no shorter same-bank sweet appellation exists; the build calls four standouts too few to steer by, and the geography taught outweighs it."
+    },
+    {
+      "stemStart": "Pickers in Sauternes pass through the vineyard repeatedly",
+      "verdict": "kept",
+      "why": "The stem carried the banned word, so a stem change was compulsory and no option or exp fix could serve; the new stem is clean, plain and keyed the same (tries successives), and similarity is clean."
+    },
+    {
+      "stemStart": "The Entre-Deux-Mers appellation may be used for which",
+      "verdict": "kept",
+      "why": "Verified by the same WebSearch: red under the AOC since the 2023 vintage (aged 18 months, at least two varieties, dry), so 'Dry white only' is now wrong and 'Dry white and red' is the only true option. The README sides with the law over lagging textbooks; the old answer survives as a trap; Loupiac and Cadillac do lie within the Entre-Deux-Mers zone. Lengths are even."
+    },
+    {
+      "stemStart": "Buying a wine as futures, before it is",
+      "verdict": "kept",
+      "why": "Negoce direct was an invented phrase a student could strike as fake; vin de garde is a real term (wine to keep) that does not mean buying futures, and no standout appears. Harmless improvement."
+    },
+    {
+      "stemStart": "A label reading simply Bordeaux AOC tells you",
+      "verdict": "kept",
+      "why": "The majority figure usually counts Bordeaux Superieur in; 'more than under any other appellation' is true on any reading and loses nothing a Regionale student needs."
+    }
+  ]
+}

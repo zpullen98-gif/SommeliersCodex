@@ -1,4 +1,4 @@
-"""Rank II rewrite - Sweet Wines (25 questions: 8 MC, 17 short answer).
+"""Village rewrite - Sweet Wines (25 questions: 8 MC, 17 short answer).
 
 Certified level, in the territory the committed corpus leaves open. The other
 categories own most of the sweet world - Tokaj and its numbers, the German
@@ -174,7 +174,7 @@ BANK = [
       "EU law lets most wine labels stay silent about sweetness, yet for one whole category the term is compulsory on every label. Which category?",
       ["Sparkling wine",
        "Still wine under a protected designation of origin",
-       "Any wine above fifteen percent alcohol",
+       "Any wine above fifteen per cent alcohol",
        "Wine made from botrytised fruit"], 0,
       "A sparkling label without brut, extra dry, demi-sec or one of their siblings is not legal, while a still wine may say nothing at all. Silence is the only free choice, though: the moment a still label does print a sweetness word, the word must sit inside the band the regulation defines for it."),
     Q("Sweetness as label law",
@@ -182,8 +182,8 @@ BANK = [
       ["Acidity high enough to come within two grams of the sugar",
        "A vintage the authorities declared hot enough for a broader band",
        "Bottling done before the current rule took effect",
-       "Alcohol above thirteen percent, which reads dry"], 0,
-      "Balance is the point of the concession: the band stretches to nine grams when total acidity trails the sugar by no more than two grams per litre, because nine against seven of tartaric tastes drier than five against three. A parallel clause with a looser test, total acidity no more than ten grams below the sugar, stretches demi-sec from twelve grams to eighteen, which is why high-acid Chenin so often carries less sweetness on its label than the palate reports."),
+       "Alcohol above thirteen per cent, which reads dry"], 0,
+      "Balance is the point of the concession: the band stretches to nine grams when total acidity trails the sugar by no more than two grams per litre, because nine against seven of tartaric tastes drier than five against three. A parallel clause with a looser test, total acidity no more than ten grams below the sugar, stretches demi-sec from twelve grams to eighteen, which is why a high-acid Chenin so often wears a drier word on its label than its sugar figure alone would earn."),
     SA("Sweetness as label law",
        "Thirty grams of residual sugar stand in a still Loire Chenin, and the grower wants the sweetest word the wine has legally earned. Which word goes on the label?",
        "Moelleux",
@@ -246,7 +246,7 @@ BANK = [
        ["sugar", "its sugar", "residual sugar", "high sugar", "sugar content",
         "all that sugar", "high residual sugar", "sugar level",
         "sweetness", "its sweetness", "residual sweetness"],
-       "Concentrated sugar is a preservative in the jam sense: it denies microbes the water they need to work in the open bottle, and with the wine's acidity behind it, the sweetness also masks the first flavour costs of oxidation. The practical consequence is that sweet wine is the safest by-the-glass category in the building, holding days longer than anything dry."),
+       "Sugar is the buffer: its sweetness and weight cover the first flavour costs of oxidation, so the wine still tastes whole long after a dry white has gone flat, while its acidity and the generous sulphur sweet wines are bottled with slow the decline underneath. That makes sweet wine one of the safest by-the-glass categories in the building, outlasting the dry whites and reds poured beside it by days."),
     SA("Sweet wine at the table",
        "Left at the back of the main wine list, sweet wine barely sells; printed on one other piece of paper it moves every night. Which piece of paper?",
        "The dessert menu",

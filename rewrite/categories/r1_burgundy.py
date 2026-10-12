@@ -1,11 +1,11 @@
-"""Rank I rewrite — Burgundy (63 questions).
+"""Regionale rewrite: Burgundy (63 questions).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
 
 Stem openers are varied deliberately from the start, and narrow factual
 questions are approached from an angle chosen at writing time rather than
-reframed after a collision — the two rules Bordeaux produced.
+reframed after a collision, the two rules Bordeaux produced.
 """
 
 from lib import Q
@@ -84,7 +84,7 @@ BANK = [
     Q("Grape varieties",
       "Pinot Noir is notoriously difficult to grow. Which characteristic is most responsible?",
       ["Thin skins and tight bunches", "Extremely late ripening",
-       "Very high tannin needing years to soften", "Resistance to all rootstock"], 0,
+       "Very high tannin needing years to soften", "A need for long, hot summers"], 0,
       "Thin skins give the pale colour and fine texture, and also the vulnerability. Tight clusters trap moisture and invite rot in a damp autumn."),
 
     # ------------------------------------------ the appellation hierarchy (8)
@@ -118,7 +118,7 @@ BANK = [
     Q("The appellation hierarchy",
       "Fragmentation of Burgundian vineyard ownership is largely attributable to what?",
       ["The Napoleonic inheritance code", "Phylloxera",
-       "The 1855 classification", "Rules obliging growers to sell through a cooperative"], 0,
+       "The 1855 classification", "The 1935 appellation law"], 0,
       "Equal division across generations split parcels into slivers, which is why one Grand Cru can have dozens of owners each making a different wine."),
     Q("The appellation hierarchy",
       "A negociant in Burgundy does what?",
@@ -162,8 +162,8 @@ BANK = [
       "Marsannay at the northern end of the Cote de Nuits is the only one of the Cote d'Or village appellations covering all three colours."),
     Q("Cote de Nuits villages",
       "Chambertin lies within which village?",
-      ["Gevrey-Chambertin", "Chambolle-Musigny", "Morey-Saint-Denis", "Vosne-Romanee"], 0,
-      "Chambertin and Chambertin-Clos de Beze are the two senior Grands Crus, with seven others permitted to append the Chambertin name."),
+      ["Gevrey", "Chambolle", "Morey", "Vougeot"], 0,
+      "Gevrey, which added the vineyard's name to its own in 1847. Chambertin and Chambertin-Clos de Beze are its two senior Grands Crus, with seven others permitted to append the Chambertin name."),
 
     # ------------------------------------------ Cote de Beaune villages (8) -
     Q("Cote de Beaune villages",
@@ -198,17 +198,18 @@ BANK = [
     Q("Cote de Beaune villages",
       "Santenay lies at which end of the Cote de Beaune?",
       ["The southern end", "The northern end", "The centre", "It is not in the Cote de Beaune"], 0,
-      "The southern extremity, where the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value."),
+      "Near the southern tip, with only Maranges beyond it before the Cote d'Or gives way to the Cote Chalonnaise, and traditionally a source of value."),
     Q("Cote de Beaune villages",
       "Which village name appears attached to both a red-producing and a white-producing reputation, split across the Montrachet hill?",
-      ["Chassagne-Montrachet", "Meursault", "Volnay", "Aloxe-Corton"], 0,
-      "Chassagne was historically a red-wine village and is now better known for white, while retaining a substantial red production."),
+      ["Chassagne", "Puligny", "Meursault", "Volnay"], 0,
+      "Chassagne was historically a red-wine village and is now better known for white, while retaining a substantial red production. Puligny, across the boundary on the same hill, is almost entirely white."),
 
     # ---------------------------------------------------- Grands Crus (7) ---
     Q("Grands Crus",
-      "Romanee-Conti and La Tache are the monopoles of which domaine?",
-      ["Domaine de la Romanee-Conti", "Domaine Leroy", "Domaine Leflaive", "Maison Louis Jadot"], 0,
-      "A monopole is a vineyard in a single owner's hands, which is rare in fragmented Burgundy and part of what these two names trade on."),
+      "La Tache is a monopole. Which domaine holds the whole of it?",
+      ["Domaine de la Romanee-Conti", "Domaine Leroy", "Domaine du Comte Liger-Belair",
+       "Maison Louis Jadot"], 0,
+      "A monopole is a vineyard in a single owner's hands, which is rare in fragmented Burgundy. This domaine holds two Grands Crus outright, La Tache and Romanee-Conti itself, while La Romanee next door is the Liger-Belair monopole."),
     Q("Grands Crus",
       "Montrachet is unusual among Grands Crus in that it does what?",
       ["Straddles two communes", "Produces only red wine", "Lies in Chablis",
@@ -219,9 +220,9 @@ BANK = [
       ["White", "Red", "Rose", "Both red and white equally"], 0,
       "The white Grand Cru of the Corton hill, traditionally said to have been planted at the emperor's wish so his beard would not be stained."),
     Q("Grands Crus",
-      "Which Grand Cru of Chambolle-Musigny produces a small quantity of white wine?",
+      "Red is the rule among the Grands Crus of the Cote de Nuits. Which one may also be made white?",
       ["Musigny", "Bonnes-Mares", "Clos de Vougeot", "Echezeaux"], 0,
-      "Musigny Blanc is made in tiny volumes and is the only white permitted from a Cote de Nuits Grand Cru."),
+      "Musigny, in Chambolle. Its white is made in tiny volumes and is the only white permitted from a Cote de Nuits Grand Cru."),
     Q("Grands Crus",
       "Clos de Vougeot's reputation for variable quality is usually attributed to what?",
       ["Its many owners", "Its planting of Gamay alongside Pinot Noir",
@@ -229,13 +230,12 @@ BANK = [
       "Fifty hectares walled as one by monks who blended it all. Divided now among dozens of owners, across ground that slopes unevenly, it can no longer be one wine."),
     Q("Grands Crus",
       "Which order of monks did most to map and wall Burgundy's vineyards in the Middle Ages?",
-      ["The Cistercians", "The Benedictines alone", "The Jesuits", "The Franciscans"], 0,
+      ["The Cistercians", "The Carthusians", "The Jesuits", "The Franciscans"], 0,
       "Cistercian and Benedictine houses worked the land for centuries and recorded which parcels ripened differently. The climat map is largely their survey."),
     Q("Grands Crus",
       "Echezeaux and Grands-Echezeaux lie within which commune?",
-      ["Flagey-Echezeaux", "Gevrey-Chambertin",
-       "Chambolle-Musigny", "Nuits-Saint-Georges"], 0,
-      "Flagey-Echezeaux's village wine is sold as Vosne-Romanee, which is one of Burgundy's more confusing administrative arrangements."),
+      ["Flagey", "Gevrey", "Chambolle", "Vougeot"], 0,
+      "Flagey, in full Flagey-Echezeaux, sits beside Vosne. Its village wine is sold as Vosne-Romanee, which is one of Burgundy's more confusing administrative arrangements."),
 
     # -------------------------------------------------------- Chablis (6) ---
     Q("Chablis",
@@ -264,14 +264,14 @@ BANK = [
       "A separate appellation for outlying sites off the Kimmeridgian, on the younger Portlandian rock above it, generally lighter and for earlier drinking."),
     Q("Chablis",
       "Which Chablis Grand Cru climat is often singled out as the most structured and longest-lived?",
-      ["Les Clos", "Petit Chablis", "Montee de Tonnerre", "Fourchaume"], 0,
-      "Les Clos is the largest and most celebrated of the seven. Montee de Tonnerre and Fourchaume are Premiers Crus, and fine ones."),
+      ["Les Clos", "Blanchot", "Montee de Tonnerre", "Fourchaume"], 0,
+      "Les Clos is the largest and most celebrated of the seven, while Blanchot is usually the softest and most floral. Montee de Tonnerre and Fourchaume are Premiers Crus, and fine ones."),
 
     # ------------------------------- Cote Chalonnaise and Maconnais (5) -----
     Q("Cote Chalonnaise and Maconnais",
       "Rully, Givry and Montagny sit in the Cote Chalonnaise. Which neighbour outsizes them all?",
-      ["Mercurey", "Rully", "Givry", "Montagny"], 0,
-      "Mercurey is predominantly red and the best known of the four village appellations there."),
+      ["Mercurey", "Bouzeron", "Maranges", "Saint-Aubin"], 0,
+      "Mercurey, predominantly red, is the largest and best known of the Cote Chalonnaise's five village appellations. Bouzeron, given over to Aligote, is the smallest, and Maranges and Saint-Aubin belong to the Cote de Beaune."),
     Q("Cote Chalonnaise and Maconnais",
       "Montagny is unusual among Cote Chalonnaise appellations because it produces what?",
       ["White wine only", "Red wine only", "Sparkling wine only", "Sweet wine only"], 0,
@@ -298,7 +298,7 @@ BANK = [
     Q("Beaujolais",
       "Which cru is usually called the sturdiest and longest-lived of Beaujolais?",
       ["Moulin-a-Vent", "Chiroubles", "Saint-Amour", "Regnie"], 0,
-      "Manganese-rich granite soils give a firmer wine that can age toward something Pinot-like. Chiroubles sits at the other end, light and floral."),
+      "Manganese-rich granite soils give a firmer wine that can age towards something Pinot-like. Chiroubles sits at the other end, light and floral."),
     Q("Beaujolais",
       "By law the new vintage of Beaujolais Nouveau cannot be sold before one fixed date. Which?",
       ["The third Thursday of November", "Christmas Eve", "The first Monday of October",

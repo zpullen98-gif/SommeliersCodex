@@ -1,12 +1,12 @@
-"""Rank II rewrite - Rhone (33 questions: 15 MC, 18 short answer).
+"""Village rewrite - Rhone (33 questions: 15 MC, 18 short answer).
 
-Certified level, pitched deliberately above the Rank I "Rhone" category. Where
-Rank I names the grape that makes northern red, this asks what the decree demands
-of the white grape sitting beside it in the vat; where Rank I places Condrieu on
-the map, this asks which departments the map is cut into; where Rank I says the
+Certified level, pitched deliberately above the Regionale "Rhone" category. Where
+Regionale names the grape that makes northern red, this asks what the decree demands
+of the white grape sitting beside it in the vat; where Regionale places Condrieu on
+the map, this asks which departments the map is cut into; where Regionale says the
 galets hold heat, this asks what is underneath them that keeps the vine alive in
-August. Nothing here repeats a Rank I task, and several obvious Rank II questions
-were dropped precisely because Rank I had already taught the answer in an
+August. Nothing here repeats a Regionale task, and several obvious Village questions
+were dropped precisely because Regionale had already taught the answer in an
 explanation - the thirteen against eighteen varieties, the sandy sectors against
 the stony ones, and Cornas admitting no white grape are all in the Introductory
 bank and are therefore used here only as scenery.
@@ -99,7 +99,7 @@ BANK = [
     Q("Cote-Rotie: the terraces above Ampuis",
       "Between the 1960s and the 1980s the delimited area above Ampuis grew several times over, and the growers who had stayed on the terraces objected to the ground being added. Where was that ground?",
       ["The flat plateau behind the top of the slope",
-       "Alluvial islands and river flats lying at the foot of the terraces",
+       "Alluvial river flats at the foot of the terraces",
        "The left bank of the river, looking back at the terraces",
        "Terraces already replanted to Viognier for white wine"], 0,
       "The terraces had been abandoned by the hundred because no machine can work them, and planting the plateau behind was the only cheap way to enlarge the appellation. Fruit up there ripens later and rarely carries the perfume of the slope, which is why the appellation name alone now tells a buyer less than it once did."),
@@ -127,11 +127,11 @@ BANK = [
       "Condrieu and Saint-Joseph overlap across several communes at the northern end of the valley, so a single hillside carries one name or the other according to what is planted on it. Cote-Rotie stops well short of Chavanay to the north, and Chateau-Grillet is a single enclosed amphitheatre a few kilometres upstream of it, at Verin and Saint-Michel-sur-Rhone, that no other grower may use."),
     Q("Condrieu and the ground it shares",
       "A sweet Condrieu appears on a list and a guest objects that the appellation covers dry white only. What is the position?",
-      ["The decree permits a sweet wine from late-picked fruit, and a little is made most years",
+      ["The decree allows a sweet style, and a little is made most years",
        "The appellation is dry only, so the bottle must be labelled Vin de France",
        "Sweetness is allowed only in a vintage the syndicat declares for it",
        "The sweet wine exists but must go out as Chateau-Grillet"], 0,
-      "Condrieu was historically as often sweet as dry and the decree still allows it, but the wines are rare because Viognier's acidity has usually collapsed by the time the sugar is high enough to be worth leaving. Look for moelleux or doux on the label, since the appellation name on its own will not tell you."),
+      "Condrieu was historically as often sweet as dry and the decree still allows late-picked sweet wine, but the bottles are rare because Viognier's acidity has usually collapsed by the time the sugar is high enough to be worth leaving. Look for moelleux or doux on the label, since the appellation name on its own will not tell you."),
     SA("Condrieu and the ground it shares",
        "Seven communes make Condrieu, and they fall in three different departments, one of which shares its name with a wine region three hundred kilometres to the north. Name the three departments.",
        "Rhone, Loire and Ardeche",
@@ -147,7 +147,7 @@ BANK = [
         "departments of rhone loire ardeche",
         "departments of rhone ardeche and loire",
         "departements of rhone loire and ardeche"],
-       "The town of Condrieu is in the Rhone, five of the seven communes are in the Loire, and Limony sits across in the Ardeche. The Loire here is the department named for the river's upper course through the Massif Central and has nothing to do with the Loire Valley's wines, and Chateau-Grillet, the enclave inside the Condrieu boundary, lies in it too.",
+       "The town of Condrieu is in the Rhone, five of the seven communes are in the Loire, and Limony sits across in the Ardeche. The Loire here is the department named for the river's upper course through the Massif Central, not the Loire Valley wine region, and Chateau-Grillet, the enclave inside the Condrieu boundary, lies in it too.",
        ex=True),
 
     # ------------------------------------------------ The hill of Tain (4) ---
@@ -187,7 +187,7 @@ BANK = [
     Q("Crozes, Saint-Joseph, Cornas and Saint-Peray",
       "Saint-Peray's vineyard runs up to a crag crowned by a ruined fortress, and the rock of that crag sets the appellation apart from every slope upriver. What rock is it?",
       ["Limestone", "Basalt", "Gneiss", "Alluvial gravel"], 0,
-      "Saint-Peray sits on granite along its northern edge and on limestone and clay beneath the crag of Crussol, which is why its whites carry a chalkier tension than the granite-grown whites further up the valley. Cornas, its immediate neighbour to the north, is the mirror image: granite throughout, one black grape, red wine and nothing else."),
+      "Saint-Peray sits on granite along its northern edge and on limestone and clay beneath the crag of Crussol, which is why its whites carry a chalkier tension than the granite-grown whites further up the valley. Cornas, its immediate neighbour to the north, is the mirror image: granite almost throughout, one black grape, red wine and nothing else."),
     SA("Crozes, Saint-Joseph, Cornas and Saint-Peray",
        "One commune behind the hill of Tain is dug for a white clay that lines the bread ovens and pottery kilns of the region, and its vines sit on the same pale ground. Name the commune.",
        "Larnage",
@@ -212,8 +212,8 @@ BANK = [
       "In the northern crus a white grape entering a red is capped at a stated share of the vat. What is the equivalent rule at Chateauneuf-du-Pape?",
       ["None: the white varieties sit on the same permitted list as the black",
        "White grapes are forbidden in the red altogether",
-       "They are capped at five percent of the vat",
-       "They are allowed only where the parcel is planted with both colours mixed together"], 0,
+       "They are capped at five per cent of the vat",
+       "They are allowed only where a parcel has both colours planted together"], 0,
       "The decree lists the permitted varieties without separating them by colour or fixing any proportion between them, so a red may legally carry a good deal of Clairette, Bourboulenc or white Grenache. A few estates use a little for lift and most use none, but nothing in the rules obliges them either way."),
     SA("Co-fermentation and the white grape rules",
        "A red vinified with a proportion of white skins in the vat comes out deeper in colour than the same fruit without them, not paler. Name the effect responsible.",
@@ -230,7 +230,7 @@ BANK = [
     Q("Chateauneuf-du-Pape: the list and the rulebook",
       "One black grape planted in quantity right across the southern valley and the Languedoc is pointedly missing from the Chateauneuf-du-Pape list. Which?",
       ["Carignan", "Counoise", "Vaccarese", "Terret Noir"], 0,
-      "Carignan crops heavily and ripens late, and the growers' charter that became this appellation set out to exclude exactly that sort of vine. It is permitted in Cotes du Rhone and in most of the southern crus, but never here. Counoise, Vaccarese and Terret Noir are all on the list and all barely planted, which is a quite different problem."),
+      "Carignan crops heavily and ripens late, and the growers' charter that became this appellation set out to exclude exactly that sort of vine. It is permitted in Cotes du Rhone and across the river in Lirac and Tavel, but never here. Counoise, Vaccarese and Terret Noir are all on the list and all barely planted, which is a quite different problem."),
     Q("Chateauneuf-du-Pape: the list and the rulebook",
       "Bush-trained Grenache at Chateauneuf-du-Pape stands far further apart than a vine in Burgundy or Bordeaux, and the appellation's minimum density is correspondingly low. What forces the wide spacing?",
       ["Each vine needs a large volume of dry soil",
@@ -240,7 +240,7 @@ BANK = [
       "Water rather than sunlight is the limiting resource on a stony southern plateau, and vines planted close together would leave every one of them short. Irrigation is not flatly banned here, whatever is often said: the decree allows it to be authorised, but an irrigated parcel has its permitted crop cut from 6,000 to 4,500 kilograms per hectare, so growers plant for drought rather than water their way out of it. The decree writes the density floor twice over. A vine in the square planting that gobelet vineyards use may occupy no more than four square metres, which comes out at 2,500 vines per hectare; a parcel planted in rows is held to 3,000 vines per hectare instead. Both sit far under the nine thousand a Cote d'Or village vineyard must carry, and neither rule sets a ceiling: a grower may plant as tightly as they can farm, and on the lighter soils some do."),
     SA("Chateauneuf-du-Pape: the list and the rulebook",
        "Every Chateauneuf-du-Pape grower must set aside a portion of the crop, which may not be made into appellation wine at all. Under the decree in force, what is the minimum that portion must reach?",
-       "Two percent",
+       "Two per cent",
        ["two percent", "2 percent", "2%", "two per cent", "2 per cent",
         "two percent of the crop", "2% of the crop", "2 percent of the crop",
         "2 per cent of the crop", "two per cent of the crop",
@@ -252,8 +252,8 @@ BANK = [
         "a minimum of 2 percent", "a minimum of 2%", "minimum 2%",
         "minimum 2 percent", "minimum two percent", "2% minimum",
         "2 percent minimum", "two percent minimum",
-        "2% of the volume claimed", "2 percent of the volume claimed"],
-       "The sort is compulsory and may be done in the vineyard or at the cellar, and what it takes out is either destroyed or vinified as the rape, a wine the decree bars from carrying any geographical indication at all. The minimum rape stands at two percent of the volume claimed, in every vintage, so even a faultless year gives up its poorest fruit. Five percent is the figure most study guides still print, and it is not invented: the older rules set the bar there and the number was cut when the cahier des charges was rewritten. Carry the current figure with its date attached, and set it beside the appellation's low yields and its ban on the harvesting machine to see why the harvest regime here is among the most demanding in France.",
+        "2% of the volume claimed", "2 percent of the volume claimed", "a minimum of two per cent", "a minimum of 2 per cent", "minimum 2 per cent", "minimum two per cent", "2 per cent minimum", "two per cent minimum", "2 per cent of the volume claimed"],
+       "The sort is compulsory and may be done in the vineyard or at the cellar, and what it takes out is either destroyed or vinified as the rape, a wine the decree bars from carrying any geographical indication at all. The minimum rape stands at two per cent of the volume claimed, in every vintage, so even a faultless year gives up its poorest fruit. Five per cent is the figure most study guides still print, and it is not invented: the older rules set the bar there and the number was cut when the cahier des charges was rewritten. Learn the current figure, and set it beside the appellation's low yields and its ban on the harvesting machine to see why the harvest regime here is among the most demanding in France.",
        ex=True),
     SA("Chateauneuf-du-Pape: the list and the rulebook",
        "The boundary of Chateauneuf-du-Pape was drawn in 1923 by a test taken from the wild plants on the ground: land qualified only where two aromatic shrubs of the garrigue grew of their own accord. Name them.",
@@ -323,10 +323,10 @@ BANK = [
     # ------------------------- The right bank and the sweet wines (3) --------
     Q("The right bank and the sweet wines",
       "Fermentation in a southern Rhone vin doux naturel is arrested by dosing the must with neutral grape spirit of at least ninety-six percent. What proportion of the volume may that spirit make up?",
-      ["Between five and ten percent of the must", "Between one and two percent",
-       "Between twenty and twenty-five percent",
-       "Enough to reach twenty percent alcohol"], 0,
-      "The spirit is close to neutral, so it lifts the alcohol without contributing flavour, and the narrow window holds the finished wine in the fifteen to eighteen percent band the category occupies. When it goes in is the decision that sets the style: earlier leaves more grape sugar and less fermented alcohol, later the reverse."),
+      ["Between five and ten per cent of the must", "Between one and two per cent",
+       "Between twenty and twenty-five per cent",
+       "Enough to reach twenty per cent alcohol"], 0,
+      "The spirit is close to neutral, so it lifts the alcohol without contributing flavour, and the narrow window holds the finished wine in the fifteen to eighteen per cent band the category occupies. When it goes in is the decision that sets the style: earlier leaves more grape sugar and less fermented alcohol, later the reverse."),
     SA("The right bank and the sweet wines",
        "A Rasteau fortified sweet wine bottled early to keep its red fruit and its colour carries one word on the label; a wine given long contact with air until it turns tawny carries another. Give the word for the early-bottled style.",
        "Grenat",

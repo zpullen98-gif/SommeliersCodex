@@ -1,11 +1,11 @@
-"""Rank II rewrite - South America (23 questions: 10 MC, 13 short answer).
+"""Village rewrite - South America (23 questions: 10 MC, 13 short answer).
 
-Certified level, pitched deliberately above the Rank I South America category.
-Rank I places the countries, the currents and the signature grapes; this file
+Certified level, pitched deliberately above the Regionale South America category.
+Regionale places the countries, the currents and the signature grapes; this file
 owns what sits underneath them: the 2011 zone terms as Chilean law, the old-vine
 secano and its revival, why an unthreatened vineyard still grafts, the Uco
 Valley's soils and water, the GI ladder, and the Atlantic edge of the continent.
-Nothing here repeats a Rank I task.
+Nothing here repeats a Regionale task.
 
 The running order follows the continent's water. Chile first, read east to west
 the way its law now reads it, then down into the dry-farmed south; across the

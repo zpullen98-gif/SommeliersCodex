@@ -1,0 +1,220 @@
+{
+  "batch": "regionale-12",
+  "modules": ["rewrite/categories/r1_wine_law.py", "rewrite/categories/r1_food_pairing.py"],
+  "readCount": 109,
+  "total": 109,
+  "findings": [
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Wine names won formal recognition as a species",
+      "field": "opts",
+      "problem": "The stem says 'a world trade agreement' and the key read 'The TRIPS agreement of the World Trade Organization', so it could be answered from the stem's own words. The longest distractor gave its own date (1957), which the stem's 1994 rules out. Bretton Woods was not an intellectual property instrument at all. The exp said TRIPS is why a producer elsewhere 'can still be stopped' from using a European name, which skips the Article 24 exceptions for prior use and names generic in a country.",
+      "fix": "Options are now four bare names with no hints: The TRIPS agreement, The Treaty of Rome, The Madrid Protocol, The Lisbon Agreement. Lisbon is a real appellation treaty, but it is WIPO's and dates from 1958. The key is unchanged. The exp now says what TRIPS obliges, that Lisbon binds only the states that joined it, and that TRIPS's exceptions are why bilateral wine agreements were still needed.",
+      "source": "TRIPS Agreement (Marrakesh, 1994), Articles 22 to 24; Lisbon Agreement for the Protection of Appellations of Origin (1958)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Until the reform that took effect in 2009,",
+      "field": "exp",
+      "problem": "The exp said wine and food GIs fell under 'one regulation' from 2024. Regulation (EU) 2024/1143 unified registration and protection, but the definitions and specification rules for wine GIs are still in the CMO Regulation 1308/2013.",
+      "fix": "Now: 'since 2024, one regulation governing how the names are registered and protected'.",
+      "source": "Regulation (EU) 2024/1143; Regulation (EU) 1308/2013 as amended",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Roquefort, Comte and the poultry of Bresse all",
+      "field": "exp",
+      "problem": "Exp used the banned word 'practice' ('a place, a breed or a practice leaves a mark').",
+      "fix": "Now: 'a place, a breed or a local craft leaves a mark'.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Vin de pays was the French name for",
+      "field": "opts",
+      "problem": "Two distractors were not real categories. 'Vin de Qualite Superieure' is a mangled VDQS and 'Vin de Table Regional' never existed, but the house standard needs four real options. The obvious confusion, Vin de France, was missing. The exp also said 'the same zones', although several vins de pays were merged or renamed when they became IGPs.",
+      "fix": "Those two distractors are now Vin de France and Vin de Table, both real tiers. The key is unchanged. The exp now says 'broadly the same zones and rules', notes that the old table-wine tier became Vin de France, and that vin de pays survives as a protected traditional term, so a label can still carry the older wording.",
+      "source": "EU 2008/2009 wine CMO reform and the French move from vin de pays to IGP and from vin de table to Vin de France (2009 to 2011); vin de pays registered as a traditional term for French PGI wines",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Watering the vines is routine in Australia and",
+      "field": "stem",
+      "problem": "The stem used the banned word 'practice' ('Watering the vines is ordinary practice in Australia and California...').",
+      "fix": "Now: 'Watering the vines is routine in Australia and California...'. The rest of the stem, the options, the key and the exp are unchanged. The id moves from i-rvzcjdmx to i-evp2z1h8. check-similarity on the module flags nothing (max ratio 0.364, run 4).",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "European law will not let a bottle print",
+      "field": "opts",
+      "problem": "The stem says American federal law 'asks for less than' eighty-five percent. Two distractors, 'Ninety percent' and 'The same eighty-five percent that Europe asks', were ruled out by the stem's own words, leaving a choice of two. The exp also said 'several' states set higher varietal minimums. Oregon is the only well-known one.",
+      "fix": "The two distractors are now 'Eighty percent of the wine' and 'Two-thirds of the wine', so all four figures sit under eighty-five. The key is unchanged. The exp now says the federal floor was fifty-one percent until the early 1980s, which explains that distractor. It also says 'a state may hold its own growers above the federal figure', which drops the unsupported 'several do'.",
+      "source": "27 CFR 4.23 (75 percent varietal minimum, in force from 1 January 1983; 51 percent before); Oregon's state rule is the familiar stricter case",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Set the French, Italian, Spanish and Portuguese systems",
+      "field": "exp",
+      "problem": "The exp said the neighbours adopted the French model 'long before any European harmonisation existed'. Italy's DOC law of 1963 came after the EEC's first wine market regulation (1962). Portugal's framework law of 1985 came after the Community's quality-wine rules of 1970.",
+      "fix": "Now: 'each in a national law of its own before the European categories applied to it', which is true of all three.",
+      "source": "Italian DPR 930/1963; EEC Regulation 24/1962 and Regulation 817/70; Portuguese Lei 8/85; Spanish Estatuto del Vino 1932",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "A ladder built on sugar at harvest is",
+      "field": "exp",
+      "problem": "The exp made warming the whole cause of the growers' vineyard hierarchies from the 1990s ('That pressure is why...'). The VDP's classification also answered an older complaint: the 1971 must-weight ladder, with its blurred site names, said nothing about the vineyard.",
+      "fix": "Now: 'That pressure, added to an older complaint that the ladder said nothing about the site, helped push growers' associations to build vineyard hierarchies...'. The 2021 pyramid sentence is kept.",
+      "source": "German Wine Law 1971 and its 2021 reform; the history of the VDP classification",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "American labels once carried the words Chablis, Burgundy",
+      "field": "stem",
+      "problem": "The stem used the banned word 'practice' ('What closed the practice to new brands?').",
+      "fix": "The last sentence now reads 'What closed that door to new brands?'. The options, the key and the exp are unchanged, and the exp's own 'close the door on the new' fits the new wording. The id moves from i-dqeofhjg to i-2li4a6sj. check-similarity flags nothing.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Appellations outside Europe were mostly drawn as boundaries",
+      "field": "exp",
+      "problem": "Exp used the banned word 'practice' ('a region with no settled practice').",
+      "fix": "Now: 'a region with no settled custom'.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "Until 2012 a European bottle could claim only",
+      "field": "exp",
+      "problem": "Exp used the banned word 'practices' ('Fixing permitted cellar practices').",
+      "fix": "Now: 'Fixing what the cellar may do completed the claim'.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_wine_law",
+      "stemStart": "A merchant leaves a case of classified wine",
+      "field": "exp",
+      "problem": "Exp used the banned word 'practice' ('left to trade practice').",
+      "fix": "Now: 'left to the trade's own care and to ordinary consumer law'.",
+      "source": "Codex house rule (no practice or practise)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_food_pairing",
+      "stemStart": "Ice cream is on the dessert list and",
+      "field": "exp",
+      "problem": "The exp gave 'pouring alongside rather than after' as a way round the problem. That makes no sense here: the wine is already poured alongside, and the cold spoonful still comes before each sip.",
+      "fix": "Now: 'Pouring a very sweet wine straight over the scoop, as Spanish bars do with Pedro Ximenez, or choosing something intensely flavoured to sip, are the two usual ways round it.'",
+      "source": "Standard service teaching on ice cream; PX poured over vanilla ice cream is a common Spanish dessert",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_food_pairing",
+      "stemStart": "A tinny, almost metallic taste comes up the",
+      "field": "exp",
+      "problem": "The exp said lean white fish 'does not produce it at all', so the fault 'belongs to the oil'. That is too absolute. The off-taste is linked to iron in the wine oxidising fish lipids, and it has been shown with lean seafood as well. Oily fish make it far worse, not uniquely possible.",
+      "fix": "Now: 'Lean white fish produces far less of it, which is why the oily species are the ones to keep a tannic red away from.' The key is unchanged.",
+      "source": "Tamura et al., J. Agric. Food Chem. 2009 (iron in wine and the fishy aftertaste with seafood); standard pairing teaching on oily fish and tannic reds",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Wine names won formal recognition as a species",
+      "verdict": "amended",
+      "why": "The original key echoed the stem's 'world trade agreement' and the Treaty of Rome distractor carried its own ruling-out date, so the fix was needed; Lisbon (WIPO, 1958) is a sound real distractor and the exp's Article 24 exceptions are right. Amended only the key's capital: 'The TRIPS Agreement', so the bare names stand parallel and the one lower-case option no longer stands out beside 'The Lisbon Agreement'."
+    },
+    {
+      "stemStart": "Until the reform that took effect in 2009,",
+      "verdict": "kept",
+      "why": "Regulation (EU) 2024/1143 unifies registration and protection for wine, spirit and food GIs while the wine definitions and specification rules stay in the CMO Regulation 1308/2013, so 'one regulation governing how the names are registered and protected' is the accurate wording."
+    },
+    {
+      "stemStart": "Roquefort, Comte and the poultry of Bresse all",
+      "verdict": "kept",
+      "why": "House rule fix; 'a local craft' keeps the sense and the voice."
+    },
+    {
+      "stemStart": "Vin de pays was the French name for",
+      "verdict": "kept",
+      "why": "'Vin de Qualite Superieure' and 'Vin de Table Regional' were not real tiers; Vin de France and Vin de Table are real and the likeliest confusions, and neither answers 'called now'. Vin de pays is a registered traditional term for French PGI wines, so the exp's survival point is right, and 'broadly the same zones' is correct after the mergers."
+    },
+    {
+      "stemStart": "Watering the vines is routine in Australia and",
+      "verdict": "kept",
+      "why": "The banned word sat in the stem, so no non-stem fix could serve. 'Routine' keeps the contrast; the id move (i-rvzcjdmx to i-evp2z1h8) is confirmed by check-ids and nothing else in the repo references the old id except the not yet shipped data-intro.js."
+    },
+    {
+      "stemStart": "European law will not let a bottle print",
+      "verdict": "amended",
+      "why": "The two replacement distractors are right, since the stem's 'less than' ruled out ninety and eighty-five. But the new exp said the fifty-one percent floor ended in the early 1980s, and 27 CFR 4.23 still allows fifty-one percent for Vitis labrusca varieties with a 'contains not less than 51%' statement, so that distractor is partly live. Exp now adds 'and it still does for native labrusca grapes such as Concord, provided the label states the share', and the semicolon splice is a full stop."
+    },
+    {
+      "stemStart": "Set the French, Italian, Spanish and Portuguese systems",
+      "verdict": "kept",
+      "why": "Italy's 1963 DOC law followed the EEC's 1962 wine regulation and Portugal's 1985 law followed the 1970 quality-wine rules, so 'long before any European harmonisation existed' was wrong; the new clause is true of all three."
+    },
+    {
+      "stemStart": "A ladder built on sugar at harvest is",
+      "verdict": "kept",
+      "why": "The VDP's site hierarchy answered the 1971 law's silence about the vineyard as much as warming; 'helped push' with the older complaint is the fair account and the 2021 pyramid sentence stands."
+    },
+    {
+      "stemStart": "American labels once carried the words Chablis, Burgundy",
+      "verdict": "kept",
+      "why": "Banned word in the stem, so a stem change was unavoidable; 'closed that door' matches the exp's 'close the door on the new'. Id move (i-dqeofhjg to i-2li4a6sj) confirmed by check-ids."
+    },
+    {
+      "stemStart": "Appellations outside Europe were mostly drawn as boundaries",
+      "verdict": "kept",
+      "why": "House rule fix; 'settled custom' keeps the meaning."
+    },
+    {
+      "stemStart": "Until 2012 a European bottle could claim only",
+      "verdict": "kept",
+      "why": "House rule fix; 'what the cellar may do' is exact for the 2012 organic winemaking rules."
+    },
+    {
+      "stemStart": "A merchant leaves a case of classified wine",
+      "verdict": "kept",
+      "why": "House rule fix; 'the trade's own care' reads naturally beside consumer law."
+    },
+    {
+      "stemStart": "Ice cream is on the dessert list and",
+      "verdict": "amended",
+      "why": "The original 'pouring alongside rather than after' did not answer the cold-palate problem, and PX over vanilla ice cream is a sound, common Spanish remedy. Amended the grammar only: 'X or Y are the two usual ways' now reads 'X and Y are the two usual ways', as the original sentence was built."
+    },
+    {
+      "stemStart": "A tinny, almost metallic taste comes up the",
+      "verdict": "kept",
+      "why": "Tamura et al. (2009) produced the fishy, metallic aftertaste with scallops, driven by iron in the wine, so 'does not produce it at all' was too absolute; 'far less' keeps grilled mackerel the single best key over the lean fish."
+    }
+  ]
+}

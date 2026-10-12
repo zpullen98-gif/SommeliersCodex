@@ -1,11 +1,11 @@
-"""Rank II rewrite - Sparkling Wine World (22 questions: 10 MC, 12 short answer).
+"""Village rewrite - Sparkling Wine World (22 questions: 10 MC, 12 short answer).
 
-Certified level, pitched deliberately above the Rank I sparkling material. Where
-Rank I asks a student to name the transfer method from its description, this
+Certified level, pitched deliberately above the Regionale sparkling material. Where
+Regionale asks a student to name the transfer method from its description, this
 asks what the words bottle fermented on an American back label are quietly
-admitting; where Rank I says the ancestral method finishes one fermentation in
+admitting; where Regionale says the ancestral method finishes one fermentation in
 glass, this asks where a pet-nat maker actually sets the pressure. Nothing here
-repeats a Rank I task.
+repeats a Regionale task.
 
 The bank is built around one idea: everything in it lives where Champagne's
 shadow does not reach. It opens with the methods that undercut, imitate or
@@ -79,11 +79,11 @@ BANK = [
       "American convention reserves fermented in THIS bottle for wine sold in the glass it refermented in, while plain bottle fermented covers transfer wine, which took its bubble and its lees character in bottle and was then emptied under pressure, filtered, dosed and refilled in one batch operation. The economics are the point: the whole run is cleaned up in tank instead of being riddled and disgorged a bottle at a time. The label wording is often the only clue a buyer gets."),
     Q("The methods at depth",
       "Five years on from a shared disgorging date, a Brut and its Brut Nature sibling taste further apart than a few grams of sugar explain. What has the dosage been doing all that time?",
-      ["Reacting slowly with what the yeast left behind, steering the dosed wine toward toast and roast",
+      ["Reacting slowly with what the yeast left behind, steering the dosed wine towards toast and roast",
        "Feeding a refermentation that has quietly raised the dosed bottle's pressure",
        "Nothing beyond sweetness; sugar is inert once dissolved, and the gap is the tasters' expectation",
-       "Fermenting out, so the Brut has been drifting toward its sibling's dryness"], 0,
-      "Dosage sugar is not inert: over years in bottle it takes part in slow browning chemistry with the nitrogen compounds autolysis left in the wine, and that pushes development toward the roasted, toasted register. The undosed wine ages along a leaner, more saline road rather than simply tasting less sweet, which is why houses speak of dosage needing time to marry and why the choice between the two styles is a choice of trajectory, not just of sugar."),
+       "Fermenting out, so the Brut has been drifting towards its sibling's dryness"], 0,
+      "Dosage sugar is not inert: over years in bottle it takes part in slow browning chemistry with the nitrogen compounds autolysis left in the wine, and that pushes development towards the roasted, toasted register. The undosed wine ages along a leaner, more saline road rather than simply tasting less sweet, which is why houses speak of dosage needing time to marry and why the choice between the two styles is a choice of trajectory, not just of sugar."),
     SA("The methods at depth",
        "Spumante on an Italian label is a legal claim about pressure, not a style note, and there is a floor the dissolved gas must clear. Give that floor.",
        "Three bar",
@@ -130,12 +130,12 @@ BANK = [
        "Kent and Sussex",
        ["kent and sussex", "sussex and kent", "kent sussex", "sussex kent",
         "kent and east sussex", "kent and west sussex"],
-       "Kent and Sussex between them hold the largest share of the national vineyard, with Hampshire next and Essex climbing fastest on its warm clay. The chalk gets the attention, but a surprising number of well-regarded sites actually sit on greensand, so the county and the rock are separate claims and a label naming one is not promising the other."),
+       "Kent and Sussex between them hold the largest share of the national vineyard, though planting has spread well beyond them, to Hampshire, Essex and further west. The chalk gets the attention, but a surprising number of well-regarded sites actually sit on greensand, so the county and the rock are separate claims and a label naming one is not promising the other."),
     SA("English sparkling wine",
        "In 1988 a West Sussex estate planted Chardonnay, Pinot Noir and Meunier and nothing else, a bet on the traditional method made while nearly every English vine was a crossing or a hybrid. Name the estate.",
        "Nyetimber",
        ["nyetimber", "nyetimber estate", "nyetimber in west sussex"],
-       "Its first releases in the mid-1990s took national trophies and did more than any argument on paper to turn the industry toward the Champagne varieties. The founding vineyards sit on greensand rather than the chalk the region is celebrated for, a useful correction to the idea that England's case rests on chalk alone, and the name itself belongs to a manor recorded in Domesday."),
+       "Its first releases in the 1990s took national trophies and did more than any argument on paper to turn the industry towards the Champagne varieties. The founding vineyards sit on greensand rather than the chalk the region is celebrated for, a useful correction to the idea that England's case rests on chalk alone, and the name itself belongs to a manor recorded in Domesday."),
 
     # -------------------------------------------- The southern hemisphere (4) -
     Q("The southern hemisphere",

@@ -1,0 +1,1038 @@
+{
+ "batch": "premier-2",
+ "bank": "js/data-advanced.js",
+ "categories": [
+  "Italy North",
+  "Italy Central & South",
+  "Spain",
+  "Portugal",
+  "Germany",
+  "Austria",
+  "Hungary & Greece",
+  "California",
+  "Pacific NW, NY & Canada"
+ ],
+ "readCount": 180,
+ "total": 180,
+ "changedQuestions": 99,
+ "substantive": 33,
+ "stemChanges": [
+  "a-nr0zmwjc",
+  "a-bam6b8ud",
+  "a-iag39d6o"
+ ],
+ "searches": [
+  "Sherry DO unfortified wines at 15% natural alcohol: proposed to the EU in 2022, in force from 2025 (a-3wdv5vgc corrected)",
+  "Chianti Classico UGA: voted 2021, ministerial decree July 2023, on Gran Selezione labels from 2023 (a-mm9wvnnl, a-4h6ff1x2 confirmed, no change)",
+  "Port 50 Years Old indication: IVDP regulamento 3/2022 (a-83enjfp2 confirmed, no change)"
+ ],
+ "revokedAcceptStrings": [
+  "a-7snekr7u: terre alte blend (repeats the stem's own wine name; grades an answer naming neither the DOCG nor the grapes)"
+ ],
+ "leftForTheOwner": [
+  "Eight stems keep American spelling, left because a stem is the question's identity and spelling is not an error of fact (the grand-1 convention): a-2a2h5d3r (aging), a-wuiz1fih (aging), a-lhp0l6zr (colors), a-krl921de (labeled), a-ezdb2l5i (popularized), a-4vhos8tt (labeled), a-lpa31bol (labeled), a-xfj7yurk (labeling). A spelling edit to a-xfj7yurk or to a-mm9wvnnl's old ans also re-keys a baselined check-paid comparative_probe flag, which only a paid_known.py re-record can follow.",
+  "Unverified and left as written: a-ih3g5con's Egri Bikavér percentages (Kékfrankos at least 30%, no variety above 50%); a-zokukx4m's 'carbon dating included' for VOS and VORS; a-v42vcuci gives stefáni as a synonym of kouloura and accepts 'stefani basket' (it may be a distinct Santorini training form); a-3mg5x4zg says Hanzell planted Burgundian clones in 1953 (its documented first is French oak barrels); a-0lzn2s1n's list of ÖTW regions and whether ÖTW has since added a Grosse Lage tier; a-n3w5bfus calls Bolgheri Sassicaia Italy's only single-estate DOC.",
+  "a-exgg1a3q: Rosalia DAC also bottles Blaufränkisch, so 'Rosalia' is a defensible second answer the accept list refuses; the stem's 'classic' points to Leithaberg and the exp now says so, but the owner may prefer to accept it.",
+  "a-oq4afuu2 accepts 'cartizze', a word the stem itself supplies; left because Superiore di Cartizze is arguably the very top of the pyramid the stem asks about.",
+  "a-k60urxjh's distractors (sherry-style solera, field blends) are real but too weak to tempt; not an error, left.",
+  "Merge note: 99 changed lines will meet the site copy in sync-wing. Dash-only fields now match the copy word for word. The site keeps en dashes (its dash rule bans only the em dash), so the en-dash repairs here (the matching answers, joined with the app's own arrow, and numeric ranges) differ from the copy, and lines carrying a further fix differ from both base and copy and need a hand merge there. The site has also reordered the options of a-r8d8ybl6, a-3u21zh4x and a-bam6b8ud, which this sweep edits."
+ ],
+ "findings": [
+  {
+   "id": "a-kzw5kxur",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "ans: em dash in the model answer.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-2so37xhe",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "ans: en dashes join the matched pairs.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-i6x31wrk",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-g8eey53v",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-wd5d4o0f",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: names a living person and a current ownership ('now Nervi-Conterno') as fact, with an em dash.",
+   "fix": "exp: replaced with the soils that explain the pair.",
+   "source": "house rule (no living person as a volatile fact)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-qpbxwodk",
+   "cat": "Italy North",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: implies Inferno and Sassella are Valtellina Superiore's only crus; there are five subzones (Maroggia, Sassella, Grumello, Inferno, Valgella).",
+   "fix": "ans: colon. exp: 'two of the five subzones'.",
+   "source": "house rule; Valtellina Superiore DOCG disciplinare",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-aj7wh2t9",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-lwhnxrk1",
+   "cat": "Italy North",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-7snekr7u",
+   "cat": "Italy North",
+   "field": "accept",
+   "problem": "accept: 'terre alte blend' repeats the stem's own wine name and grades an answer that names neither the DOCG nor the grapes.",
+   "fix": "accept: entry removed.",
+   "source": "review",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-iqdubb8t",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-j1k7xqmz",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: unsupported history: the Barolo Wars ended in no legal settlement, and the wood minimum's history (two years under the 1980 rules, later revisions) is not as stated.",
+   "fix": "exp: sentence removed; the release and wood figures that teach the answer kept.",
+   "source": "Barolo DOCG disciplinare history",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-jjp69n89",
+   "cat": "Italy North",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-0rvzfj7i",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-hm15t1kb",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mm9wvnnl",
+   "cat": "Italy Central & South",
+   "field": "ans+exp",
+   "problem": "ans: American spelling 'aging'; and the ageing figure made a name answer read as a threshold. exp: had to carry the 30-month figure once it left the ans.",
+   "fix": "ans: 'ageing'; the 30-month figure moved into exp, where it teaches the ladder. exp: exp now gives estate fruit and at least 30 months' ageing against Riserva (24) and annata (12).",
+   "source": "house rule; Chianti Classico disciplinare",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-38pvz5ay",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "exp: Dante does not praise Vernaccia: Purgatorio XXIV names it among a glutton pope's eels and wine.",
+   "fix": "exp: 'named in'.",
+   "source": "Purgatorio XXIV",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-kwfv8g06",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nu4g0wd2",
+   "cat": "Italy Central & South",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-gcmqxuso",
+   "cat": "Italy Central & South",
+   "field": "ans",
+   "problem": "ans: en dashes join the matched pairs.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-qnmekbf5",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "exp: spaced hyphens used as dashes.",
+   "fix": "exp: commas.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3q8mlo6u",
+   "cat": "Italy Central & South",
+   "field": "exp",
+   "problem": "exp: names a distractor by position ('option 2'), uses spaced hyphens as dashes, and calls sifone a dried-grape must (it is must of late-picked, overripe grapes).",
+   "fix": "exp: distractor named by content; dashes removed; sifone corrected.",
+   "source": "Marsala DOC disciplinare",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-7mvrsc6s",
+   "cat": "Spain",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-r8d8ybl6",
+   "cat": "Spain",
+   "field": "opts",
+   "problem": "opts: en dashes in the ranges, and the key the longest option against a bare '1,300 m+'.",
+   "fix": "opts: ranges written with 'to'; the top band given a range so the key is no longer the longest.",
+   "source": "house rule; option shape",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-wekp726s",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "exp: American spelling 'meters'.",
+   "fix": "exp: 'metres'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3wdv5vgc",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "ans: stale and overstated: said unfortified Palomino became legal inside the DO with a 2022 revision; the change was only proposed in 2022, took effect in 2025, and covers only wine reaching 15% naturally, so most vinos de pasto still sit outside; em dash.",
+   "fix": "ans: rewritten to the rule as it stands; dates and threshold moved to exp.",
+   "source": "WebSearch: winewitandwisdomswe.com 'unfortified sherry approved at last' (2025); Junta de Andalucía modification file",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8kix1v0l",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "ans: en dashes join the matched pairs. exp: American spelling 'favorite'.",
+   "fix": "ans: pairs joined with the app's own arrow. exp: 'favourite'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vbckigqn",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: reads as if Numanthia belonged to Vega Sicilia; it does not.",
+   "fix": "ans: colon. exp: 'and the Numanthia estate'.",
+   "source": "house rule; producer records",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-njvmb76z",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "exp: two em dashes.",
+   "fix": "exp: semicolon and colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-07plizv4",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-5xjj9sgk",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ttlx7sd2",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-5pzdut6w",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: two em dashes.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: commas.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy; house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-zokukx4m",
+   "cat": "Spain",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-r87zd1yx",
+   "cat": "Spain",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: comma.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-s9qy7uqo",
+   "cat": "Portugal",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: American spelling 'authorization'.",
+   "fix": "ans: comma. exp: 'authorisation'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-najr2uz0",
+   "cat": "Portugal",
+   "field": "exp",
+   "problem": "exp: a running count ('~20 vintages in 70 years') that goes stale with each release.",
+   "fix": "exp: timeless wording.",
+   "source": "house rule (nothing volatile as fact)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-hsjufw2p",
+   "cat": "Portugal",
+   "field": "exp",
+   "problem": "exp: em dash and American spelling 'pretense'.",
+   "fix": "exp: colon; 'pretence'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nr0zmwjc",
+   "cat": "Portugal",
+   "field": "stem+ans",
+   "problem": "stem: the stem uses the banned p-word (the house never prints it). ans: em dash; and Vinho de Talha is a designation within the Alentejo DOC rather than a free-standing DOC.",
+   "fix": "stem: 'tradition'; stem change logged, id kept. ans: colon; designation named precisely.",
+   "source": "house rule; Alentejo DOC rules",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "Alentejo has a DOC protecting a Roman-era [the banned p-word] of fermenting and macerating in large clay vessels sealed with olive oil. Name the DOC and the vessels.",
+   "newStem": "Alentejo has a DOC protecting a Roman-era tradition of fermenting and macerating in large clay vessels sealed with olive oil. Name the DOC and the vessels."
+  },
+  {
+   "id": "a-80fvh0r2",
+   "cat": "Portugal",
+   "field": "ans+exp",
+   "problem": "ans: em dash and American spelling 'aging'. exp: en dash; three months is the minimum, not the fixed term.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing; American spelling made British on top. exp: '45 to 50°C for at least three months'.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy; Madeira DOP rules",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-h9jb0qp0",
+   "cat": "Portugal",
+   "field": "ans",
+   "problem": "ans: en dashes join the matched pairs.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3nwjidzk",
+   "cat": "Portugal",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-6zn33mno",
+   "cat": "Portugal",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: comma.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-9r7l1vww",
+   "cat": "Portugal",
+   "field": "ans+exp",
+   "problem": "ans: en dash and em dash. exp: en dash.",
+   "fix": "ans: hyphenated range and colon. exp: '12.5 to 13%'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-oy1s3n2l",
+   "cat": "Portugal",
+   "field": "exp",
+   "problem": "exp: two em dashes.",
+   "fix": "exp: commas.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-83enjfp2",
+   "cat": "Portugal",
+   "field": "ans",
+   "problem": "ans: two em dashes (the 2022 date itself confirmed: IVDP regulamento 3/2022).",
+   "fix": "ans: commas.",
+   "source": "house rule; WebSearch: Decanter 'New 50-year-old Port category', bevnet Kopke 2022",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-u2bepgz0",
+   "cat": "Germany",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-9ojxmc0c",
+   "cat": "Germany",
+   "field": "ans+exp",
+   "problem": "exp: names living people as the current generation ('Helmut, now Cornelius'), a volatile fact. ans: 'Dönnhoff (Niederhausen)' places the estate in the vineyard's village; the estate is at Oberhausen.",
+   "fix": "exp: replaced with the site and the estate's Brücke monopole. ans: 'Dönnhoff (Oberhausen)'; Niederhausen kept in exp as the site's village.",
+   "source": "house rule (no living person as a volatile fact); producer records",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-bam6b8ud",
+   "cat": "Germany",
+   "field": "stem+exp",
+   "problem": "stem: calls the Grosser Ring an 'acronym' (it is a name; only the VDP distractor is an acronym, so the stem steers away from the key) and its member estates 'auction houses'. exp: did not say why the VDP distractor fails.",
+   "fix": "stem: 'auction estates' and 'association'; stem change logged, id kept. exp: adds that the national VDP followed in 1910.",
+   "source": "Grosser Ring history; VDP history",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "The historic auction houses of the Mosel unite under which acronym founded 1908?",
+   "newStem": "The historic auction estates of the Mosel unite under which association, founded 1908?"
+  },
+  {
+   "id": "a-5rt8btd4",
+   "cat": "Germany",
+   "field": "ans",
+   "problem": "ans: en dashes join the matched pairs.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-c2bzrkah",
+   "cat": "Germany",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-1xmzf9l1",
+   "cat": "Germany",
+   "field": "ans+exp",
+   "problem": "ans: said the Prädikate 'retreat' to wines with residual sugar; the 2021 law keeps them for dry wines too (that restriction is the VDP's private rule); umlauts missing. exp: two em dashes.",
+   "fix": "ans: Prädikate kept, origin named as the new basis of quality; umlauts restored. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "Weingesetz 2021; House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-9phs8us7",
+   "cat": "Germany",
+   "field": "exp",
+   "problem": "exp: two em dashes.",
+   "fix": "exp: parentheses.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-e3fih3db",
+   "cat": "Germany",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: comma.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy; house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-9ls9878b",
+   "cat": "Germany",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-0gnetwz9",
+   "cat": "Austria",
+   "field": "ans",
+   "problem": "ans: en dash in the range.",
+   "fix": "ans: hyphenated range.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-yjaal07p",
+   "cat": "Austria",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: comma.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-myht4v5h",
+   "cat": "Austria",
+   "field": "opts+exp",
+   "problem": "opts: options not of one kind: the stem asks for two levels, yet two options were single items ('Auslese', 'TBA only') and one not a level at all, and the key alone echoed the stem's 'between'. exp: did not give the figures that place Ausbruch.",
+   "fix": "opts: four pairs of Austrian Prädikat levels, key unchanged at the same position. exp: 27° KMW against 25° and 30°.",
+   "source": "option shape; Austrian Weingesetz",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-exgg1a3q",
+   "cat": "Austria",
+   "field": "exp",
+   "problem": "exp: credited Moric (a Mittelburgenland estate) in a Leithaberg answer and left the second Blaufränkisch DAC, Rosalia, unexplained.",
+   "fix": "exp: explains why Leithaberg is the classic answer and where Rosalia stands.",
+   "source": "Austrian DAC rules",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-03l0nqaj",
+   "cat": "Austria",
+   "field": "exp",
+   "problem": "exp: the stem's 'four wine-producing states' is the textbook framing but not literal: the other five states grow a little wine.",
+   "fix": "exp: adds the Bergland note.",
+   "source": "Austrian wine law (Weinbauregion Bergland)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-mfuh8ofj",
+   "cat": "Austria",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-yeteu8qw",
+   "cat": "Austria",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-wll0dylk",
+   "cat": "Austria",
+   "field": "exp",
+   "problem": "exp: two em dashes and American spelling 'unchaptalized'.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing; American spelling made British on top.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-gfz1r7rx",
+   "cat": "Austria",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: two em dashes; and 'siblings, both Traminer × Roter Veltliner' is firm only for Rotgipfler (Zierfandler's second parent is given as a Traminer seedling).",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: 'close kin, both offspring of Roter Veltliner with Traminer blood'.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy; grape parentage literature",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-whttgn1d",
+   "cat": "Austria",
+   "field": "exp",
+   "problem": "exp: em dash; 'confirmed shortly after' (the parentage was published years later); and 'Grüner is not a Silvaner relative' is false, since Silvaner is also a Traminer offspring, making the two half-siblings.",
+   "fix": "exp: dash removed; 'later'; 'Silvaner is not its parent'.",
+   "source": "grape parentage (Silvaner = Traminer × Österreichisch Weiss)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-0lzn2s1n",
+   "cat": "Austria",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-nyjl9lyr",
+   "cat": "Hungary & Greece",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-sjly6yuf",
+   "cat": "Hungary & Greece",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ih3g5con",
+   "cat": "Hungary & Greece",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ua2kz0bz",
+   "cat": "Hungary & Greece",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-2a4dl7ce",
+   "cat": "Hungary & Greece",
+   "field": "ans",
+   "problem": "ans: en dashes join the matched pairs.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-5z3rlnd3",
+   "cat": "Hungary & Greece",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-t8pa00hd",
+   "cat": "Hungary & Greece",
+   "field": "exp",
+   "problem": "exp: states a current monopoly as permanent fact; independent wineries now work beside the union.",
+   "fix": "exp: 'long held near-total control'.",
+   "source": "house rule (nothing volatile as fact)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-yj63o4f0",
+   "cat": "Hungary & Greece",
+   "field": "exp",
+   "problem": "exp: names the level by the exam's word 'Advanced' instead of the Codex's 'Premier Cru'.",
+   "fix": "exp: 'Premier Cru'.",
+   "source": "house rule (levels named)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-dcn5gid0",
+   "cat": "Hungary & Greece",
+   "field": "exp",
+   "problem": "exp: spaced hyphen used as a dash.",
+   "fix": "exp: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-0bxmvous",
+   "cat": "Hungary & Greece",
+   "field": "exp",
+   "problem": "exp: names options by position ('option 1', 'Option 4') and uses spaced hyphens as dashes.",
+   "fix": "exp: each distractor named by its content; dashes removed.",
+   "source": "house rule; option reference",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-szqgm2rf",
+   "cat": "California",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ggewn9oi",
+   "cat": "California",
+   "field": "pairs+ans",
+   "problem": "pairs: typo 'mainside' in a matching option. ans: en dashes join the matched pairs.",
+   "fix": "pairs: 'mountainside'. ans: pairs joined with the app's own arrow.",
+   "source": "review; house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3mg5x4zg",
+   "cat": "California",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-stp4pw7p",
+   "cat": "California",
+   "field": "ans",
+   "problem": "ans: American spelling 'funneling'.",
+   "fix": "ans: 'funnelling'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-d9erb66c",
+   "cat": "California",
+   "field": "exp",
+   "problem": "exp: dates the cutting import to 1989, the year the land was bought; the cuttings came over after.",
+   "fix": "exp: 1989 tied to the land purchase.",
+   "source": "Tablas Creek history",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-ezdb2l5i",
+   "cat": "California",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3cbj8hcl",
+   "cat": "California",
+   "field": "exp",
+   "problem": "exp: en dash.",
+   "fix": "exp: '300 to 500 m'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3kkot6ky",
+   "cat": "California",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-248bpjtb",
+   "cat": "California",
+   "field": "exp",
+   "problem": "exp: American spelling 'catalogs'.",
+   "fix": "exp: 'catalogues'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-iag39d6o",
+   "cat": "California",
+   "field": "stem",
+   "problem": "stem: 'The Eleven AVAs of Napa's floor' is an invented term (no recognised set of eleven floor AVAs exists among Napa's nested AVAs), and the Silverado Trail is not a highway.",
+   "fix": "stem: stem names the valley-floor AVAs and 'roads'; stem change logged, id kept.",
+   "source": "TTB AVA list",
+   "confidence": "high",
+   "stemChanged": true,
+   "oldStem": "The 'Eleven' AVAs of Napa's floor are bisected by which two highways used in tasting shorthand?",
+   "newStem": "The AVAs of Napa's valley floor are bisected by which two roads used in tasting shorthand?"
+  },
+  {
+   "id": "a-63od6qe1",
+   "cat": "California",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: em dash; the 'early sixteenth century' date for Tribidrag looks late (the name is reported in fifteenth-century Split records), so it is softened to a span true either way; and 'Primitivo tastes like a cousin rather than a copy' contradicts the answer that they are one variety.",
+   "fix": "ans: comma. exp: date softened; closing line rewritten to agree with the key.",
+   "source": "house rule; Zinfandel parentage literature",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-4vhos8tt",
+   "cat": "California",
+   "field": "exp",
+   "problem": "exp: em dash and American spelling 'labeled'.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing; American spelling made British on top.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vy528now",
+   "cat": "California",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: American 'toward'.",
+   "fix": "ans: colon. exp: 'towards'.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-udywh8f0",
+   "cat": "California",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: comma.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-xfj7yurk",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "exp",
+   "problem": "exp: em dash, and an exhaustive eighteen-variety exception list stated as fixed when Oregon's administrative rule amends it from time to time.",
+   "fix": "exp: dash removed; exceptions described by kind with examples.",
+   "source": "house rule (nothing volatile as fact)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "id": "a-6j56wdse",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "ans+exp",
+   "problem": "ans: American spelling 'Savory'. exp: 'geologically the AVA sits in Oregon' uses the wrong word (the placement is legal and geographic) and leaves its relation to Walla Walla vague.",
+   "fix": "ans: 'Savoury'. exp: the AVA lies wholly in Oregon, nested in the Walla Walla Valley AVA.",
+   "source": "house rule; TTB, The Rocks District of Milton-Freewater AVA (2015)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8b8eih8v",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "ans+exp",
+   "problem": "ans: names a living person as the current winemaker, a volatile fact. exp: em dash.",
+   "fix": "ans: the Oregon estate named instead. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "house rule (no living person as a volatile fact); House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-vw995u1q",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: comma.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-dxun4mmn",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "exp",
+   "problem": "exp: em dash.",
+   "fix": "exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-jdoxlwoi",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "ans",
+   "problem": "ans: en dashes join the matched pairs.",
+   "fix": "ans: pairs joined with the app's own arrow.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-8znqwx3d",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "ans",
+   "problem": "ans: em dash.",
+   "fix": "ans: colon.",
+   "source": "house rule",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-3u21zh4x",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "opts",
+   "problem": "opts: 'Vidal' is a hybrid, not vinifera, so one option fell outside the stem's own kind.",
+   "fix": "opts: replaced with Pinot Noir.",
+   "source": "option shape",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-rh6i4yv5",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "ans+exp",
+   "problem": "ans: em dash. exp: two em dashes.",
+   "fix": "ans: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing. exp: dash replaced word for word as the site's dash-free copy (codex/js/data-advanced.js) has it, so the line meets the copy cleanly in sync-wing.",
+   "source": "House rule: no em or en dash in shipped prose; wording taken from the site's copy",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "id": "a-zy5xnk9q",
+   "cat": "Pacific NW, NY & Canada",
+   "field": "exp",
+   "problem": "exp: em dash and en dash; and calls Lewis-Clark Valley (2016) Idaho's second AVA, when Eagle Foothills (2015) came first.",
+   "fix": "exp: dashes removed; Lewis-Clark named as the third, after Eagle Foothills.",
+   "source": "TTB AVA list",
+   "confidence": "high",
+   "stemChanged": false
+  }
+ ]
+}

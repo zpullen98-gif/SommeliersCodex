@@ -1,6 +1,6 @@
-"""Rank II rewrite - Austria (26 questions: 13 MC, 13 short answer).
+"""Village rewrite - Austria (26 questions: 13 MC, 13 short answer).
 
-Certified level, pitched deliberately above the Rank I Austria category. Rank I
+Certified level, pitched deliberately above the Regionale Austria category. Regionale
 owns the concepts and the names: what DAC abbreviates, the four-tier law
 pyramid, the Wachau ladder's three words, what the banderole certifies, the
 Sekt Austria tiers. This category asks what the law has built around them:
@@ -9,7 +9,7 @@ two DAC ladder models actually measure, what the Wachau ordinance changed and
 what it pointedly left private, how the 2023 collective decree turned Erste
 Lage and Grosse Lage from a growers' badge into statute, and what Ried, the
 banderole and Vienna's vineyard register each certify. Nothing here repeats a
-Rank I task, and Ausbruch appears only as the DAC that fenced a name to one
+Regionale task, and Ausbruch appears only as the DAC that fenced a name to one
 town - its Pradikat rung belongs to Dessert & Sweet Wines, and everything
 Hungarian to Hungary & Greece.
 
@@ -131,7 +131,7 @@ BANK = [
        # ex=True because the answer contains the stem's own word: "region" is a
        # substring of "thermenregion", so the containment branch grades a
        # candidate who types the one word the question already gave them. No
-       # entry can be removed to fix that — the leak is inside the answer. The
+       # entry can be removed to fix that: the leak is inside the answer. The
        # cost is bounded here in a way it is not for Mesoclimate (see
        # r2_terroir_climate_soil): every phrasing the explanation itself uses,
        # "Thermenregion" and "Thermenregion DAC", is listed exactly.
@@ -229,22 +229,22 @@ BANK = [
     # ------------------------------------ Burgenland shore to iron south (6) -
     Q("Burgenland shore to iron south",
       "Under the Leithaberg DAC, what must a red wine contain?",
-      ["At least eighty-five percent Blaufrankisch; the rest, Zweigelt, Sankt Laurent or Pinot Noir",
+      ["At least eighty-five per cent Blaufrankisch; the rest, Zweigelt, Sankt Laurent or Pinot Noir",
        "Blaufrankisch and nothing else, at every tier of the appellation",
        "A majority of Zweigelt, seasoned with Blaufrankisch grown on the schist",
        "Any red variety the wider Burgenland list allows, blended in whatever proportion the grower prefers"], 0,
-      "The floor is eighty-five percent Blaufrankisch, and the remaining fifteen may come only from Zweigelt, Sankt Laurent or Pinot Noir, with the wine raised in barrel but not flavoured by it. The margin is for seasoning rather than restyling: the appellation wants its hills legible in the glass."),
+      "The floor is eighty-five per cent Blaufrankisch, and the remaining fifteen may come only from Zweigelt, Sankt Laurent or Pinot Noir, with the wine raised in barrel but not flavoured by it. The margin is for seasoning rather than restyling: the appellation wants its hills legible in the glass."),
     Q("Burgenland shore to iron south",
       "A hill range on the border with Lower Austria lends its name to a Burgenland DAC whose rulebook includes a rose. Which?",
       ["Rosalia", "Leithaberg", "Neusiedlersee", "Carnuntum"], 0,
       "Rosalia DAC takes its name from the Rosaliengebirge, the range along Burgenland's border with Lower Austria, and admits Blaufrankisch and Zweigelt as reds along with a rose, which few DAC rulebooks trouble to mention. Leithaberg is named for a range as well, so it is the pink wine in the rulebook and not the hills that settles which DAC the question means."),
     Q("Burgenland shore to iron south",
       "A Neusiedlersee DAC Reserve may be a blend. What holds it together?",
-      ["Sixty percent at least of the lead grape, the balance from other local reds",
+      ["Sixty per cent at least of the lead grape, the balance from other local reds",
        "Equal parts of any two Burgenland reds, decided at the press house",
        "A spine of Cabernet Sauvignon, the international note export markets ask for",
        "Whatever the vintage gives, so long as the finished wine clears the alcohol floor"], 0,
-      "Reserve wines must hold at least sixty percent of the region's lead variety, the balance drawn from other indigenous reds, and they see cask before release. The allowance recognises how the east shore actually farms: mixed red plantings that always found their way into the same vat."),
+      "Reserve wines must hold at least sixty per cent of the region's lead variety, the balance drawn from other indigenous reds, and they see cask before release. The allowance recognises how the east shore actually farms: mixed red plantings that always found their way into the same vat."),
     SA("Burgenland shore to iron south",
        "Flat sandy country on the lake's eastern shore built its DAC around a single red grape. Which?",
        "Zweigelt",
@@ -297,6 +297,6 @@ BANK = [
        "Gemischter Satz",
        ["gemischter satz", "gemischter satz label", "gemischter satz field blend",
         "call it gemischter satz", "label it gemischter satz"],
-       "Gemischter Satz is a general Austrian term for a co-planted, co-harvested, co-fermented field blend, and any region may use it. What Krems fruit can never carry is the word Wiener in front of it: the DAC fenced the city's name, not the practice itself.",
+       "Gemischter Satz is a general Austrian term for a co-planted, co-harvested, co-fermented field blend, and any region may use it. What Krems fruit can never carry is the word Wiener in front of it: the DAC fenced the city's name, not the field blend itself.",
        ex=True),
 ]

@@ -1,0 +1,374 @@
+{
+ "batch": "village-3",
+ "modules": [
+  "r2_terroir_climate_soil",
+  "r2_bordeaux",
+  "r2_california"
+ ],
+ "readCount": 150,
+ "total": 150,
+ "findings": [
+  {
+   "module": "r2_terroir_climate_soil",
+   "stemStart": "Take two regions with an identical mean annual",
+   "field": "exp",
+   "problem": "The explanation said continentality and diurnal range 'are independent of each other'. They are separate measures, but they correlate: continental interiors usually show wide daily swings and maritime sites narrow ones.",
+   "fix": "Last clause now says the two often travel together inland but are separate measurements, and a site can be high on one and modest on the other.",
+   "source": "Standard climatology (Gladstones, Jones): continentality and diurnal range are distinct but correlated indices.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_terroir_climate_soil",
+   "stemStart": "Tilting the ground toward the sun buys far",
+   "field": "exp",
+   "problem": "The explanation put Mendoza (about 33 degrees south) next to 'near the equator' and called aspect 'an irrelevance' there, which is overstated and does not fit the stem's own thirty-degree comparison.",
+   "fix": "Now reads: toward the tropics the summer sun stands close to overhead and a slope gains little, so aspect is an obsession on the Mosel and a secondary matter in Mendoza, where elevation does the work.",
+   "source": "Solar geometry; Mendoza lies at about 33 degrees south, not near the equator.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_terroir_climate_soil",
+   "stemStart": "Vineyards planted within a few degrees of the",
+   "field": "exp",
+   "problem": "The explanation said 'nothing else is available to them' and 'the diurnal swing is doing all of the work'. That is false: at 2,000 metres the lapse rate alone takes about twelve degrees off the mean temperature, which this module's own lapse-rate question teaches.",
+   "fix": "Rewritten to credit both: altitude lowers the mean temperature by the lapse rate, and thin air radiates heat away fast after sunset, so the nights are cold and hold acid. Winter dormancy and seasonal day-length change are still named as the routes closed to them. The key is unchanged and remains the only right option.",
+   "source": "Environmental lapse rate of about 0.6 C per 100 m (this module's own lapse-rate question); tropical highland viticulture.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_terroir_climate_soil",
+   "stemStart": "European law folds into terroir something that is",
+   "field": "exp",
+   "problem": "The explanation used the banned word 'practices' ('explicitly includes human practices').",
+   "fix": "'human practices' changed to 'human know-how'. The accept list already takes 'savoir faire'.",
+   "source": "House rule: never the word practice or practise in shipped text.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Below Chateau d'Yquem, the Sauternes side of 1855",
+   "field": "exp",
+   "problem": "The explanation contrasted the reds with the sweet wines as 'on the Left Bank', but Sauternes and Barsac are on the left bank of the Garonne too, so the contrast was geographically wrong.",
+   "fix": "Last clause now reads 'which tells you how much finer the brokers thought the price gradations among the reds were.'",
+   "source": "Geography: Sauternes lies on the left bank of the Garonne.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Suppose a classified chateau buys vineyard from an",
+   "field": "accept",
+   "problem": "The entry 'the national appellation body' only restates the stem ('national body ... appellation'), and through reverse containment it graded the bare stem fragment 'appellation body'.",
+   "fix": "Removed 'the national appellation body'. INAO, its current full name and its former full name stay. Checked with match_sa: 'appellation body' no longer grades, 'the INAO' still does.",
+   "source": "lib.match_sa probe; README rule that an accept list must not grade words read off the stem.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Rebuilt after its own annulment, the Medoc ranking",
+   "field": "exp",
+   "problem": "The explanation used the banned word 'practice' ('cellar practice').",
+   "fix": "'cellar practice' changed to 'cellar work'.",
+   "source": "House rule: never the word practice.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Ausone and Cheval Blanc held the top rank",
+   "field": "exp",
+   "problem": "The explanation said 'Both promotions were contested in court'. The 2012 litigation was brought by estates that were demoted or left off, against the classification as a whole, so the claim misdescribed it. The explanation also gave no warning that the 2012 top tier is no longer today's.",
+   "fix": "Rewritten: the 2012 list was itself taken to court by estates demoted or left off it, because a revisable rank is worth suing over while the fixed 1855 list attracts no litigation. By the 2022 revision Ausone, Cheval Blanc and Angelus had all withdrawn, leaving Pavie and Figeac as the only estates ranked A.",
+   "source": "Saint-Emilion classification history (the 2012 suits by Croque-Michotte, Corbin-Michotte and La Tour du Pin Figeac); 2022 classification results.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "One of the four famous Medoc communes holds",
+   "field": "exp",
+   "problem": "Saint-Estephe also has no First Growth, so the stem's first clause fits two communes; only the second clause (nearly all the vineyard classified) settles it. The explanation contrasted Saint-Estephe without saying so, which leaves a student who knows Saint-Estephe has no First Growth confused.",
+   "fix": "The Saint-Estephe sentence now opens 'Saint-Estephe has no First Growth either, but it is larger ...'. Stem left alone: the key is still the only right answer once both clauses are read.",
+   "source": "1855 classification: Saint-Estephe's best are Cos d'Estournel and Montrose, both Second Growths.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Great Medoc sites are almost all built on",
+   "field": "exp",
+   "problem": "The explanation used the banned word 'practice' ('decisive in practice').",
+   "fix": "'decisive in practice' changed to 'decisive on the ground'.",
+   "source": "House rule: never the word practice.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "A modest stream runs east to west across",
+   "field": "exp",
+   "problem": "The explanation ended on 'Old local lore held that the good wine was on the southern bank and the witches on the northern one', which cannot be verified and reads as invented folklore stated as fact.",
+   "fix": "Removed that sentence. The explanation keeps its two true sentences about why the line matters.",
+   "source": "House rule: nothing unverifiable stated as fact; no standard reference records such lore.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Inside Fronsac sits a smaller appellation drawn around",
+   "field": "exp",
+   "problem": "The explanation named 'the Canon and Saint-Michel hills', which are not standard names. Canon-Fronsac is defined by its communes, Fronsac and Saint-Michel-de-Fronsac.",
+   "fix": "Now reads 'It covers the steepest limestone slopes in the communes of Fronsac and Saint-Michel-de-Fronsac, where molasse and limestone ...'. Stem left alone.",
+   "source": "Canon-Fronsac AOC delimitation (parts of the communes of Fronsac and Saint-Michel-de-Fronsac).",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Looking across the estuary at the Medoc, one",
+   "field": "exp",
+   "problem": "The explanation blamed Malbec's 'early budding' for its replacement by Merlot. Merlot is itself an early budder, so the reasoning contradicts itself; Malbec's recorded weaknesses are frost sensitivity and coulure.",
+   "fix": "'Its early budding and poor fruit set' changed to 'Its sensitivity to frost and its poor fruit set'.",
+   "source": "Ampelography (Robinson, Harding and Vouillamoz, Wine Grapes): Cot/Malbec is prone to coulure and frost; Merlot buds early.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "Bordeaux growers have an old local name for",
+   "field": "stem",
+   "problem": "The premise was false: Cot is not the Medoc name for Malbec. 'Malbec' is itself the Bordeaux name, traditionally traced to a Monsieur Malbeck in the Medoc. Cot is the official French register name and the Loire's, Pressac the old Libournais name and Auxerrois Cahors's. The accept list also took hedges such as 'cot or pressac'. A first repair that kept Cot as the answer would have repeated r1_loire's Touraine Cot task at a higher rank, so the task was changed instead.",
+   "fix": "New stem: 'Old Libournais growers knew Malbec by a name of their own, taken by tradition from the estate near Saint-Emilion where it was first planted. What was it?' ans 'Pressac'; accept ['pressac', 'noir de pressac'] with ex dropped (no real wine contains the word). The exp now teaches all four names: Malbec for Bordeaux, Cot for the register and the Loire, Auxerrois for Cahors, with Pressac traced to Chateau de Pressac. check-similarity: 0 flagged (max ratio 0.480). match_sa probes: 'Pressac' and 'Noir de Pressac' grade; 'Pessac', 'Malbec', 'Cot' and 'not Pressac' do not.",
+   "source": "Wine Grapes (Robinson, Harding, Vouillamoz) and Galet on the synonyms Cot, Malbec, Pressac and Auxerrois; r1_loire.py already holds the Touraine Cot question.",
+   "confidence": "medium",
+   "stemChanged": true
+  },
+  {
+   "module": "r2_bordeaux",
+   "stemStart": "A customer buys a case as futures in",
+   "field": "exp",
+   "problem": "The explanation said the buyer risks the wine being 'cheaper on release'. In en primeur usage the release is the moment he buys, so the sentence was self-contradictory.",
+   "fix": "Now reads 'the risk that the wine will be cheaper once it is bottled and on the market'.",
+   "source": "En primeur trade usage.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "State law obliges any wine using a Napa",
+   "field": "opts",
+   "problem": "The key used American spelling ('labeling'), against the house rule of British spelling. Its three distractors ('Nested appellation disclosure', 'Appellation transfer', 'Compound origin marking') were invented terms, not real things.",
+   "fix": "Options are now 'Conjunctive labelling', 'Estate bottling', 'Vineyard designation' and 'Varietal designation': four real American label terms, none of which names this rule except the key. They sit within one character of each other in length.",
+   "source": "California Business and Professions Code conjunctive labelling rule; 27 CFR part 4 label terms; house British spelling rule.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "A back label reads Produced and Bottled by,",
+   "field": "exp",
+   "problem": "The explanation said the federal rule sets both 'Produced' and 'Made' at 75 percent fermented at the stated address. 'Made and bottled by' needs only 10 percent fermented there, or a change of class (for example by adding brandy).",
+   "fix": "First sentence now reads 'Produced is the phrase that demands 75 percent fermented at the stated address, while Made and Bottled by asks only 10 percent, or a change of class such as fortification.' The rest is unchanged.",
+   "source": "27 CFR 4.35(a): 'produced' at least 75 percent fermented; 'made' at least 10 percent, or a change of class.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "Fruit grown in one state is blended in",
+   "field": "exp",
+   "problem": "The explanation ran to four sentences against the house limit of three, and the last one added nothing.",
+   "fix": "Dropped the closing sentence ('It is a useful reminder ...'). The rule itself was rechecked: 27 CFR 4.27 still requires an appellation other than a country for a vintage date.",
+   "source": "27 CFR 4.27 (current eCFR text); brief's one-to-three sentence rule.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "Water rising out of the Mayacamas hillside above",
+   "field": "exp",
+   "problem": "The explanation called Spring Mountain 'the wettest corner of Napa' and said dry farming is not realistic on the valley floor. The superlative cannot be verified, and the valley floor is in fact dry farmed in places.",
+   "fix": "Now reads 'among the wettest corners of Napa, so dry farming comes easier there than on most of the valley floor.'",
+   "source": "Napa dry farming on the valley floor (Rutherford and elsewhere) is well documented; rainfall varies across the Mayacamas.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "High above Lake Sonoma, one appellation admits no",
+   "field": "exp",
+   "problem": "The explanation said there is 'nowhere up there to crush it', a volatile claim about facilities that can change at any time.",
+   "fix": "Now reads 'most of the fruit is trucked down to wineries elsewhere in the county.'",
+   "source": "House rule: nothing volatile stated as fact.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "Paso Robles is picked across a spread of",
+   "field": "opts",
+   "problem": "The stem puts the divide along the Salinas River, so the halves are west and east. The two north and south distractors could therefore be struck out from the stem's own words, leaving a coin toss.",
+   "fix": "The north and south options are replaced by 'The east side, where higher ground offsets the distance from the coast' and 'The west side, where the Santa Lucia range shuts the marine air out', so both sides and both reasons are in play. The key and the exp are unchanged; the exp's Templeton Gap sentence still refutes the new west-side distractor.",
+   "source": "README rule that a question must not be answerable from the stem's words; Paso Robles east and west climate (Templeton Gap).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "One Santa Barbara appellation prints an abbreviated form",
+   "field": "opts",
+   "problem": "The key was the only option that named a specific ('A Chilean estate called Santa Rita') against three 'of the same name' options, which is a shape tell. The explanation also never named the appellation or the estate, so a student did not learn which wine the question was about.",
+   "fix": "Key changed to 'A Chilean estate of the same name', matching the other three. The exp now names Vina Santa Rita and Sta. Rita Hills, and 'well over a century' became 'over a century' (Santa Rita was founded in 1880; the AVA was approved in 2001).",
+   "source": "Sta. Rita Hills AVA history (approved 2001 as Santa Rita Hills, abbreviated by the 2006 agreement with Vina Santa Rita).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "Amador County's best-known Zinfandel appellation had to qualify",
+   "field": "exp",
+   "problem": "The explanation ran to five sentences, two of them restating the naming rule.",
+   "fix": "Cut to three sentences: the bare-name rule and the early-1980s petitions with the eastern valley keeping the bare name; the Californian one carrying California in direct conjunction, listed with the state leading; and the elevation, soil and style sentence. No fact was removed.",
+   "source": "Brief's one-to-three sentence rule.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "r2_california",
+   "stemStart": "An Englishman running a wine shop and a",
+   "field": "exp",
+   "problem": "The explanation said Spurrier 'did not vote himself'. He and Patricia Gallagher tasted and scored, but their scores were left out of the count.",
+   "fix": "'and did not vote himself' changed to 'and kept his own scores out of the count'.",
+   "source": "George Taber, Judgment of Paris (2005), on the scoring.",
+   "confidence": "low",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "Take two regions with an identical mean annual",
+   "verdict": "kept",
+   "why": "Right: the two indices are distinct but correlated, and the new clause says exactly that without claiming independence."
+  },
+  {
+   "stemStart": "Tilting the ground toward the sun buys far",
+   "verdict": "amended",
+   "why": "The fix is right (Mendoza is about 33 degrees south, not equatorial, and its summer sun stands near 80 degrees), but it introduced the American 'Toward'; now 'Towards the tropics', the British form the Codex's prose checks enforce."
+  },
+  {
+   "stemStart": "Vineyards planted within a few degrees of the",
+   "verdict": "amended",
+   "why": "Right to credit the lapse rate, but the new sentence hung the twenty-degree swing on both clauses with one 'so', as if the lapse rate widened the daily range. Reordered: night radiation gives the swing and the cold nights hold the acid, while the lapse rate lowers the mean as well. Key's mechanism now leads; key and options unchanged."
+  },
+  {
+   "stemStart": "European law folds into terroir something that is",
+   "verdict": "kept",
+   "why": "Banned word removed; 'know-how' renders the INAO's savoir-faire faithfully and the accept list already takes savoir faire."
+  },
+  {
+   "stemStart": "Below Chateau d'Yquem, the Sauternes side of 1855",
+   "verdict": "kept",
+   "why": "Right: Sauternes and Barsac lie on the left bank of the Garonne, so the old contrast was false; the new clause is accurate."
+  },
+  {
+   "stemStart": "Suppose a classified chateau buys vineyard from an",
+   "verdict": "kept",
+   "why": "Probed with match_sa: 'appellation body' and 'national body' no longer grade; 'INAO', 'the INAO' and both full names still do. 'I.N.A.O.' fails both before and after, so the edit refused nothing new."
+  },
+  {
+   "stemStart": "Rebuilt after its own annulment, the Medoc ranking",
+   "verdict": "kept",
+   "why": "Banned word removed; 'cellar work' says the same thing."
+  },
+  {
+   "stemStart": "Ausone and Cheval Blanc held the top rank",
+   "verdict": "amended",
+   "why": "Litigation correction is right (the 2012 suits came from demoted or omitted estates). But 'leaving Pavie and Figeac as the only estates ranked A' names the newest classification membership, which this module's own docstring keeps out by design. Kept the dated warning only: Ausone, Cheval Blanc and Angelus all withdrew from the 2022 revision, so the tier the question names belongs to the 2012 edition."
+  },
+  {
+   "stemStart": "One of the four famous Medoc communes holds",
+   "verdict": "kept",
+   "why": "Right: Saint-Estephe has no First Growth either; the stem's second clause settles the key, and the exp now says so."
+  },
+  {
+   "stemStart": "Great Medoc sites are almost all built on",
+   "verdict": "kept",
+   "why": "Banned word removed; 'decisive on the ground' fits a sentence about a mound."
+  },
+  {
+   "stemStart": "A modest stream runs east to west across",
+   "verdict": "kept",
+   "why": "No standard reference records the witches lore; removing it leaves a true one-sentence explanation."
+  },
+  {
+   "stemStart": "Inside Fronsac sits a smaller appellation drawn around",
+   "verdict": "amended",
+   "why": "Right to drop the non-standard hill names, but 'the steepest limestone slopes' is an unverified superlative (the reviewer's own confidence was low), and it repeated limestone in the next clause. Now the delimitation fact alone: it takes in parts of the communes of Fronsac and Saint-Michel-de-Fronsac."
+  },
+  {
+   "stemStart": "Looking across the estuary at the Medoc, one",
+   "verdict": "kept",
+   "why": "Right: Merlot also buds early, so 'early budding' contradicted itself; frost sensitivity and coulure are Cot's recorded weaknesses."
+  },
+  {
+   "stemStart": "Bordeaux growers have an old local name for",
+   "verdict": "amended",
+   "why": "The stem change was needed: the premise was false and no non-stem fix could serve, since the Medoc name is Malbec itself, the word in the stem. But dropping ex let containment grade the very hedges the finding objected to: match_sa passed 'cot or pressac', 'malbec or pressac' and 'Cot, Malbec, Pressac, Auxerrois'. ex=True is back, with 'pressac grape' added; Pressac, Noir de Pressac, the Pressac and Pressac grape grade, and the hedges, Pessac, Pressac-Leognan and 'not pressac' do not. The new stem's 'where it was first planted' implied the vine began there (it comes from Quercy); now 'where they first grew it'."
+  },
+  {
+   "stemStart": "A customer buys a case as futures in",
+   "verdict": "kept",
+   "why": "Right: in en primeur usage the release is the moment of purchase, so the new wording removes the contradiction."
+  },
+  {
+   "stemStart": "State law obliges any wine using a Napa",
+   "verdict": "amended",
+   "why": "Kept the British 'Conjunctive labelling'; restored the original three distractors. The replacements (estate bottling, vineyard and varietal designation) plainly name other label claims and fall away on sight, so a recall question became recognition. No house rule bars invented distractor names. The log's 'within one character' was also wrong: 15 against 21."
+  },
+  {
+   "stemStart": "A back label reads Produced and Bottled by,",
+   "verdict": "kept",
+   "why": "Right: 27 CFR 4.35 sets Produced at 75 percent fermented and Made at 10 percent or a change of class."
+  },
+  {
+   "stemStart": "Fruit grown in one state is blended in",
+   "verdict": "amended",
+   "why": "The trim is fine, but the log's recheck was wrong. T.D. TTB-105 (77 FR 56539, 13 September 2012, effective 13 November 2012, 'Revision to Vintage Date Requirements') amended 27 CFR 4.27 to allow a vintage date on wine labelled with a country appellation, so the key and the exp taught a rule repealed in 2012. Under current law the old stem has no single right answer, so a non-stem fix could not serve. The stem now reads 'Until a federal change in 2012, what did that cost the label?'. The answer and accept list are unchanged, and the exp now gives the current rule (85 percent from the stated harvest). Id c-ijf6g9l0 moves; check-similarity flags 0 and check-stem-echo flags 0."
+  },
+  {
+   "stemStart": "Water rising out of the Mayacamas hillside above",
+   "verdict": "kept",
+   "why": "Right: the superlative was unverifiable and the valley floor is dry farmed in places; 'among the wettest' is defensible."
+  },
+  {
+   "stemStart": "High above Lake Sonoma, one appellation admits no",
+   "verdict": "kept",
+   "why": "Right: a hedged statement of how the fruit moves replaces an absolute claim about facilities."
+  },
+  {
+   "stemStart": "Paso Robles is picked across a spread of",
+   "verdict": "kept",
+   "why": "Right: with the divide along the Salinas, the north and south options fell away on the stem's own words. The new west-side distractor is refuted by the exp's break-in-the-range sentence, so it is not defensibly correct."
+  },
+  {
+   "stemStart": "One Santa Barbara appellation prints an abbreviated form",
+   "verdict": "kept",
+   "why": "Right: the key no longer stands out by shape, and the exp now names Vina Santa Rita and Sta. Rita Hills (1880 against 2001 is over a century)."
+  },
+  {
+   "stemStart": "Amador County's best-known Zinfandel appellation had to qualify",
+   "verdict": "kept",
+   "why": "Compression removes no fact; the antecedent of 'it' (the bare name) is clear from the sentence before."
+  },
+  {
+   "stemStart": "An Englishman running a wine shop and a",
+   "verdict": "kept",
+   "why": "Right: Spurrier and Patricia Gallagher scored but were left out of the count; he is not living, so no volatile person claim arises."
+  }
+ ]
+}

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""North America study chapters. Written from the competency list in the Rank I
+"""North America study chapters. Written from the competency list in the Regionale
 question modules, not from the chapter this replaces."""
 from primerlib import CH
 
 CHAPTERS = [
 
-    CH("North America", "calnorth", "California — North Coast", """
+    CH("North America", "calnorth", "California: North Coast", """
 <p>The North Coast is the block of counties north of San Francisco Bay, chiefly
 Napa, Sonoma, Mendocino and Lake, with Marin and Solano inside the AVA as well.
 Its climate is barely a question of latitude. A cold
@@ -16,11 +16,12 @@ ripen in it.</p>
 
 <h4>Napa Valley</h4>
 <p>Napa is a narrow trench walled by the Mayacamas on the west and the Vaca range
-on the east, tapering northward toward Calistoga. Its cold end is the south,
-where Los Carneros lies open to San Pablo Bay and grows Pinot Noir, Chardonnay
-and much of the state's better sparkling base. Mid-valley, the gravelly alluvial
-fans of Oakville and Rutherford drain fast and hold heat, which is why Cabernet
-Sauvignon took the benchland and now occupies roughly half the county's vines.
+on the east, tapering northwards towards Calistoga. Its cold end is the south,
+where Los Carneros, which Napa shares with Sonoma, lies open to San Pablo Bay
+and grows Pinot Noir, Chardonnay and a good share of the state's best sparkling
+base. Mid-valley, the gravelly alluvial fans of Oakville and Rutherford drain
+fast and hold heat, which is why Cabernet Sauvignon took the benchland; it now
+fills roughly half the county's vineyard, more than any other grape.
 Above the fog line the mountain appellations
 ${INTRO_CHIP('Howell Mountain')}${INTRO_CHIP('Mount Veeder')}${INTRO_CHIP('Spring Mountain District')}${INTRO_CHIP('Atlas Peak')}
 ripen in full sun on poor, free-draining soils, giving smaller berries and firmer
@@ -30,15 +31,33 @@ farming and is the reason it is not housing today.</p>
 <h4>Sonoma and the counties north</h4>
 <p>Sonoma is the more varied county. Fog drawn up the Russian River keeps that
 valley cool into late morning and stretches ripening, which made its name for
-Pinot Noir; warm, gravelly Dry Creek Valley is old head-trained Zinfandel
-country; Alexander Valley sits far enough inland to escape most of the fog and
-gives rounder Cabernet. Anderson Valley in Mendocino opens straight at the
-Pacific and is cold enough to pick sparkling base at low sugar and high acid.
-Lake County farms volcanic ground at elevation around Clear Lake.</p>
+Pinot Noir. Warm, gravelly Dry Creek Valley is old head-trained Zinfandel
+country, and Alexander Valley sits far enough inland to escape most of the fog
+and gives rounder Cabernet. Zinfandel is Californian by adoption only: DNA
+matched it to Croatia's Tribidrag and Puglia's Primitivo, and the Petite Sirah
+so often interplanted with it in old blocks is the French crossing Durif.
+Anderson Valley in Mendocino opens to the Pacific at its western end and is cold
+enough to pick sparkling base at low sugar and high acid. Lake County farms
+volcanic ground at elevation around Clear Lake.</p>
+
+<h4>What an American label promises</h4>
+<p>An AVA, an American Viticultural Area, is a boundary approved by the federal
+Alcohol and Tobacco Tax and Trade Bureau and nothing more: no grape, yield or
+ageing rule comes with it. Name one and 85 per cent of the fruit must have grown
+inside it; a county or state name asks 75 per cent, though California insists
+that anything bearing its name, or one of its counties, be wholly Californian.
+A grape name needs 75 per cent of that variety. A vintage needs 95 per cent of the
+fruit from that year beside an AVA, 85 per cent beside a broader name. A
+Bordeaux-style blend with no grape at 75 per cent can be sold as Meritage, a
+trademarked term, while Reserve carries no legal meaning at all. History gives
+the exam two dates. Prohibition closed most wineries from 1920 to 1933, and at a
+blind tasting in Paris in 1976 two Napa wines of the 1973 vintage, Stag's Leap
+Wine Cellars Cabernet and Chateau Montelena Chardonnay, finished ahead of the
+French bottles they were set against.</p>
 """),
 
-    CH("North America", "calcentral", "California — Central Coast", """
-<p>The Central Coast is a long strip running from below San Francisco Bay down
+    CH("North America", "calcentral", "California: Central Coast", """
+<p>The Central Coast is a long strip running south from San Francisco Bay
 past Santa Barbara, and it is a set of climates rather than one. The governing
 rule is the same everywhere along it: how far a site sits from the ocean, and
 whether the hills let marine air reach it, matters far more than how far south
@@ -51,20 +70,23 @@ them open directly onto the ocean and cold air pours a long way inland. That
 produces a steep temperature gradient over very few miles. Sta. Rita Hills, at
 the cold western end of the Santa Ynez Valley, is planted overwhelmingly to Pinot
 Noir and Chardonnay, while Happy Canyon at the warm eastern end ripens Cabernet
-Sauvignon and Sauvignon Blanc.</p>
+Sauvignon and Sauvignon Blanc. Santa Maria Valley, further north, opens to the
+sea in the same way and is Pinot Noir and Chardonnay country too.</p>
 
 <h4>Monterey, Paso Robles and the interior</h4>
 <p>Monterey's Salinas Valley opens onto the bay and draws an afternoon wind so
 dependable that growers lay the vineyard out around it; the Santa Lucia Highlands
 occupy terraces above the valley floor and are a leading source of Pinot Noir.
 Paso Robles, inland in San Luis Obispo County, is hot by day and cools sharply
-after dark, and that swing holds acidity in place while sugar builds, which suits
-Zinfandel and Rhone varieties. Beyond the coastal hills the Central Valley is
+after dark, and that swing holds acidity in place while sugar builds. It made
+its name with Zinfandel and Rhone varieties, and it grows a great deal of
+Cabernet Sauvignon besides. Beyond the coastal hills the Central Valley is
 flat, warm and wholly dependent on irrigation, and it supplies most of the
-country's everyday wine. Lodi, at its northern end, catches cooler air off the
-Sacramento Delta and holds a remarkable stock of old Zinfandel. East of
-Sacramento the granitic slopes of the Sierra Foothills still carry Zinfandel
-planted in Gold Rush country, saved largely by being too remote to redevelop.</p>
+country's everyday wine. Lodi, at the northern end of its San Joaquin half,
+catches cooler air off the Sacramento Delta and holds a remarkable stock of old
+Zinfandel. East of Sacramento the granitic slopes of the Sierra Foothills still
+carry Zinfandel planted in Gold Rush country, saved largely by being too remote
+to redevelop.</p>
 """),
 
     CH("North America", "newyork", "New York State", """
@@ -89,12 +111,22 @@ descends from that argument.</p>
 <p>The Finger Lakes are deep glacial troughs that hold summer heat well into
 winter and temper the slopes above them. Riesling is the calling card, tolerant
 of cold and transparent about site, while Cabernet Franc is the leading red
-vinifera because it ripens where Merlot will not. Long Island is the opposite
-case, thoroughly maritime, with water on three sides handing the North Fork a
-long, mild autumn, and there Merlot does succeed. Neither holds much of the
-state's acreage, though. Most of it lies along the Lake Erie shore in the far
-west, where the Concord that becomes juice and jelly is actually grown. The
-Hudson River Region and the Niagara Escarpment complete the picture.</p>
+vinifera, hardier in a severe winter than Merlot. Long Island
+is the opposite case, thoroughly maritime, with water on three sides handing the
+North Fork a long, mild autumn, and there Merlot does succeed. Neither holds the
+largest share of the state's vines, though. That lies along the Lake Erie shore
+in the far west, where the Concord that becomes juice and jelly is actually
+grown. The Hudson River Region and the Niagara Escarpment complete the
+picture.</p>
+
+<h4>The same fight elsewhere</h4>
+<p>Other eastern and inland states face versions of the same problem. Virginia
+contends with summer humidity more than cold and has built its name on Viognier
+and Cabernet Franc. Missouri holds the first AVA ever approved, Augusta in 1980,
+and its signature red is Norton, descended from a native American vine. Michigan's
+best Riesling grows on two peninsulas reaching into Lake Michigan, and most of the
+Texas crop comes off the Texas High Plains, a plateau high enough to cool its
+nights.</p>
 """),
 
     CH("North America", "pnw", "Pacific Northwest", """
@@ -107,23 +139,27 @@ rainforest on the west and near desert on the east.</p>
 <p>Most Oregon vineyard sits on the wet side, in the Willamette Valley, which the
 Coast Range shelters from the full weight of Pacific weather while the Cascades
 hold back continental extremes from the other direction. Gaps such as the Van
-Duzer Corridor let cool ocean air slip through. Pinot Noir takes more than half
-the state's acreage and Pinot Gris leads the whites. Soil is the local argument:
+Duzer Corridor let cool ocean air slip through. Pinot Noir reached the valley
+only in 1965, planted against nearly everyone's advice by the grower who went on
+to found The Eyrie Vineyards, and it now takes more than half the state's
+acreage; Pinot Gris leads the whites.
+Soil is the local argument:
 the Dundee Hills sit on Jory, an iron-rich red weathering of basalt, while
 Yamhill-Carlton lies on ancient marine sediment. Oregon also holds its producers
-to a 90 percent varietal minimum where federal law asks only 75, exempting a
-listed group of grapes that are traditionally blended. Southward, the Rogue and
+to a 90 per cent varietal minimum where federal law asks only 75, exempting a
+listed group of grapes that are traditionally blended. Southwards, the Rogue and
 Umpqua Valleys are warmer and drier and grow Syrah, Tempranillo and Bordeaux
 varieties instead.</p>
 
 <h4>Washington</h4>
 <p>Washington plants almost everything east of the Cascades, where much of the
-Columbia basin sees under ten inches of rain a year, so irrigation is compulsory
-across most of it and therefore a tool: the grower decides exactly how much water
-the vine receives and when. The vast Columbia Valley covers most of the state's
-plantings, with
+Columbia basin sees under 250 millimetres of rain a year, about ten inches, so
+irrigation is compulsory across most of it and therefore a tool: the grower
+decides exactly how much water the vine receives and when. The vast Columbia
+Valley covers most of the state's plantings, with
 ${INTRO_CHIP('Yakima Valley')}${INTRO_CHIP('Walla Walla Valley')}${INTRO_CHIP('Red Mountain')}
-nested inside it, while Puget Sound is the wet-side exception, cool enough that
+nested inside it; small, hot Red Mountain gives some of the state's densest,
+firmest Cabernet. Puget Sound is the wet-side exception, cool enough that
 only early-ripening varieties finish. Ice-age floods scoured the basin and left
 sand and gravel behind, ground so free-draining that phylloxera struggles in it
 and a great many vines are still on their own roots. Cabernet Sauvignon and
@@ -132,21 +168,23 @@ Merlot lead the reds.</p>
 
     CH("North America", "canada", "Canada", """
 <p>Canada plants a very thin band of a very large country, and the limiting
-factor is winter. Two areas hold nearly all of it, standing some four thousand
+factor is winter. Two areas hold most of it, standing more than three thousand
 kilometres apart: the Okanagan Valley in British Columbia and the Niagara
 Peninsula in Ontario. Each sits beside water deep enough to blunt a continental
-winter, and neither would be plantable without it.</p>
+winter, and neither would be plantable without it. Quebec and Nova Scotia make
+smaller amounts at the cold edge of what is possible.</p>
 
 <h4>The two regions</h4>
 <p>The Okanagan is a run of benches above a chain of long, narrow lakes, dry
 enough at its southern end to count as desert and irrigated throughout. Deep
 windblown sand there warms fast and drains completely, and is hostile enough to
-phylloxera that vines can go in on their own roots. In 1988 the province paid its
-growers to tear out most of a vineyard then planted largely to hybrids and
-labrusca; what went back in was vinifera on the warmest sites. Ontario's
-vineyards shelter below the Niagara Escarpment beside Lake Ontario. Further east
-in Prince Edward County, growers plough soil over the canes every November and
-uncover them in spring, because anything left standing is killed.</p>
+phylloxera that vines can go in on their own roots. In 1988, with free trade
+with the United States on the way, government money paid growers to pull out
+most of the province's vines, then largely hybrids and labrusca; what went back
+in was vinifera on the warmest sites. Ontario's vineyards shelter below the
+Niagara Escarpment beside Lake Ontario. Further east in Prince Edward County,
+growers plough soil over the canes every November and uncover them in spring,
+because a hard winter kills whatever is left exposed.</p>
 
 <h4>VQA and icewine</h4>
 <p>VQA is an appellation system with real teeth, which an American AVA is not: it
@@ -163,8 +201,12 @@ its thick skins holding the bunches intact into the new year.</p>
     CH("North America", "mexico", "México", """
 <p>Wine in the Americas starts here. Spanish colonists planted vines in New Spain
 from the 1520s, and missionaries later carried the Mission grape, the Spanish
-Listan Prieto, north along the mission chain into what became California. The
-oldest working winery on the continent stands at Parras in Coahuila.</p>
+Listan Prieto, north along the mission chain into what became California.
+Before the century was out the crown had restricted new planting to protect the
+wine shipped from Spain, which is why so early a start built so small an
+industry. Even so, the oldest working
+winery in the Americas, Casa Madero, founded in 1597, stands at Parras in
+Coahuila.</p>
 
 <h4>Baja California</h4>
 <p>The modern industry is concentrated on the Baja California peninsula, and
@@ -183,8 +225,8 @@ one bottle may combine
 ${INTRO_CHIP('Cabernet Sauvignon')}${INTRO_CHIP('Merlot')}${INTRO_CHIP('Nebbiolo')}${INTRO_CHIP('Tempranillo')}${INTRO_CHIP('Grenache')}
 in a way no European appellation would permit. The whites lean on
 ${INTRO_CHIP('Chenin Blanc')}${INTRO_CHIP('Sauvignon Blanc')}${INTRO_CHIP('Viognier')}.
-Away from Baja, vineyards in Coahuila, Zacatecas and Queretaro sit much closer to
-the equator but high above sea level, where elevation rather than the ocean
-supplies the cold nights.</p>
+Away from Baja, vineyards in Coahuila, Zacatecas and Queretaro, the last best
+known for sparkling wine, sit much closer to the equator but high above sea
+level, where elevation rather than the ocean supplies the cold nights.</p>
 """),
 ]

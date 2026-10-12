@@ -1,4 +1,4 @@
-"""Rank II rewrite - Hungary & Greece (41 questions: 15 MC, 26 short answer).
+"""Village rewrite - Hungary & Greece (41 questions: 15 MC, 26 short answer).
 
 Certified level. Two countries with the longest records in Europe and the
 shortest modern ones, so the running order is built around a single idea: in
@@ -10,11 +10,11 @@ box for both. So Hungary runs Tokaj first - the ground, the reformed rules, the
 grapes - and then out to Eger, the south and the volcanic hills; Greece runs the
 label words first and then Santorini, the Xinomavro north and the Peloponnese.
 
-Pitched deliberately above Rank I. Rank I owns the aszu berry, the puttonyos
+Pitched deliberately above Regionale. Regionale owns the aszu berry, the puttonyos
 hod, eszencia, szamorodni as a style and Santorini's sun-dried sweet wine, and
 r1_dessert_sweet was read before a line of this was written. Those things are
-named here where they have to be, but no task is repeated: where Rank I asks
-what a puttony was, this asks what 2013 left of the scale; where Rank I asks
+named here where they have to be, but no task is repeated: where Regionale asks
+what a puttony was, this asks what 2013 left of the scale; where Regionale asks
 which island sun-dries Assyrtiko, this asks how long the rules keep the wine in
 oak afterwards. The committed Classifications & Labels category owns the
 eighteenth-century Tokaj vineyard survey and the Reserve and Grande Reserve
@@ -95,7 +95,7 @@ BANK = [
       "A Tokaji Aszu bottled under the rules in force since 2013 has to reach a stated residual sugar before it may carry the name. Which figure?",
       ["120 grams per litre", "30 grams per litre", "150 grams per litre",
        "90 grams per litre"], 0,
-      "Sweetness is now written into the rulebook as a number rather than counted in hods tipped into a barrel. A wine short of the figure cannot be sold as Aszu at all and goes out as a late harvest or as the sweet form of szamorodni instead, so the reform tightened the name rather than merely relabelling it."),
+      "Sweetness is now written into the rulebook as a number rather than counted in hods tipped into a barrel. A wine short of the figure cannot be sold as Aszu at all, so the reform tightened the name rather than merely relabelling it."),
     SA("Tokaj: the 2013 rules and the sweet styles",
        "Sweetness rungs below a certain number of hods disappeared from Tokaji Aszu labels with the 2013 reform. Give the lowest number a bottle may now carry.",
        "Five puttonyos",
@@ -150,7 +150,7 @@ BANK = [
         "60 grams of residual sugar per litre",
         "60 grams per litre of residual sugar",
         "60 grams residual sugar", "60 grams per litre residual sugar"],
-       "Above the figure the wine is edes, the sweet one, while szaraz, the dry version, is held to a fraction of that sugar, so no szamorodni is bottled in the gap between them. The floor used to sit at the generic European figure for any wine called sweet and was lifted well clear of it, which changed the label on almost nothing, since the category is in practice bottled a good deal sweeter than either number. The same picking can give either style, so the year decides which the cellar ends up with rather than the maker.",
+       "Above the figure the wine is edes, the sweet one, while szaraz, the dry version, is held to a fraction of that sugar, so no szamorodni is bottled in the gap between them. The floor used to sit at the generic European figure for any wine called sweet and was lifted well clear of it, which changed the label on almost nothing, since the category is usually bottled a good deal sweeter than either number. The same picking can give either style, so the year decides which the cellar ends up with rather than the maker.",
        ex=True),
     Q("Tokaj: the 2013 rules and the sweet styles",
       "One Tokaji category stood above Aszu in sweetness and was abolished outright by the 2013 reform. Which name went?",
@@ -161,7 +161,7 @@ BANK = [
     Q("The grapes of Tokaj",
       "Tokaj's aromatic permitted variety is the grape Italy bottles as Moscato Bianco and Greece as Moschato Aspro. Which Hungarian name does it carry?",
       ["Sarga Muskotaly", "Koverszolo", "Budai Zold", "Kabar"], 0,
-      "Sarga means yellow, which is how Hungary marks out the small-berried, finest member of the Muscat family from its coarser relatives. It is permitted in a blend and on its own account, and a varietal bottling is dry, light and scented of orange blossom, which surprises anyone expecting the region to taste only of sweet wine."),
+      "Sarga means yellow, which is how Hungary marks out the small-berried, finest member of the Muscat family from its coarser relatives. It is permitted in a blend and on its own account, and a dry varietal bottling is light and scented of orange blossom, which surprises anyone expecting the region to taste only of sweet wine."),
     SA("The grapes of Tokaj",
        "Bred from Furmint and Bouvier, one permitted Tokaj variety rots early and readily, which is exactly why growers keep a little of it. Name that crossing.",
        "Zeta",
@@ -234,14 +234,14 @@ BANK = [
        "That the wine was made sparkling by a second fermentation in bottle",
        "That the fruit came from one delimited vineyard",
        "That the wine is sweet and fortified"], 0,
-      "Greek law uses it as an ageing claim on wines outside the protected designations, with reds held longer than whites and a stated share of the time spent in barrel. It carries no method claim whatever, and it predates the confusion with the Spanish sparkling wine that now sits beside it on the same shelf."),
+      "Greek law uses it as an ageing claim on wines outside the protected designations, with reds held longer than whites and a stated share of the time spent in barrel. It carries no method claim whatever, and it has nothing to do with the Spanish sparkling wine that may sit beside it on the same shelf."),
     Q("Greek appellations and the words on the label",
       "Pine resin rather than a place defines one protected Greek wine name, and it may be produced across much of the country. What kind of protection does that name hold?",
       ["A traditional designation rather than an origin claim",
        "A protected geographical indication covering the whole country",
        "A protected designation of origin shared by three regions",
        "A trademark held by a growers' association"], 0,
-      "Retsina is defined by the addition of Aleppo pine resin to the fermenting must, so it names a practice rather than a vineyard, and versions tied to a particular area exist alongside it as geographical indications. The resin began as a preservative and a by-product of sealing amphorae, and it stayed on as a taste long after it had stopped being necessary."),
+      "Retsina is defined by the addition of Aleppo pine resin to the fermenting must, so it names a method rather than a vineyard, and versions tied to a particular area exist alongside it as geographical indications. The resin began as a preservative and a by-product of sealing amphorae, and it stayed on as a taste long after it had stopped being necessary."),
     SA("Greek appellations and the words on the label",
        "Most of the Attica vineyard is planted to one hardy white grape, and it is also the usual base for resinated wine. Name it.",
        "Savatiano",
@@ -285,7 +285,7 @@ BANK = [
         "layering marcottage", "layering or marcottage", "marcottage layering",
         "ground layering provignage", "ground layering marcottage",
         "propagation by layering", "layering propagation"],
-       "The trunk above ground is replaced while the root system underneath it carries on, so the plant can be far older than anything visible, and phylloxera has never taken hold in the loose volcanic sand to force a grafted replant. The cane stays joined to its parent the whole time it is rooting, which is what separates the practice both from taking a cutting and from the air layering done above ground on standing wood. It is also why nobody on the island can tell you the age of a vineyard with any confidence.",
+       "The trunk above ground is replaced while the root system underneath it carries on, so the plant can be far older than anything visible, and phylloxera has never taken hold in the loose volcanic sand to force a grafted replant. The cane stays joined to its parent the whole time it is rooting, which is what separates the method both from taking a cutting and from the air layering done above ground on standing wood. It is also why nobody on the island can tell you the age of a vineyard with any confidence.",
        ex=True),
     SA("Santorini and the Aegean",
        "A dry white Santorini bottled at no less than 13.5 per cent and given time in oak carries a name meaning work done through the night. Give the name.",
@@ -317,7 +317,7 @@ BANK = [
     Q("Xinomavro country: Naoussa, Amyndeon and Rapsani",
       "Naoussa admits no grape but Xinomavro, and its vineyards sit on the southeastern flank of a single mountain. Which mountain?",
       ["Mount Vermio", "Mount Parnassos", "Mount Taygetos", "Mount Athos"], 0,
-      "The slope faces southeast between roughly two and four hundred metres, which is what makes ripening red fruit possible that far north. The designation is red only and unblended, and it asks for a year in oak before the wine may be sold; time in bottle beyond that is the producer's decision rather than something the designation demands."),
+      "The slope faces southeast between roughly two and four hundred metres, which is what makes ripening red fruit possible that far north. The designation is red only and unblended, and it asks for a year in oak before the wine may be sold."),
     SA("Xinomavro country: Naoussa, Amyndeon and Rapsani",
        "One Macedonian designation tempers Xinomavro by blending in a softer, fleshier local red grown beside it. Name the designation.",
        "Goumenissa",
@@ -330,7 +330,7 @@ BANK = [
        "Agiorgitiko",
        ["agiorgitiko", "aghiorgitiko", "agiorghitiko", "aghiorghitiko",
         "agiorgitico", "agiorgitiko grape"],
-       "The low ground ripens to a soft, dark, low-acid wine and the high ground gives something far tighter and later, and one name currently covers both, which is the whole case for zoning. The grape is named for Saint George, and its deep colour over gentle tannin makes it the most immediately likeable of the Greek reds."),
+       "The low ground ripens to a soft, dark, low-acid wine and the high ground gives something far tighter and later, which is the whole case made for zoning. The grape is named for Saint George, and its deep colour over gentle tannin makes it the most immediately likeable of the Greek reds."),
     SA("The Peloponnese and the Ionian",
        "Pink-skinned and heavily perfumed, one Peloponnese variety is pressed carefully to keep its wine white, and a cool plateau in Arcadia is its home. Name the grape.",
        "Moschofilero",

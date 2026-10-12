@@ -1,0 +1,493 @@
+{
+ "batch": "floor",
+ "readCount": 103,
+ "total": 103,
+ "findings": [
+  {
+   "file": "js/data-floor.js",
+   "id": "f-marked-glassware",
+   "field": "opts[2]",
+   "problem": "The marked option said to swap the glasses \"with no explanation\" while the reasoning says silence is not the standard and a quiet line is.",
+   "fix": "Option now reads: lift all six and set polished glasses in one trip, with a quiet word and no apology, then pour.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-tired-fino",
+   "field": "opts[2]",
+   "problem": "The marked option said to bin the open bottle; the reasoning sends the remainder to the kitchen rather than the bin.",
+   "fix": "Option now takes the bottle out of service; the three day rule and kitchen route kept.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-blank-cheque",
+   "field": "opts[0]",
+   "problem": "The marked option (two bottles of Saint-Joseph at 110, explain afterwards what you saved him from) was the very plan the reasoning rejects (four or five bottles near 150; never explain afterwards).",
+   "fix": "Option rewritten to the reasoning: four or five bottles of serious Northern Rhone Syrah near 150, and the Clos de la Roche offered at the door as an invitation.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-blank-cheque",
+   "field": "why",
+   "problem": "2015 Burgundy called a firm, structured vintage and the wine \"still shut at eleven years\", an age that changes with the calendar; \"seventy percent\".",
+   "fix": "Now a ripe, concentrated vintage, still young and closed; the percentage sentence reworded.",
+   "source": "Burgundy 2015 vintage character (warm, ripe, concentrated); house rule on volatile facts",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-cloudy-bay-swap",
+   "field": "s, opts[0], why",
+   "problem": "Dog Point described as made by \"the viticulturist and the winemaker who ran Cloudy Bay\" and \"the pair who used to make Cloudy Bay\": they did not run it, and who makes a wine now is a volatile fact about living people.",
+   "fix": "Now: an estate founded by two of Cloudy Bay's early team, its viticulturist and one of its winemakers (a historical fact).",
+   "source": "Dog Point founding history; house rule on volatile facts about living people",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-cloudy-bay-swap",
+   "field": "why",
+   "problem": "\"Option 2\" and \"Option 3\": zero-based indices the screen never shows (options are unnumbered).",
+   "fix": "Options named in words.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-sound-but-unloved",
+   "field": "why",
+   "problem": "\"Option [2] is the nearest miss\" names an invisible index; \"sells out before service ends\" overclaims; Muscadet Sevre unaccented.",
+   "fix": "Option named in words; the open bottle can go to the by-the-glass list; Sevre accented in s and why.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-fragile-seventy-eight",
+   "field": "why",
+   "problem": "\"Option 2 ... option 0 ... option 3\" are invisible indices; \"a forty-eight-year-old cork\" goes wrong next year.",
+   "fix": "Options named in words; \"a cork of that age\".",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it; house rule on volatile facts",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-regulars-same-bottle",
+   "field": "why",
+   "problem": "\"Option 0 / 2 / 3\" invisible indices; \"percent\".",
+   "fix": "Options named in words; \"per cent\".",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-quiet-word-not-drinking",
+   "field": "why",
+   "problem": "Told the reader to charge the host the wine pairing price for the non-alcoholic pairing, against the marked option (\"settle the difference\") and fair dealing.",
+   "fix": "Bill shows six pairings; never charge the wine price for the non-alcoholic one; adjust in the till, not on a line the host reads.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-birthday-sixty-pounds",
+   "field": "why",
+   "problem": "Twice calls the birthday guest \"his wife\"; the scenario never says so.",
+   "fix": "\"she\" and \"her\".",
+   "source": "scenario text",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-last-bottle-gone",
+   "field": "why",
+   "problem": "Claims Produttori del Barbaresco bottles a straight Barbaresco every vintage; in 2002 it released none.",
+   "fix": "\"in almost every vintage\".",
+   "source": "Produttori del Barbaresco 2002 (hail year, no Barbaresco released)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-half-barolo",
+   "field": "why",
+   "problem": "\"drinking well now\" is a volatile drinking-window claim; the Scottish off-sales detail is uncertain law stated as fact; \"sixteen years on it\" moves with the calendar.",
+   "fix": "\"a great vintage\"; \"if your licence or local law does not allow it, say so plainly\"; \"an opened, mature Nebbiolo fades within days\".",
+   "source": "house rule on volatile facts",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-old-chablis",
+   "field": "s, why",
+   "problem": "\"eleven year old\" and \"eleven years on\" go wrong next year; Montee unaccented.",
+   "fix": "Ages removed (the vintage carries it); Montée de Tonnerre.",
+   "source": "house rule on volatile facts; spelling",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-host-orders-barolo",
+   "field": "why",
+   "problem": "\"Barolo at ten years old\" moves with the calendar; blamed acid for stripping sole and turning metallic, where tannin is the culprit with fish.",
+   "fix": "\"A 2016 Barolo still carries firm Nebbiolo tannin ... that tannin turns metallic and stripping against lean sole\".",
+   "source": "WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-fleurie-is-gamay",
+   "field": "why",
+   "problem": "\"its crus may be declassified to Bourgogne rouge\": the route for cru Gamay is the regional Bourgogne appellation as Bourgogne Gamay.",
+   "fix": "\"wine from its crus may be sold under the regional Bourgogne appellation as Bourgogne Gamay\".",
+   "source": "Bourgogne AOC cahier des charges (Bourgogne Gamay, crus du Beaujolais)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-crumbling-cork",
+   "field": "why",
+   "problem": "A stray rebuttal fragment (\"the chipping risk is the inside of the neck and lip, not the shoulder\") answered a claim the reader never sees; prong instruction (\"where the cork sits proudest\") obscure.",
+   "fix": "Plain sentence: pushing it through can chip the inside of the neck and lip; longer blade first down one side, shorter opposite.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-reduction-cornas",
+   "field": "why",
+   "problem": "American \"sulfur\".",
+   "fix": "\"sulphur\".",
+   "source": "house rule: British spelling",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-curtain-at-forty",
+   "field": "s, why",
+   "problem": "\"William Fevre\" unaccented.",
+   "fix": "\"William Fèvre\".",
+   "source": "spelling",
+   "confidence": "low"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-cork-on-the-move",
+   "field": "s",
+   "problem": "\"Special Cuvee\" unaccented.",
+   "fix": "\"Special Cuvée\".",
+   "source": "spelling",
+   "confidence": "low"
+  },
+  {
+   "file": "js/data-floor.js",
+   "id": "f-va-over-line",
+   "field": "s",
+   "problem": "Grape name lower case (\"frappato\").",
+   "fix": "\"Frappato\".",
+   "source": "spelling",
+   "confidence": "low"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-battered-cod-vinegar",
+   "field": "why",
+   "problem": "Reasoning addressed \"the original\" and told the reader the marked lever (No oak) was wrong, so the screen said \"it needs Acid, Bubbles, No oak\" above a paragraph saying otherwise.",
+   "fix": "Rewritten to the reader and to the marked set: acid against vinegar, bubbles against batter, no oak over delicate fried fish; Muscadet the honest second.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-duck-confit-sarladaise",
+   "field": "why",
+   "problem": "\"Correct the levers too ... Body is not one of them\" contradicted needs (acid, body, no oak).",
+   "fix": "Weight explained as matching without piling on; CdP shown as weight that beats the dish; Superiore wood requirement kept.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-baked-vacherin-mont-dor",
+   "field": "why",
+   "problem": "\"The claimed levers are half right ... not body\" contradicted needs (acid, body); \"percent\".",
+   "fix": "Closing line now names acid and matched weight, which is where Vin Jaune overshoots and Crémant falls short.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-butter-poached-lobster",
+   "field": "why",
+   "problem": "Needs include oak while the reasoning argued against oak (\"overt new oak against shellfish roe goes metallic\", an unsupported claim).",
+   "fix": "Oak explained as the measure that meets pure butter; Chablis grand cru wins on acid and salinity against the coral; Chassagne loses on more new oak and less acid.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-ribeye-medium-rare",
+   "field": "why",
+   "problem": "\"Honest levers: tannin, acid, and char bitterness. Body is a consequence\" contradicted needs (tannin, body) and invited an acid pick.",
+   "fix": "Tannin scrubs the fat; weight matched not beaten (Amarone); oak not the lever with char.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-fillet-well-done",
+   "field": "why",
+   "problem": "\"resolved tannin and acid, not low tannin\" contradicted needs (low tannin, acid).",
+   "fix": "Resolved, soft tannin is what low tannin means on this plate.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-venison-saddle",
+   "field": "why",
+   "problem": "\"Weight is a ceiling here, not a requirement\" contradicted needs (acid, body, low tannin); \"salivary proteins ... rare venison supplies both\" is false; Côte-Rôtie unaccented.",
+   "fix": "Weight to match, not overwhelm; protein in meat and saliva; accents in wines and text.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-comte-thirty",
+   "field": "why",
+   "problem": "\"The honest levers are salt and flavour bridge\" contradicted needs (acid, body); Comte and Chateau-Chalon unaccented.",
+   "fix": "Levers acid and matched weight; Sauternes passes both and loses on the bridge and sugar; accents in dish, wines and text.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-thai-green-curry",
+   "field": "needs",
+   "problem": "The reasoning said \"a fourth requirement is missing from the list and belongs there: no tannin\", and \"the item should say so\" spoke to an author.",
+   "fix": "Needs now sweet, low alcohol, acid, low tannin; meta lines rewritten.",
+   "source": "WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-mapo-tofu",
+   "field": "needs, why",
+   "problem": "Acid credited as right (\"the acid cuts the chilli oil\", Chianti \"the acid is right\") but not marked; \"Carbon dioxide works on the same trigeminal channel as capsaicin\" is inaccurate (carbonation acts through TRPA1, capsaicin TRPV1); \"drop that argument\" spoke to an author.",
+   "fix": "Acid added; carbonation called a trigeminal irritant; sanshool line rewritten.",
+   "source": "Wang et al. 2010, carbonation and TRPA1; WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-gochujang-pork-belly",
+   "field": "needs",
+   "problem": "A chilli dish whose reasoning blames ripe tannin for lighting the chilli did not mark low tannin.",
+   "fix": "Low tannin added; reasoning names two constraints.",
+   "source": "WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-fried-chicken-hot-honey",
+   "field": "needs, why",
+   "problem": "Chilli dish without the low-tannin lever; \"percent\"; sugar range low for a fruity Kabinett.",
+   "fix": "Low tannin added and explained; \"per cent\"; thirty to fifty grams.",
+   "source": "WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-goan-vindaloo",
+   "field": "needs",
+   "problem": "The reasoning lists acid against palm vinegar as one of the three requirements, but needs held low tannin instead of acid.",
+   "fix": "Needs now sweet, low alcohol, low tannin, acid; reasoning says four.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-kc-ribs",
+   "field": "needs",
+   "problem": "No oak was marked though the reasoning calls oak a side issue and the marked wine is built on oak-matured base wine; low alcohol, the stated reason the Zinfandel loses, was missing.",
+   "fix": "Needs now sweet, low alcohol, low tannin, bubbles; reasoning rewritten to the set, brand claims generalised.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-biryani-salan",
+   "field": "needs",
+   "problem": "Weight was marked though the marked wine is a light Spätlese under 9 per cent, and the reasoning names low alcohol and sugar as what answers capsaicin.",
+   "fix": "Needs now acid, sweet, low alcohol, low tannin; weight explained as not the lever.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-oysters-mignonette",
+   "field": "needs",
+   "problem": "Low alcohol (\"because alcohol makes heat worse\") marked on a dish with no heat; \"twelve degrees, so nothing heats against the salt\" is unsupported.",
+   "fix": "Needs now acid, no oak; lightness kept as a reason; Sèvre accented.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-gilda-anchovy-olive",
+   "field": "wines, why",
+   "problem": "Manzanilla was the marked answer under an acid lever although the reasoning itself said it has the lowest acidity of the four.",
+   "fix": "Txakoli from Getaria (high acid, unoaked, the Donostia pour with the Gilda) moved into the marked slot, Manzanilla kept as the great alternative; low tannin added for salt anchovy; answer slot index unchanged.",
+   "source": "Getariako Txakolina DO; the Gilda's San Sebastián origin; WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-smoked-eel-horseradish",
+   "field": "needs",
+   "problem": "The reasoning called alcohol \"the lever missing from the claimed list ... the first one\" and spoke to an author.",
+   "fix": "Low alcohol added; low tannin justified (tannin and iron against oily smoked fish).",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-oeuf-mayonnaise",
+   "field": "why",
+   "problem": "\"Low-oak belongs nowhere on this list\" contradicted needs (acid, bubbles, no oak) and pushed an unmarked low-alcohol lever; \"phenolics turn hard against caper salt\" contradicts salt lowering perceived bitterness; rose, Aligote, Macon unaccented.",
+   "fix": "No oak explained against egg yolk; mustard put in proportion; Bandol reject re-argued; accents.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it; WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-vinaigrette-comte",
+   "field": "needs, why",
+   "problem": "A reviewer's note shipped to students (\"House rules: the submitted copy is clean. No em-dashes, no icons, no hedging.\"); the reasoning said to drop the marked No oak and named tannin against bitter leaves as the clash.",
+   "fix": "Needs now acid, body, low tannin; reasoning rewritten; note removed; accents.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "high"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-artichoke-asparagus",
+   "field": "why",
+   "problem": "\"alcohol is what turns grilled green vegetables bitter and hot\" argued for an unmarked lever; Gruner unaccented.",
+   "fix": "Smaragd now loses on riper, broader weight; Grüner accented.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "low"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-lamb-daube",
+   "field": "why",
+   "problem": "\"Salt is the lever the item misses\" spoke to an author; weight not tied to the marked body lever; accents.",
+   "fix": "Salt explained as outside the lever set; weight tied to the braise; Mourvèdre, Provençal, Côte du Py.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-ceps-toast",
+   "field": "why",
+   "problem": "Closing \"Levers: low tannin, acid, light weight, tertiary earth\" named levers outside the fixed vocabulary.",
+   "fix": "Levers are low tannin and acid; frame and earth decide between the two wines that pass.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-lamb-charcoal",
+   "field": "why, wines",
+   "problem": "\"not the Primitivo\" answered an unseen claim; Cotes du Rhone unaccented; \"percent\"; char could suggest the oak lever.",
+   "fix": "Reworded; accents; oak explained as not the lever.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "low"
+  },
+  {
+   "file": "js/data-pairing.js",
+   "id": "p-turbot-beurre-blanc",
+   "field": "why",
+   "problem": "No reason given why a butter sauce takes restrained oak here while the lobster's beurre monté marks oak.",
+   "fix": "One sentence: butter carried by a sharp reduction on a delicate fish, so freshness over wood.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it",
+   "confidence": "low"
+  },
+  {
+   "file": "js/codex21.js",
+   "id": "PAIR_LEVERS",
+   "field": "note",
+   "problem": "Notes disagreed with how the bank marks: oak \"to echo char or smoke\" (no char or smoke dish marks oak; the one oak dish is a butter sauce); bubbles \"to scour fat and salt\"; sweet \"to sit above the dish\" (ignores heat); low tannin \"would clash\" (says nothing); acid ignored acidic dishes.",
+   "fix": "Acid: cut fat and meet acid in the dish; tannin: protein and fat; low tannin: with examples; sweet: match a sweet dish or calm heat; bubbles: lift fat and fry; oak: meet a rich, buttery dish.",
+   "source": "internal consistency: the reasoning contradicted the marked answer or levers shown beside it; WSET food and wine principles (chilli raises perceived bitterness, astringency and alcohol burn; acid in food needs at least as much acid in the wine; bitterness compounds bitterness)",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "The Decanting Ritual",
+   "field": "steps",
+   "problem": "\"Agree the purpose before decanting\" sat last, after the pour; presentation of the bottle and full removal of the capsule were missing, so the rite was out of the examiner's order.",
+   "fix": "Six slots now: agree the purpose; set the station and bring the bottle undisturbed; present and remove the whole capsule; open without lifting from the cradle; pour over the light and stop at the shoulder; taste from the decanter, serve, leave decanter, bottle and cork.",
+   "source": "CMS Service Standards 24.1 (courtofmastersommeliers.org) and CMS Hospitality and Service Standards, as summarised by search; examiner expectations",
+   "confidence": "high"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "Sparkling Wine",
+   "field": "steps",
+   "problem": "Presentation lacked confirming producer, cuvée and vintage; foil not pocketed; no settling after release; serving order and returning the bottle to the bucket missing.",
+   "fix": "Added within the six existing steps; thumb or hand on the cork throughout kept; gate wording kept.",
+   "source": "CMS Service Standards 24.1 (courtofmastersommeliers.org) and CMS Hospitality and Service Standards, as summarised by search; examiner expectations",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "Opening Still Wine",
+   "field": "steps[1], steps[2], steps[6]",
+   "problem": "Foil disposal missing; \"mold\"; taste step read \"CMS rehearsal uses\" a range written with en dashes and no serving order.",
+   "fix": "Foil pocketed; \"mould\"; taste of about 1 to 1.5 oz (30 to 45 ml), then clockwise with the host last, bottle label to the host.",
+   "source": "CMS Service Standards 24.1 (courtofmastersommeliers.org) and CMS Hospitality and Service Standards, as summarised by search; examiner expectations",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "Mise en Place",
+   "field": "steps[2]",
+   "problem": "A crumber is a server's tool; the sommelier's pocket holds corkscrew, flame for the decanting candle and a pen for the order.",
+   "fix": "\"Waiter's corkscrew, matches or a lighter, and a pen in the pocket\".",
+   "source": "CMS Service Standards 24.1 (courtofmastersommeliers.org) and CMS Hospitality and Service Standards, as summarised by search; examiner expectations",
+   "confidence": "low"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "The Practical, as Graded",
+   "field": "steps[2], steps[3], steps[4]",
+   "problem": "\"Hospitality is the tiebreaker\" understates a graded component; \"costs a point\" is invented scoring; step title opened with the banned word.",
+   "fix": "\"Hospitality is graded throughout\"; \"A slip costs marks once\"; \"Rehearse the full rite\".",
+   "source": "CMS Service Standards 24.1 (courtofmastersommeliers.org) and CMS Hospitality and Service Standards, as summarised by search; examiner expectations; house rule on the banned word",
+   "confidence": "medium"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "SERVICE",
+   "field": "steps",
+   "problem": "Seven em dashes and en dash ranges in shipped steps; temperatures in Fahrenheit only.",
+   "fix": "Dashes replaced with colons, semicolons and \"to\"; Celsius added beside Fahrenheit.",
+   "source": "house rule on dashes",
+   "confidence": "low"
+  },
+  {
+   "file": "js/codex6.js",
+   "id": "serviceView",
+   "field": "sub, summary",
+   "problem": "the sub line and the sources summary used the banned word; an em dash in the toggle comment.",
+   "fix": "\"run it with your trainer\", \"house procedure\", colon in the comment.",
+   "source": "house rule on the banned word and dashes",
+   "confidence": "low"
+  }
+ ]
+}

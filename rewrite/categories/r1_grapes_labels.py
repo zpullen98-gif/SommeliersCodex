@@ -1,4 +1,4 @@
-"""Rank I rewrite - Grapes & Labels (50 questions, all multiple choice).
+"""Regionale rewrite - Grapes & Labels (50 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -23,7 +23,7 @@ Pineau de la Loire (South Africa and Loire), the Carmenere and Merlot
 identification (South America), Tinta Roriz and Cencibel (Portugal and Spain),
 Blaufrankisch and Lemberger (Austria), Spatburgunder and Gutedel (Germany),
 Fume Blanc and Petite Sirah (United States), Viura and Macabeo (Spain), Morillon
-(Austria), Melon de Bourgogne (Loire), Brunello and Prugnolo Gentile (Rank II
+(Austria), Melon de Bourgogne (Loire), Brunello and Prugnolo Gentile (Village
 Italy). Naming any of them here alongside its defining clue would have handed
 over another question's answer, and no check catches that.
 
@@ -61,7 +61,7 @@ BANK = [
       "A synonym is the identical plant under another name, so two wines can share a vine and share nothing else whatever. A clone is a selection made within one variety and a crossing is a new variety bred from two parents, so neither word will do instead. The most travelled vines have collected names by the dozen, and the registers that hold them run to hundreds of pages."),
     Q("One vine, many names",
       "Cuttings travelled with growers, soldiers and monks for centuries before anybody kept a register of what was planted where. What is the lasting consequence for today's labels?",
-      ["One variety turns up under a different name in nearly every country that took it up",
+      ["One variety can carry a different name in each country that took it up",
        "Most European varieties died out and a handful of survivors replaced them",
        "Each district ended up with a genuinely different variety of its own",
        "Grape names were standardised early, because the export trade insisted on it"], 0,
@@ -135,7 +135,7 @@ BANK = [
     Q("Reds under other names",
       "Growers in Chinon call the grape Breton, and growers on Bordeaux's Right Bank call the same vine Bouchet. Which variety are both of them talking about?",
       ["Cabernet Franc", "Cabernet Sauvignon", "Malbec", "Merlot"], 0,
-      "Breton has nothing to do with Brittany and is thought to record the name of the man said to have spread the vine through the Loire, while Bouchet is the old Libournais word and survives inside several estate names there. One variety, two districts, and wines that resemble each other very little. It is a clean reminder that a synonym tells you about naming and never about style."),
+      "Breton has nothing to do with Brittany and is thought to record the name of the man said to have spread the vine through the Loire, while Bouchet is the old Libournais word for it. One variety, two districts, and wines that resemble each other very little. It is a clean reminder that a synonym tells you about naming and never about style."),
 
     # ----------------------------------------- whites under other names (6) ---
     Q("Whites under other names",
@@ -161,7 +161,7 @@ BANK = [
       ["Riesling Renano", "Riesling Italico",
        "Either, since the two phrases mean the same thing",
        "Neither, since both name crossings bred from Riesling"], 0,
-      "Renano means of the Rhine and marks the genuine article. The other name belongs to an unrelated high-acid white that carries a different name in nearly every country between Austria and the Black Sea, and nothing but that second word separates the two on an Italian label. Borrowing a famous variety's name for an unrelated grape was ordinary practice, and although modern rules stop new ones being coined the old names stand, which is why Riesling Italico is still a name an Italian label may carry."),
+      "Renano means of the Rhine and marks the genuine article. The other name belongs to an unrelated high-acid white that carries a different name in nearly every country between Austria and the Black Sea, and nothing but that second word separates the two on an Italian label. Borrowing a famous variety's name for an unrelated grape was once commonplace, and although modern rules stop new ones being coined the old names stand, which is why Riesling Italico is still a name an Italian label may carry."),
     Q("Whites under other names",
       "A northern Italian label prints Pinot Bianco and a German one prints Weissburgunder, and a guest assumes two different grapes. Which single variety is in both bottles?",
       ["Pinot Blanc", "Pinot Gris", "Chardonnay", "Chenin Blanc"], 0,
@@ -213,7 +213,7 @@ BANK = [
        "Standing as an old English name for Cabernet Sauvignon",
        "Marking a Bordeaux wine above a set alcoholic strength",
        "Marking any wine built from two or more varieties"], 0,
-      "It descends from clairet, the pale red the region shipped to England in the Middle Ages, and survived in English as a general word for the region's reds. It binds nobody to anything, which is why it also turns up as a fanciful name on bottles from other countries. A guest who asks for it wants red Bordeaux, or something built to resemble it."),
+      "It descends from clairet, the pale red the region shipped to England in the Middle Ages, and survived in English as a general word for the region's reds. Europe now guards it as a traditional expression, and Australia, which once printed it on its own reds, gave it up under its wine agreement with Europe. A guest who asks for it wants red Bordeaux, or something built to resemble it."),
 
     # -------------------------------------------------- labelling by grape (6) --
     Q("Labelling by grape",
@@ -229,10 +229,10 @@ BANK = [
        "Vintage dating, which puts the year of the harvest on the front label",
        "Estate bottling statements, which say who grew the fruit and who bottled it",
        "Protected designations of origin, which tie a name to one delimited place"], 0,
-      "A shopper who has learned six grape names can navigate a shelf drawn from a dozen countries, which is why the practice spread out of California through the New World and into the cheaper European tiers. A place-labelled bottle asks far more of its reader and repays it with far more information."),
+      "A shopper who has learned six grape names can navigate a shelf drawn from a dozen countries, which is why the convention spread out of California through the New World and into the cheaper European tiers. A place-labelled bottle asks far more of its reader and repays it with far more information."),
     Q("Labelling by grape",
       "A grape name fills the front of a bottle and no region appears anywhere on it. What has that grape name said about where the wine grew?",
-      ["Nothing at all, since a variety name carries no origin with it",
+      ["Nothing, since a variety name carries no origin",
        "That the fruit came from the variety's home region",
        "That the wine was made outside Europe",
        "That the fruit was drawn from more than one country"], 0,
@@ -266,9 +266,9 @@ BANK = [
       "A by-the-glass list is arranged by grape, and one European bottle on it names no grape anywhere. Where should it be filed?",
       ["Under the variety its appellation requires",
        "Under its appellation, since no variety is stated",
-       "It cannot honestly be listed by variety at all",
+       "Under the grape most widely planted in the wine's country",
        "Under whichever variety the guest is most likely to expect"], 0,
-      "The wine is made from that grape whether or not the label says so, and a list exists to help a guest choose rather than to reproduce a label word for word. Printing the appellation and the variety together is the usual solution and teaches the guest something on the way. What the heading claims has to be checked against the rulebook behind the name rather than against the label alone."),
+      "The wine is made from that grape whether or not the label says so, and a list exists to help a guest choose rather than to reproduce a label word for word. Printing the appellation and the variety together is the usual solution and teaches the guest something on the way. What the heading claims is checked against the rulebook behind the name rather than the label alone, and where that rulebook allows several grapes the producer's own technical sheet decides it."),
     Q("Labelling by place",
       "Told that a place name implies a grape, a guest concludes that any European label can be decoded that way. Where does the reasoning fail?",
       ["Where an appellation permits several varieties at once",
@@ -284,7 +284,7 @@ BANK = [
        "The name of the company that bottled them"], 0,
       "A single denomination frequently covers several colours, each with its own permitted varieties, its own ceiling on yield and sometimes its own ageing rules. The place is one word and the rulebook behind it runs to many pages. That is the practical reason a place-labelled bottle demands more of its reader than a varietal one does."),
     Q("Labelling by place",
-      "Vineyards in a European village were planted to whatever local practice required, and every buyer for miles knew what that was. What did that leave worth printing on the bottle?",
+      "Vineyards in a European village were planted to whatever local custom required, and every buyer for miles knew what that was. What did that leave worth printing on the bottle?",
       ["The place, because it was the only part that varied",
        "The grape, because buyers wanted it confirmed",
        "The strength, because it varied most from year to year",
@@ -326,14 +326,14 @@ BANK = [
        "That the winemaker trained in Bordeaux",
        "That the wine may lawfully use the region's name",
        "That part of the fruit was bought in from Bordeaux"], 0,
-      "Phrases of this kind borrow a region's name as shorthand for a recipe, say nothing whatever about where the fruit grew, and carry no legal weight anywhere. They are useful to a buyer all the same, since they say in two words what a list of varieties takes a line to say. In Europe such wording runs straight into the protection given to the region's name, which is why it is far commoner on labels written for other markets."),
+      "Phrases of this kind borrow a region's name as shorthand for a recipe, say nothing whatever about where the fruit grew, and give the wine no claim on the region's name. They are useful to a buyer all the same, since they say in two words what a list of varieties takes a line to say. On a label in Europe the wording runs straight into the protection given to the region's name, and American producers coined Meritage to name the same recipe without borrowing that name at all."),
     Q("Blends, and what a label may claim",
       "An estate sells its single varieties cheaply and reserves a blend for its most expensive bottling. What does that arrangement say about blending?",
       ["That blending is a tool for building a better wine, not a sign of a lesser one",
        "That blends are cheaper to produce than single varieties",
        "That the estate's varietal wines failed to qualify for their appellation",
        "That a blend is required at the top of any range"], 0,
-      "Varieties ripen at different moments and cover each other's weaknesses from one year to the next, so a blend can be both more consistent and more complete than any of its parts. The idea that blending hides something comes from the cheapest end of the trade, where it often does. Most of the classic wines of Europe are blends and most of them never say so on the label."),
+      "Varieties ripen at different moments and cover each other's weaknesses from one year to the next, so a blend can be both more consistent and more complete than any of its parts. The idea that blending hides something comes from the cheapest end of the trade, where it often does. Many of the classic wines of Europe are blends and most of those never say so on the label."),
     Q("Blends, and what a label may claim",
       "A pink wine names a black grape on its front label and a guest calls it an error. What should you tell them?",
       ["The label is right, since a rose is made from black grapes given only brief skin contact",
@@ -355,7 +355,7 @@ BANK = [
        "A white wine pressed quickly from the black grape, before it colours",
        "A younger selection of the same variety",
        "A blend of the black grape with a white one"], 0,
-      "Vines throw colour mutations often enough that several familiar varieties exist in more than one colour, each with a settled name and a settled character of its own. This one is fuller and lower in acid than its black counterpart and is a mainstay of the white blends of the Mediterranean south. A pale wine pressed from a black grape is a different thing entirely and has its own vocabulary."),
+      "Vines throw colour mutations often enough that several familiar varieties exist in more than one colour, each with a settled name and a settled character of its own. This one gives full-bodied, fairly low-acid whites and is a mainstay of the white blends of the Mediterranean south. A pale wine pressed from a black grape is a different thing entirely and has its own vocabulary."),
     Q("The words inside a grape's name",
       "Two related whites grown side by side in the Pyrenean foothills are separated on their labels by the words Petit and Gros, and a guest reads that pair as a ranking. What do the two words record?",
       ["The size of the berry, nothing more",

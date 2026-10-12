@@ -1,0 +1,167 @@
+{
+  "batch": "village-8",
+  "modules": [
+    "r2_viticulture_winemaking",
+    "r2_business_sommelier",
+    "r2_austria",
+    "r2_sweet_wines",
+    "r2_australia",
+    "r2_south_africa"
+  ],
+  "readCount": 148,
+  "total": 148,
+  "findings": [
+    {
+      "module": "r2_viticulture_winemaking",
+      "stemStart": "Instead of ordering a thousand plants of one",
+      "field": "stem",
+      "problem": "The stem ended 'Name the practice.', the one word the house rules ban outright.",
+      "fix": "Last sentence now reads 'Name the method.' Answer, accept list and explanation are unchanged. The id moves. check-similarity shows nothing flagged (max ratio 0.233).",
+      "source": "Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_viticulture_winemaking",
+      "stemStart": "Every winter a pair of one-year canes is",
+      "field": "exp",
+      "problem": "The explanation said double Guyot 'suits wider spacing, which is why the Medoc classically trains it' and that single Guyot carries its load 'on one wire'. The Medoc and the Cote d'Or are both planted at about 10,000 vines per hectare, so wider spacing does not explain the Medoc's choice. Both forms also tie down on a single fruiting wire, so 'on one wire' sets up a false contrast.",
+      "fix": "The second sentence now reads: the double form spreads the crop along the wire on both sides of the head and is the Medoc's classic habit, while the single form lays one cane to one side, carries a smaller load and is the Cote d'Or's.",
+      "source": "Standard training geometry: Guyot simple and double both use one fruiting wire; Medoc and Cote d'Or planting densities are comparable",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_business_sommelier",
+      "stemStart": "Five 150 ml pours come out of a",
+      "field": "exp",
+      "problem": "The explanation used the American spelling 'realized'.",
+      "fix": "Changed 'realized' to 'realised'.",
+      "source": "Codex house rule: British spelling",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_business_sommelier",
+      "stemStart": "Short and quick-selling is the only safe shape",
+      "field": "stem",
+      "problem": "The stem gave its own answer away. It described the page as 'quick-selling' and then asked what the page's length is matched to (the answer: how fast each wine sells). A student could reply 'how quickly they sell' just by echoing the stem.",
+      "fix": "The stem now states the open bottle's few days and asks for the other term: 'With no preservation behind it, a bottle opened for the glass list stays honest for only a few days, so the page is kept short. What is its length being matched to?' The first rewording used 'two or three' and tripped compound_answer_problems, so it was replaced. The explanation was rewritten so it no longer just repeats the stem. Answer and accept list are unchanged. The build passes, check-similarity shows nothing flagged, check-stem-echo is clean, and the id moves.",
+      "source": "Review standard: a stem must not be answerable from its own words",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_austria",
+      "stemStart": "A Krems grower interplants five white varieties, harvests",
+      "field": "exp",
+      "problem": "The explanation ended 'not the practice itself', using the banned word.",
+      "fix": "It now ends 'not the field blend itself'.",
+      "source": "Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_sweet_wines",
+      "stemStart": "Nine grams of sugar sit in a still",
+      "field": "exp",
+      "problem": "The last clause had the logic backwards. It said high-acid Chenin 'carries less sweetness on its label than the palate reports'. But the acidity concession exists so that the label word can follow the palate. What the label understates is the analysed sugar, not what the palate perceives.",
+      "fix": "The clause now reads: 'which is why a high-acid Chenin so often wears a drier word on its label than its sugar figure alone would earn.'",
+      "source": "EU Reg 2019/33 Annex III part B: sec up to 9 g/L when total acidity is within 2 g/L of the sugar, and demi-sec up to 18 g/L when it is within 10 g/L",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_sweet_wines",
+      "stemStart": "Recorked and refrigerated, a botrytis wine can pour",
+      "field": "exp",
+      "problem": "The explanation called sugar 'a preservative in the jam sense' that 'denies microbes the water they need'. At 100 to 200 g/L the water activity barely moves. Sweet table wines are less stable microbially than dry ones, which is why they are bottled with more sulphur or sterile-filtered. The explanation also said they hold 'days longer than anything dry', which a dry fortified wine such as Sercial or amontillado disproves.",
+      "fix": "Rewritten: sugar is the buffer which, together with high acidity and the generous sulphur sweet wines are bottled with, slows the open bottle's decline, and the sweetness masks the first flavour costs of oxidation. The comparison is now limited to 'the safest unfortified by-the-glass category ... days longer than any dry table wine'. The answer (its sugar) and the accept list are unchanged.",
+      "source": "Wine microbiology: residual-sugar wines need higher free SO2 or sterile filtration because sugar at table-wine levels feeds yeast and bacteria rather than starving them",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_australia",
+      "stemStart": "Growers spent years and serious money litigating over",
+      "field": "exp",
+      "problem": "The explanation said 'French law fights over practices', using the banned word.",
+      "fix": "It now reads 'French law fights over how a wine is made'.",
+      "source": "Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_australia",
+      "stemStart": "In the mid-1980s a South Australian government program",
+      "field": "stem",
+      "problem": "The stem used the American spelling 'program' twice in the Codex's own prose. The corpus elsewhere has 'programme' 22 times, and the only other 'program' is the proper name Label Integrity Program, which stays.",
+      "fix": "Both instances changed to 'programme'. The answer is unchanged, and the existing 'vine pull' accept entry grades 'vine pull programme' by containment, so the accept list was not widened. check-similarity shows nothing flagged, and the id moves.",
+      "source": "Codex house rule: British spelling; corpus convention (programme 22, program 1 outside the proper noun)",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_south_africa",
+      "stemStart": "Traditional-method Cape sparkling wine once borrowed French words",
+      "field": "opts",
+      "problem": "The distractor 'departs far enough from Champagne's practice' used the banned word.",
+      "fix": "The distractor now reads 'departs far enough from the Champagne process that the French term amounted to false description'. It is still wrong and about the same length, so the key and length balance are unaffected (the build reports a 2/2/2/2 length rank).",
+      "source": "Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Instead of ordering a thousand plants of one",
+      "verdict": "kept",
+      "why": "The banned word sat in the stem, so only a stem edit could remove it. 'Name the method.' asks for the same thing, gives nothing away, and the accept list still grades massal selection, selection massale and mass selection while refusing clonal selection. The id move is unavoidable."
+    },
+    {
+      "stemStart": "Every winter a pair of one-year canes is",
+      "verdict": "kept",
+      "why": "The original's causal claim was wrong: Medoc and Cote d'Or plantings are both dense, close to 10,000 vines a hectare, so wider spacing cannot be why the Medoc trains double Guyot, and both forms tie down on one fruiting wire. The new sentence keeps the correct attributions (Guyot double in the Medoc, Guyot simple in the Cote d'Or) and drops the false reason. The module docstring's banned word before 'cooperage' was also changed, to 'cooperage habit', in the same diff without a log entry; that is the house rule applied to unshipped prose and is kept."
+    },
+    {
+      "stemStart": "Five 150 ml pours come out of a",
+      "verdict": "kept",
+      "why": "'realized' to 'realised' is the house spelling and nothing else moved."
+    },
+    {
+      "stemStart": "Short and quick-selling is the only safe shape",
+      "verdict": "amended",
+      "why": "The stem change was needed, since 'quick-selling' handed over the answer and no explanation edit could fix that. But the replacement said the bottle stays honest for a few days 'so the page is kept short' and then asked what the length is matched to, so by the stem's own logic 'the few days of open life' was a right answer the grader refuses. The stem now reads 'With no preservation behind it, a bottle opened for the glass list stays honest for only a few days. Set against that window, what is the length of the page being matched to?', which makes the window the fixed side and asks for the other one. I also added turnover, rate of turnover, how fast it turns over and how quickly it turns over, the trade's own word for rate of sale, which the list refused. The reviewer's new explanation is kept. Build, stem echo and similarity (max 0.323) are clean; the id moves once relative to HEAD, as it already did."
+    },
+    {
+      "stemStart": "A Krems grower interplants five white varieties, harvests",
+      "verdict": "kept",
+      "why": "The banned word is gone and 'the DAC fenced the city's name, not the field blend itself' is accurate: Gemischter Satz is a general Austrian term, and only Wiener Gemischter Satz DAC is restricted to Vienna. The em dash taken out of the comment above the Thermenregion entry in the same diff (unlogged) is also kept."
+    },
+    {
+      "stemStart": "Nine grams of sugar sit in a still",
+      "verdict": "kept",
+      "why": "The original was backwards. The acidity tolerance exists because high acid makes a wine taste drier than its sugar, so the label agrees with the palate and understates the analysis. The new clause says exactly that, and the 12 to 18 g/L demi-sec band with acidity within 10 g/L matches Reg 2019/33 Annex III Part B."
+    },
+    {
+      "stemStart": "Recorked and refrigerated, a botrytis wine can pour",
+      "verdict": "amended",
+      "why": "The reviewer was right to drop the jam claim, because table-wine sugar levels barely lower water activity, and right that dry fortified wines outlast sweet ones. The rewrite brought in two new problems. It credited sugar itself with slowing the decline, when its real part is masking (sweetness and weight cover the first flavour costs of oxidation) and the chemical slowing comes from sulphur and acidity. It also said 'the wine's high acidity', which overstates Sauternes, and 'days longer than any dry table wine', which vin jaune, unfortified and dry, disproves. The text now gives sugar the masking role, gives the slowing to acidity and the generous bottling sulphur, and ends 'one of the safest by-the-glass categories in the building, outlasting the dry whites and reds poured beside it by days.' The answer and accept list are unchanged."
+    },
+    {
+      "stemStart": "Growers spent years and serious money litigating over",
+      "verdict": "kept",
+      "why": "'French law fights over how a wine is made' keeps the original contrast (French rules on method, Australian GIs only on boundaries) without the banned word."
+    },
+    {
+      "stemStart": "In the mid-1980s a South Australian government program",
+      "verdict": "kept",
+      "why": "The American spelling sat in the stem, so only a stem edit could fix it. The proper name Label Integrity Program correctly stays. 'vine pull programme', 'vine pull program' and 'the vine pull' all still grade through the 'vine pull' entry by containment, and a bare 'programme' does not, so the accept list did not need touching. The id move is unavoidable."
+    },
+    {
+      "stemStart": "Traditional-method Cape sparkling wine once borrowed French words",
+      "verdict": "kept",
+      "why": "The distractor stays wrong and stays about the same length, and the build reports a 2/2/2/2 length rank. 'the Champagne process' carries the same meaning without the banned word."
+    }
+  ]
+}

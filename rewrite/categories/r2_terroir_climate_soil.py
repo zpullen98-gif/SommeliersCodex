@@ -1,11 +1,11 @@
-"""Rank II rewrite - Terroir: Climate & Soil (56 questions: 28 MC, 28 short answer).
+"""Village rewrite - Terroir: Climate & Soil (56 questions: 28 MC, 28 short answer).
 
-Certified level, pitched a full step above the Rank I "Viticulture & Winemaking"
-soil and climate blocks and above the Rank I "Soil & Terroir" category that will
+Certified level, pitched a full step above the Regionale "Viticulture & Winemaking"
+soil and climate blocks and above the Regionale "Soil & Terroir" category that will
 eventually sit under this one. Where Introductory asks what a continental climate
 is, this asks which measurement separates a continental site from a maritime one
 at the same mean temperature. Where Introductory says slate holds heat, this asks
-what the second job of a fractured rock is. No task here repeats a Rank I task.
+what the second job of a fractured rock is. No task here repeats a Regionale task.
 
 The running order is a single descent in scale. It starts at the whole region and
 narrows to the canopy, then walks the site down the hill, then goes into the
@@ -144,7 +144,7 @@ BANK = [
     Q("Climate models and the metrics that separate them",
       "Take two regions with an identical mean annual temperature: in one, the hottest and coldest months lie eight degrees apart, in the other twenty-four. Which measure is that gap?",
       ["Continentality", "Diurnal range", "Heat summation", "Mean July temperature"], 0,
-      "Continentality is the spread between the mean temperature of the warmest month and that of the coldest, and it is the figure that separates a continental site from a maritime one when the annual mean cannot. Diurnal range measures the same kind of spread over a day rather than a year, and the two are independent of each other."),
+      "Continentality is the spread between the mean temperature of the warmest month and that of the coldest, and it is the figure that separates a continental site from a maritime one when the annual mean cannot. Diurnal range measures the same kind of spread over a day rather than a year; the two often travel together inland, but they are separate measurements and a site can be high on one and modest on the other."),
     Q("Climate models and the metrics that separate them",
       "Warmest-month mean of twenty-two degrees, coldest-month mean of one degree, rainfall spread fairly evenly through the year. Which climate model do those figures together indicate?",
       ["Continental", "Maritime", "Mediterranean", "Tropical"], 0,
@@ -203,7 +203,7 @@ BANK = [
        "High-latitude air holds more moisture, which traps heat against the slope",
        "Days are shorter at high latitude, so each hour of sunshine must do more work",
        "Soils at high latitude are darker and absorb more of the energy reaching them"], 0,
-      "Energy per square metre depends on the angle at which light strikes the ground, and the closer that angle comes to perpendicular the more of the beam a given patch of ground collects. Near the equator the sun is close to overhead and a slope gains almost nothing, which is why aspect is an obsession on the Mosel and an irrelevance in Mendoza, where elevation does the work instead."),
+      "Energy per square metre depends on the angle at which light strikes the ground, and the closer that angle comes to perpendicular the more of the beam a given patch of ground collects. Towards the tropics the summer sun stands close to overhead and a slope gains little, which is why aspect is an obsession on the Mosel and a secondary matter in Mendoza, where elevation does the work instead."),
     Q("Slope, aspect, elevation and cold-air drainage",
       "Set sunlight aside: the celebrated sites in steep regions still sit on the slope rather than on the flat ground below it. What has gravity done to those two soils over the centuries?",
       ["Fine material has washed downhill from the slope to the flat",
@@ -215,7 +215,7 @@ BANK = [
       "Vineyards planted within a few degrees of the equator ought to lose all their acidity, and above two thousand metres they do not. Which feature of high tropical sites rescues them?",
       ["A very wide diurnal swing", "A short growing season",
        "A pronounced winter dormancy", "Long summer daylight hours"], 0,
-      "Thin air at altitude radiates its heat away fast after sunset, so tropical highland sites can run twenty degrees between afternoon and dawn. Nothing else is available to them: there is no winter to enforce dormancy and no seasonal variation in day length at all, so the diurnal swing is doing all of the work."),
+      "Thin air at altitude radiates its heat away fast after sunset, so tropical highland sites can run twenty degrees between afternoon and dawn, and those cold nights hold the acid while the lapse rate takes the mean down as well. The other routes are closed to them: there is no winter to enforce dormancy and almost no seasonal change in day length."),
     SA("Slope, aspect, elevation and cold-air drainage",
        "Climbing a hillside costs a vineyard about six-tenths of a degree of mean temperature for every hundred metres gained. Name that rate of cooling with height.",
        "The lapse rate",
@@ -474,7 +474,7 @@ BANK = [
        "European law folds into terroir something that is neither weather nor rock: the accumulated local decisions about variety, training, pruning and picking date. Name that component.",
        "The human factor",
        ["human factor", "human element", "savoir faire", "the human component"],
-       "The INAO definition explicitly includes human practices, which is why an appellation can specify pruning method and yield alongside its boundary. It also settles an old argument honestly: a delimitation records where growers have historically succeeded, so the map is partly a record of human choice rather than a pure reading of the ground."),
+       "The INAO definition explicitly includes human know-how, which is why an appellation can specify pruning method and yield alongside its boundary. It also settles an old argument honestly: a delimitation records where growers have historically succeeded, so the map is partly a record of human choice rather than a pure reading of the ground."),
     SA("What terroir explains and what it does not",
        "Of everything gathered under the word terroir, one component has by far the largest measured effect on wine style, and it is not the rock. Name it.",
        "Climate",

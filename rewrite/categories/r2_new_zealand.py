@@ -1,6 +1,6 @@
-"""Rank II rewrite - New Zealand (13 questions: 7 MC, 6 short answer).
+"""Village rewrite - New Zealand (13 questions: 7 MC, 6 short answer).
 
-Certified level, pitched above the committed Rank I New Zealand category. Rank I
+Certified level, pitched above the committed Regionale New Zealand category. Regionale
 places the regions on the map; these thirteen separate the ground inside them:
 the Awatere against the Wairau and the clay valleys behind both, the Central
 Otago basins and what a hundred metres of elevation does between them, the
@@ -9,7 +9,7 @@ terrace, and the nested names of Canterbury. The running order is built around
 one idea: walk the contested ground from Marlborough south and back up the
 North Island, then finish with the three things the industry decided as one
 body rather than winery by winery - a clone, a statute and a closure. Nothing
-here repeats a Rank I task.
+here repeats a Regionale task.
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py.
@@ -47,7 +47,7 @@ BANK = [
     # ------------------------------------------------ Inside Marlborough (2) -
     Q("Inside Marlborough",
       "Marlborough wineries holding fruit in both of the province's big valleys crush their Wairau blocks first every vintage; the Awatere lots follow as much as a fortnight later, greener and sharper. What holds the Awatere back?",
-      ["Higher terraces, nearer the cold open sea",
+      ["Higher, more exposed terraces nearer the cold open sea, where heat builds slowly all season",
        "Pick dates written into grower contracts, staggered to keep the press hall clear",
        "Heavy clay beneath the whole valley, holding cold water against the roots into summer",
        "A full degree more latitude, under which autumn light fails sooner"], 0,
@@ -81,7 +81,7 @@ BANK = [
     Q("Central Otago's basins",
       "Under four hundred millimetres of rain falls in a year on parts of the Cromwell Basin, and Bendigo's deep, free-draining terraces are the thirstiest ground in it. Which intervention makes a vineyard there possible at all?",
       ["Irrigation", "Wind machines", "Shade cloth", "Netting"], 0,
-      "Central Otago is the one New Zealand region where drought rather than rain sets the farming calendar, and drip lines went in with the vines almost everywhere. Wind machines answer spring frost, a real Otago hazard but a different one; netting keeps birds off ripening fruit; shade cloth tempers sun on the berry; and none of them puts water into gravel that cannot hold it."),
+      "Central Otago is the driest of New Zealand's wine regions, and drip lines went in with the vines almost everywhere. Wind machines answer spring frost, a real Otago hazard but a different one; netting keeps birds off ripening fruit; shade cloth tempers sun on the berry; and none of them puts water into gravel that cannot hold it."),
 
     # ---------------------------------------- The Martinborough Terrace (1) --
     Q("The Martinborough Terrace",
@@ -102,15 +102,15 @@ BANK = [
       "The old riverbed lies inland of Hastings, out of the afternoon breeze that cools Te Awanga and the coastal blocks, and its almost soil-free shingle stores heat and releases it into the evening, stretching the warm hours of every ripening day. The same stones are poor and free-draining, so crops stay naturally small, which is the other half of the district's concentration; the land itself is low-lying, and growers there irrigate freely."),
     SA("The Gimblett Gravels",
        "Printing the Gimblett Gravels name on a label takes more than farming inside the district: the growers' association licenses the words only when a wine's sourcing clears a bar stricter than the one national labelling law sets for any stated region. Give that minimum share.",
-       "95 percent",
+       "At least 95 per cent",
        ["95 percent", "95", "95%", "95 per cent", "ninety five percent",
         "ninety five", "at least 95 percent", "at least 95%",
         "a minimum of 95 percent", "95 percent of the fruit",
         "ninety five per cent", "at least 95 per cent",
         "at least ninety five percent", "minimum 95 percent",
         "95 percent minimum", "95 percent of the grapes",
-        "ninety five percent of the fruit"],
-       "Ninety-five percent of the fruit must come off the mapped shingle itself, and the name is enforced as a trademark held by the growers' association rather than as a registered geographical indication. The rule is the district insisting that its soil boundary is the whole point: a wine drawing meaningfully on other ground may not borrow the address.",
+        "ninety five percent of the fruit", "a minimum of 95 per cent", "95 per cent of the fruit", "at least ninety five per cent", "minimum 95 per cent", "95 per cent minimum", "95 per cent of the grapes", "ninety five per cent of the fruit"],
+       "Ninety-five per cent of the fruit must come off the mapped shingle itself, and the name is enforced as a trademark held by the growers' association rather than as a registered geographical indication. The rule is the district insisting that its soil boundary is the whole point: a wine drawing meaningfully on other ground may not borrow the address.",
        ex=True),
 
     # -------------------------------------- Names on the map and the law (2) -

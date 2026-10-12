@@ -1,9 +1,9 @@
-"""Rank II rewrite - Italy North (62 questions: 27 MC, 35 short answer).
+"""Village rewrite - Italy North (62 questions: 27 MC, 35 short answer).
 
-Certified level, pitched deliberately above the Rank I "Italy" category. Where
-Rank I names the grape behind Barolo, this asks which soil formation softens the
-western communes; where Rank I says Prosecco ferments in tank, this asks what a
-Rive means on the label. Nothing here repeats a Rank I task.
+Certified level, pitched deliberately above the Regionale "Italy" category. Where
+Regionale names the grape behind Barolo, this asks which soil formation softens the
+western communes; where Regionale says Prosecco ferments in tank, this asks what a
+Rive means on the label. Nothing here repeats a Regionale task.
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py.
@@ -48,8 +48,8 @@ BANK = [
       "The Tortonian Sant'Agata Fossili marls under La Morra and Barolo hold water and give a rounder, more scented wine. The older Serravallian soils of Serralunga and Monforte carry more sand and sandstone and build a firmer, slower one."),
     Q("Barolo and Barbaresco",
       "Since 2010 a Barolo label may carry the name of a delimited vineyard site alongside the denomination. What is the official term for such a site?",
-      ["Menzione Geografica Aggiuntiva", "Contrada", "Climat", "Sori"], 0,
-      "The MGA map put roughly 170 named sites on a legal footing, ending a century of informal cru names invented by producers. It records boundaries only and makes no claim about quality, unlike Burgundy's hierarchy."),
+      ["Menzione Geografica Aggiuntiva", "Contrada", "Climat", "Unita Geografica Aggiuntiva"], 0,
+      "The MGA map put roughly 170 named sites on a legal footing, ending a century of informal cru names invented by producers. It records boundaries only and makes no claim about quality, unlike Burgundy's hierarchy. Chianti Classico and Soave chose a different term, Unita Geografica Aggiuntiva, for their own named areas."),
     Q("Barolo and Barbaresco",
       "Iron-firm tannin and glacially slow evolution mark the wines of one narrow eastern ridge in the Barolo zone. Which commune sits along it?",
       ["Serralunga d'Alba", "La Morra", "Verduno", "Novello"], 0,
@@ -69,7 +69,7 @@ BANK = [
        "Fruit from a young plot, or a cru declassified in a difficult year, is usually bottled under a broader Nebbiolo denomination created in 1994. Name it.",
        "Langhe Nebbiolo",
        ["langhe nebbiolo", "langhe nebbiolo doc", "nebbiolo langhe doc"],
-       "Langhe is the catch-all denomination for the hills either side of the Tanaro and takes wines that fall outside the cru rules. Nebbiolo d'Alba is a separate and more tightly drawn DOC, and it excludes the Barolo and Barbaresco vineyards entirely."),
+       "Langhe is the catch-all denomination for the hills either side of the Tanaro and takes wines that fall outside the cru rules. Nebbiolo d'Alba is a separate and older DOC, dating from 1970 and drawn chiefly across the Roero on the far bank of the Tanaro."),
     SA("Barolo and Barbaresco",
        "Nearly all of the Barbaresco zone lies in three villages, with a fragment of Alba making up the rest. Name the three villages.",
        "Barbaresco, Neive and Treiso",
@@ -102,7 +102,7 @@ BANK = [
     Q("Piedmont beyond Nebbiolo",
       "North of Turin one white grape serves for a dry wine, for a metodo classico and for a passito, all under a single denomination. Which grape?",
       ["Erbaluce", "Arneis", "Favorita", "Nascetta"], 0,
-      "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito dried for years."),
+      "Erbaluce di Caluso covers all three styles, which is unusual for one DOCG. High acidity is what makes the grape work in every register, including a passito whose grapes dry through the winter and whose wine then ages for years."),
     Q("Piedmont beyond Nebbiolo",
       "Raspberry and rose scent a sweet, lightly sparkling red made around Acqui Terme. Which grape is pressed for it?",
       ["Brachetto", "Freisa", "Bonarda Piemontese", "Croatina"], 0,
@@ -122,7 +122,7 @@ BANK = [
        "Piedmont's traditional-method sparkling DOCG must be vintage-dated and rest at least thirty months on its lees. Name it.",
        "Alta Langa",
        ["alta langa", "alta langa docg", "alta langa metodo classico"],
-       "Pinot Nero and Chardonnay, alone or together, must supply at least ninety percent, with up to a tenth from other non-aromatic Piedmontese varieties. The vines sit high in the hills south of the Langhe where Nebbiolo would never ripen. The compulsory vintage date is the detail that separates it from most Italian metodo classico."),
+       "Pinot Nero and Chardonnay, alone or together, must supply at least ninety per cent, with up to a tenth from other non-aromatic Piedmontese varieties. The vineyards sit high in the upper Langa and the neighbouring hills, where cool nights hold the acidity a base wine needs. The compulsory vintage date is the detail that separates it from most Italian metodo classico."),
     SA("Piedmont beyond Nebbiolo",
        "Dolcetto's most structured expression carries a DOCG named for a town in the southern Langhe. Name that town.",
        "Dogliani",
@@ -132,7 +132,7 @@ BANK = [
     # ------------------------------------ Alto Piemonte and Valle d'Aosta (6) -
     Q("Alto Piemonte and Valle d'Aosta",
       "The Sesia river divides Alto Piemonte's two DOCGs between separate provinces. Which of them lies on the western bank?",
-      ["Gattinara", "Ghemme", "Boca", "Lessona"], 0,
+      ["Gattinara", "Ghemme", "Boca", "Fara"], 0,
       "Gattinara sits west of the Sesia in the province of Vercelli, Ghemme east of it in Novara. Both are Nebbiolo, called Spanna here, and both may be softened with a little Vespolina or Uva Rara."),
     Q("Alto Piemonte and Valle d'Aosta",
       "Pink acidic volcanic rock left by a collapsed supervolcano underlies the vineyards at Boca. What is that rock called?",
@@ -151,12 +151,14 @@ BANK = [
        "Crossing out of Piedmont into Valle d'Aosta, Nebbiolo changes name once again. What is it called there?",
        "Picotendro",
        ["picotendro", "picotener", "picoutener", "picotendro or picotener"],
-       "Donnas is the valley's Nebbiolo denomination, sitting just upstream of Carema on the same stretch of the Dora Baltea. Chiavennasca in Valtellina and Spanna in Alto Piemonte are the other regional names for the identical grape."),
+       "Donnas is the valley's best-known Nebbiolo denomination, sitting just upstream of Carema on the same stretch of the Dora Baltea. Chiavennasca in Valtellina and Spanna in Alto Piemonte are the other regional names for the identical grape."),
     SA("Alto Piemonte and Valle d'Aosta",
        "A white variety shared with the Swiss Valais gives Valle d'Aosta a saline, high-acid wine of real concentration. Name that grape.",
        "Petite Arvine",
-       ["petite arvine", "arvine", "petite arvine grape", "arvine grape"],
-       "The upper Rhone and the upper Dora Baltea sit either side of the same Alpine watershed, and varieties crossed the passes long before borders mattered. Cornalin made the same journey and is the Valais's Humagne Rouge, while Fumin and Petit Rouge are Aosta natives."),
+       ["~petite arvine", "petit arvine", "arvine", "petite arvine grape", "arvine grape",
+        "petite arvine variety"],
+       "The upper Rhone and the upper Dora Baltea sit either side of the same Alpine watershed, and varieties crossed the passes long before borders mattered. Cornalin made the same journey and is the Valais's Humagne Rouge, while Fumin and Petit Rouge are Aosta natives.",
+       ex=True),
 
     # ------------------------------------------------------------ Lombardy (8)
     Q("Lombardy",
@@ -194,12 +196,12 @@ BANK = [
        "Sforzato di Valtellina",
        ["sforzato di valtellina", "sforzato", "sfursat", "sfursat di valtellina",
         "sforzato valtellina"],
-       "Sfursat is the dialect form and appears on plenty of labels. Both it and Amarone are legally dry, each disciplinare capping residual sugar, and the fourteen percent floor here is written into the rules."),
+       "Sfursat is the dialect form and appears on plenty of labels. Both it and Amarone are legally dry, each disciplinare capping residual sugar, and the fourteen per cent floor here is written into the rules."),
     SA("Lombardy",
        "Franciacorta sits on stony debris pushed into low hills by a glacier retreating from Lake Iseo. What is that landform called?",
        "Moraine",
        ["moraine", "glacial moraine", "morainic hills", "moraine amphitheatre"],
-       "The amphitheatre of moraine drains hard and warms early, which suits early-picked base wine for sparkling. Lugana on the other side of the lake district sits on the heavy clay the same glaciers left behind instead."),
+       "The amphitheatre of moraine drains hard and warms early, which suits early-picked base wine for sparkling. Lugana on the other side of the lake district sits instead on the heavy clay that the Garda glacier left behind."),
 
     # ---------------------------------------------- Valpolicella and Soave (8)
     Q("Valpolicella and Soave",
@@ -244,7 +246,7 @@ BANK = [
     Q("Prosecco and the rest of the Veneto",
       "On a Conegliano Valdobbiadene label one word introduces a single steep hillside belonging to a named village. Which word?",
       ["Rive", "Contrada", "Sori", "Bricco"], 0,
-      "There are forty-three of them, and a Rive wine must be hand-harvested and carry a vintage. The word is the local dialect for a steep slope rather than a legal quality tier."),
+      "There are forty-three of them, and a Rive wine must be hand-harvested and carry a vintage. The word itself is local dialect for a steep slope, which is exactly the ground these sites occupy."),
     Q("Prosecco and the rest of the Veneto",
       "A cloudy Prosecco refermented in bottle and left undisgorged on its lees carries which traditional name?",
       ["Col Fondo", "Chiaretto", "Ripasso", "Passito"], 0,
@@ -252,7 +254,7 @@ BANK = [
     Q("Prosecco and the rest of the Veneto",
       "Volcanic hills between Soave and Vicenza grow a white grape so high in acid that it is used almost only for sparkling wine. Which grape?",
       ["Durella", "Vespaiola", "Garganega", "Tai"], 0,
-      "Durella takes its name from the hardness of its skin and keeps searing acidity even when fully ripe. Long lees ageing is what makes the traditional-method wines approachable, though tank method still accounts for the larger share of production."),
+      "Durella takes its name from the hardness of its skin and keeps searing acidity even when fully ripe. Long lees ageing is what makes the traditional-method wines approachable, and tank-method wines are made from it as well."),
     SA("Prosecco and the rest of the Veneto",
        "Within Valdobbiadene a single steep hill of about a hundred hectares is the most prized site of the whole denomination. Name it.",
        "Cartizze",
@@ -273,7 +275,7 @@ BANK = [
        "Volcanic cones rise straight out of the plain southwest of Padua and carry a DOCG for sweet Moscato Giallo. Name those hills.",
        "Colli Euganei",
        ["colli euganei", "euganei", "euganean hills", "colli euganei docg"],
-       "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are old volcanic intrusions that never erupted through the surface, so they stand isolated above flat farmland."),
+       "The wine is Fior d'Arancio, orange blossom, which is exactly what Moscato Giallo smells of. The hills are the worn remains of volcanic activity tens of millions of years old, which is why they stand isolated above flat farmland."),
 
     # ------------------------------------------------- Friuli-Venezia Giulia (6)
     Q("Friuli-Venezia Giulia",
@@ -312,18 +314,18 @@ BANK = [
       "The alluvial gravel at Gries is warm and free-draining, which suits a late-ripening variety on a valley floor. Lagrein is a descendant of Teroldego and shows the same dark colour and bitter-cherry edge."),
     Q("Trentino-Alto Adige",
       "Italy's first denomination created specifically for traditional-method sparkling wine sits in the mountains along the upper Adige. Which denomination?",
-      ["Trento DOC", "Franciacorta", "Conegliano Valdobbiadene", "Asti"], 0,
+      ["Trento", "Franciacorta", "Conegliano Valdobbiadene", "Asti"], 0,
       "Trento was recognised in 1993 for metodo classico alone, drawing on vineyards planted high on both valley walls. Altitude supplies the acidity that a base wine for sparkling needs."),
     SA("Trentino-Alto Adige",
        "Pinot Bianco that stays fresh for decades comes from a village on porphyry sand west of Bolzano. Name that village.",
        "Terlano",
        ["terlano", "terlan", "terlano doc", "terlaner"],
-       "The sandy quartz porphyry soils are unusually rich in potassium, which growers there credit for the wine's structure and longevity. Old bottles are released from the cellar as Rarita after at least ten years on the lees."),
+       "The sandy quartz porphyry soils are unusually rich in potassium, which growers there credit for the wine's structure and longevity. The village cooperative holds some of it on its fine lees in tank for a decade or more before bottling it as Rarita."),
     SA("Trentino-Alto Adige",
        "Sylvaner, Kerner and Gruner Veltliner grow up a narrow valley running from Bolzano toward the Brenner pass. Name that valley.",
        "Valle Isarco",
        ["valle isarco", "eisacktal", "eisacktaler", "isarco valley", "valle isarco eisacktal"],
-       "It is the coldest and highest of Alto Adige's zones, which is why the grape list reads more Austrian than Italian. The wines are lean, high-acid and aromatic rather than broad."),
+       "It is the northernmost of Alto Adige's zones and among its coolest and highest, which is why the grape list reads more Austrian than Italian. The wines are lean, high-acid and aromatic rather than broad."),
     SA("Trentino-Alto Adige",
        "Trentino's one notable native white is dried on racks until Holy Week to make the region's Vino Santo. Name the grape.",
        "Nosiola",
@@ -333,7 +335,7 @@ BANK = [
        "Mozart's Don Giovanni calls for a dark, soft red from Trentino by name in its final act. Name the grape.",
        "Marzemino",
        ["marzemino", "marzemino grape", "marzemino d'isera"],
-       "Isera in the Vallagarina is its stronghold, on basalt soils south of Rovereto. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept."),
+       "Isera in the Vallagarina is its stronghold, on basalt soils across the Adige from Rovereto. The wine is fragrant and low in tannin, meant to be drunk within a few years rather than kept."),
 
     # ---------------------------------------------- Liguria and Emilia-Romagna (4)
     Q("Liguria and Emilia-Romagna",

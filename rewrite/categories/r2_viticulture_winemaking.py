@@ -1,8 +1,8 @@
-"""Rank II rewrite - Viticulture & Winemaking (29 questions: 8 MC, 21 short answer).
+"""Village rewrite - Viticulture & Winemaking (29 questions: 8 MC, 21 short answer).
 
 Certified level, and deliberately the PRACTITIONER'S CHOICE rather than the
-process. Rank I's Viticulture & Winemaking says what green harvest is; this asks
-why the pass waits for veraison. Rank I's Winemaking Techniques says what a
+process. Regionale's Viticulture & Winemaking says what green harvest is; this asks
+why the pass waits for veraison. Regionale's Winemaking Techniques says what a
 punch-down does; this asks which vat gets the plunger and which gets the pump.
 Every question is a decision a producer actually makes - a training system, a
 rootstock, a leaf-pull calendar, a press cut, a stem percentage, a stave, a
@@ -14,12 +14,12 @@ they are not re-argued. r2_wine_fundamentals owns the chemistry, so tannin here
 is a thing a press or a flame adds or spares, never a molecule. Terroir: Climate
 & Soil owns rootstock as a SOIL verdict - the lime property, 110R's vigour, the
 nematodes - so the rootstock block here is the catalogue decision instead: which
-named stock answers which brief, and what each name records. The Rank I
+named stock answers which brief, and what each name records. The Regionale
 categories own every basic definition, so no stem here asks what a thing is.
 Tasks already committed elsewhere were found by grepping before writing and left
-where they live: the assemblage timetable and soutirage to Rank II Bordeaux,
-retrousse to Champagne, autolysis to two Rank I categories, demi-muid to
-Producers & Icons, the gobelet and echalas keys to Rank I Rhone (so gobelet is
+where they live: the assemblage timetable and soutirage to Village Bordeaux,
+retrousse to Champagne, autolysis to two Regionale categories, demi-muid to
+Producers & Icons, the gobelet and echalas keys to Regionale Rhone (so gobelet is
 asked here as a why, never as a name), and the pergola family to Portugal, Spain
 and South America.
 
@@ -81,7 +81,7 @@ composed into a neighbouring answer, which is a point given away rather than a
 point wrongly taken.
 
 Facts are restricted to ones that do not drift: training geometry, rootstock
-parentage, cooperage practice and the physics of a press. The numbers that
+parentage, cooperage habit and the physics of a press. The numbers that
 appear - 500 litres in a puncheon, the 2006 clearing of chips in the EU, forty
 per cent active lime under 41B and about ten per cent under 3309C - are settled
 specification and settled history rather than statistics.
@@ -118,7 +118,7 @@ BANK = [
        "Double guyot",
        ["double guyot", "guyot double", "the double guyot system",
         "double guyot training", "double guyot cane training"],
-       "Guyot in either form is cane pruning: no permanent arm, the whole fruiting structure rebuilt from scratch each winter. The double form spreads the crop across two canes and suits wider spacing, which is why the Medoc classically trains it, while the single-cane form carries a smaller load on one wire and is the Cote d'Or's habit."),
+       "Guyot in either form is cane pruning: no permanent arm, the whole fruiting structure rebuilt from scratch each winter. The double form spreads the crop along the wire on both sides of the head and is the Medoc's classic habit, while the single form lays one cane to one side, carries a smaller load and is the Cote d'Or's."),
     SA("Training systems and where each earns its keep",
        "One permanent horizontal arm carries a row of short spurs, and Champagne leans on it to hold Pinot Noir's natural yield down. Name the system.",
        "Cordon de Royat",
@@ -163,7 +163,7 @@ BANK = [
        "Selection Oppenheim 4 took Teleki's Hungarian material and fixed a stock that grafts easily, takes most soils and advances ripening, which is what made it the default order. Its habits still matter at the margin: it roots shallow and runs thirsty in drought, and it is notorious for magnesium deficiency on light soils, which is why the default is not universal.",
        ex=True),
     SA("Rootstock and planting material",
-       "Instead of ordering a thousand plants of one certified number, a grower spends the winter tagging his own best old vines and has the nursery graft cuttings from all of them. Name the practice.",
+       "Instead of ordering a thousand plants of one certified number, a grower spends the winter tagging his own best old vines and has the nursery graft cuttings from all of them. Name the method.",
        "Massal selection",
        ["massal selection", "selection massale", "mass selection",
         "massale selection", "massal", "massale", "field selection"],

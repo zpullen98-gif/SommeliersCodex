@@ -1,0 +1,299 @@
+{
+  "batch": "village-4",
+  "modules": [
+    "rewrite/categories/r2_spirits_cocktails.py",
+    "rewrite/categories/r2_classifications_labels.py",
+    "rewrite/categories/r2_hungary_greece.py"
+  ],
+  "readCount": 146,
+  "total": 146,
+  "findings": [
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Thirty distilleries once crowded a single harbour town",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practices.",
+      "fix": "Reworded to methods; meaning unchanged.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Four grapes carry the Armagnac plantings, and one",
+      "field": "exp",
+      "problem": "Says Baco Blanc was due to go under an EU ban on hybrid vines. The planned removal was a French appellation decision (out of Armagnac by 2010), reversed in 2005; EU hybrid rules govern PDO wine, not spirits.",
+      "fix": "Now says French rules once ordered it out of Armagnac by 2010 and the order was reversed in 2005.",
+      "source": "Armagnac appellation history: the INAO phase-out set in the 1990s and lifted in 2005.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Mezcal's rules recognise a ladder of production classes,",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practice (in practice).",
+      "fix": "Dropped the phrase: though the two tend to travel together.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Sonora makes an agave spirit with a Mexican",
+      "field": "exp",
+      "problem": "Says bacanora was outlawed in Mexico for most of the twentieth century. The ban was the state of Sonora's own, from 1915 to 1992, not a national one.",
+      "fix": "Now says it was outlawed in Sonora itself from 1915 until 1992.",
+      "source": "Bacanora history: Sonora's state prohibition of 1915, lifted in 1992 ahead of the 2000 denomination.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Absinthe's early twentieth-century ban was blamed on a",
+      "field": "exp",
+      "problem": "Gives the EU thujone cap as 35 mg per litre in bitter spirits. That is the old directive's wording; the current flavourings regulation sets 35 mg per kilogram for drinks made from Artemisia species.",
+      "fix": "Now: thirty-five milligrams per kilogram in drinks made from Artemisia.",
+      "source": "Regulation (EC) 1334/2008, Annex III Part B (thujone: 35 mg/kg in alcoholic drinks made from Artemisia).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Vermouth is a wine before it is anything",
+      "field": "exp",
+      "problem": "Says the band runs to twenty-two percent and that above it the drink becomes a bitter liqueur. The aromatised wine band is 14.5 to less than 22 percent; below it the product is an aromatised wine-based drink and at 22 or more it simply fails the definition, so it does not become a bitter liqueur.",
+      "fix": "Now: just under twenty-two percent; below the floor it drops into the aromatised wine-based drinks; at twenty-two or more it is no longer an aromatised wine.",
+      "source": "Regulation (EU) 251/2014, Annex II (aromatised wine 14.5 to under 22 percent; aromatised wine-based drinks 4.5 to under 14.5 percent).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "One style of vermouth carries a geographical indication",
+      "field": "exp",
+      "problem": "Says the Superiore tier adds that the Artemisia be grown in Piedmont. Piedmontese Artemisia is required of all Vermouth di Torino; Superiore adds at least 17 percent, at least half Piedmontese wine and other herbs grown or gathered in Piedmont. Also dropped an unsupported causal claim that this is why the bitters trade grew up in Turin (much of it grew up in Milan).",
+      "fix": "Rewrote the first sentence to the disciplinare's split between the base and Superiore tiers, and ended on the late eighteenth-century start in Turin.",
+      "source": "Vermouth di Torino disciplinare (DM 22 March 2017), confirmed by one web search (Gambero Rosso and trade summaries).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_spirits_cocktails.py",
+      "stemStart": "Rye, sugar, Peychaud's bitters and a rinse of",
+      "field": "exp",
+      "problem": "States as fact that the Sazerac began on Cognac and moved to rye after phylloxera. That is a popular tradition that cocktail historians dispute, not documented history.",
+      "fix": "Now gives the name's Cognac-brand origin and calls the brandy-to-rye switch a tradition rather than a documented fact.",
+      "source": "Cocktail history: the switch rests on later retellings; early records do not settle which spirit came first.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_classifications_labels.py",
+      "stemStart": "Italy will not consider a wine for its",
+      "field": "ans",
+      "problem": "Keyed Ten years. Law 238/2016, art. 33(1), as amended by Decree-Law 76/2020 (art. 43-ter), reserves DOCG for wines that have held DOC for at least seven years. Ten years was the earlier figure (Legislative Decree 61/2010).",
+      "fix": "Rekeyed ans to Seven years. Replaced the accept list with the same set of forms for seven (digits, words, at least, minimum, as a DOC, at DOC level, bare 7 and seven), ex=True kept. Exp now says seven years and notes that older books give ten. Probed: ten years, less than seven years, seven years in bottle and five years all grade wrong.",
+      "source": "Legge 238/2016 art. 33 c.1, as amended by DL 76/2020 art. 43-ter (one web search; the reproduced amending text sets da almeno sette anni).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_classifications_labels.py",
+      "stemStart": "Refused a rank, a candidate is entitled to",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practice, and calls the scored-sheet habit the direct consequence, which is more than anyone can show.",
+      "fix": "Now: the modern habit of returning a scored sheet ... follows from it.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_classifications_labels.py",
+      "stemStart": "Caught breaking the rules attached to a private",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practice (in practice).",
+      "fix": "Now: stricter than the law on paper and slower than the law to act.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "A Tokaji Aszu bottled under the rules in",
+      "field": "exp",
+      "problem": "Says a wine short of 120 g/L goes out as late harvest or sweet szamorodni instead. Szamorodni is by definition a whole-bunch wine, not a wine of picked aszu berries macerated in base, so it cannot catch a failed Aszu. The README notes this routing as a past cross-module hazard.",
+      "fix": "Cut the routing clause: a wine short of the figure cannot be sold as Aszu at all, so the reform tightened the name.",
+      "source": "Tokaj product specification: szamorodni is made from bunches picked with their botrytised berries, never separated; Aszu is a maceration of picked aszu berries.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "The sweet form of szamorodni is separated from",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practice (in practice).",
+      "fix": "Now: since the category is usually bottled a good deal sweeter than either number.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "Tokaj's aromatic permitted variety is the grape Italy",
+      "field": "exp",
+      "problem": "Says a varietal Sarga Muskotaly bottling is dry. Varietal Tokaj Muscat is also made in late harvest and sweet styles, so the claim is too broad.",
+      "fix": "Now: a dry varietal bottling is light and scented of orange blossom.",
+      "source": "Tokaj producers bottle Sargamuskotaly both dry and as late harvest and sweet wine.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "A Greek bottle carries the word Cava and",
+      "field": "exp",
+      "problem": "Says the Greek term predates the confusion with Spanish Cava. That claim cannot be supported (Spain adopted the name around 1970, close to when the Greek system was set up) and it teaches nothing.",
+      "fix": "Now: it has nothing to do with the Spanish sparkling wine that may sit beside it on the same shelf.",
+      "source": "Greek and Spanish wine law history; the claim is cut, not replaced with another dated claim.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "Pine resin rather than a place defines one",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practice.",
+      "fix": "Now: so it names a method rather than a vineyard.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "Never grafted and often very old, a Santorini",
+      "field": "exp",
+      "problem": "The explanation uses the banned word practice.",
+      "fix": "Now: which is what separates the method both from taking a cutting.",
+      "source": "House rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "Naoussa admits no grape but Xinomavro, and its",
+      "field": "exp",
+      "problem": "Says bottle time beyond the year in oak is the producer's choice and not something the designation demands. That cannot be verified against the Naoussa specification, and a release or bottle-age rule may apply.",
+      "fix": "Cut the clause; the exp keeps the red-only, unblended and year-in-oak facts.",
+      "source": "Unverified against the PDO Naoussa specification (no search spent); cutting it removes the risk without adding a claim.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r2_hungary_greece.py",
+      "stemStart": "Nemea's vineyards run from a valley floor up",
+      "field": "exp",
+      "problem": "Says one name currently covers both altitudes. That is a volatile status claim about a zoning debate that may settle, which the house rules forbid stating as fact.",
+      "fix": "Now: the high ground gives something far tighter and later, which is the whole case made for zoning.",
+      "source": "House rule: nothing volatile stated as fact.",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Thirty distilleries once crowded a single harbour town",
+      "verdict": "kept",
+      "why": "Practices was a banned word; methods keeps the floor-malting sense exactly."
+    },
+    {
+      "stemStart": "Four grapes carry the Armagnac plantings, and one",
+      "verdict": "kept",
+      "why": "The phase-out of Baco Blanc was a French appellation order (out by 2010) lifted in 2005; the EU hybrid rule binds PDO wine, not the spirit, so the old line misplaced the cause. The new one is right and stable."
+    },
+    {
+      "stemStart": "Mezcal's rules recognise a ladder of production classes,",
+      "verdict": "kept",
+      "why": "Dropping in practice loses nothing; the method-not-quality point stands."
+    },
+    {
+      "stemStart": "Sonora makes an agave spirit with a Mexican",
+      "verdict": "kept",
+      "why": "The prohibition was Sonora's own, 1915 to 1992, ahead of the 2000 denomination; the old national claim was wrong."
+    },
+    {
+      "stemStart": "Absinthe's early twentieth-century ban was blamed on a",
+      "verdict": "kept",
+      "why": "Regulation 1334/2008 Annex III sets 35 mg/kg for alcoholic drinks made from Artemisia; per litre in bitter spirits was the wrong unit and the old scope."
+    },
+    {
+      "stemStart": "Vermouth is a wine before it is anything",
+      "verdict": "amended",
+      "why": "The ceiling fix is right (under 22 percent, and nothing at 22 or more becomes a bitter liqueur), but the new floor claim was wrong: aromatised wine-based drinks admit no added alcohol, so a fortified vermouth below 14.5 percent does not simply drop into them. Restored the original's plain statement that below the floor it is not an aromatised wine, and kept the corrected ceiling."
+    },
+    {
+      "stemStart": "One style of vermouth carries a geographical indication",
+      "verdict": "amended",
+      "why": "Moving Piedmontese Artemisia to the base tier and cutting the Turin bitters causation were right, but the other herbs from the region overstated Superiore: secondary summaries of the disciplinare require only some herbs besides the Artemisia (two or three) to be Piedmontese. Now some of its other herbs from the region too (one search)."
+    },
+    {
+      "stemStart": "Rye, sugar, Peychaud's bitters and a rinse of",
+      "verdict": "kept",
+      "why": "The brandy-to-rye after phylloxera tale is a retelling historians contest; naming the Cognac brand behind the name and calling the switch a tradition is accurate and in the voice."
+    },
+    {
+      "stemStart": "Italy will not consider a wine for its",
+      "verdict": "kept",
+      "why": "One search confirms Law 238/2016 art. 33(1), as replaced by DL 76/2020 art. 43-ter, reserves DOCG for wines DOC for at least seven years; a 2017 summary already gives seven, so the cut from ten (DLgs 61/2010) likely came with the 2016 law, which the exp's undated older books give ten still fits. Probed match_sa: seven, 7, seven years as a DOC and at least seven years grade; ten, 10, a decade, 17 years, seventeen, seven years in bottle and less than seven years refuse. No other bank or primer states ten for this rule."
+    },
+    {
+      "stemStart": "Refused a rank, a candidate is entitled to",
+      "verdict": "kept",
+      "why": "Banned word gone, and follows from it is a claim the record can bear where direct consequence was not."
+    },
+    {
+      "stemStart": "Caught breaking the rules attached to a private",
+      "verdict": "kept",
+      "why": "Slower than the law to act keeps the contrast without the banned word."
+    },
+    {
+      "stemStart": "A Tokaji Aszu bottled under the rules in",
+      "verdict": "kept",
+      "why": "Szamorodni is a whole-bunch wine and cannot take a failed Aszu maceration; cutting the routing clause removes a wrong claim the README already flags and adds nothing doubtful."
+    },
+    {
+      "stemStart": "The sweet form of szamorodni is separated from",
+      "verdict": "kept",
+      "why": "Usually serves for in practice with the same meaning."
+    },
+    {
+      "stemStart": "Tokaj's aromatic permitted variety is the grape Italy",
+      "verdict": "kept",
+      "why": "Varietal Sarga Muskotaly is bottled late harvest and sweet as well as dry; qualifying it as a dry bottling is the minimal right fix and the surprise clause still reads."
+    },
+    {
+      "stemStart": "A Greek bottle carries the word Cava and",
+      "verdict": "kept",
+      "why": "The precedence claim could not be shown and taught nothing; the replacement states only the true separation from Spanish Cava."
+    },
+    {
+      "stemStart": "Pine resin rather than a place defines one",
+      "verdict": "kept",
+      "why": "Method for practice; the traditional-designation point is unchanged."
+    },
+    {
+      "stemStart": "Never grafted and often very old, a Santorini",
+      "verdict": "kept",
+      "why": "Method for practice; the layering contrast with cuttings and air layering is intact."
+    },
+    {
+      "stemStart": "Naoussa admits no grape but Xinomavro, and its",
+      "verdict": "kept",
+      "why": "The bottle-time clause was unverified and a release rule may apply; cutting it risks nothing and the red-only, unblended, year-in-oak facts remain."
+    },
+    {
+      "stemStart": "Nemea's vineyards run from a valley floor up",
+      "verdict": "kept",
+      "why": "Currently covers both was a volatile status on a live zoning debate; the case for zoning now stands without dating the law."
+    }
+  ]
+}

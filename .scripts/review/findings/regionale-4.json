@@ -1,0 +1,253 @@
+{
+  "batch": "regionale-4",
+  "modules": [
+    "rewrite/categories/r1_sparkling_fortified_sweet.py",
+    "rewrite/categories/r1_united_states.py"
+  ],
+  "readCount": 122,
+  "total": 122,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Quarter bottles and the giant formats beyond a",
+      "field": "stem",
+      "problem": "Old stem: 'Quarter bottles and jeroboams are often filled from wine that fermented in an ordinary bottle, ...'. In Champagne the jeroboam (3 L) is the largest format that must stay in the bottle it fermented in. Transfer is allowed only below the half bottle and above the jeroboam, so the stem taught the boundary the wrong way round.",
+      "fix": "Stem now reads 'Quarter bottles and the giant formats beyond a jeroboam are often filled from wine that fermented in an ordinary bottle, was emptied under pressure into a tank, filtered and bottled again. Which method is that?' Options, key and exp unchanged. Id moves i-5okaggzr to i-qqmopi1g; check-similarity clean (max ratio 0.556, run 4).",
+      "source": "Champagne appellation rule on bottle formats (transvasage only for formats smaller than a half bottle or larger than a jeroboam), as taught by GuildSomm's Champagne study guide and the standard sparkling syllabus.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Bunches are laid on racks in an airy",
+      "field": "stem",
+      "problem": "The stem ended 'Which Italian practice is that?', using the word the house rules ban outright.",
+      "fix": "Last sentence now reads 'What name do Italian growers give it?' Options, key and exp unchanged. Id moves i-9hj9ch3h to i-0xd19gwz; check-similarity clean.",
+      "source": "Codex house rule: never the word practice or practise.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Which country turned a sparkling red made from",
+      "field": "stem",
+      "problem": "The stem used the American spelling 'specialty' in the Codex's own prose. The same module's exp elsewhere has 'speciality'.",
+      "fix": "'national specialty' became 'national speciality'. Nothing else changed. Id moves i-6qh3iwzm to i-4jkw2zst; check-similarity clean.",
+      "source": "Codex house rule: British spelling. Precedent: village-8 changed 'program' to 'programme' in a stem.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Which German Pradikat level calls for individually selected,",
+      "field": "opts",
+      "problem": "The key, Trockenbeerenauslese (20 characters), stood 12 characters clear of Kabinett, Spatlese and Auslese (7 to 8). That is a visible length standout, so a student who knew no German law could pick the long word. Kabinett was also too weak a distractor for a botrytis question.",
+      "fix": "Kabinett is replaced with Beerenauslese. The key now stands 7 characters clear, below the standout line. The question now tests the real distinction: only Trockenbeerenauslese requires shrivelled berries, while Beerenauslese takes botrytised or overripe berries without it.",
+      "source": "German wine law (Weinverordnung): Beerenauslese from botrytised or at least overripe berries; Trockenbeerenauslese from largely shrivelled botrytised berries.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Which German Pradikat level calls for individually selected,",
+      "field": "exp",
+      "problem": "'Beerenauslese sits just below it and Eiswein alongside' reads as Eiswein sharing the top level with Trockenbeerenauslese. Eiswein's legal minimum is Beerenauslese's must weight, not Trockenbeerenauslese's. The exp also never said why the key was right once Beerenauslese became a distractor.",
+      "fix": "Now: 'Trocken here means dried: the selected berries must have shrivelled almost to raisins under noble rot. Beerenauslese, one rung below, takes botrytised or overripe berries without demanding that shrivelling, and its minimum must weight is the one Eiswein has to reach. All three depend on the season, so they are made only in favourable years and in tiny quantities.'",
+      "source": "German wine law: Eiswein must reach at least the Beerenauslese must weight.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Between the two ways of warming Madeira, which",
+      "field": "opts",
+      "problem": "The stem frames a choice between two warming methods, but two of the four options ('Chilling the wine below freezing', 'Burying the casks in sand') were not ways of warming at all. That left a 50/50 between the only two options of the right kind.",
+      "fix": "Those two options are replaced with the swapped pairings 'Canteiro, tanks held near fifty degrees for months' and 'Estufa, years of gentle warmth in cask under the roof'. All four are now name plus method, and the student has to know both which name goes with which method and which method is kept for the finest wines. The key and exp are unchanged; the exp already names both methods correctly.",
+      "source": "Madeira rules: estufagem in heated tanks (about 45 to 50 C, at least three months) for everyday wine; canteiro, natural lodge warmth over years, for the finest.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Served cool alongside the cured pork and Parmigiano",
+      "field": "exp",
+      "problem": "'The good bottles are dry and tank made' is false as a general rule: many of the most esteemed Lambruschi are refermented in bottle, by the ancestral or traditional method. 'A family of related varieties' also overstates it, since the Lambrusco varieties are distinct grapes sharing a name, not one close family.",
+      "fix": "Now: 'Lambrusco is a group of distinct local varieties sharing one name, grown around Modena and Reggio. The best are usually dry, whether tank made or refermented in bottle, and their acidity and light tannin cut straight through fat.'",
+      "source": "Lambrusco DOC rules allow both secondary fermentation in tank and in bottle; ampelographic work treats Sorbara, Grasparossa, Salamino and the rest as distinct varieties.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_sparkling_fortified_sweet.py",
+      "stemStart": "Fine, persistent bead and a bready character in",
+      "field": "exp",
+      "problem": "'rests on its spent yeast inside that bottle for a year or more' is offered as true of the traditional method in general. It is not: Cava, the Cremants, Winzersekt and Cap Classique all have shorter legal minimums, nine months in the EU.",
+      "fix": "Now 'for months, often for years'.",
+      "source": "EU minimum of nine months on the lees for traditional-method quality sparkling wine (Cava, Cremant, Winzersekt); Champagne's longer minimum is the exception.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "Humid summers and Viognier make an unlikely pair,",
+      "field": "opts",
+      "problem": "The stem says 'one East Coast state', and Virginia was the only East Coast state among the options (Texas, Michigan, Idaho). The question answered itself from the options' geography.",
+      "fix": "The distractors are now North Carolina, Maryland and New Jersey, all East Coast wine-producing states, none built on Viognier. The key and exp are unchanged.",
+      "source": "Item construction rule: the stem must not be answerable from its own words or the options' shape. Viognier is Virginia's official state grape.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "Why is drip irrigation routine across the American",
+      "field": "opts",
+      "problem": "The key ('Much of the West cannot grow vines without water, and no appellation rule bars it', 81 characters) stood 14 characters clear of the longest distractor, a visible length standout.",
+      "fix": "The key is trimmed to 'Much of the West is too dry to crop without it, and no AVA bars it' (65), now shorter than one distractor. The meaning is the same and the exp already carries the reasoning. Distractors unchanged.",
+      "source": "README length rule (DECISIVE_GAP 10): trim the key and keep the reasoning in exp.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "After Repeal, the sale of alcohol in the",
+      "field": "opts",
+      "problem": "The key ('A three-tier system of producer, wholesaler and retailer', 56 characters) stood 14 characters clear of every distractor, a visible length standout.",
+      "fix": "The key is now 'Three tiers: producer, wholesaler and retailer'. Its parallel distractor is now 'Two tiers: producer and retailer', same meaning as before. The key now stands 8 characters clear, below the line. Exp unchanged.",
+      "source": "README length rule (DECISIVE_GAP 10).",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "In 1965 a grower planted Pinot Noir in",
+      "field": "exp",
+      "problem": "'Within twenty years Burgundian houses were buying land nearby' is inexact: the first Burgundy house to buy in the Willamette Valley did so in 1987, twenty-two years on, and it was one house, not several, for a long time after.",
+      "fix": "Now 'By 1987 a Burgundy house had bought land nearby.'",
+      "source": "Maison Joseph Drouhin bought its Dundee Hills land in 1987; later Burgundian arrivals date from the 2010s.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "Warm, flat and dependent on irrigation, the Central",
+      "field": "exp",
+      "problem": "'Lodi sits at the northern end' (of the Central Valley) is wrong: the Central Valley runs on north through the Sacramento Valley to Redding. Lodi is at the northern end of the San Joaquin Valley, roughly the middle of the whole.",
+      "fix": "Now 'Lodi sits at the northern end of the San Joaquin Valley, cooled a little by air off the Sacramento Delta.'",
+      "source": "California geography: the Central Valley comprises the Sacramento Valley (north) and the San Joaquin Valley (south), meeting at the Delta beside Lodi.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "A bottle says Cabernet Sauvignon on the front",
+      "field": "exp",
+      "problem": "'Several states, Oregon among them, hold their producers to a stricter figure' asserts a plural I cannot support. Oregon is the established case of a stricter state varietal rule; I know of no other.",
+      "fix": "Now 'A state may demand more of its own producers, and Oregon does.' This is true whatever the count.",
+      "source": "Oregon's 90 percent varietal rule (OAR chapter 845, division 10) against the federal 75 percent (27 CFR 4.23).",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "More than half of Oregon's vineyard acreage is",
+      "field": "exp",
+      "problem": "'Pinot Gris is the leading white by some distance' states a planting margin as fact. That margin is volatile and has been narrowing as Chardonnay plantings grow.",
+      "fix": "Now 'Pinot Gris is the leading white.'",
+      "source": "House rule: nothing volatile stated as fact; Oregon vineyard census trend.",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_united_states.py",
+      "stemStart": "A grower standing on Atlas Peak looks west",
+      "field": "exp",
+      "problem": "'runs north toward Calistoga' uses the American form; the house voice is British.",
+      "fix": "'toward' became 'towards'.",
+      "source": "Codex house rule: British spelling and usage.",
+      "confidence": "low",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Quarter bottles and the giant formats beyond a",
+      "verdict": "kept",
+      "why": "The original was wrong for Champagne: the appellation lets transfer serve only formats below the half bottle and above the jeroboam, so the jeroboam itself must stay in its own bottle. The error sat in the stem, so only a stem change could serve; options, key and exp still hold."
+    },
+    {
+      "stemStart": "Bunches are laid on racks in an airy",
+      "verdict": "kept",
+      "why": "Stem: the banned word had to go and it sat in the stem. 'What name do Italian growers give it?' reads naturally with the described process as antecedent, keeps Estufagem a fair distractor, and further churn of the id would gain nothing."
+    },
+    {
+      "stemStart": "Which country turned a sparkling red made from",
+      "verdict": "kept",
+      "why": "Stem: 'specialty' is the American form and the word was in the stem, so no non-stem fix existed. One word changed, meaning untouched."
+    },
+    {
+      "stemStart": "Which German Pradikat level calls for individually selected,",
+      "verdict": "kept",
+      "why": "Options: Beerenauslese is a real, harder distractor that still cannot be graded right, since the law asks for largely shrivelled botrytised berries only at Trockenbeerenauslese (Beerenauslese takes botrytised or merely overripe berries). Multiple choice, no accept list; the length standout is gone and the build passes."
+    },
+    {
+      "stemStart": "Which German Pradikat level calls for individually selected,",
+      "verdict": "kept",
+      "why": "Exp: the old 'Eiswein alongside' could be read as Eiswein sharing the top rung; Eiswein's floor is the Beerenauslese must weight, which the new exp states correctly. 'Trocken here means dried' is right and now explains the key once Beerenauslese stands among the options. Clean British prose, no dash."
+    },
+    {
+      "stemStart": "Between the two ways of warming Madeira, which",
+      "verdict": "kept",
+      "why": "Options: the two non-warming distractors left a 50/50 against the stem's own frame. The swapped name and method pairings are each plainly false, each name and each method appears twice so no convergence cue points to the key, and lengths sit within five characters. Estufagem near 45 to 50 degrees for months and canteiro over years in the lodge are correct."
+    },
+    {
+      "stemStart": "Served cool alongside the cured pork and Parmigiano",
+      "verdict": "kept",
+      "why": "Exp: 'the good bottles are dry and tank made' was false, since many of the most admired Lambruschi are refermented in bottle, and the Lambrusco varieties are distinct grapes sharing a name. The new wording is accurate and hedged ('usually')."
+    },
+    {
+      "stemStart": "Fine, persistent bead and a bready character in",
+      "verdict": "kept",
+      "why": "Exp: 'a year or more' fails for Cava, Cremant and other traditional-method wines held to the EU minimum of nine months on the lees. 'For months, often for years' is true across the method."
+    },
+    {
+      "stemStart": "Humid summers and Viognier make an unlikely pair,",
+      "verdict": "kept",
+      "why": "Options: Virginia was the only East Coast state offered, so the stem answered itself. North Carolina, Maryland and New Jersey are all humid East Coast wine states, none with a reputation built on Viognier; Viognier is Virginia's official state grape. Key and exp untouched."
+    },
+    {
+      "stemStart": "Why is drip irrigation routine across the American",
+      "verdict": "kept",
+      "why": "Options: the key stood 14 characters clear. The trimmed key keeps the meaning (aridity plus no appellation rule against it; an AVA sets no viticultural rules at all), now sits below the longest distractor, and the build reports no standout on it."
+    },
+    {
+      "stemStart": "After Repeal, the sale of alcohol in the",
+      "verdict": "kept",
+      "why": "Options: the key and its parallel two-tier distractor were trimmed in step, so the pair still tests the right distinction and the key now stands only 8 characters clear. Meaning unchanged."
+    },
+    {
+      "stemStart": "In 1965 a grower planted Pinot Noir in",
+      "verdict": "kept",
+      "why": "Exp: Joseph Drouhin bought its Dundee Hills land in 1987, twenty-two years on, and stood alone among Burgundy houses for many years; 'within twenty years houses were buying' was inexact on both counts. The new sentence is historical, not volatile, and names no living person."
+    },
+    {
+      "stemStart": "Warm, flat and dependent on irrigation, the Central",
+      "verdict": "kept",
+      "why": "Exp: the Central Valley runs north through the Sacramento Valley to Redding, so Lodi is not at its northern end; it is at the northern end of the San Joaquin Valley beside the Delta. The fix is correct."
+    },
+    {
+      "stemStart": "A bottle says Cabernet Sauvignon on the front",
+      "verdict": "amended",
+      "why": "Exp: dropping the unsupported plural was right, but 'and Oregon does' on a question about a Cabernet Sauvignon label is still wrong: Oregon's 90 percent rule exempts a listed group of 18 varieties, Cabernet Sauvignon among them, at the federal 75 (confirmed by search, Wine Spectator's Oregon labelling explainer and others; the module's own Oregon item already says so). Now 'A state may demand more of its own producers, as Oregon does for most grapes, though it leaves Cabernet Sauvignon at the federal figure.' The 90 figure is left out so this exp does not hand over the answer to the Oregon varietal item."
+    },
+    {
+      "stemStart": "More than half of Oregon's vineyard acreage is",
+      "verdict": "kept",
+      "why": "Exp: 'by some distance' asserted a margin that census figures show narrowing as Chardonnay grows. Pinot Gris still leads the whites on the latest census, so the shorter sentence is true; any rewording to 'has long been' would carry the same present-tense dependency without gain."
+    },
+    {
+      "stemStart": "A grower standing on Atlas Peak looks west",
+      "verdict": "kept",
+      "why": "Exp: 'towards' is the British form of the house voice. One word, meaning untouched."
+    }
+  ]
+}

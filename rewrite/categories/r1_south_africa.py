@@ -1,4 +1,4 @@
-"""Rank I rewrite - South Africa (56 questions, all multiple choice).
+"""Regionale rewrite - South Africa (56 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -16,7 +16,7 @@ sparkling wine named for a method rather than a place. Stems lead with a wind,
 a rock, a fog bank, a bottle in the hand or a label at the cellar door, and let
 the place, grape or term be the answer.
 
-The Rank II South Africa category sits above this one, so ward boundaries in
+The Village South Africa category sits above this one, so ward boundaries in
 detail, clonal history and producer specifics are left to it.
 
 Everything is ASCII: Hemel-en-Aarde, Cotes, Rhone, Muscat de Frontignan.
@@ -48,11 +48,9 @@ BANK = [
     # ------------------------------------- Cape geography and climate (5) ----
     Q("Cape geography and climate",
       "Two ocean currents pass the southern tip of Africa, one cold and running north up the Atlantic seaboard, one warm and running south down the Indian Ocean side. Which of them does the cooling for the winelands?",
-      ["The Benguela, which carries cold water north along the west coast",
-       "The Agulhas, which brings warm Indian Ocean water down the east coast",
-       "The Mozambique Channel drift, which runs down the far east coast",
-       "The Canary current, which runs down the north-west African coast"], 0,
-      "Water off the west coast is far colder than the latitude suggests, and the sea air and morning fog that come off it drop temperatures wherever a vineyard sits within reach. The Agulhas is real and it is warm, which is why the country's cool sites face the Atlantic rather than the Indian Ocean."),
+      ["The Benguela current", "The Agulhas current",
+       "The Humboldt current", "The Canary current"], 0,
+      "The Benguela carries cold water north up the west coast, and the sea air and morning fog that come off it drop temperatures wherever a vineyard sits within reach. The Agulhas is the warm one, which is why the country's cool sites face the Atlantic rather than the Indian Ocean. The Humboldt and the Canary are cold currents too, but they run off South America and north-west Africa."),
     Q("Cape geography and climate",
       "Rain arrives in the Cape winelands mostly between May and August, and hardly falls at all while the fruit is ripening. Which climate type does that pattern name?",
       ["Mediterranean", "Continental", "Tropical savannah", "Cool maritime"], 0,
@@ -97,15 +95,15 @@ BANK = [
     # ------------------------------------- The Wine of Origin scheme (7) -----
     Q("The Wine of Origin scheme",
       "A label names a single pocket of ground inside a district rather than the district itself, telling the buyer the fruit came off that one patch. Which Wine of Origin tier is that tighter name?",
-      ["A ward", "A subregion", "An estate", "A single vineyard"], 0,
-      "The scheme nests geographical unit, region, district and ward, with the ward as the tightest tier and the one defined on soil, climate and ecology rather than on administrative convenience. A ward is where a Cape label gets closest to naming a piece of ground."),
+      ["A ward", "A subregion", "A region", "A geographical unit"], 0,
+      "The scheme nests geographical unit, region, district and ward, with the ward as the tightest tier and the one defined on soil, climate and ecology rather than on administrative convenience. Estates and single vineyards are registered units of production inside that map rather than tiers of it, and the scheme has no subregion at all."),
     Q("The Wine of Origin scheme",
       "Vintage and variety claims on a Cape label each need eighty-five percent of the wine behind them. The origin claim is stricter than that. What does it demand?",
       ["Every grape must come from the named area",
-       "Ninety percent of the grapes from the named area",
-       "Ninety-five percent of the grapes from the named area",
-       "The same eighty-five percent as the other two claims"], 0,
-      "Origin is absolute in this system, which is worth knowing because the other two claims are not. A wine labelled Stellenbosch Cabernet Sauvignon 2019 was grown entirely in Stellenbosch, but may legitimately hold fifteen percent of another grape and fifteen percent of another year."),
+       "Ninety per cent of the grapes from the named area",
+       "Ninety-five per cent of the grapes from the named area",
+       "The same eighty-five per cent as the other two claims"], 0,
+      "Origin is absolute in this system, which is worth knowing because the other two claims are not. A wine labelled Stellenbosch Cabernet Sauvignon 2019 was grown entirely in Stellenbosch, but may legitimately hold fifteen per cent of another grape and fifteen per cent of another year."),
     Q("The Wine of Origin scheme",
       "A visitor buys a bottle at a cellar door and the label reads Wine of Origin Estate. What has that phrase committed the producer to?",
       ["The grapes were grown and the wine made on the registered unit",
@@ -117,7 +115,7 @@ BANK = [
       "Registering a block as a single vineyard in South Africa carries a restriction no other origin tier imposes. What is capped?",
       ["The size of the block, at six hectares",
        "The yield, at fifty hectolitres per hectare",
-       "The finished alcohol, at fourteen percent",
+       "The finished alcohol, at fourteen per cent",
        "The planting density, at ten thousand per hectare"], 0,
       "The block must also be planted to one variety, so the designation means a genuinely single parcel rather than a marketing name. Six hectares is small enough that the wine really can be the expression of one site, which is the whole point of registering it."),
     Q("The Wine of Origin scheme",
@@ -135,7 +133,7 @@ BANK = [
        "That no sulphur dioxide was added at any stage",
        "That the vineyard was never irrigated",
        "That residual sugar stays below a stated level"], 0,
-      "The Integrated Production of Wine scheme audits farming and cellar practice against the industry's sustainability standards, and folding it into the same seal made participation close to universal. The number can be entered on a public site to trace the bottle back, which is unusual transparency for a national scheme."),
+      "The Integrated Production of Wine scheme audits farming and cellar methods against the industry's sustainability standards, and folding it into the same seal made participation close to universal. The number can be entered on a public site to trace the bottle back, which is unusual transparency for a national scheme."),
 
     # ------------------------------------------ Soils and the old rocks (4) --
     Q("Soils and the old rocks",
@@ -153,8 +151,8 @@ BANK = [
     Q("Soils and the old rocks",
       "Swartland growers talk constantly about the shale beneath their bush vines, a rock laid down long before anything with a shell existed. Which shale?",
       ["Malmesbury shale", "Bokkeveld shale",
-       "Kimmeridgian marl", "Dwyka tillite"], 0,
-      "Malmesbury shale is Precambrian, and it splits into plates roots can follow down through. It alternates with granite intrusions such as the Paardeberg across the district, and growers there will name which of the two a wine came off as readily as a Burgundian names a slope."),
+       "Ecca shale", "Cederberg shale"], 0,
+      "Malmesbury shale is Precambrian, and it splits into plates roots can follow down through. It alternates with granite intrusions such as the Paardeberg across the district, and growers there will name which of the two a wine came off as readily as a Burgundian names a slope. The Bokkeveld, Cederberg and Ecca shales are all far younger, laid down long after shelled animals had appeared."),
     Q("Soils and the old rocks",
       "Rock beneath the Cape vineyards runs to hundreds of millions of years old, and in places far older than that, which is ancient even by the standards of the wine world. What has that age done to the soils above it?",
       ["It has stripped them of their nutrients",
@@ -175,7 +173,7 @@ BANK = [
     Q("Stellenbosch, Paarl and Franschhoek",
       "A bare granite dome above one Cape town gleams after rain, and both the town and its district take their name from it. Which district?",
       ["Paarl", "Tulbagh", "Darling", "Wellington"], 0,
-      "Paarl means pearl in Dutch, and the outcrop is among the largest granite domes anywhere. The district is warmer and further from the sea than Stellenbosch, which pushes it toward Rhone varieties, Chenin Blanc and the fortified styles that gave Boberg its reason to exist."),
+      "Paarl means pearl in Dutch, and the outcrop is among the largest granite domes anywhere. The district is warmer and further from the sea than Stellenbosch, which pushes it towards Rhone varieties, Chenin Blanc and the fortified styles that gave Boberg its reason to exist."),
     Q("Stellenbosch, Paarl and Franschhoek",
       "Summer temperatures climb several degrees on the short drive inland from Stellenbosch to Paarl. What accounts for the jump?",
       ["Paarl lies further from the cold sea air",
@@ -207,7 +205,7 @@ BANK = [
        "Sauvignon Blanc for the whites and Pinot Noir for the reds",
        "Chardonnay for the whites and Cabernet Sauvignon for the reds",
        "Colombard for the whites and Pinotage for the reds"], 0,
-      "Chenin was already in the ground as old unirrigated bush vines, planted for bulk wine and brandy and then rediscovered, while the Syrah is largely modern planting, put on shale and granite from the 1990s by growers who had seen what the district could do. The reds are usually blended in the southern Rhone manner with Grenache, Mourvedre and Cinsaut, and the whites are picked earlier and handled far more gently than the district's history would suggest."),
+      "Chenin was already in the ground as old unirrigated bush vines, planted for bulk wine and brandy and then rediscovered, while the Syrah is largely modern planting, put on shale and granite from the 1990s by growers who had seen what the district could do. The reds are often blended in the southern Rhone manner with Grenache, Mourvedre and Cinsaut, and the whites are picked earlier and handled far more gently than the district's history would suggest."),
     Q("Swartland, Darling and the Coastal Region",
       "Stellenbosch, Swartland and Darling are neighbouring districts gathered under a single regional name. Which region?",
       ["Coastal Region", "Cape South Coast", "Breede River Valley", "Klein Karoo"], 0,
@@ -247,12 +245,12 @@ BANK = [
     Q("The Cape South Coast",
       "Vineyards around Hermanus ripen slowly because of the cold water in the bay below them. Which district covers them?",
       ["Walker Bay", "Cape Agulhas", "Elgin", "Overberg"], 0,
-      "Cold water a few kilometres away holds the growing season long and the acidity high, which is why Pinot Noir and Chardonnay work there and Cabernet Sauvignon does not. Overberg and Cape Agulhas are genuine neighbouring districts in the same region."),
+      "Cold water a few kilometres away holds the growing season long and the acidity high, which is why Pinot Noir and Chardonnay lead nearest the water, while the warmer inland wards also grow Bordeaux and Rhone varieties. Overberg and Cape Agulhas are genuine neighbouring districts in the same region."),
     Q("The Cape South Coast",
       "Clay-rich soils weathered from a rock quite unlike the Swartland's shale give the Hemel-en-Aarde its ability to hold water through a dry summer. Which rock?",
       ["Bokkeveld shale", "Malmesbury shale",
-       "Table Mountain Sandstone", "Cape granite"], 0,
-      "Bokkeveld shale weathers to heavy clay, and clay is what lets an unirrigated vine on a warm slope reach harvest in balance. It is much younger than the Malmesbury shale of the Swartland and behaves very differently in the vineyard."),
+       "Table Mountain Sandstone", "Witteberg quartzite"], 0,
+      "Bokkeveld shale weathers to heavy clay, and clay is what lets an unirrigated vine on a warm slope reach harvest in balance. It is much younger than the Malmesbury shale of the Swartland, while sandstone and quartzite weather to a hungry, free-draining sand that holds almost nothing."),
     Q("The Cape South Coast",
       "Apple and pear orchards covered a high plateau east of Cape Town long before any vines arrived, and the district is now among the coolest in the country. Which district?",
       ["Elgin", "Robertson", "Tulbagh", "Wellington"], 0,
@@ -278,7 +276,7 @@ BANK = [
     Q("Breede River and the Klein Karoo",
       "Semi-desert country beyond the mountain passes grows Touriga Nacional and Tinta Barocca for the Cape's finest fortified reds. Which town sits at the centre of that trade?",
       ["Calitzdorp", "Oudtshoorn", "Montagu", "Barrydale"], 0,
-      "The Klein Karoo is hot, dry and stony, which is close enough to the Douro that the Portuguese varieties behave as they should. The same district makes a great deal of fortified Muscadel, red and white, in a sweeter and simpler register."),
+      "The Klein Karoo is hot, dry and stony, which is close enough to the Douro that the Portuguese varieties behave as they should. The same region makes a great deal of fortified Muscadel, red and white, in a sweeter and simpler register."),
     Q("Breede River and the Klein Karoo",
       "A Cape fortified red left in cask until it turns amber and tastes of nuts and dried fruit is sold under which name?",
       ["Cape Tawny", "Cape Ruby", "Cape Vintage", "Cape Vintage Reserve"], 0,

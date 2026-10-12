@@ -1,0 +1,510 @@
+{
+ "batch": "village-6",
+ "modules": [
+  "rewrite/categories/r2_loire.py",
+  "rewrite/categories/r2_spain.py",
+  "rewrite/categories/r2_champagne.py",
+  "rewrite/categories/r2_fortified_wines.py"
+ ],
+ "readCount": 144,
+ "total": 144,
+ "findings": [
+  {
+   "module": "rewrite/categories/r2_loire.py",
+   "stemStart": "A list needs one Loire district able to",
+   "field": "exp",
+   "problem": "The explanation uses the banned word: the Pays Nantais is 'in practice' a one-grape region.",
+   "fix": "Now 'the Pays Nantais is all but a one-grape region'.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_loire.py",
+   "stemStart": "Growers on the plateau above Vouvray name their",
+   "field": "exp",
+   "problem": "Says parcels meant for sweet wine 'tend to sit on' aubuis and that perruches suits the earlier styles. That generalisation is unsupported: sweet Vouvray comes off both soils.",
+   "fix": "Dropped the siting claim. The explanation now says only that aubuis holds water and ripens slowly, perruches drains and warms fast, and neighbouring parcels on the two give noticeably different wines.",
+   "source": "Vouvray soil descriptions (aubuis clay-limestone over tuffeau, perruches flinty clay); sweet cuvees are made from both.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_loire.py",
+   "stemStart": "Between Sancerre and the town of Gien the",
+   "field": "exp",
+   "problem": "Four sentences, over the three-sentence limit. It also claims the blend rule is one 'no other appellation of the Centre imposes', which cannot be checked against Chateaumeillant's and Orleans' grape rules, and it closes on filler.",
+   "fix": "Trimmed to two sentences. The verified rule stays (reds and roses must blend Gamay with Pinot Noir, so a varietal red leaves the appellation); the exclusivity claim and the filler go.",
+   "source": "Coteaux du Giennois rules: red and rose a blend of Gamay and Pinot Noir, neither alone. Exp length rule (one to three sentences).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "Fruit off a young plot cannot go into",
+   "field": "exp",
+   "problem": "Redundant prose: 'Age alone was never going to be enough on its own'.",
+   "fix": "Now 'Age was never going to be enough on its own'.",
+   "source": "Voice and prose.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "A Spanish white has spent four years ageing,",
+   "field": "opts",
+   "problem": "The key 'Gran Reserva' (12 characters) stands alone against three distractors of 54 to 70 characters, each carrying a reason, so picking the outlier answers it without knowing the rule.",
+   "fix": "Key now 'Gran Reserva, since a white's timetable is shorter than a red's' (62 characters, mid-range). It is true and no distractor was touched.",
+   "source": "Ley 24/2003 ageing definitions: a white or rosado Gran Reserva needs 48 months with 6 in oak, a red 60. Option-length rule in rewrite/README.md.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "Spain's national rulebook asks a red Gran Reserva",
+   "field": "exp",
+   "problem": "'Two bottles both reading Gran Reserva can differ by a year or more of wood' overstates the gap between rulebooks: Rioja and Ribera ask 24 months in cask at Gran Reserva against the national 18, which is six months.",
+   "fix": "Now 'may have met different minimums in wood'.",
+   "source": "Ley 24/2003 (red Gran Reserva 18 months in oak); Rioja and Ribera del Duero rules (24 months).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "Pale rosado drawn from black and white grapes",
+   "field": "exp",
+   "problem": "'Cigales sits between Ribera del Duero and Toro on the Pisuerga' misplaces it. Cigales lies north of Valladolid on the Pisuerga, off the Ribera to Toro line, where Rueda sits.",
+   "fix": "Now 'Cigales sits on the Pisuerga just north of Valladolid'.",
+   "source": "Geography of DO Cigales (Valladolid and Palencia, Pisuerga valley north of Valladolid).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "Priorat built a ladder of its own climbing",
+   "field": "exp",
+   "problem": "The third sentence asserts that Vi de Vila does not oblige the bottler to have farmed the fruit and that the estate condition belongs only to the classified rungs. That is unverified detail beside what the question tests.",
+   "fix": "Removed the third sentence. The explanation keeps the ranking of ground, the mapped paratges and the classified rungs awarded on application.",
+   "source": "Caution: unverified rule detail; the remaining text matches the DOQ Priorat Mapa de la Qualitat ladder.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "In Alella, north of Barcelona, the local white",
+   "field": "exp",
+   "problem": "Two problems. 'The Alella version is the older of them' is unsupported. Xarel-lo Vermell is called 'a separate variety' when it is a colour mutation of Xarel-lo.",
+   "fix": "Opening now 'One vine, two names.' Xarel-lo Vermell is now 'a colour mutation that Alella calls Pansa Rosada and the rulebooks list separately'.",
+   "source": "Ampelography: Xarel-lo Vermell (Pansa Rosada) is the pink-berried mutation of Xarel-lo.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "East on the Leon plateau a thick-skinned black",
+   "field": "exp",
+   "problem": "Ends on an unverified claim that a white mutation exists and that the rulebooks name the black one in full for that reason. 'Almost nowhere outside the province' is also loose, since DO Tierra de Leon reaches into Valladolid province.",
+   "fix": "Removed the mutation sentence; 'outside the province' is now 'outside its home ground around Leon'.",
+   "source": "DO Tierra de Leon covers parts of Leon and Valladolid provinces; the mutation claim could not be supported.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "One Galician denomination lies inland against the Portuguese",
+   "field": "exp",
+   "problem": "'It is the least exported of the five and the one a Galician list is least likely to carry' is a volume and market claim, which drifts.",
+   "fix": "Replaced with a fact that does not drift: its reds lean on Mencia, and its climate is closer to the interior of northern Portugal than to the Galician coast.",
+   "source": "House rule: nothing volatile stated as fact. DO Monterrei grape rules (Mencia the principal red).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "A butt fortified past a certain strength loses",
+   "field": "exp",
+   "problem": "Says Oloroso is fortified to 'just over' the flor line. It goes to about 17 percent, well past 15.5.",
+   "fix": "Now 'well past it, to around seventeen, to kill the flor deliberately'.",
+   "source": "Standard Jerez fortification: Fino to about 15 to 15.5 percent, Oloroso to about 17 percent.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "Wine drawn off the solera row is topped",
+   "field": "exp",
+   "problem": "'The word is literal' is wrong: rocio (dew) names the gentle refill figuratively.",
+   "fix": "Now 'The name suits the job'.",
+   "source": "Meaning of rocio (dew); the refill is named by analogy.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "One outstanding harvest is set aside and aged",
+   "field": "exp",
+   "problem": "'Bottling one at all is a modern decision rather than an old tradition' is doubtful, since single-harvest wine predates general solera use in Jerez. The claim that anadas were 'traditionally kept to correct a solera' is unsupported too.",
+   "fix": "Replaced with reasoning that holds: keeping one harvest apart for decades ties up stock and takes the cask's evaporation losses in full, so a bottled anada is the exception rather than the rule.",
+   "source": "Jerez history: the solera system became general only in the nineteenth century; anada wines are a recognised special category.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "At the first classification the capataz chalks a",
+   "field": "exp",
+   "problem": "Says the mark that names Palo Cortado is 'a palma struck through'. Palo cortado means 'cut stick': a single stroke, the palo, with a bar across it. A struck-through palma is palma cortada, a different term. The raya is also called 'a plain horizontal bar' without support.",
+   "fix": "Now: 'Palo Cortado is named for a different mark, a plain stroke, the palo, cut across by a bar to show that the cellar master changed his mind about the wine.' Raya is now named without a shape. Key and accept list unchanged.",
+   "source": "Etymology of palo cortado (palo, stick or stroke; cortado, cut); Jeffs, Sherry, on the chalk marks.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_spain.py",
+   "stemStart": "Zoning came to Cava so that a label",
+   "field": "opts",
+   "problem": "The distractor 'Ribera del Cava' is invented, which breaks the rule that every option is a real thing.",
+   "fix": "Replaced it with 'Terra Alta', a real Catalan DO that is not one of the Cava zones (Comtats de Barcelona, Valle del Ebro, Vinedos de Almendralejo, Levante). Key unchanged.",
+   "source": "DO Cava zoning of 2020, four zones.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A delimitation of 1908 drew the Champagne boundary",
+   "field": "exp",
+   "problem": "'That boundary is essentially the one in force now' is volatile: the revision of the Champagne area has been under way since 2008.",
+   "fix": "Now 'every later revision of the area has started from that line'.",
+   "source": "INAO revision of the Champagne aire geographique (begun 2008). House rule: nothing volatile stated as fact.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "The percentage scale that once fixed what a",
+   "field": "exp",
+   "problem": "'A fashionable grower's fruit can now cost several times what the old rating would ever have allowed' is a volatile price claim.",
+   "fix": "Now 'Two villages of the same rank can therefore fetch quite different sums for the same kilogram.'",
+   "source": "House rule: nothing volatile stated as fact.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "Under the old percentage scale a couple of",
+   "field": "exp",
+   "problem": "Four sentences, over the three-sentence limit; the last restates the one before.",
+   "fix": "Removed the closing sentence ('The flat list of villages every student recites...'). The facts stay.",
+   "source": "Exp length rule (one to three sentences).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A generous harvest brings in more fruit than",
+   "field": "opts",
+   "problem": "The key was a decisive long standout: 97 characters against a runner-up of 74.",
+   "fix": "Key now 'Vinify it and hold it in a blocked reserve, released only in a short year' (73 characters against 74, so no standout). The module's standouts fall from six to five, and the key is none of them.",
+   "source": "Option-length rule in rewrite/README.md (standout at 10 characters clear); reserve individuelle mechanics.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A label reads Extra Brut. Give the band",
+   "field": "exp",
+   "problem": "'The category has grown because...' is a market-trend claim, and its history ('not true at all when the scale was written') is loose.",
+   "fix": "Now 'Low dosage suits a base wine picked fully ripe, which needs far less sugar to taste balanced than a lean one does.'",
+   "source": "House rule: nothing volatile stated as fact.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A wine list describes three bottles as prestige",
+   "field": "exp",
+   "problem": "Banned word: 'In practice such wines are usually vintage-dated'.",
+   "fix": "Now 'Such wines are usually vintage-dated'.",
+   "source": "House rule: never the word practice or practise.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "Under the crown cap sits a small plastic",
+   "field": "exp",
+   "problem": "Claims that without a bidule the deposit 'freezes against the glass and the neck has to be cleaned by hand before the wine can be dosed'. That is unsupported: frozen-plug disgorgement works without one, and the bidule makes the plug cleaner. The aside 'which is about the ceremony it commands' is muddled.",
+   "fix": "Rewritten: the name is French slang for a thingamajig; once riddling brings the deposit onto it, the cup holds the sediment together so it leaves cleanly in the frozen plug with little wine lost.",
+   "source": "Function of the bidule in traditional-method disgorgement.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A producer may buy bottles from another that",
+   "field": "exp",
+   "problem": "Uses the banned word ('the trade dislikes the practice'). States an unverified agreement among negociant houses to stop trading sur lattes 'from 2004'. Closes on a speculative 'usual explanation'.",
+   "fix": "Now: nothing on the finished label has to reveal it, which is why the trade has long been uneasy about such sales and why a brand that appears from nowhere in quantity invites the question of who made the wine.",
+   "source": "House rules: banned word; nothing unverified or volatile stated as fact.",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A Champagne grower's planting declaration lists a grey-berried",
+   "field": "exp",
+   "problem": "'One of the seven principal varieties the appellation permits' is stale. Voltis was admitted to the Champagne rules on trial in December 2022, so seven is no longer the permitted count.",
+   "fix": "Now 'one of the appellation's seven traditional varieties'.",
+   "source": "Champagne cahier des charges as amended (INAO national committee 8 September 2022, Journal Officiel 10 December 2022): Voltis admitted as a trial variety, at most 5 percent of plantings and 10 percent of a blend.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_champagne.py",
+   "stemStart": "A grower bottling all seven traditional varieties together",
+   "field": "stem",
+   "problem": "The stem said 'all seven permitted varieties'. Since the December 2022 amendment admitted Voltis on trial, the permitted count is eight, so the stem stated a fact that is no longer true.",
+   "fix": "Stem now reads 'all seven traditional varieties'; nothing else in it changed. The explanation adds that a disease-resistant newcomer, Voltis, has been admitted on trial since 2022. check-similarity flags nothing (max ratio 0.294).",
+   "source": "Champagne cahier des charges amendment (INAO, Journal Officiel 10 December 2022); trade reports of Drappier growing all eight permitted varieties (May 2023).",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "Two casks are filled from one lot of",
+   "field": "exp",
+   "problem": "'That is why the trade grew up at the river mouth in the first place' puts the lodges' location down to climate. They stood at Gaia for the shipping, and Port had to be aged and shipped from there by law until 1986.",
+   "fix": "Now 'The lodges stood at the river mouth because the ships did, and their cool, damp air proved ideal for long ageing'. The style point stays.",
+   "source": "History of the Vila Nova de Gaia entreposto (export monopoly lifted 1986).",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "A ruby, a tawny or a white judged",
+   "field": "exp",
+   "problem": "'Which is where most of the trade in serious Port actually sits' is a volume claim.",
+   "fix": "Removed. The sentence now ends at 'the wines that declare an age', and 'the cheapest bottling' is now 'the standard bottlings'.",
+   "source": "House rule: no volumes, nothing volatile.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "One rare Port style spends a few years",
+   "field": "exp",
+   "problem": "'The two or three houses that still bother' gives a producer count, which drifts.",
+   "fix": "Now 'the few houses that still make it'.",
+   "source": "House rule: nothing volatile stated as fact.",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "Casks from an outstanding harvest are tasted through",
+   "field": "exp",
+   "problem": "'The wine must be in bottle before the third year is out' is imprecise. The IVDP bottling window is 1 July of the second year to 30 June of the third.",
+   "fix": "Now 'bottled between 1 July of that year and 30 June of the third'.",
+   "source": "IVDP rules for Vintage Port: approval sought in the second year, bottling between 1 July of the second year and 30 June of the third.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "A pink Port poured cold over ice is",
+   "field": "opts",
+   "problem": "The key was a decisive long standout: 76 characters against a runner-up of 64.",
+   "fix": "Key now 'A short maceration for colour, and no wood ageing at all' (55 characters, inside the 60 to 64 range of the others). The meaning is unchanged.",
+   "source": "Option-length rule in rewrite/README.md.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "A pink Port poured cold over ice is",
+   "field": "exp",
+   "problem": "'It is the one Port the rules treat as a wine to be drunk on release and never laid down' claims a rule that does not exist; ruby and white are also made for early drinking.",
+   "fix": "Now 'It is made to be drunk young and cold, and nothing in the method rewards keeping it.'",
+   "source": "IVDP category rules for rose Port (approved 2008) contain no such provision.",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_fortified_wines.py",
+   "stemStart": "A blend that has come out drier than",
+   "field": "exp",
+   "problem": "'Something equivalent exists in every region that fortifies' overgeneralises.",
+   "fix": "Now 'most regions that fortify keep an equivalent of their own'.",
+   "source": "Caution with universal claims; equivalents such as jeropiga and vino dulce exist but not everywhere.",
+   "confidence": "low",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "A list needs one Loire district able to",
+   "verdict": "kept",
+   "why": "The banned word sat in the exp and 'all but a one-grape region' keeps the sense; Gros Plant and the Ancenis Gamay make 'all but' the accurate hedge."
+  },
+  {
+   "stemStart": "Growers on the plateau above Vouvray name their",
+   "verdict": "kept",
+   "why": "The siting claim was an unsupported generalisation (sweet Vouvray is made off both soils); the new exp is true, fits the stem and adds the point that neighbouring parcels differ."
+  },
+  {
+   "stemStart": "Between Sancerre and the town of Gien the",
+   "verdict": "kept",
+   "why": "The log miscounts: the original had three sentences, not four. The fix still stands, since the exclusivity claim could not be checked against Valencay, Chateaumeillant and Orleans and the closing clause was filler; the surviving blend rule is right."
+  },
+  {
+   "stemStart": "Fruit off a young plot cannot go into",
+   "verdict": "kept",
+   "why": "'Alone' and 'on its own' said the same thing twice; one word gone, meaning intact."
+  },
+  {
+   "stemStart": "A Spanish white has spent four years ageing,",
+   "verdict": "kept",
+   "why": "True (white Gran Reserva 48 months with 6 in oak, red 60 with 18) and the key, now 63 characters among distractors of 55 to 70, no longer stands out; its reason echoes the exp, not a distractor. Build clean."
+  },
+  {
+   "stemStart": "Spain's national rulebook asks a red Gran Reserva",
+   "verdict": "kept",
+   "why": "Rioja and Ribera del Duero ask 24 months in cask against the national 18, a six month gap in minimums, so 'a year or more of wood' overstated what the word guarantees; the new clause is accurate."
+  },
+  {
+   "stemStart": "Pale rosado drawn from black and white grapes",
+   "verdict": "kept",
+   "why": "Cigales lies up the Pisuerga north of Valladolid, off the Duero line from Ribera to Toro; the new placing is right."
+  },
+  {
+   "stemStart": "Priorat built a ladder of its own climbing",
+   "verdict": "kept",
+   "why": "The Vi de Vila farming detail was unverified and beside the question; removing it leaves a correct two-sentence exp on the ladder."
+  },
+  {
+   "stemStart": "In Alella, north of Barcelona, the local white",
+   "verdict": "kept",
+   "why": "Xarel-lo Vermell is the pink-berried colour mutation, not a separate variety, and 'the Alella version is the older' had no support. Both corrections are right and the Pansa trap survives."
+  },
+  {
+   "stemStart": "East on the Leon plateau a thick-skinned black",
+   "verdict": "kept",
+   "why": "The removed sentence contradicted itself (a mutation called a different grape) and was unsupported; 'outside the province' was loose with Prieto Picudo grown around Benavente in Zamora too. The new wording is safe."
+  },
+  {
+   "stemStart": "One Galician denomination lies inland against the Portuguese",
+   "verdict": "kept",
+   "why": "The export and list claim was volatile. Mencia is Monterrei's principal red and the valley's climate runs on from Tras-os-Montes, so the replacement is a fact that does not drift."
+  },
+  {
+   "stemStart": "A butt fortified past a certain strength loses",
+   "verdict": "kept",
+   "why": "Oloroso is fortified to about 17 per cent, well past the flor line, so 'just over' was wrong. 'Around seventeen' does not clash with the 18 percent distractor, which is wrong for the threshold the stem asks."
+  },
+  {
+   "stemStart": "Wine drawn off the solera row is topped",
+   "verdict": "kept",
+   "why": "Rocio (dew) names the gentle refill by analogy, so 'literal' was wrong; 'the name suits the job' is right."
+  },
+  {
+   "stemStart": "One outstanding harvest is set aside and aged",
+   "verdict": "amended",
+   "why": "Dropping the doubtful history was right, but 'for decades' overstated (some anadas, finos among them, are bottled after a few years) and 'bears the losses in full' was unclear. Now 'for years ... leaves the cask's losses to evaporation unreplaced'."
+  },
+  {
+   "stemStart": "At the first classification the capataz chalks a",
+   "verdict": "kept",
+   "why": "Palo cortado is the cut stick, a single stroke crossed by a bar; a struck-through palma is palma cortada, so the original conflated two marks. The new text is right and the key and accept list are untouched."
+  },
+  {
+   "stemStart": "Zoning came to Cava so that a label",
+   "verdict": "kept",
+   "why": "'Ribera del Cava' names nothing real. Terra Alta is a real Catalan DO and none of the four 2020 zones (Comtats de Barcelona, Valle del Ebro, Vinedos de Almendralejo, Levante), so the question still has one key."
+  },
+  {
+   "stemStart": "A delimitation of 1908 drew the Champagne boundary",
+   "verdict": "kept",
+   "why": "'Essentially the one in force now' would go stale when the revision begun in 2008 lands; the new clause is true now and later, since that revision works from the 1927 area."
+  },
+  {
+   "stemStart": "The percentage scale that once fixed what a",
+   "verdict": "amended",
+   "why": "Removing the price claim was right, but 'for the same kilogram' cannot be, a kilogram from two villages being two kilograms. Now 'quite different sums per kilogram'."
+  },
+  {
+   "stemStart": "Under the old percentage scale a couple of",
+   "verdict": "kept",
+   "why": "Four sentences, over the limit, and the last restated the third; its removal loses no fact."
+  },
+  {
+   "stemStart": "A generous harvest brings in more fruit than",
+   "verdict": "amended",
+   "why": "The length repair was right, but 'released only in a short year' added a restriction the original never made: releases are also collective, decided by the interprofession (search). Now 'to be released in a short year', 74 characters level with the runner-up, so no standout."
+  },
+  {
+   "stemStart": "A label reads Extra Brut. Give the band",
+   "verdict": "kept",
+   "why": "The growth claim was a market trend. The replacement is timeless reasoning and true."
+  },
+  {
+   "stemStart": "A wine list describes three bottles as prestige",
+   "verdict": "kept",
+   "why": "Banned word removed with the sense intact."
+  },
+  {
+   "stemStart": "Under the crown cap sits a small plastic",
+   "verdict": "kept",
+   "why": "Frozen-plug disgorgement works without a bidule, so the hand-cleaning claim was wrong and the ceremony aside muddled. The new text states its real job, gathering the deposit so it leaves cleanly with little wine lost."
+  },
+  {
+   "stemStart": "A producer may buy bottles from another that",
+   "verdict": "kept",
+   "why": "Banned word, an unverified 2004 agreement and a speculative close all gone; 'nothing on the label has to reveal it' is accurate."
+  },
+  {
+   "stemStart": "A Champagne grower's planting declaration lists a grey-berried",
+   "verdict": "kept",
+   "why": "Voltis entered the specification on trial (Journal Officiel, 10 December 2022, confirmed by regionale-5's searches), so 'seven principal varieties the appellation permits' is now false; 'seven traditional varieties' is right."
+  },
+  {
+   "stemStart": "A grower bottling all seven traditional varieties together",
+   "verdict": "kept",
+   "why": "The false count sat in the stem itself, so no exp or option edit could serve. One word changed; the id c-j6p46gg1 (shipped in data-questions.js) moves, accepted knowingly as in earlier batches. match_sa still grades Arbane, arbanne and the arbane grape and refuses Petit Meslier, Pinot Blanc and Voltis; the Voltis line matches data-advanced's 'since 2022'."
+  },
+  {
+   "stemStart": "Two casks are filled from one lot of",
+   "verdict": "amended",
+   "why": "The history was right (the lodges stood at Gaia for the shipping, and the export monopoly lasted to 1986), but the new 'so' hung the style conclusion on that history and 'proved ideal for long ageing' repeated the sentence before. Now the style point closes the heat contrast and the history follows: 'the cool, damp air there was a happy accident'."
+  },
+  {
+   "stemStart": "A ruby, a tawny or a white judged",
+   "verdict": "kept",
+   "why": "The volume claim is gone and 'the standard bottlings' is fair to ruby, tawny and white alike."
+  },
+  {
+   "stemStart": "One rare Port style spends a few years",
+   "verdict": "kept",
+   "why": "A producer count drifts; 'the few houses that still make it' does not."
+  },
+  {
+   "stemStart": "Casks from an outstanding harvest are tasted through",
+   "verdict": "kept",
+   "why": "The IVDP window is bottling from 1 July of the second year to 30 June of the third, which the new text states exactly, and it agrees with the key 'In the second year after the harvest'."
+  },
+  {
+   "stemStart": "A pink Port poured cold over ice is",
+   "verdict": "kept",
+   "why": "Options: the key now reads true and is no longer a long standout. The log is wrong that it sits 'inside the 60 to 64 range': it is 56 against 61 to 63, five short, below the ten-character standout gap, so it does not tower or sink."
+  },
+  {
+   "stemStart": "A pink Port poured cold over ice is",
+   "verdict": "kept",
+   "why": "Exp: there is no rule treating rose Port as the one wine never to be laid down (ruby and white are made for early drinking too); the replacement is true."
+  },
+  {
+   "stemStart": "A blend that has come out drier than",
+   "verdict": "kept",
+   "why": "'Every region' was a universal claim that vins doux naturels alone undo; 'most regions that fortify keep an equivalent' is safe beside jeropiga, mistela and Marsala's mistella."
+  }
+ ]
+}

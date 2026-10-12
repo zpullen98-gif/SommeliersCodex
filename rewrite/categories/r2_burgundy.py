@@ -1,10 +1,10 @@
-"""Rank II rewrite - Burgundy (49 questions: 19 MC, 30 short answer).
+"""Village rewrite - Burgundy (49 questions: 19 MC, 30 short answer).
 
-Certified level, pitched deliberately above the Rank I "Burgundy" category.
-Where Rank I counts the tiers of the pyramid, this asks what a grower may write
-on the label after blending three premier cru climats together; where Rank I
+Certified level, pitched deliberately above the Regionale "Burgundy" category.
+Where Regionale counts the tiers of the pyramid, this asks what a grower may write
+on the label after blending three premier cru climats together; where Regionale
 names the Beaujolais crus, this asks where the gas in a closed vat of unbroken
-bunches actually comes from. Nothing here repeats a Rank I task.
+bunches actually comes from. Nothing here repeats a Regionale task.
 
 The running order follows the way a Burgundy label has to be read: the tiers
 first, then the vocabulary of the map, then the Cote d'Or commune by commune,
@@ -107,7 +107,7 @@ BANK = [
        "Bourgogne Cote d'Or",
        ["bourgogne cote d'or", "bourgogne cote dor", "bourgogne cote d'or aoc",
         "aoc bourgogne cote d'or", "the bourgogne cote d'or appellation"],
-       "Created in 2017, it sits above plain Bourgogne and below the village names, and the fruit must come from the Cote de Nuits or the Cote de Beaune. The point is commercial as much as geological: a Bourgogne from the escarpment had no way of saying so, while one from the flat land beyond the motorway carried the same three words.",
+       "Created in 2017, it sits above plain Bourgogne and below the village names, and the fruit must come from the Cote de Nuits or the Cote de Beaune. The point is commercial as much as geological: a Bourgogne grown on the escarpment had no way of saying so, while one grown anywhere else in the region carried exactly the same name.",
        ex=True),
     SA("The tiers and what each one covers",
        "Every grand cru site in Burgundy holds an appellation of its own, with Chablis Grand Cru counting once. Give the total.",
@@ -129,7 +129,7 @@ BANK = [
       ["A lieu-dit", "A climat", "A clos", "A monopole"], 0,
       "A lieu-dit is simply a name in the land registry, and every scrap of ground has one whether or not it is distinguished. The half-height rule exists so that a village wine naming its parcel cannot be mistaken at a glance for a premier cru, where the vineyard name is printed the same size as the appellation."),
     Q("Climat, lieu-dit and reading the map",
-      "Monks walled parcels of the Cote d'Or to mark and protect them, and the practice left a word behind on the labels. What does Clos record?",
+      "Monks walled parcels of the Cote d'Or to mark and protect them, and the habit left a word behind on the labels. What does Clos record?",
       ["A vineyard that is or was enclosed by a wall",
        "A vineyard held entire by one owner",
        "A vineyard whose wine is aged wholly in new oak",
@@ -139,12 +139,12 @@ BANK = [
        "Burgundian growers still size a plot in an old unit reckoned as the ground one man could work in a day. Name that unit.",
        "Ouvree",
        ["ouvree", "ouvrees", "an ouvree of vines"],
-       "An ouvree runs to a little over four ares, so eight of them make a journal, the day's work of a man with a horse, and it takes something like twenty-four to make a hectare. The unit survives because Burgundian holdings are small enough that hectares are a clumsy way to describe them, and a sale is still gossiped about in ouvrees."),
+       "An ouvree runs to a little over four ares, so eight of them make a journal, the day's work of a man with a horse, and a hectare holds a little over twenty-three of them. The unit survives because Burgundian holdings are small enough that hectares are a clumsy way to describe them, and a sale is still gossiped about in ouvrees."),
     SA("Climat, lieu-dit and reading the map",
        "Dry transverse valleys cut back into the Cote d'Or escarpment, swinging aspect around and funnelling cold air down onto the slope. What are they called locally?",
        "Combe",
        ["combe", "combes"],
-       "A combe interrupts the even east-facing wall of the Cote and exposes north and south flanks within a few hundred metres of each other, which is why the vineyard quality can change so abruptly beside one. The cold air draining out of them also explains why the ground directly at a combe mouth is usually village land rather than premier cru."),
+       "A combe interrupts the even east-facing wall of the Cote and exposes north and south flanks within a few hundred metres of each other, which is why the vineyard quality can change so abruptly beside one. The cold air draining out of them, and the deep spread of stones and soil they have washed down, help explain why the ground at a combe mouth is often village land rather than premier cru."),
 
     # -------------------------- The Cote de Nuits commune by commune (6) -----
     Q("The Cote de Nuits commune by commune",
@@ -175,13 +175,13 @@ BANK = [
        "Clos Saint-Jacques",
        ["clos saint jacques", "clos st jacques",
         "clos saint jacques in gevrey chambertin"],
-       "It lies north of the grand cru band rather than within it, which is an accident of where the boundary was drawn in the 1930s rather than a verdict on the slope. The wine routinely outprices several of the grand crus it was passed over for, and that is the argument its supporters make."),
+       "It lies north of the grand cru band rather than within it, which is an accident of where the boundary was drawn in the 1930s rather than a verdict on the slope. The wine is routinely ranked alongside the grand crus it was passed over for, and that is the argument its supporters make."),
     SA("The Cote de Nuits commune by commune",
        "Inside the Vougeot commune a walled premier cru has been planted to white grapes since the Cistercians held it. Name that vineyard.",
        "Clos Blanc de Vougeot",
        ["clos blanc de vougeot", "clos blanc", "vougeot clos blanc",
         "clos blanc de vougeot premier cru",
-        "the clos blanc de vougeot vineyard"],
+        "the clos blanc de vougeot vineyard", "la vigne blanche"],
        "It sits just outside the wall of the grand cru and has grown Chardonnay for something close to nine hundred years, which makes it the oldest white plot of the Cote de Nuits. White at grand cru level here is confined to Musigny, so a white Vougeot can rise no higher than premier cru.",
        ex=True),
 
@@ -208,7 +208,7 @@ BANK = [
        "Tucked in a valley behind the Montrachet hill, one village sells most of its vineyard at premier cru level and is the standard recommendation for white Burgundy that does not cost a fortune. Name it.",
        "Saint-Aubin",
        ["saint aubin", "st aubin", "saint aubin aoc"],
-       "En Remilly and Les Murgers des Dents de Chien run right up to the Chevalier-Montrachet boundary, and the wines from them are recognisably of the same slope. The village sits in a side valley off the main Cote, which is the whole reason it was never priced with its neighbours."),
+       "En Remilly and Les Murgers des Dents de Chien lie within a short walk of Montrachet and Chevalier-Montrachet, and the wines from them are recognisably of the same hill. The village sits in a side valley off the main Cote, which is much of the reason it was never priced with its neighbours."),
     SA("The Cote de Beaune commune by commune",
        "Past Santenay the Cote de Beaune runs out in one last appellation, created in 1989 from villages that had hyphenated a shared vineyard name onto their own. Name it.",
        "Maranges",
@@ -229,7 +229,7 @@ BANK = [
        "Clos de Tart is a premier cru, so no producer may print its name",
        "Clos de Tart is a brand rather than a delimited vineyard",
        "Clos de Tart may only be sold as Morey-Saint-Denis"], 0,
-      "Cistercian nuns planted it in the twelfth century and it has never been divided, so there is exactly one wine to taste in any vintage. Clos de Vougeot is the opposite case: one wall around ground that slopes from the road to the top of the hill, split among dozens of owners who each make something different from it."),
+      "Cistercian nuns acquired it in the twelfth century and it has never been divided, so there is exactly one wine to taste in any vintage. Clos de Vougeot is the opposite case: one wall around ground that slopes from the road to the top of the hill, split among dozens of owners who each make something different from it."),
     Q("Grands crus and monopoles",
       "Bressandes, Clos du Roi and Renardes appear on labels appended to a single grand cru name. Which grand cru takes them?",
       ["Corton", "Chambertin", "Musigny", "Montrachet"], 0,
@@ -251,7 +251,7 @@ BANK = [
        "La Romanee",
        ["la romanee", "la romanee grand cru", "la romanee aoc",
         "the la romanee vineyard"],
-       "It is a strip of slope no wider than a tennis court is long, and the whole appellation makes a few hundred cases in a generous year. Answering Romanee-Conti here is the standard error: that is the vineyard immediately below, and it is more than twice the size.",
+       "It is a narrow strip of slope under a hectare in all, and the whole appellation makes a few hundred cases in a generous year. Answering Romanee-Conti here is the standard error: that is the vineyard immediately below, and it is more than twice the size.",
        ex=True),
 
     # ------------------------------------ Chablis and the Grand Auxerrois (6) -
@@ -299,7 +299,7 @@ BANK = [
       "Besides Pouilly-Fuisse, the Maconnais carries the Pouilly name on two much smaller appellations. Which pair?",
       ["Pouilly-Loche and Pouilly-Vinzelles", "Pouilly-Fume and Pouilly-sur-Loire",
        "Pouilly-Solutre and Pouilly-Vergisson", "Pouilly-Chaintre and Pouilly-Davaye"], 0,
-      "Both are Chardonnay like Pouilly-Fuisse, and a Loche grower may sell the wine as Vinzelles if they prefer. Pouilly-Fume and Pouilly-sur-Loire are three hundred kilometres away on the Loire and made from Sauvignon Blanc and Chasselas, which is the confusion the name invites on every list that carries both."),
+      "Both are Chardonnay like Pouilly-Fuisse, and a Loche grower may sell the wine as Vinzelles if they prefer. Pouilly-Fume and Pouilly-sur-Loire lie far to the north-west on the Loire and are made from Sauvignon Blanc and Chasselas, which is the confusion the name invites on every list that carries both."),
     SA("Chalonnaise, Hautes-Cotes and Maconnais",
        "The southern Maconnais has a Chardonnay appellation split into blocks lying either side of Pouilly-Fuisse. Name it.",
        "Saint-Veran",
@@ -348,13 +348,13 @@ BANK = [
        "Beaujolais held nine crus until 1988, when a tenth was raised from Beaujolais-Villages. Name the newest of them.",
        "Regnie",
        ["regnie", "regnie cru", "the regnie appellation"],
-       "It sits on pink granite sand between Morgon and Brouilly and gives the lightest and most floral of the crus, which is part of why the promotion was argued about. No eleventh has followed, so the list has been fixed for a generation now."),
+       "It sits on pink granite sand between Morgon and Brouilly and gives one of the lighter, fruit-forward crus, which is part of why the promotion was argued about. No eleventh has followed, so the list has been fixed for a generation now."),
 
     # ------------------------------------------------ Grapes beyond the two (3)
     Q("Grapes beyond the two",
       "A red co-fermented from Pinot Noir and Gamay is sold as Bourgogne Passe-Tout-Grains. What minimum share must the Pinot Noir supply?",
-      ["Thirty percent", "Fifteen percent", "Fifty percent", "Eighty-five percent"], 0,
-      "At least thirty percent Pinot Noir and at least fifteen percent Gamay, and the two must go into the vat together rather than be blended afterwards. Eighty-five is the most Pinot the rule leaves room for rather than the least it demands. The name records the old peasant practice of throwing every grape on the holding into one fermenter, which is exactly what the co-fermentation rule preserves."),
+      ["Thirty per cent", "Fifteen per cent", "Fifty per cent", "Eighty-five per cent"], 0,
+      "At least thirty per cent Pinot Noir and at least fifteen per cent Gamay, and the two must go into the vat together rather than be blended afterwards. Eighty-five is the most Pinot the rule leaves room for rather than the least it demands. The name records the old peasant custom of throwing every grape on the holding into one fermenter, which is exactly what the co-fermentation rule preserves."),
     SA("Grapes beyond the two",
        "Bouzeron insists on one of Aligote's two forms, the golden-berried and lower-yielding one. Name it.",
        "Aligote Dore",
@@ -364,7 +364,7 @@ BANK = [
        "Pinot Gris survives in old Burgundian plantings under a local name and may still be blended into a white Burgundy. Give that name.",
        "Pinot Beurot",
        ["pinot beurot", "beurot", "beurot in burgundy"],
-       "It is the same grape as Alsace's Pinot Gris and Italy's Pinot Grigio, a colour mutation of Pinot Noir, and it is permitted in small amounts in several white appellations. The old vineyards were interplanted rather than blocked out by variety, which is how scattered vines of it came to be there at all."),
+       "It is the same grape as Alsace's Pinot Gris and Italy's Pinot Grigio, a colour mutation of Pinot Noir, and the rules still allow it in small amounts, as an accessory grape in many reds as well as in some whites. The old vineyards were interplanted rather than blocked out by variety, which is how scattered vines of it came to be there at all."),
 
     # ------------------------------------- Domaine, negociant and metayage (3)
     Q("Domaine, negociant and metayage",
@@ -378,7 +378,7 @@ BANK = [
        "An owner who no longer farms lets a grower work the vines and takes payment as a share of the crop rather than in cash. Name that arrangement.",
        "Metayage",
        # ex=True because "share" is a substring of "sharecropping", so the
-       # containment branch grades the bare stem word "share" — the question
+       # containment branch grades the bare stem word "share": the question
        # says "takes payment as a share of the crop" and then rewards it back.
        # The leak is inside an entry rather than fixable by removing one, and
        # the explanation's own phrase, "farming a moitie", is listed exactly.

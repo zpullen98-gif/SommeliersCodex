@@ -1,0 +1,433 @@
+{
+  "batch": "regionale-3",
+  "modules": [
+    "rewrite/categories/r1_burgundy.py",
+    "rewrite/categories/r1_italy.py"
+  ],
+  "readCount": 124,
+  "total": 124,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Pinot Noir is notoriously difficult to grow. Which",
+      "field": "opts",
+      "problem": "The distractor 'Resistance to all rootstock' is not a real characteristic of any vine, so the options were not all real things.",
+      "fix": "Replaced it with 'A need for long, hot summers', a real claim that is wrong for an early-ripening, cool-climate grape.",
+      "source": "Standard ampelography: Pinot Noir ripens early and is suited to cool climates.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Fragmentation of Burgundian vineyard ownership is largely attributable",
+      "field": "opts",
+      "problem": "The distractor 'Rules obliging growers to sell through a cooperative' describes no rule that exists, and at 52 characters it stood 21 clear of every other option, a long standout that is never the key.",
+      "fix": "Replaced it with 'The 1936 appellation laws', a real thing that did not cause the splitting.",
+      "source": "French AOC law dates from 1935 to 1936; the fragmentation follows the Revolution's sales and the Napoleonic equal-inheritance code.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Chambertin lies within which village?",
+      "field": "opts",
+      "problem": "The stem's word Chambertin appeared in only one option, Gevrey-Chambertin, so the question answered itself.",
+      "fix": "Options now use the villages' short names (Gevrey, Chambolle, Morey, Vougeot); the exp adds that Gevrey took the vineyard's name in 1847.",
+      "source": "Gevrey became Gevrey-Chambertin by royal ordinance in 1847; village shorthand is standard usage.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Santenay lies at which end of the Cote",
+      "field": "exp",
+      "problem": "The exp called Santenay the southern extremity of the Cote d'Or. Maranges lies beyond it and is the last Cote de Beaune appellation.",
+      "fix": "Exp now says 'near the southern tip, with only Maranges beyond it'. The keyed answer (the southern end) stands.",
+      "source": "Maranges AOC (1989), the southernmost Cote de Beaune appellation; agrees with r2_burgundy's Maranges question.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Which village name appears attached to both a",
+      "field": "opts",
+      "problem": "The stem says 'the Montrachet hill' and the key, Chassagne-Montrachet, was the only option containing Montrachet, so the question answered itself.",
+      "fix": "Options now use short names, with Puligny as the distractor that shares the hill but is almost entirely white: Chassagne, Puligny, Meursault, Volnay. The exp notes Puligny.",
+      "source": "Commune appellation rules and production profiles of Chassagne- and Puligny-Montrachet.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Romanee-Conti and La Tache are the monopoles of",
+      "field": "stem",
+      "problem": "The stem named Romanee-Conti and the key was Domaine de la Romanee-Conti, so the answer was printed in the question and nothing was tested.",
+      "fix": "Stem reframed to 'La Tache is a monopole. Which domaine holds the whole of it?' Domaine Leflaive was replaced by Domaine du Comte Liger-Belair, holder of the La Romanee monopole, a real trap. The exp now says the domaine holds two Grands Crus outright. Id moves i-5k10uv5o to i-rt52ovdu.",
+      "source": "La Tache has been a DRC monopole since 1933; La Romanee is the Liger-Belair monopole.",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Which Grand Cru of Chambolle-Musigny produces a small",
+      "field": "stem",
+      "problem": "The village name in the stem contains the key, Musigny, and two of the three distractors (Clos de Vougeot, Echezeaux) were ruled out by the stem's 'of Chambolle-Musigny', so the echo settled a two-way choice.",
+      "fix": "Stem reframed to 'Red is the rule among the Grands Crus of the Cote de Nuits. Which one may also be made white?' Same options, which are now all real competitors. The exp names Chambolle. Id moves i-z5ejgjdl to i-owqbwiuq.",
+      "source": "The Musigny AOC permits white; every other Cote de Nuits Grand Cru is red only. Agrees with r2_burgundy's Clos Blanc de Vougeot explanation.",
+      "confidence": "medium",
+      "stemChanged": true
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Which order of monks did most to map",
+      "field": "opts",
+      "problem": "The distractor 'The Benedictines alone' was wrong only because of its absolute qualifier, a cue for test-wise students. It was also the only other monastic order in a stem that asks for monks.",
+      "fix": "Replaced it with 'The Carthusians', a real monastic order with no comparable role in mapping Burgundy's vineyards. The exp still credits the Benedictine houses.",
+      "source": "Monastic history of the Cote d'Or: Citeaux and Clos de Vougeot are Cistercian.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Echezeaux and Grands-Echezeaux lie within which commune?",
+      "field": "opts",
+      "problem": "The key Flagey-Echezeaux was the only option containing the stem's word Echezeaux, so the question answered itself.",
+      "fix": "Options now use short names (Flagey, Gevrey, Chambolle, Vougeot), with neighbouring Vougeot as the trap. The exp gives the full name Flagey-Echezeaux.",
+      "source": "Both Grands Crus lie in the commune of Flagey-Echezeaux, whose village wine is sold as Vosne-Romanee.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Which Chablis Grand Cru climat is often singled",
+      "field": "opts",
+      "problem": "Petit Chablis is an appellation, not a climat. All three distractors were non-Grands Crus, so the question tested whether you could list the seven, not which one is most structured.",
+      "fix": "Replaced Petit Chablis with Blanchot, the Grand Cru usually called the softest and most floral; the exp says so. Montee de Tonnerre and Fourchaume stay.",
+      "source": "Standard descriptions of the Chablis Grands Crus; Les Clos is the largest (about 26 ha).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Rully, Givry and Montagny sit in the Cote",
+      "field": "opts",
+      "problem": "Three of the four options were the villages the stem had just named, and the stem asks which neighbour outsizes them, so only Mercurey was left.",
+      "fix": "Distractors are now Bouzeron, Maranges and Saint-Aubin, each smaller than Rully, Givry and Montagny.",
+      "source": "Appellation areas: Mercurey about 650 ha against Rully, Montagny and Givry at about 270 to 370 ha; Bouzeron, Maranges and Saint-Aubin are each under 200 ha.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_burgundy.py",
+      "stemStart": "Rully, Givry and Montagny sit in the Cote",
+      "field": "exp",
+      "problem": "The exp spoke of 'the four village appellations there'. There are five: Bouzeron has been a village AOC since 1998, as this module's own Bouzeron question teaches.",
+      "fix": "Exp now calls Mercurey the largest and best known of the Cote Chalonnaise's five village appellations, names Bouzeron as the smallest, and places Maranges and Saint-Aubin in the Cote de Beaune.",
+      "source": "Bouzeron AOC 1998; r2_burgundy lists the five village names.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "Growers across southern Italy plant high on the",
+      "field": "opts",
+      "problem": "The key ran 45 characters against 22 to 25, a visibly longer key.",
+      "fix": "Trimmed the key to 'Cooler nights that keep acidity' (31). The exp still covers the aroma point.",
+      "source": "build.py length metric; README rule to trim the key and keep the explanation in exp.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A label reads DOCG. What does that final",
+      "field": "opts",
+      "problem": "The key ran 59 characters, ten clear of the runner-up, which counts as a decisive standout.",
+      "fix": "Trimmed to 'A guarantee backed by analysis and a tasting panel' (50). The exp keeps the laboratory detail.",
+      "source": "build.py DECISIVE_GAP of 10.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A denomination allows one extra word for wines",
+      "field": "opts",
+      "problem": "The distractor 'Integrale' is not an Italian label term, so the options were not all real things.",
+      "fix": "Replaced it with 'Vigna', the regulated single-vineyard mention, which has nothing to do with alcohol.",
+      "source": "Italian wine law 238/2016 provides the 'vigna' mention for DOC and DOCG wines.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A denomination allows one extra word for wines",
+      "field": "exp",
+      "problem": "The exp said Superiore 'says nothing about oak'. Several disciplinari attach ageing to it: Barbera d'Asti Superiore needs 14 months including 6 in wood, and Valpolicella Superiore a year.",
+      "fix": "Exp now says some denominations attach a longer ageing minimum to Superiore, and that it does not mark a historic heart, which is what Classico does.",
+      "source": "Disciplinari of Barbera d'Asti DOCG and Valpolicella DOC.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "Barolo and Barbaresco are both built on which",
+      "field": "exp",
+      "problem": "The exp used the US form 'percent'.",
+      "fix": "Changed to 'per cent'.",
+      "source": "House rule: British spelling.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A deeply coloured, low-acid Piedmontese red ripens weeks",
+      "field": "opts",
+      "problem": "Cortese is a white grape among options for a red, so it was ruled out by the stem.",
+      "fix": "Replaced it with Grignolino, a pale, high-acid, tannic Piedmontese red.",
+      "source": "Piedmontese ampelography.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A gently sparkling, sweet, low-alcohol Piedmontese wine is",
+      "field": "exp",
+      "problem": "The exp used the US form 'percent'.",
+      "fix": "Changed to 'per cent'.",
+      "source": "House rule: British spelling.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A second fermentation gives Prosecco its bubbles. Where",
+      "field": "exp",
+      "problem": "Prosecco can also be refermented in bottle (the sui lieviti mention), so the bottle option is true of a small share. The exp did not say that tank is the rule rather than the only method.",
+      "fix": "Exp now notes the small sui lieviti share refermented in bottle and calls tank the rule. Stem and key unchanged.",
+      "source": "Conegliano Valdobbiadene DOCG production rules (the sui lieviti mention).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "The senior Prosecco denomination covers hills between two",
+      "field": "exp",
+      "problem": "The exp called Cartizze 'the steepest slope' within the DOCG. Cartizze's standing rests on its prestige and its own designation, not on being the steepest.",
+      "fix": "Exp now says its most prized hill, Cartizze, carries a designation of its own.",
+      "source": "Valdobbiadene Superiore di Cartizze, a designation within the DOCG.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "The senior Prosecco denomination covers hills between two",
+      "field": "opts",
+      "problem": "The key, at 28 characters, stood 11 clear of three short pairs of town names, a visibly longer key.",
+      "fix": "Replaced 'Vicenza and Padua' with 'Castelfranco and Montebelluna' (real towns west and northwest of Treviso), so the key is no longer the longest.",
+      "source": "build.py length metric.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "Which Italian region built its modern reputation on",
+      "field": "opts",
+      "problem": "The key, Friuli-Venezia Giulia, ran 21 characters against three six-letter regions.",
+      "fix": "Distractors are now Trentino-Alto Adige, Emilia-Romagna and Veneto. Trentino-Alto Adige is also known for precise whites, but Collio is not in it.",
+      "source": "build.py length metric; Collio and Colli Orientali are Friulian DOCs.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "Prugnolo Gentile is the local name for Sangiovese",
+      "field": "exp",
+      "problem": "The exp used the US form 'percent'.",
+      "fix": "Changed to 'per cent'.",
+      "source": "House rule: British spelling.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A guest cannot see the difference between Montepulciano",
+      "field": "opts",
+      "problem": "The key ran 78 characters against 30 to 43, the most visible length standout in the batch.",
+      "fix": "Trimmed the key to 'One is a grape, the other a Tuscan town' (39). The exp already carries the detail.",
+      "source": "build.py length metric; README rule to trim the key.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "Frizzante red wine served cool alongside rich Emilian",
+      "field": "opts",
+      "problem": "Two distractors could be defended as correct: Bonarda (Croatina) and Barbera are both made frizzante in Emilia's own hills (Colli Piacentini, Colli Bolognesi) and drunk with the local food.",
+      "fix": "Replaced Barbera and Bonarda with Sangiovese and Teroldego. Neither is a frizzante Emilian red.",
+      "source": "Colli Piacentini and Colli Bolognesi DOC production rules list frizzante Bonarda and Barbera.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "A pale cherry-coloured rose from Abruzzo carries which",
+      "field": "opts",
+      "problem": "The key was the only option containing the stem's word Abruzzo, so the question answered itself.",
+      "fix": "Options are now Cerasuolo d'Abruzzo, Trebbiano d'Abruzzo (white), Cerasuolo di Vittoria (a Sicilian red) and Chiaretto di Bardolino. The exp says Cerasuolo di Vittoria shares the word but is a red.",
+      "source": "Cerasuolo d'Abruzzo DOC (separate since 2010); Cerasuolo di Vittoria DOCG.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_italy.py",
+      "stemStart": "Sicily's only DOCG blends Nero d'Avola with a",
+      "field": "exp",
+      "problem": "'Only DOCG' is volatile. Etna's consortium applied for DOCG status in November 2023, and September 2026 reporting calls ministry approval imminent, though no decree was found.",
+      "fix": "Exp now dates Cerasuolo di Vittoria (DOCG since 2005) and says Etna has applied to become the island's second. The stem was left unchanged because it is still true today.",
+      "source": "Decanter (Etna gears up for DOCG); The Buyer, May 2026; Vinous, September 2026. None reports a final MASAF decree.",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Pinot Noir is notoriously difficult to grow. Which",
+      "verdict": "kept",
+      "why": "The old distractor named no trait any vine has. A need for long, hot summers is a real claim and plainly wrong for an early-ripening, cool-climate grape, it cannot be defended as the cause, and at 28 characters it sits inside the pack."
+    },
+    {
+      "stemStart": "Fragmentation of Burgundian vineyard ownership is largely attributable",
+      "verdict": "amended",
+      "why": "Replacing the 52-character standout was right, and an appellation law did not split the parcels. But the national law is the decree-law of 1935; 1936 brought only the first appellation decrees, and r1_wine_law teaches 'a decree of 1935 built a national system'. A distractor reading 1936 would plant a date the sibling module contradicts, so it now reads 'The 1935 appellation law' (24 characters, no new standout)."
+    },
+    {
+      "stemStart": "Chambertin lies within which village?",
+      "verdict": "kept",
+      "why": "The key did echo the stem. Short village names are standard usage, Chambertin lies wholly in Gevrey, Vougeot is a fair neighbour, and the 1847 royal ordinance and the count (two senior Grands Crus plus seven) are right."
+    },
+    {
+      "stemStart": "Santenay lies at which end of the Cote",
+      "verdict": "kept",
+      "why": "Maranges does lie beyond Santenay as the last Cote de Beaune appellation, so 'southern extremity' overstated it. The keyed answer still holds and the new exp is accurate."
+    },
+    {
+      "stemStart": "Which village name appears attached to both a",
+      "verdict": "kept",
+      "why": "The key was the only option carrying the stem's Montrachet. Puligny shares the hill and is almost entirely white, which makes it the right trap; dropping Aloxe-Corton also removes an option with a genuine red and white reputation (Corton, Corton-Charlemagne)."
+    },
+    {
+      "stemStart": "Romanee-Conti and La Tache are the monopoles of",
+      "verdict": "kept",
+      "why": "The stem change could not be avoided: the domaine is named after the vineyard, so no option edit could keep Romanee-Conti in the stem without printing the answer. La Tache has been a DRC monopole since 1933, and Liger-Belair is a sharp trap (La Romanee is its monopole, next door). The exp is accurate. The id moves once, and that is the accepted cost before shipping."
+    },
+    {
+      "stemStart": "Which Grand Cru of Chambolle-Musigny produces a small",
+      "verdict": "kept",
+      "why": "Chambolle has only two Grands Crus, Musigny and Bonnes-Mares, so no option-only fix could have made four real competitors under the old stem. The stem change was needed. Musigny is the one Cote de Nuits Grand Cru that may be white, Clos de Vougeot is a good pull (Clos Blanc de Vougeot is a Premier Cru), and similarity is clean."
+    },
+    {
+      "stemStart": "Which order of monks did most to map",
+      "verdict": "kept",
+      "why": "'The Benedictines alone' was wrong only because of its qualifier, a test-wise cue. The Carthusians are a real monastic order with no claim to the Cote d'Or survey, and the exp still credits both Cistercian and Benedictine houses."
+    },
+    {
+      "stemStart": "Echezeaux and Grands-Echezeaux lie within which commune?",
+      "verdict": "kept",
+      "why": "The echo was real. Flagey is the commune, and Vougeot (Grands-Echezeaux touches the Clos) is the honest trap. The exp is accurate."
+    },
+    {
+      "stemStart": "Which Chablis Grand Cru climat is often singled",
+      "verdict": "kept",
+      "why": "Petit Chablis is an appellation, not a climat. Blanchot is a Grand Cru usually described as the most delicate and floral, so it cannot be defended as the most structured, and Les Clos is the largest of the seven."
+    },
+    {
+      "stemStart": "Rully, Givry and Montagny sit in the Cote",
+      "verdict": "kept",
+      "why": "The old options repeated the three villages the stem had named, so only Mercurey was left. Bouzeron, Maranges and Saint-Aubin are each well under Givry's area, and none outsizes the three."
+    },
+    {
+      "stemStart": "Rully, Givry and Montagny sit in the Cote",
+      "verdict": "kept",
+      "why": "There are five Chalonnaise village appellations with Bouzeron (village AOC since 1998), which the module's own Bouzeron question teaches. The new exp is right and places the two Cote de Beaune distractors correctly."
+    },
+    {
+      "stemStart": "Growers across southern Italy plant high on the",
+      "verdict": "kept",
+      "why": "A 14-character lead was a real standout. The trimmed key is still the only true option, and the exp carries the flavour point."
+    },
+    {
+      "stemStart": "A label reads DOCG. What does that final",
+      "verdict": "kept",
+      "why": "Dropping 'chemical' removes the standout (50 against 49) and loses nothing: the exp already says DOC wines face laboratory and tasting checks too and gives the contrassegno."
+    },
+    {
+      "stemStart": "A denomination allows one extra word for wines",
+      "verdict": "kept",
+      "why": "Vigna is the regulated single-vineyard mention under law 238/2016, a real term with nothing to do with alcohol, so it is a better distractor than an invented word."
+    },
+    {
+      "stemStart": "A denomination allows one extra word for wines",
+      "verdict": "kept",
+      "why": "The original was wrong: Barbera d'Asti Superiore owes 14 months' ageing with six in wood, so Superiore can say something about oak. The new exp is accurate and contrasts Superiore with Classico, one of its own distractors."
+    },
+    {
+      "stemStart": "Barolo and Barbaresco are both built on which",
+      "verdict": "kept",
+      "why": "per cent is the house's British form. The Amarone stem in this module still says 'fifteen percent'. It was left alone because fixing it would move an id, and the corpus at large still carries 'percent' in many places."
+    },
+    {
+      "stemStart": "A deeply coloured, low-acid Piedmontese red ripens weeks",
+      "verdict": "kept",
+      "why": "Grignolino is pale and high in acid, so it cannot be defended against 'deeply coloured, low-acid', and it is a red. The fix is harmless and better than a white among reds."
+    },
+    {
+      "stemStart": "A gently sparkling, sweet, low-alcohol Piedmontese wine is",
+      "verdict": "kept",
+      "why": "per cent is the house's British form, and the figure is unchanged."
+    },
+    {
+      "stemStart": "A second fermentation gives Prosecco its bubbles. Where",
+      "verdict": "kept",
+      "why": "Sui lieviti Prosecco is refermented in bottle, so saying tank is the rule rather than the only method makes the explanation honest. The key stays right for the stem as asked."
+    },
+    {
+      "stemStart": "The senior Prosecco denomination covers hills between two",
+      "verdict": "kept",
+      "why": "Cartizze is the prized hill with its own designation (Valdobbiadene Superiore di Cartizze), not the steepest slope in the zone. The new wording is accurate."
+    },
+    {
+      "stemStart": "The senior Prosecco denomination covers hills between two",
+      "verdict": "kept",
+      "why": "No trim was possible on a pair of place names, so a longer distractor was the only lever. Castelfranco lies in the plain west of Treviso, so the pair cannot name the senior DOCG's hills. Montebelluna falls in the junior Asolo zone, but so does the existing Bassano and Asolo, and neither is the senior. The key is no longer a standout."
+    },
+    {
+      "stemStart": "Which Italian region built its modern reputation on",
+      "verdict": "kept",
+      "why": "Collio and the Colli Orientali are Friulian, so Trentino-Alto Adige is a real competitor on precise whites that the anchor still rules out, and the length standout is gone."
+    },
+    {
+      "stemStart": "Prugnolo Gentile is the local name for Sangiovese",
+      "verdict": "kept",
+      "why": "per cent is the house's British form."
+    },
+    {
+      "stemStart": "A guest cannot see the difference between Montepulciano",
+      "verdict": "kept",
+      "why": "The 78-character key was the worst standout in the batch. The trimmed key is still exactly what to tell the guest, and the exp carries the variety's Adriatic home and the town's Sangiovese."
+    },
+    {
+      "stemStart": "Frizzante red wine served cool alongside rich Emilian",
+      "verdict": "kept",
+      "why": "The original was defensibly broken: frizzante Bonarda and Barbera (and Gutturnio) are made in the Piacenza hills, which are Emilian. Sangiovese (still in Romagna) and Teroldego (Trentino) are not frizzante Emilian reds, and Sangiovese is a fair pull for the region."
+    },
+    {
+      "stemStart": "A pale cherry-coloured rose from Abruzzo carries which",
+      "verdict": "kept",
+      "why": "The key was the only Abruzzo option. Trebbiano d'Abruzzo (white) and Cerasuolo di Vittoria (Sicilian red) each share one of the key's two words, so neither the region nor the word cherry gives it away alone, and the exp names the Vittoria trap."
+    },
+    {
+      "stemStart": "Sicily's only DOCG blends Nero d'Avola with a",
+      "verdict": "amended",
+      "why": "The volatile claim sat in the stem. Etna's DOCG is pending (Vinous, 10 September 2026, calls ministry approval imminent; no decree found), so 'only' will fail when that happens, and the added exp line 'Etna has applied to become the island's second' is itself an application status that will go stale. A non-stem fix could not remove the stem's claim, so the stem now says 'Sicily's first DOCG', which stays true. The exp drops the Etna line and ends 'raised to DOCG in 2005'. The id moves once (i-mwp5qzbt), similarity and cross-category are clean, and the build passes."
+    }
+  ]
+}

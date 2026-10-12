@@ -1,4 +1,4 @@
-"""Rank I rewrite - Portugal (58 questions, all multiple choice).
+"""Regionale rewrite - Portugal (58 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -45,7 +45,7 @@ BANK = [
       "A Portuguese label carries no DOC and no village, yet still claims a broad origin such as Alentejano or Lisboa. Which tier is that?",
       ["Vinho Regional", "Denominacao de Origem Controlada",
        "Indicacao de Proveniencia Regulamentada", "Vinho"], 0,
-      "Vinho Regional is Portugal's equivalent of a French IGP: wider boundaries, a longer list of permitted grapes and the freedom to name a variety on the label. Plain Vinho makes no geographical claim at all."),
+      "Vinho Regional is Portugal's equivalent of a French IGP: wider boundaries, a longer list of permitted grapes and the freedom to name a variety on the label. Plain Vinho names no origin narrower than the country."),
     Q("The Portuguese wine map",
       "Some Portuguese demarcated areas spent years in a probationary rank abbreviated IPR before promotion. Where did that rank sit?",
       ["Between Vinho Regional and DOC, for candidate appellations",
@@ -59,7 +59,7 @@ BANK = [
        "Funnel Atlantic rain inland, keeping the interior wet",
        "Cool the coastal strip by shading it from the afternoon sun",
        "Trap cold air on the plateau, bringing frost through the summer"], 0,
-      "The Marao and Montemuro shield the Douro, and the Caramulo and Serra da Estrela ring the Dao. In both cases a maritime climate becomes a hot, dry, continental one within a few dozen kilometres."),
+      "Behind the Marao and Montemuro the wet maritime climate of the coast turns hot, dry and continental in the Douro within a few dozen kilometres. The Dao is sheltered from both sides, by the Caramulo against Atlantic rain and by the Serra da Estrela against the extremes of the interior, which is why it stays temperate rather than baking."),
 
     # ------------------------------------------------------ Vinho Verde (8) --
     Q("Vinho Verde",
@@ -133,7 +133,7 @@ BANK = [
        "The fruit ripens a full month earlier",
        "Erosion is eliminated altogether",
        "Irrigation becomes unnecessary"], 0,
-      "Vinha ao alto removes the terrace entirely, so a tractor can climb the rows instead of crawling along ledges, and it fits more vines on the same ground. It only works below roughly a thirty percent gradient, and it needs careful cover cropping, because water running downhill takes soil with it."),
+      "Vinha ao alto removes the terrace entirely, so a tractor can climb the rows instead of crawling along ledges, and it fits more vines on the same ground. It only works below roughly a thirty per cent gradient, and it needs careful cover cropping, because water running downhill takes soil with it."),
     Q("The Douro",
       "Every Douro vineyard is scored on altitude, gradient, soil, yield and grape mix, and the letter grade it earns controls one thing specifically. What?",
       ["How much of its must may be fortified into Port each year",
@@ -155,7 +155,7 @@ BANK = [
        "Alvarinho, Loureiro, Trajadura and Avesso",
        "Sercial, Verdelho, Boal and Malvasia",
        "Antao Vaz, Roupeiro, Perrum and Diagalves"], 0,
-      "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Madeira calls Verdelho. Altitude does most of the work, since the best white parcels sit six hundred metres up or on north-facing schist where the fruit never bakes."),
+      "Rabigato brings the acidity, Viosinho the body and Gouveio the citrus, the last being the grape Galicia calls Godello. Altitude does most of the work, since the best white parcels sit six hundred metres up or on north-facing schist where the fruit never bakes."),
 
     # ------------------------------------------------- Dao and Bairrada (8) --
     Q("Dao and Bairrada",
@@ -239,7 +239,7 @@ BANK = [
     Q("Setubal, Bucelas and Colares",
       "British officers billeted near Lisbon during the Peninsular War took home a crisp white they called Lisbon Hock. Which small DOC made it?",
       ["Bucelas", "Colares", "Setubal", "Carcavelos"], 0,
-      "Bucelas lies in the Trancao valley just north of the city and makes white wine only, built on Arinto. The English taste for it faded, and the appellation is now down to a handful of producers."),
+      "Bucelas lies in the Trancao valley just north of the city and makes white wine only, built on Arinto. The English taste for it faded, and the appellation never regained its old scale."),
     Q("Setubal, Bucelas and Colares",
       "After fortification, the winemaker returns the muscat skins to the fortified wine and leaves them there for months. What does that achieve?",
       ["A far more intense grape and orange-peel aroma",
@@ -326,16 +326,14 @@ BANK = [
       "Virgin and secondary cork go to flooring, insulation and shoe soles. Only from the third harvest, more than forty years into the tree's life, does the bark have the uniform cell structure a stopper needs."),
     Q("Cork and the label",
       "Drawing a stopper at the table, a sommelier finds a body of glued cork granules finished with a disc of solid cork at each end. What sort of closure is that?",
-      ["A technical cork, an agglomerated body capped with natural cork discs",
-       "A colmated cork, one solid piece whose surface pits have been filled with cork dust",
-       "A natural cork, punched in one piece from a single strip of bark",
-       "A synthetic stopper extruded from food-grade polymer"], 0,
-      "The granules are the offcuts left after whole corks are punched from the bark, and the discs put natural cork where the wine actually touches. Stoppers built this way cost a fraction of a one-piece cork and are meant for wine drunk within a few years, since the glue line is not built for decades. A colmated cork is a different economy again: one solid piece whose lenticels have been packed with cork dust to smooth it."),
+      ["A technical cork", "A colmated cork",
+       "An agglomerated cork", "A natural cork"], 0,
+      "The granules are the offcuts left after whole corks are punched from the bark, and the discs put natural cork where the wine actually touches. An agglomerated cork is the granule body alone with no discs, and a colmated cork is one solid piece whose lenticels have been packed with cork dust. A technical cork costs a fraction of a one-piece natural cork and is meant for wine drunk within a few years, since the glue line is not built for decades."),
     Q("Cork and the label",
       "A red labelled Garrafeira has met an ageing requirement that plain Reserva does not. What is it?",
       ["At least thirty months in total, twelve of them in bottle",
        "At least twelve months in new oak barrels",
        "At least five years in the producer's own cellar",
        "At least twenty-four months in cask, with no bottle minimum"], 0,
-      "Reserva asks only for a stated vintage and alcohol half a degree above the regional minimum. Garrafeira adds the time, and the compulsory spell in glass is what gives those wines their settled, secondary character."),
+      "Under the national rules Reserva asks for a stated vintage, approval at tasting and alcohol half a degree above the regional minimum, but sets no time in wood or glass. Garrafeira adds the time, and the compulsory spell in glass is what gives those wines their settled, secondary character."),
 ]

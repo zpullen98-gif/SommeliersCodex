@@ -1,0 +1,280 @@
+{
+ "batch": "regionale-chapters-1",
+ "modules": [
+  "rewrite/primers/foundations.py",
+  "rewrite/primers/france.py",
+  "rewrite/primers/italy.py",
+  "rewrite/primers/spain.py",
+  "rewrite/primers/iberia_central.py"
+ ],
+ "readCount": 22,
+ "total": 22,
+ "chaptersRead": [
+  "vit",
+  "vin",
+  "bordeaux",
+  "burgundy",
+  "loire",
+  "rhone",
+  "champagne",
+  "alsace",
+  "piedmont",
+  "lombardy",
+  "northeast",
+  "tuscany",
+  "southitaly",
+  "islands",
+  "galicia",
+  "rioja",
+  "castilla",
+  "catalonia",
+  "portugal",
+  "germany",
+  "austria",
+  "hungary"
+ ],
+ "unchanged": [
+  "islands"
+ ],
+ "findings": [
+  {
+   "module": "rewrite/primers/iberia_central.py",
+   "chapter": "hungary",
+   "problem": "Egri Bikaver was taught as a blend 'in which no one variety may exceed half'. The Eger product specification lets Kekfrankos run to 65 per cent in Classicus and requires it to be the largest share, so the cap is false for the one grape the sentence is about.",
+   "fix": "Now 'made from at least four varieties with Kekfrankos the largest share', true of Classicus, Superior and Grand Superior alike.",
+   "source": "Egri Bikaver product specification (gi.kormany.hu termekleiras: Classicus at least four varieties, Kekfrankos 30 to 65 per cent and the largest share; Superior Kekfrankos 30 to 50 per cent, no other above 30); hungarianwines.eu Eger regulation summary. WebSearch 2 of 3.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/spain.py",
+   "chapter": "castilla",
+   "problem": "Rueda dorado was described as 'aged under a yeast film in part-filled vessels'. Dorado is the oxidative style; the flor-aged Rueda wine is palido. The chapter also contradicted the bank (r1_spain keys dorado as 'an oxidatively aged white').",
+   "fix": "Now 'a strong golden wine aged on purpose in contact with air, in sun-warmed glass demijohns and then in wood'.",
+   "source": "DO Rueda rules for Rueda Dorado (oxidative ageing in wood) and Rueda Palido (biological ageing under flor); rewrite/categories/r1_spain.py dorado item.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/foundations.py",
+   "chapter": "vit, vin",
+   "problem": "Both titles joined their two halves with an em dash (Grape Growing, Viticulture; Winemaking, Vinification), which ships in js/data-primers-intro.js against the no-dash rule. The site's codex/ copy already reads them with a colon.",
+   "fix": "Titles now 'Grape Growing: Viticulture' and 'Winemaking: Vinification', identical to the site copy, so a later sync-wing merge is clean. Ids unchanged; nothing keys on the title (v28Primer and codex7 key by id).",
+   "source": "House dash rule; zpullen98-gif.github.io/codex/js/data-primers-intro.js lines 15 and 26.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/foundations.py",
+   "chapter": "vit",
+   "problem": "No treatment of climate types or diurnal range, although the spec's largest viticulture block is 'Climate and weather' (8 questions) and continental, maritime and Mediterranean are standard Introductory vocabulary. The word terroir never appeared.",
+   "fix": "Added 'Climate, in three kinds': climate against weather, the three types with a region each, the diurnal range and why hot regions climb; terroir defined in the site section. Moved the 30 to 50 degree band there.",
+   "source": "rewrite/categories/r1_viticulture_winemaking.py SYLLABUS; standard viticulture teaching.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/foundations.py",
+   "chapter": "vin",
+   "problem": "Nothing on clarifying, stabilising or faults, though the spec carries 'Faults and stabilisation' and 'Clarifying and stabilising' blocks and a server meets corked and oxidised bottles and tartrate crystals at the table.",
+   "fix": "Added 'Before the bottle': fining, filtering, settling and racking; cold stabilisation and harmless tartrates; sulphur dioxide; TCA cork taint and oxidation by smell.",
+   "source": "r1_viticulture_winemaking and r1_winemaking_techniques SYLLABUS; standard oenology.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/iberia_central.py",
+   "chapter": "germany",
+   "problem": "The Pradikat ladder omitted Eiswein, the German quality pyramid (Deutscher Wein, Landwein, Qualitatswein, Pradikatswein) was absent, and so were Muller-Thurgau, the Bocksbeutel and the VDP with Grosses Gewachs, all of which the bank drills.",
+   "fix": "Added the four tiers with the ban on sweetening Pradikatswein must, Eiswein as a chip and why it stands apart, Muller-Thurgau, the Franken Bocksbeutel, and the VDP and Grosses Gewachs in one sentence.",
+   "source": "German Wine Law (Weingesetz) quality tiers and Pradikat levels; r1_germany items on tiers, Eiswein, Bocksbeutel, Muller-Thurgau.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "bordeaux",
+   "problem": "The five First Growths, Haut-Brion as the one red outside the Medoc and Mouton's 1973 promotion were missing, though the bank asks all three.",
+   "fix": "Added the five names, the Haut-Brion exception and 1973 as the only change at the top.",
+   "source": "1855 Classification; r1_bordeaux items on Haut-Brion and Mouton.",
+   "confidence": "high"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "bordeaux",
+   "problem": "Graves was never named and Pessac-Leognan read as just 'the same gravel'; the six traditional red grapes, Muscadelle and Barsac were absent; the three label chips (Cru Bourgeois, Grand Cru Classe, Bordeaux Superieur) were listed with no meaning, and the Saint-Emilion Grand Cru against Grand Cru Classe trap was missing.",
+   "fix": "Graves named as the gravel district with Pessac-Leognan carved from its north in 1987; Petit Verdot, Malbec and Carmenere; Muscadelle; Barsac. Each chip explained: Cru Bourgeois in three tiers since 2020 and reviewed every five years; Grand Cru Classe a classified estate while Saint-Emilion Grand Cru alone is an appellation; Bordeaux Superieur lower yields and riper fruit, not a better address. 'Six traditional' rather than 'six allowed', since varieties for climate adaptation are now permitted in small parts in Bordeaux AOC.",
+   "source": "INAO Pessac-Leognan (1987); Cru Bourgeois 2020 classification; Saint-Emilion classification rules; r1_bordeaux items 140 and 201.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "burgundy",
+   "problem": "'The Maconnais, the region's largest single source of Chardonnay' is an unsupported superlative; Beaujolais carried no crus or Nouveau; the village-name trap (Gevrey-Chambertin against Chambertin) and Grand Cru examples were missing.",
+   "fix": "Maconnais now 'a broad source of approachable Chardonnay with Pouilly-Fuisse at its head', plus its Premiers Crus from the 2020 vintage, the first in the Maconnais, and the Pouilly-Fume warning. Added Chambertin and Montrachet as examples, the hyphenated village trap, the ten Beaujolais crus with three named and Nouveau on the third Thursday of November.",
+   "source": "INAO Pouilly-Fuisse Premiers Crus (2020 vintage); Beaujolais AOC rules; r1_burgundy Beaujolais block.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "loire",
+   "problem": "The commonest Loire trap, Pouilly-Fume against Pouilly-Fuisse, was absent; Rose d'Anjou, Cabernet d'Anjou and Cremant de Loire, everyday list names, were missing.",
+   "fix": "Added the trap in one sentence and a closing sentence on the Anjou pinks and Cremant de Loire.",
+   "source": "Loire AOC rules; Introductory exam staples.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "champagne",
+   "problem": "Riddling and disgorgement were described but never named; the legal lees minimums (15 months from tirage with 12 on the lees for non-vintage, three years for vintage) were missing though the bank asks them; rose by blending and the reservation of methode champenoise were absent.",
+   "fix": "Named riddling and disgorgement, added the minimums, rose by blending in still red, why most bottles carry no vintage, and that the same process elsewhere is the traditional method.",
+   "source": "Champagne AOC cahier des charges; EU labelling rule on methode champenoise; r1_champagne items 276 and 280.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "rhone",
+   "problem": "'twenty percent', 'fifteen percent', 'ten percent': American form in the Codex's prose.",
+   "fix": "Now 'per cent' throughout. Also added Chateau-Grillet inside Condrieu, the GSM shorthand and the papal origin of Chateauneuf-du-Pape with its 1920s rules as a model for the appellation law.",
+   "source": "House British spelling; check-fragment's rule (per cent, towards); Chateauneuf-du-Pape history.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/france.py",
+   "chapter": "alsace",
+   "problem": "Nothing explained why Alsace names, grapes and bottles look German, nor that the flute bottle is a legal requirement.",
+   "fix": "Added the four changes of sovereignty between 1871 and 1945 and the flute by law.",
+   "source": "Alsace history; French law of 1972 on the Alsace flute.",
+   "confidence": "low"
+  },
+  {
+   "module": "rewrite/primers/italy.py",
+   "chapter": "piedmont",
+   "problem": "Barolo and Barbaresco ageing figures were absent (only 'longer'), as were the Moscato d'Asti against Asti trap, the nebbia origin of the name and the tar and roses descriptor; 'percent'.",
+   "fix": "Added 38 months with 18 in wood against 26 and 9; Asti fully sparkling against frizzante Moscato d'Asti; nebbia; tar and roses; 'per cent'.",
+   "source": "Barolo and Barbaresco DOCG disciplinari; Asti DOCG.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/italy.py",
+   "chapter": "lombardy",
+   "problem": "Thinnest chapter of the batch (197 words). Oltrepo Pavese, Lombardy's largest vineyard, was missing; Franciacorta's DOCG date and lees minimum absent; Lambrusco was presented only as dry ('Served cool and dry') though it is made secco, amabile and dolce; Albana, the first white DOCG, absent; 'toward'.",
+   "fix": "Added Oltrepo Pavese and its Pinot Nero, Franciacorta DOCG 1995 with 18 months minimum on the lees, Sorbara and Grasparossa, the sweetness range, Albana 1987; 'towards'.",
+   "source": "Franciacorta DOCG disciplinare; Lambrusco DOC rules; Albana di Romagna DOCG (1987).",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/italy.py",
+   "chapter": "northeast",
+   "problem": "Trento DOC, Pinot Grigio and the Delle Venezie DOC, Asolo DOCG and the Prosecco DOC Rose (approved 2020) were missing; the drying process was not named; 'percent'.",
+   "fix": "Added each in a clause, named the appassimento, 'per cent'.",
+   "source": "Trento DOC; Delle Venezie DOC (2017); Asolo Prosecco DOCG; Prosecco DOC Rose (2020).",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/italy.py",
+   "chapter": "tuscany",
+   "problem": "Chianti Classico's minimum Sangiovese and its top tier, Gran Selezione, were absent; Brunello was not said to be Sangiovese alone; the Super Tuscan term, which guests use, was missing; 'percent'.",
+   "fix": "Added 80 per cent minimum and Gran Selezione above Riserva, Brunello alone, the Super Tuscan name and Bolgheri's own DOC; 'per cent'.",
+   "source": "Chianti Classico and Brunello di Montalcino DOCG disciplinari; r1_italy items 85 and 219.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/italy.py",
+   "chapter": "southitaly",
+   "problem": "Cerasuolo d'Abruzzo (a rosato) sat a chapter away from the red Cerasuolo di Vittoria with no warning; Orvieto, Umbria's best-known white, and Ciro were absent.",
+   "fix": "Added the two-Cerasuolo trap, Orvieto on Grechetto and Trebbiano, and Ciro from Gaglioppo; Cerasuolo now 'rosato' rather than the ASCII 'rose'.",
+   "source": "Cerasuolo d'Abruzzo DOC; Cerasuolo di Vittoria DOCG; Orvieto DOC; Ciro DOC.",
+   "confidence": "low"
+  },
+  {
+   "module": "rewrite/primers/spain.py",
+   "chapter": "rioja",
+   "problem": "'Merchants fleeing phylloxera-ruined Bordeaux in the 1860s': phylloxera ruined Bordeaux from the mid 1870s, and the French buying in Rioja peaked in the 1870s and 1880s. 'The lactone reading as coconut, vanilla and dill': vanilla comes from vanillin, not the oak lactones. 'Vineyards sit above five hundred metres' overstates: Rioja Oriental lies near 300 metres.",
+   "fix": "Now 'in the late nineteenth century'; 'richer than French in the lactones that read as coconut and dill, and with its vanilla'; 'much of the vineyard sits at five hundred metres or more'. Added Mazuelo to the red grapes and the 2017 reform allowing zone, village and Vinedo Singular labels.",
+   "source": "History of phylloxera in the Gironde; oak chemistry (cis/trans oak lactone, vanillin); DOCa Rioja altitude range; DOCa Rioja 2017 reform.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/spain.py",
+   "chapter": "rioja",
+   "problem": "Gran Reserva 'two in cask and three in bottle'. Sources disagree on whether the bottle minimum is 24 or 36 months, and the official pliego returned by the search omitted the ageing section.",
+   "fix": "Now 'five years, at least two in cask and much of the rest in bottle', true under either reading and still consistent with the bank. The bank stem in r1_spain ('at least two in cask and three more in bottle') should be checked against the pliego's ageing article by whoever owns that module.",
+   "source": "WebSearch 1 of 3: Vozpopuli, Vinissimus and the MAPA pliego cover page disagree; not resolved.",
+   "confidence": "low"
+  },
+  {
+   "module": "rewrite/primers/spain.py",
+   "chapter": "catalonia",
+   "problem": "Cava's lees ladder stopped at 'thirty for Gran Reserva', omitting Reserva at 18 months and Cava de Paraje Calificado at 36, so the top tier was misstated.",
+   "fix": "Now nine, eighteen, thirty and thirty-six months, Paraje Calificado named as the single-site tier.",
+   "source": "DO Cava regulations (Cava de Guarda 9 months, Guarda Superior Reserva 18, Gran Reserva 30, Paraje Calificado 36).",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/spain.py",
+   "chapter": "galicia",
+   "problem": "The Ribeiro and Monterrei chips were never described, and the 100 per cent rule for a Rias Baixas Albarino label was missing.",
+   "fix": "Added Ribeiro around Ourense on Treixadura, Monterrei as the most continental of the five, and the varietal label rule.",
+   "source": "DO Rias Baixas, Ribeiro and Monterrei regulations.",
+   "confidence": "low"
+  },
+  {
+   "module": "rewrite/primers/spain.py",
+   "chapter": "castilla",
+   "problem": "The Cigales chip was undescribed; Ribera's altitude '750 to 900 metres' sat below the bank's 'about 750 and 1,000'.",
+   "fix": "Added Cigales as rosado country north of Valladolid; Ribera now 'from about 750 metres to nearly a thousand'.",
+   "source": "DO Cigales; r1_spain item 175.",
+   "confidence": "low"
+  },
+  {
+   "module": "rewrite/primers/iberia_central.py",
+   "chapter": "hungary",
+   "problem": "The 2013 Tokaj reform was missing: Aszu now needs at least 120 grams of sugar per litre, the 3 and 4 puttonyos grades are gone and the number on the label is optional. The 1737 delimitation was also absent.",
+   "fix": "Added both in two sentences, keeping the hod definition.",
+   "source": "Tokaj PDO specification (2013 amendment); royal decree of 1737; r1_sparkling_fortified_sweet item 297.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/iberia_central.py",
+   "chapter": "portugal",
+   "problem": "The Douro paragraph never mentioned Port or the 1756 demarcation, the region's most examined facts; Madeira's two heating methods were unnamed.",
+   "fix": "Added the demarcation begun in 1756 to protect Port and the Douro DOC beside it; canteiro and estufagem named.",
+   "source": "r1_portugal item 109 to 114; Madeira DOP rules.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/iberia_central.py",
+   "chapter": "austria",
+   "problem": "'toward'; 'Kamptal and Kremstal below it' read as a direction; the Neusiedler See 'barely a metre deep' was loose; the 1985 scandal that explains Austria's strict law, the Wachau DAC (2020 vintage) and Rust's Ausbruch were missing.",
+   "fix": "'towards'; 'close by to the east'; 'nowhere deeper than about two metres'; added the 1985 diethylene glycol scandal, the Wachau DAC and Ausbruch.",
+   "source": "Austrian wine law of 1985; Wachau DAC (2020 vintage); Neusiedler See maximum depth about 1.8 m.",
+   "confidence": "low"
+  },
+  {
+   "module": "rewrite/primers/foundations.py",
+   "chapter": "vit",
+   "problem": "'The aphid phylloxera': phylloxera is a root louse related to aphids, not a true aphid; the chapter itself calls it 'the louse' a sentence later.",
+   "fix": "Now 'The root louse phylloxera, a tiny relative of the aphid'.",
+   "source": "Entomology: Daktulosphaira vitifoliae, family Phylloxeridae.",
+   "confidence": "medium"
+  },
+  {
+   "module": "rewrite/primers/foundations.py",
+   "chapter": "vin",
+   "problem": "Rose methods stopped at skin contact and bleeding, with no name for saignee and no Champagne blending exception; 'Rose sits between' at the head of a sentence reads as the flower under the corpus's ASCII rule. Also unnamed: sur lie, batonnage, the buttery note of malolactic, tannin from stems.",
+   "fix": "Now 'Pink wine, rose, sits between', saignee named, Champagne's blending exception and the European limit on still rose, sur lie, batonnage, the buttery note and stems.",
+   "source": "EU oenological practices rules on rose; standard winemaking.",
+   "confidence": "medium"
+  }
+ ],
+ "searches": 3,
+ "checks": {
+  "build-primers --dry-run": "39 chapters, all checks passed",
+  "build-primers": "written js/data-primers-intro.js",
+  "check-primer-similarity (via scratch harness, SOURCE = git show 8d535c8^:js/data-primers-intro.js)": "clean: max ratio 0.227, longest shared run 6 words, 0 shared sentences",
+  "check-primer-similarity as shipped": "exits 1 by construction: since 8d535c8 its SOURCE, js/data-primers-intro.js, is the build output, so every chapter compares to itself at ratio 1.000",
+  "check-syntax": "all 67 JS files parse",
+  "check-home / check-study / check-nav / check-culinary-study-data": "pass"
+ },
+ "notes": [
+  "The bodies keep the rewrite corpus's ASCII rule (README 'CAT must byte-match'), so rose, Medoc, Albarino stay unaccented; only titles carry accents.",
+  "Out of batch: rewrite/primers/north_america.py still ships em dashes in the calnorth and calcentral titles; SPEC.json carries the old dashed titles but does not ship.",
+  "Publish carry-forward: bump js/data-primers-intro.js ?v= in index.html and CACHE in sw.js (codex-v96), then sync the site's codex/ copy, whose titles already use colons.",
+  "check-primer-similarity.py needs its SOURCE repointed at the imported chapters (git 8d535c8^) to be meaningful again; not edited here, as it is outside the assigned files."
+ ]
+}

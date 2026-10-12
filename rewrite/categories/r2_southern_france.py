@@ -1,4 +1,4 @@
-"""Rank II rewrite - Southern France (21 questions: 9 MC, 12 short answer).
+"""Village rewrite - Southern France (21 questions: 9 MC, 12 short answer).
 
 Certified level. The Languedoc, Roussillon and Provence, pitched at the named
 places and the rules that mark them out: the cru ladder the Languedoc has been
@@ -96,20 +96,20 @@ BANK = [
       "Since 2005 a Saint-Chinian label may carry one of two village names, both earned in the schist north of the appellation. Which pair?",
       ["Berlou and Roquebrun", "Cessenon and Cebazan",
        "Assignan and Creissan", "Vieussan and Pierrerue"], 0,
-      "Both villages lie in the hill country toward the Orb where the appellation runs onto schist, and both subzones are for red wine held to stricter rules than plain Saint-Chinian. The southern half of the appellation sits on limestone and clay and earns no village name, which is the split the two names exist to mark."),
+      "Both villages lie in the hill country towards the Orb where the appellation runs onto schist, and both subzones are for red wine held to stricter rules than plain Saint-Chinian. The southern half of the appellation sits on limestone and clay and earns no village name, which is the split the two names exist to mark."),
     Q("Schist country and the western crus",
       "A hilltop village of the Minervois earned in 1999 a distinction no Languedoc village had ever held. Which distinction?",
       ["It was the first village raised to a cru of its own",
        "It is the only commune of the Minervois permitted to bottle rose",
        "It alone lies in the Aude, while the rest of the Minervois is Herault",
        "Its decree was the first in France to require hand harvesting"], 0,
-      "The promotion came in 1999 as Minervois-La-Liviniere, and the pattern it set, a tighter boundary, lower yields and a village name after the appellation, is the one every later cru has copied. The commune lies on the Petit Causse on the Herault side of the appellation, whose larger share is in the Aude."),
+      "The promotion came in 1999 as Minervois-La Liviniere, and the pattern it set, a tighter boundary, lower yields and a village name after the appellation, is the one every later cru has copied; since 2024 the appellation has carried the name La Liviniere alone. The commune lies on the Petit Causse on the Herault side of the appellation, whose larger share is in the Aude."),
     SA("Schist country and the western crus",
        "Old bush-vine Carignan is not merely tolerated but required, at a minimum of thirty percent of the blend, in a cru created in 2005 inside the Languedoc's largest appellation. Name the cru.",
-       "Corbieres-Boutenac",
+       "Boutenac, first named Corbieres-Boutenac",
        ["corbieres boutenac", "boutenac", "corbieres boutenac aoc",
         "the corbieres boutenac cru", "boutenac cru"],
-       "The rule is a floor in both vineyard and vat: Carignan must hold at least thirty percent of the plantings and of the blend, Carignan with Grenache and Mourvedre must together make at least seventy percent, and no single variety may pass eighty. The low pebbled hills of the zone carry some of the Midi's oldest bush vines, which is precisely what the cru was drawn to keep in the ground."),
+       "Carignan must make up at least thirty per cent of the blend, beside Grenache, Mourvedre and Syrah, and the low pebbled hills of the zone carry some of the Midi's oldest bush vines, which is precisely what the cru was drawn to keep in the ground. Since 2024 the appellation has gone by Boutenac alone."),
 
     # -------------------------------- Fitou, Picpoul and the lagoon coast (3) -
     Q("Fitou, Picpoul and the lagoon coast",
@@ -165,7 +165,7 @@ BANK = [
       "The wood is usually the big old foudre rather than the new barrique, and the rule exists because Mourvedre is harsh, dark and reductive in its youth and needs slow air to open. Rose and white run under no such clock, which is why the pink is poured by Easter while the red of the same harvest is still asleep."),
     SA("Provence",
        "Whatever else goes into the vat, a Bandol red is anchored to Mourvedre by law. Give the minimum share of the blend the decree reserves for it.",
-       "Fifty percent",
+       "At least fifty per cent",
        ["fifty percent", "50 percent", "50%", "fifty per cent", "50 per cent",
         "half", "one half", "at least half", "at least fifty percent",
         "at least 50 percent", "at least 50%", "a minimum of fifty percent",
@@ -177,8 +177,8 @@ BANK = [
         "fifty percent mourvedre", "50 percent mourvedre", "50% mourvedre",
         "50", "fifty", "50 %", "at least 50 per cent", "50 per cent minimum",
         "at least fifty per cent", "fifty per cent minimum", "a minimum of half",
-        "half minimum"],
-       "The floor is half the blend, and serious estates run far past it toward the ceiling the decree also sets. Grenache and Cinsault fill the balance, and the requirement is why Bandol tastes like no other Provencal red: dark, peppery, slow to open and built to age for decades.",
+        "half minimum", "a minimum of fifty per cent", "a minimum of 50 per cent", "minimum 50 per cent", "minimum fifty per cent", "fifty per cent of the blend", "50 per cent of the blend", "fifty per cent mourvedre", "50 per cent mourvedre"],
+       "The floor is half the blend, and serious estates run far past it towards the ceiling the decree also sets. Grenache and Cinsault fill the balance, and the requirement is why Bandol tastes like no other Provencal red: dark, peppery, slow to open and built to age for decades.",
        ex=True),
     SA("Provence",
        "Under a great rust-red sea cliff east of Marseille, one small port appellation sells most of its wine as white, from Marsanne and Clairette, while its neighbours live on pink. Name it.",
@@ -189,7 +189,7 @@ BANK = [
        "Pine woods ring a few dozen hectares of cool north-facing limestone just outside Aix-en-Provence, and one estate has stood for nearly the whole appellation for a century. Name the appellation.",
        "Palette",
        ["palette", "palette aoc", "aoc palette", "the palette appellation"],
-       "Chateau Simone long stood for nearly the whole appellation, still farms about half the delimited ground, and keeps alive dozens of old permitted varieties alongside Grenache, Mourvedre and Clairette. The limestone amphitheatre faces north under pine forest, so the wines come out fresher and stranger than the latitude promises, and they age remarkably."),
+       "Chateau Simone has long been the name most drinkers know the appellation by, and keeps alive a long list of old permitted varieties alongside Grenache, Mourvedre and Clairette. The limestone amphitheatre faces north under pine forest, so the wines come out fresher and stranger than the latitude promises, and they age remarkably."),
     SA("Provence",
        "Inside the city limits of Nice, vine terraces climbing toward 300 metres carry Braquet and Folle Noire, grapes hardly grown anywhere else in France. Name the appellation.",
        "Bellet",
@@ -204,7 +204,7 @@ BANK = [
        "Freedom from any yield limit at all",
        "The right to buy finished wine from anywhere in France and blend it in",
        "An exemption from every analysis and tasting control"], 0,
-      "The IGP is where varietal labelling and the international varieties live: Chardonnay has an appellation home at Limoux, while Merlot and Cabernet reach the appellation map only in the Atlantic-facing blends of Cabardes and Malepere, so a wine sold on its grape name needs the IGP either way. Nearly every other appellation works from a fixed Mediterranean variety list, and one region runs two wine economies side by side."),
+      "The IGP is where varietal labelling and the international varieties live freely. Within the appellations they appear only where a decree makes room for them, Chardonnay leading the whites of Limoux, Merlot leading its reds and joining Cabernet in the Atlantic-facing blends of Cabardes and Malepere, while nearly every other appellation works from a fixed Mediterranean variety list, so one region runs two wine economies side by side."),
     Q("Pays d'Oc and the Catalan coast",
       "Down where the Pyrenees drop into the sea, Grenache fermented dry rather than muted goes out as Collioure, once a red alone. Which colours may the label claim today?",
       ["Red, rose or white alike",

@@ -1,11 +1,11 @@
-"""Rank II rewrite - California (40 questions: 18 MC, 22 short answer).
+"""Village rewrite - California (40 questions: 18 MC, 22 short answer).
 
-Certified level, pitched deliberately above the Rank I "United States" category.
-Where Rank I asks how much fruit an AVA name requires, this hands the student a
-blend that misses the figure and asks what is left to print; where Rank I says
+Certified level, pitched deliberately above the Regionale "United States" category.
+Where Regionale asks how much fruit an AVA name requires, this hands the student a
+blend that misses the figure and asks what is left to print; where Regionale says
 Howell Mountain sits above the fog, this asks what the ground there is made of.
-The Rank I bank was read first and nothing here repeats one of its tasks. Oregon,
-Washington and New York are left alone: a later Rank II category owns them.
+The Regionale bank was read first and nothing here repeats one of its tasks. Oregon,
+Washington and New York are left alone: a later Village category owns them.
 
 The running order follows the state from the label inwards - first what an
 American appellation does and does not promise, then Napa floor, Napa hills,
@@ -80,23 +80,23 @@ BANK = [
     # -------------------------------------- AVA law and the American label (5) -
     Q("AVA law and the American label",
       "State law obliges any wine using a Napa sub-appellation such as Oakville or Rutherford to print Napa Valley on the same label. What is that requirement called?",
-      ["Conjunctive labeling", "Nested appellation disclosure", "Appellation transfer",
+      ["Conjunctive labelling", "Nested appellation disclosure", "Appellation transfer",
        "Compound origin marking"], 0,
       "Nothing federal demands it: the TTB approves an AVA boundary and then says nothing about how the name is used alongside a larger one. California legislated it to stop the parent name being diluted by sub-appellations trading on their own, and Sonoma County growers later won the same protection for theirs."),
     Q("AVA law and the American label",
       "A back label reads Produced and Bottled by, followed by a winery name and its town. How much of the wine must that winery have fermented itself?",
-      ["Seventy-five percent of it", "Fifty-one percent of it", "Eighty-five percent of it",
+      ["Seventy-five per cent of it", "Fifty-one per cent of it", "Eighty-five per cent of it",
        "All of it"], 0,
-      "Produced and Made are the two phrases that carry a fermentation threshold, and the federal rule sets both at 75 percent fermented at the stated address. Cellared and Bottled by, Vinted and Bottled by or Prepared and Bottled by cover wine bought in finished and merely given cellar treatment there, and Blended and Bottled by means only that wines of the same class and type were mixed at that address. None of those four tells the guest who actually made it."),
+      "Produced is the phrase that demands 75 per cent fermented at the stated address, while Made and Bottled by asks only 10 per cent, or a change of class such as fortification. Cellared and Bottled by, Vinted and Bottled by or Prepared and Bottled by cover wine bought in finished and merely given cellar treatment there, and Blended and Bottled by means only that wines of the same class and type were mixed at that address. None of those four tells the guest who actually made it."),
     SA("AVA law and the American label",
        "Eighty percent of a blend comes off Rutherford and the remaining fifth off Oakville, so neither sub-appellation may go on the label. What is the tightest appellation this wine may still claim?",
        "Napa Valley",
        ["napa valley", "napa valley ava", "napa valley appellation"],
-       "An AVA name needs 85 percent of the fruit from inside its boundary, and no single sub-appellation clears that here. Both benches sit wholly inside Napa Valley, however, so the parent AVA is satisfied at 100 percent and is the tightest claim left. Dropping to Napa County or to California would be legal but needlessly vague.",
+       "An AVA name needs 85 per cent of the fruit from inside its boundary, and no single sub-appellation clears that here. Both benches sit wholly inside Napa Valley, however, so the parent AVA is satisfied at 100 per cent and is the tightest claim left. Dropping to Napa County or to California would be legal but needlessly vague.",
        ex=True),
     SA("AVA law and the American label",
        "Federal rules would happily let a wine calling itself Sonoma County carry a quarter of its fruit from outside the state altogether. A California statute shuts that door. What does the state demand instead?",
-       "One hundred percent California grown",
+       "One hundred per cent California grown",
        ["one hundred percent california grown", "100 percent california grown",
         "100% california grown", "100% california", "100 percent california",
         "one hundred percent california", "100% california grapes", "100% california fruit",
@@ -113,15 +113,15 @@ BANK = [
         "one hundred percent of the fruit from california",
         "one hundred percent of the grapes from california",
         "every grape has to be grown in california", "all of the fruit has to be grown in california",
-        "the wine must be entirely from california grapes", "one hundred percent californian fruit"],
-       "Federal law asks only 75 percent for a county or state name, which would let a Sonoma County bottling be topped up from anywhere. California overrides that: a wine carrying any Californian appellation of origin must be made entirely from Californian fruit. It is one of several places where state law is stricter than the federal floor rather than merely different from it.",
+        "the wine must be entirely from california grapes", "one hundred percent californian fruit", "100 per cent california grown", "100 per cent california", "one hundred per cent california", "100 per cent california grapes", "100 per cent california fruit", "100 per cent of the grapes must be grown in california", "one hundred per cent of the fruit from california", "one hundred per cent of the grapes from california", "one hundred per cent californian fruit"],
+       "Federal law asks only 75 per cent for a county or state name, which would let a Sonoma County bottling be topped up from anywhere. California overrides that: a wine carrying any Californian appellation of origin must be made entirely from Californian fruit. It is one of several places where state law is stricter than the federal floor rather than merely different from it.",
        ex=True),
     SA("AVA law and the American label",
-       "Fruit grown in one state is blended in a cellar with fruit from another, leaving the broadest appellation on the books as the only one available. What may the label no longer state?",
+       "Fruit grown in one state is blended in a cellar with fruit from another, leaving the broadest appellation on the books as the only one available. Until a federal change in 2012, what did that cost the label?",
        "The vintage",
        ["vintage", "vintage date", "vintage year", "year of harvest", "harvest year",
         "harvest date", "the year the grapes were harvested", "the year the grapes were picked"],
-       "Two or three states that are contiguous can share an appellation of their own, with the percentage from each printed on the label, and a wine carrying it keeps its vintage. Where that is not available the wine falls back to American, which is a country-level appellation, and a vintage date is permitted only when the appellation is something other than a country. So the harvest year is the price of the fallback. It is a useful reminder that the appellation on an American label controls far more than geography."),
+       "Two or three states that are contiguous can share an appellation of their own, with the percentage from each printed on the label, and a wine carrying it always kept its vintage. Where that is not available the wine falls back to American, a country-level appellation, and until a rule took effect late in 2012 a vintage date needed an appellation other than a country. Today an American wine may carry a vintage provided 85 per cent of it comes from that harvest, so older labels and older study notes both reflect a rule that no longer stands."),
 
     # ------------------------------------------------------ Napa Valley floor (5)
     Q("Napa Valley floor",
@@ -164,7 +164,7 @@ BANK = [
        "Spring Mountain District",
        ["spring mountain district", "spring mountain", "spring mountain district ava",
         "spring mountain district in napa"],
-       "It faces the Pacific weather first and is the wettest corner of Napa, so dry farming is realistic there in a way it is not on the valley floor. Its geology is a patchwork of sedimentary and volcanic material rather than one or the other, which is why it resists the neat characterisation its neighbours get."),
+       "It faces the Pacific weather first and is among the wettest corners of Napa, so dry farming comes easier there than on most of the valley floor. Its geology is a patchwork of sedimentary and volcanic material rather than one or the other, which is why it resists the neat characterisation its neighbours get."),
     SA("Napa's mountains and Carneros",
        "A Vaca-range appellation above St. Helena farms a deep red iron-rich volcanic loam alongside a pale weathered ash that locals miscall tufa. Which appellation?",
        "Howell Mountain",
@@ -200,7 +200,7 @@ BANK = [
        "High above Lake Sonoma, one appellation admits no vineyard below eight hundred feet, which puts every acre of it clear of the fog. Name it.",
        "Rockpile",
        ["rockpile", "rockpile ava", "rockpile appellation", "rockpile in sonoma county"],
-       "An elevation floor written into the boundary is the same device Howell Mountain uses in Napa, and it guarantees full sun and warm nights above the marine layer. The ground is steep, rocky and poor, planted almost entirely to Zinfandel and Cabernet Sauvignon, and the fruit is trucked out because there is nowhere up there to crush it."),
+       "An elevation floor written into the boundary is the same device Howell Mountain uses in Napa, and it guarantees full sun and warm nights above the marine layer. The ground is steep, rocky and poor, planted almost entirely to Zinfandel and Cabernet Sauvignon, and most of the fruit is trucked down to wineries elsewhere in the county."),
     SA("Sonoma County",
        "A long break in the coastal hills between Bodega Bay and San Pablo Bay funnels wind rather than merely fog, and the appellation drawn around it rests on that wind. Name it.",
        "Petaluma Gap",
@@ -242,8 +242,8 @@ BANK = [
       "Paso Robles is picked across a spread of dates wide enough for two separate regions, and the divide runs along the Salinas River. Which half is the cooler and later one?",
       ["The west side, on calcareous shale reached by marine air",
        "The east side, on deep alluvial soils well away from the fog",
-       "The northern end, where elevation runs highest",
-       "The southern end, nearest the Cuesta Grade"], 0,
+       "The east side, where higher ground offsets the distance from the coast",
+       "The west side, where the Santa Lucia range shuts the marine air out"], 0,
       "Marine air comes through a break in the Santa Lucia range and reaches the western hills first, so they ripen later and hold acidity while the eastern flats bake and finish early. Those western soils are pale and strongly calcareous, weathered out of the Monterey Formation. The appellation was eventually divided into eleven sub-appellations because a single description of it had stopped meaning anything."),
     SA("Paso Robles and San Luis Obispo",
        "Marine air reaches the western half of Paso Robles through a single break in the Santa Lucia range. Name that break.",
@@ -260,11 +260,11 @@ BANK = [
     # ----------------------------------------------------- Santa Barbara County (4)
     Q("Santa Barbara County",
       "One Santa Barbara appellation prints an abbreviated form of its own name on every label, the result of an objection raised from another continent. Whose objection forced it?",
-      ["A Chilean estate called Santa Rita",
+      ["A Chilean estate of the same name",
        "A Spanish denomination of the same name",
        "A Portuguese quinta of the same name",
        "An Argentine bodega of the same name"], 0,
-      "The Chilean house had been selling under that name for well over a century before the appellation was approved, and the abbreviation is the legal settlement that followed rather than a stylistic quirk, which is why it is always written that way and never spelled out in full. The appellation itself occupies the cold, wind-scoured western end of its valley, where the transverse ranges let the ocean straight in."),
+      "Vina Santa Rita in Chile had been selling under that name for over a century before the appellation was approved, and Sta. Rita Hills is the legal settlement that followed rather than a stylistic quirk, which is why it is always written that way and never spelled out in full. The appellation itself occupies the cold, wind-scoured western end of its valley, where the transverse ranges let the ocean straight in."),
     Q("Santa Barbara County",
       "Within the Santa Ynez Valley a sub-appellation was drawn around the strengths of a single red variety, which is unusual for an American appellation. Which variety?",
       ["Syrah", "Pinot Noir", "Cabernet Sauvignon", "Grenache"], 0,
@@ -273,7 +273,7 @@ BANK = [
        "Planted in 1973, a single Santa Maria Valley vineyard supplies so many producers that its name turns up on labels from all over the state. Name it.",
        "Bien Nacido",
        ["bien nacido", "bien nacido vineyard", "bien nacido in santa maria valley"],
-       "Selling fruit rather than making wine is the whole point of the place, and a vineyard designation of that kind obliges the buyer to take 95 percent of the wine from the named site. The valley is among the coldest growing areas in the state, so the fruit comes in late and with high natural acidity whoever ferments it."),
+       "Selling fruit rather than making wine is the whole point of the place, and a vineyard designation of that kind obliges the buyer to take 95 per cent of the wine from the named site. The valley is among the coldest growing areas in the state, so the fruit comes in late and with high natural acidity whoever ferments it."),
     SA("Santa Barbara County",
        "Santa Ynez is not the only Santa Barbara valley running east to west toward the ocean. Name the northernmost of them.",
        "Santa Maria Valley",
@@ -286,7 +286,7 @@ BANK = [
       "Amador County's best-known Zinfandel appellation had to qualify its name because a far better-known valley on the other side of the country carries the same one. What is the Californian one called?",
       ["California Shenandoah Valley", "Fiddletown", "Fair Play",
        "Shenandoah Valley of Virginia"], 0,
-      "Two American viticultural areas may not carry the same bare name, and the two Shenandoah Valley petitions sat before the bureau at the same time in the early 1980s. The eastern valley was the nationally recognised name, so the western claimant took the state prefix rather than the other way about. The regulation gives the name as Shenandoah Valley qualified by the word California in direct conjunction with it, and the bureau lists and labels it with the state name leading. The valley sits around 1,500 to 2,000 feet on decomposed granite, and its Zinfandel runs broad, briary and high in alcohol, quite unlike the version grown on the Sonoma benchlands."),
+      "Two American viticultural areas may not carry the same bare name, and when the two Shenandoah Valley petitions came before the bureau together in the early 1980s the better-known eastern valley kept the bare name. The western one carries the word California in direct conjunction with it, and the bureau lists and labels it with the state name leading. The valley sits around 1,500 to 2,000 feet on decomposed granite, and its Zinfandel runs broad, briary and high in alcohol, quite unlike the version grown on the Sonoma benchlands."),
     Q("Sierra Foothills and Lodi",
       "Old Vine is printed on Zinfandel from Lodi and from the Sierra Foothills alike. What does that phrase oblige the producer to have done?",
       ["Nothing at all, since the phrase is not defined in law",
@@ -316,7 +316,7 @@ BANK = [
     Q("Phylloxera, Paris and the modern trade",
       "An Englishman running a wine shop and a wine school in Paris assembled the 1976 tasting that first set California in front of French judges. Name him.",
       ["Steven Spurrier", "Michael Broadbent", "Harry Waugh", "Hugh Johnson"], 0,
-      "He ran the Caves de la Madeleine and the Academie du Vin, put together a panel entirely of French judges who expected the French wines to win, and did not vote himself. A single American journalist happened to be in the room, which is the only reason the result was ever reported."),
+      "He ran the Caves de la Madeleine and the Academie du Vin, put together a panel entirely of French judges who expected the French wines to win, and kept his own scores out of the count. A single American journalist happened to be in the room, which is the only reason the result was ever reported."),
     SA("Phylloxera, Paris and the modern trade",
        "Robert Mondavi and the proprietor of a Bordeaux First Growth founded a Napa estate together at the end of the 1970s, the first partnership of its kind between the two regions. Name that estate.",
        "Opus One",

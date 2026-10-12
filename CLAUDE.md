@@ -6,6 +6,32 @@ frameworks, no build step. Split from the single-file
 `Downloads/cms-certified-practice-exam_22_1.html` into this project (Aug 2026),
 then extended with the Intro import and authored Advanced/Master banks.
 
+## The review edition, 11 October 2026
+
+Every question of the four banks was read line by line (the Régionale and Village banks in their rewrite modules, the
+Premier Cru and Grand Cru banks in place), with the four levels' chapters, the 47 grape profiles, the Floor, Pairing and
+Service data, and the exam format against the Court's own pages (`docs/certified-exam-2026.md`). The reviewers' logs
+are under `.scripts/review/findings/`; what each integrator applied, every gate and every moved id are in
+`.scripts/review/applied-rewrite.json` and `.scripts/review/applied-direct.json`. What moved: the Village tasting is
+four wines, two white and two red, the written grid, 45 minutes (codex39, below); Ausbruch is taught as the current law
+(the name Rust's alone since 2016, Ruster Ausbruch DAC at Trockenbeerenauslese weight from the 2020 vintage), never as a
+rung between Beerenauslese and Trockenbeerenauslese; red Rioja Gran Reserva is 60 months with at least 24 in cask and 24
+in bottle in every bank, chapter and region article; and the shown strings of the banks (the Régionale reference rows of
+`js/data-intro.js` among them), chapters, grapes, producers, Floor and Pairing carry no em or en dash, no glyph at or
+above U+2190, never the retired word, and per cent and towards wherever the string is not a stem (an accept list is
+never shown, keeps its old form and gains the British one where the grader would not already take it). **Stems move
+ids.** In the Régionale and Village banks an id is minted from the stem when `rewrite/ship.py` builds the bank, so a
+reworded stem is a new question: its old progress is orphaned and it starts fresh (52 moved in this edition, each listed
+old to new in both applied files; until the edition is committed `rewrite/check-ids.py` and `rewrite/check-regression.py`
+exit 1 against HEAD, and `--logged .scripts/review/applied-rewrite.json` accepts exactly the logged moves and revoked
+answers and fails on any other). Reword a Régionale or Village stem only when the stem itself is wrong or breaks a house
+rule, and log the move. The Premier Cru and Grand Cru ids are frozen
+literals, so a stem edit there moves no id, but it moves the stem-prefix keys of `rewrite/check-paid.py`: re-key an
+entry of `rewrite/paid_known.py` only when it is the same flag on the same question with only the stem prefix changed,
+never to admit a new flag. American spelling left in stems stays, listed for the owner. `rewrite/check-primer-similarity.py`
+compares the Régionale chapters with the imported source at `8d535c8^` (`--ref` or `OOT_PRIMER_REF` changes it), since
+`js/data-primers-intro.js` has held the rewrite itself since that commit.
+
 ## Illustrated reading guides (codex33, October 2026)
 
 `js/data-teaching-images.js`, `js/teaching-cache.js`, `js/codex33.js` and
@@ -15,7 +41,7 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v96`; its two teaching imports have query versions which
+Source worker is `codex-v98`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
 (codex40: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
@@ -81,8 +107,8 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   INTRO_ATLAS / INTRO_CLASS / INTRO_CLASS_TRAPQ / INTRO_WINE / INTRO_SOIL / INTRO_DESS, INTRO_GROUPS
 - `js/data-primers-intro.js` — INTRO_PRIMERS: 39 HTML-body chapters `{g,id,t,body}`
 - `js/data-grapes-plus.js` — GRAPES_PLUS: 24 extra profiles for Advanced/Master flights (47 total)
-- `js/data-advanced.js` / `js/data-master.js` — ADV_QUESTIONS (489, SA-heavy), MASTER_QUESTIONS
-  (391, all oral-style SA); both on the Certified 36-category taxonomy
+- `js/data-advanced.js` / `js/data-master.js` — ADV_QUESTIONS (720, SA-heavy), MASTER_QUESTIONS
+  (576, all oral-style SA); both on the Certified 36-category taxonomy
 - `js/data-primers-advanced.js` / `js/data-primers-master.js` — ADV_PRIMERS / MASTER_PRIMERS, 36 each
 - `js/codex7.js` — **the level engine**: LEVELS registry, `applyLevel()`, key namespacing,
   Court Standing strip, Oral Gauntlet, Master origin call, Intro Compendium
@@ -245,9 +271,14 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   keys. Question ids are `r-` plus eight base36 of FNV-1a 64 over the slug (or key) and the stem, minted by the builder
   once and never re-minted. The layer opens an article from the atlas sheet, the Terroir row, the level's chapter and a
   house wine's card, each matched through the one resolver, `v39SlugFor`; deals the region and country cards as decks
-  on codex32's card screen; drills the `r-` questions; runs The Village tasting, which is codex20's `gridStart(2)`: two
-  GRAPES profiles of the level dealt to the written grid (never the regions' wines) under a 25 minute clock that reads a
-  word when it is up and never stops the run; says on the Quick quiz row what it deals (five from our list, three from
+  on codex32's card screen; drills the `r-` questions; runs The Village tasting: four wines, two white and two
+  red, the written grid, 45 minutes, as the Court sets the Certified tasting (`docs/certified-exam-2026.md`): codex20's
+  `gridStart(4)` re-dealt by `v39GridDeck` as two white GRAPES profiles of the level then two red, the whites first (a
+  pool short of two of either colour keeps gridStart's four; never the regions' wines), shape `four-wines`, under a 45
+  minute clock that reads a word when it is up, never stops the run and counts from a stored end time, so a render never
+  resets it (leaving the grid holds what is left); Pour another flight deals the tasting again (codex20's `gridAgain`,
+  wrapped behind codex21's Finals branch); check-regions, its item 9, and check-home hold the words, the deal, the clock,
+  the again and the shape; says on the Quick quiz row what it deals (five from our list, three from
   the level, two from the regions; eight from the level and two from the regions with no house), wrapping codex32's
   `v32QuickLine`; keeps an article's or a country page's open sections across a door, noted against its address when
   codex32 saves the scroll and opened again before Back restores it (`V39_OPEN`, codex38's pattern); wraps `v27Redraw`
@@ -342,7 +373,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v96`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v98`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 

@@ -1,12 +1,12 @@
-"""Rank II rewrite - Spain (37 questions: 13 MC, 24 short answer).
+"""Village rewrite - Spain (37 questions: 13 MC, 24 short answer).
 
-Certified level, pitched deliberately above the Rank I "Spain" category. Where
-Rank I names the three Rioja zones, this asks what a bodega must do inside one
-before the label may print it; where Rank I asks how long a red Gran Reserva
-ages, this asks what the same word demands of a white; where Rank I identifies
+Certified level, pitched deliberately above the Regionale "Spain" category. Where
+Regionale names the three Rioja zones, this asks what a bodega must do inside one
+before the label may print it; where Regionale asks how long a red Gran Reserva
+ages, this asks what the same word demands of a white; where Regionale identifies
 Palo Cortado from its symptoms, this asks what the capataz chalked on the butt
 that sent the wine down the biological road in the first place. Nothing here
-repeats a Rank I task.
+repeats a Regionale task.
 
 The running order is built around one idea: in Spain the rulebook is the wine's
 biography. So the file opens with the categories and what each of them costs a
@@ -39,7 +39,7 @@ collapses 'vino de pago calificado' and 'vino pago calificado' into one string,
 so every list here was checked for entries that normalise to the same thing.
 
 Facts are restricted to ones that do not drift. No ownership, no volumes, no
-rankings by size; appellation rules, label mechanics, cellar practice, grape
+rankings by size; appellation rules, label mechanics, cellar method, grape
 identity and geography carry the weight instead.
 """
 
@@ -120,7 +120,7 @@ BANK = [
         "vines at least thirty five years old", "a minimum of 35 years old",
         "a minimum of thirty five years old", "35 years or more",
         "thirty five years or more"],
-       "The tier also demands hand harvesting, a yield well below the general limit, and a pass in two separate tastings before the back label is released. Age alone was never going to be enough on its own, because a mediocre old plot is easy to find, but it is the condition that cannot be met by simply farming better next year.",
+       "The tier also demands hand harvesting, a yield well below the general limit, and a pass in two separate tastings before the back label is released. Age was never going to be enough on its own, because a mediocre old plot is easy to find, but it is the condition that cannot be met by simply farming better next year.",
        ex=True),
     SA("Rioja: zones, villages and single vineyards",
        "Rioja lets a label name a zone only when the fruit comes wholly from it, and the cellar steps must happen inside that same zone as well. Name the one that comes first.",
@@ -148,7 +148,7 @@ BANK = [
     # ---------------------- The ageing words in cask and in bottle (4) --------
     Q("The ageing words in cask and in bottle",
       "A Spanish white has spent four years ageing, six months of that in barrel. Which of the ladder's words may the bodega print?",
-      ["Gran Reserva",
+      ["Gran Reserva, since a white's timetable is shorter than a red's",
        "Reserva, that word being the highest a white may reach",
        "Crianza, because only six of the forty-eight months were spent in wood",
        "None of them, the ladder having been written for red wine alone"], 0,
@@ -167,7 +167,7 @@ BANK = [
         "at least eighteen months in cask", "at least 18 months in cask",
         "eighteen months of oak", "18 months of oak", "a year and a half",
         "eighteen months or more", "18 months or more"],
-       "Sixty months in all, at least eighteen of them in an oak cask, is the whole of what the national text asks of a red at the top rung. A denomination may set a harder rule for its own producers and the serious ones have, so the word compares cleanly only inside a single rulebook: two bottles both reading Gran Reserva can differ by a year or more of wood. What is being measured either way is elapsed time and nothing else, which is why the rung says nothing at all about where the fruit grew.",
+       "Sixty months in all, at least eighteen of them in an oak cask, is the whole of what the national text asks of a red at the top rung. A denomination may set a harder rule for its own producers and the serious ones have, so the word compares cleanly only inside a single rulebook: two bottles both reading Gran Reserva may have met different minimums in wood. What is being measured either way is elapsed time and nothing else, which is why the rung says nothing at all about where the fruit grew.",
        ex=True),
     SA("The ageing words in cask and in bottle",
        "Spain's ageing words name two places and no third, so a bodega that leaves its Reserva a year in stainless steel gains nothing by it. Which two places?",
@@ -226,10 +226,10 @@ BANK = [
     Q("The Duero and its denominations",
       "Pale rosado drawn from black and white grapes picked and fermented together made one Castilian denomination's name long before its reds did. Which one?",
       ["Cigales", "Arlanza", "Tierra de Leon", "Ribera del Duero"], 0,
-      "The old field blend was co-fermented rather than blended afterwards, which gives a paler and more savoury wine than a modern rosado bled off a red vat. Cigales sits between Ribera del Duero and Toro on the Pisuerga, and its reds have only lately caught up with the pink wine that carried the name for centuries."),
+      "The old field blend was co-fermented rather than blended afterwards, which gives a paler and more savoury wine than a modern rosado bled off a red vat. Cigales sits on the Pisuerga just north of Valladolid, and its reds have only lately caught up with the pink wine that carried the name for centuries."),
     SA("The Duero and its denominations",
        "Putting Verdejo on a Rueda label commits a bodega to more of the grape than the denomination name alone does. Give the minimum a varietal label demands.",
-       "Eighty-five percent Verdejo",
+       "At least eighty-five per cent Verdejo",
        ["eighty five percent verdejo", "85% verdejo", "85 percent verdejo",
         "eighty five percent", "85%", "85 percent", "85", "eighty five",
         "eighty five per cent", "85 per cent", "eighty five per cent verdejo",
@@ -239,7 +239,7 @@ BANK = [
         "at least 85% verdejo", "a minimum of 85 percent verdejo",
         "a minimum of eighty five percent verdejo", "a minimum of 85%",
         "a minimum of eighty five percent", "minimum eighty five percent verdejo",
-        "minimum 85 percent verdejo", "85 percent of the blend"],
+        "minimum 85 percent verdejo", "85 percent of the blend", "at least eighty five per cent", "at least 85 per cent", "minimum eighty five per cent", "at least eighty five per cent verdejo", "a minimum of 85 per cent verdejo", "a minimum of eighty five per cent verdejo", "a minimum of eighty five per cent", "minimum eighty five per cent verdejo", "minimum 85 per cent verdejo", "85 per cent of the blend"],
        "Plain Rueda needs half the blend to be Verdejo and the rest may be Viura or another permitted white; naming the grape lifts the floor. The same figure governs a Rueda labelled Sauvignon, so the two claims on a shelf are stronger than they look and the unnamed bottle is the one to ask about.",
        ex=True),
     SA("The Duero and its denominations",
@@ -260,7 +260,7 @@ BANK = [
       "Priorat built a ladder of its own climbing from village wine through a named site to a classified vineyard. What stands at the very top of it?",
       ["Gran Vinya Classificada", "Vinya Historica", "Paratge Qualificat",
        "Cru Superior"], 0,
-      "The scheme ranks ground rather than producers. It is the paratge rung that the rulebook itself names and maps, several hundred of them alongside the named villages, while the two classified rungs above are awarded plot by plot on application, against a long record of single-vineyard bottling and a lasting hold on the land, which is why so few of them exist. Village wine asks that the fruit come wholly from the village named but does not oblige the bottler to have farmed it, so the estate condition belongs to the classified rungs rather than to the whole ladder."),
+      "The scheme ranks ground rather than producers. It is the paratge rung that the rulebook itself names and maps, several hundred of them alongside the named villages, while the two classified rungs above are awarded plot by plot on application, against a long record of single-vineyard bottling and a lasting hold on the land, which is why so few of them exist."),
     SA("Priorat and Catalunya",
        "A downy-leaved mutation of Garnacha holds its acidity better in heat, and the Catalan rulebooks list it separately from its parent. What is it called?",
        "Garnatxa Peluda",
@@ -273,7 +273,7 @@ BANK = [
        ["xarel lo", "xarello", "xarel lo pansa blanca", "pansa blanca xarel lo",
         "xarel lo grape", "the xarel lo variety", "xarel lo blanc",
         "xarel lo blanca", "xarel lo also called pansa blanca"],
-       "One vine, two names, and the Alella version is the older of them. Xarel-lo is the most oxidation-resistant of the traditional Catalan whites, which is why it carries the body in a sparkling blend and why it is the one of them most often bottled on its own as a still wine. Watch the pink-skinned Xarel-lo Vermell, a separate variety that Alella calls Pansa Rosada, because the two Pansas are as easy to confuse as the two names of this one.",
+       "One vine, two names. Xarel-lo is the most oxidation-resistant of the traditional Catalan whites, which is why it carries the body in a sparkling blend and why it is the one of them most often bottled on its own as a still wine. Watch the pink-skinned Xarel-lo Vermell, a colour mutation that Alella calls Pansa Rosada and the rulebooks list separately, because the two Pansas are as easy to confuse as the two names of this one.",
        ex=True),
 
     # -------------------------- Bierzo, Mencia and the Leon plateau (2) -------
@@ -289,14 +289,14 @@ BANK = [
        "Prieto Picudo",
        ["prieto picudo", "prieto picudo grape", "the prieto picudo variety",
         "prieto picudo tinto", "the black prieto picudo"],
-       "The technique is called madreo, and the added bunches restart the ferment and raise a light prickle that the wine keeps into the bottle. The variety takes its name from its dark, pointed berries, its bunches are unusually compact, and it is grown seriously almost nowhere outside the province. A white mutation of it exists and is a different grape, so the rulebooks name the black one in full.",
+       "The technique is called madreo, and the added bunches restart the ferment and raise a light prickle that the wine keeps into the bottle. The variety takes its name from its dark, pointed berries, its bunches are unusually compact, and it is grown seriously almost nowhere outside its home ground around Leon.",
        ex=True),
 
     # ------------------------ Galicia's denominations and subzones (4) --------
     Q("Galicia's denominations and subzones",
       "One Galician denomination lies inland against the Portuguese border in a sheltered valley, and it is the warmest and driest of the five. Which?",
       ["Monterrei", "Ribeiro", "Ribeira Sacra", "Rias Baixas"], 0,
-      "The valley of the Tamega sits in a rain shadow, so Monterrei ripens Godello and Treixadura with far less anxiety about rot than the coast has. It is the least exported of the five and the one a Galician list is least likely to carry, which is exactly why it is worth asking about."),
+      "The valley of the Tamega sits in a rain shadow, so Monterrei ripens Godello and Treixadura with far less anxiety about rot than the coast has. Its reds lean on Mencia, and in climate the valley has more in common with the interior of northern Portugal across the border than with the Atlantic coast of Galicia."),
     SA("Galicia's denominations and subzones",
        "Facing Portugal across the mouth of the Mino, one Rias Baixas subzone traditionally blends Loureira into its Albarino. Name the subzone.",
        "O Rosal",
@@ -309,7 +309,7 @@ BANK = [
        "It buds and ripens late, needs a warmer inland site than the coast can offer, and gives a broader wine usually blended with Godello, Loureira or Torrontes. In northern Portugal the same vine is Trajadura and goes into Vinho Verde for exactly the same reason: weight."),
     SA("Galicia's denominations and subzones",
        "Printing Albarino on the front of a Rias Baixas bottle triggers a stricter rule than leaving it off. How much of the grape must the wine then hold?",
-       "One hundred percent Albarino",
+       "All of it, one hundred per cent Albarino",
        ["one hundred percent albarino", "100% albarino", "100 percent albarino",
         "one hundred percent", "100%", "100 percent", "100", "all of it",
         "one hundred per cent", "100 per cent", "one hundred per cent albarino",
@@ -317,23 +317,23 @@ BANK = [
         "all albarino", "it must be entirely albarino",
         "it must be 100% albarino", "it must be 100 percent albarino",
         "it must be one hundred percent albarino", "it has to be 100% albarino",
-        "a minimum of 100 percent albarino"],
+        "a minimum of 100 percent albarino", "it must be 100 per cent albarino", "it must be one hundred per cent albarino", "a minimum of 100 per cent albarino"],
        "Nothing else may be in the blend, which is a stricter varietal rule than most of Europe uses and is why the name on the front is worth reading. A Rias Baixas without the grape name may perfectly well be a blend with Loureira, Caino Blanco or Treixadura, and in the southern subzones it usually is.",
        ex=True),
 
     # ------------------------------ Jerez: the solera and the flor (4) --------
     Q("Jerez: the solera and the flor",
       "A butt fortified past a certain strength loses its veil of flor for good and turns oxidative. Roughly where does that line fall?",
-      ["Around 15.5 percent",
-       "Around 12 percent, which is the strength of the unfortified base wine",
-       "Around 18 percent",
-       "Around 22 percent"], 0,
-      "The yeast that forms the veil stops working somewhere close to fifteen and a half, so a cellar master fortifies to just under that line to keep a wine biological and to just over it to kill the flor deliberately. That single decision, taken on a young wine, is what separates the whole Fino family from the whole Oloroso family."),
+      ["Around 15.5 per cent",
+       "Around 12 per cent, which is the strength of the unfortified base wine",
+       "Around 18 per cent",
+       "Around 22 per cent"], 0,
+      "The yeast that forms the veil stops working somewhere close to fifteen and a half, so a cellar master fortifies to just under that line to keep a wine biological and well past it, to around seventeen, to kill the flor deliberately. That single decision, taken on a young wine, is what separates the whole Fino family from the whole Oloroso family."),
     SA("Jerez: the solera and the flor",
        "Wine drawn off the solera row is topped back up from the criadera above it, in an operation the bodegas name after dew. Give that term.",
        "Rocio",
        ["rocio", "el rocio", "rocio refill", "rociar"],
-       "The word is literal: the younger wine is introduced gently, down the wall of the butt or through a tube, so the veil floating on the surface is not torn. Tearing it would let oxygen at the wine underneath, which is the one thing a biological cellar exists to prevent, and it is why the refill is a slow job rather than a pour."),
+       "The name suits the job: the younger wine is introduced gently, down the wall of the butt or through a tube, so the veil floating on the surface is not torn. Tearing it would let oxygen at the wine underneath, which is the one thing a biological cellar exists to prevent, and it is why the refill is a slow job rather than a pour."),
     SA("Jerez: the solera and the flor",
        "A cellar hand lifts a sample from beneath the veil without tearing it, using a narrow cup on a long whippy handle. Name the tool.",
        "Venencia",
@@ -346,7 +346,7 @@ BANK = [
        "Anada",
        ["anada", "vino de anada", "anada sherry", "an anada wine",
         "vintage sherry", "anada wines", "anadas"],
-       "It carries a year on the label, which almost nothing else in Jerez does, because a solera has no vintage to declare. The wines were traditionally kept in the coolest corner of the bodega and drawn on to correct a solera in a difficult year, so bottling one at all is a modern decision rather than an old tradition.",
+       "It carries a year on the label, which almost nothing else in Jerez does, because a solera has no vintage to declare. Holding one harvest apart for years ties up stock and leaves the cask's losses to evaporation unreplaced, so an anada in bottle is the exception rather than the rule.",
        ex=True),
 
     # ----------------- Jerez: the marks, the age claims and en rama (3) -------
@@ -361,7 +361,7 @@ BANK = [
        "At the first classification the capataz chalks a mark on the butt, and one mark sends the young wine down the biological road. Name that mark.",
        "Palma",
        ["palma", "una palma", "the palma mark"],
-       "A stroke like a palm frond says the wine is delicate and clean and will be lightly fortified to keep its veil alive. A raya, a plain horizontal bar, sends a fuller wine the oxidative way, and the crossed mark that gives Palo Cortado its name is a palma struck through, meaning the cellar master changed his mind about it.",
+       "A stroke like a palm frond says the wine is delicate and clean and will be lightly fortified to keep its veil alive, while a raya sends a fuller wine the oxidative way. Palo Cortado is named for a different mark, a plain stroke, the palo, cut across by a bar to show that the cellar master changed his mind about the wine.",
        ex=True),
     SA("Jerez: the marks, the age claims and en rama",
        "Before the letters VORS may go on a label the regulating body verifies the claimed average age in a laboratory rather than from the cellar book. Which test does it use?",
@@ -373,7 +373,7 @@ BANK = [
     # ------------------------------ Cava: zones and ageing tiers (2) ----------
     Q("Cava: zones and ageing tiers",
       "Zoning came to Cava so that a label could finally say where the fruit grew rather than only how the wine was made. Which is a genuine Cava zone?",
-      ["Comtats de Barcelona", "Camp de Tarragona", "Ribera del Cava",
+      ["Comtats de Barcelona", "Camp de Tarragona", "Terra Alta",
        "Alt Penedes"], 0,
       "The denomination was drawn around a production method and a register of approved plots rather than around a boundary, which is how it came to stretch across half the country, and the zones answer the old complaint that followed from it. A buyer can now tell an Ebro valley bottle from a Catalan one, and a zone may be subdivided further so a district can be named as well."),
     SA("Cava: zones and ageing tiers",

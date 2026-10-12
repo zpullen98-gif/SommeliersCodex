@@ -32,6 +32,14 @@ widening, so they are informational rather than failures.
     py rewrite/check-regression.py                    # against HEAD
     py rewrite/check-regression.py --ref HEAD~3       # against any commit
     py rewrite/check-regression.py r2_burgundy        # one or more categories
+    py rewrite/check-regression.py --logged .scripts/review/applied-rewrite.json
+
+`--logged FILE` reads the `revokedProbes` rows of an edition's applied file (each a
+`module`, the current displayed `ans`, the `probes` the edition revoked on purpose
+and the `reason`) and accepts a lost answer only when that exact string is logged
+against that question. Every other lost answer still fails, so the default run is
+unchanged and the flag never admits an unrecorded revocation; a logged probe that
+grades again, or no longer exists, is a note.
 """
 import os
 import re
@@ -123,11 +131,30 @@ def pair_questions(old_bank, new_bank):
     return pairs, orphans
 
 
+def logged_revocations(path):
+    """{(module, ans): set of probes} from an applied file's revokedProbes rows."""
+    import json
+    if not os.path.isabs(path) and not os.path.exists(path):
+        path = os.path.join(REPO, path)
+    with open(path, encoding="utf-8") as fh:
+        data = json.load(fh)
+    out = {}
+    for r in data.get("revokedProbes") or []:
+        key = (r.get("module"), r.get("ans"))
+        out.setdefault(key, set()).update(r.get("probes") or [])
+    return out
+
+
 def main(argv):
     ref = "HEAD"
     if "--ref" in argv:
         i = argv.index("--ref")
         ref = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
+    logged = None
+    if "--logged" in argv:
+        i = argv.index("--logged")
+        logged = logged_revocations(argv[i + 1])
         argv = argv[:i] + argv[i + 2:]
     mods = argv or sorted(
         f[:-3] for f in os.listdir(os.path.join(HERE, "categories"))
@@ -179,6 +206,21 @@ def main(argv):
               % len(orphaned))
         for name, ans in orphaned[:12]:
             print("                 %s: %s" % (name, ans[:60]))
+
+    if logged is not None:
+        knowing = [r for r in regressions if r[2] in logged.get((r[0], r[1]), ())]
+        hit = set(knowing)
+        regressions = [r for r in regressions if r not in hit]
+        listed = sum(len(v) for v in logged.values())
+        print("  logged       %d of the lost answers are revocations the applied file names"
+              % len(knowing))
+        if listed > len(knowing):
+            print("  note         %d logged probe(s) are not lost against %s (graded again, or gone)"
+                  % (listed - len(knowing), ref))
+        if not regressions:
+            print("")
+            print("  no correct answer was made wrong that the edition does not log.")
+            return 0
 
     if not regressions:
         print("")

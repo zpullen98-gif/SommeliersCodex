@@ -1,0 +1,465 @@
+{
+ "batch": "village-chapters-2",
+ "file": "js/data-primers.js",
+ "cats": [
+  "South America",
+  "Australia",
+  "New Zealand",
+  "South Africa",
+  "Sparkling Wine World",
+  "Fortified Wines",
+  "Sweet Wines",
+  "Terroir: Climate & Soil",
+  "Spirits & Cocktails",
+  "Beer & Cider",
+  "Sake",
+  "Wine Fundamentals",
+  "Classifications & Labels",
+  "Viticulture & Winemaking",
+  "Wine Trade & Aging",
+  "Service & Hospitality",
+  "Food & Pairing",
+  "Business of the Sommelier"
+ ],
+ "readCount": 18,
+ "total": 18,
+ "searches": 2,
+ "checks": {
+  "check-syntax": "all 67 JS files parse",
+  "check-home": "all 193 checks pass"
+ },
+ "findings": [
+  {
+   "cat": "(all 18 chapters)",
+   "field": "lead, exam, facts, traps",
+   "problem": "The batch shipped 131 em dashes and 23 en dashes, plus 37 arrows, 2 minus signs and the signs for at least, at most, not equal and approximately (U+2190 to U+2BFF, refused by the voice rule in check-home).",
+   "fix": "Every one rewritten as a comma, colon, full stop or words (\"to\", \"then\", \"at least\", \"60% or less\", \"is not\", \"about\", \"minus 7°C\"). A node sweep of the batch finds no U+2013, U+2014, U+2212, nothing from U+2190 to U+2BFF, no dash entity and no spaced double hyphen.",
+   "source": "House rules (the Codex CLAUDE.md and the voice rule in .scripts/check-home.js).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "(all 18 chapters)",
+   "field": "lead, exam, facts, traps",
+   "problem": "American spellings throughout the Codex's own prose: color, flavor, favorite, labeling, aging (in prose), savory, splendor, polarizing, oxidized, shriveling, toward, apologize, license (noun), chili, program, math, band-aid, nail polish.",
+   "fix": "British forms: colour, flavour, favourite, labelling, ageing, savoury, splendour, oxidised, shrivelling, towards, apologise, licence, chilli, programme, maths, sticking plaster, nail varnish; goat's cheese. The cat \"Wine Trade & Aging\" stays byte-identical to the bank.",
+   "source": "House rule: British spelling; the Codex uses -ise (recognised, oxidised, unpasteurised) and ageing.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South America",
+   "field": "facts",
+   "problem": "\"Cafayate's vineyards run to ~3,000 m\" put the 3,000 m figure on Cafayate itself, which lies at about 1,700 m; the 3,000 m vineyards are further up the Calchaquí Valleys.",
+   "fix": "Cafayate at about 1,700 m, with vineyards further up the valley passing 3,000 m; Torrontés Riojano's parentage (Muscat of Alexandria and Criolla Chica) named.",
+   "source": "Geography of the Calchaquí Valleys (Cafayate about 1,660 to 2,000 m; the highest Salta vineyards above 3,000 m).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South America",
+   "field": "facts",
+   "problem": "\"Colchagua and Cachapoal (Apalta)\" placed Apalta in Cachapoal; Apalta is in Colchagua, and Cachapoal's Carmenère site is Peumo.",
+   "fix": "Colchagua (Apalta) and Cachapoal (Peumo); a new trap says both sit inside the Rapel Valley.",
+   "source": "Chilean DO structure: Rapel holds Cachapoal and Colchagua; Apalta is a Colchagua sector, Peumo a Cachapoal one.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South America",
+   "field": "traps",
+   "problem": "\"until 1994 DNA work\": the 1994 identification of Carmenère was ampelographic; DNA confirmed it afterwards.",
+   "fix": "Fact and trap now say ampelography unmasked it in 1994 and DNA confirmed it later.",
+   "source": "History of the Carmenère identification (field ampelography in 1994, DNA confirmation in 1997).",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "South America",
+   "field": "facts",
+   "problem": "Chile's legal shape was missing (its regions, the 2011 Costa, Entre Cordilleras and Andes bands, the 75% rule with 85% for the EU), and \"Maule/Itata (old-vine País and Carignan)\" blurred which grape belongs where.",
+   "fix": "Chile's geography rewritten north to south by region; a new Chile's signatures row with Maule Carignan (VIGNO), Itata País and Cinsault and the 75%/85% rule.",
+   "source": "Chilean DO law (Decreto 464 and the 2011 complementary designations); matches the reviewed Regionale Chile chapter.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South America",
+   "field": "facts, traps",
+   "problem": "Argentina beyond Mendoza was absent: Bonarda's identity (Douce Noir, Charbono), a stock Certified question, San Juan, Patagonia and the IP, IG and DOC layers; Malbec's origin as Cahors' Côt unsaid.",
+   "fix": "New row Argentina beyond Mendoza; Malbec named as the Côt of Cahors; new trap separating Argentine Bonarda (Douce Noir) from Oltrepò Pavese Bonarda (Croatina). No varietal percentage stated for Argentina, which I could not confirm.",
+   "source": "DNA identification of Argentine Bonarda as Douce Noir; Argentine Ley 25.163 (IP, IG, DOC).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Australia",
+   "field": "facts, traps",
+   "problem": "\"some pre-phylloxera vines 150+ years\" was a misnomer: phylloxera never reached South Australia, so its old vines are own-rooted survivors, not pre-phylloxera relics.",
+   "fix": "Barossa row now says South Australia kept phylloxera out, vines from the 1840s stand on their own roots, with the Barossa Old Vine Charter grades; a new trap explains the point.",
+   "source": "South Australian phylloxera quarantine; Barossa Old Vine Charter (Old Vine 35, Survivor 70, Centenarian 100, Ancestor 125 years).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Australia",
+   "field": "facts",
+   "problem": "The exam line named GSM blends but no fact covered them, and McLaren Vale was missing.",
+   "fix": "New row McLaren Vale & GSM (Grenache, Shiraz, Mourvèdre sold as Mataro). Labels row adds the GI ladder (zone, region, subregion) and the descending order of blend names; Coonawarra placed on the Limestone Coast.",
+   "source": "Australian Wine and Grape Authority labelling and GI rules.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "New Zealand",
+   "field": "lead, facts, traps",
+   "problem": "The lead called Central Otago \"the world's southernmost serious region\"; small Patagonian plantings lie further south, as the fact row's own \"near-southernmost\" half admitted.",
+   "fix": "Lead and fact now say \"among the southernmost\"; a new trap explains the claim.",
+   "source": "Latitudes: Central Otago about 45°S; Chile Chico (Chile) about 46.5°S and Chubut plantings (Argentina) about 45.6°S.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "New Zealand",
+   "field": "facts",
+   "problem": "\"~95%+ screwcapped since the early 2000s\" stated a volatile statistic as fact.",
+   "fix": "Now dated to the New Zealand Screwcap Wine Seal Initiative of 2001, with screwcap sealing \"the great majority\"; the 85% labelling rule added.",
+   "source": "House rule: nothing volatile stated as fact.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "New Zealand",
+   "field": "traps",
+   "problem": "The thiol trap was muddled (\"cat pee/boxwood is thiols at high level, describe as passionfruit/boxwood\"): passionfruit and boxwood are thiols, green pepper and cut grass are methoxypyrazines.",
+   "fix": "Trap now assigns each note to its compound family.",
+   "source": "Sauvignon Blanc aroma chemistry (3MH, 3MHA and 4MMP thiols; IBMP methoxypyrazine).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "New Zealand",
+   "field": "facts",
+   "problem": "Only five regions were named; Gisborne, Nelson and North Canterbury with Waipara, all asked, were missing, as were Marlborough's Southern Valleys and the 1973 planting.",
+   "fix": "New row The rest of the map; Marlborough row adds the Southern Valleys and Montana's 1973 planting.",
+   "source": "New Zealand Winegrowers regional map.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South Africa",
+   "field": "facts",
+   "problem": "Constantia was called \"a legend of the 18th century (Napoleon's exile pour)\": Napoleon's exile on St Helena was 1815 to 1821, in the 19th century.",
+   "fix": "Now \"a legend of the 18th and 19th centuries, shipped to Napoleon in exile on St Helena\"; Klein Constantia's revival dated to 1986.",
+   "source": "Napoleon's exile dates; Klein Constantia's first Vin de Constance, 1986.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South Africa",
+   "field": "facts",
+   "problem": "\"Eben Sadie's Columella/Palladius\" named a living person as the current winemaker and owner, a volatile fact.",
+   "fix": "Now \"The Sadie Family's Columella and Palladius\", the winery's name.",
+   "source": "House rule: no living person named as a volatile fact.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "South Africa",
+   "field": "lead, facts",
+   "problem": "The lead's \"350-year-old industry\" understated it (first wine 1659), and the WO row's \"world's oldest sustainability seal\" was an unverifiable claim; the WO ladder, Cap Classique and the 85% vintage rule were missing.",
+   "fix": "Lead \"Wine since 1659\"; the WO row now gives the ladder (geographical unit, region, district, ward), 85% for variety or vintage, the neck seal certifying the claims and, since 2010, sustainability, and Cap Classique. The Old Vine Project seal (35 years and more) added to Chenin.",
+   "source": "Wine and Spirit Board WO scheme; Integrity and Sustainability seal (2010); Old Vine Project Certified Heritage Vineyards.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "South Africa",
+   "field": "facts",
+   "problem": "Pinotage called \"the base of the Cape Blend\"; a Cape Blend has no legal definition and Pinotage is a component, not necessarily the base.",
+   "fix": "Now \"a common part of a Cape Blend\".",
+   "source": "Wines of South Africa usage of the term.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Sparkling Wine World",
+   "field": "facts",
+   "problem": "Franciacorta \"Satèn & Millesimato 24+\" was wrong for Millesimato, which needs 30 months on the lees; Rosé (24) was missing.",
+   "fix": "Franciacorta 18 months on the lees, Satèn and Rosé 24, Millesimato 30, Riserva 60.",
+   "source": "Franciacorta DOCG disciplinare.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Sparkling Wine World",
+   "field": "facts",
+   "problem": "The Cava minimums ignored the 2020 reform that created Cava de Guarda and Cava de Guarda Superior (Reserva, Gran Reserva, Paraje Calificado).",
+   "fix": "Minimums row now names Cava de Guarda 9 months and Cava de Guarda Superior, created in 2020, with Reserva 18, Gran Reserva 30 and Paraje Calificado 36.",
+   "source": "Consejo Regulador del Cava, 2020 regulation.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Sparkling Wine World",
+   "field": "facts, traps",
+   "problem": "Prosecco was given one DOCG, \"Valdobbiadene-Conegliano\" (the name runs Conegliano Valdobbiadene, and Asolo is a second DOCG), the trap said the DOCG \"still uses tank method\" without exception, and Prosecco DOC Rosé (2020) was missing.",
+   "fix": "New row Prosecco's map (both DOCGs, Cartizze and the Rive, DOC Rosé with 10 to 15% Pinot Nero and a vintage); trap now \"Most Prosecco, DOCG included, is made in tank\".",
+   "source": "Prosecco DOC and DOCG disciplinari; Prosecco DOC Rosé approved in 2020.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Sparkling Wine World",
+   "field": "facts, traps",
+   "problem": "Crémant's \"9 to 12 months minimum lees\" blurred two rules, and the sweetness scale, a staple label question, was absent.",
+   "fix": "Crémant: at least 9 months on the lees and 12 before release. New row Sweetness words (Brut Nature to Doux in g/L) and a trap that Extra Dry is sweeter than Brut. Ancestral row names the AOCs that keep the method.",
+   "source": "Crémant AOC rules; EU sparkling sweetness terms (Reg. 2019/33).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Fortified Wines",
+   "field": "facts",
+   "problem": "Solera: \"draw from the oldest criadera, refresh from younger\" misnamed the tiers; wine is drawn from the solera itself, and the criaderas are the younger tiers that refill it.",
+   "fix": "Now drawn from the oldest tier (the solera), refilled from the first criadera, that from the next.",
+   "source": "Sherry solera terminology (solera, primera criadera, saca, rocío).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Fortified Wines",
+   "field": "facts",
+   "problem": "Nothing reflected the Sherry rules agreed in 2021: Fino and Manzanilla need no fortifying if they reach 15% naturally, and ageing may take place across the Marco de Jerez (Manzanilla still only in Sanlúcar).",
+   "fix": "Added to Sherry, biological; the lead keeps \"wine plus spirit\" as the general picture.",
+   "source": "WebSearch: Decanter, sherry.wine and The Drinks Business on the 2021 reform.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Fortified Wines",
+   "field": "facts",
+   "problem": "Port's grapes, Douro schist, strength, Vila Nova de Gaia, Colheita's seven years, Single Quinta, white and rosé Port were missing; Madeira lacked its age words and Terrantez; the VDN row did not split white Muscat from red Grenache, and Topaque and the Rutherglen ladder names were absent; Marsala was missing.",
+   "fix": "Port split into Port (place, grapes, aguardente, 19 to 22%) and Port styles; Madeira age words added; VDN row split by colour with Rasteau and Frontignan; Rutherglen, Classic, Grand, Rare; new Other fortified row (Marsala, Moscatel de Setúbal); a Colheita trap; Pale Cream added.",
+   "source": "IVDP categories; IVBAM Madeira categories; Rutherglen Muscat classification; Marsala DOC.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Sweet Wines",
+   "field": "facts",
+   "problem": "The exam line named the German Prädikat sweet tiers, but no fact row covered them; Sauternes and Barsac and Tokaji's post-2013 rules were also missing.",
+   "fix": "New rows German & Austrian tiers (Auslese to Trockenbeerenauslese, Ausbruch, Strohwein), Sauternes & Barsac (five communes, the Ciron, Yquem's 1855 rank) and Tokaji (120 g/L since 2013, puttonyos 5 or 6, Eszencia 450 g/L, Szamorodni); a Barsac trap.",
+   "source": "German Weingesetz; Tokaj wine law 2013; 1855 classification.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Sweet Wines",
+   "field": "traps",
+   "problem": "\"5.5% alcohol is the tell\" for Moscato d'Asti gave one figure where the DOCG allows a range of about 4.5 to 6.5% actual alcohol.",
+   "fix": "Now \"its low alcohol, about 5 to 6%, is the tell\".",
+   "source": "Asti DOCG disciplinare.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Terroir: Climate & Soil",
+   "field": "facts, traps",
+   "problem": "Albariza was filed under chalk and called \"diatomaceous chalk\"; it is a white calcareous marl rich in diatoms, not true chalk.",
+   "fix": "Listed as \"a white marl rich in diatoms\"; trap now \"a dazzling white marl of chalk and diatoms\" that soaks up winter rain.",
+   "source": "Jerez soil science (albariza: calcium carbonate, clay and diatom silica).",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Terroir: Climate & Soil",
+   "field": "facts",
+   "problem": "\"Mosel's 60°+ south faces\" gave a gradient that confuses degrees with per cent and cannot be stood on as stated.",
+   "fix": "Now \"the Mosel's steep south-facing slate\".",
+   "source": "Calmont and other Mosel slopes are usually quoted in per cent; the degree figure is unsafe.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Terroir: Climate & Soil",
+   "field": "facts, traps",
+   "problem": "Missing material a candidate is asked: growing degree days and the Winkler regions, Left Bank gravel against Right Bank clay, galestro and alberese, loess, Douro schist; Kimmeridgian omitted Sancerre.",
+   "fix": "New rows Measuring heat and Gravel & clay; schist and the Tuscan and Austrian soil names added; Sancerre added; a trap separates Kimmeridgian (Chablis, Sancerre, the Aube) from the Côte des Blancs' chalk.",
+   "source": "Amerine and Winkler (UC Davis); standard soil teaching.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Spirits & Cocktails",
+   "field": "facts",
+   "problem": "Tequila was placed in Jalisco only; the denomination also covers named municipalities of Guanajuato, Michoacán, Nayarit and Tamaulipas. Extra Añejo was missing.",
+   "fix": "Now \"from Jalisco and named parts of four other states\"; Extra Añejo (3 years and more) added.",
+   "source": "NOM-006-SCFI tequila standard.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Spirits & Cocktails",
+   "field": "facts, traps",
+   "problem": "Gaps: the six Cognac crus and Fine Champagne, Armagnac's three areas, Scotch's 40% minimum and the islands within Highland, bourbon's proof limits and \"straight\", grappa, pisco and vermouth; Manhattan given as rye only.",
+   "fix": "Brandy split into Cognac and Armagnac & Calvados; whisky rows extended; new row Pomace, pisco & vermouth; Manhattan \"rye or bourbon\"; trap that bourbon need not come from Kentucky.",
+   "source": "Cognac and Armagnac AOC rules; Scotch Whisky Regulations 2009; US 27 CFR 5.22.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Beer & Cider",
+   "field": "traps, facts",
+   "problem": "\"Trappist is a legal designation\" and \"brewed IN the monastery\" overstated both: Trappist is a protected label of the International Trappist Association, for beer brewed within or near the abbey under the monks' oversight.",
+   "fix": "Belgium row and trap rewritten accordingly.",
+   "source": "International Trappist Association criteria for the Authentic Trappist Product label.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Beer & Cider",
+   "field": "lead",
+   "problem": "\"a Certified somm\" named the CMS level where the Codex names its levels Regionale, Village, Premier Cru and Grand Cru.",
+   "fix": "Now \"a sommelier\".",
+   "source": "House rule on level names.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Beer & Cider",
+   "field": "facts",
+   "problem": "Missing: the four ingredients, IBU and the Reinheitsgebot; cider's AOPs and perry. \"Pommeau and Calvados upstream\" had the direction wrong; both are made from cider apples, alongside or after.",
+   "fix": "New row Four ingredients; cider row adds AOP Pays d'Auge, Cornouaille and Poiré Domfront, with Pommeau and Calvados \"alongside\"; a Kölsch hybrid trap.",
+   "source": "Reinheitsgebot (Bavaria, 1516); French cider AOPs.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Sake",
+   "field": "facts",
+   "problem": "\"Junmai/Honjozo: ~70%\" gave Junmai a polishing requirement it has not had since 2004 (it must only state its ratio); Honjozo is 70% or less.",
+   "fix": "Polish ladder now gives Honjozo 70% or less and Junmai no minimum since 2004, ratio stated.",
+   "source": "National Tax Agency labelling standard for special-designation sake (2004 revision).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Sake",
+   "field": "facts, traps",
+   "problem": "\"multiple parallel fermentation, unique to sake\" overclaimed (huangjiu and makgeolli use it too); \"~15 to 17% alcohol\" ignored undiluted strength; the trap \"a misnomer twice over\" did not say why; the sake meter value, Kimoto and Yamahai, Tokubetsu and the 10% alcohol cap were missing.",
+   "fix": "\"The defining technique\"; 18 to 20% undiluted, usually 15 to 16%; trap explains that wine is fermented fruit; new row Reading the label (Nihonshu-do), style terms extended; a trap that plus means drier.",
+   "source": "National Tax Agency standards; standard sake teaching.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Wine Fundamentals",
+   "field": "facts",
+   "problem": "The deductive tasting grid, the heart of the Certified tasting, had no row; red and white fermentation differences were thin.",
+   "fix": "New row The tasting grid (sight, nose, palate, conclusion) in the Codex's own words; Colour row adds warm red and cooler white fermentation; \"BOS chapter\" spelled out as the Business of the Sommelier chapter; Gewurz written in full.",
+   "source": "Standard deductive tasting method.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Classifications & Labels",
+   "field": "facts",
+   "problem": "Germany's row ignored the 2021 wine law's origin pyramid (growing region, region, Ortswein, Lagenwein), binding from the 2026 vintage.",
+   "fix": "Added beside the Prädikat ladder (now spelled out), with the VDP pyramid named as its model.",
+   "source": "WebSearch: German wine law reform of January 2021, transition to the 2026 vintage (several trade sources agree).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Classifications & Labels",
+   "field": "facts",
+   "problem": "Italy's \"pink strip on the neck\" stated one colour for the DOCG seal, which is not uniform; Spain lacked Vino de Pago and the Rioja ageing figures; the US line lacked county, state and California rules and the 85% vintage rule without an AVA; \"Chile/Argentina: 75 to 85% rules\" was vague; \"five dialects of cru\" counted châteaux twice.",
+   "fix": "Numbered government neck strip; Vino de Pago and Rioja Crianza, Reserva, Gran Reserva figures; US rules completed; Chile 75%, 85% for the EU; South Africa joins the 85% list; the cru sentence lists vineyard, village and château meanings without a count.",
+   "source": "27 CFR 4.25 and 4.27; Rioja DOCa ageing rules; Chilean DO law.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Viticulture & Winemaking",
+   "field": "facts",
+   "problem": "Clarification and stability (sulphur dioxide, fining and vegan wine, tartrate crystals), a stock service question, was missing, as were training systems and the 228 litre pièce; phylloxera's escapees listed \"some Barossa\" where all of South Australia escaped; carbonic maceration credited to Beaujolais where semi-carbonic is the norm.",
+   "fix": "New row Clarity & stability; training systems and barrel sizes added; \"some Barossa\" widened to South Australia as a whole, plus sandy soils; \"Beaujolais's semi-carbonic wines\"; 17 g/L of sugar per 1% alcohol added.",
+   "source": "Standard oenology; South Australian phylloxera quarantine.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Wine Trade & Aging",
+   "field": "facts, traps",
+   "problem": "The formats row said the magnum \"ages slowest per volume\" (larger formats age more slowly still) and gave \"Jeroboam, Imperial 6L\" without noting that the Jeroboam is 3 litres in Champagne and 5 in Bordeaux.",
+   "fix": "Formats row gives the Champagne ladder to Nebuchadnezzar and the Bordeaux double magnum, Jeroboam and Imperial; the magnum \"ages more slowly than a bottle\".",
+   "source": "Standard bottle-size tables.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Wine Trade & Aging",
+   "field": "traps",
+   "problem": "The trap ended \"American law, not world\" followed by the retired study word.",
+   "fix": "Now \"American law, not a worldwide rule\".",
+   "source": "House rule: the retired study word is never used, in either spelling.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Wine Trade & Aging",
+   "field": "facts",
+   "problem": "\"Fluctuation worse than either\" ranked temperature swings above heat and light, an overstatement; auction vocabulary stopped at a bare \"ullage\".",
+   "fix": "Now \"wide swings in temperature do damage of their own\"; new row Auction talk (into the neck, top shoulder, mid shoulder, OWC, ex-château); Diam written as a name.",
+   "source": "Standard cellaring guidance.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Service & Hospitality",
+   "field": "facts",
+   "problem": "The exam line named glassware logic, but no row covered glassware or the order of wines.",
+   "fix": "New row Glasses & order (polish, stem, placing, flute and bowl; white before red, light before full, dry before sweet, young before old).",
+   "source": "Standard floor service.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Service & Hospitality",
+   "field": "facts",
+   "problem": "\"women first where practical\" stated an order many houses no longer use; the pour sum \"a table of eight needs two bottles\" held only at a full 5 oz pour; temperatures were in Fahrenheit only.",
+   "fix": "Sequence now notes the tradition and the plain clockwise alternative; pour row gives both the full-pour and 3 oz cases; Celsius added to every temperature.",
+   "source": "Current floor service teaching varies by house; arithmetic.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Food & Pairing",
+   "field": "lead, facts",
+   "problem": "The lead's \"salt against tannin's enemies and bitter against nothing\" did not make sense aloud, and the rule of pairing to the sauce or dominant element was missing.",
+   "fix": "Lead rewritten; new row Pair the strongest element.",
+   "source": "Standard pairing principles.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "cat": "Business of the Sommelier",
+   "field": "facts",
+   "problem": "\"by-the-glass programs run richer cost %\" was backwards: under the first-glass rule a glass runs at a 20% cost, lower than a bottle, to cover the waste of open bottles.",
+   "fix": "Glass maths now gives the 20% cost and says why by-the-glass wines carry the lower percentage.",
+   "source": "Arithmetic: one glass of five priced at the bottle's cost gives 1/5 = 20%.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "cat": "Business of the Sommelier",
+   "field": "facts",
+   "problem": "The cost of goods formula, the basis of any inventory question, was missing; \"Wine keys POS-mapped\" garbled the point (a wine key is a corkscrew); \"healthy lists turn 4 to 8×\" was an unsourced benchmark stated as fact.",
+   "fix": "New row Cost of goods (opening plus purchases minus closing); Programme hygiene now \"every wine keyed correctly into the point-of-sale system\"; turnover described as \"several times a year\"; the markup trap now gives the 67% margin.",
+   "source": "Standard beverage cost accounting.",
+   "confidence": "high",
+   "edited": true
+  }
+ ]
+}

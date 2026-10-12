@@ -1,0 +1,87 @@
+{
+  "batch": "regionale-15",
+  "modules": [
+    "rewrite/categories/r1_winemaking_techniques.py"
+  ],
+  "readCount": 50,
+  "total": 50,
+  "findings": [
+    {
+      "module": "rewrite/categories/r1_winemaking_techniques.py",
+      "stemStart": "A tech sheet records a cuvaison of twenty-one",
+      "field": "exp",
+      "problem": "The explanation's first sentence says cuvaison takes in any cold soak beforehand as well as any maceration afterwards, then concludes that a figure well beyond the ferment's length signals post-fermentation maceration only. That contradicts its own premise, because a cold soak lengthens the figure in exactly the same way.",
+      "fix": "Final sentence now reads: a number well beyond the length of the ferment itself is therefore a signal of a cold soak before it, a long maceration after it, or both.",
+      "source": "Standard definition of cuvaison as the whole period of skin contact in the fermenting vessel, pre- and post-fermentation maceration included, and the explanation's own first sentence.",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_winemaking_techniques.py",
+      "stemStart": "Crushed black grapes are held at eight degrees",
+      "field": "opts",
+      "problem": "The stem asks what is drawn out of the skins, and two distractors named a different source (sugar out of the pulp, acidity out of the seeds). The stem's own words ruled them out, which left a two-way guess between the key and the tannin option.",
+      "fix": "Replaced those two distractors with skin-extraction claims that match the key's shape: 'Colour and tannin in equal measure' and 'Acidity and sugar, with little colour'. Both are wrong by the explanation's own teaching, since a cold soak gives colour and aroma with little tannin. The key is unchanged and the lengths stay level (34 to 40 characters).",
+      "source": "The house standard that a stem must not be answerable from its own words or the options' shape. Cold soak teaching: pigment is water-soluble, tannin extraction needs alcohol.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_winemaking_techniques.py",
+      "stemStart": "A finished red reads sixteen and a half per",
+      "field": "exp",
+      "problem": "The explanation said watering from 16.5 to 14 per cent would take something like a seventh of the wine's volume in water. The arithmetic is 16.5 / 14 = 1.179, which means water equal to about 18 per cent of the wine's volume. A seventh (14.3 per cent) would only bring it to about 14.4 per cent, so the figure understated the dilution.",
+      "fix": "Changed to: would mean adding water equal to more than a sixth of its volume.",
+      "source": "Simple dilution arithmetic: 16.5 x V = 14 x (V + W), which gives W = 0.179 V.",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_winemaking_techniques.py",
+      "stemStart": "Held at minus four degrees for a week",
+      "field": "exp",
+      "problem": "The explanation stated a trend as fact ('More producers skip the step each year'), which breaks the house rule against volatile facts. The reason it gave, that the chilling costs the wine aroma, is not the usual one: cold stabilisation is dropped mainly for its energy and time cost, often in favour of an additive that inhibits crystal formation.",
+      "fix": "Now reads: Some producers skip the step and accept the deposit as harmless, or use an additive that stops the crystals forming, since holding a whole tank that cold for days costs a good deal of energy.",
+      "source": "House rule, nothing volatile stated as fact. Standard cellar teaching on cold stabilisation and its alternatives (carboxymethylcellulose, mannoproteins, metatartaric acid).",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "rewrite/categories/r1_winemaking_techniques.py",
+      "stemStart": "Every fortnight through the winter one barrel of",
+      "field": "exp",
+      "problem": "The closing clause 'fashion has swung back towards restraint' states a dated trend as fact, which the house rule against volatile claims forbids.",
+      "fix": "The closing clause now says that how often to stir is a judgement of style rather than a routine. This is timeless, keeps the cost the sentence already names (aromatic lift traded for texture) and drops the trend claim.",
+      "source": "House rule, nothing volatile stated as fact.",
+      "confidence": "low",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "A tech sheet records a cuvaison of twenty-one",
+      "verdict": "kept",
+      "why": "The original's conclusion did not follow from its own first sentence: cuvaison counts pre-fermentation maceration too, so a long figure can come from a cold soak as easily as from a post-fermentation maceration. The new closing sentence is correct, complete and in the voice."
+    },
+    {
+      "stemStart": "Crushed black grapes are held at eight degrees",
+      "verdict": "kept",
+      "why": "The two old distractors named the pulp and the seeds, so the stem's words 'out of the skins' ruled them out. The new ones are skin-extraction claims, both wrong by the explanation (pigment is water-soluble, tannin wants alcohol), with no shape tell: two options open on Colour, two close on 'with little colour', lengths 34 to 40. Key unchanged and the build passes."
+    },
+    {
+      "stemStart": "A finished red reads sixteen and a half per",
+      "verdict": "kept",
+      "why": "16.5/14 - 1 = 0.179, so the water needed is about 18 per cent of the wine's volume. 'More than a sixth' is exact. The old 'something like a seventh' only fits if read as a share of the finished blend (15 per cent), and even then it was loose and ambiguous. The new wording is unambiguous."
+    },
+    {
+      "stemStart": "Held at minus four degrees for a week",
+      "verdict": "kept",
+      "why": "'More producers skip the step each year' stated a trend as fact, which the volatile rule forbids. The new sentence is timeless, gives the standard reasons (the deposit is harmless, chilling is energy hungry) and names the crystal-inhibiting additive route. It still matches the stem's week at minus four."
+    },
+    {
+      "stemStart": "Every fortnight through the winter one barrel of",
+      "verdict": "kept",
+      "why": "'Fashion has swung back towards restraint' was a dated trend claim. The replacement keeps the trade-off the sentence already teaches, aromatic lift for texture, and states nothing volatile. The 'since ..., so ...' chain is a little heavy but grammatical, so it did not need an amendment."
+    }
+  ]
+}

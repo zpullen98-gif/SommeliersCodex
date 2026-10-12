@@ -1,0 +1,238 @@
+{
+  "batch": "regionale-9",
+  "modules": [
+    "rewrite/categories/r1_portugal.py",
+    "rewrite/categories/r1_australia.py"
+  ],
+  "readCount": 115,
+  "total": 115,
+  "findings": [
+    {
+      "module": "r1_portugal",
+      "stemStart": "Mountain ranges standing between the coast and the",
+      "field": "exp",
+      "problem": "The explanation said that in both the Douro and the Dao a maritime climate becomes hot, dry and continental. That is true of the Douro behind the Marao, but the Dao is sheltered on two sides (Caramulo to the west against the Atlantic, Serra da Estrela to the south-east against the interior) and is temperate. The same module's Dao question says the mountains give it a long, temperate season, so the two contradicted each other.",
+      "fix": "Rewrote it: behind the Marao and Montemuro the Douro turns hot, dry and continental; the Dao is sheltered from both sides and stays temperate rather than baking.",
+      "source": "Standard regional description of the Dao (Caramulo against the Atlantic, Estrela against continental extremes); the module's own Dao question, 'Ringed by the Serra do Caramulo'",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_portugal",
+      "stemStart": "White wine from the Douro has turned serious",
+      "field": "exp",
+      "problem": "The explanation called Gouveio the grape Madeira calls Verdelho. DNA work identifies Gouveio as Godello. Madeira's Verdelho is a different variety, even though the Douro has used Verdelho as a loose local name for Gouveio. The same module keys Verdelho as the Azores and Madeira grape, so the exp taught a false identity.",
+      "fix": "Changed it to 'the grape Galicia calls Godello'.",
+      "source": "Robinson, Harding and Vouillamoz, Wine Grapes (Godello: synonym Gouveio, distinct from Verdelho of Madeira); VIVC synonym listings",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_portugal",
+      "stemStart": "Drawing a stopper at the table, a sommelier",
+      "field": "opts",
+      "problem": "Every option carried its own definition, and only the key's definition ('an agglomerated body capped with natural cork discs') restated the stem's description. A student could match the words without knowing any closure. It was answerable from the options' wording.",
+      "fix": "Cut the options to names only: A technical cork, A colmated cork, An agglomerated cork (granules with no discs, the close distractor), A natural cork. The synthetic stopper was dropped for the agglomerated cork. The exp now says how the agglomerated and colmated corks differ, and keeps the point about price and drinking window.",
+      "source": "Standard closure taxonomy (technical 1+1 = agglomerated body plus natural discs; agglomerated = granules only; colmated = natural cork with filled lenticels)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_portugal",
+      "stemStart": "A red labelled Garrafeira has met an ageing",
+      "field": "exp",
+      "problem": "The explanation said Reserva 'asks only for' a stated vintage and alcohol half a degree above the minimum. The national rule also requires the wine to be approved at tasting for outstanding organoleptic character, so 'only' was false.",
+      "fix": "Rewrote it: under the national rules Reserva asks for a stated vintage, approval at tasting and alcohol half a degree above the regional minimum, but sets no time in wood or glass. The keyed thirty months, twelve in bottle, for a red Garrafeira is correct and unchanged.",
+      "source": "Portuguese national rules on the terms Reserva and Garrafeira (Portaria on designations of quality: Reserva = vintage, outstanding organoleptic character, +0.5% vol; Garrafeira red = 30 months, 12 in glass)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_portugal",
+      "stemStart": "A Portuguese label carries no DOC and no",
+      "field": "exp",
+      "problem": "The explanation said plain Vinho makes no geographical claim at all. Wine without a GI must still state its country of origin, so it does make a claim, just none narrower than Portugal.",
+      "fix": "Changed it to 'Plain Vinho names no origin narrower than the country.'",
+      "source": "EU wine labelling rules (Reg. 2019/33 and 1308/2013: the provenance of wine without a PDO or PGI is the Member State)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_portugal",
+      "stemStart": "British officers billeted near Lisbon during the Peninsular",
+      "field": "exp",
+      "problem": "'The appellation is now down to a handful of producers' states a count that changes, which is a volatile fact.",
+      "fix": "Changed it to 'the appellation never regained its old scale', a historical claim that does not date.",
+      "source": "House rule: nothing volatile stated as fact",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Blending Shiraz from three separate regions before bottling",
+      "field": "stem",
+      "problem": "The stem used the word practice, which the house rules forbid everywhere. One distractor, 'A legal requirement that applies above a certain alcohol level', is not something blending can buy, so it did not answer the stem and was a different kind of option. The exp also said a multi-region label must list the regions with their percentages. The rule asks for the regions in descending order of share, not for printed percentages.",
+      "fix": "Stem now ends 'What does that blending buy the winemaker?' (id moves from i-p59b7mzy to i-us7ohd88; check-similarity clean). The distractor became 'Fruit that ripens earlier than any single region could manage'. The exp now says the label must otherwise name the regions in descending order of their share, or fall back on a broader GI.",
+      "source": "House rule (never practice); Wine Australia guidance on multiple GI claims (descending order, at most three GIs, 95 per cent combined) found by web search. The exp leaves the 95 per cent figure out because the 2018 Regulations text could not be confirmed",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Vintage, variety and origin claims on an Australian",
+      "field": "opts",
+      "problem": "One distractor, 'The Winemakers Code of Practice', carries the banned word, and neither it nor 'The Australian Wine Show Register' is a real thing. The house standard asks for four real options.",
+      "fix": "Replaced both with real Australian institutions that do other jobs: The Australian Wine Research Institute and Sustainable Winegrowing Australia. The exp now says what each one does: the GIC sets boundaries, the AWRI does research and SWA certifies how vineyards and wineries are run.",
+      "source": "House rule (never practice); AWRI (founded 1955) and Sustainable Winegrowing Australia (the national sustainability certification since 2019) are real bodies with no label-audit role",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Orange sits at a latitude that ought to",
+      "field": "exp",
+      "problem": "The closing claim that altitude lets 'a region well north of Melbourne end up cooler than one south of it' was vague and doubtful. Few regions south of Melbourne are warmer than Orange.",
+      "fix": "Replaced it with a comparison that is true and that it teaches: Orange lies on much the same latitude as the warm Hunter Valley and makes wine of an entirely cooler cast.",
+      "source": "Latitudes: Orange about 33.3 S, Hunter about 32.8 S; Orange GI defined from 600 m",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Climb east out of the Barossa floor into",
+      "field": "exp",
+      "problem": "The explanation put Eden Valley 'on ancient weathered granite'. Eden Valley soils are varied, thin and rocky, mostly over metamorphic and sedimentary rock (schist, quartzite, sandstone), with granite only in places. Calling the region granite taught a soil identity it does not have.",
+      "fix": "Changed it to 'sits higher and cooler on thin, rocky, low-fertility soils'.",
+      "source": "Regional descriptions of Eden Valley geology (Kanmantoo and Adelaidean metasediments of the Mount Lofty Ranges; skeletal rocky soils)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Old Shiraz in the Barossa often stands as",
+      "field": "opts",
+      "problem": "The key, 'Bush vine, also known as head training', was the only option carrying a gloss and stood 12 characters clear of the next, a visible long standout.",
+      "fix": "Cut the key to 'Bush vine' and moved 'also called head training' into the exp.",
+      "source": "README option-length method (trim the key, move the qualification into exp)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Two named subregions inside the Adelaide Hills appear",
+      "field": "exp",
+      "problem": "'The only two subregions the Adelaide Hills has registered' is a volatile claim. Further subregions have been proposed (Paracombe, Charleston, Echunga, Kuitpo and others), and the count may change.",
+      "fix": "Changed it to a historical fact: Lenswood and Piccadilly Valley were registered as Adelaide Hills subregions around the turn of the century (1998 and 2000).",
+      "source": "Web search: Wine Australia Adelaide Hills GI page; Halliday Wine Companion on Adelaide Hills subregional GIs (two official, eight more proposed, as of 2023)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Tasmania's most planted variety gives a still red",
+      "field": "exp",
+      "problem": "The explanation said Cabernet 'fails to ripen in most years'. That overstates it: Cabernet is grown in the warmest pockets, the Tamar and Coal River for instance, and ripens there in good years.",
+      "fix": "Changed it to 'ripens fully only in the better years'.",
+      "source": "Producer and regional record of Cabernet in the Tamar and Coal River valleys",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Poured cool with turkey at a midsummer Christmas,",
+      "field": "exp",
+      "problem": "'The style began in Victoria's Great Western and survives almost nowhere else on earth' is a doubtful origin claim. Early Australian sparkling reds are also credited to the Victorian Champagne Company in the 1880s and to Edmond Mazure in South Australia. 'Almost nowhere else on earth' also sits badly beside the Lambrusco distractor, which is a sparkling red.",
+      "fix": "Rewrote it: the style is most closely tied to Great Western in Victoria, where it has been made since the nineteenth century, and full-bodied sparkling red of this kind is rare outside Australia.",
+      "source": "Australian wine history of sparkling burgundy (Victorian Champagne Co., Mazure at Auldana, Seppelt and Irvine at Great Western)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r1_australia",
+      "stemStart": "Of the five Great Southern subregions, one lies",
+      "field": "exp",
+      "problem": "'Push them toward' uses the American 'toward' in the Codex's own prose.",
+      "fix": "Changed it to 'towards'.",
+      "source": "House rule: British spelling",
+      "confidence": "low",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Mountain ranges standing between the coast and the",
+      "verdict": "kept",
+      "why": "The original made the Dao hot, dry and continental, which the module's own Dao question (long, temperate season, mountains against the Atlantic and the meseta) contradicts. The fix keeps the Douro case that carries the key and gives the Dao its sheltered, temperate character; geography of Marao, Montemuro, Caramulo and Estrela is right."
+    },
+    {
+      "stemStart": "White wine from the Douro has turned serious",
+      "verdict": "kept",
+      "why": "Gouveio is Godello by DNA and is not Madeira's Verdelho; the Douro's old habit of calling it Verdelho is the source of the confusion. The original taught a false identity; the fix is right and exp only."
+    },
+    {
+      "stemStart": "Drawing a stopper at the table, a sommelier",
+      "verdict": "kept",
+      "why": "The definitions in the options let the key be matched to the stem's words. Names only, with the agglomerated cork as the close distractor, is a non-stem fix that makes the question test the taxonomy; the stem's discs make the technical cork the only right answer, and the exp now separates all three cork types. No length standout."
+    },
+    {
+      "stemStart": "A red labelled Garrafeira has met an ageing",
+      "verdict": "kept",
+      "why": "'Only' omitted the national requirement of approval for outstanding character. The fix adds it, hedges with 'under the national rules' for DOC-level additions, and leaves the keyed thirty months, twelve in bottle, unchanged."
+    },
+    {
+      "stemStart": "A Portuguese label carries no DOC and no",
+      "verdict": "kept",
+      "why": "Wine without a GI still states its country, so 'no geographical claim at all' was false. 'No origin narrower than the country' is exact."
+    },
+    {
+      "stemStart": "British officers billeted near Lisbon during the Peninsular",
+      "verdict": "kept",
+      "why": "A producer count is volatile; 'never regained its old scale' is a stable historical claim that keeps the point."
+    },
+    {
+      "stemStart": "Blending Shiraz from three separate regions before bottling",
+      "verdict": "kept",
+      "why": "The stem carried the banned word, so no non-stem fix could serve; the id move (i-p59b7mzy to i-us7ohd88) is accepted knowingly and check-similarity is clean. The new distractor cannot be defended (each parcel ripens in its own region). Wine Australia's blending rules (Regulations 2018, ss 25 to 27) confirm descending order with no printed percentages required, so the old exp was wrong and the new one right."
+    },
+    {
+      "stemStart": "Vintage, variety and origin claims on an Australian",
+      "verdict": "kept",
+      "why": "The winemakers' code distractor carried the banned word and the Wine Show Register is not a real body. AWRI and Sustainable Winegrowing Australia are real and plainly not label-claim audits, so neither is defensible; the key is now the shortest option, with no standout."
+    },
+    {
+      "stemStart": "Orange sits at a latitude that ought to",
+      "verdict": "amended",
+      "why": "The Hunter comparison is true and fits the stem (Orange about 33.3 S, Pokolbin about 32.8 S). 'An entirely cooler cast' is unidiomatic with a comparative; amended to 'a far cooler cast'."
+    },
+    {
+      "stemStart": "Climb east out of the Barossa floor into",
+      "verdict": "kept",
+      "why": "Granite occurs in Eden Valley only in places; the soils are mostly thin and rocky over metasediments. 'Thin, rocky, low-fertility soils' is true and teaches no false identity."
+    },
+    {
+      "stemStart": "Old Shiraz in the Barossa often stands as",
+      "verdict": "amended",
+      "why": "Trimming the key to 'Bush vine' and moving the gloss to exp is the README method and is right. But the new exp made the vine itself 'also called head training', a category slip; amended to 'Bush vine training, also called head training, has the vine carry its own canopy'."
+    },
+    {
+      "stemStart": "Two named subregions inside the Adelaide Hills appear",
+      "verdict": "kept",
+      "why": "'The only two registered' is a count that further proposals could change; the replacement is historical and hedged ('around the turn of the century'). The stem still has one right pair, since every distractor pair belongs to another region."
+    },
+    {
+      "stemStart": "Tasmania's most planted variety gives a still red",
+      "verdict": "kept",
+      "why": "'Fails to ripen in most years' overstated it, given Cabernet from the Coal River and Tamar; 'ripens fully only in the better years' is a fair generalisation."
+    },
+    {
+      "stemStart": "Poured cool with turkey at a midsummer Christmas,",
+      "verdict": "amended",
+      "why": "Softening the origin claim was right, and 'rare outside Australia' squares with the light Lambrusco distractor. The added 'where it has been made since the nineteenth century' asserts a Great Western start date that could not be confirmed (South Australia's Auldana has an early claim too) and adds nothing the stem does not already say; the clause is cut."
+    },
+    {
+      "stemStart": "Of the five Great Southern subregions, one lies",
+      "verdict": "kept",
+      "why": "'Towards' is the usual British form in the Codex's prose. The two stems that still read 'toward' (McLaren Vale, Douro sub-regions) were rightly left alone, since a stem edit would move their ids for a form British English also allows."
+    }
+  ]
+}

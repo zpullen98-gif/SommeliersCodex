@@ -1,8 +1,8 @@
-"""Rank II rewrite - Producers & Icons (41 questions: 8 MC, 33 short answer).
+"""Village rewrite - Producers & Icons (41 questions: 8 MC, 33 short answer).
 
-Certified level, pitched deliberately above the Rank I "Producers & Icons"
+Certified level, pitched deliberately above the Regionale "Producers & Icons"
 category, which was written first and read end to end before a word of this one.
-Rank I owns "which house makes which famous wine" completely - the yellow label,
+Regionale owns "which house makes which famous wine" completely - the yellow label,
 the artist labels, the pagodas, the braille, Monfortino, Nacional, Grange - and
 nothing here sets that task. What is asked instead is what a professional knows
 about a house once the name is already on the table: which grand cru it holds
@@ -18,7 +18,7 @@ cellar is known by, the words printed on the back, and last the rules a handful
 of houses have imposed on themselves and never relaxed.
 
 Written from the syllabus below. The imported bank was not read while writing; it
-is read only afterwards, by check-similarity.py. The committed Rank II regional
+is read only afterwards, by check-similarity.py. The committed Village regional
 categories were read first as well, and their estates were deliberately left
 alone: Latour's Enclos, Cheval Blanc's Bouchet, Tignanello, Solaia, Masseto,
 Cannubi, Opus One, To Kalon, Bien Nacido, Scharzhofberg, Erdener Pralat and the
@@ -46,7 +46,7 @@ rejects anything not written down.
 
 Facts are restricted to ones that do not drift. No ownership changes, no volumes,
 no price standings, no promotions from the last few years. Vineyard boundaries,
-label law, cellar practice, cask sizes, the composition of a cuvee and the
+label law, cellar method, cask sizes, the composition of a cuvee and the
 self-imposed rules a house has kept for generations carry the weight instead.
 """
 
@@ -110,11 +110,11 @@ BANK = [
     # -------------------------- What is actually in the icon bottle (5) ------
     Q("What is actually in the icon bottle",
       "A guest compares two vintages of one classified Medoc estate and finds the first blend led by Merlot and the second by Cabernet Sauvignon, although no vines were pulled up between them. What accounts for the swing?",
-      ["Lots that fell short of the grand vin were left out of it, and which variety fell short differs from one year to the next",
+      ["Each year's selection for the grand vin, set by how each variety fared that season",
        "The estate replanted a large parcel and did not announce it",
        "Appellation rules fix a different blend for each vintage according to the season",
        "The second wine takes a fixed share of every variety, so what remains sets the proportions"], 0,
-      "Planting is a decision of decades and blending a decision of one winter, so the two never match. A wet September that spoils the Merlot and a cool one that leaves the Cabernet green both show up in the assemblage rather than in the vineyard, and an estate that kept its proportions fixed in spite of the season would be bottling its weather, not correcting for it."),
+      "Lots that fall short of the grand vin are left out of it, and which variety falls short changes with the season. Planting is a decision of decades and blending a decision of one winter, so the two never match. A wet September that spoils the Merlot and a cool one that leaves the Cabernet green both show up in the assemblage rather than in the vineyard, and an estate that kept its proportions fixed in spite of the season would be bottling its weather, not correcting for it."),
     SA("What is actually in the icon bottle",
        "Alsace's grand cru rules admit only one named site to a label, so a house whose long-lived Riesling cuvee is drawn from parcels in a pair of them prints no grand cru name at all. Which grand crus are blended in that cuvee?",
        "Geisberg and Osterberg",
@@ -179,7 +179,7 @@ BANK = [
        ["chateau chalon", "chateau chalon aoc", "aoc chateau chalon",
         "the chateau chalon appellation", "chateau chalon vin jaune",
         "chateau chalon in the jura"],
-       "The appellation makes vin jaune and nothing else, and the wine spends more than six years in cask under a veil of yeast before it may be bottled, so a refusal falls on work long since done. Whole vintages were declassified outright in the 1970s and 1980s, and the rejected wine goes to market as plain Cotes du Jura instead.",
+       "The appellation makes vin jaune and nothing else, and the wine may not be bottled until more than six years after the harvest, most of that time in cask under a veil of yeast, so a refused year costs its growers dearly. Whole vintages were declassified outright in the 1970s and 1980s, and the rejected wine goes to market as plain Cotes du Jura instead.",
        ex=True),
 
     # -------------------------------------- Second and third labels (5) ------
@@ -216,7 +216,7 @@ BANK = [
        "Overture",
        ["overture", "overture from opus one", "opus one overture",
         "the overture bottling", "overture napa valley", "overture by opus one"],
-       "Blending several years into one red is ordinary in Champagne and rare in Napa, where the vintage date is treated as part of the claim. It is sold largely at the winery rather than through the trade, which is why it turns up on wine lists far less often than the estate's flagship does.",
+       "Blending several years into one wine is ordinary in Champagne and rare in Napa, where the vintage date is treated as part of the claim. It was long sold only at the winery rather than through the trade, which is why it turns up on wine lists far less often than the estate's flagship does.",
        ex=True),
 
     # -------------------------------- Grower, negociant and merchant (5) -----
@@ -283,11 +283,11 @@ BANK = [
         "the almaviva red"],
        "Count Almaviva belongs to The Marriage of Figaro, and the label carries a design borrowed from Mapuche art, so the bottle advertises both partners at once. The Chilean partner was already growing Cabernet of the first rank on that stretch of gravel, which is why the ground was settled before the deal was."),
     SA("Single plots and single wines",
-       "A Saint-Emilion first growth and a Mendoza estate share a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine.",
+       "A Saint-Emilion estate famed for its Cabernet Franc and a Mendoza estate share a Malbec-led red grown on stony Andean ground at around a thousand metres. Name that wine.",
        "Cheval des Andes",
        ["cheval des andes", "cheval des andes mendoza",
         "terrazas cheval des andes", "the cheval des andes joint venture"],
-       "Malbec leads it and Cabernet Sauvignon fills it out, which is the Bordeaux partner's contribution to a grape Argentina had long bottled on its own. Mendoza's old ungrafted Malbec is the material such ventures are really after, since cuttings of that quality no longer exist in the variety's homeland."),
+       "Malbec leads it and Cabernet Sauvignon fills it out, a Bordeaux-style blend built on a grape Argentina had long bottled on its own. Mendoza's old ungrafted Malbec is the material such ventures are really after, since vines of that age on their own roots are rare in the variety's French homeland."),
 
     # ---------------------------------- Vessels a house is known by (4) ------
     SA("Vessels a house is known by",
@@ -306,7 +306,7 @@ BANK = [
        "Northern Rhone cellars often raise Syrah in a cask of about six hundred litres, larger than a barrique and smaller than a foudre, chosen so that the oak marks the wine less. Name it.",
        "Demi-muid",
        ["demi muid", "demi muids", "demimuid", "demi muid cask"],
-       "Half a muid, the muid being an old measure that varied from town to town, so the name is a fossil of a unit nobody uses any more. The wider stave and the lower ratio of wood to wine give slower oxygen and much less vanilla than a barrique, which is why estates trying to lighten their oak move to this size rather than merely to older barrels."),
+       "Half a muid, the muid being an old measure that varied from town to town, so the name is a fossil of a unit nobody uses any more. The thicker stave and the lower ratio of wood to wine give slower oxygen and much less vanilla than a barrique, which is why estates trying to lighten their oak move to this size rather than merely to older barrels."),
     SA("Vessels a house is known by",
        "Douro contracts and lodge records still count in a cask of roughly five hundred and fifty litres, and a shipper's stock is described in them rather than in litres. Name that cask.",
        "Pipe",
@@ -351,14 +351,14 @@ BANK = [
 
     # ------------------------------- Houses that set their own rule (4) ------
     Q("Houses that set their own rule",
-      "Merchants who want a case of one Vosne-Romanee domaine's grand crus are obliged to take a spread of its lesser wines in the same shipment. What does that practice achieve for the domaine?",
+      "Merchants who want a case of one Vosne-Romanee domaine's grand crus are obliged to take a spread of its lesser wines in the same shipment. What does that arrangement achieve for the domaine?",
       ["The whole range moves, the famous bottles carrying the rest with them",
        "It keeps the grand crus out of the auction rooms, where resale is forbidden by the appellation",
        "It satisfies a Burgundian rule obliging a producer to offer its whole range to any buyer",
        "It lowers the duty due on the shipment, which is levied on the case rather than on the bottle"], 0,
-      "A village Vosne-Romanee is a harder sell than a grand cru, and tying the two together means the cellar never has to discount either of them. The buyer's compensation is that the door stays open for the next vintage, which is worth more than the margin lost on the wines they did not especially want."),
+      "The lesser wines are a harder sell than the most famous one, and tying them together means the cellar never has to discount any of them. The buyer's compensation is that the door stays open for the next vintage, which is worth more than the margin lost on the wines they did not especially want."),
     SA("Houses that set their own rule",
-       "One Barossa house has kept a workshop inside its winery since the 1940s, turning out something almost every other winery in the world buys in. What does it make there?",
+       "One Barossa house has kept a workshop inside its winery for more than a century, turning out something almost every other winery in the world buys in. What does it make there?",
        "Oak barrels",
        ["oak barrels", "barrels", "casks", "oak casks", "wooden barrels",
         "wooden casks", "barriques", "wine barrels", "its own barrels",
@@ -382,7 +382,7 @@ BANK = [
         "oak barrels in its own cooperage", "oak casks and barrels",
         "barrels and casks", "it has its own cooperage", "has its own cooperage",
         "its cooperage", "a working cooperage", "in house cooperage"],
-       "Yalumba is the house, and a working cooperage lets it buy standing timber, season the staves for as long as it likes and build to its own specification rather than take what a supplier offers. Almost nobody else bothers, because the craft takes a cooper's whole working life to learn and one winery needs only a few hundred barrels a year.",
+       "Yalumba is the house, and a working cooperage lets it choose its own timber, season the staves for as long as it likes and build to its own specification rather than take what a supplier offers. Almost nobody else bothers, because a cooper takes years to train and one winery needs only a few hundred barrels a year.",
        ex=True),
     SA("Houses that set their own rule",
        "In a vintage judged not strong enough, a Barbaresco cooperative declines to bottle any of the nine single-vineyard Riservas it is known for. What becomes of that fruit?",
@@ -503,7 +503,7 @@ BANK = [
         "pure grenache", "only grenache", "nothing but grenache",
         "grenache noir alone", "all grenache", "100 percent grenache",
         "100 % grenache", "grenache 100%", "grenache 100 percent",
-        "100% grenache noir"],
+        "100% grenache noir", "one hundred per cent grenache", "100 per cent grenache", "grenache 100 per cent"],
        "Chateau Rayas is the estate, and its red carries no Syrah, no Mourvedre and nothing else the decree allows. Sand, the shade of surrounding pine woods and very low yields give a wine so pale and perfumed that it is regularly mistaken for red Burgundy blind, which is much of the reason it is argued about.",
        ex=True),
 ]

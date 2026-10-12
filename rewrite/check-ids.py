@@ -4,6 +4,14 @@
     py rewrite/check-ids.py                     # every category, against HEAD
     py rewrite/check-ids.py r1_beer r1_loire    # named categories
     py rewrite/check-ids.py --ref HEAD~5        # against any commit
+    py rewrite/check-ids.py --logged .scripts/review/applied-rewrite.json
+
+`--logged FILE` reads the `movedIds.rows` of an edition's applied file (each row a
+`module`, an `old` id and its `new` one) and accepts a move only when that exact
+pair is logged for that module. Any move the file does not name still fails, so
+the default run is unchanged and the flag never admits an unrecorded move; it
+turns "every id that moved is logged" from a reading by eye into a check. A
+logged row whose old id no longer moves (the edition committed, say) is a note.
 
 Ids are minted `i-<8 base36>` from an FNV-1a 64 over `json.dumps([cat, stem])`, so
 the STEM is the identity. Options, `exp` and accept lists can be edited freely;
@@ -66,6 +74,19 @@ def ids_of(mod):
     return [lib.mint(mod.CAT, e["q"], prefix) for e in mod.BANK]
 
 
+def logged_moves(path):
+    """{module: {old id: new id}} from an applied file's movedIds rows."""
+    import json
+    with open(path, encoding="utf-8") as fh:
+        data = json.load(fh)
+    rows = (data.get("movedIds") or {}).get("rows") or []
+    out = {}
+    for r in rows:
+        if r.get("module") and r.get("old") and r.get("new"):
+            out.setdefault(r["module"], {})[r["old"]] = r["new"]
+    return out
+
+
 def main():
     argv = sys.argv[1:]
     ref = "HEAD"
@@ -73,6 +94,14 @@ def main():
         i = argv.index("--ref")
         ref = argv[i + 1]
         del argv[i:i + 2]
+    logged = None
+    if "--logged" in argv:
+        i = argv.index("--logged")
+        path = argv[i + 1]
+        del argv[i:i + 2]
+        if not os.path.isabs(path):
+            path = os.path.join(REPO, path) if not os.path.exists(path) else path
+        logged = logged_moves(path)
 
     names = [a for a in argv if not a.startswith("-")]
     if not names:
@@ -81,6 +110,8 @@ def main():
                        if f.endswith(".py") and not f.startswith("_"))
 
     moved = 0
+    knowingly = 0
+    stale = []
     checked = 0
     for name in names:
         new = importlib.import_module("categories.%s" % name)
@@ -91,11 +122,23 @@ def main():
         new_ids, old_ids = ids_of(new), ids_of(old)
         sn, so = set(new_ids), set(old_ids)
         checked += len(new_ids)
+        log = (logged or {}).get(name, {})
+        stale += ["%s %s" % (name, o) for o in sorted(log) if o not in so - sn]
         if sn == so and len(new_ids) == len(old_ids):
             print("%-32s  ok, %d ids unchanged" % (name, len(new_ids)))
             continue
-        moved += 1
         lost, gained = so - sn, sn - so
+        if logged is not None and len(new_ids) == len(old_ids) and lost and \
+                all(log.get(o) in gained for o in lost) and \
+                len(set(log[o] for o in lost)) == len(gained):
+            knowingly += len(lost)
+            print("%-32s  moved knowingly: %d id%s, each logged old to new"
+                  % (name, len(lost), "" if len(lost) == 1 else "s"))
+            continue
+        moved += 1
+        if logged is not None:
+            lost = set(o for o in lost if log.get(o) not in gained)
+            gained = gained - set(log[o] for o in so - sn if o in log)
         print("%-32s  ORPHANED: %d ids lost, %d new" % (name, len(lost), len(gained)))
         by_id = dict(zip(old_ids, [e["q"] for e in old.BANK]))
         for i in sorted(lost)[:5]:
@@ -104,10 +147,18 @@ def main():
             print("      ... and %d more" % (len(lost) - 5))
 
     print("")
+    if logged is not None:
+        print("logged moves: %d ids moved knowingly, each named old to new in the applied file" % knowingly)
+        if stale:
+            print("note: %d logged row%s no longer move%s against %s: %s"
+                  % (len(stale), "" if len(stale) == 1 else "s", "s" if len(stale) == 1 else "",
+                     ref, ", ".join(stale[:6]) + (" ..." if len(stale) > 6 else "")))
     if moved:
-        print("*** %d categor%s changed ids. A stem was edited; every stat key that"
-              % (moved, "y" if moved == 1 else "ies"))
+        print("*** %d categor%s changed ids%s. A stem was edited; every stat key that"
+              % (moved, "y" if moved == 1 else "ies", " the applied file does not log" if logged is not None else ""))
         print("*** referenced it is orphaned. Revert the stem, or accept the loss knowingly.")
+    elif knowingly:
+        print("NO UNLOGGED MOVE across %d questions: the %d moved ids are each logged." % (checked, knowingly))
     else:
         print("ALL IDS STABLE across %d questions - no stored progress orphaned." % checked)
     sys.exit(1 if moved else 0)

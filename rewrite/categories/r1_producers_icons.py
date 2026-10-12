@@ -1,4 +1,4 @@
-"""Rank I rewrite - Producers & Icons (50 questions, all multiple choice).
+"""Regionale rewrite - Producers & Icons (50 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing.
 
@@ -11,8 +11,8 @@ actually be asked about.
 
 Every question asks WHICH HOUSE, or what a named house is known for. Vineyard
 holdings, cuvee composition, succession and anything that turns on price or
-ownership are left to the Rank II category that has to sit above this one, and
-the facts chosen here are the durable ones: a label, a practice, a signature
+ownership are left to the Village category that has to sit above this one, and
+the facts chosen here are the durable ones: a label, a habit, a signature
 wine. Regional categories already own their own appellations, classifications
 and history, so where a house of theirs is named the task is deliberately
 different: Bordeaux owns the 1855 list, and what is asked here is whose tower is
@@ -20,7 +20,7 @@ on the label.
 
 Every stem opener is distinct, the constructions in lib.BANNED_TEMPLATES are
 avoided by design, and each stem leads with a label, a building, a wine or a
-practice so the house arrives as the answer rather than as the first clause.
+habit so the house arrives as the answer rather than as the first clause.
 Option length was watched from the first draft rather than repaired afterwards.
 """
 
@@ -59,9 +59,9 @@ BANK = [
     Q("Champagne houses and growers",
       "Cuvee Sir Winston Churchill honours a customer who drank the house's wine devotedly from 1944 until his death. Which house bottles it?",
       ["Pol Roger", "Charles Heidsieck", "Louis Roederer", "Bollinger"], 0,
-      "It is released only in vintage years and only in bottle and magnum, never in half bottles. The style is deliberately Pinot-led and firm rather than delicate, which the house says answers what he actually liked to drink."),
+      "He was buying the house's wine long before the war, but the attachment was sealed by a friendship with the family that began in liberated Paris in 1944. The cuvee is made only in vintage years and is deliberately Pinot-led and firm rather than delicate, which the house says answers what he actually liked to drink."),
     Q("Champagne houses and growers",
-      "Base wines are fermented in small oak casks rather than in steel, a practice this house kept when its neighbours gave it up. Which house?",
+      "Base wines are fermented in small oak casks rather than in steel, a habit this house kept when its neighbours gave it up. Which house?",
       ["Krug", "Taittinger", "Ruinart", "Deutz"], 0,
       "Every parcel and every year is fermented as a separate lot in cask and then kept apart in tank, so the blending table draws on a working library of reserve wines running back many years. The oak is old and is used for texture and slow oxygen rather than for any flavour of its own."),
     Q("Champagne houses and growers",
@@ -83,7 +83,7 @@ BANK = [
       "Visitors arriving at Chateau Cos d'Estournel in Saint-Estephe are met by a facade that looks nothing like a Medoc chateau. What did its founder build there?",
       ["A set of oriental pagodas", "A neoclassical mansion in the manner of a Paris opera house",
        "A Gothic revival abbey with a bell tower", "A moated keep"], 0,
-      "Louis-Gaspard d'Estournel sold a great deal of his wine into India and the East and built a cellar that advertised the fact. There is no living accommodation in it at all, and the estate is still nicknamed the Maharajah of Saint-Estephe."),
+      "Louis-Gaspard d'Estournel sold a great deal of his wine into India and the East and built a cellar that advertised the fact, which earned him the nickname the Maharajah of Saint-Estephe. There is no living accommodation in the building at all, since it was raised to make and store wine."),
     Q("Bordeaux estates by name",
       "One estate ranked a third growth in 1855 is regularly drunk and discussed alongside the second growths of Margaux, helped by an unusually high proportion of Merlot for the Left Bank. Which estate?",
       ["Chateau Palmer", "Chateau Cantenac Brown", "Chateau Giscours", "Chateau Kirwan"], 0,
@@ -102,7 +102,7 @@ BANK = [
     Q("Burgundy domaines and negociants",
       "After tasting Willamette Valley Pinot Noir in the early 1980s, one Beaune negociant house bought land in the Dundee Hills and built a winery on it. Which house?",
       ["Maison Joseph Drouhin", "Maison Louis Latour", "Maison Louis Jadot", "Maison Faiveley"], 0,
-      "The Oregon operation has been run by a member of the family since it opened, and the wines are made in a deliberately Burgundian manner. It followed rather than led the local growers who had already proved the valley could ripen the grape."),
+      "A member of the family made the wine there from the first vintage, in a deliberately Burgundian manner. The venture followed rather than led the local growers who had already proved the valley could ripen the grape."),
     Q("Burgundy domaines and negociants",
       "Flower-covered labels and a relentless export campaign made one Beaujolais negociant a household name well outside France. Which firm?",
       ["Georges Duboeuf", "Chateau des Jacques", "Maison Trenel", "Domaine Lapierre"], 0,
@@ -116,7 +116,7 @@ BANK = [
     Q("Rhone benchmarks",
       "Three single-vineyard Cote-Rotie bottlings, each with a name beginning La, come from one house at Ampuis. Which house?",
       ["E. Guigal", "M. Chapoutier", "Paul Jaboulet Aine", "Domaine Jamet"], 0,
-      "La Mouline, La Landonne and La Turque are made in very small quantities and raised in new oak for around three years, far longer than the appellation's habit. The same house also bottles a widely sold Cotes du Rhone, so its range runs from the supermarket shelf to the auction room."),
+      "La Mouline, La Landonne and La Turque are made in very small quantities and raised in new oak for about three and a half years, far longer than the appellation's habit. The same house also bottles a widely sold Cotes du Rhone, so its range runs from the supermarket shelf to the auction room."),
     Q("Rhone benchmarks",
       "Rather than bottle its parcels separately, one family that has farmed the hill of Hermitage since the fifteenth century assembles fruit from right across it into a single red each year. Which domaine?",
       ["Domaine Jean-Louis Chave", "Domaine du Vieux Telegraphe", "Paul Jaboulet Aine",
@@ -133,7 +133,7 @@ BANK = [
     Q("Rhone benchmarks",
       "Every label from one Rhone house has carried its text in raised Braille dots since the 1990s. Which house?",
       ["M. Chapoutier", "Domaine Georges Vernay", "Delas Freres", "E. Guigal"], 0,
-      "The practice began after the head of the house realised that a wine label tells a blind buyer nothing whatever. It is applied across the entire range, from the largest Cotes du Rhone bottling to the single-vineyard wines."),
+      "Braille labelling began after the head of the house realised that a wine label tells a blind buyer nothing whatever. It is applied across the entire range, from the largest Cotes du Rhone bottling to the single-vineyard wines."),
 
     # --------------------------------------- piedmont and tuscany (6) -------
     Q("Piedmont and Tuscany",
@@ -195,7 +195,7 @@ BANK = [
     Q("Port shippers of the Douro",
       "Vargellas, high up the valley where the Douro is at its hottest and driest, is the flagship property of which Port shipper?",
       ["Taylor Fladgate", "Graham", "Fonseca", "Dow"], 0,
-      "The house is known for a firm, dry style of vintage Port that takes many years to come round. Its name belongs to the group of British and Scottish merchant families who built the Port trade out of Oporto and gave so many of the shippers English surnames."),
+      "The house is known for a firm, austere style of vintage Port that takes many years to come round. Its name belongs to the group of English and Scottish merchant families who built the Port trade out of Oporto and gave so many of the shippers British surnames."),
 
     # ------------------------------------- mosel and rhine estates (4) ------
     Q("Mosel and Rhine estates",
@@ -221,7 +221,7 @@ BANK = [
     Q("California and the Pacific Northwest",
       "Back labels listing every ingredient used, at a time when American law required none of it, are the habit of which Santa Cruz Mountains winery?",
       ["Ridge Vineyards", "Mount Eden Vineyards", "Rhys Vineyards", "Heitz Cellar"], 0,
-      "Grapes, yeast, oak and every addition have been printed on the label since the 2011 vintage, when the winery became the first in the United States to do it, and it treats the practice as a matter of principle rather than marketing. Its Monte Bello Cabernet comes from a ridge-top vineyard above the fog line, and it also made a name for old-vine Zinfandel."),
+      "Grapes, yeast, oak and every addition have been printed on the label since the 2011 vintage, and the winery treats the disclosure as a matter of principle rather than marketing. Its Monte Bello Cabernet comes from a ridge-top vineyard above the fog line, and it also made a name for old-vine Zinfandel."),
     Q("California and the Pacific Northwest",
       "From the 1966 vintage one Napa winery put the name of the Oakville vineyard that grew the fruit onto its Cabernet label, and the wine became known for a minty, eucalyptus note. Which winery?",
       ["Heitz Cellar", "Robert Mondavi Winery", "Beaulieu Vineyard", "Freemark Abbey"], 0,
@@ -236,7 +236,7 @@ BANK = [
       "The cold, dry, continental country east of the Cascades suits Riesling and the state grows a great deal of it. The partnership brought a German judgement about the balance of sweetness and acidity to a region that had mostly been making the grape as a simple sweet wine."),
     Q("California and the Pacific Northwest",
       "A long adobe arch and bell tower beside the highway at Oakville, put up in 1966, announced the first substantial new winery built in Napa since Prohibition. Whose was it?",
-      ["The Robert Mondavi Winery", "Stag's Leap Wine Cellars", "Charles Krug", "Beringer"], 0,
+      ["Robert Mondavi Winery", "Stag's Leap Wine Cellars", "Charles Krug", "Beringer"], 0,
       "The building was designed to be seen from the road and to receive visitors, which was itself a new idea in the valley. The same winery pressed hard for varietal labelling, for naming vineyards, and for a working relationship with the university researchers at Davis."),
 
     # ---------------------------------- australia and new zealand (4) -------
@@ -267,9 +267,9 @@ BANK = [
       ["Catena Zapata", "Achaval-Ferrer", "Bodega Colome", "Zuccardi"], 0,
       "The Adrianna vineyard is farmed as mapped blocks, each picked and fermented separately, so the differences within one site can be tasted side by side. The work changed how Argentina thought about a grape that had been treated as bulk material for most of the twentieth century."),
     Q("Icons beyond the classic names",
-      "Don Melchor, first bottled in 1987 and the longest-running of Chile's icon Cabernets, belongs to which producer?",
+      "Don Melchor, a Cabernet first made in 1987 from vineyards at Puente Alto in the upper Maipo, belongs to which producer?",
       ["Concha y Toro", "Santa Rita", "Errazuriz", "Undurraga"], 0,
-      "It comes from one estate close to the Andes and is now made and cellared apart from the rest of the company's range, with its own team. Chile's whole icon category began with it, and every other major producer answered within a decade."),
+      "Puente Alto sits on stony alluvial ground at the foot of the Andes, where cool air coming down off the mountains keeps the Cabernet fresh as it ripens. The wine was among the first Chilean reds made to be laid down and judged beside the great Bordeaux, and the icon category it helped to found soon drew in most of Chile's large houses."),
     Q("Icons beyond the classic names",
       "A Stellenbosch estate on the Simonsberg foothills is the reference point for Pinotage and also bottles a Bordeaux blend called Paul Sauer. Which estate?",
       ["Kanonkop", "Boekenhoutskloof", "Rustenberg", "Meerlust"], 0,

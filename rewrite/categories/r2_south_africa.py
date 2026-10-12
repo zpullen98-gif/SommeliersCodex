@@ -1,12 +1,12 @@
-"""Rank II rewrite - South Africa (16 questions: 8 MC, 8 short answer).
+"""Village rewrite - South Africa (16 questions: 8 MC, 8 short answer).
 
-Certified level, pitched deliberately above the Rank I South Africa category.
-Rank I walks the map - the districts, the winds, the grapes and their Cape
+Certified level, pitched deliberately above the Regionale South Africa category.
+Regionale walks the map - the districts, the winds, the grapes and their Cape
 names. This category owns the machinery and the ground: what the Wine of
 Origin scheme actually demands tier by tier, what the certification seal is
 withheld for, which rock does what beneath the vines, how the old-vine story
 became auditable, and who dismantled the old order and what grew in its
-place. Nothing here repeats a Rank I task.
+place. Nothing here repeats a Regionale task.
 
 The running order is built around one idea: start at the rulebook and dig
 down, then climb back up. The scheme's mechanics first, then the rocks its
@@ -144,7 +144,7 @@ BANK = [
       ["Trade agreements shut Champagne's terms, even methode champenoise, to outsiders",
        "French wording is barred outright from South African wine labels",
        "A licence fee was charged for every label carrying the French phrase",
-       "The Cape's method departs far enough from Champagne's practice that the French term amounted to false description"], 0,
+       "The Cape's method departs far enough from the Champagne process that the French term amounted to false description"], 0,
       "Producers coined Methode Cap Classique in 1992, ahead of the trade deals with Europe that formally retired methode champenoise along with borrowed names like port and sherry. The wording was deliberate: classique claims the classic method while Cap names the place, and the producers' association that grew around the term now guards it."),
     SA("Cap Classique",
        "After its second fermentation, a Cap Classique must wait before disgorging can even be scheduled. What is the legal minimum time on the lees?",

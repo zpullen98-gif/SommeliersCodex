@@ -36,7 +36,7 @@
  *      through .scripts/regions/regions-join.cjs, the resolver codex39's
  *      v39SlugFor mirrors; the line reads
  *      "house wines: n of N resolve, a to an article, c to a country" and
- *      anything under 100 percent fails; and codex39.js, loaded beside the
+ *      anything under 100 per cent fails; and codex39.js, loaded beside the
  *      data, answers every house string, name and alias as regions-join does
  *   7. the service references: js/data-service-ref.js, when present, under
  *      the same voice rules and the shape .scripts/regions/service-ref-schema.json
@@ -55,6 +55,17 @@
  *      depth drawn once naming its level, and the key heads The places
  *      whenever a place carries one; the seven gates that list codex38.js
  *      list codex39.js too
+ *   9. the Village tasting: four wines, two white and two red, the written
+ *      grid, 45 minutes. In a sandbox standing in for codex20, the Quizzes
+ *      row reads so; the run deals four GRAPES profiles of the level, two
+ *      whites then two reds, under a 45 minute clock with the shape
+ *      four-wines (the clock drawn only for that shape); and a pool short of
+ *      two of either colour keeps gridStart's four. The clock counts from a
+ *      stored end time: answers that draw the grid again never reset it or
+ *      start a second timer, and leaving the grid holds what is left. Pour
+ *      another flight (codex20's gridAgain) deals the tasting again, a
+ *      Finals grid still moves on through codex21's branch, and any other
+ *      grid keeps codex20's own again
  *
  * Usage:
  *   node .scripts/check-regions.js [jsDir] [--pack <path>]
@@ -599,6 +610,72 @@ if (fs.existsSync(L39) && fs.existsSync(REG_FILE) && fs.existsSync(SR_FILE)) {
     if (wines.indexOf('>ros\u00e9<') < 0 || wines.indexOf('>rose<') >= 0 || wines.indexOf('>red<') < 0) dp.push('the colour rose is not drawn as ros\u00e9');
   } catch (e) { dp.push('the sandbox threw: ' + e.message); }
   check('codex39 deals the service references (a deck in oot-codex-servicecards-v1, a drill of every s- question, never scheduled, never level progress, known to qidAudit, both doors on the page), draws its views again when the house lands, and shows rose as ros\u00e9', dp.length === 0, few(dp));
+}
+/* the Village tasting: the Court pours the Village candidate four wines, two white and two red, on the written grid in
+   45 minutes. A sandbox stands in for codex20 (gridPool, gridStart, gridDealOpts, gridView) and core's shuffle: the
+   Quizzes row says so in those words, the run deals two whites then two reds of the level's pool under a 45 minute
+   clock with the shape four-wines, the clock is drawn for that shape, and a pool short of a colour keeps gridStart's four */
+const TASTING_LINE = 'four wines, two white and two red, the written grid, 45 minutes';
+if (fs.existsSync(L39) && fs.existsSync(REG_FILE)) {
+  const tp = [];
+  try {
+    const tctx = { console: { log() {}, warn() {}, error() {} }, window: {}, setTimeout: function () { return 0; }, clearTimeout: function () {}, setInterval: function () { tctx.TIMERS++; return 1; }, clearInterval: function () {}, TIMERS: 0 };
+    tctx.self = tctx; vm.createContext(tctx);
+    vm.runInContext([
+      'var S = { view: "home" }; var activeLevel = "certified"; var RENDERS = 0; var DEALT = 0; var FINALS = 0;',
+      'var NOW = 1000000; Date.now = function () { return NOW; };',
+      'var V25_GO = {}, V25_AREA = {}, V25_VIEWS = {}, V25_UNDER = {}, V32_OWNER = {}, V32_PARENT = {};',
+      'var POOL = [{ g: "W1", c: "w" }, { g: "R1", c: "r" }, { g: "W2", c: "w" }, { g: "R2", c: "r" }, { g: "W3", c: "w" }, { g: "R3", c: "r" }, { g: "R4", c: "r" }];',
+      'function render() { RENDERS++; }',
+      'function shuffle(a) { return a.slice().reverse(); }',
+      'function gridPool() { return POOL.slice(); }',
+      'function gridStart(n) { S.tg = { deck: gridPool().slice(0, n || 6), idx: 0, step: 0, opts: [] }; S.view = "grid"; gridDealOpts(); render(); }',
+      'function gridDealOpts() { DEALT++; S.tg.opts = [S.tg.deck[S.tg.idx].g]; }',
+      'function gridView() { return { firstChild: null, kids: [], insertBefore: function (n) { this.kids.unshift(n); } }; }',
+      'function gridAgain() { gridStart(S.tg ? S.tg.deck.length : 6); }',
+      'var _finAgain = gridAgain; gridAgain = function () { if (S._fin && S._fin.phase === "grid") { FINALS++; return; } return _finAgain.apply(this, arguments); };',
+      'var document = { createElement: function () { return { setAttribute: function () {} }; }, getElementById: function () { return null; } };',
+      'function v32GoRow(key, name, line, arg) { return "<li data-go=\\"" + key + "\\">" + name + ": " + line + "</li>"; }',
+      'function v32Group(title, rows, id) { return rows ? "<section id=\\"" + id + "\\"><h3>" + title + "</h3><ul>" + rows + "</ul></section>" : ""; }',
+      'function v32QuizzesHtml() { return "<div class=\\"v25page\\"></div>"; }'
+    ].join('\n'), tctx, { filename: 'stubs.js' });
+    vm.runInContext(fs.readFileSync(REG_FILE, 'utf8'), tctx, { filename: 'data-regions.js' });
+    vm.runInContext(fs.readFileSync(L39, 'utf8'), tctx, { filename: 'codex39.js' });
+    const T = (x) => vm.runInContext(x, tctx);
+    if (T('V39_WORDS.tastingRow') !== 'The Village tasting' || T('V39_WORDS.tastingLine') !== TASTING_LINE) tp.push('the words read ' + T('V39_WORDS.tastingRow') + ': ' + T('V39_WORDS.tastingLine'));
+    if (T('v32QuizzesHtml()').indexOf('data-go="villagetasting">The Village tasting: ' + TASTING_LINE + '<') < 0) tp.push('Quizzes has no row reading The Village tasting: ' + TASTING_LINE);
+    if (typeof tctx.V25_GO.villagetasting !== 'function') tp.push('V25_GO.villagetasting is missing');
+    else {
+      T('V25_GO.villagetasting()');
+      const deck = T('S.tg && S.tg.deck.map(function (g) { return g.c; }).join("")');
+      if (T('S.view') !== 'grid' || deck !== 'wwrr') tp.push('the run deals ' + deck + ' on ' + T('S.view') + ', not two whites then two reds on the grid');
+      if (T('S.tg.idx') !== 0 || T('S.tg.opts[0]') !== T('S.tg.deck[0].g')) tp.push('the first glass of the re-dealt four is not the one the options were dealt for');
+      if (T('S.tg.clock') !== 45 * 60) tp.push('the clock starts at ' + T('S.tg.clock') + ' seconds, not 45 minutes');
+      if (T('S.tg.shape') !== 'four-wines') tp.push('the shape is ' + T('S.tg.shape') + ', not four-wines');
+      if (T('gridView().kids.length') !== 1) tp.push('the clock is not drawn above the grid for the four-wines run');
+      /* the clock: 3.5 seconds idle, then ten answers 0.7 seconds apart, each drawing the grid again */
+      T('NOW += 3500; gridView();');
+      if (T('S.tg.clock') !== 2697) tp.push('after 3.5 seconds the clock reads ' + T('S.tg.clock') + ' seconds, not 2697');
+      const timers = tctx.TIMERS;
+      T('for (var i = 0; i < 10; i++) { NOW += 700; gridView(); }');
+      if (T('S.tg.clock') !== 2690) tp.push('after 10.5 seconds of answering the clock reads ' + T('S.tg.clock') + ' seconds, not 2690: a render resets the count');
+      if (tctx.TIMERS !== timers) tp.push('a render starts the timer again (' + (tctx.TIMERS - timers) + ' more)');
+      T('S.view = "home"; render(); NOW += 60000; S.view = "grid"; gridView();');
+      if (T('S.tg.clock') !== 2690) tp.push('leaving the grid for a minute and coming back reads ' + T('S.tg.clock') + ' seconds, not the 2690 left');
+      /* Pour another flight deals the Village tasting again; a Finals grid moves on through codex21's branch */
+      T('NOW += 5000; gridView(); gridAgain();');
+      if (T('S.tg.deck.map(function (g) { return g.c; }).join("")') !== 'wwrr' || T('S.tg.shape') !== 'four-wines' || T('S.tg.clock') !== 45 * 60) tp.push('Pour another flight deals ' + T('S.tg.deck.map(function (g) { return g.c; }).join("")') + ' with shape ' + T('S.tg.shape') + ' and ' + T('S.tg.clock') + ' seconds, not the Village tasting again');
+      T('S._fin = { phase: "grid" }; var f0 = FINALS; gridAgain();');
+      if (T('FINALS - f0') !== 1 || T('S.tg.shape') !== 'four-wines') tp.push('inside a Finals, Pour another flight no longer moves on through codex21\'s branch');
+      T('S._fin = null; S.tg.shape = "other"');
+      if (T('gridView().kids.length') !== 0) tp.push('the clock is drawn for a grid that is not the Village tasting');
+      T('S.tg = { deck: gridPool().slice(0, 6), idx: 0 }; gridAgain();');
+      if (T('S.tg.deck.length') !== 6 || T('S.tg.shape') !== undefined) tp.push('a grid that is not the Village tasting no longer keeps codex20\'s own again');
+      T('POOL = [{ g: "W1", c: "w" }, { g: "R1", c: "r" }, { g: "R2", c: "r" }, { g: "R3", c: "r" }, { g: "R4", c: "r" }]; V25_GO.villagetasting();');
+      if (T('S.tg.deck.length') !== 4 || T('S.tg.deck.map(function (g) { return g.g; }).join(",")') !== 'W1,R1,R2,R3' || T('S.tg.clock') !== 45 * 60) tp.push('a pool with one white does not keep gridStart\'s four under the clock');
+    }
+  } catch (e) { tp.push('the sandbox threw: ' + e.message); }
+  check('the Village tasting: ' + TASTING_LINE + ' (the Quizzes row says so; two whites then two reds under a 45 minute clock, shape four-wines; a render never resets the clock; Pour another flight deals it again, after codex21\'s Finals branch; a pool short of a colour keeps gridStart\'s four)', tp.length === 0, few(tp));
 }
 /* the places' depth word: a place's depth is a level of the Codex, and a bare level name beside a place reads as the
    place's own cru (La Romanee PREMIER CRU: the smallest grand cru appellation; Oger and Oiry PREMIER CRU: Grand Cru

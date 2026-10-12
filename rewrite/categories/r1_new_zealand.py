@@ -1,4 +1,4 @@
-"""Rank I rewrite - New Zealand (55 questions, all multiple choice).
+"""Regionale rewrite - New Zealand (55 questions, all multiple choice).
 
 Written from the syllabus below. The imported bank was not read while writing;
 it is read only afterwards by check-similarity.py, to verify independence.
@@ -55,7 +55,7 @@ BANK = [
       "A single mountain chain runs almost the whole length of the South Island, and every vineyard on that island lies to the east of it. Which chain?",
       ["The Southern Alps", "The Richmond Range",
        "The Tararua Ranges", "The Kaikoura Ranges"], 0,
-      "The Alps stand across the prevailing westerlies and wring them dry, so the west coast is one of the wettest inhabited places on earth while Marlborough and Central Otago are among the driest corners of the country. The Richmond Range is a local barrier between Nelson and Marlborough, and the Tararuas belong to the North Island."),
+      "The Alps stand across the prevailing westerlies and wring them dry, so the west coast is drenched while Marlborough and Central Otago are among the driest corners of the country. The Richmond Range is a local barrier between Nelson and Marlborough, and the Tararuas belong to the North Island."),
     Q("Latitude, light and maritime climate",
       "Blenheim lies about as far from the equator as Rome, yet its Sauvignon Blanc arrives with an acidity no Roman grower could hope for. What accounts for the mismatch?",
       ["Cold ocean surrounds the country, so sea temperature rather than latitude sets the season",
@@ -93,11 +93,11 @@ BANK = [
       "Muller-Thurgau was a German crossing planted for volume, and it was the country's most planted variety well into the early 1990s, making cheap off-dry white sold in flagons and casks. The vine pull cleared the ground that Sauvignon Blanc and Chardonnay then took, and New Zealand's identity abroad changed completely within a decade."),
     Q("The wine map, its history and its rules",
       "A producer wants Nelson printed on the front of a wine blended from seventy percent Nelson fruit and thirty percent Marlborough. Why is that label not allowed?",
-      ["A stated place must account for at least eighty-five percent of the wine",
+      ["A stated place must account for at least eighty-five per cent of the wine",
        "Blending fruit across regional boundaries is prohibited outright in New Zealand",
        "Nelson holds no registered name, so it may never appear on a label at all",
        "Marlborough fruit may only ever be sold under the Marlborough name"], 0,
-      "One threshold governs place, grape and vintage alike, and seventy percent falls short of it, so this blend may be labelled New Zealand but not Nelson. The registered name settles where the fruit grew and nothing more: it sets no rule on which grape is planted, how heavily it crops or how long the wine spends in oak."),
+      "One threshold governs place, grape and vintage alike, and seventy per cent falls short of it, so this blend may be labelled New Zealand but not Nelson. The registered name settles where the fruit grew and nothing more: it sets no rule on which grape is planted, how heavily it crops or how long the wine spends in oak."),
 
     # ----------------------------------------------------- Marlborough (7) ---
     Q("Marlborough",
@@ -191,7 +191,7 @@ BANK = [
     Q("Nelson, Canterbury and Waipara",
       "North of Christchurch a valley lies behind a low range that blocks the cold easterly off the sea, so it ripens warmer than the plains around it. Which valley?",
       ["Waipara", "Moutere", "Gibbston", "Te Muna"], 0,
-      "The Teviotdale Hills take the sea breeze out of the afternoon, and Waipara runs noticeably warmer than Christchurch at the same latitude. It lies inside the North Canterbury region, which is the name most labels now carry."),
+      "The Teviotdale Hills take the sea breeze out of the afternoon, and Waipara runs noticeably warmer than the plains around Christchurch to the south. It lies inside the North Canterbury region."),
     Q("Nelson, Canterbury and Waipara",
       "Limestone under parts of the Waipara Valley and a long dry autumn have made two grapes the district's calling card. Which pair?",
       ["Riesling and Pinot Noir", "Sauvignon Blanc and Merlot",
@@ -265,7 +265,7 @@ BANK = [
        "Syrah, Grenache, Mourvedre, Carignan and Cinsault",
        "Pinot Noir, Pinot Meunier and Gamay",
        "Sangiovese, Canaiolo, Colorino and Mammolo"], 0,
-      "Merlot leads most of these blends because it ripens more dependably than Cabernet Sauvignon in a maritime autumn, with Cabernet Franc and Malbec adding perfume and colour. The model is the Right Bank of Bordeaux rather than the Medoc, even on the warmest gravels."),
+      "Merlot leads most of these blends because it ripens more dependably than Cabernet Sauvignon in a maritime autumn, with Cabernet Franc and Malbec adding perfume and colour. On the warmest gravels Cabernet Sauvignon often takes the lead, but the usual model is the Right Bank of Bordeaux rather than the Medoc."),
 
     # --------------------------------- Wairarapa and Martinborough (4) -------
     Q("Wairarapa and Martinborough",
@@ -295,7 +295,7 @@ BANK = [
     Q("Gisborne, Auckland and the north",
       "Fertile alluvial flats on the east coast of the North Island, warm and humid with autumn rain a real risk, and a long-standing claim to be the country's Chardonnay capital. Which region?",
       ["Gisborne", "Hawke's Bay", "Nelson", "Wairarapa"], 0,
-      "Gisborne is warm enough to ripen easily and fertile enough to crop heavily, which pushed it toward volume for most of its history. Its Chardonnay is broad and tropical rather than tight and mineral, and Gewurztraminer and Pinot Gris do well on the same flats."),
+      "Gisborne is warm enough to ripen easily and fertile enough to crop heavily, which pushed it towards volume for most of its history. Its Chardonnay is broad and tropical rather than tight and mineral, and Gewurztraminer and Pinot Gris do well on the same flats."),
     Q("Gisborne, Auckland and the north",
       "An island in the harbour off New Zealand's largest city runs warmer and drier than the mainland beside it, and its growers plant Bordeaux reds and Syrah rather than Pinot Noir. Which island?",
       ["Waiheke Island", "Stewart Island", "Great Barrier Island", "Kapiti Island"], 0,
@@ -303,7 +303,7 @@ BANK = [
     Q("Gisborne, Auckland and the north",
       "Croatian families who came to dig kauri gum in the nineteenth century planted vines west of Auckland, and their surnames are still on labels there. Which white grape is that district best known for now?",
       ["Chardonnay", "Riesling", "Sauvignon Blanc", "Gewurztraminer"], 0,
-      "The Dalmatian settlers stayed on, and their descendants founded several of the country's oldest wine companies, most of which still keep their head offices around Auckland. Kumeu, north-west of the city, has become New Zealand's benchmark address for tightly built barrel-fermented Chardonnay grown on heavy clay."),
+      "The Dalmatian settlers stayed on, and their descendants founded several of the country's oldest wine companies. Kumeu, north-west of the city, has become New Zealand's benchmark address for tightly built barrel-fermented Chardonnay grown on heavy clay."),
     Q("Gisborne, Auckland and the north",
       "The first grapevines planted in New Zealand went into the ground in the far north in 1819. Who put them there?",
       ["The missionary Samuel Marsden", "The British Resident James Busby",
@@ -350,7 +350,7 @@ BANK = [
       "The programme began in the mid-1990s and grew into a condition of joining the industry's own export marketing, which is why participation is close to universal rather than a minority badge. Entwine was the Australian scheme until it was folded into Sustainable Winegrowing Australia in 2019, and Integrated Production of Wine is the South African one."),
     Q("Closures and sustainability",
       "A bottle certified organic in New Zealand has met a different standard from the national sustainability programme most of the country's vineyards belong to. Where do the two part company?",
-      ["Organic certification bans synthetic agrichemicals outright, while the sustainability scheme only limits them",
+      ["Organic rules ban synthetic agrichemicals outright, where the sustainability scheme limits them",
        "Organic certification governs the winery only, and the sustainability scheme the vineyard only",
        "The organic standard applies to exports and the sustainability scheme to the home market",
        "They are the same scheme operating under two different names"], 0,

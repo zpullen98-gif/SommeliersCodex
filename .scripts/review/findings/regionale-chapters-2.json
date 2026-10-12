@@ -1,0 +1,292 @@
+{
+ "batch": "regionale-chapters-2",
+ "modules": [
+  "rewrite/primers/north_america.py",
+  "rewrite/primers/southern.py",
+  "rewrite/primers/cellar.py",
+  "rewrite/primers/beyond_wine.py"
+ ],
+ "readCount": 17,
+ "total": 17,
+ "findings": [
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "calnorth, calcentral",
+   "problem": "Both titles shipped with an em dash between 'California' and the area name, against the no-dash rule for anything shipped.",
+   "fix": "Titles now 'California: North Coast' and 'California: Central Coast'. Ids unchanged; no code keys on the title text (grep of js/ and .scripts/ found only the generated file).",
+   "source": "House rule: no em dash anywhere shipped.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "calnorth",
+   "problem": "No American wine law anywhere in the North America chapters, although codex25 maps the United States category to this chapter and the bank's 'Wine law and labels' block holds seven questions.",
+   "fix": "New section 'What an American label promises': AVA drawn by the TTB with no grape or yield rule; 85 percent for an AVA, 75 for a county or state, California wholly Californian; varietal 75; vintage 95 with an AVA, 85 with a broader name; Meritage; Reserve without legal meaning; Prohibition 1920 to 1933; the 1976 Paris tasting with the two 1973 Napa wines.",
+   "source": "27 CFR 4.23, 4.25 and 4.27; California state appellation rule; rewrite/categories/r1_united_states.py law and history items.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "calnorth",
+   "problem": "Zinfandel's identity (Tribidrag, Primitivo) and Petite Sirah as Durif, both bank questions under 'California grapes and history', were missing.",
+   "fix": "One sentence added in the Sonoma paragraph.",
+   "source": "DNA identification of Zinfandel as Tribidrag/Primitivo; Petite Sirah = Durif (Syrah x Peloursin).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "calnorth",
+   "problem": "'Much of the state's better sparkling base' overstated Carneros, and its sharing with Sonoma went unsaid; 'northward toward' is the American form.",
+   "fix": "Now 'a good share of the state's best sparkling base', Carneros 'which Napa shares with Sonoma'; 'northwards towards'.",
+   "source": "Los Carneros AVA spans Napa and Sonoma counties; British usage.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "calcentral",
+   "problem": "'Lodi, at its northern end' put Lodi at the north of the whole Central Valley; it is at the northern end of the San Joaquin Valley, roughly mid valley, with the Sacramento Valley above it.",
+   "fix": "Now 'at the northern end of its San Joaquin half'. Matches the reviewed bank item.",
+   "source": "Geography of the Central Valley; r1_united_states.py Lodi explanation (already corrected there).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "calcentral",
+   "problem": "Paso Robles was presented as Zinfandel and Rhone ground only, though Cabernet Sauvignon is its most planted grape; Santa Maria Valley, the other transverse valley, was absent.",
+   "fix": "Added 'and it grows a great deal of Cabernet Sauvignon besides' and one sentence on Santa Maria Valley. 'From below San Francisco Bay' now 'south from San Francisco Bay'.",
+   "source": "Paso Robles AVA plantings; Santa Maria Valley AVA.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "newyork",
+   "problem": "'Cabernet Franc is the leading red vinifera because it ripens where Merlot will not' gives the wrong reason: Merlot ripens earlier than Cabernet Franc. The advantage is winter hardiness.",
+   "fix": "Now 'the leading red vinifera, hardier in a severe winter than Merlot'.",
+   "source": "Cold hardiness ratings for vinifera in the Finger Lakes (Cornell extension); ripening order Merlot before Cabernet Franc.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "newyork",
+   "problem": "'Neither holds much of the state's acreage' understates the Finger Lakes, the largest wine region; the real point is that Lake Erie holds the largest share of grape acreage.",
+   "fix": "Now 'Neither holds the largest share of the state's vines, though. That lies along the Lake Erie shore'.",
+   "source": "New York vineyard survey distribution by region.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "newyork",
+   "problem": "The bank's 'Other states' block (Virginia, Missouri and Augusta, Norton, Michigan, Texas High Plains) had no reading anywhere in the course.",
+   "fix": "Short section 'The same fight elsewhere' covering all four, Augusta as the first AVA in 1980.",
+   "source": "r1_united_states.py Other states items; TTB AVA history (Augusta 1980).",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "pnw",
+   "problem": "Oregon's history (Pinot Noir first planted in the Willamette in 1965, The Eyrie Vineyards) was missing though the bank asks it; Red Mountain was only a chip; rainfall given in inches only.",
+   "fix": "Added the 1965 planting and the winery, without naming the grower; Red Mountain's dense Cabernet; '250 millimetres, about ten inches'; 'Southwards'.",
+   "source": "r1_united_states.py Oregon and Washington items.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "canada",
+   "problem": "'Some four thousand kilometres apart' overstates the Okanagan to Niagara distance, about 3,100 km great circle (Kelowna to St Catharines).",
+   "fix": "Now 'more than three thousand kilometres apart'.",
+   "source": "Great-circle computation from coordinates (49.9N 119.5W to 43.2N 79.2W).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "canada",
+   "problem": "'Two areas hold nearly all of it' overstated and omitted Quebec and Nova Scotia; the 1988 sentence ('the province paid its growers to tear out most of a vineyard') was garbled and misattributed a joint government pull-out tied to the Canada-US free trade agreement; 'anything left standing is killed' overstated.",
+   "fix": "'Two areas hold most of it', Quebec and Nova Scotia added; 1988 now 'with free trade with the United States on the way, government money paid growers to pull out most of the province's vines'; 'a hard winter kills whatever is left exposed'.",
+   "source": "History of the 1988 BC vine pull-out; Canadian wine regions.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/north_america.py",
+   "chapter": "mexico",
+   "problem": "'The oldest working winery on the continent' left the claim vague and unnamed, and nothing explained why a 1520s start built so little.",
+   "fix": "Now Casa Madero, founded 1597, 'the oldest working winery in the Americas', with the crown's late sixteenth century restriction on new planting; Queretaro noted for sparkling.",
+   "source": "Casa Madero (Hacienda San Lorenzo, 1597); Philip II's 1595 restriction on New Spain plantings.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/southern.py",
+   "chapter": "chile",
+   "problem": "'A label may say which side of that divide' misdescribes the 2011 rule, which names three bands (Costa, Entre Cordilleras, Andes), not two sides; Elqui was given Limari's fog when it is a high Andean valley; Bio-Bio, Malleco and the Aconcagua region were absent; the 75 percent rule lacked the EU 85 percent the bank keys.",
+   "fix": "All four fixed in place: 'which of three bands, running from the sea to the mountains'; Limari fog, Elqui high; one sentence on the Southern Regions; 'though wine bound for the European Union must reach eighty-five'. Pais linked to the Mission grape.",
+   "source": "Chilean Decree of 2011 on Costa/Entre Cordilleras/Andes; r1_south_america.py items on Elqui, Bio-Bio and the 75/85 rule.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/southern.py",
+   "chapter": "argentina",
+   "problem": "San Juan, the second province by volume, was missing, and the bank's 'Uruguay and Brazil' block (five questions) had no reading anywhere in the course.",
+   "fix": "San Juan sentence added; new section 'Across the River Plate': Uruguay's humidity, Canelones, Tannat from a Basque settler in the 1870s; Brazil's Serra Gaucha for sparkling, Vale dos Vinhedos as the first GI.",
+   "source": "r1_south_america.py San Juan and Uruguay and Brazil items.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/southern.py",
+   "chapter": "safrica",
+   "problem": "No history (1659, the Huguenots and Franschhoek, Constantia's sweet Muscat, the KWV from 1918) and no Breede River Valley, Robertson or Klein Karoo, though the bank has nine questions on them; Pinotage's name and Chenin's rank went unexplained.",
+   "fix": "Section 'History in brief' added; one sentence on Breede River, Robertson's lime soils and the Klein Karoo's Port-style wines; Cinsaut once called Hermitage; Chenin the most planted grape; 'once Methode Cap Classique'.",
+   "source": "r1_south_africa.py history, Breede and Klein Karoo items.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/southern.py",
+   "chapter": "nz",
+   "problem": "'Every South Island vineyard lies east of [the Alps]' fails for Nelson at the northern end; 'Hawke's Bay is the warmest region of consequence' ignores Gisborne and Waiheke; 'fungal disease almost everywhere' sits badly beside semi-arid Central Otago; Nelson, Waipara, Gisborne and Waiheke were absent.",
+   "fix": "'The South Island plants on their sheltered eastern and northern side'; Hawke's Bay 'among the warmest'; 'in most regions'; one sentence on the smaller regions; Marlborough's 1973 planting; sustainability certification; Central Otago 'the most inland and continental region'.",
+   "source": "r1_new_zealand.py regional items.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/southern.py",
+   "chapter": "australia",
+   "problem": "'South Australia inspects travellers at its border because phylloxera never crossed it' conflates fruit-fly roadside checks with phylloxera controls, which govern vines, grapes and used machinery.",
+   "fix": "Now 'Phylloxera has never reached South Australia, so the state polices the vines, grapes and used machinery that cross its border'.",
+   "source": "South Australian phylloxera movement controls (Phylloxera and Grape Industry Board of SA); fruit fly quarantine stations.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/southern.py",
+   "chapter": "australia",
+   "problem": "Western Australia, the Yarra Valley, the Adelaide Hills, Tasmanian sparkling, Rhone-style blends and the 2000 Clare screwcap move, all bank blocks, were missing; Tasmania's coolness put on 'latitude alone'.",
+   "fix": "One sentence each added in 'Regions and grapes'; Tasmania now 'latitude and the Southern Ocean'.",
+   "source": "r1_australia.py Western Australia, Victoria, Tasmania and closures items.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "sparkling",
+   "problem": "'Then rests a year or more on the spent yeast' is wrong for Cava and Cremant, which need nine months; 'cells rupture' misdescribes autolysis; the Cremant sentence ('guarantees it outside Champagne without owning it') was unclear.",
+   "fix": "'For months at the least and often for years'; 'break down'; Cremant rewritten. Added Prosecco as the tank method's wine, Cava's nine months and multi-region reach (matching the bank), Franciacorta's eighteen months, Sekt against Winzersekt, and England.",
+   "source": "Cava DO and Cremant AOC lees minimums (9 months); Franciacorta DOCG (18 months non-vintage).",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "sweet",
+   "problem": "'These wines come from cool sites' is false for dried-grape wines and Sauternes alike.",
+   "fix": "Now 'the great sweet whites lean on grapes that hold their acid'.",
+   "source": "PX, Vin Santo and Sauternes climates.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "sweet",
+   "problem": "Ausbruch was taught as a rung Austria keeps on its general ladder. Since 2016 the term belongs to Rust, and from the 2020 vintage it is Ruster Ausbruch DAC, at Trockenbeerenauslese must weight.",
+   "fix": "'Strohwein is a rung only Austria keeps; Ausbruch, which once sat between Beerenauslese and Trockenbeerenauslese, now belongs to Rust alone as Ruster Ausbruch, made at Trockenbeerenauslese weight.'",
+   "source": "WebSearch: en.wikipedia.org/wiki/Ausbruch; austria-forum.org Ruster Ausbruch; wineguide.wein.plus ruster-ausbruch-dac.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "sweet",
+   "problem": "Barsac's two labels and Yquem's unique 1855 rank (eight bank questions on Sauternes and Barsac), Sussreserve, the Oechsle and KMW scales, passerillage, vin de paille and Vin Santo were missing.",
+   "fix": "All added in place, compactly.",
+   "source": "r1_dessert_sweet.py and r1_bordeaux.py items.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "fortified",
+   "problem": "'The order for every dry Sherry' is no longer true: under the 2021 reform Fino and Manzanilla that reach 15 percent naturally may carry the DO unfortified.",
+   "fix": "'The classic order for dry Sherry', and 'Most reach it with a little spirit, though rules revised in 2021 let a wine that gets to fifteen per cent unaided skip the fortification.'",
+   "source": "WebSearch: decanter.com Sherry DO regulations to see major changes; sherry.wine recent regulatory changes; bkwine.com.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "fortified",
+   "problem": "Sherry has no other chapter, yet Palomino, albariza and Manzanilla's tie to Sanlucar were missing; Madeira's grapes and Tinta Negra were missing; the chips Marsala, Beaumes-de-Venise, Banyuls and Rutherglen Muscat shipped bare.",
+   "fix": "Palomino and albariza opening; Manzanilla as flor wine matured in Sanlucar; Sercial to Malmsey and Tinta Negra; a closing sentence explaining each chip.",
+   "source": "r1_sparkling_fortified_sweet.py Sherry, Madeira and vins doux naturels items.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/cellar.py",
+   "chapter": "fortified",
+   "problem": "Ruby and LBV were absent (the bank asks LBV), and the glass versus cask framing would place Ruby and LBV, which age in wood, wrongly.",
+   "fix": "Port paragraph restructured on air contact: Ruby, LBV with four to six years in wood, Vintage from declared years; tawny with age indications; Colheita.",
+   "source": "IVDP Port categories.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/beyond_wine.py",
+   "chapter": "beer",
+   "problem": "Trappist against abbey beer and the spec sheet and service blocks (ABV, IBU, gravity, temperature, glass, line cleaning, food) were missing though the bank holds fourteen questions on them; the IPA voyage story was stated as fact.",
+   "fix": "Trappist sentence and a section 'The spec sheet and the glass' added; IPA 'traditionally explained by the long voyage'; dubbel added to the Belgian list.",
+   "source": "r1_beer.py items; ITA Authentic Trappist Product rules; beer history on the IPA origin story.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/beyond_wine.py",
+   "chapter": "sake",
+   "problem": "The term multiple parallel fermentation (keyed in the bank), honjozo's 70 percent milling and 10 percent alcohol cap, the trap that ginjo and daiginjo without junmai carry added alcohol, futsushu, bottling strength, Sake Meter Value, atsukan and freshness were missing.",
+   "fix": "All added in the two existing sections.",
+   "source": "Japanese special designation standards (tokutei meisho-shu); r1_sake_spirits.py items.",
+   "confidence": "high",
+   "edited": true
+  },
+  {
+   "module": "rewrite/primers/beyond_wine.py",
+   "chapter": "spirits",
+   "problem": "'Vodka is rectified until the base leaves no fingerprint' overstated: the US dropped the 'without distinctive character' wording in 2020 and EU law only reduces raw-material character. 'The rest of the world matures in what bourbon distillers discard' overstated. The Cognac age grades, bourbon outside Kentucky, Tennessee charcoal, Irish triple distillation and tequila's 51 percent floor were missing.",
+   "fix": "Vodka 'distilled to high strength and filtered towards neutrality, though some now let the base show'; 'much of the world's whisky'; the missing points added; age statements explained for Scotch and Cognac.",
+   "source": "TTB T.D. TTB-158 (2020) standards of identity; EU Regulation 2019/787; BNIC age rules (XO ten years since 2018); NOM-006 for tequila.",
+   "confidence": "medium",
+   "edited": true
+  },
+  {
+   "module": "rewrite/categories/r1_dessert_sweet.py",
+   "chapter": "bank, not a chapter",
+   "problem": "The question 'Between Beerenauslese and Trockenbeerenauslese, Austria's ladder holds a rung that Germany's does not' keys Ausbruch at 27 KMW; since 2016 the term is limited to Rust and since 2020 is Ruster Ausbruch DAC at TBA weight (30 KMW). The same outdated ladder appears in r1_austria.py (Ausbruch 'sits between Beerenauslese and Trockenbeerenauslese'), js/data-intro.js reference rows and the Certified, Advanced and Master primers.",
+   "fix": "Not edited: outside this assignment. The chapter now states the current law, so chapter and bank disagree until the bank is reframed.",
+   "source": "Same Ausbruch sources as the sweet finding.",
+   "confidence": "high",
+   "edited": false
+  },
+  {
+   "module": "rewrite/check-primer-similarity.py",
+   "chapter": "tooling",
+   "problem": "The checker reads js/data-primers-intro.js as the imported source, but that file has shipped the rewrite since 8d535c8, so the literal command always reports ratio 1.000 and exits 1 against itself.",
+   "fix": "Not edited. Ran it through a scratch wrapper with SOURCE pointed at git 8d535c8^ (the last imported version): max ratio 0.227, longest shared run 6 words, 0 shared sentences, nothing to review. Suggest a ref override like check-similarity.py's OOT_IMPORTED_REF.",
+   "source": "Reading rewrite/check-primer-similarity.py and git log of js/data-primers-intro.js.",
+   "confidence": "high",
+   "edited": false
+  }
+ ]
+}

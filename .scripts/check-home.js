@@ -72,6 +72,10 @@ const BLURBS = [
   'Grand cru needs no qualifier and neither may you: every answer from memory with nothing to lean on, in your own words, graded on your honour.'
 ];
 const TEST_LINE_VILLAGE = 'Forty theory questions, a four glass grid and six floor situations. No clock. It ends on what you missed, with the right answers.';
+/* The Village tasting's words (codex39), as the Court sets the Village candidate's tasting: four wines, two white and
+   two red, on the written grid in 45 minutes. */
+const TASTING_ROW = 'The Village tasting';
+const TASTING_LINE = 'four wines, two white and two red, the written grid, 45 minutes';
 /* the consolidation's bar: four tab words, then the quiet More */
 const NAV_WORDS = ['Home', 'Flashcards', 'Quizzes', 'Library', 'More'];
 const STAT_RE = /^(Untouched|Met|[1-9]% met|[1-9][0-9]% met)$/;
@@ -541,6 +545,26 @@ if (G('typeof v39StartServiceDrill') === 'function' && G('typeof SERVICE_REF') =
     qzs.indexOf('data-go="servicedrill"') >= 0 && G('S.mode') === 'drill' && G('S.pool.length') === nQs && /^s-[0-9a-z]{8}$/.test(sid || '')
     && G('!!(ST.q[' + JSON.stringify(sid) + '] && ST.q[' + JSON.stringify(sid) + '].c === 1)') && G('!(ST.srs && ST.srs[' + JSON.stringify(sid) + '])') && G('lvlAgg("certified").n') === level0, String(sid));
   G('home();');
+}
+/* the Village tasting, through the real chain when codex39 and codex20 are loaded: Quizzes names it in the Court's
+   terms, and the run deals four GRAPES profiles of the level, two whites then two reds, to codex20's grid under a
+   45 minute clock */
+if (G('typeof v39GridStart') === 'function' && G('typeof gridStart') === 'function') {
+  G('applyLevel("certified", true);');
+  const qzt = G('v32QuizzesHtml()');
+  rendered.push(qzt);
+  G('V25_GO.villagetasting()');
+  const cols = G('S.tg && S.tg.deck ? S.tg.deck.map(function (g) { return g.c; }).join("") : ""');
+  const fromLevel = G('S.tg && S.tg.deck ? S.tg.deck.every(function (g) { return GRAPES.indexOf(g) >= 0; }) : false');
+  /* Pour another flight, through codex20's gridAgain and codex21's wrapper, deals the Village tasting again */
+  G('if (S.tg) S.tg.clock = 60; gridAgain();');
+  const again = G('S.tg && S.tg.deck ? S.tg.deck.map(function (g) { return g.c; }).join("") : ""') + ' ' + G('S.tg && S.tg.shape') + ' ' + G('S.tg && S.tg.clock');
+  check('Quizzes carries "' + TASTING_ROW + ': ' + TASTING_LINE + '", and the run deals two whites then two reds of the level to the grid under a 45 minute clock, and Pour another flight deals it again',
+    qzt.indexOf('data-go="villagetasting"') >= 0 && qzt.indexOf(TASTING_ROW) >= 0 && qzt.indexOf(TASTING_LINE) >= 0
+    && G('S.view') === 'grid' && cols === 'wwrr' && fromLevel && G('S.tg.idx') === 0 && G('S.tg.clock') === 45 * 60 && G('S.tg.shape') === 'four-wines'
+    && again === 'wwrr four-wines 2700',
+    'dealt ' + cols + ' on ' + G('S.view') + ', clock ' + G('S.tg && S.tg.clock') + ', shape ' + G('S.tg && S.tg.shape') + '; again: ' + again);
+  G('if (typeof v39ClockStop === "function") v39ClockStop(); home();');
 }
 rendered.push(G('V25_NONAFFIL'));
 rendered.push(G('Object.keys(V25_TRAIN).map(function(k){return V25_TRAIN[k].label;}).join(" | ")'));

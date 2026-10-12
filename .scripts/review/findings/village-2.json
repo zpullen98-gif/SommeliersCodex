@@ -1,0 +1,459 @@
+{
+ "batch": "village-2",
+ "modules": [
+  "rewrite/categories/r2_italy_north.py",
+  "rewrite/categories/r2_italy_central_south.py",
+  "rewrite/categories/r2_wine_trade_aging.py"
+ ],
+ "readCount": 150,
+ "total": 150,
+ "findings": [
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Since 2010 a Barolo label may carry the",
+   "field": "opts",
+   "problem": "The key was the only official-sounding legal phrase and 22 characters longer than any distractor (the module's one key standout), and the distractor Sori is not a legal term anywhere, so a student could answer from shape alone.",
+   "fix": "Replaced Sori with Unita Geografica Aggiuntiva, the parallel term Chianti Classico and Soave use, and added one sentence to exp saying so.",
+   "source": "Barolo DOCG disciplinare (MGA, 2010); Chianti Classico UGA reform (2021) and Soave UGA (2019)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Fruit from a young plot, or a cru",
+   "field": "exp",
+   "problem": "Exp said Nebbiolo d'Alba excludes the Barolo and Barbaresco vineyards entirely; the current production zone includes parts of La Morra, Monforte d'Alba and Verduno, so the blanket claim can't be verified and may be wrong.",
+   "fix": "Exp now calls Nebbiolo d'Alba a separate and older DOC, dating from 1970 and drawn chiefly across the Roero on the far bank of the Tanaro.",
+   "source": "Nebbiolo d'Alba disciplinare, Regione Piemonte (October 2025 text, zone list)",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "North of Turin one white grape serves for",
+   "field": "exp",
+   "problem": "Exp said the Caluso passito is 'dried for years'; the grapes dry for months (through the winter) and it is the wine that then ages for years.",
+   "fix": "Exp now says the passito's grapes dry through the winter and the wine then ages for years.",
+   "source": "Erbaluce di Caluso DOCG disciplinare (Caluso Passito drying and minimum ageing)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Piedmont's traditional-method sparkling DOCG must be vintage-dated and",
+   "field": "exp",
+   "problem": "Exp placed Alta Langa 'in the hills south of the Langhe where Nebbiolo would never ripen'; Alta Langa is the upper Langa itself plus neighbouring Roero and Monferrato hills, and Nebbiolo does ripen at its lower altitudes.",
+   "fix": "Exp now says the vineyards sit high in the upper Langa and the neighbouring hills, where cool nights hold the acidity a base wine needs.",
+   "source": "Alta Langa DOCG disciplinare (zone across the Cuneo, Asti and Alessandria hills, altitude floor)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "The Sesia river divides Alto Piemonte's two DOCGs",
+   "field": "opts",
+   "problem": "Distractor Lessona is a Nebbiolo DOC in the province of Biella, on the western bank of the Sesia, so a student who misreads the stem can defend it.",
+   "fix": "Replaced Lessona with Fara, a Nebbiolo DOC in the province of Novara on the eastern bank.",
+   "source": "Alto Piemonte DOC geography (Lessona in Biella, Fara in Novara)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Crossing out of Piedmont into Valle d'Aosta, Nebbiolo",
+   "field": "exp",
+   "problem": "Exp called Donnas 'the valley's Nebbiolo denomination', but Arnad-Montjovet is also Nebbiolo-based.",
+   "fix": "Exp now calls Donnas the valley's best-known Nebbiolo denomination.",
+   "source": "Valle d'Aosta DOC disciplinare (Arnad-Montjovet subzone, Nebbiolo minimum)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "A white variety shared with the Swiss Valais",
+   "field": "accept",
+   "problem": "The plain entry 'arvine' graded by containment, so it also accepted 'Grosse Arvine', a distinct Valais variety.",
+   "fix": "Made the question ex=True and spelled out the exact forms: petite arvine, petit arvine, arvine, petite arvine grape, arvine grape and petite arvine variety. Probed with match_sa: Grosse Arvine and Cornalin now reject, and every listed form grades.",
+   "source": "lib.match_sa probe; Grosse Arvine as a distinct Valais variety (Wine Grapes, Robinson et al.)",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Franciacorta sits on stony debris pushed into low",
+   "field": "exp",
+   "problem": "Exp said Lugana sits on clay left by 'the same glaciers'; Franciacorta's moraine is the Iseo (Oglio) glacier's, while Lugana's clay is the Garda glacier's.",
+   "fix": "Exp now says Lugana sits instead on the heavy clay the Garda glacier left behind.",
+   "source": "Glacial geology of the Iseo and Garda amphitheatres",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "On a Conegliano Valdobbiadene label one word introduces",
+   "field": "exp",
+   "problem": "Exp said Rive is local dialect 'rather than a legal quality tier', which contradicts the sentence before it: Rive carries its own legal rules (hand harvest, vintage, lower yield).",
+   "fix": "Exp now says the word itself is local dialect for a steep slope, which is exactly the ground these sites occupy.",
+   "source": "Conegliano Valdobbiadene Prosecco Superiore DOCG disciplinare (Rive rules)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Volcanic hills between Soave and Vicenza grow a",
+   "field": "exp",
+   "problem": "Exp stated a production share ('tank method still accounts for the larger share of production'), a volatile figure the module's own docstring rules out.",
+   "fix": "Removed the share; exp now says tank-method wines are made from it as well.",
+   "source": "House rule: nothing volatile stated as fact",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Volcanic cones rise straight out of the plain",
+   "field": "exp",
+   "problem": "Exp said the Euganean Hills are 'intrusions that never erupted through the surface'; they include submarine basalts and rhyolite and trachyte lavas and domes, so 'never erupted' is wrong.",
+   "fix": "Exp now says the hills are the worn remains of volcanic activity tens of millions of years old.",
+   "source": "Geology of the Colli Euganei (Eocene submarine volcanism, Oligocene rhyolitic and trachytic phase)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Italy's first denomination created specifically for traditional-method sparkling",
+   "field": "opts",
+   "problem": "The key 'Trento DOC' was the only option carrying its category suffix, which singled it out for a stem asking 'Which denomination?'.",
+   "fix": "Key shortened to 'Trento', matching the bare names of the other three.",
+   "source": "Item-writing standard: options of one kind and form",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Pinot Bianco that stays fresh for decades comes",
+   "field": "exp",
+   "problem": "Exp said 'old bottles are released ... after at least ten years on the lees'; the Rarita lees ageing happens in tank before bottling, not in bottle.",
+   "fix": "Exp now says the village cooperative holds some of the wine on its fine lees in tank for a decade or more before bottling it as Rarita.",
+   "source": "Cantina Terlano Rarita method (extended fine-lees ageing in steel tank)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Sylvaner, Kerner and Gruner Veltliner grow up a",
+   "field": "exp",
+   "problem": "Exp called Valle Isarco 'the coldest and highest' of Alto Adige's zones; Val Venosta rivals it on both counts, and the defensible superlative is northernmost.",
+   "fix": "Exp now calls it the northernmost of Alto Adige's zones and among its coolest and highest.",
+   "source": "Alto Adige DOC subzones geography",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_north.py",
+   "stemStart": "Mozart's Don Giovanni calls for a dark, soft",
+   "field": "exp",
+   "problem": "Exp placed Isera 'south of Rovereto'; Isera lies on the right bank of the Adige, west of Rovereto.",
+   "fix": "Exp now says 'across the Adige from Rovereto'.",
+   "source": "Trentino geography (Isera and Rovereto on opposite banks of the Adige)",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "A nineteenth-century formula for Chianti allowed a white",
+   "field": "exp",
+   "problem": "Exp gave Canaiolo's role in Ricasoli's 1872 formula as 'structure'; Ricasoli prescribed Canaiolo to soften Sangiovese's hardness, with Sangiovese supplying perfume and vigour.",
+   "fix": "Exp now says Sangiovese for perfume and vigour, Canaiolo to soften it and a little Malvasia for early appeal.",
+   "source": "Ricasoli's 1872 letter to Professor Studiati",
+   "confidence": "high",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Some producers restart a finished wine with dried,",
+   "field": "stem",
+   "problem": "The stem used the banned word 'practice' ('What is that Tuscan practice called?').",
+   "fix": "Stem now ends 'What is that Tuscan technique called?'. The id moves. check-similarity on the module is clean.",
+   "source": "House rule: never the word practice or practise",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Guado al Tasso and Ornellaia share a denomination",
+   "field": "stem",
+   "problem": "The stem ('Which two lead it in practice?') and exp ('lead by practice rather than by rule') used the banned word.",
+   "fix": "Stem now ends 'Which two varieties usually lead its blends?' and exp says 'by custom rather than by rule'. The id moves. check-similarity is clean.",
+   "source": "House rule: never the word practice or practise",
+   "confidence": "high",
+   "stemChanged": true
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Which denomination covers Sangiovese grown broadly across the",
+   "field": "exp",
+   "problem": "Exp wrote rose in ASCII as 'roses' ('reds, whites and roses'), which reads as the flower.",
+   "fix": "Exp now reads 'in red, white and rosato'.",
+   "source": "House voice: ASCII prose must stay unambiguous",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Which Umbrian DOCG south of Perugia is a",
+   "field": "opts",
+   "problem": "The key 'Torgiano Rosso Riserva' repeated the stem's own 'released only as a Riserva', so the question could be answered from the stem's words.",
+   "fix": "Key shortened to 'Torgiano'; exp now gives the full DOCG name, Torgiano Rosso Riserva.",
+   "source": "Item-writing standard: the stem must not give away the key",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "A bishop's servant is said to have chalked",
+   "field": "opts",
+   "problem": "The key ran 15 characters past every distractor (the module's only standout), and exp said the servant 'doubled the word twice' when he wrote it three times.",
+   "fix": "Key shortened to 'Est! Est!! Est!!!'. Exp now says he wrote the word three times over at Montefiascone, which is why the town completes the denomination's name.",
+   "source": "Est! Est!! Est!!! di Montefiascone DOC; the build's length metrics",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Teramo's hills in the north of Abruzzo carry",
+   "field": "exp",
+   "problem": "The stem's 'the region's own DOCG for Montepulciano' implies it is the only one, but Tullum (Terre Tollesi), promoted in 2019, is also an Abruzzo DOCG with a Montepulciano red. The stem stays (Teramo makes the answer unique); exp now carries the correction.",
+   "fix": "Added to exp: the tiny Tullum zone at Tollo, promoted in 2019, is Abruzzo's other DOCG.",
+   "source": "Tullum DOCG recognition (2019)",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "A once nearly extinct Abruzzo white, now widely",
+   "field": "exp",
+   "problem": "Exp called Pecorino 'now the region's most fashionable white', a volatile trend claim stated as fact.",
+   "fix": "Exp now says it has since been replanted across the region.",
+   "source": "House rule: nothing volatile stated as fact",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Molise's native red variety was nearly lost and",
+   "field": "exp",
+   "problem": "Exp used 'toward', the US form; British prose takes 'towards'.",
+   "fix": "Exp now reads 'climb towards the Apennine spine'.",
+   "source": "House rule: British spelling in the Codex's own prose",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Which pair of grapes makes the white and",
+   "field": "opts",
+   "problem": "Distractor 'Falanghina and Aglianico' names two grapes the Vesuvio DOC permits as minor shares (Falanghina in the Bianco, Aglianico in the Rosso), so a reader of 'makes' as 'is permitted in' could defend it.",
+   "fix": "Replaced it with 'Falanghina and Pallagrello Nero' (Pallagrello Nero is a Caserta red not permitted at Vesuvio). Exp's new first sentence says each key grape leads its colour, with smaller shares of others permitted.",
+   "source": "Vesuvio DOC disciplinare (Lacryma Christi Bianco and Rosso blends)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Salento's leading red carries a name usually read",
+   "field": "exp",
+   "problem": "Exp wrote rose in ASCII as 'roses' ('best-regarded roses'), which reads as the flower.",
+   "fix": "Exp now reads 'best-regarded rosato'.",
+   "source": "House voice: ASCII prose must stay unambiguous",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "A sweet passito made in a town at",
+   "field": "exp",
+   "problem": "Exp placed Bianco 'on a stretch of coast facing Sicily'; Bianco is on the Ionian coast of Reggio Calabria and faces the Ionian Sea, not Sicily.",
+   "fix": "Exp now says 'on the Ionian coast near the toe of Italy'.",
+   "source": "Calabrian geography (Bianco, province of Reggio Calabria, Ionian coast)",
+   "confidence": "medium",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_italy_central_south.py",
+   "stemStart": "Etna's vineyards are mapped by contrada. What does",
+   "field": "exp",
+   "problem": "Exp said 'the DOC leaving the west out'. The consortium has applied for DOCG and ratification is pending, so naming the tier will date the exp.",
+   "fix": "Exp now says 'the denomination leaving the west out'.",
+   "source": "Consorzio Etna DOC vote of 10 November 2023 to seek DOCG (WebSearch: ratification still pending)",
+   "confidence": "low",
+   "stemChanged": false
+  },
+  {
+   "module": "rewrite/categories/r2_wine_trade_aging.py",
+   "stemStart": "Under a loupe, the label of a supposed",
+   "field": "opts",
+   "problem": "A distractor said 'six decades in a dark cellar' for a supposed 1920s bottle, which is a century old. The mismatch made it easy to dismiss without knowing anything about printing.",
+   "fix": "Distractor now reads 'a century in a dark cellar'.",
+   "source": "Internal consistency with the stem's 1920s date",
+   "confidence": "low",
+   "stemChanged": false
+  }
+ ],
+ "verdicts": [
+  {
+   "stemStart": "Since 2010 a Barolo label may carry the",
+   "verdict": "kept",
+   "why": "Sori was not wrong but cued the key by form; UGA is a real legal term for Chianti Classico (2021) and Soave (2019) and is not Barolo's, so it grades nothing wrong, and the added exp sentence is accurate."
+  },
+  {
+   "stemStart": "Fruit from a young plot, or a cru",
+   "verdict": "kept",
+   "why": "The original exclusion claim could not be confirmed either way (the 2025 disciplinare lists La Morra, Monforte and Verduno as part-territory communes, the boundary text unseen); the fix drops it for facts that hold: a 1970 DOC, older than Langhe, drawn chiefly in the Roero."
+  },
+  {
+   "stemStart": "North of Turin one white grape serves for",
+   "verdict": "kept",
+   "why": "The original said the passito was dried for years; the grapes dry for months and the wine ages for years. Fix is right."
+  },
+  {
+   "stemStart": "Piedmont's traditional-method sparkling DOCG must be vintage-dated and",
+   "verdict": "kept",
+   "why": "Alta Langa is the upper Langa itself, not south of it, and Nebbiolo ripens at its lower sites; the new sentence names no zone it cannot defend."
+  },
+  {
+   "stemStart": "The Sesia river divides Alto Piemonte's two DOCGs",
+   "verdict": "kept",
+   "why": "Lessona sits west of the Sesia in Biella and invited a geography-only defence; Fara is a Nebbiolo DOC east of the river in Novara, so Gattinara is now the only west-bank option."
+  },
+  {
+   "stemStart": "Crossing out of Piedmont into Valle d'Aosta, Nebbiolo",
+   "verdict": "kept",
+   "why": "Arnad-Montjovet is also Nebbiolo-based, so 'the' Nebbiolo denomination was wrong; best-known is a stable judgement."
+  },
+  {
+   "stemStart": "A white variety shared with the Swiss Valais",
+   "verdict": "kept",
+   "why": "Probed with match_sa: Grosse Arvine and Cornalin now reject; Petite Arvine, Petit Arvine, Arvine, the hyphenated and capitalised forms grade. Cost is that padded forms (Petite Arvine wine, Petite Arvine (Valais)) now refuse, but bare Arvine is a right answer that only ex=True can keep beside a Grosse Arvine refusal."
+  },
+  {
+   "stemStart": "Franciacorta sits on stony debris pushed into low",
+   "verdict": "kept",
+   "why": "Franciacorta's moraine is the Oglio glacier's from Iseo, Lugana's clay the Garda glacier's; the fix is right."
+  },
+  {
+   "stemStart": "On a Conegliano Valdobbiadene label one word introduces",
+   "verdict": "kept",
+   "why": "Rive carries its own legal rules, so 'rather than a legal quality tier' misled; the new line keeps the dialect meaning without the contradiction."
+  },
+  {
+   "stemStart": "Volcanic hills between Soave and Vicenza grow a",
+   "verdict": "kept",
+   "why": "A production share is volatile and the docstring rules it out; removal is right."
+  },
+  {
+   "stemStart": "Volcanic cones rise straight out of the plain",
+   "verdict": "kept",
+   "why": "The Euganean Hills include Eocene submarine lavas and Oligocene domes as well as laccoliths, so 'never erupted' was wrong; the new wording is safe."
+  },
+  {
+   "stemStart": "Italy's first denomination created specifically for traditional-method sparkling",
+   "verdict": "kept",
+   "why": "Only the key wore its category suffix; bare Trento matches the other options and the exp still names the 1993 DOC."
+  },
+  {
+   "stemStart": "Pinot Bianco that stays fresh for decades comes",
+   "verdict": "kept",
+   "why": "Rarita spends its decade on fine lees in steel tank before bottling, not in bottle; no person is named."
+  },
+  {
+   "stemStart": "Sylvaner, Kerner and Gruner Veltliner grow up a",
+   "verdict": "kept",
+   "why": "Val Venosta rivals Isarco for cold and height; northernmost is the defensible superlative."
+  },
+  {
+   "stemStart": "Mozart's Don Giovanni calls for a dark, soft",
+   "verdict": "kept",
+   "why": "Isera lies on the right bank of the Adige, across from Rovereto, not south of it."
+  },
+  {
+   "stemStart": "A nineteenth-century formula for Chianti allowed a white",
+   "verdict": "kept",
+   "why": "Ricasoli's 1872 letter gives Sangioveto perfume and vigour and Canaiolo the softness that tempers it; the fix matches."
+  },
+  {
+   "stemStart": "Some producers restart a finished wine with dried,",
+   "verdict": "kept",
+   "why": "The banned word sat in the stem, so only a stem change could serve; technique is accurate, the id moves and check-similarity is clean."
+  },
+  {
+   "stemStart": "Guado al Tasso and Ornellaia share a denomination",
+   "verdict": "kept",
+   "why": "Banned word in stem and exp; no non-stem fix possible. 'Usually lead its blends' and 'by custom' keep the meaning and the accept list is unchanged."
+  },
+  {
+   "stemStart": "Which denomination covers Sangiovese grown broadly across the",
+   "verdict": "kept",
+   "why": "ASCII 'roses' read as the flower; rosato is unambiguous."
+  },
+  {
+   "stemStart": "Which Umbrian DOCG south of Perugia is a",
+   "verdict": "kept",
+   "why": "The key echoed the stem's Riserva; bare Torgiano removes the cue and the exp now gives the full DOCG name."
+  },
+  {
+   "stemStart": "A bishop's servant is said to have chalked",
+   "verdict": "amended",
+   "why": "Key shortening and 'three times' are right, but 'which is why the town completes the denomination's name' implied the tale gave the DOC its town; it now reads 'the town whose name completes the denomination's'."
+  },
+  {
+   "stemStart": "Teramo's hills in the north of Abruzzo carry",
+   "verdict": "amended",
+   "why": "Tullum (2019) is right to mention, but 'Abruzzo's other DOCG' fixes a count that a later promotion would date; it now says Tullum 'also holds DOCG rank'."
+  },
+  {
+   "stemStart": "A once nearly extinct Abruzzo white, now widely",
+   "verdict": "kept",
+   "why": "'Most fashionable' was a volatile trend claim; replanted across the region is stable and agrees with the stem."
+  },
+  {
+   "stemStart": "Molise's native red variety was nearly lost and",
+   "verdict": "kept",
+   "why": "Towards is the British preference in the Codex's own prose; harmless and right."
+  },
+  {
+   "stemStart": "Which pair of grapes makes the white and",
+   "verdict": "amended",
+   "why": "The distractor swap is right (each distractor now holds one permitted grape and one not), but the new exp line called the permitted extras Campanian and smaller, while Verdeca is Apulian and may legally outweigh Coda di Volpe; it now reads 'Each is the grape its colour is built around, though the rules let other varieties in alongside.'"
+  },
+  {
+   "stemStart": "Salento's leading red carries a name usually read",
+   "verdict": "kept",
+   "why": "ASCII 'roses' read as the flower; rosato is right."
+  },
+  {
+   "stemStart": "A sweet passito made in a town at",
+   "verdict": "kept",
+   "why": "Bianco faces the Ionian Sea, not Sicily; the fix is right."
+  },
+  {
+   "stemStart": "Etna's vineyards are mapped by contrada. What does",
+   "verdict": "kept",
+   "why": "Tier-neutral 'denomination' stays true whether or not the DOCG application is ratified."
+  },
+  {
+   "stemStart": "Under a loupe, the label of a supposed",
+   "verdict": "kept",
+   "why": "Six decades contradicted a 1920s bottle and made the distractor dismissible without knowledge; a century is consistent and the option stays wrong on the substance (fading makes no rosette)."
+  },
+  {
+   "stemStart": "[docstring, unlogged] Fundamentals owns the chemistry of aging",
+   "verdict": "kept",
+   "why": "Unlogged docstring edit in r2_wine_trade_aging.py: aging to ageing is British spelling; not shipped, harmless. CAT 'Wine Trade & Aging' is a data key and rightly untouched."
+  },
+  {
+   "stemStart": "[docstring, unlogged] the logic of bond, premium and brokerage, and trade",
+   "verdict": "kept",
+   "why": "Unlogged docstring edit in r2_wine_trade_aging.py: the banned word gives way to custom, honouring the house rule; not shipped, harmless."
+  }
+ ]
+}

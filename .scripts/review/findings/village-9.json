@@ -1,0 +1,241 @@
+{
+  "batch": "village-9",
+  "modules": [
+    "r2_jura_savoie_corsica",
+    "r2_beer_cider",
+    "r2_sake",
+    "r2_alsace",
+    "r2_new_zealand"
+  ],
+  "readCount": 96,
+  "total": 96,
+  "findings": [
+    {
+      "module": "r2_jura_savoie_corsica",
+      "stemStart": "Five varieties, and only five, may enter the",
+      "field": "stem",
+      "problem": "The stem said five varieties 'and only five' may enter the Jura's appellation wines. That is false: the Cremant du Jura specification also lists Pinot Gris. The explanation repeated the error ('every appellation of the region, still or sparkling').",
+      "fix": "Stem now reads: 'Five varieties carry the Jura's still appellation wines. Savagnin and Chardonnay are two; which trio completes the list?' The task, options and key are unchanged. The explanation now says every still appellation is built from the five, and that only the sparkling Cremant du Jura goes further, adding Pinot Gris. The id moves from c-kjm5utxp to c-poc6ykgq. check-similarity flagged nothing (max ratio 0.345).",
+      "source": "INAO Cremant du Jura cahier des charges (the 2010 text lists pinot gris G with pinot noir, poulsard, trousseau, chardonnay and savagnin); WebSearch, jura-vins.com and extranet.inao.gouv.fr copies",
+      "confidence": "high",
+      "stemChanged": true
+    },
+    {
+      "module": "r2_jura_savoie_corsica",
+      "stemStart": "Chardonnay grown inside Chateau-Chalon's boundary can never be",
+      "field": "exp",
+      "problem": "The explanation called Cremant du Jura and Macvin du Jura 'the fruit's only other legal exits'. That is too strong, because IGP Franche-Comte and Vin de France are legal exits too.",
+      "fix": "Changed to 'its other appellation routes are the sparkling Cremant du Jura and the mistelle Macvin du Jura.'",
+      "source": "French wine classification: an AOC area's grapes can always be sold as IGP or Vin de France",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_jura_savoie_corsica",
+      "stemStart": "Warm gravels around Montigny-les-Arsures suit the Jura's most",
+      "field": "exp",
+      "problem": "The explanation stated a trend as fact: 'It has been a quiet winner from the warming summers, and plantings are creeping up again'. Planting trends are the kind of volatile claim the house rules keep out.",
+      "fix": "That sentence now gives a lasting fact instead: its thicker skins give the colour and tannin Poulsard lacks, and in a cool year it can struggle to ripen fully, which is why it keeps to the warmest ground.",
+      "source": "House rule: nothing volatile stated as fact; Trousseau is a thick-skinned late ripener, standard Jura ampelography",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_jura_savoie_corsica",
+      "stemStart": "France's alpine wine country holds one appellation whose vines",
+      "field": "exp",
+      "problem": "The explanation said the town has bottled its sparkling Seyssel 'since the nineteenth century'. That date is uncertain: the best-known house dates from 1901.",
+      "fix": "Changed to 'for well over a century', which is true under either dating.",
+      "source": "Seyssel sparkling history as commonly recorded (Varichon et Clerc, 1901)",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_jura_savoie_corsica",
+      "stemStart": "Beneath its maquis, Corsica splits into two great blocks",
+      "field": "opts",
+      "problem": "The key was the only option without 'with' ('Granite through the west and south, schist across the northeast'). The three distractors are built '..., with ...', so the key's shape stood out.",
+      "fix": "Key now reads 'Granite through the west and south, with schist across the northeast', which matches the inverted distractor word for word. The fact is unchanged.",
+      "source": "Review standard: the options must be of one kind and the key must not stand out by its shape",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_beer_cider",
+      "stemStart": "Flour-cloudy wort, rich in raw starch and unfermentable dextrin,",
+      "field": "exp",
+      "problem": "The explanation used the banned word: 'remains standard practice in every traditional lambic brewhouse'.",
+      "fix": "Changed to 'remains the standard method in every traditional lambic brewhouse'.",
+      "source": "Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_beer_cider",
+      "stemStart": "Printed proudly on a Munich brewery's menu, the word",
+      "field": "exp",
+      "problem": "The explanation said 'what operates now is Germany's provisional beer law of 1993'. The Vorlaeufiges Biergesetz of 1993 was repealed in 2005 and its purity rules moved into later federal rules, so naming it as the law in force today is out of date.",
+      "fix": "Changed to 'what operates now is modern German beer law, descended from the provisional beer law of 1993, which holds ...'. This is true whichever instrument now carries the rule. The ingredient terms, the 1987 ECJ ruling and the key are unchanged.",
+      "source": "German beer legislation history (Vorlaeufiges Biergesetz 1993, repealed with the 2005 food law reorganisation, rules carried into the Bierverordnung); reviewer knowledge, not searched",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_beer_cider",
+      "stemStart": "Sharps, sweets, bittersharps and bittersweets: the traditional Long Ashton",
+      "field": "exp",
+      "problem": "The explanation justified leaving sugar out with a non sequitur: 'Sugar hardly separates cider fruit at all, since nearly everything grown for the press ferments fully'. Sugar content does vary across cider fruit. The scheme simply does not use it, and the class name 'sweet' means low acid and low tannin, not high sugar.",
+      "fix": "Changed to: 'Sugar plays no part in the scheme, so a sweet is simply fruit low in both acid and tannin rather than unusually sugary; what a blender is balancing is bite against structure.'",
+      "source": "Long Ashton Research Station cider apple classification (0.2% tannin and 0.45% malic acid thresholds only)",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_sake",
+      "stemStart": "Of the eight premium designations, one has carried no",
+      "field": "exp",
+      "problem": "The explanation ended 'a junmai with no milling figure on its label is not hiding anything'. Japanese labelling standards require every tokutei meisho-shu, junmai included, to state its polishing ratio, so a junmai with no figure on the label should not exist.",
+      "fix": "Changed to 'so a junmai may now print a polishing figure well above seventy percent and keep its name.'",
+      "source": "National Tax Agency labelling standard for sake manufacturing method and quality (seimaibuai labelling is mandatory for special designation sake)",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_sake",
+      "stemStart": "Junmai, honjozo, ginjo and their compound grades sit together",
+      "field": "exp",
+      "problem": "The explanation said the system 'took its present shape in 1990'. The bank's own junmai question teaches the 2004 revision that reshaped it, so the two contradict each other.",
+      "fix": "Changed to 'was introduced in 1990'.",
+      "source": "The 2004 revision of the special designation rules (dropping junmai's polishing floor), consistent with the same module's first question",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_sake",
+      "stemStart": "Two bottles both read plus three on the sake",
+      "field": "exp",
+      "problem": "The explanation said residual sugar and density are 'all it can report, and acid never moves it'. The meter reads density, which alcohol lowers as well as sugar raises, and dissolved acid adds a little density, so 'never' is wrong.",
+      "fix": "Changed to: 'The meter is a hydrometer: it reads density, which sugar raises and alcohol lowers, and the small amount of acid in sake barely registers.' The rest is unchanged.",
+      "source": "Hydrometry: sake meter value is a specific gravity scale referenced to water",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_sake",
+      "stemStart": "Japan's Liquor Tax Act refuses the name seishu to",
+      "field": "exp",
+      "problem": "The explanation used the banned word: 'though in practice the yeast gives out first'.",
+      "fix": "Changed to 'though the yeast usually gives out first'.",
+      "source": "Codex house rule: never the word practice or practise",
+      "confidence": "high",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_alsace",
+      "stemStart": "A 2005 amendment let one Alsace grand cru, Zotzenberg,",
+      "field": "exp",
+      "problem": "The explanation said Zotzenberg 'keeps the noble four alongside it'. Each cru's own cahier sets its grapes, and the reviewer could not confirm that Muscat is listed for Zotzenberg.",
+      "fix": "Changed to 'Zotzenberg keeps its noble grapes alongside it', which is true whatever the exact list.",
+      "source": "Per-site Alsace grand cru cahiers des charges since 2011; reviewer could not confirm Muscat for Zotzenberg",
+      "confidence": "low",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_new_zealand",
+      "stemStart": "Marlborough wineries holding fruit in both of the province's",
+      "field": "opts",
+      "problem": "The key, 'Higher terraces, nearer the cold open sea' (41 characters), was the lone short option against three distractors of 66 to 85 characters that each carry a reason. That made it the length outlier, a shape a student can spot.",
+      "fix": "Key now reads 'Higher, more exposed terraces nearer the cold open sea, where heat builds slowly all season' (91 characters, 6 clear of the runner-up, so not a visible standout). It now names the exposure the explanation teaches. The module's length rank stays 2/2/2/1 (29%), as at HEAD.",
+      "source": "Review standard: the options' shape must not answer the question; rewrite/README.md on OUTLIER",
+      "confidence": "medium",
+      "stemChanged": false
+    },
+    {
+      "module": "r2_new_zealand",
+      "stemStart": "Under four hundred millimetres of rain falls in a",
+      "field": "exp",
+      "problem": "The explanation called Central Otago 'the one New Zealand region where drought rather than rain sets the farming calendar'. That overstates it: Marlborough, Hawke's Bay and Waipara also irrigate almost everywhere.",
+      "fix": "Changed to 'Central Otago is the driest of New Zealand's wine regions, and drip lines went in with the vines almost everywhere.'",
+      "source": "New Zealand regional rainfall (Central Otago, about 350 to 400 mm in the Cromwell Basin and Alexandra, is the driest; irrigation is general in Marlborough and Hawke's Bay)",
+      "confidence": "medium",
+      "stemChanged": false
+    }
+  ],
+  "verdicts": [
+    {
+      "stemStart": "Five varieties, and only five, may enter the",
+      "verdict": "kept",
+      "why": "The original stem was false: the Cremant du Jura specification admits Pinot Gris beside the five (confirmed in the INAO text by search; the 2019 homologated wording was not visible in the excerpt, but no source drops it). The error sat in the stem's own claim, so no explanation-only fix could serve; the change is minimal, the key and options are untouched, and the one orphaned id (c-kjm5utxp) is the accepted cost. The new explanation is accurate and in the voice."
+    },
+    {
+      "stemStart": "Chardonnay grown inside Chateau-Chalon's boundary can never be",
+      "verdict": "kept",
+      "why": "'Only other legal exits' was too strong, since IGP Franche-Comte and Vin de France remain open to any AOC fruit; 'other appellation routes' is exact and the Cotes du Jura key is unaffected."
+    },
+    {
+      "stemStart": "Warm gravels around Montigny-les-Arsures suit the Jura's most",
+      "verdict": "kept",
+      "why": "A planting trend is volatile and the house rule keeps it out. The replacement is lasting ampelography, phrased comparatively against Poulsard (whose skins are notoriously thin), and the late-ripening point matches the stem's 'most demanding'. match_sa still grades trousseau and trousseau noir right and refuses poulsard and pinot noir."
+    },
+    {
+      "stemStart": "France's alpine wine country holds one appellation whose vines",
+      "verdict": "kept",
+      "why": "'For well over a century' is true whether sparkling Seyssel dates from the nineteenth century or from Varichon et Clerc's 1901 founding; nothing is lost."
+    },
+    {
+      "stemStart": "Beneath its maquis, Corsica splits into two great blocks",
+      "verdict": "kept",
+      "why": "The key was the only option without 'with'; it now mirrors the inverted distractor exactly, the fact (granite west and south, schist northeast) is unchanged and the build passes."
+    },
+    {
+      "stemStart": "Flour-cloudy wort, rich in raw starch and unfermentable dextrin,",
+      "verdict": "kept",
+      "why": "The banned word is gone and 'the standard method' says the same thing; no accept list touched."
+    },
+    {
+      "stemStart": "Printed proudly on a Munich brewery's menu, the word",
+      "verdict": "kept",
+      "why": "My search could not settle whether the 1993 Vorlaeufiges Biergesetz still stands or was folded into the Bierverordnung in 2005 (one secondary source says repealed, a Bavarian office page still cites the 1993 text). That uncertainty is exactly why the hedge is right: 'modern German beer law, descended from the provisional beer law of 1993' is true either way, where the original named one instrument as the law in force. The ingredient rules, the 1987 ECJ ruling and the key are unchanged."
+    },
+    {
+      "stemStart": "Sharps, sweets, bittersharps and bittersweets: the traditional Long Ashton",
+      "verdict": "kept",
+      "why": "The original reasoning was a non sequitur; the scheme draws its lines on tannin (0.2 percent) and malic acid (0.45 percent) only, and a sweet is low acid, low tannin fruit. The new sentence also explains why both sugar distractors fail."
+    },
+    {
+      "stemStart": "Of the eight premium designations, one has carried no",
+      "verdict": "kept",
+      "why": "Seimaibuai labelling is mandatory for every tokutei meisho-shu, so 'a junmai with no milling figure on its label' described a non-compliant bottle. The new ending (a figure well above seventy percent while keeping the name) teaches the real consequence of the 2004 change."
+    },
+    {
+      "stemStart": "Junmai, honjozo, ginjo and their compound grades sit together",
+      "verdict": "kept",
+      "why": "'Took its present shape in 1990' contradicted the module's own 2004 revision question; the standard took effect in April 1990, so 'was introduced in 1990' is right and consistent."
+    },
+    {
+      "stemStart": "Two bottles both read plus three on the sake",
+      "verdict": "kept",
+      "why": "A hydrometer reads density, which alcohol lowers as well as sugar raises, and dissolved acid adds a trace; 'acid never moves it' was wrong. The fix is correct and sits well with the added-alcohol distractor."
+    },
+    {
+      "stemStart": "Japan's Liquor Tax Act refuses the name seishu to",
+      "verdict": "kept",
+      "why": "The banned word is gone; 'usually' carries the meaning. match_sa still grades 22 and twenty two degrees right and refuses 20 percent and 17."
+    },
+    {
+      "stemStart": "A 2005 amendment let one Alsace grand cru, Zotzenberg,",
+      "verdict": "kept",
+      "why": "Each cru's cahier sets its own grapes and Muscat is not, to my knowledge, among Zotzenberg's; 'its noble grapes' is true whatever the exact list, while 'the noble four' risked a false claim. The stem's 'outside the noble four' is a region-wide category and stays right."
+    },
+    {
+      "stemStart": "Marlborough wineries holding fruit in both of the province's",
+      "verdict": "kept",
+      "why": "The 41-character key was the length outlier (36 off the mean of the other three). The new key is accurate (elevation, exposure, slow heat, all taught in the explanation), longest by only 6 so not a visible standout, and no longer the outlier. I tried an amendment that put the key inside the pack at 75 characters, but with seven MC questions it moved the module's rank metric from 29 to 43 percent, so I put the reviewer's text back; build passes."
+    },
+    {
+      "stemStart": "Under four hundred millimetres of rain falls in a",
+      "verdict": "kept",
+      "why": "'The one region where drought sets the calendar' overstated it, since Marlborough, Hawke's Bay and Waipara irrigate widely; 'the driest of New Zealand's wine regions' is a stable climatic fact and keeps the irrigation point."
+    }
+  ]
+}

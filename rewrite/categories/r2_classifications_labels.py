@@ -1,4 +1,4 @@
-"""Rank II rewrite - Classifications & Labels (51 questions: 13 MC, 38 short answer).
+"""Village rewrite - Classifications & Labels (51 questions: 13 MC, 38 short answer).
 
 Certified level. The subject is not what the tiers are but how a classification
 behaves as an instrument. Who wrote it and on whose authority; how it is revised
@@ -14,11 +14,11 @@ maps and registers that make a ranking of ground enforceable at all, and last th
 professional reading of the claim as it reaches the table.
 
 Boundaries were read before writing and are kept. Wine Law and Label Reading are
-committed Rank I categories, so nothing here re-asks what a protected name
+committed Regionale categories, so nothing here re-asks what a protected name
 promises, how the European framework is built, or how to decode a bottler
 statement; this sits a full step above them, on the mechanics those categories
-take for granted. The 1855 and Saint-Emilion lists belong to Rank II Bordeaux and
-are never named. Burgundy's tiers belong to Rank II Burgundy. No single country's
+take for granted. The 1855 and Saint-Emilion lists belong to Village Bordeaux and
+are never named. Burgundy's tiers belong to Village Burgundy. No single country's
 ageing ladder is taken apart where that country holds its own category: Spain's
 national floor is used only against a denomination that exceeds it, Italy's
 Riserva only as a qualifier that needs a rulebook to attach to, and the rest of
@@ -176,22 +176,22 @@ BANK = [
       "A ranking bites on wine made after it takes effect, so a cellar can hold bottles ranked under three or four versions of one list at once. It also means a demotion costs an estate nothing on stock already in glass, which is why the argument is always about the vintages still to come."),
     SA("Revision, promotion and the closed list",
        "Italy will not consider a wine for its highest denomination until it has served a stated minimum at the tier below. How long is that apprenticeship?",
-       "Ten years",
-       ["ten years", "ten years as a doc", "ten years at doc level", "ten years at doc",
-        "10 years", "10 years as a doc", "10 years at doc level", "10 years at doc",
-        "at least ten years", "at least ten years as a doc",
-        "at least ten years at doc level", "at least ten years at doc",
-        "at least 10 years", "at least 10 years as a doc",
-        "at least 10 years at doc level", "at least 10 years at doc",
-        "minimum ten years", "minimum ten years as a doc",
-        "minimum ten years at doc level", "minimum ten years at doc", "minimum 10 years",
-        "minimum 10 years as a doc", "minimum 10 years at doc level",
-        "minimum 10 years at doc", "ten years minimum", "ten years minimum as a doc",
-        "ten years minimum at doc level", "ten years minimum at doc", "10 years minimum",
-        "10 years minimum as a doc", "10 years minimum at doc level",
-        "10 years minimum at doc", "ten", "10", "a decade", "ten full years",
-        "at least a decade", "a decade at doc level", "a decade minimum"],
-       "The waiting period is what stops the top rank being handed to a name invented last season: the wine has to have existed, been made to a rulebook and been checked for a decade before anyone will look at it. The rung below works the same way on a shorter clock, so a new denomination climbs the ladder rather than stepping onto it halfway up.",
+       "Seven years",
+       ["seven years", "seven years as a doc", "seven years at doc level", "seven years at doc",
+        "7 years", "7 years as a doc", "7 years at doc level", "7 years at doc",
+        "at least seven years", "at least seven years as a doc",
+        "at least seven years at doc level", "at least seven years at doc",
+        "at least 7 years", "at least 7 years as a doc",
+        "at least 7 years at doc level", "at least 7 years at doc",
+        "minimum seven years", "minimum seven years as a doc",
+        "minimum seven years at doc level", "minimum seven years at doc", "minimum 7 years",
+        "minimum 7 years as a doc", "minimum 7 years at doc level",
+        "minimum 7 years at doc", "seven years minimum", "seven years minimum as a doc",
+        "seven years minimum at doc level", "seven years minimum at doc", "7 years minimum",
+        "7 years minimum as a doc", "7 years minimum at doc level",
+        "7 years minimum at doc", "seven", "7", "seven full years",
+        "a minimum of seven years", "a minimum of 7 years"],
+       "The waiting period is what stops the top rank being handed to a name invented last season: the wine has to have existed, been made to a rulebook and been checked for seven years before anyone will look at it. Older books give ten, the figure the rule carried before it was shortened. The rung below works the same way on a shorter clock, so a new denomination climbs the ladder rather than stepping onto it halfway up.",
        ex=True),
     SA("Revision, promotion and the closed list",
        "Every protected European name rests on one document setting out its boundary, its varieties, its yields and its methods, and amending an appellation means amending that document. What is it called?",
@@ -254,7 +254,7 @@ BANK = [
        "Its reasons",
        ["reasons", "reasons for the decision", "a statement of reasons",
         "grounds for the decision", "written reasons"],
-       "A decision given without them is unreviewable, because there is nothing on the record for a court to test the outcome against. Bodies that resisted the duty generally lost, and the modern practice of returning a scored sheet to every candidate, successful or not, is the direct consequence."),
+       "A decision given without them is unreviewable, because there is nothing on the record for a court to test the outcome against. Bodies that resisted the duty generally lost, and the modern habit of returning a scored sheet to every candidate, successful or not, follows from it."),
     SA("Challenge, annulment and the limits of review",
        "Judging candidates against a standard that was never published leaves a ranking indefensible the moment anyone objects. What has to be in the open before the tasting begins?",
        "The criteria",
@@ -397,7 +397,7 @@ BANK = [
       "Spain writes its ageing words into law and audits them, which is what lets a guest compare one bodega with another. In the United States the word is unregulated, so it is worth precisely what the producer's own reputation is worth, and on a few labels that is a great deal."),
     SA("Reserva, Riserva and Reserve across borders",
        "Austria hangs its Reserve on a number that has nothing to do with time in cask. Which threshold must the wine reach?",
-       "Thirteen percent alcohol",
+       "Thirteen per cent alcohol",
        ["13%", "13% alcohol", "13% abv", "13 percent", "13 percent alcohol",
         "13 percent abv", "13 per cent", "13 per cent alcohol", "13 per cent abv",
         "thirteen percent", "thirteen percent alcohol", "thirteen percent abv",
@@ -422,7 +422,7 @@ BANK = [
         "a minimum of 13 percent alcohol", "a minimum of thirteen percent",
         "a minimum of thirteen percent alcohol", "13% minimum", "13 percent minimum",
         "thirteen percent minimum", "13 percent alcohol minimum",
-        "thirteen percent alcohol minimum"],
+        "thirteen percent alcohol minimum", "a minimum of 13 per cent", "a minimum of 13 per cent alcohol", "a minimum of thirteen per cent", "a minimum of thirteen per cent alcohol", "13 per cent minimum", "thirteen per cent minimum", "13 per cent alcohol minimum", "thirteen per cent alcohol minimum"],
        "Reserve there is a ripeness claim, reachable on a good site in a warm year and out of reach in a cool one, which is the opposite of a rule counted in months. It comes with a later release than an ordinary Qualitatswein, and that is the only part of the definition resembling the ageing words used elsewhere.",
        ex=True),
     SA("Reserva, Riserva and Reserve across borders",
@@ -515,5 +515,5 @@ BANK = [
        ["expulsion", "expelled", "expelling the member", "expulsion from the association",
         "expelled from the association", "losing membership", "loss of membership",
         "removal from the association"],
-       "A private scheme cannot fine anybody and has no inspectorate with a statutory footing, so its whole leverage is the right to use the mark and the company of the other members. That is why such schemes are often stricter than the law on paper and slower than the law in practice, since throwing out a famous name is a public act with consequences in both directions."),
+       "A private scheme cannot fine anybody and has no inspectorate with a statutory footing, so its whole leverage is the right to use the mark and the company of the other members. That is why such schemes are often stricter than the law on paper and slower than the law to act, since throwing out a famous name is a public act with consequences in both directions."),
 ]
