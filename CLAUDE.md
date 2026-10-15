@@ -41,11 +41,44 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v98`; its two teaching imports have query versions which
+Source worker is `codex-v99`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex40: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex41: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
-codex39 the regions in depth).
+codex39 the regions in depth, codex40 The Cellar Compass).
+
+## The Cellar Compass (15 October 2026)
+
+`js/data-cellar-compass.js`, `js/codex40.js` and
+`css/house-cellar-compass.css` add 12 guided studies, 60 unscored recall
+prompts and eight fall-dish pairing workshops. Today, My Restaurant and
+Flashcards lead into the collection. `#/v/cellarcompass` is its root;
+`path/{id}`, `workshop/{id}`, `workshops` and `wines` are its subroutes.
+The wine directory searches the current house's developed wine cards,
+including menu wines and floor bottles. The full printed reference is
+separate and is never represented as fully researched or live stock.
+
+The balanced `cellar-compass` deck chooses up to five menu wines and five
+floor bottles, prioritising wines not yet studied on the local calendar day,
+then weak, unseen and older reviews. `cellar-path:{id}` uses exact wine IDs
+from the authored path. Both reuse existing `h-w-...` card grading and miss
+retry. The existing Due today system and course banks remain unchanged.
+House answers must never enter `ST.srs`. Optional
+`ST.cellarCompassSeen[houseId][wineId]` timestamps provide recency only;
+the layer registers the map in `ST_DEFAULTS`, validates and merges it during
+progress import, and carries it through `v27Rekey`. Never infer a study date
+for historical answers without timestamps. Export, reset and rename must
+continue to cover this map. Reading prompts and workshop rehearsal text
+do not record marks; rehearsal text is discarded when leaving the screen.
+
+Exact bottle and producer corrections belong in World Table's canonical
+Brennan's authoring pipeline, not in a second Codex bottle dataset.
+See `docs/brennans-cellar-review.md` for review scope, sources and remaining
+lineup checks. New source gates:
+`node .scripts/check-cellar-compass-data.cjs [codexRoot] [worldTableRoot]`
+and `node .scripts/check-cellar-compass-ui.cjs [codexRoot] [playwrightModule]`.
+The latter accepts `OOT_SHARED` and `CODEX_URL` for a public preview;
+it uses an isolated browser profile and never the owner's stored answers.
 
 Layer 36 uses `data-visual-studies.js` for exact reviewed IDs and introduces no
 new persisted state. Card dialogs preserve the current run and grade, isolate
@@ -373,7 +406,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v98`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v99`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -392,7 +425,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex40.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex41.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that
