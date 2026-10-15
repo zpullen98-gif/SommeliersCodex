@@ -44,8 +44,9 @@
  *      the columns' length, 20 to 40 cards, 12 to 24 multiple choice questions)
  *   8. the wiring: codex39.js declares with var and function only, names
  *      nobody and ships no key; index.html loads data-regions.js,
- *      data-service-ref.js and codex39.js after codex38.js and right before
- *      boot.js with ?v=; sw.js lists the three in ASSETS after codex38.js and
+ *      data-service-ref.js and codex39.js after codex38.js, followed by the
+ *      exact data-cellar-compass.js and codex40.js pair when present, then
+ *      boot.js, each once with ?v=; sw.js lists the three after codex38.js and
  *      its CACHE is past codex-v95, keeps js/regions/ out of ASSETS and serves
  *      it from a cache of its own that a bump never reaps; codex39.js merges a
  *      reading file into the index as the build splits it; the places of
@@ -743,11 +744,17 @@ check('js/data-service-ref.js is present (the shell loads it)', fs.existsSync(SR
 const INDEX = path.join(ROOT, 'index.html');
 const SW = path.join(ROOT, 'sw.js');
 if (fs.existsSync(INDEX)) {
-  const scripts = [...fs.readFileSync(INDEX, 'utf8').matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
+  /* Read every local script, including an unversioned duplicate, so a missing
+     version cannot disappear from the order or uniqueness proof. */
+  const sources = [...fs.readFileSync(INDEX, 'utf8').matchAll(/<script\b[^>]*\bsrc=["'](js\/[^"']+)["'][^>]*>\s*<\/script>/g)].map((m) => m[1]);
+  const scripts = sources.map((src) => src.slice(3).split(/[?#]/)[0]);
   const at = scripts.indexOf('codex38.js');
-  const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'boot.js'];
-  check('index.html loads data-regions.js, data-service-ref.js and codex39.js after codex38.js and right before boot.js, each once, with ?v=',
-    at >= 0 && JSON.stringify(scripts.slice(at, at + tail.length)) === JSON.stringify(tail) && tail.every((f) => scripts.filter((s) => s === f).length === 1),
+  const compass = ['data-cellar-compass.js', 'codex40.js'];
+  const hasCompass = compass.some((f) => scripts.includes(f) || fs.existsSync(path.join(JS, f)));
+  const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js'].concat(hasCompass ? compass : [], ['boot.js']);
+  check('index.html keeps the regions sequence after codex38.js, the exact Cellar Compass pair when present, then boot.js, each once with ?v=',
+    at >= 0 && JSON.stringify(scripts.slice(at, at + tail.length)) === JSON.stringify(tail)
+      && tail.every((f) => scripts.filter((s) => s === f).length === 1 && /^js\/[^?]+\?v=\d+$/.test(sources[scripts.indexOf(f)])),
     scripts.slice(Math.max(0, at), at + tail.length).join(' '));
 } else check('index.html is beside js/', false, INDEX);
 if (fs.existsSync(SW)) {
