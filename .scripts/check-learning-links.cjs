@@ -44,8 +44,10 @@ async function main() {
       assert.equal(G('v28GrapeProfiles({region:"Northern Rhone",grapes:[]}).length'), 0);
     });
     check(level + ': real menu wines recover their Syrah and Grenache doors', () => {
-      const targets = house.wines.filter((w) => w.list !== 'bottle' && /Vincent|Durban|Minuty|Banyuls/.test(w.name));
-      assert.ok(targets.length >= 4);
+      /* the Minuty's grapes were cleared on 15 October 2026 until the bottle is confirmed (WorldTable
+         research/wine-label-review-2026-10-15.json): a wine whose record names no grape has no door to recover */
+      const targets = house.wines.filter((w) => w.list !== 'bottle' && /Vincent|Durban|Minuty|Banyuls/.test(w.name) && (w.grapes || []).length);
+      assert.ok(targets.length >= 3);
       for (const wine of targets) {
         const rows = get('v28GrapeProfiles(v28Find(v28House().wines,' + JSON.stringify(wine.id) + ')).map(function(x){return {name:x.p.g,flash:x.flash}})');
         assert.ok(rows.length, wine.name);

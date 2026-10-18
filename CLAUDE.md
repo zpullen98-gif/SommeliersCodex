@@ -41,11 +41,11 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v99`; its two teaching imports have query versions which
+Source worker is `codex-v101`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex41: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex42: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
-codex39 the regions in depth, codex40 The Cellar Compass).
+codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab).
 
 ## The Cellar Compass (15 October 2026)
 
@@ -110,6 +110,78 @@ The install icon master keeps its original wine colour/mark on house forest
 green and antique gold. Regenerate its four PNGs with
 `node .scripts/render-icons.cjs [path to @resvg/resvg-js]`; do not recolour raster
 files separately. The renderer may be installed in scratch outside this repo.
+
+## Brennan's, the house tab (17 October 2026)
+
+The owner asked for the World Table's treatment here too: a tab of the house's own, the wine list grouped by how each
+wine is sold, starting by the glass, and the three timed lines at the top of every card. `js/codex41.js`, loaded after
+codex40 and before boot, does it by wrapping; it edits no earlier layer and no data file. What a maintainer needs:
+
+- **The bar** reads Home · Brennan’s · Practise · Library and the quiet More (`V25_NAV` keys `home`, `brennans`,
+  `practise`, `library`, `more`). The second word is the house's name (`v41TabWord`; the literal `Brennan’s`, the
+  shipped pack's own name, at first paint), read again at every draw and escaped; the due pill rides on Practise.
+  Owners and parents are set key by key in `V32_OWNER`, `V25_UNDER`, `V25_HUB` and `V32_PARENT`, never by replacing a
+  registry (check-nav's mutations edit codex32's literals and must still be caught): the list, the card, the house's
+  screens, the full list, the producers, the videos and The Cellar Compass are lit by the house's word; every screen
+  codex32 put under Flashcards or Quizzes, and any later one still owned by either, by Practise.
+- **The addresses**: `#/v/brennans` is the house's page, a root whose parent is Home; a bare `#/v/cellar` and the old
+  `#list` land on it and print `#/v/brennans`. Practise is the Flashcards root relabelled at `#/practise` and
+  `#/practise/all`; `#/flashcards[/all]` still reads as it and prints the new form; decks and cards keep
+  `#/flashcards/{deck}[/card]`; `#/quizzes` stays with its h1 and rows, owned by Practise, its parent the Practise
+  root. A section, a card, the producers, the videos, the full list and the house's own screens climb to the page. The
+  Cellar Compass keeps codex40's parent, the level page, where two of its three doors are, since its own gate
+  (`check-cellar-compass-ui.cjs`) pins a cold Back there; pushed from the page, Back pops to the page. The initial
+  address is read again once for the three new forms, and the first render replaces. The producers' address is read
+  again there too, from `V32.initialHash`: codex38 reads `location.hash`, which a render before it loaded (the house
+  arriving) can already have written over with Home's, so a first visit on `#/v/houseproducers` sometimes landed on
+  Home (3 of 6 cold loads on ba5dcf1).
+- **The house arriving**: `v27Redraw` draws the house's page again in place (never over a search being typed), and
+  Practise, Quizzes, the level page and the Library once when the house lands after they were drawn without it (a
+  first visit, or a reload that drew before the house was read; `V41_DRAWN` records what the last render drew), so
+  Practise shows the house's decks and drills, the level page its lead door and the Library The full wine list; never
+  over a search being typed or holding words. codex27 never drew those four again.
+- **The house's page** (`v41View`): `div.v25page.v32-root.v41-brennans`, the house's name as its h2 with the date the
+  menus were read, the list's sentence, a jump row (`nav.v32chips.v41-jumps` of `button.v28-chip[data-v41="jump"]`, 44
+  px, no address and no history: each scrolls to a `tabindex="-1"` heading clear of the sticky Back and the list's
+  search, then focuses it; a chip whose heading is absent is removed), codex28's study view whole in `#v41-list` (its
+  h2 retitled The list, `#v41-list-h`; the lede and the videos left to the page), then the doors: The Cellar Compass,
+  Who makes our wines, Videos and The house (the full wine list, the Menu Desk, the house, the marks review). A section
+  chip on the page pushes the section as its own screen; open, edit and edit all switch to the `cellar` view first,
+  and `v28Open` does the same, so a card always carries its own address.
+- **The grouping** (`v41Kind`, from the pack's fields only; no section is renamed, so every chip, deck and the section
+  quiz hold): By the glass (a printed price and not a menu bottle, 15, the guide's style sections inside as h3), On
+  the tastings (no printed price and a tasting course, 6), Bubbles at Brennan’s and Birthday Bubbles (a menu bottle
+  whose section or meal says Bubbles, 12), Dessert by the half bottle (the menu bottle left, the Auslese), By the
+  bottle (the floor's 237 in their twelve sections), then any bottles of the person's own. `v28MealRows` is wrapped to
+  return that order, each section together where it first appears, so Previous and Next follow the page;
+  `v28RowsHtml` puts `h2.v32-h2.v41-group#v41-g-{kind}` "{head} · {n}" before each group. check-study pins the list
+  without codex41; check-brennans pins the grouped order.
+- **The level page**: My restaurant keeps its h2, codex40's Compass door, the house line, the count line and the
+  section chips; its three study rows become one lead door to the page (`data-go="brennans"`, the house's name) and
+  its quiet row moves to the page.
+- **The card**: `v28CardHtml` is wrapped last, as a string pass: the ten box, the first picks, the two buttons with
+  their hidden lines and the guest line are cut and written back where the ten box stood as `section.v41-lines` (a
+  visually hidden h3 The lines, the ten box `.v41-ten`, then In twenty seconds `#v28-s20` and In forty-five seconds
+  `#v28-s45`, never hidden, the forty-five in the reading face at the size the ten had), then the guest line where it
+  differs from the twenty, then the first picks, then About it and the rest as before. The flash card back and Say
+  the pour are untouched.
+- **Practise** (`v32FlashcardsHtml` wrapped): Due today, Quick quiz (its round pushes `#/quizzes/quick`, Back returns
+  here), the house's decks with codex40's Your cellar selection first, Drills on our list, Who makes our wines, the
+  level's decks with a row to The {Level} rounds (`#/quizzes`), What it's made of, Words, Reference cards, The regions
+  and Service references, Hands on, and the level test last.
+- **The retired word**: the eight gates' `voiceProblems` test `/practi[cs]e/i` on the string with the exact whole
+  token `Practise` taken out, so the tab word passes and practice, practise and Practice in prose still fail;
+  `.scripts/regions/check-fragment.cjs` keeps the full rule. The tab's key and address are the word in lower case and
+  are markup: check-home sweeps the bar with that key's id and `data-nav` taken out, check-brennans the layer's source
+  with the key and address taken out.
+- **The bar's widths** at 375 and 390, measured in Chromium under codex32's phone rule, are written in codex41's
+  comment: one row, no tab under 44 px, night and day; the 11 px fallback is not needed. The styles live in the
+  layer's own `v41-style` element, with the house's tokens and classes.
+- **Gate**: `node .scripts/check-brennans.js [jsDir]`: the shell's whole chain through codex41 in check-nav's VM with
+  the shared pack; the bar, ownership, the addresses, the page, the grouping counted against the pack, the cards, the
+  Practise order, the level page, the Back chains, the wiring, the chain rule (every list in a gate that names
+  `codex40.js` names `codex41.js`) and the voice. It takes the wing's `codex/js`, so the site's check-wings can run
+  it, and skips a tree with no codex41. check-nav's sixth word mutation now breaks codex41's literal.
 
 ## Run it
 
@@ -200,11 +272,14 @@ Then open http://localhost:8632. Use `serve.py` (not `python -m http.server`) �
   Measured on Brennan's at Village: 19 of 20 wines link a chapter, 15 a grape, three a producer (Leflaive, Jadot,
   Inglenook). Gate: `node .scripts/check-study.js [jsDir]`.
 - `js/codex32.js`: **the consolidation** (WorldTable `docs/consolidation-design.md`, sections 2 and 5, 4 Oct 2026).
-  The bar reads Home, Flashcards, Quizzes, Library and a quiet More (`V25_NAV` reassigned; More is `.v32more`, the
-  ghost ink); the lit word is `V32_OWNER[S.view]`; Flashcards carries the Due today count as a pill. Home is
+  The bar read Home, Flashcards, Quizzes, Library and a quiet More (`V25_NAV` reassigned; More is `.v32more`, the
+  ghost ink) until codex41 (17 October 2026, above) made it Home, Brennan’s (the house's page, `#/v/brennans`),
+  Practise (the Flashcards root, `#/practise`), Library and More; the lit word is `V32_OWNER[S.view]`, one of those
+  five keys; the Due today count rides on Practise as a pill. Home is
   `section.levels` alone (`v25HomeHtml` reassigned). The level page (`V25_VIEWS.level`, and `today` and `mine` land on
   the level page and More) is Today's study (Due today, Quick quiz, Next reading, Your first week), My restaurant
-  (three study doors, the sections as chips to `#/v/cellar/section/{slug}`, quiet setup links), Search and a closed
+  (three study doors, the sections as chips to `#/v/cellar/section/{slug}`, quiet setup links; since codex41 one door
+  to the house's page, the quiet links on that page), Search and a closed
   What {Level} holds. New views: `flashcards`, `deck`, `quizzes`, `more`, `housevideos`, `firstweek`; `housedeck` and
   `flash` are ONE card screen (`v32CardView`) for every deck (`v32DeckDef`: list, list:{slug}, list-weak, one:{id},
   bottles, bottles:{slug}, menu-words, grapes, grapes:r/w, grapes-all, misses, due); `startHouseDeck` opens the deck
@@ -406,7 +481,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v99`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v101`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -425,7 +500,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex41.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex42.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that

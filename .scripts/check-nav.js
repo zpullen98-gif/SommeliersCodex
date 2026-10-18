@@ -11,8 +11,10 @@
  * back, a popstate fired on every back), whose location follows it, and
  * whose sessionStorage is a Map. What it asserts:
  *
- *   1. V25_NAV is the five, More last; every view codex32 knows has an
- *      owner and a parent, never itself; home has none
+ *   1. V25_NAV is the five, More last (Home, Brennan's, Practise, Library
+ *      and More since codex41, the house tab of 17 October 2026); every
+ *      view codex32 knows has an owner and a parent, never itself; home
+ *      has none
  *   2. every route in 5.4 round-trips: the screen to its address, the
  *      address applied back to the same screen
  *   3. the push model: test 1's walk makes four pushes with ootd 1 to 4, a
@@ -40,10 +42,11 @@
  *      remembered by its attributes
  *  11. voice: codex32 draws no "Level" and a roman numeral, no mark at or
  *      above U+2190, no dash; it declares with var and function only
- *  12. mutation: with --mutations, five broken copies of codex32.js (the
- *      URL-less pushState restored in v28Push, a replace put back in the
- *      push path, a parent that is the view itself, a sixth tab word, Back
- *      drawn twice) must each turn this check red
+ *  12. mutation: with --mutations, five broken copies (the URL-less
+ *      pushState restored in v28Push, a replace put back in the push path,
+ *      a parent that is the view itself, Back drawn twice, each in
+ *      codex32.js, and a sixth tab word in codex41.js, which draws the
+ *      words) must each turn this check red
  *
  *   node .scripts/check-nav.js [jsDir] [--mutations]
  *
@@ -85,7 +88,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
   'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js',
-  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'codex39.js', 'boot.js'];
+  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -285,7 +288,7 @@ async function main() {
   const D = bootDevice({});
   await settle(D);
   const G = D.G;
-  check('V25_NAV is Home, Flashcards, Quizzes, Library, More', G('V25_NAV.map(function(w){return w[1];}).join("|")') === 'Home|Flashcards|Quizzes|Library|More',
+  check('V25_NAV is Home, Brennan\u2019s, Practise, Library, More', G('V25_NAV.map(function(w){return w[1];}).join("|")') === 'Home|Brennan\u2019s|Practise|Library|More',
     G('V25_NAV.map(function(w){return w[1];}).join("|")'));
   const navHtml = G('S.view = "home"; v25NavHtml()');
   check('the bar draws four tabs and More last, More quiet (class v32more), lit word aria-current',
@@ -300,7 +303,7 @@ async function main() {
   check('home has no parent, every other view has one', G('V32_PARENT.home') === null
     && parents.filter((v) => v !== 'home').every((v) => typeof G('V32_PARENT[' + JSON.stringify(v) + ']') === 'string'));
   check('every parent is itself a known view', parents.every((v) => { const p = G('V32_PARENT[' + JSON.stringify(v) + ']'); return p === null || parents.indexOf(p) >= 0; }));
-  const words = ['home', 'flashcards', 'quizzes', 'library', 'more'];
+  const words = ['home', 'brennans', 'practise', 'library', 'more'];
   check('every owner is one of the five words', owners.every((v) => words.indexOf(G('V32_OWNER[' + JSON.stringify(v) + ']')) >= 0));
   const walkUp = parents.filter((v) => {
     let cur = v, n = 0;
@@ -318,7 +321,7 @@ async function main() {
     ['deck list', 'S._v32deck = "list"; S.view = "deck"'], ['deck grapes:r', 'S._v32deck = "grapes:r"; S.view = "deck"'],
     ['quizzes', 'v32All().quizzes = false; S.view = "quizzes"'], ['quizzes, all', 'v32All().quizzes = true; S.view = "quizzes"'],
     ['library', 'v32All().library = false; S.view = "library"'], ['more', 'S.view = "more"'],
-    ['our list', 'v28State().open = null; v28State().sec = ""; S.view = "cellar"'],
+    ['the Brennan\'s page', 'v28State().open = null; v28State().sec = ""; S.view = "brennans"'],
     ['our list card', 'v28State().open = ' + JSON.stringify(LEAF) + '; S.view = "cellar"'],
     ['our list section', 'v28State().open = null; v28State().sec = v32Sections()[1].section; S.view = "cellar"'],
     ['primer', 'S.primerKey = "Burgundy"; S.view = "primer"'], ['primers', 'S.view = "primers"'],
@@ -350,8 +353,8 @@ async function main() {
   const d = () => g('history.state && history.state.ootd');
   g('v25ChooseLevel("certified")');
   check('a level card pushes the level page at depth 1', g('S.view') === 'level' && d() === 1 && T.loc.hash === '#/level', g('S.view') + ' ' + d());
-  g('v25Nav("flashcards")');
-  check('the Flashcards tab pushes at depth 2', g('S.view') === 'flashcards' && d() === 2 && T.loc.hash === '#/flashcards');
+  g('v25Nav("practise")');
+  check('the Practise tab pushes the Flashcards root at depth 2, at #/practise', g('S.view') === 'flashcards' && d() === 2 && T.loc.hash === '#/practise');
   g('v32OpenDeck("list")');
   check('a deck row pushes the deck screen at depth 3', g('S.view') === 'deck' && d() === 3 && T.loc.hash === '#/flashcards/list');
   g('v32StartRun(S._v32deck, { push: true })');
@@ -365,11 +368,11 @@ async function main() {
   g('v25Nav("flashcards")');
   check('a tap on the lit tab while on its root pushes nothing', g('S.view') === 'flashcards' && T.H.entries.length === lenTab);
   g('history.back()');
-  check('Back (the gesture) from Flashcards returns to the card screen with its run in memory', g('S.view') === 'housedeck' && d() === 4, g('S.view'));
+  check('Back (the gesture) from Practise returns to the card screen with its run in memory', g('S.view') === 'housedeck' && d() === 4, g('S.view'));
   g('v32Back()');
   check('Back from the card: the deck screen', g('S.view') === 'deck' && d() === 3, g('S.view'));
   g('v32Back()');
-  check('Back: Flashcards', g('S.view') === 'flashcards' && d() === 2, g('S.view'));
+  check('Back: Practise', g('S.view') === 'flashcards' && d() === 2, g('S.view'));
   g('v32Back()');
   check('Back: the level page', g('S.view') === 'level' && d() === 1, g('S.view'));
   g('v32Back()');
@@ -392,7 +395,7 @@ async function main() {
   section('4. one action, one entry: codex28 and codex29 folded in');
   g('v25ChooseLevel("certified")');
   g('v32Act("studylist", null)');
-  check('Study our list pushes Our List', g('S.view') === 'cellar' && T.loc.hash === '#/v/cellar');
+  check('Study our list pushes the Brennan\'s page, the list on it', g('S.view') === 'brennans' && T.loc.hash === '#/v/brennans');
   const before = T.H.entries.length;
   const dBefore = d();
   g('v28Open(' + JSON.stringify(LEAF) + ', false)');
@@ -404,14 +407,14 @@ async function main() {
   check('codex28\'s and codex29\'s own popstate listeners are gone, codex32\'s is the one',
     T.listeners.popstate.length === 1 && T.listeners.popstate[0] === g('v32OnPop'));
   g('history.back()');
-  check('a pop closes the card back to Our List', g('S.view') === 'cellar' && g('S._v28.open') === null);
+  check('a pop closes the card back to the Brennan\'s page', g('S.view') === 'brennans' && g('S._v28.open') === null);
   if (g('typeof v29Open') === 'function' && g('V29_MINE_ROW.show()')) {
     /* after a pop the forward entries are cut by a push, so count the position, not the length */
     const b2 = T.H.idx;
     g('v29Open("level")');
     check('the full list opens as one entry', T.H.idx === b2 + 1 && T.H.entries.length === b2 + 2 && T.loc.hash === '#/v/fulllist', (T.H.idx - b2) + ' ' + T.loc.hash + ' ' + g('S.view'));
     g('v32Back()');
-    check('and Back leaves it', g('S.view') === 'cellar');
+    check('and Back leaves it', g('S.view') === 'brennans');
   }
   g('v28Act("weak", null)');
   check('codex28\'s own deck buttons open the one deck screen', g('S.view') === 'deck' && g('S._v32deck') === 'list-weak');
@@ -457,13 +460,13 @@ async function main() {
   W.G('render()');
   check('#wine=<id> opens that card, at depth 0', W.G('S.view') === 'cellar' && W.G('S._v28.open') === BERRES && W.G('V32.d') === 0 && W.loc.hash === '#/v/cellar/' + BERRES);
   W.G('v32Back()');
-  check('and its first Back goes to Our List', W.G('S.view') === 'cellar' && W.G('S._v28.open') === null);
+  check('and its first Back goes to the Brennan\'s page, the list with no card', W.G('S.view') === 'brennans' && W.G('S._v28.open') === null);
   W.G('v32Back()');
-  check('and the next to the level page', W.G('S.view') === 'level');
+  check('and the next to Home', W.G('S.view') === 'home');
   const L = bootDevice({ start: '/codex/#list' });
   await settle(L);
   L.G('render()');
-  check('#list opens Our List', L.G('S.view') === 'cellar' && L.loc.hash === '#/v/cellar');
+  check('#list opens the Brennan\'s page', L.G('S.view') === 'brennans' && L.loc.hash === '#/v/brennans');
   const bare = bootDevice({ start: '/codex/' });
   await settle(bare);
   bare.G('render()');
@@ -602,31 +605,34 @@ async function main() {
   const sw = path.join(JS, '..', 'sw.js');
   if (fs.existsSync(index) && fs.existsSync(sw)) {
     const scripts = [...fs.readFileSync(index, 'utf8').matchAll(/<script src="js\/([^"?]+)(?:\?[^\"]*)?"><\/script>/g)].map((m) => m[1]);
-    const layers = ['codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'boot.js'];
+    const layers = ['codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'boot.js'];
     const start = scripts.indexOf(layers[0]);
     check('index.html loads navigation, atlas, teaching and visual studies in order before boot', start >= 0 && JSON.stringify(scripts.slice(start, start + layers.length)) === JSON.stringify(layers) && layers.every(file => scripts.filter(s => s === file).length === 1));
     check('sw.js lists codex32.js in ASSETS', fs.readFileSync(sw, 'utf8').indexOf("'./js/codex32.js'") > 0);
   }
 }
 
-/* The five mutations: each broken copy must fail this check. */
+/* The five mutations: each broken copy must fail this check. A row names
+   the file it breaks when that is not codex32.js: the bar's words are
+   codex41's since the house tab, so the sixth word goes there. */
 function mutations() {
   section('12. mutations');
-  const src = fs.readFileSync(path.join(JS, 'codex32.js'), 'utf8');
   const M = [
     ['the URL-less pushState restored in v28Push',
       "v28Push = function (state) { V32.pend = 'push'; V32.v28state = state || null; return true; };",
       "v28Push = function (state) { try { history.pushState(state, ''); } catch (e) { } return true; };"],
     ['a replace put back in the push path', "v32Hist('push', state, url);", "v32Hist('replace', state, url);"],
     ['a parent that is the view itself', "flashcards: 'home', deck: 'flashcards', housedeck: 'deck'", "flashcards: 'home', deck: 'deck', housedeck: 'deck'"],
-    ['a sixth tab word', "['library', 'Library'], ['more', 'More']];", "['library', 'Library'], ['record', 'Record'], ['more', 'More']];"],
+    ['a sixth tab word', "['library', 'Library'], ['more', 'More']];", "['library', 'Library'], ['record', 'Record'], ['more', 'More']];", 'codex41.js'],
     ['Back drawn twice', "  v32StripOldBacks(main);\n  v32BackRow(main);", "  v32StripOldBacks(main);\n  v32BackRow(main);\n  v32BackRow(main);"]
   ];
-  M.forEach(([name, from, to]) => {
-    if (src.indexOf(from) < 0) { check('mutation "' + name + '" applies', false, 'the text it replaces is gone'); return; }
+  M.forEach(([name, from, to, file]) => {
+    const target = file || 'codex32.js';
+    const src = fs.existsSync(path.join(JS, target)) ? fs.readFileSync(path.join(JS, target), 'utf8') : '';
+    if (src.indexOf(from) < 0) { check('mutation "' + name + '" applies to ' + target, false, 'the text it replaces is gone'); return; }
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'check-nav-'));
     fs.readdirSync(JS).forEach((f) => { if (/\.js$/.test(f)) fs.copyFileSync(path.join(JS, f), path.join(dir, f)); });
-    fs.writeFileSync(path.join(dir, 'codex32.js'), src.replace(from, to));
+    fs.writeFileSync(path.join(dir, target), src.replace(from, to));
     const r = spawnSync(process.execPath, [__filename, dir], { env: process.env, encoding: 'utf8' });
     fs.rmSync(dir, { recursive: true, force: true });
     check('mutation "' + name + '" turns check-nav red', r.status !== 0, (r.stdout || '').split('\n').filter((l) => /FAIL/.test(l)).slice(0, 2).join(' | '));

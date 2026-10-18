@@ -45,17 +45,17 @@
  *   8. the wiring: codex39.js declares with var and function only, names
  *      nobody and ships no key; index.html loads data-regions.js,
  *      data-service-ref.js and codex39.js after codex38.js, followed by the
- *      exact data-cellar-compass.js and codex40.js pair when present, then
- *      boot.js, each once with ?v=; sw.js lists the three after codex38.js and
- *      its CACHE is past codex-v95, keeps js/regions/ out of ASSETS and serves
- *      it from a cache of its own that a bump never reaps; codex39.js merges a
- *      reading file into the index as the build splits it; the places of
- *      every article and map-less country, drawn by the layer, set no bare
- *      level name beside a place (a depth reads asked from Premier Cru, never
- *      Premier Cru alone, which would pass for the place's own cru), every
- *      depth drawn once naming its level, and the key heads The places
- *      whenever a place carries one; the seven gates that list codex38.js
- *      list codex39.js too
+ *      exact data-cellar-compass.js, codex40.js and codex41.js triple when
+ *      present, then boot.js, each once with ?v=; sw.js lists the three after
+ *      codex38.js and its CACHE is past codex-v95, keeps js/regions/ out of
+ *      ASSETS and serves it from a cache of its own that a bump never reaps;
+ *      codex39.js merges a reading file into the index as the build splits
+ *      it; the places of every article and map-less country, drawn by the
+ *      layer, set no bare level name beside a place (a depth reads asked from
+ *      Premier Cru, never Premier Cru alone, which would pass for the place's
+ *      own cru), every depth drawn once naming its level, and the key heads
+ *      The places whenever a place carries one; the seven gates that list
+ *      codex38.js list codex39.js too
  *   9. the Village tasting: four wines, two white and two red, the written
  *      grid, 45 minutes. In a sandbox standing in for codex20, the Quizzes
  *      row reads so; the run deals four GRAPES profiles of the level, two
@@ -135,7 +135,7 @@ function layerProblems(s) {
   if (s.indexOf(String.fromCharCode(0x2013)) >= 0) out.push('an en dash (U+2013)');
   if (/&(mdash|ndash|#8212|#8211|#x2014|#x2013);/i.test(s)) out.push('a dash entity');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
-  if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (/practi[cs]e/i.test(s.replace(/(^|[^\w])Practise(?!\w)/g, '$1'))) out.push('the retired word for study'); /* the tab word Practise, that exact token, is the one use let through */
   if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);
@@ -749,10 +749,10 @@ if (fs.existsSync(INDEX)) {
   const sources = [...fs.readFileSync(INDEX, 'utf8').matchAll(/<script\b[^>]*\bsrc=["'](js\/[^"']+)["'][^>]*>\s*<\/script>/g)].map((m) => m[1]);
   const scripts = sources.map((src) => src.slice(3).split(/[?#]/)[0]);
   const at = scripts.indexOf('codex38.js');
-  const compass = ['data-cellar-compass.js', 'codex40.js'];
+  const compass = ['data-cellar-compass.js', 'codex40.js', 'codex41.js'];
   const hasCompass = compass.some((f) => scripts.includes(f) || fs.existsSync(path.join(JS, f)));
   const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js'].concat(hasCompass ? compass : [], ['boot.js']);
-  check('index.html keeps the regions sequence after codex38.js, the exact Cellar Compass pair when present, then boot.js, each once with ?v=',
+  check('index.html keeps the regions sequence after codex38.js, the exact Cellar Compass triple (its data, codex40 and codex41) when present, then boot.js, each once with ?v=',
     at >= 0 && JSON.stringify(scripts.slice(at, at + tail.length)) === JSON.stringify(tail)
       && tail.every((f) => scripts.filter((s) => s === f).length === 1 && /^js\/[^?]+\?v=\d+$/.test(sources[scripts.indexOf(f)])),
     scripts.slice(Math.max(0, at), at + tail.length).join(' '));

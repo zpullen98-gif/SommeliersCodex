@@ -49,7 +49,7 @@ const JS = process.argv.slice(2).find((a) => a.charAt(0) !== '-')
 /* The chain in index.html's order. The two optional files are the ones the
    two trees differ on: codex13 is the standalone's, data-firstpath the
    wing's. Everything else is required. */
-const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js']);
+const OPTIONAL = new Set(['codex13.js', 'data-firstpath.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js']);
 const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'codex3.js',
   'codex4.js', 'codex5.js', 'data-primers.js', 'codex6.js', 'data-intro.js',
   'data-primers-intro.js', 'data-grapes-plus.js', 'data-tasting.js', 'data-floor.js',
@@ -58,7 +58,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex10.js', 'codex11.js', 'codex12.js', 'data-firstpath.js', 'codex13.js', 'codex14.js',
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
-  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'boot.js'];
+  'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'boot.js'];
 
 /* The plan's words, verbatim, as the source of truth the layer is held to. */
 const NAMES = ['Régionale', 'Village', 'Premier Cru', 'Grand Cru'];
@@ -77,7 +77,7 @@ const TEST_LINE_VILLAGE = 'Forty theory questions, a four glass grid and six flo
 const TASTING_ROW = 'The Village tasting';
 const TASTING_LINE = 'four wines, two white and two red, the written grid, 45 minutes';
 /* the consolidation's bar: four tab words, then the quiet More */
-const NAV_WORDS = ['Home', 'Flashcards', 'Quizzes', 'Library', 'More'];
+const NAV_WORDS = ['Home', 'Brennan\u2019s', 'Practise', 'Library', 'More'];
 const STAT_RE = /^(Untouched|Met|[1-9]% met|[1-9][0-9]% met)$/;
 
 /* ---------------- the harness ---------------- */
@@ -241,7 +241,7 @@ function voiceProblems(s) {
   const out = [];
   if (s.indexOf('\u2014') >= 0) out.push('a long dash (U+2014)');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
-  if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (/practi[cs]e/i.test(s.replace(/(^|[^\w])Practise(?!\w)/g, '$1'))) out.push('the retired word for study'); /* the tab word Practise, that exact token, is the one use let through */
   if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);
@@ -508,16 +508,18 @@ G('applyLevel("certified", true);');
     check('the Today page names the level it deals from', squash(text(root)).indexOf('Today deals from Village.') >= 0);
   }
 });
-[['home', 'Home'], ['level', 'Home'], ['flashcards', 'Flashcards'], ['quizzes', 'Quizzes'], ['library', 'Library'], ['mine', 'More'], ['record', 'More'], ['quiz', 'Quizzes']].forEach(([view, word]) => {
+[['home', 'Home'], ['level', 'Home'], ['cellar', 'Brennan\u2019s'], ['brennans', 'Brennan\u2019s'], ['flashcards', 'Practise'], ['quizzes', 'Practise'], ['library', 'Library'], ['mine', 'More'], ['record', 'More'], ['quiz', 'Practise']].forEach(([view, word]) => {
   const html = G('S._v25area = null; S.view = ' + JSON.stringify(view) + '; v25NavHtml()');
-  rendered.push(html);
+  /* the sweep reads the words; the Practise tab's key (its id and data-nav, the word in lower case) is markup, never read */
+  const key = NAV_WORDS[2].toLowerCase();
+  rendered.push(html.split(' id="nav-' + key + '"').join('').split(' data-nav="' + key + '"').join(''));
   const root = tryParse('the nav on ' + view, html);
   if (!root) return;
   const nav = kids(root)[0];
   const btns = nav ? kids(nav) : [];
   /* the pill's figure and its hidden word are not part of the tab's word */
   const word0 = (b) => { const t = b.children.filter((c) => c.text !== undefined).map((c) => c.text).join(''); return t.trim(); };
-  check('on ' + view + ': nav.appnav reads Home, Flashcards, Quizzes, Library, then the quiet More, with aria-current on ' + word,
+  check('on ' + view + ': nav.appnav reads Home, Brennan\u2019s, Practise, Library, then the quiet More, with aria-current on ' + word,
     nav && nav.tag === 'nav' && hasClass(nav, 'appnav') && btns.map(word0).join('|') === NAV_WORDS.join('|')
     && hasClass(btns[4], 'v32more') && btns.slice(0, 4).every((b) => !hasClass(b, 'v32more'))
     && btns.filter((b) => b.attrs['aria-current'] === 'page').map(word0).join('|') === word,

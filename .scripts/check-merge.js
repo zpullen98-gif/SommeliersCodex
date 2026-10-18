@@ -109,7 +109,14 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
        statRecord as a word's do. data-regions.js rides in the chain before
        it as the shell loads it, and the layer must load with no OOT, no
        pathname and no SERVICE_REF. */
-    'data-regions.js', 'codex39.js']);
+    'data-regions.js', 'codex39.js',
+    /* codex40 owns one record, ST.cellarCompassSeen (when each study wine
+       was last met, per house), and merges it newer wins through mergeStats;
+       data-cellar-compass.js rides before it as the shell loads it. codex41
+       owns no store: it wraps the bar, the router, the level page, the
+       Flashcards root and codex28's list and card at load, and must load
+       with no OOT and no pathname. */
+    'data-cellar-compass.js', 'codex40.js', 'codex41.js']);
 
 /* A DOM thin enough for the layers to parse against and never render. */
 const store = Object.create(null);

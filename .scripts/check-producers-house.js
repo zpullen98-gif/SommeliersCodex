@@ -96,7 +96,7 @@ const FILES = ['data-questions.js', 'reference.js', 'core.js', 'codex2.js', 'cod
   'codex15.js', 'data-producers.js', 'menu-desk.js', 'wine-rows.js', 'codex16.js',
   'codex17.js', 'codex18.js', 'codex19.js', 'codex20.js', 'codex21.js', 'codex22.js',
   'codex23.js', 'codex24.js', 'codex25.js', 'codex26.js', 'codex27.js', 'codex28.js', 'codex29.js',
-  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'codex39.js', 'boot.js'];
+  'codex30.js', 'codex32.js', 'codex35.js', 'codex38.js', 'data-regions.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'boot.js'];
 
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
 function seeded(start) {
@@ -118,7 +118,7 @@ function voiceProblems(s) {
   if (s.indexOf(String.fromCharCode(0x2013)) >= 0) out.push('an en dash (U+2013)');
   if (/&(mdash|ndash|#8212|#8211|#x2014|#x2013);/i.test(s)) out.push('a dash entity');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
-  if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (/practi[cs]e/i.test(s.replace(/(^|[^\w])Practise(?!\w)/g, '$1'))) out.push('the retired word for study'); /* the tab word Practise, that exact token, is the one use let through */
   if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);
@@ -413,7 +413,10 @@ async function main() {
   check('Our Wine List offers Our producers among its buttons', /<div class="v28-actions">[\s\S]*?data-v28="v38all">Our producers<\/button><\/div>/.test(study));
   G('applyLevel("certified", true)');
   const level = G('v32LevelHtml(activeLevel)');
-  check('the level page\'s My restaurant offers The producers, a door that resolves', level.indexOf('data-go="houseproducers">The producers</button>') >= 0 && G('typeof V25_GO.houseproducers') === 'function');
+  /* since codex41 the level page's quiet row lives on the Brennan's page, the producers' door with it */
+  const doors = G('typeof v41DoorsHtml === "function" ? v41DoorsHtml(v28House()) : ""');
+  check('the Brennan\'s page offers Who makes our wines, a door that resolves; the level page leads there', doors.indexOf('data-go="houseproducers"><span class="v25row-name">Who makes our wines</span>') >= 0
+    && level.indexOf('data-go="brennans"') >= 0 && G('typeof V25_GO.houseproducers') === 'function' && G('typeof V25_GO.brennans') === 'function');
   check('the drawn block passes the voice sweep', (who + fich + jb).length > 800 && voiceProblems(who + fich + jb).length === 0, voiceProblems(who + fich + jb).join(', '));
   check('no allergen box and no checked attribute', !/checked|type="checkbox"/.test(who));
 
@@ -425,7 +428,7 @@ async function main() {
   const d0 = d(), e0 = D.H.idx;
   G('v28Act("v38all", ' + node({ 'data-v28': 'v38all' }) + ')');
   check('All producers pushes the view at #/v/houseproducers, one deeper', G('S.view') === 'houseproducers' && D.loc.hash === '#/v/houseproducers' && d() === d0 + 1 && D.H.idx === e0 + 1, D.loc.hash + ' ' + d());
-  check('the bar lights Home, the landmark says The producers', G('v25NavWord()') === 'home' && G('v25MainName()') === 'The producers');
+  check('the bar lights the house\'s word, the landmark says The producers', G('v25NavWord()') === 'brennans' && G('v25MainName()') === 'The producers');
   const list = G('v38ViewHtml()');
   const name = G('v28House().name');
   check('titled with the house\'s name, Who makes our wines under it', list.indexOf('<h2 tabindex="-1" class="v32-h">' + G('v28Esc(v28House().name)') + '</h2><div class="sub">Who makes our wines</div>') >= 0, name);
@@ -464,7 +467,7 @@ async function main() {
   cold.G('v32Back()');
   check('Back replaces up to the list of producers', cold.G('S.view') === 'houseproducers' && cold.G('S._v38.open') === null && cold.loc.hash === '#/v/houseproducers');
   cold.G('v32Back()');
-  check('then up to Our Wine List', cold.G('S.view') === 'cellar' && cold.loc.hash === '#/v/cellar');
+  check('then up to the Brennan\'s page, the list on it', cold.G('S.view') === 'brennans' && cold.loc.hash === '#/v/brennans');
   check('the history did not grow across the presses', cold.H.entries.length === cl);
 
   /* ================================================================ */

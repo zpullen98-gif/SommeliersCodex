@@ -88,7 +88,7 @@ function voiceProblems(s) {
   const out = [];
   if (s.indexOf(String.fromCharCode(0x2014)) >= 0) out.push('a long dash (U+2014)');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
-  if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (/practi[cs]e/i.test(s.replace(/(^|[^\w])Practise(?!\w)/g, '$1'))) out.push('the retired word for study'); /* the tab word Practise, that exact token, is the one use let through */
   if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);
@@ -317,7 +317,13 @@ async function main() {
     || champ.indexOf('Not in the guide: the bottle list is on the restaurant\'s own page') >= 0);
   const firstPicks = house.wines.find((w) => w.id === CHAMP).firstPickIds.value;
   check('its first picks link the Table on the suite\'s path (' + firstPicks.length + ')', firstPicks.length >= 3 && firstPicks.every((id) => champ.indexOf('href="/table/menu#' + id + '"') >= 0));
-  check('its grapes, its region and its chapter', /data-g="Pinot Noir"/.test(champ) && /data-g="Chardonnay"/.test(champ) && /<p class="v28-refname">Champagne<\/p>/.test(champ) && /data-k="Champagne">Read Champagne/.test(champ));
+  /* the house Champagne's grapes were cleared on 15 October 2026 until the bottle is matched to a
+     cuvée (WorldTable research/wine-label-review-2026-10-15.json), so its card links whatever grapes its
+     record carries, and the Lafitte, the dinner tasting's Champagne, carries the grape links */
+  const champGrapes = house.wines.find((w) => w.id === CHAMP).grapes || [];
+  const lafitte = G('v28CardHtml(' + JSON.stringify(wineId(/Charles Lafitte/)) + ')');
+  check('its grapes as its record carries them, its region and its chapter', champGrapes.every((g) => champ.indexOf('data-g="' + g + '"') >= 0) && /<p class="v28-refname">Champagne<\/p>/.test(champ) && /data-k="Champagne">Read Champagne/.test(champ));
+  check('the Lafitte card links Pinot Noir and Chardonnay', /data-g="Pinot Noir"/.test(lafitte) && /data-g="Chardonnay"/.test(lafitte));
   check('the Leflaive card links its producer record', /data-v28="producer" data-k="p-/.test(G('v28CardHtml(' + JSON.stringify(LEFLAIVE) + ')')));
   const stats = G('(function () { var o = { primer: 0, grape: 0, prod: [] }; v28Wines(v28House()).forEach(function (w) {'
     + ' if (v28Primer(w)) o.primer++; if (v28GrapeProfiles(w).length) o.grape++; var p = v28Producer(w); if (p) o.prod.push(p.p); }); return JSON.stringify(o); })()');

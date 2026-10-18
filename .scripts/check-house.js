@@ -107,7 +107,7 @@ function voiceProblems(s) {
   const out = [];
   if (s.indexOf(String.fromCharCode(0x2014)) >= 0) out.push('a long dash (U+2014)');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
-  if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (/practi[cs]e/i.test(s.replace(/(^|[^\w])Practise(?!\w)/g, '$1'))) out.push('the retired word for study'); /* the tab word Practise, that exact token, is the one use let through */
   if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);

@@ -84,7 +84,7 @@ function voiceProblems(s) {
   const out = [];
   if (s.indexOf(String.fromCharCode(0x2014)) >= 0) out.push('a long dash (U+2014)');
   if (/\x20-{2}\x20/.test(s)) out.push('a double hyphen');
-  if (/practi[cs]e/i.test(s)) out.push('the retired word for study');
+  if (/practi[cs]e/i.test(s.replace(/(^|[^\w])Practise(?!\w)/g, '$1'))) out.push('the retired word for study'); /* the tab word Practise, that exact token, is the one use let through */
   if (NUMERAL_RE.test(s)) out.push('a level numeral: ' + s.match(NUMERAL_RE)[0]);
   for (const ch of s) {
     const c = ch.codePointAt(0);
@@ -333,7 +333,7 @@ async function main() {
     const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
     check('sw.js lists codex30.js in ASSETS', sw.indexOf("'./js/codex30.js'") > 0);
     const scripts = [...index.matchAll(/<script src="js\/([^"?]+)\?v=\d+"><\/script>/g)].map((m) => m[1]);
-    const expected = ['codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'boot.js'];
+    const expected = ['codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'boot.js'];
     const at = scripts.indexOf('codex29.js');
     check('index.html preserves codex29, codex30, atlas data/cache/UI, the consolidation, then boot in exact order', at >= 0 &&
       JSON.stringify(scripts.slice(at, at + expected.length)) === JSON.stringify(expected) &&
