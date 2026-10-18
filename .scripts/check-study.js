@@ -266,8 +266,16 @@ async function main() {
   check('no allergen box, no tick, no checked attribute', !/checked|type="checkbox"/.test(study));
   check('the Berres short line drops the name it repeats', G('v28ShortLine(v28Find(v28House().wines, ' + JSON.stringify(BERRES) + '))') === 'Light, racy and off-dry, our glass for anything spicy.',
     G('v28ShortLine(v28Find(v28House().wines, ' + JSON.stringify(BERRES) + '))'));
+  /* the rule both ways on the house Champagne: a leading clause with a word its record does not hold
+     ("Our house Champagne") is kept, proved on a copy carrying that opening so it does not ride on the
+     edition's wording; and the line the 02:00 edition of 18 October gives it, which opens with the
+     wine's own name, loses that name on the row */
+  check('the house Champagne keeps a clause its record does not name', G('(function () { var w = JSON.parse(JSON.stringify(v28Find(v28House().wines, ' + JSON.stringify(CHAMP) + ')));'
+    + ' w.lines.value.s10 = "Our house Champagne, Brennan\u2019s Essential by Piper-Heidsieck: Extra Brut, very dry and crisp."; return v28ShortLine(w) === w.lines.value.s10; })()') === true);
   const champS10 = house.wines.find((w) => w.id === CHAMP).lines.value.s10;
-  check('the house Champagne keeps its whole ten second line', G('v28ShortLine(v28Find(v28House().wines, ' + JSON.stringify(CHAMP) + '))') === champS10);
+  const champRow = G('v28ShortLine(v28Find(v28House().wines, ' + JSON.stringify(CHAMP) + '))');
+  const champTail = champS10.slice(champS10.search(/[:,]/) + 1).trim();
+  check('and drops the name its own line opens with', /^Brennan/.test(champS10) ? champRow === champTail.charAt(0).toUpperCase() + champTail.slice(1) : champRow === champS10, champRow);
   const price = (id) => G('v28PriceLine(v28Find(v28House().wines, ' + JSON.stringify(id) + '), v28House())');
   check('the Berres price reads "$14 glass", never "by the glass"', price(BERRES) === '$14 glass');
   check('the Auslese reads "$80 half-bottle"', price(AUSLESE) === '$80 half-bottle');

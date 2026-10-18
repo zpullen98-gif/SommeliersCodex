@@ -28,7 +28,7 @@
    3. THE HOUSE'S PAGE (v41View): the house's name, the date the menus were
       read, the list's sentence, a row of jump chips (each scrolls to a
       heading and focuses it, with no address and no history; a chip whose
-      heading is absent is not drawn), then the list itself (codex28's study
+      heading is absent is hidden, the search's own included), then the list itself (codex28's study
       view, whole: the shift, the buttons, the sticky search, the chips), its
       rows grouped by how the wine is sold: By the glass (inside it the
       guide's style sections), On the tastings, Bubbles at Brennan's and
@@ -427,10 +427,14 @@ if (typeof v28RowsHtml === 'function') {
   };
 }
 
-/* On the house's page: a card, the editor and a section are screens of
-   their own, each pushed. */
-function v41OpenSection(sec) {
+/* On the house's page: a card and a section are screens of their own, each
+   pushed, the chip that opened a section remembered so Back focuses it
+   again. The editor is the list's own entry in its editing state, as
+   codex28 has it: Edit the list and its way out replace the entry and never
+   push one, so the page is never left twice in the history. */
+function v41OpenSection(sec, node) {
   var st = v28State();
+  if (node && typeof v32Remember === 'function') v32Remember(node);
   S._v28edit = false; st.open = null; st.q = ''; st.sec = sec; st.focus = 'restore'; st.y = 0;
   S.view = 'cellar';
   V32.pend = 'push';
@@ -443,10 +447,12 @@ if (typeof v28Act === 'function') {
     if (S.view === 'brennans') {
       if (act === 'sec') {
         var sec = node && typeof node.getAttribute === 'function' ? (node.getAttribute('data-s') || '') : '';
-        if (sec) { v41OpenSection(sec); return; }
+        if (sec) { v41OpenSection(sec, node); return; }
       }
       if (act === 'open' || act === 'edit' || act === 'editall') S.view = 'cellar';
+      if (act === 'editall') V32.pend = 'replace';
     }
+    if (act === 'editoff' && S.view === 'cellar' && V32.pend !== 'push') V32.pend = 'replace';
     return _v41Act.apply(this, arguments);
   };
 }
@@ -576,10 +582,17 @@ function v41View() {
     var list = null;
     try { list = cellarView(); } catch (e) { list = null; }
     if (slot && list) { v41TrimList(list); slot.appendChild(list); }
-    Array.prototype.forEach.call(box.querySelectorAll('[data-v41="jump"]'), function (b) {
-      var to = b.getAttribute('data-to');
-      if (!to || !box.querySelector('#' + to)) b.parentNode.removeChild(b);
-    });
+    /* a chip shows while its heading is on the page: the search repaints the
+       rows in place, so the chips follow every keystroke */
+    var jumps = function () {
+      Array.prototype.forEach.call(box.querySelectorAll('[data-v41="jump"]'), function (b) {
+        var to = b.getAttribute('data-to');
+        b.hidden = !to || !box.querySelector('#' + to);
+      });
+    };
+    jumps();
+    var q = box.querySelector('#v28-q');
+    if (q && typeof q.addEventListener === 'function') q.addEventListener('input', jumps);
     if (typeof box.addEventListener === 'function') {
       box.addEventListener('click', function (e) {
         var t = e && e.target;
@@ -781,6 +794,7 @@ if (typeof v32FlashcardsHtml === 'function') {
     '.wrap .v41-brennans .v41-lede{color:var(--parch)}',
     '.wrap .v41-jumps{margin:14px 0 6px}',
     '.wrap .v41-jumps .v28-chip{min-height:44px;padding:8px 12px;font-size:16px}',
+    '.wrap .v41-jumps .v28-chip[hidden]{display:none}',
     '.wrap .v41-list{margin-top:20px}',
     '.wrap .v41-list .v28-head{margin:0 0 8px;padding-bottom:0;border-bottom:1px solid var(--line)}',
     '.wrap .v41-list .v28-headrow .v32-h2{margin:0;padding-bottom:6px;border-bottom:0}',

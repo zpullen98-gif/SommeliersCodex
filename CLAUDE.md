@@ -41,7 +41,7 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v101`; its two teaching imports have query versions which
+Source worker is `codex-v102`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
 (codex42: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
@@ -52,7 +52,7 @@ codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the
 `js/data-cellar-compass.js`, `js/codex40.js` and
 `css/house-cellar-compass.css` add 12 guided studies, 60 unscored recall
 prompts and eight fall-dish pairing workshops. Today, My Restaurant and
-Flashcards lead into the collection. `#/v/cellarcompass` is its root;
+Flashcards (since codex41 Practise, with a door on the Brennan's page too) lead into the collection. `#/v/cellarcompass` is its root;
 `path/{id}`, `workshop/{id}`, `workshops` and `wines` are its subroutes.
 The wine directory searches the current house's developed wine cards,
 including menu wines and floor bottles. The full printed reference is
@@ -143,11 +143,12 @@ codex40 and before boot, does it by wrapping; it edits no earlier layer and no d
 - **The house's page** (`v41View`): `div.v25page.v32-root.v41-brennans`, the house's name as its h2 with the date the
   menus were read, the list's sentence, a jump row (`nav.v32chips.v41-jumps` of `button.v28-chip[data-v41="jump"]`, 44
   px, no address and no history: each scrolls to a `tabindex="-1"` heading clear of the sticky Back and the list's
-  search, then focuses it; a chip whose heading is absent is removed), codex28's study view whole in `#v41-list` (its
+  search, then focuses it; a chip whose heading is absent, the in-page search's included, is hidden), codex28's study view whole in `#v41-list` (its
   h2 retitled The list, `#v41-list-h`; the lede and the videos left to the page), then the doors: The Cellar Compass,
   Who makes our wines, Videos and The house (the full wine list, the Menu Desk, the house, the marks review). A section
-  chip on the page pushes the section as its own screen; open, edit and edit all switch to the `cellar` view first,
-  and `v28Open` does the same, so a card always carries its own address.
+  chip on the page pushes the section as its own screen (the chip remembered, so Back focuses it); open, edit and edit
+  all switch to the `cellar` view first, and `v28Open` does the same, so a card always carries its own address. Edit
+  the list and its way out replace the entry, as codex28 had them, so leaving the editor never stacks the page twice.
 - **The grouping** (`v41Kind`, from the pack's fields only; no section is renamed, so every chip, deck and the section
   quiz hold): By the glass (a printed price and not a menu bottle, 15, the guide's style sections inside as h3), On
   the tastings (no printed price and a tasting course, 6), Bubbles at Brennan’s and Birthday Bubbles (a menu bottle
@@ -481,7 +482,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v101`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v102`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
