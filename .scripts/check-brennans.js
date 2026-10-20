@@ -52,7 +52,7 @@
  *      Compass pushed from the page pops back to it, then Home; a cold
  *      Compass climbs to the level page; a cold Quizzes to Practise, Home
  *  10. the wiring: index.html loads codex41.js once, after codex40.js and
- *      right before boot.js, with ?v=; sw.js lists it after codex40.js and
+ *      before the learning layers and boot.js, with ?v=; sw.js lists it after codex40.js and
  *      its CACHE is past codex-v100; the chain rule: every list in a gate
  *      here that names codex40.js names codex41.js too
  *  11. voice: codex41 and everything it draws carry no long or en dash, no
@@ -657,8 +657,11 @@ async function main() {
     const sources = [...fs.readFileSync(index, 'utf8').matchAll(/<script\b[^>]*\bsrc=["'](js\/[^"']+)["'][^>]*>\s*<\/script>/g)].map((m) => m[1]);
     const scripts = sources.map((s) => s.slice(3).split(/[?#]/)[0]);
     const i40 = scripts.indexOf('codex40.js');
-    check('index.html loads codex41.js once, right after codex40.js and right before boot.js, with ?v=', i40 >= 0 && scripts[i40 + 1] === 'codex41.js' && scripts[i40 + 2] === 'boot.js'
-      && scripts.filter((s) => s === 'codex41.js').length === 1 && /^js\/codex41\.js\?v=\d+$/.test(sources[i40 + 1]), scripts.slice(Math.max(0, i40 - 1), i40 + 3).join(' '));
+    const tail = ['codex41.js', 'codex42.js', 'codex43.js', 'codex44.js', 'boot.js'];
+    check('index.html loads codex41.js after codex40.js, then the learning layers and boot.js, each once with ?v=', i40 >= 0
+      && JSON.stringify(scripts.slice(i40 + 1, i40 + 1 + tail.length)) === JSON.stringify(tail)
+      && tail.every(file => scripts.filter(s => s === file).length === 1 && /^js\/[^?]+\?v=\d+$/.test(sources[scripts.indexOf(file)])),
+      scripts.slice(Math.max(0, i40 - 1), i40 + 1 + tail.length).join(' '));
     const s = fs.readFileSync(sw, 'utf8');
     const n = Number((s.match(/const CACHE = '(?:oot-)?codex-v(\d+)';/) || [])[1]);
     check('sw.js lists ./js/codex41.js after ./js/codex40.js, and its CACHE is past codex-v100 (' + n + ')', s.indexOf("'./js/codex41.js'") > s.indexOf("'./js/codex40.js'") && s.indexOf("'./js/codex40.js'") > 0 && n > 100);
