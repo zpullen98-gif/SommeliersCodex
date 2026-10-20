@@ -41,11 +41,27 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v102`; its two teaching imports have query versions which
+Source worker is `codex-v103`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex42: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex45: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
-codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab).
+codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
+codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search).
+
+## Learning flow review (20 October 2026)
+
+The Learning Compass at `#/v/learning` connects six purposes to existing lessons,
+decks and rehearsals. Home and Today lead into it; Practise gains a filter and
+collection jump. Ordinary large decks offer ten, twenty or all cards, keeping
+exact retries, Due and Cellar Compass selections intact. Library and Today share
+one search across lessons, service references, places, grapes, all 147 chapters,
+producers and available house records. Queries and round sizes are session
+choices; existing marks and question identities retain their formats.
+
+The Culinary Companion now has eight lessons. Service and pairing wording is
+reviewed with primary sources; three service cards append after the original
+36. See `docs/learning-review-2026-10-20.md` and
+`docs/service-editorial-review-2026-10-20.md` for scope and browser gates.
 
 ## The Cellar Compass (15 October 2026)
 
@@ -88,7 +104,7 @@ The components overview defaults to wine-linked material; its full collection
 remains accessible. Grape aliases and regional-overview links are explicit.
 
 Layer 37 adds `data-culinary-studies.js`, `codex37.js` and
-`css/house-culinary-studies.css`: five guided lessons at `#/v/culinary`, two
+`css/house-culinary-studies.css`: eight guided lessons at `#/v/culinary`, two
 aroma-reference plates and two reused World Table sauce/component plates.
 Dish alternatives are unscored, distinguish printed menus from proposed
 pairings, and never promise live bottle availability. Exact wine, component,
@@ -482,7 +498,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v102`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v103`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
@@ -501,7 +517,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
   additive, and any new store must be registered in `ST_DEFAULTS` (codex8) or reset drops it.
 - **Migrating from the old single file**: progress lives per-origin. Use the app's
   Progress Transfer view (export from the old file, import here) — imports merge.
-- **Layer discipline**: new features go in a new layer, the next being `codex42.js`, that wraps
+- **Layer discipline**: new features go in a new layer, the next being `codex45.js`, that wraps
   `render`/`decorateHome` like its predecessors. Don't edit earlier layers except for bugs.
 - **Adding a level or bank**: append questions to the level's data file, then mint ids for the
   new entries (the generator skips any object that already has one) and confirm in console that

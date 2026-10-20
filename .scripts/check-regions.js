@@ -423,11 +423,14 @@ let srCards = 0, srQuestions = 0;
 if (!fs.existsSync(SR_FILE)) console.log('  note  no js/data-service-ref.js yet; its shape is not checked (the shell check below still asks for it)');
 else {
   const text = fs.readFileSync(SR_FILE, 'utf8');
-  const vp = CF.voiceProblems(text, 'data-service-ref.js');
-  check('data-service-ref.js: every string British, dash free, nothing at or above U+2190, never the retired word', vp.length === 0, few(vp));
+  // External URL slugs retain the publisher's spelling; visible source titles
+  // and all teaching text still follow the house voice. Validate URLs below.
+  const serviceProse = text.replace(/("url"\s*:\s*)"https?:\/\/[^"]*"/g, '$1""');
+  const vp = CF.voiceProblems(serviceProse, 'data-service-ref.js');
+  check('data-service-ref.js: every visible string British, dash free, nothing at or above U+2190, never the retired word', vp.length === 0, few(vp));
   let SR = null;
   try { SR = loadData(SR_FILE).SERVICE_REF; } catch (e) { check('data-service-ref.js parses as a classic script', false, e.message); }
-  if (SR) { const sp2 = proseOf(SR, 'SERVICE_REF'); check('data-service-ref.js: every prose string says per cent and towards', sp2.length === 0, few(sp2)); }
+  if (SR) { const sp2 = proseOf(JSON.parse(JSON.stringify(SR, (key, value) => key === 'url' ? '' : value)), 'SERVICE_REF'); check('data-service-ref.js: every prose string says per cent and towards', sp2.length === 0, few(sp2)); }
   const sp = [];
   if (!SR || typeof SR !== 'object') sp.push('declares SERVICE_REF');
   else {
@@ -451,7 +454,15 @@ else {
       });
       if (t.notes !== undefined && (!Array.isArray(t.notes) || t.notes.length > 6 || t.notes.some((x) => typeof x !== 'string'))) sp.push(w + '.notes: 0 to 6 lines');
       if (t.say !== undefined) (Array.isArray(t.say) ? t.say : []).forEach((p, i) => { if (!Array.isArray(p) || p.length !== 2 || !p[0] || !p[1] || !/[A-Z]{2,}/.test(p[1])) sp.push(w + '.say[' + i + ']: a pair, the respelling capping its stressed syllable'); });
-      if (t.sources !== undefined) (Array.isArray(t.sources) ? t.sources : []).forEach((s, i) => { if (!s || !s.title || !s.asOf) sp.push(w + '.sources[' + i + ']: title and asOf'); });
+      if (t.sources !== undefined) (Array.isArray(t.sources) ? t.sources : []).forEach((s, i) => {
+        if (!s || !s.title || !s.asOf) sp.push(w + '.sources[' + i + ']: title and asOf');
+        if (s && s.url !== undefined) {
+          try {
+            const u = new URL(s.url);
+            if (!/^https?:$/.test(u.protocol) || !u.hostname || u.username || u.password) throw new Error('unsafe URL');
+          } catch (_) { sp.push(w + '.sources[' + i + '].url: an absolute public http or https URL'); }
+        }
+      });
     });
     keys.forEach((k) => { if (k && !req[k]) sp.push('tables: ' + k + ' is no table of the schema'); });
     const cards = Array.isArray(SR.cards) ? SR.cards : [];
@@ -751,7 +762,8 @@ if (fs.existsSync(INDEX)) {
   const at = scripts.indexOf('codex38.js');
   const compass = ['data-cellar-compass.js', 'codex40.js', 'codex41.js'];
   const hasCompass = compass.some((f) => scripts.includes(f) || fs.existsSync(path.join(JS, f)));
-  const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js'].concat(hasCompass ? compass : [], ['boot.js']);
+  const learning = ['codex42.js', 'codex43.js', 'codex44.js'].filter(f => fs.existsSync(path.join(JS, f)));
+  const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js'].concat(hasCompass ? compass : [], learning, ['boot.js']);
   check('index.html keeps the regions sequence after codex38.js, the exact Cellar Compass triple (its data, codex40 and codex41) when present, then boot.js, each once with ?v=',
     at >= 0 && JSON.stringify(scripts.slice(at, at + tail.length)) === JSON.stringify(tail)
       && tail.every((f) => scripts.filter((s) => s === f).length === 1 && /^js\/[^?]+\?v=\d+$/.test(sources[scripts.indexOf(f)])),

@@ -18,8 +18,8 @@ const lessonIds = data.lessons.map(x => x.id);
 const sourceIds = data.sources.map(x => x.id);
 const wineIds = new Set(house.wines.map(x => x.id)), dishIds = new Set(house.dishes.map(x => x.id));
 const componentIds = new Set(house.components.map(x => x.id));
-check('five coherent lessons, without duplicate route identifiers', lessonIds.join('|') === 'describe|fruit|aromas|sauce|recommend');
-check('source records have unique IDs and primary-source HTTPS links', unique(sourceIds) && data.sources.every(x => words(x.title) && /^https:\/\/((www\.)?(wsetglobal\.com|brennansneworleans\.com)|resources\.escoffier\.edu)\//.test(x.url)));
+check('eight coherent lessons retain the five original route identifiers and add three service conversations', lessonIds.join('|') === 'describe|fruit|aromas|sauce|recommend|bottle-check|condition|guest-care');
+check('source records have unique IDs and primary-source HTTPS links', unique(sourceIds) && data.sources.every(x => words(x.title) && /^https:\/\/((www\.)?(wsetglobal\.com|brennansneworleans\.com|mastersommeliers\.org|awri\.com\.au|food\.gov\.uk|ttb\.gov)|resources\.escoffier\.edu)\//.test(x.url)));
 check('review date and house boundaries are present', /^\d{4}-\d{2}-\d{2}$/.test(data.reviewedOn) && data.boundaries.length >= 3 && data.boundaries.every(words));
 for (const lesson of data.lessons) {
   check(lesson.id + ': full reading and recall remain available without artwork', words(lesson.title) && words(lesson.intro) && lesson.body.length > 1 && lesson.body.every(words) && ['question', 'answer', 'practise'].every(k => words(lesson.practice[k])));
@@ -58,4 +58,8 @@ check('oyster method uncertainty remains visible beside the exercise', /confirm/
 const content = JSON.stringify(data);
 check('no unsupported Berres numeric sugar or alcohol figures added', !/11\.5|twenty grams|20\s*g\s*\/\s*l/i.test(content));
 check('fresh fruit and aroma plates distinguish perception from identity', /not ingredients/i.test(content) && /does not alone prove/i.test(content) && /separate choices/i.test(content));
-console.log('Culinary study data: ' + checks + ' checks passed; five lessons, four dish conversations, eight alternatives and exact house joins.');
+const condition = data.lessons.find(x => x.id === 'condition'), care = data.lessons.find(x => x.id === 'guest-care'), bottle = data.lessons.find(x => x.id === 'bottle-check');
+check('condition lesson does not guarantee recovery through air or unfiltered status', /never promise/i.test(condition.body.join(' ')) && /not a guarantee/i.test(condition.practice.answer));
+check('dietary lesson separates vegan status, allergy and naturally occurring sulphites', /separate/i.test(care.practice.answer) && /occur naturally/i.test(care.body.join(' ')) && /check, not that it is safe/i.test(care.practice.answer));
+check('bottle lesson requires approval for a vintage change', /approval before opening/i.test(bottle.practice.answer));
+console.log('Culinary study data: ' + checks + ' checks passed; eight lessons, four dish conversations, eight alternatives and exact house joins.');

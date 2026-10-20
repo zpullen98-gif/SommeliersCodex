@@ -37,7 +37,7 @@ function check(name,value){assert.ok(value,name);checks++;console.log('  ok  '+n
       await page.waitForFunction(()=>typeof v37Go==='function'&&V32.booted&&!V32.rendering);
       const read=()=>page.evaluate(()=>({view:S.view,id:S._v37lesson||'',hash:location.hash,depth:V32.d,pushes:testPushes}));return{context,page,read,errors};
     }
-    for(const early of [false,true])for(const id of ['', 'fruit']){
+    for(const early of [false,true])for(const id of ['', 'fruit', 'bottle-check', 'condition', 'guest-care']){
       const hash='#/v/culinary'+(id?'/'+id:''),d=await device(hash,early),state=await d.read(),label=(early?'intervening render':'normal startup')+' '+(id||'overview');
       check(label+': cold link reaches exact lesson',state.view==='culinary'&&state.id===id&&state.hash===hash);
       check(label+': startup replaces existing history entry',state.depth===0&&state.pushes===0);
@@ -46,11 +46,11 @@ function check(name,value){assert.ok(value,name);checks++;console.log('  ok  '+n
       await d.page.locator('#v32-back').click();check(label+': Back reaches Library without a push',(await d.read()).view==='library'&&(await d.read()).pushes===0);
       await d.context.close();
     }
-    const unknown=await device('#/v/culinary/missing',true);check('unknown lesson falls back to overview',(await unknown.read()).hash==='#/v/culinary'&&await unknown.page.locator('.v37-lesson-card').count()===5);await unknown.context.close();
+    const unknown=await device('#/v/culinary/missing',true);check('unknown lesson falls back to overview',(await unknown.read()).hash==='#/v/culinary'&&await unknown.page.locator('.v37-lesson-card').count()===8);await unknown.context.close();
     const moved=await device('#/v/culinary/fruit','navigate');check('later navigation is not overwritten by startup recovery',(await moved.read()).view==='library'&&(await moved.read()).depth===1);await moved.context.close();
     const d=await device('#/library');await d.page.getByRole('button',{name:'Explore the culinary companion',exact:true}).click();
     check('Library door focuses the destination instead of an unrelated lesson button',await d.page.evaluate(()=>document.activeElement.id==='view'));
-    check('overview leads with the five lessons and keeps detailed scope closed',await d.page.locator('.v37-lessons + .v37-boundaries:not([open])').count()===1&&await d.page.getByText('About these training examples',{exact:true}).isVisible());
+    check('overview leads with the eight lessons and keeps detailed scope closed',await d.page.locator('.v37-lessons + .v37-boundaries:not([open])').count()===1&&await d.page.locator('.v37-lesson-card').count()===8&&await d.page.getByText('About these training examples',{exact:true}).isVisible());
     await d.page.getByRole('button',{name:'Open Fresh, ripe and cooked fruit',exact:true}).click();const before=await d.read();
     check('opening a lesson focuses its destination',await d.page.evaluate(()=>document.activeElement.id==='view'));
     await d.page.reload();await d.page.waitForFunction(()=>typeof v37Go==='function'&&V32.booted);const after=await d.read();
@@ -59,7 +59,7 @@ function check(name,value){assert.ok(value,name);checks++;console.log('  ok  '+n
     for(const width of [320,390])for(const theme of ['day','night']){
       await d.page.setViewportSize({width,height:844});
       await d.page.evaluate(theme=>{document.documentElement.setAttribute('data-service',theme);},theme);
-      for(const id of ['describe','fruit','aromas','sauce','recommend']){
+      for(const id of ['describe','fruit','aromas','sauce','bottle-check','condition','guest-care','recommend']){
         await d.page.evaluate(id=>v37Go(id),id);
         check(width+'px '+theme+' '+id+': no horizontal overflow',await d.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
       }
@@ -73,6 +73,12 @@ function check(name,value){assert.ok(value,name);checks++;console.log('  ok  '+n
     const wine=await d.page.locator('.v37-choice-result button').textContent();
     await d.page.locator('.v37-choice-result button').click();
     check('wine study door opens its exact reference and focuses the destination',await d.page.evaluate(()=>S.view==='cellar'&&document.activeElement.id==='view')&&await d.page.locator('#v28-card').count()===1&&await d.page.locator('#v28-card').textContent().then(text=>text.includes(wine.slice('Study '.length))));
+    for(const key of ['faults','glassware','temperatures','decanting','sparkling','aperitifs','digestifs']){
+      await d.page.evaluate(key=>v39Open('serviceref',key,'push'),key);
+      const expected=await d.page.evaluate(key=>SERVICE_REF.tables.find(t=>t.key===key).sources.filter(s=>s.url).map(s=>s.url).sort(),key);
+      const actual=await d.page.locator('.v39-sources a').evaluateAll(links=>links.map(a=>a.getAttribute('href')).sort());
+      check(key+': reviewed sources are clickable with exact URLs',expected.length>0&&JSON.stringify(actual)===JSON.stringify(expected)&&await d.page.locator('.v39-sources a[target="_blank"][rel="noopener"]').count()===expected.length);
+    }
     check('navigation and phone views produce no page errors',d.errors.length===0);await d.context.close();
     console.log('Culinary routes: '+checks+' checks passed.');
   }finally{await browser.close();}

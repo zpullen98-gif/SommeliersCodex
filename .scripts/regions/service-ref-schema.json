@@ -1,5 +1,5 @@
 {
-  "$comment": "js/data-service-ref.js declares var SERVICE_REF, drawn by codex39's serviceref view as a chip strip over tables. Every string British, dash free, nothing at or above U+2190, never practice or practise. Facts only where sure; a row's cell may be empty.",
+  "$comment": "js/data-service-ref.js declares var SERVICE_REF, drawn by codex39's serviceref view as a chip strip over tables. Visible strings British, dash free, nothing at or above U+2190, never practice or practise. Optional source url values keep the publisher's spelling and must be safe absolute http or https URLs. Facts only where sure; a row's cell may be empty.",
   "SERVICE_REF": {
     "version": 1,
     "tables": [
@@ -11,7 +11,7 @@
         "rows": [["one string per column; the first cell is the row's name"]],
         "notes": ["0 to 6 lines under the table"],
         "say": [["word", "respelling, stressed syllable in capitals"]],
-        "sources": [{ "title": "reference", "asOf": "YYYY-MM-DD or YYYY" }]
+        "sources": [{ "title": "reference", "asOf": "YYYY-MM-DD or YYYY", "url": "optional absolute http or https source URL" }]
       }
     ],
     "cards": [{ "f": "a flashcard front", "b": "its back, at most 40 words" }],
