@@ -41,12 +41,22 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v103`; its two teaching imports have query versions which
+Source worker is `codex-v104`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex45: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex46: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
-codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search).
+codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
+codex45 the Regional Field Atlas).
+
+## Regional Field Atlas (20 October 2026)
+
+Layer 45 and `data-field-atlas.js` add all 115 regional field maps and 14
+supplementary country maps. The existing 17 overview sheets and their joins
+remain intact. See `maps/README.md` for geographic scope, attribution,
+generation and optional offline storage. `check-field-atlas.cjs` verifies
+coverage and immutable artwork hashes. Map pages reuse the canonical
+regional readings and study identities; new spoken prompts record no marks.
 
 ## Learning flow review (20 October 2026)
 
