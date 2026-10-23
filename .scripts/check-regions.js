@@ -626,6 +626,14 @@ if (fs.existsSync(L39)) {
       actx.self = actx; vm.createContext(actx);
       vm.runInContext(fs.readFileSync(REG_FILE, 'utf8'), actx, { filename: 'data-regions.js' });
       vm.runInContext(src, actx, { filename: 'codex39.js' });
+      /* Layer 46 extends the same loader for the technique family. Load its
+         actual implementation with inert navigation surfaces, not a second
+         implementation of the merge logic. */
+      if (TECHS.length) {
+        vm.runInContext('var V32_PARENT={}, V32_OWNER={}, V25_UNDER={}, V25_HUB={}, V25_GO={}, V25_VIEWS={}, V42_PATHS=[], V32={moved:true}; var document={addEventListener:function(){}};', actx);
+        ['v32Arg','v32Apply','v32ParentRoute','v25MainName','v32DeckDef','v32DeckHtml','v32CardFace','v45NotesHtml','v32LibraryView','v32TodayRows','v32FlashcardsHtml','v44Index'].forEach((name) => { actx[name] = function () {}; });
+        vm.runInContext(fs.readFileSync(path.join(JS, 'codex46.js'), 'utf8'), actx, { filename: 'codex46.js' });
+      }
       const lp2 = [];
       if (typeof actx.v39TakePart !== 'function' || typeof actx.v39PartReady !== 'function' || typeof actx.v39Record !== 'function') lp2.push('codex39.js declares v39TakePart, v39PartReady and v39Record');
       else {
@@ -638,13 +646,13 @@ if (fs.existsSync(L39)) {
           if (!actx.v39PartReady(p)) lp2.push(p + ': not ready after its file was merged');
           Object.keys(d.records).forEach((k) => {
             const rec = actx.v39Record(k);
-            const whole = R.regions.find((r) => r && r.slug === k) || R.countries[k];
+            const whole = R.regions.find((r) => r && r.slug === k) || R.countries[k] || TECHS.find((t) => t.slug === k);
             if (!rec || !whole) { lp2.push(p + ': ' + k + ' is no record'); return; }
             if (JSON.stringify(BUILD.sortKeys(rec)) !== JSON.stringify(BUILD.sortKeys(whole))) lp2.push(p + ': ' + k + ' merged is not the whole record');
           });
         });
       }
-      check('codex39.js merges every reading file into the index as the build split it (v39TakePart, ' + Object.keys(PARTS).length + ' files)', lp2.length === 0, few(lp2));
+      check('the regional loader and technique extension merge every reading file exactly as the build split it (v39TakePart, ' + Object.keys(PARTS).length + ' files)', lp2.length === 0, few(lp2));
     } catch (e) { check('codex39.js loads beside the index for the merge proof', false, e.message); }
   }
 }
@@ -870,7 +878,7 @@ if (fs.existsSync(INDEX)) {
   const at = scripts.indexOf('codex38.js');
   const compass = ['data-cellar-compass.js', 'codex40.js', 'codex41.js'];
   const hasCompass = compass.some((f) => scripts.includes(f) || fs.existsSync(path.join(JS, f)));
-  const learning = ['codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js'].filter(f => fs.existsSync(path.join(JS, f)));
+  const learning = ['codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'codex46.js'].filter(f => fs.existsSync(path.join(JS, f)));
   const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js'].concat(hasCompass ? compass : [], learning, ['boot.js']);
   check('index.html keeps the regions sequence after codex38.js, the exact Cellar Compass triple (its data, codex40 and codex41) when present, then boot.js, each once with ?v=',
     at >= 0 && JSON.stringify(scripts.slice(at, at + tail.length)) === JSON.stringify(tail)

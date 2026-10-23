@@ -195,7 +195,7 @@ async function checkHouseIntegration() {
   }
   const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   const scripts = [...index.matchAll(/<script src="js\/([^"?]+)(?:\?[^\"]*)?"><\/script>/g)].map((m) => m[1]);
-  const sequence = ['codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'boot.js'];
+  const sequence = ['codex27.js', 'codex28.js', 'codex29.js', 'codex30.js', 'data-atlas-v2.js', 'atlas-cache.js', 'codex31.js', 'codex32.js', 'data-teaching-images.js', 'teaching-cache.js', 'codex33.js', 'codex34.js', 'codex35.js', 'data-visual-studies.js', 'codex36.js', 'data-culinary-studies.js', 'codex37.js', 'codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js', 'data-cellar-compass.js', 'codex40.js', 'codex41.js', 'codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'codex46.js', 'boot.js'];
   const at = scripts.indexOf('codex27.js');
   check('the real shell loads House layers before atlas data/cache/UI and boot', at >= 0 &&
     JSON.stringify(scripts.slice(at, at + sequence.length)) === JSON.stringify(sequence) &&

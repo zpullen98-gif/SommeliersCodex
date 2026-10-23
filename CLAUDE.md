@@ -41,13 +41,45 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v105`; its two teaching imports have query versions which
+Source worker is `codex-v106`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex46: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex47: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
-codex45 the Regional Field Atlas).
+codex45 the Regional Field Atlas, codex46 The Wine Workshop).
+
+## The Wine Workshop (23 October 2026)
+
+Layer 46 makes the roster's complete 43-topic technique family available at
+`#/v/techniques`, with one reading at `#/v/technique/{slug}`. Authored fragments
+`techniques.1.json` through `techniques.3.json` build into the regional index
+and the optional `js/regions/techniques.json` reading. Never hand-edit those
+generated files. The separate 29-article and seven-country families are not
+activated by this release.
+
+The workshop's session depth starts at Village foundations. Premier Cru adds
+advanced material; Grand Cru includes both deeper levels. Foundations remain
+visible. This choice does not change `activeLevel` or course marks. Technique
+cards use `t:{slug}/{originalIndex}` in the existing per-device region-card
+store; map before filtering so depth never renumbers a card. Questions retain
+the builder's pinned `r-` IDs and remain outside scheduled course questions.
+Existing regional cards and question identities must retain their positions.
+
+Today, Library, Practise, unified search and the regional Learning Compass path
+lead to the collection. Explicit
+authored `techniques` lists provide atlas and reading links; generated `usedBy`
+provides the return doors. General process knowledge does not certify the
+method, composition or current availability of an individual Brennan's bottle.
+Reading uses codex39's lazy loader, retry and regional offline cache. The shell
+precaches cards and questions; full reading is fetched when opened. Styles are
+in `css/house-workshop.css`, with the existing day/night tokens.
+
+Run `node .scripts/check-workshop-ui.cjs` against an isolated source preview
+or set `CODEX_URL` for the public preview. Also run the fragment/build gates,
+ID pin check, regional and navigation gates and the public release suite.
+See the three dated technique source-review notes in `docs/` for evidence and
+limits. Any later work belongs in layer 47.
 
 ## Regional Field Atlas (20 October 2026)
 
