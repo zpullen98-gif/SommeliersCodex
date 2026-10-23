@@ -41,9 +41,9 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v107`; its two teaching imports have query versions which
+Source worker is `codex-v108`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex48: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex49: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
@@ -255,6 +255,34 @@ codex40 and before boot, does it by wrapping; it edits no earlier layer and no d
   Practise order, the level page, the Back chains, the wiring, the chain rule (every list in a gate that names
   `codex40.js` names `codex41.js`) and the voice. It takes the wing's `codex/js`, so the site's check-wings can run
   it, and skips a tree with no codex41. check-nav's sixth word mutation now breaks codex41's literal.
+
+## Focused Brennan's learning (23 October 2026)
+
+`js/house-learning-flow.js`, `js/codex48.js` and `css/house-learning-flow.css`
+organise the existing material into Wine list (`#/v/brennans`), Wine studies
+(`#/v/housestudies`), Service rehearsal (`#/v/houserehearsal`) and House reference
+(`#/v/housereference`). They load after layer 47 and before boot. The original
+layer 41 still supplies the wine order, cards, tab name and compatibility routes.
+
+The list opens in closed sale groups, with the large floor collection further
+grouped by section. Search and the labelled section selector reveal matching
+groups. Query, selected section and manual disclosure choices are held in memory
+per house, so opening a wine and returning preserves the reading position. Shift
+changes keep the query and reset the section. No wine, section or deck ID changes.
+
+The three hubs group the existing Compass, illustrated lessons, workshops,
+videos, daily selection, house drills, producers, printed reference and editing
+tools. Reference keeps the full house reading surface, including its notes,
+terms and scenarios. Hub disclosures are remembered in memory per house and view.
+Cold house-video Back goes to Wine studies; cold full-list and house management
+Back goes to House reference. The Compass keeps its original cold parent.
+All normal pushed Back paths use the existing router and exact opener.
+
+No new grades or storage schema are introduced. Reading leaves house records,
+`ST.q`, `ST.srs` and the Compass recency map untouched. Existing historical VM
+gates retain their layer-specific scope; `.scripts/check-house-flow.cjs` exercises
+the actual final script chain, with `CODEX_URL` for a served public preview,
+`OOT_SHARED` for the canonical pack, `CODEX_REPORT` and `CODEX_SHOTS` for evidence.
 
 ## Run it
 
