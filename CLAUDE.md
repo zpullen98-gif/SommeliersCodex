@@ -41,13 +41,27 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v106`; its two teaching imports have query versions which
+Source worker is `codex-v107`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex47: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex48: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
-codex45 the Regional Field Atlas, codex46 The Wine Workshop).
+codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab).
+
+## The Wine Atlas tab (23 October 2026)
+
+Layer 47 places Wine Atlas immediately after Practise in the main navigation.
+Its root remains `worldmap`, with country overviews, field maps and canonical
+country and regional readings owned by this tab. Their addresses, saved maps,
+card identities and study records remain unchanged. Cold Back from the
+reading index returns to the overview, then Home. Study rounds remain under
+Practise; the Wine Workshop remains in Library and has a direct atlas door.
+Keep layer 41's dynamic house name escaping and Practise due pill. On phones,
+Home and the house share the first row; Practise, Wine Atlas, Library and More
+share the second. `css/house-atlas-nav.css` holds this responsive layout.
+Run `node .scripts/check-atlas-nav.cjs` against the isolated source preview,
+or set `CODEX_URL` for the public preview, in addition to the release gates.
 
 ## The Wine Workshop (23 October 2026)
 
@@ -79,7 +93,7 @@ Run `node .scripts/check-workshop-ui.cjs` against an isolated source preview
 or set `CODEX_URL` for the public preview. Also run the fragment/build gates,
 ID pin check, regional and navigation gates and the public release suite.
 See the three dated technique source-review notes in `docs/` for evidence and
-limits. Any later work belongs in layer 47.
+limits. Any later work belongs in layer 48.
 
 ## Regional Field Atlas (20 October 2026)
 
