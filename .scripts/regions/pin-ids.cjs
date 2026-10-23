@@ -4,8 +4,9 @@
 
    Usage: node .scripts/regions/pin-ids.cjs [--check] [--fragments <dir>] [jsDir]
 
-   A question with no id gets mintId(owner, stem), the owner being the article's slug or the country's
-   key, exactly as build-regions.cjs mints it; an id already present is left alone. Every id written
+   A question with no id gets mintId(owner, stem), the owner being the article's slug, the country's
+   key or, for a technique of techniques.<n>.json, 'technique:' + its slug (22 October 2026, the atlas
+   in depth), exactly as build-regions.cjs mints it; an id already present is left alone. Every id written
    must already be in the shipped index js/data-regions.js, so nothing is pinned that the app has not
    filed progress under. A fragment is rewritten when it gains an id, as JSON with a one space indent
    and a final newline, the layout most fragments already had; the build reads parsed JSON, so the
@@ -35,6 +36,7 @@ vm.runInContext(fs.readFileSync(path.join(jsDir, 'data-regions.js'), 'utf8') + '
 const shipped = new Set();
 (ctx.REGIONS.regions || []).forEach((r) => (r.questions || []).forEach((q) => shipped.add(q.id)));
 Object.keys(ctx.REGIONS.countries || {}).forEach((k) => (ctx.REGIONS.countries[k].questions || []).forEach((q) => shipped.add(q.id)));
+(ctx.REGIONS.techniques || []).forEach((t) => (t.questions || []).forEach((q) => shipped.add(q.id)));
 
 const problems = [];
 let pinned = 0, already = 0, files = 0;
@@ -46,6 +48,7 @@ fs.readdirSync(dir).filter((f) => /\.json$/.test(f)).sort().forEach((f) => {
   (frag.regions || []).forEach((r) => owners.push([r.slug, r]));
   if (frag.country) owners.push([frag.country.key, frag.country]);
   (frag.countries || []).forEach((c) => owners.push([c.key, c]));
+  (frag.techniques || []).forEach((t) => owners.push([B.techniqueOwner(t.slug), t]));
   let gained = 0;
   owners.forEach(([owner, rec]) => (rec.questions || []).forEach((q, i) => {
     if (q.id !== undefined) { already++; return; }

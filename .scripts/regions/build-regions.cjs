@@ -4,7 +4,10 @@
    Usage: node .scripts/regions/build-regions.cjs [--check] [--partial] [--fragments <dir>] [--out <file>] [jsDir]
 
    A fragment is <sheet>.json (a whole sheet), <sheet>.<n>.json (a part of one, carrying
-   part: { indices, country }) or mapless.json / mapless.<n>.json (the map-less countries).
+   part: { indices, country }), mapless.json / mapless.<n>.json (the map-less countries),
+   <sheet>.more.json or <sheet>.more.<n>.json (the roster's articles off the map for a sheet, all
+   in one file or split between writers' files; the build merges them in roster order) or
+   techniques.<n>.json (the technique companion).
    Every fragment is held to check-fragment.cjs first. The parts of a sheet are grouped and
    their regions ordered by index; unless --partial, every sheet of ATLAS_V2 must be complete
    (every index once, exactly one country) and every map-less country present once.
@@ -39,12 +42,29 @@
    --check builds in memory and compares the index and every reading file with the disk, writing
    nothing (exit 1 when one differs, is missing or is stale). --partial builds what exists and
    prints what is missing, for testing. --fragments and --out point the build elsewhere, for a
-   fixture (the reading files go to regions/ beside --out). Exits 1 with every problem named. */
+   fixture (the reading files go to regions/ beside --out). Exits 1 with every problem named.
+
+   THE ATLAS IN DEPTH (22 October 2026; roster.cjs fixes every new name). Three more fragment kinds:
+   <sheet>.more.json holds the roster's articles off the map for that sheet (mapless: 1, no index),
+   which follow the map's articles of their sheet in roster order, so REGIONS.regions runs sheet by
+   sheet, the map's in map order and then the roster's; a sheet country's regionsOrder is the map's
+   slugs and then the roster's slugs the build holds. mapless.<n>.json may hold the roster's seven new
+   map-less countries. techniques.<n>.json holds the companion's technique records: their index
+   entries (INDEX_TECHNIQUE, with usedBy, the sorted slugs and keys of every article and country whose
+   techniques list names the technique) go to REGIONS.techniques in roster order, written only when
+   one exists so a build without them keeps its bytes, and the rest to js/regions/techniques.json. A
+   technique's question ids are minted, and its options dealt, over the owner 'technique:' + slug; a
+   technique slug never equals a region slug or a country key; its card ids are the app's, never
+   stored. Completeness is judged against the atlas and the roster: each roster family (the articles
+   off the map, the new countries, the techniques) is required whole once one of it is in the build;
+   --partial lists every roster name the build lacks, never as a failure. A mapless article keeps its
+   sheet, so the join's country of a target (JOIN.countryGroup of the sheet) needs no change. */
 'use strict';
 const fs = require('fs');
 const path = require('path');
 const CF = require(path.join(__dirname, 'check-fragment.cjs'));
 const JOIN = require(path.join(__dirname, 'regions-join.cjs'));
+const ROSTER = require(path.join(__dirname, 'roster.cjs'));
 
 const HEADER = '/* The regions in depth: built by .scripts/regions/build-regions.cjs from .scripts/regions/fragments, never edited by hand.\n'
   + '   This is the index: REGIONS.regions holds one record per atlas region, in sheet and map order, and REGIONS.countries\n'
@@ -52,13 +72,26 @@ const HEADER = '/* The regions in depth: built by .scripts/regions/build-regions
   + '   each article is in js/regions/<part>.json, fetched on first open (REGIONS.parts, the stamp of each). REGIONS.join\n'
   + '   holds the aliases, chapters, country-only keys, grapes and terroir rows the resolver in .scripts/regions/regions-join.cjs\n'
   + '   reads. Every string is British, dash free and names nobody living. */\n';
+/* A build that holds articles off the map or techniques says so in two more lines; one holding neither keeps HEADER
+   byte for byte. */
+const HEADER_DEEP = '   The articles off the map (mapless: 1, no index) follow their sheet\'s mapped articles in roster order, and\n'
+  + '   REGIONS.techniques holds the technique companion\'s index entries, its reading in js/regions/techniques.json.';
+function headerFor(deep) { return deep ? HEADER.replace(/ \*\/\n$/, '\n' + HEADER_DEEP + ' */\n') : HEADER; }
 
 /* The split: what the index keeps of a record; every other field goes to its reading file. */
-const INDEX_REGION = ['asked', 'cards', 'index', 'name', 'questions', 'sheet', 'slug', 'summary'];
+const INDEX_REGION = ['asked', 'cards', 'index', 'mapless', 'name', 'questions', 'sheet', 'slug', 'summary'];
 const INDEX_COUNTRY = ['cards', 'key', 'mapless', 'name', 'questions', 'regionsOrder', 'sheet', 'summary'];
+const INDEX_TECHNIQUE = ['aka', 'asked', 'cards', 'group', 'name', 'questions', 'slug', 'summary', 'usedBy'];
 const PARTS_DIR = 'regions';
-/* The reading file a record belongs to: an article's sheet, a sheet country's sheet, mapless for the rest. */
-function partName(rec, isCountry) { return isCountry ? (rec.mapless === 1 || !rec.sheet ? 'mapless' : rec.sheet) : rec.sheet; }
+const TECHNIQUE_PART = 'techniques';
+/* A technique's question ids and option deal are owned by this string, never by the bare slug. */
+function techniqueOwner(slug) { return 'technique:' + slug; }
+/* The reading file a record belongs to: an article's sheet, a sheet country's sheet, mapless for the rest;
+   'technique' in place of isCountry gives the techniques file. */
+function partName(rec, isCountry) {
+  if (isCountry === 'technique') return TECHNIQUE_PART;
+  return isCountry ? (rec.mapless === 1 || !rec.sheet ? 'mapless' : rec.sheet) : rec.sheet;
+}
 function splitRecord(rec, keep) {
   const index = {};
   const reading = {};
@@ -70,6 +103,20 @@ function splitRecord(rec, keep) {
   return { index, reading };
 }
 function stampOf(text) { return b36(fnv1a64(text), 10); }
+/* Every country's key (hyphens read as spaces) and name, alone, through the one resolver: the ones that do not come
+   back as that country, as "string -> what it found". R is REGIONS, or the same shape. */
+function bareCountryMisses(R) {
+  const index = JOIN.joinIndex(R);
+  const out = [];
+  Object.keys(R.countries || {}).sort().forEach((k) => {
+    const c = R.countries[k];
+    Array.from(new Set([k.replace(/-/g, ' '), c && c.name].filter(Boolean))).forEach((s) => {
+      const hit = JOIN.slugFor(s, index);
+      if (!hit || hit.key !== k) out.push('"' + s + '" -> ' + (hit ? (hit.slug || hit.key) + ' (' + hit.how + ')' : 'nothing') + ', not ' + k);
+    });
+  });
+  return out;
+}
 
 /* The id mint, the port of mint-ids.py lines 52 to 65. */
 function fnv1a64(s) {
@@ -170,9 +217,11 @@ function build(opts) {
   if (!fs.existsSync(dir)) notes.push('no fragments folder at ' + dir);
 
   const bySheet = {};
-  CF.SHEETS.forEach((s) => { bySheet[s] = { regions: new Array(atlas.sheets[s].regions.length).fill(null), from: new Array(atlas.sheets[s].regions.length).fill(null), country: null, countryFrom: null }; });
+  CF.SHEETS.forEach((s) => { bySheet[s] = { regions: new Array(atlas.sheets[s].regions.length).fill(null), from: new Array(atlas.sheets[s].regions.length).fill(null), country: null, countryFrom: null, more: {}, moreFrom: {} }; });
   const mapless = {};
   const maplessFrom = {};
+  const techniques = {};
+  const techniquesFrom = {};
   const aliasEntries = {};
   const terroir = {};
   const terroirFrom = {};
@@ -180,21 +229,41 @@ function build(opts) {
 
   for (const f of files) {
     const file = path.join(dir, f);
-    const m = /^([a-z-]+?)(?:\.(\d+))?\.json$/.exec(f);
-    if (!m) { problems.push(f + ': a fragment is <sheet>.json, <sheet>.<n>.json, mapless.json or mapless.<n>.json'); continue; }
+    const m = CF.FRAGMENT_NAME.exec(f);
+    if (!m) { problems.push(f + ': a fragment is <sheet>.json, <sheet>.<n>.json, <sheet>.more.json, <sheet>.more.<n>.json, mapless.json, mapless.<n>.json or techniques.<n>.json'); continue; }
     const base = m[1];
-    if (base !== 'mapless' && CF.SHEETS.indexOf(base) < 0) { problems.push(f + ': ' + base + ' is no atlas sheet and not mapless'); continue; }
+    const isMore = /^more/.test(m[2] || '');
+    if (base === 'mapless' || base === 'techniques') { if (isMore) { problems.push(f + ': only an atlas sheet has a .more fragment'); continue; } }
+    else if (CF.SHEETS.indexOf(base) < 0) { problems.push(f + ': ' + base + ' is no atlas sheet, not mapless and not techniques'); continue; }
     let frag;
     try { frag = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { problems.push(f + ': ' + e.message); continue; }
-    if (base === 'mapless') { if (frag.sheet !== undefined) { problems.push(f + ': a mapless fragment carries no sheet'); continue; } }
+    const kind = CF.fragmentKind(frag);
+    if (base === 'techniques') { if (kind !== 'techniques') { problems.push(f + ': a techniques fragment is { techniques: [ ... ] }'); continue; } }
+    else if (kind === 'techniques') { problems.push(f + ': technique records live in techniques.<n>.json'); continue; }
+    else if (base === 'mapless') { if (frag.sheet !== undefined) { problems.push(f + ': a mapless fragment carries no sheet'); continue; } }
     else if (frag.sheet !== base) { problems.push(f + ': sheet must be ' + base + ' (the file name), found ' + JSON.stringify(frag.sheet)); continue; }
+    else if (isMore !== (frag.more === true)) { problems.push(f + ': ' + (isMore ? 'a .more fragment says more: true' : 'only ' + base + '.more.json carries more')); continue; }
     const fp = CF.checkFragment(frag, file, codex);
     if (fp.length) {
       if (opts.partial) { notes.push(f + ': skipped, ' + fp.length + ' check-fragment problem(s): ' + fp.slice(0, 3).join('; ') + (fp.length > 3 ? '; ...' : '')); continue; }
       fp.forEach((p) => problems.push(f + ': ' + p));
       continue;
     }
-    if (frag.sheet !== undefined) {
+    if (kind === 'techniques') {
+      /* a technique is no join target: it brings no alias, row or chapter */
+      frag.techniques.forEach((t) => {
+        if (techniques[t.slug]) { problems.push(f + ': the technique ' + t.slug + ' is written twice, here and in ' + techniquesFrom[t.slug]); return; }
+        techniques[t.slug] = t; techniquesFrom[t.slug] = f;
+      });
+      continue;
+    }
+    if (kind === 'more') {
+      const S = bySheet[frag.sheet];
+      frag.regions.forEach((r) => {
+        if (S.more[r.slug]) { problems.push(f + ': ' + frag.sheet + ' article off the map ' + r.slug + ' is written twice, here and in ' + S.moreFrom[r.slug]); return; }
+        S.more[r.slug] = r; S.moreFrom[r.slug] = f;
+      });
+    } else if (frag.sheet !== undefined) {
       const S = bySheet[frag.sheet];
       const part = frag.part && typeof frag.part === 'object' ? frag.part : null;
       const indices = part ? part.indices : frag.regions.map((r, i) => i);
@@ -238,19 +307,36 @@ function build(opts) {
     if (gaps.length) missing.push(s + ': regions ' + gaps.join(', '));
     if (!S.country) missing.push(s + ': its country');
   });
-  CF.MAPLESS.forEach((k) => { if (!mapless[k]) missing.push('mapless: ' + k); });
+  CF.MAPLESS_FIRST.forEach((k) => { if (!mapless[k]) missing.push('mapless: ' + k); });
+  /* the roster: each family (the articles off the map, the new map-less countries, the techniques) is required whole
+     once one of it is in the build, so a build holding none of a family (the first edition's) stays whole; --partial
+     lists every roster name the build lacks */
+  const families = [
+    ['articles off the map', ROSTER.MORE_LIST.filter((a) => bySheet[a.sheet].more[a.slug]).length, ROSTER.MORE_LIST.filter((a) => !bySheet[a.sheet].more[a.slug]).map((a) => a.sheet + '.more: ' + a.slug + ' (' + a.name + ')')],
+    ['new map-less countries', ROSTER.NEW_MAPLESS.filter((c) => mapless[c.key]).length, ROSTER.NEW_MAPLESS.filter((c) => !mapless[c.key]).map((c) => 'mapless: ' + c.key + ' (' + c.name + ', new)')],
+    ['techniques', ROSTER.TECHNIQUES.filter((t) => techniques[t[0]]).length, ROSTER.TECHNIQUES.filter((t) => !techniques[t[0]]).map((t) => 'techniques: ' + t[0] + ' (' + t[1] + ')')]
+  ];
+  const waiting = [];
+  families.forEach((fam) => {
+    if (opts.partial || fam[1]) fam[2].forEach((g) => missing.push(g));
+    else if (fam[2].length) waiting.push(fam[2].length + ' ' + fam[0]);
+  });
+  if (waiting.length) notes.push('the roster\'s ' + waiting.join(', ') + ' are not in the build yet (each family is required whole once one of it is)');
   if (missing.length && !opts.partial) problems.push('the build is incomplete: ' + missing.length + ' missing (listed above); pass --partial to build what exists');
 
-  /* the records in order */
+  /* the records in order: per sheet the map's articles in map order, then the roster's articles off the map in roster order */
   const regions = [];
   const countries = {};
   CF.SHEETS.forEach((s) => {
     const S = bySheet[s];
     S.regions.forEach((r) => { if (r) regions.push(r); });
+    const moreSlugs = (ROSTER.MORE[s] || []).filter((a) => S.more[a.slug]).map((a) => a.slug);
+    moreSlugs.forEach((slug) => regions.push(S.more[slug]));
     if (S.country) {
       countries[s] = S.country;
       const slugs = S.regions.map((r) => (r ? r.slug : null));
-      if (slugs.every((x) => x) && S.country.regionsOrder.join() !== slugs.join()) problems.push(S.countryFrom + ': country.regionsOrder must be the sheet\'s slugs in map order: ' + slugs.join(', '));
+      const want = slugs.concat(moreSlugs);
+      if (slugs.every((x) => x) && S.country.regionsOrder.join() !== want.join()) problems.push(S.countryFrom + ': country.regionsOrder must be the sheet\'s slugs in map order' + (moreSlugs.length ? ', then the roster\'s articles off the map the build holds' : '') + ': ' + want.join(', '));
     }
   });
   CF.MAPLESS.forEach((k) => { if (mapless[k]) countries[k] = mapless[k]; });
@@ -262,6 +348,12 @@ function build(opts) {
     if (seenSlug[r.slug]) problems.push('slug ' + r.slug + ' is used by two articles (' + seenSlug[r.slug] + ' and ' + r.name + ')');
     seenSlug[r.slug] = r.name;
     if (keySet.has(r.slug)) problems.push('slug ' + r.slug + ' (' + r.name + ') equals a country key');
+  });
+  /* the techniques, in roster order; a technique slug is never a region slug or a country key */
+  const techList = ROSTER.TECHNIQUE_SLUGS.filter((t) => techniques[t]).map((t) => techniques[t]);
+  techList.forEach((t) => {
+    if (seenSlug[t.slug]) problems.push('technique ' + t.slug + ' (' + techniquesFrom[t.slug] + ') equals the slug of the article ' + seenSlug[t.slug]);
+    if (keySet.has(t.slug)) problems.push('technique ' + t.slug + ' (' + techniquesFrom[t.slug] + ') equals a country key');
   });
   const targets = new Set(Object.keys(seenSlug).concat(Object.keys(countries)));
 
@@ -290,6 +382,12 @@ function build(opts) {
     aliasFrom[k] = list.map((e) => e.from).join(' and ');
   });
   const aliasTargets = (k) => JOIN.targetList(aliases[k]);
+  /* georgia is a country of its own once it is in the build: no key of GEORGIA_MOVE may still send a string to
+     eastern-europe (the two are different countries, so the merge above would keep both targets silently) */
+  if (countries.georgia) ROSTER.GEORGIA_MOVE.forEach((k) => {
+    const old = (aliasEntries[k] || []).filter((e) => e.t === 'eastern-europe');
+    if (old.length) problems.push('aliases["' + k + '"]: ' + old.map((e) => e.from).join(' and ') + ' still sends it to eastern-europe, but it is georgia\'s (run apply-roster.cjs)');
+  });
 
   /* the join */
   const grapes = {};
@@ -302,11 +400,28 @@ function build(opts) {
   Object.keys(terroir).forEach((k) => { if (!targets.has(terroir[k])) problems.push('terroirRows["' + k + '"]: ' + terroir[k] + ' is no slug or country key of the build (' + terroirFrom[k] + ')'); });
   Object.keys(cats).forEach((k) => cats[k].forEach((s) => { if (!targets.has(s)) problems.push('cats["' + k + '"]: ' + s + ' is no slug or country key of the build'); }));
   const join = { aliases, cats, countryOnly: Array.from(countryOnly).sort(), grapes, terroir };
+  /* a bare country key or name must still resolve to its country: an article whose folded name or alias holds it as
+     whole words captures it by containment (South West France takes a bare "France"). A note here; check-regions
+     fails on it. */
+  bareCountryMisses({ regions: regions.map((r) => ({ slug: r.slug, name: r.name, sheet: r.sheet })), countries, join }).forEach((m) => notes.push('a bare country string goes astray: ' + m + ' (check-regions fails on it)'));
 
   /* the levels, closed upwards */
   let closed = 0;
   regions.forEach((r) => { const c = closeAsked(r.asked); if (c.join() !== (r.asked || []).join()) closed++; r.asked = c; });
   if (closed) notes.push(closed + ' article(s) asked at a level and not at every level above it; the build asks them upwards');
+  let closedT = 0;
+  techList.forEach((t) => { const c = closeAsked(t.asked); if (c.join() !== (t.asked || []).join()) closedT++; t.asked = c; });
+  if (closedT) notes.push(closedT + ' technique(s) asked at a level and not at every level above it; the build asks them upwards');
+
+  /* usedBy, before the split: the sorted slugs and keys of every article and country whose techniques list names it */
+  if (techList.length) {
+    const used = {};
+    techList.forEach((t) => { used[t.slug] = []; });
+    const take = (list, owner) => (Array.isArray(list) ? list : []).forEach((t) => { if (used[t] && used[t].indexOf(owner) < 0) used[t].push(owner); });
+    regions.forEach((r) => take(r.techniques, r.slug));
+    Object.keys(countries).forEach((k) => take(countries[k].techniques, k));
+    techList.forEach((t) => { t.usedBy = used[t.slug].sort(); });
+  }
 
   /* the ids */
   const ids = {};
@@ -320,6 +435,9 @@ function build(opts) {
   });
   regions.forEach((r) => { bakeOptionOrder(r.slug, r.questions); mint(r.slug, r.questions, r.slug); cards += (r.cards || []).length; });
   Object.keys(countries).forEach((k) => { bakeOptionOrder(k, countries[k].questions); mint(k, countries[k].questions, k); cards += (countries[k].cards || []).length; });
+  /* a technique's ids and deal are owned by 'technique:' + slug, one id space with the articles and countries; its
+     card ids are the app's (t:<slug>/<n>), never stored */
+  techList.forEach((t) => { const o = techniqueOwner(t.slug); bakeOptionOrder(o, t.questions); mint(o, t.questions, o); cards += (t.cards || []).length; });
 
   const sheets = CF.SHEETS.filter((s) => bySheet[s].country || bySheet[s].regions.some((r) => r));
   /* the split: the reading files first, since the index carries their stamps */
@@ -337,6 +455,11 @@ function build(opts) {
     (reading[p] = reading[p] || {})[k] = sp.reading;
     indexCountries[k] = sp.index;
   });
+  const indexTechniques = techList.map((t) => {
+    const sp = splitRecord(t, INDEX_TECHNIQUE);
+    (reading[TECHNIQUE_PART] = reading[TECHNIQUE_PART] || {})[t.slug] = sp.reading;
+    return sp.index;
+  });
   const parts = {};
   const stamps = {};
   Object.keys(reading).sort().forEach((p) => {
@@ -344,19 +467,22 @@ function build(opts) {
     parts[p] = '{\n"part": ' + JSON.stringify(p) + ',\n"records": ' + block('{', Object.keys(recs).sort().map((k) => JSON.stringify(k) + ': ' + json(recs[k])), '}') + ',\n"version": 2\n}\n';
     stamps[p] = stampOf(parts[p]);
   });
-  const text = HEADER + 'var REGIONS = {\n'
+  const offMap = regions.filter((r) => r.mapless === 1).length;
+  /* REGIONS.techniques only when a technique exists, so a build without them is the first edition's bytes */
+  const text = headerFor(offMap > 0 || indexTechniques.length > 0) + 'var REGIONS = {\n'
     + '"countries": ' + block('{', Object.keys(indexCountries).sort().map((k) => JSON.stringify(k) + ': ' + json(indexCountries[k])), '}') + ',\n'
     + '"join": ' + block('{', Object.keys(join).sort().map((k) => JSON.stringify(k) + ': ' + json(join[k])), '}') + ',\n'
     + '"parts": ' + json(stamps) + ',\n'
     + '"regions": ' + block('[', indexRegions.map((r) => json(r)), ']') + ',\n'
     + '"sheets": ' + json(sheets) + ',\n'
+    + (indexTechniques.length ? '"techniques": ' + block('[', indexTechniques.map((t) => json(t)), ']') + ',\n' : '')
     + '"version": 2\n'
     + '};\n';
   const partBytes = Object.keys(parts).reduce((n, p) => n + Buffer.byteLength(parts[p], 'utf8'), 0);
-  return { problems, notes, missing, text, parts, stamps, files, stats: { regions: regions.length, countries: Object.keys(countries).length, questions, minted, kept, cards, aliases: Object.keys(aliases).length, bytes: Buffer.byteLength(text, 'utf8'), parts: Object.keys(parts).length, partBytes } };
+  return { problems, notes, missing, text, parts, stamps, files, stats: { regions: regions.length, offMap, countries: Object.keys(countries).length, techniques: techList.length, questions, minted, kept, cards, aliases: Object.keys(aliases).length, bytes: Buffer.byteLength(text, 'utf8'), parts: Object.keys(parts).length, partBytes } };
 }
 
-module.exports = { build, fnv1a64, b36, mintId, sortKeys, HEADER, ID_RE, detShuffle, bakeOptionOrder, INDEX_REGION, INDEX_COUNTRY, PARTS_DIR, partName, stampOf, mintServiceId, SERVICE_ID_RE, closeAsked };
+module.exports = { build, fnv1a64, b36, mintId, sortKeys, HEADER, HEADER_DEEP, headerFor, ID_RE, detShuffle, bakeOptionOrder, INDEX_REGION, INDEX_COUNTRY, INDEX_TECHNIQUE, PARTS_DIR, TECHNIQUE_PART, techniqueOwner, partName, stampOf, mintServiceId, SERVICE_ID_RE, closeAsked, bareCountryMisses };
 
 if (require.main === module) {
   let opts;
@@ -365,7 +491,7 @@ if (require.main === module) {
     console.log('usage: node .scripts/regions/build-regions.cjs [--check] [--partial] [--fragments <dir>] [--out <file>] [jsDir]');
     console.log('  --check      build in memory and compare with the file on disk, writing nothing');
     console.log('  --partial    build what exists and print what is missing');
-    console.log('  --fragments  the folder of fragments (default .scripts/regions/fragments)');
+    console.log('  --fragments  the folder of fragments (default .scripts/regions/fragments): <sheet>[.<n>|.more[.<n>]].json, mapless[.<n>].json, techniques[.<n>].json');
     console.log('  --out        the index to write (default <jsDir>/data-regions.js); the reading files go to regions/ beside it');
     process.exit(0);
   }
@@ -385,7 +511,7 @@ if (require.main === module) {
     process.exit(1);
   }
   const s = r.stats;
-  const summary = r.files.length + ' fragment(s), ' + s.regions + ' regions, ' + s.countries + ' countries, ' + s.questions + ' questions (' + s.minted + ' minted, ' + s.kept + ' kept), ' + s.cards + ' cards, ' + s.aliases + ' aliases, index ' + s.bytes + ' bytes, ' + s.parts + ' reading files ' + s.partBytes + ' bytes';
+  const summary = r.files.length + ' fragment(s), ' + s.regions + ' regions' + (s.offMap ? ' (' + s.offMap + ' off the map)' : '') + ', ' + s.countries + ' countries, ' + (s.techniques ? s.techniques + ' techniques, ' : '') + s.questions + ' questions (' + s.minted + ' minted, ' + s.kept + ' kept), ' + s.cards + ' cards, ' + s.aliases + ' aliases, index ' + s.bytes + ' bytes, ' + s.parts + ' reading files ' + s.partBytes + ' bytes';
   const partsDir = path.join(path.dirname(opts.out), PARTS_DIR);
   const want = Object.keys(r.parts).map((p) => p + '.json');
   const stale = fs.existsSync(partsDir) ? fs.readdirSync(partsDir).filter((f) => /\.json$/.test(f) && want.indexOf(f) < 0) : [];
