@@ -32,7 +32,8 @@
         a key with an article in that country as whole words (the longest
         such key wins), or that is itself held in one as whole words (the
         shortest such key wins; a hit of the first kind beats one of the
-        second);
+        second). An exact country part is skipped here, so France alone
+        cannot become South West France; other parts still find their region;
      5. else the parts left to right on the country table, exactly first,
         then by the same containment, in the string's country;
      6. else nothing.
@@ -168,6 +169,7 @@ function slugFor(region, index) {
     if (hit) return { slug: hit, how: 'exact' };
   }
   for (i = 0; i < parts.length; i++) {
+    if (own(index.country, parts[i]) && pick(index.country[parts[i]], where, index)) continue;
     hit = byContainment(parts[i], index.article, index.articleKeys, where, index);
     if (hit) return { slug: hit, how: 'containment' };
   }

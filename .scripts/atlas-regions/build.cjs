@@ -6,7 +6,9 @@ const root=path.resolve(__dirname,'../..');
 const D=require('./drawing.cjs'), windows=require('./windows.cjs');
 const catalog=require('../atlas-v3/catalog.cjs'), countries=require('./countries.cjs').countries;
 const ctx={};vm.runInNewContext(fs.readFileSync(path.join(root,'js/data-regions.js'),'utf8'),ctx);
-const regions=ctx.REGIONS.regions, featured={};
+// Roster articles without a numbered overview-map location remain reading only.
+// They need reviewed map windows and geography before joining this collection.
+const regions=ctx.REGIONS.regions.filter(r=>r.mapless!==1), featured={};
 const lessonPlaces=fs.existsSync(path.join(__dirname,'lesson-places.json'))?require('./lesson-places.json'):{};
 for(const id of ['champagne','tuscany'])if(fs.existsSync(path.join(__dirname,id+'.cjs')))featured[id]=require('./'+id+'.cjs');
 const {esc,num,extent,intersects,pointInside,frame,compass,baseMap,wrap,markerLayout,geography}=D;
@@ -15,7 +17,7 @@ const scope='Orientation map with representative study locations and selected ri
 function cleanPlaces(places){return places.map(a=>({name:a.name||a.label,lon:a.lon,lat:a.lat,kind:a.kind||'study location',...(a.note?{note:a.note}:{}),...(a.sourceUrl?{sourceUrl:a.sourceUrl}:{})}));}
 function notesFor(c){const n={};for(const key of ['terroir','grapes','growing','cellar','service','compare'])if(c[key])n[key]=Array.isArray(c[key])?c[key]:[c[key]];if(c.overview)n.overview=c.overview;return n;}
 const maps=regions.map(r=>{
- const sheet=catalog.sheets[r.sheet], entry=sheet.regions[r.index], f=featured[r.slug];
+ const sheet=catalog.sheets[r.sheet], entry=sheet&&Number.isInteger(r.index)&&r.index>=0?sheet.regions[r.index]:null, f=featured[r.slug];
  if(!entry||entry.name!==r.name)throw Error('Join mismatch '+r.slug+' / '+(entry&&entry.name));
  if(!windows[r.slug])throw Error('Missing window '+r.slug);
  const full=JSON.parse(fs.readFileSync(path.join(root,'js/regions',r.sheet+'.json'),'utf8')).records[r.slug];
@@ -24,7 +26,7 @@ const maps=regions.map(r=>{
   places:cleanPlaces(f?f.places:entry.anchors),sources:[...(f?f.sources:full.sources.filter(s=>s.url)),...sheet.sources,...sourcesGeo],
   ...(f?{notes:notesFor(f)}:{}),grapes:r.grapes.map(g=>g.name),_extras:sheet.extraAnchors};
 });
-for(const c of countries)maps.push({...c,type:'country',bounds:[...c.bounds],places:cleanPlaces(c.anchors),notes:notesFor(c),sources:[...c.sources,...sourcesGeo],_extras:[]});
+for(const c of countries)maps.push({...c,countryKey:c.id==='country-georgia'&&ctx.REGIONS.countries.georgia?'georgia':c.countryKey,type:'country',bounds:[...c.bounds],places:cleanPlaces(c.anchors),notes:notesFor(c),sources:[...c.sources,...sourcesGeo],_extras:[]});
 if(regions.length!==115||countries.length!==14||Object.keys(windows).length!==115)throw Error('Coverage changed; review expected counts');
 function distance(a,b){return Math.hypot((a.lon-b.lon)*Math.cos(a.lat*Math.PI/180),a.lat-b.lat);}
 function waterPoints(g){

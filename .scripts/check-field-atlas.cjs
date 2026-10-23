@@ -3,16 +3,21 @@ const fs=require('fs'),path=require('path'),vm=require('vm'),crypto=require('cry
 const root=path.resolve(process.argv[2]||path.join(__dirname,'..')),ctx={};
 for(const name of ['data-regions.js','data-field-atlas.js'])vm.runInNewContext(fs.readFileSync(path.join(root,'js',name),'utf8'),ctx);
 const maps=ctx.FIELD_ATLAS.maps, regions=ctx.REGIONS.regions, countries=ctx.REGIONS.countries;
+const mappedRegions=regions.filter(r=>r.mapless!==1);
+assert.equal(mappedRegions.length,115,'Numbered atlas coverage changed; review the map collection');
+for(const r of mappedRegions)assert(Number.isInteger(r.index)&&r.index>=0,'Missing numbered atlas location '+r.slug);
 assert.equal(maps.length,129);assert.equal(new Set(maps.map(m=>m.id)).size,129);
 assert.equal(maps.filter(m=>m.type==='region').length,115);
 assert.equal(maps.filter(m=>m.type==='country').length,14);
+assert.deepEqual(maps.filter(m=>m.type==='region').map(m=>m.id).sort(),mappedRegions.map(r=>r.slug).sort(),'Every numbered region has exactly one map; reading-only roster articles stay unillustrated');
 const wanted=['canada','england','lebanon','mexico','switzerland','uruguay','eastern-europe'];
 for(const key of wanted)assert(maps.some(m=>m.type==='country'&&m.countryKey===key),'Missing country '+key);
+assert.equal(maps.find(m=>m.id==='country-georgia').countryKey,countries.georgia?'georgia':'eastern-europe','Georgia map follows its available country reading');
 let places=0,bytes=0;
 for(const m of maps){
  assert(countries[m.countryKey],'Unknown group '+m.id);
  assert(/^maps\/regions-v1\/[a-z0-9-]+\.svg$/.test(m.file));
- if(m.type==='region')assert(regions.some(r=>r.slug===m.id&&r.sheet===m.sheet),'Bad region join '+m.id);
+ if(m.type==='region')assert(mappedRegions.some(r=>r.slug===m.id&&r.sheet===m.sheet),'Bad region join '+m.id);
  assert(m.places.length&&m.places.length<=12,'Place budget '+m.id);
  assert(m.sources.some(s=>/^https:/.test(s.url)),'No sources '+m.id);
  for(const p of m.places){
@@ -34,4 +39,4 @@ assert(!sw.slice(sw.indexOf('const ASSETS'),sw.indexOf("self.addEventListener('i
 for(const f of ['data-field-atlas.js','codex45.js'])assert.equal((index.match(new RegExp('src="js/'+f.replace('.','\\.')+'\\?v=','g'))||[]).length,1);
 assert(index.indexOf('js/data-field-atlas.js')<index.indexOf('js/codex45.js'));
 assert(index.indexOf('js/codex45.js')<index.indexOf('js/boot.js'));
-console.log(`PASS: ${maps.length} maps, all ${regions.length} regional joins, 14 country maps, ${places} locations, ${(bytes/1048576).toFixed(1)} MiB, exact hashes, bounds, safe SVG and shell/cache integration.`);
+console.log(`PASS: ${maps.length} maps, all ${mappedRegions.length} mapped regional joins (${regions.length-mappedRegions.length} reading-only articles), 14 country maps, ${places} locations, ${(bytes/1048576).toFixed(1)} MiB, exact hashes, bounds, safe SVG and shell/cache integration.`);

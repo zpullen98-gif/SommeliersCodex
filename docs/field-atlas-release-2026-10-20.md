@@ -62,3 +62,22 @@ and an unrelated Ledger cache were preserved.
 The identity comparison retained all 1,068 regional question IDs and
 1,169 flashcard positions. Source navigation, Brennan's integration and
 regional content gates passed, alongside the new field-atlas gate.
+
+## Integration with the 23 October foundations
+
+The source now includes Claude's deeper-atlas authoring pipeline and all
+1,068 pinned question IDs. The canonical content from this reviewed map
+edition is preserved exactly; rebuilding the readings changes no bytes.
+The planned 29 extra articles, seven country records and 43 techniques
+remain unactivated. Synthetic video fixtures are test inputs only.
+
+Exact country names cannot be captured by a future region with a longer
+name, such as South West France or Southern Oregon. The authoring and
+runtime resolvers share this rule and retain specific regional matches.
+Reading-only articles do not show a numbered-map action. Map generation
+skips them until their geography is authored; the existing Georgia map
+will follow a standalone Georgia reading when that record is added.
+
+The expanded curriculum still needs authored content, depth-aware reading
+and study controls, and explicit coverage for new places before activation.
+This release publishes the complete existing 115-region map collection.

@@ -1,5 +1,12 @@
 # The regions in depth: the brief for a writer
 
+**The atlas in depth (22 October 2026).** Read `BRIEF-DEEP.md` beside this file as well. It adds the
+deeper reading (the `deeper` list, depth on cards and questions, the raised caps), the articles off the
+map (`<sheet>.more.json`), the seven new map-less countries, the techniques and their companion
+(`techniques.<n>.json`) and the video rules, and every new name and slug is fixed in `roster.cjs`. Where
+the two briefs differ on a cap, a count or a file, `BRIEF-DEEP.md` and `schema.json` rule; every rule
+below that they do not change still binds you.
+
 You are writing the Sommelier's Codex's in-depth articles for one atlas sheet (or the map-less countries),
 as a master sommelier teaching a new server at Brennan's, New Orleans, who is studying for the Court of
 Master Sommeliers' Certified exam. The articles are study material, the same as the question banks: they
