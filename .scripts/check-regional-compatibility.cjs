@@ -19,7 +19,6 @@ context.self = context;
 vm.createContext(context);
 vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/data-regions.js'), 'utf8'), context);
 const data = context.REGIONS;
-const original = JSON.stringify(data);
 
 for (const item of ROSTER.MORE_LIST) {
   if (!data.regions.some((region) => region.slug === item.slug)) {
@@ -97,13 +96,23 @@ for (const invalid of [undefined, null, NaN, Infinity, -1, 0.5, '0']) {
   checks++;
 }
 for (const item of ROSTER.MORE_LIST) {
-  const record = data.regions.find((region) => region.slug === item.slug);
+  const records = data.regions.filter((region) => region.slug === item.slug);
+  assert.equal(records.length, 1, item.name + ' has exactly one roster article');
+  const record = records[0];
+  assert.deepEqual({ name: record.name, sheet: record.sheet, mapless: record.mapless },
+    { name: item.name, sheet: item.sheet, mapless: 1 }, item.name + ' retains its expected reading-only identity');
   const html = context.v39ArticleHtml(record, '<p>Opening the reading</p>');
   assert.equal(/id="v39-act-map"/.test(html), false, item.name + ' has no numbered-map door');
   assert.ok(!/data-index="NaN"/.test(html), item.name + ' never emits a NaN map target');
+  checks += 4;
+}
+for (const country of ROSTER.NEW_MAPLESS) {
+  const record = data.countries[country.key];
+  assert.ok(record, country.name + ' has a roster country record');
+  assert.deepEqual({ key: record.key, name: record.name, mapless: record.mapless },
+    { key: country.key, name: country.name, mapless: 1 }, country.name + ' retains its expected reading-only identity');
   checks += 2;
 }
 assert.equal(JSON.stringify(data), beforeRendering, 'rendering and resolving leave all records and IDs unchanged');
-assert.notEqual(beforeRendering, original, 'the proposed roster was exercised in memory');
-checks += 6;
+checks += 5;
 console.log('Regional compatibility: ' + checks + ' assertions passed; country precedence, specific regions, resolver parity and mapless doors.');
