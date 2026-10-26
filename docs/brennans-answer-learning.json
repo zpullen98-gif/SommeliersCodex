@@ -1,0 +1,59 @@
+{
+  "reviewed": "2026-10-26",
+  "scope": "Brennan's answer learning in the Sommelier's Codex",
+  "layer": 49,
+  "sourceWorker": "codex-v109",
+  "purpose": "Open a full, relevant reading after an answer without losing the round, changing a grade or revealing the answer beforehand.",
+  "sourcePolicy": [
+    "Use the current saved house collection and person-kept marks. Escape imported text at rendering.",
+    "Read the latest kept Tell me about it note, falling back to the kept profile or entered description.",
+    "No new bottle composition, production, vintage, price or availability claims are invented.",
+    "The existing dealer and its house question IDs, option order and correct-answer index are retained. Producer question counts vary with the dealer's random sample.",
+    "Saved food and service descriptions are recognition exercises. Saved first pairings are recommendations rather than universal sole correct choices.",
+    "The source menu, profile and producer notes remain study records. Confirm the current list before service."
+  ],
+  "coverage": [
+    {"mode": "Wine-list quizzes, section quizzes and house questions within mixed rounds", "families": ["section", "serve", "wineGoesWith", "producerOf", "producerWhere", "producerDish", "producerPour"], "reveal": "Learn why after correct or incorrect answer", "reading": "Exact wine or producer profile, identity, saved description, service and guest wording; producer questions include the linked house wines.", "return": "Inline by default. Exact wine profile opens through its canonical route; Back restores the answered question and score."},
+    {"mode": "Pair the menu and dish pairing questions within mixed rounds", "families": ["firstPickFor", "zeroProofFor"], "records": 43, "reveal": "Learn why after correct or incorrect answer", "reading": "Dish description, saved rationale, palate, tableside explanation, alternative reasoning and exact recommended wine or drink.", "return": "Close the reading to continue the same question. Profile navigation retains the round."},
+    {"mode": "Quiz results", "reveal": "Learn why beside every house miss, with a separate Revisit correct answers disclosure", "reading": "The explanation captured when the question was dealt", "return": "No new grade, no next-question movement and no reset of results."},
+    {"mode": "Menu wines, floor bottles, sections, daily Cellar Compass and weak-wine flashcards", "menuWines": 34, "floorWines": 237, "reveal": "Learn why only on the flipped face", "reading": "Full exact wine profile", "return": "The existing card and grade controls remain in place."},
+    {"mode": "Menu words", "cards": 362, "reveal": "Learn why on the flipped face", "reading": "Guest definition, pronunciation, related full component explanations and connected dish or wine profiles.", "return": "Nested examples expand within the same card."},
+    {"mode": "Components", "cards": 382, "reveal": "Learn why on the flipped face", "reading": "Full kept explanation and connected house-item profiles", "return": "Inline reading does not grade or advance."},
+    {"mode": "Wine producers", "cards": 600, "reveal": "Learn why on the flipped face", "reading": "Kept place, history, facts, tableside wording, details to confirm and linked wines", "return": "Inline reading does not grade or advance."},
+    {"mode": "Our list by heart", "calls": 99, "reveal": "Learn why only after Flip", "reading": "Complete called-wine profile", "return": "The existing call remains in place."},
+    {"mode": "Personal cellar recitation and legacy cellar questions", "reveal": "Learn why after reveal/answer", "reading": "Matching full house wine where available; otherwise the person's entered identity, note and saved prices", "return": "Same recitation or question; no invented details for sparse personal records."},
+    {"mode": "Say the pour", "wines": 271, "reveal": "Learn why after Check, before optional Record it", "reading": "Complete wine description, practical description structure and the limits of word matching", "return": "Reading does not record the grade or move to another wine."},
+    {"mode": "Guest at the table and mix-ups", "scenariosAndMixUps": 84, "reveal": "Learn why after Check, before optional Record it", "reading": "Complete kept response, service principle, exact referenced items and a reasoning exercise", "return": "Reading does not record the grade or change the guest."},
+    {"mode": "Existing Cellar Compass reading prompts and fall workshops", "change": "Reviewed and retained", "reading": "Prompts already reveal authored answer notes within the complete reading, with source disclosures and exact wine links. Workshops already show dish structure, alternative wine approaches, tableside wording and limits.", "return": "Existing reading flow retained; these prompts do not record quiz grades."}
+  ],
+  "contentCorrections": [
+    "Nine question labels now state that the task recalls a saved record or recommendation.",
+    "Pairing explanations state that other pairings can work and retain the existing alternative reasoning.",
+    "Unknown future question kinds receive neutral saved-record reasoning, never an unrelated food explanation.",
+    "Food and cocktail references use appropriate service and pairing headings rather than Serving the wine.",
+    "Spoken answer and guest readers distinguish keyword matching from thoughtful service assessment."
+  ],
+  "accessibility": [
+    "Native summary/details controls, focus outlines, controls at least 44px, reading text at least 17px.",
+    "Enter, Space and card-grade number shortcuts on the reading do not trigger global next-question or grading handlers.",
+    "No reading, answer profile link or hidden full-answer reading is inserted before the question/card is revealed.",
+    "320px day and night service tested without horizontal overflow; textual answer feedback remains present."
+  ],
+  "validation": {
+    "finalChainBrowserChecks": 64,
+    "existingHouseFlowChecks": 116,
+    "existingHouseChecks": 282,
+    "existingHomeChecks": 196,
+    "existingNavigationChecks": 108,
+    "existingProducerChecks": 138,
+    "existingBrennansChecks": 105,
+    "javascriptFilesParsed": 80,
+    "browserTest": ".scripts/check-answer-learning.cjs",
+    "notes": "Final-chain browser checks cover both correct and incorrect answers in all nine families, six card decks, both recitations, spoken and guest answers, results, exact profile and Back, keyboard operation, 320px day/night, offline opening of loaded reading, escaped input, latest kept notes, full linked term definitions and unchanged grades. Older source gates retain their layer-specific fixtures."
+  },
+  "limits": [
+    "This release connects and contextualises existing kept material. It is not a fresh factual audit of all wine availability, prices or every historical claim in the house pack.",
+    "The general CMS question banks, regional banks, blind tasting and service simulation are outside the Brennan's quiz edit and retain their existing explanations.",
+    "Reading data follows the person's saved collection. An incomplete personal record remains incomplete rather than being padded with guessed facts."
+  ]
+}

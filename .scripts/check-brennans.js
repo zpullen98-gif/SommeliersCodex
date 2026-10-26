@@ -657,7 +657,7 @@ async function main() {
     const sources = [...fs.readFileSync(index, 'utf8').matchAll(/<script\b[^>]*\bsrc=["'](js\/[^"']+)["'][^>]*>\s*<\/script>/g)].map((m) => m[1]);
     const scripts = sources.map((s) => s.slice(3).split(/[?#]/)[0]);
     const i40 = scripts.indexOf('codex40.js');
-    const tail = ['codex41.js', 'codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'codex46.js', 'codex47.js', 'house-learning-flow.js', 'codex48.js', 'boot.js'];
+    const tail = ['codex41.js', 'codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'codex46.js', 'codex47.js', 'house-learning-flow.js', 'codex48.js', 'codex49.js', 'boot.js'];
     check('index.html loads codex41.js after codex40.js, then the learning layers and boot.js, each once with ?v=', i40 >= 0
       && JSON.stringify(scripts.slice(i40 + 1, i40 + 1 + tail.length)) === JSON.stringify(tail)
       && tail.every(file => scripts.filter(s => s === file).length === 1 && /^js\/[^?]+\?v=\d+$/.test(sources[scripts.indexOf(file)])),

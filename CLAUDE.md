@@ -41,13 +41,40 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v108`; its two teaching imports have query versions which
+Source worker is `codex-v109`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex49: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex50: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
-codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab).
+codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab,
+codex48 the focused house learning flow, codex49 the house answer readings).
+
+## Brennan's answer readings (26 October 2026)
+
+Layer 49 adds a closed Learn why reading after house quiz answers and revealed
+wine, term, component and producer cards, both list recitations, Say the pour
+and Guest at the table. Correct and missed quiz answers retain their readings
+in the result view. Full wine profiles remain available through the canonical
+wine address; Back restores the answered round. Question readings are captured
+when dealt, use the current saved house records and never grade or advance.
+Keep the question/card IDs and option indexes stable. House quiz labels identify
+saved recommendations so a pairing exercise never claims one universal answer.
+
+All imported values must be escaped. Only person-kept marks enter readings;
+the most recent matching kept description wins. Term readings also open the
+linked component explanations. Native details provide keyboard disclosure,
+with a capture guard preventing the older quiz Enter handler from advancing
+while a reading has focus. The reading font is at least 17px and controls at
+least 44px in day and night service. CSS is `css/house-answer-learning.css`.
+
+Run `node .scripts/check-answer-learning.cjs` for the final loaded chain, or
+set `CODEX_URL` for a served edition. `CODEX_REPORT` writes a JSON result;
+`CODEX_SCREENSHOTS` points to an existing screenshot folder. The source gate
+uses an isolated browser context and the canonical shared pack, never the
+person's browser storage. The inventory and scope are recorded in
+`docs/brennans-answer-learning.json`. The older house/navigation gates retain
+their layer-specific fixtures; this browser gate covers the complete chain.
 
 ## The Wine Atlas tab (23 October 2026)
 
