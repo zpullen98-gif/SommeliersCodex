@@ -878,7 +878,7 @@ if (fs.existsSync(INDEX)) {
   const at = scripts.indexOf('codex38.js');
   const compass = ['data-cellar-compass.js', 'codex40.js', 'codex41.js'];
   const hasCompass = compass.some((f) => scripts.includes(f) || fs.existsSync(path.join(JS, f)));
-  const learning = ['codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'codex46.js', 'codex47.js', 'house-learning-flow.js', 'codex48.js', 'codex49.js', 'codex50.js', 'codex51.js'].filter(f => fs.existsSync(path.join(JS, f)));
+  const learning = ['codex42.js', 'codex43.js', 'codex44.js', 'data-field-atlas.js', 'codex45.js', 'codex46.js', 'codex47.js', 'house-learning-flow.js', 'codex48.js', 'codex49.js', 'codex50.js', 'codex51.js', 'atlas-context.js', 'codex52.js'].filter(f => fs.existsSync(path.join(JS, f)));
   const tail = ['codex38.js', 'data-regions.js', 'data-service-ref.js', 'codex39.js'].concat(hasCompass ? compass : [], learning, ['boot.js']);
   check('index.html keeps the regions sequence after codex38.js, the exact Cellar Compass triple (its data, codex40 and codex41) when present, then boot.js, each once with ?v=',
     at >= 0 && JSON.stringify(scripts.slice(at, at + tail.length)) === JSON.stringify(tail)

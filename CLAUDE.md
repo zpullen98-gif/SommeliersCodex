@@ -41,15 +41,37 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v110`; its two teaching imports have query versions which
+Source worker is `codex-v111`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex52: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex53: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
 codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab,
 codex48 the focused house learning flow, codex49 the house answer readings,
-codex50 explicit spoken assessment, codex51 exact missed-skill recovery).
+codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
+codex52 contextual Wine Atlas links).
+
+## Contextual Wine Atlas links (27 October 2026)
+
+Layer 52 and `atlas-context.js` connect answered quizzes and Brennan's wine
+profiles to canonical regional field maps or clearly named country overviews.
+Question ownership and dedicated wine-region fields take precedence over
+conservative geographic matching. Never infer a bottle's origin from its grape
+or its producer's headquarters, and never scan distractor options for links.
+House question links are captured with the dealt answer. Unknown geography
+does not receive an invented regional destination.
+
+Links appear after answers and on results, including correct answers. Active
+mock, simulation and final-test questions withhold the new atlas shortcuts;
+completed reports may show them. Use the existing in-app hash router so Back
+restores the same answered round, score, recovery target and opener. Never call
+the tab navigation's leave/reset path for a reference detour. Starting a new
+drill from the atlas still intentionally starts a new run.
+
+Run `.scripts/check-atlas-context.cjs` and `.scripts/check-atlas-links.cjs`, plus
+the answer-learning and recovery gates, before publication. The browser gate
+uses isolated profiles. No question IDs, answer keys or progress formats change.
 
 ## Brennan's Certified preparation (27 October 2026)
 
@@ -70,7 +92,7 @@ Run `.scripts/check-training-assessment.cjs` and
 `.scripts/check-training-recovery.cjs` on the complete chain, alongside the
 answer-learning and house-flow gates. Read
 `docs/brennans-certified-training-2026-10-27.md` for scope and the CMS benchmark.
-The source worker is codex-v110. Future layers start at codex52.
+The source worker is codex-v111. Future layers start at codex53.
 
 ## Brennan's answer readings (26 October 2026)
 
