@@ -182,6 +182,7 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     for (const [selector, view] of [['[data-v48-route="houseproducers"]','houseproducers'],['[data-v32="fullwine"]','fulllist']]) {
       const opener = await page.locator(selector).getAttribute('id');
       await page.locator(selector).click(); await page.waitForFunction(view => S.view === view, view);
+      if (view === 'fulllist') await page.waitForFunction(() => typeof V29_LIST !== 'undefined' && V29_LIST.status === 'ready' && document.querySelector('#view').innerText.length > 100);
       check(view + ' remains accessible from House reference', await page.locator('#view').innerText().then(text => text.length > 100));
       await back(page, 'housereference');
       check(view + ' returns to its exact reference door', await page.evaluate(id => document.activeElement.id === id, opener));

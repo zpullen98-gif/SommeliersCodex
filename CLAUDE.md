@@ -41,14 +41,36 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v109`; its two teaching imports have query versions which
+Source worker is `codex-v110`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex50: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex52: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
 codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab,
-codex48 the focused house learning flow, codex49 the house answer readings).
+codex48 the focused house learning flow, codex49 the house answer readings,
+codex50 explicit spoken assessment, codex51 exact missed-skill recovery).
+
+## Brennan's Certified preparation (27 October 2026)
+
+The owner is preparing for CMS Certified. Keep the complete technical readings,
+question difficulty and independent skill records. Clearer navigation must not
+become easier assessment. Short guest descriptions exercise communication;
+they do not replace theory, deductive tasting or observed service.
+
+Layer 50 labels literal word matching as assistance, never an automatic pass.
+Four explicit self-assessment criteria cover accuracy, reasoning, completeness
+and delivery. Text or selection changes invalidate the exact-answer snapshot.
+Recognition quizzes retain their objective keys. Layer 51 exposes unresolved
+house skills with their original level and key, then retests the exact aspect.
+Generic card recall cannot erase a separate service or pairing miss. No new
+persisted schema or course-bank identities are introduced.
+
+Run `.scripts/check-training-assessment.cjs` and
+`.scripts/check-training-recovery.cjs` on the complete chain, alongside the
+answer-learning and house-flow gates. Read
+`docs/brennans-certified-training-2026-10-27.md` for scope and the CMS benchmark.
+The source worker is codex-v110. Future layers start at codex52.
 
 ## Brennan's answer readings (26 October 2026)
 
