@@ -1,0 +1,322 @@
+{
+  "source": "CMS-A 1-2025",
+  "instructions": "Every line on this test paper has a question that must be answered. In each section, select or fill the blank with the best answer. DO NOT leave any blank lines.",
+  "white": {
+    "colour": {
+      "label": "The primary color is:",
+      "options": [
+        "Straw",
+        "Yellow",
+        "Gold"
+      ]
+    },
+    "fruit": [
+      {
+        "key": "apple-pear",
+        "label": "Apple / Pear",
+        "note": "If “Yes” provide one specific apple or pear fruit. If “No” do not leave blank, write “None.”"
+      },
+      {
+        "key": "citrus",
+        "label": "Citrus",
+        "note": "If “Yes” provide one specific citrus fruit. If “No” do not leave blank, write “None.”"
+      },
+      {
+        "key": "stone-fruit",
+        "label": "Stone Fruit",
+        "note": "If “Yes” provide one specific stone fruit. If “No” do not leave blank, write “None.”"
+      },
+      {
+        "key": "tropical",
+        "label": "Tropical",
+        "note": "If “Yes” provide one specific tropical fruit. If “No” do not leave blank, write “None.”"
+      }
+    ],
+    "condition": {
+      "options": [
+        "Tart",
+        "Ripe",
+        "Overripe / Jammy / Candied",
+        "Baked / Dried / Bruised"
+      ],
+      "nose": "Select one or two fruit condition descriptors for the Nose - see exam.",
+      "palate": "Select one or two fruit condition descriptors for the Palate - see exam."
+    },
+    "nonFruit": [
+      {
+        "key": "flowers",
+        "label": "Flowers"
+      },
+      {
+        "key": "fresh-herbs",
+        "label": "Fresh Herbs, Hay"
+      },
+      {
+        "key": "green",
+        "label": "Green Bell Pepper, Grass, Jalapeño, Asparagus"
+      },
+      {
+        "key": "variety-spice",
+        "label": "Grape Variety Spice: Allspice, Pepper, Cardamom"
+      },
+      {
+        "key": "noble-rot",
+        "label": "Noble Rot/Botrytis: Ginger, Honey, Saffron, Wax"
+      },
+      {
+        "key": "oxidation",
+        "label": "Oxidation: Nuts, Dried Fruit"
+      },
+      {
+        "key": "lees",
+        "label": "Lees: Dough, Baked Bread, Yeast, Beer, Cheese Rind"
+      },
+      {
+        "key": "malolactic",
+        "label": "Malolactic Fermentation: Butter, Cream, Yogurt"
+      },
+      {
+        "key": "petrol",
+        "label": "Petrol, Gasoline, Rubber"
+      },
+      {
+        "key": "earth",
+        "label": "Earth: Wet Leaves, Mushroom, Compost"
+      },
+      {
+        "key": "mineral",
+        "label": "Mineral: Mineral, Wet Rock, Sulfur"
+      },
+      {
+        "key": "new-oak",
+        "label": "New Oak: Vanilla, Toast, Smoke, Cinnamon, Nutmeg, Clove"
+      }
+    ],
+    "nonFruitNote": "Non-fruit descriptors combine NOSE and PALATE. Select “YES” only if it is an important character of the wine. Select “NO” if it is NOT an important character of the wine. Select ONE answer for each line. Do not leave any lines blank.",
+    "structure": [
+      {
+        "key": "bitterness",
+        "label": "Phenolic Bitterness",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "key": "sweetness",
+        "label": "Sweetness",
+        "options": [
+          "Dry",
+          "Off-Dry"
+        ]
+      },
+      {
+        "key": "acidity",
+        "label": "Acidity",
+        "options": [
+          "Low to Medium -",
+          "Medium",
+          "Medium +",
+          "High"
+        ]
+      },
+      {
+        "key": "alcohol",
+        "label": "Alcohol",
+        "options": [
+          "Low to Medium -",
+          "Medium",
+          "Medium +",
+          "High"
+        ]
+      }
+    ],
+    "conclusion": {
+      "grape": {
+        "label": "Primary Grape Variety",
+        "note": "Select from Examinable Grape Varieties",
+        "choices": 6,
+        "explain": "Explain Why:"
+      },
+      "climate": {
+        "label": "Climate",
+        "options": [
+          "Cool",
+          "Moderate",
+          "Warm"
+        ],
+        "explain": "Explain Why:"
+      },
+      "country": {
+        "label": "Country of Origin"
+      },
+      "age": {
+        "label": "Age Range",
+        "options": [
+          "1-2 Years",
+          "3-4 Years",
+          "5+ Years"
+        ]
+      }
+    },
+    "sell": "Sell this wine to a guest in two sentences or less."
+  },
+  "red": {
+    "colour": {
+      "label": "The primary color is:",
+      "options": [
+        "Purple",
+        "Ruby",
+        "Garnet"
+      ]
+    },
+    "fruit": [
+      {
+        "key": "red",
+        "label": "Red",
+        "note": "If “Yes” provide one specific red fruit. If “No” do not leave blank, write “None.”"
+      },
+      {
+        "key": "black",
+        "label": "Black",
+        "note": "If “Yes” provide one specific black fruit. If “No” do not leave blank, write “None.”"
+      },
+      {
+        "key": "blue",
+        "label": "Blue",
+        "note": "If “Yes” provide one specific blue fruit. If “No” do not leave blank, write “None.”"
+      }
+    ],
+    "condition": {
+      "options": [
+        "Tart",
+        "Ripe",
+        "Overripe / Jammy / Candied",
+        "Baked / Dried / Bruised"
+      ],
+      "nose": "Select one or two fruit condition descriptors for the Nose - see exam.",
+      "palate": "Select one or two fruit condition descriptors for the Palate - see exam."
+    },
+    "nonFruit": [
+      {
+        "key": "flowers",
+        "label": "Flowers"
+      },
+      {
+        "key": "fresh-herbs",
+        "label": "Fresh Herbs, Tomato Leaf"
+      },
+      {
+        "key": "dried-herbs",
+        "label": "Dried Herbs"
+      },
+      {
+        "key": "green",
+        "label": "Green Bell Pepper, Grass, Jalapeño, Aparagus"
+      },
+      {
+        "key": "mint",
+        "label": "Mint, Eucalyptus"
+      },
+      {
+        "key": "pepper",
+        "label": "Black Peppercorn"
+      },
+      {
+        "key": "coffee",
+        "label": "Coffee, Cocoa, Mocha"
+      },
+      {
+        "key": "meat",
+        "label": "Meat, Blood, Leather"
+      },
+      {
+        "key": "balsamic",
+        "label": "Balsamic, Tar"
+      },
+      {
+        "key": "carbonic",
+        "label": "Carbonic Maceration"
+      },
+      {
+        "key": "earth",
+        "label": "Earth: Forest Floor, Wet Leaves, Mushrooms, Compost"
+      },
+      {
+        "key": "mineral",
+        "label": "Mineral: Mineral, Wet Rock, Sulfur"
+      },
+      {
+        "key": "new-oak",
+        "label": "New Oak: Vanilla, Smoke, Toast, Coconut, Dill"
+      }
+    ],
+    "nonFruitNote": "Non-fruit descriptors combine NOSE and PALATE. Select “YES” only if it is an important character of the wine. Select “NO” if it is NOT an important character of the wine. Select ONE answer for each line. Do not leave any lines blank.",
+    "structure": [
+      {
+        "key": "tannin",
+        "label": "Tannin",
+        "options": [
+          "Low to Medium -",
+          "Medium",
+          "Medium +",
+          "High"
+        ]
+      },
+      {
+        "key": "acidity",
+        "label": "Acidity",
+        "options": [
+          "Low to Medium -",
+          "Medium",
+          "Medium +",
+          "High"
+        ]
+      },
+      {
+        "key": "alcohol",
+        "label": "Alcohol",
+        "options": [
+          "Low to Medium -",
+          "Medium",
+          "Medium +",
+          "High"
+        ]
+      }
+    ],
+    "conclusion": {
+      "grape": {
+        "label": "Primary Grape Variety",
+        "note": "Select from Examinable Grape Varieties",
+        "choices": 6,
+        "explain": "Explain Why:"
+      },
+      "climate": {
+        "label": "Climate",
+        "options": [
+          "Cool",
+          "Moderate",
+          "Warm"
+        ],
+        "explain": "Explain Why:"
+      },
+      "country": {
+        "label": "Country of Origin"
+      },
+      "age": {
+        "label": "Age Range",
+        "options": [
+          "1-3 Years",
+          "4-6 Years",
+          "7+ Years"
+        ]
+      }
+    },
+    "sell": "Sell this wine to a guest in two sentences or less."
+  },
+  "edits": [
+    "fixture: the two sheets as printed, the keys the brief's",
+    "the fruit condition columns (Overripe, Jammy, Candied; Baked, Dried, Bruised) are joined with ' / ' as the brief's shape shows, and the side notes of the non-fruit block are joined into one nonFruitNote with spaces",
+    "page 2, the non-fruit line 'Green Bell Pepper, Grass, Jalapeño, Aparagus': the Court's spelling of asparagus kept as printed"
+  ]
+}

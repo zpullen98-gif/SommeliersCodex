@@ -6,7 +6,7 @@
     py rewrite/check-ids.py --ref HEAD~5        # against any commit
     py rewrite/check-ids.py --logged .scripts/review/applied-rewrite.json
 
-`--logged FILE` reads the `movedIds.rows` of an edition's applied file (each row a
+`--logged FILE` reads the `movedIds.rows` (or a `movedIds` list) of an edition's applied file (each row a
 `module`, an `old` id and its `new` one) and accepts a move only when that exact
 pair is logged for that module. Any move the file does not name still fails, so
 the default run is unchanged and the flag never admits an unrecorded move; it
@@ -79,7 +79,10 @@ def logged_moves(path):
     import json
     with open(path, encoding="utf-8") as fh:
         data = json.load(fh)
-    rows = (data.get("movedIds") or {}).get("rows") or []
+    moved = data.get("movedIds")
+    # An edition's file may hold the rows under movedIds.rows, or as the list itself
+    # (the CMS edition's applied-cms-rewrite.json); both shapes name the same rows.
+    rows = moved if isinstance(moved, list) else ((moved or {}).get("rows") or [])
     out = {}
     for r in rows:
         if r.get("module") and r.get("old") and r.get("new"):

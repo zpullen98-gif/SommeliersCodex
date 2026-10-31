@@ -1,0 +1,98 @@
+{
+  "colour": "white",
+  "grapes": [
+    {
+      "slug": "albarino",
+      "reads": 1,
+      "fixes": [
+        {
+          "region": "Rías Baixas",
+          "line": "structure.bitterness",
+          "problem": "Phenolic Bitterness was No, so a candidate who marks the pithy, grapefruit pith grip of a classic Rías Baixas Albariño as Yes is marked wrong; that grip is one of the grape's tells and the one it shares with Pinot Grigio and Torrontés on this sheet.",
+          "fix": "bitterness set to Yes, and the grape line of the why now names the pithy, faintly bitter grip."
+        }
+      ]
+    },
+    {
+      "slug": "chardonnay",
+      "reads": 4,
+      "fixes": [
+        {
+          "region": "Côte de Beaune",
+          "line": "colour",
+          "problem": "Yellow or Gold. Gold is a call a current release Village or Premier Cru bottle does not get at two to four years; it signals age, oxidation or a warm site. Straw, which a young Puligny can show, was refused.",
+          "fix": "colour set to Straw or Yellow, as in the Mâconnais read."
+        },
+        {
+          "region": "Côte de Beaune",
+          "line": "age",
+          "problem": "3-4 Years or 5+ Years. The exam pours a current release Village or Premier Cru, often two years from the vintage, so 1-2 Years was refused for a correct call, and 5+ Years is not the classic bottle.",
+          "fix": "age set to 1-2 Years or 3-4 Years."
+        },
+        {
+          "region": "Napa Valley, Sonoma County and Central Coast",
+          "line": "conclusion.climate",
+          "problem": "Warm goes against the Court's own climate cells: the North Coast is 'Moderate to warm depending on proximity to the Pacific Ocean or San Pablo Bay', and Monterey and Santa Barbara are 'cool Pinot Noir and Chardonnay growing regions'. Across the three places the read covers, the one defensible single call is Moderate, the same call as the California Pinot Noir read.",
+          "fix": "climate set to Moderate; the climate line of the why rewritten to name the sun and the Pacific fog and bay breezes."
+        },
+        {
+          "region": "Napa Valley, Sonoma County and Central Coast",
+          "line": "structure.acidity",
+          "problem": "Medium only. A Carneros, Russian River or Santa Barbara Chardonnay reads Medium + as often as Medium, and the Codex's own record gives med(+) when the site is cool.",
+          "fix": "acidity set to Medium or Medium +."
+        }
+      ]
+    },
+    {
+      "slug": "chenin-blanc",
+      "reads": 1,
+      "fixes": []
+    },
+    {
+      "slug": "gewurztraminer",
+      "reads": 1,
+      "fixes": []
+    },
+    {
+      "slug": "pinot-grigio",
+      "reads": 1,
+      "fixes": [
+        {
+          "region": "Friuli and Trentino-Alto Adige",
+          "line": "why.climate",
+          "problem": "'a cool alpine site' fits Alto Adige but not the Friuli plain the read also covers, and the Court's cell for both is 'Cool Continental'.",
+          "fix": "now 'a cool continental site, with cold nights off the Alps'."
+        }
+      ]
+    },
+    {
+      "slug": "riesling",
+      "reads": 1,
+      "fixes": []
+    },
+    {
+      "slug": "sauvignon-blanc",
+      "reads": 2,
+      "fixes": [
+        {
+          "region": "Marlborough",
+          "line": "fruit.tropical",
+          "problem": "passion fruit was the only tropical answer accepted, so guava, the other classic Marlborough fruit, was marked wrong.",
+          "fix": "tropical accepts passion fruit or guava."
+        }
+      ]
+    },
+    {
+      "slug": "torrontes",
+      "reads": 1,
+      "fixes": [
+        {
+          "region": "Salta and Mendoza",
+          "line": "fruit.citrus",
+          "problem": "'orange peel' is part of a fruit, but the sheet asks for 'one specific citrus fruit', so a candidate who writes orange would miss the match.",
+          "fix": "'orange peel' replaced by 'orange'."
+        }
+      ]
+    }
+  ]
+}

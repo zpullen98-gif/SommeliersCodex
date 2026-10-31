@@ -1,0 +1,106 @@
+{
+  "id": "galicia",
+  "name": "Spain: Galicia",
+  "court": "SPAIN - GALICIA",
+  "group": "spain-portugal",
+  "order": 16,
+  "pages": [
+    37
+  ],
+  "certifiedOnly": false,
+  "outcome": {
+    "intro": "After studying this section, a student will know the location, general climate, grape variety, and style of the Rías Baixas DO.",
+    "certified": "After studying this section, a candidate will know the soil type and the styles and grape varieties of Valdeorras DO and Ribeira Sacra DO. A Certified Sommelier will be able to recognize iconic producers and be able to recommend and sell food pairings with Rías Baixas Albariño to a guest."
+  },
+  "rows": [
+    {
+      "topic": "Geography: Location",
+      "intro": "Northwest section of the Iberian Peninsula, also known as Green Spain.; *Be able to recognize Rías Baixas on a map.",
+      "certified": ""
+    },
+    {
+      "topic": "Geography: Climate Categories",
+      "intro": "Maritime, humid, cooler than the rest of Spain.",
+      "certified": "Maritime on the coast, becoming more continental moving inland."
+    },
+    {
+      "topic": "Geography: Physical Feature",
+      "intro": "Bodies of Water: Atlantic Ocean, Miño River (Spanish)/Minho River (Portuguese) *Rías Baixas means \"low estuaries,\" referencing the defining feature of the zone.",
+      "certified": "Steep slopes in Ribeira Sacra"
+    },
+    {
+      "topic": "Soil: Type and/or Name",
+      "intro": "",
+      "certified": "Granite"
+    },
+    {
+      "topic": "Grape Growing",
+      "intro": "High canopy trellising because of humidity",
+      "certified": "Terraced vineyards in Ribeira Sacra."
+    },
+    {
+      "topic": "Winemaking",
+      "intro": "Made with modern technology, stainless steel tanks. Lees aging is common.",
+      "certified": "Occasional barrique (barrica) use."
+    },
+    {
+      "topic": "Wine: White Grape Variety Names",
+      "intro": "Albariño",
+      "certified": "Godello"
+    },
+    {
+      "topic": "Wine: Red Grape Variety Names",
+      "intro": "",
+      "certified": "Mencía"
+    },
+    {
+      "topic": "Wine Law /Appellations: DOs",
+      "intro": "Rías Baixas DO:; White Wines: Wines labeled Albariño must be 100% Albariño.",
+      "certified": "Valdeorras DO:; White Wines: Godello; Red Wines: Mencía; Ribeira Sacra DO; White Wines: Albariño, Godello,; Red Wines: Mencía"
+    },
+    {
+      "topic": "Style",
+      "intro": "Dry, crisp, aromatic white wines from the Albariño grape variety.",
+      "certified": "Dry, crisp white wines and light red wines.; Fresh and neutral Godello in Valdeorras; Mencía, Godello, and Albariño in Ribeira Sacra."
+    },
+    {
+      "topic": "Producer/Proprietary Brand",
+      "intro": "",
+      "certified": "Albariño: Pazo Señorans, Granbazán, Lagar de Cervera"
+    },
+    {
+      "topic": "Food and Beverage Pairing",
+      "intro": "",
+      "certified": "Due to its location, crisp acidity, and delicate flavor profile, Albariño is a classic match for simply prepared shellfish and bivalves."
+    }
+  ],
+  "edits": [
+    "page 37: no long dash (U+2013 or U+2014), curly quote or bullet glyph occurs on the page (checked in the PDF text); the hyphen in the Subject Name 'SPAIN - GALICIA' is the Court's ASCII hyphen, kept as printed; the slashes in 'Type and/or Name', 'Wine Law /Appellations', '(Spanish)/Minho' and 'Producer/Proprietary Brand' are the Court's; the straight double quotes around 'low estuaries,' are the Court's and are kept (escaped in JSON)",
+    "whole file: a hard line break or a blank line inside a cell is written as '; '; a line that wraps inside one sentence or one list is joined with a space; where a sentence ends at a line end and the next line's first word would not have fit on the line above, the break cannot be told from a soft wrap and is written as a space (measured on the page's line boxes); runs of two spaces are collapsed to one; bold emphasis (the lead words 'Bodies of Water:', 'Rías Baixas DO:', 'Valdeorras DO:', 'Ribeira Sacra DO', 'Albariño:' and the bold line '*Be able to recognize Rías Baixas on a map.') is not carried",
+    "page 37, Learning Outcome: the Certified header is printed 'Learning Outcome Statement Certified Sommelier Exam:' (with 'Statement', unlike most pages); the header is not quoted, only the paragraph; the run of two spaces after 'Ribeira Sacra DO.' is collapsed to one",
+    "page 37, row Geography: Location, intro: the sentence ending 'Green Spain.' and the bold '*Be able to recognize Rías Baixas on a map.' are two lines (the asterisk line would have fit on the line above, so it is a hard break), joined with '; '; the asterisk is the Court's and is kept; the Certified cell is blank as printed",
+    "page 37, row Geography: Climate Categories: the Introductory cell carries a full stop as printed; the Certified cell is one sentence over two lines, a soft wrap, joined with a space",
+    "page 37, row Geography: Physical Feature, intro: one paragraph over four lines (each break falls where the next word would not have fit), joined with spaces; the asterisk before 'Rías Baixas means' is the Court's, set inside the running text with no line break before it; the comma inside the closing quote of 'low estuaries,' is the Court's American punctuation; certified 'Steep slopes in Ribeira Sacra' carries no full stop as printed",
+    "page 37, row Soil: Type and/or Name: the Introductory cell is blank as printed; 'Granite' carries no full stop as printed",
+    "page 37, row Grape Growing: intro 'High canopy trellising because of humidity' carries no full stop and certified 'Terraced vineyards in Ribeira Sacra.' carries one, as printed",
+    "page 37, row Winemaking, intro: two sentences over two lines; 'Lees' would not have fit on the first line, so the break is read as a soft wrap and written with a space (either reading gives the same words)",
+    "page 37, row Wine: Red Grape Variety Names: the Introductory cell is blank as printed",
+    "page 37, row Classification: printed with both cells blank, omitted",
+    "page 37, row Wine Law /Appellations: DOs: the topic is printed over two lines ('Wine Law /Appellations:' then 'DOs') with the Court's spacing around the slash (a space before, none after), written as one label with its qualifier after the colon; intro: the bold heading 'Rías Baixas DO:' on its own line (a hard break, written '; '), then 'White Wines: Wines labeled Albariño must be 100% Albariño.' over two lines, a soft wrap joined with a space; the run of two spaces after 'White Wines:' is collapsed to one; certified: the bold heading 'Valdeorras DO:' and two lines, a blank line, then the bold heading 'Ribeira Sacra DO' (printed without a colon) and two lines, every break a hard break, joined with '; '; the trailing comma in 'White Wines: Albariño, Godello,' is the Court's and is left as printed",
+    "page 37, row Label Terms: printed with both cells blank, omitted",
+    "page 37, row General Terms: printed with both cells blank, omitted",
+    "page 37, row Style: intro is one sentence over two lines, a soft wrap; certified: the sentence 'Dry, crisp white wines and light red wines.' ends a line where 'Fresh' would have fit, so the break is a hard break, written '; '; the second sentence wraps once ('Mencía,' then 'Godello,') and is joined with a space; the semicolon in 'Valdeorras; Mencía' is the Court's own punctuation inside the sentence, not an item separator; the run of two spaces in 'Godello,  and' is collapsed to one",
+    "page 37, row Producer/Proprietary Brand: the Introductory cell is blank as printed; certified keeps the bold lead 'Albariño:' as plain text, no full stop as printed",
+    "page 37, row Vintage: printed with both cells blank, omitted",
+    "page 37, row History & Lore: printed with both cells blank, omitted",
+    "page 37, row Service of Beverage: printed with both cells blank, omitted",
+    "page 37, row Food and Beverage Pairing: the Introductory cell is blank as printed; certified is one sentence over three lines, soft wraps joined with spaces; 'flavor' is the Court's American spelling",
+    "page 37, row BOS: printed with both cells blank, omitted; the topic is printed 'BOS' on this page, the Court's abbreviation of Business of the Sommelier"
+  ],
+  "checked": {
+    "on": "2026-10-29",
+    "by": "checker",
+    "rowsCompared": 19,
+    "fixes": []
+  }
+}

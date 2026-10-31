@@ -69,8 +69,8 @@ await page.locator('#v32-back').click();
 assert.equal(await page.locator('#cf-in').inputValue(),'Decanting');
 assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('data-v44-extra')),'decanting');
 await page.locator('#cf-in').fill('bordeaux');
-for(const kind of ['route','regionroute','wine','grape','producer','chapter']) {
-  const testQuery={route:'decanting',regionroute:'mendoza',wine:'pinot',grape:'pinot noir',producer:'chateau',chapter:'burgundy'}[kind];
+for(const kind of ['route','regionroute','grape','producer','chapter']) {
+  const testQuery={route:'decanting',regionroute:'mendoza',grape:'pinot noir',producer:'chateau',chapter:'burgundy'}[kind];
   await page.locator('#cf-in').fill(testQuery);
   const button=page.locator(`[data-v44-kind="${kind}"]`).first();
   assert(await button.count(),kind);
@@ -82,6 +82,24 @@ for(const kind of ['route','regionroute','wine','grape','producer','chapter']) {
   assert.equal(await page.evaluate(()=>S.view),'library',kind+' Back');
   assert.equal(await page.locator('#cf-in').inputValue(),testQuery);
 }
+/* The house wine, since the CMS edition (codex53; the owner's decision of 29 October 2026): Brennan's content lives
+   only under the Brennan's tab, so the Library's search finds no house wine (the Codex's own grapes and producers
+   stay), and the wine it once found is found on the Brennan's tab by the house list's own search and opens there. */
+await page.locator('#cf-in').fill('pinot');
+const houseWine=await page.evaluate(()=>v44Match(v40Rows().map(w=>v44Entry(w.name,w.section||'',w.hay,'wine',w.id)),'pinot').map(r=>({id:r.arg,title:r.title}))[0]);
+assert(houseWine,'a house wine answers pinot');
+assert(await page.locator('#cf-in-out [data-v44="open"]').count(),'the Library\'s search answers pinot from the Codex\'s own');
+assert.equal(await page.locator('#cf-in-out [data-v44-kind="wine"]').count(),0,'no house wine in the Library\'s search');
+assert.equal(await page.locator('#v44-group-wines').count(),0,'no house wine group in the Library\'s search');
+await page.locator('#nav-brennans').click();
+await page.waitForFunction(()=>S.view==='brennans');
+await page.locator('#v28-q').fill('pinot');
+await page.locator('#v28-rows .v28-row[data-id="'+houseWine.id+'"]').click();
+await page.waitForFunction(id=>S.view==='cellar'&&v28State().open===id,houseWine.id);
+assert((await page.locator('#view').innerText()).includes(houseWine.title),'the house wine opens on the Brennan\'s tab');
+results.push({kind:'wine',house:houseWine.id,route:await page.evaluate(()=>location.hash)});
+await page.locator('#nav-library').click();
+await page.waitForFunction(()=>S.view==='library');
 await page.locator('#cf-in').fill('chateau');
 const more=page.locator('[data-v44="more"][data-v44-group="producers"]');
 const before=await page.locator('#v44-group-producers').locator('..').locator('[data-v44="open"]').count();
@@ -116,8 +134,15 @@ for(const theme of ['night','day']) {
 }
 await page.evaluate(()=>{ ST.cellar.push({id:'personal-search-test',name:'Library sentinel',producer:'Own wine',region:'Test place',grapes:'Chardonnay'}); });
 await page.locator('#cf-in').fill('Library sentinel');
-assert.match(await page.locator('#v44-group-own').innerText(),/Your own wines\s+1/);
-await page.locator('[data-v44-kind="wine"][data-v44-arg="personal-search-test"]').click();
+/* the person's own wine record is a row of the house's list (codex28's v28Rows), so since codex53 it is found on the
+   Brennan's tab and never in the Library's search, as the house wine above */
+assert.match(await page.locator('#cf-in-out').innerText(),/No matches/);
+assert.equal(await page.locator('#v44-group-own').count(),0,'no own wine group in the Library\'s search');
+assert.equal(await page.locator('#cf-in-out [data-v44-kind="wine"][data-v44-arg="personal-search-test"]').count(),0,'the own wine is not in the Library\'s search');
+await page.locator('#nav-brennans').click();
+await page.waitForFunction(()=>S.view==='brennans');
+await page.locator('#v28-q').fill('Library sentinel');
+await page.locator('#v28-rows .v28-row[data-id="personal-search-test"]').click();
 assert.match(await page.locator('#view').innerText(),/Library sentinel/);
 await page.locator('#v32-back').click();
 await page.evaluate(()=>{ ST.cellar=ST.cellar.filter(w=>w.id!=='personal-search-test'); v32Go({view:'level'},'push'); });

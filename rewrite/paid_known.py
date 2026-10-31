@@ -16,7 +16,7 @@ KNOWN = [
     ('adv', 'accept_list', "accept 'dry' is short, so only an exact match will grade it: Alongside édes, Szamorodni's other style is:"),
     ('adv', 'accept_list', "accept 'tdn' is short, so only an exact match will grade it: The compound behind Riesling's aged 'petrol' note:"),
     ('adv', 'accept_list', "accept 'vvf' is short, so only an exact match will grade it: A Champagne labeled 'Blanc de Noirs' from Aÿ made famou"),
-    ('adv', 'accept_list', "accept '−7°c' is short, so only an exact match will grade it: An Eiswein harvest legally requires what temperature?"),
+    ('adv', 'accept_list', "accept '-7°c' is short, so only an exact match will grade it: An Eiswein harvest legally requires what temperature?"),
     ('adv', 'comparative_probe', "grades the INVERSION 'less than $1 75 total 0 65 0 74 0 36 11% pour cost' as correct, so a threshold reads the same in both directions: 'A Negroni pours 1 oz gin ($22/L), 1 oz Campa'"),
     ('adv', 'comparative_probe', "grades the INVERSION 'less than $19 0 28 $68' as correct, so a threshold reads the same in both directions: 'A bottle costs $19 wholesale; the program ta'"),
     ('adv', 'comparative_probe', "grades the INVERSION 'less than $48 5 pours $9 60 cost per glass 9 60 16 60% money loser' as correct, so a threshold reads the same in both directions: 'A 5-oz glass sells at $16 from a $48-wholesa'"),

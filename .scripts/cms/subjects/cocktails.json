@@ -1,0 +1,201 @@
+{
+  "id": "cocktails",
+  "name": "Cocktails",
+  "court": "COCKTAILS",
+  "group": "beyond-wine",
+  "order": 43,
+  "pages": [
+    92
+  ],
+  "certifiedOnly": true,
+  "outcome": {
+    "intro": "",
+    "certified": "A CERTIFIED SOMMELIER WILL KNOW THE BASE SPIRITS, MIXERS, AND GARNISHES FOR THE FOLLOWING COCKTAILS"
+  },
+  "rows": [
+    {
+      "topic": "Americano",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Aviation",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Caipirinha",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Champagne Cocktail",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Cosmopolitan",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Daiquiri",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "French 75",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "French Martini",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Gibson",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Gimlet",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Greyhound",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "John Collins",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Kamikaze",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Kir Royale",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Mai Tai",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Manhattan",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Margarita",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Mint Julep",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Mojito",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Moscow Mule",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Negroni",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Old Fashioned",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Pimm's Cup",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Pisco Sour",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Rusty Nail",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Sazerac",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Sea Breeze",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Sidecar",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Tom Collins",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Vesper",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Vieux Carré",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "Whiskey Sour",
+      "intro": "",
+      "certified": ""
+    },
+    {
+      "topic": "White Russian",
+      "intro": "",
+      "certified": ""
+    }
+  ],
+  "edits": [
+    "page 92: a Certified-only subject. The Subject Name line prints \"COCKTAILS\" alone and is quoted as court; the marker sits below it as a red two line banner across the head of the table, \"CERTIFIED EXAM ONLY\" over \"A CERTIFIED SOMMELIER WILL KNOW THE BASE SPIRITS, MIXERS, AND GARNISHES FOR THE FOLLOWING COCKTAILS\", unlike the three regional Certified-only subjects whose Subject Name line carries the starred marker.",
+    "page 92: the page prints no Learning Outcome line. The banner's second line is the page's one statement of what a Certified Sommelier will know and is quoted into outcome.certified in its printed capitals; outcome.intro is \"\".",
+    "page 92: the 33 names sit in a grid of six columns and six rows, the sixth column holding three. The alphabetical sequence runs down each column and then on to the next (Americano to Daiquiri, French 75 to John Collins, Kamikaze to Mint Julep, Mojito to Pisco Sour, Rusty Nail to Vesper, then Vieux Carré, Whiskey Sour, White Russian), so the rows follow that sequence as the Court's list order; the pdftotext pre-pass reads the same grid row by row (Americano, French 75, Kamikaze, ...) instead.",
+    "page 92: every name is written as a topic with intro \"\" and certified \"\", the shape the brief fixes for Cocktails, since the guide prints names only. Noted for the build: build-cms.cjs refuses a row blank in both cells and carries no Cocktails exception as it stands, so this fragment needs that exception before the build accepts it; the brief's shape is followed here.",
+    "page 92, row Vieux Carré: the acute accent kept, the page's only non-ASCII letter. The layout text carries two trailing non-breaking spaces (U+00A0) after every name but Rusty Nail, Moscow Mule, Greyhound and Vesper, an artefact of the table cells, not written.",
+    "page 92, row Pimm's Cup: a straight apostrophe as printed.",
+    "page 92, row French 75: the numeral as printed.",
+    "page 92: no long dash and no hyphen on the page."
+  ],
+  "checked": {
+    "on": "2026-10-29",
+    "by": "checker",
+    "rowsCompared": 33,
+    "fixes": [
+      "page 92, edits: the note on the trailing non-breaking spaces said they follow every name; the layout text carries none after Rusty Nail, Moscow Mule and Greyhound, so the note now names those three as the exceptions. Rows, cells, order, court line and outcome compared with the page image and found as printed; the build conflict the edits flag (a row blank in both cells, no Cocktails exception) stands and is reported, not patched here.",
+      "page 92, edits: the note on the trailing non-breaking spaces named Rusty Nail, Moscow Mule and Greyhound as the names without them; the layout text carries none after Vesper either, so Vesper is now the fourth exception. Second pass: the 33 rows, their order down the six columns, every name as spelt, the court line, certifiedOnly, the blank cells and the outcome compared again with the page image and found as printed; nothing else changed. The build conflict stands: build-cms.cjs refuses a row blank in both cells and a subject with fewer than three rows, and carries no Cocktails exception, so the brief's Cocktails shape (33 rows, both cells blank) cannot pass the build as it stands; reported, not patched here."
+    ]
+  }
+}

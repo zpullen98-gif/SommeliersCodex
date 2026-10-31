@@ -174,7 +174,7 @@ BANK = [
     Q("Which country holds which region",
       "A valley eighty kilometres south of the border with the United States, on a peninsula reaching down the Pacific coast, is the centre of one country's wine industry. Which country?",
       ["Mexico", "The United States", "Chile", "Peru"], 0,
-      "The Valle de Guadalupe lies in Baja California, inland from Ensenada and close enough to the Pacific for morning fog to reach it. It sits at about thirty-two degrees north, the same distance from the equator as parts of North Africa, and that fog is most of what makes the difference."),
+      "The Valle de Guadalupe lies in Baja California, inland from Ensenada and close enough to the Pacific for morning fog to reach it, some fifty kilometres south of the border as the crow flies and nearer eighty by the road down from Tecate. It sits at about thirty-two degrees north, the same distance from the equator as parts of North Africa, and that fog is most of what makes the difference."),
 
     # --------------------------------------- neighbours and shared borders (5) --
     Q("Neighbours and shared borders",

@@ -61,7 +61,7 @@ BANK = [
        "Six months of maturation in tank or barrel before bottling",
        "A vineyard inspection at harvest",
        "A ballot of its district's producers"], 0,
-      "Every certified wine is chemically analysed and tasted blind by the Wine and Spirit Board's panels, and a faulty wine fails whatever its paperwork says. The seal is therefore a statement about the liquid as well as the ledger, which is not true of every origin system in the world."),
+      "Every certified wine is chemically analysed and tasted blind by the panels of the Wine Certification Authority (the Wine and Spirit Board until 2023), and a faulty wine fails whatever its paperwork says. The seal is therefore a statement about the liquid as well as the ledger, which is not true of every origin system in the world."),
     SA("The Wine of Origin machinery",
        "Europe's appellation idea reached the Cape as law in the early 1970s, and one vintage was the first sold under Wine of Origin seals. Give the year.",
        "1973",

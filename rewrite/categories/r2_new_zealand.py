@@ -123,13 +123,13 @@ BANK = [
       "New Zealand's registrations may sit one inside another, and how tightly to pin the wine down is the producer's choice, provided the stated name meets the sourcing threshold that every origin claim carries. Waipara Valley is the smallest of the three and the one with a style attached to it; the broader the name chosen, the less it commits the wine to."),
     SA("Names on the map and the law",
        "Passed in 2006, then left dormant for over a decade until it finally came into force in 2017, one statute lets New Zealand's wine regions register their names. Name it.",
-       "The Geographical Indications (Wine and Spirits) Registration Act",
+       "The Geographical Indications Registration Act",
        ["geographical indications wine and spirits registration act",
         "geographical indications registration act",
         "geographical indications act", "gi act", "gi registration act",
         "geographical indications wine and spirits act",
         "geographical indications wine spirits registration act"],
-       "The Geographical Indications (Wine and Spirits) Registration Act defines a name's boundary and gives its users legal standing to defend it, at home and in trade negotiations abroad, and that is all it does: no variety, yield or winemaking rule attaches to any New Zealand name. Registration is voluntary and paid for by the applying industry body, which is why the register filled up only once export agreements made the protection worth buying."),
+       "Its title was the Geographical Indications (Wine and Spirits) Registration Act until 1 May 2024, when an amendment for the trade agreement with the European Union opened it to other goods and shortened the name. It defines a name's boundary and gives its users legal standing to defend it, at home and in trade negotiations abroad, and that is all it does: no variety, yield or winemaking rule attaches to any New Zealand name. Registration is voluntary and paid for by the applying industry body, which is why the register filled up only once export agreements made the protection worth buying."),
 
     # ---------------------------------------------- A clone and a closure (3) -
     SA("A clone and a closure",

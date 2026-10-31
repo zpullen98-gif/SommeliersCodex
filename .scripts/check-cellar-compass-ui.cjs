@@ -33,13 +33,16 @@ function check(name,value){results.push({name,pass:!!value});assert.ok(value,nam
   check('current house contains every 271 study wine',info.rows===271&&info.menu===34&&info.floor===237);
   check('authored 12 paths and 60 recall prompts are loaded',info.paths===12&&info.prompts===60);
   check('eight fall workshops are loaded',info.workshops===8);
-  check('Today and My Restaurant each have a clear Compass doorway',await p.locator('[data-go="cellarcompass"]').count()===2);
-  await p.getByRole('button',{name:'Your cellar study',exact:false}).click();
-  check('Today doorway opens Compass',await p.locator('.v40-compass').count()===1);
+  /* since codex53 the house is studied under its own tab: the level page (Today, My restaurant) draws no Compass
+     doorway, and Wine studies, codex48's room, holds it */
+  check('the level page draws no Compass doorway since codex53',await p.locator('[data-go="cellarcompass"]').count()===0);
+  await p.evaluate(()=>v32Go({view:'housestudies'},'push'));await p.waitForFunction(()=>S.view==='housestudies');
+  await p.locator('[data-v48-route="cellarcompass"][data-v48-arg=""]').click();
+  check('the Wine studies doorway opens Compass',await p.locator('.v40-compass').count()===1);
   check('guided studies show all 12 paths',await p.locator('.v40-tile').count()===12);
   const daily=await p.evaluate(()=>{var ids=v40DailyIds();return{ids,menu:ids.filter(id=>!v32Wine(id).list).length,floor:ids.filter(id=>v32Wine(id).list==='bottle').length};});
   check('fresh daily run is 10 distinct wines split five menu and five floor',daily.ids.length===10&&new Set(daily.ids).size===10&&daily.menu===5&&daily.floor===5);
-  check('existing Due today still uses the existing menu pool',await p.evaluate(()=>v32DueToday().houseIds.every(id=>!v32Wine(id).list)));
+  check('the house\'s due (codex53\'s v53HouseDue, codex32\'s house step) still uses the existing menu pool',await p.evaluate(()=>(typeof v53HouseDue==='function'?v53HouseDue():v32DueToday()).houseIds.every(id=>!v32Wine(id).list)));
   for(const lv of ['intro','certified','advanced','master']){
    const same=await p.evaluate(lv=>{if(!LEVELS[lv])return false;var before=v40Rows().length;applyLevel(lv);return v40Rows().length===before;},lv);
    check('study wine collection is not gated by '+lv,same);

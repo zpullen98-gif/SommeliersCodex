@@ -65,7 +65,7 @@ Elsewhere the hazards were closed by omission instead: no bare "guyot"
 crop-thinning it must be told apart from), no bare "scorch" ("leaf scorch" is a
 different injury), no "racking" anywhere (it is an accept entry on Bordeaux's
 soutirage), no "kiln" word near the seasoning list, no number-carrying entry on
-puncheon (a "500 litre puncheon" entry let the stem's own "500 litre" score
+puncheon (a "300 litre puncheon" entry would let the stem's own "300 litre" score
 through the input-inside-accept branch, while bare "puncheon" grades every real
 phrasing of the format on its own), and no English "running off" on ecoulage,
 which is the stem's own words handed back to a stem that asked for the French.
@@ -82,7 +82,8 @@ point wrongly taken.
 
 Facts are restricted to ones that do not drift: training geometry, rootstock
 parentage, cooperage habit and the physics of a press. The numbers that
-appear - 500 litres in a puncheon, the 2006 clearing of chips in the EU, forty
+appear - 300 litres in a puncheon as the Court's list gives it (the CMS edition,
+31 October 2026, moved the stem off the trade's 500), the 2006 clearing of chips in the EU, forty
 per cent active lime under 41B and about ten per cent under 3309C - are settled
 specification and settled history rather than statistics.
 """
@@ -308,11 +309,11 @@ BANK = [
         "seasoning the staves", "yard seasoning"],
        "The yard does two jobs at once: the wood dries to workable moisture, and rain and resident fungi leach and soften the harshest of its raw tannins, mellowing what the barrel will later give. A kiln can manage only the first job in a fraction of the time, which is why yard-seasoned wood commands the premium and specifications quote the months spent out in the weather."),
     SA("Oak and the elevage",
-       "More than double a barrique in one cask, the 500-litre format lets Syrah producers buy oak's slow breathing without its vanilla shouting. Name the format.",
+       "A third larger than the 225-litre barrique, the 300-litre cask on the Court's list of barrel sizes lets Syrah take oak's slow breathing with less of its vanilla. Name the format.",
        "Puncheon",
        ["puncheon", "puncheons", "puncheon cask", "puncheon casks",
         "puncheon barrel", "puncheon barrels"],
-       "More than doubling the volume cuts the wood surface each litre of wine touches by roughly a quarter, so flavour and oxygen both arrive at a gentler pace and the fruit stays in front. Syrah cellars from the northern Rhone to the Barossa lean on the size for exactly that restraint, often buying it new where a new barrique would shout."),
+       "The Court's guide puts the puncheon at 300 litres, between the barrique and the 600-litre demi-muid, and that is the figure its paper marks, though the trade stretches the name to the 450 to 500 litre casks of the Barossa and the Rhone. The extra volume trims the wood each litre of wine touches by about a tenth, so flavour and oxygen arrive at a gentler pace and the fruit stays in front, which is why Syrah cellars often buy the bigger cask new where a new barrique would shout."),
     Q("Oak and the elevage",
       "Creamy and broad by the new year, the barrels of Chardonnay lose their weekly stirring, and the rod is put away until the next vintage. What is the cellar protecting by stopping?",
       ["The acid line and the aromatic lift, which every further pass of the rod would trade away for breadth",

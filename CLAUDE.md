@@ -41,16 +41,87 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v111`; its two teaching imports have query versions which
+Source worker is `codex-v112`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex53: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex54: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
 codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab,
 codex48 the focused house learning flow, codex49 the house answer readings,
 codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
-codex52 contextual Wine Atlas links).
+codex52 contextual Wine Atlas links, codex53 the CMS edition).
+
+## The CMS edition (codex53, 29 October 2026)
+
+The owner is preparing for the Court of Master Sommeliers, Americas Certified Sommelier Examination and uploaded the
+Court's four documents: the exam syllabus (CMS-A 7.2023), the Introductory course and Certified theory curriculum guide
+(CMS-A 8.2023, 44 subjects), the tasting exam's grapes and regions (CMS-A 9.2025) and the deductive tasting grid
+(CMS-A 1-2025). `js/codex53.js`, loaded after codex52 and `atlas-context.js` and before boot, with `js/data-cms.js` and
+`js/data-grid.js` just before it, makes them the study spine. It edits no earlier layer and none of ChatGPT's files;
+every wrapper is typeof guarded and outermost, every registry is extended key by key, its CSS lives in its own
+`v53-style` element. What a maintainer needs:
+
+- **The bar** reads Home · the house's name · CMS · Grapes · Library · More (`V25_NAV` reassigned whole, so codex47's
+  Wine Atlas word leaves the bar). The drawn bar loses codex47's `v47nav` class, so `css/house-atlas-nav.css` never
+  applies, and the due pill rides on Library. One row at 320, 375 and 390 px, night and day, every tab at least 44 px;
+  the measured widths are in codex53's BAR WIDTHS comment.
+- **Owners and parents**: the six CMS views (`cms`, `cmsday`, `cmstasting`, `cmsgrid`, `cmssubject`, `cmsready`) light
+  CMS; `grapes`, `grape`, `griddrill` and `courttasting` light Grapes; `bank`, every screen codex41 gave to the Practise
+  word and codex47's six atlas views light Library; the house's own runs (cellarrecite, houserecite, housesay,
+  houseguest) light the house. `v25NavWord` is wrapped for the context screens: a house deck, card or drill lights the
+  house, a grape deck opened from Grapes lights Grapes, a subject's drill CMS, the rest Library. CMS and Grapes climb to
+  Home and their children to them; `bank`, `flashcards`, `worldmap` and `regions` climb to Library. Quizzes keeps the
+  Practise root and the Cellar Compass keeps the level page, both pinned by their gates. A cold address on any of the
+  eleven new views is read again once, in codex51's form.
+- **Brennan's wholly under its tab**: Due today is the level's arithmetic alone (`v32DueToday` reassigned; the house
+  step is `v53HouseDue()`, drawn and dealt in Service rehearsal as `data-v53="housedue"`); the level page loses My
+  restaurant and the Compass row; the Practise root, Quizzes, the Library and the search (codex44's `v44Results`) lose
+  the house's decks, drills, doors and wording; the quick quiz deals eight from the level in the bank's own mix of
+  formats (a floor of three multiple choice at Régionale and Village) and two from the regions; Service rehearsal gains
+  Who makes our wines and What our wines are made of; the Culinary Companion is reached from Wine studies. Home keeps
+  one plain row to the house. Cross-links from a reading to the house stay as doors.
+- **The Library** carries jump chips (Practise, The question bank, Reading rooms, The atlas), codex44's search, the
+  Practise root's body as its Practise section, the reading rooms and the atlas (the World Map and the Regional Field
+  Atlas). The Practise root gains The Court's curriculum, a deck of each subject's rows (`cms:{id}`), after the
+  service references, so codex42's filter still finds a region (its placeholder offers Champagne) once the house's
+  decks have left. `#/practise`, `#/flashcards`, `#/quizzes` and every deck address keep working. **The bank** (`#/v/bank`) names
+  the level's count and categories, the Whole bank, the level's mock (Régionale 70 in 45 minutes, Village 45 in 38,
+  Premier Cru 60 in 35, Grand Cru's Gauntlet 50 in 50), the level test and every category with Drill and Exam in plain
+  sight. Home's level cards read "{N} questions · {M} categories".
+- **CMS**: the root, the exam day (the schedule, the three sections at 60 per cent in one sitting, the skills quoted;
+  the syllabus's 30 minutes for the tasting and the exam guide's 45 for four wines both printed), the tasting list of
+  twenty, both grids line by line, a page per subject (`#/v/cmssubject/{id}`: the Court's rows, a blank cell read as
+  "not essential at this level"; the Codex's chapters, regions, countries, grapes, techniques and service tables; the
+  drill; the deck `cms:{id}` of the Certified cells in codex39's region card slot; readiness) and Readiness, weakest
+  first. The Court's words are quoted as printed, American spelling there and only there.
+- **The CMS bank**: its questions carry `e-` ids (FNV-1a 64 over the subject and the stem, minted by the build; never
+  `c-`, the Village bank's prefix). A drill deals the ACTIVE level's mapped questions and the subject's `e-` questions;
+  an `e-` key is never level progress (`keyOwned`), never scheduled (`srsRecord`) and never an orphan (`qidAudit`).
+  Readiness reads Régionale (`intro|`) and Village (bare) keys and the `e-` keys in every form. The engine never
+  shuffles options, so the build deals the shipped copies (build-regions' round robin, carried from subject to subject;
+  the fragments keep the authored order and key, and no id moves): each answer position holds a quarter of the bank
+  within one, and `check-cms.js` fails any position under 17 or over 33 per cent.
+- **Grapes**: one joined book of 59 grapes (`v53GrapeJoin`: GRAPES, GRAPES_PLUS, TASTE, INTRO_GRAPES, the regions' join
+  and the reading files), the twenty tasting grapes first with their examinable places; a page per grape
+  (`#/v/grape/{slug}`) with its one card deck `grape:{slug}` in the grape cards' slot, its drill and its record on the
+  Court's grid; the Court's grid drill (`#/v/griddrill/{slug?}`: every line as the Court prints it, marked line by line
+  by `v53GridGrade`, kept per device in `oot-codex-courtgrid-v1`, never exported; a blind glass never names its grape
+  in the address); the Village tasting on the Court's grid (`#/v/courttasting`: two whites then two reds, 30 minutes,
+  on codex39's clock rule). codex20's Blind Grid and codex39's 45 minute run stay reachable and untouched.
+- **The data**: `js/data-cms.js` and `js/data-grid.js` are BUILT by `node .scripts/cms/build-cms.cjs` from the
+  fragments under `.scripts/cms/` (`BRIEF-CMS.md` is the contract, `--check` proves the files); never edit them by hand.
+- **Gates**: `node .scripts/cms/build-cms.cjs --check`; `node .scripts/check-cms.js [jsDir]` (the data, then the
+  codex53 sandbox over the whole chain, the shell and the chain rule: every gate list naming `codex52.js` names
+  `data-cms.js`, `data-grid.js` and `codex53.js` after it); `node .scripts/check-grapes.js [jsDir]` (the join, the
+  reads' cover of the tasting list, every page, the decks, the drills, the grid and the run); and the browser gate
+  `node .scripts/check-house-only.cjs [codexRoot] [playwright]` (the bar, the lit words, the cold Back chains, the
+  house-only sweep, the rooms, the bank and the mocks, the grid and the run; `CODEX_URL` for a served edition,
+  `OOT_SHARED` for the pack, `CODEX_SHOTS` for screenshots). `check-atlas-nav.cjs` holds the new bar with the atlas
+  under Library. The two node gates take the wing's `codex/js` and skip a tree with no codex53; the site's
+  `tools/check-wings.mjs` runs both. The VM gates' five-word pins stay: their chains stop at codex41 by design.
+
+The source worker is `codex-v112`. The next layer is codex54.
 
 ## Contextual Wine Atlas links (27 October 2026)
 
@@ -92,7 +163,7 @@ Run `.scripts/check-training-assessment.cjs` and
 `.scripts/check-training-recovery.cjs` on the complete chain, alongside the
 answer-learning and house-flow gates. Read
 `docs/brennans-certified-training-2026-10-27.md` for scope and the CMS benchmark.
-The source worker is codex-v111. Future layers start at codex53.
+The source worker is codex-v112. Future layers start at codex54.
 
 ## Brennan's answer readings (26 October 2026)
 
@@ -133,6 +204,8 @@ Home and the house share the first row; Practise, Wine Atlas, Library and More
 share the second. `css/house-atlas-nav.css` holds this responsive layout.
 Run `node .scripts/check-atlas-nav.cjs` against the isolated source preview,
 or set `CODEX_URL` for the public preview, in addition to the release gates.
+Since codex53 the Wine Atlas word has left the bar: the atlas, its countries and regions are the Library's again
+(its section The atlas), at the same addresses, and check-atlas-nav holds that contract.
 
 ## The Wine Workshop (23 October 2026)
 

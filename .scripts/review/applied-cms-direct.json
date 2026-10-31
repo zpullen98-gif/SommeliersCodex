@@ -1,0 +1,392 @@
+{
+  "route": "direct",
+  "edition": "the CMS edition, 31 October 2026",
+  "integrator": "direct editing of the hand edited files: js/data-advanced.js, js/data-master.js, js/data-primers.js, js/data-primers-advanced.js, js/data-primers-master.js, js/reference.js, js/data-grapes-plus.js, js/data-service-ref.js, js/data-floor.js, js/data-pairing.js",
+  "inputs": {
+    "canonAudit": "absent: .scripts/cms/review/canon-intro.json, canon-questions.json, canon-advanced.json and canon-master.json do not exist, so that part of the review has not run and nothing from it is applied",
+    "subjectErrors": "17 errors across the 44 subject reviews (questions-G1.json, grid-red.json and grid-white.json carry no errors list; their fixes are to the CMS fragments, which this route never touches); 6 of them name a file of this route and all 6 are applied; 11 name another route's file and are listed under skipped",
+    "searches": "3 of 20 (Laudun, the Sazerac, Eiswein)"
+  },
+  "counts": {
+    "findingsApplied": 6,
+    "edits": 14,
+    "entriesChanged": 13,
+    "namedPlaces": 8,
+    "recurrencesInThisRoute": 6,
+    "findingsSkipped": 11,
+    "stemsReworded": 0,
+    "idsMoved": 0
+  },
+  "applied": [
+    {
+      "finding": "argentina",
+      "review": ".scripts/cms/review/argentina.json",
+      "confidence": "high",
+      "file": "js/data-primers.js",
+      "entry": "PRIMERS cat South America, fact Argentina beyond Mendoza",
+      "field": "facts[2][1]",
+      "old": "Bonarda, the country's second red, is the Douce Noir of Savoie (California's Charbono)",
+      "new": "Bonarda, the country's second red, is the Douce Noire of Savoie (California's Charbono)",
+      "named": true,
+      "claim": "Bonarda is Douce Noir.",
+      "verification": "high, applied as written; the Régionale chapter, i-54ji9bd8 and the argentina article already spell Douce Noire",
+      "source": "VIVC, prime name Douce Noire; Wine Grapes (2012), entry Douce Noire",
+      "idMoved": false
+    },
+    {
+      "finding": "argentina",
+      "review": ".scripts/cms/review/argentina.json",
+      "confidence": "high",
+      "file": "js/data-primers.js",
+      "entry": "PRIMERS cat South America, trap 5",
+      "field": "traps[4]",
+      "old": "Argentine Bonarda is Douce Noir, California's Charbono;",
+      "new": "Argentine Bonarda is Douce Noire, California's Charbono;",
+      "named": true,
+      "claim": "Bonarda is Douce Noir.",
+      "verification": "high, applied as written; the Régionale chapter, i-54ji9bd8 and the argentina article already spell Douce Noire",
+      "source": "VIVC, prime name Douce Noire; Wine Grapes (2012), entry Douce Noire",
+      "idMoved": false
+    },
+    {
+      "finding": "argentina",
+      "review": ".scripts/cms/review/argentina.json",
+      "confidence": "high",
+      "file": "js/data-primers-advanced.js",
+      "entry": "ADV_PRIMERS cat South America, trap 3",
+      "field": "traps[2]",
+      "old": "Bonarda in Argentina is Douce Noir/Corbeau (California's Charbono), not Italy's Bonarda.",
+      "new": "Bonarda in Argentina is Douce Noire/Corbeau (California's Charbono), not Italy's Bonarda.",
+      "named": false,
+      "note": "recurrence in a file of this route: the finding says only the Village chapter drops the final e, but the Premier Cru chapter does too",
+      "claim": "Bonarda is Douce Noir.",
+      "verification": "high, applied as written; the Régionale chapter, i-54ji9bd8 and the argentina article already spell Douce Noire",
+      "source": "VIVC, prime name Douce Noire; Wine Grapes (2012), entry Douce Noire",
+      "idMoved": false
+    },
+    {
+      "finding": "argentina",
+      "review": ".scripts/cms/review/argentina.json",
+      "confidence": "high",
+      "file": "js/data-advanced.js",
+      "id": "a-l7oovruq",
+      "field": "accept and ans",
+      "old": "\"accept\":[\"douce noir\",\"corbeau\",\"charbono\"],\"ans\":\"Douce Noir (Corbeau de Savoie; California's Charbono)\"",
+      "new": "\"accept\":[\"douce noire\",\"douce noir\",\"corbeau\",\"charbono\"],\"ans\":\"Douce Noire (Corbeau de Savoie; California's Charbono)\"",
+      "named": false,
+      "note": "recurrence in a file of this route: the Premier Cru bank keyed the same spelling; douce noir kept in accept so no candidate loses a mark (sa-harness --regress HEAD: 0 revoked)",
+      "claim": "Bonarda is Douce Noir.",
+      "verification": "high, applied as written; the Régionale chapter, i-54ji9bd8 and the argentina article already spell Douce Noire",
+      "source": "VIVC, prime name Douce Noire; Wine Grapes (2012), entry Douce Noire",
+      "idMoved": false
+    },
+    {
+      "finding": "bordeaux",
+      "review": ".scripts/cms/review/bordeaux.json",
+      "confidence": "high",
+      "file": "js/data-primers.js",
+      "entry": "PRIMERS cat Bordeaux, fact Entre-Deux-Mers",
+      "field": "facts[5][1]",
+      "old": "Between the Garonne and the Dordogne, the appellation covers dry white only, mostly Sauvignon Blanc and Sémillon; the reds of the same land sell as Bordeaux or Bordeaux Supérieur.",
+      "new": "Between the Garonne and the Dordogne. Long a dry white appellation, mostly Sauvignon Blanc and Sémillon, it has also covered red since the 2023 vintage, under stricter rules of its own (Merlot, the two Cabernets, Malbec and Petit Verdot, denser planting and longer ageing before release); reds of the same land that do not meet them still sell as Bordeaux or Bordeaux Supérieur.",
+      "named": true,
+      "claim": "Entre-Deux-Mers AOP is dry white only; its reds can only be Bordeaux or Bordeaux Supérieur.",
+      "verification": "high, applied as written; agrees with the bordeaux article and i-yputip89",
+      "source": "INAO, cahier des charges AOC Entre-deux-Mers as modified in 2023 (red approved by the INAO committee in 2023)",
+      "idMoved": false
+    },
+    {
+      "finding": "business-of-the-sommelier",
+      "review": ".scripts/cms/review/business-of-the-sommelier.json",
+      "confidence": "medium",
+      "file": "js/data-primers.js",
+      "entry": "PRIMERS cat Business of the Sommelier, trap 3",
+      "field": "traps[2]",
+      "old": "Price the glass from the wholesale cost, not from the bottle's list price.",
+      "new": "Two glass sums are examined: the classic rule prices one glass at the bottle's wholesale cost, while the Court's BTG costing starts from the bottle's list price, divided by 25 oz (750 ml) and multiplied by the pour, so a bottle listed at $100 gives a 5 oz glass at $20.",
+      "named": true,
+      "claim": "A by the glass figure is worked from the bottle's wholesale cost and never from its list price.",
+      "verification": "verified against the Court's own cell, no search spent: .scripts/cms/subjects/business-of-the-sommelier.json, row Calculations - BTG Costing, quotes page 93 as 'BTG Cost = (Bottle List Price/25oz/750ml) * oz/ml pour'; the wholesale rule kept as the classic convention, the Court's formula taught beside it",
+      "source": "CMS-A curriculum guide (8.2023), page 93, row Calculations - BTG Costing",
+      "idMoved": false
+    },
+    {
+      "finding": "cocktails",
+      "review": ".scripts/cms/review/cocktails.json",
+      "confidence": "medium",
+      "file": "js/data-service-ref.js",
+      "entry": "SERVICE_REF tables cocktails, row Sazerac",
+      "field": "rows[Sazerac][1]",
+      "old": "60 ml rye whiskey (the original took Cognac),",
+      "new": "60 ml rye whiskey (the drink is said to have first taken Cognac),",
+      "named": true,
+      "claim": "The original Sazerac was made with Cognac.",
+      "verification": "verified by one search: the Cognac origin is the popular account but the earliest written reference to a Sazerac Cocktail (1899) is a rye drink and drink historians call the Cognac to rye story conjecture; agrees with the Codex's own c-0dyutx4m",
+      "source": "thedailybeast.com, Everything You Know About the Sazerac Is Wrong; australianbartender.com.au, The Sazerac: the mysterious (and confusing) history (25 June 2024); en.wikipedia.org, Sazerac; searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "cocktails",
+      "review": ".scripts/cms/review/cocktails.json",
+      "confidence": "medium",
+      "file": "js/data-service-ref.js",
+      "id": "s-ukib3ha3",
+      "field": "exp",
+      "old": "The Sazerac is rye (Cognac in the original), sugar and Peychaud's bitters,",
+      "new": "The Sazerac is rye (the drink is said to have first taken Cognac, though the record does not settle it), sugar and Peychaud's bitters,",
+      "named": true,
+      "claim": "The original Sazerac was made with Cognac.",
+      "verification": "verified by one search: the Cognac origin is the popular account but the earliest written reference to a Sazerac Cocktail (1899) is a rye drink and drink historians call the Cognac to rye story conjecture; agrees with the Codex's own c-0dyutx4m",
+      "source": "thedailybeast.com, Everything You Know About the Sazerac Is Wrong; australianbartender.com.au, The Sazerac: the mysterious (and confusing) history (25 June 2024); en.wikipedia.org, Sazerac; searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "cocktails",
+      "review": ".scripts/cms/review/cocktails.json",
+      "confidence": "medium",
+      "file": "js/data-advanced.js",
+      "id": "a-q16tnu0c",
+      "field": "exp",
+      "old": "\"exp\":\"New Orleans, originally Cognac; named the official cocktail",
+      "new": "\"exp\":\"New Orleans; said to have first taken Cognac, a story the record does not settle; named the official cocktail",
+      "named": false,
+      "note": "recurrence in a file of this route: the Premier Cru bank stated the same Cognac original as fact",
+      "claim": "The original Sazerac was made with Cognac.",
+      "verification": "verified by one search: the Cognac origin is the popular account but the earliest written reference to a Sazerac Cocktail (1899) is a rye drink and drink historians call the Cognac to rye story conjecture; agrees with the Codex's own c-0dyutx4m",
+      "source": "thedailybeast.com, Everything You Know About the Sazerac Is Wrong; australianbartender.com.au, The Sazerac: the mysterious (and confusing) history (25 June 2024); en.wikipedia.org, Sazerac; searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "rhone",
+      "review": ".scripts/cms/review/rhone.json",
+      "confidence": "medium",
+      "file": "js/data-primers.js",
+      "entry": "PRIMERS cat Rhône, fact The southern ladder",
+      "field": "facts[3][1]",
+      "old": "then the crus: Châteauneuf-du-Pape, Gigondas, Vacqueyras, Vinsobres, Rasteau, Cairanne, Beaumes-de-Venise, Lirac and Tavel.",
+      "new": "then the crus: Châteauneuf-du-Pape, Gigondas, Vacqueyras, Vinsobres, Rasteau, Cairanne, Beaumes-de-Venise, Lirac, Tavel and Laudun, raised to cru for the 2024 vintage.",
+      "named": true,
+      "claim": "The southern Rhône has nine crus, given as a complete list.",
+      "verification": "verified by one search: the INAO national committee raised Laudun from Côtes du Rhône Villages to cru on 11 September 2024, the 18th Rhône cru, with 2024 its first vintage; agrees with the rhone article",
+      "source": "decanter.com, Laudun becomes the 18th cru of the Rhône Valley (2024); thedrinksbusiness.com, Côtes du Rhône announces new cru (September 2024); objectifgard.com, Laudun nouveau cru des Côtes du Rhône (18 September 2024); searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "rhone",
+      "review": ".scripts/cms/review/rhone.json",
+      "confidence": "medium",
+      "file": "js/data-primers-advanced.js",
+      "entry": "ADV_PRIMERS cat Rhône, fact The southern ladder",
+      "field": "facts[3][1]",
+      "old": "then cru (Châteauneuf-du-Pape, Gigondas, Vacqueyras, Rasteau, Cairanne, Vinsobres, Lirac, Tavel, Beaumes-de-Venise).",
+      "new": "then cru (Châteauneuf-du-Pape, Gigondas, Vacqueyras, Rasteau, Cairanne, Vinsobres, Lirac, Tavel, Beaumes-de-Venise, and Laudun from the 2024 vintage).",
+      "named": false,
+      "note": "recurrence in a file of this route: the Premier Cru chapter gives the same nine crus as a complete list",
+      "claim": "The southern Rhône has nine crus, given as a complete list.",
+      "verification": "verified by one search: the INAO national committee raised Laudun from Côtes du Rhône Villages to cru on 11 September 2024, the 18th Rhône cru, with 2024 its first vintage; agrees with the rhone article",
+      "source": "decanter.com, Laudun becomes the 18th cru of the Rhône Valley (2024); thedrinksbusiness.com, Côtes du Rhône announces new cru (September 2024); objectifgard.com, Laudun nouveau cru des Côtes du Rhône (18 September 2024); searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "rhone",
+      "review": ".scripts/cms/review/rhone.json",
+      "confidence": "medium",
+      "file": "js/data-master.js",
+      "id": "m-qbb5zteh",
+      "field": "ans",
+      "old": "(some twenty-odd villages including Plan de Dieu, Sablet, Séguret, Laudun, Chusclan) at 41.",
+      "new": "(some twenty-odd villages including Plan de Dieu, Sablet, Séguret, Chusclan) at 41.",
+      "named": false,
+      "note": "recurrence in a file of this route: the Grand Cru model answer still named Laudun as a Villages commune; accept list untouched",
+      "claim": "The southern Rhône has nine crus, given as a complete list.",
+      "verification": "verified by one search: the INAO national committee raised Laudun from Côtes du Rhône Villages to cru on 11 September 2024, the 18th Rhône cru, with 2024 its first vintage; agrees with the rhone article",
+      "source": "decanter.com, Laudun becomes the 18th cru of the Rhône Valley (2024); thedrinksbusiness.com, Côtes du Rhône announces new cru (September 2024); objectifgard.com, Laudun nouveau cru des Côtes du Rhône (18 September 2024); searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "rhone",
+      "review": ".scripts/cms/review/rhone.json",
+      "confidence": "medium",
+      "file": "js/data-master.js",
+      "id": "m-qbb5zteh",
+      "field": "ans",
+      "old": "Vinsobres in 2006, Rasteau's dry reds in 2010, Cairanne in 2016.\"",
+      "new": "Vinsobres in 2006, Rasteau's dry reds in 2010, Cairanne in 2016, Laudun for the 2024 vintage.\"",
+      "named": false,
+      "note": "recurrence in a file of this route: the same model answer's list of promotions now ends with Laudun",
+      "claim": "The southern Rhône has nine crus, given as a complete list.",
+      "verification": "verified by one search: the INAO national committee raised Laudun from Côtes du Rhône Villages to cru on 11 September 2024, the 18th Rhône cru, with 2024 its first vintage; agrees with the rhone article",
+      "source": "decanter.com, Laudun becomes the 18th cru of the Rhône Valley (2024); thedrinksbusiness.com, Côtes du Rhône announces new cru (September 2024); objectifgard.com, Laudun nouveau cru des Côtes du Rhône (18 September 2024); searched 31 October 2026",
+      "idMoved": false
+    },
+    {
+      "finding": "tuscany",
+      "review": ".scripts/cms/review/tuscany.json (second error)",
+      "confidence": "high",
+      "file": "js/data-primers.js",
+      "entry": "PRIMERS cat Italy Central & South, fact Chianti",
+      "field": "facts[1][1]",
+      "old": "A separate and larger DOCG around the Classico zone, at least 70 per cent Sangiovese, with subzones such as Rufina and Colli Senesi.",
+      "new": "A separate and larger DOCG around the Classico zone. Sangiovese: at least 70 per cent, the figure the Court prints and the rule for earlier vintages, lowered to 60 per cent from the 2026/27 harvest campaign by the rules amended in June 2026. Its subzones, such as Rufina and Colli Senesi, number eight since Terre di Vinci was added in 2026.",
+      "named": true,
+      "claim": "Chianti DOCG requires at least 70 per cent Sangiovese.",
+      "verification": "high, applied as written; agrees with the tuscany article (law, tiers; places); the Court's printed 70 kept beside the new figure",
+      "source": "Chianti DOCG disciplinare as amended, Gazzetta Ufficiale 13 June 2026; gamberorosso.it, 16 June 2026",
+      "idMoved": false
+    }
+  ],
+  "skipped": [
+    {
+      "finding": "canada",
+      "review": ".scripts/cms/review/canada.json",
+      "confidence": "medium",
+      "where": "js/data-regions.js, REGIONS.countries.canada.questions r-fyn9xj6a, exp (and the germany index)",
+      "reason": "not this route: js/data-regions.js is the regions route's file, and the finding leaves the germany index for the owner to weigh",
+      "recurrencesInThisRoute": "a-x0evsqvv (stem 'An Eiswein harvest legally requires what temperature?', key -7°C), a-s4ldmjkz exp (Germany's Eiswein the near miss at -7°C), PRIMERS cat Germany fact Eiswein ('frozen ON the vine at minus 7°C or colder'); PRIMERS cat Sweet Wines fact Frozen grapes already says 'about minus 7°C in Germany'",
+      "verification": "NOT verified, so these recurrences are left as they stand: one search found the German Wine Institute and Wines of Germany both stating that German wine law requires at least minus 7°C, and no primary text that names no temperature; the statute itself was not reached (germanwineusa.com, 2021 Harvest Update; winesofgermany.com, Successful Icewine harvest in Germany; searched 31 October 2026)"
+    },
+    {
+      "finding": "california-north-coast",
+      "review": ".scripts/cms/review/california-north-coast.json",
+      "confidence": "medium",
+      "where": "js/regions/california.json",
+      "reason": "not this route (the regions route's article)",
+      "recurrencesInThisRoute": "none found"
+    },
+    {
+      "finding": "central-southern-italy",
+      "review": ".scripts/cms/review/central-southern-italy.json",
+      "confidence": "medium",
+      "where": "js/data-questions.js c-c9ijyeac exp",
+      "reason": "not this route (the rewrite route's Village bank)",
+      "recurrencesInThisRoute": "none found (no Casauria, Colline Teramane or Tullum in these files)"
+    },
+    {
+      "finding": "lombardy-emilia-romagna",
+      "review": ".scripts/cms/review/lombardy-emilia-romagna.json",
+      "confidence": "high",
+      "where": "js/regions/italy.json, lombardy, law.classification",
+      "reason": "not this route (the regions route's article)",
+      "recurrencesInThisRoute": "none: m-gqwt5r7n already keys Trento DOC (1993) as Italy's first metodo classico denomination and Franciacorta DOC 1967, DOCG 1995"
+    },
+    {
+      "finding": "loire",
+      "review": ".scripts/cms/review/loire.json",
+      "confidence": "medium",
+      "where": "js/regions/france.json, records.loire",
+      "reason": "not this route (the regions route's article)",
+      "recurrencesInThisRoute": "none: these files name crus communaux (Clisson, Gorges, Le Pallet and others) without a count"
+    },
+    {
+      "finding": "mexico",
+      "review": ".scripts/cms/review/mexico.json",
+      "confidence": "medium",
+      "where": "js/data-intro.js i-jieghr8k stem",
+      "reason": "not this route (the rewrite route's Régionale bank)",
+      "recurrencesInThisRoute": "none found"
+    },
+    {
+      "finding": "new-zealand",
+      "review": ".scripts/cms/review/new-zealand.json",
+      "confidence": "medium",
+      "where": "js/data-questions.js c-zovismb2; js/regions/new-zealand.json; js/data-regions.js",
+      "reason": "not this route",
+      "recurrencesInThisRoute": "ADV_PRIMERS New Zealand fact Closures and law, MASTER_PRIMERS New Zealand (a trap and the Beyond Europe fact) name the Geographical Indications (Wine and Spirits) Registration Act 2006 coming into force in 2017, and m-9anpj3f, m-pe79ielp say the Geographical Indications Act in force 2017: each is a true statement of 2017 and none gives the title as current, so none was edited; the 2024 renaming is for the owner to add if wanted"
+    },
+    {
+      "finding": "south-africa",
+      "review": ".scripts/cms/review/south-africa.json",
+      "confidence": "high",
+      "where": "js/data-intro.js i-6kt4stwr; js/data-questions.js c-qtrb7buc; js/regions/south-africa.json",
+      "reason": "not this route",
+      "recurrencesInThisRoute": "none found (no Wine and Spirit Board in these files)"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "where": "js/regions/spain.json and the REGIONS spain card",
+      "reason": "not this route (the regions route's files)",
+      "recurrencesInThisRoute": "none to correct: PRIMERS Spain fact The ladder, PRIMERS Classifications & Labels fact Spain and a-5pzdut6w already put Vino de Pago at the top, as the finding asks"
+    },
+    {
+      "finding": "tuscany (first error)",
+      "review": ".scripts/cms/review/tuscany.json",
+      "confidence": "high",
+      "where": "js/data-questions.js c-wpxpyzl1",
+      "reason": "not this route (the rewrite route's Village bank); the second tuscany error, on PRIMERS, is applied above",
+      "recurrencesInThisRoute": "none: no other Chianti DOCG minimum in these files"
+    },
+    {
+      "finding": "vinification",
+      "review": ".scripts/cms/review/vinification.json",
+      "confidence": "medium",
+      "where": "js/data-questions.js c-71ptmz2m",
+      "reason": "not this route (the rewrite route's Village bank)",
+      "recurrencesInThisRoute": "none found (no puncheon in these files)"
+    }
+  ],
+  "movedIds": {
+    "count": 0,
+    "rows": [],
+    "note": "the direct route edits no stem here; upper bank ids are frozen literals and the s- id of s-ukib3ha3 is minted once and kept"
+  },
+  "gates": [
+    {
+      "gate": "node .scripts/check-syntax.js",
+      "exit": 0,
+      "note": "all 87 JS files parse"
+    },
+    {
+      "gate": "python3 rewrite/check-paid.py",
+      "exit": 0,
+      "note": "no new problems; 358 baselined, 8 baselined no longer occur (as before this route)"
+    },
+    {
+      "gate": "node .scripts/sa-harness.js",
+      "exit": 0,
+      "note": "1,964 of 1,964 model answers grade (certified 807, Premier Cru 581, Grand Cru 576), 0 unsure, 0 wrong"
+    },
+    {
+      "gate": "node .scripts/sa-harness.js adv master --regress HEAD",
+      "exit": 0,
+      "note": "3,082 strings probed, 0 revoked"
+    },
+    {
+      "gate": "node .scripts/list-harness.js",
+      "exit": 0,
+      "note": "52 of 52 enumerations score full marks"
+    },
+    {
+      "gate": "node .scripts/check-claims.js",
+      "exit": 0,
+      "note": "count disagreements 0"
+    },
+    {
+      "gate": "node .scripts/check-drill.js",
+      "exit": 0
+    },
+    {
+      "gate": "node .scripts/check-regions.js",
+      "exit": 0,
+      "note": "74 passed (holds data-service-ref.js to the voice rules)"
+    },
+    {
+      "gate": "node .scripts/check-study.js, check-home.js, check-house.js, check-nav.js",
+      "exit": 0,
+      "note": "105, 196, 282 and 108 checks pass"
+    },
+    {
+      "gate": "node .scripts/check-cms.js and check-grapes.js",
+      "exit": 1,
+      "note": "not this route: data-cms.js and data-grid.js are still the seed build of .scripts/cms/fixtures (the content phase is under way); the failures name the seed, the 42 missing subjects and the grid reads, none a file of this route"
+    }
+  ],
+  "houseRuleSweep": "every new string: no dash of any kind, no glyph at or above U+2190, British spelling, nobody living named, never the retired word, nothing volatile beyond dated law changes",
+  "leftForTheOwner": [
+    "canada: the Eiswein temperature framing in a-x0evsqvv, a-s4ldmjkz and the Village Germany chapter stands unverified (see skipped)",
+    "new-zealand: the 2024 renaming of the Geographical Indications Act could be added to the Premier Cru and Grand Cru New Zealand chapters (see skipped)",
+    "a-x0evsqvv's accept list holds one entry with U+2212 (a minus sign); never displayed, noted only",
+    "ADV_PRIMERS South America names a living ampelographer in the Carmenère fact; outside the findings, noted only"
+  ]
+}

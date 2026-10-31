@@ -1,0 +1,807 @@
+{
+  "route": "prose",
+  "edition": "the CMS edition, 31 October 2026",
+  "integrator": "the regions pipeline: the region, country and technique fragments under .scripts/regions/fragments (never staging or videos), which build js/data-regions.js (the index) and js/regions/*.json (the reading) through node .scripts/regions/build-regions.cjs",
+  "readFirst": [
+    ".scripts/cms/BRIEF-CMS.md (whole)",
+    ".scripts/regions/BRIEF.md",
+    ".scripts/review/applied-rewrite.json and applied-direct.json (the log shape)",
+    ".scripts/review/applied-cms-direct.json and applied-cms-rewrite.json (the two routes that ran first; both left these seven findings to this route)"
+  ],
+  "inputs": {
+    "canonAudit": {
+      "canon-intro.json": "absent",
+      "canon-questions.json": "absent",
+      "canon-advanced.json": "absent",
+      "canon-master.json": "absent",
+      "note": "no canon file exists under .scripts/cms/review, so nothing from the canon audit is applied"
+    },
+    "subjectReviews": {
+      "filesRead": 47,
+      "subjects": 44,
+      "alsoPresent": "grid-red.json, grid-white.json and questions-G1.json carry no errors list",
+      "errorsListed": 17,
+      "inThisRoute": 7,
+      "elsewhere": 10
+    },
+    "rule": "high applied as written; medium applied only after one search each, the source recorded; exp, opts, accept or ans preferred to a stem; no stem changed"
+  },
+  "counts": {
+    "findingsInRoute": 7,
+    "findingsApplied": 7,
+    "findingsSkippedInRoute": 0,
+    "findingsSkippedNotThisRoute": 10,
+    "edits": 31,
+    "textEdits": 23,
+    "sourcesAppended": 7,
+    "ladderReorders": 1,
+    "fragmentsTouched": 9,
+    "recordsTouched": 10,
+    "questionsTouched": [
+      "r-fyn9xj6a",
+      "r-5tyl3i0r",
+      "r-fr2is9so"
+    ],
+    "stemsReworded": 0,
+    "idsMoved": 0,
+    "idsMinted": 0
+  },
+  "applied": [
+    {
+      "finding": "california-north-coast",
+      "review": ".scripts/cms/review/california-north-coast.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/california.json",
+      "record": {
+        "kind": "country",
+        "key": "california"
+      },
+      "field": "country.ladder.4.1",
+      "builds": "js/regions/california.json",
+      "old": "The country appellation, used when the grapes come from more than one state; it may carry no vintage, and it is the bottom of the ladder and the origin of much bulk wine.",
+      "new": "The country appellation, used when the grapes come from more than one state; since a federal rule of November 2012 it may carry a vintage when 85 per cent of the wine is from that year, and it is the bottom of the ladder and the origin of much bulk wine.",
+      "verification": "verified by one search: the Federal Register of 13 September 2012 (T.D. TTB-105, Revision to Vintage Date Requirements, in force 13 November 2012) allows a vintage date on wine labelled with a country appellation, and 27 CFR 4.27 now asks 85 per cent of the stated year for any appellation other than an AVA (95 for an AVA). The Village question c-il084y1r already teaches this, so the country article now follows it.",
+      "source": "Federal Register, 2012-22598, Revision to Vintage Date Requirements (govinfo.gov); eCFR, 27 CFR 4.27 Vintage wine (ecfr.gov); searched 31 October 2026"
+    },
+    {
+      "finding": "california-north-coast",
+      "review": ".scripts/cms/review/california-north-coast.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/california.json",
+      "record": {
+        "kind": "country",
+        "key": "california"
+      },
+      "field": "country.labels.1.1",
+      "builds": "js/regions/california.json",
+      "old": "95 per cent from the stated year when the appellation is an AVA; 85 per cent when it is a state or county; a wine whose only origin is American carries no vintage.",
+      "new": "95 per cent from the stated year when the appellation is an AVA; 85 per cent when it is a state or a county, and since November 2012 when it is American, which before then could carry no vintage.",
+      "verification": "verified by one search: the Federal Register of 13 September 2012 (T.D. TTB-105, Revision to Vintage Date Requirements, in force 13 November 2012) allows a vintage date on wine labelled with a country appellation, and 27 CFR 4.27 now asks 85 per cent of the stated year for any appellation other than an AVA (95 for an AVA). The Village question c-il084y1r already teaches this, so the country article now follows it.",
+      "source": "Federal Register, 2012-22598, Revision to Vintage Date Requirements (govinfo.gov); eCFR, 27 CFR 4.27 Vintage wine (ecfr.gov); searched 31 October 2026"
+    },
+    {
+      "finding": "california-north-coast",
+      "review": ".scripts/cms/review/california-north-coast.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/california.json",
+      "record": {
+        "kind": "country",
+        "key": "california"
+      },
+      "field": "country.sources.7",
+      "builds": "js/regions/california.json",
+      "old": null,
+      "new": {
+        "title": "Federal Register, Revision to Vintage Date Requirements (T.D. TTB-105): a vintage date allowed on wine labelled with a country appellation, in force from November 2012",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2012-09-13/pdf/2012-22598.pdf",
+        "asOf": "2012-09-13",
+        "primary": 1
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "verified by one search: the Federal Register of 13 September 2012 (T.D. TTB-105, Revision to Vintage Date Requirements, in force 13 November 2012) allows a vintage date on wine labelled with a country appellation, and 27 CFR 4.27 now asks 85 per cent of the stated year for any appellation other than an AVA (95 for an AVA). The Village question c-il084y1r already teaches this, so the country article now follows it.",
+      "source": "Federal Register, 2012-22598, Revision to Vintage Date Requirements (govinfo.gov); eCFR, 27 CFR 4.27 Vintage wine (ecfr.gov); searched 31 October 2026"
+    },
+    {
+      "finding": "canada",
+      "review": ".scripts/cms/review/canada.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/mapless.1.json",
+      "record": {
+        "kind": "country (map-less)",
+        "key": "canada"
+      },
+      "field": "countries.0.questions.0.exp",
+      "builds": "js/data-regions.js (the index)",
+      "id": "r-fyn9xj6a",
+      "idMoved": false,
+      "stemChanged": false,
+      "old": "Canadian icewine must be harvested at minus 8°C or colder, with the grapes frozen on the vine. Germany's Eiswein rule is minus 7°C, the figure most often swapped in.",
+      "new": "Canadian icewine must be harvested at minus 8°C or colder, with the grapes frozen on the vine. Minus 7°C, the figure most often swapped in, is the German Eiswein figure, given by its courts and wine institute; German law itself asks only that the grapes be frozen when picked and pressed.",
+      "verification": "verified by one search: the judgment of the Oberverwaltungsgericht Rheinland-Pfalz of 7 May 2014 (8 A 10489/13) holds that the law asks for grapes frozen at picking and pressing and reads minus 7°C over some ten to twelve hours as what the concentration of healthy grapes needs; no result shows a figure in the text of the Weingesetz or the Weinverordnung, and the German Wine Institute and the Bavarian state institute (LWG, Kurzleitfaden Eiswein, November 2025) give minus 7°C as the working figure. The wording therefore names the courts and the wine institute as the source of the figure and the law as asking only for frozen grapes, which stands whichever way the court reading is weighed. The direct integrator (applied-cms-direct.json) found secondary pages saying the law requires minus 7°C and left its upper bank recurrences; this search supports the finding.",
+      "source": "rechtslupe.de, Die erforderlichen Minusgrade bei Eiswein (OVG Rheinland-Pfalz, 7 May 2014, 8 A 10489/13); lwg.bayern.de, Kurzleitfaden Eiswein (20 November 2025); searched 31 October 2026"
+    },
+    {
+      "finding": "canada",
+      "review": ".scripts/cms/review/canada.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/mapless.1.json",
+      "record": {
+        "kind": "country (map-less)",
+        "key": "canada"
+      },
+      "field": "countries.0.traps.0",
+      "builds": "js/regions/mapless.json",
+      "old": "Canada asks minus 8°C for icewine; Germany asks minus 7°C for Eiswein. The numbers are swapped on exams.",
+      "new": "Canada asks minus 8°C for icewine; Germany's figure for Eiswein, minus 7°C, comes from its courts and wine institute rather than the text of its wine law. The numbers are swapped on exams.",
+      "note": "recurrence in the same record",
+      "verification": "verified by one search: the judgment of the Oberverwaltungsgericht Rheinland-Pfalz of 7 May 2014 (8 A 10489/13) holds that the law asks for grapes frozen at picking and pressing and reads minus 7°C over some ten to twelve hours as what the concentration of healthy grapes needs; no result shows a figure in the text of the Weingesetz or the Weinverordnung, and the German Wine Institute and the Bavarian state institute (LWG, Kurzleitfaden Eiswein, November 2025) give minus 7°C as the working figure. The wording therefore names the courts and the wine institute as the source of the figure and the law as asking only for frozen grapes, which stands whichever way the court reading is weighed. The direct integrator (applied-cms-direct.json) found secondary pages saying the law requires minus 7°C and left its upper bank recurrences; this search supports the finding.",
+      "source": "rechtslupe.de, Die erforderlichen Minusgrade bei Eiswein (OVG Rheinland-Pfalz, 7 May 2014, 8 A 10489/13); lwg.bayern.de, Kurzleitfaden Eiswein (20 November 2025); searched 31 October 2026"
+    },
+    {
+      "finding": "canada",
+      "review": ".scripts/cms/review/canada.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/mapless.1.json",
+      "record": {
+        "kind": "country (map-less)",
+        "key": "canada"
+      },
+      "field": "countries.0.sources.7",
+      "builds": "js/regions/mapless.json",
+      "old": null,
+      "new": {
+        "title": "Oberverwaltungsgericht Rheinland-Pfalz, judgment of 7 May 2014 (8 A 10489/13): Eiswein grapes frozen at picking and pressing, with minus 7°C over several hours for healthy grapes",
+        "url": "https://www.rechtslupe.de/verwaltungsrecht/die-erforderlichen-minusgrade-bei-eiswein-377369",
+        "asOf": "2014-05-07"
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "verified by one search: the judgment of the Oberverwaltungsgericht Rheinland-Pfalz of 7 May 2014 (8 A 10489/13) holds that the law asks for grapes frozen at picking and pressing and reads minus 7°C over some ten to twelve hours as what the concentration of healthy grapes needs; no result shows a figure in the text of the Weingesetz or the Weinverordnung, and the German Wine Institute and the Bavarian state institute (LWG, Kurzleitfaden Eiswein, November 2025) give minus 7°C as the working figure. The wording therefore names the courts and the wine institute as the source of the figure and the law as asking only for frozen grapes, which stands whichever way the court reading is weighed. The direct integrator (applied-cms-direct.json) found secondary pages saying the law requires minus 7°C and left its upper bank recurrences; this search supports the finding.",
+      "source": "rechtslupe.de, Die erforderlichen Minusgrade bei Eiswein (OVG Rheinland-Pfalz, 7 May 2014, 8 A 10489/13); lwg.bayern.de, Kurzleitfaden Eiswein (20 November 2025); searched 31 October 2026"
+    },
+    {
+      "finding": "canada",
+      "review": ".scripts/cms/review/canada.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/germany.1.json",
+      "record": {
+        "kind": "country",
+        "key": "germany"
+      },
+      "field": "country.questions.1.exp",
+      "builds": "js/data-regions.js (the index)",
+      "id": "r-5tyl3i0r",
+      "idMoved": false,
+      "stemChanged": false,
+      "old": "The law asks for minus 7 °C or colder at picking and pressing, so that the water stays in the press as ice and the must reaches Beerenauslese weight without botrytis.",
+      "new": "German law asks that the grapes be frozen when picked and pressed, and minus 7 °C or colder is the figure its courts and the German Wine Institute give, so that the water stays in the press as ice and the must reaches Beerenauslese weight without botrytis.",
+      "note": "the germany index the finding names",
+      "verification": "verified by one search: the judgment of the Oberverwaltungsgericht Rheinland-Pfalz of 7 May 2014 (8 A 10489/13) holds that the law asks for grapes frozen at picking and pressing and reads minus 7°C over some ten to twelve hours as what the concentration of healthy grapes needs; no result shows a figure in the text of the Weingesetz or the Weinverordnung, and the German Wine Institute and the Bavarian state institute (LWG, Kurzleitfaden Eiswein, November 2025) give minus 7°C as the working figure. The wording therefore names the courts and the wine institute as the source of the figure and the law as asking only for frozen grapes, which stands whichever way the court reading is weighed. The direct integrator (applied-cms-direct.json) found secondary pages saying the law requires minus 7°C and left its upper bank recurrences; this search supports the finding.",
+      "source": "rechtslupe.de, Die erforderlichen Minusgrade bei Eiswein (OVG Rheinland-Pfalz, 7 May 2014, 8 A 10489/13); lwg.bayern.de, Kurzleitfaden Eiswein (20 November 2025); searched 31 October 2026"
+    },
+    {
+      "finding": "canada",
+      "review": ".scripts/cms/review/canada.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/germany.1.json",
+      "record": {
+        "kind": "country",
+        "key": "germany"
+      },
+      "field": "country.sources.5",
+      "builds": "js/regions/germany.json",
+      "old": null,
+      "new": {
+        "title": "Oberverwaltungsgericht Rheinland-Pfalz, judgment of 7 May 2014 (8 A 10489/13): Eiswein grapes frozen at picking and pressing, with minus 7°C over several hours for healthy grapes",
+        "url": "https://www.rechtslupe.de/verwaltungsrecht/die-erforderlichen-minusgrade-bei-eiswein-377369",
+        "asOf": "2014-05-07"
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "verified by one search: the judgment of the Oberverwaltungsgericht Rheinland-Pfalz of 7 May 2014 (8 A 10489/13) holds that the law asks for grapes frozen at picking and pressing and reads minus 7°C over some ten to twelve hours as what the concentration of healthy grapes needs; no result shows a figure in the text of the Weingesetz or the Weinverordnung, and the German Wine Institute and the Bavarian state institute (LWG, Kurzleitfaden Eiswein, November 2025) give minus 7°C as the working figure. The wording therefore names the courts and the wine institute as the source of the figure and the law as asking only for frozen grapes, which stands whichever way the court reading is weighed. The direct integrator (applied-cms-direct.json) found secondary pages saying the law requires minus 7°C and left its upper bank recurrences; this search supports the finding.",
+      "source": "rechtslupe.de, Die erforderlichen Minusgrade bei Eiswein (OVG Rheinland-Pfalz, 7 May 2014, 8 A 10489/13); lwg.bayern.de, Kurzleitfaden Eiswein (20 November 2025); searched 31 October 2026"
+    },
+    {
+      "finding": "loire",
+      "review": ".scripts/cms/review/loire.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/france.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "loire",
+        "name": "Loire Valley"
+      },
+      "field": "regions.2.law.classification",
+      "builds": "js/regions/france.json",
+      "old": "Quarts de Chaume became the valley's first and only Grand Cru in 2011 and Chaume its only Premier Cru, within Coteaux du Layon; Savennières carries two named crus, Coulée de Serrant and Roche aux Moines; and Muscadet has ten crus communaux, nine in Sèvre et Maine plus Champtoceaux, the first three recognised in 2011, with longer lees ageing.",
+      "new": "Quarts de Chaume became the valley's first and only Grand Cru in 2011 and Chaume its only Premier Cru, within Coteaux du Layon; Savennières carries two named crus, Coulée de Serrant and Roche aux Moines; and Muscadet Sèvre et Maine had seven crus communaux in its rules by early 2026, the first three recognised in 2011, with longer lees ageing; La Haie-Fouassière, Vallet and Champtoceaux (in the Coteaux de la Loire) were put to public consultation in 2025.",
+      "excerpt": "the changed sentence of a longer field; the rest of the field is unchanged",
+      "verification": "verified by one search: the INAO put Champtoceaux (Muscadet Coteaux de la Loire), La Haie-Fouassière and Vallet (Muscadet Sèvre et Maine) to public consultation from 25 August to 25 October 2025, and The Wine Doctor's report of February 2026 still counts seven ratified crus with the three as works in progress; no amended cahier des charges was found. One page (winewithseth.com) claims all ten recognised in 2025 to 2026 but lists nine on another page, so it was not relied on. The count is therefore dated (seven by early 2026) and the three are named as proposed in 2025, true whether or not they have been published since.",
+      "source": "inao.gouv.fr, Presse_avis_ConsPub_3DGC_Muscadet.pdf (August 2025); thewinedoctor.com, Muscadet crus communaux tasting, February 2026; searched 31 October 2026"
+    },
+    {
+      "finding": "loire",
+      "review": ".scripts/cms/review/loire.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/france.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "loire",
+        "name": "Loire Valley"
+      },
+      "field": "regions.2.law.tiers.3.1",
+      "builds": "js/regions/france.json",
+      "old": "Ten named villages, nine in Sèvre et Maine and Champtoceaux in the Coteaux de la Loire, Clisson, Gorges and Le Pallet first in 2011, with lower yields and at least a year and a half to two years on the lees.",
+      "new": "Seven named villages in Sèvre et Maine by early 2026, Clisson, Gorges and Le Pallet first in 2011, with lower yields and at least a year and a half to two years on the lees; La Haie-Fouassière, Vallet and Champtoceaux in the Coteaux de la Loire were proposed in 2025.",
+      "verification": "verified by one search: the INAO put Champtoceaux (Muscadet Coteaux de la Loire), La Haie-Fouassière and Vallet (Muscadet Sèvre et Maine) to public consultation from 25 August to 25 October 2025, and The Wine Doctor's report of February 2026 still counts seven ratified crus with the three as works in progress; no amended cahier des charges was found. One page (winewithseth.com) claims all ten recognised in 2025 to 2026 but lists nine on another page, so it was not relied on. The count is therefore dated (seven by early 2026) and the three are named as proposed in 2025, true whether or not they have been published since.",
+      "source": "inao.gouv.fr, Presse_avis_ConsPub_3DGC_Muscadet.pdf (August 2025); thewinedoctor.com, Muscadet crus communaux tasting, February 2026; searched 31 October 2026"
+    },
+    {
+      "finding": "loire",
+      "review": ".scripts/cms/review/loire.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/france.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "loire",
+        "name": "Loire Valley"
+      },
+      "field": "regions.2.places.0.places.1.note",
+      "builds": "js/regions/france.json",
+      "old": "Clisson, Gorges, Le Pallet, Goulaine, Château-Thébaud, Monnières-Saint-Fiacre, Mouzillon-Tillières, La Haye-Fouassière, Vallet and Champtoceaux: village wines held around two years on their lees.",
+      "new": "Clisson, Gorges, Le Pallet, Goulaine, Château-Thébaud, Monnières-Saint-Fiacre and Mouzillon-Tillières, the seven in the rules by early 2026: village wines held around two years on their lees. La Haie-Fouassière, Vallet and Champtoceaux were put to consultation in 2025.",
+      "verification": "verified by one search: the INAO put Champtoceaux (Muscadet Coteaux de la Loire), La Haie-Fouassière and Vallet (Muscadet Sèvre et Maine) to public consultation from 25 August to 25 October 2025, and The Wine Doctor's report of February 2026 still counts seven ratified crus with the three as works in progress; no amended cahier des charges was found. One page (winewithseth.com) claims all ten recognised in 2025 to 2026 but lists nine on another page, so it was not relied on. The count is therefore dated (seven by early 2026) and the three are named as proposed in 2025, true whether or not they have been published since.",
+      "source": "inao.gouv.fr, Presse_avis_ConsPub_3DGC_Muscadet.pdf (August 2025); thewinedoctor.com, Muscadet crus communaux tasting, February 2026; searched 31 October 2026"
+    },
+    {
+      "finding": "loire",
+      "review": ".scripts/cms/review/loire.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/france.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "loire",
+        "name": "Loire Valley"
+      },
+      "field": "regions.2.sources.4",
+      "builds": "js/regions/france.json",
+      "old": null,
+      "new": {
+        "title": "INAO, avis de consultation publique on three dénominations géographiques complémentaires for Muscadet: Champtoceaux, La Haie-Fouassière and Vallet, 25 August to 25 October 2025",
+        "url": "https://www.inao.gouv.fr/sites/default/files/2025-08/Presse_avis_ConsPub_3DGC_Muscadet.pdf",
+        "asOf": "2025",
+        "primary": 1
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "verified by one search: the INAO put Champtoceaux (Muscadet Coteaux de la Loire), La Haie-Fouassière and Vallet (Muscadet Sèvre et Maine) to public consultation from 25 August to 25 October 2025, and The Wine Doctor's report of February 2026 still counts seven ratified crus with the three as works in progress; no amended cahier des charges was found. One page (winewithseth.com) claims all ten recognised in 2025 to 2026 but lists nine on another page, so it was not relied on. The count is therefore dated (seven by early 2026) and the three are named as proposed in 2025, true whether or not they have been published since.",
+      "source": "inao.gouv.fr, Presse_avis_ConsPub_3DGC_Muscadet.pdf (August 2025); thewinedoctor.com, Muscadet crus communaux tasting, February 2026; searched 31 October 2026"
+    },
+    {
+      "finding": "loire",
+      "review": ".scripts/cms/review/loire.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/france.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "loire",
+        "name": "Loire Valley"
+      },
+      "field": "regions.2.sources.5",
+      "builds": "js/regions/france.json",
+      "old": null,
+      "new": {
+        "title": "The Wine Doctor, Muscadet crus communaux tasting report, February 2026 (seven crus ratified)",
+        "url": "https://www.thewinedoctor.com/tastingsformal/muscadet2026_02_crucommunal.shtml",
+        "asOf": "2026"
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "verified by one search: the INAO put Champtoceaux (Muscadet Coteaux de la Loire), La Haie-Fouassière and Vallet (Muscadet Sèvre et Maine) to public consultation from 25 August to 25 October 2025, and The Wine Doctor's report of February 2026 still counts seven ratified crus with the three as works in progress; no amended cahier des charges was found. One page (winewithseth.com) claims all ten recognised in 2025 to 2026 but lists nine on another page, so it was not relied on. The count is therefore dated (seven by early 2026) and the three are named as proposed in 2025, true whether or not they have been published since.",
+      "source": "inao.gouv.fr, Presse_avis_ConsPub_3DGC_Muscadet.pdf (August 2025); thewinedoctor.com, Muscadet crus communaux tasting, February 2026; searched 31 October 2026"
+    },
+    {
+      "finding": "lombardy-emilia-romagna",
+      "review": ".scripts/cms/review/lombardy-emilia-romagna.json",
+      "confidence": "high",
+      "file": ".scripts/regions/fragments/italy.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "lombardy",
+        "name": "Lombardy"
+      },
+      "field": "regions.1.law.classification",
+      "builds": "js/regions/italy.json",
+      "old": "Franciacorta DOCG (1995) was the first Italian denomination reserved for bottle-fermented sparkling wine, and it is the model: Chardonnay, Pinot Nero and Pinot Bianco (the last capped at half), with Erbamat allowed up to ten per cent since 2017; styles are defined by lees time and grape (Satèn, Rosé, Millesimato, Riserva); still wines from the same hills are Curtefranca DOC.",
+      "new": "Franciacorta, a DOC from 1967 for still and sparkling wine, became in 1995 the first DOCG reserved for bottle-fermented sparkling wine (Trento DOC, in 1993, was the first denomination of any rank written for it alone), and it is the model: Chardonnay, Pinot Nero and Pinot Bianco (the last capped at half), with Erbamat allowed up to ten per cent since 2017; styles are defined by lees time and grape (Satèn, Rosé, Millesimato, Riserva); still wines from the same hills are Curtefranca DOC.",
+      "excerpt": "the changed sentence of a longer field; the rest of the field is unchanged",
+      "verification": "high, applied as written; the trentino article (italy.2.json, Trento DOC created in 1993 as Italy's first DOC written solely for traditional method sparkling wine), the Village stem c-fe52u3q3 and m-gqwt5r7n already hold it so",
+      "source": "Istituto Trento Doc; Consorzio per la tutela del Franciacorta, history (DOC 1967, DOCG 1995); the Codex's own c-fe52u3q3 (as the finding cites)"
+    },
+    {
+      "finding": "new-zealand",
+      "review": ".scripts/cms/review/new-zealand.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/new-zealand.json",
+      "record": {
+        "kind": "country",
+        "key": "new-zealand"
+      },
+      "field": "country.overview",
+      "builds": "js/regions/new-zealand.json",
+      "old": "The Geographical Indications (Wine and Spirits) Registration Act 2006 came into force on 27 July 2017 after a 2016 amendment.",
+      "new": "The Geographical Indications (Wine and Spirits) Registration Act 2006 came into force on 27 July 2017 after a 2016 amendment; since 1 May 2024 it has been the Geographical Indications Registration Act 2006, widened to other goods under the free trade agreement with the European Union.",
+      "excerpt": "the changed sentence of a longer field; the rest of the field is unchanged",
+      "verification": "verified by one search: the Act's title was amended on 1 May 2024 by section 21 of the European Union Free Trade Agreement Legislation Amendment Act 2024 (2024 No 10) to the Geographical Indications Registration Act 2006, which now covers other goods as well; the rewrite integrator's search agreed (c-zovismb2, applied-cms-rewrite.json). The 2017 commencement stays as written, so the region articles that say the register opened in July 2017 under the old title (gisborne and others) are true of that date and were left.",
+      "source": "legislation.govt.nz, Geographical Indications Registration Act 2006 (latest version); iponz.govt.nz, Changes to the Geographical Indications Registration Act 2006 enter into force; searched 31 October 2026"
+    },
+    {
+      "finding": "new-zealand",
+      "review": ".scripts/cms/review/new-zealand.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/new-zealand.json",
+      "record": {
+        "kind": "country",
+        "key": "new-zealand"
+      },
+      "field": "country.cards.1.b",
+      "builds": "js/data-regions.js (the index)",
+      "old": "The Geographical Indications (Wine and Spirits) Registration Act 2006, in force from 27 July 2017; the first GIs registered from 2018, North Canterbury in 2020, Bannockburn in 2022.",
+      "new": "The Geographical Indications Registration Act 2006, titled (Wine and Spirits) until 1 May 2024; in force from 27 July 2017, the first GIs registered from 2018, North Canterbury in 2020, Bannockburn in 2022.",
+      "verification": "verified by one search: the Act's title was amended on 1 May 2024 by section 21 of the European Union Free Trade Agreement Legislation Amendment Act 2024 (2024 No 10) to the Geographical Indications Registration Act 2006, which now covers other goods as well; the rewrite integrator's search agreed (c-zovismb2, applied-cms-rewrite.json). The 2017 commencement stays as written, so the region articles that say the register opened in July 2017 under the old title (gisborne and others) are true of that date and were left.",
+      "source": "legislation.govt.nz, Geographical Indications Registration Act 2006 (latest version); iponz.govt.nz, Changes to the Geographical Indications Registration Act 2006 enter into force; searched 31 October 2026"
+    },
+    {
+      "finding": "new-zealand",
+      "review": ".scripts/cms/review/new-zealand.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/new-zealand.json",
+      "record": {
+        "kind": "country",
+        "key": "new-zealand"
+      },
+      "field": "country.sources.6",
+      "builds": "js/regions/new-zealand.json",
+      "old": null,
+      "new": {
+        "title": "Geographical Indications Registration Act 2006, retitled from 1 May 2024 by section 21 of the European Union Free Trade Agreement Legislation Amendment Act 2024 (New Zealand Legislation)",
+        "url": "https://legislation.govt.nz/act/public/2006/60/en/latest/",
+        "asOf": "2024-05-01",
+        "primary": 1
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "verified by one search: the Act's title was amended on 1 May 2024 by section 21 of the European Union Free Trade Agreement Legislation Amendment Act 2024 (2024 No 10) to the Geographical Indications Registration Act 2006, which now covers other goods as well; the rewrite integrator's search agreed (c-zovismb2, applied-cms-rewrite.json). The 2017 commencement stays as written, so the region articles that say the register opened in July 2017 under the old title (gisborne and others) are true of that date and were left.",
+      "source": "legislation.govt.nz, Geographical Indications Registration Act 2006 (latest version); iponz.govt.nz, Changes to the Geographical Indications Registration Act 2006 enter into force; searched 31 October 2026"
+    },
+    {
+      "finding": "south-africa",
+      "review": ".scripts/cms/review/south-africa.json",
+      "confidence": "high",
+      "file": ".scripts/regions/fragments/south-africa.1.json",
+      "record": {
+        "kind": "country",
+        "key": "south-africa"
+      },
+      "field": "country.ladder.6.1",
+      "builds": "js/regions/south-africa.json",
+      "old": "The numbered seal of the Wine and Spirit Board guarantees stated origin, vintage and variety after analysis and tasting; since 2010 it is the Integrity and Sustainability seal, with the farm's sustainability audit folded in.",
+      "new": "The numbered seal, issued by the Wine Certification Authority (the Wine and Spirit Board until 1 August 2023), guarantees stated origin, vintage and variety after analysis and tasting; since 2010 it is the Integrity and Sustainability seal, with the farm's sustainability audit folded in.",
+      "verification": "high, applied as written: the two seal labels name the Wine Certification Authority, with the Wine and Spirit Board as its predecessor; the country source of 2020 that names the board's scheme regulations is a true historical citation and was kept, with the 2021 Act added beside it",
+      "source": "Liquor Products Amendment Act 8 of 2021 (Government Gazette, 17 September 2021), section 2; consolidated Liquor Products Act 60 of 1989, definitions with effect from 1 August 2023 (as the finding cites)"
+    },
+    {
+      "finding": "south-africa",
+      "review": ".scripts/cms/review/south-africa.json",
+      "confidence": "high",
+      "file": ".scripts/regions/fragments/south-africa.1.json",
+      "record": {
+        "kind": "country",
+        "key": "south-africa"
+      },
+      "field": "country.sources.6",
+      "builds": "js/regions/south-africa.json",
+      "old": null,
+      "new": {
+        "title": "Liquor Products Amendment Act 8 of 2021 (Government Gazette, 17 September 2021): the Wine Certification Authority in place of the Wine and Spirit Board from 1 August 2023",
+        "asOf": "2023-08-01",
+        "primary": 1
+      },
+      "note": "source appended (indices of existing sources unchanged)",
+      "verification": "high, applied as written: the two seal labels name the Wine Certification Authority, with the Wine and Spirit Board as its predecessor; the country source of 2020 that names the board's scheme regulations is a true historical citation and was kept, with the 2021 Act added beside it",
+      "source": "Liquor Products Amendment Act 8 of 2021 (Government Gazette, 17 September 2021), section 2; consolidated Liquor Products Act 60 of 1989, definitions with effect from 1 August 2023 (as the finding cites)"
+    },
+    {
+      "finding": "south-africa",
+      "review": ".scripts/cms/review/south-africa.json",
+      "confidence": "high",
+      "file": ".scripts/regions/fragments/south-africa.2.json",
+      "record": {
+        "kind": "article",
+        "slug": "elgin",
+        "name": "Elgin"
+      },
+      "field": "regions.1.law.labels.2.1",
+      "builds": "js/regions/south-africa.json",
+      "old": "The numbered Wine and Spirit Board seal certifying origin, vintage, variety and sustainable production.",
+      "new": "The numbered seal of the Wine Certification Authority, the Wine and Spirit Board until 2023, certifying origin, vintage, variety and sustainable production.",
+      "verification": "high, applied as written: the two seal labels name the Wine Certification Authority, with the Wine and Spirit Board as its predecessor; the country source of 2020 that names the board's scheme regulations is a true historical citation and was kept, with the 2021 Act added beside it",
+      "source": "Liquor Products Amendment Act 8 of 2021 (Government Gazette, 17 September 2021), section 2; consolidated Liquor Products Act 60 of 1989, definitions with effect from 1 August 2023 (as the finding cites)"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.traps.5",
+      "builds": "js/regions/spain.json",
+      "old": "Vino de Pago is a single estate's own appellation, not a tier above DOCa in prestige by law; it sits beside the DOs.",
+      "new": "Vino de Pago is a single estate's own appellation, which the 2003 law lists above DOCa: a level for one property, not a rung a region climbs to. A pago inside a DOCa may be called Vino de Pago Calificado.",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.exam.0",
+      "builds": "js/regions/spain.json",
+      "old": "The pyramid, top down: DOCa/DOQ (Rioja and Priorat only), Vino de Pago, DO, Vino de Calidad, Vino de la Tierra, Vino.",
+      "new": "The pyramid, top down: Vino de Pago (single estates), DOCa/DOQ (Rioja and Priorat only), DO, Vino de Calidad, Vino de la Tierra, Vino.",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.cards.0.b",
+      "builds": "js/data-regions.js (the index)",
+      "old": "DOCa/DOQ (Rioja, Priorat), Vino de Pago (single estates), DO, Vino de Calidad con Indicación Geográfica, Vino de la Tierra (IGP), Vino.",
+      "new": "Vino de Pago (single estates), DOCa/DOQ (Rioja, Priorat), DO, Vino de Calidad con Indicación Geográfica, Vino de la Tierra (IGP), Vino.",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.ladder.1.1",
+      "builds": "js/regions/spain.json",
+      "old": "Denominación de Origen Calificada, Qualificada in Catalan: the top tier, held only by Rioja (1991) and Priorat (Catalan grant 2000, national confirmation 2009).",
+      "new": "Denominación de Origen Calificada, Qualificada in Catalan: the top tier a region can hold, held only by Rioja (1991) and Priorat (Catalan grant 2000, national confirmation 2009).",
+      "note": "the ladder, recurrence in the same record; logged at its position after the ladder swap below (it was ladder.0.1)",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.ladder.0.1",
+      "builds": "js/regions/spain.json",
+      "old": "A single estate granted its own appellation under the 2003 law; Dominio de Valdepusa was the first, in 2003. Most lie in Castilla-La Mancha and Navarra.",
+      "new": "A single estate granted its own appellation under the 2003 law, which lists it above DOCa; Dominio de Valdepusa was the first, in 2003. Most lie in Castilla-La Mancha and Navarra.",
+      "note": "the ladder, recurrence in the same record; logged at its position after the ladder swap below (it was ladder.1.1)",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.ladder",
+      "builds": "js/regions/spain.json",
+      "old": [
+        "DOCa / DOQ",
+        "Vino de Pago"
+      ],
+      "new": [
+        "Vino de Pago",
+        "DOCa / DOQ"
+      ],
+      "note": "the ladder runs top down, so Vino de Pago moves above DOCa / DOQ",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.overview",
+      "builds": "js/regions/spain.json",
+      "old": "The law of 2003, the Ley de la Viña y del Vino, set the pyramid now carried under the European scheme of protected origins: at the top, Denominación de Origen Calificada, DOQ in Catalan, held by Rioja since 1991 and Priorat since its Catalan grant of 2000 and national confirmation of 2009; then the Denominaciones de Origen, which are the working tier; Vino de Pago for a single estate with its own appellation, Dominio de Valdepusa the first in 2003; Vino de Calidad con Indicación Geográfica as a stepping stone; Vino de la Tierra as the IGP country wine; and plain Vino.",
+      "new": "The law of 2003, the Ley de la Viña y del Vino, set the pyramid now carried under the European scheme of protected origins: at the top of the regional tiers, Denominación de Origen Calificada, DOQ in Catalan, held by Rioja since 1991 and Priorat since its Catalan grant of 2000 and national confirmation of 2009; then the Denominaciones de Origen, which are the working tier; Vino de Pago for a single estate with its own appellation, Dominio de Valdepusa the first in 2003; Vino de Calidad con Indicación Geográfica as a stepping stone; Vino de la Tierra as the IGP country wine; and plain Vino.",
+      "excerpt": "the changed sentence of a longer field; the rest of the field is unchanged",
+      "note": "recurrence in the same record",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.overview",
+      "builds": "js/regions/spain.json",
+      "old": "The law of 2003, the Ley de la Viña y del Vino, set the pyramid now carried under the European scheme of protected origins: at the top of the regional tiers, Denominación de Origen Calificada, DOQ in Catalan, held by Rioja since 1991 and Priorat since its Catalan grant of 2000 and national confirmation of 2009; then the Denominaciones de Origen, which are the working tier; Vino de Pago for a single estate with its own appellation, Dominio de Valdepusa the first in 2003; Vino de Calidad con Indicación Geográfica as a stepping stone; Vino de la Tierra as the IGP country wine; and plain Vino.",
+      "new": "The law of 2003, the Ley de la Viña y del Vino, set the pyramid now carried under the European scheme of protected origins: at the top of the regional tiers, Denominación de Origen Calificada, DOQ in Catalan, held by Rioja since 1991 and Priorat since its Catalan grant of 2000 and national confirmation of 2009; then the Denominaciones de Origen, which are the working tier; Vino de Pago, which the law lists above them all, for a single estate with its own appellation, Dominio de Valdepusa the first in 2003; Vino de Calidad con Indicación Geográfica as a stepping stone; Vino de la Tierra as the IGP country wine; and plain Vino.",
+      "excerpt": "the changed sentence of a longer field; the rest of the field is unchanged",
+      "note": "recurrence in the same record",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.traps.1",
+      "builds": "js/regions/spain.json",
+      "old": "Only Rioja and Priorat hold the top tier; Ribera del Duero, Jerez and Cava are DOs.",
+      "new": "Only Rioja and Priorat hold the top regional tier; Ribera del Duero, Jerez and Cava are DOs.",
+      "note": "recurrence in the same record",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "country",
+        "key": "spain"
+      },
+      "field": "country.questions.0.exp",
+      "builds": "js/data-regions.js (the index)",
+      "id": "r-fr2is9so",
+      "idMoved": false,
+      "stemChanged": false,
+      "old": "Only Rioja, since 1991, and Priorat, DOQ under Catalan law from 2000 and confirmed nationally in 2009, hold the top tier. Ribera del Duero, Penedès and Jerez are DOs, however famous.",
+      "new": "Only Rioja, since 1991, and Priorat, DOQ under Catalan law from 2000 and confirmed nationally in 2009, hold the top regional tier. Ribera del Duero, Penedès and Jerez are DOs, however famous.",
+      "note": "recurrence in the same record; exp only, the stem and its pinned id unchanged",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    },
+    {
+      "finding": "spain-other-dos",
+      "review": ".scripts/cms/review/spain-other-dos.json",
+      "confidence": "medium",
+      "file": ".scripts/regions/fragments/spain.1.json",
+      "record": {
+        "kind": "article",
+        "slug": "rioja",
+        "name": "Rioja"
+      },
+      "field": "regions.4.law.classification",
+      "builds": "js/regions/spain.json",
+      "old": "Rioja was the first Spanish Denominación de Origen, recognised in 1925 with a Consejo Regulador from 1926, and in 1991 the first Denominación de Origen Calificada, the top tier of Spanish law.",
+      "new": "Rioja was the first Spanish Denominación de Origen, recognised in 1925 with a Consejo Regulador from 1926, and in 1991 the first Denominación de Origen Calificada, the top regional tier of Spanish law.",
+      "excerpt": "the changed sentence of a longer field; the rest of the field is unchanged",
+      "note": "recurrence: the rioja article",
+      "verification": "verified by one search: the Ministry's review of the 2003 law (mapa.gob.es) lists the levels of the origin system in the order vinos de calidad con indicación geográfica, vinos con denominación de origen, vinos con denominación de origen calificada and vinos de pagos, vinos de pagos last and highest (vinos de la tierra below them all), the order of article 13 of Ley 24/2003 (BOE-A-2003-13864); Vino de Pago Calificado as the Village question c-uolx1t26 teaches. The Village chapters, INTRO_CLASS and the la-mancha trap already put Vino de Pago at the head, so the spain country record (the three named fields, its ladder and overview) and the two places that called DOCa the top tier of Spanish law now say the top regional tier.",
+      "source": "Ley 24/2003, de 10 de julio, de la Viña y del Vino, article 13 (boe.es, BOE-A-2003-13864); mapa.gob.es, Revista Española de Estudios Agrosociales y Pesqueros 204 (the levels of the 2003 law); searched 31 October 2026"
+    }
+  ],
+  "skipped": [
+    {
+      "finding": "argentina",
+      "review": ".scripts/cms/review/argentina.json",
+      "confidence": "high",
+      "where": "js/data-primers.js, the Village chapter South America (Douce Noir)",
+      "reason": "not this route: the direct route's file, applied there (applied-cms-direct.json)",
+      "recurrencesInThisRoute": "none: the argentina country record already spells Douce Noire in its grapes, exam, traps, cards, question 1 and sources"
+    },
+    {
+      "finding": "bordeaux",
+      "review": ".scripts/cms/review/bordeaux.json",
+      "confidence": "high",
+      "where": "js/data-primers.js, the Village chapter Bordeaux (Entre-Deux-Mers white only)",
+      "reason": "not this route: applied by the direct route",
+      "recurrencesInThisRoute": "none: the bordeaux article (france.3.json) already teaches dry white and, since the 2023 vintage, red in its winemaking, tiers, places, traps and question 4"
+    },
+    {
+      "finding": "business-of-the-sommelier",
+      "review": ".scripts/cms/review/business-of-the-sommelier.json",
+      "confidence": "medium",
+      "where": "js/data-primers.js, the Village chapter Business of the Sommelier (the BTG trap)",
+      "reason": "not this route: applied by the direct route",
+      "recurrencesInThisRoute": "none: no region article, country page or technique prices a glass"
+    },
+    {
+      "finding": "central-southern-italy",
+      "review": ".scripts/cms/review/central-southern-italy.json",
+      "confidence": "medium",
+      "where": "js/data-questions.js c-c9ijyeac exp",
+      "reason": "not this route: applied by the rewrite route",
+      "recurrencesInThisRoute": "none: the abruzzo article (italy.3.json) already names three DOCGs with Casauria (2025) in its summary, classification and tiers"
+    },
+    {
+      "finding": "cocktails",
+      "review": ".scripts/cms/review/cocktails.json",
+      "confidence": "medium",
+      "where": "js/data-service-ref.js (Sazerac) and s-ukib3ha3",
+      "reason": "not this route: applied by the direct route",
+      "recurrencesInThisRoute": "none: no region fragment names the Sazerac"
+    },
+    {
+      "finding": "mexico",
+      "review": ".scripts/cms/review/mexico.json",
+      "confidence": "medium",
+      "where": "js/data-intro.js i-jieghr8k stem",
+      "reason": "not this route: applied by the rewrite route",
+      "recurrencesInThisRoute": "none: the mexico country record (mapless.1.json) already says some fifty kilometres as the crow flies"
+    },
+    {
+      "finding": "rhone",
+      "review": ".scripts/cms/review/rhone.json",
+      "confidence": "medium",
+      "where": "js/data-primers.js, the Village chapter Rhône (nine southern crus)",
+      "reason": "not this route: applied by the direct route",
+      "recurrencesInThisRoute": "none: the rhone article (france.2.json) already counts the southern crus with Laudun"
+    },
+    {
+      "finding": "tuscany (first error)",
+      "review": ".scripts/cms/review/tuscany.json",
+      "confidence": "high",
+      "where": "js/data-questions.js c-wpxpyzl1",
+      "reason": "not this route: applied by the rewrite route",
+      "recurrencesInThisRoute": "none: the tuscany article (italy.2.json) already gives the 60 per cent Chianti minimum from 2026/27 (exam, question 1)"
+    },
+    {
+      "finding": "tuscany (second error)",
+      "review": ".scripts/cms/review/tuscany.json",
+      "confidence": "high",
+      "where": "js/data-primers.js, the Village chapter Italy Central & South (Chianti 70 per cent)",
+      "reason": "not this route: applied by the direct route",
+      "recurrencesInThisRoute": "none, as above"
+    },
+    {
+      "finding": "vinification",
+      "review": ".scripts/cms/review/vinification.json",
+      "confidence": "medium",
+      "where": "js/data-questions.js c-71ptmz2m",
+      "reason": "not this route: applied by the rewrite route (the id moved there to c-w6106ub6)",
+      "recurrencesInThisRoute": "none: the barossa and mclaren-vale articles name puncheons without a litre figure, and the oak technique names none"
+    },
+    {
+      "finding": "new-zealand, the bank part",
+      "review": ".scripts/cms/review/new-zealand.json",
+      "confidence": "medium",
+      "where": "js/data-questions.js c-zovismb2",
+      "reason": "not this route: applied by the rewrite route; this route applied the country record (above)"
+    },
+    {
+      "finding": "south-africa, the bank part",
+      "review": ".scripts/cms/review/south-africa.json",
+      "confidence": "high",
+      "where": "js/data-intro.js i-6kt4stwr; js/data-questions.js c-qtrb7buc",
+      "reason": "not this route: applied by the rewrite route; this route applied the two seal labels (above)"
+    },
+    {
+      "finding": "the canon audit",
+      "review": ".scripts/cms/review/canon-intro.json, canon-questions.json, canon-advanced.json, canon-master.json",
+      "confidence": null,
+      "where": "every bank",
+      "reason": "absent: none of the four files exists on 31 October 2026, so that part of the review has not run and nothing from it is applied"
+    }
+  ],
+  "movedIds": {
+    "count": 0,
+    "rows": [],
+    "note": "no stem, opts or a was changed; build-regions kept all 1,412 question ids (0 minted, 1,412 kept) and the option deal, which reads the owner and the stem, is unchanged"
+  },
+  "searches": {
+    "used": 5,
+    "cap": 20,
+    "noLimitMet": true,
+    "list": [
+      "27 CFR 4.27 and the 2012 vintage rule for a country appellation (california-north-coast)",
+      "Weinverordnung and the Eiswein temperature (canada)",
+      "the three proposed Muscadet crus communaux and their status in 2026 (loire)",
+      "the 2024 retitling of the Geographical Indications Act (new-zealand)",
+      "Ley 24/2003 article 13, the order of the levels (spain-other-dos)"
+    ]
+  },
+  "filesChanged": {
+    "fragments": [
+      ".scripts/regions/fragments/california.json",
+      ".scripts/regions/fragments/france.1.json",
+      ".scripts/regions/fragments/germany.1.json",
+      ".scripts/regions/fragments/italy.1.json",
+      ".scripts/regions/fragments/mapless.1.json",
+      ".scripts/regions/fragments/new-zealand.json",
+      ".scripts/regions/fragments/south-africa.1.json",
+      ".scripts/regions/fragments/south-africa.2.json",
+      ".scripts/regions/fragments/spain.1.json"
+    ],
+    "built": [
+      "js/data-regions.js",
+      "js/regions/california.json",
+      "js/regions/france.json",
+      "js/regions/germany.json",
+      "js/regions/italy.json",
+      "js/regions/mapless.json",
+      "js/regions/new-zealand.json",
+      "js/regions/south-africa.json",
+      "js/regions/spain.json"
+    ],
+    "note": "the reading files carry their own FNV stamps in REGIONS.parts, so their addresses moved with them"
+  },
+  "gates": [
+    {
+      "gate": "node .scripts/regions/check-fragment.cjs on each of the nine fragments touched",
+      "exit": 0,
+      "note": "all pass; the superlative notes are the same lines before and after (diffed against the pre-edit copies)"
+    },
+    {
+      "gate": "node .scripts/regions/build-regions.cjs",
+      "exit": 0,
+      "note": "33 fragments, 115 regions, 24 countries, 43 techniques, 1412 questions (0 minted, 1412 kept), 1513 cards, 3693 aliases; index 1,152,620 bytes, 19 reading files 2,262,169 bytes"
+    },
+    {
+      "gate": "node .scripts/regions/build-regions.cjs --check",
+      "exit": 0,
+      "note": "the index and every reading file are the build of the fragments"
+    },
+    {
+      "gate": "node .scripts/check-regions.js",
+      "exit": 0,
+      "note": "74 passed, 0 failed; house wines 271 of 271 resolve"
+    },
+    {
+      "gate": "node .scripts/check-syntax.js",
+      "exit": 0,
+      "note": "all 87 JS files parse"
+    }
+  ],
+  "houseRuleSweep": "every new string: no dash of any kind, nothing at or above U+2190, British spelling in our own words, nobody living named, never the retired word, counts dated (seven crus by early 2026; the Act retitled 1 May 2024; the authority from 1 August 2023; the vintage rule from November 2012)",
+  "leftForTheIntegrator": [
+    "js/data-regions.js changed, so its ?v= in index.html (4 at present) and the sw.js CACHE (codex-v112) want a bump at the edition's publish; both files are outside this route",
+    "check-cms.js and check-grapes.js were not run here: they spawn the CMS build, which other agents are writing at the same time, and no field they read (oak, lees, malolactic, carbonic, grapes) was touched"
+  ],
+  "leftForTheOwner": [
+    "germany r-5tyl3i0r: the stem (To what temperature must grapes freeze on the vine for Eiswein?) and its key, minus 7 °C, stand as pinned; only its exp now says the law asks for frozen grapes and the courts and the German Wine Institute give the figure. The search behind it bears on the direct route's unverified upper bank recurrences too (a-x0evsqvv, a-s4ldmjkz, the Village Germany chapter)",
+    "loire: when the INAO publishes La Haie-Fouassière, Vallet and Champtoceaux in the Muscadet rules, the dated count of seven should move to ten",
+    "spain: the priorat article (one of only two Spanish denominations at the top tier; the denomination at Spain's top tier) and the country stem r-fr2is9so (Which region besides Rioja holds Spain's top tier) speak of regional denominations and read true of them, so they were left; the stem is pinned and only its exp was edited",
+    "california: the country card on the label percentages (vintage 95 per cent on an AVA wine, 85 on a state or county wine) is true and silent on American; it was left"
+  ]
+}

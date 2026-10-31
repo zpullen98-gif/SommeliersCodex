@@ -48,8 +48,11 @@ function check(name,value){assert.ok(value,name);checks++;console.log('  ok  '+n
     }
     const unknown=await device('#/v/culinary/missing',true);check('unknown lesson falls back to overview',(await unknown.read()).hash==='#/v/culinary'&&await unknown.page.locator('.v37-lesson-card').count()===8);await unknown.context.close();
     const moved=await device('#/v/culinary/fruit','navigate');check('later navigation is not overwritten by startup recovery',(await moved.read()).view==='library'&&(await moved.read()).depth===1);await moved.context.close();
-    const d=await device('#/library');await d.page.getByRole('button',{name:'Explore the culinary companion',exact:true}).click();
-    check('Library door focuses the destination instead of an unrelated lesson button',await d.page.evaluate(()=>document.activeElement.id==='view'));
+    /* since codex53 the Library carries no culinary door: the companion is the house's, reached from Wine studies (codex48's room) */
+    const lib=await device('#/library');check('the Library draws no culinary door since codex53',await lib.page.getByRole('button',{name:'Explore the culinary companion',exact:true}).count()===0&&await lib.page.locator('.v37-library-door').count()===0);await lib.context.close();
+    const d=await device('#/v/housestudies');await d.page.waitForFunction(()=>v32HasHouse()&&document.querySelector('[data-v48-route="culinary"]'));
+    await d.page.locator('#v48-summary-illustrated').click();await d.page.locator('[data-v48-route="culinary"]').click();await d.page.waitForFunction(()=>S.view==='culinary');
+    check('the Wine studies door focuses the destination instead of an unrelated lesson button',await d.page.evaluate(()=>document.activeElement.id==='view'));
     check('overview leads with the eight lessons and keeps detailed scope closed',await d.page.locator('.v37-lessons + .v37-boundaries:not([open])').count()===1&&await d.page.locator('.v37-lesson-card').count()===8&&await d.page.getByText('About these training examples',{exact:true}).isVisible());
     await d.page.getByRole('button',{name:'Open Fresh, ripe and cooked fruit',exact:true}).click();const before=await d.read();
     check('opening a lesson focuses its destination',await d.page.evaluate(()=>document.activeElement.id==='view'));

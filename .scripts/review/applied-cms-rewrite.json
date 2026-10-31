@@ -1,0 +1,286 @@
+{
+  "route": "rewrite",
+  "edition": "the CMS edition, 31 October 2026",
+  "integrator": "the rewrite pipeline: js/data-intro.js (INTRO_QUESTIONS, the Régionale bank), js/data-questions.js (QUESTIONS, the Village bank) and js/data-primers-intro.js (INTRO_PRIMERS, the Régionale chapters), written only by rewrite/ship.py and rewrite/build-primers.py from rewrite/categories/r1_*.py, r2_*.py and rewrite/primers/*.py",
+  "readFirst": [
+    ".scripts/cms/BRIEF-CMS.md (whole)",
+    ".scripts/regions/BRIEF.md",
+    "rewrite/README.md (whole)",
+    ".scripts/review/applied-rewrite.json and applied-direct.json (the log shape)"
+  ],
+  "inputs": {
+    "canonAudit": {
+      "canon-intro.json": "absent",
+      "canon-questions.json": "absent",
+      "canon-advanced.json": "absent",
+      "canon-master.json": "absent",
+      "note": "No canon file exists under .scripts/cms/review on 31 October 2026, so the canon audit re-read has not run for any bank and nothing was applied from it."
+    },
+    "subjectReviews": {
+      "filesRead": 44,
+      "of": 44,
+      "alsoPresent": "grid-red.json and grid-white.json (grid reads, no errors list) and questions-G1.json (fixes to the CMS e- fragments, no errors list); none names a rewrite bank or chapter",
+      "errorsListed": 17,
+      "onTheseBanks": 6,
+      "elsewhere": 11
+    },
+    "rule": "high applied as written; medium only after verification (the Court's own guide, the Codex's own record or one search), with the source recorded; an exp, opts or ans edit preferred to a stem edit"
+  },
+  "applied": [
+    {
+      "finding": "south-africa.json errors[0]",
+      "confidence": "high",
+      "bank": "Régionale (js/data-intro.js)",
+      "module": "r1_south_africa",
+      "category": "South Africa",
+      "id": "i-6kt4stwr",
+      "idMoved": false,
+      "fields": ["opts", "exp"],
+      "old": {
+        "key": "The Wine and Spirit Board",
+        "exp": "The board runs the scheme and issues the seal, which is why a Cape origin claim is auditable rather than merely asserted. SAWIS is a real organisation doing a different job, gathering the industry's statistics, and the Cape Winemakers Guild is a voluntary association of winemakers."
+      },
+      "new": {
+        "key": "The Wine Certification Authority",
+        "exp": "The authority runs the scheme and issues the seal, which is why a Cape origin claim is auditable rather than merely asserted; it took the work over from the Wine and Spirit Board, the name older books give, on 1 August 2023. SAWIS is a real organisation doing a different job, gathering the industry's statistics, and the Cape Winemakers Guild is a voluntary association of winemakers."
+      },
+      "note": "Applied as written: the key names the current body, the exp names the board as its predecessor. The dealt position holds (a: 1). Option lengths 7, 32, 5 and 25 characters: the key is 7 clear of the runner-up, under the 10 character standout line. The KWV question i-ljoq0lzw keeps The Wine and Spirit Board as a distractor, which is still a true historical body there.",
+      "source": "Liquor Products Amendment Act 8 of 2021 (Government Gazette, 17 September 2021), section 2; consolidated Liquor Products Act 60 of 1989, definitions with effect from 1 August 2023 (as the finding cites)"
+    },
+    {
+      "finding": "south-africa.json errors[0]",
+      "confidence": "high",
+      "bank": "Village (js/data-questions.js)",
+      "module": "r2_south_africa",
+      "category": "South Africa",
+      "id": "c-qtrb7buc",
+      "idMoved": false,
+      "fields": ["exp"],
+      "old": "Every certified wine is chemically analysed and tasted blind by the Wine and Spirit Board's panels, and a faulty wine fails whatever its paperwork says. The seal is therefore a statement about the liquid as well as the ledger, which is not true of every origin system in the world.",
+      "new": "Every certified wine is chemically analysed and tasted blind by the panels of the Wine Certification Authority (the Wine and Spirit Board until 2023), and a faulty wine fails whatever its paperwork says. The seal is therefore a statement about the liquid as well as the ledger, which is not true of every origin system in the world.",
+      "source": "as above"
+    },
+    {
+      "finding": "tuscany.json errors[0]",
+      "confidence": "high",
+      "bank": "Village (js/data-questions.js)",
+      "module": "r2_italy_central_south",
+      "category": "Italy Central & South",
+      "id": "c-wpxpyzl1",
+      "idMoved": false,
+      "fields": ["exp"],
+      "old": "The remaining fifth may be Canaiolo, Colorino or an international variety, and many estates now bottle the wine as pure Sangiovese anyway. The wider Chianti DOCG stays at seventy.",
+      "new": "The remaining fifth may be Canaiolo, Colorino or an international variety, and many estates now bottle the wine as pure Sangiovese anyway. The wider Chianti DOCG asked seventy, the figure the Court's guide prints and the rule for earlier vintages, until its amended rules of June 2026 lowered it to sixty from the 2026 harvest.",
+      "note": "Applied as written: the key (Chianti Classico, 80 per cent) is unaffected and the explanation gives both figures. The stem's 'seventy percent' stays, still the Court's printed figure (page 32, row Wine Law / Appellations: DOCGs/DOCs, 'Chianti: min 70% Sangiovese') and the rule for every vintage before 2026; a stem edit would move the id for a figure the finding did not ask to change.",
+      "source": "Chianti DOCG disciplinare as amended, Gazzetta Ufficiale 13 June 2026; the Codex's own tuscany article (law, tiers: a 60 per cent minimum from the 2026/27 harvest campaign)"
+    },
+    {
+      "finding": "central-southern-italy.json errors[0]",
+      "confidence": "medium",
+      "verified": "one search (Gambero Rosso, November 2025: Casauria raised from a Montepulciano d'Abruzzo sub-zone to DOCG, called Italy's 79th DOCG beside Colline Teramane and Tullum) and the Codex's own abruzzo article (three DOCGs, Casauria recognised in 2025, citing the Gazzetta Ufficiale registration of 22 November 2025)",
+      "bank": "Village (js/data-questions.js)",
+      "module": "r2_italy_central_south",
+      "category": "Italy Central & South",
+      "id": "c-c9ijyeac",
+      "idMoved": false,
+      "fields": ["exp"],
+      "old": "Higher, cooler sites under the Gran Sasso give a firmer wine than the coastal plain does, and the ageing requirement is longer. The bulk of the region's Montepulciano is bottled at DOC level below it, and the tiny Tullum zone at Tollo, promoted in 2019, also holds DOCG rank.",
+      "new": "Higher, cooler sites under the Gran Sasso give a firmer wine than the coastal plain does, and the ageing requirement is longer. The bulk of the region's Montepulciano is bottled at DOC level below it, and two other zones now hold DOCG rank: tiny Tullum at Tollo, promoted in 2019, and Casauria in Pescara province, a former sub-zone raised in 2025.",
+      "note": "The key stands (the stem names Teramo's hills); the explanation no longer implies two DOCGs.",
+      "source": "gamberorosso.it, Casauria in Abruzzo, una nuova DOCG (November 2025); Gazzetta Ufficiale, registration of Casauria as a DOP with the traditional term DOCG, 22 November 2025 (cited in js/regions/italy.json, abruzzo)"
+    },
+    {
+      "finding": "new-zealand.json errors[0]",
+      "confidence": "medium",
+      "verified": "one search: legislation.govt.nz gives the title Geographical Indications Registration Act 2006, the change made on 1 May 2024 by section 21 of the European Union Free Trade Agreement Legislation Amendment Act 2024, which widened the regime to other goods",
+      "bank": "Village (js/data-questions.js)",
+      "module": "r2_new_zealand",
+      "category": "New Zealand",
+      "id": "c-zovismb2",
+      "idMoved": false,
+      "fields": ["ans", "exp"],
+      "old": {
+        "ans": "The Geographical Indications (Wine and Spirits) Registration Act",
+        "exp": "The Geographical Indications (Wine and Spirits) Registration Act defines a name's boundary and gives its users legal standing to defend it, at home and in trade negotiations abroad, and that is all it does: no variety, yield or winemaking rule attaches to any New Zealand name. Registration is voluntary and paid for by the applying industry body, which is why the register filled up only once export agreements made the protection worth buying."
+      },
+      "new": {
+        "ans": "The Geographical Indications Registration Act",
+        "exp": "Its title was the Geographical Indications (Wine and Spirits) Registration Act until 1 May 2024, when an amendment for the trade agreement with the European Union opened it to other goods and shortened the name. It defines a name's boundary and gives its users legal standing to defend it, at home and in trade negotiations abroad, and that is all it does: no variety, yield or winemaking rule attaches to any New Zealand name. Registration is voluntary and paid for by the applying industry body, which is why the register filled up only once export agreements made the protection worth buying."
+      },
+      "note": "The accept list is unchanged: it already took the new title and still takes the old one, so check-regression loses nothing (0 of 12,115 probes). The stem (passed 2006, in force 2017) is true of the Act under either title.",
+      "source": "Geographical Indications Registration Act 2006 as amended by the European Union Free Trade Agreement Legislation Amendment Act 2024, s 21 (legislation.govt.nz, act/public/2006/60); IPONZ, European Union Geographical Indications and changes to legislation"
+    },
+    {
+      "finding": "mexico.json errors[0]",
+      "confidence": "medium",
+      "verified": "the Codex's own Mexico record (js/data-regions.js and js/regions/mapless.json: some fifty kilometres south of the border as the crow flies) and the coordinates (the valley near 32.1 degrees north, the border at Tecate near 32.57, about 52 km); one search for the road: the valley's addresses run along the Tecate to Ensenada highway from about kilometre 73 to 89, so some eighty by road from Tecate",
+      "bank": "Régionale (js/data-intro.js)",
+      "module": "r1_geography_maps",
+      "category": "Geography & Maps",
+      "id": "i-jieghr8k",
+      "idMoved": false,
+      "fields": ["exp"],
+      "old": "The Valle de Guadalupe lies in Baja California, inland from Ensenada and close enough to the Pacific for morning fog to reach it. It sits at about thirty-two degrees north, the same distance from the equator as parts of North Africa, and that fog is most of what makes the difference.",
+      "new": "The Valle de Guadalupe lies in Baja California, inland from Ensenada and close enough to the Pacific for morning fog to reach it, some fifty kilometres south of the border as the crow flies and nearer eighty by the road down from Tecate. It sits at about thirty-two degrees north, the same distance from the equator as parts of North Africa, and that fog is most of what makes the difference.",
+      "note": "Applied through the explanation rather than the stem. The finding allows 'or by road', and eighty is the road distance; the figure is colour, not the tested fact (the country), and no paper examines it, so the stem keeps its words and its id while the explanation gives both distances and squares the stem with the Mexico record.",
+      "source": "the Codex's own Mexico record (overview; card 1); the coordinates of the valley and of the border at Tecate; Tecate to Ensenada highway kilometre addresses in the valley (search, 31 October 2026)"
+    },
+    {
+      "finding": "vinification.json errors[0]",
+      "confidence": "medium",
+      "verified": "the Court's own guide: .scripts/cms/extracted/vinification.txt and subjects/vinification.json, page 7, row Fermentation Vessels Types, Certified column, 'Barrel Sizes: Barrique = 225 liters; Puncheon = 300 liters; Demi-muid = 600 liters; Foudre/Botti = 1,000+ liters'. No search spent.",
+      "bank": "Village (js/data-questions.js)",
+      "module": "r2_viticulture_winemaking",
+      "category": "Viticulture & Winemaking",
+      "id": "c-71ptmz2m",
+      "newId": "c-w6106ub6",
+      "idMoved": true,
+      "fields": ["q", "exp"],
+      "old": {
+        "q": "More than double a barrique in one cask, the 500-litre format lets Syrah producers buy oak's slow breathing without its vanilla shouting. Name the format.",
+        "exp": "More than doubling the volume cuts the wood surface each litre of wine touches by roughly a quarter, so flavour and oxygen both arrive at a gentler pace and the fruit stays in front. Syrah cellars from the northern Rhone to the Barossa lean on the size for exactly that restraint, often buying it new where a new barrique would shout."
+      },
+      "new": {
+        "q": "A third larger than the 225-litre barrique, the 300-litre cask on the Court's list of barrel sizes lets Syrah take oak's slow breathing with less of its vanilla. Name the format.",
+        "exp": "The Court's guide puts the puncheon at 300 litres, between the barrique and the 600-litre demi-muid, and that is the figure its paper marks, though the trade stretches the name to the 450 to 500 litre casks of the Barossa and the Rhone. The extra volume trims the wood each litre of wine touches by about a tenth, so flavour and oxygen arrive at a gentler pace and the fruit stays in front, which is why Syrah cellars often buy the bigger cask new where a new barrique would shout."
+      },
+      "note": "The one stem edit of this pass, made because the litre figure IS the tested fact and the Court's paper marks the puncheon at 300: a stem keyed Puncheon for 500 litres drills the figure the Certified paper marks wrong, which no explanation can undo. The stem pins the Court's list, so hogshead (the trade's usual 300 litre name) is not taken. Key and accept list unchanged. The surface claim is re-worked for the new volume ((225/300) to the power of one third is 0.91, about a tenth less wood per litre). The CMS fragment e-3i0uh0tm (largest size on the Court's list, keyed Foudre) asks a different rung of the same ladder, a different task. The module docstring's two puncheon notes follow the change. check-similarity r2_viticulture_winemaking: 0 flagged, max ratio 0.233, longest shared run 3.",
+      "source": "the Court's curriculum guide (CMS-A 8.2023), page 7, Fermentation Vessels Types, Barrel Sizes"
+    }
+  ],
+  "skipped": [
+    {
+      "finding": "argentina.json errors[0]",
+      "confidence": "high",
+      "where": "js/data-primers.js, the Village chapter South America (Douce Noir)",
+      "reason": "not this route: the Village chapters are the direct integrator's file. The Régionale question i-54ji9bd8 and the Régionale chapters already spell Douce Noire."
+    },
+    {
+      "finding": "bordeaux.json errors[0]",
+      "confidence": "high",
+      "where": "js/data-primers.js, the Village chapter Bordeaux (Entre-Deux-Mers white only)",
+      "reason": "not this route. The Régionale question i-yputip89 already keys dry white and red since the 2023 vintage."
+    },
+    {
+      "finding": "business-of-the-sommelier.json errors[0]",
+      "confidence": "medium",
+      "where": "js/data-primers.js, the Village chapter Business of the Sommelier (the BTG trap)",
+      "reason": "not this route."
+    },
+    {
+      "finding": "california-north-coast.json errors[0]",
+      "confidence": "medium",
+      "where": "js/regions/california.json (the American appellation and vintage)",
+      "reason": "not this route. The Village question c-il084y1r the finding cites is the side it holds right and was left untouched."
+    },
+    {
+      "finding": "canada.json errors[0]",
+      "confidence": "medium",
+      "where": "js/data-regions.js r-fyn9xj6a and the germany index (Eiswein minus 7)",
+      "reason": "not this route."
+    },
+    {
+      "finding": "cocktails.json errors[0]",
+      "confidence": "medium",
+      "where": "js/data-service-ref.js (Sazerac) and s-ukib3ha3",
+      "reason": "not this route. The Village question c-0dyutx4m it cites is the right side and was left untouched."
+    },
+    {
+      "finding": "loire.json errors[0]",
+      "confidence": "medium",
+      "where": "js/regions/france.json (Muscadet crus communaux)",
+      "reason": "not this route. The Village stem c-uw7cv5tw is worded safely, as the finding says."
+    },
+    {
+      "finding": "lombardy-emilia-romagna.json errors[0]",
+      "confidence": "high",
+      "where": "js/regions/italy.json, lombardy (Franciacorta first)",
+      "reason": "not this route. The Village stem c-fe52u3q3 (Trento DOC, 1993) and the Régionale chapter lombardy already hold it right."
+    },
+    {
+      "finding": "rhone.json errors[0]",
+      "confidence": "medium",
+      "where": "js/data-primers.js, the Village chapter Rhône (nine southern crus)",
+      "reason": "not this route. Checked the Régionale chapter rhone: it shows five crus as chips, a sample with no count and no claim of completeness, so it carries no error."
+    },
+    {
+      "finding": "spain-other-dos.json errors[0]",
+      "confidence": "medium",
+      "where": "js/regions/spain.json (Vino de Pago in the pyramid)",
+      "reason": "not this route. The Village question c-uolx1t26 it cites already teaches Vino de Pago Calificado."
+    },
+    {
+      "finding": "tuscany.json errors[1]",
+      "confidence": "high",
+      "where": "js/data-primers.js, the Village chapter Italy Central & South (Chianti 70 per cent)",
+      "reason": "not this route. The Régionale chapter tuscany states no Chianti minimum (only Chianti Classico's 80 and Vino Nobile's 70), so it needs nothing."
+    },
+    {
+      "finding": "new-zealand.json errors[0], the rest of its where",
+      "confidence": "medium",
+      "where": "js/regions/new-zealand.json and the New Zealand card in js/data-regions.js",
+      "reason": "not this route; only c-zovismb2 is this pipeline's and it is applied above."
+    },
+    {
+      "finding": "south-africa.json errors[0], the rest of its where",
+      "confidence": "high",
+      "where": "js/regions/south-africa.json, country labels",
+      "reason": "not this route; i-6kt4stwr and c-qtrb7buc are applied above."
+    }
+  ],
+  "movedIds": [
+    {
+      "bank": "Village (js/data-questions.js)",
+      "module": "r2_viticulture_winemaking",
+      "category": "Viticulture & Winemaking",
+      "old": "c-71ptmz2m",
+      "new": "c-w6106ub6",
+      "oldStemStarts": "More than double a barrique in one cask, the 500-litre format",
+      "newStemStarts": "A third larger than the 225-litre barrique, the 300-litre cask",
+      "log": ".scripts/cms/review/vinification.json errors[0]",
+      "reason": "The stem keyed Puncheon for a 500 litre cask; the Court's guide (page 7, Barrel Sizes) lists the puncheon at 300 litres, the figure the Certified paper marks. The old id is named nowhere else in the repository but the review file that asked for the change."
+    }
+  ],
+  "chapters": {
+    "file": "js/data-primers-intro.js",
+    "changed": false,
+    "note": "No finding names a Régionale chapter. The chapters were read for each claim the review corrected elsewhere (Douce Noire, Entre-deux-Mers, the Rhône crus, the Chianti minimum, the Wine and Spirit Board, Casauria, the puncheon): none carries the error. build-primers.py rebuilt the file byte for byte unchanged (39 chapters, checks all passed)."
+  },
+  "toolEdits": [
+    {
+      "file": "rewrite/check-ids.py",
+      "what": "logged_moves reads movedIds as a list of rows as well as movedIds.rows, so check-ids --logged .scripts/review/applied-cms-rewrite.json reads this file's shape; the old shape reads exactly as before (applied-rewrite.json unchanged in effect)."
+    }
+  ],
+  "searches": {
+    "used": 3,
+    "cap": 20,
+    "list": [
+      "Casauria DOCG registration 2025 (c-c9ijyeac)",
+      "the New Zealand Act's 2024 title (c-zovismb2)",
+      "Valle de Guadalupe by road from Tecate (i-jieghr8k)"
+    ],
+    "noLimitMet": true
+  },
+  "incidents": [
+    "rewrite/ship.py and rewrite/build-primers.py take no --help and treat it as a plain run: 'ship.py --help' wrote the banks before the dry run was read. Its own report named exactly one move, c-71ptmz2m, the intended one, and the shipped diff is exactly the seven questions logged here (two in js/data-intro.js, five in js/data-questions.js); the dry run that followed reported all 1,778 and 1,283 ids unchanged. build-primers.py wrote js/data-primers-intro.js byte for byte as it was."
+  ],
+  "gates": [
+    { "gate": "python3 rewrite/build.py r1_south_africa, r2_south_africa, r2_italy_central_south, r1_geography_maps, r2_new_zealand, r2_viticulture_winemaking", "result": "pass", "exit": 0, "note": "each: checks all passed" },
+    { "gate": "python3 rewrite/build.py --all", "result": "pass", "exit": 0, "note": "67 of 67 modules, checks all passed; only the six edited modules' pilot files changed" },
+    { "gate": "python3 rewrite/check-cross-category.py", "result": "pass", "exit": 0, "note": "0 candidate pairs for review, 10 reviewed, as before this pass" },
+    { "gate": "python3 rewrite/check-similarity.py r2_viticulture_winemaking", "result": "pass", "exit": 0, "note": "the one reworded stem: 0 exact matches, max ratio 0.233, longest shared run 3, nothing new to review" },
+    { "gate": "python3 rewrite/ship.py", "result": "written", "exit": 0, "note": "js/data-intro.js 1,778 questions, all ids unchanged; js/data-questions.js 1,283 questions, 1 move (c-71ptmz2m to c-w6106ub6); the dry run after reports all ids unchanged, so the banks equal the modules" },
+    { "gate": "python3 rewrite/check-ids.py", "result": "fail by design", "exit": 1, "note": "the one logged move, until the edition is committed" },
+    { "gate": "python3 rewrite/check-ids.py --logged .scripts/review/applied-cms-rewrite.json", "result": "pass", "exit": 0, "note": "NO UNLOGGED MOVE across 3061 questions: the 1 moved id is logged" },
+    { "gate": "python3 rewrite/check-regression.py", "result": "pass", "exit": 0, "note": "12,115 probes across 67 categories against HEAD: 0 lost, 0 gained; no revokedProbes needed" },
+    { "gate": "python3 rewrite/check-stem-echo.py", "result": "pass", "exit": 0, "note": "807 short answers, 6 flagged, the same six as before this pass (none in an edited question)" },
+    { "gate": "python3 rewrite/build-primers.py --dry-run, then without", "result": "pass", "exit": 0, "note": "39 chapters, checks all passed; js/data-primers-intro.js unchanged byte for byte" },
+    { "gate": "python3 rewrite/check-primer-similarity.py", "result": "pass", "exit": 0, "note": "39 chapters against 8d535c8^: max ratio 0.227, longest shared run 6 words, no shared sentence, nothing to review" },
+    { "gate": "node .scripts/check-syntax.js", "result": "pass", "exit": 0, "note": "all 87 JS files parse" }
+  ],
+  "leftForTheIntegrator": [
+    "ship.py asks for the ?v= of js/data-intro.js and js/data-questions.js in index.html and the CACHE in sw.js to move; both files are outside this route, so the bump is left for the edition's publish.",
+    "The stem of c-wpxpyzl1 keeps 'seventy percent' (the Court's printed figure, the rule before the 2026 harvest) and its American 'percent', as applied-rewrite.json already lists it; any later stem edit moves its id."
+  ]
+}
