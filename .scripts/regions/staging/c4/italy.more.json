@@ -7,7 +7,12 @@
    "name": "Liguria and Valle d'Aosta",
    "sheet": "italy",
    "mapless": 1,
-   "asked": ["intro", "certified", "advanced", "master"],
+   "asked": [
+    "intro",
+    "certified",
+    "advanced",
+    "master"
+   ],
    "summary": "Two small regions of Italy's north-west, read together. Liguria is the narrow arc of coast around Genoa, where the Maritime Alps and the Apennines fall straight into the Ligurian Sea and vines cling to terraces: Vermentino and Pigato make saline whites, Rossese di Dolceacqua a pale, perfumed red, and the Cinque Terre a dry white and the sweet Sciacchetrà from dried grapes. Over the mountains to the north, the Valle d'Aosta is Italy's smallest wine region, an Alpine valley under Mont Blanc with one regional DOC, seven named sub-zones and grapes found almost nowhere else: Petit Rouge, Fumin, Prié Blanc and Petite Arvine, with Nebbiolo in the lower valley.",
    "terroir": {
     "climate": "Liguria is Mediterranean: mild winters, warm, dry summers and constant sea breezes, with the mountains at its back shutting out the cold north winds, so olives and vines share the same slopes. Rain falls mostly in autumn and can come in violent storms. The Valle d'Aosta is Alpine and continental, but the high peaks around it hold off much of the rain, so it is dry and sunny for a mountain valley, with cold winters, warm days and cool nights in summer. The wide swing from day to night keeps acidity and aroma in the grapes; spring frost and an early autumn are the hazards.",
@@ -16,31 +21,132 @@
     "water": "The Ligurian Sea, the north-western arm of the Mediterranean, warms the coast in winter and cools it in summer, and its breezes dry the vines after rain. The Dora Baltea drains the Valle d'Aosta from the glaciers of Mont Blanc east into Piedmont and on to the Po, and the cold air that slides down from the ice at night keeps the upper valley fresh."
    },
    "grapes": [
-    {"name": "Vermentino", "role": "lead", "styles": "The main white of both Rivieras and of the Colli di Luni: citrus, herbs and a saline finish, mostly unoaked and drunk young."},
-    {"name": "Pigato", "plain": 1, "role": "lead", "styles": "Vermentino by DNA, grown as a separate vine with freckled skins on the Riviera di Ponente around Albenga; fuller and more savoury than the coast's Vermentino."},
-    {"name": "Bosco", "plain": 1, "role": "blending", "styles": "The lead white of the Cinque Terre, with Albarola and Vermentino, the backbone of both the dry white and the sweet Sciacchetrà."},
-    {"name": "Albarola", "plain": 1, "role": "blending", "styles": "A Cinque Terre and Levante white, the partner of Bosco, light and fresh."},
-    {"name": "Rossese", "plain": 1, "role": "lead", "styles": "The grape of Rossese di Dolceacqua in the far west, the same vine as Provence's Tibouren: pale, perfumed reds of red berries, roses and spice."},
-    {"name": "Dolcetto", "role": "minor", "styles": "Called Ormeasco in the hills of Pornassio, where it makes a firm red and a rosé called Sciac-trà."},
-    {"name": "Petit Rouge", "plain": 1, "role": "lead", "styles": "The Valle d'Aosta's main red, behind Torrette and Enfer d'Arvier: light to medium bodied, with cherries, violets and a bitter almond finish."},
-    {"name": "Fumin", "plain": 1, "role": "rising", "styles": "A darker, firmer native red, peppery and structured, bottled alone and often aged in wood, or blended with Petit Rouge."},
-    {"name": "Nebbiolo", "role": "lead", "styles": "Called Picotendro or Picotener in the lower valley, where it makes Donnas and Arnad-Montjovet: paler and leaner than Barolo, with rose and red cherry."},
-    {"name": "Prié Blanc", "plain": 1, "role": "lead", "styles": "The only grape of Blanc de Morgex et de La Salle, grown ungrafted under Mont Blanc: very light, crisp and herbal, still or sparkling."},
-    {"name": "Petite Arvine", "plain": 1, "role": "rising", "styles": "Shared with the Swiss Valais: a saline, high-acid white of grapefruit and herbs, increasingly planted in the valley."},
-    {"name": "Cornalin", "plain": 1, "role": "minor", "styles": "A native red of the valley, the vine the Valais calls Humagne Rouge, deep in colour and spicy."},
-    {"name": "Muscat Blanc", "role": "minor", "styles": "Moscato Bianco at Chambave, made dry and as the sweet Flétri from grapes dried after picking."},
-    {"name": "Pinot Gris / Grigio", "role": "minor", "styles": "Called Malvoisie at Nus, made dry or sweet from dried grapes, with a coppery tint."}
+    {
+     "name": "Vermentino",
+     "role": "lead",
+     "styles": "The main white of both Rivieras and of the Colli di Luni: citrus, herbs and a saline finish, mostly unoaked and drunk young."
+    },
+    {
+     "name": "Pigato",
+     "plain": 1,
+     "role": "lead",
+     "styles": "Vermentino by DNA, grown as a separate vine with freckled skins on the Riviera di Ponente around Albenga; fuller and more savoury than the coast's Vermentino."
+    },
+    {
+     "name": "Bosco",
+     "plain": 1,
+     "role": "blending",
+     "styles": "The lead white of the Cinque Terre, with Albarola and Vermentino, the backbone of both the dry white and the sweet Sciacchetrà."
+    },
+    {
+     "name": "Albarola",
+     "plain": 1,
+     "role": "blending",
+     "styles": "A Cinque Terre and Levante white, the partner of Bosco, light and fresh."
+    },
+    {
+     "name": "Rossese",
+     "plain": 1,
+     "role": "lead",
+     "styles": "The grape of Rossese di Dolceacqua in the far west, the same vine as Provence's Tibouren: pale, perfumed reds of red berries, roses and spice."
+    },
+    {
+     "name": "Dolcetto",
+     "role": "minor",
+     "styles": "Called Ormeasco in the hills of Pornassio, where it makes a firm red and a rosé called Sciac-trà."
+    },
+    {
+     "name": "Petit Rouge",
+     "plain": 1,
+     "role": "lead",
+     "styles": "The Valle d'Aosta's main red, behind Torrette and Enfer d'Arvier: light to medium bodied, with cherries, violets and a bitter almond finish."
+    },
+    {
+     "name": "Fumin",
+     "plain": 1,
+     "role": "rising",
+     "styles": "A darker, firmer native red, peppery and structured, bottled alone and often aged in wood, or blended with Petit Rouge."
+    },
+    {
+     "name": "Nebbiolo",
+     "role": "lead",
+     "styles": "Called Picotendro or Picotener in the lower valley, where it makes Donnas and Arnad-Montjovet: paler and leaner than Barolo, with rose and red cherry."
+    },
+    {
+     "name": "Prié Blanc",
+     "plain": 1,
+     "role": "lead",
+     "styles": "The only grape of Blanc de Morgex et de La Salle, grown ungrafted under Mont Blanc: very light, crisp and herbal, still or sparkling."
+    },
+    {
+     "name": "Petite Arvine",
+     "plain": 1,
+     "role": "rising",
+     "styles": "Shared with the Swiss Valais: a saline, high-acid white of grapefruit and herbs, increasingly planted in the valley."
+    },
+    {
+     "name": "Cornalin",
+     "plain": 1,
+     "role": "minor",
+     "styles": "A native red of the valley, the vine the Valais calls Humagne Rouge, deep in colour and spicy."
+    },
+    {
+     "name": "Muscat Blanc",
+     "role": "minor",
+     "styles": "Moscato Bianco at Chambave, made dry and as the sweet Flétri from grapes dried after picking."
+    },
+    {
+     "name": "Pinot Gris / Grigio",
+     "role": "minor",
+     "styles": "Called Malvoisie at Nus, made dry or sweet from dried grapes, with a coppery tint."
+    }
    ],
    "wines": [
-    {"style": "Cinque Terre", "colour": "white", "note": "Dry and saline, from Bosco, Albarola and Vermentino grown on the sea cliffs: lemon, herbs and a salty finish. Pour it with anchovies, pesto and the fish of the Ligurian coast."},
-    {"style": "Cinque Terre Sciacchetrà", "colour": "sweet", "note": "Amber and sweet, from dried Bosco, Albarola and Vermentino: apricot, honey, dried figs and a bitter orange edge, sold in small bottles. Serve it with blue cheese or almond biscuits."},
-    {"style": "Riviera Ligure di Ponente Pigato", "colour": "white", "note": "Fuller than Vermentino, with peach, herbs, a hint of bitter almond and a saline finish; a match for pesto, focaccia and grilled fish."},
-    {"style": "Rossese di Dolceacqua", "colour": "red", "note": "Pale, fragrant and soft, with wild strawberry, rose and white pepper. Serve it cool with rabbit, the Ligurian classic, or with a fish soup."},
-    {"style": "Valle d'Aosta Torrette", "colour": "red", "note": "Light to medium bodied Petit Rouge: cherries, violets and almond with fresh acidity, for fontina, cured meats and polenta."},
-    {"style": "Blanc de Morgex et de La Salle", "colour": "white", "note": "Very pale, light and crisp, with mountain herbs, green apple and a mineral, saline edge; also made sparkling. An aperitif, or a glass with trout."},
-    {"style": "Valle d'Aosta Petite Arvine", "colour": "white", "note": "Saline, with grapefruit and rhubarb, brisk acidity and more weight than Prié Blanc; for fondue or freshwater fish."},
-    {"style": "Valle d'Aosta Donnas", "colour": "red", "note": "Nebbiolo from the lower valley: pale, with rose and red cherry and firm, fine tannin, lighter than Barolo; for game birds and mountain cheese."},
-    {"style": "Valle d'Aosta Chambave Muscat Flétri", "colour": "sweet", "note": "A Moscato from dried grapes: honeyed, with apricot and orange peel and the acidity of the mountains to balance its sweetness."}
+    {
+     "style": "Cinque Terre",
+     "colour": "white",
+     "note": "Dry and saline, from Bosco, Albarola and Vermentino grown on the sea cliffs: lemon, herbs and a salty finish. Pour it with anchovies, pesto and the fish of the Ligurian coast."
+    },
+    {
+     "style": "Cinque Terre Sciacchetrà",
+     "colour": "sweet",
+     "note": "Amber and sweet, from dried Bosco, Albarola and Vermentino: apricot, honey, dried figs and a bitter orange edge, sold in small bottles. Serve it with blue cheese or almond biscuits."
+    },
+    {
+     "style": "Riviera Ligure di Ponente Pigato",
+     "colour": "white",
+     "note": "Fuller than Vermentino, with peach, herbs, a hint of bitter almond and a saline finish; a match for pesto, focaccia and grilled fish."
+    },
+    {
+     "style": "Rossese di Dolceacqua",
+     "colour": "red",
+     "note": "Pale, fragrant and soft, with wild strawberry, rose and white pepper. Serve it cool with rabbit, the Ligurian classic, or with a fish soup."
+    },
+    {
+     "style": "Valle d'Aosta Torrette",
+     "colour": "red",
+     "note": "Light to medium bodied Petit Rouge: cherries, violets and almond with fresh acidity, for fontina, cured meats and polenta."
+    },
+    {
+     "style": "Blanc de Morgex et de La Salle",
+     "colour": "white",
+     "note": "Very pale, light and crisp, with mountain herbs, green apple and a mineral, saline edge; also made sparkling. An aperitif, or a glass with trout."
+    },
+    {
+     "style": "Valle d'Aosta Petite Arvine",
+     "colour": "white",
+     "note": "Saline, with grapefruit and rhubarb, brisk acidity and more weight than Prié Blanc; for fondue or freshwater fish."
+    },
+    {
+     "style": "Valle d'Aosta Donnas",
+     "colour": "red",
+     "note": "Nebbiolo from the lower valley: pale, with rose and red cherry and firm, fine tannin, lighter than Barolo; for game birds and mountain cheese."
+    },
+    {
+     "style": "Valle d'Aosta Chambave Muscat Flétri",
+     "colour": "sweet",
+     "note": "A Moscato from dried grapes: honeyed, with apricot and orange peel and the acidity of the mountains to balance its sweetness."
+    }
    ],
    "made": {
     "viticulture": "Both regions are farmed by hand on steep ground. In Liguria the vineyards stand on terraces held up by dry stone walls built over centuries, and many were abandoned in the twentieth century as the coast's other work paid better. At the Cinque Terre small monorail trains carry grapes and tools up and down the cliffs, and vines are kept low, on short pergolas or as bush vines, out of the wind. Yields are small and costs high. In the Valle d'Aosta the vines climb terraces on the sunny north side of the valley. At Morgex and La Salle, Prié Blanc grows ungrafted on low pergolas close to the ground, which take the warmth the stony soil stores by day through the cold nights; phylloxera never took hold at that height, and new vines are still propagated on their own roots. Lower down, at Donnas, Nebbiolo is trained on pergolas held up by stone pillars, as at Carema across the border in Piedmont. Frost, a short season and the steepness of the ground keep every harvest small.",
@@ -49,24 +155,72 @@
    "law": {
     "classification": "Liguria has no DOCG. Its wines are DOC or IGT: Rossese di Dolceacqua became the region's first DOC in 1972, and Cinque Terre, with Cinque Terre Sciacchetrà, followed in 1973. Riviera Ligure di Ponente is the broad DOC of the western coast, for Pigato, Vermentino, Rossese and others, and Ormeasco di Pornassio was split from it as a DOC of its own in 2003. In the east, Colli di Luni crosses the border into Tuscany, and Golfo del Tigullio-Portofino, Colline di Levanto and Val Polcevera cover the hills of the Levante and around Genoa. The Valle d'Aosta has a single DOC, Valle d'Aosta or Vallée d'Aoste, written in Italian or French, which absorbed the older Donnas and Enfer d'Arvier DOCs. Its label carries the regional name with a grape, such as Petite Arvine or Fumin, or with one of seven named sub-zones. Like Piedmont next door, the Valle d'Aosta has never registered an IGT.",
     "tiers": [
-     ["Valle d'Aosta or Vallée d'Aoste DOC", "The region's one DOC, in Italian or French; a grape name or a sub-zone follows it on the label."],
-     ["The seven sub-zones", "Blanc de Morgex et de La Salle, Enfer d'Arvier, Torrette, Nus, Chambave, Arnad-Montjovet and Donnas, from upstream to downstream."],
-     ["Rossese di Dolceacqua DOC", "1972, Liguria's first DOC: Rossese red from the valleys behind Ventimiglia."],
-     ["Cinque Terre and Cinque Terre Sciacchetrà DOC", "1973: the dry white and the sweet passito of Bosco, Albarola and Vermentino from the cliffs east of Genoa."],
-     ["Riviera Ligure di Ponente DOC", "The broad DOC of the western coast, for Pigato, Vermentino, Rossese and others, with named sub-zones."],
-     ["Ormeasco di Pornassio DOC", "2003: Dolcetto, called Ormeasco, from the hills of Imperia province, as a red and as the rosé Sciac-trà."],
-     ["Colli di Luni DOC", "Vermentino and reds from the hills around La Spezia and across the border into Tuscany."],
-     ["IGT", "Liguria's wines outside the DOC rules; the Valle d'Aosta has none."]
+     [
+      "Valle d'Aosta or Vallée d'Aoste DOC",
+      "The region's one DOC, in Italian or French; a grape name or a sub-zone follows it on the label."
+     ],
+     [
+      "The seven sub-zones",
+      "Blanc de Morgex et de La Salle, Enfer d'Arvier, Torrette, Nus, Chambave, Arnad-Montjovet and Donnas, from upstream to downstream."
+     ],
+     [
+      "Rossese di Dolceacqua DOC",
+      "1972, Liguria's first DOC: Rossese red from the valleys behind Ventimiglia."
+     ],
+     [
+      "Cinque Terre and Cinque Terre Sciacchetrà DOC",
+      "1973: the dry white and the sweet passito of Bosco, Albarola and Vermentino from the cliffs east of Genoa."
+     ],
+     [
+      "Riviera Ligure di Ponente DOC",
+      "The broad DOC of the western coast, for Pigato, Vermentino, Rossese and others, with named sub-zones."
+     ],
+     [
+      "Ormeasco di Pornassio DOC",
+      "2003: Dolcetto, called Ormeasco, from the hills of Imperia province, as a red and as the rosé Sciac-trà."
+     ],
+     [
+      "Colli di Luni DOC",
+      "Vermentino and reds from the hills around La Spezia and across the border into Tuscany."
+     ],
+     [
+      "IGT",
+      "Liguria's wines outside the DOC rules; the Valle d'Aosta has none."
+     ]
     ],
     "labels": [
-     ["Sciacchetrà", "The Cinque Terre's sweet wine from dried grapes"],
-     ["Sciac-trà", "The rosé of Ormeasco di Pornassio, a dry wine, not the Cinque Terre's sweet one"],
-     ["Flétri", "The Valle d'Aosta's French word for a wine from dried grapes, a passito"],
-     ["Vallée d'Aoste", "The French form of the DOC's name, equal to the Italian on the label"],
-     ["Riviera di Ponente, Riviera di Levante", "The Ligurian coast west and east of Genoa"],
-     ["Picotendro or Picotener", "The Valle d'Aosta's name for Nebbiolo"],
-     ["Malvoisie", "At Nus, the local name for Pinot Gris, not a Malvasia"],
-     ["Ormeasco", "The Pornassio name for Dolcetto"]
+     [
+      "Sciacchetrà",
+      "The Cinque Terre's sweet wine from dried grapes"
+     ],
+     [
+      "Sciac-trà",
+      "The rosé of Ormeasco di Pornassio, a dry wine, not the Cinque Terre's sweet one"
+     ],
+     [
+      "Flétri",
+      "The Valle d'Aosta's French word for a wine from dried grapes, a passito"
+     ],
+     [
+      "Vallée d'Aoste",
+      "The French form of the DOC's name, equal to the Italian on the label"
+     ],
+     [
+      "Riviera di Ponente, Riviera di Levante",
+      "The Ligurian coast west and east of Genoa"
+     ],
+     [
+      "Picotendro or Picotener",
+      "The Valle d'Aosta's name for Nebbiolo"
+     ],
+     [
+      "Malvoisie",
+      "At Nus, the local name for Pinot Gris, not a Malvasia"
+     ],
+     [
+      "Ormeasco",
+      "The Pornassio name for Dolcetto"
+     ]
     ]
    },
    "places": [
@@ -74,44 +228,119 @@
      "name": "Riviera di Ponente",
      "note": "The coast west of Genoa to the French border, warmer and drier than the east, home of Pigato, Vermentino and Rossese under the broad Riviera Ligure di Ponente DOC.",
      "places": [
-      {"name": "Rossese di Dolceacqua", "note": "The valleys of the Nervia and its neighbours behind Ventimiglia, around the village of Dolceacqua near the French border: pale, perfumed Rossese reds, Liguria's first DOC in 1972."},
-      {"name": "Albenga", "note": "The plain and hills around Albenga in Savona province, the heartland of Pigato, whose wines are fuller and more savoury than the coast's Vermentino.", "depth": "advanced"},
-      {"name": "Ormeasco di Pornassio", "note": "High hills of the upper Arroscia valley in Imperia province, towards Piedmont, where Dolcetto is called Ormeasco and makes a red and the rosé Sciac-trà; a DOC of its own since 2003.", "depth": "advanced"}
+      {
+       "name": "Rossese di Dolceacqua",
+       "note": "The valleys of the Nervia and its neighbours behind Ventimiglia, around the village of Dolceacqua near the French border: pale, perfumed Rossese reds, Liguria's first DOC in 1972."
+      },
+      {
+       "name": "Albenga",
+       "note": "The plain and hills around Albenga in Savona province, the heartland of Pigato, whose wines are fuller and more savoury than the coast's Vermentino.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Ormeasco di Pornassio",
+       "note": "High hills of the upper Arroscia valley in Imperia province, towards Piedmont, where Dolcetto is called Ormeasco and makes a red and the rosé Sciac-trà; a DOC of its own since 2003.",
+       "depth": "advanced"
+      }
      ]
     },
     {
      "name": "Riviera di Levante",
      "note": "The coast east of Genoa to Tuscany, steeper and more rugged, with Vermentino, Bosco, Albarola and Bianchetta Genovese on terraces above the sea.",
      "places": [
-      {"name": "Cinque Terre", "note": "Five villages on the cliffs north-west of La Spezia, Monterosso al Mare, Vernazza, Corniglia, Manarola and Riomaggiore, with terraced vineyards over the sea, worked by hand and by monorail: the dry white and the sweet Sciacchetrà."},
-      {"name": "Colli di Luni", "note": "The hills around the old Roman port of Luni at Liguria's eastern end, a DOC that crosses into Tuscany, known for full, saline Vermentino.", "depth": "advanced"},
-      {"name": "Golfo del Tigullio-Portofino and Colline di Levanto", "note": "Two small DOCs of the Levante hills between Genoa and the Cinque Terre, for Vermentino, Bianchetta Genovese and Ciliegiolo.", "depth": "master"}
+      {
+       "name": "Cinque Terre",
+       "note": "Five villages on the cliffs north-west of La Spezia, Monterosso al Mare, Vernazza, Corniglia, Manarola and Riomaggiore, with terraced vineyards over the sea, worked by hand and by monorail: the dry white and the sweet Sciacchetrà."
+      },
+      {
+       "name": "Colli di Luni",
+       "note": "The hills around the old Roman port of Luni at Liguria's eastern end, a DOC that crosses into Tuscany, known for full, saline Vermentino.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Golfo del Tigullio-Portofino and Colline di Levanto",
+       "note": "Two small DOCs of the Levante hills between Genoa and the Cinque Terre, for Vermentino, Bianchetta Genovese and Ciliegiolo.",
+       "depth": "master"
+      }
      ]
     },
     {
      "name": "Valle d'Aosta",
      "note": "The Alpine valley of the Dora Baltea between Mont Blanc and Piedmont, Italy's smallest wine region, with one DOC and seven named sub-zones on the sunny north side of the valley.",
      "places": [
-      {"name": "Blanc de Morgex et de La Salle", "note": "The upper valley under Mont Blanc, from about 900 to 1,200 metres: ungrafted Prié Blanc on low pergolas, still or sparkling."},
-      {"name": "Enfer d'Arvier", "note": "A hot, sheltered bowl of rock at Arvier west of Aosta, whose name means hell for its summer heat; reds of Petit Rouge, once a DOC of its own.", "depth": "advanced"},
-      {"name": "Torrette", "note": "The communes either side of the city of Aosta, on the sunny slopes of the central valley, for reds led by Petit Rouge.", "depth": "advanced"},
-      {"name": "Nus", "note": "East of Aosta, for a red of the local Vien de Nus and for Malvoisie, the local name for Pinot Gris, dry or Flétri.", "depth": "advanced"},
-      {"name": "Chambave", "note": "The middle valley east of Nus, known for Moscato Bianco made dry and as the sweet Flétri, and for a red of Petit Rouge.", "depth": "advanced"},
-      {"name": "Arnad-Montjovet", "note": "The lower valley below Saint-Vincent, where Nebbiolo begins to lead the reds, as it does at Donnas.", "depth": "advanced"},
-      {"name": "Donnas", "note": "The last sub-zone before Piedmont, at the mouth of the valley: Nebbiolo, called Picotendro, on terraces and stone-pillared pergolas, once a DOC of its own."}
+      {
+       "name": "Blanc de Morgex et de La Salle",
+       "note": "The upper valley under Mont Blanc, from about 900 to 1,200 metres: ungrafted Prié Blanc on low pergolas, still or sparkling."
+      },
+      {
+       "name": "Enfer d'Arvier",
+       "note": "A hot, sheltered bowl of rock at Arvier west of Aosta, whose name means hell for its summer heat; reds of Petit Rouge, once a DOC of its own.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Torrette",
+       "note": "The communes either side of the city of Aosta, on the sunny slopes of the central valley, for reds led by Petit Rouge.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Nus",
+       "note": "East of Aosta, for a red of the local Vien de Nus and for Malvoisie, the local name for Pinot Gris, dry or Flétri.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Chambave",
+       "note": "The middle valley east of Nus, known for Moscato Bianco made dry and as the sweet Flétri, and for a red of Petit Rouge.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Arnad-Montjovet",
+       "note": "The lower valley below Saint-Vincent, where Nebbiolo begins to lead the reds, as it does at Donnas.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Donnas",
+       "note": "The last sub-zone before Piedmont, at the mouth of the valley: Nebbiolo, called Picotendro, on terraces and stone-pillared pergolas, once a DOC of its own."
+      }
      ]
     }
    ],
    "producers": [
-    {"name": "Cantina Cinque Terre", "why": "The growers' cooperative at Groppo above Manarola, which gathers grapes from many small terraces into the dry Cinque Terre white and Sciacchetrà."},
-    {"name": "Bisson", "why": "A Chiavari house of the Riviera di Levante, known for Vermentino, Bianchetta Genovese and Cinque Terre wines."},
-    {"name": "Terre Bianche", "why": "A Dolceacqua estate, a reference for Rossese di Dolceacqua and for Pigato from the western coast."},
-    {"name": "Lunae", "why": "An estate of the Colli di Luni on the Tuscan border, a reference for Vermentino."},
-    {"name": "Cave Mont Blanc de Morgex et La Salle", "why": "The cooperative of the upper valley, the main source of Blanc de Morgex et de La Salle, still and sparkling."},
-    {"name": "Caves Coopératives de Donnas", "why": "The cooperative of the lower valley, the main source of Donnas Nebbiolo from the stone-pillared terraces."},
-    {"name": "Institut Agricole Régional", "why": "The Aosta agricultural school and research centre, which studies the valley's native grapes and bottles wines from them."},
-    {"name": "Les Crêtes", "why": "An Aymavilles estate known for Petite Arvine, Fumin and Chardonnay."},
-    {"name": "La Crotta di Vegneron", "why": "The Chambave cooperative, known for Chambave Muscat and its Flétri and for Nus Malvoisie."}
+    {
+     "name": "Cantina Cinque Terre",
+     "why": "The growers' cooperative at Groppo above Manarola, which gathers grapes from many small terraces into the dry Cinque Terre white and Sciacchetrà."
+    },
+    {
+     "name": "Bisson",
+     "why": "A Chiavari house of the Riviera di Levante, known for Vermentino, Bianchetta Genovese and Cinque Terre wines."
+    },
+    {
+     "name": "Terre Bianche",
+     "why": "A Dolceacqua estate, a reference for Rossese di Dolceacqua and for Pigato from the western coast."
+    },
+    {
+     "name": "Lunae",
+     "why": "An estate of the Colli di Luni on the Tuscan border, a reference for Vermentino."
+    },
+    {
+     "name": "Cave Mont Blanc de Morgex et La Salle",
+     "why": "The cooperative of the upper valley, the main source of Blanc de Morgex et de La Salle, still and sparkling."
+    },
+    {
+     "name": "Caves Coopératives de Donnas",
+     "why": "The cooperative of the lower valley, the main source of Donnas Nebbiolo from the stone-pillared terraces."
+    },
+    {
+     "name": "Institut Agricole Régional",
+     "why": "The Aosta agricultural school and research centre, which studies the valley's native grapes and bottles wines from them."
+    },
+    {
+     "name": "Les Crêtes",
+     "why": "An Aymavilles estate known for Petite Arvine, Fumin and Chardonnay."
+    },
+    {
+     "name": "La Crotta di Vegneron",
+     "why": "The Chambave cooperative, known for Chambave Muscat and its Flétri and for Nus Malvoisie."
+    }
    ],
    "exam": [
     "Place both regions: Liguria on the coast around Genoa between France and Tuscany, the Valle d'Aosta in the Alps under Mont Blanc, north of Piedmont.",
@@ -134,67 +363,880 @@
     "Colli di Luni crosses the regional border: part of it lies in Tuscany."
    ],
    "say": [
-    ["Liguria", "lee-GOO-ryah"],
-    ["Valle d'Aosta", "VAHL-leh dah-OH-stah"],
-    ["Vallée d'Aoste", "vah-LAY dah-OST"],
-    ["Cinque Terre", "CHEEN-kweh TEHR-reh"],
-    ["Sciacchetrà", "shahk-keh-TRAH"],
-    ["Pigato", "pee-GAH-toh"],
-    ["Vermentino", "ver-men-TEE-noh"],
-    ["Rossese di Dolceacqua", "ros-SEH-zeh dee dohl-cheh-AHK-kwah"],
-    ["Ormeasco di Pornassio", "or-meh-AH-skoh dee por-NAHS-syoh"],
-    ["Bosco", "BOH-skoh"],
-    ["Albarola", "ahl-bah-ROH-lah"],
-    ["Colli di Luni", "KOHL-lee dee LOO-nee"],
-    ["Riviera di Ponente", "ree-VYEH-rah dee poh-NEN-teh"],
-    ["Riviera di Levante", "ree-VYEH-rah dee leh-VAHN-teh"],
-    ["Petit Rouge", "puh-TEE ROOZH"],
-    ["Fumin", "few-MAN"],
-    ["Prié Blanc", "pree-AY BLAHN"],
-    ["Petite Arvine", "puh-TEET ar-VEEN"],
-    ["Blanc de Morgex et de La Salle", "BLAHN duh mor-ZHAY ay duh lah SAHL"],
-    ["Enfer d'Arvier", "ahn-FEHR dar-VYAY"],
-    ["Torrette", "tor-RET"],
-    ["Chambave", "shahm-BAHV"],
-    ["Arnad-Montjovet", "ar-NAH mohn-zhoh-VAY"],
-    ["Donnas", "doh-NAH"],
-    ["Flétri", "flay-TREE"],
-    ["Picotendro", "pee-koh-TEN-droh"],
-    ["Dora Baltea", "DOH-rah bahl-TEH-ah"]
+    [
+     "Liguria",
+     "lee-GOO-ryah"
+    ],
+    [
+     "Valle d'Aosta",
+     "VAHL-leh dah-OH-stah"
+    ],
+    [
+     "Vallée d'Aoste",
+     "vah-LAY dah-OST"
+    ],
+    [
+     "Cinque Terre",
+     "CHEEN-kweh TEHR-reh"
+    ],
+    [
+     "Sciacchetrà",
+     "shahk-keh-TRAH"
+    ],
+    [
+     "Pigato",
+     "pee-GAH-toh"
+    ],
+    [
+     "Vermentino",
+     "ver-men-TEE-noh"
+    ],
+    [
+     "Rossese di Dolceacqua",
+     "ros-SEH-zeh dee dohl-cheh-AHK-kwah"
+    ],
+    [
+     "Ormeasco di Pornassio",
+     "or-meh-AH-skoh dee por-NAHS-syoh"
+    ],
+    [
+     "Bosco",
+     "BOH-skoh"
+    ],
+    [
+     "Albarola",
+     "ahl-bah-ROH-lah"
+    ],
+    [
+     "Colli di Luni",
+     "KOHL-lee dee LOO-nee"
+    ],
+    [
+     "Riviera di Ponente",
+     "ree-VYEH-rah dee poh-NEN-teh"
+    ],
+    [
+     "Riviera di Levante",
+     "ree-VYEH-rah dee leh-VAHN-teh"
+    ],
+    [
+     "Petit Rouge",
+     "puh-TEE ROOZH"
+    ],
+    [
+     "Fumin",
+     "few-MAN"
+    ],
+    [
+     "Prié Blanc",
+     "pree-AY BLAHN"
+    ],
+    [
+     "Petite Arvine",
+     "puh-TEET ar-VEEN"
+    ],
+    [
+     "Blanc de Morgex et de La Salle",
+     "BLAHN duh mor-ZHAY ay duh lah SAHL"
+    ],
+    [
+     "Enfer d'Arvier",
+     "ahn-FEHR dar-VYAY"
+    ],
+    [
+     "Torrette",
+     "tor-RET"
+    ],
+    [
+     "Chambave",
+     "shahm-BAHV"
+    ],
+    [
+     "Arnad-Montjovet",
+     "ar-NAH mohn-zhoh-VAY"
+    ],
+    [
+     "Donnas",
+     "doh-NAH"
+    ],
+    [
+     "Flétri",
+     "flay-TREE"
+    ],
+    [
+     "Picotendro",
+     "pee-koh-TEN-droh"
+    ],
+    [
+     "Dora Baltea",
+     "DOH-rah bahl-TEH-ah"
+    ]
    ],
    "cards": [
-    {"f": "Pigato: its identity and its home", "b": "Vermentino by DNA, grown as a separate vine with freckled skins on the Riviera di Ponente around Albenga; fuller and more savoury than the coast's Vermentino."},
-    {"f": "Sciacchetrà: what it is and its grapes", "b": "The Cinque Terre's sweet wine from Bosco, Albarola and Vermentino dried after picking: amber, apricot and honey, sold in small bottles."},
-    {"f": "Rossese di Dolceacqua: grape, style and date", "b": "Rossese, the vine Provence calls Tibouren: a pale, perfumed red from behind Ventimiglia, Liguria's first DOC, in 1972."},
-    {"f": "The Valle d'Aosta's appellation structure", "b": "One regional DOC, Valle d'Aosta or Vallée d'Aoste, labelled with a grape or one of seven sub-zones; no DOCG and no IGT."},
-    {"f": "Blanc de Morgex et de La Salle: grape and vineyard", "b": "Prié Blanc, grown ungrafted on low pergolas under Mont Blanc at up to about 1,200 metres; light, crisp and herbal, still or sparkling."},
-    {"f": "Nebbiolo in the Valle d'Aosta: its name and its sub-zones", "b": "Picotendro, or Picotener; it makes Donnas and Arnad-Montjovet in the lower valley, paler and leaner than Barolo."},
-    {"f": "Petite Arvine: where else it grows and its style", "b": "Over the pass in the Swiss Valais. In the Valle d'Aosta it makes a saline, high-acid white of grapefruit and herbs."},
-    {"f": "Ormeasco: its identity and its rosé", "b": "Dolcetto, in the hills of Pornassio in Imperia province. Its rosé is called Sciac-trà, a dry wine, not the Cinque Terre's sweet Sciacchetrà.", "depth": "advanced"},
-    {"f": "The Valle d'Aosta's seven sub-zones, upstream to downstream", "b": "Blanc de Morgex et de La Salle, Enfer d'Arvier, Torrette, Nus, Chambave, Arnad-Montjovet and Donnas.", "depth": "advanced"},
-    {"f": "Donnas and Carema: what they share", "b": "Nebbiolo trained on pergolas held up by stone pillars, on terraces either side of the border where the Valle d'Aosta opens into Piedmont.", "depth": "master"}
+    {
+     "f": "Pigato: its identity and its home",
+     "b": "Vermentino by DNA, grown as a separate vine with freckled skins on the Riviera di Ponente around Albenga; fuller and more savoury than the coast's Vermentino."
+    },
+    {
+     "f": "Sciacchetrà: what it is and its grapes",
+     "b": "The Cinque Terre's sweet wine from Bosco, Albarola and Vermentino dried after picking: amber, apricot and honey, sold in small bottles."
+    },
+    {
+     "f": "Rossese di Dolceacqua: grape, style and date",
+     "b": "Rossese, the vine Provence calls Tibouren: a pale, perfumed red from behind Ventimiglia, Liguria's first DOC, in 1972."
+    },
+    {
+     "f": "The Valle d'Aosta's appellation structure",
+     "b": "One regional DOC, Valle d'Aosta or Vallée d'Aoste, labelled with a grape or one of seven sub-zones; no DOCG and no IGT."
+    },
+    {
+     "f": "Blanc de Morgex et de La Salle: grape and vineyard",
+     "b": "Prié Blanc, grown ungrafted on low pergolas under Mont Blanc at up to about 1,200 metres; light, crisp and herbal, still or sparkling."
+    },
+    {
+     "f": "Nebbiolo in the Valle d'Aosta: its name and its sub-zones",
+     "b": "Picotendro, or Picotener; it makes Donnas and Arnad-Montjovet in the lower valley, paler and leaner than Barolo."
+    },
+    {
+     "f": "Petite Arvine: where else it grows and its style",
+     "b": "Over the pass in the Swiss Valais. In the Valle d'Aosta it makes a saline, high-acid white of grapefruit and herbs."
+    },
+    {
+     "f": "Ormeasco: its identity and its rosé",
+     "b": "Dolcetto, in the hills of Pornassio in Imperia province. Its rosé is called Sciac-trà, a dry wine, not the Cinque Terre's sweet Sciacchetrà.",
+     "depth": "advanced"
+    },
+    {
+     "f": "The Valle d'Aosta's seven sub-zones, upstream to downstream",
+     "b": "Blanc de Morgex et de La Salle, Enfer d'Arvier, Torrette, Nus, Chambave, Arnad-Montjovet and Donnas.",
+     "depth": "advanced"
+    },
+    {
+     "f": "Donnas and Carema: what they share",
+     "b": "Nebbiolo trained on pergolas held up by stone pillars, on terraces either side of the border where the Valle d'Aosta opens into Piedmont.",
+     "depth": "master"
+    }
    ],
    "questions": [
-    {"cat": "Liguria and Valle d'Aosta", "q": "Which white grape has DNA profiling shown to be the same variety as Liguria's Pigato?", "opts": ["Vermentino", "Bosco", "Albarola", "Trebbiano Toscano"], "a": 0, "exp": "Pigato is Vermentino, grown on the Riviera di Ponente as a separate vine with freckled skins. Bosco and Albarola are the Cinque Terre's own whites, and Trebbiano Toscano is a partner in some Levante blends."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "What is the sweet wine made from dried grapes on the terraces of the Cinque Terre called?", "sa": 1, "accept": ["Sciacchetrà", "Sciacchetra", "Cinque Terre Sciacchetrà", "Cinque Terre Sciacchetra"], "ans": "Sciacchetrà", "exp": "Sciacchetrà is made from Bosco, Albarola and Vermentino dried for weeks after picking, then pressed and fermented into an amber, sweet wine sold in small bottles."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "Which Ligurian denomination became the region's first DOC, in 1972?", "opts": ["Rossese di Dolceacqua", "Cinque Terre", "Colli di Luni", "Riviera Ligure di Ponente"], "a": 0, "exp": "Rossese di Dolceacqua, behind Ventimiglia, was granted in 1972. Cinque Terre followed in 1973, while Colli di Luni and Riviera Ligure di Ponente came later."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "Which white grape grows ungrafted on low pergolas for Blanc de Morgex et de La Salle?", "opts": ["Prié Blanc", "Petite Arvine", "Chardonnay", "Müller-Thurgau"], "a": 0, "exp": "Prié Blanc is the only grape of Blanc de Morgex et de La Salle, grown on its own roots under Mont Blanc. Petite Arvine, Chardonnay and Müller-Thurgau are grown lower in the valley."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "What is Nebbiolo called in the lower Valle d'Aosta, where it makes Donnas?", "sa": 1, "accept": ["Picotendro", "Picotener", "Picoutener", "Picotendro or Picotener"], "ans": "Picotendro", "exp": "In the Valle d'Aosta Nebbiolo is Picotendro or Picotener, as at Carema over the border; it is Spanna in Alto Piemonte and Chiavennasca in Valtellina."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "How many named sub-zones does the Valle d'Aosta DOC hold?", "opts": ["Seven", "Five", "Nine", "Eleven"], "a": 0, "depth": "advanced", "exp": "Seven: Blanc de Morgex et de La Salle, Enfer d'Arvier, Torrette, Nus, Chambave, Arnad-Montjovet and Donnas, from Mont Blanc down to the Piedmont border."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "Which grape is called Ormeasco in the hills of Pornassio?", "opts": ["Dolcetto", "Rossese", "Barbera", "Nebbiolo"], "a": 0, "depth": "advanced", "exp": "Ormeasco is Dolcetto, which crossed from Piedmont into the hills of Imperia province. Rossese is the grape of Dolceacqua, and Barbera and Nebbiolo stay mostly in Piedmont."},
-    {"cat": "Liguria and Valle d'Aosta", "q": "Which Piedmontese denomination shares Donnas's Nebbiolo trained on stone-pillared pergolas?", "sa": 1, "accept": ["Carema", "Carema DOC"], "ans": "Carema", "depth": "master", "exp": "Carema lies just over the Piedmont border from Donnas, and both train Nebbiolo on pergolas resting on stone pillars on steep terraces."}
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "Which white grape has DNA profiling shown to be the same variety as Liguria's Pigato?",
+     "opts": [
+      "Vermentino",
+      "Bosco",
+      "Albarola",
+      "Trebbiano Toscano"
+     ],
+     "a": 0,
+     "exp": "Pigato is Vermentino, grown on the Riviera di Ponente as a separate vine with freckled skins. Bosco and Albarola are the Cinque Terre's own whites, and Trebbiano Toscano is a partner in some Levante blends."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "What is the sweet wine made from dried grapes on the terraces of the Cinque Terre called?",
+     "sa": 1,
+     "accept": [
+      "Sciacchetrà",
+      "Sciacchetra",
+      "Cinque Terre Sciacchetrà",
+      "Cinque Terre Sciacchetra"
+     ],
+     "ans": "Sciacchetrà",
+     "exp": "Sciacchetrà is made from Bosco, Albarola and Vermentino dried for weeks after picking, then pressed and fermented into an amber, sweet wine sold in small bottles."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "Which Ligurian denomination became the region's first DOC, in 1972?",
+     "opts": [
+      "Rossese di Dolceacqua",
+      "Cinque Terre",
+      "Colli di Luni",
+      "Riviera Ligure di Ponente"
+     ],
+     "a": 0,
+     "exp": "Rossese di Dolceacqua, behind Ventimiglia, was granted in 1972. Cinque Terre followed in 1973, while Colli di Luni and Riviera Ligure di Ponente came later."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "Which white grape grows ungrafted on low pergolas for Blanc de Morgex et de La Salle?",
+     "opts": [
+      "Prié Blanc",
+      "Petite Arvine",
+      "Chardonnay",
+      "Müller-Thurgau"
+     ],
+     "a": 0,
+     "exp": "Prié Blanc is the only grape of Blanc de Morgex et de La Salle, grown on its own roots under Mont Blanc. Petite Arvine, Chardonnay and Müller-Thurgau are grown lower in the valley."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "What is Nebbiolo called in the lower Valle d'Aosta, where it makes Donnas?",
+     "sa": 1,
+     "accept": [
+      "Picotendro",
+      "Picotener",
+      "Picoutener",
+      "Picotendro or Picotener"
+     ],
+     "ans": "Picotendro",
+     "exp": "In the Valle d'Aosta Nebbiolo is Picotendro or Picotener, as at Carema over the border; it is Spanna in Alto Piemonte and Chiavennasca in Valtellina."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "How many named sub-zones does the Valle d'Aosta DOC hold?",
+     "opts": [
+      "Seven",
+      "Five",
+      "Nine",
+      "Eleven"
+     ],
+     "a": 0,
+     "depth": "advanced",
+     "exp": "Seven: Blanc de Morgex et de La Salle, Enfer d'Arvier, Torrette, Nus, Chambave, Arnad-Montjovet and Donnas, from Mont Blanc down to the Piedmont border."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "Which grape is called Ormeasco in the hills of Pornassio?",
+     "opts": [
+      "Dolcetto",
+      "Rossese",
+      "Barbera",
+      "Nebbiolo"
+     ],
+     "a": 0,
+     "depth": "advanced",
+     "exp": "Ormeasco is Dolcetto, which crossed from Piedmont into the hills of Imperia province. Rossese is the grape of Dolceacqua, and Barbera and Nebbiolo stay mostly in Piedmont."
+    },
+    {
+     "cat": "Liguria and Valle d'Aosta",
+     "q": "Which Piedmontese denomination shares Donnas's Nebbiolo trained on stone-pillared pergolas?",
+     "sa": 1,
+     "accept": [
+      "Carema",
+      "Carema DOC"
+     ],
+     "ans": "Carema",
+     "depth": "master",
+     "exp": "Carema lies just over the Piedmont border from Donnas, and both train Nebbiolo on pergolas resting on stone pillars on steep terraces."
+    }
    ],
    "sources": [
-    {"title": "Le Cinque Terre, the wines of the Cinque Terre and Sciacchetrà (DOC of 29 May 1973)", "url": "https://www.lecinqueterre.org/eng/cinqueterrewines.php", "asOf": "2026"},
-    {"title": "Linkiesta, fifty years of the Rossese DOC, Liguria's first", "url": "https://www.linkiesta.it/2022/08/rossese-prima-doc-ligure/", "asOf": "2022"},
-    {"title": "Italian Wine Central, Valle d'Aosta or Vallée d'Aoste DOC", "url": "https://italianwinecentral.com/denomination/valle-daosta-vallee-daoste-doc/", "asOf": "2026"},
-    {"title": "Chambre valdôtaine (Camera di commercio della Valle d'Aosta), Prié Blanc and Blanc de Morgex et de La Salle", "asOf": "2026"},
-    {"title": "Regione Autonoma Valle d'Aosta, lovevda: Blanc de Morgex et de La Salle DOC", "url": "https://www.lovevda.it/en/food-and-wine/wines/blanc-de-morgex-et-de-la-salle-doc", "asOf": "2026"},
-    {"title": "The Oxford Companion to Wine, fifth edition (Oxford University Press, 2023)", "asOf": "2023"},
-    {"title": "Wine Grapes (Penguin, 2012)", "asOf": "2012"},
-    {"title": "The World Atlas of Wine, eighth edition (Mitchell Beazley, 2019)", "asOf": "2019"}
+    {
+     "title": "Le Cinque Terre, the wines of the Cinque Terre and Sciacchetrà (DOC of 29 May 1973)",
+     "url": "https://www.lecinqueterre.org/eng/cinqueterrewines.php",
+     "asOf": "2026"
+    },
+    {
+     "title": "Linkiesta, fifty years of the Rossese DOC, Liguria's first",
+     "url": "https://www.linkiesta.it/2022/08/rossese-prima-doc-ligure/",
+     "asOf": "2022"
+    },
+    {
+     "title": "Italian Wine Central, Valle d'Aosta or Vallée d'Aoste DOC",
+     "url": "https://italianwinecentral.com/denomination/valle-daosta-vallee-daoste-doc/",
+     "asOf": "2026"
+    },
+    {
+     "title": "Chambre valdôtaine (Camera di commercio della Valle d'Aosta), Prié Blanc and Blanc de Morgex et de La Salle",
+     "asOf": "2026"
+    },
+    {
+     "title": "Regione Autonoma Valle d'Aosta, lovevda: Blanc de Morgex et de La Salle DOC",
+     "url": "https://www.lovevda.it/en/food-and-wine/wines/blanc-de-morgex-et-de-la-salle-doc",
+     "asOf": "2026"
+    },
+    {
+     "title": "The Oxford Companion to Wine, fifth edition (Oxford University Press, 2023)",
+     "asOf": "2023"
+    },
+    {
+     "title": "Wine Grapes (Penguin, 2012)",
+     "asOf": "2012"
+    },
+    {
+     "title": "The World Atlas of Wine, eighth edition (Mitchell Beazley, 2019)",
+     "asOf": "2019"
+    }
    ],
-   "techniques": ["steep-slopes", "dried-grapes", "training-pruning", "altitude-diurnal", "phylloxera-rootstocks", "maritime-fog", "traditional-method"]
+   "techniques": [
+    "steep-slopes",
+    "dried-grapes",
+    "training-pruning",
+    "altitude-diurnal",
+    "phylloxera-rootstocks",
+    "maritime-fog",
+    "traditional-method"
+   ]
+  },
+  {
+   "slug": "calabria-basilicata",
+   "name": "Calabria and Basilicata",
+   "sheet": "italy",
+   "mapless": 1,
+   "asked": [
+    "intro",
+    "certified",
+    "advanced",
+    "master"
+   ],
+   "summary": "Two regions of the deep south, read together. Basilicata, the instep of Italy between Campania and Puglia, is mountain country whose one great wine is Aglianico del Vulture, grown on the slopes of an extinct volcano; its longer aged Superiore is the region's DOCG. Calabria, the toe, lies between the Tyrrhenian and Ionian seas, and its signature red is Cirò, from the pale but firm Gaglioppo on the Ionian coast; in 2025 Cirò Classico became Calabria's first DOCG. The south's Mediterranean heat is tempered by height and by the sea, and Greco di Bianco, a sweet wine from dried grapes, comes from near the tip of the toe.",
+   "terroir": {
+    "climate": "Mediterranean on the coasts: long, hot, dry summers and mild winters, with breezes off two seas. Inland the mountains change everything. On Monte Vulture in northern Basilicata the vineyards sit high enough for cold, snowy winters, a late spring and a wide swing between hot days and cool nights, so Aglianico ripens slowly and keeps its acidity. Calabria's coastal hills are hot and dry, the heat eased by sea air by day and by cool air falling from the mountains at night; the Sila and the Aspromonte above them take rain and snow in winter.",
+    "soils": "Vulture's slopes are volcanic: layers of tuff, ash and lapilli over clay, free draining and rich in minerals, soft enough for cellars to be dug into them. Elsewhere in Basilicata the hills are clay, limestone and sand. Calabria's mountains are old crystalline rock, granite, gneiss and schist in the Sila, the Serre and the Aspromonte, while its coastal hills, Cirò among them, are clay, marl, sand and limestone.",
+    "topography": "Basilicata is almost all mountain and hill, the southern Apennines, with two short coasts: a short stretch on the Tyrrhenian at Maratea and the plain of Metaponto on the Ionian. Monte Vulture rises alone in the north, near the borders with Campania and Puglia, and the vineyards climb its eastern and southern slopes. Calabria is a long, narrow peninsula of mountains that fall steeply to the sea on both sides, the Pollino in the north, the Sila plateau, the Serre and the Aspromonte at the toe, with little flat land; vines grow on the coastal hills and in the river valleys.",
+    "water": "The Tyrrhenian Sea washes Calabria's west coast and Basilicata's short shore at Maratea; the Ionian Sea washes Calabria's east coast, where Cirò lies, and Basilicata's Metaponto plain. The Strait of Messina parts the toe from Sicily. Two lakes fill old craters on Vulture at Monticchio, and the Ofanto river passes to the north of the volcano."
+   },
+   "grapes": [
+    {
+     "name": "Aglianico",
+     "role": "lead",
+     "styles": "Basilicata's great red: late ripening, high in acid and firm in tannin, with black cherry, smoke and earth from Vulture's volcanic slopes; it needs years in cellar and bottle."
+    },
+    {
+     "name": "Gaglioppo",
+     "plain": 1,
+     "role": "lead",
+     "styles": "Calabria's main red, the grape of Cirò: pale in colour but firm in tannin and often high in alcohol, with red cherry, dried herbs and spice; also rosato."
+    },
+    {
+     "name": "Magliocco",
+     "plain": 1,
+     "role": "rising",
+     "styles": "A darker, softer Calabrian red, leading many wines of the Cosenza hills and the Tyrrhenian side and blended with Gaglioppo for colour and roundness."
+    },
+    {
+     "name": "Greco Bianco",
+     "plain": 1,
+     "role": "lead",
+     "styles": "Calabria's name for the white of Cirò Bianco and of the sweet Greco di Bianco; a different vine from the Greco of Campania's Greco di Tufo."
+    },
+    {
+     "name": "Greco Nero",
+     "plain": 1,
+     "role": "blending",
+     "styles": "A Calabrian red allowed beside Gaglioppo in Cirò, giving colour and fruit."
+    },
+    {
+     "name": "Mantonico",
+     "plain": 1,
+     "role": "minor",
+     "styles": "Mantonico Bianco, an old Calabrian white made dry or as a sweet wine from dried grapes around Bianco."
+    },
+    {
+     "name": "Malvasia",
+     "plain": 1,
+     "role": "minor",
+     "styles": "Malvasia Bianca di Basilicata and other Malvasias for whites under the Matera DOC and IGT Basilicata."
+    },
+    {
+     "name": "Zinfandel",
+     "role": "minor",
+     "styles": "Grown as Primitivo in the province of Matera, for ripe, plummy reds under the Matera DOC."
+    }
+   ],
+   "wines": [
+    {
+     "style": "Aglianico del Vulture Superiore",
+     "colour": "red",
+     "note": "Deep and firm: black cherry, plum, smoke, tar and dried herbs, high acidity and strong tannin that need years to soften. Decant a young bottle and serve it with lamb, game or aged pecorino."
+    },
+    {
+     "style": "Aglianico del Vulture",
+     "colour": "red",
+     "note": "The DOC wine, released younger: dark fruit, earth and volcanic smoke with firm tannin; for grilled meats, sausages and pasta with a meat ragù."
+    },
+    {
+     "style": "Cirò Rosso and Cirò Classico",
+     "colour": "red",
+     "note": "Pale garnet but firm and warm: red cherry, orange peel, dried herbs and spice, with more tannin than its colour suggests. Serve it with grilled meats, spicy salami and the chilli of Calabrian cooking."
+    },
+    {
+     "style": "Cirò Rosato",
+     "colour": "rose",
+     "note": "Gaglioppo made pink: dry, with red berries and herbs and enough grip for fish soups, grilled swordfish and summer vegetables."
+    },
+    {
+     "style": "Cirò Bianco",
+     "colour": "white",
+     "note": "Greco Bianco from the Ionian coast: fresh, with citrus, white flowers and almond, a glass for seafood and raw fish."
+    },
+    {
+     "style": "Greco di Bianco",
+     "colour": "sweet",
+     "note": "A golden to amber sweet wine from dried grapes: apricot, candied orange, honey and almond with a fresh finish. Pour it with almond pastries or blue cheese."
+    }
+   ],
+   "made": {
+    "viticulture": "Old vineyards in both regions are bush vines, alberello, which shade their own fruit in the heat; newer plantings are on wires, trained to spurred cordon or Guyot. On Vulture, Aglianico buds early and ripens late, so the harvest runs into late October and often November, and the free draining volcanic soil and the cool nights keep the grapes healthy and fresh through the long season; spring frost and autumn rain are the risks. Calabria's coastal vineyards face the opposite problem: heat and drought, met by bush training, picking early enough to hold acidity and, in newer vineyards, some irrigation. Much of both regions is still farmed in small plots by hand, and many old vineyards were abandoned in the twentieth century as people left the south. Growers and research collections in Calabria have rescued old local grapes such as Magliocco and Mantonico from neglect.",
+    "winemaking": "Aglianico is made as a slow red: long maceration to extract and begin taming its tannin, then ageing in large casks of oak or chestnut by the traditional cellars and in barrique by the modern ones. The Superiore must spend at least twelve months in wood and twelve in bottle within its three years. The cellars of Barile and Rionero in Vulture are cut into the soft tuff, cool and damp all year. Cirò is traditionally fermented in cement or steel and aged in large old wood, giving a pale, savoury, tannic wine; the DOCG requires three years of ageing with at least six months in wood. Rosato is made from Gaglioppo with a short maceration. Greco di Bianco is made from grapes dried after picking until they shrivel and concentrate their sugar, then pressed and fermented into a sweet wine, a method shared with the sweet Mantonico."
+   },
+   "law": {
+    "classification": "Each region now has one DOCG beside a short list of DOCs and IGTs. Basilicata's is Aglianico del Vulture Superiore, promoted in 2010 from the Aglianico del Vulture DOC of 1971: wholly Aglianico, at least 13.5 per cent alcohol and three years of ageing, five for the Riserva. The DOC continues for the younger wine, and Matera, Terre dell'Alta Val d'Agri and Grottino di Roccanova are the region's other DOCs, with IGT Basilicata covering the rest. Calabria had no DOCG until 2025, when the European Union registered Cirò Classico: a red of at least 90 per cent Gaglioppo, with Magliocco or Greco Nero, from the communes of Cirò and Cirò Marina, aged at least three years. The Cirò DOC of 1969 continues for reds and rosés of at least 80 per cent Gaglioppo and whites of at least 80 per cent Greco Bianco. Melissa, Savuto, Lamezia, Bivongi, Scavigna, Greco di Bianco and Terre di Cosenza are among Calabria's other DOCs, with IGT Calabria the broad tier.",
+    "tiers": [
+     [
+      "Aglianico del Vulture Superiore DOCG",
+      "2010: wholly Aglianico from the Vulture zone, at least three years of ageing with twelve months in wood and twelve in bottle; Riserva five years."
+     ],
+     [
+      "Aglianico del Vulture DOC",
+      "1971: the Vulture's Aglianico released younger, below the Superiore."
+     ],
+     [
+      "Cirò Classico DOCG",
+      "2025, Calabria's first DOCG: red only, at least 90 per cent Gaglioppo from Cirò and Cirò Marina, three years of ageing with six months in wood."
+     ],
+     [
+      "Cirò DOC",
+      "1969: red and rosé of at least 80 per cent Gaglioppo, white of at least 80 per cent Greco Bianco, from the Ionian coast of Crotone province."
+     ],
+     [
+      "Greco di Bianco DOC",
+      "A sweet wine from dried Greco Bianco grapes, made around Bianco near the toe of Calabria."
+     ],
+     [
+      "Matera DOC",
+      "Basilicata's eastern DOC around the city of Matera, for Primitivo, red blends, whites and sparkling wine."
+     ],
+     [
+      "IGT Calabria, IGT Basilicata",
+      "The broad regional tiers for wines outside the DOC rules."
+     ]
+    ],
+    "labels": [
+     [
+      "Superiore",
+      "On Aglianico del Vulture, the name of the DOCG tier, with longer ageing and higher alcohol than the DOC"
+     ],
+     [
+      "Riserva",
+      "Longer ageing again: five years for Aglianico del Vulture Superiore"
+     ],
+     [
+      "Classico",
+      "The historic heart of a zone: at Cirò, the communes of Cirò and Cirò Marina"
+     ],
+     [
+      "Passito",
+      "A wine from grapes dried after picking, as Greco di Bianco"
+     ],
+     [
+      "Rosato",
+      "Rosé, as Cirò Rosato from Gaglioppo"
+     ],
+     [
+      "Lucania",
+      "The old name of Basilicata, still seen on labels and in the names of houses"
+     ]
+    ]
+   },
+   "places": [
+    {
+     "name": "Vulture",
+     "note": "The extinct volcano in the north of Basilicata near Melfi, whose slopes of tuff and ash carry Aglianico del Vulture and its Superiore DOCG; a different region and a different ground from Campania's Taurasi.",
+     "places": [
+      {
+       "name": "Rionero in Vulture and Barile",
+       "note": "Two towns high on the volcano's eastern slope, the heart of the zone, with old cellars cut into the soft tuff beneath their streets.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Venosa",
+       "note": "The Roman town on the lower, warmer north-eastern edge of the zone, the poet Horace's birthplace, whose Aglianico is riper and rounder.",
+       "depth": "advanced"
+      }
+     ]
+    },
+    {
+     "name": "Matera",
+     "note": "The province of the cave city of Matera in eastern Basilicata, towards the Ionian Sea, with a DOC for Primitivo, red blends, Greco and Malvasia whites and sparkling wine.",
+     "depth": "advanced"
+    },
+    {
+     "name": "Terre dell'Alta Val d'Agri and Grottino di Roccanova",
+     "note": "Two small DOCs in the hills of southern Basilicata, for reds and rosés of local and international grapes.",
+     "depth": "master"
+    },
+    {
+     "name": "Cirò",
+     "note": "The Ionian coast of Crotone province, on clay, marl and sand: Gaglioppo reds and rosés and Greco Bianco whites under the Cirò DOC, Calabria's flagship name.",
+     "places": [
+      {
+       "name": "Cirò Classico",
+       "note": "The historic heart, the communes of Cirò and Cirò Marina, whose red became Calabria's first DOCG, registered in 2025: at least 90 per cent Gaglioppo, aged three years."
+      }
+     ]
+    },
+    {
+     "name": "Melissa",
+     "note": "Hills just south of Cirò in Crotone province, a DOC for Gaglioppo reds and Greco Bianco whites in Cirò's style.",
+     "depth": "advanced"
+    },
+    {
+     "name": "Greco di Bianco",
+     "note": "The town of Bianco and its neighbours on the Ionian coast near the toe of Calabria, home of the sweet wine of dried Greco Bianco grapes and of sweet Mantonico."
+    },
+    {
+     "name": "Savuto",
+     "note": "The valley of the Savuto river on the Tyrrhenian side, between the provinces of Cosenza and Catanzaro, where terraced hills give Gaglioppo reds and rosés with Magliocco and other local grapes.",
+     "depth": "advanced"
+    },
+    {
+     "name": "Lamezia",
+     "note": "The hills behind the Gulf of Sant'Eufemia on the Tyrrhenian coast, a DOC for Gaglioppo, Magliocco and Greco reds and whites.",
+     "depth": "advanced"
+    },
+    {
+     "name": "Terre di Cosenza",
+     "note": "The province of Cosenza in northern Calabria, from the Pollino to the Crati valley, a broad DOC with named sub-zones such as Donnici and Pollino, where Magliocco leads many reds.",
+     "depth": "advanced"
+    }
+   ],
+   "producers": [
+    {
+     "id": "p-paternoster",
+     "name": "Paternoster",
+     "why": "A Barile house founded in 1925, a historic name of traditional, long aged Aglianico del Vulture, with cellars cut into the volcanic tuff."
+    },
+    {
+     "name": "Cantine del Notaio",
+     "why": "A Rionero in Vulture house with cellars in old tuff caves, known for Aglianico del Vulture in several styles."
+    },
+    {
+     "name": "D'Angelo",
+     "why": "A Rionero in Vulture family house, a long-standing name for traditional Aglianico del Vulture."
+    },
+    {
+     "name": "Re Manfredi",
+     "why": "A Venosa estate on the warmer, lower side of the Vulture zone, known for Aglianico del Vulture."
+    },
+    {
+     "name": "Librandi",
+     "why": "A Cirò Marina family house, a reference for Cirò and for the revival of Calabria's native grapes, Magliocco among them."
+    },
+    {
+     "name": "Ippolito 1845",
+     "why": "A Cirò Marina house whose name carries its founding year, for Cirò reds, rosés and Greco Bianco whites."
+    },
+    {
+     "name": "Statti",
+     "why": "A Lamezia estate on the Tyrrhenian side, known for Gaglioppo, Magliocco and Greco."
+    },
+    {
+     "name": "Odoardi",
+     "why": "An estate of the Savuto valley, known for Savuto and Scavigna from terraced hills."
+    },
+    {
+     "name": "Ceratti",
+     "why": "A family estate near Bianco, a reference for Greco di Bianco and sweet Mantonico."
+    }
+   ],
+   "exam": [
+    "Place both regions: Basilicata the instep between Campania and Puglia, with short Tyrrhenian and Ionian coasts; Calabria the toe between the Tyrrhenian and Ionian seas.",
+    "Tie Aglianico del Vulture to Basilicata, not Campania: Aglianico on the extinct Monte Vulture volcano, on tuff and ash.",
+    "Know Aglianico del Vulture Superiore as Basilicata's DOCG, of 2010; the plain Aglianico del Vulture stays DOC, of 1971.",
+    "Know Cirò as Calabria's Gaglioppo red of the Ionian coast, and Cirò Classico as the region's first DOCG, registered in 2025.",
+    "Know Greco di Bianco as a sweet wine from dried grapes at the toe of Calabria, not Campania's dry Greco di Tufo.",
+    "Read Superiore and Riserva as each denomination defines them: higher alcohol and longer ageing on Aglianico del Vulture, five years for the Riserva.",
+    "Know the climate: Mediterranean on the coasts, cooler and continental high on Vulture; decant a young Aglianico del Vulture.",
+    "The Superiore's ageing rules, Melissa, Savuto and Matera are asked from Premier Cru; Cirò's claim to the ancient Krimisa from Grand Cru."
+   ],
+   "traps": [
+    "Aglianico del Vulture is Basilicata's; Taurasi is Campania's Aglianico. Same grape, two regions.",
+    "Only the Superiore of Aglianico del Vulture is DOCG; the plain wine remains DOC.",
+    "Calabria had no DOCG until Cirò Classico in 2025; older books say it has none.",
+    "Cirò Classico DOCG is red only; Cirò's whites and rosés stay DOC.",
+    "Greco di Bianco is a sweet wine from a different vine than the dry Greco di Tufo of Campania.",
+    "Gaglioppo is pale but tannic and warm; its light colour is no guide to its weight.",
+    "Monte Vulture is extinct; Etna and Vesuvius are the active volcanoes of southern Italian wine."
+   ],
+   "say": [
+    [
+     "Calabria",
+     "kah-LAH-bryah"
+    ],
+    [
+     "Basilicata",
+     "bah-zee-lee-KAH-tah"
+    ],
+    [
+     "Lucania",
+     "loo-KAH-nyah"
+    ],
+    [
+     "Aglianico del Vulture",
+     "ahl-YAH-nee-koh del VOOL-too-reh"
+    ],
+    [
+     "Superiore",
+     "soo-peh-RYOH-reh"
+    ],
+    [
+     "Rionero in Vulture",
+     "ryoh-NEH-roh een VOOL-too-reh"
+    ],
+    [
+     "Barile",
+     "bah-REE-leh"
+    ],
+    [
+     "Venosa",
+     "veh-NOH-zah"
+    ],
+    [
+     "Matera",
+     "mah-TEH-rah"
+    ],
+    [
+     "Cirò",
+     "chee-ROH"
+    ],
+    [
+     "Gaglioppo",
+     "gahl-YOHP-poh"
+    ],
+    [
+     "Magliocco",
+     "mahl-YOHK-koh"
+    ],
+    [
+     "Greco di Bianco",
+     "GREH-koh dee BYAHN-koh"
+    ],
+    [
+     "Mantonico",
+     "mahn-TOH-nee-koh"
+    ],
+    [
+     "Melissa",
+     "meh-LEES-sah"
+    ],
+    [
+     "Savuto",
+     "sah-VOO-toh"
+    ],
+    [
+     "Lamezia",
+     "lah-MEH-tsyah"
+    ],
+    [
+     "Cosenza",
+     "koh-ZEN-tsah"
+    ],
+    [
+     "Krimisa",
+     "kree-MEE-zah"
+    ],
+    [
+     "Paternoster",
+     "pah-ter-NOS-ter"
+    ],
+    [
+     "Librandi",
+     "lee-BRAHN-dee"
+    ]
+   ],
+   "cards": [
+    {
+     "f": "Aglianico del Vulture: region, grape and ground",
+     "b": "Basilicata, not Campania: Aglianico on the slopes of the extinct Monte Vulture volcano near Melfi, on tuff and ash."
+    },
+    {
+     "f": "Basilicata's DOCG: its name and date",
+     "b": "Aglianico del Vulture Superiore, promoted in 2010 from the Aglianico del Vulture DOC of 1971; wholly Aglianico, with a Riserva at five years."
+    },
+    {
+     "f": "Cirò: grapes, coast and colours",
+     "b": "Gaglioppo reds and rosés and Greco Bianco whites from the Ionian coast of Calabria, in Crotone province; a DOC since 1969."
+    },
+    {
+     "f": "Cirò Classico DOCG: what and when",
+     "b": "Calabria's first DOCG, registered by the European Union in 2025: red only, at least 90 per cent Gaglioppo from Cirò and Cirò Marina, aged three years."
+    },
+    {
+     "f": "Greco di Bianco: style and place",
+     "b": "A sweet wine from Greco Bianco grapes dried after picking, made around the town of Bianco near the toe of Calabria; not Greco di Tufo."
+    },
+    {
+     "f": "Gaglioppo: its style",
+     "b": "Pale in colour but firm in tannin and often high in alcohol, with red cherry, dried herbs and spice; the grape of Cirò and most Calabrian reds."
+    },
+    {
+     "f": "Superiore on Aglianico del Vulture: what it means",
+     "b": "The DOCG tier: at least three years of ageing, twelve months in wood and twelve in bottle, and at least 13.5 per cent alcohol."
+    },
+    {
+     "f": "Melissa: where and what",
+     "b": "Hills just south of Cirò in Crotone province: a DOC for Gaglioppo reds and Greco Bianco whites in Cirò's style.",
+     "depth": "advanced"
+    },
+    {
+     "f": "Basilicata's DOCs beside Aglianico del Vulture",
+     "b": "Matera, Terre dell'Alta Val d'Agri and Grottino di Roccanova; IGT Basilicata covers the rest.",
+     "depth": "advanced"
+    },
+    {
+     "f": "Cirò's ancient claim",
+     "b": "Descent from Krimisa, a wine of the Greek colonists of the Ionian coast said to have been given to victors at the Olympic games; a legend, not a record.",
+     "depth": "master"
+    }
+   ],
+   "questions": [
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Which red grape is the base of Cirò's red and rosé wines?",
+     "opts": [
+      "Gaglioppo",
+      "Magliocco",
+      "Aglianico",
+      "Nerello Mascalese"
+     ],
+     "a": 0,
+     "exp": "Gaglioppo makes Cirò's pale but tannic reds and its rosés. Magliocco is a softer Calabrian partner, Aglianico belongs to Basilicata's Vulture, and Nerello Mascalese to Etna."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Basilicata's DOCG Aglianico grows on the slopes of which extinct volcano?",
+     "opts": [
+      "Monte Vulture",
+      "Monte Amiata",
+      "Monte Roccamonfina",
+      "Monti Cimini"
+     ],
+     "a": 0,
+     "exp": "Monte Vulture rises in the north of Basilicata near Melfi. Monte Amiata shelters Montalcino in Tuscany, Monte Roccamonfina lies in northern Campania, and the Monti Cimini are in Lazio."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Which word on the label marks the DOCG tier of Aglianico del Vulture?",
+     "sa": 1,
+     "accept": [
+      "Superiore",
+      "Aglianico del Vulture Superiore"
+     ],
+     "ans": "Superiore",
+     "exp": "Aglianico del Vulture Superiore is the DOCG, granted in 2010, with longer ageing and higher alcohol; the plain Aglianico del Vulture remains a DOC."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Which Calabrian denomination makes a sweet white from dried grapes on the Ionian coast near the toe of Italy?",
+     "sa": 1,
+     "accept": [
+      "Greco di Bianco",
+      "Greco di Bianco DOC"
+     ],
+     "ans": "Greco di Bianco",
+     "exp": "Greco di Bianco takes its name from the town of Bianco; Greco Bianco grapes are dried after picking and made into an amber, sweet wine."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Which denomination became Calabria's first DOCG, registered in 2025?",
+     "opts": [
+      "Cirò Classico",
+      "Greco di Bianco",
+      "Savuto",
+      "Terre di Cosenza"
+     ],
+     "a": 0,
+     "exp": "Cirò Classico was registered as a DOCG by the European Union in 2025, a red of at least 90 per cent Gaglioppo; Greco di Bianco, Savuto and Terre di Cosenza remain DOCs."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "What is the minimum total ageing for Aglianico del Vulture Superiore before release?",
+     "opts": [
+      "Three years",
+      "Two years",
+      "Four years",
+      "Eighteen months"
+     ],
+     "a": 0,
+     "depth": "advanced",
+     "exp": "The Superiore needs three years, with at least twelve months in wood and twelve in bottle; five years is the Riserva's minimum."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Which Calabrian DOC lies in a river valley on the Tyrrhenian side, between Cosenza and Catanzaro?",
+     "opts": [
+      "Savuto",
+      "Melissa",
+      "Bivongi",
+      "Cirò"
+     ],
+     "a": 0,
+     "depth": "advanced",
+     "exp": "Savuto takes its name from the river valley on the Tyrrhenian side. Melissa and Cirò lie on the Ionian coast of Crotone province, and Bivongi on the Ionian side further south."
+    },
+    {
+     "cat": "Calabria and Basilicata",
+     "q": "Which ancient wine of the Greek colonists, said to have been given to Olympic victors, does Cirò claim as its forebear?",
+     "sa": 1,
+     "accept": [
+      "Krimisa",
+      "Krimissa",
+      "Cremissa",
+      "Crimisa"
+     ],
+     "ans": "Krimisa",
+     "depth": "master",
+     "exp": "Cirò claims descent from Krimisa, a wine of the Greek colonies on the Ionian coast; the Olympic link is a legend handed down, not a record."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Disciplinare di produzione della DOCG Aglianico del Vulture Superiore (DM 2 August 2010, modified 3 July 2014)",
+     "url": "https://aisitalia.it/Disciplinari/Basilicata/DOCG/Aglianico%20del%20Vulture%20Superiore.pdf",
+     "asOf": "2014",
+     "primary": 1
+    },
+    {
+     "title": "Camera di commercio della Basilicata, disciplinare della DOC Aglianico del Vulture (DPR 18 February 1971)",
+     "url": "https://www.basilicata.camcom.it/sites/default/files/contenuto_redazione/pagina_base/allegati/disciplinare_doc_aglianico_del_vulture_1.pdf",
+     "asOf": "2026",
+     "primary": 1
+    },
+    {
+     "title": "Italian Wine Central, Aglianico del Vulture Superiore DOCG",
+     "url": "https://italianwinecentral.com/denomination/aglianico-del-vulture-superiore-docg/",
+     "asOf": "2026"
+    },
+    {
+     "title": "Disciplinare di produzione della DOC Cirò",
+     "url": "https://aisitalia.it/Disciplinari/Calabria/Ciro.pdf",
+     "asOf": "2026",
+     "primary": 1
+    },
+    {
+     "title": "Decanter, what is Cirò: a regional profile",
+     "url": "https://www.decanter.com/learn/what-is-ciro-a-regional-profile-532273/",
+     "asOf": "2025"
+    },
+    {
+     "title": "Gambero Rosso, DOCG Cirò Classico",
+     "url": "https://www.gamberorosso.it/notizie/vino/docg-ciro-classico/",
+     "asOf": "2025"
+    },
+    {
+     "title": "DoctorWine, Cirò now has its own DOCG, Cirò Classico",
+     "url": "https://www.doctorwine.wine/pot-pourri-en/wine-world-news/ciro-now-has-its-own-docg-ciro-classico/?lang=en",
+     "asOf": "2025"
+    },
+    {
+     "title": "The Oxford Companion to Wine, fifth edition (Oxford University Press, 2023)",
+     "asOf": "2023"
+    },
+    {
+     "title": "Wine Grapes (Penguin, 2012)",
+     "asOf": "2012"
+    }
+   ],
+   "techniques": [
+    "altitude-diurnal",
+    "soils-drainage",
+    "dried-grapes",
+    "ageing-terms",
+    "oak",
+    "extraction",
+    "training-pruning",
+    "heat-irrigation"
+   ]
   }
  ],
  "aliases": {
@@ -223,6 +1265,25 @@
   "morgex": "liguria-valle-d-aosta",
   "torrette": "liguria-valle-d-aosta",
   "chambave": "liguria-valle-d-aosta",
-  "arnad montjovet": "liguria-valle-d-aosta"
+  "arnad montjovet": "liguria-valle-d-aosta",
+  "calabria": "calabria-basilicata",
+  "ciro": "calabria-basilicata",
+  "ciro classico": "calabria-basilicata",
+  "ciro marina": "calabria-basilicata",
+  "greco di bianco": "calabria-basilicata",
+  "savuto": "calabria-basilicata",
+  "lamezia": "calabria-basilicata",
+  "terre di cosenza": "calabria-basilicata",
+  "bivongi": "calabria-basilicata",
+  "scavigna": "calabria-basilicata",
+  "basilicata": "calabria-basilicata",
+  "lucania": "calabria-basilicata",
+  "aglianico del vulture": "calabria-basilicata",
+  "aglianico del vulture superiore": "calabria-basilicata",
+  "vulture": "calabria-basilicata",
+  "venosa": "calabria-basilicata",
+  "matera": "calabria-basilicata",
+  "terre dell alta val d agri": "calabria-basilicata",
+  "grottino di roccanova": "calabria-basilicata"
  }
 }
