@@ -386,7 +386,7 @@ async function main() {
       check(tag + ': At the table holds the forty-five large (#v28-s45)', !s45 || /<p class="v28-timed v54-fortyfive" id="v28-s45">/.test(atTable));
       if (sale) {
         const i45 = atTable.indexOf('v54-fortyfive'), iRule = atTable.indexOf('v54-rule'), iSale = atTable.indexOf('class="v54-sale"');
-        check(tag + ': the sale stands directly under the forty-five, under its gold rule, in the pack\'s own words', i45 >= 0 && iRule > i45 && iSale > iRule && count(atTable.slice(i45, iRule), /<p\b/g) === 0 && atTable.indexOf(esc(sale)) > iSale && atTable.indexOf('id="v28-s10"') > iSale, [i45, iRule, iSale].join(','));
+        check(tag + ': the sale stands directly under the forty-five, under its gold rule, in the pack\'s own words', i45 >= 0 && iRule > i45 && iSale > iRule && count(atTable.slice(i45, iRule), /<p\b/g) === 0 && [esc(sale), esc(sale).replace(/&#39;/g, '\'')].some((e) => atTable.indexOf(e) > iSale) && atTable.indexOf('id="v28-s10"') > iSale, [i45, iRule, iSale].join(','));
       } else {
         check(tag + ': no sale block when the pack holds none', html.indexOf('v54-sale') < 0);
       }
