@@ -79,8 +79,9 @@ function ok(name, value) { assert.ok(value, name); passed++; console.log('PASS '
   await page.waitForSelector('.v46-links [data-v46-arg="traditional-method"]');
   await page.locator('.v46-links [data-v46-arg="traditional-method"]').click(); await ready();
   ok('map to technique is one working transition', await page.evaluate(() => S._v46technique === 'traditional-method'));
-  await page.goBack(); await page.waitForFunction(() => S.view === 'fieldmap');
-  ok('browser Back returns to the map', await page.evaluate(() => S._v45map === 'champagne'));
+  /* codex56: the field map's address draws its region page, so Back lands there */
+  await page.goBack(); await page.waitForFunction(() => S.view === 'region');
+  ok('browser Back returns to the map, drawn as its region page', await page.evaluate(() => S._v39region === 'champagne' && !!document.querySelector('.v55-map')));
   await open('#/v/region/tuscany');
   ok('regional reading exposes its authored technique links', await page.locator('.v46-links [data-v46-arg="governo"]').count() === 1);
   await open('#/library');

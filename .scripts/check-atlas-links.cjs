@@ -40,6 +40,8 @@ function check(name,pass){checks.push({name,pass:!!pass});assert.ok(pass,name);c
    await link.focus();if(keyboard)await link.press('Enter');else await link.click();
    await page.waitForFunction(h=>location.hash===h,href);
    if(href.startsWith('#/v/fieldmap/'))check(label+' opens the actual mapped region and place key',await page.locator('.v45-map .v45-key li').count()>0&&await page.evaluate(h=>!!v45Map(S._v45map)&&S._v45map===h.split('/').pop(),href));
+   /* codex56: a region's field map is drawn on its region page, so an answer link opens the page, its map inline */
+   else if(href.startsWith('#/v/region/'))check(label+' opens the region page with its map',await page.waitForFunction(h=>S.view==='region'&&S._v39region===h.split('/').pop()&&!!document.querySelector('.v55-map'),href).then(()=>true));
    check(label+' opens exactly one history entry without changing marks',await page.evaluate(d=>V32.d===d+1,depth)&&await store()===before);
    check(label+' retains the actual quiz, card and recovery objects',await page.evaluate(()=>S.pool===__atlasRefs.pool&&S._v32run===__atlasRefs.run&&V51_TARGET===__atlasRefs.target&&S._v25lt===__atlasRefs.report));
    await page.locator('#v32-back').click();await page.waitForFunction(v=>S.view===v,expectedView);
@@ -102,7 +104,7 @@ function check(name,pass){checks.push({name,pass:!!pass});assert.ok(pass,name);c
   await page.evaluate(()=>{v39StartDrill(['champagne']);S.idx=S.pool.findIndex(q=>!q.sa&&!q.mt&&!q.sel);resetQ();render();});
   check('regional quiz front conceals the region link',await page.locator('.v52-atlas-link').count()===0);
   await answer();
-  check('Champagne regional answer returns to the Champagne map',await page.locator('.reveal .v52-atlas-link[href="#/v/fieldmap/champagne"]').count()>0);
+  check('Champagne regional answer returns to the Champagne map, on its region page (codex56)',await page.locator('.reveal .v52-atlas-link[href="#/v/region/champagne"]').count()>0);
   await detour(page.locator('.reveal .v52-atlas-link:visible').first(),'quiz','Regional answer');
 
   for(const mode of ['mock','sim','finals']){
@@ -155,8 +157,9 @@ function check(name,pass){checks.push({name,pass:!!pass});assert.ok(pass,name);c
    }
   }
   const firstHref=await page.locator('.reveal .v52-atlas-link:visible').first().getAttribute('href');
-  await page.goto(base+'?nosw&check=atlas-links-deep'+firstHref);await page.waitForFunction(()=>V32.booted&&S.view==='fieldmap');
-  check('shared direct map address resolves after a fresh reload',await page.locator('.v45-map h2').count()===1||await page.locator('.v45-map').count()===1);
+  /* codex56: a region's map link is its region page's address, the map drawn on the page */
+  await page.goto(base+'?nosw&check=atlas-links-deep'+firstHref);await page.waitForFunction(()=>V32.booted&&(S.view==='fieldmap'||(S.view==='region'&&!!document.querySelector('.v55-map'))));
+  check('shared direct map address resolves after a fresh reload',await page.locator('.v45-map h2').count()===1||await page.locator('.v45-map').count()===1||await page.locator('.v55-map').count()===1);
   check('complete atlas-link journey raises no JavaScript errors',errors.length===0);
   if(process.env.CODEX_REPORT)fs.writeFileSync(process.env.CODEX_REPORT,JSON.stringify({checks,errors},null,2));
   console.log('Atlas links: all '+checks.length+' checks pass.');await context.close();

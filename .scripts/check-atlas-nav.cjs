@@ -115,7 +115,7 @@ async function routeFiles(context) {
     /* codex56: the field map screen is this page now; the map's own field notes and its offline copy stand where its door stood */
     ok('the regional lesson carries the field map\'s own notes and its offline copy, with no door to the folded field map screen', await owner(page, 'worldmap') && await page.locator('[data-v45="map"][data-v45-arg="champagne"]').count() === 0
       && await page.locator('.v55-map details.v56-fieldnotes .v45-studies').count() === 1 && await page.locator('.v55-map details.v56-fieldnotes').evaluate(node => node.textContent.length > 1000)
-      && await page.locator('.v55-map [data-v45="keep"][data-v45-arg="champagne"], .v55-map .v45-storage').count() >= 1);
+      && (await page.locator('.v55-map [data-v45="keep"][data-v45-arg="champagne"]').count() === 1 || await page.locator('.v55-map').evaluate(node => node.textContent.indexOf('Optional map downloads are unavailable in this browser.') >= 0)));
     const fieldDepth = await page.evaluate(() => V32.d);
     await page.evaluate(() => v45Go('champagne')); await regionalReady(page, 'champagne');
     ok('codex45\'s door to the field map opens the regional reading itself, Wine Atlas lit', await owner(page, 'worldmap') && await page.evaluate(() => location.hash === '#/v/region/champagne'));
