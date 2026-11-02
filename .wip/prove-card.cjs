@@ -27,6 +27,7 @@ const JS = path.join(__dirname, '..', 'js');
 const SHARED = process.env.OOT_SHARED || path.join(__dirname, '..', '..', 'worldtable', 'static', 'shared');
 const PACK_FILE = opt('--pack') || process.env.OOT_HOUSE_PACK || path.join(SHARED, 'packs', 'brennans-new-orleans.v1.oothouse.json');
 const DUMP = opt('--dump');
+const EVAL = opt('--eval');
 const ENGINE = path.join(SHARED, 'oot-house.js');
 const UI_FILE = path.join(SHARED, 'oot-house-ui.js');
 const NOW = Date.parse('2026-10-03T14:02:00.000Z');
@@ -150,6 +151,9 @@ const lib = D.G('OOT.houseLib');
 D.sandbox.OOT.house = lib.createHouseApi(lib.mapStorage(new Map()), { win: D.sandbox, now: () => NOW, rand: seeded(21), from: 'codex' });
 D.sandbox.fetch = () => Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(packText), json: () => Promise.resolve(JSON.parse(packText)) });
 const FILES = CH.chainFiles(JS);
+/* before the shell names it, the layer is loaded where index.html will: after codex53.js, before boot.js */
+const SHELL = FILES.indexOf('codex54.js') >= 0;
+if (!SHELL && FILES.indexOf('boot.js') > 0) FILES.splice(FILES.indexOf('boot.js'), 0, 'codex54.js');
 for (const f of FILES) {
   try { vm.runInContext(fs.readFileSync(path.join(JS, f), 'utf8'), D.ctx, { filename: f }); }
   catch (e) { console.error('prove-card: js/' + f + ' failed to load: ' + e.message); process.exit(1); }
@@ -204,7 +208,7 @@ function section(html, id) {
   void open; void close; void i;
   return html.slice(start);
 }
-const DASH = /\u2014|\u2013|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;| -- /i;
+const DASH = new RegExp(['\\u2014', '\\u2013', '&' + 'mdash;', '&' + 'ndash;', '&#' + '8212;', '&#' + '8211;', '&#x' + '2014;', '&#x' + '2013;', ' ' + '-'.repeat(2) + ' '].join('|'), 'i');
 
 (async () => {
   try { await D.G('typeof V27_LAST !== "undefined" ? V27_LAST : null'); } catch (e) { }
@@ -213,12 +217,13 @@ const DASH = /\u2014|\u2013|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;| -
   try { await D.G('typeof V27_WRITING !== "undefined" ? V27_WRITING : null'); } catch (e) { }
   await tick(30);
   const n = D.G('(v28House() && v28House().wines || []).length');
-  console.log('prove-card: ' + FILES.length + ' scripts, codex54 at ' + (FILES.indexOf('codex54.js') + 1) + ', the house holds ' + n + ' wines, pack ' + path.basename(PACK_FILE));
+  console.log('prove-card: ' + FILES.length + ' scripts, codex54 at ' + (FILES.indexOf('codex54.js') + 1) + (SHELL ? ' (as index.html loads it)' : ' (index.html does not load it yet)') + ', the house holds ' + n + ' wines, pack ' + path.basename(PACK_FILE));
   const withSale = house.wines.filter((w) => str((kv(w, 'lines') || {}).sale)).length;
   console.log('prove-card: ' + withSale + ' wines in this pack carry a sale');
   D.G('S.view = "cellar"; S._v25area = "brennans";');
   const draw = (id) => D.G('(function () { var st = v28State(); st.open = ' + JSON.stringify(id) + '; st.q = ""; st.sec = ""; return v28CardHtml(' + JSON.stringify(id) + '); })()');
   if (DUMP) { console.log(draw(DUMP)); return; }
+  if (EVAL) { console.log(D.G(EVAL)); return; }
   check('codex54 loaded: V54_WORDS and v54SubjectFor are defined', D.G('typeof V54_WORDS === "object" && typeof v54SubjectFor === "function"'));
   for (const [label, w] of WINES) {
     console.log('');
