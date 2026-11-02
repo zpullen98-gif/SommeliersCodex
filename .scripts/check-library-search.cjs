@@ -100,7 +100,10 @@ await page.locator('#v28-rows .v28-row[data-id="'+houseWine.id+'"]').click();
 await page.waitForFunction(id=>S.view==='cellar'&&v28State().open===id,houseWine.id);
 assert((await page.locator('#view').innerText()).includes(houseWine.title),'the house wine opens on the Brennan\'s tab');
 results.push({kind:'wine',house:houseWine.id,route:await page.evaluate(()=>location.hash)});
-await page.locator('#nav-library').click();
+/* codex55: the Library left the bar for More, whose first group opens it */
+await page.locator('#nav-more').click();
+await page.waitForFunction(()=>S.view==='more');
+await page.locator('.v55-libgroup [data-go="v55lib"]').first().click();
 await page.waitForFunction(()=>S.view==='library');
 await page.locator('#cf-in').fill('chateau');
 const more=page.locator('[data-v44="more"][data-v44-group="producers"]');
