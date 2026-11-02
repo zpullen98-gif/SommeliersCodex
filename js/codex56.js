@@ -138,7 +138,29 @@ var V56_WORDS = {
   stepRead: 'Step {k}, read',
   stepToRead: 'Step {k}, to read',
   stepCountry: 'Step {k}, the country, read',
-  stepCountryTo: 'Step {k}, the country, to read'
+  stepCountryTo: 'Step {k}, the country, to read',
+  /* the region page */
+  rowLabel: 'Study {name}',
+  sSummary: 'Summary',
+  sMap: 'Map',
+  sDistricts: 'Districts',
+  sRead: 'Read',
+  sFlash: 'Flash',
+  sDrill: 'Drill',
+  sQuiz: 'Map quiz',
+  minuteH: 'In one minute',
+  mClimate: 'The climate',
+  mGrapes: 'The main grapes',
+  mLadder: 'The ladder',
+  mExam: 'One exam line',
+  mTrap: 'One trap',
+  mWait: 'The climate, the ladder, an exam line and a trap arrive with the reading.',
+  mStep: 'Step {k} of {n} in the course',
+  mDue: '{line} here today',
+  showAll: 'Show all {n} districts and places',
+  showFew: 'Show the first eight',
+  dCards: 'District cards',
+  insetSaid: '{name} is marked beside it and on the map, number {n}.'
 };
 
 function v56W(key, vars) {
@@ -194,7 +216,25 @@ function v56Doc() { return (typeof document !== 'undefined' && document && typeo
     '.wrap .v56-startrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}',
     '.wrap .v56-doors,.wrap .v56-countryrows{gap:8px}',
     '.wrap .v56-countryrows .v25row-line,.wrap .v56-doors .v25row-line{font-size:15px;line-height:1.4}',
-    '@media(min-width:600px){.wrap .v56-doors,.wrap .v56-countryrows{grid-template-columns:repeat(2,minmax(0,1fr))}}'
+    '@media(min-width:600px){.wrap .v56-doors,.wrap .v56-countryrows{grid-template-columns:repeat(2,minmax(0,1fr))}}',
+    /* the region page: the study row sticks under Back (its height measured at draw), one line that scrolls sideways */
+    '.wrap .v56-srow{position:sticky;top:57px;z-index:29;display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;margin:10px 0 8px;padding:6px 0;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:thin}',
+    '.wrap .v56-srow .v28-chip{flex:0 0 auto;min-height:44px;padding:8px 12px;font-size:15px;white-space:nowrap;box-sizing:border-box}',
+    /* In one minute: a parchment card, ink on it */
+    '.wrap .v56-minute{margin:14px 0 6px;padding:14px 16px}',
+    '.wrap .v56-minute .v56-minute-h{font-family:var(--house-display,Georgia,serif);font-weight:500;font-size:19px;letter-spacing:.03em;color:var(--claret);margin:0 0 8px}',
+    '.wrap .v56-mdl{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:2px 0}',
+    '.wrap .v56-mdl dt{font-weight:600;color:var(--ink);font-size:15px;margin-top:8px}',
+    '.wrap .v56-mdl dd{margin:0;color:var(--ink);font-size:17px;line-height:1.5}',
+    '.wrap .v56-mfoot{margin:10px 0 0;font-size:15px;line-height:1.45;color:var(--ink-soft)}',
+    /* the lazy map: its box drawn at the artwork's own shape before the artwork comes */
+    '.wrap .v55-mapfig img[data-v56-lazy]{display:block;width:100%;height:auto;aspect-ratio:1200/1500;background:#071b14}',
+    /* The districts: Show all, the district cards, and a district marked beside itself */
+    '.wrap .v56-dacts{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}',
+    '.wrap .v56-inset{position:relative;width:100%;max-width:360px;aspect-ratio:3/2;overflow:hidden;margin:10px 0 2px;border:1px solid var(--line);border-radius:3px;background:#071b14}',
+    '.wrap .v56-inset img{position:absolute;left:0;top:0;max-width:none;height:auto}',
+    '.wrap .v56-inset-ring{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;box-sizing:border-box;border-radius:50%;border:3px solid #f6d27a;box-shadow:0 0 0 2px #071b14,0 0 0 6px rgba(246,210,122,.42);pointer-events:none}',
+    '.wrap .v56-inset-tag{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#071b14;color:#f3e9d5;border:1px solid #d5b16c;border-radius:3px;padding:0 7px;font-size:14px;line-height:24px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -895,6 +935,317 @@ v56View('v56course', {
   name: function () { return v56W('courseH'); },
   parent: function () { return { view: 'worldmap', arg: '' }; }
 });
+
+/* =========== 5. the region page leads with study =========== */
+
+function v56Ready(rec) { try { return !rec || typeof v39RecReady !== 'function' || v39RecReady(rec); } catch (e) { return false; } }
+function v56FieldMap(slug) { try { return (typeof v45Map === 'function' && slug) ? v45Map(String(slug)) : null; } catch (e) { return null; } }
+
+/* The study row: the page's own places and the region's study, then the course. */
+function v56StudyRowHtml(a, m, has) {
+  var chip = function (attrs, label, id, aria) {
+    return '<button type="button" class="v28-chip" ' + attrs + ' id="' + id + '"' + (aria ? ' aria-label="' + v56Esc(aria) + '"' : '') + '>' + v56Esc(label) + '</button>';
+  };
+  var near = v56Near('region', a.slug);
+  var html = chip('data-v56="jump" data-to="v56-minute-h"', v56W('sSummary'), 'v56-s-summary');
+  if (has.map) html += chip('data-v56="jump" data-to="v55-map-h"', v56W('sMap'), 'v56-s-map');
+  if (has.districts) html += chip('data-v56="jump" data-to="v55-districts-h"', v56W('sDistricts'), 'v56-s-districts');
+  html += chip('data-v56="jump" data-to="v56-read"', v56W('sRead'), 'v56-s-read');
+  if (v56List(a.cards).length && typeof v32StartRun === 'function') html += chip('data-v39="flash" data-slug="' + v56Esc(a.slug) + '"', v56W('sFlash'), 'v56-s-flash');
+  if (typeof v39Questions === 'function' && v39Questions([a.slug]).length) html += chip('data-v39="drill" data-slug="' + v56Esc(a.slug) + '"', v56W('sDrill'), 'v56-s-drill');
+  if (m && v56List(m.places).length >= 4) html += chip('data-go="v56mapquiz" data-arg="' + v56Esc(m.id) + '"', v56W('sQuiz'), 'v56-s-quiz');
+  if (near.prev) html += chip('data-v56="course" data-kind="' + v56Esc(near.prev.kind) + '" data-key="' + v56Esc(near.prev.key) + '"', v56W('prev'), 'v56-s-prev', v56W('prevTo', { name: near.prev.name }));
+  if (near.next) html += chip('data-v56="course" data-kind="' + v56Esc(near.next.kind) + '" data-key="' + v56Esc(near.next.key) + '"', v56W('next'), 'v56-s-next', v56W('nextTo', { name: near.next.name }));
+  return '<nav class="v56-srow v56" aria-label="' + v56Esc(v56W('rowLabel', { name: a.name })) + '">' + html + '</nav>';
+}
+/* In one minute: the record's own fields, each cut to a line. */
+function v56MainGrapes(a) {
+  var gs = v56List(a && a.grapes).filter(function (g) { return g && v56Str(g.name); });
+  var lead = gs.filter(function (g) { return g.role === 'lead'; });
+  return (lead.length ? lead : gs).slice(0, 4).map(function (g) { return v56Str(g.name); });
+}
+function v56Ladder(a) {
+  var tiers = v56List(a && a.law && a.law.tiers).filter(function (t) { return Array.isArray(t) && v56Str(t[0]); }).map(function (t) { return v56Str(t[0]); });
+  return tiers.slice(0, 5);
+}
+function v56MinuteHtml(a) {
+  var ready = v56Ready(a);
+  var rows = [];
+  var t = (a && a.terroir && typeof a.terroir === 'object') ? a.terroir : {};
+  if (ready && v56Str(t.climate)) rows.push(['mClimate', v56First(t.climate)]);
+  var grapes = v56MainGrapes(a);
+  if (grapes.length) rows.push(['mGrapes', v56And(grapes)]);
+  if (ready) {
+    var ladder = v56Ladder(a);
+    if (ladder.length) rows.push(['mLadder', v56And(ladder)]);
+    var exam = v56List(a.exam).filter(function (x) { return v56Str(x); })[0];
+    if (exam) rows.push(['mExam', v56Str(exam)]);
+    var trap = v56List(a.traps).filter(function (x) { return v56Str(x); })[0];
+    if (trap) rows.push(['mTrap', v56Str(trap)]);
+  }
+  var foot = [];
+  var at = v56At('region', a.slug);
+  if (at >= 0) foot.push(v56W('mStep', { k: at + 1, n: v56Course().length }));
+  var d = v56Due(a.slug);
+  if (d.total) foot.push(v56W('mDue', { line: v56DueLine(d) }));
+  return '<section class="card v56 v56-minute" aria-labelledby="v56-minute-h"><h2 class="v56-minute-h" id="v56-minute-h" tabindex="-1">' + v56Esc(v56W('minuteH')) + '</h2>'
+    + (rows.length ? '<dl class="v56-mdl">' + rows.map(function (r) { return '<dt>' + v56Esc(v56W(r[0])) + '</dt><dd>' + v56Esc(r[1]) + '</dd>'; }).join('') + '</dl>' : '')
+    + (ready ? '' : '<p class="v56-mfoot">' + v56Esc(v56W('mWait')) + '</p>')
+    + (foot.length ? '<p class="v56-mfoot">' + v56Esc(foot.join(' · ')) + '</p>' : '') + '</section>';
+}
+/* The inline map waits: its artwork's address is kept aside and a blank of
+   the artwork's own shape stands in, until the map nears the view. */
+var V56_BLANK = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%201500%22%2F%3E';
+function v56LazyShape(s) {
+  var at = s.indexOf('<div class="v55-mapfig"');
+  if (at < 0) return s;
+  var img = s.indexOf('<img ', at);
+  var end = img >= 0 ? s.indexOf('>', img) : -1;
+  if (img < 0 || end < 0) return s;
+  var tag = s.slice(img, end + 1);
+  if (tag.indexOf(' data-v45-image') < 0) return s;
+  var lazy = tag.replace(/ src="([^"]*)"/, function (m0, src) { return ' src="' + V56_BLANK + '" data-v56-src="' + src + '"'; }).replace(' data-v45-image', ' data-v56-lazy');
+  return s.slice(0, img) + lazy + s.slice(end + 1);
+}
+function v56LazyLoad(img) {
+  if (!img || typeof img.getAttribute !== 'function' || !img.hasAttribute('data-v56-lazy')) return;
+  var src = img.getAttribute('data-v56-src');
+  img.removeAttribute('data-v56-lazy');
+  if (!src) return;
+  img.setAttribute('data-v45-image', '');
+  var holder = (typeof img.closest === 'function') ? img.closest('.v55-mapfig') : null;
+  try {
+    img.addEventListener('load', function () {
+      try { if (typeof V55 !== 'undefined' && V55.pin) v55PinPlace(img.closest('.v55-page')); } catch (e) { }
+    });
+  } catch (e) { }
+  img.setAttribute('src', src);
+  if (holder && typeof v45Images === 'function') { try { v45Images(holder); } catch (e) { } }
+}
+function v56LazyAll(root) {
+  if (!root || typeof root.querySelectorAll !== 'function') return;
+  Array.prototype.forEach.call(root.querySelectorAll('img[data-v56-lazy]'), v56LazyLoad);
+}
+var V56_IO = { io: null };
+function v56LazyWire(box) {
+  if (!box || typeof box.querySelectorAll !== 'function') return;
+  var imgs = Array.prototype.slice.call(box.querySelectorAll('img[data-v56-lazy]'));
+  if (!imgs.length) return;
+  var Observer = (typeof IntersectionObserver === 'function') ? IntersectionObserver : null;
+  if (!Observer) { imgs.forEach(v56LazyLoad); return; }
+  try {
+    if (V56_IO.io) V56_IO.io.disconnect();
+    V56_IO.io = new Observer(function (entries, io) {
+      entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); v56LazyLoad(en.target); } });
+    }, { rootMargin: '600px 0px 600px 0px' });
+    imgs.forEach(function (img) { V56_IO.io.observe(img); });
+  } catch (e) { imgs.forEach(v56LazyLoad); }
+}
+/* The study row sits under Back whatever Back's height. */
+function v56RowTop() {
+  var d = v56Doc();
+  if (!d) return;
+  try {
+    var back = d.querySelector('#view > .v32back');
+    var h = back && back.getBoundingClientRect ? Math.round(back.getBoundingClientRect().height) : 0;
+    Array.prototype.forEach.call(d.querySelectorAll('.v56-srow'), function (r) { if (h > 0) r.style.top = h + 'px'; });
+  } catch (e) { }
+}
+
+/* The districts: the first eight, in the reading's order at every depth,
+   the rest behind Show all (the places off the reading with them); the
+   district cards one door away. A district is drawn as codex55 draws it. */
+var V56_FEW = 8;
+function v56NodeHtml(n, count) {
+  var i = count.n++;
+  var depth = (typeof v39DepthWord === 'function') ? v39DepthWord(n.depth) : '';
+  var many = n.pins.length > 1;
+  var html = '<li class="v55-d' + (i >= V56_FEW ? ' v56-more" hidden' : '"') + ' data-v55-place="' + v56Esc(n.name) + '"><div class="v55-dhead"><b class="v55-dname">' + v56Esc(n.name) + '</b>'
+    + (depth ? ' <span class="v39-depth">' + v56Esc(depth) + '</span>' : '') + '</div>';
+  if (n.note) html += '<p class="v55-dnote">' + v56Esc(n.note) + '</p>';
+  n.pins.forEach(function (pin) { html += v55PinHtml(pin, many || v56Fold(pin.name) !== v56Fold(n.name)); });
+  if (n.kids.length) html += '<ul class="v55-dlist v55-sub">' + n.kids.map(function (k) { return v56NodeHtml(k, count); }).join('') + '</ul>';
+  return html + '</li>';
+}
+function v56DistrictsShape(html, a, m, J) {
+  var s = String(html || '');
+  if (!s || typeof v55NodeHtml !== 'function' || typeof v55AlsoHtml !== 'function' || typeof v55PinHtml !== 'function') return s;
+  var count = { n: 0 };
+  var mine = J.tree.map(function (n) { return v56NodeHtml(n, count); }).join('');
+  var orig = J.tree.map(v55NodeHtml).join('');
+  if (orig) s = s.replace(orig, function () { return mine; });
+  var nodes = count.n;
+  var also = J.also.map(v55AlsoHtml);
+  var keep = Math.max(0, V56_FEW - nodes);
+  var total = nodes + also.length;
+  if (total > V56_FEW) {
+    if (also.length) {
+      var fewAlso = also.slice(0, keep).join('') + also.slice(keep).map(function (li) { return li.replace(/^<li class="v55-d v55-alsoitem"/, '<li class="v55-d v55-alsoitem v56-more" hidden'); }).join('');
+      s = s.replace(also.join(''), function () { return fewAlso; });
+      if (!keep && nodes) {
+        s = s.replace('<h3 class="secgroup v32-gh" id="v55-also-h">', '<h3 class="secgroup v32-gh v56-more" id="v55-also-h" hidden>');
+        s = s.replace(/(<h3 class="secgroup v32-gh v56-more" id="v55-also-h" hidden>[\s\S]*?<\/h3>)<p class="v32-line">/, function (m0, h) { return h + '<p class="v32-line v56-more" hidden>'; });
+      }
+    }
+    var btn = '<div class="v28-btnrow v56-dacts v56"><button type="button" class="btn ghost" data-v56="alld" aria-expanded="false" data-n="' + total + '" id="v56-alld">' + v56Esc(v56W('showAll', { n: total })) + '</button></div>';
+    var close = s.lastIndexOf('</section>');
+    s = s.slice(0, close) + btn + s.slice(close);
+  }
+  if (a && a.slug && v56Ready(a) && typeof v56DistrictCards === 'function' && v56DistrictCards(a.slug).length) {
+    var line = s.indexOf('</p>', s.indexOf('<h2 class="v32-h2" id="v55-districts-h"'));
+    if (line > 0) s = s.slice(0, line + 4) + '<div class="v28-btnrow v56-dacts v56"><button type="button" class="btn ghost" data-v56="dcards" data-slug="' + v56Esc(a.slug) + '" id="v56-dcards">' + v56Esc(v56W('dCards')) + '</button></div>' + s.slice(line + 4);
+  }
+  return s;
+}
+if (typeof v55DistrictsHtml === 'function') {
+  var _v56DistrictsHtml = v55DistrictsHtml;
+  v55DistrictsHtml = function (a, m, J) {
+    var html = _v56DistrictsHtml.apply(this, arguments);
+    try { return v56DistrictsShape(html, a, m, J); } catch (e) { return html; }
+  };
+}
+V56_ACTS.alld = function (node) {
+  var sec = (typeof node.closest === 'function') ? node.closest('.v55-districts') : null;
+  if (!sec) return;
+  var open = node.getAttribute('aria-expanded') !== 'true';
+  Array.prototype.forEach.call(sec.querySelectorAll('.v56-more'), function (n) { n.hidden = !open; });
+  node.setAttribute('aria-expanded', open ? 'true' : 'false');
+  node.textContent = open ? v56W('showFew') : v56W('showAll', { n: node.getAttribute('data-n') || '' });
+};
+
+/* A district marked: its point on the inline map and a close crop of the
+   artwork beside the district itself, so the page stays where the reader
+   is (the map is never scrolled to); a second press takes the mark off. */
+var V56_INSET = { w: 360, h: 240 };
+function v56InsetHtml(src, p) {
+  var b = (typeof V55_BOX !== 'undefined' && V55_BOX) ? V55_BOX : { x: 153, y: 298, w: 894, h: 600 };
+  var cx = Math.min(Math.max(p.x, b.x + V56_INSET.w / 2), b.x + b.w - V56_INSET.w / 2);
+  var cy = Math.min(Math.max(p.y, b.y + V56_INSET.h / 2), b.y + b.h - V56_INSET.h / 2);
+  var x0 = cx - V56_INSET.w / 2, y0 = cy - V56_INSET.h / 2;
+  var pct = function (v) { return (Math.round(v * 1000) / 1000) + '%'; };
+  /* in percentages of the inset's own box, so it holds at any width */
+  return '<div class="v56-inset" aria-hidden="true"><img alt="" src="' + v56Esc(src) + '" style="width:' + pct(1200 / V56_INSET.w * 100) + ';left:' + pct(-x0 / V56_INSET.w * 100) + ';top:' + pct(-y0 / V56_INSET.h * 100) + '">'
+    + '<span class="v56-inset-ring" style="left:' + pct((p.x - x0) / V56_INSET.w * 100) + ';top:' + pct((p.y - y0) / V56_INSET.h * 100) + '"></span>'
+    + '<span class="v56-inset-tag">' + v56Esc(p.n + ' · ' + p.name) + '</span></div>';
+}
+function v56PinShow(btn) {
+  var page = btn && typeof btn.closest === 'function' ? btn.closest('.v55-page') : null;
+  if (!page) return;
+  var again = btn.getAttribute('aria-pressed') === 'true';
+  Array.prototype.forEach.call(page.querySelectorAll('[data-v55="pin"][aria-pressed="true"]'), function (b) { b.setAttribute('aria-pressed', 'false'); });
+  Array.prototype.forEach.call(page.querySelectorAll('.v55-d.v55-here'), function (d) { d.classList.remove('v55-here'); });
+  Array.prototype.forEach.call(page.querySelectorAll('.v56-inset'), function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+  var mark = page.querySelector('.v55-mapfig .v55-pin');
+  var said = page.querySelector('#v55-pin-said');
+  if (again) { V55.pin = null; if (mark) mark.hidden = true; if (said) said.textContent = ''; return; }
+  var n = btn.getAttribute('data-pin') || '', name = btn.getAttribute('data-name') || '';
+  btn.setAttribute('aria-pressed', 'true');
+  var li = btn.closest('.v55-d');
+  if (li) li.classList.add('v55-here');
+  V55.pin = { n: n, name: name, x: Number(btn.getAttribute('data-x')), y: Number(btn.getAttribute('data-y')) };
+  var img = page.querySelector('.v55-mapfig img');
+  if (img && img.hasAttribute('data-v56-lazy')) v56LazyLoad(img);
+  var placed = v55PinPlace(page);
+  var src = img ? (img.getAttribute('data-v56-src') || img.getAttribute('src') || '') : '';
+  var shownInset = false;
+  if (src && !img.hidden && src.indexOf('data:') !== 0) {
+    var row = btn.closest('.v55-pinrow');
+    var holder = document.createElement('div');
+    holder.innerHTML = v56InsetHtml(src, V55.pin);
+    var inset = holder.firstChild;
+    if (row && row.parentNode && inset) {
+      row.parentNode.insertBefore(inset, row.nextSibling);
+      shownInset = true;
+      var pic = inset.querySelector('img');
+      if (pic) pic.addEventListener('error', function () { if (inset.parentNode) inset.parentNode.removeChild(inset); if (said) said.textContent = v55W('pinGone', { n: n }); });
+    }
+  }
+  if (said) said.textContent = (placed || shownInset) ? v56W('insetSaid', { name: name, n: n }) : v55W('pinGone', { n: n });
+}
+if (typeof v55PinShow === 'function') {
+  var _v56PinShow = v55PinShow;
+  v55PinShow = function (btn) {
+    try { return v56PinShow(btn); } catch (e) { return _v56PinShow.apply(this, arguments); }
+  };
+}
+
+/* A jump within the page: the place under Back and the study row, focused. */
+V56_ACTS.jump = function (node) {
+  var d = v56Doc();
+  var to = d ? d.getElementById(node.getAttribute('data-to') || '') : null;
+  if (!to) return;
+  try {
+    var back = d.querySelector('#view > .v32back');
+    var row = d.querySelector('.v56-srow');
+    var off = (back ? back.getBoundingClientRect().height : 56) + (row ? row.getBoundingClientRect().height : 52) + 10;
+    var y = to.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0) - off;
+    window.scrollTo(0, Math.max(0, Math.round(y)));
+    if (typeof to.focus === 'function') to.focus({ preventScroll: true });
+  } catch (e) { }
+};
+
+/* The page: codex55's, with the study row under the title, In one minute
+   after the lead, the inline map waiting for the view, and an anchor where
+   the reading begins. */
+function v56RegionShape(html, a) {
+  var s = String(html || '');
+  if (!a || s.indexOf('v56-srow') >= 0) return s;
+  var m = v56FieldMap(a.slug);
+  var has = { map: s.indexOf('id="v55-map-h"') >= 0, districts: s.indexOf('id="v55-districts-h"') >= 0 };
+  var head = /<div class="viewhead">[\s\S]*?<\/h2>(?:<div class="sub">[\s\S]*?<\/div>)?<\/div>/.exec(s);
+  var row = v56StudyRowHtml(a, m, has);
+  if (head) s = s.slice(0, head.index + head[0].length) + row + s.slice(head.index + head[0].length);
+  else s = s.replace(/(<div class="v25page[^>]*>)/, function (m0) { return m0 + row; });
+  var minute = v56MinuteHtml(a);
+  var spots = ['<section class="v55-map"', '<section class="v55-districts"', '<nav class="v39-steps"', '<div class="card v39-wait"', '<div class="card primerpage'];
+  var at = -1;
+  spots.forEach(function (x) { var i = s.indexOf(x); if (i >= 0 && (at < 0 || i < at)) at = i; });
+  if (at >= 0) s = s.slice(0, at) + minute + s.slice(at);
+  else { var lead = s.indexOf('</p>', s.indexOf('<p class="v39-lead">')); s = lead > 0 ? s.slice(0, lead + 4) + minute + s.slice(lead + 4) : s; }
+  s = s.replace('<nav class="v39-steps"', '<nav class="v39-steps" id="v56-read" tabindex="-1"');
+  if (s.indexOf('id="v56-read"') < 0) s = s.replace('<div class="card v39-wait" id="v39-wait"', '<div class="card v39-wait" id="v39-wait" data-v56-read="1"').replace('data-to="v56-read"', 'data-to="v39-wait"');
+  return v56LazyShape(s);
+}
+if (typeof v55RegionHtml === 'function') {
+  var _v56RegionHtml = v55RegionHtml;
+  v55RegionHtml = function (a) {
+    var html = _v56RegionHtml.apply(this, arguments);
+    try { return v56RegionShape(html, a); } catch (e) { return html; }
+  };
+}
+if (typeof v55PageWire === 'function') {
+  var _v56PageWire = v55PageWire;
+  v55PageWire = function (box) {
+    var out = _v56PageWire.apply(this, arguments);
+    try { v56LazyWire(box); } catch (e) { }
+    try { setTimeout(v56RowTop, 0); } catch (e) { }
+    return out;
+  };
+}
+(function () {
+  if (typeof window === 'undefined' || !window || typeof window.addEventListener !== 'function') return;
+  window.addEventListener('resize', function () { try { v56RowTop(); } catch (e) { } });
+})();
+
+/* The country page: its techniques under its map and reading, never above
+   the map (codex46 adds its box after the head only where a page has none). */
+function v56CountryPageShape(html, c) {
+  var s = String(html || '');
+  var key = (c && typeof v39CountryKey === 'function') ? v39CountryKey(c) : '';
+  if (!key || s.indexOf('v46-links') >= 0 || typeof v46DoorHtml !== 'function') return s;
+  var box = '';
+  try { box = v46DoorHtml(key); } catch (e) { box = ''; }
+  if (!box) return s;
+  var acts = s.lastIndexOf('<div class="v28-btnrow v39-acts">');
+  return acts >= 0 ? s.slice(0, acts) + box + s.slice(acts) : s.replace(/<\/div>$/, function () { return box + '</div>'; });
+}
+if (typeof v55CountryHtml === 'function') {
+  var _v56CountryPage = v55CountryHtml;
+  v55CountryHtml = function (c) {
+    var html = _v56CountryPage.apply(this, arguments);
+    try { return v56CountryPageShape(html, c); } catch (e) { return html; }
+  };
+}
 
 /* =========== the cold address =========== */
 

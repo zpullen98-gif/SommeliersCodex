@@ -364,6 +364,49 @@ async function main() {
   const cpRows = attr(cp, /data-v56="course" data-kind="([a-z]+)" data-key="/g).length;
   check('the whole course: ' + cpRows + ' steps under the Court\'s subjects, first Grape Growing: Viticulture, then the rest of the atlas', cpRows === A.G('v56Course().length') && cp.indexOf('>Grape Growing: Viticulture</h3>') > 0 && cp.indexOf('>The rest of the atlas</h3>') > 0 && cp.indexOf('Step 1, to read') > 0 && cp.indexOf('Step ' + (A.G('v56At("region", "rioja")') + 1) + ', read') > 0);
   check('its address #/v/v56course, lit Wine Atlas, its cold parent the root', A.G('location.hash') === '#/v/v56course' && A.G('v25NavWord()') === 'worldmap' && A.G('JSON.stringify(v32ParentRoute())') === JSON.stringify({ view: 'worldmap', arg: '' }));
+
+  /* ================================================================ */
+  section('5. the region page leads with study');
+  await A.load(['france', 'spain', 'mapless']);
+  for (const slug of ['burgundy', 'rioja']) {
+    const html = A.page('S.view = "region"; S._v39region = ' + JSON.stringify(slug) + '; v39RegionView();');
+    drawn.push([slug + ', the page', html]);
+    const rec = A.J('v39Find(' + JSON.stringify(slug) + ')');
+    const m = A.J('v45Map(' + JSON.stringify(slug) + ')');
+    const near2 = A.J('v56Near("region", ' + JSON.stringify(slug) + ')');
+    const row = (/<nav class="v56-srow v56"[^>]*>([\s\S]*?)<\/nav>/.exec(html) || ['', ''])[1];
+    const labels = attr(row, />([^<]+)<\/button>/g);
+    check(slug + ': the study row reads ' + labels.join(', '), JSON.stringify(labels) === JSON.stringify(['Summary', 'Map', 'Districts', 'Read', 'Flash', 'Drill', 'Map quiz', 'Previous', 'Next']), row.slice(0, 300));
+    const targets = attr(row, /data-to="([^"]*)"/g);
+    check(slug + ': its jumps land on the page (' + targets.join(', ') + '), Flash and Drill are the region\'s, Map quiz its field map, Previous and Next the course\'s',
+      targets.every((t) => html.indexOf('id="' + t + '"') > 0) && row.indexOf('data-v39="flash" data-slug="' + slug + '"') > 0 && row.indexOf('data-v39="drill" data-slug="' + slug + '"') > 0
+      && row.indexOf('data-go="v56mapquiz" data-arg="' + m.id + '"') > 0 && row.indexOf('data-key="' + near2.prev.key + '" id="v56-s-prev" aria-label="Previous: ' + near2.prev.name + '"') > 0 && row.indexOf('data-key="' + near2.next.key + '" id="v56-s-next"') > 0, targets.join(' '));
+    const at = (x) => html.indexOf(x);
+    check(slug + ': the order: the title, the study row, the lead, In one minute, the map, The districts, the reading', at('class="viewhead"') < at('v56-srow') && at('v56-srow') < at('class="v39-lead"') && at('class="v39-lead"') < at('<section class="card v56 v56-minute"') && at('<section class="card v56 v56-minute"') < at('class="v55-map"') && at('class="v55-map"') < at('class="v55-districts"') && at('class="v55-districts"') < at('id="v56-read"'));
+    const minute = html.slice(at('<section class="card v56 v56-minute"'), html.indexOf('</section>', at('<section class="card v56 v56-minute"')));
+    const dts = attr(minute, /<dt>([^<]*)<\/dt>/g), dds = attr(minute, /<dd>([^<]*)<\/dd>/g);
+    const r = REC[slug];
+    const lead = rec.grapes.filter((g) => g.role === 'lead').slice(0, 4).map((g) => g.name);
+    const and = (l) => l.length < 2 ? l[0] : l.slice(0, -1).join(', ') + ' and ' + l[l.length - 1];
+    const firstS = (t) => { const x = /^(.+?[.!?])(\s|$)/.exec(t.split(/\n\s*\n/)[0]); return x ? x[1] : t; };
+    const wantM = [firstS(r.terroir.climate), and(lead), and(r.law.tiers.slice(0, 5).map((t) => t[0])), r.exam[0], r.traps[0]];
+    check(slug + ': In one minute from the record\'s own fields: ' + dts.join(', '), JSON.stringify(dts) === JSON.stringify(['The climate', 'The main grapes', 'The ladder', 'One exam line', 'One trap']) && JSON.stringify(dds) === JSON.stringify(wantM), JSON.stringify({ dds, wantM }).slice(0, 500));
+    check(slug + ': and its place in the course (' + (/Step \d+ of \d+ in the course/.exec(minute) || [''])[0] + ')', minute.indexOf('Step ' + (A.G('v56At("region", ' + JSON.stringify(slug) + ')') + 1) + ' of ' + A.G('v56Course().length') + ' in the course') > 0);
+    const fig = html.slice(at('<div class="v55-mapfig"'), html.indexOf('</figure>', at('<div class="v55-mapfig"')));
+    const file = A.G('v45File(v45Map(' + JSON.stringify(slug) + '))');
+    check(slug + ': the inline map waits for the view: a blank of its shape, the artwork kept in data-v56-src (' + file + '), codex45\'s viewer intact', fig.indexOf('data-v56-src="' + file + '"') > 0 && fig.indexOf(' data-v56-lazy') > 0 && fig.indexOf('data-v45-image') < 0 && fig.indexOf('src="data:image/svg+xml,') > 0 && fig.indexOf('data-v45="zoom" data-v45-arg="' + slug + '"') > 0, fig.slice(0, 400));
+    const dist = html.slice(at('<section class="v55-districts"'), html.indexOf('</section>', at('<section class="v55-districts"')) + 10);
+    const J = A.J('(function () { var J = v55Join(v39Find(' + JSON.stringify(slug) + '), v45Map(' + JSON.stringify(slug) + ')); return { nodes: J.count, also: J.also.length }; })()');
+    const lis = [...dist.matchAll(/<li class="(v55-d[^"]*)"( hidden)?/g)].map((x) => /v56-more/.test(x[1]));
+    const shownN = lis.filter((h) => !h).length, hiddenN = lis.filter((h) => h).length;
+    const btn = /data-v56="alld" aria-expanded="false" data-n="(\d+)" id="v56-alld">([^<]*)</.exec(dist);
+    const firstHidden = lis.indexOf(true);
+    check(slug + ': The districts show the first eight of ' + (J.nodes + J.also) + ' (' + J.nodes + ' from the reading at every depth, ' + J.also + ' more on the map), the rest behind ' + (btn ? '"' + btn[2] + '"' : 'Show all'),
+      !!btn && Number(btn[1]) === J.nodes + J.also && lis.length === J.nodes + J.also && shownN === 8 && hiddenN === J.nodes + J.also - 8 && firstHidden === 8 && lis.slice(8).every((h) => h), JSON.stringify({ shownN, hiddenN, J, btn: btn && btn[0] }));
+  }
+  const canadaP = A.page('S.view = "country"; S._v39country = "canada"; v39CountryView();');
+  drawn.push(['canada', canadaP]);
+  check('canada: its techniques sit under its map and reading (codex46 adds none above the map)', canadaP.indexOf('v46-links') > canadaP.indexOf('class="v55-map"') && canadaP.indexOf('class="v55-map"') > 0 && (canadaP.match(/v46-links/g) || []).length === 1, String(canadaP.indexOf('v46-links')));
 }
 
 main().then(() => {
