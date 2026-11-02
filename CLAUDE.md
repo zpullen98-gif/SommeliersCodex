@@ -48,9 +48,9 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v114`; its two teaching imports have query versions which
+Source worker is `codex-v115`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex56: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex57: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
@@ -58,7 +58,118 @@ codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine At
 codex48 the focused house learning flow, codex49 the house answer readings,
 codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
 codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
-codex55 the Wine Atlas tab and More's Library).
+codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course).
+
+## The Wine Atlas as a course (codex56, 2 November 2026)
+
+The owner asked for a deep review of the Wine Atlas to improve it, expand it and make the flow of learning easier. Two
+read-only reviews of master `de167d5` found the content strong and the learning hard to reach: no study door on the
+root, a region's drill below thousands of words of reading, no guided order, no schedule and no readiness for region
+study, the map and the districts drawn twice, about 2 MB fetched on the first visit, and places the Court's Certified
+curriculum names with no article of their own. codex56 is two pieces: fourteen new articles built into the data by the
+regions pipeline, and one layer, `js/codex56.js`, loaded after codex55 and before boot, that makes the atlas a course.
+The layer edits no earlier layer, no data file and none of ChatGPT's files (atlas-context.js and the field atlas are only
+wrapped); it declares with var and function only, every wrapper is typeof guarded and outermost, every registry is
+extended key by key, every string it shows lives in `V56_WORDS` (read by `v56W`) and its CSS in its own `v56-style`
+element. The data's own fields are drawn as written. What a maintainer needs:
+
+- **The fourteen articles off the map.** France: Jura; Savoie and Bugey; South West France; Corsica. Italy:
+  Emilia-Romagna; Marche; Lazio; Calabria and Basilicata; Liguria and Valle d'Aosta. Spain: Txakoli and the Basque
+  Country; Ribeiro, Ribeira Sacra and Valdeorras (Monterrei folded in); the Canary Islands. Germany: Mittelrhein. The
+  United States: Virginia, on the New York sheet. Each was written at the Certified depth by an author and refuted by a
+  second (every fact in two sources or one primary, depth tags on whatever only a higher level asks, nobody living, no
+  superlative), staged under `.scripts/regions/staging/c1` to `c6` and merged into `fragments/<sheet>.more.json` in
+  roster order. An article off the map is a record with `mapless: 1` and no `index`: it keeps its country's sheet and
+  its reading lives in that sheet's file. check-fragment lets such an article stand at the Certified depth without a
+  `deeper` list. In `roster.cjs`, `MORE` holds the fourteen, the exported `DEFERRED_MORE` the other fifteen articles and
+  `DEFERRED_MAPLESS` the seven new countries; `NEW_MAPLESS` is empty, so the Georgia split does not run (apply-roster
+  and build-regions guard it), and `CODEX_ROSTER_WHOLE=1` reads the whole roster for the deep fixture and the
+  compatibility check. apply-roster moved 51 aliases to their new owners (Jura, Savoie and Bugey, South West France and
+  Corsica off France; Lazio off Umbria; Marche off Abruzzo; Basilicata and Calabria off Campania; Valdeorras and Ribeira
+  Sacra off Bierzo). The build holds 129 regions (115 on the maps, 14 off), 24 countries, 1,524 questions and 1,653
+  cards, and every article's index record carries `districts`, its reading's count of places, so the root draws its
+  counts with no reading on the device. The same edition: Toro is no longer a place inside Toro; Carmel, Israel and
+  Snake River Valley, Idaho resolve to nothing (`ELSEWHERE` in the roster, written as `REGIONS.join.elsewhere` and
+  mirrored in regions-join and codex39's `v39Index`, the one earlier layer touched, by the content workflow);
+  Argostolion is an alias of Kefalonia; the region questions' answer positions are dealt round robin from record to
+  record, as build-cms deals them; and every one of the 129 articles is reached by a Court subject's map (the 25 none
+  reached and the fourteen new, each added in geographic order with a dated note). The fourteen field maps are
+  ChatGPT's to draw: `.scripts/regions/brief-fieldmaps-codex56.md` names them in the `FIELD_ATLAS` contract. Until one is
+  drawn, its article's root row says field map to come and its page shows its country's sheet with a line that the
+  field map is to come.
+- **The course order** (`v56Course`): each of the Court's 44 subjects in `CMS.subjects` order, its map's regions then
+  its map's countries, each step once (148 steps), then every region and country no subject names, country by country
+  in the order of the maps (its regions, then the country): 153 steps, the whole atlas. Previous and Next on the study
+  row, on the article (codex39's sheet bound pair taken off) and on the country page follow it across the sheets
+  (Rioja, Spain, steps on to Piedmont, Italy); a step to a step of the same kind replaces the screen, to the other kind
+  pushes. A region is read by codex39's own read slot; a country page drawn whole is read in the layer's slot. The
+  whole course is its own page, `#/v/v56course`, grouped under the subjects.
+- **Region study scheduled.** Region and country cards, district cards and region questions gain due dates by codex3's
+  rule exactly as `srsRecord` applies it to a bank question (SM-2 lite: right, one day, then three, then the interval
+  times the ease, the ease up 0.05, never past 2.8; wrong, due today and the ease down 0.2, never under 1.3), kept per
+  device in `oot-codex-regionsrs-v1` under codex39's profile key rule (`{ c, q, r, m }`: cards, questions, country
+  pages read, map quiz rounds). codex39's grades and codex3's rotation are untouched (an `r-` question stays out of
+  `ST.srs`; a technique's or a bank question is never scheduled here). The due count shows on the root and in a region's
+  In one minute; Today's region cards is a deck on codex32's card screen (`regionsdue`, lit Wine Atlas, climbing to the
+  root) and the questions due a drill; the Today door deals the cards due, else the questions due, else the next step's
+  own cards. Readiness: `v53Readiness` counts, for every subject, the questions of every region and country its map
+  names, right at any level (`out.regions`), and the readiness page says so.
+- **The root** opens on the learner: Start here (nothing read: Begin with Champagne), Continue (the first unread step)
+  or The course is read, with See the whole course; the study doors (Today's region cards with the due line, Drill a
+  country, Map quiz, District cards, Compare two regions); Countries, each of the 24 in the order of the maps with its
+  readiness line (its regions and page read, cards known, questions right); then codex55's chips (The World Map,
+  Countries, Every region, Techniques: its Field maps chip and its country chips gone), its search, its sheets and its
+  full list. A visit fetches no reading; the first search reads every reading through codex39's loader.
+- **The region page leads with study**: a study row under Back that sticks as the page scrolls (Summary, Map,
+  Districts, Read, Flash, Drill, Map quiz, Previous, Next; one line that scrolls sideways, its top set from Back's
+  measured height), In one minute after the lead (the climate in a line, the main grapes, the ladder's top rungs, the
+  first exam line, the first trap, its step in the course and what is due there), the inline map loaded only as it
+  nears the view (200 px ahead, a blank of the artwork's shape until then), The districts showing eight with Show all,
+  and a district marked shown beside itself in a close crop of the artwork as well as on the map, the page left where
+  the reader is. The country page carries the course's Previous and Next, its techniques under its map.
+- **The drills from the data**: the map quiz on any field map with four places or more (`#/v/v56mapquiz/{map}`, its
+  chooser `#/v/v56mapquiz`): eight questions, find and name in turn, the map cropped to 130 to 1070 across and 270 to
+  920 down of the artwork's units so the printed key never shows, a tap answering by the nearest dot read through the
+  artwork's own box (or a number), the round kept per map for the chooser. District cards (`#/flashcards/districts:
+  {slug}`, chooser `#/v/v56districts`): every place of the reading with a note at the level's depth, once a folded name,
+  the district on the front and its region and note on the back, ids `d:{slug}/{name}`, scheduled with their two faces.
+  Compare two regions (`#/v/v56compare/{a}~{b}`): the climate and the soils in a line, up to six grapes and wines, the
+  ladder and two exam lines, side by side. Drill a country (`#/v/v56drill`): ten of its questions. Each lights Wine
+  Atlas; a map quiz climbs to its region or country, compare to its first region, the rest to the root.
+- **Duplicates folded**: `#/v/fieldmap/{map}` draws the region page (a country's map, its country page with that map
+  chosen); `#/v/fieldatlas` and `#/v/regions` draw the root (the regions index at its countries, a sheet's row at that
+  country's row), cold and warm, and codex39's and codex45's own doors to them land there too; an answer link to a
+  region's field map opens the region page; the region page's map holder carries the map's own field notes and its
+  offline copy where the door to the field map screen stood; the sheet view gains Flash, Drill, Map quiz and District
+  cards; a technique or the Workshop opened from the atlas lights Wine Atlas and climbs back to the page it was opened
+  from (kept for a reload in `sessionStorage` under `oot-codex-v56-techfrom`); from anywhere else it is the Library's,
+  as before. codex45's field atlas data is shown cleanly: `v45Maps` hands out a copy of each map made once per edition
+  of the data, its American spellings and en dashes put right, its names, sources and artwork as written.
+- **Gates**: `node .scripts/check-atlas-course.js [jsDir]` (with `OOT_SHARED` and `OOT_HOUSE_PACK`; a tree with no
+  codex56.js is skipped) loads the whole chain in check-card's loader and holds the course order equal to the Court's
+  computed from `data-cms.js` alone; codex3's rule step by step, the due counts on seeded grades, Today's deck and door
+  and the due drill; every subject's readiness counting its map's regions; the root's sections, a visit reading nothing
+  and every count the index's; In one minute on every region from its record; the map quiz's key the pin on every map
+  it deals, each place inside the crop; every region's district cards and compare drawn from the records; the folded
+  addresses warm and cold; the fourteen off the map on the root, in the Court's part of the course, on their pages and
+  their country pages; the field atlas shown cleanly; the strictest voice sweep (that of `check-producers-house.js`)
+  over `V56_WORDS` and every page it draws, the tab word Practise excepted; var and function only, every wrapper
+  guarded; the shell; and the chain rule (every list in a gate that names `codex55.js` names `codex56.js` straight
+  after it). The pins moved one layer on: `check-atlas.js` holds codex55 as codex56 leaves it (no reading on a visit,
+  four chips, the countries as rows, field map to come, the lazy inline map and the offline copy); `check-atlas-nav.cjs`
+  the root's Start here and study doors, the field notes on the region page, the map quiz's chooser of every field map,
+  the Workshop from the root lit Wine Atlas and the folded cold chains (a country climbs to the root); `check-house-only.cjs`
+  the folded addresses lit and climbing; `check-cms.js` a subject's readiness totals with the regions' questions; every
+  script order list names `codex56.js` before `boot.js`. Two of ChatGPT's gates changed, only where they pinned the
+  folded field map screen: `check-atlas-links.cjs` (a regional answer's link is the region page's address) and
+  `check-workshop-ui.cjs` (Back from a technique opened on a field map's address lands on its region page).
+  `check-learning-flow.cjs`, `check-study-rounds.cjs` and `check-workshop-ui.cjs` run only against a served
+  `CODEX_URL`.
+
+The shell loads `js/codex56.js?v=1` after codex55.js and before boot.js, with `js/data-regions.js?v=6`,
+`js/codex39.js?v=5` and `js/data-cms.js?v=2`; the source worker is `codex-v115` and lists it. The reading files whose
+bytes changed are new addresses in `codexregions-v1-`, fetched fresh once the new index installs. The next layer is
+codex57.
 
 ## The Wine Atlas tab and More's Library (codex55, 2 November 2026)
 
