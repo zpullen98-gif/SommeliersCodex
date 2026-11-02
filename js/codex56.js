@@ -1137,7 +1137,7 @@ function v56LazyWire(box) {
     if (V56_IO.io) V56_IO.io.disconnect();
     V56_IO.io = new Observer(function (entries, io) {
       entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); v56LazyLoad(en.target); } });
-    }, { rootMargin: '600px 0px 600px 0px' });
+    }, { rootMargin: '200px 0px 200px 0px' });
     imgs.forEach(function (img) { V56_IO.io.observe(img); });
   } catch (e) { imgs.forEach(v56LazyLoad); }
 }
@@ -1504,10 +1504,19 @@ V56_ACTS.qtap = function (node, e) {
   var Q = V56_Q;
   var m = v56FieldMap(Q.map);
   if (!m || !e || typeof node.getBoundingClientRect !== 'function') return;
-  var r = node.getBoundingClientRect();
-  if (!r.width || !r.height) return;
-  var x = V56_QBOX.x + (e.clientX - r.left) / r.width * V56_QBOX.w;
-  var y = V56_QBOX.y + (e.clientY - r.top) / r.height * V56_QBOX.h;
+  /* read through the artwork's own box (1200 by 1500 units), so the figure's frame and crop never shift a tap */
+  var img = (typeof node.querySelector === 'function') ? node.querySelector('img') : null;
+  var ir = (img && typeof img.getBoundingClientRect === 'function') ? img.getBoundingClientRect() : null;
+  var x, y;
+  if (ir && ir.width && ir.height) {
+    x = (e.clientX - ir.left) / ir.width * 1200;
+    y = (e.clientY - ir.top) / ir.height * 1500;
+  } else {
+    var r = node.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    x = V56_QBOX.x + (e.clientX - r.left) / r.width * V56_QBOX.w;
+    y = V56_QBOX.y + (e.clientY - r.top) / r.height * V56_QBOX.h;
+  }
   var best = null, bd = Infinity;
   v56QPlaces(m).forEach(function (p) { var dd = Math.hypot(p.x - x, p.y - y); if (dd < bd) { bd = dd; best = p; } });
   if (best) v56QAnswer(best.i);
@@ -1582,6 +1591,7 @@ if (typeof v32DeckDef === 'function') {
     var mm = V56_DECK_RE.exec(String(id || ''));
     var a = mm ? v39Find(mm[1]) : null;
     if (a) {
+      v56DistrictsLoad(a);
       var def = { id: String(id), name: v56W('dDeck', { name: a.name }), cards: v56DistrictCards(a.slug), kind: 'region' };
       def.learnt = (typeof v32Learnt === 'function') ? v32Learnt(def) : 0;
       return def;
@@ -1603,17 +1613,23 @@ if (typeof v32CardFace === 'function') {
     return html;
   };
 }
-/* Opens a region's district cards; the deck screen is drawn again when the reading lands. */
+/* A region's district cards want its reading: fetched once (a cold address
+   too), the deck screen drawn again in place when it lands. */
+function v56DistrictsLoad(a) {
+  if (!a || v56Ready(a) || typeof v39LoadPart !== 'function') return;
+  var part = v39PartName(a);
+  if (typeof V39_PARTS !== 'undefined' && (V39_PARTS.wait[part] || V39_PARTS.failed[part])) return;
+  var id = 'districts:' + a.slug;
+  v39LoadPart(part, function () {
+    try { if (S.view === 'deck' && S._v32deck === id) { if (typeof V32 !== 'undefined' && V32) V32.pend = 'replace'; render(); } } catch (e) { }
+  });
+}
 function v56OpenDistricts(slug) {
   var a = v39Find(slug);
   if (!a || typeof v32OpenDeck !== 'function') return;
-  var id = 'districts:' + a.slug;
-  if (!v56Ready(a) && typeof v39LoadPart === 'function') {
-    v39LoadPart(v39PartName(a), function () {
-      try { if (S.view === 'deck' && S._v32deck === id) { if (typeof V32 !== 'undefined' && V32) V32.pend = 'replace'; render(); } } catch (e) { }
-    });
-  }
-  v32OpenDeck(id);
+  try { if (typeof V39_PARTS !== 'undefined') delete V39_PARTS.failed[v39PartName(a)]; } catch (e) { }
+  v56DistrictsLoad(a);
+  v32OpenDeck('districts:' + a.slug);
 }
 V56_ACTS.dcards = function (node) { v56OpenDistricts(node.getAttribute('data-slug') || ''); };
 if (typeof v32ParentRoute === 'function') {
