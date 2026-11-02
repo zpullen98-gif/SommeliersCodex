@@ -77,6 +77,23 @@
 
    8. THE SHELL: index.html loads js/codex55.js after codex54.js and before
       boot.js; the worker is codex-v114 and lists it.
+
+   BAR WIDTHS, measured in Chromium on 2 November 2026 (.wip/prove-atlas-dom.mjs
+   at 375 and 390, a probe at 320), every box read with getBoundingClientRect:
+   codex32's phone rule and codex53's narrowest rule as they stand, a fresh
+   profile at Village with the house's pack, Home lit, Due today's pill
+   reading two figures (20) on More's corner, inside its 44 px box. Home,
+   Brennan's, CMS, Grapes, Wine Atlas, More:
+     320 night  44    55.7  44    44    63.3  44   295 of a 296 row
+     320 day    44    56.2  44    44    62.8  44   295 of 296
+     375 night  50.9  71.0  48.5  55.9  78.7  44   349 of a 351 row
+     375 day    49.3  72.3  48.1  56.4  78.9  44   349 of 351
+     390 night  53.9  74.0  51.5  58.9  81.7  44   364 of a 366 row
+     390 day    52.3  75.3  51.1  59.4  81.9  44   364 of 366
+   With the pill inline (codex32's way) More drew at 66 to 68 and the row
+   needed 302 of 296 at 320, the house's name cut to 44; on More's corner
+   the pill costs the row nothing whatever the count. Every tab 60 tall (More
+   44 by 44), every centre on one line, every word whole, no sideways scroll.
 */
 
 /* =========== 1. the words =========== */
