@@ -41,16 +41,93 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v112`; its two teaching imports have query versions which
+Source worker is `codex-v113`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex54: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex55: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
 codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab,
 codex48 the focused house learning flow, codex49 the house answer readings,
 codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
-codex52 contextual Wine Atlas links, codex53 the CMS edition).
+codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow).
+
+## The five-star card and the flow edition (codex54, 31 October 2026)
+
+The owner asked for a deep review and editing pass of the Codex, above all every wine on the Brennan's list: a five-star
+tableside description and a sale at the very top of each card, connected once to everything the Codex holds, with the
+app's overlaps cut and its flow improved. `js/codex54.js`, loaded after codex53 and before boot, makes the card and the
+flow. It edits no earlier layer, no data file and none of ChatGPT's files; every wrapper is typeof guarded and
+outermost, every registry is extended key by key, every string it shows lives in `V54_WORDS` (read by `v54W`), and its
+CSS lives in its own `v54-style` element. The pack's fields (the lines, the sale, the house's notes) are drawn as the
+house wrote them. What a maintainer needs:
+
+- **The card** (`v28CardHtml` wrapped last; her own rows with no house record keep the earlier card): the title row
+  carries the position and one Next, the bin and the size on one line. Then **At the table** (the forty-five large, 20 px
+  in the house reading face, as `#v28-s45`; **The sale** under a gold rule directly under it when the pack holds
+  `lines.sale`; the ten `#v28-s10` and the twenty `#v28-s20` quiet; Say it); **Where we pour it** (First pick for, Second
+  choice for, By the bottle with the tier's word and that tier's sayIt, On the tastings, the drink without alcohol; every
+  list read from the dishes' own pairings); **The wine** (the facts, the profile, how we pour it, what it goes with,
+  About it closed); **In the Codex** (one door per destination: the grape page by `v53GrapeKey`, the region or its
+  country by codex39's door, one map, the producer, the chapter, the Court's subject by `v54SubjectFor`, On the Court's
+  grid by `v54GridFor` only when a GRID_READS place is word for word a part of the wine's region, the illustrated guides
+  and the culinary lessons mapped to it; Compare with as a sub list; The land closed); Who makes it without its library
+  link; What it's made of without its per component films; Pronounced: for every respelling; The five parts closed;
+  **On the floor** with The guide's line (the guest line, moved from the top, and never a repeat of a timed line); the
+  service note; Watch, each film once; **Practise this wine** as one chip row; the footer Edit, Previous, Next.
+- **The doors** are codex28 acts listed in `V28_DOORS` (`v54grape`, `v54subject`, `v54grid`, `v54illus`,
+  `v54culinary`), so a door pushes the card's own entry and Back reopens the card with its open sections (kept in
+  `v28State().v54open`). The DOM pass, a `cellarView` wrapper registered after codex33's and codex37's, takes codex33's
+  guides and codex37's culinary row off the card and hides codex52's atlas box on the card only. The flash card back
+  (`v28CardOf`, codex28's deck and codex32's runs) carries the sale under the ten.
+- **The question bank**: `v53BankHtml` gains The whole paper, The regions, Service references and Hands on, lifted from
+  the chain's own Quizzes page; `#/quizzes` draws the bank under its own scope chip and climbs to the Library; the
+  Practise root's rounds row points at the bank, and its grape decks, Blind flight and the level test leave (the bank's
+  lead keeps the test, once).
+- **One Village tasting**: codex39's 45 minute row is cut where it enters the bank (its address still answers); Grapes'
+  Tasting reads The Court's grid drill, The Village tasting (30 minutes), Warm up: call the structure, The deductive grid;
+  Blind flight is cut from every door, its view kept by address; Study the grid shows only in the Library's reading
+  rooms, as How to taste: the method.
+- **Grapes owns the grape decks**: they leave Practise and Wine studies, a grape deck lights Grapes and climbs to it;
+  codex44's index gains the 44 subjects (a group, The Court's subjects) and the 59 grape pages (the group Grapes, each
+  hit opening `#/v/grape/{slug}`); the Library's search reads "A chapter, a grape, a place, a producer or a subject".
+- **The level page** loses its search box, the World Map row and codex36's illustrated door, and keeps the Workshop row.
+  **The Library** loses the Terroir row, carries codex39's regions door in The atlas and says what it holds; Another deck
+  returns to it.
+- **Brennan's rooms**: Service rehearsal folds the house due into one row, Wine cards to revisit (codex53's house step),
+  drops the list-weak deck and the schedule note, names the producers' group Producer cards, and shows Recite your cellar
+  and Quiz your cellar only when the person holds bottles of her own (codex28's own rows, never the house's 271); Wine
+  studies loses the World Map, the grape study cards and the service reference, and owns the Culinary Companion.
+- **The parents**: the run screens climb to the screen that started them (kept in `S._v54from` by a `render` wrapper),
+  else to the bank; the house's drills, decks and due run climb to Service rehearsal; the grape decks to Grapes; Quizzes to
+  the Library; the Culinary Companion to Wine studies; the Cellar Compass is unchanged. Stale words are fixed at display
+  only (the section screens name Our wine list; the stored key `Our List` is unchanged).
+- **Gates**: `node .scripts/check-card.js [jsDir]` (with `OOT_SHARED` and `OOT_HOUSE_PACK`) loads the whole chain on two
+  devices, the pack as given and a copy with a sale written in memory into every wine that lacks one, so it passes on
+  the shipped pack and on a pack that carries sales. It holds the block order on six wines (a glass wine, a pour, a
+  Bubbles bottle, a half bottle, two floor bottles); the sale under the forty-five and on the card back when present and
+  absent otherwise; every one of the house's cards drawn whole, Where we pour it equal to the dishes' pairings and to the
+  pack's derived `firstPickIds`, `secondFor` and `offeredWith` (no false first pick), the guest line once, one door per
+  destination with every target resolving and each kind of door opening its screen, each film once and one Next; the
+  flow (the bank and `#/quizzes`, the Practise row, Grapes' four Tasting rows and no Blind flight door, the Library and
+  level page rows, Brennan's rooms, the parents table, the search groups); the strictest voice sweep, that of
+  `check-producers-house.js`, over codex54's words; var and function only; the shell; and the chain rule (every gate list naming
+  `codex53.js` names `codex54.js` straight after it). `check-house-only.cjs` (the bank on Quizzes, the folded house due,
+  the rooms, a grape deck lit as Grapes) and `check-grapes.js` (the four Tasting doors) hold this contract, and every
+  script order slice names `codex54.js` before `boot.js`.
+- **Four ChatGPT gates rewritten**, only where they pinned a door the owner's decision removed and nothing else in them:
+  `check-house-flow.cjs` reads the ten from `#v28-s10` (codex41's ten box is folded into At the table);
+  `check-atlas-links.cjs` takes the card's region or map door In the Codex instead of codex52's box, through a
+  `detourDoor` beside `detour`, since the chips are buttons with no href; `check-culinary-routes.cjs` climbs from the
+  companion to Wine studies; `check-library-search.cjs` opens a grape hit as the page route and, the level page having no
+  search box, holds the caret and Back on the Library's `#cf-in`.
+- **Served runs**: the source shell loads no shared layer, so a server for the browser gates' `CODEX_URL` must put
+  `../shared/oot-house.js` and `../shared/oot-house-ui.js` before the chain, as the gates' own file mode does.
+  `check-workshop-ui`, `check-learning-flow` and `check-study-rounds` run only against a server (127.0.0.1:8791 by
+  default); `check-culinary-routes` only file routed.
+
+The shell loads `js/codex54.js?v=1` after codex53.js and before boot.js; the source worker is `codex-v113` and lists it.
+The next layer is codex55.
 
 ## The CMS edition (codex53, 29 October 2026)
 
@@ -163,7 +240,7 @@ Run `.scripts/check-training-assessment.cjs` and
 `.scripts/check-training-recovery.cjs` on the complete chain, alongside the
 answer-learning and house-flow gates. Read
 `docs/brennans-certified-training-2026-10-27.md` for scope and the CMS benchmark.
-The source worker is codex-v112. Future layers start at codex54.
+The source worker is codex-v113. Future layers start at codex55.
 
 ## Brennan's answer readings (26 October 2026)
 
