@@ -1,7 +1,8 @@
 /* serve.mjs: the Codex source under /codex/ and a shared layer under /shared/ (from SITE_ROOT).
    node serve.mjs [port]   env: CODEX_SRC (default /home/user/sommelierscodex), SITE_ROOT (default
    /home/user/zpullen98-gif.github.io; point it at a scratch root whose shared/ copies the WorldTable
-   static/shared to serve the new pack and oot-house.js). Work in progress for the codex54 edition. */
+   static/shared to serve the new pack and oot-house.js). The source index.html gains the house engine and its UI
+   before the chain, as the browser gates' file mode adds them. Work in progress for the codex54 edition. */
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,6 +26,11 @@ http.createServer((req, res) => {
   fs.readFile(f || '', (err, buf) => {
     if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('not found'); }
     res.writeHead(200, { 'Content-Type': TYPES[path.extname(f).toLowerCase()] || 'application/octet-stream', 'Cache-Control': 'no-store' });
+    /* the source shell loads no shared layer (the site's wing copy does): the house engine and its UI are put
+       before the chain exactly as the browser gates' own file mode puts them */
+    if (f === path.join(CODEX, 'index.html') && !buf.toString().includes('../shared/oot-house.js')) {
+      buf = Buffer.from(buf.toString().replace('<script src="js/data-questions.js', '<script src="../shared/oot-house.js"></script><script src="../shared/oot-house-ui.js"></script>\n<script src="js/data-questions.js'));
+    }
     res.end(buf);
   });
 }).listen(PORT, '127.0.0.1', () => console.log(`serve: http://127.0.0.1:${PORT}/codex/ (codex ${CODEX}, shared from ${SITE})`));
