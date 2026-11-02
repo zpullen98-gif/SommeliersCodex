@@ -752,3 +752,43 @@ if (typeof v32CardFace === 'function') {
     } catch (e) { return html; }
   };
 }
+
+/* =========== 6. the DOM pass =========== */
+
+/* Registered after codex33's and codex37's cellarView wrappers, so it runs
+   on the card they have finished: the illustrated guides codex33 appends
+   and the culinary doors codex37 appends are taken off the card (In the
+   Codex holds a door to each, the culinary ones in a row of codex37's own
+   class), codex52's atlas box is hidden on the card only, and each closed
+   section remembers being opened, so the card's next draw (a step back
+   from a deck, a door, a drill) opens it again. Edit mode is left alone. */
+function v54CardDom(view) {
+  if (S._v28edit || !view || typeof view.querySelector !== 'function') return;
+  var card = view.querySelector('#v28-card');
+  if (!card || !card.classList || !card.classList.contains('v54-card')) return;
+  var codex = card.querySelector('#v54-codex');
+  var off = function (n) { if (n && n.parentNode && typeof n.parentNode.removeChild === 'function') n.parentNode.removeChild(n); };
+  Array.prototype.slice.call(card.querySelectorAll('details.v33-guide[data-teaching-id], .v37-doors')).forEach(function (n) {
+    if (codex && typeof codex.contains === 'function' && codex.contains(n)) return;
+    off(n);
+  });
+  Array.prototype.slice.call(card.querySelectorAll('.v52-atlas')).forEach(off);
+  var st = v28State();
+  var id = st.open;
+  Array.prototype.slice.call(card.querySelectorAll('details[data-v54-sec]')).forEach(function (d) {
+    if (typeof d.addEventListener !== 'function') return;
+    d.addEventListener('toggle', function () {
+      var keep = (st.v54open && st.v54open.card === id) ? st.v54open : { card: id, secs: {} };
+      keep.secs[d.getAttribute('data-v54-sec')] = !!d.open;
+      st.v54open = keep;
+    });
+  });
+}
+if (typeof cellarView === 'function') {
+  var _v54CellarView = cellarView;
+  cellarView = function () {
+    var view = _v54CellarView.apply(this, arguments);
+    try { v54CardDom(view); } catch (e) { }
+    return view;
+  };
+}
