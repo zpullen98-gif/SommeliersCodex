@@ -606,8 +606,9 @@ async function main() {
   const LB = rows(Hs.library);
   console.log('  the Library: ' + heads(Hs.library).filter((h) => /^(Practise|The reading rooms|The atlas)$/.test(h)).join(' | '));
   check('the Library loses the Terroir row', !goRow(LB, 'terroir').length);
-  check('the Library\'s line reads For ' + Lv + ': Practise and the question bank first, then the reading rooms and the atlas.', text(Hs.library).indexOf('For ' + Lv + ': Practise and the question bank first, then the reading rooms and the atlas.') >= 0);
-  check('the line for every level is as true', G('v32W("libLineAll")') === 'For every level: Practise and the question bank first, then the reading rooms and the atlas.');
+  /* codex55: the atlas is the Wine Atlas tab again, so the Library's line ends at the reading rooms */
+  check('the Library\'s line reads For ' + Lv + ': Practise and the question bank first, then the reading rooms.', text(Hs.library).indexOf('For ' + Lv + ': Practise and the question bank first, then the reading rooms.') >= 0);
+  check('the line for every level is as true', G('v32W("libLineAll")') === 'For every level: Practise and the question bank first, then the reading rooms.');
   check('the Library\'s search box stays, its placeholder A chapter, a grape, a place, a producer or a subject', /id="cf-in"/.test(Hs.library) && Hs.library.indexOf('placeholder="A chapter, a grape, a place, a producer or a subject"') > 0);
   check('the Library\'s Practise section follows the root (no grape decks, the rounds to the bank)', !LB.some(gdeck) && LB.some((r) => /rounds$/.test(r.name) && /go=bank/.test(r.route)));
   const another = G('(function () { var seen = null; var was = v32Go; v32Go = function (r) { seen = r; }; try { v32Act("another", null); } finally { v32Go = was; } return JSON.stringify(seen); })()');
@@ -742,7 +743,7 @@ async function main() {
     const sources = [...fs.readFileSync(index, 'utf8').matchAll(/<script\b[^>]*\bsrc=["'](js\/[^"']+)["'][^>]*>\s*<\/script>/g)].map((m) => m[1]);
     const scripts = sources.map((s) => s.slice(3).split(/[?#]/)[0]);
     const at = scripts.indexOf('codex53.js');
-    check('index.html loads codex54.js once, straight after codex53.js and before boot.js, with ?v=', at >= 0 && scripts[at + 1] === 'codex54.js' && scripts[at + 2] === 'boot.js'
+    check('index.html loads codex54.js once, straight after codex53.js and before boot.js, with ?v=', at >= 0 && scripts[at + 1] === 'codex54.js' && scripts.indexOf('boot.js') > at + 1 /* codex55 and any later layer between */
       && scripts.filter((s) => s === 'codex54.js').length === 1 && /^js\/codex54\.js\?v=\d+$/.test(sources[at + 1]), scripts.slice(Math.max(0, at - 1), at + 3).join(' '));
     const s = fs.readFileSync(sw, 'utf8');
     const v = Number((s.match(/const CACHE = '(?:oot-)?codex-v(\d+)';/) || [])[1]);

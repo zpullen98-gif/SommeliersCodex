@@ -1,18 +1,21 @@
 #!/usr/bin/env node
-/* THE CMS EDITION IN A BROWSER: the final chain, the house under its own tab (codex53, 29 October 2026).
+/* THE CMS EDITION IN A BROWSER: the final chain, the house under its own tab (codex53, 29 October 2026; the bar
+   and the owners moved for codex55's Wine Atlas tab and More's Library, 2 November 2026).
 
    Playwright on the final chain index.html loads, in an isolated profile with the canonical shared house pack
    (check-house-flow's route idiom), never the owner's browser or stored answers. It proves:
 
-   1. the bar: Home, the house, CMS, Grapes, Library and More, in that order, as nav.v32nav with no v47nav class;
-      the due pill on Library alone; the house's name as codex41 escapes it; one row at 320, 375 and 390 px, night
-      and day, every tab at least 44 px, every word whole, no sideways scroll
-   2. the lit word on every owner: Library on the six atlas views, the Practise root, Quizzes, the bank,
-      the Library and the quick quiz; CMS on its six views; Grapes on its four and a grape deck; the house on its four rooms, a wine's
-      card, a house deck and a house drill
-   3. the cold Back chains: CMS to Home; a subject to CMS to Home; a grape to Grapes to Home; the bank, the Practise
-      root and the readings to Library to Home; a country sheet to the World Map to Library to Home; a field map to
-      the field atlas, the World Map, Library and Home
+   1. the bar: Home, the house, CMS, Grapes, Wine Atlas and More, in that order, as nav.v32nav with no v47nav
+      class; the due pill on More alone (codex55: Practise lives under More, in the Library); the house's name as
+      codex41 escapes it; one row at 320, 375 and 390 px, night and day, every tab at least 44 px, every word
+      whole, no sideways scroll
+   2. the lit word on every owner: Wine Atlas on the six atlas views; More on the Practise root, Quizzes, the
+      bank, the Library and the quick quiz (codex55: the Library's screens are More's); CMS on its six views;
+      Grapes on its four and a grape deck; the house on its four rooms, a wine's card, a house deck and a house
+      drill
+   3. the cold Back chains: CMS to Home; a subject to CMS to Home; a grape to Grapes to Home; the bank and the
+      Practise root to the Library, More and Home; the readings to the Wine Atlas root and Home; a country sheet to
+      the root and Home; a field map to the field atlas, the root and Home
    4. the house-only sweep: Home (outside the bar and its one row to the house), the level page, the Practise root,
       the Library, Quizzes and the bank draw no house deck, no house door, no wine or house question id and never
       "our list" or "My restaurant"; ten quick deals carry no house question, two from the regions and eight from
@@ -45,7 +48,7 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || process.argv[3] ||
 const base = (process.env.CODEX_URL || 'http://codex.test/codex/').replace(/\/?$/, '/');
 const SHOTS = process.env.CODEX_SHOTS || '';
 const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
-const WORDS = 'home,brennans,cms,grapes,library,more';
+const WORDS = 'home,brennans,cms,grapes,worldmap,more';
 const HOUSE_DECK = /data-deck="(list|list:[^"]*|list-weak|one:[^"]*|bottles|bottles:[^"]*|menu-words|misses|due|cellar-compass|cellar-path:[^"]*|producers|producers:[^"]*|components|components:[^"]*|components-all|item-[^"]*|v51-recovery)"/;
 const HOUSE_DOOR = /data-(go|v32|v48-route)="(brennans|houseproducers|housestudies|houserehearsal|housereference|cellarcompass|fullwine|housevideos|drilllist|cellarrecite|houserecite|housepair|housesay|houseguest|cellardrill|house|housereview|culinary)"/;
 const HOUSE_ID = /data-id="w-|data-q="h-|"h-[a-z0-9]{8}|data-v28="open"/;
@@ -121,7 +124,7 @@ async function step(name, fn) {
         return { words: [...nav.querySelectorAll('[data-nav]')].map(b => b.dataset.nav).join(','), v47: document.querySelectorAll('.v47nav').length, due, pills: pills.map(p => p.closest('[data-nav]').dataset.nav), pill: pills[0] ? Number.parseInt(pills[0].textContent, 10) : 0, house: document.querySelector('#nav-brennans').textContent, word: v41TabWord() };
       });
       check('the bar reads ' + WORDS + ', as nav.v32nav with no v47nav class', bar.words === WORDS && bar.v47 === 0, JSON.stringify(bar));
-      check('the due pill rides on Library alone, with Due today\'s count', bar.due ? (bar.pills.join() === 'library' && bar.pill === bar.due) : bar.pills.length === 0, JSON.stringify(bar));
+      check('the due pill rides on More alone, with Due today\'s count', bar.due ? (bar.pills.join() === 'more' && bar.pill === bar.due) : bar.pills.length === 0, JSON.stringify(bar));
       check('the second word is the house\'s name as codex41 gives it', bar.house === bar.word && !!bar.word, JSON.stringify(bar));
       for (const width of [320, 375, 390]) for (const service of ['day', 'night']) {
         await page.setViewportSize({ width, height: 844 });
@@ -141,10 +144,10 @@ async function step(name, fn) {
     /* 2. the lit word on every owner */
     await step('the lit words', async () => {
       const owners = [
-        ['#/v/worldmap', 'worldmap', 'library'], ['#/v/worldmap/france', 'worldmap', 'library'], ['#/v/regions', 'regions', 'library'],
-        ['#/v/country/france', 'country', 'library'], ['#/v/region/champagne', 'region', 'library'], ['#/v/fieldatlas', 'fieldatlas', 'library'],
-        ['#/v/fieldmap/champagne', 'fieldmap', 'library'], ['#/practise', 'flashcards', 'library'], ['#/flashcards/grapes', 'deck', 'grapes'],
-        ['#/quizzes', 'quizzes', 'library'], ['#/v/bank', 'bank', 'library'], ['#/library', 'library', 'library'],
+        ['#/v/worldmap', 'worldmap', 'worldmap'], ['#/v/worldmap/france', 'worldmap', 'worldmap'], ['#/v/regions', 'regions', 'worldmap'],
+        ['#/v/country/france', 'country', 'worldmap'], ['#/v/region/champagne', 'region', 'worldmap'], ['#/v/fieldatlas', 'fieldatlas', 'worldmap'],
+        ['#/v/fieldmap/champagne', 'fieldmap', 'worldmap'], ['#/practise', 'flashcards', 'more'], ['#/flashcards/grapes', 'deck', 'grapes'],
+        ['#/quizzes', 'quizzes', 'more'], ['#/v/bank', 'bank', 'more'], ['#/library', 'library', 'more'],
         ['#/v/cms', 'cms', 'cms'], ['#/v/cmsday', 'cmsday', 'cms'], ['#/v/cmstasting', 'cmstasting', 'cms'], ['#/v/cmsgrid', 'cmsgrid', 'cms'],
         ['#/v/cmssubject/' + SUBJECT, 'cmssubject', 'cms'], ['#/v/cmsready', 'cmsready', 'cms'],
         ['#/v/grapes', 'grapes', 'grapes'], ['#/v/grape/chardonnay', 'grape', 'grapes'], ['#/v/griddrill', 'griddrill', 'grapes'], ['#/v/courttasting', 'courttasting', 'grapes'],
@@ -158,10 +161,10 @@ async function step(name, fn) {
         const got = await lit(page);
         if (got !== word) wrong.push(hash + ' lights ' + got);
       }
-      check('every owner lights its word: Library on the atlas, the Practise root, Quizzes, the bank and the Library; CMS on its six; Grapes on its four and a grape deck (codex54); the house on its rooms and its deck (' + owners.length + ' addresses)', wrong.length === 0, wrong.join('; '));
+      check('every owner lights its word: Wine Atlas on the atlas; More on the Practise root, Quizzes, the bank and the Library (codex55); CMS on its six; Grapes on its four and a grape deck (codex54); the house on its rooms and its deck (' + owners.length + ' addresses)', wrong.length === 0, wrong.join('; '));
       await go('#/practise');
       await page.locator('[data-v32="quick"]').first().click(); await view(page, 'quiz');
-      check('the quick quiz lights Library', await lit(page) === 'library', await lit(page));
+      check('the quick quiz lights More', await lit(page) === 'more', await lit(page));
       await go('#/v/houserehearsal');
       await page.locator('[data-v32="drilllist"]').first().click(); await view(page, 'quiz');
       check('a house drill lights the house', await lit(page) === 'brennans', await lit(page));
@@ -176,8 +179,8 @@ async function step(name, fn) {
     await step('the cold Back chains', async () => {
       const chains = [
         ['#/v/cms', 'cms', ['home']], ['#/v/cmssubject/' + SUBJECT, 'cmssubject', ['cms', 'home']], ['#/v/grape/chardonnay', 'grape', ['grapes', 'home']],
-        ['#/v/bank', 'bank', ['library', 'home']], ['#/practise', 'flashcards', ['library', 'home']], ['#/v/regions', 'regions', ['library', 'home']],
-        ['#/v/worldmap/france', 'worldmap', ['worldmap', 'library', 'home']], ['#/v/fieldmap/champagne', 'fieldmap', ['fieldatlas', 'worldmap', 'library', 'home']]
+        ['#/v/bank', 'bank', ['library', 'more', 'home']], ['#/practise', 'flashcards', ['library', 'more', 'home']], ['#/v/regions', 'regions', ['worldmap', 'home']],
+        ['#/v/worldmap/france', 'worldmap', ['worldmap', 'home']], ['#/v/fieldmap/champagne', 'fieldmap', ['fieldatlas', 'worldmap', 'home']]
       ];
       for (const [hash, first, parents] of chains) {
         const cold = watch(await context.newPage());

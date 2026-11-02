@@ -557,6 +557,6 @@ async function main() {
 main().then(() => {
   console.log('');
   if (failed) { console.log('check-atlas: ' + failed + ' of ' + (passed + failed) + ' checks FAILED'); process.exit(1); }
-  console.log('check-atlas: all ' + passed + ' checks passed');
+  console.log('check-atlas: all ' + passed + ' checks pass');
   process.exit(0);
 }).catch((e) => { console.error(e && e.stack || e); process.exit(1); });
