@@ -23,7 +23,10 @@
      2. find the string's country: the parts right to left, the first that is
         usa, us or united states, or a country key (hyphens read as spaces),
         a folded country name, or an alias or TERROIR row to country keys,
-        whose targets lie in one country; none means any country;
+        whose targets lie in one country; none means any country; a part that
+        is a key of join.elsewhere (a country or state the atlas holds no
+        record for: Israel, Idaho) names a country no target lies in, so every
+        step below refuses and the string resolves to nothing;
      3. MOST SPECIFIC FIRST, the parts left to right: a part that is exactly a
         folded region name, an alias to an article or a folded TERROIR row
         name resolves to the first of its articles in the string's country
@@ -45,6 +48,8 @@
 
 var US_SHEETS = ['california', 'oregon', 'washington', 'new-york'];
 var US_WORDS = ['usa', 'us', 'u s', 'u s a', 'united states', 'united states of america'];
+/* The country of a string that names a place with no record: no target's country is ever this. */
+var ELSEWHERE_GROUP = '!elsewhere';
 
 function fold(s) {
   var t = String(s == null ? '' : s);
@@ -104,6 +109,9 @@ function joinIndex(R) {
     for (j = 0; j < list.length; j++) addTarget(keys[list[j]] ? country : article, fold(k), list[j]);
   }
   for (i = 0; i < US_WORDS.length; i++) words[US_WORDS[i]] = 'usa';
+  /* the places with no record: a country no target lies in */
+  list = Array.isArray(join.elsewhere) ? join.elsewhere : [];
+  for (i = 0; i < list.length; i++) { k = fold(list[i]); if (k && !own(words, k)) words[k] = ELSEWHERE_GROUP; }
   return { article: article, country: country, group: group, words: words, articleKeys: Object.keys(article), countryKeys: Object.keys(country) };
 }
 
@@ -184,7 +192,7 @@ function slugFor(region, index) {
   return null;
 }
 
-module.exports = { fold, joinIndex, slugFor, splitParts, containsWords, byContainment, countryOf, countryGroup, targetList, pick, US_SHEETS, US_WORDS };
+module.exports = { fold, joinIndex, slugFor, splitParts, containsWords, byContainment, countryOf, countryGroup, targetList, pick, US_SHEETS, US_WORDS, ELSEWHERE_GROUP };
 
 if (require.main === module) {
   var fs = require('fs');

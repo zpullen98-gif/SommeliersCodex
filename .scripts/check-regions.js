@@ -144,6 +144,9 @@ function blankUrls(text) {
     .replace(/"videos"\s*:\s*\[(?:[^\[\]"]|"(?:[^"\\]|\\.)*")*\]/g, (m) => m.replace(/("id"\s*:\s*)"(?:[^"\\]|\\.)*"/g, '$1""'));
 }
 const PARTS_DIR = 'regions';
+/* codex56: a place with no record resolves to nothing rather than a namesake elsewhere; a field map's pin name finds
+   its region; a key that still has a record keeps it */
+const PROBES = [['Carmel, Israel', ''], ['Snake River Valley, Idaho', ''], ['Argostolion', 'kefalonia'], ['Argostoli, Kefalonia, Greece', 'kefalonia'], ['Snake River Valley', 'oregon'], ['Carmel Valley', 'central-coast'], ['Arbois, Jura, France', 'jura']];
 const PAST_CACHE = 95;
 const HEADER_LINE = 'built by .scripts/regions/build-regions.cjs from .scripts/regions/fragments, never edited by hand';
 const SEVEN = ['check-home.js', 'check-merge.js', 'check-components.js', 'check-nav.js', 'check-atlas-ui.js', 'check-videos.js', 'check-winelist.js'];
@@ -352,13 +355,37 @@ const targets = new Set(slugs.filter(Boolean).concat(countryKeys));
 
 /* ================================================================ */
 section('3. the records, by check-fragment\'s rules');
+/* districts, which the build writes into each article's index record (codex56), is proved here and set aside: every
+   place with a name and every sub-place under it, as codex55 counts The districts */
+const distProblems = [];
+R.regions.forEach((r) => { if (r && r.slug && r.districts !== BUILD.districtCount(r.places)) distProblems.push(r.slug + ': districts ' + JSON.stringify(r.districts) + ' for ' + BUILD.districtCount(r.places)); });
+const nDistricts = R.regions.reduce((n, r) => n + (r && Number.isInteger(r.districts) ? r.districts : 0), 0);
+check('every article\'s index record carries districts, its places and sub-places counted (' + n2(nDistricts) + ' over ' + R.regions.length + ' articles)', distProblems.length === 0, few(distProblems));
+const sansDistricts = (r) => { if (!r || typeof r !== 'object') return r; const o = Object.assign({}, r); delete o.districts; return o; };
+/* a place is named once in its article: never twice, and never inside a place of its own name (Toro inside Toro) */
+const twice = [];
+const twiceIn = (id, places) => {
+  const seen = {};
+  const walk = (list, parent, at) => (Array.isArray(list) ? list : []).forEach((p, i) => {
+    if (!p || typeof p.name !== 'string') return;
+    const k = CF.fold(p.name), here = at + '[' + i + ']';
+    if (parent && k === CF.fold(parent.name)) twice.push(id + ': "' + p.name + '" inside a place of its own name (' + here + ')');
+    else if (seen[k]) twice.push(id + ': "' + p.name + '" at ' + seen[k] + ' and ' + here);
+    if (!seen[k]) seen[k] = here;
+    walk(p.places, p, here + '.places');
+  });
+  walk(places, null, 'places');
+};
+R.regions.forEach((r) => { if (r && r.slug) twiceIn(r.slug, r.places); });
+countryKeys.forEach((k) => { if (R.countries[k]) twiceIn(k, R.countries[k].places); });
+check('no place is named twice in its article or country, nor inside a place of its own name', twice.length === 0, few(twice));
 CF.SHEETS.forEach((s) => {
   const present = [];
   bySheet[s].forEach((list, i) => { if (list.length === 1) present.push(i); });
   const country = R.countries[s];
   if (!present.length && !country) { check(s + ': nothing to check yet', false, 'no article and no country'); return; }
   const complete = present.length === bySheet[s].length;
-  const frag = { sheet: s, regions: present.map((i) => bySheet[s][i][0]) };
+  const frag = { sheet: s, regions: present.map((i) => sansDistricts(bySheet[s][i][0])) };
   if (complete && country) frag.country = country;
   else { frag.part = { indices: present, country: !!country }; if (country) frag.country = country; }
   if (!complete) { check(s + ': complete', false, (bySheet[s].length - present.length) + ' of ' + bySheet[s].length + ' articles missing'); }
@@ -367,7 +394,7 @@ CF.SHEETS.forEach((s) => {
   check(s + ': ' + present.length + ' article(s)' + (country ? ' and the country' : '') + ' pass the per-record rules', problems.length === 0, few(problems, 10));
   /* the sheet's articles off the map, as the .more fragment they came from */
   if (offMap[s].length) {
-    const more = CF.checkFragment({ sheet: s, more: true, regions: offMap[s] }, s + '.more', codex);
+    const more = CF.checkFragment({ sheet: s, more: true, regions: offMap[s].map(sansDistricts) }, s + '.more', codex);
     check(s + ': ' + offMap[s].length + ' article(s) off the map pass the per-record rules', more.length === 0, few(more, 10));
   }
 });
@@ -429,7 +456,23 @@ if (!countryOnly) jp.push('countryOnly: a list'); else {
   countryKeys.forEach((k) => { if (countryOnly.indexOf(k) < 0) jp.push('countryOnly: lacks the country key ' + k); });
   if (aliases) Object.keys(aliases).forEach((k) => { if (aliasHasCountry(k) && countryOnly.indexOf(k) < 0) jp.push('countryOnly: lacks the alias ' + k + ' (to ' + JOIN.targetList(aliases[k]).join(', ') + ')'); });
 }
-check('every join entry resolves (' + (aliases ? Object.keys(aliases).length : 0) + ' aliases, ' + (terroir ? Object.keys(terroir).length : 0) + ' terroir rows, ' + (cats ? Object.keys(cats).length : 0) + ' chapters, ' + (grapes ? Object.keys(grapes).length : 0) + ' grapes, ' + (countryOnly ? countryOnly.length : 0) + ' country-only keys)', jp.length === 0, few(jp, 12));
+/* the places with no record (codex56, roster.cjs ELSEWHERE): folded, sorted, and naming no record, alias or row */
+const elsewhere = J.elsewhere;
+if (elsewhere !== undefined) {
+  if (!Array.isArray(elsewhere) || !elsewhere.length) jp.push('elsewhere: a list of folded keys, written only when there is one');
+  else {
+    const ix0 = JOIN.joinIndex(R);
+    elsewhere.forEach((k) => {
+      if (typeof k !== 'string' || k !== CF.fold(k) || !k) { jp.push('elsewhere: ' + JSON.stringify(k) + ' is not folded'); return; }
+      if (Object.prototype.hasOwnProperty.call(ix0.article, k) || Object.prototype.hasOwnProperty.call(ix0.country, k)) jp.push('elsewhere: "' + k + '" names a record of the file');
+      if (JOIN.US_WORDS.indexOf(k) >= 0) jp.push('elsewhere: "' + k + '" names the United States');
+    });
+    if (elsewhere.join() !== elsewhere.slice().sort().join() || new Set(elsewhere).size !== elsewhere.length) jp.push('elsewhere: sorted, each key once');
+    const roster = (ROSTER.ELSEWHERE || []).slice().sort();
+    if (roster.join() !== elsewhere.join()) jp.push('elsewhere: ' + elsewhere.join(', ') + ' for the roster\'s ' + roster.join(', '));
+  }
+} else if ((ROSTER.ELSEWHERE || []).length) jp.push('elsewhere: missing, though the roster lists ' + ROSTER.ELSEWHERE.join(', '));
+check('every join entry resolves (' + (aliases ? Object.keys(aliases).length : 0) + ' aliases, ' + (terroir ? Object.keys(terroir).length : 0) + ' terroir rows, ' + (cats ? Object.keys(cats).length : 0) + ' chapters, ' + (grapes ? Object.keys(grapes).length : 0) + ' grapes, ' + (countryOnly ? countryOnly.length : 0) + ' country-only keys, ' + (Array.isArray(J.elsewhere) ? J.elsewhere.length : 0) + ' places with no record)', jp.length === 0, few(jp, 12));
 /* 22 October 2026, the atlas in depth: the roster's new names and aliases must leave a bare country alone. An article
    whose folded name or alias holds a country's name as whole words takes that bare string by containment (South West
    France would take "France", Southern Oregon "Oregon"), so every country key and name is resolved alone. */
@@ -468,6 +511,14 @@ R.regions.forEach((r) => { if (r && r.slug) dealOf(r.slug, r); });
 countryKeys.forEach((k) => dealOf(k, R.countries[k]));
 TECHS.forEach((t) => { if (t.slug) dealOf(BUILD.techniqueOwner(t.slug), t); });
 check('the keyed positions are dealt evenly within every article, country and technique, no position more than once over another (' + nMc + ' multiple choice)', nMc > 0 && dealProblems.length === 0, nMc ? few(dealProblems) : 'no multiple choice');
+/* codex56: the deal is carried from record to record (build-cms's dealOptions), so across the whole file each answer
+   position holds 17 to 33 per cent of the multiple choice (35 per cent sat first before the carry) */
+const spread = [0, 0, 0, 0];
+const spreadOf = (rec) => (rec && rec.questions || []).forEach((q) => { if (q && q.sa !== 1 && Array.isArray(q.opts) && q.opts.length === 4 && Number.isInteger(q.a) && q.a >= 0 && q.a < 4) spread[q.a]++; });
+R.regions.forEach(spreadOf); countryKeys.forEach((k) => spreadOf(R.countries[k])); TECHS.forEach(spreadOf);
+const spreadSum = spread.reduce((a, b) => a + b, 0);
+const pct = spread.map((n) => (spreadSum ? 100 * n / spreadSum : 0));
+check('each answer position holds 17 to 33 per cent of the file\'s multiple choice (' + spread.map((n, i) => 'ABCD'[i] + ' ' + n).join(', ') + ')', spreadSum > 0 && pct.every((p) => p >= 17 && p <= 33), pct.map((p) => p.toFixed(1) + ' per cent').join(', '));
 
 /* ================================================================ */
 section('6. the house');
@@ -488,6 +539,9 @@ else {
     else if (hit && hit.key) c++;
     else unresolved[w.region] = (unresolved[w.region] || 0) + 1;
   });
+  /* codex56: the strings the review found going astray, and the pin a field map names */
+  const probeMiss = PROBES.map((p) => { const h = JOIN.slugFor(p[0], index); const t = h ? (h.slug || h.key) : ''; return t === p[1] ? null : '"' + p[0] + '" -> ' + (t || 'nothing') + ', not ' + (p[1] || 'nothing'); }).filter(Boolean);
+  check('the probes resolve as they should (' + PROBES.map((p) => p[0] + ' to ' + (p[1] || 'nothing')).join('; ') + ')', probeMiss.length === 0, few(probeMiss));
   const n = a + c;
   houseLine = 'house wines: ' + n + ' of ' + named.length + ' resolve, ' + a + ' to an article, ' + c + ' to a country';
   console.log('  ' + houseLine + (wines.length > named.length ? ' (' + (wines.length - named.length) + ' wines name no region)' : ''));
@@ -511,6 +565,8 @@ else {
       R.regions.forEach((r) => { if (r && r.name) strings.push(r.name, r.name + ', ' + ((R.countries[r.sheet] && R.countries[r.sheet].name) || r.sheet)); });
       countryKeys.forEach((k) => strings.push(k, (R.countries[k] && R.countries[k].name) || k));
       if (aliases) Object.keys(aliases).forEach((k) => strings.push(k, k + ', Spain', k + ', USA'));
+      (Array.isArray(J.elsewhere) ? J.elsewhere : []).forEach((k) => strings.push(k, 'Carmel, ' + k, 'Snake River Valley, ' + k));
+      PROBES.forEach((p) => strings.push(p[0]));
       const diffs = [];
       strings.forEach((s) => {
         const h = JOIN.slugFor(s, index);

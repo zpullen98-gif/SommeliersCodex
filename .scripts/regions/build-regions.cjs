@@ -66,20 +66,31 @@ const CF = require(path.join(__dirname, 'check-fragment.cjs'));
 const JOIN = require(path.join(__dirname, 'regions-join.cjs'));
 const ROSTER = require(path.join(__dirname, 'roster.cjs'));
 
-const HEADER = '/* The regions in depth: built by .scripts/regions/build-regions.cjs from .scripts/regions/fragments, never edited by hand.\n'
+/* The first line names what built the file (check-regions reads it); the rest says what the index holds. A build with
+   neither articles off the map nor techniques keeps the first edition's words (HEADER) byte for byte; one with either
+   (every build since the atlas in depth) is written with HEADER_DEEP, rewritten for codex56 (2 November 2026) so it
+   says what the file holds today. */
+const HEADER_FIRST = '/* The regions in depth: built by .scripts/regions/build-regions.cjs from .scripts/regions/fragments, never edited by hand.\n';
+const HEADER = HEADER_FIRST
   + '   This is the index: REGIONS.regions holds one record per atlas region, in sheet and map order, and REGIONS.countries\n'
   + '   one per country key, each with its names, levels, summary, grapes (name and role), cards and questions; the rest of\n'
   + '   each article is in js/regions/<part>.json, fetched on first open (REGIONS.parts, the stamp of each). REGIONS.join\n'
   + '   holds the aliases, chapters, country-only keys, grapes and terroir rows the resolver in .scripts/regions/regions-join.cjs\n'
   + '   reads. Every string is British, dash free and names nobody living. */\n';
-/* A build that holds articles off the map or techniques says so in two more lines; one holding neither keeps HEADER
-   byte for byte. */
-const HEADER_DEEP = '   The articles off the map (mapless: 1, no index) follow their sheet\'s mapped articles in roster order, and\n'
-  + '   REGIONS.techniques holds the technique companion\'s index entries, its reading in js/regions/techniques.json.';
-function headerFor(deep) { return deep ? HEADER.replace(/ \*\/\n$/, '\n' + HEADER_DEEP + ' */\n') : HEADER; }
+const HEADER_DEEP = '   This is the index the shell precaches. REGIONS.regions holds one record per article, sheet by sheet: the atlas\'s\n'
+  + '   regions in map order, then the articles off the map (mapless: 1, no index, a field map still to come) in roster\n'
+  + '   order. REGIONS.countries holds one record per country key, REGIONS.techniques the technique companion\'s entries.\n'
+  + '   Each record keeps what a deck, a drill and the atlas root need before anything is read: its names, its place, its\n'
+  + '   levels, its summary, its grapes (name and role), its cards and its questions (the answer positions dealt by the\n'
+  + '   build, about a quarter at each), and an article its district count (districts: every place and sub-place of its\n'
+  + '   reading). Everything else is in js/regions/<part>.json, one file per sheet with mapless.json and techniques.json,\n'
+  + '   fetched on first open at an address carrying its stamp (REGIONS.parts). REGIONS.join holds the aliases, chapters,\n'
+  + '   country-only keys, grapes, terroir rows and the places with no record (elsewhere) that the resolver in\n'
+  + '   .scripts/regions/regions-join.cjs reads. Every string is British, dash free and names nobody living. */\n';
+function headerFor(deep) { return deep ? HEADER_FIRST + HEADER_DEEP : HEADER; }
 
 /* The split: what the index keeps of a record; every other field goes to its reading file. */
-const INDEX_REGION = ['asked', 'cards', 'index', 'mapless', 'name', 'questions', 'sheet', 'slug', 'summary'];
+const INDEX_REGION = ['asked', 'cards', 'districts', 'index', 'mapless', 'name', 'questions', 'sheet', 'slug', 'summary'];
 const INDEX_COUNTRY = ['cards', 'key', 'mapless', 'name', 'questions', 'regionsOrder', 'sheet', 'summary'];
 const INDEX_TECHNIQUE = ['aka', 'asked', 'cards', 'group', 'name', 'questions', 'slug', 'summary', 'usedBy'];
 const PARTS_DIR = 'regions';
@@ -164,9 +175,16 @@ function detShuffle(seq, seed) {
   }
   return out;
 }
-function bakeOptionOrder(owner, list) {
+/* codex56 (2 November 2026), the deal carried as build-cms.cjs's dealOptions carries it: a record of five or six
+   multiple choice questions dealt from 0 every time put the remainder on the first position again and again (35 per
+   cent of the file's answers sat first), so the round robin starts where the record before it stopped (start, the
+   value the last call returned; 0 alone) and returns where it stops. The spread still differs by at most one within
+   each record, and now across the whole file too; the deal is keyed by the owner ('deal:' + slug, key or technique
+   owner) and the distractors by the stem, the fragments keep their authored order, and no id moves. */
+function bakeOptionOrder(owner, list, start) {
+  const from = Number.isInteger(start) && start >= 0 ? start % 4 : 0;
   const mc = (list || []).filter((q) => q && q.sa !== 1 && Array.isArray(q.opts) && q.opts.length === 4 && Number.isInteger(q.a));
-  const targets = detShuffle(mc.map((_, i) => i % 4), 'deal:' + owner);
+  const targets = detShuffle(mc.map((_, i) => (from + i) % 4), 'deal:' + owner);
   mc.forEach((q, i) => {
     const correct = q.opts[q.a];
     const rest = detShuffle(q.opts.filter((_, k) => k !== q.a), 'distractors:' + q.q);
@@ -174,6 +192,17 @@ function bakeOptionOrder(owner, list) {
     q.opts = rest;
     q.a = targets[i];
   });
+  return (from + mc.length) % 4;
+}
+/* An article's district count, written into the index as districts (codex56), so the atlas root counts without a
+   fetch: every place with a name and every sub-place under it at any depth, as codex55's v55Join counts its nodes. */
+function districtCount(places) {
+  let n = 0;
+  (Array.isArray(places) ? places : []).forEach((p) => {
+    if (!p || typeof p !== 'object' || typeof p.name !== 'string' || !p.name.trim()) return;
+    n += 1 + districtCount(p.places);
+  });
+  return n;
 }
 
 function sortKeys(v) {
@@ -399,7 +428,21 @@ function build(opts) {
   Object.keys(aliases).forEach((k) => aliasTargets(k).forEach((t) => { if (!targets.has(t)) problems.push('aliases["' + k + '"]: ' + t + ' is no slug or country key of the build (' + aliasFrom[k] + ')'); }));
   Object.keys(terroir).forEach((k) => { if (!targets.has(terroir[k])) problems.push('terroirRows["' + k + '"]: ' + terroir[k] + ' is no slug or country key of the build (' + terroirFrom[k] + ')'); });
   Object.keys(cats).forEach((k) => cats[k].forEach((s) => { if (!targets.has(s)) problems.push('cats["' + k + '"]: ' + s + ' is no slug or country key of the build'); }));
+  /* the places with no record (roster.cjs ELSEWHERE): folded, unique, and naming no record of the build */
+  const named = new Set();
+  regions.forEach((r) => named.add(CF.fold(r.name)));
+  Object.keys(countries).forEach((k) => { named.add(CF.fold(k)); if (countries[k].name) named.add(CF.fold(countries[k].name)); });
+  Object.keys(aliases).forEach((k) => named.add(k));
+  Object.keys(terroir).forEach((k) => named.add(CF.fold(k)));
+  const elsewhere = [];
+  (ROSTER.ELSEWHERE || []).forEach((k) => {
+    if (typeof k !== 'string' || k !== CF.fold(k) || !k) { problems.push('roster ELSEWHERE: ' + JSON.stringify(k) + ' is not a folded key'); return; }
+    if (named.has(k)) { problems.push('roster ELSEWHERE: "' + k + '" names a record of the build (a country, an article, an alias or a TERROIR row); take it off the list'); return; }
+    if (JOIN.US_WORDS.indexOf(k) >= 0) { problems.push('roster ELSEWHERE: "' + k + '" names the United States'); return; }
+    if (elsewhere.indexOf(k) < 0) elsewhere.push(k);
+  });
   const join = { aliases, cats, countryOnly: Array.from(countryOnly).sort(), grapes, terroir };
+  if (elsewhere.length) join.elsewhere = elsewhere.sort();
   /* a bare country key or name must still resolve to its country: an article whose folded name or alias holds it as
      whole words captures it by containment (South West France takes a bare "France"). A note here; check-regions
      fails on it. */
@@ -433,11 +476,14 @@ function build(opts) {
     if (ids[q.id]) problems.push(where + '.questions[' + i + ']: duplicate id ' + q.id + ' (also ' + ids[q.id] + ')');
     ids[q.id] = where + '.questions[' + i + ']';
   });
-  regions.forEach((r) => { bakeOptionOrder(r.slug, r.questions); mint(r.slug, r.questions, r.slug); cards += (r.cards || []).length; });
-  Object.keys(countries).forEach((k) => { bakeOptionOrder(k, countries[k].questions); mint(k, countries[k].questions, k); cards += (countries[k].cards || []).length; });
+  let deal = 0;
+  regions.forEach((r) => { deal = bakeOptionOrder(r.slug, r.questions, deal); mint(r.slug, r.questions, r.slug); cards += (r.cards || []).length; });
+  Object.keys(countries).forEach((k) => { deal = bakeOptionOrder(k, countries[k].questions, deal); mint(k, countries[k].questions, k); cards += (countries[k].cards || []).length; });
   /* a technique's ids and deal are owned by 'technique:' + slug, one id space with the articles and countries; its
      card ids are the app's (t:<slug>/<n>), never stored */
-  techList.forEach((t) => { const o = techniqueOwner(t.slug); bakeOptionOrder(o, t.questions); mint(o, t.questions, o); cards += (t.cards || []).length; });
+  techList.forEach((t) => { const o = techniqueOwner(t.slug); deal = bakeOptionOrder(o, t.questions, deal); mint(o, t.questions, o); cards += (t.cards || []).length; });
+  /* each article's district count, for the index */
+  regions.forEach((r) => { r.districts = districtCount(r.places); });
 
   const sheets = CF.SHEETS.filter((s) => bySheet[s].country || bySheet[s].regions.some((r) => r));
   /* the split: the reading files first, since the index carries their stamps */
@@ -482,7 +528,7 @@ function build(opts) {
   return { problems, notes, missing, text, parts, stamps, files, stats: { regions: regions.length, offMap, countries: Object.keys(countries).length, techniques: techList.length, questions, minted, kept, cards, aliases: Object.keys(aliases).length, bytes: Buffer.byteLength(text, 'utf8'), parts: Object.keys(parts).length, partBytes } };
 }
 
-module.exports = { build, fnv1a64, b36, mintId, sortKeys, HEADER, HEADER_DEEP, headerFor, ID_RE, detShuffle, bakeOptionOrder, INDEX_REGION, INDEX_COUNTRY, INDEX_TECHNIQUE, PARTS_DIR, TECHNIQUE_PART, techniqueOwner, partName, stampOf, mintServiceId, SERVICE_ID_RE, closeAsked, bareCountryMisses };
+module.exports = { build, fnv1a64, b36, mintId, sortKeys, HEADER, HEADER_FIRST, HEADER_DEEP, headerFor, districtCount, ID_RE, detShuffle, bakeOptionOrder, INDEX_REGION, INDEX_COUNTRY, INDEX_TECHNIQUE, PARTS_DIR, TECHNIQUE_PART, techniqueOwner, partName, stampOf, mintServiceId, SERVICE_ID_RE, closeAsked, bareCountryMisses };
 
 if (require.main === module) {
   let opts;

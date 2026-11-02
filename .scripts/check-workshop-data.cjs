@@ -37,8 +37,14 @@ for (const t of data.techniques) {
  assert.ok((r.related || []).every(slug => data.techniques.some(other => other.slug === slug) && slug !== t.slug), t.slug + ': real related lessons');
  cards += t.cards.length; questions += t.questions.length; deeper += r.deeper.length;
 }
-assert.equal(data.regions.length, 115, 'the separate future regional family is not partially released');
-assert.equal(Object.keys(data.countries).length, 24, 'the separate future country family is not partially released');
-assert.equal(data.regions.flatMap(r => r.questions).length + Object.values(data.countries).flatMap(r => r.questions).length, 1068, 'legacy question count');
-assert.equal(data.regions.flatMap(r => r.cards).length + Object.values(data.countries).flatMap(r => r.cards).length, 1169, 'legacy card count');
-console.log('check-workshop-data: 43 complete techniques, ' + cards + ' cards, ' + questions + ' unique questions, ' + deeper + ' sourced deeper explanations; 115 regions and 24 countries preserved');
+/* codex56: the roster's articles off the map arrive as one family, the fourteen of MORE, all or none; the deferred
+   articles and countries stay out; the mapped regions and the first edition's countries keep their counts. */
+const mapped = data.regions.filter(r => r.mapless !== 1);
+const offMap = data.regions.filter(r => r.mapless === 1).map(r => r.slug).sort();
+assert.equal(mapped.length, 115, 'the mapped regions are preserved');
+assert.ok(offMap.length === 0 || offMap.join() === roster.MORE_LIST.map(a => a.slug).sort().join(), 'the family off the map is not partially released');
+assert.ok(!data.regions.some(r => (roster.DEFERRED_MORE_LIST || []).some(a => a.slug === r.slug)), 'no deferred article is released');
+assert.equal(Object.keys(data.countries).length, 24 + roster.NEW_MAPLESS.length, 'the separate future country family is not partially released');
+assert.equal(mapped.flatMap(r => r.questions).length + Object.values(data.countries).flatMap(r => r.questions).length, 1068, 'legacy question count');
+assert.equal(mapped.flatMap(r => r.cards).length + Object.values(data.countries).flatMap(r => r.cards).length, 1169, 'legacy card count');
+console.log('check-workshop-data: 43 complete techniques, ' + cards + ' cards, ' + questions + ' unique questions, ' + deeper + ' sourced deeper explanations; ' + mapped.length + ' mapped regions, ' + offMap.length + ' off the map and ' + Object.keys(data.countries).length + ' countries');

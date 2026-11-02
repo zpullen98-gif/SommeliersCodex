@@ -104,6 +104,13 @@ const DEFERRED_MAPLESS = [
    runs, since it runs only once georgia is a NEW_MAPLESS country in a fragment. */
 const NEW_MAPLESS = [];
 
+/* ELSEWHERE (2 November 2026, codex56): folded names of countries and states the atlas holds no record for. The build
+   writes them to REGIONS.join.elsewhere, and a region string whose country part names one resolves to nothing rather
+   than to a namesake in another country: Carmel, Israel is not California's Carmel Valley, and Snake River Valley,
+   Idaho is not the Oregon country page. The build refuses a key that names a record (a country, an article, an alias
+   or a TERROIR row), so Israel leaves this list in the edition that writes its country. */
+const ELSEWHERE = ['idaho', 'israel'];
+
 /* The keys that leave eastern-europe (mapless.2.json) for georgia, and the grapes that go with them. */
 const GEORGIA_MOVE = ['georgia', 'georgian', 'sakartvelo', 'kakheti', 'kakhetia', 'telavi', 'alazani valley', 'tsinandali', 'mukuzani', 'kindzmarauli', 'akhasheni', 'napareuli', 'manavi', 'kvareli', 'gurjaani', 'kartli', 'imereti', 'racha', 'racha lechkhumi', 'khvanchkara'];
 const GEORGIA_GRAPES = ['Saperavi', 'Rkatsiteli', 'Mtsvane'];
@@ -231,7 +238,7 @@ const DEFERRED_MORE_LIST = WHOLE ? [] : listOf(DEFERRED_MORE);
 const TECHNIQUE_SLUGS = TECHNIQUES.map((t) => t[0]);
 const GROUP_KEYS = GROUPS.map((g) => g[0]);
 
-module.exports = { MORE, MORE_LIST, DEFERRED_MORE, DEFERRED_MORE_LIST, NEW_MAPLESS, DEFERRED_MAPLESS, GEORGIA_MOVE, GEORGIA_GRAPES, GROUPS, GROUP_KEYS, TECHNIQUES, TECHNIQUE_SLUGS, MUST_LINK, WHOLE };
+module.exports = { MORE, MORE_LIST, DEFERRED_MORE, DEFERRED_MORE_LIST, NEW_MAPLESS, DEFERRED_MAPLESS, ELSEWHERE, GEORGIA_MOVE, GEORGIA_GRAPES, GROUPS, GROUP_KEYS, TECHNIQUES, TECHNIQUE_SLUGS, MUST_LINK, WHOLE };
 
 if (require.main === module) {
   console.log('roster' + (WHOLE ? ' (whole, CODEX_ROSTER_WHOLE=1)' : '') + ': ' + MORE_LIST.length + ' articles off the map on ' + Object.keys(MORE).length + ' sheets, ' + NEW_MAPLESS.length + ' new map-less countries, ' + (WHOLE ? '' : DEFERRED_MORE_LIST.length + ' articles and ' + DEFERRED_MAPLESS.length + ' countries deferred, ') + TECHNIQUES.length + ' techniques in ' + GROUPS.length + ' groups, ' + Object.keys(MUST_LINK).length + ' must-links');

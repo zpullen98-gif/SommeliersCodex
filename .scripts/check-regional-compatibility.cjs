@@ -33,6 +33,14 @@ for (const country of FUTURE_MAPLESS) {
     data.countries[country.key] = { key: country.key, name: country.name, mapless: 1 };
   }
 }
+/* A place the shipped join lists as having no record (join.elsewhere: Israel, Idaho) leaves that list in the edition
+   that writes its record, as build-regions requires; the future roster here writes Israel. */
+if (Array.isArray(data.join.elsewhere)) {
+  const named = new Set();
+  for (const [key, country] of Object.entries(data.countries)) { named.add(JOIN.fold(key)); named.add(JOIN.fold(country.name)); }
+  for (const region of data.regions) named.add(JOIN.fold(region.name));
+  data.join.elsewhere = data.join.elsewhere.filter((key) => !named.has(key));
+}
 context.v25MapSheets = () => Object.keys(data.countries).filter((key) => data.countries[key].sheet).map((id) => ({ id }));
 vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/codex39.js'), 'utf8'), context);
 const index = JOIN.joinIndex(data);
