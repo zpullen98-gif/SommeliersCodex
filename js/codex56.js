@@ -217,7 +217,14 @@ var V56_WORDS = {
   drillH: 'Drill a country',
   drillSub: 'Ten questions from one country’s regions',
   drillPick: 'Choose a country. Each drill deals ten of its questions; the ones you miss come back on their due day.',
-  drillCountryLine: '{t} questions · {q} answered right'
+  drillCountryLine: '{t} questions · {q} answered right',
+  /* the folds */
+  notesH: 'The field notes',
+  sheetStudyH: 'Study {name}',
+  sheetFlash: 'Flash {name}',
+  sheetDrill: 'Drill {name}',
+  sheetQuiz: 'Map quiz',
+  sheetDistricts: 'District cards'
 };
 
 function v56W(key, vars) {
@@ -318,6 +325,12 @@ function v56Doc() { return (typeof document !== 'undefined' && document && typeo
     '.wrap .v56-cmp h3{margin-top:18px}',
     /* a district card's prompt on its front */
     '.wrap .v56-dprompt{display:block;margin:10px 0 0;font-size:16px;color:var(--ink-soft)}',
+    /* the sheet's study doors, in codex31's sheet */
+    '.wrap .v56-sheetstudy{margin:12px 0 14px}',
+    '.wrap .v56-sheetstudy h3{margin:0 0 8px}',
+    '.wrap .v56-sheetstudy .v56-sdoors{display:flex;flex-wrap:wrap;gap:8px}',
+    '.wrap .v56-sheetstudy .btn{min-height:44px}',
+    '.wrap .v56-fieldnotes{margin:10px 0 0}',
     '.wrap .v56-inset-tag{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#071b14;color:#f3e9d5;border:1px solid #d5b16c;border-radius:3px;padding:0 7px;font-size:14px;line-height:24px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
@@ -1744,6 +1757,217 @@ v56View('v56drill', {
   name: function () { return v56W('drillH'); },
   parent: function () { return { view: 'worldmap', arg: '' }; }
 });
+
+/* =========== 7. duplicates folded =========== */
+
+/* ----- the field map screen, the field atlas index and the regions index -----
+   Their addresses keep answering: a region's field map opens the region's
+   page (a country's map, its country page with that map chosen), the field
+   atlas and the regions index open the root (the regions index at its
+   countries, a sheet's row at that country). */
+var V56_JUMP = { id: '' };
+function v56FoldRoute(r) {
+  if (!r) return null;
+  var arg = String(r.arg || '');
+  if (r.view === 'fieldmap') {
+    var m = v56FieldMap(arg);
+    if (m && m.type === 'region' && v39Find(m.slug || m.id)) return { view: 'region', arg: m.slug || m.id };
+    if (m && m.countryKey && v39Country(m.countryKey)) {
+      if (typeof V55_CHOSEN !== 'undefined' && V55_CHOSEN) V55_CHOSEN[m.countryKey] = m.id;
+      return { view: 'country', arg: m.countryKey };
+    }
+    return { view: 'worldmap', arg: '' };
+  }
+  if (r.view === 'fieldatlas') return { view: 'worldmap', arg: '' };
+  if (r.view === 'regions') {
+    var c = arg ? v39CountryOf(arg) : null;
+    V56_JUMP.id = c ? 'v56-c-' + v39CountryKey(c) : 'v55-countries-h';
+    return { view: 'worldmap', arg: '' };
+  }
+  return null;
+}
+V56_COLD.fieldmap = 1;
+V56_COLD.fieldatlas = 1;
+V56_COLD.regions = 1;
+if (typeof v32Apply === 'function') {
+  var _v56ApplyFold = v32Apply;
+  v32Apply = function (r) {
+    var to = null;
+    try { to = v56FoldRoute(r); } catch (e) { to = null; }
+    if (to) {
+      var args = Array.prototype.slice.call(arguments);
+      args[0] = to;
+      try { if (to.view !== 'worldmap' && typeof V39_PARTS !== 'undefined') { var rec = to.view === 'region' ? v39Find(to.arg) : v39CountryOf(to.arg); if (rec) delete V39_PARTS.failed[v39PartName(rec)]; } } catch (e) { }
+      return _v56ApplyFold.apply(this, args);
+    }
+    return _v56ApplyFold.apply(this, arguments);
+  };
+}
+/* codex39's own way to its index (its doors, V25_GO.regions) opens the root at its countries. */
+if (typeof v39Open === 'function') {
+  var _v56Open = v39Open;
+  v39Open = function (view, arg) {
+    if (view === 'regions' && typeof v32Go === 'function') {
+      try { if (typeof v32PushOpener === 'function') v32PushOpener(); } catch (e) { }
+      v32Go({ view: 'regions', arg: String(arg || '') }, 'push');
+      return true;
+    }
+    return _v56Open.apply(this, arguments);
+  };
+}
+if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS && typeof worldMapView === 'function') {
+  /* a draw that still finds one of these views set draws the root */
+  ['regions', 'fieldatlas'].forEach(function (k) { V25_VIEWS[k] = function () { S.view = 'worldmap'; S.wmap = null; return worldMapView(); }; });
+}
+/* The root brought to its countries, or to a country's row, after the draw. */
+function v56DoJump() {
+  var id = V56_JUMP.id;
+  if (!id || S.view !== 'worldmap' || S.wmap) return;
+  V56_JUMP.id = '';
+  var d = v56Doc();
+  var n = d ? d.getElementById(id) : null;
+  if (!n) return;
+  try {
+    var back = d.querySelector('#view > .v32back');
+    var off = (back ? back.getBoundingClientRect().height : 56) + 10;
+    window.scrollTo(0, Math.max(0, Math.round(n.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0) - off)));
+    if (typeof n.focus === 'function') n.focus({ preventScroll: true });
+  } catch (e) { }
+}
+if (typeof render === 'function') {
+  var _v56Render = render;
+  render = function () {
+    var out = _v56Render.apply(this, arguments);
+    try { if (V56_JUMP.id) setTimeout(v56DoJump, 0); } catch (e) { }
+    try { if (S.view === 'region') setTimeout(v56RowTop, 0); } catch (e) { }
+    return out;
+  };
+}
+
+/* The region page's map holder: the door to the field map screen (which is
+   this page now) gives way to the map's own field notes, where it has them,
+   and its offline copy. */
+function v56MapActsShape(html, a) {
+  var s = String(html || '');
+  var m = a ? v56FieldMap(a.slug) : null;
+  if (!m) return s;
+  var at = s.indexOf('<div class="v45-actions v55-mapacts">');
+  if (at < 0) return s;
+  var end = s.indexOf('</div>', at);
+  var notes = '';
+  try {
+    var own = typeof v45OwnNotes === 'function' && v45OwnNotes(m);
+    var drawNotes = (typeof _v46Notes === 'function') ? _v46Notes : (typeof v45NotesHtml === 'function' ? v45NotesHtml : null);
+    if (own && drawNotes) notes = '<details class="v28-q v56-fieldnotes"><summary>' + v56Esc(v56W('notesH')) + '</summary><div class="v39-body">' + drawNotes(m) + '</div></details>';
+  } catch (e) { notes = ''; }
+  var keep = '';
+  try { keep = (typeof v45StorageHtml === 'function') ? v45StorageHtml(m) : ''; } catch (e) { keep = ''; }
+  return s.slice(0, at) + notes + keep + s.slice(end + '</div>'.length);
+}
+if (typeof v55RegionHtml === 'function') {
+  var _v56RegionHtmlActs = v55RegionHtml;
+  v55RegionHtml = function (a) {
+    var html = _v56RegionHtmlActs.apply(this, arguments);
+    try { return v56MapActsShape(html, a); } catch (e) { return html; }
+  };
+}
+
+/* ----- answer links: a region's field map opens its region page ----- */
+if (typeof v52AtlasHtml === 'function') {
+  var _v56AtlasHtml = v52AtlasHtml;
+  v52AtlasHtml = function (targets) {
+    var args = Array.prototype.slice.call(arguments);
+    try {
+      args[0] = (Array.isArray(targets) ? targets : []).map(function (t) {
+        if (!t || t.view !== 'fieldmap') return t;
+        var m = v56FieldMap(t.arg);
+        var a = (m && m.type === 'region') ? v39Find(m.slug || m.id) : null;
+        return a ? { view: 'region', arg: a.slug, label: v56Str(a.name) } : t;
+      });
+    } catch (e) { args[0] = targets; }
+    return _v56AtlasHtml.apply(this, args);
+  };
+}
+
+/* ----- the sheet view gains its study doors ----- */
+function v56SheetDoorsHtml(id) {
+  var c = (typeof v39SheetCountry === 'function') ? v39SheetCountry(id) : null;
+  var name = c ? v56Str(c.name) : ((typeof v39SheetName === 'function') ? v39SheetName(id) : id);
+  var doors = '';
+  if (typeof v39SheetCards === 'function' && v39SheetCards(id).length && typeof v32StartRun === 'function') doors += '<button type="button" class="btn ghost" data-v56="sheetflash" data-sheet="' + v56Esc(id) + '" id="v56-sh-flash">' + v56Esc(v56W('sheetFlash', { name: name })) + '</button>';
+  if (c && typeof v39SheetKeys === 'function' && v39Questions(v39SheetKeys(id)).length) doors += '<button type="button" class="btn ghost" data-v56="drillc" data-key="' + v56Esc(v39CountryKey(c)) + '" id="v56-sh-drill">' + v56Esc(v56W('sheetDrill', { name: name })) + '</button>';
+  doors += '<button type="button" class="btn ghost" data-v56="go" data-view="v56mapquiz" id="v56-sh-quiz">' + v56Esc(v56W('sheetQuiz')) + '</button>';
+  doors += '<button type="button" class="btn ghost" data-v56="go" data-view="v56districts" id="v56-sh-districts">' + v56Esc(v56W('sheetDistricts')) + '</button>';
+  return '<section class="v56 v56-sheetstudy" aria-labelledby="v56-sh-h"><h3 id="v56-sh-h">' + v56Esc(v56W('sheetStudyH', { name: name })) + '</h3><div class="v56-sdoors">' + doors + '</div></section>';
+}
+V56_ACTS.sheetflash = function (node) { if (typeof v32StartRun === 'function') v32StartRun('regions:' + (node.getAttribute('data-sheet') || ''), { push: true }); };
+V56_ACTS.go = function (node) { v56Go(node.getAttribute('data-view') || '', node.getAttribute('data-arg') || ''); };
+if (typeof v23SheetView === 'function') {
+  var _v56SheetView = v23SheetView;
+  v23SheetView = function (id) {
+    var view = _v56SheetView.apply(this, arguments);
+    try {
+      var d = v56Doc();
+      if (d && view && typeof view.querySelector === 'function' && !view.querySelector('.v56-sheetstudy')) {
+        var holder = d.createElement('div');
+        holder.innerHTML = v56SheetDoorsHtml(id);
+        var box = holder.firstChild;
+        var spread = view.querySelector('.v31-spread');
+        if (box && spread && spread.parentNode) spread.parentNode.insertBefore(box, spread);
+      }
+    } catch (e) { }
+    return view;
+  };
+}
+
+/* ----- a technique opened from the atlas lights Wine Atlas and climbs back to it -----
+   The atlas page it was opened from is kept (in the tab's session store too,
+   so a reload keeps it); a technique opened from anywhere else is the
+   Workshop's, as before. */
+var V56_TECH = { from: null };
+var V56_TECH_KEY = 'oot-codex-v56-techfrom';
+(function () {
+  try {
+    var raw = (typeof sessionStorage !== 'undefined' && sessionStorage) ? sessionStorage.getItem(V56_TECH_KEY) : null;
+    var o = raw ? JSON.parse(raw) : null;
+    if (o && typeof o === 'object' && typeof o.view === 'string') V56_TECH.from = { view: o.view, arg: String(o.arg || '') };
+  } catch (e) { }
+})();
+function v56AtlasRoute() {
+  var v = S.view;
+  if (v === 'worldmap') return { view: 'worldmap', arg: S.wmap ? String(S.wmap) : '' };
+  if (v === 'region' && S._v39region) return { view: 'region', arg: String(S._v39region) };
+  if (v === 'country' && S._v39country) return { view: 'country', arg: String(S._v39country) };
+  if (v56Own(V56_VIEWS, v)) return { view: v, arg: String(V56_ARGS[v] || '') };
+  return null;
+}
+function v56TechFrom() {
+  return (S.view === 'technique' || S.view === 'techniques') ? V56_TECH.from : null;
+}
+if (typeof v46Go === 'function') {
+  var _v56TechGo = v46Go;
+  v46Go = function () {
+    var from = v56AtlasRoute();
+    if (!from && (S.view === 'technique' || S.view === 'techniques')) from = V56_TECH.from;
+    V56_TECH.from = from;
+    try {
+      if (typeof sessionStorage !== 'undefined' && sessionStorage) {
+        if (from) sessionStorage.setItem(V56_TECH_KEY, JSON.stringify(from)); else sessionStorage.removeItem(V56_TECH_KEY);
+      }
+    } catch (e) { }
+    return _v56TechGo.apply(this, arguments);
+  };
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v56ParentRouteTech = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      var from = v56TechFrom();
+      if (from) return { view: from.view, arg: from.arg };
+    } catch (e) { }
+    return _v56ParentRouteTech.apply(this, arguments);
+  };
+}
 
 /* =========== the cold address =========== */
 

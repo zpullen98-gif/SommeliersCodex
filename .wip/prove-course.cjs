@@ -187,6 +187,7 @@ async function bootDevice(opts) {
   const fx = o.fixture || {};
   const D = makeSandbox();
   if (o.seed) Object.keys(o.seed).forEach((k) => { D.store[k] = o.seed[k]; });
+  if (o.hash) D.sandbox.history.replaceState(null, '', '/codex/' + o.hash);
   vm.runInContext(fs.readFileSync(ENGINE, 'utf8'), D.ctx, { filename: 'oot-house.js' });
   vm.runInContext(fs.readFileSync(UI_FILE, 'utf8'), D.ctx, { filename: 'oot-house-ui.js' });
   const lib = D.G('OOT.houseLib');
@@ -477,6 +478,55 @@ async function main() {
   const drl = A.J('(function () { V56_ACTS.drillc({ getAttribute: function (k) { return k === "data-key" ? "spain" : null; } }); return { view: S.view, n: S.pool.length, lit: v25NavWord(), own: S.pool.every(function (q) { return v39SheetKeys("spain").some(function (k) { return v39Questions([k]).indexOf(q) >= 0; }); }) }; })()');
   check('a country\'s drill deals ten of its own questions, lit Wine Atlas', drl.view === 'quiz' && drl.n === 10 && drl.own && drl.lit === 'worldmap', JSON.stringify(drl));
   A.G('S.mode = null; S.pool = []; S.view = "home";');
+
+  /* ================================================================ */
+  section('7. duplicates folded');
+  const go = (route) => A.J('(function () { v32Go(' + JSON.stringify(route) + ', "push"); return { view: S.view, region: S._v39region, country: S._v39country, wmap: S.wmap || null, hash: location.hash, jump: V56_JUMP.id }; })()');
+  const f1 = go({ view: 'fieldmap', arg: 'burgundy' });
+  check('a region\'s field map address opens its region page (#/v/fieldmap/burgundy to #/v/region/burgundy)', f1.view === 'region' && f1.region === 'burgundy' && f1.hash === '#/v/region/burgundy', JSON.stringify(f1));
+  const f2 = go({ view: 'fieldmap', arg: 'country-croatia' });
+  const eeP = A.page('render();');
+  check('a country\'s field map opens its country page with that map chosen (Croatia under Eastern Europe)', f2.view === 'country' && f2.country === 'eastern-europe' && eeP.indexOf('class="v55-mapfig" data-v55-map="country-croatia"') > 0 && eeP.indexOf('data-map="country-croatia" aria-pressed="true"') > 0, JSON.stringify(f2));
+  const f3 = go({ view: 'fieldatlas', arg: '' });
+  check('the field atlas index opens the root', f3.view === 'worldmap' && !f3.wmap && f3.hash === '#/v/worldmap', JSON.stringify(f3));
+  const f4 = go({ view: 'regions', arg: '' });
+  check('the regions index opens the root at its countries', f4.view === 'worldmap' && !f4.wmap && f4.hash === '#/v/worldmap' && f4.jump === 'v55-countries-h', JSON.stringify(f4));
+  A.G('V56_JUMP.id = "";');
+  const f5 = go({ view: 'regions', arg: 'france' });
+  check('a sheet\'s row of the regions index opens the root at that country\'s row', f5.view === 'worldmap' && f5.jump === 'v56-c-france', JSON.stringify(f5));
+  A.G('V56_JUMP.id = "";');
+  const f6 = A.J('(function () { v39Open("regions", "", "push"); var a = { view: S.view, hash: location.hash }; v45Go("rioja"); a.v45 = { view: S.view, region: S._v39region, hash: location.hash }; V25_GO.fieldatlas(""); a.fa = { view: S.view, hash: location.hash }; return a; })()');
+  check('codex39\'s own door to its index, codex45\'s door to a field map and to the field atlas land on the root, Rioja and the root', f6.view === 'worldmap' && f6.hash === '#/v/worldmap' && f6.v45.view === 'region' && f6.v45.region === 'rioja' && f6.fa.view === 'worldmap', JSON.stringify(f6));
+  A.G('V56_JUMP.id = "";');
+  const parC = A.J('(function () { S.view = "country"; S._v39country = "france"; var p = v32ParentRoute(); v32Go(p, "replace"); return { p: p, view: S.view, jump: V56_JUMP.id }; })()');
+  check('the cold Back from a country climbs through the folded index to the root at its row', parC.view === 'worldmap' && parC.jump === 'v56-c-france', JSON.stringify(parC));
+  A.G('V56_JUMP.id = "";');
+  for (const [hash, want] of [['#/v/fieldmap/burgundy', { view: 'region', hash: '#/v/region/burgundy' }], ['#/v/fieldatlas', { view: 'worldmap', hash: '#/v/worldmap' }], ['#/v/regions', { view: 'worldmap', hash: '#/v/worldmap' }], ['#/v/v56mapquiz/rioja', { view: 'v56mapquiz', hash: '#/v/v56mapquiz/rioja' }], ['#/v/v56compare/burgundy~rioja', { view: 'v56compare', hash: '#/v/v56compare/burgundy~rioja' }]]) {
+    const Z = await bootDevice({ hash });
+    const got = Z.J('({ view: S.view, hash: location.hash })');
+    check('a cold load of ' + hash + ' lands on ' + want.hash, got.view === want.view && got.hash === want.hash, JSON.stringify(got));
+  }
+  const link = A.G('v52AtlasHtml([{ view: "fieldmap", arg: "burgundy", label: "Burgundy field map" }, { view: "fieldmap", arg: "country-canada", label: "Canada overview" }], "quiz")');
+  check('an answer link to a region\'s field map opens its region page; a country map\'s keeps its address (which opens the country page)', link.indexOf('data-v52-atlas="region/burgundy" href="#/v/region/burgundy">Burgundy</a>') > 0 && link.indexOf('href="#/v/fieldmap/country-canada"') > 0, link);
+  const qLink = A.G('(function () { var q = v39Questions(["burgundy"])[0]; return v52AtlasHtml(v52ForQuestion(q), "quiz"); })()');
+  check('and a real answer\'s link, through atlas-context.js, reads the same', qLink.indexOf('href="#/v/region/burgundy"') > 0 && qLink.indexOf('fieldmap/burgundy') < 0, qLink.slice(0, 300));
+  const burg2 = A.page('S.view = "region"; S._v39region = "burgundy"; v39RegionView();');
+  const ownNotes = A.J('v45Maps().filter(function (m) { return m.type === "region" && v45OwnNotes(m) && v39Find(m.slug || m.id); }).map(function (m) { return m.id; })');
+  const withNotes = ownNotes[0];
+  const np = A.page('S.view = "region"; S._v39region = ' + JSON.stringify(withNotes) + '; v39RegionView();');
+  drawn.push([withNotes + ', the page', np]);
+  /* codex45's own storage block: Keep this map where the browser keeps caches, its line saying so where it cannot (this sandbox) */
+  check('the region page\'s map holder: no door to the folded field map screen, codex45\'s offline copy of the map in its place', burg2.indexOf('data-v45="map" data-v45-arg="burgundy"') < 0 && (burg2.indexOf('data-v45="keep" data-v45-arg="burgundy"') > 0 || burg2.indexOf('Optional map downloads are unavailable in this browser.') > 0) && burg2.indexOf('v45-storage') + burg2.indexOf('Optional map downloads') > burg2.indexOf('class="v55-map"'));
+  check('a map with field notes of its own (' + ownNotes.length + ', ' + withNotes + ' among them) carries them on its region page', np.indexOf('<details class="v28-q v56-fieldnotes"><summary>The field notes</summary>') > 0 && np.indexOf('class="v45-studies"') > 0, withNotes);
+  const sd = A.G('v56SheetDoorsHtml("france")');
+  check('the sheet view\'s study doors: Flash France, Drill France, Map quiz, District cards', sd.indexOf('data-v56="sheetflash" data-sheet="france"') > 0 && sd.indexOf('>Flash France<') > 0 && sd.indexOf('data-v56="drillc" data-key="france"') > 0 && sd.indexOf('data-view="v56mapquiz"') > 0 && sd.indexOf('data-view="v56districts"') > 0, sd);
+  const tf = A.J('(function () { v32Go({ view: "region", arg: "burgundy" }, "push"); var t = v46For("burgundy")[0].slug; v46Go(t); var a = { view: S.view, t: S._v46technique, lit: v25NavWord(), parent: v32ParentRoute(), kept: sessionStorage.getItem("oot-codex-v56-techfrom") }; '
+    + 'v32Go({ view: "worldmap", arg: "" }, "push"); v25Go("techniques"); a.root = { view: S.view, lit: v25NavWord(), parent: v32ParentRoute() }; '
+    + 'v46Go(t); a.deeper = { lit: v25NavWord(), parent: v32ParentRoute() }; '
+    + 'v32Go({ view: "library" }, "push"); v46Go(""); a.lib = { view: S.view, lit: v25NavWord(), parent: v32ParentRoute() }; return a; })()');
+  check('a technique opened from Burgundy lights Wine Atlas and climbs back to Burgundy (kept for a reload)', tf.view === 'technique' && tf.lit === 'worldmap' && JSON.stringify(tf.parent) === JSON.stringify({ view: 'region', arg: 'burgundy' }) && /"region"/.test(tf.kept || ''), JSON.stringify(tf));
+  check('the Workshop from the root\'s chip lights Wine Atlas and climbs to the root, a technique from there too', tf.root.view === 'techniques' && tf.root.lit === 'worldmap' && JSON.stringify(tf.root.parent) === JSON.stringify({ view: 'worldmap', arg: '' }) && tf.deeper.lit === 'worldmap' && JSON.stringify(tf.deeper.parent) === JSON.stringify({ view: 'worldmap', arg: '' }), JSON.stringify(tf.root));
+  check('the Workshop from the Library is the Library\'s, as before (lit More, climbing to the Library)', tf.lib.view === 'techniques' && tf.lib.lit === 'more' && JSON.stringify(tf.lib.parent) === JSON.stringify({ view: 'library' }), JSON.stringify(tf.lib));
 }
 
 main().then(() => {
