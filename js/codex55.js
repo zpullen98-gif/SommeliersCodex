@@ -225,6 +225,7 @@ function v55Num(n) { return String(Number(n) || 0); }
     '.wrap .v55-map{margin:18px 0 6px}',
     '.wrap .v55-mapfig{position:relative;max-width:650px}',
     '.wrap .v55-mapfig .v45-figure{margin:10px 0 0}',
+    '.wrap .v55-mapfig figcaption a{display:inline-flex;align-items:center;min-height:44px}',
     '.wrap .v55-sheetopen{display:block;appearance:none;width:100%;padding:0;margin:0;background:#071b14;border:1px solid var(--line);border-radius:3px;cursor:zoom-in}',
     '.wrap .v55-sheetopen>img{display:block;width:100%;height:auto}',
     '.wrap .v55-figure{margin:10px 0 0}',
