@@ -441,7 +441,8 @@ async function main() {
     const lead = rec.grapes.filter((g) => g.role === 'lead').slice(0, 4).map((g) => g.name);
     const and = (l) => l.length < 2 ? l[0] : l.slice(0, -1).join(', ') + ' and ' + l[l.length - 1];
     const firstS = (t) => { const x = /^(.+?[.!?])(\s|$)/.exec(t.split(/\n\s*\n/)[0]); return x ? x[1] : t; };
-    const wantM = [firstS(r.terroir.climate), and(lead), and(r.law.tiers.slice(0, 5).map((t) => t[0])), r.exam[0], r.traps[0]];
+    const lineS = (t) => { const p = t.split(/\n\s*\n/)[0]; const one = firstS(p); if (one.length >= 60 || one.length >= p.length) return one; const two = firstS(p.slice(one.length).trim()); return two ? one + ' ' + two : one; };
+    const wantM = [lineS(r.terroir.climate), and(lead), r.law.tiers.slice(0, 5).map((t) => t[0]).join(' · '), r.exam[0], r.traps[0]];
     check(slug + ': In one minute from the record\'s own fields: ' + dts.join(', '), JSON.stringify(dts) === JSON.stringify(['The climate', 'The main grapes', 'The ladder', 'One exam line', 'One trap']) && JSON.stringify(dds) === JSON.stringify(wantM), JSON.stringify({ dds, wantM }).slice(0, 500));
     check(slug + ': and its place in the course (' + (/Step \d+ of \d+ in the course/.exec(minute) || [''])[0] + ')', minute.indexOf('Step ' + (A.G('v56At("region", ' + JSON.stringify(slug) + ')') + 1) + ' of ' + A.G('v56Course().length') + ' in the course') > 0);
     const fig = html.slice(at('<div class="v55-mapfig"'), html.indexOf('</figure>', at('<div class="v55-mapfig"')));

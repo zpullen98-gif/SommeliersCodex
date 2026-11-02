@@ -260,6 +260,15 @@ function v56First(s) {
   var m = /^(.+?[.!?])(\s|$)/.exec(t);
   return m ? m[1] : t;
 }
+/* A line of a paragraph: its first sentence, and the next with it when the first is only a heading's length. */
+function v56Line(s) {
+  var t = v56Str(s).split(/\n\s*\n/)[0] || '';
+  var one = v56First(t);
+  if (one.length >= 60 || one.length >= t.length) return one;
+  var rest = t.slice(one.length).trim();
+  var two = v56First(rest);
+  return two ? one + ' ' + two : one;
+}
 function v56Doc() { return (typeof document !== 'undefined' && document && typeof document.getElementById === 'function') ? document : null; }
 
 /* =========== the style =========== */
@@ -1072,12 +1081,13 @@ function v56MinuteHtml(a) {
   var ready = v56Ready(a);
   var rows = [];
   var t = (a && a.terroir && typeof a.terroir === 'object') ? a.terroir : {};
-  if (ready && v56Str(t.climate)) rows.push(['mClimate', v56First(t.climate)]);
+  if (ready && v56Str(t.climate)) rows.push(['mClimate', v56Line(t.climate)]);
   var grapes = v56MainGrapes(a);
   if (grapes.length) rows.push(['mGrapes', v56And(grapes)]);
   if (ready) {
     var ladder = v56Ladder(a);
-    if (ladder.length) rows.push(['mLadder', v56And(ladder)]);
+    /* a tier's own name may hold a comma (Genérico, young), so the rungs stand apart by a point */
+    if (ladder.length) rows.push(['mLadder', ladder.join(' · ')]);
     var exam = v56List(a.exam).filter(function (x) { return v56Str(x); })[0];
     if (exam) rows.push(['mExam', v56Str(exam)]);
     var trap = v56List(a.traps).filter(function (x) { return v56Str(x); })[0];
@@ -1695,8 +1705,8 @@ function v56CmpCell(a, kind) {
   var t = (a.terroir && typeof a.terroir === 'object') ? a.terroir : {};
   var none = '<p>' + v56Esc(v56W('cmpNone')) + '</p>';
   var list = function (xs) { var l = xs.filter(Boolean); return l.length ? '<ul>' + l.map(function (x) { return '<li>' + v56Esc(x) + '</li>'; }).join('') + '</ul>' : none; };
-  if (kind === 'climate') return v56Str(t.climate) ? '<p>' + v56Esc(v56First(t.climate)) + '</p>' : none;
-  if (kind === 'soils') return v56Str(t.soils) ? '<p>' + v56Esc(v56First(t.soils)) + '</p>' : none;
+  if (kind === 'climate') return v56Str(t.climate) ? '<p>' + v56Esc(v56Line(t.climate)) + '</p>' : none;
+  if (kind === 'soils') return v56Str(t.soils) ? '<p>' + v56Esc(v56Line(t.soils)) + '</p>' : none;
   if (kind === 'grapes') return list(v56List(a.grapes).filter(function (g) { return g && v56Str(g.name); }).slice(0, 6).map(function (g) { return v56Str(g.name) + (v56Str(g.role) && g.role !== 'lead' ? ' (' + v56Str(g.role) + ')' : ''); }));
   if (kind === 'wines') return list(v56List(a.wines).filter(function (w) { return w && v56Str(w.style); }).slice(0, 6).map(function (w) { return v56Str(w.style); }));
   if (kind === 'ladder') return list(v56Ladder(a));
