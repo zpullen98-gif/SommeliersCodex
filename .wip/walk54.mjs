@@ -298,7 +298,7 @@ async function walk(browser, width, mode) {
     console.log('    the Library: ' + lib.heads.join(' | '));
     check('the Library: its sections, the regions door in The atlas, How to taste: the method in the reading rooms, no Terroir row', lib.heads.length >= 3 && lib.inAtlas && !lib.inReading && lib.method && lib.terroir === 0, JSON.stringify(lib));
     await screen('the Library');
-    await page.locator('.v53-atlas .v39-door-regions').first().click();
+    await page.locator('.v53-atlas .v39-door-regions button').first().click();
     await settle(300);
     const at = await state();
     check('the atlas door opens the regions (' + at.view + ')', at.view !== 'library', JSON.stringify(at));

@@ -194,7 +194,9 @@ function v54House() { try { return (typeof v28House === 'function') ? v28House()
     '.wrap .v28 .v54-fold>.v54-foldbody{padding:4px 0 6px}',
     '.wrap .v28 .v54-guide{font-size:17px;line-height:1.5;color:var(--parch)}',
     '.wrap .v28 .v54-codex .v35-cmp{margin-top:4px}',
-    '.wrap #v28-card .v52-atlas{display:none}'
+    '.wrap #v28-card .v52-atlas{display:none}',
+    /* a short word's link in a list row (Sake, Loire on the level page) keeps a 44 px target; its text stays left */
+    '.wrap li>.v32link{min-width:44px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
