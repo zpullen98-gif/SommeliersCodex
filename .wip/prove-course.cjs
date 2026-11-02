@@ -604,6 +604,25 @@ async function main() {
   const offCountry = F.page('S.view = "country"; S._v39country = "france"; v39CountryView();');
   check('France\'s country page lists it with the line field map to come', new RegExp('data-v55-count="' + off + '">[^<]*field map to come<').test(offCountry));
   F.G('S.view = "home";');
+
+  /* ================================================================ */
+  section('9. the field atlas shown cleanly');
+  const AMER = /\b(neighbor(s|ing|ed|hood)?|center|centers|centered|toward|color(s|ed|ful|ing)?|flavor(s|ed|ful)?|favor(s|ed|ite|able)?|harbor|gray|meters?|program|aging|northeast\w*|northwest\w*|southeast\w*|southwest\w*)\b/i;
+  const DASHES = new RegExp('[' + String.fromCharCode(8211) + String.fromCharCode(8212) + ']');
+  const shownFields = (m) => [m.title, m.summary, m.scope, m.water].concat(JSON.stringify(m.grapes || ''), JSON.stringify(m.notes || {})).concat((m.places || []).map((p) => [p.note, p.kind, p.lessonNote].filter(Boolean).join(' ')));
+  const rawMaps = A.J('FIELD_ATLAS.maps');
+  const cleanMaps = A.J('v45Maps()');
+  const rawBad = rawMaps.reduce((n, m) => n + shownFields(m).filter((x) => typeof x === 'string' && (AMER.test(x) || DASHES.test(x))).length, 0);
+  const cleanBad = [];
+  cleanMaps.forEach((m) => shownFields(m).forEach((x) => { if (typeof x === 'string' && (AMER.test(x) || DASHES.test(x))) cleanBad.push(m.id + ': ' + x.slice(0, 80)); }));
+  check('the field atlas\'s data holds ' + rawBad + ' shown strings with an American spelling or an en dash, and is left untouched', rawBad > 0 && A.G('FIELD_ATLAS.maps[0] !== v45Maps()[0]'));
+  check('every map codex45 hands out reads clean (' + cleanMaps.length + ' maps, ' + cleanBad.length + ' left)', cleanBad.length === 0 && cleanMaps.length === rawMaps.length, cleanBad.slice(0, 4).join(' | '));
+  const loire = cleanMaps.filter((m) => /west to east corridor/.test(m.summary)).length, rhine = cleanMaps.filter((m) => /Rhine and Main confluence/.test(m.summary)).length;
+  const fixes = cleanMaps.filter((m) => /Neighbouring|neighbouring/.test(m.summary)).length + cleanMaps.filter((m) => /\bcentres\b/.test(m.summary)).length + cleanMaps.filter((m) => /\btowards\b/.test(m.summary)).length;
+  check('the en dashes read as words ("west to east corridor", "the Rhine and Main confluence"), the spellings British (' + fixes + ' summaries put right, the compass words hyphened as the readings write them)', loire === 1 && rhine === 1 && fixes >= 4 && cleanMaps.some((m) => /south-west/.test(m.summary)), '');
+  check('names, joins, sources and artwork untouched: every place\'s name and lessonName, every file, hash and source as the data holds them',
+    rawMaps.every((m, i) => m.id === cleanMaps[i].id && m.file === cleanMaps[i].file && m.sha256 === cleanMaps[i].sha256 && JSON.stringify(m.sources) === JSON.stringify(cleanMaps[i].sources) && m.places.every((p, j) => p.name === cleanMaps[i].places[j].name && p.lessonName === cleanMaps[i].places[j].lessonName && p.lat === cleanMaps[i].places[j].lat)));
+  check('the copies are made once: v45Map hands out the same object each time', A.G('v45Map("burgundy") === v45Map("burgundy")'));
 }
 
 if (require.main !== module) { module.exports = { offMapFixture }; } else main().then(() => {

@@ -2019,6 +2019,79 @@ if (typeof v55RegionHtml === 'function') {
   };
 }
 
+/* =========== 9. the field atlas shown cleanly =========== */
+
+/* The field atlas's data (generated outside the house) carries American
+   spellings and en dashes in the words it shows. Every layer reads its maps
+   through codex45's v45Maps, so a clean copy of each map is handed out there,
+   made once per edition of the data: its title, summary, scope, water, grapes,
+   notes, and each place's kind and notes put right. Names (a place's own, the
+   heading it joins), sources and the artwork's fields are left as written. */
+var V56_DASH = String.fromCharCode(8211) + String.fromCharCode(8212);
+var V56_DASH_SPACED = new RegExp('\\s+[' + V56_DASH + ']\\s+', 'g');
+var V56_DASH_JOIN = new RegExp('([A-Za-z0-9\\u00C0-\\u024F]+)[' + V56_DASH + ']([A-Za-z0-9\\u00C0-\\u024F]+)', 'g');
+var V56_DASH_ANY = new RegExp('[' + V56_DASH + ']', 'g');
+var V56_COMPASS = { north: 1, south: 1, east: 1, west: 1, northeast: 1, northwest: 1, southeast: 1, southwest: 1 };
+var V56_SPELL = [
+  [/\b([Nn])eighbor(s|ing|ed|hood|hoods)?\b/g, '$1eighbour$2'],
+  [/\b([Cc])enter(s|ed)?\b/g, '$1entre$2'],
+  [/\b([Tt])oward\b/g, '$1owards'],
+  [/\b([Cc])olor(s|ed|ful|ing)?\b/g, '$1olour$2'],
+  [/\b([Ff])lavor(s|ed|ful)?\b/g, '$1lavour$2'],
+  [/\b([Ff])avor(s|ed|ite|ites|able)?\b/g, '$1avour$2'],
+  [/\b([Hh])arbor(s)?\b/g, '$1arbour$2'],
+  [/\b([Gg])ray\b/g, '$1rey'],
+  [/\b([Mm])eters?\b/g, function (m0, a) { return a + (m0.slice(-1) === 's' ? 'etres' : 'etre'); }],
+  [/\b([Pp])rogram(s)?\b/g, '$1rogramme$2'],
+  [/\b([Aa])ging\b/g, '$1geing'],
+  [/\b([Nn]orth|[Ss]outh)(east|west)(ern)?\b/g, '$1-$2$3']
+];
+function v56CleanText(s) {
+  if (typeof s !== 'string' || !s) return s;
+  var t = s.replace(V56_DASH_SPACED, ', ');
+  t = t.replace(V56_DASH_JOIN, function (m0, a, b) {
+    var both = (V56_COMPASS[a.toLowerCase()] && V56_COMPASS[b.toLowerCase()]) || (/^\d+$/.test(a) && /^\d+$/.test(b));
+    return a + (both ? ' to ' : ' and ') + b;
+  });
+  t = t.replace(V56_DASH_ANY, ', ');
+  V56_SPELL.forEach(function (r) { t = t.replace(r[0], r[1]); });
+  return t;
+}
+function v56CleanDeep(v) {
+  if (typeof v === 'string') return v56CleanText(v);
+  if (Array.isArray(v)) return v.map(v56CleanDeep);
+  if (v && typeof v === 'object') { var o = {}; Object.keys(v).forEach(function (k) { o[k] = v56CleanDeep(v[k]); }); return o; }
+  return v;
+}
+function v56CleanMap(m) {
+  if (!m || typeof m !== 'object') return m;
+  var c = {};
+  Object.keys(m).forEach(function (k) { c[k] = m[k]; });
+  ['title', 'summary', 'scope', 'water'].forEach(function (k) { if (typeof m[k] === 'string') c[k] = v56CleanText(m[k]); });
+  if (m.grapes !== undefined) c.grapes = v56CleanDeep(m.grapes);
+  if (m.notes && typeof m.notes === 'object') c.notes = v56CleanDeep(m.notes);
+  if (Array.isArray(m.places)) c.places = m.places.map(function (p) {
+    if (!p || typeof p !== 'object') return p;
+    var q = {};
+    Object.keys(p).forEach(function (k) { q[k] = p[k]; });
+    ['note', 'kind', 'lessonNote'].forEach(function (k) { if (typeof p[k] === 'string') q[k] = v56CleanText(p[k]); });
+    return q;
+  });
+  return c;
+}
+var V56_FA = { src: null, maps: [] };
+if (typeof v45Maps === 'function') {
+  var _v56Maps = v45Maps;
+  v45Maps = function () {
+    var src = _v56Maps.apply(this, arguments);
+    try {
+      if (!Array.isArray(src)) return src;
+      if (V56_FA.src !== src || V56_FA.n !== src.length) V56_FA = { src: src, n: src.length, maps: src.map(v56CleanMap) };
+      return V56_FA.maps;
+    } catch (e) { return src; }
+  };
+}
+
 /* =========== the cold address =========== */
 
 /* A reload on one of the layer's views: codex32 read the address before
