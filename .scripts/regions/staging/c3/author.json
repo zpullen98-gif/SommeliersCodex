@@ -2,14 +2,34 @@
   "chunk": "c3",
   "sheet": "italy",
   "file": ".scripts/regions/staging/c3/italy.more.json",
-  "status": "in progress: Emilia-Romagna staged; Marche and Lazio to follow",
+  "status": "in progress: Emilia-Romagna and Marche staged; Lazio to follow",
   "articles": [
     {
       "slug": "emilia-romagna",
       "name": "Emilia-Romagna",
-      "words": { "prose": 1320, "untaggedPlaces": 119, "taggedPlaces": 198 },
+      "words": {
+        "prose": 1320,
+        "untaggedPlaces": 119,
+        "taggedPlaces": 198
+      },
       "cards": 10,
       "cardsTagged": 2,
+      "questions": 8,
+      "questionsTagged": 2,
+      "multipleChoice": 5,
+      "sources": 6,
+      "searches": 5
+    },
+    {
+      "slug": "marche",
+      "name": "Marche",
+      "words": {
+        "prose": 1171,
+        "untaggedPlaces": 123,
+        "taggedPlaces": 103
+      },
+      "cards": 10,
+      "cardsTagged": 3,
       "questions": 8,
       "questionsTagged": 2,
       "multipleChoice": 5,
