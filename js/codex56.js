@@ -224,7 +224,10 @@ var V56_WORDS = {
   sheetFlash: 'Flash {name}',
   sheetDrill: 'Drill {name}',
   sheetQuiz: 'Map quiz',
-  sheetDistricts: 'District cards'
+  sheetDistricts: 'District cards',
+  /* the articles off the map */
+  toCome: 'field map to come',
+  toComeLine: 'The field map of {name} is to come. Until it is drawn, the map of {country} shows the country it belongs to; its districts are listed below.'
 };
 
 function v56W(key, vars) {
@@ -1966,6 +1969,53 @@ if (typeof v32ParentRoute === 'function') {
       if (from) return { view: from.view, arg: from.arg };
     } catch (e) { }
     return _v56ParentRouteTech.apply(this, arguments);
+  };
+}
+
+/* =========== 8. the articles off the map =========== */
+
+/* An article the Court names that the maps do not number: mapless 1, no
+   index, its reading in its country's sheet file. Until its own field map is
+   drawn it takes its place under its country (codex39 lists it with the
+   sheet's articles), in the course and on its country page, and its page
+   shows its country's sheet with a line that its field map is to come. */
+function v56OffMap(a) {
+  return !!a && !!v56Str(a.slug) && (!!a.mapless || typeof a.index !== 'number') && !v56FieldMap(a.slug);
+}
+if (typeof v55RegionLine === 'function') {
+  var _v56RegionLine = v55RegionLine;
+  v55RegionLine = function (a) {
+    var line = _v56RegionLine.apply(this, arguments);
+    try { if (v56OffMap(a)) return line ? line + ' · ' + v56W('toCome') : v56W('toCome'); } catch (e) { }
+    return line;
+  };
+}
+function v56OffMapShape(html, a) {
+  var s = String(html || '');
+  if (!v56OffMap(a) || s.indexOf('id="v55-map-h"') >= 0) return s;
+  var c = (typeof v39CountryOf === 'function') ? v39CountryOf(a.sheet) : null;
+  var sheet = c ? v56Str(c.sheet) : '';
+  var map = (c && sheet && !c.mapless && typeof v55SheetMapHtml === 'function') ? v55SheetMapHtml(c, sheet) : '';
+  var line = '<p class="v32-line v56-tocome">' + v56Esc(v56W('toComeLine', { name: a.name, country: c ? c.name : '' })) + '</p>';
+  if (map) map = map.replace(/(<h2 class="v32-h2" id="v55-map-h">[^<]*<\/h2>)/, function (m0) { return m0 + line; });
+  else map = '<section class="v55-map" aria-labelledby="v55-map-h"><h2 class="v32-h2" id="v55-map-h">' + v56Esc(typeof v55W === 'function' ? v55W('mapH') : 'The map') + '</h2>' + line + '</section>';
+  var minute = s.indexOf('<section class="card v56 v56-minute"');
+  var at = minute >= 0 ? s.indexOf('</section>', minute) + '</section>'.length : -1;
+  if (at < 0) at = s.indexOf('<section class="v55-districts"');
+  if (at < 0) return s;
+  s = s.slice(0, at) + map + s.slice(at);
+  /* the study row gains its Map */
+  var chip = '<button type="button" class="v28-chip" data-v56="jump" data-to="v55-map-h" id="v56-s-map">' + v56Esc(v56W('sMap')) + '</button>';
+  var sum = s.indexOf('id="v56-s-summary"');
+  var end = sum >= 0 ? s.indexOf('</button>', sum) : -1;
+  if (end > 0 && s.indexOf('id="v56-s-map"') < 0) s = s.slice(0, end + '</button>'.length) + chip + s.slice(end + '</button>'.length);
+  return s;
+}
+if (typeof v55RegionHtml === 'function') {
+  var _v56RegionHtmlOff = v55RegionHtml;
+  v55RegionHtml = function (a) {
+    var html = _v56RegionHtmlOff.apply(this, arguments);
+    try { return v56OffMapShape(html, a); } catch (e) { return html; }
   };
 }
 

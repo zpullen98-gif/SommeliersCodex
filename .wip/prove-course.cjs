@@ -242,6 +242,57 @@ function countOf(arr) { const o = {}; arr.forEach((x) => { o[x] = (o[x] || 0) + 
 const attr = (html, re) => [...String(html).matchAll(re)].map((m) => unesc(m[1]));
 const CMS_DATA = (() => { const c = vm.createContext({}); vm.runInContext(fs.readFileSync(path.join(JS, 'data-cms.js'), 'utf8'), c); return c.CMS; })();
 
+/* AN ARTICLE OFF THE MAP, as a fixture: a copy of the index carrying one record with mapless 1 and no index (after
+   France's mapped articles, last in France's regionsOrder, as build-regions writes one), its reading in a copy of
+   france.json. The record is the content workflow's staged Jura when it is staged, else a short one written here.
+   When the shipped index already carries such a record, that record is proved as it ships and the fixture adds none. */
+const SYNTH = {
+  slug: 'jura', name: 'Jura', sheet: 'france', mapless: 1, asked: ['certified', 'advanced', 'master'],
+  summary: 'The Jura is a narrow band of vineyards on the western foothills of the Jura mountains, facing Burgundy across the Saône plain.',
+  terroir: { climate: 'Continental, with cold winters and warm summers. Spring frost is a risk.', soils: 'Grey and blue marls under limestone scarps.' },
+  grapes: [{ name: 'Savagnin', role: 'lead' }, { name: 'Chardonnay', role: 'lead' }, { name: 'Poulsard', role: 'lead' }, { name: 'Trousseau', role: 'minor' }],
+  wines: [{ style: 'Vin Jaune', colour: 'white', note: 'Savagnin aged under a veil of yeast.' }],
+  law: { classification: 'Appellations by place and by style.', tiers: [['Côtes du Jura', 'The regional appellation.'], ['Arbois', 'The northern commune appellation.'], ['Château-Chalon', 'Vin Jaune alone.']] },
+  places: [{ name: 'Arbois', note: 'The northern capital of Jura wine.' }, { name: 'Château-Chalon', note: 'A hilltop village whose appellation is Vin Jaune alone.' }, { name: 'L’Étoile', note: 'A village named for its star-shaped fossils.' }],
+  exam: ['Vin Jaune: Savagnin, the veil and the clavelin.'], traps: ['Vin Jaune is not a fortified wine.'],
+  cards: [{ f: 'Vin Jaune\'s grape', b: 'Savagnin alone.' }], questions: []
+};
+function offMapFixture() {
+  const idxText = fs.readFileSync(path.join(JS, 'data-regions.js'), 'utf8');
+  const c = vm.createContext({});
+  vm.runInContext(idxText, c);
+  const R = JSON.parse(JSON.stringify(c.REGIONS));
+  const real = R.regions.filter((r) => r.mapless || typeof r.index !== 'number');
+  if (real.length) return { slug: real[0].slug, shipped: real.map((r) => r.slug), fixture: {} };
+  let full = null;
+  const staging = path.join(ROOT, '.scripts', 'regions', 'staging');
+  if (fs.existsSync(staging)) {
+    for (const d of fs.readdirSync(staging).sort()) {
+      const f = path.join(staging, d, 'france.more.json');
+      if (!full && fs.existsSync(f)) { try { full = (JSON.parse(fs.readFileSync(f, 'utf8')).regions || []).filter((r) => r && r.slug === 'jura')[0] || null; } catch (e) { full = null; } }
+    }
+  }
+  const from = full ? 'the staged Jura' : 'the short fixture record';
+  full = JSON.parse(JSON.stringify(full || SYNTH));
+  full.places = (full.places || []).map((p) => p);
+  const INDEX = ['asked', 'cards', 'index', 'mapless', 'name', 'questions', 'sheet', 'slug', 'summary'];
+  const rec = {};
+  INDEX.forEach((k) => { if (full[k] !== undefined) rec[k] = full[k]; });
+  rec.mapless = 1;
+  delete rec.index;
+  rec.grapes = (full.grapes || []).map((g) => ({ name: g.name, role: g.role }));
+  let last = -1;
+  R.regions.forEach((r, i) => { if (r.sheet === 'france') last = i; });
+  R.regions.splice(last + 1, 0, rec);
+  R.countries.france.regionsOrder = (R.countries.france.regionsOrder || []).concat([rec.slug]);
+  const head = idxText.slice(0, idxText.indexOf('var REGIONS'));
+  const fr = JSON.parse(fs.readFileSync(path.join(JS, 'regions', 'france.json'), 'utf8'));
+  const reading = {};
+  Object.keys(full).forEach((k) => { if (INDEX.indexOf(k) < 0) reading[k] = full[k]; });
+  fr.records[rec.slug] = reading;
+  return { slug: rec.slug, from, fixture: { 'data-regions.js': head + 'var REGIONS = ' + JSON.stringify(R) + ';\n', regions: { france: JSON.stringify(fr) } } };
+}
+
 async function main() {
   const A = await bootDevice();
   console.log('prove-course: ' + FILES.length + ' scripts, codex56 at ' + (FILES.indexOf('codex56.js') + 1) + ' after ' + FILES[FILES.indexOf('codex56.js') - 1]);
@@ -527,9 +578,35 @@ async function main() {
   check('a technique opened from Burgundy lights Wine Atlas and climbs back to Burgundy (kept for a reload)', tf.view === 'technique' && tf.lit === 'worldmap' && JSON.stringify(tf.parent) === JSON.stringify({ view: 'region', arg: 'burgundy' }) && /"region"/.test(tf.kept || ''), JSON.stringify(tf));
   check('the Workshop from the root\'s chip lights Wine Atlas and climbs to the root, a technique from there too', tf.root.view === 'techniques' && tf.root.lit === 'worldmap' && JSON.stringify(tf.root.parent) === JSON.stringify({ view: 'worldmap', arg: '' }) && tf.deeper.lit === 'worldmap' && JSON.stringify(tf.deeper.parent) === JSON.stringify({ view: 'worldmap', arg: '' }), JSON.stringify(tf.root));
   check('the Workshop from the Library is the Library\'s, as before (lit More, climbing to the Library)', tf.lib.view === 'techniques' && tf.lib.lit === 'more' && JSON.stringify(tf.lib.parent) === JSON.stringify({ view: 'library' }), JSON.stringify(tf.lib));
+
+  /* ================================================================ */
+  section('8. an article off the map');
+  const OFF = offMapFixture();
+  console.log('  ' + (OFF.shipped ? 'the shipped index carries ' + OFF.shipped.length + ' (' + OFF.shipped.join(', ') + ')' : 'a fixture copy of the index carries one, from ' + OFF.from) + ': ' + OFF.slug);
+  const F = await bootDevice({ fixture: OFF.fixture });
+  const off = OFF.slug;
+  const offRec = F.J('(function () { var a = v39Find(' + JSON.stringify(off) + '); return a ? { name: a.name, sheet: a.sheet, mapless: a.mapless, index: typeof a.index, map: !!v45Map(a.slug) } : null; })()');
+  check('the record is in the index: ' + JSON.stringify(offRec), !!offRec && offRec.mapless === 1 && offRec.index === 'undefined' && !offRec.map && F.G('v56OffMap(v39Find(' + JSON.stringify(off) + '))'));
+  const offHub = F.page('S.view = "worldmap"; S.wmap = null; worldMapView();');
+  drawn.push(['the root with an article off the map', offHub]);
+  const frGroup = offHub.slice(offHub.indexOf('data-v55-country="france"'), offHub.indexOf('</section>', offHub.indexOf('data-v55-country="france"')));
+  check('the root lists it under its country, its line saying its field map is to come (' + unesc((new RegExp('data-v55-count="' + off + '">([^<]*)<').exec(frGroup) || [])[1] || '') + ')', frGroup.indexOf('data-v39="region" data-slug="' + off + '"') > 0 && new RegExp('data-v55-count="' + off + '">[^<]*field map to come<').test(frGroup), frGroup.slice(-400));
+  const offAt = F.G('v56At("region", ' + JSON.stringify(off) + ')');
+  check('it takes its place in the course (step ' + (offAt + 1) + ' of ' + F.G('v56Course().length') + '), with Previous and Next', offAt >= 0 && F.G('!!v56Near("region", ' + JSON.stringify(off) + ').prev'), String(offAt));
+  await F.load(['france']);
+  const offPage = F.page('S.view = "region"; S._v39region = ' + JSON.stringify(off) + '; v39RegionView();');
+  drawn.push([off + ', off the map', offPage]);
+  const at8 = (x) => offPage.indexOf(x);
+  check('its page shows France\'s sheet with a line that its field map is to come', offPage.indexOf('class="v55-mapfig v55-sheetfig" data-v55-sheet="france"') > 0 && offPage.indexOf('The field map of ' + offRec.name + ' is to come.') > 0 && at8('class="v55-map"') > at8('v56-minute-h"') && at8('class="v55-map"') < at8('<section class="v55-districts"'), offPage.slice(at8('class="v55-map"'), at8('class="v55-map"') + 300));
+  const offRow = (/<nav class="v56-srow v56"[^>]*>([\s\S]*?)<\/nav>/.exec(offPage) || ['', ''])[1];
+  check('its study row: ' + attr(offRow, />([^<]+)<\/button>/g).join(', ') + ' (a Map, no Map quiz)', attr(offRow, />([^<]+)<\/button>/g)[1] === 'Map' && offRow.indexOf('data-go="v56mapquiz"') < 0, offRow.slice(0, 300));
+  check('its districts and In one minute come from its reading', offPage.indexOf('id="v55-districts-h"') > 0 && offPage.indexOf('<dt>The climate</dt>') > 0, '');
+  const offCountry = F.page('S.view = "country"; S._v39country = "france"; v39CountryView();');
+  check('France\'s country page lists it with the line field map to come', new RegExp('data-v55-count="' + off + '">[^<]*field map to come<').test(offCountry));
+  F.G('S.view = "home";');
 }
 
-main().then(() => {
+if (require.main !== module) { module.exports = { offMapFixture }; } else main().then(() => {
   console.log('');
   if (failed) { console.log('prove-course: ' + failed + ' of ' + (passed + failed) + ' checks FAILED'); process.exit(1); }
   console.log('prove-course: all ' + passed + ' checks passed');
