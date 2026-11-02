@@ -1,0 +1,51 @@
+{
+  "chunk": "c1",
+  "sheet": "france",
+  "file": ".scripts/regions/staging/c1/france.more.json",
+  "check": "check-fragment reports one problem per article and nothing else: regions[i].deeper is required for an article off the map. This edition writes no deeper list (the task's rule), so check-fragment needs its .more rule relaxed by the integrator before the file can pass; every other rule passes, with no superlative note.",
+  "cms": "No CMS subject writes a row for the Jura, Savoie or Bugey (searched all of .scripts/cms/subjects). The rows that touch them are covered in prose: world-sparkling-wines (Crémant as traditional method French sparkling wine outside Champagne), fortified-wines (flor, biological against oxidative ageing, set beside vin jaune), vinification (reductive against oxidative, as ouillé against sous voile) and viticulture (altitude and the diurnal range as climate moderators, in Savoie). The Codex's own Village primer and bank for Jura, Savoie and Corsica agree with both articles.",
+  "articles": [
+    {
+      "slug": "jura",
+      "name": "Jura",
+      "words": { "prose": 1314, "untaggedPlaces": 161, "taggedPlaces": 78 },
+      "cards": 10,
+      "cardsTagged": 2,
+      "questions": 8,
+      "questionsTagged": 2,
+      "multipleChoice": 4,
+      "sources": 4,
+      "searches": 3,
+      "techniques": ["sous-voile", "oxidative-rancio", "dried-grapes", "traditional-method", "organic-biodynamic", "soils-drainage", "frost"],
+      "uncertain": [
+        "INAO has open amendments: Côtes du Jura (homologated 20 September 2022) and Arbois are due for revision, Macvin du Jura went to opposition in June 2024, Château-Chalon in February 2026 and Crémant du Jura after the national committee of 18 June 2026. Their contents could not be read (the INAO extranet is not reachable from this session), so no change is claimed.",
+        "Crémant du Jura had its minimum ageing cut to 11 months for tirages of 1 December 2023 to 30 November 2024 (INAO permanent committee, 6 February 2024); left out as temporary.",
+        "Vin de paille: six weeks of drying and release three years after harvest are kept, as the Codex's own banks give them; the 18 months in wood and the must and alcohol figures are left out, unconfirmed.",
+        "Macvin du Jura: no figures given for the marc's age or the time in cask.",
+        "Founding dates for the Fruitière Vinicole d'Arbois, Henri Maire and Domaine de la Pinte left out; only Domaine du Pélican's 2012 is given (WINE_PRODUCERS and the house pack).",
+        "Producers whose trading names carry a living person's name (Macle, Ganevat, Overnoy, Tissot, Puffeney, Berthet-Bondet) are left out on purpose."
+      ]
+    },
+    {
+      "slug": "savoie",
+      "name": "Savoie and Bugey",
+      "words": { "prose": 1338, "untaggedPlaces": 201, "taggedPlaces": 215 },
+      "cards": 10,
+      "cardsTagged": 2,
+      "questions": 8,
+      "questionsTagged": 2,
+      "multipleChoice": 5,
+      "sources": 6,
+      "searches": 4,
+      "techniques": ["altitude-diurnal", "ancestral-method", "traditional-method", "soils-drainage", "frost", "steep-slopes"],
+      "uncertain": [
+        "The regional AOC is written Vin de Savoie or Savoie (the INAO file name and the interprofession agree); one secondary source dates the current text to an order of 14 June 2023, unconfirmed on an official site, so no change date is claimed.",
+        "Crémant de Savoie: sources give 2014 for the appellation and December 2015 for the first wines; 2014 is used. The 60 per cent floor for Jacquère and Altesse is consistent across sources; the 40 per cent Jacquère floor rests on one source and is left out.",
+        "Roussette de Savoie's single-grape rule is stated without a date (one source gives the 1999 vintage).",
+        "Vin de Savoie and Roussette de Savoie AOC dates (often given as 1973) left out, unconfirmed.",
+        "Crépy's history as a separate AOC before it became a cru could not be confirmed and is not stated.",
+        "Ayze's minimum share of Gringet (one source: 50 per cent) is left out."
+      ]
+    }
+  ]
+}
