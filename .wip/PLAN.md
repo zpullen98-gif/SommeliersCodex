@@ -33,3 +33,8 @@ Between about 11:00 on 1 Nov and 01:29 on 2 Nov the cloud container was reclaime
 - **Repo access in a fresh container:** add_repo may need the owner's approval for push access.
 - **Playwright revision:** /opt holds one Chromium; a revision mismatch is fixed by a symlinked browsers path, never by installing another.
 - **ChatGPT may have pushed since 31 Oct:** R0 fetches every remote first and merges anything new (merge commit), before the WIP branches start.
+
+## Running (2 Nov 2026, 01:55 UTC)
+- R0 done: Codex cloned at 680a33c, WorldTable at 05991cc (npm ci done); branches codex54-wip and card-sale-wip pushed; the plan, the three workflows and the helpers committed to codex54-wip under .wip/ (9209a89); Playwright runs on /opt's Chromium 1243 through scratchpad/pw symlinks named 1234. The Ledger could not be attached (the permission checker refused add_repo); it is public and is cloned read only by the site agent. The Codex remote now answers at github.com/zpullen98-gif/SommeliersCodex (a redirect; pushes work).
+- R1 the layer: run wf_555977c1-000 (scratchpad/card/layer.workflow.js, a copy of .wip/layer.workflow.js). R2 the sale: run wf_907d60de-41b (scratchpad/card/sale.workflow.js). Resume either with its run id; if the scratchpad is gone, copy the scripts from .wip on the pushed codex54-wip branch first.
+- R3 when both report: scratchpad/card/publish.workflow.js (copy of .wip/publish.workflow.js).
