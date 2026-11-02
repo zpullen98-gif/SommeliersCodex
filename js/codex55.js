@@ -253,3 +253,94 @@ if (typeof v25Nav === 'function') {
     v32Go(word === 'worldmap' ? { view: 'worldmap', arg: '' } : { view: 'more' }, 'push');
   };
 }
+
+/* =========== 3. the owners, the parents and the lit word =========== */
+
+(function () {
+  var tables = [];
+  if (typeof V32_OWNER !== 'undefined' && V32_OWNER) tables.push(V32_OWNER);
+  if (typeof V25_UNDER !== 'undefined' && V25_UNDER) tables.push(V25_UNDER);
+  if (typeof V25_HUB !== 'undefined' && V25_HUB) tables.push(V25_HUB);
+  /* every view the Library owned is More's now, key by key */
+  tables.forEach(function (t) {
+    Object.keys(t).forEach(function (k) { if (t[k] === 'library') t[k] = 'more'; });
+  });
+  /* the six atlas views are the Wine Atlas's again */
+  V55_ATLAS_VIEWS.forEach(function (k) { tables.forEach(function (t) { t[k] = 'worldmap'; }); });
+  if (typeof V25_AREA !== 'undefined' && V25_AREA) {
+    Object.keys(V25_AREA).forEach(function (k) { if (V25_AREA[k] === 'library') V25_AREA[k] = 'more'; });
+    V25_AREA.worldmap = 'worldmap';
+    V25_AREA.regions = 'worldmap';
+    V25_AREA.fieldatlas = 'worldmap';
+    V25_AREA.v55lib = 'more';
+  }
+  if (typeof V32_PARENT !== 'undefined' && V32_PARENT) {
+    V32_PARENT.worldmap = 'home';
+    V32_PARENT.regions = 'worldmap';
+    V32_PARENT.fieldatlas = 'worldmap';
+    V32_PARENT.library = 'more';
+  }
+})();
+
+/* A region's deck, its cards and a region drill are the atlas's content, so
+   they light Wine Atlas wherever they were opened from (codex54's rule for a
+   grape deck); every other screen that lit Library lights More. */
+function v55DeckId() {
+  var v = S.view;
+  if (v === 'deck') return String(S._v32deck || '');
+  if (v === 'housedeck' || v === 'flash') { var run = S._v32run; return (run && run.v32) ? String(run.deckId || '') : ''; }
+  return '';
+}
+function v55RegionDeck(id) { return !!id && typeof V39_DECK_RE !== 'undefined' && V39_DECK_RE && V39_DECK_RE.test(String(id)); }
+function v55RegionRun() {
+  var v = S.view;
+  if (v !== 'quiz' && v !== 'results') return false;
+  var first = S.pool && S.pool[0];
+  var section = (typeof v39W === 'function') ? v39W('drillSection') : 'The regions';
+  return String(S.section || '') === section && !!first && typeof v39IsOwnId === 'function' && v39IsOwnId(String(first.id || ''));
+}
+if (typeof v25NavWord === 'function') {
+  var _v55NavWord = v25NavWord;
+  v25NavWord = function () {
+    try { if (v55RegionDeck(v55DeckId()) || v55RegionRun()) return 'worldmap'; } catch (e) { }
+    var word = _v55NavWord.apply(this, arguments);
+    return word === 'library' ? 'more' : word;
+  };
+}
+
+/* Back at depth 0: the atlas root to Home, a sheet and the regions index to
+   the root, the Library to More, a region's deck to its region, a sheet's
+   deck to its country and the deck of every region to the root. */
+if (typeof v32ParentRoute === 'function') {
+  var _v55ParentRoute = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      var v = S.view;
+      if (v === 'worldmap') return S.wmap ? { view: 'worldmap', arg: '' } : { view: 'home' };
+      if (v === 'regions') return { view: 'worldmap', arg: '' };
+      if (v === 'library') return { view: 'more' };
+      if (v === 'deck') {
+        var m = (typeof V39_DECK_RE !== 'undefined' && V39_DECK_RE) ? V39_DECK_RE.exec(String(S._v32deck || '')) : null;
+        if (m) {
+          if (m[3] && typeof v39Find === 'function' && v39Find(m[3])) return { view: 'region', arg: m[3] };
+          if (m[3] && typeof v39Country === 'function' && v39Country(m[3])) return { view: 'country', arg: m[3] };
+          if (m[2] && typeof v39SheetCountry === 'function') {
+            var c = v39SheetCountry(m[2]);
+            if (c && typeof v39CountryKey === 'function') return { view: 'country', arg: v39CountryKey(c) };
+          }
+          if (m[1] === 'regions') return { view: 'worldmap', arg: '' };
+        }
+      }
+    } catch (e) { }
+    return _v55ParentRoute.apply(this, arguments);
+  };
+}
+
+/* The root's name in the main landmark. */
+if (typeof v25MainName === 'function') {
+  var _v55MainName = v25MainName;
+  v25MainName = function () {
+    if (S && S.view === 'worldmap' && !S.wmap) return v55W('hubH');
+    return _v55MainName.apply(this, arguments);
+  };
+}
