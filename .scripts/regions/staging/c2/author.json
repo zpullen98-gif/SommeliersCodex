@@ -2,12 +2,53 @@
   "chunk": "c2",
   "sheet": "france",
   "file": ".scripts/regions/staging/c2/france.more.json",
-  "check": "check-fragment reports one problem per article and nothing else: regions[i].deeper is required for an article off the map. This edition writes no deeper list (the task's rule, as in c1), so the integrator relaxes that .more rule; every other rule passes, with no superlative note.",
+  "check": "check-fragment reports one problem per article and nothing else: regions[i].deeper is required for an article off the map. This edition writes no deeper list (the task's rule, as in c1), so the integrator relaxes that .more rule; every other rule passes, with no superlative note. Not deepened, each article is held to the one prose total (800 to 1,800 words, every place note counted), 6 to 14 cards and 6 to 12 questions with at least 3 multiple choice.",
+  "cms": "south-france (the Court's pages 23 to 25, Certified only) writes two columns for this chunk, Southwest France and Dordogne, and every row is covered: the location (south of Bordeaux, north of the Languedoc, the Pyrenees; Bergerac south-east of the Right Bank on the Dordogne, which flows west from the Massif Central), the continental climate category, the Pyrenees and landlocked, the white grapes Petit and Gros Manseng, the reds Cabernet Sauvignon, Merlot, Cot (Malbec) and Tannat, the AOPs Cahors, Madiran, Jurançon (Blanc Sec dry, Blanc called off-dry by the Court, named in traps), Bergerac (whites Sémillon, Sauvignon Blanc, Sauvignon Gris, Muscadelle; reds Cabernet Sauvignon, Cabernet Franc, Cot, Merlot) and Monbazillac (botrytis sweet), the history line (vines since about 125 BC) and both pairing rows. No CMS subject writes a row for Corsica; the Codex's own Village, Advanced and Master primers (Jura, Savoie and Corsica) agree with the article.",
+  "aliases": "Every roster alias is claimed except 'south west france', which check-fragment refuses because it names a country as a whole word; the article's own name, South West France, resolves without an alias. Added: jurancon sec, cotes de bergerac, pecharmant, saussignac, montravel, cotes de montravel, haut montravel, cotes de duras, cotes du marmandais, bearn, gascony, comte tolosan, entraygues le fel, estaing, cotes de millau, floc de gascogne; for Corsica coteaux du cap corse, ile de beaute and the four zones written after Corse and Vin de Corse. Not claimed: armagnac (france.1.json sends it to the country) and dordogne (france.3.json sends it to bordeaux).",
   "articles": [
     {
       "slug": "south-west-france",
       "name": "South West France",
-      "status": "written; Corsica follows"
+      "words": { "prose": 1605, "untaggedPlaces": 219, "taggedPlaces": 219 },
+      "cards": 10,
+      "cardsTagged": 2,
+      "questions": 8,
+      "questionsTagged": 2,
+      "multipleChoice": 5,
+      "sources": 8,
+      "searches": 3,
+      "techniques": ["noble-rot", "late-harvest", "ancestral-method", "extraction", "oak", "blending-assemblage", "frost"],
+      "uncertain": [
+        "Madiran: the cahier des charges was homologated again by the order of 26 November 2025 (BO Agri, 11 December 2025), naming Tannat as the main grape and Cabernet Franc, Cabernet Sauvignon, Fer and Manseng Noir as accessory grapes. Whether that text keeps the earlier rule (Tannat 60 to 80 per cent of a grower's Madiran vineyard, in the 2017 and 2023 texts) could not be read, so no Tannat figure is given; whether Manseng Noir is new in 2025 is not claimed.",
+        "Cahors: no amendment from 2020 to 2026 was found; red only and at least 70 per cent Malbec, with Merlot and Tannat, are as every source gives them. The colours of the IGP wines made in the same area are not stated.",
+        "Fronton: the official text sets Négrette at 51 per cent or more of the vineyard and at least 40 per cent of the blend, while the interprofession and secondary sources say 50 per cent; with the 2024 amendment project unread, the article says only that Négrette leads.",
+        "Marcillac's minimum share of Fer Servadou (often given as 90 per cent) was not confirmed and is written as almost wholly Fer Servadou.",
+        "Gaillac's cahier des charges was amended in 2025 (an INAO file of that year appeared in a search); its content was not read and no change is claimed.",
+        "Appellation dates given rest on the INAO cahiers and the reference works: Bergerac, Monbazillac and Jurançon 1936, Madiran 1948, Cahors 1971, Saint-Mont and Tursan 2011. Others (Pacherenc du Vic-Bilh, Irouléguy, Gaillac, Fronton, Marcillac, Buzet, Côtes de Duras, Floc de Gascogne) are left undated.",
+        "The Court files the South West as continental, though the reference works stress its Atlantic influence; the article gives the Court's category and the Atlantic nuance, and names the difference in traps.",
+        "Producers whose trading name holds a living person's full name are left out; Domaine Plageoles (a family surname) is kept, as c1 kept Domaine Labet."
+      ]
+    },
+    {
+      "slug": "corsica",
+      "name": "Corsica",
+      "words": { "prose": 1132, "untaggedPlaces": 101, "taggedPlaces": 111 },
+      "cards": 10,
+      "cardsTagged": 3,
+      "questions": 8,
+      "questionsTagged": 2,
+      "multipleChoice": 5,
+      "sources": 6,
+      "searches": 4,
+      "techniques": ["vin-doux-naturel", "rose-methods", "maritime-fog", "soils-drainage", "training-pruning", "heat-irrigation"],
+      "uncertain": [
+        "No amendment from 2020 to 2026 to the Corse or Vin de Corse, Patrimonio, Ajaccio or Muscat du Cap Corse texts was found (the last wine modification seen for Corse was requested in 2018, on the parcel area); the IGP Île de Beauté was not checked.",
+        "Vin de Corse's date is disputed (1972 attributed to INAO, 1976 elsewhere) and is left out; Coteaux d'Ajaccio in 1971 found no support, so Ajaccio is dated 1984, when INAO records its own appellation.",
+        "Muscat du Cap Corse is dated 1993; a written question in the Assemblée nationale records that the decree of 26 March 1993 was annulled by the Conseil d'État and reissued word for word on 19 November 1997. Not stated in the article.",
+        "Patrimonio's grape shares conflict between sources (Nielluccio at least 90 per cent of the red in one, a 2002 rule in another, 75 per cent for rosé in a third; white wholly Vermentino or at least 75 per cent), so no Patrimonio figure is given. Ajaccio's 40 per cent Sciaccarello rests on the 2011 and 2019 texts.",
+        "Rappu is said to be made from Aleatico; its other grapes and any rules are left out.",
+        "Domaine Antoine Arena (in WINE_PRODUCERS as p-arena) is left out because its trading name is a living person's full name; Domaine Comte Abbatucci is left out for the same doubt. Cap Corse Mattei is given as a house of the late nineteenth century, its founding year resting on the house pack alone."
+      ]
     }
   ]
 }

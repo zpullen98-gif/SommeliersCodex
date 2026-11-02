@@ -127,7 +127,7 @@
     {
      "style": "Monbazillac",
      "colour": "sweet",
-     "note": "Botrytised sweet white from Sémillon, Sauvignon and Muscadelle: apricot, honey and marmalade, a little lighter than Sauternes. Serve it with foie gras, peach or apricot tarts, caramel desserts and salty or creamy cheeses."
+     "note": "Botrytised sweet white from Sémillon, Sauvignon and Muscadelle: apricot, honey and marmalade, a little lighter than Sauternes. Serve it with foie gras or savoury dishes in a sweet sauce, desserts of peach, apricot, pear, apple, citrus or caramel, and salty or creamy cheeses."
     },
     {
      "style": "Bergerac Rouge",
@@ -380,7 +380,7 @@
     "Jurançon's sweetness is passerillage, not botrytis; Monbazillac's is botrytis.",
     "Côt and Auxerrois in Cahors are Malbec; the Auxerrois of Alsace is a different, white grape.",
     "Cahors is not Mendoza Malbec: expect earth, iron and firm tannin rather than soft, ripe plum.",
-    "Plain Jurançon is the sweet wine; the dry one says Sec on the label.",
+    "Plain Jurançon is the sweet one, off-dry in the Court's outline and gently to richly sweet in the glass; the dry wine says Sec on the label.",
     "Pacherenc du Vic-Bilh is the white of the Madiran zone, not a red.",
     "Bergerac is not Bordeaux: it sits upstream on the Dordogne in its own département with its own AOCs.",
     "Côtes de Gascogne is an IGP, not an AOC.",
@@ -694,6 +694,529 @@
     "blending-assemblage",
     "frost"
    ]
+  },
+  {
+   "slug": "corsica",
+   "name": "Corsica",
+   "sheet": "france",
+   "mapless": 1,
+   "asked": [
+    "certified",
+    "advanced",
+    "master"
+   ],
+   "summary": "Corsica is a French island of granite mountains in the Mediterranean, south-east of Provence, north of Sardinia and nearer to Tuscany than to mainland France. Centuries of Genoese rule left it Italian grapes under Corsican names: Nielluccio, genetically Sangiovese, leads Patrimonio on its pocket of limestone; Sciaccarello, pale and peppery, leads Ajaccio on granite; Vermentino makes the whites. Corse, or Vin de Corse, is the island-wide appellation, with five named zones, and Muscat du Cap Corse is a vin doux naturel from the northern peninsula. Rosé is the everyday wine, and the reds and whites carry the island's character.",
+   "terroir": {
+    "climate": "Mediterranean: hot, dry summers, mild winters and long hours of sunshine, with most rain falling in autumn and winter and far more of it in the mountains than on the coast. The sea tempers the coastal vineyards, while height brings cooler nights inland. Wind is constant, from the south-westerly libeccio to the mistral and the tramontane from the north, drying the vines and keeping rot away, though summer drought and fire are real hazards.",
+    "soils": "Three grounds divide the island. Granite runs through the west and south, under Ajaccio, Sartène, Figari, Porto-Vecchio and much of the Balagne around Calvi, giving light, well drained sandy soils. Schist forms the north-east, Cap Corse and the hills above the eastern coast. Around Patrimonio, in the Nebbio, lies a pocket of limestone and clay-limestone, the reason its Nielluccio is firmer and deeper. The eastern plain is alluvium, clay and sand.",
+    "topography": "A mountain in the sea: a spine of granite peaks above 2,000 metres runs north to south, falling steeply to the west coast in deep gulfs and more gently to the flat eastern plain. Vineyards ring the island close to the coast, on valley slopes, hill terraces and the plain, with few far inland. Cap Corse, the narrow peninsula pointing north towards the Ligurian coast, carries small vineyards on steep schist above the sea.",
+    "water": "The Mediterranean surrounds every vineyard and none lies far from it; sea breezes cool the coastal slopes at night. The Golo and the Tavignano cross the eastern plain, the Tavignano reaching the sea at Aléria, the old port of the Greek and Roman settlers."
+   },
+   "grapes": [
+    {
+     "name": "Sangiovese",
+     "role": "lead",
+     "styles": "Called Nielluccio, Niellucciu in Corsican: the lead grape of Patrimonio's firm, cherry and herb scented reds and of many rosés, at home on limestone and clay."
+    },
+    {
+     "name": "Sciaccarello",
+     "plain": 1,
+     "role": "lead",
+     "styles": "Sciaccarellu in Corsican, the same grape as Tuscany's Mammolo: pale, peppery reds of red berries and herbs from the granite of Ajaccio and Sartène, and fine rosé."
+    },
+    {
+     "name": "Vermentino",
+     "role": "lead",
+     "styles": "Vermentinu in Corsican and Rolle in Provence: the island's main white, citrus, fennel and almond with a saline edge, and a share of some rosés."
+    },
+    {
+     "name": "Muscat Blanc",
+     "role": "minor",
+     "styles": "Muscat Blanc à Petits Grains: the only grape of the vin doux naturel Muscat du Cap Corse."
+    },
+    {
+     "name": "Grenache / Garnacha",
+     "role": "blending",
+     "styles": "Widely planted for rosé and for supple Vin de Corse reds, beside the island grapes, with Cinsault, Carignan, Syrah and Mourvèdre as other partners."
+    },
+    {
+     "name": "Biancu Gentile",
+     "plain": 1,
+     "role": "rising",
+     "styles": "An old island white saved from near extinction, aromatic and full, now bottled alone or in blends by a growing number of estates."
+    },
+    {
+     "name": "Minustellu",
+     "plain": 1,
+     "role": "rising",
+     "styles": "A revived island red, the same grape as Spain's Graciano, giving colour and acidity to blends."
+    },
+    {
+     "name": "Aleatico",
+     "plain": 1,
+     "role": "minor",
+     "styles": "A scented red grape of Cap Corse, used for the sweet red called Rappu outside the appellation rules."
+    }
+   ],
+   "wines": [
+    {
+     "style": "Patrimonio Rouge",
+     "colour": "red",
+     "note": "Nielluccio from limestone: red and black cherry, dried herbs of the maquis and firm, fine tannin; it keeps several years. Serve it with lamb, wild boar or a cured Corsican sausage."
+    },
+    {
+     "style": "Patrimonio Blanc",
+     "colour": "white",
+     "note": "Vermentino with weight and a saline finish: citrus, white flowers and almond, for grilled fish, shellfish and fresh brocciu cheese."
+    },
+    {
+     "style": "Ajaccio Rouge",
+     "colour": "red",
+     "note": "Sciaccarello from granite: pale, perfumed and peppery, with red berries and herbs and light tannin. Serve it cool with charcuterie, roast poultry or tuna."
+    },
+    {
+     "style": "Vin de Corse Rosé",
+     "colour": "rose",
+     "note": "Pale, dry and crisp from Sciaccarello, Nielluccio and Grenache: red berries, citrus and herbs; the island's everyday wine for summer food."
+    },
+    {
+     "style": "Vin de Corse Blanc",
+     "colour": "white",
+     "note": "Vermentino from the granite of the south or the schist of the north: fresh, citrus and lightly floral, a glass for seafood and salads."
+    },
+    {
+     "style": "Muscat du Cap Corse",
+     "colour": "fortified",
+     "note": "A golden vin doux naturel: orange blossom, apricot, honey and grape, sweet but fresh. Serve it chilled as an aperitif or with fiadone, the island's cheesecake of brocciu."
+    }
+   ],
+   "made": {
+    "viticulture": "Old vines were trained as low bush vines, en gobelet, which shade their bunches and stand up to the wind; newer plantings are mostly on wires. The dry, windy summers keep mildew and rot down, so the challenges are drought, heat and fire, and growers on granite and schist pick early enough to hold acidity. In the 1960s and 1970s the eastern plain was planted with high-yielding vines for bulk wine, largely by settlers arriving from Algeria after 1962, and much of that vineyard was later pulled up. Since then the island has turned to its own grapes: growers and research collections have rescued old varieties such as Biancu Gentile and Minustellu, replanted Nielluccio and Sciaccarello on the slopes, and lowered yields. Picking is often by hand on the steep schist of Cap Corse and the granite slopes of the south.",
+    "winemaking": "Rosé, a large part of the crop, is made pale by direct pressing or a short maceration, fermented cool in steel and bottled young. Nielluccio's firm tannin calls for measured extraction and some time in tank or wood, and Patrimonio reds are made to age a few years. Sciaccarello, thin skinned and pale, is handled gently for perfume rather than colour. Vermentino is fermented cool, often kept on its fine lees for texture, and sometimes rested in large wood. Muscat du Cap Corse is a vin doux naturel: neutral grape spirit is added during fermentation, a step called mutage, which stops the yeast and keeps the grape's natural sugar and aroma. The island's aperitifs, such as Cap Corse quinquina, are aromatised wines of the same Muscat and Vermentino country, flavoured with cinchona bark and citrus."
+   },
+   "law": {
+    "classification": "Corsica follows French law, with four wine AOCs and an island IGP. Patrimonio, recognised in 1968, was the first Corsican appellation: red and rosé led by Nielluccio, white from Vermentino. Ajaccio became an appellation of its own in 1984, its red and rosé holding at least 40 per cent Sciaccarello. Corse, also written Vin de Corse, is the island-wide regional appellation in three colours, and five zones may add their names to it: Calvi, Sartène, Figari, Porto-Vecchio and Coteaux du Cap Corse. Muscat du Cap Corse, an AOC since 1993, is the vin doux naturel of the northern peninsula and the Patrimonio communes. Wine outside these rules, often varietal and including the island's international grapes, is sold as IGP Île de Beauté, while Rappu, the sweet red of Cap Corse, stays outside the appellations.",
+    "tiers": [
+     [
+      "Patrimonio",
+      "1968, the island's first AOC: Nielluccio red and rosé, Vermentino white, on limestone in the Nebbio."
+     ],
+     [
+      "Ajaccio",
+      "1984: red and rosé with at least 40 per cent Sciaccarello, and Vermentino white, on granite."
+     ],
+     [
+      "Corse or Vin de Corse",
+      "The island-wide regional AOC for red, rosé and white."
+     ],
+     [
+      "Vin de Corse with a named zone",
+      "Calvi, Sartène, Figari, Porto-Vecchio or Coteaux du Cap Corse after the regional name."
+     ],
+     [
+      "Muscat du Cap Corse",
+      "1993: vin doux naturel from Muscat Blanc à Petits Grains."
+     ],
+     [
+      "IGP Île de Beauté",
+      "The island IGP, for varietal and blended wines outside the appellation rules."
+     ]
+    ],
+    "labels": [
+     [
+      "Nielluccio or Niellucciu",
+      "The Corsican name for Sangiovese"
+     ],
+     [
+      "Sciaccarellu",
+      "The Corsican spelling of Sciaccarello"
+     ],
+     [
+      "Vermentinu",
+      "The Corsican name for Vermentino"
+     ],
+     [
+      "Vin doux naturel",
+      "A sweet wine whose fermentation is stopped with grape spirit"
+     ],
+     [
+      "Corse",
+      "The regional appellation, also written Vin de Corse"
+     ],
+     [
+      "Rappu",
+      "A sweet red of Cap Corse made outside the appellation rules"
+     ]
+    ]
+   },
+   "places": [
+    {
+     "name": "Patrimonio",
+     "note": "The Nebbio around the Gulf of Saint-Florent, west of Bastia, a pocket of limestone and clay-limestone on a granite island: Nielluccio reds and rosés and Vermentino whites."
+    },
+    {
+     "name": "Ajaccio",
+     "note": "Granite hills around the island's capital on the west coast, an appellation of its own since 1984: pale, peppery Sciaccarello reds and rosés and Vermentino whites."
+    },
+    {
+     "name": "Corse or Vin de Corse",
+     "note": "The island-wide appellation for red, rosé and white, from the island grapes with Grenache and other southern partners; five zones may add their names.",
+     "places": [
+      {
+       "name": "Calvi",
+       "note": "The Balagne in the north-west, granite hills between the mountains and the sea, for wines of all three colours.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Sartène",
+       "note": "Granite valleys in the south-west around the town of Sartène, home ground of Sciaccarello.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Figari",
+       "note": "A windswept granite plateau in the far south, between Sartène and Bonifacio.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Porto-Vecchio",
+       "note": "Granite slopes on the south-east coast behind the gulf, for Vermentino whites and Sciaccarello and Nielluccio reds.",
+       "depth": "advanced"
+      },
+      {
+       "name": "Coteaux du Cap Corse",
+       "note": "Schist slopes on the northern peninsula, for dry Vermentino whites and a few reds and rosés.",
+       "depth": "master"
+      }
+     ]
+    },
+    {
+     "name": "Muscat du Cap Corse",
+     "note": "The vin doux naturel of Muscat Blanc à Petits Grains from the schist of Cap Corse and the Patrimonio communes, an appellation since 1993."
+    },
+    {
+     "name": "The eastern plain",
+     "note": "The flat alluvial coast south of Bastia around Aléria, which Greek settlers from Phocaea founded in the sixth century BC: the island's volume vineyard, mostly Vin de Corse and IGP Île de Beauté.",
+     "depth": "advanced"
+    }
+   ],
+   "producers": [
+    {
+     "id": "p-canarelli",
+     "name": "Clos Canarelli",
+     "why": "A Figari estate on southern granite, a reference for the revival of the island's old grapes."
+    },
+    {
+     "name": "Domaine Leccia",
+     "why": "A family estate of Patrimonio, a clear example of Nielluccio from limestone."
+    },
+    {
+     "name": "Clos Capitoro",
+     "why": "A long-established estate near Ajaccio, a reference for Sciaccarello reds and rosés."
+    },
+    {
+     "name": "Clos Nicrosi",
+     "why": "An estate at Rogliano on Cap Corse, known for its Vermentino and Muscat du Cap Corse."
+    },
+    {
+     "name": "Domaine de Torraccia",
+     "why": "A Porto-Vecchio estate on granite, known for its Sciaccarello and Nielluccio reds and its Vermentino."
+    },
+    {
+     "name": "Cap Corse Mattei",
+     "why": "A Bastia house of the late nineteenth century whose quinquina aperitifs are made on Corsican Muscat and Vermentino wine."
+    }
+   ],
+   "exam": [
+    "Name the island's grapes and their other identities: Nielluccio is Sangiovese, Vermentino is Rolle in Provence, Sciaccarello is Tuscany's Mammolo.",
+    "Tie Patrimonio to Nielluccio on limestone and Ajaccio to Sciaccarello on granite.",
+    "Know Patrimonio as the first Corsican AOC, of 1968.",
+    "Know Muscat du Cap Corse as a vin doux naturel of Muscat Blanc à Petits Grains.",
+    "Know Corse or Vin de Corse as the regional AOC and its five named zones: Calvi, Sartène, Figari, Porto-Vecchio and Coteaux du Cap Corse.",
+    "Explain the Italian grapes by history: Genoa ruled the island for centuries before it passed to France in 1768.",
+    "Place the island: south-east of Provence, north of Sardinia, granite in the west and south, schist in the north-east."
+   ],
+   "traps": [
+    "Nielluccio is Sangiovese, not Nebbiolo, whatever the sound of the name.",
+    "Patrimonio's limestone is the exception on a granite island.",
+    "Sciaccarello is pale, but it is made and sold as a red as well as a rosé.",
+    "Muscat du Cap Corse is a vin doux naturel, stopped with spirit, not a late harvest wine.",
+    "Corsica is French: its wines carry AOC and IGP, never DOC, despite the Italian grapes.",
+    "Ajaccio is an appellation of its own, not a named zone of Vin de Corse."
+   ],
+   "say": [
+    [
+     "Corse",
+     "KORS"
+    ],
+    [
+     "Patrimonio",
+     "pah-tree-MOH-nyoh"
+    ],
+    [
+     "Ajaccio",
+     "ah-zhak-SYOH"
+    ],
+    [
+     "Nielluccio",
+     "nyel-LOO-choh"
+    ],
+    [
+     "Sciaccarello",
+     "shah-kah-REL-loh"
+    ],
+    [
+     "Vermentinu",
+     "ver-men-TEE-noo"
+    ],
+    [
+     "Biancu Gentile",
+     "BYAHN-koo jen-TEE-lay"
+    ],
+    [
+     "Minustellu",
+     "mee-noo-STEL-loo"
+    ],
+    [
+     "Mammolo",
+     "MAHM-moh-loh"
+    ],
+    [
+     "Calvi",
+     "kal-VEE"
+    ],
+    [
+     "Sartène",
+     "sar-TEN"
+    ],
+    [
+     "Figari",
+     "fee-gah-REE"
+    ],
+    [
+     "Porto-Vecchio",
+     "por-toh VEK-yoh"
+    ],
+    [
+     "Cap Corse",
+     "kap KORS"
+    ],
+    [
+     "Muscat du Cap Corse",
+     "mews-KAH dew kap KORS"
+    ],
+    [
+     "Nebbio",
+     "NEB-byoh"
+    ],
+    [
+     "Balagne",
+     "bah-LAHN-yuh"
+    ],
+    [
+     "Aléria",
+     "ah-LAY-ree-ah"
+    ],
+    [
+     "Rappu",
+     "RAHP-poo"
+    ],
+    [
+     "Brocciu",
+     "BROHT-choo"
+    ],
+    [
+     "Clos Canarelli",
+     "kloh kah-nah-REL-lee"
+    ],
+    [
+     "Cap Corse Mattei",
+     "kap KORS mah-TAY"
+    ]
+   ],
+   "cards": [
+    {
+     "f": "Nielluccio: its identity and its home appellation",
+     "b": "Genetically Sangiovese, Tuscany's grape. It leads the reds and rosés of Patrimonio, on limestone in the Nebbio."
+    },
+    {
+     "f": "Sciaccarello: its style and its appellation",
+     "b": "A pale, peppery red of red berries and herbs; it leads Ajaccio on granite, at least 40 per cent of the red and rosé, and the Sartène zone."
+    },
+    {
+     "f": "Corsica's main white grape and its other names",
+     "b": "Vermentino: Vermentinu in Corsican, Rolle in Provence. Citrus, fennel and almond with a saline edge."
+    },
+    {
+     "f": "Muscat du Cap Corse: what it is",
+     "b": "A vin doux naturel of Muscat Blanc à Petits Grains, its fermentation stopped with grape spirit; from Cap Corse and the Patrimonio communes, an AOC since 1993."
+    },
+    {
+     "f": "Patrimonio: its soil and its date",
+     "b": "A pocket of limestone and clay-limestone in the Nebbio on a granite island; Corsica's first AOC, recognised in 1968."
+    },
+    {
+     "f": "Corsica's three soils and where they lie",
+     "b": "Granite in the west and south (Ajaccio, Sartène, Figari, Porto-Vecchio, Calvi); schist in the north-east and on Cap Corse; limestone around Patrimonio."
+    },
+    {
+     "f": "Why Corsica grows Italian grapes",
+     "b": "Genoa ruled the island for centuries until it passed to France in 1768, and the vineyards kept Tuscan and Ligurian grapes under Corsican names."
+    },
+    {
+     "f": "Corse or Vin de Corse: its five named zones",
+     "b": "Calvi, Sartène, Figari, Porto-Vecchio and Coteaux du Cap Corse.",
+     "depth": "advanced"
+    },
+    {
+     "f": "Sciaccarello's Tuscan identity",
+     "b": "The same grape as Mammolo, a minor red of Tuscany, as DNA profiling has shown.",
+     "depth": "advanced"
+    },
+    {
+     "f": "Ajaccio: when it became an appellation of its own",
+     "b": "In 1984; its wines had been attached to Vin de Corse before then.",
+     "depth": "master"
+    }
+   ],
+   "questions": [
+    {
+     "cat": "Corsica",
+     "q": "Which grape is genetically identical to Corsica's Nielluccio?",
+     "opts": [
+      "Sangiovese",
+      "Nebbiolo",
+      "Grenache",
+      "Montepulciano"
+     ],
+     "a": 0,
+     "exp": "Nielluccio is Sangiovese, brought from Tuscany during the centuries of Genoese rule. Nebbiolo is a different Piedmontese grape despite the similar sound."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which red grape leads the wines of Ajaccio?",
+     "opts": [
+      "Sciaccarello",
+      "Nielluccio",
+      "Grenache",
+      "Carignan"
+     ],
+     "a": 0,
+     "exp": "Ajaccio's red and rosé hold at least 40 per cent Sciaccarello, pale and peppery from granite. Nielluccio leads Patrimonio, and Grenache and Carignan are southern partners."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which Corsican appellation was recognised in 1968 as the island's first AOC?",
+     "sa": 1,
+     "accept": [
+      "Patrimonio",
+      "Patrimonio AOC",
+      "Patrimonio AOP"
+     ],
+     "ans": "Patrimonio",
+     "exp": "Patrimonio, in the Nebbio west of Bastia, became Corsica's first appellation in 1968, for Nielluccio reds and rosés and Vermentino whites."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which soil sets Patrimonio apart from the granite and schist of most Corsican vineyards?",
+     "opts": [
+      "Limestone",
+      "Volcanic basalt",
+      "Slate",
+      "Alluvial gravel"
+     ],
+     "a": 0,
+     "exp": "Patrimonio sits on a pocket of limestone and clay-limestone, which gives its Nielluccio a firmer, deeper build than the granite reds of the south."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which grape variety makes the vin doux naturel Muscat du Cap Corse?",
+     "sa": 1,
+     "accept": [
+      "Muscat Blanc à Petits Grains",
+      "Muscat Blanc a Petits Grains",
+      "Muscat à petits grains",
+      "Muscat a petits grains",
+      "Muscat Blanc",
+      "Muscat"
+     ],
+     "ans": "Muscat Blanc à Petits Grains",
+     "exp": "Muscat du Cap Corse is made only from Muscat Blanc à Petits Grains, its fermentation stopped with grape spirit to keep the grape's sugar and aroma."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which grape is the main white variety of Corsica?",
+     "opts": [
+      "Vermentino",
+      "Ugni Blanc",
+      "Biancu Gentile",
+      "Muscat Blanc à Petits Grains"
+     ],
+     "a": 0,
+     "exp": "Vermentino, Vermentinu in Corsican, makes most of the island's white wine. Biancu Gentile is a revived rarity, Ugni Blanc a minor partner, and Muscat goes into the sweet Muscat du Cap Corse."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which named zone of Vin de Corse lies on a windswept granite plateau near Bonifacio, in the far south?",
+     "opts": [
+      "Figari",
+      "Calvi",
+      "Sartène",
+      "Coteaux du Cap Corse"
+     ],
+     "a": 0,
+     "depth": "advanced",
+     "exp": "Figari is the windswept granite plateau of the far south. Calvi lies in the north-west Balagne, Sartène in the south-west valleys, and Coteaux du Cap Corse on the northern schist."
+    },
+    {
+     "cat": "Corsica",
+     "q": "Which Tuscan grape is the same variety as Corsica's Sciaccarello?",
+     "sa": 1,
+     "accept": [
+      "Mammolo",
+      "Mammolo Nero"
+     ],
+     "ans": "Mammolo",
+     "depth": "advanced",
+     "exp": "DNA profiling has shown Sciaccarello to be Mammolo, a minor red grape of Tuscany, just as Nielluccio is Sangiovese."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Cahiers des charges of AOC Patrimonio, Ajaccio, Corse or Vin de Corse and Muscat du Cap Corse (INAO)",
+     "asOf": "2026",
+     "primary": 1
+    },
+    {
+     "title": "INAO, the product pages of the Corsican wine appellations (dates of recognition)",
+     "asOf": "2026",
+     "primary": 1
+    },
+    {
+     "title": "Agence du Tourisme de la Corse, a renowned terroir and wines with a strong identity",
+     "url": "https://www.visit-corsica.com/en/Explore-Corsica/Our-inspirations/Wine-inspirations/A-renowned-terroir-and-wines-which-have-a-strong-identity",
+     "asOf": "2026"
+    },
+    {
+     "title": "The Oxford Companion to Wine, fifth edition (Oxford University Press, 2023)",
+     "asOf": "2023"
+    },
+    {
+     "title": "The World Atlas of Wine, eighth edition (Mitchell Beazley, 2019)",
+     "asOf": "2019"
+    },
+    {
+     "title": "Wine Grapes (Penguin, 2012)",
+     "asOf": "2012"
+    }
+   ],
+   "techniques": [
+    "vin-doux-naturel",
+    "rose-methods",
+    "maritime-fog",
+    "soils-drainage",
+    "training-pruning",
+    "heat-irrigation"
+   ]
   }
  ],
  "aliases": {
@@ -727,6 +1250,26 @@
   "entraygues le fel": "south-west-france",
   "estaing": "south-west-france",
   "cotes de millau": "south-west-france",
-  "floc de gascogne": "south-west-france"
+  "floc de gascogne": "south-west-france",
+  "corsica": "corsica",
+  "corse": "corsica",
+  "patrimonio": "corsica",
+  "ajaccio": "corsica",
+  "vin de corse": "corsica",
+  "muscat du cap corse": "corsica",
+  "calvi": "corsica",
+  "sartene": "corsica",
+  "porto vecchio": "corsica",
+  "figari": "corsica",
+  "coteaux du cap corse": "corsica",
+  "ile de beaute": "corsica",
+  "vin de corse calvi": "corsica",
+  "vin de corse sartene": "corsica",
+  "vin de corse figari": "corsica",
+  "vin de corse porto vecchio": "corsica",
+  "corse calvi": "corsica",
+  "corse sartene": "corsica",
+  "corse figari": "corsica",
+  "corse porto vecchio": "corsica"
  }
 }
