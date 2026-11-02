@@ -152,7 +152,7 @@ var V55_WORDS = {
   techH: 'The techniques',
   subjectH: 'The Court’s subject',
   gridH: 'On the Court’s grid',
-  gridDoor: '{grape}, {region}',
+  gridDoor: '{grape}: {region}',
   grapesH: 'The grapes',
   studyH: 'Flashcards and drill',
   /* More and the Library */
@@ -733,5 +733,319 @@ if (typeof worldMapView === 'function') {
   worldMapView = function () {
     if (S.wmap && v55Sheet(S.wmap)) return _v55WorldMapView.apply(this, arguments);
     try { S.wmap = null; return v55HubView(); } catch (e) { return _v55WorldMapView.apply(this, arguments); }
+  };
+}
+
+/* =========== 6. the region page =========== */
+
+/* A field map's figure, drawn by codex45's own renderer: its map view is
+   built once with codex32's builder lent out for the string it is handed
+   (the view's image, hydration and storage passes find nothing to touch on
+   the stand in), and the figure is taken whole: the artwork as codex45
+   versions it, the enlarging viewer behind its button (codex45's document
+   listener answers data-v45 anywhere) and the image failure note. If that
+   string ever lacks a figure, the same figure is drawn from codex45's own
+   pieces. */
+function v55FieldFigure(m) {
+  if (!m) return '';
+  var html = '';
+  if (typeof v45MapView === 'function' && typeof v32Build === 'function') {
+    var build = v32Build, was = S._v45map;
+    try {
+      S._v45map = m.id;
+      v32Build = function (h) {
+        html = String(h || '');
+        return { querySelector: function () { return null; }, querySelectorAll: function () { return []; }, addEventListener: function () { } };
+      };
+      v45MapView();
+    } catch (e) { html = ''; }
+    finally { v32Build = build; S._v45map = was; }
+  }
+  var at = html.indexOf('<figure class="v45-figure">');
+  var end = at >= 0 ? html.indexOf('</figure>', at) : -1;
+  if (at >= 0 && end > at) return html.slice(at, end + '</figure>'.length);
+  if (typeof v45File !== 'function' || typeof v45Button !== 'function') return '';
+  return '<figure class="v45-figure"><button class="v45-image-open" type="button" data-v45="zoom" data-v45-arg="' + v55Esc(m.id) + '">'
+    + '<img src="' + v55Esc(v45File(m)) + '" width="1200" height="1500" alt="' + v55Esc(m.title) + '" data-v45-image decoding="async"></button>'
+    + '<figcaption>' + v45Button('Enlarge map', 'zoom', m.id) + '</figcaption></figure>';
+}
+/* The map's holder: the figure, the mark a district's button sets on it
+   (inert to the pointer, so the figure's own button stays whole), the map's
+   scope and the door to the field map screen (its notes, its sources and its
+   offline copy). */
+function v55MapHtml(m) {
+  var fig = v55FieldFigure(m);
+  if (!fig) return '';
+  return '<section class="v55-map" aria-labelledby="v55-map-h"><h2 class="v32-h2" id="v55-map-h">' + v55Esc(v55W('mapH')) + '</h2>'
+    + '<div class="v55-mapfig" data-v55-map="' + v55Esc(m.id) + '">' + fig
+    + '<div class="v55-pin" hidden aria-hidden="true"><span class="v55-pin-ring"></span><span class="v55-pin-tag"></span></div></div>'
+    + (v55Str(m.scope) ? '<p class="v45-scope v55-scope">' + v55Esc(m.scope) + '</p>' : '')
+    + '<div class="v45-actions v55-mapacts">' + (typeof v45Button === 'function' ? v45Button(v55W('fieldDoor'), 'map', m.id) : '') + '</div>'
+    + '<p class="sr-only" id="v55-pin-said" role="status" aria-live="polite"></p></section>';
+}
+/* No field map: a door to the region's sheet with its numbered row marked (codex39's map act). */
+function v55SheetDoorHtml(a) {
+  var c = (typeof v39CountryOf === 'function') ? v39CountryOf(a.sheet) : null;
+  var ok = c && !c.mapless && !a.mapless && typeof a.index === 'number' && isFinite(a.index) && a.index >= 0 && (typeof v39HasMap !== 'function' || v39HasMap(a.sheet));
+  if (!ok || typeof v39Btn !== 'function') return '';
+  var sheet = (typeof v39SheetName === 'function') ? v39SheetName(a.sheet) : a.sheet;
+  return '<section class="v55-map" aria-labelledby="v55-map-h"><h2 class="v32-h2" id="v55-map-h">' + v55Esc(v55W('mapH')) + '</h2><div class="v28-btnrow">'
+    + v39Btn('btn gold', 'map', ' data-sheet="' + v55Esc(a.sheet) + '" data-index="' + v55Esc(a.index) + '"', v55W('sheetDoor', { name: a.name, sheet: sheet })) + '</div></section>';
+}
+
+/* ----- the districts ----- */
+
+function v55PinHtml(pin, named) {
+  var line = '<span class="v55-dmap">' + v55Esc(v55W('onMapAt', { n: pin.n, kind: v55KindWord(pin.kind) })) + (pin.note ? ' ' + v55Esc(pin.note) : '') + '</span>';
+  var btn = '';
+  if (pin.x !== null && pin.y !== null) {
+    btn = '<button type="button" class="btn small ghost v55-pinbtn" data-v55="pin" data-pin="' + v55Esc(pin.n) + '" data-x="' + v55Esc(pin.x.toFixed(2)) + '" data-y="' + v55Esc(pin.y.toFixed(2)) + '"'
+      + ' data-name="' + v55Esc(pin.name) + '" aria-pressed="false" aria-label="' + v55Esc(v55W('pinAria', { name: pin.name })) + '">'
+      + v55Esc(named ? v55W('pinNamed', { name: pin.name }) : v55W('pin')) + '</button>';
+  }
+  return '<div class="v55-pinrow">' + line + btn + '</div>';
+}
+function v55NodeHtml(n) {
+  var depth = (typeof v39DepthWord === 'function') ? v39DepthWord(n.depth) : '';
+  var many = n.pins.length > 1;
+  var html = '<li class="v55-d" data-v55-place="' + v55Esc(n.name) + '"><div class="v55-dhead"><b class="v55-dname">' + v55Esc(n.name) + '</b>'
+    + (depth ? ' <span class="v39-depth">' + v55Esc(depth) + '</span>' : '') + '</div>';
+  if (n.note) html += '<p class="v55-dnote">' + v55Esc(n.note) + '</p>';
+  n.pins.forEach(function (pin) { html += v55PinHtml(pin, many || v55Fold(pin.name) !== v55Fold(n.name)); });
+  if (n.kids.length) html += '<ul class="v55-dlist v55-sub">' + n.kids.map(v55NodeHtml).join('') + '</ul>';
+  return html + '</li>';
+}
+function v55AlsoHtml(pin) {
+  return '<li class="v55-d v55-alsoitem" data-v55-place="' + v55Esc(pin.name) + '"><div class="v55-dhead"><b class="v55-dname">' + v55Esc(pin.name) + '</b></div>' + v55PinHtml(pin, false) + '</li>';
+}
+function v55DistrictsHtml(a, m, J) {
+  var ready = v55Ready(a);
+  if (!J.count && !J.pins.length) return '';
+  var html = '<section class="v55-districts" aria-labelledby="v55-districts-h"><h2 class="v32-h2" id="v55-districts-h" tabindex="-1">' + v55Esc(v55W('districtsH')) + '</h2>';
+  if (!ready) {
+    html += '<p class="v32-line">' + v55Esc(v55W('districtsWait')) + '</p>';
+    if (J.generic) html += '<p class="v32-line v55-dotkey">' + v55Esc(v55W('dotKey')) + '</p>';
+    return html + '<ul class="v55-dlist v55-also">' + J.also.map(v55AlsoHtml).join('') + '</ul></section>';
+  }
+  html += '<p class="v32-line">' + v55Esc(J.marked === 1 ? v55W('districtsLineOne', { n: J.count }) : v55W('districtsLine', { n: J.count, m: J.marked })) + '</p>';
+  if (J.deep && typeof v39W === 'function' && typeof v39LevelName === 'function') {
+    html += '<p class="v39-note v39-placeskey">' + v55Esc(v39W('placesKey', { advanced: v39LevelName('advanced'), master: v39LevelName('master') })) + '</p>';
+  }
+  if (J.generic) html += '<p class="v32-line v55-dotkey">' + v55Esc(v55W('dotKey')) + '</p>';
+  if (J.tree.length) html += '<ul class="v55-dlist">' + J.tree.map(v55NodeHtml).join('') + '</ul>';
+  if (J.also.length) {
+    html += '<h3 class="secgroup v32-gh" id="v55-also-h">' + v55Esc(v55W('alsoH')) + '</h3><p class="v32-line">' + v55Esc(v55W('alsoLine')) + '</p>'
+      + '<ul class="v55-dlist v55-also">' + J.also.map(v55AlsoHtml).join('') + '</ul>';
+  }
+  return html + '</section>';
+}
+
+/* ----- In the Codex ----- */
+
+/* The Court's subject for the region: codex54's rule, by the region's own name and country. */
+function v55Subject(a) {
+  if (typeof v54SubjectFor !== 'function' || !a) return null;
+  var c = (typeof v39CountryOf === 'function') ? v39CountryOf(a.sheet) : null;
+  try { return v54SubjectFor({ region: v55Str(a.name) + (c && c.name ? ', ' + c.name : '') }) || null; } catch (e) { return null; }
+}
+/* The Court's grid reads whose place is the region: each named place of a
+   read (split on commas and "and", a bracket's note left aside) resolved
+   with the read's country by codex39's own resolver, never by a near name. */
+function v55GridReads(a) {
+  var R = {};
+  try { R = (typeof v53GridReads === 'function') ? (v53GridReads() || {}) : ((typeof GRID_READS !== 'undefined' && GRID_READS) ? GRID_READS : {}); } catch (e) { R = {}; }
+  var out = [], seen = {};
+  if (!a || typeof v39SlugFor !== 'function') return out;
+  Object.keys(R).forEach(function (slug) {
+    var g = R[slug];
+    v55List(g && g.reads).forEach(function (read) {
+      var region = v55Str(read && read.region), country = v55Str(read && read.country);
+      if (!region) return;
+      var places = region.split(/,|\band\b/).map(function (p) { return p.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim(); }).filter(Boolean);
+      var hit = places.some(function (p) { return v39SlugFor(p + (country ? ', ' + country : '')) === a.slug; });
+      if (!hit) return;
+      /* one door a grape: the grid drill is one screen, its places named together */
+      if (!v55Own(seen, slug)) { seen[slug] = out.length; out.push({ slug: slug, grape: v55Str(g.name) || slug, places: [] }); }
+      var row = out[seen[slug]];
+      if (row.places.indexOf(region) < 0) row.places.push(region);
+    });
+  });
+  out.forEach(function (row) { row.region = v55And(row.places); });
+  return out;
+}
+function v55And(list) {
+  var l = v55List(list).filter(Boolean);
+  return l.length < 2 ? (l[0] || '') : l.slice(0, -1).join(', ') + ' and ' + l[l.length - 1];
+}
+/* The grapes' pages: each grape the reading names that the joined book of grapes knows. */
+function v55Grapes(a) {
+  var out = [], seen = {};
+  if (!a || typeof v53GrapeKey !== 'function') return out;
+  v55List(a.grapes).forEach(function (g) {
+    var name = v55Str(g && g.name);
+    var slug = name ? v53GrapeKey(name) : '';
+    if (!slug || seen[slug]) return;
+    if (typeof v53GrapeFind === 'function' && !v53GrapeFind(slug)) return;
+    seen[slug] = 1;
+    out.push({ slug: slug, name: (typeof v53GrapeName === 'function') ? v53GrapeName(slug) : name });
+  });
+  return out;
+}
+function v55Door(go, arg, label, id) {
+  return '<button type="button" class="btn ghost" data-go="' + v55Esc(go) + '" data-arg="' + v55Esc(arg) + '"' + (id ? ' id="' + v55Esc(id) + '"' : '') + '>' + v55Esc(label) + '</button>';
+}
+function v55CodexHtml(a, study) {
+  var groups = [];
+  var techs = [];
+  try { techs = (typeof v46For === 'function') ? v46For(a.slug) : []; } catch (e) { techs = []; }
+  if (techs.length && typeof v46Button === 'function') {
+    groups.push(['techH', 'v55-techs', '<div class="v46-links v55-doors">' + techs.map(function (t) { return v46Button(t.name, 'lesson', t.slug); }).join('') + '</div>']);
+  }
+  var subject = v55Subject(a);
+  if (subject && subject.id) groups.push(['subjectH', 'v55-subject', '<div class="v55-doors">' + v55Door('cmssubject', subject.id, v55Str(subject.name) || subject.id, 'v55-subject-door') + '</div>']);
+  var reads = v55GridReads(a);
+  if (reads.length) {
+    groups.push(['gridH', 'v55-grid', '<div class="v55-doors">' + reads.map(function (r) { return v55Door('griddrill', r.slug, v55W('gridDoor', { grape: r.grape, region: r.region })); }).join('') + '</div>']);
+  }
+  var grapes = v55Ready(a) ? v55Grapes(a) : [];
+  if (grapes.length) groups.push(['grapesH', 'v55-grapes', '<div class="v55-doors">' + grapes.map(function (g) { return v55Door('grape', g.slug, g.name); }).join('') + '</div>']);
+  if (study.length) groups.push(['studyH', 'v55-study', '<div class="v55-doors v39-acts">' + study.join('') + '</div>']);
+  if (!groups.length) return '';
+  return '<section class="v55-codex" aria-labelledby="v55-codex-h"><h2 class="v32-h2" id="v55-codex-h" tabindex="-1">' + v55Esc(v55W('codexH')) + '</h2>'
+    + groups.map(function (g) { return '<div class="v55-cgroup ' + g[1] + '"><h3 class="secgroup v32-gh">' + v55Esc(v55W(g[0])) + '</h3>' + g[2] + '</div>'; }).join('') + '</section>';
+}
+
+/* ----- the page ----- */
+
+var V55_HEAD_RE = /<div class="viewhead">[\s\S]*?<\/h2>(?:<div class="sub">[\s\S]*?<\/div>)?<\/div>(?:<p class="v39-lead">[\s\S]*?<\/p>)?/;
+function v55RegionHtml(a) {
+  var ready = v55Ready(a);
+  var part = (typeof v39PartName === 'function') ? v39PartName(a) : '';
+  var art = String(v39ArticleHtml(a, ready ? undefined : v39WaitHtml(part)) || '');
+  /* codex39's The places is folded into The districts; its flashcards and drill move to In the Codex */
+  art = art.replace(/<details class="v28-q v39-sec" id="v39-sec-places"[\s\S]*?<\/details>/, '');
+  art = art.replace(/<button type="button" class="v28-chip" data-v39="chip" data-sec="v39-sec-places">[^<]*<\/button>/, '');
+  var study = [];
+  art = art.replace(/<button type="button" class="[^"]*" data-v39="(?:flash|drill)" id="v39-act-(?:flash|drill)"[^>]*>[^<]*<\/button>/g, function (b) { study.push(b); return ''; });
+  art = art.replace('<div class="v28-btnrow v39-acts"></div>', '');
+  art = art.replace('<div class="v25page v39 v39-article"', '<div class="v25page v39 v39-article v55 v55-page v55-region"');
+  var m = v55FieldMap(a.slug);
+  var J = v55Join(a, m);
+  var top = (m ? v55MapHtml(m) : '') || v55SheetDoorHtml(a);
+  top += v55DistrictsHtml(a, m, J);
+  var head = V55_HEAD_RE.exec(art);
+  if (head) art = art.slice(0, head.index + head[0].length) + top + art.slice(head.index + head[0].length);
+  else art = art.replace(/(<div class="v25page[^>]*>)/, '$1' + top);
+  var codex = v55CodexHtml(a, study);
+  var acts = art.lastIndexOf('<div class="v28-btnrow v39-acts">');
+  if (acts >= 0) art = art.slice(0, acts) + codex + art.slice(acts);
+  else { var close = art.lastIndexOf('</div>'); art = close >= 0 ? art.slice(0, close) + codex + art.slice(close) : art + codex; }
+  return art;
+}
+function v55PageWire(box) {
+  if (typeof v45Images === 'function') { try { v45Images(box); } catch (e) { } }
+  if (typeof v31WireImages === 'function') { try { v31WireImages(box); } catch (e) { } }
+}
+function v55RegionView(a) {
+  V55.pin = null;
+  var ready = v55Ready(a);
+  if (!ready) { if (typeof v39Fetch === 'function') v39Fetch(v39PartName(a)); }
+  else if (typeof v39MarkRead === 'function') v39MarkRead(a.slug);
+  return v39Build(v55RegionHtml(a), v55PageWire);
+}
+if (typeof v39RegionView === 'function') {
+  var _v55RegionView = v39RegionView;
+  v39RegionView = function () {
+    var a = (typeof v39Find === 'function') ? v39Find(S._v39region) : null;
+    if (!a) return _v55RegionView.apply(this, arguments);
+    try { return v55RegionView(a); } catch (e) { return _v55RegionView.apply(this, arguments); }
+  };
+}
+
+/* ----- the mark on the map ----- */
+
+/* A district's button marks its point: the mark placed over the artwork by
+   the image's drawn box (the figure keeps the map whole with object-fit, so
+   the box may be wider than the map), the district lit, the map brought
+   into view and the mark said aloud. The mark follows the map on a resize. */
+function v55PinPlace(page) {
+  var p = V55.pin;
+  if (!p || !page) return false;
+  var holder = page.querySelector('.v55-mapfig');
+  var pin = holder ? holder.querySelector('.v55-pin') : null;
+  var img = holder ? holder.querySelector('img') : null;
+  if (!holder || !pin || !img || img.hidden) { if (pin) pin.hidden = true; return false; }
+  var r = img.getBoundingClientRect(), f = holder.getBoundingClientRect();
+  if (!r.width || !r.height) { pin.hidden = true; return false; }
+  var s = Math.min(r.width / V55_BOX.W, r.height / V55_BOX.H);
+  var left = r.left - f.left + (r.width - V55_BOX.W * s) / 2 + p.x * s;
+  var top = r.top - f.top + (r.height - V55_BOX.H * s) / 2 + p.y * s;
+  pin.style.left = left.toFixed(1) + 'px';
+  pin.style.top = top.toFixed(1) + 'px';
+  var tag = pin.querySelector('.v55-pin-tag');
+  if (tag) tag.textContent = p.n + ' · ' + p.name;
+  if (pin.classList) { if (left > f.width * 0.6) pin.classList.add('v55-pin-left'); else pin.classList.remove('v55-pin-left'); }
+  pin.hidden = false;
+  return true;
+}
+function v55PinShow(btn) {
+  var page = btn && typeof btn.closest === 'function' ? btn.closest('.v55-page') : null;
+  if (!page) return;
+  var n = btn.getAttribute('data-pin') || '', name = btn.getAttribute('data-name') || '';
+  Array.prototype.forEach.call(page.querySelectorAll('[data-v55="pin"][aria-pressed="true"]'), function (b) { b.setAttribute('aria-pressed', 'false'); });
+  Array.prototype.forEach.call(page.querySelectorAll('.v55-d.v55-here'), function (d) { d.classList.remove('v55-here'); });
+  btn.setAttribute('aria-pressed', 'true');
+  var li = btn.closest('.v55-d');
+  if (li) li.classList.add('v55-here');
+  V55.pin = { n: n, name: name, x: Number(btn.getAttribute('data-x')), y: Number(btn.getAttribute('data-y')) };
+  var said = page.querySelector('#v55-pin-said');
+  var placed = v55PinPlace(page);
+  if (said) said.textContent = placed ? v55W('pinSaid', { name: name, n: n }) : v55W('pinGone', { n: n });
+  if (!placed) return;
+  try {
+    var holder = page.querySelector('.v55-mapfig');
+    var img = holder.querySelector('img');
+    var r = img.getBoundingClientRect();
+    var vh = window.innerHeight || 0;
+    if (r.top < 56 || r.bottom > vh) window.scrollTo(0, Math.max(0, Math.round(r.top + (window.scrollY || window.pageYOffset || 0) - 64)));
+  } catch (e) { }
+}
+(function () {
+  if (typeof document === 'undefined' || !document || typeof document.addEventListener !== 'function') return;
+  document.addEventListener('click', function (e) {
+    var t = e && e.target;
+    var node = t && typeof t.closest === 'function' ? t.closest('[data-v55]') : null;
+    if (!node || node.disabled) return;
+    var act = node.getAttribute('data-v55');
+    if (act === 'pin') { if (typeof e.preventDefault === 'function') e.preventDefault(); v55PinShow(node); return; }
+    if (act === 'choose') { if (typeof e.preventDefault === 'function') e.preventDefault(); v55Choose(node); return; }
+  });
+  if (typeof window !== 'undefined' && window && typeof window.addEventListener === 'function') {
+    window.addEventListener('resize', function () {
+      try { if (V55.pin) v55PinPlace(document.querySelector('.v55-page')); } catch (e) { }
+    });
+  }
+})();
+
+/* ----- after every draw: the doors the region's own page now holds ----- */
+
+/* codex45 puts a door to the field map under the head of a region and a
+   country page (the map is on the page now, its field map door under it),
+   and codex46 its techniques there (In the Codex holds them, in codex46's
+   own v46-links box, so it adds none); the door is taken off a page this
+   layer drew. */
+function v55AfterDraw() {
+  if (S.view !== 'region' && S.view !== 'country') return;
+  if (typeof document === 'undefined' || !document) return;
+  var view = document.getElementById('view');
+  if (!view || typeof view.querySelector !== 'function' || !view.querySelector('.v55-page')) return;
+  Array.prototype.slice.call(view.querySelectorAll('.v45-door')).forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+}
+if (typeof render === 'function') {
+  var _v55Render = render;
+  render = function () {
+    var out = _v55Render.apply(this, arguments);
+    try { v55AfterDraw(); } catch (e) { }
+    return out;
   };
 }
