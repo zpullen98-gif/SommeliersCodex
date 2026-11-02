@@ -6,6 +6,13 @@ frameworks, no build step. Split from the single-file
 `Downloads/cms-certified-practice-exam_22_1.html` into this project (Aug 2026),
 then extended with the Intro import and authored Advanced/Master banks.
 
+**The owner's rule, 2 November 2026.** Outside Of Time is the owner's own study tool, never sold and used by the owner
+alone: the Codex carries no privacy policy, terms, pricing page, legal footer, disclaimer, paywall, subscription, account
+or permission gating, and none may be added. codex25's non-affiliation line (`V25_NONAFFIL`) stays a constant, since
+`check-home.js` reads it, and is drawn nowhere: codex54's section 15 makes `v25Colophon` draw nothing and takes the line
+out of codex32's More (its About group, which held it alone, leaves whole) and codex53's CMS root, and `check-card.js`
+holds home, the level page, the CMS root, the Library and More free of it.
+
 ## The review edition, 11 October 2026
 
 Every question of the four banks was read line by line (the Régionale and Village banks in their rewrite modules, the

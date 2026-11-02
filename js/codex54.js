@@ -70,6 +70,11 @@
       at display (quizView, resultsView, V32_WORDS, V39_WORDS, V42_PATHS,
       V27_SAY_NONE, v32CardFace). A row renamed without a new line keeps
       its old line.
+
+   8. THE OWNER'S RULE (section 15, 2 November 2026): the tool is the
+      owner's own, so codex25's non-affiliation line (V25_NONAFFIL, kept as
+      a constant) is drawn nowhere: v25Colophon draws nothing, and
+      v32MoreHtml and v53CmsRootHtml lose the line from their strings.
 */
 
 /* =========== 1. the words =========== */
@@ -1362,3 +1367,54 @@ if (typeof v32CardFace === 'function') {
     try { return v54NoCompare(html); } catch (e) { return html; }
   };
 }
+
+/* =========== 15. the owner's rule: no notice at display (2 November 2026) =========== */
+
+/* Outside Of Time is the owner's own study tool, never sold and used by the
+   owner alone, so it carries no disclaimer. codex25's V25_NONAFFIL line is kept as
+   the constant it is and drawn nowhere: codex25's colophon under the home
+   (v25Colophon) draws nothing and takes off one already drawn; codex32's
+   More (its About group, which held the line alone) and codex53's CMS root
+   lose the line from their strings. */
+function v54NoticeForms() {
+  var raw = (typeof V25_NONAFFIL === 'string') ? V25_NONAFFIL : '';
+  if (!raw) return [];
+  var out = [raw];
+  [typeof v32Esc === 'function' ? v32Esc : null, typeof v53Esc === 'function' ? v53Esc : null, v54Esc].forEach(function (f) {
+    try { var e = f ? String(f(raw)) : ''; if (e && out.indexOf(e) < 0) out.push(e); } catch (x) { }
+  });
+  return out;
+}
+function v54NoNotice(html) {
+  var s = String(html == null ? '' : html);
+  v54NoticeForms().forEach(function (n) {
+    s = s.replace(new RegExp('<p\\b[^>]*>\\s*' + n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*</p>', 'g'), '');
+  });
+  /* More's About group, left holding its heading alone, leaves whole */
+  return s.replace(/<section\b[^>]*aria-labelledby="v32-more-about"[^>]*>\s*<h3\b[^>]*>[^<]*<\/h3>\s*<\/section>/g, '');
+}
+function v54DropNotice(root) {
+  if (!root || typeof root.querySelectorAll !== 'function') return;
+  var forms = v54NoticeForms();
+  v54List(Array.prototype.slice.call(root.querySelectorAll('footer.colophon, .nonaffil, .v53-nonaffil') || [])).forEach(function (el) {
+    var t = String(el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (el.parentNode && (forms.indexOf(t) >= 0 || (/\bcolophon\b/.test(String(el.className || '')) && !t))) el.parentNode.removeChild(el);
+  });
+}
+if (typeof v25Colophon === 'function') {
+  var _v54Colophon = v25Colophon;
+  v25Colophon = function (app) {
+    try { v54DropNotice(app); } catch (e) { }
+  };
+}
+['v32MoreHtml', 'v53CmsRootHtml'].forEach(function (name) {
+  try {
+    var was = (name === 'v32MoreHtml') ? (typeof v32MoreHtml === 'function' ? v32MoreHtml : null) : (typeof v53CmsRootHtml === 'function' ? v53CmsRootHtml : null);
+    if (!was) return;
+    var wrapped = function () {
+      var html = was.apply(this, arguments);
+      try { return v54NoNotice(html); } catch (e) { return html; }
+    };
+    if (name === 'v32MoreHtml') v32MoreHtml = wrapped; else v53CmsRootHtml = wrapped;
+  } catch (e) { }
+});

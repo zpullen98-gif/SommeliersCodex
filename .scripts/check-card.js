@@ -39,7 +39,9 @@
  *   5. the flow: the question bank and #/quizzes; the Practise row; the
  *      Grapes Tasting section's four rows and no Blind flight door; the
  *      Library's and the level page's rows; Brennan's rooms; the parents
- *      table; the search groups; the stale words
+ *      table; the search groups; the stale words; the owner's rule (2
+ *      November 2026): codex25's notice shown on no screen (home and its
+ *      colophon, the level page, the CMS root, the Library, More)
  *   6. voice: every string codex54 draws (its words, the flow's pages
  *      whole, and on every card and flash face its own headings, eyebrows,
  *      disclosures, chips and buttons; the pack's fields are the house's,
@@ -695,6 +697,20 @@ async function main() {
   const faces = JSON.parse(G('JSON.stringify(v53GrapeJoin().list.filter(function (r) { return !r.g; }).map(function (r) { var d = v32DeckDef("grape:" + r.slug); var c = d.cards[0]; return c ? v32CardFace(c, { flip: true, dir: "n2p" }) : ""; }))'));
   check('the ' + synth.length + ' synthetic "No comparison is written" lines are dropped from the grape cards', synth.length > 0 && faces.every((f) => f && f.indexOf('No comparison is written') < 0 && f.indexOf('undefined') < 0), synth.length);
   check('Our List keeps its stored key (V27_CELLAR_SECTION)', G('V27_CELLAR_SECTION') === 'Our List');
+
+  /* the owner's rule (2 November 2026): the tool is the owner's own and carries no disclaimer, so codex25's
+     non-affiliation line, kept as a constant, is shown on no screen */
+  const NOTICE = String(G('typeof V25_NONAFFIL === "string" ? V25_NONAFFIL : ""'));
+  const noNotice = (html) => !!NOTICE && String(html || '').indexOf(NOTICE) < 0 && !/affiliated|endorsed/i.test(text(html));
+  const drawAs = (view, expr) => String(G('(function () { var w = S.view; S.view = ' + JSON.stringify(view) + '; try { return ' + expr + '; } finally { S.view = w; } })()') || '');
+  check('the notice is kept as codex25\'s constant (V25_NONAFFIL), so these checks have a line to look for', NOTICE.length > 40, NOTICE);
+  const SCREENS = { home: drawAs('home', 'v25HomeHtml()'), level: Hs.level, cms: drawAs('cms', 'v53CmsRootHtml()'), library: Hs.library, more: drawAs('more', 'v32MoreHtml()') };
+  console.log('  the notice on: ' + Object.keys(SCREENS).map((k) => k + ' ' + (noNotice(SCREENS[k]) ? 'no' : 'YES') + ' (' + SCREENS[k].length + ')').join(', '));
+  check('no screen shows the notice: home, the level page, the CMS root, the Library and More, each drawn whole', Object.keys(SCREENS).every((k) => SCREENS[k].length > 200 && noNotice(SCREENS[k])), Object.keys(SCREENS).filter((k) => !(SCREENS[k].length > 200 && noNotice(SCREENS[k]))).join(', '));
+  check('the CMS root keeps its exam day and its subjects', SCREENS.cms.indexOf('data-go="cmsday"') >= 0 && /cmssubject/.test(SCREENS.cms));
+  check('More drops its About group, which held the notice alone, and keeps Learning and help', SCREENS.more.indexOf('v32-more-about') < 0 && SCREENS.more.indexOf('v42-more-learning') >= 0);
+  const colo = G('(function () { var added = 0, removed = 0, out = { removeChild: function () { removed++; } }; var foot = { className: "colophon", textContent: V25_NONAFFIL, parentNode: out }; var p = { className: "nonaffil", textContent: V25_NONAFFIL, parentNode: foot }; foot.removeChild = function () { removed++; }; var app = { querySelector: function () { return null; }, querySelectorAll: function () { return [foot, p]; }, appendChild: function (c) { added++; return c; }, insertBefore: function (c) { added++; return c; } }; v25Colophon(app); return added + " " + removed; })()');
+  check('home\'s colophon (v25Colophon) draws nothing and takes off one already drawn', /^0 [12]$/.test(colo), colo);
 
   /* ================================================================ */
   section('6. voice');
