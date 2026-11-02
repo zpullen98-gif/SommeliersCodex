@@ -43,7 +43,7 @@ function check(name,value){assert.ok(value,name);checks++;console.log('  ok  '+n
       check(label+': startup replaces existing history entry',state.depth===0&&state.pushes===0);
       check(label+': correct complete screen renders',await d.page.locator('.v37-culinary').count()===1);
       check(label+': no script errors',d.errors.length===0);
-      await d.page.locator('#v32-back').click();check(label+': Back reaches Library without a push',(await d.read()).view==='library'&&(await d.read()).pushes===0);
+      await d.page.locator('#v32-back').click();check(label+': Back reaches Wine studies without a push (codex54: the companion is the house\'s, under Wine studies)',(await d.read()).view==='housestudies'&&(await d.read()).pushes===0);
       await d.context.close();
     }
     const unknown=await device('#/v/culinary/missing',true);check('unknown lesson falls back to overview',(await unknown.read()).hash==='#/v/culinary'&&await unknown.page.locator('.v37-lesson-card').count()===8);await unknown.context.close();

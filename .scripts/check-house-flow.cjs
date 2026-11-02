@@ -87,7 +87,7 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     check('opening a wine preserves its exact existing card address', await page.evaluate(id => location.hash.includes(id), firstId));
     check('three timed descriptions remain the canonical stored text', await page.evaluate(id => {
       const item = v28Find(v28House().wines, id), lines = v28LinesShown(item);
-      return document.querySelector('.v41-ten .v28-ten').textContent === lines.s10 && document.querySelector('#v28-s20').textContent === lines.s20 && document.querySelector('#v28-s45').textContent === lines.s45;
+      return document.querySelector('#v28-s10').textContent === lines.s10 && /* codex54: the ten stands At the table as #v28-s10, codex41's ten box folded into the card's one flow */ document.querySelector('#v28-s20').textContent === lines.s20 && document.querySelector('#v28-s45').textContent === lines.s45;
     }, firstId));
     check('wine detail retains producer, grape, service and teaching connections', await page.locator('.v38-who').count() > 0 && await page.locator('.v28-block').count() > 3);
     await back(page, 'brennans');

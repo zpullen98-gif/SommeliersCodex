@@ -72,11 +72,13 @@ await page.locator('#cf-in').fill('bordeaux');
 for(const kind of ['route','regionroute','grape','producer','chapter']) {
   const testQuery={route:'decanting',regionroute:'mendoza',grape:'pinot noir',producer:'chateau',chapter:'burgundy'}[kind];
   await page.locator('#cf-in').fill(testQuery);
-  const button=page.locator(`[data-v44-kind="${kind}"]`).first();
+  /* codex54: a grape hit opens the grape's page, a route to grape/{slug} */
+  const button=page.locator(kind==='grape'?'[data-v44-kind="route"][data-v44-arg="grape"]':`[data-v44-kind="${kind}"]`).first();
   assert(await button.count(),kind);
   const expected=await button.evaluate(b=>({...b.dataset}));
   await button.click();
   assert.notEqual(await page.evaluate(()=>S.view),'library',kind);
+  if(kind==='grape')assert.equal(await page.evaluate(()=>S.view),'grape','a grape hit opens the grape\'s page');
   results.push({kind,expected,route:await page.evaluate(()=>location.hash)});
   await page.locator('#v32-back').click();
   assert.equal(await page.evaluate(()=>S.view),'library',kind+' Back');
@@ -146,14 +148,17 @@ await page.locator('#v28-rows .v28-row[data-id="personal-search-test"]').click()
 assert.match(await page.locator('#view').innerText(),/Library sentinel/);
 await page.locator('#v32-back').click();
 await page.evaluate(()=>{ ST.cellar=ST.cellar.filter(w=>w.id!=='personal-search-test'); v32Go({view:'level'},'push'); });
-assert(await page.locator('#v32-q').count(),'Today search present');
-await page.locator('#v32-q').fill('decating');
-await page.locator('#v32-q').evaluate(e=>e.setSelectionRange(4,4));
-await page.locator('#v32-q').press('n');
-assert.equal(await page.locator('#v32-q').inputValue(),'decanting','midword typing caret retained');
-await page.locator('#v32-q-out [data-v44-kind="regionroute"][data-v44-arg="serviceref"][data-v44-extra="decanting"]').click();
+/* codex54: the level page carries no search box; the Library's is the one search, and it keeps the caret and Back */
+assert.equal(await page.locator('#v32-q').count(),0,'the level page has no search box');
+await page.evaluate(()=>v32Go({view:'library'},'push'));
+await page.waitForFunction(()=>S.view==='library');
+await page.locator('#cf-in').fill('decating');
+await page.locator('#cf-in').evaluate(e=>e.setSelectionRange(4,4));
+await page.locator('#cf-in').press('n');
+assert.equal(await page.locator('#cf-in').inputValue(),'decanting','midword typing caret retained');
+await page.locator('#cf-in-out [data-v44-kind="regionroute"][data-v44-arg="serviceref"][data-v44-extra="decanting"]').click();
 await page.locator('#v32-back').click();
-assert.equal(await page.locator('#v32-q').inputValue(),'decanting');
+assert.equal(await page.locator('#cf-in').inputValue(),'decanting');
 assert.equal(await page.evaluate(()=>JSON.stringify({q:ST.q,srs:ST.srs})),initialMarks);
 assert.deepEqual(errors,[]);
 console.log(JSON.stringify({counts,searches:results.length,errors,passed:true},null,2));

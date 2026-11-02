@@ -46,6 +46,19 @@ function check(name,pass){checks.push({name,pass:!!pass});assert.ok(pass,name);c
    check(label+' Back retains the exact state and score',await store()===before&&await page.evaluate(()=>S.pool===__atlasRefs.pool&&S._v32run===__atlasRefs.run&&V51_TARGET===__atlasRefs.target&&S._v25lt===__atlasRefs.report));
    check(label+' Back restores the visible opener focus',await page.waitForFunction(id=>document.activeElement&&document.activeElement.id===id,id).then(()=>true)&&await page.locator('#'+id).isVisible());
   }
+  /* codex54: a wine card's atlas door is a chip In the Codex, a button with no href, so the detour is read from where it lands */
+  async function detourDoor(door,expectedView,label){
+   const before=await store();await refs();
+   const dest=await door.getAttribute('data-v54-dest'),depth=await page.evaluate(()=>V32.d),open=await page.evaluate(()=>v28State().open);
+   check(label+' has a region or map door In the Codex',/^(region|map):[a-z0-9:-]+$/.test(dest||''));
+   await door.focus();await door.click();
+   const href=await page.waitForFunction(()=>/^#\/v\/(fieldmap|worldmap|country|region)\/[a-z0-9-]+$/.test(location.hash)&&location.hash).then(h=>h.jsonValue()).catch(()=>'');
+   check(label+' opens a canonical atlas destination',!!href,await page.evaluate(()=>location.hash));
+   check(label+' opens exactly one history entry without changing marks',await page.evaluate(d=>V32.d===d+1,depth)&&await store()===before);
+   await page.locator('#v32-back').click();await page.waitForFunction(v=>S.view===v,expectedView);
+   check(label+' Back reopens the same card with the marks unchanged',await store()===before&&await page.evaluate(id=>v28State().open===id,open));
+   check(label+' Back shows the door again',await page.locator('#v54-codex [data-v54-dest="'+dest+'"]:visible').count()===1);
+  }
   const known=await page.evaluate(()=>{
    applyLevel('certified',true);
    const q=v27CellarHouseQs().find(q=>q.id.endsWith('-serve')&&v52ForQuestion(q).some(t=>t.view==='fieldmap'));
@@ -105,8 +118,10 @@ function check(name,pass){checks.push({name,pass:!!pass});assert.ok(pass,name);c
   await page.evaluate(()=>{S._v25lt=null;S._fin=null;S.mode=null;});
 
   await page.evaluate(wine=>v32Go({view:'cellar',arg:wine},'push'),known.wine);
-  check('Brennan wine profile shows the atlas near its identity',await page.locator('.v28-card .v52-atlas-link:visible').count()>0||await page.locator('.v52-atlas-link:visible').count()>0);
-  await detour(page.locator('.v52-atlas-link:visible').first(),'cellar','Brennan wine profile');
+  /* codex54: the card carries its region or map door In the Codex; codex52's atlas box is hidden on the card */
+  const atlasDoor='#v54-codex [data-v54-dest^="region:"]:visible, #v54-codex [data-v54-dest^="map:"]:visible';
+  check('Brennan wine profile shows its region or map door In the Codex',await page.locator(atlasDoor).count()>0&&await page.locator('.v28-card .v52-atlas-link:visible').count()===0);
+  await detourDoor(page.locator(atlasDoor).first(),'cellar','Brennan wine profile');
   await page.evaluate(wine=>v32StartRun('list',{cards:v32HouseCards([wine]),keepOrder:true,push:true}),known.wine);
   check('wine flashcard front has no region answer links',await page.locator('.v52-atlas-link').count()===0);
   await page.locator('[data-v32="flip"]').first().click();await page.locator('.v49-learn > summary').click();
