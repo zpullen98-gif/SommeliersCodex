@@ -378,7 +378,7 @@ try { H = CH.loadChain(JS, { seed: { codexLevel: 'certified' } }); } catch (e) {
 if (H) {
   const { G, J, tryG } = H;
   const lastErr = () => H.last();
-  check('the chain index.html loads runs in the sandbox, data-cms.js, data-grid.js and codex53.js in it (' + H.files.length + ' scripts)', ['data-cms.js', 'data-grid.js', 'codex53.js'].every((f) => H.files.indexOf(f) >= 0));
+  check('the chain index.html loads runs in the sandbox, data-cms.js, data-grid.js, codex53.js and codex54.js in it (' + H.files.length + ' scripts)', ['data-cms.js', 'data-grid.js', 'codex53.js', 'codex54.js'].every((f) => H.files.indexOf(f) >= 0));
   tryG('applyLevel("certified", true)');
   const ids = J('v53Subjects().map(function (s) { return s.id; })') || [];
   check('v53Subjects() is CMS.subjects as built, in order (' + ids.length + ')', JSON.stringify(ids) === JSON.stringify(SUBJECTS.map((s) => s.id)), ids.join(', '));

@@ -605,7 +605,8 @@ function v54PartsHtml(C, open) {
 function v54FloorHtml(C) {
   var h = C.h, item = C.item;
   var l = v28LinesShown(item);
-  var body = l.guestShown ? v54Eyebrow(v54W('guide')) + '<p class="v54-guide">' + v54Esc(l.guest) + '</p>' : '';
+  /* the guide's line once: not when it is word for word a timed line At the table already says */
+  var body = l.guestShown && l.guest !== l.s10 && l.guest !== l.s45 ? v54Eyebrow(v54W('guide')) + '<p class="v54-guide">' + v54Esc(l.guest) + '</p>' : '';
   var floor = v28FloorBlock(h, item) || '';
   var m = /^<section class="v28-block"><h3 class="secgroup">[^<]*<\/h3>([\s\S]*)<\/section>$/.exec(floor);
   body += m ? m[1] : '';
