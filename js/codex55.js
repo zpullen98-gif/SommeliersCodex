@@ -344,3 +344,98 @@ if (typeof v25MainName === 'function') {
     return _v55MainName.apply(this, arguments);
   };
 }
+
+/* =========== 4. More and the Library =========== */
+
+/* More opens with The Library: one row a section of the Library page, each
+   opening the page at its heading (codex41's v41Jump, as the Library's own
+   chips do). The page keeps its address (#/library) and climbs to More. */
+var V55_LIB_ROWS = [['v53-practise-h', 'libPractise'], ['v53-bank-h', 'libBank'], ['v53-reading-h', 'libReading']];
+
+function v55Due() {
+  try { return (typeof v32DueToday === 'function') ? (Number(v32DueToday().total) || 0) : 0; } catch (e) { return 0; }
+}
+function v55LevelName() {
+  try { if (typeof v53Lv === 'function') return v53Lv().name; } catch (e) { }
+  try { if (typeof v32Lv === 'function') return v32Lv().name; } catch (e) { }
+  return 'Village';
+}
+function v55LibLine(key) {
+  if (key === 'libPractise') { var n = v55Due(); return n ? v55W('libPractiseDue', { n: n }) : v55W('libPractiseLine'); }
+  if (key === 'libBank') return v55W('libBankLine', { level: v55LevelName() });
+  return v55W('libReadingLine');
+}
+function v55LibraryGroupHtml() {
+  var rows = V55_LIB_ROWS.map(function (r) {
+    return '<li><button class="v25row" type="button" data-go="v55lib" data-arg="' + v55Esc(r[0]) + '" id="v55-lib-' + v55Esc(r[0].replace(/^v53-|-h$/g, '')) + '">'
+      + '<span class="v25row-name">' + v55Esc(v55W(r[1])) + '</span><span class="v25row-line">' + v55Esc(v55LibLine(r[1])) + '</span></button></li>';
+  }).join('');
+  return '<section class="v32-group v55-libgroup" aria-labelledby="v55-more-lib"><h3 class="secgroup v32-gh" id="v55-more-lib">' + v55Esc(v55W('libraryG')) + '</h3>'
+    + '<ul class="v25rows v32rows">' + rows + '</ul></section>';
+}
+function v55MoreShape(html) {
+  var s = String(html || '');
+  if (s.indexOf('v55-libgroup') >= 0) return s;
+  var head = (typeof v32Head === 'function' && typeof v32W === 'function') ? v32Head(v32W('moreH')) : '';
+  var at = head ? s.indexOf(head) : -1;
+  if (at >= 0) { at += head.length; return s.slice(0, at) + v55LibraryGroupHtml() + s.slice(at); }
+  var open = s.indexOf('>');
+  return open >= 0 ? s.slice(0, open + 1) + v55LibraryGroupHtml() + s.slice(open + 1) : s + v55LibraryGroupHtml();
+}
+if (typeof v32MoreHtml === 'function') {
+  var _v55MoreHtml = v32MoreHtml;
+  v32MoreHtml = function () {
+    var html = _v55MoreHtml.apply(this, arguments);
+    try { return v55MoreShape(html); } catch (e) { return html; }
+  };
+}
+if (typeof V25_GO !== 'undefined' && V25_GO) {
+  V25_GO.v55lib = function (to) {
+    if (typeof v32Go !== 'function') return;
+    v32Go({ view: 'library' }, 'push');
+    var id = String(to || '');
+    if (id && typeof v41Jump === 'function') { try { v41Jump(id); } catch (e) { } }
+  };
+}
+
+/* The Library loses its atlas section, its jump chip and its line's word
+   for it (the atlas is the tab now); the DOM pass takes off the atlas doors
+   the earlier layers put in it: codex39's regions door, codex45's field
+   atlas door and any World Map row. The Wine Workshop stays in the reading
+   rooms, where codex53 put it. */
+if (typeof V32_WORDS !== 'undefined' && V32_WORDS) {
+  V32_WORDS.libLine = v55W('libLine');
+  V32_WORDS.libLineAll = v55W('libLineAll');
+}
+function v55LibraryShape(html) {
+  var s = String(html || '');
+  s = s.replace(/<section class="v32-sec v53-atlas"[^>]*>[\s\S]*?<\/section>/, '');
+  s = s.replace(/<button type="button" class="v28-chip" data-v53="jump" data-to="v53-atlas-h">[^<]*<\/button>/, '');
+  s = s.replace(/<li><button class="v25row" type="button" data-go="worldmap"[\s\S]*?<\/li>/g, '');
+  return s;
+}
+if (typeof v32LibraryHtml === 'function') {
+  var _v55LibraryHtml = v32LibraryHtml;
+  v32LibraryHtml = function () {
+    var html = _v55LibraryHtml.apply(this, arguments);
+    try { return v55LibraryShape(html); } catch (e) { return html; }
+  };
+}
+function v55LibraryDom(view) {
+  if (!view || typeof view.querySelectorAll !== 'function') return;
+  ['.v53-atlas', '.v39-door-regions', '.v45-door', '[data-go="worldmap"]', '[data-v53="jump"][data-to="v53-atlas-h"]'].forEach(function (sel) {
+    Array.prototype.slice.call(view.querySelectorAll(sel)).forEach(function (n) {
+      var row = (sel === '[data-go="worldmap"]' && n.parentNode && n.parentNode.tagName === 'LI') ? n.parentNode : n;
+      if (row && row.parentNode) row.parentNode.removeChild(row);
+    });
+  });
+}
+if (typeof v32LibraryView === 'function') {
+  var _v55LibraryView = v32LibraryView;
+  v32LibraryView = function () {
+    var view = _v55LibraryView.apply(this, arguments);
+    try { v55LibraryDom(view); } catch (e) { }
+    return view;
+  };
+  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) V25_VIEWS.library = v32LibraryView;
+}
