@@ -13,7 +13,7 @@
 
      node .wip/prove-flow.cjs [--pack <file>] [--eval <expr>] [--show <name>]
 
-   --show prints one builder's HTML: bank, quizzes, practise, grapes,
+   --show prints one builder's HTML: bank, quizzes, flashcards, grapes,
    library, level, rehearsal, studies. Work in progress, kept on
    codex54-wip; never shipped. */
 'use strict';
@@ -186,7 +186,7 @@ const has = (list, f) => list.some(f);
 const BUILD = {
   bank: 'v53BankHtml()',
   quizzes: 'v32QuizzesHtml()',
-  practise: 'v32FlashcardsHtml()',
+  flashcards: 'v32FlashcardsHtml()',
   grapes: 'v53GrapesRootHtml()',
   library: 'v32LibraryHtml()',
   level: 'v32LevelHtml(activeLevel)',
@@ -203,7 +203,7 @@ const BUILD = {
   const n = D.G('(v28House() && v28House().wines || []).length');
   console.log('prove-flow: ' + FILES.length + ' scripts, codex54 at ' + (FILES.indexOf('codex54.js') + 1) + ', the house holds ' + n + ' wines, level ' + D.G('activeLevel'));
   if (EVAL) { console.log(D.G(EVAL)); return; }
-  const draw = (k) => { const prev = D.G('S.view'); D.G('S.view = ' + JSON.stringify(k === 'level' ? 'level' : k === 'practise' ? 'flashcards' : k === 'rehearsal' ? 'houserehearsal' : k === 'studies' ? 'housestudies' : k)); const html = String(D.G(BUILD[k]) || ''); D.G('S.view = ' + JSON.stringify(prev)); return html; };
+  const draw = (k) => { const prev = D.G('S.view'); D.G('S.view = ' + JSON.stringify(k === 'level' ? 'level' : k === 'rehearsal' ? 'houserehearsal' : k === 'studies' ? 'housestudies' : k)); const html = String(D.G(BUILD[k]) || ''); D.G('S.view = ' + JSON.stringify(prev)); return html; };
   if (SHOW) { console.log(draw(SHOW)); return; }
   const H = {};
   Object.keys(BUILD).forEach((k) => { H[k] = draw(k); });
@@ -239,12 +239,12 @@ const BUILD = {
   /* ---- the Practise root ---- */
   console.log('');
   console.log('--- the Practise root (#/practise) ---');
-  const P = rows(H.practise);
-  console.log('  ' + heads(H.practise).join(' | '));
+  const P = rows(H.flashcards);
+  console.log('  ' + heads(H.flashcards).join(' | '));
   check('the rounds row points at the bank', P.some((r) => /rounds$/.test(r.name) && /go=bank/.test(r.route)) && !goRow(P, 'quizzes').length);
   check('no grape deck on the Practise root (Grapes owns them)', !P.some(gdeck), P.filter(gdeck).map((r) => r.name).join(','));
   check('no Blind flight and no level test on the Practise root', !goRow(P, 'flight').length && !P.some((r) => /k=leveltest/.test(r.route)));
-  check('no empty group left (Reference cards leaves whole)', heads(H.practise).indexOf('Reference cards') < 0 && !/<section class="v32-group[^"]*"[^>]*><h3[^>]*>[^<]*<\/h3><\/section>/.test(H.practise));
+  check('no empty group left (Reference cards leaves whole)', heads(H.flashcards).indexOf('Reference cards') < 0 && !/<section class="v32-group[^"]*"[^>]*><h3[^>]*>[^<]*<\/h3><\/section>/.test(H.flashcards));
   check('Due today\'s button reads Start today’s questions', P.some((r) => r.name === 'Start today’s questions'));
 
   /* ---- 2. one Village tasting: Grapes ---- */

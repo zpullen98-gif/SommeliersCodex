@@ -47,6 +47,29 @@
       append to a card are taken off it (In the Codex carries both as
       doors), codex52's atlas box is hidden on the card only, and the open
       sections of the card are remembered for its next draw.
+
+   7. THE FLOW (sections 7 to 14), each piece a wrapper or a DOM pass:
+      the question bank gains The whole paper, The regions, Service
+      references and Hands on, lifted from the chain's own Quizzes page
+      (v53BankHtml), and #/quizzes draws the bank under its own scope
+      (v32QuizzesHtml, v25MainName); the Practise root's rounds row points
+      at the bank, its grape decks, Blind flight and level test leave
+      (v32FlashcardsHtml); one Village tasting: codex39's 45 minute row is
+      cut where it enters the bank, Grapes' Tasting reads The Court's grid
+      drill, The Village tasting, Warm up: call the structure, The
+      deductive grid (v53GrapesRootHtml), the method is How to taste: the
+      method in the reading rooms only; the level page loses its search,
+      the World Map row and the illustrated door (v32LevelHtml,
+      v32LevelView); the Library loses the Terroir row, carries the
+      regions door in The atlas and true lines (v32LibraryHtml,
+      v32LibraryView, V32_WORDS); Another deck returns to the Library
+      (v32Act); the search gains the Court's subjects and the grape pages
+      (v44Index, v44Results); Brennan's rooms (v48RehearsalHtml,
+      v48StudyHtml, the Culinary Companion's owner); the parents
+      (v32ParentRoute, render for S._v54from, v25NavWord); the stale words
+      at display (quizView, resultsView, V32_WORDS, V39_WORDS, V42_PATHS,
+      V27_SAY_NONE, v32CardFace). A row renamed without a new line keeps
+      its old line.
 */
 
 /* =========== 1. the words =========== */
