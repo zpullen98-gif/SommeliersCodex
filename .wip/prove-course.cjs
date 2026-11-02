@@ -407,6 +407,76 @@ async function main() {
   const canadaP = A.page('S.view = "country"; S._v39country = "canada"; v39CountryView();');
   drawn.push(['canada', canadaP]);
   check('canada: its techniques sit under its map and reading (codex46 adds none above the map)', canadaP.indexOf('v46-links') > canadaP.indexOf('class="v55-map"') && canadaP.indexOf('class="v55-map"') > 0 && (canadaP.match(/v46-links/g) || []).length === 1, String(canadaP.indexOf('v46-links')));
+
+  /* ================================================================ */
+  section('6. new drills from the data');
+  /* the map quiz on Burgundy's field map, answered both ways */
+  const Q0 = A.J('(function () { V25_GO.v56mapquiz("burgundy"); return { view: S.view, hash: location.hash, n: V56_Q.items.length, modes: V56_Q.items.map(function (x) { return x.mode; }), lit: v25NavWord(), parent: v32ParentRoute(), name: v25MainName() }; })()');
+  check('the map quiz has an address (#/v/v56mapquiz/burgundy), lights Wine Atlas, climbs to Burgundy\'s page: 8 questions, find and name in turn',
+    Q0.view === 'v56mapquiz' && Q0.hash === '#/v/v56mapquiz/burgundy' && Q0.n === 8 && Q0.modes.join(',') === 'find,name,find,name,find,name,find,name' && Q0.lit === 'worldmap' && JSON.stringify(Q0.parent) === JSON.stringify({ view: 'region', arg: 'burgundy' }) && Q0.name === 'Burgundy: map quiz', JSON.stringify(Q0));
+  const qhtml = A.page('render();');
+  drawn.push(['the map quiz', qhtml]);
+  const q1 = A.J('(function () { var it = V56_Q.items[0]; return { name: it.p.name, i: it.p.i, n: it.p.n, x: it.p.x, y: it.p.y }; })()');
+  const bm = A.J('v45Map("burgundy")');
+  const svgB = fs.readFileSync(path.join(ROOT, bm.file), 'utf8');
+  const dotsB = [...svgB.matchAll(/<circle cx="([\d.]+)" cy="([\d.]+)" r="3\.2"/g)].map((d) => [Number(d[1]), Number(d[2])]);
+  check('a find question: "Find ' + q1.name + ' on the map.", the field map drawn without its key, a number for every place (' + (qhtml.match(/data-v56="qpick"/g) || []).length + ')',
+    qhtml.indexOf('Find ' + q1.name + ' on the map.') > 0 && qhtml.indexOf('src="' + A.G('v45File(v45Map("burgundy"))') + '"') > 0 && qhtml.indexOf('data-v56="qtap"') > 0 && (qhtml.match(/data-v56="qpick"/g) || []).length === A.G('v56QPlaces(v45Map("burgundy")).length'), qhtml.slice(qhtml.indexOf('v56-qprompt'), qhtml.indexOf('v56-qprompt') + 300));
+  check('the answer is the pin: ' + q1.name + '\'s point is the dot the artwork draws for number ' + q1.n, Math.hypot(dotsB[q1.i][0] - q1.x, dotsB[q1.i][1] - q1.y) < 0.5, JSON.stringify([dotsB[q1.i], q1]));
+  /* a tap at the dot, through the figure's own box (a 650 by 449 figure) */
+  const tap = A.J('(function () { var p = V56_Q.items[0].p; var node = { getBoundingClientRect: function () { return { left: 10, top: 100, width: 650, height: 449.47 }; } }; V56_ACTS.qtap(node, { clientX: 10 + (p.x - 130) / 940 * 650 + 3, clientY: 100 + (p.y - 270) / 650 * 449.47 - 2 }); return { pick: V56_Q.pick && V56_Q.pick.i, right: V56_Q.right }; })()');
+  const fb1 = A.page('render();');
+  check('a tap at the dot answers it: "' + ((/<p class="v56-qfeed"[^>]*>([^<]*)</.exec(fb1) || [])[1] || '') + '"', tap.pick === q1.i && tap.right === 1 && fb1.indexOf('Right: number ' + q1.n + ' is ' + q1.name + '.') > 0 && fb1.indexOf('data-v56="qnext"') > 0, JSON.stringify(tap));
+  A.G('V56_ACTS.qnext({ getAttribute: function () { return null; } });');
+  const q2 = A.J('(function () { var it = V56_Q.items[1]; return { name: it.p.name, i: it.p.i, n: it.p.n, opts: it.opts.map(function (o) { return o.name; }), wrong: it.opts.filter(function (o) { return o.i !== it.p.i; })[0].i }; })()');
+  const nh = A.page('render();');
+  drawn.push(['the map quiz, a name question', nh]);
+  const optsShown = attr(nh.slice(nh.indexOf('v56-qopts')), /data-v56="qpick" data-i="\d+">([^<]*)</g);
+  check('a name question: "Which place is marked?", the mark on ' + q2.name + '\'s dot, four names: ' + optsShown.join(', '), nh.indexOf('Which place is marked?') > 0 && /class="v56-qring" style="left:[\d.]+%;top:[\d.]+%"/.test(nh) && optsShown.length === 4 && optsShown.indexOf(q2.name) >= 0 && new Set(optsShown).size === 4, JSON.stringify(q2));
+  A.G('V56_ACTS.qpick({ getAttribute: function (k) { return k === "data-i" ? "' + q2.wrong + '" : null; } });');
+  const fb2 = A.page('render();');
+  check('a wrong name is told: "Not quite: number ' + q2.n + ' is ' + q2.name + '."', fb2.indexOf('Not quite: number ' + q2.n + ' is ' + q2.name + '.') > 0 && A.G('V56_Q.right') === 1);
+  const end = A.J('(function () { V56_ACTS.qnext({ getAttribute: function () { return null; } }); while (!V56_Q.done) { var it = V56_Q.items[V56_Q.i]; V56_ACTS.qpick({ getAttribute: function (k) { return k === "data-i" ? String(it.p.i) : null; } }); V56_ACTS.qnext({ getAttribute: function () { return null; } }); } return { right: V56_Q.right, rec: v56Rec().m.burgundy }; })()');
+  const done = A.page('render();');
+  drawn.push(['the map quiz, the round', done]);
+  check('the round ends at ' + end.right + ' of 8, kept for the chooser, with Another round, Another map and Read Burgundy', end.right === 7 && end.rec.l === 7 && end.rec.t === 8 && end.rec.n === 1 && done.indexOf('7 of 8 right') > 0 && done.indexOf('data-v56="qagain"') > 0 && done.indexOf('data-go="v56mapquiz" data-arg=""') > 0 && done.indexOf('data-v39="region" data-slug="burgundy"') > 0, JSON.stringify(end));
+  const qp = A.page('v56Go("v56mapquiz", "");');
+  drawn.push(['the map quiz chooser', qp]);
+  check('the chooser: every field map (' + (qp.match(/data-go="v56mapquiz" data-arg="[a-z0-9-]+"/g) || []).length + '), by country, Burgundy\'s last round shown', (qp.match(/data-go="v56mapquiz" data-arg="[a-z0-9-]+"/g) || []).length === A.G('v45Maps().length') && qp.indexOf('12 places · last round 7 of 8') < 0 && qp.indexOf('11 places · last round 7 of 8') > 0, qp.slice(0, 400));
+  /* district cards */
+  const dk = A.J('(function () { var d = v32DeckDef("districts:burgundy"); return { name: d.name, n: d.cards.length, first: d.cards[0], kind: d.kind }; })()');
+  const dWant = (() => { const out = []; const seen = {}; const walk = (l) => (l || []).forEach((p) => { if (p.name && p.note && !p.depth && !seen[fold(p.name)]) { seen[fold(p.name)] = 1; out.push(p.name); } walk(p.places); }); walk(REC.burgundy.places); return out; })();
+  check('district cards: Burgundy\'s ' + dk.n + ' (every place of the reading with a note at Village), "' + dk.first.front + '" to "' + dk.first.back.slice(0, 60) + '..."',
+    dk.name === 'Burgundy: district cards' && dk.kind === 'region' && dk.n === dWant.length && dk.first.front === dWant[0] && dk.first.back.indexOf('Burgundy: ') === 0 && /^d:burgundy\//.test(dk.first.id), JSON.stringify(dk).slice(0, 300));
+  const dr = A.J('(function () { V56_ACTS.dcards({ getAttribute: function (k) { return k === "data-slug" ? "burgundy" : null; } }); var a = { view: S.view, deck: S._v32deck, hash: location.hash, lit: v25NavWord(), parent: v32ParentRoute() }; v32StartRun("districts:burgundy", { keepOrder: true }); var r = S._v32run; var c = r.cards[r.deck[0]]; a.front = v32CardFace(c, r); r.flip = true; a.back = v32CardFace(c, r); v32Grade(true); a.got = v39CardRec()[c.id]; a.sched = v56Rec().c[c.id]; a.runLit = v25NavWord(); return a; })()');
+  check('their deck screen has an address (#/flashcards/districts:burgundy), lights Wine Atlas and climbs to Burgundy', dr.view === 'deck' && dr.hash === '#/flashcards/districts:burgundy' && dr.lit === 'worldmap' && JSON.stringify(dr.parent) === JSON.stringify({ view: 'region', arg: 'burgundy' }), JSON.stringify(dr).slice(0, 300));
+  check('a card\'s front asks for its region and its note; graded, codex39 keeps it and it gains a due date with its two faces', dr.front.indexOf('Its region, and what it is known for') > 0 && dr.back.indexOf('Burgundy: ') > 0 && dr.got === 'got' && dr.sched && dr.sched.n === 1 && !!dr.sched.f && !!dr.sched.b && dr.runLit === 'worldmap', JSON.stringify({ sched: dr.sched }));
+  const dp = A.page('v56Go("v56districts", "");');
+  drawn.push(['the district cards chooser', dp]);
+  check('the chooser: every region with its district count (' + (dp.match(/data-v56="dcards"/g) || []).length + ')', (dp.match(/data-v56="dcards"/g) || []).length === A.G('v39Regions().length') && dp.indexOf('data-v56="dcards" data-slug="burgundy" id="v56-d-burgundy"><span class="v25row-name">Burgundy</span><span class="v25row-line">48 districts</span>') > 0, dp.slice(0, 300));
+  const burgP = A.page('S.view = "region"; S._v39region = "burgundy"; v39RegionView();');
+  check('the region page\'s districts carry the district cards door', burgP.indexOf('data-v56="dcards" data-slug="burgundy" id="v56-dcards"') > 0);
+  /* compare two regions */
+  const cmpDef = A.G('V56_VIEWS.v56compare.accept("")');
+  check('compare with no pair names the region last open and the course\'s next region (' + cmpDef + ')', /^burgundy~/.test(cmpDef) && cmpDef === 'burgundy~' + A.G('(function () { var l = v56Course().filter(function (x) { return x.kind === "region"; }); var i = l.map(function (x) { return x.key; }).indexOf("burgundy"); return l[i + 1].key; })()'));
+  const cmp = A.page('v56Go("v56compare", "burgundy~rioja");');
+  drawn.push(['compare', cmp]);
+  const secs = attr(cmp, /<h3 class="secgroup v32-gh" id="v56-cmp-[a-z]+">([^<]*)</g);
+  const ca = (k) => { const at = cmp.indexOf('id="v56-cmp-' + k + '"'); return cmp.slice(at, cmp.indexOf('</section>', at)); };
+  const firstS = (t) => { const x = /^(.+?[.!?])(\s|$)/.exec(t.split(/\n\s*\n/)[0]); return x ? x[1] : t; };
+  check('compare Burgundy and Rioja side by side (#/v/v56compare/burgundy~rioja): ' + secs.join(', '),
+    A.G('location.hash') === '#/v/v56compare/burgundy~rioja' && JSON.stringify(secs) === JSON.stringify(['The climate', 'The soils', 'The grapes', 'The wines', 'The ladder', 'What the exam asks'])
+    && unesc(ca('climate')).indexOf(firstS(REC.burgundy.terroir.climate).slice(0, 40)) > 0 && unesc(ca('climate')).indexOf(firstS(REC.rioja.terroir.climate).slice(0, 40)) > 0, secs.join(','));
+  check('each column its own record: the ladders, the exam lines, the soils', ca('ladder').indexOf('Régionale') > 0 && ca('ladder').indexOf('Crianza') > 0 && ca('exam').indexOf(REC.rioja.exam[0].slice(0, 25)) > 0 && ca('soils').indexOf(firstS(REC.rioja.terroir.soils).slice(0, 25)) > 0, ca('ladder').slice(0, 300));
+  check('compare lights Wine Atlas and climbs to its first region', A.G('v25NavWord()') === 'worldmap' && A.G('JSON.stringify(v32ParentRoute())') === JSON.stringify({ view: 'region', arg: 'burgundy' }));
+  /* drill a country */
+  const drp = A.page('v56Go("v56drill", "");');
+  drawn.push(['drill a country', drp]);
+  const drillRows = attr(drp, /data-v56="drillc" data-key="([^"]*)"/g);
+  check('drill a country: a row each with its questions (' + drillRows.length + ' countries)', drillRows.length >= 20 && drillRows.indexOf('spain') >= 0 && /questions · \d+ answered right/.test(drp));
+  const drl = A.J('(function () { V56_ACTS.drillc({ getAttribute: function (k) { return k === "data-key" ? "spain" : null; } }); return { view: S.view, n: S.pool.length, lit: v25NavWord(), own: S.pool.every(function (q) { return v39SheetKeys("spain").some(function (k) { return v39Questions([k]).indexOf(q) >= 0; }); }) }; })()');
+  check('a country\'s drill deals ten of its own questions, lit Wine Atlas', drl.view === 'quiz' && drl.n === 10 && drl.own && drl.lit === 'worldmap', JSON.stringify(drl));
+  A.G('S.mode = null; S.pool = []; S.view = "home";');
 }
 
 main().then(() => {

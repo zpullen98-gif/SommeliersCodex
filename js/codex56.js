@@ -160,7 +160,64 @@ var V56_WORDS = {
   showAll: 'Show all {n} districts and places',
   showFew: 'Show the first eight',
   dCards: 'District cards',
-  insetSaid: '{name} is marked beside it and on the map, number {n}.'
+  insetSaid: '{name} is marked beside it and on the map, number {n}.',
+  /* the map quiz */
+  quizH: 'Map quiz',
+  quizSub: 'Find a place on a field map, or name the one marked',
+  quizPick: 'Choose a field map. Each round asks up to eight places, half found on the map, half named.',
+  quizMapLine: '{n} places',
+  quizMapLast: '{n} places · last round {r} of {t}',
+  quizOf: '{title}: map quiz',
+  quizStep: 'Question {k} of {n} · {r} right so far',
+  quizFind: 'Find {name} on the map.',
+  quizFindHow: 'Tap the map at its dot, or choose the number its dot carries.',
+  quizName: 'Which place is marked?',
+  quizNumbers: 'Its number',
+  quizNumber: 'Number {n}',
+  quizAlt: 'The field map of {title}, its places numbered. Tap a dot to answer.',
+  quizRight: 'Right: number {n} is {name}.',
+  quizWrong: 'Not quite: you chose number {m}, {picked}. {name} is number {n}.',
+  quizWrongName: 'Not quite: number {n} is {name}.',
+  quizNext: 'Next question',
+  quizSee: 'See the round',
+  quizDone: '{r} of {n} right',
+  quizDoneLine: 'The round on {title} is done.',
+  quizAgain: 'Another round on {title}',
+  quizOther: 'Another map',
+  quizRead: 'Read {name}',
+  quizNoMap: 'That field map is not on this device.',
+  /* district cards */
+  districtsH: 'District cards',
+  districtsSub: 'A district to its note and its region',
+  districtsPick: 'Choose a region. Its cards turn a district’s name into its region and what the reading says of it.',
+  districtsCount: '{n} districts',
+  districtsOne: '1 district',
+  districtsLater: 'Its districts open with its reading',
+  dDeck: '{name}: district cards',
+  dPrompt: 'Its region, and what it is known for',
+  dBack: '{region}: {note}',
+  /* compare two regions */
+  cmpH: 'Compare two regions',
+  cmpSub: 'Side by side, from each reading',
+  cmpA: 'The first region',
+  cmpB: 'The second region',
+  cmpGo: 'Compare them',
+  cmpWait: 'Opening the two readings.',
+  cmpFail: 'One of the readings is not on this device yet. It opens with a connection.',
+  cmpSame: 'Choose two different regions.',
+  cmpClimate: 'The climate',
+  cmpSoils: 'The soils',
+  cmpGrapes: 'The grapes',
+  cmpWines: 'The wines',
+  cmpLadder: 'The ladder',
+  cmpExam: 'What the exam asks',
+  cmpNone: 'Not in the reading',
+  cmpRead: 'Read {name}',
+  /* drill a country */
+  drillH: 'Drill a country',
+  drillSub: 'Ten questions from one country’s regions',
+  drillPick: 'Choose a country. Each drill deals ten of its questions; the ones you miss come back on their due day.',
+  drillCountryLine: '{t} questions · {q} answered right'
 };
 
 function v56W(key, vars) {
@@ -234,6 +291,33 @@ function v56Doc() { return (typeof document !== 'undefined' && document && typeo
     '.wrap .v56-inset{position:relative;width:100%;max-width:360px;aspect-ratio:3/2;overflow:hidden;margin:10px 0 2px;border:1px solid var(--line);border-radius:3px;background:#071b14}',
     '.wrap .v56-inset img{position:absolute;left:0;top:0;max-width:none;height:auto}',
     '.wrap .v56-inset-ring{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;box-sizing:border-box;border-radius:50%;border:3px solid #f6d27a;box-shadow:0 0 0 2px #071b14,0 0 0 6px rgba(246,210,122,.42);pointer-events:none}',
+    /* codex55's pressed district button in day service: the day palette's ghost ink (gold on gold) is put back to the page's own ink */
+    'html[data-service] .wrap .v55 .v55-pinbtn[aria-pressed="true"]{color:var(--bg)}',
+    /* the map quiz: the field map cropped to its map (the key beneath it left out), a tap answers */
+    '.wrap .v56-qfig{position:relative;width:100%;max-width:650px;aspect-ratio:940/650;overflow:hidden;margin:12px 0 6px;border:1px solid var(--line);border-radius:3px;background:#071b14;cursor:crosshair;touch-action:manipulation}',
+    '.wrap .v56-qfig img{position:absolute;max-width:none;height:auto;width:127.66%;left:-13.83%;top:-41.54%;pointer-events:none;user-select:none}',
+    '.wrap .v56-qring{position:absolute;width:32px;height:32px;margin:-16px 0 0 -16px;box-sizing:border-box;border-radius:50%;border:3px solid #f6d27a;box-shadow:0 0 0 2px #071b14,0 0 0 7px rgba(246,210,122,.42);pointer-events:none}',
+    '.wrap .v56-qring.v56-qmiss{border-color:#e8836f;box-shadow:0 0 0 2px #071b14,0 0 0 7px rgba(232,131,111,.38)}',
+    '.wrap .v56-qprompt{font-size:20px;line-height:1.4;color:var(--gold-hi);margin:12px 0 2px}',
+    '.wrap .v56-qnums{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px;margin:8px 0 0;padding:0;list-style:none}',
+    '.wrap .v56-qnums .btn{width:100%;text-align:center;padding:8px 4px}',
+    '.wrap .v56-qopts{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin:10px 0 0;padding:0;list-style:none}',
+    '.wrap .v56-qopts .btn{width:100%}',
+    '.wrap .v56-qfeed{font-size:17px;line-height:1.5;color:var(--parch);margin:12px 0 4px}',
+    '.wrap .v56-qnote{font-size:16px;line-height:1.5;color:var(--parch2);margin:0 0 8px}',
+    '.wrap .v56-qacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}',
+    /* compare: two columns of the same aspect, one under 340px */
+    '.wrap .v56-cmpform{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:14px 0 0;max-width:560px}',
+    '.wrap .v56-cmpform label{display:block;font-size:16px;color:var(--parch);margin:0 0 4px}',
+    '.wrap .v56-cmpform select{display:block;width:100%;min-height:44px;font-size:17px;box-sizing:border-box}',
+    '.wrap .v56-cmprow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin:6px 0 0}',
+    '.wrap .v56-cmprow>div{min-width:0;font-size:16px;line-height:1.5;color:var(--parch);overflow-wrap:anywhere}',
+    '.wrap .v56-cmprow b{display:block;color:var(--gold-hi);font-size:15px;margin:0 0 2px}',
+    '.wrap .v56-cmprow ul{margin:0;padding-left:18px}',
+    '@media(max-width:340px){.wrap .v56-cmprow{grid-template-columns:minmax(0,1fr)}}',
+    '.wrap .v56-cmp h3{margin-top:18px}',
+    /* a district card's prompt on its front */
+    '.wrap .v56-dprompt{display:block;margin:10px 0 0;font-size:16px;color:var(--ink-soft)}',
     '.wrap .v56-inset-tag{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#071b14;color:#f3e9d5;border:1px solid #d5b16c;border-radius:3px;padding:0 7px;font-size:14px;line-height:24px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
@@ -1048,7 +1132,8 @@ function v56RowTop() {
   try {
     var back = d.querySelector('#view > .v32back');
     var h = back && back.getBoundingClientRect ? Math.round(back.getBoundingClientRect().height) : 0;
-    Array.prototype.forEach.call(d.querySelectorAll('.v56-srow'), function (r) { if (h > 0) r.style.top = h + 'px'; });
+    /* one pixel more for the rule Back draws under itself once it sticks */
+    Array.prototype.forEach.call(d.querySelectorAll('.v56-srow'), function (r) { if (h > 0) r.style.top = (h + (back.classList && back.classList.contains('is-stuck') ? 0 : 1)) + 'px'; });
   } catch (e) { }
 }
 
@@ -1246,6 +1331,419 @@ if (typeof v55CountryHtml === 'function') {
     try { return v56CountryPageShape(html, c); } catch (e) { return html; }
   };
 }
+
+/* =========== 6. new drills from the data =========== */
+
+function v56Shuffle(a) {
+  if (typeof v39Shuffle === 'function') return v39Shuffle(a.slice());
+  var out = a.slice();
+  for (var i = out.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = out[i]; out[i] = out[j]; out[j] = t; }
+  return out;
+}
+function v56Maps() { try { return (typeof v45Maps === 'function') ? v45Maps() : []; } catch (e) { return []; } }
+function v56MapName(m) {
+  if (!m) return '';
+  if (m.type === 'region') { var a = v39Find(m.slug || m.id); if (a) return v56Str(a.name); }
+  return v56Str(m.title);
+}
+/* The map's own parent: its region, else its country. */
+function v56MapHome(m) {
+  if (!m) return { view: 'worldmap', arg: '' };
+  if (m.type === 'region' && v39Find(m.slug || m.id)) return { view: 'region', arg: m.slug || m.id };
+  if (m.countryKey && v39Country(m.countryKey)) return { view: 'country', arg: m.countryKey };
+  return { view: 'worldmap', arg: '' };
+}
+
+/* ----- the map quiz ----- */
+
+/* The field map cropped to its map: the SVG's own units 130 to 1070 across
+   and 270 to 920 down (the drawing box with a margin), so the key printed
+   under the map, which names every number, is never shown. */
+var V56_QBOX = { x: 130, y: 270, w: 940, h: 650 };
+var V56_QN = 8;
+var V56_Q = { map: '', items: [], i: 0, right: 0, done: false, pick: null };
+function v56QPlaces(m) {
+  var title = v56Fold(m && m.title);
+  var out = [];
+  v56List(m && m.places).forEach(function (p, i) {
+    if (!p || !v56Str(p.name) || v56Fold(p.name) === title) return;
+    var at = (typeof v55Project === 'function') ? v55Project(m, p) : null;
+    if (!at) return;
+    out.push({ i: i, n: i + 1, name: v56Str(p.name), note: v56Str(p.note), x: at.x, y: at.y });
+  });
+  return out;
+}
+function v56QMaps() { return v56Maps().filter(function (m) { return v56QPlaces(m).length >= 4; }); }
+function v56QNew(id) {
+  var m = v56FieldMap(id);
+  var places = m ? v56QPlaces(m) : [];
+  var pool = v56Shuffle(places).slice(0, Math.min(V56_QN, places.length));
+  var items = pool.map(function (p, k) {
+    var it = { mode: k % 2 ? 'name' : 'find', p: p };
+    if (it.mode === 'name') {
+      var others = v56Shuffle(places.filter(function (q) { return q.i !== p.i && v56Fold(q.name) !== v56Fold(p.name); })).slice(0, 3);
+      it.opts = v56Shuffle([p].concat(others));
+    }
+    return it;
+  });
+  V56_Q = { map: m ? m.id : '', items: items, i: 0, right: 0, done: false, pick: null };
+}
+function v56QPct(v, o, w) { return (Math.round((v - o) / w * 100000) / 1000) + '%'; }
+function v56QRing(p, miss) {
+  return '<span class="v56-qring' + (miss ? ' v56-qmiss' : '') + '" style="left:' + v56QPct(p.x, V56_QBOX.x, V56_QBOX.w) + ';top:' + v56QPct(p.y, V56_QBOX.y, V56_QBOX.h) + '" aria-hidden="true"></span>';
+}
+function v56QuizChooserHtml() {
+  var rec = v56Rec();
+  var html = '<div class="v25page v56 v56-quizpick" id="v56-quizpick">' + v32Head(v56W('quizH'), v56W('quizSub')) + '<p class="v32-line">' + v56Esc(v56W('quizPick')) + '</p>';
+  var by = {}, order = [];
+  v56QMaps().forEach(function (m) {
+    var k = m.countryKey || '';
+    if (!v56Own(by, k)) { by[k] = []; order.push(k); }
+    by[k].push(m);
+  });
+  var rank = {};
+  v56Countries().forEach(function (row, i) { rank[row.key] = i; });
+  order.sort(function (a, b) { return (v56Own(rank, a) ? rank[a] : 999) - (v56Own(rank, b) ? rank[b] : 999); });
+  order.forEach(function (k, gi) {
+    var c = v39Country(k);
+    var rows = by[k].map(function (m) {
+      var n = v56QPlaces(m).length, last = rec.m[m.id];
+      var line = last ? v56W('quizMapLast', { n: n, r: last.l, t: last.t }) : v56W('quizMapLine', { n: n });
+      return v56Row('data-go="v56mapquiz" data-arg="' + v56Esc(m.id) + '"', v56MapName(m), line, 'v56-q-' + m.id);
+    }).join('');
+    html += '<section class="v32-group" aria-labelledby="v56-qg-' + gi + '"><h3 class="secgroup v32-gh" id="v56-qg-' + gi + '">' + v56Esc(c ? c.name : (typeof v45CountryName === 'function' ? v45CountryName(k) : k)) + '</h3><ul class="v25rows v32rows v56-doors">' + rows + '</ul></section>';
+  });
+  return html + '</div>';
+}
+function v56QuizHtml(m) {
+  var Q = V56_Q;
+  var title = v56MapName(m);
+  var file = (typeof v45File === 'function') ? v45File(m) : '';
+  var n = Q.items.length;
+  var html = '<div class="v25page v56 v56-quiz" id="v56-quiz" data-map="' + v56Esc(m.id) + '">';
+  if (Q.done) {
+    html += v32Head(v56W('quizOf', { title: title }), v56W('quizDone', { r: Q.right, n: n }))
+      + '<p class="v56-qprompt" id="v56-qprompt" tabindex="-1">' + v56Esc(v56W('quizDone', { r: Q.right, n: n })) + '</p><p class="v32-line">' + v56Esc(v56W('quizDoneLine', { title: title })) + '</p>'
+      + '<div class="v56-qacts"><button type="button" class="btn gold" data-v56="qagain" id="v56-qagain">' + v56Esc(v56W('quizAgain', { title: title })) + '</button>'
+      + '<button type="button" class="btn ghost" data-go="v56mapquiz" data-arg="" id="v56-qother">' + v56Esc(v56W('quizOther')) + '</button>';
+    var home = v56MapHome(m);
+    if (home.view === 'region') html += '<button type="button" class="btn ghost" data-v39="region" data-slug="' + v56Esc(home.arg) + '" id="v56-qread">' + v56Esc(v56W('quizRead', { name: title })) + '</button>';
+    else if (home.view === 'country') html += '<button type="button" class="btn ghost" data-v39="country" data-key="' + v56Esc(home.arg) + '" id="v56-qread">' + v56Esc(v56W('quizRead', { name: v39Country(home.arg).name })) + '</button>';
+    return html + '</div></div>';
+  }
+  var it = Q.items[Q.i];
+  html += v32Head(v56W('quizOf', { title: title }), v56W('quizStep', { k: Q.i + 1, n: n, r: Q.right }));
+  html += '<p class="v56-qprompt" id="v56-qprompt" tabindex="-1">' + v56Esc(it.mode === 'find' ? v56W('quizFind', { name: it.p.name }) : v56W('quizName')) + '</p>';
+  if (it.mode === 'find' && !Q.pick) html += '<p class="v32-line">' + v56Esc(v56W('quizFindHow')) + '</p>';
+  var rings = '';
+  if (it.mode === 'name' || Q.pick) rings += v56QRing(it.p, false);
+  if (Q.pick && it.mode === 'find' && Q.pick.i !== it.p.i) rings += v56QRing(Q.pick, true);
+  html += '<div class="v56-qfig"' + (it.mode === 'find' && !Q.pick ? ' data-v56="qtap"' : '') + '><img src="' + v56Esc(file) + '" alt="' + v56Esc(v56W('quizAlt', { title: title })) + '" decoding="async">' + rings + '</div>';
+  if (!Q.pick) {
+    if (it.mode === 'find') {
+      var all = v56QPlaces(m);
+      html += '<h3 class="secgroup v32-gh">' + v56Esc(v56W('quizNumbers')) + '</h3><ul class="v56-qnums">' + all.map(function (p) {
+        return '<li><button type="button" class="btn ghost" data-v56="qpick" data-i="' + p.i + '" aria-label="' + v56Esc(v56W('quizNumber', { n: p.n })) + '">' + v56Esc(String(p.n)) + '</button></li>';
+      }).join('') + '</ul>';
+    } else {
+      html += '<ul class="v56-qopts">' + it.opts.map(function (p) {
+        return '<li><button type="button" class="btn ghost" data-v56="qpick" data-i="' + p.i + '">' + v56Esc(p.name) + '</button></li>';
+      }).join('') + '</ul>';
+    }
+  } else {
+    var ok = Q.pick.i === it.p.i;
+    var feed = ok ? v56W('quizRight', { n: it.p.n, name: it.p.name })
+      : (it.mode === 'find' ? v56W('quizWrong', { m: Q.pick.n, picked: Q.pick.name, name: it.p.name, n: it.p.n }) : v56W('quizWrongName', { n: it.p.n, name: it.p.name }));
+    html += '<p class="v56-qfeed" id="v56-qfeed" role="status" tabindex="-1">' + v56Esc(feed) + '</p>' + (it.p.note && !/^Town or settlement centre associated with /.test(it.p.note) ? '<p class="v56-qnote">' + v56Esc(it.p.note) + '</p>' : '')
+      + '<div class="v56-qacts"><button type="button" class="btn gold" data-v56="qnext" id="v56-qnext">' + v56Esc(Q.i + 1 < n ? v56W('quizNext') : v56W('quizSee')) + '</button></div>';
+  }
+  return html + '</div>';
+}
+function v56QuizView(arg) {
+  var m = arg ? v56FieldMap(arg) : null;
+  if (!arg || !m || v56QPlaces(m).length < 4) return v56Build(v56QuizChooserHtml());
+  if (V56_Q.map !== m.id || !V56_Q.items.length) v56QNew(m.id);
+  return v56Build(v56QuizHtml(m));
+}
+function v56QRedraw(focus) {
+  try { if (typeof V32 !== 'undefined' && V32) V32.pend = 'replace'; } catch (e) { }
+  render();
+  try { var d = v56Doc(); var f = d && d.getElementById(focus); if (f && typeof f.focus === 'function') f.focus({ preventScroll: true }); } catch (e) { }
+}
+/* An answer: the place picked (a tap's nearest dot, a number, a name). */
+function v56QAnswer(i) {
+  var Q = V56_Q;
+  var it = Q.items[Q.i];
+  if (!it || Q.pick || Q.done) return;
+  var m = v56FieldMap(Q.map);
+  var hit = null;
+  v56QPlaces(m).forEach(function (p) { if (p.i === Number(i)) hit = p; });
+  if (!hit) return;
+  Q.pick = hit;
+  if (hit.i === it.p.i) Q.right++;
+  v56QRedraw('v56-qfeed');
+}
+V56_ACTS.qpick = function (node) { v56QAnswer(node.getAttribute('data-i')); };
+V56_ACTS.qtap = function (node, e) {
+  var Q = V56_Q;
+  var m = v56FieldMap(Q.map);
+  if (!m || !e || typeof node.getBoundingClientRect !== 'function') return;
+  var r = node.getBoundingClientRect();
+  if (!r.width || !r.height) return;
+  var x = V56_QBOX.x + (e.clientX - r.left) / r.width * V56_QBOX.w;
+  var y = V56_QBOX.y + (e.clientY - r.top) / r.height * V56_QBOX.h;
+  var best = null, bd = Infinity;
+  v56QPlaces(m).forEach(function (p) { var dd = Math.hypot(p.x - x, p.y - y); if (dd < bd) { bd = dd; best = p; } });
+  if (best) v56QAnswer(best.i);
+};
+V56_ACTS.qnext = function () {
+  var Q = V56_Q;
+  if (!Q.pick) return;
+  Q.pick = null;
+  if (Q.i + 1 < Q.items.length) Q.i++;
+  else {
+    Q.done = true;
+    try { var o = v56Rec(); var last = o.m[Q.map] || {}; o.m[Q.map] = { l: Q.right, t: Q.items.length, n: (Number(last.n) || 0) + 1 }; v56Put(o); } catch (e) { }
+  }
+  v56QRedraw('v56-qprompt');
+};
+V56_ACTS.qagain = function () { v56QNew(V56_Q.map); v56QRedraw('v56-qprompt'); };
+v56View('v56mapquiz', {
+  draw: function (arg) { return v56QuizView(arg); },
+  accept: function (arg) { var m = v56FieldMap(arg); return (m && v56QPlaces(m).length >= 4) ? m.id : ''; },
+  name: function (arg) { var m = v56FieldMap(arg); return m ? v56W('quizOf', { title: v56MapName(m) }) : v56W('quizH'); },
+  parent: function (arg) { var m = v56FieldMap(arg); return m ? v56MapHome(m) : { view: 'worldmap', arg: '' }; }
+});
+/* a new address starts a new round */
+if (typeof V25_GO !== 'undefined' && V25_GO) {
+  V25_GO.v56mapquiz = function (arg) {
+    var id = String(arg || '');
+    if (id) v56QNew(id);
+    v56Go('v56mapquiz', id);
+  };
+}
+
+/* ----- district cards ----- */
+
+function v56LevelAllows(depth) {
+  var lv = (typeof activeLevel !== 'undefined' && activeLevel) ? activeLevel : 'certified';
+  if (depth === 'master') return lv === 'master';
+  if (depth === 'advanced') return lv === 'advanced' || lv === 'master';
+  return true;
+}
+/* A region's districts as cards: every place of the reading with a note (at
+   the depth the level asks), else, while the reading is away, the places of
+   its field map with a note of their own. One card a name. */
+function v56DistrictCards(slug) {
+  var a = v39Find(slug);
+  if (!a || typeof v55Join !== 'function') return [];
+  var m = v56FieldMap(a.slug);
+  var J = v55Join(a, m);
+  var out = [], seen = {};
+  var add = function (name, note) {
+    var k = v56Fold(name);
+    if (!k || !note || seen[k]) return;
+    seen[k] = 1;
+    out.push({ id: 'd:' + a.slug + '/' + k.replace(/ /g, '-'), kind: 'region', front: name, back: v56W('dBack', { region: a.name, note: note }), label: '', district: 1, slug: a.slug });
+  };
+  if (v56Ready(a)) J.nodes.forEach(function (n) { if (v56LevelAllows(n.depth)) add(n.name, n.note); });
+  else J.pins.forEach(function (p) { add(p.name, p.note); });
+  return out;
+}
+function v56DistrictCard(id) {
+  var mm = /^d:([a-z0-9-]+)\//.exec(String(id || ''));
+  if (!mm) return null;
+  var a = v39Find(mm[1]);
+  if (!a || !v56Ready(a)) return null;
+  var cards = v56DistrictCards(mm[1]);
+  for (var i = 0; i < cards.length; i++) if (cards[i].id === id) return cards[i];
+  return null;
+}
+var V56_DECK_RE = /^districts:([a-z0-9-]+)$/;
+if (typeof v32DeckDef === 'function') {
+  var _v56DeckDefDistricts = v32DeckDef;
+  v32DeckDef = function (id) {
+    var mm = V56_DECK_RE.exec(String(id || ''));
+    var a = mm ? v39Find(mm[1]) : null;
+    if (a) {
+      var def = { id: String(id), name: v56W('dDeck', { name: a.name }), cards: v56DistrictCards(a.slug), kind: 'region' };
+      def.learnt = (typeof v32Learnt === 'function') ? v32Learnt(def) : 0;
+      return def;
+    }
+    return _v56DeckDefDistricts.apply(this, arguments);
+  };
+}
+/* A district card's front asks for its region and its note. */
+if (typeof v32CardFace === 'function') {
+  var _v56CardFace = v32CardFace;
+  v32CardFace = function (c, run) {
+    var html = _v56CardFace.apply(this, arguments);
+    try {
+      if (c && c.district && !(run && run.flip)) {
+        var at = String(html).lastIndexOf('</button>');
+        if (at > 0) html = html.slice(0, at) + '<span class="v56-dprompt">' + v56Esc(v56W('dPrompt')) + '</span>' + html.slice(at);
+      }
+    } catch (e) { }
+    return html;
+  };
+}
+/* Opens a region's district cards; the deck screen is drawn again when the reading lands. */
+function v56OpenDistricts(slug) {
+  var a = v39Find(slug);
+  if (!a || typeof v32OpenDeck !== 'function') return;
+  var id = 'districts:' + a.slug;
+  if (!v56Ready(a) && typeof v39LoadPart === 'function') {
+    v39LoadPart(v39PartName(a), function () {
+      try { if (S.view === 'deck' && S._v32deck === id) { if (typeof V32 !== 'undefined' && V32) V32.pend = 'replace'; render(); } } catch (e) { }
+    });
+  }
+  v32OpenDeck(id);
+}
+V56_ACTS.dcards = function (node) { v56OpenDistricts(node.getAttribute('data-slug') || ''); };
+if (typeof v32ParentRoute === 'function') {
+  var _v56ParentRouteDistricts = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      var mm = (S.view === 'deck') ? V56_DECK_RE.exec(String(S._v32deck || '')) : null;
+      if (mm && v39Find(mm[1])) return { view: 'region', arg: mm[1] };
+    } catch (e) { }
+    return _v56ParentRouteDistricts.apply(this, arguments);
+  };
+}
+/* The chooser: every region by country, with its district count. */
+function v56DistrictsHtml() {
+  var html = '<div class="v25page v56 v56-districtpick" id="v56-districtpick">' + v32Head(v56W('districtsH'), v56W('districtsSub')) + '<p class="v32-line">' + v56Esc(v56W('districtsPick')) + '</p>';
+  v56Countries().forEach(function (row, gi) {
+    var regions = row.sheet ? v39SheetRegions(row.sheet) : [];
+    if (!regions.length) return;
+    var rows = regions.map(function (a) {
+      var n = (typeof v55DistrictCount === 'function') ? v55DistrictCount(a) : -1;
+      var line = n < 0 ? v56W('districtsLater') : (n === 1 ? v56W('districtsOne') : v56W('districtsCount', { n: n }));
+      return v56Row('data-v56="dcards" data-slug="' + v56Esc(a.slug) + '"', a.name, line, 'v56-d-' + a.slug);
+    }).join('');
+    html += '<section class="v32-group" aria-labelledby="v56-dg-' + gi + '"><h3 class="secgroup v32-gh" id="v56-dg-' + gi + '">' + v56Esc(v56Str(row.c && row.c.name) || row.key) + '</h3><ul class="v25rows v32rows v56-doors">' + rows + '</ul></section>';
+  });
+  return html + '</div>';
+}
+v56View('v56districts', {
+  draw: function () { return v56Build(v56DistrictsHtml()); },
+  name: function () { return v56W('districtsH'); },
+  parent: function () { return { view: 'worldmap', arg: '' }; }
+});
+
+/* ----- compare two regions ----- */
+
+function v56CmpPair(arg) {
+  var parts = String(arg || '').split('~');
+  var a = v39Find(parts[0]), b = v39Find(parts[1]);
+  return { a: a, b: b };
+}
+/* With no pair named: the region last open and the course's next region after it. */
+function v56CmpDefault() {
+  var a = (S && S._v39region && v39Find(S._v39region)) ? v39Find(S._v39region) : null;
+  var list = v56Course().filter(function (x) { return x.kind === 'region'; });
+  if (!a) { var p = v56Progress(); a = (p.next && p.next.kind === 'region') ? v39Find(p.next.key) : (list[0] ? v39Find(list[0].key) : null); }
+  if (!a) return '';
+  var at = -1;
+  list.forEach(function (x, i) { if (x.key === a.slug) at = i; });
+  var b = list[(at + 1) % Math.max(1, list.length)];
+  if (!b || b.key === a.slug) b = list[0];
+  return a.slug + '~' + (b ? b.key : '');
+}
+function v56CmpOptions(sel) {
+  return v56Countries().map(function (row) {
+    var regions = row.sheet ? v39SheetRegions(row.sheet) : [];
+    if (!regions.length) return '';
+    return '<optgroup label="' + v56Esc(v56Str(row.c && row.c.name) || row.key) + '">' + regions.map(function (a) {
+      return '<option value="' + v56Esc(a.slug) + '"' + (a.slug === sel ? ' selected' : '') + '>' + v56Esc(a.name) + '</option>';
+    }).join('') + '</optgroup>';
+  }).join('');
+}
+function v56CmpCell(a, kind) {
+  var t = (a.terroir && typeof a.terroir === 'object') ? a.terroir : {};
+  var none = '<p>' + v56Esc(v56W('cmpNone')) + '</p>';
+  var list = function (xs) { var l = xs.filter(Boolean); return l.length ? '<ul>' + l.map(function (x) { return '<li>' + v56Esc(x) + '</li>'; }).join('') + '</ul>' : none; };
+  if (kind === 'climate') return v56Str(t.climate) ? '<p>' + v56Esc(v56First(t.climate)) + '</p>' : none;
+  if (kind === 'soils') return v56Str(t.soils) ? '<p>' + v56Esc(v56First(t.soils)) + '</p>' : none;
+  if (kind === 'grapes') return list(v56List(a.grapes).filter(function (g) { return g && v56Str(g.name); }).slice(0, 6).map(function (g) { return v56Str(g.name) + (v56Str(g.role) && g.role !== 'lead' ? ' (' + v56Str(g.role) + ')' : ''); }));
+  if (kind === 'wines') return list(v56List(a.wines).filter(function (w) { return w && v56Str(w.style); }).slice(0, 6).map(function (w) { return v56Str(w.style); }));
+  if (kind === 'ladder') return list(v56Ladder(a));
+  if (kind === 'exam') return list(v56List(a.exam).map(v56Str).slice(0, 2));
+  return none;
+}
+function v56CmpHtml(arg) {
+  var P = v56CmpPair(arg);
+  var html = '<div class="v25page v56 v56-cmp" id="v56-cmp">' + v32Head(v56W('cmpH'), P.a && P.b ? P.a.name + ' · ' + P.b.name : v56W('cmpSub'));
+  html += '<div class="v56-cmpform"><div><label for="v56-cmp-a">' + v56Esc(v56W('cmpA')) + '</label><select id="v56-cmp-a" class="sainput">' + v56CmpOptions(P.a ? P.a.slug : '') + '</select></div>'
+    + '<div><label for="v56-cmp-b">' + v56Esc(v56W('cmpB')) + '</label><select id="v56-cmp-b" class="sainput">' + v56CmpOptions(P.b ? P.b.slug : '') + '</select></div>'
+    + '<div class="v28-btnrow"><button type="button" class="btn gold" data-v56="cmpgo" id="v56-cmpgo">' + v56Esc(v56W('cmpGo')) + '</button></div></div>';
+  if (!P.a || !P.b) return html + '</div>';
+  if (P.a === P.b) return html + '<p class="v32-line">' + v56Esc(v56W('cmpSame')) + '</p></div>';
+  var parts = [v39PartName(P.a), v39PartName(P.b)];
+  var ready = v56Ready(P.a) && v56Ready(P.b);
+  if (!ready) {
+    var failed = parts.some(function (p) { return typeof V39_PARTS !== 'undefined' && V39_PARTS.failed[p] && !V39_PARTS.wait[p]; });
+    return html + '<p class="v32-line" role="status" id="v56-cmp-wait">' + v56Esc(v56W(failed ? 'cmpFail' : 'cmpWait')) + '</p></div>';
+  }
+  [['climate', 'cmpClimate'], ['soils', 'cmpSoils'], ['grapes', 'cmpGrapes'], ['wines', 'cmpWines'], ['ladder', 'cmpLadder'], ['exam', 'cmpExam']].forEach(function (k) {
+    html += '<section class="v56-cmpsec" aria-labelledby="v56-cmp-' + k[0] + '"><h3 class="secgroup v32-gh" id="v56-cmp-' + k[0] + '">' + v56Esc(v56W(k[1])) + '</h3><div class="v56-cmprow">'
+      + '<div><b>' + v56Esc(P.a.name) + '</b>' + v56CmpCell(P.a, k[0]) + '</div><div><b>' + v56Esc(P.b.name) + '</b>' + v56CmpCell(P.b, k[0]) + '</div></div></section>';
+  });
+  html += '<div class="v28-btnrow v56-qacts"><button type="button" class="btn ghost" data-v39="region" data-slug="' + v56Esc(P.a.slug) + '" id="v56-cmp-ra">' + v56Esc(v56W('cmpRead', { name: P.a.name })) + '</button>'
+    + '<button type="button" class="btn ghost" data-v39="region" data-slug="' + v56Esc(P.b.slug) + '" id="v56-cmp-rb">' + v56Esc(v56W('cmpRead', { name: P.b.name })) + '</button></div>';
+  return html + '</div>';
+}
+function v56CmpView(arg) {
+  var P = v56CmpPair(arg);
+  if (P.a && P.b && P.a !== P.b && typeof v39LoadPart === 'function') {
+    [P.a, P.b].forEach(function (r) {
+      if (v56Ready(r)) return;
+      var part = v39PartName(r);
+      if (typeof V39_PARTS !== 'undefined') delete V39_PARTS.failed[part];
+      v39LoadPart(part, function () {
+        try { if (S.view === 'v56compare' && V56_ARGS.v56compare === arg) { if (typeof V32 !== 'undefined' && V32) V32.pend = 'replace'; render(); } } catch (e) { }
+      });
+    });
+  }
+  return v56Build(v56CmpHtml(arg));
+}
+V56_ACTS.cmpgo = function () {
+  var d = v56Doc();
+  var a = d && d.getElementById('v56-cmp-a'), b = d && d.getElementById('v56-cmp-b');
+  if (!a || !b) return;
+  v56Go('v56compare', a.value + '~' + b.value, 'replace');
+};
+v56View('v56compare', {
+  draw: function (arg) { return v56CmpView(arg); },
+  accept: function (arg) { var P = v56CmpPair(arg); return (P.a && P.b) ? P.a.slug + '~' + P.b.slug : v56CmpDefault(); },
+  name: function () { return v56W('cmpH'); },
+  parent: function (arg) { var P = v56CmpPair(arg); return P.a ? { view: 'region', arg: P.a.slug } : { view: 'worldmap', arg: '' }; }
+});
+
+/* ----- drill a country ----- */
+
+function v56DrillHtml() {
+  var html = '<div class="v25page v56 v56-drillpick" id="v56-drillpick">' + v32Head(v56W('drillH'), v56W('drillSub')) + '<p class="v32-line">' + v56Esc(v56W('drillPick')) + '</p>';
+  var rows = v56Countries().map(function (row) {
+    var keys = row.sheet ? v39SheetKeys(row.sheet) : [row.key];
+    var qs = v39Questions(keys);
+    if (!qs.length) return '';
+    var right = qs.filter(function (q) { return q && q.id && v56Right(q.id); }).length;
+    return v56Row('data-v56="drillc" data-key="' + v56Esc(row.key) + '"', v56Str(row.c && row.c.name) || row.key, v56W('drillCountryLine', { t: qs.length, q: right }), 'v56-dr-' + row.key);
+  }).join('');
+  return html + '<ul class="v25rows v32rows v56-doors">' + rows + '</ul></div>';
+}
+V56_ACTS.drillc = function (node) {
+  var key = node.getAttribute('data-key') || '';
+  var c = v39CountryOf(key);
+  if (!c || typeof v39StartDrill !== 'function') return;
+  v39StartDrill((c.sheet && !c.mapless) ? v39SheetKeys(c.sheet) : [key]);
+};
+v56View('v56drill', {
+  draw: function () { return v56Build(v56DrillHtml()); },
+  name: function () { return v56W('drillH'); },
+  parent: function () { return { view: 'worldmap', arg: '' }; }
+});
 
 /* =========== the cold address =========== */
 
