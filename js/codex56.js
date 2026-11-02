@@ -86,7 +86,13 @@ var V56_WORDS = {
   nextTo: 'Next: {name}',
   prev: 'Previous',
   next: 'Next',
-  courseNone: 'The course is not on this device yet.'
+  courseNone: 'The course is not on this device yet.',
+  /* region study scheduled */
+  dueDeck: 'Today’s region cards',
+  dueSection: 'The regions',
+  nothingDue: 'Nothing is due in the regions today.',
+  readyRegions: 'The regions’ questions',
+  readyRegionsNote: 'The questions of the regions and countries on the subject’s map count too, answered right at any level.'
 };
 
 function v56W(key, vars) {
@@ -351,3 +357,259 @@ V56_ACTS.course = function (node) { v56OpenStep(node.getAttribute('data-kind') |
     V56_ACTS[act](node, e);
   });
 })();
+
+/* =========== 3. region study scheduled =========== */
+
+/* codex3's day helpers when they are there (the Codex's own dates), else the same arithmetic. */
+function v56Today() {
+  try { if (typeof today === 'function') return today(); } catch (e) { }
+  return new Date().toISOString().slice(0, 10);
+}
+function v56AddDays(n) {
+  try { if (typeof addDays === 'function') return addDays(n); } catch (e) { }
+  return new Date(Date.now() + n * 864e5).toISOString().slice(0, 10);
+}
+/* codex3's rule, SM-2 lite, exactly as srsRecord applies it to a bank
+   question: right, the count up and the interval one day, then three, then
+   the last interval times the ease (the ease up a twentieth, to 2.8 at
+   most); wrong, the count and the interval back to nothing and the ease down
+   a fifth (to 1.3 at least), so the item is due today. */
+function v56Step(r, ok) {
+  var o = (r && typeof r === 'object') ? r : {};
+  var ef = Number(o.ef) || 2.5, iv = Number(o.iv) || 0, n = Number(o.n) || 0;
+  if (ok) {
+    n++;
+    iv = n === 1 ? 1 : (n === 2 ? 3 : Math.round(iv * ef));
+    ef = Math.min(2.8, ef + 0.05);
+  } else {
+    n = 0; iv = 0; ef = Math.max(1.3, ef - 0.2);
+  }
+  var out = { ef: Math.round(ef * 100) / 100, iv: iv, n: n, due: v56AddDays(iv) };
+  ['f', 'b', 'l', 'k'].forEach(function (k) { if (v56Own(o, k)) out[k] = o[k]; });
+  return out;
+}
+
+/* The atlas's questions (every region's and country's; never a technique's),
+   by id, with the key that owns each. */
+var V56_QIDS = { src: null, n: -1, ids: {} };
+function v56AtlasQs() {
+  var d = (typeof v39Data === 'function') ? v39Data() : null;
+  var regions = (typeof v39Regions === 'function') ? v39Regions() : [];
+  if (V56_QIDS.src === d && V56_QIDS.n === regions.length) return V56_QIDS.ids;
+  var ids = {};
+  var take = function (rec, key) {
+    v56List(rec && rec.questions).forEach(function (q) {
+      if (q && typeof q.id === 'string' && /^r-/.test(q.id) && !v56Own(ids, q.id) && (typeof v39Valid !== 'function' || v39Valid(q))) ids[q.id] = { q: q, key: key };
+    });
+  };
+  regions.forEach(function (a) { take(a, a.slug); });
+  var cs = (typeof v39Countries === 'function') ? v39Countries() : {};
+  Object.keys(cs).forEach(function (k) { if (v39Country(k)) take(cs[k], k); });
+  V56_QIDS = { src: d, n: regions.length, ids: ids };
+  return ids;
+}
+/* A card of the atlas: a region's or a country's (key/n), or a district's (d:slug/name). */
+function v56CardKey(id) {
+  var s = String(id || '');
+  var m = /^d:([a-z0-9-]+)\//.exec(s);
+  if (m) return v39Find(m[1]) ? m[1] : '';
+  m = /^([a-z0-9-]+)\/\d+$/.exec(s);
+  if (!m) return '';
+  return (v39Find(m[1]) || v39Country(m[1])) ? m[1] : '';
+}
+function v56Sched(kind, id, ok, extra) {
+  try {
+    var o = v56Rec();
+    var t = kind === 'q' ? o.q : o.c;
+    var prev = t[id] || {};
+    if (extra) Object.keys(extra).forEach(function (k) { prev[k] = extra[k]; });
+    t[id] = v56Step(prev, !!ok);
+    v56Put(o);
+  } catch (e) { }
+}
+/* A card graded on codex32's card screen: codex39 keeps its grade, and an
+   atlas card gains its due date here (a district card keeps its two faces,
+   so Today's deck can deal it before its reading is on the device). */
+if (typeof v32Grade === 'function') {
+  var _v56Grade = v32Grade;
+  v32Grade = function (got) {
+    try {
+      var r = S._v32run;
+      var c = r && r.flip && r.deck && r.deck.length ? r.cards[r.deck[0]] : null;
+      if (c && c.kind === 'region' && v56CardKey(c.id)) {
+        v56Sched('c', c.id, !!got, c.district ? { f: v56Str(c.front), b: v56Str(c.back), k: v56CardKey(c.id) } : null);
+      }
+    } catch (e) { }
+    return _v56Grade.apply(this, arguments);
+  };
+}
+/* A region's question answered (and an answer overridden): codex39 keeps it
+   out of codex3's rotation, and it gains its due date here, by the same rule. */
+if (typeof srsRecord === 'function') {
+  var _v56SrsRecord = srsRecord;
+  srsRecord = function (q, ok) {
+    try { if (q && typeof q.id === 'string' && v56Own(v56AtlasQs(), q.id)) v56Sched('q', q.id, !!ok); } catch (e) { }
+    return _v56SrsRecord.apply(this, arguments);
+  };
+}
+
+/* ----- what is due ----- */
+
+/* The card a scheduled id names now: a region's or a country's from codex39's
+   deck, a district's from its kept faces (or the layer's district deck). */
+function v56CardById(id, rec) {
+  var key = v56CardKey(id);
+  if (!key) return null;
+  if (/^d:/.test(id)) {
+    var r = rec && rec[id];
+    if (typeof v56DistrictCard === 'function') { var live = v56DistrictCard(id); if (live) return live; }
+    if (r && r.f && r.b) return { id: id, kind: 'region', front: r.f, back: r.b, label: '', district: 1, slug: key };
+    return null;
+  }
+  var cards = (typeof v39Cards === 'function') ? v39Cards(v39Find(key) || v39Country(key)) : [];
+  for (var i = 0; i < cards.length; i++) if (cards[i].id === id) return cards[i];
+  return null;
+}
+/* Due: scheduled on or before today. A key narrows it to one region or country. */
+function v56Due(key) {
+  var o = v56Rec(), t = v56Today();
+  var ids = v56AtlasQs();
+  var cards = [], qs = [];
+  Object.keys(o.c).forEach(function (id) {
+    var r = o.c[id];
+    if (!r || !r.due || r.due > t) return;
+    if (key && v56CardKey(id) !== key) return;
+    var c = v56CardById(id, o.c);
+    if (c) cards.push(c);
+  });
+  Object.keys(o.q).forEach(function (id) {
+    var r = o.q[id];
+    if (!r || !r.due || r.due > t || !v56Own(ids, id)) return;
+    if (key && ids[id].key !== key) return;
+    qs.push(ids[id].q);
+  });
+  return { cards: cards, qs: qs, total: cards.length + qs.length };
+}
+
+/* Today's region cards: a deck on codex32's one card screen, graded as every
+   region card is (codex39's slot, and the due date here). */
+var V56_DUE_DECK = 'regionsdue';
+if (typeof v32DeckDef === 'function') {
+  var _v56DeckDef = v32DeckDef;
+  v32DeckDef = function (id) {
+    if (String(id || '') === V56_DUE_DECK) {
+      var def = { id: V56_DUE_DECK, name: v56W('dueDeck'), cards: v56Due().cards, kind: 'region' };
+      def.learnt = (typeof v32Learnt === 'function') ? v32Learnt(def) : 0;
+      return def;
+    }
+    return _v56DeckDef.apply(this, arguments);
+  };
+}
+/* The questions due: a drill through the core engine, as codex39 deals a region's. */
+function v56StartDueDrill() {
+  var qs = v56Due().qs;
+  if (!qs.length) { if (typeof toast === 'function') toast(v56W('nothingDue')); return false; }
+  if (typeof v39Shuffle === 'function') qs = v39Shuffle(qs);
+  if (typeof stopTimer === 'function') stopTimer();
+  S._fin = null; S._v25lt = null;
+  S.mode = 'drill';
+  S.section = (typeof v39W === 'function') ? v39W('drillSection') : v56W('dueSection');
+  S._again = function () { v56StartDueDrill(); };
+  S.pool = qs; S.idx = 0; S.correct = 0; S.results = [];
+  if (typeof resetQ === 'function') resetQ();
+  S.view = 'quiz';
+  try { if (typeof V32 !== 'undefined' && V32 && !(typeof V32_RUN !== 'undefined' && V32_RUN && V32_RUN[V32.view])) V32.pend = 'push'; } catch (e) { }
+  render();
+  return true;
+}
+/* Today's door: the cards due, else the questions due, else the next step's own cards. */
+function v56StartToday() {
+  var d = v56Due();
+  if (d.cards.length && typeof v32StartRun === 'function') return v32StartRun(V56_DUE_DECK, { push: true });
+  if (d.qs.length) return v56StartDueDrill();
+  var p = v56Progress();
+  var step = p.next || p.first;
+  if (step && typeof v32StartRun === 'function') return v32StartRun('region:' + step.key, { push: true });
+  if (typeof toast === 'function') toast(v56W('nothingDue'));
+  return false;
+}
+V56_ACTS.today = function () { v56StartToday(); };
+V56_ACTS.duedrill = function () { v56StartDueDrill(); };
+
+/* the layer's own views, lit Wine Atlas (filled as they are made) */
+var V56_LIT = {};
+/* The deck lights Wine Atlas and climbs to the root. */
+if (typeof v25NavWord === 'function') {
+  var _v56NavWord = v25NavWord;
+  v25NavWord = function () {
+    try {
+      var id = '';
+      if (S.view === 'deck') id = String(S._v32deck || '');
+      else if (S.view === 'housedeck' || S.view === 'flash') { var run = S._v32run; id = (run && run.v32) ? String(run.deckId || '') : ''; }
+      if (id && (id === V56_DUE_DECK || /^districts:/.test(id))) return 'worldmap';
+      if (V56_LIT[S.view]) return 'worldmap';
+      if ((S.view === 'technique' || S.view === 'techniques') && typeof v56TechFrom === 'function' && v56TechFrom()) return 'worldmap';
+    } catch (e) { }
+    return _v56NavWord.apply(this, arguments);
+  };
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v56ParentRouteDue = v32ParentRoute;
+  v32ParentRoute = function () {
+    try { if (S.view === 'deck' && String(S._v32deck || '') === V56_DUE_DECK) return { view: 'worldmap', arg: '' }; } catch (e) { }
+    return _v56ParentRouteDue.apply(this, arguments);
+  };
+}
+
+/* ----- readiness: a region's answers count for every subject whose map names it ----- */
+
+function v56Right(id) {
+  try {
+    var forms = (typeof v53KeyForms === 'function') ? v53KeyForms(id) : [id];
+    return forms.some(function (k) { var r = (typeof ST !== 'undefined' && ST && ST.q) ? ST.q[k] : null; return !!(r && Number(r.c) >= 1); });
+  } catch (e) { return false; }
+}
+function v56SubjectKeys(s) {
+  var map = s && s.map && typeof s.map === 'object' ? s.map : {};
+  return v56List(map.regions).concat(v56List(map.countries)).filter(function (k) { return !!(v39Find(k) || v39Country(k)); });
+}
+function v56SubjectRegions(s) {
+  var qs = (typeof v39Questions === 'function') ? v39Questions(v56SubjectKeys(s)) : [];
+  var met = 0;
+  qs.forEach(function (q) { if (q && q.id && v56Right(q.id)) met++; });
+  return { met: met, total: qs.length };
+}
+if (typeof v53Readiness === 'function') {
+  var _v56Readiness = v53Readiness;
+  v53Readiness = function (id) {
+    var out = _v56Readiness.apply(this, arguments);
+    try {
+      var s = (typeof v53Subject === 'function') ? v53Subject(id) : null;
+      if (!s || !out) return out;
+      var r = v56SubjectRegions(s);
+      out.regions = r;
+      out.met += r.met;
+      out.total += r.total;
+      out.share = out.total ? out.met / out.total : 0;
+      if (out.total) out.word = (typeof v25MetWord === 'function') ? v25MetWord(out.met, out.total) : (out.met + ' of ' + out.total);
+    } catch (e) { }
+    return out;
+  };
+}
+if (typeof v53ReadyBody === 'function') {
+  var _v56ReadyBody = v53ReadyBody;
+  v53ReadyBody = function (s) {
+    var html = _v56ReadyBody.apply(this, arguments);
+    try {
+      var r = (typeof v53Readiness === 'function' && s) ? v53Readiness(s.id).regions : null;
+      if (!r || !r.total) return html;
+      var row = '<dt>' + v56Esc(v56W('readyRegions')) + '</dt><dd>' + v56Esc(r.met + ' of ' + r.total) + '</dd>';
+      var dl = html.indexOf('</dl>');
+      html = dl >= 0 ? html.slice(0, dl) + row + html.slice(dl) : html + '<dl class="v39-pairs">' + row + '</dl>';
+      var note = html.indexOf('<p class="v53-note">');
+      var end = note >= 0 ? html.indexOf('</p>', note) : -1;
+      if (end > 0) html = html.slice(0, end) + ' ' + v56Esc(v56W('readyRegionsNote')) + html.slice(end);
+    } catch (e) { }
+    return html;
+  };
+}

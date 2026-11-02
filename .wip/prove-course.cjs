@@ -287,6 +287,42 @@ async function main() {
   check('a country page drawn whole is a step read, kept in the layer\'s slot', A.J('v56Rec().r.france') === 1 && A.G('v56IsRead({ kind: "country", key: "france" })'));
   const prog = A.J('v56Progress()');
   check('the progress reads the course: ' + prog.read + ' of ' + prog.n + ' read (Rioja, Piedmont and France, each drawn whole), the first unread Champagne', prog.read === 3 && prog.next && prog.next.key === 'champagne' && prog.at === 0, JSON.stringify(prog));
+
+  /* ================================================================ */
+  section('3. region study scheduled');
+  const B = await bootDevice();
+  const steps = B.J('(function () { var a = v56Step({}, true), b = v56Step(a, true), c = v56Step(b, true), d = v56Step(c, false); return [a, b, c, d]; })()');
+  const day = (n) => B.G('v56AddDays(' + n + ')');
+  check('codex3\'s rule, SM-2 lite: right one day, then three, then the interval times the ease (8); wrong, due today and the ease down a fifth',
+    steps[0].iv === 1 && steps[0].due === day(1) && steps[1].iv === 3 && steps[2].iv === 8 && steps[2].ef === 2.65 && steps[3].iv === 0 && steps[3].n === 0 && steps[3].due === B.G('v56Today()') && steps[3].ef === 2.45, JSON.stringify(steps));
+  /* two region cards graded on codex32's card screen, right then again */
+  const graded = B.J('(function () { v32StartRun("region:burgundy", { keepOrder: true }); var r = S._v32run; var ids = [r.cards[r.deck[0]].id, r.cards[r.deck[1]].id]; r.flip = true; v32Grade(true); r.flip = true; v32Grade(false); var o = v56Rec(); return { ids: ids, a: o.c[ids[0]], b: o.c[ids[1]], g: v39CardRec() }; })()');
+  check('a region card graded keeps codex39\'s grade and gains its due date: right, tomorrow; again, today (' + graded.ids.join(', ') + ')',
+    graded.g[graded.ids[0]] === 'got' && graded.g[graded.ids[1]] === 'again' && graded.a.due === day(1) && graded.a.n === 1 && graded.b.due === B.G('v56Today()') && graded.b.n === 0, JSON.stringify(graded));
+  const qa = B.J('(function () { var qs = v39Questions(["rioja"]); statRecord(qs[0], true); statRecord(qs[1], false); var o = v56Rec(); return { ids: [qs[0].id, qs[1].id], a: o.q[qs[0].id], b: o.q[qs[1].id], srs: [!!ST.srs[qKey(qs[0])], !!ST.srs[qKey(qs[1])]], stat: ST.q[qKey(qs[0])] }; })()');
+  check('a region question answered gains its due date by the same rule (right tomorrow, wrong today), still outside codex3\'s rotation and still counted by codex2',
+    qa.a && qa.a.due === day(1) && qa.b && qa.b.due === B.G('v56Today()') && !qa.srs[0] && !qa.srs[1] && qa.stat && qa.stat.c === 1, JSON.stringify(qa));
+  check('a technique\'s question and a bank question are never scheduled here', B.G('(function () { var t = v46List()[0]; var q = t && t.questions && t.questions[0]; var bank = QUESTIONS[0]; if (q) statRecord(q, true); statRecord(bank, true); var o = v56Rec(); return !(q && o.q[q.id]) && !o.q[bank.id]; })()'));
+  /* seeded grades: three cards and two questions due (yesterday and today), two cards and one question ahead */
+  const seededDue = B.J('(function () { var o = v56Rec(); o.c = {}; o.q = {}; var y = v56AddDays(-1), t = v56Today(), f = v56AddDays(4); '
+    + 'o.c["champagne/0"] = { ef: 2.5, iv: 1, n: 1, due: y }; o.c["champagne/1"] = { ef: 2.5, iv: 0, n: 0, due: t }; o.c["france/0"] = { ef: 2.3, iv: 3, n: 2, due: y }; o.c["champagne/2"] = { ef: 2.5, iv: 4, n: 2, due: f }; o.c["mosel/0"] = { ef: 2.5, iv: 8, n: 3, due: f }; '
+    + 'var cq = v39Questions(["champagne"]); o.q[cq[0].id] = { ef: 2.5, iv: 1, n: 1, due: y }; o.q[cq[1].id] = { ef: 2.5, iv: 0, n: 0, due: t }; o.q[cq[2].id] = { ef: 2.5, iv: 3, n: 2, due: f }; v56Put(o); '
+    + 'var d = v56Due(), c = v56Due("champagne"); return { cards: d.cards.map(function (x) { return x.id; }), qs: d.qs.length, total: d.total, champ: [c.cards.length, c.qs.length] }; })()');
+  check('the due counts on seeded grades: 3 cards (Champagne\'s two and France\'s one) and 2 questions, 5 in all; Champagne alone 2 and 2',
+    seededDue.cards.slice().sort().join(',') === 'champagne/0,champagne/1,france/0' && seededDue.qs === 2 && seededDue.total === 5 && seededDue.champ.join(',') === '2,2', JSON.stringify(seededDue));
+  const deck = B.J('(function () { var d = v32DeckDef("regionsdue"); S.view = "deck"; S._v32deck = "regionsdue"; return { name: d.name, ids: d.cards.map(function (c) { return c.id; }), kind: d.kind, lit: v25NavWord(), parent: v32ParentRoute() }; })()');
+  check('Today\'s region cards is a deck of the cards due, lit Wine Atlas, climbing to the root', deck.name === 'Today’s region cards' && deck.kind === 'region' && deck.ids.length === 3 && deck.lit === 'worldmap' && deck.parent.view === 'worldmap' && !deck.parent.arg, JSON.stringify(deck));
+  const today = B.J('(function () { V56_ACTS.today({ getAttribute: function () { return null; } }); var a = { view: S.view, deck: S._v32run && S._v32run.deckId, n: S._v32run && S._v32run.total, lit: v25NavWord() }; return a; })()');
+  check('Today\'s door deals the cards due first (3, on the card screen, lit Wine Atlas)', today.view === 'housedeck' && today.deck === 'regionsdue' && today.n === 3 && today.lit === 'worldmap', JSON.stringify(today));
+  const dd = B.J('(function () { V56_ACTS.duedrill({ getAttribute: function () { return null; } }); return { view: S.view, n: S.pool.length, section: S.section, lit: v25NavWord(), ids: S.pool.map(function (q) { return q.id; }) }; })()');
+  check('the questions due are a drill through the core engine (2, the regions\' section, lit Wine Atlas)', dd.view === 'quiz' && dd.n === 2 && dd.section === 'The regions' && dd.lit === 'worldmap', JSON.stringify(dd));
+  B.G('S.mode = null; S.pool = []; S.view = "home";');
+  /* readiness: a region's answers count for the subjects whose maps name it */
+  const rd = B.J('(function () { var before = v53Readiness("rioja"); var q = v39Questions(["rioja"])[2]; ST.q[qKey(q)] = { c: 1, w: 0, s: 1 }; var after = v53Readiness("rioja"); var vit = v53Readiness("vinification"); return { b: before.regions, a: after.regions, met: [before.met, after.met], total: [before.total, after.total], vit: vit.regions, body: v53ReadyBody(v53Subject("rioja")) }; })()');
+  const riojaQs = B.G('v39Questions(["rioja", "spain"]).length');
+  check('readiness: Rioja\'s subject counts the questions of Rioja and Spain (' + riojaQs + '), one more right lifts it by one', rd.b.total === riojaQs && rd.a.met === rd.b.met + 1 && rd.met[1] === rd.met[0] + 1 && rd.total[0] === rd.total[1], JSON.stringify(rd).slice(0, 400));
+  check('and Winemaking, whose map names Rioja too, counts it as well', rd.vit.met >= 1, JSON.stringify(rd.vit));
+  check('the subject\'s readiness page names the regions\' questions', rd.body.indexOf('<dt>The regions’ questions</dt>') > 0 && rd.body.indexOf('The questions of the regions and countries on the subject’s map count too') > 0, rd.body.slice(0, 300));
 }
 
 main().then(() => {
