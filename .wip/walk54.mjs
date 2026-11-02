@@ -16,14 +16,23 @@
    search); Burgundy, Napa and Sonoma and Rioja opened from the root with the inline map loaded, a district tapped
    and its point marked, every In the Codex door opened with Back returning to the region, and Back to the root;
    France's country page with its sheet inline and its regions; cold reloads of #/v/region/burgundy, #/v/worldmap
-   and #/library with Back climbing to Home.
+   and #/library with Back climbing to Home. Since codex56 (the Wine Atlas made a course), with codex55's steps moved
+   one layer on (four chips, the countries as rows with their readiness, every count from the index on a visit that
+   reads nothing, a search reading the districts, a district marked beside itself with the page left where it was,
+   field map to come for an article off the map, the cold chain through the folded index): the root's Start here,
+   then Continue once a step is read, and its five study doors each opened with Back; a region's study row sticking
+   under Back, its chips and its jumps, In one minute; the inline map waiting while it is below the view and
+   loading as it nears it; a map quiz answered by a tap at a dot and by a name; district cards dealt, flipped and
+   graded; compare two regions chosen and drawn side by side; the folded field map, field atlas and regions
+   addresses; Jura and Txakoli as articles off the map with their country's sheet; Next across a sheet's edge, Rioja
+   to Piedmont, and Previous back.
 
      PLAYWRIGHT_MODULE=... OOT_HOUSE_PACK=... WALK_PACK=<a pack with sales> SITE_ROOT=<a root whose shared/ is
      WorldTable's static/shared> node .wip/walk54.mjs [width] [day|night]
 
    CODEX_URL names a server already running; without it the walk starts .wip/serve.mjs on a free port and stops it.
    WALK_PACK is served in place of the shipped pack; without it a sale is written in memory into every wine of
-   OOT_HOUSE_PACK. Work in progress, kept on codex54-wip and extended on codex55-wip. */
+   OOT_HOUSE_PACK. Work in progress, kept on codex54-wip and extended on codex55-wip and codex56-wip. */
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -351,21 +360,25 @@ async function walk(browser, width, mode) {
   await step('the Wine Atlas root', async () => {
     await go('#/');
     await atlasRoot();
-    await page.waitForFunction(() => v55Regions().every((a) => v39RecReady(a)), null, { timeout: 30000 });
     await settle(300);
+    /* codex56: the counts come from the index, so nothing waits for a reading */
     const hub = await page.evaluate(() => ({
       hash: location.hash, chips: [...document.querySelectorAll('.v55-chips .v28-chip')].map((c) => c.textContent.trim()), sheets: document.querySelectorAll('#v55-hub [data-v39="openmap"]').length,
-      countries: document.querySelectorAll('#v55-hub .v55-countrychips [data-v39="country"]').length, groups: document.querySelectorAll('#v55-hub .v55-country').length, want: v55CountryOrder().length,
-      regions: document.querySelectorAll('#v55-hub .v55-regions [data-v39="region"]').length, all: v55Regions().length,
-      counted: [...document.querySelectorAll('#v55-hub [data-v55-count]')].filter((n) => /districts? · \d+ on its field map$/.test(n.textContent)).length
+      countries: document.querySelectorAll('#v55-hub .v56-countryrows [data-v39="country"]').length, groups: document.querySelectorAll('#v55-hub .v55-country').length, want: v55CountryOrder().length,
+      regions: document.querySelectorAll('#v55-hub .v55-regions [data-v39="region"]').length, all: v55Regions().length, read: v55Regions().filter((a) => v39RecReady(a)).length,
+      counted: [...document.querySelectorAll('#v55-hub [data-v55-count]')].filter((n) => /districts? · (\d+ on its field map|field map to come)$/.test(n.textContent)).length,
+      start: (document.querySelector('#v56-start-h') || {}).textContent, doors: document.querySelectorAll('#v55-hub .v56-studydoors .v25row').length, reads: v56Progress().read
     }));
-    console.log('    the root: ' + hub.sheets + ' sheets, ' + hub.countries + ' countries, ' + hub.regions + ' regions, ' + hub.counted + ' counted');
+    console.log('    the root: ' + hub.sheets + ' sheets, ' + hub.countries + ' countries, ' + hub.regions + ' regions, ' + hub.counted + ' counted, ' + hub.read + ' readings on the device');
     check('Wine Atlas opens the root (#/v/worldmap), lit Wine Atlas', hub.hash === '#/v/worldmap' && (await lit()) === 'worldmap', hub.hash);
-    check('the root: its five chips, seventeen sheet doors, every country as a chip and a group, every region as a row with its counts filled', hub.chips.join(',') === 'The World Map,Countries,Every region,Field maps,Techniques' && hub.sheets === 17 && hub.countries === hub.want && hub.groups === hub.want && hub.regions === hub.all && hub.counted === hub.all, JSON.stringify(hub));
+    check('the root: ' + hub.start + ' and the five study doors, its four chips, seventeen sheet doors, every country as a row and a group, every region as a row with its counts filled from the index', hub.start === (hub.reads ? 'Continue' : 'Start here') && hub.doors === 5 && hub.chips.join(',') === 'The World Map,Countries,Every region,Techniques' && hub.sheets === 17 && hub.countries === hub.want && hub.groups === hub.want && hub.regions === hub.all && hub.counted === hub.all, JSON.stringify(hub));
     await page.fill('#v55-find', 'chablis');
-    await settle(150);
+    await page.waitForFunction(() => v55Regions().every((a) => v39RecReady(a)), null, { timeout: 30000 });
+    await page.fill('#v55-find', '');
+    await page.fill('#v55-find', 'chablis');
+    await settle(250);
     const found = await page.evaluate(() => [...document.querySelectorAll('#v55-hub .v55-regions li[data-v55-slug]')].filter((li) => !li.hidden).map((li) => li.getAttribute('data-v55-slug')));
-    check('the search finds a district: Chablis finds Burgundy', found.length === 1 && found[0] === 'burgundy', JSON.stringify(found));
+    check('the first search reads the districts, and Chablis finds Burgundy', found.length === 1 && found[0] === 'burgundy', JSON.stringify(found));
     await page.fill('#v55-find', '');
     await settle(150);
     await screen('the Wine Atlas root', true);
@@ -381,16 +394,28 @@ async function walk(browser, width, mode) {
       await row.scrollIntoViewIfNeeded();
       await row.click();
       await regionReady(slug);
-      await page.waitForFunction(() => { const i = document.querySelector('.v55-mapfig img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
+      /* codex56: the inline map loads as it nears the view */
+      await page.evaluate(() => { const f = document.querySelector('.v55-mapfig'); window.scrollTo(0, f.getBoundingClientRect().top + scrollY - 120); });
+      await page.waitForFunction(() => { const i = document.querySelector('.v55-mapfig img'); return i && !i.hasAttribute('data-v56-lazy') && i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
       await settle(300);
       const regionHash = (await state()).hash;
       check(slug + ': opened from its row on the root, lit Wine Atlas, the inline map loaded above The districts', regionHash === '#/v/region/' + slug && (await lit()) === 'worldmap' && await page.evaluate(() => document.querySelector('.v55-map').compareDocumentPosition(document.querySelector('.v55-districts')) === Node.DOCUMENT_POSITION_FOLLOWING), regionHash);
       const name = await page.evaluate((p) => { const b = [...document.querySelectorAll('[data-v55="pin"]')].find((x) => x.getAttribute('data-name') === p) || document.querySelector('.v55-districts .v55-dlist:not(.v55-also) [data-v55="pin"]'); return b ? b.getAttribute('data-name') : ''; }, place);
       const btn = page.locator('[data-v55="pin"][data-name="' + name + '"]').first();
+      /* codex56: The districts show eight, the rest behind Show all */
+      if (!(await btn.isVisible())) {
+        const few = await page.evaluate(() => [...document.querySelectorAll('.v55-districts li.v55-d')].filter((li) => li.offsetParent !== null).length);
+        await page.locator('#v56-alld').scrollIntoViewIfNeeded();
+        await page.click('#v56-alld');
+        await settle(200);
+        const all = await page.evaluate(() => ({ shown: [...document.querySelectorAll('.v55-districts li.v55-d')].filter((li) => li.offsetParent !== null).length, total: document.querySelectorAll('.v55-districts li.v55-d').length, said: document.querySelector('#v56-alld').textContent }));
+        check(slug + ': The districts show ' + few + ', and Show all opens all ' + all.total + ' (to reach ' + name + ')', few === 8 && all.shown === all.total && all.total > 8 && all.said === 'Show the first eight', JSON.stringify({ few, all }));
+      }
       await btn.scrollIntoViewIfNeeded();
+      const y0 = await page.evaluate(() => scrollY);
       await btn.click();
-      await settle(350);
-      const mark = await page.evaluate(() => {
+      await settle(450);
+      const mark = await page.evaluate((y0) => {
         const pin = document.querySelector('.v55-pin'), ring = pin.querySelector('.v55-pin-ring').getBoundingClientRect();
         const img = document.querySelector('.v55-mapfig img').getBoundingClientRect();
         const b = document.querySelector('[data-v55="pin"][aria-pressed="true"]');
@@ -398,9 +423,12 @@ async function walk(browser, width, mode) {
         const s = Math.min(img.width / 1200, img.height / 1500);
         const want = [img.left + (img.width - 1200 * s) / 2 + Number(b.getAttribute('data-x')) * s, img.top + (img.height - 1500 * s) / 2 + Number(b.getAttribute('data-y')) * s];
         const got = [ring.left + ring.width / 2, ring.top + ring.height / 2];
-        return { hidden: pin.hidden, tag: pin.textContent, off: Math.hypot(got[0] - want[0], got[1] - want[1]), inImage: got[0] >= img.left && got[0] <= img.right && got[1] >= img.top && got[1] <= img.bottom, inView: ring.top >= 0 && ring.bottom <= innerHeight, said: document.getElementById('v55-pin-said').textContent, pressed: document.querySelectorAll('[data-v55="pin"][aria-pressed="true"]').length, here: !!b.closest('.v55-d.v55-here') };
-      });
-      check(slug + ': a tap on ' + name + ' marks its point on the map (' + (mark.off || 0).toFixed(2) + ' px from the dot), in view, its button pressed, its district lit and the mark said', !mark.none && !mark.hidden && mark.off < 1.5 && mark.inImage && mark.inView && mark.pressed === 1 && mark.here && mark.said.indexOf(name) === 0 && mark.tag.indexOf(name) > 0, JSON.stringify(mark));
+        /* codex56: the page stays where the reader is, the mark shown beside the district in a close crop of the map */
+        const inset = b.closest('.v55-pinrow') && b.closest('.v55-pinrow').nextElementSibling;
+        const ir = inset && inset.classList.contains('v56-inset') ? inset.getBoundingClientRect() : null;
+        return { hidden: pin.hidden, tag: pin.textContent, off: Math.hypot(got[0] - want[0], got[1] - want[1]), inImage: got[0] >= img.left && got[0] <= img.right && got[1] >= img.top && got[1] <= img.bottom, moved: Math.abs(scrollY - y0), inset: !!ir, inView: !!ir && ir.top >= 0 && ir.bottom <= innerHeight, said: document.getElementById('v55-pin-said').textContent, pressed: document.querySelectorAll('[data-v55="pin"][aria-pressed="true"]').length, here: !!b.closest('.v55-d.v55-here') };
+      }, y0);
+      check(slug + ': a tap on ' + name + ' marks its point on the map (' + (mark.off || 0).toFixed(2) + ' px from the dot) and beside the district in view, the page left where it was, its button pressed, its district lit and the mark said', !mark.none && !mark.hidden && mark.off < 1.5 && mark.inImage && mark.inset && mark.inView && mark.moved <= 2 && mark.pressed === 1 && mark.here && mark.said.indexOf(name) === 0 && mark.tag.indexOf(name) > 0, JSON.stringify(mark));
       await screen(slug, true);
       const doors = await page.evaluate(() => [...document.querySelectorAll('.v55-codex button')].map((b) => ({ label: b.textContent.trim(), kind: b.getAttribute('data-go') || (b.getAttribute('data-v46') ? 'technique' : '') || b.getAttribute('data-v39') || '' })));
       console.log('    In the Codex: ' + doors.length + ' doors (' + doors.map((d) => d.kind).join(', ') + ')');
@@ -436,7 +464,7 @@ async function walk(browser, width, mode) {
     await page.waitForFunction(() => S.view === 'country' && S._v39country === 'france' && v39RecReady(v39CountryOf('france')) && document.querySelector('.v55-sheetfig img'), null, { timeout: 30000 });
     await page.waitForFunction(() => { const i = document.querySelector('.v55-sheetfig img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
     await settle(300);
-    const fr = await page.evaluate(() => ({ hash: location.hash, want: v39SheetRegions('france').length, rows: document.querySelectorAll('.v55-cregions [data-v39="region"]').length, counts: [...document.querySelectorAll('.v55-cregions [data-v55-count]')].filter((n) => /districts? · \d+ on its field map$/.test(n.textContent)).length, door: !!document.querySelector('#view .v45-door'), sections: document.querySelectorAll('.v39-country details').length }));
+    const fr = await page.evaluate(() => ({ hash: location.hash, want: v39SheetRegions('france').length, rows: document.querySelectorAll('.v55-cregions [data-v39="region"]').length, counts: [...document.querySelectorAll('.v55-cregions [data-v55-count]')].filter((n) => /districts? · (\d+ on its field map|field map to come)$/.test(n.textContent)).length, door: !!document.querySelector('#view .v45-door'), sections: document.querySelectorAll('.v39-country details').length }));
     check('france: its sheet inline, every region (' + fr.want + ') as a row with its counts, the reading kept, lit Wine Atlas', fr.hash === '#/v/country/france' && fr.rows === fr.want && fr.counts === fr.want && !fr.door && fr.sections >= 2 && (await lit()) === 'worldmap', JSON.stringify(fr));
     await screen('france', true);
     const first = page.locator('.v55-cregions [data-v39="region"]').first();
@@ -449,6 +477,251 @@ async function walk(browser, width, mode) {
     check('france: Back from the region returns to France', (await state()).view === 'country' && (await state()).hash === '#/v/country/france', JSON.stringify(await state()));
     await back();
     check('france: Back from France returns to the Wine Atlas root', await page.evaluate(() => S.view === 'worldmap' && !S.wmap && !!document.querySelector('#v55-hub')));
+  });
+
+  /* ================= codex56: the Wine Atlas made a course ================= */
+  const rowUnderBack = () => page.evaluate(() => {
+    const r = document.querySelector('.v56-srow'), b = document.querySelector('#view > .v32back');
+    if (!r || !b) return null;
+    const rr = r.getBoundingClientRect(), br = b.getBoundingClientRect();
+    return { row: rr.top, bottom: rr.bottom, h: rr.height, back: br.bottom };
+  });
+  const minuteRows = () => page.evaluate(() => [...document.querySelectorAll('.v56-minute dt')].map((n) => n.textContent));
+  const rowChips = () => page.evaluate(() => [...document.querySelectorAll('.v56-srow button')].map((b) => b.textContent));
+
+  /* Continue on the root, once steps are read, opens the first unread step */
+  await step('the course on the root', async () => {
+    /* the read steps taken off this walk's own profile: Start here, then Continue after the first step */
+    await go('#/');
+    await page.evaluate(() => { localStorage.removeItem(v39Key(V39_READ_BASE)); const o = v56Rec(); o.r = {}; v56Put(o); });
+    await atlasRoot();
+    const s0 = await page.evaluate(() => ({ head: (document.querySelector('#v56-start-h') || {}).textContent, btn: (document.querySelector('#v56-continue') || {}).textContent, line: (document.querySelector('.v56-start .v32-line') || {}).textContent }));
+    check('a learner with nothing read sees Start here: "' + s0.btn + '"', s0.head === 'Start here' && s0.btn === 'Begin with Champagne' && /^The course follows the Court’s subjects in their order: \d+ steps, from Champagne to /.test(s0.line || ''), JSON.stringify(s0));
+    await page.click('#v56-continue');
+    await regionReady('champagne');
+    check('Start here opens Champagne (' + (await state()).hash + '), lit Wine Atlas', (await state()).hash === '#/v/region/champagne' && (await lit()) === 'worldmap');
+    await back();
+    const c = await page.evaluate(() => { const p = v56Progress(); return { head: (document.querySelector('#v56-start-h') || {}).textContent, btn: (document.querySelector('#v56-continue') || {}).textContent, read: p.read, n: p.n, next: p.next && p.next.name, kind: p.next && p.next.kind, key: p.next && p.next.key }; });
+    check('the root says Continue once steps are read (' + c.read + ' of ' + c.n + '), its door the first unread step: "' + c.btn + '"', c.head === 'Continue' && c.read >= 1 && c.btn === 'Continue with ' + c.next, JSON.stringify(c));
+    await page.click('#v56-continue');
+    await settle(400);
+    const st = await state();
+    check('Continue opens ' + c.next + ' (' + st.hash + '), lit Wine Atlas', st.hash === '#/v/' + c.kind + '/' + c.key && (await lit()) === 'worldmap', JSON.stringify(st));
+    await back();
+    check('Back from the step returns to the root', await page.evaluate(() => S.view === 'worldmap' && !S.wmap && !!document.querySelector('#v55-hub')), JSON.stringify(await state()));
+    await page.click('#v56-path');
+    await settle(300);
+    const cp = await page.evaluate(() => ({ view: S.view, hash: location.hash, rows: document.querySelectorAll('#v56-course [data-v56="course"]').length, n: v56Course().length }));
+    check('See the whole course opens its page (#/v/v56course), every step a row (' + cp.rows + ')', cp.view === 'v56course' && cp.hash === '#/v/v56course' && cp.rows === cp.n && (await lit()) === 'worldmap', JSON.stringify(cp));
+    await screen('the whole course');
+    await back();
+    check('Back from the whole course returns to the root', (await state()).view === 'worldmap');
+  });
+
+  /* the five study doors, each opened and Back */
+  await step('the study doors', async () => {
+    const doors = [['#v56-today', 'Today’s region cards', ['housedeck', 'quiz']], ['#v56-drill', 'Drill a country', ['v56drill']], ['#v56-mapquiz', 'Map quiz', ['v56mapquiz']], ['#v56-districts', 'District cards', ['v56districts']], ['#v56-compare', 'Compare two regions', ['v56compare']]];
+    for (const [id, name, views] of doors) {
+      await go('#/');
+      await atlasRoot();
+      const d = page.locator(id);
+      await d.scrollIntoViewIfNeeded();
+      await d.click();
+      await settle(400);
+      const st = await state();
+      check('the study door ' + name + ' opens ' + st.view + ' (' + st.hash + '), lit Wine Atlas', views.indexOf(st.view) >= 0 && (await lit()) === 'worldmap', JSON.stringify(st));
+      if (st.view !== 'housedeck' && st.view !== 'quiz') await screen(name);
+      await page.evaluate(() => { if (typeof stopTimer === 'function') stopTimer(); });
+      await back();
+      check('Back from ' + name + ' returns to the root', await page.evaluate(() => S.view === 'worldmap' && !S.wmap && !!document.querySelector('#v55-hub')), JSON.stringify(await state()));
+    }
+  });
+
+  /* a region's study row and In one minute; the inline map waiting, then loading as it nears the view */
+  await step('the study row', async () => {
+    await boot('#/v/region/burgundy');
+    await regionReady('burgundy');
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await settle(300);
+    const chips = await rowChips();
+    const minute = await minuteRows();
+    check('burgundy: the study row reads ' + chips.join(', '), chips.join('|') === 'Summary|Map|Districts|Read|Flash|Drill|Map quiz|Previous|Next', JSON.stringify(chips));
+    check('burgundy: In one minute reads ' + minute.join(', '), minute.join('|') === 'The climate|The main grapes|The ladder|One exam line|One trap', JSON.stringify(minute));
+    const row0 = await page.evaluate(() => { const r = document.querySelector('.v56-srow'); const b = [...r.querySelectorAll('button')]; return { one: b.every((x) => Math.abs(x.getBoundingClientRect().top - b[0].getBoundingClientRect().top) < 1), scrolls: r.scrollWidth > r.clientWidth, overflow: getComputedStyle(r).overflowX }; });
+    check('burgundy: the row is one line that scrolls on its own (' + row0.overflow + ')', row0.one && row0.overflow === 'auto', JSON.stringify(row0));
+    await page.evaluate(() => { const d = document.querySelector('.v55-districts'); window.scrollTo(0, d.getBoundingClientRect().top + scrollY + 200); });
+    await settle(300);
+    const stuck = await rowUnderBack();
+    check('burgundy: scrolled into The districts, the study row sticks under Back (row at ' + (stuck && stuck.row.toFixed(1)) + ', Back ends at ' + (stuck && stuck.back.toFixed(1)) + ')', !!stuck && Math.abs(stuck.row - stuck.back) <= 1.5 && stuck.h >= 50, JSON.stringify(stuck));
+    await screen('burgundy, the study row');
+    for (const [chip, target] of [['#v56-s-summary', '#v56-minute-h'], ['#v56-s-districts', '#v55-districts-h'], ['#v56-s-map', '#v55-map-h']]) {
+      await page.click(chip);
+      await settle(400);
+      const j = await page.evaluate((t) => { const h = document.querySelector(t).getBoundingClientRect(); const r = document.querySelector('.v56-srow').getBoundingClientRect(); return { h: h.top, under: r.bottom }; }, target);
+      check('burgundy: ' + chip.slice(7) + ' lands ' + target + ' just under the row (' + j.h.toFixed(0) + ' under ' + j.under.toFixed(0) + ')', j.h >= j.under - 1 && j.h <= j.under + 24, JSON.stringify(j));
+    }
+  });
+  await step('the inline map on scroll', async () => {
+    let shown = false;
+    for (const slug of ['burgundy', 'rioja', 'bordeaux', 'champagne']) {
+      await boot('#/v/region/' + slug);
+      await regionReady(slug);
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await settle(400);
+      const before = await page.evaluate(() => { const i = document.querySelector('.v55-mapfig img'); return i ? { lazy: i.hasAttribute('data-v56-lazy'), src: (i.getAttribute('src') || '').slice(0, 5), below: i.getBoundingClientRect().top - innerHeight } : null; });
+      if (!before || before.below <= 220) { console.log('    ' + slug + ': its map ' + (before ? Math.round(before.below) + ' px below the view, within reach on load' : 'absent')); continue; }
+      check(slug + ': the inline map waits while it is ' + Math.round(before.below) + ' px below the view (a blank of its shape)', before.lazy && before.src === 'data:', JSON.stringify(before));
+      await page.evaluate(() => { const f = document.querySelector('.v55-mapfig'); window.scrollTo(0, f.getBoundingClientRect().top + scrollY - innerHeight + 80); });
+      await page.waitForFunction(() => { const i = document.querySelector('.v55-mapfig img'); return i && !i.hasAttribute('data-v56-lazy') && i.complete && i.naturalWidth > 0; }, null, { timeout: 20000 }).catch(() => { });
+      const after = await page.evaluate(() => { const i = document.querySelector('.v55-mapfig img'); return { lazy: i.hasAttribute('data-v56-lazy'), src: i.getAttribute('src'), w: i.naturalWidth }; });
+      check(slug + ': scrolled near, the artwork loads (' + after.src + ', ' + after.w + ' wide)', !after.lazy && /^maps\/regions-v1\//.test(after.src) && after.w === 1200, JSON.stringify(after));
+      shown = true;
+      break;
+    }
+    check('a region whose map starts below the view was found and its map loaded on scroll', shown);
+  });
+
+  /* a map quiz answered both ways, from Burgundy's study row */
+  await step('a map quiz', async () => {
+    await boot('#/v/region/burgundy');
+    await regionReady('burgundy');
+    await page.click('#v56-s-quiz');
+    await page.waitForFunction(() => S.view === 'v56mapquiz' && document.querySelector('.v56-qfig img'), null, { timeout: 15000 });
+    await page.waitForFunction(() => { const i = document.querySelector('.v56-qfig img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 20000 });
+    await settle(300);
+    const q = await page.evaluate(() => { const it = V56_Q.items[V56_Q.i]; return { mode: it.mode, name: it.p.name, n: it.p.n, x: it.p.x, y: it.p.y, hash: location.hash }; });
+    await page.locator('.v56-qfig').scrollIntoViewIfNeeded();
+    const box = await page.evaluate(() => { const r = document.querySelector('.v56-qfig img').getBoundingClientRect(); return { left: r.left, top: r.top, width: r.width, height: r.height }; });
+    await page.mouse.click(box.left + q.x / 1200 * box.width + 1, box.top + q.y / 1500 * box.height - 1);
+    await settle(350);
+    const f1 = await page.evaluate(() => (document.querySelector('#v56-qfeed') || {}).textContent);
+    check('the map quiz opens from the study row (' + q.hash + '); "Find ' + q.name + '" answered by a tap at its dot: "' + f1 + '"', q.hash === '#/v/v56mapquiz/burgundy' && q.mode === 'find' && f1 === 'Right: number ' + q.n + ' is ' + q.name + '.', JSON.stringify({ q, f1 }));
+    await page.click('#v56-qnext');
+    await settle(300);
+    const q2 = await page.evaluate(() => { const it = V56_Q.items[V56_Q.i]; return { mode: it.mode, name: it.p.name, n: it.p.n }; });
+    const opts = page.locator('.v56-qopts [data-v56="qpick"]');
+    const names = await opts.allTextContents();
+    await opts.nth(names.indexOf(q2.name)).click();
+    await settle(300);
+    const f2 = await page.evaluate(() => (document.querySelector('#v56-qfeed') || {}).textContent);
+    check('"Which place is marked?" answered from four names: "' + f2 + '"', q2.mode === 'name' && names.length === 4 && f2 === 'Right: number ' + q2.n + ' is ' + q2.name + '.', JSON.stringify({ q2, names, f2 }));
+    await screen('the map quiz');
+    check('the map quiz lights Wine Atlas', (await lit()) === 'worldmap');
+    await back();
+    check('Back from the map quiz returns to Burgundy', (await state()).hash === '#/v/region/burgundy', JSON.stringify(await state()));
+  });
+
+  /* district cards, from Burgundy's districts */
+  await step('district cards', async () => {
+    await regionReady('burgundy');
+    const door = page.locator('#v56-dcards');
+    await door.scrollIntoViewIfNeeded();
+    await door.click();
+    await page.waitForFunction(() => S.view === 'deck' && S._v32deck === 'districts:burgundy', null, { timeout: 15000 });
+    await settle(300);
+    const deck = await page.evaluate(() => ({ hash: location.hash, title: (document.querySelector('#view h2') || {}).textContent, n: v32DeckDef('districts:burgundy').cards.length }));
+    check('district cards open their deck (' + deck.hash + '): ' + deck.title + ', ' + deck.n + ' cards, lit Wine Atlas', deck.hash === '#/flashcards/districts:burgundy' && deck.title === 'Burgundy: district cards' && deck.n > 20 && (await lit()) === 'worldmap', JSON.stringify(deck));
+    await screen('district cards, the deck');
+    await page.click('#v32-start');
+    await settle(350);
+    const front = await page.evaluate(() => (document.querySelector('#v32-face') || {}).textContent || '');
+    await page.locator('[data-v32="flip"]').first().click();
+    await settle(300);
+    const backFace = await page.evaluate(() => (document.querySelector('#v32-face') || {}).textContent || '');
+    const before = await page.evaluate(() => Object.keys(v56Rec().c).filter((k) => /^d:burgundy\//.test(k)).length);
+    await page.locator('[data-v32="got"]').first().click();
+    await settle(300);
+    const after = await page.evaluate(() => Object.keys(v56Rec().c).filter((k) => /^d:burgundy\//.test(k)).length);
+    check('a district card asks for its region and its note, turns to "' + backFace.trim().slice(0, 50) + '...", and graded it gains its due date', /Its region, and what it is known for/.test(front) && /Burgundy: /.test(backFace) && after === before + 1 && (await lit()) === 'worldmap', JSON.stringify({ front: front.slice(0, 80), before, after }));
+    await screen('district cards, a card');
+    for (let i = 0; i < 3 && (await state()).view !== 'region'; i++) await back();
+    check('Back from the district cards climbs to Burgundy', (await state()).hash === '#/v/region/burgundy', JSON.stringify(await state()));
+  });
+
+  /* compare two regions, chosen on its page */
+  await step('compare two regions', async () => {
+    await go('#/');
+    await atlasRoot();
+    await page.locator('#v56-compare').scrollIntoViewIfNeeded();
+    await page.click('#v56-compare');
+    await page.waitForFunction(() => S.view === 'v56compare' && document.querySelector('#v56-cmp-a'), null, { timeout: 15000 });
+    await page.selectOption('#v56-cmp-a', 'burgundy');
+    await page.selectOption('#v56-cmp-b', 'rioja');
+    await page.click('#v56-cmpgo');
+    await page.waitForFunction(() => location.hash === '#/v/v56compare/burgundy~rioja' && document.querySelectorAll('.v56-cmpsec').length === 6, null, { timeout: 20000 });
+    await settle(300);
+    const cmp = await page.evaluate(() => ({
+      heads: [...document.querySelectorAll('.v56-cmpsec h3')].map((h) => h.textContent),
+      side: [...document.querySelectorAll('.v56-cmprow')].every((r) => { const a = r.children[0].getBoundingClientRect(), b = r.children[1].getBoundingClientRect(); return Math.abs(a.top - b.top) < 1 && b.left >= a.right; }),
+      names: [...document.querySelectorAll('.v56-cmprow b')].slice(0, 2).map((b) => b.textContent)
+    }));
+    check('compare Burgundy and Rioja: ' + cmp.heads.join(', ') + ', the two side by side', cmp.heads.join('|') === 'The climate|The soils|The grapes|The wines|The ladder|What the exam asks' && cmp.side && cmp.names.join('|') === 'Burgundy|Rioja' && (await lit()) === 'worldmap', JSON.stringify(cmp));
+    await screen('compare two regions', true);
+    await back();
+    check('Back from compare returns to the root', (await state()).view === 'worldmap', JSON.stringify(await state()));
+  });
+
+  /* the folded addresses, warm and cold */
+  await step('the folded addresses', async () => {
+    await go('#/v/fieldmap/rioja');
+    await settle(300);
+    const warm = await state();
+    check('a field map\'s address, warm, opens its region page (#/v/fieldmap/rioja to ' + warm.hash + ')', warm.view === 'region' && warm.hash === '#/v/region/rioja', JSON.stringify(warm));
+    for (const [hash, want, extra] of [['#/v/fieldmap/burgundy', '#/v/region/burgundy'], ['#/v/fieldatlas', '#/v/worldmap'], ['#/v/regions', '#/v/worldmap', 'countries']]) {
+      /* a plain cold load (this profile keeps its service), so the root's own jump is measured as a reader sees it */
+      await page.goto(BASE + '?nosw&walk=' + (++n) + hash, { waitUntil: 'load' });
+      await page.waitForFunction(() => typeof V32 !== 'undefined' && V32.booted && (S.view !== 'worldmap' || !!document.querySelector('#v55-hub')), null, { timeout: 30000 });
+      await settle(700);
+      const st = await state();
+      let ok = st.hash === want && (await lit()) === 'worldmap';
+      let note = '';
+      if (extra === 'countries') {
+        const top = await page.evaluate(() => { const h = document.querySelector('#v55-countries-h'); return h ? h.getBoundingClientRect().top : -1; });
+        ok = ok && top >= 40 && top < 170;
+        note = ', at its countries (' + Math.round(top) + ' px down)';
+      }
+      check('the folded address ' + hash + ', cold, lands on ' + want + note + ' in ' + mode + ' service', ok && await page.evaluate((m) => document.documentElement.getAttribute('data-service') === m, mode), JSON.stringify(st));
+    }
+  });
+
+  /* two articles off the map */
+  for (const slug of ['jura', 'txakoli']) {
+    await step(slug + ', off the map', async () => {
+      await go('#/');
+      await atlasRoot();
+      const line = await page.evaluate((s) => (document.querySelector('[data-v55-count="' + s + '"]') || {}).textContent || '', slug);
+      const row = page.locator('#v55-r-' + slug);
+      await row.scrollIntoViewIfNeeded();
+      await row.click();
+      await regionReady(slug);
+      await page.evaluate(() => { const f = document.querySelector('.v55-sheetfig'); if (f) window.scrollTo(0, f.getBoundingClientRect().top + scrollY - 120); });
+      await page.waitForFunction(() => { const i = document.querySelector('.v55-sheetfig img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 20000 });
+      await settle(300);
+      const pg = await page.evaluate(() => ({ name: v39Find(S._v39region).name, sheet: v39Find(S._v39region).sheet, fig: (document.querySelector('.v55-sheetfig') || {}).getAttribute ? document.querySelector('.v55-sheetfig').getAttribute('data-v55-sheet') : '', come: (document.querySelector('.v56-tocome') || {}).textContent || '', districts: document.querySelectorAll('.v55-districts li.v55-d').length }));
+      const chips = await rowChips();
+      const minute = await minuteRows();
+      check(slug + ': on the root under its country, "' + line + '"', /^\d+ districts? · field map to come$/.test(line), line);
+      check(slug + ': its page shows the sheet of ' + pg.sheet + ' with "' + pg.come.slice(0, 48) + '...", its ' + pg.districts + ' districts, In one minute (' + minute.length + ' rows) and its study row ' + chips.join(', '),
+        pg.fig === pg.sheet && pg.come.indexOf('The field map of ' + pg.name + ' is to come.') === 0 && pg.districts > 0 && minute.length >= 4 && chips[0] === 'Summary' && chips[1] === 'Map' && chips.indexOf('Map quiz') < 0 && chips.indexOf('Next') > 0 && (await lit()) === 'worldmap', JSON.stringify({ pg, chips, minute }));
+      await screen(slug, true);
+      await back();
+      check(slug + ': Back returns to the root', (await state()).view === 'worldmap', JSON.stringify(await state()));
+    });
+  }
+
+  /* Next across a sheet's edge: Rioja (Spain) to Piedmont (Italy) and Previous back */
+  await step('Next across a sheet', async () => {
+    await boot('#/v/region/rioja');
+    await regionReady('rioja');
+    const n = await page.evaluate(() => ({ next: v56Near('region', 'rioja').next, label: (document.querySelector('#v56-s-next') || {}).getAttribute ? document.querySelector('#v56-s-next').getAttribute('aria-label') : '', act: (document.querySelector('#v56-act-next') || {}).textContent || '', sheet: v39Find('rioja').sheet }));
+    await page.click('#v56-s-next');
+    await page.waitForFunction((k) => S.view === 'region' && S._v39region === k, n.next.key, { timeout: 15000 });
+    await regionReady(n.next.key);
+    const there = await page.evaluate(() => ({ hash: location.hash, sheet: v39Find(S._v39region).sheet, y: scrollY }));
+    check('the study row\'s Next on Rioja (' + n.label + ') crosses from ' + n.sheet + ' to ' + there.sheet + ' (' + there.hash + '), at the top of the page; the article\'s own Next reads "' + n.act + '"', n.next.key === 'piedmont' && there.hash === '#/v/region/piedmont' && there.sheet !== n.sheet && there.y < 5 && n.label === 'Next: ' + n.next.name && n.act === 'Next: ' + n.next.name, JSON.stringify({ n, there }));
+    await page.click('#v56-s-prev');
+    await page.waitForFunction(() => S.view === 'region' && S._v39region === 'rioja', null, { timeout: 15000 });
+    check('Previous on Piedmont returns to Rioja', (await state()).hash === '#/v/region/rioja', JSON.stringify(await state()));
   });
 
   /* the level page */
@@ -504,7 +777,8 @@ async function walk(browser, width, mode) {
   }
 
   /* codex55: cold reloads of a region, the Wine Atlas root and the Library, Back climbing through their parents to Home */
-  const coldAtlas = [['#/v/region/burgundy', ['region', 'country', 'regions', 'worldmap', 'home']], ['#/v/worldmap', ['worldmap', 'home']], ['#/library', ['library', 'more', 'home']]];
+  /* codex56: the regions index draws as the root, so the chain climbs a country, the root and Home */
+  const coldAtlas = [['#/v/region/burgundy', ['region', 'country', 'worldmap', 'home']], ['#/v/worldmap', ['worldmap', 'home']], ['#/library', ['library', 'more', 'home']]];
   for (const [hash, want] of coldAtlas) {
     await step('the cold reload of ' + hash, async () => {
       await boot(hash);
