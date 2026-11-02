@@ -323,6 +323,47 @@ async function main() {
   check('readiness: Rioja\'s subject counts the questions of Rioja and Spain (' + riojaQs + '), one more right lifts it by one', rd.b.total === riojaQs && rd.a.met === rd.b.met + 1 && rd.met[1] === rd.met[0] + 1 && rd.total[0] === rd.total[1], JSON.stringify(rd).slice(0, 400));
   check('and Winemaking, whose map names Rioja too, counts it as well', rd.vit.met >= 1, JSON.stringify(rd.vit));
   check('the subject\'s readiness page names the regions\' questions', rd.body.indexOf('<dt>The regions’ questions</dt>') > 0 && rd.body.indexOf('The questions of the regions and countries on the subject’s map count too') > 0, rd.body.slice(0, 300));
+
+  /* ================================================================ */
+  section('4. the root opens on the learner');
+  const C = await bootDevice();
+  C.G('S.view = "worldmap"; S.wmap = null;');
+  const hub0 = C.page('worldMapView();');
+  drawn.push(['the root, a new learner', hub0]);
+  await tick(200);
+  check('a visit fetches no reading (' + C.fetched.length + ' files read)', C.fetched.length === 0 && C.G('v55Regions().every(function (a) { return !v39RecReady(a); })'), C.fetched.join(' '));
+  const at0 = (h, x) => h.indexOf(x);
+  check('Start here for a new learner: the course begins with Champagne, ' + C.G('v56Course().length') + ' steps', /<h2 class="v32-h2" id="v56-start-h" tabindex="-1">Start here<\/h2>/.test(hub0) && hub0.indexOf('data-v56="course" data-kind="region" data-key="champagne" id="v56-continue">Begin with Champagne</button>') > 0 && hub0.indexOf('data-go="v56course" id="v56-path"') > 0, hub0.slice(at0(hub0, 'v56-start'), at0(hub0, 'v56-start') + 500));
+  const doorsS = hub0.slice(at0(hub0, 'v56-studydoors'), hub0.indexOf('</section>', at0(hub0, 'v56-studydoors')));
+  const doorNames = attr(doorsS, /<span class="v25row-name">([^<]*)<\/span>/g);
+  check('the study doors: ' + doorNames.join(', '), JSON.stringify(doorNames) === JSON.stringify(['Today’s region cards', 'Drill a country', 'Map quiz', 'District cards', 'Compare two regions'])
+    && /data-v56="today" id="v56-today">[\s\S]*?Nothing due today\. New cards from Champagne\./.test(doorsS) && ['v56drill', 'v56mapquiz', 'v56districts', 'v56compare'].every((g) => doorsS.indexOf('data-go="' + g + '"') > 0), doorsS.slice(0, 600));
+  const orderKeys = C.J('v55CountryOrder().map(function (r) { return r.key; })');
+  const cRows = attr(hub0.slice(at0(hub0, 'v56-countryrows')), /data-v39="country" data-key="([^"]*)" id="v56-c-/g);
+  check('every country once (' + cRows.length + '), in the order of the maps, with a readiness line', JSON.stringify(cRows) === JSON.stringify(orderKeys) && /0 of 13 read · 0 of \d+ cards known · 0 of \d+ questions right/.test(hub0), JSON.stringify(cRows.slice(0, 5)));
+  check('codex55\'s country chips and its Field maps chip leave; its sheets and its full list stay below (17 sheet doors, every region)', hub0.indexOf('v55-countrychips') < 0 && hub0.indexOf('data-go="fieldatlas"') < 0 && attr(hub0, /data-v39="openmap" data-sheet="([^"]*)"/g).length === 17 && attr(hub0, /data-v39="region" data-slug="([^"]*)"/g).length === C.G('v39Regions().length'));
+  check('the order: Start here, the study doors, the chips and the search, the countries, the sheets, every region',
+    at0(hub0, 'v56-start') < at0(hub0, 'v56-studydoors') && at0(hub0, 'v56-studydoors') < at0(hub0, 'v55-chips') && at0(hub0, 'v55-chips') < at0(hub0, 'id="v55-find"') && at0(hub0, 'id="v55-find"') < at0(hub0, 'v56-countries') && at0(hub0, 'v56-countries') < at0(hub0, '<section class="v32-sec v55-sheets"') && at0(hub0, '<section class="v32-sec v55-sheets"') < at0(hub0, 'class="v32-sec v55-regions"'));
+  C.G('v39Find("burgundy").districts = 84;');
+  check('a district count from the index\'s field districts while the reading is away: ' + C.G('v55RegionLine(v39Find("burgundy"))'), C.G('v55RegionLine(v39Find("burgundy"))').indexOf('84 districts') === 0 && C.G('v55RegionLine(v39Find("rioja"))').indexOf('district') < 0);
+  C.G('v55Filter({ querySelectorAll: function () { return []; }, querySelector: function () { return null; } }, "chablis")');
+  for (let i = 0; i < 80 && !C.G('v55Regions().every(function (a) { return v39RecReady(a); })'); i++) await tick(25);
+  check('the first search reads the districts of every region (' + new Set(C.fetched).size + ' files)', C.G('v55Regions().every(function (a) { return v39RecReady(a); })'), C.fetched.join(' '));
+  /* the readiness on a device with grades (B) and the Continue on one with reads (A) */
+  const bSpain = B.J('(function () { var row = v55CountryOrder().filter(function (r) { return r.key === "spain"; })[0]; return v56CountryReady(row); })()');
+  const bWant = B.J('(function () { var qs = v39Questions(v39SheetKeys("spain")); return { t: qs.length, q: qs.filter(function (q) { return v56Right(q.id); }).length, c: v39SheetCards("spain").length, n: v39SheetRegions("spain").length + 1 }; })()');
+  check('Spain\'s line on a device with grades: ' + B.G('v56ReadyLine(v56CountryReady(v55CountryOrder().filter(function (r) { return r.key === "spain"; })[0]))'), bSpain.q === bWant.q && bSpain.q >= 2 && bSpain.t === bWant.t && bSpain.c === bWant.c && bSpain.n === bWant.n, JSON.stringify([bSpain, bWant]));
+  A.G('S.view = "worldmap"; S.wmap = null;');
+  const hubA = A.page('worldMapView();');
+  drawn.push(['the root, a learner on her way', hubA]);
+  check('Continue on a device with three steps read: step 1 of ' + A.G('v56Course().length') + ', Champagne, the first unread', /id="v56-start-h" tabindex="-1">Continue<\/h2>/.test(hubA) && hubA.indexOf('Step 1 of ' + A.G('v56Course().length') + ' in the Court’s order. 3 of ') > 0 && hubA.indexOf('id="v56-continue">Continue with Champagne</button>') > 0, hubA.slice(at0(hubA, 'v56-start'), at0(hubA, 'v56-start') + 400));
+  const hubB = B.page('S.view = "worldmap"; S.wmap = null; worldMapView();');
+  check('the due count on the root with seeded grades: 3 cards and 2 questions due, the questions their own door', /data-v56="today" id="v56-today"><span class="v25row-name">Today’s region cards<\/span><span class="v25row-line">3 cards and 2 questions due<\/span>/.test(hubB) && hubB.indexOf('data-v56="duedrill" id="v56-duedrill"') > 0);
+  const cp = A.page('v56Go("v56course", "");');
+  drawn.push(['the whole course', cp]);
+  const cpRows = attr(cp, /data-v56="course" data-kind="([a-z]+)" data-key="/g).length;
+  check('the whole course: ' + cpRows + ' steps under the Court\'s subjects, first Grape Growing: Viticulture, then the rest of the atlas', cpRows === A.G('v56Course().length') && cp.indexOf('>Grape Growing: Viticulture</h3>') > 0 && cp.indexOf('>The rest of the atlas</h3>') > 0 && cp.indexOf('Step 1, to read') > 0 && cp.indexOf('Step ' + (A.G('v56At("region", "rioja")') + 1) + ', read') > 0);
+  check('its address #/v/v56course, lit Wine Atlas, its cold parent the root', A.G('location.hash') === '#/v/v56course' && A.G('v25NavWord()') === 'worldmap' && A.G('JSON.stringify(v32ParentRoute())') === JSON.stringify({ view: 'worldmap', arg: '' }));
 }
 
 main().then(() => {

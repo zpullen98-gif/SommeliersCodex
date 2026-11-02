@@ -92,7 +92,53 @@ var V56_WORDS = {
   dueSection: 'The regions',
   nothingDue: 'Nothing is due in the regions today.',
   readyRegions: 'The regions’ questions',
-  readyRegionsNote: 'The questions of the regions and countries on the subject’s map count too, answered right at any level.'
+  readyRegionsNote: 'The questions of the regions and countries on the subject’s map count too, answered right at any level.',
+  /* the root */
+  startH: 'Start here',
+  startLine: 'The course follows the Court’s subjects in their order: {n} steps, from {first} to {last}.',
+  startBtn: 'Begin with {name}',
+  contH: 'Continue',
+  contLine: 'Step {k} of {n} in the Court’s order. {read} of {n} read so far.',
+  contBtn: 'Continue with {name}',
+  doneH: 'The course is read',
+  doneLine: 'All {n} steps are read. Today’s cards and the drills keep them fresh.',
+  doneBtn: 'Read {name} again',
+  pathBtn: 'See the whole course',
+  studyH: 'Study',
+  todayRow: 'Today’s region cards',
+  dueCQ: '{c} cards and {q} questions due',
+  dueC: '{c} cards due',
+  dueC1: '1 card due',
+  dueQ: '{q} questions due',
+  dueQ1: '1 question due',
+  dueC1Q: '1 card and {q} questions due',
+  dueCQ1: '{c} cards and 1 question due',
+  dueC1Q1: '1 card and 1 question due',
+  dueNone: 'Nothing due today. New cards from {name}.',
+  dueNoneAll: 'Nothing due today.',
+  dueDrillRow: 'The region questions due',
+  dueDrillLine: 'Answer them now, then they move on',
+  drillRow: 'Drill a country',
+  drillLine: 'Ten questions from one country’s regions',
+  quizRow: 'Map quiz',
+  quizLine: 'Find a place on a field map, or name the one marked',
+  districtRow: 'District cards',
+  districtLine: 'A district to its note and its region',
+  compareRow: 'Compare two regions',
+  compareLine: 'Climate, soils, grapes, wines, the ladder and the exam, side by side',
+  countriesH: 'Countries',
+  countriesLine: 'Each country with how far you have read, the cards you know and the questions you have answered right.',
+  countryReady: '{r} of {n} read · {k} of {c} cards known · {q} of {t} questions right',
+  countryReadyNoCards: '{r} of {n} read · {q} of {t} questions right',
+  /* the whole course */
+  courseH: 'The course',
+  courseSub: 'The Court’s subjects in their order, then the rest of the atlas',
+  courseLine: '{read} of {n} steps read. Each step opens its page; Previous and Next on every page follow this order.',
+  courseRest: 'The rest of the atlas',
+  stepRead: 'Step {k}, read',
+  stepToRead: 'Step {k}, to read',
+  stepCountry: 'Step {k}, the country, read',
+  stepCountryTo: 'Step {k}, the country, to read'
 };
 
 function v56W(key, vars) {
@@ -141,7 +187,14 @@ function v56Doc() { return (typeof document !== 'undefined' && document && typeo
     '.wrap .v56 [tabindex="-1"]:focus{outline:none}',
     '.wrap .v56 [tabindex="-1"]:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}',
     '.wrap .v56 .v32-sec{margin-top:26px}',
-    '.wrap .v56-line{font-size:16px;line-height:1.5;color:var(--parch2);margin:6px 0 0}'
+    '.wrap .v56-line{font-size:16px;line-height:1.5;color:var(--parch2);margin:6px 0 0}',
+    /* the root: Start here or Continue in a gold rule, the doors and the countries as codex32's rows */
+    '.wrap .v56-start{padding:14px 16px 12px;border:1px solid var(--gold-soft);border-radius:3px;background:var(--house-panel,transparent)}',
+    '.wrap .v56-start .v32-h2{border-bottom:0;padding-bottom:0;margin-bottom:4px}',
+    '.wrap .v56-startrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}',
+    '.wrap .v56-doors,.wrap .v56-countryrows{gap:8px}',
+    '.wrap .v56-countryrows .v25row-line,.wrap .v56-doors .v25row-line{font-size:15px;line-height:1.4}',
+    '@media(min-width:600px){.wrap .v56-doors,.wrap .v56-countryrows{grid-template-columns:repeat(2,minmax(0,1fr))}}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -613,3 +666,251 @@ if (typeof v53ReadyBody === 'function') {
     return html;
   };
 }
+
+/* =========== 4. the root opens on the learner =========== */
+
+/* ----- the layer's views: one registry, codex32's router extended key by key ----- */
+var V56_VIEWS = {};
+var V56_ARGS = {};
+/* the earlier views whose addresses this layer folds, read again at load too (section 7) */
+var V56_COLD = {};
+function v56View(name, def) {
+  V56_VIEWS[name] = def;
+  V56_LIT[name] = 1;
+  if (typeof V32_PARENT !== 'undefined' && V32_PARENT) V32_PARENT[name] = 'worldmap';
+  if (typeof V32_OWNER !== 'undefined' && V32_OWNER) V32_OWNER[name] = 'worldmap';
+  if (typeof V25_UNDER !== 'undefined' && V25_UNDER) V25_UNDER[name] = 'worldmap';
+  if (typeof V25_HUB !== 'undefined' && V25_HUB) V25_HUB[name] = 'worldmap';
+  if (typeof V25_AREA !== 'undefined' && V25_AREA) V25_AREA[name] = 'worldmap';
+  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) V25_VIEWS[name] = function () { return def.draw(V56_ARGS[name] || ''); };
+  if (typeof V25_GO !== 'undefined' && V25_GO) V25_GO[name] = function (arg) { v56Go(name, arg); };
+}
+function v56Go(view, arg, mode) {
+  if (typeof v32Go === 'function') v32Go({ view: view, arg: arg == null ? '' : String(arg) }, mode || 'push');
+}
+function v56Build(html, after) {
+  if (typeof v39Build === 'function') return v39Build(html, after);
+  if (typeof v32Build === 'function') return v32Build(html, after);
+  var box = document.createElement('div'); box.innerHTML = html; if (after) after(box); return box;
+}
+if (typeof v32Arg === 'function') {
+  var _v56Arg = v32Arg;
+  v32Arg = function (v) {
+    if (v56Own(V56_VIEWS, v)) return String(V56_ARGS[v] || '');
+    return _v56Arg.apply(this, arguments);
+  };
+}
+if (typeof v32Apply === 'function') {
+  var _v56Apply = v32Apply;
+  v32Apply = function (r) {
+    if (r && v56Own(V56_VIEWS, r.view)) {
+      var def = V56_VIEWS[r.view];
+      var arg = String(r.arg || '');
+      if (typeof def.accept === 'function') { try { arg = def.accept(arg); } catch (e) { arg = ''; } }
+      V56_ARGS[r.view] = arg;
+      S._v25area = 'worldmap';
+      S._v28edit = false;
+      S.view = r.view;
+      return { view: r.view, arg: arg };
+    }
+    return _v56Apply.apply(this, arguments);
+  };
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v56ParentRouteViews = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      if (v56Own(V56_VIEWS, S.view)) {
+        var def = V56_VIEWS[S.view];
+        return typeof def.parent === 'function' ? def.parent(V56_ARGS[S.view] || '') : { view: 'worldmap', arg: '' };
+      }
+    } catch (e) { }
+    return _v56ParentRouteViews.apply(this, arguments);
+  };
+}
+if (typeof v25MainName === 'function') {
+  var _v56MainName = v25MainName;
+  v25MainName = function () {
+    try { if (S && v56Own(V56_VIEWS, S.view) && typeof V56_VIEWS[S.view].name === 'function') return V56_VIEWS[S.view].name(V56_ARGS[S.view] || ''); } catch (e) { }
+    return _v56MainName.apply(this, arguments);
+  };
+}
+
+/* ----- the readiness of a country ----- */
+
+function v56CardRec() { try { return (typeof v39CardRec === 'function') ? v39CardRec() : {}; } catch (e) { return {}; } }
+/* read (its regions and its own page), cards known (codex39's got), questions right (at any level) */
+function v56CountryReady(row, rr, rec, cr) {
+  rr = rr || v56ReadRegions(); rec = rec || v56Rec(); cr = cr || v56CardRec();
+  var key = row.key, c = row.c;
+  var regions = (row.sheet && typeof v39SheetRegions === 'function') ? v39SheetRegions(row.sheet) : [];
+  var read = regions.filter(function (a) { return !!rr[a.slug]; }).length + (rec.r[key] ? 1 : 0);
+  var cards = row.sheet ? v39SheetCards(row.sheet) : v39Cards(c);
+  var known = cards.filter(function (x) { return cr[x.id] === 'got'; }).length;
+  var keys = row.sheet ? v39SheetKeys(row.sheet) : [key];
+  var qs = v39Questions(keys);
+  var right = qs.filter(function (q) { return q && q.id && v56Right(q.id); }).length;
+  return { r: read, n: regions.length + 1, k: known, c: cards.length, q: right, t: qs.length };
+}
+function v56ReadyLine(x) {
+  return v56W(x.c ? 'countryReady' : 'countryReadyNoCards', x);
+}
+
+/* ----- the root's own sections ----- */
+
+function v56DueLine(d) {
+  var c = d.cards.length, q = d.qs.length;
+  if (c && q) return v56W(c === 1 ? (q === 1 ? 'dueC1Q1' : 'dueC1Q') : (q === 1 ? 'dueCQ1' : 'dueCQ'), { c: c, q: q });
+  if (c) return c === 1 ? v56W('dueC1') : v56W('dueC', { c: c });
+  if (q) return q === 1 ? v56W('dueQ1') : v56W('dueQ', { q: q });
+  var p = v56Progress();
+  var step = p.next || p.first;
+  return step ? v56W('dueNone', { name: step.name }) : v56W('dueNoneAll');
+}
+function v56Row(attrs, name, line, id) {
+  return '<li><button class="v25row" type="button" ' + attrs + (id ? ' id="' + v56Esc(id) + '"' : '') + '><span class="v25row-name">' + v56Esc(name) + '</span>'
+    + (line ? '<span class="v25row-line">' + v56Esc(line) + '</span>' : '') + '</button></li>';
+}
+function v56CourseHtml() {
+  var p = v56Progress();
+  if (!p.n) return '';
+  var head, line, btn;
+  if (!p.read) {
+    head = v56W('startH');
+    line = v56W('startLine', { n: p.n, first: p.first.name, last: p.last.name });
+    btn = '<button type="button" class="btn gold" data-v56="course" data-kind="' + v56Esc(p.first.kind) + '" data-key="' + v56Esc(p.first.key) + '" id="v56-continue">' + v56Esc(v56W('startBtn', { name: p.first.name })) + '</button>';
+  } else if (p.next) {
+    head = v56W('contH');
+    line = v56W('contLine', { k: p.at + 1, n: p.n, read: p.read });
+    btn = '<button type="button" class="btn gold" data-v56="course" data-kind="' + v56Esc(p.next.kind) + '" data-key="' + v56Esc(p.next.key) + '" id="v56-continue">' + v56Esc(v56W('contBtn', { name: p.next.name })) + '</button>';
+  } else {
+    head = v56W('doneH');
+    line = v56W('doneLine', { n: p.n });
+    btn = '<button type="button" class="btn gold" data-v56="course" data-kind="' + v56Esc(p.first.kind) + '" data-key="' + v56Esc(p.first.key) + '" id="v56-continue">' + v56Esc(v56W('doneBtn', { name: p.first.name })) + '</button>';
+  }
+  return '<section class="v32-sec v56 v56-start" aria-labelledby="v56-start-h"><h2 class="v32-h2" id="v56-start-h" tabindex="-1">' + v56Esc(head) + '</h2>'
+    + '<p class="v32-line">' + v56Esc(line) + '</p><div class="v28-btnrow v56-startrow">' + btn
+    + '<button type="button" class="btn ghost" data-go="v56course" id="v56-path">' + v56Esc(v56W('pathBtn')) + '</button></div></section>';
+}
+function v56StudyHtml() {
+  var d = v56Due();
+  var rows = v56Row('data-v56="today"', v56W('todayRow'), v56DueLine(d), 'v56-today');
+  if (d.cards.length && d.qs.length) rows += v56Row('data-v56="duedrill"', v56W('dueDrillRow'), d.qs.length === 1 ? v56W('dueQ1') : v56W('dueQ', { q: d.qs.length }), 'v56-duedrill');
+  rows += v56Row('data-go="v56drill"', v56W('drillRow'), v56W('drillLine'), 'v56-drill');
+  rows += v56Row('data-go="v56mapquiz"', v56W('quizRow'), v56W('quizLine'), 'v56-mapquiz');
+  rows += v56Row('data-go="v56districts"', v56W('districtRow'), v56W('districtLine'), 'v56-districts');
+  rows += v56Row('data-go="v56compare"', v56W('compareRow'), v56W('compareLine'), 'v56-compare');
+  return '<section class="v32-sec v56 v56-studydoors" aria-labelledby="v56-study-h"><h2 class="v32-h2" id="v56-study-h" tabindex="-1">' + v56Esc(v56W('studyH')) + '</h2>'
+    + '<ul class="v25rows v32rows v56-doors">' + rows + '</ul></section>';
+}
+function v56CountriesHtml() {
+  var rr = v56ReadRegions(), rec = v56Rec(), cr = v56CardRec();
+  var rows = v56Countries().map(function (row) {
+    var name = v56Str(row.c && row.c.name) || row.key;
+    return v56Row('data-v39="country" data-key="' + v56Esc(row.key) + '"', name, v56ReadyLine(v56CountryReady(row, rr, rec, cr)), 'v56-c-' + row.key);
+  }).join('');
+  return '<section class="v32-sec v55-countries v56 v56-countries" aria-labelledby="v55-countries-h"><h2 class="v32-h2" id="v55-countries-h" tabindex="-1">' + v56Esc(v56W('countriesH')) + '</h2>'
+    + '<p class="v32-line">' + v56Esc(v56W('countriesLine')) + '</p><ul class="v25rows v32rows v56-countryrows">' + rows + '</ul></section>';
+}
+/* codex55's root, opened on the learner: Start here or Continue and the
+   study doors under the line; the field atlas's chip leaves (that index
+   draws as this root now); codex55's country chips give way to the countries
+   with their readiness; the sheets and the full list below. */
+function v56HubShape(html) {
+  var s = String(html || '');
+  if (s.indexOf('v56-start') >= 0) return s;
+  s = s.replace(/<button type="button" class="v28-chip" data-go="fieldatlas" id="v55-chip-fields">[^<]*<\/button>/, '');
+  s = s.replace(/<section class="v32-sec v55-countries"[^>]*>[\s\S]*?<\/section>/, '');
+  var chips = s.indexOf('<nav class="v32chips v55-chips"');
+  var top = v56CourseHtml() + v56StudyHtml();
+  if (chips >= 0) s = s.slice(0, chips) + top + s.slice(chips);
+  var sheets = s.indexOf('<section class="v32-sec v55-sheets"');
+  if (sheets >= 0) s = s.slice(0, sheets) + v56CountriesHtml() + s.slice(sheets);
+  return s;
+}
+if (typeof v55HubHtml === 'function') {
+  var _v56HubHtml = v55HubHtml;
+  v55HubHtml = function () {
+    var html = _v56HubHtml.apply(this, arguments);
+    try { return v56HubShape(html); } catch (e) { return html; }
+  };
+}
+/* No reading fetched on a visit: codex55's loader of every sheet waits for
+   the first search, which reads the districts of every region. */
+var V56_HUB = { loaded: false };
+if (typeof v55HubLoad === 'function') {
+  var _v56HubLoad = v55HubLoad;
+  v55HubLoad = function () { };
+  if (typeof v55Filter === 'function') {
+    var _v56Filter = v55Filter;
+    v55Filter = function (box, value) {
+      var out = _v56Filter.apply(this, arguments);
+      try {
+        if (!V56_HUB.loaded && v56Fold(value)) { V56_HUB.loaded = true; _v56HubLoad(); }
+      } catch (e) { }
+      return out;
+    };
+  }
+}
+/* A district count from the index's own field when the reading is not on
+   the device (the build writes it); from the reading when it is. */
+if (typeof v55DistrictCount === 'function') {
+  var _v56DistrictCount = v55DistrictCount;
+  v55DistrictCount = function (a) {
+    var n = _v56DistrictCount.apply(this, arguments);
+    if (n >= 0) return n;
+    return (a && typeof a.districts === 'number' && isFinite(a.districts) && a.districts >= 0) ? a.districts : -1;
+  };
+}
+
+/* ----- the whole course, a page of its own ----- */
+
+function v56CourseViewHtml() {
+  var list = v56Course();
+  var p = v56Progress();
+  var html = '<div class="v25page v56 v56-coursepage" id="v56-course">' + v32Head(v56W('courseH'), v56W('courseSub'));
+  if (!list.length) return html + '<p class="v32-line">' + v56Esc(v56W('courseNone')) + '</p></div>';
+  html += '<p class="v32-line">' + v56Esc(v56W('courseLine', { read: p.read, n: p.n })) + '</p>';
+  var rr = v56ReadRegions(), rec = v56Rec();
+  var groups = [], by = {};
+  list.forEach(function (item, i) {
+    var g = item.subject || '';
+    if (!v56Own(by, g)) { by[g] = []; groups.push(g); }
+    by[g].push({ item: item, i: i });
+  });
+  var subjects = {};
+  v56Subjects().forEach(function (sj) { if (sj && sj.id) subjects[sj.id] = v56Str(sj.name) || sj.id; });
+  groups.forEach(function (g, gi) {
+    var rows = by[g].map(function (x) {
+      var read = v56IsRead(x.item, rr, rec);
+      var line = x.item.kind === 'country' ? v56W(read ? 'stepCountry' : 'stepCountryTo', { k: x.i + 1 }) : v56W(read ? 'stepRead' : 'stepToRead', { k: x.i + 1 });
+      return v56Row('data-v56="course" data-kind="' + v56Esc(x.item.kind) + '" data-key="' + v56Esc(x.item.key) + '"', x.item.name, line, 'v56-step-' + x.item.kind + '-' + x.item.key);
+    }).join('');
+    html += '<section class="v32-group" aria-labelledby="v56-cg-' + gi + '"><h3 class="secgroup v32-gh" id="v56-cg-' + gi + '">' + v56Esc(g ? (subjects[g] || g) : v56W('courseRest')) + '</h3><ul class="v25rows v32rows">' + rows + '</ul></section>';
+  });
+  return html + '</div>';
+}
+v56View('v56course', {
+  draw: function () { return v56Build(v56CourseViewHtml()); },
+  name: function () { return v56W('courseH'); },
+  parent: function () { return { view: 'worldmap', arg: '' }; }
+});
+
+/* =========== the cold address =========== */
+
+/* A reload on one of the layer's views: codex32 read the address before
+   they were known, so it is read again here, once, and the first render
+   replaces (codex39's and codex45's way). This block stays last. */
+(function () {
+  try {
+    if (typeof V32 === 'undefined' || !V32 || V32.moved || typeof v32Parse !== 'function' || typeof v32Apply !== 'function') return;
+    var hash = typeof V32.initialHash === 'string' ? V32.initialHash : '';
+    if (!hash && typeof location !== 'undefined' && location && typeof location.hash === 'string') hash = location.hash;
+    var m = /^#\/v\/([a-z0-9]+)(\/|$)/.exec(hash);
+    if (!m || !(v56Own(V56_VIEWS, m[1]) || v56Own(V56_COLD, m[1]))) return;
+    var r = v32Parse(hash);
+    if (!r) return;
+    v32Apply(r, typeof v32CurState === 'function' ? v32CurState() : null);
+    V32.pend = 'replace';
+  } catch (e) { }
+})();
