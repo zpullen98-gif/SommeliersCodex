@@ -206,3 +206,50 @@ function v55Num(n) { return String(Number(n) || 0); }
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
+
+/* =========== 2. the bar =========== */
+
+var V55_ATLAS_VIEWS = ['worldmap', 'regions', 'country', 'region', 'fieldatlas', 'fieldmap'];
+
+V25_NAV = [['home', 'Home'], ['brennans', (typeof v41TabWord === 'function') ? v41TabWord() : 'Brennan’s'], ['cms', 'CMS'], ['grapes', 'Grapes'], ['worldmap', v55W('tab')], ['more', 'More']];
+
+/* The drawn bar, outermost: codex47's class kept off (every selector of its
+   stylesheet carries it, so its two row grid never applies), and the due
+   pill on More alone, where Practise lives now. */
+function v55NavShape(html) {
+  var out = String(html || '').split(' v47nav').join('');
+  out = out.replace(/ <span class="v32pill">[\s\S]*?<\/span><\/span>/g, '');
+  var pill = '';
+  try { pill = (typeof v32Pill === 'function') ? v32Pill() : ''; } catch (e) { pill = ''; }
+  if (pill) out = out.replace(/(<button[^>]* data-nav="more"[^>]*>[^<]*)<\/button>/, function (m, open) { return open + pill + '</button>'; });
+  return out;
+}
+if (typeof v25NavHtml === 'function') {
+  var _v55NavHtml = v25NavHtml;
+  v25NavHtml = function () {
+    var html = _v55NavHtml.apply(this, arguments);
+    try { return v55NavShape(html); } catch (e) { return html; }
+  };
+}
+
+/* A tap on a word: Wine Atlas opens the atlas root and More opens More (a
+   push from anywhere else; on the root itself, back to the top); every
+   other word falls through to the layers below. */
+function v55OnRoot(word) {
+  if (word === 'worldmap') return S.view === 'worldmap' && !S.wmap;
+  if (word === 'more') return S.view === 'more' || S.view === 'mine';
+  return false;
+}
+if (typeof v25Nav === 'function') {
+  var _v55Nav = v25Nav;
+  v25Nav = function (word) {
+    if (word !== 'worldmap' && word !== 'more') return _v55Nav.apply(this, arguments);
+    if (v55OnRoot(word)) {
+      try { window.scrollTo(0, 0); } catch (e) { }
+      return;
+    }
+    if (typeof v25Leave === 'function' && !v25Leave()) return;
+    S._v32scopeOpen = false;
+    v32Go(word === 'worldmap' ? { view: 'worldmap', arg: '' } : { view: 'more' }, 'push');
+  };
+}
