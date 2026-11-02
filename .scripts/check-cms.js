@@ -441,8 +441,9 @@ if (H) {
   if (SID) {
     tryG('ST.q = {}');
     const r0 = J('v53Readiness(' + JSON.stringify(SID) + ')');
-    const tot = J('(function () { return { i: v53LevelQuestions(' + JSON.stringify(SID) + ', "intro").length, v: v53LevelQuestions(' + JSON.stringify(SID) + ', "certified").length, c: v53CmsRaw(v53Subject(' + JSON.stringify(SID) + ')).length }; })()');
-    check('readiness of ' + SID + ' starts at nothing met, its totals Régionale ' + (tot && tot.i) + ' + Village ' + (tot && tot.v) + ' + CMS ' + (tot && tot.c), !!r0 && !!tot && r0.met === 0 && r0.intro.total === tot.i && r0.village.total === tot.v && r0.cms.total === tot.c && r0.total === tot.i + tot.v + tot.c, JSON.stringify(r0));
+    /* codex56: the questions of the regions and countries on the subject's map count too (r), where the chain carries codex56 */
+    const tot = J('(function () { var s = v53Subject(' + JSON.stringify(SID) + '); var keys = ((s.map || {}).regions || []).concat((s.map || {}).countries || []).filter(function (k) { return typeof v39Find === "function" && (v39Find(k) || v39Country(k)); }); return { i: v53LevelQuestions(' + JSON.stringify(SID) + ', "intro").length, v: v53LevelQuestions(' + JSON.stringify(SID) + ', "certified").length, c: v53CmsRaw(s).length, r: typeof v56SubjectRegions === "function" ? v39Questions(keys).length : 0 }; })()');
+    check('readiness of ' + SID + ' starts at nothing met, its totals Régionale ' + (tot && tot.i) + ' + Village ' + (tot && tot.v) + ' + CMS ' + (tot && tot.c) + ' + the regions\' ' + (tot && tot.r), !!r0 && !!tot && r0.met === 0 && r0.intro.total === tot.i && r0.village.total === tot.v && r0.cms.total === tot.c && (!tot.r || (r0.regions && r0.regions.total === tot.r && r0.regions.met === 0)) && r0.total === tot.i + tot.v + tot.c + tot.r, JSON.stringify(r0));
     tryG('(function () { var id = ' + JSON.stringify(SID) + '; var v = v53LevelQuestions(id, "certified"), i = v53LevelQuestions(id, "intro"), c = v53CmsRaw(v53Subject(id));'
       + ' if (v[0]) ST.q[v[0].id] = { c: 1, w: 0, s: 1 }; if (v[1]) ST.q[v[1].id] = { c: 2, w: 1, s: 0 }; if (v[2]) ST.q[v[2].id] = { c: 0, w: 3, s: 0 }; if (v[3]) ST.q["intro|" + v[3].id] = { c: 1, w: 0, s: 1 };'
       + ' if (i[0]) ST.q["intro|" + i[0].id] = { c: 1, w: 0, s: 1 }; if (i[1]) ST.q[i[1].id] = { c: 1, w: 0, s: 1 };'
