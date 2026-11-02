@@ -204,7 +204,11 @@ function v55Num(n) { return String(Number(n) || 0); }
     '.wrap .v55 .btn{white-space:normal;text-align:left;max-width:100%}',
     '.wrap .v55 [tabindex="-1"]:focus{outline:none}',
     '.wrap .v55 [tabindex="-1"]:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}',
-    '.wrap .v55 .v32-sec{margin-top:28px}'
+    '.wrap .v55 .v32-sec{margin-top:28px}',
+    /* the bar on a phone: the due pill sits on More's corner, so More keeps its 44 px box whatever the count and the
+       five words keep their room (measured in the BAR WIDTHS note of the report and the walk) */
+    '@media(max-width:420px){.wrap .house-topbar .appnav.v32nav .navword.v32more{position:relative;overflow:visible}'
+      + '.wrap .house-topbar .appnav.v32nav .navword.v32more .v32pill{position:absolute;top:-9px;right:0;margin:0;min-width:18px;box-sizing:border-box;padding:0 3px;font-size:11px;line-height:16px;box-shadow:0 0 0 2px var(--bg)}}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
