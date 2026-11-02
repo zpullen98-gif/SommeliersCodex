@@ -21,8 +21,10 @@
  *      ones, its sale within two sentences; GRID_SAY says the twenty and only
  *      them; every read slug a grape of the join
  *   3. the pages: the Grapes root at all four levels lists the 59 once each,
- *      the twenty first in the Court's order, with its five chips, the tasting
- *      doors and the grape decks; every grape page draws clean at all four
+ *      the twenty first in the Court's order, with its five chips, the four
+ *      tasting doors codex54 leaves (The Court's grid drill, The Village
+ *      tasting, Warm up: call the structure, The deductive grid; no Blind
+ *      flight, no Study the grid) and the grape decks; every grape page draws clean at all four
  *      levels (no undefined, its tags balanced, no dash, never the retired
  *      word, no numbered level, no star) with its profile, fruit, tell,
  *      regions, cards and watch sections, Previous and Next walking the
@@ -158,8 +160,13 @@ section('3. the pages');
   const rootProb = CH.cleanProblem(root) || CH.drawnVoiceProblem(root);
   const rows = (root.match(/data-go="grape" data-arg="([^"]+)"/g) || []).map((m) => m.replace(/.*data-arg="|"$/g, ''));
   check('the Grapes root at ' + name + ' draws clean and lists the 59 once each, the twenty first in the Court\'s order', !rootProb && rows.length === 59 && new Set(rows).size === 59 && TW.every((t, i) => rows[i] === t.slug), rootProb || rows.length + ': ' + rows.slice(0, 21).join(' '));
-  check('the Grapes root at ' + name + ' has its five chips, the tasting doors and the grape decks', ['v53-g-whites', 'v53-g-reds', 'v53-g-twenty', 'v53-g-every', 'v53-g-tasting'].every((id) => root.indexOf('data-to="' + id + '"') >= 0 && root.indexOf('id="' + id + '"') >= 0)
-    && ['grid', 'flight', 'tastegrid', 'cmsgrid'].every((k) => root.indexOf('data-go="' + k + '"') >= 0) && root.indexOf('data-deck="grapes"') >= 0 && root.indexOf('data-deck="grapes-all"') >= 0);
+  /* the Tasting section as codex54 draws it: one Village tasting, Blind flight off its doors, the method a reading room's */
+  const tAt = root.indexOf('aria-labelledby="v53-g-tasting"'), tEnd = tAt >= 0 ? root.indexOf('</section>', tAt) : -1;
+  const tSec = tEnd > tAt ? root.slice(tAt, tEnd) : '';
+  const tGo = (tSec.match(/data-go="([^"]+)"/g) || []).map((m) => m.slice(9, -1));
+  check('the Grapes root at ' + name + ' has its five chips, the four tasting doors (griddrill, courttasting, grid, cmsgrid, in that order, no Blind flight, no Study the grid) and the grape decks', ['v53-g-whites', 'v53-g-reds', 'v53-g-twenty', 'v53-g-every', 'v53-g-tasting'].every((id) => root.indexOf('data-to="' + id + '"') >= 0 && root.indexOf('id="' + id + '"') >= 0)
+    && JSON.stringify(tGo) === JSON.stringify(['griddrill', 'courttasting', 'grid', 'cmsgrid']) && root.indexOf('data-go="flight"') < 0 && root.indexOf('data-go="tastegrid"') < 0
+    && root.indexOf('data-deck="grapes"') >= 0 && root.indexOf('data-deck="grapes-all"') >= 0, tGo.join(' '));
   const pages = J('v53GrapeOrder().all.map(function (r) { var h = ""; try { h = v53GrapeHtml(r); } catch (e) { h = "THREW " + e.message; } return { slug: r.slug, h: h }; })') || [];
   const bad = pages.map((p) => { const why = CH.cleanProblem(p.h) || CH.drawnVoiceProblem(p.h); return why ? p.slug + ': ' + why : ''; }).filter(Boolean);
   check('every grape page draws clean in the house voice at ' + name + ' (' + pages.length + ')', pages.length === 59 && bad.length === 0, few(bad, 4));

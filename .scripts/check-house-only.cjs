@@ -7,8 +7,8 @@
    1. the bar: Home, the house, CMS, Grapes, Library and More, in that order, as nav.v32nav with no v47nav class;
       the due pill on Library alone; the house's name as codex41 escapes it; one row at 320, 375 and 390 px, night
       and day, every tab at least 44 px, every word whole, no sideways scroll
-   2. the lit word on every owner: Library on the six atlas views, the Practise root, a deck, Quizzes, the bank,
-      the Library and the quick quiz; CMS on its six views; Grapes on its four; the house on its four rooms, a wine's
+   2. the lit word on every owner: Library on the six atlas views, the Practise root, Quizzes, the bank,
+      the Library and the quick quiz; CMS on its six views; Grapes on its four and a grape deck; the house on its four rooms, a wine's
       card, a house deck and a house drill
    3. the cold Back chains: CMS to Home; a subject to CMS to Home; a grape to Grapes to Home; the bank, the Practise
       root and the readings to Library to Home; a country sheet to the World Map to Library to Home; a field map to
@@ -18,11 +18,14 @@
       "our list" or "My restaurant"; ten quick deals carry no house question, two from the regions and eight from
       the level's bank; Due today is the level's alone and deals no house question; the Library's search for
       Minuty, Brennan and Champagne finds no house wine, no record of the person's own and no Compass row
-   5. every piece taken off is found in its room: the house's due, the producers' and the components' decks, the
-      cellar selection, the wine cards, the drills and the rehearsals in Service rehearsal; the Compass, the
-      Culinary Companion and the house videos in Wine studies; the producers and the full list in House reference
+   5. every piece taken off is found in its room: the house's due (one row, Wine cards to revisit, as codex54 folds
+      it), the producers' and the components' decks, the cellar selection, the wine cards, the drills and the
+      rehearsals in Service rehearsal, with no second revisit deck, no Blind flight and no cellar rows for a person
+      with no bottles of her own; the Compass, the Culinary Companion and the house videos in Wine studies, with no
+      World Map, grape cards or service reference; the producers and the full list in House reference
    6. the bank: its counts are the real bank's, Drill and Exam stand on every category at 44 px, and the mock deals
-      70 at Régionale in 45 minutes, 45 at Village in 38, 60 at Premier Cru in 35 and the Gauntlet's 50 in 50
+      70 at Régionale in 45 minutes, 45 at Village in 38, 60 at Premier Cru in 35 and the Gauntlet's 50 in 50;
+      Quizzes draws the bank (codex54): its title, its rows and no Blind flight
    7. the Court's grid: a glass of Chardonnay answered perfectly is right on every line once the sale is self
       marked, and kept per device in oot-codex-courtgrid-v1
    8. the Village tasting on the Court's grid: four glasses, the two whites first, the clock at 1800 seconds, its
@@ -140,7 +143,7 @@ async function step(name, fn) {
       const owners = [
         ['#/v/worldmap', 'worldmap', 'library'], ['#/v/worldmap/france', 'worldmap', 'library'], ['#/v/regions', 'regions', 'library'],
         ['#/v/country/france', 'country', 'library'], ['#/v/region/champagne', 'region', 'library'], ['#/v/fieldatlas', 'fieldatlas', 'library'],
-        ['#/v/fieldmap/champagne', 'fieldmap', 'library'], ['#/practise', 'flashcards', 'library'], ['#/flashcards/grapes', 'deck', 'library'],
+        ['#/v/fieldmap/champagne', 'fieldmap', 'library'], ['#/practise', 'flashcards', 'library'], ['#/flashcards/grapes', 'deck', 'grapes'],
         ['#/quizzes', 'quizzes', 'library'], ['#/v/bank', 'bank', 'library'], ['#/library', 'library', 'library'],
         ['#/v/cms', 'cms', 'cms'], ['#/v/cmsday', 'cmsday', 'cms'], ['#/v/cmstasting', 'cmstasting', 'cms'], ['#/v/cmsgrid', 'cmsgrid', 'cms'],
         ['#/v/cmssubject/' + SUBJECT, 'cmssubject', 'cms'], ['#/v/cmsready', 'cmsready', 'cms'],
@@ -155,7 +158,7 @@ async function step(name, fn) {
         const got = await lit(page);
         if (got !== word) wrong.push(hash + ' lights ' + got);
       }
-      check('every owner lights its word: Library on the atlas, the Practise root, a deck, Quizzes, the bank and the Library; CMS on its six; Grapes on its four; the house on its rooms and its deck (' + owners.length + ' addresses)', wrong.length === 0, wrong.join('; '));
+      check('every owner lights its word: Library on the atlas, the Practise root, Quizzes, the bank and the Library; CMS on its six; Grapes on its four and a grape deck (codex54); the house on its rooms and its deck (' + owners.length + ' addresses)', wrong.length === 0, wrong.join('; '));
       await go('#/practise');
       await page.locator('[data-v32="quick"]').first().click(); await view(page, 'quiz');
       check('the quick quiz lights Library', await lit(page) === 'library', await lit(page));
@@ -231,10 +234,13 @@ async function step(name, fn) {
     await step('the rooms', async () => {
       await go('#/v/houserehearsal');
       const reh = await body();
-      const want = ['data-v53="housedue"', 'data-deck="producers"', 'data-deck="components"', 'data-deck="cellar-compass"', 'data-deck="list"', 'data-v32="drilllist"', 'data-go="housesay"', 'data-go="houserecite"', 'data-go="houseguest"', 'data-go="housepair"', 'data-deck="list-weak"', 'data-deck="bottles"', 'data-deck="menu-words"', 'data-go="cellarrecite"', 'data-go="cellardrill"'];
-      check('Service rehearsal holds the house\'s due, the producers\' and components\' decks, the cellar selection, the wine cards, the drills and the rehearsals, and no data-v32="due"', want.every(w => reh.indexOf(w) >= 0) && reh.indexOf('data-v32="due"') < 0, want.filter(w => reh.indexOf(w) < 0).join(', '));
-      const hd = await page.evaluate(() => { const b = document.querySelector('#v53-housedue'); const r = b ? b.getBoundingClientRect() : null; return { h: r ? Math.round(r.height) : 0, line: (document.querySelector('#v48-heading-today + p') || {}).textContent || '' }; });
-      check('the house\'s due names the weak wine and its button is at least 44 px tall', hd.h >= 44 && /1 wine from our list to look at again/.test(hd.line), JSON.stringify(hd));
+      /* codex54: the house due is folded into one row, Wine cards to revisit (so no list-weak deck), and Recite
+         your cellar and Quiz your cellar show only when the person holds bottles of her own (this profile holds none) */
+      const want = ['data-v53="housedue"', 'data-deck="producers"', 'data-deck="components"', 'data-deck="cellar-compass"', 'data-deck="list"', 'data-v32="drilllist"', 'data-go="housesay"', 'data-go="houserecite"', 'data-go="houseguest"', 'data-go="housepair"', 'data-deck="bottles"', 'data-deck="menu-words"'];
+      const gone = ['data-deck="list-weak"', 'data-go="cellarrecite"', 'data-go="cellardrill"', 'data-go="flight"'];
+      check('Service rehearsal holds the house\'s due, the producers\' and components\' decks, the cellar selection, the wine cards, the drills and the rehearsals, and no data-v32="due"; no second revisit deck, no Blind flight and no cellar rows without bottles of her own', want.every(w => reh.indexOf(w) >= 0) && reh.indexOf('data-v32="due"') < 0 && gone.every(w => reh.indexOf(w) < 0), want.filter(w => reh.indexOf(w) < 0).concat(gone.filter(w => reh.indexOf(w) >= 0)).join(', '));
+      const hd = await page.evaluate(() => { const b = document.querySelector('#v53-housedue'); const r = b ? b.getBoundingClientRect() : null; return { h: r ? Math.round(r.height) : 0, name: (document.querySelector('#v53-housedue .v25row-name') || {}).textContent || '', line: (document.querySelector('#v53-housedue .v25row-line') || {}).textContent || '' }; });
+      check('the house\'s due is the row Wine cards to revisit, it names the weak wine and its button is at least 44 px tall', hd.h >= 44 && hd.name === 'Wine cards to revisit' && /1 wine from our list to look at again/.test(hd.line), JSON.stringify(hd));
       await shot('houserehearsal');
       await page.locator('#v53-housedue').click();
       await page.waitForFunction(() => S.view === 'deck' || S.view === 'housedeck' || S.view === 'flash');
@@ -245,6 +251,8 @@ async function step(name, fn) {
       const vids = await page.evaluate(() => { try { return v30Groups(v28House()).reduce((n, g) => n + g.videos.length, 0); } catch (e) { return 0; } });
       if (vids) wantS.push('data-v48-route="housevideos"');
       check('Wine studies holds the Compass, the Culinary Companion, the illustrations, the Workshop' + (vids ? ' and the house videos' : ''), wantS.every(w => stu.indexOf(w) >= 0), wantS.filter(w => stu.indexOf(w) < 0).join(', '));
+      const goneS = ['route="worldmap"', 'route="serviceref"', 'data-deck="grapes"', 'data-deck="grapes:w"', 'data-deck="grapes:r"', 'data-deck="grapes-all"', 'wider-study'].filter(w => stu.indexOf(w) >= 0);
+      check('Wine studies carries no World Map, no grape study cards and no service reference (the Library and Grapes hold them, codex54)', goneS.length === 0, goneS.join(', '));
       await go('#/v/housereference');
       const ref = await body();
       const wantR = ['data-v48-route="houseproducers"', 'data-v32="fullwine"'];
@@ -274,6 +282,12 @@ async function step(name, fn) {
       }
       check('the mock deals 70 at Régionale in 45 minutes, 45 at Village in 38, 60 at Premier Cru in 35 and the Gauntlet\'s 50 in 50', Object.keys(want).every(lv => JSON.stringify(got[lv]) === JSON.stringify(want[lv])), JSON.stringify(got));
       await page.evaluate(() => { applyLevel('certified', true); render(); });
+      /* codex54: #/quizzes draws the question bank under its own scope chip, the same rows as the bank */
+      await go('#/v/bank'); await view(page, 'bank');
+      const bankRows = await page.evaluate(() => [...document.querySelectorAll('#view .v25row')].map(r => (r.querySelector('.v25row-name') || r).textContent.trim()));
+      await go('#/quizzes'); await view(page, 'quizzes');
+      const qz = await page.evaluate(() => ({ h: ((document.querySelector('#view h2') || {}).textContent || '').trim(), bank: !!document.querySelector('#view .v54-quizbank'), rows: [...document.querySelectorAll('#view .v25row')].map(r => (r.querySelector('.v25row-name') || r).textContent.trim()), flight: !!document.querySelector('#view [data-go="flight"]') }));
+      check('Quizzes draws the question bank: its title, the bank\'s rows and no Blind flight', qz.bank && /question bank$/.test(qz.h) && qz.rows.length > 4 && JSON.stringify(qz.rows) === JSON.stringify(bankRows) && !qz.flight, JSON.stringify({ h: qz.h, bank: qz.bank, n: qz.rows.length, m: bankRows.length }));
     });
 
     /* 7. the Court's grid */
