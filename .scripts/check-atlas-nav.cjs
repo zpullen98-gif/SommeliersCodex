@@ -11,6 +11,14 @@
    sheet, country, region, field map, deck, drill), the cold Back table, the leave guard and the keyboard checks
    are codex47's, moved to the owners codex55 gives them.
 
+   One layer on (codex56, the Wine Atlas made a course, 2 November 2026): the root opens on Start here or Continue
+   and the study doors, its Field maps chip gone; the field atlas and the regions index draw as the root and a field
+   map as its region page (a country's map as its country page), so a cold Back climbs a country, the root and Home;
+   the region page carries the map's own field notes and its offline copy where its door to the field map stood, and
+   its study row holds Flash and Drill; the map quiz's chooser lists every field map; the Workshop opened from the
+   root lights Wine Atlas and climbs back to it. codex56's own addresses (the course, a map quiz, compare) climb cold
+   to the root.
+
    CODEX_URL may point at a served edition (the public wing, or the source served with the site's shared layer);
    without it the files are served by Playwright routes from the Codex root (argv[2], default this repo) with the
    canonical shared house pack from OOT_SHARED, as check-house-flow serves them. PLAYWRIGHT_MODULE, or argv[3],
@@ -83,8 +91,9 @@ async function routeFiles(context) {
 
     /* the atlas through its own word */
     await atlasRoot(page);
-    ok('the Wine Atlas word opens the root (#/v/worldmap), Wine Atlas lit, with the seventeen sheets, the field maps and the Workshop', await page.evaluate(() => location.hash === '#/v/worldmap') && await owner(page, 'worldmap')
-      && await page.locator('#v55-hub [data-v39="openmap"][data-sheet]').count() === 17 && await page.locator('#v55-chip-fields[data-go="fieldatlas"]').count() === 1 && await page.locator('#v55-chip-techniques[data-go="techniques"]').count() === 1);
+    ok('the Wine Atlas word opens the root (#/v/worldmap), Wine Atlas lit, with Start here or Continue, the five study doors, the seventeen sheets and the Workshop (codex56: no Field maps chip)', await page.evaluate(() => location.hash === '#/v/worldmap') && await owner(page, 'worldmap')
+      && await page.locator('#v55-hub #v56-continue[data-v56="course"]').count() === 1 && await page.locator('#v55-hub .v56-studydoors .v25row').count() === 5
+      && await page.locator('#v55-hub [data-v39="openmap"][data-sheet]').count() === 17 && await page.locator('#v55-chip-fields, #v55-hub [data-go="fieldatlas"]').count() === 0 && await page.locator('#v55-chip-techniques[data-go="techniques"]').count() === 1);
     const rootDepth = await page.evaluate(() => ({ depth: V32.d, length: history.length }));
     await page.locator('#nav-worldmap').click();
     ok('tapping the lit Wine Atlas word on its root does not add a history entry', await page.evaluate(before => S.view === 'worldmap' && !S.wmap && V32.d === before.depth && history.length === before.length, rootDepth));
@@ -103,23 +112,25 @@ async function routeFiles(context) {
     await page.locator('.v39-country [data-v39="region"][data-slug="champagne"]').click(); await regionalReady(page, 'champagne');
     ok('country readings lead to the complete regional lesson, its map inline, Wine Atlas lit', await owner(page, 'worldmap') && await page.locator('.v39-article .v39-sections details').count() >= 3 && await page.locator('.v39-article .v39-sources a').count() >= 1
       && await page.locator('.v55-map .v45-figure').count() === 1 && await page.locator('.v55-districts').count() === 1);
-    await page.locator('[data-v45="map"][data-v45-arg="champagne"]').first().click(); await view(page, 'fieldmap');
-    ok('regional lesson opens the detailed field map without losing ownership', await owner(page, 'worldmap') && await page.locator('.v45-key li').count() >= 8 && await page.locator('#v45-note-content').innerText().then(text => text.length > 1000));
-    await page.locator('[data-v45="reading"][data-v45-arg="champagne"]').first().click(); await regionalReady(page, 'champagne');
-    ok('field map returns to the complete regional reading', await owner(page, 'worldmap'));
-    await back(page, 'fieldmap');
-    ok('warm Back returns to the exact field map', await page.evaluate(() => S._v45map === 'champagne') && await owner(page, 'worldmap'));
-    await page.locator('[data-v45="deck"][data-v45-arg="region:champagne"]').first().click(); await view(page, 'deck');
-    ok('map recall cards keep the existing regional deck, Wine Atlas lit', await page.evaluate(() => S._v32deck === 'region:champagne') && await owner(page, 'worldmap'));
-    await back(page, 'fieldmap');
+    /* codex56: the field map screen is this page now; the map's own field notes and its offline copy stand where its door stood */
+    ok('the regional lesson carries the field map\'s own notes and its offline copy, with no door to the folded field map screen', await owner(page, 'worldmap') && await page.locator('[data-v45="map"][data-v45-arg="champagne"]').count() === 0
+      && await page.locator('.v55-map details.v56-fieldnotes .v45-studies').count() === 1 && await page.locator('.v55-map details.v56-fieldnotes').evaluate(node => node.textContent.length > 1000)
+      && await page.locator('.v55-map [data-v45="keep"][data-v45-arg="champagne"], .v55-map .v45-storage').count() >= 1);
+    const fieldDepth = await page.evaluate(() => V32.d);
+    await page.evaluate(() => v45Go('champagne')); await regionalReady(page, 'champagne');
+    ok('codex45\'s door to the field map opens the regional reading itself, Wine Atlas lit', await owner(page, 'worldmap') && await page.evaluate(() => location.hash === '#/v/region/champagne'));
+    await back(page, 'region');
+    ok('warm Back returns to the regional reading it was opened from', await page.evaluate(depth => S._v39region === 'champagne' && V32.d === depth, fieldDepth) && await owner(page, 'worldmap'));
+    await page.locator('#v56-s-flash').click(); await page.waitForFunction(() => S._v32run && S._v32run.deckId === 'region:champagne');
+    ok('the study row\'s Flash deals the existing regional cards, Wine Atlas lit', await owner(page, 'worldmap'));
+    await back(page, 'region');
     await atlasRoot(page);
-    await page.locator('#v55-chip-fields').click(); await view(page, 'fieldatlas');
-    while (await page.locator('#v45-more').isVisible()) await page.locator('#v45-more').click();
-    ok('regional field index remains complete and belongs to Wine Atlas', await owner(page, 'worldmap') && await page.locator('.v45-card-open').count() === 129);
+    await page.locator('#v56-mapquiz').click(); await view(page, 'v56mapquiz');
+    ok('the map quiz\'s chooser lists every field map (129) and belongs to Wine Atlas', await owner(page, 'worldmap') && await page.locator('#v56-quizpick [data-go="v56mapquiz"][data-arg]').count() === 129);
     await back(page, 'worldmap');
-    ok('warm Back returns from the field index to the root', await page.evaluate(() => !S.wmap) && await page.locator('#v55-hub').count() === 1 && await owner(page, 'worldmap'));
+    ok('warm Back returns from the map quiz\'s chooser to the root', await page.evaluate(() => !S.wmap) && await page.locator('#v55-hub').count() === 1 && await owner(page, 'worldmap'));
     await page.locator('#v55-chip-techniques').click(); await view(page, 'techniques');
-    ok('Workshop chip opens all 43 lessons, lit More (the Workshop lives in the Library\'s reading rooms)', await owner(page, 'more') && await page.locator('.v46-group li').count() === 43);
+    ok('Workshop chip opens all 43 lessons, lit Wine Atlas (codex56: the Workshop opened from the atlas is the atlas\'s)', await owner(page, 'worldmap') && await page.locator('.v46-group li').count() === 43);
     await back(page, 'worldmap');
     ok('warm Back returns from the Workshop to its atlas entrance', await owner(page, 'worldmap') && await page.locator('#v55-chip-techniques').count() === 1);
     ok('navigation and reading do not invent study marks', await page.evaluate(() => localStorage.getItem('codexStats')) === saved);
@@ -137,11 +148,14 @@ async function routeFiles(context) {
     const coldRoutes = [
       { route: '#/v/worldmap', initial: 'worldmap', parents: ['home'] },
       { route: '#/v/worldmap/france', initial: 'worldmap', parents: ['worldmap', 'home'] },
-      { route: '#/v/regions', initial: 'regions', parents: ['worldmap', 'home'] },
-      { route: '#/v/country/france', initial: 'country', parents: ['regions', 'worldmap', 'home'] },
-      { route: '#/v/region/champagne', initial: 'region', parents: ['country', 'regions', 'worldmap', 'home'] },
-      { route: '#/v/fieldatlas', initial: 'fieldatlas', parents: ['worldmap', 'home'] },
-      { route: '#/v/fieldmap/champagne', initial: 'fieldmap', parents: ['fieldatlas', 'worldmap', 'home'] },
+      { route: '#/v/regions', initial: 'worldmap', parents: ['home'] },
+      { route: '#/v/country/france', initial: 'country', parents: ['worldmap', 'home'] },
+      { route: '#/v/region/champagne', initial: 'region', parents: ['country', 'worldmap', 'home'] },
+      { route: '#/v/fieldatlas', initial: 'worldmap', parents: ['home'] },
+      { route: '#/v/fieldmap/champagne', initial: 'region', parents: ['country', 'worldmap', 'home'] },
+      { route: '#/v/v56course', initial: 'v56course', parents: ['worldmap', 'home'] },
+      { route: '#/v/v56mapquiz/champagne', initial: 'v56mapquiz', parents: ['region', 'country', 'worldmap', 'home'] },
+      { route: '#/v/v56compare/champagne~burgundy', initial: 'v56compare', parents: ['region', 'country', 'worldmap', 'home'] },
       { route: '#/library', initial: 'library', parents: ['more', 'home'], lit: 'more' }
     ];
     for (const test of coldRoutes) {
@@ -159,8 +173,8 @@ async function routeFiles(context) {
       await cold.close();
     }
 
-    await boot(page, '#/v/fieldmap/champagne');
-    await page.locator('[data-v45="drill"][data-v45-arg="champagne"]').first().click(); await view(page, 'quiz');
+    await boot(page, '#/v/fieldmap/champagne'); await regionalReady(page, 'champagne');
+    await page.locator('#v56-s-drill').click(); await view(page, 'quiz');
     ok('regional questions still open a real quiz, Wine Atlas lit', await owner(page, 'worldmap') && await page.evaluate(() => S.pool.length > 0 && S.mode === 'drill'));
     // An injected hook isolates the existing optional guard contract, without
     // pretending that ordinary drills themselves display a confirmation dialog.

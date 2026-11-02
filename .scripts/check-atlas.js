@@ -7,7 +7,12 @@
  * Atlas root, the region page and the country page from what the Codex already holds. This loads the SHIPPED chain
  * index.html loads (through codex55), with the shared house engine and the pack, in check-card's loader
  * (check-brennans's VM: a history that is a real stack, a location that follows it), its fetch answering
- * js/regions/<sheet>.json from the tree so codex39's own loader reads the regions as the app does. It asserts:
+ * js/regions/<sheet>.json from the tree so codex39's own loader reads the regions as the app does. Since codex56 (the
+ * Wine Atlas made a course, held by check-atlas-course.js) the chain runs on to codex56, so the pins below hold
+ * codex55's design as codex56 leaves it: the root reads no reading on a visit (its first search does), its Field
+ * maps chip and its country chips gave way to the course, the study doors and the countries with their readiness,
+ * a region's inline map waits for the view, its door to the folded field map screen gave way to the map's own
+ * offline copy, and the articles off the map read field map to come. It asserts:
  *
  *   1. the load: codex55 runs, its words and its builders defined
  *   2. the bar: V25_NAV and the drawn bar read Home, the house, CMS, Grapes, Wine Atlas and More in that order,
@@ -20,17 +25,20 @@
  *   4. More: its first group is The Library, three rows to the Library's sections in order, each opening the
  *      Library; More's groups follow
  *   5. the Library without the atlas: no atlas section, no chip to it, no World Map row, its line true
- *   6. the root: worldMapView draws the hub; the five chips; the seventeen sheet doors in the order of the maps;
- *      every country once, as a chip and as a group; every region once, under its own country, in codex39's
- *      order, its line the district count and the field map's count; the hub's own loading reads every sheet's
- *      reading; a sheet's address still draws codex31's sheet
- *   7. five regions (Burgundy, Champagne, Napa and Sonoma, Rioja, Mosel) through codex39's region view: the
- *      inline map is codex45's figure for the slug, its door to the field map screen; The districts holds every
+ *   6. the root: worldMapView draws the hub; the four chips (codex56 folded the field atlas into the root); the
+ *      seventeen sheet doors in the order of the maps; every country once, as a row of codex56's countries and as a
+ *      group; every region once, under its own country, in codex39's order, its line the district count and the
+ *      field map's count (field map to come for an article off the map); no reading read on a visit, and the
+ *      first search reads every sheet's reading; a sheet's address still draws codex31's sheet
+ *   7. five regions (Burgundy, Champagne, Napa and Sonoma, Rioja, Mosel), their readings read, through codex39's
+ *      region view: the inline map is codex45's figure for the slug, its artwork waiting for the view, the
+ *      map's offline copy where its door to the folded field map screen stood; The districts holds every
  *      place of the reading (as often as the reading names it) and every place of the map exactly once, each
  *      map place's mark at the point the artwork draws its dot, so no name is lost from either source; codex39's
  *      The places folded in, its sections kept; the order map, districts, reading, In the Codex, the doors;
  *      every In the Codex door resolving and opening its screen
- *   8. the country pages: France and Italy with their sheet inline and every region as a row with its count,
+ *   8. the country pages: France and Italy with their sheet inline and every region as a row with its count (its
+ *      articles off the map reading field map to come),
  *      codex39's list replaced, every row's door resolving; Canada with its field map inline; Eastern Europe
  *      with its chooser of eight
  *   9. the field map screen keeps its Read in depth door to the region page
@@ -355,33 +363,37 @@ async function main() {
 
   /* ================================================================ */
   section('6. the root');
-  /* a second device, fresh: no reading fetched until the hub is drawn, every sheet's after it */
+  /* a second device, fresh: no reading fetched on a visit (codex56), every sheet's after the first search */
   const B = await bootDevice();
   const before = fetches.length;
   const none = B.G('v55Regions().filter(function (a) { return v39RecReady(a); }).length');
   B.G('S.view = "worldmap"; S.wmap = null;');
   const hub0 = B.page('worldMapView();');
   check('worldMapView with no sheet draws the hub', /id="v55-hub"/.test(hub0), hub0.slice(0, 200));
+  await tick(200);
+  const visit = fetches.length - before;
+  B.G('v55Filter({ querySelectorAll: function () { return []; }, querySelector: function () { return null; } }, "chablis")');
   for (let i = 0; i < 60 && !B.G('v55Regions().every(function (a) { return v39RecReady(a); })'); i++) await tick(40);
   const parts = [...new Set(fetches.slice(before))];
   const partsWant = B.G('(function () { var p = {}; v55Regions().forEach(function (a) { p[v39PartName(a)] = 1; }); return Object.keys(p).length; })()');
-  check('the hub reads every sheet\'s reading through codex39\'s loader (' + parts.length + ' files of ' + partsWant + ', none read before it)', none === 0 && B.G('v55Regions().every(function (a) { return v39RecReady(a); })') && parts.length === partsWant, parts.join(' '));
+  check('the hub reads no reading on a visit; its first search reads every sheet\'s reading through codex39\'s loader (' + parts.length + ' files of ' + partsWant + ', none read before it)', none === 0 && visit === 0 && B.G('v55Regions().every(function (a) { return v39RecReady(a); })') && parts.length === partsWant, visit + ' on the visit; ' + parts.join(' '));
   A.G('S.view = "worldmap"; S.wmap = null;');
   const hub = A.page('worldMapView();');
   drawn.push(['the root', hub]);
   const chips = [...hub.matchAll(/<nav class="v32chips v55-chips"[\s\S]*?<\/nav>/g)].map((m) => m[0])[0] || '';
-  check('the five chips: The World Map, Countries, Every region (to their sections), Field maps, Techniques (to their screens)',
-    JSON.stringify(attr(chips, />([^<]+)<\/button>/g)) === JSON.stringify(['The World Map', 'Countries', 'Every region', 'Field maps', 'Techniques'])
-    && attr(chips, /data-to="([^"]*)"/g).join(',') === 'v55-sheets-h,v55-countries-h,v55-regions-h' && attr(chips, /data-go="([^"]*)"/g).join(',') === 'fieldatlas,techniques'
+  check('the four chips: The World Map, Countries, Every region (to their sections), Techniques (to its screen); the Field maps chip gone, the field atlas drawn as this root (codex56)',
+    JSON.stringify(attr(chips, />([^<]+)<\/button>/g)) === JSON.stringify(['The World Map', 'Countries', 'Every region', 'Techniques'])
+    && attr(chips, /data-to="([^"]*)"/g).join(',') === 'v55-sheets-h,v55-countries-h,v55-regions-h' && attr(chips, /data-go="([^"]*)"/g).join(',') === 'techniques'
     && ['v55-sheets-h', 'v55-countries-h', 'v55-regions-h'].every((id) => hub.indexOf('id="' + id + '"') > 0) && A.G('typeof V25_GO.fieldatlas === "function" && typeof V25_GO.techniques === "function"'), chips);
   const sheetIds = JSON.parse(A.G('JSON.stringify((function () { var ids = v31Sheets().map(function (s) { return s.id; }), out = []; MAP_GROUPS.forEach(function (g) { g[1].forEach(function (id) { if (ids.indexOf(id) >= 0) out.push(id); }); }); ids.forEach(function (id) { if (out.indexOf(id) < 0) out.push(id); }); return out; })())'));
   const doors = attr(hub, /data-v39="openmap" data-sheet="([^"]*)"/g);
   check('the seventeen sheets as doors, in the order of the maps (' + doors.length + ')', doors.length === 17 && JSON.stringify(doors) === JSON.stringify(sheetIds), doors.join(' '));
   const order = JSON.parse(A.G('JSON.stringify(v55CountryOrder().map(function (r) { return r.key; }))'));
   const allCountries = JSON.parse(A.G('JSON.stringify(Object.keys(v39Countries()).filter(function (k) { return v39Country(k); }))'));
-  const chipsC = attr(hub.slice(hub.indexOf('v55-countrychips')), /data-v39="country" data-key="([^"]*)"/g).slice(0, order.length);
+  const cAt = hub.indexOf('v56-countryrows');
+  const chipsC = cAt >= 0 ? attr(hub.slice(cAt, hub.indexOf('</section>', cAt)), /data-v39="country" data-key="([^"]*)"/g) : [];
   const groups = attr(hub, /class="v32-group v55-country" data-v55-country="([^"]*)"/g);
-  check('every country once (' + order.length + ' of ' + allCountries.length + '): a chip each and a group each, in the order of the maps', order.length === allCountries.length && allCountries.every((k) => order.indexOf(k) >= 0) && JSON.stringify(chipsC) === JSON.stringify(order) && JSON.stringify(groups) === JSON.stringify(order), JSON.stringify({ order, chipsC, groups }));
+  check('every country once (' + order.length + ' of ' + allCountries.length + '): a row each under Countries (codex56\'s, in place of codex55\'s chips) and a group each, in the order of the maps', order.length === allCountries.length && allCountries.every((k) => order.indexOf(k) >= 0) && hub.indexOf('v55-countrychips') < 0 && JSON.stringify(chipsC) === JSON.stringify(order) && JSON.stringify(groups) === JSON.stringify(order), JSON.stringify({ order, chipsC, groups }));
   let regionBad = [], regionN = 0;
   const allSlugs = JSON.parse(A.G('JSON.stringify(v55Regions().map(function (a) { return a.slug; }))'));
   const seenSlugs = countOf(attr(hub, /data-v39="region" data-slug="([^"]*)"/g));
@@ -399,10 +411,10 @@ async function main() {
       const wantLine = A.G('v55RegionLine(v39Find(' + JSON.stringify(slug) + '))');
       const n = treeNames(REC[slug] && REC[slug].places, []).length;
       const m = A.G('v45Map(' + JSON.stringify(slug) + ') ? v45Map(' + JSON.stringify(slug) + ').places.length : 0');
-      if (line !== wantLine || line !== (n === 1 ? '1 district' : n + ' districts') + ' · ' + m + ' on its field map') regionBad.push(slug + ': ' + line);
+      if (line !== wantLine || line !== (n === 1 ? '1 district' : n + ' districts') + ' · ' + (m ? m + ' on its field map' : 'field map to come')) regionBad.push(slug + ': ' + line);
     });
   });
-  check('every region once (' + regionN + ' of ' + allSlugs.length + '), under its own country in codex39\'s order, its line its district count and its field map\'s count',
+  check('every region once (' + regionN + ' of ' + allSlugs.length + '), under its own country in codex39\'s order, its line its district count and its field map\'s count (field map to come for an article off the map)',
     regionN === allSlugs.length && allSlugs.every((s) => seenSlugs[s] === 1) && regionBad.length === 0, regionBad.slice(0, 6).join(' | '));
   const sheetView = A.G('(function () { var got = ""; var was = el; el = function (h) { got = String(h); return was(h); }; S.view = "worldmap"; S.wmap = "france"; try { worldMapView(); } finally { el = was; } return got; })()');
   check('a sheet\'s address still draws codex31\'s sheet (#/v/worldmap/france)', /v31-sheet/.test(sheetView) && !/v55-hub/.test(sheetView), sheetView.slice(0, 160));
@@ -411,6 +423,10 @@ async function main() {
   /* ================================================================ */
   section('7. five regions');
   const FIVE = ['burgundy', 'champagne', 'napa-sonoma', 'rioja', 'mosel'];
+  /* their readings read first: since codex56 the root reads none on a visit */
+  const fiveParts = JSON.parse(A.G('JSON.stringify(' + JSON.stringify(FIVE) + '.map(function (s) { return v39PartName(v39Find(s)); }))'));
+  A.G('(function () { ' + JSON.stringify(fiveParts) + '.forEach(function (p) { v39LoadPart(p); }); })()');
+  for (let i = 0; i < 120 && !A.G(JSON.stringify(fiveParts) + '.every(function (p) { return v39PartReady(p); })'); i++) await tick(20);
   for (const slug of FIVE) {
     console.log('');
     const html = A.page('S.view = "region"; S._v39region = ' + JSON.stringify(slug) + '; v39RegionView();');
@@ -421,16 +437,16 @@ async function main() {
     const reading = REC[slug] || {};
     const names = treeNames(reading.places, []);
     console.log('  ' + slug + ': ' + names.length + ' places in the reading, ' + m.places.length + ' on the map');
-    check(slug + ': the inline map is codex45\'s figure for the slug (its artwork, its viewer), with the mark\'s holder and the door to the field map screen',
-      !!fig && fig.indexOf('src="' + file + '"') > 0 && fig.indexOf('data-v45="zoom" data-v45-arg="' + slug + '"') > 0 && /class="v55-mapfig" data-v55-map="[^"]*"/.test(html) && /class="v55-pin" hidden/.test(html)
-      && html.indexOf('data-v45="map" data-v45-arg="' + slug + '"') > 0, fig.slice(0, 200));
+    check(slug + ': the inline map is codex45\'s figure for the slug (its artwork waiting for the view, its viewer), with the mark\'s holder; the map\'s offline copy where the door to the folded field map screen stood (codex56)',
+      !!fig && fig.indexOf('data-v56-src="' + file + '"') > 0 && fig.indexOf('data-v45="zoom" data-v45-arg="' + slug + '"') > 0 && /class="v55-mapfig" data-v55-map="[^"]*"/.test(html) && /class="v55-pin" hidden/.test(html)
+      && html.indexOf('data-v45="map" data-v45-arg="' + slug + '"') < 0 && (html.indexOf('data-v45="keep" data-v45-arg="' + slug + '"') > 0 || html.indexOf('Optional map downloads are unavailable in this browser.') > 0), fig.slice(0, 200));
     const dist = html.slice(html.indexOf('<section class="v55-districts"'), html.indexOf('</section>', html.indexOf('<section class="v55-districts"')) + 10);
     const placed = countOf(attr(dist, /data-v55-place="([^"]*)"/g));
     const wantPlaced = countOf(names.concat([]));
     /* the map places that join no reading place are drawn by their own name under Also on the map */
     const pinNums = attr(dist, /data-pin="([^"]*)"/g).map(Number);
     const pinNames = attr(dist, /data-v55="pin" data-pin="[^"]*" data-x="[^"]*" data-y="[^"]*" data-name="([^"]*)"/g);
-    const alsoNames = attr(dist.slice(Math.max(0, dist.indexOf('v55-also'))), /class="v55-d v55-alsoitem" data-v55-place="([^"]*)"/g);
+    const alsoNames = attr(dist.slice(Math.max(0, dist.indexOf('v55-also'))), /class="v55-d v55-alsoitem(?: v56-more)?"(?: hidden)? data-v55-place="([^"]*)"/g);
     names.forEach((n) => { wantPlaced[n] = wantPlaced[n]; });
     alsoNames.forEach((n) => { wantPlaced[n] = (wantPlaced[n] || 0) + 1; });
     const readingOk = names.every((n) => placed[n] >= countOf(names)[n]) && Object.keys(placed).every((n) => placed[n] === (wantPlaced[n] || 0));
@@ -495,7 +511,8 @@ async function main() {
     const got = attr(regs, /data-v39="region" data-slug="([^"]*)"/g);
     const lines = want.map((s) => [unesc((new RegExp('data-v55-count="' + s + '">([^<]*)<').exec(regs) || [])[1] || ''), A.G('v55RegionLine(v39Find(' + JSON.stringify(s) + '))')]);
     const unresolved = got.filter((slug) => !A.G('!!v39Find(' + JSON.stringify(slug) + ')'));
-    check(key + ': every region (' + want.length + ') once as a row with its district count, in codex39\'s list\'s place, every row\'s door resolving', unresolved.length === 0 && JSON.stringify(got) === JSON.stringify(want) && lines.every((l) => l[0] && l[0] === l[1] && /districts? · \d+ on its field map$/.test(l[0])) && (html.match(/class="v39-doors/g) || []).length === 1, JSON.stringify(lines.slice(0, 3)));
+    const offN = want.filter((s) => !A.G('!!v45Map(' + JSON.stringify(s) + ')')).length;
+    check(key + ': every region (' + want.length + ', ' + offN + ' off the map) once as a row with its district count, in codex39\'s list\'s place, every row\'s door resolving', unresolved.length === 0 && JSON.stringify(got) === JSON.stringify(want) && lines.every((l, i) => l[0] && l[0] === l[1] && (A.G('!!v45Map(' + JSON.stringify(want[i]) + ')') ? /districts? · \d+ on its field map$/ : /districts? · field map to come$/).test(l[0])) && (html.match(/class="v39-doors/g) || []).length === 1, JSON.stringify(lines.filter((l) => l[0] !== l[1]).slice(0, 3)));
     const at = (s) => html.indexOf(s);
     check(key + ': the order: the head, the map, the reading', at('class="viewhead"') < at('class="v55-map"') && at('class="v55-map"') < at('class="v39-steps"'));
   }
