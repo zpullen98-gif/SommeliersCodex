@@ -801,6 +801,7 @@ if (typeof cellarView === 'function') {
     bankOf: 'The {level} question bank',
     revisit: 'Wine cards to revisit',
     producerCards: 'Producer cards',
+    focusedLine: 'A wine section, floor bottles or vocabulary',
     ownBottles: 'Your own bottles',
     ownOne: '1 bottle you added to the list',
     ownMany: '{n} bottles you added to the list',
@@ -1151,6 +1152,8 @@ function v54RehearsalShape(html) {
     return undefined;
   });
   html = html.replace(/(<summary id="v48-summary-v53-producers"><span>)[^<]*(<\/span>)/, function (m, a, b) { return a + v54W('producerCards') + b; });
+  /* the focused round's line, true once the wines to revisit have moved to Today's study */
+  html = html.replace(/(<summary id="v48-summary-focused-rounds"><span>[^<]*<\/span><span class="v48-summary-line">)[^<]*(<\/span>)/, function (m, a, b) { return a + v54W('focusedLine') + b; });
   var n = v54OwnCount();
   if (n && own.length && typeof v48Details === 'function') {
     var group = v48Details('v54-own', v54W('ownBottles'), n === 1 ? v54W('ownOne') : v54W('ownMany', { n: n }), v32Rows(own.join('')));
@@ -1238,7 +1241,7 @@ if (typeof render === 'function') {
 }
 function v54Copy(r) {
   var out = {};
-  Object.keys(r || {}).forEach(function (k) { if (r[k] !== undefined && r[k] !== null && r[k] !== '') out[k] = r[k]; });
+  Object.keys(r || {}).forEach(function (k) { if (r[k] !== undefined && r[k] !== null && r[k] !== '' && r[k] !== false) out[k] = r[k]; });
   return out;
 }
 if (typeof v32ParentRoute === 'function') {
