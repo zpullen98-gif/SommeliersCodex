@@ -48,16 +48,86 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v113`; its two teaching imports have query versions which
+Source worker is `codex-v114`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex55: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex56: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
 codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine Atlas tab,
 codex48 the focused house learning flow, codex49 the house answer readings,
 codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
-codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow).
+codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
+codex55 the Wine Atlas tab and More's Library).
+
+## The Wine Atlas tab and More's Library (codex55, 2 November 2026)
+
+The owner asked for the Library tab to move into More, for the Wine Atlas to come back to the bar, and for every region
+to carry all of its regional maps, its knowledge and what the Codex holds about it and the districts within it.
+`js/codex55.js`, loaded after codex54 and before boot, assembles what the Codex already holds (codex31's 17 sheets,
+codex45's 129 field maps, codex39's 115 region and 24 country readings, codex46's 43 techniques, codex53's grapes, the
+Court's subjects and grid reads); nothing is written new. It edits no earlier layer, no data file and none of ChatGPT's
+files; every wrapper is typeof guarded and outermost, every registry is extended key by key (`V25_NAV` alone is
+reassigned whole, as codex41 and codex53 reassigned it), every string it shows lives in `V55_WORDS` (read by `v55W`),
+and its CSS lives in its own `v55-style` element. What a maintainer needs:
+
+- **The bar** reads Home · the house's name · CMS · Grapes · Wine Atlas · More; the Wine Atlas word is codex47's key
+  `worldmap`. The drawn bar keeps codex47's `v47nav` class off, so `css/house-atlas-nav.css` never applies. The due pill
+  rides on More, where Practise lives now: inline on a wide screen, and at 420 px and below on More's corner inside its
+  44 px box, so the five words keep their room. One row at 320, 375 and 390 px, night and day, every word at least
+  44 px; the measured widths are in codex55's BAR WIDTHS comment. A tap on Wine Atlas or More opens that root from
+  anywhere else; on the root itself it scrolls to the top and adds no history entry.
+- **Owners and parents**: the six atlas views (`worldmap`, `regions`, `country`, `region`, `fieldatlas`, `fieldmap`)
+  are owned by `worldmap` in `V32_OWNER`, `V25_UNDER` and `V25_HUB`; every key in those tables and in `V25_AREA` that
+  said `library` says `more`. The root climbs to Home; a sheet, the regions index and the field atlas climb to the root;
+  the Library climbs to More. The lit word answers More wherever it answered Library, with codex54's rule for content:
+  a region's deck, its cards and a region drill light Wine Atlas wherever they were opened from, a region's deck climbs
+  to its region, a sheet's deck to its country and the deck of every region to the root. The Workshop (techniques)
+  lights More, since it lives in the Library's reading rooms. Every address keeps working.
+- **More and the Library**: More opens with a group, The Library, whose rows (Practise with the due count, The question
+  bank, The reading rooms) each open `#/library` at that heading (`data-go="v55lib"`, through codex41's `v41Jump`);
+  More's own groups follow. The Library keeps its address, lights More and climbs to it; it loses its atlas section,
+  its jump chip, codex39's regions door, codex45's field atlas door and the World Map row, and its line reads "For
+  {level}: Practise and the question bank first, then the reading rooms." The Workshop door stays.
+- **The Wine Atlas root** (`#/v/worldmap` with no sheet; a sheet's address `#/v/worldmap/{sheet}` still draws codex31's
+  sheet): five chips (The World Map, Countries, Every region, Field maps, Techniques), a search in which a district's
+  name finds its region, the 17 sheets as doors in `MAP_GROUPS` order, a chip for each of the 24 countries, then every
+  country with each of its regions as a compact row naming its district count and its field map's count. The root
+  fetches every sheet's reading through codex39's own loader, so the counts are whole and the readings are kept
+  offline.
+- **The region page** (codex39's region view wrapped): the head and the lead; the field map inline through codex45's
+  own renderer (its figure, its enlarging viewer, its failure note), else a door to the sheet with the region marked;
+  **The districts**, one list joining the reading's places (every depth, their notes and depth words) and the field
+  map's places (kind and note), matched by folded name, then the map place's lessonName, then one item of a place named
+  as a list, each mapped place with a button that marks its point on the inline map (the atlas builder's own
+  projection, `V55_BOX`), a map place that joins none drawn under Also on the map; the reading as codex39 draws it,
+  its The places folded into The districts; **In the Codex**: the techniques whose `usedBy` names the region, the
+  Court's subject by codex54's `v54SubjectFor`, one Court's grid door a grape whose `GRID_READS` place resolves to the
+  region, the grapes' pages by `v53GrapeKey`, the region's flashcards and drill; then codex39's own row of doors.
+  codex45's field map door under the head is taken off the page; the field map screen keeps its address and its Read
+  in depth door to this page.
+- **The country page** (codex39's country view wrapped): its field map inline where the field atlas holds one (one of
+  eight, chosen by a chip, for Eastern Europe), else its sheet with codex31's enlarging viewer; the reading as codex39
+  draws it; its regions as rows with their district counts in place of codex39's list.
+- **Gates**: `node .scripts/check-atlas.js [jsDir]` (with `OOT_SHARED` and `OOT_HOUSE_PACK`; a tree with no codex55.js
+  is skipped) loads the whole chain in check-card's loader and holds the six words in order and the pill on More; the
+  owners, the parents and the lit word on 27 screens; More's Library group; the Library without the atlas; the root's
+  17 sheet doors and every country with every region and its counts; five regions (Burgundy, Champagne, Napa and
+  Sonoma, Rioja, Mosel) with the inline map, The districts holding every name of the reading and of the map with none
+  lost, every mark on the dot the artwork draws and every In the Codex door resolving and opening its screen; France and
+  Italy with their sheets and region rows, Canada's field map and Eastern Europe's chooser; the strictest voice sweep
+  (that of `check-producers-house.js`) over `V55_WORDS` and every page it draws, the tab word Practise excepted; var and
+  function only, every wrapper guarded, nobody named, no key and no model name; the shell; and the chain rule (every
+  list in a gate that names `codex54.js` names `codex55.js` straight after it). The pins that held the old bar moved:
+  `check-atlas-nav.cjs` holds the Wine Atlas word, the root, the atlas views and a region's deck and drill lit Wine
+  Atlas, the cold Back chains through the root, the leave guard on the Wine Atlas word and the Library under More;
+  `check-house-only.cjs` the order, the pill on More, the Library's screens lit More and their cold chains through
+  More; `check-card.js` the Library's line; `check-cms.js` its chain list; every script order list names `codex55.js`
+  before `boot.js`. One more of ChatGPT's gates changed, only where it pinned the old bar: `check-library-search.cjs`
+  reaches the Library through More's first group.
+
+The shell loads `js/codex55.js?v=1` after codex54.js and before boot.js; the source worker is `codex-v114` and lists it.
+The next layer is codex56.
 
 ## The five-star card and the flow edition (codex54, 31 October 2026)
 
@@ -290,6 +360,8 @@ Run `node .scripts/check-atlas-nav.cjs` against the isolated source preview,
 or set `CODEX_URL` for the public preview, in addition to the release gates.
 Since codex53 the Wine Atlas word has left the bar: the atlas, its countries and regions are the Library's again
 (its section The atlas), at the same addresses, and check-atlas-nav holds that contract.
+Since codex55 the word is back (Home, the house, CMS, Grapes, Wine Atlas, More): the six atlas views are the tab's
+again, its root is the Wine Atlas hub, the Library lives under More, and check-atlas-nav holds that contract now.
 
 ## The Wine Workshop (23 October 2026)
 
