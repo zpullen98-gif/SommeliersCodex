@@ -623,6 +623,37 @@ async function main() {
   check('names, joins, sources and artwork untouched: every place\'s name and lessonName, every file, hash and source as the data holds them',
     rawMaps.every((m, i) => m.id === cleanMaps[i].id && m.file === cleanMaps[i].file && m.sha256 === cleanMaps[i].sha256 && JSON.stringify(m.sources) === JSON.stringify(cleanMaps[i].sources) && m.places.every((p, j) => p.name === cleanMaps[i].places[j].name && p.lessonName === cleanMaps[i].places[j].lessonName && p.lat === cleanMaps[i].places[j].lat)));
   check('the copies are made once: v45Map hands out the same object each time', A.G('v45Map("burgundy") === v45Map("burgundy")'));
+
+  /* ================================================================ */
+  section('10. voice, the file, the shell');
+  const words = A.J('V56_WORDS');
+  const wordBad = Object.keys(words).map((k) => [k, voiceProblems(words[k])]).filter((x) => x[1].length);
+  check('every word of V56_WORDS passes the strictest voice rules (' + Object.keys(words).length + ')', wordBad.length === 0, JSON.stringify(wordBad));
+  const SUPER = /\b(best|most|finest|greatest|largest|smallest|highest|lowest|oldest|newest|easiest|hardest|fastest|ultimate)\b/i;
+  const AMER_W = /\b(color\w*|center\w*|toward|favor\w*|flavor\w*|\w+iz(e|es|ed|ing)|gray|program|practice)\b/i;
+  const wordStyle = Object.keys(words).filter((k) => SUPER.test(words[k]) || AMER_W.test(words[k]));
+  check('no superlative and no American spelling among them', wordStyle.length === 0, wordStyle.map((k) => k + ': ' + words[k]).join(' | '));
+  const pageBad = [];
+  drawn.forEach(([name, html]) => {
+    const said = shown(html);
+    voiceProblems(said.replace(/[^\x00-↏]/g, '')).forEach((p) => { if (!/mark/.test(p)) pageBad.push(name + ': ' + p); });
+  });
+  check('no page drawn here shows a dash, the retired word or a level numeral (' + drawn.length + ' pages)', pageBad.length === 0, pageBad.slice(0, 6).join(' | '));
+  const src = fs.readFileSync(path.join(JS, 'codex56.js'), 'utf8');
+  const read = src.replace(/\\u([0-9a-fA-F]{4})/g, (m, h) => String.fromCharCode(parseInt(h, 16)));
+  const srcBad = voiceProblems(read.replace(/Practise/g, ''));
+  check('codex56.js (its escapes read as the characters they are): no dash of any kind, never the retired word, no level numeral, no mark at or above U+2190', srcBad.length === 0, srcBad.join(', '));
+  check('codex56.js names nobody and ships no key and no model name', !/Lizzy|sk-ant|api[_-]?key|claude-|\bopus\b|\bsonnet\b|\bhaiku\b/i.test(src));
+  check('codex56.js declares with var and function only (no let, const, class or arrow)', !/(^|[^\w.'"])(let|const|class)\s/.test(src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/'(?:[^'\\]|\\.)*'/g, "''")) && src.indexOf('=>') < 0);
+  const wrappers = src.split('\n').filter((l) => /^\s*var _v56\w+ = \w+;$/.test(l));
+  check('codex56.js edits no earlier layer: every wrapper (' + wrappers.length + ') is typeof guarded', wrappers.length > 20 && wrappers.every((line) => { const t = /= (\w+);$/.exec(line)[1]; return src.indexOf('typeof ' + t + ' === \'function\'') >= 0; }), wrappers.filter((line) => { const t = /= (\w+);$/.exec(line)[1]; return src.indexOf('typeof ' + t + ' === \'function\'') < 0; }).join(' | '));
+  check('this proof carries no dash', voiceProblems(fs.readFileSync(__filename, 'utf8').replace(/Practise/g, '')).filter((p) => !/retired|numeral|mark/.test(p)).length === 0);
+  const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+  const i55 = index.indexOf('src="js/codex55.js'), i56 = index.indexOf('src="js/codex56.js?v='), iBoot = index.indexOf('src="js/boot.js');
+  check('index.html loads js/codex56.js?v=1 once, after codex55.js and before boot.js', i56 > i55 && i56 < iBoot && index.split('js/codex56.js').length === 2 && index.indexOf('js/codex56.js?v=1"') > 0);
+  check('sw.js is codex-v115 and lists ./js/codex56.js once, after ./js/codex55.js', /const CACHE = 'codex-v115';/.test(sw) && sw.indexOf("'./js/codex56.js'") > sw.indexOf("'./js/codex55.js'") && sw.indexOf("'./js/codex55.js'") > 0 && sw.split("'./js/codex56.js'").length === 2);
+  check('the chain this proof loaded is the shell\'s own (codex56.js straight after codex55.js, before boot.js)', CH.chainFiles(JS).indexOf('codex56.js') === CH.chainFiles(JS).indexOf('codex55.js') + 1 && CH.chainFiles(JS).indexOf('boot.js') === CH.chainFiles(JS).indexOf('codex56.js') + 1);
 }
 
 if (require.main !== module) { module.exports = { offMapFixture }; } else main().then(() => {
