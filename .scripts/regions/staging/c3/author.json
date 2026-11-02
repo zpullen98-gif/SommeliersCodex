@@ -2,39 +2,77 @@
   "chunk": "c3",
   "sheet": "italy",
   "file": ".scripts/regions/staging/c3/italy.more.json",
-  "status": "in progress: Emilia-Romagna and Marche staged; Lazio to follow",
+  "check": "check-fragment reports one problem per article and nothing else: regions[i].deeper is required for an article off the map. This edition writes no deeper list (the task's rule, as in c1 and c2), so the integrator relaxes that .more rule; every other rule passes, with no superlative note. Not deepened, each article is held to the one prose total (800 to 1,800 words, every place note counted), 6 to 14 cards and 6 to 12 questions with at least 3 multiple choice. No multiple choice key is the longest option except where all four options tie in length (three year or percentage questions).",
+  "join": "apply-roster --dry over a temporary copy of fragments/ with this file added reports no clash: the roster's aliases and the extras below move from italy.3.json (umbria for Lazio, abruzzo for Marche) to the new articles, latium, le marche, jesi, montefiascone, cesanese and verdicchio dei castelli di jesi classico among them, and Italy's regionsOrder gains emilia-romagna, marche, lazio after the mapped twelve. Not claimed: orvieto (Umbria's place, shared with Lazio) and lambrusco mantovano (Lombardy's). No house wine resolves to any of the three today.",
+  "cms": "lombardy-emilia-romagna (the Court's pages 28 and 29): every Emilia-Romagna row is covered: the location straddling north and central Italy, the cool continental category, the Apennines, frizzante and spumante, Lambrusco made commonly by cuve close but also by metodo classico or the ancestral method, the Lambrusco grape, IGP, DOC and DOCG, the three Lambrusco DOCs the Court lists as subzones (the trap that each is its own DOC is named), secco, amabile and dolce, the service row (cold, a flute or a wine glass), the pairing row (Parmigiano Reggiano, salumi, balsamic vinegar) and the business row (the short life of the sparkle by the glass). central-southern-italy (pages 34 and 35): for the Marche, the map, the two Verdicchio DOCs the Court names with their Riserva DOCGs, maritime on the coast and continental inland, the Apennines and the Adriatic, Verdicchio and Montepulciano, the classification and the Superiore and Riserva label terms; for Lazio, the Tyrrhenian Sea, the climate row, the Apennines, the classification and the same label terms (the Court writes no Lazio row by name). world-sparkling-wines: Lambrusco as the Certified Charmat example.",
+  "fetch": "WebFetch could not reach www.gamberorosso.it or eur-lex.europa.eu (outside the session's allowed network domains), so two 2020 to 2026 changes found by search were not read in full and are listed as uncertain below.",
   "articles": [
     {
       "slug": "emilia-romagna",
       "name": "Emilia-Romagna",
-      "words": {
-        "prose": 1320,
-        "untaggedPlaces": 119,
-        "taggedPlaces": 198
-      },
+      "words": { "prose": 1320, "untaggedPlaces": 119, "taggedPlaces": 198 },
       "cards": 10,
       "cardsTagged": 2,
       "questions": 8,
       "questionsTagged": 2,
       "multipleChoice": 5,
       "sources": 6,
-      "searches": 5
+      "searches": 5,
+      "techniques": ["tank-method", "ancestral-method", "traditional-method", "dried-grapes", "noble-rot", "training-pruning", "skin-contact-orange"],
+      "uncertain": [
+        "Lambrusco di Sorbara: a white sparkling type (Lambrusco di Sorbara Bianco Spumante) was reported by one trade source in December 2024 as added to the DOC, and the Emilia-Romagna bulletin carries a 2022 amendment request and a 2023 coordinated text; with no second source and the decree unread, nothing about it is stated. The 60 per cent Sorbara rule rests on the regional enoteca and the disciplinare text.",
+        "Lambrusco Salamino di Santa Croce's minimum share conflicts (85 per cent in one source, 90 in another), so it is written as Salamino led with no figure. Grasparossa's 85 per cent and the three DOCs' 1970 dates agree across the sources seen.",
+        "Romagna Sangiovese subzones: the 2020 text lists twelve (Bertinoro, Brisighella, Castrocaro Terra del Sole, Cesena, Longiano, Meldola, Modigliana, Marzeno, Oriolo, Predappio, San Vicinio, Serra) and the current regional document adds Imola, Coriano, San Clemente and Verucchio; the dates of the additions were not found, so the article names six and gives no count.",
+        "Colli Bolognesi Pignoletto: the regional disciplinare (DM of November 2010) names the DOCG Colli Bolognesi Pignoletto with a Classico wine of at least 95 per cent Grechetto Gentile, and one secondary source says the DOCG began as Colli Bolognesi Classico Pignoletto and was renamed in 2014. The Codex's Master bank question m-qguz5u11 says the reverse (the current name carries Classico). The article uses Colli Bolognesi Pignoletto and its Classico wine and states no renaming; the refuter or integrator may want to reconcile the bank's answer text.",
+        "Gutturnio's separation as a DOC in 2010 and its 55 to 70 per cent Barbera and 30 to 45 per cent Croatina rest on the regional disciplinare and agreeing secondary sources; one encyclopaedia's 50 per cent floor is treated as an outlier.",
+        "Undated on purpose: the Modena DOC (often given as 2009, unconfirmed), the Reggiano DOC's grape rules, the Colli Piacentini DOC (1967 in one source) and the year Albana di Romagna became Romagna Albana.",
+        "Producers: founding years are left out except Cleto Chiarli's 1860, as WINE_PRODUCERS gives it. Medici Ermete carries a historic founder's name; Cantine Riunite's success in the United States from the 1970s is stated without a founding year; producers whose names are a living person's (Vittorio Graziano, Cantina della Volta's founder) are left out."
+      ]
     },
     {
       "slug": "marche",
       "name": "Marche",
-      "words": {
-        "prose": 1171,
-        "untaggedPlaces": 123,
-        "taggedPlaces": 103
-      },
+      "words": { "prose": 1171, "untaggedPlaces": 123, "taggedPlaces": 103 },
       "cards": 10,
       "cardsTagged": 3,
       "questions": 8,
       "questionsTagged": 2,
       "multipleChoice": 5,
       "sources": 6,
-      "searches": 5
+      "searches": 5,
+      "techniques": ["lees-batonnage", "oak", "dried-grapes", "tank-method", "traditional-method", "altitude-diurnal", "maritime-fog"],
+      "uncertain": [
+        "The Verdicchio Riserva DOCGs are dated 2010, as the Matelica Riserva disciplinare and one guide give it and as the Abruzzo article already says; one secondary source gives 2011 for both.",
+        "An EU publication of 2026 (C/2026/1160, a standard amendment, reference PDO-IT-A0482-AM05, dated 1 December 2025) is reported by search to add a Spumante Riserva type and a Superiore type to Verdicchio dei Castelli di Jesi and to change its article 6; the text could not be read, so no change is stated.",
+        "Verdicchio dei Castelli di Jesi at least 85 per cent Verdicchio rests on Federdoc (2024); Matelica's 85 per cent on Federdoc and the 2010 Riserva disciplinare.",
+        "Vernaccia di Serrapetrona: its DOCG year (2003 or 2004 in the sources), the 85 per cent Vernaccia Nera minimum and the share of dried grapes (at least 40 per cent in one source) are left out; the three fermentations are described without figures.",
+        "Offida: the DOCG year (2011) rests on one source and the Rosso's Montepulciano rule conflicts (85 per cent as a floor or as a ceiling), so neither is given.",
+        "Rosso Piceno's Montepulciano 35 to 85 per cent and Sangiovese 15 to 50 per cent agree across sources, one of which says the shares were recently revised; given as found. Conero's 2004 DOCG, 85 per cent Montepulciano, up to 15 per cent Sangiovese and two years of ageing agree across several sources.",
+        "DOC years (Rosso Conero, the two Verdicchio DOCs, Rosso Piceno, Lacrima di Morro d'Alba) and the number of DOCs are left out.",
+        "Producers: Velenosi, a family surname, is kept as c1 and c2 kept family names; Umani Ronchi is left out because its trading name may be a person's. Fazi Battaglia's amphora bottle is placed in the decades after the Second World War without a year."
+      ]
+    },
+    {
+      "slug": "lazio",
+      "name": "Lazio",
+      "words": { "prose": 1170, "untaggedPlaces": 151, "taggedPlaces": 131 },
+      "cards": 10,
+      "cardsTagged": 2,
+      "questions": 8,
+      "questionsTagged": 2,
+      "multipleChoice": 5,
+      "sources": 6,
+      "searches": 5,
+      "techniques": ["late-harvest", "noble-rot", "soils-drainage", "lees-batonnage", "oak"],
+      "uncertain": [
+        "Frascati DOC 1966 rests on the DPR of 3 March 1966 (Gazzetta Ufficiale 119, 16 May 1966); Cannellino di Frascati on the DM of 20 September 2011; Roma DOC on the DM of 2 August 2011; Cesanese del Piglio's 2008 DOCG and Est! Est!! Est!!!'s 1966 DOC on agreeing sources.",
+        "No ordinary amendment to Frascati, Frascati Superiore or Cannellino from 2020 to 2026 was found; temporary changes of 12 October 2020 (Frascati Superiore) and 29 September 2021 (Frascati, cellar capacity after the 2021 harvest) are not stated. No Roma DOC change after 2016 was found.",
+        "The 70 per cent Malvasia rule is stated for the two DOCGs only; Frascati DOC's own minimum is not claimed.",
+        "Cesanese del Piglio's grape share (often given as 90 per cent) was not confirmed, so no figure is given; Cesanese di Olevano Romano's 85 per cent rests on its disciplinare.",
+        "Est! Est!! Est!!!'s grape shares conflict (Rossetto 5 to 40 per cent in the AIS text, 25 to 40 in a 2018 regional proposal), so only the order of grapes is given.",
+        "Left out as single source: Cannellino's minimum residual sugar (35 g/L) and the Frascati Superiore Riserva's ageing (12 months). The Cannellino zone's communes rest on one secondary source and are kept in a place note.",
+        "Lake Bolsena is not called the largest volcanic lake in Europe (a superlative). Casale della Ioria's seat at Acuto and Castel de Paolis's revival from the 1980s rest on standard knowledge; Falesco is named by its trading name only."
+      ]
     }
   ]
 }
