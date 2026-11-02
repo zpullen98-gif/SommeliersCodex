@@ -1,21 +1,29 @@
-/* walk54.mjs: the phone walk of the five-star card and the flow (codex54), in Chromium on the served source.
+/* walk54.mjs: the phone walk of the five-star card and the flow (codex54), and of the Wine Atlas tab and More's
+   Library (codex55, 2 November 2026), in Chromium on the served source.
 
    At 375 and 390 px, day and night, each in an isolated profile with a pack whose every wine carries a sale:
    on a glass wine, a tasting pour, a Bubbles bottle and a floor bottle, the block order on screen, the forty-five
    at 20 px with The sale under it, the ten and the twenty quiet, no guest line at the top, every In the Codex door
    and every Practise this wine chip opened with Back returning to the card and its open sections, one visible Next;
    the bank with its lifted rows and #/quizzes drawing it, a quiz started on the bank climbing back to it; Grapes'
-   four Tasting rows and The Village tasting on its 30:00 clock; the Library's sections and its atlas door; the
+   four Tasting rows and The Village tasting on its 30:00 clock; the Library's sections (no atlas since codex55); the
    level page; the Rehearsal room on an empty cellar; Wine studies; Back from housesay and houseguest; cold loads of
    a card, #/quizzes, #/v/bank and #/v/grapes with Back to Home; the bar on one row; every control at least 44 px;
-   no sideways scroll; a clean console.
+   no sideways scroll; a clean console. Since codex55: the bar at 320, 375 and 390 px in each walk's service, one
+   row, Home, the house, CMS, Grapes, Wine Atlas and More, every word at least 44 px, the pill on More alone; More
+   opening with The Library, each row opening the Library at its heading lit More, Back returning to More; the Wine
+   Atlas root (its chips, seventeen sheets, every country and every region with its counts, a district found by the
+   search); Burgundy, Napa and Sonoma and Rioja opened from the root with the inline map loaded, a district tapped
+   and its point marked, every In the Codex door opened with Back returning to the region, and Back to the root;
+   France's country page with its sheet inline and its regions; cold reloads of #/v/region/burgundy, #/v/worldmap
+   and #/library with Back climbing to Home.
 
      PLAYWRIGHT_MODULE=... OOT_HOUSE_PACK=... WALK_PACK=<a pack with sales> SITE_ROOT=<a root whose shared/ is
      WorldTable's static/shared> node .wip/walk54.mjs [width] [day|night]
 
    CODEX_URL names a server already running; without it the walk starts .wip/serve.mjs on a free port and stops it.
    WALK_PACK is served in place of the shipped pack; without it a sale is written in memory into every wine of
-   OOT_HOUSE_PACK. Work in progress, kept on codex54-wip. */
+   OOT_HOUSE_PACK. Work in progress, kept on codex54-wip and extended on codex55-wip. */
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -107,7 +115,7 @@ async function walk(browser, width, mode) {
   const state = () => page.evaluate(() => ({ view: S.view, hash: location.hash }));
   const wide = () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1);
   /* every visible control in the page at least 44 px each way, inline links in running text aside */
-  const small = () => page.evaluate(() => {
+  const small = (inline) => page.evaluate((inline) => {
     const out = [];
     const nodes = document.querySelectorAll('.wrap button, .wrap a[href], .wrap summary, .wrap input:not([type=hidden]), .wrap select, .wrap [role=button], nav.v32nav [data-nav], #v32-back');
     nodes.forEach((el) => {
@@ -116,12 +124,15 @@ async function walk(browser, width, mode) {
       const cs = getComputedStyle(el);
       if (cs.visibility === 'hidden' || cs.display === 'none') return;
       if (el.closest('p, li, dd, td') && cs.display === 'inline' && /link/.test(el.className)) return;
+      /* a reading's own links in its running text (its sources, its notes) are inline, as the Chromium proof reads them */
+      if (inline && el.closest('p, li, dd, td') && cs.display === 'inline' && el.tagName === 'A') return;
       if (r.height < 43.5 || r.width < 43.5) out.push((el.id ? '#' + el.id : el.tagName.toLowerCase() + '.' + String(el.className).split(' ').join('.')) + ' "' + (el.textContent || el.value || '').trim().slice(0, 30) + '" ' + Math.round(r.width) + 'x' + Math.round(r.height));
     });
     return out;
-  });
-  const screen = async (name) => {
-    const s = await small();
+  }, !!inline);
+  const lit = () => page.evaluate(() => { const n = document.querySelectorAll('nav.v32nav [aria-current="page"]'); return n.length === 1 ? n[0].getAttribute('data-nav') : 'none:' + n.length; });
+  const screen = async (name, inline) => {
+    const s = await small(inline);
     check(name + ': every control at least 44 px', s.length === 0, s.slice(0, 6).join('; '));
     check(name + ': no sideways scroll', await wide());
   };
@@ -134,12 +145,22 @@ async function walk(browser, width, mode) {
   /* the bar */
   await step('the bar', async () => {
     await go('#/');
-    const lay = await page.evaluate(() => {
-      const nav = document.querySelector('nav.v32nav');
-      const rects = [...nav.querySelectorAll('[data-nav]')].map((b) => { const r = b.getBoundingClientRect(); return { id: b.dataset.nav, w: r.width, h: r.height, mid: r.y + r.height / 2, right: r.right, whole: b.scrollWidth <= b.clientWidth + 1 }; });
-      return { n: rects.length, row: rects.every((r) => Math.abs(r.mid - rects[0].mid) < 1), big: rects.every((r) => r.w >= 44 && r.h >= 44), whole: rects.every((r) => r.whole), fit: rects.every((r) => r.right <= innerWidth + 1) && nav.scrollWidth <= nav.clientWidth + 1 };
-    });
-    check('the bar: six tabs on one row, each at least 44 px, every word whole, inside the screen', lay.n === 6 && lay.row && lay.big && lay.whole && lay.fit, JSON.stringify(lay));
+    /* codex55: the bar measured at 320, 375 and 390 in this walk's service, then the walk's own width again */
+    for (const bw of [320, 375, 390]) {
+      await page.setViewportSize({ width: bw, height: 844 });
+      await settle(150);
+      const lay = await page.evaluate(() => {
+        const nav = document.querySelector('nav.v32nav');
+        const rects = [...nav.querySelectorAll('[data-nav]')].map((b) => { const r = b.getBoundingClientRect(); return { id: b.dataset.nav, text: b.firstChild ? b.firstChild.textContent.trim() : '', w: r.width, h: r.height, mid: r.y + r.height / 2, right: r.right, whole: b.scrollWidth <= b.clientWidth + 1 }; });
+        const pills = [...nav.querySelectorAll('.v32pill')].map((x) => x.closest('[data-nav]').dataset.nav);
+        return { n: rects.length, words: rects.map((r) => r.id).join(','), atlas: (rects[4] || {}).text, pills, due: v32DueToday().total, row: rects.every((r) => Math.abs(r.mid - rects[0].mid) < 1), big: rects.every((r) => r.w >= 44 && r.h >= 44), whole: rects.every((r) => r.whole), fit: rects.every((r) => r.right <= innerWidth + 1) && nav.scrollWidth <= nav.clientWidth + 1 && document.documentElement.scrollWidth <= innerWidth + 1, widths: rects.map((r) => r.w.toFixed(1)).join(' ') };
+      });
+      console.log('    the bar at ' + bw + ' px: ' + lay.widths + ' (pill ' + lay.due + ' on ' + lay.pills.join(',') + ')');
+      check('the bar at ' + bw + ' px, ' + mode + ': Home, the house, CMS, Grapes, Wine Atlas and More on one row, every word at least 44 px and whole, inside the screen', lay.n === 6 && lay.words === 'home,brennans,cms,grapes,worldmap,more' && lay.atlas === 'Wine Atlas' && lay.row && lay.big && lay.whole && lay.fit, JSON.stringify(lay));
+      check('the bar at ' + bw + ' px, ' + mode + ': the due pill on More alone', lay.due ? (lay.pills.length === 1 && lay.pills[0] === 'more') : lay.pills.length === 0, JSON.stringify(lay.pills));
+    }
+    await page.setViewportSize({ width, height: 844 });
+    await settle(150);
     await screen('Home');
   });
 
@@ -287,23 +308,147 @@ async function walk(browser, width, mode) {
     check('Back from The Village tasting returns to Grapes', (await state()).view === 'grapes', JSON.stringify(await state()));
   });
 
-  /* the Library */
+  /* the Library (codex55: no atlas section, no regions door; it lights More) */
   await step('the Library', async () => {
     await go('#/');
     await go('#/library');
     const lib = await page.evaluate(() => {
-      const atlas = document.querySelector('.v53-atlas'), reading = document.querySelector('.v53-reading'), reg = document.querySelector('.v39-door-regions');
-      return { heads: [...document.querySelectorAll('.wrap section h2, .wrap section h3')].map((h) => h.textContent.trim()), inAtlas: !!(atlas && reg && atlas.contains(reg)), inReading: !!(reading && reg && reading.contains(reg)), method: !!(reading && /How to taste: the method/.test(reading.textContent)), terroir: document.querySelectorAll('.wrap [data-go="terroir"]').length };
+      const reading = document.querySelector('.v53-reading');
+      return { heads: [...document.querySelectorAll('.wrap section h2, .wrap section h3')].map((h) => h.textContent.trim()), atlas: !!document.querySelector('.wrap .v53-atlas'), reg: !!document.querySelector('.wrap .v39-door-regions'), chip: !!document.querySelector('.wrap [data-to="v53-atlas-h"]'), map: document.querySelectorAll('.wrap [data-go="worldmap"]').length, method: !!(reading && /How to taste: the method/.test(reading.textContent)), terroir: document.querySelectorAll('.wrap [data-go="terroir"]').length };
     });
     console.log('    the Library: ' + lib.heads.join(' | '));
-    check('the Library: its sections, the regions door in The atlas, How to taste: the method in the reading rooms, no Terroir row', lib.heads.length >= 3 && lib.inAtlas && !lib.inReading && lib.method && lib.terroir === 0, JSON.stringify(lib));
+    check('the Library: its sections, no atlas section, chip, regions door or World Map row, How to taste: the method in the reading rooms, no Terroir row', lib.heads.length >= 3 && !lib.atlas && !lib.reg && !lib.chip && lib.map === 0 && lib.method && lib.terroir === 0, JSON.stringify(lib));
+    check('the Library lights More', (await lit()) === 'more', await lit());
     await screen('the Library');
-    await page.locator('.v53-atlas .v39-door-regions button').first().click();
+  });
+
+  /* More opens with The Library */
+  await step('More\'s Library', async () => {
+    await go('#/');
+    await page.click('#nav-more');
+    await page.waitForFunction(() => S.view === 'more');
+    await settle();
+    const first = await page.evaluate(() => { const g = document.querySelector('#view .v32-group'); return g ? { lib: g.classList.contains('v55-libgroup'), head: (g.querySelector('h3') || {}).textContent, rows: [...g.querySelectorAll('.v25row-name')].map((n) => n.textContent) } : null; });
+    check('More opens with The Library: Practise, The question bank, The reading rooms, lit More', !!first && first.lib && first.head === 'The Library' && first.rows.join(',') === 'Practise,The question bank,The reading rooms' && (await lit()) === 'more', JSON.stringify(first));
+    await screen('More');
+    for (const [id, head, label] of [['v55-lib-practise', 'v53-practise-h', 'Practise'], ['v55-lib-bank', 'v53-bank-h', 'The question bank'], ['v55-lib-reading', 'v53-reading-h', 'The reading rooms']]) {
+      await page.click('#' + id);
+      await page.waitForFunction(() => S.view === 'library');
+      await settle(350);
+      const at = await page.evaluate((h) => { const n = document.getElementById(h); const r = n ? n.getBoundingClientRect() : null; return { has: !!n, top: r ? Math.round(r.top) : -1, hash: location.hash }; }, head);
+      check('More\'s ' + label + ' opens the Library (#/library) at its heading, lit More', at.has && at.top >= 0 && at.top < 260 && /^#\/library/.test(at.hash) && (await lit()) === 'more', JSON.stringify(at));
+      await back();
+      check('Back from the Library (' + label + ') returns to More', (await state()).view === 'more', JSON.stringify(await state()));
+    }
+  });
+
+  /* the Wine Atlas root */
+  const atlasRoot = async () => {
+    await page.click('#nav-worldmap');
+    await page.waitForFunction(() => S.view === 'worldmap' && !S.wmap && document.querySelector('#v55-hub'));
+    await settle(250);
+  };
+  await step('the Wine Atlas root', async () => {
+    await go('#/');
+    await atlasRoot();
+    await page.waitForFunction(() => v55Regions().every((a) => v39RecReady(a)), null, { timeout: 30000 });
     await settle(300);
-    const at = await state();
-    check('the atlas door opens the regions (' + at.view + ')', at.view !== 'library', JSON.stringify(at));
+    const hub = await page.evaluate(() => ({
+      hash: location.hash, chips: [...document.querySelectorAll('.v55-chips .v28-chip')].map((c) => c.textContent.trim()), sheets: document.querySelectorAll('#v55-hub [data-v39="openmap"]').length,
+      countries: document.querySelectorAll('#v55-hub .v55-countrychips [data-v39="country"]').length, groups: document.querySelectorAll('#v55-hub .v55-country').length, want: v55CountryOrder().length,
+      regions: document.querySelectorAll('#v55-hub .v55-regions [data-v39="region"]').length, all: v55Regions().length,
+      counted: [...document.querySelectorAll('#v55-hub [data-v55-count]')].filter((n) => /districts? · \d+ on its field map$/.test(n.textContent)).length
+    }));
+    console.log('    the root: ' + hub.sheets + ' sheets, ' + hub.countries + ' countries, ' + hub.regions + ' regions, ' + hub.counted + ' counted');
+    check('Wine Atlas opens the root (#/v/worldmap), lit Wine Atlas', hub.hash === '#/v/worldmap' && (await lit()) === 'worldmap', hub.hash);
+    check('the root: its five chips, seventeen sheet doors, every country as a chip and a group, every region as a row with its counts filled', hub.chips.join(',') === 'The World Map,Countries,Every region,Field maps,Techniques' && hub.sheets === 17 && hub.countries === hub.want && hub.groups === hub.want && hub.regions === hub.all && hub.counted === hub.all, JSON.stringify(hub));
+    await page.fill('#v55-find', 'chablis');
+    await settle(150);
+    const found = await page.evaluate(() => [...document.querySelectorAll('#v55-hub .v55-regions li[data-v55-slug]')].filter((li) => !li.hidden).map((li) => li.getAttribute('data-v55-slug')));
+    check('the search finds a district: Chablis finds Burgundy', found.length === 1 && found[0] === 'burgundy', JSON.stringify(found));
+    await page.fill('#v55-find', '');
+    await settle(150);
+    await screen('the Wine Atlas root', true);
+  });
+
+  /* three regions opened from the root: the map, a district marked, every door In the Codex, Back */
+  const regionReady = (slug) => page.waitForFunction((s) => S.view === 'region' && S._v39region === s && v39RecReady(v39Find(s)) && !document.querySelector('#v39-wait') && !!document.querySelector('.v55-districts'), slug, { timeout: 30000 });
+  for (const [slug, place] of [['burgundy', 'Meursault'], ['napa-sonoma', 'Napa'], ['rioja', 'Haro']]) {
+    await step(slug, async () => {
+      await go('#/');
+      await atlasRoot();
+      const row = page.locator('#v55-r-' + slug);
+      await row.scrollIntoViewIfNeeded();
+      await row.click();
+      await regionReady(slug);
+      await page.waitForFunction(() => { const i = document.querySelector('.v55-mapfig img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
+      await settle(300);
+      const regionHash = (await state()).hash;
+      check(slug + ': opened from its row on the root, lit Wine Atlas, the inline map loaded above The districts', regionHash === '#/v/region/' + slug && (await lit()) === 'worldmap' && await page.evaluate(() => document.querySelector('.v55-map').compareDocumentPosition(document.querySelector('.v55-districts')) === Node.DOCUMENT_POSITION_FOLLOWING), regionHash);
+      const name = await page.evaluate((p) => { const b = [...document.querySelectorAll('[data-v55="pin"]')].find((x) => x.getAttribute('data-name') === p) || document.querySelector('.v55-districts .v55-dlist:not(.v55-also) [data-v55="pin"]'); return b ? b.getAttribute('data-name') : ''; }, place);
+      const btn = page.locator('[data-v55="pin"][data-name="' + name + '"]').first();
+      await btn.scrollIntoViewIfNeeded();
+      await btn.click();
+      await settle(350);
+      const mark = await page.evaluate(() => {
+        const pin = document.querySelector('.v55-pin'), ring = pin.querySelector('.v55-pin-ring').getBoundingClientRect();
+        const img = document.querySelector('.v55-mapfig img').getBoundingClientRect();
+        const b = document.querySelector('[data-v55="pin"][aria-pressed="true"]');
+        if (!b) return { none: true };
+        const s = Math.min(img.width / 1200, img.height / 1500);
+        const want = [img.left + (img.width - 1200 * s) / 2 + Number(b.getAttribute('data-x')) * s, img.top + (img.height - 1500 * s) / 2 + Number(b.getAttribute('data-y')) * s];
+        const got = [ring.left + ring.width / 2, ring.top + ring.height / 2];
+        return { hidden: pin.hidden, tag: pin.textContent, off: Math.hypot(got[0] - want[0], got[1] - want[1]), inImage: got[0] >= img.left && got[0] <= img.right && got[1] >= img.top && got[1] <= img.bottom, inView: ring.top >= 0 && ring.bottom <= innerHeight, said: document.getElementById('v55-pin-said').textContent, pressed: document.querySelectorAll('[data-v55="pin"][aria-pressed="true"]').length, here: !!b.closest('.v55-d.v55-here') };
+      });
+      check(slug + ': a tap on ' + name + ' marks its point on the map (' + (mark.off || 0).toFixed(2) + ' px from the dot), in view, its button pressed, its district lit and the mark said', !mark.none && !mark.hidden && mark.off < 1.5 && mark.inImage && mark.inView && mark.pressed === 1 && mark.here && mark.said.indexOf(name) === 0 && mark.tag.indexOf(name) > 0, JSON.stringify(mark));
+      await screen(slug, true);
+      const doors = await page.evaluate(() => [...document.querySelectorAll('.v55-codex button')].map((b) => ({ label: b.textContent.trim(), kind: b.getAttribute('data-go') || (b.getAttribute('data-v46') ? 'technique' : '') || b.getAttribute('data-v39') || '' })));
+      console.log('    In the Codex: ' + doors.length + ' doors (' + doors.map((d) => d.kind).join(', ') + ')');
+      check(slug + ': In the Codex holds its doors (techniques, the Court\'s subject, the grid, the grapes, flashcards and drill)', doors.length >= 5 && ['cmssubject', 'grape', 'flash', 'drill'].every((k) => doors.some((d) => d.kind === k)), JSON.stringify(doors.map((d) => d.kind)));
+      for (let i = 0; i < doors.length; i++) {
+        const d = doors[i];
+        const door = page.locator('.v55-codex button').nth(i);
+        await door.scrollIntoViewIfNeeded();
+        await door.click();
+        try { await page.waitForFunction((h) => location.hash !== h, regionHash, { timeout: 4000 }); } catch (e) { }
+        await settle(300);
+        const st = await state();
+        check(slug + ': the door ' + d.kind + ' (' + d.label + ') opens its screen (' + st.view + ')', st.hash !== regionHash && st.view !== 'region', JSON.stringify(st));
+        await page.evaluate(() => { if (typeof stopTimer === 'function') stopTimer(); });
+        await back();
+        try { await regionReady(slug); } catch (e) { }
+        const st2 = await state();
+        check(slug + ': Back from ' + d.kind + ' returns to the region', st2.view === 'region' && st2.hash === regionHash && (await lit()) === 'worldmap', JSON.stringify(st2));
+      }
+      await back();
+      const up = await page.evaluate(() => ({ view: S.view, wmap: S.wmap || '', hub: !!document.querySelector('#v55-hub') }));
+      check(slug + ': Back returns to the Wine Atlas root', up.view === 'worldmap' && !up.wmap && up.hub, JSON.stringify(up));
+    });
+  }
+
+  /* France's country page */
+  await step('france', async () => {
+    await go('#/');
+    await atlasRoot();
+    const door = page.locator('#v55-c-france');
+    await door.scrollIntoViewIfNeeded();
+    await door.click();
+    await page.waitForFunction(() => S.view === 'country' && S._v39country === 'france' && v39RecReady(v39CountryOf('france')) && document.querySelector('.v55-sheetfig img'), null, { timeout: 30000 });
+    await page.waitForFunction(() => { const i = document.querySelector('.v55-sheetfig img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 30000 });
+    await settle(300);
+    const fr = await page.evaluate(() => ({ hash: location.hash, want: v39SheetRegions('france').length, rows: document.querySelectorAll('.v55-cregions [data-v39="region"]').length, counts: [...document.querySelectorAll('.v55-cregions [data-v55-count]')].filter((n) => /districts? · \d+ on its field map$/.test(n.textContent)).length, door: !!document.querySelector('#view .v45-door'), sections: document.querySelectorAll('.v39-country details').length }));
+    check('france: its sheet inline, every region (' + fr.want + ') as a row with its counts, the reading kept, lit Wine Atlas', fr.hash === '#/v/country/france' && fr.rows === fr.want && fr.counts === fr.want && !fr.door && fr.sections >= 2 && (await lit()) === 'worldmap', JSON.stringify(fr));
+    await screen('france', true);
+    const first = page.locator('.v55-cregions [data-v39="region"]').first();
+    const slug = await first.getAttribute('data-slug');
+    await first.scrollIntoViewIfNeeded();
+    await first.click();
+    await regionReady(slug);
+    check('france: a region row opens its region (' + slug + ')', (await state()).hash === '#/v/region/' + slug);
     await back();
-    check('Back from the atlas door returns to the Library', (await state()).view === 'library', JSON.stringify(await state()));
+    check('france: Back from the region returns to France', (await state()).view === 'country' && (await state()).hash === '#/v/country/france', JSON.stringify(await state()));
+    await back();
+    check('france: Back from France returns to the Wine Atlas root', await page.evaluate(() => S.view === 'worldmap' && !S.wmap && !!document.querySelector('#v55-hub')));
   });
 
   /* the level page */
@@ -355,6 +500,22 @@ async function walk(browser, width, mode) {
       const trail = [s0.view];
       for (let i = 0; i < 5 && trail[trail.length - 1] !== 'home'; i++) { await back(); trail.push((await state()).view); }
       check('a cold load of ' + hash + ' draws ' + v + ' and Back climbs to Home (' + trail.join(' > ') + ')', s0.view === v && trail[trail.length - 1] === 'home' && trail.length <= 4, JSON.stringify(trail));
+    });
+  }
+
+  /* codex55: cold reloads of a region, the Wine Atlas root and the Library, Back climbing through their parents to Home */
+  const coldAtlas = [['#/v/region/burgundy', ['region', 'country', 'regions', 'worldmap', 'home']], ['#/v/worldmap', ['worldmap', 'home']], ['#/library', ['library', 'more', 'home']]];
+  for (const [hash, want] of coldAtlas) {
+    await step('the cold reload of ' + hash, async () => {
+      await boot(hash);
+      if (want[0] === 'region') { await regionReady('burgundy'); await settle(200); }
+      const s0 = await state();
+      const first = await page.evaluate(() => ({ map: !!document.querySelector('.v55-map .v45-figure'), hub: !!document.querySelector('#v55-hub'), lib: !!document.querySelector('.v53-reading') }));
+      const trail = [s0.view];
+      const lits = [await lit()];
+      for (let i = 0; i < 6 && trail[trail.length - 1] !== 'home'; i++) { await back(); trail.push((await state()).view); lits.push(await lit()); }
+      const drawn = want[0] === 'region' ? first.map : (want[0] === 'worldmap' ? first.hub : first.lib);
+      check('a cold reload of ' + hash + ' draws ' + want[0] + ' whole and Back climbs ' + want.slice(1).join(', ') + ' (' + trail.join(' > ') + '; lit ' + lits.join(' > ') + ')', drawn && JSON.stringify(trail) === JSON.stringify(want) && lits[lits.length - 1] === 'home' && lits.slice(0, -1).every((w) => w === (want[0] === 'library' ? 'more' : 'worldmap')), JSON.stringify({ trail, lits, first }));
     });
   }
 
