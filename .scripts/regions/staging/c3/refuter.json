@@ -1,0 +1,38 @@
+{
+  "chunk": "c3",
+  "file": ".scripts/regions/staging/c3/italy.more.json",
+  "checked": 3,
+  "searches": { "emilia-romagna": 4, "marche": 1, "lazio": 2 },
+  "fixed": [
+    { "slug": "emilia-romagna", "field": "places (Colli Bolognesi).note", "what": "The broader Pignoletto DOC of 2014 no longer goes by that name: it has been the Emilia-Romagna DOC since the 2024 harvest (Italian Wine Central and two other sources). The note now says so, and it gives the DOCG's 2010 name, Colli Bolognesi Classico Pignoletto, renamed in 2014, which the author had left out as unsure." },
+    { "slug": "emilia-romagna", "field": "traps[2]", "what": "Lambrusco Mantovano was placed across the Po, but much of its zone, the Oltrepò Mantovano, lies south of the river in Lombardy. The trap now says the province of Mantua, in Lombardy." },
+    { "slug": "emilia-romagna", "field": "producers (Cavicchioli).why", "what": "Family house dropped: it is a claim about the current owner, which the brief forbids." },
+    { "slug": "emilia-romagna", "field": "producers (Paltrinieri).why", "what": "Superlative removed from the line on the grape's edge, which now reads the grape's sharp, pale edge." },
+    { "slug": "emilia-romagna", "field": "producers (La Stoppa).why", "what": "Ageno is a skin fermented blend led by Malvasia di Candia, not a varietal Malvasia; the line now says led by." },
+    { "slug": "emilia-romagna", "field": "law.classification", "what": "A count that changes is dated: In 2026 Emilia-Romagna holds two DOCGs." },
+    { "slug": "emilia-romagna", "field": "say", "what": "Reggiano, said at the table in Reggiano Lambrusco, had no respelling; red-JAH-noh added after Salamino." },
+    { "slug": "marche", "field": "summary", "what": "Montepulciano was alone on the Conero, but Rosso Conero and the Conero DOCG allow up to 15 per cent Sangiovese, as the article's own grapes, tiers and card say; it is now nearly alone." },
+    { "slug": "marche", "field": "law.classification", "what": "The count of five DOCGs is dated 2026, and the reordered name is no longer given to both Riservas: only Jesi's name is reordered, Matelica's simply adds Riserva." },
+    { "slug": "marche", "field": "exam[6]", "what": "An untagged exam line set Offida and Vernaccia di Serrapetrona as Village study, but the places, cards[7], cards[8] and questions[6] are tagged advanced and no Village bank or Court row asks them. The line now says they are asked from Premier Cru." },
+    { "slug": "marche", "field": "cards[9].depth, questions[7].depth", "what": "Retagged advanced from master to match their place, Morro d'Alba, which is tagged advanced beside Offida and Serrapetrona. The same fact was tagged at two levels." },
+    { "slug": "lazio", "field": "terroir.soils", "what": "Four old volcanic districts read as the whole count, while the same paragraph gives the Piglio volcanic material, which comes from the smaller Ernici field near Frosinone. It now says four main volcanic districts." },
+    { "slug": "lazio", "field": "law.classification, cards[0].f, exam[2]", "what": "A count that changes is dated: Lazio's three DOCGs as of 2026 (a search found no addition in 2025)." },
+    { "slug": "lazio", "field": "cards[7].depth", "what": "Tagged advanced: Malvasia Puntinata as Malvasia del Lazio's other name is asked only in the Codex's Grand Cru bank (m-fsnkd9q1), and no Village bank or Court row asks it. Frascati's Malvasia, in cards[1] and questions[0], stays as Village reading." }
+  ],
+  "confirmed": [
+    "Gutturnio: a DOC of its own by the ministerial decree of 21 July 2010 (Gazzetta Ufficiale, 5 August 2010), Barbera 55 to 70 per cent and Croatina, called Bonarda locally, 30 to 45 per cent (the region's own copy of the disciplinare). The tier, the card and the question stand.",
+    "Pignoletto: Grechetto Gentile, Grechetto di Todi, Rebola and Alionzina are listed as names of one variety by Italian Wine Central and the wein.plus glossary, so the accept list of questions[7], Alionzina included, stands; Grechetto di Orvieto is a separate vine, as the trap says.",
+    "Rosso Piceno: Montepulciano 35 to 85 per cent with Sangiovese 15 to 50 per cent across several sources, as the tier and cards[5] give it.",
+    "Lazio: three DOCGs and no addition in 2025, Cesanese del Piglio of 2008 (also labelled Piglio) and Frascati Superiore and Cannellino di Frascati of 2011.",
+    "Roma DOC: created in 2011; the Bianco at least 50 per cent Malvasia del Lazio and a Malvasia Puntinata varietal, as the tier says.",
+    "Albana 1987, Sorbara's poor fruit set, Grasparossa's red stalks, Salamino, Rosso Conero, Matelica's closed valley, Verdicchio as Trebbiano di Soave, Pecorino, Cesanese as Lazio's red DOCG and the Est! Est!! Est!!! legend are the facts the Codex's Village bank asks, and each stays untagged in the articles.",
+    "The Court's rows are covered: lombardy-emilia-romagna (location, cool continental, the Apennines, frizzante and spumante, cuve close with metodo classico and the ancestral method, the Lambrusco grape, IGP, DOC and DOCG, the three Lambrusco DOCs as subzones, secco, amabile and dolce, service, pairing and the by the glass row); central-southern-italy for the Marche (the map, the two Verdicchio DOCs, maritime and continental, the Apennines and the Adriatic, Verdicchio and Montepulciano, the classification, Superiore and Riserva) and for Lazio (the Tyrrhenian Sea, the climate, the Apennines, the classification and the label terms); world-sparkling-wines (Lambrusco by the tank method)."
+  ],
+  "open": [
+    "The Codex's Grand Cru bank question m-qguz5u11 says the DOCG was created as Colli Bolognesi Pignoletto and has carried Classico since 2014; the sources say the reverse (created in 2010 as Colli Bolognesi Classico Pignoletto, renamed Colli Bolognesi Pignoletto in 2014, the name change approved in Brussels in 2023). The bank's answer text needs correcting by whoever owns data-master.js; the article is right.",
+    "The Roma DOC's rules were last changed on 28 March 2025; the change was not read. The Rosso's 50 per cent Montepulciano stands from the disciplinare as it is widely given, and the place note's for the province of Rome is left as written.",
+    "The Lambrusco di Sorbara white spumante (the author's uncertain list) and the 2026 EU amendment to Verdicchio dei Castelli di Jesi stay unstated, as the author left them.",
+    "check-fragment still requires a deeper list on an article off the map; this edition writes none, so the strict run fails on that one rule per article and nothing else. A copy with only that rule relaxed passes the file whole, with no superlative note; the integrator relaxes the rule."
+  ],
+  "clean": true
+}
