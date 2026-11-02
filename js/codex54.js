@@ -792,3 +792,544 @@ if (typeof cellarView === 'function') {
     return view;
   };
 }
+
+/* =========== 7. the flow: its words and its small tools =========== */
+
+/* The flow's strings, key by key into the layer's one table. */
+(function () {
+  var add = {
+    bankOf: 'The {level} question bank',
+    revisit: 'Wine cards to revisit',
+    producerCards: 'Producer cards',
+    ownBottles: 'Your own bottles',
+    ownOne: '1 bottle you added to the list',
+    ownMany: '{n} bottles you added to the list',
+    warmUp: 'Warm up: call the structure',
+    howToTaste: 'How to taste: the method',
+    worldMap: 'The World Map',
+    worldMapStart: 'Start with the World Map',
+    subjects: 'The Court’s subjects',
+    subjectLine: 'The Court’s subject: {group}',
+    grapesGroup: 'Grapes',
+    grapePage: 'Grape page',
+    placeholder: 'A chapter, a grape, a place, a producer or a subject',
+    searchAria: 'Search the chapters, grapes, places, producers and subjects',
+    libLine: 'For {level}: Practise and the question bank first, then the reading rooms and the atlas.',
+    libLineAll: 'For every level: Practise and the question bank first, then the reading rooms and the atlas.',
+    startToday: 'Start today’s questions',
+    ourList: 'Our wine list',
+    sayNone: 'No wine in this house has a kept timed line yet. Keep one on a wine’s card in the wine list, then say it back here.'
+  };
+  Object.keys(add).forEach(function (k) { V54_WORDS[k] = add[k]; });
+})();
+
+/* Each row of an HTML string (an li with no li inside it) kept, changed or
+   dropped by a test; a row holding another row is left as it is. */
+function v54EachRow(html, fn) {
+  return String(html || '').replace(/<li\b[^>]*>[\s\S]*?<\/li>/g, function (li) {
+    if (li.indexOf('<li', 3) >= 0) return li;
+    var out = fn(li);
+    return out === undefined ? li : out;
+  });
+}
+function v54CutRows(html, test) { return v54EachRow(html, function (li) { return test(li) ? '' : undefined; }); }
+/* a row's name changed, its line kept */
+function v54Rename(li, name) { return li.replace(/(<span class="v25row-name">)[\s\S]*?(<\/span>)/, function (m, a, b) { return a + v54Esc(name) + b; }); }
+/* a group or a section left with no row is taken off whole */
+function v54DropEmpty(html) {
+  return String(html || '')
+    .replace(/<ul class="v25rows v32rows"><\/ul>/g, '')
+    .replace(/<section class="v32-group[^"]*"(?: aria-labelledby="[^"]*")?>(?:<h3\b[^>]*>[^<]*<\/h3>)?(?:<p class="v32-line">[^<]*<\/p>)?<\/section>/g, '');
+}
+var V54_GRAPE_DECK = /^grapes(?::[rw]|-all)?$/;
+function v54IsGrapeDeckRow(li) { var m = /data-deck="([^"]*)"/.exec(li); return !!(m && V54_GRAPE_DECK.test(m[1])); }
+function v54Go(li, key) { return li.indexOf('data-go="' + key + '"') >= 0; }
+
+/* =========== 8. the question bank =========== */
+
+/* The chain's own Quizzes page, before #/quizzes became the bank: the
+   sections the bank lifts from it are read from this, drawn for the active
+   level alone. */
+var _v54QuizzesHtml = (typeof v32QuizzesHtml === 'function') ? v32QuizzesHtml : null;
+
+/* The four sections the bank gains, in this order, each without the level
+   test (the bank's lead carries it), without Blind flight (its view kept
+   by address), without codex39's 45 minute tasting (Grapes carries the
+   Village tasting on the Court's grid; the run still answers its address)
+   and without Endless (the bank's Whole bank is the same round). */
+var V54_LIFT = ['v32-qz-paper', 'v39-qz-regions', 'v39-qz-service', 'v32-qz-hands'];
+function v54LiftQuizzes() {
+  if (!_v54QuizzesHtml || typeof v53TakeSection !== 'function') return '';
+  var all = v32All();
+  var was = all.quizzes;
+  all.quizzes = false;
+  var html = '';
+  try { html = String(_v54QuizzesHtml() || ''); } catch (e) { html = ''; } finally { all.quizzes = was; }
+  var out = '';
+  V54_LIFT.forEach(function (id) {
+    var piece = v53TakeSection(html, id).piece;
+    piece = v54CutRows(piece, function (li) {
+      return li.indexOf('data-k="leveltest"') >= 0 || v54Go(li, 'flight') || v54Go(li, 'villagetasting') || v54Go(li, 'endless');
+    });
+    out += v54DropEmpty(piece);
+  });
+  return out;
+}
+if (typeof v53BankHtml === 'function') {
+  var _v54BankHtml = v53BankHtml;
+  v53BankHtml = function () {
+    var html = String(_v54BankHtml.apply(this, arguments) || '');
+    try {
+      if (html.indexOf('v54-lifted') >= 0) return html;
+      var lift = v54LiftQuizzes();
+      if (!lift) return html;
+      lift = '<div class="v54-lifted">' + lift + '</div>';
+      var m = /<section class="v32-group" aria-labelledby="v53-bank-(?!lead")/.exec(html);
+      var at = m ? m.index : html.lastIndexOf('</div>');
+      return at >= 0 ? html.slice(0, at) + lift + html.slice(at) : html + lift;
+    } catch (e) { return html; }
+  };
+}
+
+/* #/quizzes draws the bank under its own scope chip, named as the bank is;
+   its address, its parent (the Library) and its scope are its own. */
+function v54QuizzesBank() {
+  var all = v32All();
+  var was = all.library;
+  all.library = all.quizzes;
+  var html = '';
+  try { html = String(v53BankHtml() || ''); } finally { all.library = was; }
+  return html.replace('<div class="v25page v32-root v53-bank">', '<div class="v25page v32-root v53-bank v54-quizbank">');
+}
+if (_v54QuizzesHtml && typeof v53BankHtml === 'function') {
+  v32QuizzesHtml = function () {
+    try { return v54QuizzesBank(); } catch (e) { return _v54QuizzesHtml.apply(this, arguments); }
+  };
+}
+if (typeof v25MainName === 'function') {
+  var _v54MainName = v25MainName;
+  v25MainName = function () {
+    if (S && S.view === 'quizzes') return v54W('bankOf', { level: v53Lv().name });
+    return _v54MainName.apply(this, arguments);
+  };
+}
+
+/* The Practise root: the rounds row points at the bank; the grape decks
+   leave (Grapes owns them), so does Blind flight; the level test leaves
+   (the bank's lead carries it); a group left empty leaves whole; the Due
+   today button names what it deals. The Library's Practise section is this
+   body, so it follows. */
+if (typeof v32FlashcardsHtml === 'function') {
+  var _v54FlashcardsHtml = v32FlashcardsHtml;
+  v32FlashcardsHtml = function () {
+    var html = String(_v54FlashcardsHtml.apply(this, arguments) || '');
+    try {
+      html = v54EachRow(html, function (li) {
+        if (v54IsGrapeDeckRow(li) || v54Go(li, 'flight') || li.indexOf('data-k="leveltest"') >= 0) return '';
+        if (v54Go(li, 'quizzes')) return li.replace('data-go="quizzes"', 'data-go="bank"');
+        return undefined;
+      });
+      html = v54DropEmpty(html.replace(/<section class="v32-group v32-testgroup"><\/section>/g, ''));
+    } catch (e) { }
+    return html;
+  };
+}
+if (typeof V32_WORDS !== 'undefined' && V32_WORDS) V32_WORDS.startToday = v54W('startToday');
+
+/* =========== 9. one Village tasting, and the Grapes root =========== */
+
+/* Grapes' Tasting section reads The Court's grid drill, The Village tasting
+   (30 minutes, on the Court's grid), Warm up: call the structure (codex20's
+   Blind Grid, its line kept), The deductive grid. Blind flight and Study
+   the grid leave it (the flight's view is kept by address; the method is a
+   reading room's). */
+if (typeof v53GrapesRootHtml === 'function') {
+  var _v54GrapesRootHtml = v53GrapesRootHtml;
+  v53GrapesRootHtml = function () {
+    var html = String(_v54GrapesRootHtml.apply(this, arguments) || '');
+    try {
+      var at = html.indexOf('aria-labelledby="v53-g-tasting"');
+      var end = at >= 0 ? html.indexOf('</section>', at) : -1;
+      if (end < 0) return html;
+      var sec = v54EachRow(html.slice(at, end), function (li) {
+        if (v54Go(li, 'flight') || v54Go(li, 'tastegrid')) return '';
+        if (v54Go(li, 'grid')) return v54Rename(li, v54W('warmUp'));
+        return undefined;
+      });
+      return html.slice(0, at) + sec + html.slice(end);
+    } catch (e) { return html; }
+  };
+}
+
+/* =========== 10. the level page and the Library =========== */
+
+/* The level page: the search box leaves (the Library's stays), so does the
+   World Map row and the method's link under what the level holds (the
+   reading rooms carry it); the Workshop row stays. The illustrated door
+   codex36 draws is taken off by the DOM pass below. */
+if (typeof v32LevelHtml === 'function') {
+  var _v54LevelHtml = v32LevelHtml;
+  v32LevelHtml = function () {
+    var html = String(_v54LevelHtml.apply(this, arguments) || '');
+    try {
+      html = html.replace(/<section class="v32-sec" aria-labelledby="v32-search-h">[\s\S]*?<\/section>/, '');
+      html = v54CutRows(html, function (li) { return v54Go(li, 'worldmap'); });
+      html = html.replace(/<p class="v32secmeta"><button type="button" class="v32link" data-go="tastegrid">[^<]*<\/button><\/p>/g, '');
+    } catch (e) { }
+    return html;
+  };
+}
+function v54LevelDom(view) {
+  if (!view || typeof view.querySelectorAll !== 'function') return;
+  Array.prototype.slice.call(view.querySelectorAll('.v36-level-door')).forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+}
+if (typeof v32LevelView === 'function') {
+  var _v54LevelView = v32LevelView;
+  v32LevelView = function () {
+    var view = _v54LevelView.apply(this, arguments);
+    try { v54LevelDom(view); } catch (e) { }
+    return view;
+  };
+  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) { V25_VIEWS.level = v32LevelView; V25_VIEWS.today = v32LevelView; }
+}
+
+/* The Library: the Terroir row leaves (the World Map and the regions hold
+   the land), the method's row is named How to taste: the method, its line
+   says what the page holds; the DOM pass moves the regions door into The
+   atlas and names what the search finds. */
+if (typeof V32_WORDS !== 'undefined' && V32_WORDS) {
+  V32_WORDS.libLine = v54W('libLine');
+  V32_WORDS.libLineAll = v54W('libLineAll');
+}
+if (typeof v32LibraryHtml === 'function') {
+  var _v54LibraryHtml = v32LibraryHtml;
+  v32LibraryHtml = function () {
+    var html = String(_v54LibraryHtml.apply(this, arguments) || '');
+    try {
+      html = v54EachRow(html, function (li) {
+        if (v54Go(li, 'terroir')) return '';
+        if (v54Go(li, 'tastegrid')) return v54Rename(li, v54W('howToTaste'));
+        return undefined;
+      });
+      html = html.split('Find a grape, a region, a chapter or a lesson').join(v54W('placeholder'));
+    } catch (e) { }
+    return html;
+  };
+}
+function v54LibraryDom(view) {
+  if (!view || typeof view.querySelector !== 'function') return;
+  var atlas = view.querySelector('.v53-atlas');
+  var regions = view.querySelector('.v39-door-regions');
+  if (atlas && regions && atlas.contains && !atlas.contains(regions)) {
+    var field = atlas.querySelector('.v45-door');
+    if (field && field.parentNode === atlas) atlas.insertBefore(regions, field);
+    else atlas.appendChild(regions);
+  }
+  v54SearchWords(view, 'cf-in');
+}
+function v54SearchWords(box, id) {
+  var input = box && typeof box.querySelector === 'function' ? box.querySelector('#' + id) : null;
+  if (!input || typeof input.setAttribute !== 'function') return;
+  input.placeholder = v54W('placeholder');
+  input.setAttribute('aria-label', v54W('searchAria'));
+}
+if (typeof v32LibraryView === 'function') {
+  var _v54LibraryView = v32LibraryView;
+  v32LibraryView = function () {
+    var view = _v54LibraryView.apply(this, arguments);
+    try { v54LibraryDom(view); } catch (e) { }
+    return view;
+  };
+  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) V25_VIEWS.library = v32LibraryView;
+}
+if (typeof v32WireSearch === 'function') {
+  var _v54WireSearch = v32WireSearch;
+  v32WireSearch = function (box, id) {
+    var out = _v54WireSearch.apply(this, arguments);
+    try { v54SearchWords(box, id); } catch (e) { }
+    return out;
+  };
+}
+
+/* A finished deck's Another deck returns to the Library, where Practise now lives. */
+if (typeof v32Act === 'function') {
+  var _v54V32Act = v32Act;
+  v32Act = function (act) {
+    if (act === 'another' && typeof v32Go === 'function') { v32Go({ view: 'library' }, 'push'); return; }
+    return _v54V32Act.apply(this, arguments);
+  };
+}
+
+/* =========== 11. the search: the subjects and the grape pages =========== */
+
+/* codex44's index gains the Court's 44 subjects and one hit per grape page
+   (the joined book's 59), and a grape hit opens the grape's page; the
+   World Map and the method are named as their rooms name them. The flag is
+   kept off the index's walk, as codex53 keeps codex45's and codex46's. */
+function v54SubjectEntries() {
+  var subs = (typeof v53SubjectList === 'function') ? v53SubjectList() : [];
+  return subs.map(function (s) {
+    var group = (typeof v53CmsGroupName === 'function') ? v53CmsGroupName(s.group) : '';
+    return v44Entry(v54Str(s.name) || s.id, v54W('subjectLine', { group: group || v54Str(s.group) }),
+      { court: s.court, outcome: s.outcome, rows: s.rows, map: s.map && { grapes: s.map.grapes, cats: s.map.cats } }, 'route', 'cmssubject', s.id);
+  });
+}
+function v54GrapeEntries() {
+  var J = (typeof v53GrapeJoin === 'function') ? v53GrapeJoin() : null;
+  return v54List(J && J.list).filter(function (r) { return r && r.slug; }).map(function (r) {
+    return v44Entry(v54Str(r.court) || v54Str(r.name) || r.slug, v54W('grapePage'),
+      { name: r.name, g: r.g, intro: r.intro, keys: r.keys }, 'route', 'grape', r.slug);
+  });
+}
+function v54Retitle(list, view, title, words) {
+  v54List(list).forEach(function (e, i) {
+    if (e && e.kind === 'route' && e.arg === view && !e.extra) list[i] = v44Entry(title, e.line, [e.hay, words], 'route', view);
+  });
+}
+if (typeof v44Index === 'function' && typeof v44Entry === 'function') {
+  var _v54Index = v44Index;
+  v44Index = function () {
+    var ix = _v54Index.apply(this, arguments);
+    try {
+      if (!ix || typeof ix !== 'object' || ix._v54) return ix;
+      Object.defineProperty(ix, '_v54', { value: true, enumerable: false, writable: true, configurable: true });
+      ix.subjects = v54SubjectEntries();
+      var pages = v54GrapeEntries();
+      if (pages.length) ix.grapes = pages;
+      v54Retitle(ix.learn, 'worldmap', v54W('worldMap'), 'the wine atlas maps');
+      v54Retitle(ix.learn, 'tastegrid', v54W('howToTaste'), 'study the grid');
+    } catch (e) { }
+    return ix;
+  };
+}
+if (typeof v44Results === 'function') {
+  var _v54Results = v44Results;
+  v44Results = function (query) {
+    var groups = _v54Results.apply(this, arguments) || [];
+    try {
+      groups.forEach(function (g) { if (g && g.key === 'grapes') g.title = v54W('grapesGroup'); });
+      var ix = v44Index();
+      var hits = (typeof v44Match === 'function') ? v44Match(v54List(ix && ix.subjects), query) : [];
+      if (hits.length && !groups.some(function (g) { return g && g.key === 'subjects'; })) {
+        var at = -1;
+        groups.forEach(function (g, i) { if (g && g.key === 'places') at = i; });
+        groups.splice(at + 1, 0, { key: 'subjects', title: v54W('subjects'), rows: hits, limit: 6 });
+      }
+    } catch (e) { }
+    return groups;
+  };
+}
+
+/* =========== 12. Brennan's rooms =========== */
+
+/* The person's own bottles: codex28's rows marked own (a wine she added),
+   never the house's list. */
+function v54OwnCount() {
+  try { return (typeof v28Rows === 'function') ? v28Rows().filter(function (r) { return r && r.own; }).length : 0; } catch (e) { return 0; }
+}
+
+/* Service rehearsal: the house due folded into Wine cards to revisit (one
+   row in Today's study, dealt by codex53's house step: the wines last
+   answered Again, else the wines never graded), the schedule note gone;
+   the deck group of the producers named Producer cards; Recite your
+   cellar and Quiz your cellar only when she holds bottles of her own, in a
+   group of their own; Blind flight off the hands on group. */
+function v54RevisitHtml() {
+  var t = (typeof v53HouseDue === 'function') ? v53HouseDue() : { a: 0 };
+  var line = (typeof v53HouseDueLine === 'function') ? v53HouseDueLine(t) : '';
+  if (!t.a) return line ? '<p>' + v54Esc(line) + '</p>' : '';
+  return '<ul class="v25rows v32rows v54-revisit"><li><button class="v25row" type="button" data-v53="housedue" id="v53-housedue">'
+    + '<span class="v25row-name">' + v54W('revisit') + '</span><span class="v25row-line">' + v54Esc(line) + '</span></button></li></ul>';
+}
+function v54RehearsalShape(html) {
+  html = html.replace(/(<h3 id="v48-heading-today">[^<]*<\/h3>)(?:<p>[^<]*<\/p>)?(?:<button[^>]*data-v53="housedue"[^>]*>[^<]*<\/button>)?/, function (m, h3) { return h3 + v54RevisitHtml(); });
+  html = html.replace(/<p class="v48-note">Due today follows[^<]*<\/p>/, '');
+  var own = [];
+  html = v54EachRow(html, function (li) {
+    if (/data-deck="list-weak"/.test(li) || v54Go(li, 'flight')) return '';
+    if (v54Go(li, 'cellarrecite') || v54Go(li, 'cellardrill')) { own.push(li); return ''; }
+    return undefined;
+  });
+  html = html.replace(/(<summary id="v48-summary-v53-producers"><span>)[^<]*(<\/span>)/, function (m, a, b) { return a + v54W('producerCards') + b; });
+  var n = v54OwnCount();
+  if (n && own.length && typeof v48Details === 'function') {
+    var group = v48Details('v54-own', v54W('ownBottles'), n === 1 ? v54W('ownOne') : v54W('ownMany', { n: n }), v32Rows(own.join('')));
+    var at = html.indexOf('<details class="v48-disclosure" data-v48-keep="focused-rounds"');
+    var end = at >= 0 ? html.indexOf('</details>', at) : -1;
+    html = end >= 0 ? html.slice(0, end + '</details>'.length) + group + html.slice(end + '</details>'.length) : html;
+  }
+  return html;
+}
+if (typeof v48RehearsalHtml === 'function') {
+  var _v54RehearsalHtml = v48RehearsalHtml;
+  v48RehearsalHtml = function () {
+    var html = String(_v54RehearsalHtml.apply(this, arguments) || '');
+    try { return v54RehearsalShape(html); } catch (e) { return html; }
+  };
+}
+
+/* Wine studies: the World Map, the grape study cards and the service
+   reference leave (the Library and Grapes hold them); the Culinary
+   Companion is the house's, under Wine studies. */
+if (typeof v48StudyHtml === 'function') {
+  var _v54StudyHtml = v48StudyHtml;
+  v48StudyHtml = function () {
+    var html = String(_v54StudyHtml.apply(this, arguments) || '');
+    try { html = html.replace(/<details class="v48-disclosure" data-v48-keep="wider-study">[\s\S]*?<\/details>/, ''); } catch (e) { }
+    return html;
+  };
+}
+(function () {
+  var own = function (k, word) {
+    if (typeof V32_OWNER !== 'undefined' && V32_OWNER) V32_OWNER[k] = word;
+    if (typeof V25_UNDER !== 'undefined' && V25_UNDER) V25_UNDER[k] = word;
+    if (typeof V25_HUB !== 'undefined' && V25_HUB) V25_HUB[k] = word;
+  };
+  own('culinary', 'brennans');
+  if (typeof V25_AREA !== 'undefined' && V25_AREA) V25_AREA.culinary = 'brennans';
+})();
+
+/* =========== 13. the parents =========== */
+
+/* The run screens (a quiz, its results and the drill screens codex32 put
+   under Quizzes) climb to the view that started them, kept in S._v54from
+   when a run begins (the route of the last screen drawn before it), else
+   to the question bank. The house's own drills climb to Service rehearsal,
+   so do its decks and its due run; the grape decks climb to Grapes;
+   Quizzes to the Library; the Culinary Companion to Wine studies. The
+   Cellar Compass and its decks, one wine's deck and the recovery keep
+   their parents. */
+var V54_RUNS = ['quiz', 'results', 'drillpick', 'sim', 'grid', 'floor', 'floortally', 'pairs', 'pairtally', 'tasting', 'service', 'finalsreport'];
+var V54_HOUSE_RUNS = ['housesay', 'houseguest', 'houserecite', 'cellarrecite'];
+var V54_HOUSE_DECKS = /^(?:list(?:-weak)?|bottles|menu-words|misses|due|producers|components(?:-all)?)(?::.*)?$/;
+var V54_FROM = { prev: null, last: null };
+
+(function () {
+  if (typeof V32_PARENT === 'undefined' || !V32_PARENT) return;
+  V54_HOUSE_RUNS.forEach(function (k) { V32_PARENT[k] = 'houserehearsal'; });
+  V32_PARENT.quizzes = 'library';
+  V32_PARENT.culinary = 'housestudies';
+})();
+
+function v54Here() {
+  try {
+    if (typeof v32Route !== 'function' || typeof v32Parse !== 'function') return S.view ? { view: S.view } : null;
+    var r = v32Parse(v32Route().hash);
+    return r && r.view ? r : (S.view ? { view: S.view } : null);
+  } catch (e) { return S.view ? { view: S.view } : null; }
+}
+/* Read at every draw, before it: a run's first screen keeps the screen that started it. */
+function v54NoteFrom() {
+  var v = S && S.view;
+  if (!v) return;
+  if (V54_RUNS.indexOf(v) >= 0) {
+    if (V54_FROM.prev === null || V54_RUNS.indexOf(V54_FROM.prev) < 0) S._v54from = V54_FROM.last;
+  } else {
+    V54_FROM.last = v54Here();
+  }
+  V54_FROM.prev = v;
+}
+if (typeof render === 'function') {
+  var _v54Render = render;
+  render = function () {
+    try { v54NoteFrom(); } catch (e) { }
+    return _v54Render.apply(this, arguments);
+  };
+}
+function v54Copy(r) {
+  var out = {};
+  Object.keys(r || {}).forEach(function (k) { if (r[k] !== undefined && r[k] !== null && r[k] !== '') out[k] = r[k]; });
+  return out;
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v54ParentRoute = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      var v = S.view;
+      if (V54_HOUSE_RUNS.indexOf(v) >= 0) return { view: 'houserehearsal' };
+      if (v === 'quizzes') return { view: 'library' };
+      if (v === 'culinary' && !(typeof v32Arg === 'function' && v32Arg('culinary'))) return { view: 'housestudies' };
+      if (V54_RUNS.indexOf(v) >= 0) {
+        var from = S._v54from;
+        return (from && from.view && V54_RUNS.indexOf(from.view) < 0) ? v54Copy(from) : { view: 'bank' };
+      }
+      if (v === 'deck') {
+        var id = String(S._v32deck || '');
+        if (V54_GRAPE_DECK.test(id)) return { view: 'grapes' };
+        if (V54_HOUSE_DECKS.test(id)) return { view: 'houserehearsal' };
+      }
+      if ((v === 'housedeck' || v === 'flash') && S._v32run && S._v32run.v32 && S._v32run.deckId === 'due') return { view: 'houserehearsal' };
+    } catch (e) { }
+    return _v54ParentRoute.apply(this, arguments);
+  };
+}
+/* A grape deck lights Grapes wherever it was opened from. */
+if (typeof v25NavWord === 'function') {
+  var _v54NavWord = v25NavWord;
+  v25NavWord = function () {
+    try {
+      var v = S.view, id = '';
+      if (v === 'deck') id = String(S._v32deck || '');
+      else if (v === 'housedeck' || v === 'flash') { var run = S._v32run; id = (run && run.v32) ? String(run.deckId || '') : ''; }
+      if (id && V54_GRAPE_DECK.test(id)) return 'grapes';
+    } catch (e) { }
+    return _v54NavWord.apply(this, arguments);
+  };
+}
+
+/* =========== 14. the stale words, at display =========== */
+
+/* The section screens (a quiz and its results) name codex12's list section
+   Our wine list; the section's stored key ('Our List', S.section and every
+   record under it) is unchanged. A pass over the drawn text only. */
+var V54_OLD_LIST = ['Our Wine List', 'Our List'];
+function v54TextPass(node, fn) {
+  if (!node) return;
+  if (node.nodeType === 3) { var t = node.nodeValue, u = fn(t); if (u !== t) node.nodeValue = u; return; }
+  var kids = node.childNodes;
+  if (!kids || typeof kids.length !== 'number') return;
+  for (var i = 0; i < kids.length; i++) v54TextPass(kids[i], fn);
+}
+function v54ListWords(view) {
+  var sec = String((S && S.section) || '');
+  if (!view || V54_OLD_LIST.indexOf(sec) < 0) return;
+  v54TextPass(view, function (t) {
+    V54_OLD_LIST.forEach(function (w) { t = t.split(w).join(v54W('ourList')); });
+    return t;
+  });
+}
+['quizView', 'resultsView'].forEach(function (name) {
+  try {
+    var was = (name === 'quizView') ? (typeof quizView === 'function' ? quizView : null) : (typeof resultsView === 'function' ? resultsView : null);
+    if (!was) return;
+    var wrapped = function () {
+      var view = was.apply(this, arguments);
+      try { v54ListWords(view); } catch (e) { }
+      return view;
+    };
+    if (name === 'quizView') quizView = wrapped; else resultsView = wrapped;
+  } catch (e) { }
+});
+
+/* The World Map named as the Library names it, in our rows. */
+if (typeof V39_WORDS !== 'undefined' && V39_WORDS) V39_WORDS.atlasRow = v54W('worldMap');
+if (typeof V42_PATHS !== 'undefined' && Array.isArray(V42_PATHS)) {
+  V42_PATHS.forEach(function (p) {
+    v54List(p && p.steps).forEach(function (s) { if (Array.isArray(s) && s[0] === 'go' && s[1] === 'worldmap' && /Wine Atlas/.test(String(s[2]))) s[2] = v54W('worldMapStart'); });
+  });
+}
+/* The Say the pour screen's empty line names where a line is kept now. */
+if (typeof V27_SAY_NONE !== 'undefined') V27_SAY_NONE = v54W('sayNone');
+
+/* codex53 wrote "No comparison is written for this grape yet." on the
+   twelve grapes it draws from Régionale's fields alone; the card's back
+   drops the line rather than print it. */
+var V54_NO_COMPARE = '<p><b>Not to be confused with:</b> No comparison is written for this grape yet.</p>';
+function v54NoCompare(html) { return String(html || '').split(V54_NO_COMPARE).join(''); }
+if (typeof v32CardFace === 'function') {
+  var _v54GrapeFace = v32CardFace;
+  v32CardFace = function () {
+    var html = _v54GrapeFace.apply(this, arguments);
+    try { return v54NoCompare(html); } catch (e) { return html; }
+  };
+}
