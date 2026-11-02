@@ -384,7 +384,7 @@ function build(opts) {
   const aliasTargets = (k) => JOIN.targetList(aliases[k]);
   /* georgia is a country of its own once it is in the build: no key of GEORGIA_MOVE may still send a string to
      eastern-europe (the two are different countries, so the merge above would keep both targets silently) */
-  if (countries.georgia) ROSTER.GEORGIA_MOVE.forEach((k) => {
+  if (countries.georgia && ROSTER.NEW_MAPLESS.some((c) => c.key === 'georgia')) ROSTER.GEORGIA_MOVE.forEach((k) => {
     const old = (aliasEntries[k] || []).filter((e) => e.t === 'eastern-europe');
     if (old.length) problems.push('aliases["' + k + '"]: ' + old.map((e) => e.from).join(' and ') + ' still sends it to eastern-europe, but it is georgia\'s (run apply-roster.cjs)');
   });

@@ -59,6 +59,9 @@ The deeper material goes in **one list per record**:
 ## The new articles (off the map)
 - Exactly the roster's slug, name and sheet; `mapless: 1`; no `index`. They are written deepened from the
   start, to the same caps. Their country's `regionsOrder` is set by `apply-roster.cjs`, never by hand.
+  Since codex56 (2 November 2026) an article off the map may instead be written at the Certified depth, with
+  depth tags on its places and no `deeper` list; the first edition's prose total and minimums then hold it. The
+  roster's `MORE` holds the fourteen of codex56; the rest wait in `DEFERRED_MORE` and `DEFERRED_MAPLESS`.
 - The fragment is `<sheet>.more.json`: `{ "sheet": "<sheet>", "more": true, "regions": [ ... ], "aliases": { ... } }`,
   the articles in roster order, the aliases the roster gives (and more where a place needs one, folded).
 

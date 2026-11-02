@@ -10,7 +10,8 @@
        when the join's key rules allow them; one they refuse is printed and skipped),
      its own aliases and terroirRows keys,
      the folded names of its articles and countries (and a new country's key);
-   georgia, once a newer fragment holds it, also claims GEORGIA_MOVE.
+   georgia, once a newer fragment holds it, also claims GEORGIA_MOVE; only a NEW_MAPLESS country is ever newer, so
+   with NEW_MAPLESS empty (codex56: the seven new countries wait in DEFERRED_MAPLESS) the Georgia split never runs.
    For every claimed key, an older fragment's alias or TERROIR row whose target lies in the same country group
    (JOIN.countryGroup: the four US sheets are one) is taken off it; a TERROIR row the newer fragment does not
    map yet moves with it, so the row keeps a target. A key whose old target is in another country group is
@@ -86,7 +87,7 @@ function plan(dir, jsDir) {
       if (own(slugFrom, rec.id) && slugFrom[rec.id] !== x.f && !newer.some((y) => y.f === slugFrom[rec.id])) clashes.push(x.f + ': ' + rec.id + ' is already the slug of an article in ' + slugFrom[rec.id]);
       if (rec.country && olderKeys.has(rec.id)) clashes.push(x.f + ': ' + rec.id + ' is already a country of an older fragment');
       const wanted = (rec.ro ? rec.ro.aliases : []).slice();
-      if (rec.id === 'georgia') { georgia = x; ROSTER.GEORGIA_MOVE.forEach((k) => { if (wanted.indexOf(k) < 0) wanted.push(k); }); }
+      if (rec.id === 'georgia' && ROSTER.NEW_MAPLESS.some((c) => c.key === 'georgia')) { georgia = x; ROSTER.GEORGIA_MOVE.forEach((k) => { if (wanted.indexOf(k) < 0) wanted.push(k); }); }
       wanted.forEach((k) => {
         const redundant = k === CF.fold(rec.name) || (rec.country && k === rec.id);
         if (own(x.frag.aliases, k)) {

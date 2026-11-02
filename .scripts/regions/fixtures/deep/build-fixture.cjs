@@ -35,6 +35,9 @@
    Prints ok or FAIL per step and exits 1 on any failure. Run it with OOT_SHARED set (the house pack for the pack
    video and the resolver), or the site checkout beside this repo is used. */
 'use strict';
+/* codex56 trimmed the roster to fourteen articles and deferred the rest (Southern Oregon and Georgia among them); the
+   fixture proves the machinery of those families, so it reads the whole roster, here and in every child it runs. */
+process.env.CODEX_ROSTER_WHOLE = '1';
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
@@ -206,7 +209,9 @@ const so0 = (fr) => fr.regions[0];
 refuse('an article off the map carries no index', 'oregon.more.json', (fr) => { so0(fr).index = 0; }, '.index: none for an article off the map');
 refuse('an article off the map is named as the roster names it', 'oregon.more.json', (fr) => { so0(fr).name = 'South Oregon'; }, 'must be "Southern Oregon" (the roster)');
 refuse('an article off the map carries mapless: 1', 'oregon.more.json', (fr) => { delete so0(fr).mapless; }, '.mapless: 1');
-refuse('an article off the map is written deepened', 'oregon.more.json', (fr) => { delete so0(fr).deeper; }, '.deeper: an article off the map is written deepened');
+/* codex56: an article off the map may be written at the Certified depth (no deeper list), held then to the first
+   edition's prose total */
+refuse('an article off the map with no deeper list keeps the first edition\'s prose total', 'oregon.more.json', (fr) => { delete so0(fr).deeper; so0(fr).places = so0(fr).places.slice(0, 1); }, 'the article prose is 800 to 1,800 words');
 refuse('a .more fragment carries no country', 'oregon.more.json', (fr) => { fr.country = clone(F['oregon.json'].country); }, 'a .more fragment carries no country');
 refuse('a .more fragment holds only the roster\'s articles of its sheet', 'oregon.more.json', (fr) => { so0(fr).slug = 'rogue-valley'; }, 'is no roster article off the map for oregon');
 refuse('a sheet article never says mapless', 'oregon.json', (fr) => { so0(fr).mapless = 1; }, 'only an article of <sheet>.more.json is off the map');

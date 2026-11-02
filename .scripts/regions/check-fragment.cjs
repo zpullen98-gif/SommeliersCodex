@@ -9,8 +9,10 @@
      <sheet>.json, <sheet>.<n>.json  the articles of an atlas sheet (or a part of one) and its country;
      <sheet>.more[.<n>].json         { sheet, more: true, regions, aliases?, terroirRows?, cats? }: the roster's
                                      articles off the map for that sheet (all, or some), in roster order, each
-                                     with mapless: 1 and no index, always deepened, no country and no part;
-     mapless.json, mapless.<n>.json  the map-less countries (fourteen keys; the seven new ones deepened);
+                                     with mapless: 1 and no index, no country and no part; written at the
+                                     Certified depth (codex56, no deeper list) or deepened;
+     mapless.json, mapless.<n>.json  the map-less countries (the first edition's seven keys, and the roster's
+                                     NEW_MAPLESS, deepened, once an edition builds them: none in codex56);
      techniques.<n>.json             { techniques: [...] }: the companion's technique records.
    A record is DEEPENED when it carries a deeper list. A record that is not keeps one prose total and the
    first edition's minimums; a deepened one splits its prose into the Certified reading and the deeper
@@ -456,7 +458,7 @@ function checkAsked(asked, w, out) {
 }
 
 /* An article. roster is undefined for an article of the map (held to the atlas at index i), else the roster's entry
-   (null when the slug is no roster article): an article off the map, held to the roster and always deepened. */
+   (null when the slug is no roster article): an article off the map, held to the roster (deepened, or at the Certified depth since codex56). */
 function checkRegion(r, i, sheet, codex, out, roster) {
   const more = roster !== undefined;
   const w = 'regions[' + i + ']';
@@ -467,7 +469,9 @@ function checkRegion(r, i, sheet, codex, out, roster) {
     if (roster && r.name !== roster.name) out.push(w + '.name: must be "' + roster.name + '" (the roster)');
     if (r.mapless !== 1) out.push(w + '.mapless: 1 (an article off the map)');
     if (r.index !== undefined) out.push(w + '.index: none for an article off the map');
-    if (r.deeper === undefined) out.push(w + '.deeper: an article off the map is written deepened (a deeper list is required)');
+    /* codex56 (2 November 2026): an article off the map may be written at the Certified depth, with depth tags on its
+       places and no deeper list, and then the first edition's prose total and minimums hold it; a deepened one keeps
+       the deepened rules */
   } else {
     const atlas = codex.atlas.sheets[sheet].regions[i];
     if (r.name !== (atlas && atlas.name)) out.push(w + '.name: must be "' + (atlas && atlas.name) + '"');
@@ -545,7 +549,7 @@ function checkCountry(c, w, codex, out, sheet, slugs) {
     else if (!regionsOrderOk(c.regionsOrder, slugs, more)) out.push(w + '.regionsOrder: every region slug of the sheet in map order, then the roster\'s articles off the map in roster order' + (more.length ? ' (' + more.join(', ') + ')' : ''));
     if (c.places !== undefined && c.places.length) out.push(w + '.places: a sheet country keeps its places in the region articles');
   } else {
-    if (MAPLESS.indexOf(c.key) < 0) out.push(w + '.key: one of ' + MAPLESS.join(', '));
+    if (MAPLESS.indexOf(c.key) < 0) out.push(w + '.key: one of ' + MAPLESS.join(', ') + ((ROSTER.DEFERRED_MAPLESS || []).some((x) => x.key === c.key) ? ' (' + c.key + ' is deferred: roster.cjs DEFERRED_MAPLESS)' : ''));
     if (c.mapless !== 1) out.push(w + '.mapless: 1');
     if (c.sheet !== undefined) out.push(w + '.sheet: none for a mapless country');
     if (!Array.isArray(c.regionsOrder) || c.regionsOrder.length) out.push(w + '.regionsOrder: empty for a mapless country');
@@ -730,7 +734,8 @@ function checkFragment(frag, file, codex) {
     let last = -1;
     (Array.isArray(frag.regions) ? frag.regions : []).forEach((r, k) => {
       const at = roster.findIndex((a) => r && a.slug === r.slug);
-      if (at < 0) out.push('regions[' + k + '].slug: ' + JSON.stringify(r && r.slug) + ' is no roster article off the map for ' + frag.sheet + ' (' + roster.map((a) => a.slug).join(', ') + ')');
+      const later = at < 0 && (ROSTER.DEFERRED_MORE[frag.sheet] || []).some((a) => r && a.slug === r.slug);
+      if (at < 0) out.push('regions[' + k + '].slug: ' + JSON.stringify(r && r.slug) + ' is no roster article off the map for ' + frag.sheet + (later ? ' in this edition (it is deferred: roster.cjs DEFERRED_MORE)' : '') + ' (' + roster.map((a) => a.slug).join(', ') + ')');
       else if (at <= last) out.push('regions[' + k + ']: the articles go in roster order (' + roster.map((a) => a.slug).join(', ') + ')');
       else last = at;
       checkRegion(r, k, frag.sheet, codex, out, at < 0 ? null : roster[at]);

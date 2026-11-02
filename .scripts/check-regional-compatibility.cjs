@@ -19,13 +19,16 @@ context.self = context;
 vm.createContext(context);
 vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/data-regions.js'), 'utf8'), context);
 const data = context.REGIONS;
+/* The future roster whole: this edition's fourteen and the articles and countries deferred to a later one. */
+const FUTURE_MORE = ROSTER.MORE_LIST.concat(ROSTER.DEFERRED_MORE_LIST || []);
+const FUTURE_MAPLESS = ROSTER.NEW_MAPLESS.concat(ROSTER.DEFERRED_MAPLESS || []);
 
-for (const item of ROSTER.MORE_LIST) {
+for (const item of FUTURE_MORE) {
   if (!data.regions.some((region) => region.slug === item.slug)) {
     data.regions.push({ slug: item.slug, name: item.name, sheet: item.sheet, mapless: 1 });
   }
 }
-for (const country of ROSTER.NEW_MAPLESS) {
+for (const country of FUTURE_MAPLESS) {
   if (!data.countries[country.key]) {
     data.countries[country.key] = { key: country.key, name: country.name, mapless: 1 };
   }
@@ -95,7 +98,7 @@ for (const invalid of [undefined, null, NaN, Infinity, -1, 0.5, '0']) {
   assert.equal(hasMapAction({ index: invalid }), false, 'no numbered-map door for index ' + String(invalid));
   checks++;
 }
-for (const item of ROSTER.MORE_LIST) {
+for (const item of FUTURE_MORE) {
   const records = data.regions.filter((region) => region.slug === item.slug);
   assert.equal(records.length, 1, item.name + ' has exactly one roster article');
   const record = records[0];
@@ -106,7 +109,7 @@ for (const item of ROSTER.MORE_LIST) {
   assert.ok(!/data-index="NaN"/.test(html), item.name + ' never emits a NaN map target');
   checks += 4;
 }
-for (const country of ROSTER.NEW_MAPLESS) {
+for (const country of FUTURE_MAPLESS) {
   const record = data.countries[country.key];
   assert.ok(record, country.name + ' has a roster country record');
   assert.deepEqual({ key: record.key, name: record.name, mapless: record.mapless },
