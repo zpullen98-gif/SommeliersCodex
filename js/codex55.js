@@ -126,6 +126,7 @@ var V55_WORDS = {
   sheetEnlarge: 'Enlarge map',
   sheetAlt: 'The map of {name}, its regions numbered. The regions are listed on this page.',
   chooseMap: 'Choose a map',
+  sheetFail: 'The map artwork could not load; the regions are listed on this page.',
   /* the districts */
   districtsH: 'The districts',
   districtsLine: '{n} districts and places from the reading, {m} of them marked on the map.',
@@ -1049,3 +1050,108 @@ if (typeof render === 'function') {
     return out;
   };
 }
+
+/* =========== 7. the country page =========== */
+
+/* Its map, inline: the country's own field map where the field atlas holds
+   one (the countries asked by place); for the group of Eastern Europe, one
+   of its eight at a time, chosen by a chip; else the country's sheet, its
+   artwork opening codex31's sheet and its guide (codex39's openmap act), with
+   codex31's own enlarging viewer under it. */
+function v55SheetMapHtml(c, sheet) {
+  var data = v55Sheet(sheet);
+  if (!data || typeof mapFile !== 'function') return '';
+  var name = v55Str(c.name) || sheet;
+  return '<section class="v55-map" aria-labelledby="v55-map-h"><h2 class="v32-h2" id="v55-map-h">' + v55Esc(v55W('mapH')) + '</h2>'
+    + '<div class="v55-mapfig v55-sheetfig" data-v55-sheet="' + v55Esc(sheet) + '"><figure class="v55-figure">'
+    + '<button type="button" class="v55-sheetopen" data-v39="openmap" data-sheet="' + v55Esc(sheet) + '" aria-label="' + v55Esc(v55W('sheetOpen') + ': ' + name) + '">'
+    + '<img data-atlas-image src="' + v55Esc(mapFile(sheet)) + '" width="' + v55Esc(data.width) + '" height="' + v55Esc(data.height) + '" alt="' + v55Esc(v55W('sheetAlt', { name: name })) + '" decoding="async">'
+    + '<span class="v31-image-fail" hidden>' + v55Esc(v55W('sheetFail')) + '</span></button>'
+    + '<figcaption><button type="button" class="btn ghost" data-v55="enlarge" data-sheet="' + v55Esc(sheet) + '">' + v55Esc(v55W('sheetEnlarge')) + '</button></figcaption>'
+    + '</figure></div></section>';
+}
+var V55_CHOSEN = {};
+function v55CountryFieldHtml(key, maps) {
+  var chosen = null;
+  maps.forEach(function (m) { if (m.id === V55_CHOSEN[key]) chosen = m; });
+  chosen = chosen || maps[0];
+  var html = v55MapHtml(chosen);
+  if (!html || maps.length < 2) return html;
+  var chips = '<nav class="v32chips v55-choose" aria-label="' + v55Esc(v55W('chooseMap')) + '">' + maps.map(function (m) {
+    return '<button type="button" class="v28-chip" data-v55="choose" data-key="' + v55Esc(key) + '" data-map="' + v55Esc(m.id) + '" aria-pressed="' + (m === chosen ? 'true' : 'false') + '">' + v55Esc(m.title) + '</button>';
+  }).join('') + '</nav>';
+  return html.replace('<div class="v55-mapfig"', chips + '<div class="v55-mapfig"');
+}
+/* A chip of the chooser: the figure redrawn in place (no entry, no scroll),
+   the chip pressed, the field map door pointed at the map chosen. */
+function v55Choose(btn) {
+  var page = btn && typeof btn.closest === 'function' ? btn.closest('.v55-page') : null;
+  var m = v55FieldMap(btn && btn.getAttribute('data-map'));
+  if (!page || !m) return;
+  V55_CHOSEN[btn.getAttribute('data-key') || ''] = m.id;
+  var holder = page.querySelector('.v55-mapfig');
+  if (holder) {
+    holder.setAttribute('data-v55-map', m.id);
+    holder.innerHTML = v55FieldFigure(m) + '<div class="v55-pin" hidden aria-hidden="true"><span class="v55-pin-ring"></span><span class="v55-pin-tag"></span></div>';
+    if (typeof v45Images === 'function') { try { v45Images(holder); } catch (e) { } }
+  }
+  var door = page.querySelector('.v55-mapacts [data-v45="map"]');
+  if (door) door.setAttribute('data-v45-arg', m.id);
+  var scope = page.querySelector('.v55-scope');
+  if (scope) scope.textContent = v55Str(m.scope);
+  Array.prototype.forEach.call(page.querySelectorAll('[data-v55="choose"]'), function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+  V55.pin = null;
+}
+/* codex39's regions of the country, each with its district count and its field map's count under its name. */
+function v55CountryRegionsHtml(sheet) {
+  var regions = (sheet && typeof v39SheetRegions === 'function') ? v39SheetRegions(sheet) : [];
+  if (!regions.length) return '';
+  return '<ol class="v39-doors v55-cregions">' + regions.map(function (a) {
+    var first = (typeof v39FirstSentence === 'function') ? v39FirstSentence(a.summary) : '';
+    return '<li data-v55-slug="' + v55Esc(a.slug) + '">' + v39Btn('btn small ghost v39-doorbtn', 'region', ' data-slug="' + v55Esc(a.slug) + '"', a.name)
+      + '<span class="v39-doorline v55-doorcount" data-v55-count="' + v55Esc(a.slug) + '">' + v55Esc(v55RegionLine(a)) + '</span>'
+      + (first ? '<span class="v39-doorline">' + v55Esc(first) + '</span>' : '') + '</li>';
+  }).join('') + '</ol>';
+}
+function v55CountryHtml(c) {
+  var ready = v55Ready(c);
+  var part = (typeof v39PartName === 'function') ? v39PartName(c) : '';
+  var html = String(v39CountryHtml(c, ready ? undefined : v39WaitHtml(part)) || '');
+  html = html.replace('<div class="v25page v39 v39-country"', '<div class="v25page v39 v39-country v55 v55-page v55-country"');
+  var key = (typeof v39CountryKey === 'function') ? v39CountryKey(c) : v55Str(c.key);
+  var sheet = v55Str(c.sheet);
+  var maps = v55CountryMaps(key);
+  var top = maps.length ? v55CountryFieldHtml(key, maps) : ((sheet && !c.mapless) ? v55SheetMapHtml(c, sheet) : '');
+  var head = V55_HEAD_RE.exec(html);
+  if (top) {
+    if (head) html = html.slice(0, head.index + head[0].length) + top + html.slice(head.index + head[0].length);
+    else html = html.replace(/(<div class="v25page[^>]*>)/, '$1' + top);
+  }
+  var rows = v55CountryRegionsHtml(sheet);
+  if (rows) html = html.replace(/(<details class="v28-q v39-sec" id="v39-sec-regions"[^>]*><summary>[\s\S]*?<\/summary><div class="v39-body">)<ol class="v39-doors">[\s\S]*?<\/ol>/, function (m, open) { return open + rows; });
+  return html;
+}
+function v55CountryView(c) {
+  V55.pin = null;
+  if (!v55Ready(c) && typeof v39Fetch === 'function') v39Fetch(v39PartName(c));
+  return v39Build(v55CountryHtml(c), v55PageWire);
+}
+if (typeof v39CountryView === 'function') {
+  var _v55CountryView = v39CountryView;
+  v39CountryView = function () {
+    var c = (typeof v39CountryOf === 'function') ? v39CountryOf(S._v39country) : null;
+    if (!c) return _v55CountryView.apply(this, arguments);
+    try { return v55CountryView(c); } catch (e) { return _v55CountryView.apply(this, arguments); }
+  };
+}
+/* the sheet's Enlarge map: codex31's own viewer */
+(function () {
+  if (typeof document === 'undefined' || !document || typeof document.addEventListener !== 'function') return;
+  document.addEventListener('click', function (e) {
+    var t = e && e.target;
+    var node = t && typeof t.closest === 'function' ? t.closest('[data-v55="enlarge"]') : null;
+    if (!node || node.disabled) return;
+    if (typeof e.preventDefault === 'function') e.preventDefault();
+    if (typeof v23Open === 'function') v23Open(node.getAttribute('data-sheet'));
+  });
+})();
