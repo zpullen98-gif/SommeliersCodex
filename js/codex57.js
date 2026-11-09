@@ -84,7 +84,7 @@ function v57Fold(s) {
   if (typeof v53cFold === 'function') return v53cFold(s);
   var t = String(s == null ? '' : s);
   try { t = t.normalize('NFD'); } catch (e) { }
-  return t.replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  return t.replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
 /* The table: one record a grape, keyed by the join's slug; {} when the data is not on the device. */
@@ -110,3 +110,105 @@ function v57T(slug) {
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
+
+/* =========== 2. the join =========== */
+
+/* The profile the join keeps for a grape, from the table's: the eight fields
+   the stock grape card and page read. The name is the join's own, set here
+   and never authored, so the card keeps the name its grade is stored under;
+   the colour letter is the join's colour. null unless every field is written. */
+var V57_PROFILE_FIELDS = ['st', 'fruit', 'other', 'tell', 'regions', 'confuse'];
+function v57Profile(t, name, colour) {
+  var p = v57Obj(t && t.profile);
+  if (!v57Str(name) || !V57_PROFILE_FIELDS.every(function (k) { return !!v57Str(p[k]); })) return null;
+  var g = { g: name, c: colour === 'white' ? 'w' : 'r' };
+  V57_PROFILE_FIELDS.forEach(function (k) { g[k] = v57Str(p[k]); });
+  return g;
+}
+/* The slugs the regions data holds: its articles and its countries. */
+function v57Places() {
+  var have = {};
+  var R = null;
+  try { R = (typeof REGIONS !== 'undefined' && REGIONS && typeof REGIONS === 'object') ? REGIONS : null; } catch (e) { R = null; }
+  if (!R) return have;
+  v57List(R.regions).forEach(function (a) { var s = v57Str(a && a.slug); if (s) have[s] = 1; });
+  Object.keys(v57Obj(R.countries)).forEach(function (k) { have[k] = 1; });
+  return have;
+}
+function v57TableAliases() {
+  try { return (typeof GRAPE_TABLE_ALIASES !== 'undefined' && GRAPE_TABLE_ALIASES && typeof GRAPE_TABLE_ALIASES === 'object' && !Array.isArray(GRAPE_TABLE_ALIASES)) ? GRAPE_TABLE_ALIASES : {}; } catch (e) { return {}; }
+}
+/* The joined book of grapes, decorated once: the grapes the table adds in the
+   join's own record shape, a profile for a grape the Codex held without one,
+   the table's label names as keys (first writer wins, so a key the join held
+   is never taken and a name that resolved before resolves as it did), and
+   the regions of a grape the table adds: its record's own, each one the
+   regions data holds, then the regions' own join read again, so a name that
+   now resolves brings its places. The record shape is codex53's, field for
+   field; nothing else is hung on a record. */
+function v57JoinAdd(J) {
+  var T = v57Table();
+  var slugs = Object.keys(T).filter(function (s) { var t = v57T(s); return !!t && v57Str(t.slug) === s; });
+  if (!slugs.length || !J || !Array.isArray(J.list) || !J.bySlug || !J.byKey) return;
+  var key = function (k, slug) {
+    if (!k || !v57Own(J.bySlug, slug)) return;
+    if (!v57Own(J.byKey, k)) J.byKey[k] = slug;
+    if (J.byKey[k] === slug && J.bySlug[slug].keys.indexOf(k) < 0) J.bySlug[slug].keys.push(k);
+  };
+  var parts = function (n) {
+    if (typeof v53GrapeParts === 'function') return v53GrapeParts(n);
+    return String(n == null ? '' : n).replace(/\([^)]*\)/g, ' ').split('/').map(v57Fold).filter(Boolean);
+  };
+  var names = function (n, slug) {
+    var p = parts(n);
+    key(p.join(' '), slug);
+    p.forEach(function (x) { key(x, slug); });
+  };
+  var added = [];
+  slugs.forEach(function (slug) {
+    var t = v57T(slug);
+    var r = v57Own(J.bySlug, slug) ? J.bySlug[slug] : null;
+    if (r) {
+      if (!r.g) { var p = v57Profile(t, r.name, r.colour); if (p) r.g = p; }
+      return;
+    }
+    var name = v57Str(t.name);
+    var colour = v57Str(t.colour) === 'white' ? 'white' : 'red';
+    var g = v57Profile(t, name, colour);
+    if (!g) return;
+    r = { slug: slug, name: name, colour: colour, g: g, intro: null, taste: null, court: '', tasting: null, keys: [], targets: [] };
+    J.bySlug[slug] = r;
+    J.list.push(r);
+    added.push(slug);
+    names(name, slug);
+  });
+  slugs.forEach(function (slug) {
+    if (!v57Own(J.bySlug, slug)) return;
+    v57List(v57T(slug).aliases).forEach(function (a) { key(v57Fold(a), slug); });
+  });
+  var al = v57TableAliases();
+  Object.keys(al).forEach(function (k) { if (typeof al[k] === 'string') key(v57Fold(k), al[k]); });
+  var have = v57Places();
+  added.forEach(function (slug) {
+    var r = J.bySlug[slug];
+    v57List(v57T(slug).targets).forEach(function (x) { var s = v57Str(x); if (s && v57Own(have, s) && r.targets.indexOf(s) < 0) r.targets.push(s); });
+  });
+  if (typeof v53GrapeResolve !== 'function') return;
+  var jg = {};
+  try { jg = v57Obj(v57Obj(v57Obj(typeof REGIONS !== 'undefined' ? REGIONS : null).join).grapes); } catch (e) { jg = {}; }
+  Object.keys(jg).forEach(function (n) {
+    var s = v53GrapeResolve(J, n);
+    if (!s || !v57Own(J.bySlug, s)) return;
+    var r = J.bySlug[s];
+    var v = jg[n];
+    (Array.isArray(v) ? v : [v]).forEach(function (x) { if (typeof x === 'string' && x && r.targets.indexOf(x) < 0) r.targets.push(x); });
+  });
+}
+if (typeof v53GrapeJoin === 'function') {
+  var _v57GrapeJoin = v53GrapeJoin;
+  v53GrapeJoin = function () {
+    var J = _v57GrapeJoin.apply(this, arguments);
+    try { if (J && J.list && !J.v57) { J.v57 = 1; v57JoinAdd(J); } } catch (e) { }
+    return J;
+  };
+}

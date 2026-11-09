@@ -8,8 +8,12 @@
  * loads the whole chain index.html loads, through codex53, in a node vm with
  * inert registries and a stub DOM (.scripts/cms/chain.cjs) and proves:
  *
- *   1. the join: 59 grapes (the 47 profiles of GRAPES and GRAPES_PLUS, the 53
- *      Régionale records, TASTE on the 47, 12 Régionale alone), every slug
+ *   1. the join: 59 grapes as codex53 joins them (the 47 profiles of GRAPES
+ *      and GRAPES_PLUS, the 53 Régionale records, TASTE on the 47, 12
+ *      Régionale alone); one layer on (codex57, the Grapes tab at the table,
+ *      9 November 2026), where the chain carries codex57.js, 75 grapes, the
+ *      sixteen the table adds among them, every one with a profile and no
+ *      grape left to the Régionale book alone; every slug
  *      once, every grape white or red, the regions' join attached to most;
  *      the twenty names of the Court's tasting list resolve to twenty
  *      different grapes; a name resolves by part, alias and fold, and a
@@ -20,7 +24,8 @@
  *      read's lines the grid's lines of its colour and its options the printed
  *      ones, its sale within two sentences; GRID_SAY says the twenty and only
  *      them; every read slug a grape of the join
- *   3. the pages: the Grapes root at all four levels lists the 59 once each,
+ *   3. the pages: the Grapes root at all four levels lists every grape of the
+ *      join once each,
  *      the twenty first in the Court's order, with its five chips, the four
  *      tasting doors codex54 leaves (The Court's grid drill, The Village
  *      tasting, Warm up: call the structure, The deductive grid; no Blind
@@ -51,7 +56,11 @@
  * jsDir defaults to this repo's js/ and may be the site's wing copy
  * (codex/js). A tree with no codex53.js is SKIPPED. --partial accepts a seed
  * whose grid reads do not yet cover the tasting list: the cover and the run
- * are then noted, not failed.
+ * are then noted, not failed. It accepts too a grape table still being
+ * written (js/data-grapes-table.js built with --partial): the join's counts
+ * then follow the grapes the data holds, 59 and the new ones it holds, a
+ * profile on the 47 and on each new or thin grape it holds. Without it the
+ * join is exactly 75 with no thin grape.
  *
  * Exits non-zero on any failure. The last line is the verdict.
  */
@@ -105,8 +114,17 @@ console.log('check-grapes: ' + H.files.length + ' scripts from ' + path.join(JS,
 /* ================================================================ */
 section('1. the join');
 const JOIN = J('(function () { var j = v53GrapeJoin(); return { n: j.list.length, slugs: j.list.map(function (r) { return r.slug; }), names: j.list.map(function (r) { return r.name; }), colours: j.list.map(function (r) { return r.colour; }), g: j.list.filter(function (r) { return r.g; }).length, intro: j.list.filter(function (r) { return r.intro; }).length, taste: j.list.filter(function (r) { return r.taste; }).length, introOnly: j.list.filter(function (r) { return r.intro && !r.g; }).length, targets: j.list.map(function (r) { return (r.targets || []).length; }) }; })()');
-check('the join holds 59 grapes', !!JOIN && JOIN.n === 59, JOIN && JOIN.n);
-check('the join: the 47 profiles, the 53 Régionale records, TASTE on 47, 12 Régionale alone', !!JOIN && JOIN.g === 47 && JOIN.intro === 53 && JOIN.taste === 47 && JOIN.introOnly === 12, JOIN && [JOIN.g, JOIN.intro, JOIN.taste, JOIN.introOnly].join(' / '));
+/* codex57 (the Grapes tab at the table): the table adds the grapes the Codex lacked and gives the twelve the
+   Régionale book alone held a profile. The whole build makes the join 75, every grape with a profile; under
+   --partial the counts follow the grapes the data holds; a chain with no codex57.js keeps codex53's own counts. */
+const HAS57 = H.files.indexOf('codex57.js') >= 0;
+const TABLE = HAS57 ? (J('(function () { var t = (typeof GRAPE_TABLE !== "undefined" && GRAPE_TABLE) || {}; return Object.keys(t).map(function (k) { return { slug: k, status: t[k] && t[k].status }; }); })()') || []) : [];
+const tNew = TABLE.filter((t) => t.status === 'new').length, tThin = TABLE.filter((t) => t.status === 'thin').length;
+const WANT = !HAS57 ? { n: 59, g: 47, thin: 12 } : (PARTIAL ? { n: 59 + tNew, g: 47 + tNew + tThin, thin: 12 - tThin } : { n: 75, g: 75, thin: 0 });
+const N = WANT.n;
+if (HAS57) console.log('  the grape table holds ' + TABLE.length + ' grapes (' + tNew + ' new, ' + tThin + ' thin); the join is held to ' + WANT.n + ', ' + WANT.g + ' with a profile, ' + WANT.thin + ' Régionale alone' + (PARTIAL ? ' (--partial)' : ''));
+check('the join holds ' + N + ' grapes', !!JOIN && JOIN.n === N, JOIN && JOIN.n);
+check('the join: ' + WANT.g + ' profiles (the 47 of GRAPES and GRAPES_PLUS' + (HAS57 ? ', and the table\'s' : '') + '), the 53 Régionale records, TASTE on 47, ' + (WANT.thin || 'none') + ' Régionale alone', !!JOIN && JOIN.g === WANT.g && JOIN.intro === 53 && JOIN.taste === 47 && JOIN.introOnly === WANT.thin, JOIN && [JOIN.g, JOIN.intro, JOIN.taste, JOIN.introOnly].join(' / '));
 check('the join: every slug once, every grape white or red', !!JOIN && new Set(JOIN.slugs).size === JOIN.n && JOIN.colours.every((c) => c === 'white' || c === 'red'));
 check('the join: the regions\' join attaches places to at least 50 grapes', !!JOIN && JOIN.targets.filter((n) => n > 0).length >= 50, JOIN && JOIN.targets.filter((n) => n > 0).length);
 const TW = J('v53TastingList().map(function (t) { return { name: t.name, colour: t.colour, slug: v53GrapeKey(t.name), found: !!v53GrapeFind(v53GrapeKey(t.name)), regions: t.regions }; })') || [];
@@ -159,7 +177,7 @@ section('3. the pages');
   const root = tryG('v53GrapesRootHtml()') || '';
   const rootProb = CH.cleanProblem(root) || CH.drawnVoiceProblem(root);
   const rows = (root.match(/data-go="grape" data-arg="([^"]+)"/g) || []).map((m) => m.replace(/.*data-arg="|"$/g, ''));
-  check('the Grapes root at ' + name + ' draws clean and lists the 59 once each, the twenty first in the Court\'s order', !rootProb && rows.length === 59 && new Set(rows).size === 59 && TW.every((t, i) => rows[i] === t.slug), rootProb || rows.length + ': ' + rows.slice(0, 21).join(' '));
+  check('the Grapes root at ' + name + ' draws clean and lists the ' + N + ' once each, the twenty first in the Court\'s order', !rootProb && rows.length === N && new Set(rows).size === N && TW.every((t, i) => rows[i] === t.slug), rootProb || rows.length + ': ' + rows.slice(0, 21).join(' '));
   /* the Tasting section as codex54 draws it: one Village tasting, Blind flight off its doors, the method a reading room's */
   const tAt = root.indexOf('aria-labelledby="v53-g-tasting"'), tEnd = tAt >= 0 ? root.indexOf('</section>', tAt) : -1;
   const tSec = tEnd > tAt ? root.slice(tAt, tEnd) : '';
@@ -169,10 +187,10 @@ section('3. the pages');
     && root.indexOf('data-deck="grapes"') >= 0 && root.indexOf('data-deck="grapes-all"') >= 0, tGo.join(' '));
   const pages = J('v53GrapeOrder().all.map(function (r) { var h = ""; try { h = v53GrapeHtml(r); } catch (e) { h = "THREW " + e.message; } return { slug: r.slug, h: h }; })') || [];
   const bad = pages.map((p) => { const why = CH.cleanProblem(p.h) || CH.drawnVoiceProblem(p.h); return why ? p.slug + ': ' + why : ''; }).filter(Boolean);
-  check('every grape page draws clean in the house voice at ' + name + ' (' + pages.length + ')', pages.length === 59 && bad.length === 0, few(bad, 4));
+  check('every grape page draws clean in the house voice at ' + name + ' (' + pages.length + ')', pages.length === N && bad.length === 0, few(bad, 4));
   const lacking = pages.filter((p) => !['v53-gs-profile', 'v53-gs-fruit', 'v53-gs-tell', 'v53-gs-regions', 'v53-gs-cards', 'v53-gs-watch'].every((id) => p.h.indexOf('id="' + id + '"') >= 0)).map((p) => p.slug);
-  check('every grape page at ' + name + ' carries its profile, fruit, tell, regions, cards and watch sections', pages.length === 59 && lacking.length === 0, lacking.join(' '));
-  const ends = pages.length === 59 && pages[0].h.indexOf('id="v53-g-prev"') < 0 && pages[0].h.indexOf('id="v53-g-next"') >= 0 && pages[58].h.indexOf('id="v53-g-next"') < 0 && pages.slice(1, 58).every((p) => p.h.indexOf('id="v53-g-prev"') >= 0 && p.h.indexOf('id="v53-g-next"') >= 0);
+  check('every grape page at ' + name + ' carries its profile, fruit, tell, regions, cards and watch sections', pages.length === N && lacking.length === 0, lacking.join(' '));
+  const ends = pages.length === N && pages[0].h.indexOf('id="v53-g-prev"') < 0 && pages[0].h.indexOf('id="v53-g-next"') >= 0 && pages[N - 1].h.indexOf('id="v53-g-next"') < 0 && pages.slice(1, N - 1).every((p) => p.h.indexOf('id="v53-g-prev"') >= 0 && p.h.indexOf('id="v53-g-next"') >= 0);
   check('Previous and Next walk the root\'s order at ' + name, ends);
 });
 tryG('applyLevel("certified", true)');
@@ -189,7 +207,7 @@ check('the four grape views are registered with codex53\'s renderers', J('["grap
 section('4. the cards');
 const decks = J('v53GrapeJoin().list.map(function (r) { var d = v32DeckDef("grape:" + r.slug); var c = d.cards[0] || {}; var g = c.g || {}; return { slug: r.slug, kind: d.kind, n: d.cards.length, id: c.id, name: r.name, fields: ["g", "c", "st", "fruit", "other", "tell", "regions", "confuse"].every(function (k) { return typeof g[k] === "string" && g[k].length > 0; }) }; })') || [];
 const badDecks = decks.filter((d) => !(d.kind === 'grape' && d.n === 1 && d.id === d.name && d.fields)).map((d) => JSON.stringify(d));
-check('v32DeckDef(\'grape:\' + slug) is one grape card for every grape (' + decks.length + '), named as the grape, all eight fields written', decks.length === 59 && badDecks.length === 0, few(badDecks, 3));
+check('v32DeckDef(\'grape:\' + slug) is one grape card for every grape (' + decks.length + '), named as the grape, all eight fields written', decks.length === N && badDecks.length === 0, few(badDecks, 3));
 check('a grape\'s card is graded in the grape cards\' slot, shared with the grape decks', J('(function () { v32GrapeMark("Chardonnay", true); return v32DeckDef("grape:chardonnay").learnt; })()') === 1 && 'oot-codex-grapecards-v1' in H.store);
 tryG('S._v32deck = "grape:chardonnay"; S.view = "deck"; S._v53from = null;');
 check('a grape\'s deck lights Grapes and climbs to its page', tryG('v25NavWord()') === 'grapes' && JSON.stringify(J('v32ParentRoute()')) === JSON.stringify({ view: 'grape', arg: 'chardonnay' }), tryG('v25NavWord()') + ' ' + JSON.stringify(J('v32ParentRoute()')));

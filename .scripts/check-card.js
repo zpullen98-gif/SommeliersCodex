@@ -56,13 +56,20 @@
  *      list in a gate here that names codex53.js names codex54.js straight
  *      after it
  *
- *   node .scripts/check-card.js [jsDir]
+ *   node .scripts/check-card.js [jsDir] [--partial]
  *
  * jsDir defaults to this repo's js/; the site's check-wings passes the
  * wing's codex/js. Needs the shared engine (OOT_SHARED, else
  * ../worldtable/static/shared) and the pack (OOT_HOUSE_PACK, else the pack
  * beside the engine). A tree with no codex54.js is SKIPPED. Exits non-zero
  * if any check fails. The last line is the verdict.
+ *
+ * One layer on (codex57, the Grapes tab at the table, 9 November 2026): where
+ * the chain carries codex57.js the search's grapes group is the 75 grape
+ * pages and no grape card is synthesised from the Régionale fields, every
+ * grape dealing its own profile. --partial accepts a grape table still being
+ * written (js/data-grapes-table.js built with --partial): the two counts then
+ * follow the grapes the data holds.
  */
 'use strict';
 const fs = require('fs');
@@ -70,6 +77,8 @@ const path = require('path');
 const vm = require('vm');
 
 const ARGS = process.argv.slice(2);
+/* --partial: the grape table (js/data-grapes-table.js) is still being written, so the grape counts follow the data */
+const PARTIAL = ARGS.indexOf('--partial') >= 0;
 const JS = path.resolve(ARGS.find((a) => a.charAt(0) !== '-') || path.join(__dirname, '..', 'js'));
 const SHARED = process.env.OOT_SHARED || path.join(__dirname, '..', '..', 'worldtable', 'static', 'shared');
 const ENGINE = path.join(SHARED, 'oot-house.js');
@@ -681,7 +690,16 @@ async function main() {
   console.log('  the search index: ' + ix.map(([k, len]) => k + ' ' + len).join(', '));
   const ixm = Object.fromEntries(ix);
   check('the index gains the 44 subjects', ixm.subjects === 44, ixm.subjects);
-  check('the grapes group is the 59 grape pages, each opening its page', ixm.grapes === 59 && G('v44Index().grapes.every(function (e) { return e.kind === "route" && e.arg === "grape" && !!v53GrapeFind(e.extra); })'));
+  /* codex57 (the Grapes tab at the table): the table adds the grapes the Codex lacked and gives the twelve the Régionale
+     book alone held a profile, so the whole build is 75 pages and no card is written from the Régionale fields. Under
+     --partial (the data still being written) the counts follow the grapes the data holds; a chain with no codex57.js
+     keeps codex53's own counts. */
+  const HAS57 = FILES.indexOf('codex57.js') >= 0;
+  const GT = HAS57 ? JSON.parse(G('JSON.stringify((function () { var t = (typeof GRAPE_TABLE !== "undefined" && GRAPE_TABLE) || {}; return Object.keys(t).map(function (k) { return t[k] && t[k].status; }); })())')) : [];
+  const gtNew = GT.filter((x) => x === 'new').length, gtThin = GT.filter((x) => x === 'thin').length;
+  const NGRAPES = !HAS57 ? 59 : (PARTIAL ? 59 + gtNew : 75);
+  const NSYNTH = !HAS57 ? 12 : (PARTIAL ? 12 - gtThin : 0);
+  check('the grapes group is the ' + NGRAPES + ' grape pages, each opening its page', ixm.grapes === NGRAPES && G('v44Index().grapes.every(function (e) { return e.kind === "route" && e.arg === "grape" && !!v53GrapeFind(e.extra); })'), ixm.grapes);
   const hitsB = JSON.parse(G('JSON.stringify(v44Results("bordeaux").map(function (g) { return [g.key, g.title, g.rows.length]; }))'));
   console.log('  "bordeaux": ' + hitsB.map((g) => g[1] + ' ' + g[2]).join(' | '));
   check('a search for bordeaux finds the Court’s subject, in a group of its own', hitsB.some((g) => g[0] === 'subjects' && g[1] === 'The Court’s subjects'));
@@ -696,7 +714,9 @@ async function main() {
   check('Keep one on Our Wine List reworded', G('V27_SAY_NONE').indexOf('Our Wine List') < 0 && /wine list/.test(G('V27_SAY_NONE')), G('V27_SAY_NONE'));
   const synth = JSON.parse(G('JSON.stringify(v53GrapeJoin().list.filter(function (r) { return !r.g; }).map(function (r) { return r.slug; }))'));
   const faces = JSON.parse(G('JSON.stringify(v53GrapeJoin().list.filter(function (r) { return !r.g; }).map(function (r) { var d = v32DeckDef("grape:" + r.slug); var c = d.cards[0]; return c ? v32CardFace(c, { flip: true, dir: "n2p" }) : ""; }))'));
-  check('the ' + synth.length + ' synthetic "No comparison is written" lines are dropped from the grape cards', synth.length > 0 && faces.every((f) => f && f.indexOf('No comparison is written') < 0 && f.indexOf('undefined') < 0), synth.length);
+  check(NSYNTH ? 'the ' + NSYNTH + ' synthetic "No comparison is written" lines are dropped from the grape cards' : 'no grape card is synthesised: every grape of the join deals its own profile (codex57)', synth.length === NSYNTH && faces.every((f) => f && f.indexOf('No comparison is written') < 0 && f.indexOf('undefined') < 0), synth.length + ': ' + synth.join(' '));
+  const cardsAll = JSON.parse(G('JSON.stringify(v53GrapeJoin().list.map(function (r) { var d = v32DeckDef("grape:" + r.slug); var c = d.cards[0]; var f = c ? v32CardFace(c, { flip: true, dir: "n2p" }) : ""; return [r.slug, d.cards.length, c ? c.id === r.name : false, f.indexOf("No comparison is written") < 0 && f.indexOf("undefined") < 0 && f.length > 0]; }))'));
+  check('every grape of the join (' + cardsAll.length + ') deals one card under its own name, its face whole', cardsAll.length === NGRAPES && cardsAll.every((c) => c[1] === 1 && c[2] && c[3]), cardsAll.filter((c) => !(c[1] === 1 && c[2] && c[3])).map((c) => c[0]).join(' '));
   check('Our List keeps its stored key (V27_CELLAR_SECTION)', G('V27_CELLAR_SECTION') === 'Our List');
 
   /* the owner's rule (2 November 2026): the tool is the owner's own and carries no disclaimer, so codex25's
