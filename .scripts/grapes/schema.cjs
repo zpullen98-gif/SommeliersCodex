@@ -186,7 +186,7 @@ function facts(jsDir) {
 const DEGREE = /[°º˚℃℉]/;
 const PER_CENT_SIGN = /%/;
 const PRICE = /[$£€¥¢]|\b(?:price[ds]?|pricing|pricey|costs?|costly|dollars?|euros?|cheap(?:er|est|ly)?|expensive|inexpensive|bargains?|value for money|good value|affordable|budget|splurge|retail(?:s|ing)?)\b/i;
-const VOLATILE = /\b(?:hectares?|acres?|acreage|plantings?|most (?:widely )?planted|(?:second|third|fourth|fifth) most|ranks?|ranked|rankings?|allocat\w*|owned by|now owns?|bought by|sold to|acquired by|was acquired|acquisition|sold out|in stock|market share|best[- ]selling|top[- ]selling)\b/i;
+const VOLATILE = /\b(?:hectares?|acres?|acreage|plantings?|most (?:widely )?planted|(?:second|third|fourth|fifth) most|ranks?\s+(?:first|second|third|fourth|fifth|among|number)|ranked\s+(?:first|second|third|fourth|fifth|among|number)|rankings?|allocat\w*|owned by|now owns?|bought by|sold to|acquired by|was acquired|acquisition|sold out|in stock|market share|best[- ]selling|top[- ]selling)\b/i;
 /* the house list of check-fragment.cjs, and the words that sell where a tableside line should teach */
 const SUPERLATIVE_MORE = /\b(?:noblest|grandest|most (?:celebrated|prized|revered|renowned|sought|popular|important|prestigious|noble|loved|beloved|admired|coveted)|world[’']s|world famous|world renowned|renowned|unrivall?ed|unparalleled|peerless|ultimate|quintessential|king of|queen of|holy grail|cult|sought[- ]after|award[- ]winning|unbeatable|unsurpassed|second to none)\b/i;
 const NUMBERED_LEVEL = /\bLevel\s+(?:I|II|III|IV|[1-4]|one|two|three|four)\b/i;
