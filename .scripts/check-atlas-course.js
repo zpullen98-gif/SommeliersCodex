@@ -331,7 +331,9 @@ async function main() {
 
   /* ================================================================ */
   section('1. the load');
-  check('the chain index.html loads holds codex56.js straight after codex55.js, boot.js straight after it', FILES.indexOf('codex56.js') === FILES.indexOf('codex55.js') + 1 && FILES.indexOf('boot.js') === FILES.indexOf('codex56.js') + 1, FILES.slice(-4).join(' '));
+  /* one layer on (codex57, the Grapes tab at the table): its data and the layer stand between codex56.js and boot.js where the chain carries them */
+  const after56 = (FILES.indexOf('codex57.js') >= 0 ? ['data-grapes-table.js', 'codex57.js'] : []).concat(['boot.js']);
+  check('the chain index.html loads holds codex56.js straight after codex55.js, then ' + after56.join(', then '), FILES.indexOf('codex56.js') === FILES.indexOf('codex55.js') + 1 && JSON.stringify(FILES.slice(FILES.indexOf('codex56.js') + 1, FILES.indexOf('codex56.js') + 1 + after56.length)) === JSON.stringify(after56), FILES.slice(-6).join(' '));
   check('codex56 ran: V56_WORDS, v56W, the course, the schedule, the views and the drills are defined',
     A.G('typeof V56_WORDS === "object" && typeof v56W === "function" && typeof v56Course === "function" && typeof v56Step === "function" && typeof v56Due === "function" && typeof V56_VIEWS === "object" && typeof v56QuizView === "function" && typeof v56DistrictCards === "function" && typeof v56CmpHtml === "function"'));
   check('the style element is written by the layer, id v56-style', fs.readFileSync(path.join(JS, 'codex56.js'), 'utf8').indexOf("css.id = 'v56-style'") > 0);
