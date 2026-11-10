@@ -9,7 +9,7 @@
   "lines": {
     "s10": "Cortese gives Piedmont its crisp white, Gavi: bone dry, with lemon, green apple and a clean, stony finish.",
     "s20": "Cortese is the grape of Gavi, from the hills of south east Piedmont that look towards the Ligurian sea. It is light, bone dry and sharp, with lemon, green apple and a stony finish, a wine made to be poured cold with fish.",
-    "s45": "Cortese makes Gavi, a crisp white from the south east corner of Piedmont, a region otherwise given to red wine. It tastes of lemon, green apple and pear, with a stony finish and a faint note of almond. It is light and bone dry, and its acidity is high and bright. The cellar keeps out of the way: steel tanks, no oak and an early bottling, though a little is made sparkling. Serve it cold with oysters, raw fish or a plate of fried seafood. Gavi sits just over the hills from Genoa, and its wine has long gone to the fish restaurants of that coast.",
+    "s45": "Cortese makes Gavi, a crisp white from the south east corner of Piedmont, a region known first for its red wine. It tastes of lemon, green apple and pear, with a stony finish and a faint note of almond. It is light and bone dry, and its acidity is high and bright. The cellar keeps out of the way: steel tanks, no oak and an early bottling, though a little is made sparkling. Serve it cold with oysters, raw fish or a plate of fried seafood. Gavi sits just over the hills from Genoa, and its wine has long gone to the fish restaurants of that coast.",
     "sale": "Cortese, as Gavi, is the cold, bone dry white that makes raw shellfish taste more of the sea. I would open it with the oysters and keep the bottle on the table through the fried fish."
   },
   "glass": {
@@ -79,7 +79,7 @@
   ],
   "questions": [
     {
-      "q": "A guest orders a dozen raw oysters and asks for a light, bone dry white from Piedmont. Which bottle do you bring?",
+      "q": "A guest orders a dozen raw oysters and asks for a light, bone dry white from Piedmont with plenty of acidity. Which bottle do you bring?",
       "opts": ["Gavi", "Roero Arneis", "Moscato d'Asti", "Erbaluce di Caluso Passito"],
       "a": 0,
       "exp": "Gavi, from Cortese, is light, bone dry and high in acidity, a natural match for raw shellfish. Roero Arneis is rounder and softer, and Moscato d'Asti and a passito are sweet."
@@ -91,10 +91,10 @@
       "exp": "Light body, high acidity, lemon and green apple with a stony finish point to Cortese from Gavi. Arneis is rounder, with lower acidity, and Viognier and Gewürztraminer are loudly perfumed."
     },
     {
-      "q": "One label reads Gavi del Comune di Gavi and another plain Gavi. A guest asks what the longer name adds. What do you tell him?",
-      "opts": ["The grapes grew in the commune of Gavi itself", "The wine was aged a year before release", "The wine is gently sparkling", "The vines are older than those of plain Gavi"],
+      "q": "A guest points to Gavi di Gavi on the list and asks whether it is a higher grade than the plain Gavi beside it. What do you tell her?",
+      "opts": ["No: it names grapes grown in the commune of Gavi", "Yes: it is the Riserva, aged a year longer", "Yes: it must come from older vines", "No: it marks the gently sparkling version"],
       "a": 0,
-      "exp": "Gavi del Comune di Gavi, often shortened to Gavi di Gavi, names fruit from the commune of Gavi, one of eleven in the zone. A year of ageing marks the Riserva, not the commune."
+      "exp": "Gavi di Gavi, in full Gavi del Comune di Gavi, names fruit from the commune of Gavi, one of eleven in the zone. It is a place, not a rank; the Riserva is the wine held a year before release."
     }
   ],
   "sources": [
@@ -112,5 +112,20 @@
     "Left out: the first written mention of the grape (sources give 1614 and 1659), the legend of the princess Gavia and the story that the grape is named for her courtesy (legend only), Gavi's sale to Genoa in 1202 (one source), and Cortese in the Oltrepò Pavese and Garda (one source).",
     "The line that the wine has long gone to the fish restaurants of the Ligurian coast rests on the Codex's own Piedmont record and Régionale question.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after three fixes. Cortese alone, the eleven communes of the province of Alessandria, the DOCG of 1998, Gavi del Comune di Gavi as a place and not a rank, the Riserva from lower yields at one year with six months in bottle, the still, frizzante and spumante types and the grape's high acidity were confirmed.",
+    "changed": [
+      "lines.s45: a region otherwise given to red wine now reads a region known first for its red wine. Moscato d'Asti and Roero Arneis are white wines of Piedmont, and the Codex's own Piedmont record teaches both beside Gavi.",
+      "questions[0].q: a light, bone dry white from Piedmont left Roero Arneis, the second option, a fair answer. The guest now asks for plenty of acidity too, which parts Gavi from Arneis as the entry's own tell does.",
+      "questions[2]: the stem spelt out Gavi del Comune di Gavi and the key said the commune of Gavi, so the stem translated its own answer. The guest now points to Gavi di Gavi and asks whether it is a higher grade, and the four answers are two of yes and two of no. The explanation keeps the full name."
+    ],
+    "open": [
+      "The ladder is borne out in general terms: two trade reports give the red clay of the north of the zone the fuller, fruitier wines and the higher, stonier ground to the south the more delicate ones. Neither names the notes on each rung, which stay a taster's reading.",
+      "Lime and hawthorn stay a taster's naming: no page read in this pass names either for the grape, and none speaks against them.",
+      "Cortese in the Oltrepò Pavese stays out of the entry: one reference page again, with a second naming only Garda and Custoza.",
+      "No source address could be opened from this session."
+    ]
+  }
 }
