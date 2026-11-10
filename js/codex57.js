@@ -41,13 +41,20 @@
       climate ladder, the line of structure), Old World and New World side by
       side (or At home and abroad) before the regions, then Service and the
       table, What guests ask, On the label and Compare with before the
-      Court's grid, and Sources closed at the foot.
+      Court's grid, and Sources closed at the foot. Each new section has its
+      chip, the chips one line that scrolls sideways; the glass and the two
+      worlds stand open; the sections a reader opened on a grape's page are
+      kept for the sitting, so Back returns to the page as it was left. The
+      one word flag Where it is grown and the row of bare family words leave
+      where the table says more.
 
    4. THE ROOT ROWS: each grape's row shows its glass in a line.
 
    5. ON THE HOUSE'S LIST: the house's wines of the grape under Old World and
-      New World, each opening its wine card and Back returning to the grape;
-      nothing is drawn when no house is loaded.
+      New World (the producer and the wine alone, read live from the house),
+      each opening its wine card and Back returning to the grape; nothing is
+      drawn when no house is loaded. The layer's controls carry data-v57;
+      V57_ACTS says what each does and one listener hears them all.
 
    6. THE SHELL: index.html loads js/data-grapes-table.js then js/codex57.js
       after codex56.js and before boot.js; the worker is codex-v116 and lists
@@ -441,7 +448,7 @@ function v57CompareBody(t) {
     var r = null;
     try { r = (slug && typeof v53GrapeFind === 'function') ? v53GrapeFind(slug) : null; } catch (e) { r = null; }
     var door = (r && r.slug === slug)
-      ? '<button type="button" class="btn small ghost" data-go="grape" data-arg="' + v57Esc(r.slug) + '">' + v57Esc(r.court || r.name) + '</button>' : '';
+      ? '<button type="button" class="btn small ghost" data-go="grape" data-arg="' + v57Esc(r.slug) + '">' + v57Esc(r.name) + '</button>' : '';
     return '<li>' + door + v57P('v57-tell', tell) + '</li>';
   }).join('');
   return rows ? '<ul class="v57-compare">' + rows + '</ul>' : '';
