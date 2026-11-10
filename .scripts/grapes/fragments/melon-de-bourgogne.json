@@ -22,7 +22,7 @@
     ],
     "ladder": [
       { "climate": "cool", "where": "The Pays Nantais in most years, beside the Atlantic", "notes": ["green apple", "lemon zest", "oyster shell"] },
-      { "climate": "moderate", "where": "The same hills in a warm, ripe year", "notes": ["ripe pear", "white peach"] }
+      { "climate": "moderate", "where": "The same vineyards in a warm, ripe year", "notes": ["ripe pear", "white peach"] }
     ],
     "structure": "Bone dry. Acidity high, alcohol low to moderate, body light; often a faint prickle of gas from bottling straight off the lees."
   },
@@ -100,5 +100,18 @@
     "The lees ageing of the crus is given as eighteen months or more, and about two years for Clisson and Gorges: the rule's own text gives 17 to 24 months at the least and the trade body 18 or 24.",
     "The ladder's second rung is the same hills in a warm year: the grape has no true warm home.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after three fixes, one of them a fact the rule has changed.",
+    "changed": [
+      "lines.s20 and the second question's explanation: Muscadet is no longer said to be made of one grape alone. The rule of the plain Muscadet appellation now admits Chardonnay as an accessory grape, at no more than 10 per cent of a holding's plantings; Sèvre et Maine, Coteaux de la Loire and Côtes de Grandlieu remain Melon alone.",
+      "worlds.home and the fourth label: the crus communaux rest on their lees about eighteen months to two years, in place of eighteen months or more. The rule's shortest term is a little under eighteen months and Clisson and Gorges ask two years.",
+      "glass.ladder, the second rung: the same vineyards, in place of the same hills."
+    ],
+    "open": [
+      "The rule's own text for each cru could not be opened: the national institute's host lies outside this session's network. The trade press gives eighteen months, a retailer's notes two years, and the author read 17 to 24 months in the rule.",
+      "Two Codex records now say more than the rule does. The Loire reading in js/regions/france.json calls Melon Muscadet's only grape, and the Régionale question i-r0p7056l says it has been the sole grape of Muscadet ever since 1709. Both hold for the three named zones and no longer for the plain appellation."
+    ]
+  }
 }
