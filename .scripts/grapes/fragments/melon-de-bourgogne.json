@@ -28,7 +28,7 @@
   },
   "worlds": {
     "home": {
-      "home": "The Pays Nantais, where the Loire meets the Atlantic, above all Muscadet Sèvre et Maine. It is fermented cool with no new oak, and a wine labelled sur lie spends one winter on its lees and is bottled straight from them. The crus communaux, such as Clisson, Gorges and Le Pallet, stay on theirs about eighteen months to two years.",
+      "home": "The Pays Nantais, where the Loire meets the Atlantic, above all Muscadet Sèvre et Maine. It is fermented cool with no new oak. A wine labelled sur lie spends one winter on its lees and is bottled straight from them. The crus communaux, such as Clisson, Gorges and Le Pallet, stay on theirs seventeen months to two years or more.",
       "abroad": "It rarely leaves home. In California it long passed for Pinot Blanc, until vine scientists put the name right, and a little is bottled under its own name in Oregon's Willamette Valley, in the same lean style."
     }
   },
@@ -50,7 +50,7 @@
     { "term": "Muscadet", "means": "The wine made from Melon de Bourgogne around Nantes; bone dry, and no relation of Muscat." },
     { "term": "Sur lie", "means": "Kept one winter on its lees, the spent yeast, and bottled straight from them: more texture, a bready note." },
     { "term": "Sèvre et Maine", "means": "The heart of Muscadet, named for two small rivers south east of Nantes." },
-    { "term": "Clisson, Gorges, Le Pallet", "means": "Crus communaux: named villages whose wines rest on their lees for about eighteen months to two years." }
+    { "term": "Clisson, Gorges, Le Pallet", "means": "Crus communaux: named villages whose wines rest on their lees at least seventeen months, two years in Clisson and Gorges." }
   ],
   "guest": [
     { "q": "Is Muscadet the same as Muscat, and is it sweet?", "a": "No, on both counts. Muscadet is made from Melon de Bourgogne and is bone dry, light and salty. Muscat is a different, perfumed grape that is often made sweet." },
@@ -94,11 +94,11 @@
     { "title": "Willamette Valley Wineries Association: grape varieties", "url": "https://www.willamettewines.com/trade-resources/grape-varieties/" }
   ],
   "report": [
-    "Mode home, as the plan fixes it. The Codex's records on Melon de Bourgogne read true and nothing here departs from them.",
+    "Mode home, as the plan fixes it. The entry departs from no Codex record on the grape's taste or service; on Muscadet as the wine of one grape alone, see checked.",
     "Left out: the frost of 1709 as the reason the grape took over the Pays Nantais. This session's sources did not state it, though reference works do.",
     "Left out: the number of crus communaux, which has grown since the first three of 2011 and may grow again.",
-    "The lees ageing of the crus is given as eighteen months or more, and about two years for Clisson and Gorges: the rule's own text gives 17 to 24 months at the least and the trade body 18 or 24.",
-    "The ladder's second rung is the same hills in a warm year: the grape has no true warm home.",
+    "The lees ageing of the crus is given as seventeen months to two years or more, and about two years for Clisson and Gorges: the rule's own text gives 17 to 24 months at the least and the trade body 18 or 24.",
+    "The ladder's second rung is the same vineyards in a warm year: the grape has no true warm home.",
     "The sources were read through search results; this session could not open the hosts directly."
   ],
   "checked": {
@@ -106,11 +106,10 @@
     "verdict": "Sound after three fixes, one of them a fact the rule has changed.",
     "changed": [
       "lines.s20 and the second question's explanation: Muscadet is no longer said to be made of one grape alone. The rule of the plain Muscadet appellation now admits Chardonnay as an accessory grape, at no more than 10 per cent of a holding's plantings; Sèvre et Maine, Coteaux de la Loire and Côtes de Grandlieu remain Melon alone.",
-      "worlds.home and the fourth label: the crus communaux rest on their lees about eighteen months to two years, in place of eighteen months or more. The rule's shortest term is a little under eighteen months and Clisson and Gorges ask two years.",
+      "worlds.home and the fourth label: the crus communaux rest on their lees seventeen months to two years or more, in place of eighteen months or more. The rule asks 17 months of Le Pallet and 24 of Clisson and Gorges, as the trade press reports it and as the author read it in the rule.",
       "glass.ladder, the second rung: the same vineyards, in place of the same hills."
     ],
     "open": [
-      "The rule's own text for each cru could not be opened: the national institute's host lies outside this session's network. The trade press gives eighteen months, a retailer's notes two years, and the author read 17 to 24 months in the rule.",
       "Two Codex records now say more than the rule does. The Loire reading in js/regions/france.json calls Melon Muscadet's only grape, and the Régionale question i-r0p7056l says it has been the sole grape of Muscadet ever since 1709. Both hold for the three named zones and no longer for the plain appellation."
     ]
   }

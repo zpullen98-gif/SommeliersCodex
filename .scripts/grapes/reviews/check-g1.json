@@ -1,0 +1,299 @@
+{
+  "chunk": "g1",
+  "date": "2026-11-10",
+  "role": "The second reading: each entry read to refute it, not to admire it.",
+  "grapes": ["sauvignon-blanc", "chenin-blanc", "melon-de-bourgogne", "aligote", "pinot-blanc", "semillon"],
+  "method": [
+    "Each fragment read whole beside what show.cjs prints for the grape (GRAPES, GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region readings and banks where they name the grape.",
+    "Every fact that the Codex's reviewed records do not already state was put to search, at most five searches a grape: parentage, home, synonyms, the appellation rules, the service figures, the climate claims behind the Old World and New World lines.",
+    "The glass read as a blind taster would: each note asked whether a taster would nod, and each prose field scanned for a family word in disguise.",
+    "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences; the cards and questions read for one key, four options of one kind and nothing given away; the compare tells read from both sides against the other fragments that name these grapes.",
+    "node .scripts/grapes/build-grapes.cjs --lint --chunk g1 run after every round of edits until it printed six of six sound. The writing build was never run."
+  ],
+  "limits": [
+    "This session reached search alone: no source address could be opened, the national institute's and the ministry's hosts among them. A rule is cited as search results quoted it.",
+    "The lint note on lees in the Melon de Bourgogne forty five second line was read and left: the same breath says the spent yeast."
+  ],
+  "entries": {
+    "sauvignon-blanc": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "say against GRID_SAY (so-vee-NYOHN BLAHN): agrees.",
+        "Parentage of Cabernet Sauvignon and the year the work was published (1997); the name from the French for wild; Fumé Blanc as a California name of the 1960s; Sancerre and Pouilly-Fumé on facing banks.",
+        "The ladder against the Court's grid: Sancerre, Pouilly-Fumé and Marlborough are both cool there, as the entry has them.",
+        "worlds: the why for a false cause, the blur for its exceptions, the call against GRID_READS for both regions.",
+        "Service against the Codex's rows for light aromatic whites (45 to 50 degrees Fahrenheit, a white wine glass, decanting usually unnecessary): agrees. TASTE.age, young with rare exceptions: agrees.",
+        "Compare tells from both sides with Grüner Veltliner and Vermentino: agree."
+      ],
+      "changed": [
+        {
+          "field": "worlds.contrast.why",
+          "was": "the upper Loire is cooler, on limestone and flint",
+          "now": "Marlborough's bright sun, long days and cool nights build intense aroma and hold the acidity; the upper Loire, far inland on limestone and flint, gives quieter fruit.",
+          "why": "A false cause. Sancerre is semi continental, more than 480 kilometres from the sea, with short, hot summers; Marlborough is a cool, sunny, maritime region. The Court's grid calls both cool. Nothing read says the upper Loire is the cooler of the two.",
+          "sources": [
+            { "title": "Wikipedia: Sancerre (wine)", "url": "https://en.wikipedia.org/wiki/Sancerre_(wine)" },
+            { "title": "New Zealand Wine: Marlborough regional guide", "url": "https://www.nzwine.com/media/mtxpfr0p/marlborough.pdf" }
+          ]
+        },
+        {
+          "field": "worlds.contrast.blur",
+          "was": "Marlborough's Awatere Valley and Martinborough make leaner, stonier wines, and a warm year or riper picking can give Sancerre a hint of passion fruit",
+          "now": "Marlborough's cooler, windier Awatere Valley makes leaner, greener wines, and a warm year gives Sancerre riper, rounder fruit; barrels appear on both sides.",
+          "why": "Martinborough's style stood on no source. The regional body calls the Awatere cooler, drier and windier, and tasters find it leaner and more herbaceous. Reports of the warm 2018 and 2020 harvests in Sancerre speak of riper fruit, more flesh and pineapple, not of passion fruit.",
+          "sources": [
+            { "title": "New Zealand Wine: Marlborough regional guide", "url": "https://www.nzwine.com/media/mtxpfr0p/marlborough.pdf" },
+            { "title": "Decanter: Sancerre wines to drink in 2020", "url": "https://www.decanter.com/premium/sancerre-wines-to-drink-2020-429999/" }
+          ]
+        },
+        {
+          "field": "glass.ladder, the warm rung",
+          "was": "Napa Valley and Sonoma, and warmer inland valleys",
+          "now": "Napa Valley, inland Sonoma and California's warmer valleys",
+          "why": "Sonoma's coast and the Russian River are cool; the warm fruit comes from its inland valleys.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The Davis news address for the parentage was seen in a search listing; the other three source addresses stand as the author gave them, unopened."
+      ]
+    },
+    "chenin-blanc": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "say against GRID_SAY (shuh-NAN BLAHN): agrees.",
+        "Steen matched to Chenin Blanc in the 1960s: 1963 by the South African bodies, 1965 by the dictionary of South African English, so the decade alone is right.",
+        "Bonnezeaux and Quarts de Chaume as enclaves within the Coteaux du Layon; Vouvray dry, off dry, sweet and sparkling; Savennières dry.",
+        "The Cape's styles against the Chenin Blanc Association's own classes (fresh and fruity; rich and ripe, wooded or unwooded).",
+        "The mode: TASTE.world reads old and the plan fixes contrast. The entry follows the plan and says so in its report; the Loire against South Africa is a pair a guest meets on a list.",
+        "The ladder's cool rung for Vouvray against the Court's grid (cool), though TASTE.clim reads moderate: the entry follows the grid.",
+        "Compare tells from both sides with Chardonnay, Riesling and Sémillon: agree."
+      ],
+      "changed": [
+        {
+          "field": "worlds.contrast.new.cellar",
+          "was": "old bush vine wines picked riper, then fermented and aged in barrel",
+          "now": "richer old bush vine wines, often fermented and aged in barrel",
+          "why": "Picked riper stood on no source, and many old vine growers pick for freshness. The barrel is now often, not a rule.",
+          "sources": [
+            { "title": "Wines of South Africa: Chenin Blanc document, May 2021", "url": "https://wosa.co.za/wosadocs/52021/Chenin%20doc%20updated%20May%202021.pdf" }
+          ]
+        },
+        {
+          "field": "worlds.contrast.call and cards[1].back",
+          "was": "more body and vanilla from barrels lean South Africa",
+          "now": "more body and often vanilla from barrels lean South Africa",
+          "why": "A call a flight would break: much old vine Chenin Blanc is raised in old wood and shows no vanilla. The riper fruit and the body are the tell; the vanilla is frequent, not constant.",
+          "sources": []
+        },
+        {
+          "field": "service.age",
+          "was": "Savennières and the sweet wines of Vouvray and the Layon keep for decades",
+          "now": "Most dry wines within five years, Savennières ten or more; sweet Vouvray and Layon wines keep for decades.",
+          "why": "Decades for a dry wine found no source in this session, and TASTE.age keeps decades for the sweet wines.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "lines.s45 lists Vouvray, Savennières and Anjou, though Savennières lies within Anjou. All three are names on labels, so the line was left."
+      ]
+    },
+    "melon-de-bourgogne": {
+      "verdict": "Sound after three fixes to what is shown, one of them a rule that has changed, and the report brought into step.",
+      "tested": [
+        "The grape rule of Muscadet and of its three named zones.",
+        "The lees terms of the crus communaux and what sur lie promises.",
+        "Parentage (Pinot and Gouais Blanc, shared with Chardonnay, Gamay and Aligoté); the grape's leaving of Burgundy; California's Pinot Blanc that was Melon; Oregon.",
+        "The glass against GRAPES_PLUS (green apple, lemon, white peach, bread dough, oyster shell, a faint prickle): agrees. Service against the row for light whites: agrees.",
+        "Compare tells with Chardonnay, Albariño and Pinot Grigio against the reviewed confuse line: agree."
+      ],
+      "changed": [
+        {
+          "field": "lines.s20 and questions[1].exp",
+          "was": "the one grape of Muscadet; made from Melon de Bourgogne alone",
+          "now": "the grape of Muscadet; made from Melon de Bourgogne",
+          "why": "The rule of the plain Muscadet appellation now names Melon as the main grape and Chardonnay as an accessory one, at no more than 10 per cent of a holding's plantings. Sèvre et Maine, Coteaux de la Loire and Côtes de Grandlieu are still Melon alone.",
+          "sources": [
+            { "title": "Bulletin officiel du ministère de l'Agriculture: cahier des charges de l'appellation Muscadet", "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-7f89900b-3f0e-4f8d-b028-4066234091f5/telechargement" },
+            { "title": "Institut national de l'origine et de la qualité: cahier des charges, Muscadet Coteaux de la Loire", "url": "https://extranet.inao.gouv.fr/fichier/2c-PRJ-CDC-Muscadet-Coteaux-de-la-Loire-post-CE.pdf" },
+            { "title": "Society of Wine Educators: Dispatch from the Muscadet AOC", "url": "https://winewitandwisdomswe.com/?p=18308" }
+          ]
+        },
+        {
+          "field": "worlds.home.home and labels[3].means",
+          "was": "stay on their lees eighteen months or more",
+          "now": "stay on theirs seventeen months to two years or more; at least seventeen months, two years in Clisson and Gorges",
+          "why": "The rule asks 17 months of Le Pallet and 24 of Clisson and Gorges, so eighteen months or more was true of none of the three exactly.",
+          "sources": [
+            { "title": "Decanter: Muscadet with extended lees ageing, panel tasting", "url": "https://www.decanter.com/wine-reviews-tastings/wine-panel-tastings/muscadet-wines-lees-ageing-panel-tasting-results-369706" },
+            { "title": "Institut national de l'origine et de la qualité: cahier des charges, Muscadet Sèvre et Maine", "url": "https://extranet.inao.gouv.fr/fichier/PNOCDC-Muscadet-SevreEtMaine.pdf" }
+          ]
+        },
+        {
+          "field": "glass.ladder, the second rung",
+          "was": "The same hills in a warm, ripe year",
+          "now": "The same vineyards in a warm, ripe year",
+          "why": "The Pays Nantais is low, rolling country, not hills.",
+          "sources": []
+        },
+        {
+          "field": "report",
+          "was": "three lines that spoke of the old wording",
+          "now": "brought into step with the fixes",
+          "why": "A report that contradicts its own entry misleads the integrator.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The rule's own text for each cru was not opened; the 17 and 24 months stand on the trade press and on the author's reading of the rule."
+      ]
+    },
+    "aligote": {
+      "verdict": "Sound after four fixes. A new grape: its profile and its three targets (burgundy, france, eastern-europe) stand.",
+      "tested": [
+        "Grown in Burgundy since the seventeenth century (the national institute's sheet says the first traces date from then); the regional name since 31 July 1937; Bouzeron the one village name, by a decree of 17 February 1998.",
+        "Where it is planted; the golden strain of Bouzeron and its thin skins; Chardonnay and Pinot Noir in Crémant de Bourgogne; the grape in Bulgaria, Romania, Moldova, Ukraine and Russia.",
+        "The Kir against the Codex's own service rows (crème de cassis topped with Bourgogne Aligoté, cassis first, named for a mayor of Dijon): agrees, nobody named.",
+        "The profile in the manner of GRAPES; the questions' distractors (Rully, Montagny and Saint-Véran are Chardonnay; Saint-Bris is Burgundy's Sauvignon Blanc).",
+        "Compare tells from both sides with Pinot Blanc: agree."
+      ],
+      "changed": [
+        {
+          "field": "lines.s20, lines.s45, worlds.home.home and glass.ladder",
+          "was": "often on the higher slopes; Burgundy's higher slopes in most years",
+          "now": "often at the top and the foot of the slopes; Burgundy's hilltops and Hautes Côtes in most years",
+          "why": "Half the truth. The grape is relegated to the highest and the lowest ground, the land Chardonnay and Pinot Noir leave it; only in Bouzeron is it said to hold the upper slopes.",
+          "sources": [
+            { "title": "Wikipedia: Aligoté", "url": "https://en.wikipedia.org/wiki/Aligot%C3%A9" },
+            { "title": "WineMaker magazine: Aligoté, varietal focus", "url": "https://winemakermag.com/article/1613-aligote-varietal-focus" }
+          ]
+        },
+        {
+          "field": "lines.s45",
+          "was": "under a splash of blackcurrant liqueur in a Kir",
+          "now": "poured over blackcurrant liqueur as a Kir",
+          "why": "The Codex's own service reference builds a Kir cassis first, the wine poured over it.",
+          "sources": []
+        },
+        {
+          "field": "lines.s45",
+          "was": "One village, Bouzeron, is given over to it, and grows a golden strain whose thin skins turn gold as they ripen.",
+          "now": "One village name, Bouzeron, is kept for it alone, and its golden strain has thin skins that turn gold as they ripen.",
+          "why": "The name is kept for Aligoté; the village is not. The appellation covers two communes, which also grow Chardonnay and Pinot Noir under other names.",
+          "sources": [
+            { "title": "Wikipedia: Bouzeron AOC", "url": "https://en.wikipedia.org/wiki/Bouzeron_AOC" }
+          ]
+        },
+        {
+          "field": "glass.ladder, the moderate rung",
+          "was": "Bouzeron's sheltered slopes, and warm years across Burgundy",
+          "now": "Bouzeron's marl slopes, and warm years across Burgundy",
+          "why": "Shelter stood on no source; the white marl of Bouzeron's slopes does.",
+          "sources": [
+            { "title": "Wikipedia: Bouzeron AOC", "url": "https://en.wikipedia.org/wiki/Bouzeron_AOC" }
+          ]
+        }
+      ],
+      "open": [
+        "The thin skins of the golden strain stand on a merchant's magazine and on the regional body's page as the author read it; no primary text was opened."
+      ]
+    },
+    "pinot-blanc": {
+      "verdict": "Sound after four fixes. A thin grape: its profile stands, in step with the Régionale row.",
+      "tested": [
+        "Weissburgunder and Pinot Bianco; Klevner as an Alsace name; the blend with Auxerrois; its place in Crémant d'Alsace.",
+        "The glass, note by note, against a study of Austrian Pinot Blanc and against tasting notes for German and Alto Adige wines.",
+        "Where it grows in Alto Adige; the styles of Oregon and California.",
+        "The mode (home) and the profile's structure against INTRO_GRAPES (acidity and body both middling): agree.",
+        "Compare tells from both sides with Pinot Gris, Silvaner and Aligoté: agree, once hay was left to Silvaner."
+      ],
+      "changed": [
+        {
+          "field": "glass.notes, glass.ladder, profile.fruit and profile.other",
+          "was": "hay flowers; grapefruit; lime",
+          "now": "acacia blossom; lemon zest",
+          "why": "Notes a blind taster would not nod at. Grapefruit and lime point to Sauvignon Blanc and Riesling and no source gives them; the Austrian study gives pear, apple, walnut and a hint of acacia flower, and notes for Alto Adige give lemon zest. Hay is the mark of Silvaner in that grape's tell against this one.",
+          "sources": [
+            { "title": "BIO Web of Conferences, 2017: a study of Austrian Pinot Blanc from the federal college at Klosterneuburg", "url": "https://www.bio-conferences.org/articles/bioconf/abs/2017/02/bioconf-oiv2017_02033/bioconf-oiv2017_02033.html" }
+          ]
+        },
+        {
+          "field": "glass.ladder, the moderate rung",
+          "was": "Baden, the Pfalz and Alto Adige's warm valley floors",
+          "now": "Baden, the Pfalz and Alto Adige's lower, warmer sites",
+          "why": "In Alto Adige the grape is grown on slopes from about 250 to 900 metres, never on the hot valley floor.",
+          "sources": []
+        },
+        {
+          "field": "worlds.home.abroad",
+          "was": "bottle some, in a fresh style",
+          "now": "bottle some, mostly in a fresh style",
+          "why": "Sonoma's wines are described as rounder, so the line wanted its hedge.",
+          "sources": []
+        },
+        {
+          "field": "guest[2].a",
+          "was": "a faint nutty note",
+          "now": "a hint of almond",
+          "why": "A family word in disguise.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The parentage stays as the author worded it, a white berried mutation within the Pinot family: the sources split between a mutation of Pinot Gris and one of Pinot Noir.",
+        "British Columbia is left out of abroad, as the author left it."
+      ]
+    },
+    "semillon": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "Thin skins and tight bunches and noble rot; the Sauternes blend with Sauvignon Blanc and a little Muscadelle; barrels for Sauternes and the classed dry whites.",
+        "The Hunter Valley: picked early, fermented dry in steel, bottled young, toast and honey with years in bottle; the Barossa's two styles; Margaret River's blend.",
+        "TASTE.world (both) against the mode (contrast): agrees. The structure against the reviewed st line: agrees.",
+        "Service against the Codex's digestif row for Sauternes (two to three ounces, a small glass, 6 to 8 degrees Celsius) and its temperature rows.",
+        "Compare tells from both sides with Chenin Blanc: agree."
+      ],
+      "changed": [
+        {
+          "field": "lines.s20",
+          "was": "It tastes of lemon, beeswax and lanolin",
+          "now": "It tastes of lemon, green apple and beeswax",
+          "why": "A spoken line may not carry a term a guest must have explained. The glass and the Old World side keep lanolin, as the reviewed profile does.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.blur",
+          "was": "Margaret River blends it with Sauvignon Blanc as Bordeaux does, sometimes in barrel, and everyday white Bordeaux is often made fresh in steel with no oak at all.",
+          "now": "Margaret River blends it with Sauvignon Blanc as Bordeaux does, the Riverina makes sweet wines from noble rot, and everyday white Bordeaux is often fresh and unoaked.",
+          "why": "A missing exception: the New World makes its own sweet Sémillon by noble rot, in the Riverina of New South Wales.",
+          "sources": [
+            { "title": "Wine Australia: Riverina", "url": "https://www.wineaustralia.com/discover-australian-wine/new-south-wales-wines/riverina" },
+            { "title": "Wine Australia: Semillon", "url": "https://www.wineaustralia.com/market-insights/regions-and-varieties/semillon" }
+          ]
+        },
+        {
+          "field": "service.temp",
+          "was": "Dry wines at 45 to 50 degrees Fahrenheit, 7 to 10 degrees Celsius; Sauternes a few degrees colder.",
+          "now": "Dry wines at 45 to 50 degrees Fahrenheit, 7 to 10 degrees Celsius, barrel aged ones warmer; Sauternes colder.",
+          "why": "The Codex's row for full whites and the Sauvignon Blanc entry both serve a barrel aged white Bordeaux warmer.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "TASTE.age reads Hunter Semillon is famously immortal; the entry's ten to twenty years or more is the truer line, as the author's report says."
+      ]
+    }
+  },
+  "codexRecords": [
+    "js/regions/france.json, the Loire reading: Melon de Bourgogne is called Muscadet's only grape. True of Sèvre et Maine, Coteaux de la Loire and Côtes de Grandlieu; the plain Muscadet appellation now admits Chardonnay as an accessory grape.",
+    "js/data-intro.js, question i-r0p7056l: its explanation says Melon has been the sole grape of Muscadet ever since 1709. The same rule loosens it.",
+    "js/data-regions.js, question r-rkgv0zwg, and the Burgundy reading: Bouzeron is dated 1997; the decree is dated 17 February 1998. The author's flag, confirmed.",
+    "TASTE.world for Chenin Blanc reads old while the plan fixes contrast. No fault in either: the flag says where the grape is from, the plan what a guest meets on a list."
+  ],
+  "unsettled": [
+    "Whether every source address still answers: none could be opened from this session.",
+    "The rule's own wording for each Muscadet cru's term on the lees.",
+    "Whether Pinot Blanc arose from Pinot Gris or from Pinot Noir: the entry commits to neither.",
+    "The year Steen was matched to Chenin Blanc, 1963 or 1965: the entry gives the decade."
+  ]
+}
