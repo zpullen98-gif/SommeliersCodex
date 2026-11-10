@@ -18,8 +18,7 @@
       { "family": "stone fruit", "notes": ["apricot", "ripe peach", "nectarine"] },
       { "family": "citrus", "notes": ["tangerine", "orange peel"] },
       { "family": "tropical fruit", "notes": ["mango", "pineapple"] },
-      { "family": "floral", "notes": ["honeysuckle", "violet", "jasmine"] },
-      { "family": "spice", "notes": ["fresh ginger", "musk"] }
+      { "family": "floral", "notes": ["honeysuckle", "violet", "jasmine", "musk"] }
     ],
     "ladder": [
       { "climate": "moderate", "where": "Condrieu and Château-Grillet; the Eden Valley", "notes": ["apricot", "white peach", "violet", "honeysuckle"] },
@@ -114,5 +113,23 @@
     "Côte-Rôtie's limit of 20 per cent, Virginia's choice of Viognier as its signature grape in 2011 and the Rhône planters of the Central Coast stand on the Codex's own region records. The kinship of Viognier with Mondeuse Blanche and so with Syrah was left out: no primary source was read for it.",
     "Château-Grillet is named as an appellation, which it is, though one estate holds the whole of it; a checker who reads it as a producer may strike the label row and the card's second sentence.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after six fixes. Condrieu and Château-Grillet as the two appellations of Viognier alone, the limit of 20 per cent in Côte-Rôtie and its fermenting with the Syrah, the near loss of the 1960s and the service rows were confirmed.",
+    "changed": [
+      "glass.ladder, the moderate rung: Virginia is taken off. The Codex's region record reads Virginia as humid subtropical with hot, humid summers, and a search found no source that sets its Viognier fresher than California: producers describe bright acidity and very little acidity alike. The rung is now Condrieu and Château-Grillet with the Eden Valley, which the Codex calls distinctly cooler than the Barossa floor.",
+      "worlds.contrast.new.glass: Virginia and the Eden Valley tend to be fresher now reads the cooler Eden Valley tends to be fresher, for the same reason. Virginia stays in new.where, since the Codex names it for the grape.",
+      "worlds.contrast.blur: Virginia, the Eden Valley and cooler Californian coasts make restrained wines scented with violet now reads the Eden Valley and other cooler New World sites make fresher, more restrained wines. The violet and the Californian coasts were not confirmed; the Eden Valley restraint is (a restrained nose of gentle apricot and floral notes, in more than one tasting note).",
+      "lines.s45: California and Australia are often riper and broader now names California alone. The Australian place of the entry is the Eden Valley, which the same entry calls the fresher one, so the line contradicted its own worlds section.",
+      "cards[1].back: lean California or Australia now reads lean California or another warm New World site, for the same reason.",
+      "glass.notes: the spice group (fresh ginger, musk) is struck and musk joins the floral notes, where the Codex keeps it for Muscat. Fresh ginger is the lead note of the Gewürztraminer entry, whose tell says Viognier has no lychee or ginger, and the reviewed Gewürztraminer record parts the two the same way (without the lychee or spice). Search found ginger in Viognier only as a sometimes subtle hint."
+    ],
+    "open": [
+      "The reviewed Viognier record still prints musk and ginger among its other notes, while the reviewed Gewürztraminer record says Viognier is without the lychee or spice. The two records pull apart; the table now sides with the second.",
+      "Château-Grillet is kept as an appellation: the Codex teaches it as one in its Rhône record and its banks, and no owner is named.",
+      "Mango, pineapple and a hotter finish as the New World mark are hedged and stand on the reviewed record; a ripe Condrieu in new oak can show the same, which the blur line admits.",
+      "No source address could be opened from this session; the Wine Australia address in the sources is unconfirmed."
+    ]
+  }
 }

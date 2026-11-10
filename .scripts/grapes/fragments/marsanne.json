@@ -62,7 +62,7 @@
   "labels": [
     { "term": "Hermitage Blanc", "means": "White wine from the hill of Hermitage: mostly Marsanne, often with some Roussanne." },
     { "term": "Saint-Péray", "means": "A northern Rhône appellation for Marsanne and Roussanne alone, made still or sparkling." },
-    { "term": "Ermitage", "means": "The name Marsanne takes in the Valais in Switzerland, where it is rich and often sweet." },
+    { "term": "Ermitage", "means": "In the Valais, the Swiss name for Marsanne, often sweet; on a Rhône label, another spelling of Hermitage." },
     { "term": "Marsanne Roussanne", "means": "The classic pair: Marsanne for weight and wax, Roussanne for perfume and acidity." }
   ],
   "guest": [
@@ -114,5 +114,22 @@
     "The vines of 1927 in Victoria stand on the Codex's own Australian record and on Wine Australia's pages; the estate that owns them is not named.",
     "Left out for want of a primary source: the tale of a composer ordering a hundred bottles of Saint-Péray (the Codex's Master bank tells it; a search of the regional body's pages did not confirm the figure) and the naming of the grape after the village of Marsanne near Montélimar (reference works say probably).",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after five fixes. The vines of 1927 in Victoria, the cuttings of the 1860s, the unoaked Victorian wine that turns to honey and toast in bottle, Saint-Péray as Marsanne and Roussanne alone, still and sparkling, and the Valais names (Ermitage, Fendant, Johannisberg, Malvoisie) were confirmed.",
+    "changed": [
+      "labels, Ermitage: the row said only that Ermitage is the Valais name for Marsanne. On a Rhône label the same word is another spelling of Hermitage, as the Codex records itself (one house spells its Hermitage wines so, red and white), so a guest reading it on a French bottle would have been told the wrong thing. The row now gives both meanings.",
+      "glass.notes: the citrus group (lemon, lime) is struck. Lime was not confirmed in any source read; lemon is the mark of the young, unoaked Victorian wine and stays where it belongs, on the warm rung, in the New World glass and in the call.",
+      "worlds.contrast.old.cellar: usually blended with a little Roussanne now reads often. Many white wines of Hermitage, Crozes-Hermitage and Saint-Joseph are Marsanne alone, and the label row of the same entry already says often.",
+      "cards[0].back: usually with some Roussanne now reads often, to agree.",
+      "service.age: white Hermitage keeps for decades now reads can keep for decades; the claim is true of the wines that last and was written as a rule."
+    ],
+    "open": [
+      "The warm rung keeps lemon beside honeydew melon and ripe peach: it is the Goulburn Valley wine, and it comes from the unoaked cellar more than from the climate, as the author says. A reader who takes the ladder as climate alone may be misled.",
+      "Victoria has grown Marsanne since the nineteenth century: the cuttings of the 1860s are confirmed in two sources, and the oldest block that survives is the one of 1927.",
+      "Orange marmalade with bottle age stands on merchants and tasting notes, not on a trade body. White Hermitage keeping for decades stands on the reference works; no search of this session confirmed it.",
+      "No source address could be opened from this session."
+    ]
+  }
 }
