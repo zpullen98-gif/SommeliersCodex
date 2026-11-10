@@ -9,7 +9,7 @@
   "lines": {
     "s10": "Muscat Blanc is the grape that tastes of grapes: fresh, perfumed with orange blossom, and usually sweet, from fizzy Moscato to rich dessert wine.",
     "s20": "Muscat Blanc is an old grape of the Mediterranean, and the Italians call it Moscato Bianco. It smells of fresh grapes, white peach and orange blossom, and it is most often made sweet: lightly sparkling in Asti, rich and strong in the south of France.",
-    "s45": "Muscat Blanc tastes like biting into a ripe table grape. It is an old Mediterranean grape, at home in Piedmont, the south of France and the Greek islands. Beside the grape itself come white peach, apricot and orange blossom. Most of it is sweet, with gentle acidity. Asti stops the fermentation early for a light sparkle, and the French add grape spirit to keep the sugar. Australia ages a red skinned form for years in cask, until it tastes of raisins and toffee. Pour the light ones with a peach tart, and the dark ones with blue cheese. Moscato d'Asti holds about half the alcohol of most wines.",
+    "s45": "Muscat Blanc tastes like biting into a ripe table grape. It is an old Mediterranean grape, at home in Piedmont, the south of France and the Greek islands. Beside the grape itself come white peach, apricot and orange blossom. Most of it is sweet, with gentle acidity. Asti stops the fermentation early for a light sparkle, and the French add grape spirit to keep the sugar. Australia ages a red skinned form for years in cask, until it tastes of raisins and toffee. Pour the light ones with a peach tart, and the dark ones with blue cheese. Moscato d'Asti holds less than half the alcohol of most wines.",
     "sale": "Muscat Blanc is pure pleasure at the end of a meal: fresh grape, peach and orange blossom, sweet without weight. I would pour a cold Moscato d'Asti with the fruit desserts, or a small glass of Rutherglen Muscat with the cheese."
   },
   "glass": {
@@ -41,7 +41,7 @@
         "glass": "Rutherglen Muscat is typically amber to deep brown, luscious and strong: raisin, dried fig, toffee and candied orange peel. California Moscato tends to be pale, light and sweet, often with a little sparkle.",
         "cellar": "Rutherglen leaves its red skinned Muscat to raisin on the vine, adds spirit early, then ages and blends it for years in old casks."
       },
-      "why": "Asti's hillside vineyards and early bottling keep the perfume fresh and the alcohol low. Rutherglen is hot and dry, so the grapes shrivel and concentrate, and years in warm sheds darken the wine.",
+      "why": "Asti's hillsides keep the perfume fresh, and a fermentation stopped early keeps the alcohol low. Rutherglen is hot and dry, so the grapes shrivel and concentrate, and years in warm sheds darken the wine.",
       "blur": "Samos also dries and cask ages some of its Muscat until amber, and Australia and California bottle light, fizzy Moscato in the Asti manner.",
       "call": "Pale, fresh grape and orange blossom with low alcohol lean Asti; amber brown, raisin and toffee with the warmth of spirit lean Rutherglen."
     }
@@ -74,7 +74,7 @@
   ],
   "compare": [
     { "slug": "gewurztraminer", "tell": "Gewürztraminer is lychee, rose petal and ginger, oilier and fuller; Muscat is fresh grape and orange blossom, lighter and less oily." },
-    { "slug": "torrontes", "tell": "Torrontés mimics the grapey, flowery nose but is dry, with more acidity and a bitter finish; Muscat is usually sweet and softer." },
+    { "slug": "torrontes", "tell": "Torrontés mimics the grapey nose but is dry, with more acidity and a bitter finish; Muscat is usually sweet and softer." },
     { "slug": "viognier", "tell": "Viognier is apricot and honeysuckle on a fuller, weightier, dry frame; Muscat smells of the grape itself and is lighter." }
   ],
   "cards": [
@@ -121,14 +121,17 @@
   ],
   "checked": {
     "date": "2026-11-10",
-    "verdict": "Sound after two fixes. Moscato d'Asti (stopped at about five per cent, capped at six and a half), Muscat Canelli as the California name, and Rutherglen's red skinned Muscat raisined on the vine were confirmed.",
+    "verdict": "Sound after five fixes. Moscato d'Asti (stopped at about five per cent, capped at six and a half), Muscat Canelli as the California name, and Rutherglen's red skinned Muscat raisined on the vine were confirmed.",
     "changed": [
       "glass.ladder: Alsace stood on the moderate rung beside Asti. The Court's grid read calls Alsace cool, so it has a cool rung of its own, where it is fermented dry: fresh table grape, elderflower and lemon.",
-      "lines.s45: gentle stood twice in two sentences; the sparkle is now light."
+      "lines.s45: gentle stood twice in two sentences; the sparkle is now light.",
+      "lines.s45, the closing line: about half the alcohol of most wines is now less than half. At about five per cent, and never above six and a half, it is under half of a table wine's twelve to fourteen.",
+      "worlds.contrast.why: early bottling does not keep alcohol low. The hillsides keep the perfume fresh, and the fermentation stopped early keeps the alcohol low, as the entry's own cellar line and third guest answer say.",
+      "compare, the Torrontés tell: the grapey, flowery nose is now the grapey nose; flowery is a family word in disguise."
     ],
     "open": [
       "The mode: the contrast is of method as much as of world, as the author says. It stands because Rutherglen Muscat and California Moscato are styles a guest meets on a list, and the blur line admits the rest.",
-      "The entry reads in 897 words of 900.",
+      "The entry reads in 898 words of 900.",
       "The Rutherglen age bands stay out of the entry. The growers' own material says age is one factor among several; the figures on the Codex's card are the ones the trade repeats."
     ]
   }

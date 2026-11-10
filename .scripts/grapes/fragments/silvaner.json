@@ -59,7 +59,7 @@
     { "q": "Is it sweet?", "a": "Rarely. Franken makes it properly dry, and most of what you will meet on a list is dry too." }
   ],
   "compare": [
-    { "slug": "muller-thurgau", "tell": "Müller-Thurgau is lighter and more flowery, with a faint nutmeg note and softer acidity; Silvaner is firmer, with pear, hay and a savoury finish." },
+    { "slug": "muller-thurgau", "tell": "Müller-Thurgau is lighter and more scented, with elderflower, a faint nutmeg note and softer acidity; Silvaner is firmer, with pear, hay and a savoury finish." },
     { "slug": "riesling", "tell": "Riesling has piercing acidity, lime and often some sweetness; Silvaner is gentler, dry and savoury, with pear and fresh hay." },
     { "slug": "pinot-blanc", "tell": "Pinot Blanc is rounder, with ripe apple and almond; Silvaner is leaner and more savoury, with green apple, hay and damp earth." }
   ],
@@ -70,11 +70,11 @@
     "other": "Fresh hay and cut grass, damp earth and celery root; a savoury, gently bitter finish; sweet almond in the Valais",
     "tell": "A gentle, dry, savoury white: pear and green apple with fresh hay and damp earth, medium acidity and no loud perfume",
     "regions": "Franken (in the Bocksbeutel) and Rheinhessen in Germany; Alsace as Sylvaner, with Zotzenberg; Alto Adige's Isarco Valley; the Valais as Johannisberg",
-    "confuse": "Riesling has higher acidity and lime; Müller-Thurgau is lighter and more flowery; Pinot Blanc is rounder, with almond"
+    "confuse": "Riesling has higher acidity and lime; Müller-Thurgau is lighter, with elderflower and nutmeg; Pinot Blanc is rounder, with almond"
   },
   "cards": [
     { "front": "Silvaner: which German region is its home, and in what bottle?", "back": "Franken, around Würzburg, where it is made dry and bottled in the flat, round Bocksbeutel. Rheinhessen grows it widely too." },
-    { "front": "Silvaner: who are its parents, and when did it reach Germany?", "back": "A natural cross of Traminer and Österreichisch Weiss, from Austria. Its first record in Germany is at Castell in Franken, on 6 April 1659." },
+    { "front": "Silvaner: who are its parents, and when did it reach Germany?", "back": "A natural cross of Traminer and Österreichisch Weiss, from Austria. It was first planted in Germany, on record, at Castell in Franken, on 6 April 1659." },
     { "front": "Under what names does Silvaner appear in Alsace and in the Valais?", "back": "Sylvaner in Alsace, where the grand cru Zotzenberg admits it, and Johannisberg in the Swiss Valais." }
   ],
   "questions": [
@@ -115,18 +115,19 @@
   ],
   "checked": {
     "date": "2026-11-10",
-    "verdict": "Sound after five fixes. A thin grape: its profile stands, in step with the Régionale row. The parentage, Castell in 1659, Zotzenberg, Johannisberg and the Bocksbeutel in two corners of Baden were confirmed.",
+    "verdict": "Sound after seven fixes. A thin grape: its profile stands, in step with the Régionale row. The parentage, the planting at Castell on 6 April 1659, Zotzenberg, Johannisberg and the Bocksbeutel in two corners of Baden were confirmed.",
     "changed": [
       "glass.notes, glass.ladder and profile.other: mint is struck. No source read gives it for Silvaner; fresh hay and cut grass stand on tasting notes for Franken wines.",
       "glass.notes: green almond is now bitter almond. The Valais notes read give almond, bitter almond on the finish and a sweet almond nose.",
       "lines.s45: it is a dry white grape is now it makes a dry white; a grape is not dry.",
       "questions[1]: the stem asked for a dry German white and one option, Dornfelder, was a red. The four are now white grapes: Silvaner against Gewürztraminer, Viognier and Torrontés, all loudly perfumed.",
-      "questions[0].q: the guest points to the flask on a shelf; nobody points to a flask in a list."
+      "questions[0].q: the guest points to the flask on a shelf; nobody points to a flask in a list.",
+      "cards[1].back: its first record in Germany is at Castell now reads it was first planted in Germany, on record, at Castell. The German wine body's Castell page, as search quoted it, gives 6 April 1659 as the day twenty five Austrian cuttings were planted at the foot of the Schlossberg; one general reference gives 5 April, the day of the purchase.",
+      "compare, the Müller-Thurgau tell, and profile.confuse: more flowery is a family word in disguise; the tell now names elderflower and nutmeg, as that grape's own entry does."
     ],
     "open": [
       "Honeydew melon and yellow plum are the German wine body's own words (melons, yellow plums and apples). Quince and celery root are tasting notes with no trade body behind them; root vegetable notes stand in two tasting sources, quince in none read here.",
-      "The acidity stays medium, as the Régionale row has it; the German body says mild and other sources say fresh.",
-      "The day of the Castell record, 6 April 1659, is the author's reading; the German body's grape page gives the year alone."
+      "The acidity stays medium, as the Régionale row has it; the German body says mild and other sources say fresh."
     ]
   }
 }
