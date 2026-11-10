@@ -9,7 +9,7 @@
   "lines": {
     "s10": "Silvaner is Franken's dry white, bottled in a round flask: pear, green apple and fresh hay, gentle and made for the table.",
     "s20": "Silvaner is a dry German white, at home in Franken and Rheinhessen. It is gentle and savoury, with pear, green apple and a scent of fresh hay, and it is the wine Germans pour with white asparagus.",
-    "s45": "Silvaner is what Germany pours when the white asparagus arrives. It is a dry white grape, at home in Franken, around Würzburg, and in Rheinhessen. It tastes of pear, green apple and honeydew melon, with a scent of fresh hay and a savoury note like damp earth. The acidity is gentle and the body medium, so nothing shouts. Growers make it in steel or big old casks, with no new oak. Besides asparagus, pour it with river fish, shellfish or a plate of ham. In Franken it comes in the Bocksbeutel, a flat, round flask that is the region's trademark.",
+    "s45": "Silvaner is what Germany pours when the white asparagus arrives. It makes a dry white, at home in Franken, around Würzburg, and in Rheinhessen. It tastes of pear, green apple and honeydew melon, with a scent of fresh hay and a savoury note like damp earth. The acidity is gentle and the body medium, so nothing shouts. Growers make it in steel or big old casks, with no new oak. Besides asparagus, pour it with river fish, shellfish or a plate of ham. In Franken it comes in the Bocksbeutel, a flat, round flask that is the region's trademark.",
     "sale": "Silvaner is the gentle white that lets the food speak: pear, green apple and a savoury finish, with no oak and no sharp edges. I would pour it with the asparagus, or with any simply cooked fish."
   },
   "glass": {
@@ -17,12 +17,12 @@
     "notes": [
       { "family": "orchard fruit", "notes": ["ripe pear", "green apple", "quince"] },
       { "family": "stone fruit", "notes": ["white peach", "yellow plum"] },
-      { "family": "herbal", "notes": ["fresh hay", "mint", "cut grass"] },
+      { "family": "herbal", "notes": ["fresh hay", "cut grass"] },
       { "family": "earth", "notes": ["damp earth", "celery root"] },
-      { "family": "nutty", "notes": ["sweet almond", "green almond"] }
+      { "family": "nutty", "notes": ["sweet almond", "bitter almond"] }
     ],
     "ladder": [
-      { "climate": "cool", "where": "Franken, Rheinhessen, Alsace and Alto Adige's Isarco Valley", "notes": ["green apple", "fresh hay", "mint"] },
+      { "climate": "cool", "where": "Franken, Rheinhessen, Alsace and Alto Adige's Isarco Valley", "notes": ["green apple", "fresh hay", "cut grass"] },
       { "climate": "moderate", "where": "The sunny, dry Valais in Switzerland, as Johannisberg", "notes": ["ripe pear", "honeydew melon", "sweet almond"] }
     ],
     "structure": "Dry. Acidity medium, gentler than Riesling's, alcohol moderate, body medium; a soft, savoury feel with no new oak."
@@ -67,7 +67,7 @@
     "c": "w",
     "st": "Pale straw with green tints · Body medium · Acid medium · Alcohol moderate · Dry; no new oak",
     "fruit": "Ripe pear, green apple and quince; white peach and honeydew melon from warmer sites",
-    "other": "Fresh hay, mint and cut grass, damp earth and celery root; a savoury, gently bitter finish; sweet almond in the Valais",
+    "other": "Fresh hay and cut grass, damp earth and celery root; a savoury, gently bitter finish; sweet almond in the Valais",
     "tell": "A gentle, dry, savoury white: pear and green apple with fresh hay and damp earth, medium acidity and no loud perfume",
     "regions": "Franken (in the Bocksbeutel) and Rheinhessen in Germany; Alsace as Sylvaner, with Zotzenberg; Alto Adige's Isarco Valley; the Valais as Johannisberg",
     "confuse": "Riesling has higher acidity and lime; Müller-Thurgau is lighter and more flowery; Pinot Blanc is rounder, with almond"
@@ -79,16 +79,16 @@
   ],
   "questions": [
     {
-      "q": "A guest reading a German list points to a squat, flat, round flask and asks what is likely to be inside. What do you tell him?",
+      "q": "A guest points to a squat, flat, round flask on the shelf of German wines and asks what is likely to be inside. What do you tell him?",
       "opts": ["Dry Silvaner from Franken", "Sweet Riesling from the Mosel", "Sparkling wine from the Rheingau", "Red wine from the Ahr"],
       "a": 0,
       "exp": "The Bocksbeutel is the flask of Franken, whose signature is dry Silvaner. Mosel Riesling comes in a tall, slim bottle."
     },
     {
-      "q": "White asparagus with hollandaise is on the menu, and a guest wants a dry German white that will not fight it. Which grape do you suggest?",
-      "opts": ["Silvaner", "Gewürztraminer", "Scheurebe", "Dornfelder"],
+      "q": "White asparagus with hollandaise is on the menu, and a guest wants a quiet, dry white that will not fight it. Which grape do you suggest?",
+      "opts": ["Silvaner", "Gewürztraminer", "Viognier", "Torrontés"],
       "a": 0,
-      "exp": "Silvaner's gentle acidity and quiet, savoury fruit make it Germany's own match for asparagus. Gewürztraminer's heavy perfume would cover the dish, and Dornfelder is a red."
+      "exp": "Silvaner's gentle acidity and quiet, savoury fruit make it Germany's own match for asparagus. Gewürztraminer, Viognier and Torrontés are loudly perfumed and would cover the dish."
     },
     {
       "q": "A blind white is dry and gentle: pear, green apple and fresh hay, a savoury finish, medium acidity and neither oak nor perfume. Which grape is it most likely to be?",
