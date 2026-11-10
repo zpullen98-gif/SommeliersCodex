@@ -37,12 +37,12 @@
       },
       "new": {
         "where": "New Zealand, California's Anderson Valley, Washington and the Finger Lakes",
-        "glass": "Typically paler, lighter and crisper: fresh lychee, rose petal and pink grapefruit with a little more acidity and less of the oily weight, most often dry to off dry.",
+        "glass": "Typically paler, lighter and fresher: lychee, rose petal and pink grapefruit with less of the oily weight and less sweetness, most often dry to off dry, though still soft in acidity.",
         "cellar": "Usually fermented cool in steel to guard the perfume and bottled young; a few late harvest wines are made."
       },
       "why": "Alsace lies dry and sunny behind the Vosges, with a long autumn, so the grape hangs late and turns rich, strong and soft. New World growers often choose cooler sites, by a cold coast or far south, and seek freshness.",
       "blur": "Alsace also makes taut, dry wines and Alto Adige's stay near dry, while New Zealand bottles rich late harvest wines of its own.",
-      "call": "Deep gold, oily weight and sweetness at high alcohol lean Alsace; a paler, crisper, drier wine with the same lychee and rose leans New World."
+      "call": "Deep gold, oily weight and sweetness at high alcohol lean Alsace; a paler, lighter, drier wine with the same lychee and rose leans New World."
     }
   },
   "service": {
@@ -56,7 +56,7 @@
       { "dish": "Munster and other washed rind cheeses", "why": "the wine's perfume and weight match the pungent rind" },
       { "dish": "Thai green curry", "why": "soft, off dry fruit sits easily with chilli and coconut" },
       { "dish": "Foie gras", "why": "a rich, off dry wine meets the richness" },
-      { "dish": "Gumbo with smoked sausage", "why": "off dry fruit cools the cayenne and the smoke" }
+      { "dish": "Gumbo with smoked sausage", "why": "off dry fruit cools the cayenne and stands up to the smoke" }
     ]
   },
   "labels": [
@@ -78,15 +78,15 @@
   ],
   "cards": [
     { "front": "Gewürztraminer: what does the name mean, and where is it at home?", "back": "Gewürz is German for spice; Traminer is named for Tramin in Alto Adige. Its home on a wine list is Alsace, where it is one of the four noble grapes." },
-    { "front": "Gewürztraminer blind: Alsace or the New World, what tips it?", "back": "Deep gold, oily weight, heady lychee and rose with some sweetness at high alcohol lean Alsace. A paler, lighter, crisper and drier wine leans New Zealand or California's cool coast." },
+    { "front": "Gewürztraminer blind: Alsace or the New World, what tips it?", "back": "Deep gold, oily weight, heady lychee and rose with some sweetness at high alcohol lean Alsace. A paler, lighter and drier wine leans New Zealand or California's cool coast." },
     { "front": "Gewürztraminer in the glass: which marks give it away?", "back": "Lychee, rose petal, an oily full body and low acidity, often with a little sweetness and a faintly bitter finish." }
   ],
   "questions": [
     {
-      "q": "Two glasses of Gewürztraminer are poured blind. The first is deep gold, oily and off dry, heady with lychee and rose at high alcohol. The second is paler, lighter, crisper and nearly dry. Which pair of origins fits, in that order?",
+      "q": "Two glasses of Gewürztraminer are poured blind. The first is deep gold, oily and off dry, heady with lychee and rose at high alcohol. The second is paler, lighter, fresher and nearly dry. Which pair of origins fits, in that order?",
       "opts": ["Alsace, then Marlborough", "Marlborough, then Alsace", "Finger Lakes, then Alsace", "Anderson Valley, then Marlborough"],
       "a": 0,
-      "exp": "Deep colour, oily weight, sweetness and high alcohol mark Alsace, where the grape ripens late and fully. Cool New World sites such as Marlborough tend to give a lighter, crisper, drier wine.",
+      "exp": "Deep colour, oily weight, sweetness and high alcohol mark Alsace, where the grape ripens late and fully. Cool New World sites such as Marlborough tend to give a lighter, fresher, drier wine.",
       "tag": "worlds"
     },
     {
@@ -117,5 +117,23 @@
     "The gumbo stands on the Court's grid read, which names Creole dishes for this grape.",
     "Left out: that the grape is an aromatic, pink skinned mutation of Savagnin, read only in general references in this session; and California late harvest wines, for want of a regional source.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after seven fixes. The Alsace notes (lychee, passion fruit, mango, rose, the spices), the New Zealand style and the naming of Traminer for Tramin were confirmed.",
+    "changed": [
+      "lines.s45: Traminer comes from Tramin is now Traminer is named for Tramin. The name is the village's; where the grape arose is disputed, and one reference calls the Alto Adige origin a myth.",
+      "worlds.contrast.new.glass, the call, the second card and the worlds question: crisper and a little more acidity are taken out. New Zealand's own trade body calls its Gewürztraminer full bodied, smooth and subtle in acidity, typically dry to off dry. The New World side is now paler, lighter, fresher and less sweet, though still soft in acidity.",
+      "worlds.contrast.new.cellar: under the grape's own name is taken out. Alsace prints the grape on the label too, so it parts nothing.",
+      "worlds.contrast.why: New World growers often choose cooler sites. The plain statement was false of Washington's Columbia Valley, which the entry itself lists.",
+      "questions[0].opts: three of the four options ended on then Alsace, so the key stood out by its form. Alsace and Marlborough now each stand in three options.",
+      "labels[1].means: Sélection de Grains Nobles is picked over several passes, not berry by berry.",
+      "food.with[3].why: the fruit cools the cayenne and stands up to the smoke; it cannot cool smoke."
+    ],
+    "open": [
+      "The lint's three notes on the word spice were read and left: each gives the meaning of Gewürz, where the family is the point.",
+      "The ladder calls Gisborne moderate, as a maritime region is classed against the world; the Codex's own Gisborne record calls it a warm coast, against the rest of New Zealand.",
+      "Alto Adige at five to ten grams of sugar a litre is the author's reading of the consortium, which could not be opened from this session."
+    ]
+  }
 }

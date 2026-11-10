@@ -54,7 +54,7 @@
   "guest": [
     { "q": "Why the long name?", "a": "It is the breeder's name and his home: Hermann Müller, a botanist from the Swiss canton of Thurgau, bred the grape at Geisenheim in Germany in 1882." },
     { "q": "Is it like Riesling?", "a": "It is a child of Riesling, but gentler: lighter, softer and lower in acidity, with a flowery, faintly Muscat scent, and meant for drinking young, not for keeping." },
-    { "q": "Is it sweet?", "a": "It can be either. Bottles labelled Rivaner or trocken are dry; others carry a little sweetness, and it is one of the grapes of soft, sweetish Liebfraumilch." }
+    { "q": "Is it sweet?", "a": "It can be either. Bottles labelled trocken are dry and Rivaner usually is; others carry a little sweetness, and it is one of the grapes of soft, sweetish Liebfraumilch." }
   ],
   "compare": [
     { "slug": "riesling", "tell": "Riesling, its parent, has piercing acidity, lime and long life; Müller-Thurgau is softer and lighter, with a flowery nutmeg scent, and fades sooner." },
@@ -112,5 +112,21 @@
     "The ladder gives Baden and the Pfalz as moderate and the rest of Germany as cool; the Codex notes Baden alone in the warmer European growing zone.",
     "Left out: New Zealand, where the grape was once common and is now marginal, read in one source only; every figure of area or share.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after six fixes. A new grape: its profile and its eight targets stand. Hermann Müller, Geisenheim, 1882, Riesling and Madeleine Royale, Rivaner and the altitude of Alto Adige were confirmed.",
+    "changed": [
+      "glass.notes: geranium is struck. The Codex's own service reference teaches geranium as a fault of wines kept with sorbate, and no source read gives it for this grape.",
+      "lines.s45, glass.lead, the Silvaner tell, profile.other and cards[2].back: elderflower leads where lilac led. Elderflower and nutmeg are the notes that recur in what was read; lilac stays second in the floral group on the author's reading of the Alto Adige consortium.",
+      "glass.ladder and profile.other: mint is struck for fresh hay, which two sheets for Alto Adige wines give beside nutmeg.",
+      "worlds.home.home: in every one of its regions is now across the country; only an informal source says every region.",
+      "guest[2].a: trocken is dry and Rivaner usually is; Rivaner is a custom, not a rule.",
+      "questions[1].opts: the key was the longest option and the only one with a date. It is now the man who bred it and his home canton, beside three of like length."
+    ],
+    "open": [
+      "Whether the Alto Adige consortium's page names lilac and geranium could not be read from this session.",
+      "Mace stands beside nutmeg in the spice group: one tree gives both, and a group wants two notes."
+    ]
+  }
 }
