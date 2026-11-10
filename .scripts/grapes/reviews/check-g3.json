@@ -1,0 +1,538 @@
+{
+  "chunk": "g3",
+  "date": "2026-11-10",
+  "role": "The second reading: each entry read to refute it, not to admire it.",
+  "grapes": [
+    "viognier",
+    "marsanne",
+    "roussanne",
+    "grenache-blanc",
+    "vermentino",
+    "pinot-grigio"
+  ],
+  "method": [
+    "Each fragment read whole beside what show.cjs prints for the grape (GRAPES, GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region records, banks, producers file and service reference where they name the grape or a place the entry leans on.",
+    "Every fact the reviewed records do not already state was put to search: the appellation rules (Côte-Rôtie, Châteauneuf-du-Pape, Saint-Péray, Bellet, Vermentino di Gallura, Rivesaltes, the Terra Alta mark, the Alsace sweetness wording), the histories (the Victorian vines, the California Roussanne that was Viognier, the cuttings of 1992, the end of the name Tokay), the synonyms, and the notes of the glass where nothing in the Codex stood behind one.",
+    "The glass read as a blind taster would: each note asked whether a taster would nod, each prose field scanned by a script for a family word in disguise, each ladder set beside the Codex's own climate line for the region and beside the other five ladders of the chunk.",
+    "Each side by side read for a lazy generalisation, each blur for the exception it leaves out, each call put to a flight that holds the awkward bottle (a Chignin-Bergeron beside a Paso Robles Roussanne, an Eden Valley Viognier beside a Condrieu, a Terra Alta wine beside a Californian one).",
+    "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences; the cards and questions read for one key, four options of one kind, a stem that gives nothing away and no question asked in the negative; the compare tells read from both sides against every fragment written so far that names these grapes.",
+    "node .scripts/grapes/build-grapes.cjs --lint --chunk g3 run after every round of edits until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+  ],
+  "limits": [
+    "This session reached search alone: no source address could be opened (www.vins-rhone.com and www.wineaustralia.com did not resolve from here, and no further host was tried). A page is cited as search results quoted it, and every address the authors gave stays unconfirmed.",
+    "The brief allows five searches a grape. Viognier took four, Marsanne five, Roussanne four, Grenache Blanc five and Vermentino five; Pinot Gris took six, one over, the sixth to read the New Zealand growers' own page on style.",
+    "Where a source's address names a producer or a living person it is left out and the source is cited by its title alone.",
+    "Albariño and Macabeo are not yet written, so the Vermentino and Grenache Blanc tells against them were read from one side only."
+  ],
+  "entries": {
+    "viognier": {
+      "verdict": "Sound after six fixes.",
+      "tested": [
+        "say against the Codex's own respelling in its Rhône record (vee-oh-NYAY): agrees.",
+        "Condrieu and Château-Grillet as the two appellations of Viognier alone; Château-Grillet a single estate with its own appellation inside Condrieu. Both stand on the Codex's Rhône record and its banks.",
+        "Côte-Rôtie: up to 20 per cent Viognier, fermented with the Syrah and not blended in afterwards. Confirmed in two sources; the white grapes of red Hermitage and Saint-Joseph (Marsanne and Roussanne) read against the third question.",
+        "The near loss of the 1960s against the Codex's Régionale bank (a few hectares by the late 1960s): agrees, with no figure of area.",
+        "The ladder against the Codex's climate lines: Eden Valley distinctly cooler than the Barossa floor; Virginia humid subtropical, summers hot and humid; inland Paso Robles hot by day.",
+        "worlds: the claim that Virginia and the Eden Valley are fresher, and that cooler Californian coasts give wines scented with violet, put to search.",
+        "The notes against the Gewürztraminer entry of chunk g2 and against both reviewed records.",
+        "Service against the Codex's row for full whites (50 to 55 degrees Fahrenheit, 10 to 13 degrees Celsius, Viognier named in it) and TASTE.age (two to five, it tires early): agree.",
+        "Compare tells from both sides with Chardonnay, Marsanne, Gewürztraminer and Muscat Blanc."
+      ],
+      "changed": [
+        {
+          "field": "glass.ladder, the moderate rung",
+          "was": "Condrieu and Château-Grillet, Virginia, the Eden Valley",
+          "now": "Condrieu and Château-Grillet; the Eden Valley",
+          "why": "The Codex's Virginia record reads the state as humid subtropical with hot, humid summers. A search found no source that sets Virginia Viognier fresher than California: its producers describe bright acidity and very little acidity alike.",
+          "sources": [
+            {
+              "title": "Virginia Wine: the listings of the state's Viognier wines, as search quoted them",
+              "url": "https://www.virginiawine.org/"
+            }
+          ]
+        },
+        {
+          "field": "worlds.contrast.new.glass",
+          "was": "Virginia and the Eden Valley tend to be fresher.",
+          "now": "The cooler Eden Valley tends to be fresher.",
+          "why": "The same. Virginia stays in new.where, since the reviewed record names it for the grape.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.blur",
+          "was": "Virginia, the Eden Valley and cooler Californian coasts make restrained wines scented with violet, and a hot year or generous new oak can make Condrieu rich and heady.",
+          "now": "The Eden Valley and other cooler New World sites make fresher, more restrained wines, and a hot year or generous new oak can make Condrieu rich and heady.",
+          "why": "Neither the violet nor the Californian coasts were confirmed. The Eden Valley's restraint is: tasting notes read give a restrained nose of gentle apricot and floral notes, and one says in terms that it is not the heavy style.",
+          "sources": []
+        },
+        {
+          "field": "lines.s45",
+          "was": "Condrieu tends to be the more restrained, while California and Australia are often riper and broader.",
+          "now": "Condrieu tends to be the more restrained, while California is often riper and broader.",
+          "why": "The entry's own Australian place is the Eden Valley, which its worlds section calls the fresher one. The spoken line contradicted the section under it.",
+          "sources": []
+        },
+        {
+          "field": "cards[1].back",
+          "was": "lean California or Australia.",
+          "now": "lean California or another warm New World site.",
+          "why": "The same contradiction, on the card of the blind call.",
+          "sources": []
+        },
+        {
+          "field": "glass.notes",
+          "was": "floral: honeysuckle, violet, jasmine; spice: fresh ginger, musk",
+          "now": "floral: honeysuckle, violet, jasmine, musk",
+          "why": "Fresh ginger is the lead note of the Gewürztraminer entry, whose tell says Viognier has no lychee or ginger, and the reviewed Gewürztraminer record parts the two grapes the same way (Viognier without the lychee or spice). Search found ginger in Viognier only as a sometimes subtle hint. Musk is well attested and sits with the flowers, where the reviewed Muscat record keeps it.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The reviewed Viognier record prints musk and ginger; the reviewed Gewürztraminer record says Viognier is without the lychee or spice. See codexRecords.",
+        "Château-Grillet is kept as an appellation, as the Codex teaches it; no owner is named.",
+        "A ripe Condrieu raised in new oak shows mango and vanilla too. The call is hedged and the blur admits it."
+      ],
+      "sources": [
+        {
+          "title": "Wine Spectator: Why is Viognier added to some Syrah?",
+          "url": "https://www.winespectator.com/articles/5340"
+        },
+        {
+          "title": "Wikipedia: Co-fermentation",
+          "url": "https://en.wikipedia.org/wiki/Co-fermentation"
+        },
+        {
+          "title": "French Ministry of Agriculture: the rule of Côte-Rôtie as approved in 2024",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-dceb7462-aee6-4db6-a6f7-a7d5cb91349e/telechargement"
+        },
+        {
+          "title": "Tasting notes for Eden Valley Viognier, as merchants print them",
+          "url": ""
+        }
+      ]
+    },
+    "marsanne": {
+      "verdict": "Sound after five fixes.",
+      "tested": [
+        "say against the Codex's own respelling (mar-SAHN): agrees.",
+        "The vines of 1927 in Victoria: the Codex's Australian bank and producers file state them, and search confirms them; the cuttings of the 1860s behind since the nineteenth century confirmed in two sources.",
+        "The Victorian style: unoaked, fermented in steel, honeysuckle and lemon when young, honey and toast with bottle age. Confirmed; the Codex says unoaked and neutral when young, honeysuckle and toast after ten years.",
+        "Saint-Péray as Marsanne and Roussanne alone, still and sparkling by the traditional method: confirmed.",
+        "The Valais names in the third question (Ermitage for Marsanne, Fendant for Chasselas, Johannisberg for Silvaner, Malvoisie for Pinot Gris): confirmed, and the Codex's Swiss record agrees.",
+        "The label word Ermitage against the Codex's producers file, which records it as a spelling of Hermitage on Rhône labels.",
+        "The notes of the glass one by one; lime found in no source.",
+        "Service against the row for full whites (white Rhône is named in it) and TASTE.age (closes young, opens after five): agree.",
+        "Compare tells from both sides with Roussanne, Viognier and Chardonnay: agree."
+      ],
+      "changed": [
+        {
+          "field": "labels, Ermitage",
+          "was": "The name Marsanne takes in the Valais in Switzerland, where it is rich and often sweet.",
+          "now": "In the Valais, the Swiss name for Marsanne, often sweet; on a Rhône label, another spelling of Hermitage.",
+          "why": "The Codex's own producers file records Ermitage as the spelling one Rhône house gives its Hermitage wines, red and white, and such bottles reach a list. A guest shown that word on a French red would have been told it means Marsanne.",
+          "sources": []
+        },
+        {
+          "field": "glass.notes",
+          "was": "citrus: lemon, lime",
+          "now": "(the group is struck)",
+          "why": "Lime stands in no source read. Lemon is the young, unoaked Victorian wine and stays on the warm rung, in the New World glass and in the call; a group needs two notes and no second citrus note could be confirmed.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.old.cellar",
+          "was": "Usually blended with a little Roussanne",
+          "now": "Often blended with a little Roussanne",
+          "why": "Many white wines of Hermitage, Crozes-Hermitage and Saint-Joseph are Marsanne alone; the entry's own label row says often.",
+          "sources": []
+        },
+        {
+          "field": "cards[0].back",
+          "was": "usually with some Roussanne",
+          "now": "often with some Roussanne",
+          "why": "To agree.",
+          "sources": []
+        },
+        {
+          "field": "service.age",
+          "was": "white Hermitage keeps for decades.",
+          "now": "white Hermitage can keep for decades.",
+          "why": "True of the wines that last, and written as a rule.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The warm rung keeps lemon for the Goulburn Valley: honest of that place and of its unoaked cellar, less so of the climate.",
+        "Orange marmalade with bottle age stands on merchants' notes; white Hermitage keeping for decades on the reference works.",
+        "With the citrus group gone the notes hold five groups and no lemon; an integrator who can confirm a second citrus note may restore the group."
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Saint-Péray AOC",
+          "url": "https://en.wikipedia.org/wiki/Saint-P%C3%A9ray_AOC"
+        },
+        {
+          "title": "Inter Rhône: Côtes du Rhône Cru Saint-Péray",
+          "url": "https://vins-rhone.com/en/cotes-du-rhone-cru-aoc-saint-peray"
+        },
+        {
+          "title": "Falstaff: Switzerland, the canton of Valais",
+          "url": "https://www.falstaff.com/nordics/regions/switzerland-canton-of-valais"
+        },
+        {
+          "title": "The Victorian estate's own history and tasting notes, as search quoted them",
+          "url": ""
+        }
+      ]
+    },
+    "roussanne": {
+      "verdict": "Sound after seven fixes.",
+      "tested": [
+        "say against the Codex's respellings (roo-SAHN; bair-zhuh-ROHN for Bergeron): agrees.",
+        "The California vines sold as Roussanne and shown by DNA to be Viognier: confirmed in three sources; no person or house is named in the entry.",
+        "Bergeron and Chignin-Bergeron (Roussanne alone, on scree), plain Chignin as chiefly Jacquère, Altesse as the grape of Roussette: the Codex's Savoie record states all four.",
+        "The white grapes Châteauneuf-du-Pape permits: Roussanne, Grenache Blanc, Clairette, Bourboulenc, Picpoul and Picardan appear on every list read; Marsanne and Viognier on none.",
+        "The notes: honeysuckle and iris on the Rhône body's page, hawthorn and apricot on two French pages, a flowery herbal tea in the reference works; white tea in none.",
+        "worlds: the call put to a flight with a Chignin-Bergeron in it; the why read for its cause; Washington and the Swartland checked as places.",
+        "The profile of a thin grape: seven fields, each named and none by family; st against the Régionale row (acidity above Marsanne's).",
+        "The third question for its form.",
+        "Compare tells from both sides with Marsanne, Viognier and Grenache Blanc: agree."
+      ],
+      "changed": [
+        {
+          "field": "questions[2]",
+          "was": "A guest asks which white grape she will not find in a Châteauneuf-du-Pape blanc. Which of these four is not permitted there? (Marsanne, Roussanne, Grenache Blanc, Clairette)",
+          "now": "A guest who knows the white grapes of the northern Rhône asks what the Châteauneuf-du-Pape blanc on the list can hold. Which pair may that appellation use? (Roussanne and Grenache Blanc; Roussanne and Marsanne; Marsanne and Viognier; Roussanne and Viognier)",
+          "why": "The brief refuses a question asked in the negative. The same fact is now asked in the positive, with four pairs of one kind and one key.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.call",
+          "was": "baked pear, honey and a warmer, broader finish lean New World.",
+          "now": "baked pear and a warmer, broader finish lean New World.",
+          "why": "The entry gives Savoie apricot and honey in its Old World glass, its label row and its first card. Honey could not part the worlds; the baked fruit and the finish do.",
+          "sources": []
+        },
+        {
+          "field": "cards[1].back",
+          "was": "Baked pear, honey and a warmer, broader finish lean California.",
+          "now": "Baked pear and a warmer, broader finish lean California.",
+          "why": "To agree with the call.",
+          "sources": []
+        },
+        {
+          "field": "questions[0].exp",
+          "was": "Baked pear, honey and a warm, broad finish point to a ripe New World Roussanne such as Paso Robles. Chignin-Bergeron is Roussanne too, but from a cool alpine site it finishes fresher.",
+          "now": "Baked pear, an oily feel and a warm, broad finish point to a ripe New World Roussanne such as Paso Robles. Chignin-Bergeron is Roussanne too, and can show honey, but from a cool alpine site it finishes fresher.",
+          "why": "The same: the explanation no longer makes honey a New World mark.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.why",
+          "was": "The Rhône's rules name places and favour blends",
+          "now": "The Rhône's labels name places and its growers favour blends",
+          "why": "No rule asks for a blend. Hermitage may be Roussanne alone, and the entry itself names a cru of Savoie that must be.",
+          "sources": []
+        },
+        {
+          "field": "glass.notes",
+          "was": "floral: honeysuckle, iris, hawthorn blossom; herbal: chamomile tea, white tea",
+          "now": "floral: honeysuckle, iris, hawthorn blossom, chamomile tea",
+          "why": "White tea stands in no source read. Chamomile, a flower, joins the floral notes and the herbal group, left with one note, is struck.",
+          "sources": []
+        },
+        {
+          "field": "profile.other",
+          "was": "Honeysuckle, iris, chamomile tea and white tea",
+          "now": "Honeysuckle, iris, hawthorn blossom and chamomile tea",
+          "why": "The same, in the profile the stock card reads.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The plan's side by side stands, though the author doubted it: varietal bottles from Paso Robles and Washington are a style a guest meets. The Swartland uses the grape in blends.",
+        "Chamomile is the author's naming of the herbal tea of the reference works; no source read names chamomile itself.",
+        "The Régionale bank says Roussanne ripens late; the Rhône body is quoted as early to mid. The entry states neither."
+      ],
+      "sources": [
+        {
+          "title": "Wine Spectator: Vine mix up lands California winemaker and grower in court",
+          "url": "https://origin.winespectator.com/articles/vine-mix-up-lands-california-winemaker-and-grower-in-court-20767"
+        },
+        {
+          "title": "Capstone California: Roussanne, history",
+          "url": "https://capstonecalifornia.com/study-guides/varieties/white/roussanne/history"
+        },
+        {
+          "title": "Inter Rhône: Roussanne, general characteristics",
+          "url": "https://preprod2.vins-rhone.com/index.php/en/vineyard/grapes/roussanne"
+        },
+        {
+          "title": "National Institute of Origin and Quality: Châteauneuf-du-Pape",
+          "url": "https://www.inao.gouv.fr/node/2562/printable/pdf"
+        }
+      ]
+    },
+    "grenache-blanc": {
+      "verdict": "Sound after six fixes.",
+      "tested": [
+        "say: gruh-NASH as the Court says Grenache, gar-NAH-chah as the Codex says Garnacha.",
+        "A new grape: the seven targets against REGIONS (the lint proves each exists) and against what the entry and the Codex's records say of each place; Paarl stands on the Codex's Paarl record, which names the grape in its white blends.",
+        "The profile: seven fields, named and not by family; confuse read against the Roussanne, Viognier and Marsanne entries.",
+        "The colour mutation; the cuttings of 1992 from Châteauneuf-du-Pape, confirmed in three sources; the year the name was approved for American labels, not confirmed.",
+        "The Terra Alta mark for wines wholly of the grape: confirmed (all Garnatxa Blanca, and a score from the denomination's tasters).",
+        "Rivesaltes Ambré: white grapes, Grenache Blanc among the main ones, aged in air for two years at least; Banyuls Rimage and Maury Grenat as young wines kept from air. Confirmed.",
+        "The claim that California picks early to keep the grape crisp: no source says so. The sources say the climate there gives rich texture and crisp acids together.",
+        "The ladder against the other three Rhône whites of the chunk, which put the Central Coast on the warm rung.",
+        "Service against the row for full whites: agrees."
+      ],
+      "changed": [
+        {
+          "field": "lines.s45",
+          "was": "and California picks early to keep it crisp.",
+          "now": "and California's cold nights keep it crisp.",
+          "why": "Early picking is unconfirmed. The Codex's Central Coast record reads inland Paso Robles as hot by day and cold by night, and the growers' own pages put the crisp acids down to the climate.",
+          "sources": [
+            {
+              "title": "Rhône Rangers: more about Grenache Blanc",
+              "url": "https://rhonerangers.org/wine-education/white-grapes/more-about-grenache-blanc"
+            },
+            {
+              "title": "Paso Robles Wine Country Alliance: Grenache Blanc in the vineyard",
+              "url": "https://pasowine.com/grenache-blanc-in-the-vineyard/"
+            }
+          ]
+        },
+        {
+          "field": "worlds.contrast.new.cellar",
+          "was": "Picked early to hold acidity, then fermented in steel, concrete or older barrels",
+          "now": "Fermented in steel, concrete or older barrels, with little new oak",
+          "why": "The same.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.why",
+          "was": "California's cool nights and earlier picking keep it crisp",
+          "now": "California's cold nights help it hold its acidity",
+          "why": "The same.",
+          "sources": []
+        },
+        {
+          "field": "questions[0].exp",
+          "was": "suit a California Grenache Blanc picked early.",
+          "now": "suit a California Grenache Blanc, where cold nights hold the acidity.",
+          "why": "The same.",
+          "sources": []
+        },
+        {
+          "field": "glass.ladder, the moderate rung",
+          "was": "Terra Alta's high plateau; California's Central Coast, picked early",
+          "now": "Terra Alta's high plateau; the cooler western hills of Paso Robles",
+          "why": "Viognier, Marsanne and Roussanne put the Central Coast on the warm rung; one place cannot be warm for three grapes and moderate for a fourth. The cooler west of Paso Robles, on limestone, is where the grape is grown, and a rung names a place and not a picking date.",
+          "sources": []
+        },
+        {
+          "field": "cards[2].back",
+          "was": "and gained its own name on American labels in 2002.",
+          "now": "and was bottled there under its own name about ten years later.",
+          "why": "One source gives varietal bottles since 2002; none read gives the year the name was approved. The card now states what is confirmed.",
+          "sources": [
+            {
+              "title": "Capstone California: Grenache Blanc, history",
+              "url": "https://capstonecalifornia.com/study-guides/varieties/white/grenache_blanc/history"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "The year the grape's name was approved for American labels: see unsettled.",
+        "Fennel stands on the Codex's Priorat record and on Spanish notes, liquorice on Californian ones; the Rhône body's page was not found to name fennel.",
+        "Terra Alta sits on the moderate rung for its height; its summers are hot.",
+        "The second question keys Grenache Blanc for weight in a white Châteauneuf-du-Pape. One Californian source says the estate that sent the cuttings values the grape there for acidity; the Rhône body and the reference works say weight."
+      ],
+      "sources": [
+        {
+          "title": "Diari de Tarragona: the Terra Alta council on its Garnatxa Blanca mark",
+          "url": ""
+        },
+        {
+          "title": "Wines of Roussillon: vins doux naturels",
+          "url": "https://winesofroussillon.com/vins-doux-naturels/"
+        },
+        {
+          "title": "French Ministry of Agriculture: the rule of Rivesaltes",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-5a1e5e28-f4bf-4626-bbc3-70ee9a4bfc7c/telechargement"
+        },
+        {
+          "title": "Paso Robles Wine Country Alliance: Grenache Blanc in the vineyard",
+          "url": "https://pasowine.com/grenache-blanc-in-the-vineyard/"
+        }
+      ]
+    },
+    "vermentino": {
+      "verdict": "Sound after five fixes.",
+      "tested": [
+        "say: vair-men-TEE-noh beside the Codex's ver-men-TEE-noh, and ROLL beside its ROHL: the same sounds.",
+        "Vermentino di Gallura: DOCG by a decree of 11 September 1996, DOC since 1975, at least 95 per cent Vermentino. Confirmed, and the Codex's Sardinian record agrees. The regional Vermentino di Sardegna covers the whole island.",
+        "Pigato and Favorita as the same vine by DNA; Vermentinu in Corsica; Rolle in Provence. Confirmed, and the Codex's records agree.",
+        "Bellet: the appellation's rule names Vermentino the main white variety and admits others.",
+        "The rule that French labels may not say Vermentino from the 2022 harvest: confirmed for 2022 in three trade reports; its standing today not confirmed in two searches.",
+        "The ladder against the Codex's climate lines for Liguria (warm, dry summers and constant sea breezes) and Corsica (hot, dry summers, long hours of sun).",
+        "Abroad: McLaren Vale, the Riverland and the King Valley, with the Hunter beside them, in several Australian sources; California in the state body's page.",
+        "A home grape: no worlds tag on any question, as the plan asks.",
+        "Service against the row for light aromatic whites: agrees. TASTE.age (young): agrees."
+      ],
+      "changed": [
+        {
+          "field": "labels, Rolle",
+          "was": "The grape's name in Provence and the Languedoc; since the 2022 harvest French labels may not say Vermentino.",
+          "now": "The grape's name in Provence and the Languedoc; a little also goes into Provence rosé.",
+          "why": "A rule that can change, with nothing read on how it stands today, and the house keeps nothing volatile. The author asked for exactly this if the rule could not be confirmed as standing. The new half line is the Codex's own Provence record (a small lifting share of many rosés).",
+          "sources": [
+            {
+              "title": "The Drinks Business: Languedoc producers and the ban on the name Vermentino",
+              "url": "https://www.thedrinksbusiness.com/2022/09/languedoc-producers-furious-at-ban-on-vermentino/"
+            },
+            {
+              "title": "wein.plus: French winegrowers and the ban on the name Vermentino",
+              "url": "https://magazine.wein.plus/news/french-winegrowers-outraged-about-vermentino-ban-eu-already-protects-italian-designations-of-origin-since-2018"
+            },
+            {
+              "title": "Meininger: no Vermentino of 2022 from France",
+              "url": "https://www.meininger.de/wein/politik-und-verbaende/kein-2022er-vermentino-aus-frankreich"
+            }
+          ]
+        },
+        {
+          "field": "glass.ladder",
+          "was": "moderate: Liguria, the Colli di Luni and northern Corsica; warm: Sardinia, the Tuscan Maremma, Provence and McLaren Vale",
+          "now": "moderate: Liguria and the Colli di Luni, cooled by sea breezes; warm: Sardinia, Corsica, the Tuscan Maremma, Provence and McLaren Vale",
+          "why": "The Codex's Corsican record reads hot, dry summers and long hours of sun. Nothing read sets the north of the island apart as moderate.",
+          "sources": []
+        },
+        {
+          "field": "questions[1].exp",
+          "was": "and the white grape of Bellet",
+          "now": "and the main white grape of Bellet",
+          "why": "The appellation's rule names Vermentino the main variety and admits others, Chardonnay among them.",
+          "sources": [
+            {
+              "title": "National Institute of Origin and Quality: Bellet, the appellation's rule",
+              "url": "https://extranet.inao.gouv.fr/fichier/AOC-SOMM49-01122011-1-CDC-Bellet.pdf"
+            }
+          ]
+        },
+        {
+          "field": "questions[2].exp",
+          "was": "Vermentino di Sardegna is the lighter DOC made across the rest of the island.",
+          "now": "Vermentino di Sardegna is the lighter DOC made across the whole island.",
+          "why": "The regional DOC covers all of Sardinia, the Gallura included.",
+          "sources": [
+            {
+              "title": "Italian Wine Central: Vermentino di Gallura DOCG",
+              "url": "https://italianwinecentral.com/denomination/vermentino-di-gallura-docg/"
+            }
+          ]
+        },
+        {
+          "field": "sources",
+          "was": "The Drinks Business and Meininger, on the label rule",
+          "now": "The Bellet rule and Wine Grapes",
+          "why": "The two trade reports carried a claim the entry no longer makes; the two that replace them carry claims it still does.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The French label rule: see unsettled.",
+        "Nectarine beside white peach is not separately confirmed.",
+        "Favorita of Piedmont stays out of the shown text for room; the entry reads 730 of 900 words and could carry it."
+      ],
+      "sources": [
+        {
+          "title": "Italian Wine Central: Vermentino di Gallura DOCG",
+          "url": "https://italianwinecentral.com/denomination/vermentino-di-gallura-docg/"
+        },
+        {
+          "title": "Wikipedia: Vermentino",
+          "url": "https://en.wikipedia.org/wiki/Vermentino"
+        },
+        {
+          "title": "National Institute of Origin and Quality: Bellet, the appellation's rule",
+          "url": "https://extranet.inao.gouv.fr/fichier/AOC-SOMM49-01122011-1-CDC-Bellet.pdf"
+        },
+        {
+          "title": "Réussir Vigne: wine labels, the rules particular to certain grapes",
+          "url": ""
+        }
+      ]
+    },
+    "pinot-grigio": {
+      "verdict": "Sound after one fix.",
+      "tested": [
+        "say against GRID_SAY (PEE-noh GREE-joh): opens on it. GROW-boor-goon-der is the Codex's own respelling in its Baden record.",
+        "The ladder against the Court's grid read (Friuli and Trentino-Alto Adige cool) and the Codex's records: agrees. The structure against the grid (acidity medium to medium plus, alcohol medium, a bitter finish): agrees.",
+        "Alsace labels and sweetness: an order of 28 May 2021 makes one of four words, or a scale, compulsory from the 2021 vintage. Confirmed, and the Codex's Master bank asks it.",
+        "Tokay d'Alsace, then Tokay Pinot Gris, gone by 2007 under an agreement of 1993 with Hungary: confirmed, and the Codex's bank agrees.",
+        "Delle Venezie, Grauburgunder and Ruländer, ramato: each stands on a Codex record.",
+        "The New World side: the New Zealand growers' body calls its Pinot Gris nearer Alsace than Italy, ripe and oily from the North Island and tighter from the South; Oregon dry and unoaked in the Codex's Oregon record.",
+        "The three part call put to a flight of Alsace, Friuli and Oregon; the worlds question for one key among four orders.",
+        "Service against the row for light aromatic whites (Pinot Grigio named in it) and TASTE.age: agree.",
+        "Compare tells from both sides with Pinot Blanc, Chardonnay, Gewürztraminer, Melon de Bourgogne and Vermentino: agree."
+      ],
+      "changed": [
+        {
+          "field": "worlds.contrast.old.cellar",
+          "was": "German Grauburgunder is dry.",
+          "now": "German Grauburgunder is usually dry.",
+          "why": "An absolute in a field the brief asks to hedge; the same entry names Ruländer for the sweeter wine.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "A rich New Zealand wine goes to Alsace under the three part call; the blur admits it.",
+        "The copper wine takes a few hours on its skins in the entry and in the Codex's Friuli record; sources read give four to 24 hours.",
+        "The day the name Tokay ended is 1 January, March or 1 April 2007 by the source; the entry says by 2007.",
+        "The entry reads 891 of 900 words."
+      ],
+      "sources": [
+        {
+          "title": "wein.plus: Alsatian wines must indicate sugar content on labels from the 2021 vintage",
+          "url": "https://magazine.wein.plus/news/alsatian-wines-must-indicate-sugar-content-on-labels-from-the-2021-vintage-onwards-the-residual-sugar-content-must-be-stated-due-to-eu-regulations"
+        },
+        {
+          "title": "Vitisphere: sweetness levels now stated on Alsace wines",
+          "url": "https://www.vitisphere.com/news-95174-sweetness-levels-now-stated-on-alsace-wines.html"
+        },
+        {
+          "title": "New Zealand Winegrowers: New Zealand Pinot Gris",
+          "url": "https://www.nzwine.com/en/winestyles/pinot-gris/"
+        },
+        {
+          "title": "Wikipedia: Alsace wine",
+          "url": "https://en.wikipedia.org/wiki/Alsace_wine"
+        }
+      ]
+    }
+  },
+  "codexRecords": [
+    "js/reference.js, the Viognier and Gewürztraminer profiles: Viognier's other notes read musk and ginger, while Gewürztraminer's confuse line says Viognier is apricot and honeysuckle without the lychee or spice. The two reviewed records pull apart. The table sides with the second (ginger is Gewürztraminer's lead note there); the owner may want ginger out of the Viognier profile, or the confuse line softened.",
+    "js/data-intro.js, the Roussanne row: its wines read Hermitage, Châteauneuf-du-Pape blanc (with Marsanne). Marsanne is not among the grapes Châteauneuf-du-Pape permits. The author's flag, confirmed on every list read; the row is the Régionale course's own and is left alone.",
+    "js/data-intro.js, the Régionale rows: Vermentino's reviewed profile opens its fruit on the bare word Citrus, and Roussanne's row says herbal tea and white flowers. Family words, as the author says; the table names the things.",
+    "The Codex's Rhône bank says Roussanne ripens late; the Rhône body is quoted as early to mid. Not tested further, since the entry states neither.",
+    "The Codex's producers file records Ermitage as one house's spelling of Hermitage, and its Swiss record gives Ermitage as Marsanne in the Valais. Both are right; the Marsanne label row now carries both, so the two records no longer trip a reader."
+  ],
+  "unsettled": [
+    "Vermentino on French labels. Three trade reports of 2022 say an annex of the European labelling regulation keeps the grape name for Italy, Australia, the United States and Croatia, and that French growers were told to stop using it from the 2022 harvest. Two searches found no later change and no later confirmation. The half line is struck; restore it only on a current source.",
+    "The year Grenache Blanc was approved as a name for American labels. The author gives 2002 on two growers' bodies; a search confirmed varietal bottles since 2002 and no date of approval. The card now says about ten years after 1992.",
+    "The Gewürztraminer entry of chunk g2 says in its Viognier tell that Viognier has no lychee or ginger. It is another chunk's fragment and was not touched; with ginger now out of the Viognier notes the two entries agree, and only the reviewed Viognier profile still prints ginger.",
+    "Whether Virginia Viognier is, as a style, fresher than California's. Nothing read says so and the Codex reads Virginia's summers as hot and humid, so the claim is out; a regional source could put it back.",
+    "A second citrus note for Marsanne, and nectarine for Vermentino: neither confirmed.",
+    "Whether every source address still answers: none could be opened from this session."
+  ],
+  "settled": [
+    "Côte-Rôtie: the Viognier is fermented with the Syrah, not blended in afterwards; two sources agree, so never blended in afterwards stands on the third Viognier card.",
+    "Roussanne's side by side: varietal Roussanne from Washington's Columbia Valley is on sale under several labels, so the plan's mode stands.",
+    "Vermentino di Gallura: DOCG by the decree of 11 September 1996 and at least 95 per cent Vermentino.",
+    "Alsace: the sweetness wording is compulsory from the 2021 vintage, so the guest answer that sends a guest to the word sec stands."
+  ]
+}
