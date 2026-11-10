@@ -108,7 +108,8 @@ var V57_WORDS = {
   listOne: 'One wine on our list is made with this grape. It opens its card.',
   listMany: '{n} wines on our list are made with this grape. Each opens its card.',
   worldCount: '{world} · {n}',
-  elsewhere: 'Elsewhere'
+  elsewhere: 'Elsewhere',
+  toList: 'On our list · {n}'
 };
 
 function v57W(key, vars) {
@@ -188,6 +189,10 @@ function v57T(slug) {
     '.wrap .v57-side.v57-new{border-top-color:var(--green)}',
     '.wrap .v57-side .v57-side-h{margin:0 0 8px}',
     '.wrap .v57-side p{margin:0}',
+    '.wrap .v57-side .v57-sidedoor,.wrap .v39-body .v57-sidedoor{margin:12px 0 0}',
+    '.wrap .v57-sidedoor .btn{font-size:16px}',
+    '.wrap .v57-page h4[tabindex="-1"]:focus{outline:none}',
+    '.wrap .v57-page h4[tabindex="-1"]:focus-visible{outline:2px solid var(--claret);outline-offset:3px}',
     '.wrap .v57-rows{margin:0}',
     '.wrap .v57-rows dt{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;line-height:1.5;color:var(--ink-soft);margin:10px 0 1px}',
     '.wrap .v57-rows dt:first-child{margin-top:0}',
@@ -395,28 +400,34 @@ function v57GlassHtml(t) {
 
 /* 3.3 Old World and New World: the two sides as two cards of the same three rows (where, in the glass, in the
    cellar), then why they differ, where the line blurs and the blind call; or, for a grape that stays at home,
-   At home and Abroad. */
+   At home and Abroad. Given the house's wines of the grape (v57HouseWines), each side the house pours carries a
+   door to its part of On our list. */
+function v57ListDoor(world, n) {
+  return n ? '<p class="v57-sidedoor"><button type="button" class="btn small ghost" data-v57="list" data-world="' + v57Esc(world) + '">' + v57Esc(v57W('toList', { n: n })) + '</button></p>' : '';
+}
 function v57WorldsMode(t) {
   var w = v57Obj(t && t.worlds);
   var c = v57Obj(w.contrast), h = v57Obj(w.home);
   if (v57Str(v57Obj(c.old).glass) && v57Str(v57Obj(c['new']).glass)) return 'contrast';
   return (v57Str(h.home) || v57Str(h.abroad)) ? 'home' : '';
 }
-function v57WorldsBody(t) {
+function v57WorldsBody(t, hw) {
   var mode = v57WorldsMode(t);
   var w = v57Obj(t && t.worlds);
+  var poured = v57Obj(hw);
   if (mode === 'contrast') {
     var c = v57Obj(w.contrast);
-    var side = function (key, o, cls) {
-      return '<div class="v57-side ' + cls + '">' + v57H4(key, 'v57-side-h') + v57Rows([[v57W('where'), o.where], [v57W('inGlass'), o.glass], [v57W('inCellar'), o.cellar]]) + '</div>';
+    var side = function (key, o, cls, world) {
+      return '<div class="v57-side ' + cls + '">' + v57H4(key, 'v57-side-h') + v57Rows([[v57W('where'), o.where], [v57W('inGlass'), o.glass], [v57W('inCellar'), o.cellar]])
+        + v57ListDoor(world, v57List(poured[world]).length) + '</div>';
     };
-    return '<div class="v57-sides">' + side('oldWorld', v57Obj(c.old), 'v57-old') + side('newWorld', v57Obj(c['new']), 'v57-new') + '</div>'
+    return '<div class="v57-sides">' + side('oldWorld', v57Obj(c.old), 'v57-old', 'old') + side('newWorld', v57Obj(c['new']), 'v57-new', 'new') + '</div>'
       + v57Rows([[v57W('why'), c.why], [v57W('blur'), c.blur], [v57W('call'), c.call]], 'v57-rows v57-after');
   }
   if (mode === 'home') {
     var h = v57Obj(w.home);
     var card = function (key, s, cls) { return v57Str(s) ? '<div class="v57-side ' + cls + '">' + v57H4(key, 'v57-side-h') + v57P('', s) + '</div>' : ''; };
-    return '<div class="v57-sides">' + card('atHome', h.home, 'v57-old') + card('abroad', h.abroad, 'v57-new') + '</div>';
+    return '<div class="v57-sides">' + card('atHome', h.home, 'v57-old') + card('abroad', h.abroad, 'v57-new') + '</div>' + v57ListDoor('', Number(poured.n) || 0);
   }
   return '';
 }
@@ -536,6 +547,7 @@ function v57PageShape(html, r) {
   }
   /* the new sections, each with its chip, each ahead of the first of its anchors the page draws */
   var mode = v57WorldsMode(t);
+  var hw = v57HouseWines(r.slug);
   var put = function (id, title, body, open, anchors) {
     if (!body) return false;
     for (var i = 0; i < anchors.length; i++) {
@@ -548,13 +560,13 @@ function v57PageShape(html, r) {
     }
     return false;
   };
-  var worlds = put('v57-gs-worlds', v57W(mode === 'contrast' ? 'worldsH' : 'homeH'), v57WorldsBody(t), true, ['v53-gs-regions', 'v53-gs-grid', 'v53-gs-cards']);
+  var worlds = put('v57-gs-worlds', v57W(mode === 'contrast' ? 'worldsH' : 'homeH'), v57WorldsBody(t, hw), true, ['v53-gs-regions', 'v53-gs-grid', 'v53-gs-cards']);
   var tail = ['v53-gs-grid', 'v53-gs-cards'];
   put('v57-gs-service', v57W('serviceH'), v57ServiceBody(t), false, tail);
   put('v57-gs-guest', v57W('guestH'), v57GuestBody(t), false, tail);
   put('v57-gs-label', v57W('labelH'), v57LabelBody(t), false, tail);
   put('v57-gs-compare', v57W('compareH'), v57CompareBody(t), false, tail);
-  put('v57-gs-list', v57W('listH'), v57ListBody(r), false, tail);
+  put('v57-gs-list', v57W('listH'), v57ListBody(r, hw), false, tail);
   /* Sources, closed at the foot: after the last section the page draws */
   var src = v57SourcesBody(t);
   var last = src ? (v57SecAt(s, 'v53-gs-watch') || v57SecAt(s, 'v53-gs-cards')) : null;
@@ -646,19 +658,39 @@ function v57HouseWines(slug) {
   });
   return out;
 }
-function v57ListBody(r) {
-  var hw = v57HouseWines(r && r.slug);
+function v57ListBody(r, read) {
+  var hw = (read && typeof read === 'object') ? read : v57HouseWines(r && r.slug);
   if (!hw.n) return '';
-  var group = function (key, list) {
+  var group = function (key, list, world) {
     if (!list.length) return '';
-    return '<h4>' + v57Esc(v57W('worldCount', { world: v57W(key), n: list.length })) + '</h4><ul class="v57-wines">' + list.map(function (x) {
+    return '<h4 id="v57-list-' + world + '" tabindex="-1">' + v57Esc(v57W('worldCount', { world: v57W(key), n: list.length })) + '</h4><ul class="v57-wines">' + list.map(function (x) {
       return '<li><button type="button" class="v57-wine" data-v57="wine" data-id="' + v57Esc(x.id) + '" id="v57-w-' + v57Esc(x.id) + '">'
         + '<span class="v57-wine-p">' + v57Esc(x.producer || x.wine) + '</span>'
         + ((x.producer && x.wine) ? '<span class="v57-wine-w">' + v57Esc(x.wine) + '</span>' : '') + '</button></li>';
     }).join('') + '</ul>';
   };
   return v57P('v57-listline', hw.n === 1 ? v57W('listOne') : v57W('listMany', { n: hw.n }))
-    + group('oldWorld', hw.old) + group('newWorld', hw['new']) + group('elsewhere', hw.other);
+    + group('oldWorld', hw.old, 'old') + group('newWorld', hw['new'], 'new') + group('elsewhere', hw.other, 'other');
+}
+/* On our list opened at a world's heading, from the door on that side of the two worlds. */
+function v57Land(node) {
+  if (typeof v39Land === 'function') { v39Land(node); return; }
+  try {
+    if (!node || typeof node.getBoundingClientRect !== 'function') return;
+    window.scrollTo(0, Math.max(0, node.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0) - 72));
+    if (typeof node.focus === 'function') node.focus({ preventScroll: true });
+  } catch (e) { }
+}
+function v57ToList(world) {
+  var d = null;
+  try { d = document.getElementById('v57-gs-list'); } catch (e) { d = null; }
+  if (!d) return false;
+  d.open = true;
+  var w = v57Str(world);
+  var at = null;
+  try { at = (/^(old|new|other)$/.test(w) ? document.getElementById('v57-list-' + w) : null) || d.querySelector('summary'); } catch (e2) { at = null; }
+  v57Land(at || d);
+  return true;
 }
 /* A house wine's card, opened from a grape's page as codex39 opens one from a region's: the list's own card
    screen, pushed, so Back returns to the grape. */
@@ -679,7 +711,8 @@ function v57OpenWine(id) {
 
 /* What a control of the layer does, by its data-v57 word: extended key by key. One listener for them all. */
 var V57_ACTS = {
-  wine: function (node) { return v57OpenWine(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-id') : ''); }
+  wine: function (node) { return v57OpenWine(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-id') : ''); },
+  list: function (node) { return v57ToList(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-world') : ''); }
 };
 (function () {
   if (typeof document === 'undefined' || !document || typeof document.addEventListener !== 'function') return;
