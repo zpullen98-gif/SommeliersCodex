@@ -1,0 +1,531 @@
+{
+  "chunk": "g4",
+  "date": "2026-11-10",
+  "role": "The second reading: each entry read to refute it, not to admire it.",
+  "grapes": [
+    "albarino",
+    "godello",
+    "verdejo",
+    "macabeo",
+    "palomino",
+    "pedro-ximenez"
+  ],
+  "method": [
+    "Each fragment read whole beside what show.cjs prints for the grape (GRAPES, GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region records for Rías Baixas, inland Galicia, Bierzo, Rueda, Rioja, Penedès, La Mancha, Jerez, the Canary Islands, Vinho Verde, the Douro and Roussillon.",
+    "Every fact the reviewed records do not already state was put to search: the label rules (Rías Baixas, Rueda, white Rioja), the histories (the rescue of Godello, the old golden wine of Rueda, the legend and the parent of Pedro Ximénez), the synonyms (Alvarinho, Gouveio and the name Verdelho, Viura and Macabeu, Listán Blanco, the Pedro Giménez of Argentina), where each grape grows abroad, and the service of Sherry.",
+    "The glass read as a blind taster would: each note asked whether a taster would nod, each prose field scanned by a script for a family word in disguise, each ladder set beside the Codex's own climate line for the place and beside the other five ladders of the chunk.",
+    "All six are home grapes, so there is no side by side to test: each home and abroad pair was read for a false or lazy generalisation and against TASTE.world (old for the three the Codex flags), and no question carries a worlds tag.",
+    "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences and for whether it can be said to a guest; the cards and questions read for one key, four options of one kind and a stem that gives nothing away; the compare tells read from both sides against every fragment written so far that names these grapes.",
+    "node .scripts/grapes/build-grapes.cjs --lint --chunk g4 run after every round of edits until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+  ],
+  "limits": [
+    "This session reached search alone: no source address could be opened (www.hudin.com did not resolve from here, and no further host was tried). A page is cited as search results quoted it, and every address the authors gave stays unconfirmed.",
+    "The brief allows five searches a grape. Albariño took three, Godello three, Verdejo five, Macabeo three, Palomino three and Pedro Ximénez four.",
+    "Where a source's address names a living person it is left out and the fact is cited from another page (two references on the Pedro Giménez of South America, and a guide to how long Sherry keeps).",
+    "Savagnin was not yet written when Palomino was read, and the Muscat Blanc entry does not name Pedro Ximénez, so those two tells were read from one side only."
+  ],
+  "entries": {
+    "albarino": {
+      "verdict": "Sound after one fix.",
+      "tested": [
+        "say against GRID_SAY (ahl-bah-REE-nyo): it opens on the Court's own, with the Portuguese form after a comma.",
+        "The label rule. A wine labelled Rías Baixas Albariño is the grape alone and may draw on any subzone: confirmed in two sources beside the Codex's region record. The sources word the Rosal and Condado do Tea rule in two ways (70 per cent Albariño with Loureira or Treixadura allowed beside it, or 70 per cent of the pair together); the entry says only that the subzone labels carry the 70 per cent rule and may blend, which holds under both.",
+        "Val do Salnés as the coolest and wettest subzone, O Rosal and Condado do Tea warmer: confirmed. The two rung ladder set beside the Court's grid read (Rías Baixas, cool) and the Régionale row (cool to moderate): the coast keeps the cool rung, the Miño subzones and Monção e Melgaço the moderate one.",
+        "Alvarinho of Monção e Melgaço as riper and fuller, from a sheltered and more continental valley: confirmed in three sources, and hedged with often in the forty five second line.",
+        "Abroad: Uruguay (first planted in 2002), California (Edna Valley, Carneros, Clarksburg) and New Zealand (Gisborne, Marlborough, Nelson). Confirmed.",
+        "The glass as a blind taster: every note set beside the Court's grid read (green apple, pear, lemon, lime, grapefruit, white peach, apricot, flowers, mineral, bitterness yes). A script found no family word in disguise in any prose field.",
+        "Service against the Codex's row for light aromatic whites and its decanting row, both of which name the grape, and against TASTE.age (one to three years): agree.",
+        "The four lines counted (20, 38, 108 and 37 words) and said aloud: five beats in order, Alvarinho explained in the breath that names it, the pergola as the closing hook.",
+        "Compare tells from both sides: Riesling and Godello, and the tells that Grüner Veltliner, Melon de Bourgogne, Sauvignon Blanc, Vermentino, Assyrtiko and Verdejo write of Albariño. None disagrees.",
+        "Cards and questions: one key each, four options of one kind, nothing given away; a home grape, so no worlds tag."
+      ],
+      "changed": [
+        {
+          "field": "worlds.home.abroad",
+          "was": "Uruguay's Atlantic coast, California and New Zealand grow it too, in the same crisp, unoaked style.",
+          "now": "Uruguay's Atlantic coast, California and New Zealand grow it too, in much the same crisp style, mostly without oak.",
+          "why": "Nothing read says the wines made abroad are unoaked as a rule. The sources speak of coastal sites, a salty freshness and peach fruit, and say nothing of oak. The line is now hedged.",
+          "sources": [
+            {
+              "title": "Decanter: Albariño beyond Spain",
+              "url": "https://www.decanter.com/premium/albarino-beyond-spain-the-next-great-white-grape-562262"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "No source read says how often oak is used abroad; the hedge stands in for one.",
+        "Pinot Grigio as a compare lies outside the plan's candidates. It is the reviewed profile's own confuse line, so it stays.",
+        "The year the grape reached Uruguay stays out of the entry, as the author left it: the pages that give it name a living grower.",
+        "No source address could be opened from this session."
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Rías Baixas DO",
+          "url": "https://en.wikipedia.org/wiki/Rías_Baixas_DO"
+        },
+        {
+          "title": "Turismo de Galicia: the Rías Baixas denomination and its five subzones",
+          "url": "https://blog.turismo.gal/the-rias-baixas-d-o-and-its-five-production-subzones/"
+        },
+        {
+          "title": "Decanter: Albariño beyond Spain",
+          "url": "https://www.decanter.com/premium/albarino-beyond-spain-the-next-great-white-grape-562262"
+        },
+        {
+          "title": "Decanter: Alvarinho against Albariño, the wines of Portugal and Spain",
+          "url": "https://www.decanter.com/premium/alvarinho-vs-albarino-top-wines-from-portugal-and-spain-rated-431264/"
+        }
+      ]
+    },
+    "godello": {
+      "verdict": "Sound after four fixes.",
+      "tested": [
+        "say beside the Codex's own go-DEH-yoh in its inland Galicia record: the same sounds.",
+        "The near loss by the 1970s and the project begun in 1974 that replanted Valdeorras from cuttings of the vines that remained: confirmed. The sources do not agree on how much was left (a few hundred vines in one, under thirty hectares in another).",
+        "Gouveio: the same vine, a grape of the Douro's dry whites and of White Port, called Verdelho in the Douro for years until a Portuguese order of 2000 took the name off it. Confirmed on Wines of Portugal and in a trade report.",
+        "Kinship with Madeira's Verdelho. A glossary that reports the DNA studies gives Godello as a likely natural cross of Savagnin and Castellana Blanca (2013, on twenty markers), Verdejo as its sibling, and Madeira's Verdelho as an offspring of Savagnin with the other parent unknown (2018).",
+        "The ladder against TASTE (cool) and the Codex's inland Galicia record (Valdeorras with colder winters, Monterrei warmer and drier than the rest of Galicia): agrees.",
+        "Structure against the reviewed profile (body medium to full, acidity medium to high) and the dials: agrees.",
+        "Service: the row for full whites, with a steel made bottle a little cooler; TASTE.age (three to eight): agree.",
+        "The four lines counted (22, 39, 103 and 33 words) and said aloud.",
+        "Compare tells from both sides with Albariño and Verdejo inside the chunk; the Chardonnay pilot does not name Godello.",
+        "Cards and questions: one key each, four options of one kind."
+      ],
+      "changed": [
+        {
+          "field": "worlds.home.abroad",
+          "was": "it was long called Verdelho there, though it is unrelated to Madeira's Verdelho.",
+          "now": "it was long called Verdelho there, though it is a different grape from Madeira's Verdelho.",
+          "why": "The DNA summaries read make both vines offspring of Savagnin, which would make them kin. Wines of Portugal says that Gouveio has nothing to do with the Verdelho of Madeira in the sense that they are two vines. A different grape is true on either reading; unrelated may not be.",
+          "sources": [
+            {
+              "title": "wein.plus glossary: Godello",
+              "url": "https://glossary.wein-plus.eu/godello"
+            },
+            {
+              "title": "wein.plus glossary: Verdelho",
+              "url": "https://glossary.wein-plus.eu/verdelho"
+            },
+            {
+              "title": "Wines of Portugal: Gouveio",
+              "url": "https://winesofportugal.com/en/portuguese-wines/grape-varieties/gouveio/"
+            }
+          ]
+        },
+        {
+          "field": "lines.sale",
+          "was": "Bring it to the guest who asks for Chardonnay, with the roast fish or the chicken.",
+          "now": "It is the bottle for anyone who usually asks for Chardonnay, with the roast fish or the chicken.",
+          "why": "The sale is said at the table. The old second sentence was an order to a server and could not be said to a guest. The new one can be said to either, and still shares its construction with none of the five other pours of the chunk.",
+          "sources": []
+        },
+        {
+          "field": "compare, the Chardonnay tell",
+          "was": "White Burgundy tends to show a plainer stamp of barrel and lees",
+          "now": "Chardonnay, as white Burgundy, tends to show a plainer stamp of barrel and lees",
+          "why": "A tell names both grapes.",
+          "sources": []
+        },
+        {
+          "field": "cards[2].back",
+          "was": "By the 1970s only a few vines survived in Valdeorras. A local project begun in 1974 studied the grape and replanted the valley from them.",
+          "now": "By the 1970s little Godello was left in Valdeorras. A local project begun in 1974 studied the grape and replanted the valley from cuttings of the vines that remained.",
+          "why": "Only a few vines understates every count read, and the counts do not agree. The card now gives none.",
+          "sources": [
+            {
+              "title": "The Irish Times: Godello, the Spanish answer to Chardonnay",
+              "url": "https://www.irishtimes.com/food/drink/2025/08/02/move-over-albarino-make-way-for-godello-spains-answer-to-chardonnay"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "The forty five second line and the home line still say the few vines left: loose, and true of every count read.",
+        "Nectarine beside white peach and bread dough beside fresh cream are the author's reading and are not separately confirmed.",
+        "Whether Godello and Madeira's Verdelho are kin rests on secondary sources: see unsettled.",
+        "No source address could be opened from this session."
+      ],
+      "sources": [
+        {
+          "title": "wein.plus glossary: Godello",
+          "url": "https://glossary.wein-plus.eu/godello"
+        },
+        {
+          "title": "wein.plus glossary: Verdelho",
+          "url": "https://glossary.wein-plus.eu/verdelho"
+        },
+        {
+          "title": "Wines of Portugal: Gouveio",
+          "url": "https://winesofportugal.com/en/portuguese-wines/grape-varieties/gouveio/"
+        },
+        {
+          "title": "The Irish Times: Godello, the Spanish answer to Chardonnay",
+          "url": "https://www.irishtimes.com/food/drink/2025/08/02/move-over-albarino-make-way-for-godello-spains-answer-to-chardonnay"
+        }
+      ]
+    },
+    "verdejo": {
+      "verdict": "Sound after four fixes.",
+      "tested": [
+        "say against the Codex's own vair-DEH-ho in its Rueda record: agrees.",
+        "The label: a Rueda that names Verdejo is at least 85 per cent the grape. Confirmed.",
+        "Gran Vino de Rueda: vines of at least 30 years and no more than 6,500 kilograms a hectare. Confirmed in two sources.",
+        "Dorado (aged in air) and Pálido (aged under flor): confirmed, and both stand in the council's current specification as fortified wines of at least 15 per cent.",
+        "The revision of 2019 to 2020 and what it does to a Rueda that names no grape: see changed and codexRecords.",
+        "The golden, Sherry like wine Rueda made from the grape for centuries, and the fresh style as the newcomer: confirmed.",
+        "Abroad: beyond a few trial plantings in Australia and California little grows outside Spain; inside Spain it has spread through Castilla y León, Castilla-La Mancha and Extremadura. Confirmed.",
+        "Verdelho: see the Godello entry. The same glossary reads Verdejo as the sibling of Godello.",
+        "The warm rung of the ladder: two searches found no source that sets a La Mancha Verdejo apart in the glass.",
+        "Service against the row for light aromatic whites; TASTE.age (young): agree.",
+        "The four lines counted (23, 41, 106 and 32 words) and said aloud. The taste sentence carries two lists of three; it reads well aloud and the lint passes it.",
+        "Compare tells from both sides with Sauvignon Blanc, Albariño, Macabeo and Godello: agree.",
+        "Cards and questions: one key each; the night harvest question's four options are four reasons."
+      ],
+      "changed": [
+        {
+          "field": "guest[2].a",
+          "was": "No. Verdelho is a grape of Madeira and is unrelated. Verdejo belongs to Rueda, on the high plateau in the centre of Spain.",
+          "now": "No. Verdelho is a different grape, at home on the island of Madeira. Verdejo belongs to Rueda, on the high plateau north west of Madrid.",
+          "why": "The DNA summaries read make Verdejo a cross of Savagnin and Castellana Blanca and Verdelho an offspring of Savagnin, so unrelated may be false; a different grape is true on either reading. And Rueda lies north west of Madrid, as the forty five second line says, not in the centre of Spain.",
+          "sources": [
+            {
+              "title": "wein.plus glossary: Verdejo",
+              "url": "https://glossary.wein.plus/verdejo"
+            },
+            {
+              "title": "wein.plus glossary: Verdelho",
+              "url": "https://glossary.wein-plus.eu/verdelho"
+            }
+          ]
+        },
+        {
+          "field": "glass.ladder, the warm rung",
+          "was": "La Mancha, on the warm central plain: melon rind, ripe peach",
+          "now": "La Mancha, on the warm central plain: ripe peach, melon rind, cut grass",
+          "why": "The entry's own abroad line and the Codex's La Mancha record call these wines grassy, and the old rung had dropped the grass. No source read sets La Mancha apart in the glass, so the rung keeps the riper fruit a warmer plain suggests and carries the note the Codex names.",
+          "sources": []
+        },
+        {
+          "field": "cards[2].front",
+          "was": "What are Rueda's two historic aged wines, and how do they differ?",
+          "now": "Rueda, home of Verdejo: what are its two historic aged wines?",
+          "why": "A card is dealt in a mixed deck, so its front names the grape unless the grape is the answer.",
+          "sources": []
+        },
+        {
+          "field": "questions[2].exp",
+          "was": "A plain Rueda needs only half, with other permitted whites such as Viura making up the rest.",
+          "now": "A Rueda that names no grape needs only half from the denomination's main grapes, with other permitted whites such as Viura making up the rest.",
+          "why": "Reports of the revision of 2019 to 2020 read the half as Verdejo or Sauvignon Blanc; the Codex's Rueda record reads it as Verdejo. The new wording is true of both.",
+          "sources": [
+            {
+              "title": "The Drinks Business: Rueda remodels its classification and its rules",
+              "url": "https://www.thedrinksbusiness.com/2019/11/rueda-remodels-wine-classification-system-and-do-guidelines/"
+            },
+            {
+              "title": "Consejo Regulador Rueda: the product specification, revision 4",
+              "url": "https://www.dorueda.com/wp-content/uploads/2025/05/PCC-DOP-RUEDA_Rev-4.pdf"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "Acidity high is the Codex's own dial for the grape. It was not tested further.",
+        "Nectarine and toasted hazelnut among the notes, and the warm rung, remain the author's reading.",
+        "The tradition that the grape reached the Duero in the eleventh century stays out, as the author left it.",
+        "No source address could be opened from this session."
+      ],
+      "sources": [
+        {
+          "title": "The Drinks Business: Rueda remodels its classification and its rules",
+          "url": "https://www.thedrinksbusiness.com/2019/11/rueda-remodels-wine-classification-system-and-do-guidelines/"
+        },
+        {
+          "title": "Consejo Regulador Rueda: the product specification, revision 4",
+          "url": "https://www.dorueda.com/wp-content/uploads/2025/05/PCC-DOP-RUEDA_Rev-4.pdf"
+        },
+        {
+          "title": "Wikipedia: Verdejo",
+          "url": "https://en.wikipedia.org/wiki/Verdejo"
+        },
+        {
+          "title": "wein.plus glossary: Verdejo",
+          "url": "https://glossary.wein.plus/verdejo"
+        },
+        {
+          "title": "wein.plus glossary: Verdelho",
+          "url": "https://glossary.wein-plus.eu/verdelho"
+        }
+      ]
+    },
+    "macabeo": {
+      "verdict": "Sound after six fixes.",
+      "tested": [
+        "say beside the Codex's own respellings: mah-kah-BEH-oh in its Penedès record, vee-OO-rah in its Rioja record.",
+        "Cava: Macabeo, Xarel·lo and Parellada as the classic three, and Macabeo's part (liveliness, freshness and fruit, a light and floral wine of balanced acidity) on the Cava board's own pages. The nine months and Brut Nature stand on the Codex's Penedès record.",
+        "Rioja: Viura as the white most grown there, floral, aniseed and fruity with marked acidity, on the council's sheet; the vine stands up to air better than Malvasía.",
+        "Aged white Rioja: honey, roasted almond, hazelnut and beeswax over ample or bright acidity, in two sources. White Gran Reserva at 48 months with 6 in cask agrees with the Codex's Rioja record.",
+        "Macabeu in Roussillon, in dry whites and in fortified wines: confirmed. Rivesaltes in its amber style stands on the Codex's Roussillon record.",
+        "Camomile: confirmed in one source for the grape in Cava.",
+        "The ladder against the Codex's Penedès record, which sets Macabeo on the lower and central land and Parellada on the high ground.",
+        "A new grape: the seven targets each name the grape, as Macabeo, Viura or Macabeu, in their own records; the profile is in the manner of GRAPES.",
+        "Service: the row for light sparkling wine as Cava, a cask aged white Rioja warmer.",
+        "The four lines counted (22, 43, 109 and 44 words) and said aloud: Viura explained in the breath that names it.",
+        "Compare tells from both sides with the Glera pilot, Grenache Blanc and Verdejo: agree.",
+        "Cards and questions: one key each, four options of one kind."
+      ],
+      "changed": [
+        {
+          "field": "say",
+          "was": "mah-kah-BAY-oh, in Rioja vee-OO-rah",
+          "now": "mah-kah-BEH-oh, in Rioja vee-OO-rah",
+          "why": "The Codex's Penedès record already respells the name mah-kah-BEH-oh, and the chunk writes the Spanish e as EH in every other name. The same sound, now in one spelling.",
+          "sources": []
+        },
+        {
+          "field": "glass.ladder, the moderate rung",
+          "was": "Rioja Alta and the higher vineyards of the Penedès",
+          "now": "Rioja Alta and the central basin of the Penedès",
+          "why": "The Codex's Penedès record sets Macabeo on the lower and central land and keeps the high ground for Parellada.",
+          "sources": []
+        },
+        {
+          "field": "questions[1].q",
+          "was": "with hazelnut, beeswax, honey and dried apple over gentle acidity",
+          "now": "with hazelnut, beeswax, honey and dried apple over bright acidity",
+          "why": "A cask aged white Rioja keeps its acidity: the sources read speak of ample and bright acidity, and the Rioja council of the grape's marked acidity. A taster handed gentle acidity under hazelnut and beeswax would leave Rioja for the Rhône.",
+          "sources": [
+            {
+              "title": "Wine Folly: white Rioja wines",
+              "url": "https://winefolly.com/deep-dive/amazing-white-rioja-wines/"
+            },
+            {
+              "title": "Consejo Regulador Rioja: Viura",
+              "url": "https://riojawine.com/en/the-designation/grape-varieties/viura/"
+            }
+          ]
+        },
+        {
+          "field": "glass.structure",
+          "was": "Acidity medium, gentler from warm sites",
+          "now": "Acidity medium, brighter from Rioja's higher ground and gentler from warm sites",
+          "why": "The same, so that the structure line and the question agree.",
+          "sources": [
+            {
+              "title": "Consejo Regulador Rioja: Viura",
+              "url": "https://riojawine.com/en/the-designation/grape-varieties/viura/"
+            }
+          ]
+        },
+        {
+          "field": "profile.confuse",
+          "was": "Chardonnay has more weight and a cellar accent",
+          "now": "Chardonnay is weightier, with butter or vanilla from the cellar",
+          "why": "A cellar accent names nothing a taster could point to.",
+          "sources": []
+        },
+        {
+          "field": "sources, the Rioja council's page",
+          "was": "https://riojawine.com/en-us/the-designation/grape-varieties/viura/",
+          "now": "https://riojawine.com/en/the-designation/grape-varieties/viura/",
+          "why": "The address search returned for the page.",
+          "sources": [
+            {
+              "title": "Consejo Regulador Rioja: Viura",
+              "url": "https://riojawine.com/en/the-designation/grape-varieties/viura/"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "The sale's second sentence says an aged white Rioja is worth keeping in mind. Worth is no word of price there and the lint passes it.",
+        "The ladder remains a taster's reading of what warmth does to the grape; toffee among the notes of age stands on the author's source alone.",
+        "The Codex's Priorat record names Macabeu in its whites. Priorat is not a target because the entry does not speak of it.",
+        "No source address could be opened from this session."
+      ],
+      "sources": [
+        {
+          "title": "Cava Regulatory Board: the authorised grape varieties",
+          "url": "https://www.cava.wine/en/origin-cava/authorised-grape-varieties"
+        },
+        {
+          "title": "Cava Regulatory Board: the types and varieties of Cava grapes",
+          "url": "https://www.cava.wine/en/news-articles/cava-grapes-types-and-varieties-of-cava-grapes/"
+        },
+        {
+          "title": "Consejo Regulador Rioja: Viura",
+          "url": "https://riojawine.com/en/the-designation/grape-varieties/viura/"
+        },
+        {
+          "title": "Wine Folly: white Rioja wines",
+          "url": "https://winefolly.com/deep-dive/amazing-white-rioja-wines/"
+        }
+      ]
+    },
+    "palomino": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "say beside the Codex's own pah-lo-MEE-no in its Jerez record: the same sounds.",
+        "A thin grape: the profile set beside the Régionale row (warm, acidity low, neutral, almond and bruised apple, the character from flor and the solera): agrees.",
+        "Listán Blanco as Palomino Fino: confirmed in several sources, a Spanish vine collection among them, and by the Codex's Canary Islands record.",
+        "The notes of each style against the Codex's Jerez record (Fino almond, bread dough and brine; Amontillado hazelnut and tobacco; Oloroso walnut and leather). Tobacco leaf stands under Oloroso in the lead and under Amontillado in the profile; both are among the regulatory council's own notes, so the two do not contradict.",
+        "Service: 6 to 8 degrees Celsius for Fino and Manzanilla and 12 to 14 for Amontillado and Oloroso, confirmed, and the brief's rows. An open Fino keeps about a week in the fridge, an Amontillado two to three weeks, an Oloroso four to six: the entry's few days and weeks hold.",
+        "Fortification as traditional and never as a rule, as the Codex's record of August 2025 asks: two fields of the profile did not say so, see changed.",
+        "The ladder: Tenerife's high slopes moderate, Jerez warm, read beside the Pedro Ximénez ladder of the same chunk.",
+        "The four lines counted (19, 45, 104 and 41 words) and said aloud: eight sentences, flor and solera each explained in the breath that names it. The lint's note on flor is answered by a film of yeast called flor.",
+        "Compare tells: Pedro Ximénez from both sides; Savagnin from one, since that entry was not yet written.",
+        "Cards and questions: one key each. The Fino question sets a dry, dark Oloroso beside it, and the explanation says why that is not the glass."
+      ],
+      "changed": [
+        {
+          "field": "compare, the Savagnin tell",
+          "was": "Fino is lighter, softer and saltier.",
+          "now": "Palomino, as Fino, is lighter, softer and saltier.",
+          "why": "A tell names both grapes.",
+          "sources": []
+        },
+        {
+          "field": "profile.st",
+          "was": "Alcohol raised by fortification",
+          "now": "Alcohol raised, traditionally by fortification",
+          "why": "The Codex records that dry Sherry may reach its strength with no added spirit since August 2025, and the author's own report promises that fortification is never written as a rule.",
+          "sources": []
+        },
+        {
+          "field": "profile.tell",
+          "was": "with the warmth of added grape spirit",
+          "now": "and the warmth of a wine traditionally fortified",
+          "why": "The same.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The plantings in South Africa, California and Australia stay out, as the author left them, for want of a source read.",
+        "The ladder sets a table wine of Tenerife beside a Fino of Jerez: honest of each place, though the two rungs are two wines as much as two climates.",
+        "Turtle soup with a dry Amontillado stands on the Codex's own line (Amontillado with consommé); the council's guide the author cites was not read in this session.",
+        "No source address could be opened from this session."
+      ],
+      "sources": [
+        {
+          "title": "Comunidad de Madrid, the vine collection: Palomino Fino",
+          "url": "https://www.comunidad.madrid/info/coleccion-vid/esp080-bgvcam1956"
+        },
+        {
+          "title": "Sherry Wines, the regulatory council: conservation and serving",
+          "url": "https://cdn.sherry.wine/enjoying-sherry/conservation-serving"
+        }
+      ]
+    },
+    "pedro-ximenez": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "say against the Codex's service reference (PEH-droh hee-MEH-neth): agrees.",
+        "The drying on mats for a week or more: the Codex's Jerez record, and sources that give five to fifteen days.",
+        "At least 212 grams of sugar a litre, Cream as a sweetened Oloroso, the certified ages of twenty and thirty years: the Codex's Jerez record.",
+        "Montilla-Moriles: hotter, drier and more extreme than Jerez, with riper grapes, and dry wines that reach about 15 per cent with no added spirit. Confirmed. The damp coast of Jerez leaves the grape prone to rot, which is why most is grown and dried inland.",
+        "The origin: the tale of the soldier who brought the vine from the Rhine is rejected; a study of 2007 found the old Arab table grape Gibi to be a parent, and ampelographers place the vine's origin probably in Andalusia.",
+        "False friends: Argentina's Pedro Giménez is a criolla vine and a different grape; one reference reads Chile's Pedro Jiménez as unrelated to the Spanish grape too, so neither is counted as the grape abroad.",
+        "Málaga: sweet wines of Pedro Ximénez and Moscatel. Confirmed.",
+        "Temperature: 12 to 14 degrees Celsius in the sources read; the Codex's digestif row says about 12. The entry's 54 to 57 degrees Fahrenheit holds both, and is warmer than the brief's row for sweet whites on purpose.",
+        "A new grape: the two targets (Jerez and Spain) name it in their own records; the profile is in the manner of GRAPES.",
+        "The four lines counted (20, 43, 107 and 36 words) and said aloud.",
+        "Compare tells: Palomino from both sides; Rutherglen Muscat from one, since the Muscat entry does not name this grape.",
+        "Cards and questions: see changed for the first question."
+      ],
+      "changed": [
+        {
+          "field": "glass.ladder",
+          "was": "moderate: Jerez and Sanlúcar, where the Atlantic tempers the heat (roast coffee, dark chocolate, liquorice); warm: Montilla-Moriles, inland, hotter and drier (raisin, dried fig, date)",
+          "now": "moderate: Jerez and Sanlúcar: hot too, but damper and cooled by the Atlantic (raisin, dried fig); warm: Montilla-Moriles, inland, hotter and drier, where the grape ripens further (raisin, date, grape syrup)",
+          "why": "The old rungs gave the notes of long cask age to one place and the notes of the dried grape to the other: the cellar, not the climate, as the author's own report admits. Nothing read finds a Jerez grown wine different in kind. What the sources do say is that the damp coast ripens and dries the grape less surely and that Montilla's fruit is riper and richer, so both rungs now carry the dried fruit and the warm one adds the riper notes. The moderate rung says hot too, so it no longer contradicts the Palomino ladder of this chunk, which sets Jerez on its warm rung.",
+          "sources": [
+            {
+              "title": "Decanter: regional profile, Montilla-Moriles",
+              "url": "https://www.decanter.com/premium/regional-profile-montilla-moriles-512967/"
+            }
+          ]
+        },
+        {
+          "field": "lines.s45",
+          "was": "but it is almost surely Andalusian",
+          "now": "but it is most likely Andalusian",
+          "why": "The sources read say probably.",
+          "sources": [
+            {
+              "title": "Wikipedia: Pedro Ximénez",
+              "url": "https://en.wikipedia.org/wiki/Pedro_Ximénez"
+            }
+          ]
+        },
+        {
+          "field": "questions[0], the options and the explanation",
+          "was": "Pedro Ximénez, Dry Oloroso, Amontillado, Manzanilla",
+          "now": "Pedro Ximénez, Moscatel, Pale Cream, Dry Oloroso",
+          "why": "Three dry Sherries beside one sweet one let the word sweet in the stem give the key away. Two sweet styles now stand beside it, and the explanation says why Moscatel, sweet but grapey and scented with orange, is not the glass. The stem is unchanged.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The ladder: a grape of one climate under a schema that asks for two rungs. See unsettled.",
+        "Beyond Andalusia it is scarce is a judgement and no count. The Codex's Priorat record names the grape in its whites, and a little grows elsewhere in Spain and in Australia; none of that was confirmed here.",
+        "The second card asks where most Pedro Ximénez is grown. It is the Codex's own statement (mostly grown in Montilla-Moriles) and no ranking, so it stays.",
+        "Alcohol high from fortification is true on the Court's scale, though the wine is low in alcohol for a fortified one. Left as written.",
+        "No source address could be opened from this session."
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Pedro Ximénez",
+          "url": "https://en.wikipedia.org/wiki/Pedro_Ximénez"
+        },
+        {
+          "title": "Wikipedia: Pedro Giménez",
+          "url": "https://en.wikipedia.org/wiki/Pedro_Giménez"
+        },
+        {
+          "title": "Universidad de La Rioja, the research record: Corinto bianco, a seedless mutant of Pedro Ximenes",
+          "url": "https://investigacion.unirioja.es/documentos/5c13b286c8914b6ed377ef6e"
+        },
+        {
+          "title": "Decanter: regional profile, Montilla-Moriles",
+          "url": "https://www.decanter.com/premium/regional-profile-montilla-moriles-512967/"
+        },
+        {
+          "title": "Andalucia.com: the sweet wines of Málaga",
+          "url": "https://www.andalucia.com/gastronomy/malaga-sweet-wines.htm"
+        },
+        {
+          "title": "Sherry Wines, the regulatory council: conservation and serving",
+          "url": "https://cdn.sherry.wine/enjoying-sherry/conservation-serving"
+        }
+      ]
+    }
+  },
+  "codexRecords": [
+    "The Rueda record (.scripts/regions/fragments/spain.1.json, shipped in js/regions/spain.json), its traps: Verdejo is not Verdelho; the Madeira grape is unrelated. The DNA summaries read give Verdejo as a cross of Savagnin and Castellana Blanca and Madeira's Verdelho as an offspring of Savagnin, which would make the two half siblings. The sources are secondary and rest on small marker sets, so the record is not shown to be wrong, but a different grape is the safer wording, and the table now says so for both Verdejo and Godello.",
+    "The Rueda record, its law: it teaches Rueda Verdejo and Rueda Sauvignon as label categories and plain Rueda as at least 50 per cent Verdejo. Reports of the revision of 2019 to 2020 say the two varietal categories were folded into one Rueda, that the half may be Verdejo or Sauvignon Blanc, and that a grape may be named at 85 per cent. The council's current specification (revision 4, May 2025) could not be opened from here. The table's wording holds under either reading; the owner may want the region record read against the specification.",
+    "js/data-grapes-plus.js, the Verdejo profile: its confuse line says Sauvignon Blanc shows pyrazine. The table says gooseberry and cut grass, as the brief asks of anything spoken. The author's flag, upheld.",
+    "js/data-grapes-plus.js, the Godello profile, and js/data-intro.js, the Albariño and Verdejo rows: each carries the bare word citrus, and the two rows white flowers and green herbs. Family words; the table names lemon zest, lime and grapefruit, honeysuckle and acacia blossom, fennel and bay leaf.",
+    "The Codex respells one name two ways in two places: PEH-droh in the service reference and PEH-dro in the Jerez record; pah-lo-MEE-no in the Jerez record beside the table's pah-loh-MEE-noh; go-DEH-yoh beside goh-DEH-yoh. The same sounds each time; only Macabeo differed in its stressed vowel, and it now agrees with the Penedès record.",
+    "The Codex's Penedès record calls Macabeo gentle in acidity and the Rioja council speaks of marked acidity. Both are right of their place; the table's structure line now says so."
+  ],
+  "unsettled": [
+    "Whether Godello and Verdejo are kin to Madeira's Verdelho. A glossary reporting the DNA studies makes all three offspring of Savagnin; no primary paper was read. The table says a different grape, which holds either way.",
+    "How a La Mancha Verdejo differs in the glass from one of Rueda. Two searches found nothing. The warm rung reads ripe peach, melon rind and cut grass: the riper fruit is a taster's reading and the grass is the Codex's.",
+    "The Pedro Ximénez ladder. The grape has one climate and the schema asks for two rungs of two climates. The rungs now say that Jerez is hot too but damper, and carry only the fruit; a ladder of one rung would be the plain truth, if the spec agent ever allows one for a grape of one climate.",
+    "What the current Rueda rule asks of a wine that names no grape: half Verdejo, or half Verdejo or Sauvignon Blanc.",
+    "How the Rías Baixas rule for the Rosal and Condado do Tea labels is worded (70 per cent Albariño with the partner grape beside it, or 70 per cent of the pair together). The Codex teaches the second; the entry leans on neither.",
+    "Whether wines of Albariño made in Uruguay, California and New Zealand are mostly unoaked. Likely, and hedged.",
+    "Whether every source address still answers: none could be opened from this session."
+  ],
+  "settled": [
+    "A wine labelled Rías Baixas Albariño is the grape alone, from any subzone; Val do Salnés is the coolest and wettest subzone.",
+    "Godello: the replanting project of Valdeorras began in 1974; Gouveio is the same vine and wore the name Verdelho in the Douro until a Portuguese order of 2000.",
+    "Gran Vino de Rueda asks for vines of at least 30 years and at most 6,500 kilograms a hectare; Dorado is aged in air and Pálido under flor.",
+    "White Rioja Gran Reserva: 48 months with 6 in cask, and the cask aged wine keeps bright acidity under its honey, hazelnut and beeswax.",
+    "Listán Blanco of the Canary Islands is Palomino Fino.",
+    "Sherry at the table: Fino and Manzanilla at 6 to 8 degrees Celsius, Amontillado, Oloroso and Pedro Ximénez at 12 to 14; an open Fino keeps about a week, an Oloroso four to six.",
+    "Pedro Ximénez: a parent is the old Arab table grape Gibi, the tale of the soldier from the Rhine is set aside, the vine is most likely Andalusian, and Argentina's Pedro Giménez is another grape.",
+    "Montilla-Moriles is hotter and drier than Jerez and ripens the grape further; its wines aged under flor commonly reach their strength with no added spirit."
+  ]
+}

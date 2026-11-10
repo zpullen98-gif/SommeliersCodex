@@ -79,9 +79,9 @@
   "questions": [
     {
       "q": "A guest wants a sweet Sherry to pour over vanilla ice cream: black, thick and tasting of raisin and fig. Which do you bring?",
-      "opts": ["Pedro Ximénez", "Dry Oloroso", "Amontillado", "Manzanilla"],
+      "opts": ["Pedro Ximénez", "Moscatel", "Pale Cream", "Dry Oloroso"],
       "a": 0,
-      "exp": "Pedro Ximénez is made from sun dried grapes and is black, syrupy and very sweet. Amontillado, Manzanilla and dry Oloroso are all dry Sherries made from Palomino."
+      "exp": "Pedro Ximénez, from sun dried grapes, is the black, syrupy one, with raisin and fig. Moscatel is sweet too, but grapey and scented with orange, and an Oloroso is dark but dry."
     },
     {
       "q": "A blind wine is opaque brown black and syrupy, intensely sweet, with raisin, dried fig, date, coffee and liquorice, the warmth of added spirit and no scent of fresh grape. Which is it most likely to be?",
@@ -114,5 +114,21 @@
     "The alias PX is the plan's. The spoken lines never use the two letters; the labels and one guest answer do.",
     "The bananas Foster is the one dish from the Creole table.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after three fixes. The parent found by DNA and the legend of the soldier, Montilla-Moriles as the hotter, drier home, its dry wines made with no added spirit, Málaga, the service temperature and the false friend in Argentina were confirmed.",
+    "changed": [
+      "glass.ladder: the moderate rung (Jerez and Sanlúcar) read roast coffee, dark chocolate and liquorice and the warm rung (Montilla-Moriles) raisin, dried fig and date: the cellar, not the climate. Both rungs now carry the dried fruit, the warm one adds date and grape syrup for riper grapes, and the moderate rung says hot too, but damper and cooled by the Atlantic, so that it no longer contradicts the Palomino ladder, which sets Jerez on its warm rung.",
+      "lines.s45: almost surely Andalusian now reads most likely Andalusian. The sources read say probably.",
+      "questions[0]: the options Dry Oloroso, Amontillado and Manzanilla now read Moscatel, Pale Cream and Dry Oloroso, with a new explanation. Three dry Sherries beside one sweet one let the word sweet in the stem give the key away."
+    ],
+    "open": [
+      "The ladder: a grape of one climate under a schema that asks for two rungs. See unsettled.",
+      "Beyond Andalusia it is scarce is a judgement and no count. The Codex's Priorat record names the grape in its whites, and a little grows elsewhere in Spain and in Australia; none of that was confirmed here.",
+      "The second card asks where most Pedro Ximénez is grown. It is the Codex's own statement (mostly grown in Montilla-Moriles) and no ranking, so it stays.",
+      "Alcohol high from fortification is true on the Court's scale, though the wine is low in alcohol for a fortified one. Left as written.",
+      "No source address could be opened from this session."
+    ]
+  }
 }
