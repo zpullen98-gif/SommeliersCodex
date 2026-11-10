@@ -63,7 +63,45 @@ var V57_WORDS = {
   sale: 'The sale',
   ten: 'In ten seconds',
   twenty: 'In twenty seconds',
-  say: 'Say it'
+  say: 'Say it',
+  /* the glass */
+  ladderH: 'From cool to warm',
+  climate_cool: 'Cool',
+  climate_moderate: 'Moderate',
+  climate_warm: 'Warm',
+  structureH: 'Structure',
+  cardH: 'As the grape card reads it',
+  /* the two worlds */
+  worldsH: 'Old World and New World',
+  homeH: 'At home and abroad',
+  oldWorld: 'Old World',
+  newWorld: 'New World',
+  where: 'Where',
+  inGlass: 'In the glass',
+  inCellar: 'In the cellar',
+  why: 'Why they differ',
+  blur: 'Where the line blurs',
+  call: 'The blind call',
+  atHome: 'At home',
+  abroad: 'Abroad',
+  /* service, the guest, the label, the neighbours, the sources */
+  serviceH: 'Service and the table',
+  temp: 'Temperature',
+  glassware: 'Glass',
+  decant: 'Decanting',
+  age: 'Age',
+  foodH: 'At the table, with food',
+  guestH: 'What guests ask',
+  labelH: 'On the label',
+  compareH: 'Compare with',
+  sourcesH: 'Sources',
+  opensNew: ' (opens in a new tab)',
+  /* the house's list */
+  listH: 'On our list',
+  listOne: 'One wine on our list is made with this grape. It opens its card.',
+  listMany: '{n} wines on our list are made with this grape. Each opens its card.',
+  worldCount: '{world} · {n}',
+  elsewhere: 'Elsewhere'
 };
 
 function v57W(key, vars) {
@@ -106,7 +144,68 @@ function v57T(slug) {
   var css = document.createElement('style');
   css.id = 'v57-style';
   css.textContent = [
-    '.wrap .v57 [hidden]{display:none!important}'
+    '.wrap .v57 [hidden]{display:none!important}',
+    /* At the table, on the page's own ground: codex54's look restated (its rules reach a wine card alone). The
+       forty-five large in the house reading face, the sale under a gold rule, the ten and the twenty quiet */
+    '.wrap .v57-table{margin:6px 0 4px}',
+    '.wrap .v57-table>.secgroup{font-family:var(--house-display,\'Cinzel\',Georgia,serif);border-bottom:1px solid var(--line);margin-top:14px}',
+    '.wrap .v57-eyebrow{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:14px;letter-spacing:.07em;font-weight:500;color:var(--gold-soft);margin:14px 0 6px}',
+    '.wrap .v57-fortyfive{font-family:var(--house-reading,Georgia,serif);font-size:20px;line-height:1.5;font-weight:600;color:var(--parch);margin:4px 0 0;padding-left:12px;border-left:2px solid var(--line)}',
+    '.wrap .v57-rule{height:0;border:0;border-top:1px solid var(--gold);margin:16px 0 0}',
+    '.wrap .v57-eyebrow.v57-sale-h{margin-top:10px;color:var(--gold)}',
+    '.wrap .v57-sale{font-size:18px;line-height:1.5;color:var(--parch);margin:2px 0 4px}',
+    '.wrap .v57-ten,.wrap .v57-twenty{font-size:16px;line-height:1.5;font-weight:400;color:var(--parch2);margin:2px 0 0}',
+    '.wrap .v57-twenty{padding-left:12px;border-left:2px solid var(--line)}',
+    '.wrap .v57-sayit{font-size:17px;line-height:1.5;color:var(--parch);margin:2px 0 0}',
+    /* the sections' chips: fourteen on a phone, so one line that scrolls sideways, each chip whole */
+    '.wrap .v57-page .v53-steps{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:18px 0 20px;padding:10px 0}',
+    '.wrap .v57-page .v53-steps .v28-chip{flex:0 0 auto;white-space:nowrap}',
+    /* the glass, in the parchment section: the lead in the reading face, each family a quiet label beside its notes */
+    '.wrap .v39-body .v57-glead{font-family:var(--house-reading,Georgia,serif);font-size:19px;line-height:1.5;font-weight:600;color:var(--ink);margin:6px 0 12px}',
+    '.wrap .v57-notes{display:grid;grid-template-columns:minmax(0,7.4em) minmax(0,1fr);gap:6px 12px;margin:0 0 6px}',
+    '.wrap .v57-notes dt{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;line-height:1.5;color:var(--ink-soft);padding-top:4px;overflow-wrap:anywhere}',
+    '.wrap .v57-notes dd{margin:0;overflow-wrap:anywhere}',
+    '.wrap .v57-ladder{list-style:none;margin:0 0 6px;padding:0}',
+    '.wrap .v57-ladder li{margin:0 0 10px;padding:2px 0 2px 12px;border-left:3px solid var(--line)}',
+    '.wrap .v57-ladder li.v57-cool{border-left-color:var(--green)}',
+    '.wrap .v57-ladder li.v57-moderate{border-left-color:var(--gold)}',
+    '.wrap .v57-ladder li.v57-warm{border-left-color:var(--claret)}',
+    '.wrap .v57-climate{display:block;font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:14px;letter-spacing:.05em;color:var(--claret)}',
+    '.wrap .v39-body .v57-where{display:block;font-size:15px;line-height:1.45;color:var(--ink-soft)}',
+    '.wrap .v57-rnotes{display:block}',
+    '.wrap .v39-body .v57-structure{margin:0 0 4px}',
+    /* the two worlds: two cards of the same three rows, one under the other on a phone, side by side from 600px */
+    '.wrap .v57-sides{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:6px 0 14px}',
+    '@media(min-width:600px){.wrap .v57-sides{grid-template-columns:repeat(2,minmax(0,1fr))}}',
+    '.wrap .v57-side{min-width:0;padding:12px 14px 14px;border:1px solid var(--field-line,var(--line));border-top:3px solid var(--claret);border-radius:3px}',
+    '.wrap .v57-side.v57-new{border-top-color:var(--green)}',
+    '.wrap .v57-side .v57-side-h{margin:0 0 8px}',
+    '.wrap .v57-side p{margin:0}',
+    '.wrap .v57-rows{margin:0}',
+    '.wrap .v57-rows dt{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;line-height:1.5;color:var(--ink-soft);margin:10px 0 1px}',
+    '.wrap .v57-rows dt:first-child{margin-top:0}',
+    '.wrap .v57-rows dd{margin:0}',
+    '.wrap .v57-rows.v57-after dt{font-size:14px;color:var(--claret);margin-top:14px}',
+    /* what guests ask and the words on a label: the question or the word as it is written, its answer under it */
+    '.wrap .v57-qa{margin:0 0 6px}',
+    '.wrap .v57-qa dt{font-family:var(--house-reading,Georgia,serif);font-size:17px;line-height:1.45;font-weight:700;color:var(--ink);margin:14px 0 2px}',
+    '.wrap .v57-qa dt:first-child{margin-top:4px}',
+    '.wrap .v57-qa dd{margin:0}',
+    '.wrap .v57-food{margin-top:0}',
+    /* a neighbour: the door to its page, the tell under it */
+    '.wrap .v57-compare{list-style:none;margin:6px 0 4px;padding:0}',
+    '.wrap .v57-compare li{margin:0 0 16px}',
+    '.wrap .v57-compare .btn{font-size:16px}',
+    '.wrap .v39-body .v57-tell{margin:6px 0 0}',
+    /* the house\'s wines of the grape: a row a wine, the producer over the wine, each a 44px door to its card */
+    '.wrap .v39-body .v57-listline{margin:4px 0 0}',
+    '.wrap .v57-wines{list-style:none;margin:0 0 6px;padding:0}',
+    '.wrap .v57-wines li{margin:0;border-bottom:1px solid var(--field-line,var(--line))}',
+    '.wrap .v57-wines li:last-child{border-bottom:0}',
+    '.wrap .v57-wine{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;width:100%;min-height:48px;box-sizing:border-box;padding:8px 0;margin:0;background:none;border:0;border-radius:0;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink)}',
+    '.wrap .v57-wine-p{font-size:17px;line-height:1.35;font-weight:700;color:var(--claret);overflow-wrap:anywhere}',
+    '.wrap .v57-wine-w{font-size:16px;line-height:1.4;color:var(--ink);overflow-wrap:anywhere}',
+    '.wrap .v57-wine:focus-visible{outline:2px solid var(--claret);outline-offset:2px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -210,5 +309,263 @@ if (typeof v53GrapeJoin === 'function') {
     var J = _v57GrapeJoin.apply(this, arguments);
     try { if (J && J.list && !J.v57) { J.v57 = 1; v57JoinAdd(J); } } catch (e) { }
     return J;
+  };
+}
+
+/* =========== 3. the page =========== */
+
+function v57Cap(s) { var t = v57Str(s); return t ? t.charAt(0).toUpperCase() + t.slice(1) : ''; }
+function v57P(cls, s) { var t = v57Str(s); return t ? '<p' + (cls ? ' class="' + cls + '"' : '') + '>' + v57Esc(t) + '</p>' : ''; }
+function v57H4(key, cls) { return '<h4' + (cls ? ' class="' + cls + '"' : '') + '>' + v57Esc(v57W(key)) + '</h4>'; }
+function v57Eyebrow(key, cls) { return '<p class="v57-eyebrow' + (cls ? ' ' + cls : '') + '">' + v57Esc(v57W(key)) + '</p>'; }
+/* Labelled rows, a label over its text: [[label, text], ...]; a row with no text is left out. */
+function v57Rows(rows, cls) {
+  var list = v57List(rows).filter(function (p) { return p && v57Str(p[0]) && v57Str(p[1]); });
+  return list.length ? '<dl class="' + (cls || 'v57-rows') + '">' + list.map(function (p) { return '<dt>' + v57Esc(v57Str(p[0])) + '</dt><dd>' + v57Esc(v57Str(p[1])) + '</dd>'; }).join('') + '</dl>' : '';
+}
+/* A section of the page and its chip, in codex53's own markup. */
+function v57Details(id, title, body, open) {
+  if (!body) return '';
+  if (typeof v53Details === 'function') return v53Details(id, title, body, !!open);
+  return '<details class="v28-q v39-sec" id="' + v57Esc(id) + '" data-chip="' + v57Esc(id) + '"' + (open ? ' open' : '') + '><summary>' + v57Esc(title) + '</summary><div class="v39-body">' + body + '</div></details>';
+}
+function v57Chip(id, title) {
+  return '<button type="button" class="v28-chip" data-v39="chip" data-sec="' + v57Esc(id) + '">' + v57Esc(title) + '</button>';
+}
+var V57_SEC_HEAD = '<details class="v28-q v39-sec" id="';
+var V57_CHIP_HEAD = '<button type="button" class="v28-chip" data-v39="chip" data-sec="';
+/* Where a section stands in the page: from its opening tag to the end of its closing one, or null. No section
+   of the page holds another. */
+function v57SecAt(s, id) {
+  var a = s.indexOf(V57_SEC_HEAD + id + '"');
+  var b = a >= 0 ? s.indexOf('</details>', a) : -1;
+  return b >= 0 ? { a: a, b: b + 10 } : null;
+}
+
+/* 3.1 At the table: the forty-five second line, a rule, the sale, the ten and the twenty second lines, Say it.
+   The respelling is the table's, or the Court's own where the table writes none. '' when the table holds no line. */
+function v57TableHtml(t, say0) {
+  var l = v57Obj(t && t.lines);
+  var s45 = v57Str(l.s45), s10 = v57Str(l.s10), s20 = v57Str(l.s20), sale = v57Str(l.sale);
+  if (!s45 && !s10 && !s20 && !sale) return '';
+  var say = v57Str(t && t.say) || v57Str(say0);
+  var saleHtml = sale ? '<hr class="v57-rule">' + v57Eyebrow('sale', 'v57-sale-h') + v57P('v57-sale', sale) : '';
+  var body = '';
+  if (s45) body += v57Eyebrow('fortyFive') + v57P('v57-fortyfive', s45) + saleHtml;
+  if (s10) body += v57Eyebrow('ten') + v57P('v57-ten', s10);
+  if (!s45) body += saleHtml;
+  if (s20) body += v57Eyebrow('twenty') + v57P('v57-twenty', s20);
+  if (say) body += v57Eyebrow('say') + v57P('v57-sayit', say);
+  return '<section class="v57 v57-table" aria-labelledby="v57-table-h"><h3 class="secgroup v57-h" id="v57-table-h">' + v57Esc(v57W('atTable')) + '</h3>' + body + '</section>';
+}
+
+/* 3.2 the glass: the lead, the notes by family (each family a quiet label, its notes named), the climate ladder
+   from cool to warm with where, the line of structure. */
+function v57GlassHtml(t) {
+  var g = v57Obj(t && t.glass);
+  var html = v57P('v57-glead', g.lead);
+  var notes = v57List(g.notes).map(function (n) {
+    var fam = v57Cap(n && n.family);
+    var list = v57List(n && n.notes).map(v57Str).filter(Boolean);
+    return (fam && list.length) ? '<dt>' + v57Esc(fam) + '</dt><dd>' + v57Esc(list.join(', ')) + '</dd>' : '';
+  }).join('');
+  if (notes) html += '<dl class="v57-notes">' + notes + '</dl>';
+  var rungs = v57List(g.ladder).map(function (x) {
+    var c = v57Str(x && x.climate).toLowerCase();
+    var where = v57Str(x && x.where);
+    var list = v57List(x && x.notes).map(v57Str).filter(Boolean);
+    if (!c || (!where && !list.length)) return '';
+    var known = v57Own(V57_WORDS, 'climate_' + c);
+    return '<li' + (known ? ' class="v57-' + c + '"' : '') + '><span class="v57-climate">' + v57Esc(known ? v57W('climate_' + c) : v57Cap(c)) + '</span>'
+      + (where ? '<span class="v57-where">' + v57Esc(where) + '</span>' : '')
+      + (list.length ? '<span class="v57-rnotes">' + v57Esc(list.join(', ')) + '</span>' : '') + '</li>';
+  }).join('');
+  if (rungs) html += v57H4('ladderH') + '<ol class="v57-ladder">' + rungs + '</ol>';
+  var st = v57P('v57-structure', g.structure);
+  if (st) html += v57H4('structureH') + st;
+  return html ? '<div class="v57-glass">' + html + '</div>' : '';
+}
+
+/* 3.3 Old World and New World: the two sides as two cards of the same three rows (where, in the glass, in the
+   cellar), then why they differ, where the line blurs and the blind call; or, for a grape that stays at home,
+   At home and Abroad. */
+function v57WorldsMode(t) {
+  var w = v57Obj(t && t.worlds);
+  var c = v57Obj(w.contrast), h = v57Obj(w.home);
+  if (v57Str(v57Obj(c.old).glass) && v57Str(v57Obj(c['new']).glass)) return 'contrast';
+  return (v57Str(h.home) || v57Str(h.abroad)) ? 'home' : '';
+}
+function v57WorldsBody(t) {
+  var mode = v57WorldsMode(t);
+  var w = v57Obj(t && t.worlds);
+  if (mode === 'contrast') {
+    var c = v57Obj(w.contrast);
+    var side = function (key, o, cls) {
+      return '<div class="v57-side ' + cls + '">' + v57H4(key, 'v57-side-h') + v57Rows([[v57W('where'), o.where], [v57W('inGlass'), o.glass], [v57W('inCellar'), o.cellar]]) + '</div>';
+    };
+    return '<div class="v57-sides">' + side('oldWorld', v57Obj(c.old), 'v57-old') + side('newWorld', v57Obj(c['new']), 'v57-new') + '</div>'
+      + v57Rows([[v57W('why'), c.why], [v57W('blur'), c.blur], [v57W('call'), c.call]], 'v57-rows v57-after');
+  }
+  if (mode === 'home') {
+    var h = v57Obj(w.home);
+    var card = function (key, s, cls) { return v57Str(s) ? '<div class="v57-side ' + cls + '">' + v57H4(key, 'v57-side-h') + v57P('', s) + '</div>' : ''; };
+    return '<div class="v57-sides">' + card('atHome', h.home, 'v57-old') + card('abroad', h.abroad, 'v57-new') + '</div>';
+  }
+  return '';
+}
+
+/* 3.4 Service and the table: temperature, the glass, decanting and age, then the dishes with the reason. */
+function v57ServiceBody(t) {
+  var s = v57Obj(t && t.service);
+  var html = v57Rows([[v57W('temp'), s.temp], [v57W('glassware'), s.glass], [v57W('decant'), s.decant], [v57W('age'), s.age]], 'v39-pairs');
+  var food = v57List(v57Obj(t && t.food)['with']).map(function (f) {
+    var d = v57Str(f && f.dish), why = v57Str(f && f.why);
+    return d ? '<li><b>' + v57Esc(d) + '</b>' + (why ? ': ' + v57Esc(why) : '') + '</li>' : '';
+  }).join('');
+  if (food) html += v57H4('foodH') + '<ul class="v39-lines v57-food">' + food + '</ul>';
+  return html;
+}
+/* 3.5 What guests ask, and the words a guest meets on a label. */
+function v57GuestBody(t) {
+  return v57Rows(v57List(t && t.guest).map(function (x) { return [x && x.q, x && x.a]; }), 'v57-qa');
+}
+function v57LabelBody(t) {
+  return v57Rows(v57List(t && t.labels).map(function (x) { return [x && x.term, x && x.means]; }), 'v57-qa v57-terms');
+}
+/* 3.6 Compare with: each neighbour a door to its page, the tell under it. A neighbour the Codex holds no page
+   for yet keeps its tell and has no door. */
+function v57CompareBody(t) {
+  var rows = v57List(t && t.compare).map(function (c) {
+    var slug = v57Str(c && c.slug), tell = v57Str(c && c.tell);
+    if (!tell) return '';
+    var r = null;
+    try { r = (slug && typeof v53GrapeFind === 'function') ? v53GrapeFind(slug) : null; } catch (e) { r = null; }
+    var door = (r && r.slug === slug)
+      ? '<button type="button" class="btn small ghost" data-go="grape" data-arg="' + v57Esc(r.slug) + '">' + v57Esc(r.court || r.name) + '</button>' : '';
+    return '<li>' + door + v57P('v57-tell', tell) + '</li>';
+  }).join('');
+  return rows ? '<ul class="v57-compare">' + rows + '</ul>' : '';
+}
+/* 3.7 Sources: codex39's own list of links, each opening a new tab. */
+function v57SourcesBody(t) {
+  var rows = v57List(t && t.sources).map(function (s) {
+    var title = v57Str(s && s.title), url = v57Str(s && s.url);
+    if (!title) return '';
+    return '<li>' + (/^https?:\/\//i.test(url) ? '<a href="' + v57Esc(url) + '" target="_blank" rel="noopener">' + v57Esc(title) + '<span class="sr-only">' + v57Esc(v57W('opensNew')) + '</span></a>' : v57Esc(title)) + '</li>';
+  }).join('');
+  return rows ? '<ul class="v39-lines v39-sources v57-sources">' + rows + '</ul>' : '';
+}
+
+/* 3.8 the sections a reader opened on a grape's page, kept for the sitting: a card or a neighbour opened from
+   one and Back returns to the page as it was left. Per grape, in memory only. */
+var V57_OPEN = {};
+function v57OpenApply(s, slug) {
+  var rec = v57Own(V57_OPEN, slug) ? V57_OPEN[slug] : null;
+  if (!rec) return s;
+  Object.keys(rec).forEach(function (id) {
+    if (!/^v5[37]-gs-[a-z]+$/.test(id)) return;
+    var head = V57_SEC_HEAD + id + '" data-chip="' + id + '"';
+    var at = s.indexOf(head);
+    if (at < 0) return;
+    var end = at + head.length;
+    var isOpen = s.substr(end, 6) === ' open>';
+    if (rec[id] && !isOpen && s.charAt(end) === '>') s = s.slice(0, end) + ' open' + s.slice(end);
+    else if (!rec[id] && isOpen) s = s.slice(0, end) + s.slice(end + 5);
+  });
+  return s;
+}
+(function () {
+  if (typeof document === 'undefined' || !document || typeof document.addEventListener !== 'function') return;
+  document.addEventListener('toggle', function (e) {
+    try {
+      var d = e && e.target;
+      if (!d || typeof d.closest !== 'function' || !/^v5[37]-gs-[a-z]+$/.test(String(d.id || ''))) return;
+      var page = d.closest('.v57-page[data-grape]');
+      var slug = page ? v57Str(page.getAttribute('data-grape')) : '';
+      if (!slug || !v57T(slug)) return;
+      if (!v57Own(V57_OPEN, slug)) V57_OPEN[slug] = {};
+      V57_OPEN[slug][d.id] = d.open ? 1 : 0;
+    } catch (err) { }
+  }, true);
+})();
+
+/* 3.9 the page shaped. A grape with no record in the table is returned as codex53 drew it. The six sections of
+   codex53, Previous, Next and All grapes stay; nothing of the Court's grid is touched. */
+function v57PageShape(html, r) {
+  var s = String(html || '');
+  var t = v57T(r && r.slug);
+  if (!t) return s;
+  var root = '<div class="v25page v53 v53-grape"';
+  if (s.indexOf(root) === 0) s = '<div class="v25page v53 v53-grape v57-page"' + s.slice(root.length);
+  /* At the table, in place of the lone Say it line; where the page drew none, ahead of whatever follows the title */
+  var say0 = '';
+  try { say0 = (typeof v53GridSay === 'function') ? v57Str(v57Obj(v53GridSay())[r.slug]) : ''; } catch (e) { say0 = ''; }
+  var block = v57TableHtml(t, say0);
+  if (block) {
+    var m = /<p class="v39-lead v53-say">[\s\S]*?<\/p>/.exec(s);
+    if (m) s = s.slice(0, m.index) + block + s.slice(m.index + m[0].length);
+    else {
+      var nav = s.indexOf('<nav class="v39-steps v53-steps" aria-label="Sections">');
+      var line = s.indexOf('<p class="v32-line">');
+      var at = (line >= 0 && (nav < 0 || line < nav)) ? line : nav;
+      if (at >= 0) s = s.slice(0, at) + block + s.slice(at);
+    }
+  }
+  /* the glass leads the fruit section, shown open; the row of bare family words gives way to it */
+  var glass = v57GlassHtml(t);
+  var f = glass ? v57SecAt(s, 'v53-gs-fruit') : null;
+  if (f) {
+    var sec = s.slice(f.a, f.b);
+    var mark = '</summary><div class="v39-body">';
+    var k = sec.indexOf(mark);
+    if (k >= 0) {
+      var rest = sec.slice(k + mark.length).replace(/<dt>(?:In brief|Aromas)<\/dt><dd>[^<]*<\/dd>/, '').replace('<dl class="v39-pairs"></dl>', '');
+      if (rest.indexOf('<dl class="v39-pairs">') === 0) rest = v57H4('cardH') + rest;
+      sec = sec.slice(0, k + mark.length) + glass + rest;
+      var head = V57_SEC_HEAD + 'v53-gs-fruit" data-chip="v53-gs-fruit">';
+      if (sec.indexOf(head) === 0) sec = head.slice(0, -1) + ' open>' + sec.slice(head.length);
+      s = s.slice(0, f.a) + sec + s.slice(f.b);
+    }
+  }
+  /* the new sections, each with its chip, each ahead of the first of its anchors the page draws */
+  var mode = v57WorldsMode(t);
+  var put = function (id, title, body, open, anchors) {
+    if (!body) return false;
+    for (var i = 0; i < anchors.length; i++) {
+      var at = s.indexOf(V57_SEC_HEAD + anchors[i] + '"');
+      if (at < 0) continue;
+      s = s.slice(0, at) + v57Details(id, title, body, open) + s.slice(at);
+      var chip = s.indexOf(V57_CHIP_HEAD + anchors[i] + '"');
+      if (chip >= 0) s = s.slice(0, chip) + v57Chip(id, title) + s.slice(chip);
+      return true;
+    }
+    return false;
+  };
+  var worlds = put('v57-gs-worlds', v57W(mode === 'contrast' ? 'worldsH' : 'homeH'), v57WorldsBody(t), true, ['v53-gs-regions', 'v53-gs-grid', 'v53-gs-cards']);
+  var tail = ['v53-gs-grid', 'v53-gs-cards'];
+  put('v57-gs-service', v57W('serviceH'), v57ServiceBody(t), false, tail);
+  put('v57-gs-guest', v57W('guestH'), v57GuestBody(t), false, tail);
+  put('v57-gs-label', v57W('labelH'), v57LabelBody(t), false, tail);
+  put('v57-gs-compare', v57W('compareH'), v57CompareBody(t), false, tail);
+  /* Sources, closed at the foot: after the last section the page draws */
+  var src = v57SourcesBody(t);
+  var last = src ? (v57SecAt(s, 'v53-gs-watch') || v57SecAt(s, 'v53-gs-cards')) : null;
+  if (last) {
+    s = s.slice(0, last.b) + v57Details('v57-gs-sources', v57W('sourcesH'), src, false) + s.slice(last.b);
+    var navEnd = s.indexOf('</nav>', s.indexOf('<nav class="v39-steps v53-steps" aria-label="Sections">'));
+    if (navEnd >= 0 && s.indexOf('<nav class="v39-steps v53-steps" aria-label="Sections">') >= 0) s = s.slice(0, navEnd) + v57Chip('v57-gs-sources', v57W('sourcesH')) + s.slice(navEnd);
+  }
+  /* the one word flag leaves where the two worlds are described */
+  if (worlds) {
+    var p = v57SecAt(s, 'v53-gs-profile');
+    if (p) s = s.slice(0, p.a) + s.slice(p.a, p.b).replace(/<dt>Where it is grown<\/dt><dd>[^<]*<\/dd>/, '') + s.slice(p.b);
+  }
+  return v57OpenApply(s, r.slug);
+}
+if (typeof v53GrapeHtml === 'function') {
+  var _v57GrapeHtml = v53GrapeHtml;
+  v53GrapeHtml = function (r) {
+    var html = String(_v57GrapeHtml.apply(this, arguments) || '');
+    try { return v57PageShape(html, r); } catch (e) { return html; }
   };
 }
