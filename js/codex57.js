@@ -66,7 +66,25 @@
       is never level progress, never in codex3's rotation and never an
       orphan. A grape's cards section gains Cards at the table.
 
-   7. THE SHELL: index.html loads js/data-grapes-table.js then js/codex57.js
+   7. THE ROOT: At the table, a section ahead of Tasting with its chip among
+      the jumps: the doors (the cards with their due count, the three views)
+      and a filter of the rows (all, white, red, on our list) that hides rows
+      on the page on screen without a redraw, is kept for the sitting and is
+      applied as the root is drawn; a line under the jumps says what shows.
+
+   8. THE THREE VIEWS, each owned by Grapes, climbing to the root, answering
+      its address warm and cold: grapeworlds (the side by side grapes as an
+      index; at grapeworlds/call a drill of ten glasses, each the tell of one
+      world read from the grape's blind call, answered Old World or New
+      World, scored, the round kept), grapecompare/{a}~{b} (two grapes
+      chosen; the glass, the notes, the structure, the tell and service side
+      by side, and what the table says between the two) and
+      grapepresent/{slug} (the name shown, the learner speaks, the forty-five
+      second line and the sale are shown, the learner marks it said or not
+      yet; the mark is a due date by the grape's slug). A screen keeps
+      codex32's one Back: the layer draws no Back of its own.
+
+   9. THE SHELL: index.html loads js/data-grapes-table.js then js/codex57.js
       after codex56.js and before boot.js; the worker is codex-v116 and lists
       both.
 */
@@ -140,6 +158,7 @@ var V57_WORDS = {
   qCat: 'Grape: {name}',
   qLevel: 'Grapes',
   noCards: 'No table cards are on this device yet.',
+  allGrapes: 'All grapes',
   /* the root: At the table */
   rootLine: 'The grapes as they are spoken of at the table: their cards, the two worlds, two grapes side by side and a grape said aloud.',
   cardsRowDue: '{d} due today · {cards} · {m} learnt',
@@ -160,7 +179,72 @@ var V57_WORDS = {
   showing_white: 'Showing the white grapes, {n} of {all}.',
   showing_red: 'Showing the red grapes, {n} of {all}.',
   showing_list: 'Showing the grapes on our list, {n} of {all}.',
-  showAll: 'Show all grapes'
+  showAll: 'Show all grapes',
+  /* the view Old World and New World, and its call drill */
+  worldsSub: 'The same grape from the two worlds, side by side',
+  worldsLead: '{n} grapes are poured from both worlds in styles a guest meets on a list. Each row gives the blind call and opens the grape at its two sides.',
+  callH: 'Call the glass',
+  callLine: 'A glass is described by what tips the call. Say Old World or New World, then read the tell.',
+  callLast: 'Last round: {r} of {of} called right.',
+  callStart: 'Call {n} glasses',
+  callAsk: 'Old World or New World?',
+  callPos: 'Glass {i} of {n}',
+  callGlass: 'A glass of {name}',
+  callRight: 'Right: {world}.',
+  callWrong: 'Not this time: {world}.',
+  callNext: 'Next glass',
+  callEnd: 'See the score',
+  scoreH: 'The round',
+  scoreLine: '{r} of {n} called right.',
+  scoreAll: 'All {n} called right.',
+  calledRight: '{world}, called right',
+  calledWrong: '{world}, missed',
+  callAgain: 'Call another {n}',
+  callSides: '{name} at its two sides',
+  callNone: 'No glass can be called yet: the two worlds are written for no grape on this device.',
+  whitesH: 'Whites',
+  redsH: 'Reds',
+  homeNote: 'The other {n} grapes stay at home: each page says where, and abroad where the grape travels.',
+  /* the view Compare two grapes */
+  cmpSub: 'Side by side: the glass, the structure, the tell and service',
+  cmpA: 'The first grape',
+  cmpB: 'The second grape',
+  cmpGo: 'Compare them',
+  cmpPair: '{a} · {b}',
+  cmpSame: 'Choose two different grapes.',
+  cmpChoose: 'Choose two grapes the table describes.',
+  cmpBetween: 'Between the two',
+  cmpNotes: 'The notes',
+  cmpTell: 'The tell',
+  cmpService: 'Service',
+  cmpNone: 'Not written yet',
+  cmpOpen: 'The page for {name}',
+  sideBySide: 'Side by side',
+  /* the view Present it */
+  presentSub: 'Say it aloud, then check yourself against the line',
+  kind_white: 'A white grape',
+  kind_red: 'A red grape',
+  family_white: 'A family of white grapes',
+  family_red: 'A family of red grapes',
+  presentAsk: 'Say it aloud, as you would at the table: what it is, where it is at home, how it tastes, how it is made and what it suits. Take about forty-five seconds, then make the sale in two sentences.',
+  presentCount: '{m} of {n} said · {d} due today',
+  presentNew: '{n} grapes to say aloud',
+  reveal: 'Show the line',
+  skip: 'Another grape',
+  markH: 'Mark yourself',
+  markAsk: 'Did you say what the line says, in your own words?',
+  said: 'Said it',
+  notYet: 'Not yet',
+  markedSaid: 'Marked said. It comes back tomorrow.',
+  markedSaidN: 'Marked said. It comes back in {n} days.',
+  markedNot: 'Marked not yet. It stays due today.',
+  presentNext: 'Next: {name}',
+  presentNone: 'No grape has a line to say on this device yet.',
+  gpresent: 'Say {name} aloud',
+  gpNew: 'Not said aloud yet: the name is shown, you speak, then the line.',
+  gpDue: 'Due to be said again today.',
+  gpLater: 'Said. It comes back tomorrow.',
+  gpLaterN: 'Said. It comes back in {n} days.'
 };
 
 function v57W(key, vars) {
@@ -273,7 +357,7 @@ function v57T(slug) {
        face a size down; the answer under it, then the door to the grape */
     '.wrap .v57-card .v57-cq{font-family:var(--house-reading,Georgia,serif);font-size:21px;line-height:1.4;font-weight:700;letter-spacing:0;text-transform:none;overflow-wrap:anywhere}',
     '.wrap .v57-card .v57-ca{font-size:18px;line-height:1.55;margin:10px 0 0}',
-    '.wrap .v57-cdoor{margin:16px 0 0}',
+    '.wrap .v57-cdoor{margin:18px 0 0}',
     '.wrap .v57-cdoor .btn{min-height:44px;font-size:16px;white-space:normal;text-align:left}',
     /* a grape\'s own three cards in its cards section: the question, and when it is due beside it */
     '.wrap .v39-body .v57-cardsline{margin:2px 0 6px}',
@@ -291,7 +375,55 @@ function v57T(slug) {
     '.wrap .v57-filterline .v32-line{flex:1 1 12em;margin:0}',
     '.wrap .v57-filterline .btn{flex:0 0 auto}',
     '.wrap .v57-filterline:focus{outline:none}',
-    '.wrap .v57-filterline:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}'
+    '.wrap .v57-filterline:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}',
+    '.wrap .v57-compare .btn{margin:0 8px 6px 0}',
+    /* the three views, on the page\'s own ground: a heading moved to takes no ring unless a keyboard put it there */
+    '.wrap .v57-view [tabindex="-1"]:focus{outline:none}',
+    '.wrap .v57-view [tabindex="-1"]:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}',
+    '.wrap .v57-view .v32-sec{margin-top:24px}',
+    '.wrap .v57-view .v28-btnrow .btn{margin:0}',
+    /* the call drill: the glass on a card, the two calls side by side and tall, the tell under the answer */
+    '.wrap .v57-glasscard{margin:16px 0 0;padding:20px 18px}',
+    '.wrap .v57-glasscard .v57-geyebrow{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:14px;letter-spacing:.06em;color:var(--ink-soft);margin:0 0 8px}',
+    '.wrap .v57-glasscard .v57-gtext{font-family:var(--house-reading,Georgia,serif);font-size:22px;line-height:1.45;font-weight:600;color:var(--ink);margin:0;overflow-wrap:anywhere}',
+    '.wrap .v57-callrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 0}',
+    '.wrap .v57-callrow .btn{min-height:56px;margin:0;text-align:center;justify-content:center;white-space:normal}',
+    '.wrap .v57-verdict{margin:18px 0 0;padding:12px 14px 14px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:3px}',
+    '.wrap .v57-verdict.v57-missed{border-left-color:var(--red)}',
+    '.wrap .v57-verdict .v57-verdict-h{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:19px;line-height:1.35;letter-spacing:.03em;font-weight:500;color:var(--gold-hi);margin:0 0 6px;border:0;padding:0}',
+    '.wrap .v57-vrows{margin:0}',
+    '.wrap .v57-vrows dt{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;line-height:1.5;color:var(--gold-soft);margin:12px 0 2px}',
+    '.wrap .v57-vrows dd{margin:0;font-size:17px;line-height:1.5;color:var(--parch);overflow-wrap:anywhere}',
+    '.wrap .v57-view .v57-after{margin:16px 0 0}',
+    '.wrap .v57-score{list-style:none;margin:10px 0 0;padding:0}',
+    '.wrap .v57-score li{margin:0;padding:10px 0;border-bottom:1px solid var(--line)}',
+    '.wrap .v57-score .v57-sname{display:block;font-size:17px;line-height:1.4;color:var(--parch)}',
+    '.wrap .v57-score .v57-sline{display:block;font-size:15px;line-height:1.45;color:var(--gold-soft)}',
+    '.wrap .v57-score .v57-stell{display:block;font-size:16px;line-height:1.5;color:var(--parch);margin:4px 0 8px}',
+    /* compare two grapes: the chooser, then each matter as two columns that keep their width on a phone */
+    '.wrap .v57-cmpform{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:14px 0 0;max-width:560px}',
+    '.wrap .v57-cmpform label{display:block;font-size:16px;color:var(--parch);margin:0 0 4px}',
+    '.wrap .v57-cmpform select{display:block;width:100%;min-height:44px;font-size:17px;box-sizing:border-box}',
+    '.wrap .v57-cmp h3{margin-top:20px}',
+    '.wrap .v57-cmprow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin:6px 0 0}',
+    '.wrap .v57-cmprow>div{min-width:0;font-size:16px;line-height:1.5;color:var(--parch);overflow-wrap:anywhere}',
+    '.wrap .v57-cmprow .v57-cname{display:block;font-weight:700;font-size:15px;color:var(--gold-hi);margin:0 0 2px}',
+    '.wrap .v57-cmprow p{margin:0}',
+    '.wrap .v57-cmprow ul{list-style:none;margin:0;padding:0}',
+    '.wrap .v57-cmprow li{margin:0 0 6px}',
+    '.wrap .v57-cmprow .v57-clabel{display:block;font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:12px;letter-spacing:.05em;color:var(--gold-soft)}',
+    '.wrap .v57-between{margin:8px 0 0;padding:0 0 0 12px;border-left:2px solid var(--gold);font-size:17px;line-height:1.5;color:var(--parch)}',
+    '.wrap .v57-between p{margin:0 0 6px}',
+    /* present it: the name on a card, then the line as the grape\'s page sets it */
+    '.wrap .v57-pcard{margin:16px 0 0;padding:20px 18px}',
+    '.wrap .v57-pcard .v57-pkind{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:14px;letter-spacing:.06em;color:var(--ink-soft);margin:0 0 6px}',
+    '.wrap .v57-pcard .v57-pname{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:28px;line-height:1.25;font-weight:600;letter-spacing:.02em;color:var(--claret);margin:0;border:0;padding:0;overflow-wrap:anywhere}',
+    '.wrap .v57-pcard .v57-psay{font-size:17px;line-height:1.5;color:var(--ink-soft);margin:6px 0 0}',
+    '.wrap .v57-pcard .v57-pask{font-size:17px;line-height:1.55;color:var(--ink);margin:14px 0 0}',
+    '.wrap .v57-present .v57-ptable{margin-top:18px}',
+    '.wrap .v57-present .v57-ptable .v57-fortyfive{font-size:18px}',
+    '.wrap .v57-present .v57-ptable .v57-sale{font-size:17px}',
+    '.wrap .v57-view .v57-marked{margin:16px 0 0;padding:6px 0 6px 12px;border-left:3px solid var(--gold);font-size:17px;line-height:1.5}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -525,9 +657,10 @@ function v57GuestBody(t) {
 function v57LabelBody(t) {
   return v57Rows(v57List(t && t.labels).map(function (x) { return [x && x.term, x && x.means]; }), 'v57-qa v57-terms');
 }
-/* 3.6 Compare with: each neighbour a door to its page, the tell under it. A neighbour the Codex holds no page
-   for yet keeps its tell and has no door. */
+/* 3.6 Compare with: each neighbour a door to its page and a door to the two side by side, the tell under them.
+   A neighbour the Codex holds no page for yet keeps its tell and has no door. */
 function v57CompareBody(t) {
+  var here = v57Str(t && t.slug);
   var rows = v57List(t && t.compare).map(function (c) {
     var slug = v57Str(c && c.slug), tell = v57Str(c && c.tell);
     if (!tell) return '';
@@ -535,6 +668,10 @@ function v57CompareBody(t) {
     try { r = (slug && typeof v53GrapeFind === 'function') ? v53GrapeFind(slug) : null; } catch (e) { r = null; }
     var door = (r && r.slug === slug)
       ? '<button type="button" class="btn small ghost" data-go="grape" data-arg="' + v57Esc(r.slug) + '">' + v57Esc(r.name) + '</button>' : '';
+    /* the two side by side, once the view is there and the table describes both */
+    if (door && here && here !== slug && v57T(slug) && v57Own(V57_VIEWS, 'grapecompare')) {
+      door += '<button type="button" class="btn small ghost v57-sbs" data-go="grapecompare" data-arg="' + v57Esc(here + '~' + slug) + '">' + v57Esc(v57W('sideBySide')) + '</button>';
+    }
     return '<li>' + door + v57P('v57-tell', tell) + '</li>';
   }).join('');
   return rows ? '<ul class="v57-compare">' + rows + '</ul>' : '';
@@ -1023,6 +1160,21 @@ if (typeof v32CardFace === 'function') {
     return _v57CardFace.apply(this, arguments);
   };
 }
+/* A deck of the layer dealt to its end: codex32's Another deck leads to the Library, which holds none of these,
+   so the door reads All grapes and opens the root. */
+if (typeof v32CardHtml === 'function') {
+  var _v57CardHtml = v32CardHtml;
+  v32CardHtml = function () {
+    var html = String(_v57CardHtml.apply(this, arguments) || '');
+    try {
+      var run = S._v32run;
+      if (run && run.v32 && v57IsDeck(run.deckId) && !run.deck.length) {
+        html = html.replace(/<button type="button" class="btn ghost" data-v32="another">[^<]*<\/button>/, '<button type="button" class="btn ghost" data-go="grapes" id="v57-deck-all">' + v57Esc(v57W('allGrapes')) + '</button>');
+      }
+    } catch (e) { }
+    return html;
+  };
+}
 /* The decks and their cards light Grapes. The deck screen of a grape's three climbs to the grape and so does
    their run; the due run climbs to the root, as the whole deck's screen does. */
 function v57DeckShown() {
@@ -1210,7 +1362,18 @@ function v57GrapeCardsHtml(r) {
     + '<ul class="v57-cardlist">' + cards.map(function (c) {
       return '<li><span class="v57-cardq">' + v57Esc(c.front) + '</span><span class="v57-cardstate">' + v57Esc(v57CardState(rec[c.id], day)) + '</span></li>';
     }).join('') + '</ul>'
-    + '<ul class="v39-lines v39-list v53-doors v57-carddoors"><li><button type="button" class="btn small ghost" data-v57="cards" data-deck="' + v57Esc('grapecards:' + r.slug) + '" id="v57-gcards">' + v57Esc(v57W('gcStudy')) + '</button></li></ul>';
+    + '<ul class="v39-lines v39-list v53-doors v57-carddoors"><li><button type="button" class="btn small ghost" data-v57="cards" data-deck="' + v57Esc('grapecards:' + r.slug) + '" id="v57-gcards">' + v57Esc(v57W('gcStudy')) + '</button></li>'
+    + v57GrapePresentDoor(r) + '</ul>';
+}
+/* The door from a grape's page to saying it aloud (the view Present it), with where its mark stands. */
+function v57GrapePresentDoor(r) {
+  var t = v57T(r && r.slug);
+  if (!t || !v57Str(v57Obj(t.lines).s45) || !v57Own(V57_VIEWS, 'grapepresent')) return '';
+  var p = v57Rec().p[r.slug];
+  var n = p ? v57DaysTo(p.due) : 0;
+  var note = !p ? v57W('gpNew') : (v57IsDue(p) ? v57W('gpDue') : (n <= 1 ? v57W('gpLater') : v57W('gpLaterN', { n: n })));
+  return '<li><button type="button" class="btn small ghost" data-go="grapepresent" data-arg="' + v57Esc(r.slug) + '" id="v57-gpresent">' + v57Esc(v57W('gpresent', { name: r.name })) + '</button>'
+    + '<span class="v53-note">' + v57Esc(note) + '</span></li>';
 }
 if (typeof v53GrapeCardsBody === 'function') {
   var _v57GrapeCardsBody = v53GrapeCardsBody;
@@ -1438,3 +1601,493 @@ if (typeof v53GrapesRootHtml === 'function') {
     try { return v57RootShape(html); } catch (e) { return html; }
   };
 }
+
+/* =========== 8. the three views =========== */
+
+/* 8.1 the registry: each view is owned by Grapes, climbs to the Grapes root and answers its own address, warm
+   and cold. codex32's router is extended key by key; one arg a view, read back through the view's accept. */
+function v57Go(view, arg, mode) {
+  if (typeof v32Go === 'function') v32Go({ view: view, arg: arg == null ? '' : String(arg) }, mode || 'push');
+}
+function v57Build(html) {
+  if (typeof v53CmsBuild === 'function') return v53CmsBuild(html);
+  if (typeof v32Build === 'function') return v32Build(html);
+  var box = document.createElement('div');
+  box.innerHTML = html;
+  return box;
+}
+/* The view drawn again in its own entry (an answer given, a line shown): the part named comes to the top, clear
+   of the Back row, and what changed takes the focus without moving the page again. */
+function v57Redraw(focusId, topId) {
+  try { if (typeof V32 !== 'undefined' && V32) V32.pend = 'replace'; } catch (e) { }
+  if (typeof render === 'function') render();
+  try {
+    var top = topId ? document.getElementById(topId) : null;
+    if (top && typeof top.getBoundingClientRect === 'function') window.scrollTo(0, Math.max(0, top.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0) - 72));
+    else window.scrollTo(0, 0);
+    var n = focusId ? document.getElementById(focusId) : null;
+    if (n && typeof n.focus === 'function') n.focus({ preventScroll: true });
+    else if (typeof v25FocusMain === 'function') v25FocusMain();
+  } catch (e2) { }
+}
+function v57View(name, def) {
+  V57_VIEWS[name] = def;
+  if (typeof V32_PARENT !== 'undefined' && V32_PARENT) V32_PARENT[name] = 'grapes';
+  if (typeof V32_OWNER !== 'undefined' && V32_OWNER) V32_OWNER[name] = 'grapes';
+  if (typeof V25_UNDER !== 'undefined' && V25_UNDER) V25_UNDER[name] = 'grapes';
+  if (typeof V25_HUB !== 'undefined' && V25_HUB) V25_HUB[name] = 'grapes';
+  if (typeof V25_AREA !== 'undefined' && V25_AREA) V25_AREA[name] = 'grapes';
+  if (typeof V25_VIEWS !== 'undefined' && V25_VIEWS) V25_VIEWS[name] = function () { return v57Build(def.draw(V57_ARGS[name] || '')); };
+  if (typeof V25_GO !== 'undefined' && V25_GO) V25_GO[name] = function (arg) { v57Go(name, arg); };
+}
+if (typeof v32Arg === 'function') {
+  var _v57Arg = v32Arg;
+  v32Arg = function (v) {
+    if (v57Own(V57_VIEWS, v)) return String(V57_ARGS[v] || '');
+    return _v57Arg.apply(this, arguments);
+  };
+}
+if (typeof v32Apply === 'function') {
+  var _v57Apply = v32Apply;
+  v32Apply = function (r) {
+    if (r && v57Own(V57_VIEWS, r.view)) {
+      var def = V57_VIEWS[r.view];
+      var arg = String(r.arg || '');
+      if (typeof def.accept === 'function') { try { arg = String(def.accept(arg) || ''); } catch (e) { arg = ''; } }
+      V57_ARGS[r.view] = arg;
+      S._v25area = 'grapes';
+      S._v28edit = false;
+      S._v53from = 'grapes';
+      S.view = r.view;
+      return arg ? { view: r.view, arg: arg } : { view: r.view };
+    }
+    return _v57Apply.apply(this, arguments);
+  };
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v57ViewParentRoute = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      if (v57Own(V57_VIEWS, S.view)) {
+        var def = V57_VIEWS[S.view];
+        return typeof def.parent === 'function' ? def.parent(V57_ARGS[S.view] || '') : { view: 'grapes' };
+      }
+    } catch (e) { }
+    return _v57ViewParentRoute.apply(this, arguments);
+  };
+}
+if (typeof v25NavWord === 'function') {
+  var _v57ViewNavWord = v25NavWord;
+  v25NavWord = function () {
+    try { if (v57Own(V57_VIEWS, S.view)) return 'grapes'; } catch (e) { }
+    return _v57ViewNavWord.apply(this, arguments);
+  };
+}
+if (typeof v25MainName === 'function') {
+  var _v57MainName = v25MainName;
+  v25MainName = function () {
+    try { if (S && v57Own(V57_VIEWS, S.view) && typeof V57_VIEWS[S.view].name === 'function') return V57_VIEWS[S.view].name(V57_ARGS[S.view] || ''); } catch (e) { }
+    return _v57MainName.apply(this, arguments);
+  };
+}
+function v57Head(title, sub) {
+  if (typeof v32Head === 'function') return v32Head(title, sub);
+  return '<div class="viewhead"><h2 tabindex="-1" class="v32-h">' + v57Esc(title) + '</h2>' + (sub ? '<div class="sub">' + v57Esc(sub) + '</div>' : '') + '</div>';
+}
+function v57Shuffle(a) {
+  if (typeof shuffle === 'function') return shuffle(a.slice());
+  var out = a.slice();
+  for (var i = out.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = out[i]; out[i] = out[j]; out[j] = x; }
+  return out;
+}
+
+/* 8.2 Old World and New World: the grapes the two worlds are written for as an index, each row its blind call
+   and a door to the grape at its two sides; and the call drill. */
+
+/* A grape's page opened at its two sides. */
+function v57OpenWorlds(slug) {
+  var r = v57Grape(slug);
+  if (!r) return false;
+  if (!v57Own(V57_OPEN, r.slug)) V57_OPEN[r.slug] = {};
+  V57_OPEN[r.slug]['v57-gs-worlds'] = 1;
+  v57Go('grape', r.slug);
+  try {
+    var d = document.getElementById('v57-gs-worlds');
+    if (d && typeof d.querySelector === 'function') { d.open = true; v57Land(d.querySelector('summary') || d); }
+  } catch (e) { }
+  return true;
+}
+V57_ACTS.worlds = function (node) { return v57OpenWorlds(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-slug') : ''); };
+
+/* The glasses a grape gives the drill, read from its blind call: the line is written both ways (what leans one
+   world; what leans the other), so each half is a glass described by its tell. The world a half leans to is the
+   one it names, else the side whose places it names, else its place in the line (the Old World is written
+   first). A grape whose call does not give both worlds sits the drill out. */
+var V57_LEAN = /^(.+)\s+(?:leans?|points?|suggests?)\s+(?:to\s+|towards\s+)?(.+)$/i;
+function v57CallSide(target, c, i, n) {
+  var f = ' ' + v57Fold(target) + ' ';
+  if (f.indexOf(' old world ') >= 0) return 'old';
+  if (f.indexOf(' new world ') >= 0) return 'new';
+  var hay = function (o) { return ' ' + v57Fold([o.where, o.glass, o.cellar].join(' ')) + ' '; };
+  var ho = hay(v57Obj(c.old)), hn = hay(v57Obj(c['new']));
+  var inOld = false, inNew = false;
+  f.trim().split(/\s+(?:or|and)\s+/).forEach(function (p) {
+    if (!p) return;
+    if (ho.indexOf(' ' + p + ' ') >= 0) inOld = true;
+    if (hn.indexOf(' ' + p + ' ') >= 0) inNew = true;
+  });
+  if (inOld !== inNew) return inOld ? 'old' : 'new';
+  if (n >= 2 && i === 0) return 'old';
+  if (n >= 2 && i === n - 1) return 'new';
+  return '';
+}
+function v57CallGlasses(t) {
+  if (v57WorldsMode(t) !== 'contrast') return [];
+  var c = v57Obj(v57Obj(t.worlds).contrast);
+  var parts = v57Str(c.call).replace(/\.\s*$/, '').split(/\s*;\s*/).filter(Boolean);
+  var out = [];
+  parts.forEach(function (p, i) {
+    var m = V57_LEAN.exec(p);
+    if (!m) return;
+    var side = v57CallSide(m[2], c, i, parts.length);
+    var text = v57Cap(m[1].replace(/[,\s]+$/, ''));
+    if (side && text) out.push({ side: side, text: text + '.' });
+  });
+  var has = function (s) { return out.some(function (x) { return x.side === s; }); };
+  return (has('old') && has('new')) ? out : [];
+}
+function v57CallPool() {
+  var out = [];
+  v57ContrastList().forEach(function (r) {
+    v57CallGlasses(v57T(r.slug)).forEach(function (g) { out.push({ slug: r.slug, name: r.name, side: g.side, text: g.text }); });
+  });
+  return out;
+}
+/* A round: ten glasses, each of a different grape while the table holds ten to call (a grape's other glass only
+   when it does not); kept in memory, so a reload deals a new one. */
+var V57_ROUND = 10;
+var V57_CALL = { deck: [], i: 0, right: 0, pick: '', log: [], kept: false };
+function v57CallDeal() {
+  var by = {}, slugs = [];
+  v57CallPool().forEach(function (g) { if (!v57Own(by, g.slug)) { by[g.slug] = []; slugs.push(g.slug); } by[g.slug].push(g); });
+  slugs = v57Shuffle(slugs);
+  var deck = [], rest = [];
+  slugs.forEach(function (s) { var g = v57Shuffle(by[s]); deck.push(g[0]); rest = rest.concat(g.slice(1)); });
+  if (deck.length < V57_ROUND) deck = v57Shuffle(deck.concat(v57Shuffle(rest).slice(0, V57_ROUND - deck.length)));
+  V57_CALL = { deck: deck.slice(0, V57_ROUND), i: 0, right: 0, pick: '', log: [], kept: false };
+  return V57_CALL.deck.length;
+}
+function v57CallSize() {
+  var seen = {}, n = 0, all = 0;
+  v57CallPool().forEach(function (g) { all++; if (!seen[g.slug]) { seen[g.slug] = 1; n++; } });
+  return Math.min(V57_ROUND, n >= V57_ROUND ? n : all);
+}
+function v57WorldWord(side) { return v57W(side === 'new' ? 'newWorld' : 'oldWorld'); }
+function v57CallHtml() {
+  var st = V57_CALL;
+  var n = st.deck.length;
+  var html = '<div class="v25page v53 v57 v57-view v57-call" id="v57-call">';
+  if (!n) return html + v57Head(v57W('callAsk'), '') + '<p class="v32-line">' + v57Esc(v57W('callNone')) + '</p></div>';
+  if (st.i >= n) {
+    html += v57Head(v57W('scoreH'), st.right === n ? v57W('scoreAll', { n: n }) : v57W('scoreLine', { r: st.right, n: n }));
+    html += '<ul class="v57-score" id="v57-call-score">' + st.log.map(function (x) {
+      var t = v57T(x.slug);
+      var call = x.ok ? '' : v57Str(v57Obj(v57Obj(v57Obj(t).worlds).contrast).call);
+      return '<li><span class="v57-sname">' + v57Esc(x.name) + '</span><span class="v57-sline">' + v57Esc(v57W(x.ok ? 'calledRight' : 'calledWrong', { world: v57WorldWord(x.side) })) + '</span>'
+        + (call ? '<span class="v57-stell">' + v57Esc(call) + '</span><button type="button" class="btn small ghost" data-v57="worlds" data-slug="' + v57Esc(x.slug) + '">' + v57Esc(v57W('callSides', { name: x.name })) + '</button>' : '') + '</li>';
+    }).join('') + '</ul>';
+    /* one Back a screen: codex32's own control climbs to the index, so the round ends on the next round alone */
+    return html + '<div class="v28-btnrow v57-after"><button type="button" class="btn gold" data-v57="callstart" id="v57-callagain">' + v57Esc(v57W('callAgain', { n: v57CallSize() })) + '</button></div></div>';
+  }
+  var g = st.deck[st.i];
+  html += v57Head(v57W('callAsk'), v57W('callPos', { i: st.i + 1, n: n }));
+  html += '<div class="card v57-glasscard"><p class="v57-geyebrow">' + v57Esc(v57W('callGlass', { name: g.name })) + '</p><p class="v57-gtext" id="v57-call-glass" tabindex="-1">' + v57Esc(g.text) + '</p></div>';
+  if (!st.pick) {
+    var btn = function (side) { return '<button type="button" class="btn gold" data-v57="callpick" data-side="' + side + '" id="v57-call-' + side + '">' + v57Esc(v57WorldWord(side)) + '</button>'; };
+    return html + '<div class="v57-callrow" role="group" aria-label="' + v57Esc(v57W('callAsk')) + '">' + btn('old') + btn('new') + '</div></div>';
+  }
+  var ok = st.pick === g.side;
+  var c = v57Obj(v57Obj(v57Obj(v57T(g.slug)).worlds).contrast);
+  var o = v57Obj(c[g.side]);
+  var rows = [[v57W('call'), c.call], [v57W('where'), o.where], [v57W('inGlass'), o.glass]].filter(function (p) { return v57Str(p[1]); })
+    .map(function (p) { return '<dt>' + v57Esc(p[0]) + '</dt><dd>' + v57Esc(v57Str(p[1])) + '</dd>'; }).join('');
+  html += '<section class="v57-verdict ' + (ok ? 'v57-called' : 'v57-missed') + '" aria-labelledby="v57-call-verdict"><h3 class="v57-verdict-h" id="v57-call-verdict" tabindex="-1">'
+    + v57Esc(v57W(ok ? 'callRight' : 'callWrong', { world: v57WorldWord(g.side) })) + '</h3>' + (rows ? '<dl class="v57-vrows">' + rows + '</dl>' : '') + '</section>';
+  return html + '<div class="v28-btnrow v57-after"><button type="button" class="btn gold" data-v57="callnext" id="v57-call-next">' + v57Esc(v57W(st.i + 1 >= n ? 'callEnd' : 'callNext')) + '</button>'
+    + '<button type="button" class="btn ghost" data-v57="worlds" data-slug="' + v57Esc(g.slug) + '">' + v57Esc(v57W('callSides', { name: g.name })) + '</button></div></div>';
+}
+function v57WorldsHtml() {
+  var list = v57ContrastList();
+  var html = '<div class="v25page v32-root v53 v57 v57-view v57-worlds" id="v57-worlds">' + v57Head(v57W('worldsH'), v57W('worldsSub'));
+  if (!list.length) return html + '<p class="v32-line">' + v57Esc(v57W('callNone')) + '</p></div>';
+  html += '<p class="v32-line">' + v57Esc(v57W('worldsLead', { n: list.length })) + '</p>';
+  var size = v57CallSize();
+  if (size) {
+    var w = v57Obj(v57Rec().w);
+    html += '<section class="v32-sec v57-callbox" aria-labelledby="v57-call-h"><h2 class="v32-h2" id="v57-call-h" tabindex="-1">' + v57Esc(v57W('callH')) + '</h2>'
+      + '<p class="v32-line">' + v57Esc(v57W('callLine') + (Number(w.of) > 0 ? ' ' + v57W('callLast', { r: Number(w.last) || 0, of: Number(w.of) }) : '')) + '</p>'
+      + '<div class="v28-btnrow"><button type="button" class="btn gold" data-v57="callstart" id="v57-callstart">' + v57Esc(v57W('callStart', { n: size })) + '</button></div></section>';
+  }
+  var group = function (key, id, rows) {
+    if (!rows.length) return '';
+    return '<section class="v32-sec" aria-labelledby="' + id + '"><h2 class="v32-h2" id="' + id + '" tabindex="-1">' + v57Esc(v57W(key)) + '</h2><ul class="v25rows v32rows v57-doors">' + rows.map(function (r) {
+      var call = v57Str(v57Obj(v57Obj(v57T(r.slug).worlds).contrast).call);
+      return v57RootRow('data-v57="worlds" data-slug="' + v57Esc(r.slug) + '"', r.name, call, 'v57-w-' + r.slug);
+    }).join('') + '</ul></section>';
+  };
+  html += group('whitesH', 'v57-w-whites', list.filter(function (r) { return r.colour === 'white'; }));
+  html += group('redsH', 'v57-w-reds', list.filter(function (r) { return r.colour !== 'white'; }));
+  var home = v57GrapeList().filter(function (r) { return v57WorldsMode(v57T(r.slug)) === 'home'; }).length;
+  if (home > 1) html += '<p class="v32-line v57-homenote">' + v57Esc(v57W('homeNote', { n: home })) + '</p>';
+  return html + '</div>';
+}
+V57_ACTS.callstart = function () {
+  if (!v57CallDeal()) { if (typeof toast === 'function') toast(v57W('callNone')); return false; }
+  if (S.view === 'grapeworlds' && V57_ARGS.grapeworlds === 'call') v57Redraw('v57-call-glass', 'v57-call');
+  else v57Go('grapeworlds', 'call');
+  return true;
+};
+V57_ACTS.callpick = function (node) {
+  var st = V57_CALL, g = st.deck[st.i];
+  var side = node && typeof node.getAttribute === 'function' ? node.getAttribute('data-side') : '';
+  if (!g || st.pick || (side !== 'old' && side !== 'new')) return false;
+  st.pick = side;
+  var ok = side === g.side;
+  if (ok) st.right++;
+  st.log.push({ slug: g.slug, name: g.name, side: g.side, ok: ok });
+  v57Redraw('v57-call-verdict', 'v57-call');
+  return true;
+};
+V57_ACTS.callnext = function () {
+  var st = V57_CALL;
+  if (!st.deck.length || !st.pick) return false;
+  st.i++;
+  st.pick = '';
+  if (st.i >= st.deck.length && !st.kept) {
+    st.kept = true;
+    try {
+      var o = v57Rec();
+      o.w = { n: (Number(o.w.n) || 0) + 1, last: st.right, of: st.deck.length };
+      v57Put(o);
+    } catch (e) { }
+  }
+  v57Redraw('v57-call-glass', 'v57-call');
+  return true;
+};
+v57View('grapeworlds', {
+  draw: function (arg) {
+    if (arg !== 'call') return v57WorldsHtml();
+    if (!V57_CALL.deck.length) v57CallDeal();
+    return v57CallHtml();
+  },
+  accept: function (arg) { return arg === 'call' ? 'call' : ''; },
+  name: function (arg) { return arg === 'call' ? v57W('callAsk') : v57W('worldsH'); },
+  parent: function (arg) { return arg === 'call' ? { view: 'grapeworlds' } : { view: 'grapes' }; }
+});
+
+/* 8.3 Compare two grapes: two of the grapes the table describes, chosen; the glass, the notes, the structure,
+   the tell and service side by side, and what the table says between the two when either names the other. */
+function v57TableGrapes() { return v57GrapeList().filter(function (r) { return !!v57T(r.slug); }); }
+function v57CmpPair(arg) {
+  var parts = String(arg || '').split('~');
+  var pick = function (s) { var r = s ? v57Grape(s) : null; return (r && v57T(r.slug)) ? r : null; };
+  return { a: pick(parts[0]), b: pick(parts[1]) };
+}
+/* With one grape named or none: the first grape of the table, and the first neighbour its record compares it
+   with (else the next grape of the table). */
+function v57CmpDefault(a) {
+  var list = v57TableGrapes();
+  var first = a || list[0] || null;
+  if (!first) return '';
+  var second = null;
+  v57List(v57T(first.slug).compare).some(function (c) {
+    var r = v57Grape(c && c.slug);
+    if (r && r.slug !== first.slug && v57T(r.slug)) { second = r; return true; }
+    return false;
+  });
+  if (!second && list.length > 1) second = list[(list.indexOf(first) + 1) % list.length];
+  return first.slug + '~' + (second && second !== first ? second.slug : '');
+}
+function v57CmpOptions(sel) {
+  var list = v57TableGrapes();
+  var group = function (key, rows) {
+    return rows.length ? '<optgroup label="' + v57Esc(v57W(key)) + '">' + rows.map(function (r) {
+      return '<option value="' + v57Esc(r.slug) + '"' + (r.slug === sel ? ' selected' : '') + '>' + v57Esc(r.name) + '</option>';
+    }).join('') + '</optgroup>' : '';
+  };
+  return group('whitesH', list.filter(function (r) { return r.colour === 'white'; })) + group('redsH', list.filter(function (r) { return r.colour !== 'white'; }));
+}
+function v57CmpCell(r, kind) {
+  var t = v57T(r.slug);
+  var g = v57Obj(t.glass), s = v57Obj(t.service);
+  var none = '<p>' + v57Esc(v57W('cmpNone')) + '</p>';
+  var para = function (x) { return v57Str(x) ? '<p>' + v57Esc(v57Str(x)) + '</p>' : none; };
+  var rows = function (list) {
+    var l = list.filter(function (p) { return v57Str(p[0]) && v57Str(p[1]); });
+    return l.length ? '<ul>' + l.map(function (p) { return '<li><span class="v57-clabel">' + v57Esc(v57Str(p[0])) + '</span>' + v57Esc(v57Str(p[1])) + '</li>'; }).join('') + '</ul>' : none;
+  };
+  if (kind === 'glass') return para(g.lead);
+  if (kind === 'notes') return rows(v57List(g.notes).map(function (n) { return [v57Cap(n && n.family), v57List(n && n.notes).map(v57Str).filter(Boolean).join(', ')]; }));
+  if (kind === 'structure') return para(g.structure);
+  if (kind === 'tell') return para(r.g && r.g.tell);
+  if (kind === 'service') return rows([[v57W('temp'), s.temp], [v57W('glassware'), s.glass], [v57W('decant'), s.decant], [v57W('age'), s.age]]);
+  return none;
+}
+function v57CmpHtml(arg) {
+  var P = v57CmpPair(arg);
+  var html = '<div class="v25page v53 v57 v57-view v57-cmp" id="v57-cmp">' + v57Head(v57W('compareRow'), (P.a && P.b) ? v57W('cmpPair', { a: P.a.name, b: P.b.name }) : v57W('cmpSub'));
+  if (v57TableGrapes().length < 2) return html + '<p class="v32-line">' + v57Esc(v57W('cmpChoose')) + '</p></div>';
+  html += '<div class="v57-cmpform"><div><label for="v57-cmp-a">' + v57Esc(v57W('cmpA')) + '</label><select id="v57-cmp-a" class="sainput">' + v57CmpOptions(P.a ? P.a.slug : '') + '</select></div>'
+    + '<div><label for="v57-cmp-b">' + v57Esc(v57W('cmpB')) + '</label><select id="v57-cmp-b" class="sainput">' + v57CmpOptions(P.b ? P.b.slug : '') + '</select></div>'
+    + '<div class="v28-btnrow"><button type="button" class="btn gold" data-v57="cmpgo" id="v57-cmpgo">' + v57Esc(v57W('cmpGo')) + '</button></div></div>';
+  if (!P.a || !P.b) return html + '<p class="v32-line" id="v57-cmp-say" role="status">' + v57Esc(v57W('cmpChoose')) + '</p></div>';
+  if (P.a === P.b) return html + '<p class="v32-line" id="v57-cmp-say" role="status">' + v57Esc(v57W('cmpSame')) + '</p></div>';
+  var tells = [];
+  [[P.a, P.b], [P.b, P.a]].forEach(function (p) {
+    v57List(v57T(p[0].slug).compare).forEach(function (c) { if (v57Str(c && c.slug) === p[1].slug && v57Str(c.tell) && tells.indexOf(v57Str(c.tell)) < 0) tells.push(v57Str(c.tell)); });
+  });
+  if (tells.length) html += '<section class="v57-cmpsec" aria-labelledby="v57-cmp-between"><h3 class="secgroup v32-gh" id="v57-cmp-between">' + v57Esc(v57W('cmpBetween')) + '</h3><div class="v57-between">'
+    + tells.map(function (x) { return '<p>' + v57Esc(x) + '</p>'; }).join('') + '</div></section>';
+  [['glass', 'inGlass'], ['notes', 'cmpNotes'], ['structure', 'structureH'], ['tell', 'cmpTell'], ['service', 'cmpService']].forEach(function (k) {
+    html += '<section class="v57-cmpsec" aria-labelledby="v57-cmp-' + k[0] + '"><h3 class="secgroup v32-gh" id="v57-cmp-' + k[0] + '">' + v57Esc(v57W(k[1])) + '</h3><div class="v57-cmprow">'
+      + '<div><span class="v57-cname">' + v57Esc(P.a.name) + '</span>' + v57CmpCell(P.a, k[0]) + '</div><div><span class="v57-cname">' + v57Esc(P.b.name) + '</span>' + v57CmpCell(P.b, k[0]) + '</div></div></section>';
+  });
+  var door = function (r, id) { return '<button type="button" class="btn ghost" data-go="grape" data-arg="' + v57Esc(r.slug) + '" id="' + id + '">' + v57Esc(v57W('cmpOpen', { name: r.name })) + '</button>'; };
+  return html + '<div class="v28-btnrow v57-after">' + door(P.a, 'v57-cmp-pa') + door(P.b, 'v57-cmp-pb') + '</div></div>';
+}
+V57_ACTS.cmpgo = function () {
+  var a = null, b = null;
+  try { a = document.getElementById('v57-cmp-a'); b = document.getElementById('v57-cmp-b'); } catch (e) { a = null; }
+  if (!a || !b) return false;
+  v57Go('grapecompare', String(a.value || '') + '~' + String(b.value || ''), 'replace');
+  try {
+    var n = document.getElementById('v57-cmp-between') || document.getElementById('v57-cmp-glass') || document.getElementById('v57-cmp-say');
+    if (n) { n.setAttribute('tabindex', '-1'); v57Land(n); }
+  } catch (e2) { }
+  return true;
+};
+v57View('grapecompare', {
+  draw: function (arg) { return v57CmpHtml(arg); },
+  accept: function (arg) {
+    var P = v57CmpPair(arg);
+    return (P.a && P.b) ? P.a.slug + '~' + P.b.slug : v57CmpDefault(P.a || P.b);
+  },
+  name: function () { return v57W('compareRow'); },
+  parent: function () { return { view: 'grapes' }; }
+});
+
+/* 8.4 Present it: a grape is named, the learner says it aloud, the forty-five second line and the sale are
+   shown, and the learner marks it said or not yet; the mark is a due date by the grape's slug, in the same
+   steps as a card. */
+var V57_PRESENT = { slug: '', shown: false, mark: '' };
+/* The grape to say next: one marked not yet, then one due by the older date, then one never said (the root's
+   order), then the rest by the day they come back; never the one just said while another waits. */
+function v57PresentNext(after) {
+  var rec = v57Rec().p, day = v57Today();
+  var rows = v57SpokenList().map(function (r, i) {
+    var p = rec[r.slug];
+    var k = (!p || !p.due) ? 2 : (p.due <= day ? (Number(p.n) >= 1 ? 1 : 0) : 3);
+    return { r: r, k: k, d: (p && p.due) || '', i: i };
+  });
+  rows.sort(function (a, b) { return (a.k - b.k) || (a.d < b.d ? -1 : (a.d > b.d ? 1 : 0)) || (a.i - b.i); });
+  var other = rows.filter(function (x) { return x.r.slug !== after; });
+  var hit = other[0] || rows[0] || null;
+  return hit ? hit.r.slug : '';
+}
+function v57PresentHtml(arg) {
+  var r = v57Grape(arg);
+  var t = r ? v57T(r.slug) : null;
+  var l = v57Obj(t && t.lines);
+  var html = '<div class="v25page v53 v57 v57-view v57-present" id="v57-present"' + (r ? ' data-present="' + v57Esc(r.slug) + '"' : '') + '>';
+  var spoken = v57SpokenList();
+  var rec = v57Rec().p, day = v57Today();
+  var seen = spoken.filter(function (x) { return !!rec[x.slug]; }).length;
+  var count = seen ? v57W('presentCount', { m: spoken.filter(function (x) { return !!rec[x.slug] && Number(rec[x.slug].n) >= 1; }).length, n: spoken.length, d: spoken.filter(function (x) { return v57IsDue(rec[x.slug], day); }).length })
+    : v57W('presentNew', { n: spoken.length });
+  html += v57Head(v57W('presentRow'), v57W('presentSub'));
+  if (!r || !v57Str(l.s45)) return html + '<p class="v32-line">' + v57Esc(v57W('presentNone')) + '</p></div>';
+  var st = V57_PRESENT.slug === r.slug ? V57_PRESENT : { slug: r.slug, shown: false, mark: '' };
+  var white = r.colour === 'white';
+  var kind = v57W((v57Str(t.kind) === 'family' ? 'family_' : 'kind_') + (white ? 'white' : 'red'));
+  var say = v57Str(t.say);
+  html += '<p class="v32-line v57-pcount">' + v57Esc(count) + '</p>';
+  html += '<div class="card v57-pcard"><p class="v57-pkind">' + v57Esc(kind) + '</p><h3 class="v57-pname" id="v57-pname" tabindex="-1">' + v57Esc(r.name) + '</h3>'
+    + (say ? '<p class="v57-psay">' + v57Esc(v57W('say') + ': ' + say) + '</p>' : '') + '<p class="v57-pask">' + v57Esc(v57W('presentAsk')) + '</p></div>';
+  var next = v57PresentNext(r.slug);
+  var nextR = (next && next !== r.slug) ? v57Grape(next) : null;
+  if (!st.shown) {
+    return html + '<div class="v28-btnrow v57-after"><button type="button" class="btn gold" data-v57="reveal" id="v57-reveal">' + v57Esc(v57W('reveal')) + '</button>'
+      + (nextR ? '<button type="button" class="btn ghost" data-v57="pnext" id="v57-pskip">' + v57Esc(v57W('skip')) + '</button>' : '') + '</div></div>';
+  }
+  var sale = v57Str(l.sale);
+  html += '<section class="v57 v57-table v57-ptable" aria-labelledby="v57-p-h"><h3 class="secgroup v57-h" id="v57-p-h" tabindex="-1">' + v57Esc(v57W('fortyFive')) + '</h3>' + v57P('v57-fortyfive', l.s45)
+    + (sale ? '<hr class="v57-rule">' + v57Eyebrow('sale', 'v57-sale-h') + v57P('v57-sale', sale) : '') + '</section>';
+  if (!st.mark) {
+    return html + '<section class="v32-sec" aria-labelledby="v57-mark-h"><h3 class="secgroup v32-gh" id="v57-mark-h">' + v57Esc(v57W('markH')) + '</h3><p class="v32-line">' + v57Esc(v57W('markAsk')) + '</p>'
+      + '<div class="v57-callrow"><button type="button" class="btn gold" data-v57="mark" data-ok="1" id="v57-mark-yes">' + v57Esc(v57W('said')) + '</button>'
+      + '<button type="button" class="btn ghost" data-v57="mark" data-ok="0" id="v57-mark-no">' + v57Esc(v57W('notYet')) + '</button></div></section></div>';
+  }
+  var p = rec[r.slug];
+  var days = p ? v57DaysTo(p.due) : 0;
+  var marked = st.mark === 'said' ? (days <= 1 ? v57W('markedSaid') : v57W('markedSaidN', { n: days })) : v57W('markedNot');
+  return html + '<p class="v32-line v57-marked" id="v57-p-marked" role="status" tabindex="-1">' + v57Esc(marked) + '</p><div class="v28-btnrow v57-after">'
+    + (nextR ? '<button type="button" class="btn gold" data-v57="pnext" id="v57-pnext">' + v57Esc(v57W('presentNext', { name: nextR.name })) + '</button>' : '')
+    + '<button type="button" class="btn ghost" data-go="grape" data-arg="' + v57Esc(r.slug) + '" id="v57-p-page">' + v57Esc(v57W('cmpOpen', { name: r.name })) + '</button></div></div>';
+}
+function v57PresentSlug() {
+  var r = v57Grape(V57_ARGS.grapepresent);
+  return r ? r.slug : '';
+}
+V57_ACTS.reveal = function () {
+  var slug = v57PresentSlug();
+  if (!slug) return false;
+  V57_PRESENT = { slug: slug, shown: true, mark: '' };
+  v57Redraw('v57-p-h', 'v57-p-h');
+  return true;
+};
+V57_ACTS.mark = function (node) {
+  var slug = v57PresentSlug();
+  if (!slug || V57_PRESENT.slug !== slug || !V57_PRESENT.shown || V57_PRESENT.mark) return false;
+  var ok = !!node && typeof node.getAttribute === 'function' && node.getAttribute('data-ok') === '1';
+  v57Sched('p', slug, ok);
+  V57_PRESENT.mark = ok ? 'said' : 'not';
+  v57Redraw('v57-p-marked', 'v57-p-h');
+  return true;
+};
+V57_ACTS.pnext = function () {
+  var next = v57PresentNext(v57PresentSlug());
+  if (!next) return false;
+  V57_PRESENT = { slug: next, shown: false, mark: '' };
+  v57Go('grapepresent', next, 'replace');
+  try { window.scrollTo(0, 0); } catch (e) { }
+  return true;
+};
+v57View('grapepresent', {
+  draw: function (arg) { return v57PresentHtml(arg); },
+  accept: function (arg) {
+    var r = arg ? v57Grape(arg) : null;
+    var slug = (r && v57T(r.slug) && v57Str(v57Obj(v57T(r.slug).lines).s45)) ? r.slug : v57PresentNext('');
+    if (V57_PRESENT.slug !== slug) V57_PRESENT = { slug: slug, shown: false, mark: '' };
+    return slug;
+  },
+  name: function () { return v57W('presentRow'); },
+  parent: function () { return { view: 'grapes' }; }
+});
+
+/* =========== the cold address =========== */
+
+/* A reload on one of the layer's views: codex32 read the address before they were known, so it is read again
+   here, once, and the first render replaces (codex39's way). This block stays last. */
+(function () {
+  try {
+    if (typeof V32 === 'undefined' || !V32 || V32.moved || typeof v32Parse !== 'function' || typeof v32Apply !== 'function') return;
+    var hash = typeof V32.initialHash === 'string' ? V32.initialHash : '';
+    if (!hash && typeof location !== 'undefined' && location && typeof location.hash === 'string') hash = location.hash;
+    var m = /^#\/v\/([a-z0-9]+)(\/|$)/.exec(hash);
+    if (!m || !v57Own(V57_VIEWS, m[1])) return;
+    var r = v32Parse(hash);
+    if (!r) return;
+    v32Apply(r, typeof v32CurState === 'function' ? v32CurState() : null);
+    V32.pend = 'replace';
+  } catch (e) { }
+})();
