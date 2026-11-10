@@ -56,7 +56,17 @@
       drawn when no house is loaded. The layer's controls carry data-v57;
       V57_ACTS says what each does and one listener hears them all.
 
-   6. THE SHELL: index.html loads js/data-grapes-table.js then js/codex57.js
+   6. STUDY: the table's cards on codex32's one card screen (the decks
+      grapecards, grapecards:{slug} and grapesdue, the card kind gtable), each
+      grade a due date in the Codex's own steps, kept per device in
+      oot-codex-grapesrs-v1 ({ c: cards by id, p: grapes presented by slug,
+      w: the call drill's rounds }); the stock grape cards keep their own
+      slot and their own decks. The table's questions join each grape's drill,
+      without the bank questions a grape's notIn phrases shut out; a gt- key
+      is never level progress, never in codex3's rotation and never an
+      orphan. A grape's cards section gains Cards at the table.
+
+   7. THE SHELL: index.html loads js/data-grapes-table.js then js/codex57.js
       after codex56.js and before boot.js; the worker is codex-v116 and lists
       both.
 */
@@ -109,7 +119,27 @@ var V57_WORDS = {
   listMany: '{n} wines on our list are made with this grape. Each opens its card.',
   worldCount: '{world} · {n}',
   elsewhere: 'Elsewhere',
-  toList: 'On our list · {n}'
+  toList: 'On our list · {n}',
+  /* study: the table's cards and questions */
+  cardsDeck: 'Cards at the table',
+  grapeDeck: 'Cards at the table: {name}',
+  dueDeck: 'Table cards due today',
+  cardSide: '{side} · {name}',
+  cardDoor: 'The page for {name}',
+  oneCard: '1 card',
+  nCards: '{n} cards',
+  gcNone: '{cards} on {name}, none studied yet.',
+  gcDue: '{cards} on {name}, {d} due today.',
+  gcLearnt: '{cards} on {name}, {m} learnt and none due today.',
+  gcStudy: 'Study these cards',
+  stateNew: 'New',
+  stateDue: 'Due today',
+  stateTomorrow: 'Due tomorrow',
+  stateDays: 'Due in {n} days',
+  drillTable: 'The {n} written for the table are among them.',
+  qCat: 'Grape: {name}',
+  qLevel: 'Grapes',
+  noCards: 'No table cards are on this device yet.'
 };
 
 function v57W(key, vars) {
@@ -217,7 +247,21 @@ function v57T(slug) {
     '.wrap .v57-wine{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;width:100%;min-height:48px;box-sizing:border-box;padding:8px 0;margin:0;background:none;border:0;border-radius:0;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink)}',
     '.wrap .v57-wine-p{font-size:17px;line-height:1.35;font-weight:700;color:var(--claret);overflow-wrap:anywhere}',
     '.wrap .v57-wine-w{font-size:16px;line-height:1.4;color:var(--ink);overflow-wrap:anywhere}',
-    '.wrap .v57-wine:focus-visible{outline:2px solid var(--claret);outline-offset:2px}'
+    '.wrap .v57-wine:focus-visible{outline:2px solid var(--claret);outline-offset:2px}',
+    /* study: a table card asks a question where the stock cards show a name, so its face is set in the reading
+       face a size down; the answer under it, then the door to the grape */
+    '.wrap .v57-card .v57-cq{font-family:var(--house-reading,Georgia,serif);font-size:21px;line-height:1.4;font-weight:700;letter-spacing:0;text-transform:none;overflow-wrap:anywhere}',
+    '.wrap .v57-card .v57-ca{font-size:18px;line-height:1.55;margin:10px 0 0}',
+    '.wrap .v57-cdoor{margin:16px 0 0}',
+    '.wrap .v57-cdoor .btn{min-height:44px;font-size:16px;white-space:normal;text-align:left}',
+    /* a grape\'s own three cards in its cards section: the question, and when it is due beside it */
+    '.wrap .v39-body .v57-cardsline{margin:2px 0 6px}',
+    '.wrap .v57-cardlist{list-style:none;margin:0 0 10px;padding:0}',
+    '.wrap .v57-cardlist li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 14px;margin:0;padding:9px 0;border-bottom:1px solid var(--field-line,var(--line))}',
+    '.wrap .v57-cardlist li:last-child{border-bottom:0}',
+    '.wrap .v57-cardq{flex:1 1 13em;min-width:0;overflow-wrap:anywhere}',
+    '.wrap .v57-cardstate{flex:0 0 auto;font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;color:var(--claret)}',
+    '.wrap .v57-carddoors{margin-top:4px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -730,3 +774,431 @@ var V57_ACTS = {
     try { V57_ACTS[act](node, e); } catch (err2) { }
   });
 })();
+
+/* =========== 6. study =========== */
+
+/* 6.1 the layer's slot: per device, never exported, every touch in try. { c: the table's cards by id, p: the
+   grapes presented by slug (each a record { ef, iv, n, due } in the Codex's own steps), w: the call drill's
+   rounds { n, last, of } }, under the profile key rule. */
+var V57_SLOT = 'oot-codex-grapesrs-v1';
+function v57Key() {
+  try {
+    return (typeof OOT !== 'undefined' && OOT && OOT.profiles && typeof OOT.profiles.key === 'function') ? OOT.profiles.key(V57_SLOT) : V57_SLOT;
+  } catch (e) { return V57_SLOT; }
+}
+function v57Rec() {
+  var o = null;
+  try {
+    var s = (typeof localStorage !== 'undefined' && localStorage) ? localStorage.getItem(v57Key()) : null;
+    o = s ? JSON.parse(s) : null;
+  } catch (e) { o = null; }
+  if (!o || typeof o !== 'object' || Array.isArray(o)) o = {};
+  ['c', 'p', 'w'].forEach(function (k) { if (!o[k] || typeof o[k] !== 'object' || Array.isArray(o[k])) o[k] = {}; });
+  return o;
+}
+function v57Put(o) {
+  try { if (typeof localStorage !== 'undefined' && localStorage) localStorage.setItem(v57Key(), JSON.stringify(o)); } catch (e) { }
+}
+/* The Codex's own days and its own steps (codex56's pure helpers over codex3's rule), else the same arithmetic:
+   right, one day, then three, then the interval times the ease (the ease up a twentieth, to 2.8 at most); wrong,
+   due today and the ease down a fifth (to 1.3 at least). */
+function v57Today() {
+  try { if (typeof v56Today === 'function') return v56Today(); } catch (e) { }
+  try { if (typeof today === 'function') return today(); } catch (e2) { }
+  return new Date().toISOString().slice(0, 10);
+}
+function v57AddDays(n) {
+  try { if (typeof v56AddDays === 'function') return v56AddDays(n); } catch (e) { }
+  try { if (typeof addDays === 'function') return addDays(n); } catch (e2) { }
+  return new Date(Date.now() + n * 864e5).toISOString().slice(0, 10);
+}
+function v57Step(r, ok) {
+  try { if (typeof v56Step === 'function') return v56Step(r, ok); } catch (e) { }
+  var o = (r && typeof r === 'object') ? r : {};
+  var ef = Number(o.ef) || 2.5, iv = Number(o.iv) || 0, n = Number(o.n) || 0;
+  if (ok) {
+    n++;
+    iv = n === 1 ? 1 : (n === 2 ? 3 : Math.round(iv * ef));
+    ef = Math.min(2.8, ef + 0.05);
+  } else {
+    n = 0; iv = 0; ef = Math.max(1.3, ef - 0.2);
+  }
+  return { ef: Math.round(ef * 100) / 100, iv: iv, n: n, due: v57AddDays(iv) };
+}
+/* One grade kept: a card by its id ('c'), a grape presented by its slug ('p'). Returns the record written. */
+function v57Sched(kind, id, ok) {
+  var k = kind === 'p' ? 'p' : 'c';
+  var key = v57Str(id);
+  if (!key) return null;
+  try {
+    var o = v57Rec();
+    o[k][key] = v57Step(o[k][key] || {}, !!ok);
+    v57Put(o);
+    return o[k][key];
+  } catch (e) { return null; }
+}
+function v57IsDue(r, day) { return !!r && typeof r.due === 'string' && !!r.due && r.due <= (day || v57Today()); }
+/* The whole days from today to a date a record is due on; 0 for today and for a day already gone. */
+function v57DaysTo(due) {
+  var a = Date.parse(v57Today() + 'T00:00:00Z'), b = Date.parse(v57Str(due) + 'T00:00:00Z');
+  return (isFinite(a) && isFinite(b) && b > a) ? Math.round((b - a) / 864e5) : 0;
+}
+function v57Count(n) { return Number(n) === 1 ? v57W('oneCard') : v57W('nCards', { n: Number(n) || 0 }); }
+
+/* 6.2 the table's cards: every grape's three, in the root's order, each { kind: 'gtable', id, front, back, label
+   (the grape's name), slug }. The id is the build's own (gt- and eight digits), the key its grade is kept under.
+   Made once per edition of the data and of the join. */
+var V57_ID = /^gt-[a-z0-9]{8}$/;
+var V57_CARDS = { t: null, j: null, list: [], by: {}, bySlug: {} };
+function v57GrapeList() {
+  try { if (typeof v53GrapeOrder === 'function') return v57List(v53GrapeOrder().all); } catch (e) { }
+  return [];
+}
+function v57Grape(slug) {
+  var r = null;
+  try { r = (typeof v53GrapeFind === 'function') ? v53GrapeFind(v57Str(slug)) : null; } catch (e) { r = null; }
+  return r || null;
+}
+function v57CardBook() {
+  var T = v57Table(), J = null;
+  try { J = (typeof v53GrapeJoin === 'function') ? v53GrapeJoin() : null; } catch (e) { J = null; }
+  if (V57_CARDS.t === T && V57_CARDS.j === J) return V57_CARDS;
+  var out = { t: T, j: J, list: [], by: {}, bySlug: {} };
+  v57GrapeList().forEach(function (r) {
+    var t = v57T(r && r.slug);
+    if (!t) return;
+    var mine = [];
+    v57List(t.cards).forEach(function (c) {
+      var id = v57Str(c && c.id), front = v57Str(c && c.front), back = v57Str(c && c.back);
+      if (!V57_ID.test(id) || !front || !back || v57Own(out.by, id)) return;
+      var card = { kind: 'gtable', id: id, front: front, back: back, label: v57Str(r.name), slug: r.slug };
+      out.by[id] = card;
+      out.list.push(card);
+      mine.push(card);
+    });
+    if (mine.length) out.bySlug[r.slug] = mine;
+  });
+  V57_CARDS = out;
+  return out;
+}
+function v57CardsOf(slug) { var b = v57CardBook(); return v57Own(b.bySlug, slug) ? b.bySlug[slug] : []; }
+function v57Hash(s) {
+  var h = 2166136261, t = String(s);
+  for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = (typeof Math.imul === 'function') ? Math.imul(h, 16777619) : ((h * 16777619) | 0); }
+  return h >>> 0;
+}
+/* The order a round takes cards in: the ones sent back first, then the ones due by the older date, then the cards
+   never graded in the day's own deal (a shuffle that holds for the day, so the deck is the same deck each time it
+   is drawn), then the rest by the day they come back. */
+function v57StudyOrder(cards) {
+  var rec = v57Rec().c, day = v57Today();
+  var rows = v57List(cards).map(function (c, i) {
+    var r = rec[c.id];
+    var k = (!r || !r.due) ? 2 : (r.due <= day ? (Number(r.n) >= 1 ? 1 : 0) : 3);
+    return { c: c, k: k, s: k === 2 ? v57Hash(day + '|' + c.id) : 0, d: (r && r.due) || '', i: i };
+  });
+  rows.sort(function (a, b) { return (a.k - b.k) || (a.s - b.s) || (a.d < b.d ? -1 : (a.d > b.d ? 1 : 0)) || (a.i - b.i); });
+  return rows.map(function (x) { return x.c; });
+}
+/* The cards due: graded before and back on or before today. A slug narrows them to one grape. */
+function v57DueCards(slug) {
+  var rec = v57Rec().c, day = v57Today();
+  var list = slug ? v57CardsOf(slug) : v57CardBook().list;
+  return v57StudyOrder(list.filter(function (c) { return v57IsDue(rec[c.id], day); }));
+}
+
+/* 6.3 the decks, on codex32's one card screen: grapecards (every card of the table), grapecards:{slug} (a grape's
+   three) and grapesdue (the cards due today). The stock decks grapes, grapes-all and grape:{slug} are untouched. */
+var V57_DECK_RE = /^(?:grapecards|grapecards:([a-z0-9-]+)|grapesdue)$/;
+function v57IsDeck(id) { return V57_DECK_RE.test(String(id || '')); }
+function v57DeckSlug(id) {
+  var m = V57_DECK_RE.exec(String(id || ''));
+  var r = (m && m[1]) ? v57Grape(m[1]) : null;
+  return r ? r.slug : '';
+}
+if (typeof v32DeckDef === 'function') {
+  var _v57DeckDef = v32DeckDef;
+  v32DeckDef = function (id) {
+    var s = String(id || '');
+    if (!v57IsDeck(s)) return _v57DeckDef.apply(this, arguments);
+    var def = { id: s, name: v57W('cardsDeck'), cards: [], kind: 'gtable' };
+    try {
+      if (s === 'grapesdue') { def.name = v57W('dueDeck'); def.cards = v57DueCards(); }
+      else if (s === 'grapecards') def.cards = v57StudyOrder(v57CardBook().list);
+      else {
+        var r = v57Grape(v57DeckSlug(s));
+        if (r) { def.name = v57W('grapeDeck', { name: r.name }); def.cards = v57CardsOf(r.slug).slice(); }
+      }
+    } catch (e) { def.cards = []; }
+    try { def.learnt = (typeof v32Learnt === 'function') ? v32Learnt(def) : 0; } catch (e2) { def.learnt = 0; }
+    return def;
+  };
+}
+/* Learnt: last marked Got it, in the layer's slot. */
+if (typeof v32Learnt === 'function') {
+  var _v57Learnt = v32Learnt;
+  v32Learnt = function (def) {
+    if (def && def.kind === 'gtable') {
+      var rec = v57Rec().c;
+      return v57List(def.cards).filter(function (c) { var r = c && rec[c.id]; return !!r && Number(r.n) >= 1; }).length;
+    }
+    return _v57Learnt.apply(this, arguments);
+  };
+}
+/* A table card graded: its due date in the layer's slot; then the grade goes on down the chain, so a stock grape
+   card is still marked in its own slot and every other deck keeps its own. */
+if (typeof v32Grade === 'function') {
+  var _v57Grade = v32Grade;
+  v32Grade = function (got) {
+    try {
+      var run = S._v32run;
+      var c = (run && run.flip && run.deck && run.deck.length) ? run.cards[run.deck[0]] : null;
+      if (c && c.kind === 'gtable' && v57Own(v57CardBook().by, c.id)) v57Sched('c', c.id, !!got);
+    } catch (e) { }
+    return _v57Grade.apply(this, arguments);
+  };
+}
+/* The whole deck and the due deck are dealt in the order above, a round's worth from the top (codex43 takes the
+   first cards of a deck dealt in its own order); a grape's three are shuffled as every small deck is. */
+if (typeof v32StartRun === 'function') {
+  var _v57StartRun = v32StartRun;
+  v32StartRun = function (deckId, opts) {
+    var o = opts;
+    try {
+      if ((deckId === 'grapecards' || deckId === 'grapesdue') && !(opts && opts.cards)) {
+        o = {};
+        Object.keys(opts || {}).forEach(function (k) { o[k] = opts[k]; });
+        o.keepOrder = true;
+      }
+    } catch (e) { o = opts; }
+    return _v57StartRun.call(this, deckId, o);
+  };
+}
+/* The card's two faces: the question over the grape's name, then the answer with a door to the grape's page. */
+function v57CardFaceHtml(c, run) {
+  var w = (typeof v32W === 'function') ? v32W : function (k) { return k === 'front' ? 'Front' : 'Answer'; };
+  var side = function (k) { return v57Esc(c.label ? v57W('cardSide', { side: w(k), name: c.label }) : w(k)); };
+  if (!run || !run.flip) {
+    return '<button type="button" class="card v28-front v57-card" data-v32="flip" id="v32-face"><span class="v28-eyebrow v28-ink">' + side('front') + '</span>'
+      + '<span class="v28-fname v57-cq">' + v57Esc(c.front) + '</span></button>';
+  }
+  var door = (c.slug && c.label) ? '<p class="v57-cdoor"><button type="button" class="btn small ghost" data-go="grape" data-arg="' + v57Esc(c.slug) + '">' + v57Esc(v57W('cardDoor', { name: c.label })) + '</button></p>' : '';
+  return '<div class="card v28-back v57-card" id="v32-face"><p class="v28-eyebrow v28-ink">' + side('answer') + '</p>'
+    + '<h3 class="v28-bname v57-cq" tabindex="-1" id="v32-ans">' + v57Esc(c.front) + '</h3><p class="v57-ca">' + v57Esc(c.back) + '</p>' + door + '</div>';
+}
+if (typeof v32CardFace === 'function') {
+  var _v57CardFace = v32CardFace;
+  v32CardFace = function (c, run) {
+    if (c && c.kind === 'gtable') { try { return v57CardFaceHtml(c, run); } catch (e) { return ''; } }
+    return _v57CardFace.apply(this, arguments);
+  };
+}
+/* The decks and their cards light Grapes. The deck screen of a grape's three climbs to the grape and so does
+   their run; the due run climbs to the root, as the whole deck's screen does. */
+function v57DeckShown() {
+  try {
+    if (S.view === 'deck') return String(S._v32deck || '');
+    if (S.view === 'housedeck' || S.view === 'flash') { var run = S._v32run; return (run && run.v32) ? String(run.deckId || '') : ''; }
+  } catch (e) { }
+  return '';
+}
+if (typeof v25NavWord === 'function') {
+  var _v57DeckNavWord = v25NavWord;
+  v25NavWord = function () {
+    try { if (v57IsDeck(v57DeckShown())) return 'grapes'; } catch (e) { }
+    return _v57DeckNavWord.apply(this, arguments);
+  };
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v57DeckParentRoute = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      var id = v57DeckShown();
+      if (v57IsDeck(id)) {
+        var slug = v57DeckSlug(id);
+        if (slug) return { view: 'grape', arg: slug };
+        if (S.view === 'deck' || id === 'grapesdue') return { view: 'grapes' };
+      }
+    } catch (e) { }
+    return _v57DeckParentRoute.apply(this, arguments);
+  };
+}
+/* Starts a deck of the layer from one of its doors: a named deck straight on the card screen; with none named,
+   the cards due when there are any, else the whole deck's own screen with its round sizes. */
+function v57StartCards(deck) {
+  var id = v57Str(deck);
+  try { S._v53from = 'grapes'; } catch (e) { }
+  if (!id) {
+    if (v57DueCards().length) id = 'grapesdue';
+    else {
+      if (!v57CardBook().list.length) { if (typeof toast === 'function') toast(v57W('noCards')); return false; }
+      if (typeof v32OpenDeck !== 'function') return false;
+      v32OpenDeck('grapecards');
+      return true;
+    }
+  }
+  if (!v57IsDeck(id) || typeof v32StartRun !== 'function') return false;
+  return v32StartRun(id, { push: true });
+}
+V57_ACTS.cards = function (node) { return v57StartCards(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-deck') : ''); };
+
+/* 6.4 the table's questions: each grape's three, dealt as the bank's are. A copy a question, made once per
+   edition of the data: its section is the grape's own (the name codex53 gives a grape's drill, so the results
+   screen deals that grape again), its options and key as the build dealt them. */
+var V57_QS = { t: null, j: null, by: {}, bySlug: {} };
+function v57QBook() {
+  var T = v57Table(), J = null;
+  try { J = (typeof v53GrapeJoin === 'function') ? v53GrapeJoin() : null; } catch (e) { J = null; }
+  if (V57_QS.t === T && V57_QS.j === J) return V57_QS;
+  var out = { t: T, j: J, by: {}, bySlug: {} };
+  v57GrapeList().forEach(function (r) {
+    var t = v57T(r && r.slug);
+    if (!t) return;
+    var mine = [];
+    v57List(t.questions).forEach(function (q) {
+      var id = v57Str(q && q.id), stem = v57Str(q && q.q);
+      var opts = v57List(q && q.opts).map(v57Str);
+      if (!V57_ID.test(id) || !stem || v57Own(out.by, id)) return;
+      if (opts.length < 2 || opts.some(function (x) { return !x; }) || typeof q.a !== 'number' || q.a < 0 || q.a >= opts.length || Math.floor(q.a) !== q.a) return;
+      var copy = { id: id, cat: v57W('qCat', { name: v57Str(r.name) }), q: stem, opts: opts, a: q.a, exp: v57Str(q.exp), grape: r.slug };
+      if (v57Str(q.tag)) copy.tag = v57Str(q.tag);
+      out.by[id] = copy;
+      mine.push(copy);
+    });
+    if (mine.length) out.bySlug[r.slug] = mine;
+  });
+  V57_QS = out;
+  return out;
+}
+function v57Questions(slug) { var b = v57QBook(); return v57Own(b.bySlug, slug) ? b.bySlug[slug] : []; }
+function v57BareKey(k) {
+  var s = String(k == null ? '' : k);
+  var i = s.indexOf('|');
+  return i >= 0 ? s.slice(i + 1) : s;
+}
+function v57IsQId(id) { return typeof id === 'string' && V57_ID.test(id); }
+function v57IsQKey(k) { return typeof k === 'string' && v57IsQId(v57BareKey(k)); }
+function v57QById(id) { var b = v57QBook(); return v57Own(b.by, id) ? b.by[id] : null; }
+/* The bank questions a grape's name gathers, without the ones its notIn phrases shut out: a name shared with a
+   place (a montepulciano key and Vino Nobile di Montepulciano) would pull the place's questions into the grape's
+   drill. A question the Court's data tags with the grape is the grape's whatever it says. */
+function v57NotIn(list, r, t) {
+  var phrases = v57List(t && t.notIn).map(v57Fold).filter(Boolean);
+  if (!phrases.length) return list;
+  return list.filter(function (q) {
+    if (!q || typeof q !== 'object') return false;
+    var tagged = false;
+    try { tagged = v57List(q.grapes).some(function (n) { return v53GrapeKey(n) === r.slug; }); } catch (e) { tagged = false; }
+    if (tagged) return true;
+    var ans = (Array.isArray(q.opts) && typeof q.a === 'number') ? q.opts[q.a] : (typeof q.ans === 'string' ? q.ans : '');
+    var hay = ' ' + v57Fold([q.q, ans, q.exp].join(' ')) + ' ';
+    return !phrases.some(function (p) { return hay.indexOf(' ' + p + ' ') >= 0; });
+  });
+}
+if (typeof v53GrapeQuestions === 'function') {
+  var _v57GrapeQuestions = v53GrapeQuestions;
+  v53GrapeQuestions = function (slug) {
+    var out = _v57GrapeQuestions.apply(this, arguments);
+    try {
+      var r = v57Grape(slug);
+      var t = r ? v57T(r.slug) : null;
+      if (!r || !t || !Array.isArray(out)) return out;
+      return v57NotIn(out, r, t).concat(v57Questions(r.slug));
+    } catch (e) { return out; }
+  };
+}
+/* A gt- key in the engine, as codex53 keeps an e- key: never level progress (keyOwned), never in codex3's
+   rotation (srsRecord), never an orphan (qidAudit); the ledger finds it (findByKey) and tags it Grapes. */
+if (typeof keyOwned === 'function') {
+  var _v57KeyOwned = keyOwned;
+  keyOwned = function (k) {
+    if (v57IsQKey(k)) return false;
+    return _v57KeyOwned.apply(this, arguments);
+  };
+}
+if (typeof srsRecord === 'function') {
+  var _v57SrsRecord = srsRecord;
+  srsRecord = function (q) {
+    if (q && v57IsQId(q.id)) return;
+    return _v57SrsRecord.apply(this, arguments);
+  };
+}
+if (typeof qidAudit === 'function') {
+  var _v57QidAudit = qidAudit;
+  qidAudit = function () {
+    var out = _v57QidAudit.apply(this, arguments);
+    try {
+      var known = v57QBook().by;
+      var orph = out && out.orphanedKeys;
+      if (orph && typeof orph === 'object') {
+        Object.keys(orph).forEach(function (name) {
+          var left = v57List(orph[name]).filter(function (k) { return !v57Own(known, v57BareKey(k)); });
+          if (left.length) orph[name] = left; else delete orph[name];
+        });
+      }
+    } catch (e) { }
+    return out;
+  };
+}
+if (typeof findByKey === 'function') {
+  var _v57FindByKey = findByKey;
+  findByKey = function (k) {
+    if (v57IsQKey(k)) return v57QById(v57BareKey(k));
+    return _v57FindByKey.apply(this, arguments);
+  };
+}
+function v57TagRows(rows) {
+  return v57List(rows).map(function (x) { if (x && v57IsQKey(x.k)) x.lvl = v57W('qLevel'); return x; });
+}
+if (typeof graderDisputes === 'function') {
+  var _v57GraderDisputes = graderDisputes;
+  graderDisputes = function () { return v57TagRows(_v57GraderDisputes.apply(this, arguments)); };
+}
+if (typeof badReports === 'function') {
+  var _v57BadReports = badReports;
+  badReports = function () { return v57TagRows(_v57BadReports.apply(this, arguments)); };
+}
+
+/* 6.5 a grape's page: Cards at the table inside its cards section, after the stock card and the drill. The three
+   fronts with what each is due, a line of where the grape stands, the door that deals them. */
+function v57CardState(r, day) {
+  if (!r || !r.due) return v57W('stateNew');
+  if (v57IsDue(r, day)) return v57W('stateDue');
+  var n = v57DaysTo(r.due);
+  return n <= 1 ? v57W('stateTomorrow') : v57W('stateDays', { n: n });
+}
+function v57GrapeCardsHtml(r) {
+  var cards = v57CardsOf(r && r.slug);
+  if (!cards.length) return '';
+  var rec = v57Rec().c, day = v57Today();
+  var due = cards.filter(function (c) { return v57IsDue(rec[c.id], day); }).length;
+  var learnt = cards.filter(function (c) { return !!rec[c.id] && Number(rec[c.id].n) >= 1; }).length;
+  var graded = cards.filter(function (c) { return !!rec[c.id]; }).length;
+  var vars = { cards: v57Count(cards.length), name: r.name, d: due, m: learnt };
+  var line = !graded ? v57W('gcNone', vars) : (due ? v57W('gcDue', vars) : v57W('gcLearnt', vars));
+  return '<h4 id="v57-gcards-h">' + v57Esc(v57W('cardsDeck')) + '</h4>' + v57P('v57-cardsline', line)
+    + '<ul class="v57-cardlist">' + cards.map(function (c) {
+      return '<li><span class="v57-cardq">' + v57Esc(c.front) + '</span><span class="v57-cardstate">' + v57Esc(v57CardState(rec[c.id], day)) + '</span></li>';
+    }).join('') + '</ul>'
+    + '<ul class="v39-lines v39-list v53-doors v57-carddoors"><li><button type="button" class="btn small ghost" data-v57="cards" data-deck="' + v57Esc('grapecards:' + r.slug) + '" id="v57-gcards">' + v57Esc(v57W('gcStudy')) + '</button></li></ul>';
+}
+if (typeof v53GrapeCardsBody === 'function') {
+  var _v57GrapeCardsBody = v53GrapeCardsBody;
+  v53GrapeCardsBody = function (r) {
+    var html = String(_v57GrapeCardsBody.apply(this, arguments) || '');
+    try {
+      if (!r || !v57T(r.slug)) return html;
+      var nq = v57Questions(r.slug).length;
+      if (nq) {
+        var note = 'with the CMS questions written to it.</span>';
+        var na = html.indexOf(note);
+        if (na >= 0) html = html.slice(0, na + note.length - 7) + ' ' + v57Esc(v57W('drillTable', { n: nq })) + html.slice(na + note.length - 7);
+      }
+      var block = v57GrapeCardsHtml(r);
+      if (!block) return html;
+      var doors = '<ul class="v39-lines v39-list v53-doors">';
+      var end = html.indexOf(doors) === 0 ? html.indexOf('</ul>') : -1;
+      return end >= 0 ? html.slice(0, end + 5) + block + html.slice(end + 5) : block + html;
+    } catch (e) { return html; }
+  };
+}
