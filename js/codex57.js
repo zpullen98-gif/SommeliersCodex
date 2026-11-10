@@ -139,7 +139,28 @@ var V57_WORDS = {
   drillTable: 'The {n} written for the table are among them.',
   qCat: 'Grape: {name}',
   qLevel: 'Grapes',
-  noCards: 'No table cards are on this device yet.'
+  noCards: 'No table cards are on this device yet.',
+  /* the root: At the table */
+  rootLine: 'The grapes as they are spoken of at the table: their cards, the two worlds, two grapes side by side and a grape said aloud.',
+  cardsRowDue: '{d} due today · {cards} · {m} learnt',
+  cardsRowLine: '{cards}, three a grape · {m} learnt',
+  worldsRowLine: '{n} grapes side by side, and a call drill of Old World or New World',
+  worldsRowLast: '{n} grapes side by side · last round {r} of {of}',
+  compareRow: 'Compare two grapes',
+  compareRowLine: 'The glass, the structure, the tell and service, side by side',
+  presentRow: 'Present it',
+  presentRowLine: 'A grape is named, you say it aloud, then its forty-five second line is shown',
+  presentRowDue: '{d} to present again today · {m} of {n} said',
+  presentRowSaid: '{m} of {n} said · none due today',
+  filterH: 'Show on this page',
+  filter_all: 'All grapes ({n})',
+  filter_white: 'White ({n})',
+  filter_red: 'Red ({n})',
+  filter_list: 'On our list ({n})',
+  showing_white: 'Showing the white grapes, {n} of {all}.',
+  showing_red: 'Showing the red grapes, {n} of {all}.',
+  showing_list: 'Showing the grapes on our list, {n} of {all}.',
+  showAll: 'Show all grapes'
 };
 
 function v57W(key, vars) {
@@ -261,7 +282,16 @@ function v57T(slug) {
     '.wrap .v57-cardlist li:last-child{border-bottom:0}',
     '.wrap .v57-cardq{flex:1 1 13em;min-width:0;overflow-wrap:anywhere}',
     '.wrap .v57-cardstate{flex:0 0 auto;font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;color:var(--claret)}',
-    '.wrap .v57-carddoors{margin-top:4px}'
+    '.wrap .v57-carddoors{margin-top:4px}',
+    /* the root: a row the filter leaves out is gone from the page; the line that says what shows, with the way back */
+    '.wrap .v53-grapes [hidden]{display:none!important}',
+    '.wrap .v57-gtable #v57-filter-h{margin-top:22px}',
+    '.wrap .v57-gtable .v57-filter{margin:10px 0 4px}',
+    '.wrap .v57-filterline{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 0;padding:10px 12px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:3px}',
+    '.wrap .v57-filterline .v32-line{flex:1 1 12em;margin:0}',
+    '.wrap .v57-filterline .btn{flex:0 0 auto}',
+    '.wrap .v57-filterline:focus{outline:none}',
+    '.wrap .v57-filterline:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -1200,5 +1230,211 @@ if (typeof v53GrapeCardsBody === 'function') {
       var end = html.indexOf(doors) === 0 ? html.indexOf('</ul>') : -1;
       return end >= 0 ? html.slice(0, end + 5) + block + html.slice(end + 5) : block + html;
     } catch (e) { return html; }
+  };
+}
+
+/* =========== 7. the root: At the table =========== */
+
+/* the layer's own views (section 8 makes them); a door to one is drawn only once it is there */
+var V57_VIEWS = {};
+var V57_ARGS = {};
+
+/* 7.1 the filter of the root's rows: all, white, red, or the grapes the house pours. Kept for the sitting, so the
+   root comes back from a grape as it was left; applied to the page as it is drawn, and to the page on screen
+   without a redraw when a chip is pressed. */
+var V57_FILTER = { f: 'all' };
+/* The grapes the house pours, by slug: {} when no house is loaded. */
+function v57HouseSlugs() {
+  var out = {};
+  var h = v57House();
+  if (!h || typeof v28Wines !== 'function' || typeof v28Grapes !== 'function' || typeof v53GrapeKey !== 'function') return out;
+  try {
+    v28Wines(h).forEach(function (w) {
+      var names = [];
+      try { names = v57List(v28Grapes(w)); } catch (e) { names = []; }
+      names.forEach(function (g) { var s = v53GrapeKey(g); if (s) out[s] = 1; });
+    });
+  } catch (e2) { }
+  return out;
+}
+function v57FilterHit(r, f, poured) {
+  if (!r) return true;
+  if (f === 'white') return r.colour === 'white';
+  if (f === 'red') return r.colour !== 'white';
+  if (f === 'list') return v57Own(poured, r.slug);
+  return true;
+}
+function v57FilterCounts(poured) {
+  var list = v57GrapeList();
+  return {
+    all: list.length,
+    white: list.filter(function (r) { return r.colour === 'white'; }).length,
+    red: list.filter(function (r) { return r.colour !== 'white'; }).length,
+    list: list.filter(function (r) { return v57Own(poured, r.slug); }).length
+  };
+}
+/* The filter in force: the one chosen, or all when the house's grapes were chosen and no house pours one now. */
+function v57FilterNow(counts) {
+  var f = V57_FILTER.f;
+  if (f !== 'white' && f !== 'red' && f !== 'list') return 'all';
+  if (f === 'list' && !(counts && counts.list)) return 'all';
+  return f;
+}
+function v57FilterSay(f, counts) {
+  return f === 'all' ? '' : v57W('showing_' + f, { n: counts[f], all: counts.all });
+}
+var V57_ROW_HEAD = '<li><button class="v25row" type="button" data-go="grape" data-arg="';
+/* The root's HTML with the filter applied: a row out of it hidden, and a group or a section left with no row. */
+function v57FilterHtml(html, f, poured) {
+  var s = String(html || '');
+  if (f === 'all') return s;
+  s = s.split(V57_ROW_HEAD).map(function (part, i) {
+    if (!i) return part;
+    var r = v57Grape(part.slice(0, part.indexOf('"')));
+    return (v57FilterHit(r, f, poured) ? V57_ROW_HEAD : '<li hidden>' + V57_ROW_HEAD.slice(4)) + part;
+  }).join('');
+  var group = '<section class="v32-group" aria-labelledby="v53-g-';
+  s = s.split(group).map(function (part, i) {
+    if (!i) return part;
+    var end = part.indexOf('</section>');
+    var body = end >= 0 ? part.slice(0, end) : part;
+    var none = body.indexOf('data-go="grape"') >= 0 && body.indexOf(V57_ROW_HEAD) < 0;
+    return (none ? '<section class="v32-group" hidden aria-labelledby="v53-g-' : group) + part;
+  }).join('');
+  ['v53-g-twenty', 'v53-g-every'].forEach(function (id) {
+    var head = '<section class="v32-sec v53-gsec" aria-labelledby="' + id + '"';
+    var a = s.indexOf(head);
+    var b = a >= 0 ? s.indexOf('</section></section>', a) : -1;
+    if (b < 0 || s.slice(a, b).indexOf(V57_ROW_HEAD) >= 0) return;
+    s = s.slice(0, a) + '<section class="v32-sec v53-gsec" hidden aria-labelledby="' + id + '"' + s.slice(a + head.length);
+  });
+  return s;
+}
+/* The same on the page on screen: nothing is redrawn. Returns how many rows show. */
+function v57FilterDom() {
+  var root = null;
+  try { root = document.querySelector('.v53-grapes'); } catch (e) { root = null; }
+  if (!root || typeof root.querySelectorAll !== 'function') return 0;
+  var poured = v57HouseSlugs();
+  var counts = v57FilterCounts(poured);
+  var f = v57FilterNow(counts);
+  var each = function (sel, fn) { Array.prototype.forEach.call(root.querySelectorAll(sel), fn); };
+  var shown = 0;
+  each('button.v25row[data-go="grape"][data-arg]', function (b) {
+    var hit = v57FilterHit(v57Grape(b.getAttribute('data-arg')), f, poured);
+    var li = typeof b.closest === 'function' ? b.closest('li') : null;
+    if (li) li.hidden = !hit;
+    if (hit) shown++;
+  });
+  each('section.v32-group, section.v53-gsec', function (sec) {
+    if (!sec.querySelector('button.v25row[data-go="grape"]')) return;
+    sec.hidden = !sec.querySelector('li:not([hidden]) > button.v25row[data-go="grape"]');
+  });
+  each('[data-v57="filter"][data-f]', function (b) { if (b.hasAttribute('aria-pressed')) b.setAttribute('aria-pressed', b.getAttribute('data-f') === f ? 'true' : 'false'); });
+  var line = root.querySelector('#v57-filterline'), say = root.querySelector('#v57-filtersay');
+  if (say) say.textContent = v57FilterSay(f, counts);
+  if (line) line.hidden = f === 'all';
+  return shown;
+}
+function v57FilterSet(f) {
+  V57_FILTER.f = (f === 'white' || f === 'red' || f === 'list') ? f : 'all';
+  v57FilterDom();
+  /* the rows are above the chips: the line that says what shows comes to the top with the rows under it; with
+     every grape back, the first list's heading */
+  try {
+    var at = null;
+    ['v57-filterline', 'v53-g-twenty', 'v53-g-every'].some(function (id) {
+      var h = document.getElementById(id);
+      var sec = h && typeof h.closest === 'function' ? h.closest('section') : null;
+      if (h && !h.hidden && !(sec && sec.hidden)) { at = id; return true; }
+      return false;
+    });
+    if (!at) return true;
+    if (typeof v41Jump === 'function') v41Jump(at);
+    else v57Land(document.getElementById(at));
+  } catch (e) { }
+  return true;
+}
+V57_ACTS.filter = function (node) { return v57FilterSet(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-f') : 'all'); };
+
+/* 7.2 the section: the doors, then the filter's chips. A door is drawn only when it leads somewhere. */
+function v57RootRow(attrs, name, line, id) {
+  return '<li><button class="v25row" type="button" ' + attrs + (id ? ' id="' + v57Esc(id) + '"' : '') + '><span class="v25row-name">' + v57Esc(name) + '</span>'
+    + (line ? '<span class="v25row-line">' + v57Esc(line) + '</span>' : '') + '</button></li>';
+}
+/* The grapes the two worlds are written for, the grapes with a line to say, in the root's order. */
+function v57ContrastList() { return v57GrapeList().filter(function (r) { return v57WorldsMode(v57T(r.slug)) === 'contrast'; }); }
+function v57SpokenList() { return v57GrapeList().filter(function (r) { var t = v57T(r.slug); return !!t && !!v57Str(v57Obj(t.lines).s45); }); }
+function v57RootDoors() {
+  var rows = '';
+  var book = v57CardBook();
+  var rec = v57Rec(), day = v57Today();
+  if (book.list.length) {
+    var due = book.list.filter(function (c) { return v57IsDue(rec.c[c.id], day); }).length;
+    var learnt = book.list.filter(function (c) { return !!rec.c[c.id] && Number(rec.c[c.id].n) >= 1; }).length;
+    var vars = { d: due, cards: v57Count(book.list.length), m: learnt };
+    rows += v57RootRow('data-v57="cards"', v57W('cardsDeck'), due ? v57W('cardsRowDue', vars) : v57W('cardsRowLine', vars), 'v57-door-cards');
+  }
+  if (v57Own(V57_VIEWS, 'grapeworlds')) {
+    var both = v57ContrastList().length;
+    var w = v57Obj(rec.w);
+    if (both) rows += v57RootRow('data-go="grapeworlds"', v57W('worldsH'), Number(w.of) > 0 ? v57W('worldsRowLast', { n: both, r: Number(w.last) || 0, of: Number(w.of) }) : v57W('worldsRowLine', { n: both }), 'v57-door-worlds');
+  }
+  if (v57Own(V57_VIEWS, 'grapecompare') && Object.keys(v57Table()).length >= 2) rows += v57RootRow('data-go="grapecompare"', v57W('compareRow'), v57W('compareRowLine'), 'v57-door-compare');
+  if (v57Own(V57_VIEWS, 'grapepresent')) {
+    var spoken = v57SpokenList();
+    if (spoken.length) {
+      var said = spoken.filter(function (r) { return !!rec.p[r.slug] && Number(rec.p[r.slug].n) >= 1; }).length;
+      var again = spoken.filter(function (r) { return v57IsDue(rec.p[r.slug], day); }).length;
+      var seen = spoken.filter(function (r) { return !!rec.p[r.slug]; }).length;
+      var pv = { d: again, m: said, n: spoken.length };
+      rows += v57RootRow('data-go="grapepresent"', v57W('presentRow'), again ? v57W('presentRowDue', pv) : (seen ? v57W('presentRowSaid', pv) : v57W('presentRowLine')), 'v57-door-present');
+    }
+  }
+  return rows;
+}
+function v57RootFilterHtml(f, counts) {
+  var chips = ['all', 'white', 'red', 'list'].filter(function (k) { return k !== 'list' || counts.list > 0; }).map(function (k) {
+    return '<button type="button" class="v28-chip" data-v57="filter" data-f="' + k + '" aria-pressed="' + (k === f ? 'true' : 'false') + '">' + v57Esc(v57W('filter_' + k, { n: counts[k] })) + '</button>';
+  }).join('');
+  return '<h3 class="secgroup v32-gh" id="v57-filter-h">' + v57Esc(v57W('filterH')) + '</h3><div class="v32chips v57-filter" role="group" aria-labelledby="v57-filter-h">' + chips + '</div>';
+}
+/* 7.3 the root shaped: the section ahead of Tasting with its chip among the jumps, a line under the jumps that
+   says what the filter shows (with the way back to every grape), the rows as the filter leaves them. With no
+   table on the device the root is codex54's. */
+function v57RootShape(html) {
+  var s = String(html || '');
+  if (!Object.keys(v57Table()).length || s.indexOf('id="v57-g-table"') >= 0) return s;
+  var doors = v57RootDoors();
+  var poured = v57HouseSlugs();
+  var counts = v57FilterCounts(poured);
+  var f = v57FilterNow(counts);
+  var sec = '<section class="v32-sec v57 v57-gtable" aria-labelledby="v57-g-table"><h2 class="v32-h2" id="v57-g-table" tabindex="-1">' + v57Esc(v57W('atTable')) + '</h2>'
+    + (doors ? '<p class="v32-line">' + v57Esc(v57W('rootLine')) + '</p><ul class="v25rows v32rows v57-doors">' + doors + '</ul>' : '')
+    + v57RootFilterHtml(f, counts) + '</section>';
+  var mark = s.indexOf('aria-labelledby="v53-g-tasting"');
+  if (mark < 0) mark = s.indexOf('aria-labelledby="v53-g-cards"');
+  var at = mark >= 0 ? s.lastIndexOf('<section', mark) : -1;
+  if (at < 0) at = s.lastIndexOf('</div>');
+  if (at < 0) return s;
+  s = s.slice(0, at) + sec + s.slice(at);
+  var nav = s.indexOf('<nav class="v32chips v53-jumps"');
+  var navEnd = nav >= 0 ? s.indexOf('</nav>', nav) : -1;
+  if (navEnd >= 0) {
+    var chip = '<button type="button" class="v28-chip" data-v53="jump" data-to="v57-g-table">' + v57Esc(v57W('atTable')) + '</button>';
+    var line = '<div class="v57 v57-filterline" id="v57-filterline" tabindex="-1"' + (f === 'all' ? ' hidden' : '') + '><p class="v32-line" id="v57-filtersay" role="status">' + v57Esc(v57FilterSay(f, counts)) + '</p>'
+      + '<button type="button" class="btn small ghost" data-v57="filter" data-f="all" id="v57-filter-clear">' + v57Esc(v57W('showAll')) + '</button></div>';
+    var before = s.indexOf('<button type="button" class="v28-chip" data-v53="jump" data-to="v53-g-tasting">', nav);
+    if (before < 0 || before > navEnd) before = navEnd;
+    s = s.slice(0, navEnd + 6) + line + s.slice(navEnd + 6);
+    s = s.slice(0, before) + chip + s.slice(before);
+  }
+  return v57FilterHtml(s, f, poured);
+}
+if (typeof v53GrapesRootHtml === 'function') {
+  var _v57GrapesRootHtml = v53GrapesRootHtml;
+  v53GrapesRootHtml = function () {
+    var html = String(_v57GrapesRootHtml.apply(this, arguments) || '');
+    try { return v57RootShape(html); } catch (e) { return html; }
   };
 }
