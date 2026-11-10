@@ -9,7 +9,7 @@
   "lines": {
     "s10": "Garganega is the grape of Soave, from the hills east of Verona: lemon, white peach and a clean finish of bitter almond.",
     "s20": "Garganega makes Soave, the dry white of the hills east of Verona. It tastes of lemon, white peach and ripe pear with a finish of bitter almond, and the hillside wines of Soave Classico add a stony depth.",
-    "s45": "Garganega is the grape in every glass of Soave, grown on hills of dark volcanic rock and pale limestone east of Verona. It tastes of lemon, white peach and ripe pear, and it finishes on a note of bitter almond. It is dry and light to medium in body, with a gentle freshness. Most of it is made in steel tanks and bottled young, with no oak to hide the fruit. Pour it with risotto, lake fish or white asparagus. Dried on racks through the winter, the same grape becomes Recioto di Soave, a golden sweet wine that tastes of honey.",
+    "s45": "Garganega is the grape in every glass of Soave, at home on hills of dark volcanic rock and pale limestone east of Verona. It tastes of lemon, white peach and ripe pear, and it finishes on a note of bitter almond. It is dry and light to medium in body, fresh without being sharp. Most of it is made in steel tanks and bottled young, with no oak to hide the fruit. Pour it with risotto, lake fish or white asparagus. Dried on racks through the winter, the same grape becomes Recioto di Soave, a golden sweet wine that tastes of honey.",
     "sale": "Garganega, as a Soave from the hills, is the white for a creamy plate: lemon and white peach to lift it, bitter almond to close it. I would pour it with the risotto, or with the redfish and a squeeze of lemon."
   },
   "glass": {
@@ -24,14 +24,14 @@
     ],
     "ladder": [
       { "climate": "moderate", "where": "The hills of Soave Classico and Gambellara", "notes": ["lemon zest", "white peach", "bitter almond", "wet stone"] },
-      { "climate": "warm", "where": "The Verona plain in a hot summer, and Sicily as Grecanico", "notes": ["ripe pear", "yellow apple", "apricot"] }
+      { "climate": "warm", "where": "Sicily, where it is called Grecanico", "notes": ["grapefruit", "green apple", "white peach", "sea salt"] }
     ],
-    "structure": "Dry. Acidity medium, brighter from the hills, alcohol moderate, body light to medium; Recioto di Soave, from dried grapes, is sweet and full."
+    "structure": "Dry. Acidity medium to medium plus, brighter from the hills, alcohol moderate, body light to medium; Recioto di Soave, from dried grapes, is sweet and full."
   },
   "worlds": {
     "home": {
       "home": "The hills and plain east of Verona, in the Veneto. Soave must be at least 70 per cent Garganega, with Trebbiano di Soave or Chardonnay for the rest, and Gambellara next door grows the same grape. The vines are trained high on pergolas and ripen late. Soave Classico, from hills of volcanic basalt and limestone, is the wine that keeps.",
-      "abroad": "It scarcely leaves Italy. In Sicily the same vine is called Grecanico Dorato, as DNA work has shown, and it goes into the island's dry whites. Outside Italy it is a rarity."
+      "abroad": "It scarcely leaves Italy. In Sicily the same vine is called Grecanico Dorato, as DNA work has shown, and it makes crisp, lemony dry whites there. Outside Italy it is a rarity."
     }
   },
   "service": {
@@ -44,7 +44,7 @@
     "with": [
       { "dish": "Risotto with peas or spring vegetables", "why": "a gentle wine beside a gentle, creamy dish" },
       { "dish": "Lake fish or trout, simply cooked", "why": "lemon and almond season the fish" },
-      { "dish": "White asparagus with egg", "why": "soft acidity sits easily beside asparagus" },
+      { "dish": "White asparagus with egg", "why": "a mild white with no oak suits asparagus" },
       { "dish": "Grilled redfish with lemon", "why": "a light white leaves the fish its sweetness" },
       { "dish": "Almond tart, with Recioto di Soave", "why": "the sweet wine echoes the almond" }
     ]
@@ -62,13 +62,13 @@
     { "q": "What is that slightly bitter taste at the end?", "a": "Bitter almond, the mark of the grape. It is meant to be there, and it is one reason Soave sits so well beside rice, fish and anything creamy." }
   ],
   "compare": [
-    { "slug": "pinot-grigio", "tell": "Pinot Grigio from the same corner of Italy is lighter and more neutral, pear and lemon alone; Garganega adds white peach and a finish of bitter almond." },
+    { "slug": "pinot-grigio", "tell": "Pinot Grigio, its neighbour, is lighter and more neutral, with pear and a fainter almond; Garganega has white peach, more weight and a firm bitter almond finish." },
     { "slug": "verdicchio", "tell": "Verdicchio is sharper and leaner, with higher acidity, lemon and green almond; Garganega is softer and rounder, with white peach." },
     { "slug": "cortese", "tell": "Cortese, as Gavi, is leaner and more lemony, with green apple and a stony finish; Garganega is softer, with white peach and more almond." }
   ],
   "profile": {
     "c": "w",
-    "st": "Pale lemon, gold as Recioto · Body light to medium · Acid medium · Alcohol moderate · Dry, or sweet from dried grapes",
+    "st": "Pale lemon, gold as Recioto · Body light to medium · Acid medium to medium plus · Alcohol moderate · Dry, or sweet from dried grapes",
     "fruit": "Lemon zest, white peach, ripe pear; yellow apple and apricot from limestone and from riper sites",
     "other": "Bitter almond and marzipan, acacia blossom and elderflower; a chalky or smoky finish from the hills; honey in Recioto di Soave",
     "tell": "A soft, dry Italian white of lemon and white peach that ends on bitter almond, with no oak: Soave, and from the hills a stony depth",
@@ -82,10 +82,10 @@
   ],
   "questions": [
     {
-      "q": "A blind white is pale lemon and dry, with lemon, white peach and ripe pear, no oak, gentle acidity and a finish of bitter almond. Which wine is it most likely to be?",
+      "q": "A blind white is pale lemon and dry, with lemon, white peach and ripe pear, no oak, medium acidity and a finish of bitter almond. Which wine is it most likely to be?",
       "opts": ["Soave Classico", "Gavi di Gavi", "Pouilly-Fumé", "Petit Chablis"],
       "a": 0,
-      "exp": "Gentle acidity, white peach and a bitter almond finish with no oak point to Garganega from Soave. Gavi would be leaner and sharper, with green apple, and Pouilly-Fumé and Petit Chablis sharper still."
+      "exp": "Medium acidity, white peach and a bitter almond finish with no oak point to Garganega from Soave. Gavi would be leaner and sharper, with green apple, and Pouilly-Fumé and Petit Chablis sharper still."
     },
     {
       "q": "A guest reading an Italian list asks what sets Soave Classico apart from a wine labelled only Soave. What do you tell her?",
@@ -94,7 +94,7 @@
       "exp": "Classico names the original hill zone around Soave and Monteforte d'Alpone, on volcanic basalt and limestone. It is no rule of oak or of ageing, and dried grapes make Recioto di Soave."
     },
     {
-      "q": "At the end of dinner a guest asks for a sweet wine from the same grape as the Soave she enjoyed. Which do you bring?",
+      "q": "At the end of dinner a guest asks for a sweet wine made from Garganega, the grape of the dry white she enjoyed. Which do you bring?",
       "opts": ["Recioto di Soave", "Recioto della Valpolicella", "Moscato d'Asti", "Vin Santo"],
       "a": 0,
       "exp": "Recioto di Soave is Garganega dried on racks and made sweet. Recioto della Valpolicella is its red neighbour, from Corvina, and Moscato d'Asti and Vin Santo come from other grapes."
@@ -103,7 +103,7 @@
   "sources": [
     { "title": "Consorzio Tutela Vini Soave: the grapes", "url": "https://www.ilsoave.com/en/the-grapes/" },
     { "title": "Consorzio Tutela Vini Soave: the soils", "url": "https://www.ilsoave.com/en/soils/" },
-    { "title": "Consorzio Tutela Vini Soave: the production rules", "url": "https://www.ilsoave.com/en/regulations/" },
+    { "title": "Associazione Italiana Sommelier: the production rules of Soave DOC", "url": "https://aisitalia.it/Disciplinari/Veneto/DOC/Soave.pdf" },
     { "title": "Vitis, 2008: Sangiovese and Garganega are two key varieties of the Italian grapevine assortment evolution", "url": "https://ojs.openagrar.de/index.php/VITIS/article/view/4185" }
   ],
   "report": [
@@ -116,5 +116,24 @@
     "The DNA identity with Grecanico Dorato stands on the paper in Vitis of 2008 (two synonymous groups, Grecanico Dorato and Garganega) and on the Codex's own Régionale question. A study of 2003 is cited by secondary pages only and is left out.",
     "Left out for want of a second source: the month of the harvest, the thickness of the skins, and how long the grapes for Recioto di Soave are dried.",
     "The sources were read through search results; this session could not open the hosts directly (the consortium's site must be allowed in the network settings for a direct reading)."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after eight fixes. The 70 per cent rule with Trebbiano di Soave and Chardonnay for the rest, Recioto di Soave as the Veneto's first DOCG in 1998, the basalt and the limestone of the Classico hills and the identity with Grecanico Dorato (the Vitis paper of 2008) were confirmed.",
+    "changed": [
+      "lines.s45: grown on hills of dark volcanic rock and pale limestone now reads at home on hills. Soave comes from the plain too, as the entry's own guest answer says, so every glass of Soave cannot be grown on the hills.",
+      "glass.structure, profile.st, lines.s45 and questions[0]: acidity medium, a gentle freshness and gentle acidity now read medium to medium plus, fresh without being sharp and medium acidity. The grape references read give Garganega medium to high acidity; the Codex's own dial says medium, and the entry no longer reads lower than its dial.",
+      "glass.ladder, the warm rung: The Verona plain in a hot summer, and Sicily as Grecanico (ripe pear, yellow apple, apricot) now reads Sicily, where it is called Grecanico (grapefruit, green apple, white peach, sea salt). The plain differs by its crop and not by its climate, and the notes read for Sicilian Grecanico are lemon, grapefruit, green apple and white peach with a faint salt on a crisp, light to medium wine. Nothing read gives riper, softer fruit there.",
+      "worlds.home.abroad: goes into the island's dry whites now reads makes crisp, lemony dry whites there, on the same notes.",
+      "compare, Pinot Grigio: the old tell gave the bitter almond to Garganega alone, while the reviewed Pinot Grigio profile and the Pinot Grigio entry both give Italian Pinot Grigio a faint bitter almond. The tell now parts them by white peach, by weight and by the firmness of the almond.",
+      "questions[2].q: the stem named Soave and one option alone carried the word. It now names the grape and the dry white, so nothing in the stem points at Recioto di Soave.",
+      "food.with, white asparagus: soft acidity is no longer the reason given; a mild white with no oak is.",
+      "sources: the consortium's rules page, an address no search returned, gives way to the Soave rule as the Associazione Italiana Sommelier publishes it, an address a search did return."
+    ],
+    "open": [
+      "The warm rung stands on a grape reference and two competition notes for Sicilian Grecanico; a page of the Sicilian wine body would be firmer.",
+      "Which rock gives which wine is told two ways: most pages read give basalt the steel and the smoke and limestone the flowers, apricot and lemon, as the entry and the Codex do, while one tasting report gives the volcanic wines the fleshier fruit. The entry keeps the Codex's reading.",
+      "No source address could be opened from this session; the two consortium pages kept are cited as the author found them."
+    ]
+  }
 }
