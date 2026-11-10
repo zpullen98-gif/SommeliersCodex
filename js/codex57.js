@@ -346,6 +346,7 @@ function v57Chip(id, title) {
 }
 var V57_SEC_HEAD = '<details class="v28-q v39-sec" id="';
 var V57_CHIP_HEAD = '<button type="button" class="v28-chip" data-v39="chip" data-sec="';
+var V57_NAV_HEAD = '<nav class="v39-steps v53-steps" aria-label="Sections">';
 /* Where a section stands in the page: from its opening tag to the end of its closing one, or null. No section
    of the page holds another. */
 function v57SecAt(s, id) {
@@ -486,7 +487,7 @@ function v57OpenApply(s, slug) {
     var at = s.indexOf(head);
     if (at < 0) return;
     var end = at + head.length;
-    var isOpen = s.substr(end, 6) === ' open>';
+    var isOpen = s.slice(end, end + 6) === ' open>';
     if (rec[id] && !isOpen && s.charAt(end) === '>') s = s.slice(0, end) + ' open' + s.slice(end);
     else if (!rec[id] && isOpen) s = s.slice(0, end) + s.slice(end + 5);
   });
@@ -523,7 +524,7 @@ function v57PageShape(html, r) {
     var m = /<p class="v39-lead v53-say">[\s\S]*?<\/p>/.exec(s);
     if (m) s = s.slice(0, m.index) + block + s.slice(m.index + m[0].length);
     else {
-      var nav = s.indexOf('<nav class="v39-steps v53-steps" aria-label="Sections">');
+      var nav = s.indexOf(V57_NAV_HEAD);
       var line = s.indexOf('<p class="v32-line">');
       var at = (line >= 0 && (nav < 0 || line < nav)) ? line : nav;
       if (at >= 0) s = s.slice(0, at) + block + s.slice(at);
@@ -572,8 +573,9 @@ function v57PageShape(html, r) {
   var last = src ? (v57SecAt(s, 'v53-gs-watch') || v57SecAt(s, 'v53-gs-cards')) : null;
   if (last) {
     s = s.slice(0, last.b) + v57Details('v57-gs-sources', v57W('sourcesH'), src, false) + s.slice(last.b);
-    var navEnd = s.indexOf('</nav>', s.indexOf('<nav class="v39-steps v53-steps" aria-label="Sections">'));
-    if (navEnd >= 0 && s.indexOf('<nav class="v39-steps v53-steps" aria-label="Sections">') >= 0) s = s.slice(0, navEnd) + v57Chip('v57-gs-sources', v57W('sourcesH')) + s.slice(navEnd);
+    var navAt = s.indexOf(V57_NAV_HEAD);
+    var navEnd = navAt >= 0 ? s.indexOf('</nav>', navAt) : -1;
+    if (navEnd >= 0) s = s.slice(0, navEnd) + v57Chip('v57-gs-sources', v57W('sourcesH')) + s.slice(navEnd);
   }
   /* the one word flag leaves where the two worlds are described */
   if (worlds) {
@@ -608,11 +610,12 @@ if (typeof v53GrapeShort === 'function') {
 /* =========== 5. on the house's list =========== */
 
 /* Old World or New World, by the last part of a wine's region as the house writes it: a country, or a state of
-   the United States. A part the map does not hold goes under neither. */
+   the United States. A part the map does not hold goes under neither (Georgia is left out: a country of the
+   Old World and a state of the New). */
 var V57_WORLD = {};
 (function () {
   ['France', 'Italy', 'Spain', 'Portugal', 'Germany', 'Austria', 'Switzerland', 'Greece', 'Hungary', 'England', 'Wales', 'United Kingdom', 'Luxembourg',
-    'Slovenia', 'Croatia', 'Romania', 'Bulgaria', 'Czech Republic', 'Slovakia', 'Georgia', 'Moldova', 'Cyprus', 'Turkey', 'Lebanon', 'Israel', 'Armenia',
+    'Slovenia', 'Croatia', 'Romania', 'Bulgaria', 'Czech Republic', 'Slovakia', 'Moldova', 'Cyprus', 'Turkey', 'Lebanon', 'Israel', 'Armenia',
     'North Macedonia', 'Serbia'].forEach(function (n) { V57_WORLD[v57Fold(n)] = 'old'; });
   ['United States', 'USA', 'California', 'Oregon', 'Washington', 'Washington State', 'New York', 'Virginia', 'Texas', 'Michigan', 'Idaho', 'Arizona',
     'New Mexico', 'Canada', 'Mexico', 'Argentina', 'Chile', 'Uruguay', 'Brazil', 'Australia', 'New Zealand', 'South Africa'].forEach(function (n) { V57_WORLD[v57Fold(n)] = 'new'; });
