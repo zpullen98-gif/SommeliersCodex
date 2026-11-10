@@ -1,0 +1,572 @@
+{
+  "chunk": "g5",
+  "date": "2026-11-10",
+  "role": "The second reading: each entry read to refute it, not to admire it.",
+  "grapes": [
+    "garganega",
+    "cortese",
+    "arneis",
+    "fiano",
+    "verdicchio",
+    "trebbiano"
+  ],
+  "method": [
+    "Each fragment read whole beside what show.cjs prints for the grape (the Régionale rows of Garganega and Cortese; none of the six has a reviewed profile, a dial or a grid read) and beside every line the Codex's region records, banks, producers file and service reference hold on the grape and on the places the entry leans on: Soave, Gambellara and Custoza, Gavi, Roero and the Langhe, Irpinia and McLaren Vale, the two Verdicchio zones, Lugana, Orvieto, Abruzzo, Cognac and Armagnac.",
+    "Every fact those records do not already state was put to search: the rules (Soave, Gavi and its Riserva, Roero Arneis, the reach of the Langhe name, Fiano di Avellino and its Riserva, the two Verdicchio Riservas, Trebbiano d'Abruzzo, the traditional balsamic vinegar of Modena), the identities (Grecanico Dorato, Trebbiano di Soave, Turbiana), the histories (white Barolo, the amphora bottle, Ugni Blanc in Cognac) and the notes of the glass wherever the author called one a taster's reading.",
+    "The glass read as a blind taster would: each note asked whether a taster would nod, each prose field scanned by a script for a family word in disguise, each ladder set beside the Codex's climate line for the place and beside the notes read for the warm sites, and each entry's notes set against its own cards and tells, so that no entry lists as its own the note it uses to part a neighbour.",
+    "All six are at home and abroad, as the plan fixes them: no side by side to test and no worlds tag on any question. Each home and abroad line was read for a place that could not be confirmed and for a style claimed of wines abroad with nothing behind it.",
+    "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences; the cards and questions read for one key, four options of one kind, a stem that gives nothing away and no question asked in the negative; the compare tells read from both sides against the Pinot Grigio, Pinot Blanc, Vermentino and Chardonnay entries and against each other.",
+    "node .scripts/grapes/build-grapes.cjs --lint --chunk g5 run after every round of edits until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+  ],
+  "limits": [
+    "This session reached search alone: no source address could be opened (ojs.openagrar.de, www.ilsoave.com and italianwinecentral.com did not resolve from here, and no further host was tried). A page is cited as search results quoted it, and the addresses the authors gave stay unconfirmed unless a search returned them.",
+    "The brief allows five searches a grape. Garganega took five, Cortese three, Arneis five, Fiano four, Verdicchio four and Trebbiano four.",
+    "Where a source's address names a producer or a living person, or is a writer's own site, it is left out and the fact rests on the other pages named.",
+    "The search returns a digest of the pages it found, with their addresses. Where the digest did not say which page carried a note, the pages of that search are named together.",
+    "Ids are not yet frozen (keys.v1.json), so the five reworded stems (two of Garganega, two of Cortese, one of Verdicchio) orphan nothing."
+  ],
+  "entries": {
+    "garganega": {
+      "verdict": "Sound after eight fixes.",
+      "tested": [
+        "say against the Codex's own respelling in its Veneto record (gar-GAH-neh-gah): the same.",
+        "Soave: at least 70 per cent Garganega, Trebbiano di Soave and Chardonnay for at most 30. Confirmed in the rule as the Associazione Italiana Sommelier publishes it and in the Codex's Veneto record. Soave Superiore a separate DOCG; Recioto di Soave a DOCG in 1998, the Veneto's first: confirmed.",
+        "Grecanico Dorato as the same vine: the Vitis paper of 2008 reports the two as synonyms on eleven markers, and says the comparison of 2003 rested on two samples. The second card's date (2008) stands.",
+        "The ladder's warm rung, which the author gave as a taster's reading with no source for Sicily: put to search.",
+        "The acidity: the Codex's dial says medium; three grape references read say medium to high or reliably high.",
+        "The two rocks of the Classico hills against the Codex's record (basalt tighter and smokier, limestone softer and more floral) and against what pages quote of the consortium (limestone: white flowers, apricot and lemon).",
+        "The compare tells from both sides against the Pinot Grigio, Verdicchio and Cortese entries and the reviewed Pinot Grigio profile.",
+        "Service against the row for light aromatic whites and the small glass for sweet wine: agree. Ten years for Soave Classico against the Codex's record: agrees.",
+        "The three questions for a key the stem gives away."
+      ],
+      "changed": [
+        {
+          "field": "lines.s45",
+          "was": "Garganega is the grape in every glass of Soave, grown on hills of dark volcanic rock and pale limestone east of Verona.",
+          "now": "Garganega is the grape in every glass of Soave, at home on hills of dark volcanic rock and pale limestone east of Verona.",
+          "why": "Soave comes from the plain too, as the entry's own guest answer and the Codex's record say (everything beyond those hills is plain Soave, much of it grown on the flat). Every glass cannot be grown on the hills.",
+          "sources": []
+        },
+        {
+          "field": "glass.structure, profile.st, lines.s45, questions[0].q and questions[0].exp",
+          "was": "Acidity medium; Acid medium; with a gentle freshness; gentle acidity; Gentle acidity",
+          "now": "Acidity medium to medium plus; Acid medium to medium plus; fresh without being sharp; medium acidity; Medium acidity",
+          "why": "Three grape references give Garganega medium to high acidity, one of them reliably high. The Codex's dial reads medium. The entry now sits at the dial and above it, never below, and its neighbours' tells (Verdicchio and Cortese sharper) still hold.",
+          "sources": [
+            {
+              "title": "Wine Enthusiast: Soave, a dry Italian white wine with depth and surprising longevity",
+              "url": "https://www.wineenthusiast.com/culture/wine/dry-italian-white-wine-soave-guide/"
+            },
+            {
+              "title": "Cellar Tours: the Garganega grape variety",
+              "url": "https://www.cellartours.com/blog/italy/the-magic-behind-soave-garganega"
+            }
+          ]
+        },
+        {
+          "field": "glass.ladder, the warm rung",
+          "was": "The Verona plain in a hot summer, and Sicily as Grecanico: ripe pear, yellow apple, apricot",
+          "now": "Sicily, where it is called Grecanico: grapefruit, green apple, white peach, sea salt",
+          "why": "The plain differs from the hills by its crop, not its climate, so it is no warm rung. For Sicily the pages read give lemon and grapefruit, green apple and white peach with a faint salt on a crisp, light to medium wine, and zesty acidity. Nothing read gives riper, softer fruit there.",
+          "sources": [
+            {
+              "title": "Viniou: the Grecanico grape",
+              "url": "https://www.viniou.com/grape-varieties/505_grecanico"
+            },
+            {
+              "title": "International Wine and Spirit Competition: a result for a Sicilian Grecanico",
+              "url": "https://iwsc.net/results/detail/113414"
+            }
+          ]
+        },
+        {
+          "field": "worlds.home.abroad",
+          "was": "and it goes into the island's dry whites.",
+          "now": "and it makes crisp, lemony dry whites there.",
+          "why": "The same pages: the author had no description of the Sicilian wine and said so.",
+          "sources": []
+        },
+        {
+          "field": "compare, pinot-grigio",
+          "was": "Pinot Grigio from the same corner of Italy is lighter and more neutral, pear and lemon alone; Garganega adds white peach and a finish of bitter almond.",
+          "now": "Pinot Grigio, its neighbour, is lighter and more neutral, with pear and a fainter almond; Garganega has white peach, more weight and a firm bitter almond finish.",
+          "why": "The reviewed Pinot Grigio profile gives the Italian wine bitter almond and faint blossom, and the Pinot Grigio entry ends it on a faint bitter almond. The old tell gave the almond to one side alone.",
+          "sources": []
+        },
+        {
+          "field": "questions[2].q",
+          "was": "At the end of dinner a guest asks for a sweet wine from the same grape as the Soave she enjoyed. Which do you bring?",
+          "now": "At the end of dinner a guest asks for a sweet wine made from Garganega, the grape of the dry white she enjoyed. Which do you bring?",
+          "why": "The stem named Soave and one option alone, the key, carried the word.",
+          "sources": []
+        },
+        {
+          "field": "food.with, white asparagus",
+          "was": "soft acidity sits easily beside asparagus",
+          "now": "a mild white with no oak suits asparagus",
+          "why": "The reason leaned on an acidity the entry no longer calls soft.",
+          "sources": []
+        },
+        {
+          "field": "sources",
+          "was": "Consorzio Tutela Vini Soave: the production rules, at an address no search returned",
+          "now": "Associazione Italiana Sommelier: the production rules of Soave DOC",
+          "why": "The rule itself, at an address a search returned.",
+          "sources": [
+            {
+              "title": "Associazione Italiana Sommelier: the production rules of Soave DOC",
+              "url": "https://aisitalia.it/Disciplinari/Veneto/DOC/Soave.pdf"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "The warm rung stands on a grape reference and two notes of single wines (the second in a review whose address names a retailer and is left out); a page of the Sicilian wine body would be firmer.",
+        "Which rock gives which wine is told two ways. Most pages give basalt the steel and the smoke and limestone the flowers, apricot and lemon, as the entry and the Codex do; one tasting report gives the volcanic wines the fleshier fruit. The entry keeps the Codex's reading.",
+        "Orange zest and elderflower are the author's naming of the citrus and the white flowers. The pages read in this pass name lemon, pear, apple, honeydew melon, camomile and almond, and none speaks against either note.",
+        "The two consortium pages kept among the sources were returned by no search in this pass."
+      ],
+      "sources": [
+        {
+          "title": "Vitis, 2008: Sangiovese and Garganega are two key varieties of the Italian grapevine assortment evolution",
+          "url": "https://ojs.openagrar.de/index.php/VITIS/article/view/4185"
+        },
+        {
+          "title": "Associazione Italiana Sommelier: the production rules of Soave DOC",
+          "url": "https://aisitalia.it/Disciplinari/Veneto/DOC/Soave.pdf"
+        },
+        {
+          "title": "Wikipedia: Recioto di Soave DOCG",
+          "url": "https://en.wikipedia.org/wiki/Recioto_di_Soave_DOCG"
+        },
+        {
+          "title": "Viniou: the Grecanico grape",
+          "url": "https://www.viniou.com/grape-varieties/505_grecanico"
+        },
+        {
+          "title": "Vinorandum: Soave DOC",
+          "url": "https://vinorandum.com/appellation/soave-doc"
+        }
+      ]
+    },
+    "cortese": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "say against the Codex's own respelling in its Piedmont record (kor-TEH-zeh): the same.",
+        "Gavi: Cortese alone, eleven communes of the province of Alessandria, still, frizzante, spumante, Riserva and a sparkling Riserva. Confirmed in the rule as published and in a reference page; the DOCG of 1998 is the Codex's own.",
+        "The Riserva: one year, six months of it in bottle, from a lower crop than the plain wine (the region's own figures set the two crops apart). Confirmed.",
+        "Gavi del Comune di Gavi as a place and not a rank, against the Codex's record: agrees.",
+        "The acidity: the Codex's dial gives Cortese its top mark, and two references read say the grape holds high acidity even in hot years.",
+        "The ladder, which the author gave as a taster's reading: put to search for what the zone's own ground does to the wine.",
+        "Alto Monferrato, Colli Tortonesi and the Custoza blend: confirmed. The Oltrepò Pavese, which the author left out: one page again.",
+        "The first line of the forty-five seconds against the Codex's Piedmont record, which teaches Moscato d'Asti and Arneis beside Gavi.",
+        "The three questions for a second defensible key and for a key the stem gives away.",
+        "Service against the row for light aromatic whites and the tulip for sparkling: agree."
+      ],
+      "changed": [
+        {
+          "field": "lines.s45",
+          "was": "a crisp white from the south east corner of Piedmont, a region otherwise given to red wine.",
+          "now": "a crisp white from the south east corner of Piedmont, a region known first for its red wine.",
+          "why": "Moscato d'Asti and Roero Arneis are white wines of Piedmont, and the Codex's own record of the region teaches both. Otherwise given to red wine was false as said.",
+          "sources": []
+        },
+        {
+          "field": "questions[0].q",
+          "was": "A guest orders a dozen raw oysters and asks for a light, bone dry white from Piedmont. Which bottle do you bring?",
+          "now": "A guest orders a dozen raw oysters and asks for a light, bone dry white from Piedmont with plenty of acidity. Which bottle do you bring?",
+          "why": "Roero Arneis, the second option, is a dry white of Piedmont too, and a taster could defend it. The acidity is what parts the two, in this entry's own tell and in the Codex.",
+          "sources": []
+        },
+        {
+          "field": "questions[2]",
+          "was": "One label reads Gavi del Comune di Gavi and another plain Gavi. A guest asks what the longer name adds. What do you tell him? Key: The grapes grew in the commune of Gavi itself.",
+          "now": "A guest points to Gavi di Gavi on the list and asks whether it is a higher grade than the plain Gavi beside it. What do you tell her? Key: No: it names grapes grown in the commune of Gavi. The other three: Yes: it is the Riserva, aged a year longer; Yes: it must come from older vines; No: it marks the gently sparkling version.",
+          "why": "The stem spelt out del Comune di Gavi and the key said the commune of Gavi: the stem translated its own answer. The new stem asks the question a guest truly asks, and the explanation keeps the full name.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The ladder is borne out in general terms: two trade reports give the red clay of the north of the zone the fuller, fruitier wines and the higher, stonier ground to the south the more delicate, finely built ones. Neither names the notes on each rung, which stay a taster's reading.",
+        "Lime and hawthorn stay a taster's naming: no page read in this pass names either for the grape, and none speaks against them.",
+        "Cortese in the Oltrepò Pavese stays out of the entry, as the author left it."
+      ],
+      "sources": [
+        {
+          "title": "Associazione Italiana Sommelier: the production rules of Gavi or Cortese di Gavi DOCG",
+          "url": "https://aisitalia.it/Disciplinari/Piemonte/DOCG/Gavi%20o%20Cortese%20di%20Gavi.pdf"
+        },
+        {
+          "title": "Italian Wine Central: Gavi DOCG",
+          "url": "https://italianwinecentral.com/denomination/gavi-docg/"
+        },
+        {
+          "title": "Harpers: Gavi DOCG, the white of Piedmont",
+          "url": "https://harpers.co.uk/news/fullstory.php/aid/32490/Gavi_DOCG__The_Great_White_of_Piedmont_.html"
+        },
+        {
+          "title": "Decanter: Get into Gavi",
+          "url": "https://www.magzter.com/stories/food-beverage/Decanter/GET-INTO-GAVI"
+        },
+        {
+          "title": "Falstaff: what is Cortese",
+          "url": "https://falstaff.com/en/grape-varieties/cortese"
+        }
+      ]
+    },
+    "arneis": {
+      "verdict": "Sound after five fixes.",
+      "tested": [
+        "say against the Codex's own respelling in its Piedmont record (ar-NAYSS): the same.",
+        "Roero Arneis: at least 95 per cent Arneis, a DOCG, with a sparkling type and a Riserva. Confirmed in two regional pages. The year: 2004 in the Codex and one page, 2005 in another.",
+        "Roero alone as the Nebbiolo red, and the left bank of the Tanaro, against the Codex's records: agree.",
+        "The reach of the Langhe name, which the entry set across the river from Roero: put to search twice.",
+        "White Barolo and Nebbiolo Bianco, the planting among the Nebbiolo and the softening of the red: confirmed in two references, which add that the scented grapes drew the birds off the Nebbiolo and that the two vines are no kin.",
+        "Little rascal: given by some pages and little difficult one by another. The entry says is said to mean, which is right.",
+        "Abroad: Sonoma and the Willamette Valley confirmed. For Australia two lists were read: Tasmania, Victoria and New South Wales in one; the Riverina, the Riverland, the Adelaide Hills and the King Valley in the other.",
+        "The acidity against the Codex's two readings (soft, and moderate) and the pages read.",
+        "The forty-five second line aloud.",
+        "Service against the row for light aromatic whites: agrees. No dish from the Creole table, which is right for so soft a wine."
+      ],
+      "changed": [
+        {
+          "field": "lines.s45",
+          "was": "Its home is Roero, the sandy hills across the river Tanaro from Barolo. It tastes of ripe pear, white peach and camomile, with a faint bitterness of almond at the end. It is dry and rounded, medium in body, and soft in acidity. It is made in steel, without oak, and meant to be enjoyed young.",
+          "now": "Its home is Roero, the sandy hills across the river Tanaro from Barolo. It makes a dry white that tastes of ripe pear, white peach and camomile, with a faint bitterness of almond at the end. It is rounded, medium in body and soft in acidity. Made in steel without oak, it is meant to be enjoyed young.",
+          "why": "Said aloud, the line never told the guest the wine is white until its last two words, white Barolo, and five sentences in a row opened on It. The beats, the facts and the count (110 words) are kept.",
+          "sources": []
+        },
+        {
+          "field": "worlds.home.home",
+          "was": "Across the river the same grape is bottled as Langhe Arneis.",
+          "now": "Under the wider Langhe name, from either bank, it is Langhe Arneis.",
+          "why": "The Langhe denomination covers the Langhe hills of the province of Cuneo and many communes of Roero, as its own consortium says, so a Langhe Arneis may come from either bank of the Tanaro.",
+          "sources": [
+            {
+              "title": "Consorzio di Tutela Barolo Barbaresco Alba Langhe e Dogliani: the Langhe denomination, historical background",
+              "url": "https://www.langhevini.it/en/?p=7747"
+            }
+          ]
+        },
+        {
+          "field": "labels, Langhe Arneis",
+          "was": "The same grape from the wider Langhe hills, across the Tanaro from Roero.",
+          "now": "The same grape under the wider Langhe name, which takes in the Langhe hills and much of Roero.",
+          "why": "The same.",
+          "sources": []
+        },
+        {
+          "field": "worlds.home.abroad",
+          "was": "Australia grows it in Victoria, Tasmania and New South Wales, and Sonoma in California and Oregon's Willamette Valley have some, made in the same fresh, pear scented way.",
+          "now": "Australia grows it in Victoria and New South Wales, and Sonoma in California and Oregon's Willamette Valley have some, typically made in the same fresh, pear scented way.",
+          "why": "The two lists of Australian regions agree on Victoria and New South Wales alone. Nothing read describes the wines abroad as a class, so the style is hedged.",
+          "sources": [
+            {
+              "title": "Wikipedia: Arneis",
+              "url": "https://en.wikipedia.org/wiki/Arneis"
+            },
+            {
+              "title": "Young Gun of Wine: Arneis",
+              "url": "https://younggunofwine.com/wine-101/grape-varieties/arneis/"
+            }
+          ]
+        },
+        {
+          "field": "guest[1].a",
+          "was": "Almost never.",
+          "now": "Rarely.",
+          "why": "The denomination carries a Riserva and some growers raise the wine in wood. Almost never claims too much.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The year of the DOCG: see unsettled.",
+        "The warm rung of the ladder is a year and not a place (a hot year or a late harvest in Roero). It is honest for a grape with one home, and nothing read gives a second climate to set beside it.",
+        "That Arneis is no kin of Nebbiolo stays out of the shown text; the entry reads 719 of 900 words and could carry it."
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia: Arneis",
+          "url": "https://en.wikipedia.org/wiki/Arneis"
+        },
+        {
+          "title": "Falstaff: the Arneis grape",
+          "url": "https://www.falstaff.com/en/grape-varieties/arneis"
+        },
+        {
+          "title": "Langhe.net: Roero Arneis DOCG",
+          "url": "https://langhe.net/en/wines/docg-roero-arneis/"
+        },
+        {
+          "title": "Visit Langhe Monferrato Roero: Roero Arneis DOCG",
+          "url": "https://www.visitlmr.it/en/vini/roero-arneis-docg"
+        },
+        {
+          "title": "Consorzio di Tutela Barolo Barbaresco Alba Langhe e Dogliani: the Langhe denomination, historical background",
+          "url": "https://www.langhevini.it/en/?p=7747"
+        }
+      ]
+    },
+    "fiano": {
+      "verdict": "Sound after five fixes.",
+      "tested": [
+        "say against the Codex's own respellings (fee-AH-noh twice, fee-AH-no once): the entry takes the first.",
+        "Fiano di Avellino: at least 85 per cent Fiano, twenty-six communes, a DOCG since 2003, Apianum allowed on the label: the Codex's own, and the 85 per cent and the twenty-six confirmed again. The Riserva: added in 2020, twelve months. Confirmed in a reference page and a second.",
+        "The harvest: several pages set it in October, late for a white of the south, and say the grape holds its acidity at full ripeness.",
+        "The warm rung of the ladder, which the author gave as a taster's reading: put to search for Sicily, Puglia and McLaren Vale.",
+        "McLaren Vale: the grape holds its acidity in the heat; the wines read as medium bodied, a little waxy, mostly without oak. Agrees with the Codex's McLaren Vale record and with the entry.",
+        "The entry's notes against its own third card, its confuse line and the Codex's reviewed records of Fiano and Greco di Tufo.",
+        "The compare tells from both sides against the Verdicchio, Vermentino and Chardonnay entries: agree.",
+        "The three questions: one key each, wines against wines and grapes against grapes.",
+        "Service against the row for full whites and the Codex's Campania record (cellar temperature): agree. Ten years against the Codex's record: agrees."
+      ],
+      "changed": [
+        {
+          "field": "glass.notes, nutty",
+          "was": "toasted hazelnut, bitter almond",
+          "now": "toasted hazelnut, almond",
+          "why": "The entry's third card and its confuse line give the bitter almond finish to Greco di Tufo and to Verdicchio as what parts them from Fiano, as the Codex's reviewed records do. An entry cannot list as its own the note it uses to part a neighbour. Almond, unqualified, is named for Fiano in a page read.",
+          "sources": []
+        },
+        {
+          "field": "glass.notes, mineral",
+          "was": "a trace of smoke, struck flint",
+          "now": "a trace of smoke, wet stone",
+          "why": "The same: the Codex gives Greco di Tufo the flinty edge and Fiano the smoke, and the third card repeats it.",
+          "sources": []
+        },
+        {
+          "field": "glass.ladder, the warm rung",
+          "was": "yellow apple, acacia honey, bitter almond",
+          "now": "apricot, nectarine, honeydew melon",
+          "why": "The pages read give the warm sites riper and fuller fruit: apricot and ripe tropical fruit in Sicily, stone fruit in Puglia, and stone fruit, melon and nectarine in McLaren Vale. None gives honey or bitter almond as what the heat adds.",
+          "sources": [
+            {
+              "title": "Wine Companion: Fiano",
+              "url": "https://winecompanion.com.au/resources/varietals/fiano"
+            },
+            {
+              "title": "Young Gun of Wine: Fiano",
+              "url": "https://younggunofwine.com/wine-101/grape-varieties/fiano/"
+            },
+            {
+              "title": "Decanter: Italian grape varieties in Australia",
+              "url": "https://www.decanter.com/wine-reviews-tastings/australian-wine-italian-grape-varieties-383478"
+            }
+          ]
+        },
+        {
+          "field": "profile.fruit",
+          "was": "Ripe pear, yellow apple; riper and softer from the coast, Puglia and Sicily",
+          "now": "Ripe pear, yellow apple; apricot, nectarine and melon from the coast, Puglia, Sicily and McLaren Vale",
+          "why": "The profile names the fruit, as the ladder now does.",
+          "sources": []
+        },
+        {
+          "field": "worlds.home.home",
+          "was": "with cold winters and a late harvest.",
+          "now": "with cold winters and an October harvest.",
+          "why": "Said beside a wine, late harvest reads as a sweet style. The month is confirmed in several pages.",
+          "sources": [
+            {
+              "title": "Gambero Rosso: Fiano, the many faces of a great white",
+              "url": "https://www.gamberorossointernational.com/?p=515161"
+            },
+            {
+              "title": "Cellar Tours: Fiano",
+              "url": "https://www.cellartours.com/blog/italy/fianos-glorious-comeback"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "The mode: see unsettled.",
+        "Honeydew melon names the melon of the McLaren Vale notes, which do not say which melon.",
+        "Flint is said of Fiano di Avellino by many tasters and is not wrong of it. It is left to Greco di Tufo here because the Codex teaches the pair that way.",
+        "The entry gives the glass no citrus note; McLaren Vale notes name grapefruit and candied lemon peel. Nothing read asks for one in the wine of Avellino."
+      ],
+      "sources": [
+        {
+          "title": "Associazione Italiana Sommelier: the production rules of Fiano di Avellino DOCG",
+          "url": "https://aisitalia.it/Disciplinari/Campania/DOCG/Fiano%20di%20Avellino.pdf"
+        },
+        {
+          "title": "Italian Wine Central: Fiano di Avellino DOCG",
+          "url": "https://italianwinecentral.com/denomination/fiano-di-avellino-docg/"
+        },
+        {
+          "title": "Wine Companion: Fiano",
+          "url": "https://winecompanion.com.au/resources/varietals/fiano"
+        },
+        {
+          "title": "Gambero Rosso: Fiano, the many faces of a great white",
+          "url": "https://www.gamberorossointernational.com/?p=515161"
+        }
+      ]
+    },
+    "verdicchio": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "say against the Codex's two respellings (ver-DEEK-kyoh in the Marche record, ver-DEEK-kee-oh twice elsewhere): the entry takes the first, as the author reports.",
+        "The two zones at 85 per cent, Jesi larger and nearer the sea, Matelica higher, inland and slower to open: the Codex's own, and borne out by the pages read.",
+        "The Riserva: eighteen months for each zone and a DOCG. Confirmed for both; six of the months in bottle confirmed for Jesi.",
+        "Trebbiano di Soave and Turbiana: the Vitis study of 2001, a later study in Advances in Horticultural Science and a still later account were read against the entry's wording and the Codex's.",
+        "The amphora bottle: designed in 1953, green glass, and the bottle by which the wine was known abroad. Confirmed in several pages; one gives 1956. In the 1950s stands.",
+        "The glass against the Vermentino entry, whose herbs are wild fennel, thyme and rosemary: fennel is on both sides.",
+        "The compare tells from both sides against Garganega, Trebbiano and Fiano.",
+        "The three questions: one key each. The Lugana question treats Turbiana as the same grape, as the Codex does.",
+        "Service against the row for light aromatic whites: agrees. Ten years or more for a Riserva against the Codex's record: agrees."
+      ],
+      "changed": [
+        {
+          "field": "profile.confuse",
+          "was": "Vermentino is saltier, with lime and wild herbs",
+          "now": "Vermentino is saltier and softer in acidity, with lime and thyme",
+          "why": "Wild herbs is a family word dressed up, and the herb a taster would name first, fennel, is Verdicchio's own note. Thyme is the Vermentino entry's, and the acidity (medium to medium plus there, high here) is the firmer tell.",
+          "sources": []
+        },
+        {
+          "field": "questions[2].q",
+          "was": "A guest wants a Verdicchio with some years behind it, honeyed and nutty, to pour with roast rabbit and mushrooms.",
+          "now": "A guest wants a Verdicchio with some years behind it, turned to honey and toasted almond, to pour with roast rabbit and mushrooms.",
+          "why": "Honeyed and nutty are two of the glass families standing as notes. The stem now names what the entry gives an aged Riserva.",
+          "sources": []
+        },
+        {
+          "field": "compare, trebbiano",
+          "was": "Old labels of Trebbiano di Soave or di Lugana mean Verdicchio.",
+          "now": "Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio.",
+          "why": "Trebbiano di Soave is no old name: the Soave rule uses it today, as this entry's own label row says. Only Trebbiano di Lugana has given way, to Turbiana.",
+          "sources": [
+            {
+              "title": "Associazione Italiana Sommelier: the production rules of Soave Superiore DOCG",
+              "url": "https://aisitalia.it/Disciplinari/Veneto/DOCG/Soave%20Superiore.pdf"
+            }
+          ]
+        }
+      ],
+      "open": [
+        "Turbiana: see codexRecords and unsettled.",
+        "Whether the Matelica Riserva must spend six of its eighteen months in bottle, as the Jesi Riserva must: two pages read disagree. The entry states only the eighteen months.",
+        "One shop note read finds Matelica the more scented of the two zones, with apricot. The entry keeps the Codex's leaner, sharper Matelica."
+      ],
+      "sources": [
+        {
+          "title": "Associazione Italiana Sommelier: the production rules of Castelli di Jesi Verdicchio Riserva DOCG",
+          "url": "https://aisitalia.it/Disciplinari/Marche/DOCG/Castelli%20di%20Jesi%20Verdicchio%20Riserva.pdf"
+        },
+        {
+          "title": "Associazione Italiana Sommelier: the production rules of Verdicchio di Matelica Riserva DOCG",
+          "url": "https://aisitalia.it/Disciplinari/Marche/DOCG/Verdicchio%20di%20Matelica%20Riserva.pdf"
+        },
+        {
+          "title": "Vitis, 2001: Genetic studies on Trebbiano and morphologically related varieties by SSR and AFLP markers",
+          "url": "https://ojs.openagrar.de/index.php/VITIS/article/view/4527"
+        },
+        {
+          "title": "Advances in Horticultural Science, volume 26, number 2: the study of Verdicchio, Trebbiano di Soave and their kin",
+          "url": "https://oaj.fupress.net/index.php/ahs/article/view/2980"
+        },
+        {
+          "title": "Italian Wine Central: the Trebbiano family",
+          "url": "https://italianwinecentral.com/trebbiano_family/"
+        }
+      ]
+    },
+    "trebbiano": {
+      "verdict": "Sound after two fixes.",
+      "tested": [
+        "say against the Codex's two respellings (treb-BYAH-noh in the Tuscany record, treb-bee-AH-noh three times elsewhere): the entry takes the first, as the author reports, and adds the French name.",
+        "A family and not a grape: the Vitis study of 2001 found most vines called Trebbiano without a common ancestor, Verdicchio identical with Trebbiano di Soave and very similar to Trebbiano di Lugana. The entry's several different vines stands.",
+        "Ugni Blanc: about 98 per cent of Cognac's vineyard in one page and 97 in another, chosen for a wine high in acidity and low in alcohol; a grape of Armagnac beside Baco, Folle Blanche and Colombard. Confirmed, and no share is written in the entry.",
+        "The balsamic line: the consortium's rule lists Trebbiano among seven grapes, the must cooked, the vinegar aged at least twelve years in a run of casks. Confirmed; the line gives no figure.",
+        "Trebbiano d'Abruzzo: the rule searched twice, since the author reports that some sources add Bombino Bianco.",
+        "Procanico, Frascati, Vin Santo, Romagna, Spoleto, Gascony and Cassis against the Codex's records: agree.",
+        "notIn (trebbiano di soave, trebbiano di lugana): both names are Verdicchio's, whose page carries Trebbiano di Soave as an alias, so their questions belong to that drill. Right.",
+        "The label row and the Verdicchio tell for the standing of the two names today.",
+        "The three questions: one key each. The compare tells from both sides against Pinot Grigio, Verdicchio and Garganega.",
+        "Service against the row for light aromatic whites and the small glass for sweet wine: agree. Twenty years for old vine Trebbiano d'Abruzzo against the Codex's record: agrees."
+      ],
+      "changed": [
+        {
+          "field": "labels, Trebbiano di Soave, di Lugana",
+          "was": "Old names of Verdicchio, no Trebbiano at all; Lugana's grape is now called Turbiana.",
+          "now": "Names of Verdicchio in the Veneto and on Lake Garda, no Trebbiano at all; Lugana's is now Turbiana.",
+          "why": "Trebbiano di Soave is the name the Soave rule uses today for the partner of Garganega. Only Trebbiano di Lugana is an old name.",
+          "sources": [
+            {
+              "title": "Associazione Italiana Sommelier: the production rules of Soave Superiore DOCG",
+              "url": "https://aisitalia.it/Disciplinari/Veneto/DOCG/Soave%20Superiore.pdf"
+            }
+          ]
+        },
+        {
+          "field": "compare, verdicchio",
+          "was": "The Trebbiano di Soave and Trebbiano di Lugana of old labels are Verdicchio.",
+          "now": "Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio.",
+          "why": "The same, and now in the words of the Verdicchio entry's own tell.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "Trebbiano d'Abruzzo and Bombino Bianco: see codexRecords and unsettled.",
+        "The balsamic line says the cooked juice of Trebbiano. The rule admits Lambrusco and five other grapes beside it, so the line is true of a main grape of the vinegar and is not the whole of its rule.",
+        "The address given for the Cognac body's page was returned by no search in this pass; what it carries was confirmed on two other pages."
+      ],
+      "sources": [
+        {
+          "title": "Vitis, 2001: Genetic studies on Trebbiano and morphologically related varieties by SSR and AFLP markers",
+          "url": "https://ojs.openagrar.de/index.php/VITIS/article/view/4527"
+        },
+        {
+          "title": "Consorzio Tutela Aceto Balsamico Tradizionale di Modena: the product specifications",
+          "url": "https://www.balsamicotradizionale.it/en/the-product-specifications"
+        },
+        {
+          "title": "Consorzio Tutela Vini d'Abruzzo: Trebbiano d'Abruzzo DOC, the rule",
+          "url": "https://www.vinidabruzzo.it/wp-content/uploads/2024/04/TREBBIANO-DABRUZZO-DOC.pdf"
+        },
+        {
+          "title": "Decanter: how to tell Armagnac from Cognac",
+          "url": "https://www.decanter.com/spirits/how-to-differentiate-armagnac-from-cognac-246227/"
+        },
+        {
+          "title": "Bureau National Interprofessionnel de l'Armagnac: grape varieties and terroirs",
+          "url": "https://www.armagnac.fr/grape-varieties-and-terroirs"
+        }
+      ]
+    }
+  },
+  "codexRecords": [
+    "js/data-intro.js, the Garganega row: its acidity dial reads 2 of 3, medium. Three grape references read give the grape medium to high acidity. The table now says medium to medium plus; the owner may want the dial looked at. The same row's aroma holds citrus blossom, and the Cortese row holds citrus, white flowers and mineral: family words, as the authors say, which the table names.",
+    "The Codex's Lombardy, Marche and Veneto records state that Lugana's Turbiana is Verdicchio, one variety (shown by DNA to be the same vine; the same variety as Trebbiano di Soave and Turbiana). For Trebbiano di Soave every source agrees. For Turbiana they do not: the Vitis study of 2001 says very similar, a later study found one profile across its samples, and a still later account says not identical, which is why Lugana took the name. The author's flag, confirmed. The table says DNA study ties them. A softer word in those records (so close that it is taught as the same vine) would be safer.",
+    "js/data-questions.js holds an explanation that the Trebbiano d'Abruzzo denomination permits Bombino Bianco as well as Trebbiano Abruzzese, while the Abruzzo record in js/data-regions.js says the DOC allows Trebbiano Abruzzese and Trebbiano Toscano, 85 per cent together. The regional wine body's page of the rule as amended in January 2023 agrees with the second; a federation's older listing agrees with the first. The two records were true at different dates. The table follows the second.",
+    "The Codex's Italy record says Trebbiano d'Abruzzo is a different grape from Trebbiano Toscano, while its Abruzzo record says the wine of that name may be made from either vine. The author's flag: the Abruzzo record is the exact one, and the first is true of Trebbiano Abruzzese the vine, not of the wine.",
+    "The Codex's France record calls Ugni Blanc the most planted white grape of France: a rank, which the house rules call volatile. The author's flag, carried; the table does not repeat it.",
+    "The Codex's Piedmont record gives Roero's DOCG as 2004. One page read gives 2005. Not tested further: the table follows the Codex.",
+    "The Codex holds two respellings each for Verdicchio (ver-DEEK-kyoh, ver-DEEK-kee-oh), Trebbiano (treb-BYAH-noh, treb-bee-AH-noh) and Fiano (fee-AH-noh, fee-AH-no). The table takes the first of each. The owner may want one form throughout."
+  ],
+  "unsettled": [
+    "Fiano's mode. The plan gives at home and abroad. The Codex's McLaren Vale record calls Fiano a regional signature white, and the notes read describe a recognised style there. Whether a guest meets it on a list in this country is the plan's test, and it is rare here. Left as the plan fixes it; if the plan moves, the two sides are Irpinia and McLaren Vale and the warm rung of the ladder already carries the notes.",
+    "Turbiana and Verdicchio: one vine, or two very close ones. See codexRecords. The table's wording (DNA study ties them) holds under either answer; its second card, its alias and one question follow the Codex and treat them as one.",
+    "Trebbiano d'Abruzzo: whether Bombino Bianco still counts within the 85 per cent. The wine body's page of the 2023 text does not list it, and a further change was before the region in December 2024, whose outcome was not found. The table states the two Trebbianos alone.",
+    "The year Roero became a DOCG: 2004 or 2005.",
+    "Whether the Matelica Riserva carries the six months in bottle that the Jesi Riserva does.",
+    "The notes on each rung of the Cortese ladder, and lime and hawthorn in its glass: plausible, in keeping with what was read of the zone, and confirmed by name nowhere.",
+    "Orange zest and elderflower for Garganega: the author's naming, confirmed by name nowhere in this pass.",
+    "The style of Arneis in Australia and the United States as a class: hedged with typically, confirmed nowhere.",
+    "Whether every source address still answers: none could be opened from this session."
+  ],
+  "settled": [
+    "Grecanico Dorato and Garganega: the Vitis paper of 2008 reports them as synonyms, so DNA work published in 2008 stands on the second Garganega card. The comparison of 2003 rested on two samples and is rightly left out.",
+    "Sicilian Grecanico is a crisp wine of lemon, grapefruit, green apple and white peach, not a riper, softer one: the warm rung of the Garganega ladder now says so.",
+    "The Gavi Riserva: one year, six months of it in bottle, from a lower crop. The label row stands.",
+    "The Langhe name covers many communes of Roero as well as the Langhe hills: Langhe Arneis is not a wine of the right bank alone.",
+    "White Barolo: the planting among the Nebbiolo and the softening of the red are both attested, so the second Arneis card stands.",
+    "The Fiano di Avellino Riserva: added in 2020 at twelve months, so at least a year stands on the label row. Fiano is picked in October in Irpinia.",
+    "The amphora bottle of Verdicchio dates from 1953, so in the 1950s stands.",
+    "Both Verdicchio Riservas ask eighteen months.",
+    "The traditional balsamic vinegar of Modena: Trebbiano is among its grapes, the must is cooked and the ageing runs to twelve years and more in a run of casks, so the closing line of the Trebbiano forty-five seconds stands.",
+    "Trebbiano d'Abruzzo as the wine body states it today: Trebbiano Abruzzese, Trebbiano Toscano or both, at least 85 per cent. The label row and the third card stand."
+  ]
+}
