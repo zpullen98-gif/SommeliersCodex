@@ -569,3 +569,18 @@ if (typeof v53GrapeHtml === 'function') {
     try { return v57PageShape(html, r); } catch (e) { return html; }
   };
 }
+
+/* =========== 4. the root rows =========== */
+
+/* A grape's line on the root: its glass in a line, for every grape the table describes. */
+if (typeof v53GrapeShort === 'function') {
+  var _v57GrapeShort = v53GrapeShort;
+  v53GrapeShort = function (r) {
+    try {
+      var t = v57T(r && r.slug);
+      var lead = t ? v57Str(v57Obj(t.glass).lead) : '';
+      if (lead) return lead;
+    } catch (e) { }
+    return _v57GrapeShort.apply(this, arguments);
+  };
+}
