@@ -17,19 +17,19 @@
     "notes": [
       { "family": "orchard fruit", "notes": ["ripe pear", "yellow apple"] },
       { "family": "floral", "notes": ["honeysuckle", "acacia blossom"] },
-      { "family": "nutty", "notes": ["toasted hazelnut", "bitter almond"] },
-      { "family": "mineral", "notes": ["a trace of smoke", "struck flint"] },
+      { "family": "nutty", "notes": ["toasted hazelnut", "almond"] },
+      { "family": "mineral", "notes": ["a trace of smoke", "wet stone"] },
       { "family": "honeyed", "notes": ["acacia honey", "beeswax"] }
     ],
     "ladder": [
       { "climate": "cool", "where": "The high hills of Irpinia, around Avellino", "notes": ["ripe pear", "honeysuckle", "toasted hazelnut", "a trace of smoke"] },
-      { "climate": "warm", "where": "The Campanian coast, Puglia, Sicily and McLaren Vale", "notes": ["yellow apple", "acacia honey", "bitter almond"] }
+      { "climate": "warm", "where": "The Campanian coast, Puglia, Sicily and McLaren Vale", "notes": ["apricot", "nectarine", "honeydew melon"] }
     ],
     "structure": "Dry. Acidity medium plus and fresh, alcohol moderate to medium plus, body medium to full, with a waxy, faintly oily texture."
   },
   "worlds": {
     "home": {
-      "home": "Irpinia, the high hills around Avellino in Campania, 400 to 700 metres up, with cold winters and a late harvest. Fiano di Avellino must be at least 85 per cent Fiano, from twenty-six communes. It is made mostly in steel and rested on its lees, a little in used oak, and it gains honey and toast over a decade.",
+      "home": "Irpinia, the high hills around Avellino in Campania, 400 to 700 metres up, with cold winters and an October harvest. Fiano di Avellino must be at least 85 per cent Fiano, from twenty-six communes. It is made mostly in steel and rested on its lees, a little in used oak, and it gains honey and toast over a decade.",
       "abroad": "Elsewhere in the south of Italy it grows on the Campanian coast, in Puglia and in Sicily, with riper fruit. In Australia it has found a second home in McLaren Vale, where it keeps its acidity in the heat."
     }
   },
@@ -68,7 +68,7 @@
   "profile": {
     "c": "w",
     "st": "Pale to medium lemon · Body medium to full · Acid medium plus · Alcohol moderate to medium plus · Dry, waxy in texture",
-    "fruit": "Ripe pear, yellow apple; riper and softer from the coast, Puglia and Sicily",
+    "fruit": "Ripe pear, yellow apple; apricot, nectarine and melon from the coast, Puglia, Sicily and McLaren Vale",
     "other": "Honeysuckle and acacia blossom, toasted hazelnut and almond, a trace of smoke; acacia honey, beeswax and toast with age; usually no new oak",
     "tell": "A dry southern Italian white with weight and a waxy feel, pear and honeysuckle over hazelnut and smoke, yet fresh in acidity: Fiano di Avellino",
     "regions": "Fiano di Avellino and Irpinia in Campania; the Campanian coast, Puglia and Sicily; McLaren Vale in Australia",
@@ -116,5 +116,23 @@
     "The ladder: Irpinia is called cool because the Codex's Campania record calls it high, wet and cold for the south; the warm rung is the coast, Puglia, Sicily and McLaren Vale. Riper fruit there is the common account, and the notes on that rung are a taster's reading.",
     "Left out for want of a second source: the grape's decline through the twentieth century and why, small berries and low yields, the month of harvest, the hazelnut groves of Avellino as the cause of the note, and which house planted the grape first in Australia.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after five fixes. Fiano di Avellino at 85 per cent from twenty-six communes, the Riserva added in 2020 at twelve months, the October harvest, honey and nuts with age, riper and fuller fruit from Puglia and Sicily and McLaren Vale holding its acidity in the heat were confirmed.",
+    "changed": [
+      "glass.notes, nutty: bitter almond now reads almond. The entry's third card, its confuse line and its Verdicchio tell all use a bitter almond finish to part Greco di Tufo and Verdicchio from Fiano, as the Codex's reviewed records do, so the entry could not list the note as Fiano's own. Almond is named for Fiano in a page read.",
+      "glass.notes, mineral: struck flint now reads wet stone, for the same reason: the Codex gives Greco di Tufo the flinty edge and Fiano the smoke, and the third card repeats it. The trace of smoke stays.",
+      "glass.ladder, the warm rung: yellow apple, acacia honey and bitter almond now read apricot, nectarine and honeydew melon. The author gave the rung as a taster's reading. The notes read for the warm sites are apricot and ripe tropical fruit in Sicily, stone fruit in Puglia, and stone fruit, melon and nectarine in McLaren Vale.",
+      "profile.fruit: riper and softer from the coast, Puglia and Sicily now names the fruit: apricot, nectarine and melon from the coast, Puglia, Sicily and McLaren Vale.",
+      "worlds.home.home: a late harvest now reads an October harvest. Said beside a wine, late harvest reads as a sweet style, and several pages read set the picking in October, late for a white of the south."
+    ],
+    "open": [
+      "The plan gives Fiano at home and abroad, and the author's doubt stands for whoever reviews the plan: the Codex's McLaren Vale record calls the grape a regional signature white, and the notes read describe a recognised style there (medium bodied, a little waxy, nectarine and melon, fresh acidity). The mode is left as the plan fixes it.",
+      "Honeydew melon names the melon of the McLaren Vale notes, which do not say which melon.",
+      "Flint is said of Fiano di Avellino by many tasters and is not wrong of it. It is left to Greco di Tufo here because the Codex teaches the pair that way.",
+      "The Riserva at twelve months stands on a reference page and on a second that says an added year; the decree of 13 October 2020 was not opened.",
+      "No source address could be opened from this session."
+    ]
+  }
 }
