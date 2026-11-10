@@ -9,7 +9,7 @@
   "lines": {
     "s10": "Arneis is Piedmont's soft, dry white from the Roero hills: ripe pear, camomile and a gentle twist of almond.",
     "s20": "Arneis comes from Roero, the sandy hills across the river from Barolo in Piedmont. It is a dry, rounded white of ripe pear, white peach and camomile, soft in acidity, with a faint bitterness of almond on the finish.",
-    "s45": "Arneis is said to mean little rascal in the dialect of Piedmont, and growers say the vine earns the name. Its home is Roero, the sandy hills across the river Tanaro from Barolo. It tastes of ripe pear, white peach and camomile, with a faint bitterness of almond at the end. It is dry and rounded, medium in body, and soft in acidity. It is made in steel, without oak, and meant to be enjoyed young. It suits cured meats, cold veal in tuna sauce or fresh pasta in butter. It once grew among the Nebbiolo vines and softened the red, which earned it the nickname white Barolo.",
+    "s45": "Arneis is said to mean little rascal in the dialect of Piedmont, and growers say the vine earns the name. Its home is Roero, the sandy hills across the river Tanaro from Barolo. It makes a dry white that tastes of ripe pear, white peach and camomile, with a faint bitterness of almond at the end. It is rounded, medium in body and soft in acidity. Made in steel without oak, it is meant to be enjoyed young. It suits cured meats, cold veal in tuna sauce or fresh pasta in butter. It once grew among the Nebbiolo vines and softened the red, which earned it the nickname white Barolo.",
     "sale": "Arneis is what Piedmont pours before the Barolo: a dry, rounded white of ripe pear and camomile that wakes the appetite without a sharp word. I would start the table with it, beside the cured meats or the veal."
   },
   "glass": {
@@ -29,8 +29,8 @@
   },
   "worlds": {
     "home": {
-      "home": "Roero, the sandy hills on the left bank of the Tanaro, across the river from Barolo and Barbaresco in Piedmont. Roero Arneis must be at least 95 per cent Arneis. It is made in steel, without oak, to be enjoyed young, and a little is made sparkling. Across the river the same grape is bottled as Langhe Arneis.",
-      "abroad": "It has travelled a little. Australia grows it in Victoria, Tasmania and New South Wales, and Sonoma in California and Oregon's Willamette Valley have some, made in the same fresh, pear scented way."
+      "home": "Roero, the sandy hills on the left bank of the Tanaro, across the river from Barolo and Barbaresco in Piedmont. Roero Arneis must be at least 95 per cent Arneis. It is made in steel, without oak, to be enjoyed young, and a little is made sparkling. Under the wider Langhe name, from either bank, it is Langhe Arneis.",
+      "abroad": "It has travelled a little. Australia grows it in Victoria and New South Wales, and Sonoma in California and Oregon's Willamette Valley have some, typically made in the same fresh, pear scented way."
     }
   },
   "service": {
@@ -50,12 +50,12 @@
   "labels": [
     { "term": "Roero Arneis", "means": "Arneis, at least 95 per cent, from the Roero hills north of Alba; a DOCG since 2004." },
     { "term": "Roero", "means": "On its own, the zone's red wine, made from Nebbiolo; the white adds the word Arneis." },
-    { "term": "Langhe Arneis", "means": "The same grape from the wider Langhe hills, across the Tanaro from Roero." },
+    { "term": "Langhe Arneis", "means": "The same grape under the wider Langhe name, which takes in the Langhe hills and much of Roero." },
     { "term": "Spumante", "means": "A sparkling Roero Arneis, which the same rules allow." }
   ],
   "guest": [
     { "q": "I have never heard of Arneis. What is it like?", "a": "A dry, rounded white from Piedmont, the home of Barolo. Think ripe pear and white peach with a scent of camomile, soft in acidity, and a little almond at the end." },
-    { "q": "Is it oaked?", "a": "Almost never. It is made in steel to keep its pear and camomile, and its roundness comes from the grape, not from a barrel." },
+    { "q": "Is it oaked?", "a": "Rarely. It is made in steel to keep its pear and camomile, and its roundness comes from the grape, not from a barrel." },
     { "q": "The list also shows a Roero with no grape named. Is that the same wine?", "a": "No. Roero on its own is the red, made from Nebbiolo. The white is labelled Roero Arneis, and it comes from the same sandy hills." }
   ],
   "compare": [
@@ -116,5 +116,23 @@
     "The ladder is a taster's reading: the grape's acidity is low and it turns soft and honeyed when picked late or in a hot year. No cool rung is given, since no source read describes a cooler home.",
     "No dish from the Creole table is given: the grape's soft acidity suits cream, butter and cured meat better than the spice of that table.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after five fixes. Roero Arneis at 95 per cent and a DOCG, its sparkling type, Roero alone as the Nebbiolo red, the planting among Nebbiolo with the names white Barolo and Nebbiolo Bianco, little rascal given as what is said, and Sonoma and the Willamette Valley abroad were confirmed.",
+    "changed": [
+      "lines.s45: the line did not say the wine is white until its last two words, and five sentences in a row opened on It. It now says it makes a dry white in its third sentence, and the cellar sentence opens on Made in steel. The beats and the facts are as they were.",
+      "worlds.home.home: across the river the same grape is bottled as Langhe Arneis set the Langhe name on the right bank alone. The Langhe denomination covers the Langhe hills and many communes of Roero, as its own consortium says, so a Langhe Arneis may come from either bank. The line now says so.",
+      "labels, Langhe Arneis: the same grape from the wider Langhe hills, across the Tanaro from Roero now reads the same grape under the wider Langhe name, which takes in the Langhe hills and much of Roero, for the same reason.",
+      "worlds.home.abroad: Victoria, Tasmania and New South Wales now reads Victoria and New South Wales. Two lists of the Australian regions were read and they agree on those two states alone. Made in the same fresh, pear scented way gains typically, since nothing read describes the wines abroad as a class.",
+      "guest[1].a: Almost never now reads Rarely. The denomination carries a Riserva and some growers raise the wine in wood, so almost never claims too much."
+    ],
+    "open": [
+      "The year of the DOCG: the Codex and one page read say 2004, another page says 2005. The Codex stands.",
+      "Acidity: the Codex gives soft in one record and moderate in another, and the pages read run from low to invigorating. The entry's medium at most and often soft sits inside the Codex's two readings.",
+      "The warm rung of the ladder is a year and not a place (a hot year or a late harvest in Roero). It is honest for a grape with one home, and nothing read gives a second climate to set beside it.",
+      "That Arneis is no kin of Nebbiolo is stated by one reference page and stays out of the shown text, as the author left it.",
+      "No source address could be opened from this session."
+    ]
+  }
 }
