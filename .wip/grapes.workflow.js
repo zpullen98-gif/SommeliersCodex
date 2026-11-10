@@ -145,16 +145,27 @@ In order, committing and pushing after each, with PORT=8794 for the gates:
 5. ${C}/CLAUDE.md: a section for this edition in the manner of the codex56 section (the request, what was found, the files, the schema and pipeline with its commands, who may run the writing build, the wrappers by name, the storage slot, the views and addresses, the gate and its usage line, every pin that moved, what was deliberately left alone), the worker line and the layer list moved, codex58 named next (lines 52 to 53, 72 to 73, 171 to 172 and the gate usage near 148, 223 and 293). Every gate green after it.
 Report: the counts, the audit line by line with its proof, every gate's last line, the walk's results, the screenshot paths, the final commit, and anything the owner should know (facts left out for want of a source, Codex records the writers believe are wrong).`
 
+const ok = (x) => x !== null && x !== undefined
+const short = (x, n) => (ok(x) ? String(x).slice(0, n) : null)
+
 phase('Spec')
 const s = await agent(SPEC, { label: 'spec', phase: 'Spec' })
+if (!ok(s)) { log('Stopped: the spec did not finish'); return { incomplete: ['spec'] } }
 
 phase('Build')
+/* A stage runs only when everything it depends on finished: a checker never reads a chunk its author did not
+   finish, and a lane stops at its first unfinished agent, so a resume after a usage limit redoes nothing and
+   skips nothing. */
 const lanesRun = async () => {
   const res = await parallel(LANES.map((ks) => () => (async () => {
     const out = {}
     for (const k of ks) {
-      out[k] = String(await agent(AUTHOR(k), { label: `author:${k}`, phase: 'Build' })).slice(0, 700)
-      out[k + '-check'] = String(await agent(CHECK(k), { label: `check:${k}`, phase: 'Build' })).slice(0, 700)
+      const a = await agent(AUTHOR(k), { label: `author:${k}`, phase: 'Build' })
+      if (!ok(a)) break
+      out[k] = String(a).slice(0, 700)
+      const c = await agent(CHECK(k), { label: `check:${k}`, phase: 'Build' })
+      if (!ok(c)) break
+      out[k + '-check'] = String(c).slice(0, 700)
     }
     return out
   })()))
@@ -162,19 +173,34 @@ const lanesRun = async () => {
 }
 const engRun = async () => {
   const e1 = await agent(ENG1(s), { label: 'engineer:join-page', phase: 'Build' })
+  if (!ok(e1)) return [null, null]
   const e2 = await agent(ENG2(s, e1), { label: 'engineer:study-views', phase: 'Build' })
   return [e1, e2]
 }
-const [lanes, eng] = await parallel([() => lanesRun(), () => engRun()])
+const [lanesRaw, eng] = await parallel([() => lanesRun(), () => engRun()])
+const lanes = lanesRaw || {}
 const [e1, e2] = eng || []
-const lanesText = JSON.stringify(lanes || {})
+const need = []
+for (const ks of LANES) for (const k of ks) {
+  if (!ok(lanes[k])) need.push('author:' + k)
+  else if (!ok(lanes[k + '-check'])) need.push('check:' + k)
+}
+if (!ok(e1)) need.push('engineer:join-page')
+else if (!ok(e2)) need.push('engineer:study-views')
+const lanesText = JSON.stringify(lanes)
+if (need.length) {
+  log('Stopped before the gates; unfinished: ' + need.join(', '))
+  return { incomplete: need, spec: short(s, 1200), engineers: [short(e1, 1500), short(e2, 1500)], lanes: lanesText.slice(0, 5000) }
+}
 
 phase('Gates')
 const g = await agent(GATES(s, e2, lanesText), { label: 'gates', phase: 'Gates' })
+if (!ok(g)) { log('Stopped: the gates agent did not finish'); return { incomplete: ['gates'], engineers: [short(e1, 1500), short(e2, 1500)], lanes: lanesText.slice(0, 5000) } }
 
 phase('Review')
 const contentReview = async () => {
   const w = await agent(WORLDS(lanesText), { label: 'review:worlds', phase: 'Review' })
+  if (!ok(w)) return [null, null]
   const v = await agent(VOICE(lanesText, w), { label: 'review:voice', phase: 'Review' })
   return [w, v]
 }
@@ -183,9 +209,18 @@ const [code, content] = await parallel([
   () => contentReview(),
 ])
 const [w, v] = content || []
+const needR = []
+if (!ok(code)) needR.push('review:code')
+if (!ok(w)) needR.push('review:worlds')
+else if (!ok(v)) needR.push('review:voice')
+if (needR.length) {
+  log('Stopped before the integrator; unfinished: ' + needR.join(', '))
+  return { incomplete: needR, gates: short(g, 2500), code: short(code, 2000), worlds: short(w, 1500), voice: short(v, 1500) }
+}
 
 phase('Integrate')
 const i = await agent(INTEGRATE(g, code, w, v), { label: 'integrate', phase: 'Integrate' })
+if (!ok(i)) { log('Stopped: the integrator did not finish'); return { incomplete: ['integrate'], gates: short(g, 2500), code: short(code, 2000) } }
 return {
   spec: String(s).slice(0, 2500),
   engineers: [String(e1).slice(0, 1800), String(e2).slice(0, 1800)],
