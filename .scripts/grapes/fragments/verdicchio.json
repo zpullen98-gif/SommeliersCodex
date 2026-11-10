@@ -63,7 +63,7 @@
   ],
   "compare": [
     { "slug": "garganega", "tell": "Garganega, as Soave, is softer and rounder, with white peach and gentler acidity; Verdicchio is leaner and sharper, with lemon, fennel and green almond." },
-    { "slug": "trebbiano", "tell": "Trebbiano Toscano is a different vine, lighter and plainer; Verdicchio has more flavour and a bitter almond finish. Old labels of Trebbiano di Soave or di Lugana mean Verdicchio." },
+    { "slug": "trebbiano", "tell": "Trebbiano Toscano is a different vine, lighter and plainer; Verdicchio has more flavour and a bitter almond finish. Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio." },
     { "slug": "fiano", "tell": "Fiano is broader and waxier, with ripe pear, honeysuckle and hazelnut; Verdicchio is leaner and higher in acidity, with lemon and a bitter almond finish." }
   ],
   "profile": {
@@ -73,7 +73,7 @@
     "other": "Wild fennel and anise, bitter and green almond, struck flint and a salty edge; honey, beeswax and toasted almond with age; mostly no oak",
     "tell": "High acidity with lemon, fennel and a firm bitter almond finish on a medium body, a green glint in the colour: Verdicchio from the Marche",
     "regions": "Verdicchio dei Castelli di Jesi and Verdicchio di Matelica in the Marche; Lugana on Lake Garda, as Turbiana; Soave, as Trebbiano di Soave",
-    "confuse": "Garganega is softer, with white peach; Fiano is broader and waxier, with hazelnut; Trebbiano Toscano is lighter and plainer; Vermentino is saltier, with lime and wild herbs"
+    "confuse": "Garganega is softer, with white peach; Fiano is broader and waxier, with hazelnut; Trebbiano Toscano is lighter and plainer; Vermentino is saltier and softer in acidity, with lime and thyme"
   },
   "targets": ["marche", "lombardy", "veneto", "italy"],
   "cards": [
@@ -95,7 +95,7 @@
       "exp": "Lugana is made from Turbiana, which DNA study ties to Verdicchio, the grape of the Marche. Trebbiano d'Abruzzo tempts because Turbiana was once called Trebbiano di Lugana, but it is a different vine."
     },
     {
-      "q": "A guest wants a Verdicchio with some years behind it, honeyed and nutty, to pour with roast rabbit and mushrooms. Which word on the label do you look for?",
+      "q": "A guest wants a Verdicchio with some years behind it, turned to honey and toasted almond, to pour with roast rabbit and mushrooms. Which word on the label do you look for?",
       "opts": ["Riserva", "Classico", "Superiore", "Passito"],
       "a": 0,
       "exp": "Riserva marks the longer aged wine, a DOCG in each zone since 2010. Classico names the historic core of the Jesi zone and says nothing of age, and Passito is a sweet wine from dried grapes."
@@ -120,5 +120,20 @@
     "Left out for want of a second source: plantings outside Italy, the years the two DOCs were first granted (sources give 1967 for Matelica and 1968 for Jesi, one source each here), the sparkling and passito versions as label terms, and any parentage.",
     "Shrimp remoulade is the one dish from the Creole table: high acidity and lemon against a sharp, mustard sauce.",
     "The sources were read through search results; this session could not open the hosts directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-10",
+    "verdict": "Sound after three fixes. The two zones at 85 per cent, the Riserva of each at eighteen months and a DOCG, the green amphora bottle of 1953, Verdicchio as one vine with Trebbiano di Soave and its tie to Lugana's Turbiana were confirmed.",
+    "changed": [
+      "profile.confuse: Vermentino is saltier, with lime and wild herbs carried a family word dressed up, and fennel, the herb a taster would name first, is Verdicchio's own note. It now reads saltier and softer in acidity, with lime and thyme, as the Vermentino entry gives them.",
+      "questions[2].q: honeyed and nutty, two family words in the guest's mouth, now read turned to honey and toasted almond, the notes the entry gives an aged Riserva.",
+      "compare, Trebbiano: old labels of Trebbiano di Soave or di Lugana made both names things of the past. Trebbiano di Soave is the name the Soave rule still uses; only Trebbiano di Lugana has given way to Turbiana. The line now reads Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio."
+    ],
+    "open": [
+      "Turbiana: the Vitis study of 2001 found Verdicchio identical with Trebbiano di Soave and very similar to Trebbiano di Lugana; a study of 2013 found one profile across its samples, a Turbiana among them; a later account says the two are not identical, which is why Lugana took the name Turbiana. The entry says DNA study ties them, which every reading allows, and its second card calls both names Verdicchio's own, as the Codex's records do.",
+      "Whether the Matelica Riserva must spend six of its eighteen months in bottle, as the Jesi Riserva must: two pages read disagree. The entry states only the eighteen months.",
+      "One shop note read finds Matelica the more scented of the two zones, with apricot. The entry keeps the Codex's leaner, sharper Matelica.",
+      "No source address could be opened from this session."
+    ]
+  }
 }
