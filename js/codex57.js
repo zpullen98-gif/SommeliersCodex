@@ -547,6 +547,7 @@ function v57PageShape(html, r) {
   put('v57-gs-guest', v57W('guestH'), v57GuestBody(t), false, tail);
   put('v57-gs-label', v57W('labelH'), v57LabelBody(t), false, tail);
   put('v57-gs-compare', v57W('compareH'), v57CompareBody(t), false, tail);
+  put('v57-gs-list', v57W('listH'), v57ListBody(r), false, tail);
   /* Sources, closed at the foot: after the last section the page draws */
   var src = v57SourcesBody(t);
   var last = src ? (v57SecAt(s, 'v53-gs-watch') || v57SecAt(s, 'v53-gs-cards')) : null;
@@ -584,3 +585,105 @@ if (typeof v53GrapeShort === 'function') {
     return _v57GrapeShort.apply(this, arguments);
   };
 }
+
+/* =========== 5. on the house's list =========== */
+
+/* Old World or New World, by the last part of a wine's region as the house writes it: a country, or a state of
+   the United States. A part the map does not hold goes under neither. */
+var V57_WORLD = {};
+(function () {
+  ['France', 'Italy', 'Spain', 'Portugal', 'Germany', 'Austria', 'Switzerland', 'Greece', 'Hungary', 'England', 'Wales', 'United Kingdom', 'Luxembourg',
+    'Slovenia', 'Croatia', 'Romania', 'Bulgaria', 'Czech Republic', 'Slovakia', 'Georgia', 'Moldova', 'Cyprus', 'Turkey', 'Lebanon', 'Israel', 'Armenia',
+    'North Macedonia', 'Serbia'].forEach(function (n) { V57_WORLD[v57Fold(n)] = 'old'; });
+  ['United States', 'USA', 'California', 'Oregon', 'Washington', 'Washington State', 'New York', 'Virginia', 'Texas', 'Michigan', 'Idaho', 'Arizona',
+    'New Mexico', 'Canada', 'Mexico', 'Argentina', 'Chile', 'Uruguay', 'Brazil', 'Australia', 'New Zealand', 'South Africa'].forEach(function (n) { V57_WORLD[v57Fold(n)] = 'new'; });
+})();
+function v57WorldOf(region) {
+  var parts = String(region == null ? '' : region).split(',').map(v57Fold).filter(Boolean);
+  var last = parts.length ? parts[parts.length - 1] : '';
+  return (last && v57Own(V57_WORLD, last)) ? V57_WORLD[last] : '';
+}
+/* A field of a house wine as plain text: the value as the pack holds it, or the value a person kept. */
+function v57Field(item, k) {
+  if (!item) return '';
+  if (typeof item[k] === 'string') return item[k].trim();
+  var v = null;
+  try { v = (typeof v28KV === 'function') ? v28KV(item, k) : null; } catch (e) { v = null; }
+  return typeof v === 'string' ? v.trim() : '';
+}
+function v57House() {
+  try { return (typeof v53House === 'function') ? v53House() : ((typeof v32House === 'function') ? v32House() : null); } catch (e) { return null; }
+}
+/* The house's wines of a grape, in the list's own order: { old, new, other, n }, each wine { id, producer, wine }.
+   A wine counts when one of its grapes resolves to the slug. The producer and the wine alone are read, never a
+   price, a year, a bin or a note; a wine the list holds twice (by the glass and by the bottle, two sizes, two
+   years) is one row, opening the first. Empty when no house is loaded. */
+function v57HouseWines(slug) {
+  var out = { old: [], 'new': [], other: [], n: 0 };
+  var s = v57Str(slug);
+  var h = v57House();
+  if (!s || !h || typeof v28Wines !== 'function' || typeof v28Grapes !== 'function' || typeof v53GrapeKey !== 'function') return out;
+  var seen = {};
+  v28Wines(h).forEach(function (w) {
+    var hit = false;
+    try { hit = v28Grapes(w).some(function (g) { return v53GrapeKey(g) === s; }); } catch (e) { hit = false; }
+    if (!hit) return;
+    var producer = v57Field(w, 'producer'), wine = v57Field(w, 'wine');
+    if (!producer && !wine) return;
+    var k = v57Fold(producer) + '|' + v57Fold(wine);
+    if (seen[k]) return;
+    seen[k] = 1;
+    var world = v57WorldOf(v57Field(w, 'region'));
+    out[world || 'other'].push({ id: w.id, producer: producer, wine: wine });
+    out.n++;
+  });
+  return out;
+}
+function v57ListBody(r) {
+  var hw = v57HouseWines(r && r.slug);
+  if (!hw.n) return '';
+  var group = function (key, list) {
+    if (!list.length) return '';
+    return '<h4>' + v57Esc(v57W('worldCount', { world: v57W(key), n: list.length })) + '</h4><ul class="v57-wines">' + list.map(function (x) {
+      return '<li><button type="button" class="v57-wine" data-v57="wine" data-id="' + v57Esc(x.id) + '" id="v57-w-' + v57Esc(x.id) + '">'
+        + '<span class="v57-wine-p">' + v57Esc(x.producer || x.wine) + '</span>'
+        + ((x.producer && x.wine) ? '<span class="v57-wine-w">' + v57Esc(x.wine) + '</span>' : '') + '</button></li>';
+    }).join('') + '</ul>';
+  };
+  return v57P('v57-listline', hw.n === 1 ? v57W('listOne') : v57W('listMany', { n: hw.n }))
+    + group('oldWorld', hw.old) + group('newWorld', hw['new']) + group('elsewhere', hw.other);
+}
+/* A house wine's card, opened from a grape's page as codex39 opens one from a region's: the list's own card
+   screen, pushed, so Back returns to the grape. */
+function v57OpenWine(id) {
+  var wid = v57Str(id);
+  if (!wid) return false;
+  var known = false;
+  try { known = typeof v28Wines === 'function' && v28Wines(v57House()).some(function (w) { return w.id === wid; }); } catch (e) { known = false; }
+  if (!known) return false;
+  if (typeof v32OpenWine === 'function') { v32OpenWine(wid); return true; }
+  if (typeof v28Open !== 'function') return false;
+  try { S._v28edit = false; S.view = 'cellar'; } catch (e) { return false; }
+  v28Open(wid, false);
+  return true;
+}
+
+/* =========== the acts =========== */
+
+/* What a control of the layer does, by its data-v57 word: extended key by key. One listener for them all. */
+var V57_ACTS = {
+  wine: function (node) { return v57OpenWine(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-id') : ''); }
+};
+(function () {
+  if (typeof document === 'undefined' || !document || typeof document.addEventListener !== 'function') return;
+  document.addEventListener('click', function (e) {
+    var t = e && e.target;
+    var node = t && typeof t.closest === 'function' ? t.closest('[data-v57]') : null;
+    if (!node || node.disabled) return;
+    var act = node.getAttribute('data-v57');
+    if (!v57Own(V57_ACTS, act) || typeof V57_ACTS[act] !== 'function') return;
+    if (typeof e.preventDefault === 'function') e.preventDefault();
+    try { if (typeof v32Remember === 'function') v32Remember(node); } catch (err) { }
+    try { V57_ACTS[act](node, e); } catch (err2) { }
+  });
+})();
