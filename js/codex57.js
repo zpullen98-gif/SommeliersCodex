@@ -1737,9 +1737,11 @@ V57_ACTS.worlds = function (node) { return v57OpenWorlds(node && typeof node.get
 
 /* The glasses a grape gives the drill, read from its blind call: the line is written both ways (what leans one
    world; what leans the other), so each half is a glass described by its tell. The world a half leans to is the
-   one it names, else the side whose places it names, else its place in the line (the Old World is written
-   first). A grape whose call does not give both worlds sits the drill out. */
-var V57_LEAN = /^(.+)\s+(?:leans?|points?|suggests?)\s+(?:to\s+|towards\s+)?(.+)$/i;
+   one it names, else the side whose places it names (a word of the place found in one side's own text and not
+   in the other's), else its place in the line (the Old World is written first). A grape whose call does not
+   give both worlds sits the drill out. */
+var V57_LEAN = /^(.+)\s+(?:leans?|points?|suggests?|says?|means?|signals?|indicates?|favours?)\s+(?:to\s+|towards\s+)?(.+)$/i;
+var V57_PLAIN = { the: 1, and: 1, world: 1, wine: 1, wines: 1, style: 1, styles: 1, valley: 1, coast: 1, north: 1, south: 1, east: 1, west: 1, northern: 1, southern: 1 };
 function v57CallSide(target, c, i, n) {
   var f = ' ' + v57Fold(target) + ' ';
   if (f.indexOf(' old world ') >= 0) return 'old';
@@ -1747,8 +1749,8 @@ function v57CallSide(target, c, i, n) {
   var hay = function (o) { return ' ' + v57Fold([o.where, o.glass, o.cellar].join(' ')) + ' '; };
   var ho = hay(v57Obj(c.old)), hn = hay(v57Obj(c['new']));
   var inOld = false, inNew = false;
-  f.trim().split(/\s+(?:or|and)\s+/).forEach(function (p) {
-    if (!p) return;
+  f.trim().split(' ').forEach(function (p) {
+    if (p.length < 4 || v57Own(V57_PLAIN, p)) return;
     if (ho.indexOf(' ' + p + ' ') >= 0) inOld = true;
     if (hn.indexOf(' ' + p + ' ') >= 0) inNew = true;
   });
@@ -1760,7 +1762,8 @@ function v57CallSide(target, c, i, n) {
 function v57CallGlasses(t) {
   if (v57WorldsMode(t) !== 'contrast') return [];
   var c = v57Obj(v57Obj(t.worlds).contrast);
-  var parts = v57Str(c.call).replace(/\.\s*$/, '').split(/\s*;\s*/).filter(Boolean);
+  /* the halves: parted by a semicolon, or written as sentences */
+  var parts = v57Str(c.call).replace(/\.\s*$/, '').split(/\s*;\s*|\.\s+(?=[A-Z])/).filter(Boolean);
   var out = [];
   parts.forEach(function (p, i) {
     var m = V57_LEAN.exec(p);
