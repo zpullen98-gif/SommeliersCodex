@@ -182,7 +182,13 @@ section('3. the pages');
   const tAt = root.indexOf('aria-labelledby="v53-g-tasting"'), tEnd = tAt >= 0 ? root.indexOf('</section>', tAt) : -1;
   const tSec = tEnd > tAt ? root.slice(tAt, tEnd) : '';
   const tGo = (tSec.match(/data-go="([^"]+)"/g) || []).map((m) => m.slice(9, -1));
-  check('the Grapes root at ' + name + ' has its five chips, the four tasting doors (griddrill, courttasting, grid, cmsgrid, in that order, no Blind flight, no Study the grid) and the grape decks', ['v53-g-whites', 'v53-g-reds', 'v53-g-twenty', 'v53-g-every', 'v53-g-tasting'].every((id) => root.indexOf('data-to="' + id + '"') >= 0 && root.indexOf('id="' + id + '"') >= 0)
+  /* codex57: with the table on the device the root gains At the table, a section ahead of Tasting with its own chip,
+     so the jumps are six and in this order; a chain with no codex57.js (or no table) keeps codex53's five */
+  const chipsWant = (HAS57 && TABLE.length) ? ['v53-g-whites', 'v53-g-reds', 'v53-g-twenty', 'v53-g-every', 'v57-g-table', 'v53-g-tasting'] : ['v53-g-whites', 'v53-g-reds', 'v53-g-twenty', 'v53-g-every', 'v53-g-tasting'];
+  const chipsGot = (root.match(/data-v53="jump" data-to="([^"]+)"/g) || []).map((m) => m.replace(/.*data-to="|"$/g, ''));
+  const tableAt = root.indexOf('aria-labelledby="v57-g-table"');
+  check('the Grapes root at ' + name + ' has its ' + (chipsWant.length === 6 ? 'six chips (At the table ahead of Tasting, its section between the grapes and Tasting)' : 'five chips') + ', the four tasting doors (griddrill, courttasting, grid, cmsgrid, in that order, no Blind flight, no Study the grid) and the grape decks', JSON.stringify(chipsGot) === JSON.stringify(chipsWant) && chipsWant.every((id) => root.indexOf('id="' + id + '"') >= 0)
+    && (chipsWant.length === 5 ? tableAt < 0 : (tableAt > root.indexOf('aria-labelledby="v53-g-every"') && tableAt < tAt))
     && JSON.stringify(tGo) === JSON.stringify(['griddrill', 'courttasting', 'grid', 'cmsgrid']) && root.indexOf('data-go="flight"') < 0 && root.indexOf('data-go="tastegrid"') < 0
     && root.indexOf('data-deck="grapes"') >= 0 && root.indexOf('data-deck="grapes-all"') >= 0, tGo.join(' '));
   const pages = J('v53GrapeOrder().all.map(function (r) { var h = ""; try { h = v53GrapeHtml(r); } catch (e) { h = "THREW " + e.message; } return { slug: r.slug, h: h }; })') || [];

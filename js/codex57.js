@@ -142,6 +142,8 @@ var V57_WORDS = {
   cardsDeck: 'Cards at the table',
   grapeDeck: 'Cards at the table: {name}',
   dueDeck: 'Table cards due today',
+  front: 'Front',
+  answer: 'Answer',
   cardSide: '{side} · {name}',
   cardDoor: 'The page for {name}',
   oneCard: '1 card',
@@ -226,6 +228,7 @@ var V57_WORDS = {
   kind_red: 'A red grape',
   family_white: 'A family of white grapes',
   family_red: 'A family of red grapes',
+  presentSay: 'Say it: {say}',
   presentAsk: 'Say it aloud, as you would at the table: what it is, where it is at home, how it tastes, how it is made and what it suits. Take about forty-five seconds, then make the sale in two sentences.',
   presentCount: '{m} of {n} said · {d} due today',
   presentNew: '{n} grapes to say aloud',
@@ -1143,7 +1146,7 @@ if (typeof v32StartRun === 'function') {
 }
 /* The card's two faces: the question over the grape's name, then the answer with a door to the grape's page. */
 function v57CardFaceHtml(c, run) {
-  var w = (typeof v32W === 'function') ? v32W : function (k) { return k === 'front' ? 'Front' : 'Answer'; };
+  var w = function (k) { return (typeof v32W === 'function') ? v32W(k) : v57W(k); };
   var side = function (k) { return v57Esc(c.label ? v57W('cardSide', { side: w(k), name: c.label }) : w(k)); };
   if (!run || !run.flip) {
     return '<button type="button" class="card v28-front v57-card" data-v32="flip" id="v32-face"><span class="v28-eyebrow v28-ink">' + side('front') + '</span>'
@@ -1471,6 +1474,13 @@ function v57FilterHtml(html, f, poured) {
     if (b < 0 || s.slice(a, b).indexOf(V57_ROW_HEAD) >= 0) return;
     s = s.slice(0, a) + '<section class="v32-sec v53-gsec" hidden aria-labelledby="' + id + '"' + s.slice(a + head.length);
   });
+  /* a jump to a list the filter has emptied leaves with the list */
+  var gone = /<section class="v32-(?:group|sec v53-gsec)" hidden aria-labelledby="(v53-g-[a-z-]+)"/g, m;
+  while ((m = gone.exec(s))) {
+    var chip = '<button type="button" class="v28-chip" data-v53="jump" data-to="' + m[1] + '">';
+    var at = s.indexOf(chip);
+    if (at >= 0 && at < m.index) s = s.slice(0, at) + chip.slice(0, -1) + ' hidden>' + s.slice(at + chip.length);
+  }
   return s;
 }
 /* The same on the page on screen: nothing is redrawn. Returns how many rows show. */
@@ -1492,6 +1502,12 @@ function v57FilterDom() {
   each('section.v32-group, section.v53-gsec', function (sec) {
     if (!sec.querySelector('button.v25row[data-go="grape"]')) return;
     sec.hidden = !sec.querySelector('li:not([hidden]) > button.v25row[data-go="grape"]');
+  });
+  each('.v53-jumps [data-to]', function (b) {
+    var t = null;
+    try { t = document.getElementById(b.getAttribute('data-to')); } catch (e) { t = null; }
+    var sec = (t && typeof t.closest === 'function') ? t.closest('section') : null;
+    b.hidden = !!(sec && sec.hidden);
   });
   each('[data-v57="filter"][data-f]', function (b) { if (b.hasAttribute('aria-pressed')) b.setAttribute('aria-pressed', b.getAttribute('data-f') === f ? 'true' : 'false'); });
   var line = root.querySelector('#v57-filterline'), say = root.querySelector('#v57-filtersay');
@@ -2012,7 +2028,7 @@ function v57PresentHtml(arg) {
   var say = v57Str(t.say);
   html += '<p class="v32-line v57-pcount">' + v57Esc(count) + '</p>';
   html += '<div class="card v57-pcard"><p class="v57-pkind">' + v57Esc(kind) + '</p><h3 class="v57-pname" id="v57-pname" tabindex="-1">' + v57Esc(r.name) + '</h3>'
-    + (say ? '<p class="v57-psay">' + v57Esc(v57W('say') + ': ' + say) + '</p>' : '') + '<p class="v57-pask">' + v57Esc(v57W('presentAsk')) + '</p></div>';
+    + (say ? '<p class="v57-psay">' + v57Esc(v57W('presentSay', { say: say })) + '</p>' : '') + '<p class="v57-pask">' + v57Esc(v57W('presentAsk')) + '</p></div>';
   var next = v57PresentNext(r.slug);
   var nextR = (next && next !== r.slug) ? v57Grape(next) : null;
   if (!st.shown) {

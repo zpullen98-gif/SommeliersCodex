@@ -154,6 +154,9 @@ async function step(name, fn) {
         ['#/v/cms', 'cms', 'cms'], ['#/v/cmsday', 'cmsday', 'cms'], ['#/v/cmstasting', 'cmstasting', 'cms'], ['#/v/cmsgrid', 'cmsgrid', 'cms'],
         ['#/v/cmssubject/' + SUBJECT, 'cmssubject', 'cms'], ['#/v/cmsready', 'cmsready', 'cms'],
         ['#/v/grapes', 'grapes', 'grapes'], ['#/v/grape/chardonnay', 'grape', 'grapes'], ['#/v/griddrill', 'griddrill', 'grapes'], ['#/v/courttasting', 'courttasting', 'grapes'],
+        /* codex57: the three views of the grapes at the table, the call drill and the deck of the table's cards */
+        ['#/v/grapeworlds', 'grapeworlds', 'grapes'], ['#/v/grapeworlds/call', 'grapeworlds', 'grapes'], ['#/v/grapecompare', 'grapecompare', 'grapes'], ['#/v/grapepresent', 'grapepresent', 'grapes'],
+        ['#/flashcards/grapecards', 'deck', 'grapes'],
         ['#/v/brennans', 'brennans', 'brennans'], ['#/v/housestudies', 'housestudies', 'brennans'], ['#/v/houserehearsal', 'houserehearsal', 'brennans'],
         ['#/v/housereference', 'housereference', 'brennans'], ['#/flashcards/list', 'deck', 'brennans']
       ];
@@ -164,7 +167,7 @@ async function step(name, fn) {
         const got = await lit(page);
         if (got !== word) wrong.push(hash + ' lights ' + got);
       }
-      check('every owner lights its word: Wine Atlas on the atlas and the course (codex56); More on the Practise root, Quizzes, the bank and the Library (codex55); CMS on its six; Grapes on its four and a grape deck (codex54); the house on its rooms and its deck (' + owners.length + ' addresses)', wrong.length === 0, wrong.join('; '));
+      check('every owner lights its word: Wine Atlas on the atlas and the course (codex56); More on the Practise root, Quizzes, the bank and the Library (codex55); CMS on its six; Grapes on its four and a grape deck (codex54), and on its three views at the table, the call drill and the deck of the table cards (codex57); the house on its rooms and its deck (' + owners.length + ' addresses)', wrong.length === 0, wrong.join('; '));
       await go('#/practise');
       await page.locator('[data-v32="quick"]').first().click(); await view(page, 'quiz');
       check('the quick quiz lights More', await lit(page) === 'more', await lit(page));
@@ -183,7 +186,10 @@ async function step(name, fn) {
       const chains = [
         ['#/v/cms', 'cms', ['home']], ['#/v/cmssubject/' + SUBJECT, 'cmssubject', ['cms', 'home']], ['#/v/grape/chardonnay', 'grape', ['grapes', 'home']],
         ['#/v/bank', 'bank', ['library', 'more', 'home']], ['#/practise', 'flashcards', ['library', 'more', 'home']], ['#/v/regions', 'worldmap', ['home']],
-        ['#/v/worldmap/france', 'worldmap', ['worldmap', 'home']], ['#/v/fieldmap/champagne', 'region', ['country', 'worldmap', 'home']]
+        ['#/v/worldmap/france', 'worldmap', ['worldmap', 'home']], ['#/v/fieldmap/champagne', 'region', ['country', 'worldmap', 'home']],
+        /* codex57: each view climbs to the Grapes root, the call drill to its index first */
+        ['#/v/grapeworlds', 'grapeworlds', ['grapes', 'home']], ['#/v/grapeworlds/call', 'grapeworlds', ['grapeworlds', 'grapes', 'home']],
+        ['#/v/grapecompare', 'grapecompare', ['grapes', 'home']], ['#/v/grapepresent', 'grapepresent', ['grapes', 'home']]
       ];
       for (const [hash, first, parents] of chains) {
         const cold = watch(await context.newPage());
