@@ -1,0 +1,563 @@
+{
+  "chunk": "g2",
+  "date": "2026-11-10",
+  "role": "The second reading: each entry read to refute it, not to admire it.",
+  "grapes": [
+    "riesling",
+    "gewurztraminer",
+    "gruner-veltliner",
+    "muscat-blanc",
+    "silvaner",
+    "muller-thurgau"
+  ],
+  "method": [
+    "Each fragment read whole beside what show.cjs prints for the grape (GRAPES, GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region records, banks and service reference where they name the grape or a place the entry leans on.",
+    "Every fact the Codex's reviewed records do not already state was put to search, at most five searches a grape: the first records, the parentage, the synonyms, the appellation rules, the places under abroad, and the notes of the glass where the author marked one as unsourced.",
+    "The glass read as a blind taster would: each note asked whether a taster would nod, each prose field scanned for a family word in disguise, and each ladder set beside the Court's grid read and beside the other five entries of the chunk.",
+    "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences; the cards and questions read for one key, four options of one kind, no option shut out by the stem and no key that stands out by its form; the compare tells read from both sides against every fragment that names these grapes.",
+    "node .scripts/grapes/build-grapes.cjs --lint --chunk g2 run after every round of edits until it printed six of six sound. The writing build was never run and no other file was touched.",
+    "A last pass read the six again after the first two rounds were pushed: every prose field scanned once more for a family word dressed as an adjective, each cause in a why line read against the cellar line of the same entry, and three more searches made (one for Silvaner, two for Müller-Thurgau) on what the first rounds left unsettled."
+  ],
+  "limits": [
+    "This session reached search alone: no source address could be opened. The hosts www.winesofgermany.com, www.altoadigewines.com and www.nzwine.com did not resolve from here, and the Alsace body was not tried again. A page is cited as search results quoted it.",
+    "Where an address names a producer it is left out and the source is cited by its title alone.",
+    "The lint's three notes on the word spice in the Gewürztraminer entry were read and left: each gives the meaning of the word Gewürz."
+  ],
+  "entries": {
+    "riesling": {
+      "verdict": "Sound after eleven fixes.",
+      "tested": [
+        "say against GRID_SAY (REES-ling): agrees.",
+        "The first record: a cellar account of 13 March 1435 at Rüsselsheim, for vines bought for a count of Katzenelnbogen. Confirmed in two sources; the count stays unnamed.",
+        "The ladder against the Court's grid and the Codex's region records: the Mosel and Rheingau cool, as the grid reads them; the Pfalz a warm, dry strip; the Clare Valley hot days and cold nights. Alsace is cool in the Court's read and was on the moderate rung.",
+        "worlds: the call put to a flight that holds a dry Alsace, a Wachau and a dry German wine; the why read for its causes; the two cellar lines read against the two glass lines of the same entry.",
+        "Service against the Codex's rows (light aromatic whites at 45 to 50 degrees Fahrenheit, a white wine glass, decanting usually unnecessary, the crystals) and TASTE.age: agree.",
+        "The labels (trocken, feinherb, the three grades, Grosses Gewächs), the petrol answer and the three questions for one key each.",
+        "Compare tells from both sides with Chenin Blanc, Grüner Veltliner, Sémillon, Silvaner and Müller-Thurgau: agree."
+      ],
+      "changed": [
+        {
+          "field": "worlds.contrast.call",
+          "was": "Sweetness, low alcohol and wet slate lean Mosel; bone dry lime juice at moderate alcohol, with early toast or petrol, leans Clare or Eden Valley.",
+          "now": "Sweetness at low alcohol, or peach on a fuller dry frame, leans Old World; taut, bone dry lime with early toast or petrol leans Australia.",
+          "why": "The call would not survive a flight. It parted the Mosel from the Clare Valley and sent every dry Alsace, Wachau and German wine, bone dry at moderate alcohol, to Australia. The entry's own Old World glass says those wines are usually dry and fuller, and its moderate rung gives them ripe peach and apricot. The second card and the worlds question keep the Mosel against the Clare Valley, the pair they name.",
+          "sources": []
+        },
+        {
+          "field": "glass.ladder, the moderate rung",
+          "was": "Alsace, the Pfalz, the Wachau and Washington's Columbia Valley",
+          "now": "The Pfalz, the Wachau and Washington's Columbia Valley",
+          "why": "The Court's grid read (js/data-grid.js) calls Alsace cool and dry behind the Vosges, and the Gewürztraminer and Silvaner entries of this chunk give it the cool rung. The brief asks the ladder to agree with the grid.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.why",
+          "was": "so sugar stays low and a little sweetness balances the acidity",
+          "now": "so acidity stays high and a little sweetness is kept to balance it",
+          "why": "Sugar low and sweetness kept read as a contradiction in one clause. The Court's grid read gives the cause plainly: high acidity and tart, just ripe fruit near the northern limit for ripening.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.old.cellar",
+          "was": "fermentation is often stopped early to keep a little natural sweetness",
+          "now": "in Germany the fermentation is often stopped early to keep a little natural sweetness",
+          "why": "The Old World side holds Alsace and the Wachau, which the same entry calls usually dry. Stopping the fermentation is Germany's way.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.new.cellar",
+          "was": "Usually fermented cold in steel until fully dry, kept away from oak and air, and bottled early under screwcap to hold the freshness.",
+          "now": "Usually fermented cold in steel, kept away from oak and air, and bottled early under screwcap; Australia ferments it fully dry.",
+          "why": "The New World glass of the same entry says the Finger Lakes and Washington range from dry to sweet, so fully dry belongs to Australia alone.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.new.glass",
+          "was": "a slaty edge",
+          "now": "a steely edge",
+          "why": "The second card keeps wet slate as the Mosel's mark. Slate on both sides of one contrast teaches nothing. (Polish Hill River does lie on slate, and its wines are called flintier.)",
+          "sources": [
+            {
+              "title": "Society of Wine Educators: Australia beyond Shiraz, handout part 1",
+              "url": "https://winewitandwisdomswe.com/wp-content/uploads/2019/01/Australia-Beyond-Shiraz-Handout-Part-1.pdf"
+            }
+          ]
+        },
+        {
+          "field": "lines.s20",
+          "was": "with no oak at all",
+          "now": "with no taste of oak",
+          "why": "The Old World cellar line of the same entry says large old oak casks are used; they add no flavour.",
+          "sources": []
+        },
+        {
+          "field": "guest[0].a",
+          "was": "wines from Alsace, Austria and Australia are nearly all dry",
+          "now": "wines from Alsace, Austria and Australia are mostly dry",
+          "why": "Alsace bottles late harvest wines and wines with some sweetness left; the Codex's own Alsace record teaches both.",
+          "sources": []
+        },
+        {
+          "field": "compare, the Grüner Veltliner tell",
+          "was": "white pepper, lentil and green herbs",
+          "now": "white pepper, lentil and celery",
+          "why": "Green herbs is a family word in disguise. Celery is that grape's own note, in its reviewed profile and in its tell against Riesling.",
+          "sources": []
+        },
+        {
+          "field": "cards[0].back",
+          "was": "bought at Rüsselsheim, near the Rhine",
+          "now": "bought at Rüsselsheim on the Main, near the Rheingau",
+          "why": "Rüsselsheim stands on the Main; the sources place it near the Rheingau.",
+          "sources": [
+            {
+              "title": "wein.plus Magazine: first mention of the Riesling is celebrated worldwide",
+              "url": "https://magazine.wein.plus/news/first-mention-of-the-riesling-is-celebrated-worldwide-german-wine-institute-organizes-international-birthday-events"
+            },
+            {
+              "title": "Wine Spectator: the story of Riesling",
+              "url": "https://www.winespectator.com/articles/happy-birthday-riesling"
+            }
+          ]
+        },
+        {
+          "field": "questions[0].q",
+          "was": "A blind white is pale, bone dry and vivid",
+          "now": "A blind white is young, pale, bone dry and vivid",
+          "why": "The explanation leans on toast showing young; the stem did not say the wine was young.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The forty five second line still says Germany often leaves a touch of sweetness at low alcohol. It is hedged and true of the wines most lists carry, and the blur line says much German Riesling is now dry.",
+        "The warm rung is the Clare Valley alone, with lime cordial and early petrol where a ladder would look for riper fruit. It is honest of the place, and the Régionale row says the same of petrol there.",
+        "The entry reads in 893 words of 900."
+      ]
+    },
+    "gewurztraminer": {
+      "verdict": "Sound after seven fixes.",
+      "tested": [
+        "say against GRID_SAY (guh-VURTS-trah-mee-ner): agrees.",
+        "The notes of the glass against the Alsace description as a technical sheet repeats it (lychee, passion fruit, pineapple, mango, rose, the spices, honey): each stands.",
+        "The name: Gewürz as spice, Traminer named for Tramin. The name is confirmed; the origin of the grape there is not.",
+        "The New World side against the New Zealand trade body's own words.",
+        "The ladder against the Court's grid (Alsace cool) and the Codex's Gisborne record.",
+        "Service against the Codex's rows and TASTE.age (three to eight): agree. The gumbo against the Court's sell line, which names Creole dishes for this grape: it suits.",
+        "Compare tells from both sides with Muscat Blanc, Viognier and Pinot Gris: agree."
+      ],
+      "changed": [
+        {
+          "field": "lines.s45",
+          "was": "Traminer comes from Tramin, a village in the Italian Alps",
+          "now": "Traminer is named for Tramin, a village in the Italian Alps",
+          "why": "Comes from claims the grape's origin. The name is the village's; where the grape arose is disputed between Alto Adige and the country north of the Alps, and one reference calls the Alto Adige origin a myth. The card and the guest answer already said named for.",
+          "sources": [
+            {
+              "title": "wein.plus Glossary: Traminer",
+              "url": "https://glossary.wein-plus.eu/traminer"
+            },
+            {
+              "title": "Falstaff: Gewürztraminer, the grape variety",
+              "url": "https://www.falstaff.com/en/grape-varieties/gewuerztraminer"
+            }
+          ]
+        },
+        {
+          "field": "worlds.contrast.new.glass, worlds.contrast.call, cards[1].back, questions[0].q and questions[0].exp",
+          "was": "Typically paler, lighter and crisper ... with a little more acidity and less of the oily weight",
+          "now": "Typically paler, lighter and fresher ... with less of the oily weight and less sweetness, most often dry to off dry, though still soft in acidity",
+          "why": "A lazy generalisation. New Zealand's own trade body describes its Gewürztraminer as full bodied, with smooth texture and subtle acidity, typically made dry to off dry. Lighter and drier than Alsace holds; crisper, with more acidity, does not.",
+          "sources": [
+            {
+              "title": "New Zealand Wine: New Zealand Gewürztraminer",
+              "url": "https://www.nzwine.com/en/winestyles/gewuerztraminer/"
+            }
+          ]
+        },
+        {
+          "field": "worlds.contrast.new.cellar",
+          "was": "bottled young, under the grape's own name; a few late harvest wines are made",
+          "now": "bottled young; a few late harvest wines are made",
+          "why": "Alsace prints the grape on the label too (the entry's own labels say so), so the phrase parts nothing.",
+          "sources": []
+        },
+        {
+          "field": "worlds.contrast.why",
+          "was": "New World growers choose their cooler sites",
+          "now": "New World growers often choose cool sites",
+          "why": "An unhedged cause, false of Washington's Columbia Valley, which the entry lists on the New World side and gives the moderate rung. And cooler sites read as cooler than Alsace, which the entry's own ladder and the Court's grid read call cool: the cause the line gives is the dry, sunny, long autumn, not a warmer place.",
+          "sources": []
+        },
+        {
+          "field": "questions[0].opts",
+          "was": "Alsace, then Marlborough; Marlborough, then Alsace; Anderson Valley, then Alsace; Finger Lakes, then Alsace",
+          "now": "Alsace, then Marlborough; Marlborough, then Alsace; Finger Lakes, then Alsace; Anderson Valley, then Marlborough",
+          "why": "Three options ended on then Alsace, so the key stood out by its form. Alsace and Marlborough now each stand in three.",
+          "sources": []
+        },
+        {
+          "field": "labels[1].means",
+          "was": "from berries picked one by one, shrivelled by noble rot",
+          "now": "from grapes shrivelled by noble rot, picked over several passes",
+          "why": "The rule asks for successive pickings of grapes with noble rot, as the Codex's Alsace record has it; berry by berry overstates it.",
+          "sources": []
+        },
+        {
+          "field": "food.with[3].why",
+          "was": "off dry fruit cools the cayenne and the smoke",
+          "now": "off dry fruit cools the cayenne and stands up to the smoke",
+          "why": "Sweetness cools chilli; it does not cool smoke.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The ladder calls Gisborne moderate, as a maritime region is classed against the world; the Codex's own Gisborne record calls it a warm coast, against the rest of New Zealand. Left as written.",
+        "Alto Adige at five to ten grams of sugar a litre is the author's reading of the consortium, which could not be opened from this session.",
+        "That the grape is a pink skinned, aromatic mutation of Savagnin, which the author left out for want of a source, is confirmed in two references. It is not needed and stays out.",
+        "The address of the New Zealand trade body's page is the author's; it could not be opened to prove it."
+      ]
+    },
+    "gruner-veltliner": {
+      "verdict": "Sound after three fixes.",
+      "tested": [
+        "No respelling stands in the Court's grid; GROO-ner FELT-lee-ner reads true.",
+        "The parentage: Traminer and the vine of St. Georgen, a single old plant found in 2000 in Burgenland, the cross proved later. Confirmed in two sources and in the Codex's own record.",
+        "Weinviertel DAC from the 2002 vintage for Grüner Veltliner alone; Kamptal and Kremstal for Grüner Veltliner or Riesling; Reserve: the Codex's own records, confirmed.",
+        "Abroad, place by place: the Czech Republic, Slovakia and Hungary; New Zealand; Alto Adige's Isarco Valley; the Adelaide Hills; the Finger Lakes on the Codex's own region record.",
+        "The glass against the reviewed profile (white pepper, lentil, green bean, radish, celery): agrees. The mode (home) and TASTE.age: agree.",
+        "Compare tells from both sides with Riesling and Sauvignon Blanc: agree."
+      ],
+      "changed": [
+        {
+          "field": "questions[2].opts and questions[2].exp",
+          "was": "Grüner Veltliner Federspiel; Oaked Napa Valley Chardonnay; Late harvest Gewürztraminer; Sauternes",
+          "now": "Grüner Veltliner Federspiel; Oaked Napa Valley Chardonnay; Condrieu; White Hermitage",
+          "why": "The stem asks for one dry white and two options were sweet wines, shut out before the question was read. All four are now dry whites, and the explanation names what crowds the dish: heavy new oak, or a rich white low in acidity.",
+          "sources": []
+        },
+        {
+          "field": "cards[1].front",
+          "was": "name its three styles, lightest first",
+          "now": "name its three styles, from light to rich",
+          "why": "The lint read lightest as a superlative. The entry's own label line already says from light to rich.",
+          "sources": []
+        },
+        {
+          "field": "questions[1].exp",
+          "was": "Steinfeder the lightest",
+          "now": "Steinfeder the light one",
+          "why": "The same note.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "Ginger stands in the spice group beside white pepper: a note of ripe Smaragd, not of the light wines.",
+        "The Adelaide Hills and the Isarco Valley, which the author asked a checker to confirm, are confirmed."
+      ],
+      "sources": [
+        {
+          "title": "Weinviertel DAC: the origin of Grüner Veltliner",
+          "url": "https://www.weinvierteldac.at/en/weinviertel-dac/origin-of-gruener-veltliner/"
+        },
+        {
+          "title": "wein.plus Glossary: Grüner Veltliner",
+          "url": "https://glossary.wein-plus.eu/gruener-veltliner"
+        },
+        {
+          "title": "Falstaff: Grüner Veltliner goes global despite tricky name",
+          "url": "https://www.falstaff.com/en/news/gruener-veltliner-goes-global-despite-tricky-name"
+        },
+        {
+          "title": "Wine Companion: Grüner Veltliner",
+          "url": "https://winecompanion.com.au/resources/varieties/gruner-veltliner"
+        }
+      ]
+    },
+    "muscat-blanc": {
+      "verdict": "Sound after five fixes.",
+      "tested": [
+        "No respelling stands in the Court's grid; moos-KAH and mos-KAH-toh are the Codex's own respellings elsewhere.",
+        "Moscato d'Asti: the fermentation halted at about five per cent, the ceiling of six and a half, the pressure tank; Asti the fully sparkling wine. Confirmed on the consortium's own page as search quoted it.",
+        "Muscat Canelli as the California name, after Moscato di Canelli: confirmed on the Davis variety sheet, whose address answers to search.",
+        "Rutherglen: the red skinned Muscat à Petits Grains, called Brown Muscat, raisined on the vine and stopped with spirit; the four rungs. Confirmed, and the Codex's own record says the same.",
+        "Samos Nectar as sun dried, Constantia's unfortified Muscat de Frontignan: the Codex's own records.",
+        "The ladder against the Court's grid read for Alsace.",
+        "Service against the Codex's rows for sweet whites and light sparkling, and its Rutherglen record (cool, in a small glass): agree. Bananas Foster against Rutherglen Muscat's raisin and toffee: it suits.",
+        "Compare tells from both sides with Gewürztraminer, Glera and Müller-Thurgau: agree."
+      ],
+      "changed": [
+        {
+          "field": "glass.ladder",
+          "was": "moderate: The hills of Asti in Piedmont, and Alsace",
+          "now": "cool: Alsace, where it is fermented dry (fresh table grape, elderflower, lemon); moderate: The hills of Asti in Piedmont",
+          "why": "The Court's grid read calls Alsace cool, and two entries of this chunk give it the cool rung. A rung of its own also says what truly changes there: the wine is dry.",
+          "sources": []
+        },
+        {
+          "field": "lines.s45",
+          "was": "with gentle acidity. Asti stops the fermentation early for a gentle sparkle",
+          "now": "with gentle acidity. Asti stops the fermentation early for a light sparkle",
+          "why": "By ear: gentle stood twice in two sentences.",
+          "sources": []
+        },
+        {
+          "field": "lines.s45, the closing line",
+          "was": "Moscato d'Asti holds about half the alcohol of most wines.",
+          "now": "Moscato d'Asti holds less than half the alcohol of most wines.",
+          "why": "At about five per cent, and never above the ceiling of six and a half, it is under half of a table wine's twelve to fourteen. Less than half is true of every bottle; about half was generous.",
+          "sources": [
+            {
+              "title": "Consorzio dell'Asti: Moscato d'Asti",
+              "url": "https://www.astidocg.it/en/wines/moscato-dasti-docg"
+            }
+          ]
+        },
+        {
+          "field": "worlds.contrast.why",
+          "was": "Asti's hillside vineyards and early bottling keep the perfume fresh and the alcohol low.",
+          "now": "Asti's hillsides keep the perfume fresh, and a fermentation stopped early keeps the alcohol low.",
+          "why": "A false cause. Bottling early does not keep alcohol low; stopping the fermentation does, as the entry's own cellar line and its third guest answer say.",
+          "sources": []
+        },
+        {
+          "field": "compare, the Torrontés tell",
+          "was": "Torrontés mimics the grapey, flowery nose",
+          "now": "Torrontés mimics the grapey nose",
+          "why": "Flowery is a family word in disguise, and the entry stands two words under its cap, with no room to name the flower. The reviewed profile says the same without it: Torrontés mimics the nose.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "The mode. The contrast is of method as much as of world, as the author says. It stands because Rutherglen Muscat and California Moscato are styles a guest meets on a list, and the blur line admits the rest; the plan may still prefer at home and abroad.",
+        "The entry reads in 898 words of 900: nothing more can be added."
+      ],
+      "sources": [
+        {
+          "title": "Consorzio dell'Asti: Moscato d'Asti",
+          "url": "https://www.astidocg.it/en/wines/moscato-dasti-docg"
+        },
+        {
+          "title": "University of California, Davis: Muscat blanc",
+          "url": "https://devo.ucdavis.edu/sites/g/files/dgvnsk1961/files/media/documents/muscat%20blanc.pdf"
+        },
+        {
+          "title": "Winemakers of Rutherglen: Muscat of Rutherglen",
+          "url": "https://winemakers.com.au/muscat-of-rutherglen/"
+        },
+        {
+          "title": "Wine Institute: Moscato and Muscat fact sheet",
+          "url": "https://wineinstitute.org/our-industry/statistics/wine-fact-sheets/moscato-muscat/"
+        }
+      ]
+    },
+    "silvaner": {
+      "verdict": "Sound after seven fixes. A thin grape: its profile stands, in step with the Régionale row (acidity and body both middling, dry).",
+      "tested": [
+        "sil-VAH-ner and zil-VAH-ner: both are the Codex's own respellings.",
+        "The parentage (Traminer and Österreichisch Weiss) and the first German record: the German wine body's own words. Its page on Castell, as search quoted it, says that on 6 April 1659 twenty five Austrian cuttings were planted at the foot of the Schlossberg; one general reference gives 5 April, the day of the purchase.",
+        "Zotzenberg, Johannisberg in the Valais and the Bocksbeutel in two corners of Baden: the Codex's own records.",
+        "The glass, note by note, against the German wine body (flowers and plants, melons, yellow plums and apples), a trade magazine's study of the grape (vegetal, root vegetables, earthy) and tasting notes for Franken and the Valais.",
+        "The mode (home), the profile's seven fields, and the tell against Pinot Blanc, where the g1 reading left hay to Silvaner.",
+        "The three questions for options of one kind."
+      ],
+      "changed": [
+        {
+          "field": "glass.notes, glass.ladder and profile.other",
+          "was": "fresh hay, mint, cut grass",
+          "now": "fresh hay, cut grass",
+          "why": "No source read gives mint for Silvaner, and a blind taster would not nod at it. Fresh hay and cut grass stand on tasting notes for Franken wines; the cool rung takes cut grass in mint's place.",
+          "sources": [
+            {
+              "title": "Falstaff: tasting notes for Franken Silvaner",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "field": "glass.notes, the nutty group",
+          "was": "sweet almond, green almond",
+          "now": "sweet almond, bitter almond",
+          "why": "Green almond was the author's own, marked for a checker. Notes for Johannisberg of the Valais give almond, a bitter almond finish and a sweet almond nose.",
+          "sources": [
+            {
+              "title": "Guide Hachette des Vins: notes on Johannisberg of Chamoson",
+              "url": ""
+            },
+            {
+              "title": "Les Vins du Valais: Johannisberg",
+              "url": "https://www.lesvinsduvalais.ch/en/discover/grape-varieties/johannisberg/"
+            }
+          ]
+        },
+        {
+          "field": "lines.s45",
+          "was": "It is a dry white grape, at home in Franken",
+          "now": "It makes a dry white, at home in Franken",
+          "why": "By ear: a grape is not dry, its wine is.",
+          "sources": []
+        },
+        {
+          "field": "questions[1]",
+          "was": "a dry German white: Silvaner; Gewürztraminer; Scheurebe; Dornfelder",
+          "now": "a quiet, dry white: Silvaner; Gewürztraminer; Viognier; Torrontés",
+          "why": "Dornfelder is a red, shut out by a stem that asks for a white. The four are now white grapes, three of them loudly perfumed, and the explanation says so.",
+          "sources": []
+        },
+        {
+          "field": "questions[0].q",
+          "was": "A guest reading a German list points to a squat, flat, round flask",
+          "now": "A guest points to a squat, flat, round flask on the shelf of German wines",
+          "why": "The scene: nobody points to a flask in a list.",
+          "sources": []
+        },
+        {
+          "field": "cards[1].back",
+          "was": "Its first record in Germany is at Castell in Franken, on 6 April 1659.",
+          "now": "It was first planted in Germany, on record, at Castell in Franken, on 6 April 1659.",
+          "why": "The day is the day of the planting, on the German wine body's own page; the purchase is recorded the day before. The card now says what the day is.",
+          "sources": [
+            {
+              "title": "Wines of Germany: highlights of German wine culture, Castell",
+              "url": "https://www.winesofgermany.com/our-regions/highlight-of-wine-culture/149/castell"
+            }
+          ]
+        },
+        {
+          "field": "compare, the Müller-Thurgau tell, and profile.confuse",
+          "was": "Müller-Thurgau is lighter and more flowery",
+          "now": "Müller-Thurgau is lighter and more scented, with elderflower (the tell); lighter, with elderflower and nutmeg (the profile)",
+          "why": "More flowery is a family word in disguise. Both now name the flower, as that grape's own entry does.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "Honeydew melon and yellow plum are the German wine body's own words. Celery root stands on two sources that give root vegetables. Quince has no source read here and stays as a taster's note.",
+        "The acidity stays medium, as the Régionale row has it; the German body says mild and other sources say fresh."
+      ],
+      "sources": [
+        {
+          "title": "Wines of Germany: Silvaner",
+          "url": "https://jp.winesofgermany.com/knowledge/grape-varieties/white-grapes/silvaner/"
+        },
+        {
+          "title": "wein.plus Magazine: Silvaner, the green eminence",
+          "url": "https://magazine.wein.plus/silvaner-the-green-eminence"
+        },
+        {
+          "title": "Wines of Germany: highlights of German wine culture, Castell",
+          "url": "https://www.winesofgermany.com/our-regions/highlight-of-wine-culture/149/castell"
+        }
+      ]
+    },
+    "muller-thurgau": {
+      "verdict": "Sound after eight fixes. A new grape: its profile and its eight targets stand, each target named in the entry and in REGIONS.",
+      "tested": [
+        "MEW-ler TOOR-gow: the Codex's own respelling.",
+        "Hermann Müller (1850 to 1927), of the canton of Thurgau, Geisenheim, 1882; Riesling and Madeleine Royale, long taken for Riesling and Silvaner; Rivaner and Riesling-Silvaner. Confirmed, and the Codex's banks say the same.",
+        "Alto Adige at altitude: sheets for its wines give sites from about 500 to 900 metres and the region's vineyards up to 1,000.",
+        "The glass, note by note: nutmeg, hay, white peach and elderflower recur in what was read; lilac and geranium were not found.",
+        "Liebfraumilch and its permitted grapes; the service rows; the mode (home).",
+        "Compare tells from both sides with Riesling, Silvaner and Muscat Blanc: agree."
+      ],
+      "changed": [
+        {
+          "field": "glass.notes, the floral group",
+          "was": "lilac, elderflower, geranium",
+          "now": "elderflower, lilac",
+          "why": "Geranium is a fault in the Codex's own service reference (crushed geranium leaves, from sorbate in sweet wines), and no source read gives it for this grape. A taster would hear a flaw.",
+          "sources": []
+        },
+        {
+          "field": "lines.s45, glass.lead, the Silvaner tell, profile.other and cards[2].back",
+          "was": "a scent of lilac",
+          "now": "a scent of elderflower",
+          "why": "Elderflower and nutmeg are the notes that recur across what was read; lilac was found nowhere. It stays second in the floral group on the author's reading of the Alto Adige consortium, which could not be opened.",
+          "sources": [
+            {
+              "title": "Sheets for Alto Adige Müller Thurgau, read through search",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "field": "glass.ladder, the cool rung, and profile.other",
+          "was": "green apple, lemon, mint; mint and fresh hay from mountain vineyards",
+          "now": "green apple, lemon, fresh hay; fresh hay from mountain vineyards",
+          "why": "Mint was found in no source. Hay stands beside nutmeg in two sheets for Alto Adige wines.",
+          "sources": []
+        },
+        {
+          "field": "worlds.home.home",
+          "was": "Germany, in every one of its regions",
+          "now": "Germany, across the country",
+          "why": "Only an informal source says every region; the German body's page, as search quoted it, does not.",
+          "sources": [
+            {
+              "title": "Wines of Germany: Müller-Thurgau",
+              "url": "https://germanwines.de/our-wine/grape-varieties/grape-variety/104/m%C3%BCller-thurgau"
+            }
+          ]
+        },
+        {
+          "field": "guest[2].a",
+          "was": "Bottles labelled Rivaner or trocken are dry",
+          "now": "Bottles labelled trocken are dry and Rivaner usually is",
+          "why": "Trocken is a rule; Rivaner is a custom, used especially for dry wines, as the German body puts it and as the entry's own label line says.",
+          "sources": []
+        },
+        {
+          "field": "questions[1].opts",
+          "was": "The Swiss born botanist who bred it in 1882; Two villages on the river Main; The German words for miller and valley; A monastery in the Rheingau",
+          "now": "The man who bred it and his home canton; Two neighbouring villages on the river Main; The German words for miller and valley; A mill and a monastery in the Rheingau",
+          "why": "The key was the longest option and the only one with a date, so it gave itself away.",
+          "sources": []
+        },
+        {
+          "field": "glass.notes, the stone fruit group",
+          "was": "white peach, nectarine",
+          "now": "white peach, apricot",
+          "why": "Nectarine was the author's own note, marked for a checker, and no source read gives it. Apricot stands in two sheets for Alto Adige wines.",
+          "sources": [
+            {
+              "title": "Sheets for Alto Adige Müller Thurgau, read through search",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "field": "lines.s10, lines.sale, guest[1].a, the Riesling tell and profile.tell",
+          "was": "light, soft and flowery; a flowery, faintly Muscat scent; a flowery nutmeg scent",
+          "now": "light and soft, with apple, peach and elderflower (the ten second line); gently scented (the sale); a scent of elderflower and a faint Muscat note; a scent of elderflower and nutmeg",
+          "why": "Flowery is the family word floral dressed as an adjective, and it stood alone beside an and in five fields the generic refusal reaches. Four now name elderflower, the flower the entry leads on; the sale, which is a hook and no tasting note, says gently scented.",
+          "sources": []
+        }
+      ],
+      "open": [
+        "Whether the Alto Adige consortium's page names lilac and geranium could not be read from this session. Three searches, one in German, found elderflower and nutmeg again and lilac nowhere. The German word Flieder names the elder as well as the lilac, so the consortium's lilac may be the same elderflower. Lilac stays second in the floral group on the author's reading.",
+        "Mace stands beside nutmeg in the spice group: one tree gives both, and a group wants two notes.",
+        "A German tasting report found the Muscat note seldom in the glass and mostly in ripe years; the entry calls it faint throughout, which is fair."
+      ]
+    }
+  },
+  "codexRecords": [
+    "js/data-grid.js, the Gewürztraminer read: Alsace is cool. Three ladders of this chunk now agree with it; the Riesling and Muscat Blanc ladders had Alsace as moderate.",
+    "js/data-intro.js, the Régionale rows: Gewürztraminer's aroma line says baking spice and Silvaner's says earthy, herbal. The author's flags, confirmed: family words. The rows are the Régionale course's own and are left alone; the table names the things.",
+    "js/reference.js, Grüner Veltliner's other line: green herbs, a family word. The Riesling tell that had copied it now says celery.",
+    "js/data-tasting.js, TASTE.age for Riesling: ages further than any other white. The entry says almost any other, the safer claim.",
+    "js/data-tasting.js, TASTE.world reads old for Riesling, Gewürztraminer and Muscat Blanc while the plan fixes contrast. No fault in either: the flag says where the grape is from, the plan what a guest meets on a list.",
+    "js/data-regions.js, the Rutherglen ladder's indicative ages (about 3 to 5, 6 to 10, 11 to 19, 20 and more years): the author's doubt. One trade source repeats those figures and the growers' own material says age is one factor among several. The record is hedged and stands.",
+    "js/data-service-ref.js, the faults: geranium taint. No fault in the record; it is why geranium left the Müller-Thurgau glass."
+  ],
+  "unsettled": [
+    "Whether every source address still answers: none could be opened from this session.",
+    "Whether the Alto Adige consortium names lilac for Müller-Thurgau (it may be the elderflower under its other German name), and five to ten grams of sugar a litre for Gewürztraminer: both are the author's readings.",
+    "Whether Müller-Thurgau is grown in every German region: the entry now says across the country.",
+    "Muscat Blanc's mode: contrast as the plan fixes it, though the difference is of method as much as of world.",
+    "Gisborne on the moderate rung for Gewürztraminer, against the Codex's own word for it, a warm coast.",
+    "Quince for Silvaner, and mace and lilac for Müller-Thurgau: tasters' notes with no source read behind them.",
+    "Ginger in the spice group for Grüner Veltliner: a note of ripe Smaragd with no source read behind it."
+  ],
+  "settled": [
+    "The day of Silvaner's first German record: 6 April 1659 is the planting at Castell, on the German wine body's own page; 5 April is the purchase."
+  ]
+}
