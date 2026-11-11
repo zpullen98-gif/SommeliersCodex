@@ -287,6 +287,179 @@
         }
       ],
       "why": "The Codex disagreed with itself; Tokaj's makers and both serving references put Aszú above 8 degrees, so the region record stands and the two service rows (and the grape page that follows them) give Aszú its own figure, leaving every other temperature row alone."
+    },
+    {
+      "id": "L3-05",
+      "topic": "Furmint: botrytis prone, skin thickness dropped",
+      "verdict": "change",
+      "claim": "The Régionale row for Furmint (INTRO_GRAPES) ends Thin-skinned and botrytis-prone; the Tokaj record calls Furmint thin skinned and botrytis prone (grapes[0].styles); the Régionale question i-2zibe7e9 gives thin skins as a clue to Furmint.",
+      "finding": "Every source read agrees that Furmint is prone to botrytis, with a loose bunch and late ripening that let the rot in; on the skin they split. A government vine sheet and an importer's glossary call the skin thin and tie the rot to it; two wine references call the skin thick, one of them tying the rot to the thick skin, and no Hungarian variety description was found to settle it. The Furmint grape page already leaves the skin out for this reason. So the skin claim goes and botrytis prone stays.",
+      "targets": [
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Furmint",
+          "path": "INTRO_GRAPES furmint.trap",
+          "old": "Thin-skinned and botrytis-prone.",
+          "new": "Botrytis-prone."
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "tokaj",
+          "path": "grapes[0].styles (Furmint)",
+          "old": "The spine of every Tokaji: thin skinned and botrytis prone, with acidity",
+          "new": "The spine of every Tokaji: botrytis prone, with acidity"
+        },
+        {
+          "file": "rewrite/categories/r1_dessert_sweet.py",
+          "record": "i-2zibe7e9",
+          "path": "Q(\"Tokaji\", \"High acidity, thin skins and a readiness to rot nobly ...\").q (the stem)",
+          "old": "High acidity, thin skins and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?",
+          "new": "High acidity and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Department of Primary Industries and Regional Development, Western Australia: Furmint and Kadarka wine grapes in Western Australia",
+          "url": "https://www.agric.wa.gov.au/wine-grapes/furmint-and-kadarka-wine-grapes-western-australia",
+          "kind": "secondary",
+          "says": "Its thin skin, high acid and susceptibility to botrytis make Furmint suited to sweet botrytised wine.",
+          "read": "search summary"
+        },
+        {
+          "title": "Kobrand Wine and Spirits, grape glossary: Furmint",
+          "url": "https://www.kobrandwineandspirits.com/grape_glossary/furmint/",
+          "kind": "secondary",
+          "says": "Thin skins make the berries prone to Botrytis cinerea.",
+          "read": "search summary"
+        },
+        {
+          "title": "Best of Wines, grapes: Furmint",
+          "url": "https://bestofwines.com/wine/grapes/furmint",
+          "kind": "secondary",
+          "says": "Furmint's thick skin makes it very susceptible to Botrytis cinerea.",
+          "read": "search summary"
+        },
+        {
+          "title": "Vinovoss, grapes: Furmint",
+          "url": "https://vinovoss.com/grapes/furmint/",
+          "kind": "secondary",
+          "says": "A thick skinned grape giving golden wines.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The sources split on the skin and agree on the rot; a clue or a trap must not rest on a split, so the skin goes everywhere it stands, the stem of i-2zibe7e9 included (its clue was the disputed fact; the stem still keys Furmint alone, and the integrator keeps the pinned id)."
+    },
+    {
+      "id": "L3-06",
+      "topic": "Tannat and Petit Verdot rows: the climate and the acid dials",
+      "verdict": "change",
+      "claim": "The Régionale rows (INTRO_GRAPES) give Tannat climate Warm and acid 3, and Petit Verdot acid 2; TASTE gives Tannat a moderate climate and acid medium plus, and the profiles give Tannat medium to high acid and Petit Verdot medium plus.",
+      "finding": "The acid dial runs 1 to 3, and the rows read TASTE's medium plus as 3 for most reds (Pinot Noir, Cabernet Franc, Blaufränkisch, Aglianico, Mencía and Tannat) and as 2 for a few (Cabernet Sauvignon, Zinfandel, Touriga Nacional), so medium plus sits on either side of the line; the sources read put Tannat's acidity at moderately high to high (and one chart at medium) and the profile says medium to high, so Tannat's 3 holds, and Petit Verdot's 2 is a defensible reading of medium plus that no source or profile shows wrong. The climate is another matter: every other grape TASTE calls moderate reads Moderate, Cool to moderate, Moderate to warm or wider in the rows, never Warm alone; Tannat's homes are Madiran under the Atlantic's rain and mild, damp autumns and Uruguay's humid, maritime Canelones, which the Codex's own records describe so, and the grape page's ladder sets them moderate with only Cafayate and Paso Robles warm. So the climate moves to Moderate to warm and both acid dials stay.",
+      "targets": [
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Tannat",
+          "path": "INTRO_GRAPES tannat.clim",
+          "old": "\"n\":\"Tannat\",\"c\":\"red\",\"clim\":\"Warm\",",
+          "new": "\"n\":\"Tannat\",\"c\":\"red\",\"clim\":\"Moderate to warm\","
+        }
+      ],
+      "sources": [
+        {
+          "title": "OENO One, viticulture research article on the climate of Uruguay's vineyards",
+          "url": "https://oeno-one.eu/article/view/9663",
+          "kind": "secondary",
+          "says": "The main wine regions of Uruguay fall in the humid subtropical class, coastal.",
+          "read": "search summary"
+        },
+        {
+          "title": "The World of Fine Wine: Uruguay, its climate and its Tannat",
+          "url": "https://worldoffinewine.com/?p=31386",
+          "kind": "secondary",
+          "says": "Around 1,000 mm of rain a year, a climate far wetter than the vineyards of Argentina or Chile.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wine Folly: Tannat, the grape page and the subscriber page",
+          "url": "https://winefolly.com/grapes/tannat/",
+          "kind": "secondary",
+          "says": "High tannin; acidity medium on the chart and moderately high in the text.",
+          "read": "search summary"
+        },
+        {
+          "title": "Académie du Vin Library: Madiran",
+          "url": "https://academieduvinlibrary.com/madiran/",
+          "kind": "secondary",
+          "says": "Madiran is powerful on the palate with relatively high acidity.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Warm alone is the one place the Régionale row parts from TASTE, the grape page and the Codex's own Madiran and Uruguay records; the acid dials read medium plus the way the other rows do and stay, and TASTE is not touched."
+    },
+    {
+      "id": "L3-07",
+      "topic": "Zweigelt row: Austria's most planted red (report only)",
+      "verdict": "leave",
+      "claim": "The Régionale row for Zweigelt (INTRO_GRAPES) gives reg Austria ★ (most-planted red) and the trap Austria's most-planted red: a Blaufränkisch × St. Laurent cross; juicy and approachable.",
+      "finding": "The rank holds today: the Austrian figures put Zweigelt at about 13.4 per cent of the vineyard in 2023/2024, some 6,130 hectares, ahead of Blaufränkisch at 5.8 per cent, with all red grapes about 30 per cent; it is the most planted red by a wide margin. The hyphen in most-planted is a compound modifier, not a dash.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Advantage Austria (the Austrian Economic Chamber): wine, beer and spirits, figures and facts",
+          "url": "https://www.advantageaustria.org/dm/zentral/branchen/wein_bier_spirituosen/zahlen-und-fakten/Zahlen_und_Fakten.en.html",
+          "kind": "secondary",
+          "says": "Share of the area used for wine in 2023/2024: Zweigelt 13.4 per cent, Blaufränkisch 5.8 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Decanter: Expert's choice, Zweigelt",
+          "url": "https://www.decanter.com/premium/experts-choice-zweigelt-488863/",
+          "kind": "secondary",
+          "says": "Of the 30 per cent of Austria's vineyard that is red, by far the most widely planted grape is Zweigelt, 6,130 hectares on Austrian Wine's figures to May 2022.",
+          "read": "search summary"
+        }
+      ],
+      "why": "A true rank the owner keeps, and the row writes it with a hyphen, not a dash: nothing to change."
+    },
+    {
+      "id": "L3-08",
+      "topic": "Viognier and Gewürztraminer: ginger is Gewürztraminer's",
+      "verdict": "change",
+      "claim": "The Viognier profile in js/reference.js lists Honeysuckle, violet, jasmine, musk and ginger among its other notes, while the Gewürztraminer profile's confuse line says Viognier is apricot and honeysuckle without the lychee or spice, and the Codex's grape table makes ginger Gewürztraminer's lead note.",
+      "finding": "The references read give Viognier apricot, peach, tangerine, honeysuckle, violet and rose, with musk; a grape guide's primary list (tangerine, peach, mango, honeysuckle, rose) and a merchant's guide have no ginger, and ginger turns up only as a layer in one other guide and in a producer's note after air, a passing hint rather than a mark of the grape. Ginger, with clove and allspice, is what the Codex and the guides give Gewürztraminer. The grape table already struck ginger from Viognier. Cutting the two words from the Viognier profile makes the two records agree, and the confuse line stays as it is.",
+      "targets": [
+        {
+          "file": "js/reference.js",
+          "record": "GRAPES Viognier",
+          "path": "GRAPES viognier.other",
+          "old": "other:\"Honeysuckle, violet, jasmine, musk and ginger;",
+          "new": "other:\"Honeysuckle, violet, jasmine and musk;"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wine Folly: Viognier, the wine guide",
+          "url": "https://winefolly.com/deep-dive/viognier-vee-own-yay-wine-guide/",
+          "kind": "secondary",
+          "says": "Rich aromas of tangerine, mango, honeysuckle, rose and peach; no ginger among the primary notes.",
+          "read": "search summary"
+        },
+        {
+          "title": "Total Wine: Viognier wine guide",
+          "url": "https://www.totalwine.com/wine-guide/white-grape-varietals/viognier",
+          "kind": "secondary",
+          "says": "Peach, apricot, tangerine, melon, with honeysuckle, orange blossom and chamomile.",
+          "read": "search summary"
+        },
+        {
+          "title": "Vinofyi: Viognier, the golden, perfumed white of Condrieu and the New World",
+          "url": "https://vinofyi.com/guide/viognier-grape-guide",
+          "kind": "secondary",
+          "says": "Apricot, white peach and honeysuckle, layered with orange blossom, jasmine, ginger and a hint of musk: the one guide read that names ginger, among the layers.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Two Codex records pulled apart on one note; the sources make ginger Gewürztraminer's and at most a passing hint in Viognier, so two words leave the Viognier profile and nothing else moves."
     }
   ]
 }
