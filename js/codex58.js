@@ -55,6 +55,15 @@
       door to it before its drill (v55HubHtml, v55RegionHtml and
       prodProfileView wrapped, typeof guarded and outermost).
 
+   5. ON THE HOUSE'S LIST: on a house's page, after Traps, the house's
+      wines of that producer (v53House, v28Wines; the producer and the wine
+      alone, read live from the house), matched by codex38's own rule to the
+      library when the record is a library producer, else by the bare name;
+      each opens its wine card through the list's own door and Back returns
+      to the house; the heading names the house (On {name} list where the
+      name is already a possessive, else On the list at {name}), and nothing
+      is drawn when no house is loaded or it pours none.
+
    9. THE SHELL: index.html loads js/data-flagships.js then js/codex58.js
       after codex57.js and before boot.js; the worker is codex-v117 and lists
       both.
@@ -129,7 +138,14 @@ var V58_WORDS = {
   fiveLineMany: 'The houses of {name} a sommelier is expected to know, five to a group, each with its flagship wine.',
   libH: 'Its flagship',
   libHMany: 'Its flagships',
-  libOpen: 'Open'
+  libOpen: 'Open',
+  /* on the house's list */
+  listH: 'On our list',
+  listHOwn: 'On {house} list',
+  listHAt: 'On the list at {house}',
+  listChip: 'On our list',
+  listOne: 'One wine of {name} is on the list. It opens its card.',
+  listMany: '{n} wines of {name} are on the list. Each opens its card.'
 };
 
 function v58W(key, vars) {
@@ -224,7 +240,16 @@ function v58Fold(s) {
     '.wrap .v58-five{margin:28px 0 8px}',
     '.wrap .v58-five .v32-line{margin:6px 0 10px}',
     '.wrap .v58-libdoor{margin:8px 0 0}',
-    '.wrap .v58-libdoor .secbtn{min-height:44px}'
+    '.wrap .v58-libdoor .secbtn{min-height:44px}',
+    /* the house\'s wines of the producer: a row a wine, the producer over the wine, each a 48px door to its card */
+    '.wrap .v58-sec .v58-listline{margin:4px 0 0}',
+    '.wrap .v58-wines{list-style:none;margin:6px 0 0;padding:0}',
+    '.wrap .v58-sec .v58-wines li{margin:0;border-bottom:1px solid var(--line)}',
+    '.wrap .v58-sec .v58-wines li:last-child{border-bottom:0}',
+    '.wrap .v58-wine{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;width:100%;min-height:48px;box-sizing:border-box;padding:8px 0;margin:0;background:none;border:0;border-radius:0;text-align:left;cursor:pointer;font-family:inherit;color:var(--parch)}',
+    '.wrap .v58-wine-p{font-size:17px;line-height:1.35;font-weight:700;color:var(--gold-hi);overflow-wrap:anywhere}',
+    '.wrap .v58-wine-w{font-size:16px;line-height:1.4;color:var(--parch);overflow-wrap:anywhere}',
+    '.wrap .v58-wine:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -409,11 +434,19 @@ if (typeof v25MainName === 'function') {
 /* 3.1 the root, #/v/flagships: the countries in the atlas's order as chips and sections; under each, its regions,
    each region's groups, each group's five houses as rows (the house, its flagship under it) and a row that opens
    the five at a glance. */
-function v58HouseRow(r) {
+/* The flagship as a row or a card names it: its name, and where the name is the house's own (a grand vin of
+   Bordeaux) its appellation after it, so the row never reads the house twice. */
+function v58WineLine(r) {
   var w = v58Obj(r && r.wine);
+  var name = v58Str(w.name);
+  if (name && v58Fold(name) === v58Fold(r && r.producer) && v58Str(w.appellation)) return name + ' · ' + v58Str(w.appellation);
+  return name;
+}
+function v58HouseRow(r) {
+  var line = v58WineLine(r);
   return '<li><button class="v25row v58-houserow" type="button" data-go="flagship" data-arg="' + v58Esc(r.id) + '" id="v58-h-' + v58Esc(r.id) + '">'
     + '<span class="v25row-name">' + v58Esc(v58Str(r.producer)) + '</span>'
-    + (v58Str(w.name) ? '<span class="v25row-line">' + v58Esc(v58Str(w.name)) + '</span>' : '') + '</button></li>';
+    + (line ? '<span class="v25row-line">' + v58Esc(line) + '</span>' : '') + '</button></li>';
 }
 function v58GroupRow(g) {
   return '<li><button class="v25row v58-grouprow" type="button" data-go="flaggroup" data-arg="' + v58Esc(g.key) + '" id="v58-g-' + v58Esc(g.key) + '">'
@@ -458,11 +491,10 @@ function v58RootHtml() {
    the groups before and after it in the plan's order. */
 function v58Founded(r) { var y = v58Str(r && r.founded); return y ? v58W('foundedIn', { year: y }) : ''; }
 function v58CardHtml(r) {
-  var w = v58Obj(r.wine);
   var where = [v58Str(r.place), v58Founded(r)].filter(Boolean).join(' · ');
   return '<li class="card v58-card" data-v58-card="' + v58Esc(r.id) + '">'
     + '<h3 class="v58-card-h"><button type="button" class="v58-card-open" data-go="flagship" data-arg="' + v58Esc(r.id) + '" id="v58-card-' + v58Esc(r.id) + '">' + v58Esc(v58Str(r.producer)) + '</button></h3>'
-    + v58P('v58-card-wine', w.name) + v58P('v58-card-place', where) + v58P('v58-card-table', r.table) + '</li>';
+    + v58P('v58-card-wine', v58WineLine(r)) + v58P('v58-card-place', where) + v58P('v58-card-table', r.table) + '</li>';
 }
 function v58Door(attrs, label, id) {
   return '<button type="button" class="btn ghost" ' + attrs + (id ? ' id="' + v58Esc(id) + '"' : '') + '>' + v58Esc(label) + '</button>';
@@ -764,6 +796,98 @@ if (typeof prodProfileView === 'function') {
     return v;
   };
 }
+
+/* =========== 5. on the house's list =========== */
+
+/* The house: codex53's, else codex32's; null when none is loaded. */
+function v58House() {
+  try { return (typeof v53House === 'function') ? v53House() : ((typeof v32House === 'function') ? v32House() : null); } catch (e) { return null; }
+}
+/* A field of a house wine as plain text: the value as the pack holds it, or the value a person kept. */
+function v58Field(item, k) {
+  if (!item) return '';
+  if (typeof item[k] === 'string') return item[k].trim();
+  var v = null;
+  try { v = (typeof v28KV === 'function') ? v28KV(item, k) : null; } catch (e) { v = null; }
+  return typeof v === 'string' ? v.trim() : '';
+}
+/* A name as codex38 reads a house: folded whole, the estate word at its front taken off. */
+function v58Bare(s) {
+  if (typeof v38Bare === 'function') { try { return v58Str(v38Bare(s)); } catch (e) { } }
+  return v58Fold(s).replace(/ et(?= )/g, ' and').replace(/^(?:domaine|domaines|chateau|maison|weingut|bodega|bodegas|tenuta|cantina|quinta|champagne|famille|familia|familie) (?:(?:des|de la|de l|du|de|d) )?/, '').trim();
+}
+/* Whether a house wine's producer is the record's house: by codex38's own match to the library when the record
+   is a library producer and the house's name finds a library record; else by the bare name, the same or one the
+   start of the other on a whole word (Biondi Santi (Tenuta Greppo) is Biondi-Santi). */
+function v58IsHouse(r, producer) {
+  var p = v58Str(producer);
+  if (!p || !r) return false;
+  var pid = v58Str(r.producerId);
+  if (pid && pid.indexOf('p-') === 0 && typeof v38Library === 'function') {
+    var lib = null;
+    try { lib = v38Library([p, typeof v38ShortWho === 'function' ? v38ShortWho(p) : p]); } catch (e) { lib = null; }
+    if (lib && lib.id) return lib.id === pid;
+  }
+  var a = v58Bare(p.replace(/\([^)]*\)/g, ' ')), b = v58Bare(v58Str(r.producer));
+  if (!a || !b) return false;
+  return a === b || a.indexOf(b + ' ') === 0 || b.indexOf(a + ' ') === 0;
+}
+/* The house's wines of a record's producer, in the list's own order, each { id, producer, wine }: the producer and
+   the wine alone, never a price, a year, a bin or a note; a wine the list holds twice is one row, opening the
+   first. Empty when no house is loaded. */
+function v58HouseWines(r) {
+  var out = [];
+  var h = v58House();
+  if (!r || !h || typeof v28Wines !== 'function') return out;
+  var seen = {};
+  var wines = [];
+  try { wines = v28Wines(h) || []; } catch (e) { wines = []; }
+  wines.forEach(function (w) {
+    var producer = v58Field(w, 'producer'), wine = v58Field(w, 'wine');
+    if (!w || !w.id || !v58IsHouse(r, producer)) return;
+    var k = v58Fold(producer) + '|' + v58Fold(wine);
+    if (seen[k]) return;
+    seen[k] = 1;
+    out.push({ id: w.id, producer: producer, wine: wine });
+  });
+  return out;
+}
+/* The heading names the house: On {name} list where the house's name is a possessive, else On the list at {name}. */
+function v58ListTitle() {
+  var h = v58House();
+  var name = v58Str(h && h.name);
+  if (!name) return v58W('listH');
+  return /['’]s$/i.test(name) ? v58W('listHOwn', { house: name }) : v58W('listHAt', { house: name });
+}
+function v58ListBody(r) {
+  var list = v58HouseWines(r);
+  if (!list.length) return '';
+  return v58P('v58-listline', list.length === 1 ? v58W('listOne', { name: v58Str(r.producer) }) : v58W('listMany', { n: list.length, name: v58Str(r.producer) }))
+    + '<ul class="v58-wines">' + list.map(function (x) {
+      return '<li><button type="button" class="v58-wine" data-v58="wine" data-id="' + v58Esc(x.id) + '" id="v58-w-' + v58Esc(x.id) + '">'
+        + '<span class="v58-wine-p">' + v58Esc(x.producer || x.wine) + '</span>'
+        + ((x.producer && x.wine) ? '<span class="v58-wine-w">' + v58Esc(x.wine) + '</span>' : '') + '</button></li>';
+    }).join('') + '</ul>';
+}
+/* A house wine's card, opened as codex57 opens one from a grape's page: the list's own card screen, pushed, so
+   Back returns to the house. */
+function v58OpenWine(id) {
+  var wid = v58Str(id);
+  if (!wid) return false;
+  var known = false;
+  try { known = typeof v28Wines === 'function' && v28Wines(v58House()).some(function (w) { return w.id === wid; }); } catch (e) { known = false; }
+  if (!known) return false;
+  if (typeof v32OpenWine === 'function') { v32OpenWine(wid); return true; }
+  if (typeof v28Open !== 'function') return false;
+  try { S._v28edit = false; S.view = 'cellar'; } catch (e) { return false; }
+  v28Open(wid, false);
+  return true;
+}
+V58_SECS.list = {
+  after: 'v58-s-traps',
+  make: function (r) { return ['v58-s-list', v58W('listChip'), v58ListBody(r), 'v58-list', v58ListTitle()]; }
+};
+V58_ACTS.wine = function (node) { return v58OpenWine(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-id') : ''); };
 
 /* =========== the cold address =========== */
 
