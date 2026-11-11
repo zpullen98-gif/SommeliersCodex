@@ -9,7 +9,9 @@
 
    Returns { ctx, G, J, tryG, store, files, last }: G(expr) runs an expression in the chain, J(expr) returns its
    value through JSON, tryG(expr) returns null on a throw and keeps the message in last(). A file that fails to
-   load throws with its name. */
+   load throws with its name. opts.skip (11 November 2026, the records edition) names files of the chain to leave
+   out, so a gate can load the same tree without a layer (check-grapes-table's base is the chain without
+   data-grapes-table.js and codex57.js); a name it gives that the chain does not load throws. */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -50,7 +52,10 @@ function stubNode() {
 
 function loadChain(jsDir, opts) {
   opts = opts || {};
-  const files = chainFiles(jsDir);
+  const skip = opts.skip || [];
+  const all = chainFiles(jsDir);
+  skip.forEach((f) => { if (all.indexOf(f) < 0) throw new Error('loadChain was asked to leave out js/' + f + ', which index.html does not load'); });
+  const files = all.filter((f) => skip.indexOf(f) < 0);
   const store = Object.create(null);
   Object.keys(opts.seed || {}).forEach((k) => { store[k] = opts.seed[k]; });
   const NODE = stubNode();

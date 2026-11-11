@@ -6,8 +6,11 @@
  * codex57 is two pieces: js/data-grapes-table.js (GRAPE_TABLE, built by .scripts/grapes/build-grapes.cjs from one
  * fragment a grape) and the layer js/codex57.js. This gate loads the SHIPPED chain index.html loads three times: in
  * chain.cjs's sandbox (the pages and the root as codex53 draws them), in check-card's loader with the shared house
- * engine and the pack (the house's wines, study, the views, the addresses), and the base the plan measured (codex56
- * master, 7d14d1c, read from git) in a second chain.cjs sandbox, so what the old pages held can be compared. It asserts:
+ * engine and the pack (the house's wines, study, the views, the addresses), and the base in a second chain.cjs
+ * sandbox, so what the old pages held can be compared. The base is the same jsDir's chain with data-grapes-table.js
+ * and codex57.js left out (the same data, the layers up to codex56; since the records edition of 11 November 2026,
+ * which corrected the data under the old pages, in place of codex56 master, 7d14d1c, read from git), so the
+ * comparison proves that codex57 changes only what it says it changes. It asserts:
  *
  *   1. the load: data-grapes-table.js then codex57.js straight after codex56.js and before boot.js; the layer ran
  *   2. the data: the roster whole and in the plan's order; every shipped record through schema.cjs; the data equal
@@ -24,7 +27,8 @@
  *      leading the fruit, Where it is grown gone where the two worlds are written; the two family grapes headed as
  *      families; no stock row under the glass left with only a family word the table names (Albarino, Vermentino and
  *      Godello named); The regions that name it read whole, every bracket closed (the eleven the base cut)
- *   8. the 59 old pages against the base: every old section as the base drew it, but for what the layer says it
+ *   8. the 59 old pages against the base (the chain without codex57): every old section as the base drew it, but
+ *      for what the layer says it
  *      changes (the glass, the bare aroma line, the one word flag, Cards at the table, the drill's count, the
  *      profile of a thin grape, a stock row's family word named and the regions that name it read whole, each by
  *      this gate's own reading of the rule); each grape's drill the base's, without its notIn phrases, with the questions its
@@ -49,7 +53,7 @@
  *      selector under .wrap, every shown word from V57_WORDS (and V57_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-grapes-table.js [jsDir]               every check above
- *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 30 faults in a scratch copy, one at a time,
+ *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 31 faults in a scratch copy, one at a time,
  *                                                              and expects each caught by the check that names it
  *
  * A section that throws fails as "section N ran to its end" and the next one runs, so a seeded fault is always named.
@@ -57,8 +61,10 @@
  * jsDir defaults to this repo's js/; the site's check-wings may pass the wing's codex/js. Needs the shared engine
  * (OOT_SHARED, else ../worldtable/static/shared) and the pack (OOT_HOUSE_PACK, else the pack beside the engine).
  * The roster, the fragments, the schema, the keys and the gates the chain rule reads are this checkout's
- * (.scripts/grapes/; GRAPES_TABLE_GATES names another folder of gates). The base is read with git from this
- * checkout (GRAPES_BASE, else 7d14d1c; GRAPES_BASE_DIR an extracted copy). A tree with no codex57.js is SKIPPED.
+ * (.scripts/grapes/; GRAPES_TABLE_GATES names another folder of gates). The base is built from jsDir itself, never
+ * from git: index.html's chain less data-grapes-table.js and codex57.js. To compare with a git base instead, name
+ * it: GRAPES_BASE=<ref> reads index.html and js/ at that ref with git from this checkout (7d14d1c is the codex56
+ * master the plan measured), and GRAPES_BASE_DIR names an extracted copy. A tree with no codex57.js is SKIPPED.
  * Exits non-zero if any check fails. The last line is the verdict.
  */
 'use strict';
@@ -91,7 +97,10 @@ const CH = require(path.join(__dirname, 'cms', 'chain.cjs'));
 const S = require(path.join(__dirname, 'grapes', 'schema.cjs'));
 const BG = require(path.join(__dirname, 'grapes', 'build-grapes.cjs'));
 const GATES = path.resolve(process.env.GRAPES_TABLE_GATES || __dirname);
-const BASE = process.env.GRAPES_BASE || '7d14d1c';
+/* the base: the chain without the layer (the default), or a git ref or an extracted copy when one is named */
+const BASE = process.env.GRAPES_BASE || '';
+const BASE_SKIP = ['data-grapes-table.js', 'codex57.js'];
+const BASE_NAME = process.env.GRAPES_BASE_DIR ? 'the base at ' + process.env.GRAPES_BASE_DIR : (BASE ? 'the base ' + BASE : 'the base (this chain without codex57)');
 const PLAN = S.loadPlan();
 const ROSTER = PLAN.grapes.map((g) => g.slug);
 const ROW = {}; PLAN.grapes.forEach((g) => { ROW[g.slug] = g; });
@@ -291,9 +300,11 @@ async function bootDevice(opts) {
   return D;
 }
 
-/* the base the plan measured, from git: index.html and js/ as they stood */
+/* the base: by default the jsDir's own chain without the layer (no dir, self); GRAPES_BASE_DIR an extracted copy;
+   GRAPES_BASE a ref read with git, index.html and js/ as they stood */
 function baseTree() {
   if (process.env.GRAPES_BASE_DIR && fs.existsSync(path.join(process.env.GRAPES_BASE_DIR, 'js'))) return { dir: process.env.GRAPES_BASE_DIR, made: false };
+  if (!BASE) return { dir: '', self: true };
   const repo = path.join(__dirname, '..');
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'grapes-base-'));
   const tar = cp.spawnSync('git', ['-C', repo, 'archive', BASE, 'index.html', 'js'], { maxBuffer: 1 << 28 });
@@ -522,10 +533,16 @@ async function main() {
     check('the names that must stay unresolved still resolve to nothing (' + PLAN.unresolved.join(', ') + ')', stay.length === 0 && PLAN.unresolved.length >= 10, stay.map((n) => n + ' to ' + key(D.G, n)).join(' | '));
     BT = baseTree();
     M = null;
-    if (!BT.dir) note('the base ' + BASE + ' could not be read from git (' + (BT.why || 'no checkout') + '): the comparisons with it are skipped');
+    if (BT.self) {
+      try {
+        M = CH.loadChain(JS, { seed: { codexLevel: 'certified' }, skip: BASE_SKIP }); M.tryG('applyLevel("certified", true)');
+        const lost = FILES.filter((f) => M.files.indexOf(f) < 0);
+        check(BASE_NAME + ' loads in a sandbox of its own, ' + M.files.length + ' scripts: the chain index.html loads less ' + BASE_SKIP.join(' and ') + ', and no layer of codex57 in it', lost.join(' ') === BASE_SKIP.join(' ') && M.G('typeof V57_WORDS === "undefined" && typeof GRAPE_TABLE === "undefined"'), lost.join(' '));
+      } catch (e) { check(BASE_NAME + ' loads in a sandbox of its own', false, e.message); M = null; }
+    } else if (!BT.dir) note('the base ' + BASE + ' could not be read from git (' + (BT.why || 'no checkout') + '): the comparisons with it are skipped');
     else {
       try { M = CH.loadChain(path.join(BT.dir, 'js'), { seed: { codexLevel: 'certified' } }); M.tryG('applyLevel("certified", true)'); }
-      catch (e) { check('the base ' + BASE + ' loads in a sandbox of its own', false, e.message); M = null; }
+      catch (e) { check(BASE_NAME + ' loads in a sandbox of its own', false, e.message); M = null; }
     }
     if (M) {
       const names = new Set();
@@ -1014,7 +1031,8 @@ function mutations() {
     ['a family grape headed as one grape', 'js/codex57.js', "if (v57Str(t.kind) === 'family') {", "if (v57Str(t.kind) === 'families') {", 'a family of vines is headed so'],
     ['the stock rows drawn with their bare family word', 'js/codex57.js', '      rest = v57NameRows(rest, t);\n', '', 'no stock row item is only the word'],
     ['the regions that name it cut inside a bracket again', 'js/codex57.js', '    try { return v57StarPlaces(s); } catch (e) { return _v57StarPlaces.apply(this, arguments); }', '    return _v57StarPlaces.apply(this, arguments);', 'reads each starred place whole'],
-    ['a gate list naming codex56.js without the new files', 'gates', "'codex56.js', 'data-grapes-table.js', 'codex57.js'", "'codex56.js'", 'the chain rule']
+    ['a gate list naming codex56.js without the new files', 'gates', "'codex56.js', 'data-grapes-table.js', 'codex57.js'", "'codex56.js'", 'the chain rule'],
+    ['codex57 changing an old section it does not own', 'js/codex57.js', 'return v57OpenApply(s, r.slug);', "return v57OpenApply(s.replace('<dt>Wines to know</dt>', '<dt>Wines to try</dt>'), r.slug);", 'the 59 old pages at the four levels']
   ];
   const repoRoot = path.join(JS, '..');
   const BT = baseTree();
@@ -1025,6 +1043,7 @@ function mutations() {
     fs.cpSync(JS, path.join(dir, 'js'), { recursive: true });
     fs.copyFileSync(path.join(repoRoot, 'index.html'), path.join(dir, 'index.html'));
     fs.copyFileSync(path.join(repoRoot, 'sw.js'), path.join(dir, 'sw.js'));
+    /* a named base is read once and handed on; the default base each run builds from its own scratch jsDir */
     const env = Object.assign({}, process.env, { GRAPES_BASE_DIR: BT.dir || '' });
     let target;
     if (file === 'gates') {
