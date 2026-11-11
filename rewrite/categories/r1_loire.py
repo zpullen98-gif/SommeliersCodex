@@ -67,7 +67,7 @@ BANK = [
     Q("Pays Nantais and Muscadet",
       "A hard winter in 1709 killed most of the vineyard around Nantes, and growers replanted with a Burgundian white chosen for its hardiness. Which variety?",
       ["Melon de Bourgogne", "Aligote", "Chardonnay", "Chenin Blanc"], 0,
-      "Melon survives cold better than what it replaced and ripens early enough for a damp Atlantic autumn. It has been the sole grape of Muscadet ever since, and is scarcely grown in Burgundy today."),
+      "Melon survives cold better than what it replaced and ripens early enough for a damp Atlantic autumn. It has been Muscadet's grape ever since, still alone in Sevre et Maine and the other two named zones though plain Muscadet now admits a little Chardonnay, and is scarcely grown in Burgundy today."),
     Q("Pays Nantais and Muscadet",
       "Chardonnay's parents also produced the grape behind Muscadet. Which crossing is it?",
       ["Pinot and Gouais Blanc", "Chenin Blanc and Sauvignon Blanc",

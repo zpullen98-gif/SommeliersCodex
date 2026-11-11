@@ -154,7 +154,7 @@ BANK = [
        "The Vah and the Hron", "The Mures and the Somes"], 0,
       "The Bodrog meets the Tisza at Tokaj itself. Damp air rising off the confluence into warm, sheltered volcanic slopes gives one of the most dependable noble rot climates in Europe."),
     Q("Tokaji",
-      "High acidity, thin skins and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?",
+      "High acidity and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?",
       ["Furmint", "Harslevelu", "Sarga Muskotaly", "Kabar"], 0,
       "Furmint holds most of the plantings and gives the acid spine that lets these wines carry enormous sugar without collapsing. Harslevelu adds perfume and body, and small amounts of the others are also permitted."),
     Q("Tokaji",

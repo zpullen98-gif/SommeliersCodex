@@ -240,7 +240,7 @@ BANK = [
         "a minimum of eighty five percent verdejo", "a minimum of 85%",
         "a minimum of eighty five percent", "minimum eighty five percent verdejo",
         "minimum 85 percent verdejo", "85 percent of the blend", "at least eighty five per cent", "at least 85 per cent", "minimum eighty five per cent", "at least eighty five per cent verdejo", "a minimum of 85 per cent verdejo", "a minimum of eighty five per cent verdejo", "a minimum of eighty five per cent", "minimum eighty five per cent verdejo", "minimum 85 per cent verdejo", "85 per cent of the blend"],
-       "Plain Rueda needs half the blend to be Verdejo and the rest may be Viura or another permitted white; naming the grape lifts the floor. The same figure governs a Rueda labelled Sauvignon, so the two claims on a shelf are stronger than they look and the unnamed bottle is the one to ask about.",
+       "Plain Rueda sets no share for Verdejo itself, only at least three quarters from the main whites, Sauvignon Blanc and Viura among them; naming the grape lifts the floor. The same figure governs a Rueda labelled Sauvignon, so the two claims on a shelf are stronger than they look and the unnamed bottle is the one to ask about.",
        ex=True),
     SA("The Duero and its denominations",
        "White vines are scattered through the oldest Ribera del Duero plantings, and the denomination now authorises a white wine from the local one. Name that variety.",
