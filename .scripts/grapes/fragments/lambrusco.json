@@ -21,15 +21,15 @@
       { "family": "lees and cellar", "notes": ["bread dough", "fresh yeast"] }
     ],
     "ladder": [
-      { "climate": "cool", "where": "The clay foothills of Castelvetro, as Grasparossa", "notes": ["blackberry", "black plum", "violet"] },
-      { "climate": "moderate", "where": "The sandy plain of Sorbara, and Carpi for Salamino", "notes": ["sour cherry", "wild strawberry", "raspberry"] }
+      { "climate": "cool", "where": "The clay foothills of Castelvetro, as Grasparossa", "notes": ["blackberry", "black plum"] },
+      { "climate": "moderate", "where": "The sandy plain of Sorbara, and Carpi for Salamino", "notes": ["violet", "sour cherry", "wild strawberry", "raspberry"] }
     ],
     "structure": "Dry to sweet, usually gently sparkling. Acidity high, tannin low to medium, alcohol low to medium, body light to medium; pale pink to deep purple."
   },
   "worlds": {
     "home": {
       "home": "Emilia, around Modena and Reggio: the sandy plain of Sorbara, the clay foothills of Castelvetro and the plain round Carpi each give their own Lambrusco and their own DOC. Across the Po, Lambrusco Mantovano is Lombardy's. Most is made sparkling in a sealed tank.",
-      "abroad": "Lambrusco Maestri, one member of the family, has travelled as far as Argentina and Australia; elsewhere the name is barely seen."
+      "abroad": "Lambrusco Maestri, one member of the family, has travelled as far as Argentina and Australia; elsewhere it is barely grown."
     }
   },
   "service": {
@@ -59,7 +59,7 @@
     { "q": "Is Lambrusco one grape?", "a": "A family of several. Sorbara is pale and sharp, Grasparossa dark and firmer, Salamino deep and round, and each has its own DOC around Modena." }
   ],
   "compare": [
-    { "slug": "barbera", "tell": "Barbera shares the high acidity and low tannin but is still and deeper, with black cherry; Lambrusco foams, with violet and wild strawberry." },
+    { "slug": "barbera", "tell": "Barbera shares the high acidity and low tannin but is still, with black cherry and a balsamic note; Lambrusco foams, with violet and wild strawberry." },
     { "slug": "gamay", "tell": "Gamay is still, with kirsch and sometimes banana from whole bunch fermentation; Lambrusco foams and bites harder, with wild strawberry and a sharp, frothy finish." },
     { "slug": "glera", "tell": "Glera, as Prosecco, is white, with green apple, pear and acacia blossom; Lambrusco is red, with sour cherry and violet, though both get their bubbles in a tank." }
   ],
@@ -74,7 +74,7 @@
   },
   "targets": ["emilia-romagna", "lombardy", "italy"],
   "cards": [
-    { "front": "Lambrusco: name its three DOCs around Modena and the style of each.", "back": "Sorbara, pale and sharp; Grasparossa di Castelvetro, dark and firmer; Salamino di Santa Croce, deep and round. Each became a DOC in 1970." },
+    { "front": "Lambrusco: name the three DOCs of 1970 around Modena and each style.", "back": "Sorbara, pale and sharp; Grasparossa di Castelvetro, dark and firmer; Salamino di Santa Croce, deep and round. The broader Modena and Reggiano DOCs blend the family." },
     { "front": "On a Lambrusco label, what do secco, amabile and dolce mean?", "back": "Dry; off dry to medium sweet; sweet. At home in Modena, dry Lambrusco is the tradition." },
     { "front": "Lambrusco: how are the bubbles in most bottles made?", "back": "By a second fermentation in a sealed tank, the Charmat or Martinotti method, stopped by chilling when the fizz and the sweetness are right. Some is refermented in the bottle." }
   ],
@@ -93,9 +93,9 @@
     },
     {
       "q": "A table orders zampone, a rich pork sausage served with lentils, and asks for a Lambrusco with enough grip for it. Which do you bring?",
-      "opts": ["Lambrusco Grasparossa", "Lambrusco di Sorbara", "Reggiano Lambrusco amabile", "Lambrusco Mantovano"],
+      "opts": ["Lambrusco Grasparossa", "Lambrusco di Sorbara", "Reggiano Lambrusco amabile", "Lambrusco Salamino di Santa Croce"],
       "a": 0,
-      "exp": "Grasparossa is the dark, firmer Lambrusco of the foothills, the local match for zampone and cotechino. Sorbara, the nearest miss, is pale and sharp, with too little grip for it."
+      "exp": "Grasparossa is the dark, firmer Lambrusco of the foothills, the local match for zampone and cotechino. Salamino, the nearest miss, is deep in colour but round and soft; Sorbara is pale and sharp."
     }
   ],
   "sources": [
