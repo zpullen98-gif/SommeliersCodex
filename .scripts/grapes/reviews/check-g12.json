@@ -1,0 +1,648 @@
+{
+ "chunk": "g12",
+ "date": "2026-11-11",
+ "role": "The second reading: each entry read to refute it, not to admire it.",
+ "grapes": [
+  "tempranillo",
+  "graciano",
+  "mencia",
+  "touriga-nacional",
+  "touriga-franca",
+  "agiorgitiko"
+ ],
+ "method": [
+  "Each fragment read whole beside what show.cjs prints for the grape (GRAPES and GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the regions that name it) and beside the Codex's region records for Rioja, Navarra, Ribera del Duero, Toro, La Mancha, Bierzo, Ribeira Sacra, the Douro, the Dao, Lisboa, the Alentejo, Bairrada, the Tejo, Bordeaux, Rutherglen, Oregon, Corsica, Sardinia and Nemea, with the service reference and the respellings of every Iberian and Greek record.",
+  "What the reviewed records do not state was put to search: Touriga Franca in California, Graciano's synonyms and its need for warm sites, Agiorgitiko outside Greece, Touriga Franca's and Touriga Nacional's descriptors. Six searches in all, none more than two a grape; one page fetch was refused by the session's network.",
+  "The glass read as a blind taster: each note set beside the profile and the grid, each prose field scanned by a script for a family word in disguise (fruit led, deep fruit, dark fruit, fresh fruit, generous fruit), each ladder set beside the Codex's own climate line for the place, and each tell checked against both entries' notes.",
+  "Six home grapes: each home and abroad line read for a false or lazy generalisation and against TASTE.world (old for the three full grapes, none for the three new).",
+  "The four lines counted and said aloud for the five beats in order; every s45 opening and closing and every sale's hook compared by script with the other 69 entries; the cards and questions read for one key, four options of one kind and a stem that gives nothing away.",
+  "Two rounds of edits, pushed as 61013f8 and 0386d88, with a last change to the Touriga Nacional glass pushed with this record, each an exact replacement in the fragment's own text. node .scripts/grapes/build-grapes.cjs --lint --chunk g12 run after each until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+ ],
+ "limits": [
+  "Search alone: the one page fetched was refused by the network, so a page is cited as search results quoted it, and every address the authors gave stays unconfirmed.",
+  "Pages whose addresses or titles name a person or a producer (a writer's site, a critic's article, a winery's page) were read for the fact and are not cited."
+ ],
+ "entries": {
+  "tempranillo": {
+   "verdict": "Sound after three fixes. The Rioja and Ribera rules, the Iberian names, the parentage and the American oak all stand; the sale put a Reserva's whole three years in barrel and bottle, abroad leaned on fruit led, and the close shared its construction with another grape's name story.",
+   "tested": [
+    "say against GRID_SAY (tem-prah-NEE-yoh): the same.",
+    "The Rioja ladder (Crianza 24 months with 12 in barrel, Reserva 36 with 12 and 6 in bottle, Gran Reserva 60 with 24 and 24), Rioja's American oak and its coconut, vanilla and dill, Tinto Fino and Tinta del Pais, Tinta de Toro, Cencibel, Tinta Roriz and Aragonez: the Codex's Rioja, Ribera del Duero, Rueda and Toro, La Mancha, Douro, Lisboa and Alentejo records, which the labels, the cards and the guest answers follow.",
+    "Ribera del Duero's ageing minimums set beside Rioja's in the third question's explanation: the same barrel months, as the Codex's Ribera record gives them.",
+    "Parentage, Albillo Mayor and Benedicto, published in 2012: the University of La Rioja's research record, as the author cited it; the name from temprano on the Codex's own Regionale question.",
+    "Abroad: southern Oregon's Umpqua and Rogue on the Codex's Oregon record, McLaren Vale's Mediterranean grapes on the Australia record, Texas on Texas A&M AgriLife; Argentina left out by the author for want of a second source, rightly.",
+    "The glass as a blind taster: every note set beside GRAPES (dried red cherry, strawberry, red plum, fig, blackberry in Ribera and Toro, dill, coconut, vanilla, leather, tobacco, dried leaves) and the grid's Rioja read; a scan of every prose field for a family word in disguise found fruit led in abroad.",
+    "The ladder against the grid (Rioja moderate) and the Codex's Toro and La Mancha records (warm): agree.",
+    "Service against the medium reds row, the Bordeaux glass row for structured reds, the decanting rows (sample a young tannic red, separate an old one from its deposit) and TASTE.age: agree.",
+    "Mode home against TASTE.world old: agree.",
+    "The four lines counted and said aloud: five beats in order; the s45 close read against every other close of the 75.",
+    "The sale read for two sentences and for a hook no other sale shares, and for the Reserva rule it states.",
+    "Compare tells from both sides: the Sangiovese, Grenache and Graciano entries carry none of the notes the tells part them by.",
+    "Cards and questions: one key each, four options of one kind, no stem naming its key, no worlds tag on a home grape."
+   ],
+   "changed": [
+    {
+     "round": "second",
+     "field": "lines.s45",
+     "was": "Tempranillo is Spain's own red, the grape of Rioja on the upper Ebro and, as Tinto Fino, of Ribera del Duero on the high plateau. It tastes of strawberry, red plum and dried cherry, with leather and tobacco, at medium weight with a fresh, fine grip. The cellar does the rest. Traditional Rioja spends years in American oak barrels, which add vanilla, coconut and dill, and the label says how long: Crianza, Reserva, Gran Reserva. Ribera is darker and firmer, more often in French oak. Pour it with roast lamb, chorizo or Manchego. The name comes from temprano, early, because it ripens weeks before most of Spain's other reds.",
+     "now": "Tempranillo is Spain's own red, the grape of Rioja on the upper Ebro and, as Tinto Fino, of Ribera del Duero on the high plateau. It tastes of strawberry, red plum and dried cherry, with leather and tobacco, at medium weight with a fresh, fine grip. The cellar does the rest. Traditional Rioja spends years in American oak barrels, which add vanilla, coconut and dill, and the label says how long: Crianza, Reserva, Gran Reserva. Ribera is darker and firmer, more often in French oak. Pour it with roast lamb, chorizo or Manchego. Temprano means early, and the grape earns the name, ripening weeks before most of Spain's other reds.",
+     "why": "The close used the construction the name comes from, which Sauvignon Blanc's close shares, among a dozen closes on a name. It now opens on the Spanish word itself and says what the grape does to earn it, and the line is 110 words where the first round's edit had left 113.",
+     "sources": [
+      "The Codex's Regionale question i-8lrwa2oc (temprano, early)",
+      "The Oxford Companion to Wine"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.sale",
+     "was": "Tempranillo has done its waiting for you: a Rioja Reserva spends years in barrel and bottle before release, until the cherry softens into leather and tobacco. Pour it with the roast lamb, or for anyone who wants a mellow red tonight.",
+     "now": "Tempranillo has done its waiting for you: a Rioja Reserva ages at least three years, part in barrel and part in bottle, until the cherry softens into leather and tobacco. Pour it with the roast lamb, or for anyone who wants a mellow red tonight.",
+     "why": "A Reserva was said to spend years in barrel and bottle, which reads as its whole time in wood and glass. The rule is 36 months at least with 12 in barrel and 6 in bottle, the rest where the cellar chooses, so the sale now says part in barrel and part in bottle.",
+     "sources": [
+      "The Codex's Rioja record, its tiers and traps (js/regions/spain.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "Across the border it is Tinta Roriz in the Douro, for Port and dry reds, and Aragonez in the Alentejo. Australia, southern Oregon and Texas grow it too, tending to a juicier, fruit led wine with softer tannin.",
+     "now": "Across the border it is Tinta Roriz in the Douro, for Port and dry reds, and Aragonez in the Alentejo. Australia, southern Oregon and Texas tend to make it juicier, with ripe cherry and plum and softer tannin.",
+     "why": "Fruit led named no fruit, a family word in disguise. Ripe cherry and plum, which the entry's own warm rung allows, take its place, and tend to keeps the hedge.",
+     "sources": [
+      "The Codex's Oregon record (js/regions/oregon.json)",
+      "Texas A&M AgriLife: Texas wine grape varieties"
+     ]
+    }
+   ],
+   "open": [
+    "Abroad's juicier, softer style for Australia, southern Oregon and Texas is a fair hedge from the Codex's records and the author's sources, not a sourced tasting contrast.",
+    "GRAPES gives tannin medium plus to high and the grid medium to medium plus; the structure line's medium plus, firmer in Ribera and Toro, sits inside both."
+   ]
+  },
+  "graciano": {
+   "verdict": "Sound after five fixes. The late ripening, the low yield, the acidity, the role in long aged Rioja and the island synonyms stand; gives little fruit, said four times, reads as a wine short of flavour, and the moderate rung sat in the coolest band of Rioja where the grape struggles to ripen.",
+   "tested": [
+    "say against the Codex's Rioja record (grah-thee-AH-no): the same sound.",
+    "Late ripening, low yield, high acidity, deep colour, violet and spice, its place in Reserva and Gran Reserva blends and its near loss: the Codex's Rioja and Navarra records and the Rioja consejo's pages as the author cited them; the OENO One study of the University of La Rioja on its late cycle, its need for warm sites, its marked acidity and polyphenols for ageing.",
+    "Synonyms: Tinta Miuda on the Codex's Lisboa record, Minustellu on its Corsica record, Cagnulari on the Wein-Plus glossary and Vine to Wine Circle, all read through search. The Rioja trap that Graciano is a native and not a synonym of anything means it is no other grape's alias; its own synonyms do not cross it.",
+    "Australia, mostly South Australia: Wine Australia's alternative varieties guide as the author cited it.",
+    "The glass as a blind taster: violet, mint, liquorice, black fruit and pepper against the consejo's list as the author quoted it and trade tastings; nothing a family word in disguise but deep fruit in a food reason.",
+    "The ladder against the Codex's Rioja record, which plants Graciano where there is time to ripen it, and against the study's call for warm sites.",
+    "Targets: the Sardinia record names Bovale and not Cagnulari or Graciano, so Sardinia was not added; South Australia has no record of its own.",
+    "Service against the medium reds row and the decanting row; age as the Rioja record has the long aged blends.",
+    "The four lines counted and said aloud; the sale's hook and pour against every other sale.",
+    "Compare tells from both sides: Tempranillo, Carignan and Mourvedre carry neither violet nor mint; Tempranillo's own tell gives Graciano violet and a peppery lift, which the entry's black pepper holds.",
+    "Cards and questions: one key each; the third question's options four reasons of one kind."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Graciano is used like salt in Rioja: a little lifts the whole blend. A native of Rioja, grown there and in Navarra, it ripens late and gives very little fruit. In the glass it is deep purple, with blackberry, black cherry and violet. The acidity is sharp, with a cool note of mint and a firm grip. Blenders add a few per cent to the long aged Riojas for colour and freshness, and a few cellars bottle it alone. Pour it with lamb chops, venison or a hard sheep's cheese. Growers once pulled it out for easier vines, and it nearly vanished before Rioja brought it back.",
+     "now": "Graciano is used like salt in Rioja: a little lifts the whole blend. A native of Rioja, grown there and in Navarra, it ripens late and bears small crops. In the glass it is deep purple, with blackberry, black cherry and violet. The acidity is sharp, with a cool note of mint and a firm grip. Blenders add a few per cent to the long aged Riojas for colour and freshness, and a few cellars bottle it alone. Pour it with lamb chops, venison or a hard sheep's cheese. Growers once pulled it out for easier vines, and it nearly vanished before Rioja brought it back.",
+     "why": "Gives very little fruit, said aloud just before the glass's blackberry, reads as a wine short of flavour. Bears small crops says the low yield the sources mean.",
+     "sources": [
+      "Rioja Wine: Graciano, grape varieties of the designation",
+      "OENO One: the Graciano study of the University of La Rioja (oeno-one.eu/article/view/4695)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.0.where",
+     "was": "Rioja Alta and Rioja Alavesa, under the Sierra de Cantabria",
+     "now": "Rioja Alta and Rioja Alavesa, on warmer, sheltered plots",
+     "why": "The moderate rung sat under the Sierra de Cantabria, the coolest band of Rioja, where Graciano struggles to ripen. The Codex's Rioja record plants it where there is time to ripen it, and a university study and trade reports say it needs warm sites, so the rung now names warmer, sheltered plots of Rioja Alta and Alavesa.",
+     "sources": [
+      "The Codex's Rioja record (js/regions/spain.json)",
+      "OENO One: the Graciano study of the University of La Rioja (oeno-one.eu/article/view/4695)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.1.why",
+     "was": "deep fruit and firm tannin suit lean, dark meat",
+     "now": "blackberry and firm tannin suit lean, dark meat",
+     "why": "Deep fruit named nothing; blackberry, the entry's first note, does.",
+     "sources": [
+      "The Graciano fragment's own glass"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.0.a",
+     "was": "A native red of Rioja that growers almost lost because it gives so little fruit. A few per cent in a Rioja blend adds colour, freshness and a scent of violet, and a few cellars bottle it alone.",
+     "now": "A native red of Rioja that growers almost lost because it bears such small crops. A few per cent in a Rioja blend adds colour, freshness and a scent of violet, and a few cellars bottle it alone.",
+     "why": "The same reading of gives so little fruit as a wine short of flavour; it now bears such small crops.",
+     "sources": [
+      "Rioja Wine: Graciano, grape varieties of the designation"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.opts.0",
+     "was": "It ripens late and gives little fruit",
+     "now": "It ripens late and bears small crops",
+     "why": "The key carried the same ambiguity. Bears small crops keeps it the length of the other three reasons.",
+     "sources": [
+      "Rioja Wine: Graciano, grape varieties of the designation"
+     ]
+    }
+   ],
+   "open": [
+    "The name's origin, the alcohol band and plantings in California and Texas stay out, as the author left them.",
+    "Morrastel names Graciano in France and was once used for Monastrell in Spain; the Regionale question i-cpt5lfrq that offers Graciano, called Morrastel in France, as a distractor is not this entry's to change."
+   ]
+  },
+  "mencia": {
+   "verdict": "Sound after seven fixes. The slate, the gentle cellar, Jaen in the Dao and the end of the Cabernet Franc link stand; the ladder called all of Ribeira Sacra cool where the Codex calls Amandi ripe and deep, Vino de Villa was put on the bottom rung, the sale was the fourth built on Pinot Noir and the opening the fourth on belongs to.",
+   "tested": [
+    "say against the Codex's Bierzo and Dao records (men-THEE-ah, zhah-EN): the same.",
+    "Bierzo in Leon, Ribeira Sacra, Valdeorras and Monterrei, slate, the gentle cellar, old vines with a decade of life, Bierzo's 2017 ladder, the stone terraces worked with baskets and rack railways: the Codex's Bierzo and Ribeiro, Ribeira Sacra and Valdeorras records.",
+    "Jaen in the Dao, early ripening, supple and red fruited: the Codex's Dao record and trap; the old link to Cabernet Franc and its end by DNA on the Regionale trap and the author's two sources.",
+    "The ladder against the Codex's subzones: Chantada gentler and cooler, the Sil's south bank cooler and north facing, Amandi south facing and ripe, Bierzo's basin warm but short of the Duero's heat.",
+    "Service against the light reds row, the Burgundy bowl row and TASTE.age (three to ten): agree; the Bierzo record serves the young wine slightly cool.",
+    "The glass as a blind taster: raspberry, sour cherry, pomegranate, violet, slate and graphite against GRAPES and the Bierzo record's wines.",
+    "The four lines counted and said aloud; the s45 opening against every other opening and the sale's hook against every other sale.",
+    "Compare tells from both sides: Cabernet Franc, Pinot Noir and Gamay carry no liquorice or black pepper, and none of their entries compares back.",
+    "Food: blackened redfish with a chilled Mencia stands, the Creole dish in its generic form, which two other entries also use.",
+    "Cards and questions: one key each; the Garnacha Tintorera distractor is grown in Galicia too, but it is dark and dense, never bright ruby and medium bodied, so the key holds."
+   ],
+   "changed": [
+    {
+     "round": "second",
+     "field": "lines.s45",
+     "was": "Mencía belongs to the green north west of Spain, to Bierzo and the canyons of Ribeira Sacra, where it grows on slate. In the glass it is bright ruby, with raspberry, sour cherry and violet. It feels fresh and stony, medium in body, with fine tannin. Most cellars handle it gently, in steel or older barrels, so the perfume stays in front, and old vines give deeper, firmer wines that keep. Pour it slightly cool with roast pork, octopus or charcuterie. In Ribeira Sacra the vines hang on stone terraces so steep that the grapes come up in baskets or on little rack railways.",
+     "now": "Mencía grows on the slate of Spain's green north west, in Bierzo and in the canyons of Ribeira Sacra. In the glass it is bright ruby, with raspberry, sour cherry and violet. It feels fresh and stony, medium in body, with fine tannin. Most cellars handle it gently, in steel or older barrels, so the perfume stays in front, and old vines give deeper, firmer wines that keep. Pour it slightly cool with roast pork, octopus or charcuterie. In Ribeira Sacra the vines hang on stone terraces so steep that the grapes come up in baskets or on little rack railways.",
+     "why": "The line opened on belongs to, the construction Pinotage, Viognier and Xinomavro open on. It now opens on the slate the grape grows on, the same facts in fewer words.",
+     "sources": [
+      "The Codex's Bierzo and Ribeira Sacra records (js/regions/spain.json)"
+     ]
+    },
+    {
+     "round": "first and second",
+     "field": "lines.sale",
+     "was": "Mencía is the answer for a guest who loves Pinot Noir but wants a little more darkness and stone: violet, raspberry and slate, fresh and fine. A light chill suits it, beside the octopus or the roast pork.",
+     "now": "Mencía is the red of Bierzo, on the pilgrims' road to Santiago: violet and raspberry with a stony freshness that revives any traveller. A light chill suits it, beside the octopus or the roast pork.",
+     "why": "The hook sold Mencia to a lover of Pinot Noir, the fourth sale built on Pinot Noir after Zweigelt, Nerello Mascalese and Blaufrankisch. The first round tried a Rioja hook, which sat too near Graciano's; the sale now takes Bierzo's place on the pilgrims' road to Santiago, a hook no other sale uses.",
+     "sources": [
+      "The Codex's Bierzo record, its places (js/regions/spain.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.0.where",
+     "was": "Ribeira Sacra and the Galician slopes of the Sil",
+     "now": "Chantada on the Miño and the Sil's north facing terraces",
+     "why": "The cool rung named all of Ribeira Sacra, while the Codex's own record calls Amandi's south facing slate ripe and deep. The cool rung is now Chantada on the Miño, gentler and cooler, and the Sil's north facing terraces, as the record describes them.",
+     "sources": [
+      "The Codex's Ribeiro, Ribeira Sacra and Valdeorras record, its subzones (js/regions/spain.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.1.where",
+     "was": "Bierzo's sheltered basin, and the Dão as Jaen",
+     "now": "Amandi's south facing slate, Bierzo's basin and the Dão as Jaen",
+     "why": "Amandi joins the moderate rung beside Bierzo's basin and the Dao, where the Codex's records place ripe, deep Mencia and the old vine wines of graphite and black cherry.",
+     "sources": [
+      "The Codex's Bierzo record, its wines (js/regions/spain.json)",
+      "The Codex's Dao record (js/regions/portugal.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.2.why",
+     "was": "fresh fruit and a gentle grip beside salt",
+     "now": "bright raspberry and a gentle grip beside salt",
+     "why": "Fresh fruit named nothing; bright raspberry, the entry's lead note, does.",
+     "sources": [
+      "The Mencia fragment's own glass"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels.3.means",
+     "was": "A Bierzo village wine, first rung of a ladder of place from 2017 that climbs to classified single vineyards.",
+     "now": "A Bierzo village wine, the first rung above the plain Bierzo label in the 2017 ladder of place.",
+     "why": "Vino de Villa was called the first rung of the ladder; the Codex's Bierzo record puts the plain Bierzo label below it, with Vino de Villa the first claim above it.",
+     "sources": [
+      "The Codex's Bierzo record, its classification (js/regions/spain.json)",
+      "Spanish Ministry of Agriculture: Bierzo DO product specification"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.2.a",
+     "was": "A young Mencía, yes, lightly: a few minutes in the ice bucket lifts the fruit and the freshness. An old vine bottling wants a little more warmth.",
+     "now": "A young Mencía, yes, lightly: a few minutes in the ice bucket lifts the raspberry and the freshness. An old vine bottling wants a little more warmth.",
+     "why": "Lifts the fruit named nothing; lifts the raspberry does.",
+     "sources": [
+      "The Mencia fragment's own glass"
+     ]
+    }
+   ],
+   "open": [
+    "A possible parentage from two Portuguese grapes and the pilgrim tale of Cabernet Franc carried to Bierzo stay out, as the author left them.",
+    "GRAPES' confuse line uses the word pyrazine, which a spoken line here would refuse; it is the record's own register and no error."
+   ]
+  },
+  "touriga-nacional": {
+   "verdict": "Sound after five fixes. Port, the Dao's claim to its birth, the five favoured grapes, Rutherglen, the Little Karoo and Bordeaux's trial all stand; warm schist was a soil and not a note, a spoken line had the nose find a grip, two food reasons named no fruit, and the Port question offered Vinhao, which is Sousao and a Port grape.",
+   "tested": [
+    "say against the Codex's Douro and Dao records (too-REE-gah nah-see-oo-NAHL): the same.",
+    "Port and the dry Douro reds, small thick skinned berries and low yields, the birth claimed by the Dao near Tourigo, finer on the granite and fuller on the schist, the five favoured grapes of the research of the 1970s and 1980s, the spread south since the 1990s: the Codex's Douro, Dao, Lisboa, Tejo and Alentejo records.",
+    "Bordeaux since 2021, on trial against a warming climate, on no more than five per cent of the vineyard and ten of a blend: the Codex's Bordeaux record.",
+    "Rutherglen's fortified wine of Shiraz, Durif and Touriga: the Codex's Australia record; the Little Karoo on the Stellenbosch thesis the author cited.",
+    "The glass as a blind taster: violet, bergamot, orange peel, rockrose and dark chocolate against GRAPES, slate against INTRO_GRAPES, schist against the Douro record's schist scented dry reds; search confirmed violet and the dark berries and found no warm schist and no graphite as a descriptor.",
+    "The ladder against TASTE.clim warm and the Dao record's fresher reds: agree.",
+    "Service against the full reds row, Vintage Port's row and decanting off the crust; age against TASTE.age (ten and more): agree.",
+    "The four lines counted and said aloud; the s10 heard for what it claims the nose finds.",
+    "Compare tells from both sides: Touriga Franca now carries pomegranate and no violet or bergamot; Syrah and Malbec carry no bergamot.",
+    "Cards and questions: the Port question's four options read for a second Port grape among them."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s10",
+     "was": "Touriga Nacional, the backbone of Port and of the Douro's dry reds, smells of violet and bergamot over blackberry and a firm grip.",
+     "now": "Touriga Nacional, the backbone of Port and of the Douro's dry reds, brings blackberry and violet with a lift of bergamot on a firm grip.",
+     "why": "The line said the grape smells of violet and bergamot over a firm grip, and a grip is not smelled. It now brings blackberry and violet with bergamot on a firm grip, 25 words, one breath.",
+     "sources": [
+      "GRAPES (Touriga Nacional)"
+     ]
+    },
+    {
+     "round": "first, and again with this record",
+     "field": "glass.notes",
+     "was": [
+      {
+       "family": "black fruit",
+       "notes": [
+        "blackberry",
+        "black plum",
+        "cassis"
+       ]
+      },
+      {
+       "family": "floral",
+       "notes": [
+        "violet",
+        "rockrose"
+       ]
+      },
+      {
+       "family": "citrus",
+       "notes": [
+        "bergamot",
+        "orange peel"
+       ]
+      },
+      {
+       "family": "mineral",
+       "notes": [
+        "slate",
+        "warm schist"
+       ]
+      }
+     ],
+     "now": [
+      {
+       "family": "black fruit",
+       "notes": [
+        "blackberry",
+        "black plum",
+        "cassis"
+       ]
+      },
+      {
+       "family": "floral",
+       "notes": [
+        "violet",
+        "rockrose"
+       ]
+      },
+      {
+       "family": "citrus",
+       "notes": [
+        "bergamot",
+        "orange peel"
+       ]
+      },
+      {
+       "family": "mineral",
+       "notes": [
+        "slate",
+        "schist"
+       ]
+      },
+      {
+       "family": "oak",
+       "notes": [
+        "dark chocolate",
+        "cedar"
+       ]
+      }
+     ],
+     "why": "The mineral group held slate and warm schist. Warm schist is a soil warmed by the sun, not a note a taster can point to; the Codex's Douro record calls the dry reds schist scented, so schist stays, plain. The first round dropped the group, and this reading put it back with schist alone. Dark chocolate, in GRAPES, and cedar, from the French oak the Douro and Dao records name and the line itself names, make a fifth group, oak.",
+     "sources": [
+      "GRAPES and INTRO_GRAPES (Touriga Nacional)",
+      "The Codex's Douro and Dao records, their winemaking (js/regions/portugal.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.1.why",
+     "was": "deep fruit and grip suit dark, rich meat",
+     "now": "blackberry and a firm grip suit dark, rich meat",
+     "why": "Deep fruit named nothing; blackberry does.",
+     "sources": [
+      "The Touriga Nacional fragment's own glass"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.3.why",
+     "was": "sweet, fortified fruit against salty blue cheese",
+     "now": "the Port's sweet black plum against salty blue cheese",
+     "why": "Fortified fruit named nothing; the Port's sweet black plum does.",
+     "sources": [
+      "GRAPES (Touriga Nacional)"
+     ]
+    },
+    {
+     "round": "second",
+     "field": "questions.1.opts.3",
+     "was": "A Vinho Verde red from Vinhão",
+     "now": "A Setúbal red led by Castelão",
+     "why": "Vinhao is Sousao, which the Codex's Douro trap names, and Sousao is a Port grape, so a distractor stood near the key of a question about the grape of Port. A Setubal red led by Castelao, no Port grape, takes its place.",
+     "sources": [
+      "The Codex's Douro and Lisboa records, their traps (js/regions/portugal.json)"
+     ]
+    }
+   ],
+   "open": [
+    "Blueberry, in GRAPES and the lead, has no blue fruit group: one blue note alone cannot make one.",
+    "The Regionale trap calls Touriga Nacional Portugal's top red, a ranking the house keeps out of new prose."
+   ]
+  },
+  "touriga-franca": {
+   "verdict": "Sound after eight fixes. The parentage, the late, reliable ripening, the old name and the five favoured grapes stand; the California line claimed a Lodi bottle labelled Touriga is often this grape, which Lodi's own growers do not say, and pomegranate, by which Touriga Nacional's tell parts the two, was missing from the glass.",
+   "tested": [
+    "say against the Codex's Douro record (too-REE-gah FRAN-kah): the same.",
+    "Late ripening and reliable on hot sites, floral and juicy, the flesh and perfume of the blend, one of the five favoured grapes: the Codex's Douro record. Tinta Barroca early ripening, high in sugar, on cooler land: the same record, which the second question's explanation follows.",
+    "Parentage, Touriga Nacional and Marufo: the Wein-Plus glossary and Wine Grapes as the author cited them.",
+    "Thick skins: two trade pages read through search agree.",
+    "California: the Lodi growers' pages read through search name Touriga Franca in a Port style block and give Lodi's Touriga bottlings as Touriga Nacional alone or blends of the two.",
+    "The glass as a blind taster: blackberry, black cherry, black plum, rose petal and rockrose against Wines of Portugal as the author cited it, with trade notes of floral lift over dark berries.",
+    "The ladder against the Douro record's three subregions.",
+    "Service against the full reds row and Vintage Port's row.",
+    "The four lines counted and said aloud; the s45 close against every other close.",
+    "Compare tells from both sides: Touriga Nacional's tell and this entry's now share their notes.",
+    "Cards and questions: one key each; the law option in the third question is false, as Douro law allows a varietal red."
+   ],
+   "changed": [
+    {
+     "round": "second",
+     "field": "lines.s45",
+     "was": "Touriga Franca seldom works alone: it is the other half of many Douro blends. It is at home on the Douro's hot schist, ripening late and cropping reliably. In the glass it is deep red, with blackberry, black plum and rose petal. It is lighter and juicier than Touriga Nacional, with fresh acidity and a firm but supple grip. The two are blended for Port and dry Douro reds: Nacional gives structure, and Franca flesh and perfume. Pour it with grilled lamb, roast pork or cured ham. DNA shows it is a child of Touriga Nacional, so in many a Douro blend parent and child share the glass.",
+     "now": "Touriga Franca seldom works alone: it is the other half of many Douro blends. It is at home on the Douro's hot schist, ripening late and cropping reliably. In the glass it is deep red, with blackberry, black plum and rose petal. It is lighter and juicier than Touriga Nacional, with fresh acidity and a firm but supple grip. The two are blended for Port and dry Douro reds: Nacional gives structure, and Franca flesh and perfume. Pour it with grilled lamb, roast pork or cured ham. Touriga Nacional is one of its parents, so in many a Douro blend parent and child share the glass.",
+     "why": "The close used the DNA shows construction that Nerello Mascalese's close uses. It now names the parent and keeps the image of parent and child in one glass.",
+     "sources": [
+      "Wein-Plus glossary: Touriga Franca",
+      "Wine Grapes"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.notes",
+     "was": [
+      {
+       "family": "black fruit",
+       "notes": [
+        "blackberry",
+        "black cherry",
+        "black plum"
+       ]
+      },
+      {
+       "family": "floral",
+       "notes": [
+        "rose petal",
+        "rockrose"
+       ]
+      },
+      {
+       "family": "oak",
+       "notes": [
+        "vanilla pod",
+        "toast"
+       ]
+      }
+     ],
+     "now": [
+      {
+       "family": "black fruit",
+       "notes": [
+        "blackberry",
+        "black cherry",
+        "black plum"
+       ]
+      },
+      {
+       "family": "floral",
+       "notes": [
+        "rose petal",
+        "rockrose"
+       ]
+      },
+      {
+       "family": "red fruit",
+       "notes": [
+        "pomegranate",
+        "red cherry"
+       ]
+      },
+      {
+       "family": "oak",
+       "notes": [
+        "vanilla pod",
+        "toast"
+       ]
+      }
+     ],
+     "why": "Touriga Nacional's tell parts the two by Franca's pomegranate, and pomegranate stood only in Franca's profile and ladder. A red fruit group of pomegranate and red cherry gives the tell its note from both sides, as Wine Folly gives the grape red fruit and pomegranate.",
+     "sources": [
+      "Wine Folly: Touriga Franca",
+      "The Touriga Nacional fragment, compare"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.0.where",
+     "was": "The higher, cooler slopes of the Douro",
+     "now": "The wetter Baixo Corgo and the Douro's higher, cooler slopes",
+     "why": "The higher, cooler slopes named no place. The Baixo Corgo, the wettest and most fertile of the three subregions in the Codex's Douro record, joins them.",
+     "sources": [
+      "The Codex's Douro record (js/regions/portugal.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "It seldom leaves northern Portugal. California grows a little, in Lodi and elsewhere, where a bottle labelled simply Touriga is often this grape.",
+     "now": "It seldom leaves northern Portugal. California grows a little, in Lodi above all, mostly for fortified wine or blended with Touriga Nacional.",
+     "why": "A bottle labelled simply Touriga was said to be often this grape. The Lodi growers' own pages give the Lodi Touriga bottlings as Touriga Nacional alone or blends of the two, so the line now says Lodi grows it mostly for fortified wine or for blends with Touriga Nacional.",
+     "sources": [
+      "Lodi Winegrape Commission: the Portuguese grapes of a Lodi vineyard (read through search)",
+      "Lodi Winegrape Commission: Iberian grapes in Lodi (read through search)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.0.why",
+     "was": "juicy fruit and a supple grip suit the char",
+     "now": "juicy black plum and a supple grip suit the char",
+     "why": "Juicy fruit named nothing; juicy black plum does.",
+     "sources": [
+      "The Touriga Franca fragment's own glass"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.3.why",
+     "was": "rose petal and dark fruit beside rich, salty duck",
+     "now": "rose petal and black cherry beside rich, salty duck",
+     "why": "Dark fruit is a family word in disguise; black cherry, in the glass, takes its place.",
+     "sources": [
+      "The Touriga Franca fragment's own glass"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels.2.means",
+     "was": "Fortified red from the Douro; Touriga Franca is one of its five favoured grapes.",
+     "now": "Fortified wine of the Douro, most of it red; Touriga Franca is one of its five favoured grapes.",
+     "why": "Port was called a fortified red; white and rose Port exist, so it is now a fortified wine of the Douro, most of it red.",
+     "sources": [
+      "The Codex's Douro record (js/regions/portugal.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.exp",
+     "was": "Touriga Nacional brings depth and firm tannin, Touriga Franca juicy fruit and a rose petal perfume, so each fills out the other. Douro law allows a varietal red, so the law is the nearest wrong answer.",
+     "now": "Touriga Nacional brings depth and firm tannin, Touriga Franca juicy blackberry and a rose petal perfume, so each fills out the other. Douro law allows a varietal red, so the law is the nearest wrong answer.",
+     "why": "Juicy fruit named nothing; juicy blackberry does.",
+     "sources": [
+      "The Touriga Franca fragment's own glass"
+     ]
+    }
+   ],
+   "open": [
+    "The Douro record's most planted grape and the question r-rlbnb9nk built on it are volatile rankings that will join this grape's drill; the author flagged them and they are the integrator's to weigh.",
+    "The year of the renaming from Touriga Francesa stays out for want of a second source."
+   ]
+  },
+  "agiorgitiko": {
+   "verdict": "Sound after six fixes. Nemea's rules, the three bands, the ageing terms and the Hercules story stand; the plateau was given rose and light reds where the Codex's record says growers now make structured Nemea there, abroad rested on trial vineyards one source did not name, and the sale echoed Meunier's and Glera's.",
+   "tested": [
+    "say against the Codex's Nemea record (ah-yor-YEE-tee-ko): the same.",
+    "Nemea Agiorgitiko alone and red only, dry and rare sweet, the three bands and their convention, Koutsi and Asprokambos, Reserve and Grande Reserve with four years at least for the latter, rose and blends as PGI Peloponnese or Corinth, the old sweet red behind the name blood of Hercules, lamb, moussaka and tomato dishes at 15 to 17 degrees: the Codex's Nemea record, whose law, places, traps and wines every field was read against.",
+    "Abroad: one newspaper piece and search results that name a few growers abroad, through pages that name living people and so are not cited.",
+    "The glass as a blind taster: black plum, black cherry, sour cherry and sweet spice against the Nemea record's plum, sour cherry and sweet spice; cinnamon and clove are the author's naming of that spice.",
+    "The ladder against the Nemea record's three bands.",
+    "Service against the medium reds row and the Nemea record's service line.",
+    "The four lines counted and said aloud; the sale against every other sale.",
+    "Compare tells from both sides: Xinomavro's tell toward Agiorgitiko agrees; Merlot carries neither sour cherry nor cinnamon; Sangiovese carries no black plum or cinnamon.",
+    "Cards and questions: one key each; the sweet wine question's key matches the Nemea record's sun dried or overripe grapes, naturally sweet or fortified."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.sale",
+     "was": "Agiorgitiko is soft and generous from the first sip, all black plum and black cherry with a touch of cinnamon and no hard edges. With the lamb or the moussaka, a young Nemea is the easy way into Greek wine.",
+     "now": "Agiorgitiko carries the colour of a big red with none of the hard edges: black plum, black cherry and a touch of cinnamon on a soft, velvety tannin. Pour it with the lamb or the moussaka, for a table curious about Greek wine.",
+     "why": "The hook, soft and generous from the first sip, echoed Meunier's easy to love on the first sip, and the pour, the easy way into Greek wine, echoed Glera's easy way to begin. The sale now hooks on deep colour without hard edges and pours for a table curious about Greek wine.",
+     "sources": [
+      "The Meunier and Glera fragments",
+      "The Codex's Nemea record (js/regions/greece.json)"
+     ]
+    },
+    {
+     "round": "first and second",
+     "field": "worlds.home.home",
+     "was": "Nemea, in the north east Peloponnese, where a wine labelled Nemea is Agiorgitiko alone and altitude decides the style: plush from the red clay of the valley floor, firmer and fresher from hillside villages such as Koutsi, rosé and light reds from the high plateau.",
+     "now": "Nemea, in the north east Peloponnese, where a wine labelled Nemea is Agiorgitiko alone and altitude decides the style: plush from the red clay of the valley floor, firmer and fresher from hillside villages such as Koutsi, bright, late picked reds and much of the rosé from the high plateau.",
+     "why": "The plateau was given rose and light reds, which the Codex's Nemea record calls its past: growers now make structured Nemea there, with bright acid and late harvests, and Asprokambos is named on labels for fresh, structured wine. The second round put bright, late picked reds in place of the freshest, a superlative a reader could take for praise.",
+     "sources": [
+      "The Codex's Nemea record (js/regions/greece.json)"
+     ]
+    },
+    {
+     "round": "first and second",
+     "field": "worlds.home.abroad",
+     "was": "Outside Greece it is rare, planted only in a few trial vineyards. At home it also makes rosé and blends with Cabernet Sauvignon, sold as regional wine of the Peloponnese.",
+     "now": "Outside Greece it is rare, planted by only a handful of growers. At home it also makes rosé and blends with Cabernet Sauvignon, sold as regional wine of the Peloponnese.",
+     "why": "Planted only in a few trial vineyards stood on one newspaper piece that did not name this grape in each place, and other pages name commercial plantings abroad by producers. Rare, planted by only a handful of growers, holds both.",
+     "sources": [
+      "Neos Kosmos: growing Greek grapes in Australia",
+      "The Oxford Companion to Wine"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "food.with.1.why",
+     "was": "generous fruit meets the spice and the béchamel",
+     "now": "ripe black plum meets the cinnamon and the béchamel",
+     "why": "Generous fruit named nothing; ripe black plum does, and the cinnamon of a moussaka is the spice the reason meant.",
+     "sources": [
+      "The Agiorgitiko fragment's own glass"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.1.a",
+     "was": "Not this one. Agiorgitiko is deep in colour but soft in tannin, with plum and cherry fruit, so a young Nemea drinks easily, even before the food arrives.",
+     "now": "Not this one. Agiorgitiko is deep in colour but soft in tannin, with black plum and black cherry, so a young Nemea drinks easily, even before the food arrives.",
+     "why": "Plum and cherry fruit leaned on the word fruit; black plum and black cherry, the lead's notes, stand alone.",
+     "sources": [
+      "The Agiorgitiko fragment's own glass"
+     ]
+    },
+    {
+     "round": "first and second",
+     "field": "cards.1.back",
+     "was": "The warm valley floor on red clay gives plush wines and the old sweet reds; the hillside villages give firmer, fresher wines; the high plateau gives rosé and light reds.",
+     "now": "The warm valley floor on red clay gives plush wines and the old sweet reds; the hillside villages give firmer, fresher wines; the cool high plateau gives bright, late picked reds and much of the rosé.",
+     "why": "The same change as the home line: the plateau gives bright, late picked reds and much of the rose, as the Codex's Nemea record has it.",
+     "sources": [
+      "The Codex's Nemea record (js/regions/greece.json)"
+     ]
+    }
+   ],
+   "open": [
+    "The derivation of Saint George's grape, from a chapel or an old name of Nemea town, stays out.",
+    "Provence's admission of Agiorgitiko in 2021 stands on one source and stays out."
+   ]
+  }
+ },
+ "codexRecords": [
+  "The Codex's Douro record calls Touriga Franca the most planted grape of the Douro, its Navarra record Tempranillo the most planted red there, and its Nemea record Agiorgitiko Greece's most planted red and Nemea the largest red appellation: shares of plantings the house rules keep out of new writing.",
+  "The Codex's Regionale trap for Touriga Nacional calls it Portugal's top red, a ranking.",
+  "GRAPES gives Tempranillo's tannin medium plus to high where the grid reads medium to medium plus; both are read as a range, not an error."
+ ],
+ "unsettled": [
+  "Whether any source address still answers: none was opened from this session.",
+  "Tempranillo abroad, juicier with softer tannin: a typical style hedged with tend to, not a sourced tasting contrast.",
+  "The climate ladders of Graciano and Touriga Franca: honest inferences from the Codex's sites and one study, not sourced tasting contrasts.",
+  "Touriga Franca in California now stands on Lodi growers' pages read through search; neither is among the fragment's four sources, which the cap holds at four."
+ ],
+ "settled": [
+  "Rioja Reserva ages 36 months at least, 12 in barrel and 6 in bottle; Ribera's barrel minimums match Rioja's.",
+  "Graciano is late ripening and wants warm sites in Rioja; it is Tinta Miuda in Portugal, Minustellu in Corsica and Cagnulari in Sardinia.",
+  "Bierzo's 2017 ladder sets Vino de Villa above the plain Bierzo label; Chantada and the Sil's north facing terraces are Ribeira Sacra's cooler ground, Amandi its ripe one.",
+  "Vinhao is Sousao, a Port grape; Castelao is not one.",
+  "Lodi's Touriga bottlings are Touriga Nacional alone or blends of the two; Touriga Franca grows there in a Port style block.",
+  "Nemea's high plateau, once for rose and light red, now gives structured, late picked reds as well."
+ ]
+}
