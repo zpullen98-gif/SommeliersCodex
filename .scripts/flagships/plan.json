@@ -1,0 +1,366 @@
+{
+ "about": "The roster of the Flagships tab of the Wine Atlas (codex58), wave one: 43 classic regions in 51 groups of five producers, each with the one flagship wine a sommelier is expected to know. A group is keyed by key, titled as the page heads it, tied to its region record (region, a slug of REGIONS.regions) and its country (country, the region's sheet key in REGIONS.countries), and written by its chunk. A pick is keyed by key (unique in the plan, the seed of the record's frozen id), names the producer as the house writes it, its WINE_PRODUCERS id where the library holds the house (producerId, empty when it does not), the flagship wine (the record's wine.name holds these words, and may add the Prädikat or the style the label prints), why a sommelier is expected to know it, and, where the spec agent was unsure, a note of what the author must confirm. An author may propose a swap only with a reason and the checker's agreement: it is recorded in the group's swaps (from, to, why, agreed) and the pick replaced in the same commit. schema.cjs holds every rule; build-flagships.cjs --plan proves this file against the app.",
+ "edition": "2026-11-11",
+ "wave": 1,
+ "prefix": "fl-",
+ "chunks": ["pilots","f1","f2","f3","f4","f5","f6","f7","f8","f9","f10","f11","f12","f13","f14","f15","f16","f17"],
+ "groups": [
+  {"key":"champagne","title":"Champagne","region":"champagne","country":"france","chunk":"pilots","swaps":[],"picks":[
+   {"key":"krug","producer":"Krug","producerId":"p-krug","wine":"Grande Cuvée","why":"Reims house of 1843: a multi vintage blend fermented in small old casks and built on a deep library of reserve wines, the house's own reason for being."},
+   {"key":"moet-chandon","producer":"Moët & Chandon","producerId":"p-moet-chandon","wine":"Dom Pérignon","why":"Épernay house of 1743; its vintage prestige cuvée, named for the Benedictine cellarer of Hautvillers, is the Champagne name a guest knows by heart.","note":"Teach Dom Pérignon as Moët & Chandon's prestige cuvée, made at Épernay; say how it is presented today only in words that do not age."},
+   {"key":"louis-roederer","producer":"Louis Roederer","producerId":"p-louis-roederer","wine":"Cristal","why":"Reims house of 1776; Cristal was made for Tsar Alexander II in 1876 and comes in clear glass with a flat bottom."},
+   {"key":"bollinger","producer":"Bollinger","producerId":"p-bollinger","wine":"La Grande Année","why":"Aÿ family house of 1829, Pinot Noir led and partly fermented in old oak; La Grande Année is its vintage wine, aged under cork before disgorging."},
+   {"key":"jacques-selosse","producer":"Jacques Selosse","producerId":"p-jacques-selosse","wine":"Substance","why":"Avize grower who fermented in barrel and kept a perpetual reserve; Substance, a Blanc de Blancs drawn from that reserve, made the grower movement's name. The one grower of the five."}
+  ]},
+  {"key":"burgundy-chablis","title":"Chablis","region":"burgundy","country":"france","chunk":"f1","swaps":[],"picks":[
+   {"key":"raveneau","producer":"Domaine Raveneau","producerId":"p-dom-raveneau","wine":"Chablis Grand Cru Les Clos","why":"Chablis family domaine of 1948 whose Grand Cru and Premier Cru wines, raised in old barrels, are cellared for decades."},
+   {"key":"vincent-dauvissat","producer":"Domaine Vincent Dauvissat","producerId":"p-dom-vincent-dauvissat","wine":"Chablis Grand Cru Les Preuses","why":"Raveneau's kin in method: old barrels and long lives; Les Preuses is its Grand Cru on the slope's upper reaches.","note":"Confirm Les Preuses or Les Clos as the house's flagship and say why."},
+   {"key":"william-fevre","producer":"Domaine William Fèvre","producerId":"p-dom-william-fevre","wine":"Chablis Grand Cru Bougros Côte Bouguerots","why":"A large holder of Grand Cru vines since 1959; Côte Bouguerots is the steep slope within Bougros."},
+   {"key":"louis-michel","producer":"Domaine Louis Michel","producerId":"p-dom-louis-michel","wine":"Chablis Premier Cru Montée de Tonnerre","why":"The steel tank school of Chablis, with no oak since the 1960s; Montée de Tonnerre is its signature Premier Cru."},
+   {"key":"la-chablisienne","producer":"La Chablisienne","producerId":"p-la-chablisienne","wine":"Chablis Grand Cru Château Grenouilles","why":"The cooperative of 1923; Château Grenouilles is its Grand Cru from Grenouilles, the smallest of the seven climats."}
+  ]},
+  {"key":"burgundy-nuits","title":"The Côte de Nuits","region":"burgundy","country":"france","chunk":"f1","swaps":[],"picks":[
+   {"key":"romanee-conti","producer":"Domaine de la Romanée-Conti","producerId":"p-dom-romanee-conti","wine":"Romanée-Conti","why":"Vosne-Romanée domaine named in 1869 for its monopole, the vineyard the Prince de Conti bought in 1760."},
+   {"key":"armand-rousseau","producer":"Domaine Armand Rousseau","producerId":"p-dom-armand-rousseau","wine":"Chambertin","why":"Gevrey-Chambertin domaine built by Armand Rousseau from the early twentieth century, among the first in Burgundy to bottle its own wine."},
+   {"key":"comte-georges-de-vogue","producer":"Comte Georges de Vogüé","producerId":"p-comte-georges-de-vogue","wine":"Musigny Grand Cru Vieilles Vignes","why":"Chambolle-Musigny domaine held by one family by descent since the fifteenth century; its Musigny comes from the larger part of the Grand Cru."},
+   {"key":"georges-roumier","producer":"Domaine Georges Roumier","producerId":"p-dom-georges-roumier","wine":"Bonnes-Mares","why":"Chambolle-Musigny domaine of 1924; Bonnes-Mares from both the red and the white soils of the Chambolle side."},
+   {"key":"clos-de-tart","producer":"Domaine du Clos de Tart","producerId":"p-dom-clos-de-tart","wine":"Clos de Tart","why":"Morey-Saint-Denis Grand Cru monopole walled by Cistercian nuns, held by few owners since 1141."}
+  ]},
+  {"key":"burgundy-beaune","title":"The Côte de Beaune","region":"burgundy","country":"france","chunk":"f1","swaps":[],"picks":[
+   {"key":"leflaive","producer":"Domaine Leflaive","producerId":"p-dom-leflaive","wine":"Chevalier-Montrachet","why":"Puligny-Montrachet family domaine and a biodynamic pioneer; Chevalier-Montrachet lies on the stony slope above Le Montrachet.","note":"Confirm Chevalier-Montrachet against Les Pucelles as the wine the house leads with."},
+   {"key":"comtes-lafon","producer":"Domaine des Comtes Lafon","producerId":"p-dom-comtes-lafon","wine":"Meursault Premier Cru Les Perrières","why":"Meursault domaine founded by Jules Lafon in the 1890s; Les Perrières is the village's stoniest Premier Cru."},
+   {"key":"coche-dury","producer":"Coche-Dury","producerId":"p-coche-dury","wine":"Corton-Charlemagne","why":"Meursault family domaine whose Corton-Charlemagne, made in very small quantity, is the rarest bottle a list may hold from it."},
+   {"key":"marquis-dangerville","producer":"Domaine Marquis d'Angerville","producerId":"p-dom-marquis-dangerville","wine":"Volnay Premier Cru Clos des Ducs","why":"Volnay domaine whose Marquis fought fraud and championed estate bottling in the 1920s and 1930s; Clos des Ducs is its monopole."},
+   {"key":"bouchard","producer":"Bouchard Père et Fils","producerId":"p-maison-bouchard","wine":"Beaune Premier Cru Grèves Vigne de l'Enfant Jésus","why":"Beaune house of 1731; its monopole parcel in Grèves takes its name from the Carmelite nuns' devotion to the Infant Jesus."}
+  ]},
+  {"key":"bordeaux-left","title":"The Left Bank, the Médoc and Graves","region":"bordeaux","country":"france","chunk":"pilots","swaps":[],"picks":[
+   {"key":"lafite-rothschild","producer":"Château Lafite Rothschild","producerId":"p-ch-lafite-rothschild","wine":"Château Lafite Rothschild","why":"Pauillac, first of the first growths in the 1855 list; bought by Baron James de Rothschild in 1868."},
+   {"key":"latour","producer":"Château Latour","producerId":"p-ch-latour","wine":"Château Latour","why":"Pauillac first growth by the Gironde, named for a fortified tower of the Hundred Years War; Les Forts de Latour is the second wine."},
+   {"key":"margaux","producer":"Château Margaux","producerId":"p-ch-margaux","wine":"Château Margaux","why":"The first growth of the Margaux appellation, with a neoclassical château finished in 1815 and a white wine of its own, Pavillon Blanc."},
+   {"key":"haut-brion","producer":"Château Haut-Brion","producerId":"p-ch-haut-brion","wine":"Château Haut-Brion","why":"Pessac-Léognan, the one Graves estate among the 1855 first growths, named in London by Samuel Pepys in 1663."},
+   {"key":"mouton-rothschild","producer":"Château Mouton Rothschild","producerId":"p-ch-mouton-rothschild","wine":"Château Mouton Rothschild","why":"Pauillac, promoted to first growth in 1973, the one promotion in the 1855 list; an artist paints the label each vintage."}
+  ]},
+  {"key":"bordeaux-right","title":"The Right Bank, Saint-Émilion and Pomerol","region":"bordeaux","country":"france","chunk":"f2","swaps":[],"picks":[
+   {"key":"petrus","producer":"Pétrus","producerId":"p-petrus","wine":"Pétrus","why":"Pomerol Merlot on a button of blue clay, made famous after the Second World War by Madame Loubat and the Moueix family."},
+   {"key":"le-pin","producer":"Le Pin","producerId":"w-le-pin","wine":"Le Pin","why":"Pomerol's tiny estate of 1979, Merlot alone from a few rows, the first wine called a vin de garage."},
+   {"key":"cheval-blanc","producer":"Château Cheval Blanc","producerId":"p-ch-cheval-blanc","wine":"Château Cheval Blanc","why":"Saint-Émilion estate on the Pomerol border, Cabernet Franc led on gravel and clay; the 1947 is a vintage of history."},
+   {"key":"ausone","producer":"Château Ausone","producerId":"p-ch-ausone","wine":"Château Ausone","why":"Saint-Émilion côte estate on limestone named for the Roman poet Ausonius, Cabernet Franc led."},
+   {"key":"figeac","producer":"Château Figeac","producerId":"p-ch-figeac","wine":"Château Figeac","why":"Saint-Émilion estate on gravel with an unusual share of Cabernet Sauvignon; promoted to Premier Grand Cru Classé A in 2022."}
+  ]},
+  {"key":"bordeaux-sauternes","title":"Sauternes and Barsac","region":"bordeaux","country":"france","chunk":"f2","swaps":[],"picks":[
+   {"key":"yquem","producer":"Château d'Yquem","producerId":"p-ch-dyquem","wine":"Château d'Yquem","why":"The one Premier Cru Supérieur of 1855, held by the Lur Saluces family from 1785 to 1999."},
+   {"key":"climens","producer":"Château Climens","producerId":"p-ch-climens","wine":"Château Climens","why":"Barsac Premier Cru on red sand over limestone, Sémillon alone."},
+   {"key":"coutet","producer":"Château Coutet","producerId":"p-ch-coutet","wine":"Château Coutet","why":"Barsac Premier Cru around a thirteenth century tower; its Cuvée Madame is made only in rare years."},
+   {"key":"suduiraut","producer":"Château Suduiraut","producerId":"p-ch-suduiraut","wine":"Château Suduiraut","why":"Preignac Premier Cru beside Yquem, rich and Sémillon led, its gardens laid out in the seventeenth century manner."},
+   {"key":"gilette","producer":"Château Gilette","producerId":"p-ch-gilette","wine":"Château Gilette Crème de Tête","why":"Preignac estate that ages its Sauternes for many years in concrete vats before release, outside the 1855 list."}
+  ]},
+  {"key":"rhone-north","title":"The Northern Rhône","region":"rhone","country":"france","chunk":"f3","swaps":[],"picks":[
+   {"key":"guigal","producer":"E. Guigal","producerId":"p-guigal","wine":"Côte-Rôtie La Mouline","why":"Ampuis house of 1946; La Mouline, first made in 1966, opened the single vineyard Côte-Rôtie of the three La La wines."},
+   {"key":"jaboulet","producer":"Paul Jaboulet Aîné","producerId":"p-jaboulet","wine":"Hermitage La Chapelle","why":"Tain house of 1834, its Hermitage named for the chapel on the hill; the 1961 is a vintage of history."},
+   {"key":"chave","producer":"Domaine Jean-Louis Chave","producerId":"p-chave","wine":"Hermitage","why":"Mauves family in wine since 1481 by its own account; its Hermitage rouge blends parcels across the hill."},
+   {"key":"clape","producer":"Domaine Auguste Clape","producerId":"p-clape","wine":"Cornas","why":"The Cornas family domaine that kept old vine, whole bunch Syrah alive in the appellation."},
+   {"key":"vernay","producer":"Domaine Georges Vernay","producerId":"p-vernay","wine":"Condrieu Coteau de Vernon","why":"The family credited with keeping Condrieu alive when it was nearly abandoned; Coteau de Vernon is its oldest Viognier."}
+  ]},
+  {"key":"rhone-south","title":"The Southern Rhône","region":"rhone","country":"france","chunk":"f3","swaps":[],"picks":[
+   {"key":"beaucastel","producer":"Château de Beaucastel","producerId":"p-beaucastel","wine":"Châteauneuf-du-Pape","why":"Courthézon estate of the Perrin family, all thirteen grapes planted, with an unusual share of Mourvèdre."},
+   {"key":"rayas","producer":"Château Rayas","producerId":"p-rayas","wine":"Châteauneuf-du-Pape","why":"Sandy, north facing estate of old Grenache, a Châteauneuf of perfume rather than power."},
+   {"key":"vieux-telegraphe","producer":"Domaine du Vieux Télégraphe","producerId":"p-vieux-telegraphe","wine":"Châteauneuf-du-Pape La Crau","why":"Named for the Chappe telegraph tower on the plateau of La Crau, its rolled stones; the Brunier family since 1891."},
+   {"key":"clos-des-papes","producer":"Clos des Papes","producerId":"p-clos-des-papes","wine":"Châteauneuf-du-Pape","why":"Avril family estate whose single red blends parcels from across the appellation."},
+   {"key":"saint-cosme","producer":"Château de Saint Cosme","producerId":"p-saint-cosme","wine":"Gigondas","why":"Gigondas estate with Roman era vats cut in the rock: the appellation beside Châteauneuf, under the Dentelles.","note":"Confirm the bottling: the estate's Gigondas or a named lieu-dit."}
+  ]},
+  {"key":"loire","title":"The Loire","region":"loire","country":"france","chunk":"f2","swaps":[],"picks":[
+   {"key":"huet","producer":"Domaine Huet","producerId":"p-huet","wine":"Vouvray Le Haut-Lieu","why":"Vouvray estate of 1928 whose three vineyards are made dry, medium dry or sweet as the year allows.","note":"Confirm Le Haut-Lieu, Le Mont or Clos du Bourg as the house's flagship."},
+   {"key":"coulee-de-serrant","producer":"Coulée de Serrant","producerId":"p-nicolas-joly","wine":"Coulée de Serrant","why":"Savennières Chenin monopole planted by Cistercian monks in 1130, a biodynamic pioneer and an appellation of its own."},
+   {"key":"dagueneau","producer":"Didier Dagueneau","producerId":"p-didier-dagueneau","wine":"Pouilly-Fumé Silex","why":"Pouilly-Fumé domaine whose founder raised the appellation's ambition; Silex comes from flint soils."},
+   {"key":"clos-rougeard","producer":"Clos Rougeard","producerId":"p-clos-rougeard","wine":"Saumur-Champigny Le Bourg","why":"Chacé domaine of the Foucault family, Cabernet Franc in old barrels; Le Bourg is its old vine parcel."},
+   {"key":"alphonse-mellot","producer":"Alphonse Mellot","producerId":"p-alphonse-mellot","wine":"Sancerre La Moussière","why":"Sancerre family in wine since 1513 by its own account; La Moussière is its domaine Sauvignon Blanc.","note":"Confirm La Moussière or Cuvée Edmond as the flagship."}
+  ]},
+  {"key":"alsace","title":"Alsace","region":"alsace","country":"france","chunk":"f4","swaps":[],"picks":[
+   {"key":"trimbach","producer":"Trimbach","producerId":"p-trimbach","wine":"Riesling Clos Sainte Hune","why":"Ribeauvillé house of 1626; Clos Sainte Hune, a family plot within Grand Cru Rosacker, carries no Grand Cru name on its label."},
+   {"key":"hugel","producer":"Hugel","producerId":"p-hugel","wine":"Gewurztraminer Vendange Tardive","why":"Riquewihr house of 1639 whose family drafted the rules for Vendange Tardive and Sélection de Grains Nobles."},
+   {"key":"zind-humbrecht","producer":"Domaine Zind-Humbrecht","producerId":"p-zind-humbrecht","wine":"Riesling Rangen de Thann Clos Saint Urbain","why":"Turckheim domaine of 1959; Clos Saint Urbain lies on the volcanic slope of the Rangen, Alsace's southernmost Grand Cru."},
+   {"key":"weinbach","producer":"Domaine Weinbach","producerId":"p-weinbach","wine":"Riesling Grand Cru Schlossberg Cuvée Sainte Catherine","why":"Kaysersberg domaine around the walled Clos des Capucins, bought by the Faller family in 1898."},
+   {"key":"marcel-deiss","producer":"Domaine Marcel Deiss","producerId":"p-marcel-deiss","wine":"Altenberg de Bergheim","why":"Bergheim domaine that bottles field blends of co-planted grapes under the Grand Cru's name alone."}
+  ]},
+  {"key":"beaujolais","title":"Beaujolais","region":"beaujolais","country":"france","chunk":"f3","swaps":[],"picks":[
+   {"key":"lapierre","producer":"Marcel Lapierre","producerId":"p-marcel-lapierre","wine":"Morgon","why":"Villié-Morgon domaine whose founder led the natural wine Gang of Four, with little or no sulphur."},
+   {"key":"foillard","producer":"Jean Foillard","producerId":"p-jean-foillard","wine":"Morgon Côte du Py","why":"Villié-Morgon grower of the Gang of Four; Côte du Py is Morgon's hill of decomposed blue schist."},
+   {"key":"thivin","producer":"Château Thivin","producerId":"p-chateau-thivin","wine":"Côte de Brouilly","why":"Odenas estate of 1877 on the volcanic slopes of Mont Brouilly."},
+   {"key":"chateau-des-jacques","producer":"Château des Jacques","producerId":"p-chateau-des-jacques","wine":"Moulin-à-Vent Clos de Rochegrès","why":"Romanèche-Thorins estate that ages Moulin-à-Vent in barrel, climat by climat, as Burgundy does."},
+   {"key":"duboeuf","producer":"Georges Duboeuf","producerId":"p-georges-duboeuf","wine":"Beaujolais Nouveau","why":"The négociant of Romanèche-Thorins who made the third Thursday of November a release the world waits for."}
+  ]},
+  {"key":"piedmont","title":"Piedmont","region":"piedmont","country":"italy","chunk":"f5","swaps":[],"picks":[
+   {"key":"gaja","producer":"Gaja","producerId":"p-gaja","wine":"Barbaresco","why":"Barbaresco house of 1859 that carried the appellation abroad; its Barbaresco blends parcels around the village."},
+   {"key":"giacomo-conterno","producer":"Giacomo Conterno","producerId":"p-giacomo-conterno","wine":"Barolo Riserva Monfortino","why":"Monforte d'Alba house of 1908; Monfortino is a long macerated Riserva made only in strong years and aged for years in large casks."},
+   {"key":"bartolo-mascarello","producer":"Bartolo Mascarello","producerId":"p-bartolo-mascarello","wine":"Barolo","why":"Barolo village house of 1919 that blends several crus into one traditional Barolo, as the old houses did."},
+   {"key":"bruno-giacosa","producer":"Bruno Giacosa","producerId":"p-bruno-giacosa","wine":"Barolo Le Rocche del Falletto Riserva","why":"Neive house whose Riserve wear a red label; Falletto in Serralunga is its own vineyard."},
+   {"key":"produttori","producer":"Produttori del Barbaresco","producerId":"p-produttori-del-barbaresco","wine":"Barbaresco","why":"The cooperative of 1958, revived from a forerunner of 1894, whose village Barbaresco and single vineyard Riserve teach the appellation."}
+  ]},
+  {"key":"tuscany-chianti","title":"Chianti Classico","region":"tuscany","country":"italy","chunk":"f6","swaps":[],"picks":[
+   {"key":"antinori","producer":"Marchesi Antinori","producerId":"p-marchesi-antinori","wine":"Tignanello","why":"Florentine family in wine since 1385; Tignanello, first released from the 1971 vintage, led the Super Tuscan movement."},
+   {"key":"ricasoli","producer":"Barone Ricasoli","producerId":"p-barone-ricasoli","wine":"Castello di Brolio","why":"Brolio castle family; Baron Bettino Ricasoli set down a recipe for Chianti in 1872."},
+   {"key":"fontodi","producer":"Fontodi","producerId":"p-fontodi","wine":"Flaccianello della Pieve","why":"Panzano estate in the Conca d'Oro; Flaccianello is Sangiovese alone from the estate."},
+   {"key":"montevertine","producer":"Montevertine","producerId":"p-montevertine","wine":"Le Pergole Torte","why":"Radda estate of 1967 whose Sangiovese alone stood outside the Chianti rules from 1977."},
+   {"key":"isole-e-olena","producer":"Isole e Olena","producerId":"p-isole-e-olena","wine":"Cepparello","why":"Barberino Tavarnelle estate whose Sangiovese alone, Cepparello, first made in 1980, stood outside the Chianti rules."}
+  ]},
+  {"key":"tuscany-montalcino","title":"Montalcino","region":"tuscany","country":"italy","chunk":"f6","swaps":[],"picks":[
+   {"key":"biondi-santi","producer":"Biondi-Santi","producerId":"p-biondi-santi","wine":"Brunello di Montalcino Riserva","why":"Tenuta Greppo, where the Biondi Santi family selected Sangiovese and bottled the first Brunello in the nineteenth century."},
+   {"key":"il-poggione","producer":"Tenuta Il Poggione","producerId":"p-il-poggione","wine":"Brunello di Montalcino","why":"Sant'Angelo in Colle estate of the nineteenth century, among the early Brunello houses."},
+   {"key":"banfi","producer":"Castello Banfi","producerId":"p-castello-banfi","wine":"Poggio all'Oro Brunello di Montalcino Riserva","why":"Estate of 1978 founded by an American importing family that took Brunello to a wide market abroad."},
+   {"key":"casanova-di-neri","producer":"Casanova di Neri","producerId":"p-casanova-di-neri","wine":"Brunello di Montalcino Tenuta Nuova","why":"Estate of 1971 whose modern Brunello from the Tenuta Nuova vineyard drew new attention to the south east of the hill."},
+   {"key":"soldera","producer":"Case Basse di Gianfranco Soldera","producerId":"p-soldera","wine":"Case Basse Sangiovese","why":"Estate of 1972 whose founder left the Brunello denomination after vandals emptied his casks in 2012.","note":"Confirm the label name before and after 2012 and the founder's dates."}
+  ]},
+  {"key":"tuscany-bolgheri","title":"Bolgheri and the coast","region":"tuscany","country":"italy","chunk":"f6","swaps":[],"picks":[
+   {"key":"san-guido","producer":"Tenuta San Guido","producerId":"p-tenuta-san-guido","wine":"Sassicaia","why":"The Incisa della Rocchetta family's Cabernet, first sold from the 1968 vintage; Bolgheri Sassicaia became a DOC of its own in 2013."},
+   {"key":"ornellaia","producer":"Tenuta dell'Ornellaia","producerId":"p-ornellaia","wine":"Ornellaia","why":"Bolgheri estate of 1981 founded by a younger son of the Antinori family; its blend is led by Cabernet Sauvignon and Merlot."},
+   {"key":"grattamacco","producer":"Grattamacco","producerId":"p-grattamacco","wine":"Bolgheri Superiore Grattamacco","why":"The second estate to plant for fine wine in Bolgheri, in 1977, high on the hills of Castagneto Carducci."},
+   {"key":"le-macchiole","producer":"Le Macchiole","producerId":"p-le-macchiole","wine":"Paleo Rosso","why":"Bolgheri estate of 1983 whose Paleo Rosso became Cabernet Franc alone."},
+   {"key":"tua-rita","producer":"Tua Rita","producerId":"","wine":"Redigaffi","why":"Suvereto estate of 1984 whose Merlot, Redigaffi, carried the coast's name south of Bolgheri.","note":"Not in WINE_PRODUCERS: the founding year and the first vintage need two sources."}
+  ]},
+  {"key":"veneto","title":"The Veneto","region":"veneto","country":"italy","chunk":"f5","swaps":[],"picks":[
+   {"key":"quintarelli","producer":"Giuseppe Quintarelli","producerId":"p-quintarelli","wine":"Amarone della Valpolicella Classico","why":"Negrar house whose founder set the slow, long aged model for Amarone, released late."},
+   {"key":"bertani","producer":"Bertani","producerId":"p-bertani","wine":"Amarone della Valpolicella Classico","why":"House of 1857 whose Amarone is aged for years in large casks and released late, the classic dry style."},
+   {"key":"masi","producer":"Masi","producerId":"p-masi","wine":"Campofiorin","why":"Valpolicella house whose Campofiorin, from the 1964 vintage, gave the ripasso style its model."},
+   {"key":"pieropan","producer":"Pieropan","producerId":"p-pieropan","wine":"Soave Classico Calvarino","why":"Soave house of 1880, the first to bottle a single vineyard Soave, Calvarino, in 1971."},
+   {"key":"bisol","producer":"Bisol","producerId":"p-bisol","wine":"Valdobbiadene Superiore di Cartizze","why":"Valdobbiadene family whose Cartizze comes from the steep hill at the head of the Prosecco Superiore ladder."}
+  ]},
+  {"key":"friuli","title":"Friuli","region":"friuli","country":"italy","chunk":"f5","swaps":[],"picks":[
+   {"key":"jermann","producer":"Jermann","producerId":"p-jermann","wine":"Vintage Tunina","why":"Farra d'Isonzo house whose Vintage Tunina, a white blend first made in 1975, named a Friulian style."},
+   {"key":"livio-felluga","producer":"Livio Felluga","producerId":"p-livio-felluga","wine":"Terre Alte","why":"Rosazzo house whose founder printed old maps on his labels; Terre Alte blends Friulano, Pinot Bianco and Sauvignon."},
+   {"key":"schiopetto","producer":"Schiopetto","producerId":"p-schiopetto","wine":"Collio Friulano","why":"Capriva del Friuli house of 1965 that brought steel tanks and clean, aromatic whites to the Collio."},
+   {"key":"gravner","producer":"Gravner","producerId":"p-gravner","wine":"Ribolla Gialla","why":"Oslavia estate that turned to buried Georgian clay amphorae and long skin contact, the model of orange wine."},
+   {"key":"radikon","producer":"Radikon","producerId":"p-radikon","wine":"Oslavje","why":"Oslavia neighbour of the orange wine revival, white grapes fermented on their skins in large old wood."}
+  ]},
+  {"key":"trentino-alto-adige","title":"Trentino and Alto Adige","region":"trentino-alto-adige","country":"italy","chunk":"f7","swaps":[],"picks":[
+   {"key":"ferrari","producer":"Ferrari","producerId":"p-ferrari","wine":"Giulio Ferrari Riserva del Fondatore","why":"Trento house of 1902 that brought the Champagne method to the Alps; the Riserva del Fondatore honours Giulio Ferrari."},
+   {"key":"foradori","producer":"Foradori","producerId":"p-foradori","wine":"Granato","why":"Mezzolombardo estate that rescued Teroldego by selection in the Campo Rotaliano; Granato is its long lived red."},
+   {"key":"terlano","producer":"Cantina Terlano","producerId":"p-cantina-terlano","wine":"Terlaner Pinot Bianco Riserva Vorberg","why":"Cooperative of 1893 known for whites that age for decades; Vorberg is its Pinot Bianco from porphyry slopes."},
+   {"key":"tramin","producer":"Cantina Tramin","producerId":"p-cantina-tramin","wine":"Gewürztraminer Nussbaumer","why":"Cooperative of 1898 in Tramin, the village said to have given the Traminer grape its name."},
+   {"key":"lageder","producer":"Alois Lageder","producerId":"p-alois-lageder","wine":"Löwengang Chardonnay","why":"Magrè family house of 1823 and a biodynamic leader; Löwengang is its barrel fermented Chardonnay."}
+  ]},
+  {"key":"campania","title":"Campania","region":"campania","country":"italy","chunk":"f7","swaps":[],"picks":[
+   {"key":"mastroberardino","producer":"Mastroberardino","producerId":"p-mastroberardino","wine":"Taurasi Radici Riserva","why":"Atripalda family that kept Aglianico, Fiano and Greco alive after the war; Radici is its Taurasi."},
+   {"key":"feudi","producer":"Feudi di San Gregorio","producerId":"p-feudi-di-san-gregorio","wine":"Fiano di Avellino Pietracalda","why":"Sorbo Serpico estate of 1986 that brought modern cellar work to Irpinia's whites and reds.","note":"Confirm Pietracalda against Serpico as the house's flagship."},
+   {"key":"montevetrano","producer":"Montevetrano","producerId":"p-montevetrano","wine":"Montevetrano","why":"San Cipriano Picentino estate whose blend of Cabernet, Merlot and Aglianico drew notice to Campania in the 1990s."},
+   {"key":"marisa-cuomo","producer":"Marisa Cuomo","producerId":"p-marisa-cuomo","wine":"Furore Bianco Fiorduva","why":"Amalfi Coast estate of 1980 on terraces over the sea; Fiorduva blends the local Fenile, Ginestra and Ripoli."},
+   {"key":"villa-matilde","producer":"Villa Matilde","producerId":"","wine":"Falerno del Massico Vigna Camarato","why":"Cellole estate that revived the ancient Falernian vineyard; Vigna Camarato is its Aglianico led red.","note":"Not in WINE_PRODUCERS: the founding year and the revival need two sources."}
+  ]},
+  {"key":"sicily","title":"Sicily","region":"sicily","country":"italy","chunk":"f7","swaps":[],"picks":[
+   {"key":"tasca","producer":"Tasca d'Almerita","producerId":"p-tasca-d-almerita","wine":"Rosso del Conte","why":"Regaleali estate in the island's interior; Rosso del Conte, from Nero d'Avola, first made in 1970."},
+   {"key":"donnafugata","producer":"Donnafugata","producerId":"p-donnafugata","wine":"Ben Ryé","why":"Marsala family house of 1983; Ben Ryé is its Passito di Pantelleria from sun dried Zibibbo."},
+   {"key":"benanti","producer":"Benanti","producerId":"p-benanti","wine":"Etna Bianco Superiore Pietra Marina","why":"Viagrande house of 1988 that led Etna's revival; Pietra Marina is Carricante from Milo."},
+   {"key":"de-bartoli","producer":"Marco De Bartoli","producerId":"p-marco-de-bartoli","wine":"Vecchio Samperi","why":"Marsala estate whose founder made an unfortified, solera aged Grillo to recall Marsala before the English."},
+   {"key":"cos","producer":"COS","producerId":"p-cos","wine":"Cerasuolo di Vittoria Classico","why":"Vittoria estate of 1980 known for clay amphorae; Cerasuolo di Vittoria, Nero d'Avola with Frappato, is Sicily's one DOCG."}
+  ]},
+  {"key":"rioja","title":"Rioja","region":"rioja","country":"spain","chunk":"f8","swaps":[],"picks":[
+   {"key":"lopez-de-heredia","producer":"R. López de Heredia Viña Tondonia","producerId":"p-lopez-de-heredia","wine":"Viña Tondonia Reserva","why":"Haro house of 1877 that ages its wines for years in old American oak, white and red alike."},
+   {"key":"la-rioja-alta","producer":"La Rioja Alta S.A.","producerId":"p-la-rioja-alta","wine":"Gran Reserva 890","why":"Haro house of 1890; Gran Reserva 890 recalls the founding year."},
+   {"key":"murrieta","producer":"Marqués de Murrieta","producerId":"p-marques-de-murrieta","wine":"Castillo Ygay Gran Reserva Especial","why":"Logroño estate of 1852 at Ygay; Castillo Ygay is its Gran Reserva Especial, made only in chosen years."},
+   {"key":"cvne","producer":"CVNE","producerId":"p-cvne","wine":"Imperial Gran Reserva","why":"Haro house of 1879 in the Barrio de la Estación; Imperial is its Gran Reserva."},
+   {"key":"muga","producer":"Bodegas Muga","producerId":"p-muga","wine":"Prado Enea Gran Reserva","why":"Haro house of 1932 with its own coopers, still fermenting in oak vats."}
+  ]},
+  {"key":"ribera-del-duero","title":"Ribera del Duero","region":"ribera-del-duero","country":"spain","chunk":"f8","swaps":[],"picks":[
+   {"key":"vega-sicilia","producer":"Vega Sicilia","producerId":"p-vega-sicilia","wine":"Único","why":"Valbuena estate of 1864 whose Único is released after a decade or more in wood and bottle."},
+   {"key":"pingus","producer":"Dominio de Pingus","producerId":"p-dominio-de-pingus","wine":"Pingus","why":"La Horra estate of 1995 whose first vintage made Ribera a name abroad."},
+   {"key":"pesquera","producer":"Tinto Pesquera","producerId":"p-tinto-pesquera","wine":"Tinto Pesquera Reserva","why":"Pesquera de Duero house of 1972 that, beside Vega Sicilia, put Ribera on wine lists abroad."},
+   {"key":"protos","producer":"Protos","producerId":"","wine":"Protos Gran Reserva","why":"Peñafiel cooperative of 1927, the first winery named in Ribera, its name the Greek for first.","note":"Not in WINE_PRODUCERS: the founding year and the meaning need two sources."},
+   {"key":"aalto","producer":"Aalto","producerId":"","wine":"Aalto PS","why":"Estate of 1999 founded by a former Vega Sicilia winemaker; PS is the selection of old vines.","note":"Not in WINE_PRODUCERS: no founder named, the founding year in two sources."}
+  ]},
+  {"key":"priorat","title":"Priorat","region":"priorat","country":"spain","chunk":"f8","swaps":[],"picks":[
+   {"key":"alvaro-palacios","producer":"Álvaro Palacios","producerId":"p-alvaro-palacios","wine":"L'Ermita","why":"One of the pioneers of 1989; L'Ermita is old Garnacha on llicorella below a hermitage."},
+   {"key":"clos-mogador","producer":"Clos Mogador","producerId":"p-clos-mogador","wine":"Clos Mogador","why":"Gratallops estate among the five clos of 1989, the first Vi de Finca Qualificat in Spain."},
+   {"key":"clos-erasmus","producer":"Clos Erasmus","producerId":"p-clos-erasmus","wine":"Clos Erasmus","why":"Gratallops clos of 1989, tiny, Garnacha with Syrah and Cabernet."},
+   {"key":"mas-martinet","producer":"Mas Martinet","producerId":"","wine":"Clos Martinet","why":"One of the five pioneers of 1989; Clos Martinet blends Garnacha and Cariñena with French grapes.","note":"Not in WINE_PRODUCERS: the founding facts need two sources."},
+   {"key":"scala-dei","producer":"Cellers de Scala Dei","producerId":"","wine":"Cartoixa","why":"The Carthusian priory of the twelfth century where Priorat wine began; Cartoixa is its old vine red.","note":"Not in WINE_PRODUCERS: the priory's date and the cellar's history need two sources."}
+  ]},
+  {"key":"jerez","title":"Jerez","region":"jerez","country":"spain","chunk":"f9","swaps":[],"picks":[
+   {"key":"gonzalez-byass","producer":"González Byass","producerId":"p-gonzalez-byass","wine":"Tío Pepe","why":"Jerez house of 1835; Tío Pepe, named for the founder's uncle, is a Fino of Palomino from the albariza."},
+   {"key":"la-gitana","producer":"Bodegas Hidalgo La Gitana","producerId":"p-hidalgo-la-gitana","wine":"La Gitana Manzanilla","why":"Sanlúcar house of 1792 whose Manzanilla, named for a painting of a gypsy girl, matures under flor by the sea."},
+   {"key":"valdespino","producer":"Valdespino","producerId":"p-valdespino","wine":"Inocente Fino","why":"Jerez house whose Inocente is a single vineyard Fino from Macharnudo, fermented in cask and aged long under flor."},
+   {"key":"lustau","producer":"Lustau","producerId":"p-lustau","wine":"Pedro Ximénez San Emilio","why":"Jerez house of 1896 that bottled the almacenistas' soleras; San Emilio is its dark, raisined Pedro Ximénez."},
+   {"key":"harveys","producer":"Harveys","producerId":"","wine":"Harveys Bristol Cream","why":"Bristol merchant of 1796 whose Bristol Cream blend made cream Sherry a household name.","note":"Not in WINE_PRODUCERS: the founding year and the name's story need two sources."}
+  ]},
+  {"key":"rias-baixas","title":"Rías Baixas","region":"rias-baixas","country":"spain","chunk":"f9","swaps":[],"picks":[
+   {"key":"pazo-de-senorans","producer":"Pazo de Señorans","producerId":"p-pazo-de-senorans","wine":"Selección de Añada","why":"Meis estate of 1989 whose Selección de Añada spends years on its lees to show that Albariño can age."},
+   {"key":"fefinanes","producer":"Palacio de Fefiñanes","producerId":"p-fefinanes","wine":"Albariño de Fefiñanes","why":"Cambados palace cellar of 1904 with one of the first Albariño labels."},
+   {"key":"martin-codax","producer":"Martín Códax","producerId":"","wine":"Martín Códax Albariño","why":"Cambados cooperative of 1986 named for a medieval Galician troubadour; the Albariño many guests meet first.","note":"Not in WINE_PRODUCERS: the founding year and the troubadour need two sources."},
+   {"key":"do-ferreiro","producer":"Do Ferreiro","producerId":"p-do-ferreiro","wine":"Cepas Vellas","why":"Meaño grower whose Cepas Vellas comes from very old vines."},
+   {"key":"terras-gauda","producer":"Terras Gauda","producerId":"","wine":"Terras Gauda O Rosal","why":"O Rosal estate whose blend of Albariño with Loureira and Caíño Blanco teaches the subzone.","note":"Not in WINE_PRODUCERS: the founding facts need two sources."}
+  ]},
+  {"key":"douro","title":"The Douro and Port","region":"douro","country":"portugal","chunk":"f10","swaps":[],"picks":[
+   {"key":"taylors","producer":"Taylor's","producerId":"p-taylor-fladgate","wine":"Taylor's Vintage Port","why":"Port house of 1692 whose Quinta de Vargellas gives the backbone of its declared Vintage Ports."},
+   {"key":"grahams","producer":"Graham's","producerId":"p-grahams","wine":"Graham's Vintage Port","why":"House of 1820, begun in textiles; Quinta dos Malvedos is the heart of its Vintage Port."},
+   {"key":"noval","producer":"Quinta do Noval","producerId":"p-quinta-do-noval","wine":"Quinta do Noval Nacional","why":"Quinta of 1715 whose Nacional comes from a small plot of ungrafted vines; the 1931 is a vintage of history."},
+   {"key":"barca-velha","producer":"Casa Ferreirinha","producerId":"p-casa-ferreirinha","wine":"Barca Velha","why":"The Douro's unfortified red, first made in 1952 and declared only in exceptional years."},
+   {"key":"sandeman","producer":"Sandeman","producerId":"p-sandeman","wine":"Sandeman 20 Year Old Tawny","why":"House of 1790 whose caped Don, drawn in 1928, is Port's famous silhouette."}
+  ]},
+  {"key":"madeira","title":"Madeira","region":"madeira","country":"portugal","chunk":"f9","swaps":[],"picks":[
+   {"key":"blandys","producer":"Blandy's","producerId":"p-blandys","wine":"Blandy's 10 Year Old Malmsey","why":"Funchal family house of 1811; Malmsey is the sweetest of the four noble grapes and the Madeira a guest meets first."},
+   {"key":"henriques","producer":"Henriques & Henriques","producerId":"p-henriques-e-henriques","wine":"Henriques & Henriques 15 Year Old Verdelho","why":"Câmara de Lobos house of 1850 whose aged Madeiras are bottled by grape.","note":"Confirm the flagship bottling and the founding year in two sources."},
+   {"key":"barbeito","producer":"Barbeito","producerId":"p-barbeito","wine":"Barbeito Malvasia 20 Years Old","why":"House of 1946 known for Madeira bottled without added colour.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"doliveira","producer":"Pereira d'Oliveira","producerId":"","wine":"D'Oliveira Frasqueira Boal","why":"Funchal family house of 1850 that keeps large stocks of old frasqueira wines, sold by vintage.","note":"Not in WINE_PRODUCERS: the founding year and the flagship need two sources."},
+   {"key":"hm-borges","producer":"H.M. Borges","producerId":"","wine":"H.M. Borges 15 Year Old Malvasia","why":"Funchal family house of 1877 that ages its wines by the canteiro method.","note":"Not in WINE_PRODUCERS: the founding year and the flagship need two sources."}
+  ]},
+  {"key":"mosel","title":"The Mosel","region":"mosel","country":"germany","chunk":"f4","swaps":[],"picks":[
+   {"key":"egon-muller","producer":"Egon Müller","producerId":"p-egon-muller","wine":"Scharzhofberger Riesling","why":"Saar estate at the Scharzhof since 1797; its Scharzhofberger Kabinett to Trockenbeerenauslese are the Saar's benchmark.","note":"Name the Prädikat the record teaches (Spätlese or Auslese) after the plan's words."},
+   {"key":"jj-prum","producer":"Joh. Jos. Prüm","producerId":"p-jj-prum","wine":"Wehlener Sonnenuhr Riesling","why":"Wehlen estate of 1911 whose sweet Rieslings are known for long life and a youthful smell of struck match.","note":"Name the Prädikat the record teaches after the plan's words."},
+   {"key":"dr-loosen","producer":"Dr. Loosen","producerId":"p-dr-loosen","wine":"Erdener Prälat Riesling","why":"Bernkastel estate whose Erdener Prälat is a red slate site warmed by the river and its rocks.","note":"Name the Prädikat the record teaches after the plan's words."},
+   {"key":"thanisch","producer":"Wwe. Dr. H. Thanisch, Erben Thanisch","producerId":"p-thanisch","wine":"Bernkasteler Doctor Riesling","why":"Holder of part of the Doctor vineyard, whose wine is said to have cured an Archbishop of Trier.","note":"Name the Prädikat the record teaches after the plan's words."},
+   {"key":"maximin-grunhaus","producer":"Maximin Grünhaus","producerId":"","wine":"Maximin Grünhäuser Abtsberg Riesling","why":"Ruwer estate first recorded in 966, held by the von Schubert family since 1882; Abtsberg is the abbot's hill.","note":"Not in WINE_PRODUCERS: the dates need two sources."}
+  ]},
+  {"key":"rheingau","title":"The Rheingau","region":"rheingau","country":"germany","chunk":"f4","swaps":[],"picks":[
+   {"key":"schloss-johannisberg","producer":"Schloss Johannisberg","producerId":"p-schloss-johannisberg","wine":"Schloss Johannisberger Riesling","why":"Benedictine hill where the late harvest courier of 1775 gave Germany the Spätlese.","note":"Name the lack colour and Prädikat the record teaches after the plan's words."},
+   {"key":"robert-weil","producer":"Robert Weil","producerId":"p-robert-weil","wine":"Kiedrich Gräfenberg Riesling","why":"Kiedrich estate of 1875 whose Gräfenberg gives a dry Grosses Gewächs and sweet wines to Trockenbeerenauslese."},
+   {"key":"schloss-vollrads","producer":"Schloss Vollrads","producerId":"p-schloss-vollrads","wine":"Schloss Vollrads Riesling","why":"Winkel estate selling wine since 1211 by its own account."},
+   {"key":"georg-breuer","producer":"Georg Breuer","producerId":"p-georg-breuer","wine":"Rüdesheim Berg Schlossberg Riesling","why":"Rüdesheim estate whose dry Rieslings from the steep Berg Schlossberg argued for site before the Grosses Gewächs."},
+   {"key":"kloster-eberbach","producer":"Kloster Eberbach","producerId":"","wine":"Steinberger Riesling","why":"Cistercian abbey of 1136 whose walled Steinberg the monks planted; the state estate's cellar keeps old vintages.","note":"Not in WINE_PRODUCERS: the producer is the Hessian state estate; dates in two sources."}
+  ]},
+  {"key":"pfalz","title":"The Pfalz","region":"pfalz","country":"germany","chunk":"f10","swaps":[],"picks":[
+   {"key":"burklin-wolf","producer":"Dr. Bürklin-Wolf","producerId":"p-burklin-wolf","wine":"Forster Kirchenstück G.C.","why":"Wachenheim estate of 1597 that classified its own vineyards in the Burgundy manner."},
+   {"key":"bassermann-jordan","producer":"Geheimer Rat Dr. von Bassermann-Jordan","producerId":"","wine":"Forster Jesuitengarten Riesling","why":"Deidesheim estate of 1718 whose cellar of old vintages runs back to the nineteenth century; one of the three Bs.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"von-buhl","producer":"Reichsrat von Buhl","producerId":"","wine":"Forster Pechstein Riesling","why":"Deidesheim estate of 1849, one of the three Bs of the Mittelhaardt.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"muller-catoir","producer":"Müller-Catoir","producerId":"p-muller-catoir","wine":"Haardter Bürgergarten Rieslaner","why":"Neustadt estate of 1744 known for Rieslaner and Scheurebe of piercing fruit.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"becker","producer":"Friedrich Becker","producerId":"","wine":"Spätburgunder Kammerberg","why":"Schweigen estate whose Pinot Noir grows in vineyards that lie across the border in France.","note":"Not in WINE_PRODUCERS: dates and the border story in two sources."}
+  ]},
+  {"key":"wachau","title":"The Wachau, Kamptal and Kremstal","region":"wachau-kamptal-kremstal","country":"austria","chunk":"f10","swaps":[],"picks":[
+   {"key":"fx-pichler","producer":"F.X. Pichler","producerId":"p-fx-pichler","wine":"Riesling Smaragd Ried Kellerberg","why":"Dürnstein family estate; Kellerberg is a steep Wachau terrace on gneiss."},
+   {"key":"hirtzberger","producer":"Franz Hirtzberger","producerId":"p-franz-hirtzberger","wine":"Riesling Smaragd Ried Singerriedel","why":"Spitz estate whose Singerriedel climbs the stone terraces above the village."},
+   {"key":"knoll","producer":"Emmerich Knoll","producerId":"p-knoll","wine":"Grüner Veltliner Smaragd Ried Schütt","why":"Unterloiben estate with the baroque Saint Urban label.","note":"Confirm Ried Schütt or Ried Loibenberg as the flagship."},
+   {"key":"brundlmayer","producer":"Bründlmayer","producerId":"p-brundlmayer","wine":"Riesling Zöbinger Heiligenstein Alte Reben","why":"Langenlois estate; Heiligenstein's desert sandstone gives the Kamptal's long lived Riesling."},
+   {"key":"gobelsburg","producer":"Schloss Gobelsburg","producerId":"p-schloss-gobelsburg","wine":"Grüner Veltliner Ried Lamm","why":"Cistercian estate at Gobelsburg recorded from 1171; Lamm is its rich Grüner Veltliner from loess."}
+  ]},
+  {"key":"burgenland","title":"Burgenland","region":"burgenland","country":"austria","chunk":"f11","swaps":[],"picks":[
+   {"key":"kracher","producer":"Weinlaubenhof Kracher","producerId":"p-kracher","wine":"Kracher Trockenbeerenauslese","why":"Illmitz estate by the Neusiedlersee whose numbered Trockenbeerenauslesen carried Austrian sweet wine abroad."},
+   {"key":"feiler-artinger","producer":"Feiler-Artinger","producerId":"p-feiler-artinger","wine":"Ruster Ausbruch","why":"Rust estate in a baroque house that keeps the town's tradition of Ausbruch."},
+   {"key":"moric","producer":"Moric","producerId":"p-moric","wine":"Blaufränkisch Lutzmannsburg Alte Reben","why":"Estate of 2001 that sought out old Blaufränkisch vines in Lutzmannsburg and Neckenmarkt."},
+   {"key":"triebaumer","producer":"Ernst Triebaumer","producerId":"p-ernst-triebaumer","wine":"Blaufränkisch Ried Mariental","why":"Rust estate whose Mariental of 1986 was a turning point for Austrian red wine."},
+   {"key":"prieler","producer":"Prieler","producerId":"","wine":"Blaufränkisch Ried Goldberg","why":"Schützen am Gebirge estate on the Leithaberg; Goldberg is Blaufränkisch from schist.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+  ]},
+  {"key":"tokaj","title":"Tokaj","region":"tokaj","country":"hungary","chunk":"f11","swaps":[],"picks":[
+   {"key":"royal-tokaji","producer":"The Royal Tokaji Wine Company","producerId":"p-royal-tokaji","wine":"Royal Tokaji Mézes Mály 6 Puttonyos","why":"Mád company of 1990, an early foreign investment after communism, that bottles the first growth vineyards by name."},
+   {"key":"oremus","producer":"Tokaj Oremus","producerId":"p-oremus","wine":"Oremus Tokaji Aszú 6 Puttonyos","why":"Tolcsva estate named for the Oremus vineyard, where Aszú is said to have first been made about 1630."},
+   {"key":"disznoko","producer":"Disznókő","producerId":"p-disznoko","wine":"Disznókő Tokaji Aszú 6 Puttonyos","why":"Mezőzombor estate of 1992 on a first growth of 1772, named for the boar shaped rock in its vineyard."},
+   {"key":"szepsy","producer":"Szepsy","producerId":"p-szepsy","wine":"Szepsy Szent Tamás Furmint","why":"Mád family of growers since the sixteenth century by its own account; Szent Tamás is its dry single vineyard Furmint."},
+   {"key":"dobogo","producer":"Dobogó","producerId":"","wine":"Dobogó Tokaji Aszú 6 Puttonyos","why":"Tokaj estate whose house dates from 1869; a small producer of Aszú and dry Furmint.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+  ]},
+  {"key":"santorini","title":"Santorini","region":"santorini","country":"greece","chunk":"f11","swaps":[],"picks":[
+   {"key":"sigalas","producer":"Domaine Sigalas","producerId":"p-sigalas","wine":"Kavalieros","why":"Oia estate of 1991; Kavalieros is Assyrtiko from a single wind swept parcel of basket trained vines."},
+   {"key":"argyros","producer":"Estate Argyros","producerId":"p-argyros","wine":"Cuvée Monsignori","why":"Episkopi estate of 1903 with very old basket trained vines; Monsignori is old vine Assyrtiko."},
+   {"key":"gaia","producer":"Gaia Wines","producerId":"p-gaia-wines","wine":"Thalassitis","why":"Estate of 1994 whose Thalassitis, the sea stone, is Santorini Assyrtiko in its plainest form."},
+   {"key":"hatzidakis","producer":"Hatzidakis","producerId":"","wine":"Hatzidakis Nykteri","why":"Pyrgos estate whose founder revived organic Assyrtiko and the island's Nykteri.","note":"Not in WINE_PRODUCERS: the founder's dates and the flagship in two sources."},
+   {"key":"santo","producer":"Santo Wines","producerId":"","wine":"Santo Vinsanto","why":"The island's cooperative of 1947, whose Vinsanto is made from grapes dried in the sun.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+  ]},
+  {"key":"napa","title":"Napa Valley","region":"napa-sonoma","country":"california","chunk":"f12","swaps":[],"picks":[
+   {"key":"beaulieu","producer":"Beaulieu Vineyard","producerId":"p-beaulieu-vineyard","wine":"Georges de Latour Private Reserve","why":"Rutherford estate of 1900; the Private Reserve from the 1936 vintage set the model for Napa Cabernet."},
+   {"key":"heitz","producer":"Heitz Cellar","producerId":"p-heitz-cellar","wine":"Martha's Vineyard Cabernet Sauvignon","why":"St Helena house of 1961 whose 1966 Martha's Vineyard was among the first Napa Cabernets named for a vineyard."},
+   {"key":"stags-leap","producer":"Stag's Leap Wine Cellars","producerId":"p-stags-leap-wine-cellars","wine":"Cask 23","why":"Estate whose 1973 Cabernet won the red flight in Paris in 1976; Cask 23 is its flagship blend."},
+   {"key":"montelena","producer":"Chateau Montelena","producerId":"p-chateau-montelena","wine":"Chateau Montelena Chardonnay","why":"Calistoga estate of 1882 whose 1973 Chardonnay won the white flight in Paris in 1976.","note":"Teach why the Chardonnay, not the Estate Cabernet, is the bottle a guest names."},
+   {"key":"opus-one","producer":"Opus One","producerId":"w-opus-one","wine":"Opus One","why":"Oakville estate born of the joint venture of Baron Philippe de Rothschild and Robert Mondavi; first vintage 1979."}
+  ]},
+  {"key":"sonoma","title":"Sonoma","region":"napa-sonoma","country":"california","chunk":"f12","swaps":[],"picks":[
+   {"key":"hanzell","producer":"Hanzell Vineyards","producerId":"p-hanzell","wine":"Hanzell Chardonnay","why":"Sonoma Valley estate of 1953 that brought small French barrels and controlled fermentation to California Chardonnay."},
+   {"key":"kistler","producer":"Kistler Vineyards","producerId":"p-kistler","wine":"Kistler Vineyard Chardonnay","why":"Estate of 1978 whose single vineyard Chardonnays set a Sonoma style.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"williams-selyem","producer":"Williams Selyem","producerId":"p-williams-selyem","wine":"Rochioli Riverblock Vineyard Pinot Noir","why":"Russian River Valley house begun in a garage in 1981, whose vineyard named Pinot Noir made the valley's name.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"jordan","producer":"Jordan Vineyard & Winery","producerId":"","wine":"Jordan Cabernet Sauvignon","why":"Alexander Valley estate of 1972 with a château in the Bordeaux manner, making one Cabernet and one Chardonnay.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"seghesio","producer":"Seghesio Family Vineyards","producerId":"","wine":"Seghesio Home Ranch Zinfandel","why":"Healdsburg family of 1895 that kept old Italian field blends and Zinfandel alive.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+  ]},
+  {"key":"central-coast","title":"The Central Coast","region":"central-coast","country":"california","chunk":"f12","swaps":[],"picks":[
+   {"key":"ridge","producer":"Ridge Vineyards","producerId":"p-ridge-vineyards","wine":"Monte Bello","why":"Santa Cruz Mountains estate whose Monte Bello was poured in Paris in 1976 and placed first at the rematch of 2006."},
+   {"key":"calera","producer":"Calera","producerId":"p-calera","wine":"Calera Jensen Vineyard Pinot Noir","why":"Mount Harlan estate planted on limestone for Pinot Noir in 1975; Jensen is one of its first vineyards."},
+   {"key":"au-bon-climat","producer":"Au Bon Climat","producerId":"p-au-bon-climat","wine":"Au Bon Climat Isabelle Pinot Noir","why":"Santa Maria Valley winery of 1982 that championed lean, long lived Santa Barbara Pinot Noir and Chardonnay.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"tablas-creek","producer":"Tablas Creek Vineyard","producerId":"p-tablas-creek","wine":"Esprit de Tablas","why":"Paso Robles estate of 1989 founded by the Perrins of Beaucastel and their American importer, planted from Rhône cuttings."},
+   {"key":"bonny-doon","producer":"Bonny Doon Vineyard","producerId":"p-bonny-doon","wine":"Le Cigare Volant","why":"Santa Cruz winery of 1983 whose Rhône blend is named for Châteauneuf's flying saucer decree of 1954."}
+  ]},
+  {"key":"willamette","title":"The Willamette Valley","region":"willamette-valley","country":"oregon","chunk":"f13","swaps":[],"picks":[
+   {"key":"eyrie","producer":"The Eyrie Vineyards","producerId":"p-eyrie-vineyards","wine":"South Block Reserve Pinot Noir","why":"Dundee Hills vines of 1966, the first Pinot Noir in the Willamette Valley; its 1975 South Block shone in Paris in 1979."},
+   {"key":"ddo","producer":"Domaine Drouhin Oregon","producerId":"p-domaine-drouhin-oregon","wine":"Pinot Noir Laurène","why":"The Drouhin family of Beaune planted in the Dundee Hills in 1987 after the tastings of 1979 and 1980."},
+   {"key":"domaine-serene","producer":"Domaine Serene","producerId":"","wine":"Evenstad Reserve Pinot Noir","why":"Dundee Hills estate of 1989 whose Evenstad Reserve is its flagship Pinot Noir.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"argyle","producer":"Argyle","producerId":"p-argyle","wine":"Argyle Extended Tirage Brut","why":"Dundee estate of 1987 founded to make sparkling wine in Oregon."},
+   {"key":"cristom","producer":"Cristom Vineyards","producerId":"p-cristom","wine":"Mt. Jefferson Cuvée Pinot Noir","why":"Eola-Amity Hills estate of 1992 known for whole bunch Pinot Noir.","note":"Confirm the flagship bottling in two sources."}
+  ]},
+  {"key":"columbia","title":"The Columbia Valley","region":"columbia-valley","country":"washington","chunk":"f13","swaps":[],"picks":[
+   {"key":"ste-michelle","producer":"Chateau Ste. Michelle","producerId":"p-chateau-ste-michelle","wine":"Eroica Riesling","why":"Woodinville winery of 1967; Eroica, made with the Mosel's Dr. Loosen from 1999, put Washington Riesling on wine lists."},
+   {"key":"quilceda","producer":"Quilceda Creek","producerId":"p-quilceda-creek","wine":"Quilceda Creek Cabernet Sauvignon","why":"Snohomish family winery of 1978 whose Cabernet made Washington's name for Cabernet."},
+   {"key":"leonetti","producer":"Leonetti Cellar","producerId":"p-leonetti-cellar","wine":"Leonetti Cabernet Sauvignon","why":"Walla Walla's first bonded winery of the modern era, 1977."},
+   {"key":"woodward","producer":"Woodward Canyon Winery","producerId":"p-woodward-canyon","wine":"Woodward Canyon Old Vines Cabernet Sauvignon","why":"Walla Walla's second winery, 1981.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"cayuse","producer":"Cayuse Vineyards","producerId":"p-cayuse-vineyards","wine":"Bionic Frog Syrah","why":"Milton-Freewater estate of 1997 in the cobblestones of The Rocks District, across the Oregon line."}
+  ]},
+  {"key":"barossa","title":"The Barossa","region":"barossa-eden","country":"australia","chunk":"f14","swaps":[],"picks":[
+   {"key":"penfolds","producer":"Penfolds","producerId":"p-penfolds","wine":"Grange","why":"Magill house of 1844; Grange, first made experimentally in 1951 by Max Schubert, is a multi regional Shiraz."},
+   {"key":"henschke","producer":"Henschke","producerId":"p-henschke","wine":"Hill of Grace","why":"Keyneton family of 1868; Hill of Grace from vines planted in the 1860s opposite the Gnadenberg church."},
+   {"key":"rockford","producer":"Rockford","producerId":"p-rockford","wine":"Basket Press Shiraz","why":"Krondorf Road winery of 1984 with old hand worked presses; Basket Press is its Barossa Shiraz."},
+   {"key":"seppeltsfield","producer":"Seppeltsfield","producerId":"p-seppeltsfield","wine":"100 Year Old Para Vintage Tawny","why":"Estate of 1851 that has laid down a cask of tawny every year since 1878 and releases it a century later."},
+   {"key":"yalumba","producer":"Yalumba","producerId":"p-yalumba","wine":"The Signature","why":"Angaston house of 1849 with its own cooperage; The Signature is Cabernet with Shiraz since 1962."}
+  ]},
+  {"key":"margaret-river","title":"Margaret River","region":"margaret-river","country":"australia","chunk":"f14","swaps":[],"picks":[
+   {"key":"vasse-felix","producer":"Vasse Felix","producerId":"p-vasse-felix","wine":"Tom Cullity Cabernet Sauvignon Malbec","why":"The region's first vineyard and winery, planted in 1967 by a Perth cardiologist."},
+   {"key":"moss-wood","producer":"Moss Wood","producerId":"p-moss-wood","wine":"Moss Wood Cabernet Sauvignon","why":"Wilyabrup vineyard of 1969, the region's second."},
+   {"key":"cullen","producer":"Cullen Wines","producerId":"p-cullen-wines","wine":"Diana Madeline","why":"Wilyabrup family estate of 1971, biodynamic; Diana Madeline is its Cabernet blend named for the founder."},
+   {"key":"leeuwin","producer":"Leeuwin Estate","producerId":"p-leeuwin-estate","wine":"Art Series Chardonnay","why":"Estate of 1974 whose Art Series labels carry Australian paintings; its Chardonnay stands for the region."},
+   {"key":"cape-mentelle","producer":"Cape Mentelle","producerId":"","wine":"Cape Mentelle Cabernet Sauvignon","why":"Estate of 1970 whose Cabernet won the Jimmy Watson Trophy in 1983 and again in 1984.","note":"Not in WINE_PRODUCERS: dates and the trophies in two sources."}
+  ]},
+  {"key":"hunter","title":"The Hunter Valley","region":"hunter-valley","country":"australia","chunk":"f14","swaps":[],"picks":[
+   {"key":"tyrrells","producer":"Tyrrell's","producerId":"p-tyrrells","wine":"Vat 1 Semillon","why":"Pokolbin family of 1858; Vat 1 is unoaked, light Semillon that turns toasty with a decade in bottle."},
+   {"key":"mount-pleasant","producer":"Mount Pleasant","producerId":"p-mount-pleasant","wine":"Maurice O'Shea Shiraz","why":"Pokolbin estate of 1921 where Maurice O'Shea made Hunter red famous."},
+   {"key":"brokenwood","producer":"Brokenwood","producerId":"","wine":"Graveyard Vineyard Shiraz","why":"Pokolbin winery of 1970 whose Graveyard vineyard was set aside for a cemetery that never came.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"lakes-folly","producer":"Lake's Folly","producerId":"","wine":"Lake's Folly Cabernets","why":"Pokolbin vineyard of 1963, a surgeon's Cabernet in Semillon and Shiraz country.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"thomas","producer":"Thomas Wines","producerId":"","wine":"Braemore Semillon","why":"Pokolbin house whose Braemore Semillon comes from the sandy Braemore vineyard.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+  ]},
+  {"key":"coonawarra","title":"Coonawarra","region":"coonawarra","country":"australia","chunk":"f15","swaps":[],"picks":[
+   {"key":"wynns","producer":"Wynns Coonawarra Estate","producerId":"p-wynns-coonawarra","wine":"Wynns Black Label Cabernet Sauvignon","why":"The triple gabled winery of 1891 built by John Riddoch; Black Label is its Cabernet."},
+   {"key":"katnook","producer":"Katnook Estate","producerId":"","wine":"Katnook Odyssey Cabernet Sauvignon","why":"Estate around John Riddoch's woolshed and stables of the nineteenth century.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"parker","producer":"Parker Coonawarra Estate","producerId":"","wine":"Parker First Growth","why":"Estate whose First Growth is Cabernet made only in strong years.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"majella","producer":"Majella","producerId":"","wine":"Majella The Malleea","why":"Family vineyard on terra rossa; The Malleea is Cabernet with Shiraz.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"lindemans","producer":"Lindeman's","producerId":"","wine":"Lindeman's Limestone Ridge Shiraz Cabernet","why":"One of the Coonawarra trio, with St George and Pyrus, from a house founded in 1843.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+  ]},
+  {"key":"marlborough","title":"Marlborough","region":"marlborough","country":"new-zealand","chunk":"f15","swaps":[],"picks":[
+   {"key":"cloudy-bay","producer":"Cloudy Bay","producerId":"p-cloudy-bay","wine":"Cloudy Bay Sauvignon Blanc","why":"Estate of 1985 whose first Sauvignon Blanc took Marlborough's name abroad."},
+   {"key":"brancott","producer":"Brancott Estate","producerId":"","wine":"Brancott Estate Sauvignon Blanc","why":"The company, then Montana, planted Marlborough's first commercial vineyard in 1973.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"dog-point","producer":"Dog Point Vineyard","producerId":"","wine":"Dog Point Section 94","why":"Estate of 2002 whose barrel fermented Section 94 shows Marlborough Sauvignon's other face.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"greywacke","producer":"Greywacke","producerId":"p-greywacke","wine":"Greywacke Wild Sauvignon","why":"Estate of 2009 named for the river stone; Wild Sauvignon ferments with native yeasts in old barrels."},
+   {"key":"fromm","producer":"Fromm Winery","producerId":"","wine":"Fromm Clayvin Vineyard Pinot Noir","why":"Pinot Noir and Syrah house of 1992 in a Sauvignon region.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+  ]},
+  {"key":"central-otago","title":"Central Otago","region":"central-otago","country":"new-zealand","chunk":"f15","swaps":[],"picks":[
+   {"key":"felton-road","producer":"Felton Road","producerId":"p-felton-road","wine":"Felton Road Block 5 Pinot Noir","why":"Bannockburn estate of 1991; Block 5 is its single block Pinot Noir."},
+   {"key":"rippon","producer":"Rippon","producerId":"","wine":"Rippon Mature Vine Pinot Noir","why":"Lake Wanaka vineyard planted from 1975, among the region's first.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"gibbston-valley","producer":"Gibbston Valley","producerId":"","wine":"Gibbston Valley Reserve Pinot Noir","why":"Central Otago's first commercial winery, 1987, with a cave cut in the schist.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."},
+   {"key":"mt-difficulty","producer":"Mt Difficulty","producerId":"","wine":"Mt Difficulty Bannockburn Pinot Noir","why":"Bannockburn partnership of growers founded in the 1990s.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."},
+   {"key":"quartz-reef","producer":"Quartz Reef","producerId":"","wine":"Quartz Reef Bendigo Estate Pinot Noir","why":"Bendigo estate on the warm slope of the Cromwell Basin, also known for its sparkling wine.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+  ]},
+  {"key":"stellenbosch","title":"Stellenbosch","region":"stellenbosch","country":"south-africa","chunk":"f16","swaps":[],"picks":[
+   {"key":"kanonkop","producer":"Kanonkop","producerId":"p-kanonkop","wine":"Paul Sauer","why":"Simonsberg estate whose Paul Sauer, a Bordeaux blend first bottled in 1981, honours a cabinet minister of the family."},
+   {"key":"meerlust","producer":"Meerlust","producerId":"p-meerlust","wine":"Rubicon","why":"Estate of 1693 held by the Myburgh family since 1757; Rubicon, from 1980, was among the first Cape Bordeaux blends."},
+   {"key":"rustenberg","producer":"Rustenberg","producerId":"","wine":"John X Merriman","why":"Simonsberg farm of 1682; the blend honours the prime minister of the Cape who farmed it from 1892.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"simonsig","producer":"Simonsig","producerId":"","wine":"Kaapse Vonkel","why":"Estate whose Kaapse Vonkel of 1971 was the Cape's first bottle fermented sparkling wine.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"lanzerac","producer":"Lanzerac","producerId":"","wine":"Lanzerac Pinotage","why":"Estate whose 1959 vintage, labelled in 1961, was the first wine to name Pinotage.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+  ]},
+  {"key":"swartland","title":"The Swartland","region":"swartland","country":"south-africa","chunk":"f16","swaps":[],"picks":[
+   {"key":"sadie","producer":"Sadie Family Wines","producerId":"p-sadie-family","wine":"Columella","why":"Paardeberg estate of 1999 whose Columella, a Syrah led blend first made in 2000, led the Swartland revolution."},
+   {"key":"mullineux","producer":"Mullineux","producerId":"p-mullineux","wine":"Mullineux Schist Syrah","why":"Riebeek-Kasteel house of 2007 that bottles Syrah by soil: schist, granite and iron."},
+   {"key":"badenhorst","producer":"AA Badenhorst Family Wines","producerId":"","wine":"AA Badenhorst Family White Blend","why":"Kalmoesfontein farm on the Paardeberg whose old vine white blend is led by Chenin Blanc.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"porseleinberg","producer":"Porseleinberg","producerId":"","wine":"Porseleinberg Syrah","why":"Schist estate on the Porseleinberg making whole bunch Syrah in concrete and large casks.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"allesverloren","producer":"Allesverloren","producerId":"","wine":"Allesverloren Fine Old Vintage","why":"Riebeek West farm of 1704 whose name means all is lost, known for Portuguese grapes and fortified wine.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+  ]},
+  {"key":"mendoza","title":"Mendoza","region":"mendoza","country":"argentina","chunk":"f16","swaps":[],"picks":[
+   {"key":"catena-zapata","producer":"Catena Zapata","producerId":"p-catena-zapata","wine":"Catena Zapata Adrianna Vineyard River Stones Malbec","why":"Family of 1902 that planted Adrianna in Gualtallary, high in the Uco Valley, in 1992."},
+   {"key":"achaval-ferrer","producer":"Achaval-Ferrer","producerId":"p-achaval-ferrer","wine":"Finca Altamira","why":"Estate of 1998 whose Finca Altamira is old vine Malbec from La Consulta."},
+   {"key":"zuccardi","producer":"Familia Zuccardi","producerId":"p-zuccardi","wine":"Finca Piedra Infinita","why":"Family of 1963 whose Piedra Infinita winery of 2016 in Paraje Altamira works in concrete."},
+   {"key":"cheval-des-andes","producer":"Cheval des Andes","producerId":"w-cheval-des-andes","wine":"Cheval des Andes","why":"Luján de Cuyo estate of 1999, a joint venture of Château Cheval Blanc and Terrazas de los Andes."},
+   {"key":"norton","producer":"Bodega Norton","producerId":"","wine":"Norton Privada","why":"Perdriel house of 1895 founded by the English engineer Edmund James Palmer Norton.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+  ]},
+  {"key":"maipo","title":"The Maipo Valley","region":"maipo-valley","country":"chile","chunk":"f17","swaps":[],"picks":[
+   {"key":"concha-y-toro","producer":"Concha y Toro","producerId":"p-concha-y-toro","wine":"Don Melchor","why":"House of 1883; Don Melchor, from Puente Alto, first vintage 1987.","note":"Say how Don Melchor is presented today only in words that do not age."},
+   {"key":"almaviva","producer":"Almaviva","producerId":"w-almaviva","wine":"Almaviva","why":"Puente Alto estate of 1997, a joint venture with the house of Baron Philippe de Rothschild."},
+   {"key":"santa-rita","producer":"Santa Rita","producerId":"p-santa-rita","wine":"Casa Real","why":"House of 1880 whose cellars are said to have sheltered 120 patriots in 1814; Casa Real is its Cabernet."},
+   {"key":"cousino-macul","producer":"Cousiño Macul","producerId":"","wine":"Lota","why":"Estate of 1856 on the edge of Santiago, held by one family since its founding.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."},
+   {"key":"vinedo-chadwick","producer":"Viñedo Chadwick","producerId":"w-vinedo-chadwick","wine":"Viñedo Chadwick","why":"Puente Alto vineyard on a former polo field; its 2000 vintage placed first at the Berlin Tasting of 2004."}
+  ]},
+  {"key":"colchagua","title":"Colchagua","region":"colchagua","country":"chile","chunk":"f17","swaps":[],"picks":[
+   {"key":"montes","producer":"Montes","producerId":"p-montes","wine":"Montes Alpha M","why":"Santa Cruz house of 1988; Alpha M, from 1996, is its Bordeaux blend."},
+   {"key":"lapostolle","producer":"Lapostolle","producerId":"p-lapostolle","wine":"Clos Apalta","why":"Apalta estate of 1994 founded by the Marnier Lapostolle family; Clos Apalta is Carmenère led."},
+   {"key":"casa-silva","producer":"Casa Silva","producerId":"","wine":"Casa Silva Microterroir de Los Lingues Carmenère","why":"Family in Colchagua since 1892, known for Carmenère from the Los Lingues foothills.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."},
+   {"key":"viu-manent","producer":"Viu Manent","producerId":"","wine":"Viu 1","why":"Family winery of 1935 whose Viu 1 is old vine Malbec.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."},
+   {"key":"neyen","producer":"Neyen","producerId":"","wine":"Neyen Espíritu de Apalta","why":"Apalta estate with Carmenère and Cabernet vines planted in 1890.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+  ]}
+ ]
+}
