@@ -1,0 +1,5 @@
+{
+ "about": "Every id of the Flagships tab, record by record in the plan's order: the record's id (fl- and eight base36 digits, minted once from the pick's key by build-flagships.cjs and read from here ever after), its two cards and its two questions (minted from the record's id and the text). While frozen is false the file follows the writing build. Once the integrator has frozen it (build-flagships.cjs --freeze, the roster whole) a build may add ids and may never lose one: an id is a learner's saved record, and a reworded front or stem is a new id that orphans it.",
+ "frozen": false,
+ "keys": {}
+}
