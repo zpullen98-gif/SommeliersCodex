@@ -60,7 +60,10 @@
  * written (js/data-grapes-table.js built with --partial): the join's counts
  * then follow the grapes the data holds, 59 and the new ones it holds, a
  * profile on the 47 and on each new or thin grape it holds. Without it the
- * join is exactly 75 with no thin grape.
+ * join is exactly 75 with no thin grape: the table the whole roster in its
+ * order and not partial, the join the 59 in codex53's order then the sixteen
+ * in the roster's, the 28 the table fills carrying its profile word for word,
+ * and Glera drawn from the table's profile.
  *
  * Exits non-zero on any failure. The last line is the verdict.
  */
@@ -127,6 +130,18 @@ check('the join holds ' + N + ' grapes', !!JOIN && JOIN.n === N, JOIN && JOIN.n)
 check('the join: ' + WANT.g + ' profiles (the 47 of GRAPES and GRAPES_PLUS' + (HAS57 ? ', and the table\'s' : '') + '), the 53 Régionale records, TASTE on 47, ' + (WANT.thin || 'none') + ' Régionale alone', !!JOIN && JOIN.g === WANT.g && JOIN.intro === 53 && JOIN.taste === 47 && JOIN.introOnly === WANT.thin, JOIN && [JOIN.g, JOIN.intro, JOIN.taste, JOIN.introOnly].join(' / '));
 check('the join: every slug once, every grape white or red', !!JOIN && new Set(JOIN.slugs).size === JOIN.n && JOIN.colours.every((c) => c === 'white' || c === 'red'));
 check('the join: the regions\' join attaches places to at least 50 grapes', !!JOIN && JOIN.targets.filter((n) => n > 0).length >= 50, JOIN && JOIN.targets.filter((n) => n > 0).length);
+/* the whole build, made exact: the table is the roster whole, the join is the 59 in codex53's own order and then
+   the sixteen in the roster's, and the 28 the table fills (twelve thin, sixteen new) carry its profile word for
+   word under the join's own name, so no grape of the 75 is left to the Régionale fields */
+const FILLED = (HAS57 && !PARTIAL) ? (J('(function () { var t = (typeof GRAPE_TABLE !== "undefined" && GRAPE_TABLE) || {}; return Object.keys(t).filter(function (k) { return t[k] && t[k].profile; }).map(function (k) { var r = v53GrapeFind(k) || {}; var g = r.g || {}; var p = t[k].profile; return { slug: k, status: t[k].status, ok: r.slug === k && g.g === r.name && g.c === (r.colour === "white" ? "w" : "r") && ["st", "fruit", "other", "tell", "regions", "confuse"].every(function (f) { return typeof p[f] === "string" && p[f].length > 0 && g[f] === p[f]; }) }; }); })()') || []) : [];
+if (HAS57 && !PARTIAL) {
+  const PLAN = JSON.parse(fs.readFileSync(path.join(__dirname, 'grapes', 'plan.json'), 'utf8'));
+  const roster = PLAN.grapes.map((g) => g.slug);
+  const META = J('typeof GRAPE_TABLE_META !== "undefined" ? GRAPE_TABLE_META : null');
+  check('the table on the device is the whole build: GRAPE_TABLE holds the ' + roster.length + ' of the roster in its order, GRAPE_TABLE_META says ' + roster.length + ' of ' + roster.length + ' and not partial', TABLE.map((t) => t.slug).join() === roster.join() && !!META && META.roster === roster.length && META.built === roster.length && META.partial === false, JSON.stringify(META) + ' ' + TABLE.length);
+  check('the join is the 59 in codex53\'s own order, then the sixteen in the roster\'s order', !!JOIN && JOIN.slugs.join() === roster.join(), JOIN && JOIN.slugs.filter((s, i) => s !== roster[i]).slice(0, 4).join(' '));
+  check('the 28 the table fills (12 thin, 16 new) carry its profile word for word under the join\'s own name and colour', FILLED.length === 28 && FILLED.filter((f) => f.status === 'thin').length === 12 && FILLED.filter((f) => f.status === 'new').length === 16 && FILLED.every((f) => f.ok), FILLED.length + ': ' + FILLED.filter((f) => !f.ok).map((f) => f.slug).join(' '));
+}
 const TW = J('v53TastingList().map(function (t) { return { name: t.name, colour: t.colour, slug: v53GrapeKey(t.name), found: !!v53GrapeFind(v53GrapeKey(t.name)), regions: t.regions }; })') || [];
 check('the tasting list is eight whites then twelve reds', TW.length === 20 && TW.slice(0, 8).every((t) => t.colour === 'white') && TW.slice(8).every((t) => t.colour === 'red'), TW.length);
 check('the twenty tasting names resolve to grapes of the join', TW.length === 20 && TW.every((t) => t.slug && t.found), JSON.stringify(TW.filter((t) => !t.slug || !t.found).map((t) => t.name)));
@@ -206,7 +221,12 @@ check('Chardonnay\'s page: its examinable places marked, the region doors, its c
 const nReadsCh = ((READS.chardonnay && READS.chardonnay.reads) || []).length;
 check('Chardonnay\'s page draws one table of what the grid reads per read (' + nReadsCh + ')', (ch.match(/<table class="v53-reads"/g) || []).length === nReadsCh);
 const glera = tryG('v53GrapeHtml(v53GrapeFind("glera"))') || '';
-check('a grape the Régionale book alone holds draws its page (Glera) with a one card deck', !CH.cleanProblem(glera) && glera.indexOf('data-deck="grape:glera"') >= 0, CH.cleanProblem(glera));
+if (HAS57 && !PARTIAL) {
+  /* codex57 whole: Glera, the Régionale book's alone at master, is drawn from the table's profile, its tell on the page */
+  const gTell = String(J('(GRAPE_TABLE.glera && GRAPE_TABLE.glera.profile && GRAPE_TABLE.glera.profile.tell) || ""') || '');
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  check('a grape the Régionale book alone held at master draws its page (Glera) from the table\'s profile, its tell on the page, with a one card deck', !CH.cleanProblem(glera) && glera.indexOf('data-deck="grape:glera"') >= 0 && gTell.length > 0 && (glera.indexOf(esc(gTell)) >= 0 || glera.indexOf(esc(gTell).replace(/'/g, '&#39;')) >= 0) && glera.indexOf('No comparison is written') < 0, CH.cleanProblem(glera) || gTell.slice(0, 60));
+} else check('a grape the Régionale book alone holds draws its page (Glera) with a one card deck', !CH.cleanProblem(glera) && glera.indexOf('data-deck="grape:glera"') >= 0, CH.cleanProblem(glera));
 check('the four grape views are registered with codex53\'s renderers', J('["grapes", "grape", "griddrill", "courttasting"].every(function (k) { return typeof V25_VIEWS[k] === "function" && String(V25_VIEWS[k]).indexOf("v53") >= 0; })') === true);
 
 /* ================================================================ */

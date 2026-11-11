@@ -717,6 +717,12 @@ async function main() {
   check(NSYNTH ? 'the ' + NSYNTH + ' synthetic "No comparison is written" lines are dropped from the grape cards' : 'no grape card is synthesised: every grape of the join deals its own profile (codex57)', synth.length === NSYNTH && faces.every((f) => f && f.indexOf('No comparison is written') < 0 && f.indexOf('undefined') < 0), synth.length + ': ' + synth.join(' '));
   const cardsAll = JSON.parse(G('JSON.stringify(v53GrapeJoin().list.map(function (r) { var d = v32DeckDef("grape:" + r.slug); var c = d.cards[0]; var f = c ? v32CardFace(c, { flip: true, dir: "n2p" }) : ""; return [r.slug, d.cards.length, c ? c.id === r.name : false, f.indexOf("No comparison is written") < 0 && f.indexOf("undefined") < 0 && f.length > 0]; }))'));
   check('every grape of the join (' + cardsAll.length + ') deals one card under its own name, its face whole', cardsAll.length === NGRAPES && cardsAll.every((c) => c[1] === 1 && c[2] && c[3]), cardsAll.filter((c) => !(c[1] === 1 && c[2] && c[3])).map((c) => c[0]).join(' '));
+  if (HAS57 && !PARTIAL) {
+    /* the whole build, made exact: the 28 grapes the table fills (twelve thin, sixteen new) deal its profile on their
+       card word for word, under the join's own name, and no face carries the Régionale book's bare aroma line */
+    const filled = JSON.parse(G('JSON.stringify((function () { var t = GRAPE_TABLE; return Object.keys(t).filter(function (k) { return t[k] && t[k].profile; }).map(function (k) { var r = v53GrapeFind(k) || {}; var c = (v32DeckDef("grape:" + k).cards || [])[0] || {}; var g = c.g || {}; var p = t[k].profile; var i = r.intro || {}; return [k, t[k].status, c.id === r.name && g.g === r.name && ["st", "fruit", "other", "tell", "regions", "confuse"].every(function (f) { return g[f] === p[f]; }), !i.aroma || g.fruit !== i.aroma]; }); })())'));
+    check('the 28 grapes the table fills (' + filled.filter((f) => f[1] === 'thin').length + ' thin, ' + filled.filter((f) => f[1] === 'new').length + ' new) deal its profile word for word under the join\'s own name, never the Régionale aroma line', GT.length === 75 && filled.length === 28 && filled.filter((f) => f[1] === 'thin').length === 12 && filled.every((f) => f[2] && f[3]), GT.length + ' / ' + filled.length + ': ' + filled.filter((f) => !(f[2] && f[3])).map((f) => f[0]).join(' '));
+  }
   check('Our List keeps its stored key (V27_CELLAR_SECTION)', G('V27_CELLAR_SECTION') === 'Our List');
 
   /* the owner's rule (2 November 2026): the tool is the owner's own and carries no disclaimer, so codex25's
