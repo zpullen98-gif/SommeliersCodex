@@ -378,7 +378,7 @@ try { H = CH.loadChain(JS, { seed: { codexLevel: 'certified' } }); } catch (e) {
 if (H) {
   const { G, J, tryG } = H;
   const lastErr = () => H.last();
-  check('the chain index.html loads runs in the sandbox, data-cms.js, data-grid.js, codex53.js, codex54.js, codex55.js, codex56.js, data-grapes-table.js and codex57.js in it (' + H.files.length + ' scripts)', ['data-cms.js', 'data-grid.js', 'codex53.js', 'codex54.js', 'codex55.js', 'codex56.js', 'data-grapes-table.js', 'codex57.js'].every((f) => H.files.indexOf(f) >= 0));
+  check('the chain index.html loads runs in the sandbox, data-cms.js, data-grid.js, codex53.js, codex54.js, codex55.js, codex56.js, data-grapes-table.js, codex57.js, data-flagships.js and codex58.js in it (' + H.files.length + ' scripts)', ['data-cms.js', 'data-grid.js', 'codex53.js', 'codex54.js', 'codex55.js', 'codex56.js', 'data-grapes-table.js', 'codex57.js', 'data-flagships.js', 'codex58.js'].every((f) => H.files.indexOf(f) >= 0));
   tryG('applyLevel("certified", true)');
   const ids = J('v53Subjects().map(function (s) { return s.id; })') || [];
   check('v53Subjects() is CMS.subjects as built, in order (' + ids.length + ')', JSON.stringify(ids) === JSON.stringify(SUBJECTS.map((s) => s.id)), ids.join(', '));
@@ -502,8 +502,8 @@ if (fs.existsSync(INDEX) && fs.existsSync(SW)) {
   const sources = [...fs.readFileSync(INDEX, 'utf8').matchAll(/<script\b[^>]*\bsrc=["'](js\/[^"']+)["'][^>]*>\s*<\/script>/g)].map((m) => m[1]);
   const scripts = sources.map((s) => s.slice(3).split(/[?#]/)[0]);
   const at = scripts.indexOf('codex52.js');
-  const tail = ['data-cms.js', 'data-grid.js', 'codex53.js', 'codex54.js', 'codex55.js', 'codex56.js', 'data-grapes-table.js', 'codex57.js', 'boot.js'];
-  check('index.html loads data-cms.js, data-grid.js and codex53.js straight after codex52.js, then codex54.js, codex55.js, codex56.js, data-grapes-table.js, codex57.js and boot.js, each once with ?v=', at >= 0 && JSON.stringify(scripts.slice(at + 1, at + 1 + tail.length)) === JSON.stringify(tail)
+  const tail = ['data-cms.js', 'data-grid.js', 'codex53.js', 'codex54.js', 'codex55.js', 'codex56.js', 'data-grapes-table.js', 'codex57.js', 'data-flagships.js', 'codex58.js', 'boot.js'];
+  check('index.html loads data-cms.js, data-grid.js and codex53.js straight after codex52.js, then codex54.js, codex55.js, codex56.js, data-grapes-table.js, codex57.js, data-flagships.js, codex58.js and boot.js, each once with ?v=', at >= 0 && JSON.stringify(scripts.slice(at + 1, at + 1 + tail.length)) === JSON.stringify(tail)
     && tail.slice(0, 3).every((f) => scripts.filter((s) => s === f).length === 1 && /^js\/[^?]+\?v=\d+$/.test(sources[scripts.indexOf(f)])), scripts.slice(Math.max(0, at - 1), at + 5).join(' '));
   const sw = fs.readFileSync(SW, 'utf8');
   const n = Number((sw.match(/const CACHE = '(?:oot-)?codex-v(\d+)';/) || [])[1]);
