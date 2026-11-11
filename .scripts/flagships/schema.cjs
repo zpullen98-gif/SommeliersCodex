@@ -272,7 +272,8 @@ function sayProblems(rec, at) {
   if (!s) return out;
   if (words(s) > CAPS.say[1]) out.push(at + '.say: ' + words(s) + ' words, at most ' + CAPS.say[1]);
   if (!/^[A-Za-z][A-Za-z ,'-]*$/.test(s)) out.push(at + '.say: letters, hyphens, commas and spaces only (no marks, no brackets, no stop)');
-  if (!/[A-Z]{2,}/.test(s) || s.indexOf('-') < 0) out.push(at + '.say: syllables joined by hyphens, the stressed one in capitals (KROOG is one syllable: write it as a guest says it, "kroog" needs no say)');
+  const one = /^[A-Z]{2,}$/.test(s); /* a name of one syllable is written whole in capitals: KROOG */
+  if (!one && (!/[A-Z]{2,}/.test(s) || s.indexOf('-') < 0)) out.push(at + '.say: syllables joined by hyphens, the stressed one in capitals (mo-ET eh shahn-DOHN), or one syllable in capitals (KROOG)');
   return out;
 }
 
@@ -504,16 +505,18 @@ function recordProblems(frag, plan, i, opts) { return validateRecord(frag.record
 
 /* ---- what a second reader should look at: never a failure ---- */
 const TITLED = /\b(?:Baron|Baroness|Count|Countess|Comte|Comtesse|Marquis|Marquise|Marchese|Marchesa|Duke|Duc|Duchess|Sir|Lord|Lady|Madame|Monsieur|Dom|Don|Doña|Prince|Princess|Graf|Freiherr|Fürst|Tsar|King|Queen|Emperor|Empress|Pope|Abbé)\s+[A-Z]/;
-const EST = /\b(?:the\s+(?:most|least)\s+[a-z]+|(?:old|larg|bigg|small|high|low|rich|rar|earli|lat|light|heavi|dark|sweet|long|short)est|first|only|oldest)\b/i;
+const EST = /\b(?:the\s+(?:most|least)\s+[a-z]+|(?:old|larg|bigg|small|high|low|rich|rar|earli|lat|light|heavi|dark|sweet|long|short)est|the\s+first\s+(?:[a-z]+\s+){0,4}(?:to|in|of)|the\s+only)\b/i;
 const NOW = /\b(?:today|now|still|nowadays|these days|modern day)\b/i;
 function adviseRecord(rec, i) {
   const out = [];
   const at = 'records[' + (i == null ? 0 : i) + ']';
   if (!isObj(rec)) return out;
+  const own = [rec.producer, isObj(rec.wine) ? rec.wine.name : ''].filter((x) => isStr(x) && x);
   CF.walkStrings(rec, at, (s, where) => {
     if (pathKind(where) !== 'prose') return;
     sentenceList(s).forEach((sen) => {
-      if (TITLED.test(sen) && !/\b1\d{3}\b|\b20[0-2]\d\b/.test(sen)) out.push(where + ': "' + sen.match(TITLED)[0] + '..." names a titled person with no date in the sentence: the long dead carry their dates, the living are never named');
+      const bare = own.reduce((t, n) => t.split(n).join(' '), sen);
+      if (TITLED.test(bare) && !/\b1\d{3}\b|\b20[0-2]\d\b/.test(bare)) out.push(where + ': "' + bare.match(TITLED)[0] + '..." names a titled person with no date in the sentence: the long dead carry their dates once in the story, the living are never named');
     });
     const e = s.match(EST);
     if (e && !/\.sources/.test(where)) out.push(where + ': "' + e[0] + '" is a claim of rank or of a first: two sources, or cut it');
