@@ -21,10 +21,13 @@
  *   6. compare: every neighbour a grape of the roster and never the grape itself, its door on the page real
  *   7. the pages: all 75 at all four levels drawn clean (cleanProblem and the voice), At the table before the chips,
  *      the six v53-gs sections and Previous, Next and All kept, the new sections present in their places, the glass
- *      leading the fruit, Where it is grown gone where the two worlds are written
+ *      leading the fruit, Where it is grown gone where the two worlds are written; the two family grapes headed as
+ *      families; no stock row under the glass left with only a family word the table names (Albarino, Vermentino and
+ *      Godello named); The regions that name it read whole, every bracket closed (the eleven the base cut)
  *   8. the 59 old pages against the base: every old section as the base drew it, but for what the layer says it
  *      changes (the glass, the bare aroma line, the one word flag, Cards at the table, the drill's count, the
- *      profile of a thin grape); each grape's drill the base's, without its notIn phrases, with the questions its
+ *      profile of a thin grape, a stock row's family word named and the regions that name it read whole, each by
+ *      this gate's own reading of the rule); each grape's drill the base's, without its notIn phrases, with the questions its
  *      new names bring and the table's three
  *   9. the root: the 75 once each, a lead on every row (the table's glass lead); At the table, its doors and its
  *      filter; the filter hiding rows by colour
@@ -46,7 +49,7 @@
  *      selector under .wrap, every shown word from V57_WORDS (and V57_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-grapes-table.js [jsDir]               every check above
- *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 27 faults in a scratch copy, one at a time,
+ *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 30 faults in a scratch copy, one at a time,
  *                                                              and expects each caught by the check that names it
  *
  * A section that throws fails as "section N ran to its end" and the next one runs, so a seeded fault is always named.
@@ -381,6 +384,40 @@ function sections(h) {
 }
 const NAV = '<nav class="v39-steps v53-steps" aria-label="Sections">';
 const SIX = ['v53-gs-profile', 'v53-gs-fruit', 'v53-gs-tell', 'v53-gs-regions', 'v53-gs-cards', 'v53-gs-watch'];
+/* the gate's own reading of two things the layer redraws on an old page, written here apart from the layer:
+   a stock card row item that is only the word for a family of fruit or flowers, named from the table's notes of
+   that family (the names the row holds left out); and the starred places of a Regionale region line, cut at the
+   commas outside a bracket, a star inside a bracket keeping the starred places of that bracket */
+const ROW_FAMILY = { citrus: 'citrus', 'citrus fruit': 'citrus', 'citrus fruits': 'citrus', 'orchard fruit': 'orchard fruit', 'stone fruit': 'stone fruit', 'stone fruits': 'stone fruit',
+  'tropical fruit': 'tropical fruit', 'tropical fruits': 'tropical fruit', 'red fruit': 'red fruit', 'red fruits': 'red fruit', 'black fruit': 'black fruit', 'black fruits': 'black fruit',
+  'dark fruit': 'black fruit', floral: 'floral', flowers: 'floral', 'white flowers': 'floral', blossom: 'floral' };
+function nameRowGate(text, rec) {
+  const fam = {};
+  ((rec && rec.glass && rec.glass.notes) || []).forEach((n) => { const k = String(n.family || '').trim().toLowerCase(); if (k && !(k in fam)) fam[k] = n.notes.map((x) => String(x).trim()).filter(Boolean); });
+  const parts = String(text).split(', ');
+  const held = parts.map((x) => x.trim().toLowerCase());
+  return parts.map((x, i) => {
+    const f = ROW_FAMILY[x.trim().toLowerCase()];
+    const named = f && fam[f] ? fam[f].filter((n) => held.indexOf(n.toLowerCase()) < 0) : [];
+    if (!named.length) return x;
+    const out = esc(named.join(', '));
+    return i === 0 && /^[A-Z]/.test(x.trim()) ? out.charAt(0).toUpperCase() + out.slice(1) : out;
+  }).join(', ');
+}
+function starPlacesGate(line) {
+  const STAR = String.fromCharCode(0x2605);
+  const parts = [];
+  let depth = 0, cur = '';
+  for (const ch of String(line || '')) {
+    if (ch === ',' && depth === 0) { parts.push(cur); cur = ''; continue; }
+    if (ch === '(') depth++;
+    if (ch === ')') depth = Math.max(0, depth - 1);
+    cur += ch;
+  }
+  parts.push(cur);
+  return parts.filter((x) => x.includes(STAR)).map((x) => x.replace(/\(([^()]*)\)/g, (m, inner) => (inner.includes(STAR) ? '(' + inner.split(',').filter((y) => y.includes(STAR)).join(',') + ')' : m)).split(STAR).join('').replace(/ {2,}/g, ' ').replace(/\s+\)/g, ')').replace(/\s+,/g, ',').trim()).filter(Boolean);
+}
+const balanced = (x) => { let d = 0; for (const ch of x) { if (ch === '(') d++; if (ch === ')') d--; if (d < 0) return false; } return d === 0; };
 
 async function main() {
   const TEXT = fs.readFileSync(path.join(JS, 'data-grapes-table.js'), 'utf8');
@@ -578,6 +615,33 @@ async function main() {
       check('the new sections in their places at ' + name + ': the two worlds (or at home and abroad) before the regions, service, guests, the label and compare before the Court\'s grid, sources at the foot, each with its chip; the glass leading the fruit; Where it is grown gone', fresh.length === 0, few(fresh, 4));
     }
     N.tryG('applyLevel("certified", true)');
+    /* the head of a family grape, the stock rows under the glass, the regions that name it */
+    const headBad = ROSTER.filter((s) => { const m = /<div class="sub">([^<,]*)/.exec(pageAt[s] || ''); const want = (TABLE[s].kind === 'family' ? 'A family of ' + TABLE[s].colour + ' grapes' : 'A ' + TABLE[s].colour + ' grape'); return !m || unesc(m[1]).trim() !== want; });
+    const families = ROSTER.filter((s) => TABLE[s].kind === 'family');
+    check('a family of vines is headed so (' + families.join(', ') + ': A family of white grapes, A family of red grapes); every other grape A white grape or A red grape', families.length === 2 && headBad.length === 0, headBad.join(' '));
+    const rowBad = [], rowNamed = [];
+    ROSTER.forEach((s) => {
+      const fruit = (sections(pageAt[s] || '')['v53-gs-fruit'] || {}).html || '';
+      const rec = N.J('(function (r) { return r && r.g ? { fruit: String(r.g.fruit || ""), other: String(r.g.other || "") } : null; })(v53GrapeFind(' + JSON.stringify(s) + '))');
+      [...fruit.matchAll(/<dt>(Fruit|Non fruit)<\/dt><dd>([^<]*)<\/dd>/g)].forEach((m) => {
+        const text = unesc(m[2]);
+        text.split(', ').forEach((x) => { const f = ROW_FAMILY[x.trim().toLowerCase()]; if (f && (TABLE[s].glass.notes || []).some((n) => n.family === f)) rowBad.push(s + ' ' + m[1] + ': ' + x); });
+        const raw = rec ? (m[1] === 'Fruit' ? rec.fruit : rec.other).trim() : text;
+        if (text !== raw && rowNamed.indexOf(s) < 0) rowNamed.push(s);
+      });
+    });
+    check('under the glass, no stock row item is only the word for a family the table names (Citrus, white flowers): ' + rowNamed.length + ' rows named from the table (' + rowNamed.join(', ') + '), every other row as the stock card has it', rowBad.length === 0 && rowNamed.join(' ') === 'albarino vermentino godello', few(rowBad, 5) + ' named: ' + rowNamed.join(' '));
+    const regBad = [], regWhole = [];
+    ROSTER.forEach((s) => {
+      const m = /<dt>The regions that name it<\/dt><dd>([^<]*)<\/dd>/.exec((sections(pageAt[s] || '')['v53-gs-regions'] || {}).html || '');
+      if (!m) return;
+      const shown = unesc(m[1]);
+      const reg = N.G('String((v53GrapeFind(' + JSON.stringify(s) + ').intro || {}).reg || "")');
+      const cut = reg.split(',').filter((x) => x.indexOf(String.fromCharCode(0x2605)) >= 0).map((x) => x.split(String.fromCharCode(0x2605)).join('').replace(/ {2,}/g, ' ').replace(/\s+\)/g, ')').trim()).join('; ');
+      if (shown.split('; ').some((x) => !balanced(x)) || shown !== starPlacesGate(reg).join('; ')) regBad.push(s + ': ' + shown);
+      if (shown !== cut) regWhole.push(s);
+    });
+    check('The regions that name it reads each starred place whole, every bracket closed: the ' + regWhole.length + ' the base cut inside a bracket (' + regWhole.join(', ') + ') drawn whole, the rest as the base drew them', regBad.length === 0 && regWhole.length === 11, few(regBad, 5));
     check('the grape view stays codex53\'s (the layer registers no grape view of its own)', N.G('String(V25_VIEWS.grape).indexOf("v53") >= 0') === true);
 
   } catch (e) { check('section 7 ran to its end', false, e && e.stack); }
@@ -604,7 +668,8 @@ async function main() {
             if (!b) { diffs.push(lv + ' ' + s + ' ' + id + ': gone'); continue; }
             /* what the layer says it changes */
             if (ns['v57-gs-worlds'] && id === 'v53-gs-profile') a = a.replace(/<dt>Where it is grown<\/dt><dd>[^<]*<\/dd>/, '');
-            if (id === 'v53-gs-fruit') { a = a.replace(/<dt>(?:In brief|Aromas)<\/dt><dd>[^<]*<\/dd>/, '').replace('<dl class="v39-pairs"></dl>', ''); b = b.replace(/<div class="v57-glass">[\s\S]*?<\/div>/, '').replace('<h4>As the grape card reads it</h4>', ''); }
+            if (id === 'v53-gs-fruit') { a = a.replace(/<dt>(?:In brief|Aromas)<\/dt><dd>[^<]*<\/dd>/, '').replace('<dl class="v39-pairs"></dl>', ''); b = b.replace(/<div class="v57-glass">[\s\S]*?<\/div>/, '').replace('<h4>As the grape card reads it</h4>', ''); a = a.replace(/(<dt>(?:Fruit|Non fruit)<\/dt><dd>)([^<]*)(<\/dd>)/g, (x, p, text, q) => p + nameRowGate(text, t) + q); }
+            if (id === 'v53-gs-regions') { const reg = M.G('String((v53GrapeFind(' + JSON.stringify(s) + ').intro || {}).reg || "")'); const want = starPlacesGate(reg); if (want.length) a = a.replace(/(<dt>The regions that name it<\/dt><dd>)[^<]*(<\/dd>)/, (x, p, q) => p + esc(want.join('; ')) + q); }
             if (id === 'v53-gs-cards') {
               b = b.replace(/<h4 id="v57-gcards-h">[\s\S]*?<ul class="v39-lines v39-list v53-doors v57-carddoors">[\s\S]*?<\/ul>/, '').replace(/ The \d+ written for the table are among them\./, '');
               a = a.replace(/Drill this grape, \d+ questions?/, 'DRILL'); b = b.replace(/Drill this grape, \d+ questions?/, 'DRILL');
@@ -638,7 +703,7 @@ async function main() {
           if (!tq.every((id) => nk.indexOf(id) >= 0)) drillBad.push(lv + ' ' + s + ' without the table\'s three');
         }
       }
-      check('the 59 old pages at the four levels (' + compared + ' drawn) hold every section as the base drew it, but for what the layer changes (the glass, the bare aroma line, the one word flag, Cards at the table, the drill\'s count; a thin grape\'s words all kept beside its new profile), the head and the foot but for At the table, the chips and the steps', compared === 236 && diffs.length === 0, few(diffs, 5));
+      check('the 59 old pages at the four levels (' + compared + ' drawn) hold every section as the base drew it, but for what the layer changes (the glass, the bare aroma line, the one word flag, Cards at the table, the drill\'s count, a stock row\'s family word named, the regions that name it read whole; a thin grape\'s words all kept beside its new profile), the head and the foot but for At the table, the chips and the steps', compared === 236 && diffs.length === 0, few(diffs, 5));
       check('each old grape\'s drill is the base\'s, less only what its notIn phrases shut out, plus the questions its new names bring and the table\'s three', drillBad.length === 0, few(drillBad, 5));
       const newAtBase = ROSTER.filter((s) => ROW[s].status === 'new' && M.G('!!v53GrapeFind(' + JSON.stringify(s) + ')'));
       check('the sixteen new grapes had no page at the base', newAtBase.length === 0, newAtBase.join(' '));
@@ -946,6 +1011,9 @@ function mutations() {
     ['a shown word outside V57_WORDS', 'js/codex57.js', "v57Esc(v57W('sideBySide'))", "'Side by side, the two'", 'every word the layer shows is V57_WORDS'],
     ['a dash in V57_WORDS', 'js/codex57.js', "atTable: 'At the table',", "atTable: 'At the table " + String.fromCharCode(0x2014) + " now',", 'in the strictest voice'],
     ['a card id moved in the data', 'js/data-grapes-table.js', '{"id":"' + firstCardId() + '"', '{"id":"gt-00000000"', 'ids frozen against keys.v1.json'],
+    ['a family grape headed as one grape', 'js/codex57.js', "if (v57Str(t.kind) === 'family') {", "if (v57Str(t.kind) === 'families') {", 'a family of vines is headed so'],
+    ['the stock rows drawn with their bare family word', 'js/codex57.js', '      rest = v57NameRows(rest, t);\n', '', 'no stock row item is only the word'],
+    ['the regions that name it cut inside a bracket again', 'js/codex57.js', '    try { return v57StarPlaces(s); } catch (e) { return _v57StarPlaces.apply(this, arguments); }', '    return _v57StarPlaces.apply(this, arguments);', 'reads each starred place whole'],
     ['a gate list naming codex56.js without the new files', 'gates', "'codex56.js', 'data-grapes-table.js', 'codex57.js'", "'codex56.js'", 'the chain rule']
   ];
   const repoRoot = path.join(JS, '..');

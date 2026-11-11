@@ -730,6 +730,12 @@ function v57PageShape(html, r) {
   if (!t) return s;
   var root = '<div class="v25page v53 v53-grape"';
   if (s.indexOf(root) === 0) s = '<div class="v25page v53 v53-grape v57-page"' + s.slice(root.length);
+  /* a family of vines under one name (Trebbiano, Lambrusco) is headed as the family it is */
+  if (v57Str(t.kind) === 'family') {
+    var hue = r.colour === 'white' ? 'white' : 'red';
+    var kindSub = '<div class="sub">' + v57Esc(v57W('kind_' + hue));
+    if (s.indexOf(kindSub) >= 0) s = s.replace(kindSub, '<div class="sub">' + v57Esc(v57W('family_' + hue)));
+  }
   /* At the table, in place of the lone Say it line; where the page drew none, ahead of whatever follows the title */
   var say0 = '';
   try { say0 = (typeof v53GridSay === 'function') ? v57Str(v57Obj(v53GridSay())[r.slug]) : ''; } catch (e) { say0 = ''; }
@@ -753,6 +759,7 @@ function v57PageShape(html, r) {
     var k = sec.indexOf(mark);
     if (k >= 0) {
       var rest = sec.slice(k + mark.length).replace(/<dt>(?:In brief|Aromas)<\/dt><dd>[^<]*<\/dd>/, '').replace('<dl class="v39-pairs"></dl>', '');
+      rest = v57NameRows(rest, t);
       if (rest.indexOf('<dl class="v39-pairs">') === 0) rest = v57H4('cardH') + rest;
       sec = sec.slice(0, k + mark.length) + glass + rest;
       var head = V57_SEC_HEAD + 'v53-gs-fruit" data-chip="v53-gs-fruit">';
@@ -803,6 +810,68 @@ if (typeof v53GrapeHtml === 'function') {
   v53GrapeHtml = function (r) {
     var html = String(_v57GrapeHtml.apply(this, arguments) || '');
     try { return v57PageShape(html, r); } catch (e) { return html; }
+  };
+}
+
+/* 3.10 the stock card's rows under the glass. A Fruit or Non fruit item that is only the word for a family of fruit
+   or flowers (Vermentino's Citrus, Godello's citrus, Albarino's white flowers) is drawn as the table's own notes of
+   that family, the names the row already holds left out; a qualified word (sweet spice) or a family the table does
+   not list stays as the card has it. Only the page is drawn so: the stock card itself is never changed. */
+var V57_FAMILY_OF = {
+  'citrus': 'citrus', 'citrus fruit': 'citrus', 'citrus fruits': 'citrus', 'orchard fruit': 'orchard fruit', 'stone fruit': 'stone fruit',
+  'stone fruits': 'stone fruit', 'tropical fruit': 'tropical fruit', 'tropical fruits': 'tropical fruit', 'red fruit': 'red fruit',
+  'red fruits': 'red fruit', 'black fruit': 'black fruit', 'black fruits': 'black fruit', 'dark fruit': 'black fruit',
+  'floral': 'floral', 'flowers': 'floral', 'white flowers': 'floral', 'blossom': 'floral'
+};
+function v57NameRow(text, t) {
+  var fam = {};
+  v57List(v57Obj(t && t.glass).notes).forEach(function (n) {
+    var k = v57Str(n && n.family).toLowerCase();
+    if (k && !v57Own(fam, k)) fam[k] = v57List(n.notes).map(v57Str).filter(Boolean);
+  });
+  var parts = String(text == null ? '' : text).split(', ');
+  var held = parts.map(function (p) { return v57Str(p).toLowerCase(); });
+  return parts.map(function (p, i) {
+    var key = v57Str(p).toLowerCase();
+    var f = v57Own(V57_FAMILY_OF, key) ? V57_FAMILY_OF[key] : '';
+    var named = (f && v57Own(fam, f)) ? fam[f].filter(function (x) { return held.indexOf(x.toLowerCase()) < 0; }) : [];
+    if (!named.length) return p;
+    var out = v57Esc(named.join(', '));
+    return (i === 0 && /^[A-Z]/.test(v57Str(p))) ? out.charAt(0).toUpperCase() + out.slice(1) : out;
+  }).join(', ');
+}
+function v57NameRows(html, t) {
+  return String(html || '').replace(/(<dt>(?:Fruit|Non fruit)<\/dt><dd>)([^<]*)(<\/dd>)/g, function (m, a, text, b) {
+    return a + v57NameRow(text, t) + b;
+  });
+}
+
+/* 3.11 The regions that name it. codex53 reads the starred places of a grape's Regionale region line by cutting the
+   line at every comma, so a starred place with a bracket of districts was cut inside its bracket (Piedmont (Barolo,
+   Bordeaux Left Bank (Medoc). The line is cut at the commas outside a bracket; a star on a place keeps its bracket
+   whole, and a star inside a bracket keeps the starred places of that bracket (Loire (Vouvray)). A line no bracket
+   cut reads as before. */
+function v57StarPlaces(s) {
+  var str = String(s == null ? '' : s), parts = [], depth = 0, from = 0, i, ch;
+  for (i = 0; i < str.length; i++) {
+    ch = str.charAt(i);
+    if (ch === '(') depth++;
+    else if (ch === ')') depth = depth > 0 ? depth - 1 : 0;
+    else if (ch === ',' && depth === 0) { parts.push(str.slice(from, i)); from = i + 1; }
+  }
+  parts.push(str.slice(from));
+  return parts.filter(function (p) { return p.indexOf('★') >= 0; }).map(function (p) {
+    var q = p.replace(/\(([^()]*)\)/g, function (m, inner) {
+      if (inner.indexOf('★') < 0) return m;
+      return '(' + inner.split(',').filter(function (x) { return x.indexOf('★') >= 0; }).join(',') + ')';
+    });
+    return v57Str(q.replace(/\s*★/g, ''));
+  }).filter(Boolean);
+}
+if (typeof v53StarPlaces === 'function') {
+  var _v57StarPlaces = v53StarPlaces;
+  v53StarPlaces = function (s) {
+    try { return v57StarPlaces(s); } catch (e) { return _v57StarPlaces.apply(this, arguments); }
   };
 }
 
