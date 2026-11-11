@@ -35,7 +35,7 @@ const DIR = __dirname;
 const ROOT = path.join(__dirname, '..', '..');
 const JS_DIR = path.join(ROOT, 'js');
 
-/* ---- the plan's own words ---- */
+/* the plan's own words */
 const CHUNKS = ['pilots', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12', 'f13', 'f14', 'f15', 'f16', 'f17'];
 const GROUPS = 51;
 const PICKS = 5;
@@ -47,7 +47,7 @@ const ID_PREFIX = 'fl-';
 const ID_RE = /^fl-[0-9a-z]{8}$/;
 const KEY_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
-/* ---- a record's fields, in the order the build ships them ---- */
+/* a record's fields, in the order the build ships them */
 const FIELDS = ['key', 'group', 'region', 'producer', 'producerId', 'say', 'place', 'founded', 'wine', 'table', 'story', 'others', 'traps', 'cards', 'questions', 'sources'];
 /* provenance: read by the checker and the integrator, never shipped */
 const PROVENANCE = ['report', 'checked'];
@@ -85,7 +85,7 @@ const CAPS = {
   entry: 680 /* the reading words a record shows: the wine's fields, the label's meanings, table, story, others' notes and traps */
 };
 
-/* ---- small readers ---- */
+/* small readers */
 function isStr(v) { return typeof v === 'string'; }
 function isObj(v) { return !!v && typeof v === 'object' && !Array.isArray(v); }
 function isList(v) { return Array.isArray(v); }
@@ -111,7 +111,7 @@ const ESTATE_WORDS = ['chateau', 'domaine', 'domaines', 'maison', 'bodega', 'bod
 function nameWords(name) { return fold(name).split(' ').filter((w) => w.length >= 3 && ESTATE_WORDS.indexOf(w) < 0); }
 function names(text, name) { const ws = nameWords(name); if (!ws.length) return hasPhrase(text, name); const t = ' ' + fold(text) + ' '; return ws.some((w) => t.indexOf(' ' + w + ' ') >= 0); }
 
-/* ---- what the Codex holds: the regions, the countries and the producers' ids ---- */
+/* what the Codex holds: the regions, the countries and the producers' ids */
 const FACTS = {};
 function runData(jsDir, file, expose) {
   const p = path.join(jsDir, file);
@@ -136,7 +136,7 @@ function facts(jsDir) {
   return f;
 }
 
-/* ---- the people never named ---- */
+/* the people never named */
 let PEOPLE = null;
 function people() {
   if (PEOPLE) return PEOPLE;
@@ -171,7 +171,7 @@ function livingIn(s, producer) {
   return hits;
 }
 
-/* ---- the voice: rules of this tab's own ---- */
+/* the voice: rules of this tab's own */
 /* judgement, never allowed: famous may describe, never rank; "top" stands only as the top of something */
 const JUDGE = /\b(?:best|finest|greatest|most\s+famous|iconic|legendary|world[- ]class|top(?!\s+of\b|soil)|noblest|grandest|most\s+(?:celebrated|prized|revered|renowned|sought|popular|important|prestigious|noble|loved|beloved|admired|coveted|expensive|collectable|collectible|desirable|acclaimed)|world\s+famous|world\s+renowned|renowned|unrivall?ed|unparalleled|peerless|ultimate|quintessential|king\s+of|queen\s+of|holy\s+grail|cult|sought[- ]after|award[- ]winning|unbeatable|unsurpassed|second\s+to\s+none|benchmark|superb|outstanding|masterpiece|pinnacle|unique|incomparable|stunning|exquisite|magnificent|sublime)\b/i;
 /* a score: points, a mark out of a hundred, a rating */
@@ -247,7 +247,7 @@ function voiceProblems(rec, at) {
   return out;
 }
 
-/* ---- the pieces of a record ---- */
+/* the pieces of a record */
 function capped(out, where, v, lo, hi, empty) {
   if (!isStr(v)) { out.push(where + ': a string'); return false; }
   if (!v.trim()) { if (!empty && lo > 0) out.push(where + ': a string' + (lo ? ' of ' + lo + ' words or more' : '')); return false; }
@@ -437,7 +437,7 @@ function readingWords(rec) {
   return n;
 }
 
-/* ---- one record ---- */
+/* one record */
 function validateRecord(rec, plan, group, i, opts) {
   const o = opts || {};
   const at = 'records[' + (i == null ? 0 : i) + ']';
@@ -485,7 +485,7 @@ function validateRecord(rec, plan, group, i, opts) {
   return out;
 }
 
-/* ---- a group's fragment: { group, records: [five, in plan order] } ---- */
+/* a group's fragment: { group, records: [five, in plan order] } */
 function validateFragment(frag, plan, opts) {
   const out = people().problems.slice();
   if (!isObj(frag)) return out.concat(['fragment: { group, records }']);
@@ -503,7 +503,7 @@ function validateFragment(frag, plan, opts) {
 /* the problems of one record within its fragment's list, for the build's record by record judgement */
 function recordProblems(frag, plan, i, opts) { return validateRecord(frag.records[i], plan, frag.group, i, opts); }
 
-/* ---- what a second reader should look at: never a failure ---- */
+/* what a second reader should look at: never a failure */
 const TITLED = /\b(?:Baron|Baroness|Count|Countess|Comte|Comtesse|Marquis|Marquise|Marchese|Marchesa|Duke|Duc|Duchess|Sir|Lord|Lady|Madame|Monsieur|Dom|Don|Doña|Prince|Princess|Graf|Freiherr|Fürst|Tsar|King|Queen|Emperor|Empress|Pope|Abbé)\s+[A-Z]/;
 const EST = /\b(?:the\s+(?:most|least)\s+[a-z]+|(?:old|larg|bigg|small|high|low|rich|rar|earli|lat|light|heavi|dark|sweet|long|short)est|the\s+first\s+(?:[a-z]+\s+){0,4}(?:to|in|of)|the\s+only)\b/i;
 const NOW = /\b(?:today|now|still|nowadays|these days|modern day)\b/i;
@@ -530,7 +530,7 @@ function adviseRecord(rec, i) {
   return out;
 }
 
-/* ---- the plan itself ----
+/* the plan itself.
    f, when given, is facts(jsDir): every region slug real, its country the region's sheet, every producerId real. */
 function planProblems(plan, f) {
   const out = people().problems.slice();
