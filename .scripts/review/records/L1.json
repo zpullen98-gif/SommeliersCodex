@@ -177,6 +177,238 @@
         }
       ],
       "why": "The legal date is the decree of 17 February 1998; 1997 is the first vintage, so the record keeps both and says which is which."
+    },
+    {
+      "id": "L1-04",
+      "topic": "Rueda: one white category since 2019, the main grapes at 75 per cent since 2024",
+      "verdict": "change",
+      "claim": "The Rueda and Toro record teaches Rueda Verdejo and Rueda Sauvignon as label categories at 85 per cent of their grape and plain Rueda as at least 50 per cent Verdejo, with Viura merely permitted in that blend; the Spain module question c-lalvjliu and the Verdejo grape fragment repeat the half.",
+      "finding": "The Consejo Regulador merged Rueda Verdejo, Rueda Sauvignon and Rueda into one white category, Rueda, from the 2019 vintage; the amended pliego (published nationally on 29 October 2019, in force at EU level from 3 March 2020) asked at least 50 per cent of the main whites, then Verdejo and Sauvignon Blanc, and admitted Chardonnay and Viognier as secondary. From 30 August 2024 (BOCYL of that day; EU communication of 12 June 2025) a Rueda white needs at least 75 per cent from the main whites, now Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, and may be all of them. A grape named on the label must still make at least 85 per cent, by EU rule. Plain Rueda therefore has no Verdejo floor of its own. The wines notes for Rueda Verdejo and Rueda Sauvignon and the Verdejo label line say at least 85 per cent of a named grape, which is still true, and are left.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.classification",
+          "old": "Its labels are grape rules: Rueda Verdejo needs at least 85 per cent Verdejo, Rueda Sauvignon at least 85 per cent Sauvignon Blanc, and plain Rueda at least 50 per cent Verdejo with Viura, Palomino and the other permitted whites.",
+          "new": "Its labels were grape rules until the 2019 vintage folded Rueda Verdejo and Rueda Sauvignon into one Rueda: a grape named on the label must make at least 85 per cent, and since August 2024 a Rueda white draws at least 75 per cent from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, with Palomino and the other permitted whites in the rest."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.tiers[1][1]",
+          "old": "At least 85 per cent Verdejo; the label most guests will know.",
+          "new": "At least 85 per cent Verdejo when a Rueda names the grape; no longer a category of its own since the 2019 vintage, but the label most guests will know."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.tiers[2][1]",
+          "old": "At least 85 per cent Sauvignon Blanc.",
+          "new": "At least 85 per cent Sauvignon Blanc when a Rueda names the grape; a category of its own before the 2019 vintage."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.tiers[3][1]",
+          "old": "At least 50 per cent Verdejo, the balance from the other permitted whites.",
+          "new": "Since August 2024 at least 75 per cent from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, the balance from the other permitted whites."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "exam[2]",
+          "old": "The label percentages: Rueda Verdejo 85, Rueda Sauvignon 85, plain Rueda 50; Toro reds 75 per cent Tinta de Toro.",
+          "new": "The label percentages: a grape named on a Rueda label 85, the main whites in any Rueda white 75 since August 2024; Toro reds 75 per cent Tinta de Toro."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "traps[4]",
+          "old": "Rueda Verdejo needs 85 per cent, plain Rueda only 50; the grape name on the label is the clue.",
+          "new": "A Rueda naming Verdejo needs 85 per cent of it, a Rueda naming no grape no set share of Verdejo at all; the grape name on the label is the clue."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "grapes[1].styles",
+          "old": "Planted in Rueda from the 1970s and allowed its own varietal label at 85 per cent; grassier",
+          "new": "Planted in Rueda from the 1970s, a main grape of the DO since the revision of 2019 and named on a label at 85 per cent; grassier"
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "grapes[4].styles",
+          "old": "Macabeo, a neutral white permitted in the basic Rueda blend, which needs only half Verdejo.",
+          "new": "Macabeo, a neutral white of the basic Rueda blend, counted among its main grapes since 2024."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "cards[1].b",
+          "old": "Rueda Verdejo at least 85 per cent Verdejo; Rueda Sauvignon at least 85 per cent Sauvignon Blanc; plain Rueda at least 50 per cent Verdejo.",
+          "new": "One Rueda since the 2019 vintage: a grape named on the label makes at least 85 per cent; since August 2024 at least 75 per cent comes from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "questions[0].exp (r-99qkjr18)",
+          "old": "Rueda Verdejo requires at least 85 per cent of the grape, as does Rueda Sauvignon for Sauvignon Blanc. Plain Rueda needs only half Verdejo, the rest from Viura, Palomino and the other permitted whites.",
+          "new": "A Rueda that names Verdejo needs at least 85 per cent of the grape, as one naming Sauvignon Blanc does. A Rueda that names no grape sets no share of Verdejo: since August 2024 it needs three quarters from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, the rest from Palomino and the other permitted whites."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "questions[4].q (r-zd9qzdui, the stem now wrong)",
+          "old": "Which white grape other than Verdejo may carry its own varietal label in Rueda at 85 per cent?",
+          "new": "Which white grape other than Verdejo had a varietal category of its own in Rueda, at 85 per cent, before the 2019 vintage?"
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "questions[4].exp (r-zd9qzdui)",
+          "old": "Rueda Sauvignon is the varietal label for Sauvignon Blanc, planted on the plateau since the 1970s. Godello is a Galician grape, Garnacha Blanca belongs to Rioja and Catalonia, and Chardonnay has no varietal label in Rueda.",
+          "new": "Rueda Sauvignon was the category for Sauvignon Blanc, planted on the plateau since the 1970s, until the 2019 vintage folded the varietal categories into one Rueda, where a named grape must still make 85 per cent. Godello is a Galician grape, Garnacha Blanca belongs to Rioja and Catalonia, and Chardonnay entered Rueda's rules only with that revision."
+        },
+        {
+          "file": "rewrite/categories/r2_spain.py",
+          "record": "c-lalvjliu",
+          "path": "SA(\"The Duero and its denominations\", \"Putting Verdejo on a Rueda label ...\").exp",
+          "old": "Plain Rueda needs half the blend to be Verdejo and the rest may be Viura or another permitted white; naming the grape lifts the floor.",
+          "new": "Plain Rueda sets no share for Verdejo itself, only three quarters from the main whites, Sauvignon Blanc and Viura among them; naming the grape lifts the floor."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdejo.json",
+          "record": "verdejo",
+          "path": "questions[2].exp",
+          "old": "A Rueda that names no grape needs only half from the denomination's main grapes, with other permitted whites such as Viura making up the rest.",
+          "new": "A Rueda that names no grape needs three quarters from the denomination's main grapes, Viura now among them, with other permitted whites such as Palomino making up the rest."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Consejo Regulador de la DO Rueda, nota sobre el pliego de condiciones (November 2019)",
+          "url": "https://www.dorueda.com/wp-content/uploads/2019/11/Nota-Pliego-condiciones-DO-Rueda.pdf",
+          "kind": "primary",
+          "says": "For still white wines of the 2019 vintage there is one category only, Rueda, into which the old Rueda Verdejo, Rueda Sauvignon and Rueda are merged; Gran Vino de Rueda is introduced.",
+          "read": "search summary"
+        },
+        {
+          "title": "Official Journal of the European Union C 69 (3 March 2020), approval of a standard amendment to the PDO Rueda, PDO-ES-A0889-AM03",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020XC0303(03)",
+          "kind": "primary",
+          "says": "White wine is made with at least 50 per cent of the white varieties considered main; Sauvignon Blanc becomes a main variety; Chardonnay, Viognier and Syrah are new secondary varieties.",
+          "read": "search summary"
+        },
+        {
+          "title": "Official Journal of the European Union C/2025/3217 (12 June 2025), standard amendment to the PDO Rueda, PDO-ES-A0889-AM05",
+          "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=OJ:C_202503217",
+          "kind": "primary",
+          "says": "White wine moves from at least 50 to at least 75 per cent of the main white varieties; Chardonnay and Viognier become main; Riesling, Garnacha Blanca, the two Moscatels and Gewürztraminer are added.",
+          "read": "search summary"
+        },
+        {
+          "title": "Ministerio de Agricultura, Pesca y Alimentación, pliego de condiciones de la DOP Rueda (version of 12 June 2025)",
+          "url": "https://www.mapa.gob.es/dam/mapa/contenido/alimentacion/temas/calidad-agroalimentaria/2017-calidad-diferenciada/nuevo_denominaciones/pliegos-de-condiciones/pliego-condiciones-vinos/dops/rueda_2025_06_12.pdf",
+          "kind": "primary",
+          "says": "Vino blanco: elaborado con un mínimo del 75 por ciento de las variedades blancas principales, which are Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consejo Regulador de la DO Rueda, variedades de uva, and its press note on eight new varieties (August 2024)",
+          "url": "https://dorueda.com/variedades-de-uva/",
+          "kind": "primary",
+          "says": "From 30 August 2024 the main varieties must make 75 per cent and the secondary at most 25, and a wine may be all main varieties; Viura, Viognier and Chardonnay join Verdejo and Sauvignon Blanc as main. Published in the BOCYL of 30 August 2024 on an ITACYL resolution of 23 August; Godello's entry was suspended on 28 October 2024.",
+          "read": "search summary"
+        },
+        {
+          "title": "Commission Delegated Regulation (EU) 2019/33, Article 50",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0033",
+          "kind": "primary",
+          "says": "Where one wine grape variety is named on the label, at least 85 per cent of the product comes from it.",
+          "read": "search summary"
+        },
+        {
+          "title": "Boletín Oficial del Estado, Orden ARM/560/2009 publishing the Reglamento de la Denominación de Origen Rueda",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2009-4064",
+          "kind": "primary",
+          "says": "The old rule the Codex teaches: Rueda Verdejo and Rueda Sauvignon at 85 per cent of their grape, Rueda at 50 per cent Verdejo.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Two revisions of the pliego (2019 to 2020 and August 2024) replaced the varietal categories and the half Verdejo rule; the stem of r-zd9qzdui now has two right options, Sauvignon Blanc and Chardonnay, so it is reworded to the old category and keeps its pinned id, its answer, options and accept list."
+    },
+    {
+      "id": "L1-05",
+      "topic": "Verdejo and Verdelho: a different grape, not unrelated",
+      "verdict": "change",
+      "claim": "The Rueda trap says Verdejo is not Verdelho and that the Madeira grape is unrelated.",
+      "finding": "They are different varieties, but not shown unrelated: the institutes' catalogue makes Verdejo a probable cross of Savagnin and Castellana Blanca on genetic analyses at Montpellier, and a DNA study of 2018 makes Verdelho an offspring of Savagnin with an unknown other parent, which would make the two half siblings. Both results rest on small marker sets, so the safe wording is a different grape, as the Verdejo and Godello grape fragments already say.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "traps[0]",
+          "old": "Verdejo is not Verdelho; the Madeira grape is unrelated.",
+          "new": "Verdejo is not Verdelho; the Madeira grape is a different grape."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Plantgrape, the catalogue of vines grown in France (IFV, INRAE, Institut Agro Montpellier): Verdejo",
+          "url": "https://plantgrape.plantnet-project.org/en/cepage/Verdejo",
+          "kind": "primary",
+          "says": "On genetic analyses carried out at Montpellier, Verdejo would come from a cross of Savagnin and Castellana Blanca.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Verdejo",
+          "url": "https://glossary.wein.plus/verdejo",
+          "kind": "secondary",
+          "says": "A presumably natural cross of Castellana Blanca and Savagnin Blanc, on DNA analysis of only 20 markers.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Verdelho",
+          "url": "https://glossary.wein.plus/verdelho",
+          "kind": "secondary",
+          "says": "DNA analyses of 2018 give Verdelho as a presumably natural cross of Savagnin Blanc and an unknown variety.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Unrelated says more than the DNA allows; a different grape is true on every reading."
+    },
+    {
+      "id": "L1-06",
+      "topic": "Verdejo, Verdelho and Verdicchio: different vines, not unrelated ones",
+      "verdict": "change",
+      "claim": "The Régionale question i-fw8igegc explains that the verd- root has attached itself to unrelated vines right around the Mediterranean, Verdejo and Verdelho among them.",
+      "finding": "The same DNA summaries make Verdejo and Verdelho possible half siblings through Savagnin; Verdicchio is of another line. The names still prove nothing, which is the question's point, but unrelated is the over-claim. The answer option (There is none; the resemblance is in the names alone) is left by rule: the three as a set share no relation the options name, and no option speaks of half siblings.",
+      "targets": [
+        {
+          "file": "rewrite/categories/r1_grapes_labels.py",
+          "record": "i-fw8igegc",
+          "path": "Q(\"Names that mislead\", \"Three whites reach one table ...\").exp",
+          "old": "attached themselves to unrelated vines right around the Mediterranean.",
+          "new": "attached themselves to quite different vines right around the Mediterranean."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Plantgrape, the catalogue of vines grown in France (IFV, INRAE, Institut Agro Montpellier): Verdejo",
+          "url": "https://plantgrape.plantnet-project.org/en/cepage/Verdejo",
+          "kind": "primary",
+          "says": "Verdejo would come from a cross of Savagnin and Castellana Blanca.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Verdelho",
+          "url": "https://glossary.wein.plus/verdelho",
+          "kind": "secondary",
+          "says": "Verdelho is given as an offspring of Savagnin Blanc and an unknown variety, which also refuted its supposed identity with Verdicchio Bianco.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The explanation should not assert what the DNA leaves open; the owner may want the answer option softened if the Savagnin results firm up."
     }
   ]
 }
