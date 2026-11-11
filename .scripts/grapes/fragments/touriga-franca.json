@@ -17,10 +17,11 @@
     "notes": [
       { "family": "black fruit", "notes": ["blackberry", "black cherry", "black plum"] },
       { "family": "floral", "notes": ["rose petal", "rockrose"] },
+      { "family": "red fruit", "notes": ["pomegranate", "red cherry"] },
       { "family": "oak", "notes": ["vanilla pod", "toast"] }
     ],
     "ladder": [
-      { "climate": "moderate", "where": "The higher, cooler slopes of the Douro", "notes": ["black cherry", "rose petal", "pomegranate"] },
+      { "climate": "moderate", "where": "The wetter Baixo Corgo and the Douro's higher, cooler slopes", "notes": ["black cherry", "rose petal", "pomegranate"] },
       { "climate": "warm", "where": "The Cima Corgo and the Douro Superior", "notes": ["blackberry", "black plum", "rockrose"] }
     ],
     "structure": "Dry. Acidity medium plus, tannin medium plus to high, firm but velvety, alcohol medium plus, body medium plus."
@@ -28,7 +29,7 @@
   "worlds": {
     "home": {
       "home": "The Douro, where it ripens late and crops reliably on the hot schist slopes. It is blended with Touriga Nacional and the other favoured grapes for Port and for the dry Douro reds, bringing flesh and a rose petal perfume, and a few cellars bottle it alone.",
-      "abroad": "It seldom leaves northern Portugal. California grows a little, in Lodi and elsewhere, where a bottle labelled simply Touriga is often this grape."
+      "abroad": "It seldom leaves northern Portugal. California grows a little, in Lodi above all, mostly for fortified wine or blended with Touriga Nacional."
     }
   },
   "service": {
@@ -39,16 +40,16 @@
   },
   "food": {
     "with": [
-      { "dish": "Grilled lamb chops", "why": "juicy fruit and a supple grip suit the char" },
+      { "dish": "Grilled lamb chops", "why": "juicy black plum and a supple grip suit the char" },
       { "dish": "Roast pork", "why": "fresh acidity and gentle tannin cut the fat" },
       { "dish": "Cured ham", "why": "salt beside ripe, juicy blackberry" },
-      { "dish": "Duck confit", "why": "rose petal and dark fruit beside rich, salty duck" }
+      { "dish": "Duck confit", "why": "rose petal and black cherry beside rich, salty duck" }
     ]
   },
   "labels": [
     { "term": "Touriga Francesa", "means": "The older name of Touriga Franca, still seen on some labels; the grape has no French origin." },
     { "term": "Douro", "means": "Dry reds of the Port valley, often blends of Touriga Franca and Touriga Nacional." },
-    { "term": "Port", "means": "Fortified red from the Douro; Touriga Franca is one of its five favoured grapes." }
+    { "term": "Port", "means": "Fortified wine of the Douro, most of it red; Touriga Franca is one of its five favoured grapes." }
   ],
   "guest": [
     { "q": "Is Touriga Franca related to Touriga Nacional?", "a": "Yes, it is its child: DNA shows a cross of Touriga Nacional and an old Douro grape called Marufo. It is lighter and juicier than its parent, with more rose petal in the perfume." },
@@ -91,7 +92,7 @@
       "q": "A guest asks why a Douro red blends Touriga Franca with Touriga Nacional instead of bottling either alone. What is the usual reason?",
       "opts": ["Nacional gives structure, Franca flesh and perfume", "The law forbids a single grape Douro red", "Franca adds sweetness to the dry wine", "Nacional cannot ripen on the schist"],
       "a": 0,
-      "exp": "Touriga Nacional brings depth and firm tannin, Touriga Franca juicy fruit and a rose petal perfume, so each fills out the other. Douro law allows a varietal red, so the law is the nearest wrong answer."
+      "exp": "Touriga Nacional brings depth and firm tannin, Touriga Franca juicy blackberry and a rose petal perfume, so each fills out the other. Douro law allows a varietal red, so the law is the nearest wrong answer."
     }
   ],
   "sources": [
