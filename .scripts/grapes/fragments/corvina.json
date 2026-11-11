@@ -22,10 +22,10 @@
       { "family": "spice", "notes": ["cinnamon", "clove"] }
     ],
     "ladder": [
-      { "climate": "cool", "where": "The higher, later eastern valleys of Valpolicella", "notes": ["sour cherry", "cranberry", "bitter almond"] },
-      { "climate": "moderate", "where": "The Classico hills of Negrar, Fumane and Marano", "notes": ["red cherry", "black cherry", "cherry stone"] }
+      { "climate": "cool", "where": "The higher hill vineyards, cooled at night by air off the Lessini", "notes": ["sour cherry", "cranberry", "bitter almond"] },
+      { "climate": "moderate", "where": "The lower, warmer slopes running down towards Verona", "notes": ["red cherry", "black cherry", "cherry stone"] }
     ],
-    "structure": "Dry. Fresh Valpolicella: acidity high, tannin low, alcohol moderate, body light. Amarone: alcohol high, body full, tannin medium, acidity still fresh."
+    "structure": "Dry. Fresh Valpolicella: acidity high, tannin low, alcohol medium, body light. Amarone: alcohol high, body full, tannin medium, acidity still fresh."
   },
   "worlds": {
     "home": {
@@ -34,7 +34,7 @@
     }
   },
   "service": {
-    "temp": "54 to 59 degrees Fahrenheit, 12 to 15 degrees Celsius, for Valpolicella; Amarone at cool room temperature.",
+    "temp": "Valpolicella 54 to 59, Amarone 61 to 64 degrees Fahrenheit; 12 to 15 and 16 to 18 degrees Celsius.",
     "glass": "A standard red wine glass for Valpolicella; a large Burgundy bowl for Amarone.",
     "decant": "Not for fresh Valpolicella; consider it for a young Amarone, and decant an old one off its sediment.",
     "age": "Valpolicella young, within two or three years; Amarone ten to twenty years, or more."
@@ -61,8 +61,8 @@
   ],
   "compare": [
     { "slug": "gamay", "tell": "Gamay matches fresh Valpolicella's pale colour and tart cherry fruit, often with banana; Corvina gives itself away with a bitter almond, cherry stone finish." },
-    { "slug": "zinfandel", "tell": "Zinfandel shares Amarone's raisined richness and warmth, with blackberry jam and black pepper; Amarone has more sour cherry, cherry stone bitterness and cinnamon." },
-    { "slug": "sangiovese", "tell": "Sangiovese is firmer, with dusty tannin and tomato leaf; fresh Corvina is softer in grip, with sour cherry and a bitter almond finish." }
+    { "slug": "zinfandel", "tell": "Zinfandel shares Amarone's raisined richness and warmth, with blackberry jam and black pepper; Amarone has more sour cherry and a bitter cherry stone finish." },
+    { "slug": "sangiovese", "tell": "Sangiovese is firmer, with dusty tannin and tomato leaf; fresh Corvina is lighter and softer in grip, with a bitter almond finish." }
   ],
   "cards": [
     { "front": "Corvina: which four wines does Valpolicella make from one blend?", "back": "Valpolicella, fresh; Ripasso, refermented on the skins of dried grapes; Amarone, dry, from dried grapes; and Recioto, sweet, from dried grapes." },
@@ -78,7 +78,7 @@
     },
     {
       "q": "A guest finds plain Valpolicella too light and Amarone too heavy, and asks for a Corvina red between the two in weight. Which do you suggest?",
-      "opts": ["Valpolicella Ripasso", "Recioto della Valpolicella", "Bardolino Chiaretto", "Bardolino Classico"],
+      "opts": ["Valpolicella Ripasso", "Recioto della Valpolicella", "Chiaretto di Bardolino", "Bardolino Classico"],
       "a": 0,
       "exp": "Ripasso is Valpolicella refermented on the skins left from Amarone, which adds body and raisined fruit. Recioto, the nearest miss, is sweet, and Bardolino is lighter still."
     },
