@@ -1,0 +1,779 @@
+{
+ "chunk": "g8",
+ "date": "2026-11-11",
+ "role": "The second reading: each entry read to refute it, not to admire it.",
+ "grapes": [
+  "pinot-noir",
+  "gamay",
+  "zweigelt",
+  "blaufrankisch",
+  "pinotage",
+  "cinsault"
+ ],
+ "method": [
+  "Each fragment read whole beside what show.cjs prints for the grape (GRAPES_PLUS and GRAPES, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex region records for Burgundy, Beaujolais, Oregon, Washington, New York, British Columbia, Austria and Burgenland, Sopron, Eger and Hungary, Württemberg, South Africa, Stellenbosch, Walker Bay, Paarl and the Swartland, Chile and Itata, Provence and Lebanon.",
+  "Every fact the reviewed records do not already state was put to search: the skin of Cinsault, its planting in Chile and Secano Interior; the Neusiedlersee rule and its year, Rotburger and the campaign of 2018; the Bikavér rules and the soils of the Burgenland origins; the cause of the paint note in Pinotage and its respelling; the Bourgogne label and the name of Pinot Noir; Gamay Beaujolais in American law.",
+  "The glass read as a blind taster: each note asked whether a taster would nod, each prose field scanned by the lint for a family word in disguise, each ladder set beside the Codex climate line for the place, and each tell checked from both sides so that no tell parts two grapes by a note both carry.",
+  "Each Old World and New World entry (Pinot Noir, Gamay and Cinsault) read for a false or lazy generalisation, the exceptions in blur and a call that would survive a flight; each home and abroad pair (Zweigelt, Blaufränkisch and Pinotage) read for the same and against TASTE.world.",
+  "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences and for whether it is said to the guest, and for a hook another grape already uses; the cards and questions read for one key, four options of one kind and a stem that gives nothing away.",
+  "node .scripts/grapes/build-grapes.cjs --lint --chunk g8 run after every round of edits until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+ ],
+ "limits": [
+  "This session reached search alone; no source page was opened, so a page is cited as the search results quoted it, and every address the authors gave stays unopened.",
+  "The brief allows five searches a grape. Pinot Noir took two, Gamay two, Zweigelt two, Blaufränkisch two, Pinotage two and Cinsault four.",
+  "A source whose address or title names a person is left out (several writers sites came back for Itata, Bikavér and Pinotage), and the fact is cited from another page or from the Codex record.",
+  "The Syrah, Cabernet Franc, Zinfandel and Grenache entries do not compare Blaufränkisch, Pinotage or Cinsault, so those tells were read from one side only."
+ ],
+ "entries": {
+  "pinot-noir": {
+   "verdict": "Sound after three fixes. The respelling, the German, Italian and Austrian names, the Oregon floor, the climate rungs and the service figures hold; the two cellar lines set a Burgundy habit on the New World side, and one label line said less than the law allows.",
+   "tested": [
+    "say against GRID_SAY (PEE-noh NWAHR): opens on it, with Spätburgunder after a comma; the Codex Ahr, Baden and Pfalz records say the German name the same way, give or take the break.",
+    "The names abroad: Spätburgunder in Germany, Pinot Nero in Italy, Blauburgunder in Austria and the Alto Adige. Agree with the Codex and the sources.",
+    "The Oregon floor of 90 per cent against the federal 75: the Codex Washington and Oregon records state it.",
+    "The ladder against the Court grid: the Côte d Or and the Willamette Valley cool, Carneros, Sonoma and the Central Coast moderate. Agrees; no warm rung, rightly.",
+    "Structure against the reviewed profile (body light to medium, acid medium plus to high, tannin low to medium and silky, alcohol moderate to medium plus): agrees.",
+    "The cellar lines against the Codex Burgundy record: the cold soak, set as a New World mark, is Burgundy own habit; whole bunches are a choice there, not a habit.",
+    "The label line Bourgogne Rouge: the sources read disagree on whether the front label may carry the grape, and many regional labels print Pinot Noir; seldom names the grape could not stand.",
+    "The glass as a blind taster: every note is in the reviewed profile or the grid reads (red cherry, raspberry, strawberry, cranberry, black cherry, plum, rose, violet, mushroom, forest floor, beetroot, cola, baking spice named as clove and cinnamon).",
+    "Service against the reference rows: 12 to 15 degrees Celsius, the Burgundy bowl, decanting usually unnecessary and a fragile old bottle poured gently. Agrees. Age against TASTE (five to twenty): agrees.",
+    "The four lines counted (23, 40, 105 and 40 words) and said aloud: the five beats in order, the pine cone hedged as said to come.",
+    "Compare tells from both sides: Grenache and Meunier name Pinot Noir and agree; the Gamay tell agrees once forest floor leaves the Gamay notes.",
+    "Cards and questions: the worlds question keyed on moderate California with three cooler, tarter Old World options; one key each, nothing given away."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "labels[0].means",
+     "was": "Red Burgundy at the regional level: nearly always Pinot Noir, though the label seldom names the grape.",
+     "now": "Red Burgundy at the regional level, made from Pinot Noir; Gamay sold as Burgundy is labelled Bourgogne Gamay.",
+     "why": "Seldom names the grape is contested: regional Bourgogne may carry the grape and many labels do, and the sources read disagree only on the front label. The new line stands on the Codex Beaujolais record.",
+     "sources": [
+      {
+       "title": "wein.plus wine guide: Bourgogne AOC",
+       "url": "https://wineguide.wein.plus/wine-regions/bourgogne-aoc"
+      },
+      {
+       "title": "SevenFifty Daily: the Bourgognes",
+       "url": "https://www.sevenfifty.com/tc/bourgognes"
+      },
+      {
+       "title": "The Codex Beaujolais record (js/regions/france.json, beaujolais): in law greater Burgundy, so a cru Gamay may be sold as Bourgogne Gamay; semi carbonic the norm; the crus increasingly made like red Burgundy.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.cellar",
+     "was": "Usually destemmed and often soaked cold before fermenting, to draw colour and fruit; bottled under the grape's name, often with more new French oak.",
+     "now": "Made much as in Burgundy, though often picked riper and given a larger share of new French oak; bottled under the grape's name.",
+     "why": "The cold soak was set on the New World side as its mark, but the Codex Burgundy record makes it Burgundy habit. What truly differs in the cellar is riper picking and, often, more new oak.",
+     "sources": [
+      {
+       "title": "The Codex Burgundy record (js/regions/france.json, burgundy): red Burgundy is Pinot Noir fermented in open vats after a cold soak, with a choice over whole bunches, aged twelve to eighteen months in the pièce, the share of new oak rising with the tier.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.cellar",
+     "was": "Often fermented with a share of whole bunches, stems and all, then aged a year or more in French oak barrels, a modest share of them new.",
+     "now": "Often a cold soak, then whole bunches or destemmed fruit as each estate prefers; twelve to eighteen months in French oak, more of it new for the higher tiers.",
+     "why": "Whole bunches are a choice in Burgundy, not a habit to be called often; the line now follows the Codex Burgundy record, cold soak, whole bunch or destemmed, twelve to eighteen months, the new oak rising with the tier.",
+     "sources": [
+      {
+       "title": "The Codex Burgundy record (js/regions/france.json, burgundy): red Burgundy is Pinot Noir fermented in open vats after a cold soak, with a choice over whole bunches, aged twelve to eighteen months in the pièce, the share of new oak rising with the tier.",
+       "url": ""
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Whether a regional Bourgogne may print the grape on its front label: the sources read disagree, so the entry no longer says either way.",
+    "The pine cone name stays hedged as said to come, as the author left it."
+   ],
+   "sources": [
+    {
+     "title": "The Oxford Companion to Wine, entries on Pinot Noir, Gamay, Cinsaut and Pinotage",
+     "url": ""
+    },
+    {
+     "title": "wein.plus wine guide: Bourgogne AOC",
+     "url": "https://wineguide.wein.plus/wine-regions/bourgogne-aoc"
+    },
+    {
+     "title": "SevenFifty Daily: the Bourgognes",
+     "url": "https://www.sevenfifty.com/tc/bourgognes"
+    }
+   ]
+  },
+  "gamay": {
+   "verdict": "Sound after eight fixes. The edict of 1395, the ten crus in order, Nouveau, the Gamay Beaujolais rule of 2007 and the service figures hold; the New World side made Oregon and Ontario Gamay a Pinot Noir in all but name, against the Codex Oregon record, and forest floor stood among the notes though both entries and the reviewed profile part Pinot Noir from Gamay by it.",
+   "tested": [
+    "say against GRID_SAY (gah-MAY): the same.",
+    "The edict of 1395, the ten crus in order north to south, Nouveau on the third Thursday of November, Beaujolais in law a part of greater Burgundy, semi carbonic the norm and the crus increasingly made like Burgundy: all in the Codex Beaujolais record.",
+    "Gamay Beaujolais: barred from American labels of wine bottled on or after 9 April 2007 by the federal rule, and the vine a clone of Pinot Noir. Confirmed.",
+    "The New World side against the Codex Oregon record, which calls Oregon Gamay bright and crunchy in the Beaujolais manner: the entry made it a Pinot Noir in all but name in five places.",
+    "The spoken line against the entry own New World glass: firmer against rounder.",
+    "The glass as a blind taster, and every tell from both sides: forest floor stood among the Gamay notes although both the Pinot Noir and the Gamay tells part the two by it.",
+    "Structure against the reviewed profile (body light, medium in the crus, acid high, tannin low, alcohol moderate): agrees. Age against TASTE (young, though cru Beaujolais keeps ten): agrees.",
+    "The four lines counted (22, 38, 105 and 39 words) and said aloud: five beats, the crus explained in the same breath.",
+    "Cards and questions: one key each; the label question options are four labels of one region, and the worlds question keys the typical style."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "cards[1].back",
+     "was": "Banana, violet and crushed granite on a light, tart frame lean Beaujolais. Darker cherry, rounder fruit and no candied note lean Oregon or Ontario, where it is mostly made as Pinot Noir is.",
+     "now": "Banana, violet and crushed granite on a light, tart frame lean Beaujolais. Darker cherry, rounder fruit and no candied note lean Oregon or Ontario, where it is often made as Pinot Noir is.",
+     "why": "Mostly hedged to often, as above.",
+     "sources": [
+      {
+       "title": "The Codex Oregon record (js/regions/oregon.json): Gamay a small but growing Willamette planting for bright, crunchy reds in the Beaujolais manner.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare[2].tell",
+     "was": "Zweigelt is darker in colour, with sour cherry, a peppery snap and a little more tannin; Gamay is paler and lighter, with a scent of violet.",
+     "now": "Zweigelt is darker in colour, with a peppery snap and a little more tannin; Gamay is paler and lighter, with a scent of violet.",
+     "why": "Gamay carries sour cherry too, so it parted nothing; colour, pepper and tannin part the two."
+    },
+    {
+     "round": "first",
+     "field": "glass.notes[5].family",
+     "was": "earth: potting soil, forest floor",
+     "now": "(the group struck)",
+     "why": "The earth group of potting soil and forest floor struck whole. Forest floor is the note the Pinot Noir tell, this entry own Pinot Noir tell and the reviewed confuse line give to Pinot Noir and not to Gamay, so no tell may part the two by it; potting soil stands in the New World glass as freshly turned soil."
+    },
+    {
+     "round": "first",
+     "field": "labels[3].means",
+     "was": "The name on Oregon and Ontario labels; in full Gamay Noir à Jus Blanc, black skinned with white juice.",
+     "now": "A name on Oregon and Ontario labels; in full Gamay Noir à Jus Blanc, black skinned with white juice.",
+     "why": "Many Ontario and Oregon labels print Gamay alone, so Gamay Noir is a name on them, not the name."
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Gamay was banished from the heart of Burgundy in 1395, and it found its home to the south, on the granite hills of Beaujolais. It is light and bright, with sour cherry, raspberry and violet, high acidity and hardly any tannin. Most of it ferments as whole bunches in a sealed vat, which keeps the fruit fresh and can add a hint of banana. Oregon and Ontario tend to make it as they make Pinot Noir, a little darker and firmer. Pour it lightly chilled with charcuterie, roast chicken or the holiday turkey. Its first wine of the year, Beaujolais Nouveau, goes on sale on the third Thursday of November.",
+     "now": "Gamay was banished from the heart of Burgundy in 1395, and it found its home to the south, on the granite hills of Beaujolais. It is light and bright, with sour cherry, raspberry and violet, high acidity and hardly any tannin. Most of it ferments as whole bunches in a sealed vat, which keeps the fruit fresh and can add a hint of banana. Oregon and Ontario tend to make it a little darker and rounder. Pour it lightly chilled with charcuterie, roast chicken or the holiday turkey. Its first wine of the year, Beaujolais Nouveau, goes on sale on the third Thursday of November.",
+     "why": "Darker and firmer contradicted the entry own New World glass (darker and rounder) and the Ontario sheet (soft tannin), and the claim that both make it as Pinot Noir is made goes past the Codex Oregon record.",
+     "sources": [
+      {
+       "title": "The Codex Oregon record (js/regions/oregon.json): Gamay a small but growing Willamette planting for bright, crunchy reds in the Beaujolais manner.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions[0].exp",
+     "was": "Banana and bubblegum are the mark of carbonic maceration, the classic method of Beaujolais. Oregon and Ontario mostly make Gamay as they make Pinot Noir, so the candied note is less common there.",
+     "now": "Banana and bubblegum are the mark of carbonic maceration, the classic method of Beaujolais. Oregon and Ontario often make Gamay as they make Pinot Noir, so the candied note is less common there.",
+     "why": "Mostly hedged to often, as above. The key stands: banana and bubblegum are the typical mark of Beaujolais.",
+     "sources": [
+      {
+       "title": "The Codex Oregon record (js/regions/oregon.json): Gamay a small but growing Willamette planting for bright, crunchy reds in the Beaujolais manner.",
+       "url": ""
+      },
+      {
+       "title": "The Codex Beaujolais record (js/regions/france.json, beaujolais): in law greater Burgundy, so a cru Gamay may be sold as Bourgogne Gamay; semi carbonic the norm; the crus increasingly made like red Burgundy.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.cellar",
+     "was": "Usually made as Pinot Noir is: destemmed or partly whole bunch, fermented in open vats and rested in old barrels.",
+     "now": "Often made as Pinot Noir is, destemmed or partly whole bunch and rested in old barrels; some growers use whole bunches in the Beaujolais manner.",
+     "why": "Usually made as Pinot Noir is stood against the Codex Oregon record, which calls Oregon Gamay bright and crunchy in the Beaujolais manner; one trade source says most is made as Pinot Noir is. The line now admits both.",
+     "sources": [
+      {
+       "title": "The Codex Oregon record (js/regions/oregon.json): Gamay a small but growing Willamette planting for bright, crunchy reds in the Beaujolais manner.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.why",
+     "was": "Beaujolais built its style on whole bunch fermentation and early bottling, on granite. Oregon and Ontario came to Gamay through Pinot Noir and use that cellar. The French label names a village; the New World names the grape.",
+     "now": "Beaujolais built its style on whole bunch fermentation and early bottling, on granite. Growers in Oregon and Ontario often came to Gamay through Pinot Noir and use its cellar. The French label names a village, the New World the grape.",
+     "why": "Hedged for the same reason; the label clause trimmed to keep the cap of forty words.",
+     "sources": [
+      {
+       "title": "The Codex Oregon record (js/regions/oregon.json): Gamay a small but growing Willamette planting for bright, crunchy reds in the Beaujolais manner.",
+       "url": ""
+      }
+     ]
+    }
+   ],
+   "open": [
+    "How much Oregon and Ontario Gamay is made whole bunch and how much destemmed: no count was found. The entry hedges both ways.",
+    "Black pepper, often said of Ontario Gamay, stays out for want of a second source, as the author left it."
+   ],
+   "sources": [
+    {
+     "title": "Code of Federal Regulations, 27 CFR 4.28: Gamay Beaujolais on American labels",
+     "url": "https://syfert.com/cfr/sections/27-4.28.html"
+    },
+    {
+     "title": "Alcohol and Tobacco Tax and Trade Bureau: Treasury Decision ATF-388a, grape variety names",
+     "url": "https://www.ttb.gov/rrd/tdatf-388a"
+    },
+    {
+     "title": "Wikipedia: Gamay Beaujolais",
+     "url": "https://en.wikipedia.org/wiki/Gamay_Beaujolais"
+    },
+    {
+     "title": "The Oxford Companion to Wine, entries on Pinot Noir, Gamay, Cinsaut and Pinotage",
+     "url": ""
+    }
+   ]
+  },
+  "zweigelt": {
+   "verdict": "Sound after six fixes. The crossing of 1922 at Klosterneuburg, Rotburger and Blauer Zweigelt on the label, the Neusiedlersee rule of at least 60 per cent and its year, and the abroad list hold; the respelling departed from the Codex records, one label line claimed more than the sources show, and the Okanagan is no cold place.",
+   "tested": [
+    "The crossing of Blaufränkisch and Saint Laurent at Klosterneuburg in 1922: the Codex Austria record.",
+    "The respelling against the Codex records: TSVY-gelt in the Austria, Burgenland and Sopron records; the entry wrote TSVYE.",
+    "Neusiedlersee: created in 2012 in the Codex record, from the 2011 vintage in the press; the Reserve at least 60 per cent Zweigelt. The card year agrees with the Codex.",
+    "Rotburger and Blauer Zweigelt as legal names; the breeder a member of the National Socialist party; the campaign of 2018 to rename the grape. Confirmed. That a few growers prefer Rotburger: no source.",
+    "Abroad against the Codex: the Okanagan is hot in summer, so cold places could not stand.",
+    "The profile written new against the Régionale row (acidity, body and tannin all medium; sour cherry, pepper, juicy): agrees.",
+    "The four lines counted and said aloud; the sale spoke of a guest in the third person.",
+    "Compare tells from both sides: Blaufränkisch and Gamay name Zweigelt and agree; sour cherry is carried by both Zweigelt and Gamay and parted nothing.",
+    "Cards and questions: one key each; the blind question distractors are weak but wrong."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "compare[1].tell",
+     "was": "Gamay is paler and lighter, with violet and often a candied banana note; Zweigelt is darker, with sour cherry, pepper and a touch more tannin.",
+     "now": "Gamay is paler and lighter, with violet and often a candied banana note; Zweigelt is darker, with a peppery snap and a touch more tannin.",
+     "why": "Gamay carries sour cherry too, so the tell parted nothing by it."
+    },
+    {
+     "round": "first",
+     "field": "guest[2].a",
+     "was": "TSVYE-gelt. The Z is said as ts and the W as v, in two syllables with the weight on the first.",
+     "now": "TSVY-gelt. The Z is said as ts and the W as v, in two syllables with the weight on the first.",
+     "why": "The respelling said in the answer follows say.",
+     "sources": [
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels[1].means",
+     "was": "A second legal name for the same grape; a few growers prefer it, since the breeder was a National Socialist.",
+     "now": "A second legal name. The breeder was a National Socialist, and some in Austria want his name off the grape.",
+     "why": "That a few growers prefer Rotburger is shown by no source read. What is shown: the breeder was a member of the National Socialist party, Austrian law admits Blauer Zweigelt and Rotburger on the label, and a campaign of 2018 asked for the name to change.",
+     "sources": [
+      {
+       "title": "The Local Austria: Austria red wine bears a Nazi name and must change it, group argues",
+       "url": "https://www.thelocal.com/20181214/austrias-most-popular-red-wine-bears-a-nazis-name-and-must-change-it-group-argues"
+      },
+      {
+       "title": "The Drinks Business: Austrian group calls for red wine grape to lose Nazi name",
+       "url": "https://www.thedrinksbusiness.com/2018/12/austrian-group-calls-for-red-wine-grape-to-lose-nazi-name/"
+      },
+      {
+       "title": "Wikipedia: Fritz Zweigelt",
+       "url": "https://en.wikipedia.org/wiki/Fritz_Zweigelt"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.sale",
+     "was": "Zweigelt is the bottle for a guest who loves Pinot Noir and wants to try something new: much the same easy weight, with sour cherry and a peppery snap. I would pour it lightly chilled with roast chicken or anything fried.",
+     "now": "Zweigelt has the easy weight of a Pinot Noir and a peppery snap of its own, all sour cherry and juice. I would pour it lightly chilled with roast chicken or anything fried.",
+     "why": "The sale spoke of a guest in the third person; it is said to the guest. A sale opening If you like is already Tannat, so the hook is the grape own."
+    },
+    {
+     "round": "first",
+     "field": "say",
+     "was": "TSVYE-gelt",
+     "now": "TSVY-gelt",
+     "why": "TSVYE departs from the Codex respelling TSVY-gelt in the Austria, Burgenland and Sopron records, for the same sound.",
+     "sources": [
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "Hungary, the Czech Republic and Slovakia grow it next door, mostly for light reds and rosé. Further off it has taken to cold places: the Okanagan Valley in British Columbia and Hokkaido in Japan.",
+     "now": "Hungary, the Czech Republic and Slovakia grow it next door, mostly for light reds and rosé. Further off it has taken to places with hard winters: the Okanagan Valley in British Columbia and Hokkaido in Japan.",
+     "why": "Cold places does not fit the Okanagan, which the Codex calls hot in summer. The vine is grown there and in Hokkaido for its hardiness in winter.",
+     "sources": [
+      {
+       "title": "The Codex British Columbia reading (js/regions/mapless.json): the southern Okanagan hot in summer.",
+       "url": ""
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Whether the breeder named the grape Rotburger and the year it took the name Zweigelt (1975 in most sources): the entry says neither, as the author left it.",
+    "The Okanagan Valley and Hokkaido stand on the author sources; neither address was opened from this session."
+   ],
+   "sources": [
+    {
+     "title": "Decanter: Neusiedlersee is Austria latest appellation",
+     "url": "https://www.decanter.com/wine-news/neusiedlersee-is-austria-s-latest-appellation-31828"
+    },
+    {
+     "title": "wein.plus magazine: Neusiedlersee, wines with a world heritage origin",
+     "url": "https://magazine.wein.plus/wines-with-world-heritage-origin-wine-growing-regions-in-austria-neusiedlersee"
+    },
+    {
+     "title": "The Local Austria: Austria red wine bears a Nazi name and must change it, group argues",
+     "url": "https://www.thelocal.com/20181214/austrias-most-popular-red-wine-bears-a-nazis-name-and-must-change-it-group-argues"
+    },
+    {
+     "title": "The Drinks Business: Austrian group calls for red wine grape to lose Nazi name",
+     "url": "https://www.thedrinksbusiness.com/2018/12/austrian-group-calls-for-red-wine-grape-to-lose-nazi-name/"
+    },
+    {
+     "title": "Wikipedia: Fritz Zweigelt",
+     "url": "https://en.wikipedia.org/wiki/Fritz_Zweigelt"
+    }
+   ]
+  },
+  "blaufrankisch": {
+   "verdict": "Sound after seven fixes. The three Burgenland origins and their soils, Mittelburgenland and the Eisenberg as Blaufränkisch alone, Rosalia, Kékfrankos as the backbone of Bikavér, Lemberger in Württemberg, Washington and the Finger Lakes all hold; the respelling departed from the Codex records, the cool rung set the Eisenberg among cool sites on no source, and the forty-five second line opened by making Burgenland the grape birthplace.",
+   "tested": [
+    "The three origins against the Codex Burgenland record: Mittelburgenland and Eisenberg Blaufränkisch alone, Leithaberg at least 85 per cent, Rosalia Blaufränkisch or Zweigelt; the soils, deep clay, limestone and schist, iron rich slate. Agree, and two trade sources agree on the soils.",
+    "Bikavér: Kékfrankos at least 30 per cent in Eger and at least 45 in Szekszárd, with Kadarka at least 5 there; the Codex calls it the compulsory backbone. Agrees.",
+    "Sopron: the Codex Sopron record calls Kékfrankos cool, peppery and bright and Sopron its capital, and its Deutschkreutz record puts Sopron across the border from Mittelburgenland.",
+    "The ladder against the Codex: no record or source calls the Eisenberg cool; Sopron, Württemberg and the Finger Lakes are cool or marginal in the Codex records; Mittelburgenland a warm basin.",
+    "The respelling against the Codex records: BLAU-fren-kish, KAYK-frahn-kosh, LEM-bair-ger.",
+    "Lemberger in Washington and the Finger Lakes, and not Limburger the cheese: the Codex Washington and New York records.",
+    "Structure against the reviewed profile and the Régionale row: the entry follows the reviewed profile, as the author said.",
+    "The four lines counted (22, 38, 106 and 43 words) and said aloud: the opening made Burgenland the grape birthplace.",
+    "Compare tells from both sides: Zweigelt names Blaufränkisch and agrees; Syrah and Cabernet Franc read from this side only."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "cards[0].back",
+     "was": "Kékfrankos in Hungary, where Sopron is its capital and it frames Egri Bikavér. Lemberger in Germany, grown chiefly in Württemberg.",
+     "now": "Kékfrankos in Hungary, where Sopron is called its capital and it is the backbone of Egri Bikavér. Lemberger in Germany, grown chiefly in Württemberg.",
+     "why": "Sopron is called its capital, as the Codex Sopron record says; backbone for frames, as in the Kékfrankos label line.",
+     "sources": [
+      {
+       "title": "The Codex Sopron and Hungary records (js/regions/hungary.json): Sopron between the Alps and Lake Fertő, a cool lakeside climate; Kékfrankos cool, peppery and bright, Sopron called its capital, the signature of Sopron and the compulsory backbone of Egri Bikavér.",
+       "url": ""
+      },
+      {
+       "title": "Decanter: Bikavér, getting to know Hungary Bull Blood wine",
+       "url": "https://www.decanter.com/premium/bikaver-getting-to-know-hungarys-bulls-blood-wine-480872/"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare[2].tell",
+     "was": "Cabernet Franc shows green bell pepper, pencil shavings and raspberry; Blaufränkisch has black pepper in place of green, black cherry and brighter acidity.",
+     "now": "Cabernet Franc shows green bell pepper, pencil shavings and raspberry; Blaufränkisch has cracked black pepper instead, with black cherry and brighter acidity.",
+     "why": "Black pepper in place of green could not be read without the green bell pepper before it."
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder[0].notes[3]",
+     "was": "wet slate",
+     "now": "(struck)",
+     "why": "Wet slate was the Eisenberg soil, which leaves the rung.",
+     "sources": [
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder[0].where",
+     "was": "The Eisenberg, the Leithaberg, and Sopron across the lake in Hungary",
+     "now": "Sopron by Lake Fertő, Württemberg and the Finger Lakes",
+     "why": "No record or source read calls the Eisenberg a cool site: the Codex makes it taut and savoury by its soil. The cool rung now holds places the Codex calls cool or marginal for the grape.",
+     "sources": [
+      {
+       "title": "The Codex Sopron and Hungary records (js/regions/hungary.json): Sopron between the Alps and Lake Fertő, a cool lakeside climate; Kékfrankos cool, peppery and bright, Sopron called its capital, the signature of Sopron and the compulsory backbone of Egri Bikavér.",
+       "url": ""
+      },
+      {
+       "title": "The Codex Württemberg record (js/regions/germany.json, wurttemberg): Lemberger the serious red, said LEM-bair-ger, ripening this far north only where the Neckar valley traps warmth.",
+       "url": ""
+      },
+      {
+       "title": "The Codex New York and Washington records: Lemberger in the Finger Lakes cold hardy, ripening where Cabernet Sauvignon cannot; in Washington since the 1970s.",
+       "url": ""
+      },
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder[1].where",
+     "was": "Mittelburgenland, on deep clay in its sheltered basin",
+     "now": "Burgenland, above all the warm clay basin of Mittelburgenland",
+     "why": "The moderate rung names the warm basin as the Codex Mittelburgenland record does.",
+     "sources": [
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels[0].means",
+     "was": "The Hungarian name: lighter and brighter from Sopron, and the frame of the Bikavér blends of Eger and Szekszárd.",
+     "now": "The Hungarian name: the signature red of Sopron and the backbone of the Bikavér blends of Eger and Szekszárd.",
+     "why": "Lighter and brighter from Sopron was a lazy line for a district the Codex calls the grape capital; the new line is the Codex Hungary record own. Kékfrankos as the backbone of both Bikavér blends holds: at least 30 per cent in Eger, at least 45 in Szekszárd.",
+     "sources": [
+      {
+       "title": "The Codex Sopron and Hungary records (js/regions/hungary.json): Sopron between the Alps and Lake Fertő, a cool lakeside climate; Kékfrankos cool, peppery and bright, Sopron called its capital, the signature of Sopron and the compulsory backbone of Egri Bikavér.",
+       "url": ""
+      },
+      {
+       "title": "Decanter: Bikavér, getting to know Hungary Bull Blood wine",
+       "url": "https://www.decanter.com/premium/bikaver-getting-to-know-hungarys-bulls-blood-wine-480872/"
+      },
+      {
+       "title": "Taste Hungary: Hungary two Bull Bloods",
+       "url": "https://tastehungary.com/journal/hungarys-two-bulls-bloods/"
+      },
+      {
+       "title": "Hungarian government: Szekszárd product specification, the Bikavér rules",
+       "url": "https://boraszat.kormany.hu/download/8/3e/33000/Szekszárd%20termékleírás_v4_határozat_KN_javított_bikavérek.pdf"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Blaufränkisch comes from Burgenland, the eastern edge of Austria along the Hungarian border, and it is the country's red with backbone. It tastes of black cherry and blackberry with a note of cracked black pepper, on bright acidity, firm tannin and a medium to full body. The lighter wines are raised in steel or large old casks and the fuller ones in oak barrels, with less new wood than a generation ago. Pour it with roast duck, venison or a goulash rich with paprika. Hungary calls the same grape Kékfrankos and Germany calls it Lemberger, so you may have met it under another name.",
+     "now": "Blaufränkisch is at home in Burgenland, the eastern edge of Austria along the Hungarian border, and it is the country's red with backbone. It tastes of black cherry and blackberry with a note of cracked black pepper, on bright acidity, firm tannin and a medium to full body. The lighter wines are raised in steel or large old casks and the fuller ones in oak barrels, with less new wood than a generation ago. Pour it with roast duck, venison or a goulash rich with paprika. Hungary calls the same grape Kékfrankos and Germany calls it Lemberger, so you may have met it under another name.",
+     "why": "Comes from reads as the grape birthplace, which is not settled in Burgenland: the author own report gives a parentage that points to the wider Danube lands."
+    },
+    {
+     "round": "first",
+     "field": "say",
+     "was": "BLOUW-fren-kish, in Hungary KAYK-frahn-kosh, in Germany LEM-ber-ger",
+     "now": "BLAU-fren-kish, in Hungary KAYK-frahn-kosh, in Germany LEM-bair-ger",
+     "why": "BLOUW and LEM-ber-ger depart from the Codex respellings BLAU-fren-kish (Austria and Burgenland) and LEM-bair-ger (Württemberg); BLOUW also reads as blow.",
+     "sources": [
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      },
+      {
+       "title": "The Codex Württemberg record (js/regions/germany.json, wurttemberg): Lemberger the serious red, said LEM-bair-ger, ripening this far north only where the Neckar valley traps warmth.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.home",
+     "was": "Burgenland, on Austria's border with Hungary. Mittelburgenland, on deep clay, gives the darker, broader wines; the Leithaberg, on limestone and schist, and the Eisenberg, on iron rich slate, give tauter, more peppery ones. Across the lake, Sopron in Hungary makes it lighter, as Kékfrankos, and Eger and Szekszárd build their Bikavér blends on it.",
+     "now": "Burgenland, on Austria's border with Hungary. Mittelburgenland, on deep clay, gives the darker, broader wines; the Leithaberg, on limestone and schist, and the Eisenberg, on iron rich slate, give tauter, more peppery ones. Over the border, Sopron in Hungary makes it as Kékfrankos, often a shade lighter, and Eger and Szekszárd build their Bikavér blends on it.",
+     "why": "Sopron lies over the border from Mittelburgenland, as the Codex Deutschkreutz record has it; lighter is hedged, since the Codex Sopron record runs its Kékfrankos from fresh and juicy to serious.",
+     "sources": [
+      {
+       "title": "The Codex Austria and Burgenland records (js/regions/austria.json): Zweigelt said TSVY-gelt and Blaufränkisch BLAU-fren-kish; Neusiedlersee DAC created in 2012, its Reserve at least 60 per cent Zweigelt; Mittelburgenland a warm basin of heavy clay and loam, Deutschkreutz on the border opposite Sopron; the Eisenberg on green schist, slate and iron rich loam, taut and savoury.",
+       "url": ""
+      },
+      {
+       "title": "The Codex Sopron and Hungary records (js/regions/hungary.json): Sopron between the Alps and Lake Fertő, a cool lakeside climate; Kékfrankos cool, peppery and bright, Sopron called its capital, the signature of Sopron and the compulsory backbone of Egri Bikavér.",
+       "url": ""
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Egri Bikavér: the Codex Eger record says at least three varieties; the sources read say four. The entry gives no count.",
+    "The parentage (Blaue Zimmettraube and Weisser Heunisch) stays out, as the author left it."
+   ],
+   "sources": [
+    {
+     "title": "Decanter: Bikavér, getting to know Hungary Bull Blood wine",
+     "url": "https://www.decanter.com/premium/bikaver-getting-to-know-hungarys-bulls-blood-wine-480872/"
+    },
+    {
+     "title": "Taste Hungary: Hungary two Bull Bloods",
+     "url": "https://tastehungary.com/journal/hungarys-two-bulls-bloods/"
+    },
+    {
+     "title": "Hungarian government: Szekszárd product specification, the Bikavér rules",
+     "url": "https://boraszat.kormany.hu/download/8/3e/33000/Szekszárd%20termékleírás_v4_határozat_KN_javított_bikavérek.pdf"
+    },
+    {
+     "title": "wein.plus magazine: terroir and landscapes in Burgenland, the Blaufränkisch universe",
+     "url": "https://magazine.wein.plus/terroir-and-landscapes-in-burgenland-at-the-centre-of-the-blaufraenkisch-universe"
+    },
+    {
+     "title": "Decanter: Blaufränkisch, Austria red",
+     "url": "https://www.decanter.com/premium/blaufrankisch-austrias-finest-red-398289/"
+    }
+   ]
+  },
+  "pinotage": {
+   "verdict": "Sound after four fixes. The crossing at Stellenbosch in 1925, Hermitage, the label of 1961, the Cape Blend at 30 to 70 per cent with no law behind it, the Wine of Origin scheme of 1973 and the cause of the paint and banana note hold; the respelling departed from the Codex records, the sale and the spoken line claimed the grape grew nowhere else, and the ladder set the Codex own cool sites on the moderate rung and a cool corner on the warm one.",
+   "tested": [
+    "The crossing at Stellenbosch in 1925 of Pinot Noir and Cinsaut, then called Hermitage: the Codex South Africa record.",
+    "The Wine of Origin scheme of 1973, and Stellenbosch, Paarl and Swartland as districts: the Codex record.",
+    "The paint and banana note: the Codex record and the research read both put it down to fermenting hot and fast, the research adding stressed vines and the yeast. The guest answer stands.",
+    "The respelling against the Codex records (PEE-no-tahzh, PEE-noh-tahzh) and three pronunciation guides, none of which gives PIN.",
+    "The ladder against the Codex climate lines: Walker Bay cool maritime and its Pinotage cool climate; the Simonsberg a cooler corner; Swartland Pinotage lighter and whole bunch.",
+    "The spoken line and the sale against the entry own abroad line: the grape is grown a little elsewhere.",
+    "Structure against the reviewed profile: agrees, as the author said.",
+    "Compare tells: Syrah and Zinfandel from this side only; Cinsault does not compare Pinotage.",
+    "Cards and questions: one key each; Abraham Perold, long dead, named where the card asks who crossed it."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.ladder[0].climate",
+     "was": "moderate",
+     "now": "cool",
+     "why": "The Codex Walker Bay record calls the district cool maritime and its Pinotage cool climate; the rung read moderate.",
+     "sources": [
+      {
+       "title": "The Codex South Africa records (js/regions/south-africa.json): Pinotage said PEE-no-tahzh and PEE-noh-tahzh; Walker Bay cool maritime, its Pinotage lighter and red fruited from cool coastal sites; the Simonsberg slopes a cooler corner of Paarl; Swartland Pinotage made lighter and whole bunch; Paarl rich and smoky; Pinotage fermented hot and fast throws acetone and banana.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder[0].where",
+     "was": "Walker Bay and the cooler, sea facing slopes of Stellenbosch",
+     "now": "Walker Bay and the Hemel-en-Aarde, by the cold sea",
+     "why": "The sea facing slopes of Stellenbosch leave the cool rung; the Hemel-en-Aarde wards are named as the Codex Walker Bay record names them.",
+     "sources": [
+      {
+       "title": "The Codex South Africa records (js/regions/south-africa.json): Pinotage said PEE-no-tahzh and PEE-noh-tahzh; Walker Bay cool maritime, its Pinotage lighter and red fruited from cool coastal sites; the Simonsberg slopes a cooler corner of Paarl; Swartland Pinotage made lighter and whole bunch; Paarl rich and smoky; Pinotage fermented hot and fast throws acetone and banana.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder[1].where",
+     "was": "The Simonsberg and Bottelary in Stellenbosch, Paarl and the Swartland",
+     "now": "Paarl, and Bottelary and the warm valley floors of Stellenbosch",
+     "why": "The Codex Paarl record calls the upper Simonsberg slopes a cooler corner, and its Swartland record makes Swartland Pinotage lighter and whole bunch; neither belongs on a rung of black plum, tar and smoke.",
+     "sources": [
+      {
+       "title": "The Codex South Africa records (js/regions/south-africa.json): Pinotage said PEE-no-tahzh and PEE-noh-tahzh; Walker Bay cool maritime, its Pinotage lighter and red fruited from cool coastal sites; the Simonsberg slopes a cooler corner of Paarl; Swartland Pinotage made lighter and whole bunch; Paarl rich and smoky; Pinotage fermented hot and fast throws acetone and banana.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Pinotage could only be South African: it was bred at Stellenbosch in 1925, and few other countries grow it at all. It makes a dark, full red that tastes of black plum, mulberry and wood smoke, with firm tannin and a warm finish. The classic style is aged in oak barrels and built to keep, and a popular modern one uses heavily toasted oak to give a clear taste of coffee and chocolate. It belongs beside a fire: pour it with grilled lamb, barbecued ribs or smoked sausage. Ask where the name comes from and you have its parents: Pinot Noir, and Cinsault, which the Cape used to call Hermitage.",
+     "now": "Pinotage belongs to South Africa: it was bred at Stellenbosch in 1925, and few other countries grow it at all. It makes a dark, full red that tastes of black plum, mulberry and wood smoke, with firm tannin and a warm finish. The classic style is aged in oak barrels and built to keep, and a popular modern one uses heavily toasted oak to give a clear taste of coffee and chocolate. It belongs beside a fire: pour it with grilled lamb, barbecued ribs or smoked sausage. Ask where the name comes from and you have its parents: Pinot Noir, and Cinsault, which the Cape used to call Hermitage.",
+     "why": "Could only be South African overstates what the entry own abroad line admits: New Zealand, California, Israel and Brazil each grow a little."
+    },
+    {
+     "round": "first",
+     "field": "lines.sale",
+     "was": "Pinotage is the taste of one place: South Africa bred it, and its smoky black plum comes from nowhere else. If you have ordered anything off the grill, lamb above all, this is the bottle I would bring.",
+     "now": "Pinotage is the taste of one place: South Africa bred it, and its smoky black plum is the flavour of the Cape. If you have ordered anything off the grill, lamb above all, this is the bottle I would bring.",
+     "why": "Comes from nowhere else, for the same reason."
+    },
+    {
+     "round": "first",
+     "field": "say",
+     "was": "PIN-oh-tahzh",
+     "now": "PEE-noh-tahzh",
+     "why": "PIN-oh departs from the Codex respellings PEE-no-tahzh and PEE-noh-tahzh in the South Africa and Walker Bay records, and no source read gives PIN.",
+     "sources": [
+      {
+       "title": "The Codex South Africa records (js/regions/south-africa.json): Pinotage said PEE-no-tahzh and PEE-noh-tahzh; Walker Bay cool maritime, its Pinotage lighter and red fruited from cool coastal sites; the Simonsberg slopes a cooler corner of Paarl; Swartland Pinotage made lighter and whole bunch; Paarl rich and smoky; Pinotage fermented hot and fast throws acetone and banana.",
+       "url": ""
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The paint and banana note: the Codex South Africa record and the research read both put it down to hot, fast fermentation; the research adds stressed vines and the yeast. The guest answer stands."
+   ],
+   "sources": [
+    {
+     "title": "Australian Wine Research Institute: isoamyl acetate and the spray paint character",
+     "url": "https://www.awri.com.au/files/attachment/s2058"
+    },
+    {
+     "title": "WineMaker magazine: Pinotage, varietal focus",
+     "url": "https://winemakermag.com/articles/pinotage-varietal-focus"
+    },
+    {
+     "title": "South African Journal of Enology and Viticulture: esters in young wines",
+     "url": "https://www.journals.ac.za/sajev/article/view/2642/1648"
+    }
+   ]
+  },
+  "cinsault": {
+   "verdict": "Sound after five fixes. Hermitage, Cinsaut, Ottavianello, the planting in Chile after the Chillán earthquake of 1939, Secano Interior for País and Cinsault and the Bekaa hold; the guest answer and one explanation gave the grape thin skins where the sources give it fairly thick, firm ones, and the worlds question admitted a second key.",
+   "tested": [
+    "The skin: an encyclopedia and the United States germplasm record give large berries with fairly thick or firm skins; the entry said thin, twice.",
+    "Chile: planted in the southern hills after the Chillán earthquake of 1939 in several sources and the Codex Chile record, officially 1940 in one.",
+    "Secano Interior reserved for País and Cinsault: the Codex Chile record, citing the decree; not confirmed or refuted by the pages read.",
+    "Cinsaut as the French official and Cape spelling, Hermitage at the Cape, Ottavianello in Puglia: confirmed.",
+    "The Bekaa as an old Cinsault home: the Codex Lebanon record.",
+    "Côtes de Provence against the Codex Provence record: an appellation, the largest, with Cinsault the rosé grape above all.",
+    "The profile written new against the Régionale row (warm to hot, acid medium, light body and tannin, a blender often for rosé, a parent of Pinotage): agrees.",
+    "The worlds question: the blur line admits the Languedoc bottling Cinsault alone and the Cape blending it, so a second pair could be defended until the stem asked for the typical pair.",
+    "The four lines counted (20, 39, 106 and 36 words) and said aloud."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "guest[1].a",
+     "was": "Nothing at all. Cinsault has big berries and thin skins, so there is little colour or tannin to draw out. The pale colour is the grape, and the flavour is all there.",
+     "now": "Nothing at all. Cinsault has large, juicy berries, so there is more juice to each skin and less colour and tannin to draw out. The pale colour is the grape.",
+     "why": "The sources read give Cinsault large berries with fairly thick, firm skins, not thin ones; its pale colour comes from the share of juice to skin.",
+     "sources": [
+      {
+       "title": "Wikipedia: Cinsaut",
+       "url": "https://en.wikipedia.org/wiki/Cinsaut"
+      },
+      {
+       "title": "United States Department of Agriculture, GRIN germplasm record: Cinsaut",
+       "url": "https://npgstest.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1536724"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels[1].means",
+     "was": "A pale, dry rosé, most often a blend in which Cinsault joins Grenache and others.",
+     "now": "The appellation of most Provence rosé, pale and dry, in which Cinsault often joins Grenache.",
+     "why": "Côtes de Provence is an appellation, with red and white as well, not a style of rosé.",
+     "sources": [
+      {
+       "title": "The Codex Provence record (js/regions/france.json, provence): Cinsault the rosé grape above all; Côtes de Provence the largest appellation.",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s20",
+     "was": "Cinsault is a grape of the hot south of France that keeps its freshness in the heat. It gives pale, soft wines of strawberry and raspberry, and it is the quiet partner in many Provence rosés and southern French reds.",
+     "now": "Cinsault is a grape of the hot south of France, at ease in heat and drought. It gives pale, soft wines of strawberry and raspberry, and it is the quiet partner in many Provence rosés and southern French reds.",
+     "why": "No source read says Cinsault keeps its freshness in the heat; every one says it resists drought.",
+     "sources": [
+      {
+       "title": "Wikipedia: Cinsaut",
+       "url": "https://en.wikipedia.org/wiki/Cinsaut"
+      },
+      {
+       "title": "WineMaker magazine: Cinsault, the grape that could",
+       "url": "https://winemakermag.com/article/cinsault-the-grape-that-could"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions[0].q",
+     "was": "Two pale wines of Cinsault are poured. One is a dry rosé blended with Grenache; the other is a perfumed, lightly chilled red from old bush vines, labelled with the grape alone. Which pair of origins fits, in that order?",
+     "now": "Two pale wines of Cinsault are poured. One is a dry rosé blended with Grenache; the other is a perfumed, lightly chilled red from old bush vines, labelled with the grape alone. Which pair of origins is the more typical, in that order?",
+     "why": "The blur line itself admits Languedoc Cinsault bottled alone and the Cape blends it, so Stellenbosch, then the Languedoc could be defended; the stem now asks for the more typical pair."
+    },
+    {
+     "round": "first",
+     "field": "questions[2].exp",
+     "was": "Cinsault's big berries and thin skins give a pale, soft red with little tannin, which takes a chill and suits fish. Carignan, Syrah and Mourvèdre are darker and firmer, and turn hard when cold.",
+     "now": "Cinsault's large, juicy berries give a pale, soft red with little tannin, which takes a chill and suits fish. Carignan, Syrah and Mourvèdre are darker and firmer, and turn hard when cold.",
+     "why": "The same fix.",
+     "sources": [
+      {
+       "title": "Wikipedia: Cinsaut",
+       "url": "https://en.wikipedia.org/wiki/Cinsaut"
+      },
+      {
+       "title": "United States Department of Agriculture, GRIN germplasm record: Cinsaut",
+       "url": "https://npgstest.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1536724"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Chile: the planting is dated 1939 by most sources and officially 1940 by one; the entry says just after the earthquake of 1939.",
+    "Secano Interior as a term reserved for País and Cinsault stands on the Codex Chile record, which cites the decree; no page read in this session confirms or refutes it.",
+    "The Cinsaut alias the author raised is the plan reviewer to decide; nothing here changes it."
+   ],
+   "sources": [
+    {
+     "title": "Wikipedia: Cinsaut",
+     "url": "https://en.wikipedia.org/wiki/Cinsaut"
+    },
+    {
+     "title": "United States Department of Agriculture, GRIN germplasm record: Cinsaut",
+     "url": "https://npgstest.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1536724"
+    },
+    {
+     "title": "WineMaker magazine: Cinsault, the grape that could",
+     "url": "https://winemakermag.com/article/cinsault-the-grape-that-could"
+    },
+    {
+     "title": "Wine and Spirits Magazine: true south, the Secano Interior of Chile",
+     "url": "https://www.wineandspiritsmagazine.com/?p=1630"
+    },
+    {
+     "title": "Wine Business International: the forgotten valley",
+     "url": "https://www.wine-business-international.com/wine/analysis/forgotten-valley"
+    }
+   ]
+  }
+ },
+ "codexRecords": [
+  "The Eger record (js/regions/hungary.json, eger) says Egri Bikavér is made from at least three varieties; the sources read for this check say four, with Kékfrankos at 30 per cent or more. The table gives no count. The owner may want the record checked against the Eger product specification.",
+  "The Régionale row for Zweigelt (INTRO_GRAPES) calls it Austria most planted red, and the Codex Austria and Burgenland records say the same of Austria and of Burgenland: a fact the house rules count volatile. The table says the everyday red.",
+  "The Codex respells Blaufränkisch BLAU-fren-kish in the Austria and Burgenland records and BLAU-frenk-ish in the New York record, and Kékfrankos KAYK-frahn-kosh in most records and KAYK-fron-kosh in the Szekszárd one: the same sounds, the break or the vowel moved. The table follows the Austria and Hungary records.",
+  "The Codex respells Pinotage PEE-no-tahzh in the South Africa record and PEE-noh-tahzh in the Walker Bay record: the same sounds. The table follows the second, which matches the house form of Pinot.",
+  "The Neusiedlersee DAC is dated created in 2012 in the Codex Burgenland record and from the 2011 vintage in the press; both can stand, and the Zweigelt card follows the Codex.",
+  "Secano Interior as a term reserved for País and Cinsault stands on the Codex Chile record; the trade pages read for this check treat the Secano Interior as a wider area of patrimonial grapes and do not mention the reserve. Not shown wrong."
+ ],
+ "unsettled": [
+  "Whether every source address still answers: none could be opened from this session.",
+  "Whether a regional Bourgogne may print the grape on its front label: the sources read disagree. The table no longer says either way.",
+  "How much Oregon and Ontario Gamay is made whole bunch and how much destemmed: the Codex Oregon record says the Beaujolais manner, one trade source says mostly as Pinot Noir is. The table hedges both ways.",
+  "Whether the breeder of Zweigelt named the grape Rotburger, and the year it took his name (1975 in most sources, 1978 in one): the table says neither.",
+  "The year Chile planted Cinsault in the south: 1939 in most sources, officially 1940 in one. The table says just after the earthquake of 1939.",
+  "The Egri Bikavér count of varieties, three in the Codex and four in the sources: the table gives none."
+ ],
+ "settled": [
+  "Gamay Beaujolais may not appear on labels of American wine bottled on or after 9 April 2007, and the vine was a clone of Pinot Noir.",
+  "Cinsault has large berries with fairly thick, firm skins and resists drought; it is sold as a table grape as well.",
+  "Neusiedlersee DAC Reserve may be pure Zweigelt or a blend of at least 60 per cent Zweigelt with other local reds.",
+  "Austrian law admits Zweigelt, Blauer Zweigelt and Rotburger on the label; the breeder was a member of the National Socialist party, and a campaign of 2018 asked for the name to change.",
+  "Kékfrankos is the leading grape of both Bikavér blends: at least 30 per cent in Eger, at least 45 in Szekszárd with at least 5 of Kadarka.",
+  "The Leithaberg lies on limestone and schist, the Eisenberg on iron rich soils over slate, Mittelburgenland on heavy loam and clay.",
+  "Isoamyl acetate, the banana and paint note of rushed Pinotage, forms when the fermentation runs too hot, and stressed vines and the yeast add to it.",
+  "The cold soak and the choice over whole bunches are Burgundy own habits, so neither marks the New World."
+ ]
+}
