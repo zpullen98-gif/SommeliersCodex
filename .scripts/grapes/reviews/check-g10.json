@@ -1,0 +1,429 @@
+{
+ "chunk": "g10",
+ "date": "2026-11-11",
+ "role": "The second reading: each entry read to refute it, not to admire it.",
+ "grapes": [
+  "nebbiolo",
+  "sangiovese",
+  "barbera",
+  "dolcetto",
+  "corvina",
+  "montepulciano"
+ ],
+ "method": [
+  "Each fragment read whole beside what show.cjs prints for the grape (GRAPES and GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region records for Piedmont, Lombardy, Liguria, Emilia-Romagna, the Veneto, Tuscany, Corsica, Abruzzo, the Marche, Australia, Rutherglen, McLaren Vale, Mexico and Naoussa, with the service reference, the pairing data and the respellings of every Italian record.",
+  "What the reviewed records do not state was put to search, at most two searches a grape: the three Dolcetto DOCGs, the Colline Teramane rules, Montepulciano and Barbera in Australia, Nebbiolo in the King Valley and the Adelaide Hills, the Amarone story, and the parentage of Sangiovese.",
+  "The glass read as a blind taster would: each note set beside the profile and the grid, each prose field scanned by a script for a family word in disguise, each ladder set beside the grid and the Codex's own climate line for the place, and each tell checked against both entries' notes, so that no tell parts two grapes by a note both carry.",
+  "One contrast grape and five home grapes: Barbera's sides read for a false or lazy generalisation and their hedge, its blur for the cool New World site and the modern Old World cellar it must admit, its call for a flight; every entry against TASTE.world (old for all four full grapes, none for Dolcetto and Montepulciano).",
+  "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences; the cards and questions read for one key, four options of one kind and a stem that gives nothing away; Montepulciano's notIn list re-run through the chain over the four level banks.",
+  "Two rounds of edits, the first pushed as e9c576d and the second with this record, each an exact replacement in the fragment's own text. node .scripts/grapes/build-grapes.cjs --lint --chunk g10 run after each until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+ ],
+ "limits": [
+  "Search alone: no source page was opened, so a page is cited as search results quoted it, and every address the authors gave stays unconfirmed.",
+  "The brief allows five searches a grape. Nebbiolo took one, Sangiovese one, Barbera one, Dolcetto one, Corvina one and Montepulciano two; much of each entry stands on the Codex's own reviewed records, which need no new source.",
+  "Pages whose addresses or titles name a person (a writer's site, a critic's article, a producer's own pages) were read for the fact and are not cited."
+ ],
+ "entries": {
+  "nebbiolo": {
+   "verdict": "Sound after four fixes. The Barolo and Barbaresco rules, the northern names and the fog all stand; Australian Nebbiolo was called riper from two regions the Codex calls cool, a guest answer leaned on the decanter against the tannin, and two tells parted Nebbiolo from its neighbours by rose, which both carry.",
+   "tested": [
+    "say against GRID_SAY (neb-bee-OH-loh) and the Piedmont record: the same.",
+    "Barolo 38 months with 18 in wood, Riserva 62; Barbaresco 26 with 9, Riserva 50; counted from the November of the harvest; Barbaresco lower and warmer, north east of Alba: the Codex's Piedmont record, which the labels, the card and the third question follow.",
+    "Spanna, Chiavennasca and Valtellina Superiore at least 90 per cent Nebbiolo, lighter, more floral and more acid than Barolo: the Codex's Piedmont and Lombardy records.",
+    "The name from nebbia: the consortium's page gives fog at the October harvest or the bloom on the berries; the line says is thought to.",
+    "Abroad: the King Valley and the Adelaide Hills stand on Australian trade pages read through search; the Codex calls both cool, so riper went; Baja as warm, dark and soft and not always Nebbiolo stands on the Codex's Mexico record.",
+    "The glass as a blind taster: every note set beside GRAPES (tart cherry, dried strawberry, tar and roses, liquorice, truffle and anise with age) and the grid's Barolo read; a script scanned every prose field for a family word in disguise and found none.",
+    "The ladder against the grid (Barolo and Barbaresco moderate) and the Codex's Gattinara note (lighter, higher in acid, iron and dried flowers): agree.",
+    "Service against the full tannic reds row and the decanting row, both naming Barolo, the Burgundy glass row naming Nebbiolo, the Piedmont record's serve near 17 degrees, and TASTE.age (ten to thirty): agree; the guest answer read against the reference's rule that air is never promised against tannin.",
+    "The four lines counted and said aloud: five beats in order, nothing a guest must have explained; the sale two sentences, a hook and a pour.",
+    "Compare tells from both sides against the Pinot Noir, Sangiovese, Xinomavro, Grenache, Nerello Mascalese and Aglianico entries.",
+    "Cards and questions: one key each, four options of one kind, nothing in a stem that names the key; no worlds tag on a home grape."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "Abroad it is rare. Australia grows it in the King Valley and the Adelaide Hills, and California and Baja California a little; these tend to be riper and softer, and some Baja vines so named are not Nebbiolo.",
+     "now": "Abroad it is rare. Australia grows it in the King Valley and the Adelaide Hills, and California and Baja California a little; these tend to be softer and fruitier, and some Baja vines so named are not Nebbiolo.",
+     "why": "Riper was said of the King Valley and the Adelaide Hills, which the Codex calls cooler with elevation and cool; the trade sources call Australian Nebbiolo softer and more fruit forward, and the Codex's Mexico record calls Baja's warm, dark and soft. Softer and fruitier holds all of them.",
+     "sources": [
+      "The Codex's Australia and Rutherglen records (js/regions/australia.json)",
+      "The Codex's Mexico record (js/regions/mapless.json)",
+      "Wine Selectors: Nebbiolo in Australia (read through search results)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.2.a",
+     "was": "It will grip, but a decanter and a rich, slow cooked dish help a great deal. Left ten years or more, the tannin softens and truffle and leather come through.",
+     "now": "It will still grip. A decanter lets the perfume open, and a rich, slow cooked dish makes the tannin feel gentler. Left ten years or more, it softens and truffle and leather come through.",
+     "why": "A decanter and a slow cooked dish were said to help a great deal against the grip, which comes near promising air against tannin, and the service reference never does. The decanter now opens the perfume and the dish makes the tannin feel gentler, as the Codex's pairing data puts salt and fat.",
+     "sources": [
+      "The Codex's service reference (js/data-service-ref.js)",
+      "The Codex's pairing data (js/data-pairing.js)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.0.tell",
+     "was": "Pinot Noir is as pale but silky, with softer tannin and red cherry; Nebbiolo adds tar and rose petal and a drying grip Pinot lacks.",
+     "now": "Pinot Noir is as pale but silky, with softer tannin and red cherry; Nebbiolo adds tar, higher acidity and a drying grip Pinot lacks.",
+     "why": "The tell parted Nebbiolo from Pinot Noir by rose petal, and the Pinot Noir entry lists rose petal among its own notes. Higher acidity, which the reviewed profiles give Nebbiolo and not Pinot Noir, takes its place.",
+     "sources": [
+      "GRAPES (Nebbiolo and Pinot Noir)",
+      "The Pinot Noir fragment"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.2.tell",
+     "was": "Xinomavro shares the pale colour, high acidity and firm tannin, but brings sun dried tomato and black olive where Nebbiolo has rose petal and tar.",
+     "now": "Xinomavro shares the pale colour, high acidity and firm tannin, but brings sun dried tomato and black olive where Nebbiolo has tar and a fuller scent of roses.",
+     "why": "The tell gave rose petal to Nebbiolo alone, and the Codex's Naoussa record gives Xinomavro dried rose. Tar stays the clean parting note and the rose becomes a matter of degree.",
+     "sources": [
+      "The Codex's Naoussa record (js/regions/greece.json)",
+      "The Xinomavro fragment"
+     ]
+    }
+   ],
+   "open": [
+    "Wine Companion is the brand of a living writer, though neither its title nor its address names him; it is kept, as the second, fifth and sixth chunks kept it, and the integrator may weigh it.",
+    "The Aglianico entry's tell to Nebbiolo gives Nebbiolo red cherry where this entry and GRAPES give sour cherry; another author's fragment, left for its owner."
+   ]
+  },
+  "sangiovese": {
+   "verdict": "Sound after one fix. The Tuscan rules, the local names and the hedged parentage stand; the warm rung put Scansano, a hill town, on the coast.",
+   "tested": [
+    "say against GRID_SAY (san-joh-VEH-zeh); the Tuscany record writes san-joh-VAY-zeh, the same sound.",
+    "Chianti Classico at least 80 per cent, Vino Nobile at least 70 as Prugnolo Gentile, Brunello 100 per cent with two years in oak and release in the fifth year: the Codex's Tuscany record. Chianti's minimum falls to 60 per cent from 2026, by the same record; the guest answer says mostly Sangiovese, which holds.",
+    "Parentage: the Vitis paper of 2007 (primary) gives Ciliegiolo and Calabrese di Montenuovo, a vine from Campania found near Naples; a second study of the same year read Ciliegiolo as the child, so the hedge as DNA work suggests stands.",
+    "Local names Brunello, Prugnolo Gentile, Morellino and Nielluccio, and Patrimonio: the Codex's Tuscany and Corsica records.",
+    "Abroad: McLaren Vale's first commercial Sangiovese of 1985 on the Codex's McLaren Vale record; riper and rounder from warm New World sites is hedged as tend to.",
+    "The glass against GRAPES and the grid (sour cherry, tomato leaf, dried oregano, tea leaf, espresso and vanilla from new oak); the ladder against the grid's moderate read; the warm rung's place against the Tuscany record, which put Scansano inland.",
+    "Service against the medium reds row, which names Chianti, and TASTE.age (five to twenty as Brunello): agree.",
+    "The four lines counted and said aloud; the sale two sentences.",
+    "Compare tells from both sides against the Nebbiolo, Tempranillo, Montepulciano, Xinomavro and Sagrantino entries: no tell parts the two by a note both carry.",
+    "Cards and questions: one key each; the Vino Nobile question against the Abruzzo and Tuscany traps."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.ladder.1.where",
+     "was": "The Maremma coast at Scansano, and McLaren Vale",
+     "now": "The Maremma hills around Scansano, and McLaren Vale",
+     "why": "Scansano is a hill town inland of Grosseto, as the Codex's Tuscany record has it, not the coast; the rung now names the Maremma hills around it.",
+     "sources": [
+      "The Codex's Tuscany record (js/regions/italy.json)"
+     ]
+    }
+   ],
+   "open": [
+    "The parentage stays as DNA work suggests, since one study of 2007 reads the relation the other way."
+   ]
+  },
+  "barbera": {
+   "verdict": "Sound after six fixes. The Piedmont rules and the California history stand; the King Valley, which the Codex calls cool, stood on the riper New World side while the blur admitted no cool New World site, a tell parted Barbera from Dolcetto by black plum, which both carry, a distractor used an older Dolcetto name, and Nizza went unexplained in the spoken line.",
+   "tested": [
+    "Barbera d'Asti and Nizza the DOCGs, Barbera d'Alba the plusher Langhe wine, barrique to tame the acid, Gutturnio with Croatina: the Codex's Piedmont and Emilia-Romagna records.",
+    "Nizza Barbera alone, a DOCG of 2014, 18 months with 6 in wood, Riserva 30 with 12: the Codex and the Nizza regulation page.",
+    "California: the grape kept its acidity in heat and long went into blends, on the University of California fact sheet the author cited; the Sierra Foothills and Lodi bottle it by name.",
+    "Australia: Barbera came with Italian migrants to the Riverina and the King Valley, and Australian trade pages name the King Valley and the Adelaide Hills as cool homes for a fresher style; the Codex calls the King Valley cooler with elevation.",
+    "The side by side against TASTE.world (old): the plan fixes contrast and the author flagged it; each side read for its hedge, the blur for the cool New World site it lacked, and the call (sour cherry, dried thyme and a sharp finish against jam, vanilla and alcohol) for a flight.",
+    "The glass against GRAPES (sour black cherry, blackberry, red plum, balsamic lift, dried herbs, vanilla when barriqued, violet in Asti) and the Piedmont record's bright violet Barbera d'Asti.",
+    "Service against the medium reds row and the record's slightly cool; the pairing data's Barbera d'Asti Superiore, which requires wood; TASTE.age (three to eight).",
+    "The four lines counted and said aloud; one term in the spoken line, Nizza, left a guest to guess.",
+    "Compare tells from both sides against the Dolcetto, Nebbiolo, Sangiovese and Lambrusco entries.",
+    "Cards and questions: one key each, the worlds question tagged, options of one kind."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Barbera breaks the rule that a dark red must be a hard one. It is the everyday red of Piedmont, at home in the hills of Asti and Alba. It pours deep purple and tastes of sour cherry and black plum, with mouth watering acidity and very little tannin. Much of it is made simply, while Nizza often spends time in small oak barrels that add vanilla and a firmer frame. California Barbera, from the Sierra Foothills, tends to be riper and fuller, yet just as bright. It loves tomato sauce, salumi and pizza. In Piedmont it is the family's daily bottle, opened while the Barolo waits.",
+     "now": "Barbera breaks the rule that a dark red must be a hard one. It is the everyday red of Piedmont, at home in the hills of Asti and Alba. It pours deep purple and tastes of sour cherry and black plum, with mouth watering acidity and very little tannin. Much of it is made simply, while the Barbera of Nizza often spends time in small oak barrels that add vanilla and a firmer frame. California Barbera, from the Sierra Foothills, tends to be riper and fuller, yet just as bright. It loves tomato sauce, salumi and pizza. In Piedmont it is the family's daily bottle, opened while the Barolo waits.",
+     "why": "Nizza alone tells a guest nothing; the Barbera of Nizza says in the same breath what is in the bottle.",
+     "sources": [
+      "BRIEF.md, the spoken lines"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.where",
+     "was": "California's Sierra Foothills and Lodi; Australia's King Valley and McLaren Vale",
+     "now": "California's Sierra Foothills and Lodi; Australia's McLaren Vale",
+     "why": "The King Valley stood on the riper, jammier New World side, while the Codex calls it cooler with elevation and home to Italian grapes, and Australian trade sources name it with the Adelaide Hills as a cool home for a fresher Barbera. It leaves for the blur; McLaren Vale, already the warm rung, stays.",
+     "sources": [
+      "The Codex's Australia and Rutherglen records (js/regions/australia.json)",
+      "Wine Selectors: the state of play, Barbera in Australia (read through search results)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.blur",
+     "was": "A ripe Barbera d'Alba or Nizza from a warm year, aged in new French barrels, can be as dark, plush and vanilla scented as a California bottling.",
+     "now": "A warm year's Nizza or Barbera d'Alba in new French barrels can match California's plush vanilla; the cooler Adelaide Hills and King Valley make fresher, less jammy Barbera.",
+     "why": "The blur admitted only the modern Old World cellar. It now admits the cool New World site as well, the Adelaide Hills and the King Valley, beside the warm year's Nizza in new barrels.",
+     "sources": [
+      "The Codex's Australia and Rutherglen records (js/regions/australia.json)",
+      "Wine Selectors: the state of play, Barbera in Australia (read through search results)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.0.tell",
+     "was": "Dolcetto is the low acid one, soft and round, with black plum and bitter almond and firmer tannin; Barbera is sharper, juicier and gentler in grip.",
+     "now": "Dolcetto is the low acid one, soft and round, with a little more tannin and a bitter almond finish; Barbera is sharper, juicier and gentler in grip.",
+     "why": "The tell gave Dolcetto black plum as a parting note, and this entry lists black plum among Barbera's own. The extra grip and the bitter almond finish part them, as the Codex's Piedmont trap and the Dolcetto entry have it.",
+     "sources": [
+      "The Codex's Piedmont record (js/regions/italy.json)",
+      "GRAPES (Barbera, confuse)",
+      "The Dolcetto fragment"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.opts.2",
+     "was": "Dolcetto di Dogliani",
+     "now": "Dolcetto d'Alba",
+     "why": "Dolcetto di Dogliani is an older name; the Dolcetto entry and the Codex's Piedmont record write the Dogliani DOCG. Dolcetto d'Alba, a current DOC that names its grape, takes the place, so the option still reads as Dolcetto.",
+     "sources": [
+      "The Codex's Piedmont record (js/regions/italy.json)",
+      "Langhe.net: Dogliani DOCG"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.exp",
+     "was": "Barbera d'Asti brings the high acidity tomato and cured meat ask for, with little tannin. Dolcetto di Dogliani, the nearest miss, is softer in acidity and firmer in tannin; Barolo and Ghemme are Nebbiolo and grip hard.",
+     "now": "Barbera d'Asti brings the high acidity tomato and cured meat ask for, with little tannin. Dolcetto d'Alba, the nearest miss, is softer in acidity and firmer in tannin; Barolo and Ghemme are Nebbiolo and grip hard.",
+     "why": "The same change in the explanation.",
+     "sources": [
+      "The Codex's Piedmont record (js/regions/italy.json)"
+     ]
+    }
+   ],
+   "open": [
+    "TASTE.world reads old while the plan fixes a side by side; the author's flag stands, and the entry writes the difference as one of ripeness.",
+    "The exact Superiore months stay out, as the author left them."
+   ]
+  },
+  "dolcetto": {
+   "verdict": "Sound after three fixes. The thin grape's profile agrees with the Régionale row and the Piedmont record; the home line gave two DOCGs where there are three, and the riper rung placed Diano d'Alba, whose Dolcetto a source reads delicate.",
+   "tested": [
+    "A thin grape: the profile read against the Régionale row (cool to moderate, low acid, medium body and tannin, black plum, blackberry, liquorice and almond, little sweet one, dry, drunk early) and the Piedmont record (soft, dark, dry, blackberry and bitter almond; moderate tannin; the higher or north facing sites).",
+    "The DOCGs: search gives three, Dogliani, Diano d'Alba and Ovada (Dolcetto di Ovada Superiore); the Codex's Piedmont record names the first two. Dogliani a DOCG since 2005 and Dolcetto alone on two Langhe sources.",
+    "Ormeasco di Pornassio with its rosé Sciac-trà: the Codex's Liguria record.",
+    "The name: little sweet one, the wine dry, on the Codex; the grapes low in acid and sweet off the vine, hedged as thought to.",
+    "The ladder: the higher Langhe and Dogliani on the cool rung stand on the Codex; the riper rung now stands on the lower Monferrato and a source that reads Ovada's Dolcetto round and Diano's delicate.",
+    "Service against the medium reds row; age within two or three years, against the record's drunk young.",
+    "The four lines counted and said aloud; the sale two sentences.",
+    "Compare tells from both sides against the Barbera, Gamay and Nebbiolo entries.",
+    "Cards and questions: one key each; the Acqui distractor (Brachetto) against the Piedmont record."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.ladder.1.where",
+     "was": "The lower hills around Alba, Diano d'Alba and Acqui",
+     "now": "The lower Monferrato hills around Ovada and Acqui",
+     "why": "The riper rung put Diano d'Alba among the lower, warmer hills, while a Langhe source calls Diano's Dolcetto clear and delicate and Ovada's opulent and round, and the Codex has the Monferrato rolling lower and softer to the east. The rung now names Ovada and Acqui in the lower Monferrato.",
+     "sources": [
+      "Strada del Barolo: Dolcetto di Diano d'Alba DOCG (read through search results)",
+      "The Codex's Piedmont record (js/regions/italy.json)"
+     ]
+    },
+    {
+     "round": "first, then second",
+     "field": "worlds.home.home",
+     "was": "Piedmont, on the higher and cooler slopes of the Langhe, where it ripens weeks before Nebbiolo. Dogliani and Diano d'Alba are its DOCGs and Dolcetto d'Alba the everyday bottle. It is usually kept fresh in steel and drunk within a few years.",
+     "now": "Piedmont, above all the higher, cooler slopes of the Langhe, where it ripens weeks before Nebbiolo. Dogliani and Diano d'Alba in the Langhe and Ovada in the Alto Monferrato are its DOCGs, and Dolcetto d'Alba the everyday bottle. It is usually kept fresh in steel and drunk within a few years.",
+     "why": "The line gave Dogliani and Diano d'Alba as its DOCGs, all of them by implication, and opened on the Langhe alone. Ovada, Dolcetto di Ovada Superiore in the Alto Monferrato, is a third, so it is named, and the opening now says above all the Langhe.",
+     "sources": [
+      "Regione Piemonte: the DOCG and DOC wines of Piedmont (read through search results)",
+      "Strada del Barolo and Wein Plus pages on the Dolcetto DOCGs (read through search results)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "profile.regions",
+     "was": "Piedmont: Dogliani, Diano d'Alba, Dolcetto d'Alba and Acqui; Liguria as Ormeasco di Pornassio",
+     "now": "Piedmont: Dogliani, Diano d'Alba, Dolcetto d'Alba, Ovada and Acqui; Liguria as Ormeasco di Pornassio",
+     "why": "Ovada added beside the other Dolcetto DOCGs.",
+     "sources": [
+      "Regione Piemonte: the DOCG and DOC wines of Piedmont (read through search results)"
+     ]
+    }
+   ],
+   "open": [
+    "The ladder stays an inference from the Codex's sites and one trade page, not a sourced tasting contrast; bitter almond on the cool rung is the grape's own and not the climate's.",
+    "Almond skin beside bitter almond is a near repeat, left as a taster's naming; violet stays out for want of a firm source."
+   ]
+  },
+  "corvina": {
+   "verdict": "Sound after seven fixes. The Valpolicella blend, the drying and the four wines stand on the Codex; the ladder gave the tart notes to the eastern valleys the Codex knows for dense Amarone, Amarone had no serving figure, two tells parted Corvina by notes the other grape carries, and two small words were brought into line.",
+   "tested": [
+    "Corvina 45 to 95 per cent with Corvinone for up to half of it, Rondinella 5 to 30, four wines of one blend, the five Classico communes, drying for three to four months with a third of the weight lost, Amarone 14 per cent at least and two years, Ripasso on the pomace: the Codex's Veneto record.",
+    "The story of the forgotten Recioto cask and the name from amaro: several trade pages tell it, with different dates and names; the entry calls it a story and gives neither.",
+    "Abroad: Australia on the research institute's page; Argentina on trade pages that name a producer, not cited.",
+    "The glass against GRAPES_PLUS (sour red cherry, cranberry, raisined black cherry and fig, almond and cherry pit, cinnamon) and the Veneto wine notes; clove and prune stand as a taster's naming.",
+    "The ladder against the Veneto record's climate: cool air off the Lessini at night, the plain warm, the eastern valleys cooler and later but known for dense Amarone.",
+    "Service against the light reds row, which names Valpolicella, the record's just below room temperature for Amarone, and TASTE.age (young as classico, decades as Amarone).",
+    "The four lines counted and said aloud; the sale two sentences.",
+    "Compare tells from both sides against the Gamay, Zinfandel and Sangiovese entries; the Zinfandel entry's own tell to Corvina (the raisin edge, sour cherry and bitter almond) agrees with the fixed one.",
+    "Cards and questions: one key each; the Amarone question's stem says dry, which parts Recioto fairly."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.ladder.0.where",
+     "was": "The higher, later eastern valleys of Valpolicella",
+     "now": "The higher hill vineyards, cooled at night by air off the Lessini",
+     "why": "The cool rung gave the light, tart notes to the eastern valleys, which the Codex's Veneto record calls cooler and later but known for dense Amarone. The rung now names what the record says cools the zone, the night air off the Lessini, on the higher hill vineyards.",
+     "sources": [
+      "The Codex's Veneto record (js/regions/italy.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.1.where",
+     "was": "The Classico hills of Negrar, Fumane and Marano",
+     "now": "The lower, warmer slopes running down towards Verona",
+     "why": "With the cool rung set by height, the moderate rung is the lower, warmer slopes towards Verona; the Classico hills hold high and low sites both, and the record calls the plain warm.",
+     "sources": [
+      "The Codex's Veneto record (js/regions/italy.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.structure",
+     "was": "Dry. Fresh Valpolicella: acidity high, tannin low, alcohol moderate, body light. Amarone: alcohol high, body full, tannin medium, acidity still fresh.",
+     "now": "Dry. Fresh Valpolicella: acidity high, tannin low, alcohol medium, body light. Amarone: alcohol high, body full, tannin medium, acidity still fresh.",
+     "why": "Moderate is not a word of the structure scale the other entries use; medium.",
+     "sources": [
+      "The pilot fragments"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "service.temp",
+     "was": "54 to 59 degrees Fahrenheit, 12 to 15 degrees Celsius, for Valpolicella; Amarone at cool room temperature.",
+     "now": "Valpolicella 54 to 59, Amarone 61 to 64 degrees Fahrenheit; 12 to 15 and 16 to 18 degrees Celsius.",
+     "why": "Amarone was given cool room temperature with no figure, and the brief asks for degrees in figures. The full reds row, 61 to 64 degrees Fahrenheit and 16 to 18 degrees Celsius, agrees with the Codex's Veneto record (just below room temperature); Valpolicella keeps the light reds row, which names it.",
+     "sources": [
+      "The Codex's service reference (js/data-service-ref.js)",
+      "The Codex's Veneto record (js/regions/italy.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.1.tell",
+     "was": "Zinfandel shares Amarone's raisined richness and warmth, with blackberry jam and black pepper; Amarone has more sour cherry, cherry stone bitterness and cinnamon.",
+     "now": "Zinfandel shares Amarone's raisined richness and warmth, with blackberry jam and black pepper; Amarone has more sour cherry and a bitter cherry stone finish.",
+     "why": "The tell gave Amarone cinnamon as a parting note, and the Zinfandel entry lists cinnamon. Sour cherry and the bitter cherry stone finish part them, as the reviewed profile's confuse has it (more cherry pit).",
+     "sources": [
+      "GRAPES_PLUS (Corvina, confuse)",
+      "The Zinfandel fragment"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.2.tell",
+     "was": "Sangiovese is firmer, with dusty tannin and tomato leaf; fresh Corvina is softer in grip, with sour cherry and a bitter almond finish.",
+     "now": "Sangiovese is firmer, with dusty tannin and tomato leaf; fresh Corvina is lighter and softer in grip, with a bitter almond finish.",
+     "why": "The tell gave fresh Corvina sour cherry as a parting note, and Sangiovese's entry and profile lead with sour cherry. The lighter body, the softer grip and the bitter almond finish part them.",
+     "sources": [
+      "GRAPES (Sangiovese)",
+      "GRAPES_PLUS (Corvina)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.1.opts.2",
+     "was": "Bardolino Chiaretto",
+     "now": "Chiaretto di Bardolino",
+     "why": "Bardolino Chiaretto is the older form; the Codex's Veneto record and the Montepulciano entry write Chiaretto di Bardolino.",
+     "sources": [
+      "The Codex's Veneto record (js/regions/italy.json)"
+     ]
+    }
+   ],
+   "open": [
+    "The ladder by height is an inference from the Codex's climate note, not a sourced tasting contrast.",
+    "Wine Folly and Wine Insiders are trade pages; the facts they carry stand on the Codex's Veneto record.",
+    "The author's report said practically unknown, a word that carries the retired one inside it; it now says all but unknown. The report is not shipped."
+   ]
+  },
+  "montepulciano": {
+   "verdict": "Sound after three fixes. The rules, the rosé, the notIn list and the targets stand; the home line gave a share of plantings and the blind question named Abruzzo in its stem.",
+   "tested": [
+    "A new grape: the profile written new against the Codex's Abruzzo, Marche, Lazio and Puglia records; the targets abruzzo, marche, lazio, puglia and italy all resolve in REGIONS.",
+    "notIn re-run through the chain over the four level banks: the montepulciano key gathers eleven questions; prugnolo gentile shuts out five that are Sangiovese's and vin santo one, and the five kept are the grape's own (the grape and the town, two Cerasuolo questions, Rosso Conero, Colline Teramane).",
+    "Montepulciano d'Abruzzo at least 85 per cent; Colline Teramane at least 90 with up to 10 Sangiovese, its Riserva three years with one in wood (search, the consortium's sheet); Cerasuolo d'Abruzzo a DOC of 2010, pressed after hours on the skins: the Codex's Abruzzo record and the Advanced bank.",
+    "Acidity low to medium against the Codex's modest and gentle acidity; the tannin plentiful but round against soft in Abruzzo and firm, ripe in the Marche.",
+    "The ladder against the Abruzzo record: altitude the lever, the Peligna valley and Ofena the brightest, the coastal plain the softest; the Barossa as a warm Australian home on search results (late ripening keeps its acid in heat).",
+    "Service against the medium reds row; age against the record's quick, young wines and the slow school.",
+    "The four lines counted and said aloud; the sale two sentences; the Vino Nobile hook against the Abruzzo trap.",
+    "Compare tells from both sides against the Sangiovese, Aglianico and Nero d'Avola entries.",
+    "Cards and questions: one key each; the rosé question's two reds (Cerasuolo di Vittoria, Lambrusco di Sorbara) are the trap the Codex itself sets."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "worlds.home.home",
+     "was": "Abruzzo, where it is almost the whole red vineyard: Montepulciano d'Abruzzo, at least 85 per cent of the grape, the Colline Teramane DOCG in the Teramo hills, and Cerasuolo d'Abruzzo, its cherry red rosé. The Marche makes Conero from it and blends it into Rosso Piceno.",
+     "now": "Abruzzo is its heartland: Montepulciano d'Abruzzo, at least 85 per cent of the grape, the Colline Teramane DOCG in the Teramo hills, and Cerasuolo d'Abruzzo, its cherry red rosé. The Marche makes Conero from it and blends it into Rosso Piceno.",
+     "why": "Almost the whole red vineyard is a share of plantings, which the house rules keep out as volatile, though the Codex's Abruzzo record says it. Heartland says where it belongs without a share.",
+     "sources": [
+      "The house rules (BRIEF.md)",
+      "The Codex's Abruzzo record (js/regions/italy.json)"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.0.q",
+     "was": "A red poured blind is deep purple, with ripe black cherry and plum, soft acidity and plentiful but round tannin. The label, once shown, is from Abruzzo. Which grape is it?",
+     "now": "An Italian red poured blind is deep purple, with ripe black cherry and plum, soft acidity and plentiful but round tannin. Which grape is it?",
+     "why": "The stem showed a label from Abruzzo, which gives the key away. The glass alone, on an Italian list, now carries it, and each other grape fails a cue: Sangiovese and Aglianico the soft acidity, Nebbiolo the deep colour.",
+     "sources": [
+      "BRIEF.md, the questions"
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.0.exp",
+     "was": "Deep colour, ripe black cherry and plum, soft acidity and round tannin from Abruzzo is Montepulciano. Sangiovese, the nearest wrong option, would be paler and tarter, with tomato leaf and dusty tannin.",
+     "now": "Deep colour, ripe black cherry and plum, soft acidity and round tannin are Montepulciano. Sangiovese, the nearest wrong option, would be paler and tarter, with tomato leaf and dusty tannin.",
+     "why": "From Abruzzo leaves the explanation with the stem.",
+     "sources": [
+      "BRIEF.md, the questions"
+     ]
+    }
+   ],
+   "open": [
+    "The Codex's Abruzzo record calls the grape one of the most planted reds of Italy and almost the whole of the region's red vineyard: a volatile planting claim in a reviewed record, left for the owner."
+   ]
+  }
+ },
+ "codexRecords": [
+  "The Codex's Piedmont record names Dogliani and Diano d'Alba as Dolcetto's DOCGs and leaves out Ovada (Dolcetto di Ovada Superiore), the third; incomplete rather than wrong.",
+  "The Codex's Abruzzo record calls Montepulciano one of the most planted reds of Italy and almost the whole of Abruzzo's red vineyard: a share of plantings, which the house rules keep out of new writing.",
+  "The Codex respells Sangiovese two ways (san-joh-VEH-zeh in the grid and the Italy record, san-joh-VAY-zeh in the Tuscany record), the same sound; the table keeps the grid's.",
+  "TASTE gives Corvina acid 2 where INTRO_GRAPES and GRAPES_PLUS read high, gives Barbera tannin 0 and body 1 where INTRO_GRAPES gives 1 and 2, and gives Sangiovese tannin 2 where INTRO_GRAPES gives 3 and GRAPES medium plus to high. The table follows the profiles and the grid; the authors' flags, upheld.",
+  "The Veneto record calls the eastern valleys of Valpolicella cooler and later and known for dense Amarone, which a ladder of tart fruit for those valleys sat against; the ladder now goes by height."
+ ],
+ "unsettled": [
+  "Whether any source address still answers: none was opened from this session.",
+  "The year of the Ovada DOCG (2008 on one page, the DOC's 1972 on the regional list) and of Diano d'Alba's (2010 or 2011): the entry gives neither.",
+  "The climate ladders of Dolcetto and Corvina: honest inferences from the Codex's sites and one trade page, not sourced tasting contrasts.",
+  "Barbera's side by side against TASTE.world old: the plan keeps it, and the integrator may weigh it.",
+  "Corvina in Argentina: on trade pages that name a producer only."
+ ],
+ "settled": [
+  "Barolo ages 38 months with 18 in wood and Barbaresco 26 with 9; Valtellina Superiore is at least 90 per cent Nebbiolo; Australian Nebbiolo from the King Valley and the Adelaide Hills tends to be softer and more fruit forward.",
+  "Sangiovese's parents are, on the Vitis paper of 2007, Ciliegiolo and Calabrese di Montenuovo, a vine of Campania; a second study of the same year reads it the other way.",
+  "Nizza is Barbera alone, a DOCG since 2014, 18 months with 6 in wood; Australia's cooler King Valley and Adelaide Hills make a fresher Barbera, its warm regions a riper one.",
+  "Dolcetto has three DOCGs, Dogliani, Diano d'Alba and Ovada; Dogliani is Dolcetto alone and a DOCG since 2005.",
+  "Amarone's origin in a cask of Recioto that fermented dry is a story told many ways, with no settled date.",
+  "Colline Teramane is at least 90 per cent Montepulciano and its Riserva ages three years with one in wood; Montepulciano grows in the Barossa, McLaren Vale and the Riverland, ripening late and keeping its acid in heat."
+ ]
+}
