@@ -1,0 +1,572 @@
+{
+ "chunk": "g11",
+ "date": "2026-11-11",
+ "role": "The second reading: each entry read to refute it, not to admire it.",
+ "grapes": [
+  "aglianico",
+  "sagrantino",
+  "nero-d-avola",
+  "nerello-mascalese",
+  "lambrusco",
+  "xinomavro"
+ ],
+ "method": [
+  "Each fragment read whole beside what show.cjs prints for the grape (GRAPES and GRAPES_PLUS, TASTE, INTRO_GRAPES, the regions that name it, the service rows) and beside the Codex's region records for Campania, Calabria and Basilicata, Umbria, Sicily, Emilia-Romagna, Lombardy, Naoussa, Amyndeon, Goumenissa and Rapsani, with the service reference and the pairing data.",
+  "Every fact the reviewed records do not already state was put to search, at most five searches a grape: Aglianico abroad, the Sagrantino glass, the Sicilia DOC reservation of 2017 and Nero d'Avola in Australia, the parentage paper of Nerello Mascalese, Lambrusco Maestri abroad, and Xinomavro outside Greece.",
+  "The glass read as a blind taster would: each note asked whether a taster would nod, every prose field scanned by a script for a family word standing alone, each ladder set beside the Codex's climate lines for the place, and each tell and near miss checked against both entries' notes, so that no tell parts two grapes by a note both carry.",
+  "Six home grapes: each home line read for its rules and each abroad line for what two sources hold; no worlds question, as the plan asks none of a home grape.",
+  "The four lines counted and said aloud for the five beats in order; every sale set beside the rest of the roster for a shared hook; the cards and questions read for one key, four options of one kind and a stem that gives nothing away.",
+  "Two rounds of edits, the first pushed as 9f8a7ad and the second with this record, each an exact replacement in the fragment's own text. node .scripts/grapes/build-grapes.cjs --lint --chunk g11 run after each until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+ ],
+ "limits": [
+  "This session reached search alone. Two hosts were tried (en.wikipedia.org and winecompanion.com.au) and neither resolved, so no further host was tried: a page is cited as search results quoted it, and every address the authors gave stays unopened.",
+  "Searches by grape: Aglianico one, Sagrantino one, Nero d'Avola three, Nerello Mascalese one, Lambrusco one, Xinomavro three. Much of each entry stands on the Codex's own reviewed records, which need no new source.",
+  "Pages whose titles or addresses name a person or a producer were read for the fact and are not cited; the fact is cited from another page, from the Codex or from listings described without their address."
+ ],
+ "entries": {
+  "aglianico": {
+   "verdict": "Sound after seven fixes. The Taurasi and Vulture rules, the Taburno DOCG of 2011, the Campi Taurasini sub zone, the late harvest into November and the ash and tuff of Vulture all stand on the Codex; Paso Robles stood on one source, two tells and a question parted or offered things wrongly, and a guest answer called a colour a taste.",
+   "tested": [
+    "say against the Codex's Campania and Basilicata respellings (ahl-YAH-nee-koh): agree.",
+    "The rules against the Codex's Campania and Calabria and Basilicata records: Taurasi at least 85 per cent, three years with one in wood, Riserva four with eighteen months, DOC 1970 and DOCG 1993; Aglianico del Taburno at least 85 per cent, DOCG 2011; Aglianico del Vulture DOC 1971 and Superiore DOCG 2010, wholly Aglianico, three years, Riserva five. All agree.",
+    "Abroad by search: Wine Companion and Decanter give McLaren Vale, the Riverland and Heathcote among Australia's plantings, first imported in 1998; Paso Robles came up on one trade page only, so it left the ladder and the abroad line.",
+    "The glass as a blind taster: black cherry, black plum, dried fig, tar, leather, smoke, volcanic ash and iron are the reviewed profile's own; tobacco leaf and red plum nod. The structure follows GRAPES (acid high) over TASTE (acid medium plus), as the author flagged.",
+    "The ladder: Irpinia high and cold and the Sannio lower and warmer, as the Codex's Campania record has them.",
+    "Service against the full tannic reds row, the Bordeaux glass, the decanting row and TASTE.age (ten to twenty five): agree.",
+    "The four lines counted and said aloud: five beats in order, the Old World and New World clause in one sentence, the sale two sentences with a hook of its own in the roster.",
+    "Compare tells read from both sides against the Nebbiolo, Sagrantino and Nero d'Avola entries; cards and questions for one key, four options of one kind and a stem that gives nothing away."
+   ],
+   "open": [
+    "The Codex's Campania trap calls Aglianico pale next to Montepulciano while GRAPES calls it deep ruby garnet; the entry says deep ruby, turning garnet at the rim early, and the tell calls it deeper than Nebbiolo, which both records allow."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.ladder.1.where",
+     "was": "The lower Sannio, McLaren Vale, the Riverland and Paso Robles",
+     "now": "The lower Sannio, McLaren Vale and the Riverland",
+     "why": "Paso Robles stood on one trade page alone among the results of the search, while Wine Companion and Decanter name McLaren Vale, the Riverland and Heathcote and give California only in general. The rung keeps what two sources hold.",
+     "sources": [
+      {
+       "title": "Wine Companion: what is Aglianico",
+       "url": "https://winecompanion.com.au/resources/varieties/aglianico"
+      },
+      {
+       "title": "Decanter: Italian grape varieties in Australia",
+       "url": "https://www.decanter.com/wine-reviews-tastings/australian-wine-italian-grape-varieties-383478"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "Australia grows a little, in McLaren Vale, the Riverland and Heathcote, and so does Paso Robles in California; these wines tend to be riper and rounder, the acidity still bright.",
+     "now": "Australia grows a little, in McLaren Vale, the Riverland and Heathcote, and so does California; these wines tend to be riper and rounder, the acidity still bright.",
+     "why": "The same: Paso Robles had one source, so the line says California, as the spoken line already does; Wine Companion records plantings in California, Arizona and Texas.",
+     "sources": [
+      {
+       "title": "Wine Companion: what is Aglianico",
+       "url": "https://winecompanion.com.au/resources/varieties/aglianico"
+      },
+      {
+       "title": "Decanter: Italian grape varieties in Australia",
+       "url": "https://www.decanter.com/wine-reviews-tastings/australian-wine-italian-grape-varieties-383478"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.0.a",
+     "was": "For its structure: high acidity and a firm tannin that want years, as Nebbiolo does. The taste differs, deeper in colour, with black cherry and smoke where Barolo shows rose petal and red cherry.",
+     "now": "For its structure: high acidity and a firm tannin that want years, as Nebbiolo does. The wine differs: deeper in colour, with black cherry and smoke where Barolo shows rose petal and red cherry.",
+     "why": "The answer said the taste differs and then gave a colour; it now says the wine differs, which holds the colour and the fruit together.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.1.tell",
+     "was": "Sagrantino is blacker and grips even harder, with blackberry, cocoa and dried violet; Aglianico carries more acidity and a smoky, iron edge.",
+     "now": "Sagrantino is blacker and grips even harder, with incense, cocoa and dried violet; Aglianico carries more acidity and a smoky, iron edge.",
+     "why": "The tell gave Sagrantino blackberry as a parting note, and this entry lists blackberry among Aglianico's own black fruit; incense, which the reviewed Sagrantino profile names and Aglianico does not carry, takes its place.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.2.tell",
+     "was": "Nero d'Avola is softer and rounder, ripe plum and black cherry with gentle tannin; Aglianico grips harder, with higher acidity, tar and smoke.",
+     "now": "Nero d'Avola is softer and rounder, with mulberry, liquorice and gentle tannin; Aglianico grips harder, with higher acidity, tar and smoke.",
+     "why": "The tell parted Nero d'Avola by black cherry and plum, which Aglianico lists itself; mulberry and liquorice, the Nero d'Avola entry's own parting notes, take their place, and the tannin still does the work.",
+     "sources": [
+      {
+       "title": "The Codex: the Régionale row of Nero d'Avola (INTRO_GRAPES) and the Sicily records",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.opts",
+     "was": "[\"Taurasi\",\"Frappato\",\"Lambrusco di Sorbara\",\"Etna Rosato\"]",
+     "now": "[\"Taurasi\",\"Cerasuolo di Vittoria\",\"Lambrusco di Sorbara\",\"Etna Rosato\"]",
+     "why": "Frappato is a grape and the other three options are wines, so the four were not of one kind. Cerasuolo di Vittoria, a light southern red soft in tannin, keeps the near miss with one key.",
+     "sources": [
+      {
+       "title": "The Codex: the Sicily records, Cerasuolo di Vittoria and Frappato",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.exp",
+     "was": "Taurasi is Aglianico, with high acidity and a firm, drying tannin that the lamb's fat and protein soften. Frappato, the nearest miss, is pale, light and soft in tannin.",
+     "now": "Taurasi is Aglianico, with high acidity and a firm, drying tannin that the lamb's fat and protein soften. Cerasuolo di Vittoria, the nearest miss, is a southern red too, but light and soft in tannin.",
+     "why": "The explanation follows the new option.",
+     "sources": [
+      {
+       "title": "The Codex: the Sicily records, Cerasuolo di Vittoria and Frappato",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "sagrantino": {
+   "verdict": "Sound after two fixes. Sagrantino alone, 37 months with 12 in wood and 4 in bottle, DOC 1979 and DOCG 1992, the five communes, dry or passito under one DOCG, the dry wine of the 1970s and Montefalco Rosso as a Sangiovese blend all stand on the Codex's Umbria record; lavender was one producer's note and a food reason named a family.",
+   "tested": [
+    "say against the Codex's Umbria respelling (sah-grahn-TEE-noh): agree.",
+    "The rules and the five communes (Montefalco with Bevagna, Gualdo Cattaneo, Castel Ritaldi and Giano dell'Umbria) against the Umbria record: agree; Bevagna's lower sites at the edge of the plain support the warm rung.",
+    "The glass by search: violet, blackberry, black cherry, plum, clove, cinnamon and cocoa recur across the tasting notes read; incense stands on GRAPES_PLUS; lavender on one note only, so it left.",
+    "The tannin claim: said as harder than almost any grape, never as the most tannic, though GRAPES_PLUS and the Umbria record go further.",
+    "Abroad: McLaren Vale, Heathcote and the King Valley on the author's sources and the Codex's Australia record; the line is hedged as a little.",
+    "Service against the full tannic reds row and TASTE.age (ten and more): agree; the passito a little cooler is fair for a sweet red.",
+    "The four lines counted and said aloud; the three questions each with one key, the label question's four words all label words."
+   ],
+   "open": [
+    "The Umbria record says Sagrantino has the highest tannin and polyphenol load measured in any Italian variety and GRAPES_PLUS calls it often the most tannic grape in the world: superlatives in reviewed records, not this entry's to change."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.notes.2.notes",
+     "was": "[\"dried violet\",\"lavender\"]",
+     "now": "[\"violet\",\"dried violet\"]",
+     "why": "Lavender stood on one producer's tasting note found through search, as the author flagged; violet runs through every description read and the reviewed profile has dried violet. A blind taster nods at violet in a young wine and dried violet in an older one.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES_PLUS)",
+       "url": ""
+      },
+      {
+       "title": "Decanter: Montefalco Sagrantino, small wonder",
+       "url": "https://www.decanter.com/features/sagrantino-small-wonder-247767/"
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "food.with.3.why",
+     "was": "sweet black fruit and tannin meet bitter cocoa",
+     "now": "sweet blackberry and tannin meet bitter cocoa",
+     "why": "Black fruit is a family word standing alone in a reason that describes the glass; blackberry names it.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "nero-d-avola": {
+   "verdict": "Sound after eight fixes. Cerasuolo di Vittoria (50 to 70 per cent with Frappato, DOC 1973, DOCG 2005), Calabrese, Avola near Syracuse, Pachino and Noto on limestone, Contea di Sclafani cooled by height and the Australian take up for heat and drought all stand; the 2017 rule was given as Sicilia DOC alone where any Sicilian DOC may name the grape, the sale shared the gives you hook of six others, and three small reasons named families or a superlative.",
+   "tested": [
+    "say against the Codex's Sicily respelling (NEH-roh DAH-voh-lah): agree.",
+    "The 2017 reservation by two searches: trade sources say varietal Grillo and Nero d'Avola left the IGT for the DOC from the 2017 vintage; trade listings show 2017 Noto DOC and Vittoria DOC Nero d'Avola, so a varietal bottle must be a DOC, not Sicilia DOC alone.",
+    "Abroad by search: Wine Companion gives the first vines imported in 1998 and released in 2001, prized for heat and drought, in McLaren Vale and the Riverland among others.",
+    "The profile against INTRO_GRAPES (acid medium, body full, tannin medium) and the Sicily record's style lines: agree; no TASTE row exists.",
+    "Service against the medium reds row and the glass and decanting rows: agree.",
+    "The four lines counted and said aloud; the guest answers and tells read against the Syrah, Nerello Mascalese and Aglianico entries.",
+    "Questions: the blind question's island clue admits Grenache as Sardinia's Cannonau, a fair near miss the colour and the black fruit rule out; one key each."
+   ],
+   "open": [
+    "The Codex's Sicily record says varietal Nero d'Avola and Grillo must be Sicilia DOC since 2017; the rule bars Terre Siciliane IGT and admits the island's other DOCs. The entry now says so; the record wants the same correction."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.sale",
+     "was": "Nero d'Avola gives you the warmth of Sicily without a hard edge: ripe black cherry and liquorice on soft tannin. It is the one red to pour when the table shares grilled sausage and a pasta with aubergine.",
+     "now": "Nero d'Avola pours the warmth of Sicily with no hard edge: ripe black cherry and liquorice on soft tannin. Bring it when the table shares grilled sausage and a pasta with aubergine.",
+     "why": "The sale opened on gives you, the hook of six other sales in the roster (Albariño, Blaufränkisch, Chenin Blanc, Merlot, Torrontés and Viognier), as the g10 reading found for three more; it now pours the warmth of Sicily, and the pour asks for the dish without the selling phrase the one red to pour.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.home",
+     "was": "Sicily, all over the island, with the south east around Vittoria, Noto and Pachino at its heart. A bottle that names the grape is Sicilia DOC, and with Frappato it makes Cerasuolo di Vittoria, the island's one DOCG.",
+     "now": "Sicily, all over the island, with the south east around Vittoria, Noto and Pachino at its heart. Since 2017 a bottle that names the grape must be a DOC, most often Sicilia DOC. With Frappato it makes Cerasuolo di Vittoria, the island's one DOCG.",
+     "why": "Since the 2017 vintage a varietal Nero d'Avola may no longer be Terre Siciliane IGT, but it need not be Sicilia DOC: a Noto, Eloro or Vittoria DOC bottle names the grape too, and 2017 Noto DOC and Vittoria DOC Nero d'Avola are on trade lists. The line now says a DOC, most often Sicilia DOC.",
+     "sources": [
+      {
+       "title": "AIS: production rules of the DOC Sicilia",
+       "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Sicilia.pdf"
+      },
+      {
+       "title": "The Codex: the Sicily records, Sicilia DOC, Noto, Eloro and Vittoria",
+       "url": ""
+      },
+      {
+       "title": "Trade rating listings of 2017 Noto DOC and Vittoria DOC Nero d'Avola, read through search",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels.0.means",
+     "was": "The island wide DOC; since the 2017 vintage a bottle that names Nero d'Avola must carry it.",
+     "now": "The island wide DOC, and since the 2017 vintage the usual home of a bottle that names Nero d'Avola.",
+     "why": "The same rule: Sicilia DOC is the usual home of a varietal bottle, not the only one.",
+     "sources": [
+      {
+       "title": "AIS: production rules of the DOC Sicilia",
+       "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Sicilia.pdf"
+      },
+      {
+       "title": "Trade rating listings of 2017 Noto DOC and Vittoria DOC Nero d'Avola, read through search",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.1.a",
+     "was": "A cousin in spirit: deep, ripe and generous. Nero d'Avola is softer and rounder, with liquorice and gentle tannin, and without Shiraz's pepper and smoked meat.",
+     "now": "A cousin in spirit: deep, ripe and generous. Nero d'Avola is softer and rounder, with gentler tannin, and without Shiraz's pepper and smoked meat.",
+     "why": "Liquorice parted Nero d'Avola from Shiraz, and the Syrah entry lists liquorice among its own notes; the gentler tannin and the absence of pepper and smoked meat part them.",
+     "sources": [
+      {
+       "title": "The Codex: the Syrah fragment of g9",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "profile.fruit",
+     "was": "Black cherry, black plum, mulberry; prune and dried fig from the hottest sites",
+     "now": "Black cherry, black plum, mulberry; prune and dried fig from hot sites",
+     "why": "Hottest is a superlative in form, the word the chunk reading took out of the spoken line; hot sites says it.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "cards.2",
+     "was": "{\"front\":\"Nero d'Avola on a label: which denomination must it carry since 2017?\",\"back\":\"Sicilia DOC. Since the 2017 vintage a bottle that names Nero d'Avola or Grillo may not be sold as Terre Siciliane IGT.\"}",
+     "now": "{\"front\":\"Nero d'Avola on a label: what has the 2017 vintage changed?\",\"back\":\"Terre Siciliane IGT may no longer print Nero d'Avola or Grillo. A bottle that names either must be a DOC, most often Sicilia DOC, or a local one such as Noto or Vittoria.\"}",
+     "why": "The card asked which denomination a varietal bottle must carry and answered Sicilia DOC, which a Noto or Vittoria DOC bottle disproves. The front now asks what the 2017 vintage changed, and the back gives the rule as it stands: no varietal name under the IGT, a DOC instead.",
+     "sources": [
+      {
+       "title": "AIS: production rules of the DOC Sicilia",
+       "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Sicilia.pdf"
+      },
+      {
+       "title": "The Codex: the Sicily records, Sicilia DOC, Noto, Eloro and Vittoria",
+       "url": ""
+      },
+      {
+       "title": "Trade rating listings of 2017 Noto DOC and Vittoria DOC Nero d'Avola, read through search",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "food.with.0.why",
+     "was": "ripe, soft fruit meets sweet tomato and aubergine",
+     "now": "ripe black cherry meets sweet tomato and aubergine",
+     "why": "Ripe, soft fruit named nothing in a reason that describes the glass; ripe black cherry names it.",
+     "sources": []
+    },
+    {
+     "round": "second",
+     "field": "food.with.1.why",
+     "was": "soft tannin and dark fruit for fat and fennel",
+     "now": "soft tannin and black cherry for fat and fennel",
+     "why": "Dark fruit is a family word standing alone; black cherry names it.",
+     "sources": []
+    }
+   ]
+  },
+  "nerello-mascalese": {
+   "verdict": "Sound after three fixes. The Etna DOC of 1968, Rosso at least 80 per cent with Nerello Cappuccio to a fifth, the contrade, terraces from 400 to over 1,000 metres, old own rooted bush vines, Faro above Messina and the parentage of Sangiovese and Mantonico Bianco all stand; one explanation parted it from Nebbiolo by rose, which both carry.",
+   "tested": [
+    "say against the Codex's Sicily respelling (neh-REL-loh mah-skah-LEH-zeh): agree.",
+    "The parentage by search: the paper of 2013 in Molecular Biotechnology, PubMed 23001829, finds Sangiovese and Mantonico di Bianco the parents of Nerello Mascalese, Gaglioppo and Mantonicone; the address the author gave is the one search returns.",
+    "Etna's rules, heights, contrade, Rosato and traditional method Spumante against the Sicily record: agree; the ladder's cool north slope matches the record's Castiglione, cool and late harvested.",
+    "The glass against GRAPES_PLUS: sour cherry, wild strawberry, blood orange, rose, ash, iron and dried herbs named as thyme and oregano; nod.",
+    "The structure against GRAPES_PLUS (body medium) over TASTE (body 1, alc 1), as the author flagged; upheld.",
+    "Service against the medium reds row and TASTE.age (five to fifteen): agree once the cool end is said of a young bottle only.",
+    "Tells from both sides against Pinot Noir, Nebbiolo and Nero d'Avola; the questions each with one key."
+   ],
+   "open": [
+    "The Etna DOCG application is left out, as the Codex's record says no promotion had been published."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "worlds.home.home",
+     "was": "Mount Etna in Sicily, on terraces of black lava from about 400 to over 1,000 metres, many of them old bush vines on their own roots. Etna Rosso is at least 80 per cent Nerello Mascalese, often aged in large old casks, and may name its contrada. Faro, above Messina, is its other home.",
+     "now": "Mount Etna in Sicily, on terraces of black lava from about 400 to over 1,000 metres, with many old bush vines on their own roots. Etna Rosso is at least 80 per cent Nerello Mascalese, often aged in large old casks, and may name its contrada. Faro, above Messina, is its other home.",
+     "why": "Many of them old bush vines made the terraces the vines; the line now carries the vines on the terraces.",
+     "sources": [
+      {
+       "title": "The Codex: the Sicily records, Etna",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "service.temp",
+     "was": "59 to 63 degrees Fahrenheit, 15 to 17 degrees Celsius, a shade cool.",
+     "now": "59 to 63 degrees Fahrenheit, 15 to 17 degrees Celsius; a young bottle at the cool end.",
+     "why": "A shade cool was said of the medium red row itself, which is the reference's ordinary range for a medium red; the line now sets a young bottle at the cool end of it, which the sale's pour it a shade cool asks for.",
+     "sources": [
+      {
+       "title": "The Codex: the service reference (SERVICE_REF), medium reds",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.0.exp",
+     "was": "Pale colour, blood orange and ash on high acidity and a fine, dusty tannin point to Nerello Mascalese. Nebbiolo, the nearest miss, is as pale but brings tar, rose and a fiercer, drying grip.",
+     "now": "Pale colour, blood orange and ash on high acidity and a fine, dusty tannin point to Nerello Mascalese. Nebbiolo, the nearest miss, is as pale but brings tar and a fiercer, drying grip.",
+     "why": "The explanation parted Nebbiolo by rose, and this entry's own lead and notes carry rose; tar and the fiercer, drying grip part them, as the compare tell has it.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "lambrusco": {
+   "verdict": "Sound after six fixes. A family and not one grape, the three DOCs of 1970, Sorbara at least 60 per cent and Grasparossa at least 85, Mantovano in Lombardy, the tank method with bottle refermentation returning and secco, amabile and dolce all stand on the Codex's Emilia and Lombardy records; violet sat on the wrong member, the grip question had a second arguable key and a card said three DOCs around Modena where the record adds the broader Modena DOC.",
+   "tested": [
+    "say against the Codex's Emilia respelling (lahm-BROO-skoh): agree.",
+    "The DOCs, shares and sweetness words against the Emilia record: agree; the tank second fermentation stopped by chilling is the record's own line.",
+    "Abroad by search: Lambrusco Maestri in Argentina and Australia on Falstaff, the Wein.plus glossary and an Australian estate's sheet.",
+    "The ladder: the record calls the foothills a little cooler and better aired than the plain; the change in the glass is the member's, so each rung names its member and violet sits with Sorbara, as the record scents it.",
+    "Service: 10 to 14 degrees Celsius stands on Gambero Rosso's guidelines for restaurateurs; the Codex says cold, and the pale wine at 10 meets it.",
+    "Targets against REGIONS.join.grapes: emilia-romagna, lombardy and italy, all three the join already names.",
+    "The four lines counted and said aloud; tells against the Barbera, Gamay and Glera entries; questions each with one key."
+   ],
+   "open": [
+    "The gumbo with andouille stays: the Codex's own pairing data makes a chilled dry Sorbara its model for a chilli dish, and the Creole dish is smoke, pork fat and gentle heat.",
+    "Rose petal beside violet rests on trade descriptions of Sorbara; left."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.ladder",
+     "was": "[{\"climate\":\"cool\",\"where\":\"The clay foothills of Castelvetro, as Grasparossa\",\"notes\":[\"blackberry\",\"black plum\",\"violet\"]},{\"climate\":\"moderate\",\"where\":\"The sandy plain of Sorbara, and Carpi for Salamino\",\"notes\":[\"sour cherry\",\"wild strawberry\",\"raspberry\"]}]",
+     "now": "[{\"climate\":\"cool\",\"where\":\"The clay foothills of Castelvetro, as Grasparossa\",\"notes\":[\"blackberry\",\"black plum\"]},{\"climate\":\"moderate\",\"where\":\"The sandy plain of Sorbara, and Carpi for Salamino\",\"notes\":[\"violet\",\"sour cherry\",\"wild strawberry\",\"raspberry\"]}]",
+     "why": "The Codex's Emilia record scents Sorbara, the pale wine of the sandy plain, with violets, and the ladder gave violet to the dark Grasparossa of the foothills. Violet moves to the plain's rung. The rungs keep the member at each site in their where, since the change in the glass is the grape's more than the climate's, as the author said.",
+     "sources": [
+      {
+       "title": "The Codex: the Emilia-Romagna records, Sorbara, Castelvetro and Santa Croce",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "Lambrusco Maestri, one member of the family, has travelled as far as Argentina and Australia; elsewhere the name is barely seen.",
+     "now": "Lambrusco Maestri, one member of the family, has travelled as far as Argentina and Australia; elsewhere it is barely grown.",
+     "why": "The name is barely seen elsewhere is untrue of the wine, which is sold far from Emilia; it is the grape that is barely grown. Lambrusco Maestri in Argentina and Australia stands on Falstaff and the Wein.plus glossary.",
+     "sources": [
+      {
+       "title": "Falstaff: what is Lambrusco",
+       "url": "https://falstaff.com/en/grape-varieties/lambrusco"
+      },
+      {
+       "title": "Wein.plus glossary: Lambrusco Maestri",
+       "url": "https://glossary.wein.plus/lambrusco-maestri"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.0.tell",
+     "was": "Barbera shares the high acidity and low tannin but is still and deeper, with black cherry; Lambrusco foams, with violet and wild strawberry.",
+     "now": "Barbera shares the high acidity and low tannin but is still, with black cherry and a balsamic note; Lambrusco foams, with violet and wild strawberry.",
+     "why": "Deeper did not hold against Grasparossa, which this entry itself calls dark; Barbera's balsamic note, in the Barbera entry and not in this one, now parts them with the foam.",
+     "sources": [
+      {
+       "title": "The Codex: the Barbera fragment of g10 and the Emilia-Romagna records",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "cards.0",
+     "was": "{\"front\":\"Lambrusco: name its three DOCs around Modena and the style of each.\",\"back\":\"Sorbara, pale and sharp; Grasparossa di Castelvetro, dark and firmer; Salamino di Santa Croce, deep and round. Each became a DOC in 1970.\"}",
+     "now": "{\"front\":\"Lambrusco: name the three DOCs of 1970 around Modena and each style.\",\"back\":\"Sorbara, pale and sharp; Grasparossa di Castelvetro, dark and firmer; Salamino di Santa Croce, deep and round. The broader Modena and Reggiano DOCs blend the family.\"}",
+     "why": "Its three DOCs around Modena left out the broader Modena DOC, which the Codex's Emilia record names beside Reggiano. The front now asks for the three of 1970, and the back names the broader two in place of the date the front now gives.",
+     "sources": [
+      {
+       "title": "The Codex: the Emilia-Romagna records, the Lambrusco DOCs",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.opts",
+     "was": "[\"Lambrusco Grasparossa\",\"Lambrusco di Sorbara\",\"Reggiano Lambrusco amabile\",\"Lambrusco Mantovano\"]",
+     "now": "[\"Lambrusco Grasparossa\",\"Lambrusco di Sorbara\",\"Reggiano Lambrusco amabile\",\"Lambrusco Salamino di Santa Croce\"]",
+     "why": "Lambrusco Mantovano is a dark Lambrusco whose grip the Codex never describes, so a guest could argue it as a second key. Salamino di Santa Croce, deep but round and soft in the Codex's reading, keeps the near miss with one key.",
+     "sources": [
+      {
+       "title": "The Codex: the Emilia-Romagna and Lombardy records",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.2.exp",
+     "was": "Grasparossa is the dark, firmer Lambrusco of the foothills, the local match for zampone and cotechino. Sorbara, the nearest miss, is pale and sharp, with too little grip for it.",
+     "now": "Grasparossa is the dark, firmer Lambrusco of the foothills, the local match for zampone and cotechino. Salamino, the nearest miss, is deep in colour but round and soft; Sorbara is pale and sharp.",
+     "why": "The explanation follows the new option and names both near misses.",
+     "sources": [
+      {
+       "title": "The Codex: the Emilia-Romagna records",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "xinomavro": {
+   "verdict": "Sound after five fixes. The four appellations and their rules, acid black, the early brick rim, the two schools of Naoussa (the modern one picking a little earlier, as the Codex says), the national Grande Reserve at four years and the service all stand on the Codex's Greek records; North Macedonia and Australia could not be confirmed, the sale shared the hook of two others, and one tell parted it from Sangiovese by colour.",
+   "tested": [
+    "say against the Codex's Naoussa respelling (ksee-NO-mah-vro): agree.",
+    "The appellations against the Naoussa, Amyndeon, Goumenissa and Rapsani records: Naoussa alone and red only of 1971, Amyndeon alone with rosé and sparkling rosé of 1972, Goumenissa at least 20 per cent Negoska, Rapsani three grapes in equal parts; agree.",
+    "The ladder against the records: Amyndeon the coldest, Naoussa between, Goumenissa lower and warmer, Rapsani warm on its lower terraces; agree.",
+    "Abroad by three searches: the Gansu planting confirmed; North Macedonia and Australia found nowhere, so they left.",
+    "The glass against GRAPES_PLUS: sour cherry, strawberry, sun dried tomato, black olive, laurel as bay leaf and truffle; nod.",
+    "Service against the full tannic reds row, the Codex's 16 to 18 degrees and decant, and TASTE.age (ten and up): agree.",
+    "The four lines counted and said aloud; tells against the Nebbiolo, Agiorgitiko and Sangiovese entries from both sides; questions each with one key."
+   ],
+   "open": [
+    "The structure says acidity high on the grid's scale where the lead and the spoken line say very high, as GRAPES_PLUS does; both stand."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.sale",
+     "was": "Xinomavro gives a guest who loves Barolo something new to explore: the same pale colour and grip, with tomato and olive in place of tar. Decant the Naoussa and set it beside anything slow cooked with tomato.",
+     "now": "Xinomavro looks and grips like a Barolo, then tastes of Greece: sun dried tomato and black olive in place of tar. Decant the Naoussa and set it beside anything slow cooked with tomato.",
+     "why": "The hook, a guest who loves Barolo and something new to explore, is the hook of the Furmint and Mencía sales; it now opens on the look and the grip of Barolo and turns to the taste of Greece, keeping the Barolo comparison the chunk reading gave this grape.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "It barely travels: North Macedonia, over the border, grows some, and small new vineyards have appeared in Australia and China.",
+     "now": "It barely travels: a joint venture of Greek and Chinese wineries planted it in Gansu, in north western China, around 2010; elsewhere it is hardly seen.",
+     "why": "Three searches confirmed the Gansu planting of about 2010 by a joint venture of a Naoussa house and a Chinese winery, and found nothing for North Macedonia or Australia; Falstaff says the grape is not known outside Greece and Decanter hardly known. The line keeps China and says it is hardly seen elsewhere.",
+     "sources": [
+      {
+       "title": "Decanter: Greece and China joint venture to plant Xinomavro",
+       "url": "https://www.decanter.com/wine-news/greece-and-china-joint-venture-53045/"
+      },
+      {
+       "title": "The Diplomat: Greece and China, vines",
+       "url": "https://thediplomat.com/2010/08/greece-china-vines"
+      },
+      {
+       "title": "Falstaff: Xinomavro",
+       "url": "https://www.falstaff.com/en/grape-varieties/xinomavro"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.1.a",
+     "was": "Both are pale, high in acidity and firm in tannin, and both age for decades. Xinomavro tastes of sun dried tomato and black olive where Nebbiolo has tar and roses.",
+     "now": "Both are pale, high in acidity and firm in tannin, and both can age for decades. Xinomavro tastes of sun dried tomato and black olive where Nebbiolo has tar and roses.",
+     "why": "Both age for decades said it of every bottle; both can.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "compare.2.tell",
+     "was": "Sangiovese has dried oregano and a gentler tannin; Xinomavro is paler and grips harder, with sun dried tomato and black olive.",
+     "now": "Sangiovese has dried oregano and a gentler tannin; Xinomavro grips harder, with sharper acidity, sun dried tomato and black olive.",
+     "why": "Paler does not reliably part Xinomavro from Sangiovese, which is often as pale; the tell now parts them by grip and acidity, as the reviewed profile's confuse line has it, and by the tomato and olive.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "sources",
+     "was": "[{\"title\":\"Wines of Greece: Xinomavro\",\"url\":\"https://winesofgreece.org/varieties/xinomavro/\"},{\"title\":\"Decanter: Greek Xinomavro, the experts' choice\",\"url\":\"https://www.decanter.com/premium/greek-xinomavro-experts-choice-468160/\"},{\"title\":\"The Oxford Companion to Wine\",\"url\":\"\"}]",
+     "now": "[{\"title\":\"Wines of Greece: Xinomavro\",\"url\":\"https://winesofgreece.org/varieties/xinomavro/\"},{\"title\":\"Decanter: Greek Xinomavro, the experts' choice\",\"url\":\"https://www.decanter.com/premium/greek-xinomavro-experts-choice-468160/\"},{\"title\":\"Decanter: Greece and China joint venture to plant Xinomavro\",\"url\":\"https://www.decanter.com/wine-news/greece-and-china-joint-venture-53045/\"},{\"title\":\"The Oxford Companion to Wine\",\"url\":\"\"}]",
+     "why": "The Gansu planting gains its source.",
+     "sources": [
+      {
+       "title": "Decanter: Greece and China joint venture to plant Xinomavro",
+       "url": "https://www.decanter.com/wine-news/greece-and-china-joint-venture-53045/"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "codexRecords": [
+  "The Codex's Sicily record says varietal Nero d'Avola and Grillo must be Sicilia DOC since the 2017 vintage. The reservation bars Terre Siciliane IGT; the island's other DOCs (Noto, Eloro, Vittoria and more) still name the grape, and 2017 bottlings of Noto DOC and Vittoria DOC Nero d'Avola are on trade lists. The entry is right; the record overstates.",
+  "The Sicily record calls Nero d'Avola the island's most planted red (volatile) and Grillo the island's best dry white (a superlative); the Naoussa record calls the oldest house's Grande Reserve the classic on any list. Not this chunk's to change.",
+  "The Umbria record says Sagrantino has the highest tannin load measured in any Italian variety and GRAPES_PLUS that it is often called the most tannic grape in the world; the entry hedges to harder than almost any grape.",
+  "TASTE gives Aglianico acid 2 where GRAPES and INTRO_GRAPES read high, Nerello Mascalese body 1 and alcohol 1 where GRAPES_PLUS reads body medium, and Xinomavro body 1 where GRAPES_PLUS reads medium. The table follows the profiles; the authors' flags, upheld.",
+  "The Greek region records cite Wine Grapes with its three authors named in the title, against the rule that a source's title names nobody living.",
+  "The Codex's Emilia record says serve Lambrusco cold; the entry gives 10 to 14 degrees Celsius, the pale wine at the cold end, on Gambero Rosso's guidelines."
+ ],
+ "unsettled": [
+  "Whether any source address still answers: none was opened from this session.",
+  "Aglianico in Paso Robles: one trade page only, so the entry says California.",
+  "Xinomavro in North Macedonia and Australia: found nowhere in three searches; the author cited the Oxford Companion for North Macedonia, which a reader with the book may restore.",
+  "The present state of the Gansu Xinomavro planting: the sources date from about 2010 to 2013; the entry says only that it was planted.",
+  "The Lambrusco ladder: honest about where each member grows and what it gives, not a sourced contrast of one grape across climates."
+ ],
+ "settled": [
+  "Taurasi is at least 85 per cent Aglianico, three years with one in wood, Riserva four with eighteen months; Aglianico del Vulture Superiore is wholly Aglianico, a DOCG of 2010; Aglianico del Taburno a DOCG of 2011; Australia grows Aglianico in McLaren Vale, the Riverland and Heathcote.",
+  "Montefalco Sagrantino is Sagrantino alone, 37 months with 12 in wood, dry or passito, a DOCG of 1992; the dry wine dates from the 1970s.",
+  "Since the 2017 vintage a varietal Nero d'Avola may not be Terre Siciliane IGT; Cerasuolo di Vittoria is Sicily's one DOCG, 50 to 70 per cent Nero d'Avola with Frappato; Australia plants Nero d'Avola for heat and drought.",
+  "Nerello Mascalese is a child of Sangiovese and Mantonico Bianco (Molecular Biotechnology, 2013); Etna Rosso is at least 80 per cent Nerello Mascalese, Etna Sicily's first DOC, of 1968.",
+  "Lambrusco is a family; Sorbara, Grasparossa di Castelvetro and Salamino di Santa Croce each a DOC of 1970; Lambrusco Maestri grows in Argentina and Australia.",
+  "Xinomavro means acid black; Naoussa is Xinomavro alone and red only; Amyndeon allows rosé and sparkling rosé; Goumenissa takes at least 20 per cent Negoska; Rapsani three grapes in equal parts; a Greek and Chinese venture planted it in Gansu."
+ ]
+}
