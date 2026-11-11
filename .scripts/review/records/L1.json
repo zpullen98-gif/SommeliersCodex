@@ -1,0 +1,182 @@
+{
+  "lane": "L1",
+  "checked": "2026-11-11",
+  "entries": [
+    {
+      "id": "L1-01",
+      "topic": "Muscadet: Melon alone only in the three named zones",
+      "verdict": "change",
+      "claim": "The Loire record calls Melon de Bourgogne Muscadet's only grape and says Muscadet is Melon de Bourgogne alone, and the Régionale question i-r0p7056l says Melon has been the sole grape of Muscadet ever since the winter of 1709.",
+      "finding": "The specification of the plain Muscadet AOC names Melon B as principal grape and Chardonnay B as an accessory grape, at no more than 10 per cent of a holding's plantings. INAO's standing committee took up the change in 2017, it went to national opposition in November 2018, it stands in the specification homologated by the arrêté of 5 February 2021 (amended 27 May 2021), and the arrêté of 26 November 2025 (JORF of 3 December 2025) keeps it. Muscadet Sèvre et Maine, Muscadet Coteaux de la Loire and Muscadet Côtes de Grandlieu remain Melon B alone. The history in the question stands: the specification's link to origin says the hard winter of 1709 destroyed most of the Nantes vineyard and Melon, which bears frost better, was replanted, and InterLoire says the same.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/france.1.json",
+          "record": "loire",
+          "path": "grapes[0].styles",
+          "old": "Muscadet's only grape: neutral, bone dry",
+          "new": "Muscadet's grape, alone in Sèvre et Maine and the two smaller zones: neutral, bone dry"
+        },
+        {
+          "file": ".scripts/regions/fragments/france.1.json",
+          "record": "loire",
+          "path": "questions[0].exp (r-hksiq6zd)",
+          "old": "Muscadet is Melon de Bourgogne alone, a neutral, acid grape brought from Burgundy.",
+          "new": "Muscadet is Melon de Bourgogne, a neutral, acid grape brought from Burgundy, alone in Sèvre et Maine and the two smaller zones; plain Muscadet may add a little Chardonnay."
+        },
+        {
+          "file": "rewrite/categories/r1_loire.py",
+          "record": "i-r0p7056l",
+          "path": "Q(\"Pays Nantais and Muscadet\", \"A hard winter in 1709 ...\").exp",
+          "old": "It has been the sole grape of Muscadet ever since, and is scarcely grown in Burgundy today.",
+          "new": "It has been Muscadet's grape ever since, still alone in Sevre et Maine though plain Muscadet now admits a little Chardonnay, and is scarcely grown in Burgundy today."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Bulletin officiel du ministère de l'Agriculture, cahier des charges de l'AOC Muscadet homologué par l'arrêté du 5 février 2021 modifié par l'arrêté du 27 mai 2021 (BO du 24 juin 2021)",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-7f89900b-3f0e-4f8d-b028-4066234091f5/telechargement",
+          "kind": "primary",
+          "says": "Encépagement: cépage principal melon B, cépage accessoire chardonnay B.",
+          "read": "search summary"
+        },
+        {
+          "title": "Bulletin officiel du ministère de l'Agriculture, cahier des charges de l'AOC Muscadet homologué par l'arrêté du 26 novembre 2025 (JORF du 3 décembre 2025), publié au BO le 11 décembre 2025",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-e435f8dc-85b9-4172-ac00-637750581682/telechargement",
+          "kind": "primary",
+          "says": "Still white wines only, from melon B as principal grape and chardonnay B as accessory grape.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahier des charges de l'AOC Muscadet, modification adoptée par le Comité national le 12 juin 2025",
+          "url": "https://extranet.inao.gouv.fr/fichier/2f-PRJ-CDC-Muscadet-post-CE.pdf",
+          "kind": "primary",
+          "says": "The accessory grape is at most 10 per cent of the plantings, judged across all the parcels of the holding; the link to origin says the winter of 1709 destroyed most of the vineyard and frost hardy Melon was replanted.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahiers des charges of Muscadet Sèvre et Maine, Muscadet Coteaux de la Loire and Muscadet Côtes de Grandlieu (2025 drafts after the national committee)",
+          "url": "https://extranet.inao.gouv.fr/fichier/2e-PRJ-CDC-Muscadet-Sevre-et-Maine-post-CE.pdf",
+          "kind": "primary",
+          "says": "The three named Muscadet appellations admit melon B alone; the Chardonnay allowance belongs to the regional Muscadet only.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, Commission permanente du Comité national, dossier 2017-CP127, Muscadet",
+          "url": "https://extranet.inao.gouv.fr/fichier/ComPer-CNAOV-2017-127-Muscadet.pdf",
+          "kind": "primary",
+          "says": "In 2017 the committee examined the request to add chardonnay B as an accessory grape at up to 10 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Légifrance, avis relatif à l'ouverture d'une procédure nationale d'opposition pour la modification du cahier des charges de l'AOC Muscadet (2018)",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037809428",
+          "kind": "primary",
+          "says": "Opens the national opposition on the modified Muscadet specification, the text that first carries the accessory Chardonnay.",
+          "read": "search summary"
+        },
+        {
+          "title": "InterLoire, Vins de Loire: Melon B",
+          "url": "https://vinsdeloire.fr/en/grape-varieties/melon-b",
+          "kind": "secondary",
+          "says": "Melon was planted massively in the Pays Nantais after the frost of 1709 because it bears cold well.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The plain appellation has admitted an accessory Chardonnay since its specification was revised, so only the three named zones are Melon alone; the 1709 story is the rule's own and stays."
+    },
+    {
+      "id": "L1-02",
+      "topic": "Melon came to Nantes before 1709",
+      "verdict": "change",
+      "claim": "The CMS Loire question e-ddtr2ora says the Melon variety came from Burgundy after the hard winter of 1709.",
+      "finding": "Melon was already in the Pays Nantais before 1709: the Muscadet specification puts the first written traces of plantings under the name Muscadet in the middle of the seventeenth century (a lease of 1635 kept at Gorges), and after the winter of 1709 Melon was replanted across the vineyard. The frost made it the grape of the region; it did not bring it.",
+      "targets": [
+        {
+          "file": ".scripts/cms/questions/loire.json",
+          "record": "e-ddtr2ora",
+          "path": "questions[e-ddtr2ora].exp",
+          "old": "the variety came from Burgundy after the hard winter of 1709.",
+          "new": "the variety came from Burgundy and took over the Pays Nantais after the hard winter of 1709."
+        }
+      ],
+      "sources": [
+        {
+          "title": "INAO, cahier des charges de l'AOC Muscadet, procédure nationale d'opposition of November 2018",
+          "url": "https://extranet.inao.gouv.fr/fichier/CDC-Muscadet-PNO.pdf",
+          "kind": "primary",
+          "says": "The first written traces of plantings under the name Muscadet date from the middle of the seventeenth century; after the hard winter of 1709 Melon, more resistant to frost, was replanted.",
+          "read": "search summary"
+        },
+        {
+          "title": "InterLoire, Vins de Loire: Melon B",
+          "url": "https://vinsdeloire.fr/en/grape-varieties/melon-b",
+          "kind": "secondary",
+          "says": "Melon was planted massively after the frost of 1709.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wikipedia, Muscadet",
+          "url": "https://en.wikipedia.org/wiki/Muscadet",
+          "kind": "secondary",
+          "says": "The name Muscadet first appears in 1635 in a lease at Gorges; Melon became dominant after the frost of 1709 killed most of the vines.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The frost of 1709 spread the grape across the Pays Nantais; the grape itself was there before it, so the explanation should not date its arrival to 1709."
+    },
+    {
+      "id": "L1-03",
+      "topic": "Bouzeron: decreed in 1998",
+      "verdict": "change",
+      "claim": "The Burgundy record says Bouzeron, the one village appellation for Aligoté, was created in 1997, in its places note and in question r-rkgv0zwg.",
+      "finding": "INAO's specification for Bouzeron says the appellation was initially recognised by the decree of 17 February 1998, replacing the regional Bourgogne Aligoté Bouzeron of 1979, and the WIPO Lisbon register of 1998 cites the same decree. The 1997 date in many trade pages is the first vintage sold under the village name; one wiki names an INAO decision of 24 September 1997 that no primary text read here confirms.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/france.2.json",
+          "record": "burgundy",
+          "path": "places[3].places[0].note",
+          "old": "The one village appellation for Aligoté, created in 1997.",
+          "new": "The one village appellation for Aligoté, decreed in 1998, with 1997 as its first vintage."
+        },
+        {
+          "file": ".scripts/regions/fragments/france.2.json",
+          "record": "burgundy",
+          "path": "questions[5].exp (r-rkgv0zwg)",
+          "old": "became a village appellation for Aligoté in 1997;",
+          "new": "became a village appellation for Aligoté by a decree of February 1998, with 1997 as its first vintage;"
+        }
+      ],
+      "sources": [
+        {
+          "title": "INAO, cahier des charges de l'AOC Bouzeron",
+          "url": "https://extranet.inao.gouv.fr/fichier/PNOCDC-Bouzeron.pdf",
+          "kind": "primary",
+          "says": "L'appellation d'origine contrôlée Bouzeron, initialement reconnue par le décret du 17 février 1998.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, fiche produit Bouzeron",
+          "url": "https://www.inao.gouv.fr/node/1878/printable/pdf",
+          "kind": "primary",
+          "says": "In 1998 the regional appellation Aligoté de Bouzeron was raised to communal rank.",
+          "read": "search summary"
+        },
+        {
+          "title": "World Intellectual Property Organization, Lisbon Agreement bulletin no. 27 (1998)",
+          "url": "https://www.wipo.int/export/sites/www/lisbon/en/docs/bulletin_1998_27.pdf",
+          "kind": "primary",
+          "says": "Registers Bouzeron on the decree of 17 February 1998.",
+          "read": "search summary"
+        },
+        {
+          "title": "Bourgogne-info, Bouzeron",
+          "url": "https://www.bourgogne-info.eu/html/bouzeron.html",
+          "kind": "secondary",
+          "says": "1997 was the first vintage of the village appellation Bouzeron; from 1979 the village had the regional Bourgogne Aligoté Bouzeron.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The legal date is the decree of 17 February 1998; 1997 is the first vintage, so the record keeps both and says which is which."
+    }
+  ]
+}
