@@ -1,0 +1,948 @@
+{
+ "chunk": "g9",
+ "date": "2026-11-11",
+ "role": "The second reading: each entry read to refute it, not to admire it.",
+ "grapes": [
+  "syrah",
+  "grenache",
+  "mourvedre",
+  "carignan",
+  "petite-sirah",
+  "zinfandel"
+ ],
+ "method": [
+  "Each fragment read whole beside what show.cjs prints for the grape (GRAPES and GRAPES_PLUS, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region records for the Rhône, Provence and the Languedoc, Jumilla, Navarra and Priorat, Puglia and Sardinia, Curicó and Maule, California, the Barossa, McLaren Vale and Rutherglen, the Swartland, Stellenbosch and Hawke's Bay, with the service reference, the pairing data, the techniques record and codex57's drill filter.",
+  "Every fact the reviewed records do not already state was put to search: Shiraz in the Busby cuttings and the earlier shipment argued, the Barossa's turn from American to French oak, the origin of Garnacha and its spread under the Crown of Aragon, the Bandol rule for red and rosé and its months in wood, the VIGNO rules, Durif and Peloursin and the years of 1880, 1884 and 1908, and California's earlier picked Zinfandel.",
+  "The glass read as a blind taster would: each note asked whether a taster would nod, each prose field scanned by a script for a family word in disguise, each ladder set beside the Court's grid and the Codex's own climate line for the place, and each tell checked against both entries' notes, so that no tell parts two grapes by a note both carry.",
+  "Five contrast grapes and one home grape: each side read for a false or lazy generalisation and for its hedge, each blur for the cool or savoury New World and the warm or modern Old World it must admit, each call for whether it would survive a flight, and each against TASTE.world (both for Syrah, old for Grenache, Mourvèdre and Carignan, new for Zinfandel, none for Petite Sirah) and the Codex's region records for the places it names.",
+  "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences and for whether it is said to a guest; the cards and questions read for one key, four options of one kind and a stem that gives nothing away; the notIn lists read against codex57's filter and the bank.",
+  "Two rounds of edits, the first pushed as ee2c826 and the second with this record, each an exact replacement in the fragment's own text. node .scripts/grapes/build-grapes.cjs --lint --chunk g9 run after each until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+ ],
+ "limits": [
+  "This session reached search alone. One source host was tried (wineaustralia.com) and did not resolve, so no further host was tried: a page is cited as search results quoted it, and every address the authors gave stays unconfirmed.",
+  "The brief allows five searches a grape. Syrah took two, Grenache one, Mourvèdre one, Carignan one, Petite Sirah one and Zinfandel one; much of each entry stands on the Codex's own reviewed records, which need no new source.",
+  "Trade pages whose addresses or titles name a person (a critic's site, a writer's blog, a producer's own history) were read for the fact and are not cited; the fact is cited from another page or from the Codex."
+ ],
+ "entries": {
+  "syrah": {
+   "verdict": "Sound after eleven fixes in one round. One grape under two names, the Viognier of Côte-Rôtie, Cornas alone, the white grapes of red Hermitage, the Busby cuttings landed in 1832 and the Barossa vines of the 1840s were confirmed; the Swartland stood on the ripe Shiraz side and the warm rung though the Codex reads its Syrah peppery and savoury, Hawke's Bay stood on the New World side and in the blur at once, the spoken line made every Syrah full bodied, and three tells parted Syrah from its neighbours by notes both carry.",
+   "tested": [
+    "say against GRID_SAY (see-RAH): it opens on it; shih-RAZ is the Codex's Australia record's shi-RAZ, the same sound.",
+    "Parentage: Dureza and Mondeuse Blanche, as the reviewed records hold; the year is given as 1998 for the work and 1999 or 2000 for the paper, so the guest answer and the card now say the late 1990s.",
+    "Australia: Wine Australia gives Shiraz among Busby's cuttings of 1832, and the Codex's Australia record has them collected in 1831 and landed in 1832; one trade page argues for an earlier shipment in 1817. The 1840s vines stand on the Codex (phylloxera's absence lets them survive) and on Wine Australia's 1843 and 1847.",
+    "Oak: Decanter and two trade pages give American oak as the long Barossa custom, a turn to French oak and less new wood, and some return to American oak for cost.",
+    "The glass as a blind taster: every note set beside the reviewed profile and the Court's two grid reads; blackberry, blueberry, pepper, olive, smoked meat and violet all nod. A script scanned every prose field for a family word in disguise and found none.",
+    "Old World and New World against TASTE.world (both) and the Codex's own region records: the Swartland read peppery, savoury and firm but not heavy, Stellenbosch riper, Hawke's Bay and the Yarra near the northern Rhône, Washington dark, peppery and meaty, the Barossa floor rich, chocolatey and high in alcohol. The ladder agrees with the grid: the northern Rhône moderate, Australia warm.",
+    "Côte-Rôtie up to 20 per cent Viognier, Cornas all Syrah and Marsanne and Roussanne in red Hermitage, against the Codex's Rhône record: agree.",
+    "Service against the full tannic reds row, which names Syrah, the decanting row, which names Syrah, and TASTE.age (five to twenty): agree.",
+    "The four lines counted and said aloud: five beats in order, the sale two sentences, a hook and a pour.",
+    "Compare tells read from both sides against the Malbec, Cabernet Sauvignon, Petit Verdot, Pinotage, Blaufränkisch, Mourvèdre, Zinfandel and Petite Sirah entries.",
+    "Cards and questions: one key each, four options of one kind, nothing given away, the worlds question first."
+   ],
+   "open": [
+    "Lavender beside violet stands on tasting notes, as the author flagged; a blind taster may nod at violet alone. Left.",
+    "The author's report still names Hawke's Bay and the Swartland on the New World side; the report is not shipped and the fields now read otherwise."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Syrah and Shiraz are one grape under two names. Its home is the northern Rhône, on the steep river slopes of Hermitage and Côte-Rôtie. It is deep purple and tastes of blackberry, blueberry and cracked black pepper, often with a savoury note of black olive or smoked meat. It is full bodied, with firm tannin, and aged in oak. The Rhône tends to be peppery and savoury, while Australian Shiraz is typically riper and richer, with chocolate and vanilla. Pour it with grilled lamb, venison or a peppered steak. Australia has grown it since 1832, and the Barossa still picks from vines planted in the 1840s.",
+     "now": "Syrah and Shiraz are one grape under two names. Its home is the northern Rhône, on the steep river slopes of Hermitage and Côte-Rôtie. It is deep purple and tastes of blackberry, blueberry and cracked black pepper, often with a savoury note of black olive or smoked meat. It is medium to full bodied, with firm tannin, and usually aged in oak. The Rhône tends to be peppery and savoury, while Australian Shiraz is typically riper and richer, with chocolate and vanilla. Pour it with grilled lamb, venison or a peppered steak. Australia has grown it since 1832, and the Barossa still picks from vines planted in the 1840s.",
+     "why": "The line made every Syrah full bodied, where the reviewed profile and the entry's own structure read the Rhône medium plus and the Barossa full; aged in oak was said of every bottle, so usually hedges it. Three words in all.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.1.where",
+     "was": "Barossa Valley, McLaren Vale, Paso Robles and the Swartland",
+     "now": "Barossa Valley, McLaren Vale, Paso Robles and Stellenbosch",
+     "why": "The Codex's Swartland record reads its Syrah peppery, savoury, scented with fynbos and dried herb, firm but not heavy, from whole bunches and old wood: not the warm rung's blackberry jam, chocolate and eucalyptus. Stellenbosch, which the Codex reads full, dark fruited and riper than the Swartland, takes its place.",
+     "sources": [
+      {
+       "title": "The Codex: the South Africa records, Swartland and Stellenbosch",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.where",
+     "was": "Barossa, McLaren Vale, Washington, California's Central Coast, Hawke's Bay and Swartland",
+     "now": "Barossa, McLaren Vale, Washington, California's Central Coast and Stellenbosch",
+     "why": "Hawke's Bay stood on the riper side and in the blur at once, as Washington did for Merlot in g7, and the Codex reads it nearer the northern Rhône than the Barossa; the Swartland is read the same way. Both leave the typical New World side, and Stellenbosch, the Codex's riper Cape Shiraz, stands in their place.",
+     "sources": [
+      {
+       "title": "The Codex: the New Zealand records, Hawke's Bay",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the South Africa records, Swartland and Stellenbosch",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.cellar",
+     "was": "Bottled under the grape's name, as Shiraz or Syrah; picked riper and aged in new oak, in Australia long American and now more often French.",
+     "now": "Usually bottled under the grape's name, as Shiraz or Syrah; picked riper and often aged in new oak, in Australia long American and now often French.",
+     "why": "Bottled under the grape and aged in new oak were said as rules, and now more often French said more than the sources show: they report a long turn from American to French oak and less new wood overall, and some cellars going back to American oak for cost. Usually, often and now often French hedge it.",
+     "sources": [
+      {
+       "title": "Decanter: Barossa Valley wines",
+       "url": "https://www.decanter.com/features/barossa-valley-wines-246671/"
+      },
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.blur",
+     "was": "Cool New World sites such as Hawke's Bay, the Yarra Valley, Canberra and the Sonoma Coast make peppery, savoury wines, often labelled Syrah, and warm Rhône years give riper ones.",
+     "now": "Cool sites such as Hawke's Bay, the Yarra Valley and the Sonoma Coast, and the old vines of the Swartland, make peppery, savoury wines; warm Rhône years give riper ones.",
+     "why": "The Swartland's old bush vines are the New World's warm, savoury exception as the Codex reads them, so they join the cool sites; Canberra stays on the moderate rung, and the blur keeps its warm Rhône years.",
+     "sources": [
+      {
+       "title": "The Codex: the South Africa records, Swartland and Stellenbosch",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the New Zealand records, Hawke's Bay",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.1.a",
+     "was": "It is a good story, but no. DNA work in 1998 found its parents to be two old grapes of south eastern France, Dureza and Mondeuse Blanche, so it began near the Rhône.",
+     "now": "It is a good story, but no. DNA work in the late 1990s found its parents to be two old grapes of south eastern France, Dureza and Mondeuse Blanche, so it began near the Rhône.",
+     "why": "The year of the parentage work is 1998 on some pages and 1999 or 2000 for the paper on others; the late 1990s holds all of them.",
+     "sources": [
+      {
+       "title": "Wine Grapes, entry on Syrah",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.0.tell",
+     "was": "Malbec is plush and violet scented, with black plum and no pepper; Syrah is more savoury, with pepper, black olive and smoked meat.",
+     "now": "Malbec is plusher, with softer, rounder tannin and none of the savour; Syrah brings cracked pepper, black olive and smoked meat.",
+     "why": "The tell gave Malbec violet and black plum as parting notes, and this entry lists both among Syrah's own. It now parts them as the Malbec entry's own tell does: the savour, and Malbec's plusher, rounder tannin.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.1.tell",
+     "was": "Cabernet Sauvignon shows cassis, cedar and a leafy edge on a more drying tannin; Syrah has blackberry, pepper and smoked meat.",
+     "now": "Cabernet Sauvignon shows cassis, cedar and a leafy edge on a more drying tannin; Syrah has cracked pepper, black olive and smoked meat.",
+     "why": "The tell gave Syrah blackberry as a parting note, and the Cabernet Sauvignon pilot lists blackberry too; black olive, which Cabernet does not carry, takes its place, as the pilot's own tell has it.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.2.tell",
+     "was": "Mourvèdre is gamier and more rustic, with heavier tannin and a note of leather; Syrah is more polished, with pepper and violet.",
+     "now": "Mourvèdre is gamier and more rustic, with heavier tannin and a note of leather; Syrah is more polished and peppery, with violet.",
+     "why": "The tell gave pepper to Syrah alone, and the Mourvèdre entry and profile list black pepper; more peppery, as the reviewed Mourvèdre profile has it (Syrah is more refined and peppery), parts them by degree.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "cards.0.back",
+     "was": "The northern Rhône: Hermitage, Côte-Rôtie, Cornas, Saint-Joseph and Crozes-Hermitage. DNA work in 1998 found it a cross of Dureza and Mondeuse Blanche, two old grapes of south eastern France.",
+     "now": "The northern Rhône: Hermitage, Côte-Rôtie, Cornas, Saint-Joseph and Crozes-Hermitage. DNA work in the late 1990s found it a cross of Dureza and Mondeuse Blanche, two old grapes of south eastern France.",
+     "why": "The same widening of the year as the guest answer.",
+     "sources": [
+      {
+       "title": "Wine Grapes, entry on Syrah",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "cards.2.back",
+     "was": "With vine cuttings brought from Europe in 1832. Barossa Shiraz was long aged in American oak, which gives vanilla and coconut; many cellars now use French oak.",
+     "now": "In 1832 on most accounts, with vine cuttings brought from Europe. Barossa Shiraz was long aged in American oak, which gives vanilla and coconut; many cellars now use French oak.",
+     "why": "Wine Australia and the Codex's Australia record give Busby's cuttings collected in 1831 and landed in 1832, with Shiraz among them; one trade page argues it came with an earlier shipment of 1817. The card answers when it arrived, so it says 1832 on most accounts; a first draft said at the latest, which the lint heard as a superlative.",
+     "sources": [
+      {
+       "title": "Wine Australia: Shiraz, stories of Australian wine",
+       "url": "https://www.wineaustralia.com/what-s-happening/stories-of-australian-wine/november-2016/shiraz-the-story-of-an-australian-legend"
+      },
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "grenache": {
+   "verdict": "Sound after thirteen fixes over two rounds. Châteauneuf-du-Pape's thirteen grapes, Tavel rosé only, Banyuls, Cannonau and an origin in Aragon spread under its Crown to Sardinia and Roussillon were confirmed; the twenty dropped the hedge on the origin the rest keeps, the Old World cellar made Garnacha a blend even in Spain, the New World glass kept the sweet, candied style typical where the Codex reads the Barossa and McLaren Vale now perfumed and mid weight, the call leaned on that candied edge, and the drill gathered questions on Garnacha Blanca.",
+   "tested": [
+    "say: gruh-NASH, the Court's and the Codex's Australia record; gar-NAH-chah as the Codex's Spain and Navarra records write it. The Rhône record writes gruh-NAHSH, the same sound.",
+    "Origin: Wikipedia and Decanter give Aragon as the common view, Sardinia as argued by some, and the spread under the Crown of Aragon to Sardinia in the fourteenth century and to Roussillon.",
+    "The glass as a blind taster against the profile and the grid (Châteauneuf and Gigondas, warm: strawberry, red cherry, raspberry, red plum, dried herbs, meat, earth): every note nods; cured meat sat under age though the grid reads meat in the young wine.",
+    "Old World and New World against TASTE.world (old), with the side by side the plan fixes, and the Codex's Australia records (Barossa and McLaren Vale Grenache perfumed, raspberry scented, mid weight, from whole bunches and old wood). The blur admits Gredos and old vine Barossa.",
+    "The ladder: the grid reads Châteauneuf and Gigondas warm; Gredos, Navarra and the higher McLaren Vale stand as moderate on altitude, as the author proposed. Left.",
+    "Structure: the profile gives tannin low to medium and soft; the grid reads Châteauneuf's blend medium to medium plus. The entry speaks for the grape and follows the profile.",
+    "Service: the medium reds row names Côtes du Rhône; the reference gives Grenache a Burgundy bowl; TASTE.age five to fifteen: agree.",
+    "Food against the Codex's pairing data, which warns that alcohol can make chilli heat less comfortable.",
+    "The drill: codex57's notIn filter read; the keys grenache and garnacha gather the Terra Alta question on Garnacha Blanca and the Court's Catalonia question whose answer is Garnacha Blanca.",
+    "Compare tells read from both sides against the Pinot Noir, Zinfandel, Cinsault, Carignan and Mourvèdre entries: none parts the two by a note both carry.",
+    "The four lines counted and said aloud; cards and questions read for one key and nothing given away."
+   ],
+   "open": [
+    "Two Roussillon questions name Grenache Blanc and one of them also teaches Grenache Noir, so grenache blanc is not shut out of the drill.",
+    "The grid reads Châteauneuf's tannin medium to medium plus where the entry keeps the profile's low to medium for the grape alone."
+   ],
+   "changed": [
+    {
+     "round": "second",
+     "field": "notIn",
+     "was": "[]",
+     "now": "[\"garnacha blanca\",\"garnacha tintorera\"]",
+     "why": "The key garnacha gathers bank questions on another grape: the Premier Cru question on Terra Alta's Garnacha Blanca, and the Court's Catalonia question whose answer is Garnacha Blanca; garnacha tintorera is Alicante Bouschet. codex57 shuts out a question whose stem, key or explanation holds a phrase; grenache blanc is not shut out, since one Roussillon question that names it also teaches Grenache Noir.",
+     "sources": [
+      {
+       "title": "The Codex: js/codex57.js, the notIn filter of a grape's drill",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Premier Cru bank and the Court's Catalonia question",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s20",
+     "was": "Grenache is the grape behind Châteauneuf-du-Pape and most reds of the southern Rhône, and Spain, where it began, calls it Garnacha. It gives ripe strawberry, kirsch and dried thyme, with soft tannin and a warm, generous finish.",
+     "now": "Grenache is the grape behind Châteauneuf-du-Pape and most reds of the southern Rhône, and Spain, where it most likely began, calls it Garnacha. It gives ripe strawberry, kirsch and dried thyme, with soft tannin and a warm, generous finish.",
+     "why": "The twenty said where it began without the hedge the forty-five, the guest answer and the card all keep; Aragon is the common view and Sardinia is argued by some.",
+     "sources": [
+      {
+       "title": "Wikipedia: Grenache",
+       "url": "https://en.wikipedia.org/wiki/Grenache"
+      },
+      {
+       "title": "Decanter: what is Cannonau?",
+       "url": "https://www.decanter.com/learn/advice/what-is-cannonau-413919/"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Grenache needs heat, and it finds it all round the Mediterranean, above all in the southern Rhône and Spain. It tastes of ripe strawberry, raspberry and kirsch, with a little white pepper. The colour is pale, the tannin soft and the alcohol high. It is raised in large old casks and often blended with Syrah and Mourvèdre. The Rhône and Spain tend to be savoury, with dried thyme and rosemary, while Australia is often brighter and fruitier. Pour it with roast lamb, grilled sausages or a slow braise. It most likely began in Aragon, in northern Spain, as Garnacha, and went with that kingdom to Sardinia and southern France.",
+     "now": "Grenache needs heat, and finds it all round the Mediterranean, above all in the southern Rhône and Spain. It tastes of ripe strawberry, raspberry and kirsch, with a little white pepper. The colour is pale, the tannin soft and the alcohol high. It is often raised in concrete or old casks and blended with Syrah and Mourvèdre. The Rhône and Spain tend to be savoury, with dried thyme and rosemary, while Australia is often brighter and fruitier. Pour it with roast lamb, grilled sausages or a slow braise. It most likely began in Aragon, in northern Spain, as Garnacha, and went with that kingdom to Sardinia and southern France.",
+     "why": "Raised in large old casks was said of all Grenache, though the entry's own cellar line names concrete; often now covers the casks and the blending. A word came out of the first sentence to keep the line at 109.",
+     "sources": [
+      {
+       "title": "The Codex: the France records, the Rhône, Provence and the Languedoc",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.notes.4.family",
+     "was": "age",
+     "now": "savoury",
+     "why": "Cured meat sat under the family of age, though the Court's grid reads meat in the young Châteauneuf; the savoury family holds it, with leather beside it.",
+     "sources": [
+      {
+       "title": "The Codex: the Court grid reads (GRID_READS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.notes.4.notes",
+     "was": "[\"old leather\",\"cured meat\"]",
+     "now": "[\"cured meat\",\"leather\"]",
+     "why": "The same move: cured meat and leather, as the grid and the reviewed profile give them, with no claim that they come only with age.",
+     "sources": [
+      {
+       "title": "The Codex: the Court grid reads (GRID_READS)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.cellar",
+     "was": "Usually the lead in a blend with Syrah, Mourvèdre and Carignan; raised in concrete or large old casks, with little new oak, since Grenache oxidises easily.",
+     "now": "In the Rhône usually the lead in a blend with Syrah and Mourvèdre, in Spain often alone; raised in concrete or large old casks, since Grenache oxidises easily.",
+     "why": "Usually the lead in a blend held for the Rhône but not for Spain, which bottles Garnacha alone from Campo de Borja, Calatayud and the Sierra de Gredos, as the profile's regions and the entry's own blur show. Carignan and little new oak came out for room; the old casks and concrete stay.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.glass",
+     "was": "Typically more openly fruity: raspberry, strawberry jam and red plum, often with a sweet, candied edge and less of the dried thyme and leather. Newer Australian wines, picked earlier, tend to be paler, fresher and perfumed.",
+     "now": "Typically more openly fruity: raspberry, strawberry and red plum, sometimes with a sweet, candied edge and less of the dried thyme and leather. Many Australian wines, now picked earlier, tend to be paler, perfumed and medium bodied.",
+     "why": "The glass kept the sweet, candied style as the typical one and the newer wine as an aside, where the Codex's Australia records read Barossa and McLaren Vale Grenache now as perfumed, raspberry scented, mid weight reds from whole bunches and old wood. The candied edge is now sometimes, and the perfumed, medium bodied wine many.",
+     "sources": [
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      },
+      {
+       "title": "Wikipedia: Grenache",
+       "url": "https://en.wikipedia.org/wiki/Grenache"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.cellar",
+     "was": "Often bottled alone under the grape's name, or as a blend labelled GSM, much of it from old bush vines; newer wines are picked earlier and aged in old oak.",
+     "now": "Bottled under the grape's name or as a GSM blend, in Australia often from old bush vines; newer wines are picked earlier and see little new oak.",
+     "why": "Much of it from old bush vines was said of the whole New World, California and Washington among it; it is Australia's, as the Codex reads it. Aged in old oak was said as a rule and now reads see little new oak.",
+     "sources": [
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.why",
+     "was": "Both worlds grow Grenache in heat, so ripeness differs little. The Old World blends it with firmer grapes, ages it in old casks and names the place. The New World names the grape and bottles it young for its fruit.",
+     "now": "Both worlds grow Grenache in heat, so both make it full and warm. The Rhône blends it with firmer grapes, ages it in old casks and names the place; the New World more often bottles it alone, for fruit.",
+     "why": "Ripeness differs little sat beside a New World glass that is riper and sweeter, the Old World was said to blend it though Spain often bottles it alone, and young bottling had no source. The causes now: heat on both sides, the Rhône's blend, old casks and place name, and the New World's grape alone.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the France records, the Rhône, Provence and the Languedoc",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.call",
+     "was": "Dried thyme, leather and a savoury, warm finish lean Old World; bright raspberry and candied strawberry with little of either lean New World.",
+     "now": "Dried thyme, leather and a savoury, warm finish lean Old World; bright raspberry and red plum, often perfumed, with little of either lean New World.",
+     "why": "The call leaned on a candied edge the glass now gives as only sometimes; bright raspberry and red plum, often perfumed, is the Codex's reading of the New World wine.",
+     "sources": [
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "food.with.3.why",
+     "was": "soft tannin and ripe fruit sit easily with smoke",
+     "now": "soft tannin suits the smoke, if the chilli stays gentle",
+     "why": "The Codex's pairing data warns that alcohol can make chilli heat less comfortable, and Grenache is high in alcohol; the gumbo stands only where the chilli is gentle, as the author assumed.",
+     "sources": [
+      {
+       "title": "The Codex: the pairing data (PAIRING)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels.1.means",
+     "was": "A southern Rhône place name: a blend from a list of thirteen grapes, with Grenache in the lead.",
+     "now": "A southern Rhône village whose red blends up to thirteen grapes, Grenache in the lead.",
+     "why": "The same fact in three fewer words, to keep the entry under its cap after the hedges.",
+     "sources": [
+      {
+       "title": "The Codex: the France records, the Rhône, Provence and the Languedoc",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "cards.1.back",
+     "was": "Dried thyme, rosemary, leather and a savoury, warm finish lean southern Rhône or Spain. Bright raspberry and candied strawberry with little of either lean Australia or California.",
+     "now": "Dried thyme, rosemary, leather and a savoury, warm finish lean southern Rhône or Spain. Bright raspberry and red plum, often perfumed, with little of either lean Australia or California.",
+     "why": "The card follows the call.",
+     "sources": [
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "mourvedre": {
+   "verdict": "Sound after nine fixes in one round. Bandol at least half Mourvèdre and at least eighteen months in wood, its rosé at least a fifth, Monastrell and Mataro, and the head in the sun were confirmed; the Spanish side and the call made Jumilla soft where the Codex reads high tannin with earth and game, the New World glass took the meat out of a Mataro the Codex reads dark, meaty, earthy and tannic, the why said the New World blends it for fruit while the entry's label says it brings grip, and the respelling broke Monastrell in the wrong place.",
+   "tested": [
+    "say: moor-VED-ruh as the Codex's Provence, Rhône, Australia and California records; Monastrell as the Spain records write it (mo-nas-TREL, mo-nahs-TREL).",
+    "Bandol: the cahier of 2011, quoted through Wikipedia and the regulation's search excerpts, gives the red 50 to 95 per cent Mourvèdre and the rosé 20 to 95; the appellation's brochure and the Codex's Provence record give eighteen months in wood, which the cahier excerpts read did not show.",
+    "The glass against the profile and the Codex's Jumilla record (blackberry, dried fig, earth and game, high tannin and alcohol): every note nods; prune stood where the record reads dried fig.",
+    "Old World and New World against TASTE.world (old) and the Codex's Australia records (Mataro dark, meaty, earthy and tannic). The honest call is Bandol against everything riper, as the author wrote it.",
+    "The ladder: Bandol moderate on the sea, as the Codex's Provence record says sea breezes temper the heat near the coast; the same record says the grape needs the sea's warmth to ripen. Left, with the author's flag.",
+    "Service against the full tannic reds row and TASTE.age (ten and more from Bandol), and the rosé row for Bandol rosé: agree.",
+    "Food: shrimp remoulade with Bandol rosé, from the Creole table, stands.",
+    "Compare tells read from both sides against the Syrah, Grenache and Carignan entries.",
+    "The four lines counted and said aloud; cards and questions read for one key, four options of one kind, nothing given away."
+   ],
+   "open": [
+    "Bandol on a moderate rung rests on the sea's tempering; a checker could read both rungs as warm. Left."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "say",
+     "was": "moor-VED-ruh, or moh-nah-STRELL in Spain",
+     "now": "moor-VED-ruh, or mo-nahs-TREL in Spain",
+     "why": "Monastrell was broken between the a and the s; the Codex's Spain records write mo-nas-TREL and mo-nahs-TREL, and the second is taken.",
+     "sources": [
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Mourvèdre ripens very late, so it only thrives where the summer is long and hot. Its French home is Bandol, on the Provence coast, and Spain, where it began, calls it Monastrell. It is nearly black, tasting of blackberry and black plum, with leather and a gamey, meaty note. It is full bodied, with a firm, drying grip. Bandol ages it eighteen months in large old casks, and tends to be sterner than the riper wines of Spain, California or Australia. Pour it with braised lamb, grilled sausages or game. Bandol growers say it wants its head in the sun and its feet in the water.",
+     "now": "Mourvèdre ripens very late, so it only thrives where the summer is long and hot. Its French home is Bandol, on the Provence coast, and Spain, where it began, calls it Monastrell. It is nearly black, tasting of blackberry and black plum, with leather and a gamey, meaty note. It is full bodied, with a firm, drying grip. Bandol ages it at least eighteen months in wood, and tends to be sterner than the riper wines of Spain, California or Australia. Pour it with braised lamb, grilled sausages or game. Bandol growers say it wants its head in the sun and its feet in the water.",
+     "why": "Eighteen months in large old casks was said as the rule; the rule is at least eighteen months in wood, and large old casks the tradition the cellar line keeps.",
+     "sources": [
+      {
+       "title": "The Codex: the France records, the Rhône, Provence and the Languedoc",
+       "url": ""
+      },
+      {
+       "title": "Wikipedia: Bandol",
+       "url": "https://en.wikipedia.org/wiki/Bandol"
+      },
+      {
+       "title": "Bandol tourist office: the wines of Bandol, 2019",
+       "url": "https://www.bandoltourisme.fr/wp-content/uploads/2021/02/Vins_de_Bandol_FR_-_2019.pdf"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.notes.1.notes",
+     "was": "[\"raisin\",\"prune\"]",
+     "now": "[\"raisin\",\"dried fig\"]",
+     "why": "The Codex's Jumilla record gives Monastrell dried fig, which the call now leans on; prune came out for it.",
+     "sources": [
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.glass",
+     "was": "Bandol tends to be stern and savoury: blackberry and black plum under leather, game, dried thyme and black pepper, with high, gripping tannin that needs years. Spanish Monastrell is usually riper and rounder, with blackberry jam and a raisin edge.",
+     "now": "Bandol tends to be stern and savoury: blackberry and black plum under leather, game, dried thyme and black pepper, with high, gripping tannin that needs years. Spanish Monastrell is usually riper, with blackberry jam, dried fig and higher alcohol.",
+     "why": "Riper and rounder made Spanish Monastrell soft, where the Codex's Jumilla record reads high tannin and alcohol with earth and game; riper, with dried fig and higher alcohol, is what parts it from Bandol.",
+     "sources": [
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.glass",
+     "was": "Typically riper and more openly fruity: blackberry and black plum with dark chocolate and liquorice, softer tannin and less of the leather and game. On a list it is most often the third grape of a GSM.",
+     "now": "Typically riper and fuller in fruit: blackberry and black plum with dark chocolate and liquorice, at higher alcohol, the meaty note there but less to the fore. On a list it is most often the third grape of a GSM.",
+     "why": "The glass gave the New World softer tannin and less of the leather and game, where the Codex's Australia records read Mataro dark, meaty, earthy and tannic. The meat now stays, less to the fore, and higher alcohol joins the riper fruit.",
+     "sources": [
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.why",
+     "was": "Mourvèdre ripens very late, so both worlds plant it in heat. Bandol's law asks for a high share of the grape and long ageing in wood, hence firm wines for keeping. The New World blends it for fruit.",
+     "now": "Mourvèdre ripens very late, so both worlds plant it in heat. Bandol's law asks for a high share of the grape and long ageing in wood, hence firm wines for keeping. Elsewhere it is picked riper and mostly blended.",
+     "why": "The New World blends it for fruit, while the entry's own GSM label says that in the blend Mourvèdre brings colour, grip and a savoury depth. Elsewhere it is picked riper and mostly blended, which covers Spain and the New World and claims no reason the label denies.",
+     "sources": [
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.call",
+     "was": "Leather, game and a stern, drying grip lean Bandol; blackberry jam, chocolate and softer tannin lean Spain or the New World.",
+     "now": "Dried thyme, leather and a stern grip with fresher fruit lean Bandol; blackberry jam, dried fig and higher alcohol lean Spain or the New World.",
+     "why": "Softer tannin leaning Spain contradicted the Codex's Jumilla record, and leather and game mark Jumilla and the Barossa too. The call now leans on the garrigue and fresher fruit of the coast against jam, dried fig and higher alcohol.",
+     "sources": [
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Australia records, Barossa, McLaren Vale and Rutherglen",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the France records, the Rhône, Provence and the Languedoc",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "service.age",
+     "was": "Bandol rewards ten years and more; Monastrell and New World blends are ready within five.",
+     "now": "Bandol rewards ten years and more; most Monastrell and New World blends are ready within five.",
+     "why": "Monastrell ready within five was said of all; the Codex's Jumilla record runs from juicy unoaked reds to dense oak aged wines, so most.",
+     "sources": [
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "cards.2.back",
+     "was": "Leather, game, dried thyme and a stern, drying grip lean Bandol. Blackberry jam, a raisin edge, chocolate and softer tannin lean Jumilla or the New World.",
+     "now": "Dried thyme, leather and a stern grip with fresher fruit lean Bandol. Blackberry jam, dried fig, chocolate and higher alcohol lean Jumilla or the New World.",
+     "why": "The card follows the call.",
+     "sources": [
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "carignan": {
+   "verdict": "Sound after eleven fixes in one round. Mazuelo, Cariñena and Samsó, Carignano del Sulcis, the VIGNO vines of thirty years, head trained, dry farmed and two years before sale, and carbonic maceration in the Languedoc were confirmed; the call, a card and the worlds question parted the Old World from Maule by dried thyme though the Codex reads Maule Carignan of damson and dried herb, the New World cellar put every bottle on dry farmed vines and every Maule bottle under VIGNO, the twenty had old vines turn acidity into fruit, and a label made all Carignano del Sulcis old and ungrafted.",
+   "tested": [
+    "say: kah-reen-YAHN as the Codex's Languedoc and Maule records; Cariñena as the Priorat record writes it. The Lebanon record writes kah-ree-NYAHN, the same sound.",
+    "VIGNO: thirty year old, head trained, dry farmed vines of the Maule secano and 24 months before release on trade pages; the share is 65, 70 or 85 per cent by page and 65 in the Codex's Chile record, so no share is given, as the author chose.",
+    "Maule's climate: the Codex reads it cooler and wetter than Colchagua, warm days and cool nights, so the moderate rung stands.",
+    "Carbonic maceration: the Codex's Languedoc record gives it to Carignan to tame the tannin, and its technique record describes intact berries; fermented whole stands.",
+    "The glass against the profile (black raspberry, cranberry, dried cherry, plum, garrigue, iron, liquorice, a meaty savour): every note nods; graphite rests on Priorat's slate. Left.",
+    "Old World and New World against TASTE.world (old) and the plan's reason for a side by side; the contrast is one of degree, and the call ends on the high acidity both keep.",
+    "Service against the medium reds row and TASTE.age (old vines five to fifteen): agree.",
+    "Compare tells read from both sides against the Grenache, Mourvèdre and Cinsault entries.",
+    "The four lines counted and said aloud; cards and questions read for one key, four options of one kind, nothing given away."
+   ],
+   "open": [
+    "The side by side is the thinnest of the chunk: Maule and the Languedoc differ by degree. The plan fixes contrast and names Maule in its reason; a reviewer may still judge at home and abroad the better form."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s20",
+     "was": "Carignan is a Mediterranean red that keeps high acidity and firm tannin even in great heat. Old vines in the Languedoc, Spain and Sardinia turn that into black raspberry, cranberry and dried thyme, in a wine made for rich, rustic food.",
+     "now": "Carignan is a Mediterranean red that keeps high acidity and firm tannin even in great heat. Old vines in the Languedoc, Spain and Sardinia give it depth: black raspberry, cranberry and dried thyme, in a wine made for rich, rustic food.",
+     "why": "Old vines turn that into black raspberry said that high acidity and tannin become fruit; old vines give it depth, as the guest answer on old vines says.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Carignan was long the workhorse of the Languedoc, and it is old hillside vines that have made its name. It tastes of black raspberry, cranberry and dried cherry, with dried thyme and liquorice. It is deep in colour, with high acidity and firm, rustic tannin. Many cellars ferment the berries whole in a sealed vat, which softens that grip. The Languedoc and Spain tend to be savoury, while old vines in Chile and California are often juicier and more openly fruity. Pour it with cassoulet, grilled sausages or lamb. Spain, where it began, calls it Cariñena or Mazuelo, and old vine growers in Chile share one name for theirs, Vigno.",
+     "now": "Carignan was long the workhorse of the Languedoc, and old hillside vines have made its name. It tastes of black raspberry, cranberry and dried cherry, with dried thyme and liquorice. It is deep in colour, with high acidity and firm, rustic tannin. Many cellars ferment the berries whole in a sealed vat, which softens that grip. The Languedoc and Spain tend to be savoury, while old vines in Chile and California are often juicier and more openly fruity. Pour it with cassoulet, grilled sausages or lamb. Spain, where it most likely began, calls it Cariñena or Mazuelo, and old vine growers in Chile share one name for theirs, Vigno.",
+     "why": "Where it began wanted the hedge the reference works keep (Aragon is the likely home); three words came out of the first sentence to keep the line at 109.",
+     "sources": [
+      {
+       "title": "The Oxford Companion to Wine, entry on Carignan",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Spain records, Jumilla and Yecla, Navarra and Priorat",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder.0.notes",
+     "was": "[\"cranberry\",\"sour cherry\",\"black raspberry\"]",
+     "now": "[\"cranberry\",\"damson\",\"black raspberry\"]",
+     "why": "The Codex's Maule record reads its Carignan of damson and dried herb; damson takes the place of sour cherry, which the red fruit notes still hold.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.cellar",
+     "was": "Mostly a partner in blends with Grenache, Syrah and Mourvèdre; often fermented as whole berries, by carbonic maceration, to soften the tannin. Rioja uses a little, as Mazuelo.",
+     "now": "Mostly a partner in blends with Grenache, Syrah and Mourvèdre; in the Languedoc often fermented whole, by carbonic maceration, to soften the tannin. Rioja uses a little, as Mazuelo.",
+     "why": "Often fermented whole by carbonic maceration was said of the whole Old World; the Codex puts it in the Languedoc. Fermented whole keeps the intact berries the Codex's technique record describes.",
+     "sources": [
+      {
+       "title": "The Codex: the France records, the Rhône, Provence and the Languedoc",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the techniques record, carbonic maceration",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.glass",
+     "was": "Typically juicier and more openly fruity: dark cherry, cranberry and blackberry, with the same high acidity and firm grip but often less of the dried thyme and iron.",
+     "now": "Typically juicier and purer in fruit: damson, dark cherry and cranberry with a little dried thyme, the same high acidity and a firm but finer grip.",
+     "why": "The glass gave Maule less of the dried thyme, where the Codex's Maule record reads its Carignan dark, high acid and savoury, of damson and dried herb. Juicier and purer stays; damson and a little dried thyme join it, and the finer grip is the profile's old vine silk.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.cellar",
+     "was": "Bottled under the grape's name, from old bush vines farmed without irrigation: in Maule under the shared name VIGNO, in California often from old mixed vineyards with Zinfandel.",
+     "now": "Usually bottled under the grape's name, from old, dry farmed bush vines: in Maule some as VIGNO, in California often from old mixed vineyards with Zinfandel.",
+     "why": "Every bottle was said to come from dry farmed bush vines under the grape's name, and every Maule bottle to carry VIGNO, which is a guild's mark on some. Usually and some hedge it.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.call",
+     "was": "Dried thyme, iron and a rustic, savoury grip lean Old World; purer, juicier dark cherry and cranberry lean Maule or California. High acidity marks both.",
+     "now": "Iron and a rustic, savoury grip lean Old World; purer, juicier damson and dark cherry lean Maule or California. Both keep high acidity.",
+     "why": "The call parted the Old World from Maule by dried thyme, which the Codex gives Maule Carignan too. Iron and a rustic grip against purer damson and dark cherry part them, and both keep high acidity.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels.2.means",
+     "was": "Carignan from old, ungrafted bush vines in the coastal sand of south west Sardinia.",
+     "now": "Carignan of south west Sardinia, much of it from old, ungrafted bush vines in coastal sand.",
+     "why": "The label made every Carignano del Sulcis old and ungrafted; the rule asks for the grape and the place, and much of it comes from such vines.",
+     "sources": [
+      {
+       "title": "The Codex: the Italy records, Puglia and Sardinia",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "cards.2.back",
+     "was": "Dried thyme, iron and a savoury, rustic grip lean the Languedoc, Spain or Sardinia. Purer, juicier dark cherry and cranberry lean Maule or California. Both keep high acidity.",
+     "now": "Iron, liquorice and a rustic, savoury grip lean the Languedoc, Spain or Sardinia. Purer, juicier damson and dark cherry on a finer grip lean Maule or California. Both keep high acidity.",
+     "why": "The card follows the call.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.0.q",
+     "was": "Two reds from old Carignan vines are poured blind, both high in acidity. The first shows black raspberry with dried thyme, iron and a rustic, savoury grip; the second is juicier and purer in fruit, all dark cherry and cranberry. Which pair of origins fits, in that order?",
+     "now": "Two reds from old Carignan vines are poured blind, both high in acidity. The first shows black raspberry with iron, liquorice and a rustic, savoury grip; the second is juicier and purer, with damson and dark cherry on a finer grip. Which pair of origins fits, in that order?",
+     "why": "The worlds question parted the two glasses by dried thyme as the call did; the scene now gives the first glass iron and liquorice and the second damson, dark cherry and a finer grip.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions.0.exp",
+     "was": "Dried thyme, iron and a rustic, savoury grip tend to mark the Languedoc. Juicier, purer dark cherry and cranberry tend to mark old vines in Maule, so the reverse order does not fit.",
+     "now": "Iron and a rustic, savoury grip tend to mark the Languedoc. Juicier, purer damson and dark cherry on a finer grip tend to mark old vines in Maule, so the reverse order does not fit.",
+     "why": "The explanation follows the stem.",
+     "sources": [
+      {
+       "title": "The Codex: the Chile records, Curicó and Maule",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "petite-sirah": {
+   "verdict": "Sound after six fixes in one round. Durif a cross of Peloursin by Syrah, raised in a French nursery about 1880, true Durif in California from 1884, the old California vines proved mostly Durif by DNA at Davis in the late 1990s, and Rutherglen since 1908 were confirmed; the spoken line said neither small beside a guest answer on small berries, three lines said bred where the sources say found and propagated, a guest answer said nearly all where the work found most, and two tells parted the grape from Syrah and Malbec by notes both carry.",
+   "tested": [
+    "say: puh-TEET sih-RAH and DUR-if, as the Codex's California and Rutherglen records.",
+    "The profile against the Codex's California record (Durif, the inky, tannic child of Syrah and Peloursin, an old field blend partner of Zinfandel in Sonoma and Lodi) and Rutherglen record (deep, dense, tannic and plummy): agree.",
+    "Targets: california, napa-sonoma, rutherglen and mexico, the four pages the Codex ties to the grape or to Durif.",
+    "Mode home, as the plan fixes it: California at home, Rutherglen and Baja California abroad.",
+    "The ladder: Mendocino on the moderate rung stands on trade profiles, as the author reported. Left.",
+    "Service against the full tannic reds row: agree.",
+    "Compare tells read from both sides: the Syrah entry carries blueberry and dark chocolate, the Malbec entry blueberry, cocoa and mocha.",
+    "The four lines counted and said aloud; cards and questions read for one key, four options of one kind, nothing given away."
+   ],
+   "open": [
+    "Mendocino as the moderate rung is not confirmed on a wine body's page."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s20",
+     "was": "Petite Sirah is a grape of its own, bred in France as Durif and at home in California. It is nearly black in the glass, with blueberry, blackberry and dark chocolate, full in body and firm in tannin.",
+     "now": "Petite Sirah is a grape of its own, raised in France as Durif and at home in California. It is nearly black in the glass, with blueberry, blackberry and dark chocolate, full in body and firm in tannin.",
+     "why": "Bred says a deliberate cross; the sources say Durif found and propagated a cross of Peloursin by Syrah in his nursery about 1880, and the card and a guest answer already say raised.",
+     "sources": [
+      {
+       "title": "Wikipedia: Durif",
+       "url": "https://en.wikipedia.org/wiki/Durif"
+      },
+      {
+       "title": "University of California, Davis, Foundation Plant Services: Durif",
+       "url": "https://devo.ucdavis.edu/sites/g/files/dgvnsk1961/files/media/documents/durif.pdf"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Petite Sirah is neither small nor Syrah. It is a separate grape, a child of Syrah, at home in California, where it long grew among the Zinfandel. It is nearly black in the glass and tastes of blueberry, blackberry and black pepper, with dark chocolate behind. It is full bodied, with a great deal of firm tannin. Most is aged in oak, which adds vanilla and mocha. It wants rich food: braised short rib, barbecue or a burger with blue cheese. A French nurseryman named Durif raised it in the nineteenth century, and Australia still sells it under his name.",
+     "now": "Petite Sirah is not a small Syrah, nor Syrah at all. It is a separate grape, a child of Syrah, at home in California, where it long grew among the Zinfandel. It is nearly black in the glass and tastes of blueberry, blackberry and black pepper, with dark chocolate behind. It is full bodied, with a great deal of firm tannin. Most is aged in oak, which adds vanilla and mocha. It wants rich food: braised short rib, barbecue or a burger with blue cheese. A French nurseryman named Durif raised it in the nineteenth century, and Australia still sells it under his name.",
+     "why": "Neither small sat beside a guest answer that the name comes from the small berries; not a small Syrah, nor Syrah at all, is the Codex's California record's own wording and keeps both true.",
+     "sources": [
+      {
+       "title": "The Codex: the California record",
+       "url": ""
+      },
+      {
+       "title": "Wikipedia: Durif",
+       "url": "https://en.wikipedia.org/wiki/Durif"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.home.abroad",
+     "was": "France, where it was bred as Durif, has all but given it up. Rutherglen in Australia has grown it since 1908, as Durif, in a dense, ripe style, and Mexico grows it in Baja California.",
+     "now": "France, where it was raised as Durif, has all but given it up. Rutherglen in Australia has grown it since 1908, as Durif, in a dense, ripe style, and Mexico grows it in Baja California.",
+     "why": "The same move from bred to raised.",
+     "sources": [
+      {
+       "title": "Wikipedia: Durif",
+       "url": "https://en.wikipedia.org/wiki/Durif"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "guest.3.a",
+     "was": "By birth, yes: it was raised in a French nursery. France has almost none now, and DNA work at the University of California in the 1990s showed that California's old Petite Sirah vines are nearly all that same grape.",
+     "now": "By birth, yes: it was raised in a French nursery. France has almost none now, and DNA work at the University of California in the 1990s showed that most of California's old Petite Sirah vines are that same grape.",
+     "why": "Nearly all said more than the work found: the vines called Petite Sirah in California proved mostly Durif, with Peloursin and a few others among them.",
+     "sources": [
+      {
+       "title": "Wikipedia: Durif",
+       "url": "https://en.wikipedia.org/wiki/Durif"
+      },
+      {
+       "title": "University of California, Davis, Foundation Plant Services: Durif",
+       "url": "https://devo.ucdavis.edu/sites/g/files/dgvnsk1961/files/media/documents/durif.pdf"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.0.tell",
+     "was": "Syrah, its parent, is more savoury and perfumed, with black olive, smoked meat and violet; Petite Sirah is inkier, with blueberry and a heavier grip.",
+     "now": "Syrah, its parent, is more savoury and perfumed, with black olive, smoked meat and violet; Petite Sirah is inkier and more tannic, with little of that savour.",
+     "why": "The tell gave Petite Sirah blueberry as a parting note, and the Syrah entry lists blueberry; inkier and more tannic, with little of the savour, parts them as the Codex's California record does.",
+     "sources": [
+      {
+       "title": "The Codex: the California record",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare.2.tell",
+     "was": "Malbec is as dark but plusher, with violet and soft tannin; Petite Sirah is firmer and more peppery, with blueberry and dark chocolate.",
+     "now": "Malbec is as dark but plusher, with violet and soft, round tannin; Petite Sirah is firmer and more peppery, with a far heavier grip.",
+     "why": "The tell gave Petite Sirah blueberry and dark chocolate as parting notes, and the Malbec entry lists blueberry, cocoa and mocha; a far heavier grip parts them.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "zinfandel": {
+   "verdict": "Sound after two fixes in one round. Primitivo and Tribidrag as one vine, the Vienna nursery and Long Island in the 1820s, the Gold Rush, Manduria and Gioia del Colle, the Dolce Naturale and Old Vine with no legal meaning were confirmed against the Codex's California and Puglia records; the spoken line called Tribidrag the oldest name where the records date its first mention differently, and the blur admitted the Old World's exception but not the New World's.",
+   "tested": [
+    "say: ZIN-fan-del, the Court's; pree-mee-TEE-voh, the Codex's.",
+    "History against the Codex's California record: the east coast in the 1820s, Gold Rush Zinfandel in Amador and El Dorado, Old Vine with no legal meaning.",
+    "Old World and New World against TASTE.world (new) and the Codex's Puglia record, which reads Primitivo ripe, sweet fruited, inky and jammy, the richest from Manduria and the freshest from Gioia del Colle. The entry's savoury, rustic Primitivo is a lean of degree, and the blur's plush Primitivo admits the rest.",
+    "California's earlier picked wines: Decanter and Wine Spectator report cellars picking two to three weeks earlier, with less new oak, since the big vintages of the late 1990s.",
+    "Structure: TASTE gives tannin one step, the profile and the grid medium to medium plus; the entry follows the profile and the grid, as the author reported.",
+    "The ladder: Gioia del Colle moderate on the Codex's Puglia record (the Murge cools the nights); Dry Creek, Lodi, Amador and Paso Robles warm with the grid.",
+    "Service against the full tannic reds row, which names Zinfandel, and TASTE.age (three to eight): agree.",
+    "Compare tells read from both sides against the Grenache, Syrah, Corvina profile, Pinotage and Petite Sirah entries.",
+    "The four lines counted and said aloud; cards and questions read for one key, four options of one kind, nothing given away."
+   ],
+   "open": [
+    "The Codex's Puglia record reads Primitivo inky where the reviewed profile reads Zinfandel medium to deep ruby, rarely opaque; the entry says nothing of Primitivo's colour."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Zinfandel reached California in the Gold Rush, and old, gnarled vines still grow in Lodi, Sonoma and the Sierra Foothills. It tastes of blackberry jam, raspberry and black pepper. Its bunches ripen unevenly, which often leaves a raisin edge. The colour is only medium and the tannin moderate, but the alcohol is high. American oak often adds vanilla and a hint of dill. In Puglia, where it is called Primitivo, it tends to be more savoury, with leather and tobacco. It belongs with barbecue: smoky ribs, a spiced sausage or a burger. DNA finally traced it home to Croatia, where its oldest name is Tribidrag.",
+     "now": "Zinfandel reached California in the Gold Rush, and old, gnarled vines still grow in Lodi, Sonoma and the Sierra Foothills. It tastes of blackberry jam, raspberry and black pepper. Its bunches ripen unevenly, which often leaves a raisin edge. The colour is only medium and the tannin moderate, but the alcohol is high. American oak often adds vanilla and a hint of dill. In Puglia, where it is called Primitivo, it tends to be more savoury, with leather and tobacco. It belongs with barbecue: smoky ribs, a spiced sausage or a burger. DNA finally traced it home to Croatia, where old records call it Tribidrag.",
+     "why": "Oldest reads as a superlative to the lint, and the records date the first mention of Tribidrag differently (the fifteenth century on one page, 1518 on another); old records call it states the fact without ranking it.",
+     "sources": [
+      {
+       "title": "Wine Grapes, entry on Tribidrag",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Italy records, Puglia and Sardinia",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.blur",
+     "was": "Some Puglian cellars pick very ripe and age in new oak, for a plush Primitivo of blackberry jam and vanilla that is hard to tell from California.",
+     "now": "Some Puglian cellars pick very ripe and use new oak, for a plush Primitivo hard to tell from California, while some California cellars now pick earlier for fresher wines.",
+     "why": "The blur admitted only the Old World's exception. Since the big vintages of the late 1990s some California cellars pick two to three weeks earlier, with less new oak, for fresher wines; that is the New World's.",
+     "sources": [
+      {
+       "title": "Decanter: California Zinfandel wines, the new style",
+       "url": "https://www.decanter.com/learn/vintage-guides/california-vintage-guide/california-zinfandel-wines-new-style-333114/"
+      },
+      {
+       "title": "Wine Spectator: a case study in balance, Zinfandel",
+       "url": "https://www.winespectator.com/articles/a-case-study-in-balance-zinfandel-47616"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "codexRecords": [
+  "TASTE gives Zinfandel tannin one step (tan 1) where GRAPES reads medium to medium plus, INTRO_GRAPES 2 and the Court's grid medium and medium plus. The table follows GRAPES and the grid. The author's flag, upheld.",
+  "The Codex's Puglia record reads Primitivo inky, jammy and sweet fruited, while GRAPES reads Zinfandel medium to deep ruby, rarely opaque. The table keeps only medium colour for Zinfandel, says nothing of Primitivo's colour, and makes its savoury Primitivo a lean of degree with the plush one in the blur.",
+  "TASTE.world reads old for Grenache and new for Zinfandel, while the plan fixes both as side by side; the plan's own rule for a side by side suggests both. The author's flag for Zinfandel, extended to Grenache.",
+  "The Court's grid reads Châteauneuf-du-Pape's tannin medium to medium plus and GRAPES reads Grenache's low to medium; the grid reads the blend, the profile the grape. The table follows the profile.",
+  "The Codex's Provence record says both that sea breezes temper the heat near the coast and that Mourvèdre needs the sea's warmth to ripen at Bandol. The table keeps Bandol on a moderate rung, as the first.",
+  "The Codex respells Grenache two ways (gruh-NASH in the grid and the Australia record, gruh-NAHSH in the Rhône record), Monastrell two ways (mo-nas-TREL and mo-nahs-TREL) and Carignan two ways (kah-reen-YAHN, kah-ree-NYAHN in the Lebanon record), each the same sound. The table takes gruh-NASH, mo-nahs-TREL and kah-reen-YAHN.",
+  "js/data-intro.js still draws bare family words for these grapes on the old surfaces: Carignan (red and black fruit, dried herb), Mourvèdre (earth, herbs), Grenache (dried herb) and Zinfandel (sweet spice). The table names the thing and leaves those rows as they are."
+ ],
+ "unsettled": [
+  "Whether any source address still answers: none could be opened from this session.",
+  "Whether Shiraz first reached Australia with Busby's cuttings of 1832 or with an earlier shipment of 1817: the table says 1832 on most accounts on the card and since 1832 in the spoken line.",
+  "The year of Syrah's parentage: 1998 for the work, 1999 or 2000 for the paper, by page. The table says the late 1990s.",
+  "Whether the eighteen months in wood of Bandol red is in the cahier itself: the Codex and the appellation's brochure state it; the cahier excerpts read did not show it.",
+  "The share of Carignan VIGNO asks for: 65, 70 or 85 per cent by page. The table gives none.",
+  "Whether Carignan's side by side is wide enough to keep: the plan fixes it; the table writes it as a matter of degree.",
+  "Mendocino as a moderate rung for Petite Sirah, and lavender among Syrah's floral notes: on trade notes alone."
+ ],
+ "settled": [
+  "Shiraz is the Syrah of Busby's cuttings, collected in 1831 and landed in 1832, and the Barossa still holds vines of the 1840s.",
+  "The Swartland's Syrah is peppery and savoury, Stellenbosch's riper; Hawke's Bay and the Yarra read nearer the northern Rhône. The first and the cool sites stand in the blur, not on the ripe Shiraz side.",
+  "Barossa Shiraz was long aged in American oak and has turned to French oak and less new wood, with some return to American oak.",
+  "Grenache most likely began in Aragon and spread under its Crown to Sardinia and Roussillon; Australia's Grenache is now often perfumed and mid weight.",
+  "Bandol red is at least half Mourvèdre and its rosé at least a fifth; the red spends at least eighteen months in wood, by tradition large old casks.",
+  "Jumilla Monastrell is ripe with dried fig, earth and game and high tannin, and Australian Mataro dark, meaty and tannic.",
+  "Maule Carignan is dark, high in acidity and savoury, of damson and dried herb; VIGNO asks for thirty year old, head trained, dry farmed vines and two years before release.",
+  "Durif is Peloursin crossed with Syrah, raised in a French nursery about 1880; true Durif reached California in 1884 and Rutherglen in 1908, and most old California Petite Sirah proved to be Durif.",
+  "Some California cellars now pick Zinfandel earlier, with less new oak, for fresher wines."
+ ]
+}
