@@ -2005,8 +2005,13 @@ v57View('grapecompare', {
    shown, and the learner marks it said or not yet; the mark is a due date by the grape's slug, in the same
    steps as a card. */
 var V57_PRESENT = { slug: '', shown: false, mark: '' };
+/* The grapes passed over with Another grape this sitting, by slug: in memory only. Without it the order below
+   hands the same two grapes back and forth, so Another grape could never reach a third. A grape marked leaves it;
+   once every grape has been passed over it starts again. */
+var V57_PASSED = {};
 /* The grape to say next: one marked not yet, then one due by the older date, then one never said (the root's
-   order), then the rest by the day they come back; never the one just said while another waits. */
+   order), then the rest by the day they come back; never the one just said while another waits, and never one
+   passed over this sitting while another has not been. */
 function v57PresentNext(after) {
   var rec = v57Rec().p, day = v57Today();
   var rows = v57SpokenList().map(function (r, i) {
@@ -2016,7 +2021,8 @@ function v57PresentNext(after) {
   });
   rows.sort(function (a, b) { return (a.k - b.k) || (a.d < b.d ? -1 : (a.d > b.d ? 1 : 0)) || (a.i - b.i); });
   var other = rows.filter(function (x) { return x.r.slug !== after; });
-  var hit = other[0] || rows[0] || null;
+  var fresh = other.filter(function (x) { return !v57Own(V57_PASSED, x.r.slug); });
+  var hit = fresh[0] || other[0] || rows[0] || null;
   return hit ? hit.r.slug : '';
 }
 function v57PresentHtml(arg) {
@@ -2075,12 +2081,18 @@ V57_ACTS.mark = function (node) {
   if (!slug || V57_PRESENT.slug !== slug || !V57_PRESENT.shown || V57_PRESENT.mark) return false;
   var ok = !!node && typeof node.getAttribute === 'function' && node.getAttribute('data-ok') === '1';
   v57Sched('p', slug, ok);
+  if (v57Own(V57_PASSED, slug)) delete V57_PASSED[slug];
   V57_PRESENT.mark = ok ? 'said' : 'not';
   v57Redraw('v57-p-marked', 'v57-p-h');
   return true;
 };
 V57_ACTS.pnext = function () {
-  var next = v57PresentNext(v57PresentSlug());
+  var cur = v57PresentSlug();
+  /* passed over unmarked: it waits behind every grape not yet passed over; with none left, the round starts again */
+  if (cur && !(V57_PRESENT.slug === cur && V57_PRESENT.mark)) V57_PASSED[cur] = 1;
+  var waiting = v57SpokenList().some(function (r) { return r.slug !== cur && !v57Own(V57_PASSED, r.slug); });
+  if (!waiting) { V57_PASSED = {}; if (cur && !(V57_PRESENT.slug === cur && V57_PRESENT.mark)) V57_PASSED[cur] = 1; }
+  var next = v57PresentNext(cur);
   if (!next) return false;
   V57_PRESENT = { slug: next, shown: false, mark: '' };
   v57Go('grapepresent', next, 'replace');

@@ -44,7 +44,7 @@
  *      selector under .wrap, every shown word from V57_WORDS (and V57_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-grapes-table.js [jsDir]               every check above
- *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 26 faults in a scratch copy, one at a time,
+ *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 27 faults in a scratch copy, one at a time,
  *                                                              and expects each caught by the check that names it
  *
  * A section that throws fails as "section N ran to its end" and the next one runs, so a seeded fault is always named.
@@ -825,6 +825,9 @@ async function main() {
     const shownLine = V.J('(function () { V57_ACTS.reveal(); var a = V57_VIEWS.grapepresent.draw("meunier"); V57_ACTS.mark({ getAttribute: function (k) { return k === "data-ok" ? "1" : null; } }); return { a: a, b: V57_VIEWS.grapepresent.draw("meunier"), p: v57Rec().p.meunier, one: v57AddDays(1) }; })()');
     check('grapepresent: Meunier named and the line hidden, then shown, then marked said and due tomorrow; lit Grapes, climbing to the root, clean', p1.view === 'grapepresent' && p1.arg === 'meunier' && p1.lit === 'grapes' && p1.parent.view === 'grapes' && ph.indexOf('>Meunier<') > 0 && ph.indexOf(esc(TABLE.meunier.lines.s45)) < 0
       && shownLine.a.indexOf(esc(TABLE.meunier.lines.s45)) > 0 && shownLine.p && shownLine.p.due === shownLine.one && shownLine.b.indexOf('Marked said. It comes back tomorrow.') > 0 && !pageProblem(ph) && !pageProblem(shownLine.a) && !pageProblem(shownLine.b), JSON.stringify(p1));
+    /* Another grape, pressed again and again without a mark: every grape with a line once, then round again */
+    const skip = V.J('(function () { V57_PASSED = {}; V57_PRESENT = { slug: "", shown: false, mark: "" }; v32Go({ view: "grapes", arg: "" }, "push"); v32Go({ view: "grapepresent", arg: "" }, "push"); var n = v57SpokenList().length, seen = [v57PresentSlug()]; for (var i = 1; i < n; i++) { V57_ACTS.pnext(); seen.push(v57PresentSlug()); } V57_ACTS.pnext(); return { n: n, seen: seen, again: v57PresentSlug() }; })()');
+    check('Present it: Another grape, pressed without a mark, walks every grape with a line once (' + skip.n + ') before the first comes round again, never two grapes handed back and forth', skip.n >= 70 && skip.seen.length === skip.n && new Set(skip.seen).size === skip.n && skip.again === skip.seen[0], skip.seen.slice(0, 6).join(' > ') + ' ... ' + new Set(skip.seen).size + ' distinct of ' + skip.n);
     const climb = V.J('(function () { var out = []; ["grapeworlds", "grapecompare", "grapepresent"].forEach(function (v) { v32Go({ view: "grapes", arg: "" }, "push"); v32Go({ view: v, arg: "" }, "push"); v32Back(); out.push(S.view); }); return out; })()');
     check('Back from each of the three views climbs to the Grapes root', JSON.stringify(climb) === JSON.stringify(['grapes', 'grapes', 'grapes']), JSON.stringify(climb));
     const coldBad = [];
@@ -929,6 +932,7 @@ function mutations() {
     ['a house row opening no card', 'js/codex57.js', 'data-v57="wine" data-id="\' + v57Esc(x.id) + \'"', 'data-v57="wine" data-id="\' + v57Esc(x.id + \'0\') + \'"', 'its rows the house\'s own wines'],
     ['a grade scheduled backwards', 'js/codex57.js', "v57Sched('c', c.id, !!got);", "v57Sched('c', c.id, !got);", 'a card graded right is due tomorrow'],
     ['the notIn phrases ignored', 'js/codex57.js', '  if (!phrases.length) return list;', '  return list;', 'no bank question its notIn phrases shut out'],
+    ['Another grape handing two grapes back and forth', 'js/codex57.js', 'var hit = fresh[0] || other[0] || rows[0] || null;', 'var hit = other[0] || rows[0] || null;', 'Another grape, pressed without a mark'],
     ['a call half naming both worlds dealt as the New World', 'js/codex57.js', "  if (named.old && named['new']) return '';\n", "  if (named['new']) return 'new';\n", 'every glass of the call drill keyed'],
     ['the table\'s questions left out of the drill', 'js/codex57.js', 'return v57NotIn(out, r, t).concat(v57Questions(r.slug));', 'return v57NotIn(out, r, t);', 'holds the table\'s three'],
     ['a view climbing to Home', 'js/codex57.js', "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'grapes' }; }", "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'home' }; }", 'grapecompare: Chardonnay and Sauvignon Blanc'],
