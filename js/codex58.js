@@ -46,6 +46,15 @@
       by codex32 (V58_ACTS says what each does, one listener hears them all),
       data-go where it is.
 
+   4. THE DOORS: the Wine Atlas root's study doors (codex56's Study) gain
+      Producers and flagships, last; a region's page (codex55's, as codex56
+      shapes it) gains Five producers before In the Codex, its group or
+      groups as doors, with a chip in codex56's study row after Read, and
+      nothing where the region has no group; a library producer's page
+      (codex16's profile, opened by codex38's doors) with a flagship gains a
+      door to it before its drill (v55HubHtml, v55RegionHtml and
+      prodProfileView wrapped, typeof guarded and outermost).
+
    9. THE SHELL: index.html loads js/data-flagships.js then js/codex58.js
       after codex57.js and before boot.js; the worker is codex-v117 and lists
       both.
@@ -108,7 +117,19 @@ var V58_WORDS = {
   codexMoreH: 'Producers and flagships',
   groupDoor: '{title}: all five',
   sourcesH: 'Sources',
-  opensNew: ' (opens in a new tab)'
+  opensNew: ' (opens in a new tab)',
+  /* the doors */
+  studyH: 'Study',
+  atlasLine: '{houses} across {regions}, five to a group, each with its flagship wine',
+  oneHouseLow: 'one house',
+  and: ' and ',
+  fiveH: 'Five producers',
+  fiveChip: 'Producers',
+  fiveLine: 'The houses of {name} a sommelier is expected to know, each with its flagship wine.',
+  fiveLineMany: 'The houses of {name} a sommelier is expected to know, five to a group, each with its flagship wine.',
+  libH: 'Its flagship',
+  libHMany: 'Its flagships',
+  libOpen: 'Open'
 };
 
 function v58W(key, vars) {
@@ -198,7 +219,12 @@ function v58Fold(s) {
     '.wrap .v58-oname{display:block;font-weight:700;color:var(--gold-hi);overflow-wrap:anywhere}',
     '.wrap .v58-onote{display:block}',
     '.wrap .v58-traps li{margin:0 0 12px;padding:2px 0 2px 12px;border-left:3px solid var(--claret)}',
-    '.wrap .v58-sourcesbox{margin-top:28px}'
+    '.wrap .v58-sourcesbox{margin-top:28px}',
+    /* the doors: Five producers on a region\'s page, a library page\'s door to its flagship */
+    '.wrap .v58-five{margin:28px 0 8px}',
+    '.wrap .v58-five .v32-line{margin:6px 0 10px}',
+    '.wrap .v58-libdoor{margin:8px 0 0}',
+    '.wrap .v58-libdoor .secbtn{min-height:44px}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -638,6 +664,106 @@ var V58_ACTS = {
     try { V58_ACTS[act](node, e); } catch (err2) { }
   });
 })();
+
+/* =========== 4. the doors =========== */
+
+/* 4.1 the Wine Atlas root: Producers and flagships joins codex56's study doors, after Compare two regions; on a
+   chain with no study doors, a section of its own ahead of the sheets. */
+function v58AtlasRow() {
+  var n = v58Roster().length;
+  if (!n) return '';
+  return '<li><button class="v25row" type="button" data-go="flagships" id="v58-atlas-door"><span class="v25row-name">' + v58Esc(v58W('tab')) + '</span>'
+    + '<span class="v25row-line">' + v58Esc(v58W('atlasLine', { houses: v58Count(n, 'oneHouseLow', 'nHouses'), regions: v58Count(v58RegionCount(), 'oneRegion', 'nRegions') })) + '</span></button></li>';
+}
+function v58RegionCount() {
+  var seen = {}, n = 0;
+  v58Groups().forEach(function (g) { if (g.region && !seen[g.region]) { seen[g.region] = 1; n++; } });
+  return n;
+}
+function v58HubShape(html) {
+  var s = String(html || '');
+  if (s.indexOf('id="v58-atlas-door"') >= 0) return s;
+  var row = v58AtlasRow();
+  if (!row) return s;
+  var at = s.indexOf('<ul class="v25rows v32rows v56-doors">');
+  var end = at >= 0 ? s.indexOf('</ul>', at) : -1;
+  if (end >= 0) return s.slice(0, end) + row + s.slice(end);
+  var sec = '<section class="v32-sec v58 v58-atlasdoors" aria-labelledby="v58-atlas-h"><h2 class="v32-h2" id="v58-atlas-h" tabindex="-1">' + v58Esc(v58W('studyH')) + '</h2><ul class="v25rows v32rows">' + row + '</ul></section>';
+  var sheets = s.indexOf('<section class="v32-sec v55-sheets"');
+  return sheets >= 0 ? s.slice(0, sheets) + sec + s.slice(sheets) : s;
+}
+if (typeof v55HubHtml === 'function') {
+  var _v58HubHtml = v55HubHtml;
+  v55HubHtml = function () {
+    var html = _v58HubHtml.apply(this, arguments);
+    try { return v58HubShape(html); } catch (e) { return html; }
+  };
+}
+
+/* 4.2 a region's page: Five producers, its group or groups as doors (each the group's title over its five
+   houses), before In the Codex; a chip in codex56's study row after Read. Nothing when the region has no group. */
+function v58And(list) {
+  var l = v58List(list).filter(Boolean);
+  if (l.length < 2) return l.join('');
+  return l.slice(0, -1).join(', ') + v58W('and') + l[l.length - 1];
+}
+function v58FiveHtml(a) {
+  var groups = v58GroupsOf(a && a.slug);
+  if (!groups.length) return '';
+  var rows = groups.map(function (g) {
+    var names = g.ids.map(function (id) { var r = v58Rec(id); return r ? v58Str(r.producer) : ''; });
+    return '<li><button class="v25row" type="button" data-go="flaggroup" data-arg="' + v58Esc(g.key) + '" id="v58-five-' + v58Esc(g.key) + '"><span class="v25row-name">' + v58Esc(g.title) + '</span>'
+      + '<span class="v25row-line">' + v58Esc(v58And(names)) + '</span></button></li>';
+  }).join('');
+  return '<section class="v58 v58-five" aria-labelledby="v58-five-h"><h2 class="v32-h2" id="v58-five-h" tabindex="-1">' + v58Esc(v58W('fiveH')) + '</h2>'
+    + '<p class="v32-line">' + v58Esc(v58W(groups.length > 1 ? 'fiveLineMany' : 'fiveLine', { name: v58Str(a.name) })) + '</p><ul class="v25rows v32rows">' + rows + '</ul></section>';
+}
+function v58RegionShape(html, a) {
+  var s = String(html || '');
+  if (!a || s.indexOf('id="v58-five-h"') >= 0) return s;
+  var five = v58FiveHtml(a);
+  if (!five) return s;
+  var at = s.indexOf('<section class="v55-codex"');
+  if (at < 0) at = s.lastIndexOf('<div class="v28-btnrow v39-acts">');
+  if (at >= 0) s = s.slice(0, at) + five + s.slice(at);
+  else { var close = s.lastIndexOf('</div>'); s = close >= 0 ? s.slice(0, close) + five + s.slice(close) : s + five; }
+  var read = s.indexOf('id="v56-s-read"');
+  var end = read >= 0 ? s.indexOf('</button>', read) : -1;
+  if (end > 0) s = s.slice(0, end + 9) + '<button type="button" class="v28-chip" data-v56="jump" data-to="v58-five-h" id="v58-s-five">' + v58Esc(v58W('fiveChip')) + '</button>' + s.slice(end + 9);
+  return s;
+}
+if (typeof v55RegionHtml === 'function') {
+  var _v58RegionHtml = v55RegionHtml;
+  v55RegionHtml = function (a) {
+    var html = _v58RegionHtml.apply(this, arguments);
+    try { return v58RegionShape(html, a); } catch (e) { return html; }
+  };
+}
+
+/* 4.3 a library producer's page (codex16's profile, read by codex38's doors): a house with a flagship gains a
+   door to it, in the page's own markup, before the drill. The page is a node; the door is put in place. */
+function v58ProfileDoor(v, rec) {
+  if (!v || typeof v.querySelector !== 'function' || !rec || !rec.id) return;
+  var list = v58OfProducer(rec.id);
+  if (!list.length || v.querySelector('.v58-libdoor')) return;
+  var box = document.createElement('div');
+  box.className = 'v58 v58-libdoor';
+  box.innerHTML = '<div class="secgroup">' + v58Esc(v58W(list.length > 1 ? 'libHMany' : 'libH')) + '</div>' + list.map(function (r) {
+    return '<button type="button" class="secbtn v58-libbtn" data-v58="open" data-id="' + v58Esc(r.id) + '" id="v58-lib-' + v58Esc(r.id) + '"><span>' + v58Esc(v58Str(v58Obj(r.wine).name)) + '</span><span class="n">' + v58Esc(v58W('libOpen')) + '</span></button>';
+  }).join('');
+  var row = v.querySelector('.centerrow');
+  var host = row && row.parentNode ? row.parentNode : (v.firstElementChild || v);
+  if (row && row.parentNode) host.insertBefore(box, row);
+  else host.appendChild(box);
+}
+if (typeof prodProfileView === 'function') {
+  var _v58ProfileView = prodProfileView;
+  prodProfileView = function (rec) {
+    var v = _v58ProfileView.apply(this, arguments);
+    try { v58ProfileDoor(v, rec); } catch (e) { }
+    return v;
+  };
+}
 
 /* =========== the cold address =========== */
 

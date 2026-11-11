@@ -445,7 +445,9 @@ async function main() {
     && hub0.indexOf('data-v56="course" data-kind="region" data-key="champagne" id="v56-continue">Begin with Champagne</button>') > 0 && hub0.indexOf('data-go="v56course" id="v56-path"') > 0, hub0.slice(at0(hub0, 'v56-start'), at0(hub0, 'v56-start') + 500));
   const doorsS = hub0.slice(at0(hub0, 'v56-studydoors'), hub0.indexOf('</section>', at0(hub0, 'v56-studydoors')));
   const doorNames = attr(doorsS, /<span class="v25row-name">([^<]*)<\/span>/g);
-  check('the study doors: ' + doorNames.join(', '), JSON.stringify(doorNames) === JSON.stringify(['Today’s region cards', 'Drill a country', 'Map quiz', 'District cards', 'Compare two regions'])
+  /* one layer on (codex58): Producers and flagships joins them, last, where the chain carries codex58 and its data holds a record */
+  const studyNames = ['Today’s region cards', 'Drill a country', 'Map quiz', 'District cards', 'Compare two regions'].concat(C.G('typeof v58Roster === "function" && v58Roster().length > 0') ? ['Producers and flagships'] : []);
+  check('the study doors: ' + doorNames.join(', '), JSON.stringify(doorNames) === JSON.stringify(studyNames)
     && /data-v56="today" id="v56-today">[\s\S]*?Nothing due today\. New cards from Champagne\./.test(doorsS) && ['v56drill', 'v56mapquiz', 'v56districts', 'v56compare'].every((g) => doorsS.indexOf('data-go="' + g + '"') > 0), doorsS.slice(0, 600));
   const orderKeys = C.J('v55CountryOrder().map(function (r) { return r.key; })');
   const cSec = hub0.slice(at0(hub0, 'v56-countryrows'), hub0.indexOf('</section>', at0(hub0, 'v56-countryrows')));

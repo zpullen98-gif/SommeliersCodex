@@ -91,8 +91,8 @@ async function routeFiles(context) {
 
     /* the atlas through its own word */
     await atlasRoot(page);
-    ok('the Wine Atlas word opens the root (#/v/worldmap), Wine Atlas lit, with Start here or Continue, the five study doors, the seventeen sheets and the Workshop (codex56: no Field maps chip)', await page.evaluate(() => location.hash === '#/v/worldmap') && await owner(page, 'worldmap')
-      && await page.locator('#v55-hub #v56-continue[data-v56="course"]').count() === 1 && await page.locator('#v55-hub .v56-studydoors .v25row').count() === 5
+    ok('the Wine Atlas word opens the root (#/v/worldmap), Wine Atlas lit, with Start here or Continue, the five study doors (six with Producers and flagships, codex58), the seventeen sheets and the Workshop (codex56: no Field maps chip)', await page.evaluate(() => location.hash === '#/v/worldmap') && await owner(page, 'worldmap')
+      && await page.locator('#v55-hub #v56-continue[data-v56="course"]').count() === 1 && await page.locator('#v55-hub .v56-studydoors .v25row').count() === 5 + await page.evaluate(() => (typeof v58Roster === 'function' && v58Roster().length > 0) ? 1 : 0)
       && await page.locator('#v55-hub [data-v39="openmap"][data-sheet]').count() === 17 && await page.locator('#v55-chip-fields, #v55-hub [data-go="fieldatlas"]').count() === 0 && await page.locator('#v55-chip-techniques[data-go="techniques"]').count() === 1);
     const rootDepth = await page.evaluate(() => ({ depth: V32.d, length: history.length }));
     await page.locator('#nav-worldmap').click();
