@@ -85,6 +85,12 @@ Ids are minted `i-<8 base36>` by the same FNV-1a 64 over `json.dumps([cat, q])` 
 Options are shuffled deterministically from the stem, so rebuilds are reproducible and editing one
 stem reshuffles only its own question.
 
+A stem corrected in place may keep the id it ships under: `PINNED_IDS` in `lib.py` maps the category
+and the stem as it now reads to the old stem's id, and `mint()` returns it, so `ship.py`,
+`build-preview.py`, the emitted pilots and `check-ids.py` all see one unchanged id. A later rewording of
+a pinned stem misses the table and is a move again. The records edition (11 November 2026) pinned the
+first, `i-2zibe7e9`, the Tokaji mainstay question whose thin skins went.
+
 **Remint now, not later.** `mint-ids.py --strip` says it plainly: re-minting is a pre-ship tool,
 because once real progress exists the ids are load-bearing and stripping them orphans every store.
 No Supabase project exists and nothing has been sold, so reminting the corpus costs nothing today
