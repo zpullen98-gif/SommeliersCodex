@@ -158,6 +158,135 @@
         }
       ],
       "why": "The keyed fifty per cent is false under the specification in force, which lets Kékfrankos reach 65 per cent: the stem stands, but its key does not, so the keyed option changes and the integrator keeps the pinned id c-98c4i3oo; in a-ih3g5con the keyed grape stays and only the false gloss goes."
+    },
+    {
+      "id": "L3-03",
+      "topic": "Tokaj: dry single vineyard Furmint from about the turn of the century",
+      "verdict": "change",
+      "claim": "The Hungary country record (overview, grapes[0].styles) and the Tokaj record (summary, exam[5]) date dry Furmint from single vineyards, and its class, to the 1990s: in the same decade as the rebuilt estates, since the 1990s, the dry Furmint movement of the 1990s.",
+      "finding": "Dry Tokaji was made in the 1990s: the first commercial dry wines of the post communist years came from the new estates in the early 1990s, and dry Furmint had long been made as the base wine for Aszú. The single vineyard dry Furmint that changed Tokaj's view of the style dates from the 2000 vintage, an Úrágya wine made at Mád after a year of poor botrytis. So the 1990s is right for dry Tokaji and wrong for single vineyard dry Furmint of class; about the turn of the century is true of both. The Szent Tamás note (the 2000s) already agrees and stays.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "overview",
+          "old": "and in the same decade local growers began making dry Furmint from single vineyards",
+          "new": "and at the turn of the century local growers began making dry Furmint from single vineyards"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "grapes[0].styles (Furmint)",
+          "old": "and since the 1990s a dry white of apple, smoke and salt from single vineyards",
+          "new": "and since about the turn of the century a dry white of apple, smoke and salt from single vineyards"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "tokaj",
+          "path": "summary",
+          "old": "Since the 1990s the same vineyards have made dry Furmint of real class.",
+          "new": "Since about the turn of the century the same vineyards have made dry Furmint of real class."
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "tokaj",
+          "path": "exam[5]",
+          "old": "the 2002 UNESCO listing, the dry Furmint movement of the 1990s.",
+          "new": "the 2002 UNESCO listing, the dry Furmint movement of the turn of the century."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Magyar Bor, the Hungarian wine body: the Tokaj wine district",
+          "url": "https://bor.hu/en/tokaji-wine-district/",
+          "kind": "secondary",
+          "says": "Úrágya, north west of Mád: the first truly great dry wine of a Mád grower came from here and changed Tokaj's attitude towards the style.",
+          "read": "search summary"
+        },
+        {
+          "title": "Falstaff: Furmint, from sweet wine star to acidity hero",
+          "url": "https://www.falstaff.com/nordics/news/furmint-from-sweet-wine-star-to-acidity-hero",
+          "kind": "secondary",
+          "says": "The single vineyard Úrágya of the 2000 vintage was not the first dry Furmint from Tokaj, but it sparked the movement.",
+          "read": "search summary"
+        },
+        {
+          "title": "Taste Hungary journal: Dry wine in Tokaj",
+          "url": "https://tastehungary.com/journal/dry-wine-in-tokaj/",
+          "kind": "secondary",
+          "says": "The first commercial dry Tokaj wines of the post communist era came from the new estates in the early 1990s (a dry Tokaj in one estate's first vintage, 1992); the turning point came in 2000 with the first acclaimed dry Tokaj, a single vineyard wine of Mád.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Dry Tokaji is a 1990s story but single vineyard dry Furmint of class is a 2000 vintage one; the turn of the century is true to both and matches the Szent Tamás note."
+    },
+    {
+      "id": "L3-04",
+      "topic": "Tokaji Aszú at the table: 10 to 12 degrees, warmer than the sweet whites row",
+      "verdict": "change",
+      "claim": "The Tokaj record serves Aszú at 10 to 12 degrees Celsius (wines[0].note, exam[6]); the service reference serves sweet whites with Tokaji named at 6 to 8 C (the temperatures row) and Tokaji Aszú with Sauternes at 6 to 8 C (the digestifs row); the Furmint grape page says sweet Aszú colder, as for Sauternes.",
+      "finding": "No statement of the Tokaj wine community was found. The Tokaj houses put Aszú at 10 to 12 degrees Celsius (a Mád house's Aszú sheets), 10 to 13 (a Tokaj estate's six puttonyos sheet) and 12 to 14 (an Aszú on the national wine body's fair pages); the national body's Furmint page puts late harvest Furmint at 8 to 10. The serving references put Tokaji colder than its makers but not as cold as 6 to 8: the Swedish monopoly serves Sauternes and Tokaji at 8 to 10, and a serving guide gives Tokaji Aszú 7 to 12. So the record's 10 to 12 is Tokaj's own figure and stands, the 6 to 8 of the two service rows is colder than any source read for Tokaji, and the Furmint page follows the rows. The sweet whites band itself (Sauternes, ice wine, late harvest) is not in question here and stays at 6 to 8.",
+      "targets": [
+        {
+          "file": "js/data-service-ref.js",
+          "record": "temperatures",
+          "path": "row \"Sweet whites (Sauternes, Tokaji, ice wine, late harvest)\", serve at",
+          "old": "[\"Sweet whites (Sauternes, Tokaji, ice wine, late harvest)\", \"6 to 8 C (43 to 46 F)\",",
+          "new": "[\"Sweet whites (Sauternes, Tokaji, ice wine, late harvest)\", \"6 to 8 C (43 to 46 F); Tokaji Aszú a little warmer, 10 to 12 C (50 to 54 F)\","
+        },
+        {
+          "file": "js/data-service-ref.js",
+          "record": "digestifs",
+          "path": "row \"Sauternes and the sweet wines\", service",
+          "old": "\"60 to 90 ml (2 to 3 oz) at 6 to 8 C in a small glass; with Roquefort",
+          "new": "\"60 to 90 ml (2 to 3 oz) at 6 to 8 C, Tokaji Aszú at 10 to 12 C, in a small glass; with Roquefort"
+        },
+        {
+          "file": ".scripts/grapes/fragments/furmint.json",
+          "record": "furmint",
+          "path": "service.temp",
+          "old": "sweet Aszú colder, as for Sauternes.",
+          "new": "Aszú about the same."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Royal Tokaji: Gold Label Tokaji Aszú 6 puttonyos 2013, the wine sheet",
+          "url": "https://royal-tokaji.com/portfolio/gold-label-tokaji-aszu-6-puttonyos-2013",
+          "kind": "secondary",
+          "says": "Serve at 10 to 13 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Hungarian Wines: Béres Tokaji Aszú 6 puttonyos 2008, the wine sheet",
+          "url": "https://hungarianwines.eu/product/beres-tokaji-aszu-6-puttonyos-2008/",
+          "kind": "secondary",
+          "says": "Serving temperature 10 to 12 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wines of Hungary at Vinitaly (Magyar Bor): Füleky Tokaji Aszú 6 puttonyos 2013",
+          "url": "https://vinitaly.winesofhungary.hu/wines/fuleky-tokaji-aszu-6-puttonyos-2013",
+          "kind": "secondary",
+          "says": "Serving temperature 12 to 14 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Systembolaget: temperatur på dessertvin och söta viner",
+          "url": "https://www.systembolaget.se/vin/vinprovning/temperatur-vin/temperatur-dessertvin-sota-viner/",
+          "kind": "secondary",
+          "says": "Sweet white wines such as Sauternes and Tokaji at 8 to 10 degrees.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wine Folly: Tokaji Aszú",
+          "url": "https://winefolly.com/wines/tokaji-aszu/",
+          "kind": "secondary",
+          "says": "Serve at 45 to 55 degrees Fahrenheit, 7 to 12 degrees Celsius.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The Codex disagreed with itself; Tokaj's makers and both serving references put Aszú above 8 degrees, so the region record stands and the two service rows (and the grape page that follows them) give Aszú its own figure, leaving every other temperature row alone."
     }
   ]
 }
