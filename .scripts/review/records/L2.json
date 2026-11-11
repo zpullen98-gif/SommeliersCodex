@@ -169,6 +169,172 @@
         }
       ],
       "why": "The explanation gave the pre 2023 rule as current and two lines called the wine a grape; c-ndvwbnke's stem, answer and accept list stay (Bombino Bianco is still what old vineyards planted as Trebbiano often hold, and the accept list takes Trebbiano Abruzzese)."
+    },
+    {
+      "id": "L2-04",
+      "topic": "Turbiana and Verdicchio",
+      "verdict": "change",
+      "claim": "The Lombardy, Marche and Italy records, two questions, a producer note and the Trebbiano and Verdicchio grape pages say Lugana's Turbiana (once Trebbiano di Lugana) is Verdicchio, the same vine as Trebbiano di Soave.",
+      "finding": "For Trebbiano di Soave every source agrees it is Verdicchio. For Turbiana the studies differ: the Vitis study of 2001 found Trebbiano di Soave identical to Verdicchio and Trebbiano di Lugana very similar; a study in Advances in Horticultural Science (2012) found one DNA profile across 25 accessions, a Turbiana among them; the Lugana consortium treats Turbiana as a distinct vine closely related to Verdicchio, which is why Lugana took the name. So Turbiana is so close to Verdicchio that it is often taught as the same vine, but not proven identical.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "grapes[4].styles",
+          "old": "once labelled Trebbiano di Lugana and now known to be Verdicchio:",
+          "new": "once labelled Trebbiano di Lugana and so close to Verdicchio in DNA studies that it is often taught as the same vine:"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "traps[4]",
+          "old": "Lugana's grape was called Trebbiano di Lugana but it is Verdicchio, not the Trebbiano Toscano of Tuscany.",
+          "new": "Lugana's grape was called Trebbiano di Lugana but DNA ties it to Verdicchio, not to the Trebbiano Toscano of Tuscany."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "cards[5].b",
+          "old": "(once Trebbiano di Lugana, genetically Verdicchio)",
+          "new": "(once Trebbiano di Lugana, tied by DNA to Verdicchio)"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "questions[3].exp (r-uf2jj6ug)",
+          "old": "shown by DNA to be the same vine as Verdicchio,",
+          "new": "so close to Verdicchio in DNA studies that it is often taught as the same vine,"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "the Italy country record",
+          "path": "country.grapes[13].styles",
+          "old": "the same vine as Trebbiano di Soave and Lugana's Turbiana.",
+          "new": "the same vine as Trebbiano di Soave, and so close to Lugana's Turbiana that the two are often taught as one."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.more.json",
+          "record": "marche",
+          "path": "exam[2]",
+          "old": "Verdicchio is the same variety as Trebbiano di Soave and Lugana's Turbiana, and no relation of Trebbiano Toscano.",
+          "new": "Verdicchio is the same variety as Trebbiano di Soave and so close to Lugana's Turbiana in DNA studies that the two are often taught as one; no relation of Trebbiano Toscano."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.more.json",
+          "record": "marche",
+          "path": "cards[2].b",
+          "old": "The same variety as Trebbiano di Soave in the Veneto and Turbiana at Lugana; no relation of Trebbiano Toscano.",
+          "new": "The same variety as Trebbiano di Soave in the Veneto, and so close to Turbiana at Lugana that it is often taught as the same vine; no relation of Trebbiano Toscano."
+        },
+        {
+          "file": "rewrite/categories/r2_italy_central_south.py",
+          "record": "c-lhywvj93",
+          "path": "exp (Umbria and Marche, about line 169)",
+          "old": "Verdicchio, Trebbiano di Soave and Trebbiano di Lugana proved to be one variety under three regional names.",
+          "new": "Verdicchio and Trebbiano di Soave proved to be one variety under two regional names, and Lugana's Trebbiano di Lugana, now Turbiana, is so close that it is often taught as the same vine."
+        },
+        {
+          "file": "rewrite/categories/r2_italy_north.py",
+          "record": "c-7zyl7br8",
+          "path": "exp (Lombardy, about line 188)",
+          "old": "It does not: the grape is Verdicchio, and the heavy clay",
+          "new": "It does not: the grape is so close to Verdicchio in DNA studies that it is often taught as the same vine, and the heavy clay"
+        },
+        {
+          "file": "js/data-producers.js",
+          "record": "the Bucci record (Marche)",
+          "path": "traps[1]",
+          "old": "but it is the same variety as Trebbiano di Soave and as Turbiana in Lugana'",
+          "new": "but it is the same variety as Trebbiano di Soave, and so close to Turbiana in Lugana that the two are often taught as one'"
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "labels[3].means",
+          "old": "Names of Verdicchio in the Veneto and on Lake Garda, no Trebbiano at all; Lugana's is now Turbiana.",
+          "new": "Verdicchio in the Veneto, and on Lake Garda a vine DNA ties to it, now Turbiana; no Trebbiano at all."
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "compare[0].tell",
+          "old": "Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio.",
+          "new": "Trebbiano di Soave is Verdicchio; Trebbiano di Lugana its near twin."
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "profile.confuse",
+          "old": "Trebbiano di Soave and Trebbiano di Lugana are Verdicchio\"",
+          "new": "Trebbiano di Soave is Verdicchio, Lugana's its near twin\""
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "cards[0].back",
+          "old": "Trebbiano di Soave and Trebbiano di Lugana are no Trebbiano at all, but Verdicchio.",
+          "new": "Trebbiano di Soave and Trebbiano di Lugana are no Trebbiano at all: the first is Verdicchio, the second its near twin."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "worlds.home.abroad",
+          "old": "and on the clay shore of Lake Garda it makes Lugana under the name Turbiana, typically a little rounder.",
+          "new": "and on the clay shore of Lake Garda its near twin, Turbiana, makes Lugana, typically a little rounder."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "compare[1].tell",
+          "old": "a bitter almond finish. Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio.",
+          "new": "a bitter almond finish. Trebbiano di Soave is Verdicchio; Trebbiano di Lugana its near twin."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "cards[1].back",
+          "old": "\"back\": \"They are its other names.",
+          "new": "\"back\": \"One is its other name, the other its near twin."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Consorzio Tutela Lugana DOC: the region and its grape",
+          "url": "https://www.consorziolugana.it/region-eng",
+          "kind": "primary",
+          "says": "Turbiana was long considered related to, if not confused with, the Verdicchio of the Castelli di Jesi; the consortium describes it as closely related but a vine of its own.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Tutela Lugana DOC: production regulations",
+          "url": "https://www.consorziolugana.it/production-regulations-eng",
+          "kind": "primary",
+          "says": "Lugana is at least 90 per cent Turbiana, the rule's Trebbiano di Soave known locally as Turbiana or Trebbiano di Lugana.",
+          "read": "search summary"
+        },
+        {
+          "title": "Genetic studies on Trebbiano and morphologically related varieties by SSR and AFLP markers, Vitis 40 (2001)",
+          "url": "https://ojs.openagrar.de/index.php/VITIS/article/view/4527",
+          "kind": "primary",
+          "says": "The original study: Verdicchio identical with Trebbiano di Soave, which is very similar to Trebbiano di Lugana; most vines called Trebbiano share no common ancestor.",
+          "read": "search summary"
+        },
+        {
+          "title": "Verdello, Verdicchio and Verduschia: an integrated multidisciplinary study to clarify grapevine cultivar identity, Advances in Horticultural Science 26(2), 2012",
+          "url": "https://oaj.fupress.net/index.php/ahs/article/view/2980",
+          "kind": "primary",
+          "says": "One DNA profile across all 25 accessions, a Turbiana from Vicenza among them, with Turbiana and Trebbiano di Lugana listed as regional synonyms.",
+          "read": "search summary"
+        },
+        {
+          "title": "Italian Wine Central: profile of Lugana",
+          "url": "https://italianwinecentral.com/profile-lugana/",
+          "kind": "secondary",
+          "says": "Turbiana and Verdicchio described as close relatives; the trade sources split between near identity and a distinct biotype.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Only the Turbiana half was overstated: Trebbiano di Soave stays Verdicchio everywhere (the Veneto record and friuli's r-ls1a2rd8 are right), the accept list of r-uf2jj6ug keeps Verdicchio, the Marche styles line already says DNA ties it and stays, and the Verdicchio page's aliases and regions list keep Turbiana by the grape plan."
     }
   ]
 }
