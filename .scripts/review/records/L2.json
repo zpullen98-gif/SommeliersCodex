@@ -335,6 +335,177 @@
         }
       ],
       "why": "Only the Turbiana half was overstated: Trebbiano di Soave stays Verdicchio everywhere (the Veneto record and friuli's r-ls1a2rd8 are right), the accept list of r-uf2jj6ug keeps Verdicchio, the Marche styles line already says DNA ties it and stays, and the Verdicchio page's aliases and regions list keep Turbiana by the grape plan."
+    },
+    {
+      "id": "L2-05",
+      "topic": "Sicily: the 2017 rule and Grillo's billing",
+      "verdict": "change",
+      "claim": "The Sicily record says in six places that varietal Nero d'Avola and Grillo must be Sicilia DOC since 2017, while its card cards[6] and question r-ih3gzpr1 say the names belong to the island's DOCs, Sicilia above all; three lines call Grillo the island's best dry or varietal white.",
+      "finding": "The change in force from the 2017 harvest amended the Terre Siciliane IGT rule: Grillo and Calabrese (Nero d'Avola) may no longer be named on an IGT label, in varietal or optional information. It reserves nothing to Sicilia DOC alone: the island's other DOCs still name the grapes, Noto DOC for one keeps a Noto Nero d'Avola of at least 85 per cent, and Eloro and Vittoria name it too. A challenge before the regional administrative court was overturned by the Council of State, which upheld the change. Calling Grillo the island's best white is a judgement the house rules keep out.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "law.tiers[3][1]",
+          "old": "since the 2017 vintage a varietal Grillo or Nero d'Avola must be Sicilia DOC, never Terre Siciliane IGT.",
+          "new": "since the 2017 vintage a varietal Grillo or Nero d'Avola must carry a DOC, Sicilia or a local one, never Terre Siciliane IGT."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "law.classification",
+          "old": "has reserved varietal Grillo and Nero d'Avola to itself since the 2017 vintage, with Terre Siciliane IGT beneath it for everything else.",
+          "new": "has shared varietal Grillo and Nero d'Avola only with the island's other DOCs since the 2017 vintage, with Terre Siciliane IGT beneath it for everything else."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "exam[3]",
+          "old": "varietal Nero d'Avola and Grillo must be Sicilia DOC since 2017.",
+          "new": "since 2017 varietal Nero d'Avola and Grillo must carry a DOC, Sicilia above all, never Terre Siciliane IGT."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "traps[7]",
+          "old": "those two words mean Sicilia DOC.",
+          "new": "those two words mean a DOC, Sicilia or a local one such as Noto or Vittoria."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "grapes[5].styles",
+          "old": "A cross of Catarratto and Zibibbo, the backbone of fine Marsala and now the island's best dry white: citrus, herbs and a saline bite, reserved to Sicilia DOC as a varietal since 2017.",
+          "new": "A cross of Catarratto and Zibibbo, the backbone of fine Marsala and now a dry white in its own right: citrus, herbs and a saline bite, reserved as a varietal to the island's DOCs, Sicilia above all, since 2017."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "wines[4].note",
+          "old": "the island's best varietal white and a Sicilia DOC wine by rule;",
+          "new": "a varietal white of the west and a DOC wine by rule, Sicilia above all;"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "cards[8].b",
+          "old": "once the backbone of fine Marsala, now the island's best dry white, and since 2017",
+          "new": "once the backbone of fine Marsala, now a dry white in its own right, and since 2017"
+        },
+        {
+          "file": ".scripts/cms/questions/sicily-sardinia.json",
+          "record": "e-l2zcmjow",
+          "path": "exp",
+          "old": "has held varietal Grillo and Nero d'Avola to itself since the 2017 vintage, with Terre Siciliane IGT left beneath it for everything else.",
+          "new": "has shared varietal Grillo and Nero d'Avola only with the island's smaller DOCs, such as Noto and Vittoria, since the 2017 vintage, with Terre Siciliane IGT left beneath it for everything else."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Ministero dell'agricoltura (MASAF): disciplinare of the Terre Siciliane IGT",
+          "url": "https://masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1/e/b/D.71bd75dc36837ba8dd16/P/BLOB:ID=23264/E/pdf?mode=download",
+          "kind": "primary",
+          "says": "A varietal label is allowed at 85 per cent of the grape, but Grillo and Calabrese or its synonym Nero d'Avola are excluded, and neither name may appear in optional varietal information on a Terre Siciliane label.",
+          "read": "search summary"
+        },
+        {
+          "title": "AIS: disciplinare of the Noto DOC",
+          "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Noto.pdf",
+          "kind": "primary",
+          "says": "The Noto DOC keeps a Noto Nero d'Avola type, at least 85 per cent Nero d'Avola, beside its Rosso and the Moscato types.",
+          "read": "search summary"
+        },
+        {
+          "title": "MeteoWeb: the Sicilia DOC consortium on the 2017 harvest",
+          "url": "https://www.meteoweb.eu/2017/08/vendemmia-consorzio-tutela-vini-doc-sicilia-uve-sane-e-in-ottime-condizioni/944837/",
+          "kind": "secondary",
+          "says": "The ministry approved the change to the Terre Siciliane IGT rule barring Grillo and Nero d'Avola from IGT labels from the 2017 harvest; such wines must go under a Sicilian DOC.",
+          "read": "search summary"
+        },
+        {
+          "title": "BlogSicilia: the Council of State on Grillo and Nero d'Avola",
+          "url": "https://www.blogsicilia.it/palermo/nero-davola-e-grillo-igt-solo-nei-vini-doc-siciliani-lo-ha-deciso-il-consiglio-di-stato/560832/",
+          "kind": "secondary",
+          "says": "The Council of State upheld the change: the two names on Sicilian DOC wines only, not on the IGT.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The rule bars the IGT and admits every Sicilian DOC, as cards[6] and r-ih3gzpr1 already say; the CMS question's stem (unless a smaller DOC applies) and answer stay, only its explanation moves. Best is a superlative of judgement and is cut."
+    },
+    {
+      "id": "L2-06",
+      "topic": "Sagrantino's tannin, without a ranking",
+      "verdict": "change",
+      "claim": "The Umbria record says Sagrantino has the highest tannin and polyphenol load measured in any Italian variety and is the most tannic grape in Italy; GRAPES_PLUS says often called Italy's highest and often called the most tannic grape in the world; a producer note says the highest tannin load of any Italian variety.",
+      "finding": "No measurement across Italy's varieties was found that ranks Sagrantino first. One study of Sagrantino wines found the highest mean oligomeric procyanidins among the wines it compared, 1.2 g/L against 0.8 g/L for Nebbiolo, a result inside one study's sample. Trade and grape references agree on the substance: small, thick skinned berries and a tannin and polyphenol load that puts it among the most tannic of all grapes.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "grapes[0].styles",
+          "old": "with the highest tannin and polyphenol load measured in any Italian variety:",
+          "new": "among the most tannic of all grapes and rich in polyphenols:"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "cards[5].b",
+          "old": "It carries the highest tannin and polyphenol content measured in an Italian variety;",
+          "new": "It is among the most tannic of all grapes, with a very high polyphenol content;"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "summary",
+          "old": "made entirely from the most tannic grape in Italy,",
+          "new": "made entirely from one of the most tannic grapes of all,"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "exam[0]",
+          "old": "dry or passito; the most tannic grape in Italy.",
+          "new": "dry or passito; among the most tannic grapes of all."
+        },
+        {
+          "file": "js/data-grapes-plus.js",
+          "record": "Sagrantino",
+          "path": "GRAPES_PLUS Sagrantino.st",
+          "old": "Tannin EXTREME, often called Italy's highest",
+          "new": "Tannin EXTREME, among the most tannic of all grapes"
+        },
+        {
+          "file": "js/data-grapes-plus.js",
+          "record": "Sagrantino",
+          "path": "GRAPES_PLUS Sagrantino.tell",
+          "old": "Often called the most tannic grape in the world, black-fruited and incense-dark",
+          "new": "Among the most tannic grapes of all, black-fruited and incense-dark"
+        },
+        {
+          "file": "js/data-producers.js",
+          "record": "p-arnaldo-caprai",
+          "path": "style",
+          "old": "to tame the highest tannin load of any Italian variety.",
+          "new": "to tame the tannin of one of the most tannic grapes of all."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Improving the Phloroglucinolysis Protocol and Characterization of Sagrantino Wines Proanthocyanidins (MDPI)",
+          "url": "https://mdpi.com/1003628",
+          "kind": "primary",
+          "says": "Among the wines compared, Sagrantino had the highest mean oligomeric procyanidins, 1.2 g/L, ahead of Nebbiolo at 0.8 g/L: a measurement inside one study, not a ranking of every Italian variety.",
+          "read": "search summary"
+        },
+        {
+          "title": "WineMaker: Sagrantino",
+          "url": "https://winemakermag.com/articles/sagrantino",
+          "kind": "secondary",
+          "says": "Small grapes with very thick skins, which make it one of the most tannic of all grape varieties.",
+          "read": "search summary"
+        }
+      ],
+      "why": "A ranking needs a measurement to cite and none ranks it first; the substance (among the most tannic of all grapes) stays. Left: ADV a-dq2mo3wg, whose stem asks for Sagrantino's claim to fame, a reputation, so its answer stands; i-70avillq (one of Italy's most tannic) and the CMS's two of Italy's most tannic reds are already hedged."
     }
   ]
 }
