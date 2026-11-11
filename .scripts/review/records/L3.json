@@ -1,0 +1,163 @@
+{
+  "lane": "L3",
+  "checked": "2026-11-11",
+  "entries": [
+    {
+      "id": "L3-01",
+      "topic": "Egri Bikavér: at least four varieties, not three",
+      "verdict": "change",
+      "claim": "The Eger record (summary, made.winemaking, law.classification, law.tiers Classicus, exam[0], cards[0].b) and the Hungary country record (exam[1], question r-1ozia0r0) say Egri Bikavér is a blend of at least three varieties, and the country question says the same of Szekszárdi Bikavér.",
+      "finding": "The Egri Bikavér product specification that applies to wines marketed from the 2023/2024 wine year asks for at least four varieties, each above 5 per cent of the blend, with Kékfrankos at 30 to 65 per cent and the largest share; the earlier Eger texts asked for more, not fewer (five varieties in the upper tiers of the text applicable from 2012, struck to four in a later draft), and three is the count of older rules (a Szekszárd text of 2009 still wrote three), not of either specification in force. The Szekszárd specification, fourth version, applicable from 15 March 2024, also asks for at least four varieties, with Kékfrankos at 45 per cent or more and Kadarka at 5 per cent or more. The national wine body's own pages and the 2024 Hungarian Wine Summit material give the same: four grapes, Kékfrankos 30 to 65 per cent at Eger. The oak minimums the record gives (six months for Classicus, twelve for Superior and Grand Superior) hold.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "summary",
+          "old": "a blend of at least three varieties on a compulsory backbone of Kékfrankos",
+          "new": "a blend of at least four varieties on a compulsory backbone of Kékfrankos"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "made.winemaking",
+          "old": "The rules ask for at least three varieties from a fixed list, Kékfrankos among them at no less than 30 per cent",
+          "new": "The rules ask for at least four varieties from a fixed list, Kékfrankos among them at no less than 30 per cent and the largest share"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "law.classification",
+          "old": "the Eger rules fix the blend: at least three varieties from a list of permitted reds, Kékfrankos compulsory at a minimum of 30 per cent",
+          "new": "the Eger rules fix the blend: at least four varieties from a list of permitted reds, Kékfrankos compulsory at a minimum of 30 per cent and the largest share"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "law.tiers[0][1] (Classicus)",
+          "old": "The base tier: Egri Bikavér from at least three varieties, Kékfrankos at 30 per cent or more",
+          "new": "The base tier: Egri Bikavér from at least four varieties, Kékfrankos at 30 per cent or more"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "exam[0]",
+          "old": "Egri Bikavér: at least three varieties, Kékfrankos compulsory at a minimum of 30 per cent",
+          "new": "Egri Bikavér: at least four varieties, Kékfrankos compulsory at a minimum of 30 per cent"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "cards[0].b",
+          "old": "At least three varieties from a fixed list; Kékfrankos compulsory at 30 per cent or more",
+          "new": "At least four varieties from a fixed list; Kékfrankos compulsory at 30 per cent or more"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "exam[1]",
+          "old": "Egri Bikavér: Kékfrankos compulsory, at least three varieties, Bull's Blood",
+          "new": "Egri Bikavér: Kékfrankos compulsory, at least four varieties, Bull's Blood"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "questions[2].exp (r-1ozia0r0)",
+          "old": "both Kékfrankos led blends of at least three varieties.",
+          "new": "both Kékfrankos led blends of at least four varieties."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Az EGRI BIKAVÉR oltalom alatt álló eredetmegjelölés termékleírása, eredeti változat, a 2023/2024. borpiaci évtől forgalomba kerülő borászati termékekre (the Egri Bikavér product specification, Hungarian Ministry of Agriculture, geographical indications register)",
+          "url": "https://gi.kormany.hu/download/2/30/73000/EGRI%20BIKAV%C3%89R%20term%C3%A9kle%C3%ADr%C3%A1s_honlapra.pdf",
+          "kind": "primary",
+          "says": "Legalább négy szőlőfajta bora arányának meg kell haladnia külön-külön az 5%-ot; a Kékfrankos fajta arányának 30 és 65% között kell lennie, a házasításban ennek a fajtának kell a legnagyobb arányban jelen lennie: at least four varieties each above 5 per cent, Kékfrankos 30 to 65 per cent and the largest share.",
+          "read": "search summary"
+        },
+        {
+          "title": "A SZEKSZÁRD oltalom alatt álló eredetmegjelölés termékleírása, 4. változat (the Szekszárd product specification, fourth version, Hungarian Ministry of Agriculture wine pages)",
+          "url": "https://boraszat.kormany.hu/download/8/3e/33000/Szeksz%C3%A1rd%20term%C3%A9kle%C3%ADr%C3%A1s_v4_hat%C3%A1rozat_KN_jav%C3%ADtott_bikav%C3%A9rek.pdf",
+          "kind": "primary",
+          "says": "Szekszárdi Bikavér: at least four varieties, Kékfrankos at least 45 per cent, Kadarka at least 5 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Az EGER oltalom alatt álló eredetmegjelölés termékleírása, 2. és 3. változat, and the Eger specification as amended from 2012 (Hungarian Ministry of Agriculture wine pages)",
+          "url": "https://boraszat.kormany.hu/download/f/55/91000/Eger_OEM_v3.pdf",
+          "kind": "primary",
+          "says": "The earlier texts: Kékfrankos 30 to 50 per cent and at least five varieties above 5 per cent in the upper Bikavér tiers in the text applicable from 2012, and a later draft with five struck through and four written in.",
+          "read": "search summary"
+        },
+        {
+          "title": "Magyar Bor, the Hungarian wine body: The legendary Bikavér",
+          "url": "https://bor.hu/en/magazine/the-legendary-bikaver/",
+          "kind": "secondary",
+          "says": "A minimum of four grape varieties in the wine; the mandatory proportion of Kékfrankos is 30 to 65 per cent at Eger, with Turán at 10 per cent at most; barrel ageing of 6 to 12 months by category.",
+          "read": "search summary"
+        },
+        {
+          "title": "Hungarian Wine Summit 2024: Red Wines on the Red Carpet (Magyar Bor)",
+          "url": "https://summit2025.bor.hu/wp-content/uploads/2024/05/Red-Wines-on-the-Red-Carpet_Hungarian-Wine-Summit-2024-final.pdf",
+          "kind": "secondary",
+          "says": "Egri Bikavér: at least four grapes, Kékfrankos 30 to 65 per cent; Classicus at least six months of ageing, Superior and Grand Superior at least twelve.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Three is the count of a superseded rule: both Bikavér specifications in force ask for four, so every line that teaches three is wrong for the exam and for a guest."
+    },
+    {
+      "id": "L3-02",
+      "topic": "Egri Bikavér: no fifty per cent ceiling on Kékfrankos",
+      "verdict": "change",
+      "claim": "Question c-98c4i3oo (rewrite/categories/r2_hungary_greece.py) keys the ceiling on any one variety in Egri Bikavér at fifty per cent and says the upper tiers ask for more varieties; the Advanced answer a-ih3g5con says no single variety above 50% and Superior requires five varieties.",
+      "finding": "The Egri Bikavér specification for wines marketed from the 2023/2024 wine year lets Kékfrankos run from 30 to 65 per cent and requires it to be the largest share, so the ceiling on any one grape is Kékfrankos's 65 per cent; the national wine body gives the same band. The fifty per cent band and the five variety rule belong to earlier versions of the Eger specification (the 2012 text), and the summaries of the current text read here give four varieties for every tier, while trade summaries still repeat five for Superior: the count of varieties above the base is not settled by what was read, so the lines drop it rather than give a new one.",
+      "targets": [
+        {
+          "file": "rewrite/categories/r2_hungary_greece.py",
+          "record": "c-98c4i3oo",
+          "path": "Q(\"Eger, Bikaver and the north\", \"No single grape may take over an Egri Bikaver ...\").opts[0] (the keyed option)",
+          "old": "[\"Fifty per cent\", \"Thirty per cent\", \"Seventy-five per cent\",",
+          "new": "[\"Sixty-five per cent\", \"Thirty per cent\", \"Seventy-five per cent\","
+        },
+        {
+          "file": "rewrite/categories/r2_hungary_greece.py",
+          "record": "c-98c4i3oo",
+          "path": "Q(\"Eger, Bikaver and the north\", \"No single grape may take over an Egri Bikaver ...\").exp",
+          "old": "The cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for more varieties, lower yields and, at the top, fruit from one named site.",
+          "new": "The ceiling is Kekfrankos's, which must also be the largest share, and with three more varieties required beside it the cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for lower yields, longer ageing and, at the top, fruit from one named site."
+        },
+        {
+          "file": "js/data-advanced.js",
+          "record": "a-ih3g5con",
+          "path": "ans (the gloss after the colon; the keyed grape and the accept list stay)",
+          "old": "minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).",
+          "new": "at least 30 per cent of the blend and its largest share, at most 65 per cent; Egri Bikavér must draw on at least four permitted varieties."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Az EGRI BIKAVÉR oltalom alatt álló eredetmegjelölés termékleírása, eredeti változat, a 2023/2024. borpiaci évtől (the Egri Bikavér product specification, Hungarian Ministry of Agriculture, geographical indications register)",
+          "url": "https://gi.kormany.hu/akadalymentes/download/2/30/73000/EGRI%20BIKAV%C3%89R%20term%C3%A9kle%C3%ADr%C3%A1s_honlapra.pdf",
+          "kind": "primary",
+          "says": "A Kékfrankos fajta arányának 30 és 65% között kell lennie, a házasításban ennek a fajtának kell a legnagyobb arányban jelen lennie; the same band is read in the Superior rows.",
+          "read": "search summary"
+        },
+        {
+          "title": "Az EGER oltalom alatt álló eredetmegjelölés termékleírása, the text applicable from 2012 and the 2. változat (Hungarian Ministry of Agriculture wine pages)",
+          "url": "https://boraszat.kormany.hu/download/f/9d/40000/EGER_termekleiras_modos%C3%ADtott_jelolve_2012-tol-alkalmazando.pdf",
+          "kind": "primary",
+          "says": "The superseded rule: Kékfrankos 30 to 50 per cent and at least five varieties above 5 per cent for the upper Bikavér tiers.",
+          "read": "search summary"
+        },
+        {
+          "title": "Magyar Bor, the Hungarian wine body: The legendary Bikavér",
+          "url": "https://bor.hu/en/magazine/the-legendary-bikaver/",
+          "kind": "secondary",
+          "says": "At least four varieties; Kékfrankos 30 to 65 per cent at Eger, Turán at most 10 per cent.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The keyed fifty per cent is false under the specification in force, which lets Kékfrankos reach 65 per cent: the stem stands, but its key does not, so the keyed option changes and the integrator keeps the pinned id c-98c4i3oo; in a-ih3g5con the keyed grape stays and only the false gloss goes."
+    }
+  ]
+}
