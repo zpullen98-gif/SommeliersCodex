@@ -44,7 +44,7 @@
  *      selector under .wrap, every shown word from V57_WORDS (and V57_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-grapes-table.js [jsDir]               every check above
- *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 25 faults in a scratch copy, one at a time,
+ *   node .scripts/check-grapes-table.js [jsDir] --mutations   then seeds 26 faults in a scratch copy, one at a time,
  *                                                              and expects each caught by the check that names it
  *
  * A section that throws fails as "section N ran to its end" and the next one runs, so a seeded fault is always named.
@@ -785,9 +785,35 @@ async function main() {
     check('grapeworlds: the side by side grapes as an index (' + contrast.length + ' rows, whites then reds), lit Grapes, climbing to the root, clean', w1.view === 'grapeworlds' && w1.hash === '#/v/grapeworlds' && w1.lit === 'grapes' && w1.parent.view === 'grapes' && (wh.match(/data-v57="worlds" data-slug="/g) || []).length === contrast.length && !pageProblem(wh), JSON.stringify(w1) + ' ' + pageProblem(wh));
     const call = V.J('(function () { V57_ACTS.callstart(); var a = { view: S.view, arg: v32Arg("grapeworlds"), n: V57_CALL.deck.length, glasses: [] }; for (var i = 0; i < V57_CALL.deck.length; i++) { var g = V57_CALL.deck[i]; a.glasses.push(g.slug); V57_ACTS.callpick({ getAttribute: function () { return i % 2 ? (g.side === "old" ? "new" : "old") : g.side; } }); V57_ACTS.callnext(); } a.right = V57_CALL.right; a.w = v57Rec().w; a.parent = v32ParentRoute(); a.score = V57_VIEWS.grapeworlds.draw("call"); return a; })()');
     check('the call drill: ten glasses of ten grapes, each answered, the score kept in the slot (' + (call.w && call.w.last) + ' of ' + (call.w && call.w.of) + '), the drill climbing to the index, the score clean', call.view === 'grapeworlds' && call.arg === 'call' && call.n === 10 && new Set(call.glasses).size === 10 && call.right === 5 && call.w && call.w.n === 1 && call.w.last === 5 && call.w.of === 10 && call.parent.view === 'grapeworlds' && !pageProblem(call.score) && call.score.indexOf('5 of 10 called right.') > 0, JSON.stringify(call).slice(0, 400));
-    const pool = V.J('v57CallPool().map(function (g) { return g.slug + ":" + g.side; })');
-    const poolBad = contrast.filter((s) => !(pool.indexOf(s + ':old') >= 0 && pool.indexOf(s + ':new') >= 0));
-    check('every side by side grape gives the call drill a glass of each world, read from its blind call', poolBad.length === 0, poolBad.join(' '));
+    /* each half of every blind call as this gate reads it: its glass and the worlds its target names, Old World or
+       New World said outright or a country or state of either (this gate's own short list, not the layer's map) */
+    const OLDN = ['old world', 'france', 'italy', 'spain', 'portugal', 'germany', 'austria', 'greece', 'hungary', 'switzerland', 'england', 'lebanon'];
+    const NEWN = ['new world', 'california', 'oregon', 'washington', 'new york', 'australia', 'new zealand', 'south africa', 'chile', 'argentina', 'uruguay', 'canada', 'united states'];
+    const halves = [];
+    Object.keys(TABLE).filter((s) => TABLE[s] && TABLE[s].worlds && TABLE[s].worlds.contrast).forEach((s) => {
+      String(TABLE[s].worlds.contrast.call || '').replace(/\.\s*$/, '').split(/\s*;\s*|\.\s+(?=[A-Z])/).forEach((half) => {
+        const m = /^(.+)\s+(?:leans?|points?|suggests?|says?|means?|signals?|indicates?|favours?)\s+(?:to\s+|towards\s+)?(.+)$/i.exec(half);
+        if (!m) return;
+        const f = ' ' + fold(m[2]) + ' ';
+        const o = OLDN.some((k) => f.indexOf(' ' + k + ' ') >= 0), w = NEWN.some((k) => f.indexOf(' ' + k + ' ') >= 0);
+        halves.push({ slug: s, glass: fold(m[1]), names: o && w ? 'both' : (o ? 'old' : (w ? 'new' : '')), half: half.trim() });
+      });
+    });
+    const full = V.J('v57CallPool()') || [];
+    const keyBad = [];
+    full.forEach((g) => {
+      const h = halves.find((x) => x.slug === g.slug && x.glass === fold(g.text));
+      if (!h) keyBad.push(g.slug + ' "' + g.text + '" from no half of its call');
+      else if (h.names === 'both') keyBad.push(g.slug + ' "' + g.text + '" keyed ' + g.side + ', though its half names both worlds: ' + h.half);
+      else if (h.names && h.names !== g.side) keyBad.push(g.slug + ' "' + g.text + '" keyed ' + g.side + ', though its half names the other: ' + h.half);
+    });
+    check('every glass of the call drill keyed to the world its own half of the blind call names, and none dealt from a half that names both worlds (Spain or the New World), whose answer would be marked wrong either way (' + full.length + ' glasses)', keyBad.length === 0 && full.length > 0, few(keyBad, 4));
+    const twoWay = [...new Set(halves.filter((x) => x.names === 'both').map((x) => x.slug))];
+    twoWay.forEach((s) => note('the blind call of ' + s + ' leans a half to both worlds (' + halves.filter((x) => x.slug === s && x.names === 'both').map((x) => x.half).join(' | ') + '): that half gives no glass until the call leans it one way'));
+    const pool = full.map((g) => g.slug + ':' + g.side);
+    const has = (s, w) => pool.indexOf(s + ':' + w) >= 0;
+    const poolBad = contrast.filter((s) => (twoWay.indexOf(s) < 0 ? !(has(s, 'old') && has(s, 'new')) : has(s, 'old') !== has(s, 'new')));
+    check('every side by side grape gives the call drill a glass of each world, read from its blind call (one whose call leans a half both ways gives both from its other halves, or none)', poolBad.length === 0, poolBad.join(' '));
     const c1 = go('grapecompare', 'chardonnay~sauvignon-blanc');
     const ch = draw('grapecompare');
     check('grapecompare: Chardonnay and Sauvignon Blanc side by side (the glass, the notes, the structure, the tell, service, two cells each), lit Grapes, climbing to the root, clean', c1.view === 'grapecompare' && c1.arg === 'chardonnay~sauvignon-blanc' && c1.hash === '#/v/grapecompare/chardonnay~sauvignon-blanc' && c1.lit === 'grapes' && c1.parent.view === 'grapes'
@@ -903,6 +929,7 @@ function mutations() {
     ['a house row opening no card', 'js/codex57.js', 'data-v57="wine" data-id="\' + v57Esc(x.id) + \'"', 'data-v57="wine" data-id="\' + v57Esc(x.id + \'0\') + \'"', 'its rows the house\'s own wines'],
     ['a grade scheduled backwards', 'js/codex57.js', "v57Sched('c', c.id, !!got);", "v57Sched('c', c.id, !got);", 'a card graded right is due tomorrow'],
     ['the notIn phrases ignored', 'js/codex57.js', '  if (!phrases.length) return list;', '  return list;', 'no bank question its notIn phrases shut out'],
+    ['a call half naming both worlds dealt as the New World', 'js/codex57.js', "  if (named.old && named['new']) return '';\n", "  if (named['new']) return 'new';\n", 'every glass of the call drill keyed'],
     ['the table\'s questions left out of the drill', 'js/codex57.js', 'return v57NotIn(out, r, t).concat(v57Questions(r.slug));', 'return v57NotIn(out, r, t);', 'holds the table\'s three'],
     ['a view climbing to Home', 'js/codex57.js', "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'grapes' }; }", "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'home' }; }", 'grapecompare: Chardonnay and Sauvignon Blanc'],
     ['the two tags swapped in index.html', 'index.html', '<script src="js/data-grapes-table.js?v=1"></script>\n<script src="js/codex57.js?v=1"></script>', '<script src="js/codex57.js?v=1"></script>\n<script src="js/data-grapes-table.js?v=1"></script>', 'index.html loads js/data-grapes-table.js then js/codex57.js'],

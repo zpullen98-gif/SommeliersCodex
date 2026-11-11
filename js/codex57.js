@@ -1737,15 +1737,21 @@ V57_ACTS.worlds = function (node) { return v57OpenWorlds(node && typeof node.get
 
 /* The glasses a grape gives the drill, read from its blind call: the line is written both ways (what leans one
    world; what leans the other), so each half is a glass described by its tell. The world a half leans to is the
-   one it names, else the side whose places it names (a word of the place found in one side's own text and not
-   in the other's), else its place in the line (the Old World is written first). A grape whose call does not
-   give both worlds sits the drill out. */
+   one it names (Old World or New World said outright, or a country or a state of the house's map), else the side
+   whose places it names (a word of the place found in one side's own text and not in the other's), else its place
+   in the line (the Old World is written first). A half that names both worlds (Spain or the New World) leans
+   neither, so it gives no glass: its answer would be marked wrong whichever world was said. A grape whose call
+   does not give both worlds sits the drill out. */
 var V57_LEAN = /^(.+)\s+(?:leans?|points?|suggests?|says?|means?|signals?|indicates?|favours?)\s+(?:to\s+|towards\s+)?(.+)$/i;
 var V57_PLAIN = { the: 1, and: 1, world: 1, wine: 1, wines: 1, style: 1, styles: 1, valley: 1, coast: 1, north: 1, south: 1, east: 1, west: 1, northern: 1, southern: 1 };
 function v57CallSide(target, c, i, n) {
   var f = ' ' + v57Fold(target) + ' ';
-  if (f.indexOf(' old world ') >= 0) return 'old';
-  if (f.indexOf(' new world ') >= 0) return 'new';
+  var named = {};
+  if (f.indexOf(' old world ') >= 0) named.old = 1;
+  if (f.indexOf(' new world ') >= 0) named['new'] = 1;
+  Object.keys(V57_WORLD).forEach(function (k) { if (f.indexOf(' ' + k + ' ') >= 0) named[V57_WORLD[k]] = 1; });
+  if (named.old && named['new']) return '';
+  if (named.old || named['new']) return named.old ? 'old' : 'new';
   var hay = function (o) { return ' ' + v57Fold([o.where, o.glass, o.cellar].join(' ')) + ' '; };
   var ho = hay(v57Obj(c.old)), hn = hay(v57Obj(c['new']));
   var inOld = false, inNew = false;
