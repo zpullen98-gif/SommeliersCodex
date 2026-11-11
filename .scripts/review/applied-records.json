@@ -6654,6 +6654,344 @@
    "exit": 1,
    "last": "check-grapes-table: 2 of 85 checks FAILED",
    "note": "the git base still works and names this edition's deliberate corrections, as it should"
+  },
+  {
+   "step": 10,
+   "gate": "PORT=8797 bash gates-pub.sh (every gate of .scripts, this checkout)",
+   "exit": 0,
+   "last": "gates: 51 run, 0 failed",
+   "each": [
+    {
+     "gate": "check-atlas-cache.js",
+     "exit": 0,
+     "last": "check-atlas-cache: all 55 checks pass (/home/user/sommelierscodex)"
+    },
+    {
+     "gate": "check-atlas-course.js",
+     "exit": 0,
+     "last": "check-atlas-course: all 123 checks pass"
+    },
+    {
+     "gate": "check-atlas-data.js",
+     "exit": 0,
+     "last": "check-atlas-data: all 221 checks pass; 17 maps, 115 mapped lessons, 117 original rows, 87 source links, 135 shell assets, 7968662 SVG bytes (/home/user/sommelie"
+    },
+    {
+     "gate": "check-atlas-ui.js",
+     "exit": 0,
+     "last": "269 atlas UI contract checks passed (mock DOM; no rendered layout assertion)."
+    },
+    {
+     "gate": "check-atlas.js",
+     "exit": 0,
+     "last": "check-atlas: all 90 checks pass"
+    },
+    {
+     "gate": "check-brennans.js",
+     "exit": 0,
+     "last": "check-brennans: all 105 checks pass"
+    },
+    {
+     "gate": "check-card.js",
+     "exit": 0,
+     "last": "check-card: all 223 checks pass"
+    },
+    {
+     "gate": "check-claims.js",
+     "exit": 0,
+     "last": "  Everything else is a claim with no margin: check it, or leave it."
+    },
+    {
+     "gate": "check-cms.js",
+     "exit": 0,
+     "last": "check-cms: 63 passed, 0 failed"
+    },
+    {
+     "gate": "check-components.js",
+     "exit": 0,
+     "last": "check-components: 44 passed, 0 failed"
+    },
+    {
+     "gate": "check-drill.js",
+     "exit": 0,
+     "last": "  ok no records that generate no question at all"
+    },
+    {
+     "gate": "check-grapes-table.js",
+     "exit": 0,
+     "last": "check-grapes-table: all 86 checks pass"
+    },
+    {
+     "gate": "check-grapes.js",
+     "exit": 0,
+     "last": "check-grapes: 60 passed, 0 failed"
+    },
+    {
+     "gate": "check-home.js",
+     "exit": 0,
+     "last": "check-home: all 196 checks pass"
+    },
+    {
+     "gate": "check-house.js",
+     "exit": 0,
+     "last": "check-house: all 282 checks pass"
+    },
+    {
+     "gate": "check-merge.js",
+     "exit": 0,
+     "last": "   state: {\"q_alpha\":{\"c\":30,\"w\":1,\"s\":9},\"sess\":11,\"tast\":{\"n\":40,\"c\":31},\"grader_alpha\":{\"r\":9,\"w\":9,\"t\":\"a note\"},\"bad_beta\":{\"n\":2,\"q\":\"a stem\"},\"serv\":{\"sv"
+    },
+    {
+     "gate": "check-nav.js",
+     "exit": 0,
+     "last": "check-nav: all 108 checks pass"
+    },
+    {
+     "gate": "check-producers-house.js",
+     "exit": 0,
+     "last": "check-producers-house: 138 passed, 0 failed"
+    },
+    {
+     "gate": "check-producers.js",
+     "exit": 0,
+     "last": "  check-producers: OK"
+    },
+    {
+     "gate": "check-regions.js",
+     "exit": 0,
+     "last": "check-regions: 83 passed, 0 failed"
+    },
+    {
+     "gate": "check-study.js",
+     "exit": 0,
+     "last": "check-study: all 105 checks pass"
+    },
+    {
+     "gate": "check-syntax.js",
+     "exit": 0,
+     "last": "all 92 JS files parse"
+    },
+    {
+     "gate": "check-teaching-images.js",
+     "exit": 0,
+     "last": "check-teaching-images: all 154 checks pass"
+    },
+    {
+     "gate": "check-videos.js",
+     "exit": 0,
+     "last": "check-videos: all 45 checks pass"
+    },
+    {
+     "gate": "check-wine-import.js",
+     "exit": 0,
+     "last": "  check-wine-import: OK"
+    },
+    {
+     "gate": "check-winelist.js",
+     "exit": 0,
+     "last": "check-winelist: all 80 checks pass"
+    },
+    {
+     "gate": "check-answer-learning.cjs",
+     "exit": 0,
+     "last": "Answer learning: all 64 checks pass."
+    },
+    {
+     "gate": "check-atlas-context.cjs",
+     "exit": 0,
+     "last": "PASS 49 atlas context checks"
+    },
+    {
+     "gate": "check-atlas-links.cjs",
+     "exit": 0,
+     "last": "Atlas links: all 137 checks pass."
+    },
+    {
+     "gate": "check-atlas-nav.cjs",
+     "exit": 0,
+     "last": "check-atlas-nav: all 48 checks pass"
+    },
+    {
+     "gate": "check-cellar-compass-data.cjs",
+     "exit": 0,
+     "last": "Cellar Compass data: 114 checks passed; 12 paths,60 prompts,8 workshops,26 sources."
+    },
+    {
+     "gate": "check-cellar-compass-ui.cjs",
+     "exit": 0,
+     "last": "Cellar Compass: 130 checks passed."
+    },
+    {
+     "gate": "check-culinary-routes.cjs",
+     "exit": 0,
+     "last": "Culinary routes: 103 checks passed."
+    },
+    {
+     "gate": "check-culinary-studies.cjs",
+     "exit": 0,
+     "last": "Culinary studies: 29 real-browser checks passed."
+    },
+    {
+     "gate": "check-culinary-study-data.cjs",
+     "exit": 0,
+     "last": "Culinary study data: 65 checks passed; eight lessons, four dish conversations, eight alternatives and exact house joins."
+    },
+    {
+     "gate": "check-field-atlas.cjs",
+     "exit": 0,
+     "last": "PASS: 129 maps, all 115 mapped regional joins (14 reading-only articles), 14 country maps, 1284 locations, 52.8 MiB, exact hashes, bounds, safe SVG and shell/ca"
+    },
+    {
+     "gate": "check-house-flow.cjs",
+     "exit": 0,
+     "last": "Brennan's learning flow: all 116 checks pass."
+    },
+    {
+     "gate": "check-house-only.cjs",
+     "exit": 0,
+     "last": "check-house-only: 57 passed, 0 failed"
+    },
+    {
+     "gate": "check-learning-flow.cjs",
+     "exit": 0,
+     "last": "Learning flow: 78 checks passed."
+    },
+    {
+     "gate": "check-learning-links.cjs",
+     "exit": 0,
+     "last": "check-learning-links: 41 passed; 382 wine components, 824 all-house components."
+    },
+    {
+     "gate": "check-library-search.cjs",
+     "exit": 0,
+     "last": "}"
+    },
+    {
+     "gate": "check-regional-compatibility.cjs",
+     "exit": 0,
+     "last": "Regional compatibility: 12519 assertions passed; country precedence, specific regions, resolver parity and mapless doors."
+    },
+    {
+     "gate": "check-study-rounds.cjs",
+     "exit": 0,
+     "last": "30 study-round and tasting checks passed"
+    },
+    {
+     "gate": "check-teaching-accuracy.cjs",
+     "exit": 0,
+     "last": "Teaching accuracy: 35 checks passed."
+    },
+    {
+     "gate": "check-training-assessment.cjs",
+     "exit": 0,
+     "last": "Training assessment: all 44 checks pass."
+    },
+    {
+     "gate": "check-training-recovery.cjs",
+     "exit": 0,
+     "last": "Training recovery: all 33 checks pass."
+    },
+    {
+     "gate": "check-visual-studies.cjs",
+     "exit": 0,
+     "last": "Visual studies: 35 real-browser checks passed."
+    },
+    {
+     "gate": "check-visual-study-data.cjs",
+     "exit": 0,
+     "last": "Visual study data: 55 checks passed; 14 guides, 271 wine joins, 12 component joins, 34 menu service routes."
+    },
+    {
+     "gate": "check-visual-study-routes.cjs",
+     "exit": 0,
+     "last": "check-visual-study-routes: 28 checks passed."
+    },
+    {
+     "gate": "check-workshop-data.cjs",
+     "exit": 0,
+     "last": "check-workshop-data: 43 complete techniques, 344 cards, 344 unique questions, 172 sourced deeper explanations; 115 mapped regions, 14 off the map and 24 countri"
+    },
+    {
+     "gate": "check-workshop-ui.cjs",
+     "exit": 0,
+     "last": "check-workshop-ui: all 39 checks pass"
+    }
+   ]
+  },
+  {
+   "step": 10,
+   "gate": "node .scripts/grapes/build-grapes.cjs --check",
+   "exit": 0,
+   "last": "build-grapes --check: js/data-grapes-table.js is the build of the fragments and .scripts/grapes/keys.v1.json holds its ids (frozen) (75 of 75 grapes (24 side by side, 51 at home; 16 new, 12 thin filled), 225 cards, 225 questions (answers A 57, B 56, C 56, D 56), 58651 reading words, 22 aliases, 644478 bytes)"
+  },
+  {
+   "step": 10,
+   "gate": "node .scripts/regions/build-regions.cjs --check",
+   "exit": 0,
+   "last": "build-regions --check: js/data-regions.js and js/regions are the build of the fragments (38 fragment(s), 129 regions (14 off the map), 24 countries, 43 techniques, 1524 questions (0 minted, 1524 kept), 1653 cards, 3979 aliases, index 1254280 bytes, 19 reading files 2485885 bytes)"
+  },
+  {
+   "step": 10,
+   "gate": "node .scripts/regions/pin-ids.cjs --check",
+   "exit": 0,
+   "last": "pin-ids --check: 0 question(s) in 0 fragment(s) unpinned, 1524 pinned"
+  },
+  {
+   "step": 10,
+   "gate": "node .scripts/cms/build-cms.cjs --check",
+   "exit": 0,
+   "last": "build-cms --check: js/data-cms.js and js/data-grid.js are the build of the fragments (44 of 44 subjects, 626 rows, 44 maps, 401 questions (0 minted, 401 kept), 20 grid read file(s), data-cms.js 522250 bytes, data-grid.js 41872 bytes)"
+  },
+  {
+   "step": 10,
+   "gate": "python3 rewrite/ship.py --dry-run",
+   "exit": 0,
+   "last": "  DRY RUN, nothing written."
+  },
+  {
+   "step": 10,
+   "gate": "python3 rewrite/check-ids.py",
+   "exit": 0,
+   "last": "ALL IDS STABLE across 3061 questions - no stored progress orphaned."
+  },
+  {
+   "step": 10,
+   "gate": "python3 rewrite/check-regression.py",
+   "exit": 0,
+   "last": "  no correct answer was made wrong."
+  },
+  {
+   "step": 10,
+   "gate": "python3 rewrite/check-cross-category.py",
+   "exit": 0,
+   "last": "TASK are not. Read each pair and reframe one side, or accept it."
+  },
+  {
+   "step": 10,
+   "gate": "python3 rewrite/build.py, the seven modules of step 3",
+   "exit": 0,
+   "last": "  checks          all passed",
+   "note": "the pilots rebuilt byte for byte"
+  },
+  {
+   "step": 10,
+   "gate": "node .scripts/check-grapes-table.js --mutations",
+   "exit": 0,
+   "last": "check-grapes-table: all 86 checks pass, and every mutation is caught by name",
+   "note": "31 of 31 mutations caught, each by its own check, after the step 8 pins moved"
+  },
+  {
+   "step": 10,
+   "gate": "walk-grapes.mjs on the served source (serve.mjs 8798, CODEX_URL http://127.0.0.1:8798/codex/)",
+   "exit": 0,
+   "last": "walk-grapes: 324 ok, 0 failed",
+   "note": "375 and 390 px, day and night, 81 each; screenshots under the session scratchpad records/shots"
+  },
+  {
+   "step": 10,
+   "gate": "walk54.mjs 390 day on the served source",
+   "exit": 0,
+   "last": "walk54: 427 ok, 0 failed"
   }
  ],
  "leftForTheOwner": [
