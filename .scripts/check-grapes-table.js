@@ -36,8 +36,10 @@
  *      grape card still marked in its own
  *  12. the drill: the table's three in every grape's drill; the notIn phrases kept out; a gt- key never level
  *      progress, never in codex3's rotation, found by its key
- *  13. the three views: grapeworlds and its call drill played through, grapecompare, grapepresent marked; each lit
- *      Grapes, drawn clean, climbing back, and answering its address cold
+ *  13. the three views: grapeworlds and its call drill played through, every glass keyed to the world its own half
+ *      of the blind call names and none from a half naming both; grapecompare; grapepresent marked, and Another
+ *      grape walking every grape once before any returns; each lit Grapes, drawn clean, climbing back, and
+ *      answering its address cold
  *  14. the shell and the chain rule: the two tags in order, codex-v116 or later listing both; every list in a gate
  *      here that names codex56.js names data-grapes-table.js and codex57.js straight after it
  *  15. the layer's file: no dash, nobody named, no key, var and function only, every wrapper typeof guarded, every
