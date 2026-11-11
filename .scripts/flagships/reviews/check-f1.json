@@ -14,6 +14,11 @@
    "group": "burgundy-chablis",
    "pick": "vincent-dauvissat",
    "note": "The plan asks Les Preuses or Les Clos. The author kept Les Preuses with no swap; the refuter agrees: Raveneau's record already teaches Les Clos, Les Preuses is the Dauvissat grand cru on the house's own list, and the library names it among the domaine's wines. plan.json is unchanged."
+  },
+  {
+   "group": "burgundy-beaune",
+   "pick": "leflaive",
+   "note": "The plan asks Chevalier-Montrachet or Les Pucelles. The author kept Chevalier-Montrachet with no swap; the refuter agrees: the library calls it the estate's grand vin, the house list carries it, and Les Pucelles is taught first among the others. plan.json is unchanged."
   }
  ],
  "groups": {
@@ -305,6 +310,215 @@
      ]
     }
    ]
+  },
+  "burgundy-beaune": {
+   "verdict": "five records changed (each gains the library as its https source; all five have a fact softened, cut or set right); all five sound under the chunk lint with a checker's record",
+   "records": [
+    {
+     "key": "leflaive",
+     "tested": [
+      "founded left empty (library); Joseph Leflaive, 1870 to 1953, an engineer, buying vines after phylloxera; his sons, Vincent Leflaive, 1921 to 1993, among them; Anne-Claude Leflaive, 1956 to 2015, sharing the direction from 1990 and then leading alone; biodynamic trials and the whole domaine converted by the late 1990s (library: biodynamic since the 1990s); the Le Montrachet parcel of the early 1990s (library)",
+      "Chevalier-Montrachet on the thin, stony upper slope above Le Montrachet, wholly in Puligny; Bâtard broader below; Bienvenues wholly in Puligny, Le Montrachet and Bâtard on both communes (library, w-le-montrachet); a year in barrel then months in tank",
+      "the label words, Domaine Leflaive against the négociant Olivier Leflaive (library trap and p-olivier-leflaive); the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "story",
+       "was": "and bought vineyards one by one, Chevalier-Montrachet among them.",
+       "now": "and bought vineyards one by one.",
+       "why": "Whether the Chevalier parcel was among the founder's own purchases was not confirmed.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Côte d'Or literature (Côte d'Or: A Celebration of the Great Wines of Burgundy), from the refuter's reading"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "Olivier Leflaive names both a separate négociant house and its living founder; it stays in the label line and the trap as the house's name, as the library has it, and is not added to people.json, which would refuse the trap. The integrator should rule.",
+      "Vincent Leflaive's year of birth, 1921, was confirmed in no page."
+     ]
+    },
+    {
+     "key": "comtes-lafon",
+     "tested": [
+      "founded left empty (the plan says the 1890s); the founder's marriage into Meursault and his holdings, Clos de la Barre and the Le Montrachet parcel (library); the Paulée of 1923 and its literary prize paid in Meursault; sharecropping in the mid twentieth century; the founder's great grandson in charge from 1984; biodynamic from 1998; Héritiers du Comte Lafon from 1999 (library)",
+      "Les Perrières south of the village towards Puligny, above Les Charmes, named for its quarries; Meursault with no grand cru (library trap); Volnay Santenots-du-Milieu from Meursault land (library); barrel ageing in cold cellars",
+      "the label words; the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "story",
+       "was": "Jules Lafon, the domaine's founder, married into Meursault in the 1890s",
+       "now": "The domaine's founder married into Meursault in the 1890s",
+       "why": "The long dead are named with their dates, and his were found in no source; the house's name still carries the family.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "table",
+       "was": "Lafon's Meursault Perrières, from a stony premier cru towards Puligny, is the wine most often argued for one",
+       "now": "Lafon's Meursault Perrières comes from the stony premier cru towards Puligny most often argued for one",
+       "why": "It is the climat that is argued for a grand cru, as the story and the library say, not one house's wine.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The founder's own purchase of the Le Montrachet parcel, rather than a later generation's, rests on the author's and the refuter's reading alone."
+     ]
+    },
+    {
+     "key": "coche-dury",
+     "tested": [
+      "founded left empty; Charlemagne, about 747 to 814, and the gift of 775 to the abbey of Saulieu, told as a story; the beard legend; Corton-Charlemagne a grand cru of 1937 over Aloxe-Corton, Pernand-Vergelesses and Ladoix-Serrigny (Codex, w-corton-charlemagne); the Coche and Dury marriage of the 1970s; the handover of 2010; the Hospices of 1443 and Cîteaux of 1098",
+      "the making: long lees ageing and reduction (library style line); the share of new wood and the stirring, which the refuter could not settle; the small parcel and small quantity (library)",
+      "the label words; struck match as reduction, not cork taint; the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "wine.making, story, cards[1].back, questions[0].exp",
+       "was": "few of them new, with little stirring; mostly old barrels; the domaine uses mostly old barrels",
+       "now": "oak barrels and long lees ageing, with no claim on new wood or stirring; the explanation now says what cork taint would smell of",
+       "why": "The refuter's reading gives the grand cru a fair share of new wood while the library says old barrels; neither could be settled, so the claim is taken out.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Côte d'Or literature (Côte d'Or: A Celebration of the Great Wines of Burgundy), from the refuter's reading"
+       ]
+      },
+      {
+       "field": "story",
+       "was": "the rarest bottle a list may hold from the house",
+       "now": "cut",
+       "why": "A claim of rank the refuter could not settle: the domaine's other smallest crus are made in like quantity.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The years of the marriage (the 1970s) and of the handover (2010) rest on the author's and the refuter's reading; no page confirmed them."
+     ]
+    },
+    {
+     "key": "marquis-dangerville",
+     "tested": [
+      "founded left empty; the purchase of 1804 and the descent to the Marquis d'Angerville; the Marquis of the 1920s against fraud, the merchants' boycott and estate bottling (library why line); the son's half century until 2003; the Pinot d'Angerville selection; biodynamics and Domaine du Pélican in Arbois in 2012 (library)",
+      "Clos des Ducs a walled premier cru monopole beside the village (library); Volnay with no grand cru; Taillepieds and Champans (library wine notes); a pale, fine style with little new oak (library style line)",
+      "the label words; the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "story",
+       "was": "In 1804 the Baron du Mesnil bought the estate",
+       "now": "In 1804 a forebear of the family bought the estate",
+       "why": "A long dead person is named with dates or described; the baron's were found nowhere.",
+       "sources": [
+        "The Côte d'Or literature (Côte d'Or: A Celebration of the Great Wines of Burgundy), from the refuter's reading"
+       ]
+      },
+      {
+       "field": "table, wine.label[1].means",
+       "was": "named for the Dukes of Burgundy, who held vines at Volnay",
+       "now": "named, as the story goes, for the Dukes of Burgundy",
+       "why": "The story itself tells the name as a story; the table and the label now hedge it the same way.",
+       "sources": [
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "wine.label[2]",
+       "was": "Monopole: The whole climat is in the domaine's hands; no one else makes Clos des Ducs.",
+       "now": "Mis en bouteille au domaine: Bottled at the domaine, as the Marquis began to do in the 1920s in defiance of the merchants.",
+       "why": "The refuter could not confirm that the label prints Monopole; the monopole stays in the classification, the traps and the second card.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The Marquis of the 1920s and his son are described, never named, their dates not found in two sources."
+     ]
+    },
+    {
+     "key": "bouchard",
+     "tested": [
+      "founded 1731 (library) by a cloth merchant from the Dauphiné; the son's first vineyards in the 1770s; Sister Marguerite du Saint-Sacrement, 1619 to 1648, and the birth of Louis XIV in 1638, told as a story; the purchase of 1791 at the sale of church land; the Château de Beaune, built for Louis XI in the fifteenth century, bought in 1820 (library: the cellars inside it); the sale to the Henriot family in 1995 and their purchase of William Fèvre in 1998 (consistent with the Chablis record)",
+      "Grèves on the middle of the Beaune slope, named for its gravel; the parcel a monopole within it (library); Clos de la Mousse, Ancienne Cuvée Carnot and La Cabotte (library)",
+      "the label words; Bouchard Aîné et Fils a separate house (library trap); the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "others[1].note",
+       "was": "The house's other monopole in Beaune.",
+       "now": "Another of the house's monopoles among the Beaune premiers crus.",
+       "why": "In the refuter's reading the house holds more than one other monopole in Beaune, so the other says too much.",
+       "sources": [
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "questions[1].exp",
+       "was": "the Hospices kept their vineyards",
+       "now": "its name recalls a Carmelite's devotion, not the Dukes or Cîteaux",
+       "why": "What became of the Hospices' vineyards at the Revolution was not confirmed; the new clause says why the nearest distractors fail.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The library calls Ancienne Cuvée Carnot a premier cru monopole in Volnay; the record's cuvée from Caillerets is kept, as the library's own holdings line has it."
+     ]
+    }
+   ]
   }
  },
  "tension": [
@@ -343,6 +557,24 @@
    "field": "holdings",
    "says": "a monopole since it was planted by the Bernardine nuns of Notre-Dame de Tart in 1141",
    "finding": "Most accounts have the nuns acquire an existing vineyard in 1141 rather than plant it; the flagship says acquired."
+  },
+  {
+   "record": "p-maison-bouchard",
+   "field": "wines[1].note",
+   "says": "Volnay Caillerets Ancienne Cuvée Carnot: Premier cru monopole in Volnay",
+   "finding": "The library's own holdings line calls it the Volnay Caillerets cuvée; Caillerets is shared by several owners, so the wine is a cuvée of the house, not a monopole of a climat."
+  },
+  {
+   "record": "p-coche-dury",
+   "field": "style and wines[1].note",
+   "says": "Deliberate reduction, long lees ageing and old barrels; Corton-Charlemagne the rarest wine in the range",
+   "finding": "Not settled: the refuter's reading gives the grand cru a fair share of new wood, and the domaine's other smallest crus are made in like quantity; the flagship claims neither."
+  },
+  {
+   "record": "p-dom-leflaive and p-olivier-leflaive",
+   "field": "traps and the house name",
+   "says": "Domaine Leflaive is not Olivier Leflaive, a separate negociant house",
+   "finding": "Olivier Leflaive is a house and its living founder at once; the flagship keeps the house's name for the trap and does not list the person, for the integrator to rule."
   }
  ]
 }
