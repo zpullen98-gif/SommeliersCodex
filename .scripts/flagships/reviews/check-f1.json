@@ -136,6 +136,175 @@
      ]
     }
    ]
+  },
+  "burgundy-nuits": {
+   "verdict": "five records changed (each gains the library as its https source; three have facts set right or softened); all five sound under the chunk lint with a checker's record",
+   "records": [
+    {
+     "key": "romanee-conti",
+     "tested": [
+      "founded 1869 (library); the priory of Saint-Vivant in the Middle Ages and the name La Romanée by the seventeenth century; the Prince de Conti's purchase of 1760 and his dates, 1717 to 1776; Madame de Pompadour, 1721 to 1764, told as a story; the sale at the Revolution; the heirs of 1869, La Tâche in 1933 (library, w-la-tache), the société civile of 1942 with the Leroy family (library); the last ungrafted harvest of 1945, the replanting of 1947 and no wine until the early 1950s (library, w-romanee-conti)",
+      "the vineyard's neighbours (La Romanée above, Richebourg north, La Grande Rue south, Romanée-Saint-Vivant below); whole bunches and new oak (library style line); the six grands crus of Vosne and the Flagey crus (Codex trap); the label words, Bouteilles récoltées with the bottle's number among them",
+      "the cards and questions, one key each"
+     ],
+     "changes": [
+      {
+       "field": "story, cards[0].back, questions[1].q",
+       "was": "the vineyard has carried his name ever since; the buyer's name has stayed with it",
+       "now": "the vineyard came to carry his name; it came to carry the buyer's name",
+       "why": "Accounts differ on whether Conti joined the name at the purchase of 1760 or at the sale of the Revolution, when it was sold as Romanée-Conti; the softer line is true either way.",
+       "sources": [
+        "The Oxford Companion to Wine, from the refuter's reading",
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "wine.label[1]",
+       "was": "Monopole: The whole vineyard is in the domaine's hands, so every Romanée-Conti is the domaine's own.",
+       "now": "Société Civile: The label names the owner as a société civile, the company the two families formed in 1942 to hold the domaine.",
+       "why": "The refuter could not confirm that the label prints Monopole; it does name the Société Civile du Domaine de la Romanée-Conti, and the library dates the société civile to 1942.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": []
+    },
+    {
+     "key": "armand-rousseau",
+     "tested": [
+      "founded left empty (the library says early twentieth century); Armand Rousseau, 1884 to 1959, and Charles Rousseau, 1923 to 2016, his taking charge in 1959; domaine bottling in the 1930s at a Paris writer's urging (library why line); Gevrey adding Chambertin to its name in 1847; Clos de Bèze and the abbey in the seventh century (library, w-chambertin-clos-de-beze); Bertin's field and Napoleon's watered Chambertin, told as legend",
+      "Chambertin between Clos de Bèze to the north and Latricières to the south; destemmed fruit and new oak for the grands crus (library style line); Chambertin denser and slower than the Bèze (library wine note); Clos Saint-Jacques and its five owners, the largest share Rousseau's (library, w-clos-saint-jacques); Clos des Ruchottes a monopole within Ruchottes-Chambertin",
+      "the label words, the cards and the questions; the selling rule between the two crus"
+     ],
+     "changes": [
+      {
+       "field": "others[0].note",
+       "was": "The neighbouring grand cru, the older of the two, and the domaine's most complete wine in the library's account.",
+       "now": "The neighbouring grand cru to the north, the older vineyard of the two, which may also be sold as Chambertin.",
+       "why": "A shipped note should not cite the library as its source, and most complete ranks; the new note teaches the place and the selling rule.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": []
+    },
+    {
+     "key": "comte-georges-de-vogue",
+     "tested": [
+      "founded left empty; vines in Chambolle since the fifteenth century and the marriage of 1766 into the de Vogüé family; Comte Georges de Vogüé, 1898 to 1987, in charge from 1925; Musigny a grand cru of the 1930s; the larger part of Musigny with all of Les Petits Musigny (library, w-musigny); the one Côte de Nuits grand cru allowed white (Codex trap)",
+      "the white sold as Bourgogne Blanc from the 1994 vintage and Musigny again from the 2015 vintage (the Codex primers and the refuter's reading, against the library's trap); only the older vines in the Vieilles Vignes, the younger to the Chambolle premier cru (library trap); Musigny beside the upper wall of the Clos de Vougeot; Les Amoureuses below it",
+      "the label words, Vieilles Vignes unregulated; the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "Comte Georges de Vogüé's year of birth, 1898, agrees with the refuter's reading but was confirmed in no page."
+     ]
+    },
+    {
+     "key": "georges-roumier",
+     "tested": [
+      "founded 1924 (library) and the founder's coming to Chambolle by marriage; the son in charge from 1961, the grandson from the early 1980s; Bonnes-Mares a grand cru of the 1930s straddling Chambolle and Morey, its terres rouges and terres blanches, the domaine drawing on both (library why line); the two readings of the name",
+      "Clos de la Bussière a walled premier cru monopole in Morey (library); the sliver of Musigny; whole bunches used sparingly and restrained oak (library style line)",
+      "the label words; the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "story",
+       "was": "The founder's son took charge in 1961 and widened the domaine's reach, adding the walled Clos de la Bussière in Morey-Saint-Denis, which it holds whole, and the founder's grandson joined him in the early 1980s.",
+       "now": "The founder's son took charge in 1961, and the founder's grandson joined him in the early 1980s; by then the domaine held the walled Clos de la Bussière in Morey-Saint-Denis whole.",
+       "why": "The refuter's reading puts the purchase of the Clos under the founder, in the 1950s, not under the son; with no page to settle the year, the story says only that the domaine held it whole by the early 1980s.",
+       "sources": [
+        "The Côte d'Or literature (Côte d'Or: A Celebration of the Great Wines of Burgundy), from the refuter's reading",
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      },
+      {
+       "field": "wine.label[1]",
+       "was": "Domaine Georges Roumier: The domaine's name, after its founder of 1924.",
+       "now": "Grand Cru: The rank above Premier Cru, printed with the vineyard's name.",
+       "why": "The labels are often read as Domaine G. Roumier; the refuter could not confirm the form printed, and the brief asks for the plain terms when unsure.",
+       "sources": [
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The year the domaine bought Clos de la Bussière (1953 in the refuter's reading) is left out."
+     ]
+    },
+    {
+     "key": "clos-de-tart",
+     "tested": [
+      "founded 1141 and the Cistercian nuns of Notre-Dame de Tart (library, which calls them Bernardine, a Cistercian order); the sale of 1791 to the Marey-Monge family; the Mommessin family from 1932, merchants of the Mâconnais; the sale to Artémis Domaines in 2017 (library); grand cru when the appellations were drawn",
+      "the clos between Clos des Lambrays and Bonnes-Mares; rows across the slope (library style line); vinified by parcel; La Forge de Tart from the younger vines (library); Morey's four grands crus of its own and its slice of Bonnes-Mares (Codex trap)",
+      "the label words; the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "story",
+       "was": "They walled it and held it for six and a half centuries",
+       "now": "They held it for six and a half centuries",
+       "why": "Who built the wall was not confirmed; the nuns' holding from 1141 to 1791 stands.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "sources, report",
+       "was": "two reference books, no https source; a report line saying DRAFT, NOT YET SOURCED",
+       "now": "the Codex's own library, read in place, first among the sources; the report line says how the record is sourced",
+       "why": "The draft failed the lint for want of an https source and no page could be opened; the library is the one https source chunks f2 and f3 also use.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The year Clos de Tart was ranked grand cru (1939 in the author's and the refuter's reading) is told only as when the appellations were drawn."
+     ]
+    }
+   ]
   }
  },
  "tension": [
@@ -156,6 +325,24 @@
    "field": "style",
    "says": "in stainless steel since about 1980",
    "finding": "The plan says since the 1960s; neither could be settled here, and the flagship says the second half of the twentieth century."
+  },
+  {
+   "record": "p-comte-georges-de-vogue and w-musigny",
+   "field": "why and traps",
+   "says": "the white declassified to Bourgogne Blanc since the 1994 vintage; has been sold as Bourgogne Blanc since 1994",
+   "finding": "Out of date: the Musigny name returned to the white with the 2015 vintage, as the Codex's own primers say; the flagship tells it so, and the two library lines should say from 1994 to 2014."
+  },
+  {
+   "record": "w-romanee-conti",
+   "field": "holdings",
+   "says": "Bought by the Prince de Conti in 1760, which is when it took his name",
+   "finding": "Accounts differ: several date the name Romanée-Conti to the sale of the Revolution; the flagship says only that the vineyard came to carry his name."
+  },
+  {
+   "record": "w-clos-de-tart",
+   "field": "holdings",
+   "says": "a monopole since it was planted by the Bernardine nuns of Notre-Dame de Tart in 1141",
+   "finding": "Most accounts have the nuns acquire an existing vineyard in 1141 rather than plant it; the flagship says acquired."
   }
  ]
 }
