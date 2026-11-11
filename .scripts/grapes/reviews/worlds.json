@@ -1,0 +1,847 @@
+{
+ "review": "worlds",
+ "date": "2026-11-11",
+ "role": "The second lens on every Old World and New World entry of the Grapes tab, read across the set to refute it: the mode of each grape by the appendix’s rule, each generalisation and its hedge, the blur, the blind call, the agreement of the entries with one another and with the Codex region records, the three rows of each side read across, and the compare tell of each pair from both sides.",
+ "method": [
+  "BRIEF.md and plan.json read whole, then the worlds field, the glass ladder and the worlds question of all 75 fragments printed side by side, contrast grapes together and home grapes together.",
+  "Each mode put to the appendix’s rule as the plan applies it: a grape takes the side by side when a guest meets a recognised style of it from both worlds, and abroad following the home style is no second style (the plan keeps Albariño, Vermentino, Pinot Blanc and Meunier at home on that ground). A side by side whose New World side is thin goes home; a home grape met in two styles from both worlds would go side by side, and none was found.",
+  "The pairs the brief names read against each other: Chardonnay with Pinot Noir on Burgundy, California and the cool New World; Cabernet Sauvignon with Merlot and Cabernet Franc on Bordeaux, Napa and the Tuscan coast; Syrah with Grenache and Mourvèdre on the Rhône, the Barossa and blending; Sauvignon Blanc with Sémillon on Bordeaux and Margaret River.",
+  "Every ladder set beside the Court’s grid where the grid speaks (all twenty agree, the Yarra Valley on the Syrah ladder read as the cool corner of a state the grid calls warm), and every place that two ladders name collected and its climates compared (Napa, Sonoma, the Central Coast, Paso Robles, McLaren Vale, the Willamette Valley, Virginia, Württemberg, Irpinia, Friuli, Jerez, Navarra, Rioja, the Douro and others); a difference stands where the Court’s own way would make it (different sites, or an early against a late grape) and is fixed where one entry contradicts another or a Codex record.",
+  "The worlds rows of each side by side read across for the same rows: the glass rows checked for acidity, alcohol, body and, in reds, tannin on both sides; the clear gaps closed within the caps.",
+  "The compare tells of every pair read from both sides (161 pairs, 58 of them with a tell each way): no pair contradicts itself, and every parentage named (Cabernet Franc to Cabernet Sauvignon, Merlot and Carmenère; Blaufränkisch to Zweigelt; Touriga Nacional to Touriga Franca; Riesling to Müller-Thurgau; Syrah to Petite Sirah; Cinsault to Pinotage) is true.",
+  "The Codex region records read where they speak (js/regions, every grape row and every string naming the grape), and six web searches for what the records do not settle. No writing build was run; 75 of 75 sound under --lint."
+ ],
+ "count": {
+  "contrast": 24,
+  "home": 51,
+  "was": {
+   "contrast": 27,
+   "home": 48
+  },
+  "moved": [
+   "gamay",
+   "grenache-blanc",
+   "roussanne"
+  ],
+  "sideBySide": [
+   "chardonnay",
+   "chenin-blanc",
+   "gewurztraminer",
+   "muscat-blanc",
+   "pinot-grigio",
+   "riesling",
+   "sauvignon-blanc",
+   "viognier",
+   "cabernet-franc",
+   "cabernet-sauvignon",
+   "grenache",
+   "malbec",
+   "merlot",
+   "pinot-noir",
+   "syrah",
+   "zinfandel",
+   "semillon",
+   "marsanne",
+   "carignan",
+   "mourvedre",
+   "barbera",
+   "tannat",
+   "carmenere",
+   "cinsault"
+  ]
+ },
+ "grapes": {
+  "albarino": {
+   "mode": "home",
+   "verdict": "Home holds. Uruguay, California and New Zealand follow the Atlantic style rather than set a second one; the ladder agrees with the grid (Rías Baixas cool).",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record rias-baixas (js/regions)"
+   ]
+  },
+  "chardonnay": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain by the appendix and TASTE.world both. Burgundy against California agrees with the Pinot Noir entry (the same cool sites in the blur, Oregon and the Sonoma Coast), and the ladder with the grid: Chablis and the Côte de Beaune cool, Napa, Sonoma and the Central Coast moderate. The call (chalk and acidity against pineapple, butter and vanilla) survives a flight.",
+   "change": [
+    "questions, the worlds question: its explanation called Napa a warm New World site while the ladder and the grid hold Napa moderate for Chardonnay; it now reads a sunny New World site."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "the ladder of the same entry"
+   ]
+  },
+  "chenin-blanc": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain by the appendix. The Loire against the Cape is fairly hedged; the blur admits rich Savennières and taut, unwooded Cape wines; the call of chalk, wet wool and piercing acidity against pineapple, guava and barrel vanilla holds in a flight of Vouvray and Swartland.",
+   "change": [
+    "worlds.contrast.new.glass: the Cape side stated no acidity or alcohol while the Loire side states both; it now reads a fuller body, more alcohol and acidity a notch lower, in place of a line on everyday bottles that the cellar row already gives."
+   ],
+   "source": [
+    "Codex region record loire (js/regions)",
+    "Codex region record swartland (js/regions)",
+    "Codex region record south-africa (js/regions)",
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "gewurztraminer": {
+   "mode": "contrast",
+   "verdict": "Side by side holds: Alsace against a lighter, fresher, lower alcohol wine from cool New World sites, which the Codex Chile, Finger Lakes, Marlborough and Central Otago records describe. But the entry called New Zealand lighter and less oily, while the Codex New Zealand and Gisborne records call Gisborne Gewürztraminer oily and usually just off dry, much as Alsace is.",
+   "change": [
+    "worlds.contrast.new.where: the Anderson Valley, the Finger Lakes, Washington, New Zealand and Chile, Chile added on the Codex Casablanca and Bío Bío records.",
+    "worlds.contrast.new.glass: paler, lighter and fresher at lower alcohol, with a little more acidity and often less sweetness, dry to off dry; the claim of less oily weight across the New World is gone.",
+    "worlds.contrast.blur: names Gisborne, oily and just off dry, as the New World wine that comes close to Alsace, in place of New Zealand late harvest wines.",
+    "worlds.contrast.call and the blind call card: the New World leans on a paler, fresher wine at lower alcohol rather than on dryness, since Washington and Gisborne are often off dry.",
+    "lines.s45: California’s cool coast, not New Zealand, is the lighter and fresher example."
+   ],
+   "source": [
+    "Codex region record new-zealand (js/regions)",
+    "Codex region record gisborne (js/regions)",
+    "Codex region record marlborough (js/regions)",
+    "Codex region record aconcagua-casablanca (js/regions)",
+    "Codex region record itata-bio-bio (js/regions)",
+    "Codex region record finger-lakes (js/regions)",
+    "Codex region record columbia-valley (js/regions)",
+    "Codex region record alsace (js/regions)"
+   ]
+  },
+  "gruner-veltliner": {
+   "mode": "home",
+   "verdict": "Home holds. Abroad is a scatter of plantings under the grape’s own name with no style of its own.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "muscat-blanc": {
+   "mode": "contrast",
+   "verdict": "Side by side holds: Asti and the vins doux naturels against Rutherglen Muscat, a recognised style from the red skinned form of Muscat à Petits Grains (the Codex Rutherglen and Australia records), with Vin de Constance beside it. The ladder is honest that the warm rung is sweet, fortified wine.",
+   "change": [
+    "worlds.contrast.new.cellar: gains California Moscato, made in tank, so the cellar row covers both New World styles that the glass row names; Rutherglen still shrivels its grapes on the vine, fortifies early and ages in old casks."
+   ],
+   "source": [
+    "Codex region record rutherglen (js/regions)",
+    "Codex region record australia (js/regions)",
+    "Codex region record constantia (js/regions)",
+    "Codex region record piedmont (js/regions)"
+   ]
+  },
+  "pinot-grigio": {
+   "mode": "contrast",
+   "verdict": "Sound. Three poles honestly drawn (Alsace, north east Italy, Oregon in between), the label cue of Gris and Grigio fair, and the ladder agrees with the grid (Friuli and Alto Adige cool).",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record alsace (js/regions)",
+    "Codex region record oregon (js/regions)"
+   ]
+  },
+  "riesling": {
+   "mode": "contrast",
+   "verdict": "Sound. The Mosel and the Wachau against the Clare and Eden Valleys; the blur admits trocken Germany and off dry Finger Lakes; the warm Clare rung of lime cordial and early petrol is honest about a sunny site; the grid holds the Mosel and the Rheingau cool.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record clare-valley (js/regions)",
+    "Codex region record mosel (js/regions)"
+   ]
+  },
+  "sauvignon-blanc": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain, TASTE.world both. Agrees with the Sémillon entry: Bordeaux and Margaret River blend the two, Pessac-Léognan ferments in barrel. The grid holds Sancerre and Marlborough cool, as the ladder does; the call of flint and restraint against passion fruit and guava survives a flight.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record marlborough (js/regions)",
+    "Codex region record loire (js/regions)",
+    "Codex region record bordeaux (js/regions)"
+   ]
+  },
+  "torrontes": {
+   "mode": "home",
+   "verdict": "Home holds. A New World grape at home in Argentina, as the brief asks; abroad names Galicia’s unrelated Torrontés; the grid holds Salta and Mendoza warm.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js"
+   ]
+  },
+  "viognier": {
+   "mode": "contrast",
+   "verdict": "Sound. Condrieu against California, Virginia, the Eden Valley and the Cape; the Codex Virginia record (full, round, dry, apricot, peach and honeysuckle, sometimes a touch of oak) agrees with the New World glass.",
+   "change": [],
+   "source": [
+    "Codex region record virginia (js/regions)",
+    "Codex region record rhone (js/regions)",
+    "Codex region record barossa-eden (js/regions)"
+   ]
+  },
+  "cabernet-franc": {
+   "mode": "contrast",
+   "verdict": "Sound. The Loire against warmer New World sites; the blur names the Finger Lakes and Ontario as Loire like and the Tuscan coast and Villány as ripe Old World; Virginia moderate agrees with the Codex Virginia record (medium bodied reds of red fruit, herbs and graphite).",
+   "change": [
+    "worlds.contrast.new.glass: adds more alcohol, since the Loire side states moderate alcohol and the riper side said nothing of it; roasted red pepper reads roasted pepper, as the call has it, to hold the entry at 899 words."
+   ],
+   "source": [
+    "Codex region record loire (js/regions)",
+    "Codex region record virginia (js/regions)",
+    "Codex region record finger-lakes (js/regions)"
+   ]
+  },
+  "cabernet-sauvignon": {
+   "mode": "contrast",
+   "verdict": "Sound in the main; agrees with Merlot and Cabernet Franc on Bordeaux moderate and Napa warm, as the grid has it. Two faults: the old side names Bolgheri while its glass is Bordeaux’s and nothing admitted the riper Tuscan coast that the Merlot and Cabernet Franc blurs name; and the blur called Coonawarra and Margaret River cool where the ladder holds them moderate.",
+   "change": [
+    "worlds.contrast.blur: Coonawarra and Margaret River keep a leafy edge close to Bordeaux, while Bolgheri on the Tuscan coast and warm recent years in Bordeaux give riper, fuller wines."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record tuscany (js/regions)",
+    "the Merlot and Cabernet Franc blurs"
+   ]
+  },
+  "gamay": {
+   "mode": "home",
+   "verdict": "MOVED from side by side to home and abroad, with plan.json. Oregon and Ontario make Gamay in the same bright style as Beaujolais, much of it with whole bunches in the Beaujolais manner: the Codex Oregon and Willamette Valley records say so, and Ontario’s wine authority describes fresh, fruity wines of high acidity and soft tannin. The entry’s New World side, a darker, rounder wine made as Pinot Noir is made, rested on one trade magazine against the Codex and could not survive a blind flight. The plan already keeps Albariño, Vermentino and Pinot Blanc at home for the same reason: abroad follows the home style.",
+   "change": [
+    "worlds: home and abroad in place of the side by side; home is Beaujolais, whole bunches in a sealed vat, the firmer crus, Touraine and the Valais; abroad is Oregon and Ontario in the same bright style.",
+    "lines.s45: Oregon and Ontario now make it in the same bright style, in place of a little darker and rounder.",
+    "cards[1]: the blind call card becomes Gamay abroad, where it is bottled under its own name and how.",
+    "questions[0]: the worlds question (Beaujolais against Oregon and Ontario, keyed on banana) loses its tag and becomes a blind glass asking which method gives banana and bubblegum; whole bunches in a sealed vat is the key.",
+    "report: a line records the move."
+   ],
+   "source": [
+    "Codex region record oregon (js/regions)",
+    "Codex region record willamette-valley (js/regions)",
+    "Codex region record canada (js/regions)",
+    "Codex region record beaujolais (js/regions)",
+    {
+     "title": "Wine Country Ontario: signature varieties",
+     "url": "https://winecountryontario.ca/varieties/"
+    },
+    {
+     "title": "VQA Ontario: terroir one pager, Gamay",
+     "url": "https://learn.vqaontario.ca/wp-content/uploads/2026/06/TERROIR-ONE_PAGERS-GAMAY-2025-EN5.pdf"
+    },
+    {
+     "title": "Unicorn Auctions review: Oregon Gamay",
+     "url": "https://www.unicornauctions.com/unicorn-review/oregon-gamay-next-great-red-wines"
+    }
+   ]
+  },
+  "grenache": {
+   "mode": "contrast",
+   "verdict": "Sound. Agrees with Syrah and Mourvèdre: both worlds grow it in heat, the Rhône blends it and names the place, the New World more often bottles it alone; the grid holds Châteauneuf-du-Pape and Gigondas warm, as the ladder does. Gredos and old vine Barossa are the honest exceptions.",
+   "change": [
+    "worlds.contrast.new.glass: the New World side now states its alcohol (much the same), as the Old World side states high alcohol; a sweet, candied edge reads candied to keep the cap."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record rhone (js/regions)",
+    "Codex region record mclaren-vale (js/regions)"
+   ]
+  },
+  "malbec": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain by the appendix. Cahors at 70 per cent against Mendoza; the blur admits modern Cahors and the high Uco and Patagonia; the grid holds Mendoza warm.",
+   "change": [
+    "worlds.contrast.old.glass: adds less alcohol, which the call leans on and the side did not state."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record south-west-france (js/regions)",
+    "Codex region record mendoza (js/regions)"
+   ]
+  },
+  "merlot": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain, TASTE.world both. Agrees with Cabernet Sauvignon (the Right Bank blends with Cabernet Franc and some Cabernet Sauvignon, Napa warm) and with the grid (Pomerol and Saint-Émilion moderate, Napa and Sonoma warm). The blur names Washington, Hawke’s Bay and the Tuscan coast.",
+   "change": [
+    "worlds.contrast.new.glass: adds rounder tannin, since the Old World side states fine tannin and the New World side named none."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record bordeaux (js/regions)"
+   ]
+  },
+  "nebbiolo": {
+   "mode": "home",
+   "verdict": "Home holds. No settled style abroad, and the caution that some Baja vines so named are not Nebbiolo is fair; the grid holds Barolo and Barbaresco moderate, as the ladder does.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js"
+   ]
+  },
+  "pinot-noir": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain, TASTE.world both. Agrees with Chardonnay on Burgundy, Oregon, Tasmania and the Sonoma Coast, and with the grid: the Côte d’Or and the Willamette Valley cool, Carneros, Sonoma and the Central Coast moderate. The worlds question keys the Russian River Valley, inside the moderate rung.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record burgundy (js/regions)",
+    "Codex region record willamette-valley (js/regions)"
+   ]
+  },
+  "sangiovese": {
+   "mode": "home",
+   "verdict": "Home holds. California, Washington and McLaren Vale bottle a little with no one style; Corsica’s Nielluccio is the Old World abroad; the grid holds Montalcino and Chianti Classico moderate.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js"
+   ]
+  },
+  "syrah": {
+   "mode": "contrast",
+   "verdict": "Sound. Certain, TASTE.world both. Agrees with Grenache and Mourvèdre; the grid holds the northern Rhône moderate and Australia warm. The Yarra Valley sits on the moderate rung though the grid reads Victoria warm in the broad; the Yarra is the cool corner of that state and the line stands.",
+   "change": [
+    "worlds.contrast.new.glass: adds rounder tannin against the Old World side’s firm tannin; above all as Australian Shiraz reads above all Australian Shiraz to keep the cap."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record rhone (js/regions)",
+    "Codex region record barossa-eden (js/regions)"
+   ]
+  },
+  "tempranillo": {
+   "mode": "home",
+   "verdict": "Home holds. Australia, southern Oregon and Texas grow it without a style a guest knows by name; the grid holds Rioja moderate.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js"
+   ]
+  },
+  "zinfandel": {
+   "mode": "contrast",
+   "verdict": "Sound. Primitivo in Puglia against California, certain by the appendix; the blur admits plush Puglian cellars and earlier picked California; the grid holds Napa and Sonoma warm.",
+   "change": [],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record puglia (js/regions)"
+   ]
+  },
+  "assyrtiko": {
+   "mode": "home",
+   "verdict": "Home holds. The rule that dry Santorini is at least 85 per cent Assyrtiko agrees with the Codex Santorini record and the national body; older guides give 75.",
+   "change": [],
+   "source": [
+    "Codex region record santorini (js/regions)",
+    {
+     "title": "Wines of Greece: PDO Santorini",
+     "url": "https://winesofgreece.org/?p=1094"
+    }
+   ]
+  },
+  "furmint": {
+   "mode": "home",
+   "verdict": "Home holds. Tokaj, Somló, Slovenia’s Šipon and Rust are all Old World; nothing abroad sets a style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "semillon": {
+   "mode": "contrast",
+   "verdict": "Sound in its side by side; agrees with Sauvignon Blanc on Bordeaux and Margaret River. The ladder was not honest about climate: its moderate rung held Sauternes and Barsac with apricot and honey, which noble rot gives, not the climate.",
+   "change": [
+    "glass.ladder: the moderate rung now reads Graves, Pessac-Léognan and Margaret River, made dry, with lemon, beeswax and lanolin, the notes of the reviewed profile; the warm rung keeps the Hunter Valley picked early and the riper Barossa."
+   ],
+   "source": [
+    "GRAPES Sémillon, js/reference.js",
+    "Codex region record hunter-valley (js/regions)",
+    "Codex region record margaret-river (js/regions)",
+    "Codex region record bordeaux (js/regions)"
+   ]
+  },
+  "melon-de-bourgogne": {
+   "mode": "home",
+   "verdict": "Home holds. The California Pinot Blanc that proved to be Melon, and Oregon’s few bottles in the same lean style, are fairly told.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "vermentino": {
+   "mode": "home",
+   "verdict": "Home holds. Australia and California keep the home style of lime, salt and no oak.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "verdejo": {
+   "mode": "home",
+   "verdict": "Home holds. Its line that a bottle naming Verdejo is at least 85 per cent the grape stands by the European rule for one grape on a label; the Codex Rueda record still teaches the categories that 2019 merged; see unsettled.",
+   "change": [],
+   "source": [
+    "Codex region record rueda-toro (js/regions)",
+    {
+     "title": "DO Rueda: note on the pliego de condiciones of 2019",
+     "url": "https://www.dorueda.com/wp-content/uploads/2019/11/Nota-Pliego-condiciones-DO-Rueda.pdf"
+    }
+   ]
+  },
+  "godello": {
+   "mode": "home",
+   "verdict": "Home holds. Gouveio in the Douro is the only life abroad.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "savagnin": {
+   "mode": "home",
+   "verdict": "Home holds. The Valais as Heida and Australia’s mistaken Albariño are fairly told.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "marsanne": {
+   "mode": "contrast",
+   "verdict": "Side by side kept. Victoria’s unoaked Marsanne from the old Nagambie Lakes vineyards, fresh young and honeyed and toasty with bottle age, is a distinct, long recognised New World style, which Roussanne lacks. The Codex region records do not yet speak of Victoria; see unsettled.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read",
+    "search: the Nagambie Lakes Marsanne tradition, unwooded and long ageing"
+   ]
+  },
+  "petit-manseng": {
+   "mode": "home",
+   "verdict": "Home holds. Virginia’s dry to sweet wines are its life abroad, set on the warm rung, as the Codex Virginia record’s hot, humid Piedmont has it.",
+   "change": [],
+   "source": [
+    "Codex region record virginia (js/regions)"
+   ]
+  },
+  "xinomavro": {
+   "mode": "home",
+   "verdict": "Home holds. It barely travels.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "mencia": {
+   "mode": "home",
+   "verdict": "Home holds. Jaen in the Dão is Old World; nothing beyond Iberia.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "aglianico": {
+   "mode": "home",
+   "verdict": "Home holds. The high hills of Irpinia sit on its moderate rung; the Fiano ladder now places them there too, as one place should read on two entries; TASTE.clim calls the grape warm.",
+   "change": [],
+   "source": [
+    "TASTE Aglianico, js/data-tasting.js",
+    "Codex region record campania (js/regions)",
+    "Codex region record calabria-basilicata (js/regions)"
+   ]
+  },
+  "blaufrankisch": {
+   "mode": "home",
+   "verdict": "Home holds. Lemberger in Württemberg sits on the cool rung, a late grape at the edge of ripening as the Codex Württemberg record says; Meunier, an early grape, reads the same valley as moderate; see unsettled.",
+   "change": [],
+   "source": [
+    "Codex region record wurttemberg (js/regions)"
+   ]
+  },
+  "nerello-mascalese": {
+   "mode": "home",
+   "verdict": "Home holds. It hardly leaves Sicily.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "touriga-nacional": {
+   "mode": "home",
+   "verdict": "Home holds. Rutherglen, the Little Karoo and the Bordeaux trial are fairly told as plantings, not a style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "carignan": {
+   "mode": "contrast",
+   "verdict": "Side by side holds: Maule’s old dry farmed vines under VIGNO and California’s old vineyards are recognised styles (the Codex Chile and Curicó Maule records). The call is the weakest of the set; see unsettled.",
+   "change": [],
+   "source": [
+    "Codex region record chile (js/regions)",
+    "Codex region record curico-maule (js/regions)",
+    "Codex region record languedoc-roussillon (js/regions)",
+    "Codex region record priorat (js/regions)"
+   ]
+  },
+  "mourvedre": {
+   "mode": "contrast",
+   "verdict": "Sound. Bandol at least half Mourvèdre with eighteen months in wood against the Barossa’s Mataro and California; the blur admits ripe Jumilla and firm old vine Contra Costa; the call groups Spain with the New World, which is honest.",
+   "change": [],
+   "source": [
+    "Codex region record provence (js/regions)",
+    "Codex region record jumilla-yecla (js/regions)",
+    "Codex region record barossa-eden (js/regions)"
+   ]
+  },
+  "barbera": {
+   "mode": "contrast",
+   "verdict": "Side by side kept as the plan judged it: California has bottled Barbera since the nineteenth century and the Sierra Foothills style is one a guest meets. No Codex region record speaks of New World Barbera. The higher alcohol in the call is a weak tell; see unsettled.",
+   "change": [],
+   "source": [
+    "Codex region record piedmont (js/regions)",
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "corvina": {
+   "mode": "home",
+   "verdict": "Home holds. A few vineyards in Argentina and Australia, no style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "sagrantino": {
+   "mode": "home",
+   "verdict": "Home holds. Australia and California grow a few rows.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "tannat": {
+   "mode": "contrast",
+   "verdict": "Sound. TASTE.world both. Madiran against Uruguay; the blur admits supple modern Madiran and dark Cafayate.",
+   "change": [],
+   "source": [
+    "Codex region record south-west-france (js/regions)",
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "pinotage": {
+   "mode": "home",
+   "verdict": "Home holds. A New World grape at home at the Cape; abroad is a rarity.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "carmenere": {
+   "mode": "contrast",
+   "verdict": "Kept as the appendix fixes it (certain), though here the Old World side is the thin one: the Codex Bordeaux record calls it a curiosity of a few estates and no Codex region record names it in north east Italy. The Chile side agrees with the Codex Chile, Colchagua and Maipo records.",
+   "change": [],
+   "source": [
+    "Codex region record bordeaux (js/regions)",
+    "Codex region record chile (js/regions)",
+    "Codex region record colchagua (js/regions)"
+   ]
+  },
+  "roussanne": {
+   "mode": "home",
+   "verdict": "MOVED from side by side to home and abroad, with plan.json, as its own author foresaw. The Codex Central Coast and Swartland records hold New World Roussanne as a part of Rhône style blends; California’s plantings are small and mostly blended. The Old World side was itself mostly blends, so the side by side set a blend part beside a blend part. Marsanne keeps its side by side for Victoria’s own style.",
+   "change": [
+    "worlds: home and abroad; home is the Rhône blends with Marsanne and with Grenache Blanc and Clairette, and Chignin-Bergeron alone in Savoie; abroad is the Central Coast, Washington and the Swartland, mostly in blends, some alone, riper and broader.",
+    "lines.s45: California’s Central Coast usually makes it riper and more honeyed, in place of often bottles it alone.",
+    "cards[1]: the blind call card becomes Roussanne abroad, where it is grown and how it is mostly used.",
+    "questions[0]: the worlds question (Paso Robles keyed on baked pear) loses its tag and becomes a blind Saint-Joseph glass: which grape brings the scent, Roussanne against Marsanne, Viognier and Grenache Blanc.",
+    "report: a line records the move."
+   ],
+   "source": [
+    "Codex region record central-coast (js/regions)",
+    "Codex region record swartland (js/regions)",
+    "Codex region record rhone (js/regions)",
+    "Codex region record savoie (js/regions)",
+    {
+     "title": "Rhone Rangers: more about Roussanne",
+     "url": "https://rhonerangers.org/wine-education/white-grapes/more-about-roussanne"
+    },
+    {
+     "title": "Capstone California: Roussanne, wine growing areas",
+     "url": "https://capstonecalifornia.com/study-guides/varieties/white/roussanne/overview_wine_growing_areas"
+    }
+   ]
+  },
+  "garganega": {
+   "mode": "home",
+   "verdict": "Home holds. Sicily’s Grecanico is its only life abroad.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "cortese": {
+   "mode": "home",
+   "verdict": "Home holds. It hardly travels.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "glera": {
+   "mode": "home",
+   "verdict": "Home holds. Australia’s Prosecco is told honestly, with the name Europe keeps.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "silvaner": {
+   "mode": "home",
+   "verdict": "Home holds. Alsace, Alto Adige and the Valais are all Old World.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "pinot-blanc": {
+   "mode": "home",
+   "verdict": "Home holds. Oregon and California bottle a little in the quiet home style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "palomino": {
+   "mode": "home",
+   "verdict": "Home holds. The Canaries as Listán Blanco are its life abroad. Its ladder reads Jerez warm, while the Pedro Ximénez ladder reads Jerez moderate; see unsettled.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "cinsault": {
+   "mode": "contrast",
+   "verdict": "Side by side holds: the old vine revival of the Cape and Itata is a recognised style (the Codex South Africa, Swartland, Stellenbosch and Itata records). The ladder set the Swartland on the warm rung with ripe strawberry and thyme, against the entry’s own New World glass of raspberry, wild strawberry and rose petal.",
+   "change": [
+    "glass.ladder: the Swartland leaves the warm rung, which keeps the Languedoc, Provence, the southern Rhône and the Bekaa; Itata stays on the moderate rung."
+   ],
+   "source": [
+    "Codex region record swartland (js/regions)",
+    "Codex region record itata-bio-bio (js/regions)",
+    "Codex region record provence (js/regions)",
+    "Codex region record lebanon (js/regions)"
+   ]
+  },
+  "petit-verdot": {
+   "mode": "home",
+   "verdict": "Home holds. Bordeaux uses it as seasoning; the varietal wines of Virginia, California, Australia and central Spain are its life abroad, and a guest meets no Old World varietal style. The ladder set Virginia on the moderate rung beside the Médoc, against the entry’s own abroad (warmer places ripen it more surely) and the Codex Virginia record (it ripens fully in the long, warm season).",
+   "change": [
+    "glass.ladder: Virginia moves to the warm rung beside the Riverland, central Spain and California; the moderate rung keeps the Médoc, Graves and Margaret River."
+   ],
+   "source": [
+    "Codex region record virginia (js/regions)",
+    "Codex region record bordeaux (js/regions)",
+    "Codex region record margaret-river (js/regions)"
+   ]
+  },
+  "nero-d-avola": {
+   "mode": "home",
+   "verdict": "Home holds. Australia’s McLaren Vale and Riverland grow it for heat and drought, no settled style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "dolcetto": {
+   "mode": "home",
+   "verdict": "Home holds. Liguria’s Ormeasco is the life abroad.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "zweigelt": {
+   "mode": "home",
+   "verdict": "Home holds. Its neighbours, the Okanagan and Hokkaido grow it, no settled style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "meunier": {
+   "mode": "home",
+   "verdict": "Home holds. England, Tasmania and the Willamette Valley use it the Champagne way. The ladder set the Willamette Valley on the moderate rung as a still red, against the grid (the Willamette Valley cool for Pinot Noir), the Pinot Noir, Gamay, Pinot Blanc and Pinot Gris ladders (all cool there) and the Codex Willamette Valley record (Meunier is the third grape of its sparkling blends).",
+   "change": [
+    "glass.ladder: the Willamette Valley joins the cool rung with Champagne, England and Tasmania; the moderate rung reads Württemberg’s sheltered Neckar valley, as a soft still red, the Codex Württemberg record’s soft, pale Schwarzriesling in a valley that traps warmth."
+   ],
+   "source": [
+    "GRID_READS, js/data-grid.js",
+    "Codex region record willamette-valley (js/regions)",
+    "Codex region record wurttemberg (js/regions)",
+    "Codex region record tasmania (js/regions)"
+   ]
+  },
+  "petite-sirah": {
+   "mode": "home",
+   "verdict": "Home holds. France has all but given it up, so there is no Old World style to set beside California; Rutherglen’s Durif and Baja are fairly told.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "graciano": {
+   "mode": "home",
+   "verdict": "Home holds. Its Navarra sits on the warm rung while the Grenache ladder sets Navarra moderate; Navarra runs from cool north to hot south, and each grape is read where it grows; see unsettled.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "aligote": {
+   "mode": "home",
+   "verdict": "Home holds. It travelled east, to Old World vineyards.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "arneis": {
+   "mode": "home",
+   "verdict": "Home holds. Australia, Sonoma and Oregon make it in the same fresh way.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "fiano": {
+   "mode": "home",
+   "verdict": "Home holds. Its ladder read the high hills of Irpinia cool, while the Aglianico ladder reads the same hills moderate.",
+   "change": [
+    "glass.ladder: the Irpinia rung reads moderate, as on the Aglianico entry, 400 to 700 metres in the south with a wide swing between day and night (the Codex Campania record); the warm rung keeps the coast, Puglia, Sicily and McLaren Vale."
+   ],
+   "source": [
+    "Codex region record campania (js/regions)"
+   ]
+  },
+  "grenache-blanc": {
+   "mode": "home",
+   "verdict": "MOVED from side by side to home and abroad, with plan.json. The New World side is a handful of Central Coast bottles; the Codex Swartland and Paarl records hold Grenache Blanc only as a part of white blends, and no Codex record names it in California. The blind call (fennel and soft acidity against green apple and mandarin) rested on one valley’s style, and the New World glass carried liquorice where the Old World carried fennel, the same note.",
+   "change": [
+    "worlds: home and abroad; home is the southern Rhône, Roussillon, the Languedoc and Catalonia, a full, soft white of ripe pear, quince and fennel, mostly blended, alone in Terra Alta, fortified in Roussillon; abroad is the Central Coast, often alone and crisper, and the Swartland and Paarl in blends with Chenin Blanc.",
+    "lines.s45: Terra Alta, not Spain at large, bottles it alone, and the cold nights are those of Paso Robles, not of California at large.",
+    "cards[1]: the blind call card becomes the Swartland white blend it joins, led by Chenin Blanc (the Codex Swartland record).",
+    "questions[0]: the worlds question loses its tag and becomes the white of Priorat: Garnacha Blanca leads, Macabeu and Pedro Ximénez partner it (the Codex Priorat record); Parellada stands for Xarel·lo among the options so the key is not the longest by far.",
+    "report: a line records the move."
+   ],
+   "source": [
+    "Codex region record swartland (js/regions)",
+    "Codex region record paarl (js/regions)",
+    "Codex region record priorat (js/regions)",
+    "Codex region record languedoc-roussillon (js/regions)",
+    "Codex region record central-coast (js/regions)"
+   ]
+  },
+  "macabeo": {
+   "mode": "home",
+   "verdict": "Home holds. Roussillon’s Macabeu is Old World; it is rarely grown beyond.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "muller-thurgau": {
+   "mode": "home",
+   "verdict": "Home holds. Alto Adige, Switzerland, Luxembourg and Austria are all Old World.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "pedro-ximenez": {
+   "mode": "home",
+   "verdict": "Home holds. Its ladder reads Jerez and Sanlúcar moderate against Montilla-Moriles warm, while the Palomino ladder reads Jerez warm; the rung itself says hot too; see unsettled.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "trebbiano": {
+   "mode": "home",
+   "verdict": "Home holds. Ugni Blanc in Cognac, Gascony and Provence is Old World.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "verdicchio": {
+   "mode": "home",
+   "verdict": "Home holds. Trebbiano di Soave and Lugana are Italy.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "agiorgitiko": {
+   "mode": "home",
+   "verdict": "Home holds. Rare outside Greece.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "montepulciano": {
+   "mode": "home",
+   "verdict": "Home holds. Australia’s plantings are new and set no style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "touriga-franca": {
+   "mode": "home",
+   "verdict": "Home holds. Lodi grows a little, mostly for fortified wine.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  },
+  "lambrusco": {
+   "mode": "home",
+   "verdict": "Home holds. Lambrusco Maestri in Argentina and Australia sets no style.",
+   "change": [],
+   "source": [
+    "the fragment's own sources, re-read"
+   ]
+  }
+ },
+ "unsettled": [
+  "Gates that pin the old count: .scripts/check-grapes-table.js line 468 holds contrast.length to 27 and .wip/walk-grapes.mjs line 255 holds the Old World and New World index to 27 rows. Both must move to 24 when the integrator rebuilds js/data-grapes-table.js; the data file and keys.v1.json are now behind the fragments (three worlds questions reworded, several fields changed), as the integrator expects.",
+  "Carmenère stays side by side because the appendix names it certain, but its Old World side is the thin one: the Codex Bordeaux record calls it a curiosity and no Codex record names it in north east Italy. By the rule applied to Grenache Blanc and Roussanne it would go home; that is the owner’s call against the appendix.",
+  "Marsanne stays side by side on Victoria’s unoaked, long lived style, which rests chiefly on the old vineyards of the Nagambie Lakes; the Codex region records do not yet name Victorian Marsanne. A reviewer may judge it home as Roussanne now is.",
+  "Barbera stays side by side as the plan judged it, but no Codex region record speaks of New World Barbera, and the call’s higher alcohol is a weak tell, since Barbera d’Asti and Nizza often run high in alcohol too.",
+  "Carignan’s call (iron and a rustic grip against purer, juicier damson) is the weakest of the set: the Codex Chile and Curicó Maule records call Maule Carignan savoury and dried herb scented as well. Cinsault’s call leans on a rosé or a blend against a varietal red, a tell of the list more than of the glass.",
+  "Jerez reads warm on the Palomino ladder and moderate on the Pedro Ximénez ladder. The Pedro Ximénez rung says hot too, but the grape has no honest moderate home to put in its place, so the two stand and the owner should know.",
+  "Württemberg reads cool for the late Lemberger (Blaufränkisch, as its first checker set it from the Codex record) and moderate for the early Meunier, the Court’s own way with a place that ripens one grape easily and another only just, as it reads Napa moderate for Chardonnay and warm for Cabernet. Navarra reads moderate for Grenache and warm for Graciano on the same footing.",
+  "A Codex record believed out of date: js/regions rueda-toro teaches Rueda Verdejo at 85 per cent, Rueda Sauvignon at 85 and plain Rueda at 50; the Consejo Regulador’s note on the pliego of 2019 merged the dry white categories into one, Rueda. The Verdejo entry’s line holds by the European rule that a label naming one grape needs 85 per cent of it.",
+  "TASTE.clim calls Aglianico warm while both ladders now read its Irpinia home moderate and the Codex Campania record speaks of cold winters and a November harvest; the dial is the Codex’s and was not touched."
+ ],
+ "sources": [
+  {
+   "title": "Wine Country Ontario: signature varieties",
+   "url": "https://winecountryontario.ca/varieties/"
+  },
+  {
+   "title": "VQA Ontario: terroir one pager, Gamay",
+   "url": "https://learn.vqaontario.ca/wp-content/uploads/2026/06/TERROIR-ONE_PAGERS-GAMAY-2025-EN5.pdf"
+  },
+  {
+   "title": "Unicorn Auctions review: Oregon Gamay",
+   "url": "https://www.unicornauctions.com/unicorn-review/oregon-gamay-next-great-red-wines"
+  },
+  {
+   "title": "Rhone Rangers: more about Roussanne",
+   "url": "https://rhonerangers.org/wine-education/white-grapes/more-about-roussanne"
+  },
+  {
+   "title": "Capstone California: Roussanne, wine growing areas",
+   "url": "https://capstonecalifornia.com/study-guides/varieties/white/roussanne/overview_wine_growing_areas"
+  },
+  {
+   "title": "DO Rueda: note on the pliego de condiciones of 2019",
+   "url": "https://www.dorueda.com/wp-content/uploads/2019/11/Nota-Pliego-condiciones-DO-Rueda.pdf"
+  },
+  {
+   "title": "Wines of Greece: PDO Santorini",
+   "url": "https://winesofgreece.org/?p=1094"
+  }
+ ]
+}
