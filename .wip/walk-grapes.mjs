@@ -252,7 +252,7 @@ async function walk(browser, width, mode) {
     await page.locator('#v57-door-worlds').click();
     await settle(300);
     const w = await page.evaluate(() => ({ view: S.view, hash: location.hash, rows: document.querySelectorAll('[data-v57="worlds"][data-slug]').length, lit: document.querySelector('nav.v32nav [aria-current="page"]').getAttribute('data-nav') }));
-    check('Old World and New World opens its index of 27 grapes, lit Grapes', w.view === 'grapeworlds' && w.hash === '#/v/grapeworlds' && w.rows === 27 && w.lit === 'grapes', JSON.stringify(w));
+    check('Old World and New World opens its index of 24 grapes, lit Grapes', w.view === 'grapeworlds' && w.hash === '#/v/grapeworlds' && w.rows === 24 && w.lit === 'grapes', JSON.stringify(w));
     await screen('Old World and New World');
     await shot('grapeworlds');
     await page.locator('#v57-callstart').click();

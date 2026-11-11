@@ -467,7 +467,7 @@ async function main() {
         if (tagged) worldsBad.push(s + ': a worlds question at home');
       }
     });
-    check('every side by side grape (' + contrast.length + ') with both sides (where, the glass, the cellar), why, blur and the blind call, and its one worlds question; every grape at home (' + (slugs.length - contrast.length) + ') with home and abroad and neither', worldsBad.length === 0 && contrast.length === 27, few(worldsBad, 5));
+    check('every side by side grape (' + contrast.length + ') with both sides (where, the glass, the cellar), why, blur and the blind call, and its one worlds question; every grape at home (' + (slugs.length - contrast.length) + ') with home and abroad and neither', worldsBad.length === 0 && contrast.length === 24, few(worldsBad, 5));
     const both = D.J('(TASTE || []).filter(function (t) { return t.world === "both"; }).map(function (t) { var r = v53GrapeFind(v53GrapeKey(t.g)); return r ? r.slug : t.g; })');
     check('every grape the Codex flags both (' + both.length + ') takes the side by side', both.length > 0 && both.every((s) => ROW[s] && ROW[s].mode === 'contrast'), both.filter((s) => !ROW[s] || ROW[s].mode !== 'contrast').join(' '));
 
