@@ -1,0 +1,893 @@
+{
+ "chunk": "g7",
+ "date": "2026-11-11",
+ "role": "The second reading: each entry read to refute it, not to admire it.",
+ "grapes": [
+  "merlot",
+  "cabernet-franc",
+  "malbec",
+  "petit-verdot",
+  "carmenere",
+  "tannat"
+ ],
+ "method": [
+  "Each fragment read whole beside what show.cjs prints for the grape (GRAPES_PLUS and GRAPES, TASTE, INTRO_GRAPES, GRID_SAY, GRID_READS, the service rows) and beside the Codex's region records for Bordeaux and the Loire, South West France, Villány, Argentina and Patagonia, Chile and Uruguay, with the service reference and the pairing data where they name the wine.",
+  "Every fact the reviewed records do not already state was put to search: the parentage of Merlot and the blackbird, Villány's Cabernet Franc, the day of 1853 and the nursery, the name and share of Petit Verdot and its home in Virginia, the ripening gap of Carmenère, the Gran Reserva of Chile, the Colli Berici rule, the spoken form in Chile, the Irouléguy rule, the origin of Tannat and the cellars of Uruguay.",
+  "The glass read as a blind taster would: each note asked whether a taster would nod, each prose field scanned by a script for a family word in disguise, each ladder set beside the Court's grid and the Codex's own climate line for the place, and each tell checked against both entries' notes, so that no tell parts two grapes by a note both carry.",
+  "Five contrast grapes and one home grape: each side read for a false or lazy generalisation and for its hedge, each blur for the cool New World and the warm or modern Old World it must admit, each call for whether it would survive a flight, and each against TASTE.world (both for Merlot and Tannat, old for Cabernet Franc, new for Malbec and Carmenère, none for Petit Verdot).",
+  "The four lines counted and said aloud for the five beats in order; the sale read for its two sentences and for whether it is said to a guest; the cards and questions read for one key, four options of one kind and a stem that gives nothing away; the compare tells read from both sides against every fragment written so far that names these grapes.",
+  "Two rounds of edits, the first pushed as 5c1a70a and the second as ebdbc6c, each an exact replacement in the fragment's own text. node .scripts/grapes/build-grapes.cjs --lint --chunk g7 run after each until it printed six of six sound. The writing build was never run and no file but the six fragments and this record was touched."
+ ],
+ "limits": [
+  "This session reached search alone. One source host was tried and did not resolve (iura.cl, the decree's text), so no further host was tried: a page is cited as search results quoted it, and every address the authors gave stays unconfirmed.",
+  "The brief allows five searches a grape. Merlot took one, Cabernet Franc one, Malbec one, Petit Verdot one, Carmenère five and Tannat three; much of each entry stands on the Codex's own reviewed records, which need no new source.",
+  "Where a source's address names a person or a producer it is left out and the fact cited from another page (a history of the first Malbec of Mendoza whose address names its author, and the critic's site that reported the Merlot parentage).",
+  "The Sagrantino entry is not yet written, so the Tannat tell was read against the reviewed profile alone; the Petit Verdot entry is named by no other tell."
+ ],
+ "entries": {
+  "merlot": {
+   "verdict": "Sound after ten fixes over two rounds. The parentage of 2009, the blackbird, the federal rule of 75 per cent and the Saint-Émilion ladder were confirmed; the Old World side described one of its three places, named another its own blur excepts and gave the Right Bank a firm tannin the grid reads as round, and three tells parted Merlot from its neighbours by notes both carry.",
+   "tested": [
+    "say against GRID_SAY (mair-LOH): the same, and right.",
+    "Parentage: Cabernet Franc and Magdeleine Noire des Charentes, on the paper of 2009 in the Australian Journal of Grape and Wine Research, read through its open archive and FAO records; the finding was made public late in 2008 and the card's published in 2009 is right. Merlot and Cabernet Sauvignon as half siblings through Cabernet Franc follows, as the third question says.",
+    "The name from merle, the blackbird: two general sources, one adding the Gascon merlau. The spoken line hedges it as thought to, rightly.",
+    "The American label: the federal rule asks 75 per cent of the named grape. Saint-Émilion Grand Cru is an appellation and Grand Cru Classé the classification above it. Both stand.",
+    "The glass as a blind taster: every note set beside the reviewed profile and the Court's two grid reads, Pomerol and Saint-Émilion, Napa and Sonoma; a script scanned every prose field for a family word in disguise and found none. The moderate rung carried truffle, a note of age, in place of the grid's red cherry.",
+    "Old World and New World against TASTE.world (both, so a side by side) and the grid: the old glass described the Right Bank alone though its where named north east Italy and Bolgheri, and gave the Right Bank firm tannin where the grid reads it round. The New World glass and the blur both carried Washington; the blur keeps it with Hawke's Bay, and the Tuscan coast now stands there as the warm Old World exception. The call, truffle, cedar and fresh acidity against jammy plum, mocha and higher alcohol, agrees with the grid's two reasons of climate.",
+    "The ladder against the grid: Pomerol and Saint-Émilion moderate, Napa and Sonoma warm, two rungs, since the grape has no true cool home a list shows.",
+    "Service against the medium reds row of the service reference, which names Merlot (59 to 63 degrees Fahrenheit, 15 to 17 degrees Celsius), and TASTE.age (five to fifteen): agree. Decanting is offered after a taste and never promised to take tannin out.",
+    "The four lines counted and said aloud: the Right Bank, plum and chocolate on gentle tannin, oak and the two worlds in one clause, duck and mushrooms, the blackbird. Five beats in order, nothing a guest must have explained; the sale is two sentences, the hook then the pour.",
+    "Compare tells from both sides: the Cabernet Sauvignon pilot and the Cabernet Franc, Malbec and Carmenère entries all write of Merlot and agree with it. Of this entry's three tells, the Cabernet Sauvignon one gave cedar to Cabernet though Merlot lists cedar, the Cabernet Franc one called Merlot plummy though Cabernet Franc lists two plums, and the Malbec one gave Merlot cocoa, which Malbec carries.",
+    "Cards and questions: one key each, four options of one kind (four origins, four Bordeaux appellations, four kinships), nothing given away, the worlds question first. The one Creole dish, chicken and smoked sausage gumbo, is not the printed name of the house's own gumbo, which is a seafood one."
+   ],
+   "open": [
+    "Mint among the herbal notes stands on general descriptions of the grape, not on a regional body, as the author reported.",
+    "North east Italy on the moderate rung stands on the Codex's own regional records; the Court's grid reads no Italian Merlot."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.glass",
+     "was": "Tends to be savoury and structured: black plum and red cherry with truffle, forest floor and cedar, fresh acidity and alcohol short of high. The tannin is fine, but firm enough to want a few years.",
+     "now": "Right Bank wines tend to be savoury and structured: black plum and red cherry with truffle, forest floor and cedar, fresh acidity, fine, firm tannin and alcohol short of high. North east Italy's are usually lighter and softer.",
+     "why": "The Old World where names north east Italy, but the glass described the Right Bank alone; the lighter, softer Merlot of Friuli and the Veneto is the Codex's own line for the moderate rung.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.cellar",
+     "was": "Nearly every wine is a blend, with Cabernet Franc and often a little Cabernet Sauvignon,",
+     "now": "Right Bank wines are mostly blends, with Cabernet Franc and often a little Cabernet Sauvignon,",
+     "why": "Nearly every wine is a blend is true of the Right Bank and not of north east Italy, which bottles Merlot alone; mostly also leaves room for the near single grape wines of Pomerol.",
+     "sources": [
+      {
+       "title": "Bordeaux Wines: Merlot",
+       "url": "https://www.bordeaux.com/en/grape-varieties/merlot/"
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.blur",
+     "was": "that can pass for Bordeaux, and warm recent vintages have made Pomerol and Saint-Émilion riper and fuller than they were.",
+     "now": "that can pass for Bordeaux, while Tuscany's coast and warm recent vintages on the Right Bank give riper, fuller wines.",
+     "why": "The blur named no warm Old World exception. The Tuscan coast is the Codex's own warm Merlot (Bolgheri in the profile's regions), and its ripe, full wines are the exception a blind taster meets.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      },
+      {
+       "title": "Bordeaux Wines: Merlot",
+       "url": "https://www.bordeaux.com/en/grape-varieties/merlot/"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder, the moderate rung",
+     "was": "\"notes\": [\"red plum\", \"black cherry\", \"bay leaf\", \"truffle\"]",
+     "now": "\"notes\": [\"red plum\", \"red cherry\", \"black cherry\", \"bay leaf\"]",
+     "why": "Truffle is a note of age and earth, not of a moderate climate; red cherry is the Court's own red fruit for Pomerol and Saint-Émilion.",
+     "sources": [
+      {
+       "title": "The Codex: the Court grid reads (GRID_READS, js/data-grid.js)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare, the Malbec tell",
+     "was": "Merlot is ruby, with plum and cocoa and none of that violet lift.",
+     "now": "Merlot is ruby and plummy, with none of that violet lift.",
+     "why": "The tell gave cocoa to Merlot, but the Malbec entry and the Malbec profile list cocoa among Malbec's own notes, so it parted nothing.",
+     "sources": [
+      {
+       "title": "The table: the Malbec fragment of this chunk",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "worlds.contrast.old.where",
+     "was": "\"where\": \"Bordeaux's Right Bank, Pomerol and Saint-Émilion; Bolgheri and north east Italy\"",
+     "now": "\"where\": \"Bordeaux's Right Bank, Pomerol and Saint-Émilion; north east Italy\"",
+     "why": "Bolgheri stood among the places of the Old World style while the glass described none of its ripe coastal Merlot and the blur, rightly, names the Tuscan coast as the warm exception. It leaves the where and stays in the blur.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "worlds.contrast.old.glass",
+     "was": "fresh acidity, fine, firm tannin and alcohol short of high.",
+     "now": "fresh acidity, fine tannin and alcohol short of high.",
+     "why": "Firm tannin for the Right Bank: the grid reads its tannin as round and the reviewed profile as soft, so fine is enough.",
+     "sources": [
+      {
+       "title": "The Codex: the Court grid reads (GRID_READS, js/data-grid.js)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "worlds.contrast.new.glass",
+     "was": "with softer acidity, fuller body and higher alcohol. Washington is often the firm exception, with more tannin.\",",
+     "now": "with softer acidity, fuller body and higher alcohol.\",",
+     "why": "The New World glass and the blur both named Washington as the firm exception; the blur keeps it, beside Hawke's Bay, and the glass is left to describe the typical bottle.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "compare, the Cabernet Sauvignon tell",
+     "was": "\"tell\": \"Cabernet Sauvignon shows cassis, cedar and firm, drying tannin; Merlot is plum and black cherry on a softer, fleshier frame, with less grip.\" }",
+     "now": "\"tell\": \"Cabernet Sauvignon shows cassis and firm, drying tannin; Merlot is softer and fleshier, with plum in place of the cassis.\" }",
+     "why": "The tell gave cedar to Cabernet alone, but this entry lists cedar among Merlot's own oak notes, and it gave Merlot black cherry, which the Cabernet Sauvignon pilot lists among its own. Cassis, which Merlot does not carry, and the grip now part them, as the reviewed confuse line has it.",
+     "sources": [
+      {
+       "title": "The table: the Cabernet Sauvignon pilot fragment",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "compare, the Cabernet Franc tell",
+     "was": "raspberry, pencil shavings and green bell pepper where Merlot is plummy and round.\" }",
+     "now": "raspberry, pencil shavings and green bell pepper where Merlot is rounder, softer and fleshier.\" }",
+     "why": "Merlot was called plummy against Cabernet Franc, but the Cabernet Franc entry lists red and black plum among its own notes; the round, soft flesh parts them, with the pencil shavings and green pepper Merlot lacks.",
+     "sources": [
+      {
+       "title": "The table: the Cabernet Franc fragment of this chunk",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "cabernet-franc": {
+   "verdict": "Sound after ten fixes over two rounds. The parentage, Breton and Bouchet, the two soils of Chinon, Cabernet d'Anjou and the warm style of Villány were confirmed; the blur left out the warm Old World exceptions, two lines hid a family word and one misheard a pepper, one explanation claimed what no source shows, and one food line said what the Codex's pairing data asks never to be said.",
+   "tested": [
+    "say against GRID_SAY (kah-bair-NAY FRAHN): the same, and right.",
+    "Parentage: a parent of Cabernet Sauvignon (the work of 1997), of Merlot (the paper of 2009) and of Carmenère (Wine Grapes); the Codex's own records state the first two, and the third card and the guest answer agree.",
+    "Breton in the Loire and Bouchet on the Right Bank: the Codex's own Régionale question, which calls Bouchet the old Libournais word. The legend behind Breton is left untold, as the author chose.",
+    "Chinon's two soils, light sand and gravel by the river and limestone slopes above, are the Codex's own Régionale question, and the cellar line agrees. Cabernet d'Anjou as an off dry rosé of the two Cabernets stands.",
+    "Villány: Wines of Hungary on Villányi Franc and the Codex's Villány record, Hungary's warmest district, its Cabernet Franc fuller than the Loire's and without its green edge. It belongs in the blur as the warm Old World exception, beside the Tuscan coast of the entry's own warm rung; it stood in the Old World where, under a glass that describes the Loire.",
+    "The glass as a blind taster: every note on the reviewed profile and the grid read for Chinon and Bourgueil (raspberry, red currant, red cherry, red plum; flowers, green, mineral). Red fruited stood twice, in the New World glass and a tell: a family word in disguise.",
+    "The ladder against the grid: Chinon and Bourgueil cool, with the Finger Lakes and Ontario as New York's wine body describes them; Saint-Émilion moderate; Mendoza, Napa and the Tuscan coast warm.",
+    "Structure against the profile's st: agrees. Service against the light reds row and TASTE.age (five to fifteen from the Loire): agree; one explanation wrote 12 to 15 Celsius without the word degrees.",
+    "Food against the pairing data, which asks that acid never be described as stripping fat: acidity cuts the fat said that. Grilled redfish, the one Creole dish, stands: a light red served cool beside firm fish, as the Loire pours its reds with river fish.",
+    "The four lines counted and said aloud: the twenty's leafy, peppery edge is heard as black pepper, and the forty five's New World clause wanted a hedge. Five beats in order; the sale is two sentences.",
+    "Compare tells from both sides: the Cabernet Sauvignon pilot (its parent, lighter, raspberry, violet, pencil shavings) and the Merlot, Carmenère and Gamay entries agree. This entry's Carmenère tell gave roasted pepper to Carmenère though Cabernet Franc's own warm rung lists it, and raspberry to Cabernet Franc though Carmenère lists it.",
+    "Cards and questions: one key each, four options of one kind (four pairs of origins, four ways to serve, four grapes), nothing given away, the worlds question first. The third explanation said Cabernet Sauvignon has no local name; it has old Bordeaux names of its own."
+   ],
+   "open": [
+    "Chilli flake sits under herbal, as the reviewed profile lists it beside jalapeño; spice would be its truer family, but the entry carries no other spice note and a group needs two.",
+    "The ten second line calls the frame light where the profile and the forty five second line say medium in body. Light is the table's word for Chinon set beside Cabernet Sauvignon, and the Old World glass says light to medium; left.",
+    "The Blaufränkisch entry of chunk g8 parts its grape from Cabernet Franc by black cherry and brighter acidity; this entry lists black cherry and acidity of medium plus to high. A note for that chunk's reader; not edited here."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "while Argentina and California make it darker, riper and rounder.",
+     "now": "while Argentina and California often make it darker, riper and rounder.",
+     "why": "An unhedged clause on the New World said aloud as a rule: often, as the brief asks of a typical style.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.where",
+     "was": "The Loire's Chinon, Bourgueil and Saumur-Champigny; Bordeaux's Right Bank; Villány in Hungary",
+     "now": "The Loire's Chinon, Bourgueil and Saumur-Champigny; Bordeaux's Right Bank",
+     "why": "Villány's Cabernet Franc is ripe, dark and full, nothing like the brisk style the Old World glass describes; it moves to the blur as the warm exception.",
+     "sources": [
+      {
+       "title": "Wines of Hungary: Villányi Franc",
+       "url": "https://winesofhungary.hu/grape-varieties/black-grape-varieties-red-wine-styles/villanyi-franc"
+      },
+      {
+       "title": "The Codex: the Villány record (js/regions/hungary.json)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.blur",
+     "was": "cool enough to taste like the Loire, and warm years in Chinon and Saumur-Champigny now give darker, fuller wines with barely a green note.",
+     "now": "cool enough to taste like the Loire, while Tuscany's coast and Villány in Hungary make dark, ripe wines, as warm years do in Chinon.",
+     "why": "The blur named only warm years in the Loire. Villány, Hungary's warmest district, makes Cabernet Franc fuller than the Loire's and without its green edge, and the Tuscan coast is on the entry's own warm rung: both are the warm Old World the blur must admit.",
+     "sources": [
+      {
+       "title": "Wines of Hungary: Villányi Franc",
+       "url": "https://winesofhungary.hu/grape-varieties/black-grape-varieties-red-wine-styles/villanyi-franc"
+      },
+      {
+       "title": "Taste Hungary journal: Franc over Sauvignon, the Cabernets in Hungary",
+       "url": "https://tastehungary.com/journal/franc-over-sauvignon-hungarys-love-affair-with-the-cabernets/"
+      },
+      {
+       "title": "The Codex: the Villány record (js/regions/hungary.json)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.new.glass",
+     "was": "New York and Ontario often stay close to the Loire, red fruited and leafy.",
+     "now": "New York and Ontario often stay close to the Loire, with raspberry and a leafy edge.",
+     "why": "Red fruited is a family word in disguise; the fruit is named.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "compare, the Cabernet Sauvignon tell",
+     "was": "Cabernet Franc is lighter, red fruited and more perfumed.",
+     "now": "Cabernet Franc is lighter and more perfumed, with raspberry and violet.",
+     "why": "Red fruited again, a family word in disguise; raspberry and violet are named, and the Cabernet Sauvignon pilot carries neither.",
+     "sources": [
+      {
+       "title": "The table: the Cabernet Sauvignon pilot fragment",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare, the Carmenère tell",
+     "was": "Carmenère, its offspring, is darker and fuller, with roasted pepper, soy and paprika; Cabernet Franc is lighter, with raspberry and higher acidity.",
+     "now": "Carmenère, its offspring, is darker, fuller and softer, with soy and paprika; Cabernet Franc is lighter, with redcurrant, pencil shavings and higher acidity.",
+     "why": "The tell gave roasted pepper to Carmenère, but this entry's own warm rung lists roasted red pepper, and it gave raspberry to Cabernet Franc, which the Carmenère entry lists among its own notes. Soy and paprika, and redcurrant and pencil shavings, now part them.",
+     "sources": [
+      {
+       "title": "The table: the Carmenère fragment of this chunk",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "lines.s20",
+     "was": "with raspberry, violet and a leafy, peppery edge.",
+     "now": "with raspberry, violet and a leafy edge of green pepper.",
+     "why": "A leafy, peppery edge is heard at the table as black pepper; the grape's note is green bell pepper, as the reviewed profile and the grid read have it.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Court grid reads (GRID_READS, js/data-grid.js)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions[1].exp",
+     "was": "at 54 to 59 degrees Fahrenheit, 12 to 15 Celsius, and seldom needs decanting.",
+     "now": "at 54 to 59 degrees Fahrenheit, 12 to 15 degrees Celsius, and seldom needs decanting.",
+     "why": "The service form: degrees Celsius with the word degrees.",
+     "sources": [
+      {
+       "title": "The Codex: the service reference (js/data-service-ref.js)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "food.with, charcuterie",
+     "was": "\"why\": \"acidity cuts the fat: the Loire's own match\" }",
+     "now": "\"why\": \"fresh acidity balances the richness: the Loire's own match\" }",
+     "why": "The Codex's pairing data asks that acid or tannin never be described as stripping fat from the mouth; acidity cuts the fat says just that. The line now speaks of balance, an impression.",
+     "sources": [
+      {
+       "title": "The Codex: the pairing data (js/data-pairing.js)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "questions[2].exp",
+     "was": "Cabernet Sauvignon is allowed in Chinon only as a small share, and has no such local name.",
+     "now": "Cabernet Sauvignon is allowed in Chinon only as a small share, and Breton is not its name.",
+     "why": "Has no such local name claimed more than can be shown: Cabernet Sauvignon has old Bordeaux names of its own, Vidure among them. What is true and enough is that Breton is not its name.",
+     "sources": [
+      {
+       "title": "Wine Grapes, entries on Cabernet Sauvignon and Cabernet Franc",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Régionale bank (js/data-intro.js), questions i-flc8fdt6 and i-g0hu1dnf",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "malbec": {
+   "verdict": "Sound after eight fixes over two rounds. The arrival of 1853 and the day kept for it, the rule of Cahors, the black wine and the two zones of Mendoza were confirmed; the ladder set the Loire and Patagonia on the moderate rung though the Court reads the Loire cool and the Codex calls Patagonia the cool exception, it carried notes of oak and of place as notes of climate, and two tells parted Malbec from Merlot and Syrah by notes both carry.",
+   "tested": [
+    "say against GRID_SAY (mahl-BEK): the same, and right.",
+    "17 April 1853: a general history of the vine nursery, Wines of Argentina and the Codex's Argentina record. The sources split on whether the plan was put forward or approved that day, so the spoken line's set out to found is right, and the question's key, founded in 1853, holds, since the school was founded that year. The agronomist of the explanation lived from 1821 to 1875, long dead and named once where the fact needs him.",
+    "Cahors: red only and at least 70 per cent Malbec, with Merlot and Tannat, and black wine as its old name: the Codex's own France record, which also gives Côt or Auxerrois as the local names.",
+    "Luján de Cuyo rounder and darker, the Uco Valley fresher and more scented: the reviewed profile.",
+    "The ladder: the Court's grid reads Mendoza warm and the Loire cool, and the Codex's Argentina record makes Patagonia the cool, low exception, cool from latitude and wind. The moderate rung put the Loire and Patagonia beside Cahors and carried iron and leather; the warm rung carried cocoa. Neither is a note of climate.",
+    "Old World and New World against TASTE.world (new, so Mendoza leads and Cahors is the smaller side): hedged on both sides. The blur put Patagonia among the high parcels; it is low. The call spoke of sweet fruited tannin.",
+    "The glass as a blind taster: every note on the reviewed profile and the grid read for Mendoza (black plum, blackberry, black cherry, blueberry; flowers, coffee, new oak). Lavender beside violet is a tasting note of the Uco Valley and not a family word; it stands.",
+    "Service against the full tannic reds row and TASTE.age (five to twelve): agree.",
+    "The four lines said aloud: the forty five second line's worlds clause was unhedged. Five beats in order, the day of 17 April as the hook; the sale is two sentences.",
+    "Compare tells from both sides: the Merlot, Petit Verdot, Tannat, Petite Sirah and Syrah entries write of Malbec. This entry's Merlot tell gave Merlot cocoa, a note of Malbec's own, and its Syrah tell gave Malbec plum, blueberry and violet, all three of which the Syrah entry lists.",
+    "Cards and questions: one key each, four options of one kind (four origins, four wines, four histories), nothing given away, the worlds question first."
+   ],
+   "open": [
+    "The Syrah entry of chunk g9 parts Malbec as violet scented with black plum, both notes it lists for Syrah; the Petite Sirah entry gives Petite Sirah blueberry as its parting note, and this entry lists blueberry. Notes for those readers; not edited here.",
+    "The author's report still describes the ladder of two rungs; the checked block records the change."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "Mendoza is ripe and velvety, while Cahors in France, where it began, is firmer and more savoury. It was made for grilled steak, and it is as good with lamb or barbecue.",
+     "now": "Mendoza is typically ripe and velvety, while Cahors in France, where it began, is firmer and more savoury. It was made for grilled steak, and is as good with lamb or barbecue.",
+     "why": "The Old World and New World clause was said as a rule; typically hedges it, and the second clause reads more easily aloud.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "glass.ladder, the moderate rung",
+     "was": "\"notes\": [\"tart black plum\", \"damson\", \"iron\", \"leather\"]",
+     "now": "\"notes\": [\"tart black plum\", \"damson\", \"raspberry\"]",
+     "why": "Iron and leather are notes of Cahors and of age, not of a moderate climate; raspberry is what a cooler site gives.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.blur",
+     "was": "can be ripe, oaked and plush, and high, cool parcels in the Uco Valley and Patagonia give taut, stony Malbec with firm tannin.",
+     "now": "can be ripe, oaked and plush, while high parcels in the Uco Valley and cool, low Patagonia give tauter, fresher Malbec.",
+     "why": "Patagonia was set among the high, cool parcels; the Codex's Argentina record makes it the cool, low exception, its vineyards at a few hundred metres and cool from latitude and wind.",
+     "sources": [
+      {
+       "title": "The Codex: the Argentina and Patagonia records (js/regions/argentina.json)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.call",
+     "was": "\"call\": \"Violet, blueberry and plush, sweet fruited tannin at higher alcohol lean Mendoza;",
+     "now": "\"call\": \"Violet, blueberry and plush, ripe tannin at higher alcohol lean Mendoza;",
+     "why": "Sweet fruited tannin: tannin is not fruited, and a blind taster reads ripe tannin.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "cards[1].back",
+     "was": "\"back\": \"Violet, blueberry and plush, sweet fruited tannin at higher alcohol lean Mendoza.",
+     "now": "\"back\": \"Violet, blueberry and plush, ripe tannin at higher alcohol lean Mendoza.",
+     "why": "The same words as the call, put right the same way.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "compare, the Merlot tell",
+     "was": "it is ruby and plummy, with cocoa, where Malbec is purple, with blueberry.",
+     "now": "it is ruby and plummy, where Malbec is purple, with blueberry.",
+     "why": "The tell gave cocoa to Merlot, but this entry lists cocoa among Malbec's own oak notes; the violet, the magenta rim and blueberry part them, as the reviewed confuse line has it.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "glass.ladder",
+     "was": "{ \"climate\": \"moderate\", \"where\": \"Cahors and the Loire in France; Patagonia\", \"notes\": [\"tart black plum\", \"damson\", \"raspberry\"] },\n      { \"climate\": \"warm\", \"where\": \"Mendoza, from Luján de Cuyo to the Uco Valley; Salta\", \"notes\": [\"ripe black plum\", \"blueberry\", \"violet\", \"cocoa\"] }",
+     "now": "{ \"climate\": \"cool\", \"where\": \"Patagonia; Touraine in the Loire, as Côt\", \"notes\": [\"raspberry\", \"red cherry\", \"tart black plum\"] },\n      { \"climate\": \"moderate\", \"where\": \"Cahors in south west France\", \"notes\": [\"black plum\", \"black cherry\", \"damson\"] },\n      { \"climate\": \"warm\", \"where\": \"Mendoza, from Luján de Cuyo to the Uco Valley; Salta\", \"notes\": [\"ripe black plum\", \"blueberry\", \"violet\", \"blackberry jam\"] }",
+     "why": "The moderate rung set the Loire beside Cahors and Patagonia, but the Court's grid reads the Loire cool (Chinon and Bourgueil) and the Codex's Argentina record calls Patagonia the cool, low exception. Patagonia and Touraine, where the grape is Côt, now take a cool rung of red fruit named; Cahors keeps the moderate. Cocoa on the warm rung is a note of oak, not of climate; blackberry jam is the grid's jammy fruit.",
+     "sources": [
+      {
+       "title": "The Codex: the Court grid reads (GRID_READS, js/data-grid.js)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the Argentina and Patagonia records (js/regions/argentina.json)",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the South West France and Loire records (js/regions/france.json)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "compare, the Syrah tell",
+     "was": "\"tell\": \"Syrah brings cracked black pepper, smoked meat and black olive; Malbec is sweeter fruited, all plum, blueberry and violet, with none of that savour.\" }",
+     "now": "\"tell\": \"Syrah brings cracked black pepper, smoked meat and black olive; Malbec has none of that savour, and is plusher, with softer, rounder tannin.\" }",
+     "why": "The tell gave Malbec plum, blueberry and violet, and the Syrah entry lists all three among its own notes. The savour Malbec lacks and its plusher body and softer tannin now part them, as the reviewed confuse line has it.",
+     "sources": [
+      {
+       "title": "The table: the Syrah and Shiraz fragment of chunk g9",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "petit-verdot": {
+   "verdict": "Sound after four fixes over two rounds. The name, the late ripening, the few per cent of the Médoc and the bottles of the grape alone from Virginia and the warm sites abroad were confirmed; the oak notes shared cedar with the tell that names it as Cabernet's, the warm rung carried a note of oak as a note of climate, the Syrah tell parted the two by notes both carry, and one card gave one reason as the only one.",
+   "tested": [
+    "say: puh-TEE vair-DOH. The Court gives no respelling for this grape; the French sounds with the stress on the last syllable of each word stand.",
+    "The name, the little green one, the late ripening and the share of 1 to 5 per cent it usually takes in the Médoc: two general references, as the author's Bordeaux sources say. Some years it is left out of the blend, so the spoken some years it never quite does stands.",
+    "Virginia bottles it alone, its thick skins and late ripening suited to the state: Virginia's wine body. The Riverland and central Spain stand on the author's sources and the Codex's Spanish records.",
+    "Home and abroad: in the Médoc a seasoning a guest seldom meets alone, abroad a bottle of its own. The plan's mode and reason upheld, with the author's seldom for the plan's never.",
+    "The profile against the Régionale row (warm; acidity the middle of three; body and tannin the top): the profile's acid medium plus is the author's flag, upheld on the freshness every source gives the grape. Each field is named fruit and named notes, under thirty words.",
+    "The glass as a blind taster, every note once among the groups. The oak notes carried cedar, which the Cabernet Sauvignon tell names as Cabernet's; the warm rung carried cocoa.",
+    "The ladder: the Médoc moderate, as the grid reads it for Cabernet; the Riverland, central Spain and California warm.",
+    "Service against the full tannic reds row: agrees; no TASTE.age is held, and the age line is hedged.",
+    "The four lines counted and said aloud: the name's story opens, then the Médoc, the glass, warmer places abroad, the food, and a closing hook. The sale is two sentences.",
+    "Compare tells: no other entry yet written names Petit Verdot in a tell. The Syrah entry lists violet, blackberry and cracked black pepper, the very notes the Syrah tell gave Petit Verdot.",
+    "Cards and questions: one key each, four options of one kind (four grapes, four reasons, four places), nothing given away; a home grape, so no worlds tag. The first card gave the late ripening as the whole reason for the small share."
+   ],
+   "open": [
+    "Lavender, mulberry and leather with age stand on trade descriptions, as the author reported."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "glass.notes, oak",
+     "was": "{ \"family\": \"oak\", \"notes\": [\"cocoa\", \"coffee\", \"cedar\"] }",
+     "now": "{ \"family\": \"oak\", \"notes\": [\"cocoa\", \"coffee\", \"vanilla pod\"] }",
+     "why": "Cedar stood among the oak notes while the entry's own Cabernet Sauvignon tell names cedar as the note that marks Cabernet; vanilla pod takes its place.",
+     "sources": []
+    },
+    {
+     "round": "second",
+     "field": "glass.ladder, the warm rung",
+     "was": "\"notes\": [\"ripe black plum\", \"blueberry\", \"liquorice\", \"cocoa\"] }",
+     "now": "\"notes\": [\"ripe black plum\", \"blackberry jam\", \"blueberry\", \"liquorice\"] }",
+     "why": "Cocoa is a note of oak, not of a warm climate; blackberry jam is what more sun gives.",
+     "sources": []
+    },
+    {
+     "round": "second",
+     "field": "compare, the Syrah tell",
+     "was": "\"tell\": \"Syrah brings smoked meat and black olive with its pepper; Petit Verdot is violet and blackberry, with firmer tannin and no meaty note.\" }",
+     "now": "\"tell\": \"Syrah brings smoked meat and black olive; Petit Verdot shares its dark colour, violet and pepper but has no meaty note, and its tannin is firmer.\" }",
+     "why": "The tell gave violet and blackberry to Petit Verdot as its parting notes, and the Syrah entry lists violet, blackberry and cracked black pepper among its own. It now says what the two share and parts them by the meaty note and the firmer tannin.",
+     "sources": [
+      {
+       "title": "The table: the Syrah and Shiraz fragment of chunk g9",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "cards[0].back",
+     "was": "the berries may stay green, which is why it is a small share of the blend.",
+     "now": "the berries may stay green, one reason it is only a small share of the blend.",
+     "why": "The late ripening is one reason for the small share, not the only one: the sources give its force too, a few per cent being enough for colour and grip.",
+     "sources": [
+      {
+       "title": "Wikipedia: Petit Verdot",
+       "url": "https://en.wikipedia.org/wiki/Petit_Verdot"
+      },
+      {
+       "title": "Decanter: Petit Verdot wine",
+       "url": "https://www.decanter.com/wine/grape-varieties/petit-verdot-wine-52323/"
+      }
+     ]
+    }
+   ]
+  },
+  "carmenere": {
+   "verdict": "Sound after ten fixes over two rounds. The cuttings of the 1850s, the day of 1994, the register of 1998, the Colli Berici rule and the poor fruit set in Bordeaux were confirmed; a question named a second parent the sources do not all agree on, one label promised an oak rule the decree does not show, the ripening gap was given as a figure the sources dispute, and two tells parted the grapes by notes both carry.",
+   "tested": [
+    "say: kar-men-AIR, the Codex's Chile page; its Bordeaux page writes kar-muh-NAIR. A Chilean Spanish form, the stress on the second e and the last e sounded, was looked for and not confirmed, so none is added.",
+    "The story: cuttings from Bordeaux in the 1850s, told apart from Merlot on 24 November 1994 by a French ampelographer who is living and not named, entered in Chile's register in 1998: the trade press as the author read it and the Codex's Chile record.",
+    "The ripening gap: the sources read give two to three weeks after Merlot, about three, and four to five. The spoken line says weeks; the card and an explanation gave two to three as settled.",
+    "Gran Reserva in Chile: Decree 464 asks at least one degree of alcohol above the legal minimum and a character of its own; the oak rule the sources report belongs to Reserva Especial, and none confirms one for Gran Reserva.",
+    "Colli Berici Carmenere: a type of the DOC, recognised in 2009, at least 85 per cent the grape: the disciplinare and a reference summary. The label stands, and with it the Old World side a guest can meet on a list.",
+    "In Bordeaux it set fruit poorly and was not replanted after phylloxera: the reference works as the author cited them.",
+    "Old World and New World against TASTE.world (new) and the plan, which names Carmenère among the certain side by side grapes: Chile the full side, north east Italy the lighter, leafier one, both hedged; the blur admits an early picked Chile and the riper Berici hills. The author's doubt on the mode is answered: a contrast, as fixed.",
+    "The ladder: two rungs, as TASTE gives the grape a warm climate; Chile's cool coast left off, as the Codex teaches that the grape struggles there.",
+    "Service against the medium reds row and TASTE.age (five to twelve): agree.",
+    "The four lines said aloud: the Italian clause wanted a hedge; five beats in order, the day of 1994 as the hook; the sale is two sentences. The question stem's peppery, leafy note is heard as black pepper.",
+    "Compare tells from both sides: the Merlot profile, the Cabernet Franc entry and the Cabernet Sauvignon pilot agree. This entry's Cabernet Franc tell gave raspberry to Cabernet Franc though Carmenère lists it, and its Cabernet Sauvignon tell gave Carmenère plum though the Cabernet Sauvignon pilot lists black plum.",
+    "Cards and questions: one key each, four options of one kind (four origins, four causes, four kinships), nothing given away, the worlds question first."
+   ],
+   "open": [
+    "The oak notes hold cocoa and coffee and the profile adds no other; dark chocolate went as cocoa written twice."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "while the rare Italian bottles are lighter and leafier.",
+     "now": "while the rare Italian bottles are usually lighter and leafier.",
+     "why": "The Italian clause was said as a rule; usually hedges it.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "questions[2].exp",
+     "was": "Carmenère is a natural cross of Cabernet Franc, the grape of Chinon, and the old Gros Cabernet, and it shares its parent's pepper note.",
+     "now": "Carmenère is a natural offspring of Cabernet Franc, the grape of Chinon, and it shares its parent's note of green pepper.",
+     "why": "The explanation named Gros Cabernet as the second parent; the reference works give it, but not every source read agrees, and the question asks only of Cabernet Franc, the parent that is settled.",
+     "sources": [
+      {
+       "title": "Wine Grapes, entry on Carmenère",
+       "url": ""
+      },
+      {
+       "title": "The Oxford Companion to Wine, entries on Carmenère and Cabernet Franc",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "questions[2].q",
+     "was": "A guest finds the same peppery, leafy note in a Chinon and in a Chilean Carmenère,",
+     "now": "A guest finds the same leafy note of green pepper in a Chinon and in a Chilean Carmenère,",
+     "why": "A peppery, leafy note is heard as black pepper; the shared note is green bell pepper.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "glass.notes, oak",
+     "was": "{ \"family\": \"oak\", \"notes\": [\"cocoa\", \"dark chocolate\", \"coffee\"] }",
+     "now": "{ \"family\": \"oak\", \"notes\": [\"cocoa\", \"coffee\"] }",
+     "why": "Cocoa and dark chocolate are one note written twice; one stays.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "compare, the Cabernet Franc tell",
+     "was": "is lighter and brighter, with raspberry, pencil shavings and higher acidity; Carmenère is darker, fuller and softer.",
+     "now": "is lighter and brighter, with redcurrant, pencil shavings and higher acidity; Carmenère is darker, fuller and softer.",
+     "why": "The tell gave raspberry to Cabernet Franc, but this entry lists raspberry among Carmenère's own notes; redcurrant, which Carmenère does not carry, takes its place.",
+     "sources": [
+      {
+       "title": "The table: the Cabernet Franc fragment of this chunk",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "labels, Carmenere",
+     "was": "The usual spelling on a Chilean label, without the accents: the same grape.",
+     "now": "The usual spelling on a Chilean label, without the accent: the same grape.",
+     "why": "The name as the plan writes it, Carmenère, carries one accent; a Chilean label drops that one.",
+     "sources": []
+    },
+    {
+     "round": "second",
+     "field": "labels, Gran Reserva",
+     "was": "\"means\": \"In Chile a legal term with light demands on alcohol and oak, not a rank of quality.\" }",
+     "now": "\"means\": \"In Chile a legal term that asks a little more alcohol than the minimum, not a rank of quality.\" }",
+     "why": "Decree 464 asks a Gran Reserva for at least one degree of alcohol above the legal minimum and a character of its own. The sources read give an oak rule to Reserva Especial and none confirms one for Gran Reserva, so the label no longer promises one.",
+     "sources": [
+      {
+       "title": "Servicio Agrícola y Ganadero: Decreto 464, zonificación vitícola, article 8 on the mentions Reserva and Gran Reserva",
+       "url": "https://sag.cl/sites/default/files/decreto_ndeg_464.pdf"
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "cards[2].back",
+     "was": "It ripens two to three weeks after Merlot, often into May in Chile.",
+     "now": "It ripens weeks after Merlot, often into May in Chile.",
+     "why": "Two to three weeks was given as settled; the sources read give two to three, about three, and four to five. Weeks, as the spoken line says, is what they agree on.",
+     "sources": [
+      {
+       "title": "Decanter: the new Chilean Carmenère",
+       "url": "https://www.decanter.com/premium/the-new-chilean-carmenere-wines-423696/"
+      },
+      {
+       "title": "NUVO magazine: Lost in Transplantation, Carmenère in Chile",
+       "url": "https://nuvomagazine.com/magazine/spring-2010/lost-in-transplantation"
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "questions[1].exp",
+     "was": "much Chilean Merlot was Carmenère, which ripens two to three weeks later.",
+     "now": "much Chilean Merlot was Carmenère, which ripens weeks later.",
+     "why": "The same figure, put right the same way.",
+     "sources": [
+      {
+       "title": "Decanter: the new Chilean Carmenère",
+       "url": "https://www.decanter.com/premium/the-new-chilean-carmenere-wines-423696/"
+      },
+      {
+       "title": "NUVO magazine: Lost in Transplantation, Carmenère in Chile",
+       "url": "https://nuvomagazine.com/magazine/spring-2010/lost-in-transplantation"
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "compare, the Cabernet Sauvignon tell",
+     "was": "Carmenère is softer, with plum, paprika and a savoury edge.\" }",
+     "now": "Carmenère is softer, with roasted red pepper, paprika and soy.\" }",
+     "why": "The tell gave Carmenère plum as a parting note, and the Cabernet Sauvignon pilot lists black plum on its warm rung. Roasted red pepper, paprika and soy, none of them Cabernet's, now part them.",
+     "sources": [
+      {
+       "title": "The table: the Cabernet Sauvignon pilot fragment",
+       "url": ""
+      },
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    }
+   ]
+  },
+  "tannat": {
+   "verdict": "Sound after ten fixes over two rounds. Madiran and its blend, Irouléguy, Saint-Mont, Harriague and the 1870s, the granite of Maldonado and the clay of Canelones, and micro-oxygenation born in Madiran were confirmed; the call leaned on blueberry the notes did not carry, three tells parted Tannat from its neighbours by notes both carry, one label made Madiran the only red of Gascony, and the New World cellar called a method common that only some cellars use.",
+   "tested": [
+    "say: tah-NAHT, or tah-NAH in France. Both are the Codex's own, the first on the Uruguay page and the second on the South West France page; no Court respelling is held.",
+    "Origin: first recorded in Madiran in 1783, its probable home the Hautes-Pyrénées and the Adour; the twenty's comes from Madiran stands. A tie of parent and offspring with Manseng Noir is reported and called possible; left out, as the author chose.",
+    "Irouléguy: the cahier of 2024 makes Tannat and Cabernet Franc the main grapes of the red and Cabernet Sauvignon an accessory.",
+    "Madiran: red only, led by Tannat with the two Cabernets and Fer, in the INAO text and the Codex's France record; no percentage given, as the author reported, since the sources disagree.",
+    "Uruguay: Harriague, Salto in the north west and the 1870s, in the Codex's Uruguay record, which says called Harriague for decades where the Régionale bank says a century. Maldonado's granite and the clay of Canelones stand.",
+    "Micro-oxygenation: invented in Madiran, which the third card says; in Uruguay some wineries use it and others argue it flattens the wine, and the trade reports a turn to less oak.",
+    "The glass as a blind taster: the reviewed profile gives the Uruguayan wine blueberry and the call leans on it, but the notes held none; cardamom stood on one trade description.",
+    "Old World and New World against TASTE.world (both): hedged on both sides; the blur admits the supple modern Madiran and the stern wine of Cafayate. The ladder agrees with TASTE (moderate) and with the Codex's Salto, warm and far from the coast.",
+    "Service against the full tannic reds row and TASTE.age (ten and more from Madiran): agree. Food against the pairing data: fat and salt soften the impression of tannin, never strip it; agrees.",
+    "The four lines said aloud: the worlds clause wanted a hedge and for a century took a side the records do not agree on. Five beats in order; the sale is two sentences.",
+    "Compare tells: the Sagrantino entry is not yet written, so its tell was read against the reviewed Sagrantino profile (black cherry preserve, blackberry, plum; cocoa, dried violet, incense). Tannat's own notes carry blackberry, dark chocolate, blueberry and cassis, and the Sagrantino, Malbec and Cabernet Sauvignon tells each gave one of those as a parting note.",
+    "Cards and questions: one key each, four options of one kind (four origins, four pieces of advice, four reasons), nothing given away, the worlds question first."
+   ],
+   "open": [
+    "An explanation says Colchagua is known for Carmenère and Cabernet, not Tannat: true of a list, though Chile grows a little Tannat; left."
+   ],
+   "changed": [
+    {
+     "round": "first",
+     "field": "lines.s45, the worlds clause",
+     "was": "while Uruguay's mild sea air gives a rounder, softer wine.",
+     "now": "while Uruguay's mild sea air usually gives a rounder, softer wine.",
+     "why": "The Uruguay clause was said as a rule; usually hedges it.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "glass.notes, spice",
+     "was": "{ \"family\": \"spice\", \"notes\": [\"liquorice\", \"cardamom\"] }",
+     "now": "{ \"family\": \"blue fruit\", \"notes\": [\"blueberry\", \"damson\"] },\n      { \"family\": \"spice\", \"notes\": [\"liquorice\", \"cracked black pepper\"] }",
+     "why": "The call, a card and the worlds question lean on blueberry for Uruguay, as the reviewed profile does, but the notes carried none; a blue fruit group now holds it. Cardamom stood on one trade description alone, as the author reported, and cracked black pepper takes its place.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "labels, Irouléguy",
+     "was": "The French Basque appellation: firm, Tannat led reds and rosés from terraces near Spain.",
+     "now": "The French Basque appellation: firm reds and rosés of Tannat and Cabernet Franc, from terraces near Spain.",
+     "why": "Tannat led was looser than the rule: the cahier of 2024 makes Tannat and Cabernet Franc the two main grapes of the red, with Cabernet Sauvignon an accessory.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'appellation d'origine contrôlée Irouléguy, 2024",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-41c1f669-5d8a-4e74-962f-5d93048a406e/telechargement"
+      },
+      {
+       "title": "Wikipedia: Tannat",
+       "url": "https://en.wikipedia.org/wiki/Tannat"
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "compare, the Malbec tell",
+     "was": "Malbec is plusher and softer, with violet and blueberry; Tannat is firmer and drier,",
+     "now": "Malbec is plusher and softer, with a lift of violet; Tannat is firmer and drier,",
+     "why": "The tell gave blueberry to Malbec as a parting note, and this entry lists blueberry among Tannat's own; the violet lift alone stays.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "first",
+     "field": "worlds.contrast.old.glass",
+     "was": "Tends to be the firmer and more savoury:",
+     "now": "Tends to be firmer and more savoury:",
+     "why": "The firmer reads as the firmer of two wines not yet named; firmer, as the other side says riper.",
+     "sources": []
+    },
+    {
+     "round": "first",
+     "field": "lines.s45",
+     "was": "and for a century the country called it by his name, Harriague.",
+     "now": "and for generations the country called it by his name, Harriague.",
+     "why": "For a century is the Régionale bank's and for decades the Uruguay record's; for generations holds both and claims neither figure.",
+     "sources": [
+      {
+       "title": "The Codex: the Uruguay record (js/regions/mapless.json)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "labels, Madiran",
+     "was": "\"means\": \"The red appellation of Gascony, led by Tannat",
+     "now": "\"means\": \"A red only appellation of Gascony, led by Tannat",
+     "why": "The red appellation of Gascony reads as the only one, and Saint-Mont and Tursan are red too; a red only appellation is what the rule says.",
+     "sources": [
+      {
+       "title": "INAO: cahier des charges of the appellation Madiran",
+       "url": "https://extranet.inao.gouv.fr/fichier/2-CdC-AOC-Madiran.pdf"
+      },
+      {
+       "title": "The Codex: the South West France and Loire records (js/regions/france.json)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "compare, the Sagrantino tell",
+     "was": "smells of black cherry preserve, cocoa and incense; Tannat is blackberry, cassis, iron and smoke.\" }",
+     "now": "smells of black cherry preserve, dried violet and incense; Tannat is cassis, iron, leather and smoke.\" }",
+     "why": "The tell gave cocoa to Sagrantino and blackberry to Tannat, and this entry lists dark chocolate and blackberry among Tannat's notes while the reviewed Sagrantino profile carries cocoa and blackberry too. Dried violet, from the Sagrantino profile, and cassis, iron and leather, which it does not carry, now part them.",
+     "sources": [
+      {
+       "title": "The Codex: the reviewed grape profiles (GRAPES and GRAPES_PLUS)",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "compare, the Cabernet Sauvignon tell",
+     "was": "\"tell\": \"Cabernet Sauvignon shows cassis with cedar and a leafy edge of green bell pepper;",
+     "now": "\"tell\": \"Cabernet Sauvignon shows cedar and a leafy edge of green bell pepper;",
+     "why": "The tell gave cassis to Cabernet as a parting note, and this entry lists cassis among Tannat's own; cedar and the green pepper edge, which Tannat lacks, part them.",
+     "sources": [
+      {
+       "title": "The table: the Cabernet Sauvignon pilot fragment",
+       "url": ""
+      }
+     ]
+    },
+    {
+     "round": "second",
+     "field": "worlds.contrast.new.cellar",
+     "was": "oak and small doses of oxygen are common, and rosé is made too.",
+     "now": "some cellars use oak or small doses of oxygen, and rosé is made too.",
+     "why": "Oak and small doses of oxygen are common said more than the sources show: some Uruguayan wineries use micro-oxygenation and others argue it flattens the wine, and the trade reports a turn to less oak.",
+     "sources": [
+      {
+       "title": "Decanter: Uruguay's great ascent",
+       "url": "https://www.decanter.com/premium/uruguay-wines-great-ascent-443048/"
+      },
+      {
+       "title": "Wine and Spirits magazine: Atlantic Tannat",
+       "url": "https://www.wineandspiritsmagazine.com/feature-story/wine-features/atlantic-tannat"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "codexRecords": [
+  "js/data-intro.js, the Tannat row, gives high acidity and a warm climate; TASTE gives acidity medium plus and a moderate climate, and the profile medium to high. The table follows TASTE and the profile. The author's flag, upheld.",
+  "The Codex says for decades of the name Harriague (the Uruguay record) and for a century (the Régionale bank). The table says for generations and takes no side.",
+  "The Codex respells Carmenère two ways (kar-men-AIR on the Chile page, kar-muh-NAIR on the Bordeaux page) and Tannat two ways (tah-NAHT on the Uruguay page, tah-NAH on the South West France page). The table takes the first for Carmenère and gives both for Tannat.",
+  "js/data-intro.js, the Petit Verdot row, gives acidity the middle of three; the table's profile says medium plus, on the freshness every source gives the grape. The author's flag, upheld.",
+  "js/data-intro.js, the Cabernet Franc and Carmenère rows, still draw bare family words (red fruit, black fruit, herbs) on the old surfaces; the table names the fruit and leaves those rows as they are."
+ ],
+ "unsettled": [
+  "Whether every source address still answers: none could be opened from this session.",
+  "How many weeks Carmenère ripens after Merlot: two to three, about three, or four to five, as the sources differ. The table says weeks.",
+  "Whether Chile's decree asks oak of a Gran Reserva: the excerpts read give oak to Reserva Especial and none to Gran Reserva, but the full article could not be opened. The table promises none.",
+  "Whether the plan for Mendoza's nursery was put forward or approved on 17 April 1853: the sources differ, and the table says set out to found.",
+  "The Chilean Spanish respelling of Carmenère: not confirmed, so not given."
+ ],
+ "settled": [
+  "Merlot is a child of Cabernet Franc and Magdeleine Noire des Charentes, named in a paper of 2009; its name is thought to come from merle, the blackbird.",
+  "Villány, Hungary's warmest district, makes Cabernet Franc fuller and riper than the Loire's and without its green edge: a warm Old World exception, beside the Tuscan coast.",
+  "The Court's grid reads the Loire cool, and the Codex calls Patagonia the cool, low exception of Argentina: both belong on a cool rung, not beside Cahors.",
+  "Petit Verdot, the little green one, ripens late and usually takes 1 to 5 per cent of a Médoc blend; Virginia bottles it alone.",
+  "Colli Berici lists Carmenère as a type of its DOC, recognised in 2009, so a guest can meet an Old World Carmenère under its own name.",
+  "Irouléguy's red is Tannat and Cabernet Franc as its main grapes, with Cabernet Sauvignon an accessory, under the cahier of 2024.",
+  "Micro-oxygenation began in Madiran; in Uruguay some cellars use it and others do not."
+ ]
+}
