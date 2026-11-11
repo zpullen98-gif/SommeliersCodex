@@ -33,12 +33,12 @@
       "old": {
         "where": "Burgundy's Côte d'Or above all; Germany as Spätburgunder, Alsace and Sancerre",
         "glass": "Tends to be paler, earthier and more savoury: red cherry, raspberry and cranberry over forest floor and rose petal, with bright acidity, moderate alcohol and a firm, fine frame that asks for time.",
-        "cellar": "Often fermented with a share of whole bunches, stems and all, then aged a year or more in French oak barrels, a modest share of them new."
+        "cellar": "Often a cold soak, then whole bunches or destemmed fruit as each estate prefers; twelve to eighteen months in French oak, more of it new for the higher tiers."
       },
       "new": {
         "where": "Oregon, California's cool coast, New Zealand, Tasmania, Chile and South Africa",
         "glass": "Typically riper and more openly fruity: black cherry, ripe raspberry and plum, often with cola and vanilla, softer acidity, a rounder body and higher alcohol. Oregon tends to sit between the two.",
-        "cellar": "Usually destemmed and often soaked cold before fermenting, to draw colour and fruit; bottled under the grape's name, often with more new French oak."
+        "cellar": "Made much as in Burgundy, though often picked riper and given a larger share of new French oak; bottled under the grape's name."
       },
       "why": "Burgundy is cool and marginal, so its Pinot ripens only just and keeps high acidity and modest alcohol. Sunnier New World sites give riper, darker fruit. Burgundy labels the vineyard or village; the New World names the grape.",
       "blur": "Oregon, Tasmania and the Sonoma Coast make lean, savoury wines that can pass for Burgundy, and warm recent vintages have made red Burgundy and German Spätburgunder riper and darker.",
@@ -60,7 +60,7 @@
     ]
   },
   "labels": [
-    { "term": "Bourgogne Rouge", "means": "Red Burgundy at the regional level: nearly always Pinot Noir, though the label seldom names the grape." },
+    { "term": "Bourgogne Rouge", "means": "Red Burgundy at the regional level, made from Pinot Noir; Gamay sold as Burgundy is labelled Bourgogne Gamay." },
     { "term": "Spätburgunder", "means": "The German name, late Burgundian; Pinot Nero in Italy, Blauburgunder in Austria and the Alto Adige." },
     { "term": "Premier Cru, Grand Cru", "means": "Burgundy ranks the vineyard, not the estate: grand cru is the top tier, premier cru the next." },
     { "term": "Oregon Pinot Noir", "means": "State law asks for at least 90 per cent of the named grape, where federal law asks 75." }
@@ -115,5 +115,18 @@
     "The Oregon floor of 90 per cent is the Codex's own reviewed fact (the Oregon reading); the Willamette Valley body is cited beside it.",
     "Blackened redfish is the one dish from the Creole table: a low tannin red is the usual red with a meaty, charred fish.",
     "The sources were read through search results; this session could not open bourgogne-wines.com or trade.oregonwine.org directly."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-11",
+    "verdict": "Sound after three fixes. The respelling, the German, Italian and Austrian names, the Oregon floor, the climate rungs and the service figures hold; the two cellar lines set a Burgundy habit on the New World side, and one label line said less than the law allows.",
+    "changed": [
+      "worlds.contrast.new.cellar: Usually destemmed and often soaked cold before fermenting now reads made much as in Burgundy, though often picked riper and given a larger share of new French oak. The Codex Burgundy record makes the cold soak a Burgundian habit, so it was no New World mark.",
+      "worlds.contrast.old.cellar: Often fermented with a share of whole bunches now reads often a cold soak, then whole bunches or destemmed fruit as each estate prefers, twelve to eighteen months in French oak, more of it new for the higher tiers, as the Codex Burgundy record has it.",
+      "labels, Bourgogne Rouge: though the label seldom names the grape is struck. Regional Bourgogne labels may carry the grape and many do; the line now says Gamay sold as Burgundy is labelled Bourgogne Gamay, after the Codex Beaujolais record."
+    ],
+    "open": [
+      "Whether a regional Bourgogne may print the grape on its front label: the sources read disagree, so the entry no longer says either way.",
+      "The pine cone name stays hedged as said to come, as the author left it."
+    ]
+  }
 }

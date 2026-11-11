@@ -5,12 +5,12 @@
   "kind": "grape",
   "aliases": [],
   "notIn": [],
-  "say": "TSVYE-gelt",
+  "say": "TSVY-gelt",
   "lines": {
     "s10": "Zweigelt is the juicy red of Austria: sour cherry and a pinch of black pepper, soft on the tongue and happy to be served cool.",
     "s20": "Zweigelt is the red Austria pours every day, a crossing of two older local grapes made in 1922. It is juicy and soft, with sour cherry, raspberry and a little black pepper, and it likes a light chill.",
     "s45": "Zweigelt is Austria's everyday red, grown from the banks of the Danube to the Hungarian border. It tastes of sour cherry and raspberry with a pinch of black pepper, and it is juicy and medium bodied, with fresh acidity and soft tannin. Most of it is made in steel tanks and sold young, while the fuller wines from around Lake Neusiedl rest in oak barrels and pick up a little vanilla. Pour it lightly chilled with schnitzel, sausages or roast chicken. It is a young grape, a crossing made near Vienna in 1922 from two older local reds, Blaufränkisch and Saint Laurent.",
-    "sale": "Zweigelt is the bottle for a guest who loves Pinot Noir and wants to try something new: much the same easy weight, with sour cherry and a peppery snap. I would pour it lightly chilled with roast chicken or anything fried."
+    "sale": "Zweigelt has the easy weight of a Pinot Noir and a peppery snap of its own, all sour cherry and juice. I would pour it lightly chilled with roast chicken or anything fried."
   },
   "glass": {
     "lead": "Sour cherry and raspberry with a pinch of cracked black pepper, juicy and medium bodied, on fresh acidity and soft tannin.",
@@ -29,7 +29,7 @@
   "worlds": {
     "home": {
       "home": "Austria, where it is grown across the country's wine regions. The warm shore of Lake Neusiedl in Burgenland and the slopes of Carnuntum, east of Vienna, give the fullest wines, some of them aged in small oak barrels. Lower Austria's are lighter, made in steel and sold young. It is also pressed for rosé.",
-      "abroad": "Hungary, the Czech Republic and Slovakia grow it next door, mostly for light reds and rosé. Further off it has taken to cold places: the Okanagan Valley in British Columbia and Hokkaido in Japan."
+      "abroad": "Hungary, the Czech Republic and Slovakia grow it next door, mostly for light reds and rosé. Further off it has taken to places with hard winters: the Okanagan Valley in British Columbia and Hokkaido in Japan."
     }
   },
   "service": {
@@ -48,18 +48,18 @@
   },
   "labels": [
     { "term": "Blauer Zweigelt", "means": "The grape's longer name on some Austrian labels: the same wine." },
-    { "term": "Rotburger", "means": "A second legal name for the same grape; a few growers prefer it, since the breeder was a National Socialist." },
+    { "term": "Rotburger", "means": "A second legal name. The breeder was a National Socialist, and some in Austria want his name off the grape." },
     { "term": "Neusiedlersee", "means": "The lakeside origin in Burgenland whose red is Zweigelt; a Reserve blend holds at least 60 per cent." },
     { "term": "Zweigeltrebe", "means": "The grape's name on Czech and Japanese labels: Zweigelt vine, nothing more." }
   ],
   "guest": [
     { "q": "I usually drink Pinot Noir. Will I like this?", "a": "I think so. It is a little darker and juicier, with sour cherry and a peppery snap where Pinot Noir has silk and forest floor, and it is just as easy with food." },
     { "q": "It smells so fruity. Is it sweet?", "a": "No, it is dry. Ripe sour cherry and raspberry can read as sweetness on the nose, but there is no sugar left in the wine and the finish is fresh." },
-    { "q": "How on earth do I say it?", "a": "TSVYE-gelt. The Z is said as ts and the W as v, in two syllables with the weight on the first." }
+    { "q": "How on earth do I say it?", "a": "TSVY-gelt. The Z is said as ts and the W as v, in two syllables with the weight on the first." }
   ],
   "compare": [
     { "slug": "blaufrankisch", "tell": "Blaufränkisch, its parent, is darker and firmer, with blackberry, more black pepper, higher acidity and real tannin; Zweigelt is softer, juicier and ready sooner." },
-    { "slug": "gamay", "tell": "Gamay is paler and lighter, with violet and often a candied banana note; Zweigelt is darker, with sour cherry, pepper and a touch more tannin." },
+    { "slug": "gamay", "tell": "Gamay is paler and lighter, with violet and often a candied banana note; Zweigelt is darker, with a peppery snap and a touch more tannin." },
     { "slug": "pinot-noir", "tell": "Pinot Noir is paler and silkier, with forest floor under its red cherry; Zweigelt is purple at the rim, juicier and plainer, with a peppery finish." }
   ],
   "profile": {
@@ -111,5 +111,20 @@
     "Violet as a scent is left out: the national wine body speaks of a violet tint in the colour, not of a floral note.",
     "Service follows the reference's row for light reds, and the national wine body's own campaign for serving its reds lightly chilled. No Creole dish is given: none of the seven truly suits better than the four listed.",
     "The sources were read through search results; this session could not open austrianwine.com directly (the host is outside the session's network). The checker should open the four addresses."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-11",
+    "verdict": "Sound after six fixes. The crossing of 1922 at Klosterneuburg, Rotburger and Blauer Zweigelt on the label, the Neusiedlersee rule of at least 60 per cent and its year, and the abroad list hold; the respelling departed from the Codex records, one label line claimed more than the sources show, and the Okanagan is no cold place.",
+    "changed": [
+      "say and guest[2].a: TSVYE-gelt now reads TSVY-gelt, the respelling of the Codex Austria, Burgenland and Sopron records.",
+      "labels, Rotburger: a few growers prefer it, since the breeder was a National Socialist now reads the breeder was a National Socialist, and some in Austria want his name off the grape. The campaign of 2018 is reported; no source read shows growers changing labels.",
+      "worlds.home.abroad: taken to cold places now reads places with hard winters. The Codex calls the southern Okanagan hot in summer; the vine is grown there and in Hokkaido for its hardiness in winter.",
+      "lines.sale: the hook spoke of a guest in the third person; it is now said of the grape: the easy weight of a Pinot Noir and a peppery snap of its own.",
+      "compare, the Gamay tell: sour cherry struck from the Zweigelt side, since Gamay carries it too."
+    ],
+    "open": [
+      "Whether the breeder named the grape Rotburger and the year it took the name Zweigelt (1975 in most sources): the entry says neither, as the author left it.",
+      "The Okanagan Valley and Hokkaido stand on the author sources; neither address was opened from this session."
+    ]
+  }
 }

@@ -8,7 +8,7 @@
   "say": "san-SOH",
   "lines": {
     "s10": "Cinsault is the pale, perfumed red of the Mediterranean: wild strawberry, raspberry and rose petal, soft enough to serve cool.",
-    "s20": "Cinsault is a grape of the hot south of France that keeps its freshness in the heat. It gives pale, soft wines of strawberry and raspberry, and it is the quiet partner in many Provence rosés and southern French reds.",
+    "s20": "Cinsault is a grape of the hot south of France, at ease in heat and drought. It gives pale, soft wines of strawberry and raspberry, and it is the quiet partner in many Provence rosés and southern French reds.",
     "s45": "Cinsault has spent most of its life in other grapes' company, softening the red blends and filling the rosés of southern France. On its own it is pale and perfumed, with wild strawberry, raspberry and rose petal, light in body and gentle in tannin. It is rarely given new oak. France mostly blends it or presses it for rosé, while South Africa and Chile now bottle old vines alone as light, fragrant reds. Pour it cool with charcuterie, grilled tuna or a tomato salad. Chile planted it in its southern hills after the earthquake of 1939, and those vines, now old, are bottled alone at last.",
     "sale": "Cinsault is a grape behind the pale Provence rosé you already know, and as a red it keeps that same strawberry freshness. I would chill it lightly and pour it with grilled tuna or the charcuterie."
   },
@@ -59,13 +59,13 @@
   },
   "labels": [
     { "term": "Cinsaut", "means": "The same grape spelt without the L, as French officials and many Cape labels write it." },
-    { "term": "Côtes de Provence", "means": "A pale, dry rosé, most often a blend in which Cinsault joins Grenache and others." },
+    { "term": "Côtes de Provence", "means": "The appellation of most Provence rosé, pale and dry, in which Cinsault often joins Grenache." },
     { "term": "Hermitage", "means": "The Cape's old name for Cinsault, no kin to the Rhône hill; it gave Pinotage its ending." },
     { "term": "Secano Interior", "means": "A Chilean label term kept for dry farmed País and Cinsault from the southern coastal hills." }
   ],
   "guest": [
     { "q": "I only know Cinsault from rosé. What is it like as a red?", "a": "Much the same in spirit: pale, light and fragrant, with wild strawberry and very little tannin. Drink it as you would a rosé, lightly chilled." },
-    { "q": "Why is this red so pale? Is something wrong with it?", "a": "Nothing at all. Cinsault has big berries and thin skins, so there is little colour or tannin to draw out. The pale colour is the grape, and the flavour is all there." },
+    { "q": "Why is this red so pale? Is something wrong with it?", "a": "Nothing at all. Cinsault has large, juicy berries, so there is more juice to each skin and less colour and tannin to draw out. The pale colour is the grape." },
     { "q": "The label says old vines. Does that matter?", "a": "With this grape it does. Young, heavily cropped Cinsault can be thin. Old vines grown without irrigation give far fewer grapes, and the wine has more scent and depth for it." }
   ],
   "compare": [
@@ -89,7 +89,7 @@
   ],
   "questions": [
     {
-      "q": "Two pale wines of Cinsault are poured. One is a dry rosé blended with Grenache; the other is a perfumed, lightly chilled red from old bush vines, labelled with the grape alone. Which pair of origins fits, in that order?",
+      "q": "Two pale wines of Cinsault are poured. One is a dry rosé blended with Grenache; the other is a perfumed, lightly chilled red from old bush vines, labelled with the grape alone. Which pair of origins is the more typical, in that order?",
       "opts": ["Provence, then the Swartland", "The Swartland, then Provence", "Itata, then the southern Rhône", "Stellenbosch, then the Languedoc"],
       "a": 0,
       "exp": "A Grenache and Cinsault rosé is the classic of Provence, and old bush vine Cinsault bottled alone belongs to the Swartland's revival. The reversed pair, the nearest wrong answer, swaps the two traditions.",
@@ -105,7 +105,7 @@
       "q": "A guest asks for a red to drink cool with grilled tuna, with as little tannin as the list allows. The list offers four grapes of the south of France. Which do you pour?",
       "opts": ["Cinsault", "Mourvèdre", "Carignan", "Syrah"],
       "a": 0,
-      "exp": "Cinsault's big berries and thin skins give a pale, soft red with little tannin, which takes a chill and suits fish. Carignan, Syrah and Mourvèdre are darker and firmer, and turn hard when cold."
+      "exp": "Cinsault's large, juicy berries give a pale, soft red with little tannin, which takes a chill and suits fish. Carignan, Syrah and Mourvèdre are darker and firmer, and turn hard when cold."
     }
   ],
   "sources": [
@@ -124,5 +124,21 @@
     "The label line Cinsaut says French officials and many Cape labels write it so; the national wine body of South Africa lists the grape under that spelling. The plan carries no alias for it, though the Codex's own alias list pairs Cinsault with Cinsaut: the integrator may wish to add it.",
     "The Creole dish is shrimp remoulade with a rosé, which is how most guests meet the grape.",
     "The sources were read through search results; this session could not open the sites directly. The checker should open the four addresses."
-  ]
+  ],
+  "checked": {
+    "date": "2026-11-11",
+    "verdict": "Sound after five fixes. Hermitage, Cinsaut, Ottavianello, the planting in Chile after the Chillán earthquake of 1939, Secano Interior for País and Cinsault and the Bekaa hold; the guest answer and one explanation gave the grape thin skins where the sources give it fairly thick, firm ones, and the worlds question admitted a second key.",
+    "changed": [
+      "guest[1].a: big berries and thin skins now reads large, juicy berries, so there is more juice to each skin. An encyclopedia and the United States germplasm record give large berries with fairly thick, firm skins; the pale colour comes from the share of juice to skin.",
+      "questions[2].exp: the same fix.",
+      "lines.s20: keeps its freshness in the heat now reads at ease in heat and drought. Drought resistance is in every source read; freshness in the heat is in none.",
+      "labels, Côtes de Provence: a pale, dry rosé now reads the appellation of most Provence rosé, pale and dry. It is an appellation, red and white as well, and the Codex Provence record calls it the largest.",
+      "questions[0]: the stem now asks for the more typical pair. The blur line itself admits Languedoc Cinsault bottled alone and Cape rosé, so Stellenbosch, then the Languedoc could be defended."
+    ],
+    "open": [
+      "Chile: the planting is dated 1939 by most sources and officially 1940 by one; the entry says just after the earthquake of 1939.",
+      "Secano Interior as a term reserved for País and Cinsault stands on the Codex Chile record, which cites the decree; no page read in this session confirms or refutes it.",
+      "The Cinsaut alias the author raised is the plan reviewer to decide; nothing here changes it."
+    ]
+  }
 }
