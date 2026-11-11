@@ -460,6 +460,287 @@
         }
       ],
       "why": "Two Codex records pulled apart on one note; the sources make ginger Gewürztraminer's and at most a passing hint in Viognier, so two words leave the Viognier profile and nothing else moves."
+    },
+    {
+      "id": "L3-09",
+      "topic": "Superlatives of judgement: Naoussa's producers and Touriga Nacional",
+      "verdict": "change",
+      "claim": "The Naoussa record calls the oldest house's Grande Reserve the classic old-school Naoussa on any list (producers[0].why) and another estate's old vine wine the top old-vine bottling (producers[2].why); the Régionale row for Touriga Nacional (INTRO_GRAPES) opens its trap on Portugal's top red.",
+      "finding": "Each is a ranking of the Codex's own, which the house rules keep out of the Codex. The facts beside them stand and are kept: the house founded at Naoussa in 1879 and its long aged Grande Reserve in the old style (the record's own wines and places notes describe that style), the estate's old vine bottling, and Touriga Nacional's deep colour, floral lift and firm structure and its place among the Port grapes. Nobody living is named in the new words; the 1879 founder named in the first line is long dead.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "producers[0].why",
+          "old": "and whose Grande Reserve is the classic old-school Naoussa on any list.",
+          "new": "and whose Grande Reserve shows the long-aged, old-school style of Naoussa."
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "producers[2].why",
+          "old": "and whose Earth and Sky is the top old-vine bottling.",
+          "new": "and whose Earth and Sky is its old-vine bottling."
+        },
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Touriga Nacional",
+          "path": "INTRO_GRAPES touriga-nacional.trap",
+          "old": "Portugal’s top red: deep colour, floral lift, firm structure.",
+          "new": "Portugal’s signature red: deep colour, floral lift, firm structure."
+        }
+      ],
+      "sources": [],
+      "why": "The house rule: no superlative of judgement (top, classic on any list); the lines keep their facts and lose the ranking, and the grape row reads signature as the other rows do (Rueda, South Africa, Uruguay)."
+    },
+    {
+      "id": "L3-10",
+      "topic": "Source titles that name the living authors of Wine Grapes",
+      "verdict": "change",
+      "claim": "Thirty four source titles in the region fragments cite Wine Grapes with its three living authors named in the title (Wine Grapes, Robinson, Harding and Vouillamoz, entry on ...; Wine Grapes (Robinson, Harding, Vouillamoz); Wine Grapes (Robinson, Harding and Vouillamoz): ...).",
+      "finding": "The codex56 articles cite the book as Wine Grapes (Penguin, 2012), and other records already write Wine Grapes, entries on ...; each title below takes that form and keeps its own entries (for example Wine Grapes (Penguin, 2012), entry on Xinomavro). Where the same title stands more than once in a file, the old runs back to the source before it so that each old occurs once. The hand files (js/data-service-ref.js, js/reference.js, js/data-grapes-plus.js, js/data-intro.js, the primers, the Advanced and Master banks, the grape fragments and the CMS subjects) name none of the three in a shown source; js/regions/*.json carry the same titles and follow from the fragments by the build.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "greece (country)",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on the Greek varieties\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on the Greek varieties\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "sources[3].title",
+          "old": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Naoussa, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Xinomavro\",",
+          "new": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Naoussa, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012), entry on Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "amyndeon",
+          "path": "sources[3].title",
+          "old": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Amyndeon, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Xinomavro\",",
+          "new": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Amyndeon, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012), entry on Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "goumenissa",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Negoska and Xinomavro\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Negoska and Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "rapsani",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Krassato, Stavroto and Xinomavro\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Krassato, Stavroto and Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "nemea",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Agiorgitiko\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Agiorgitiko\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "mantinia",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Moschofilero\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Moschofilero\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "santorini",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Assyrtiko, Athiri, Aidani and Mavrotragano\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Assyrtiko, Athiri, Aidani and Mavrotragano\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "crete",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Vidiano, Vilana, Kotsifali, Mandilaria and Liatiko\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Vidiano, Vilana, Kotsifali, Mandilaria and Liatiko\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "kefalonia",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Robola, Mavrodaphne, Vostilidi and Tsaousi\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Robola, Mavrodaphne, Vostilidi and Tsaousi\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "samos",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Muscat Blanc à Petits Grains\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Muscat Blanc à Petits Grains\","
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on the Hungarian varieties\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on the Hungarian varieties\","
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "matra",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Irsai Olivér, Olaszrizling and Szürkebarát\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Irsai Olivér, Olaszrizling and Szürkebarát\","
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "badacsony",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Kéknyelű, Budai Zöld and Olaszrizling\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Kéknyelű, Budai Zöld and Olaszrizling\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "piedmont",
+          "path": "sources[4].title",
+          "old": "\"asOf\": \"2025\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2025\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "friuli",
+          "path": "sources[4].title",
+          "old": "\"asOf\": \"2017\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2017\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.2.json",
+          "record": "trentino-alto-adige",
+          "path": "sources[6].title",
+          "old": "\"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.2.json",
+          "record": "tuscany",
+          "path": "sources[7].title",
+          "old": "\"asOf\": \"2010\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2010\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Consorzio Vini di Orvieto: Orvieto DOC rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio Vini di Orvieto: Orvieto DOC rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "abruzzo",
+          "path": "sources[5].title",
+          "old": "\"asOf\": \"2024\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2024\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "campania",
+          "path": "sources[5].title",
+          "old": "\"title\": \"Consorzio Tutela Vini del Sannio: Aglianico del Taburno DOCG and Falanghina del Sannio DOC\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio Tutela Vini del Sannio: Aglianico del Taburno DOCG and Falanghina del Sannio DOC\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "puglia",
+          "path": "sources[5].title",
+          "old": "\"title\": \"Consorzio Castel del Monte: the Castel del Monte DOC and DOCG rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio Castel del Monte: the Castel del Monte DOC and DOCG rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "sources[7].title",
+          "old": "\"url\": \"https://www.decanter.com/wine-news/etna-docg-status-sicily-517085/\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"url\": \"https://www.decanter.com/wine-news/etna-docg-status-sicily-517085/\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sardinia",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Consorzio di Tutela del Cannonau di Sardegna DOC: rules and sub-zones\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio di Tutela del Cannonau di Sardegna DOC: rules and sub-zones\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.1.json",
+          "record": "switzerland (country)",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Chasselas, Petite Arvine, Cornalin and Humagne Rouge\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Chasselas, Petite Arvine, Cornalin and Humagne Rouge\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.1.json",
+          "record": "mexico (country)",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Listán Prieto\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Listán Prieto\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.2.json",
+          "record": "eastern-europe (country)",
+          "path": "sources[1].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Saperavi, Rkatsiteli, Tribidrag, Plavac Mali, Fetească and Mavrud\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Saperavi, Rkatsiteli, Tribidrag, Plavac Mali, Fetească and Mavrud\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.2.json",
+          "record": "lebanon (country)",
+          "path": "sources[1].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Obaideh and Merwah\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Obaideh and Merwah\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.2.json",
+          "record": "uruguay (country)",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Tannat and Marselan\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Tannat and Marselan\","
+        },
+        {
+          "file": ".scripts/regions/fragments/portugal.2.json",
+          "record": "alentejo",
+          "path": "sources[5].title",
+          "old": "\"title\": \"Wine Grapes (Robinson, Harding and Vouillamoz): Alicante Bouschet, Aragonez, Antão Vaz, Roupeiro\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012): Alicante Bouschet, Aragonez, Antão Vaz, Roupeiro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/south-africa.1.json",
+          "record": "south-africa (country)",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Pinotage, Chenin Blanc and Crouchen\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Pinotage, Chenin Blanc and Crouchen\","
+        },
+        {
+          "file": ".scripts/regions/fragments/south-africa.1.json",
+          "record": "stellenbosch",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Pinotage\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Pinotage\","
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rias-baixas",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, Albariño entry\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), Albariño entry\","
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "bierzo",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, Mencía and Godello entries\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), Mencía and Godello entries\","
+        }
+      ],
+      "sources": [],
+      "why": "The house rule: nobody living is named, in a title as in prose; a mechanical change that needs no source."
     }
   ]
 }
