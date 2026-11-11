@@ -1,0 +1,174 @@
+{
+  "lane": "L2",
+  "checked": "2026-11-11",
+  "entries": [
+    {
+      "id": "L2-01",
+      "topic": "Dolcetto's DOCGs: Ovada",
+      "verdict": "change",
+      "claim": "The Piedmont record names Dogliani and Diano d'Alba as Dolcetto's DOCGs, and its DOCG tier lists Dogliani alone of the three.",
+      "finding": "Dolcetto di Ovada Superiore, or Ovada, is a third Dolcetto DOCG, 100 per cent Dolcetto, approved by ministerial decree of 17 September 2008 (Gazzetta Ufficiale no. 229, 30 September 2008) and amended in 2011; it lies in the Alto Monferrato, not the Langhe. Diano d'Alba has been a DOCG since a decree of 2 August 2010, so the tier list should name it too.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "piedmont",
+          "path": "grapes[2].styles",
+          "old": "Dogliani and Diano d'Alba give it DOCG status",
+          "new": "Dogliani, Diano d'Alba and Ovada give it DOCG status"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "piedmont",
+          "path": "places[0].note",
+          "old": "Dogliani and Diano d'Alba are its Dolcetto DOCGs.",
+          "new": "Dogliani and Diano d'Alba are its Dolcetto DOCGs, and Ovada in the Alto Monferrato is the third."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "piedmont",
+          "path": "law.tiers[0][1]",
+          "old": "Nizza, Dogliani, Gattinara",
+          "new": "Nizza, Dogliani, Diano d'Alba, Ovada, Gattinara"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Regione Piemonte: disciplinare di produzione della DOCG Dolcetto di Ovada Superiore o Ovada",
+          "url": "https://www.regione.piemonte.it/web/sites/default/files/media/documenti/2019-01/docg_dolcetto_di_ovada_superiore.pdf",
+          "kind": "primary",
+          "says": "The DOCG Dolcetto di Ovada Superiore or Ovada, 100 per cent Dolcetto, once a type of the Dolcetto di Ovada DOC, approved as DOCG by DM 17.09.2008 (G.U. 229, 30.09.2008) and amended by DM 30.11.2011.",
+          "read": "search summary"
+        },
+        {
+          "title": "Gazzetta Ufficiale, serie generale no. 224 of 26 September 2025: decree of 19 September 2025 on the Ovada DOCG consortium",
+          "url": "https://www.gazzettaufficiale.it/eli/gu/2025/09/26/224/sg/html",
+          "kind": "primary",
+          "says": "Confirms the consortium's role for the sole DOCG Dolcetto di Ovada Superiore or Ovada, correcting a 2024 decree that had named the DOC too.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Barolo Barbaresco Alba Langhe e Dogliani: disciplinare della DOCG Dolcetto di Diano d'Alba o Diano d'Alba",
+          "url": "https://www.langhevini.it/wp-content/uploads/2019/05/DOCG-Dolcetto-di-Diano-d-Alba-o-Diano-d-Alba.pdf",
+          "kind": "primary",
+          "says": "Diano d'Alba approved as DOCG by ministerial decree of 2 August 2010, G.U. of 19 August 2010.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Ovada has been a third Dolcetto DOCG since 2008; the record named two, and its DOCG list left out Diano d'Alba and Ovada."
+    },
+    {
+      "id": "L2-02",
+      "topic": "Roero DOCG year",
+      "verdict": "leave",
+      "claim": "The Piedmont record (places[1].note and r-7a090n11's explanation) and the Arneis grape fragment give Roero its DOCG in 2004.",
+      "finding": "Roero was raised to DOCG by the decree of 7 December 2004, published in the Gazzetta Ufficiale no. 301 of 24 December 2004. The consortium's history page says acknowledged in 2005, which reads as the first harvest under the new rule; the decree year is 2004.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Regione Piemonte: disciplinare di produzione della DOCG Roero",
+          "url": "https://www.regione.piemonte.it/web/sites/default/files/media/documenti/2019-01/docg_roero_disciplinare_con_revisioni_accettate.pdf",
+          "kind": "primary",
+          "says": "Approvato DOCG con DI 07.12.2004, G.U. 301 of 24.12.2004.",
+          "read": "search summary"
+        },
+        {
+          "title": "Gazzetta Ufficiale, serie generale no. 301 of 24 December 2004",
+          "url": "https://www.gazzettaufficiale.it/eli/gu/2004/12/24/301/sg/pdf",
+          "kind": "primary",
+          "says": "The issue's contents list a decree of 7 December 2004 on the Roero wines.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Tutela Roero: history",
+          "url": "https://www.consorziodelroero.it/en/history/",
+          "kind": "primary",
+          "says": "The Roero DOCG acknowledged in 2005: the source of the one page that reads 2005.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The decree is dated 7 December 2004; 2004 stands in the record, the question and the Arneis fragment."
+    },
+    {
+      "id": "L2-03",
+      "topic": "Trebbiano d'Abruzzo: the vines the rule names",
+      "verdict": "change",
+      "claim": "Question c-ndvwbnke says the denomination permits Bombino Bianco as well as Trebbiano Abruzzese; the Italy country record says Trebbiano d'Abruzzo is a different grape from Trebbiano Toscano, while the Abruzzo record says the wine may be made from Trebbiano Abruzzese and Trebbiano Toscano, at least 85 per cent together.",
+      "finding": "The rule of 1972 named Trebbiano d'Abruzzo with Bombino Bianco, the two long confused in the vineyard. The disciplinare approved by ministerial decree of 19 January 2023 (Gazzetta Ufficiale of 6 February 2023) names Trebbiano Abruzzese and/or Trebbiano Toscano, at least 85 per cent, and no longer Bombino Bianco; the region's comparison of texts of December 2024 says Article 2 no longer provides for Bombino, and reports of the ordinary amendment approved in August 2026 give the same base. Trebbiano Abruzzese the vine is distinct from Trebbiano Toscano; the wine Trebbiano d'Abruzzo may be made from either.",
+      "targets": [
+        {
+          "file": "rewrite/categories/r2_italy_central_south.py",
+          "record": "c-ndvwbnke",
+          "path": "questions c-ndvwbnke exp (the SA in Lazio, Abruzzo and Molise, about line 206)",
+          "old": "The denomination permits Bombino Bianco as well as the distinct local Trebbiano Abruzzese, and the two have been confused in the vineyard for generations.",
+          "new": "Bombino Bianco and the distinct local Trebbiano Abruzzese have been confused in the vineyard for generations, and the old rule named both; since January 2023 the denomination names Trebbiano Abruzzese and Trebbiano Toscano, at least 85 per cent together."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "the Italy country record",
+          "path": "country.grapes[10].styles",
+          "old": "Trebbiano d'Abruzzo is a different grape.",
+          "new": "Trebbiano Abruzzese is a different grape, though the wine Trebbiano d'Abruzzo may use either."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "the Italy country record",
+          "path": "country.traps[6]",
+          "old": "Trebbiano d'Abruzzo and Trebbiano di Soave are not Trebbiano Toscano;",
+          "new": "Trebbiano Abruzzese and Trebbiano di Soave are not Trebbiano Toscano, though the wine Trebbiano d'Abruzzo may be made from Abruzzese or Toscano;"
+        },
+        {
+          "file": "rewrite/categories/r1_grapes_labels.py",
+          "record": "the Ugni Blanc and Trebbiano Toscano question (Whites under other names, about line 147)",
+          "path": "exp",
+          "old": "Trebbiano Romagnolo and Trebbiano d'Abruzzo look like one family",
+          "new": "Trebbiano Romagnolo and Trebbiano Abruzzese look like one family"
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "questions[1].exp",
+          "old": "but it is a different vine.",
+          "new": "but it is made from other vines."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Regione Abruzzo, Bollettino Ufficiale of 2 December 2024: texts compared for the amendment of the Trebbiano d'Abruzzo DOC disciplinare",
+          "url": "https://bura.regione.abruzzo.it/sites/bura.regione.abruzzo.it/files/bollettini/2024-12-02/alleagto-2-testi-confronto-x-modifica-disciplinare-doc-trebbiano-dabruzzo-signed.pdf",
+          "kind": "primary",
+          "says": "Compares the disciplinare approved by DM 19 January 2023, in force, with the proposal; Article 2 no longer provides for Bombino, and Trebbiano Abruzzese was long confused with Bombino Bianco, which is why the 1972 rule named them together.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Tutela Vini d'Abruzzo: disciplinare of Trebbiano d'Abruzzo DOC (DM 19 January 2023)",
+          "url": "https://www.vinidabruzzo.it/wp-content/uploads/2024/04/TREBBIANO-DABRUZZO-DOC.pdf",
+          "kind": "primary",
+          "says": "The base type: Trebbiano Abruzzese and/or Trebbiano Toscano, at least 85 per cent; the sub-zones at least 90.",
+          "read": "search summary"
+        },
+        {
+          "title": "AIS Lombardia, Vini Plus: changes to the production rules, first four months of 2023",
+          "url": "https://www.aislombardia.it/viniplus/diritto-divino/novita-dai-disciplinari-di-produzione-le-modifiche-del-primo-quadrimestre-2023.htm",
+          "kind": "secondary",
+          "says": "The 2023 rule asks at least 85 per cent Trebbiano Abruzzese and/or Trebbiano Toscano, with Bombino left out.",
+          "read": "search summary"
+        },
+        {
+          "title": "Qualivita: Trebbiano d'Abruzzo DOP, approval of an ordinary amendment, GURI no. 196 of 25 August 2026",
+          "url": "https://www.qualivita.it/normativa/trebbiano-dabruzzo-dop-approvazione-modifica-ordinaria-disciplinare-guri-n-196/",
+          "kind": "secondary",
+          "says": "Lists the approval of an ordinary amendment to the Trebbiano d'Abruzzo rule, GURI no. 196 of 25 August 2026.",
+          "read": "search summary"
+        },
+        {
+          "title": "Disciplinare.it: Trebbiano d'Abruzzo DOC, approval of an ordinary amendment, 2026",
+          "url": "https://www.disciplinare.it/trebbiano-dabruzzo-doc-approvazione-modifica-ordinaria-al-disciplinare-di-produzione-2026.html",
+          "kind": "secondary",
+          "says": "Gives the vineyard base after the 2026 amendment as Trebbiano Abruzzese and/or Trebbiano Toscano, at least 85 per cent, and recalls that the 1972 rule named Trebbiano Abruzzese with Bombino Bianco after long confusion.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The explanation gave the pre 2023 rule as current and two lines called the wine a grape; c-ndvwbnke's stem, answer and accept list stay (Bombino Bianco is still what old vineyards planted as Trebbiano often hold, and the accept list takes Trebbiano Abruzzese)."
+    }
+  ]
+}
