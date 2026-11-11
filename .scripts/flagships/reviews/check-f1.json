@@ -1,0 +1,161 @@
+{
+ "chunk": "f1",
+ "date": "2026-11-11",
+ "by": "refuter",
+ "method": [
+  "Every record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "No page or search was open to the refuter: the search budget shared by the run was spent before this check began (the one search tried was refused), and the network refuses every host (en.wikipedia.org failed to resolve, and the proxy log shows the appellation and ministry hosts refused). Each fact was tried against the Codex's own reviewed records (the library, the region record, the primers and the wine records, read in place) and against the refuter's own reading of the Oxford Companion to Wine, the World Atlas of Wine and the Côte d'Or literature; none of those books was opened in this run.",
+  "Where the refuter's reading contradicted a record, the record was set right; where neither the Codex nor that reading could settle a claim, it was softened or taken out, since an empty field is a true answer; where only the author's searched sources hold a fact, it stands and is listed as open.",
+  "The Côte de Nuits and Côte de Beaune fragments were not on the branch when this check began: the author's two drafts lay unpushed in the run's scratch folder (f1/drafts), each failing the lint only for want of an https source and marked DRAFT, NOT YET SOURCED. The refuter brought them in, refuted them as below and gave each record the Codex's own library as its https source, as chunks f2 and f3 do."
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "group": "burgundy-chablis",
+   "pick": "vincent-dauvissat",
+   "note": "The plan asks Les Preuses or Les Clos. The author kept Les Preuses with no swap; the refuter agrees: Raveneau's record already teaches Les Clos, Les Preuses is the Dauvissat grand cru on the house's own list, and the library names it among the domaine's wines. plan.json is unchanged."
+  }
+ ],
+ "groups": {
+  "burgundy-chablis": {
+   "verdict": "three records changed, two sound; all five sound under the chunk lint with a checker's record",
+   "records": [
+    {
+     "key": "raveneau",
+     "tested": [
+      "founded 1948 and the marriage into the Dauvissat family (library, and the author's three searched accounts); François Raveneau's death in 2000; Pontigny founded in 1114; the decree of 1938 that made Chablis Grand Cru one appellation of seven climats (Codex region record and primers); Les Clos the largest climat, south west facing, its name from the walls (the Chablis wine body, and the library's w-chablis-les-clos)",
+      "the making: fermentation in tank, then old casks and the feuillette of about 132 litres, a year and more on the lees; the drinking window, 11 to 13 degrees for a full white (the service reference gives 10 to 13); the label words, the domaine's grands crus Les Clos, Valmur and Blanchot and their places on the hill",
+      "the cards and questions: one key each, the distractors of one kind, Grenouilles as the smallest and Montée de Tonnerre as the premier cru beside the hill"
+     ],
+     "changes": [
+      {
+       "field": "wine.making, table, story",
+       "was": "with no new wood at all; with no new wood; no new oak",
+       "now": "with little or no new wood (making and table); the story keeps tank then old casks and says nothing of new wood",
+       "why": "Accounts differ on whether the domaine buys a few new barrels each year, and the library says only old barrels; the softer claim is true either way.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "cards[0]",
+       "was": "Raveneau Les Clos: in what vessels is it raised, and with how much new oak? / Old oak casks, the Chablis feuillette among them, after fermentation in tank; no new oak at all.",
+       "now": "Raveneau Les Clos: in what is it fermented, and in what is it then raised? / Fermented in tank, then raised for a year and more in old oak casks, the Chablis feuillette among them.",
+       "why": "The card's answer rested on the unsettled claim of no new oak; it now drills what every account agrees on.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "the author's searched Wikipedia and Decanter summaries"
+       ]
+      }
+     ],
+     "open": [
+      "François Raveneau is named with his year of death alone; his year of birth was found nowhere.",
+      "The decades of the grand cru purchases (the 1960s and 1970s) rest on the author's searched secondary sources."
+     ]
+    },
+    {
+     "key": "vincent-dauvissat",
+     "tested": [
+      "founded left empty (the library gives no year); the first bottling of 1931 and the grandson's taking charge in 1989 (author's searched sources); kinship by marriage with the Raveneaus (library trap); organic farming from the early 2000s, no certificate claimed",
+      "Les Preuses between Bougros and Vaudésir at the north western end of the hill, right bank (Codex region record and library); the making in old barrels and feuillettes with little new wood (library style line); La Forest spelled without an accent (library)",
+      "the label words; the cards; the questions, whose explanations name why the nearest distractor fails"
+     ],
+     "changes": [
+      {
+       "field": "wine.making, table",
+       "was": "Raised entirely in oak; raised wholly in old casks and feuillettes",
+       "now": "Raised in oak; raised in old casks and feuillettes",
+       "why": "Several accounts give the grands crus months in tank after the barrel and before bottling, so entirely and wholly say more than is known.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "The Oxford Companion to Wine, from the refuter's reading"
+       ]
+      },
+      {
+       "field": "wine.label[2].means",
+       "was": "The name older labels carry, for father and son; later labels read Vincent Dauvissat alone.",
+       "now": "The name many labels carry, for the founder's son and grandson; the domaine is also known by the grandson's name alone.",
+       "why": "Which labels carry which form was not confirmed (the house's own list holds a 2015 Les Preuses under René et Vincent Dauvissat), so the line no longer claims an order.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place",
+        "the house pack's own list"
+       ]
+      }
+     ],
+     "open": [
+      "The years 1931 and 1989 want the domaine's own history, which could not be read."
+     ]
+    },
+    {
+     "key": "william-fevre",
+     "tested": [
+      "founded 1959 (library); the sale of 1998 to the Henriot family and their purchase of Bouchard Père et Fils in 1995 (the refuter's reading, and the Codex's own Court list, which pairs Bouchard Père et Fils with William Fèvre); the grands crus Les Clos, Bougros, Les Preuses, Valmur and Vaudésir; one of the largest shares of grand cru, told as history",
+      "the turn from new oak to steel and older barrels after 1998 (library style line); Côte Bouguerots a named parcel within Bougros, not an eighth grand cru (library trap); Bougros at the north western end of the hill",
+      "the label words, the cards and the questions"
+     ],
+     "changes": [],
+     "open": [
+      "Where Côte Bouguerots lies on the slope: the library says at the foot, the plan the steep slope; the refuter reads it as the steep lower part of Bougros above the Serein, so the record keeps the steep part of Bougros.",
+      "Whether the founder is living was not settled, so he stays unnamed."
+     ]
+    },
+    {
+     "key": "louis-michel",
+     "tested": [
+      "founded 1850 told as the domaine counts its beginnings (library); steel for every wine with no oak (library); Montée de Tonnerre on the right bank beyond Blanchot, a premier cru (Codex region record and library); Montmains on the left bank; the holding at the top of Grenouilles (library)",
+      "the Chablis history: the Paris trade in cask, phylloxera, frost, the decree of 1938 and the recovery with frost protection (the Codex region record names sprinklers and heaters)",
+      "the label words Louis Michel & Fils (library trap), the cards and the questions"
+     ],
+     "changes": [],
+     "open": [
+      "The decade the family gave up oak: the plan says the 1960s and the library about 1980; the record's second half of the twentieth century stands until the domaine's own page is read."
+     ]
+    },
+    {
+     "key": "la-chablisienne",
+     "tested": [
+      "founded 1923 (library); Grenouilles the smallest climat, between Vaudésir and Valmur (the Chablis wine body and the Codex); Château Grenouilles from most of the climat (library); the frogs of the name told as a story; the cooperative's growth as history, no present figure",
+      "the making: vinified apart from the cooperative's other wines; the split between barrel and tank and the time on the lees, which the author marked unconfirmed",
+      "the label words, the cards and the questions"
+     ],
+     "changes": [
+      {
+       "field": "wine.making",
+       "was": "part of the wine is raised in oak barrels and part in tank, and it rests on its lees for about a year before it is blended and bottled",
+       "now": "it is raised on its fine lees for many months before the cooperative bottles it under the château's name",
+       "why": "The split and the length were the author's unconfirmed account and the refuter could not settle either from the Codex or a reference; an empty claim is a true one.",
+       "sources": [
+        "The Sommelier's Codex library (js/data-producers.js), read in place"
+       ]
+      }
+     ],
+     "open": [
+      "The year the cooperative came to the Château Grenouilles vines (2000 in the author's recollection, 2003 in the refuter's) is left out.",
+      "The priest who led the founding of 1923 is left unnamed, his dates not found."
+     ]
+    }
+   ]
+  }
+ },
+ "tension": [
+  {
+   "record": "p-dom-raveneau",
+   "field": "style",
+   "says": "Fermented and aged partly in old barrels",
+   "finding": "The author's searched accounts (Wikipedia, Decanter) say fermentation in tank and then old casks; the flagship follows them. The library line is not wrong in kind but blurs the order."
+  },
+  {
+   "record": "p-dom-william-fevre",
+   "field": "wines[1].note and traps[0]",
+   "says": "A steep named parcel at the foot of the grand cru slope; Fevre owns more grand cru than any other Chablis producer",
+   "finding": "The foot of the slope and the plan's steep slope are both told of Côte Bouguerots; and the trap states a present holding, which the flagship tells only as history (one of the largest shares)."
+  },
+  {
+   "record": "p-dom-louis-michel",
+   "field": "style",
+   "says": "in stainless steel since about 1980",
+   "finding": "The plan says since the 1960s; neither could be settled here, and the flagship says the second half of the twentieth century."
+  }
+ ]
+}
