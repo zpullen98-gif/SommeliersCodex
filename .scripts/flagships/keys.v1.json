@@ -1,5 +1,16 @@
 {
  "about": "Every id of the Flagships tab, record by record in the plan's order: the record's id (fl- and eight base36 digits, minted once from the pick's key by build-flagships.cjs and read from here ever after), its two cards and its two questions (minted from the record's id and the text). While frozen is false the file follows the writing build. Once the integrator has frozen it (build-flagships.cjs --freeze, the roster whole) a build may add ids and may never lose one: an id is a learner's saved record, and a reworded front or stem is a new id that orphans it.",
  "frozen": false,
- "keys": {}
+ "keys": {
+  "krug": {"id":"fl-4rgb90w0","cards":["fl-fgwjrsaz","fl-it5hrcts"],"questions":["fl-r5ltytkl","fl-rfungqvg"]},
+  "moet-chandon": {"id":"fl-l7ru7uy8","cards":["fl-tzscrx5h","fl-w1og7f4a"],"questions":["fl-zvzdy7nz","fl-ecix87dx"]},
+  "louis-roederer": {"id":"fl-cae69lso","cards":["fl-ekeoqv09","fl-kkb7mupd"],"questions":["fl-tkte32ds","fl-d1jysdrf"]},
+  "bollinger": {"id":"fl-2apwr2hr","cards":["fl-ylio6q76","fl-6ykzqssr"],"questions":["fl-zaa71fm7","fl-xwowsxmg"]},
+  "jacques-selosse": {"id":"fl-q9kepfw6","cards":["fl-vfhobcnt","fl-6u2chyqo"],"questions":["fl-d8h2aqmt","fl-8dpre7cy"]},
+  "lafite-rothschild": {"id":"fl-uily2kyv","cards":["fl-tlk56si5","fl-fnumohvv"],"questions":["fl-4y0o8uua","fl-1js7atrp"]},
+  "latour": {"id":"fl-5h5uaoik","cards":["fl-jspyhb7a","fl-fd84qv1g"],"questions":["fl-oothvkd8","fl-xdp7bnua"]},
+  "margaux": {"id":"fl-ak3fnhuo","cards":["fl-tnfjliru","fl-3r98qi97"],"questions":["fl-xjw2kdg1","fl-a4e9vbct"]},
+  "haut-brion": {"id":"fl-2o9nekr8","cards":["fl-finvftgr","fl-aeix6tkj"],"questions":["fl-ccap30yx","fl-fh8aj8l7"]},
+  "mouton-rothschild": {"id":"fl-tco8gwds","cards":["fl-xduxd19e","fl-a6zhvjxo"],"questions":["fl-ufh163zx","fl-97ad9e6d"]}
+ }
 }
