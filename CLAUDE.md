@@ -48,9 +48,9 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v115`; its two teaching imports have query versions which
+Source worker is `codex-v116`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex57: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex58: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
@@ -58,7 +58,131 @@ codex45 the Regional Field Atlas, codex46 The Wine Workshop, codex47 the Wine At
 codex48 the focused house learning flow, codex49 the house answer readings,
 codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
 codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
-codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course).
+codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course,
+codex57 the Grapes tab at the table).
+
+## The Grapes tab at the table (codex57, 9 November 2026)
+
+The owner asked, in these words: "Now let's expand and improve our Grapes tab under the Sommeliers Codex and have a
+table side description at the top of each grape, and be more descriptive than just using the word citrus, along with
+any other improvements you as a master sommelier can see. Let's also describe the differences between old world vs new
+world style of the same grape such as chardonnay or cabernet". A read-only review of master `7d14d1c` (codex56) found
+no line to say at the table on any of the 59 grape pages (a Say it respelling on 20 of them), the glass summary, the
+root row and the cards of twelve grapes drawing `INTRO_GRAPES.aroma` (11 of 53 a bare family word such as citrus),
+the two worlds only as `TASTE.world`'s one word flag, twelve thin pages with no profile or tell (Cortese, Garganega,
+Glera, Palomino, Pinot Blanc, Roussanne, Silvaner, Cinsault, Dolcetto, Nero d'Avola, Petit Verdot, Zweigelt), house
+grapes with no page (Meunier on 23 of Brennan's wines, Petite Sirah, Graciano), label names resolving to nothing, and
+nothing for service. codex57 is two pieces: one record a grape in `js/data-grapes-table.js`, built by a pipeline, and
+one layer, `js/codex57.js`, loaded after the data and codex56 and before boot. The layer edits no earlier layer, no
+data file and none of ChatGPT's files; it declares with var and function only, every wrapper is typeof guarded and
+outermost, every registry is extended key by key, every string it shows lives in `V57_WORDS` (read by `v57W`) and its
+CSS in its own `v57-style` element, every selector under `.wrap`. It is a display overlay: `GRAPES`, `GRAPES_PLUS`,
+`INTRO_GRAPES`, `TASTE` and the grid data are never changed, and no question id, stem or card `g` name is touched.
+
+- **The data** (`GRAPE_TABLE`, `GRAPE_TABLE_ALIASES`, `GRAPE_TABLE_META`; 644,386 bytes, one line a record, precached
+  as a classic script so the page, the rows and search work offline): 75 grapes, the 59 the join held and sixteen new
+  (Meunier, Petite Sirah, Graciano, Aligoté, Arneis, Fiano, Grenache Blanc, Macabeo, Müller-Thurgau, Pedro Ximénez,
+  Trebbiano and Lambrusco as families, Verdicchio, Agiorgitiko, Montepulciano, Touriga Franca), the twelve thin grapes
+  given a full profile; 24 side by side and 51 at home and abroad; 225 cards and 225 questions (answers A 57, B 56,
+  C 56, D 56); 58,652 reading words; 22 aliases (Carignane, Rolle, Moscato Bianco, Pinot Meunier, Durif, Viura,
+  Macabeu, Ugni Blanc, Fumé Blanc among them), each resolving to its own grape; Auxerrois, Traminer, Grenache Gris,
+  Corvinone, Rondinella, Caladoc, Marselan, Clairette, Counoise and Welschriesling still resolve to nothing.
+- **The record** (`.scripts/grapes/schema.cjs`, the one validator; `node .scripts/grapes/schema.cjs --caps` prints the
+  caps): `name`, `colour`, `kind` (grape or family), `aliases`, `notIn` (phrases whose bank questions stay out of the
+  grape's drill); `say` (a respelling, the stressed syllable in capitals); `lines` (`s10` 12 to 25 words, `s20` 25 to
+  50, `s45` 90 to 110, `sale` 15 to 45 in exactly two sentences); `glass` (`lead`, `notes` by family with the fruit
+  named, a `ladder` of cool, moderate and warm rungs with where and what changes, `structure`); `worlds`, either
+  `contrast` (`old` and `new`, each where, the glass and the cellar, then `why`, `blur` and the blind `call`) or `home`
+  (`home`, `abroad`), as `plan.json` fixes the mode; `service` (temperature, glass, decanting, age); `food.with` (three
+  to five dishes with the reason); `labels`; `guest` (two to four questions with answers); `compare` (one to three
+  neighbours and the tell); `profile` for a thin or new grape and `targets` for a new one; three `cards`, three
+  `questions` (one tagged `worlds` on a side by side grape) and two to four `sources`. The build refuses a bare family
+  word (citrus, red fruit, black fruit, stone fruit, tropical fruit, floral, spice, mineral, oak and their kin) as a
+  note or alone in the prose of the glass, and holds the house voice (no dash, British spelling, nobody living, no
+  price, nothing volatile, no superlative).
+- **The pipeline** (`.scripts/grapes/`: `BRIEF.md` the writer's brief, `plan.json` the 75 in order with chunk, mode,
+  aliases and status, `fragments/<slug>.json`, `keys.v1.json`, `build-grapes.cjs`, `show.cjs`, and `reviews/` with the
+  checkers' twelve chunk reports, the worlds reading and the voice pass). `node .scripts/grapes/show.cjs <slug>` prints
+  what the Codex holds on a grape; `node .scripts/grapes/build-grapes.cjs --lint <slug> [...]` (or `--chunk <name>`,
+  `--all`) validates fragments and writes nothing; `node .scripts/grapes/build-grapes.cjs` is the writing build (the
+  data file and the keys; `--partial` for a roster not yet whole); `--check` proves the shipped file and the keys are
+  the build; `--plan` proves `plan.json` against the app and the id prefix against the Codex; `--freeze` freezes the
+  keys. Authors and checkers run `--lint` alone; only the spec agent, the gates agent and the integrator run the
+  writing build. Ids are `gt-` and eight base36 digits of FNV-1a 64 over `['grape:' + slug, text]` (a card's front, a
+  question's stem), a prefix nothing else mints; the answer positions are dealt round robin by the roster's order.
+  `keys.v1.json` is frozen over its 450 ids: a build may add ids and never lose one, so reword a front or a stem only
+  as a new card or question, which orphans its record.
+- **The join** (`v53GrapeJoin`, decorated once per object): the sixteen in the join's own record shape after the 59,
+  their regions from their `targets` and the regions' join; the twelve thin grapes take the table's profile, `g` the
+  join's name; the aliases become keys first writer wins, so every name that resolved at `7d14d1c` resolves as it did.
+  The decks `grapes` and `grapes-all`, the blind flight, `v28GrapeProfiles` and the Régionale table read the raw lists
+  and are untouched.
+- **The page** (`v53GrapeHtml`): At the table first, where the lone Say it line stood (the forty-five second line at
+  20 px in the house reading face, a gold rule, The sale, the ten and twenty second lines, Say it); the glass leading
+  the fruit section, open (its lead, the notes by family, From cool to warm, Structure), the stock card's rows below
+  under As the grape card reads it, a row item that is only a family word the table names drawn as the table's notes
+  of that family (Albariño, Vermentino, Godello); Old World and New World as two cards (or At home and Abroad) before
+  the regions, each side the house pours carrying a door to its part of On our list; Service and the table, What
+  guests ask, On the label, Compare with and On our list before the Court's grid; Sources closed at the foot; each with
+  its chip. Where it is grown leaves where the worlds are written; the six `v53-gs` sections, Previous, Next and All
+  stay; Trebbiano and Lambrusco are headed A family of white grapes and A family of red grapes; the sections a reader
+  opened are kept for the sitting. `v53StarPlaces` is wrapped so The regions that name it no longer cuts a starred
+  place inside its bracket (eleven grapes read whole, Piedmont (Barolo, Barbaresco) among them).
+- **On our list**: the house's wines of the grape (`v53House()`, `v28Wines`, `v28Grapes`, `v53GrapeKey`) under Old World
+  and New World by the last part of the wine's region through `V57_WORLD` (a part it does not hold goes under neither),
+  producer and wine alone, each opening its card through the house's own door and Back returning to the grape; nothing
+  is drawn when no house is loaded.
+- **The root** (`v53GrapeShort`, `v53GrapesRootHtml`): every row outside the Court's twenty shows the table's glass lead;
+  At the table, a section ahead of Tasting with its jump chip (six chips now), holds Cards at the table with the due
+  count, the three views and a filter (all, white, red, On our list) that hides rows without a redraw, kept for the
+  sitting, with a line under the jumps saying what shows.
+- **Study**: the decks `grapecards`, `grapecards:{slug}` and `grapesdue` on codex32's card screen (`v32DeckDef`,
+  `v32StartRun`), the card kind `gtable` (`v32CardFace`, `v32CardHtml`), each grade a due date by codex3's steps
+  (`v56Step`, `v56Today`, `v56AddDays` reused, typeof guarded) kept per device in `oot-codex-grapesrs-v1` under
+  `OOT.profiles.key` (`{ c, p, w }`: the table's cards by id, the grapes presented by slug, the call drill's rounds);
+  the stock grape cards keep `oot-codex-grapecards-v1` and their own decks (`v32Grade`, `v32Learnt` wrapped so both
+  marks run). The table's questions join each grape's drill (`v53GrapeQuestions`) less the bank questions its `notIn`
+  phrases shut out; a `gt-` key is never level progress, never in codex3's rotation and never an orphan (`keyOwned`,
+  `srsRecord`, `qidAudit`, `findByKey`, `graderDisputes`, `badReports` wrapped). A grape's cards section gains Cards at
+  the table (`v53GrapeCardsBody`).
+- **The three views** (`V57_VIEWS`, `V57_ARGS`, one listener on `[data-v57]`; `v32Arg`, `v32Apply`, `v32ParentRoute`,
+  `v25NavWord`, `v25MainName` wrapped), each owned by Grapes, climbing to the root and answering its address cold:
+  `#/v/grapeworlds` (the side by side grapes as an index) and `#/v/grapeworlds/call` (ten glasses read from the blind
+  calls, each keyed to the world its own half names, scored and kept); `#/v/grapecompare/{a}~{b}` (two grapes side by
+  side); `#/v/grapepresent/{slug}` (the name shown, the line said aloud, revealed and marked; Another grape walks every
+  grape once before any returns). The decks are `#/flashcards/grapecards`, `#/flashcards/grapecards:{slug}` and
+  `#/flashcards/grapesdue`.
+- **Gate**: `node .scripts/check-grapes-table.js [jsDir] [--mutations]` (with `OOT_SHARED` and `OOT_HOUSE_PACK`; a
+  tree with no codex57.js is skipped; the base is read from git, `GRAPES_BASE` or `GRAPES_BASE_DIR`) loads the shipped
+  chain three times (chain.cjs's sandbox, check-card's loader with the engine and the pack, and the base `7d14d1c`) and
+  runs 85 checks in fifteen sections: the load; the roster whole, every record through `schema.cjs`, the data the
+  build, the ids against the frozen keys; every cap, the two sentence sale, no bare family word; both worlds on the 24
+  and home and abroad on the 51; the names; compare; all 75 pages at four levels with At the table first, the family
+  heads, the stock rows and The regions that name it; the 59 old pages section by section against the base, but for
+  what the layer says it changes, each by the gate's own reading of the rule, and each drill the base's less its
+  `notIn` phrases plus the new names and the table's three; the root; On our list split by world; the decks and the
+  schedule on seeded grades; the drill; the three views warm and cold; the shell and the chain rule (every list in a
+  gate that names `codex56.js` names `data-grapes-table.js` and `codex57.js` straight after it); the layer's file in the
+  strictest voice. `--mutations` seeds 30 faults, each caught by the check that names it.
+- **The pins that moved**: `index.html` (two tags after codex56), `sw.js` (`codex-v116`, two assets); the nine script
+  order lists (`check-atlas-ui.js`, `check-brennans.js`, `check-cms.js` and its chain list, `check-components.js`,
+  `check-nav.js`, `check-videos.js`, `check-winelist.js`, `check-regions.js`, `check-atlas-course.js`, which now holds
+  the data and codex57 between codex56 and boot); `check-grapes.js` (the join 75 with a profile on every grape and none
+  left to the Régionale book, the table the roster whole in its order, the join the 59 in codex53's order then the
+  sixteen, the 28 the table fills to its profile word for word, Glera from the table, six root chips with At the table
+  ahead of Tasting; `[--partial]` for a table still being written); `check-card.js` (the search's grapes group 75, no
+  grape card synthesised, the 28 cards to the table's profile; `[--partial]`); `check-house-only.cjs` (the three views
+  and the deck lit Grapes, their cold chains through the root). No gate of ChatGPT's changed.
+- **Left alone on purpose**: the stock card itself and its decks; codex7's Intro summary of `INTRO_GRAPES.aroma`;
+  `v53Readiness` and `v53ReadyBody` (codex56's); `GRID_SAY`, pinned to the Court's twenty (the table's `say` covers
+  every grape); `TASTE.world` (the flag says where a grape is from, the plan what a guest meets on a list); the stock
+  rows' qualified words (baking spice, sweet spice, earth, herbs) and the tell, trap, confuse and regions prose of the
+  earlier data; the Court's grid wording. The Codex records the checkers believe out of date or in tension (the Rueda
+  categories after 2019, the Muscadet rule, the Eger count, several respellings given two ways, volatile ranks in
+  region records) are listed in `.scripts/grapes/reviews/` for the owner and were not changed here.
+
+The shell loads `js/data-grapes-table.js?v=1` then `js/codex57.js?v=1` after codex56.js and before boot.js; the source
+worker is `codex-v116` and lists both. The next layer is codex58.
 
 ## The Wine Atlas as a course (codex56, 2 November 2026)
 
@@ -69,7 +193,9 @@ study, the map and the districts drawn twice, about 2 MB fetched on the first vi
 curriculum names with no article of their own. codex56 is two pieces: fourteen new articles built into the data by the
 regions pipeline, and one layer, `js/codex56.js`, loaded after codex55 and before boot, that makes the atlas a course.
 The layer edits no earlier layer, no data file and none of ChatGPT's files (atlas-context.js and the field atlas are only
-wrapped); it declares with var and function only, every wrapper is typeof guarded and outermost, every registry is
+wrapped); it declares with var and function only, every wrapper is typeof guarded and was outermost when written
+(codex57 now wraps nine of the same functions over it: `srsRecord`, `v25MainName`, `v25NavWord`, `v32Apply`, `v32Arg`,
+`v32CardFace`, `v32DeckDef`, `v32Grade` and `v32ParentRoute`), every registry is
 extended key by key, every string it shows lives in `V56_WORDS` (read by `v56W`) and its CSS in its own `v56-style`
 element. The data's own fields are drawn as written. What a maintainer needs:
 
@@ -163,13 +289,15 @@ element. The data's own fields are drawn as written. What a maintainer needs:
   script order list names `codex56.js` before `boot.js`. Two of ChatGPT's gates changed, only where they pinned the
   folded field map screen: `check-atlas-links.cjs` (a regional answer's link is the region page's address) and
   `check-workshop-ui.cjs` (Back from a technique opened on a field map's address lands on its region page).
+  One layer on (codex57), `check-atlas-course.js` holds `data-grapes-table.js` and `codex57.js` between `codex56.js`
+  and `boot.js`, and its chain rule passes to `check-grapes-table.js`.
   `check-learning-flow.cjs`, `check-study-rounds.cjs` and `check-workshop-ui.cjs` run only against a served
   `CODEX_URL`.
 
 The shell loads `js/codex56.js?v=1` after codex55.js and before boot.js, with `js/data-regions.js?v=6`,
 `js/codex39.js?v=5` and `js/data-cms.js?v=2`; the source worker is `codex-v115` and lists it. The reading files whose
-bytes changed are new addresses in `codexregions-v1-`, fetched fresh once the new index installs. The next layer is
-codex57.
+bytes changed are new addresses in `codexregions-v1-`, fetched fresh once the new index installs. The next layer,
+codex57, is the Grapes tab at the table (above), on `codex-v116`.
 
 ## The Wine Atlas tab and More's Library (codex55, 2 November 2026)
 
@@ -235,7 +363,8 @@ and its CSS lives in its own `v55-style` element. What a maintainer needs:
   `check-house-only.cjs` the order, the pill on More, the Library's screens lit More and their cold chains through
   More; `check-card.js` the Library's line; `check-cms.js` its chain list; every script order list names `codex55.js`
   before `boot.js`. One more of ChatGPT's gates changed, only where it pinned the old bar: `check-library-search.cjs`
-  reaches the Library through More's first group.
+  reaches the Library through More's first group. One layer on (codex57), `check-house-only.cjs` adds the three grape
+  views and the deck of the table's cards, each lit Grapes and climbing to the Grapes root.
 
 The shell loads `js/codex55.js?v=1` after codex54.js and before boot.js; the source worker is `codex-v114` and lists it.
 The next layer is codex56.
@@ -302,7 +431,9 @@ house wrote them. What a maintainer needs:
   `check-producers-house.js`, over codex54's words; var and function only; the shell; and the chain rule (every gate list naming
   `codex53.js` names `codex54.js` straight after it). `check-house-only.cjs` (the bank on Quizzes, the folded house due,
   the rooms, a grape deck lit as Grapes) and `check-grapes.js` (the four Tasting doors) hold this contract, and every
-  script order slice names `codex54.js` before `boot.js`.
+  script order slice names `codex54.js` before `boot.js`. One layer on (codex57), `check-card.js [jsDir] [--partial]`
+  holds the search's grapes group to the 75 grape pages, no grape card synthesised from the Régionale fields, and the
+  28 cards the table fills to its profile word for word (`--partial` follows a table still being written).
 - **Four ChatGPT gates rewritten**, only where they pinned a door the owner's decision removed and nothing else in them:
   `check-house-flow.cjs` reads the ten from `#v28-s10` (codex41's ten box is folded into At the table);
   `check-atlas-links.cjs` takes the card's region or map door In the Codex instead of codex52's box, through a
