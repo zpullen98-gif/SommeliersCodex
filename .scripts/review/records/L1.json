@@ -409,6 +409,100 @@
         }
       ],
       "why": "The explanation should not assert what the DNA leaves open; the owner may want the answer option softened if the Savagnin results firm up."
+    },
+    {
+      "id": "L1-07",
+      "topic": "Savagnin: kin to Sauvignon Blanc and Petit Manseng, not only to Gewürztraminer",
+      "verdict": "change",
+      "claim": "The Jura record says Savagnin is not Sauvignon Blanc and belongs to the Traminer family, kin to Gewürztraminer (traps[0]), and its vin jaune question calls Sauvignon Blanc a different grape despite the similar name; neither says the two are kin.",
+      "finding": "True as far as it goes. DNA analyses (reported from 2013) show a parent and offspring tie between Savagnin and Sauvignon Blanc, and Savagnin, recorded far earlier, is taken as the likely parent; analyses reported in 2021 give Petit Manseng as a cross of Savagnin and an unknown variety, and the Oxford Companion says Savagnin may well be its parent. DNA alone cannot say which way a parent and offspring tie runs, hence likely. The grapes[1].styles line names the Traminer family and nothing about Sauvignon Blanc, so it is left; the Savagnin grape fragment already carries the likely parent on its card.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/france.more.json",
+          "record": "jura",
+          "path": "traps[0]",
+          "old": "Savagnin is not Sauvignon Blanc: it belongs to the Traminer family, kin to Gewürztraminer.",
+          "new": "Savagnin is not Sauvignon Blanc: it belongs to the Traminer family, kin to Gewürztraminer, and DNA makes it a likely parent of Sauvignon Blanc and of Petit Manseng."
+        },
+        {
+          "file": ".scripts/regions/fragments/france.more.json",
+          "record": "jura",
+          "path": "questions[0].exp (unpinned codex56 id; the stem is untouched)",
+          "old": "Sauvignon Blanc is a different grape despite the similar name, and Chardonnay goes into other Jura whites.",
+          "new": "Sauvignon Blanc is a different grape despite the similar name, though DNA makes Savagnin its likely parent, and Chardonnay goes into other Jura whites."
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Oxford Companion to Wine, fifth edition: Sauvignon Blanc",
+          "url": "https://origin.ckbk.com/reference/wine05383c19s001e085",
+          "kind": "secondary",
+          "says": "Sauvignon Blanc has a parent and offspring relationship with the historic Savagnin Blanc.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: White Sauvignon (Sauvignon Blanc)",
+          "url": "https://glossary.wein.plus/white-sauvignon",
+          "kind": "secondary",
+          "says": "DNA analyses of 2013 show a parent and offspring relationship with Savagnin Blanc, the Traminer; Savagnin is probably the parent, being recorded much earlier; the supposed Savagnin and Chenin Blanc parentage was disproved.",
+          "read": "search summary"
+        },
+        {
+          "title": "The Oxford Companion to Wine, fifth edition: Petit Manseng",
+          "url": "https://app.ckbk.com/reference/wine05383c19s001e088",
+          "kind": "secondary",
+          "says": "Savagnin may well be a parent of Petit Manseng.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Petit Manseng",
+          "url": "https://glossary.wein.plus/petit-manseng",
+          "kind": "secondary",
+          "says": "DNA analyses of 2021 give a presumably natural cross of an unknown variety and Savagnin Blanc.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Two independent references agree on each tie and both hedge it, so the trap and the explanation gain the kinship with likely, and the warning that the two are different grapes stays."
+    },
+    {
+      "id": "L1-08",
+      "topic": "Roussanne row: no Marsanne in Châteauneuf-du-Pape blanc",
+      "verdict": "change",
+      "claim": "The Régionale Roussanne row (INTRO_GRAPES) lists its wines as White Rhône blends: Hermitage, Châteauneuf-du-Pape blanc (with Marsanne).",
+      "finding": "The Châteauneuf-du-Pape specification (homologated by decree no. 2011-1567, as published by the appellation's own federation) lists eighteen varieties: Bourboulenc, Brun Argenté (Vaccarèse), Cinsaut, Clairette, Clairette Rose, Counoise, Grenache Blanc, Grenache Gris, Grenache, Mourvèdre, Muscardin, Picardan, Piquepoul Blanc, Gris and Noir, Roussanne, Syrah and Terret Noir. Marsanne is not among them. White Hermitage is Marsanne and Roussanne. The row's reg string, N. Rhône blanc (with Marsanne), Châteauneuf blanc, Savoie, already ties Marsanne to the northern Rhône only, so it is left; Hermitage and Savoie stay where they are.",
+      "targets": [
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Roussanne",
+          "path": "INTRO_GRAPES roussanne.wines",
+          "old": "White Rhône blends: Hermitage, Châteauneuf-du-Pape blanc (with Marsanne)",
+          "new": "White Rhône blends: Hermitage (with Marsanne), Châteauneuf-du-Pape blanc"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Fédération des Syndicats de Producteurs de Châteauneuf-du-Pape, cahier des charges de l'AOC Châteauneuf-du-Pape",
+          "url": "https://www.chateauneuf.com/wp-content/uploads/2023/10/CDC-Chateauneuf-du-Pape.pdf",
+          "kind": "primary",
+          "says": "The encépagement lists eighteen varieties, red and white, from bourboulenc to terret noir; marsanne is not one of them.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahier des charges de l'AOC Châteauneuf-du-Pape (decree no. 2011-1567)",
+          "url": "https://www2.inao.gouv.fr/var/inao_site/storage/repository/editeur/files/pdf/CDC-AOP/AOC%20Ch%C3%A2teaneuf-du-Pape_20111116.pdf",
+          "kind": "primary",
+          "says": "The same list of permitted varieties, with roussanne B among the whites and no marsanne.",
+          "read": "search summary"
+        },
+        {
+          "title": "iDealwine, les 13 cépages de Châteauneuf-du-Pape",
+          "url": "https://www.idealwine.net/les-13-cepages-a-chateauneuf-mythes-ou-realite/",
+          "kind": "secondary",
+          "says": "Of the thirteen grapes the appellation speaks of, the whites are Roussanne, Clairette, Bourboulenc, Picpoul and Picardan; Marsanne is absent.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The bracket sat on the wrong appellation: Marsanne partners Roussanne in Hermitage, and Châteauneuf-du-Pape does not permit it."
     }
   ]
 }
