@@ -191,7 +191,7 @@
    {"key":"taylors","producer":"Taylor's","producerId":"p-taylor-fladgate","wine":"Taylor's Vintage Port","why":"Port house of 1692 whose Quinta de Vargellas gives the backbone of its declared Vintage Ports."},
    {"key":"grahams","producer":"Graham's","producerId":"p-grahams","wine":"Graham's Vintage Port","why":"House of 1820, begun in textiles; Quinta dos Malvedos is the heart of its Vintage Port."},
    {"key":"noval","producer":"Quinta do Noval","producerId":"p-quinta-do-noval","wine":"Quinta do Noval Nacional","why":"Quinta of 1715 whose Nacional comes from a small plot of ungrafted vines; the 1931 is a vintage of history."},
-   {"key":"barca-velha","producer":"Casa Ferreirinha","producerId":"p-casa-ferreirinha","wine":"Barca Velha","why":"The Douro's unfortified red, first made in 1952 and declared only in exceptional years."},
+   {"key":"barca-velha","producer":"Casa Ferreirinha","producerId":"p-casa-ferreirinha","wine":"Barca Velha","why":"The Douro's unfortified red, first made in 1952 and declared only in years its makers judge exceptional."},
    {"key":"sandeman","producer":"Sandeman","producerId":"p-sandeman","wine":"Sandeman 20 Year Old Tawny","why":"House of 1790 whose caped Don, drawn in 1928, is Port's famous silhouette."}
   ]},
   {"key":"madeira","title":"Madeira","region":"madeira","country":"portugal","chunk":"f9","swaps":[],"picks":[
@@ -215,11 +215,13 @@
    {"key":"georg-breuer","producer":"Georg Breuer","producerId":"p-georg-breuer","wine":"Rüdesheim Berg Schlossberg Riesling","why":"Rüdesheim estate whose dry Rieslings from the steep Berg Schlossberg argued for site before the Grosses Gewächs."},
    {"key":"kloster-eberbach","producer":"Kloster Eberbach","producerId":"","wine":"Steinberger Riesling","why":"Cistercian abbey of 1136 whose walled Steinberg the monks planted; the state estate's cellar keeps old vintages.","note":"Not in WINE_PRODUCERS: the producer is the Hessian state estate; dates in two sources."}
   ]},
-  {"key":"pfalz","title":"The Pfalz","region":"pfalz","country":"germany","chunk":"f10","swaps":[],"picks":[
+  {"key":"pfalz","title":"The Pfalz","region":"pfalz","country":"germany","chunk":"f10","swaps":[
+   {"from":"muller-catoir","to":"muller-catoir","why":"the estate sells its Rieslaner as Auslese Herzog, not Bürgergarten; the house and its key are kept, only the wine changes","agreed":true,"date":"2026-11-12"}
+  ],"picks":[
    {"key":"burklin-wolf","producer":"Dr. Bürklin-Wolf","producerId":"p-burklin-wolf","wine":"Forster Kirchenstück G.C.","why":"Wachenheim estate of 1597 that classified its own vineyards in the Burgundy manner."},
    {"key":"bassermann-jordan","producer":"Geheimer Rat Dr. von Bassermann-Jordan","producerId":"","wine":"Forster Jesuitengarten Riesling","why":"Deidesheim estate of 1718 whose cellar of old vintages runs back to the nineteenth century; one of the three Bs.","note":"Not in WINE_PRODUCERS: dates in two sources."},
    {"key":"von-buhl","producer":"Reichsrat von Buhl","producerId":"","wine":"Forster Pechstein Riesling","why":"Deidesheim estate of 1849, one of the three Bs of the Mittelhaardt.","note":"Not in WINE_PRODUCERS: dates in two sources."},
-   {"key":"muller-catoir","producer":"Müller-Catoir","producerId":"p-muller-catoir","wine":"Haardter Bürgergarten Rieslaner","why":"Neustadt estate of 1744 known for Rieslaner and Scheurebe of piercing fruit.","note":"Confirm the flagship bottling in two sources."},
+   {"key":"muller-catoir","producer":"Müller-Catoir","producerId":"p-muller-catoir","wine":"Rieslaner Auslese Herzog","why":"Neustadt estate of 1744 known for Rieslaner and Scheurebe of piercing fruit.","note":"Confirm the flagship bottling in two sources."},
    {"key":"becker","producer":"Friedrich Becker","producerId":"","wine":"Spätburgunder Kammerberg","why":"Schweigen estate whose Pinot Noir grows in vineyards that lie across the border in France.","note":"Not in WINE_PRODUCERS: dates and the border story in two sources."}
   ]},
   {"key":"wachau","title":"The Wachau, Kamptal and Kremstal","region":"wachau-kamptal-kremstal","country":"austria","chunk":"f10","swaps":[],"picks":[
@@ -227,7 +229,7 @@
    {"key":"hirtzberger","producer":"Franz Hirtzberger","producerId":"p-franz-hirtzberger","wine":"Riesling Smaragd Ried Singerriedel","why":"Spitz estate whose Singerriedel climbs the stone terraces above the village."},
    {"key":"knoll","producer":"Emmerich Knoll","producerId":"p-knoll","wine":"Grüner Veltliner Smaragd Ried Schütt","why":"Unterloiben estate with the baroque Saint Urban label.","note":"Confirm Ried Schütt or Ried Loibenberg as the flagship."},
    {"key":"brundlmayer","producer":"Bründlmayer","producerId":"p-brundlmayer","wine":"Riesling Zöbinger Heiligenstein Alte Reben","why":"Langenlois estate; Heiligenstein's desert sandstone gives the Kamptal's long lived Riesling."},
-   {"key":"gobelsburg","producer":"Schloss Gobelsburg","producerId":"p-schloss-gobelsburg","wine":"Grüner Veltliner Ried Lamm","why":"Cistercian estate at Gobelsburg recorded from 1171; Lamm is its rich Grüner Veltliner from loess."}
+   {"key":"gobelsburg","producer":"Schloss Gobelsburg","producerId":"p-schloss-gobelsburg","wine":"Grüner Veltliner Ried Lamm","why":"Estate of the Cistercian abbey of Zwettl, whose monks held Kamptal vineyards from 1171; Lamm is its rich Grüner Veltliner from loess."}
   ]},
   {"key":"burgenland","title":"Burgenland","region":"burgenland","country":"austria","chunk":"f11","swaps":[],"picks":[
    {"key":"kracher","producer":"Weinlaubenhof Kracher","producerId":"p-kracher","wine":"Kracher Trockenbeerenauslese","why":"Illmitz estate by the Neusiedlersee whose numbered Trockenbeerenauslesen carried Austrian sweet wine abroad."},
