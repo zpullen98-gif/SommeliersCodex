@@ -1,0 +1,1596 @@
+{
+ "group": "burgenland",
+ "chunk": "f11",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "kracher": 6,
+   "feiler-artinger": 8,
+   "moric": 4,
+   "triebaumer": 4,
+   "prieler": 3,
+   "shared": 2
+  },
+  "note": "Twenty seven searches of a share of twenty eight, one left unspent, none of them the author's. Eleven were restricted to a house's or a body's own domain (kracher.at four times, feiler-artinger.at, moric.at, triebaumer.com, prieler.at twice, austrianwine.com twice) and are read as primary through their summaries; seven kept the house's own domain out so that the second source would be independent (Kracher, Feiler-Artinger, Moric twice, Triebaumer twice, Prieler); nine went to the open web, one of them with Falstaff kept out. The two shared searches are Ruster Ausbruch DAC's rules (Feiler-Artinger and the Ausbruch of Triebaumer) and the DAC years of the Leithaberg and Mittelburgenland (Moric and Prieler). No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own domains and to Austrian Wine for the rules and the houses' own dates, then to the open web with the house's domain kept out for the second source, then to the law itself (the Weingesetz's paragraph 11 and the federal product specification for Ruster Ausbruch) where a rule was stated.",
+  "Where a search contradicted the record it was set right with its source; where a detail was found in no source of this check and rested on one secondary source or on none, it was cut or said with less (the salt pans, the lees contact of Zwischen den Seen, the French films, the cellar rule of Rust, the Essenz's figures, whole bunches, the Rabnitz, the Ödenburg hills and gneiss, closely planted, more clay in the Oberer Wald, three hundred litres and new oak at Triebaumer, the 85 per cent of Leithaberg DAC, the Goldberg of Deutschkreutz).",
+  "Facts of a house's own history told on its own pages stand, hedged as the house's account; the dead named are named with their dates in two sources (Alois Kracher, Mary of Hungary, Leopold I), and every other person is described.",
+  "Sources whose title or address names a living person, a writer's own site, or a score were met among the results but are cited neither in the fragment nor as a source of a change here; the fragment's sources were changed only where a source of this check carried the fact better (Moric, Triebaumer, Prieler), and the sources of this check are listed per change and per record under extraSources."
+ ],
+ "records": [
+  {
+   "key": "kracher",
+   "searches": 6,
+   "tested": [
+    "Founded 1959: the house's history and its press kit give the estate founded in 1959 by the father, whose dates the press kit gives as 1928 to 2010; a family tribute gives the same year. Confirmed as the house's account; the father stays described, his dates in one source.",
+    "Alois Kracher (1959 to 2007): the English Wikipedia gives 23 February 1959 to 5 December 2007 and death from pancreatic cancer at forty eight; World of Fine Wine gives 5 December 2007 after a year of pancreatic cancer. Confirmed with two sources; named with his dates.",
+    "Trained as a chemist, joined in 1981 at twenty two: Wikipedia gives chemistry and work as a chemist in the pharmaceutical industry, part time at his father's winery from 1981 and full time from 1986; Grapeguru gives joining in 1981 at twenty two. The story now says he began working beside his father in 1981.",
+    "The 1991 vintage: the house's German history gives an international sensation with the 1991; another account dates the breakthrough to the 1995. Kept as the house's account.",
+    "The numbering: the house gives every Trockenbeerenauslese of a year numbered since 1995, the higher the number the denser the wine; a second page has the higher number the higher the concentration and residual sugar. Confirmed against the library's lots, not sweetness (codexInTension).",
+    "Zwischen den Seen and Nouvelle Vague: the house's news pages give Zwischen den Seen in large wooden casks or stainless steel tanks, Nouvelle Vague in new barriques, and the Grande Cuvée among the Nouvelle Vague wines; a merchant gives the same vessels. No source gave lees contact or the French films of the 1950s; both cut.",
+    "The grapes: the house's collection pages give numbered Scheurebe, Muskat Ottonel and Traminer wines in many years, Zweigelt as the No. 1 of 2022, Welschriesling and Chardonnay in the Grande Cuvée. Confirmed, but the record's most often for Welschriesling and Chardonnay is ranked by no source and is taken out.",
+    "Trockenbeerenauslese at 30 degrees KMW, never chaptalised: Austrian Wine, read through the shared search and the author's page. Confirmed.",
+    "Sites, serve, glass and ageing: the house's pages place the vineyards between Illmitz and the shore; the salt pans are found in no source and are cut. The serve agrees with the Codex's reference for sweet whites.",
+    "The questions: one key each (denser and sweeter; a chemist), plausible distractors of one kind, explanations that teach the number and the farm. Sound.",
+    "The rules: nobody living named (the son, in people.json, is described); no price, no score, nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Welschriesling and Chardonnay most often, with Scheurebe, Traminer and Muskat Ottonel",
+     "now": "Welschriesling, Chardonnay, Scheurebe, Traminer and Muskat Ottonel",
+     "why": "The house's collections show Scheurebe, Muskat Ottonel and Traminer numbered in many years, and no source ranks the grapes.",
+     "sources": [
+      {
+       "title": "Weinlaubenhof Kracher: Trockenbeerenauslesen, the collections",
+       "url": "https://shop.kracher.at/weine/kollektionen",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weinlaubenhof Kracher: Kollektion 2017",
+       "url": "https://www.kracher.at/weine/kollektion_2017",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weinlaubenhof Kracher: Kollektion 2005 to 2014",
+       "url": "https://www.kracher.at/weine/kollektion_2005_2014",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weinlaubenhof Kracher: Kollektion 2011, Trockenbeerenauslese No. 9",
+       "url": "https://www.kracher.at/fileadmin/user_upload/Bilder/Weine/Weisswein/pdf/2011_TBA_No_9.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "beside the salt pans of the Seewinkel",
+     "now": "(cut)",
+     "why": "Found in no source of this check; the house's pages place the vineyards between Illmitz and the shore of the lake.",
+     "sources": [
+      {
+       "title": "Weinlaubenhof Kracher: Geschichte",
+       "url": "https://www.kracher.at/ueber_uns/geschichte_1",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "raised in steel tanks or large wooden casks with long contact with their lees ... Every Trockenbeerenauslese of the year is then numbered",
+     "now": "raised in steel tanks or large wooden casks for clear fruit ... Since 1995 every Trockenbeerenauslese of the year has been numbered",
+     "why": "The house describes the line by its vessel alone and no search found lees contact; the house dates the numbering from 1995.",
+     "sources": [
+      {
+       "title": "Weinlaubenhof Kracher: the 2022 Kracher collection",
+       "url": "https://www.kracher.at/en/news_press/news/newsdetail/2022-kracher-collection",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weinlaubenhof Kracher: Trockenbeerenauslesen, the collections",
+       "url": "https://shop.kracher.at/weine/kollektionen",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Kracher TBA No. 6 Nouvelle Vague Grande Cuvée 2010",
+       "url": "https://www.closdesspiritueux.com/autriche-kracher-tba-6-nouvelle-vague-grande-cuvee-2010.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[3].means",
+     "was": "New wave, after the French films of the 1950s: the line raised in new barriques.",
+     "now": "New wave: the line raised in new barriques, the Grande Cuvée among them.",
+     "why": "No source links the name to the films; the house's review page and a merchant name the Grande Cuvée a Nouvelle Vague wine.",
+     "sources": [
+      {
+       "title": "Weinlaubenhof Kracher: Trockenbeerenauslesen, the collections",
+       "url": "https://shop.kracher.at/weine/kollektionen",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Kracher TBA No. 6 Nouvelle Vague Grande Cuvée 2010",
+       "url": "https://www.closdesspiritueux.com/autriche-kracher-tba-6-nouvelle-vague-grande-cuvee-2010.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the son joined his father's estate at twenty two, in 1981, and turned it towards",
+     "now": "the son began working beside his father in 1981, at twenty two, and turned the estate towards",
+     "why": "Part time from 1981 and full time from 1986 in the encyclopaedia; joining in 1981 at twenty two in Grapeguru.",
+     "sources": [
+      {
+       "title": "Wikipedia: Alois Kracher",
+       "url": "https://en.wikipedia.org/wiki/Alois_Kracher",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weinlaubenhof Kracher",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/weinlaubenhof-kracher",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and the 1991 vintage won them wide attention",
+     "now": "and in the house's telling the 1991 vintage made their name",
+     "why": "The 1991 rests on the house's history; another account dates the breakthrough to 1995.",
+     "sources": [
+      {
+       "title": "Weinlaubenhof Kracher: Geschichte",
+       "url": "https://www.kracher.at/ueber_uns/geschichte_1",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weinlaubenhof Kracher: Press kit 2024",
+       "url": "https://www.kracher.at/fileadmin/user_upload/Pressemappe_2024_Web_E.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and his son, then in his twenties, took the estate on",
+     "now": "and his son took the estate on",
+     "why": "No source of this check gave the son's age in 2007.",
+     "sources": [
+      {
+       "title": "Weinlaubenhof Kracher: Press kit 2024",
+       "url": "https://www.kracher.at/fileadmin/user_upload/Pressemappe_2024_Web_E.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "A blended Trockenbeerenauslese, numbered within the year's collection beside the wines of one grape.",
+     "now": "A blend of Chardonnay and Welschriesling, raised in new barriques and numbered among the Nouvelle Vague wines.",
+     "why": "Two vintages' listings give Chardonnay and Welschriesling, and the house's review page and a merchant place it among the Nouvelle Vague wines.",
+     "sources": [
+      {
+       "title": "Clos des Spiritueux: Kracher TBA No. 6 Nouvelle Vague Grande Cuvée 2010",
+       "url": "https://www.closdesspiritueux.com/autriche-kracher-tba-6-nouvelle-vague-grande-cuvee-2010.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Weinlaubenhof Kracher: Trockenbeerenauslesen, the collections",
+       "url": "https://shop.kracher.at/weine/kollektionen",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "most often (Welschriesling and Chardonnay)",
+    "the salt pans of the Seewinkel",
+    "long contact with their lees",
+    "after the French films of the 1950s",
+    "then in his twenties"
+   ],
+   "open": [
+    "The appellation stays Burgenland, which Brennan's list prints for the Auslese Cuvée 2017; whether recent Trockenbeerenauslesen carry Neusiedlersee DAC Reserve was not settled.",
+    "The father's dates, 1928 to 2010, stand in the house's press kit alone, so he stays described."
+   ],
+   "extraSources": [
+    {
+     "title": "Weinlaubenhof Kracher: Geschichte",
+     "url": "https://www.kracher.at/ueber_uns/geschichte_1",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weinlaubenhof Kracher: Press kit 2024",
+     "url": "https://www.kracher.at/fileadmin/user_upload/Pressemappe_2024_Web_E.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weinlaubenhof Kracher: Trockenbeerenauslesen, the collections",
+     "url": "https://shop.kracher.at/weine/kollektionen",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weinlaubenhof Kracher: the 2022 Kracher collection",
+     "url": "https://www.kracher.at/en/news_press/news/newsdetail/2022-kracher-collection",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Alois Kracher",
+     "url": "https://en.wikipedia.org/wiki/Alois_Kracher",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weinlaubenhof Kracher",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/weinlaubenhof-kracher",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "World of Fine Wine: In Gratitude, remembering Alois Kracher",
+     "url": "https://worldoffinewine.com/uncategorized/in-gratitude-remembering-luis-alois-luis-kracher-19592007-4203926",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Clos des Spiritueux: Kracher TBA No. 6 Nouvelle Vague Grande Cuvée 2010",
+     "url": "https://www.closdesspiritueux.com/autriche-kracher-tba-6-nouvelle-vague-grande-cuvee-2010.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "feiler-artinger",
+   "searches": 8,
+   "tested": [
+    "1936, 1947, 1953: the house's history gives the purchase of the house at Hauptstrasse 3 in 1936 (at auction) and the first bottling of a small part of the wine in 1947; Walters Feine Weine and Cavetta give 1953 as the first Ruster Ausbruch made there again after the wars. Confirmed.",
+    "The double name: the house's history gives the wines carrying the name Feiler-Artinger from 1986, when the founder retired at seventy seven, the sister of the second generation being Gertrude Artinger; the Burgenland Vinothek gives 1985, as Falstaff did for the author. Unsettled; the story now says the middle 1980s.",
+    "1524 and 1681: the town's anniversary material gives the right to burn an R into the casks granted by Queen Mary in June 1524; the town's page and the Heimatblätter of 1927 give the free town charter of 1681 (3 December, at the diet of Ödenburg) for sixty thousand gulden, or gold thalers, and five hundred pails of Ausbruch, or of excellent wine. Confirmed; the key's gold gulden becomes gulden.",
+    "2016 and 2020: the amendment of the wine law published on 13 June 2016 (Federal Law Gazette I 47/2016) reserved Ausbruch to Rust and set it at Trockenbeerenauslese, 30 degrees KMW; Austrian Wine, wein.plus and Meininger give Ruster Ausbruch DAC from the 2020 vintage as the first Austrian origin protected for sweet wine alone. Confirmed.",
+    "The DAC's rules: Austrian Wine gives grapes from within the town limits of Rust, one or more white Qualitätswein grapes, botrytised berries shrivelled on the vine, picked by hand, 30 degrees KMW and at least 45 grams of residual sugar a litre; the federal product specification gives grapes harvested in Rust, hand picked, and production outside the area allowed with the consent of the Burgenland regional committee. The record's cellar rule (pressed, raised and bottled in Rust) is not borne out and is cut from the making, the card, the key and the explanation.",
+    "The grapes: the house's vintage page names Ruländer, Welschriesling, Weissburgunder and Neuburger; Falstaff's entries show Weissburgunder Essenzen, a Welschriesling based Ausbruch DAC of 2023 and a Gelber Muskateller Ausbruch DAC of 2020; one summary of the estate lists Weissburgunder, Welschriesling, Chardonnay and Gelber Muskateller most used, with Furmint, Ruländer and Neuburger. The ranking above all is cut and Gelber Muskateller added.",
+    "The vessels: the house's Pinot Cuvée page gives the 2022 partly fermented and aged in new barriques; Falstaff gives the Essenz twenty months (2020) and five years (2018) in used barriques. The making now says so; the Essenz's lees are cut.",
+    "The Pinot Cuvée: the house's page gives Weissburgunder and Chardonnay for 2022; an older listing adds Pinot Gris and Neuburger. The label term's meaning is corrected.",
+    "The Essenz's figures: Falstaff alone gives 6.5 and 7 per cent alcohol and 323 and 386 grams of sugar for two vintages; the record keeps very sweet and low in alcohol.",
+    "Solitaire: Falstaff (2022), Flaschenpost (2018) and Firstleaf (2007) give Blaufränkisch, Merlot and Cabernet Sauvignon; one older listing gives Cabernet Franc. The note names the three.",
+    "The questions: one key each (grapes grown in Rust; gulden and pails of Ausbruch), distractors of one kind, explanations that teach the law and the two charters. Sound after the key's change.",
+    "The rules: nobody living named (the founding couple and the second generation described); no price, no score (the house's trophy of 1995 stays out), nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Weissburgunder above all, with Pinot Gris, Chardonnay, Welschriesling and Neuburger",
+     "now": "Weissburgunder, Chardonnay, Welschriesling, Pinot Gris, Neuburger and Gelber Muskateller among them",
+     "why": "No source ranks Weissburgunder first; Falstaff's entries show Welschriesling and Gelber Muskateller Ausbruch wines beside the Weissburgunder Essenzen.",
+     "sources": [
+      {
+       "title": "Feiler-Artinger: Jahrgänge",
+       "url": "https://www.feiler-artinger.at/jahrgaenge/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Feiler-Artinger 2020 Gelber Muskateller Ruster Ausbruch DAC",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2020-gelber-muskateller-ruster-ausbruch-dac-ausbruch",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Feiler-Artinger 2023 Ruster Ausbruch DAC",
+       "url": "https://www.falstaff.com/nordics/wines/weingut-feiler-artinger-2023-ruster-ausbruch-dac-2",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Feiler-Artinger 2020 Weissburgunder Ruster Ausbruch DAC Essenz",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2020-weissburgunder-ruster-ausbruch-dac-essenz-2",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making, cards[0], questions[0]",
+     "was": "the wine must be pressed, raised and bottled in Rust (card: and it must be pressed, raised and bottled in a Rust cellar; key: reserved to the grapes and cellars of Rust)",
+     "now": "every grape must grow within the town limits of Rust (card: picked by hand as botrytised berries shrivelled on the vine; key: reserved to grapes grown in Rust)",
+     "why": "Austrian Wine and the federal product specification require grapes grown in Rust and picked by hand; the specification allows making outside the area with the regional committee's consent.",
+     "sources": [
+      {
+       "title": "Austrian Wine: Leithaberg, including Rust",
+       "url": "https://www.austrianwine.com/our-wine/winegrowing-regions/burgenland/leithaberg-incl-rust",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Federal Ministry: Ruster Ausbruch product specification",
+       "url": "https://info.bml.gv.at/dam/jcr:97461aab-e2f6-45f8-95e5-413e20a15cc7/Ruster%20Ausbruch%20Produktspezifikation.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Federal Ministry: Ruster Ausbruch, traditional foods",
+       "url": "https://www.bmluk.gv.at/themen/lebensmittel/trad-lebensmittel/getraenke/ruster_ausbruch.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Recent bottlings ferment and rest in used barriques, the Essenz for close to two years on its fine lees",
+     "now": "Recent bottlings are raised in barriques, new in part for the Pinot Cuvée and used for the Essenz",
+     "why": "The house's Pinot Cuvée page gives partly new barriques; Falstaff gives used barriques for the Essenz, for twenty months in 2020 and five years in 2018; no source gave the lees.",
+     "sources": [
+      {
+       "title": "Feiler-Artinger: Ruster Ausbruch DAC Pinot Cuvée",
+       "url": "https://www.feiler-artinger.at/produkt/bio-ruster-ausbruch-dac-pinot-cuvee/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Feiler-Artinger 2020 Weissburgunder Ruster Ausbruch DAC Essenz",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2020-weissburgunder-ruster-ausbruch-dac-essenz-2",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Feiler-Artinger 2018 Weissburgunder Ruster Ausbruch DAC Ried Oberer Wald Essenz",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2018-weissburgunder-ruster-ausbruch-dac-ried-oberer-wald-essenz-1",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2].means",
+     "was": "A bottling of the Pinot grapes, Weissburgunder with Pinot Gris and, in some years, Chardonnay.",
+     "now": "A blend of Weissburgunder and Chardonnay, with Pinot Gris and Neuburger in some years.",
+     "why": "The house's page gives Weissburgunder and Chardonnay for 2022; an older listing adds Pinot Gris and Neuburger.",
+     "sources": [
+      {
+       "title": "Feiler-Artinger: Ruster Ausbruch DAC Pinot Cuvée",
+       "url": "https://www.feiler-artinger.at/produkt/bio-ruster-ausbruch-dac-pinot-cuvee/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingrube: Feiler-Artinger Cuvée Pinot Ruster Ausbruch 2017",
+       "url": "https://www.weingrube.com/d/det/2501/feiler-artinger-cuvee-pinot-ruster-ausbruch-2017.htm",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and from 1985 her married name, Artinger, joined the Feilers' in the estate's name, in the year the glycol scandal shook Austria's sweet wine",
+     "now": "and in the middle 1980s, as the glycol scandal of 1985 shook Austria's sweet wine, her married name, Artinger, joined Feiler's on the label",
+     "why": "The house gives 1986, on the founder's retirement; the Burgenland Vinothek and Falstaff give 1985.",
+     "sources": [
+      {
+       "title": "Feiler-Artinger: Geschichte",
+       "url": "https://www.feiler-artinger.at/ueber-uns/weingut/geschichte.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Burgenland Vinothek: Feiler-Artinger, Rust",
+       "url": "https://burgenland-vinothek.at/produzent/feiler-artinger-rust/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The densest bottling: under ten per cent alcohol and more than three hundred grams of sugar a litre.",
+     "now": "The densest bottling, very sweet and low in alcohol, raised for twenty months and more in used barriques.",
+     "why": "The figures are single vintages on Falstaff alone.",
+     "sources": [
+      {
+       "title": "Falstaff: Feiler-Artinger 2020 Weissburgunder Ruster Ausbruch DAC Essenz",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2020-weissburgunder-ruster-ausbruch-dac-essenz-2",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Feiler-Artinger 2018 Weissburgunder Ruster Ausbruch DAC Ried Oberer Wald Essenz",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2018-weissburgunder-ruster-ausbruch-dac-ried-oberer-wald-essenz-1",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "The red of the house, a blend of Blaufränkisch with the Bordeaux grapes.",
+     "now": "The house's red blend: Blaufränkisch with Merlot and Cabernet Sauvignon.",
+     "why": "Three sources name the three grapes; the house has other reds.",
+     "sources": [
+      {
+       "title": "Falstaff: Feiler-Artinger 2022 Solitaire",
+       "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2022-solitaire",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Flaschenpost: Solitaire, Weingut Feiler-Artinger",
+       "url": "https://flaschenpost.ch/en/solitaire_weingut-feiler-artinger",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Firstleaf: Solitaire 2007, Feiler-Artinger",
+       "url": "https://www.firstleaf.com/a/wine-directory/product/solitaire-2007",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[0]",
+     "was": "Gold gulden and pails of Ausbruch",
+     "now": "Gulden and pails of Ausbruch",
+     "why": "The town's page gives gulden, the Heimatblätter of 1927 gold thalers; plain gulden is safe on both.",
+     "sources": [
+      {
+       "title": "Freistadt Rust: Rust und der Weinbau",
+       "url": "https://freistadt-rust.at/weinbauern",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Burgenländische Heimatblätter 1, 1927",
+       "url": "https://www.zobodat.at/pdf/Burgenlaendische-Heimatblaetter_1_1927_0066-0070.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "above all (Weissburgunder)",
+    "pressed, raised and bottled in Rust",
+    "the Essenz close to two years on its fine lees",
+    "the Essenz's alcohol and sugar figures",
+    "from 1985 in the year of the scandal",
+    "gold (gulden)"
+   ],
+   "open": [
+    "Neuburger in the Ausbruch rests on the house's vintage page alone; Furmint appears in one summary only, so the library's Furmint is neither confirmed nor refuted and the record leaves it out.",
+    "The Ried Oberer Wald bottling rests on one Falstaff entry and the author's reading.",
+    "The double name: 1986 by the house, 1985 by two secondary sources."
+   ],
+   "extraSources": [
+    {
+     "title": "Feiler-Artinger: Geschichte",
+     "url": "https://www.feiler-artinger.at/ueber-uns/weingut/geschichte.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Feiler-Artinger: Die Geschichte",
+     "url": "https://www.feiler-artinger.at/die-geschichte/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Feiler-Artinger: Ruster Ausbruch DAC Pinot Cuvée",
+     "url": "https://www.feiler-artinger.at/produkt/bio-ruster-ausbruch-dac-pinot-cuvee/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Feiler-Artinger: Jahrgänge",
+     "url": "https://www.feiler-artinger.at/jahrgaenge/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Burgenland Vinothek: Feiler-Artinger, Rust",
+     "url": "https://burgenland-vinothek.at/produzent/feiler-artinger-rust/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Walters Feine Weine: Feiler-Artinger",
+     "url": "https://www.waltersfeineweine.at/de/shop/produzent/85/feiler-artinger.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cavetta: Weingut Feiler-Artinger",
+     "url": "https://www.cavetta.ch/winzer/weingut-feiler-artinger/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut Feiler-Artinger",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Feiler-Artinger",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Weingrube: Feiler-Artinger Cuvée Pinot Ruster Ausbruch 2017",
+     "url": "https://www.weingrube.com/d/det/2501/feiler-artinger-cuvee-pinot-ruster-ausbruch-2017.htm",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Feiler-Artinger 2020 Weissburgunder Ruster Ausbruch DAC Essenz",
+     "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2020-weissburgunder-ruster-ausbruch-dac-essenz-2",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Feiler-Artinger 2018 Weissburgunder Ruster Ausbruch DAC Ried Oberer Wald Essenz",
+     "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2018-weissburgunder-ruster-ausbruch-dac-ried-oberer-wald-essenz-1",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Feiler-Artinger 2020 Gelber Muskateller Ruster Ausbruch DAC",
+     "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2020-gelber-muskateller-ruster-ausbruch-dac-ausbruch",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Feiler-Artinger 2023 Ruster Ausbruch DAC",
+     "url": "https://www.falstaff.com/nordics/wines/weingut-feiler-artinger-2023-ruster-ausbruch-dac-2",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Feiler-Artinger 2022 Solitaire",
+     "url": "https://www.falstaff.com/en/wines/weingut-feiler-artinger-2022-solitaire",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Flaschenpost: Solitaire, Weingut Feiler-Artinger",
+     "url": "https://flaschenpost.ch/en/solitaire_weingut-feiler-artinger",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Firstleaf: Solitaire 2007, Feiler-Artinger",
+     "url": "https://www.firstleaf.com/a/wine-directory/product/solitaire-2007",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Leithaberg, including Rust",
+     "url": "https://www.austrianwine.com/our-wine/winegrowing-regions/burgenland/leithaberg-incl-rust",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Qualitätswein with regional typicity (DAC)",
+     "url": "https://www.austrianwine.com/our-wine/strategy-for-origin-marketing/qualitaetswein-with-regional-typicity-dac",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Federal Ministry: Ruster Ausbruch product specification",
+     "url": "https://info.bml.gv.at/dam/jcr:97461aab-e2f6-45f8-95e5-413e20a15cc7/Ruster%20Ausbruch%20Produktspezifikation.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Federal Ministry: Ruster Ausbruch, traditional foods",
+     "url": "https://www.bmluk.gv.at/themen/lebensmittel/trad-lebensmittel/getraenke/ruster_ausbruch.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Meininger: Ruster Ausbruch erhält DAC Status",
+     "url": "https://www.meininger.de/wein/erzeuger/ruster-ausbruch-erhaelt-dac-status",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "wein.plus magazine: Ruster Ausbruch receives DAC status",
+     "url": "https://magazine.wein.plus/news/austrian-sweet-wine-ruster-ausbruch-receives-dac-status-first-dac-origin-regulation-exclusively-for-sweet-wine",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "jusline: Weingesetz 2009, paragraph 11, Prädikatswein",
+     "url": "https://www.jusline.at/gesetz/weing/paragraf/11.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "RIS: Weingesetz 2009, paragraph 11, consolidated",
+     "url": "https://ris.bka.gv.at/eli/bgbl/i/2009/111/P11/NOR40181266",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Freistadt Rust: Ruster Weinprivileg",
+     "url": "https://www.freistadt-rust.at/wp-content/uploads/2024/06/Ruster-Weinprivileg.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Freistadt Rust: Rust und der Weinbau",
+     "url": "https://freistadt-rust.at/weinbauern",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Burgenländische Heimatblätter 1, 1927",
+     "url": "https://www.zobodat.at/pdf/Burgenlaendische-Heimatblaetter_1_1927_0066-0070.pdf",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "moric",
+   "searches": 4,
+   "tested": [
+    "Founded 2001: merchants and Grapeguru give the first Moric wine with the 2001 vintage, a couple of thousand bottles; one listing gives it from Lutzmannsburg, with Neckenmarkt from 2002, and as a joint venture with a partner at first. 2001 confirmed, the library's year.",
+    "The Velich family of Apetlon and Weingut Velich as a separate house: Grapeguru gives the founder's start on the family estate at Apetlon, all white and sweet wine; the cellar at Grosshöflein near Eisenstadt is in two merchants. Confirmed.",
+    "Leased vines: Grapeguru and a retailer profile give old, often forgotten parcels at Neckenmarkt and Lutzmannsburg secured largely through long leases. Confirmed; closely planted (up to eight thousand vines a hectare) is in one source and is cut.",
+    "Vine age: the house's sheet for 2007 gives the Lutzmannsburg Alte Reben as a selection of its oldest vines, from six parcels picked and fermented apart, the vines 49 to over 90 years old; Lebendige Weine gives 85 to 110 for a later vintage, another merchant over a hundred. The record's eighty and more becomes the house's oldest, the eldest about a century old.",
+    "Lutzmannsburg's soil: the house gives the plateau risen over a primordial volcano, with sand, clay and loam partly over limestone; its interview gives mainly clay today. The record now uses the house's words; warmer and flatter and the Rabnitz are found in no source and are cut.",
+    "Neckenmarkt: Lebendige Weine gives steep slate and limestone slopes and a second merchant slate. Gneiss and the Ödenburg hills are found in no source and are cut.",
+    "The making: the house's sheet gives spontaneous fermentation in open wooden vats, twenty to twenty two days on the skins and about twenty months in casks of five hundred litres, unfined and unfiltered; Grapeguru gives open wooden vats, about three weeks, twenty months on the fine lees in large used oak casks. Confirmed and written in; whole bunches, in the library alone, found in no source and cut.",
+    "Mittelburgenland DAC: Austrian Wine gives the first red wine of designated origin with the 2005 vintage, Blaufränkisch only. The story now says from the 2005 vintage.",
+    "The label word Burgenland: merchants' product names (Berry Bros and Rudd and others) print Burgenland. Kept, open.",
+    "The questions: one key each (native yeasts and old casks; Apetlon), distractors of one kind. Sound; the explanation now gives the twenty months.",
+    "The rules: nobody living named (the founder, his brother and the early partner described or left out); no price, no score (a score of 2009 for the Neckenmarkt met and left out); nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "in the south of Mittelburgenland by the Rabnitz: vines of eighty years and more, some over a century old, in sandy clay over a limestone base",
+     "now": "A selection of the house's oldest vines at Lutzmannsburg, in the south of Mittelburgenland, the eldest about a century old: sand, clay and loam, partly over limestone",
+     "why": "The house's sheet gives its oldest vines, 49 to over 90 years in 2007; a merchant 85 to 110 later; the soil in the house's words; the Rabnitz found in no source.",
+     "sources": [
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009 (German)",
+       "url": "https://www.moric.at/2009_verkostungsliste.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009",
+       "url": "https://www.moric.at/2009_verkostungsliste_eng.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Lebendige Weine: Lutzmannsburg Alte Reben 2021, Moric",
+       "url": "https://www.lebendigeweine.de/en/lutzmannsburg-alte-reben-2021-moric/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Lebendige Weine: Moric, producer page",
+       "url": "https://www.lebendigeweine.de/en/moric/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented with its own yeasts, never a cultured one, with a share of whole bunches in some years; the malolactic fermentation and the ageing that follows take place in old oak casks, large and small, for as long as the wine needs, well over a year",
+     "now": "Fermented with its own yeasts in open wooden vats, about three weeks on the skins, then aged for about twenty months on its fine lees in large, used oak casks and bottled without fining or filtration",
+     "why": "The house's sheet and Grapeguru give the vats, the weeks, the months and the casks; whole bunches rest on the library alone.",
+     "sources": [
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009 (German)",
+       "url": "https://www.moric.at/2009_verkostungsliste.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Moric",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/moric",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means, table",
+     "was": "a selection of vines of eighty years and more, some over a century old; comes from vines of eighty years and more",
+     "now": "a selection of the house's oldest at Lutzmannsburg, picked parcel by parcel; comes from the house's oldest vines at Lutzmannsburg, fermented with native yeasts in open wooden vats and rested in large used casks",
+     "why": "As the sites; the six parcels picked apart are in the house's sheet.",
+     "sources": [
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009",
+       "url": "https://www.moric.at/2009_verkostungsliste_eng.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Lebendige Weine: Lutzmannsburg Alte Reben 2021, Moric",
+       "url": "https://www.lebendigeweine.de/en/lutzmannsburg-alte-reben-2021-moric/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "leased old Blaufränkisch vines, some a century old and closely planted",
+     "now": "took on old Blaufränkisch vines, many on long leases and some about a century old",
+     "why": "Long leases in Grapeguru and a second profile; the planting density in one source only.",
+     "sources": [
+      {
+       "title": "Grapeguru: Weingut Moric",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/moric",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Lebendige Weine: Moric, producer page",
+       "url": "https://www.lebendigeweine.de/en/moric/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 2005 Mittelburgenland became a DAC for Blaufränkisch alone",
+     "now": "With the 2005 vintage Mittelburgenland became a DAC for Blaufränkisch alone",
+     "why": "Austrian Wine dates the DAC by its first vintage, 2005.",
+     "sources": [
+      {
+       "title": "Austrian Wine: History",
+       "url": "https://www.austrianwine.com/our-wine/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Austrian Wine: Mittelburgenland DAC",
+       "url": "https://www.austrianwine.com/our-wine/strategy-for-origin-marketing/dac-districtus-austriae-controllatus/dac-regions/mittelburgenland-dac",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, others[0].note",
+     "was": "Lutzmannsburg, the warmer and flatter of the two villages, on sandy clay over limestone ... Neckenmarkt, on a hillside of slate, gneiss and limestone under the Ödenburg hills",
+     "now": "Lutzmannsburg, on a plateau of sand, clay and loam partly over limestone ... Neckenmarkt, on steep slopes of slate and limestone",
+     "why": "The house's soil words; warmer, gneiss and the hills found in no source.",
+     "sources": [
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009",
+       "url": "https://www.moric.at/2009_verkostungsliste_eng.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Lebendige Weine: Moric, producer page",
+       "url": "https://www.lebendigeweine.de/en/moric/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0]",
+     "was": "how old are the vines? Eighty years and more, some over a century old",
+     "now": "on what ground do its vines grow, as the house describes it? Sand, clay and loam, partly over limestone, on a plateau over an ancient volcano",
+     "why": "The sources disagree on the vines' age, and the age moves with time; the soil is the house's own.",
+     "sources": [
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009",
+       "url": "https://www.moric.at/2009_verkostungsliste_eng.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "rests the wine in old casks",
+     "now": "rests the wine about twenty months in large used casks",
+     "why": "As the making.",
+     "sources": [
+      {
+       "title": "Moric: Blaufränkisch tasting list, 2009 (German)",
+       "url": "https://www.moric.at/2009_verkostungsliste.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Moric",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/moric",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "Flatiron Wines: Moric",
+     "now": "Grapeguru: Weingut Moric",
+     "why": "Grapeguru carries the making and the leases.",
+     "sources": [
+      {
+       "title": "Grapeguru: Weingut Moric",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/moric",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "by the Rabnitz",
+    "eighty years and more, some over a century old",
+    "a share of whole bunches",
+    "closely planted",
+    "the warmer and flatter",
+    "gneiss and the Ödenburg hills"
+   ],
+   "open": [
+    "Oldest is a rank within the house's own holdings, given by the house's sheet and by Lebendige Weine; the lint's three notes are answered so.",
+    "The word Burgenland on recent labels rests on merchants' product names.",
+    "The partner of 2001 and the first wine from Lutzmannsburg rest on one listing; neither is in the record."
+   ],
+   "extraSources": [
+    {
+     "title": "Moric: Blaufränkisch tasting list, 2009 (German)",
+     "url": "https://www.moric.at/2009_verkostungsliste.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Moric: Blaufränkisch tasting list, 2009",
+     "url": "https://www.moric.at/2009_verkostungsliste_eng.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Moric: interview on the Moric wines (English)",
+     "url": "https://www.moric.at/interview_seiler_velich_en.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weingut Moric",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/moric",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Lebendige Weine: Moric, producer page",
+     "url": "https://www.lebendigeweine.de/en/moric/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Lebendige Weine: Lutzmannsburg Alte Reben 2021, Moric",
+     "url": "https://www.lebendigeweine.de/en/lutzmannsburg-alte-reben-2021-moric/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Clark Foyster Wines: Weingut Moric, Grosshöflein",
+     "url": "https://www.clarkfoysterwines.co.uk/avada_portfolio/weingut-moric-grosshoflein-burgenland/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Berry Bros and Rudd: Weingut Moric",
+     "url": "https://www.bbr.com/producer-1906-weingut-moric",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: History",
+     "url": "https://www.austrianwine.com/our-wine/history",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Mittelburgenland DAC",
+     "url": "https://www.austrianwine.com/our-wine/strategy-for-origin-marketing/dac-districtus-austriae-controllatus/dac-regions/mittelburgenland-dac",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "triebaumer",
+   "searches": 4,
+   "tested": [
+    "The plot of 1976: the house's page gives the Mariental plot sold in 1976 by a Rust couple to a woman of the family. Confirmed as the house's account; nobody named.",
+    "The 1986: the house gives the 1986 Blaufränkisch Mariental winning almost every competition around 1988, from a producer then unknown; Avinum, quoting Falstaff, gives a new era for Austrian red wine opened by the 1986; Vinum, Vinaria and Grapeguru give the 1986 as the turning point. Confirmed.",
+    "The soil: the house gives poor limestone soil, a particular microclimate and very old vines. Chalky becomes limestone.",
+    "The Oberer Wald: the house gives an inherited site, cooler and slimmer, its rows north to south. More clay and the neighbour are found in no source and are cut.",
+    "The cask: Falstaff gives twenty two months in small wooden barrels (2022), twenty two months in oak (2019) and twenty four months in barrels of five hundred litres (2018); Flaschenpost twenty four months in barriques; Wine in Time and Avinum give the house's casks from three hundred to five thousand litres in general. Close to two years in small barrels confirmed; three hundred litres and most of them new found in no source of this check and cut.",
+    "The namesake: Vinum and Vinaria write of him as living, the sons having the day to day running. The house keeps its name; he is described in prose.",
+    "The questions: one key each (nearly two years in small oak barrels; a Rust couple sold it), distractors of one kind. Sound after the key's change.",
+    "The rules: nobody living named in prose; no price, no score; nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, wine.label[0].means, table, story, cards[1].back, wine.glass",
+     "was": "lean, chalky soil (glass: a stony, chalky edge)",
+     "now": "lean limestone soil (glass: a stony edge)",
+     "why": "The house's own words are poor limestone soil.",
+     "sources": [
+      {
+       "title": "Ernst Triebaumer: Vineyard, the sites",
+       "url": "https://www.triebaumer.com/seite.mv?20-10-00-00+=&lg=en",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Ernst Triebaumer: Weingarten, Lagen",
+       "url": "https://www.triebaumer.com/seite.mv?20-00-00-00+=&lg=de",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites, story, others[0].note",
+     "was": "its neighbour, the Oberer Wald, carries more clay and gives a leaner wine; the neighbouring Oberer Wald, with more clay",
+     "now": "the family's Oberer Wald, an inherited site whose rows run north to south, gives a cooler, slimmer wine; the Oberer Wald, a site it inherited",
+     "why": "The house gives inherited, north to south rows, cooler and slimmer; clay and the neighbour found in no source.",
+     "sources": [
+      {
+       "title": "Ernst Triebaumer: Vineyard, the sites",
+       "url": "https://www.triebaumer.com/seite.mv?20-10-00-00+=&lg=en",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Ernst Triebaumer: Weingarten, Lagen",
+       "url": "https://www.triebaumer.com/seite.mv?20-00-00-00+=&lg=de",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making, table, story, traps[2], questions[0]",
+     "was": "small oak barrels of about three hundred litres, most of them new; small, mostly new oak; Nearly two years in small new oak",
+     "now": "close to two years in small oak barrels; Nearly two years in small oak barrels",
+     "why": "Falstaff and Flaschenpost give twenty two to twenty four months in small barrels or barriques, one vintage in five hundred litre barrels; no source of this check says new.",
+     "sources": [
+      {
+       "title": "Falstaff: 2022 Blaufränkisch Ried Mariental, wine entry",
+       "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2022-blaufraenkisch-ried-mariental-1",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: 2019 Blaufränkisch Ried Mariental, wine entry",
+       "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2019-blaufraenkisch-ried-mariental-1",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: 2018 Blaufränkisch Ried Mariental, wine entry",
+       "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2018-blaufraenkisch-ried-mariental",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Flaschenpost: Blaufränkisch Mariental, Weingut Ernst Triebaumer",
+       "url": "https://www.flaschenpost.ch/en/blaufraenkisch-mariental_weingut-ernst-triebaumer",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine in Time: Weingut Ernst Triebaumer und sein Mariental",
+       "url": "https://wineintime.at/en/?p=31479",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "Fohringer: Blaufränkisch Mariental, product sheet",
+     "now": "Falstaff: 2022 Blaufränkisch Ried Mariental, wine entry",
+     "why": "The Falstaff entry gives the barrels and the months as the record now states them.",
+     "sources": [
+      {
+       "title": "Falstaff: 2022 Blaufränkisch Ried Mariental, wine entry",
+       "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2022-blaufraenkisch-ried-mariental-1",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "chalky",
+    "more clay, the neighbouring",
+    "about three hundred litres",
+    "most of them new"
+   ],
+   "open": [
+    "Whether the barrels are new is not settled, nor therefore whether the library's no heavy oak is in tension.",
+    "The appellation stays Burgenland; Falstaff lists the 2022 as Blaufränkisch Rust Ried Mariental, and whether recent labels carry Leithaberg DAC was not settled.",
+    "The namesake is living by every source of this check: the house keeps its name and the man is never named in prose."
+   ],
+   "extraSources": [
+    {
+     "title": "Ernst Triebaumer: Vineyard, the sites",
+     "url": "https://www.triebaumer.com/seite.mv?20-10-00-00+=&lg=en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Ernst Triebaumer: Weingarten, Lagen",
+     "url": "https://www.triebaumer.com/seite.mv?20-00-00-00+=&lg=de",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: 2022 Blaufränkisch Ried Mariental, wine entry",
+     "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2022-blaufraenkisch-ried-mariental-1",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: 2019 Blaufränkisch Ried Mariental, wine entry",
+     "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2019-blaufraenkisch-ried-mariental-1",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: 2018 Blaufränkisch Ried Mariental, wine entry",
+     "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2018-blaufraenkisch-ried-mariental",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Flaschenpost: Blaufränkisch Mariental, Weingut Ernst Triebaumer",
+     "url": "https://www.flaschenpost.ch/en/blaufraenkisch-mariental_weingut-ernst-triebaumer",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Avinum: Blaufränkisch Mariental",
+     "url": "https://www.avinum.ch/product/blaufraenkisch-mariental/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine in Time: Weingut Ernst Triebaumer und sein Mariental",
+     "url": "https://wineintime.at/en/?p=31479",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinum: winery portrait, Ernst Triebaumer",
+     "url": "https://www.vinum.eu/de/wein/winzer/2016/ernst-triebaumer/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinaria: E.T. hat österreichische Weingeschichte geschrieben",
+     "url": "https://www.vinaria.at/magazin/artikeldetailseite/et-hat-oesterreichische-weingeschichte-geschrieben",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Ernst Triebaumer",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/ernst-triebaumer",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "prieler",
+   "searches": 3,
+   "tested": [
+    "1347 and 1555: the house's pages give the family in Schützen documents from 1347 and the Goldberg named in documents of 1555. Confirmed as the house's account (no second source of this check; the author's Smart Wines gives 1555).",
+    "Mica schist and the gold: the house gives mica schist as the real foundation of the Goldberg, in place of the gold of its name; a Weinwirtschaft article on the house's site gives the slate warming in summer and giving back its heat at night. Confirmed.",
+    "The grandfather's first bottling: the house's home page. Confirmed as the house's account.",
+    "1972: Skurnik gives the parents of the next generation turning wholly to wine from 1972, with Blaufränkisch and the Burgundian grapes, the farm having been mixed crops and animals. Confirmed; turned towards quality becomes gave the mixed farm over wholly to wine.",
+    "Leithaberg DAC: Austrian Wine gives the DAC from 1 September 2010, whites from the 2009 vintage and reds from 2008, the red Blaufränkisch. The story's 2008 as the DAC's year is wrong and is set right; the 85 per cent is found in no source of this check and is taken out of the label.",
+    "The Marienthal: the house gives its parcels in the steep Oggau part of the Marienthal, chalk a metre down. Placed at Oggau, on limestone.",
+    "The Haidsatz: the house gives a layer of limestone over a slab of schist, cooled by north east winds. Confirmed.",
+    "The Johanneshöhe: Skurnik gives iron rich brown loam on the slopes of the Leithaberg; an importer's page, whose address names a living writer and is not cited, places it at Oggau and gives nine parcels and the site name now a trademark on a village wine. Its place, soil and casks each rest on one citable source at most, so the entry is cut.",
+    "The making of the 2022: not found in this check's search of the house's domain, nor anything against it; it stands on the author's reading of the house's own sheet, a primary source, and is listed open.",
+    "The Goldberg of Deutschkreutz: no source of this check found it; the trap is cut.",
+    "The questions: one key each (mica schist; the fourteenth century), distractors of one kind. Sound.",
+    "The rules: nobody living named (the parents and the children described); no price, no score; present grower, a volatile word, removed; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.label[0].means",
+     "was": "its red is at least 85 per cent Blaufränkisch, from the 2008 vintage",
+     "now": "its red, Blaufränkisch led, counts from the 2008 vintage",
+     "why": "Austrian Wine gives the red as Blaufränkisch and the vintages; no source of this check gave the percentage.",
+     "sources": [
+      {
+       "title": "Austrian Wine: Leithaberg DAC",
+       "url": "https://austrianwine.com/our-wine/dac-districtus-austriae-controllatus/dac-regions/leithaberg-dac",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Austrian Wine: History",
+       "url": "https://www.austrianwine.com/our-wine/history",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 2008 the Leithaberg became a DAC for red wine, Blaufränkisch led",
+     "now": "Leithaberg DAC came into force in 2010, its reds Blaufränkisch led and counted from the 2008 vintage",
+     "why": "Austrian Wine dates the DAC from 1 September 2010, whites from 2009, reds from 2008.",
+     "sources": [
+      {
+       "title": "Austrian Wine: Leithaberg DAC",
+       "url": "https://austrianwine.com/our-wine/dac-districtus-austriae-controllatus/dac-regions/leithaberg-dac",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Austrian Wine: History",
+       "url": "https://www.austrianwine.com/our-wine/history",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "It was the present grower's grandfather ... In 1972 the present grower's parents turned the estate towards quality, towards Blaufränkisch and the Pinot grapes",
+     "now": "A grandfather of the family, in the house's telling, first put its wine into bottles, and in 1972 the next generation gave the mixed farm over wholly to wine, with Blaufränkisch and the Pinot grapes at its heart",
+     "why": "Skurnik gives the turn wholly to wine in 1972 from mixed farming; present is a volatile word.",
+     "sources": [
+      {
+       "title": "Skurnik: Weingut Prieler, Austrian Blaufränkisch",
+       "url": "https://www.skurnik.com/weingut-prieler-benchmark-austrian-blaufrankisch/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Skurnik: Prieler, producer page",
+       "url": "https://www.skurnik.com/producer/weingut-familie-prieler/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Prieler: the family and the estate",
+       "url": "https://www.prieler.at/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "From the cooler Marienthal on limestone and chalk, the limestone counterpart to the Goldberg.",
+     "now": "From the cooler Marienthal at Oggau, on limestone, the counterpart to the Goldberg's schist.",
+     "why": "The house places its parcels in the steep Oggau part of the Marienthal.",
+     "sources": [
+      {
+       "title": "Prieler: Sites",
+       "url": "https://www.prieler.at/en/sites/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2]",
+     "was": "Blaufränkisch Oggau Johanneshöhe: From iron rich brown loam at Oggau, aged in large wooden casks.",
+     "now": "(cut)",
+     "why": "Its place, its soil and its casks each rest on one citable source at most, and the sources met disagree on whether it lies at Oggau.",
+     "sources": [
+      {
+       "title": "Skurnik: Weingut Prieler, Austrian Blaufränkisch",
+       "url": "https://www.skurnik.com/weingut-prieler-benchmark-austrian-blaufrankisch/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "Prieler's Goldberg at Schützen am Gebirge is a Leithaberg site on mica schist, not the Goldberg of Deutschkreutz in Mittelburgenland.",
+     "now": "(cut)",
+     "why": "No source of this check found a Goldberg at Deutschkreutz.",
+     "sources": [
+      {
+       "title": "Prieler: Sites",
+       "url": "https://www.prieler.at/en/sites/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "Falstaff: Prieler 2016 Blaufränkisch Leithaberg DAC Ried Goldberg",
+     "now": "Austrian Wine: Leithaberg DAC",
+     "why": "The body's page carries the DAC's dates the story now states.",
+     "sources": [
+      {
+       "title": "Austrian Wine: Leithaberg DAC",
+       "url": "https://austrianwine.com/our-wine/dac-districtus-austriae-controllatus/dac-regions/leithaberg-dac",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "at least 85 per cent",
+    "2008 as the DAC's year",
+    "present grower",
+    "turned the estate towards quality",
+    "the Johanneshöhe",
+    "the Goldberg of Deutschkreutz"
+   ],
+   "open": [
+    "The making of the 2022 (open vats punched down by hand, about three weeks on the skins, twenty six months in large casks) rests on the author's reading of the house's sheet.",
+    "The clayey loam over the Goldberg's schist rests on the author's reading of the house's sites page.",
+    "Prieler's Marienthal at Oggau and Ernst Triebaumer's Mariental at Rust may be one site under two spellings, since the house speaks of the Oggau part of the Marienthal; not settled, so neither record says so."
+   ],
+   "extraSources": [
+    {
+     "title": "Prieler: Sites",
+     "url": "https://www.prieler.at/en/sites/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Prieler: the family and the estate",
+     "url": "https://www.prieler.at/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Prieler: Weinwirtschaft article of 2013, on the house's site",
+     "url": "https://www.prieler.at/wp-content/uploads/2018/08/WW_0613_Amberg.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Prieler: Pannonischer Ausdruck von Kalk und Schiefer",
+     "url": "https://www.prieler.at/wp-content/uploads/2022/03/Pannonischer-Ausdruck-von-Kalk-und-Schiefer.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Prieler: Vinalu special report on the Burgenland, on the house's site",
+     "url": "https://www.prieler.at/wp-content/uploads/2024/12/Vinalu.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Skurnik: Prieler, producer page",
+     "url": "https://www.skurnik.com/producer/weingut-familie-prieler/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Skurnik: Weingut Prieler, Austrian Blaufränkisch",
+     "url": "https://www.skurnik.com/weingut-prieler-benchmark-austrian-blaufrankisch/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Flatiron Wines: Prieler",
+     "url": "https://flatiron-wines.com/blogs/producers/prieler",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Leithaberg DAC",
+     "url": "https://austrianwine.com/our-wine/dac-districtus-austriae-controllatus/dac-regions/leithaberg-dac",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: History",
+     "url": "https://www.austrianwine.com/our-wine/history",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Gerhard Kracher",
+   "where": "the house's press kit and Grapeguru, as the son who took over in 2007",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Roland Velich",
+   "where": "every Moric source, as the founder",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Heinz Velich",
+   "where": "the library's trap on p-moric, as the founder's brother at Weingut Velich",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Erich Krutzler",
+   "where": "a German listing, as Moric's partner at its start",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Ernst Triebaumer",
+   "where": "the house's name; Vinum and Vinaria write of him as living",
+   "believed": "living; the house keeps its name in its own record, as F.X. Pichler does, and the man is described in prose; not in people.json, for the read-together agent with a house exception",
+   "inFragment": true
+  },
+  {
+   "name": "Herbert Triebaumer and Gerhard Triebaumer",
+   "where": "Vinum, the German Wikipedia and a merchant, as the sons running the estate",
+   "believed": "living; not in people.json, for the read-together agent, as the author asked",
+   "inFragment": false
+  },
+  {
+   "name": "Margarethe Triebaumer",
+   "where": "the house's sites page, as the buyer of the Mariental plot in 1976",
+   "believed": "status not settled; listed as a precaution",
+   "inFragment": false
+  },
+  {
+   "name": "Josef and Karoline Lentsch",
+   "where": "the house's sites page, as the couple who sold the plot in 1976",
+   "believed": "status not settled, no dates; listed as a precaution",
+   "inFragment": false
+  },
+  {
+   "name": "Paul Triebaumer and Günter Triebaumer",
+   "where": "the library's trap on p-ernst-triebaumer",
+   "believed": "living, other Rust estates; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Kurt Feiler and Katrin Feiler",
+   "where": "the house's history and Falstaff, the third generation",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Hans Feiler, Inge Feiler and Gertrude Artinger",
+   "where": "the house's history and the Burgenland Vinothek, the second generation and the sister of the double name",
+   "believed": "status not settled, no dates; listed as a precaution",
+   "inFragment": false
+  },
+  {
+   "name": "Engelbert Prieler, Irmgard Prieler, Georg Prieler and Silvia Prieler",
+   "where": "Skurnik and the house, the parents of 1972 and their children",
+   "believed": "living; not in people.json, for the read-together agent, as the author asked",
+   "inFragment": false
+  },
+  {
+   "name": "Robert Parker and Stephan Reinhardt",
+   "where": "search summaries on scores for Kracher and Moric",
+   "believed": "living critics; cited nowhere",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Alois Kracher",
+   "note": "1959 to 2007, in the English Wikipedia and World of Fine Wine; named once with his dates."
+  },
+  {
+   "name": "Alois Kracher senior",
+   "note": "1928 to 2010 in the house's press kit alone; described as the farmer who founded the winery."
+  },
+  {
+   "name": "Mary of Hungary",
+   "note": "1505 to 1558; named with her dates for the privilege of 1524."
+  },
+  {
+   "name": "Leopold I",
+   "note": "1640 to 1705; named with his dates for the charter of 1681."
+  },
+  {
+   "name": "Gustav Feiler and Karoline Feiler",
+   "note": "The couple of 1936; the house gives his retirement in 1986 at seventy seven, no death date found; described as a couple of the Feiler family."
+  },
+  {
+   "name": "Georg Prieler senior",
+   "note": "The grandfather who first bottled, in Skurnik's history; no dates; described."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "kracher",
+   "ruling": "kept: no swap proposed; the numbered Trockenbeerenauslese collection is the house's flagship on its own pages, and the record teaches it as a collection, not a single bottling."
+  },
+  {
+   "pick": "feiler-artinger",
+   "ruling": "kept: no swap proposed; Ruster Ausbruch is the house's own wine on its pages and the reason the library holds it."
+  },
+  {
+   "pick": "moric",
+   "ruling": "kept: no swap proposed. A note for the integrator, not a swap: the Neckenmarkt Alte Reben drew the larger share of critical attention in the sources met, but the plan's Lutzmannsburg was the first Moric wine in one listing, and the record teaches the pair side by side."
+  },
+  {
+   "pick": "triebaumer",
+   "ruling": "kept: no swap proposed; the Mariental of 1986 is the turning point in every source of this check."
+  },
+  {
+   "pick": "prieler",
+   "ruling": "kept: no swap proposed; the house calls the Goldberg the site its reputation was built on, and Vinaria says the same."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "w-kracher-tba: traps",
+   "says": "The numbers identify lots within a vintage, not a sweetness scale",
+   "against": "The house says every Trockenbeerenauslese of a year has been numbered since 1995, the higher the number the denser the wine, and a second page the higher the concentration and residual sugar. In tension, as the author reported; not edited.",
+   "sources": [
+    {
+     "title": "Weinlaubenhof Kracher: Trockenbeerenauslesen, the collections",
+     "url": "https://shop.kracher.at/weine/kollektionen",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weinlaubenhof Kracher: Geschichte",
+     "url": "https://www.kracher.at/ueber_uns/geschichte_1",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-kracher and w-kracher-tba: style",
+   "says": "Zwischen den Seen aged in large neutral cask",
+   "against": "The house gives steel tanks or large wooden casks; the cask is right, the steel is missing. Partly in tension; the region record's line has steel only, also partial.",
+   "sources": [
+    {
+     "title": "Weinlaubenhof Kracher: the 2022 Kracher collection",
+     "url": "https://www.kracher.at/en/news_press/news/newsdetail/2022-kracher-collection",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Clos des Spiritueux: Kracher TBA No. 6 Nouvelle Vague Grande Cuvée 2010",
+     "url": "https://www.closdesspiritueux.com/autriche-kracher-tba-6-nouvelle-vague-grande-cuvee-2010.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-feiler-artinger: wines",
+   "says": "Ruster Ausbruch: Furmint, Welschriesling and others",
+   "against": "Furmint stands in one summary of the estate's grapes only; the house's pages and Falstaff name Weissburgunder, Welschriesling, Chardonnay, Pinot Gris, Neuburger and Gelber Muskateller. Not refuted, not confirmed by two sources.",
+   "sources": [
+    {
+     "title": "Feiler-Artinger: Jahrgänge",
+     "url": "https://www.feiler-artinger.at/jahrgaenge/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut Feiler-Artinger",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Feiler-Artinger",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-ernst-triebaumer: style and t",
+   "says": "made without the heavy oak that marked Austrian reds in the 1990s; slate",
+   "against": "The Mariental spends twenty two to twenty four months in small barrels by Falstaff and Flaschenpost, whether new not settled; the house gives limestone, no source slate. The oak line may be in tension, the slate is.",
+   "sources": [
+    {
+     "title": "Falstaff: 2022 Blaufränkisch Ried Mariental, wine entry",
+     "url": "https://www.falstaff.com/en/wines/weingut-ernst-triebaumer-2022-blaufraenkisch-ried-mariental-1",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Flaschenpost: Blaufränkisch Mariental, Weingut Ernst Triebaumer",
+     "url": "https://www.flaschenpost.ch/en/blaufraenkisch-mariental_weingut-ernst-triebaumer",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Ernst Triebaumer: Vineyard, the sites",
+     "url": "https://www.triebaumer.com/seite.mv?20-10-00-00+=&lg=en",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-moric: style",
+   "says": "whole-cluster fractions, large neutral casks, pale colour",
+   "against": "No source of this check gave whole bunches; the casks are large and used, as the library says; the Lutzmannsburg is the darker of the pair in Vinography and the library's own wine list. Whole bunches unconfirmed; the region record's line (made with whole bunches) likewise.",
+   "sources": [
+    {
+     "title": "Moric: Blaufränkisch tasting list, 2009 (German)",
+     "url": "https://www.moric.at/2009_verkostungsliste.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weingut Moric",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/moric",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-moric: holdings and wines",
+   "says": "the cellar at Grosshoflein; Neckenmarkt old vines on slate and schist",
+   "against": "The village is Grosshöflein (Großhöflein), a spelling slip; Neckenmarkt is slate and limestone in Lebendige Weine. Minor.",
+   "sources": [
+    {
+     "title": "Clark Foyster Wines: Weingut Moric, Grosshöflein",
+     "url": "https://www.clarkfoysterwines.co.uk/avada_portfolio/weingut-moric-grosshoflein-burgenland/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Lebendige Weine: Moric, producer page",
+     "url": "https://www.lebendigeweine.de/en/moric/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
