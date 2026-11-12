@@ -1,0 +1,1015 @@
+{
+ "group": "wachau",
+ "chunk": "f10",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 28,
+  "perRecord": {
+   "fx-pichler": 4,
+   "hirtzberger": 5,
+   "knoll": 6,
+   "brundlmayer": 4,
+   "gobelsburg": 5,
+   "shared": 4
+  },
+  "note": "Twenty eight searches of a share of twenty eight, none of them the author's. Fourteen were restricted to a house's or a body's own domain (fx-pichler.at twice, vinea-wachau.at six times, bruendlmayer.at twice, gobelsburg.at twice, austrianwine.com twice) and are read as primary through their summaries; four kept the house's own domain out so that the second source would be independent (F.X. Pichler once, Bründlmayer once, Gobelsburg twice); ten went to the open web. The four shared searches are the Vinea Wachau's codex, the Wachau and Kamptal DACs, the Traditionsweingüter, and the Ried rule of 2016 with the legal frame for classified sites of 2023. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the bodies (the Vinea Wachau's codex and vineyard sheets, Austrian Wine, the Kamptal DAC ordinance) for the rules and the sites, then to the houses' own pages for their own dates and methods, then to the open web with the house's domain kept out for the second source of each date and person.",
+  "Where a search contradicted the record it was set right with its source; where a detail was found in no source of this check and rested on one of the author's secondary sources or on no source named, it was cut or said with less (the entrance to Spitz, partly terraced, a release later than most, the fertiliser of 1979, the join of 1784, on its lees at Gobelsburg, the Manhartsberg casks of the Tradition line).",
+  "Facts of a house's own history told on its own pages stand, hedged as the house's account; no person is named in prose, as none of the dead met here has dates in two sources (the grower of 1948 has his in the Vinea Wachau's notice alone).",
+  "Sources whose title or address names a living person, or a writer's own site, were met among the results but are cited neither in the fragment nor here; the fragment's sources were left as the author wrote them, and the sources of this check are listed per change and per record under extraSources."
+ ],
+ "records": [
+  {
+   "key": "fx-pichler",
+   "searches": 4,
+   "tested": [
+    "The forebear from Rohrendorf in the middle of the nineteenth century and the grandson's purchase at Oberloiben: the house's family page gives the move from Rohrendorf in the mid nineteenth century and the grandson's purchase of a property at Oberloiben in 1898; its timeline gives the winery founded at Oberloiben 27 in 1905. Confirmed; the story now gives both years as the house's.",
+    "The F.X. of the name at the wine school of Krems: the house's family page says he graduated from the Krems viticulture college and worked internships in Germany and Alsace. Confirmed; bought prized terraces early on was found in no source and is cut. The German Wikipedia gives him taking over a small holding in 1971, in one source only, so the year is not used.",
+    "The Kellerberg of 1990 as the wine that carried the name abroad: the house's timeline, and one secondary portrait. Kept as the house's account.",
+    "The new winery of 2009: the house's timeline (Oberloiben 57) and the German Wikipedia, which has the wines made in the new cellar from the 2009 vintage. Confirmed.",
+    "The Kellerberg: the Vinea Wachau's sheet gives Gföhl gneiss, the slope sheltered from the westerly winds of the Ice Ages so that loess survives in patches, terraced, facing south to south east, and the name from the Kellerschlössl of Dürnstein, recent, from 1787, a collective name for several smaller vineyards; the house's page gives the same. Confirmed, with the aspect widened and the year added.",
+    "Smaragd: the Vinea Wachau's codex and styles page give at least twelve and a half per cent, no enrichment, concentration or aromatisation, and no perceptible wood. Confirmed.",
+    "Wachau DAC from the 2020 vintage, hand picking at every level, Riedenwein only Grüner Veltliner and Riesling, never enriched: Austrian Wine. Confirmed.",
+    "The word Ried before a vineyard name, required by the amendment of the wine law in force from 14 June 2016: Austrian Wine. Confirmed, so the older label form Dürnsteiner Kellerberg stands.",
+    "Unendlich: the house's page gives a Riesling first made in 1998 and a Grüner Veltliner in 2003, and the name from an opera chronicle. Confirmed and dated.",
+    "Fully dry: no source gave the Kellerberg's sugar; a Smaragd need only be dry, so the making and the table say dry.",
+    "The questions: one key each, four styles and four years; sound.",
+    "The rules: nobody living named (the F.X. and his son are described); no price, no score, nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "steep dry stone terraces of Gföhl gneiss facing south east, out of the westerly winds of the Ice Ages, so that patches of loess survive on the rock. The house takes the name from the baroque Kellerschlössl of Dürnstein.",
+     "now": "steep dry stone terraces of Gföhl gneiss facing south to south east, sheltered from the westerly winds of the Ice Ages, so patches of loess survive. Its name, from the baroque Kellerschlössl of Dürnstein, dates only from 1787 and gathered several smaller vineyards.",
+     "why": "The Vinea Wachau's sheet gives the aspect as south to south east and the name's year and use; the old sentence read as if the house took its own name from the Kellerschlössl.",
+     "sources": [
+      {
+       "title": "Vinea Wachau: Kellerberg, vineyard details",
+       "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/kellerberg",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "F.X. Pichler: History",
+       "url": "https://fx-pichler.at/en/winery/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making, table",
+     "was": "fermented fully dry; Fully dry yet broad",
+     "now": "fermented dry; Dry yet broad",
+     "why": "A Smaragd need only be dry under the law, and no source gives this wine's sugar.",
+     "sources": [
+      {
+       "title": "Vinea Wachau: vinea wine styles",
+       "url": "https://www.vinea-wachau.at/en/translate-to-englisch-vinea-wachau/vinea-wine-styles",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinea Wachau: the codex (English leaflet)",
+       "url": "https://www.vinea-wachau.at/fileadmin/Bibliothek/downloads/Vinea%20Flyer%20Adaptionen/VIWA_codex_EN_web.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a grandson bought land at Oberloiben, where the winery stood around the turn of the twentieth century",
+     "now": "a grandson bought a property at Oberloiben in 1898; the house dates its winery there to 1905",
+     "why": "The house's own family page and timeline give both years; the story keeps them as the house's account, and founded stays empty.",
+     "sources": [
+      {
+       "title": "F.X. Pichler: Family",
+       "url": "https://fx-pichler.at/en/winery/family/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "F.X. Pichler: History",
+       "url": "https://fx-pichler.at/en/winery/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Weingut F. X. Pichler",
+       "url": "https://de.wikipedia.org/wiki/Weingut_F._X._Pichler",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a later grower of the family trained at the wine school of Krems, bought prized terraces early on and set out",
+     "now": "a later grower of the family who studied at the wine school of Krems and worked vintages in Germany and Alsace, set out",
+     "why": "No source of this check gave the purchase of terraces; the house's family page gives the school and the vintages abroad.",
+     "sources": [
+      {
+       "title": "F.X. Pichler: Family",
+       "url": "https://fx-pichler.at/en/winery/family/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2].note",
+     "was": "A selection of Riesling and of Grüner Veltliner made only in years the house judges fit; the name means endless.",
+     "now": "A selection made only in years the house judges fit, a Riesling from 1998 and a Grüner Veltliner from 2003; the name means endless.",
+     "why": "The house's Unendlich page dates both wines.",
+     "sources": [
+      {
+       "title": "F.X. Pichler: Unendlich",
+       "url": "https://fx-pichler.at/en/unendlich_/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "bought prized terraces early on (no source)",
+    "fully dry (no source for the sugar)"
+   ],
+   "open": [
+    "That F.X. Pichler stood with the Vinea Wachau from its beginning rests on the author's reading of the association's anniversary page; no search of this check found it or contradicted it.",
+    "The Kellerberg of 1990 as the breakthrough abroad is the house's timeline, repeated by one secondary portrait.",
+    "Founded stays empty: 1898 in the German Wikipedia and on the house's family page as a purchase, 1905 in the house's timeline as the winery."
+   ],
+   "extraSources": [
+    {
+     "title": "F.X. Pichler: History",
+     "url": "https://fx-pichler.at/en/winery/history/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "F.X. Pichler: Family",
+     "url": "https://fx-pichler.at/en/winery/family/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "F.X. Pichler: Unendlich",
+     "url": "https://fx-pichler.at/en/unendlich_/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut F. X. Pichler",
+     "url": "https://de.wikipedia.org/wiki/Weingut_F._X._Pichler",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: Kellerberg, vineyard details",
+     "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/kellerberg",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: the codex (English leaflet)",
+     "url": "https://www.vinea-wachau.at/fileadmin/Bibliothek/downloads/Vinea%20Flyer%20Adaptionen/VIWA_codex_EN_web.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: vinea wine styles",
+     "url": "https://www.vinea-wachau.at/en/translate-to-englisch-vinea-wachau/vinea-wine-styles",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Wachau now a DAC region",
+     "url": "https://www.austrianwine.com/press-media/news/news-1/article/wachau-now-a-dac-region",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: The Wine Law, dynamic Austria",
+     "url": "https://www.austrianwine.com/press-media/news/news-1/article/the-wine-law-dynamic-austria-1",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "hirtzberger",
+   "searches": 5,
+   "tested": [
+    "The grower of 1948: the Vinea Wachau's notice on his death (1923 to 2007) gives the taking over of his parents' holding and his marriage in 1948, his years as mayor of Spitz and his place among the founders and board of the Vinea Wachau in 1983. Confirmed; he stays described, as his dates rest on that one notice.",
+    "The first bottling and the single vineyards: the Vinea Wachau's profile of the house credits them to the eldest Franz without a year. Kept as the Vinea's account.",
+    "The son who took over in 1983 and led the association from 1988 to 2012: the Vinea Wachau's list of its chairmen (the first from 1983 to 1988, then Franz Hirtzberger from 1988 to 2012, then his successor) and its press text of 2012 on twenty four years in the chair; a sommelier portal and the Vinea's profile give 1983 for the son's start. Confirmed.",
+    "The Singerriedel: the Vinea Wachau's sheet gives paragneiss with mica schist and bands of quartzite lower down, shallow, meagre, sandy soil, narrow terraces, Riesling on the steep terraces and Grüner Veltliner at the foot, and a first record of 1486. Confirmed; at the entrance to Spitz and at the edge of the village were found in no source and are now at Spitz; the year 1486 is added.",
+    "The making: one merchant gives steel fermentation and élevage in casks of three to five thousand litres; another's sheet for a recent vintage gives steel alone. The record now says often, with some vintages in steel.",
+    "The Weinhofmeisterei: a press release of the state of Lower Austria of July 2014 gives the opening of the Hofmeisterei at Wösendorf, in a former vineyard house of St Florian, with the youngest son to build a winery there; an Italian merchant gives the estate's start in 2014; the Vinea Wachau lists it as a separate house. Confirmed.",
+    "Hochrain: the Vinea Wachau gives it as a part of the Axpoint at Spitz; the note says nothing of the site, so it stands.",
+    "The questions: one key each, four places and four bodies; the explanation of the second now calls the Traditionsweingüter a separate, private association rather than the Kamptal and Kremstal association, since its members reach into the Traisental, the Wagram, Vienna and Carnuntum.",
+    "The rules: the house keeps its name; the grower of 1948 is described; his son and grandsons are living and are not named; no price, no score, nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites; wine.label[1].means; table; story; questions[0]",
+     "was": "at the entrance to Spitz; the wall of terraces that rises at the entrance to Spitz; at the edge of the village; Dry stone terraces at the entrance to Spitz",
+     "now": "at Spitz, first recorded in 1486; a steep wall of narrow terraces at Spitz, first recorded in 1486; at Spitz; Narrow dry stone terraces at Spitz",
+     "why": "No source of this check placed the vineyard at the entrance or the edge of the village; the Vinea Wachau's sheet gives Spitz, the narrow terraces and the first record of 1486.",
+     "sources": [
+      {
+       "title": "Vinea Wachau: Singerriedel, vineyard details",
+       "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/singerriedel",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "in most vintages then rests in large wooden casks of several thousand litres",
+     "now": "is often then raised in large wooden casks of three to five thousand litres, which give it no taste of oak; some vintages stay in steel",
+     "why": "One merchant gives casks of three to five thousand litres after steel, another a recent vintage in steel alone, so most vintages claimed more than the sources hold.",
+     "sources": [
+      {
+       "title": "Clos des Spiritueux: Franz Hirtzberger, Ried Singerriedel Riesling Smaragd 2023",
+       "url": "https://www.closdesspiritueux.com/franz-hirtzberger-ried-singerriedel-riesling-smaragd-2023.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mövenpick Wein: 2023 Riesling Smaragd Ried Singerriedel, Weingut Franz Hirtzberger, sheet",
+       "url": "https://www.moevenpick-wein.de/customization_catalog/product/pdf/product_id/91784/file/2023-riesling-smaragd-ried-singerriedel-weingut-franz-hirtzberger.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "the Traditionsweingüter is the Kamptal and Kremstal association behind the 1ÖTW mark.",
+     "now": "the Traditionsweingüter is a separate, private association, the one behind the 1ÖTW mark.",
+     "why": "The association's members reach beyond the Kamptal and Kremstal, into the Traisental, the Wagram, Vienna and Carnuntum.",
+     "sources": [
+      {
+       "title": "StudySmart: Austria, the ÖTW",
+       "url": "https://studysmart.ai/en/summaries/d3-reading-wines-of-the-world/otw-austrian-logo",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: milestone vineyard classification approved in Austria",
+       "url": "https://www.thedrinksbusiness.com/2023/08/milestone-vineyard-classification-approved-in-austria/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "at the entrance to Spitz",
+    "at the edge of the village",
+    "in most vintages (for the casks)"
+   ],
+   "open": [
+    "The first bottling and the choice of single vineyards are the Vinea Wachau's credit to the eldest Franz, without a year.",
+    "The vessels vary by vintage; the record says often."
+   ],
+   "extraSources": [
+    {
+     "title": "Vinea Wachau: press text on the death of Franz Hirtzberger senior",
+     "url": "https://www.vinea-wachau.at/fileadmin/Bibliothek/images/Presse/Pressetexte/pt_franz_hirtzberger_sen.doc",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: Weingut Franz Hirtzberger",
+     "url": "https://www.vinea-wachau.at/en/mywachau/companies/company-details/myw_company/weingut-franz-hirtzberger",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: press text on the association's new chairman of 2012",
+     "url": "",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: Singerriedel, vineyard details",
+     "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/singerriedel",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Clos des Spiritueux: Franz Hirtzberger, Ried Singerriedel Riesling Smaragd 2023",
+     "url": "https://www.closdesspiritueux.com/franz-hirtzberger-ried-singerriedel-riesling-smaragd-2023.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Mövenpick Wein: 2023 Riesling Smaragd Ried Singerriedel, Weingut Franz Hirtzberger, sheet",
+     "url": "https://www.moevenpick-wein.de/customization_catalog/product/pdf/product_id/91784/file/2023-riesling-smaragd-ried-singerriedel-weingut-franz-hirtzberger.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Land Niederösterreich: press release of July 2014 on the Hofmeisterei at Wösendorf",
+     "url": "https://www.noe.gv.at/noe/pressAnnouncement/getPdf/55208",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: Weinhofmeisterei, company details",
+     "url": "https://www.vinea-wachau.at/en/mywachau/companies/company-details/myw_company/weinhofmeisterei-hirtzberger",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "knoll",
+   "searches": 6,
+   "tested": [
+    "The family at Unterloiben since the early nineteenth century: several merchants give 1825, one as the family's ownership and another as its vines at Unterloiben; no house page or wine body found. The story's early nineteenth century stands; founded stays empty.",
+    "Bottles from the 1950s, the Saint Urban of 1962 and the Vinothekfüllung of 1988 with a Riesling from 2000: the house's profile on the Vinea Wachau gives all four, in English and German, and a Mövenpick sheet gives the baroque Saint Urban first on a bottle in 1962. Confirmed.",
+    "The Schütt: the Vinea Wachau's sheet gives a cone of stream debris at the end of the Menthalgraben, carried between the Höhereck and the Loibenberg, deep weathered gneiss, sandier and stonier than the gneiss terraces, low in fine earth, draining well, and the Dürnstein and Unterloiben boundary running through it. Confirmed; partly terraced was found in no source and is cut; the place is made exact.",
+    "The making: two searches found no house sheet; Falstaff's sheet for the Kreutles Grüner Veltliner Smaragd of 2023 gives nine months in a large wooden cask. The large old oak casks with some steel rest on the author's importer and the Sommelier Academy; the record now says raised, not fermented, in them.",
+    "Released later than most and slow to open: no source confirmed a late release; Falstaff calls the house's name as a late starter incorrect, while agreeing its wines are very long lived. Cut from the ageing, the table and the story, which now say long lived.",
+    "The Pfaffenberg in the Kremstal: a merchant and Falstaff's sheet give it as Kremstal, labelled Kremstal DAC from the 2020 vintage. Confirmed, with the trap.",
+    "The questions: one key each, four reasons and four images; the lure is the Federspiel's, the lizard the Smaragd's. Sound.",
+    "The rules: the house keeps its name; the heads of the last two generations are living and are not named; no price, no score, nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The Schütt between Dürnstein and Unterloiben, partly terraced, on a fan of stream debris at the mouth of the Menthalgraben",
+     "now": "The Schütt, astride the boundary of Dürnstein and Unterloiben, on a fan of stream debris at the mouth of the Menthalgraben, between the Höhereck and the Loibenberg",
+     "why": "The Vinea Wachau's sheet gives the boundary through the vineyard and the stream's course between the two hills; it says nothing of terraces, so partly terraced is cut.",
+     "sources": [
+      {
+       "title": "Vinea Wachau: Schütt, vineyard details",
+       "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/schuett/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "fermented dry mostly in large, old oak casks",
+     "now": "fermented dry and raised mostly in large, old oak casks",
+     "why": "The sources give the casks for the élevage, not the fermentation.",
+     "sources": [
+      {
+       "title": "Falstaff: Weingut Knoll 2023 Grüner Veltliner Ried Kreutles Smaragd",
+       "url": "https://www.falstaff.com/at/weine/weingut-knoll-2023-gruener-veltliner-wachau-dac-loiben-ried-kreutles-smaragd-1",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing; table; story",
+     "was": "Reserved in youth and released later than most, it opens after five to eight years; it is slow to open and long lived, so give it years and some air; late picking and a release later than most; A sommelier who pours it learns patience: it shows least on release and most a decade later.",
+     "now": "Dense and savoury young, it gains depth over five to ten years; it is long lived, so give it years in the cellar and some air in the glass; with late picking and large old oak casks; To a sommelier it is the proof that Grüner Veltliner from the Wachau can last for decades.",
+     "why": "No source of this check confirmed a late release, and Falstaff disputes the late starter label while agreeing the wines are very long lived.",
+     "sources": [
+      {
+       "title": "Falstaff: Weingut Knoll",
+       "url": "https://www.falstaff.com/en/wineries/weingut-knoll",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grand Cru Wijnen: Weingut Knoll",
+       "url": "https://www.grandcruwijnen.nl/en/wines/wijnhuis/weingut-knoll",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "partly terraced",
+    "released later than most",
+    "slow to open",
+    "shows least on release"
+   ],
+   "open": [
+    "The large old oak casks with some steel rest on an importer's sheet and the Sommelier Academy, with Falstaff's single Kreutles sheet as the only other word on the house's vessels.",
+    "1825 appears in several merchants' pages but in no house page or body found here; founded stays empty.",
+    "The library's style line, released later than most, is not repeated."
+   ],
+   "extraSources": [
+    {
+     "title": "Vinea Wachau: Schütt, vineyard details",
+     "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/schuett/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: Weingut Knoll",
+     "url": "https://www.vinea-wachau.at/en/mywachau/companies/company-details/myw_company/weingut-knoll",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Mövenpick Wein: Weingut Knoll product sheet",
+     "url": "https://www.moevenpick-wein.com/it/moevcat/product/pdf/id/25307",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grand Cru Wijnen: Weingut Knoll",
+     "url": "https://www.grandcruwijnen.nl/en/wines/wijnhuis/weingut-knoll",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Weingut Knoll 2023 Grüner Veltliner Ried Kreutles Smaragd",
+     "url": "https://www.falstaff.com/at/weine/weingut-knoll-2023-gruener-veltliner-wachau-dac-loiben-ried-kreutles-smaragd-1",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Weingut Knoll",
+     "url": "https://www.falstaff.com/en/wineries/weingut-knoll",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grand Cru Wijnen: 2020 Weingut Knoll Ried Pfaffenberg Steiner Kremstal Riesling",
+     "url": "https://www.grandcruwijnen.nl/en/2020-weingut-knoll-ried-pfaffenberg-steiner-kremstal-riesling",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Weingut Knoll 2024 Riesling Kremstal DAC Ried Pfaffenberg",
+     "url": "https://www.falstaff.com/en/wines/weingut-knoll-2024-riesling-kremstal-dac-ried-pfaffenberg-1",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "brundlmayer",
+   "searches": 4,
+   "tested": [
+    "The Heuriger in a Renaissance house: wein.plus and a second portrait give a Renaissance building of the sixteenth century. Confirmed; Heurigen, a plural, is now Heuriger.",
+    "The family tradition of 1581: two portraits give it; founded stays empty, as the house's own pages found here give no year and the brief keeps a family tradition apart from a founding.",
+    "The son who took over: two portraits give 1980. The fertiliser given up in 1979 was found in no source and is cut; the story says 1980.",
+    "The terraces from the 1920s, the Lyra on about a fifth of the vineyards and the old vines up to a hundred years old: the house's site page and its Heiligenstein pages. Confirmed.",
+    "The rock: the house's factsheets give desert sandstone of about 270 million years with volcanic inclusions; the Geologische Bundesanstalt's papers give the Zöbing Formation, with the Heiligenstein member an arkose with layers of conglomerate, of the late Carboniferous to the Permian. Confirmed in the record's words.",
+    "The register of 1280 and Hellenstein: a winery's page gives the abbey of Zwettl's register of 1280; with the author's lexicon and wiki, kept as what is usually said.",
+    "The making: the house's factsheets give steel at fifteen to twenty degrees, lees until bottling in the summer for one vintage, steel or large wooden casks, a cask of 2,500 litres in another, and a bottling in a February more than a year on for a third. The record now says bottled some months later.",
+    "The label: the house's sheets print Ried Zöbinger Heiligenstein for older vintages and Ried Heiligenstein from 2022. Confirmed.",
+    "Organic: two portraits give organic since 2015 and the house's sheets carry an organic control code. Kept.",
+    "The Traditionsweingüter: its members reach into the Traisental, the Wagram, Vienna and Carnuntum, so the story no longer calls it the association of the Kamptal and Kremstal estates; Austrian law framed its own Erste and Grosse Lagen only in 2023, so the 1ÖTW line now says so.",
+    "Gobelsburg in 1996: the house's press dossier gives the Bründlmayers' recommendation to the abbot and their help at the start. Confirmed.",
+    "The questions: one key each, four methods and four estates. Sound.",
+    "The rules: the house keeps its name; the son of 1980 and his wife are living and are not named; no price, no score, nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "From 1979, as the son of the house took over from his parents, synthetic fertiliser was given up, by the house's own account;",
+     "now": "In 1980 the son of the house took over from his parents;",
+     "why": "No source of this check gave the fertiliser or 1979; two portraits give 1980 for the son's taking over.",
+     "sources": [
+      {
+       "title": "wein.plus wine guide: Weingut Bründlmayer Langenlois",
+       "url": "https://wineguide.wein.plus/weingut-bruendlmayer-langenlois",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Bründlmayer",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/bruendlmayer",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the Traditionsweingüter, a private association of the Kamptal and Kremstal estates",
+     "now": "the Traditionsweingüter, a private association of estates",
+     "why": "Its members reach beyond the two valleys.",
+     "sources": [
+      {
+       "title": "StudySmart: Austria, the ÖTW",
+       "url": "https://studysmart.ai/en/summaries/d3-reading-wines-of-the-world/otw-austrian-logo",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "whose Heurigen stands",
+     "now": "whose Heuriger stands",
+     "why": "The singular is Heuriger; the building is confirmed as Renaissance.",
+     "sources": [
+      {
+       "title": "wein.plus wine guide: Weingut Bründlmayer Langenlois",
+       "url": "https://wineguide.wein.plus/weingut-bruendlmayer-langenlois",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "until bottling in the year after the harvest",
+     "now": "until it is bottled some months later",
+     "why": "The house's sheets give bottling from the summer after the harvest to a February more than a year later, by vintage.",
+     "sources": [
+      {
+       "title": "Bründlmayer: Ried Heiligenstein Alte Reben 2023, factsheet",
+       "url": "https://www.bruendlmayer.at/en/wines/ried-heiligenstein-1oetw-alte-reben-riesling-2023/factsheet/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bründlmayer: Ried Zöbinger Heiligenstein Alte Reben 2018, factsheet",
+       "url": "https://www.bruendlmayer.at/en/wines/zoebinger-heiligenstein-1oetw-alte-reben-riesling-2018/factsheet/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2].means",
+     "was": "Erste Lage of the Österreichische Traditionsweingüter, a private classification outside the wine law.",
+     "now": "The Traditionsweingüter's own mark for a site it ranks Erste Lage; Austrian law framed classified sites only in 2023.",
+     "why": "Since the decree of 2023 Austrian law has its own Erste and Grosse Lage, so outside the wine law needs the date.",
+     "sources": [
+      {
+       "title": "Austrian Wine: Austria defines the legal basis for an official vineyard classification system",
+       "url": "https://www.austrianwine.com/press-media/news/news-1/article/austria-defines-the-legal-basis-for-an-official-vineyard-classification-system",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: milestone vineyard classification approved in Austria",
+       "url": "https://www.thedrinksbusiness.com/2023/08/milestone-vineyard-classification-approved-in-austria/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "at the foot of the Heiligenstein",
+     "now": "on the south east side of the Heiligenstein",
+     "why": "Schloss Gobelsburg's own page places the Lamm there.",
+     "sources": [
+      {
+       "title": "Schloss Gobelsburg: Grüner Veltliner Lamm",
+       "url": "https://www.gobelsburg.at/en/wines/schloss-gobelsburg/gruener-veltliner-lamm/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "synthetic fertiliser given up from 1979",
+    "bottling in the year after the harvest"
+   ],
+   "open": [
+    "The register of 1280 and Hellenstein rest on secondary sources and are told as what is usually said.",
+    "The ranking from 2010 is the library's year; no source of this check gave the year of the first Erste Lagen.",
+    "The organic certificate of 2015: organic since 2015 in two portraits, the code on the house's sheets; no house page found gives the certificate's year."
+   ],
+   "extraSources": [
+    {
+     "title": "Bründlmayer: Site, Origin and Climate",
+     "url": "https://www.bruendlmayer.at/en/winery/site-and-climate/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bründlmayer: Ried Heiligenstein Alte Reben 2023, factsheet",
+     "url": "https://www.bruendlmayer.at/en/wines/ried-heiligenstein-1oetw-alte-reben-riesling-2023/factsheet/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bründlmayer: Ried Zöbinger Heiligenstein Alte Reben 2018, factsheet",
+     "url": "https://www.bruendlmayer.at/en/wines/zoebinger-heiligenstein-1oetw-alte-reben-riesling-2018/factsheet/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "wein.plus wine guide: Weingut Bründlmayer Langenlois",
+     "url": "https://wineguide.wein.plus/weingut-bruendlmayer-langenlois",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weingut Bründlmayer",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/bruendlmayer",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Geologische Bundesanstalt: Arbeitstagung 1991, the Permian of Zöbing",
+     "url": "https://opac.geologie.ac.at/ais312/dokumente/ATA_1991_098.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Schloss Gobelsburg: Press dossier, April 2021",
+     "url": "https://www.gobelsburg.at/wp-content/uploads/2021/07/Press-Dossier-Schloss-Gobelsburg-Apr-21.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "StudySmart: Austria, the ÖTW",
+     "url": "https://studysmart.ai/en/summaries/d3-reading-wines-of-the-world/otw-austrian-logo",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Austria defines the legal basis for an official vineyard classification system",
+     "url": "https://www.austrianwine.com/press-media/news/news-1/article/austria-defines-the-legal-basis-for-an-official-vineyard-classification-system",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "gobelsburg",
+   "searches": 5,
+   "tested": [
+    "1171: the house's history page gives the monks' first vineyards on the Heiligenstein and the Gaisberg, and the German Wikipedia and a merchant's letter give 1171 for the start of winegrowing. Confirmed as the house's account; founded keeps the library's year, with the author's report on what it marks.",
+    "1740: the house's history and the German Wikipedia give the sale on 17 September 1740 by an owner ruined by his building, to the abbey of Zwettl. Confirmed; the seller is not named, as no dates were found.",
+    "1784: the house's press dossier gives the two properties brought together at Gobelsburg in 1784; its history page gives the move of the making after a fire at Kammern in 1786. In dispute between the house's own pages, so the year is cut and the story says late in the eighteenth century, after a fire at Kammern; the question's 1784 becomes 2008.",
+    "The monks to 1995 and the family of 1996: the house's dossier gives a long lease from January 1996, with the Bründlmayers' recommendation and help; an architectural record of the castle gives the abbey's own running until 1996 and a lease since; Vinum gives the contract for two generations. Confirmed, and the lease is added.",
+    "850 years in 2021: the German Wikipedia and a merchant's letter. Confirmed.",
+    "The Lamm: the house's page gives the south east side of the Heiligenstein where the hill eases into gentler slopes, loess and loam with material from the hill's volcanic rock and Permian silt. Confirmed; at the foot is now on the south east side.",
+    "The making: an importer gives the Lamm of 2022 fermented and aged in oak casks of five and six thousand litres, one of them new; a merchant gives casks of five to six thousand litres of Manhartsberg oak. Confirmed; on its lees was found in no source and is cut.",
+    "The Kamptal DAC: Austrian Wine gives the 2008 vintage and Grüner Veltliner and Riesling; the ordinance's text gives applications for the state test number of a Riedenwein from 1 April of the year after the harvest. Confirmed.",
+    "The 1ÖTW mark: Austrian Wine gives the legal Erste and Grosse Lage of 2023, so the label line and the question's explanation now give the date.",
+    "The questions: one key each, four marks and four years. Sound.",
+    "The rules: the family of 1996 and the Bründlmayers are living and are not named; the house keeps its name; no price, no score, nothing volatile; British; no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "story; questions[1]",
+     "was": "in 1784 the two were joined as the wine estate of the Cistercian abbey of Zwettl; options 1740, 1171, 1784, 1996",
+     "now": "late in the eighteenth century, after a fire at Kammern, the making of the wine moved to Gobelsburg; options 1740, 1171, 1996, 2008",
+     "why": "The house's own pages disagree, 1784 in a press dossier and 1786 on the history page, so the year is cut.",
+     "sources": [
+      {
+       "title": "Schloss Gobelsburg: History",
+       "url": "https://www.gobelsburg.at/en/castle/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Schloss Gobelsburg: Press dossier, April 2021",
+       "url": "https://www.gobelsburg.at/wp-content/uploads/2021/07/Press-Dossier-Schloss-Gobelsburg-Apr-21.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story; questions[1].exp",
+     "was": "In 1996 a family took over the running of the estate",
+     "now": "In 1996 a family took over the running of the estate on a long lease",
+     "why": "The house's dossier, an architectural record and Vinum give the lease; the library's trap was right on it.",
+     "sources": [
+      {
+       "title": "Schloss Gobelsburg: Press dossier, April 2021",
+       "url": "https://www.gobelsburg.at/wp-content/uploads/2021/07/Press-Dossier-Schloss-Gobelsburg-Apr-21.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Weingut Schloss Gobelsburg",
+       "url": "https://de.wikipedia.org/wiki/Weingut_Schloss_Gobelsburg",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinum: Club les Domaines, Schloss Gobelsburg",
+       "url": "https://www.vinum.eu/de/wein/club-les-domaines/2017/schloss-gobelsburg/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites; wine.label[0].means; table; cards[0]",
+     "was": "on the south east foot of the Heiligenstein: deep loess and loam, the loam weathered from the hill's Permian sandstone and volcanic rock",
+     "now": "on the south east side of the Heiligenstein, where the hill eases into gentler slopes: deep loess and loam, mixed with material washed down from the hill's Permian rock and volcanic stone",
+     "why": "The house's own Lamm page and dossier give the side of the hill and the mixed material.",
+     "sources": [
+      {
+       "title": "Schloss Gobelsburg: Grüner Veltliner Lamm",
+       "url": "https://www.gobelsburg.at/en/wines/schloss-gobelsburg/gruener-veltliner-lamm/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Schloss Gobelsburg: Press dossier, April 2021",
+       "url": "https://www.gobelsburg.at/wp-content/uploads/2021/07/Press-Dossier-Schloss-Gobelsburg-Apr-21.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented and matured on its lees in large traditional casks of five thousand litres and more, made of Austrian oak from the Manhartsberg forest, a few of them new.",
+     "now": "Fermented and matured in large traditional casks of five to six thousand litres, made of Austrian oak from the nearby Manhartsberg forest, with an occasional new cask among them.",
+     "why": "The importer gives five and six thousand litres with one new cask; on its lees was found in no source.",
+     "sources": [
+      {
+       "title": "Skurnik: Grüner Veltliner Ried Lamm Erste Lage, Schloss Gobelsburg",
+       "url": "https://www.skurnik.com/sku/gruner-veltliner-lamm-gobelsburg-9-3-4-2-2-2-2/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "MacArthur Beverages: 2022 Schloss Gobelsburg Grüner Veltliner Lamm",
+       "url": "https://bassins.com/products/2022-schloss-gobelsburg-gruner-veltliner-lamm-750ml",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "Made after the cellar ways of Gobelsburg between 1800 and 1850, in large casks of Manhartsberg oak.",
+     "now": "The house's homage to the cellar ways of Gobelsburg between 1800 and 1850, a range of its own.",
+     "why": "No source of this check gave the Manhartsberg casks for the Tradition range.",
+     "sources": []
+    },
+    {
+     "field": "wine.label[1].means; questions[0].exp",
+     "was": "a private classification outside Austrian wine law",
+     "now": "the Traditionsweingüter's own mark for a site it ranks Erste Lage; Austrian law framed classified sites only in 2023",
+     "why": "Since the decree of 2023 Austrian law has its own Erste and Grosse Lage.",
+     "sources": [
+      {
+       "title": "Austrian Wine: Austria defines the legal basis for an official vineyard classification system",
+       "url": "https://www.austrianwine.com/press-media/news/news-1/article/austria-defines-the-legal-basis-for-an-official-vineyard-classification-system",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: milestone vineyard classification approved in Austria",
+       "url": "https://www.thedrinksbusiness.com/2023/08/milestone-vineyard-classification-approved-in-austria/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "the join of 1784",
+    "on its lees",
+    "the Manhartsberg casks of the Tradition range"
+   ],
+   "open": [
+    "The Tradition line's span of 1800 to 1850 rests on the house and an importer, as the author read them.",
+    "The Lamm as the fullest Grüner Veltliner of the house and its deep loess are the library's; the house's page says loess and loam."
+   ],
+   "extraSources": [
+    {
+     "title": "Schloss Gobelsburg: History",
+     "url": "https://www.gobelsburg.at/en/castle/history/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Schloss Gobelsburg: Press dossier, April 2021",
+     "url": "https://www.gobelsburg.at/wp-content/uploads/2021/07/Press-Dossier-Schloss-Gobelsburg-Apr-21.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut Schloss Gobelsburg",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Schloss_Gobelsburg",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinum: Club les Domaines, Schloss Gobelsburg",
+     "url": "https://www.vinum.eu/de/wein/club-les-domaines/2017/schloss-gobelsburg/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Schloss Gobelsburg: Grüner Veltliner Lamm",
+     "url": "https://www.gobelsburg.at/en/wines/schloss-gobelsburg/gruener-veltliner-lamm/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Skurnik: Grüner Veltliner Ried Lamm Erste Lage, Schloss Gobelsburg",
+     "url": "https://www.skurnik.com/sku/gruner-veltliner-lamm-gobelsburg-9-3-4-2-2-2-2/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "MacArthur Beverages: 2022 Schloss Gobelsburg Grüner Veltliner Lamm",
+     "url": "https://bassins.com/products/2022-schloss-gobelsburg-gruner-veltliner-lamm-750ml",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Kamptal DAC",
+     "url": "https://www.austrianwine.com/our-wine/strategy-for-origin-marketing/dac-districtus-austriae-controllatus/dac-regions/kamptal-dac",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinaria: the Kamptal DAC ordinance (text)",
+     "url": "https://www.vinaria.at/fileadmin/01_MAGAZIN/2024/09-2024/16.09/DAC-Verordnung_Kamptal.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Austrian Wine: Austria defines the legal basis for an official vineyard classification system",
+     "url": "https://www.austrianwine.com/press-media/news/news-1/article/austria-defines-the-legal-basis-for-an-official-vineyard-classification-system",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Franz Xaver Pichler (the F.X. of the house's name)",
+   "where": "the house's family page and the German Wikipedia",
+   "believed": "living; the house keeps its name, the man is described; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Lucas Pichler",
+   "where": "the German Wikipedia and a portrait, as the son who took over",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Mathias Hirtzberger",
+   "where": "the state press release of 2014, the Vinea Wachau and Austrian Wine's lists, a merchant's address",
+   "believed": "living; not in people.json, for the read-together agent, as the author asked",
+   "inFragment": false
+  },
+  {
+   "name": "Franz Hirtzberger, the son of 1983 and his son",
+   "where": "the Vinea Wachau's chairmen and profile",
+   "believed": "living; the house keeps its name, the men are described",
+   "inFragment": false
+  },
+  {
+   "name": "Emmerich H. Knoll",
+   "where": "the Vinea Wachau's press text of 2012 on its new chairman and its members' list",
+   "believed": "living; the house keeps its name; the press text is cited here without its address, which names him",
+   "inFragment": false
+  },
+  {
+   "name": "Willi Bründlmayer and Edwige Bründlmayer",
+   "where": "Schloss Gobelsburg's history and a wein.plus entry whose address names him",
+   "believed": "living; Willi Bründlmayer is in people.json, Edwige Bründlmayer is not, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Michael Moosbrugger",
+   "where": "Schloss Gobelsburg's history and Vinum",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Peter Moser",
+   "where": "a Falstaff entry among the results, as the taster of a Knoll Pfaffenberg",
+   "believed": "living; a critic, cited neither in the fragment nor here; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Writers met in result lists (a British critic's producer page on the Weinhofmeisterei, a wine forum's travelogue)",
+   "where": "search results on the Weinhofmeisterei and on Knoll",
+   "believed": "living; cited neither in the fragment nor here",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Franz Hirtzberger senior",
+   "note": "1923 to 2007 in the Vinea Wachau's notice alone; described as the grower of 1948."
+  },
+  {
+   "name": "Franz Pichler senior",
+   "note": "1906 to 1998 on the house's family page alone; not in the record."
+  },
+  {
+   "name": "Franz Pichler II and Franz Pichler VI",
+   "note": "The forebear from Rohrendorf and his grandson; no dates; described."
+  },
+  {
+   "name": "Otto Achaz von Ehrenreich",
+   "note": "The owner who sold Gobelsburg to Zwettl in 1740, in the German Wikipedia; no dates found; described as its last aristocratic owner."
+  },
+  {
+   "name": "Franz Prager",
+   "note": "1925 to 2019 in a Vinea Wachau notice, the association's first chairman; not in the record."
+  },
+  {
+   "name": "Siegfried Stoitzner",
+   "note": "Painter credited with Knoll's Saint Urban in one merchant's page; not in the record."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "fx-pichler",
+   "ruling": "kept: no swap proposed; the Riesling Kellerberg is the wine the house's own timeline names for its breakthrough."
+  },
+  {
+   "pick": "hirtzberger",
+   "ruling": "kept: no swap proposed; the Singerriedel is the house's Riesling site on the Vinea Wachau's sheet."
+  },
+  {
+   "pick": "knoll",
+   "ruling": "kept: the author proposed none and noted a checker might prefer the Riesling of the Schütt; this check keeps the Grüner Veltliner, as the plan has it, since the house names the Schütt first among its sites, the Saint Urban label and the Vinothekfüllung of 1988 are Grüner Veltliner stories, and the group keeps two Grüner Veltliners beside three Rieslings."
+  },
+  {
+   "pick": "brundlmayer",
+   "ruling": "kept: no swap proposed; the Alte Reben is the house's old vine selection on the Heiligenstein, on its own factsheets."
+  },
+  {
+   "pick": "gobelsburg",
+   "ruling": "kept: no swap proposed; the Lamm is the house's Erste Lage Grüner Veltliner, on its own pages."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-knoll: style",
+   "says": "released later than most",
+   "against": "No source of this check confirmed a late release, and Falstaff calls the house's name as a late starter incorrect while agreeing the wines are very long lived. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Falstaff: Weingut Knoll",
+     "url": "https://www.falstaff.com/en/wineries/weingut-knoll",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-schloss-gobelsburg: traps",
+   "says": "The estate is run under lease by its winemaker rather than by the abbey directly",
+   "against": "The lease is confirmed (the house's dossier gives a long lease from January 1996, and an architectural record gives the castle leased since 1996); only the present tense and the lessee's role are volatile. Not in tension on the lease, which the author's report had doubted.",
+   "sources": [
+    {
+     "title": "Schloss Gobelsburg: Press dossier, April 2021",
+     "url": "https://www.gobelsburg.at/wp-content/uploads/2021/07/Press-Dossier-Schloss-Gobelsburg-Apr-21.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut Schloss Gobelsburg",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Schloss_Gobelsburg",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-schloss-gobelsburg: founded",
+   "says": "1171",
+   "against": "By the house's own history 1171 is the year the monks of Zwettl received their first Kamptal vineyards, not a founding of the estate at Gobelsburg, which the abbey bought in 1740. As the author reported; the lint holds founded to the library's year.",
+   "sources": [
+    {
+     "title": "Schloss Gobelsburg: History",
+     "url": "https://www.gobelsburg.at/en/castle/history/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": ".scripts/regions/fragments",
+   "record": "wachau-kamptal-kremstal producers line, F.X. Pichler and Franz Hirtzberger",
+   "says": "the Wachau's most famous name abroad; the Wachau's richest, most honeyed reference wines",
+   "against": "Judgements the Flagships tab does not repeat; no fact in tension.",
+   "sources": []
+  }
+ ]
+}
