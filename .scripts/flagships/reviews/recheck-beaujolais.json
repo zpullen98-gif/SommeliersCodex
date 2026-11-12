@@ -1,0 +1,1718 @@
+{
+ "group": "beaujolais",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 47,
+  "used": 33,
+  "perRecord": {
+   "lapierre": 8,
+   "foillard": 5,
+   "thivin": 6,
+   "chateau-des-jacques": 5,
+   "duboeuf": 6,
+   "shared": 3
+  },
+  "note": "The perRecord counts are a record's own searches; three more served Lapierre and Foillard together (Jules Chauvet's years twice, and the Gang of Four), so their records' reports give eleven and eight. Three of the thirty three returned nothing usable on their question: one restricted to the importer's domain, whose every page carries a living person's name in its address and so cannot be cited; one on the house's Nouveau sheet, which found only its Beaujolais sheets; and one on Cuvée Zaccharie's namesake, which no source states. One more confirmed the Moulin-à-Vent decree but found no word of manganese. No WebFetch was tried. Fourteen searches of the share are left unspent. The fragment's commit message gave Foillard six and the shared three, one too many; these counts are the right ones."
+ },
+ "method": [
+  "The fragment was written with no web search at all, resting on the Codex's library and region records and on the writer's memory of two reference books; this recheck searched every fact beyond the Codex, the strongest first: the people and their years, the appellation decrees, the sites and soils, the making and its months, the label words and every beat of the story.",
+  "Every source the fragment listed (the Codex's own library, region, Gamay and master bank records and two unopened books) is replaced by pages a search returned, read: search; marked primary where the result came from the producer's own domain (marcel-lapierre.com, chateau-thivin.com, chateau-des-jacques.fr, louisjadot.com, duboeuf.com), the appellation body (Inter Beaujolais at beaujolais.com) or the INAO's own specifications. No page of the Foillard domaine was reached.",
+  "A fact in two independent sources or one primary stands; a producer's own claim is hedged as its account; a fact in one secondary only, or nowhere, is softened or taken out and listed here. A writer's own site (Wine With Seth, Wine Anorak, Burgundy Report) and the importer's site, whose address carries a living person's name, were read as leads and never cited. Facts the library states stand as the brief allows, except where a search contested them.",
+  "The rules were tried on every string: no living person named, no price, no score, nothing volatile (hectares and present managers met in results, none carried), no judging superlative, no bare family word, British spelling, no dash; the questions for one right answer, plausible distractors and an explanation that teaches. The lint's notes left standing are the word highest for Clos de Rochegrès, which rests on the estate's own page (a cadastral high point of 361 metres) and Cellar Tours (the highest in Moulin-à-Vent at 360 metres), and the count of open questions."
+ ],
+ "records": [
+  {
+   "key": "lapierre",
+   "searches": 11,
+   "tested": [
+    "Marcel Lapierre's years (iDealwine's notice of his death and Primal Wine: born in 1950 at Villié-Morgon; Vinous and Decanter: died in October 2010 aged sixty, just after the harvest): confirmed, 1950 to 2010.",
+    "The takeover of 1973 (the domaine's own history: from his father, the farm then of seven hectares; several merchants agree): confirmed.",
+    "Chauvet's guidance (the domaine: from 1981 he vinified without sulphur or added yeast and farmed organically under Jules Chauvet's lead; Vinous: met him in 1981; other accounts 1980): the record said towards the end of the 1970s and now says 1981.",
+    "Jules Chauvet's years and calling (Wikipedia and the Wein.plus glossary: 1907 to 1989, a négociant of La Chapelle-de-Guinchay trained in chemistry, whose research covered yeasts, malolactic fermentation and carbonic maceration): confirmed.",
+    "The Gang of Four (the Wine Scholar Guild: a name invented by the four growers' American importer; Verve Wine agrees; the Codex's own master bank calls it the importer's name): the record said a critic's phrase and now says their importer's nickname.",
+    "The making (the domaine's Morgon sheet: picked by hand and carefully sorted, traditional semi carbonic maceration with no sulphur or added yeast for ten to twenty one days, about nine months in 216 litre barrels; the domaine's later sheet: old barrels; the domaine's page: native yeasts and whole bunches, no sugar or sulphur at harvest, bottled unfiltered, some lots lightly sulphured, the N cuvée with none): confirmed and the months added.",
+    "The founding year (the domaine's own pages: Morgon since 1909, the estate created in 1909): added, as the domaine's account.",
+    "The drinking window (the domaine's Morgon page: keeps about ten years on average): the record now gives about ten years.",
+    "Cuvée Marcel Lapierre (the domaine's page: made only in good years from the oldest, century old vines on the Côte du Py and Le Douby; the domaine's guide page agrees, and that young vine fruit goes to Vin de France): added to others.",
+    "Late picking and cooled vats (only the importer's sheets, whose address names a living person): cut.",
+    "The rules: the son, the daughter, the widow, the other three growers and the importer are living and are not named; no price, no score, no hectares; both questions have one key and options of one kind: sound."
+   ],
+   "changed": [
+    {
+     "field": "founded",
+     "was": "",
+     "now": "1909",
+     "why": "The domaine's own pages give 1909 for the family estate; the producer's own page is primary for its own dates, and the story hedges it as the domaine's account.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: Morgon since 1909",
+       "url": "https://www.marcel-lapierre.com/en",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Marcel Lapierre: History of the domaine",
+       "url": "https://www.marcel-lapierre.com/domaine-marcel-lapierre-histoire-du-domaine-morgon-et-viticulture/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Old Gamay vines around Villié-Morgon, on the granite and schist of the cru, among them parcels on the Côte du Py, farmed without herbicides.",
+     "now": "Old Gamay vines around Villié-Morgon, on the granite and schist of the cru, among them parcels on the Côte du Py, farmed organically and without herbicides.",
+     "why": "The domaine says it moved to organic farming in 1981 under Chauvet's guidance.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: History of the domaine",
+       "url": "https://www.marcel-lapierre.com/domaine-marcel-lapierre-histoire-du-domaine-morgon-et-viticulture/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Marcel Lapierre: The domaine",
+       "url": "https://www.marcel-lapierre.com/en/the-domaine/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked late and sorted, the grapes go into vat as whole bunches for a semi carbonic fermentation on their own yeasts, with no sugar added. The wine is raised for some months in old oak and bottled with little or no sulphur, in some years in two versions, with and without it.",
+     "now": "Picked by hand and carefully sorted, the grapes go into vat as whole bunches for the traditional semi carbonic maceration of the Beaujolais, ten to twenty one days on their own yeasts, with no sugar added and no sulphur in the vat. The wine is raised for about nine months in old 216 litre barrels and bottled unfiltered, some lots with a light dose of sulphur and the cuvée N with none.",
+     "why": "The domaine's Morgon sheet gives hand picking and careful sorting, ten to twenty one days of semi carbonic maceration with no sulphur or added yeast, and about nine months in 216 litre barrels; its pages add old barrels, unfiltered bottling and the N cuvée with no sulphur. Late picking rests only on an importer's sheet that cannot be cited.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: Morgon technical sheet",
+       "url": "https://www.marcel-lapierre.com/wp-content/uploads/2020/06/Fiche-Tech-morgon-2020.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Marcel Lapierre: The domaine",
+       "url": "https://www.marcel-lapierre.com/en/the-domaine/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Marcel Lapierre: Viticulture and vinification",
+       "url": "https://www.marcel-lapierre.com/en/viticulture-and-vinification",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Lovely within a year or two of the vintage, it keeps for five to ten years in a good one; a bottle without sulphur needs a cool cellar.",
+     "now": "Open and juicy within a year or two of the vintage, it keeps for about ten years, as the domaine gives it; keep a bottle without sulphur in a cool cellar.",
+     "why": "The domaine's Morgon page gives an average keeping of about ten years; five to ten was the writer's memory.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: Morgon",
+       "url": "https://www.marcel-lapierre.com/en/product/morgon",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Marcel Lapierre (1950 to 2010) took over his family's vines at Villié-Morgon in 1973, when Beaujolais was riding the fashion for Nouveau and most of it was made with cultured yeast, added sugar and plenty of sulphur. Towards the end of that decade he came under the influence of Jules Chauvet (1907 to 1989), a négociant and chemist of the Beaujolais whose work on yeasts and fermentation argued that healthy grapes, carefully handled, needed nothing added. Lapierre took the lesson into his vines and his cellar: he gave up herbicides, picked late and sorted hard, put whole bunches into cooled vats, left the fermentation to the native yeasts, stopped adding sugar and used little or no sulphur. Neighbouring growers in Morgon worked the same way, and abroad the four became known as the Gang of Four, a critic's phrase rather than a society. His Morgon found drinkers far beyond the Beaujolais, and the natural wine movement took it as a model. After his death in 2010 his son and daughter carried the domaine on as he had made it. The movement's argument fits in this one bottle: nothing added, and everything decided in the vineyard.",
+     "now": "The Lapierre family's estate at Villié-Morgon dates, by its own account, from 1909, and Marcel Lapierre (1950 to 2010), born in the village, took it over from his father in 1973. In 1981, under the guidance of Jules Chauvet (1907 to 1989), a négociant and chemist of the Beaujolais whose research on yeasts and fermentation argued that sound grapes, carefully handled, needed little added, he changed course: he farmed organically, picked by hand and sorted hard, put whole bunches into vat, left the fermentation to the native yeasts, stopped adding sugar and used little or no sulphur. Neighbouring growers in Morgon worked the same way, and in America, where their importer gave them the name, the four became known as the Gang of Four, a nickname rather than a society. His Morgon found drinkers far beyond the Beaujolais, and the natural wine movement took it as a model. He died in October 2010, just after the harvest, and his son and daughter carried the domaine on as he had made it, bottling the Morgon in some years both with and without sulphur. The movement's argument fits in this one bottle: nothing added, and everything decided in the vineyard.",
+     "why": "Chauvet's guidance is 1981 by the domaine and Vinous; the Gang of Four was named by the growers' American importer (Wine Scholar Guild, Verve, and the Codex's own master bank); the estate of 1909 and the takeover from his father are the domaine's; late picking, cooled vats and the region's cellars of 1973 had no source.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: History of the domaine",
+       "url": "https://www.marcel-lapierre.com/domaine-marcel-lapierre-histoire-du-domaine-morgon-et-viticulture/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: Cellar Favorite, 2009 Marcel Lapierre Morgon Cuvée Marcel Lapierre",
+       "url": "https://vinous.com/articles/cellar-favorite-2009-marcel-lapierre-morgon-cuvee-marcel-lapierre-jan-2022",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+       "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Verve Wine: How Beaujolais pioneered the modern movement for good wine",
+       "url": "https://vervewine.com/blogs/the-blog/how-beaujolais-pioneered-the-modern-day-movement-for-good-wine",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": "[{\"name\": \"Raisins Gaulois\", \"note\": \"A young vine red sold as Vin de France, made for drinking soon.\"}]",
+     "now": "[{\"name\": \"Cuvée Marcel Lapierre\", \"note\": \"Morgon from century old vines on the Côte du Py and Le Douby, made only in good years.\"}, {\"name\": \"Raisins Gaulois\", \"note\": \"A young vine red sold as Vin de France, made for drinking soon.\"}]",
+     "why": "The domaine's own page describes Cuvée Marcel Lapierre as its old vine Morgon made only in good years.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: Cuvée Marcel Lapierre",
+       "url": "https://www.marcel-lapierre.com/en/product/cuvee-marcel-lapierre",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Marcel Lapierre: Guide to the wines of France",
+       "url": "https://www.marcel-lapierre.com/guide-wines-of-france/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "The Gang of Four was a critic's phrase for four Morgon growers, not a body or a label.",
+     "now": "The Gang of Four was their American importer's nickname for four Morgon growers, not a body or a label.",
+     "why": "The nickname was the importer's, not a critic's.",
+     "sources": [
+      {
+       "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+       "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Verve Wine: How Beaujolais pioneered the modern movement for good wine",
+       "url": "https://vervewine.com/blogs/the-blog/how-beaujolais-pioneered-the-modern-day-movement-for-good-wine",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "{\"front\": \"Which chemist and négociant taught Marcel Lapierre's generation to make wine with nothing added?\", \"back\": \"Jules Chauvet, 1907 to 1989.\"}",
+     "now": "{\"front\": \"Which négociant and chemist guided Marcel Lapierre from 1981 towards wine made with nothing added?\", \"back\": \"Jules Chauvet, 1907 to 1989.\"}",
+     "why": "Chauvet's guidance dates from 1981 by the domaine.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: History of the domaine",
+       "url": "https://www.marcel-lapierre.com/domaine-marcel-lapierre-histoire-du-domaine-morgon-et-viticulture/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: Cellar Favorite, 2009 Marcel Lapierre Morgon Cuvée Marcel Lapierre",
+       "url": "https://vinous.com/articles/cellar-favorite-2009-marcel-lapierre-morgon-cuvee-marcel-lapierre-jan-2022",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts",
+     "was": "[\"Jules Chauvet, chemist and négociant\", \"Philip the Bold, Duke of Burgundy\", \"Georges Duboeuf, the Nouveau merchant\", \"Claude Chappe, inventor of the telegraph\"]",
+     "now": "[\"Jules Chauvet, chemist and négociant\", \"Philip the Bold, Duke of Burgundy\", \"Georges Duboeuf, the Nouveau merchant\", \"Émile Peynaud, Bordeaux oenologist\"]",
+     "why": "The inventor of the telegraph was no plausible teacher of wine; a Bordeaux oenologist is a distractor of the same kind as the key.",
+     "sources": [
+      {
+       "title": "Wikipedia: Jules Chauvet",
+       "url": "https://en.wikipedia.org/wiki/Jules_Chauvet",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "[{\"title\": \"The Sommelier's Codex: the library record of Marcel Lapierre\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-producers.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the master question bank\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-master.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Oxford Companion to Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}, {\"title\": \"The World Atlas of Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}]",
+     "now": "[{\"title\": \"Domaine Marcel Lapierre: The domaine\", \"url\": \"https://www.marcel-lapierre.com/en/the-domaine/\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Domaine Marcel Lapierre: Morgon technical sheet\", \"url\": \"https://www.marcel-lapierre.com/wp-content/uploads/2020/06/Fiche-Tech-morgon-2020.pdf\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Vinous: Cellar Favorite, 2009 Marcel Lapierre Morgon Cuvée Marcel Lapierre\", \"url\": \"https://vinous.com/articles/cellar-favorite-2009-marcel-lapierre-morgon-cuvee-marcel-lapierre-jan-2022\", \"kind\": \"secondary\", \"read\": \"search\"}, {\"title\": \"Wikipedia: Jules Chauvet\", \"url\": \"https://en.wikipedia.org/wiki/Jules_Chauvet\", \"kind\": \"secondary\", \"read\": \"search\"}, {\"title\": \"Wine Scholar Guild: The Beaujolais Gang of Four\", \"url\": \"https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four\", \"kind\": \"secondary\", \"read\": \"search\"}]",
+     "why": "Every source is now a page a search returned, in place of the Codex's library and master bank and two unopened books.",
+     "sources": [
+      {
+       "title": "Domaine Marcel Lapierre: The domaine",
+       "url": "https://www.marcel-lapierre.com/en/the-domaine/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Marcel Lapierre: Morgon technical sheet",
+       "url": "https://www.marcel-lapierre.com/wp-content/uploads/2020/06/Fiche-Tech-morgon-2020.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: Cellar Favorite, 2009 Marcel Lapierre Morgon Cuvée Marcel Lapierre",
+       "url": "https://vinous.com/articles/cellar-favorite-2009-marcel-lapierre-morgon-cuvee-marcel-lapierre-jan-2022",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Jules Chauvet",
+       "url": "https://en.wikipedia.org/wiki/Jules_Chauvet",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+       "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Late picking and cooled vats, found only on the importer's sheets, whose address names a living person.",
+    "Most Beaujolais of 1973 made with cultured yeast, added sugar and plenty of sulphur, found nowhere.",
+    "Five to ten years in a good vintage, in favour of the domaine's about ten years."
+   ],
+   "open": [
+    "Chauvet's guidance: 1981 by the domaine and Vinous, 1980 by other accounts; the record follows the domaine.",
+    "The N cuvée appears on the importers' listings as a bottling name; the label field does not claim it.",
+    "The domaine's English page calls the two children his sons; every other account has a son and a daughter, as the record says without naming them."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaine Marcel Lapierre: History of the domaine",
+     "url": "https://www.marcel-lapierre.com/domaine-marcel-lapierre-histoire-du-domaine-morgon-et-viticulture/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Marcel Lapierre: Morgon since 1909",
+     "url": "https://www.marcel-lapierre.com/en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Marcel Lapierre: Morgon",
+     "url": "https://www.marcel-lapierre.com/en/product/morgon",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Marcel Lapierre: Viticulture and vinification",
+     "url": "https://www.marcel-lapierre.com/en/viticulture-and-vinification",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Marcel Lapierre: Cuvée Marcel Lapierre",
+     "url": "https://www.marcel-lapierre.com/en/product/cuvee-marcel-lapierre",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Marcel Lapierre: Guide to the wines of France",
+     "url": "https://www.marcel-lapierre.com/guide-wines-of-france/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Marcel Lapierre obituary",
+     "url": "https://www.decanter.com/?p=47292",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "iDealwine: the passing of Marcel Lapierre",
+     "url": "https://www.idealwine.net/disparition-de-marcel-lapierre-grande-figure-du-beaujolais/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Primal Wine: Marcel Lapierre, natural wine pioneer",
+     "url": "https://primalwine.com/blogs/natural-wine-producers-primal-wine/marcel-lapierre-natural-wine-pioneer",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus glossary: Chauvet, Jules",
+     "url": "https://glossary.wein.plus/chauvet-jules",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Verve Wine: How Beaujolais pioneered the modern movement for good wine",
+     "url": "https://vervewine.com/blogs/the-blog/how-beaujolais-pioneered-the-modern-day-movement-for-good-wine",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "foillard",
+   "searches": 8,
+   "tested": [
+    "The Morgon appellation (the INAO's specification: first recognised by the decree of 11 September 1936; Devonian schists rich in manganese that weather to clayey soils, in the centre and east of the cru with the Py hill; granite to the north and north west; Inter Beaujolais: decomposed schist on the Côte du Py): confirmed, and the record now gives the decree's date.",
+    "The rock of the Côte du Py (the Mommessin sheet: roche pourrie, a very advanced weathering of schists and old volcanic rocks, rich in iron oxide and a little manganese; Duboeuf's and Desvignes's sheets agree on roche pourrie and manganese rich, decomposed schist; Château des Jacques's sheet stresses blue diorite): confirmed as weathered schist with iron oxide and manganese, called roche pourrie.",
+    "The takeover (Infinivin and Grands Bourgognes: the grower and his wife took over his father's domaine in 1980; one account 1981, a first vintage with his father; one 1985, under his own name): kept as 1980, by most accounts.",
+    "The making (Primal Wine, Leon and Son, Perrine's: whole bunches, native yeasts, a long maceration of three to four weeks after a cool start, no sugar added, little or no sulphur, six to nine months in old barrels that once held Burgundy): confirmed, and the months added.",
+    "Close to Lapierre and taught by Chauvet (the Wine Scholar Guild, Primal Wine): confirmed.",
+    "Gamay alone (no source read states it for this wine): softened to Gamay, and a Pinot Noir option whose falsity rested on it replaced.",
+    "The bottling recalled as 3.14 (searched, not found): stays out.",
+    "The rules: the grower is named only in the house's name; his wife and son are living and are not named; no price, no score, no hectares (holdings of 14 to 22 hectares met in results, not carried): sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Gamay alone, from old vines on the hill.",
+     "now": "Gamay, from old vines on the hill.",
+     "why": "No source read states Gamay alone for this wine; Gamay is what every source names.",
+     "sources": [
+      {
+       "title": "Leon and Son: Domaine Jean Foillard Morgon Côte du Py 2024",
+       "url": "https://leonandsonwine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Infinivin: Domaine Jean Foillard",
+       "url": "https://www.infinivin.com/en/domaines/domaine-jean-foillard-80",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "The Côte du Py, the hill at the heart of Morgon: decomposed schist the growers call roche pourrie, rotten rock, rich in iron and manganese, where the domaine's old vines grow.",
+     "now": "The Côte du Py, the hill at the heart of Morgon: old schist rich in iron oxide and manganese, weathered to the crumbly roche pourrie, rotten rock, of the growers, where the domaine's old vines grow.",
+     "why": "The INAO gives manganese rich schist on the Py hill; the Mommessin sheet gives roche pourrie rich in iron oxide and manganese.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Morgon appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMorgon-221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mommessin: Morgon Côte du Py technical sheet",
+       "url": "https://ft.boisset.fr/en/mommessin.m-131/morgon-cote-du-py.v-9139.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Whole bunches go into vat for a long, cool semi carbonic maceration on their own yeasts, with little or no sulphur; the wine is then raised for some months in old barrels bought from Burgundy domaines before bottling.",
+     "now": "Whole bunches go into vat for a long, cool semi carbonic maceration of some three to four weeks on their own yeasts, with no sugar added and little or no sulphur; the wine is then raised for six to nine months in old barrels that once held Burgundy before bottling.",
+     "why": "Three merchants give three to four weeks of maceration and six to nine months in old barrels, one of them barrels once used for Burgundy estate wines.",
+     "sources": [
+      {
+       "title": "Leon and Son: Domaine Jean Foillard Morgon Côte du Py 2024",
+       "url": "https://leonandsonwine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Perrine's Wine: Domaine Jean Foillard Morgon Côte du Py 2024",
+       "url": "https://perrineswine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Primal Wine: Jean Foillard",
+       "url": "https://primalwine.com/blogs/natural-wine-producers-primal-wine/jean-foillard",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Generous young, it often closes after two or three years, then returns with more depth and keeps for ten years and more, taking on the kirsch and savour of aged Morgon.",
+     "now": "Generous young, it keeps for ten years and more in a good vintage, taking on the kirsch and savour of aged Morgon.",
+     "why": "The closing up after two or three years rested on the writer's memory alone.",
+     "sources": [
+      {
+       "title": "Leon and Son: Domaine Jean Foillard Morgon Côte du Py 2024",
+       "url": "https://leonandsonwine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Morgon's growers have an old verb for what their wine does with age: it morgonne, taking on a kirsch and a savour that set it apart from the lighter crus. At the heart of the cru rises the Côte du Py, a hill of decomposed schist rich in iron and manganese whose wines are slow to open, and Morgon became an appellation of its own in 1936. The grower whose name the domaine carries took over his family's vines at Villié-Morgon in 1980, when much of the village sold its wine young for the Nouveau trade. Close to Marcel Lapierre (1950 to 2010) and to the teaching of the chemist Jules Chauvet (1907 to 1989), he gave up herbicides, cultured yeast, added sugar and most of the sulphur, and let whole bunches ferment slowly in the cool. Abroad the four Morgon growers who worked this way became known as the Gang of Four. Foillard's Côte du Py, raised in barrels bought from Burgundy domaines, became the bottle that showed how deep and long lived Gamay made with nothing added could be. Open a ten year old bottle for the guest who says Beaujolais never ages: the hill, not the cellar, is what makes it last.",
+     "now": "Morgon's growers have an old verb for what their wine does with age: it morgonne, taking on a kirsch and a savour that set it apart from the lighter crus. At the heart of the cru rises the Côte du Py, a hill of old schist rich in manganese, weathered to a crumbly rock whose wines are slow to open, and Morgon became an appellation of its own by the decree of 11 September 1936. The grower whose name the domaine carries took over his father's vines at Villié-Morgon with his wife in 1980, by most accounts. Close to Marcel Lapierre (1950 to 2010) and to the teaching of the chemist Jules Chauvet (1907 to 1989), he farmed organically, gave up cultured yeast and added sugar, kept sulphur to a minimum and let whole bunches ferment slowly in the cool. In America, where their importer gave them the name, the four Morgon growers who worked this way became known as the Gang of Four. Foillard's Côte du Py, raised in old barrels that once held Burgundy, became for many drinkers the bottle that showed how deep and long lived Gamay made with little added could be. Open a ten year old bottle for the guest who says Beaujolais never ages: the hill, as much as the cellar, is what makes it last.",
+     "why": "The decree of 11 September 1936 is the INAO's; the takeover with his wife from his father in 1980 is most accounts'; organic farming and the importer's nickname are the merchants' and the Wine Scholar Guild's; the village's Nouveau trade in 1980 had no source.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Morgon appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMorgon-221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Infinivin: Domaine Jean Foillard",
+       "url": "https://www.infinivin.com/en/domaines/domaine-jean-foillard-80",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grands Bourgognes: Domaine Jean Foillard",
+       "url": "https://grandsbourgognes.com/en/wine-estates/beaujolais/domaine-jean-foillard-323",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+       "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "{\"name\": \"Morgon Corcelette\", \"note\": \"From sandier granite in the north of the cru, a lighter and more floral Morgon.\"}",
+     "now": "{\"name\": \"Morgon Corcelette\", \"note\": \"From sandier granite within the cru, a lighter and more floral Morgon.\"}",
+     "why": "Corcelette's place in the north of the cru was the writer's memory; the library gives only sandier granite.",
+     "sources": [
+      {
+       "title": "Infinivin: Domaine Jean Foillard",
+       "url": "https://www.infinivin.com/en/domaines/domaine-jean-foillard-80",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0]",
+     "was": "{\"front\": \"Jean Foillard's Côte du Py: what rock lies under the vines?\", \"back\": \"Decomposed schist, the roche pourrie of the growers, rich in iron and manganese.\"}",
+     "now": "{\"front\": \"Jean Foillard's Côte du Py: what rock lies under the vines?\", \"back\": \"Old schist rich in iron oxide and manganese, weathered to the roche pourrie, rotten rock, of the growers.\"}",
+     "why": "Iron oxide and manganese by the Mommessin sheet and the INAO.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Morgon appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMorgon-221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mommessin: Morgon Côte du Py technical sheet",
+       "url": "https://ft.boisset.fr/en/mommessin.m-131/morgon-cote-du-py.v-9139.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0]",
+     "was": "{\"q\": \"A guest doubts that Beaujolais can age, and you suggest Jean Foillard's Morgon Côte du Py. Which reason fits?\", \"opts\": [\"Old vines on dense, iron rich schist\", \"Long ageing in new oak barrels\", \"Grapes left to raisin on straw mats\", \"A share of Pinot Noir in the blend\"], \"a\": 0, \"exp\": \"The decomposed schist of the Côte du Py gives deep, firm Gamay that ages for a decade; the domaine uses old barrels, not new, and the wine is Gamay alone.\", \"tag\": \"wine\"}",
+     "now": "{\"q\": \"A guest doubts that Beaujolais can age, and you suggest Jean Foillard's Morgon Côte du Py. Which reason fits?\", \"opts\": [\"Old vines on weathered, manganese rich schist\", \"Long ageing in new oak barrels\", \"Grapes left to raisin on straw mats\", \"Fruit picked early for sharp acidity\"], \"a\": 0, \"exp\": \"The weathered schist of the Côte du Py gives deep, firm Gamay that ages for a decade; the domaine raises it in old barrels, not new, and picks ripe fruit, not early.\", \"tag\": \"wine\"}",
+     "why": "The key now names the rock as the sources give it; the Pinot Noir option leaned on Gamay alone, which is unconfirmed, and is replaced by early picking.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Morgon appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMorgon-221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Leon and Son: Domaine Jean Foillard Morgon Côte du Py 2024",
+       "url": "https://leonandsonwine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "The Gang of Four was a critic's phrase for four Morgon growers, Marcel Lapierre among them, not a body; Jules Chauvet was their teacher, not a relative.",
+     "now": "The Gang of Four was their American importer's nickname for four Morgon growers, Marcel Lapierre among them, not a body; Jules Chauvet was their teacher, not a relative.",
+     "why": "The nickname was the importer's.",
+     "sources": [
+      {
+       "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+       "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "[{\"title\": \"The Sommelier's Codex: the library record of Jean Foillard\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-producers.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the Beaujolais region record\", \"url\": \"https://zpullen98-gif.github.io/codex/js/regions/france.json\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the master question bank\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-master.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Oxford Companion to Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}]",
+     "now": "[{\"title\": \"INAO: specification of the Morgon appellation\", \"url\": \"https://extranet.inao.gouv.fr/fichier/PNO-CDCMorgon-221130.pdf\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Inter Beaujolais: Morgon\", \"url\": \"https://www.beaujolais.com/en/appellation/morgon/\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Mommessin: Morgon Côte du Py technical sheet\", \"url\": \"https://ft.boisset.fr/en/mommessin.m-131/morgon-cote-du-py.v-9139.html\", \"kind\": \"secondary\", \"read\": \"search\"}, {\"title\": \"Leon and Son: Domaine Jean Foillard Morgon Côte du Py 2024\", \"url\": \"https://leonandsonwine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france\", \"kind\": \"secondary\", \"read\": \"search\"}, {\"title\": \"Infinivin: Domaine Jean Foillard\", \"url\": \"https://www.infinivin.com/en/domaines/domaine-jean-foillard-80\", \"kind\": \"secondary\", \"read\": \"search\"}]",
+     "why": "Every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Morgon appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMorgon-221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Inter Beaujolais: Morgon",
+       "url": "https://www.beaujolais.com/en/appellation/morgon/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mommessin: Morgon Côte du Py technical sheet",
+       "url": "https://ft.boisset.fr/en/mommessin.m-131/morgon-cote-du-py.v-9139.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Leon and Son: Domaine Jean Foillard Morgon Côte du Py 2024",
+       "url": "https://leonandsonwine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Infinivin: Domaine Jean Foillard",
+       "url": "https://www.infinivin.com/en/domaines/domaine-jean-foillard-80",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The village selling its wine young for the Nouveau trade in 1980.",
+    "The wine closing up after two or three years.",
+    "Corcelette in the north of the cru.",
+    "Gamay alone, and the Pinot Noir distractor that leaned on it."
+   ],
+   "open": [
+    "The takeover: 1980 by most accounts, 1981 and 1985 by one each.",
+    "No page of the domaine was reached; the making rests on merchants' sheets that agree with one another."
+   ],
+   "extraSources": [
+    {
+     "title": "Perrine's Wine: Domaine Jean Foillard Morgon Côte du Py 2024",
+     "url": "https://perrineswine.com/products/2024-domaine-jean-foillard-morgon-cote-du-py-beaujolais-france",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Primal Wine: Jean Foillard",
+     "url": "https://primalwine.com/blogs/natural-wine-producers-primal-wine/jean-foillard",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grands Bourgognes: Domaine Jean Foillard",
+     "url": "https://grandsbourgognes.com/en/wine-estates/beaujolais/domaine-jean-foillard-323",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+     "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "thivin",
+   "searches": 6,
+   "tested": [
+    "The purchase of 1877 (iDealwine: a grower of Durette bought the estate at auction in 1877 with two hectares around Mont Brouilly; a merchant's history: on 8 June 1877, at a public sale, with his wife; WineBid: in the family since): confirmed, and the date and the sale added.",
+    "The chapel (the INAO's specification of Côte de Brouilly: raised by the growers on the summit in 1857, Notre Dame du Raisin, to protect the vineyard from oidium, after the plagues of the nineteenth century; Inter Beaujolais: watching over the harvests since 1854): kept as 1857, the INAO's year, with 1854 open.",
+    "The appellation (the INAO: the growers' association of 1934 and the decree of 19 October 1938): confirmed and dated.",
+    "The stone (the INAO: porphyries called pierres bleues, with granite on the lower western slopes; Inter Beaujolais: blue stone the largest share, from ancient submarine volcanism, called cornes vertes or pierres bleues; the estate: metadiorite): the record says hard blue stone, the pierre bleue, of ancient volcanic origin.",
+    "The flagship's name and blend (the estate's own page: Les Sept Vignes, seven plots on the east, south and west flanks named as Clos Bertrand, La Chapelle, Les Griottes, Godefroy, L'Héronde, Henri and Les Fournelles; mostly Gamay with a small share of Chardonnay): the name confirmed; Gamay alone was wrong and is corrected.",
+    "The making (the estate: partly whole bunches in the hillside cellars, each plot apart, the fermentation finishing in tuns of 20 to 40 hectolitres, some seven months in oak tuns, blended in spring; Berry Bros. & Rudd: semi carbonic, up to two thirds whole bunches, six months and more in foudre): corrected from vat and large casks for some months.",
+    "The drinking window (the estate: from the second year, keeping five to ten years): the record follows it.",
+    "Cuvée Zaccharie as named for the buyer (searched; its pages give old vines of fifty years and barrel ageing but never the name's origin): the record says only that it shares his given name.",
+    "Thivin as the oldest estate on the hill (the importer's sheet and one secondary only): stays out.",
+    "The rules: the Geoffrays of recent generations are living and are not named; the buyer of 1877 is described for want of his dates; no hectares carried (the two of 1877 told as a small holding): sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Gamay alone.",
+     "now": "Mostly Gamay, with a small share of Chardonnay for lightness, by the estate's own account.",
+     "why": "The estate's own page gives mostly Gamay with a small share of Chardonnay for lightness.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Seven parcels on several faces of Mont Brouilly, the hill of hard blue green stone the growers call pierre bleue, which rises from the granite at the southern end of the crus.",
+     "now": "Seven parcels on the east, south and west faces of Mont Brouilly, among them Clos Bertrand, La Chapelle and Godefroy, on the hard blue stone the growers call pierre bleue: stonier high on the hill, more clayey near its foot.",
+     "why": "The estate names the seven plots and their flanks, and gives stonier soils high and clayier near the foot.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented largely as whole bunches in the semi carbonic way of the region, part of the fruit destemmed, then raised for some months in vat and large casks before an early bottling, without the barrel ageing of the estate's Cuvée Zaccharie.",
+     "now": "Each of the seven parcels is fermented apart in the estate's hillside cellars, partly as whole bunches in the semi carbonic way, the fermentation finishing in large oak foudres; the wine is then raised in foudre for some seven months, and the parcels are blended in the spring.",
+     "why": "The estate gives each plot fermented apart, partly whole bunches, finishing in tuns of 20 to 40 hectolitres and some seven months there, blended in spring; Berry Bros. & Rudd agrees on semi carbonic and foudre.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Thivin: The quest for quality wines",
+       "url": "https://www.chateau-thivin.com/en/quest-bribes-quality.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Berry Bros. & Rudd: 2021 Côte de Brouilly, Les Sept Vignes, Château Thivin",
+       "url": "https://www.bbr.com/products-20218007052-",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Black cherry, raspberry and violet over crushed stone and a faint smoky note; firm, fine tannin, bright acidity and a saline, slightly bitter finish from the volcanic rock.",
+     "now": "Cherry, raspberry and violet over crushed stone and a peppery note; firm, fine tannin, bright acidity and a saline, slightly bitter finish.",
+     "why": "The estate's note gives cherry, flowers and a spicy finish; the volcanic rock as the cause of the bitterness was a claim no source makes.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Bright and open within a year or two, it keeps and gains depth for five to eight years in a good vintage.",
+     "now": "Open it from its second year, as the estate advises; it keeps and gains depth for five to ten years.",
+     "why": "The estate advises drinking from the second year and keeping five to ten years.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1]",
+     "was": "{\"term\": \"Les Sept Vignes\", \"means\": \"The seven vineyards: the estate's parcels around the hill, blended into this one wine.\"}",
+     "now": "{\"term\": \"Les Sept Vignes\", \"means\": \"The seven vineyards: the estate's parcels around the hill, fermented apart and blended into this one wine.\"}",
+     "why": "The parcels are fermented apart by the estate's account.",
+     "sources": [
+      {
+       "title": "Château Thivin: The quest for quality wines",
+       "url": "https://www.chateau-thivin.com/en/quest-bribes-quality.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Seven parcels on the slopes of Mont Brouilly go into Château Thivin's Côte de Brouilly, and the hill's blue volcanic stone gives the Gamay a firmer, saltier edge than the granite crus. Pour it cool with charcuterie or roast chicken: black cherry and crushed stone.",
+     "now": "Château Thivin blends seven parcels from the slopes of Mont Brouilly into its Côte de Brouilly Les Sept Vignes, mostly Gamay with a touch of Chardonnay, raised in large old casks. Pour it cool for its cherry, violet and crushed stone, with charcuterie or roast chicken.",
+     "why": "The Chardonnay and the large casks are the estate's; the stone making the wine saltier is a causal claim no source makes.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Mont Brouilly stands on its own at the southern end of the crus, a hill of hard blue stone among the granite, and in 1857, as the story goes, the growers built a chapel on its summit to pray for protection from the oidium that was ruining their vines. Twenty years later, in 1877, an ancestor of the Geoffray family bought Château Thivin on the flank of the hill, and his given name lives on in the estate's old vine Cuvée Zaccharie. The family worked vines on several faces of the hill, each ripening at its own pace, and when the Beaujolais crus were drawn the slopes were given an appellation of their own, Côte de Brouilly, in 1938, apart from the larger Brouilly that rings the foot of the hill. Thivin became the house the trade quoted for the smaller cru, and its wines showed what the volcanic stone adds to Gamay: a firmer frame, a saline bite and a few more years of life. Where Brouilly and Côte de Brouilly are confused, Thivin settles it: the hill and the ring around it taste different, and this is the hill.",
+     "now": "Mont Brouilly stands on its own at the southern end of the crus, a hill of hard blue stone among the granite. Shaken by the vine plagues of the nineteenth century, the growers raised a chapel on its summit in 1857, Notre-Dame du Raisin, to ask protection from the oidium that was ruining their vines. Twenty years later, on 8 June 1877, a grower from the nearby hamlet of Durette and his wife bought Château Thivin at a public sale, with a small holding of vines on the flank of the hill, and the Geoffray family's story on the hill begins there. The family worked vines on several faces of the hill, each ripening at its own pace. The growers of the slopes formed their own association in 1934, and the decree of 19 October 1938 gave them an appellation of their own, Côte de Brouilly, apart from the larger Brouilly that rings the foot of the hill. Thivin, fermenting parcel by parcel in its hillside cellars, showed what the hill gives Gamay: a firmer frame and a saline bite. Where Brouilly and Côte de Brouilly are confused, Thivin settles it: the hill and the ring around it taste different, and this is the hill.",
+     "why": "The chapel's name and its purpose are the INAO's; the purchase of 8 June 1877 at a public sale is iDealwine's and a merchant's; the association of 1934 and the decree of 19 October 1938 are the INAO's; the trade quoting Thivin had no source.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Côte de Brouilly appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCC%C3%B4tedeBrouilly-CN221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Château Thivin, au sommet du Beaujolais",
+       "url": "https://www.idealwine.net/chateau-thivin-au-sommet-du-beaujolais/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Inter Beaujolais: Côte de Brouilly",
+       "url": "https://www.beaujolais.com/en/appellation/cote-de-brouilly/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "{\"name\": \"Côte de Brouilly Cuvée Zaccharie\", \"note\": \"The old vine bottling, raised in barrel, named for the ancestor who bought the estate.\"}",
+     "now": "{\"name\": \"Côte de Brouilly Cuvée Zaccharie\", \"note\": \"The old vine bottling, raised in barrel, sharing its name with the buyer of 1877.\"}",
+     "why": "No source says the cuvée was named for the buyer; it shares his given name.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Cuvée Zaccharie",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-cuvee-zaccharie-4.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Château Thivin, au sommet du Beaujolais",
+       "url": "https://www.idealwine.net/chateau-thivin-au-sommet-du-beaujolais/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps",
+     "was": "[\"Brouilly and Côte de Brouilly are two crus: Côte de Brouilly is the hill, Brouilly the larger ring around its foot.\", \"Côte de Brouilly grows on hard blue volcanic stone, unlike the pink granite of most crus.\"]",
+     "now": "[\"Brouilly and Côte de Brouilly are two crus: Côte de Brouilly is the hill, Brouilly the larger ring around its foot.\", \"Côte de Brouilly lies chiefly on hard blue stone, the pierre bleue, where most crus lie on pink granite.\", \"Les Sept Vignes is not Gamay alone: the estate blends a small share of Chardonnay into it.\"]",
+     "why": "The stone is the largest share, not the whole (Inter Beaujolais); the Chardonnay is the estate's.",
+     "sources": [
+      {
+       "title": "Inter Beaujolais: Côte de Brouilly",
+       "url": "https://www.beaujolais.com/en/appellation/cote-de-brouilly/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0]",
+     "was": "{\"front\": \"Château Thivin's Côte de Brouilly: what rock gives it its firm, saline edge?\", \"back\": \"The hard blue green stone of Mont Brouilly, the pierre bleue, a volcanic rock among the granite.\"}",
+     "now": "{\"front\": \"Château Thivin's Côte de Brouilly: what rock lies under most of its vines?\", \"back\": \"The hard blue stone of Mont Brouilly, the pierre bleue, of ancient volcanic origin, among the granite.\"}",
+     "why": "Most, not all, of the vines lie on the blue stone; its origin is ancient volcanism by Inter Beaujolais.",
+     "sources": [
+      {
+       "title": "Inter Beaujolais: Côte de Brouilly",
+       "url": "https://www.beaujolais.com/en/appellation/cote-de-brouilly/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Inter Beaujolais: Beaujolais, expressions of a vineyard",
+       "url": "https://www.beaujolais.com/wp-content/uploads/sites/2/2020/09/Carnet-Beaujolais-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": "{\"q\": \"Château Thivin was bought in 1877 by an ancestor of the Geoffray family. Whose name does its old vine cuvée carry?\", \"opts\": [\"Zaccharie, the ancestor who bought it\", \"Notre-Dame, patron of the summit's chapel\", \"Odenas, the village below the hill\", \"La Chapelle, the parcel by the summit\"], \"a\": 0, \"exp\": \"Cuvée Zaccharie carries the given name of the Geoffray ancestor who bought Thivin in 1877; Odenas is the commune, and La Chapelle is another of the estate's bottlings.\", \"tag\": \"story\"}",
+     "now": "{\"q\": \"How did Château Thivin pass to the Geoffray family in 1877?\", \"opts\": [\"Bought at a public sale by a local grower\", \"Inherited from the lords of Beaujeu\", \"Given as a dowry by a Lyon merchant\", \"Won from a neighbour in a wager\"], \"a\": 0, \"exp\": \"On 8 June 1877 a grower from the hamlet of Durette bought Thivin at a public sale; it came by purchase, not by inheritance or marriage.\", \"tag\": \"story\"}",
+     "why": "The old question rested on the cuvée's namesake, which no source states; the new one asks how the estate was bought, which two sources give.",
+     "sources": [
+      {
+       "title": "iDealwine: Château Thivin, au sommet du Beaujolais",
+       "url": "https://www.idealwine.net/chateau-thivin-au-sommet-du-beaujolais/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "WineBid: Château Thivin",
+       "url": "https://Winebid.Com/BuyWine/Producer/Chateau-Thivin/11629",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "[{\"title\": \"The Sommelier's Codex: the library record of Château Thivin\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-producers.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the Beaujolais region record\", \"url\": \"https://zpullen98-gif.github.io/codex/js/regions/france.json\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Oxford Companion to Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}, {\"title\": \"The World Atlas of Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}]",
+     "now": "[{\"title\": \"Château Thivin: Côte de Brouilly Les Sept Vignes\", \"url\": \"https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Château Thivin: The quest for quality wines\", \"url\": \"https://www.chateau-thivin.com/en/quest-bribes-quality.php\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"INAO: specification of the Côte de Brouilly appellation\", \"url\": \"https://extranet.inao.gouv.fr/fichier/PNO-CDCC%C3%B4tedeBrouilly-CN221130.pdf\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Inter Beaujolais: Côte de Brouilly\", \"url\": \"https://www.beaujolais.com/en/appellation/cote-de-brouilly/\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"iDealwine: Château Thivin, au sommet du Beaujolais\", \"url\": \"https://www.idealwine.net/chateau-thivin-au-sommet-du-beaujolais/\", \"kind\": \"secondary\", \"read\": \"search\"}]",
+     "why": "Every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+       "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Thivin: The quest for quality wines",
+       "url": "https://www.chateau-thivin.com/en/quest-bribes-quality.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "INAO: specification of the Côte de Brouilly appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCC%C3%B4tedeBrouilly-CN221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Inter Beaujolais: Côte de Brouilly",
+       "url": "https://www.beaujolais.com/en/appellation/cote-de-brouilly/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Château Thivin, au sommet du Beaujolais",
+       "url": "https://www.idealwine.net/chateau-thivin-au-sommet-du-beaujolais/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Gamay alone.",
+    "Cuvée Zaccharie as named for the buyer of 1877.",
+    "The trade quoting Thivin for the smaller cru.",
+    "The volcanic rock as the cause of the wine's saline, bitter finish."
+   ],
+   "open": [
+    "The chapel: 1857 by the INAO, 1854 by Inter Beaujolais.",
+    "The stone: metadiorite by the estate, porphyry by the INAO, ancient submarine volcanic rock by Inter Beaujolais.",
+    "The buyer's wife is named in one account only; neither is named in the record."
+   ],
+   "extraSources": [
+    {
+     "title": "Château Thivin: Côte de Brouilly La Chapelle",
+     "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-chapelle-6.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Thivin: Côte de Brouilly Cuvée Zaccharie",
+     "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-cuvee-zaccharie-4.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Inter Beaujolais: Beaujolais, expressions of a vineyard",
+     "url": "https://www.beaujolais.com/wp-content/uploads/sites/2/2020/09/Carnet-Beaujolais-EN.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Berry Bros. & Rudd: 2021 Côte de Brouilly, Les Sept Vignes, Château Thivin",
+     "url": "https://www.bbr.com/products-20218007052-",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "WineBid: Château Thivin",
+     "url": "https://Winebid.Com/BuyWine/Producer/Chateau-Thivin/11629",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "chateau-des-jacques",
+   "searches": 5,
+   "tested": [
+    "The purchase of 1996 (the château's presentation: bought by Maison Louis Jadot in 1996 from the Thorin family; Hachette: the Thorins' until 1996; Wikipedia and Cellar Tours agree on the year): confirmed, and the sellers added.",
+    "Jadot's founding (the house's own history: founded in 1859 by Louis Henri Denis Jadot, after the purchase of Clos des Ursules in 1826): confirmed.",
+    "The Moulin-à-Vent decree (the INAO's specification and product page: 11 September 1936, published 4 October 1936; the area in Romanèche-Thorins and Chénas; sandy, granitic soils): confirmed. Manganese is not in the INAO's text as returned.",
+    "Clos de Rochegrès (the estate's own page and sheet: the highest point of the appellation, a cadastral high point of 361 metres at Au Mont, a steep slope facing south east, shallow pink granite with very many quartz veins, a little more clayey than Carquelin and La Roche; Cellar Tours: the highest in Moulin-à-Vent at 360 metres): the walled climat streaked with manganese corrected.",
+    "The making (the estate: picked and sorted by hand, often destemmed, a slow maceration of three to four weeks, about ten months in old and new oak barrels in the historic cellar): corrected from a longer maceration and most of a year with some new oak.",
+    "Philip the Bold and the edict (Wikipedia: 17 January 1342 to 27 April 1404; The Drinks Business and Wine Spectator: the edict of 31 July 1395 against a very bad and very disloyal plant; disloyal meaning against law and custom; the Beaujolais outside his control): confirmed and dated.",
+    "Later history (the château: replanting, Morgon vines in 2001, the winery renovated in 2017): added.",
+    "The rules: the estate's managers, past and present, and Jadot's family owners met in results are not named; no hectares carried; both questions have one key and options of one kind: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Gamay alone.",
+     "now": "Gamay, the black grape with white juice.",
+     "why": "No source read states Gamay alone for this wine.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Moulin-à-Vent Clos de Rochegrès features",
+       "url": "https://www.chateau-des-jacques.fr/pdf/vin/195/en/moulin-a-vent-clos-de-rochegres",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Clos de Rochegrès, a walled climat of Moulin-à-Vent on pink granite weathered to coarse sand and streaked with manganese, bottled apart from the estate's other climats.",
+     "now": "Clos de Rochegrès, at some 360 metres the highest ground of Moulin-à-Vent by the estate's account, a steep slope facing south east, on shallow pink granite run through with quartz, a little more clayey than the estate's other clos.",
+     "why": "The estate's own page gives the high point, slope, aspect and soil; it says nothing of a wall or of manganese.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château des Jacques: Moulin-à-Vent Clos de Rochegrès features",
+       "url": "https://www.chateau-des-jacques.fr/pdf/vin/195/en/moulin-a-vent-clos-de-rochegres",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cellar Tours: Château des Jacques winery guide",
+       "url": "https://www.cellartours.com/france/french-wineries/chateau-des-jacques",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Destemmed and fermented in vat as red Burgundy is, the cap of skins worked through a longer maceration, rather than by carbonic maceration; the wine is then raised in oak barrels, some of them new, for most of a year.",
+     "now": "Picked and sorted by hand, the grapes are usually destemmed and left to macerate slowly for three to four weeks, as red Burgundy is made, rather than by carbonic maceration; the wine is then raised for about ten months in oak barrels, old and new, in the estate's old cellar.",
+     "why": "The estate gives often destemmed, three to four weeks of maceration and ten months in old and new barrels; the share of new oak varies by vintage.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château des Jacques: Moulin-à-Vent Clos de Rochegrès features",
+       "url": "https://www.chateau-des-jacques.fr/pdf/vin/195/en/moulin-a-vent-clos-de-rochegres",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Black cherry and plum over violet, liquorice and a stony, peppery note from the granite; dense and structured for Gamay, with firm, fine tannin, turning with age to dried cherry and leather.",
+     "now": "Black cherry and plum over violet, liquorice and a stony, peppery note; dense and structured for Gamay, with firm, fine tannin, turning with age to dried cherry and leather.",
+     "why": "The granite as the cause of the stony note was a claim no source makes.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Closed for its first three to five years, it develops for a decade and more, and in time can taste like a red Burgundy.",
+     "now": "Firm and closed in youth, it is built for a decade and more, and with age its Gamay can recall a red Burgundy.",
+     "why": "Closed for three to five years had no source; the library gives structured Gamay meant for a decade.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Moulin-à-Vent Clos de Rochegrès features",
+       "url": "https://www.chateau-des-jacques.fr/pdf/vin/195/en/moulin-a-vent-clos-de-rochegres",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1]",
+     "was": "{\"term\": \"Clos de Rochegrès\", \"means\": \"The walled climat within Moulin-à-Vent from which the wine comes, bottled on its own.\"}",
+     "now": "{\"term\": \"Clos de Rochegrès\", \"means\": \"The clos high in Moulin-à-Vent from which the wine comes, bottled on its own.\"}",
+     "why": "The clos is not known to be walled.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Château des Jacques treats its Moulin-à-Vent Clos de Rochegrès the way Burgundy treats Pinot Noir: destemmed, fermented in vat and raised in barrel, from one walled climat on manganese streaked granite. Dark and firm for Gamay, give it five years at least.",
+     "now": "Château des Jacques treats its Moulin-à-Vent Clos de Rochegrès the way Burgundy treats Pinot Noir: destemmed, macerated for weeks and raised in barrel, from one clos high on the granite of the cru. Dark and firm for Gamay, give it years in the cellar.",
+     "why": "Macerated for weeks by the estate; the walled climat and the manganese are cut.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1395 Philip the Bold (1342 to 1404), Duke of Burgundy, ordered Gamay torn out of the Côte d'Or as a disloyal plant, and the grape found its home further south, on the granite hills of the Beaujolais. Moulin-à-Vent takes its name from the old windmill above Romanèche-Thorins, not from any village, and when it became an appellation in 1936 its wines were already among those the region kept for years, firm from the manganese in its granite. Château des Jacques, an estate at Romanèche-Thorins with vines in several climats of the cru, was bought in 1996 by Maison Louis Jadot, the Beaune merchant house founded in 1859. The new owners treated it as they would a domaine of the Côte d'Or: they named and bottled the climats apart, Clos de Rochegrès, Clos du Grand Carquelin, Champ de Cour and others, destemmed the grapes and aged the wines in barrel. Rochegrès showed that one walled vineyard of Gamay could carry its own name and age like Burgundy, and it brought the Burgundian idea of the climat back to the grape Burgundy had once banished. Rochegrès puts Beaujolais back beside Burgundy on a list, where its grape began.",
+     "now": "On 31 July 1395 Philip the Bold (1342 to 1404), Duke of Burgundy, ordered Gamay torn out of the Côte d'Or as a very bad and disloyal plant, and the grape held its ground further south, on the granite hills of the Beaujolais, beyond his lands. Moulin-à-Vent takes its name from the old windmill above Romanèche-Thorins, not from any village, and it became an appellation by the decree of 11 September 1936, its vines in Romanèche-Thorins and Chénas. Château des Jacques, an estate at Romanèche-Thorins with vines in several clos of the cru, belonged to the Thorin family until 1996, when it was bought by Maison Louis Jadot, the Beaune house founded in 1859. Under Jadot the estate replanted part of its vineyard, added vines in Morgon in 2001 and renovated its winery in 2017. It destems its grapes and ages its wines in barrel, as a domaine of the Côte d'Or would, and bottles its clos apart, Clos de Rochegrès, Clos du Grand Carquelin, Champ de Cour and La Roche among them. Rochegrès, from the highest ground of the cru, shows that one clos of Gamay can carry its own name and age like Burgundy, bringing the Burgundian idea of the climat back to the grape Burgundy once banished.",
+     "why": "The edict's date and words are The Drinks Business's and Wine Spectator's; the decree's date and communes the INAO's; the Thorin family, the replanting, the Morgon vines of 2001 and the winery of 2017 the château's; manganese as the cause of the cru's firmness had no source.",
+     "sources": [
+      {
+       "title": "The Drinks Business: 31 July 1395, the banning of Gamay",
+       "url": "https://www.thedrinksbusiness.com/2016/07/31-july-1395-the-banning-of-gamay/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Spectator: The Exile of Burgundy",
+       "url": "https://www.winespectator.com/articles/the-exile-of-burgundy-46007",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "INAO: specification of the Moulin-à-Vent appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMoulin-%C3%A0-Vent-CN221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château des Jacques: Presentation",
+       "url": "https://www.chateau-des-jacques.fr/en/presentation",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Hachette Vins: Château des Jacques",
+       "url": "https://www.hachette-vins.com/guide-vins/producteurs/24763/ch-des-jacques/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": "[{\"name\": \"Moulin-à-Vent Clos du Grand Carquelin\", \"note\": \"Another walled climat of the estate, bottled on its own.\"}, {\"name\": \"Moulin-à-Vent Champ de Cour\", \"note\": \"From deeper soils, the estate's densest Moulin-à-Vent.\"}, {\"name\": \"Morgon Côte du Py\", \"note\": \"The estate's holding in the neighbouring cru, on the hill of decomposed schist.\"}]",
+     "now": "[{\"name\": \"Moulin-à-Vent Clos du Grand Carquelin\", \"note\": \"Another clos of the estate in Moulin-à-Vent, bottled on its own.\"}, {\"name\": \"Moulin-à-Vent Champ de Cour\", \"note\": \"From deeper soils, the estate's densest Moulin-à-Vent.\"}, {\"name\": \"Morgon Côte du Py\", \"note\": \"From the estate's vines in the neighbouring cru, on the hill of decomposed schist.\"}]",
+     "why": "Grand Carquelin is not known to be walled; the Morgon vines date from 2001 by the château.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Presentation",
+       "url": "https://www.chateau-des-jacques.fr/en/presentation",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "The wines are destemmed and fermented as in Burgundy, not by carbonic maceration.",
+     "now": "The wines are usually destemmed and macerated for weeks as in Burgundy, not made by carbonic maceration.",
+     "why": "Often destemmed, by the estate's own word.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards",
+     "was": "[{\"front\": \"Château des Jacques's Clos de Rochegrès: how is it made, and why does that surprise?\", \"back\": \"Destemmed, fermented in vat and raised in barrel, as red Burgundy is, where most Beaujolais is made by carbonic maceration.\"}, {\"front\": \"Which Beaune merchant house bought Château des Jacques in 1996?\", \"back\": \"Maison Louis Jadot.\"}]",
+     "now": "[{\"front\": \"Château des Jacques's Clos de Rochegrès: how is it made, and why does that surprise?\", \"back\": \"Usually destemmed, macerated for three to four weeks and raised in barrel, as red Burgundy is, where most Beaujolais is made by carbonic maceration.\"}, {\"front\": \"Château des Jacques's Clos de Rochegrès: where in Moulin-à-Vent does it lie?\", \"back\": \"At the highest point of the cru, some 360 metres up, on a steep south east slope of pink granite veined with quartz.\"}]",
+     "why": "The making follows the estate; the second card now teaches the site of the clos, since the story question asks who bought the estate.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château des Jacques: Moulin-à-Vent Clos de Rochegrès features",
+       "url": "https://www.chateau-des-jacques.fr/pdf/vin/195/en/moulin-a-vent-clos-de-rochegres",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions",
+     "was": "[{\"q\": \"A guest asks why Château des Jacques's Moulin-à-Vent tastes more like Burgundy than like Nouveau. Which reason do you give?\", \"opts\": [\"Destemmed, fermented in vat and aged in barrel\", \"Whole bunches fermented under carbon dioxide\", \"A share of Pinot Noir in the blend\", \"Grapes bought from across the Beaujolais\"], \"a\": 0, \"exp\": \"The estate destems and ferments as Burgundy does and ages in barrel, from one climat on manganese streaked granite; carbonic maceration is Nouveau's method, and the wine is Gamay alone.\", \"tag\": \"wine\"}, {\"q\": \"Château des Jacques grows the grape a Duke of Burgundy banished from the Côte d'Or in 1395. Who was he?\", \"opts\": [\"Philip the Bold\", \"Charles the Bold\", \"John the Fearless\", \"Philip the Good\"], \"a\": 0, \"exp\": \"Philip the Bold ordered Gamay out as a disloyal plant in 1395; John the Fearless, Philip the Good and Charles the Bold ruled Burgundy after him.\", \"tag\": \"story\"}]",
+     "now": "[{\"q\": \"A guest asks why Château des Jacques's Moulin-à-Vent tastes more like Burgundy than like Nouveau. Which reason do you give?\", \"opts\": [\"Destemmed, macerated for weeks and aged in barrel\", \"Whole bunches fermented under carbon dioxide\", \"Grapes dried on mats before pressing\", \"Grapes bought from across the Beaujolais\"], \"a\": 0, \"exp\": \"The estate usually destems, macerates for three to four weeks and ages in barrel, as Burgundy does; whole bunches under carbon dioxide is the carbonic method of Nouveau.\", \"tag\": \"wine\"}, {\"q\": \"In 1996 the Thorin family sold Château des Jacques in Moulin-à-Vent. Who bought it?\", \"opts\": [\"Maison Louis Jadot of Beaune\", \"Georges Duboeuf of Romanèche-Thorins\", \"Joseph Drouhin of Beaune\", \"Bouchard Père et Fils of Beaune\"], \"a\": 0, \"exp\": \"Maison Louis Jadot, founded in Beaune in 1859, bought the estate in 1996; Duboeuf is a négociant of the same village, not the buyer.\", \"tag\": \"story\"}]",
+     "why": "The wine question's Pinot Noir option leaned on Gamay alone, which is unconfirmed; the story question on the Duke tested Burgundy's history rather than the house's, and now asks who bought the estate in 1996.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Presentation",
+       "url": "https://www.chateau-des-jacques.fr/en/presentation",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Maison Louis Jadot: Our story",
+       "url": "https://www.louisjadot.com/en/maison/our-story",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Hachette Vins: Château des Jacques",
+       "url": "https://www.hachette-vins.com/guide-vins/producteurs/24763/ch-des-jacques/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "[{\"title\": \"The Sommelier's Codex: the library record of Château des Jacques\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-producers.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the Gamay record of the Grapes tab\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-grapes-table.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the Beaujolais region record\", \"url\": \"https://zpullen98-gif.github.io/codex/js/regions/france.json\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Oxford Companion to Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}]",
+     "now": "[{\"title\": \"Château des Jacques: Clos de Rochegrès\", \"url\": \"https://chateau-des-jacques.fr/fr/vin/22\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Château des Jacques: Presentation\", \"url\": \"https://www.chateau-des-jacques.fr/en/presentation\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Maison Louis Jadot: Our story\", \"url\": \"https://www.louisjadot.com/en/maison/our-story\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"INAO: specification of the Moulin-à-Vent appellation\", \"url\": \"https://extranet.inao.gouv.fr/fichier/PNO-CDCMoulin-%C3%A0-Vent-CN221130.pdf\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"The Drinks Business: 31 July 1395, the banning of Gamay\", \"url\": \"https://www.thedrinksbusiness.com/2016/07/31-july-1395-the-banning-of-gamay/\", \"kind\": \"secondary\", \"read\": \"search\"}]",
+     "why": "Every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "Château des Jacques: Clos de Rochegrès",
+       "url": "https://chateau-des-jacques.fr/fr/vin/22",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château des Jacques: Presentation",
+       "url": "https://www.chateau-des-jacques.fr/en/presentation",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Maison Louis Jadot: Our story",
+       "url": "https://www.louisjadot.com/en/maison/our-story",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "INAO: specification of the Moulin-à-Vent appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMoulin-%C3%A0-Vent-CN221130.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: 31 July 1395, the banning of Gamay",
+       "url": "https://www.thedrinksbusiness.com/2016/07/31-july-1395-the-banning-of-gamay/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The clos as walled.",
+    "Manganese in the clos and as the cause of the cru's firmness.",
+    "Gamay alone, and the Pinot Noir distractor.",
+    "A share of new oak and most of a year in barrel, for the estate's ten months in old and new barrels.",
+    "Closed for its first three to five years."
+   ],
+   "open": [
+    "The family that sold in 1996 is the Thorin family on the estate's page and the Thorins in the Hachette guide.",
+    "Whether the estate bottled its clos apart before 1996 was not found; the record does not say who began it.",
+    "Cellar Tours names five clos, Clos des Thorins among them; the record names the four the library and the estate's pages give."
+   ],
+   "extraSources": [
+    {
+     "title": "Château des Jacques: Moulin-à-Vent Clos de Rochegrès features",
+     "url": "https://www.chateau-des-jacques.fr/pdf/vin/195/en/moulin-a-vent-clos-de-rochegres",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Hachette Vins: Château des Jacques",
+     "url": "https://www.hachette-vins.com/guide-vins/producteurs/24763/ch-des-jacques/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cellar Tours: Château des Jacques winery guide",
+     "url": "https://www.cellartours.com/france/french-wineries/chateau-des-jacques",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Château des Jacques",
+     "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_des_Jacques",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "INAO: Moulin-à-Vent, product page",
+     "url": "https://www.inao.gouv.fr/node/29118/printable/print",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Spectator: The Exile of Burgundy",
+     "url": "https://www.winespectator.com/articles/the-exile-of-burgundy-46007",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Philip the Bold",
+     "url": "https://en.wikipedia.org/wiki/Philip_the_Bold",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "duboeuf",
+   "searches": 6,
+   "tested": [
+    "Georges Duboeuf's years (Decanter, Wein.plus and Wikipedia: born 14 April 1933, died at his home in Romanèche-Thorins on 4 January 2020, aged 86; one French outlet says 87): confirmed, 1933 to 2020.",
+    "His birth and family (Wikipedia: Crêches-sur-Saône; other accounts: Chaintré, where the family had long grown vines): the record says a family of growers in the Mâconnais.",
+    "The bicycle (Grape Collective and other accounts: at eighteen, in 1951, he delivered wine by bicycle to restaurants and chefs, Lyon among them; the house's site names chefs he visited): kept, told as a story.",
+    "The house of 1964 (Wikipedia and the library): confirmed.",
+    "The flower labels (the house, in his own words: the idea came to him in the 1970s; the house's Flowers collection carries Moulin-à-Vent, Fleurie and Beaujolais-Villages): confirmed and dated.",
+    "Nouveau in 1951 and 1985 (Inter Beaujolais: the growers' union asked to sell before the release of 15 December, granted by a note of the tax authorities of 13 November 1951, first sale on 15 November; the third Thursday fixed in 1985; the INAO's Beaujolais specification agrees on the third Thursday): confirmed and the 1951 story corrected.",
+    "Nouveau abroad (the house: the new wine reached North America, Australia and Japan in the 1980s, and he went each year to open the first bottles; Taste France: the races spread abroad in the 1980s): the race to pour on one day in four named cities softened to the house's account.",
+    "The making (no sheet of the house's Nouveau found; its Beaujolais sheets: semi carbonic maceration of six to eight days, pressing, controlled temperatures, steel): vats filled with carbon dioxide corrected to the semi carbonic way.",
+    "Beaujolais-Villages Nouveau (the house's wines page lists it): confirmed; a little firmer cut.",
+    "The rules: his son, who took over in 2018, is living and is not named (in people.json); no price, no score, no volume (Japan's bottle count met in results, not carried): sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Gamay alone.",
+     "now": "Gamay, the black grape with white juice.",
+     "why": "No sheet of the Nouveau was found to state Gamay alone.",
+     "sources": [
+      {
+       "title": "Les Vins Georges Duboeuf: Beaujolais Nouveau",
+       "url": "https://www.duboeuf.com/en/beaujolais-nouveau/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Grapes and wine bought from many growers and cooperatives, chiefly on the clay and limestone of the southern Beaujolais, rather than from the house's own vines.",
+     "now": "Fruit and wine bought from a great many growers and cooperatives across the region's Beaujolais appellation, rather than from vines of the house's own.",
+     "why": "The south's clay and limestone as the chief source of the fruit had no source.",
+     "sources": [
+      {
+       "title": "INAO: specification of the Beaujolais appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-cdcBeaujolais-cn220210.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Whole bunches go uncrushed into vats filled with carbon dioxide, where the berries begin to ferment inside their skins. After a few days they are pressed and the juice finishes fermenting off the skins; the wine is bottled within weeks and released on the third Thursday of November.",
+     "now": "Whole bunches go into closed vats, where the carbon dioxide of the first fermentation blankets them and many berries begin to ferment inside their skins, the semi carbonic way of the region. After a few days they are pressed, the juice finishes fermenting off the skins in steel, and the wine is bottled within weeks for release on the third Thursday of November.",
+     "why": "The house's Beaujolais sheets give semi carbonic maceration, pressing and steel; vats filled with carbon dioxide describes full carbonic maceration, which no source gives for the house.",
+     "sources": [
+      {
+       "title": "Les Vins Georges Duboeuf: Beaujolais Signature technical sheet",
+       "url": "https://www.duboeuf.com/fr/e-boutique/fiche-technique/beaujolais-signature/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Inter Beaujolais: Beaujolais Nouveaux press kit",
+       "url": "https://www.beaujolais.com/wp-content/uploads/sites/2/2022/09/Dossier-de-presse-Beaujolais-Nouveaux-2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The young wine of the Beaujolais was poured in the bistros of Lyon long before it had a legal name, and in 1951 the authorities allowed the region to sell its new wine before the usual date in December, which made Beaujolais Nouveau an official category. Georges Duboeuf (1933 to 2020), born to a family of growers in the Mâconnais, began by selling his family's white wine to the restaurants of Lyon, delivering it himself, as the story goes, by bicycle. In 1964 he set up his own business at Romanèche-Thorins, buying wine from growers across the region, bottling it under his own name and giving the whole range one recognisable look, with flower labels for the crus. He made Nouveau an event: bottles were trucked, shipped and flown so that the new wine could be poured on the same day in Paris, London, New York and Tokyo, and in 1985 the release was fixed on the third Thursday of November. The fashion carried the name Beaujolais round the world and left the region a reputation for simple wine that its crus have worked for decades to live down. For a sommelier the bottle is a date on the calendar and a lesson in carbonic maceration.",
+     "now": "In 1951 the growers' union of the Beaujolais asked to sell its new wine before the general release of 15 December, and a note of the tax authorities of 13 November that year allowed it: Beaujolais Nouveau went on sale from 15 November. Georges Duboeuf (1933 to 2020), born to a family of growers in the Mâconnais, began at eighteen, as the story goes, by delivering wine by bicycle to the restaurants and chefs of the region, Lyon among them. In 1964 he set up his own business at Romanèche-Thorins, buying wine from growers across the region and bottling it under his own name, and from the 1970s, by his own account, he dressed his crus in flower labels. He made the November release an event, and by the house's account the new wine reached North America, Australia and Japan in the 1980s, where he went each year to open the first bottles. In 1985 the release was fixed on the third Thursday of November. The fashion carried the name Beaujolais round the world. He died at his home in Romanèche-Thorins in January 2020. For a sommelier the bottle is a date on the calendar and a lesson in carbonic maceration.",
+     "why": "The 1951 story is Inter Beaujolais's; the bicycle at eighteen is several accounts', told as a story; the flower labels of the 1970s are his own account; the 1980s abroad are the house's; his death is Decanter's; the bistros of Lyon before 1951, the four named cities and the crus living down a reputation had no source.",
+     "sources": [
+      {
+       "title": "Inter Beaujolais: Beaujolais Nouveaux press kit",
+       "url": "https://www.beaujolais.com/wp-content/uploads/sites/2/2022/09/Dossier-de-presse-Beaujolais-Nouveaux-2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Beaujolais wine Pope Georges Duboeuf dies",
+       "url": "https://www.decanter.com/obituaries/beaujolais-wine-pope-georges-duboeuf-dies-429939",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Georges Duboeuf",
+       "url": "https://en.wikipedia.org/wiki/Georges_Duboeuf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Les Vins Georges Duboeuf: Beaujolais Nouveau",
+       "url": "https://www.duboeuf.com/en/beaujolais-nouveau/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grape Collective: The magnificent man behind Beaujolais Nouveau",
+       "url": "https://www.grapecollective.com/?p=62477",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "{\"name\": \"Beaujolais-Villages Nouveau\", \"note\": \"The same release from the Villages tier, a little firmer than plain Beaujolais Nouveau.\"}",
+     "now": "{\"name\": \"Beaujolais-Villages Nouveau\", \"note\": \"The same November release from the Villages appellation, the hamlets around the crus.\"}",
+     "why": "The house lists a Beaujolais-Villages Nouveau; a little firmer was a judgement with no source.",
+     "sources": [
+      {
+       "title": "Les Vins Georges Duboeuf: Wines",
+       "url": "https://www.duboeuf.com/en/wines/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0]",
+     "was": "{\"front\": \"Georges Duboeuf's Beaujolais Nouveau: how is it fermented?\", \"back\": \"Whole bunches under carbon dioxide, the berries fermenting inside their skins, then pressed after a few days.\"}",
+     "now": "{\"front\": \"Georges Duboeuf's Beaujolais Nouveau: how is it fermented?\", \"back\": \"Whole bunches under carbon dioxide, many berries fermenting inside their skins, then pressed after a few days.\"}",
+     "why": "Many berries, not all, ferment inside their skins in the semi carbonic way.",
+     "sources": [
+      {
+       "title": "Les Vins Georges Duboeuf: Beaujolais Signature technical sheet",
+       "url": "https://www.duboeuf.com/fr/e-boutique/fiche-technique/beaujolais-signature/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "Carbonic maceration, whole bunches fermenting inside their skins under carbon dioxide, gives Nouveau its banana and bubblegum notes; nothing is added and no oak is used.",
+     "now": "Carbonic maceration, whole bunches fermenting inside their skins under carbon dioxide, gives Nouveau its banana and bubblegum notes; nothing is added and the wine is raised in steel, not oak.",
+     "why": "The house's Beaujolais is raised in steel.",
+     "sources": [
+      {
+       "title": "Les Vins Georges Duboeuf: Beaujolais Signature technical sheet",
+       "url": "https://www.duboeuf.com/fr/e-boutique/fiche-technique/beaujolais-signature/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "[{\"title\": \"The Sommelier's Codex: the library record of Georges Duboeuf\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-producers.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the Beaujolais region record\", \"url\": \"https://zpullen98-gif.github.io/codex/js/regions/france.json\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Sommelier's Codex: the Gamay record of the Grapes tab\", \"url\": \"https://zpullen98-gif.github.io/codex/js/data-grapes-table.js\", \"kind\": \"secondary\", \"read\": \"page\"}, {\"title\": \"The Oxford Companion to Wine\", \"url\": \"\", \"kind\": \"secondary\", \"read\": \"book\"}]",
+     "now": "[{\"title\": \"Inter Beaujolais: Beaujolais Nouveaux press kit\", \"url\": \"https://www.beaujolais.com/wp-content/uploads/sites/2/2022/09/Dossier-de-presse-Beaujolais-Nouveaux-2022.pdf\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"INAO: specification of the Beaujolais appellation\", \"url\": \"https://extranet.inao.gouv.fr/fichier/PNO-cdcBeaujolais-cn220210.pdf\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Les Vins Georges Duboeuf: Beaujolais Nouveau\", \"url\": \"https://www.duboeuf.com/en/beaujolais-nouveau/\", \"kind\": \"primary\", \"read\": \"search\"}, {\"title\": \"Decanter: Beaujolais wine Pope Georges Duboeuf dies\", \"url\": \"https://www.decanter.com/obituaries/beaujolais-wine-pope-georges-duboeuf-dies-429939\", \"kind\": \"secondary\", \"read\": \"search\"}, {\"title\": \"Wikipedia: Georges Duboeuf\", \"url\": \"https://en.wikipedia.org/wiki/Georges_Duboeuf\", \"kind\": \"secondary\", \"read\": \"search\"}]",
+     "why": "Every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "Inter Beaujolais: Beaujolais Nouveaux press kit",
+       "url": "https://www.beaujolais.com/wp-content/uploads/sites/2/2022/09/Dossier-de-presse-Beaujolais-Nouveaux-2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "INAO: specification of the Beaujolais appellation",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNO-cdcBeaujolais-cn220210.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Les Vins Georges Duboeuf: Beaujolais Nouveau",
+       "url": "https://www.duboeuf.com/en/beaujolais-nouveau/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Beaujolais wine Pope Georges Duboeuf dies",
+       "url": "https://www.decanter.com/obituaries/beaujolais-wine-pope-georges-duboeuf-dies-429939",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Georges Duboeuf",
+       "url": "https://en.wikipedia.org/wiki/Georges_Duboeuf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The young wine poured in the bistros of Lyon before it had a legal name.",
+    "Bottles trucked, shipped and flown to be poured on one day in Paris, London, New York and Tokyo.",
+    "The crus working for decades to live down a reputation for simple wine.",
+    "Beaujolais-Villages Nouveau as a little firmer.",
+    "The clay and limestone of the south as the chief source of the fruit."
+   ],
+   "open": [
+    "No technical sheet of the house's Nouveau was found; the making follows its Beaujolais sheets.",
+    "His birthplace: Crêches-sur-Saône or Chaintré, both in the Mâconnais.",
+    "His age at death: 86 in most accounts, 87 in one."
+   ],
+   "extraSources": [
+    {
+     "title": "Les Vins Georges Duboeuf: Beaujolais Signature technical sheet",
+     "url": "https://www.duboeuf.com/fr/e-boutique/fiche-technique/beaujolais-signature/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Les Vins Georges Duboeuf: the Flowers collection",
+     "url": "https://www.duboeuf.com/en/collection/flowers/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Les Vins Georges Duboeuf: Wines",
+     "url": "https://www.duboeuf.com/en/wines/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus magazine: Georges Duboeuf has died at the age of 86",
+     "url": "https://magazine.wein.plus/news/georges-duboeuf-died-at-the-age-of-86-wine-legend-invented-the-beaujolais-nouveau-campaign",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grape Collective: The magnificent man behind Beaujolais Nouveau",
+     "url": "https://www.grapecollective.com/?p=62477",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Taste France: Beaujolais Nouveau, a worldwide celebration",
+     "url": "https://www.tastefrance.com/us/magazine/wine/beaujolais-nouveau-worldwide-celebration",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Mathieu Lapierre",
+   "where": "search results on Lapierre, as the son who returned in 2004 or 2005 and runs the domaine",
+   "believed": "living; in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Camille Lapierre",
+   "where": "search results and several merchants' addresses on Lapierre, as the daughter who runs the domaine with her brother",
+   "believed": "living; in people.json; the addresses that carry the name are kept out of the record",
+   "inFragment": false
+  },
+  {
+   "name": "Marie Lapierre",
+   "where": "a search result on Lapierre, as Marcel Lapierre's widow",
+   "believed": "living as far as this recheck found; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Jean Foillard",
+   "where": "every result on the domaine",
+   "believed": "living; the house's own name, used only as the house; not in people.json",
+   "inFragment": true
+  },
+  {
+   "name": "Agnès Foillard",
+   "where": "search results on Foillard, as the grower's wife and partner from 1980",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Alex Foillard",
+   "where": "search results on Foillard, as the grower's son",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Jean-Paul Thévenet",
+   "where": "search results on the Gang of Four",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Guy Breton",
+   "where": "search results on the Gang of Four",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Kermit Lynch",
+   "where": "search results and the importer's own domain, as the importer who named the Gang of Four and imports Lapierre, Foillard and Thivin",
+   "believed": "living; not in people.json, for the read-together agent or the engineer; his domain is never cited, since its address carries his name",
+   "inFragment": false
+  },
+  {
+   "name": "Jacques Néauport",
+   "where": "a search result on Chauvet, as Lapierre's collaborator",
+   "believed": "believed living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Claude-Edouard Geoffray",
+   "where": "a search result on Thivin, as the sixth generation",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Guillaume de Castelnau, Julie Pitoiset and Cyril Chirouze",
+   "where": "search results on Château des Jacques, as past and present managers",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Franck Duboeuf",
+   "where": "search results on Duboeuf, as the son who took over in 2018",
+   "believed": "living; in people.json",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Marcel Lapierre",
+   "note": "1950 to 2010: born at Villié-Morgon in 1950 by iDealwine and Primal Wine; died in October 2010 aged sixty by Vinous and Decanter. Named with his dates."
+  },
+  {
+   "name": "Jules Chauvet",
+   "note": "1907 to 1989 by Wikipedia and the Wein.plus glossary. Named with his dates."
+  },
+  {
+   "name": "Philip the Bold",
+   "note": "17 January 1342 to 27 April 1404 by Wikipedia; the edict of 31 July 1395 by The Drinks Business and Wine Spectator. Named with his dates."
+  },
+  {
+   "name": "Georges Duboeuf",
+   "note": "14 April 1933 to 4 January 2020 by Decanter, Wein.plus and Wikipedia. Named with his dates."
+  },
+  {
+   "name": "Zaccharie Geoffray",
+   "note": "The buyer of 1877, named in iDealwine and a merchant's history; no source gives his dates, so he is described, and his given name appears only as the cuvée's."
+  },
+  {
+   "name": "Louis Henri Denis Jadot",
+   "note": "Founder of the house in 1859 by its own history; not named in the record."
+  },
+  {
+   "name": "Émile Peynaud",
+   "note": "A distractor in Lapierre's story question, described as a Bordeaux oenologist with no dates; long dead."
+  }
+ ],
+ "picks": [
+  {
+   "pick": "lapierre",
+   "ruling": "kept: the domaine's Morgon is the wine the library, the house list and the merchants lead with; Cuvée Marcel Lapierre, made only in good years, now stands in others."
+  },
+  {
+   "pick": "foillard",
+   "ruling": "kept: Côte du Py is the bottling the library, the house list and the merchants lead with. The plan's why calls the hill decomposed blue schist; the INAO and the sheets read give weathered schist rich in manganese and iron oxide, with blue stone (diorite) also on the hill in one estate's account, so the plan's words are loose but not wrong."
+  },
+  {
+   "pick": "thivin",
+   "ruling": "kept, with a note for the integrator: the plan names the wine only as Côte de Brouilly; the record takes Les Sept Vignes, the estate's own name for its blend of seven parcels, and the estate's page confirms it. It is mostly Gamay with a small share of Chardonnay."
+  },
+  {
+   "pick": "chateau-des-jacques",
+   "ruling": "kept: Clos de Rochegrès is the estate's clos at the cru's highest point and one of its clos bottled apart; the plan's why (Moulin-à-Vent aged in barrel, climat by climat) agrees with the estate's own pages."
+  },
+  {
+   "pick": "duboeuf",
+   "ruling": "kept: the house is known worldwide for its Nouveau and the release day is an examination fact; its flower label crus stand in others. A cru from the house would teach less of what the house is."
+  }
+ ],
+ "codexInTension": [
+  {
+   "record": "p-marcel-lapierre",
+   "field": "traps",
+   "says": "The four growers are known collectively as the Gang of Four, a critic's phrase, not a body",
+   "found": "The name was given by the growers' American importer, as the Wine Scholar Guild and Verve Wine say and as the Codex's own master bank (m-gfdsv58m) says.",
+   "sources": [
+    {
+     "title": "Wine Scholar Guild: The Beaujolais Gang of Four",
+     "url": "https://www.winescholarguild.com/blog/regional-spotlight/beaujolais-gang-of-four",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Verve Wine: How Beaujolais pioneered the modern movement for good wine",
+     "url": "https://vervewine.com/blogs/the-blog/how-beaujolais-pioneered-the-modern-day-movement-for-good-wine",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-chateau-thivin",
+   "field": "wines and traps",
+   "says": "Côte de Brouilly Les Sept Vignes taught as Gamay; Côte de Brouilly sits on blue volcanic rock, unlike the granite of the other crus",
+   "found": "The estate gives Les Sept Vignes as mostly Gamay with a small share of Chardonnay; Inter Beaujolais gives the cru's soils as blue stone the largest share with granite after it, and says Mont Brouilly is not a former volcano, its blue rock coming from ancient submarine volcanism.",
+   "sources": [
+    {
+     "title": "Château Thivin: Côte de Brouilly Les Sept Vignes",
+     "url": "https://www.chateau-thivin.com/en/wine/cote-brouilly-sept-vignes-8.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Inter Beaujolais: Côte de Brouilly",
+     "url": "https://www.beaujolais.com/en/appellation/cote-de-brouilly/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Inter Beaujolais: Beaujolais, expressions of a vineyard",
+     "url": "https://www.beaujolais.com/wp-content/uploads/sites/2/2020/09/Carnet-Beaujolais-EN.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-chateau-des-jacques",
+   "field": "holdings",
+   "says": "Rochegres, without its accent",
+   "found": "The estate writes Rochegrès.",
+   "sources": [
+    {
+     "title": "Château des Jacques: Clos de Rochegrès",
+     "url": "https://chateau-des-jacques.fr/fr/vin/22",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "Beaujolais region record (js/regions/france.json)",
+   "field": "soils",
+   "says": "manganese-rich granite at Moulin-à-Vent",
+   "found": "The INAO's Moulin-à-Vent specification, as the search returned it, gives sandy, granitic soils on a granite base and does not mention manganese; Château des Jacques's own page for its highest clos gives pink granite with quartz veins. Not contradicted, but not confirmed here.",
+   "sources": [
+    {
+     "title": "INAO: specification of the Moulin-à-Vent appellation",
+     "url": "https://extranet.inao.gouv.fr/fichier/PNO-CDCMoulin-%C3%A0-Vent-CN221130.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château des Jacques: Clos de Rochegrès",
+     "url": "https://chateau-des-jacques.fr/fr/vin/22",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
