@@ -16,8 +16,8 @@
     "classification": "",
     "colour": "sparkling",
     "grapes": "Chardonnay alone, a Blanc de Blancs.",
-    "sites": "Maso Pianizza, a vineyard of the house on the slopes above Trento at about 500 to 600 metres, the source of the first vintage in 1972.",
-    "making": "The base wine is made in stainless steel. The second fermentation follows in bottle, and the wine then rests close to ten years on its lees in the house's cellars before it is disgorged, with very little sugar added at the dosage.",
+    "sites": "Maso Pianizza, a vineyard of the house on the slopes above Trento, some 500 to 600 metres up by most accounts, the source of the first vintage in 1972.",
+    "making": "The base wine is made in stainless steel. The second fermentation follows in bottle, and the wine then rests at least seven and a half years on its lees in the house's cellars, more than ten in some vintages, before it is disgorged, with very little sugar added at the dosage.",
     "glass": "Golden apple, candied citrus peel and chamomile over toast, almond paste and a chalky edge; a fine, persistent mousse, a creamy, layered texture and a long, dry finish.",
     "ageing": "Ready to drink when it is released after its long rest on the lees, it keeps developing in bottle for a decade and more.",
     "serve": "8 to 10 degrees Celsius, as the house advises; no need to decant; a tulip glass or a white wine glass rather than a narrow flute.",
@@ -32,8 +32,8 @@
      }
     ]
    },
-   "table": "Giulio Ferrari Riserva del Fondatore is Ferrari's Chardonnay from Maso Pianizza above Trento, fermented a second time in bottle and left close to ten years on its lees. It shows how mountain Chardonnay takes long ageing, so pour it cool in a tulip glass.",
-   "story": "Giulio Ferrari, born in 1879 in the Trentino, then part of the Austrian Tyrol, trained at the agrarian institute of San Michele all'Adige and studied abroad, Champagne among the places he learned. Struck, as the Trentodoc institute tells it, by the likeness between the hills of Trentino and Champagne, he returned to Trento in 1902 and began to make sparkling wine by the classic method, with its second fermentation in bottle. He is credited with bringing Chardonnay to the Trento hills. In 1952, childless and in his seventies, he sold his small house to a Trento wine shop owner of the Lunelli family, who, by the house's account, went deep into debt to buy it. In 1972 the new owners set aside some five thousand bottles from the grapes of Maso Pianizza for long ageing, and in 1980, as the house tells it, they emerged as the first Giulio Ferrari Riserva del Fondatore. In 1993 Trento DOC was recognised as an appellation for classic method sparkling wine alone, by the Trentodoc institute's account the first in Italy. Open the Riserva del Fondatore when a guest asks how Italian sparkling wine ages: Chardonnay alone, from one hillside, after close to a decade on its lees.",
+   "table": "Giulio Ferrari Riserva del Fondatore is Ferrari's Chardonnay from Maso Pianizza above Trento, fermented a second time in bottle and left more than seven years on its lees. It shows how mountain Chardonnay takes long ageing, so pour it cool in a tulip glass.",
+   "story": "Giulio Ferrari, born in 1879 in the Trentino, then part of the Austrian Tyrol, trained at the agrarian institute of San Michele all'Adige and studied abroad, Champagne among the places he learned. Struck, as the Trentodoc institute tells it, by the likeness between the hills of Trentino and Champagne, he returned to Trento in 1902 and began to make sparkling wine by the classic method, with its second fermentation in bottle. He is credited with bringing Chardonnay to the Trento hills. In 1952, childless and in his seventies, he sold his small house to a Trento wine shop owner of the Lunelli family, who, by the house's account, went deep into debt to buy it. In 1972 the new owners set aside some five thousand bottles from the grapes of Maso Pianizza for long ageing, and in 1980, as the house tells it, they emerged as the first Giulio Ferrari Riserva del Fondatore. In 1993 Trento DOC was recognised as an appellation for classic method sparkling wine alone, by the Trentodoc institute's account the first in Italy. Open the Riserva del Fondatore when a guest asks how Italian sparkling wine ages: Chardonnay alone, from one hillside, after seven years and more on its lees.",
    "others": [
     {
      "name": "Ferrari Perlé",
@@ -56,7 +56,7 @@
    "cards": [
     {
      "front": "Giulio Ferrari Riserva del Fondatore: which grape, and from which vineyard?",
-     "back": "Chardonnay alone, from Maso Pianizza, a vineyard of the house at about 500 to 600 metres above Trento."
+     "back": "Chardonnay alone, from Maso Pianizza, a high vineyard of the house on the slopes above Trento."
     },
     {
      "front": "Which vintage was the first Riserva del Fondatore, and in which year was it released?",
@@ -67,13 +67,13 @@
     {
      "q": "A guest asks how long Ferrari's Giulio Ferrari Riserva del Fondatore spends on its lees before it is disgorged. Which answer fits?",
      "opts": [
-      "Close to ten years",
+      "Over seven years",
       "About fifteen months",
       "About three years",
       "Over thirty years"
      ],
      "a": 0,
-     "exp": "The house's technical sheets give well over nine years on the lees, close to a decade, far longer than the three years of many vintage sparkling wines.",
+     "exp": "The house's sheets give from about ninety months to over a hundred and twenty on the lees, more than seven years, far longer than the three years of many vintage sparkling wines.",
      "tag": "wine"
     },
     {
@@ -130,7 +130,23 @@
     "One merchant calls Maso Pianizza Italy's first documented Chardonnay vineyard, planted in 1897, and another cites a gold medal at Milan in 1906; neither has a second source, and both are left out.",
     "The library's p-ferrari and w-giulio-ferrari agree with the record; Ferrari Rosé in others rests on the Brennan's list bottle (Pinot Noir and Chardonnay)."
    ],
-   "checked": null
+   "checked": {
+    "date": "2026-11-12",
+    "by": "refuter",
+    "verdict": "changed",
+    "changed": [
+     "wine.making: the lees time was \"close to ten years\"; now \"at least seven and a half years on its lees in the house's cellars, more than ten in some vintages\", since the house's product page gives a minimum of 91 months and its vintage sheets 90 months (1992), 91 (2000), 92 (2002) and 123 (2010).",
+     "table and story: \"close to ten years\" and \"close to a decade\" on the lees; now \"more than seven years\" and \"seven years and more\", for the same reason.",
+     "questions[0]: the key was \"Close to ten years\"; now \"Over seven years\", true of every sheet read, and the explanation gives the house's range of about ninety to over a hundred and twenty months.",
+     "wine.sites: \"at about 500 to 600 metres\"; now \"some 500 to 600 metres up by most accounts\", since Decanter and The Buyer give 500 to 600 metres while Decanter's producer profile gives 550 to 700, World of Fine Wine 450 to 550 and Gambero Rosso 500.",
+     "cards[0].back: the altitude is taken off the card, which now says a high vineyard of the house on the slopes above Trento, for the same disagreement."
+    ],
+    "open": [
+     "Giulio Ferrari's death in 1965 now has two accounts in the search (a copy of Wikipedia, and a profile that has him die at 86 in 1965), so the read-together agent may name him as Giulio Ferrari (1879 to 1965); the record keeps the author's birth year alone.",
+     "Bruno Lunelli's dates stay out: a copy of Wikipedia gives 1907 to 1973, while an Italian account has him at the wine shop to the end of his days in 2000.",
+     "The house's sheets print Extra Brut, while the author found one merchant listing the wine as Brut; the label terms still leave the dosage word out."
+    ]
+   }
   },
   {
    "key": "foradori",
@@ -147,8 +163,8 @@
     "classification": "Indicazione Geografica Tipica, the regional tier below DOC",
     "colour": "red",
     "grapes": "Teroldego alone.",
-    "sites": "Vineyards of the house on the Campo Rotaliano, the plain of gravel and sand laid down by the Noce and the Adige: at first one old pergola vineyard, later several parcels.",
-    "making": "Fermented in open wooden vats with some weeks on the skins. For years part of the wine was raised in small oak barrels; later vintages are aged about fifteen months in large wooden casks, with a short time in cement before bottling.",
+    "sites": "Vineyards of the house on the Campo Rotaliano, the plain of gravel and sand laid down by the Noce and the Adige: at first old vines of the estate, later several parcels.",
+    "making": "Fermented in open wooden vats with some weeks on the skins. For years part of the wine was raised in small oak barrels; later vintages are aged about a year to fifteen months in large wooden casks, with a short time in cement before bottling.",
     "glass": "Black cherry and blackberry over iron, dried herbs and a touch of violet; fresh acidity and firm, slightly rustic tannin, more savoury than lush, with a long, dark finish.",
     "ageing": "Firm and closed in its first years, it opens after about five and keeps for well over a decade in a strong vintage.",
     "serve": "16 to 18 degrees Celsius; decant a young bottle an hour ahead; a large Bordeaux glass.",
@@ -164,7 +180,7 @@
     ]
    },
    "table": "Granato is Foradori's Teroldego from old vines on the gravel of the Campo Rotaliano, raised in wood. Black cherry, iron and dried herbs over firm tannin show that the grape can make a red to keep, so decant it when young.",
-   "story": "The Campo Rotaliano, the plain of gravel where the Noce meets the Adige north of Trento, is the home of Teroldego, and in 1939 the Foradori family bought a winery at Mezzolombardo on its edge. In 1984, after her father's death, the family's daughter, about twenty years old, took over the cellar. She began to propagate Teroldego by massal selection from the old vines of the estate, choosing quality over quantity, and in the late 1980s she made the first Granato, from an old pergola vineyard, raised in wood and meant to age. It showed that the grape of the plain could make a red of depth and long life. From 2002 the whole estate was farmed biodynamically, and Demeter certified it in 2009. In 2008 she began to make wine in clay amphorae, which came to shape single vineyard Teroldego such as Sgarzon, while Granato stayed in wood: small barrels in its early years, large casks later. Granato is labelled under the regional IGT rather than the Teroldego Rotaliano DOC. Pour it for a guest who has never met Teroldego: it shows what the grape of the Campo Rotaliano gives from old vines and time in wood.",
+   "story": "The Campo Rotaliano, the plain of gravel where the Noce meets the Adige north of Trento, is the home of Teroldego, and in 1939 the Foradori family bought a winery at Mezzolombardo on its edge. In 1984, after her father's death, the family's daughter, about twenty years old, took over the cellar. She began to propagate Teroldego by massal selection from the estate's old vines, choosing quality over quantity, and in the late 1980s she made the first Granato from those old vines, raised in wood and meant to age. It showed that the grape of the plain could make a red of depth and long life. From 2002 the whole estate was farmed biodynamically, and Demeter certified it in 2009. Later in the 2000s she began to make wine in clay amphorae, which came to shape single vineyard Teroldego such as Sgarzon, while Granato stayed in wood: small barrels in its early years, large casks later. Granato is labelled under the regional IGT rather than the Teroldego Rotaliano DOC. Pour it for a guest who has never met Teroldego: it shows what the grape of the Campo Rotaliano gives from old vines and time in wood.",
    "others": [
     {
      "name": "Sgarzon",
@@ -182,8 +198,8 @@
    ],
    "cards": [
     {
-     "front": "Foradori's Granato: which grape, and from what kind of vineyard did the first one come?",
-     "back": "Teroldego alone, first from an old pergola vineyard on the gravel of the Campo Rotaliano."
+     "front": "Foradori's Granato: which grape, and from which vines did the first one come?",
+     "back": "Teroldego alone, first from old vines of the estate on the gravel of the Campo Rotaliano."
     },
     {
      "front": "What did the young heir of Foradori do with Teroldego after taking over the cellar in 1984?",
@@ -257,7 +273,22 @@
     "Founded is left empty, as in the library: one account dates the winery to 1901 and the family's purchase to 1939; the Teroldego Rotaliano DOC is dated 1971 by most and 1970 by Cavit, so no year is given for it.",
     "The Campo Rotaliano as the gravel and sand of the Noce and the Adige rests on Cavit and two guides; the IGT on the label on vino.com, Wine Berserkers and Falstaff listings; one press article says the wine later blends five vineyards, pergola and Guyot, another three, so the sites say several parcels."
    ],
-   "checked": null
+   "checked": {
+    "date": "2026-11-12",
+    "by": "refuter",
+    "verdict": "changed",
+    "changed": [
+     "story, wine.sites and cards[0]: the first Granato came \"from an old pergola vineyard\"; now \"from old vines of the estate\", since the searches found the estate's oldest vines (a merchant's history) and the library calls it the old vine wine, but no second source for a single pergola vineyard; the card's front now asks from which vines.",
+     "story: \"In 2008 she began to make wine in clay amphorae\"; now \"Later in the 2000s\", since the accounts read disagree: Grape Collective places her first interest in the middle of the decade and another account dates her first amphora wine, of Nosiola, to 2009; no source read gave 2008.",
+     "wine.making: \"aged about fifteen months in large wooden casks\"; now \"about a year to fifteen months\", since one account gives twelve months in acacia casks of 20 to 40 hectolitres and two months in cement, others fifteen to eighteen months in large casks.",
+     "story: the second mention of the old vines now reads \"from those old vines\", to keep the sentence from repeating itself."
+    ],
+    "open": [
+     "Granato's first vintage: Decanter's timeline gives 1986 and a merchant agrees; the record keeps the author's late 1980s, since the author found 1988 in two accounts.",
+     "Biodynamics: Grape Collective dates the start to the late 1990s, Decanter to part of the estate in 2000 and the whole by 2002; the record keeps the whole estate from 2002 and Demeter in 2009, which two accounts give.",
+     "The record still rests on secondary sources alone; the house's own domain gave only its press archive."
+    ]
+   }
   },
   {
    "key": "terlano",
@@ -299,7 +330,7 @@
     ]
    },
    "table": "Vorberg is Cantina Terlano's Pinot Bianco Riserva from steep porphyry slopes above the village, fermented and aged in large oak casks on its lees. Pear, quince and a flinty edge over firm acidity show how long the whites of Alto Adige can keep.",
-   "story": "In 1893 twenty four growers of Terlano, then in the Austrian Tyrol, joined forces as a cooperative to free themselves from the large landowners who ruled the wine trade, as the house tells it, and the oldest bottle in its cellar dates from that founding year. The village's vineyards climb steep slopes of volcanic quartz porphyry, and among the first wines of the cooperative was a blend of Pinot Bianco, Chardonnay and Sauvignon. From 1955 to 1993 its cellar master, convinced that the wines were not given their due, quietly set aside about five hundred bottles of every vintage. Tasted years later, they had aged with grace, and his habit of long ageing on the fine lees became the house's method. Its Rarity wines reach the market only after at least ten years in the cellar, and the archive of old vintages he began lets the house show what time does to its whites. Vorberg, the steep porphyry hillside above the village, gives the Pinot Bianco Riserva that carries the idea into every vintage: large oak casks, a year on the lees and a wine built to keep. Pour it for a guest who doubts that Pinot Bianco can age.",
+   "story": "In 1893 twenty four growers of Terlano, then in the Austrian Tyrol, joined forces as a cooperative to free themselves from the large landowners who ruled the wine trade, as the house tells it, and the oldest bottle in its cellar dates from that founding year. The village's vineyards climb steep slopes of volcanic quartz porphyry, and by the house's account it has made a blend of Pinot Bianco, Chardonnay and Sauvignon since its founding. From 1955 to 1993 its cellar master, convinced that the wines were not given their due, quietly set aside about five hundred bottles of every vintage. Tasted years later, they had aged with grace, and the house has kept his method of long ageing on the fine lees, which it names after him. Its Rarity wines rest at least ten years on their lees in steel tanks before bottling, and the archive of old vintages he began lets the house show what time does to its whites. Vorberg, the steep porphyry hillside above the village, gives the Pinot Bianco Riserva that carries the idea into every vintage: large oak casks, a year on the lees and a wine built to keep. Pour it for a guest who doubts that Pinot Bianco can age.",
    "others": [
     {
      "name": "Terlaner I Primo Grande Cuvée",
@@ -307,16 +338,16 @@
     },
     {
      "name": "Rarity",
-     "note": "A wine, often Pinot Bianco, released only after at least ten years maturing in the cellar."
+     "note": "A wine, often Pinot Bianco, aged at least ten years on its lees in steel tanks before bottling."
     },
     {
      "name": "Terlaner Cuvée",
-     "note": "The old blend of Pinot Bianco, Chardonnay and Sauvignon, one of the house's wines since its founding."
+     "note": "The classic blend of Terlano's three traditional white grapes: Pinot Bianco, Chardonnay and Sauvignon."
     }
    ],
    "traps": [
     "Terlaner is simply the German form of Terlano, not a grape or a style.",
-    "Rarity is no vineyard: it is a wine held at least ten years in the cellar before release.",
+    "Rarity is no vineyard: it is a wine held at least ten years on its lees in steel tanks before bottling.",
     "In Alto Adige a cooperative is no lesser tier: Cantina Terlano is a cooperative of growers, and Vorberg is its Riserva."
    ],
    "cards": [
@@ -396,7 +427,21 @@
     "The library calls the house's grand blend Terlaner I Grande Cuvée; the house's own page names it Terlaner I Primo Grande Cuvée, as the record does.",
     "Malolactic fermentation and casks of 70 and 30 hectolitres rest on the house's sheet for one vintage; a merchant's note of the 2015 says partly fermented in large barrels, and a guide places the slopes on the Monzoccolo, left out for want of a second source."
    ],
-   "checked": null
+   "checked": {
+    "date": "2026-11-12",
+    "by": "refuter",
+    "verdict": "changed",
+    "changed": [
+     "story: \"among the first wines of the cooperative was a blend of Pinot Bianco, Chardonnay and Sauvignon\"; now hedged as the house's account that it has made the blend since its founding, which is how the house's pages put it; no second source dates the blend.",
+     "story: \"his habit of long ageing on the fine lees became the house's method\"; now the house has kept his method and names it after him, as its Stocker method page does: it is the method of the Rarity wines, not of every wine.",
+     "story, others[1] and traps[1]: the Rarity wines were held \"at least ten years in the cellar\"; now at least ten years on their lees in steel tanks before bottling, as the house's Rarity and Stocker method pages describe them.",
+     "others[2]: Terlaner Cuvée was \"one of the house's wines since its founding\"; now \"the classic blend of Terlano's three traditional white grapes\", as the house's page describes it; the age of the blend is said once, hedged, in the story."
+    ],
+    "open": [
+     "Vorberg's first vintage was not found; a Vinous retrospective of Vorberg reaches back to 1959, which may be Pinot Bianco from the archive rather than a wine then named Vorberg.",
+     "The cellar master of 1955 to 1993 (Decanter and World of Fine Wine; his death in 2017 in Decanter alone) stays described: no birth year was found."
+    ]
+   }
   },
   {
    "key": "tramin",
@@ -413,8 +458,8 @@
     "classification": "",
     "colour": "white",
     "grapes": "Gewürztraminer alone.",
-    "sites": "Vineyards near the Nussbaumer farm at Söll, Sella in Italian, above Tramin, about 350 to 550 metres up facing south and south east, on calcareous gravel with loam over porphyry.",
-    "making": "Fermented slowly at a cool, controlled temperature in small stainless steel tanks, the must settled by natural sedimentation. The wine then stays in tank on its lees until the end of the following August and rests about three months in bottle: at least fourteen months in all.",
+    "sites": "Vineyards near the Nussbaumer farm at Söll, Sella in Italian, above Tramin, about 350 to 550 metres up facing mainly south east, on calcareous gravel with loam over porphyry.",
+    "making": "Fermented slowly at a controlled temperature of about 18 degrees Celsius in small stainless steel tanks, the must clarified by natural settling. The wine then matures in small steel tanks on its lees until the end of the following August, at least fourteen months in all before release.",
     "glass": "Lychee, rose petal and ginger over candied orange peel and clove; broad, almost oily in texture, yet dry, with fresh acidity and a long finish of bitter almond.",
     "ageing": "Open and perfumed on release, it keeps and gains depth for five to ten years in a strong vintage.",
     "serve": "10 to 12 degrees Celsius; no need to decant; a white wine glass with a generous bowl.",
@@ -434,11 +479,11 @@
     ]
    },
    "table": "Nussbaumer is Cantina Tramin's dry Gewürztraminer from vineyards at Söll above Tramin, the village said to have given the Traminer its name. Lychee, rose and ginger over a broad, oily texture stay fresh in the glass, so pour it cool beside spiced dishes.",
-   "story": "Tramin, Termeno in Italian, is the village whose name the Traminer grape is said to carry, and by the house's account Gewürztraminer has grown on its slopes for over a thousand years. In 1898 the village's parish priest, who later sat in the Austrian parliament, founded a growers' cooperative so that small farmers could stand together through hard times. In 1971 it merged with the cooperative of Egna, Neumarkt in German, founded in 1893. Nussbaumer takes its name from a farm near Söll, the hamlet called Sella in Italian, at the foot of Mount Roen above the village, where the vineyards lie on calcareous gravel and loam over porphyry. Fermented in small steel tanks and kept on its lees until the summer after the harvest, it is the cellar's dry Gewürztraminer, as the house describes it: perfumed and broad, yet fresh. Later the cellar added Epokale, a Gewürztraminer laid down for years in a disused mine before release. Pour it when a guest asks where the grape's name began: the answer is in the glass and on the map.",
+   "story": "Tramin, Termeno in Italian, is the village whose name the Traminer grape is said to carry, and by the house's account Gewürztraminer has grown on its slopes for over a thousand years. In 1898 the village's parish priest, Christian Schrott (1853 to 1936), who also sat in the Austrian parliament, founded a growers' cooperative to protect the livelihood of its small growers, as the house tells it. In 1971 it merged with the cooperative of Egna, Neumarkt in German, founded in 1893. Nussbaumer takes its name from a farm near Söll, the hamlet called Sella in Italian, at the foot of Mount Roen above the village, where the vineyards lie on calcareous gravel and loam over porphyry. Fermented in small steel tanks and kept on its lees until the summer after the harvest, it is perfumed and broad, yet fresh, with only a little sugar left. With the 2009 vintage the cellar added Epokale, a Gewürztraminer laid down for some seven years in the disused Monteneve mine at Ridanna before release. Pour it when a guest asks where the grape's name began: the answer is in the glass and on the map.",
    "others": [
     {
      "name": "Epokale Gewürztraminer",
-     "note": "A selection laid down for years in a disused mine tunnel before release."
+     "note": "A selection laid down for some seven years in the disused Monteneve mine at Ridanna before release, first made in 2009."
     },
     {
      "name": "Stoan",
@@ -448,7 +493,7 @@
    "traps": [
     "The village is Termeno in Italian and Tramin in German: one place, two names.",
     "The link between Gewürztraminer and Tramin is a naming tradition, not a settled origin of the grape.",
-    "Nussbaumer is made dry, though its perfume of lychee and rose can suggest sweetness."
+    "Nussbaumer is made dry or close to it, with only a little sugar left, though its perfume of lychee and rose can suggest sweetness."
    ],
    "cards": [
     {
@@ -457,20 +502,20 @@
     },
     {
      "front": "Who founded Cantina Tramin in 1898, and why?",
-     "back": "The parish priest of Tramin, later a member of the Austrian parliament, to help small growers through hard times."
+     "back": "Christian Schrott, the parish priest of Tramin and a member of the Austrian parliament, to protect the livelihood of the small growers."
     }
    ],
    "questions": [
     {
      "q": "A guest asks whether Cantina Tramin's Nussbaumer Gewürztraminer is a sweet wine. Which answer fits?",
      "opts": [
-      "Dry, fermented in steel and kept on its lees",
+      "Dry or nearly so, fermented in steel",
       "Sweet, from grapes dried on mats for months",
       "Sweet, from grapes left late on the vine",
-      "Off dry, sweetened with grape must"
+      "Sweet, fortified with grape spirit"
      ],
      "a": 0,
-     "exp": "The house makes Nussbaumer as a dry Gewürztraminer, fermented in small stainless steel tanks and kept on its lees until the following summer; its lychee and rose perfume only suggests sweetness.",
+     "exp": "The house ferments Nussbaumer in small stainless steel tanks to dryness or close to it, with only a little sugar left, and keeps it on its lees until the following summer; its lychee and rose perfume only suggests sweetness.",
      "tag": "wine"
     },
     {
@@ -512,8 +557,8 @@
      "read": "search"
     },
     {
-     "title": "Xtrawine: Tramin Nussbaumer Gewürztraminer",
-     "url": "https://www.xtrawine.com/products/tramin-nussbaumer-gewurztraminer-2024",
+     "title": "Deutsche Biographie: Schrott, Christian",
+     "url": "https://www.deutsche-biographie.de/pnd1032940174.html",
      "kind": "secondary",
      "read": "search"
     }
@@ -527,7 +572,25 @@
     "One merchant dates the founding to 1889; the house and the others give 1898, the library's year; the 1971 merger with Egna rests on the house and Grape Guru.",
     "The living cellar master, in post from the early 1990s, is not named; the merger is told without the size of either cellar."
    ],
-   "checked": null
+   "checked": {
+    "date": "2026-11-12",
+    "by": "refuter",
+    "verdict": "changed",
+    "changed": [
+     "story and cards[1]: the founder was the parish priest \"who later sat in the Austrian parliament\"; now named, Christian Schrott (1853 to 1936), \"who also sat in the Austrian parliament\": the Deutsche Biographie lists a priest and politician of that name and those dates, a cooperative profile in the search gives the same dates for the founding priest, and one account in the search has him already a member of parliament in Vienna at the founding while another says later, so \"later\" was not sure.",
+     "story and cards[1]: the purpose \"so that small farmers could stand together through hard times\"; now \"to protect the livelihood of its small growers, as the house tells it\", the house's own words read through search.",
+     "story and others[0]: Epokale came \"later\" and lay \"for years in a disused mine\"; now with the 2009 vintage, some seven years in the disused Monteneve mine at Ridanna, from the house's Epokale page.",
+     "wine.making: the three months in bottle are taken out, not found again on the house's page; the fermentation now gives the house's 18 degrees Celsius for \"cool\", and the fourteen months in all rests on the house and a merchant.",
+     "wine.sites: \"facing south and south east\"; now \"facing mainly south east\", as the house's sheet gives it.",
+     "traps[2] and questions[0]: \"made dry\"; now dry or close to it, with only a little sugar left, since the house's sheet gives residual sugar below 6.5 grams a litre; the fourth option, \"Off dry, sweetened with grape must\", lay too near the key and is now \"Sweet, fortified with grape spirit\".",
+     "sources: Xtrawine is replaced by the Deutsche Biographie entry for the founder; its Sella at the foot of Mount Roen stands on a second merchant in the review file.",
+     "story: \"it is the cellar's dry Gewürztraminer, as the house describes it\"; now \"perfumed and broad, yet fresh, with only a little sugar left\", since the house's own word dry was not found again and its sheet gives residual sugar below 6.5 grams a litre."
+    ],
+    "open": [
+     "Söll, Sella in Italian, rests on merchants alone (Winebow and others); the house's page names no hamlet.",
+     "The founder's dates rest on the Deutsche Biographie and one cooperative profile the search summary did not name; if the integrator wants a named second page, the record can fall back to the parish priest described."
+    ]
+   }
   },
   {
    "key": "lageder",
@@ -544,7 +607,7 @@
     "classification": "",
     "colour": "white",
     "grapes": "Chardonnay alone.",
-    "sites": "Vineyards around the Löwengang estate at Magrè, at about 230 to 330 metres, on sandy, gravelly soils rich in limestone, an alluvial fan of dolomite rock.",
+    "sites": "Vineyards around the Löwengang estate at Magrè, on sandy, gravelly soils rich in limestone: an alluvial fan of dolomite rock laid down by the Fenner stream.",
     "making": "Fermented with its own yeasts in barriques and larger casks, as the house describes it; the wine then stays on its lees for several months and rests about a year in bottle before release.",
     "glass": "White peach, ripe pear and lemon curd over hazelnut and a little toast; creamy in texture, held by fresh acidity, with a long, saline finish of wet stone.",
     "ageing": "Tight on release, it opens over three to five years and keeps for a decade and more.",
@@ -561,7 +624,7 @@
     ]
    },
    "table": "Löwengang Chardonnay is Alois Lageder's barrel fermented white from the family's manor at Magrè, made with its own yeasts in barriques and larger casks and given a year in bottle before release. Peach, pear and hazelnut over fresh acidity; serve it cool, not cold.",
-   "story": "The house traces its beginning to 1823, when the family's founder, a wagon maker in Bolzano, began to trade in wine; his successors bought vineyards and began to make wine themselves. In 1934 the family bought the Löwengang estate at Magrè, a manor of medieval origin whose name, as the house tells it, goes back to the Gaun family, raised to knights in 1674 with the title von und zu Löwengang. In the early 1980s the family set out to make a Chardonnay fermented and aged in barrel, as Burgundy does, and by the house's account the first Löwengang Chardonnay, of the 1983 vintage, reached the market in 1984. In 1995 the house moved its seat from Bolzano to Magrè, and from 2004 its own vineyards turned to biodynamic farming, with the first certified wines in 2008. Löwengang carries the estate's name and shows what the limestone rich gravel of the valley floor at Magrè gives Chardonnay when it is fermented in wood with its own yeasts and given time. For a sommelier it is the Chardonnay of Alto Adige to know by name: barrel fermented, from one estate, and made to keep.",
+   "story": "The house traces its beginning to 1823, when the family's founder, a wagon maker in Bolzano, began to trade in wine; his successors bought vineyards and began to make wine themselves. In 1934 the founder's great grandson bought the Löwengang estate at Magrè, a manor of medieval origin whose name, as the house tells it, goes back to the Gaun family, raised to knights in 1674 with the title von und zu Löwengang. In the early 1980s the family set out to make a Chardonnay fermented and aged in barrel, as Burgundy does, and by the house's account the first Löwengang Chardonnay, of the 1983 vintage, reached the market in 1984. In 1995 the house moved its seat from Bolzano to Magrè, and from 2004 its own vineyards turned to biodynamic farming. Löwengang carries the estate's name and shows what the limestone rich gravel of Magrè gives Chardonnay when it is fermented in wood with its own yeasts and given time. For a sommelier it is a Chardonnay of Alto Adige to know by name: barrel fermented, from one estate, and made to keep.",
    "others": [
     {
      "name": "Gaun Chardonnay",
@@ -597,7 +660,7 @@
       "High in the Val Venosta near Merano"
      ],
      "a": 0,
-     "exp": "The vineyards lie around the Löwengang estate at Magrè, about 230 to 330 metres up on limestone rich sand and gravel; the porphyry above Terlano gives Cantina Terlano's Vorberg.",
+     "exp": "The vineyards lie around the Löwengang estate at Magrè, on limestone rich sand and gravel; the porphyry above Terlano gives Cantina Terlano's Vorberg.",
      "tag": "wine"
     },
     {
@@ -654,7 +717,22 @@
     "The present head of the house and his son are living and are never named; Alois Lageder appears only as the name of the house.",
     "The library's Lagrein Lindenburg was not checked here and is left out of others; Gaun Chardonnay rests on the house's own page."
    ],
-   "checked": null
+   "checked": {
+    "date": "2026-11-12",
+    "by": "refuter",
+    "verdict": "changed",
+    "changed": [
+     "wine.sites and questions[0].exp: the altitude \"about 230 to 330 metres\" is taken out, found on no page read here; the sites now add the house's own line that the alluvial fan was laid down by the Fenner stream.",
+     "story: \"with the first certified wines in 2008\" is taken out: the turn to biodynamics in 2004 stands on the house and several accounts, but no source read gave 2008, and one gives full Demeter certification only in 2024.",
+     "story: in 1934 \"the family bought\" the estate; now \"the founder's great grandson bought\", as the house's family page has it; he died in 1963 and stays described.",
+     "story: \"the valley floor at Magrè\"; now \"Magrè\", since the house places the vines on an alluvial fan.",
+     "story: \"the Chardonnay of Alto Adige to know by name\"; now \"a Chardonnay\", a rank taken out."
+    ],
+    "open": [
+     "The house's Inedito history tells that a Californian vintner advised keeping the 1983 longer in barrel; with one source for the story and his dates not read here, it stays out.",
+     "No altitude for Löwengang's vines was found; the house gives 230 to 250 metres for Gaun, on the scree of Magrè."
+    ]
+   }
   }
  ]
 }
