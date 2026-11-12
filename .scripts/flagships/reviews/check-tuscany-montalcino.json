@@ -1,0 +1,1249 @@
+{
+ "group": "tuscany-montalcino",
+ "chunk": "f6",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "biondi-santi": 5,
+   "il-poggione": 3,
+   "banfi": 6,
+   "casanova-di-neri": 5,
+   "soldera": 6,
+   "shared": 2
+  },
+  "note": "Twenty seven searches of a share of twenty eight, none of them the author's; one left unspent. Two were shared: the consorzio's disciplinare for the release rule of all five records, and the consorzio's history for the dates every record leans on (1865 and 1869, the DOC of 1966, the consorzio of 1967, the DOCG of 1980). Eleven were restricted to a primary body's or a house's own domain (the consorzio twice, biondisanti.it three times, tenutailpoggione.it twice, banfi.it three times, casanovadineri.it twice, soldera.it once) and are read as primary through their summaries. One search for Teodolinda Banfi without a domain returned nothing on the subject and was repeated with the house's domain. No WebFetch was tried. Every record was tested; nothing that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the release rule (it touches every record), then to the dates, the people, the sites and the making; a fact the Codex library states stood on the library unless a search contradicted it.",
+  "Where two of the house's own pages, or the house and the trade, disagreed (Banfi's aspect, Soldera's temperature control, Casanova di Neri's cask months), the record now says only what both allow, or nothing.",
+  "Sources whose address or title carries a writer's name (a critic's site on Soldera's departure, a writer's wine wiki on Soldera and Casanova di Neri) were read in the results but never cited."
+ ],
+ "records": [
+  {
+   "key": "biondi-santi",
+   "searches": 5,
+   "tested": [
+    "The release rule: the disciplinare releases Brunello on 1 January of the year after the fifth year counted from the harvest, six for a Riserva, with two years at least in wood and four months in bottle, six for a Riserva: the record's six years before release was loose and is set right.",
+    "Clemente Santi, the 1865 vintage and its silver medal of 1869 from the agrarian committee of Montepulciano, his grandson Ferruccio, the 1888 as the first wine officially labelled Brunello di Montalcino, the DOC of 1966, the consorzio of 1967, the DOCG of 1980 and the consorzio's claim that it was Italy's first: confirmed on the consorzio's own pages. The consorzio calls Clemente a chemist; pharmacist rested on one source and was cut.",
+    "Ferruccio's death in 1917: the importer, Opening a Bottle and other trade profiles give 1917; a wine glossary gives 1848 to 1916. Kept, and left open.",
+    "The topping up and recorking of the 1888 in 1927, 1970 and 1985 and BBS11 registered in 1978: confirmed on the estate's own 1888 and 1891 sheets.",
+    "The making: the estate's 2016 Riserva sheet gives upright Slavonian oak vats, indigenous yeasts selected in its own vineyards and three years in Slavonian oak; its general Riserva page gives cement vats. The record names the 2016 sheet, so it stands, with the conflict left open.",
+    "The sites: the estate's 1995 Riserva sheet gives 300 to 500 metres, every aspect from south to north, stony soils of mixed origin with galestro the best; the Rosso 2019 sheet places Greppo south east of the town; the wine page gives the Riserva's vines over twenty five years. Around 500 metres, clay and marl were changed.",
+    "The grandson's death in 2013 and the sale to EPI at the end of 2016: on the author's sources, not contradicted.",
+    "The house rules: the living descendants are described (people.json holds Tancredi Biondi Santi), no price or score, British spelling, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.classification",
+     "was": "Riserva of the Brunello DOCG: six years before release, two at least in oak",
+     "now": "Riserva of the Brunello di Montalcino DOCG, released from the sixth year after the harvest",
+     "why": "The disciplinare counts release from 1 January of the year after the fifth year from the harvest, the sixth for a Riserva, not six whole years.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+       "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: The wines",
+       "url": "https://www.consorziobrunellodimontalcino.it/en/583/wines",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "at around 500 metres on galestro, the loose, stony shale of the zone, with clay and marl; the estate's sheets have long named vines over twenty five years old for the Riserva",
+     "now": "between about 300 and 500 metres by an estate sheet, on stony soils of mixed origin, the galestro shale prized among them; the Riserva comes from the oldest vines, over twenty five years old",
+     "why": "The estate's own sheet gives the altitude range and the soil; clay and marl rested on no source read; the vine age is on the estate's wine page.",
+     "sources": [
+      {
+       "title": "Biondi-Santi: Brunello di Montalcino Riserva 1995 sheet",
+       "url": "http://www.biondisanti.it/Ita/scheda_brunello_ris.php?anno=1995&tipo=a",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Biondi-Santi: Rosso di Montalcino 2019 sheet",
+       "url": "https://www.biondisanti.it/pdfgen/sheet/76/464/en",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Biondi-Santi: The wines",
+       "url": "https://www.biondisanti.it/en/prodotti/wines",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Biondi-Santi: Brunello di Montalcino Riserva 2013 sheet",
+       "url": "https://www.biondisanti.it/pdfgen/sheet/79/320/en",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making and wine.label[1].means",
+     "was": "no sooner than six years after the harvest",
+     "now": "no sooner than 1 January of the sixth year after the harvest",
+     "why": "The disciplinare's rule.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+       "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "the 1888 the consorzio counts as the first Brunello",
+     "now": "the 1888 the consorzio counts as the first wine labelled Brunello di Montalcino",
+     "why": "The consorzio's own wording; the record's trap teaches that the name Brunello was honoured earlier, for the 1865, so the table line contradicted it.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: 1861 to 2011, 150 years of wine history",
+       "url": "https://www.consorziobrunellodimontalcino.it/en/1746/1861-2011-150-years-of-italian-history-and-150-years-of-wine-history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: Montalcino, the territory and the wines",
+       "url": "https://www.consorziobrunellodimontalcino.it/files/Brochure/en-brochure.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and questions[1].exp",
+     "was": "a Montalcino pharmacist and chemist",
+     "now": "a Montalcino chemist",
+     "why": "The consorzio calls Clemente Santi a chemist; pharmacist rested on one source.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: 1861 to 2011, 150 years of wine history",
+       "url": "https://www.consorziobrunellodimontalcino.it/en/1746/1861-2011-150-years-of-italian-history-and-150-years-of-wine-history",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "from Greppo vines of ten to twenty five years, released a year before the Riserva",
+     "now": "released a year before the Riserva",
+     "why": "The vine ages of the annata rested on no source read.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+       "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Clay and marl at Greppo.",
+    "The annata's vines of ten to twenty five years.",
+    "Pharmacist, for Clemente Santi."
+   ],
+   "open": [
+    "Ferruccio Biondi Santi's death: 1917 by the importer and the trade, 1916 by one glossary.",
+    "Cement vats on the estate's general Riserva page against upright Slavonian oak vats on its 2016 sheet.",
+    "Greppo's altitude: 450 to 560 metres in trade profiles against 300 to 500 on the estate sheet of 1995."
+   ],
+   "extraSources": [
+    {
+     "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+     "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Consorzio del vino Brunello di Montalcino: The wines",
+     "url": "https://www.consorziobrunellodimontalcino.it/en/583/wines",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Consorzio del vino Brunello di Montalcino: 1861 to 2011, 150 years of wine history",
+     "url": "https://www.consorziobrunellodimontalcino.it/en/1746/1861-2011-150-years-of-italian-history-and-150-years-of-wine-history",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Consorzio del vino Brunello di Montalcino: Montalcino, the territory and the wines",
+     "url": "https://www.consorziobrunellodimontalcino.it/files/Brochure/en-brochure.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: Brunello di Montalcino Riserva 1888",
+     "url": "https://www.biondisanti.it/en/prodotti/vini/7/vini/79/index.php?p=prodotti&lg=en&id_cat=7&id_prod=79&a=1888",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: Brunello di Montalcino Riserva 2016",
+     "url": "https://www.biondisanti.it/en/prodotti/vini/7/vini/79/index.php?p=prodotti&lg=en&id_cat=7&id_prod=79&a=2016",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: The wines",
+     "url": "https://www.biondisanti.it/en/prodotti/wines",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: Brunello di Montalcino Riserva 1995 sheet",
+     "url": "http://www.biondisanti.it/Ita/scheda_brunello_ris.php?anno=1995&tipo=a",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: Rosso di Montalcino 2019 sheet",
+     "url": "https://www.biondisanti.it/pdfgen/sheet/76/464/en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: Brunello di Montalcino Riserva 2013 sheet",
+     "url": "https://www.biondisanti.it/pdfgen/sheet/79/320/en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wilson Daniels: Biondi-Santi story",
+     "url": "https://wilsondaniels.com/winery/biondi-santi/story/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Opening a Bottle: Biondi-Santi Tenuta Greppo",
+     "url": "https://openingabottle.com/?p=37258",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus glossary: Biondi Santi",
+     "url": "https://glossary.wein.plus/biondi-santi",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "il-poggione",
+   "searches": 3,
+   "tested": [
+    "The founder's tale: the estate's pages and its brochure tell of a Florentine landowner, from Scandicci by the brochure, who bought land after a shepherd's description; the record tells it as the family does, and describes him, since no dates were found.",
+    "The founding membership of the consorzio and the early sale as Brunello: on the estate's pages alone, so the membership is now hedged in the story and in the question.",
+    "Vigna Paganelli planted in 1964 on an alluvial terrace: the estate's Riserva page for the year, and two merchants for the alluvial terrace or plateau; confirmed.",
+    "The making: the estate's 2020 sheet gives a submerged cap fermentation of fifteen to twenty days in steel with indigenous yeasts, the malolactic in steel and long ageing in French oak casks of 30 to 50 hectolitres; the three years rest on Decanter and a merchant: confirmed, the length left open.",
+    "The sites: the sheet gives the oldest vineyards between 150 and 450 metres and the estate about ten kilometres south of Montalcino: confirmed.",
+    "The release rule on the label set right from the disciplinare.",
+    "The house rules: the family members who run the estate are living and are not named; no price or score; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.label[0].means",
+     "was": "released at least five years after the harvest, two of them in oak",
+     "now": "released from 1 January of the fifth year after the harvest, after two years at least in oak",
+     "why": "The disciplinare's rule.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+       "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the house was among its founding members",
+     "now": "the house was, by its own account, among its founding members",
+     "why": "Only the estate's own pages give the founding membership.",
+     "sources": [
+      {
+       "title": "Tenuta Il Poggione: Estate",
+       "url": "https://www.tenutailpoggione.it/en/274/estate",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tenuta Il Poggione: brochure, the chronicle of the estate",
+       "url": "https://tenutailpoggione.it/files/brochure_poggione_low.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q",
+     "was": "In which year did Montalcino's growers form the Brunello consorzio, with Il Poggione among its founding members?",
+     "now": "Il Poggione counts itself among the founders of the Brunello consorzio. In which year was the consorzio formed?",
+     "why": "The stem stated the house's claim as a fact; the key, 1967, is the consorzio's own date.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: 1861 to 2011, 150 years of wine history",
+       "url": "https://www.consorziobrunellodimontalcino.it/en/1746/1861-2011-150-years-of-italian-history-and-150-years-of-wine-history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tenuta Il Poggione: Estate",
+       "url": "https://www.tenutailpoggione.it/en/274/estate",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "About three years in cask: Decanter and a merchant; the estate's sheet gives no length.",
+    "The early sale as Brunello and the shepherd's tale stand as the house's account."
+   ],
+   "extraSources": [
+    {
+     "title": "Tenuta Il Poggione: Estate",
+     "url": "https://www.tenutailpoggione.it/en/274/estate",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Tenuta Il Poggione: brochure, the chronicle of the estate",
+     "url": "https://tenutailpoggione.it/files/brochure_poggione_low.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Tenuta Il Poggione: Brunello di Montalcino 2020 sheet",
+     "url": "https://tenutailpoggione.it/pdfgen/sheet/8/126/en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Tenuta Il Poggione: Brunello di Montalcino Riserva Vigna Paganelli",
+     "url": "https://www.tenutailpoggione.it/en/prodotti/products/7/wines/5/brunello-di-montalcino-riserva-vigna-paganelli-d-o-c-g",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Il Poggione, tasting four decades of Brunello",
+     "url": "https://www.decanter.com/premium/il-poggione-brunello-411461/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Universal Fine Wines: Il Poggione Vigna Paganelli 2016",
+     "url": "https://www.universalfws.com/p-12120-il-poggione-vigna-paganelli-2016-brunello-di-montalcino-riserva-wine.aspx",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+     "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "banfi",
+   "searches": 6,
+   "tested": [
+    "The firm and its name: founded in New York in 1919 by most accounts (one says 1917) and named for the founder's aunt, who kept the house of the Milan cardinal who became Pius XI; the house's own site says she was the first lay person to head a pope's household staff: the record tells it as the family does, and she is described, her dates not found.",
+    "Riunite from 1969: on the author's Decanter profile and Wikipedia, not contradicted.",
+    "The founding in 1978 (the first land and the first Sangiovese planted that year) and the winery's opening on 12 September 1984: confirmed on the house's own pages. The castle in 1983 stays as the estate's timeline, hedged.",
+    "The credit for launching Brunello in the United States: the house's own news page gives it to one of the brothers, as the record says.",
+    "Poggio all'Oro: first vintage 1985 and made only in great vintages, on the house's sheets; the altitude 229 to 250 metres on its vineyard sheet; the soil brown clay and silt with calcareous stones and pebbles on its sheets, sandy clay loam on its new site; the aspect north west on the new site and south west in a 2004 release: the aspect cut.",
+    "The making: a 2007 sheet names that vintage as the first in Horizon tanks, so the start of 2010 was wrong or unsettled and is cut; the 2016 sheet gives 80 per cent in 60 and 90 hectolitre casks and 20 in 350 litre barrels for thirty months at least, the 2015 forty two months at 70 and 30: the record's from 2015 confirmed.",
+    "The service at 16 to 18 degrees Celsius: the house's own Poggio all'Oro site.",
+    "The questions: the distractor a river terrace beside the Orcia could be read as right, since the house calls the site a broad natural terrace and the estate lies by the Orcia; it is replaced.",
+    "The house rules: the brothers, the next generation and the oenologist who found the land are described; no price or score; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "on a plateau some 230 to 255 metres up, facing south west, on brown clay with small alluvial stones",
+     "now": "on a broad plateau at about 230 to 250 metres, on brown clay and silt holding calcareous stones and pebbles",
+     "why": "The vineyard sheet gives 229 to 250 metres; the house's own pages disagree on the aspect; the sheets give that soil.",
+     "sources": [
+      {
+       "title": "Banfi: Poggio all'Oro vineyard sheet",
+       "url": "https://poggioalloro.banfi.it/wp-content/uploads/2025/10/b_poggio_oroENG.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Banfi: Poggio all'Oro",
+       "url": "https://www.banfi.it/eng/poggio-all-oro/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Banfi: Poggio all'Oro site",
+       "url": "https://poggioalloro.banfi.it/en",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Banfi: Poggio all'Oro 2007 sheet",
+       "url": "https://www.banfi.it/wp-content/uploads/2024/08/PAO_ENG_2007.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table and questions[0]",
+     "was": "one plateau facing south west",
+     "now": "one broad plateau",
+     "why": "The aspect cannot be settled from the house's own pages.",
+     "sources": [
+      {
+       "title": "Banfi: Poggio all'Oro site",
+       "url": "https://poggioalloro.banfi.it/en",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Banfi: Poggio all'Oro",
+       "url": "https://www.banfi.it/eng/poggio-all-oro/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "In the estate's sheets from the 2010 vintage on, it ferments at controlled temperature in Horizon tanks",
+     "now": "Since the estate built its Horizon tanks, which join French oak to stainless steel, it has fermented in them at controlled temperature",
+     "why": "A 2007 sheet names that vintage as the first in Horizon.",
+     "sources": [
+      {
+       "title": "Banfi: Poggio all'Oro 2007 sheet",
+       "url": "https://www.banfi.it/wp-content/uploads/2024/08/PAO_ENG_2007.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Banfi: Poggio all'Oro 2016 sheet",
+       "url": "https://www.banfi.it/wp-content/uploads/2024/08/PAO2016_ENG.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.classification, wine.ageing and wine.label[1].means",
+     "was": "released six years after the harvest",
+     "now": "from 1 January of the sixth year after the harvest, no sooner",
+     "why": "The disciplinare's rule.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+       "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].front",
+     "was": "Which Lambrusco built the fortune",
+     "now": "Which brand of Lambrusco built the fortune",
+     "why": "Riunite is a brand, not a kind of Lambrusco.",
+     "sources": [
+      {
+       "title": "Wikipedia: Banfi Vintners",
+       "url": "https://en.wikipedia.org/wiki/Banfi_Vintners",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Funding Universe: Banfi Products Corp. history",
+       "url": "https://www.fundinguniverse.com/company-histories/banfi-products-corp-history/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].opts[3]",
+     "was": "A river terrace beside the Orcia",
+     "now": "A steep slope below the town walls",
+     "why": "The distractor was close enough to the house's own description to be read as right.",
+     "sources": [
+      {
+       "title": "Banfi: Poggio all'Oro site",
+       "url": "https://poggioalloro.banfi.it/en",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The south west aspect.",
+    "The year 2010 for the first Horizon fermentation."
+   ],
+   "open": [
+    "The castle in 1983 by the estate's timeline, or with the land of 1977 by one trade account."
+   ],
+   "extraSources": [
+    {
+     "title": "Banfi: 1978 to 2018, Banfi turns 40",
+     "url": "https://www.banfi.it/eng/news/1978-2018-banfi-turns-40/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: 12 September 1984, the Banfi winery is founded in Montalcino",
+     "url": "https://www.banfi.it/eng/september-12-1984-the-banfi-winery-is-founded-in-montalcino/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Banfi Vintners",
+     "url": "https://en.wikipedia.org/wiki/Banfi_Vintners",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Funding Universe: Banfi Products Corp. history",
+     "url": "https://www.fundinguniverse.com/company-histories/banfi-products-corp-history/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: the man who launched Brunello in the USA",
+     "url": "https://www.banfi.it/eng/category/news/page/20/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: Poggio all'Oro",
+     "url": "https://www.banfi.it/eng/poggio-all-oro/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: Poggio all'Oro site",
+     "url": "https://poggioalloro.banfi.it/en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: Poggio all'Oro vineyard sheet",
+     "url": "https://poggioalloro.banfi.it/wp-content/uploads/2025/10/b_poggio_oroENG.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: Poggio all'Oro 2007 sheet",
+     "url": "https://www.banfi.it/wp-content/uploads/2024/08/PAO_ENG_2007.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: Poggio all'Oro 2015 sheet",
+     "url": "https://www.banfi.it/wp-content/uploads/2024/08/PAO2015_ENG.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Banfi: Poggio all'Oro 2016 sheet",
+     "url": "https://www.banfi.it/wp-content/uploads/2024/08/PAO2016_ENG.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "casanova-di-neri",
+   "searches": 5,
+   "tested": [
+    "The dates: founded in 1971 in the east of Montalcino, the first Brunello, the White Label, from 1978, Cerretalto first bottled in 1981, the estate handed to the son in 1991 and Tenuta Nuova first made in 1993: confirmed on the estate's own pages and a producer guide.",
+    "Cerretalto: a four hectare natural amphitheatre above the Asso river, first made in 1981 and only in chosen years since (the second in 1986): confirmed; its purchase is dated 1971 in one account and 1981 in others, so its place as the first vineyard is told as the estate tells it.",
+    "Tenuta Nuova's site: the estate's page gives the land where nobody had planted Sangiovese and the study of microclimates, clones, rootstocks and density, but no position; the trade puts its parcels in the south, Le Cetine near Sant'Angelo in Colle and Pietradonice near Castelnuovo dell'Abate. South east of the town was not confirmed and is cut.",
+    "The making: hand selection, an optical sorter (from 2017 by one merchant, with shorter macerations), spontaneous fermentation in conical steel for about twenty four days; oak given as 30, 35, 37 and 42 months by different merchants, in French tonneaux by several: about three years and the 600 litre size were changed.",
+    "The house rules: the founder and his son are described (people.json holds the son); the American magazine's ranking of the 2001 stays out; no price or score; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "lies south east of the town of Montalcino",
+     "now": "is land where, by the estate's account, nobody had planted Sangiovese before, with its clones, rootstocks and planting density chosen by study",
+     "why": "The estate does not place it; the trade places its parcels in the south.",
+     "sources": [
+      {
+       "title": "Casanova di Neri: Tenuta Nuova",
+       "url": "https://www.casanovadineri.it/en/tenuta-nuova-brunello-di-montalcino.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare Wines: Casanova di Neri producer page",
+       "url": "https://www.frw.co.uk/producer/612ec28006000000000005d6/casanova-di-neri",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: Casanova di Neri producer guide",
+       "url": "https://www.winescholarguild.com/producer-guide/italy/tuscany/2486-casanuova-di-neri",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table, story and questions[0].exp",
+     "was": "land south east of the town",
+     "now": "land that, as the estate tells it, had never carried Sangiovese",
+     "why": "As above.",
+     "sources": [
+      {
+       "title": "Casanova di Neri: Tenuta Nuova",
+       "url": "https://www.casanovadineri.it/en/tenuta-nuova-brunello-di-montalcino.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "destemmed and passed through an optical sorter, then fermented for three weeks or more ... about three years in oak, by the 2019 vintage in 600 litre tonneaux",
+     "now": "passed through an optical sorter, then ferment with native yeasts for about twenty four days ... some thirty months or more in oak, by the 2019 vintage in French tonneaux",
+     "why": "The merchants agree on spontaneous fermentation and about twenty four days and differ from thirty to forty two months in oak; the 600 litre size rests on one source.",
+     "sources": [
+      {
+       "title": "Casanova di Neri: Brunello di Montalcino",
+       "url": "https://www.casanovadineri.it/en/brunello-di-montalcino.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Callmewine: Tenuta Nuova 2019",
+       "url": "https://callmewine.com/en/brunello-tenuta-nuova-casanova-di-neri-2019-P51869.htm",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Millesima: Casanova di Neri Tenuta Nuova 2019",
+       "url": "https://www.millesima-usa.com/casanova-di-neri-tenuta-nuova-2019.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, others[0] and cards[1]",
+     "was": "Its first vineyard was Cerretalto; Cerretalto, from the first vineyard, is bottled on its own only in selected years",
+     "now": "Its first vineyard, as the estate tells it, was Cerretalto; Cerretalto, bottled on its own from the 1981 vintage, appears only in selected years",
+     "why": "The estate's timeline and a producer guide give 1981; the purchase date is disputed.",
+     "sources": [
+      {
+       "title": "Casanova di Neri: The estate",
+       "url": "https://www.casanovadineri.it/en/casanova-di-neri.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Casanova di Neri: Cerretalto",
+       "url": "https://www.casanovadineri.it/en/cerretalto-brunello-di-montalcino.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: Casanova di Neri producer guide",
+       "url": "https://www.winescholarguild.com/producer-guide/italy/tuscany/2486-casanuova-di-neri",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Dalla Terra: Casanova di Neri producer page",
+       "url": "https://dallaterra.com/producer/casanova-di-neri/html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "moved towards gentler extraction and less new wood, ageing Tenuta Nuova in 600 litre tonneaux",
+     "now": "moved towards shorter maceration and gentler oak, ageing Tenuta Nuova in French tonneaux",
+     "why": "A merchant dates the shorter macerations to 2017; the tonneaux are in several merchants' notes.",
+     "sources": [
+      {
+       "title": "Callmewine: Tenuta Nuova 2019",
+       "url": "https://callmewine.com/en/brunello-tenuta-nuova-casanova-di-neri-2019-P51869.htm",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Millesima: Casanova di Neri Tenuta Nuova 2019",
+       "url": "https://www.millesima-usa.com/casanova-di-neri-tenuta-nuova-2019.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "for three weeks or more, after the berries pass an optical sorter",
+     "now": "for about twenty four days, after the bunches pass an optical sorter",
+     "why": "As in the making.",
+     "sources": [
+      {
+       "title": "Casanova di Neri: Brunello di Montalcino",
+       "url": "https://www.casanovadineri.it/en/brunello-di-montalcino.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Callmewine: Tenuta Nuova 2019",
+       "url": "https://callmewine.com/en/brunello-tenuta-nuova-casanova-di-neri-2019-P51869.htm",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "South east of the town, for Tenuta Nuova.",
+    "The 600 litre size of the tonneaux.",
+    "Destemming before sorting, which the merchants order differently."
+   ],
+   "open": [
+    "The purchase year of Cerretalto, 1971 or 1981.",
+    "Tenuta Nuova's position on the hill; the plan's why speaks of the south east, not shipped."
+   ],
+   "extraSources": [
+    {
+     "title": "Casanova di Neri: The estate",
+     "url": "https://www.casanovadineri.it/en/casanova-di-neri.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Casanova di Neri: Cerretalto",
+     "url": "https://www.casanovadineri.it/en/cerretalto-brunello-di-montalcino.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Casanova di Neri: Tenuta Nuova",
+     "url": "https://www.casanovadineri.it/en/tenuta-nuova-brunello-di-montalcino.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Casanova di Neri: Brunello di Montalcino",
+     "url": "https://www.casanovadineri.it/en/brunello-di-montalcino.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Fine and Rare Wines: Casanova di Neri producer page",
+     "url": "https://www.frw.co.uk/producer/612ec28006000000000005d6/casanova-di-neri",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Scholar Guild: Casanova di Neri producer guide",
+     "url": "https://www.winescholarguild.com/producer-guide/italy/tuscany/2486-casanuova-di-neri",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Callmewine: Tenuta Nuova 2019",
+     "url": "https://callmewine.com/en/brunello-tenuta-nuova-casanova-di-neri-2019-P51869.htm",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Millesima: Casanova di Neri Tenuta Nuova 2019",
+     "url": "https://www.millesima-usa.com/casanova-di-neri-tenuta-nuova-2019.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Dalla Terra: Casanova di Neri producer page",
+     "url": "https://dallaterra.com/producer/casanova-di-neri/html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "soldera",
+   "searches": 6,
+   "tested": [
+    "The founder: born in Treviso in 1937 (Gambero Rosso, Wikipedia; Vinous gives 1937 and a Milan upbringing), an insurance broker in Milan (Vinous, Decanter), died 16 February 2019 at eighty two (Decanter, Wikipedia): confirmed, so he is named with his dates.",
+    "The purchase of Case Basse in 1972: confirmed; the run down state rested on a writer's site and is cut.",
+    "The attack: the taps of the casks of the 2007 to 2012 vintages opened on the night of 2 December 2012 (Wikipedia; the night of 2 to 3 December by the family's statement), by a former employee: confirmed. The losses are given variously, so most of the wine stands.",
+    "The aftermath: producers and the consorzio offered wine of solidarity and he declined; English reports speak of his leaving or resigning in March 2013, Italian ones of an expulsion after a quarrel over a word: left is used. The founder's quoted reason for refusing rested on no source read and is cut.",
+    "The label: from the 2006 vintage, released in 2013, Toscana IGT rather than Brunello, a choice the estate calls commercial, for the identity of its wine, and the founder said the name Soldera would guarantee more than Brunello: confirmed. The estate's 2019 and 2021 sheets are headed Toscana IGP; the year of that change was not found.",
+    "The vineyards and the making: Case Basse and Intistieti, two plots of Sangiovese, at 320 metres by the estate; fermentation in large Slavonian oak vats of over 100 quintals after the berries are checked one by one; the 2019 sheet says the fermentation temperature is continuously monitored, so no temperature control is cut, with the six years in cask and the bottling without filtration, which rested on one citable source.",
+    "The garden: a botanical garden of over two hectares with antique roses, planted by the founder's wife, with nests and beehives among the rows: confirmed on the estate's page and the Italian botanical heritage guide.",
+    "Intistieti as a label of 1985 to 1992: not found, cut.",
+    "The house rules: the founder's widow and children and the former employee are not named; no price or score; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making and questions[0].exp",
+     "was": "truncated cone Slavonian oak vats of more than 100 hectolitres, with no temperature control ... up to six by some accounts, and is bottled without filtration",
+     "now": "The berries are checked one by one, then ferment spontaneously with native yeasts in large Slavonian oak vats. The wine then ages for several years in large Slavonian oak casks",
+     "why": "The estate gives vats of over 100 quintals and a monitored fermentation temperature; the cask years and the filtration rested on one citable source.",
+     "sources": [
+      {
+       "title": "Soldera Case Basse: Production",
+       "url": "https://www.soldera.it/en/soldera-wine-production/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Soldera Case Basse: Toscana IGP 2019 sheet",
+       "url": "https://www.soldera.it/wp-content/uploads/SCHEDA-2019-UK.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.appellation and wine.label[0].means",
+     "was": "printed Toscana IGP from the 2013 vintage",
+     "now": "written Toscana IGP on later labels",
+     "why": "The estate's later sheets are headed IGP; the year of the change was not confirmed.",
+     "sources": [
+      {
+       "title": "Soldera Case Basse: Toscana IGP 2019 sheet",
+       "url": "https://www.soldera.it/wp-content/uploads/SCHEDA-2019-UK.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Soldera Case Basse: Toscana IGP Sangiovese 2006",
+       "url": "https://www.soldera.it/en/toscana-sangiovese-igt-soldera-2006-2/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites and story",
+     "was": "to shelter the creatures that prey on vine pests",
+     "now": "among the rows for the birds and insects that keep the vines healthy",
+     "why": "The estate's own wording of what the nests and hives are for.",
+     "sources": [
+      {
+       "title": "Soldera Case Basse: Natural vinegrowing",
+       "url": "https://www.soldera.it/en/natural-vinegrowing-and-winemaking/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Italian Botanical Heritage: Case Basse farm and its garden",
+       "url": "https://luoghi.italianbotanicalheritage.com/en/case-basse-farm-and-graziella-solderas-garden/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "he refused, saying he could not bottle as his own a wine whose origin he did not know, and in March 2013 he resigned from the consorzio",
+     "now": "and he turned it down; in March 2013 he left the consorzio",
+     "why": "The quoted reason was found nowhere; resignation and expulsion are both reported.",
+     "sources": [
+      {
+       "title": "The Drinks Business: Soldera, Brunellogate has been forgotten",
+       "url": "https://www.thedrinksbusiness.com/2017/04/soldera-brunellogate-has-been-forgotten/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Scatti di Gusto: Soldera sued and expelled from the consorzio",
+       "url": "https://www.scattidigusto.it/gianfranco-soldera-querelato-ed-espulso",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Case Basse di Gianfranco Soldera",
+       "url": "https://en.wikipedia.org/wiki/Case_Basse_di_Gianfranco_Soldera",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "From the 2006 vintage, already in bottle on the night of the attack",
+     "now": "From the 2006 vintage, which the attack did not reach",
+     "why": "The casks attacked held 2007 to 2012; the 2006 being in bottle was not read.",
+     "sources": [
+      {
+       "title": "Wikipedia: Case Basse di Gianfranco Soldera",
+       "url": "https://en.wikipedia.org/wiki/Case_Basse_di_Gianfranco_Soldera",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: Soldera family defiant after vandalism",
+       "url": "https://www.thedrinksbusiness.com/2012/12/soldera-family-defiant-after-vandalism/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and others[0].note",
+     "was": "in good years the whole crop became Brunello di Montalcino Riserva",
+     "now": "in good years it was bottled as Brunello di Montalcino Riserva",
+     "why": "The whole crop rested on no source read.",
+     "sources": [
+      {
+       "title": "Wikipedia: Case Basse di Gianfranco Soldera",
+       "url": "https://en.wikipedia.org/wiki/Case_Basse_di_Gianfranco_Soldera",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others and traps[2]",
+     "was": "Intistieti, made in some years between 1985 and 1992; an old label of the estate",
+     "now": "Intistieti is one of the estate's two vineyard plots, beside Case Basse",
+     "why": "The label years were not found; the two plots are on the estate's pages.",
+     "sources": [
+      {
+       "title": "Soldera Case Basse: Production",
+       "url": "https://www.soldera.it/en/soldera-wine-production/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "After the 2012 vandalism the estate left the Brunello consorzio in 2013, and from the 2006 vintage its wine is labelled Toscana IGT.",
+     "now": "The estate left the Brunello consorzio in 2013, after the vandalism of 2012, and chose Toscana IGT from the 2006 vintage, trusting its own name over Brunello's.",
+     "why": "The estate gives the identity of its wine as the reason, and the founder said his name would guarantee more than Brunello.",
+     "sources": [
+      {
+       "title": "Soldera Case Basse: Toscana IGP Sangiovese 2006",
+       "url": "https://www.soldera.it/en/toscana-sangiovese-igt-soldera-2006-2/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: Soldera, Brunellogate has been forgotten",
+       "url": "https://www.thedrinksbusiness.com/2017/04/soldera-brunellogate-has-been-forgotten/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[1] and exp",
+     "was": "A pharmacist in Montalcino",
+     "now": "A chemist in Montalcino",
+     "why": "To match the Biondi-Santi record and the consorzio's word.",
+     "sources": [
+      {
+       "title": "Consorzio del vino Brunello di Montalcino: 1861 to 2011, 150 years of wine history",
+       "url": "https://www.consorziobrunellodimontalcino.it/en/1746/1861-2011-150-years-of-italian-history-and-150-years-of-wine-history",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "No temperature control.",
+    "Vats of more than 100 hectolitres, and truncated cone.",
+    "Up to six years in cask.",
+    "Bottling without filtration.",
+    "The founder's quoted reason for refusing the wine.",
+    "Intistieti as a label of 1985 to 1992.",
+    "The run down farm."
+   ],
+   "open": [
+    "The night of the attack: 2 December by Wikipedia, the night of 2 to 3 December by the family."
+   ],
+   "extraSources": [
+    {
+     "title": "Decanter: Gianfranco Soldera dies",
+     "url": "https://www.decanter.com/obituaries/montalcino-producer-gianfranco-soldera-dies-409226/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gambero Rosso: Gianfranco Soldera has died",
+     "url": "https://www.gamberorosso.it/attualita/e-morto-gianfranco-soldera-produttore-mitico-del-brunello-di-montalcino/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinous: Remembering Gianfranco Soldera",
+     "url": "https://v1.vinous.com/articles/remembering-gianfranco-soldera-apr-2019",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Case Basse di Gianfranco Soldera",
+     "url": "https://en.wikipedia.org/wiki/Case_Basse_di_Gianfranco_Soldera",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "The Drinks Business: Soldera family defiant after vandalism",
+     "url": "https://www.thedrinksbusiness.com/2012/12/soldera-family-defiant-after-vandalism/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "The Drinks Business: Soldera, Brunellogate has been forgotten",
+     "url": "https://www.thedrinksbusiness.com/2017/04/soldera-brunellogate-has-been-forgotten/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Montalcino rallies round as Soldera's Brunellos are destroyed",
+     "url": "https://www.decanter.com/wine-news/neighbours-rally-round-as-soldera-s-brunellos-are-destroyed-23304",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Scatti di Gusto: Soldera sued and expelled from the consorzio",
+     "url": "https://www.scattidigusto.it/gianfranco-soldera-querelato-ed-espulso",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Soldera Case Basse: Toscana IGP Sangiovese 2006",
+     "url": "https://www.soldera.it/en/toscana-sangiovese-igt-soldera-2006-2/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Soldera Case Basse: Production",
+     "url": "https://www.soldera.it/en/soldera-wine-production/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Soldera Case Basse: Toscana IGP 2019 sheet",
+     "url": "https://www.soldera.it/wp-content/uploads/SCHEDA-2019-UK.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Soldera Case Basse: Natural vinegrowing",
+     "url": "https://www.soldera.it/en/natural-vinegrowing-and-winemaking/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Italian Botanical Heritage: Case Basse farm and its garden",
+     "url": "https://luoghi.italianbotanicalheritage.com/en/case-basse-farm-and-graziella-solderas-garden/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Leopoldo Franceschi and Livia Franceschi",
+   "where": "Il Poggione's estate pages, as the family who run it",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Cristina Mariani-May",
+   "where": "Banfi's own pages, as the third generation who runs the firm",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "John Mariani",
+   "where": "Banfi's pages and an interview, as one of the two founding brothers",
+   "believed": "not settled; the record describes both brothers; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Ezio Rivella",
+   "where": "Banfi's page on the opening of 1984, as the oenologist beside the brothers",
+   "believed": "believed living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Giacomo Neri",
+   "where": "the estate's history, as the son who took over in 1991",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Tancredi Biondi Santi",
+   "where": "the trade, as a descendant",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Graziella Soldera",
+   "where": "the estate's pages and the botanical guide, as the founder's wife who planted the garden",
+   "believed": "believed living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "the former employee convicted of the attack",
+   "where": "Wikipedia and the trade press name him",
+   "believed": "living; left unnamed here and in the record",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Clemente Santi",
+   "note": "The chemist of the 1865 wine; 1795 to 1885 in one source only, so described."
+  },
+  {
+   "name": "Ferruccio Biondi Santi",
+   "note": "Named with his death in 1917 (one glossary gives 1916); left open."
+  },
+  {
+   "name": "Tancredi Biondi Santi, the grandfather (died 1970)",
+   "note": "Described as Ferruccio's son, since a living descendant shares the name."
+  },
+  {
+   "name": "Franco Biondi Santi",
+   "note": "Died 2013; described as the grandson."
+  },
+  {
+   "name": "Lavinio Franceschi",
+   "note": "The founder of Il Poggione; his dates not found, described."
+  },
+  {
+   "name": "John Mariani senior and Teodolinda Banfi",
+   "note": "The founder of the New York firm and the aunt it is named for; dates not found, described."
+  },
+  {
+   "name": "Giovanni Neri",
+   "note": "The founder of Casanova di Neri in 1971; dates not found, described."
+  },
+  {
+   "name": "Gianfranco Soldera",
+   "note": "1937 to 2019; named with his dates."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "biondi-santi",
+   "ruling": "kept: no swap proposed; the Riserva is the house's flagship in the library and the plan."
+  },
+  {
+   "pick": "il-poggione",
+   "ruling": "kept: no swap proposed; the annata Brunello is the wine on Brennan's list and the library's teaching wine for the south of the hill, with Vigna Paganelli among the others."
+  },
+  {
+   "pick": "banfi",
+   "ruling": "kept: no swap proposed; Poggio all'Oro is the library's Riserva flagship of the house."
+  },
+  {
+   "pick": "casanova-di-neri",
+   "ruling": "kept: no swap proposed; Tenuta Nuova is the wine that carried the house's name, by the library and the trade."
+  },
+  {
+   "pick": "soldera",
+   "ruling": "kept: no swap proposed; the plan's note is answered: Brunello di Montalcino, a Riserva in good years, through the 2005 vintage, and Toscana IGT from the 2006 vintage, IGP on later labels; the founder 1937 to 2019."
+  }
+ ],
+ "codexInTension": [
+  {
+   "record": "p-soldera (WINE_PRODUCERS)",
+   "says": "no temperature control; a botanical garden between the rows",
+   "finding": "The estate's 2019 sheet says the fermentation temperature is continuously monitored; the garden lies beside the vines, with the nests and hives among the rows.",
+   "sources": [
+    {
+     "title": "Soldera Case Basse: Toscana IGP 2019 sheet",
+     "url": "https://www.soldera.it/wp-content/uploads/SCHEDA-2019-UK.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Soldera Case Basse: Natural vinegrowing",
+     "url": "https://www.soldera.it/en/natural-vinegrowing-and-winemaking/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Italian Botanical Heritage: Case Basse farm and its garden",
+     "url": "https://luoghi.italianbotanicalheritage.com/en/case-basse-farm-and-graziella-solderas-garden/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "w-brunello-riserva-biondi-santi (WINE_PRODUCERS)",
+   "says": "Brunello's minimum five years of ageing, six for Riserva",
+   "finding": "The disciplinare counts release from 1 January of the year after the fifth year from the harvest, the sixth for a Riserva, so a Brunello can leave the cellar some four years and a few months after the harvest; five years is the year count, not the time in the cellar.",
+   "sources": [
+    {
+     "title": "Consorzio del vino Brunello di Montalcino: disciplinare di produzione",
+     "url": "https://www.consorziobrunellodimontalcino.it/files/Disciplinari/disciplinare-bdm-19-a4-bdm.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-biondi-santi (WINE_PRODUCERS)",
+   "says": "The Greppo estate south of Montalcino town",
+   "finding": "The estate's own Rosso 2019 sheet places Greppo south east of the town.",
+   "sources": [
+    {
+     "title": "Biondi-Santi: Rosso di Montalcino 2019 sheet",
+     "url": "https://www.biondisanti.it/pdfgen/sheet/76/464/en",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "plan.json, the casanova-di-neri pick's why",
+   "says": "drew new attention to the south east of the hill",
+   "finding": "The estate does not place Tenuta Nuova, and the trade puts its parcels in the south; the plan's why is not shipped, so it is reported, not changed.",
+   "sources": [
+    {
+     "title": "Casanova di Neri: Tenuta Nuova",
+     "url": "https://www.casanovadineri.it/en/tenuta-nuova-brunello-di-montalcino.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Fine and Rare Wines: Casanova di Neri producer page",
+     "url": "https://www.frw.co.uk/producer/612ec28006000000000005d6/casanova-di-neri",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
