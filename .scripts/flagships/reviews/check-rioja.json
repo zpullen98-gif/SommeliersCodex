@@ -1,0 +1,877 @@
+{
+ "group": "rioja",
+ "chunk": "f8",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "lopez-de-heredia": 8,
+   "la-rioja-alta": 3,
+   "murrieta": 6,
+   "cvne": 3,
+   "muga": 6,
+   "shared": 1
+  },
+  "note": "Twenty seven searches of a share of twenty eight, one left unspent, none of them the author's. Sixteen were restricted to a house's own domain (lopezdeheredia.com five times, riojalta.com twice, marquesdemurrieta.com three times, cvne.com twice, bodegasmuga.com three times) and one to the Consejo Regulador's riojawine.com, and are read as primary through their summaries; the other ten went to the open web for second sources (founders' dates, the soil of Tondonia, the Hadid pavilion, the Ygay Blanco of 1986, the Eiffel hall, the Muga move and first vintage). No WebFetch was tried. Every record was tested; no fact that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own pages for their own dates, vineyards and methods, then to the open web for the second source of each date and person, then to the Consejo's classification, which three label terms and two traps depend on.",
+  "Where a search contradicted the record it was set right with its source (the Montecillo estate, the Gran Reserva's barrel time, racking by gravity, the north west of Rioja Alta); where a detail could be found in no source or the sources disagreed, it was cut or said with less (Arequipa, the decade of the move to Ygay, the year of Murrieta's new winery, the ten years of keeping for Tondonia).",
+  "Sources whose title or address names a living person, or that are a writer's own site, were read in the results but never cited in the fragment or here; the fragment's own sources were left as the author wrote them."
+ ],
+ "records": [
+  {
+   "key": "lopez-de-heredia",
+   "searches": 8,
+   "tested": [
+    "Founded 1877 (the library's year): the house's history page (the design and building of the complex began about 1877) and the Consejo's winery page: confirmed.",
+    "The station quarter: the house calls itself the oldest bodega in Haro and one of the first three in Rioja; a trade article of 2008 places it in the station quarter beside La Rioja Alta: the first bodega of the quarter is not the house's word, so changed to the oldest bodega in Haro, hedged as the house's account.",
+    "Viña Tondonia: on the right bank of the Ebro in a great meander, founded between 1913 and 1914, the first vines planted in 1913, named from Tondon, the old word for the meander (from the Latin retondo), on the house's vineyard and tour pages: confirmed.",
+    "The soil, alluvial clay with a high share of limestone: Grandi Bottiglie and a second merchant, with another account adding gravel and pebbles: confirmed.",
+    "The blend, about three quarters Tempranillo with Garnacho, Graciano and Mazuelo, all from the house's own vineyards (75, 15 and 10 per cent on the current page; 70, 20 and 10 for 2008): confirmed.",
+    "The making: fermentation in old oak vats kept by the house's coopers, with the yeasts of the skins and the vats and none added (the house's fermentation page and its Chinese brochure); six years in barrel, two rackings a year, fresh egg whites (the house's Reserva sheets); the barrels mostly of American oak and made by the house's own coopers: confirmed.",
+    "The Gran Reserva in others: the house's sheet gives nine years in barrel at the least, racked twice a year, not about ten: changed.",
+    "The keeping: the house's ten years and more was found on no page searched: cut, the line kept without a figure.",
+    "Zaha Hadid's pavilion, 2001 to 2006, enclosing a stand of the 1910 world fair that the house found in its outbuildings and restored: Zaha Hadid Architects and Archiweb: confirmed; Brussels is named in one account only and stays out. Zaha Hadid's dates, 1950 to 2016, are common record (Wikipedia, the firm's own pages).",
+    "The Reserva label term, at least three years with one in barrel: the Consejo's specification gives thirty six months, at least twelve in barrel and six in bottle: confirmed.",
+    "Serve 15 to 17 degrees Celsius: the house's sheets give 18 to 20; the record follows the Codex's reference for a medium red, as the author reported: kept.",
+    "The questions: one right answer each; the distractors of the cellar question are of one kind; the second question's Sierra de Cantabria lies north, above Rioja Alavesa, as its explanation says: sound.",
+    "The house rules: nobody living named (the family's present generation is in people.json and is not met in the record); no price, score or superlative; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "by the house's account it was the first bodega of the station quarter, which later filled with others, CVNE in 1879 and La Rioja Alta in 1890 among them.",
+     "now": "by the house's account it is the oldest bodega in Haro, and the station quarter later filled with others, CVNE in 1879 and La Rioja Alta in 1890 among them.",
+     "why": "The house's own words are the oldest bodega in Haro and one of the first three in Rioja; the Consejo's winery page repeats them. A claim of the first of the quarter is a step past what the house says.",
+     "sources": [
+      {
+       "title": "R. López de Heredia: History and philosophy",
+       "url": "https://www.lopezdeheredia.com/english/filosofia/filosofia.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Consejo Regulador DOCa Rioja: R. López de Heredia Viña Tondonia",
+       "url": "https://riojawine.com/en/wineries/r-lopez-de-heredia-vina-tondonia-sa",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "and by the house's account it keeps for ten years and more in a cool, steady cellar.",
+     "now": "and it goes on gaining savoury depth for many years in a cool, steady cellar.",
+     "why": "No page of the house searched gave the ten years, so the figure and the attribution are cut; what stays is the general line every account of the wine supports.",
+     "sources": [
+      {
+       "title": "R. López de Heredia: Viña Tondonia Reserva Tinto",
+       "url": "https://www.lopezdeheredia.com/spanish/vinos/tondoniaRT.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2].note",
+     "was": "The red held about ten years in barrel, by the house's account, before bottling.",
+     "now": "The red held at least nine years in barrel, by the house's account, before bottling.",
+     "why": "The house's Gran Reserva sheet reads aged in barrel nine years at the minimum, racked twice a year.",
+     "sources": [
+      {
+       "title": "R. López de Heredia: Viña Tondonia Tinto Gran Reserva",
+       "url": "https://www.lopezdeheredia.com/spanish/vinos/tondoniaGRT.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The ten years of keeping in the ageing field.",
+    "The first bodega of the station quarter, as a claim."
+   ],
+   "open": [],
+   "extraSources": [
+    {
+     "title": "R. López de Heredia: Viña Tondonia, the vineyard",
+     "url": "https://www.lopezdeheredia.com/english/vinedos/tondonia.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "R. López de Heredia: the vineyard tour",
+     "url": "https://www.lopezdeheredia.com/english/vinedos/recorrido.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "R. López de Heredia: Viña Tondonia Tinto Gran Reserva",
+     "url": "https://www.lopezdeheredia.com/spanish/vinos/tondoniaGRT.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "R. López de Heredia: History and philosophy",
+     "url": "https://www.lopezdeheredia.com/english/filosofia/filosofia.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "R. López de Heredia: The cooperage",
+     "url": "https://www.lopezdeheredia.com/english/toneleria/toneleria.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "R. López de Heredia: Fermentation",
+     "url": "https://www.lopezdeheredia.com/english/elaboracion/nacimiento.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Consejo Regulador DOCa Rioja: R. López de Heredia Viña Tondonia",
+     "url": "https://riojawine.com/en/wineries/r-lopez-de-heredia-vina-tondonia-sa",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Grandi Bottiglie: López de Heredia",
+     "url": "https://www.grandibottiglie.com/en/produttore/lopez-heredia.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Zaha Hadid Architects: R. López de Heredia wine pavilion",
+     "url": "https://www.zha.com/projects/installations-pavilions/r-lopez-de-heredia-wine-pavilion",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Archiweb: Tondonia Winery Pavilion",
+     "url": "https://www.archiweb.cz/en/b/vinarstvi-tondonia",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "la-rioja-alta",
+   "searches": 3,
+   "tested": [
+    "Founded 1890 in Haro's station quarter as the Sociedad Vinícola de La Rioja Alta by five families of Rioja and the Basque Country: the house's history pages, its 2022 magazine and its Viña Ardanza post: confirmed.",
+    "The first president a woman: the house names her and calls her the first woman to preside over a commercial company in Spain: confirmed as the house's account; she stays described for want of her dates.",
+    "The first winemaker a Frenchman, who made the Reserva 1890 from which the 890 descends: the house's history: confirmed; he stays described.",
+    "The merger of 1904 with Bodegas Ardanza, owned by one of the founders, marked by the Reserva 1904 that became the 904: the house's history and its 2022 magazine: confirmed.",
+    "The year of the name La Rioja Alta (1891 or 1941 on the house's own pages): not in the record, as the author left it.",
+    "The 890 of 2011: Tempranillo 95 per cent, Graciano 3, Mazuelo 2; six years in barrel with ten rackings, bottled in July 2018; Tempranillo from old vines at Villalba, Briñas and Labastida and Graciano from the Montecillo estate at Fuenmayor: the house's 2011 sheet: the great majority confirmed, Montecillo changed.",
+    "Candlelight: the house's sheets for 2004 and 1985 give racking by candlelight: confirmed for the story's twentieth century.",
+    "The barrels: the house's own pages say its coopers make every barrel in its Haro cooperage from American oak air dried for two years; Enterwine dates the house's own barrel making to about 2002 and Spanish Wine Lover gives three years of drying: the claim is kept as the house's, and no longer carried through the twentieth century.",
+    "The Gran Reserva label term, at least five years with two in barrel and two in bottle: the Consejo's specification (sixty months, twenty four in barrel, twenty four in bottle): confirmed.",
+    "The questions: the number question has one right answer and four options of one kind; the station quarter question's explanation is right on López de Heredia (1877) and CVNE (1879): sound.",
+    "The house rules: nobody living named; no price, score or superlative in the record; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "Old vineyards of the house near Haro: in its own sheets, Tempranillo from Villalba, Briñas and Labastida, with Graciano from its Montecillo vineyard.",
+     "now": "Vineyards of the house: in its sheet for the 2011 vintage, Tempranillo from old vines at Villalba, Briñas and Labastida near Haro, with Graciano from its Montecillo estate at Fuenmayor, west of Logroño.",
+     "why": "The house's 2011 sheet puts the Montecillo estate at Fuenmayor, some way east of Haro and west of Logroño, so near Haro was wrong for the Graciano; the sheet also says the sites are those of the 2011 vintage, since earlier sheets name other vineyards (Melchorón, Rodezno).",
+     "sources": [
+      {
+       "title": "La Rioja Alta: Gran Reserva 890 2011 sheet",
+       "url": "https://www.riojalta.com/media/I_Gran_Reserva_890_2011.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Rioja Alta: Gran Reserva 890",
+       "url": "https://www.riojalta.com/en/wines_rioja-alta/gran-reserva-890/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Through the twentieth century the house kept to long ageing in American oak, racking its barrels by hand by candlelight and, by its own account, making its barrels itself.",
+     "now": "Through the twentieth century the house kept to long ageing in American oak and to racking its barrels by hand by candlelight, and by its account its coopers build its barrels at Haro.",
+     "why": "The house's barrel making is its own claim of the present, and one account dates its start to about 2002, so the twentieth century carries only the oak and the racking.",
+     "sources": [
+      {
+       "title": "La Rioja Alta: The winery",
+       "url": "https://www.riojalta.com/winery",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Enterwine: La Rioja Alta",
+       "url": "https://www.enterwine.com/world-of-wine/wineries/la-rioja-alta",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Spanish Wine Lover: Rioja and American oak",
+       "url": "https://spanishwinelover.com/rioja-and-american-oak-a-slightly-fading-but-still-solid-alliance",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "The fermentation in tanks with the Graciano kept apart rests on the author's reading of the house's 2011 sheet; the searches here confirmed that sheet's barrel time, rackings and sites but did not show the fermentation vessels."
+   ],
+   "extraSources": [
+    {
+     "title": "La Rioja Alta: The group's history",
+     "url": "https://www.riojalta.com/en/la-rioja-alta-group/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "La Rioja Alta: Gran Reserva 890 2011 sheet",
+     "url": "https://www.riojalta.com/media/I_Gran_Reserva_890_2011.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "La Rioja Alta: Gran Reserva 890",
+     "url": "https://www.riojalta.com/en/wines_rioja-alta/gran-reserva-890/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "La Rioja Alta: The winery",
+     "url": "https://www.riojalta.com/winery",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Enterwine: La Rioja Alta",
+     "url": "https://www.enterwine.com/world-of-wine/wineries/la-rioja-alta",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Consejo Regulador DOCa Rioja: Classification",
+     "url": "https://riojawine.com/en-gb/the-designation/classification/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Consejo Regulador DOCa Rioja: Rioja PDO specification",
+     "url": "https://riojawine.com/wp-content/uploads/2019/01/designation_specifications.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "murrieta",
+   "searches": 6,
+   "tested": [
+    "Luciano de Murrieta, 1822 to 1911: Wikipedia's list of the marquesses and a burial record give both years; Noticias de Navarra and others give his death at Logroño in 1911 without heirs: confirmed.",
+    "Born in Arequipa: in Wikipedia and in an interview on the house's own site whose address names a living person; every other account says only Peru, and Noticias de Navarra gives him a Bolivian mother where the house's interview gives a Peruvian one: changed to born in Peru.",
+    "Bordeaux and 1852: the house's own pages (Rioja's first fine wine in 1852, made with methods learnt in Bordeaux, so that it would endure over time) and Noticias de Navarra: confirmed. His service with General Espartero and exile in London are in the house's interview only and stay out, as the author left them.",
+    "The cellars of the Duke of la Victoria at Logroño: not on the house's pages searched; Noticias de Navarra ties the property to the Duchess of la Victoria, Espartero's wife: kept on the author's two secondary accounts and left open.",
+    "The title of 1872: King Amadeo I, 20 October 1872, in Wikipedia's list; one account says Isabel II, who had left the throne in 1868: the record's the crown stands.",
+    "The move to Ygay: 1872 in one account, 1877 in another, 1852 in the house's interview: the decade is cut from the story.",
+    "1983, the Cebrián-Sagarriga family: the house's ethical code (run by the family since 1983) with the author's Wikipedia and Decanter: confirmed; the family name names no living person.",
+    "The castle and the new winery: the house's museum statement has a restoration of more than eight years ended in 2015 and the castle declared a museum in 2019; the house's About us gives the new winery in 2021, its sustainability page 2022: the museum kept as declared in 2019, the winery's year cut.",
+    "La Plana: the highest point of the Ygay estate at 485 metres, and Castillo Ygay always from it, on the house's own pages: confirmed (the house's Blanco page gives 485 metres for Capellanía too, not a contradiction of the red's site); its planting year (1950 or 1940) stays out, as the author left it.",
+    "The making of 2012: Tempranillo in American oak and Mazuelo in French oak, 34 months each, then 20 months in a concrete vat; blend 81 and 19 per cent; made only in exceptional years, with 2013 to 2015 not released: confirmed as written.",
+    "Castillo Ygay Blanco 1986: 252 months, twenty one years, in 225 litre American oak barrels and 67 months in concrete, bottled in January 2014 (MMD and Vinissimus, the house's sheet): confirmed.",
+    "The questions: Especial has one right answer; Bordeaux has one right answer and plausible distractors; the explanations teach: sound.",
+    "The house rules: nobody living named (the family's head is in people.json and is not named); no price or score (the house's pages carry scores and rankings, none taken); British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Luciano de Murrieta (1822 to 1911) was born in Arequipa in Peru",
+     "now": "Luciano de Murrieta (1822 to 1911) was born in Peru",
+     "why": "Peru is in every account read; Arequipa is in Wikipedia and an interview on the house's site whose address names a living person, so it cannot be cited, and one regional account differs on his parents. The city is left out.",
+     "sources": [
+      {
+       "title": "Wikipedia: Marquess of Murrieta",
+       "url": "https://en.wikipedia.org/wiki/Marquess_of_Murrieta",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Noticias de Navarra: Marqués de Murrieta, 170 years",
+       "url": "https://www.noticiasdenavarra.com/de-pura-cepa/2022/12/23/marques-murrieta-170-anos-excelencia-6312253.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and in the 1870s he set his house on the Ygay estate",
+     "now": "and he set his house on the Ygay estate",
+     "why": "The purchase is 1872 in one account, 1877 in another and 1852 in the house's own interview, so no decade is safe.",
+     "sources": [
+      {
+       "title": "Noticias de Navarra: Marqués de Murrieta, 170 years",
+       "url": "https://www.noticiasdenavarra.com/de-pura-cepa/2022/12/23/marques-murrieta-170-anos-excelencia-6312253.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Marqués de Murrieta: About us",
+       "url": "https://marquesdemurrieta.com/en/pages/sobre-nosotros-marques-de-murrieta",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "who restored the castle, opened as a museum in 2019, and finished a new winery in 2021.",
+     "now": "who restored the castle, declared a museum in 2019, and later built a new winery beside it.",
+     "why": "The house's museum statement says declared a museum in 2019 after a restoration ended in 2015; the house's own pages give 2021 and 2022 for the new winery, so its year is cut.",
+     "sources": [
+      {
+       "title": "Marqués de Murrieta: Statement of the Marqués de Murrieta Museum",
+       "url": "https://marquesdemurrieta.com/en/blogs/noticias/museo_marques_de_murrieta",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Marqués de Murrieta: About us",
+       "url": "https://marquesdemurrieta.com/en/pages/sobre-nosotros-marques-de-murrieta",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Marqués de Murrieta: A commitment to sustainability",
+       "url": "https://marquesdemurrieta.com/en/blogs/news/a-commitment-to-sustainability",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Arequipa.",
+    "The 1870s for the move to Ygay.",
+    "2021 for the new winery."
+   ],
+   "open": [
+    "The Logroño cellars of the Duke of la Victoria, where the first wine of 1852 was made, rest on the author's two secondary accounts; one regional account ties the property to the Duchess of la Victoria, Espartero's wife."
+   ],
+   "extraSources": [
+    {
+     "title": "Wikipedia: Marquess of Murrieta",
+     "url": "https://en.wikipedia.org/wiki/Marquess_of_Murrieta",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Burial Map: Luciano Murrieta, 1822 to 1911",
+     "url": "https://www.burialmap.com/memorial/luciano-murrieta-1822-1911",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Noticias de Navarra: Marqués de Murrieta, 170 years",
+     "url": "https://www.noticiasdenavarra.com/de-pura-cepa/2022/12/23/marques-murrieta-170-anos-excelencia-6312253.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Marqués de Murrieta: Statement of the Marqués de Murrieta Museum",
+     "url": "https://marquesdemurrieta.com/en/blogs/noticias/museo_marques_de_murrieta",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marqués de Murrieta: About us",
+     "url": "https://marquesdemurrieta.com/en/pages/sobre-nosotros-marques-de-murrieta",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marqués de Murrieta: A commitment to sustainability",
+     "url": "https://marquesdemurrieta.com/en/blogs/news/a-commitment-to-sustainability",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marqués de Murrieta: Ethical code and quality policy",
+     "url": "https://marquesdemurrieta.com/en/pages/ethical-code",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marqués de Murrieta: Castillo Ygay Gran Reserva Especial",
+     "url": "https://marquesdemurrieta.com/en/pages/castillo-ygay-tinto-gran-reserva-especial",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "MMD: Castillo Ygay Blanco Gran Reserva Especial 1986",
+     "url": "https://www.mmdltd.com/wine/marques-de-murrieta-castillo-ygay-blanco-gran-reserva-especial-1986/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinissimus: Castillo Ygay Blanco",
+     "url": "https://vinissimus.com/en/wine/castillo-ygay-blanco",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "cvne",
+   "searches": 3,
+   "tested": [
+    "1879, the brothers of the Real de Asúa family at Haro: the house's history page: confirmed; they stay described for want of their dates.",
+    "The asthma and Bilbao: a doctor advised one brother to leave Bilbao for a drier climate, in a piece republished on the house's own site: confirmed as the house's account.",
+    "Corcuera, Real de Asúa y Compañía until 1882: in the same republished piece, with a vineyard expert of Logroño as the partner; the new name in 1882 is implied there rather than stated: kept, left open.",
+    "Cune from the V read as a U: the house's Cune page (a fortunate spelling error): confirmed.",
+    "The barrel hall of 1909 with no pillar inside: the house and Wikipedia (1909, no columns), Skurnik (begun 1890, finished 1909); the Eiffel attribution stays the plaque's, as the author wrote it: confirmed.",
+    "Imperial and the imperial pint, a special bottling for the English market, first made in the 1920s: the house's Imperial page; Decanter and a writer's piece republished on the house's site give 1917: the 1920s kept, left open.",
+    "The sites: small plots of Rioja Alta at Villalba and Torremontalbo at 550 and 650 metres (the house's Imperial page and 2016 sheet): confirmed.",
+    "The making: about 24 months in French and American oak racked every eight months, then at least 36 months in bottle (the 2016 sheet, the 2018 page); malolactic in concrete (Decanter on 2017, the author's 2016 sheet): confirmed.",
+    "Descendants of the founding family in control: the house's history page: confirmed as history.",
+    "The subzone question: Viña Real is also bottled as a Crianza and a Reserva, so the tier option could be right for a guest holding one of those: changed.",
+    "The house rules: nobody living named; no price or score (the house's news pages carry scores, none taken); British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "questions[0].q",
+     "was": "A guest compares CVNE's Imperial Gran Reserva with Viña Real from the same house. What separates the two?",
+     "now": "A guest compares CVNE's Imperial Gran Reserva with the Viña Real Gran Reserva of the same house. What separates the two?",
+     "why": "With Viña Real of any tier, the option Gran Reserva against Crianza could also be right; naming the Gran Reserva leaves the subzone as the one answer, which the explanation already says.",
+     "sources": [
+      {
+       "title": "CVNE: From 1879 to today, the history",
+       "url": "https://cvne.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "CVNE: Imperial Gran Reserva",
+       "url": "https://cvne.com/en/wines/imperial-gran-reserva/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "Imperial's first year: the house says the 1920s, Decanter and a writer's piece republished on the house's site give 1917.",
+    "The change of name in 1882 is implied, not stated, by the house's republished history."
+   ],
+   "extraSources": [
+    {
+     "title": "CVNE: From 1879 to today, the history",
+     "url": "https://cvne.com/en/history/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "CVNE: Imperial Gran Reserva",
+     "url": "https://cvne.com/en/wines/imperial-gran-reserva/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "CVNE: Imperial Gran Reserva 2016 data sheet",
+     "url": "https://cvne.com/wp-content/uploads/2021/03/IMPERIAL-GRAN-RVA-16-ING.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Spanish Icons, CVNE Imperial Gran Reserva",
+     "url": "https://www.decanter.com/premium/spanish-icons-cvne-imperial-gran-reserva-550194",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Compañía Vinícola del Norte de España",
+     "url": "https://en.wikipedia.org/wiki/CVNE",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "muga",
+   "searches": 6,
+   "tested": [
+    "Founded 1932 by Isaac Muga and Aurora Caño, a married couple, on the house's family page and the Consejo's winery page: confirmed; they stay described, since the founder's grandson of the same name is living.",
+    "The move to the Barrio de la Estación in 1970: Spanish Wine Lover and Astor Wines give 1970, Bound by Wine 1968 for a townhouse; the house's pages give no year, only a house about two hundred years old in the quarter: kept, left open. The house's first cellars under Haro's main street (Cellar Tours) are not in the record.",
+    "The first Prado Enea at the end of the 1960s: Decanter gives 1969 and bottles of 1969 are listed by Tastingbook and a merchant: confirmed.",
+    "The sites: the house's Prado Enea page gives the north west of Rioja Alta, the villages of Sajazarra, Cellorigo and Fonzaleche, 550 to 700 metres, calcareous clay and alluvial soils, high plots in the latest ripening zones, always the last grapes picked: north changed to north west, the soils added; the Montes Obarenes, on no house page, cut.",
+    "The blend, Tempranillo with Garnacha, Mazuelo and Graciano: Decanter and the house's page: confirmed.",
+    "The making: at least 36 months in oak casks and 36 in bottle (the house's Prado Enea page and Decanter): confirmed. The house's pages say racking by gravity and fining with egg whites: racked by hand changed to by gravity. Oak vats for the alcoholic fermentation of its Selección Especial and Prado Enea, wooden vats for Torre Muga and the Reserva: as every Muga red is, cut.",
+    "The house's coopers who build and mend its barrels and vats: the house's own questions page: confirmed.",
+    "Torre Muga, Tempranillo with Mazuelo and Graciano in French oak: the house's page: confirmed.",
+    "The name Prado Enea from a building once owned by a Dionisio de Prado: Decanter only, as the author found: stays out.",
+    "The questions: the making question has one right answer once the explanation speaks of Prado Enea; the year question's distractors are dated elsewhere in the group: sound.",
+    "The house rules: nobody living named (the founder's sons and grandsons are not named); no price or score (the house's news pages carry scores and rankings, none taken); British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The house's coolest vineyards in the north of Rioja Alta, around Sajazarra, Cellorigo and Fonzaleche at 550 to 700 metres, below the Montes Obarenes; always the last grapes Muga picks.",
+     "now": "High vineyards of the house in the north west of Rioja Alta, around Sajazarra, Cellorigo and Fonzaleche, at 550 to 700 metres on calcareous clay and alluvial soils; always the last grapes Muga picks.",
+     "why": "The house's page gives the north west, the altitude and the soils, and names no mountain; coolest is a rank only secondary accounts give.",
+     "sources": [
+      {
+       "title": "Bodegas Muga: Prado Enea Gran Reserva",
+       "url": "https://www.bodegasmuga.com/en/prado-enea-gran-reserva/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Spanish Wine Lover: Exploring Muga's vineyards in Rioja",
+       "url": "https://spanishwinelover.com/exploring-muga-s-vineyards-in-rioja",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Spanish Icons, Muga Prado Enea Gran Reserva",
+       "url": "https://www.decanter.com/premium/spanish-icons-muga-prado-enea-gran-reserva-550671",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented in large oak vats, as every Muga red is, then aged at least three years in oak barrels, American and French, racked by hand and fined with egg white,",
+     "now": "Fermented in the house's oak vats, then aged at least three years in oak barrels, American and French, racked by gravity and fined with egg white,",
+     "why": "The house's family and questions pages say racking by gravity; its pages give wooden rather than oak vats for some reds, so every red is not said.",
+     "sources": [
+      {
+       "title": "Bodegas Muga: The Muga family",
+       "url": "https://www.bodegasmuga.com/en/muga-family/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bodegas Muga: Frequently asked questions",
+       "url": "https://www.bodegasmuga.com/en/faqs/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bodegas Muga: Torre Muga",
+       "url": "https://www.bodegasmuga.com/en/torre-muga/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bodegas Muga: Muga Reserva",
+       "url": "https://www.bodegasmuga.com/en/muga/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "fermentation in large oak vats, ageing in barrels its own coopers build and mend, racking by hand and fining with egg white.",
+     "now": "fermentation in oak vats, ageing in barrels its own coopers build and mend, racking by gravity and fining with egg white.",
+     "why": "As for the making.",
+     "sources": [
+      {
+       "title": "Bodegas Muga: The Muga family",
+       "url": "https://www.bodegasmuga.com/en/muga-family/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bodegas Muga: Frequently asked questions",
+       "url": "https://www.bodegasmuga.com/en/faqs/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "Its coolest vineyards in the north of Rioja Alta, at 550 to 700 metres; always the last grapes of the harvest.",
+     "now": "High vineyards in the north west of Rioja Alta, at 550 to 700 metres; always the last grapes of the harvest.",
+     "why": "As for the sites.",
+     "sources": [
+      {
+       "title": "Bodegas Muga: Prado Enea Gran Reserva",
+       "url": "https://www.bodegasmuga.com/en/prado-enea-gran-reserva/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "Muga keeps its reds in wood from fermentation in large oak vats to at least three years in barrel;",
+     "now": "Muga ferments Prado Enea in its oak vats and ages it at least three years in barrel;",
+     "why": "As for the making: the explanation now speaks of the wine asked about.",
+     "sources": [
+      {
+       "title": "Bodegas Muga: Prado Enea Gran Reserva",
+       "url": "https://www.bodegasmuga.com/en/prado-enea-gran-reserva/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bodegas Muga: Frequently asked questions",
+       "url": "https://www.bodegasmuga.com/en/faqs/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The Montes Obarenes in the sites.",
+    "As every Muga red is."
+   ],
+   "open": [
+    "The move to the Barrio de la Estación: 1970 in Spanish Wine Lover and Astor Wines, 1968 for a townhouse in Bound by Wine, no year on the house's pages."
+   ],
+   "extraSources": [
+    {
+     "title": "Bodegas Muga: The Muga family",
+     "url": "https://www.bodegasmuga.com/en/muga-family/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bodegas Muga: Prado Enea Gran Reserva",
+     "url": "https://www.bodegasmuga.com/en/prado-enea-gran-reserva/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bodegas Muga: Frequently asked questions",
+     "url": "https://www.bodegasmuga.com/en/faqs/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bodegas Muga: Torre Muga",
+     "url": "https://www.bodegasmuga.com/en/torre-muga/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bodegas Muga: Muga Reserva",
+     "url": "https://www.bodegasmuga.com/en/muga/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Spanish Wine Lover: Bodega Muga",
+     "url": "https://spanishwinelover.com/winerie/muga",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Spanish Wine Lover: Exploring Muga's vineyards in Rioja",
+     "url": "https://spanishwinelover.com/exploring-muga-s-vineyards-in-rioja",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Astor Wines: Muga producer profile",
+     "url": "https://www.astorwines.com/producer-profile.aspx?id=Muga",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Bound by Wine: Bodegas Muga",
+     "url": "https://boundbywine.com/blogs/vineyard-spotlight/bodegas-muga",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Spanish Icons, Muga Prado Enea Gran Reserva",
+     "url": "https://www.decanter.com/premium/spanish-icons-muga-prado-enea-gran-reserva-550671",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Patrik Schumacher",
+   "where": "Zaha Hadid Architects' page for the López de Heredia pavilion, as a designer beside Zaha Hadid",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Jim Heverin",
+   "where": "the same page, as the project architect",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Cristina Serra y de Olivares",
+   "where": "Wikipedia's list of the marquesses of Murrieta, as the sixth holder of the title",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Vicente Dalmau",
+   "where": "the address of an interview on Murrieta's own site; people.json lists Vicente Dalmau Cebrian-Sagarriga in full, which a bare Vicente Dalmau in an address would not match",
+   "believed": "living; the read-together agent may add the short form",
+   "inFragment": false
+  },
+  {
+   "name": "Isaac Muga",
+   "where": "a merchant's blog address, as the house's technical director and the founder's grandson, who shares the founder's name",
+   "believed": "living; do not add the bare name to people.json, since it is also the founder's name; the record describes the founders and names neither",
+   "inFragment": false
+  },
+  {
+   "name": "Manuel Muga",
+   "where": "a search summary of Decanter, as one of the founder's two sons who took the house on in 1969",
+   "believed": "not settled; not named in the record",
+   "inFragment": false
+  },
+  {
+   "name": "Tim Atkin",
+   "where": "the title and address of a piece republished on CVNE's own site",
+   "believed": "living writer; not in people.json, for the read-together agent; the piece is not cited",
+   "inFragment": false
+  },
+  {
+   "name": "James Suckling and Jacobo García Andrade",
+   "where": "the title and summary of a CVNE news page on Imperial",
+   "believed": "living writers; not in people.json, for the read-together agent; the page is not cited",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Zaha Hadid",
+   "note": "1950 to 2016; named with her dates in the López de Heredia story."
+  },
+  {
+   "name": "Luciano de Murrieta",
+   "note": "1822 to 1911, by Wikipedia's list of the marquesses and a burial record, his death in 1911 also in Noticias de Navarra; named with his dates."
+  },
+  {
+   "name": "Rafael López de Heredia y Landeta",
+   "note": "The founder; his dates found nowhere; described, not named."
+  },
+  {
+   "name": "Saturnina García Cid y Gárate",
+   "note": "La Rioja Alta's first president, by the house's own history; no dates found; described as a woman who was its first president."
+  },
+  {
+   "name": "Albert Vigier",
+   "note": "La Rioja Alta's first winemaker, a Frenchman, by the house's history; no dates; described."
+  },
+  {
+   "name": "Daniel Alfredo Ardanza y Sánchez",
+   "note": "A founder of La Rioja Alta and owner of Bodegas Ardanza; no dates; described as one of its founders."
+  },
+  {
+   "name": "Eusebio and Raimundo Real de Asúa",
+   "note": "CVNE's founding brothers; no dates found; described."
+  },
+  {
+   "name": "Isaac Muga Martínez and Aurora Caño",
+   "note": "Muga's founders; his death in 1969 in two merchant accounts; described as a married couple."
+  },
+  {
+   "name": "General Baldomero Espartero, Duke of la Victoria",
+   "note": "Named in the Murrieta story by his title only; long dead."
+  },
+  {
+   "name": "Gustave Eiffel",
+   "note": "Described as the engineer of the Eiffel Tower, as the CVNE plaque credits him; not named."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "lopez-de-heredia",
+   "ruling": "kept: no swap proposed; Viña Tondonia Reserva is the house's flagship in the plan, the library and every account read."
+  },
+  {
+   "pick": "la-rioja-alta",
+   "ruling": "kept: no swap proposed; the 890 is the Gran Reserva the house makes only in exceptional years, and the one the plan and the library teach."
+  },
+  {
+   "pick": "murrieta",
+   "ruling": "kept: no swap proposed; Castillo Ygay is the house's flagship on its own pages and in every account."
+  },
+  {
+   "pick": "cvne",
+   "ruling": "kept: no swap proposed; Imperial Gran Reserva teaches the Rioja Alta side of the house against Viña Real."
+  },
+  {
+   "pick": "muga",
+   "ruling": "kept: no swap proposed; Prado Enea is the house's Gran Reserva of 1969 onwards."
+  },
+  {
+   "pick": "the group",
+   "ruling": "A note, not a ruling: Marqués de Riscal (1858), the other house of the Bordeaux methods, and the modern houses of Rioja are not among the five, and all five lean to the long aged traditional style; four of the five are Haro houses. The integrator may weigh it for wave two."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-la-rioja-alta: wines, Gran Reserva 890, and w-gran-reserva-890",
+   "says": "the top Gran Reserva; the house's top wine",
+   "against": "A ranking word the Flagships rules refuse; the author reported it. Reported, not edited.",
+   "sources": []
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-marques-de-murrieta and w-castillo-ygay: why and t",
+   "says": "the region's longest held Gran Reserva; Rioja's slowest release",
+   "against": "Ranks no source searched confirms; the author reported the first. Reported, not edited.",
+   "sources": []
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-muga: style",
+   "says": "Everything in wood: fermentation in oak vats, ageing in barrel, egg-white fining and hand racking",
+   "against": "The house's own pages say racking by gravity, and give wooden vats rather than oak for some of its reds. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Bodegas Muga: The Muga family",
+     "url": "https://www.bodegasmuga.com/en/muga-family/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bodegas Muga: Frequently asked questions",
+     "url": "https://www.bodegasmuga.com/en/faqs/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bodegas Muga: Torre Muga",
+     "url": "https://www.bodegasmuga.com/en/torre-muga/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": ".scripts/regions/fragments (the region's producers line)",
+   "record": "p-cvne",
+   "says": "Imperial and Viña Real are the textbook Reserva and Gran Reserva of the classic style",
+   "against": "A judgement word, as the author reported. Reported, not edited.",
+   "sources": []
+  }
+ ]
+}
