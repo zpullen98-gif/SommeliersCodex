@@ -1,0 +1,779 @@
+{
+ "group": "campania",
+ "chunk": "f7",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "mastroberardino": 9,
+   "feudi": 4,
+   "montevetrano": 3,
+   "marisa-cuomo": 4,
+   "villa-matilde": 7
+  },
+  "note": "Twenty seven searches of a share of twenty eight, none of them the author's; one left unspent. Eleven were restricted to a house's own domain (mastroberardino.com twice, feudi.it twice, montevetrano.it twice, marisacuomo.com twice, villamatilde.it three times) and are read as primary through their summaries; two of the Mastroberardino searches went to the Taurasi rules and one to the archaeological park's tender for the Pompeii vines. No WebFetch was tried. Every record was tested; no fact that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the dates and the rules, then to the sites and the making the author had from the houses' sheets, then to the story beats the author had on one account; a fact the Codex library states stood on the library unless a search contradicted it.",
+  "Where a search contradicted the record it was set right with its source; where a fact the author gave from a house's sheet could not be found again on that house's own domain and a second search did not find it either, it was cut (the Camarato planting year, its harvest time and its years of life).",
+  "Sources whose title or address names a living person (a wine wiki under a writer's first name, a photographer's travel site, an interview page under the head of a house) were read in the results but never cited."
+ ],
+ "records": [
+  {
+   "key": "mastroberardino",
+   "searches": 9,
+   "tested": [
+    "Founded 1878: the registration with the Avellino Chamber of Commerce in 1878 by a Cavaliere of the Order of the Crown of Italy (Italia.it, Wein.plus, Wikipedia, which dates him 1850 to 1914 alone), the family's presence in Irpinia from the Bourbon cadastre of the middle of the eighteenth century: confirmed; the man of 1878 stays a forebear, his dates in one source only.",
+    "Radici from the 1986 vintage: Wine.com, Palm Bay and Systembolaget give 1986, a merchant's Taurasi Radici 1985 the one exception: confirmed, the author's hedge kept.",
+    "The Riserva's site: the highest part of the Montemarano estate at about 550 metres, south east, calcareous clay with stones (the house's 2025 sheet; an older sheet 500 to 650 metres): confirmed.",
+    "The making: hand picked in the first ten days of November (the house's 2017 page and 2021 sheet), about thirty months in French barriques and Slavonian casks, then about forty two months in bottle on the newest sheet and forty on the 2021 sheet: confirmed, at least three years kept.",
+    "The ageing: sixty years and more on the newest sheet, fifty and more on an older one; no strong vintage named: changed.",
+    "The Taurasi rules: DOC by decree of 26 March 1970, DOCG of 11 March 1993, Aglianico at least 85 per cent, the Riserva four years with at least eighteen months in wood counted from 1 December of the harvest year in the text of 2011 (AIS and Regione Campania copies, Quattrocalici): confirmed.",
+    "Pompeii: the project begun with the archaeological authorities in 1996, Piedirosso and Sciascinoso, the first wine of the 2001 vintage (Decanter, JancisRobinson.com): confirmed; but the park later chose another group by tender to tend the vines the house had managed (The Buyer, Wine Industry Advisor, Vinetur, The Drinks Business), so the others note was changed.",
+    "The division of 1994: one brother kept the name and the Atripalda winery, another the vineyard land and founded Terredora (Uncorked, Wein.plus, Wikipedia); one summary gives 1993 for the division: kept at 1994.",
+    "The house rules: nobody living named (the head of the house and the Terredora family stay out); no price or score; no superlative; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.ageing",
+     "was": "the house's own sheet speaks of sixty years for a strong vintage.",
+     "now": "the house's newest sheet speaks of sixty years and more.",
+     "why": "The 2025 sheet gives sixty years and more and an older sheet fifty and more; neither ties the figure to a strong vintage.",
+     "sources": [
+      {
+       "title": "Mastroberardino: Radici Taurasi Riserva DOCG sheet, 2025",
+       "url": "https://mastroberardino.com/wp-content/uploads/2025/06/RADICI-TAURASI-RISERVA-DOCG-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mastroberardino: Radici Taurasi Riserva DOCG sheet, 2021",
+       "url": "https://mastroberardino.com/shop/wp-content/uploads/2021/04/RADICI-TAURASI-RISERVA-DOCG.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2].note",
+     "was": "Piedirosso with Sciascinoso from vines replanted inside Pompeii, first made with the 2001 vintage.",
+     "now": "Piedirosso with Sciascinoso from the vines the house replanted inside Pompeii, first made with the 2001 vintage; the vines later passed to another house.",
+     "why": "The archaeological park chose another group by tender to tend the vines the house had managed, so the wine is no longer told as one the house makes; the year is left out, since one account ends the house's contract in 2021 and the others report the new partnership in 2025.",
+     "sources": [
+      {
+       "title": "The Buyer: Pompeii and Feudi di San Gregorio",
+       "url": "https://the-buyer.net/people/pompeii-feudi-di-san-gregorio",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Industry Advisor: Pompeii's ancient vineyards reborn through new partnership",
+       "url": "https://wineindustryadvisor.com/2025/04/08/pompeiis-ancient-vineyards-reborn-through-new-partnership/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinetur: Winemaking returns to Pompeii",
+       "url": "https://www.vinetur.com/en/winemaking-returns-to-pompeii-as-ancient-vineyards-are-revived-after-nearly-two-thousand-years.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: Plans for Pompeii winery announced",
+       "url": "https://www.thedrinksbusiness.com/2025/04/plans-for-pompeii-winery-announced/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "When the house stopped tending the Pompeii vines and whether Villa dei Misteri is still sold.",
+    "The division of the family: 1994 in most accounts, 1993 in one summary."
+   ],
+   "extraSources": [
+    {
+     "title": "Mastroberardino: La famiglia",
+     "url": "https://mastroberardino.com/la-famiglia/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Mastroberardino: Radici Taurasi Riserva DOCG 2017",
+     "url": "https://mastroberardino.com/shop/vino/radici-taurasi-riserva-docg-2017/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Italia.it: Cantine storiche A.MA, Angelo Mastroberardino",
+     "url": "https://www.italia.it/en/campania/avellino/cantine-storiche-ama",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus: Mastroberardino",
+     "url": "https://glossary.wein-plus.eu/mastroberardino",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine.com: Mastroberardino Radici Taurasi Riserva 2015",
+     "url": "https://www.wine.com/product/mastroberardino-radici-taurasi-riserva-2015/1221793",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Palm Bay International: Radici Taurasi Riserva DOCG",
+     "url": "https://palmbay.com/wines/mastroberardino/radici-taurasi-riserva-docg",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Systembolaget: Radici Taurasi Riserva 2018",
+     "url": "https://www.systembolaget.se/92037",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Pompeii wine rises from the ashes",
+     "url": "https://www.decanter.com/wine-news/pompeii-wine-rises-from-the-ashes-103972/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "JancisRobinson.com: Pompei now produces wine",
+     "url": "https://www.jancisrobinson.com/articles/pompei-now-produces-wine",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Uncorked: Terredora producer page",
+     "url": "https://www.uncorked.co.uk/producers/terredora",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "DoctorWine: Farewell to Walter Mastroberardino",
+     "url": "https://www.doctorwine.wine/pot-pourri-en/farewell-to-walter-mastroberardino/?lang=en",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "AIS: Taurasi DOCG production rules",
+     "url": "https://aisitalia.it/Disciplinari/Campania/DOCG/Taurasi.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Regione Campania: Taurasi DOCG production rules",
+     "url": "https://agricoltura.regione.campania.it/pubblicazioni/pdf/DOCGTAU1.PDF",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Quattrocalici: Taurasi DOCG rules",
+     "url": "https://quattrocalici.it/wp-content/uploads/2021/05/taurasi_docg.pdf",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "feudi",
+   "searches": 4,
+   "tested": [
+    "Founded 1986 by two families of the province at Sorbo Serpico (Escapement Magazine, Decanter, the library): confirmed.",
+    "The winery of 2004 by a Japanese architect, with interiors by a designer couple (the house's Discover our winery page and its shop's tour pages): confirmed; the architect and her partner are living and stay unnamed.",
+    "Pietracalda: Sorbo Serpico, 400 to 600 metres, clay and limestone, stainless steel at 16 to 18 degrees Celsius, about five months on the lees with repeated stirring (the English sheet; four to five on the Japanese page), twelve months on the lees and three in bottle for the Riserva of 2022 (its Italian sheet): confirmed; the vineyard's size and the vines' age stay out as volatile.",
+    "Fiano di Avellino: DOC by decree of 27 April 1978, DOCG of 18 July 2003, the Riserva twelve months counted from 1 November (the AIS copy of the rules, Federvini, Italian Wine Central): confirmed.",
+    "The story's later vintages labelled Riserva rested on one sheet for one vintage: changed.",
+    "The house rules: no family member named, no living architect named, no price, no score, no superlative, British spelling, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Later vintages of Pietracalda were labelled Riserva and kept a full year on their lees, by the house's own sheet for the 2022.",
+     "now": "The house's sheet for the 2022 vintage labels Pietracalda a Riserva, kept a full year on its lees.",
+     "why": "Only the sheet for the 2022 vintage gives the Riserva; the English sheet and the Japanese page give the plain wine about five months on its lees, so the record no longer says every later vintage is a Riserva.",
+     "sources": [
+      {
+       "title": "Feudi di San Gregorio: Pietracalda Riserva 2022 sheet",
+       "url": "https://store.feudi.it/wp-content/uploads/2023/04/Pietracalda-Riserva-Scheda-tecnica-ITA.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Feudi di San Gregorio: Pietracalda technical sheet",
+       "url": "https://www.feudi.it/public/files/items/43/scheda/pietracalda_en.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Feudi di San Gregorio: Pietracalda, Japanese page",
+       "url": "https://www.feudi.it/ja/tasting-wines/pietracalda",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "Whether every Pietracalda after 2022 carries Riserva."
+   ],
+   "extraSources": [
+    {
+     "title": "Feudi di San Gregorio: Discover our winery",
+     "url": "https://www.feudi.it/en/book-a-visit",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Feudi di San Gregorio: home page",
+     "url": "https://www.feudi.it/en",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Escapement Magazine: Feudi di San Gregorio",
+     "url": "https://escapementmagazine.com/articles/feudi-di-san-gregorio/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Feudi di San Gregorio Taurasi vertical",
+     "url": "https://www.decanter.com/premium/producer-profile-feudi-di-san-gregorio-245561/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "AIS: Fiano di Avellino DOCG production rules",
+     "url": "https://aisitalia.it/Disciplinari/Campania/DOCG/Fiano di Avellino.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Federvini: Fiano di Avellino amendment notice",
+     "url": "https://www.federvini.it/images/proposta_modifica_unionale_GURI.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Italian Wine Central: Fiano di Avellino DOCG",
+     "url": "https://italianwinecentral.com/denomination/fiano-di-avellino-docg/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "montevetrano",
+   "searches": 3,
+   "tested": [
+    "The first vintages: the 1991 bottled only for friends, the 1992 and 1993 after it, 1993 the first commercial vintage and released in 1995 by one account (Superiore.de, Best of Wines, the estate's home page and vintage pages): confirmed; the table line's sold from 1993 changed.",
+    "The friends of the middle of the 1980s: the estate's home page gives a group of wine lovers, with the future consultant oenologist among them, and its people page calls him an old friend who later became a known oenologist; one account has him hired only for the 1992 vintage: the story's consultant who advised the planting changed.",
+    "The blend: about six parts Cabernet Sauvignon, three of Merlot and one of Aglianico, varying by vintage (the estate's sheets, Best of Wines): confirmed.",
+    "The making: steel after drawing off about fifteen per cent of the must, about twenty days of fermentation and maceration, 225 litre barriques of Nevers, Allier and Tronçais oak for eight to fourteen months by vintage, new in the earlier vintages, and at least six months in bottle (the 2017 and 2018 sheets and the vintage pages from 1996 to 2012): confirmed; south west aspect on the 2017 sheet: confirmed.",
+    "The house rules: the founder and the consultant are living and stay unnamed (the founder is in people.json; the consultant is not); the critic's nickname for the wine is not used; no price or score; no superlative; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "table",
+     "was": "first made in 1991 and first sold from 1993.",
+     "now": "first made in 1991 and first sold with the 1993 vintage.",
+     "why": "The 1993 is the first vintage sold, released in 1995 by one account, so the year of the sale is not given.",
+     "sources": [
+      {
+       "title": "Superiore.de: Montevetrano producer page",
+       "url": "https://www.superiore.de/en/wine/campania/montevetrano",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Best of Wines: Montevetrano producer page",
+       "url": "https://bestofwines.com/wine/wine-producer/montevetrano/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Montevetrano: Montevetrano 2018 technical sheet",
+       "url": "https://www.montevetrano.it/wp-content/uploads/2022/01/Montevetrano-2018-eng-new..pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "With the advice of a consultant oenologist they planted Cabernet Sauvignon beside Aglianico, in a region whose classic red was Aglianico.",
+     "now": "One of them was an oenologist who would later make his name as a consultant, and they grew Cabernet Sauvignon beside Aglianico, in a region whose classic red was Aglianico.",
+     "why": "The estate places the oenologist among the friends rather than as an adviser called in, and one account dates his engagement to the 1992 vintage; the planting itself is not dated by any source read.",
+     "sources": [
+      {
+       "title": "Montevetrano: home page",
+       "url": "https://www.montevetrano.it/en/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Montevetrano: Persone",
+       "url": "https://montevetrano.it/persone",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Best of Wines: Montevetrano producer page",
+       "url": "https://bestofwines.com/wine/wine-producer/montevetrano/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "The first blend's shares (ninety to ten or seventy to thirty) and the first year of Merlot."
+   ],
+   "extraSources": [
+    {
+     "title": "Montevetrano: Montevetrano 2017 technical sheet",
+     "url": "https://www.montevetrano.it/wp-content/uploads/2020/07/Montevetrano-2017-eng..pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Montevetrano: Montevetrano 1996",
+     "url": "https://www.montevetrano.it/en/1996-2/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "marisa-cuomo",
+   "searches": 4,
+   "tested": [
+    "The founding: the house's Azienda page gives the family's business of 1942 under the brand Gran Furor Divina Costiera, the brand bought in 1980 and the business given that year as a wedding gift; its company page counts the estate from 1980; Callmewine gives 1980 and Xtrawine 1983: the 1942 and 1980 beats confirmed as the house's account, the brand added.",
+    "The cellar dug into the dolomitic limestone rock (the house's company page): confirmed.",
+    "Fiorduva: Ripoli 40 per cent with Fenile and Ginestra 30 each (the house's page, Xtrawine), terraces at 200 to 550 metres facing south on dolomitic limestone (the house's page; one retailer gives 200 to 250), hand picked in the last ten days of October (Xtrawine), pressed softly, settled cold, fermented at 12 degrees Celsius for about three months in oak barriques (the house's page), six months in small oak casks on the 2024 sheet: confirmed; the neighbouring communes of the sites changed.",
+    "Costa d'Amalfi DOC of 1995 (the house's Azienda page with the author's AIS copy), subzones Furore, Ravello and Tramonti (the library): confirmed; the house makes Ravello and plain Costa d'Amalfi wines as well (its wine pages), so the story's the house's wines carry the Furore name changed.",
+    "The house rules: the woman whose name the house bears and her husband, children and consultant are living; the house keeps its name and nobody else is named; no price or score; no superlative; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "Terraces cut into the cliffs of Furore and its neighbouring communes,",
+     "now": "Terraces cut into the cliffs of the Furore coast,",
+     "why": "No source read named the neighbouring communes, and the author had them from one guide only.",
+     "sources": [
+      {
+       "title": "Marisa Cuomo: Furore Bianco Fiorduva",
+       "url": "https://www.marisacuomo.com/vini/furore-bianco-fiorduva/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Xtrawine: Furore Bianco Fiorduva 2021",
+       "url": "https://www.xtrawine.com/en/wines/marisa-cuomo-costa-d-amalfi-furore-bianco-fiorduva-2021/p37365",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "By the house's account, a family founded the estate in 1942,",
+     "now": "By the house's account, a family founded the business in 1942 to sell the wines of the Furore coast as Gran Furor Divina Costiera,",
+     "why": "The house's Azienda page gives the business and its brand of 1942 for the wines of the Furore coast, and 1980 as the year the estate under the bride's name began, so estate for 1942 overstated it.",
+     "sources": [
+      {
+       "title": "Marisa Cuomo: Azienda",
+       "url": "https://www.marisacuomo.com/azienda/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Marisa Cuomo: The Company",
+       "url": "https://www.marisacuomo.com/company-marisa-cuomo-winery.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and the house's wines carry the Furore name.",
+     "now": "and the house's wines from Furore carry the subzone's name.",
+     "why": "The house also makes Ravello and plain Costa d'Amalfi wines.",
+     "sources": [
+      {
+       "title": "Marisa Cuomo: Vini",
+       "url": "https://www.marisacuomo.com/vini/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The neighbouring communes of the Fiorduva terraces (one guide only)."
+   ],
+   "open": [
+    "The house's own pages give 1942 for the family's business and 1980 for the estate; one retailer gives 1983 and Wine Spectator the gift three years after 1980.",
+    "Three months of fermentation in barriques, or six months in small oak casks: both house sheets told."
+   ],
+   "extraSources": [
+    {
+     "title": "Marisa Cuomo: Furore Bianco Fiorduva 2024",
+     "url": "https://www.marisacuomo.com/prodotto/furore-bianco-fiorduva/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Callmewine: Cuomo Marisa producer page",
+     "url": "https://www.callmewine.com/en/cuomo-marisa-B119.htm",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "villa-matilde",
+   "searches": 7,
+   "tested": [
+    "The revival: the 1960s, a lawyer with a passion for old wines and the Latin authors, collaborators who included professors of the Faculty of Agriculture of the University of Naples, stock that had survived phylloxera at the end of the nineteenth century replanted on the Massico (the house's history page; Winedering and FIRSTonline for the lawyer and the 1960s): confirmed.",
+    "The name: the house's history page names the estate for the founder's wife: added, the author had it on one account.",
+    "The wine's eclipse: the house says the wine had dropped out of production by the early twentieth century; the record's vanished for centuries changed.",
+    "The second generation in 1985 (the house's history page): confirmed.",
+    "The first vintages: the Falerno del Massico Rosso of 1975, partly in new Allier barriques and partly in Slavonian casks of 10 to 35 hectolitres for ten to twelve months (the house's Rosso sheet); Vigna Camarato of 1981, Aglianico 80 per cent with Piedirosso, twelve to eighteen months in Allier barriques by thirds new, second and third use, then twelve to eighteen months in bottle, only in the best years, at San Castrese in Sessa Aurunca (the house's Vigna Camarato sheet, Bottle of Italy): confirmed.",
+    "The Camarato planting of 1965, the harvest in the last ten days of October and fifteen to twenty years of life: not found in two searches, one restricted to the house's domain; the Rosso sheet gives vineyards of various years from 1963 to 2000 and a listing gives 1965 as the company's founding: cut.",
+    "Falernian: the Ager Falernus, the plain below the Massicus, the Opimian vintage of 121 BC served at a banquet of 60 BC by Pliny's account, Horace's Odes and Martial's epigrams (Wikipedia, the Wein.plus glossary); only Wikipedia names a Mount Falernus: the Mons Falernus of old changed.",
+    "The DOC of 1989 for Sessa Aurunca, Cellole, Mondragone, Falciano del Massico and Carinola in Caserta province, with a white, a red and a Primitivo (the AIS copy of the rules, Wein.plus): confirmed.",
+    "The house rules: the founder is described for want of two sources for his dates; his children, grandson and the family are living and stay unnamed; no price, score or superlative; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "The Romans prized Falernian, grown on the slopes of Monte Massico, the Mons Falernus of old;",
+     "now": "The Romans prized Falernian, grown in the Ager Falernus beneath Monte Massico;",
+     "why": "The accounts read put Falernian in the Ager Falernus, the plain below the Massicus; only one names a Mount Falernus, so the Latin name is not given.",
+     "sources": [
+      {
+       "title": "Wikipedia: Falernian wine",
+       "url": "https://en.wikipedia.org/wiki/Falernian_wine",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Opimian",
+       "url": "https://glossary.wein.plus/opimians",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Falerno del Massico",
+       "url": "https://glossary.wein-plus.eu/falerno-del-massico",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The wine then vanished for centuries, and accounts differ on which grapes made it.",
+     "now": "Which grapes made it is disputed, and by the early twentieth century, by the house's account, the wine was no longer made.",
+     "why": "The house's history says the wine had dropped out of production at the start of the twentieth century, after phylloxera; no source read gave centuries of absence.",
+     "sources": [
+      {
+       "title": "Villa Matilde: Storia",
+       "url": "https://villamatilde.it/storia",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The estate he built took the name Villa Matilde.",
+     "now": "The estate he built was named Villa Matilde, for his wife.",
+     "why": "The house's history page gives the name as the founder's wife's, which the author had on one account only.",
+     "sources": [
+      {
+       "title": "Villa Matilde: Storia",
+       "url": "https://villamatilde.it/storia",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and wine.sites",
+     "was": "The Camarato vineyard at San Castrese, planted in 1965, and in the sites, planted in 1965 by the house's account.",
+     "now": "The Camarato vineyard at San Castrese, in the commune of Sessa Aurunca, with no planting year.",
+     "why": "The house's Vigna Camarato sheet as read gives no planting year, its Rosso sheet gives vineyards of various years from 1963 to 2000, and one listing gives 1965 as the company's founding; the commune is on the Camarato sheet.",
+     "sources": [
+      {
+       "title": "Villa Matilde: Vigna Camarato Falerno del Massico Rosso",
+       "url": "https://villamatilde.it/vigna-camarato",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Villa Matilde: Falerno del Massico Rosso sheet",
+       "url": "https://www.villamatilde.it/download/Falerno-del-Massico-Rosso.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bottle of Italy: Vigna Camarato Falerno del Massico DOP 2016",
+       "url": "https://bottleofitaly.com/en/products/vigna-camarato-falerno-del-massico-dop-villa-matilde-avallone",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked in the last ten days of October and made only in the years",
+     "now": "Made only in the years",
+     "why": "No source read gave the harvest time.",
+     "sources": [
+      {
+       "title": "Villa Matilde: Vigna Camarato Falerno del Massico Rosso",
+       "url": "https://villamatilde.it/vigna-camarato",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "it lasts fifteen to twenty years in a strong vintage, by the house's own sheet.",
+     "now": "it needs time in bottle and is made for long keeping in a strong vintage.",
+     "why": "No source read gave a figure for its years of life.",
+     "sources": [
+      {
+       "title": "Villa Matilde: Vigna Camarato Falerno del Massico Rosso",
+       "url": "https://villamatilde.it/vigna-camarato",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The Camarato planting year of 1965.",
+    "The harvest in the last ten days of October.",
+    "Fifteen to twenty years of life."
+   ],
+   "open": [
+    "The founder's dates and the estate's founding year (1960 and 1965 in two listings): founded stays empty."
+   ],
+   "extraSources": [
+    {
+     "title": "Villa Matilde: Falerno del Massico Rosso sheet",
+     "url": "https://www.villamatilde.it/download/Falerno-del-Massico-Rosso.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Winedering: Villa Matilde",
+     "url": "https://www.winedering.com/it/winery-villa-matilde_d334",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "FIRSTonline: Il Falerno del Massico, un richiamo alla storia della Campania felix",
+     "url": "https://www.firstonline.info/en/vini-il-falerno-del-massico-un-richiamo-alla-storia-della-campania-felix/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "AIS: Falerno del Massico DOC production rules",
+     "url": "https://aisitalia.it/Disciplinari/Campania/DOC/Falerno del Massico.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Piero Mastroberardino",
+   "where": "the Pompeii accounts and the house pages, as the head of the house who led the project",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Pietro Giovanni Guzzo",
+   "where": "Decanter's Pompeii piece, as the superintendent who asked the house to take the vines on",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Daniela, Lucio and Paolo Mastroberardino",
+   "where": "the accounts of Terredora, as the children of the brother who left",
+   "believed": "the status of each not settled; not in people.json, listed as a precaution for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Hikaru Mori and Maurizio Zito",
+   "where": "Feudi's winery pages, as the architect of 2004 and her partner",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Silvia Imparato",
+   "where": "every account of Montevetrano",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Riccardo Cotarella",
+   "where": "Montevetrano's home and people pages, as the oenologist among the friends",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Robert Parker",
+   "where": "the accounts of the first Montevetrano vintages",
+   "believed": "living critic, refused by the grapes schema",
+   "inFragment": false
+  },
+  {
+   "name": "Andrea Ferraioli, Raffaele Ferraioli and Dorotea Ferraioli",
+   "where": "Marisa Cuomo's Azienda and company pages, as the husband and the children",
+   "believed": "living; not in people.json, for the read-together agent (Marisa Cuomo is the house name and is kept as such)",
+   "inFragment": false
+  },
+  {
+   "name": "Luigi Moio",
+   "where": "Marisa Cuomo's Azienda page and Callmewine, as the house's oenologist",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Maria Ida Avallone and Salvatore Avallone",
+   "where": "Villa Matilde's history page and Kobrand, as the second generation of 1985",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Francesco Paolo Avallone (the grandson)",
+   "where": "Villa Matilde's pages, as one of the family who run the estate, bearing the founder's name",
+   "believed": "living; the founder's name is shared, so it stays out of the fragment and the read-together agent may list it",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Angelo Mastroberardino",
+   "note": "The Cavaliere of 1878, 1850 to 1914 by Wikipedia alone; described as a forebear."
+  },
+  {
+   "name": "Antonio Mastroberardino",
+   "note": "The grandson who took charge after the war, died in 2014 by writers' sites only; described, not named."
+  },
+  {
+   "name": "Walter Mastroberardino",
+   "note": "Founder of Terredora, his death reported by DoctorWine; described as a brother, not named."
+  },
+  {
+   "name": "Massimo Vignelli and Lella Vignelli",
+   "note": "Designers of Feudi's labels and winery interiors, dead; not in the record."
+  },
+  {
+   "name": "Francesco Paolo Avallone (the founder)",
+   "note": "The lawyer of the 1960s, his death in 2006 by one account only; described, not named."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "mastroberardino",
+   "ruling": "kept: no swap proposed; Taurasi Radici Riserva is the house's flagship in the plan, the library and every account read."
+  },
+  {
+   "pick": "feudi",
+   "ruling": "kept: no swap proposed; the plan's note asked to confirm Pietracalda against Serpico. Serpico is the house's red statement, but Pietracalda is the library's widely poured Fiano and gives the group its only Fiano di Avellino while Taurasi is Mastroberardino's, so the author's choice is upheld; the integrator may still weigh Serpico."
+  },
+  {
+   "pick": "montevetrano",
+   "ruling": "kept: no swap proposed; the estate makes one flagship, named for itself."
+  },
+  {
+   "pick": "marisa-cuomo",
+   "ruling": "kept: no swap proposed; Fiorduva is the house's flagship in the library and the region record."
+  },
+  {
+   "pick": "villa-matilde",
+   "ruling": "kept: no swap proposed; Vigna Camarato is the house's single vineyard Falerno, made only in the best years by its own sheet, and the group's one Falerno del Massico."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-mastroberardino: wines, Villa dei Misteri",
+   "says": "made from vines replanted inside the excavations at Pompeii",
+   "against": "True as history, but the archaeological park later chose another group by tender to tend the vines the house had managed, so the wine may no longer be the house's; reported, not edited.",
+   "sources": [
+    {
+     "title": "The Buyer: Pompeii and Feudi di San Gregorio",
+     "url": "https://the-buyer.net/people/pompeii-feudi-di-san-gregorio",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Industry Advisor: Pompeii's ancient vineyards reborn through new partnership",
+     "url": "https://wineindustryadvisor.com/2025/04/08/pompeiis-ancient-vineyards-reborn-through-new-partnership/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinetur: Winemaking returns to Pompeii",
+     "url": "https://www.vinetur.com/en/winemaking-returns-to-pompeii-as-ancient-vineyards-are-revived-after-nearly-two-thousand-years.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-montevetrano: holdings",
+   "says": "begun by the photographer Silvia Imparato, with the first vintage in 1991",
+   "against": "Names a living founder, as the author reported; the first vintage of 1991 upheld as the first made, with 1993 the first sold.",
+   "sources": [
+    {
+     "title": "Montevetrano: home page",
+     "url": "https://www.montevetrano.it/en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Superiore.de: Montevetrano producer page",
+     "url": "https://www.superiore.de/en/wine/campania/montevetrano",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": ".scripts/regions/fragments (the Campania producers line)",
+   "record": "Montevetrano and Mastroberardino lines",
+   "says": "Montevetrano showed the south could make a world class wine; Mastroberardino's Taurasi vintages of the 1960s proved the wine could age, and it replanted the vineyards of Pompeii",
+   "against": "The first a judgement word, as the author reported; the 1960s vintages untested here; the Pompeii vines later passed to another house.",
+   "sources": [
+    {
+     "title": "The Buyer: Pompeii and Feudi di San Gregorio",
+     "url": "https://the-buyer.net/people/pompeii-feudi-di-san-gregorio",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
