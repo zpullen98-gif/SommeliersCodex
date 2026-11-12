@@ -1,0 +1,1826 @@
+{
+ "group": "burgundy-chablis",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 63,
+  "used": 28,
+  "perRecord": {
+   "raveneau": 6,
+   "vincent-dauvissat": 5,
+   "william-fevre": 6,
+   "louis-michel": 3,
+   "la-chablisienne": 6,
+   "shared": 2
+  },
+  "note": "The two shared searches read the Chablis and Bourgogne wine bodies on the decree of 1938, the seven climats in order and the district's history (the Paris trade, Pontigny, phylloxera, the frosts of 1945 and 1957, the recovery). WebFetch was not tried. Thirty five searches of the share are left unspent."
+ },
+ "method": [
+  "The fragment was written and first refuted with little or no search (the author's searches ran out after Raveneau and Dauvissat; the first refuter had none); this recheck searched every fact beyond the Codex, strongest first: the founding years and the people, the classification and the decree, the sites, the making and its months, the label words and each beat of the story.",
+  "Every source address the fragment listed was tested; where no search returned it (the Vintus page, SommSelect, the reference books), it was replaced by a page a search did return. Every source is read: search, from the body's own domain where marked primary (the Chablis wine body, the Bourgogne wine body, La Chablisienne, Bouchard, the Fèvre sheet in its owners' directory).",
+  "A fact in two independent sources or one primary stands; a fact in one secondary only, or nowhere, is softened or taken out and listed here. A writer's own site (Inside Burgundy, a writer's wiki, a critic's blog) was read as a lead and never cited.",
+  "The rules were tried on every string: no living person named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash; the questions for one right answer, plausible distractors and an explanation that teaches."
+ ],
+ "records": [
+  {
+   "key": "raveneau",
+   "searches": 6,
+   "tested": [
+    "The founding of 1948 by marriage into the Dauvissat family, the vines bought and the wife's family's plots joined (Wikipedia, Vins et Millésimes, Decanter's Raveneau profile): confirmed.",
+    "The first bottling at the domaine, from the 1960s, the first of the family to bottle (Wikipedia and a second account): confirmed; the record's earlier generations who sold their grapes: one account says the father had sold vineyards, so it is rephrased.",
+    "The grand cru purchases in Les Clos, Valmur and Blanchot through the 1960s and 1970s (Wikipedia, Vins et Millésimes, Fine and Rare): confirmed.",
+    "The sons: one joined in 1978, the other in 1995 (two accounts for 1978); the founder's retirement is 1988 or 1995 and his death 2000 in one account; his birth year found nowhere.",
+    "The making: steel tank, then used feuillettes of 132 litres, a year to eighteen months (Rare Wine Co, Sommelier Academy, Inside Burgundy): confirmed; one merchant's barrel fermentation is the outlier.",
+    "Les Clos the largest climat, south west facing, stony above and clay below, named for its dry stone walls, possibly the Pontigny monks' first kernel; the Paris trade by the Yonne; the decree of 1938 and the seven climats in order (the Chablis and Bourgogne wine bodies' own pages): confirmed.",
+    "The label wording François Raveneau: one search, no label text found.",
+    "The rules: nobody living named (the sons are not), no price, no score, nothing volatile (the parcel sizes stay out), no judging superlative, no bare family word, British, no dash; the two questions have one key each and distractors of one kind, and each explanation names the nearest wrong option: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in tank, then moved to old oak casks, among them the traditional Chablis feuillette of about 132 litres, with little or no new wood. The wine rests on its fine lees for a year or more before it is bottled at the domaine.",
+     "now": "Fermented in stainless steel tank, then moved to used oak casks, chiefly the traditional Chablis feuillette of 132 litres, with little or no new wood. The wine rests on its fine lees for a year to eighteen months before it is bottled at the domaine.",
+     "why": "The accounts read give steel tank, then used feuillettes, for a year to eighteen months.",
+     "sources": [
+      {
+       "title": "Rare Wine Co: Raveneau, Chablis",
+       "url": "https://www.rarewineco.com/producer/raveneau-chablis",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Sommelier Academy: winery location Chablis, Raveneau",
+       "url": "https://sommelier-academy.de/?p=987",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label",
+     "was": [
+      {
+       "term": "Chablis Grand Cru",
+       "means": "The one appellation for the seven climats on the hill across the Serein from the town."
+      },
+      {
+       "term": "Les Clos",
+       "means": "The climat, the largest of the seven, its name recalling the dry stone walls that once enclosed it."
+      },
+      {
+       "term": "François Raveneau",
+       "means": "The founder's name, which the domaine's labels carry."
+      }
+     ],
+     "now": [
+      {
+       "term": "Chablis Grand Cru",
+       "means": "The one appellation for the seven climats on the hill across the Serein from the town."
+      },
+      {
+       "term": "Les Clos",
+       "means": "The climat, the largest of the seven, its name recalling the dry stone walls that once enclosed its vines."
+      }
+     ],
+     "why": "No search showed the label's wording, so the founder's name is no longer printed as a label term.",
+     "sources": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine François Raveneau",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000060f/domaine-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Chablis grew rich in the Middle Ages on wine shipped down the Yonne to Paris, and the story goes that Les Clos was among the first slopes worked by the Cistercian monks of Pontigny, an abbey founded in 1114; its name recalls the dry stone walls that once enclosed the vines. Frost, phylloxera and war shrank the vineyard, and in 1938 the law gave the hill's seven climats a single appellation, Chablis Grand Cru. Ten years later François Raveneau, who died in 2000, married into the Dauvissat family and joined his vines to theirs. Earlier generations had sold their grapes; he was the first of the family to bottle wine under its own name. Through the 1960s and 1970s, as grand cru land came up for sale, he bought parcels in Les Clos, Valmur and Blanchot. His two sons worked beside him for years before they took charge, and they kept his method: fermentation in tank, then a year and more in old casks. In their cellar Les Clos shows that Chablis can be raised in wood and keep the taste of its limestone. On a list it belongs with the wines to cellar, not with the crisp aperitifs.",
+     "now": "Chablis grew rich in the Middle Ages on wine shipped down the Yonne to Paris, and the Cistercian monks of Pontigny worked its slopes from the twelfth century; Les Clos may be the first kernel of their vineyard, and its name recalls the dry stone walls that once enclosed the vines. Phylloxera, war and frost shrank the district, and in 1938 the law gave the hill's seven climats a single appellation, Chablis Grand Cru. Ten years later the founder, whose name the domaine carries, married into the Dauvissat family, and the vines he had bought and the plots his wife's family held became one domaine. He was the first of his family to bottle his own wine, from the 1960s, and through the 1960s and 1970s, as grand cru land came up for sale, he bought parcels in Les Clos, Valmur and Blanchot. One son joined him in 1978 and a second followed, and they kept his method: fermentation in tank, then a year and more in old casks. In their cellar Les Clos shows that Chablis can be raised in wood and keep the taste of its limestone. On a list it belongs with the wines to cellar, not with the crisp aperitifs.",
+     "why": "The founder's dates are not in two sources, so he is described; Pontigny's founding year was not searched; the bottling from the 1960s and the sons' arrival are as Wikipedia and Vins et Millésimes give them; the Pontigny kernel is hedged as the wine body hedges it.",
+     "sources": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vins et Millésimes: François Raveneau",
+       "url": "https://www.vinsetmillesimes.com/en/4346-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Les Clos",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/les-clos,3251,15606.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[1]",
+     "was": "Raveneau is Chablis raised in old wood: call it neither steel fresh nor new oaked, since the casks give texture and no taste of oak.",
+     "now": "Raveneau is Chablis raised in old wood: call it neither steel fresh nor new oaked, since the old casks give texture rather than a taste of new oak.",
+     "why": "No account says the casks give no taste of oak; they are used casks with little or no new wood.",
+     "sources": [
+      {
+       "title": "Rare Wine Co: Raveneau, Chablis",
+       "url": "https://www.rarewineco.com/producer/raveneau-chablis",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Sommelier Academy: winery location Chablis, Raveneau",
+       "url": "https://sommelier-academy.de/?p=987",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "In 1948, when François Raveneau married into the Dauvissat family and joined his vines to theirs.",
+     "now": "In 1948, when the founder married into the Dauvissat family and joined the vines he had bought to plots his wife's family held.",
+     "why": "The founder is described, not named.",
+     "sources": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vins et Millésimes: François Raveneau",
+       "url": "https://www.vinsetmillesimes.com/en/4346-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "François Raveneau bought grand cru parcels in the 1960s and 1970s, as land came up for sale; 1923 is the cooperative's founding, and the decree of 1938 drew the appellation, not anyone's holdings.",
+     "now": "The founder bought grand cru parcels in the 1960s and 1970s, as land came up for sale; 1923 is the cooperative's founding, and the decree of 1938 drew the appellation, not anyone's holdings.",
+     "why": "The founder is described, not named.",
+     "sources": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine François Raveneau",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000060f/domaine-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine François Raveneau, a domaine profile",
+       "url": "https://www.decanter.com/premium/domaine-francois-raveneau-taking-the-pulse-of-chablis-greatest-wine-538472/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine François Raveneau",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000060f/domaine-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Les Clos",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/les-clos,3251,15606.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne wines: the Chablis Grand Cru appellation",
+       "url": "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chablis-grand-cru,2458,9253.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "now": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Rare Wine Co: Raveneau, Chablis",
+       "url": "https://www.rarewineco.com/producer/raveneau-chablis",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine François Raveneau",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000060f/domaine-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Les Clos",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/les-clos,3251,15606.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "why": "Every source is now a page a search returned; Decanter's profile moves to the extra sources.",
+     "sources": [
+      {
+       "title": "Wikipedia: Domaine Raveneau",
+       "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Rare Wine Co: Raveneau, Chablis",
+       "url": "https://www.rarewineco.com/producer/raveneau-chablis",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine François Raveneau",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000060f/domaine-raveneau",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Les Clos",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/les-clos,3251,15606.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The label term François Raveneau.",
+    "Pontigny founded in 1114.",
+    "The founder's name in the story, the card and the explanation, with his year of death, 2000.",
+    "Earlier generations had sold their grapes.",
+    "His two sons worked beside him for years before they took charge (now: one son joined in 1978 and a second followed)."
+   ],
+   "open": [
+    "The founder's dates: death in 2000 in one account, birth found nowhere.",
+    "The founder's retirement, 1988 or 1995."
+   ],
+   "extraSources": [
+    {
+     "title": "Decanter: Domaine François Raveneau, taking the pulse of Chablis",
+     "url": "https://www.decanter.com/premium/domaine-francois-raveneau-taking-the-pulse-of-chablis-greatest-wine-538472/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vins et Millésimes: François Raveneau",
+     "url": "https://www.vinsetmillesimes.com/en/4346-raveneau",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Sommelier Academy: winery location Chablis, Raveneau",
+     "url": "https://sommelier-academy.de/?p=987",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "The wines of Chablis: Chablis Grand Cru",
+     "url": "https://www.chablis-wines.com/explore/chablis-appellations/chablis-grand-cru/chablis-grand-cru,1820,7663.html",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "vincent-dauvissat",
+   "searches": 5,
+   "tested": [
+    "The first bottling in 1931, among the first in Chablis (Decanter, Fine and Rare, Vinfolio): confirmed; the founder's beginning in the 1920s is Decanter's alone.",
+    "The son at work from 1950 (Decanter: began to work; Vinfolio: took over), brother in law of Raveneau's founder, whose wife was his sister (Decanter's two profiles, a second account): confirmed.",
+    "The grandson joined in 1976 (Decanter and a second account): confirmed; took charge in 1979 by Decanter and in 1989 by a forum report and a list page: not settled, so not dated.",
+    "Organic and biodynamic principles from 2002, not certified (Decanter, a second list page, Lea and Sandeman, Alliance Wine): confirmed as the early 2000s.",
+    "The making: old barrels and feuillettes, about half feuillettes by Inside Burgundy, no new oak by a writer's wiki, old barrels by the library: little or no new wood; fermentation vessel not found.",
+    "Les Preuses: south and south west facing, overlooking the valley, clay and limestone topsoil (the Chablis wine body), between Bougros and Vaudésir (the wine body's order of the seven): confirmed.",
+    "The labels long read René et Vincent Dauvissat, the domaine also known by the grandson's name (Fine and Rare, Vinfolio): confirmed.",
+    "The rules: the grandson is named only inside the house's name and the label's words; nobody else living named; no price, score, volatile fact or judging superlative; British; no dash; the questions sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Bottling at the domaine was rare in Chablis in 1931, when most growers sold their wine in cask to the merchants, but that year the founder of this estate, built up through the 1920s, began to bottle his own. In 1938 Chablis Grand Cru became an appellation, and the seven climats of the hill took one name on the label with their own beneath it. The founder's son widened the holdings from the 1950s, and the family became kin by marriage to the Raveneaus, so the two domaines that would be named together grew up side by side. The founder's grandson joined in the 1970s and took charge in 1989. He kept the cellar as he found it: old barrels, the small Chablis feuillette, long lees ageing and no taste of new oak, and in the early 2000s he turned the vineyards to organic farming. Les Preuses and Les Clos are the domaine's two grands crus, the first rounder and more open, the second firmer and slower. When a guest asks for Chablis raised in wood that keeps the taste of its limestone, Dauvissat is the other name beside Raveneau, and Les Preuses is the easier of its grands crus to open young.",
+     "now": "Few Chablis growers bottled their own wine in 1931, when most sold it in cask to the merchants, but that year the founder of this domaine became one of the first to do so. In 1938 Chablis Grand Cru became an appellation, and the seven climats of the hill took one name on the label with their own beneath it. The founder's son was at work in the domaine from 1950, and his sister's marriage to the founder of Raveneau made the two families kin, so the domaines named together grew up side by side. The founder's grandson joined his father in 1976 and in time took charge. He kept the cellar as he found it: old barrels, the small Chablis feuillette, long lees ageing and little or no new oak, and in the early 2000s he turned the vineyards to organic farming. Les Preuses and Les Clos are the domaine's two grands crus, the first rounder and more open, the second firmer and slower. When a guest asks for Chablis raised in wood that keeps the taste of its limestone, Dauvissat is the other name beside Raveneau, and Les Preuses is the easier of its grands crus to open young.",
+     "why": "Decanter dates the son's start to 1950 and the grandson's arrival to 1976, and gives the takeover as 1979 where two lesser accounts say 1989; the 1920s rest on one account; the kinship is the son's sister's marriage, as both Decanter profiles tell it; organic from 2002 is in two accounts.",
+     "sources": [
+      {
+       "title": "Decanter: Dauvissat, the wizard of Chablis",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine François Raveneau, taking the pulse of Chablis",
+       "url": "https://www.decanter.com/premium/domaine-francois-raveneau-taking-the-pulse-of-chablis-greatest-wine-538472/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinfolio: Domaine René et Vincent Dauvissat",
+       "url": "https://www.vinfolio.com/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Lea and Sandeman: Domaine Vincent Dauvissat",
+       "url": "https://www.leaandsandeman.co.uk/wine-producer/Domaine-Vincent-Dauvissat-416-04.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Les Preuses, towards the north western end of the grand cru hill between Bougros and Vaudésir, on the Kimmeridgian limestone and marl of the right bank of the Serein; the vines are farmed organically.",
+     "now": "Les Preuses, between Bougros and Vaudésir towards the north western end of the grand cru hill on the right bank of the Serein, facing south and south west over the valley, on clay and limestone over Kimmeridgian marl; the vines are farmed organically.",
+     "why": "The Chablis wine body gives the aspect and the topsoil of Preuses.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Preuses",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/preuses,3251,15608.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Chablis Grand Cru",
+       "url": "https://www.chablis-wines.com/explore/chablis-appellations/chablis-grand-cru/chablis-grand-cru,1820,7663.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Raised in oak, chiefly in old barrels and the traditional Chablis feuillette, with only a little new wood, and left long on its lees, so the cask shapes the texture without giving any taste of oak. It is bottled at the domaine.",
+     "now": "Raised in old oak, in barrels and the traditional Chablis feuillette of 132 litres, with little or no new wood, and left long on its lees, so the cask shapes the texture more than the flavour. It is bottled at the domaine.",
+     "why": "One account says no new oak, another about half feuillettes; little or no new wood is true either way.",
+     "sources": [
+      {
+       "title": "Decanter: Dauvissat, the wizard of Chablis",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Alliance Wine: Vincent Dauvissat, producer page",
+       "url": "https://www.alliancewine.com/our-producers/vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Dauvissat's Les Preuses is a Chablis grand cru from the north western reach of the hill, raised in old casks and feuillettes with barely any new wood. It is rounder and more open than the house's Les Clos, yet stony and saline, and it rewards ten years in bottle.",
+     "now": "Dauvissat's Les Preuses is a Chablis grand cru from the north western reach of the hill, raised in old casks and feuillettes with little or no new wood. It is rounder and more open than the house's Les Clos, yet stony and saline, and it rewards ten years in bottle.",
+     "why": "Little or no new wood, as the making.",
+     "sources": [
+      {
+       "title": "Decanter: Dauvissat, the wizard of Chablis",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Alliance Wine: Vincent Dauvissat, producer page",
+       "url": "https://www.alliancewine.com/our-producers/vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2].means",
+     "was": "The name many labels carry, for the founder's son and grandson; the domaine is also known by the grandson's name alone.",
+     "now": "The name long printed on the domaine's labels, for the founder's son and grandson; the domaine is also known as Vincent Dauvissat.",
+     "why": "Fine and Rare and Vinfolio show the labels long read René et Vincent Dauvissat.",
+     "sources": [
+      {
+       "title": "Fine and Rare: Domaine René et Vincent Dauvissat",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinfolio: Domaine René et Vincent Dauvissat",
+       "url": "https://www.vinfolio.com/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "Dauvissat raises its grands crus in oak, chiefly old barrels and feuillettes with little new wood; Les Preuses is a single grand cru climat on the right bank, not a premier cru or a blend.",
+     "now": "Dauvissat raises its grands crus in old barrels and feuillettes with little or no new wood; Les Preuses is a single grand cru climat on the right bank, not a premier cru or a blend.",
+     "why": "Little or no new wood, as the making.",
+     "sources": [
+      {
+       "title": "Decanter: Dauvissat, the wizard of Chablis",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Alliance Wine: Vincent Dauvissat, producer page",
+       "url": "https://www.alliancewine.com/our-producers/vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": [
+      {
+       "title": "Fine and Rare: Domaine René et Vincent Dauvissat",
+       "url": "https://frw.co.uk/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Dauvissat, a Chablis domaine profile",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Alliance Wine: Vincent Dauvissat, producer page",
+       "url": "https://www.alliancewine.com/our-producers/vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "SommSelect: Behind the Wine, Domaine Vincent Dauvissat",
+       "url": "https://sommselect.com/blogs/tasting-notes/behind-the-wine-domaine-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne wines: the Chablis Grand Cru appellation",
+       "url": "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chablis-grand-cru,2458,9253.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "now": [
+      {
+       "title": "Decanter: Dauvissat, the wizard of Chablis",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine François Raveneau, taking the pulse of Chablis",
+       "url": "https://www.decanter.com/premium/domaine-francois-raveneau-taking-the-pulse-of-chablis-greatest-wine-538472/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine René et Vincent Dauvissat",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Alliance Wine: Vincent Dauvissat, producer page",
+       "url": "https://www.alliancewine.com/our-producers/vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Preuses",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/preuses,3251,15608.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "why": "Every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "Decanter: Dauvissat, the wizard of Chablis",
+       "url": "https://www.decanter.com/premium/dauvissat-the-wizard-of-chablis-560535/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine François Raveneau, taking the pulse of Chablis",
+       "url": "https://www.decanter.com/premium/domaine-francois-raveneau-taking-the-pulse-of-chablis-greatest-wine-538472/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Domaine René et Vincent Dauvissat",
+       "url": "https://www.frw.co.uk/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Alliance Wine: Vincent Dauvissat, producer page",
+       "url": "https://www.alliancewine.com/our-producers/vincent-dauvissat",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Preuses",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/preuses,3251,15608.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The grandson took charge in 1989.",
+    "The founder's estate built up through the 1920s.",
+    "The founder's son widened the holdings from the 1950s.",
+    "Only a little new wood, barely any new wood (now little or no new wood)."
+   ],
+   "open": [
+    "The year the grandson took charge: 1979 or 1989.",
+    "Whether the grands crus are fermented in tank or in cask."
+   ],
+   "extraSources": [
+    {
+     "title": "Vinfolio: Domaine René et Vincent Dauvissat",
+     "url": "https://www.vinfolio.com/producer/612ec280060000000000032d/domaine-rene-vincent-dauvissat",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Lea and Sandeman: Domaine Vincent Dauvissat",
+     "url": "https://www.leaandsandeman.co.uk/wine-producer/Domaine-Vincent-Dauvissat-416-04.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "william-fevre",
+   "searches": 6,
+   "tested": [
+    "Founded in 1959 as the Domaine de la Maladière (Decanter and a second account; one merchant says 1957): confirmed.",
+    "A family long in Chablis (several accounts give roots to about 1750; one says the founder's father held grand cru vines in the 1930s): told as a family that had long worked vines there.",
+    "The founder's taste for new oak and its division of opinion (Fine and Rare, Decanter, a merchant): confirmed.",
+    "The passing to the Henriot family in 1998 (Decanter, Fine and Rare; Hachette says 1997; one account says the domaine but not the vineyards): confirmed as passed; the Henriot family took the helm of Bouchard in 1995 (Bouchard's own page, Decanter): confirmed.",
+    "Old oak only since, no new barrels (Decanter, the house's sheets): confirmed.",
+    "Côte Bouguerots: the steepest part of Bougros, south facing, at the foot of the hillside (the house's sheet in the Barons de Rothschild directory, Comptoir des Millésimes); Bougros a south west terrace above and a steeper south facing slope below, poor soil on the slope (the Chablis wine body): confirmed.",
+    "The making: gravity, steel fermentation, a share of the wine in barrels of about six years' average age, never new, about fourteen to nineteen months (the house's sheets, Hawke's Bay sheet, Comptoir des Millésimes): confirmed.",
+    "The founder's death and dates: accounts say he has died; his dates were found in no two sources.",
+    "The rules: the founder is not named; no living person named; the later sales after 2022 are present ownership and stay out; no price, score or judging superlative; British; no dash; the questions sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "Côte Bouguerots, the steep part of Bougros, the climat at the north western end of the grand cru hill on the right bank of the Serein, on Kimmeridgian limestone and marl.",
+     "now": "Côte Bouguerots, the steep, south facing lower slope of Bougros, the climat at the western end of the grand cru hill on the right bank of the Serein; poor soil over Kimmeridgian limestone and marl.",
+     "why": "The wine body and the house's sheet place Côte Bouguerots on the steep, south facing lower slope of Bougros.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Comptoir des Millésimes: Bougros Côte Bouguerots 2018, William Fèvre",
+       "url": "https://www.comptoirdesmillesimes.com/en/producer-grower/chablis-grand-cru-bougros-cote-bouguerots-2018-william-fevre.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Since the late 1990s the domaine has turned away from new oak: the grands crus are fermented and raised partly in steel tanks and partly in older oak barrels, kept on their lees and then bottled at the domaine.",
+     "now": "Pressed gently and moved by gravity rather than pumped, it is fermented in stainless steel vats; a share of the wine that varies with the vintage then rests on its fine lees in French oak barrels several years old, never new, and the whole is brought together in steel before it is bottled at the domaine, well over a year after the harvest.",
+     "why": "The house's sheets give steel fermentation and a share of the wine in old barrels, never new, then steel.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Hawke's Bay Wine: William Fèvre technical sheet",
+       "url": "https://hawkesbaywine.co.nz/wp-content/uploads/2024/09/ACS-12.-William-Fevre.pdf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Comptoir des Millésimes: Bougros Côte Bouguerots 2018, William Fèvre",
+       "url": "https://www.comptoirdesmillesimes.com/en/producer-grower/chablis-grand-cru-bougros-cote-bouguerots-2018-william-fevre.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Lemon curd, ripe pear and sea spray over chalk, broader and riper than most Chablis grand crus, with firm acidity, a supple middle and a long, saline finish.",
+     "now": "Lemon curd, ripe pear and sea spray over chalk, broad and ripe for a Chablis grand cru, with firm acidity, a supple middle and a long, saline finish.",
+     "why": "Broader and riper than most Chablis grand crus was a comparison no source made.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "The climat at the north western end of the hill, one of the seven.",
+     "now": "The climat at the western end of the hill, one of the seven.",
+     "why": "The wine body puts Bougros at the west of the appellation.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Chablis Grand Cru",
+       "url": "https://www.chablis-wines.com/explore/chablis-appellations/chablis-grand-cru/chablis-grand-cru,1820,7663.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2].means",
+     "was": "The steep parcel within Bougros: a named part of the climat, not an eighth grand cru.",
+     "now": "The steep lower slope within Bougros: a named part of the climat, not an eighth grand cru.",
+     "why": "The steep lower slope, as the sites.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Steep even by the measure of the Chablis hill, Côte Bouguerots is the part of Bougros that William Fèvre bottles under its own name. Raised since the late 1990s in steel and older oak, it is broad and ripe for Chablis, yet saline, and never tastes of wood.",
+     "now": "Steep even by the measure of the Chablis hill, Côte Bouguerots is the lower slope of Bougros that William Fèvre bottles under its own name. Fermented in steel and partly raised in old oak, never new, it is broad and ripe for Chablis, yet saline.",
+     "why": "No source says it never tastes of wood; the sheets say old oak, never new.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Hawke's Bay Wine: William Fèvre technical sheet",
+       "url": "https://hawkesbaywine.co.nz/wp-content/uploads/2024/09/ACS-12.-William-Fevre.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "When the law drew the Chablis appellations in 1938, it gave the seven climats of the hill above the Serein one name, Chablis Grand Cru, but the district it named was in decline: frost, phylloxera and war had left only a fraction of its old vineyard planted. The domaine was founded in 1959, on the eve of the district's recovery, and over the decades that followed its founder gathered parcels in Les Clos, Bougros, Les Preuses, Valmur and Vaudésir until it held one of the largest shares of grand cru in the district. For years its wines were known for new oak, which divided opinion in a place that prizes the taste of its limestone. In 1998 the domaine was sold to the Henriot family of Champagne, who had bought Bouchard Père et Fils in Beaune three years earlier, in 1995. The new owners turned the cellar away from new barrels and raised the grands crus partly in steel and partly in older oak. Côte Bouguerots is the steep part of Bougros, and the house bottles it under its own name, so that a guest can taste one slope within a climat. Here a large domaine's grand cru tastes of the hill, not of the cellar.",
+     "now": "When the law drew the Chablis appellations in 1938, it gave the seven climats of the hill above the Serein one name, Chablis Grand Cru, but the district was in decline: phylloxera, war and frost had left only a fraction of its old vineyard planted, and the frost of 1957 took a whole crop. The domaine was founded in 1959 as the Domaine de la Maladière, by a grower whose family had long worked vines in Chablis, on the eve of the district's recovery, and over the decades that followed it came to hold one of the largest shares of grand cru in the district, in Les Clos, Bougros, Les Preuses, Valmur and Vaudésir. Its founder favoured new oak, which divided opinion in a place that prizes the taste of its limestone. In 1998 the domaine passed to the Henriot family of Champagne, who had taken the helm of Bouchard Père et Fils in Beaune in 1995. The new team set the new barrels aside and raised the grands crus in steel and older oak. Côte Bouguerots is the steep lower slope of Bougros, and the house bottles it under its own name, so that a guest can taste one slope within a climat. Here a large domaine's grand cru tastes of the hill, not of the cellar.",
+     "why": "Founded as the Domaine de la Maladière; the frost of 1957 by the wine body; the founder's new oak; the domaine, not certainly its vineyards, passed in 1998; Bouchard in 1995 by its own page.",
+     "sources": [
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: William Fèvre",
+       "url": "https://www.frw.co.uk/producer/612ec2800600000000000521/william-fevre",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bouchard Père et Fils: Our heritage",
+       "url": "https://bouchard-pereetfils.com/en/the-domaine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2]",
+     "was": "Heavy new oak marked the domaine's wines before 1998; since then it has raised its grands crus in steel and older barrels.",
+     "now": "Heavy new oak marked the domaine's wines before 1998; since then it has raised its grands crus in steel and older barrels, never new.",
+     "why": "Never new, as the sheets.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Hawke's Bay Wine: William Fèvre technical sheet",
+       "url": "https://hawkesbaywine.co.nz/wp-content/uploads/2024/09/ACS-12.-William-Fevre.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "The steep part of the grand cru Bougros, bottled under its own name; a parcel within a climat, not an eighth grand cru.",
+     "now": "The steep lower slope of the grand cru Bougros, bottled under its own name; a parcel within a climat, not an eighth grand cru.",
+     "why": "The steep lower slope, as the sites.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].front",
+     "was": "What changed at Domaine William Fèvre after its sale in 1998?",
+     "now": "What changed at Domaine William Fèvre after it passed to new owners in 1998?",
+     "why": "Passed rather than sold, as the story.",
+     "sources": [
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: William Fèvre",
+       "url": "https://www.frw.co.uk/producer/612ec2800600000000000521/william-fevre",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "The Henriot family of Champagne turned the cellar away from new oak, raising the grands crus partly in steel and partly in older barrels.",
+     "now": "The Henriot family of Champagne set the new barrels aside, raising the grands crus in steel and older oak.",
+     "why": "The new barrels were set aside, as Decanter and Fine and Rare tell it.",
+     "sources": [
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: William Fèvre",
+       "url": "https://www.frw.co.uk/producer/612ec2800600000000000521/william-fevre",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].opts[0]",
+     "was": "The steep part of the Bougros climat, bottled apart",
+     "now": "The steep lower slope of Bougros, bottled apart",
+     "why": "The steep lower slope, as the sites.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "The Henriot family bought Bouchard Père et Fils in Beaune in 1995 and Domaine William Fèvre in 1998; La Chablisienne is the Chablis cooperative of 1923.",
+     "now": "The Henriot family bought Bouchard Père et Fils in Beaune in 1995 and took over Domaine William Fèvre in 1998; La Chablisienne is the Chablis cooperative of 1923.",
+     "why": "The Henriot family took over the domaine; the vineyards may not have been sold with it.",
+     "sources": [
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bouchard Père et Fils: Our heritage",
+       "url": "https://bouchard-pereetfils.com/en/the-domaine",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": [
+      {
+       "title": "Bourgogne wines: the Chablis Grand Cru appellation",
+       "url": "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chablis-grand-cru,2458,9253.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Chablis Grand Cru",
+       "url": "https://www.chablis-wines.com/explore/chablis-appellations/chablis-grand-cru/chablis-grand-cru,1820,7663.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vintus: William Fèvre",
+       "url": "https://vintus.com/?p=116963",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Oxford Companion to Wine",
+       "url": "",
+       "kind": "secondary",
+       "read": "book"
+      }
+     ],
+     "now": [
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bouchard Père et Fils: Our heritage",
+       "url": "https://bouchard-pereetfils.com/en/the-domaine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "why": "The Vintus page and the Oxford Companion were never returned by a search here; every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+       "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Domaine William Fèvre producer profile",
+       "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bouchard Père et Fils: Our heritage",
+       "url": "https://bouchard-pereetfils.com/en/the-domaine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Bougros",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/bougros,3251,15605.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Never tastes of wood.",
+    "Broader and riper than most Chablis grand crus.",
+    "The domaine was sold to the Henriot family (now: passed to).",
+    "Who had bought Bouchard Père et Fils (now: taken the helm of, as Bouchard's own page has it; the question's explanation keeps bought, as two accounts give it)."
+   ],
+   "open": [
+    "The founder's dates, for the integrator if two sources give them.",
+    "Whether the vineyards were sold or leased in 1998."
+   ],
+   "extraSources": [
+    {
+     "title": "Fine and Rare: William Fèvre",
+     "url": "https://www.frw.co.uk/producer/612ec2800600000000000521/william-fevre",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Hachette Vins: Domaine William Fèvre",
+     "url": "https://www.hachette-vins.com/guide-vins/producteurs/1806/dom-william-fa-vre/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Hawke's Bay Wine: William Fèvre technical sheet",
+     "url": "https://hawkesbaywine.co.nz/wp-content/uploads/2024/09/ACS-12.-William-Fevre.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Comptoir des Millésimes: Bougros Côte Bouguerots 2018, William Fèvre",
+     "url": "https://www.comptoirdesmillesimes.com/en/producer-grower/chablis-grand-cru-bougros-cote-bouguerots-2018-william-fevre.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "louis-michel",
+   "searches": 3,
+   "tested": [
+    "Founded in 1850, the first vines planted that year (several merchants' pages, the library): confirmed.",
+    "Old oak before 1970, steel from the 1969 vintage, oak given up from the 1960s, the last barrels gone by about 1980 (Berry Bros and Rudd, Bourgogne Info, iDealwine, the library): confirmed; the plan's 1960s is the start and the library's 1980 the end.",
+    "The making: native yeasts, steel only, twelve to sixteen months on the lees in tank (Enotria and Coe, a merchant, the Sommelier Academy): confirmed as a year or more.",
+    "Montée de Tonnerre: a premier cru on the right bank, just set back from the grand crus with Blanchot directly opposite, west facing, shallow soil over Kimmeridgian marly limestone, with Chapelot, Côte de Bréchain and Pied d'Aloup (the Chablis wine body): confirmed; which lieux-dits the domaine farms was not searched.",
+    "The label Louis Michel & Fils (Berry Bros and Rudd's listing, the library): confirmed.",
+    "The rules: nobody of the family named; no price, score or volatile fact; British; no dash; the questions sound, the story question now on the start of the change."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "The domaine counts its beginnings from 1850, when Chablis was a busy vineyard sending its wine to Paris in cask, much of it in the small local barrel, the feuillette. The decades that followed were hard on it: phylloxera, two wars and the spring frosts left only a fraction of the old vineyard standing, and when the law drew its appellations in 1938 the district was at a low ebb. Recovery came after the 1960s, when sprinklers and heaters against frost let growers plant again, and through it the Michel family took the opposite road from the old barrel domaines. In the second half of the twentieth century they gave up oak altogether, and every wine of the house, grand cru included, has since been fermented and aged in stainless steel. Their argument is that Chablis needs nothing from wood: the cold climate and the Kimmeridgian marl give the acidity, the salt and the shell, and steel keeps them clear. Montée de Tonnerre, the premier cru that carries on from the grand cru hill, is where that argument is heard at its fullest. Poured beside a Raveneau or a Dauvissat from the same ground, it shows a guest what the cellar changes and what the vineyard does not.",
+     "now": "The family counts its beginnings from 1850, when it planted its first vines in Chablis, then a busy vineyard sending its wine to Paris by river. The decades that followed were hard: phylloxera, wars and spring frosts left only a fraction of the old vineyard standing, and when the law drew its appellations in 1938 the district was at a low ebb. Recovery came after the frost of 1957, when heaters and sprinklers let growers plant again, and through it the Michel family took the opposite road from the old barrel domaines. Until then their wines had been made in old oak; from the end of the 1960s they turned to steel, and by about 1980 the last barrels were gone, so that every wine of the house, grand cru included, is fermented and aged in stainless steel. Their argument is that Chablis needs nothing from wood: the cold climate and the Kimmeridgian marl give the acidity, the salt and the shell, and steel keeps them clear. Montée de Tonnerre, the premier cru across from the grand cru hill, is where that argument is heard at its fullest. Poured beside a Raveneau or a Dauvissat from the same ground, it shows a guest what the cellar changes and what the vineyard does not.",
+     "why": "The change to steel began with the vintages at the end of the 1960s and was complete by about 1980; the recovery followed the frost of 1957, by the wine body.",
+     "sources": [
+      {
+       "title": "Berry Bros and Rudd: Chablis Montée de Tonnerre, Louis Michel et Fils",
+       "url": "https://www.bbr.com/products-30215-2013-chablis-montee-de-tonnerre-domaine-louis-michel",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne Info: Domaine Louis Michel",
+       "url": "https://bourgogne-info.eu/html/domaine_louis_michel.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Domaine Louis Michel",
+       "url": "https://www.idealwine.net/?p=47538",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented and aged in stainless steel tanks with no oak at any stage, as every wine of the domaine is, then left on its fine lees for many months before it is bottled at the domaine.",
+     "now": "Fermented with its own yeasts in stainless steel tanks and aged in steel on its fine lees for a year or more, with no oak at any stage, as every wine of the domaine is, then bottled at the domaine.",
+     "why": "The importers' sheets give native yeasts and a year and more on the lees in steel.",
+     "sources": [
+      {
+       "title": "Enotria and Coe: Louis Michel Chablis Premier Cru Montée de Tonnerre",
+       "url": "https://www.enotria.com/products/louis-michel-chablis-1er-cru-montee-de-tonnerre-2022",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Berry Bros and Rudd: Chablis Montée de Tonnerre, Louis Michel et Fils",
+       "url": "https://www.bbr.com/products-30215-2013-chablis-montee-de-tonnerre-domaine-louis-michel",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Montée de Tonnerre, the premier cru on the right bank of the Serein that carries the grand cru hill on to the south east beyond Blanchot, on Kimmeridgian limestone and marl.",
+     "now": "Montée de Tonnerre, the premier cru on the right bank of the Serein just set back from the grand cru hill, across from Blanchot; west facing slopes of shallow soil over Kimmeridgian marly limestone.",
+     "why": "The wine body sets Montée de Tonnerre across from Blanchot, west facing.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Montée de Tonnerre",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/montee-de-tonnerre-chapelot-cote-de-brechain-pied-d-aloup,3251,15612.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "The climat, beside the grand cru hill on the right bank of the Serein.",
+     "now": "The climat, across from the grand cru Blanchot on the right bank of the Serein.",
+     "why": "As the sites.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Montée de Tonnerre",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/montee-de-tonnerre-chapelot-cote-de-brechain-pied-d-aloup,3251,15612.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "On the right bank of the Serein, carrying the grand cru hill on beyond Blanchot; it is a premier cru.",
+     "now": "On the right bank of the Serein, across from the grand cru Blanchot; it is a premier cru.",
+     "why": "As the sites.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: the climat Montée de Tonnerre",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/montee-de-tonnerre-chapelot-cote-de-brechain-pied-d-aloup,3251,15612.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": {
+      "q": "Louis Michel took the opposite road from the old barrel domaines of Chablis. When did the family give up oak?",
+      "opts": [
+       "In the second half of the twentieth century",
+       "When the domaine was founded in 1850",
+       "When the appellation was drawn in 1938",
+       "In the decade after phylloxera reached Chablis"
+      ],
+      "a": 0,
+      "exp": "The family gave up oak in the later twentieth century, as Chablis recovered and replanted; in 1850 and in 1938 Chablis was made and shipped in cask.",
+      "tag": "story"
+     },
+     "now": {
+      "q": "Louis Michel took the opposite road from the old barrel domaines of Chablis. When did the family begin to give up oak?",
+      "opts": [
+       "At the end of the 1960s",
+       "When the domaine was founded in 1850",
+       "When the appellation was drawn in 1938",
+       "In the decade after phylloxera reached Chablis"
+      ],
+      "a": 0,
+      "exp": "The first vintages in steel came at the end of the 1960s, and by about 1980 no barrel was left; before then the domaine's wines, like most Chablis, were made in old oak.",
+      "tag": "story"
+     },
+     "why": "The question now asks when the family began to give up oak, which the sources date to the end of the 1960s.",
+     "sources": [
+      {
+       "title": "Berry Bros and Rudd: Chablis Montée de Tonnerre, Louis Michel et Fils",
+       "url": "https://www.bbr.com/products-30215-2013-chablis-montee-de-tonnerre-domaine-louis-michel",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne Info: Domaine Louis Michel",
+       "url": "https://bourgogne-info.eu/html/domaine_louis_michel.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Domaine Louis Michel",
+       "url": "https://www.idealwine.net/?p=47538",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": [
+      {
+       "title": "Bourgogne wines: the Chablis Grand Cru appellation",
+       "url": "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chablis-grand-cru,2458,9253.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Oxford Companion to Wine",
+       "url": "",
+       "kind": "secondary",
+       "read": "book"
+      },
+      {
+       "title": "The World Atlas of Wine",
+       "url": "",
+       "kind": "secondary",
+       "read": "book"
+      }
+     ],
+     "now": [
+      {
+       "title": "Berry Bros and Rudd: Chablis Montée de Tonnerre, Louis Michel et Fils",
+       "url": "https://www.bbr.com/products-30215-2013-chablis-montee-de-tonnerre-domaine-louis-michel",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne Info: Domaine Louis Michel",
+       "url": "https://bourgogne-info.eu/html/domaine_louis_michel.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Domaine Louis Michel",
+       "url": "https://www.idealwine.net/?p=47538",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Enotria and Coe: Louis Michel Chablis Premier Cru Montée de Tonnerre",
+       "url": "https://www.enotria.com/products/louis-michel-chablis-1er-cru-montee-de-tonnerre-2022",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Montée de Tonnerre",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/montee-de-tonnerre-chapelot-cote-de-brechain-pied-d-aloup,3251,15612.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "why": "The two reference books were not opened; every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "Berry Bros and Rudd: Chablis Montée de Tonnerre, Louis Michel et Fils",
+       "url": "https://www.bbr.com/products-30215-2013-chablis-montee-de-tonnerre-domaine-louis-michel",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne Info: Domaine Louis Michel",
+       "url": "https://bourgogne-info.eu/html/domaine_louis_michel.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "iDealwine: Domaine Louis Michel",
+       "url": "https://www.idealwine.net/?p=47538",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Enotria and Coe: Louis Michel Chablis Premier Cru Montée de Tonnerre",
+       "url": "https://www.enotria.com/products/louis-michel-chablis-1er-cru-montee-de-tonnerre-2022",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Montée de Tonnerre",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/montee-de-tonnerre-chapelot-cote-de-brechain-pied-d-aloup,3251,15612.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "In the second half of the twentieth century they gave up oak altogether (now dated).",
+    "Recovery came after the 1960s (now after the frost of 1957).",
+    "Carries the grand cru hill on to the south east beyond Blanchot (now across from Blanchot)."
+   ],
+   "open": [
+    "Which lieux-dits of Montée de Tonnerre the domaine farms."
+   ],
+   "extraSources": []
+  },
+  {
+   "key": "la-chablisienne",
+   "searches": 6,
+   "tested": [
+    "Founded in 1923 by growers under the abbé Balitrand in the hard inter-war years (the cooperative's own page, Wikipedia, two merchants): confirmed; the day, 1 May, is Wikipedia's alone; the priest's dates found nowhere.",
+    "Château Grenouilles: a single block of about seven hectares of the climat's nine, between Vaudésir and Valmur on the right bank, held by the cooperative since 2003 (its own page, a merchant); Wikipedia says bought in 1999.",
+    "The making: cold settling, both fermentations in barrel and tank, about fourteen months on fine lees in barrel and tank (the cooperative's sheets for 2021 and 2022), twenty months (merchants' sheets for 2007 and 2015): confirmed as well over a year.",
+    "Grenouilles the smallest climat, between Vaudésir and Valmur beside the Serein, named for the frogs, written as grenoille in 1321 (the Chablis wine body): confirmed.",
+    "Les Vénérables on the cooperative's shop, Pas si Petit a Petit Chablis from Portlandian limestone raised in tank (its own sheet): confirmed; Vieilles Vignes not found.",
+    "The rules: the priest is described, not named; nobody living named; the quarter of the vineyard its members farm is a present figure and stays out; no price, score or judging superlative; British; no dash; the questions sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "After the First World War Chablis was a shrunken vineyard: phylloxera had taken most of its vines, and its growers sold their grapes and wine to the merchants. In 1923 a group of them joined together to make and sell their wine as one, and La Chablisienne was born. Fifteen years later, in 1938, the law gave the seven climats of the grand cru hill a single appellation, Chablis Grand Cru. The cooperative grew with the district's recovery after the 1960s, when protection against spring frost let the vineyard spread again, until its members farmed a large share of the appellation. Grenouilles is the smallest of the seven climats, set between Vaudésir and Valmur; its name means frogs, which, the story goes, once sang from the banks of the Serein below. Most of it came to belong to Château Grenouilles, an estate whose vines the cooperative works and whose wine it bottles apart under the château's name. That a grand cru should come from a cooperative surprises many guests, and it is a question the Court asks. Château Grenouilles is the proof that Chablis Grand Cru is not the wine of small domaines alone.",
+     "now": "In the hard years after the First World War, when Chablis wine was difficult to sell, a group of growers led by a priest joined together in 1923 to make and sell their wine as one, and La Chablisienne was born. Fifteen years later, in 1938, the law gave the seven climats of the grand cru hill a single appellation, Chablis Grand Cru. The cooperative grew with the district's recovery after the frosts of the 1950s, until its members farmed a large share of the appellation. Grenouilles is the smallest of the seven climats, set between Vaudésir and Valmur beside the Serein; its name, written as early as 1321, means frogs. Most of it lies in one block, Château Grenouilles, an estate the cooperative took on in 2003, by its own account, and whose wine it bottles apart under the château's name. That a grand cru should come from a cooperative surprises many guests, and it is a question a candidate meets. Château Grenouilles is the proof that Chablis Grand Cru is not the wine of small domaines alone.",
+     "why": "The cooperative's own page gives the founding under a priest in hard years and the château held since 2003; the wine body gives the name's first record in 1321.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Château Grenouilles",
+       "url": "https://chablisienne.com/chateau-grenouilles.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: La Chablisienne",
+       "url": "https://en.wikipedia.org/wiki/La_Chablisienne",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Grenouilles",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/grenouilles,3251,15607.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked from the château's own vines and vinified apart from the cooperative's other wines, it is raised on its fine lees for many months before the cooperative bottles it under the château's name.",
+     "now": "The must is settled cold, then fermented and taken through its malolactic partly in oak barrels and partly in tank; the wine rests on its fine lees, in barrel and tank, for well over a year before the cooperative bottles it under the château's name.",
+     "why": "The cooperative's own sheets give the making.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Château Grenouilles 2022 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/fiches_techniques/Chablis_grand_cru_Ch_teau_Grenouilles_2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Chablisienne: Château Grenouilles 2021 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/CHABLIS_GRAND_CRU_CHATEAU_GRENOUILLES_2021.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vente à la Propriété: La Chablisienne Château Grenouilles 2007",
+       "url": "https://www.ventealapropriete.com/en/vente/ficheproduit/CGR0009",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "The vines of Château Grenouilles, which cover most of Grenouilles, the smallest of the seven climats, between Vaudésir and Valmur on the grand cru hill, on Kimmeridgian limestone and marl.",
+     "now": "Château Grenouilles, a single block of vines covering most of Grenouilles, the smallest of the seven climats, between Vaudésir and Valmur on the right bank of the Serein, on clay and limestone over Kimmeridgian marl.",
+     "why": "The cooperative's page gives the single block, its sheet the soil.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Château Grenouilles",
+       "url": "https://chablisienne.com/chateau-grenouilles.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Chablisienne: Château Grenouilles 2022 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/fiches_techniques/Chablis_grand_cru_Ch_teau_Grenouilles_2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Château Grenouilles is La Chablisienne's grand cru, from most of Grenouilles, the smallest of the seven Chablis climats. It shows what a cooperative of growers can bottle at grand cru level: supple, saline and scented with white blossom, and ready sooner than the barrel domaines.",
+     "now": "Château Grenouilles is La Chablisienne's grand cru, from most of Grenouilles, the smallest of the seven Chablis climats. Fermented in barrel and tank and long on its lees, it is supple and saline, and it shows what a cooperative of growers can bottle at grand cru level.",
+     "why": "Ready sooner than the barrel domaines had no source; the making is now in the line.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Château Grenouilles 2022 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/fiches_techniques/Chablis_grand_cru_Ch_teau_Grenouilles_2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Chablisienne: Château Grenouilles 2021 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/CHABLIS_GRAND_CRU_CHATEAU_GRENOUILLES_2021.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means",
+     "was": "The estate in Grenouilles whose vines the cooperative works; a cooperative's wine, not a private grower's.",
+     "now": "The estate in Grenouilles whose wine the cooperative bottles apart; a cooperative's wine, not a private grower's.",
+     "why": "The cooperative holds the estate since 2003 by its own account, so it is more than the vines' worker.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Château Grenouilles",
+       "url": "https://chablisienne.com/chateau-grenouilles.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": [
+      {
+       "name": "Chablis Les Vénérables Vieilles Vignes",
+       "note": "The cooperative's old vine village Chablis, its widely poured house style."
+      },
+      {
+       "name": "Chablis Grand Cru Les Preuses",
+       "note": "One of the cooperative's other grands crus, from the north western reach of the hill."
+      }
+     ],
+     "now": [
+      {
+       "name": "Chablis Les Vénérables",
+       "note": "The cooperative's village Chablis under a name of its own."
+      },
+      {
+       "name": "Petit Chablis Pas si Petit",
+       "note": "The cooperative's Petit Chablis, from Portlandian limestone, raised in tank; its name means not so small."
+      }
+     ],
+     "why": "Les Vénérables as the cooperative's shop shows it; Les Preuses was not confirmed and gives way to Pas si Petit.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Nos Chablis",
+       "url": "https://chablisienne.com/nos-gammes/nos-chablis.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Chablisienne: Petit Chablis Pas si Petit technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/FT-FR-PETIT-CHABLIS-PAS-SI-PETIT_2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "La Chablisienne was founded in 1923; 1938 is the year the Chablis Grand Cru appellation was drawn, and frost protection spread after the 1960s.",
+     "now": "La Chablisienne was founded in 1923, in the hard years after the First World War; 1938 is the year the Chablis Grand Cru appellation was drawn, and frost protection spread later.",
+     "why": "Frost protection spread after 1957 rather than after the 1960s.",
+     "sources": [
+      {
+       "title": "The wines of Chablis: Thousands of years of history",
+       "url": "https://www.chablis-wines.com/discover/a-unique-territory-and-terroir/thousands-of-years-of-history/thousands-of-years-of-history,1808,7645.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: La Chablisienne",
+       "url": "https://en.wikipedia.org/wiki/La_Chablisienne",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": [
+      {
+       "title": "The wines of Chablis: the climat Grenouilles",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/grenouilles,3251,15607.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne wines: the Chablis Grand Cru appellation",
+       "url": "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chablis-grand-cru,2458,9253.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Oxford Companion to Wine",
+       "url": "",
+       "kind": "secondary",
+       "read": "book"
+      }
+     ],
+     "now": [
+      {
+       "title": "La Chablisienne: Château Grenouilles",
+       "url": "https://chablisienne.com/chateau-grenouilles.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Chablisienne: Château Grenouilles 2022 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/fiches_techniques/Chablis_grand_cru_Ch_teau_Grenouilles_2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: La Chablisienne",
+       "url": "https://en.wikipedia.org/wiki/La_Chablisienne",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Grenouilles",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/grenouilles,3251,15607.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bourgogne wines: the Chablis Grand Cru appellation",
+       "url": "https://www.bourgogne-wines.com/wine-and-terroir/bourgogne-and-its-appellations/chablis-grand-cru,2458,9253.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ],
+     "why": "The Oxford Companion was not opened; every source is now a page a search returned.",
+     "sources": [
+      {
+       "title": "La Chablisienne: Château Grenouilles",
+       "url": "https://chablisienne.com/chateau-grenouilles.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "La Chablisienne: Château Grenouilles 2022 technical sheet",
+       "url": "https://chablisienne.com/media/wysiwyg/fiches_techniques/Chablis_grand_cru_Ch_teau_Grenouilles_2022.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: La Chablisienne",
+       "url": "https://en.wikipedia.org/wiki/La_Chablisienne",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The wines of Chablis: the climat Grenouilles",
+       "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/grenouilles,3251,15607.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Phylloxera had taken most of its vines, and its growers sold their grapes and wine to the merchants (now: the hard inter-war years, as the cooperative tells it).",
+    "Ready sooner than the barrel domaines.",
+    "Its widely poured house style (Les Vénérables).",
+    "Chablis Grand Cru Les Preuses among the others.",
+    "The Court asks (now: a question a candidate meets)."
+   ],
+   "open": [
+    "The year the cooperative came to Château Grenouilles: 2003 or 1999.",
+    "The priest's dates."
+   ],
+   "extraSources": [
+    {
+     "title": "La Chablisienne: Château Grenouilles 2021 technical sheet",
+     "url": "https://chablisienne.com/media/wysiwyg/CHABLIS_GRAND_CRU_CHATEAU_GRENOUILLES_2021.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vente à la Propriété: La Chablisienne Château Grenouilles 2007",
+     "url": "https://www.ventealapropriete.com/en/vente/ficheproduit/CGR0009",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "La Chablisienne: Nos Chablis",
+     "url": "https://chablisienne.com/nos-gammes/nos-chablis.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "La Chablisienne: Petit Chablis Pas si Petit technical sheet",
+     "url": "https://chablisienne.com/media/wysiwyg/FT-FR-PETIT-CHABLIS-PAS-SI-PETIT_2022.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Jean-Marie Raveneau, Bernard Raveneau",
+   "where": "search results on Raveneau, as the founder's sons",
+   "believed": "living, Bernard Raveneau and Jean-Marie Raveneau already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Andrée Dauvissat",
+   "where": "Decanter and another account, as the wife of Raveneau's founder",
+   "believed": "not settled",
+   "inFragment": false
+  },
+  {
+   "name": "René Dauvissat",
+   "where": "Decanter and the label words René et Vincent Dauvissat, as the founder's son",
+   "believed": "not settled",
+   "inFragment": true
+  },
+  {
+   "name": "Vincent Dauvissat",
+   "where": "the house's name and the label words",
+   "believed": "living; named only inside the house's name, which the brief allows",
+   "inFragment": true
+  },
+  {
+   "name": "Ghislain Dauvissat, Etiennette Dauvissat",
+   "where": "Decanter's Dauvissat profile, as the grandson's children",
+   "believed": "living",
+   "inFragment": false
+  },
+  {
+   "name": "Fabien Dauvissat",
+   "where": "search results on another Dauvissat domaine",
+   "believed": "living",
+   "inFragment": false
+  },
+  {
+   "name": "Didier Seguier",
+   "where": "search results on William Fèvre, as the cellar master from 1998",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Jean-Loup Michel",
+   "where": "search results on Louis Michel",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Guillaume Gicqueau-Michel",
+   "where": "search results on Louis Michel, as the nephew who runs the domaine",
+   "believed": "living; people.json holds Guillaume Michel, which may not match this form",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "William Fèvre",
+   "note": "Accounts read say he has died; his dates were found in no two sources, so the founder is described."
+  },
+  {
+   "name": "Joseph Henriot",
+   "note": "Died in 2015 by the Champagne Henriot entry; the record says the Henriot family."
+  },
+  {
+   "name": "François Raveneau",
+   "note": "Died in 2000 by Wikipedia alone; described as the founder."
+  },
+  {
+   "name": "Robert Dauvissat",
+   "note": "The founder of the Dauvissat domaine; described, his dates found nowhere."
+  },
+  {
+   "name": "the abbé Balitrand",
+   "note": "Led the founding of La Chablisienne in 1923; described as a priest, his dates found nowhere."
+  }
+ ],
+ "picks": [
+  {
+   "pick": "raveneau",
+   "ruling": "kept: Les Clos is the domaine's grand cru most often named, from the largest climat."
+  },
+  {
+   "pick": "vincent-dauvissat",
+   "ruling": "kept: Les Preuses and Les Clos are the two grands crus; Raveneau already teaches Les Clos, and Les Preuses is on the house's list. The plan's why calls Les Preuses the grand cru on the slope's upper reaches, which no source read confirmed (the wine body says it overlooks the valley); the record does not say it."
+  },
+  {
+   "pick": "william-fevre",
+   "ruling": "kept, with a note: Côte Bouguerots is the house's named parcel and teaches the climat within a climat, though some would lead with its Les Clos, the larger holding; no swap proposed."
+  },
+  {
+   "pick": "louis-michel",
+   "ruling": "kept. The plan's why says no oak since the 1960s; the sources give the start of the change in the 1969 vintage and its end about 1980, so the record tells both."
+  },
+  {
+   "pick": "la-chablisienne",
+   "ruling": "kept: Château Grenouilles is the cooperative's grand cru from most of the smallest climat, held by it since 2003 by its own account."
+  }
+ ],
+ "codexInTension": [
+  {
+   "record": "p-dom-raveneau",
+   "field": "style",
+   "says": "Fermented and aged partly in old barrels with long lees contact",
+   "found": "The accounts read give fermentation in stainless steel tank and then ageing in used feuillettes of 132 litres; nothing is fermented in barrel.",
+   "sources": [
+    {
+     "title": "Rare Wine Co: Raveneau, Chablis",
+     "url": "https://www.rarewineco.com/producer/raveneau-chablis",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Sommelier Academy: winery location Chablis, Raveneau",
+     "url": "https://sommelier-academy.de/?p=987",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Domaine Raveneau",
+     "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-dom-william-fevre",
+   "field": "style",
+   "says": "Reformed in the late 1990s away from heavy new oak towards large old barrels and steel",
+   "found": "The house's sheets give French oak barrels of about six years' average age, not large casks, for a share of the wine, with fermentation in steel.",
+   "sources": [
+    {
+     "title": "Domaines Barons de Rothschild wine directory: Bougros Côte Bouguerots",
+     "url": "https://winedirectory.lafite.com/en/the-wine-directory/product-N1QWPE-grand-cru-bougros-cote-bouguerots/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Hawke's Bay Wine: William Fèvre technical sheet",
+     "url": "https://hawkesbaywine.co.nz/wp-content/uploads/2024/09/ACS-12.-William-Fevre.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Comptoir des Millésimes: Bougros Côte Bouguerots 2018, William Fèvre",
+     "url": "https://www.comptoirdesmillesimes.com/en/producer-grower/chablis-grand-cru-bougros-cote-bouguerots-2018-william-fevre.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-dom-william-fevre",
+   "field": "holdings and traps[0]",
+   "says": "The largest owner of Chablis grand cru; Fevre owns more grand cru than any other Chablis producer",
+   "found": "A present holding, which the brief keeps out of the tab; and one account says the founder sold the domaine but not his vineyards in 1998, so who owns the grand cru vines is not the domaine's own fact.",
+   "sources": [
+    {
+     "title": "Decanter: Domaine William Fèvre producer profile",
+     "url": "https://www.decanter.com/wine/producer-profiles/burgundy-producers/domaine-william-fevre-249296/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Fine and Rare: William Fèvre",
+     "url": "https://www.frw.co.uk/producer/612ec2800600000000000521/william-fevre",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-dom-vincent-dauvissat",
+   "field": "wines[1].note",
+   "says": "Rounder grand cru at the western end of the slope",
+   "found": "Preuses lies between Bougros and Vaudésir; Bougros is the climat at the western end.",
+   "sources": [
+    {
+     "title": "The wines of Chablis: Chablis Grand Cru",
+     "url": "https://www.chablis-wines.com/explore/chablis-appellations/chablis-grand-cru/chablis-grand-cru,1820,7663.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The wines of Chablis: the climat Preuses",
+     "url": "https://www.chablis-wines.com/explore/the-terroir/the-climats-of-chablis-micro-terroirs/preuses,3251,15608.html",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-la-chablisienne",
+   "field": "wines[1].n",
+   "says": "Chablis Les Vénérables Vieilles Vignes",
+   "found": "The cooperative's own shop lists the wine as Les Vénérables; Vieilles Vignes was not found there.",
+   "sources": [
+    {
+     "title": "La Chablisienne: Nos Chablis",
+     "url": "https://chablisienne.com/nos-gammes/nos-chablis.html",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "plan.json burgundy-chablis",
+   "field": "louis-michel why",
+   "says": "with no oak since the 1960s",
+   "found": "The change began with the 1969 vintage and was complete about 1980; the plan is not a Codex record and is reported for the integrator.",
+   "sources": [
+    {
+     "title": "Berry Bros and Rudd: Chablis Montée de Tonnerre, Louis Michel et Fils",
+     "url": "https://www.bbr.com/products-30215-2013-chablis-montee-de-tonnerre-domaine-louis-michel",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Bourgogne Info: Domaine Louis Michel",
+     "url": "https://bourgogne-info.eu/html/domaine_louis_michel.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "iDealwine: Domaine Louis Michel",
+     "url": "https://www.idealwine.net/?p=47538",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
