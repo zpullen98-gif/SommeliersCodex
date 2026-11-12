@@ -1,0 +1,1306 @@
+{
+ "group": "bordeaux-left",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 63,
+  "used": 43,
+  "perRecord": {
+   "lafite-rothschild": 7,
+   "latour": 5,
+   "margaux": 6,
+   "haut-brion": 12,
+   "mouton-rothschild": 11,
+   "shared": 2
+  },
+  "note": "The two shared searches read the 1855 classification and the Rothschild Archive for Lafite and Mouton together. One Mouton search was refused for a blocked domain and is counted. Eight of the Haut-Brion and Mouton searches went on people's dates, which result summaries often leave out. WebFetch was not tried."
+ },
+ "method": [
+  "The pilot was written with no web search; its sources were marked read: search, but several addresses were never returned by a search here. This recheck searched every fact beyond the Codex, strongest claims first: the people and their dates, the classification, the sales, the sites, the grapes, the making and its months, the label words and each beat of the story.",
+  "Every source address the pilot listed was tested; where a search never returned it, it was replaced by a page a search did return, so every source in the fragment is one the refuter saw. All are read: search (a result summary, from the estate's own domain where marked primary).",
+  "A fact found in two independent sources or one primary stands; a fact in one secondary only, or nowhere, is softened or taken out and listed here. A dead person whose dates were not found in two sources is described rather than named in the story.",
+  "The rules were tried on every string: no living person named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash; the questions for one right answer, plausible distractors and an explanation that teaches."
+ ],
+ "records": [
+  {
+   "key": "lafite-rothschild",
+   "searches": 7,
+   "tested": [
+    "The estate's own history: the Ségur family bought the property in the seventeenth century and the planting is credited to Jacques de Ségur; Baron James bought it in August 1868 and died months later; the label as it is known first appeared on the next vintage: confirmed as the estate tells it.",
+    "Nicolas-Alexandre de Ségur, the Prince of the Vines, 1697 to 1755 in most accounts, who inherited Latour (Wikipedia, Wine Spectator, wein-plus): confirmed; that he was Jacques de Ségur's grandson was not found and is cut.",
+    "The court at Versailles: Wine Spectator says Louis XV took to Lafite probably on the advice of the Maréchal de Richelieu, and the estate's journal credits the Duc de Richelieu with its introduction at court; one account calls the story apocryphal. Kept as a legend, the teller described, his dates not found.",
+    "The sale of 1784 for debt to a kinsman, Pichard, guillotined on 30 June 1794, and the seizure as national property (wein-plus, Wikipedia, the estate): confirmed.",
+    "Lafite first on the 1855 list of first growths (Fine and Rare, Wikipedia's classification page): confirmed.",
+    "The auction of 8 August 1868 in Paris, bought by agents for Baron James, against a coalition of Bordeaux merchants (the estate's journal, Wikipedia); Baron James 1792 to 1868, head of the Paris house, died 15 November 1868 (the Rothschild Archive): confirmed.",
+    "The making: about fifteen days of fermentation at a controlled temperature and fifteen months in new oak after each barrel is tasted (the estate's page for the grand vin); the estate announced 2025 as the last vintage in its wooden vats: the year and a half is wrong and the vat material is cut.",
+    "Carruades: a group of plots adjoining the ridge of the vineyard, which gives the second wine its name (the estate): confirmed; its share of Merlot was not found.",
+    "The rules: no living person named, no price, no score, nothing volatile, no judging superlative, no bare family word, British, no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented parcel by parcel in wooden and steel vats, then aged for about a year and a half in new oak barrels, many of them made by the estate's own coopers, before it is bottled at the château.",
+     "now": "Fermented in vats for about a fortnight at a controlled temperature. Each barrel is then tasted on its own before the blend is made, and the wine is aged in new oak barrels for about fifteen months, by the estate's own account, before it is bottled at the château.",
+     "why": "The estate's own page gives about fifteen days of fermentation and fifteen months in new oak; it has announced 2025 as the last vintage in its wooden vats, so naming the vats would age, and no source tied the grand vin's barrels to its own coopers.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild: Read Château Lafite Rothschild",
+       "url": "https://www.lafite.com/domaines/chateau-lafite-rothschild/read/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild: 2025, the lucky hand",
+       "url": "https://www.lafite.com/2025-the-lucky-hand/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Vines were planted at Lafite in the late seventeenth century, most likely by Jacques de Ségur, and his grandson Nicolas-Alexandre de Ségur (1697 to 1755), remembered as the Prince of the Vines, built its name in France and abroad; the Maréchal de Richelieu (1696 to 1788) is said to have made it the King's wine at Versailles. Debts forced the Ségurs to sell in 1784, and in the Revolution the estate was seized and sold as national property. When the Bordeaux brokers drew up their classification for the Universal Exhibition in Paris in 1855, Lafite stood first among the four first growths. On 8 August 1868 Baron James de Rothschild (1792 to 1868), head of the family's Paris bank, bought it at auction against a group of Bordeaux merchants who drove the bidding up; he died three months later. The estate took the family's name and carried it through phylloxera, two world wars and the lean years between them. The Carruades plateau beside the vineyard gives its name to the second wine, Carruades de Lafite. For a sommelier, Lafite is the reference for the perfumed, restrained side of Pauillac, the first growth that whispers rather than shouts.",
+     "now": "Vines were planted at Lafite in the late seventeenth century by the Ségur family, as the estate tells it, and in the eighteenth century Nicolas-Alexandre de Ségur (1697 to 1755), who also held Latour, was remembered as the Prince of the Vines. The story goes that the military governor of Guyenne, a friend of the king, made Lafite the wine of the court at Versailles. Heavy debts forced a later Ségur to sell in 1784, to a kinsman who was guillotined in 1794, and the estate was seized and sold as national property. When the Bordeaux brokers drew up their classification for the Universal Exhibition in Paris in 1855, Lafite stood first among the four first growths. On 8 August 1868 Baron James de Rothschild (1792 to 1868), head of the family's Paris bank, bought it at auction in Paris, against a coalition of Bordeaux merchants as the estate tells it, and he died that November, three months later. The estate took the family's name, and the label as it is known first appeared on the next vintage. The Carruades plateau that adjoins the vineyard gives its name to the second wine. For a sommelier, Lafite is the perfumed, restrained side of Pauillac, the first growth that whispers rather than shouts.",
+     "why": "Jacques de Ségur's dates were found nowhere and the grandson was not confirmed; the Maréchal de Richelieu's dates were not found in two sources, so the teller of the legend is described; the kinsman of 1784, the Paris auction, the coalition of merchants, the death in November and the label of the next vintage were found; the line on phylloxera and the wars rested on no source.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild: History",
+       "url": "https://www.lafite.com/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild: The Journal, Roots",
+       "url": "https://www.lafite.com/?p=129",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild: The Journal, Light",
+       "url": "https://www.lafite.com/?p=12589",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Spectator: The Prince of Vines",
+       "url": "https://www.winespectator.com/articles/the-prince-of-vines-46838",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Nicolas-Alexandre, marquis de Ségur",
+       "url": "https://en.wikipedia.org/wiki/Nicolas-Alexandre,_marquis_de_S%C3%A9gur",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Ségur",
+       "url": "https://glossary.wein-plus.eu/segur",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Rothschild Archive: Château Lafite, Pauillac",
+       "url": "https://family.rothschildarchive.org/estates/64-chateau-lafite",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Your guide to the 1855 classification",
+       "url": "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The second wine, named for the Carruades plateau, with more Merlot than the grand vin.",
+     "now": "The second wine, named for the Carruades plateau, a group of plots that adjoins the ridge of the grand vin's vineyard.",
+     "why": "The estate describes the Carruades as plots adjoining the ridge of Lafite; no source read gave the second wine's share of Merlot.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild: Read Château Lafite Rothschild",
+       "url": "https://www.lafite.com/domaines/chateau-lafite-rothschild/read/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "Baron James de Rothschild of the Paris bank, at auction; he died three months later and the estate took the family's name.",
+     "now": "Baron James de Rothschild (1792 to 1868) of the Paris bank, at auction; he died three months later and the estate took the family's name.",
+     "why": "The lint asked for a titled person's dates; the Rothschild Archive gives 1792 to 1868.",
+     "sources": [
+      {
+       "title": "The Rothschild Archive: Château Lafite, Pauillac",
+       "url": "https://family.rothschildarchive.org/estates/64-chateau-lafite",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "most likely by Jacques de Ségur (now the Ségur family, as the estate tells it)",
+    "his grandson",
+    "the Maréchal de Richelieu (1696 to 1788) is said to have made it the King's wine at Versailles (now the military governor of Guyenne, a friend of the king, as a legend)",
+    "carried it through phylloxera, two world wars and the lean years between them",
+    "in wooden and steel vats; parcel by parcel; about a year and a half; many of them made by the estate's own coopers",
+    "with more Merlot than the grand vin",
+    "the sources: the Decanter producer profile and the Manifesto page (never seen for these facts)"
+   ],
+   "open": [
+    "Nicolas-Alexandre de Ségur's birth is 1697 in most accounts and 1695 or 1696 in some.",
+    "Whether Baron James ever came to Lafite: the Rothschild Archive says never, the estate quotes a press item of September 1868 saying he left Paris for it.",
+    "Whether the grand vin's barrels come from the group's cooperage in Pauillac, as Carruades de Lafite's do."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaines Barons de Rothschild: 2025, the lucky hand",
+     "url": "https://www.lafite.com/2025-the-lucky-hand/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaines Barons de Rothschild: The Journal, Roots",
+     "url": "https://www.lafite.com/?p=129",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaines Barons de Rothschild: The Journal, Light",
+     "url": "https://www.lafite.com/?p=12589",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Nicolas-Alexandre, marquis de Ségur",
+     "url": "https://en.wikipedia.org/wiki/Nicolas-Alexandre,_marquis_de_S%C3%A9gur",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus: Ségur",
+     "url": "https://glossary.wein-plus.eu/segur",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Château Lafite Rothschild",
+     "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Lafite_Rothschild",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "latour",
+   "searches": 5,
+   "tested": [
+    "The tower: a fortified tower of the fourteenth century, in the Hundred Years War, gave the estate its name, and the round tower on the label is a later one, of the seventeenth century, the 1620s in one account (Christie's, wein-plus, Wikipedia): confirmed; 1331 in one account only.",
+    "The Ségurs: Latour came to Nicolas-Alexandre de Ségur through his mother's family and Lafite was already the family's by 1716 (Wikipedia): early eighteenth century confirmed.",
+    "1963: the de Beaumont heirs of the Ségurs sold three quarters to the Pearson group with a share held by Harveys of Bristol (Wikipedia, wein-plus): confirmed as a majority.",
+    "1964: stainless steel vats replaced the old wooden ones at the new owners' wish (Wikipedia and two other accounts the search returned): confirmed; three years after Haut-Brion's 1961 (the Haut-Brion record's sources).",
+    "1966: Les Forts de Latour from that vintage (Wikipedia, a wine wiki), two accounts calling it revived: confirmed as the modern second wine.",
+    "1993: back in French hands after Allied Lyons (Wikipedia, wein-plus): confirmed; the buyer is living and not named.",
+    "The barrels: about eighteen months all new in one account, eighteen to twenty months mostly new by a French merchant, some two years in the barrel cellar by Fine and Rare; Grand Vin de Château Latour and Premier Grand Cru Classé on the label (two merchant listings): confirmed, the making now eighteen months or more.",
+    "The rules: sound; the estate's own site refuses the search tool, so there is no primary source."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in temperature controlled stainless steel vats, first installed in 1964, and aged for well over a year in new oak barrels before bottling at the château; the wines are then held at the estate until it judges them ready.",
+     "now": "Fermented in temperature controlled stainless steel vats, first installed in 1964, and aged for eighteen months or more in new oak barrels before bottling at the château; the wines are then held at the estate until it judges them ready.",
+     "why": "Merchant accounts give about eighteen months, eighteen to twenty months and some two years in the barrel cellar, all or nearly all in new oak.",
+     "sources": [
+      {
+       "title": "Fine and Rare: Latour producer page",
+       "url": "https://frw.co.uk/producer/612ec2800600000000000f64/latour",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "A fortified tower stood here in the fourteenth century, guarding the estuary during the Hundred Years War, and it gave the estate its name; the round tower that stands there now, and on every label, was built later. By the early eighteenth century Latour had joined Lafite in the hands of the Ségur family, and in 1855 the Bordeaux brokers ranked it among the four first growths. The Ségur heirs kept it until 1963, when they sold a majority to the British Pearson group, with Harveys of Bristol beside it. The new owners rebuilt the cellar and in 1964 replaced the old wooden vats with temperature controlled stainless steel, three years after Haut-Brion and well ahead of most of Bordeaux. Les Forts de Latour, the second wine, followed with the 1966 vintage, and the estate returned to French hands in 1993. Latour is famous for consistency: its deep gravel by the river gives a wine that holds its shape in weak years, and its 1961 is a vintage of history. With the 2012 vintage it left the en primeur system, the sale of wine still in barrel, and has since released its wines when it judges them ready to drink.",
+     "now": "A fortified tower stood here in the fourteenth century, guarding the estuary during the Hundred Years War, and it gave the estate its name; the round tower shown on every label was built later, in the seventeenth century. By the early eighteenth century Latour had joined Lafite in the hands of the Ségur family, and in 1855 the Bordeaux brokers ranked it among the four first growths. The Ségur heirs kept it until 1963, when they sold a majority to the British Pearson group, with Harveys of Bristol beside it. The new owners modernised the cellar and in 1964 replaced the old wooden vats with temperature controlled stainless steel, three years after Haut-Brion. Les Forts de Latour, the second wine, followed with the 1966 vintage, and the estate returned to French hands in 1993. Latour is famous for consistency: its deep gravel by the river gives a wine that holds its shape in weak years, and its 1961 is a vintage of history. With the 2012 vintage it left the en primeur system, the sale of wine still in barrel, and has since released its wines when it judges them ready to drink.",
+     "why": "The round tower on the label is of the seventeenth century in two accounts; no source read said the steel of 1964 was well ahead of most of Bordeaux, or that the cellar was rebuilt rather than re-equipped.",
+     "sources": [
+      {
+       "title": "Christie's: An expert guide to Château Latour",
+       "url": "https://www.christies.com.cn/features/An-expert-guide-to-Chateau-Latour-9584-1.aspx",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Château Latour",
+       "url": "https://glossary.wein-plus.eu/chateau-latour",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Château Latour",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Latour",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The second wine, first released with the 1966 vintage, mostly from parcels outside L'Enclos.",
+     "now": "The second wine in its modern form, from the 1966 vintage, mostly from parcels outside L'Enclos.",
+     "why": "Two accounts say the second wine was revived with the 1966 vintage, so its modern form is what dates from 1966.",
+     "sources": [
+      {
+       "title": "Wikipedia: Château Latour",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Latour",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Château Latour",
+       "url": "https://glossary.wein-plus.eu/chateau-latour",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "the round tower that stands there now, and on every label (now shown on every label, built in the seventeenth century)",
+    "rebuilt the cellar (now modernised)",
+    "and well ahead of most of Bordeaux",
+    "well over a year (now eighteen months or more)",
+    "the sources: Decanter China and the Oxford Companion (not read), the Decanter Wine Legend of the 1961 (its address never returned in full)"
+   ],
+   "open": [
+    "Whether Latour made a second wine before 1966; the library record p-ch-latour says first released with the 1966 vintage.",
+    "The year of the first tower, 1331 in one account and the late fourteenth century in others.",
+    "No primary source: chateau-latour.com refuses the search tool."
+   ],
+   "extraSources": [
+    {
+     "title": "Firstleaf: Château Latour Premier Grand Cru Classé Pauillac, Grand Vin de Château Latour",
+     "url": "https://www.firstleaf.com/a/wine-directory/product/chateau-latour-premier-grand-cru-classe-pauillac-grand-vin-de-chateau-latour",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Château Haut-Brion",
+     "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Haut-Brion",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "margaux",
+   "searches": 6,
+   "tested": [
+    "The Lestonnac years, 1572 to 1582, the sale as national property, the purchase of 1801, the works begun in 1810, the buildings of 1815 (the estate's history and heritage pages): confirmed; the buyer is the Marquis de La Colonilla, who died in 1816, and the architect Louis Combes, neither dated in two sources, so both are described.",
+    "Jefferson's list of 1787, Château Margaux, Tour de Ségur, Haut-Brion and de la Fite, of the first quality (Founders Online, wein-plus, Wikipedia): confirmed; his dates 1743 to 1826 (Monticello, the White House, Britannica).",
+    "The Ginestet family owning the whole by about 1950 and the slump of the 1970s with three unsaleable vintages (the estate): confirmed.",
+    "The sale to André Mentzelopoulos completed in 1977 (the estate) or 1976 (Wikipedia); his dates 1915 to 1980 (the estate's history, French Wikipedia); drainage, replanting and Émile Peynaud (the estate, Wikipedia); Peynaud born in 1912 and dead on 18 July at 92, so in 2004 (Wine Spectator's obituary and one other account): confirmed, with 1977 as the estate says.",
+    "The ageing: barrelled in late October or November in new French oak, about twenty-one months on average, eighteen to twenty-four by the estate's barrel page, after racking off the lees after the malolactic; the estate keeps its own cooperage: confirmed; the vats' material was not found.",
+    "The label: Premier Grand Cru Classé as the estate titles the grand vin, and the neoclassical château on the label (Decanter's Behind the wine label, Westgarth): confirmed.",
+    "The rules: sound; the living daughter of the buyer of 1977 is met in every account and is not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in oak and steel vats, parcel by parcel, and aged for eighteen months to two years in new oak barrels, many made by the estate's own coopers, before bottling at the château.",
+     "now": "Fermented in vats, then racked off its lees after the malolactic and put into new French oak barrels in late October or November. It ages there for eighteen months to two years, about twenty-one months on average, on an estate that keeps its own cooperage beside the cellars, before bottling at the château.",
+     "why": "The estate's own pages give the barrel time and the cooperage; the oak and steel vats and the parcel by parcel fermentation were not found.",
+     "sources": [
+      {
+       "title": "Château Margaux: Ageing in barrels",
+       "url": "https://www.chateau-margaux.com/en/savoir-faire/le-travail-des-chais/elevage-en-barriques",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Margaux: Grand Vin du Château Margaux",
+       "url": "https://chateau-margaux.com/vins/grand-vin-du-chateau-margaux",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Margaux: Preparation of the barrels",
+       "url": "https://chateau-margaux.com/en/actualites/affranchissement-des-barriques",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Margaux: The heritage of Château Margaux",
+       "url": "https://chateau-margaux.com/en/le-domaine/notre-patrimoine",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label",
+     "was": [
+      {
+       "term": "Margaux",
+       "means": "Both the estate and the commune appellation, red only; the estate's white is sold as Bordeaux."
+      },
+      {
+       "term": "Mis en bouteille au château",
+       "means": "Bottled at the estate rather than by a merchant in Bordeaux."
+      }
+     ],
+     "now": [
+      {
+       "term": "Premier Grand Cru Classé",
+       "means": "The words the estate uses for its first growth rank of 1855."
+      },
+      {
+       "term": "Margaux",
+       "means": "Both the estate and the commune appellation, red only; the estate's white is sold as Bordeaux."
+      },
+      {
+       "term": "Mis en bouteille au château",
+       "means": "Bottled at the estate rather than by a merchant in Bordeaux."
+      }
+     ],
+     "why": "The estate titles the grand vin Premier Grand Cru Classé.",
+     "sources": [
+      {
+       "title": "Château Margaux: Grand Vin du Château Margaux",
+       "url": "https://chateau-margaux.com/vins/grand-vin-du-chateau-margaux",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The estate was shaped in the sixteenth century by the Lestonnac family, who turned a medieval domain called La Mothe towards wine. In 1787 Thomas Jefferson (1743 to 1826), then the American minister in Paris, toured Bordeaux and named Château Margaux among four wines of the first quality, with Latour, Haut-Brion and Lafite. After the Revolution the Marquis de la Colonilla bought the estate in the early nineteenth century and had the architect Louis Combes build the neoclassical château, begun in 1810, that appears on the label. In 1855 the brokers ranked Château Margaux a first growth, one of only four reds. The twentieth century brought hard times: the Ginestet family, Bordeaux merchants, held it through lean decades and sold it in 1977 to André Mentzelopoulos (1915 to 1980), who restored the vineyards and cellars before his death, with the oenologist Émile Peynaud (1912 to 2004) as adviser. The run of vintages from 1978 onwards brought the estate's name back. Its white, Pavillon Blanc, is all Sauvignon Blanc, and since the Margaux appellation is for red wine alone it must be sold as Bordeaux Blanc.",
+     "now": "In the 1570s the Lestonnac family reshaped the old domain at Margaux around its vineyards, as the estate tells it. In 1787 Thomas Jefferson (1743 to 1826), then the American minister in Paris, toured Bordeaux and named Château Margaux among four wines of the first quality, with Latour, Haut-Brion and Lafite. After the Revolution the estate was sold as national property, and its new owner of 1801 had a Bordeaux architect build the neoclassical château, begun in 1810, whose front appears on the label. In 1855 the brokers ranked Château Margaux a first growth, one of only four reds. The twentieth century was harder: the Ginestet family, who had come to own the whole estate by about 1950, were left in difficulty by the slump of the 1970s and sold it in 1977 to André Mentzelopoulos (1915 to 1980). He drained and replanted the vineyard, with the oenologist Émile Peynaud (1912 to 2004) as adviser, and by his death in 1980 the estate was held to have its old standing back. Its white, Pavillon Blanc, is all Sauvignon Blanc, and since the Margaux appellation is for red wine alone it must be sold as Bordeaux Blanc.",
+     "why": "The estate's own history gives the Lestonnac decade, 1801, 1810, the Ginestets' whole estate by about 1950, the slump and the sale of 1977; the buyer of 1801 and the architect have no dates in two sources; Mentzelopoulos is dated by the estate and French Wikipedia; Wikipedia, not the run of 1978, is the source for the estate's standing restored by 1980.",
+     "sources": [
+      {
+       "title": "Château Margaux: The story of Château Margaux",
+       "url": "https://chateau-margaux.com/en/le-domaine/histoire",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Margaux: The heritage of Château Margaux",
+       "url": "https://chateau-margaux.com/en/le-domaine/notre-patrimoine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Château Margaux",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Margaux",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipédia: André Mentzelopoulos",
+       "url": "https://fr.wikipedia.org/wiki/Andr%C3%A9_Mentzelopoulos",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Spectator: Emile Peynaud, who influenced winemaking around the world, dies at 92",
+       "url": "https://www.winespectator.com/articles/emile-peynaud-who-influenced-winemaking-around-the-world-dies-at-92-22076",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Monticello: Biography of Thomas Jefferson",
+       "url": "https://www.monticello.org/biography-of-jefferson",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Jefferson, Thomas",
+       "url": "https://glossary.wein-plus.eu/jefferson-thomas",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "André Mentzelopoulos, who restored the vineyards and cellars with Émile Peynaud's advice; the vintages from 1978 brought the estate's name back.",
+     "now": "André Mentzelopoulos, who drained and replanted the vineyard with Émile Peynaud's advice; by his death in 1980 the estate had its old standing back.",
+     "why": "As the story.",
+     "sources": [
+      {
+       "title": "Château Margaux: The story of Château Margaux",
+       "url": "https://chateau-margaux.com/en/le-domaine/histoire",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Château Margaux",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Margaux",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "Thomas Jefferson, then minister in Paris, named Margaux, Latour, Haut-Brion and Lafite in 1787, close to the four red first growths of 1855.",
+     "now": "Thomas Jefferson, then the American minister in Paris, named Margaux, Latour, Haut-Brion and Lafite in his notes of 1787, the same four estates the brokers ranked first growths in 1855.",
+     "why": "The four estates of Jefferson's notes are exactly the four red first growths of 1855.",
+     "sources": [
+      {
+       "title": "Founders Online: Thomas Jefferson Papers",
+       "url": "https://founders.archives.gov/documents/Jefferson/01-27-02-0799",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fine and Rare: Your guide to the 1855 classification",
+       "url": "https://www.frw.co.uk/editorial/your-guide-to-the-1855-classification",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "a medieval domain called La Mothe (the name not found in a search)",
+    "the Marquis de la Colonilla and the architect Louis Combes by name (now described; their dates not found)",
+    "Fermented in oak and steel vats, parcel by parcel",
+    "many made by the estate's own coopers (now an estate that keeps its own cooperage)",
+    "The run of vintages from 1978 onwards brought the estate's name back",
+    "the sources: Sotheby's complete guide (it exists but carried no fact kept) and the Oxford Companion (not read)"
+   ],
+   "open": [
+    "1977 (the estate) or 1976 (Wikipedia) for the sale to André Mentzelopoulos.",
+    "What the vats of the grand vin are made of.",
+    "Émile Peynaud's death year, 2004, is read from Wine Spectator's obituary (18 July, at 92, born 1912); the snippet did not print the year."
+   ],
+   "extraSources": [
+    {
+     "title": "Château Margaux: The heritage of Château Margaux",
+     "url": "https://chateau-margaux.com/en/le-domaine/notre-patrimoine",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Margaux: Preparation of the barrels",
+     "url": "https://chateau-margaux.com/en/actualites/affranchissement-des-barriques",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipédia: André Mentzelopoulos",
+     "url": "https://fr.wikipedia.org/wiki/Andr%C3%A9_Mentzelopoulos",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Founders Online: Thomas Jefferson Papers",
+     "url": "https://founders.archives.gov/documents/Jefferson/01-27-02-0799",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus: Jefferson, Thomas",
+     "url": "https://glossary.wein-plus.eu/jefferson-thomas",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Monticello: Biography of Thomas Jefferson",
+     "url": "https://www.monticello.org/biography-of-jefferson",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Behind the wine label",
+     "url": "https://www.decanter.com/learn/behind-the-wine-label-416641/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Westgarth Wines: Exploring the neoclassical châteaux of Bordeaux",
+     "url": "https://westgarthwines.com/blogs/news/neoclassical-chateaux-of-bordeaux",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "haut-brion",
+   "searches": 12,
+   "tested": [
+    "The estate's own history: the marriage of Jean de Pontac and Jeanne de Bellon in 1525, part of the land in her dowry; the manorial rights bought in 1533 from a Basque merchant; the château begun in 1549; Pontack's Head opened in London in 1666; Joseph de Fumel receiving Jefferson on 25 May 1787; Talleyrand an owner by 1803; Clarence Dillon's purchase completed on 13 May 1935: confirmed.",
+    "Arnaud III de Pontac: 1599 to 1681 or 1599 to 1682 by account, so he is not named; Jean de Pontac's dates were not searched for and he is described.",
+    "Pepys at the Royal Oak tavern in Lombard Street on 10 April 1663, Ho Bryan (the diary, Gutenberg's text): confirmed; Pepys 1633 to 1703 (Britannica, the diary site).",
+    "Jefferson bought wine on his visit, six cases in several accounts (Wikipedia, wein-plus): confirmed; Talleyrand owner from 1801 for three years (Wikipedia), 1754 to 1838 (Britannica, Wikipedia): confirmed.",
+    "Stainless steel in 1961, the first of the great growths (the estate's library page, Wikipedia, wein-plus): confirmed.",
+    "The blend: the estate's figures for 2024 (Cabernet Sauvignon ahead of Merlot) and 2025 (Merlot well ahead), Cabernet Franc in both, no Petit Verdot: near equal parts and the Petit Verdot are wrong.",
+    "The barrels: eighteen to twenty months, the share of new barrels reviewed each year (the estate's savoir-faire page; 75 and 59 per cent in the two years read): new oak throughout is wrong.",
+    "Clarence Dillon 1882 to 1979: in Wikipedia and its mirrors only, so he is described in the story.",
+    "The rules: sound; the living great grandson who heads the group is met in the search and not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Merlot and Cabernet Sauvignon in near equal parts, with Cabernet Franc and a little Petit Verdot.",
+     "now": "Merlot and Cabernet Sauvignon, the lead passing between them with the year, with Cabernet Franc for the rest.",
+     "why": "The estate's own blends for 2024 and 2025 show the lead passing between Merlot and Cabernet Sauvignon, with Cabernet Franc and no Petit Verdot.",
+     "sources": [
+      {
+       "title": "Haut-Brion: 2024 vintage en primeur",
+       "url": "https://www.haut-brion.com/en/stories/2024-vintage-en-primeur/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Haut-Brion: Château Haut-Brion Rouge 2025",
+       "url": "https://www.haut-brion.com/en/the-wines/chateau-haut-brion-rouge/chateau-haut-brion-rouge-2025/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Two gravel hillocks in Pessac, now surrounded by the suburbs of Bordeaux, whose warmth ripens the grapes early.",
+     "now": "Gravel mounds in Pessac around the château, long since surrounded by the suburbs of Bordeaux.",
+     "why": "The library gives gravel mounds; the two hillocks and the early ripening were not found.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Château Haut-Brion",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Haut-Brion",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented in stainless steel vats, which the estate installed in 1961, the first of the first growths to do so, and aged for eighteen months to two years in new oak barrels before bottling at the château.",
+     "now": "Fermented in stainless steel vats, first installed in 1961, the first of the first growths to use them, then aged for eighteen to twenty months in oak barrels, the share of new oak set each year by the vintage, before bottling at the château.",
+     "why": "The estate's savoir-faire page gives eighteen to twenty months in barrel and a share of new oak set each year; the steel of 1961 is the estate's and Wikipedia's.",
+     "sources": [
+      {
+       "title": "Haut-Brion: Savoir-faire",
+       "url": "https://www.haut-brion.com/en/savoir-faire/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Haut-Brion: The Château Haut-Brion library",
+       "url": "https://www.haut-brion.com/en/stories/chateau-haut-brion-library/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Château Haut-Brion",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Haut-Brion",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Château Haut-Brion is the one first growth of 1855 outside the Médoc, from gravel hillocks in Pessac now inside the city's suburbs. Near equal Merlot and Cabernet give tobacco, wood smoke and cassis, softer and more savoury than the Pauillacs.",
+     "now": "Château Haut-Brion is the one first growth of 1855 outside the Médoc, from gravel in Pessac long since surrounded by the suburbs of Bordeaux. Merlot and Cabernet Sauvignon give tobacco, wood smoke and cassis, more savoury than the Pauillacs.",
+     "why": "The blend is no longer near equal; now carries no present tense word for the suburbs.",
+     "sources": [
+      {
+       "title": "Haut-Brion: 2024 vintage en primeur",
+       "url": "https://www.haut-brion.com/en/stories/2024-vintage-en-primeur/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Haut-Brion: Château Haut-Brion Rouge 2025",
+       "url": "https://www.haut-brion.com/en/the-wines/chateau-haut-brion-rouge/chateau-haut-brion-rouge-2025/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Jean de Pontac married into the Haut-Brion lands in 1525 and acquired the estate in 1533, and his descendants made it one of the first Bordeaux wines sold under the name of its own estate. Arnaud III de Pontac (1599 to 1681) sold it in London, and on 10 April 1663 Samuel Pepys (1633 to 1703) wrote in his diary of drinking a French wine called Ho Bryan, an early written note on a Bordeaux estate. Thomas Jefferson (1743 to 1826) visited in 1787 and bought its wine, and the statesman Talleyrand (1754 to 1838) owned it briefly in the early nineteenth century. In 1855 the brokers could not leave it out: it was ranked a first growth beside three Médoc estates, though it lies in the Graves. The American banker Clarence Dillon (1882 to 1979) bought it in 1935. In 1959 it was classified again, among the red Crus Classés de Graves, and in 1961 it became the first of the first growths to ferment in stainless steel vats. Its white, Haut-Brion Blanc, is one of the few dry white wines of Bordeaux to stand beside the reds.",
+     "now": "In 1525 a marriage brought part of the Haut-Brion land to the Pontac family as a bride's dowry; in 1533 the bridegroom bought its manorial rights from a Basque merchant, and in 1549 he began the château. By the 1660s the wine was known in London by the estate's own name: on 10 April 1663 Samuel Pepys (1633 to 1703) wrote in his diary of drinking, at the Royal Oak tavern in Lombard Street, a French wine called Ho Bryan, and in 1666 the family opened a London tavern of its own, Pontack's Head. Thomas Jefferson (1743 to 1826) came on 25 May 1787 and bought its wine, and the statesman Talleyrand (1754 to 1838) owned it briefly in the early nineteenth century. In 1855 the brokers ranked it a first growth beside three Médoc estates, though it lies in the Graves. In 1935 a New York banker bought it, and the second wine, Le Clarence, carries his first name. In 1959 it was classified again, among the red Crus Classés de Graves, and in 1961 it became the first of the first growths to ferment in stainless steel vats. Its white, Haut-Brion Blanc, carries no classification of its own.",
+     "why": "The estate's own history gives every date of the Pontacs and of Jefferson's visit; Arnaud III's dates conflict and Jean de Pontac's were not found, so neither is named; Pepys's tavern is the diary's; the banker of 1935 is dated by Wikipedia alone, so he is described; the white's lack of a classification is the library's; the brokers' motive and the white's standing were judgements no source gave.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Diary of Samuel Pepys: Friday 10 April 1663",
+       "url": "https://pepysdiary.com/diary/1663/04/10",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Britannica: Samuel Pepys summary",
+       "url": "https://www.britannica.com/summary/Samuel-Pepys",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Monticello: Biography of Thomas Jefferson",
+       "url": "https://www.monticello.org/biography-of-jefferson",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Britannica: Charles-Maurice de Talleyrand, prince de Bénévent",
+       "url": "https://www.britannica.com/biography/Charles-Maurice-de-Talleyrand-prince-de-Benevent",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Charles Maurice de Talleyrand-Périgord",
+       "url": "https://en.wikipedia.org/wiki/Charles_Maurice_de_Talleyrand-P%C3%A9rigord",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Château Haut-Brion",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Haut-Brion",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Haut-Brion: The Château Haut-Brion library",
+       "url": "https://www.haut-brion.com/en/stories/chateau-haut-brion-library/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The second wine, called Bahans Haut-Brion until the 2007 vintage.",
+     "now": "The second wine, called Bahans Haut-Brion until the 2007 vintage and named for the banker who bought the estate in 1935.",
+     "why": "The library says Le Clarence honours the buyer of 1935; he is described, not named, in shipped prose.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "The dry white of Sémillon and Sauvignon Blanc, made in very small quantity.",
+     "now": "The dry white of Sémillon and Sauvignon Blanc; unlike the red, it carries no Graves classification.",
+     "why": "The library says Haut-Brion Blanc carries no classification; very small quantity is a production figure.",
+     "sources": [
+      {
+       "title": "Wikipedia: Château Haut-Brion",
+       "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Haut-Brion",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].q",
+     "was": "Blind, a first growth shows tobacco, wood smoke and soft cassis from a blend of near equal Merlot and Cabernet. Which appellation fits?",
+     "now": "Blind, a first growth shows tobacco, wood smoke and soft cassis, from a blend that gives Merlot a far larger part than the Médoc first growths do. Which appellation fits?",
+     "why": "The near equal blend is gone.",
+     "sources": [
+      {
+       "title": "Haut-Brion: 2024 vintage en primeur",
+       "url": "https://www.haut-brion.com/en/stories/2024-vintage-en-primeur/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Haut-Brion: Château Haut-Brion Rouge 2025",
+       "url": "https://www.haut-brion.com/en/the-wines/chateau-haut-brion-rouge/chateau-haut-brion-rouge-2025/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "Haut-Brion, in Pessac-Léognan, blends Merlot and Cabernet in near equal parts on warm gravel, giving smoke and tobacco; the Pauillac and Margaux first growths are Cabernet led.",
+     "now": "Haut-Brion, in Pessac-Léognan, blends Merlot with Cabernet Sauvignon and Cabernet Franc on warm gravel, giving smoke and tobacco; the Pauillac and Margaux first growths are Cabernet led.",
+     "why": "As the stem.",
+     "sources": [
+      {
+       "title": "Haut-Brion: 2024 vintage en primeur",
+       "url": "https://www.haut-brion.com/en/stories/2024-vintage-en-primeur/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Haut-Brion: Château Haut-Brion Rouge 2025",
+       "url": "https://www.haut-brion.com/en/the-wines/chateau-haut-brion-rouge/chateau-haut-brion-rouge-2025/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q",
+     "was": "Which American bought Château Haut-Brion in 1935, beginning the estate's modern era?",
+     "now": "Which family came to the Haut-Brion land by a marriage of 1525 and opened a tavern in London in 1666?",
+     "why": "The old question keyed a man whose dates are in one source and offered three undated names; the Pontacs, the Fumels, the Ségurs and the Lestonnacs are all in the estates' own histories.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Margaux: The story of Château Margaux",
+       "url": "https://chateau-margaux.com/en/le-domaine/histoire",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild: History",
+       "url": "https://www.lafite.com/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[0]",
+     "was": "Clarence Dillon, the banker",
+     "now": "The Pontac family",
+     "why": "As the stem.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[1]",
+     "was": "Thomas Jefferson, the diplomat",
+     "now": "The Ségur family",
+     "why": "As the stem.",
+     "sources": [
+      {
+       "title": "Domaines Barons de Rothschild: History",
+       "url": "https://www.lafite.com/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[2]",
+     "was": "Robert Mondavi, the winemaker",
+     "now": "The Lestonnac family",
+     "why": "As the stem.",
+     "sources": [
+      {
+       "title": "Château Margaux: The story of Château Margaux",
+       "url": "https://chateau-margaux.com/en/le-domaine/histoire",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[3]",
+     "was": "John Pierpont Morgan, the financier",
+     "now": "The Fumel family",
+     "why": "As the stem.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "The banker Clarence Dillon bought Haut-Brion in 1935; Jefferson had visited in 1787, and Mondavi's tie to Bordeaux was Opus One with Mouton.",
+     "now": "The Pontacs gained the land by a marriage of 1525, bought its rights in 1533 and opened Pontack's Head in London in 1666; the Fumels held Haut-Brion when Jefferson came in 1787, the Ségurs Lafite and Latour.",
+     "why": "As the stem.",
+     "sources": [
+      {
+       "title": "Haut-Brion: History",
+       "url": "https://www.haut-brion.com/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Barons de Rothschild: History",
+       "url": "https://www.lafite.com/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Jean de Pontac by name (now the Pontac family and the bridegroom)",
+    "Arnaud III de Pontac (1599 to 1681) sold it in London (now Pontack's Head in 1666)",
+    "one of the first Bordeaux wines sold under the name of its own estate; an early written note on a Bordeaux estate",
+    "In 1855 the brokers could not leave it out",
+    "The American banker Clarence Dillon (1882 to 1979) (now a New York banker)",
+    "near equal parts; a little Petit Verdot; two gravel hillocks whose warmth ripens the grapes early; eighteen months to two years in new oak",
+    "one of the few dry white wines of Bordeaux to stand beside the reds; made in very small quantity",
+    "the 1935 question with Jefferson, Mondavi and Morgan as options",
+    "the sources: iDealwine and Decanter's History in a bottle (the latter's full address never returned) and the Oxford Companion (not read)"
+   ],
+   "open": [
+    "Clarence Dillon's dates, 1882 to 1979, rest on Wikipedia alone.",
+    "Arnaud III de Pontac's death, 1681 or 1682."
+   ],
+   "extraSources": [
+    {
+     "title": "Haut-Brion: The Château Haut-Brion library",
+     "url": "https://www.haut-brion.com/en/stories/chateau-haut-brion-library/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Haut-Brion: 2024 vintage en primeur",
+     "url": "https://www.haut-brion.com/en/stories/2024-vintage-en-primeur/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Haut-Brion: Château Haut-Brion Rouge 2025",
+     "url": "https://www.haut-brion.com/en/the-wines/chateau-haut-brion-rouge/chateau-haut-brion-rouge-2025/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Britannica: Samuel Pepys summary",
+     "url": "https://www.britannica.com/summary/Samuel-Pepys",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Monticello: Biography of Thomas Jefferson",
+     "url": "https://www.monticello.org/biography-of-jefferson",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Charles Maurice de Talleyrand-Périgord",
+     "url": "https://en.wikipedia.org/wiki/Charles_Maurice_de_Talleyrand-P%C3%A9rigord",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Clarence Dillon",
+     "url": "https://en.wikipedia.org/wiki/Clarence_Dillon",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus: Château Haut-Brion",
+     "url": "https://glossary.wein-plus.eu/chateau-haut-brion",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "mouton-rothschild",
+   "searches": 11,
+   "tested": [
+    "The estate's own history: Nathaniel of the English branch bought it in 1853 and it took its name; Philippe, his great grandson, took charge in 1922 at barely twenty; all the wine bottled at the château from 1924, where it had been sold in barrel to the merchants; Jean Carlu's label of 1924, not repeated; the series from 1945; some twenty years of campaigning before the decree of 1973: confirmed.",
+    "Nathaniel 1812 to 1870 (the Rothschild Archive); Philippe 1902 to 1988 (Britannica, Wikipedia): confirmed.",
+    "1855 among the second growths (Decanter, the Drinks Business, Wikipedia): confirmed; at their head, found in no source read: cut.",
+    "The mottos before and after 1973 (the Drinks Business, Millesima, the library): confirmed.",
+    "The 1945 label, the V for victory and Année de la Victoire, by Philippe Jullian (the estate's artwork page, Decanter, the V and A): confirmed; Jullian's dates were not found and Carlu's death year was not found, so both are described.",
+    "The making: 44 oak vats and 20 of steel in a gravity fed vat room, each parcel apart; about twenty months in new oak; about four fifths Cabernet Sauvignon (the estate): confirmed; large oak vats alone is wrong.",
+    "Opus One: agreed in 1978, first vintage 1979 (the winery's own pages, Wikipedia): founded in 1979 is loose; the Napa partner's dates were not found in two sources and he is described.",
+    "The rules: sound; the living son of the Napa partner, met as maker of the first vintage, is not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in large oak vats, parcel by parcel, and aged for around twenty months in new oak barrels before bottling at the château, where the whole crop has been bottled since the 1924 vintage.",
+     "now": "Fermented parcel by parcel, mostly in oak vats with some of steel, in a vat room fed by gravity, then aged for about twenty months in new oak barrels before bottling at the château, where the whole crop has been bottled since the 1924 vintage.",
+     "why": "The estate's vat room and vine to wine pages give the oak and steel vats, the gravity and about twenty months in new oak.",
+     "sources": [
+      {
+       "title": "Château Mouton Rothschild: From vine to wine",
+       "url": "https://www.chateau-mouton-rothschild.com/the-vineyard/from-vine-to-wine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Mouton Rothschild: The Vat Room",
+       "url": "https://www.chateau-mouton-rothschild.com/the-house/the-vat-room",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Château Mouton Rothschild is the Pauillac first growth that had to fight for its rank: promoted in 1973, the one promotion in the 1855 list. Cabernet Sauvignon gives cassis, cigar box and coffee, and every vintage carries an artist's label.",
+     "now": "Château Mouton Rothschild is the Pauillac first growth that had to fight for its rank: promoted in 1973, the one promotion in the 1855 list. Cabernet Sauvignon gives cassis, cigar box and coffee, and every vintage since 1945 carries an artist's label.",
+     "why": "The artist's label began in 1945, so not every vintage carries one.",
+     "sources": [
+      {
+       "title": "Château Mouton Rothschild: History, from Baron Philippe",
+       "url": "https://www.chateau-mouton-rothschild.com/the-history/the-history-of-mouton/from-baron-philippe",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Baron Nathaniel de Rothschild (1812 to 1870), of the English branch of the family, bought Château Brane-Mouton in 1853 and gave it his family's name. Two years later the brokers' classification of 1855 placed it at the head of the second growths, a slight the family never accepted. His great grandson, Baron Philippe de Rothschild (1902 to 1988), took charge in 1922 and changed Bordeaux: from the 1924 vintage he bottled the whole crop at the château, when most estates sold their wine in cask to merchants, and that year's label was drawn by the poster artist Jean Carlu (1900 to 1997). In 1945 he marked the Liberation with a label bearing a V for victory by Philippe Jullian (1919 to 1977), and since then a different artist has made part of each year's label. The old motto ran: first I cannot be, second I do not deign, Mouton I am. After decades of campaigning, a decree of 1973 made Mouton a first growth, and the motto became: first I am, second I was, Mouton does not change. In 1979 Philippe de Rothschild founded Opus One in Napa with Robert Mondavi (1913 to 2008).",
+     "now": "Baron Nathaniel de Rothschild (1812 to 1870), of the English branch of the family, bought Château Brane-Mouton in 1853, and the estate took the family's name. Two years later the brokers' classification of 1855 placed it among the second growths, a rank the family would not accept. His great grandson, Baron Philippe de Rothschild (1902 to 1988), took charge in 1922, barely twenty, and from the 1924 vintage bottled the whole crop at the château, where until then the wine had been sold in barrel to the Bordeaux merchants; that year's label was drawn by a young poster artist in the Cubist manner. In 1945 he marked the year of victory with a label bearing a V for victory, by a then unknown illustrator, and since then a different artist has made the work at the head of each year's label. The old motto ran: first I cannot be, second I do not deign, Mouton I am. After some twenty years of campaigning, a decree of 1973 made Mouton a first growth, and the motto became: first I am, second I was, Mouton does not change. In 1978 Philippe de Rothschild agreed with a Napa winemaker to make one wine together, Opus One, first made from the 1979 vintage.",
+     "why": "Among the second growths, not at their head; Philippe's age and the sale in barrel are the estate's; the artists of 1924 and 1945 and the Napa partner have no dates in two sources; Opus One was agreed in 1978 and first made in 1979; changed Bordeaux was a judgement.",
+     "sources": [
+      {
+       "title": "Château Mouton Rothschild: History, from Baron Philippe",
+       "url": "https://www.chateau-mouton-rothschild.com/the-history/the-history-of-mouton/from-baron-philippe",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Mouton Rothschild: History, 1924",
+       "url": "https://www.chateau-mouton-rothschild.com/the-history/key-dates/key-date-1924",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Mouton Rothschild: Mouton Rothschild 1924, Jean Carlu",
+       "url": "https://www.chateau-mouton-rothschild.com/label-art/discover-the-artwork/jean-carlu",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Mouton Rothschild: Philippe Jullian",
+       "url": "https://www.chateau-mouton-rothschild.com/lart-et-letiquette/discover-the-artwork/philippe-jullian",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Wine Legend, Château Mouton Rothschild 1945",
+       "url": "https://www.decanter.com/learn/wine-legend-chateau-mouton-rothschild-1945-374280/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: The thirst for first",
+       "url": "https://www.thedrinksbusiness.com/2019/01/the-thirst-for-first/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Britannica: Baron Philippe de Rothschild",
+       "url": "https://www.britannica.com/biography/Baron-Philippe-de-Rothschild",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Rothschild Archive: Nathaniel de Rothschild",
+       "url": "https://family.rothschildarchive.org/people/37-nathaniel-nat-de-rothschild-1812-1870",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Opus One: The Estate",
+       "url": "https://www.opusonewinery.com/estate/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Opus One Winery",
+       "url": "https://en.wikipedia.org/wiki/Opus_One_Winery",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The second wine, Cabernet Sauvignon and Merlot from the estate.",
+     "now": "The second wine, largely from younger vines picked earlier and made apart in the estate's oak vats.",
+     "why": "The estate's page for Le Petit Mouton.",
+     "sources": [
+      {
+       "title": "Château Mouton Rothschild: Le Petit Mouton de Mouton Rothschild",
+       "url": "https://www.chateau-mouton-rothschild.com/le-petit-mouton-de-mouton-rothschild",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "A work by a different artist, a series begun with the V for victory label marking the Liberation.",
+     "now": "A work by a different artist, a series begun with the V for victory label marking 1945, the year of victory.",
+     "why": "The label of 1945 marks the year of victory, Année de la Victoire, in every source read.",
+     "sources": [
+      {
+       "title": "Decanter: Wine Legend, Château Mouton Rothschild 1945",
+       "url": "https://www.decanter.com/learn/wine-legend-chateau-mouton-rothschild-1945-374280/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Victoria and Albert Museum: wine label, Mouton Rothschild 1945",
+       "url": "https://collections.vam.ac.uk/item/O129421",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "placed it at the head of the second growths (now among the second growths)",
+    "and changed Bordeaux",
+    "the poster artist Jean Carlu (1900 to 1997) (now a young poster artist in the Cubist manner)",
+    "by Philippe Jullian (1919 to 1977) (now a then unknown illustrator)",
+    "In 1979 Philippe de Rothschild founded Opus One in Napa with Robert Mondavi (1913 to 2008) (now agreed in 1978 with a Napa winemaker, first made from the 1979 vintage)",
+    "Fermented in large oak vats",
+    "marking the Liberation",
+    "the sources: the National WWII Museum page (its address never returned), Wikipedia and Fine and Rare (room for the estate's own pages)"
+   ],
+   "open": [
+    "Whether the 1855 list set Mouton first among the second growths.",
+    "Jean Carlu's death year and Philippe Jullian's dates."
+   ],
+   "extraSources": [
+    {
+     "title": "Château Mouton Rothschild: From Marquis to Barons",
+     "url": "https://www.chateau-mouton-rothschild.com/the-history/the-history-of-mouton/from-marquis-to-barons",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Mouton Rothschild: History, 1924",
+     "url": "https://www.chateau-mouton-rothschild.com/the-history/key-dates/key-date-1924",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Mouton Rothschild: Mouton Rothschild 1924, Jean Carlu",
+     "url": "https://www.chateau-mouton-rothschild.com/label-art/discover-the-artwork/jean-carlu",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Mouton Rothschild: Philippe Jullian",
+     "url": "https://www.chateau-mouton-rothschild.com/lart-et-letiquette/discover-the-artwork/philippe-jullian",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Mouton Rothschild: The Vat Room",
+     "url": "https://www.chateau-mouton-rothschild.com/the-house/the-vat-room",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Mouton Rothschild: Le Petit Mouton de Mouton Rothschild",
+     "url": "https://www.chateau-mouton-rothschild.com/le-petit-mouton-de-mouton-rothschild",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Victoria and Albert Museum: wine label, Mouton Rothschild 1945",
+     "url": "https://collections.vam.ac.uk/item/O129421",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "The Drinks Business: The thirst for first",
+     "url": "https://www.thedrinksbusiness.com/2019/01/the-thirst-for-first/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Opus One: The Estate",
+     "url": "https://www.opusonewinery.com/estate/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Opus One Winery",
+     "url": "https://en.wikipedia.org/wiki/Opus_One_Winery",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Château Mouton Rothschild",
+     "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Mouton_Rothschild",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Corinne Mentzelopoulos",
+   "where": "Château Margaux's own history and every account of the estate since 1980",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "François Pinault",
+   "where": "accounts of Latour's sale of 1993",
+   "believed": "living, already in people.json (as Francois Pinault, folded)",
+   "inFragment": false
+  },
+  {
+   "name": "Prince Robert of Luxembourg",
+   "where": "search results on Domaine Clarence Dillon, as the banker's great grandson who heads it",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Timothy Mondavi",
+   "where": "search results on Opus One, as maker of its first vintage with Mouton's winemaker",
+   "believed": "living, not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Jane Anson",
+   "where": "addresses of a writer's own site returned for Lafite, Margaux, Opus One and Jefferson",
+   "believed": "living, not in people.json; her site was not used as a source",
+   "inFragment": false
+  },
+  {
+   "name": "Jancis Robinson",
+   "where": "addresses of a writer's own site returned for Latour",
+   "believed": "living, not in people.json; her site was not used as a source",
+   "inFragment": false
+  },
+  {
+   "name": "Lucien Sionneau",
+   "where": "search results on Opus One's first vintage, as Mouton's winemaker",
+   "believed": "not settled",
+   "inFragment": false
+  },
+  {
+   "name": "Seymour Weller",
+   "where": "search results on Domaine Clarence Dillon, as the banker's nephew who ran it until 1975",
+   "believed": "not settled",
+   "inFragment": false
+  }
+ ],
+ "picks": [
+  {
+   "pick": "lafite-rothschild",
+   "ruling": "kept: the grand vin of the first name on the 1855 list."
+  },
+  {
+   "pick": "latour",
+   "ruling": "kept."
+  },
+  {
+   "pick": "margaux",
+   "ruling": "kept; the plan's why gives the château as finished in 1815, which the estate's own pages bear out."
+  },
+  {
+   "pick": "haut-brion",
+   "ruling": "kept; Haut-Brion Blanc is taught among the others."
+  },
+  {
+   "pick": "mouton-rothschild",
+   "ruling": "kept."
+  }
+ ],
+ "codexInTension": [
+  {
+   "record": "p-ch-latour",
+   "field": "wines[Les Forts de Latour].note",
+   "says": "Second wine, first released with the 1966 vintage",
+   "found": "Two accounts call the second wine revived, or reprised, with the 1966 vintage, so a second wine may have existed before; the fragment says its modern form dates from 1966. Not settled.",
+   "sources": [
+    {
+     "title": "Wikipedia: Château Latour",
+     "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_Latour",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus: Château Latour",
+     "url": "https://glossary.wein-plus.eu/chateau-latour",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "w-le-clarence-de-haut-brion",
+   "field": "traps[1]",
+   "says": "The name honours Clarence Dillon, the owner, and is not a vineyard",
+   "found": "Clarence Dillon died in 1979 (Wikipedia); he is the buyer of 1935, not the owner, a present tense the Flagships rules would refuse.",
+   "sources": [
+    {
+     "title": "Wikipedia: Clarence Dillon",
+     "url": "https://en.wikipedia.org/wiki/Clarence_Dillon",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Haut-Brion: History",
+     "url": "https://www.haut-brion.com/en/history/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-ch-haut-brion",
+   "field": "wines[Château Haut-Brion].grape",
+   "says": "Merlot, Cabernet Sauvignon, Cabernet Franc",
+   "found": "Agrees with the estate's figures; reported only because the pilot had added Petit Verdot, which the estate's blends for 2024 and 2025 do not hold.",
+   "sources": [
+    {
+     "title": "Haut-Brion: 2024 vintage en primeur",
+     "url": "https://www.haut-brion.com/en/stories/2024-vintage-en-primeur/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Haut-Brion: Château Haut-Brion Rouge 2025",
+     "url": "https://www.haut-brion.com/en/the-wines/chateau-haut-brion-rouge/chateau-haut-brion-rouge-2025/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "p-ch-lafite-rothschild",
+   "field": "holdings",
+   "says": "the same family owns Duhart-Milon, Rieussec in Sauternes and L'Evangile in Pomerol",
+   "found": "A present day holding, volatile under the Flagships rules; not taught in the fragment, reported only.",
+   "sources": []
+  }
+ ]
+}
