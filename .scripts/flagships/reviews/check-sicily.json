@@ -1,0 +1,917 @@
+{
+ "group": "sicily",
+ "chunk": "f7",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 28,
+  "perRecord": {
+   "tasca": 6,
+   "donnafugata": 5,
+   "benanti": 5,
+   "de-bartoli": 6,
+   "cos": 6
+  },
+  "note": "Twenty eight searches of a share of twenty eight, none of them the author's. Fourteen were restricted to a house's own domain (tascadalmerita.it four times, donnafugata.it three times, benanti.it twice, the two De Bartoli domains three times, cosvittoria.it three times) and are read as primary through their summaries; two went to the Etna and Cerasuolo di Vittoria rules. Two searches gave nothing (a Benanti search in Italian with no wine words, an Italian search for the De Bartoli case on open domains) and were followed by narrower ones. One further call naming a domain the search tool refuses was rejected before it ran and is not counted. No WebFetch was tried. Every record was tested; no fact that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the dates and people (each founding, Giacomo Rallo, Giuseppe Benanti, Marco De Bartoli, the case of 1995), then to the rules (Etna Bianco Superiore, Cerasuolo di Vittoria and its Classico), then to the sites and the making the author had from the houses' sheets, then to the story beats the author had on one account.",
+  "Where a search contradicted the record it was set right with its source; where a detail the author gave could not be found again and no second search found it either, it was cut (the training of San Lucio and of the COS vineyard, the drying time of Ben Ryé, the Khamma opening of 2006, the old casks of COS).",
+  "Sources whose title or address names a living person were read in the results but never cited in the fragment; the fragment's own sources were left as the author wrote them."
+ ],
+ "records": [
+  {
+   "key": "tasca",
+   "searches": 6,
+   "tested": [
+    "Founded 1830: the purchase of Regaleali by the brothers Lucio and Carmelo Mastrogiovanni Tasca, about 1,200 hectares, the house's history page and sustainability reports: confirmed; the brothers stay described for want of their dates.",
+    "The land reform: the postwar agrarian reform cut the estate from about 1,200 to 500 hectares (the house's pages): confirmed, more than half kept.",
+    "San Lucio planted in 1959 by the count, Perricone and Nero d'Avola mixed, about 5.5 hectares, with about 1.5 hectares of Nero d'Avola alone in 1965 (the house's narrative; the 2019 sheet gives 1965 alone as the planting year, the Riserva sheet 1959): confirmed and made exact in sites.",
+    "The 1970 vintage sold as Riserva del Conte, later called Rosso del Conte, and the house's claim of the first single vineyard wine of Sicily (the house's pages): confirmed, the claim told as the house's.",
+    "The appellation: Contea di Sclafani DOC on the house's pages and most merchants; Falstaff and two merchants list some vintages as Sicilia DOC: kept, left open.",
+    "The blend: 58 and 42 per cent (2017, 2018), 62 and 38 (2019), 53 and 47 (2018 elsewhere), 63 per cent with other estate reds (2012), 54, 26 and 20 (2016): changed.",
+    "The site: 480 metres on every sheet; south south east on most documents, south west on one; loamy sand, partly calcareous: aspect changed, the rest confirmed.",
+    "The making: about twenty days on the skins in steel, about eighteen months in 225 litre French barriques of Allier and Tronçais (the Italian 2019 sheet and the merchants): confirmed.",
+    "Riserva del Conte: back in production in 2010 after forty years, from the same vineyard, aged in 500 litre chestnut barrels in homage to its origins, 26 months in new chestnut by the 2016 sheet; the blend is Perricone 60 per cent on one house page and Vinous, Nero d'Avola 60 per cent on the house's shop page: changed.",
+    "Lucio Tasca's Cabernet Sauvignon and Chardonnay at Regaleali (the house's pages): confirmed as the count's son planting international varieties.",
+    "The house rules: nobody living named; no price, score or superlative; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Nero d'Avola with Perricone, the two planted mixed in one vineyard; the house's recent sheets give them close to equal shares.",
+     "now": "Nero d'Avola, more than half in the vintages of the late 2010s, with Perricone for the rest; some older vintages took in other red grapes of the estate.",
+     "why": "No sheet or merchant read gave equal shares: Nero d'Avola runs 53 to 62 per cent in 2017 to 2019, and the 2012 and 2016 took in other estate reds. Recent was refused by the lint as volatile, so the vintages are named by decade.",
+     "sources": [
+      {
+       "title": "Superiore.de: Rosso del Conte Sicilia Contea di Sclafani DOC 2017",
+       "url": "https://www.superiore.de/en/wine/sicily/tasca-d-almerita/rosso-del-conte-sicilia-contea-di-sclafani-doc-2017.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "xtraWine: Contea di Sclafani Rosso del Conte 2019",
+       "url": "https://www.xtrawine.com/products/tenuta-regaleali-contea-di-sclafani-rosso-del-conte-2019",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Carta dei Vini: Rosso del Conte 2012",
+       "url": "https://www.cartadeivini.wine/vini/tasca-conti-d-almerita-rosso-del-conte/10309cbe2800a679343754aa99688bac884f9fac.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "facing south and south west on sandy loam with some limestone: bush vines planted mixed in 1959, with more Nero d'Avola added in 1965.",
+     "now": "facing south on sandy loam with some limestone: Perricone and Nero d'Avola planted mixed in 1959, with a block of Nero d'Avola alone added in 1965.",
+     "why": "The house's documents give south south east on most and south west on one; its narrative gives the 1965 block as Nero d'Avola alone; no source read gave the training, so bush vines is cut.",
+     "sources": [
+      {
+       "title": "Tasca d'Almerita: Rosso del Conte 2019 sheet",
+       "url": "https://cdn.tascadalmerita.it/tasca/Tenuta-Regaleali-Rosso-Del-Conte-2019-ENG.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tasca d'Almerita: Riserva del Conte 2016 sheet",
+       "url": "https://cdn.tascadalmerita.it/tasca/RISERVA_DEL_CONTE_16_EN-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tasca d'Almerita: Tenuta Regaleali",
+       "url": "https://tascadalmerita.it/en/tenute/tenuta-regaleali/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story; cards[0].back",
+     "was": "planted Perricone and Nero d'Avola together as bush vines; planted with mixed Perricone and Nero d'Avola bush vines in 1959.",
+     "now": "planted Perricone and Nero d'Avola together; planted with Perricone and Nero d'Avola together in 1959.",
+     "why": "The training is not in any source read.",
+     "sources": [
+      {
+       "title": "Tasca d'Almerita: Our story",
+       "url": "https://tascadalmerita.it/en/our-story/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tasca d'Almerita: Tenuta Regaleali",
+       "url": "https://tascadalmerita.it/en/tenute/tenuta-regaleali/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "A later wine of the same vineyard under the old name, mostly Perricone and aged in new chestnut barrels, by the house's sheet for the 2016.",
+     "now": "The old name, made again from the same vineyard from the 2010 vintage after forty years, and aged in 500 litre chestnut barrels.",
+     "why": "The house's own pages disagree on whether Perricone or Nero d'Avola leads; they agree on the return of 2010 and the 500 litre chestnut.",
+     "sources": [
+      {
+       "title": "Tasca d'Almerita: Riserva del Conte",
+       "url": "https://tascadalmerita.it/en/wines/tenuta-regaleali-riserva-del-conte/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tasca d'Almerita shop: Riserva del Conte 2016",
+       "url": "https://shop.tascadalmerita.it/en/products/riserva-del-conte-2016",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tasca d'Almerita: Riserva del Conte 2016 sheet",
+       "url": "https://cdn.tascadalmerita.it/tasca/RISERVA_DEL_CONTE_16_EN-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: Tasca d'Almerita's Rosso del Conte 1979 to 2012",
+       "url": "https://billing.vinous.com/articles/tasca-d-almerita-s-rosso-del-conte-1979-2012-oct-2017",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[1]",
+     "was": "the house later gave that name to a separate, Perricone led wine of the same vineyard.",
+     "now": "the house brought that name back with the 2010 vintage for a separate, chestnut aged wine of the same vineyard.",
+     "why": "As above.",
+     "sources": [
+      {
+       "title": "Tasca d'Almerita: Riserva del Conte",
+       "url": "https://tascadalmerita.it/en/wines/tenuta-regaleali-riserva-del-conte/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tasca d'Almerita: sustainability report 2022",
+       "url": "https://cdn.tascadalmerita.it/tasca/SOSTAIN_REPORT_TDA_2022-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Bush vines at San Lucio (sites, story, card).",
+    "Mostly Perricone for Riserva del Conte (others, trap)."
+   ],
+   "open": [
+    "Contea di Sclafani DOC against Sicilia DOC on the labels of some vintages (Falstaff lists the 2016 and 2017 as Sicilia DOC).",
+    "The count of 1959 and the brothers of 1830 stay described; the author's report on Lucio Tasca's death in 2022 was not tested."
+   ],
+   "extraSources": [
+    {
+     "title": "Tasca d'Almerita: Rosso del Conte 2019 sheet, Italian",
+     "url": "https://cdn.tascadalmerita.it/tasca/Tenuta-Regaleali-Rosso-Del-Conte-2019-ITA.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Tasca d'Almerita Rosso del Conte 2016",
+     "url": "https://www.falstaff.com/en/wines/tasca-dalmerita-2016-rosso-del-conte-sicilia-doc",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "donnafugata",
+   "searches": 5,
+   "tested": [
+    "Founded 1983 by Giacomo Rallo and his wife, the name from The Leopard chosen by her, the Marsala cellars of 1851 (the house's roots and company pages, Wein.plus, the house's profile): confirmed.",
+    "Giacomo Rallo born in Marsala in 1937, died in 2016 (the house's own pages): confirmed; the dates now rest on the house beside Decanter.",
+    "Contessa Entellina: the house says she took ownership and leadership of the family estate there a few years before 1983; no source read said she inherited it from her father: changed.",
+    "The queen of the legend: Maria Carolina fleeing Naples before the French and finding refuge where the vineyards lie, as the house tells it (the house's roots page, Wein.plus; the year is the early 1800s in one account and 1798 in another): confirmed as the house's account, the queen kept unnamed.",
+    "Arrival on Pantelleria in 1989 and the first Ben Ryé of 1989 (the house's timeline and its 2023 sheet): confirmed.",
+    "The Khamma winery opened to visitors in 2006: not found; the house's page and FAI give the walled garden at Khamma restored and given to FAI in 2008: changed.",
+    "The making: the first picking in the first half of August (2023) or from 17 August (2019), the dried grapes stripped from their stalks by hand and added in batches to the fresh must as it ferments in temperature controlled steel, over a month in all; four, five and seven months in tank and ten, sixteen and twelve months in bottle on the 2022, 2023 and 2016 sheets; no sheet read gave three to four weeks of drying: changed.",
+    "UNESCO's inscription of 2014: the house's own page on the alberello vine as UNESCO heritage beside the author's UNESCO page: confirmed.",
+    "The house rules: the wife and children unnamed; no price, score or superlative; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "founded Donnafugata on the vineyards at Contessa Entellina that she had inherited from her father.",
+     "now": "founded Donnafugata, with the family's vineyards at Contessa Entellina, which she had taken in hand a few years before.",
+     "why": "The house says she took ownership and leadership of the family estate a few years earlier; how she came to it is not in any source read.",
+     "sources": [
+      {
+       "title": "Donnafugata: Quality wine for generations",
+       "url": "https://www.donnafugata.it/en/roots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Donnafugata: The company",
+       "url": "https://www.donnafugata.it/en/the-company/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 2006 it opened its Khamma winery on the island to visitors,",
+     "now": "In 2008 it restored a walled Pantellerian garden at Khamma and gave it to FAI, the Italian national trust,",
+     "why": "No source read gave the opening of 2006; the garden of 2008 is on the house's page and FAI's own.",
+     "sources": [
+      {
+       "title": "Donnafugata: the Pantellerian garden at Khamma",
+       "url": "https://www.donnafugata.it/en/press/sustainability/the-pantellerian-garden-at-khamma/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "FAI: Giardino Pantesco Donnafugata",
+       "url": "https://fondoambiente.it/donnafugata-garden-eng",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "From the middle of August grapes of an early picking are laid out to dry in the sun and wind for three to four weeks; ... and the dried ones are added ... The wine then rests four to eight months in tank",
+     "now": "From August, grapes of an early picking are laid out to dry in the sun and wind; ... and the dried ones, stripped from their stalks by hand, are added ... The wine then rests some months in tank",
+     "why": "The sheets read put the first picking in the first half of August or from 17 August, give no drying time and give four to seven months in tank; the hand stripping is the house's own.",
+     "sources": [
+      {
+       "title": "Donnafugata: Ben Ryé 2023 sheet",
+       "url": "https://www.donnafugata.it/wp-content/uploads/2026/06/Ben-Rye-2023-DF-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Donnafugata: Ben Ryé 2022 sheet",
+       "url": "https://www.donnafugata.it/wp-content/uploads/2022/09/Ben-Rye-2022_EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Donnafugata: Ben Ryé 2019",
+       "url": "https://www.donnafugata.it/en/wines/ben-rye/2019/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Donnafugata: Ben Ryé 2016",
+       "url": "https://www.donnafugata.it/en/product/ben-rye/2016/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Donnafugata: Ben Ryé Passito di Pantelleria DOC",
+       "url": "https://www.donnafugata.it/en/product/ben-rye/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back; questions[0].exp",
+     "was": "dried for three to four weeks",
+     "now": "dried in the sun and wind",
+     "why": "As above.",
+     "sources": [
+      {
+       "title": "Donnafugata: Ben Ryé 2023 sheet",
+       "url": "https://www.donnafugata.it/wp-content/uploads/2026/06/Ben-Rye-2023-DF-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Donnafugata: Ben Ryé 2022 sheet",
+       "url": "https://www.donnafugata.it/wp-content/uploads/2022/09/Ben-Rye-2022_EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "from The Leopard, where Donnafugata, the woman in flight, recalls a queen's refuge; son of the wind is the meaning of Ben Ryé, not of the house.",
+     "now": "from The Leopard, and the house ties its meaning, the woman in flight, to a fleeing queen; son of the wind is the meaning of Ben Ryé.",
+     "why": "The queen's refuge is the house's account of the name, not a scene of the novel.",
+     "sources": [
+      {
+       "title": "Donnafugata: Quality wine for generations",
+       "url": "https://www.donnafugata.it/en/roots/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus: Donnafugata",
+       "url": "https://glossary.wein-plus.eu/donnafugata",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The Khamma winery opening of 2006.",
+    "Three to four weeks of drying.",
+    "Inherited from her father.",
+    "Eight months in tank."
+   ],
+   "open": [
+    "The serving temperature follows the Codex's reference for sweet whites; the house's own serving advice was not read.",
+    "The year of the queen's flight (1798 in one account, the early 1800s in another) is not in the record, which tells the legend without a date."
+   ],
+   "extraSources": [
+    {
+     "title": "Donnafugata: Ciao Giacomo",
+     "url": "https://www.donnafugata.it/en/press/about-us/ciao-giacomo/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Donnafugata: company profile",
+     "url": "https://www.donnafugata.it/wp-content/uploads/2016/10/Company-Profile-Short-1.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "benanti",
+   "searches": 5,
+   "tested": [
+    "Founded 1988 at Castiglione di Sicilia on the northern slope as Tenuta di Castiglione, the grandfather's winemaking at Viagrande, two experimental harvests, the first bottled vintage 1990 (the house's timeline and 2020 profile, Wine Spectator, which adds that the house took the family name about a decade later): confirmed.",
+    "Pietra Marina and Rovittello of 1990 shown at Vinitaly in 1993 (the house's 2020 profile): confirmed as the house's.",
+    "Monte Serra at Viagrande in 1998 and Serra della Contessa from the 1998 vintage (the house's timeline and profile): confirmed.",
+    "Giuseppe Benanti died on 1 February 2023 aged 78 (Wine Spectator, its memorial list of 2023), born in July 1945 by the house's profile: confirmed, 1945 to 2023 kept.",
+    "The twin sons took charge in 2012 (the house's pages, Wine Spectator): confirmed; they are Antonio and Salvino in both, not Salvatore.",
+    "Pietra Marina: Contrada Rinazzo at Milo, about 800 metres, the east slope open to light, sea and wind; picked by hand after the middle of October, pressed softly, about twelve days in steel with the house's own native yeast, about thirty months on the fine lees with frequent bâtonnage, twelve months in bottle (the house's sheet and 2023 profile): confirmed.",
+    "The Etna rules: DOC by presidential decree of 11 August 1968, the first of Sicily; Etna Bianco at least 60 per cent Carricante; Etna Bianco Superiore at least 80 per cent from the delimited zone in the commune of Milo (AIS copy, Wikipedia): confirmed.",
+    "The house rules: the sons and the oenologist unnamed; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "traps[1]",
+     "was": "Older lists spell the wine Pietramarina in one word; the house prints Pietra Marina, and it is the white, not one of the reds.",
+     "now": "Many lists spell the wine Pietramarina; the house prints Pietra Marina, and it is not the house's Contrada Rinazzo, a separate Etna Bianco Superiore from the same contrada of Milo.",
+     "why": "Wine Spectator spelt it Pietramarina in 2023, so the spelling is not only an old one; and the house makes a separate Contrada Rinazzo Etna Bianco Superiore, the nearer confusion now that the record names the contrada.",
+     "sources": [
+      {
+       "title": "Wine Spectator: Giuseppe Benanti dies at 78",
+       "url": "https://www.winespectator.com/articles/giuseppe-benanti-who-helped-spark-mount-etna-s-wine-renaissance-dies-at-78",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Benanti: Contrada Rinazzo 2018 sheet",
+       "url": "https://www.benanti.it/wp-content/uploads/2020/06/BENANTI-Scheda-Tecnica-Etna-Bianco-Superiore-Contrada-Rinazzo-2018-.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Benanti: Pietra Marina technical sheet",
+       "url": "https://benanti.it/wines/BENANTI-Scheda-tecnica-Etna-Bianco-Superiore-Pietra-Marina.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "Old bush vines on terraces walled with dry stone rest on the author's reading of the house's sheet and Wilson Daniels; the refuter's searches gave the contrada, the height and the slope but not the training.",
+    "The move to Viagrande and the change of name from Tenuta di Castiglione came about a decade after 1988 by Wine Spectator; the record dates only Monte Serra."
+   ],
+   "extraSources": [
+    {
+     "title": "Benanti: Always contemporary",
+     "url": "https://www.benanti.it/en/always-contemporary/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Benanti: Profile and fact sheet 2020",
+     "url": "https://www.benanti.it/wp-content/uploads/2020/05/BENANTI-Profile-and-Fact-Sheet-2020-1-1.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Benanti: winery profile 2023",
+     "url": "https://www.benanti.it/wp-content/uploads/2023/10/Scheda-Aziendale-Benanti-2023-eng.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Spectator: In memoriam 2023",
+     "url": "https://www.winespectator.com/articles/the-winemakers-and-chefs-we-lost-in-2023",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "AIS: Etna DOC production rules",
+     "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Etna.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Etna DOC",
+     "url": "https://en.wikipedia.org/wiki/Etna_DOC",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "de-bartoli",
+   "searches": 6,
+   "tested": [
+    "Founded 1978: the perpetuo begun at Samperi in 1978, the launch of Vecchio Samperi in 1980 as the house's first wine (the house's Quarantennale, Vecchio Samperi and Italian pages): confirmed.",
+    "Grillo alone, planted between 1970 and 1996 in Contrada Samperi on mostly limestone, level land of sandy loam, picked in the last week of September, fermented with wild yeasts in oak and chestnut barrels at room temperature, the casks never emptied (the house's English and Italian Vecchio Samperi pages and its brochure): confirmed.",
+    "Not fortified, so not Marsala under the rules (the house's pages): confirmed; the Quarantennale reached almost 18 per cent naturally by the house's page.",
+    "The founder: born in Marsala on 4 February 1945, died 2011 (the house's founder page); died on 18 March 2011 aged 66 (WineNews, an English wine site's obituary): confirmed, now named with his dates.",
+    "Samperi: the family's baglio twelve kilometres from Marsala, where vineyards and cellars have kept the memory for over two centuries (the house's founder page): changed, since the page does not say the family has held it for two centuries.",
+    "Bukkuram, the first passito bottled on Pantelleria in 1984 (the house's founder and Bukkuram pages): confirmed.",
+    "The charge of 1995 and the acquittal five years later: the Marsala prosecutors' charge of adulteration in 1995 and the acquittal after five years, il fatto non sussiste (Balarm), the winery shut from 1995 to 2000 (Barberry), the founder's own word that he was acquitted (Cronache di Gusto), the winery unjustly shut for a few years (Louis Dressner Selections): confirmed.",
+    "The racing career: car racing among the threads of his life on the house's founder page: confirmed in outline, what he raced not found.",
+    "The Marsala tiers of the trap: the Codex's own Marsala records (Fine, Superiore, Superiore Riserva, Vergine also labelled Soleras, Vergine Stravecchio or Riserva): confirmed; the question's option of a Soleras rank changed.",
+    "The house rules: the children unnamed; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "At Samperi, a baglio about twelve kilometres from the town and held by the family, as the house tells it, for over two centuries, Marco De Bartoli, a former racing driver,",
+     "now": "At Samperi, the family's baglio about twelve kilometres from the town, where by the house's account vines and cellars go back over two centuries, Marco De Bartoli (1945 to 2011), a former racing driver,",
+     "why": "The house's founder page gives his dates and his birth in Marsala on 4 February 1945, which the reports of his death at 66 in March 2011 agree with; the same page speaks of vineyards and cellars keeping a memory of two centuries, not of the family holding the baglio that long.",
+     "sources": [
+      {
+       "title": "Marco De Bartoli: The founder",
+       "url": "https://marcodebartoli.it/en/the-founder/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "WineNews: Marco De Bartoli has died",
+       "url": "https://winenews.it/it/lutto-nel-mondo-del-vino-siciliano-e-morto-marco-de_308445/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Marco De Bartoli: Samperi estate in Marsala",
+       "url": "https://marcodebartoli.it/en/samperi-estate-marsala/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].opts[1]",
+     "was": "A Marsala Vergine of the Soleras rank",
+     "now": "A Marsala Vergine aged five years in wood",
+     "why": "Soleras is another name on the label for Vergine, not a rank within it; the Codex's Marsala records give Vergine, also labelled Soleras, at five years.",
+     "sources": [
+      {
+       "title": "Marco De Bartoli: Vecchio Samperi",
+       "url": "https://www.marcodebartoli.com/en/wines/vecchio-samperi/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Held by the family for over two centuries."
+   ],
+   "open": [
+    "The average age of the perpetuo, fifteen years and more, rests on the author's merchants; the house's Italian sheet gives the vineyard's age, 20 to 42 years, not the blend's.",
+    "What the back label prints as the wine's category stays unsettled, as the author reported; the record prints only the name and the house."
+   ],
+   "extraSources": [
+    {
+     "title": "Marco De Bartoli: Vecchio Samperi, vino perpetuo",
+     "url": "https://marcodebartoli.it/vino/vecchio-samperi-vino-perpetuo/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marco De Bartoli: brochure 2017",
+     "url": "https://www.marcodebartoli.com/wp-content/uploads/2017/08/brochure_2017_MDB_extend_ENG.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marco De Bartoli: Bukkuram estate in Pantelleria",
+     "url": "https://marcodebartoli.it/en/bukkuram-estate-pantelleria/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marco De Bartoli: Vecchio Samperi Quarantennale",
+     "url": "https://www.marcodebartoli.com/en/vecchio-samperi-quarantennale-celebrate-milestone/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Balarm: the visionary grower Marco De Bartoli",
+     "url": "https://www.balarm.it/news/il-vignaiolo-visionario-che-ha-fatto-grande-la-sicilia-nel-mondo-marco-de-bartoli-127368",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Barberry: Marco De Bartoli producer page",
+     "url": "https://www.barberry.io/producers/8d6cdbba-67bf-4a6c-a39e-48c4b5be3a45",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cronache di Gusto: Marco De Bartoli on Marsala",
+     "url": "https://www.cronachedigusto.it/servizi-speciali/articoli-sul-marsala/marco-de-bartoli-qsul-marsala-scienza-ha-ragioneq/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Louis Dressner Selections: Marco De Bartoli",
+     "url": "https://louisdressner.com/producers/marco%20de%20bartoli",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "cos",
+   "searches": 6,
+   "tested": [
+    "Founded 1980 by three friends whose surnames give the initials, the first harvest of 5 October 1980 with 1,470 bottles, the family cellar and vineyard passed to them by one founder's father (the house's company page): confirmed; the training of those vines not given, so bush vines is cut.",
+    "1985: one founder chose medicine and sold his share to his sister (the house's pages): confirmed.",
+    "September 2000: the first amphorae from Spain, and Pithos born (the house's pages): confirmed.",
+    "The rules: DOC by decree of 29 May 1973, published 28 August 1973, amended in 1991; DOCG by ministerial decree of 13 September 2005, the only one in Sicily; Nero d'Avola 50 to 70 per cent, Frappato 30 to 50, no other grape; the Classico held back until 31 March of the second year after the harvest, plain Cerasuolo until 1 June of the next (AIS copy, a copy of the disciplinare, Quattrocalici, Wikipedia, Wein.plus): confirmed; the house's own page gives 1974 for the DOC.",
+    "The house's claim that its 2005 wine was the first to carry the DOCG (the house's page on Cerasuolo and Pithos): confirmed as the house's claim.",
+    "The site: 230 metres, limestone 30 to 60 centimetres down under red clay, red soils of sand of Pliocene origin (the house's home page and its 2012 page): confirmed.",
+    "The making of the Classico: spontaneous fermentation on the skins in concrete tanks with native yeasts (Flatiron Wines, Callmewine); eighteen months in Slavonian oak botti, or a year in botti and a year in concrete; 24 months in foudres with a year in concrete belongs to the Classico della Bastonaca: changed, old casks not found.",
+    "The blend of the house's Classico, about 60 per cent Nero d'Avola and 40 Frappato in several listings: confirmed.",
+    "The library's biodynamic farming: the house's own archive carries a page on biodynamics and amphora, so the library is not contradicted; the record says nothing of the farming.",
+    "The house rules: the founders and the sister unnamed; British; no dash: sound."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "from bush vines his father gave them.",
+     "now": "from vines his father gave them.",
+     "why": "The house's page says the family cellar and vineyard were passed to them by one founder's father and gives no training.",
+     "sources": [
+      {
+       "title": "COS: The company",
+       "url": "https://www.cosvittoria.it/en/the-company/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "in concrete by most merchants' sheets ... The wine then ages in large old oak casks for a year to two before bottling;",
+     "now": "in concrete tanks by most merchants' sheets ... The wine then ages in large casks of Slavonian oak, a year to eighteen months by most sheets, some vintages with a further spell in concrete;",
+     "why": "The sheets read give eighteen months in Slavonian botti, or a year in botti and a year in concrete; two years in wood belongs to the separate Bastonaca bottling, and no sheet read said the casks were old.",
+     "sources": [
+      {
+       "title": "Flatiron Wines: COS Cerasuolo di Vittoria Classico 2022",
+       "url": "https://nyc.flatiron-wines.com/products/cos-cerasuolo-di-vittoria-classico-2022-750ml",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Callmewine: Cerasuolo di Vittoria Classico COS 2022",
+       "url": "https://www.callmewine.com/en/cerasuolo-di-vittoria-classico-cos-2022-P65454.htm",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gourmet Hunters: COS Classico della Bastonaca 2020",
+       "url": "https://www.gourmethunters.com/en_GB/Cos+Cerasuolo+di+Vittoria+Classico+Della+Bastonaca+2020",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "aged in large old casks.",
+     "now": "aged in large oak casks.",
+     "why": "As above.",
+     "sources": [
+      {
+       "title": "Flatiron Wines: COS Cerasuolo di Vittoria Classico 2022",
+       "url": "https://nyc.flatiron-wines.com/products/cos-cerasuolo-di-vittoria-classico-2022-750ml",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Bush vines in the story.",
+    "Old casks and a year to two in wood."
+   ],
+   "open": [
+    "The DOC's year: 1974 on the house's page, 29 May 1973 by the decree; the record keeps 1973.",
+    "One importer gives fermentation in amphora for the 2022 vintage, as the author reported; the record keeps concrete tanks by most sheets."
+   ],
+   "extraSources": [
+    {
+     "title": "COS: Cerasuolo di Vittoria and Pithos",
+     "url": "https://www.cosvittoria.it/en/cerasuolo-vittoria-and-pithos/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "COS: home page",
+     "url": "https://www.cosvittoria.it/en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "COS: biodynamics and amphora in Sicily",
+     "url": "https://www.cosvittoria.it/en/2012/06/28/cos-biodynamics-and-amphora-in-sicily/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "AIS: Cerasuolo di Vittoria DOCG production rules",
+     "url": "https://aisitalia.it/Disciplinari/Sicilia/DOCG/Cerasuolo%20di%20Vittoria.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Cerasuolo di Vittoria DOCG disciplinare, a copy",
+     "url": "https://bubblyprofessor.com/wp-content/uploads/2021/03/disciplinare-cerasuolo-di-vittoria-docg.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Quattrocalici: Cerasuolo di Vittoria DOCG, Classico",
+     "url": "https://www.quattrocalici.it/denominazioni/cerasuolo-di-vittoria-docg-sottozona-classico/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Cerasuolo di Vittoria",
+     "url": "https://en.wikipedia.org/wiki/Cerasuolo_di_Vittoria",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus: Cerasuolo di Vittoria",
+     "url": "https://glossary.wein-plus.eu/cerasuolo-di-vittoria",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Gabriella Anca Rallo",
+   "where": "Donnafugata's roots and press pages, as the founder's wife who took Contessa Entellina in hand and chose the name",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "José Rallo and Antonio Rallo",
+   "where": "the accounts of Donnafugata, as the children who took the house on in 2016",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Stefano Vitale",
+   "where": "Donnafugata's pages, as the illustrator of its labels from 1994",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Alberto Tasca d'Almerita",
+   "where": "Tasca's pages and the trade press, as the founder's descendant who leads the house",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Giuseppe Tasca d'Almerita (the younger)",
+   "where": "the trade press, as a brother in the present generation",
+   "believed": "believed living; do not add the bare name to people.json, since it is also the name of the count who planted San Lucio in 1959, who is dead and described in the record",
+   "inFragment": false
+  },
+  {
+   "name": "Salvino Benanti",
+   "where": "Wine Spectator and Benanti's pages, as one of the founder's twin sons",
+   "believed": "living; people.json lists Salvatore Benanti, so Salvino Benanti should be added by the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Antonio Benanti",
+   "where": "the same, as the other twin son, president of the Etna consortium from 2018",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Salvo Foti",
+   "where": "Wine Spectator and the house timeline, as the oenologist the founder hired",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Alberto Aiello Graci and Alessio Planeta",
+   "where": "Wine Spectator's obituary of Giuseppe Benanti, as two growers who paid tribute",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Renato De Bartoli and Giuseppina De Bartoli",
+   "where": "the house's pages and the trade press, as the founder's children who took the estate on",
+   "believed": "believed living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Cirino Strano and Pina Strano",
+   "where": "COS's pages, as the founder who left for medicine in 1985 and his sister who took his share (another page names her Pinuccia)",
+   "believed": "status not settled, listed as a precaution; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Giusto Occhipinti and Giambattista Cilia",
+   "where": "COS's pages, as two of the three founders",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Giacomo Rallo",
+   "note": "1937 to 2016, by the house's own pages and Decanter; named with his dates in the record."
+  },
+  {
+   "name": "Giuseppe Benanti",
+   "note": "1945 to 2023, by the house's profile and Wine Spectator; named with his dates in the record."
+  },
+  {
+   "name": "Marco De Bartoli",
+   "note": "1945 to 2011, by the house's founder page, WineNews and an English obituary of 2011; now named with his dates in the record."
+  },
+  {
+   "name": "Sebastiano De Bartoli",
+   "note": "The founder's younger son, whose death at 47 Gambero Rosso reported; not in the record, which says only that the children took the estate on."
+  },
+  {
+   "name": "Giuseppe Tasca d'Almerita (the count of 1959)",
+   "note": "The count who planted San Lucio; no dates found; described, not named."
+  },
+  {
+   "name": "Lucio Tasca d'Almerita",
+   "note": "The count's son who planted Cabernet Sauvignon and Chardonnay, his death in 2022 by the author's report; described, not named."
+  },
+  {
+   "name": "Lucio and Carmelo Mastrogiovanni Tasca",
+   "note": "The brothers of 1830; no dates found; described, not named."
+  },
+  {
+   "name": "Maria Carolina, queen of Naples",
+   "note": "The queen of Donnafugata's legend; left unnamed, as the author chose, the legend told as the house's."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "tasca",
+   "ruling": "kept: no swap proposed; Rosso del Conte is the house's flagship in the plan, the library and every account read."
+  },
+  {
+   "pick": "donnafugata",
+   "ruling": "kept: no swap proposed; Ben Ryé is the house's Passito di Pantelleria in the library and every account read, and the group's one sweet wine."
+  },
+  {
+   "pick": "benanti",
+   "ruling": "kept: no swap proposed; Pietra Marina is the house's first white of 1990 and the group's one Etna and one white."
+  },
+  {
+   "pick": "de-bartoli",
+   "ruling": "kept: no swap proposed; Vecchio Samperi is the house's first wine of 1980 and teaches Marsala by standing outside it."
+  },
+  {
+   "pick": "cos",
+   "ruling": "kept: no swap proposed; the Classico is the house's Cerasuolo and gives the group Sicily's one DOCG."
+  },
+  {
+   "pick": "the group",
+   "ruling": "A note, not a ruling: Planeta, a house a guest may well name, is not among the five and is not in the plan; the five cover the interior, the islands, Etna, Marsala and Vittoria, so no swap is called for, and the integrator may weigh it for wave two."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js and .scripts/flagships/plan.json",
+   "record": "p-benanti: the plan's why and the region's producers line",
+   "says": "Viagrande house of 1988",
+   "against": "The house was founded in 1988 at Castiglione di Sicilia on the northern slope as Tenuta di Castiglione, and took the family name and its seat at Viagrande about a decade later; reported, not edited.",
+   "sources": [
+    {
+     "title": "Benanti: Always contemporary",
+     "url": "https://www.benanti.it/en/always-contemporary/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Benanti: Profile and fact sheet 2020",
+     "url": "https://www.benanti.it/wp-content/uploads/2020/05/BENANTI-Profile-and-Fact-Sheet-2020-1-1.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Spectator: Giuseppe Benanti dies at 78",
+     "url": "https://www.winespectator.com/articles/giuseppe-benanti-who-helped-spark-mount-etna-s-wine-renaissance-dies-at-78",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-benanti: wines, Pietramarina",
+   "says": "Pietramarina",
+   "against": "The house prints Pietra Marina; Wine Spectator and many lists write Pietramarina. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Benanti: Pietra Marina technical sheet",
+     "url": "https://benanti.it/wines/BENANTI-Scheda-tecnica-Etna-Bianco-Superiore-Pietra-Marina.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Spectator: Giuseppe Benanti dies at 78",
+     "url": "https://www.winespectator.com/articles/giuseppe-benanti-who-helped-spark-mount-etna-s-wine-renaissance-dies-at-78",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": ".scripts/regions/fragments (Sicily producers line)",
+   "record": "p-cos",
+   "says": "revived Cerasuolo di Vittoria and ferments it in buried amphorae",
+   "against": "The amphorae are for Pithos, from 2000; the Classico is fermented in concrete tanks and aged in Slavonian casks by most sheets. Reported, not edited.",
+   "sources": [
+    {
+     "title": "COS: Cerasuolo di Vittoria and Pithos",
+     "url": "https://www.cosvittoria.it/en/cerasuolo-vittoria-and-pithos/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Flatiron Wines: COS Cerasuolo di Vittoria Classico 2022",
+     "url": "https://nyc.flatiron-wines.com/products/cos-cerasuolo-di-vittoria-classico-2022-750ml",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-marco-de-bartoli: why",
+   "says": "a great wine",
+   "against": "A judgement word the tab does not repeat.",
+   "sources": []
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-donnafugata and w-ben-rye",
+   "says": "the reference Passito di Pantelleria",
+   "against": "A ranking the tab does not repeat.",
+   "sources": []
+  },
+  {
+   "file": ".scripts/regions/fragments (Sicily producers line)",
+   "record": "p-tasca-d-almerita",
+   "says": "an early benchmark for Nero d'Avola",
+   "against": "A judgement word the tab does not repeat, and the wine is Nero d'Avola with Perricone in every source read.",
+   "sources": [
+    {
+     "title": "Tasca d'Almerita: Our story",
+     "url": "https://tascadalmerita.it/en/our-story/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Superiore.de: Rosso del Conte Sicilia Contea di Sclafani DOC 2017",
+     "url": "https://www.superiore.de/en/wine/sicily/tasca-d-almerita/rosso-del-conte-sicilia-contea-di-sclafani-doc-2017.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
