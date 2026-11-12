@@ -64,6 +64,29 @@
       name is already a possessive, else On the list at {name}), and nothing
       is drawn when no house is loaded or it pours none.
 
+   6. STUDY, THE CARDS: the decks flagcards (every flagship card),
+      flagcards:{group} (a group's ten) and flagsdue (the cards due today)
+      on codex32's one card screen (v32DeckDef, v32StartRun), the card kind
+      flag (v32CardFace: the question over the house's name, then the answer
+      with a door to the house); each grade a due date by the Codex's own
+      steps (codex56's v56Step, v56Today and v56AddDays, typeof guarded),
+      kept per device in oot-codex-flagrs-v1 under the profile key rule
+      ({ c, q }: the cards and the questions by id); no other slot is
+      touched. The decks light Wine Atlas: a group's deck and its run climb
+      to the group, the due run and the whole deck's screen to the root.
+
+   7. STUDY, THE QUIZ: the flagship questions dealt through the core engine
+      as codex39 deals a region's: a group's ten, or ten from every flagship
+      with the ones due first; the section the group's, so the results
+      screen and codex19's report deal it again. A flagship key is never
+      level progress, never in codex3's rotation (its due date is kept in
+      the layer's slot), never an orphan, and the ledger finds it.
+
+   8. THE DOORS TO STUDY: on the root, Study (the cards with the count due
+      today, and the quiz on every flagship); on a group, Study the five
+      (its cards and its quiz); on a house, Study (its two cards with when
+      each is due, the group's cards and the group's quiz).
+
    9. THE SHELL: index.html loads js/data-flagships.js then js/codex58.js
       after codex57.js and before boot.js; the worker is codex-v117 and lists
       both.
@@ -145,7 +168,49 @@ var V58_WORDS = {
   listHAt: 'On the list at {house}',
   listChip: 'On our list',
   listOne: 'One wine of {name} is on the list. It opens its card.',
-  listMany: '{n} wines of {name} are on the list. Each opens its card.'
+  listMany: '{n} wines of {name} are on the list. Each opens its card.',
+  /* study: the cards */
+  cardsDeck: 'Flagship cards',
+  groupDeck: 'Flagship cards: {title}',
+  dueDeck: 'Flagship cards due today',
+  cardSide: '{side} · {name}',
+  cardDoor: 'The page for {name}',
+  oneCard: '1 card',
+  nCards: '{n} cards',
+  noCards: 'No flagship cards are on this device yet.',
+  stateNew: 'New',
+  stateDue: 'Due today',
+  stateTomorrow: 'Due tomorrow',
+  stateDays: 'Due in {n} days',
+  /* study: the quiz */
+  quizAll: 'Flagships: every region',
+  quizGroup: 'Flagships: {title}',
+  qLevel: 'Flagships',
+  oneQ: '1 question',
+  nQs: '{n} questions',
+  noQuestions: 'No flagship questions are on this device yet.',
+  /* study: the doors */
+  studyLine: 'Two cards and two questions a house. A card or a question answered comes back by the Codex\'s own steps: tomorrow, then in three days, then further apart.',
+  cardsRow: 'Flagship cards',
+  cardsRowDue: '{d} due today · {cards} · {m} learnt',
+  cardsRowLine: '{cards}, two a house · {m} learnt',
+  quizRow: 'Quiz on every flagship',
+  quizRowDue: '{d} due today · ten a round from {qs}',
+  quizRowLine: 'Ten a round from {qs}, the ones due first · {r} answered right',
+  groupStudyH: 'Study the five',
+  groupCardsRow: 'The five\'s cards',
+  groupCardsNone: '{cards}, none studied yet',
+  groupCardsDue: '{cards} · {d} due today',
+  groupCardsLearnt: '{cards} · {m} learnt, none due today',
+  groupQuizRow: 'Quiz on the five',
+  groupQuizLine: '{qs} · {r} answered right',
+  pageStudyH: 'Study',
+  pageStudyChip: 'Study',
+  pageCardsNone: 'The two cards of {name}, not studied yet.',
+  pageCardsDue: 'The two cards of {name}: {d} due today.',
+  pageCardsLearnt: 'The two cards of {name}: {m} learnt, none due today.',
+  pageCardsDoor: 'Study the five\'s cards',
+  pageQuizDoor: 'Quiz on the five'
 };
 
 function v58W(key, vars) {
@@ -249,7 +314,21 @@ function v58Fold(s) {
     '.wrap .v58-wine{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;width:100%;min-height:48px;box-sizing:border-box;padding:8px 0;margin:0;background:none;border:0;border-radius:0;text-align:left;cursor:pointer;font-family:inherit;color:var(--parch)}',
     '.wrap .v58-wine-p{font-size:17px;line-height:1.35;font-weight:700;color:var(--gold-hi);overflow-wrap:anywhere}',
     '.wrap .v58-wine-w{font-size:16px;line-height:1.4;color:var(--parch);overflow-wrap:anywhere}',
-    '.wrap .v58-wine:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}'
+    '.wrap .v58-wine:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}',
+    /* study: a flagship card asks a question, so its face is set in the reading face a size down; the answer under
+       it, then the door to the house */
+    '.wrap .v58-fcard .v58-cq{font-family:var(--house-reading,Georgia,serif);font-size:21px;line-height:1.4;font-weight:700;letter-spacing:0;text-transform:none;overflow-wrap:anywhere}',
+    '.wrap .v58-fcard .v58-ca{font-size:18px;line-height:1.55;margin:10px 0 0}',
+    '.wrap .v58-cdoor{margin:18px 0 0}',
+    '.wrap .v58-cdoor .btn{min-height:44px;font-size:16px;white-space:normal;text-align:left}',
+    /* the doors to study on the root and a group, and a house\'s two cards with when each is due */
+    '.wrap .v58-study{margin:22px 0 6px}',
+    '.wrap .v58-study .v32-line{margin:4px 0 8px}',
+    '.wrap .v58-cardlist{list-style:none;margin:6px 0 10px;padding:0}',
+    '.wrap .v58-sec .v58-cardlist li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 14px;margin:0;padding:9px 0;border-bottom:1px solid var(--line)}',
+    '.wrap .v58-sec .v58-cardlist li:last-child{border-bottom:0}',
+    '.wrap .v58-cardq{flex:1 1 13em;min-width:0;overflow-wrap:anywhere}',
+    '.wrap .v58-cardstate{flex:0 0 auto;font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.05em;color:var(--gold-soft)}'
   ].join('\n');
   try { document.head.appendChild(css); } catch (e) { }
 })();
@@ -465,6 +544,7 @@ function v58RootHtml() {
   var html = '<div class="v25page v58 v58-view v58-root" id="v58-root">' + v58Head(v58W('tab'), sub)
     + '<p class="v32-line">' + v58Esc(v58W('rootLine')) + '</p>';
   if (meta.partial && Number(meta.roster) > roster.length) html += '<p class="v32-line v58-partial">' + v58Esc(v58W('partialLine', { built: roster.length, roster: Number(meta.roster) })) + '</p>';
+  html += v58StudyRootHtml();
   if (countries.length > 1) {
     html += '<nav class="v32chips v58-chips" aria-label="' + v58Esc(v58W('countriesNav')) + '">' + countries.map(function (c) {
       return '<button type="button" class="v28-chip" data-v53="jump" data-to="v58-c-' + v58Esc(c.key) + '">' + v58Esc(c.name) + '</button>';
@@ -520,6 +600,7 @@ function v58GroupHtml(key) {
   var html = '<div class="v25page v58 v58-view v58-groupview" data-v58-group="' + v58Esc(g.key) + '">' + v58Head(g.title, sub)
     + '<p class="v32-line">' + v58Esc(g.ids.length >= 5 ? v58W('groupLine5') : v58W('groupLineN', { n: g.ids.length })) + '</p>'
     + '<ol class="v58-cards">' + g.ids.map(function (id) { return v58CardHtml(v58Rec(id)); }).join('') + '</ol>';
+  html += v58StudyGroupHtml(g);
   var doors = '';
   if (region) doors += v58Door('data-v39="region" data-slug="' + v58Esc(region.slug) + '"', v58W('regionDoor', { name: v58Str(region.name) }), 'v58-region-door');
   v58GroupsOf(g.region).forEach(function (x) { if (x.key !== g.key) doors += v58Door('data-go="flaggroup" data-arg="' + v58Esc(x.key) + '"', x.title, 'v58-sib-' + x.key); });
@@ -601,7 +682,8 @@ function v58SourcesBody(r) {
   return rows ? '<ul class="v39-lines v39-sources v58-sources">' + rows + '</ul>' : '';
 }
 /* The page's sections, in order: [id, its chip, body, class, its heading]. A section with no body is left out with
-   its chip. The layer's later parts add theirs through V58_SECS (extended key by key: { after, make(r) }). */
+   its chip. The layer's later parts add theirs through V58_SECS (extended key by key: { after, before, make(r) }):
+   after the section named by after, else before the one named by before, else last. */
 var V58_SECS = {};
 function v58Sections(r) {
   var list = [
@@ -617,8 +699,9 @@ function v58Sections(r) {
     try { sec = (x && typeof x.make === 'function') ? x.make(r) : null; } catch (e) { sec = null; }
     if (!sec || !sec[2]) return;
     var at = -1;
-    list.forEach(function (y, i) { if (y[0] === x.after) at = i; });
-    list.splice(at >= 0 ? at + 1 : list.length, 0, sec);
+    list.forEach(function (y, i) { if (y[0] === x.after) at = i + 1; });
+    if (at < 0 && x.before) list.forEach(function (y, i) { if (at < 0 && y[0] === x.before) at = i; });
+    list.splice(at >= 0 ? at : list.length, 0, sec);
   });
   return list.filter(function (x) { return !!x[2]; });
 }
@@ -888,6 +971,543 @@ V58_SECS.list = {
   make: function (r) { return ['v58-s-list', v58W('listChip'), v58ListBody(r), 'v58-list', v58ListTitle()]; }
 };
 V58_ACTS.wine = function (node) { return v58OpenWine(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-id') : ''); };
+
+/* =========== 6. study: the cards =========== */
+
+/* 6.1 the layer's slot: per device, never exported, every touch in try. { c: the flagship cards by id, q: the
+   flagship questions by id }, each a record { ef, iv, n, due } in the Codex's own steps, under the profile key
+   rule. codex3's rotation, codex39's grades and codex57's slot are never touched. */
+var V58_SLOT = 'oot-codex-flagrs-v1';
+function v58Key() {
+  try {
+    return (typeof OOT !== 'undefined' && OOT && OOT.profiles && typeof OOT.profiles.key === 'function') ? OOT.profiles.key(V58_SLOT) : V58_SLOT;
+  } catch (e) { return V58_SLOT; }
+}
+function v58Kept() {
+  var o = null;
+  try {
+    var s = (typeof localStorage !== 'undefined' && localStorage) ? localStorage.getItem(v58Key()) : null;
+    o = s ? JSON.parse(s) : null;
+  } catch (e) { o = null; }
+  if (!o || typeof o !== 'object' || Array.isArray(o)) o = {};
+  ['c', 'q'].forEach(function (k) { if (!o[k] || typeof o[k] !== 'object' || Array.isArray(o[k])) o[k] = {}; });
+  return o;
+}
+function v58Keep(o) {
+  try { if (typeof localStorage !== 'undefined' && localStorage) localStorage.setItem(v58Key(), JSON.stringify(o)); } catch (e) { }
+}
+/* The Codex's own days and its own steps (codex56's pure helpers over codex3's rule), else the same arithmetic:
+   right, one day, then three, then the interval times the ease (the ease up a twentieth, to 2.8 at most); wrong,
+   due today and the ease down a fifth (to 1.3 at least). */
+function v58Today() {
+  try { if (typeof v56Today === 'function') return v56Today(); } catch (e) { }
+  try { if (typeof today === 'function') return today(); } catch (e2) { }
+  return new Date().toISOString().slice(0, 10);
+}
+function v58AddDays(n) {
+  try { if (typeof v56AddDays === 'function') return v56AddDays(n); } catch (e) { }
+  try { if (typeof addDays === 'function') return addDays(n); } catch (e2) { }
+  return new Date(Date.now() + n * 864e5).toISOString().slice(0, 10);
+}
+function v58Step(r, ok) {
+  try { if (typeof v56Step === 'function') return v56Step(r, ok); } catch (e) { }
+  var o = (r && typeof r === 'object') ? r : {};
+  var ef = Number(o.ef) || 2.5, iv = Number(o.iv) || 0, n = Number(o.n) || 0;
+  if (ok) {
+    n++;
+    iv = n === 1 ? 1 : (n === 2 ? 3 : Math.round(iv * ef));
+    ef = Math.min(2.8, ef + 0.05);
+  } else {
+    n = 0; iv = 0; ef = Math.max(1.3, ef - 0.2);
+  }
+  return { ef: Math.round(ef * 100) / 100, iv: iv, n: n, due: v58AddDays(iv) };
+}
+/* One grade kept: a card ('c') or a question ('q') by its id. Returns the record written. */
+function v58Sched(kind, id, ok) {
+  var k = kind === 'q' ? 'q' : 'c';
+  var key = v58Str(id);
+  if (!key) return null;
+  try {
+    var o = v58Kept();
+    o[k][key] = v58Step(o[k][key] || {}, !!ok);
+    v58Keep(o);
+    return o[k][key];
+  } catch (e) { return null; }
+}
+function v58IsDue(r, day) { return !!r && typeof r.due === 'string' && !!r.due && r.due <= (day || v58Today()); }
+/* The whole days from today to a date a record is due on; 0 for today and for a day already gone. */
+function v58DaysTo(due) {
+  var a = Date.parse(v58Today() + 'T00:00:00Z'), b = Date.parse(v58Str(due) + 'T00:00:00Z');
+  return (isFinite(a) && isFinite(b) && b > a) ? Math.round((b - a) / 864e5) : 0;
+}
+function v58Hash(s) {
+  var h = 2166136261, t = String(s);
+  for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = (typeof Math.imul === 'function') ? Math.imul(h, 16777619) : ((h * 16777619) | 0); }
+  return h >>> 0;
+}
+
+/* 6.2 the flagship cards: every record's two, in the plan's order, each { kind: 'flag', id, front, back, label (the
+   house), house (the record's id), group }. The id is the build's own, the key its grade is kept under. Made once
+   per edition of the data. */
+var V58_CARDS = { d: null, list: [], by: {}, byGroup: {}, byHouse: {} };
+function v58CardBook() {
+  var d = v58Data();
+  if (V58_CARDS.d === d) return V58_CARDS;
+  var out = { d: d, list: [], by: {}, byGroup: {}, byHouse: {} };
+  v58Roster().forEach(function (r) {
+    var mine = [];
+    v58List(r.cards).forEach(function (c) {
+      var id = v58Str(c && c.id), front = v58Str(c && c.front), back = v58Str(c && c.back);
+      if (!id || !front || !back || v58Own(out.by, id)) return;
+      var card = { kind: 'flag', id: id, front: front, back: back, label: v58Str(r.producer), house: r.id, group: v58Str(r.group) };
+      out.by[id] = card;
+      out.list.push(card);
+      mine.push(card);
+    });
+    if (!mine.length) return;
+    var gk = v58Str(r.group);
+    out.byHouse[r.id] = mine;
+    out.byGroup[gk] = (v58Own(out.byGroup, gk) ? out.byGroup[gk] : []).concat(mine);
+  });
+  V58_CARDS = out;
+  return out;
+}
+function v58CardsOfGroup(key) { var b = v58CardBook(); return v58Own(b.byGroup, key) ? b.byGroup[key] : []; }
+function v58CardsOfHouse(id) { var b = v58CardBook(); return v58Own(b.byHouse, id) ? b.byHouse[id] : []; }
+/* The order a round takes cards in: the ones sent back first, then the ones due by the older date, then the cards
+   never graded in the day's own deal (a shuffle that holds for the day), then the rest by the day they come back. */
+function v58StudyOrder(cards) {
+  var rec = v58Kept().c, day = v58Today();
+  var rows = v58List(cards).map(function (c, i) {
+    var r = rec[c.id];
+    var k = (!r || !r.due) ? 2 : (r.due <= day ? (Number(r.n) >= 1 ? 1 : 0) : 3);
+    return { c: c, k: k, s: k === 2 ? v58Hash(day + '|' + c.id) : 0, d: (r && r.due) || '', i: i };
+  });
+  rows.sort(function (a, b) { return (a.k - b.k) || (a.s - b.s) || (a.d < b.d ? -1 : (a.d > b.d ? 1 : 0)) || (a.i - b.i); });
+  return rows.map(function (x) { return x.c; });
+}
+/* The cards due: graded before and back on or before today. */
+function v58DueCards() {
+  var rec = v58Kept().c, day = v58Today();
+  return v58StudyOrder(v58CardBook().list.filter(function (c) { return v58IsDue(rec[c.id], day); }));
+}
+/* A list of cards counted: { n, due, learnt, graded }. */
+function v58CardTally(cards) {
+  var rec = v58Kept().c, day = v58Today();
+  var t = { n: 0, due: 0, learnt: 0, graded: 0 };
+  v58List(cards).forEach(function (c) {
+    var r = rec[c.id];
+    t.n++;
+    if (r) t.graded++;
+    if (v58IsDue(r, day)) t.due++;
+    if (r && Number(r.n) >= 1) t.learnt++;
+  });
+  return t;
+}
+function v58CardState(r, day) {
+  if (!r || !r.due) return v58W('stateNew');
+  if (v58IsDue(r, day)) return v58W('stateDue');
+  var n = v58DaysTo(r.due);
+  return n <= 1 ? v58W('stateTomorrow') : v58W('stateDays', { n: n });
+}
+
+/* 6.3 the decks, on codex32's one card screen: flagcards (every flagship card), flagcards:{group} (a group's ten)
+   and flagsdue (the cards due today). */
+var V58_DECK_RE = /^(?:flagcards|flagcards:([a-z0-9-]+)|flagsdue)$/;
+function v58IsDeck(id) { return V58_DECK_RE.test(String(id || '')); }
+function v58DeckGroup(id) {
+  var m = V58_DECK_RE.exec(String(id || ''));
+  var g = (m && m[1]) ? v58Group(m[1]) : null;
+  return g ? g.key : '';
+}
+if (typeof v32DeckDef === 'function') {
+  var _v58DeckDef = v32DeckDef;
+  v32DeckDef = function (id) {
+    var s = String(id || '');
+    if (!v58IsDeck(s)) return _v58DeckDef.apply(this, arguments);
+    var def = { id: s, name: v58W('cardsDeck'), cards: [], kind: 'flag' };
+    try {
+      if (s === 'flagsdue') { def.name = v58W('dueDeck'); def.cards = v58DueCards(); }
+      else if (s === 'flagcards') def.cards = v58StudyOrder(v58CardBook().list);
+      else {
+        var g = v58Group(v58DeckGroup(s));
+        if (g) { def.name = v58W('groupDeck', { title: g.title }); def.cards = v58CardsOfGroup(g.key).slice(); }
+      }
+    } catch (e) { def.cards = []; }
+    try { def.learnt = (typeof v32Learnt === 'function') ? v32Learnt(def) : 0; } catch (e2) { def.learnt = 0; }
+    return def;
+  };
+}
+/* Learnt: last marked Got it, in the layer's slot. */
+if (typeof v32Learnt === 'function') {
+  var _v58Learnt = v32Learnt;
+  v32Learnt = function (def) {
+    if (def && def.kind === 'flag') return v58CardTally(def.cards).learnt;
+    return _v58Learnt.apply(this, arguments);
+  };
+}
+/* A flagship card graded: its due date in the layer's slot; then the grade goes on down the chain, which marks
+   no other slot for a card of this kind. */
+if (typeof v32Grade === 'function') {
+  var _v58Grade = v32Grade;
+  v32Grade = function (got) {
+    try {
+      var run = S._v32run;
+      var c = (run && run.flip && run.deck && run.deck.length) ? run.cards[run.deck[0]] : null;
+      if (c && c.kind === 'flag' && v58Own(v58CardBook().by, c.id)) v58Sched('c', c.id, !!got);
+    } catch (e) { }
+    return _v58Grade.apply(this, arguments);
+  };
+}
+/* The whole deck and the due deck are dealt in the order above, a round's worth from the top (codex43 takes the
+   first cards of a deck dealt in its own order); a group's ten are shuffled as every small deck is. */
+if (typeof v32StartRun === 'function') {
+  var _v58StartRun = v32StartRun;
+  v32StartRun = function (deckId, opts) {
+    var o = opts;
+    try {
+      if ((deckId === 'flagcards' || deckId === 'flagsdue') && !(opts && opts.cards)) {
+        o = {};
+        Object.keys(opts || {}).forEach(function (k) { o[k] = opts[k]; });
+        o.keepOrder = true;
+      }
+    } catch (e) { o = opts; }
+    return _v58StartRun.call(this, deckId, o);
+  };
+}
+/* The card's two faces: the question over the house's name, then the answer with a door to the house's page. */
+function v58CardFaceHtml(c, run) {
+  var w = function (k) { return (typeof v32W === 'function') ? v32W(k) : k; };
+  var side = function (k) { return v58Esc(c.label ? v58W('cardSide', { side: w(k), name: c.label }) : w(k)); };
+  if (!run || !run.flip) {
+    return '<button type="button" class="card v28-front v58-fcard" data-v32="flip" id="v32-face"><span class="v28-eyebrow v28-ink">' + side('front') + '</span>'
+      + '<span class="v28-fname v58-cq">' + v58Esc(c.front) + '</span></button>';
+  }
+  var door = (c.house && c.label && v58Rec(c.house)) ? '<p class="v58-cdoor"><button type="button" class="btn small ghost" data-go="flagship" data-arg="' + v58Esc(c.house) + '" id="v58-cdoor">' + v58Esc(v58W('cardDoor', { name: c.label })) + '</button></p>' : '';
+  return '<div class="card v28-back v58-fcard" id="v32-face"><p class="v28-eyebrow v28-ink">' + side('answer') + '</p>'
+    + '<h3 class="v28-bname v58-cq" tabindex="-1" id="v32-ans">' + v58Esc(c.front) + '</h3><p class="v58-ca">' + v58Esc(c.back) + '</p>' + door + '</div>';
+}
+if (typeof v32CardFace === 'function') {
+  var _v58CardFace = v32CardFace;
+  v32CardFace = function (c, run) {
+    if (c && c.kind === 'flag') { try { return v58CardFaceHtml(c, run); } catch (e) { return ''; } }
+    return _v58CardFace.apply(this, arguments);
+  };
+}
+/* A deck of the layer dealt to its end: codex32's Another deck leads to the Library, which holds none of these,
+   so the door reads Every region and its five and opens the root. */
+if (typeof v32CardHtml === 'function') {
+  var _v58CardHtml = v32CardHtml;
+  v32CardHtml = function () {
+    var html = String(_v58CardHtml.apply(this, arguments) || '');
+    try {
+      var run = S._v32run;
+      if (run && run.v32 && v58IsDeck(run.deckId) && !run.deck.length) {
+        html = html.replace(/<button type="button" class="btn ghost" data-v32="another">[^<]*<\/button>/, '<button type="button" class="btn ghost" data-go="flagships" id="v58-deck-all">' + v58Esc(v58W('rootDoor')) + '</button>');
+      }
+    } catch (e) { }
+    return html;
+  };
+}
+/* The decks and their cards light Wine Atlas. A group's deck screen and its run climb to the group; the due run
+   and the whole deck's screen climb to the root. */
+function v58DeckShown() {
+  try {
+    if (S.view === 'deck') return String(S._v32deck || '');
+    if (S.view === 'housedeck' || S.view === 'flash') { var run = S._v32run; return (run && run.v32) ? String(run.deckId || '') : ''; }
+  } catch (e) { }
+  return '';
+}
+/* Starts a deck of the layer from one of its doors: a named deck straight on the card screen; with none named, the
+   cards due when there are any, else the whole deck's own screen with its round sizes. */
+function v58StartCards(deck) {
+  var id = v58Str(deck);
+  if (!id) {
+    if (v58DueCards().length) id = 'flagsdue';
+    else {
+      if (!v58CardBook().list.length) { if (typeof toast === 'function') toast(v58W('noCards')); return false; }
+      if (typeof v32OpenDeck !== 'function') return false;
+      v32OpenDeck('flagcards');
+      return true;
+    }
+  }
+  if (!v58IsDeck(id) || typeof v32StartRun !== 'function') return false;
+  return v32StartRun(id, { push: true });
+}
+V58_ACTS.cards = function (node) { return v58StartCards(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-deck') : ''); };
+
+/* =========== 7. study: the quiz =========== */
+
+/* 7.1 the flagship questions as the engine reads them: a copy a question, made once per edition of the data, its
+   section the group's (the name the quiz of that group carries, so the results screen and codex19's report deal
+   that group again), its options and key as the build dealt them. */
+var V58_QS = { d: null, list: [], by: {}, byGroup: {} };
+function v58QBook() {
+  var d = v58Data();
+  if (V58_QS.d === d) return V58_QS;
+  var out = { d: d, list: [], by: {}, byGroup: {} };
+  v58Groups().forEach(function (g) {
+    var mine = [];
+    g.ids.forEach(function (rid) {
+      var r = v58Rec(rid);
+      v58List(r && r.questions).forEach(function (q) {
+        var id = v58Str(q && q.id), stem = v58Str(q && q.q);
+        var opts = v58List(q && q.opts).map(v58Str);
+        if (!id || !stem || v58Own(out.by, id)) return;
+        if (opts.length < 2 || opts.some(function (x) { return !x; }) || typeof q.a !== 'number' || q.a < 0 || q.a >= opts.length || Math.floor(q.a) !== q.a) return;
+        var copy = { id: id, cat: v58W('quizGroup', { title: g.title }), q: stem, opts: opts, a: q.a, exp: v58Str(q.exp), house: r.id, group: g.key };
+        if (v58Str(q.tag)) copy.tag = v58Str(q.tag);
+        out.by[id] = copy;
+        out.list.push(copy);
+        mine.push(copy);
+      });
+    });
+    if (mine.length) out.byGroup[g.key] = mine;
+  });
+  V58_QS = out;
+  return out;
+}
+function v58QsOfGroup(key) { var b = v58QBook(); return v58Own(b.byGroup, key) ? b.byGroup[key] : []; }
+function v58BareKey(k) {
+  var s = String(k == null ? '' : k);
+  var i = s.indexOf('|');
+  return i >= 0 ? s.slice(i + 1) : s;
+}
+/* An id of the tab: its prefix (FLAGSHIP_META's) and eight base36 digits; read so even for a record no longer
+   shipped, so an old key is never taken for a level's. */
+function v58IsQId(id) {
+  var p = v58Str(v58Meta().prefix);
+  return typeof id === 'string' && !!p && id.indexOf(p) === 0 && /^[0-9a-z]{8}$/.test(id.slice(p.length));
+}
+function v58IsQKey(k) { return typeof k === 'string' && v58IsQId(v58BareKey(k)); }
+function v58QById(id) { var b = v58QBook(); return v58Own(b.by, id) ? b.by[id] : null; }
+/* A list of questions counted: { n, due, right, seen }; right is last answered right. */
+function v58QTally(qs) {
+  var rec = v58Kept().q, day = v58Today();
+  var t = { n: 0, due: 0, right: 0, seen: 0 };
+  v58List(qs).forEach(function (q) {
+    var r = rec[q.id];
+    t.n++;
+    if (r) t.seen++;
+    if (v58IsDue(r, day)) t.due++;
+    if (r && Number(r.n) >= 1) t.right++;
+  });
+  return t;
+}
+function v58Shuffle(a) {
+  var out = v58List(a).slice();
+  if (typeof shuffle === 'function') { try { return shuffle(out); } catch (e) { } }
+  for (var i = out.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = out[i]; out[i] = out[j]; out[j] = t; }
+  return out;
+}
+
+/* 7.2 a round: a group's questions all, shuffled; every flagship, ten: the ones due first, then the ones never
+   answered, then the rest, each kind shuffled. */
+var V58_ROUND = 10;
+function v58QuizPool(key) {
+  if (key) return v58Shuffle(v58QsOfGroup(key));
+  var rec = v58Kept().q, day = v58Today();
+  var due = [], fresh = [], rest = [];
+  v58QBook().list.forEach(function (q) {
+    var r = rec[q.id];
+    if (v58IsDue(r, day)) due.push(q);
+    else if (!r) fresh.push(q);
+    else rest.push(q);
+  });
+  return v58Shuffle(due).concat(v58Shuffle(fresh), v58Shuffle(rest)).slice(0, V58_ROUND);
+}
+function v58StartQuiz(key) {
+  var k = v58Str(key);
+  var g = k ? v58Group(k) : null;
+  if (k && !g) return false;
+  var qs = v58QuizPool(g ? g.key : '');
+  if (!qs.length) { if (typeof toast === 'function') toast(v58W('noQuestions')); return false; }
+  if (typeof stopTimer === 'function') stopTimer();
+  S._fin = null; S._v25lt = null;
+  S.mode = 'drill';
+  S.section = g ? v58W('quizGroup', { title: g.title }) : v58W('quizAll');
+  S._v58quiz = g ? g.key : '';
+  S._again = function () { v58StartQuiz(g ? g.key : ''); };
+  S.pool = qs; S.idx = 0; S.correct = 0; S.results = [];
+  if (typeof resetQ === 'function') resetQ();
+  S.view = 'quiz';
+  try { if (typeof V32 !== 'undefined' && V32 && !(typeof V32_RUN !== 'undefined' && V32_RUN && V32_RUN[V32.view])) V32.pend = 'push'; } catch (e) { }
+  if (typeof render === 'function') render();
+  return true;
+}
+V58_ACTS.quiz = function (node) { return v58StartQuiz(node && typeof node.getAttribute === 'function' ? node.getAttribute('data-group') : ''); };
+/* The quiz showing is the layer's when its first question is a flagship's. */
+function v58QuizShown() {
+  try {
+    if (S.view !== 'quiz' && S.view !== 'results') return false;
+    var first = S.pool && S.pool[0];
+    return !!first && v58Own(v58QBook().by, String(first.id || ''));
+  } catch (e) { return false; }
+}
+/* codex19's report drills a section by its name: a group's section, or every flagship's, deals that quiz again. */
+if (typeof startDrill === 'function') {
+  var _v58StartDrill = startDrill;
+  startDrill = function (cat) {
+    try {
+      var c = v58Str(cat);
+      if (c && c === v58W('quizAll') && v58QBook().list.length) return v58StartQuiz('');
+      var hit = null;
+      if (c) v58Groups().some(function (g) { if (v58W('quizGroup', { title: g.title }) === c) { hit = g; return true; } return false; });
+      if (hit && v58QsOfGroup(hit.key).length) return v58StartQuiz(hit.key);
+    } catch (e) { }
+    return _v58StartDrill.apply(this, arguments);
+  };
+}
+
+/* 7.3 a flagship key in the engine, as codex57 keeps a gt- key: never level progress (keyOwned), never in codex3's
+   rotation (srsRecord: its due date is kept in the layer's slot instead), never an orphan (qidAudit); the ledger
+   finds it (findByKey) and tags it Flagships. */
+if (typeof keyOwned === 'function') {
+  var _v58KeyOwned = keyOwned;
+  keyOwned = function (k) {
+    if (v58IsQKey(k)) return false;
+    return _v58KeyOwned.apply(this, arguments);
+  };
+}
+if (typeof srsRecord === 'function') {
+  var _v58SrsRecord = srsRecord;
+  srsRecord = function (q, ok) {
+    if (q && v58IsQId(q.id)) {
+      try { if (v58Own(v58QBook().by, q.id)) v58Sched('q', q.id, !!ok); } catch (e) { }
+      return;
+    }
+    return _v58SrsRecord.apply(this, arguments);
+  };
+}
+if (typeof qidAudit === 'function') {
+  var _v58QidAudit = qidAudit;
+  qidAudit = function () {
+    var out = _v58QidAudit.apply(this, arguments);
+    try {
+      var known = v58QBook().by;
+      var orph = out && out.orphanedKeys;
+      if (orph && typeof orph === 'object') {
+        Object.keys(orph).forEach(function (name) {
+          var left = v58List(orph[name]).filter(function (k) { return !v58Own(known, v58BareKey(k)); });
+          if (left.length) orph[name] = left; else delete orph[name];
+        });
+      }
+    } catch (e) { }
+    return out;
+  };
+}
+if (typeof findByKey === 'function') {
+  var _v58FindByKey = findByKey;
+  findByKey = function (k) {
+    if (v58IsQKey(k)) return v58QById(v58BareKey(k));
+    return _v58FindByKey.apply(this, arguments);
+  };
+}
+function v58TagRows(rows) {
+  return v58List(rows).map(function (x) { if (x && v58IsQKey(x.k)) x.lvl = v58W('qLevel'); return x; });
+}
+if (typeof graderDisputes === 'function') {
+  var _v58GraderDisputes = graderDisputes;
+  graderDisputes = function () { return v58TagRows(_v58GraderDisputes.apply(this, arguments)); };
+}
+if (typeof badReports === 'function') {
+  var _v58BadReports = badReports;
+  badReports = function () { return v58TagRows(_v58BadReports.apply(this, arguments)); };
+}
+
+/* 7.4 the lit word and the parent of the decks and the quiz: Wine Atlas; a group's deck screen and its run climb
+   to the group, the due run and the whole deck's screen to the root; a quiz of a group to the group, of every
+   flagship to the root. */
+if (typeof v25NavWord === 'function') {
+  var _v58StudyNavWord = v25NavWord;
+  v25NavWord = function () {
+    try { if (v58IsDeck(v58DeckShown()) || v58QuizShown()) return 'worldmap'; } catch (e) { }
+    return _v58StudyNavWord.apply(this, arguments);
+  };
+}
+if (typeof v32ParentRoute === 'function') {
+  var _v58StudyParentRoute = v32ParentRoute;
+  v32ParentRoute = function () {
+    try {
+      var id = v58DeckShown();
+      if (v58IsDeck(id)) {
+        var gk = v58DeckGroup(id);
+        if (gk) return { view: 'flaggroup', arg: gk };
+        if (S.view === 'deck' || id === 'flagsdue') return { view: 'flagships' };
+      }
+      if (v58QuizShown()) {
+        var qg = v58Group(S._v58quiz);
+        return qg ? { view: 'flaggroup', arg: qg.key } : { view: 'flagships' };
+      }
+    } catch (e) { }
+    return _v58StudyParentRoute.apply(this, arguments);
+  };
+}
+
+/* =========== 8. the doors to study =========== */
+
+function v58CountCards(n) { return v58Count(n, 'oneCard', 'nCards'); }
+function v58CountQs(n) { return v58Count(n, 'oneQ', 'nQs'); }
+function v58StudyRow(attrs, name, line, id) {
+  return '<li><button class="v25row" type="button" ' + attrs + (id ? ' id="' + v58Esc(id) + '"' : '') + '><span class="v25row-name">' + v58Esc(name) + '</span>'
+    + (line ? '<span class="v25row-line">' + v58Esc(line) + '</span>' : '') + '</button></li>';
+}
+/* 8.1 the root: Study, with the cards (the due count first when any is due) and the quiz on every flagship. */
+function v58StudyRootHtml() {
+  var cards = v58CardBook().list, qs = v58QBook().list;
+  if (!cards.length && !qs.length) return '';
+  var rows = '';
+  if (cards.length) {
+    var t = v58CardTally(cards);
+    var vars = { d: t.due, cards: v58CountCards(t.n), m: t.learnt };
+    rows += v58StudyRow('data-v58="cards"', v58W('cardsRow'), t.due ? v58W('cardsRowDue', vars) : v58W('cardsRowLine', vars), 'v58-door-cards');
+  }
+  if (qs.length) {
+    var u = v58QTally(qs);
+    var qv = { d: u.due, qs: v58CountQs(u.n), r: u.right };
+    rows += v58StudyRow('data-v58="quiz" data-group=""', v58W('quizRow'), u.due ? v58W('quizRowDue', qv) : v58W('quizRowLine', qv), 'v58-door-quiz');
+  }
+  return '<section class="v32-sec v58-study" aria-labelledby="v58-study-h"><h2 class="v32-h2" id="v58-study-h" tabindex="-1">' + v58Esc(v58W('studyH')) + '</h2>'
+    + '<p class="v32-line">' + v58Esc(v58W('studyLine')) + '</p><ul class="v25rows v32rows v58-studyrows">' + rows + '</ul></section>';
+}
+/* 8.2 a group: Study the five, its ten cards and its quiz. */
+function v58GroupCardsLine(cards) {
+  var t = v58CardTally(cards);
+  var vars = { cards: v58CountCards(t.n), d: t.due, m: t.learnt };
+  return !t.graded ? v58W('groupCardsNone', vars) : (t.due ? v58W('groupCardsDue', vars) : v58W('groupCardsLearnt', vars));
+}
+function v58StudyGroupHtml(g) {
+  if (!g) return '';
+  var cards = v58CardsOfGroup(g.key), qs = v58QsOfGroup(g.key);
+  if (!cards.length && !qs.length) return '';
+  var rows = '';
+  if (cards.length) rows += v58StudyRow('data-v58="cards" data-deck="' + v58Esc('flagcards:' + g.key) + '"', v58W('groupCardsRow'), v58GroupCardsLine(cards), 'v58-gdoor-cards');
+  if (qs.length) {
+    var u = v58QTally(qs);
+    rows += v58StudyRow('data-v58="quiz" data-group="' + v58Esc(g.key) + '"', v58W('groupQuizRow'), v58W('groupQuizLine', { qs: v58CountQs(u.n), r: u.right }), 'v58-gdoor-quiz');
+  }
+  return '<section class="v32-sec v58-study" aria-labelledby="v58-gstudy-h"><h2 class="v32-h2" id="v58-gstudy-h" tabindex="-1">' + v58Esc(v58W('groupStudyH')) + '</h2>'
+    + '<ul class="v25rows v32rows v58-studyrows">' + rows + '</ul></section>';
+}
+/* 8.3 a house: its two cards with when each is due, then the doors to its group's cards and its group's quiz. */
+function v58PageStudyBody(r) {
+  var cards = v58CardsOfHouse(r && r.id);
+  var g = v58Group(r && r.group);
+  if (!cards.length || !g) return '';
+  var rec = v58Kept().c, day = v58Today();
+  var t = v58CardTally(cards);
+  var vars = { name: v58Str(r.producer), d: t.due, m: t.learnt };
+  var line = !t.graded ? v58W('pageCardsNone', vars) : (t.due ? v58W('pageCardsDue', vars) : v58W('pageCardsLearnt', vars));
+  var doors = v58Door('data-v58="cards" data-deck="' + v58Esc('flagcards:' + g.key) + '"', v58W('pageCardsDoor'), 'v58-pdoor-cards');
+  if (v58QsOfGroup(g.key).length) doors += v58Door('data-v58="quiz" data-group="' + v58Esc(g.key) + '"', v58W('pageQuizDoor'), 'v58-pdoor-quiz');
+  return v58P('v58-cardsline', line) + '<ul class="v58-cardlist">' + cards.map(function (c) {
+    return '<li><span class="v58-cardq">' + v58Esc(c.front) + '</span><span class="v58-cardstate">' + v58Esc(v58CardState(rec[c.id], day)) + '</span></li>';
+  }).join('') + '</ul><div class="v58-doors">' + doors + '</div>';
+}
+V58_SECS.study = {
+  before: 'v58-s-codex',
+  make: function (r) { return ['v58-s-study', v58W('pageStudyChip'), v58PageStudyBody(r), 'v58-studysec', v58W('pageStudyH')]; }
+};
 
 /* =========== the cold address =========== */
 
