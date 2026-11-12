@@ -348,6 +348,14 @@ function capProblems(r) {
   return out;
 }
 
+/* this gate's own reading of one house: every word of one name (the estate words and particles left out, as schema.cjs
+   reads a name) stands in the other, so Biondi Santi (Tenuta Greppo) is Biondi-Santi and R. Lopez de Heredia is Lopez de
+   Heredia, while Mouton Rothschild is never Lafite Rothschild */
+function sameHouse(a, b) {
+  const t = (s) => ' ' + fold(s) + ' ';
+  const has = (text, name) => { const ws = S.nameWords(name); return ws.length > 0 && ws.every((w) => t(text).indexOf(' ' + w + ' ') >= 0); };
+  return has(a, b) || has(b, String(a).replace(/\([^)]*\)/g, ' '));
+}
 /* the build of the fragments the data was made from: the whole roster, or with --partial the groups the data holds */
 function buildNow(groups) {
   let dir = path.join(S.DIR, 'fragments'), tmp = '';
@@ -622,7 +630,7 @@ async function main() {
         const w = byId[x.id];
         if (!w) { listBad.push(r.key + ': ' + x.id + ' is no wine of the house'); return; }
         if (x.producer !== w.producer || x.wine !== w.wine) listBad.push(r.key + ': ' + x.id + ' drawn as ' + x.producer + ' / ' + x.wine);
-        if (!S.names(w.producer, r.producer)) listBad.push(r.key + ': ' + w.producer + ' is not ' + r.producer);
+        if (!sameHouse(w.producer, r.producer)) listBad.push(r.key + ': ' + w.producer + ' is not ' + r.producer);
         const k = fold(w.producer) + '|' + fold(w.wine);
         if (seen[k]) listBad.push(r.key + ': ' + w.producer + ' ' + w.wine + ' twice'); seen[k] = 1;
       });
@@ -640,7 +648,7 @@ async function main() {
         if (/[$£€]/.test(txt) || list.some((x) => { const w = byId[x.id]; return (w.price && String(w.price).length > 2 && txt.indexOf(String(w.price)) >= 0); })) listBad.push(r.key + ': a price on the list');
       }
     });
-    check('every row of On ' + houseName + ' list a wine of the house by the record\'s own producer, once, the producer over the wine, no price; ' + housesN + ' of ' + REC.length + ' houses pour ' + rowsN + ' wines', listBad.length === 0 && housesN > 0, few(listBad, 5));
+    check('every row of On ' + houseName + ' list a wine of the house by the record\'s own producer (every word of one name in the other), once, the producer over the wine, no price; ' + housesN + ' of ' + REC.length + ' houses pour ' + rowsN + ' wines', listBad.length === 0 && housesN > 0, few(listBad, 5));
     if (firstHit) {
       const opened = D.J('(function () { v32Go({ view: "flagships", arg: "" }, "push"); v32Go({ view: "flagship", arg: ' + JSON.stringify(firstHit.r.id) + ' }, "push"); var n = history.length; var ok = V58_ACTS.wine({ getAttribute: function (k) { return k === "data-id" ? ' + JSON.stringify(firstHit.id) + ' : null; } }); var a = { ok: ok, view: S.view, open: v28State().open, pushed: history.length - n }; v32Back(); a.back = { view: S.view, arg: v32Arg("flagship") }; a.none = V58_ACTS.wine({ getAttribute: function () { return "w-00000000"; } }); return a; })()');
       check('a row opens that wine\'s card on the list (pushed) and Back returns to the house (' + firstHit.r.producer + '); a wine the house does not hold opens nothing', opened.ok === true && opened.view === 'cellar' && opened.open === firstHit.id && opened.pushed === 1 && opened.back.view === 'flagship' && opened.back.arg === firstHit.r.id && opened.none === false, JSON.stringify(opened));
