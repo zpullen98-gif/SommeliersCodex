@@ -1,0 +1,1472 @@
+{
+ "group": "pfalz",
+ "chunk": "f10",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "burklin-wolf": 5,
+   "bassermann-jordan": 5,
+   "von-buhl": 6,
+   "muller-catoir": 4,
+   "becker": 7
+  },
+  "note": "Twenty seven searches of a share of twenty eight, none of them the author's; one left unspent. Six were restricted to a house's or a body's own domain (vdp.de three times, mueller-catoir.de with vdp.de, von-buhl.de, friedrichbecker.de with weingut-friedrich-becker.de) and are read as primary through their summaries; fifteen kept the house's own domain out so that the second source would be independent. Two searches on the making of the Pechstein found nothing on it. One fetch was tried, a HEAD request to friedrichbecker.de, refused by the proxy and not retried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the open web with the house's domain kept out, for the second source of each date and person, then to the VDP and the houses' own domains for sites and methods.",
+  "Where a search contradicted the record it was set right with its source; where a detail was found in no source of this check and rested on one secondary source, it was cut or said with less.",
+  "The fragment's sources were changed only where an address did not match the domain the house's pages came from (von Buhl) or a page read here carried more of the record (Becker); the sources of this check are listed per change and per record under extraSources.",
+  "Sources whose title or address names a living writer, or a writer's own site, were met among the results and are cited neither in the fragment nor here."
+ ],
+ "records": [
+  {
+   "key": "burklin-wolf",
+   "searches": 5,
+   "tested": [
+    "1597: the library's year, told as the house's roots; not retested, and the Bürklin of that age stays described as the estate alone gives him.",
+    "Albert Bürklin (1844 to 1924) and the marriage of 1875 with the Wolf family: German Wikipedia, Wein.plus and the Karlsruhe city archive agree on 1875 and the dates; he entered the Reichstag in 1884 (German Wikipedia, the Karlsruhe cemetery record), so he was not yet a member at his marriage. Fixed in the story and the question.",
+    "The great nephew of 1924, Albert Bürklin (1907 to 1979): German Wikipedia gives 24 August 1907 to 2 October 1979 and the inheritance of 1924 from his childless great uncle, his father being the elder Albert's nephew; an importer and a trade profile agree. Confirmed. The eldest daughter took over in 1990 in every account, one of them from her mother, so inherited became took over.",
+    "The 1828 survey and the Kirchenstück's mark: German Wikipedia and Wein.plus give 1828 and a value of 65, no site higher; the Forster Winzerverein says 1830. 1828 stands, hedged as the estate's record.",
+    "The site: Falstaff, Riesling.de, the Forster Winzerverein and Grosse-Lage.de give about 3.7 hectares directly behind the church, walls and sandstone houses that store warmth, basalt, sandstone, limestone rubble, sandy loam and clay over a limestone bank about two metres down, a gentle slope falling towards the village. The knee high wall and the east and south east aspect were in none; fixed.",
+    "The making: Hawesko gives spontaneous fermentation and raising only in large casks for the P.C. and G.C. Rieslings, and merchants' sheets give the Doppelstück for single sites; the estate's terroir page per the author. Confirmed.",
+    "Biodynamics: Hawesko has every vineyard converted in 2005, another account conversion from 2001 complete in 2005 with Biodyvin certification in 2008. began in 2005 became by 2005.",
+    "The estate's ladder: Grapeguru and Hawesko give Gutswein, Ortswein, P.C. and G.C. on the 1828 map; start year 1990 or 1994, kept as the 1990s. Merchants list the G.C. wines also as Grosses Gewächs, which is why the question's distractor changed.",
+    "Others: Gerümpel sold as P.C. confirmed by a merchant's sheet; Pechstein G.C. and the Gaisböhl monopole not retested.",
+    "The questions: one key each; the wine question's second option could be defended (the estate's G.C. wines are its Grosses Gewächs), so it is now a Grand Cru rank set by German wine law, plainly wrong. The story question's key now says later sat in the Reichstag.",
+    "The rules: the eldest daughter, living and in people.json, stays described; no price, no score, nothing volatile; British; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The Kirchenstück, a small vineyard beside the church of Forst ringed by a knee high sandstone wall: a gentle east and south east slope on basalt, sandstone, limestone rubble and clay over a limestone plate.",
+     "now": "The Kirchenstück, a small vineyard directly behind the church of Forst, enclosed by walls and the sandstone houses of the village, which hold the day's warmth: a gentle slope falling towards the village, on basalt, sandstone, limestone rubble and clay over a bank of limestone.",
+     "why": "The knee high wall and the east and south east slope were in no source of this check; the walls and houses that hold warmth, the slope towards the village and the limestone bank are in three.",
+     "sources": [
+      {
+       "title": "Falstaff: Forster Kirchenstück, ein Stück vom Glück",
+       "url": "https://www.falstaff.com/at/news/forster-kirchenstueck-ein-stueck-vom-glueck",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Forster Winzerverein: Weinlagen",
+       "url": "https://forster-winzer.de/unserer-weinlagen/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Riesling.de: Forster Kirchenstück",
+       "url": "https://www.riesling.de/de/lage/forster-kirchenstuck/53_260.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grosse-Lage.de: vineyard Forster Kirchenstück",
+       "url": "https://www.grosse-lage.de/en/palatinate/forster-kirchenstueck",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "From vines the estate began to farm biodynamically in 2005. Like every G.C. wine of the house, it ferments with wild yeasts and is raised only in large oak casks before it is bottled dry.",
+     "now": "From vines farmed biodynamically across the whole estate since 2005. Like every G.C. wine of the house, it ferments with wild yeasts and is raised only in large oak casks before it is bottled dry.",
+     "why": "Accounts differ on when conversion began (2001 or 2005) but agree the whole estate was biodynamic by 2005.",
+     "sources": [
+      {
+       "title": "Hawesko: Weingut Dr. Bürklin-Wolf",
+       "url": "https://www.hawesko.de/erzeuger/weingut-dr-buerklin-wolf/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Dr. Bürklin-Wolf",
+       "url": "https://www.grapeguru.de/wissen/weingueter/buerklin-wolf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The house traces its roots in Wachenheim to 1597, and its history names a Bürklin of that age, a town clerk who became mayor of Wachenheim. The modern estate began with a marriage. In 1875 Albert Bürklin (1844 to 1924), a lawyer and member of the Reichstag, married a daughter of the Wolf family of Wachenheim, and her family's vineyards in Wachenheim, Forst, Deidesheim and Ruppertsberg came together under both names. He moved to Wachenheim and built the estate up. In 1924 it passed to a great nephew of the same name, Albert Bürklin (1907 to 1979), who by the estate's account led the rebuilding of Pfalz wine after the Second World War and added vineyards and cellars; his eldest daughter inherited in 1990. Long before, in 1828, a royal Bavarian survey had ranked the vineyards of the Pfalz for land tax, and the estate records that the Kirchenstück alone received the highest mark. In the 1990s the house made that survey the base of its own ladder, in the manner of Burgundy, printing G.C. and P.C. on its labels, and in 2005 it began to farm biodynamically. For a sommelier the Kirchenstück is the summit of that ladder: a small walled vineyard read as a Grand Cru, though German law knows no such word.",
+     "now": "The house traces its roots in Wachenheim to 1597, and its history names a Bürklin of that age, a town clerk who became mayor of Wachenheim. The modern estate began with a marriage. In 1875 Albert Bürklin (1844 to 1924), a lawyer who later sat in the Reichstag, married a daughter of the Wolf family of Wachenheim, and her family's vineyards in Wachenheim, Forst, Deidesheim and Ruppertsberg came together under both names. He moved to Wachenheim and built the estate up. In 1924 it passed to a great nephew of the same name, Albert Bürklin (1907 to 1979), who by the estate's account led the rebuilding of Pfalz wine after the Second World War and added vineyards and cellars; his eldest daughter took over in 1990. Long before, in 1828, a royal Bavarian survey had ranked the vineyards of the Pfalz for land tax, and the estate records that the Kirchenstück alone received the highest mark. In the 1990s the house made that survey the base of its own ladder, in the manner of Burgundy, printing G.C. and P.C. on its labels, and by 2005 the whole estate was farmed biodynamically. For a sommelier the Kirchenstück is the summit of that ladder: a small walled vineyard read as a Grand Cru, though German law knows no such word.",
+     "why": "He entered the Reichstag in 1884, after the marriage; the daughter took over in 1990, her father having died in 1979; biodynamics by 2005 as above.",
+     "sources": [
+      {
+       "title": "Wikipedia (German): Albert Bürklin, the politician",
+       "url": "https://de.wikipedia.org/wiki/Albert_B%C3%BCrklin_(Politiker)",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Friedhöfe Karlsruhe: Albert Bürklin",
+       "url": "https://www.friedhof-karlsruhe.de/friedhoefe/persoenlichkeiten/albert-buerklin/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Stadtlexikon Karlsruhe: Albert Julius Anton Bürklin",
+       "url": "https://stadtlexikon.karlsruhe.de/index.php/De:Lexikon:bio-0642",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Albert Bürklin, the association official",
+       "url": "https://de.wikipedia.org/wiki/Albert_B%C3%BCrklin_(Verbandsfunktion%C3%A4r)",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Weingut Dr. Bürklin-Wolf",
+       "url": "https://de.wikipedia.org/wiki/Weingut_Dr._B%C3%BCrklin-Wolf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Hawesko: Weingut Dr. Bürklin-Wolf",
+       "url": "https://www.hawesko.de/erzeuger/weingut-dr-buerklin-wolf/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2]",
+     "was": "The Kirchenstück of Forst in the Pfalz is not the Kirchenstück of Hohen-Sülzen in Rheinhessen, a separate site on limestone and loess.",
+     "now": "The Kirchenstück of Forst in the Pfalz is not the Kirchenstück of Hohen-Sülzen in Rheinhessen, a separate site.",
+     "why": "The soil of the Hohen-Sülzen site was not tested; the distinction holds without it.",
+     "sources": []
+    },
+    {
+     "field": "cards[1]",
+     "was": "{\"front\":\"What rings the Kirchenstück of Forst, and what stands beside it?\",\"back\":\"A knee high sandstone wall, with the village church beside it; Bürklin-Wolf bottles it as a G.C.\"}",
+     "now": "{\"front\":\"What encloses the Kirchenstück of Forst, and what stands beside it?\",\"back\":\"Walls and the sandstone houses of the village, which hold the day's warmth, with the church directly beside it; Bürklin-Wolf bottles it as a G.C.\"}",
+     "why": "Follows the sites: the knee high wall was in no source.",
+     "sources": [
+      {
+       "title": "Falstaff: Forster Kirchenstück, ein Stück vom Glück",
+       "url": "https://www.falstaff.com/at/news/forster-kirchenstueck-ein-stueck-vom-glueck",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Forster Winzerverein: Weinlagen",
+       "url": "https://forster-winzer.de/unserer-weinlagen/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].opts[1]",
+     "was": "A Grosses Gewächs under the rules of German wine law",
+     "now": "A Grand Cru rank set by German wine law",
+     "why": "The estate's G.C. wines are also sold as Grosses Gewächs, so the old option was arguable; a legal Grand Cru rank is plainly wrong.",
+     "sources": [
+      {
+       "title": "Vinlorenc: Bürklin-Wolf Reiterpfad GC Grosses Gewächs",
+       "url": "https://www.vinlorenc.de/Dr.-Buerklin-Wolf-Riesling-Reiterpfad-GC-Grosses-Gewaechs-2025/VD16462/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Dr. Bürklin-Wolf",
+       "url": "https://www.grapeguru.de/wissen/weingueter/buerklin-wolf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "G.C. is the estate's own mark, a ladder built on the royal Bavarian survey of 1828 in the manner of Burgundy; Grosses Gewächs is the VDP's term, and neither is a rank in German wine law.",
+     "now": "G.C. is the estate's own mark, a ladder built on the royal Bavarian survey of 1828 in the manner of Burgundy; German wine law sets no Grand Cru rank, and G.C. says nothing of ripeness or of barrels.",
+     "why": "Follows the new option, and oak no longer stands alone.",
+     "sources": []
+    },
+    {
+     "field": "questions[1].opts[0]",
+     "was": "Albert Bürklin, a lawyer and member of the Reichstag",
+     "now": "Albert Bürklin, a lawyer who later sat in the Reichstag",
+     "why": "He entered the Reichstag in 1884, nine years after the marriage.",
+     "sources": [
+      {
+       "title": "Wikipedia (German): Albert Bürklin, the politician",
+       "url": "https://de.wikipedia.org/wiki/Albert_B%C3%BCrklin_(Politiker)",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Friedhöfe Karlsruhe: Albert Bürklin",
+       "url": "https://www.friedhof-karlsruhe.de/friedhoefe/persoenlichkeiten/albert-buerklin/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The knee high height of the wall.",
+    "The east and south east aspect.",
+    "The soil of the Hohen-Sülzen Kirchenstück, limestone and loess."
+   ],
+   "open": [
+    "The Forster Winzerverein dates the survey that gave the Kirchenstück its value of 65 to 1830; the estate, the library, German Wikipedia and Wein.plus give 1828, which stands.",
+    "That the Kirchenstück alone had the highest value is the estate's account, with German Wikipedia giving no site a higher one; whether another site tied it is not settled.",
+    "The year the estate began its own ladder is 1990 on its terroir page and 1994 in two accounts, so the story keeps the 1990s."
+   ],
+   "extraSources": [
+    {
+     "title": "Wikipedia (German): Weingut Dr. Bürklin-Wolf",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Dr._B%C3%BCrklin-Wolf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Albert Bürklin, the politician",
+     "url": "https://de.wikipedia.org/wiki/Albert_B%C3%BCrklin_(Politiker)",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Friedhöfe Karlsruhe: Albert Bürklin",
+     "url": "https://www.friedhof-karlsruhe.de/friedhoefe/persoenlichkeiten/albert-buerklin/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Stadtlexikon Karlsruhe: Albert Julius Anton Bürklin",
+     "url": "https://stadtlexikon.karlsruhe.de/index.php/De:Lexikon:bio-0642",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Albert Bürklin, the association official",
+     "url": "https://de.wikipedia.org/wiki/Albert_B%C3%BCrklin_(Verbandsfunktion%C3%A4r)",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus Glossary: Bürklin, Albert",
+     "url": "https://glossary.wein.plus/buerklin-albert",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Falstaff: Forster Kirchenstück, ein Stück vom Glück",
+     "url": "https://www.falstaff.com/at/news/forster-kirchenstueck-ein-stueck-vom-glueck",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Forster Winzerverein: Weinlagen",
+     "url": "https://forster-winzer.de/unserer-weinlagen/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Riesling.de: Forster Kirchenstück",
+     "url": "https://www.riesling.de/de/lage/forster-kirchenstuck/53_260.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grosse-Lage.de: vineyard Forster Kirchenstück",
+     "url": "https://www.grosse-lage.de/en/palatinate/forster-kirchenstueck",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Hawesko: Weingut Dr. Bürklin-Wolf",
+     "url": "https://www.hawesko.de/erzeuger/weingut-dr-buerklin-wolf/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weingut Dr. Bürklin-Wolf",
+     "url": "https://www.grapeguru.de/wissen/weingueter/buerklin-wolf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Forster Kirchenstück",
+     "url": "https://de.wikipedia.org/wiki/Forster_Kirchenst%C3%BCck",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus Glossary: Forster Kirchenstück",
+     "url": "https://glossary.wein.plus/forster-kirchenstueck-2",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinlorenc: Bürklin-Wolf Reiterpfad GC Grosses Gewächs",
+     "url": "https://www.vinlorenc.de/Dr.-Buerklin-Wolf-Riesling-Reiterpfad-GC-Grosses-Gewaechs-2025/VD16462/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Weine und Feinkost: Bürklin-Wolf Wachenheimer Gerümpel PC",
+     "url": "https://www.weine-feinkost.de/Dr.-Buerklin-Wolf-Riesling-Wachenheimer-Geruempel-PC-2020-BIO",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "bassermann-jordan",
+   "searches": 5,
+   "tested": [
+    "Andreas Jordan (1775 to 1848): German Wikipedia gives 25 August 1775 and 21 November 1848 at Deidesheim, and two accounts that he took over at twenty after his parents' deaths (in 1795); one hotel page says he died in 1846, against all the rest. Confirmed.",
+    "1802 and the vineyard name: German Wikipedia says he was the first in the Pfalz to name a vineyard, Deidesheimer Geheu, beside the vintage, in 1802; the record's hedged credit stands.",
+    "The division of 1848 among three children, from whose shares came the Jordan, Buhl and Deinhard estates, Deinhard now von Winning: German Wikipedia, the Kaisergarten account and Meininger. Confirmed; the son kept the Deidesheim estate and the two daughters' shares became Buhl and Deinhard.",
+    "The two brothers: the GGW's biographies of both and German Wikipedia give Ludwig (1869 to 1914) and Friedrich (1872 to 1959) taking over together in 1899, Ludwig killed in 1914, and both among the founders in 1910 of the Verband Deutscher Naturweinversteigerer, from which the VDP grew. Ludwig is now named with his dates and the year 1910 added.",
+    "The book of 1907: the bibliographies read give a first edition in 1907 and a second in 1923, the latter in three volumes; the volume count of 1907 was not settled, so three volumes is cut. His lead of the Bavarian growers' association was in no source and is cut.",
+    "The cellar back to 1811: KuLaDig, the estate and a trade report of an 1811 Forster Ungeheuer sold at auction agree. Confirmed (the sale itself is left out, being a price).",
+    "The sale of 2002: German Wikipedia and Meininger give Achim Niederberger's purchase of all three Jordan estates between 2002 and 2007, von Buhl in 2005 and Deinhard in 2007, which leaves 2002 for this estate. Kept.",
+    "The Jesuitengarten: German Wikipedia gives the Jesuit college of Neustadt holding land there from 1764 and the name first recorded in 1798; the Forst village site and an estate agree on the former Jesuit owner; the soils (sandy loam, sandstone rubble, marly clay, basalt in places) agree. Confirmed.",
+    "The making: the estate's sheets per the author (part in Stückfass with the vineyard's yeasts, part in steel, on the lees); not retested.",
+    "The questions: one key each, plausible distractors; the wine explanation no longer asserts what named the Winkel site, which was not tested.",
+    "The rules: the buyer of 2002, who died in 2013, stays described; no price; British; no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "By the estate's account its story begins in 1718, when a Jordan forebear founded it. Its maker was Andreas Jordan (1775 to 1848), who took it over at twenty after his parents' deaths and built a house of quality from shrinking assets. He is credited with selling, from 1802, Pfalz wine named for its village and its vineyard. He died in 1848 without a will, and his estate was divided equally among his three children; from the shares came three houses, Jordan, Buhl and Deinhard, the last of them the estate that became von Winning. Under the Bassermann-Jordan name two brothers ran the house together, the younger Friedrich von Bassermann-Jordan (1872 to 1959), who published a history of viticulture in three volumes in 1907 and led the Bavarian wine growers' association. The vaulted cellar beneath the estate keeps old vintages back to 1811. In 2002 the estate was sold to a Neustadt entrepreneur. For a sommelier the Jesuitengarten carries the Jordan inheritance in one glass: a Forst site, a house of 1718, and the habit of naming a wine for its vineyard.",
+     "now": "By the estate's account its story begins in 1718, when a Jordan forebear founded it. Its maker was Andreas Jordan (1775 to 1848), who took it over at twenty after his parents' deaths and built a house of quality from shrinking assets. He is credited with selling, from 1802, Pfalz wine named for its village and its vineyard. He died in 1848 without a will, and his estate was divided equally among his three children; from the shares came three houses, Jordan, Buhl and Deinhard, the last of them the estate that became von Winning. From 1899 two brothers ran the house together under the Bassermann-Jordan name, Ludwig Bassermann-Jordan (1869 to 1914) and Friedrich von Bassermann-Jordan (1872 to 1959). Friedrich published his history of viticulture, the work that made his name, in 1907, and in 1910 the brothers were among the founders of the association of natural wine auctioneers from which the VDP grew. The vaulted cellar beneath the estate keeps old vintages back to 1811. In 2002 the estate was sold to a Neustadt entrepreneur. For a sommelier the Jesuitengarten carries the Jordan inheritance in one glass: a Forst site, a house of 1718, and the habit of naming a wine for its vineyard.",
+     "why": "Three volumes belong to the edition of 1923 in the bibliographies read; the growers' association was in no source; the brothers, their dates, 1899 and 1910 are in the GGW's two biographies and German Wikipedia.",
+     "sources": [
+      {
+       "title": "Gesellschaft für Geschichte des Weines: Friedrich von Bassermann-Jordan",
+       "url": "https://www.geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/109-bassermann-jordan-friedrich-von-1872-1959.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gesellschaft für Geschichte des Weines: Ludwig Bassermann-Jordan",
+       "url": "https://geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/110-bassermann-jordan-ludwig-1869-1914.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Ludwig Bassermann-Jordan",
+       "url": "https://de.wikipedia.org/wiki/Ludwig_Bassermann-Jordan",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Friedrich von Bassermann-Jordan",
+       "url": "https://de.wikipedia.org/wiki/Friedrich_von_Bassermann-Jordan",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vitipendium: Geschichte des Weinbaus",
+       "url": "https://www.vitipendium.de/Geschichte_des_Weinbaus",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "HathiTrust: Geschichte des Weinbaus, catalogue record",
+       "url": "https://catalog.hathitrust.org/Record/103102836",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[1]",
+     "was": "The Jesuitengarten of Forst in the Pfalz is not the Jesuitengarten of Winkel in the Rheingau, an alluvial site named for the Jesuit college of Mainz.",
+     "now": "The Jesuitengarten of Forst in the Pfalz is not the Jesuitengarten of Winkel in the Rheingau, a different site in another region.",
+     "why": "Alluvial soil and the Mainz college were not tested; the trap holds without them.",
+     "sources": []
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The name recalls the former Jesuit house of Neustadt that owned the land; the Jesuit college of Mainz gave its name to the Rheingau's Jesuitengarten at Winkel, a different site.",
+     "now": "The name recalls the Jesuit college of Neustadt, which held land there from 1764; no source ties the site to Jesuits planting Riesling, walling it or serving its wine at Mainz.",
+     "why": "The Neustadt college's holding from 1764 is in German Wikipedia and the Forst village site; the Mainz claim was not tested.",
+     "sources": [
+      {
+       "title": "Wikipedia (German): Forster Jesuitengarten",
+       "url": "https://de.wikipedia.org/wiki/Forster_Jesuitengarten",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Forst an der Weinstrasse: Jesuitengarten",
+       "url": "https://www.forst-pfalz.de/weinlagen/jesuitengarten.php",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "In three volumes, of the book of 1907.",
+    "Friedrich's lead of the Bavarian wine growers' association.",
+    "The Winkel Jesuitengarten as alluvial and named for the Jesuit college of Mainz."
+   ],
+   "open": [
+    "The founder of 1718 stays described: the estate names Pierre Jordan, a monument record names a Johann Peter Jordan whose dates cannot fit, and no two sources gave dates.",
+    "The sale of 2002 rests on the order of Achim Niederberger's purchases, all three Jordan estates between 2002 and 2007 with von Buhl in 2005 and Deinhard in 2007; no source of this check names the year beside this estate alone."
+   ],
+   "extraSources": [
+    {
+     "title": "Wikipedia (German): Andreas Jordan",
+     "url": "https://de.wikipedia.org/wiki/Andreas_Jordan",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut Geheimer Rat Dr. von Bassermann-Jordan",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Geheimer_Rat_Dr._von_Bassermann-Jordan",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wines of Germany: Highlights of wine culture, Deidesheim",
+     "url": "https://www.winesofgermany.com/our-regions/highlight-of-wine-culture/372/wine-city-of-deidesheim",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Meininger: Weingut Dr. Deinhard, historische Wiedervereinigung",
+     "url": "https://www.meininger.de/weinwirtschaft/news/weingut-dr-deinhard-historische-wiedervereinigung",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gesellschaft für Geschichte des Weines: Friedrich von Bassermann-Jordan",
+     "url": "https://www.geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/109-bassermann-jordan-friedrich-von-1872-1959.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gesellschaft für Geschichte des Weines: Ludwig Bassermann-Jordan",
+     "url": "https://geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/110-bassermann-jordan-ludwig-1869-1914.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Ludwig Bassermann-Jordan",
+     "url": "https://de.wikipedia.org/wiki/Ludwig_Bassermann-Jordan",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Friedrich von Bassermann-Jordan",
+     "url": "https://de.wikipedia.org/wiki/Friedrich_von_Bassermann-Jordan",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vitipendium: Geschichte des Weinbaus",
+     "url": "https://www.vitipendium.de/Geschichte_des_Weinbaus",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "HathiTrust: Geschichte des Weinbaus, catalogue record",
+     "url": "https://catalog.hathitrust.org/Record/103102836",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Forster Jesuitengarten",
+     "url": "https://de.wikipedia.org/wiki/Forster_Jesuitengarten",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Forst an der Weinstrasse: Jesuitengarten",
+     "url": "https://www.forst-pfalz.de/weinlagen/jesuitengarten.php",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "KuLaDig: Winzergut Geheimer Rat Dr. von Bassermann-Jordan",
+     "url": "https://www.kuladig.de/Objektansicht/KLD-299100",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Hawesko: Geheimrat Dr. von Bassermann-Jordan",
+     "url": "https://www.hawesko.de/erzeuger/geheimrat-dr-von-bassermann-jordan/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "von-buhl",
+   "searches": 6,
+   "tested": [
+    "Franz Peter Buhl (1809 to 1862) and 1849: German Wikipedia gives 21 September 1809 to 11 August 1862, his marriage to Jordan's daughter Josephine in 1836 and the founding of Weingut F. P. Buhl in 1849 from his mother's and his wife's Jordan inheritances; Wein.plus and the estate give 1849. Confirmed; the share is now his wife's.",
+    "Franz Armand Buhl (1837 to 1896): German Wikipedia and the GGW give 2 August 1837 to 5 March 1896, the Reichstag from 1871 to 1893 and its vice presidency from 1887 to 1890. Confirmed.",
+    "The wine law: the GGW says he took part in drafting the first German wine law of 1892, pressing above all for a ban on adulteration; another account has him lay down his wine society posts in 1891 so as not to seem partial when it passed. owed much to his initiative became helped to shape.",
+    "The lease of 1989 to the end of 2013 and the sale of 2005 during it: Unger Weine, Vineyards.com and other accounts agree; one names the lessee, a businessman. Confirmed; nobody named.",
+    "The Pechstein: the VDP gives the black basalt rubble, the Pechsteinkopf volcano above, and basalt from an old quarry a few hundred metres away. The nineteenth century was not on the page as read here and is cut.",
+    "The making: two searches found no estate or outside account of native yeasts, the Doppelstück or the lees for this wine; one result gave tonneaux and native yeasts for von Winning's Pechstein, a different estate. The author's two importers' sheets still give the Doppelstück and a small part in steel; native yeasts and fine lees, on one sheet, are cut.",
+    "The old line about Buhl and Forst Riesling: not found on the estate's own domain; cut. The estate's domain does give its wine at the toast for the opening of the Suez Canal in 1869 and its Suez Vintage Sekt of 2015 marking it, told as the estate's account.",
+    "Others: the Riesling Brut is a traditional method Sekt b.A. on the estate's shop; the Kirchenstück GG is on the estate's shop; the Freundstück GG was in no source and is cut.",
+    "The questions: one key each; explanations follow the changes.",
+    "The rules: the lessee, the buyer of 2005 (died 2013) and his heir are not named; no price; British; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The Pechstein at Forst, named for its black basalt: rubble from the Pechsteinkopf, an old volcano above the slope, mixed with weathered red sandstone and clay, and basalt from a nearby quarry spread in the nineteenth century.",
+     "now": "The Pechstein at Forst, named for its black basalt: rubble from the Pechsteinkopf, an old volcano above the slope, mixed with weathered red sandstone and clay, and basalt brought from an old quarry nearby.",
+     "why": "The VDP gives an old quarry nearby, not a century.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Pechstein",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6030-pechstein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented with native yeasts, mostly in the Doppelstück, the 2400 litre oak cask of the region, with a small part in stainless steel, then aged on its fine lees before it is bottled dry.",
+     "now": "Fermented mostly in the Doppelstück, the 2400 litre oak cask of the Rhine lands, with a small part in stainless steel; the wine is then bottled dry, as every Grosses Gewächs must be.",
+     "why": "Native yeasts and lees rest on one importer's sheet; nothing in this check confirmed them.",
+     "sources": []
+    },
+    {
+     "field": "table",
+     "was": "Reichsrat von Buhl's Forster Pechstein Riesling grows on the black basalt of an old volcano above Forst and ferments with its own yeasts in large oak casks. Dry, smoky and taut, darker voiced than its Forst neighbours, it wants grilled fish.",
+     "now": "Reichsrat von Buhl's Forster Pechstein Riesling grows on the black basalt of an old volcano above Forst and ferments mostly in large oak casks. Dry, smoky and taut, darker voiced than its Forst neighbours, it wants grilled fish.",
+     "why": "Follows the making.",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "When Andreas Jordan died in 1848, his Deidesheim estate was divided among his three children, and in 1849 Franz Peter Buhl (1809 to 1862) founded this house with one of the three shares. His son, Franz Armand Buhl (1837 to 1896), inherited it and carried the name into politics: elected to the Reichstag in 1871, he sat there until 1893, and the wine law it passed in the early 1890s owed much to his initiative. The title of Reichsrat, borne by the family, stayed in the estate's name. In 1989 the estate was leased to a Japanese businessman, a lease that ran until 2013; during it, in 2005, the estate was sold to a Neustadt entrepreneur, and when the lease ended a new team took over the cellar. Forst lies at the heart of the house, and its own pages quote the old line that whoever has not been to Buhl does not know Forst Riesling. The Pechstein, its basalt shed by the Pechsteinkopf and spread from a quarry, gives a darker, smokier wine than its neighbours. A sommelier pours it beside a Kirchenstück or a Jesuitengarten to show what basalt adds to Forst.",
+     "now": "When Andreas Jordan died in 1848, his Deidesheim estate was divided among his three children, and in 1849 Franz Peter Buhl (1809 to 1862), who had married Jordan's daughter, founded this house with her share. His son, Franz Armand Buhl (1837 to 1896), inherited it, and by the estate's account its wine was poured for the toast at the opening of the Suez Canal in 1869. He took the name to the Reichstag, where he sat from 1871 to 1893 and helped to shape the first German wine law of 1892, above all its ban on adulterated wine. The title of Reichsrat, borne by the family, stayed in the estate's name. In 1989 the estate was leased to a Japanese businessman, a lease that ran until 2013; during it, in 2005, the estate was sold to a Neustadt entrepreneur, and when the lease ended a new team took over the cellar. The Pechstein, its basalt shed by the Pechsteinkopf and brought from a quarry, gives a darker, smokier wine than its neighbours. A sommelier pours it beside a Kirchenstück or a Jesuitengarten to show what basalt adds to Forst.",
+     "why": "His wife's share and the marriage are in German Wikipedia; the wine law of 1892 in the GGW and German Wikipedia; the saying was not on the estate's domain; the Suez toast of 1869 is the estate's own account; the quarry as the VDP gives it.",
+     "sources": [
+      {
+       "title": "Wikipedia (German): Franz Peter Buhl",
+       "url": "https://de.wikipedia.org/wiki/Franz_Peter_Buhl",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Franz Armand Buhl",
+       "url": "https://de.wikipedia.org/wiki/Franz_Armand_Buhl",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gesellschaft für Geschichte des Weines: Franz Armand Buhl",
+       "url": "https://www.geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/148-buhl-franz-armand-1837-1896.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Reichsrat von Buhl: the estate",
+       "url": "https://von-buhl.de/en/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Reichsrat von Buhl: Suez Vintage Riesling Brut Nature",
+       "url": "https://shop.von-buhl.de/products/2015-reichsrat-von-buhl-suez-vintage-riesling-brut-nature",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Weinberg.online, Pechstein",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6030-pechstein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": "[{\"name\":\"von Buhl Riesling Brut\",\"note\":\"Traditional method Sekt of Riesling, the sparkling wine the house is also known for.\"},{\"name\":\"Forster Kirchenstück Riesling Grosses Gewächs\",\"note\":\"The estate's wine from the Kirchenstück, the walled site by the church of Forst.\"},{\"name\":\"Forster Freundstück Riesling Grosses Gewächs\",\"note\":\"Another Forst Grosse Lage the estate bottles on its own.\"}]",
+     "now": "[{\"name\":\"von Buhl Riesling Brut\",\"note\":\"Traditional method Sekt of Riesling, the sparkling wine the house is also known for.\"},{\"name\":\"Forster Kirchenstück Riesling Grosses Gewächs\",\"note\":\"The estate's wine from the Kirchenstück, the walled site by the church of Forst.\"}]",
+     "why": "The Freundstück GG was in no source of this check.",
+     "sources": []
+    },
+    {
+     "field": "traps[2]",
+     "was": "The Pechstein's basalt is partly native, from the Pechsteinkopf, and partly spread from a quarry in the nineteenth century.",
+     "now": "The Pechstein's basalt is partly native, shed by the Pechsteinkopf, and partly brought from an old quarry nearby.",
+     "why": "Follows the sites.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Pechstein",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6030-pechstein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "{\"front\":\"Which Buhl sat in the Reichstag from 1871 and pressed for a wine law in the early 1890s?\",\"back\":\"Franz Armand Buhl (1837 to 1896), son of the founder of Reichsrat von Buhl.\"}",
+     "now": "{\"front\":\"Which Buhl sat in the Reichstag from 1871 and helped to shape the wine law of 1892?\",\"back\":\"Franz Armand Buhl (1837 to 1896), son of the founder of Reichsrat von Buhl.\"}",
+     "why": "Follows the story: the wine law of 1892.",
+     "sources": [
+      {
+       "title": "Gesellschaft für Geschichte des Weines: Franz Armand Buhl",
+       "url": "https://www.geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/148-buhl-franz-armand-1837-1896.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Franz Armand Buhl",
+       "url": "https://de.wikipedia.org/wiki/Franz_Armand_Buhl",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The Pechstein is named for its basalt, from the Pechsteinkopf volcano and a nineteenth century quarry; the wine ferments in large Doppelstück casks, not charred new barriques.",
+     "now": "The Pechstein is named for its basalt, shed by the Pechsteinkopf volcano and brought from an old quarry nearby; the wine ferments mostly in large Doppelstück casks, not charred new barriques.",
+     "why": "Follows the sites and the making.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Pechstein",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6030-pechstein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "Andreas Jordan's estate was divided among his three children after his death in 1848, and Franz Peter Buhl founded the house with one share; Jesuit land gave the Jesuitengarten its name, not this estate.",
+     "now": "Andreas Jordan's estate was divided among his three children after his death in 1848, and Franz Peter Buhl, his son in law, founded the house with his wife's share; Jesuit land gave the Jesuitengarten its name, not this estate.",
+     "why": "His wife's share, by German Wikipedia.",
+     "sources": [
+      {
+       "title": "Wikipedia (German): Franz Peter Buhl",
+       "url": "https://de.wikipedia.org/wiki/Franz_Peter_Buhl",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[0].url",
+     "was": "https://reichsrat-von-buhl.de/en/",
+     "now": "https://von-buhl.de/en/",
+     "why": "The estate's pages came from von-buhl.de in this check; reichsrat-von-buhl.de appeared in no result.",
+     "sources": [
+      {
+       "title": "Weingut Reichsrat von Buhl: the estate",
+       "url": "https://von-buhl.de/en/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Native yeasts and the fine lees in the making and the table.",
+    "The nineteenth century of the quarry basalt.",
+    "The old line that whoever has not been to Buhl does not know Forst Riesling.",
+    "The Forster Freundstück Grosses Gewächs among the others."
+   ],
+   "open": [
+    "German Wikipedia has Franz Peter Buhl build the estate from his mother's Jordan inheritance as well as his wife's; the record names only his wife's share.",
+    "The Doppelstück and the small part in steel rest on two importers' sheets; no estate sheet for the Pechstein was found.",
+    "The Suez toast of 1869 is the estate's own account and is told as such; the author found it in one outside source."
+   ],
+   "extraSources": [
+    {
+     "title": "Wikipedia (German): Franz Peter Buhl",
+     "url": "https://de.wikipedia.org/wiki/Franz_Peter_Buhl",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Franz Armand Buhl",
+     "url": "https://de.wikipedia.org/wiki/Franz_Armand_Buhl",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gesellschaft für Geschichte des Weines: Franz Armand Buhl",
+     "url": "https://www.geschichte-des-weines.de/persoenlichkeiten-der-weinkultur/persoenlichkeiten-von-a-z/148-buhl-franz-armand-1837-1896.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Unger Weine: Reichsrat von Buhl",
+     "url": "https://www.ungerweine.de/producers/reichsrat-von-buhl",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vineyards.com: Reichsrat von Buhl",
+     "url": "https://vineyards.com/reichsrat-von-buhl",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "VDP: Weinberg.online, Pechstein",
+     "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6030-pechstein",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Reichsrat von Buhl: the estate",
+     "url": "https://von-buhl.de/en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Reichsrat von Buhl: Suez Vintage Riesling Brut Nature",
+     "url": "https://shop.von-buhl.de/products/2015-reichsrat-von-buhl-suez-vintage-riesling-brut-nature",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "muller-catoir",
+   "searches": 4,
+   "tested": [
+    "1744 and the Huguenot Catoirs: Wein.plus and another account give 1744 and a Huguenot family; Skurnik and one other give 1774 with a different founder; the library's 1744 stands.",
+    "The French vineyards before they came: one account has the family tanners who first held Haardt as a country seat and investment, so the estate's belief that they had worked vines in France is cut rather than set against it.",
+    "The manor enlarged in the neoclassical style around 1900: in no source of this check; cut.",
+    "The heir of 1968: no outside account names the year; one has the push for quality begin in the early 1960s under the same heir. Kept as the estate's account.",
+    "The cellar master: Grapeguru and the Wein.plus wine guide give 1961 or 1962 to 2001 or 2002; the record now says from the early 1960s until the early 2000s.",
+    "Rieslaner: Wikipedia and Wein.plus give the crossing of Silvaner and Riesling at Veitshöchheim near Würzburg in 1921, parentage confirmed by DNA, approval for Franconia and the Pfalz in 1968, high acidity, ready noble rot, grown mostly in Franconia and the Pfalz. Confirmed; 1968 added.",
+    "The Herzog: the estate's own vineyard page gives Haardt sandstone and VDP.Erste Lage; its Auslese sheet gives cool fermentation in stainless steel and a moderate alcohol; its Trockenbeerenauslese Herzog is on its list. One account calls the Herzog a Grosse Lage; the estate's word stands.",
+    "The Bürgergarten: the estate's own news page says it presses a Grosses Gewächs only from the Breumel parcel, now named Bürgergarten Im Breumel, and puts the rest into the Erste Lage; one account names Bürgergarten and Mussbacher Eselshaut for the estate's Rieslaner Auslese, Beerenauslese and Trockenbeerenauslese, and a seller credits the long serving cellar master with planting Rieslaner in the Herzog. So older Rieslaners did name the Bürgergarten, and the record no longer says otherwise.",
+    "The questions: one key each; the parentage and the Huguenot family are confirmed.",
+    "The rules: the heir (died 2023), the cellar master (status not settled), the present owner and cellar master (living) are not named; no price, no score though the estate's press page quotes one; British; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The Herzog at Haardt, on the edge of Neustadt, a VDP.Erste Lage on Haardt sandstone, where the estate grows the Rieslaner for its sweet wines.",
+     "now": "The Herzog at Haardt, on the edge of Neustadt, a VDP.Erste Lage on Haardt sandstone, where the estate grows the Rieslaner it bottles as Auslese, Beerenauslese and Trockenbeerenauslese.",
+     "why": "The estate bottles its Herzog Rieslaner as Auslese, Beerenauslese and Trockenbeerenauslese; older Rieslaners came from other sites too.",
+     "sources": [
+      {
+       "title": "Weingut Müller-Catoir: The vineyard Herzog",
+       "url": "https://www.mueller-catoir.de/en/vineyards/herzog",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Müller-Catoir: Rieslaner Auslese Herzog",
+       "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-auslese-2021-375",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Müller-Catoir: Rieslaner Trockenbeerenauslese Herzog",
+       "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-trockenbeerenauslese-2023-375",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The Catoirs, a Huguenot family, have grown wine at Haardt since 1744 by the estate's account, and the estate believes they had probably worked vines in France before they came. In the years around 1900 the family manor at Haardt was enlarged in the neoclassical style. In 1968 an heir took over an estate split by inheritance and, over some forty years, brought it back into one hand; with his long serving cellar master he raised its standing. They gave as much care to Scheurebe, Muskateller and Rieslaner as to Riesling, and the wines they made were vivid and aromatic. Rieslaner was bred in Franconia in 1921 from Silvaner and Riesling; it keeps high acidity, catches noble rot readily, and is grown mainly in Franconia and the Pfalz. The estate grows it in the Herzog and bottles it as Auslese, Beerenauslese and Trockenbeerenauslese, a ladder of sweetness from one site. For a sommelier it answers the question that moves past Riesling: a German sweet wine from a crossing rather than from Riesling itself.",
+     "now": "The Catoirs, a Huguenot family, have grown wine at Haardt, on the edge of Neustadt, since 1744 by the estate's account. In 1968, as the estate tells it, an heir took over a property split by inheritance and, over some forty years, brought it back into one hand. With a cellar master who served the house from the early 1960s until the early 2000s, he raised its standing: they gave as much care to Scheurebe, Muskateller and Rieslaner as to Riesling, and the wines they made were vivid and aromatic. Rieslaner was bred in Franconia in 1921 from Silvaner and Riesling and approved for planting in the Pfalz in 1968; it keeps high acidity, catches noble rot readily, and is grown mainly in Franconia and the Pfalz. Older bottlings of the estate named other sites, the Bürgergarten among them, but its own list leads its Rieslaner from the Herzog, a site on Haardt sandstone, as Auslese, Beerenauslese and Trockenbeerenauslese, a ladder of sweetness from one vineyard. For a sommelier it answers the question that moves past Riesling: a German sweet wine from a crossing rather than from Riesling itself.",
+     "why": "The French vineyards and the manor were in no source; the cellar master's years are in two; the Rieslaner's approval of 1968 is in Wikipedia and Wein.plus; older Rieslaners named the Bürgergarten.",
+     "sources": [
+      {
+       "title": "Der schmeckt mir: Müller-Catoir",
+       "url": "https://www.der-schmeckt-mir.de/weingeschichten-blog/mueller-catoir/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Müller-Catoir",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/mueller-catoir",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus Wine Guide: Weingut Müller-Catoir",
+       "url": "https://wineguide.wein-plus.eu/weingut-mueller-catoir",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus Glossary: Müller-Catoir",
+       "url": "https://glossary.wein.plus/mueller-catoir",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Rieslaner",
+       "url": "https://en.wikipedia.org/wiki/Rieslaner",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus Glossary: Rieslaner",
+       "url": "https://glossary.wein.plus/rieslaner",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Müller-Catoir: The vineyard Herzog",
+       "url": "https://www.mueller-catoir.de/en/vineyards/herzog",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "{\"name\":\"Bürgergarten Riesling\",\"note\":\"Dry Riesling from the deep soil of the Bürgergarten at Haardt, a VDP.Erste Lage.\"}",
+     "now": "{\"name\":\"Bürgergarten Im Breumel Riesling GG\",\"note\":\"The estate's dry Grosses Gewächs, pressed only from the Breumel parcel of the Bürgergarten at Haardt.\"}",
+     "why": "The estate presses a Grosses Gewächs from the Breumel parcel of the Bürgergarten alone.",
+     "sources": [
+      {
+       "title": "Weingut Müller-Catoir: News",
+       "url": "https://www.mueller-catoir.de/en/news/2",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2]",
+     "was": "The estate's Rieslaner comes from the Herzog, not the Bürgergarten, which gives its dry Riesling.",
+     "now": "The Rieslaner Auslese on the estate's own list is from the Herzog; older Rieslaners named the Bürgergarten, which gives the dry Riesling of the house.",
+     "why": "The trap said the Rieslaner never came from the Bürgergarten; older bottlings did.",
+     "sources": [
+      {
+       "title": "Weingut Müller-Catoir: Rieslaner Auslese Herzog",
+       "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-auslese-2021-375",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grapeguru: Weingut Müller-Catoir",
+       "url": "https://www.grapeguru.de/en/knowledge/wineries/mueller-catoir",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "{\"front\":\"In which Haardt vineyard does Müller-Catoir grow the Rieslaner for its sweet wines?\",\"back\":\"The Herzog, a VDP.Erste Lage on Haardt sandstone.\"}",
+     "now": "{\"front\":\"Which Haardt vineyard does Müller-Catoir name on its Rieslaner Auslese?\",\"back\":\"The Herzog, a VDP.Erste Lage on Haardt sandstone.\"}",
+     "why": "Follows the trap: the card asks which site the estate names on its Rieslaner Auslese.",
+     "sources": [
+      {
+       "title": "Weingut Müller-Catoir: Rieslaner Auslese Herzog",
+       "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-auslese-2021-375",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The estate's belief that the Catoirs had worked vines in France.",
+    "The manor enlarged in the neoclassical style around 1900."
+   ],
+   "open": [
+    "The swap of the plan's wine, Haardter Bürgergarten Rieslaner, for Rieslaner Auslese Herzog is accepted in check-pfalz.json; the lint's one problem, wine.name, stands until the read-together agent applies it to plan.json.",
+    "The Herzog is a VDP.Erste Lage on the estate's own page; one outside account calls it a Grosse Lage. The estate's word stands.",
+    "The heir of 1968 and his forty years of reuniting the estate rest on the estate's page alone, told as its account.",
+    "The author's report says no Grosses Gewächs can come from the Bürgergarten; the estate's page shows one from its Breumel parcel, so the library's Haardter Bürgergarten Riesling GG is near enough right and needs no report."
+   ],
+   "extraSources": [
+    {
+     "title": "Weingut Müller-Catoir: The vineyard Herzog",
+     "url": "https://www.mueller-catoir.de/en/vineyards/herzog",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Müller-Catoir: Rieslaner Auslese Herzog",
+     "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-auslese-2021-375",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Müller-Catoir: Rieslaner Trockenbeerenauslese Herzog",
+     "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-trockenbeerenauslese-2023-375",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Müller-Catoir: News",
+     "url": "https://www.mueller-catoir.de/en/news/2",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weingut Müller-Catoir",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/mueller-catoir",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus Wine Guide: Weingut Müller-Catoir",
+     "url": "https://wineguide.wein-plus.eu/weingut-mueller-catoir",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus Glossary: Müller-Catoir",
+     "url": "https://glossary.wein.plus/mueller-catoir",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Der schmeckt mir: Müller-Catoir",
+     "url": "https://www.der-schmeckt-mir.de/weingeschichten-blog/mueller-catoir/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Rieslaner",
+     "url": "https://en.wikipedia.org/wiki/Rieslaner",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus Glossary: Rieslaner",
+     "url": "https://glossary.wein.plus/rieslaner",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "becker",
+   "searches": 7,
+   "tested": [
+    "1973: the estate, Rheinland-Pfalz Tourismus and the Wein.plus wine guide agree the son took over from his parents in 1973, left the cooperative and bottled his own wine for the first time under the fox label; the estate says the fox is drawn from Aesop and the label has never changed. Confirmed; the fable added as the estate's account.",
+    "The cooperative founded after the war: no source of this check; the mixed farm until the 1970s and the wine sold in cask to the cooperative are in two. Cut and reworded.",
+    "Wechsellagen: in no source of this check; cut.",
+    "The border rule: the VDP lists the Kammerberg and the Sankt Paul as Grosse Lagen of the Pfalz on the French side of the Sonnenberg; Meininger reports a court dispute with the estate over the K.B. and S.P. letters on labels of wine from French ground, and another Meininger piece says EU law may call for other words for such wine. The rule as the author wrote it, with its reverse, could not be settled and is cut; the record says what is done, made at Schweigen and sold as Pfalz.",
+    "The Kammerberg: the VDP gives the Benedictine monks of Wissembourg and their Kammerweine, the site forgotten until Friedrich Becker took it up in 1965, a slope falling south towards Wissembourg at up to 30 per cent, weathered limestone, loam and clay over pure limestone, and night winds from the Lauter valley; the estate's pages give the same 1965 and soils. Confirmed; 200 to 250 metres was not on the page as read and became the gradient.",
+    "The making: the estate's own red wine pages give destemming, open fermentation in wooden vats with daily punching down, French oak barriques and up to twenty months; young barriques was not in this check's reading and is now French oak barriques.",
+    "The label: the estate's Lagen page gives KB (formerly Kammerberg); the record keeps KB and adds Pfalz.",
+    "Others: the VDP's estate page gives Sankt Paul and Heydenreich as Grosse Lagen of the estate for Pinot Noir, Sankt Paul on limestone; it does not place Heydenreich in Schweigen, so that is cut. Pinot Noir Schweigen is on merchants' sheets.",
+    "The questions: the wine question's key and explanation now say what the sources settle; the story question (Benedictines of Wissembourg) is the VDP's and stands.",
+    "The rules: the founder died in February 2025 by two accounts and has no birth date in two, so stays described; his son, who runs the estate, is living and unnamed; the house keeps its name; no price; British; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The Kammerberg, part of the Schweigener Sonnenberg on the French side of the border: a steep slope facing south towards Wissembourg, 200 to 250 metres up, on weathered limestone, loam and clay over pure limestone.",
+     "now": "The Kammerberg, part of the Schweigener Sonnenberg on the French side of the border: a slope falling south towards Wissembourg at up to 30 per cent, on weathered limestone, loam and clay over pure limestone.",
+     "why": "The VDP gives up to 30 per cent towards Wissembourg; the altitude was not on the page as read here.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Kammerberg",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "The berries are destemmed and fermented in open vats; the mash is then carried to the press by hand and pressed gently. The wine matures slowly in young oak barriques before bottling.",
+     "now": "The berries are destemmed and fermented in open wooden vats, the cap punched down each day; the mash is then carried to the press by hand and pressed gently. The wine matures slowly in French oak barriques, for up to twenty months, before bottling.",
+     "why": "The estate's own red wine pages.",
+     "sources": [
+      {
+       "title": "Weingut Friedrich Becker: Red wines",
+       "url": "https://www.friedrichbecker.de/en/winemaking/red-wines/14/red-wines.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Friedrich Becker: Unsere Lagen",
+       "url": "https://weingut-friedrich-becker.de/unsere-lagen/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label",
+     "was": "[{\"term\":\"Spätburgunder\",\"means\":\"The German name for Pinot Noir; later labels may print Pinot Noir instead.\"},{\"term\":\"KB\",\"means\":\"The initials under which later labels of the estate name the Kammerberg.\"},{\"term\":\"Grosses Gewächs\",\"means\":\"The VDP's dry wine from one of its Grosse Lage sites, often printed GG.\"}]",
+     "now": "[{\"term\":\"Spätburgunder\",\"means\":\"The German name for Pinot Noir; later labels may print Pinot Noir instead.\"},{\"term\":\"KB\",\"means\":\"The initials under which the estate's later labels name the Kammerberg, its parcel in France.\"},{\"term\":\"Grosses Gewächs\",\"means\":\"The VDP's dry wine from one of its Grosse Lage sites, often printed GG.\"},{\"term\":\"Pfalz\",\"means\":\"The German region on the label, though the Kammerberg's vines stand across the border in France.\"}]",
+     "why": "The estate prints KB for the Kammerberg; Pfalz added as the region on the label.",
+     "sources": [
+      {
+       "title": "Weingut Friedrich Becker: Unsere Lagen",
+       "url": "https://weingut-friedrich-becker.de/unsere-lagen/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Meininger: K.B., eine der Buchstabenkombinationen des Anstoßes",
+       "url": "https://www.meininger.de/wein/erzeuger/etikettierung-zulaessig",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Weinberg.online, Kammerberg",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Friedrich Becker's Spätburgunder Kammerberg grows on limestone just across the border in Alsace, yet it is sold as Pfalz wine from Schweigen. Destemmed, fermented in open vats and raised in young barriques, it is cherry fruited, chalky and taut.",
+     "now": "Friedrich Becker's Spätburgunder Kammerberg grows on limestone just across the border in Alsace, yet it is sold as Pfalz wine from Schweigen. Destemmed, fermented in open wooden vats and raised in French barriques, it is cherry fruited, chalky and taut.",
+     "why": "Follows the making.",
+     "sources": [
+      {
+       "title": "Weingut Friedrich Becker: Red wines",
+       "url": "https://www.friedrichbecker.de/en/winemaking/red-wines/14/red-wines.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "For generations the Beckers of Schweigen ran a mixed farm on the southern edge of the Pfalz, and after the war the village's growers founded a cooperative to set winemaking going again. In 1973 the son who took over stopped selling grapes to that cooperative and filled the first bottles under the family's own name, with a fox on the label that soon became the estate's mark. He turned to Spätburgunder, which the estate says has grown on these limestone slopes for centuries. Those slopes are the heart of the story. The vineyards between Schweigen and Wissembourg changed their nationality so often that they were called Wechsellagen, and the Schweigener Sonnenberg runs over the border into France; grapes from its French side may be sold as German wine, though not the other way round. The Kammerberg lies on that side. Benedictine monks of the abbey at Wissembourg once kept Kammerweine from it in their cellar; the site then lay forgotten until 1965, when, by the VDP's account, the Beckers took it up again. A sommelier keeps it for a favourite trap: a German Grosses Gewächs grown in France.",
+     "now": "Until the 1970s the Beckers of Schweigen ran a mixed farm on the southern edge of the Pfalz and sold their wine to the village cooperative. In 1973 the son who took over from his parents left the cooperative and filled the first bottles under the family's own name, with a fox from one of Aesop's fables on the label, as the estate tells it. He turned to Spätburgunder, which the estate says has grown on these limestone slopes for centuries. Those slopes are the heart of the story. The Schweigener Sonnenberg runs over the border into France, and the Kammerberg lies on its French side, facing Wissembourg, yet its wine is made at Schweigen and sold as Pfalz. Benedictine monks of the abbey at Wissembourg once kept Kammerweine from it in their cellar; the site then lay forgotten until 1965, when, by the VDP's account and the estate's, a Becker took it up again. A sommelier keeps it for a favourite trap: a German Grosses Gewächs grown in France.",
+     "why": "The postwar cooperative and the Wechsellagen were in no source; the legal rule and its reverse could not be settled; 1973 and the fox as the estate and two accounts give them; 1965 by the VDP and the estate.",
+     "sources": [
+      {
+       "title": "Weingut Friedrich Becker: Unser Weingut",
+       "url": "https://weingut-friedrich-becker.de/weingut/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Rheinland-Pfalz Tourismus: Weingut Friedrich Becker",
+       "url": "https://www.rlp-tourismus.com/en/infosystem/weingut-friedrich-becker/poi.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus Wine Guide: Weingut Friedrich Becker",
+       "url": "https://wineguide.wein.plus/weingut-friedrich-becker",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (German): Weingut Friedrich Becker",
+       "url": "https://de.wikipedia.org/wiki/Weingut_Friedrich_Becker",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Weinberg.online, Kammerberg",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Meininger: K.B., eine der Buchstabenkombinationen des Anstoßes",
+       "url": "https://www.meininger.de/wein/erzeuger/etikettierung-zulaessig",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Meininger: Sequestriert ins Abseits?",
+       "url": "https://www.meininger.de/weinwirtschaft/ausgabe/ausgabe-052017",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "{\"name\":\"Spätburgunder Heydenreich Grosses Gewächs\",\"note\":\"From the Heydenreich, another Grosse Lage of Schweigen.\"}",
+     "now": "{\"name\":\"Spätburgunder Heydenreich Grosses Gewächs\",\"note\":\"From the Heydenreich, another of the estate's Grosse Lage sites for Pinot Noir.\"}",
+     "why": "The VDP's estate page does not place Heydenreich in Schweigen.",
+     "sources": [
+      {
+       "title": "VDP: VDP.Weingut Friedrich Becker",
+       "url": "https://www.vdp.de/de/die-winzer/pfalz/friedrich-becker",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "The Kammerberg lies in France, at Wissembourg, yet the wine is labelled Pfalz: grapes from the French side of the Sonnenberg may be sold as German wine.",
+     "now": "The Kammerberg lies in France, at Wissembourg, yet the wine is labelled Pfalz: it is a parcel of the Schweigener Sonnenberg on the French side, farmed and pressed from Schweigen.",
+     "why": "The legal rule could not be settled; the trap says what is done.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Kammerberg",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Meininger: K.B., eine der Buchstabenkombinationen des Anstoßes",
+       "url": "https://www.meininger.de/wein/erzeuger/etikettierung-zulaessig",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "{\"front\":\"What changed at the Becker estate of Schweigen in 1973?\",\"back\":\"The family stopped selling grapes to the village cooperative and filled its first bottles, with the fox on the label.\"}",
+     "now": "{\"front\":\"What changed at the Becker estate of Schweigen in 1973?\",\"back\":\"The son who took over left the village cooperative and filled the estate's first bottles, with the fox on the label.\"}",
+     "why": "Left the cooperative, the estate's and two accounts' words.",
+     "sources": [
+      {
+       "title": "Weingut Friedrich Becker: Unser Weingut",
+       "url": "https://weingut-friedrich-becker.de/weingut/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Rheinland-Pfalz Tourismus: Weingut Friedrich Becker",
+       "url": "https://www.rlp-tourismus.com/en/infosystem/weingut-friedrich-becker/poi.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].opts[0]",
+     "was": "Grapes from the Sonnenberg's French side may be sold as German",
+     "now": "It is a parcel of the Sonnenberg, which runs into France",
+     "why": "The key no longer states a legal rule this check could not settle.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Kammerberg",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Meininger: K.B., eine der Buchstabenkombinationen des Anstoßes",
+       "url": "https://www.meininger.de/wein/erzeuger/etikettierung-zulaessig",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The Kammerberg is part of the Schweigener Sonnenberg on the French side, and its grapes may be sold as German wine; the reverse is not allowed, and the vines were never moved.",
+     "now": "The Kammerberg is a parcel of the Schweigener Sonnenberg on its French side, farmed from Schweigen and sold as Pfalz; the vines were never moved, and the wine is made at Schweigen.",
+     "why": "Follows the key; the reverse rule is cut.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Kammerberg",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[0]",
+     "was": "{\"title\":\"Weingut Friedrich Becker: Family\",\"url\":\"https://www.friedrichbecker.de/en/winery/family/4/family.html\",\"kind\":\"primary\",\"read\":\"search\"}",
+     "now": "{\"title\":\"Weingut Friedrich Becker: Unser Weingut\",\"url\":\"https://weingut-friedrich-becker.de/weingut/\",\"kind\":\"primary\",\"read\":\"search\"}",
+     "why": "The estate's Unser Weingut page carries 1973, the cooperative and the fox.",
+     "sources": [
+      {
+       "title": "Weingut Friedrich Becker: Unser Weingut",
+       "url": "https://weingut-friedrich-becker.de/weingut/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The village cooperative founded after the war.",
+    "The Wechsellagen, vineyards that changed their nationality often.",
+    "That grapes from the French side may be sold as German wine and not the reverse, as a rule of law.",
+    "200 to 250 metres.",
+    "Heydenreich placed in Schweigen."
+   ],
+   "open": [
+    "Meininger reports a court dispute over the K.B. and S.P. letters on labels from the French parcels; its outcome was not read here, so KB stands as the estate's own page prints it, and the integrator may confirm.",
+    "founded is 1973, the year of the first bottles, not of the farm; it may be left empty if the integrator prefers.",
+    "The founder of 1973 died in February 2025 by two accounts; no birth date was found in two sources, so he stays described."
+   ],
+   "extraSources": [
+    {
+     "title": "Weingut Friedrich Becker: Unser Weingut",
+     "url": "https://weingut-friedrich-becker.de/weingut/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Friedrich Becker: Unsere Lagen",
+     "url": "https://weingut-friedrich-becker.de/unsere-lagen/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Rheinland-Pfalz Tourismus: Weingut Friedrich Becker",
+     "url": "https://www.rlp-tourismus.com/en/infosystem/weingut-friedrich-becker/poi.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wein.plus Wine Guide: Weingut Friedrich Becker",
+     "url": "https://wineguide.wein.plus/weingut-friedrich-becker",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia (German): Weingut Friedrich Becker",
+     "url": "https://de.wikipedia.org/wiki/Weingut_Friedrich_Becker",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Friedrich Becker Winery",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/friedrich-becker",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "VDP: Weinberg.online, Kammerberg",
+     "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6306-kammerberg",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "VDP: VDP.Weingut Friedrich Becker",
+     "url": "https://www.vdp.de/de/die-winzer/pfalz/friedrich-becker",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "VDP: Vineyard.Online, Sankt Paul",
+     "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/6310-sankt-paul",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Meininger: K.B., eine der Buchstabenkombinationen des Anstoßes",
+     "url": "https://www.meininger.de/wein/erzeuger/etikettierung-zulaessig",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Meininger: Sequestriert ins Abseits?",
+     "url": "https://www.meininger.de/weinwirtschaft/ausgabe/ausgabe-052017",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Bettina Bürklin-von Guradze",
+   "where": "every account of Bürklin-Wolf since 1990",
+   "believed": "living; already in people.json; described as the eldest daughter",
+   "inFragment": false
+  },
+  {
+   "name": "Jutta Bürklin",
+   "where": "one account of the handover of 1990 at Bürklin-Wolf",
+   "believed": "status not settled; not named",
+   "inFragment": false
+  },
+  {
+   "name": "Philipp David Catoir",
+   "where": "accounts of Müller-Catoir, as the son who took over from his father",
+   "believed": "living; for people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Martin Franzen",
+   "where": "accounts of Müller-Catoir, as cellar master since 2002",
+   "believed": "living; for people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Hans-Günter Schwarz",
+   "where": "accounts of Müller-Catoir, as cellar master from 1961 or 1962 to 2001 or 2002",
+   "believed": "status not settled; described, never named",
+   "inFragment": false
+  },
+  {
+   "name": "Friedrich Wilhelm Becker",
+   "where": "accounts of the Becker estate, as the son who runs it",
+   "believed": "living; for people.json, the house keeping its name Friedrich Becker",
+   "inFragment": false
+  },
+  {
+   "name": "Toyohiro Tokuoka",
+   "where": "accounts of von Buhl, as the lessee of 1989",
+   "believed": "status not settled; described as a Japanese businessman",
+   "inFragment": false
+  },
+  {
+   "name": "Jana Seeger",
+   "where": "one account of von Buhl, as heir of the buyer of 2005",
+   "believed": "living; for people.json",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Albert Bürklin (1844 to 1924)",
+   "note": "German Wikipedia, Wein.plus and the Karlsruhe archive; named with his dates."
+  },
+  {
+   "name": "Albert Bürklin (1907 to 1979)",
+   "note": "German Wikipedia with the author's sources; named with his dates."
+  },
+  {
+   "name": "Luise Wolf",
+   "note": "Dates given as 1847 to 1925 and 1848 to 1882 in two accounts; described as a daughter of the Wolf family."
+  },
+  {
+   "name": "Andreas Jordan (1775 to 1848)",
+   "note": "German Wikipedia and the estate; named with his dates."
+  },
+  {
+   "name": "Ludwig Bassermann-Jordan (1869 to 1914)",
+   "note": "The GGW and German Wikipedia; now named with his dates."
+  },
+  {
+   "name": "Friedrich von Bassermann-Jordan (1872 to 1959)",
+   "note": "The GGW and German Wikipedia; named with his dates."
+  },
+  {
+   "name": "Franz Peter Buhl (1809 to 1862)",
+   "note": "German Wikipedia and the author's sources; named with his dates."
+  },
+  {
+   "name": "Franz Armand Buhl (1837 to 1896)",
+   "note": "German Wikipedia, the GGW and the Deutsche Biographie; named with his dates."
+  },
+  {
+   "name": "Achim Niederberger",
+   "note": "The buyer of Bassermann-Jordan (2002) and von Buhl (2005), died 2013; described as a Neustadt entrepreneur."
+  },
+  {
+   "name": "August Ziegler (1885 to 1937)",
+   "note": "The breeder of Rieslaner; not named in the record."
+  },
+  {
+   "name": "The founder of the Becker wine estate of 1973",
+   "note": "Died February 2025 by two accounts; no birth date in two; described as the son who took over."
+  }
+ ],
+ "swaps": [
+  {
+   "pick": "muller-catoir",
+   "proposed": "The author wrote the record for Rieslaner Auslese Herzog and proposed changing the pick's wine in plan.json from Haardter Bürgergarten Rieslaner to Rieslaner Auslese Herzog, keeping the key and the producer.",
+   "ruling": "accepted",
+   "why": "The estate's own vineyard and product pages sell its Rieslaner as Auslese, Beerenauslese and Trockenbeerenauslese Herzog from the Haardter Herzog, and no Bürgergarten Rieslaner is on its list; older Bürgergarten Rieslaners existed, so the plan's wine is a past bottling, not the one the house leads with. The house, the producerId and the plan's why (Rieslaner and Scheurebe of piercing fruit) are unchanged.",
+   "planEntry": {
+    "from": "muller-catoir",
+    "to": "muller-catoir",
+    "why": "the estate sells its Rieslaner as Auslese Herzog, not Bürgergarten",
+    "agreed": true,
+    "date": "2026-11-12"
+   },
+   "planWine": "Rieslaner Auslese Herzog",
+   "forReadTogether": "Set the pick's wine to Rieslaner Auslese Herzog in plan.json and record the swap in the group's swaps. The brief gives a new pick a new key; here the producer is the same and only the wine changes, so whether the key moves is the read-together agent's call. With the wine changed, the fragment lints sound (tested here against a copy of the plan with that one change).",
+   "sources": [
+    {
+     "title": "Weingut Müller-Catoir: The vineyard Herzog",
+     "url": "https://www.mueller-catoir.de/en/vineyards/herzog",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Müller-Catoir: Rieslaner Auslese Herzog",
+     "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-auslese-2021-375",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Müller-Catoir: Rieslaner Trockenbeerenauslese Herzog",
+     "url": "https://www.mueller-catoir.de/en/product/rieslaner-edelsuess-herzog-trockenbeerenauslese-2023-375",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Grapeguru: Weingut Müller-Catoir",
+     "url": "https://www.grapeguru.de/en/knowledge/wineries/mueller-catoir",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "picks": [
+  {
+   "pick": "burklin-wolf",
+   "ruling": "kept: no swap proposed; the Kirchenstück G.C. heads the estate's own ladder."
+  },
+  {
+   "pick": "bassermann-jordan",
+   "ruling": "kept: no swap proposed; the Jesuitengarten Grosses Gewächs is a Forst site the house bottles under its own name."
+  },
+  {
+   "pick": "von-buhl",
+   "ruling": "kept: no swap proposed; the Pechstein Grosses Gewächs is on the estate's list."
+  },
+  {
+   "pick": "muller-catoir",
+   "ruling": "the wine swapped as above; the house kept."
+  },
+  {
+   "pick": "becker",
+   "ruling": "kept: no swap proposed; the plan's words Spätburgunder Kammerberg stand as the name, though the estate's later labels print KB, which the label field teaches. The author's offer of Kammerberg Spätburgunder is declined as needless."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-muller-catoir: wines",
+   "says": "Haardter Bürgergarten Riesling GG, the estate's leading dry site",
+   "against": "The estate presses its Grosses Gewächs only from the Breumel parcel of the Bürgergarten and names it Bürgergarten Im Breumel; the rest of the site is its Erste Lage. The library is near enough right; the author's report that no GG can come from the Bürgergarten is not. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Weingut Müller-Catoir: News",
+     "url": "https://www.mueller-catoir.de/en/news/2",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-burklin-wolf: holdings and traps",
+   "says": "Forster Kirchenstuck, Wachenheimer Gerumpel",
+   "against": "The umlauts are missing (Kirchenstück, Gerümpel), as the author reported. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Wikipedia (German): Forster Kirchenstück",
+     "url": "https://de.wikipedia.org/wiki/Forster_Kirchenst%C3%BCck",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
