@@ -191,7 +191,12 @@ const AMERICAN_MORE = (function () {
 })();
 /* the fields whose prose describes the glass, where a bare family word is refused */
 function tastePath(where) { return /(?:^|\.)wine\.glass$|(?:^|\.)table$|\.cards\[\d+\]\.(?:front|back)$|\.questions\[\d+\]\.(?:q|exp|opts\[\d+\])$|\.others\[\d+\]\.note$/.test(where); }
+/* an id field: the library's producerId copied from the plan (p-nicolas-joly), a minted id, a list of ids. An id is a
+   key, never prose: the people check never reads it, while a living name in any field a page shows is still refused */
+const ID_PATH = /(?:^|\.)(?:producerId|id|ids(?:\[\d+\])?)$/;
+function idPath(where) { return ID_PATH.test(String(where || '')); }
 function pathKind(where) {
+  if (idPath(where)) return 'key';
   if (/\.sources\[\d+\]\.url$/.test(where)) return 'url';
   if (/\.sources\[\d+\]\.title$/.test(where)) return 'title';
   if (/\.(?:report\[\d+\]|checked(?:\.|$))/.test(where)) return 'provenance';
@@ -221,7 +226,7 @@ function voiceProblems(rec, at) {
     if (GS.DEGREE.test(s)) out.push(where + ': a degree sign (write the word degrees)');
     tidyProblems(s, where).forEach((p) => out.push(p));
     if (kind === 'provenance') return;
-    const lv = livingIn(s, producer);
+    const lv = idPath(where) ? [] : livingIn(s, producer);
     if (lv.length) out.push(where + ': names a living person (' + lv.join(', ') + '): say the family, the founder\'s heir, the cellar master');
     if (HOUSE_NAME.test(s)) out.push(where + ': names the house where the owner works (a record never does)');
     if (kind === 'key') return;
@@ -600,9 +605,35 @@ function planProblems(plan, f) {
   return out;
 }
 
+/* the people check's own test, run by --test and by .scripts/check-flagships.js: a producerId copied from the plan that
+   reads as a living name (p-nicolas-joly) and a minted id pass, while that name or any other of people.json in a field a
+   page shows (the table, the story, a card's back, a question's option, a source's address) is still refused. Returns
+   the problems, [] when the test holds. */
+function peopleTest() {
+  const out = [];
+  const plan = loadPlan();
+  const hit = roster(plan).find((x) => x.pick.producerId && people().names.some((n) => (' ' + fold(x.pick.producerId) + ' ').indexOf(' ' + fold(n) + ' ') >= 0));
+  if (!hit) return ['peopleTest: no pick of plan.json carries a producerId that reads as a living name to test with'];
+  const name = people().names.find((n) => (' ' + fold(hit.pick.producerId) + ' ').indexOf(' ' + fold(n) + ' ') >= 0);
+  const base = { key: hit.pick.key, producer: hit.pick.producer, producerId: hit.pick.producerId, id: 'fl-0000test', ids: ['fl-0000test'], table: 'A line for the table.', story: 'A story.', cards: [{ id: 'fl-0000card', front: 'A front?', back: 'A back.' }], questions: [{ id: 'fl-0000qqqq', q: 'A stem?', opts: ['One', 'Two'] }], sources: [{ title: 'A title', url: 'https://example.org/page' }] };
+  const people0 = (rec) => voiceProblems(rec, 'records[0]').filter((p) => /living person/.test(p));
+  const clean = people0(base);
+  if (clean.length) out.push('peopleTest: an id field read as prose: ' + clean.join(' | '));
+  [['table', (r) => { r.table = 'A line poured by ' + name + ' himself.'; }], ['story', (r) => { r.story = 'In 1977 ' + name + ' took the estate on.'; }],
+    ['cards[0].back', (r) => { r.cards[0].back = name + '.'; }], ['questions[0].opts[1]', (r) => { r.questions[0].opts[1] = name; }],
+    ['sources[0].url', (r) => { r.sources[0].url = 'https://example.org/' + fold(name).split(' ').join('-'); }]].forEach((x) => {
+    const r = JSON.parse(JSON.stringify(base));
+    x[1](r);
+    const got = people0(r);
+    if (!got.some((p) => p.indexOf('records[0].' + x[0] + ':') === 0)) out.push('peopleTest: ' + name + ' in ' + x[0] + ' was not refused');
+  });
+  return out;
+}
+
 module.exports = {
+  peopleTest,
   validateFragment, validateRecord, recordProblems, adviseRecord, planProblems, loadPlan, groupOf, pickOf, roster, facts, people, livingIn,
-  readingWords, words, fold, hasPhrase, names, nameWords, sentenceList, voiceProblems, tastePath, pathKind,
+  readingWords, words, fold, hasPhrase, names, nameWords, sentenceList, voiceProblems, tastePath, pathKind, idPath, ID_PATH,
   CAPS, FIELDS, PROVENANCE, COPIED, WINE_FIELDS, COLOURS, QUESTION_FIELDS, QUESTION_TAGS, SOURCE_FIELDS, SOURCE_KINDS, SOURCE_READS,
   CHECKED_FIELDS, VERDICTS, GROUP_FIELDS, PICK_FIELDS, SWAP_FIELDS, CHUNKS, GROUPS, PICKS, ID_PREFIX, ID_RE, KEY_RE,
   JUDGE, SCORE, VOLATILE, AMERICAN_MORE, DIR, ROOT, JS_DIR
@@ -610,7 +641,13 @@ module.exports = {
 
 if (require.main === module) {
   const arg = process.argv[2];
-  if (arg !== '--caps') { console.log('usage: node .scripts/flagships/schema.cjs --caps   (the caps; the validator is required by build-flagships.cjs)'); process.exit(arg === '--help' || arg === '-h' ? 0 : 2); }
+  if (arg === '--test') {
+    const bad = peopleTest();
+    bad.forEach((p) => console.log('schema --test: ' + p));
+    console.log(bad.length ? 'schema --test: FAILED' : 'schema --test: the people check passes a producerId copied from the plan and a minted id, and refuses a living name in the table, the story, a card, an option and an address');
+    process.exit(bad.length ? 1 : 0);
+  }
+  if (arg !== '--caps') { console.log('usage: node .scripts/flagships/schema.cjs --caps   (the caps; the validator is required by build-flagships.cjs)\n       node .scripts/flagships/schema.cjs --test   (the people check\'s own test)'); process.exit(arg === '--help' || arg === '-h' ? 0 : 2); }
   const pair = (p) => (Array.isArray(p) ? (p[0] === p[1] ? 'exactly ' + p[0] : (p[0] ? p[0] + ' to ' + p[1] : 'at most ' + p[1])) : 'at most ' + p);
   const rows = [
     ['say', pair(CAPS.say) + ' words: a respelling where a guest would stumble, else ""'],
