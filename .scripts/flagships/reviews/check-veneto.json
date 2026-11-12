@@ -1,0 +1,742 @@
+{
+ "group": "veneto",
+ "chunk": "f5",
+ "date": "2026-11-12",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 28,
+  "perRecord": {
+   "quintarelli": 7,
+   "bertani": 5,
+   "masi": 6,
+   "pieropan": 4,
+   "bisol": 5,
+   "shared": 1
+  },
+  "note": "Twenty eight searches of a share of twenty eight, none of them the author's: one shared on the Amarone rules (the December pressing rule and the DOCG decree of 24 March 2010) serves Quintarelli and Bertani. Seven were restricted to a primary body's or a house's own domain (bertani.net with library.bertani.net once, masi.it twice, pieropan.it once, prosecco.it once, bisol.it twice) and are read as primary through their summaries. One WebFetch was tried, on www.masi.it, refused by the network (the host does not resolve here) and never retried. The allowance ran out with every record tested; nothing that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the facts that matter most: the dates and the people, the classifications, the sites and the making; a fact the Codex library states stood on the library unless a search contradicted it.",
+  "Where a search contradicted the record it was set right with its source; where a claim rested on one account only it was softened or cut, since an empty field is a true answer; where the author's primary source holds a fact the refuter could not reach again, it stands and is listed as open.",
+  "Sources whose address carries a writer's or an importer's personal name (a wine wiki under a first name, an importer's shop under its founder's name) were read in the results but never cited."
+ ],
+ "records": [
+  {
+   "key": "quintarelli",
+   "searches": 7,
+   "tested": [
+    "The founder and the move: Callmewine and Enoteca Properzio both have the founder, with his brothers, sharecropping at Figari in Marano di Valpolicella and moving to Cerè, Negrar, in 1924: confirmed. GuildSomm's profile gives 1906 as the year established, so founded stays empty as the library has it.",
+    "Bepi: born 1927 and the youngest son (Enoteca Properzio, Callmewine); Decanter's obituary has him dead at eighty four in January 2012 and taking over in 1950, a merchant the early 1950s: confirmed as around 1950; the dates 1927 to 2012 stand.",
+    "The blend: Callmewine, Superiore.de and Corney and Barrow give Corvina and Corvinone, Rondinella and a small share of Cabernet, Nebbiolo, Croatina and Sangiovese: confirmed, and the question's key with it.",
+    "The cask: about seven years in large Slavonian oak by Callmewine, Superiore.de and a producer profile: confirmed.",
+    "Rosso del Bepi: Lea and Sandeman, FRW and Nick's give 2008 as a year with no Amarone and Rosso del Bepi instead, Nick's and others 2010: confirmed.",
+    "The labels: merchants and a producer profile describe hand written labels, drawn and glued by hand; no obituary read says Bepi did it himself: changed.",
+    "Alzero: Wine Library, K and L and Callmewine give Cabernet Sauvignon, Cabernet Franc and Merlot, about two fifths, two fifths and one fifth, labelled Cabernet Veneto IGT, aged in French oak; one merchant calls an older vintage mostly Cabernet Franc: changed from Cabernet Franc alone.",
+    "Monte Ca' Paletta: Vinexus and Enoteca Properzio place the estate at Cerè on Ca' Paletta; only one profile calls its vines the oldest: the site stands, the oldest is cut.",
+    "The December rule: the DOCG's rules bar pressing before 1 December in a normal year (Vinetur, an Italian guide, the disciplinare copies on certifico.com); the Veneto Region allowed an earlier start on 5 November 2025 and 2 November 2026 at the consorzio's request: hedged.",
+    "The rules of the house: nobody living named (the daughter, her husband, the grandson and the cellar master are met in the obituaries and kept out); no price, score or volatile figure; British spelling; no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, story",
+     "was": "the oldest on Monte Ca' Paletta above the hamlet of Cerè, where the cellar and the family home stand; on the hill of Monte Ca' Paletta, where the family's oldest vines grow",
+     "now": "among them the hill of Monte Ca' Paletta above the hamlet of Cerè, where the cellar stands; on the hill of Monte Ca' Paletta",
+     "why": "Only one profile calls the Ca' Paletta vines the oldest, and none read placed the family home there; the site itself is in two accounts.",
+     "sources": [
+      {
+       "title": "Vinexus: Giuseppe Quintarelli producer page",
+       "url": "https://www.vinexus.co.uk/?p=1734",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Enoteca Properzio: Giuseppe Quintarelli",
+       "url": "https://www.enotecaproperzio.com/cellars/quintarelli",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "labels he drew and glued himself, as his obituaries recalled",
+     "now": "labels written and glued on by hand",
+     "why": "Merchants and a producer profile describe hand written labels, drawn and glued by hand, without saying who did it; Decanter's obituary does not mention the labels.",
+     "sources": [
+      {
+       "title": "Cru World Wine: Quintarelli producer page",
+       "url": "https://eu.cruworldwine.com/producers/quintarelli?mode=grid",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Nick's Wine Merchants: 2010 Giuseppe Quintarelli Rosso del Bepi",
+       "url": "https://www.nicks.com.au/2010-quintarelli-rosso-del-bepi",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "pressed no earlier than December as the appellation requires",
+     "now": "pressed in winter, in a normal year no earlier than December under the appellation's rules",
+     "why": "The rule stands in the DOCG's rules, but the region granted the consorzio an earlier start in 2025 and 2026, so as a flat rule it is no longer true every year.",
+     "sources": [
+      {
+       "title": "Vinetur: Veneto lets Valpolicella wineries start Amarone vinification nearly a month early",
+       "url": "https://www.vinetur.com/it/20261103110190/veneto-lets-valpolicella-wineries-start-amarone-vinification-nearly-a-month-early.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Certifico: Amarone della Valpolicella DOCG production rules",
+       "url": "https://certifico.com/component/attachments/download/15342",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1], traps[1], questions[1].exp",
+     "was": "Alzero: Cabernet Franc dried and aged in the Amarone way; Alzero is dried grape Cabernet Franc",
+     "now": "Cabernet Franc and Cabernet Sauvignon with some Merlot, from dried grapes, labelled Cabernet Veneto IGT; a dried grape blend of the two Cabernets and Merlot, a Veneto IGT",
+     "why": "Merchants' sheets of several vintages give the two Cabernets and Merlot, and Alzero is aged in French oak, not in the Amarone way; Cabernet Franc alone is the library's line.",
+     "sources": [
+      {
+       "title": "Wine Library: Giuseppe Quintarelli Alzero 2016",
+       "url": "https://winelibrary.com/wines/cabernet-franc/2016-giuseppe-quintarelli-alzero-142871",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Callmewine: Alzero Quintarelli 2016",
+       "url": "https://www.callmewine.com/en/alzero-quintarelli-2016-P57085.htm",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Vinous: Quintarelli Amarone della Valpolicella Classico 2015",
+     "now": "Wine Library: Giuseppe Quintarelli Alzero 2016",
+     "why": "Vinous held no fact the other sources lack; the corrected Alzero line needed its source in the record.",
+     "sources": []
+    }
+   ],
+   "takenOut": [
+    "The oldest vines on Monte Ca' Paletta.",
+    "The family home on Ca' Paletta.",
+    "Bepi drawing and gluing the labels himself."
+   ],
+   "open": [
+    "Bepi taking charge: Decanter gives 1950 and merchants the early 1950s, so around 1950 stands.",
+    "The years declassified to Rosso del Bepi rest on several merchants; the estate's own list was not found.",
+    "The glass rests on merchants' notes and the library's; no tasting note of the estate's own was read."
+   ],
+   "extraSources": [
+    {
+     "title": "Callmewine: Quintarelli Giuseppe producer page",
+     "url": "https://www.callmewine.com/en/quintarelli-B229.htm",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Lea and Sandeman: Rosso del Bepi 2008",
+     "url": "https://www.leaandsandeman.co.uk/wine/2008-ROSSO-DEL-BEPI-Quintarelli-28033-00.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "bertani",
+   "searches": 5,
+   "tested": [
+    "The founding: Giovan Battista and Gaetano Bertani, brothers, at Quinto di Valpantena in 1857 (Callmewine, the Italian Botanical Heritage page, Great Wine): confirmed; their dates not found, so they stay described.",
+    "Guyot: Great Wine and a second account have Gaetano trained by, and the friend of, Jules Guyot in Burgundy: confirmed as the house's story, hedged.",
+    "The royal warrant of 1923: the house's library site gives 1923 and the Kingdom of Italy; a second account says the early 1920s: stands as the house's own claim, hedged.",
+    "The coronation of 1937: Soave Bertani served at the coronation of George VI by two accounts; none names a lunch: changed.",
+    "1958 at Tenuta Novare: the house's library site and its Italian news page give 1958 as the first official vintage; Enotria and Decanter have Novare bought at the end of the Second World War: confirmed.",
+    "The cask: seven years in Slavonian oak of fifty to one hundred hectolitres on the house's product page; at least eight months in bottle after; other accounts six to eight years: at least seven stands.",
+    "Concrete: Decanter twice and Terroir Amarone have fermentation in concrete (cement) vats for about a month to fifty days; a Drinks Business masterclass report has steel: stands, listed as open.",
+    "The blend: the house's sheet and Enotria give eighty Corvina Veronese and twenty Rondinella; a Decanter feature says Rondinella never above a tenth: softened.",
+    "The sale: WineNews and Blitz Quotidiano have the Angelini group's wine company buying majority stakes in Bertani Holding and Novare on 1 December 2011, the brand, Grezzana and Novare among them; the family's Tenuta Santa Maria pages tell the land it kept: confirmed, told as control.",
+    "The rules of the house: nobody living named; no price, score or volatile figure; the sale told as history."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Corvina Veronese, about four fifths, with Rondinella for the rest.",
+     "now": "Corvina Veronese, the great majority, with a little Rondinella.",
+     "why": "The house's sheet gives eighty and twenty, a Decanter feature on the house says Rondinella is never more than a tenth; the softer line is true either way.",
+     "sources": [
+      {
+       "title": "Enotria and Coe: Bertani Amarone Classico 2015",
+       "url": "https://www.enotriacoe.com/products/bertani-amarone-classico-2015",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Bertani, pioneers of Amarone",
+       "url": "https://www.decanter.com/sponsored/bertani-pioneers-of-amarone-472966/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "The grapes dry through the autumn in the estate's lofts and are pressed in winter, no earlier than December as the appellation requires",
+     "now": "The grapes dry through the autumn on racks in the estate's lofts and are pressed in winter, in a normal year no earlier than December under the appellation's rules",
+     "why": "The region allowed earlier starts in 2025 and 2026; two accounts lay the grapes on bamboo racks in single layers.",
+     "sources": [
+      {
+       "title": "Vinetur: Veneto lets Valpolicella wineries start Amarone vinification nearly a month early",
+       "url": "https://www.vinetur.com/it/20261103110190/veneto-lets-valpolicella-wineries-start-amarone-vinification-nearly-a-month-early.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Tasting Amarone history, six vintages of Bertani back to 1958",
+       "url": "https://www.decanter.com/premium/six-vintages-of-bertani-wines-388492/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "its Soave was served in London at the coronation lunch of 1937",
+     "now": "its Soave was poured at the coronation in London in 1937",
+     "why": "The accounts give the coronation of 1937, none a lunch.",
+     "sources": [
+      {
+       "title": "Great Wine: Bertani, a tradition of innovation",
+       "url": "https://greatwine.co.uk/blog/bertani-a-tradition-of-innovation",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Italian Botanical Heritage: Bertani Winery",
+       "url": "https://luoghi.italianbotanicalheritage.com/en/?p=32612",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "At the end of 2011 the brand, the Grezzana cellars and Tenuta Novare passed to the wine company of the Angelini group",
+     "now": "At the end of 2011 control of the brand, the Grezzana cellars and Tenuta Novare passed to the wine company of the Angelini group",
+     "why": "WineNews reports majority stakes bought on 1 December 2011.",
+     "sources": [
+      {
+       "title": "WineNews: the Angelini group and Bertani",
+       "url": "https://winenews.it/en/?p=311885",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Blitz Quotidiano: il gruppo Angelini compra le cantine Bertani",
+       "url": "https://archivio.blitzquotidiano.it/economia/il-gruppo-angelini-compra-le-cantine-bertani-amarone-vino-di-punta-1038529",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The coronation lunch."
+   ],
+   "open": [
+    "Fermentation in concrete rests on two Decanter pieces and Terroir Amarone; a Drinks Business report of a masterclass has steel for the fermentation and concrete for ageing.",
+    "Tenuta Novare was bought at the end of the Second World War by Decanter and Enotria; the record gives no year for the purchase.",
+    "The founding brothers' dates were not found, so they stay described rather than named."
+   ],
+   "extraSources": [
+    {
+     "title": "Bertani: The Library, the history of the Amarone Classico",
+     "url": "https://library.bertani.net/en/timeline/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Terroir Amarone: Bertani Domains",
+     "url": "https://terroiramarone.net/wineries/2014/8/31/bertani",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "masi",
+   "searches": 6,
+   "tested": [
+    "1772 and the name: the house's history page has the Boscaini family's first harvest in the Vaio dei Masi in 1772 and the company named Masi in 1972, for the two hundredth year: stands as the house's account, hedged.",
+    "1964 and 1967: the house's pages give 1964 and the name Ripasso taken from the old cellar words of Valpolicella; Decanter's sponsored history and The Drinks Business give produced in 1964 and sold from 1967: confirmed.",
+    "Labelled Ripasso: Sevenfifty has the first wine named Campofiorin Ripasso; The Drinks Business has the word taken off the label around 2000; a 2001 label still carries it: stands, listed as open.",
+    "The 1980s: the house's pages give the refinement into a double fermentation with whole semi dried grapes in the 1980s, the technical group formed in the mid 1980s: confirmed.",
+    "The share of dried grapes: the house's page gives about 30 per cent, a 2016 sheet reproduced by Charton Hobbs 25: hedged as the house's figure.",
+    "The wood: the 2016 sheet gives at least eighteen months, two thirds in 90 hectolitre Slavonian casks, a third in new 600 litre barrels, then three months in bottle; the house's brochure names 600 litre barrels: stands.",
+    "Serving temperature: the house's Campofiorin page gives 18 to 20 degrees, its Nectar Campofiorin page 18: the house clause cut, the Codex's 16 to 18 kept.",
+    "Serego Alighieri: WineNews and Cayman Compass have Dante's son Pietro buying Casal dei Ronchi at Gargagnago in 1353 and Masi working with the counts since 1973: confirmed, the sentence rebuilt.",
+    "The appellation: the house's own page is titled Rosso Verona IGT, a merchant prints Rosso del Veronese IGP; the IGT carries both names: the question rekeyed.",
+    "The rules of the house: the head of the house and his son, both in people.json, are kept out; Dante and Pietro described, not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.serve",
+     "was": "16 to 18 degrees Celsius, the house suggesting 18;",
+     "now": "16 to 18 degrees Celsius;",
+     "why": "The house's own Campofiorin page gives 18 to 20 degrees and only the duty free Nectar Campofiorin page gives 18; the Codex's service reference of 16 to 18 for a full red stands without the house's clause.",
+     "sources": [
+      {
+       "title": "Masi: Campofiorin, Rosso Verona IGT",
+       "url": "https://www.masi.it/en/wines/campofiorin-rosso-verona-igt-red-wine/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Masi: Nectar Campofiorin",
+       "url": "https://www.masi.it/en/wines/nectar-campofiorin-rosso-verona-igt-red-wine/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1973 Masi began to work with the Serego Alighieri counts on their wines, whose line runs back to the poet of the Divine Comedy and who have lived in Valpolicella since 1353.",
+     "now": "In 1973 Masi began to work on the wines of the Serego Alighieri counts, descendants of the poet of the Divine Comedy, whose son bought the family's estate at Gargagnago in 1353.",
+     "why": "The old sentence let whose and who hang on the wines; the accounts give the purchase of Casal dei Ronchi by the poet's son in 1353.",
+     "sources": [
+      {
+       "title": "WineNews: Serego Alighieri and Masi",
+       "url": "https://winenews.it/en/?p=592290",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cayman Compass: Dante's link to divine wine",
+       "url": "https://www.caymancompass.com/2016/11/24/dantes-link-to-divine-wine/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0]",
+     "was": "What does its label say? Keyed Rosso del Veronese IGT.",
+     "now": "Under which appellation is it labelled? Keyed A Verona IGT, the explanation naming both Rosso del Veronese and Rosso Verona.",
+     "why": "The house's own page prints Rosso Verona IGT, so a stem asking for the label's words had a key a guest's bottle may not show.",
+     "sources": [
+      {
+       "title": "Masi: Campofiorin, Rosso Verona IGT",
+       "url": "https://www.masi.it/en/wines/campofiorin-rosso-verona-igt-red-wine/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Frankfurt Airport shop: Masi Campofiorin Rosso del Veronese IGP",
+       "url": "https://shop.frankfurt-airport.com/en-US/product/masi-campofiorin-rosso-del-veronese-venetien-igp-t_7ca4945ad0da4ee2",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The house suggesting 18 degrees."
+   ],
+   "open": [
+    "The share of semi dried grapes: the house's page gives about 30 per cent and a 2016 sheet 25, so the record keeps the house's figure, hedged.",
+    "The eighteen months in wood rests on that 2016 sheet; the house's brochure speaks of 600 litre barrels, which the record keeps beside the large Slavonian casks.",
+    "Labelled Ripasso on first release rests on Wine Business International and a merchant's profile naming the first wine Campofiorin Ripasso; the 1967 label itself was not seen."
+   ],
+   "extraSources": [
+    {
+     "title": "The Drinks Business: Why Masi is revamping Campofiorin",
+     "url": "https://www.thedrinksbusiness.com/2023/10/why-masi-is-revamping-campofiorin/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Masi's Campofiorin, the evolution of a groundbreaking wine",
+     "url": "https://www.decanter.com/sponsored/masis-campofiorin-the-evolution-of-a-groundbreaking-wine-516304/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "pieropan",
+   "searches": 4,
+   "tested": [
+    "1880 and the town doctor: the house's family page and Eataly: confirmed.",
+    "Calvarino bought in 1901: the house's family page and Callmewine; one account gives no year: confirmed.",
+    "The 1930s labels: the house says it was among the first to bottle its own wine and print Soave on the label, in the early 1930s: stands as the house's claim, hedged.",
+    "The grandson: the house's page has him taking over in 1966 after Conegliano: changed to the 1960s.",
+    "1971 and 1978: the house and Liberty Wines give Calvarino in 1971, the first Italian white named for one vineyard by the house's account, and La Rocca as a single vineyard wine in 1978: confirmed, hedged.",
+    "Little Calvary: the house's page gives the name for the hard basaltic soil and the steep path: confirmed.",
+    "The blend and the making: seventy Garganega and thirty Trebbiano di Soave, glass lined concrete, no oak, twelve months on the lees by one account and twelve to fifteen by Decanter and another; pergola veronese confirmed: the lees time changed.",
+    "The aspect: one merchant places Calvarino in the north western part of the Classico zone, which is a location, not an aspect: cut.",
+    "La Rocca: on the hill just below Soave castle, on marine clay and limestone: behind changed to below.",
+    "Calvarino 5: the house describes it as held in concrete for more than ten years before bottling: the several vintages cut.",
+    "The rules of the house: the grandson's two sons are met in the sources and kept out; the founder and grandson are described, not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "volcanic soil rich in Eocene basalt, facing north west, trained on the pergola veronese.",
+     "now": "volcanic soil rich in Eocene basalt, the vines trained on the pergola veronese.",
+     "why": "No source read gives Calvarino's aspect; the one that names the north west places the vineyard in that part of the zone.",
+     "sources": [
+      {
+       "title": "Liberty Wines: Pieropan Calvarino Soave Classico",
+       "url": "https://www.libertywines.co.uk/our-portfolio/PI102-calvarino-soave-classico",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making, story, cards[0].back",
+     "was": "for about a year",
+     "now": "for a year or a little more; for a year and more",
+     "why": "The accounts read give twelve to fifteen months on the lees.",
+     "sources": [
+      {
+       "title": "Decanter: Pieropan producer profile",
+       "url": "https://www.decanter.com/premium/pieropan-producer-profile-479012/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Pieropan Calvarino vertical tasting, 1987 to 2021",
+       "url": "https://www.decanter.com/premium/pieropan-calvarino-vertical-tasting-1987-2021-506566/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "took charge in the late 1960s",
+     "now": "took charge in the 1960s",
+     "why": "The house's family page gives 1966.",
+     "sources": [
+      {
+       "title": "Pieropan: The Pieropan Family",
+       "url": "https://www.pieropan.it/en/family/la-famiglia",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, others[0].note, cards[1].front",
+     "was": "the hill behind Soave castle",
+     "now": "the hill below Soave castle",
+     "why": "The accounts place La Rocca on the slope just under the medieval castle.",
+     "sources": [
+      {
+       "title": "Liberty Wines: Pieropan La Rocca Soave Classico",
+       "url": "https://www.libertywines.co.uk/our-portfolio/PI103-la-rocca-soave-classico",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grape Collective: The regal Soaves of Pieropan",
+       "url": "https://grapecollective.com/articles/depth-nuance-and-history-the-regal-soaves-of-pieropan",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2].note",
+     "was": "Calvarino of several vintages kept for years on its fine lees before a late release.",
+     "now": "A Calvarino held in concrete for more than ten years before bottling and released long after its harvest.",
+     "why": "The house describes Calvarino 5 as held in concrete for over ten years; no source read says it joins vintages.",
+     "sources": [
+      {
+       "title": "Pieropan: The Pieropan Family",
+       "url": "https://www.pieropan.it/en/family/la-famiglia",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Liberty Wines: Pieropan Calvarino 5",
+       "url": "https://www.libertywines.co.uk/our-portfolio/PI113-calvarino-5",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Calvarino's north west aspect.",
+    "Calvarino 5 as a wine of several vintages."
+   ],
+   "open": [
+    "The respelling of the family name was not tested; where its stress falls could not be confirmed.",
+    "Eocene basalt rests on the house's sheet; another account says Tertiary, which holds the Eocene.",
+    "The first Italian white named for one vineyard and the early Soave labels are the house's claims, hedged as such."
+   ],
+   "extraSources": [
+    {
+     "title": "Eataly: Meet Pieropan",
+     "url": "https://www.eataly.com/us_en/magazine/producer-stories/meet-pieropan",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "bisol",
+   "searches": 5,
+   "tested": [
+    "1542: the house's story page has the first record of the family's presence in Chartice, the Cartizze of today, in 1542; Falstaff and Glass of Bubbly carry the same; a retailer gives 1875 as a start up year: the record of presence stands, the ownership since 1542 is cut, founded stays empty.",
+    "The forebear and his son: the house's page has the trade broken by the First World War, revived in the mid 1920s by the son, who after the Second World War went through the hills of Valdobbiadene and Conegliano for plots to buy: confirmed.",
+    "The law: the consorzio has the DOC of 2 April 1969 for Prosecco and Superiore di Cartizze, the subzone's own rules since 1969 and the DOCG of 2009: confirmed.",
+    "Lunelli in 2014: the house's page: confirmed.",
+    "The site: the house's terroir page has a steep crest rising to 300 metres, sunny and sheltered from cold winds, friable soil over rock; other accounts give 200 to 350 metres: changed to the house's words.",
+    "The making: no Bisol page beyond the fact sheets the author read gave the pressing, the settling, the thirty days or the malolactic; other houses' Cartizze sheets give thirty to ninety days: stands on the house's sheets, listed as open.",
+    "Relio and Crede: both on the house's own pages; Relio is named for a forebear: confirmed.",
+    "Dry: sweeter than Extra Dry and Brut on the sweetness scale the Codex teaches: confirmed.",
+    "The rules of the house: the head of the house, met in the results, kept out; the forebear and his son described."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "a steep crest near 300 metres, sunny and sheltered from cold winds, on crumbly soil over rock.",
+     "now": "a steep crest rising to about 300 metres, sunny and sheltered from cold winds, on friable soil over a bed of rock.",
+     "why": "The house's terroir page has the crest rising to 300 metres; other accounts give the hill 200 to 350 metres, so near 300 claimed too much.",
+     "sources": [
+      {
+       "title": "Bisol: The Terroir",
+       "url": "https://bisol.it/bisol/en/the-terroir/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Bisol: Cartizze",
+       "url": "https://bisol.it/bisol/en/wines/cartizze/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "its records in Santo Stefano di Valdobbiadene go back to 1542, and it has owned land on the Cartizze hill since then.",
+     "now": "its presence on the Cartizze hill above Santo Stefano di Valdobbiadene, then written Chartice, is first recorded in 1542.",
+     "why": "The house claims the first record of the family's presence in Chartice in 1542, not unbroken ownership since then.",
+     "sources": [
+      {
+       "title": "Bisol: The Story",
+       "url": "https://bisol.it/bisol/en/the-story/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Bisol 1542",
+       "url": "https://www.falstaff.com/en/wineries/bisol-1542",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Land owned on Cartizze since 1542."
+   ],
+   "open": [
+    "The making, cold settling, thirty days in the pressure tank, no malolactic and Glera alone, rests on the house's fact sheets on a distributor's host; no other Bisol page read gave it.",
+    "The ageing line, to drink young, rests on no source that gives a drinking window.",
+    "One retailer gives 1875 as a start up year for the business; founded stays empty."
+   ],
+   "extraSources": [
+    {
+     "title": "Consorzio Conegliano Valdobbiadene Prosecco: History",
+     "url": "https://www.prosecco.it/en/area-of-origin/history/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Bisol: Relio",
+     "url": "https://bisol.it/bisol/en/wines/relio/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Fiorenza Quintarelli",
+   "where": "Decanter's obituary and merchants, as Bepi's eldest daughter who supervises the estate",
+   "believed": "living; not in people.json, for the read-together agent or the engineer",
+   "inFragment": false
+  },
+  {
+   "name": "Giampaolo Grigoli",
+   "where": "merchants' accounts of the estate, as the daughter's husband",
+   "believed": "believed living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Francesco Grigoli",
+   "where": "Decanter's obituary, as the grandson who runs the estate day to day",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Luca Fedrigo",
+   "where": "Decanter's obituary, as the cellar master",
+   "believed": "believed living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Sandro Boscaini",
+   "where": "The Drinks Business on Campofiorin's label",
+   "believed": "living, already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Gianluca Bisol",
+   "where": "a page title on the house's own site, as the head of the house",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Silvio Quintarelli",
+   "note": "The founder, sharecropper at Figari and founder at Cerè in 1924; his dates not found, so described."
+  },
+  {
+   "name": "Giuseppe Quintarelli",
+   "note": "1927 to 2012 by Decanter and the merchants; named with his dates in the record."
+  },
+  {
+   "name": "Giovan Battista and Gaetano Bertani",
+   "note": "The founding brothers of 1857; their dates not found, so described."
+  },
+  {
+   "name": "Jules Guyot",
+   "note": "1807 to 1872; named with his dates in the record."
+  },
+  {
+   "name": "Guido Boscaini",
+   "note": "Credited with Campofiorin in 1964 by Masi and Sevenfifty; his dates not found, so the record says the house."
+  },
+  {
+   "name": "Pietro Alighieri",
+   "note": "The poet's son who bought the Gargagnago estate in 1353; described, not named."
+  },
+  {
+   "name": "Leonildo Pieropan, the founder, and Leonildo Nino Pieropan, his grandson",
+   "note": "The grandson died on 13 April 2018 at seventy one (Decanter); both described."
+  },
+  {
+   "name": "Eliseo and Desiderio Bisol",
+   "note": "The forebear and his son of the house's story; their dates not found, so described."
+  },
+  {
+   "name": "Aurelio Bisol",
+   "note": "Relio, for whom the Rive di Guia wine is named; not in the record."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "quintarelli",
+   "ruling": "kept: the Amarone Classico is the house's flagship in every source and the library's; no swap proposed."
+  },
+  {
+   "pick": "bertani",
+   "ruling": "kept: the Amarone Classico from Novare, with its library back to 1958, is the house's flagship; no swap proposed."
+  },
+  {
+   "pick": "masi",
+   "ruling": "kept: Campofiorin is the wine of the Ripasso story the examiners ask for, though Costasera is the house's widely seen Amarone and is taught among the others; no swap proposed."
+  },
+  {
+   "pick": "pieropan",
+   "ruling": "kept: Calvarino is the house's single vineyard Soave of 1971 and the library's flagship; no swap proposed."
+  },
+  {
+   "pick": "bisol",
+   "ruling": "kept: Cartizze is the house's long held hill and the library's flagship; no swap proposed."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-quintarelli: wines, Alzero, and traps",
+   "says": "Alzero made by appassimento from Cabernet Franc; Alzero is a dried-grape Cabernet Franc.",
+   "against": "Merchants' sheets of several vintages give Cabernet Sauvignon, Cabernet Franc and Merlot, about two fifths, two fifths and one fifth, labelled Cabernet Veneto IGT.",
+   "sources": [
+    {
+     "title": "Wine Library: Giuseppe Quintarelli Alzero 2016",
+     "url": "https://winelibrary.com/wines/cabernet-franc/2016-giuseppe-quintarelli-alzero-142871",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Callmewine: Alzero Quintarelli 2016",
+     "url": "https://www.callmewine.com/en/alzero-quintarelli-2016-P57085.htm",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "w-quintarelli-amarone: traps",
+   "says": "Quintarelli's Alzero is dried-grape Cabernet Franc and is not Amarone.",
+   "against": "The same: Alzero blends the two Cabernets with Merlot.",
+   "sources": [
+    {
+     "title": "Wine Library: Giuseppe Quintarelli Alzero 2016",
+     "url": "https://winelibrary.com/wines/cabernet-franc/2016-giuseppe-quintarelli-alzero-142871",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-masi: wines, Campofiorin",
+   "says": "first made in 1964, the model for the modern double-fermentation style",
+   "against": "The 1964 wine was refermented on Amarone pomace, the model for Ripasso; the double fermentation with whole semi dried grapes is the house's refinement of the 1980s, by its own pages (the author's finding, confirmed).",
+   "sources": [
+    {
+     "title": "Masi: The history of the Boscaini family",
+     "url": "https://masi.it/en/campofiorin-history",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": ".scripts/regions/fragments/italy.1.json",
+   "record": "veneto producers line, p-bertani",
+   "says": "among the first to sell Amarone from the late 1950s",
+   "against": "No source read in either check makes the claim of a first; the house gives 1958 as its first official vintage only.",
+   "sources": [
+    {
+     "title": "Bertani: The Library",
+     "url": "https://library.bertani.net/en/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
