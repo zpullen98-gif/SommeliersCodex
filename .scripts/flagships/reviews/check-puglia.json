@@ -1,0 +1,789 @@
+{
+ "group": "puglia",
+ "chunk": "w4",
+ "batch": "A",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 26,
+  "perRecord": {
+   "gianfranco-fino": 6,
+   "rivera": 6,
+   "leone-de-castris": 5,
+   "taurino": 4,
+   "polvanera": 5
+  },
+  "note": "Twenty six searches of a share of twenty eight, none of them the author's; two left unspent. Eleven were restricted to a house's own domain and are read as primary through their summaries: gianfrancofino.it twice (the Es sheets; Gf, Jo and Sé), rivera.it three times (the family page; the Il Falcone sheets; the name and the maceration), leonedecastris.com twice (the history; the Five Roses sheets), taurinovini.it twice (the origins; the Patriglione and vineyard pages) and cantinepolvanera.it twice (the manor and cellar; the 17, the 21 and the Minutolo). Seven more blocked the author's own sources so that a second, independent source would show: the house and Superiore.de for Gianfranco Fino twice, the house and Superiore.de for Five Roses, Skurnik for Patriglione twice, the house for Rivera and for Polvanera 16. Two went to the appellations (the Primitivo di Manduria and Castel del Monte texts at AIS) and two to the indications (Salento IGT; Gioia del Colle and Indellicati). One WebFetch was tried, the Il Falcone 2018 sheet on rivera.it, and refused (the host does not resolve here); no other fetch was tried. Every record was tested; no fact that rests on no source was kept in a record marked checked."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own pages and sheets for their own dates and methods and to the appellations' texts, then to the press and the merchants, with the author's sources blocked where they would only have repeated themselves, for the second source of each date, person and place.",
+  "Where a detail rested on no source the refuter read (the end of October for Patriglione, the great wager, the vines saved from grubbing up, the month in bottle for Five Roses, older vines for the Anniversario, the founder's son's trials of the 1970s) it was cut or set as the sources give it; where the sources corrected the record (the serving temperature of Five Roses, the Malvasia Nera of older Patriglione, the name of Five Roses, the soils behind Polvanera's name, the Minutolo's indication) the record was set right with its source.",
+  "Prices, marks and scores met in the results (merchants' prices, a 92 of Robert Parker reprinted by Rivera, guides' glasses and stars, a 98 of Doctor Wine) were read and not used; hectares (18 or 23 for Gianfranco Fino, 150 for Rivera) were left out."
+ ],
+ "records": [
+  {
+   "key": "gianfranco-fino",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "Founded 2004 and the first Es from that year: Wine Spectator (in 2004 he struck out with a small holding of Primitivo and made the first bottles of Es) and the house's pages: confirmed. The library's 2004 holds.",
+    "The founder's olive growing before wine: Civiltà del bere and Seminario Veronelli in the results (an agronomist who long worked in olive growing): confirmed as written; the founder and his wife are living and unnamed.",
+    "The name: Wine Spectator (Es, the German term for Freud's id), Food and Travel and the house's sheet (Es according to Freud): confirmed.",
+    "Salento IGT and the early DOC: the house's sheet classes Es Salento Primitivo IGT and Caratello lists both Es Primitivo di Manduria DOC and Es Primitivo Salento IGT 2022: confirmed as early and later vintages.",
+    "The Primitivo di Manduria DOC of 1974 (DPR of 30 October 1974) and the Dolce Naturale DOCG (DM of 23 February 2011), in the AIS copy of the DOCG's text: confirmed. Salento IGT across the provinces of Brindisi, Lecce and Taranto: Italian Wine Central and another reference: confirmed.",
+    "The making: the English sheet (two to three weeks in steel tanks of 70 hectolitres, about nine months in oak, six in bottle) and the house's editorial of 2022 (maturation in barrique): corrected. The others: Gf a traditional method rosé of Negroamaro, Jo a Salento IGT Negroamaro, Sé a Salento IGT Primitivo, on the house's pages: confirmed.",
+    "The house rules: no living person named in prose (the house keeps its name), no price, no score (the guides' marks on the sheet read and not used), nothing volatile (hectares left out), no judging superlative, British, no dash. The cards and questions: the IGT question has one key and four readings of a label, its explanation teaches the dry Primitivo against the sweet DOCG; the year question's 1974 is the DOC, the plausible near miss, and is explained."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "on red, calcareous clay;",
+     "now": "on red earth;",
+     "why": "The house's Es sheet gives Primitivo grown on red soil; calcareous is in no source of the refuter's.",
+     "sources": [
+      {
+       "title": "Gianfranco Fino: Es technical sheet",
+       "url": "https://www.gianfrancofino.it/wp-content/uploads/2024/04/scheda-es-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Civiltà del bere: fifty years of wine history, Primitivo",
+       "url": "https://www.civiltadelbere.com/50-anni-di-storia-del-vino-gianfranco-fino-passione-primitivo/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked by hand with close selection of the bunches, the grapes are macerated on their skins for two to three weeks in stainless steel. The wine then ages for about nine months in small oak barrels, part of them new, and rests some months in bottle before release.",
+     "now": "Picked by hand, the grapes are macerated on their skins for two to three weeks in stainless steel vats. The wine then ages for about nine months in barriques and some six months in bottle before release, by the house's sheets.",
+     "why": "The English sheet gives two to three weeks in steel tanks of 70 hectolitres, about nine months in oak and six months in bottle, and the house's editorial of 2022 the barriques; half new is on the sheet of Es Red alone, and the close selection on no sheet the refuter read.",
+     "sources": [
+      {
+       "title": "Gianfranco Fino: Es technical sheet",
+       "url": "https://www.gianfrancofino.it/wp-content/uploads/2024/04/scheda-es-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Gianfranco Fino: Civiltà del bere editorial for Es 2019, reprinted by the house",
+       "url": "https://www.gianfrancofino.it/wp-content/uploads/2022/02/Editoriale-2022-per-ES-2019.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The couple went on to save more small plots of old alberello vines between Manduria and Sava from grubbing up, vines thought too poor in yield to keep.",
+     "now": "The couple went on to buy more small plots of old alberello vines between Manduria and Sava.",
+     "why": "The rescue from grubbing up and the poor yield are in no source of the refuter's; Civiltà del bere gives every vineyard of the house as alberello between Manduria and Sava.",
+     "sources": [
+      {
+       "title": "Civiltà del bere: fifty years of wine history, Primitivo",
+       "url": "https://www.civiltadelbere.com/50-anni-di-storia-del-vino-gianfranco-fino-passione-primitivo/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gianfranco Fino: the wines",
+       "url": "https://www.gianfrancofino.it/en/wines/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "A single small plot of old Primitivo bush vines near Manduria, vines thought too poor in yield to keep.",
+     "now": "A single small plot of old Primitivo bush vines near Manduria, from which the first Es was made.",
+     "why": "The same want of a source; Wine Spectator gives the first Es from the plot bought in 2004. The front is unchanged.",
+     "sources": [
+      {
+       "title": "Wine Spectator: Primitivo, the Fino Way",
+       "url": "https://www.winespectator.com/articles/gianfranco-fino-primitivo-italy",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gianfranco Fino: the wines",
+       "url": "https://www.gianfrancofino.it/en/wines/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The year Es left the DOC (2014 in Vinous, a DOC 2015 on Falstaff, by the author's reading) is still unsettled; the record says early and later vintages.",
+    "The year the guides first praised Es was not tested; within a few vintages stands on the Gambero Rosso piece of February 2011 the author read.",
+    "The first plot's size and the vines' ages differ across sources (about one hectare or 1.2 or 1.3, vines of 50 to 90 or 60 years) and stay out."
+   ]
+  },
+  {
+   "key": "rivera",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The purchase of 1921 and the Rivera nobles from Abruzzo: the house's family page (and its claim that the Rivera's founder was a captain of Frederick II): confirmed as the house's account; the Istituto Grandi Marchi and another account give the early 1900s or vines planted about 1900, so the year is hedged.",
+    "The youngest son and the late 1940s in the estate's historic cellars: the house's family page, with the late 1940s, the early 1950s and a first bottling of 1949 in other accounts: confirmed as written, with the library's 1950 kept.",
+    "The grapes and the first vintage: the 2017 and 2018 sheets (Nero di Troia about seven parts in ten, Montepulciano the rest; first vintage 1971): confirmed.",
+    "The making: the 2017 and 2018 sheets (15 to 16 days in steel vats of 120 hectolitres with daily pumping over and délestage; 14 months, half in casks of 30 hectolitres and half in barriques; a year in bottle), the 2019 page (at least 16 months): confirmed as written.",
+    "The name for Frederick II and falconry: the house's sheets: confirmed. The castle in the commune of Andria, from about 1240, and Frederick II's dates and treatise: not searched again; they are the author's, on the Ministry of Culture's page, and nothing in the refuter's results contradicts them.",
+    "The DOC of 1971 and the DOCG of 2011 (Nero di Troia at least 65 per cent, two years with at least one in wood): Wein.plus and two other references; the AIS copy of the DOCG text opened only at its first article: confirmed as written. Puer Apuliae, Nero di Troia alone: Wine with Seth and the house's sheet in the results: confirmed.",
+    "The sites: corrected (200 metres on one listing and a review of the 2006, 250 to 300 on another; deep tufa on one, loose calcareous soils on another).",
+    "The house rules: no living person named (the founder's son and grandsons met and not named), no price, no score (a 92 reprinted by the house read and not used), nothing volatile (150 hectares left out), no judging superlative, British, no dash. The cards and questions: the grape question has four pairs of one kind and one key; the estate question's Frederick II distractor is the plausible near miss, and its explanation teaches both."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "at about 200 metres, on deep calcareous soils with tufa.",
+     "now": "at some 200 to 300 metres, on calcareous soils and tufa.",
+     "why": "One listing and a review of the 2006 give 200 metres, another merchant 250 to 300 from hillside plots; deep tufa is on one listing and loose calcareous soils on another.",
+     "sources": [
+      {
+       "title": "Superiore.de: Il Falcone Rosso Castel del Monte Riserva DOCG 2019",
+       "url": "https://www.superiore.de/en/wine/puglia/rivera/il-falcone-rosso-castel-del-monte-riserva-docg-2019.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine with Seth: Rivera producers",
+       "url": "https://www.winewithseth.com/winewiki/rivera-producers/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and in 1921 its patriarch bought the Rivera estate,",
+     "now": "and in 1921, by the house's account, its patriarch bought the Rivera estate,",
+     "why": "The house's family page gives 1921; the Istituto Grandi Marchi and another account give the early 1900s, or vines planted on the estate about 1900.",
+     "sources": [
+      {
+       "title": "Rivera: the family",
+       "url": "https://rivera.it/en/family/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Istituto del Vino di Qualità Grandi Marchi: Rivera",
+       "url": "https://www.istitutograndimarchi.it/en/brand/rivera/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In the 1970s the founder's son led trials in the vineyards and a modernised cellar.",
+     "now": "a new wing of glass lined concrete vats followed in the 1960s (after the founding, in order) and the founder's son later brought new ideas to vineyard and cellar (after 1971)",
+     "why": "One account puts the son's innovations in the 1970s and others since the early 1980s, so the decade goes; the house's cellars page gives the new wing of vitrified concrete vats in the 1960s.",
+     "sources": [
+      {
+       "title": "Rivera: the cellars and the estate",
+       "url": "https://rivera.it/en/cellars-and-estate/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine with Seth: Rivera producers",
+       "url": "https://www.winewithseth.com/winewiki/rivera-producers/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Istituto del Vino di Qualità Grandi Marchi: Rivera",
+       "url": "https://www.istitutograndimarchi.it/en/brand/rivera/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].front",
+     "was": "With which vintage was Rivera's red first called Il Falcone, and what else began that year?",
+     "now": "With which vintage did Rivera first make Il Falcone, and what else began that year?",
+     "why": "First called implies an earlier name for the same red, which rests on one vertical tasting the author left out; the house's sheet gives 1971 as the first vintage. The card takes a new id; wave two is unpublished.",
+     "sources": [
+      {
+       "title": "Rivera: Il Falcone 2018 technical sheet",
+       "url": "https://rivera.it/wp-content/uploads/2024/03/IL-FALCONE-2018-TS-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Rivera: Il Falcone 2017 technical sheet",
+       "url": "https://rivera.it/wp-content/uploads/2024/03/IL-FALCONE-2017-TS-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q",
+     "was": "In 1921 the patriarch of the de Corato family bought the estate near Andria that gave Rivera its name. Who had held it before?",
+     "now": "The patriarch of the de Corato family bought the estate near Andria that gave Rivera its name. Who had held it before?",
+     "why": "The year is the house's account against about 1900 elsewhere; the question tests the Rivera family, which the house alone gives and the explanation hedges.",
+     "sources": [
+      {
+       "title": "Rivera: the family",
+       "url": "https://rivera.it/en/family/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Istituto del Vino di Qualità Grandi Marchi: Rivera",
+       "url": "https://www.istitutograndimarchi.it/en/brand/rivera/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The year of the purchase: 1921 on the house's page, the early 1900s or about 1900 in two other accounts.",
+    "The vineyards' altitude (200 metres, or 250 to 300) and the founder's dates, so he stays the patriarch's youngest son."
+   ]
+  },
+  {
+   "key": "leone-de-castris",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "1665 and the duke of the Counts of Lemos, the bulk trade abroad and the first bottling of 1925 (a Moscatello) by the couple who ran the house: the house's history pages, with 1665 and the duke on other pages in the results: confirmed as the house's account.",
+    "1943 and the first rosé bottled and sold in Italy: the house, the Drinks Business and merchants: confirmed as the house's claim, hedged throughout. Poletti and the American name: the house (a general and supply officer), the Drinks Business, Agile Wines and Vino Salentu (Poletti asked for the name Five Roses): confirmed, with no rank given.",
+    "The name: corrected, the house giving a local quarter and the five children side by side, the Drinks Business and Wine with Seth the place Cinque Rose.",
+    "The grapes and the making: the house's pages (Negroamaro nine tenths, Malvasia Nera a tenth; a maceration at 10 degrees for 10 to 12 hours on the 2022 sheet and a few hours on the 2025; the must flower drawn off; fermentation in steel at 16 to 20 degrees; at least two months in steel): confirmed, save the month in bottle (cut). Merchants give 80 and 20, which is left open.",
+    "The serving temperature: the house's 2025 sheet and vino.com give 10 to 12 degrees: corrected. Salento IGT rosato on the label: Vias Imports and Falstaff: confirmed.",
+    "Five Roses Anniversario of 1993: Vino Salentu beside the author's two merchants: confirmed; from older vines: in no source, corrected to a selection of the grapes (vino.com). Donna Lisa: 90 and 10 on Falstaff, Vias and Xtrawine: set to about a tenth.",
+    "The house rules: no living person named (the family of today met in no summary by name), no price, no score (a Grand Gold Medal and a 91 read and not used), nothing volatile, no judging superlative, British, no dash. The cards and questions: the maceration question has four ways of making a pink and one key; the Poletti question's three generals are of one kind, plausible and explained."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "It ferments cool in stainless steel and rests at least two months in steel and a month in bottle before release.",
+     "now": "It ferments cool in stainless steel and rests at least two months in steel before bottling.",
+     "why": "Both of the house's sheets (2022 and 2025) give at least two months in steel; the month in bottle is on neither summary.",
+     "sources": [
+      {
+       "title": "Leone de Castris: Five Roses, the wine",
+       "url": "https://www.leonedecastris.com/en/wine/five-roses/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vino.com: Salento IGT Five Roses Anniversario",
+       "url": "https://www.vino.com/dettaglio/salento-igt-five-roses-anniversario-leone-de-castris-2025.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.serve",
+     "was": "8 to 10 degrees Celsius;",
+     "now": "10 to 12 degrees Celsius;",
+     "why": "The house's 2025 sheet gives 10 to 12 degrees, as does vino.com's listing.",
+     "sources": [
+      {
+       "title": "Leone de Castris: Five Roses, the wine",
+       "url": "https://www.leonedecastris.com/en/wine/five-roses/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vino.com: Salento IGT Five Roses Anniversario",
+       "url": "https://www.vino.com/dettaglio/salento-igt-five-roses-anniversario-leone-de-castris-2025.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means",
+     "was": "The house's name for its rosé since 1943, after a family property, as it tells it.",
+     "now": "The house's name for its rosé since 1943, after a local district called Cinque Rose, as it tells it.",
+     "why": "The house's Five Roses page derives the name from a local quarter and from the family's five children; the Drinks Business and Wine with Seth give Cinque Rose as the place.",
+     "sources": [
+      {
+       "title": "Leone de Castris: Five Roses, its story",
+       "url": "https://www.leonedecastris.com/en/company/five-roses/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: Leone de Castris celebrates 80 years of Italian rosé",
+       "url": "https://www.thedrinksbusiness.com/2023/04/leone-de-castris-celebrates-80-years-of-italian-rose/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Five Roses comes from a family property, so called, the house says, because for several generations each de Castris had five children.",
+     "now": "Five Roses, the house says, takes its name from Cinque Rose, a local district, and from the five children each de Castris had for several generations.",
+     "why": "The house gives the two reasons side by side, not the one as the cause of the other.",
+     "sources": [
+      {
+       "title": "Leone de Castris: Five Roses, its story",
+       "url": "https://www.leonedecastris.com/en/company/five-roses/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: Leone de Castris celebrates 80 years of Italian rosé",
+       "url": "https://www.thedrinksbusiness.com/2023/04/leone-de-castris-celebrates-80-years-of-italian-rose/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and others[0].note",
+     "was": "added Five Roses Anniversario from older vines; First made in 1993 for the fiftieth anniversary, from older vines of Negroamaro and Malvasia Nera.",
+     "now": "added Five Roses Anniversario, from a selection of the grapes; First made in 1993 for the fiftieth anniversary of Five Roses, from a selection of the grapes.",
+     "why": "Older vines are in no source of the refuter's; vino.com describes a careful selection of the grapes, and 1993 for the fiftieth anniversary is on Vino Salentu beside the author's two merchants.",
+     "sources": [
+      {
+       "title": "Vino.com: Salento IGT Five Roses Anniversario",
+       "url": "https://www.vino.com/dettaglio/salento-igt-five-roses-anniversario-leone-de-castris-2025.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vino Salentu: Five Roses Anniversario",
+       "url": "https://www.vinosalentu.be/products/five-roses",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "Negroamaro with a little Malvasia Nera.",
+     "now": "Negroamaro with about a tenth of Malvasia Nera.",
+     "why": "Falstaff, Vias Imports with its Vinous note, and Xtrawine give Negroamaro 90 and Malvasia Nera 10.",
+     "sources": [
+      {
+       "title": "Vias Imports: Donna Lisa Salice Salentino Riserva DOC",
+       "url": "https://viaswine.com/products/donna-lisa-salice-salentino-riserva-doc/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Leone de Castris Donna Lisa Salice Salentino Riserva DOC",
+       "url": "https://www.falstaff.com/en/wines/leone-de-castris-donna-lisa-negroamaro-salice-salentino-riserva-doc",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "Superiore.de: Leone de Castris, 360 years from the Salento",
+     "now": "The Drinks Business: Leone de Castris celebrates 80 years of Italian rosé",
+     "why": "An independent press account of 1943, Poletti and the name, in place of a merchant's page, now that the name rests on it.",
+     "sources": [
+      {
+       "title": "The Drinks Business: Leone de Castris celebrates 80 years of Italian rosé",
+       "url": "https://www.thedrinksbusiness.com/2023/04/leone-de-castris-celebrates-80-years-of-italian-rose/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The share of Malvasia Nera in Five Roses: a tenth on the house's page, a fifth on two merchants; the record keeps a little, as the house gives it.",
+    "Charles Poletti's dates (1903 to 2002) and his governorship of December 1942 are the author's (Wikipedia, the National Governors Association); no search was spent on them and nothing read contradicts them."
+   ]
+  },
+  {
+   "key": "taurino",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The pharmacist who gave up his career against his family's wishes and returned to Guagnano: the house's origins page: confirmed as the house's account.",
+    "Notarpanaro, bottled in 1970 as the first wine, named for the contrada once called Notare Panaro after a notary: the house's pages; the founding in 1970: Kensington Wine Market beside the author's Skurnik: confirmed, reworded.",
+    "The first Patriglione, 1975: the house's Patriglione page (prima annata 1975) and the Veronelli reprint: confirmed. The oenologist: the house and the Veronelli reprint name Severino Garofano; the meeting is 1974 in one page and 1975 in another, so no year is given to it.",
+    "The death in 1999: the Veronelli reprint (after Cosimo's death in 1999 the family leads the house) beside the author's Skurnik: confirmed; no birth year found.",
+    "The grapes: the house's page gives Negroamaro alone; two merchants and most listings give 90 and 10 with Malvasia Nera for older vintages such as the 2006: added.",
+    "The making: the house's Patriglione page (late harvest, some 30 per cent of the grapes left to dry on vines of about eighty years) and its vineyards page (several years in small French oak, then glass lined tanks): corrected; the end of October is in no source.",
+    "Salento IGP on the label and the old alberello vines: the house and the Salento Wine Shop: confirmed. The house rules: nobody living named (the family of today unnamed), no price, no score (the Vitae Quattro Viti read and not used), nothing volatile, no judging superlative, British, no dash. The cards and questions: the density question's Amarone distractor is the plausible near miss and is explained; the profession question's four careers are of one kind."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Negroamaro alone, by the house's present sheet, from old bush vines.",
+     "now": "Negroamaro alone by the house's present sheet; older vintages, the 2006 among them, held about a tenth of Malvasia Nera.",
+     "why": "Enogastronomie di Puglia and Vinodoo give Negroamaro 90 and Malvasia Nera 10 for the 2006, and most listings agree, while the house's page gives Negroamaro alone; the old bush vines stay in the sites.",
+     "sources": [
+      {
+       "title": "Enogastronomie di Puglia: Patriglione 2006",
+       "url": "http://www.enogastronomiedipuglia.com/l-enoteca/rossi/37-cosimo-taurino-patriglione-2006-uvaggio-negroamaro-90,-malvasia-n.-10",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinodoo: Cosimo Taurino, Patriglione 2006",
+       "url": "https://www.vinodoo.com/it/products/cosimo-taurino-patriglione-2006-bottiglia-750-ml",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cantine Cosimo Taurino: Patriglione",
+       "url": "https://www.taurinovini.it/vini/patriglione/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked late, towards the end of October, after some of the bunches have been left to shrivel on the vine, the grapes are fermented and the wine is aged in small French oak barrels, then rests in glass lined tanks before bottling, by the house's account.",
+     "now": "The grapes are picked late, after some of the bunches, about three tenths of the crop by the house's account, have been left to shrivel on the vine. The wine is then aged for several years, first in small French oak barrels and then in glass lined tanks, before bottling.",
+     "why": "The house's Patriglione page gives the late harvest and some 30 per cent of the grapes dried on the vine; its vineyards page gives several years, first in small French oak, then in glass lined tanks; the end of October is in no source of the refuter's.",
+     "sources": [
+      {
+       "title": "Cantine Cosimo Taurino: Patriglione",
+       "url": "https://www.taurinovini.it/vini/patriglione/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cantine Cosimo Taurino: the vineyards",
+       "url": "https://www.taurinovini.it/vigneti/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and the house counts that bottling as the start of its life as a wine estate. In 1975, after meeting the oenologist with whom he would work, he made what the house calls a great wager on the old bush vines of the Patriglione district:",
+     "now": "and the house's first wine in bottle, and the winery's founding is dated to that year. After meeting the oenologist with whom he would work, he turned to the old bush vines of the Patriglione district:",
+     "why": "The house gives Notarpanaro as its first bottled wine and Kensington Wine Market and Skurnik date the founding to 1970; the meeting is 1974 in one of the house's pages and 1975 in the Veronelli reprint, so no year is given to it; the great wager is in no summary the refuter read. The first Patriglione stays the 1975.",
+     "sources": [
+      {
+       "title": "Cantine Cosimo Taurino: origins",
+       "url": "https://www.taurinovini.it/origini/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Kensington Wine Market: Cosimo Taurino Patriglione",
+       "url": "https://kensingtonwinemarket.com/product/795996/cosimo-taurino-patriglione",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Veronelli guide 2021, reprinted by the house",
+       "url": "https://www.taurinovini.it/wp-content/uploads/2020/12/guida_veronelli_2021_taurino_cosimo.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "Late, towards the end of October, after some bunches have shrivelled on the old bush vines.",
+     "now": "Late, after some of the bunches have been left to shrivel on vines some eighty years old.",
+     "why": "No source for the month; the house gives vines of about eighty years. The front is unchanged.",
+     "sources": [
+      {
+       "title": "Cantine Cosimo Taurino: Patriglione",
+       "url": "https://www.taurinovini.it/vini/patriglione/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The house picks its old bush vine Negroamaro late, towards the end of October, after some bunches have shrivelled on the vine;",
+     "now": "The house picks its old bush vine Negroamaro late, after some bunches have shrivelled on the vine;",
+     "why": "The same want of a source for the month.",
+     "sources": [
+      {
+       "title": "Cantine Cosimo Taurino: Patriglione",
+       "url": "https://www.taurinovini.it/vini/patriglione/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Cosimo Taurino's birth year is in no source read; he keeps his death of 1999.",
+    "A 1977 Patriglione Riserva is listed by Fine Liquors as Brindisi DOC: older vintages may have carried a DOC before the Salento IGT; not added for want of a second source.",
+    "The legend of a forgotten cask of 1974 (Skurnik alone, by the author's reading) stays out of the record."
+   ]
+  },
+  {
+   "key": "polvanera",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The cellar cut some eight metres into the limestone and the manor of 1820: the house's cellar and manor pages: confirmed.",
+    "The name: the house's English manor page (charcoal made in the manor's rooms by a family nicknamed for black dust, the name evoking the dark colour of Primitivo) and its Italian page (the dark soils and the charcoal): corrected, without iron rich.",
+    "The founder trained at the Basile Caramia school of Locorotondo, drawing on his father's experience, and the farm set up in 2003 on the Italian page against 2002 elsewhere: confirmed as the early 2000s; founded left empty, which stands.",
+    "The 16: WoodWinters, Seidivino and vino.com (bush vines of about seventy years at San Benedetto, Acquaviva delle Fonti, on red iron rich soil over limestone; picked by hand into crates in early September; 24 months in steel and a year in bottle; no wood): confirmed as written. The 17 from Montevella: the house's shop: confirmed.",
+    "The Gioia del Colle DOC of 1987 and the priest Indellicati in the second half of the eighteenth century: two references each: confirmed.",
+    "The others: Polvanera 21 a sweet passito of Primitivo labelled Puglia IGT (the house's page and a Swiss merchant): set right; the Minutolo Valle d'Itria IGT on Falstaff and Bottle of Italy, Puglia IGT on older listings: set right.",
+    "The house rules: nobody living named (the founder and his father met and not named), no price (shop prices read and not used), no score (Gambero Rosso's glasses read and not used), nothing volatile, no judging superlative, British, no dash. The cards and questions: the ageing question's four vessels are of one kind with one key; the name question's three false origins (volcanic ash, slate, coal dust) are plausible and the explanation teaches the Murge's limestone."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "the house ties it to the dark, iron rich soils around it and to the charcoal once made there; its manor house dates from 1820.",
+     "now": "the house ties it to the dark soils around it and to the charcoal once made in the manor house, which dates from 1820.",
+     "why": "The house's manor page has charcoal made in the manor's rooms by a family nicknamed for black dust, and its Italian page the dark soils; iron rich is said of the San Benedetto soil, not of the name.",
+     "sources": [
+      {
+       "title": "Cantine Polvanera: the manor",
+       "url": "https://www.cantinepolvanera.it/en/the-manor/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cantine Polvanera: the cellar",
+       "url": "https://cantinepolvanera.it/en/the-cellar/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "rather than on Manduria's coastal sand",
+     "now": "rather than on the plain near the Ionian coast around Manduria",
+     "why": "The house's Es sheet and the group's own Es record put Manduria's Primitivo on red earth; sand is only part of that zone, and the plain near the Ionian coast is what the trap already teaches.",
+     "sources": [
+      {
+       "title": "Gianfranco Fino: Es technical sheet",
+       "url": "https://www.gianfrancofino.it/wp-content/uploads/2024/04/scheda-es-EN.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cantine Polvanera: the manor",
+       "url": "https://www.cantinepolvanera.it/en/the-manor/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[0] and questions[1].exp",
+     "was": "Dark, iron rich soils and the charcoal once made there",
+     "now": "Dark soils and the charcoal once made in its manor",
+     "why": "The same correction as the story.",
+     "sources": [
+      {
+       "title": "Cantine Polvanera: the manor",
+       "url": "https://www.cantinepolvanera.it/en/the-manor/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "A passito red of dried Primitivo grapes, labelled Puglia IGT.",
+     "now": "A sweet passito red of Primitivo, labelled Puglia IGT.",
+     "why": "The house's page names it Rosso IGT Puglia Passito, and Wineshop IT lists it as a Primitivo Dolce of Primitivo alone.",
+     "sources": [
+      {
+       "title": "Cantine Polvanera: Polvanera 21",
+       "url": "https://cantinepolvanera.it/en/vino/polvanera-21-rosso-igt-puglia-passito-organic/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wineshop IT: Primitivo Dolce Polvanera 21",
+       "url": "https://wineshopit.ch/en/primitivo-dolce-polvanera-21-bio-P5580.htm",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2].note",
+     "was": "A white of the Minutolo grape, labelled Valle d'Itria IGT.",
+     "now": "A white of the Minutolo grape, labelled Valle d'Itria IGT, and Puglia IGT in earlier vintages.",
+     "why": "Falstaff (2021 and 2022) and Bottle of Italy (2024) give Valle d'Itria IGT; Wineshop IT and an older tasting note give Puglia IGT.",
+     "sources": [
+      {
+       "title": "Falstaff: Polvanera 2022 Minutolo Valle d'Itria IGT",
+       "url": "https://www.falstaff.com/en/wines/polvanera-2022-minutolo-valle-ditria-igt",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bottle of Italy: Minutolo Valle d'Itria IGT, Polvanera",
+       "url": "https://bottleofitaly.com/en/products/minutolo-valle-d-itria-igt-polvanera",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "What the number means: the 16 is labelled 16 per cent in every listing read and the 17 at 16.5 in later vintages, so no source settles whether the number names the alcohol; the record says only that it is not a vintage.",
+    "Which bottling the house leads with, the 16 or the 17: no source names a flagship; the pick stands under the thin region rule."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Gianfranco Fino",
+   "where": "the house's pages, Wine Spectator and Civiltà del bere, as the founder of 2004",
+   "believed": "living; the house carries his name; not in people.json, for the read-together agent (once listed, any source address that spells the name with a separator, such as Wine Spectator's, would be refused, so this fragment cites none)",
+   "inFragment": false
+  },
+  {
+   "name": "Simona Fino",
+   "where": "the house's pages, as the founder's wife and partner; Simona Natale in the author's reading",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Carlo de Corato",
+   "where": "Rivera's pages, the Istituto Grandi Marchi and Wine with Seth, as the founder's son who brought new ideas to vineyard and cellar",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Sebastiano de Corato",
+   "where": "Wine with Seth, as Carlo de Corato's son of the third generation; also the name of the founder of the late 1940s",
+   "believed": "the grandson living; not in people.json, for the read-together agent (the founder, undated, is not named in the fragment either)",
+   "inFragment": false
+  },
+  {
+   "name": "Marco de Corato",
+   "where": "Wine with Seth, as Carlo de Corato's son",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Filippo Cassano",
+   "where": "Polvanera's manor page, as the oenologist who founded the house",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Vincenzo Cassano",
+   "where": "Polvanera's manor page, as the founder's father",
+   "believed": "not settled; not in people.json, for the read-together agent to judge",
+   "inFragment": false
+  },
+  {
+   "name": "Stefano Garofano",
+   "where": "the author's reading, as a child of the oenologist of Patriglione",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Renata Garofano",
+   "where": "the author's reading, as a child of the oenologist of Patriglione",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  }
+ ],
+ "livingNote": "Met and believed dead, so not for people.json: Cosimo Taurino (died 1999, the house keeping his name), Severino Garofano (died in October 2018 on one source of the author's, described in the fragment and not named), Piero and Lisetta Leone de Castris (the couple who began bottling in 1925, undated, described and not named), the duke Oronzo of the Counts of Lemos (1665), Charles Poletti (1903 to 2002), Frederick II (1194 to 1250), Giuseppe de Corato (the patriarch, born in the middle of the nineteenth century, not named) and Filippo Indellicati (the priest of the eighteenth century, not named). No living person is named in the fragment; the lint's people check passes.",
+ "swaps": [],
+ "swapNote": "The author proposed no swap, and the refuter proposes none. Polvanera, the thin pick, stands: a real house of the Gioia del Colle DOC that makes the wine, whose cellar, manor, founder, vineyards and making now rest on its own pages and two merchants, and which the region record already names; no source calls the 16 its flagship, and the record treats it as the wine the house is known by. Cantine San Marzano's Sessantanni stays the plan's alternative and was not tested.",
+ "planNotes": [
+  "gianfranco-fino: the why calls Es the Primitivo di Manduria; its later vintages are Salento IGT (the house's sheet, Caratello) and its early ones Primitivo di Manduria DOC, so the why wants a word for the read-together agent. The note is answered: the house is named and the founder never in prose.",
+  "rivera: the note is answered: the seat at Andria (the house's pages) and the label Il Falcone Rosso Castel del Monte Riserva DOCG for vintages since 2011 (Superiore.de's 2019 listing, the house's sheets), a Riserva of the Castel del Monte DOC before. The why's house of 1950 holds as the library's year beside the house's late 1940s.",
+  "leone-de-castris: the note is answered: 1665 and 1943 are the house's own dates, with the Drinks Business and merchants beside them, and the first bottled rosato is hedged as the house's claim throughout.",
+  "taurino: the note is answered: the first Patriglione is the 1975 (the house's page, the Veronelli reprint) and Cosimo Taurino keeps his death of 1999 alone. The why's began as a forgotten cask of the 1970s rests on Skurnik alone and is not in the record; the read-together agent may set the why right.",
+  "polvanera: the note is answered in part: the 16 is labelled Gioia del Colle DOC Primitivo 16 Vigneto San Benedetto on merchants' listings and Polvanera 16 by the house, so the plan's words stand in the name; neither the 16 nor the 17 is called the flagship in any source, and the number's meaning is unsettled."
+ ],
+ "codexInTension": [
+  {
+   "record": "WINE_PRODUCERS p-gianfranco-fino, sub and wines[0].note",
+   "holds": "sub: Primitivo di Manduria DOC; the Es note: the bottling that redefined what Primitivo di Manduria could command",
+   "found": "Later vintages of Es are labelled Salento IGT, so the sub zone holds for the early vintages only; could command speaks of price. Borne out from the author's report by the refuter's own search.",
+   "sources": [
+    {
+     "title": "Gianfranco Fino: Es technical sheet",
+     "url": "https://www.gianfrancofino.it/wp-content/uploads/2024/04/scheda-es-EN.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Caratello: Es Primitivo Salento IGT 2022",
+     "url": "https://www.caratello.ch/it/es-primitivo-salento-igt-00242702",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "REGIONS puglia, producers line for p-gianfranco-fino",
+   "holds": "whose Es ... is the region's most sought after red",
+   "found": "Sought after is a word of rank the tab refuses; the flagship record says what Es is instead.",
+   "sources": [
+    {
+     "title": "Wine Spectator: Primitivo, the Fino Way",
+     "url": "https://www.winespectator.com/articles/gianfranco-fino-primitivo-italy",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gianfranco Fino: Es technical sheet",
+     "url": "https://www.gianfrancofino.it/wp-content/uploads/2024/04/scheda-es-EN.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": ".scripts/regions/fragments/italy.3.json, puglia producers line for Taurino",
+   "holds": "whose Patriglione ... became an early cult red of the Salento",
+   "found": "Cult is a word of rank the tab refuses; the flagship record says the wine the house is known by. Borne out from the author's report.",
+   "sources": [
+    {
+     "title": "Cantine Cosimo Taurino: Patriglione",
+     "url": "https://www.taurinovini.it/vini/patriglione/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Veronelli guide 2021, reprinted by the house",
+     "url": "https://www.taurinovini.it/wp-content/uploads/2020/12/guida_veronelli_2021_taurino_cosimo.pdf",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "REGIONS puglia, producers line for Leone de Castris",
+   "holds": "the Salice Salentino estate founded in 1665 that bottled Italy's first rosato, Five Roses, in 1943",
+   "found": "The first bottled rosato is the house's claim, which the flagship record hedges; the line states it as fact.",
+   "sources": [
+    {
+     "title": "Leone de Castris: Five Roses, its story",
+     "url": "https://www.leonedecastris.com/en/company/five-roses/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The Drinks Business: Leone de Castris celebrates 80 years of Italian rosé",
+     "url": "https://www.thedrinksbusiness.com/2023/04/leone-de-castris-celebrates-80-years-of-italian-rose/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "codexNote": "The four entries are reported for the owner and not edited. The author's tension over p-rivera's founded 1950 against the house's late 1940s was tested and stands as the author left it: the record keeps the library's year and tells both. Wave one's records were not touched."
+}
