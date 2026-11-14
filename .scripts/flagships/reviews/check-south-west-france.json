@@ -1,0 +1,1247 @@
+{
+ "group": "south-west-france",
+ "chunk": "w2",
+ "batch": "A",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "chateau-du-cedre": 6,
+   "chateau-montus": 7,
+   "cauhape": 5,
+   "tirecul-la-graviere": 4,
+   "plageoles": 5
+  },
+  "note": "Twenty seven searches of a share of twenty eight, one left unspent, none of them the author's. Nine were restricted to a house's own domain (chateauducedre.com twice, brumont.fr twice, jurancon-cauhape.com twice, tirecul-la-graviere.fr, vins-plageoles.com) or to the INAO (inao.gouv.fr, the six first appellations) and are read as primary through their summaries; the other eighteen went to the open web for the second source of a date, a person, a decree or a method, two of them to the ministry's and the INAO's cahiers through their summaries. No WebFetch was tried. Every record was tested; no fact that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own pages for their own dates and methods, then to the appellation texts (the Cahors wine body, the INAO, the ministry's cahiers for Madiran, Jurançon and Gaillac), then to the open web for the second source of each date, person and method.",
+  "Where a house's sheet and later accounts disagree on a method (Montus's barrels since 2017, Le Cèdre's casks by vintage) the record gives the house's figure as its sheet's and the later change without a figure; where two accounts disagree on who or when (the Plageoles organic turn) the record gives neither.",
+  "Sources whose title or address names a living person (iDealwine's Le Cèdre Blanc listings carrying the brothers' names, the Guide Hachette's page for the Plageoles company, a vertical tasting on the Montus site under a critic's name, a wine wiki on a writer's own site) were read in the results but never cited here; the fragment's own sources were left as the author wrote them, save two replaced (Sud Ouest France by Vinous for Montus, a merchant's sheet by the ministry's cahier for Cauhapé)."
+ ],
+ "records": [
+  {
+   "key": "chateau-du-cedre",
+   "searches": 6,
+   "tested": [
+    "The history (1958, the lavender, 1973, 1987): the estate's history page through search and Vintage and Vine; the couple, the first hectare beside the lavender, the first bottling of 1973 while still distilling, confirmed; the sons came home in 1987 when the father fell ill: changed.",
+    "The frost of February 1956, the replanting with more Côt and the decree of 15 April 1971: the Cahors wine body's own document and Decanter: confirmed.",
+    "The ground: limestone scree cones and the Mindel terraces of old Lot alluvium, on the estate's terroir and GC pages: confirmed.",
+    "The making: the estate's Le Cèdre sheet (native yeasts, 24 months in 57 hectolitre casks and 500 litre barrels) against merchants' sheets for 2020 and 2018: the length made about two years.",
+    "GC: fermented and aged in new 500 litre barrels, on two estate pages: changed from twenty eight months.",
+    "The white: Le Cèdre Blanc, Viognier, IGP Côtes du Lot in three listings: the trap changed.",
+    "The questions: one key each, the distractors of one kind; the explanation of the wine question reworded. The house rules: nobody living named (the sons and the couple described), no price, no score, nothing volatile, no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "then aged twenty four months in large oak casks",
+     "now": "then aged about two years in large oak casks",
+     "why": "Le Cèdre's time in cask varies by vintage: the estate's sheet gives 24 months in 57 hectolitre casks and 500 litre barrels, a merchant's sheet for the 2020 gives 24 months in foudres, half of them new, and another for the 2018 gives 26 months in large oak and older barriques; so about two years, with the estate's vessels.",
+     "sources": [
+      {
+       "title": "Château du Cèdre: Le Cèdre, AOC Cahors",
+       "url": "https://www.chateauducedre.com/en/cuvee/le-cedre-2",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Les Passionnés du Vin: Château du Cèdre, Le Cèdre 2020",
+       "url": "https://en.lespassionnesduvin.com/chateau-du-cedre-cahors-le-cedre-2020.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Buzz Wines: Château du Cèdre Le Cèdre 2018",
+       "url": "https://buzzwines.com/products/chateau-du-cedre-le-cedre-cahors-2018",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1987, when the work grew too hard for the father, the couple's two sons came home to the estate, and within fifteen years, as the estate tells it, they had made its name.",
+     "now": "In 1987, when the father fell ill, the couple's two sons came home to take the estate on, and in the years that followed they made its name.",
+     "why": "The estate's history gives the father's illness, diagnosed in 1987, as the reason his two sons came home and took the estate on, not the work growing hard; the span of their rise is fifteen years in the author's reading and about ten on a tourism page, so no span is said.",
+     "sources": [
+      {
+       "title": "Château du Cèdre: History",
+       "url": "https://www.chateauducedre.com/en/domain/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vintage and Vine: Château du Cèdre producer page",
+       "url": "https://www.vintageandvine.com/producers/south-west-france/chateau-du-cedre",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Visit Occitanie: Château du Cèdre",
+       "url": "https://www.visit-occitanie.com/en/fiche/degustation/chateau-du-cedre-vire-sur-lot_TFODEGMID046FS0001D",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others.1.note",
+     "was": "A selection of Malbec aged twenty eight months entirely in new 500 litre barrels.",
+     "now": "A selection of Malbec fermented and aged in new 500 litre barrels, for two years and more.",
+     "why": "The estate's own GC pages give fermentation in open new 500 litre casks and, for the 2012, 24 months in new casks; the author's twenty eight months is one vintage's figure, so two years and more.",
+     "sources": [
+      {
+       "title": "Château du Cèdre: GC Cahors 2012",
+       "url": "https://chateauducedre.com/?GC-Cahors-2012=",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château du Cèdre shop: GC",
+       "url": "https://boutique.chateauducedre.com/cuvee/gc",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.0.exp",
+     "was": "Le Cèdre is pure Malbec, aged twenty four months in large casks and 500 litre barrels; Merlot and Tannat go only into the château wine.",
+     "now": "Le Cèdre is pure Malbec, aged about two years in large oak casks and 500 litre barrels; Merlot and Tannat belong to the château wine, not to Le Cèdre.",
+     "why": "The explanation follows the making (about two years, as above); Merlot and Tannat are in the château wine and in no source read for Le Cèdre.",
+     "sources": [
+      {
+       "title": "Château du Cèdre: Le Cèdre, AOC Cahors",
+       "url": "https://www.chateauducedre.com/en/cuvee/le-cedre-2",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Les Passionnés du Vin: Château du Cèdre, Le Cèdre 2020",
+       "url": "https://en.lespassionnesduvin.com/chateau-du-cedre-cahors-le-cedre-2020.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps.2",
+     "was": "Cahors is red only, so the estate's white wines go out under other names, such as Vin de France or IGP Côtes du Lot.",
+     "now": "Cahors is red only, so the estate's white, Le Cèdre Blanc of Viognier, goes out as IGP Côtes du Lot.",
+     "why": "Le Cèdre Blanc, the estate's white of Viognier, is IGP Côtes du Lot in iDealwine's, Vivino's and the Guide Hachette's listings; no white of the estate labelled Vin de France was found.",
+     "sources": [
+      {
+       "title": "iDealwine: Château du Cèdre white, IGP Côtes du Lot",
+       "url": "https://www.idealwine.com/en/wine-prices/138209-2018-Bottle-South-West-IGP-Cotes-du-Lot-Chateau-du-Cedre-white",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Guide Hachette: Château du Cèdre, Le Cèdre Blanc 2023",
+       "url": "https://www.hachette-vins.com/guide-vins/les-vins/ch-du-cedre-le-cedre-blanc-2023-2026/202692887/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vivino: Château du Cèdre Le Cèdre Blanc",
+       "url": "https://www.vivino.com/fr/cedre-le-cedre-blanc/w/1763799",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The work growing too hard for the father, replaced by the illness the estate gives.",
+    "Within fifteen years, the span of the sons' rise (fifteen and about ten in two readings).",
+    "Vin de France as a name for the estate's whites."
+   ],
+   "open": [
+    "The massal selection grafted by hand on limestone scree in 1958 rests on the estate's history alone, as the author read it; it is the estate's account of its own vineyard and is hedged so.",
+    "Cèdre Héritage's sixteen months in concrete rest on the author's reading of the estate's page; the refuter's searches did not reach that page.",
+    "Le Cèdre's vessels vary by vintage (half new foudres for the 2020, two thirds large oak for the 2018); the record gives the estate's present sheet, 57 hectolitre casks and 500 litre barrels."
+   ],
+   "extraSources": [
+    {
+     "title": "Château du Cèdre: Terroir",
+     "url": "https://www.chateauducedre.com/en/domain/terroir",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vins de Cahors: 1971, the AOC",
+     "url": "https://vindecahors.fr/wp-content/uploads/2021/01/10_.-1971-AOC.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: the different shades of Cahors",
+     "url": "https://www.decanter.com/premium/the-different-shades-of-cahors-the-regions-malbec-rebirth-and-12-recommendations-567578",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "chateau-montus",
+   "searches": 7,
+   "tested": [
+    "Madiran by the decree of 10 July 1948, with Tannat its principal grape: the INAO's delimitation file and the cahier through search: confirmed.",
+    "The purchase of 1980 and the family estate of Bouscassé: Tastingbook and Clos des Spiritueux (1980), one source giving 1979 for the inheritance of Bouscassé: confirmed as told.",
+    "The first Prestige with the 1985, Tannat alone in new oak: the estate's presentation page, Tastingbook and Vinous: confirmed.",
+    "The blind tasting: two searches found none; the estate's own words kept.",
+    "The making: the estate's Prestige sheet (14 to 16 months in new barrels) against an importer, a critic and a Gers paper (foudres from the 2017 vintage): changed.",
+    "XL and Rouge: the estate's pages (XL 36 to 40 months in 600 litre demi-muids; Rouge Tannat with Cabernet Sauvignon, 12 to 14 months with much new oak by a merchant): XL changed, Rouge confirmed.",
+    "The slopes: large rounded pebbles over clay from the Pyrenees, red orange clays, in two merchants' sheets: confirmed.",
+    "The questions: Aydie and Laffitte-Teston are real Madiran estates, plausible and wrong; the house rules held, the buyer described, never named."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Macerated for three to six weeks and fermented in wooden vats; the wine is then aged fourteen to sixteen months entirely in new oak barrels before it is bottled.",
+     "now": "Macerated for three to six weeks and fermented in wooden vats, then raised in new oak barrels, fourteen to sixteen months by the estate's sheet. From the 2017 vintage, by an importer's and a critic's accounts, a further spell of years in large oak casks follows the barrels.",
+     "why": "The estate's Prestige sheet gives 14 to 16 months in new barrels, but an importer and a critic report that from the 2017 vintage the pure Tannat wines, the Prestige among them, go on to years in large foudres after their new barriques, and a Gers paper reports the first foudres installed at Montus in September 2018; the record gives the estate's figure as its sheet's and the later spell without a figure, since the sources give 14 to 16 months, 18 to 24 months or two years for the barrels.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus Prestige",
+       "url": "https://www.brumont.fr/en/wine/12/montus-prestige",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+       "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Le Journal du Gers: a new concept for the next forty years of Château Montus",
+       "url": "https://lejournaldugers.fr/article/29491-nouveau-concept-pour-les-quarante-ans-a-venir-du-chateau-montus.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label.1.means",
+     "was": "The estate's selection of its parcels, Tannat alone, raised entirely in new oak.",
+     "now": "The estate's selection of its parcels, Tannat alone, raised first in new oak barrels.",
+     "why": "The estate's Prestige sheet gives 14 to 16 months in new barrels, but an importer and a critic report that from the 2017 vintage the pure Tannat wines, the Prestige among them, go on to years in large foudres after their new barriques, and a Gers paper reports the first foudres installed at Montus in September 2018; the record gives the estate's figure as its sheet's and the later spell without a figure, since the sources give 14 to 16 months, 18 to 24 months or two years for the barrels.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus Prestige",
+       "url": "https://www.brumont.fr/en/wine/12/montus-prestige",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+       "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Le Journal du Gers: a new concept for the next forty years of Château Montus",
+       "url": "https://lejournaldugers.fr/article/29491-nouveau-concept-pour-les-quarante-ans-a-venir-du-chateau-montus.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "raised fourteen to sixteen months in new oak barrels.",
+     "now": "raised in new oak barrels and, from the 2017 vintage, in large casks after them.",
+     "why": "The estate's Prestige sheet gives 14 to 16 months in new barrels, but an importer and a critic report that from the 2017 vintage the pure Tannat wines, the Prestige among them, go on to years in large foudres after their new barriques, and a Gers paper reports the first foudres installed at Montus in September 2018; the record gives the estate's figure as its sheet's and the later spell without a figure, since the sources give 14 to 16 months, 18 to 24 months or two years for the barrels.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus Prestige",
+       "url": "https://www.brumont.fr/en/wine/12/montus-prestige",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+       "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Le Journal du Gers: a new concept for the next forty years of Château Montus",
+       "url": "https://lejournaldugers.fr/article/29491-nouveau-concept-pour-les-quarante-ans-a-venir-du-chateau-montus.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "at a time when Madiran was little known beyond its own country. Poured blind soon after beside classed growths of Bordeaux, the 1985 held its own, as the story is usually told, and the name of Madiran travelled with it.",
+     "now": "at a time when Madiran was little known outside the South West. The estate tells how it made waves when it did better than many famous French wines at tastings, and the name of Madiran travelled with it.",
+     "why": "No source the refuter read tells of a blind tasting of the 1985 beside Bordeaux classed growths, and the author's three tellings disagreed on its year and its rank; the estate's own presentation says the Prestige made waves when it did better than many of France's famous wines at tastings, so the record keeps that, as the estate's. Little known beyond its own country could be read as beyond France; the library speaks of local obscurity.",
+     "sources": [
+      {
+       "title": "Vignobles Brumont: Presentation",
+       "url": "https://www.brumont.fr/en/presentation",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Tastingbook: Château Montus",
+       "url": "https://tastingbook.com/p/chateau_montus",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and the Montus range came to hold Montus XL, kept far longer in barrel.",
+     "now": "and the Montus range came to hold Montus XL, kept three years and more in barrel; from the 2017 vintage the pure Tannat wines also spent years in large casks after their new barrels.",
+     "why": "XL is 36 to 40 months in 600 litre demi-muids by the estate's own pages; with the foudre spell from the 2017 vintage the Prestige may now spend as long in wood, so far longer than the Prestige is cut.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus XL",
+       "url": "https://www.brumont.fr/en/wine/13/montus-xl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Montus: Montus XL sheet",
+       "url": "https://www.brumont.fr/pdf/vin/34/en/montus-xl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others.1.note",
+     "was": "Tannat alone held about three years and more in barrel, far longer than the Prestige.",
+     "now": "Tannat alone, held three years and more in 600 litre demi-muids, by the estate's sheet.",
+     "why": "XL is 36 to 40 months in 600 litre demi-muids by the estate's own pages; with the foudre spell from the 2017 vintage the Prestige may now spend as long in wood, so far longer than the Prestige is cut.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus XL",
+       "url": "https://www.brumont.fr/en/wine/13/montus-xl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Montus: Montus XL sheet",
+       "url": "https://www.brumont.fr/pdf/vin/34/en/montus-xl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps.1",
+     "was": "Montus Prestige is the selection raised fourteen to sixteen months in new oak; Montus XL is a separate cuvée held far longer, and Montus Rouge adds Cabernet Sauvignon.",
+     "now": "Montus Prestige and Montus XL are separate cuvées of Tannat alone, XL held three years and more in demi-muids; Montus Rouge adds Cabernet Sauvignon.",
+     "why": "XL is 36 to 40 months in 600 litre demi-muids by the estate's own pages; with the foudre spell from the 2017 vintage the Prestige may now spend as long in wood, so far longer than the Prestige is cut.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus XL",
+       "url": "https://www.brumont.fr/en/wine/13/montus-xl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Montus: Montus XL sheet",
+       "url": "https://www.brumont.fr/pdf/vin/34/en/montus-xl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.0.back",
+     "was": "Tannat alone, fourteen to sixteen months entirely in new oak barrels after fermentation in wooden vats.",
+     "now": "Tannat alone, fermented in wooden vats and raised in new oak barrels, with years in large casks after them from the 2017 vintage.",
+     "why": "The estate's Prestige sheet gives 14 to 16 months in new barrels, but an importer and a critic report that from the 2017 vintage the pure Tannat wines, the Prestige among them, go on to years in large foudres after their new barriques, and a Gers paper reports the first foudres installed at Montus in September 2018; the record gives the estate's figure as its sheet's and the later spell without a figure, since the sources give 14 to 16 months, 18 to 24 months or two years for the barrels.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus Prestige",
+       "url": "https://www.brumont.fr/en/wine/12/montus-prestige",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+       "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Le Journal du Gers: a new concept for the next forty years of Château Montus",
+       "url": "https://lejournaldugers.fr/article/29491-nouveau-concept-pour-les-quarante-ans-a-venir-du-chateau-montus.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.0.exp",
+     "was": "aged fourteen to sixteen months in new oak;",
+     "now": "raised in new oak barrels;",
+     "why": "The estate's Prestige sheet gives 14 to 16 months in new barrels, but an importer and a critic report that from the 2017 vintage the pure Tannat wines, the Prestige among them, go on to years in large foudres after their new barriques, and a Gers paper reports the first foudres installed at Montus in September 2018; the record gives the estate's figure as its sheet's and the later spell without a figure, since the sources give 14 to 16 months, 18 to 24 months or two years for the barrels.",
+     "sources": [
+      {
+       "title": "Château Montus: Montus Prestige",
+       "url": "https://www.brumont.fr/en/wine/12/montus-prestige",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Regal Wine Imports: Château Montus",
+       "url": "https://www.regalwine.com/?p=46489",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+       "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Le Journal du Gers: a new concept for the next forty years of Château Montus",
+       "url": "https://lejournaldugers.fr/article/29491-nouveau-concept-pour-les-quarante-ans-a-venir-du-chateau-montus.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.3",
+     "was": "Sud Ouest France: the cathedral of Tannat at Madiran",
+     "now": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+     "why": "Sud Ouest France supported the first Madiran of Tannat alone in new oak beside the estate's page; Vinous gives the same (the Prestige debuted in 1985 as the first Madiran made solely from Tannat and aged in new oak) and the foudre spell since 2017 as well, so it takes the place within the cap of five.",
+     "sources": [
+      {
+       "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+       "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vignobles Brumont: Presentation",
+       "url": "https://www.brumont.fr/en/presentation",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The blind tasting of the 1985 beside Bordeaux classed growths, soon after, as the story is usually told.",
+    "Far longer than the Prestige, for XL."
+   ],
+   "open": [
+    "The Prestige's months in new barrels since the change of 2017: 14 to 16 on the estate's sheet, 18 to 24 by an importer, two years by a Gers paper; whether the estate's sheet predates the change is not settled.",
+    "iDealwine says the Prestige cuvée was given up in 2004; the estate's present range and merchants' 2011, 2017 and 2018 bottles contradict it, and the record makes no claim either way.",
+    "One producer history says the 1985 came from two hectares of two year old vines and did not then meet the appellation's rules; one source only and not used, but it bears on the old vines of the plan's why and the library's records."
+   ],
+   "extraSources": [
+    {
+     "title": "INAO: Madiran, Pacherenc du Vic-Bilh and Béarn, the delimitation file",
+     "url": "https://extranet.inao.gouv.fr/fichier/CPAOV-2017-404-MadiranPacherencVicBilhBearnDelim12Com.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Clos des Spiritueux: Château Montus 2017",
+     "url": "https://closdesspiritueux.com/madiran-chateau-montus-2017.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Château Montus: Montus Rouge",
+     "url": "https://www.brumont.fr/en/wine/15/montus-rouge",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "cauhape",
+   "searches": 5,
+   "tested": [
+    "Quintessence: the estate's sheet through search, picked in the second half of December in three or four passes, fermented in new barrels, about two years: confirmed.",
+    "The founding in 1980 by a self taught grower, the land called Caussapé in 1558: Vintage and Vine, Cirkwi and the estate: confirmed.",
+    "Jurançon's decree of 8 December 1936 and Jurançon Sec of 1975: the ministry's cahier and two secondary accounts: confirmed; the cahier of 2011 makes the dry wine Jurançon with the mention sec: the label, a trap, a card and an explanation changed.",
+    "Chant des Vignes and Symphonie de Novembre: the estate's sheets: notes changed.",
+    "The questions: one key each; the house rules held, the grower described, never named."
+   ],
+   "changed": [
+    {
+     "field": "wine.label.0.means",
+     "was": "The appellation for the sweet wines, recognised in 1936; the dry wine is the separate Jurançon Sec, of 1975.",
+     "now": "The appellation, recognised for its sweet wines in 1936; dry wines, recognised as Jurançon Sec in 1975, add the word sec.",
+     "why": "Under the cahier homologated by the decree of 23 November 2011 the dry wine is the appellation Jurançon followed by the mention sec, not a separate appellation; it was recognised apart as Jurançon Sec in 1975 by two secondary accounts, and the appellation's first decree is of 8 December 1936.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus glossary: Jurançon",
+       "url": "https://glossary.wein-plus.eu/jurancon",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Château Monty: Jurançon and Jurançon Sec AOC",
+       "url": "https://chateaumonty.com/jurancon-jurancon-sec-aoc",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps.1",
+     "was": "Jurançon is the sweet appellation and Jurançon Sec the dry one: two appellations, recognised in 1936 and 1975.",
+     "now": "Jurançon Sec was recognised apart in 1975, but under the rules of 2011 it is the appellation Jurançon with the word sec; Jurançon alone is the sweet wine.",
+     "why": "Under the cahier homologated by the decree of 23 November 2011 the dry wine is the appellation Jurançon followed by the mention sec, not a separate appellation; it was recognised apart as Jurançon Sec in 1975 by two secondary accounts, and the appellation's first decree is of 8 December 1936.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus glossary: Jurançon",
+       "url": "https://glossary.wein-plus.eu/jurancon",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Château Monty: Jurançon and Jurançon Sec AOC",
+       "url": "https://chateaumonty.com/jurancon-jurancon-sec-aoc",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.front",
+     "was": "Which years mark the two Jurançon appellations, sweet and dry, that Cauhapé makes?",
+     "now": "Domaine Cauhapé makes Jurançon sweet and dry: when were the sweet wines and Jurançon Sec first recognised?",
+     "why": "Under the cahier homologated by the decree of 23 November 2011 the dry wine is the appellation Jurançon followed by the mention sec, not a separate appellation; it was recognised apart as Jurançon Sec in 1975 by two secondary accounts, and the appellation's first decree is of 8 December 1936.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus glossary: Jurançon",
+       "url": "https://glossary.wein-plus.eu/jurancon",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Château Monty: Jurançon and Jurançon Sec AOC",
+       "url": "https://chateaumonty.com/jurancon-jurancon-sec-aoc",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.back",
+     "was": "1936 for Jurançon, the sweet wines, and 1975 for Jurançon Sec, the dry.",
+     "now": "1936 for the sweet wines and 1975 for Jurançon Sec, which the rules of 2011 make Jurançon with the word sec.",
+     "why": "Under the cahier homologated by the decree of 23 November 2011 the dry wine is the appellation Jurançon followed by the mention sec, not a separate appellation; it was recognised apart as Jurançon Sec in 1975 by two secondary accounts, and the appellation's first decree is of 8 December 1936.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus glossary: Jurançon",
+       "url": "https://glossary.wein-plus.eu/jurancon",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Château Monty: Jurançon and Jurançon Sec AOC",
+       "url": "https://chateaumonty.com/jurancon-jurancon-sec-aoc",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1.exp",
+     "was": "Jurançon's sweet wines were recognised in 1936; 1975 is the year of Jurançon Sec, the dry appellation of the same hills.",
+     "now": "Jurançon's sweet wines were recognised by the decree of 8 December 1936; 1975 is the year the dry Jurançon Sec was first recognised.",
+     "why": "Under the cahier homologated by the decree of 23 November 2011 the dry wine is the appellation Jurançon followed by the mention sec, not a separate appellation; it was recognised apart as Jurançon Sec in 1975 by two secondary accounts, and the appellation's first decree is of 8 December 1936.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wein.plus glossary: Jurançon",
+       "url": "https://glossary.wein-plus.eu/jurancon",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Château Monty: Jurançon and Jurançon Sec AOC",
+       "url": "https://chateaumonty.com/jurancon-jurancon-sec-aoc",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others.0.note",
+     "was": "A dry Jurançon Sec, showing the appellation's other face.",
+     "now": "A Jurançon Sec of Gros Manseng with Camaralet, a rare local grape: the appellation's dry face.",
+     "why": "The estate's sheet gives Chant des Vignes as Gros Manseng with Camaralet; the author had left its grape out for want of a source, and the estate calls Camaralet one of its rare grapes.",
+     "sources": [
+      {
+       "title": "Domaine Cauhapé: Chant des Vignes",
+       "url": "https://www.jurancon-cauhape.com/en/the-wines/dry-jurancons/chant-des-vignes",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others.1.note",
+     "was": "A sweet Jurançon of Petit Manseng in the house's range, made apart from Quintessence.",
+     "now": "A sweet Jurançon of Petit Manseng picked in early November, weeks before Quintessence, and raised partly in barrel.",
+     "why": "The estate's sheet gives Symphonie de Novembre as Petit Manseng picked in the first ten days of November, with ten months in barrel and six in tank; made apart from Quintessence told nothing.",
+     "sources": [
+      {
+       "title": "Domaine Cauhapé: Symphonie de Novembre",
+       "url": "https://www.jurancon-cauhape.com/en/the-wines/sweet-jurancons/symphonie-de-novembre",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.4",
+     "was": "Buzz Wines: Cauhapé Quintessence du Petit Manseng 2010",
+     "now": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+     "why": "The ministry's cahier is the primary text for the Jurançon rules the record now teaches; the merchant's sheet only repeated the December picking, which the estate's own sheet carries.",
+     "sources": [
+      {
+       "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+       "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Cauhapé: Quintessence du Petit Manseng",
+       "url": "https://www.jurancon-cauhape.com/les-vins/quintessence-du-petit-manseng",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Two appellations, for Jurançon and Jurançon Sec today."
+   ],
+   "open": [
+    "Whether Quintessence's label carries Vendanges Tardives, which the cahier allows for grapes picked from 2 November, was not read.",
+    "Jurançon alone as the sweet wine rests on the INAO's framing of the appellation; the cahier's sugar floor for a Jurançon with no mention was not read."
+   ],
+   "extraSources": [
+    {
+     "title": "Vintage and Vine: Domaine Cauhapé producer page",
+     "url": "https://vintageandvine.com/producers/south-west-france/domaine-cauhape",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cirkwi: Domaine Cauhapé",
+     "url": "https://www.cirkwi.com/en/point-interet/860971-domaine-cauhape",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "tirecul-la-graviere",
+   "searches": 4,
+   "tested": [
+    "The lease of 1992 and the purchase five years on: Clos des Millésimes and the estate's Renewal page: confirmed (one Swedish retailer gives 1991).",
+    "The organic farming from 2009 and certified from 2012: the estate and Clos des Millésimes: confirmed.",
+    "Monbazillac among the six first appellations of 15 May 1936, with Arbois, Cassis, Châteauneuf-du-Pape, Cognac and Tavel: the INAO's own pages: confirmed.",
+    "The grapes: about three fifths Muscadelle with Sémillon for 2015 and 2001: confirmed. The parcels at the foot of the slope and the first day of each pick: the estate's 2005 notes: confirmed as the estate's.",
+    "The oak: French oak, about 24 months (30 for the 2009), no share of new wood in any source the refuter read: new taken out.",
+    "The questions: one key each, the distractors of one kind; the house rules held, the couple described, never named."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Their first vintages were praised, and in 1997 they bought the estate",
+     "now": "Their first vintages were praised, as the estate tells it, and in 1997, five years on, they bought the estate",
+     "why": "The praise of the first vintages rests on the estate's Renewal page alone, so it is hedged as the estate's; the purchase five years after the lease of 1992 is in the estate's account and Clos des Millésimes's.",
+     "sources": [
+      {
+       "title": "Château Tirecul La Gravière: Renewal",
+       "url": "https://tirecul-la-graviere.fr/en/renewal",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Les Pins 2020",
+       "url": "https://www.closdesspiritueux.com/32242-clos-des-millesimes-castillo-tirecul-la-graviere---les-pins-2020.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "It is fermented in new French oak barrels",
+     "now": "It is fermented in French oak barrels",
+     "why": "No source the refuter read gives new oak for Cuvée Madame: Clos des Millésimes gives fermentation in French oak barrels and about 24 months in French oak for the 2015 and the 2001, and 30 months for the 2009, with no share of new wood; the author's two notes keep the length, not the newness.",
+     "sources": [
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2015",
+       "url": "https://www.closdesspiritueux.com/32244-clos-des-millesimes-chateau-tirecul-la-graviere---cuvee-madame-2015.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2001",
+       "url": "https://closdesspiritueux.com/26571-monbazillac-chateau-tirecul-la-graviere---cuvee-madame-2001-en.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2009",
+       "url": "https://closdesspiritueux.com/16943-monbazillac-chateau-tirecul-la-graviere---cuvee-madame-2009-en.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "raised two years in new oak.",
+     "now": "raised two years in oak barrels.",
+     "why": "No source the refuter read gives new oak for Cuvée Madame: Clos des Millésimes gives fermentation in French oak barrels and about 24 months in French oak for the 2015 and the 2001, and 30 months for the 2009, with no share of new wood; the author's two notes keep the length, not the newness.",
+     "sources": [
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2015",
+       "url": "https://www.closdesspiritueux.com/32244-clos-des-millesimes-chateau-tirecul-la-graviere---cuvee-madame-2015.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2001",
+       "url": "https://closdesspiritueux.com/26571-monbazillac-chateau-tirecul-la-graviere---cuvee-madame-2001-en.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2009",
+       "url": "https://closdesspiritueux.com/16943-monbazillac-chateau-tirecul-la-graviere---cuvee-madame-2009-en.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "raised two years and more in new oak.",
+     "now": "raised two years and more in oak barrels.",
+     "why": "No source the refuter read gives new oak for Cuvée Madame: Clos des Millésimes gives fermentation in French oak barrels and about 24 months in French oak for the 2015 and the 2001, and 30 months for the 2009, with no share of new wood; the author's two notes keep the length, not the newness.",
+     "sources": [
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2015",
+       "url": "https://www.closdesspiritueux.com/32244-clos-des-millesimes-chateau-tirecul-la-graviere---cuvee-madame-2015.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2001",
+       "url": "https://closdesspiritueux.com/26571-monbazillac-chateau-tirecul-la-graviere---cuvee-madame-2001-en.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Tirecul La Gravière Cuvée Madame 2009",
+       "url": "https://closdesspiritueux.com/16943-monbazillac-chateau-tirecul-la-graviere---cuvee-madame-2009-en.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "New, for Cuvée Madame's French oak."
+   ],
+   "open": [
+    "Whether Cuvée Madame's barrels are new: two merchants' notes by the author's reading, none of the refuter's; the record now says French oak.",
+    "Cuvée Madame from the first day of each pick is the estate's account of its 2005; whether it holds every year was not read."
+   ],
+   "extraSources": [
+    {
+     "title": "INAO: France's first six appellations d'origine contrôlée",
+     "url": "https://www.inao.gouv.fr/en/expo-90ans/9-six-premieres-aoc",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Tirecul La Gravière: The Liquoreux 2005",
+     "url": "https://tirecul-la-graviere.fr/en/the-liquoreux-2005",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "plageoles",
+   "searches": 5,
+   "tested": [
+    "Mauzac Nature: the estate's sheet (Mauzac Rose, clay and limestone, gobelet, direct pressing, a day's settling, native yeast, a filtration at about 30 grams of sugar, bottled after two months, bubbles over about three): the making changed; the sites confirmed.",
+    "The ancestral method, also called méthode gaillacoise, one fermentation with no sugar added: two importers and the estate: confirmed.",
+    "Gaillac's decrees: the cahier gives 21 March 1938 for the whites and 23 October 1970 for the reds and rosés; no court ruling of 1922 found: changed.",
+    "The grapes brought back: iDealwine (Mauzac, Ondenc, Verdanel, Duras, Prunelart saved; Marcel began with Duras in 1970; the grandson's father planted widely from 1983), a guide's list: Len de l'El taken out of the lost.",
+    "The family since 1805: the estate and an importer (seven generations), another importer 1850: kept as the estate's, open.",
+    "The organic farming and the generations: the estate's own sheet (all vines organic), three accounts in disagreement on who and when: undated.",
+    "The questions: one key each; the house rules held, nobody of the family named."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "The grapes are pressed straight away, the juice settled for a day and fermented with its own yeasts. It is bottled after about two months, before the fermentation is over, and finishes in bottle, which makes the bubbles: one fermentation, with no sugar and no liqueur de tirage added, leaving a little sweetness.",
+     "now": "The grapes are pressed straight away, the juice settled for a day and fermented with its own yeasts. When some thirty grams of sugar remain, a filtration slows the fermentation; after two months the wine is bottled and finishes fermenting there, the bubbles forming over about three months, with no sugar or liqueur de tirage added and a little sweetness left.",
+     "why": "The estate's sheet: direct pressing, 24 hours' settling, native yeast, a sleeve filtration when about 30 grams of sugar remain to slow the fermentation, bottling after two months, the bubbles forming about three months after, 5 to 10 grams of sugar left; the record had the bottling without the filtration.",
+     "sources": [
+      {
+       "title": "Domaine Plageoles: Mauzac Nature",
+       "url": "https://www.vins-plageoles.com/nos-vins/mauzac-nature",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label.0.means",
+     "was": "The appellation of the Tarn whose decree of 1938 set rules for sparkling wine by the ancestral method.",
+     "now": "The appellation of the Tarn, its whites recognised in 1938; its rules allow sparkling wine by the ancestral method.",
+     "why": "The cahier recognises Gaillac by the decrees of 21 March 1938 for the whites and 23 October 1970 for the reds and rosés; no source read says the 1938 decree set rules for the ancestral method, which the cahier holds as the mention méthode ancestrale.",
+     "sources": [
+      {
+       "title": "INAO: cahier des charges de l'AOP Gaillac",
+       "url": "https://extranet.inao.gouv.fr/fichier/2-CDC-AOP-Gaillac-2025.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Gaillac's whites were recognised in law by a court ruling of 1922, and the decree of 1938 set the rules for its dry whites and for its two kinds of sparkling wine:",
+     "now": "Gaillac's white wines were recognised as an appellation by the decrees of 21 March 1938, its reds and rosés in 1970, and its rules allow two kinds of sparkling wine:",
+     "why": "No source read gives a court ruling of 1922 for Gaillac; the decrees are the cahier's own, 21 March 1938 for the whites and 23 October 1970 for the reds and rosés.",
+     "sources": [
+      {
+       "title": "INAO: cahier des charges de l'AOP Gaillac",
+       "url": "https://extranet.inao.gouv.fr/fichier/2-CDC-AOP-Gaillac-2025.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "After phylloxera the vineyard had been replanted mainly with Mauzac for its whites, and many old local grapes were lost.",
+     "now": "Many of Gaillac's old local grapes had all but vanished in the nineteenth century.",
+     "why": "No source read says the vineyard was replanted mainly with Mauzac after phylloxera; iDealwine says most of the historic grapes had disappeared in the nineteenth century, and the library calls Ondenc and Prunelart near extinct.",
+     "sources": [
+      {
+       "title": "iDealwine: Domaine Plageoles, la renaissance de l'appellation Gaillac",
+       "url": "https://www.idealwine.net/domaine-plageoles-la-renaissance-de-lappellation-gaillac/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Ondenc, Prunelart, Verdanel and Len de l'El came back to their own ground, and the domaine grows fourteen historic grapes of Gaillac, seven of them of the Mauzac family, beside a collection kept to save them. The next generation took the vines to organic farming, and the one after it has followed.",
+     "now": "Ondenc, Prunelart and Verdanel among them came back to their own ground. The estate went on to farm all its vines organically, and a younger generation of the family has since taken up the work.",
+     "why": "Len de l'El is in one guide's list of grapes the family replanted but no source names it among the lost, while iDealwine names Mauzac, Ondenc, Verdanel, Duras and Prunelart as the grapes saved. The fourteen grapes rest on one guide and the seven of the Mauzac family and the collection on none read, so they are cut. The organic turn is credited to the son by one account and to the early 1990s by another (Ecocert from 2007 by a third), so it is undated and unattributed; the estate's own sheet says all its vines are farmed organically, and two accounts have the grandsons running the domaine.",
+     "sources": [
+      {
+       "title": "iDealwine: Domaine Plageoles, la renaissance de l'appellation Gaillac",
+       "url": "https://www.idealwine.net/domaine-plageoles-la-renaissance-de-lappellation-gaillac/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vvanat: Domaine Plageoles and its Vin de Voile",
+       "url": "https://vvanat.fr/blog/vin-de-voile-plageoles/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Plageoles: Mauzac Vert sheet",
+       "url": "https://www.vins-plageoles.com/app/download/5583634009/m-vert.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "International Fine Wines: Domaine Plageoles",
+       "url": "https://www.internationalfinewines.com.au/blogs/latest-releases/plageoles",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and Mauzac, a grape the appellation says is grown only at Gaillac and Limoux.",
+     "now": "and Mauzac, the old white grape of Gaillac and of Limoux.",
+     "why": "No text read says the appellation holds Mauzac grown only at Gaillac and Limoux; the narrower line is the library's own trap (Mauzac is the Gaillac and Limoux grape).",
+     "sources": []
+    },
+    {
+     "field": "cards.1.back",
+     "was": "Ondenc, Prunelart, Verdanel and Len de l'El among others; by its own account it has worked its Gaillac vines since 1805.",
+     "now": "Ondenc, Prunelart and Verdanel among others; by its own account it has worked its Gaillac vines since 1805.",
+     "why": "Len de l'El is in one guide's list of grapes the family replanted but no source names it among the lost, while iDealwine names Mauzac, Ondenc, Verdanel, Duras and Prunelart as the grapes saved. The fourteen grapes rest on one guide and the seven of the Mauzac family and the collection on none read, so they are cut. The organic turn is credited to the son by one account and to the early 1990s by another (Ecocert from 2007 by a third), so it is undated and unattributed; the estate's own sheet says all its vines are farmed organically, and two accounts have the grandsons running the domaine.",
+     "sources": [
+      {
+       "title": "iDealwine: Domaine Plageoles, la renaissance de l'appellation Gaillac",
+       "url": "https://www.idealwine.net/domaine-plageoles-la-renaissance-de-lappellation-gaillac/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vvanat: Domaine Plageoles and its Vin de Voile",
+       "url": "https://vvanat.fr/blog/vin-de-voile-plageoles/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Plageoles: Mauzac Vert sheet",
+       "url": "https://www.vins-plageoles.com/app/download/5583634009/m-vert.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "International Fine Wines: Domaine Plageoles",
+       "url": "https://www.internationalfinewines.com.au/blogs/latest-releases/plageoles",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The court ruling of 1922.",
+    "The decree of 1938 setting rules for the sparkling wines.",
+    "The replanting mainly with Mauzac after phylloxera.",
+    "Len de l'El among the lost grapes.",
+    "Fourteen historic grapes, seven of them of the Mauzac family, and a collection kept to save them.",
+    "The next generation and the one after it, for the organic turn.",
+    "That the appellation says Mauzac grows only at Gaillac and Limoux."
+   ],
+   "open": [
+    "Founded 1805 is the estate's account and an importer's (seven generations since 1805); another importer gives 1850 for the start of the wine making; kept as the estate's.",
+    "Who turned the estate to organic farming, and when, is not settled.",
+    "Whether the label prints méthode gaillacoise or méthode ancestrale was not read; the estate calls its making rurale or gaillacoise."
+   ],
+   "extraSources": [
+    {
+     "title": "Les Caves de Pyrene blog: Plageoles, tradition and its origins",
+     "url": "https://blog.lescaves.co.uk/?p=5727",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Pascal Verhaeghe and Jean-Marc Verhaeghe",
+   "where": "the estate's history page and merchants' profiles, as the two sons who came home in 1987 and took Château du Cèdre on",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Jules Verhaeghe and Robin Verhaeghe",
+   "where": "the author's report, as the next generation at Château du Cèdre; not met in the refuter's searches",
+   "believed": "living by the author; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Charles Verhaeghe and Marie-Thérèse Rives",
+   "where": "the estate's history page, as the couple who planted the first hectare in 1958 and bottled in 1973; the father fell ill in 1987",
+   "believed": "not settled; no dates in any source read; described, never named",
+   "inFragment": false
+  },
+  {
+   "name": "Alain Brumont",
+   "where": "every Montus source, as the buyer of 1980; his surname is the family company's (Vignobles Brumont) and the estate's domain",
+   "believed": "living; not in people.json, for the read-together agent; the domain kept as the house's own",
+   "inFragment": false
+  },
+  {
+   "name": "Yohan Castaing",
+   "where": "a page title on the Montus site, a vertical tasting of La Tyre and Prestige",
+   "believed": "living; a writer; not cited, not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Henri Ramonteu",
+   "where": "Vintage and Vine, Cirkwi and the estate, as the founder of Domaine Cauhapé in 1980; also in the library's holdings line",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Bruno Bilancini and Claudie Bilancini",
+   "where": "Clos des Millésimes and a Swedish retailer, as the couple who leased Tirecul in 1992; also in the library's holdings line",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Robert Plageoles",
+   "where": "iDealwine and the guides, as the grower who led the search for the old Gaillac grapes",
+   "believed": "not settled; described, never named",
+   "inFragment": false
+  },
+  {
+   "name": "Bernard Plageoles and Myriam Plageoles",
+   "where": "Vvanat and importers, as the parents of the present generation; one account has the father retiring after the 2015 vintage",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Florent Plageoles and Romain Plageoles",
+   "where": "Vvanat, Raisin and importers, as the seventh generation who run the domaine",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Léon Verhaeghe",
+   "note": "A Flemish ancestor who settled in the South West in the early 1900s (1914 in another account), by merchants; no dates of his life read; not named."
+  },
+  {
+   "name": "Marcel Plageoles",
+   "note": "The grandfather who began replanting Duras in 1970 by iDealwine; no dates in any source read; not named."
+  },
+  {
+   "name": "Jules, François and Émile Plageoles",
+   "note": "The earlier generations in one profile of the lineage; no dates read; not named."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "chateau-du-cedre",
+   "ruling": "kept: no swap proposed; Le Cèdre is the wine the estate is known by in every source read and in the library."
+  },
+  {
+   "pick": "chateau-montus",
+   "ruling": "kept: no swap proposed; the plan's note asks the present label: the estate's own range lists Montus Prestige, Montus XL and Montus Rouge as three wines, so the Prestige stands and XL goes in others. The old vines of the plan's why are not borne out (vines of about thirty years by merchants, two year old vines for the 1985 by one account), for the read-together agent."
+  },
+  {
+   "pick": "cauhape",
+   "ruling": "kept: no swap proposed; Quintessence is the estate's prestige sweet wine on its own pages."
+  },
+  {
+   "pick": "tirecul-la-graviere",
+   "ruling": "kept: no swap proposed; Cuvée Madame is the estate's selection on its own pages and every merchant's."
+  },
+  {
+   "pick": "plageoles",
+   "ruling": "kept: no swap proposed; Mauzac Nature is on the estate's own range and teaches the ancestral method; the plan's note asks the label Gaillac Mauzac Nature: the sheet gives AOP Gaillac and the name Mauzac Nature."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-dom-cauhape: traps",
+   "says": "Jurançon is sweet and Jurançon Sec is dry: they are two separate appellations",
+   "against": "Under the cahier homologated by the decree of 23 November 2011 the dry wine is the appellation Jurançon with the mention sec; Jurançon Sec was a separate appellation from 1975. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Ministère de l'Agriculture: cahier des charges de l'AOC Jurançon",
+     "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-acde35d1-4b35-46b2-8632-c2e7e07405a4/telechargement",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-dom-cauhape: holdings",
+   "says": "Steep terraces in the foothills of the Pyrenees at Monein, built up by Henri Ramonteu",
+   "against": "The holdings line names a living grower; the estate's Quintessence sheet gives a narrow, steep valley facing south on clay and silica rather than terraces, as the author reported. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Domaine Cauhapé: Quintessence du Petit Manseng",
+     "url": "https://www.jurancon-cauhape.com/les-vins/quintessence-du-petit-manseng",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-dom-cauhape: wines (Chant des Vignes)",
+   "says": "Gros Manseng",
+   "against": "The estate's sheet gives Gros Manseng with Camaralet. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Domaine Cauhapé: Chant des Vignes",
+     "url": "https://www.jurancon-cauhape.com/en/the-wines/dry-jurancons/chant-des-vignes",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-ch-montus: wines and w-montus-cuvee-prestige: holdings and note",
+   "says": "Old-vine Tannat in new oak; Old Tannat on the gravel hillsides",
+   "against": "Merchants give vines of about thirty years for the Prestige and one producer history two year old vines for the first vintage of 1985; and from the 2017 vintage the pure Tannat wines go on to years in large foudres after the new barrels (an importer, a critic, a Gers paper). Reported, not edited.",
+   "sources": [
+    {
+     "title": "Clos des Spiritueux: Château Montus Prestige 2011",
+     "url": "https://closdesspiritueux.com/25913-clos-des-millesimes-chateau-montus---prestige-2011.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Regal Wine Imports: Château Montus",
+     "url": "https://www.regalwine.com/?p=46489",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinous: 2019 Château Montus and Bouscassé, a première glance",
+     "url": "https://vinous.com/articles/2019-chateau-montus-and-bouscasse-a-premiere-glance-apr-2024",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-ch-montus: holdings",
+   "says": "Gravel and clay hillsides bought by Alain Brumont from 1980",
+   "against": "The holdings line names a living grower; the soil is told by the sources as large rounded pebbles over clay. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Clos des Spiritueux: Château Montus 2017",
+     "url": "https://closdesspiritueux.com/madiran-chateau-montus-2017.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-ch-tirecul-la-graviere: holdings",
+   "says": "North-facing slopes above the Dordogne at Monbazillac, worked by Claudie and Bruno Bilancini",
+   "against": "The estate's notes put Cuvée Madame chiefly on the clay and limestone parcels at the foot of the slopes and the parcels facing due north under its dry white; the line also names two living growers. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Château Tirecul La Gravière: The Liquoreux 2005",
+     "url": "https://tirecul-la-graviere.fr/en/the-liquoreux-2005",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-ch-du-cedre: holdings",
+   "says": "worked by the Verhaeghe brothers",
+   "against": "The line names two living growers by their surname. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Château du Cèdre: History",
+     "url": "https://www.chateauducedre.com/en/domain/history",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-dom-plageoles: wines (Mauzac Nature)",
+   "says": "Mauzac",
+   "against": "The estate's sheet gives Mauzac Rose alone, a strain of Mauzac, as the author reported. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Domaine Plageoles: Mauzac Nature",
+     "url": "https://www.vins-plageoles.com/nos-vins/mauzac-nature",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
