@@ -330,23 +330,26 @@
    {"key":"quartz-reef","producer":"Quartz Reef","producerId":"","wine":"Quartz Reef Bendigo Estate Pinot Noir","why":"Bendigo estate on the warm slope of the Cromwell Basin, also known for its sparkling wine.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
   ]},
   {"key":"stellenbosch","title":"Stellenbosch","region":"stellenbosch","country":"south-africa","chunk":"f16","swaps":[],"picks":[
-   {"key":"kanonkop","producer":"Kanonkop","producerId":"p-kanonkop","wine":"Paul Sauer","why":"Simonsberg estate whose Paul Sauer, a Bordeaux blend first bottled in 1981, honours a cabinet minister of the family."},
-   {"key":"meerlust","producer":"Meerlust","producerId":"p-meerlust","wine":"Rubicon","why":"Estate of 1693 held by the Myburgh family since 1757; Rubicon, from 1980, was among the first Cape Bordeaux blends."},
-   {"key":"rustenberg","producer":"Rustenberg","producerId":"","wine":"John X Merriman","why":"Simonsberg farm of 1682; the blend honours the prime minister of the Cape who farmed it from 1892.","note":"Not in WINE_PRODUCERS: dates in two sources."},
-   {"key":"simonsig","producer":"Simonsig","producerId":"","wine":"Kaapse Vonkel","why":"Estate whose Kaapse Vonkel of 1971 was the Cape's first bottle fermented sparkling wine.","note":"Not in WINE_PRODUCERS: dates in two sources."},
-   {"key":"lanzerac","producer":"Lanzerac","producerId":"","wine":"Lanzerac Pinotage","why":"Estate whose 1959 vintage, labelled in 1961, was the first wine to name Pinotage.","note":"Not in WINE_PRODUCERS: dates in two sources."}
+   {"key":"kanonkop","producer":"Kanonkop","producerId":"p-kanonkop","wine":"Paul Sauer","why":"Simonsberg estate whose Paul Sauer, a Bordeaux blend first made in 1981, honours the cabinet minister who owned the farm."},
+   {"key":"meerlust","producer":"Meerlust","producerId":"p-meerlust","wine":"Rubicon","why":"Estate of 1693 held by the Myburgh family since 1756; Rubicon, from 1980, was among the first Cape Bordeaux blends."},
+   {"key":"rustenberg","producer":"Rustenberg","producerId":"","wine":"John X Merriman","why":"Simonsberg farm of 1682; the blend honours the Cape prime minister who farmed Schoongezicht, its other half, from 1892.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"simonsig","producer":"Simonsig","producerId":"","wine":"Kaapse Vonkel","why":"Estate whose Kaapse Vonkel, from the 1971 harvest, is the wine from which the Cape dates Cap Classique.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"lanzerac","producer":"Lanzerac","producerId":"","wine":"Lanzerac Pinotage","why":"Jonkershoek estate whose name was on the 1961 label of the first wine sold as Pinotage, the 1959 vintage.","note":"Not in WINE_PRODUCERS: dates in two sources."}
   ]},
-  {"key":"swartland","title":"The Swartland","region":"swartland","country":"south-africa","chunk":"f16","swaps":[],"picks":[
-   {"key":"sadie","producer":"Sadie Family Wines","producerId":"p-sadie-family","wine":"Columella","why":"Paardeberg estate of 1999 whose Columella, a Syrah led blend first made in 2000, led the Swartland revolution."},
+  {"key":"swartland","title":"The Swartland","region":"swartland","country":"south-africa","chunk":"f16","swaps":[
+   {"from":"badenhorst","to":"badenhorst","why":"the house sells the same white blend under its farm's name, Kalmoesfontein White Blend; house and key kept","agreed":true,"date":"2026-11-14"},
+   {"from":"allesverloren","to":"allesverloren","why":"from the 2020 vintage the estate labels its fortified red Cape Vintage, no longer Fine Old Vintage; house and key kept","agreed":true,"date":"2026-11-14"}
+  ],"picks":[
+   {"key":"sadie","producer":"Sadie Family Wines","producerId":"p-sadie-family","wine":"Columella","why":"Paardeberg house of 1999, a founder of the Swartland Revolution of 2010, whose Columella, a Syrah led blend, was first made in 2000."},
    {"key":"mullineux","producer":"Mullineux","producerId":"p-mullineux","wine":"Mullineux Schist Syrah","why":"Riebeek-Kasteel house of 2007 that bottles Syrah by soil: schist, granite and iron."},
-   {"key":"badenhorst","producer":"AA Badenhorst Family Wines","producerId":"","wine":"AA Badenhorst Family White Blend","why":"Kalmoesfontein farm on the Paardeberg whose old vine white blend is led by Chenin Blanc.","note":"Not in WINE_PRODUCERS: dates in two sources."},
-   {"key":"porseleinberg","producer":"Porseleinberg","producerId":"","wine":"Porseleinberg Syrah","why":"Schist estate on the Porseleinberg making whole bunch Syrah in concrete and large casks.","note":"Not in WINE_PRODUCERS: dates in two sources."},
-   {"key":"allesverloren","producer":"Allesverloren","producerId":"","wine":"Allesverloren Fine Old Vintage","why":"Riebeek West farm of 1704 whose name means all is lost, known for Portuguese grapes and fortified wine.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
+   {"key":"badenhorst","producer":"AA Badenhorst Family Wines","producerId":"","wine":"Kalmoesfontein White Blend","why":"Kalmoesfontein farm on the Paardeberg whose old vine white blend is led by Chenin Blanc.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"porseleinberg","producer":"Porseleinberg","producerId":"","wine":"Porseleinberg Syrah","why":"Schist ridge farm near Riebeek-Kasteel whose one wine, a Syrah, is made from whole bunches and matured mostly in large foudres.","note":"Not in WINE_PRODUCERS: dates in two sources."},
+   {"key":"allesverloren","producer":"Allesverloren","producerId":"","wine":"Allesverloren Cape Vintage","why":"Riebeek West farm named all is lost after a fire of 1704, as the story goes, known for Portuguese grapes and fortified wine.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
   ]},
   {"key":"mendoza","title":"Mendoza","region":"mendoza","country":"argentina","chunk":"f16","swaps":[],"picks":[
    {"key":"catena-zapata","producer":"Catena Zapata","producerId":"p-catena-zapata","wine":"Catena Zapata Adrianna Vineyard River Stones Malbec","why":"Family of 1902 that planted Adrianna in Gualtallary, high in the Uco Valley, in 1992."},
    {"key":"achaval-ferrer","producer":"Achaval-Ferrer","producerId":"p-achaval-ferrer","wine":"Finca Altamira","why":"Estate of 1998 whose Finca Altamira is old vine Malbec from La Consulta."},
-   {"key":"zuccardi","producer":"Familia Zuccardi","producerId":"p-zuccardi","wine":"Finca Piedra Infinita","why":"Family of 1963 whose Piedra Infinita winery of 2016 in Paraje Altamira works in concrete."},
+   {"key":"zuccardi","producer":"Familia Zuccardi","producerId":"p-zuccardi","wine":"Finca Piedra Infinita","why":"Family of 1963 whose Zuccardi Valle de Uco winery of 2016 in Paraje Altamira works in concrete."},
    {"key":"cheval-des-andes","producer":"Cheval des Andes","producerId":"w-cheval-des-andes","wine":"Cheval des Andes","why":"Luján de Cuyo estate of 1999, a joint venture of Château Cheval Blanc and Terrazas de los Andes."},
    {"key":"norton","producer":"Bodega Norton","producerId":"","wine":"Norton Privada","why":"Perdriel house of 1895 founded by the English engineer Edmund James Palmer Norton.","note":"Not in WINE_PRODUCERS: dates and the flagship in two sources."}
   ]},
