@@ -917,9 +917,17 @@ function v58Bare(s) {
   if (typeof v38Bare === 'function') { try { return v58Str(v38Bare(s)); } catch (e) { } }
   return v58Fold(s).replace(/ et(?= )/g, ' and').replace(/^(?:domaine|domaines|chateau|maison|weingut|bodega|bodegas|tenuta|cantina|quinta|champagne|famille|familia|familie) (?:(?:des|de la|de l|du|de|d) )?/, '').trim();
 }
+/* A house's name as the match below reads it: bare, a bracket left out, the initials before it and the words of
+   the trade after it taken off (F.E. Trimbach is Trimbach, La Rioja Alta S.A. is La Rioja Alta, Heitz Cellar is
+   Heitz). */
+function v58HouseName(s) {
+  return v58Bare(v58Str(s).replace(/\([^)]*\)/g, ' ')).replace(/^(?:[a-z] )+/, '').replace(/(?: (?:wines?|winery|vineyards?|estates?|cellars?|family|s a|sa|spa|srl))+$/, '').trim();
+}
 /* Whether a house wine's producer is the record's house: by codex38's own match to the library when the record
-   is a library producer and the house's name finds a library record; else by the bare name, the same or one the
-   start of the other on a whole word (Biondi Santi (Tenuta Greppo) is Biondi-Santi). */
+   is a library producer and the house's name finds a library record; else by the name as read above, the same,
+   or the record's name going on from the whole of the house's (R. Lopez de Heredia is R. Lopez de Heredia Vina
+   Tondonia; Biondi Santi (Tenuta Greppo) is Biondi-Santi). Never the other way about: a house's name that goes on
+   from the record's names another estate (Latour-Martillac is not Latour, Ferrari-Carano is not Ferrari). */
 function v58IsHouse(r, producer) {
   var p = v58Str(producer);
   if (!p || !r) return false;
@@ -929,9 +937,9 @@ function v58IsHouse(r, producer) {
     try { lib = v38Library([p, typeof v38ShortWho === 'function' ? v38ShortWho(p) : p]); } catch (e) { lib = null; }
     if (lib && lib.id) return lib.id === pid;
   }
-  var a = v58Bare(p.replace(/\([^)]*\)/g, ' ')), b = v58Bare(v58Str(r.producer));
+  var a = v58HouseName(p), b = v58HouseName(r.producer);
   if (!a || !b) return false;
-  return a === b || a.indexOf(b + ' ') === 0 || b.indexOf(a + ' ') === 0;
+  return a === b || b.indexOf(a + ' ') === 0;
 }
 /* The house's wines of a record's producer, in the list's own order, each { id, producer, wine }: the producer and
    the wine alone, never a price, a year, a bin or a note; a wine the list holds twice is one row, opening the

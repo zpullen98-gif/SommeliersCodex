@@ -26,7 +26,9 @@
  *      page with a group, its chip after Read, and on no other; Its flagship on every library producer page with a
  *      record, opening the house, and Back
  *   7. On Brennan's list, on the fixture house: every row a wine of the house by the record's producer, once, producer
- *      and wine alone, no price; a row opens the wine's card and Back returns to the house
+ *      and wine alone, no price; none left off (a producer the library joins, or whose name reads as the record's
+ *      house, its initials and the words of the trade taken off); the house's name read whole, never a longer name that
+ *      goes on from the record's; a row opens the wine's card and Back returns to the house
  *   8. study: the decks flagcards, flagcards:{group} and flagsdue; the card face; on seeded grades a card graded right
  *      due tomorrow, then in three days, one graded wrong due today, in the layer's own slot with every other slot
  *      untouched; the due deck, the learnt count, the deck screen and its end, the house's two cards with when each is
@@ -45,9 +47,9 @@
  *      (and V58_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-flagships.js [jsDir] [--partial]               every check above
- *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 34 faults in a scratch copy (29 with
- *                                                                       --partial, where no count and no grape is
- *                                                                       pinned), one at
+ *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 36 faults in a scratch copy (29 with
+ *                                                                       --partial, where no count, no grape and no
+ *                                                                       house is pinned), one at
  *                                                                       a time, and expects each caught by the check
  *                                                                       that names it (FLAGSHIPS_MUTATION=word|word
  *                                                                       runs only the ones whose names hold a word)
@@ -694,6 +696,14 @@ async function main() {
       }
     });
     check('every row of On ' + houseName + ' list a wine of the house by the record\'s own producer (every word of one name in the other), once, the producer over the wine, no price; ' + housesN + ' of ' + REC.length + ' houses pour ' + rowsN + ' wines', listBad.length === 0 && housesN > 0, few(listBad, 5));
+    /* none left off, by the gate's own reading of a house's name: codex38's bare name, a bracket left out, the initials
+       before it and the words of the trade after it taken off; a wine whose producer the library joins to the record's
+       own producer, or whose name so read is the record's, is on that record's list (F.E. Trimbach's wines on Trimbach's) */
+    const left = D.J('(function () { var name = function (s) { return String(v38Bare(String(s || "").replace(/\\([^)]*\\)/g, " ")) || "").replace(/^(?:[a-z] )+/, "").replace(/(?: (?:wines?|winery|vineyards?|estates?|cellars?|family|s a|sa|spa|srl))+$/, "").trim(); }; var wines = v28Wines(v53House()); var out = []; Object.keys(FLAGSHIPS).forEach(function (id) { var r = FLAGSHIPS[id]; var on = {}; v58HouseWines(r).forEach(function (x) { on[v58Fold(x.producer) + "|" + v58Fold(x.wine)] = 1; }); wines.forEach(function (w) { var p = v58Field(w, "producer"), wn = v58Field(w, "wine"); if (!p) return; var lib = null; if (/^p-/.test(r.producerId)) { try { lib = v38Library([p, v38ShortWho(p)]); } catch (e) { lib = null; } } if (lib && lib.id && lib.id !== r.producerId) return; if (!(lib && lib.id === r.producerId) && (!name(p) || name(p) !== name(r.producer))) return; if (!on[v58Fold(p) + "|" + v58Fold(wn)]) out.push(r.key + ": " + p + " / " + wn); }); }); return out; })()');
+    check('no wine of the house left off a record\'s list: every wine the library joins to the record\'s producer, or whose producer reads as the record\'s house (its initials and the words of the trade taken off), is drawn', left.length === 0, few(left, 5));
+    const named = D.J('(function () { var by = {}; Object.keys(FLAGSHIPS).forEach(function (id) { by[FLAGSHIPS[id].key] = FLAGSHIPS[id]; }); return ' + JSON.stringify([['trimbach', 'F.E. Trimbach', true], ['lopez-de-heredia', 'R. López de Heredia', true], ['la-rioja-alta', 'La Rioja Alta', true], ['biondi-santi', 'Biondi Santi (Tenuta Greppo)', true], ['latour', 'Château Latour-Martillac', false], ['ferrari', 'Ferrari-Carano', false], ['krug', 'Krugerhof', false]]) + '.filter(function (x) { return !!by[x[0]]; }).map(function (x) { return [x[0], x[1], x[2], v58IsHouse(by[x[0]], x[1])]; }); })()');
+    const namedBad = named.filter((x) => x[2] !== x[3]).map((x) => x[1] + (x[2] ? ' is ' : ' is not ') + x[0] + '\'s house');
+    check('the house\'s name read whole: F.E. Trimbach is Trimbach, R. López de Heredia and La Rioja Alta the records that go on from them, Biondi Santi (Tenuta Greppo) Biondi-Santi; never a longer name that goes on from the record\'s (Latour-Martillac is not Latour, Ferrari-Carano is not Ferrari)', (PARTIAL ? named.length > 0 : named.length === 7) && namedBad.length === 0, namedBad.join(' | '));
     if (firstHit) {
       const opened = D.J('(function () { v32Go({ view: "flagships", arg: "" }, "push"); v32Go({ view: "flagship", arg: ' + JSON.stringify(firstHit.r.id) + ' }, "push"); var n = history.length; var ok = V58_ACTS.wine({ getAttribute: function (k) { return k === "data-id" ? ' + JSON.stringify(firstHit.id) + ' : null; } }); var a = { ok: ok, view: S.view, open: v28State().open, pushed: history.length - n }; v32Back(); a.back = { view: S.view, arg: v32Arg("flagship") }; a.none = V58_ACTS.wine({ getAttribute: function () { return "w-00000000"; } }); return a; })()');
       check('a row opens that wine\'s card on the list (pushed) and Back returns to the house (' + firstHit.r.producer + '); a wine the house does not hold opens nothing', opened.ok === true && opened.view === 'cellar' && opened.open === firstHit.id && opened.pushed === 1 && opened.back.view === 'flagship' && opened.back.arg === firstHit.r.id && opened.none === false, JSON.stringify(opened));
@@ -944,7 +954,9 @@ function mutations() {
     ['grapes read past their first statement', 'js/codex58.js', "  var first = String(text == null ? '' : text).split(/;|\\.(?:\\s|$)/)[0];", "  var first = String(text == null ? '' : text);", 'In the Codex\'s grapes'],
     ['a denied grape given a door', 'js/codex58.js', "      if (v58Own(V58_DENY, words[i])) return;\n", '', 'In the Codex\'s grapes'],
     ['a crossing\'s parents given doors', 'js/codex58.js', "    if (words.some(function (w) { return v58Own(V58_PARENTS, w); })) return;\n", '', 'In the Codex\'s grapes'],
-    ['a grape read short of a longer name', 'js/codex58.js', "      if (hit && words[i + len] === 'of') hit = '';\n", '', 'In the Codex\'s grapes']
+    ['a grape read short of a longer name', 'js/codex58.js', "      if (hit && words[i + len] === 'of') hit = '';\n", '', 'In the Codex\'s grapes'],
+    ['the initials before a house\'s name kept', 'js/codex58.js', ".replace(/^(?:[a-z] )+/, '')", '', 'no wine of the house left off'],
+    ['a house\'s longer name taken for the record\'s', 'js/codex58.js', "  return a === b || b.indexOf(a + ' ') === 0;", "  return a === b || b.indexOf(a + ' ') === 0 || a.indexOf(b + ' ') === 0;", 'the house\'s name read whole']
   ]);
   const repoRoot = path.join(JS, '..');
   let held = 0;
