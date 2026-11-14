@@ -1,0 +1,1251 @@
+{
+ "group": "maipo",
+ "chunk": "f17",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 45,
+  "used": 33,
+  "perRecord": {
+   "concha-y-toro": 7,
+   "almaviva": 8,
+   "santa-rita": 8,
+   "cousino-macul": 4,
+   "vinedo-chadwick": 6
+  },
+  "shared": 0,
+  "note": "Thirty three searches of a share of forty five, twelve left unspent, none of them the author's. Fifteen were restricted to a primary domain (Viña Don Melchor twice, the company's filings twice, Almaviva five times, Santa Rita three times, the Consejo de Monumentos Nacionales, Cousiño Macul, and Viñedo Chadwick with Errázuriz once), and one to the importers' sheets of Viñedo Chadwick; three were spent in vain on the kultrun. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "Where a search contradicted the record it was set right with its source; where a detail stood on one page that is not the house speaking of itself, it was cut or said with less; the houses' own claims stay told as their accounts.",
+  "Critics' and writers' own sites met among the results are cited neither in the fragment nor here; the living met are listed below, described in the records, never named.",
+  "The serving temperatures follow the Codex's service reference: 16 to 18 degrees Celsius for all five full reds; no air is promised to soften tannin.",
+  "The edits were made in place by exact string replacement, keeping the author's layout, and linted sound with five records refuted."
+ ],
+ "records": [
+  {
+   "key": "concha-y-toro",
+   "searches": 7,
+   "tested": [
+    "The founder and his dates: born in Santiago on 10 October 1833 by the parliamentary library (1834 in the company's visitor guide), died 1892; lawyer, deputy and senator, minister of finance from 7 January 1869 to 2 August 1870 (BCN, Wikipedia). Sound, except Liberal, which no source read gave.",
+    "The founding: 1883 at Pirque on property owned by his wife, Emiliana Subercaseaux (the 20-F of 2010 and 2019, the house's history). Sound, worded as the filings say.",
+    "Bordeaux varieties and the French oenologist, M. de Labouchère, overseeing the planting and the first harvest: the company's 20-F. Sound as the company's account; its clause that the varieties came before phylloxera ruined France is cut.",
+    "1921 and 1933: the deed of incorporation of 31 December 1921 converting the family firm into a stock company with shares for every family member, those shares traded on the Santiago exchange from 1933 (20-F 2018 and 2019, annual report 2006; Wikipedia gives 1923 and a student essay 1921). Changed: the house did not leave family hands in 1921.",
+    "1984, Peynaud and the collaborator: Viña Don Melchor's timeline says Peynaud tasted a Puente Alto Cabernet in 1984 and proposed his collaborator to lead the project. Changed from samples taken to Bordeaux.",
+    "1987 first vintage, 1997 parcel by parcel, 2019 Viña Don Melchor of its own: the house's timeline and pages, a Concha y Toro presentation, The Peak, Wine Industry Advisor. Sound.",
+    "The vineyard: north bank of the Maipo at about 650 metres, seven main parcels of Cabernet, Parcel 1 the oldest, planted in 1979, own rooted massal selection (Viña Don Melchor's pages and sheets). Sound. Lots: 142 or 151 sub-parcels, more than a hundred, against the record's some two hundred. Changed.",
+    "Making: fifteen months in French oak, 72 per cent new in 2019 and 71 in 2020 (the house's sheets). Sound. DM/01 2022: 88 per cent Cabernet Sauvignon and 12 Cabernet Franc, mainly from Parcel 1. Others changed to mainly.",
+    "Label: D.O. Puente Alto on every sheet read. Sound. Glass, ageing and service: within the house's notes and the Codex's service reference (full red, 16 to 18). Cards and questions: one right answer each, distractors of one kind, the explanations teach. Rules: nobody living named, no price, score or volatile figure, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "the blend is chosen each year from some two hundred lots",
+     "now": "the blend is chosen each year from well over a hundred lots",
+     "why": "The house's pages and the trade give 142 or 151 sub-parcels, more than a hundred, never two hundred.",
+     "sources": [
+      {
+       "title": "The Peak Singapore: How Don Melchor rose against the odds",
+       "url": "https://www.thepeakmagazine.com.sg/lifestyle/chilean-wine-don-melchor-rose-odds-become-world-class-wine",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Don Melchor: Timeline",
+       "url": "https://donmelchor.com/en/story/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a Santiago lawyer, Liberal deputy and minister of finance",
+     "now": "a Santiago lawyer, deputy and minister of finance",
+     "why": "No source read gave his party; the parliamentary library gives the seats and the ministry.",
+     "sources": [
+      {
+       "title": "Biblioteca del Congreso Nacional de Chile: Melchor Concha y Toro",
+       "url": "https://www.bcn.cl/historiapolitica/resenas_parlamentarias/wiki/Melchor_Concha_y_Toro",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Melchor Concha y Toro",
+       "url": "https://en.wikipedia.org/wiki/Melchor_Concha_y_Toro",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "on land that came to him through his wife, of the Subercaseaux family",
+     "now": "on land owned by his wife, of the Subercaseaux family",
+     "why": "The 20-F says the winery was set up on property owned by Emiliana Subercaseaux.",
+     "sources": [
+      {
+       "title": "Viña Concha y Toro: Form 20-F filed 2011",
+       "url": "https://vinacyt.com/content/uploads/2020/12/2010.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Concha y Toro: Annual report on Form 20-F for 2019",
+       "url": "https://vinacyt.com/content/uploads/2021/12/vina-concha-y-toro-20f-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "he planted varieties brought from Bordeaux before phylloxera ruined the French vineyards",
+     "now": "he planted varieties brought from Bordeaux",
+     "why": "The filing does say so, but phylloxera had reached Bordeaux well before 1883; the hedged account keeps the varieties and drops the claim.",
+     "sources": [
+      {
+       "title": "Viña Concha y Toro: Annual report on Form 20-F for 2019",
+       "url": "https://vinacyt.com/content/uploads/2021/12/vina-concha-y-toro-20f-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The house stayed in family hands until 1921, and its shares were listed in Santiago in 1933.",
+     "now": "In 1921 the family made the house a company, its shares held among themselves, and those shares were first traded on the Santiago exchange in 1933.",
+     "why": "The deed of 31 December 1921 converted the family firm into a stock company with shares issued to every family member; trading began in 1933.",
+     "sources": [
+      {
+       "title": "SEC: Viña Concha y Toro, Form 20-F filed 2018",
+       "url": "https://www.sec.gov/Archives/edgar/data/930543/000101905618000569/concha_20f.htm",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Concha y Toro: Annual report on Form 20-F for 2019",
+       "url": "https://vinacyt.com/content/uploads/2021/12/vina-concha-y-toro-20f-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Concha y Toro: Annual Report 2006",
+       "url": "https://vinacyt.com/content/uploads/2020/08/Memoria-2006-eng.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Cabernet from its Puente Alto vineyard was taken to Bordeaux to Émile Peynaud (1912 to 2004), who saw the promise of the ground and passed the work to his collaborator in the Médoc",
+     "now": "Émile Peynaud (1912 to 2004) tasted Cabernet from its Puente Alto vineyard, saw the promise of the ground and proposed his collaborator in the Médoc to lead the work",
+     "why": "The house's timeline says he tasted it and proposed his collaborator to lead the project; the journey to Bordeaux was in no source read.",
+     "sources": [
+      {
+       "title": "Viña Don Melchor: Timeline",
+       "url": "https://donmelchor.com/en/story/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "front: shown Puente Alto Cabernet in 1984; back: who passed the work to his collaborator in the Médoc",
+     "now": "front: tasted Puente Alto Cabernet in 1984; back: who proposed his collaborator in the Médoc to lead the work",
+     "why": "The card follows the story.",
+     "sources": [
+      {
+       "title": "Viña Don Melchor: Timeline",
+       "url": "https://donmelchor.com/en/story/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "A single parcel bottling of Viña Don Melchor from Parcel 1, planted in 1979",
+     "now": "A single parcel bottling of Viña Don Melchor, drawn mainly from Parcel 1, planted in 1979",
+     "why": "The 2022 holds 12 per cent Cabernet Franc, primarily from Parcel 1 by the house's release.",
+     "sources": [
+      {
+       "title": "Viña Don Melchor: DM/01 vintage 2022, the first of The Parcels",
+       "url": "https://donmelchor.com/en/vina-don-melchor-presents-the-first-edition-of-its-new-the-parcels-series-dm-01-vintage-2022/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Viña Don Melchor: The wine; Viña Don Melchor: Don Melchor 2022 technical sheet; Viña Concha y Toro: Viña Don Melchor",
+     "now": "Viña Don Melchor: Timeline; Viña Don Melchor: Don Melchor 2020 technical sheet; Viña Concha y Toro: Annual report on Form 20-F for 2019",
+     "why": "The sources now carry what the refuter read: the timeline's 1984, 1987, 1997 and 2019, the 2020 sheet's oak, and the filing's 1921 and 1933.",
+     "sources": [
+      {
+       "title": "Viña Don Melchor: Timeline",
+       "url": "https://donmelchor.com/en/story/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Don Melchor: Don Melchor 2020 technical sheet",
+       "url": "https://donmelchor.com/wp-content/uploads/2022/06/TS-Don-Melchor-2020.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Concha y Toro: Annual report on Form 20-F for 2019",
+       "url": "https://vinacyt.com/content/uploads/2021/12/vina-concha-y-toro-20f-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "story: Liberal, as his party.",
+    "story: the varieties brought before phylloxera ruined the French vineyards.",
+    "story: the samples taken to Bordeaux."
+   ],
+   "open": [
+    "A 2010 filing names Ramón Subercaseaux Mercado as co-founder; the founder's father in law bore that name and died long before 1883, so the record keeps the founder alone, as the house and the library do.",
+    "The founder's birth year, 1833 by the parliamentary library and Wikipedia, 1834 by the company's visitor guide; 1833 stands."
+   ]
+  },
+  {
+   "key": "almaviva",
+   "searches": 7,
+   "tested": [
+    "The 1997 agreement between Baroness Philippine de Rothschild and the chairman of Concha y Toro (the house's history page). Sound; the chairman stays described.",
+    "First vintage 1996 and launch in 1998: the house's history frames the first vintage as launched in 1998 and its vintage list shows the 1996 (75 per cent Cabernet Sauvignon, 19 Carménère, 6 Cabernet Franc, sixteen months in new French oak). Sound.",
+    "The winery: designed by a Chilean architect, native woods from the south, a roof whose curves echo the Andes (the house's page); built in 1998 and opened in 2000 in one account only. Years cut.",
+    "The label: Almaviva in Beaumarchais's own handwriting and three reproductions of a stylised design, a vision of the earth and the cosmos (the house, in English and Spanish); Mapuche by Grand Cru Wijnen; kultrun by Lea and Sandeman alone, in three searches. Changed to a stylised Mapuche design.",
+    "Grapes: the house's vintage list (2000 Cabernet Sauvignon and Carménère only; 2017 and 2019 with Merlot; Petit Verdot in most recent years, absent from 2005 and 2008). Changed.",
+    "Making: the must cooled on its skins, then warmed for fermentation in steel tanks sized to each parcel with a final maceration; spontaneous malolactic; about ten months in the Grand Chai and six to eight more in the second year cellar; sixteen to twenty months, 73 per cent new in 2023 (the house's winemaking page and sheets). Sound.",
+    "Sites: 65 hectares reserved for Almaviva at Puente Alto, oldest vines of 1978 (the house's terroir page). Sound as told.",
+    "Story beats otherwise: Baron Philippe (1902 to 1988), Philippine (1933 to 2014) succeeding him in 1988, Opus One with the Mondavi family, Epu as the Mapuche word for two, the three French ventures and Carménère. Sound by the Codex's own records and the author's sources; not searched again.",
+    "Cards and questions: one right answer each; the red pepper question offers no Cabernet Franc, so Carménère is the one key. Rules: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Cabernet Sauvignon, by far the larger part, with Carménère and Cabernet Franc, and in some vintages small parts of Petit Verdot and Merlot.",
+     "now": "Cabernet Sauvignon, by far the larger part, with Carménère next and, in most vintages, small parts of Cabernet Franc, Petit Verdot or Merlot.",
+     "why": "The 2000 was Cabernet Sauvignon and Carménère alone; Petit Verdot stands in most recent vintages and Merlot in some.",
+     "sources": [
+      {
+       "title": "Almaviva: The wine",
+       "url": "https://www.almavivawinery.com/the-wine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Almaviva: 2023 technical sheet",
+       "url": "https://www.almavivawinery.com/wp-content/uploads/2025/09/Almaviva-2023-Ficha-Ingles-A4-3.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1]",
+     "was": "The kultrun design: Three reproductions of the design on the kultrun, a Mapuche ritual drum: a vision of the earth and the cosmos.",
+     "now": "The Mapuche design: Three reproductions of a stylised Mapuche design, a vision of the earth and the cosmos, for Chile.",
+     "why": "The house's own label text names a stylised design of the earth and the cosmos, never the kultrun; the kultrun stood on one merchant's page.",
+     "sources": [
+      {
+       "title": "Almaviva: History",
+       "url": "https://www.almavivawinery.com/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Almaviva: Historia",
+       "url": "https://www.almavivawinery.com/es/historia",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grand Cru Wijnen: Almaviva",
+       "url": "https://www.grandcruwijnen.nl/en/wijnhuis/almaviva/96",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "with a Mapuche drum",
+     "now": "with a Mapuche design",
+     "why": "As the label line.",
+     "sources": [
+      {
+       "title": "Almaviva: History",
+       "url": "https://www.almavivawinery.com/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grand Cru Wijnen: Almaviva",
+       "url": "https://www.grandcruwijnen.nl/en/wijnhuis/almaviva/96",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "beside three reproductions of the design on the kultrun, the ritual drum of the Mapuche",
+     "now": "beside three reproductions of a stylised Mapuche design, a vision of the earth and the cosmos",
+     "why": "As the label line.",
+     "sources": [
+      {
+       "title": "Almaviva: History",
+       "url": "https://www.almavivawinery.com/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Almaviva: Historia",
+       "url": "https://www.almavivawinery.com/es/historia",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grand Cru Wijnen: Almaviva",
+       "url": "https://www.grandcruwijnen.nl/en/wijnhuis/almaviva/96",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a winery designed by a Chilean architect, its roofline meant to echo the Andes, was built from that year and opened in 2000",
+     "now": "the estate built a winery designed by a Chilean architect, its curved roof meant to echo the Andes",
+     "why": "The house gives the architect and the roof but no years; 1998 and 2000 stood in one account found.",
+     "sources": [
+      {
+       "title": "Almaviva: History",
+       "url": "https://www.almavivawinery.com/history",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "the design of the kultrun, a Mapuche ritual drum, for Chile",
+     "now": "three reproductions of a Mapuche design of the earth and the cosmos, for Chile",
+     "why": "As the label line.",
+     "sources": [
+      {
+       "title": "Almaviva: History",
+       "url": "https://www.almavivawinery.com/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Grand Cru Wijnen: Almaviva",
+       "url": "https://www.grandcruwijnen.nl/en/wijnhuis/almaviva/96",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "label, table, story and card: the kultrun by name.",
+    "story: the winery's years of 1998 and 2000."
+   ],
+   "open": [
+    "Whether the label's design is that of the kultrun: Lea and Sandeman says so; the house's English and Spanish pages, read through search, do not.",
+    "Epu's first vintage stays out, as the author found 2001, 2006 and 2019."
+   ]
+  },
+  {
+   "key": "santa-rita",
+   "searches": 8,
+   "tested": [
+    "Founding in 1880 by Domingo Fernández Concha (the library, the house's reports, several accounts; one gives 1881 for the start of the main house). Sound; the founder stays described.",
+    "The García Huidobro years, from the end of the nineteenth century to the middle of the 1970s, beginning with Vicente García Huidobro, the founder's son in law, under the family's ownership (the house's annual reports). Changed from run to belonged.",
+    "1980: the Claro group, with Owens Illinois, bought part of the winery, full ownership in 1988 (the house's reports, fact sheet). Sound as bought into.",
+    "1972: Supreme Decree 2017 of 24 October 1972 declared the park, the main house, Paula Jaraquemada's house, the chapel and the cellars a historic monument (the Consejo de Monumentos Nacionales). Changed from the headquarters.",
+    "The 120: the house's fact sheet says 120 patriots took refuge in 1814 in Paula Jaraquemada's home; the council's record says the hacienda sheltered 120 patriot soldiers under San Martín after Cancha Rayada in 1818; Memoria Chilena tells her sheltering of the patriot army at her Paine hacienda after Cancha Rayada. Changed: Rancagua out, both years told.",
+    "Paula Jaraquemada: born in Santiago on 18 June 1768, died 7 September 1851 (Memoria Chilena, Wikipedia). Sound.",
+    "Casa Real: first vintage 1989, fermented in large wooden casks then, stainless steel since; 100 per cent Cabernet Sauvignon; Wine Legend (Decanter). Sound. The block: Carneros Viejo by the house's page and Decanter, with a second sector planted in the 1970s and 1980s in one account, ungrafted massal selections (International First Growths). Changed.",
+    "Barrels: the house's pages read give no months; the author's merchants stand for 2018 onwards; most new no longer covers the 2000s. The French barrels of the mid 1980s and the winemakers' years of watching the block: in no source read, cut.",
+    "Questions: the story question keyed a year the monuments council gives otherwise, so it now asks who the 120 were. Rules: the house's winemakers met in the results are not named; sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Cabernet Sauvignon alone, from three old selections of the grape planted together in one block.",
+     "now": "Cabernet Sauvignon alone, from old massal selections of the grape on their own roots.",
+     "why": "Massal selection and ungrafted vines are in two accounts; three selections in one block in none read.",
+     "sources": [
+      {
+       "title": "International First Growths: Santa Rita",
+       "url": "https://internationalfirstgrowths.com/santa-rita/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Wine Legend, Santa Rita Casa Real 1989",
+       "url": "https://www.decanter.com/learn/wine-legend-santa-rita-casa-real-1989-428837-428837/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Carneros Viejo, a single old block at Alto Jahuel on the Andean side of the Maipo, on alluvial soils over a clay subsoil, with vines on their own roots.",
+     "now": "Old, ungrafted Cabernet at Alto Jahuel on the Andean side of the Maipo, on alluvial soils over a clay subsoil: the Carneros Viejo block, which gave the first vintage, and in later accounts a second old sector nearby.",
+     "why": "The house names Carneros Viejo, Alto Jahuel and Maipo Alto; one account names a second sector planted in the 1970s and 1980s.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Casa Real",
+       "url": "https://www.santarita.com/en/casa-real-/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "International First Growths: Santa Rita",
+       "url": "https://internationalfirstgrowths.com/santa-rita/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Wine Legend, Santa Rita Casa Real 1989",
+       "url": "https://www.decanter.com/learn/wine-legend-santa-rita-casa-real-1989-428837-428837/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "aged in French oak barriques, most of them new, for about fourteen months in the vintages of the 2000s and eighteen to twenty months from 2018 onwards",
+     "now": "aged in French oak barriques, for about fourteen months in the vintages of the 2000s and for eighteen to twenty months, most of the barrels new, from 2018 onwards",
+     "why": "No share of new oak was found for the 2000s.",
+     "sources": []
+    },
+    {
+     "field": "wine.label[0].means and wine.label[1].means",
+     "was": "the house's single block Cabernet Sauvignon, bottled apart since the 1989 vintage; from the Carneros Viejo block at Alto Jahuel",
+     "now": "the house's old vine Cabernet Sauvignon from Alto Jahuel, first made with the 1989 vintage; from old, ungrafted vines at Alto Jahuel",
+     "why": "As the sites line.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Casa Real",
+       "url": "https://www.santarita.com/en/casa-real-/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "International First Growths: Santa Rita",
+       "url": "https://internationalfirstgrowths.com/santa-rita/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Santa Rita has bottled Casa Real apart since 1989: Cabernet Sauvignon from one old block, Carneros Viejo, at Alto Jahuel.",
+     "now": "Santa Rita has made Casa Real since 1989: Cabernet Sauvignon from old, ungrafted vines at Alto Jahuel, first from the Carneros Viejo block.",
+     "why": "As the sites line.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Casa Real",
+       "url": "https://www.santarita.com/en/casa-real-/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "International First Growths: Santa Rita",
+       "url": "https://internationalfirstgrowths.com/santa-rita/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1814, after the patriot defeat at Rancagua, 120 soldiers of the independence army are said to have hidden at Alto Jahuel, sheltered in the house of Paula Jaraquemada (1768 to 1851), which stands on the estate; some accounts set the episode in 1818.",
+     "now": "In 1814, by its account, 120 soldiers of the independence army took refuge at Alto Jahuel in the house of Paula Jaraquemada (1768 to 1851), which stands on the estate; Chile's council of national monuments tells it of 1818, after the patriot defeat at Cancha Rayada.",
+     "why": "The house dates the refuge to 1814 without naming a battle; the state's monuments council, a primary body, and Memoria Chilena tell the sheltering after Cancha Rayada in 1818.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Fact sheet",
+       "url": "https://www.santarita.com/wp-content/uploads/2018/11/Fact-Sheet_ING.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+       "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/parque-de-la-vina-santa-rita",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Memoria Chilena: Paula Jaraquemada (1768 to 1851)",
+       "url": "https://www.memoriachilena.gob.cl/602/w3-article-100721.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "it was run by the family of his son in law, the García Huidobros",
+     "now": "it belonged to the family of his son in law, the García Huidobros",
+     "why": "The house's reports say the winery grew under the family's ownership (propiedad).",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Memoria anual 2019",
+       "url": "https://www.santarita.com/wp-content/uploads/2020/03/MEMORIA-S.A.-VIN%CC%83A-SANTA-RITA-2019-OK-VSR-2.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1972 the Alto Jahuel headquarters was declared a historic monument",
+     "now": "In 1972 the estate's park, houses, chapel and cellars were declared a historic monument",
+     "why": "Decree 2017 of 24 October 1972 lists the park, the main house, Paula Jaraquemada's house, the chapel and the cellars.",
+     "sources": [
+      {
+       "title": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+       "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/parque-de-la-vina-santa-rita",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Santa Rita: Memoria anual 2011",
+       "url": "https://www.santarita.com/wp-content/uploads/2019/03/Memoria_SantaRita2011.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the winemakers had seen for some years what one old block of Cabernet, Carneros Viejo, could give, and that year they bottled it on its own, after the house had begun importing new French barrels in the middle of the 1980s",
+     "now": "when Cabernet from one old block, Carneros Viejo, was first bottled on its own",
+     "why": "Neither the years of watching nor the barrels of the 1980s were in any source read.",
+     "sources": [
+      {
+       "title": "Decanter: Wine Legend, Santa Rita Casa Real 1989",
+       "url": "https://www.decanter.com/learn/wine-legend-santa-rita-casa-real-1989-428837-428837/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note and traps[0]",
+     "was": "named for the 120 soldiers said to have hidden on the estate in 1814; named for the soldiers of 1814; single block Cabernet",
+     "now": "named for the 120 patriot soldiers of the estate's story; old vine Cabernet",
+     "why": "The year is disputed, as the story now says.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Fact sheet",
+       "url": "https://www.santarita.com/wp-content/uploads/2018/11/Fact-Sheet_ING.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+       "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/parque-de-la-vina-santa-rita",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0]",
+     "was": "from which block, and since which vintage? Carneros Viejo at Alto Jahuel, bottled on its own since the 1989 vintage.",
+     "now": "which vintage came first, and from which old block? 1989, from the Carneros Viejo block of old, ungrafted Cabernet at Alto Jahuel.",
+     "why": "True of the first vintage, whatever later vintages draw on.",
+     "sources": [
+      {
+       "title": "Decanter: Wine Legend, Santa Rita Casa Real 1989",
+       "url": "https://www.decanter.com/learn/wine-legend-santa-rita-casa-real-1989-428837-428837/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Viña Santa Rita: Casa Real",
+       "url": "https://www.santarita.com/en/casa-real-/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].front",
+     "was": "Which family ran Santa Rita",
+     "now": "Which family owned Santa Rita",
+     "why": "As the story.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Memoria anual 2019",
+       "url": "https://www.santarita.com/wp-content/uploads/2020/03/MEMORIA-S.A.-VIN%CC%83A-SANTA-RITA-2019-OK-VSR-2.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": "In which year, as Santa Rita tells it, did 120 patriot soldiers hide on its Alto Jahuel estate? (1814, 1880, 1810, 1989)",
+     "now": "Santa Rita's 120 range takes its name from a story the house tells of its Alto Jahuel estate. Who were the 120? (patriot soldiers who took refuge on the estate; French workers who planted the first vines; barrels in the house's first Bordeaux shipment; families who farmed the estate for its founder)",
+     "why": "A question keyed on a year the monuments council gives otherwise has no one right answer; the new one does, and its explanation carries both years.",
+     "sources": [
+      {
+       "title": "Viña Santa Rita: Fact sheet",
+       "url": "https://www.santarita.com/wp-content/uploads/2018/11/Fact-Sheet_ING.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+       "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/parque-de-la-vina-santa-rita",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[0]",
+     "was": "Viña Santa Rita: Sustainability Report 2020 to 2021",
+     "now": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+     "why": "A primary body for the decree of 1972 and the 1818 telling.",
+     "sources": [
+      {
+       "title": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+       "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/parque-de-la-vina-santa-rita",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "story: Rancagua as the defeat before the refuge.",
+    "grapes: three old selections in one block.",
+    "story: the winemakers' years of watching the block and the French barrels of the mid 1980s.",
+    "making: most barrels new in the vintages of the 2000s."
+   ],
+   "open": [
+    "Barrel time of about fourteen months in the 2000s rests on the author's listings from The Wine Society and was not tested here.",
+    "Whether recent vintages draw on a second sector beside Carneros Viejo (Población de Alto Jahuel in one account).",
+    "The first year of the 120 range: 1982 in one house report while another marks fifty years in 2017; the record gives none."
+   ]
+  },
+  {
+   "key": "cousino-macul",
+   "searches": 4,
+   "tested": [
+    "Matías Cousiño: born in Santiago on 23 February 1810, died 21 March 1863 (Memoria Chilena, Wikipedia); coal at Lota from 1852 (Wikipedia; an earlier start at Colcura by the Universidad del Bío-Bío). Dates sound; the fortune made at Lota changed to a fortune that grew with the mines he worked there.",
+    "1856: the house's history page, Matías Cousiño acquiring the Hacienda Macul. Sound.",
+    "The vines of the 1860s: Luis Cousiño and Isidora Goyenechea; Cabernet Sauvignon and Merlot from Pauillac with Chardonnay from Burgundy in 1860 (the vineyards page), the journey of 1863 and Sauvignon Blanc from Martillac (a product page). Riesling from Alsace in no page read. Changed.",
+    "Buin: 750 acres bought in May 1996 (Winebow), the city around Macul by 1994 and Buin bought in 1996 (Wine-Searcher). Sound on two secondary sources.",
+    "Lota: launched in 2006 for the hundred and fiftieth year; Cabernet of 1932 and Merlot of 1980 or 1981; Cabernet from about 55 to 80 per cent by vintage; Macul and Buin vineyards on the 2020 sheet (Winebow, Wine-Searcher, a merchant). The 2006 and the 1932 sound; by far changed.",
+    "Antiguas Reservas from 1927 and Chardonnay from Burgundy: the house's own pages, told as the house's account. Sound; the Chardonnay's date set to the house's 1860s.",
+    "Cards and questions: the story question's Buin in 1996 stands on two sources; the wine question sound. Rules: sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Cabernet Sauvignon, usually the larger part by far, with Merlot",
+     "now": "Cabernet Sauvignon, the larger part, with Merlot",
+     "why": "Listings give from about 55 to 80 per cent Cabernet Sauvignon.",
+     "sources": [
+      {
+       "title": "Winebow: Cousiño Macul",
+       "url": "https://www.winebow.com/our-brands/cousino-macul",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine-Searcher: Cousiño Macul Lota",
+       "url": "https://www.wine-searcher.com/find/cousino+macul+lota+red+maipo+valley+chile",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Matías Cousiño (1810 to 1863) made his fortune in the coal mines of Lota, on the coast near Concepción, and in 1856 he bought the Hacienda Macul",
+     "now": "Matías Cousiño (1810 to 1863), whose fortune grew with the coal mines he worked at Lota, on the coast near Concepción, bought the Hacienda Macul ... in 1856",
+     "why": "The sources read give the coal he worked at Lota from 1852, not that the fortune was made there alone.",
+     "sources": [
+      {
+       "title": "Memoria Chilena: Matías Cousiño Jorquera (1810 to 1863)",
+       "url": "https://www.memoriachilena.gob.cl/602/w3-article-93665.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Matías Cousiño",
+       "url": "https://en.wikipedia.org/wiki/Mat%C3%ADas_Cousi%C3%B1o",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cousiño Macul: History",
+       "url": "https://cousinomacul.com/en/pages/historia",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Sauvignon from Martillac and Riesling from Alsace",
+     "now": "Chardonnay from Burgundy and Sauvignon from Martillac",
+     "why": "The house's vineyards page names Chardonnay from Burgundy beside the Pauillac cuttings; Riesling was on no page read.",
+     "sources": [
+      {
+       "title": "Cousiño Macul: Vineyards",
+       "url": "https://cousinomacul.com/en/pages/vinedos",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cousiño Macul: Isidora Sauvignon Gris",
+       "url": "https://cousinomacul.com/en/products/isidora-sauvignon-gris-nv",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "while the cellars and the old vines stayed at Macul",
+     "now": "while the historic cellars and the old vines stayed at Macul",
+     "why": "Whether wine is also made at Buin was not settled; the historic cellars at Macul are certain.",
+     "sources": [
+      {
+       "title": "Cousiño Macul: History",
+       "url": "https://cousinomacul.com/en/pages/historia",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Winebow: Cousiño Macul",
+       "url": "https://www.winebow.com/our-brands/cousino-macul",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, wine.label[0], traps[1]",
+     "was": "the coal port where the founder's fortune began; where the founder made the family's fortune; where the family's fortune was made",
+     "now": "the coal port where the founder worked the mines; whose mines the founder worked; where the family mined coal",
+     "why": "As the founder's sentence.",
+     "sources": [
+      {
+       "title": "Memoria Chilena: Matías Cousiño Jorquera (1810 to 1863)",
+       "url": "https://www.memoriachilena.gob.cl/602/w3-article-93665.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Matías Cousiño",
+       "url": "https://en.wikipedia.org/wiki/Mat%C3%ADas_Cousi%C3%B1o",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "from Chardonnay the house says came to the Maipo from Burgundy in the late nineteenth century",
+     "now": "from Chardonnay the house says the family brought from Burgundy in the 1860s",
+     "why": "The house dates the Burgundy Chardonnay to 1860.",
+     "sources": [
+      {
+       "title": "Cousiño Macul: Vineyards",
+       "url": "https://cousinomacul.com/en/pages/vinedos",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "Where did the fortune behind Cousiño Macul come from? From the coal mines of Lota, near Concepción, worked by Matías Cousiño (1810 to 1863).",
+     "now": "Cousiño Macul's Lota shares its name with a place: what was Lota to the founding family? The coal port near Concepción where Matías Cousiño (1810 to 1863) worked the mines.",
+     "why": "As the founder's sentence.",
+     "sources": [
+      {
+       "title": "Memoria Chilena: Matías Cousiño Jorquera (1810 to 1863)",
+       "url": "https://www.memoriachilena.gob.cl/602/w3-article-93665.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Matías Cousiño",
+       "url": "https://en.wikipedia.org/wiki/Mat%C3%ADas_Cousi%C3%B1o",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "story: Riesling from Alsace.",
+    "story: the fortune made at Lota, as a whole."
+   ],
+   "open": [
+    "Lota's first vintage, 2003 or 2004, stays out; one review dates the hundred and fiftieth year to 2009, against 1856 and 2006 elsewhere.",
+    "The Buin purchase of May 1996 rests on Winebow and Wine-Searcher, not on the house's pages read."
+   ]
+  },
+  {
+   "key": "vinedo-chadwick",
+   "searches": 6,
+   "tested": [
+    "The patriarch and the estate: the estate's own Legacy page says he bought Viña San José de Tocornal at Puente Alto in 1942 and built his home, stables and polo field there, sold most of it after the land reform from 1962 and kept the home and the field; Decanter says 1945. Sound without a year; the land reform added.",
+    "1992 and the son's suggestion: the estate's page, The Drinks Business, a granddaughter's interview. Sound.",
+    "His death: 1993 by The Drinks Business, Decanter's profile and Club Oenologique; 1929 to 1996 in one account. Changed to did not live to taste its first vintage.",
+    "First vintage 1999 and the 2000 the second (Decanter, merchants). Sound.",
+    "Berlin: 23 January 2004, thirty six judges, sixteen wines, Viñedo Chadwick 2000 first, Seña 2001 second, Lafite 2000 third (Académie du Vin, the Berlin Tasting's press file, Decanter's report). Sound.",
+    "Petit Verdot: 97 and 3 per cent in the 2016 (a merchant); vines planted in 2005 for the 2021 (another), against the author's 2011. Year cut. 2020: Cabernet Sauvignon alone, twenty two months, three quarters in new barrels and the rest in foudres (Decanter's review through Berry Bros and Rudd, a merchant). Sound; hot is now warm.",
+    "Making: Hatch Mansfield's sheets for 2013 (steel and concrete, eighteen to thirty days, 80 per cent new barrels and 20 in Stockinger foudres, malolactic there), 2014 (steel alone, 75 per cent new) and 2015 (steel, twenty three to forty days, 73 per cent new, 15 per cent foudres). Changed.",
+    "The ranking sentence on the Berlin result: no measure behind it. Cut. Family name: the Chadwicks, Errázuriz by descent. Table and a trap changed.",
+    "Cards and questions: sound after the card's change. Rules: the son and granddaughter met are not named; sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "with a few per cent of Petit Verdot in some since 2016, from vines planted in 2011",
+     "now": "with a few per cent of Petit Verdot in some since 2016",
+     "why": "One listing gives Petit Verdot planted in 2005 for the 2021; the year cannot be settled.",
+     "sources": [
+      {
+       "title": "The Wine Collective: Viñedo Chadwick 2016",
+       "url": "https://www.thewinecollective.com.au/products/2016-vinedo-chadwick",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Each lot is fermented in small stainless steel tanks, with concrete vats in later vintages, after a maceration of eighteen to thirty days. After the malolactic, the wine is aged about twenty two months",
+     "now": "Each lot is fermented apart in small tanks, of stainless steel and in some vintages concrete, and kept on its skins for eighteen to forty days by lot and year. The malolactic follows in oak, and the wine is aged about twenty two months",
+     "why": "Concrete is on the 2013 sheet, not the later ones read; the skins time runs to forty days in 2015; the malolactic takes place in barrel and foudre.",
+     "sources": [
+      {
+       "title": "Hatch Mansfield: Viñedo Chadwick 2013",
+       "url": "https://www.hatchmansfield.com/our-winemakers/vinedo-chadwick/wine/vinedo-chadwick-2013-3x75cl/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Hatch Mansfield: Viñedo Chadwick 2014",
+       "url": "https://www.hatchmansfield.com/our-winemakers/sena/wine/vinedo-chadwick-2014-3x75cl/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Hatch Mansfield: Viñedo Chadwick 2015",
+       "url": "https://www.hatchmansfield.com/our-winemakers/sena/pdf/wine/vinedo-chadwick-2015-3x75cl/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Viñedo Chadwick is the Errázuriz family's Cabernet.",
+     "now": "Viñedo Chadwick is the Cabernet of the family behind Viña Errázuriz.",
+     "why": "The family is the Chadwicks, who own Viña Errázuriz; the wine bears their name.",
+     "sources": [
+      {
+       "title": "Viñedo Chadwick: Legacy of excellence",
+       "url": "https://vinedochadwick.cl/legacy-of-excellence",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "had built his home and a polo field on an estate he bought at Puente Alto, the old Viña San José de Tocornal.",
+     "now": "had built his home and a polo field on an estate he bought at Puente Alto, the old Viña San José de Tocornal; by the family's account, the land reform of the 1960s led him to sell most of it, but he kept the house and the field.",
+     "why": "The estate's own page tells the purchase and the sale under land reform; it fits Forbes Chile's Concha y Toro purchase of a Tocornal estate in 1968.",
+     "sources": [
+      {
+       "title": "Viñedo Chadwick: Legacy of excellence",
+       "url": "https://vinedochadwick.cl/legacy-of-excellence",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Viñedo Chadwick producer profile",
+       "url": "https://www.decanter.com/premium/vinedo-chadwick-producer-profile-385323/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Forbes Chile: Concha y Toro and the terroir of Puente Alto",
+       "url": "https://forbes.cl/negocios/2022-04-18/la-cruzada-de-vina-concha-y-toro-por-conservar-el-terroir-de-puente-alto-para-producir-vinos-unicos-en-el-mundo/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and cards[0].back",
+     "was": "he died the following year; he died the year after the planting",
+     "now": "he did not live to taste its first vintage",
+     "why": "1993 in three accounts, 1996 in one; both fall before 1999.",
+     "sources": [
+      {
+       "title": "The Drinks Business: Southern star shines, the story of Viñedo Chadwick",
+       "url": "https://www.thedrinksbusiness.com/2021/04/southern-star-shines-the-story-of-vinedo-chadwick/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Viñedo Chadwick producer profile",
+       "url": "https://www.decanter.com/premium/vinedo-chadwick-producer-profile-385323/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The result is the event most often cited for Chile's modern standing in fine wine.",
+     "now": "",
+     "why": "A rank with no measure behind it.",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "Petit Verdot, planted in 2011, joined the blend in small measure with the 2016 vintage, while the hot 2020",
+     "now": "Petit Verdot joined the blend in small measure with the 2016 vintage, while the warm 2020",
+     "why": "The planting year as the grapes line; warm is Decanter's word for an early ripening 2020.",
+     "sources": [
+      {
+       "title": "The Wine Collective: Viñedo Chadwick 2016",
+       "url": "https://www.thewinecollective.com.au/products/2016-vinedo-chadwick",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Berry Bros and Rudd: Viñedo Chadwick 2020",
+       "url": "https://www.bbr.com/products-20208118725-2020-vinedo-chadwick-maipo-valley-chile",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "a few per cent of Petit Verdot, planted in 2011, in some years since",
+     "now": "a few per cent of Petit Verdot in some years since",
+     "why": "As the grapes line.",
+     "sources": [
+      {
+       "title": "The Wine Collective: Viñedo Chadwick 2016",
+       "url": "https://www.thewinecollective.com.au/products/2016-vinedo-chadwick",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2]",
+     "was": "not the Errázuriz family's",
+     "now": "not the Chadwick family's",
+     "why": "As the table.",
+     "sources": [
+      {
+       "title": "Viñedo Chadwick: Legacy of excellence",
+       "url": "https://vinedochadwick.cl/legacy-of-excellence",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "The Drinks Business: Southern star shines; Hatch Mansfield: Viñedo Chadwick 2014",
+     "now": "Viñedo Chadwick: Legacy of excellence; Hatch Mansfield: Viñedo Chadwick 2013",
+     "why": "The estate's own page for the estate, the polo field and the land reform; the 2013 sheet for the concrete.",
+     "sources": [
+      {
+       "title": "Viñedo Chadwick: Legacy of excellence",
+       "url": "https://vinedochadwick.cl/legacy-of-excellence",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Hatch Mansfield: Viñedo Chadwick 2013",
+       "url": "https://www.hatchmansfield.com/our-winemakers/vinedo-chadwick/wine/vinedo-chadwick-2013-3x75cl/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "story and cards: the death in the year after the planting.",
+    "grapes, story and card: the Petit Verdot's planting in 2011.",
+    "story: the event most often cited."
+   ],
+   "open": [
+    "The patriarch's death year, 1993 in most accounts and 1996 in one, stays out with his name.",
+    "Vinous gives the 2016 a fifth new barrels where one listing gives four fifths; the record keeps most in new barrels on the other sheets.",
+    "The Petit Verdot's planting year, 2011 or 2005."
+   ]
+  }
+ ],
+ "shared": [],
+ "living": [
+  {
+   "name": "Eduardo Chadwick",
+   "where": "every account of Viñedo Chadwick and the Berlin Tasting, as the son who suggested the planting",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Magui Chadwick",
+   "where": "an interview in Leaders magazine, as the patriarch's granddaughter",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Michel Couttolenc",
+   "where": "a merchant's tasting notice, as an officer of the Chadwick family's wineries",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Enrique Tirado",
+   "where": "Viña Don Melchor's sheets and The Peak, as the winemaker",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Eric Boissenot",
+   "where": "accounts of Don Melchor, as the son of Peynaud's collaborator who blends the wine",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Isabel Guilisasti",
+   "where": "a Concha y Toro news page title",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Eduardo Guilisasti Tagle",
+   "where": "Almaviva's history page, as the chairman of Concha y Toro who signed in 1997",
+   "believed": "not settled; described in the record as the chairman, never named",
+   "inFragment": false
+  },
+  {
+   "name": "Martín Hurtado",
+   "where": "Almaviva's own page and one guide, as the architect of the winery",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Cecilia Torres",
+   "where": "Decanter's Wine Legend of Casa Real 1989, as the winemaker of 1989",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Sebastián Labbé",
+   "where": "Santa Rita's Casa Real sheet and a Decanter feature, as the winemaker",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "Baltazar Sánchez",
+   "where": "the title of a conversation about Casa Real",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  },
+  {
+   "name": "María Luisa Vial de Claro",
+   "where": "one account of Santa Rita's ownership",
+   "believed": "living; not in people.json, to be added",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Melchor Concha y Toro",
+   "dates": "1833 to 1892",
+   "where": "the Concha y Toro story, dated (BCN, Wikipedia)"
+  },
+  {
+   "name": "Émile Peynaud",
+   "dates": "1912 to 2004",
+   "where": "the Concha y Toro story and a card, dated"
+  },
+  {
+   "name": "Jacques Boissenot",
+   "dates": "not sought",
+   "where": "described as Peynaud's collaborator in the Médoc"
+  },
+  {
+   "name": "Paula Jaraquemada",
+   "dates": "1768 to 1851",
+   "where": "the Santa Rita story, dated (Memoria Chilena, Wikipedia)"
+  },
+  {
+   "name": "Domingo Fernández Concha and Vicente García Huidobro",
+   "dates": "not settled in two sources",
+   "where": "described as the founder and his son in law"
+  },
+  {
+   "name": "Ricardo Claro",
+   "dates": "1934 to 2008 by the author's sources",
+   "where": "behind the Claro group, which the record names as a company only"
+  },
+  {
+   "name": "Matías Cousiño",
+   "dates": "1810 to 1863",
+   "where": "the Cousiño Macul story and a card, dated (Memoria Chilena, Wikipedia)"
+  },
+  {
+   "name": "Luis Cousiño and Isidora Goyenechea",
+   "dates": "1835 to 1873 for him; her death 1897 or 1898",
+   "where": "described as the son and his wife"
+  },
+  {
+   "name": "Alfonso Chadwick Errázuriz",
+   "dates": "died 1993 by most accounts, 1996 by one",
+   "where": "described as the family's patriarch"
+  },
+  {
+   "name": "Baron Philippe de Rothschild, Baroness Philippine de Rothschild and Beaumarchais",
+   "dates": "1902 to 1988, 1933 to 2014, 1732 to 1799",
+   "where": "the Almaviva story, dated"
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  "All five picks stand, and no swap was proposed: Concha y Toro's Don Melchor, Almaviva, Santa Rita's Casa Real, Cousiño Macul's Lota and Viñedo Chadwick are the Maipo houses and wines a sommelier meets first, three of them from Puente Alto.",
+  "For the read-together agent: the plan's why for Santa Rita says its cellars are said to have sheltered 120 patriots in 1814; the house's fact sheet says Paula Jaraquemada's home, and the monuments council says 1818, so the why might read that the estate, by its account, sheltered 120 patriots.",
+  "For the read-together agent: the plan's why for Cousiño Macul says held by one family since its founding; that is the house's claim on its history page and may stand as history, but it speaks of the present."
+ ],
+ "codexInTension": [
+  {
+   "where": "The library record p-santa-rita (WINE_PRODUCERS), holdings, and the region record's producers line",
+   "says": "the 120 patriots said to have sheltered on the property in 1814",
+   "finding": "The house says 1814; Chile's Consejo de Monumentos Nacionales and Memoria Chilena tell the sheltering after Cancha Rayada in 1818.",
+   "sources": [
+    {
+     "title": "Viña Santa Rita: Fact sheet",
+     "url": "https://www.santarita.com/wp-content/uploads/2018/11/Fact-Sheet_ING.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Consejo de Monumentos Nacionales: Parque de la Viña Santa Rita",
+     "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/parque-de-la-vina-santa-rita",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Memoria Chilena: Paula Jaraquemada (1768 to 1851)",
+     "url": "https://www.memoriachilena.gob.cl/602/w3-article-100721.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": "The library record p-santa-rita, wines",
+   "says": "Casa Real Reserva Especial, single-vineyard Alto Jahuel Cabernet, the traditionalist Maipo benchmark",
+   "finding": "Benchmark is a judging word the flagships may not use; later accounts add a second old sector beside Carneros Viejo.",
+   "sources": [
+    {
+     "title": "Viña Santa Rita: Casa Real",
+     "url": "https://www.santarita.com/en/casa-real-/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "International First Growths: Santa Rita",
+     "url": "https://internationalfirstgrowths.com/santa-rita/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": "The library record p-concha-y-toro, wines and t, and the region record's producers line",
+   "says": "Chile's first icon Cabernet",
+   "finding": "A rank the record does not repeat; the company's filings call it the first ultra premium wine of the Chilean industry, its own claim.",
+   "sources": [
+    {
+     "title": "Viña Concha y Toro: Annual report on Form 20-F for 2019",
+     "url": "https://vinacyt.com/content/uploads/2021/12/vina-concha-y-toro-20f-2019.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": "The region record's producers line for Cousiño Macul",
+   "says": "Antiguas Reservas is the long-lived, old-school Maipo Cabernet by which the others are measured",
+   "finding": "A rank with no measure behind it.",
+   "sources": []
+  },
+  {
+   "where": "The library record w-vinedo-chadwick, style",
+   "says": "Pure Cabernet Sauvignon",
+   "finding": "Some vintages since 2016 carry a few per cent of Petit Verdot.",
+   "sources": [
+    {
+     "title": "The Wine Collective: Viñedo Chadwick 2016",
+     "url": "https://www.thewinecollective.com.au/products/2016-vinedo-chadwick",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": "The library record p-errazuriz, holdings and why",
+   "says": "names Eduardo Chadwick, and calls the Berlin Tasting the single most cited event in Chile's modern reputation",
+   "finding": "A living person named in a library line and a rank with no measure; the flagship record repeats neither.",
+   "sources": []
+  },
+  {
+   "where": "The library record w-almaviva, wines",
+   "says": "Cabernet Sauvignon led with Carmenère, Cabernet Franc and Merlot",
+   "finding": "Merlot appears only in some vintages and Petit Verdot in most recent ones; the 2000 was Cabernet Sauvignon and Carménère alone.",
+   "sources": [
+    {
+     "title": "Almaviva: The wine",
+     "url": "https://www.almavivawinery.com/the-wine",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
