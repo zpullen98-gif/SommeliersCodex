@@ -1,0 +1,795 @@
+{
+ "group": "la-mancha",
+ "chunk": "w7",
+ "batch": "A",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "perRecord": {
+   "marques-de-grinon": 7,
+   "felix-solis": 3,
+   "ayuso": 2,
+   "virgen-de-las-vinas": 5,
+   "dehesa-del-carrizal": 4,
+   "shared": 2
+  },
+  "note": "Twenty three searches of a share of twenty eight, none of them the author's, and five left unspent. One Marqués de Griñón search was refused before it ran because it named three newspaper domains the tool cannot reach, and is counted all the same. Two were restricted to boe.es (the ratification of 2003 and Ley 24/2003) and are read as primary through their summaries; one was restricted to the co-operative's own domain, vinostomillar.es, and found its cellar page but no sheet of Tomillar Airén. The rest went to the open web with the author's sources blocked where they would only have repeated themselves (the houses' own domains, Grandes Pagos, the Real Academia, Decanter, wein.plus, the regional tourism body, the Sommeliers Choice Awards, FENAVIN, Vinos Cutanda, and writers' own sites by turns). The two shared searches are the history of DO La Mancha (Ayuso and Virgen de las Viñas) and the ageing terms of Ley 24/2003 (Félix Solís and Ayuso). One fetch tried, of vinostomillar.es, refused because the host is not allowed here, and not retried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the decrees (the BOE for the two pagos and the ageing law), then to independent accounts of each house's dates and people, then to merchants' and guides' sheets of each wine for the blend, the months in oak and the glass, with the author's sources blocked so that an independent account could be heard.",
+  "Where the sheets disagreed and none was primary, the figure was cut or hedged as the house's; where a fact the plan asked for and the author had left out was now borne out twice (the hunting estate of Dehesa del Carrizal, its first harvests made at Valdepusa), it was added."
+ ],
+ "records": [
+  {
+   "key": "marques-de-grinon",
+   "searches": 7,
+   "verdict": "changed",
+   "tested": [
+    "The pago's year, with the family and Grandes Pagos blocked: CataDelVino, Mr Vinos and Wine Paths give the regional order of 19 July 2002; the BOE (BOE-A-2003-5034) gives Orden APA/519/2003 of 21 February 2003, published on 11 March 2003, ratifying the regulation of that order. So 2002 stands, and the 2003 that the author called European is the Spanish ministry's ratification. Changed.",
+    "Carlos Falcó: 20 March 2020 in Madrid, aged 83, of Covid, by Spanish Wikipedia, El Español and Madridiario; born in Seville in 1937 by Spanish Wikipedia; Louvain and then Davis by Spanish Wikipedia; the estate inherited from his grandfather by one press account with the author's Academia. Borne out; 1959 rests on the Academia and the family (open).",
+    "Drip irrigation in 1974 and the first Cabernet of 1982: Spanish Wikipedia for 1974; three accounts for the first commercial vintage of 1982 from the Cabernet planted in 1974. Borne out. Peynaud's role, dated 1974 by one and 1982 by another, stays out, and a later consultant met in the results is living and not named.",
+    "The blend and the oak of Emeritus, with Vinos Cutanda and espagne-gourmet blocked: El Corte Inglés's sheet of 2021 (45 per cent Cabernet, 42 Syrah, 13 Petit Verdot, twenty four months in French oak), Wine.com's of 1998 (51, 35 and 14, thirteen months and more in new French oak), Vinello (83, 11 and 6, twenty four months). Syrah is often second and Cabernet sometimes under half: changed. The label's EMERITVS borne out by a merchant's listing of the 1997.",
+    "The traps: Marqués de Griñón Rioja borne out by a listing of a Rioja Clásico under the name; the house rules hold: nobody living named, no price, no score, British, no dash. The Calificada explanation was wrong against the Codex's own records and is changed."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Cabernet Sauvignon, a little over half, with Petit Verdot and a smaller share of Syrah; the shares move with the vintage.",
+     "now": "Cabernet Sauvignon leads, with Syrah and Petit Verdot in shares that move widely with the vintage.",
+     "why": "Two sheets of different vintages put Syrah second and Cabernet at 45 and 51 per cent; a third has 83 per cent Cabernet.",
+     "sources": [
+      {
+       "title": "El Corte Inglés, Club del Gourmet: Marqués de Griñón Emeritus",
+       "url": "https://www.elcorteingles.es/club-del-gourmet/A10112596-vino-tinto-marques-de-grinon-emeritus-2021-valdepusa/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Dominio de Valdepusa Emeritus 1998",
+       "url": "https://www.wine.com/product/marques-de-grinon-dominio-de-valdepusa-emeritus-1998/53954",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinello: Emeritus, Dominio de Valdepusa",
+       "url": "https://www.vinello.eu/dominio-de-valdepusa-emeritus-tinto-marques-de-grinon",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented in stainless steel tanks, where the malolactic fermentation also takes place, the wine then spends about two years in oak barrels, French oak by the merchants' sheets, before it is bottled.",
+     "now": "After fermentation the wine is aged in French oak barrels for well over a year, two years by several merchants' sheets, before it is bottled.",
+     "why": "The steel for both fermentations rested on one merchant; the barrel time is thirteen months and more for the 1998 and twenty four months on later sheets.",
+     "sources": [
+      {
+       "title": "El Corte Inglés, Club del Gourmet: Marqués de Griñón Emeritus",
+       "url": "https://www.elcorteingles.es/club-del-gourmet/A10112596-vino-tinto-marques-de-grinon-emeritus-2021-valdepusa/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Dominio de Valdepusa Emeritus 1998",
+       "url": "https://www.wine.com/product/marques-de-grinon-dominio-de-valdepusa-emeritus-1998/53954",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinello: Emeritus, Dominio de Valdepusa",
+       "url": "https://www.vinello.eu/dominio-de-valdepusa-emeritus-tinto-marques-de-grinon",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "BOE: Orden APA/519/2003 ratifying the Dominio de Valdepusa regulation",
+       "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-5034",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Cabernet Sauvignon led, with Petit Verdot and Syrah and about two years in oak, it is dense and firm: decant it.",
+     "now": "Cabernet Sauvignon led, with Syrah and Petit Verdot and long ageing in French oak, it is dense and firm: decant it.",
+     "why": "The same blend and barrel evidence; the spoken line keeps only what holds across vintages.",
+     "sources": [
+      {
+       "title": "El Corte Inglés, Club del Gourmet: Marqués de Griñón Emeritus",
+       "url": "https://www.elcorteingles.es/club-del-gourmet/A10112596-vino-tinto-marques-de-grinon-emeritus-2021-valdepusa/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Dominio de Valdepusa Emeritus 1998",
+       "url": "https://www.wine.com/product/marques-de-grinon-dominio-de-valdepusa-emeritus-1998/53954",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the family holds it to be the first single estate appellation of Spain, upheld by the European Union in 2003.",
+     "now": "the family holds it to be the first single estate appellation of Spain, and the Spanish ministry of agriculture ratified its rules in February 2003.",
+     "why": "Orden APA/519/2003 of 21 February 2003 ratified the regulation approved by the regional order of 19 July 2002; no European act of 2003 was found.",
+     "sources": [
+      {
+       "title": "BOE: Orden APA/519/2003 ratifying the Dominio de Valdepusa regulation",
+       "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-5034",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "CataDelVino: the Vinos de Pago of Spain, DO Pago Dominio de Valdepusa",
+       "url": "https://www.catadelvino.com/blog-cata-vino/conoce-los-vinos-de-pago-de-espana-do-pago-dominio-de-valdepusa",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "Calificada is the higher rank held by Rioja and Priorat.",
+     "now": "Calificada is a rank for a whole region, such as Rioja or Priorat, never for one estate.",
+     "why": "The Codex's own Spanish records place the Vino de Pago above DOCa in the statute; the explanation now teaches the difference without ranking.",
+     "sources": [
+      {
+       "title": "BOE: Ley 24/2003 de la Viña y del Vino",
+       "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2003-13864",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Louvain is borne out by Spanish Wikipedia beside the Real Academia; the year 1959 rests on the Academia and the family alone.",
+    "Emeritus bottles of 1997 and 1998 are listed by merchants, before the pago of 2002; its first vintage is not taught.",
+    "The first single estate appellation of Spain stays the family's claim: Finca Élez was recognised the same year by one account, and the Codex dates both to 2003."
+   ]
+  },
+  {
+   "key": "felix-solis",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "1952 and the move from Villanueva de los Infantes, with the Avantis domain and vinaalbali.com blocked: the company's history on felixsolis.com, De Bodega en Bodega, Uvinum and Grape Guru. Borne out, but the purchase was the Casa del Huerto del Cura, where they began to make wine, not a winery already at work. Changed.",
+    "The Madrid years: the company's page dates the purchase of a bottling plant in Madrid to 1962; Alimarket dates the brand Viña Albali to 1962. The wine shop in the calle Quevedo is in the family's PDF only, and is cut. The move home after the order of 1968 is borne out by a secondary account; the year of the move differs (open).",
+    "The Gran Reserva, with vinaalbali.com blocked: the group's own shop and Disenzo give eighteen months in American oak and three to six years in bottle; Verema gives twenty four months for the 1995 and 2011. At least eighteen months stands. The ageing category's sixty months with eighteen in oak by Ley 24/2003. Borne out.",
+    "The rules: the founder and his wife are named in the sources, their dates nowhere, so they stay described; the founder's heirs who lead the group are living and are not named; no price, no score, no volume."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "In 1952 the founder and his wife left his home town of Villanueva de los Infantes for Valdepeñas, where, by the family's history, they bought a winery already at work in the town.",
+     "now": "In 1952 the founder and his wife left Villanueva de los Infantes for Valdepeñas, where, by the company's history, they bought the Casa del Huerto del Cura and began to make wine there.",
+     "why": "The company's page and De Bodega en Bodega name the house and say the making began there.",
+     "sources": [
+      {
+       "title": "Félix Solís: Company, the history of the house",
+       "url": "https://www.felixsolis.com/compania-2/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "De Bodega en Bodega: Bodegas Félix Solís",
+       "url": "https://debodegaenbodega.com/bodegas/bodegas-felix-solis-valdepenas-ciudad-real",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Around 1962 the founder took a wine shop in the calle Quevedo in Madrid and made it a bottling plant: the wine came up from Valdepeñas in large casks and was bottled by hand, and there, as the company tells it, Viña Albali was born.",
+     "now": "In 1962, by the same history, the founder bought a bottling plant in Madrid, whose bars and restaurants had been taking his wine, brought up in casks and bottled by hand; the brand Viña Albali dates from that year.",
+     "why": "The company's page gives the purchase of a Madrid bottling plant in 1962 and Alimarket the brand's year; the shop rests on one document.",
+     "sources": [
+      {
+       "title": "Félix Solís: Company, the history of the house",
+       "url": "https://www.felixsolis.com/compania-2/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Alimarket: Félix Solís renews its most international brand",
+       "url": "https://www.alimarket.es/alimentacion/noticia/325025/felix-solis-renueva-su-marca-mas-internacional",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2].means",
+     "was": "The house's brand, launched by the company's account around 1962.",
+     "now": "The house's brand, dated by the company to 1962, when it bottled its wine in Madrid.",
+     "why": "The same two sources.",
+     "sources": [
+      {
+       "title": "Félix Solís: Company, the history of the house",
+       "url": "https://www.felixsolis.com/compania-2/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Alimarket: Félix Solís renews its most international brand",
+       "url": "https://www.alimarket.es/alimentacion/noticia/325025/felix-solis-renueva-su-marca-mas-internacional",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1]",
+     "was": "Where, by the company's account, was Viña Albali born around 1962? / In a Madrid wine shop in the calle Quevedo that the founder made a bottling plant.",
+     "now": "Félix Solís: to what year does the company date Viña Albali, and where was it bottled then? / 1962, at a bottling plant the founder bought in Madrid, the wine brought up from Valdepeñas in casks.",
+     "why": "The card taught the one detail resting on a single document.",
+     "sources": [
+      {
+       "title": "Félix Solís: Company, the history of the house",
+       "url": "https://www.felixsolis.com/compania-2/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Alimarket: Félix Solís renews its most international brand",
+       "url": "https://www.alimarket.es/alimentacion/noticia/325025/felix-solis-renueva-su-marca-mas-internacional",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The move of the bottling home to Valdepeñas: 1968 or 1972 by the house's own history, the 1970s by secondary accounts; the story says only after the order of 1968.",
+    "The barrel time: eighteen months on the current sheets (the group's own shop, Disenzo), twenty four for the 1995 and 2011 (Verema); at least eighteen months stands.",
+    "The respelling al-BAH-lee follows the label's unaccented Albali; one listing writes Albalí, which would move the stress to the last syllable."
+   ]
+  },
+  {
+   "key": "ayuso",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "1947, 1961 and 1965, with the house, the regional tourism body and the London Wine Competition blocked: the DO La Mancha's own page on the house, the London Drinks Guide, De Bodega en Bodega and Sevi. Borne out; the founder is Fermín Ayuso Roig by these accounts, his dates found nowhere.",
+    "The first ageing cellar of the region and the first Reserva of La Mancha: told by the house and repeated by the DO's page and the trade pages; no independent account. Kept hedged as the house's claim.",
+    "Estola Reserva: Tempranillo and Cabernet Sauvignon by Comprar Bebidas and De Bodega en Bodega, borne out; the barrel time is twenty four months by Dongil and Verema, twelve months with twenty four in bottle by De Bodega en Bodega and Comprar Bebidas. Hedged as the house's current sheet. The Gran Reserva's thirty six months in oak by De Bodega en Bodega, forty eight by one Mexican merchant: the story keeps the house's three years.",
+    "The denomination: 1932 by Interempresas and Yravedra, the Consejo of 1973 by Todowine and CataDelVino, the first rules by the order of 2 June 1976 by Interempresas and the regional wine body; one table gives 1966, read as another DO. Borne out. Reserva's thirty six months with twelve in oak by Ley 24/2003."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "After fermentation the wine is aged for twenty four months in American oak barrels and then rests in bottle in the house's cellars before release.",
+     "now": "After fermentation the wine is aged in American oak barrels, for twenty four months by the house's current sheet, and then rests in bottle in the house's cellars before release.",
+     "why": "Two listings give twelve months in barrel and twenty four in bottle against twenty four in barrel on the house's sheet and two others.",
+     "sources": [
+      {
+       "title": "De Bodega en Bodega: Estola Reserva",
+       "url": "https://debodegaenbodega.com/vinos/estola-reserva",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Dongil: Estola Reserva",
+       "url": "https://www.dongil.es/producto/estola-reserva/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Tempranillo with Cabernet Sauvignon, two years in American oak.",
+     "now": "Tempranillo with Cabernet Sauvignon, aged in American oak.",
+     "why": "The same conflict; the spoken line keeps the oak and not the months.",
+     "sources": [
+      {
+       "title": "De Bodega en Bodega: Estola Reserva",
+       "url": "https://debodegaenbodega.com/vinos/estola-reserva",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Dongil: Estola Reserva",
+       "url": "https://www.dongil.es/producto/estola-reserva/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "when the plateau sold almost all its wine in bulk ... aged two years in American oak",
+     "now": "when the plateau's wine was sold mostly in bulk ... aged in American oak, two years by the house's sheet",
+     "why": "No figure for the bulk trade was read, and the months are disputed.",
+     "sources": [
+      {
+       "title": "De Bodega en Bodega: Estola Reserva",
+       "url": "https://debodegaenbodega.com/vinos/estola-reserva",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Dongil: Estola Reserva",
+       "url": "https://www.dongil.es/producto/estola-reserva/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "An ageing category of Spanish law: a red held for years before release, part of the time in oak.",
+     "now": "Spanish law's ageing category: a red aged at least three years before release, at least one of them in oak.",
+     "why": "Ley 24/2003 sets thirty six months for a red Reserva, twelve of them in barrel.",
+     "sources": [
+      {
+       "title": "BOE: Ley 24/2003 de la Viña y del Vino",
+       "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2003-13864",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "Twenty four months in American oak barrels.",
+     "now": "Two years in American oak barrels, by the house's current sheet.",
+     "why": "The barrel time is hedged as above.",
+     "sources": [
+      {
+       "title": "De Bodega en Bodega: Estola Reserva",
+       "url": "https://debodegaenbodega.com/vinos/estola-reserva",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Dongil: Estola Reserva",
+       "url": "https://www.dongil.es/producto/estola-reserva/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0]",
+     "was": "key: Two years in American oak barrels",
+     "now": "key: Ageing in American oak barrels; the explanation gives the two years as the house's sheet",
+     "why": "The question tests the oak that gives the vanilla, not the disputed months.",
+     "sources": [
+      {
+       "title": "Dongil: Estola Reserva",
+       "url": "https://www.dongil.es/producto/estola-reserva/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Twenty four or twelve months in barrel for the Reserva: the sheets disagree, so the record hedges the twenty four as the house's current sheet.",
+    "The first Reserva of La Mancha and the first ageing cellar of the region are the house's claims, repeated by the DO's own page and trade pages; no independent account was found.",
+    "The founder is named in the house's accounts, but his dates were found nowhere, so he stays described."
+   ]
+  },
+  {
+   "key": "virgen-de-las-vinas",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "1961, with the regional tourism body, the Sommeliers Choice Awards and FENAVIN blocked: La Voz de Tomelloso (19 November 1961, fifteen pioneers, at sixty years in 2021), Turismo de Ciudad Real and Encastillalamancha. Borne out; the founders' number and the day differ (open). The co-operative's own page dates its oldest building to a project of 1962, built in 1963.",
+    "The members: 114 in 1962 and 980 by 1967 by a local account, more than 3,000 only after the merger of March 2026 with Vinícola de Tomelloso and San José; thousands of families before the merger is not borne out. Changed. The olive mill: the oil co-operative Oración del Huerto joined in 2009 by one account, and the name Bodega y Almazara on every listing. Borne out.",
+    "The contest and the museum: the Certamen Cultural Virgen de las Viñas of painting, sculpture and journalism, held since 2001, by Globalcaja and Unicaja; the museum of contemporary art beside the winery, opened in 2011 and holding the prize works, by the Ruta del Vino de La Mancha and Unicaja. Borne out and dated.",
+    "Tomillar Airén, with FENAVIN and the Sommeliers Choice Awards blocked: Infovinos, De Bodega en Bodega and Uno de Copas give Airén alone, a young white of DO La Mancha, lightly crushed, a short cold maceration in closed tanks under carbon dioxide, fermented cool; banana, apple and grapefruit, pale with green glints, light with a faint prickle; 6 to 8 or 5 to 7 degrees Celsius. The making and the glass now rest on the wine's own sheets. Tomillar Reserva of Tempranillo and Cabernet Sauvignon by the Concours Mondial and Delectable.",
+    "The rules: the co-operative's president, named in the results, is living and is not named; the museum's name carries a living royal's, so it is not given; the medals met in the results are not taught."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "fermented at a controlled low temperature to keep the grape's aromas, it is bottled young without any time in oak barrels",
+     "now": "by the merchants' sheets the grapes are lightly crushed and given a short, cold maceration on their skins in closed tanks under carbon dioxide, then fermented at a low temperature, and the wine is bottled young without any time in oak",
+     "why": "The wine's own sheets in place of the DO's page on young Airén in general.",
+     "sources": [
+      {
+       "title": "Infovinos: Tomillar Airén",
+       "url": "https://infovinos.es/vinos-espanoles/6804-tomillar-airen",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "De Bodega en Bodega: Tomillar Airén",
+       "url": "https://debodegaenbodega.es/producto/tomillar-airen/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Virgen de las Viñas: the cellar",
+       "url": "https://vinostomillar.es/la-bodega/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Pale straw with green glints; banana, green apple and pear, with a hint of cut grass; light in body, dry and soft in acidity, with a short, clean finish.",
+     "now": "Pale straw with green glints; ripe banana, apple and grapefruit on the nose; light in body and dry, with soft acidity, a faint prickle and a short, clean finish.",
+     "why": "The notes of this wine rather than of the denomination's young Airén; cut grass and pear were not read for it.",
+     "sources": [
+      {
+       "title": "Infovinos: Tomillar Airén",
+       "url": "https://infovinos.es/vinos-espanoles/6804-tomillar-airen",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "De Bodega en Bodega: Tomillar Airén",
+       "url": "https://debodegaenbodega.es/producto/tomillar-airen/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The co-operative grew with its members until thousands of families brought their grapes to it",
+     "now": "The co-operative grew quickly as more of the town's growers joined it",
+     "why": "Nine hundred and eighty members by 1967, and more than three thousand only after the merger of 2026.",
+     "sources": [
+      {
+       "title": "La Voz de Tomelloso: the co-operative at sixty years",
+       "url": "https://www.lavozdetomelloso.com/38710/anos_cooperativa",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Turismo de Ciudad Real: Cooperativa Virgen de las Viñas",
+       "url": "https://www.turismociudadreal.com/bodegas/cooperativa-virgen-de-las-vinas/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "within the La Mancha denomination, first named in 1932, taken up again in 1973 and given its first rules by ministerial order in 1976.",
+     "now": "within the La Mancha denomination, from young whites of Airén to aged reds of Tempranillo and Cabernet Sauvignon.",
+     "why": "The dates are taught and sourced in Ayuso's record; the range is borne out by two listings of Tomillar Reserva.",
+     "sources": [
+      {
+       "title": "Concours Mondial de Bruxelles: Tomillar Reserva 2017",
+       "url": "https://resultats.concoursmondial.com/fr/resultats/2023/196048-tomillar-reserva-2017",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Infovinos: Tomillar Airén",
+       "url": "https://infovinos.es/vinos-espanoles/6804-tomillar-airen",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and the prize works hang in a museum of contemporary art that it houses.",
+     "now": "and since 2011 the prize works have hung in a museum of contemporary art beside its winery.",
+     "why": "Opened in 2011 beside the winery by two accounts; the museum bears a living royal's name, which is not given.",
+     "sources": [
+      {
+       "title": "Ruta del Vino de La Mancha: the museum of contemporary art at Virgen de las Viñas",
+       "url": "https://www.rutadelvinodelamancha.com/en/?p=9665",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The co-operative's aged wine under the same brand, a Reserva of DO La Mancha.",
+     "now": "The co-operative's aged red under the same brand, Tempranillo with Cabernet Sauvignon, a Reserva of DO La Mancha.",
+     "why": "Two listings give the blend.",
+     "sources": [
+      {
+       "title": "Concours Mondial de Bruxelles: Tomillar Reserva 2017",
+       "url": "https://resultats.concoursmondial.com/fr/resultats/2023/196048-tomillar-reserva-2017",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q",
+     "was": "Virgen de las Viñas was founded in Tomelloso in 1961 by a small group of local growers. What sort of winery did they found?",
+     "now": "Virgen de las Viñas, the Tomelloso winery behind Tomillar Airén, dates from 1961. What sort of winery is it?",
+     "why": "The old stem named the growers and so gave the key away.",
+     "sources": [
+      {
+       "title": "La Voz de Tomelloso: the co-operative at sixty years",
+       "url": "https://www.lavozdetomelloso.com/38710/anos_cooperativa",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founders: fifteen by La Voz de Tomelloso and the Sommeliers Choice Awards, seventeen by the regional tourism body; the day is 19 November 1961, or a registration of October 1961. The story keeps a small group.",
+    "The co-operative's own site (vinostomillar.es) exists but could not be fetched from here; its sheets give 6 to 8 degrees Celsius, the record keeps 8 to 10.",
+    "The merger of March 2026 with Vinícola de Tomelloso and San José keeps the Tomillar brand by the press; the merged co-operative's name is for the integrator to watch."
+   ]
+  },
+  {
+   "key": "dehesa-del-carrizal",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The founder and the estate, with the estate's own domain and Grandes Pagos blocked: Proensa, the regional tourism body, Infovinos and wein.plus give a doctor and businessman who planted the first vines in 1987 (1986 to 1987 by two, the estate founded in 1988 by one) on a hunting estate in the Bullaque valley beside Cabañeros. The hunting estate of the plan's why is borne out and added.",
+    "The first wine and the winery: the 1989 harvest by Proensa and Wikipedia; the first harvests made at Dominio de Valdepusa, Marqués de Griñón's cellar at Malpica, until the estate's own winery opened with the 1999 harvest, by Proensa, De Bodega en Bodega, La Esencia del Vino and CataDelVino. Added.",
+    "The site: 800 metres by the regional tourism body, 800 to 900 by Wikipedia and Proensa, 900 by ICEX; raña as clay and quartzite by Wikipedia and CataDelVino, siliceous and acid by the tourism body. Changed from about 800 metres and quartz.",
+    "The pago: the order of 1 February 2006, published in the DOCM of 28 February 2006, by the BOE notices of 2007 and 2009, the estate and Wine Searcher. Borne out. The sale of 2010 to another family by Infovinos and Proensa: borne out, the buyers living and not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "at about 800 metres ... on raña: eroded slopes of clay strewn with quartz cobbles over acid soils.",
+     "now": "at 800 to 900 metres ... on raña: slopes at the foot of the hills, of clay strewn with quartzite cobbles over acid soils.",
+     "why": "The accounts give 800 to 900 metres, and raña's stones are quartzite.",
+     "sources": [
+      {
+       "title": "Wikipedia: Dehesa del Carrizal",
+       "url": "https://en.wikipedia.org/wiki/Dehesa_del_Carrizal",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Proensa: Dehesa del Carrizal, pioneers in the valley of the millionaires",
+       "url": "https://www.proensa.com/dehesa-del-carrizal-pioneros-en-el-valle-de-los-millonarios/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Turismo de Castilla-La Mancha: DOP Vino de Pago Finca Dehesa del Carrizal",
+       "url": "https://www.turismocastillalamancha.es/es/enogastronomia/vinos/dop-vino-de-pago-finca-dehesa-del-carrizal",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "ICEX, Foods and Wines from Spain: Dehesa del Carrizal VP",
+       "url": "https://www.foodswinesfromspain.com/content/icex-foodswines/en/wine/regions/the-meseta/dehesa-del-carrizal-vp.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "vines planted from 1987 at about 800 metres",
+     "now": "vines planted from 1987 at 800 to 900 metres",
+     "why": "As above.",
+     "sources": [
+      {
+       "title": "Wikipedia: Dehesa del Carrizal",
+       "url": "https://en.wikipedia.org/wiki/Dehesa_del_Carrizal",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Proensa: Dehesa del Carrizal, pioneers in the valley of the millionaires",
+       "url": "https://www.proensa.com/dehesa-del-carrizal-pioneros-en-el-valle-de-los-millonarios/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1987 a doctor and businessman founded it with Cabernet Sauvignon, ... and the first wine, a Cabernet Sauvignon, followed in 1989.",
+     "now": "In 1987 a doctor and businessman who had bought the hunting estate planted Cabernet Sauvignon there, ... and the first wine, a Cabernet Sauvignon, came from the 1989 harvest, made at Marqués de Griñón's cellar at Valdepusa until the estate's own winery opened with the 1999 harvest.",
+     "why": "The hunting estate, the vintage and the making at Valdepusa are each in two accounts or more.",
+     "sources": [
+      {
+       "title": "Proensa: Dehesa del Carrizal, pioneers in the valley of the millionaires",
+       "url": "https://www.proensa.com/dehesa-del-carrizal-pioneros-en-el-valle-de-los-millonarios/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "La Esencia del Vino: Bodegas Dehesa del Carrizal",
+       "url": "http://www.laesenciadelvino.com/bodegas/detalles/bodegas_dehesa_del_carrizal",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Infovinos: Dehesa del Carrizal",
+       "url": "https://infovinos.es/bodegas/bodegas-en-ciudad-real/554-dehesa-del-carrizal",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "strewn with quartz cobbles, at about 800 metres, where hot days and cold nights ripen the grapes slowly.",
+     "now": "strewn with quartzite cobbles, at 800 to 900 metres.",
+     "why": "The stone and the height corrected; the ripening clause was read in no source.",
+     "sources": [
+      {
+       "title": "Wikipedia: Dehesa del Carrizal",
+       "url": "https://en.wikipedia.org/wiki/Dehesa_del_Carrizal",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Proensa: Dehesa del Carrizal, pioneers in the valley of the millionaires",
+       "url": "https://www.proensa.com/dehesa-del-carrizal-pioneros-en-el-valle-de-los-millonarios/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back and questions[0]",
+     "was": "quartz cobbles, at about 800 metres",
+     "now": "quartzite cobbles, at 800 to 900 metres",
+     "why": "As above.",
+     "sources": [
+      {
+       "title": "Wikipedia: Dehesa del Carrizal",
+       "url": "https://en.wikipedia.org/wiki/Dehesa_del_Carrizal",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "Calificada is the higher rank of Rioja and Priorat, not of an estate.",
+     "now": "Calificada is a rank for a whole region, such as Rioja or Priorat, never for one estate.",
+     "why": "As for Valdepusa: the Codex places the Vino de Pago above DOCa in the statute.",
+     "sources": [
+      {
+       "title": "BOE: Ley 24/2003 de la Viña y del Vino",
+       "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2003-13864",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founding: the first vines of 1987 by the estate and Wikipedia, 1986 to 1987 by Proensa and Wine Searcher, the estate founded in 1988 by one account; 1987 kept.",
+    "The barrel time stays the estate's twelve to fifteen months, its sheets differing."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Tamara Falcó",
+   "role": "a daughter of Carlos Falcó, of the family that holds the Dominio de Valdepusa",
+   "where": "El Español in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Juan Miguel Villar Mir",
+   "role": "the businessman who bought Dehesa del Carrizal in 2010, by Proensa and Infovinos",
+   "where": "Proensa and Infovinos in the refuter's results",
+   "believed": "living (no death read)",
+   "inPeople": false,
+   "inFragment": "as another family only"
+  },
+  {
+   "name": "Rafael Torres",
+   "role": "president of the Virgen de las Viñas co-operative",
+   "where": "Encastillalamancha in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Marcial Gómez Sequeira",
+   "role": "the doctor and businessman who founded Dehesa del Carrizal in 1987",
+   "where": "Proensa, Infovinos and wein.plus in the refuter's results",
+   "believed": "not known; no dates read, so treated as living",
+   "inPeople": false,
+   "inFragment": "as a doctor and businessman only"
+  }
+ ],
+ "livingNote": "None of these is named in the fragment's prose; the read together agent adds those it judges living to people.json. Carlos Falcó (1937 to 2020) is dead and named with his dates, borne out by Spanish Wikipedia, El Español and Madridiario. Described, never named, for want of dates in two sources: Félix Solís Fernández and Leonor Yáñez, the founders of 1952 (the house keeps its name Félix Solís); Fermín Ayuso Roig, the founder of 1947; the fifteen or seventeen founders of Virgen de las Viñas. Émile Peynaud is dead but his role at Valdepusa is dated two ways and stays out; a later consultant met in the results is already on people.json. A critic met in the results is already on people.json and is no source here.",
+ "swaps": [],
+ "swapNote": "No swap was proposed by the author, and the refuter proposes none. Marqués de Griñón's Emeritus and Dehesa del Carrizal are two of the plateau's pagos, the first by the regional order of 2002 and the second by the order of 2006; Félix Solís is the Valdepeñas house of Viña Albali, its brand dated to 1962; Bodegas Ayuso's Estola is the aged red of 1965 the house and the DO's own page put first; Virgen de las Viñas stands under the thin region rule, a growers' co-operative of 1961 whose Tomillar Airén is borne out by three listings and said to be what it is. Dehesa del Carrizal's Cabernet Sauvignon is made under that name by the estate's own page and was its first wine, from the 1989 harvest, so Finca Antigua, the plan's fallback, is not needed.",
+ "planNotes": [
+  "marques-de-grinon: answered. The decree decides 2002: the regional order of 19 July 2002, ratified by Orden APA/519/2003 of 21 February 2003 (BOE of 11 March 2003). The blend is taught as Cabernet leading with Syrah and Petit Verdot, the shares moving widely; Falcó's dates by the Academia, Spanish Wikipedia and two newspapers; no living member of the family named; Valdepusa said to be a DO Pago of its own, not DO La Mancha.",
+  "felix-solis: answered. Félix Solís, trading as Félix Solís Avantis; 1952 by the company and three secondary accounts; the family's story told from the company's own history; the label Viña Albali Gran Reserva, DO Valdepeñas, borne out by the group's shop and Disenzo; Valdepeñas said to be a DO of its own.",
+  "ayuso: answered. 1947, 1961 and 1965 by the DO La Mancha's own page, the London Drinks Guide and De Bodega en Bodega besides the house; the first Reserva hedged as the house's claim; the founder is named in those sources but his dates nowhere, so he is described.",
+  "virgen-de-las-vinas: answered. 1961 by La Voz de Tomelloso and Turismo de Ciudad Real besides the author's two; the label Tomillar Airén, DO La Mancha, by Infovinos, De Bodega en Bodega and Uno de Copas; the merger of 2026 told nowhere in the record; the record says it is a co-operative.",
+  "dehesa-del-carrizal: answered. The pago's year 2006 by the BOE; the founding planting of 1987; the Cabernet Sauvignon made under that name, with Colección Privada a selection above it in chosen years. The plan's why calls it a hunting estate, which the author left out for want of a source: Proensa and a second account bear it out, and the story now says so, so the why stands."
+ ],
+ "codexInTension": [
+  {
+   "where": "js/data-advanced.js a-5pzdut6w",
+   "says": "Dominio de Valdepusa was the first in 2003, with Finca Élez, Guijoso and Pago Florentino among those that followed.",
+   "read": "The regional order recognising Dominio de Valdepusa is of 19 July 2002; Orden APA/519/2003 of 21 February 2003 is the national ratification of its regulation (BOE-A-2003-5034).",
+   "sources": [
+    {
+     "title": "BOE: Orden APA/519/2003 ratifying the Dominio de Valdepusa regulation",
+     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-5034",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "CataDelVino: the Vinos de Pago of Spain, DO Pago Dominio de Valdepusa",
+     "url": "https://www.catadelvino.com/blog-cata-vino/conoce-los-vinos-de-pago-de-espana-do-pago-dominio-de-valdepusa",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": "js/data-cms.js spain-other-dos",
+   "says": "Dominio de Valdepusa in Toledo and Finca Élez in Albacete, both recognised in 2003.",
+   "read": "As above: 2002 for the regional recognition of Valdepusa, 2003 for the ratification; Finca Élez's order was not read.",
+   "sources": [
+    {
+     "title": "BOE: Orden APA/519/2003 ratifying the Dominio de Valdepusa regulation",
+     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-5034",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": "js/data-regions.js, the La Mancha record: the card Spain's first Vino de Pago, and the question r-psuj5lzp (In which year was Dominio de Valdepusa recognised as Spain's first Vino de Pago?, keyed 2003)",
+   "says": "Dominio de Valdepusa, 2003, with Finca Élez the same year; the category came from the 2003 wine law.",
+   "read": "The pago was recognised by the regional order of 19 July 2002 and ratified in February 2003; Ley 24/2003, the national law that names the category, is of 10 July 2003, after both. The flagship record teaches 2002 with the ratification of 2003.",
+   "sources": [
+    {
+     "title": "BOE: Orden APA/519/2003 ratifying the Dominio de Valdepusa regulation",
+     "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-5034",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "BOE: Ley 24/2003 de la Viña y del Vino",
+     "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2003-13864",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": ".scripts/regions/fragments, the La Mancha producers line for Félix Solís",
+   "says": "the cheap aged Cencibel that taught the world the words Reserva and Gran Reserva",
+   "read": "A price word the Flagships tab refuses, and a claim no source read makes; the flagship record says only that the Gran Reserva carries the ageing category to a wide public.",
+   "sources": []
+  },
+  {
+   "where": ".scripts/regions/fragments, the La Mancha producers line for Virgen de las Viñas",
+   "says": "one of the largest wineries in Europe",
+   "read": "The press calls it the largest wine co-operative of Europe in 2022 and of the world after the merger of March 2026: a ranking that moves with the year, which the flagship record leaves out.",
+   "sources": [
+    {
+     "title": "La Voz de Tomelloso: the co-operative at sixty years",
+     "url": "https://www.lavozdetomelloso.com/38710/anos_cooperativa",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "where": ".scripts/regions/fragments, the La Mancha producers line for Bodegas Ayuso",
+   "says": "for decades the best-known aged red of DO La Mancha",
+   "read": "A ranking no source read makes; the flagship record says the bottle the house is known by.",
+   "sources": []
+  }
+ ],
+ "codexNote": "Reported, never edited: REGIONS, WINE_PRODUCERS and the Codex's question banks stay as they are. The Codex's own Spanish records place the Vino de Pago above DOCa in the statute, which is why both of this group's Calificada explanations were changed rather than the Codex. None of the five houses is in WINE_PRODUCERS."
+}
