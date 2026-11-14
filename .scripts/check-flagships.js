@@ -39,11 +39,12 @@
  *  11. the shell and the chain rule: the two tags in order, codex-v117 or later listing both; every list in a gate here
  *      that names codex57.js names data-flagships.js and codex58.js straight after it (or in the list that follows it)
  *  12. the layer's file: no dash, nobody named, no key, no fl- literal, var and function only, every wrapper typeof
- *      guarded, every selector under .wrap, every shown word from V58_WORDS (and V58_WORDS in the strictest voice);
- *      this gate dash free
+ *      guarded, every selector under .wrap, every colour on its own ground (the parchment's tokens under a card, the
+ *      dark page's elsewhere, codex39's claret sources given the dark page's gold), every shown word from V58_WORDS
+ *      (and V58_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-flagships.js [jsDir] [--partial]               every check above
- *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 28 faults in a scratch copy (27 with
+ *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 30 faults in a scratch copy (29 with
  *                                                                       --partial, where no count is pinned), one at
  *                                                                       a time, and expects each caught by the check
  *                                                                       that names it (FLAGSHIPS_MUTATION=word|word
@@ -798,7 +799,7 @@ async function main() {
     check('codex58.js declares with var and function only (no let, const, class or arrow)', !/(^|[^\w.'"])(let|const|class)\s/.test(code) && code.indexOf('=>') < 0);
     const wrappers = SRC.split('\n').filter((l) => /^\s*var _v58\w+ = \w+;$/.test(l));
     const unguarded = wrappers.filter((line) => { const m = /var (_v58\w+) = (\w+);$/.exec(line); const i = SRC.indexOf(line); const before = SRC.slice(Math.max(0, i - 200), i); return !new RegExp('if \\(typeof ' + m[2] + ' === \'function\'\\) \\{\\s*$').test(before); });
-    const outer = D.J('(function () { var out = []; [["v32Arg", "_v58Arg"], ["v32Apply", "_v58Apply"], ["v25MainName", "_v58MainName"], ["v55HubHtml", "_v58HubHtml"], ["v55RegionHtml", "_v58RegionHtml"], ["prodProfileView", "_v58ProfileView"], ["v32DeckDef", "_v58DeckDef"], ["v32Learnt", "_v58Learnt"], ["v32Grade", "_v58Grade"], ["v32StartRun", "_v58StartRun"], ["v32CardFace", "_v58CardFace"], ["v32CardHtml", "_v58CardHtml"], ["startDrill", "_v58StartDrill"], ["keyOwned", "_v58KeyOwned"], ["srsRecord", "_v58SrsRecord"], ["qidAudit", "_v58QidAudit"], ["findByKey", "_v58FindByKey"], ["graderDisputes", "_v58GraderDisputes"], ["badReports", "_v58BadReports"]].forEach(function (p) { var f = this[p[0]]; if (typeof f !== "function" || typeof this[p[1]] !== "function" || f === this[p[1]] || String(f).indexOf("_v58") < 0) out.push(p[0]); }, this); return out; }).call(this)');
+    const outer = D.J('(function () { var out = []; [["v32Arg", "_v58Arg"], ["v32Apply", "_v58Apply"], ["v25MainName", "_v58MainName"], ["v55HubHtml", "_v58HubHtml"], ["v55RegionHtml", "_v58RegionHtml"], ["prodProfileView", "_v58ProfileView"], ["v32DeckDef", "_v58DeckDef"], ["v32Learnt", "_v58Learnt"], ["v32Grade", "_v58Grade"], ["v32StartRun", "_v58StartRun"], ["v32CardFace", "_v58CardFace"], ["v32CardHtml", "_v58CardHtml"], ["startDrill", "_v58StartDrill"], ["keyOwned", "_v58KeyOwned"], ["srsRecord", "_v58SrsRecord"], ["qidAudit", "_v58QidAudit"], ["findByKey", "_v58FindByKey"], ["graderDisputes", "_v58GraderDisputes"], ["badReports", "_v58BadReports"], ["v25NavWord", "_v58StudyNavWord"], ["v32ParentRoute", "_v58StudyParentRoute"]].forEach(function (p) { var f = this[p[0]]; if (typeof f !== "function" || typeof this[p[1]] !== "function" || f === this[p[1]] || String(f).indexOf("_v58") < 0) out.push(p[0]); }, this); return out; }).call(this)');
     check('codex58.js edits no earlier layer: every wrapper (' + wrappers.length + ') is typeof guarded, the guard on the line above it, and the outermost of its function on the chain', wrappers.length >= 20 && unguarded.length === 0 && outer.length === 0, unguarded.concat(outer).join(' | '));
     const cssAt = SRC.indexOf('css.textContent = ['), cssEnd = SRC.indexOf("].join('\\n')", cssAt);
     const rules = [...SRC.slice(cssAt, cssEnd).matchAll(/^\s*'((?:[^'\\]|\\.)*)',?$/gm)].map((m) => m[1]);
@@ -810,6 +811,27 @@ async function main() {
       sel.split(',').forEach((x) => { if (!/^\.wrap\s/.test(x.trim())) selBad.push(x.trim()); });
     });
     check('every selector of the v58-style element (' + rules.length + ' rules) starts .wrap, every colour a house token (no colour written out)', rules.length > 50 && selBad.length === 0 && !rules.some((r) => /#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(/i.test(r)), selBad.slice(0, 5).join(' | '));
+    /* CLAUDE.md's contrast rule, read on the style: a text colour under a card (.v58-card, .v58-fcard) is one of the
+       parchment's tokens, every other one of the dark page's; and codex39's sources, coloured claret for the parchment
+       of a region page, are given the dark page's colour where this layer draws them on the page's own ground (claret
+       there reads at about 2.4 to 1 by night) */
+    const PARCH_T = ['--ink', '--ink-soft', '--claret'], DARK_T = ['--parch', '--parch2', '--gold', '--gold-soft', '--gold-hi'];
+    const groundBad = [];
+    let coloured = 0;
+    rules.forEach((r) => {
+      const body = /^@media[^{]*\{(.*)\}$/.exec(r);
+      const rule = body ? body[1] : r;
+      const sel = rule.slice(0, rule.indexOf('{'));
+      const m = /[{;]color:var\((--[\w-]+)\)/.exec(rule.slice(rule.indexOf('{')));
+      if (!m) return;
+      coloured++;
+      if (((/\.v58-f?card\b/.test(sel)) ? PARCH_T : DARK_T).indexOf(m[1]) < 0) groundBad.push(sel + ' ' + m[1]);
+    });
+    const c39 = fs.readFileSync(path.join(JS, 'codex39.js'), 'utf8');
+    const srcTok = (/'\.wrap \.v39-sources a\{(?:[^'}]*;)?color:var\((--[\w-]+)\)/.exec(c39) || [])[1] || '';
+    const ourSrc = (/[{;]color:var\((--[\w-]+)\)/.exec(rules.find((r) => /^\.wrap \.v58-sources a\{/.test(r)) || '') || [])[1] || '';
+    if (PARCH_T.indexOf(srcTok) >= 0 && DARK_T.indexOf(ourSrc) < 0) groundBad.push('.v58-sources a: codex39 colours its sources ' + srcTok + ' for parchment, and this layer gives them no dark page colour on its own ground');
+    check('every colour on its own ground (the contrast rule, ' + coloured + ' coloured rules): under a card the parchment\'s tokens, elsewhere the dark page\'s, and the sources (codex39\'s ' + (srcTok || 'none') + ') given ' + (ourSrc || 'nothing'), coloured > 15 && groundBad.length === 0, groundBad.join(' | '));
     let lits = SRC.replace(/\/\*[\s\S]*?\*\//g, '');
     const cut = (s, a0, b0, off) => { const a = s.indexOf(a0), b = a >= 0 ? s.indexOf(b0, a) : -1; return a < 0 || b < 0 ? s : s.slice(0, a) + s.slice(b + off); };
     lits = cut(lits, 'var V58_WORDS = {', '\n};', 3);
@@ -888,7 +910,9 @@ function mutations() {
     ['a selector outside .wrap', 'js/codex58.js', "'.wrap .v58-sec{", "'.v58-sec{", 'every selector of the v58-style element'],
     ['a shown word outside V58_WORDS', 'js/codex58.js', "v58Esc(v58W('fiveH'))", "'Five houses to know'", 'every word the layer shows is V58_WORDS'],
     ['a superlative in V58_WORDS', 'js/codex58.js', "tab: 'Producers and flagships',", "tab: 'Producers and their finest flagships',", 'in the strictest voice'],
-    ['a gate list naming codex57.js without the new files', 'gates', "'codex57.js', 'data-flagships.js', 'codex58.js'", "'codex57.js'", 'the chain rule']
+    ['a gate list naming codex57.js without the new files', 'gates', "'codex57.js', 'data-flagships.js', 'codex58.js'", "'codex57.js'", 'the chain rule'],
+    ['the sources left claret on the page\'s own ground', 'js/codex58.js', "'.wrap .v58-sources a{color:var(--gold-hi)}',", "'.wrap .v58-sources a{text-underline-offset:3px}',", 'every colour on its own ground'],
+    ['a parchment colour on the page\'s own ground', 'js/codex58.js', "'.wrap .v58-oname{display:block;font-weight:700;color:var(--gold-hi);", "'.wrap .v58-oname{display:block;font-weight:700;color:var(--claret);", 'every colour on its own ground']
   ].concat(PARTIAL ? [] : [
     ['an answer dealt again by hand', 'js/data-flagships.js', '"a":1,"exp":"', '"a":2,"exp":"', 'the counts pinned exact']
   ]);

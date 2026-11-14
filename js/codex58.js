@@ -301,6 +301,9 @@ function v58Fold(s) {
     '.wrap .v58-onote{display:block}',
     '.wrap .v58-traps li{margin:0 0 12px;padding:2px 0 2px 12px;border-left:3px solid var(--claret)}',
     '.wrap .v58-sourcesbox{margin-top:28px}',
+    /* codex39 colours its sources claret for the parchment of a region page; here they sit on the page\'s own
+       ground, where claret reads at about 2.4 to 1 by night, so they take the dark page\'s gold */
+    '.wrap .v58-sources a{color:var(--gold-hi)}',
     /* the doors: Five producers on a region\'s page, a library page\'s door to its flagship */
     '.wrap .v58-five{margin:28px 0 8px}',
     '.wrap .v58-five .v32-line{margin:6px 0 10px}',
