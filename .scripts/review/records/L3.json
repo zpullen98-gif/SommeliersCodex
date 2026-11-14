@@ -1,0 +1,1004 @@
+{
+  "lane": "L3",
+  "checked": "2026-11-11",
+  "entries": [
+    {
+      "id": "L3-01",
+      "topic": "Egri Bikavér: at least four varieties, not three",
+      "verdict": "change",
+      "claim": "The Eger record (summary, made.winemaking, law.classification, law.tiers Classicus, exam[0], cards[0].b) and the Hungary country record (exam[1], question r-1ozia0r0) say Egri Bikavér is a blend of at least three varieties, and the country question says the same of Szekszárdi Bikavér.",
+      "finding": "The Egri Bikavér product specification that applies to wines marketed from the 2023/2024 wine year asks for at least four varieties, each above 5 per cent of the blend, with Kékfrankos at 30 to 65 per cent and the largest share; the earlier Eger texts asked for more, not fewer (five varieties in the upper tiers of the text applicable from 2012, struck to four in a later draft), and three is the count of older rules (a Szekszárd text of 2009 still wrote three), not of either specification in force. The Szekszárd specification, fourth version, applicable from 15 March 2024, also asks for at least four varieties, with Kékfrankos at 45 per cent or more and Kadarka at 5 per cent or more. The national wine body's own pages and the 2024 Hungarian Wine Summit material give the same: four grapes, Kékfrankos 30 to 65 per cent at Eger. The oak minimums the record gives (six months for Classicus, twelve for Superior and Grand Superior) hold.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "summary",
+          "old": "a blend of at least three varieties on a compulsory backbone of Kékfrankos",
+          "new": "a blend of at least four varieties on a compulsory backbone of Kékfrankos"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "made.winemaking",
+          "old": "The rules ask for at least three varieties from a fixed list, Kékfrankos among them at no less than 30 per cent",
+          "new": "The rules ask for at least four varieties from a fixed list, Kékfrankos among them at no less than 30 per cent and the largest share"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "law.classification",
+          "old": "the Eger rules fix the blend: at least three varieties from a list of permitted reds, Kékfrankos compulsory at a minimum of 30 per cent",
+          "new": "the Eger rules fix the blend: at least four varieties from a list of permitted reds, Kékfrankos compulsory at a minimum of 30 per cent and the largest share"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "law.tiers[0][1] (Classicus)",
+          "old": "The base tier: Egri Bikavér from at least three varieties, Kékfrankos at 30 per cent or more",
+          "new": "The base tier: Egri Bikavér from at least four varieties, Kékfrankos at 30 per cent or more"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "exam[0]",
+          "old": "Egri Bikavér: at least three varieties, Kékfrankos compulsory at a minimum of 30 per cent",
+          "new": "Egri Bikavér: at least four varieties, Kékfrankos compulsory at a minimum of 30 per cent"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "eger",
+          "path": "cards[0].b",
+          "old": "At least three varieties from a fixed list; Kékfrankos compulsory at 30 per cent or more",
+          "new": "At least four varieties from a fixed list; Kékfrankos compulsory at 30 per cent or more"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "exam[1]",
+          "old": "Egri Bikavér: Kékfrankos compulsory, at least three varieties, Bull's Blood",
+          "new": "Egri Bikavér: Kékfrankos compulsory, at least four varieties, Bull's Blood"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "questions[2].exp (r-1ozia0r0)",
+          "old": "both Kékfrankos led blends of at least three varieties.",
+          "new": "both Kékfrankos led blends of at least four varieties."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Az EGRI BIKAVÉR oltalom alatt álló eredetmegjelölés termékleírása, eredeti változat, a 2023/2024. borpiaci évtől forgalomba kerülő borászati termékekre (the Egri Bikavér product specification, Hungarian Ministry of Agriculture, geographical indications register)",
+          "url": "https://gi.kormany.hu/download/2/30/73000/EGRI%20BIKAV%C3%89R%20term%C3%A9kle%C3%ADr%C3%A1s_honlapra.pdf",
+          "kind": "primary",
+          "says": "Legalább négy szőlőfajta bora arányának meg kell haladnia külön-külön az 5%-ot; a Kékfrankos fajta arányának 30 és 65% között kell lennie, a házasításban ennek a fajtának kell a legnagyobb arányban jelen lennie: at least four varieties each above 5 per cent, Kékfrankos 30 to 65 per cent and the largest share.",
+          "read": "search summary"
+        },
+        {
+          "title": "A SZEKSZÁRD oltalom alatt álló eredetmegjelölés termékleírása, 4. változat (the Szekszárd product specification, fourth version, Hungarian Ministry of Agriculture wine pages)",
+          "url": "https://boraszat.kormany.hu/download/8/3e/33000/Szeksz%C3%A1rd%20term%C3%A9kle%C3%ADr%C3%A1s_v4_hat%C3%A1rozat_KN_jav%C3%ADtott_bikav%C3%A9rek.pdf",
+          "kind": "primary",
+          "says": "Szekszárdi Bikavér: at least four varieties, Kékfrankos at least 45 per cent, Kadarka at least 5 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Az EGER oltalom alatt álló eredetmegjelölés termékleírása, 2. és 3. változat, and the Eger specification as amended from 2012 (Hungarian Ministry of Agriculture wine pages)",
+          "url": "https://boraszat.kormany.hu/download/f/55/91000/Eger_OEM_v3.pdf",
+          "kind": "primary",
+          "says": "The earlier texts: Kékfrankos 30 to 50 per cent and at least five varieties above 5 per cent in the upper Bikavér tiers in the text applicable from 2012, and a later draft with five struck through and four written in.",
+          "read": "search summary"
+        },
+        {
+          "title": "Magyar Bor, the Hungarian wine body: The legendary Bikavér",
+          "url": "https://bor.hu/en/magazine/the-legendary-bikaver/",
+          "kind": "secondary",
+          "says": "A minimum of four grape varieties in the wine; the mandatory proportion of Kékfrankos is 30 to 65 per cent at Eger, with Turán at 10 per cent at most; barrel ageing of 6 to 12 months by category.",
+          "read": "search summary"
+        },
+        {
+          "title": "Hungarian Wine Summit 2024: Red Wines on the Red Carpet (Magyar Bor)",
+          "url": "https://summit2025.bor.hu/wp-content/uploads/2024/05/Red-Wines-on-the-Red-Carpet_Hungarian-Wine-Summit-2024-final.pdf",
+          "kind": "secondary",
+          "says": "Egri Bikavér: at least four grapes, Kékfrankos 30 to 65 per cent; Classicus at least six months of ageing, Superior and Grand Superior at least twelve.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Three is the count of a superseded rule: both Bikavér specifications in force ask for four, so every line that teaches three is wrong for the exam and for a guest.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Tried to refute with the tier rows of the Egri Bikavér specification for the 2023/2024 wine year (search summaries drawn from the ministry registers): Classicus asks at least four varieties, each above 5 per cent, Kékfrankos 30 to 65 per cent and the largest share, eight days on the skins and six months in wood; Superior gives the same Kékfrankos band, with Turán and Bíborkadarka held to 10 per cent between them; Grand Superior again asks four varieties above 5 per cent. Secondary pages that give five varieties or a 50 per cent ceiling for the upper tiers repeat the text applicable from 2012. The second version of the Eger specification is where three varieties and no variety above half come from; versions 3 and 4 (the latter for grapes harvested after 1 August 2017) already ask four. One wrinkle: versions 3 and 4 let an organic Classicus be blended from three varieties; the summaries of the 2023/2024 text show no such clause, so four is the rule and the organic allowance is noted as unsettled. Szekszárd: version 4, for wine released from 15 March 2024, asks four varieties, Kékfrankos at 45 per cent or more and Kadarka at 5 per cent or more; version 1 had asked three and 35 per cent, so the country question's three was out of date for both towns. All eight olds occur once in hungary.1.json at the paths named, and each new line reads in place; the Classicus tier, exam line and card stay true of every tier. Completeness: the Szekszárd record (hungary.2.json), the Régionale primer (four, Kékfrankos the largest share), the Certified primer (largest share) and the Advanced answer (four, handled in L3-02) already agree; no other line in js/, the region fragments, the CMS questions, rewrite/categories or the grape fragments gives three (blaufrankisch.json carries the count only in its review notes).",
+        "sources": [
+          {
+            "title": "Az EGRI BIKAVÉR oltalom alatt álló eredetmegjelölés termékleírása, eredeti változat, the Superior and Grand Superior rows (Hungarian Ministry of Agriculture registers)",
+            "url": "https://boraszat.kormany.hu/download/3/72/23000/EGRI%20BIKAV%C3%89R%20term%C3%A9kle%C3%ADr%C3%A1s_honlapra.pdf",
+            "kind": "primary",
+            "says": "Superior: Kékfrankos 30 to 65 per cent and the largest share, Turán and Bíborkadarka 10 per cent at most, alone or together; Grand Superior: at least four varieties each above 5 per cent; Classicus: at least four varieties, eight days on the skins, six months in wood.",
+            "read": "search summary"
+          },
+          {
+            "title": "A SZEKSZÁRD oltalom alatt álló eredetmegjelölés termékleírása, 4. változat, and the first version (Hungarian Ministry of Agriculture wine pages)",
+            "url": "https://boraszat.kormany.hu/download/8/3e/33000/Szeksz%C3%A1rd%20term%C3%A9kle%C3%ADr%C3%A1s_v4_hat%C3%A1rozat_KN_jav%C3%ADtott_bikav%C3%A9rek.pdf",
+            "kind": "primary",
+            "says": "Version 4, for wine released from 15 March 2024: Bikavér from at least four varieties, Kékfrankos at least 45 per cent, Kadarka at least 5 per cent; version 1 asked at least three, Kékfrankos at least 35 per cent.",
+            "read": "search summary"
+          },
+          {
+            "title": "Az EGER oltalom alatt álló eredetmegjelölés termékleírása, 2., 3. és 4. változat (Hungarian Ministry of Agriculture wine pages)",
+            "url": "https://boraszat.kormany.hu/download/f/5d/82000/Eger_OEM_v4_boraszat_200215.pdf",
+            "kind": "primary",
+            "says": "Version 2: at least three varieties, Kékfrankos compulsory, no variety above 50 per cent; versions 3 and 4: four varieties each above 5 per cent, with an organic Classicus allowed three.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-02",
+      "topic": "Egri Bikavér: no fifty per cent ceiling on Kékfrankos",
+      "verdict": "change",
+      "claim": "Question c-98c4i3oo (rewrite/categories/r2_hungary_greece.py) keys the ceiling on any one variety in Egri Bikavér at fifty per cent and says the upper tiers ask for more varieties; the Advanced answer a-ih3g5con says no single variety above 50% and Superior requires five varieties.",
+      "finding": "The Egri Bikavér specification for wines marketed from the 2023/2024 wine year lets Kékfrankos run from 30 to 65 per cent and requires it to be the largest share, so the ceiling on any one grape is Kékfrankos's 65 per cent; the national wine body gives the same band. The fifty per cent band and the five variety rule belong to earlier versions of the Eger specification (the 2012 text), and the summaries of the current text read here give four varieties for every tier, while trade summaries still repeat five for Superior: the count of varieties above the base is not settled by what was read, so the lines drop it rather than give a new one.",
+      "targets": [
+        {
+          "file": "rewrite/categories/r2_hungary_greece.py",
+          "record": "c-98c4i3oo",
+          "path": "Q(\"Eger, Bikaver and the north\", \"No single grape may take over an Egri Bikaver ...\").opts[0] (the keyed option)",
+          "old": "[\"Fifty per cent\", \"Thirty per cent\", \"Seventy-five per cent\",",
+          "new": "[\"Sixty-five per cent\", \"Thirty per cent\", \"Seventy-five per cent\","
+        },
+        {
+          "file": "rewrite/categories/r2_hungary_greece.py",
+          "record": "c-98c4i3oo",
+          "path": "Q(\"Eger, Bikaver and the north\", \"No single grape may take over an Egri Bikaver ...\").exp",
+          "old": "The cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for more varieties, lower yields and, at the top, fruit from one named site.",
+          "new": "The ceiling is Kekfrankos's, which must also be the largest share, and with three more varieties required beside it the cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for lower yields, longer ageing and, at the top, fruit from one named site."
+        },
+        {
+          "file": "js/data-advanced.js",
+          "record": "a-ih3g5con",
+          "path": "ans (the gloss after the colon; the keyed grape and the accept list stay)",
+          "old": "minimum 30% of the blend, with no single variety above 50%; Egri Bikavér must draw on at least four permitted varieties (Egri Bikavér Superior requires five).",
+          "new": "at least 30 per cent of the blend and its largest share, at most 65 per cent; Egri Bikavér must draw on at least four permitted varieties."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Az EGRI BIKAVÉR oltalom alatt álló eredetmegjelölés termékleírása, eredeti változat, a 2023/2024. borpiaci évtől (the Egri Bikavér product specification, Hungarian Ministry of Agriculture, geographical indications register)",
+          "url": "https://gi.kormany.hu/akadalymentes/download/2/30/73000/EGRI%20BIKAV%C3%89R%20term%C3%A9kle%C3%ADr%C3%A1s_honlapra.pdf",
+          "kind": "primary",
+          "says": "A Kékfrankos fajta arányának 30 és 65% között kell lennie, a házasításban ennek a fajtának kell a legnagyobb arányban jelen lennie; the same band is read in the Superior rows.",
+          "read": "search summary"
+        },
+        {
+          "title": "Az EGER oltalom alatt álló eredetmegjelölés termékleírása, the text applicable from 2012 and the 2. változat (Hungarian Ministry of Agriculture wine pages)",
+          "url": "https://boraszat.kormany.hu/download/f/9d/40000/EGER_termekleiras_modos%C3%ADtott_jelolve_2012-tol-alkalmazando.pdf",
+          "kind": "primary",
+          "says": "The superseded rule: Kékfrankos 30 to 50 per cent and at least five varieties above 5 per cent for the upper Bikavér tiers.",
+          "read": "search summary"
+        },
+        {
+          "title": "Magyar Bor, the Hungarian wine body: The legendary Bikavér",
+          "url": "https://bor.hu/en/magazine/the-legendary-bikaver/",
+          "kind": "secondary",
+          "says": "At least four varieties; Kékfrankos 30 to 65 per cent at Eger, Turán at most 10 per cent.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The keyed fifty per cent is false under the specification in force, which lets Kékfrankos reach 65 per cent: the stem stands, but its key does not, so the keyed option changes and the integrator keeps the pinned id c-98c4i3oo; in a-ih3g5con the keyed grape stays and only the false gloss goes.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Tested the ceiling against every tier: the summaries of the 2023/2024 text give Kékfrankos 30 to 65 per cent and the largest share for Classicus and for Superior, and four varieties for Grand Superior; the 30 to 50 band and five varieties that a wine glossary still prints for Superior and Grand Superior are the 2012 text. So 65 per cent is the ceiling on any one grape, since every other grape must sit below Kékfrankos, and the stem stays true; only the key moves, from Fifty to Sixty-five per cent, and the integrator keeps c-98c4i3oo pinned. Read the deal: Sixty-five sits apart from Seventy-five and Thirty, and Ten per cent remains a fair distractor although Turán and Bíborkadarka are held to 10 per cent, since the stem asks the cap on any one variety. The new explanation is ASCII, as r2_hungary_greece.py is, and every clause holds (three more varieties beside Kékfrankos; longer ageing at Superior, twelve months against six; a named dűlő at Grand Superior). In a-ih3g5con the keyed grape and the accept list stay, the answer gloss loses only what is false, and the stem (which grape today) still keys Kékfrankos; the old gloss already said four for the base wine, so the record agreed with itself only after this change. Both olds occur once. The generated js/data-questions.js carries the same stem and follows by python3 rewrite/build.py r2_hungary_greece then ship.py.",
+        "sources": [
+          {
+            "title": "Egri Bikavér: Hungary's Bull's Blood blend regulations and permitted varieties (Wine With Seth)",
+            "url": "https://www.winewithseth.com/winewiki/bikaver-varieties-permitted-hungarys-bulls-blood-blend-regulations/",
+            "kind": "secondary",
+            "says": "Gives Classicus 30 to 65 per cent and Superior and Grand Superior 30 to 50 per cent with five varieties: the 2012 text, which the specification summaries above overrule.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-03",
+      "topic": "Tokaj: dry single vineyard Furmint from about the turn of the century",
+      "verdict": "change",
+      "claim": "The Hungary country record (overview, grapes[0].styles) and the Tokaj record (summary, exam[5]) date dry Furmint from single vineyards, and its class, to the 1990s: in the same decade as the rebuilt estates, since the 1990s, the dry Furmint movement of the 1990s.",
+      "finding": "Dry Tokaji was made in the 1990s: the first commercial dry wines of the post communist years came from the new estates in the early 1990s, and dry Furmint had long been made as the base wine for Aszú. The single vineyard dry Furmint that changed Tokaj's view of the style dates from the 2000 vintage, an Úrágya wine made at Mád after a year of poor botrytis. So the 1990s is right for dry Tokaji and wrong for single vineyard dry Furmint of class; about the turn of the century is true of both. The Szent Tamás note (the 2000s) already agrees and stays.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "overview",
+          "old": "and in the same decade local growers began making dry Furmint from single vineyards",
+          "new": "and at the turn of the century local growers began making dry Furmint from single vineyards"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "grapes[0].styles (Furmint)",
+          "old": "and since the 1990s a dry white of apple, smoke and salt from single vineyards",
+          "new": "and since about the turn of the century a dry white of apple, smoke and salt from single vineyards"
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "tokaj",
+          "path": "summary",
+          "old": "Since the 1990s the same vineyards have made dry Furmint of real class.",
+          "new": "Since about the turn of the century the same vineyards have made dry Furmint of real class."
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "tokaj",
+          "path": "exam[5]",
+          "old": "the 2002 UNESCO listing, the dry Furmint movement of the 1990s.",
+          "new": "the 2002 UNESCO listing, the dry Furmint movement of the turn of the century."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Magyar Bor, the Hungarian wine body: the Tokaj wine district",
+          "url": "https://bor.hu/en/tokaji-wine-district/",
+          "kind": "secondary",
+          "says": "Úrágya, north west of Mád: the first truly great dry wine of a Mád grower came from here and changed Tokaj's attitude towards the style.",
+          "read": "search summary"
+        },
+        {
+          "title": "Falstaff: Furmint, from sweet wine star to acidity hero",
+          "url": "https://www.falstaff.com/nordics/news/furmint-from-sweet-wine-star-to-acidity-hero",
+          "kind": "secondary",
+          "says": "The single vineyard Úrágya of the 2000 vintage was not the first dry Furmint from Tokaj, but it sparked the movement.",
+          "read": "search summary"
+        },
+        {
+          "title": "Taste Hungary journal: Dry wine in Tokaj",
+          "url": "https://tastehungary.com/journal/dry-wine-in-tokaj/",
+          "kind": "secondary",
+          "says": "The first commercial dry Tokaj wines of the post communist era came from the new estates in the early 1990s (a dry Tokaj in one estate's first vintage, 1992); the turning point came in 2000 with the first acclaimed dry Tokaj, a single vineyard wine of Mád.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Dry Tokaji is a 1990s story but single vineyard dry Furmint of class is a 2000 vintage one; the turn of the century is true to both and matches the Szent Tamás note.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Looked for single vineyard dry Furmint before 2000 and found none: every source read puts the first single vineyard dry Tokaji in the 2000 vintage, from Úrágya at Mád; Decanter dates the wider change to the warm, dry 2003 vintage, when many houses launched premium dry wines, and the first commercial dry wines of the post communist years (Disznókő, Hétszőlő) to the early 1990s. About the turn of the century is true to both, and the 1990s in the region record would teach the wrong decade for the single vineyard wines. The four olds occur once each in hungary.1.json at the paths named; the new overview sentence still reads after the early 1990s clause, and the Szent Tamás place note (the 2000s) agrees. Completeness: no other line in js/, the region fragments, the CMS, rewrite/categories or the grape fragments dates single vineyard dry Furmint to the 1990s (the Furmint grape page gives no decade). The Master answer m-kuunvbip says the late 1990s and 2000s, which agrees, but it names living growers in its answer and accept list, which this lane may not touch (see unsettled).",
+        "sources": [
+          {
+            "title": "Decanter: the ageing potential of Furmint in Tokaj",
+            "url": "https://www.decanter.com/premium/the-ageing-potential-of-furmint-in-tokaj-432059/",
+            "kind": "secondary",
+            "says": "The warm, dry 2003 vintage brought wider change, with many wineries launching their own premium dry wines.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-04",
+      "topic": "Tokaji Aszú at the table: 10 to 12 degrees, warmer than the sweet whites row",
+      "verdict": "change",
+      "claim": "The Tokaj record serves Aszú at 10 to 12 degrees Celsius (wines[0].note, exam[6]); the service reference serves sweet whites with Tokaji named at 6 to 8 C (the temperatures row) and Tokaji Aszú with Sauternes at 6 to 8 C (the digestifs row); the Furmint grape page says sweet Aszú colder, as for Sauternes.",
+      "finding": "No statement of the Tokaj wine community was found. The Tokaj houses put Aszú at 10 to 12 degrees Celsius (a Mád house's Aszú sheets), 10 to 13 (a Tokaj estate's six puttonyos sheet) and 12 to 14 (an Aszú on the national wine body's fair pages); the national body's Furmint page puts late harvest Furmint at 8 to 10. The serving references put Tokaji colder than its makers but not as cold as 6 to 8: the Swedish monopoly serves Sauternes and Tokaji at 8 to 10, and a serving guide gives Tokaji Aszú 7 to 12. So the record's 10 to 12 is Tokaj's own figure and stands, the 6 to 8 of the two service rows is colder than any source read for Tokaji, and the Furmint page follows the rows. The sweet whites band itself (Sauternes, ice wine, late harvest) is not in question here and stays at 6 to 8.",
+      "targets": [
+        {
+          "file": "js/data-service-ref.js",
+          "record": "temperatures",
+          "path": "row \"Sweet whites (Sauternes, Tokaji, ice wine, late harvest)\", serve at",
+          "old": "[\"Sweet whites (Sauternes, Tokaji, ice wine, late harvest)\", \"6 to 8 C (43 to 46 F)\",",
+          "new": "[\"Sweet whites (Sauternes, Tokaji, ice wine, late harvest)\", \"6 to 8 C (43 to 46 F); Tokaji Aszú a little warmer, 10 to 12 C (50 to 54 F)\","
+        },
+        {
+          "file": "js/data-service-ref.js",
+          "record": "digestifs",
+          "path": "row \"Sauternes and the sweet wines\", service",
+          "old": "\"60 to 90 ml (2 to 3 oz) at 6 to 8 C in a small glass; with Roquefort",
+          "new": "\"60 to 90 ml (2 to 3 oz) at 6 to 8 C, Tokaji Aszú at 10 to 12 C, in a small glass; with Roquefort"
+        },
+        {
+          "file": ".scripts/grapes/fragments/furmint.json",
+          "record": "furmint",
+          "path": "service.temp",
+          "old": "sweet Aszú colder, as for Sauternes.",
+          "new": "Aszú about the same."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Royal Tokaji: Gold Label Tokaji Aszú 6 puttonyos 2013, the wine sheet",
+          "url": "https://royal-tokaji.com/portfolio/gold-label-tokaji-aszu-6-puttonyos-2013",
+          "kind": "secondary",
+          "says": "Serve at 10 to 13 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Hungarian Wines: Béres Tokaji Aszú 6 puttonyos 2008, the wine sheet",
+          "url": "https://hungarianwines.eu/product/beres-tokaji-aszu-6-puttonyos-2008/",
+          "kind": "secondary",
+          "says": "Serving temperature 10 to 12 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wines of Hungary at Vinitaly (Magyar Bor): Füleky Tokaji Aszú 6 puttonyos 2013",
+          "url": "https://vinitaly.winesofhungary.hu/wines/fuleky-tokaji-aszu-6-puttonyos-2013",
+          "kind": "secondary",
+          "says": "Serving temperature 12 to 14 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Systembolaget: temperatur på dessertvin och söta viner",
+          "url": "https://www.systembolaget.se/vin/vinprovning/temperatur-vin/temperatur-dessertvin-sota-viner/",
+          "kind": "secondary",
+          "says": "Sweet white wines such as Sauternes and Tokaji at 8 to 10 degrees.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wine Folly: Tokaji Aszú",
+          "url": "https://winefolly.com/wines/tokaji-aszu/",
+          "kind": "secondary",
+          "says": "Serve at 45 to 55 degrees Fahrenheit, 7 to 12 degrees Celsius.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The Codex disagreed with itself; Tokaj's makers and both serving references put Aszú above 8 degrees, so the region record stands and the two service rows (and the grape page that follows them) give Aszú its own figure, leaving every other temperature row alone.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Looked for Tokaj makers who serve Aszú as cold as 6 to 8: one house's recent sheets (Aszú 3 and 5 puttonyos, 2016) give 8 degrees Celsius, its 2014 sheet 10 and its 2008 sheet 10 to 12; a Disznókő listing gives 11 to 13. So the makers range from 8 to 14, centred on 10 to 12, and only one recent sheet touches the top of the service rows' 6 to 8. The region record's 10 to 12 stands as the makers' common figure, and the two service rows giving Aszú its own figure is the smallest change that ends the Codex's disagreement with itself; the sweet whites band for Sauternes, ice wine and late harvest stays. Both service olds occur once in js/data-service-ref.js (hand held), and the rows still read: the why column (cold balances the sugar) holds for the band, and the digestif row's pour and pairings are untouched. The service-ref schema fixes the four columns, not the wording. The Furmint page edit was linted in a scratch copy (build-grapes --lint furmint passes), and Aszú about the same sits beside the dry wine's 10 to 13. Completeness: no other row in the service reference, the pairing, floor or cellar files, the CMS or the banks gives Tokaji a temperature; the Tokaj record's dry Furmint note (10 to 12) and exam[6] already agree. The Furmint fragment's review notes still describe the old disagreement; the integrator may refresh them.",
+        "sources": [
+          {
+            "title": "Tempos Vega Sicilia: Oremus Aszú 5 and 3 puttonyos, the wine sheets",
+            "url": "https://www.temposvegasicilia.com/en/wine/239/oremus-aszu-3",
+            "kind": "secondary",
+            "says": "The 2016 Aszú sheets give 8 degrees Celsius; the 2014 Aszú 5 sheet 10 degrees; the 2008 Aszú 5 sheet 10 to 12.",
+            "read": "search summary"
+          },
+          {
+            "title": "Disznókő Tokaji Aszú 5 puttonyos, a merchant listing",
+            "url": "https://mcgrocer.com/products/disznoko-tokaji-aszu-5-puttonyos-dessert-wine-50cl-662434",
+            "kind": "secondary",
+            "says": "Best served cool, 11 to 13 degrees Celsius.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-05",
+      "topic": "Furmint: botrytis prone, skin thickness dropped",
+      "verdict": "change",
+      "claim": "The Régionale row for Furmint (INTRO_GRAPES) ends Thin-skinned and botrytis-prone; the Tokaj record calls Furmint thin skinned and botrytis prone (grapes[0].styles); the Régionale question i-2zibe7e9 gives thin skins as a clue to Furmint.",
+      "finding": "Every source read agrees that Furmint is prone to botrytis, with a loose bunch and late ripening that let the rot in; on the skin they split. A government vine sheet and an importer's glossary call the skin thin and tie the rot to it; two wine references call the skin thick, one of them tying the rot to the thick skin, and no Hungarian variety description was found to settle it. The Furmint grape page already leaves the skin out for this reason. So the skin claim goes and botrytis prone stays.",
+      "targets": [
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Furmint",
+          "path": "INTRO_GRAPES furmint.trap",
+          "old": "Thin-skinned and botrytis-prone.",
+          "new": "Botrytis-prone."
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "tokaj",
+          "path": "grapes[0].styles (Furmint)",
+          "old": "The spine of every Tokaji: thin skinned and botrytis prone, with acidity",
+          "new": "The spine of every Tokaji: botrytis prone, with acidity"
+        },
+        {
+          "file": "rewrite/categories/r1_dessert_sweet.py",
+          "record": "i-2zibe7e9",
+          "path": "Q(\"Tokaji\", \"High acidity, thin skins and a readiness to rot nobly ...\").q (the stem)",
+          "old": "High acidity, thin skins and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?",
+          "new": "High acidity and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Department of Primary Industries and Regional Development, Western Australia: Furmint and Kadarka wine grapes in Western Australia",
+          "url": "https://www.agric.wa.gov.au/wine-grapes/furmint-and-kadarka-wine-grapes-western-australia",
+          "kind": "secondary",
+          "says": "Its thin skin, high acid and susceptibility to botrytis make Furmint suited to sweet botrytised wine.",
+          "read": "search summary"
+        },
+        {
+          "title": "Kobrand Wine and Spirits, grape glossary: Furmint",
+          "url": "https://www.kobrandwineandspirits.com/grape_glossary/furmint/",
+          "kind": "secondary",
+          "says": "Thin skins make the berries prone to Botrytis cinerea.",
+          "read": "search summary"
+        },
+        {
+          "title": "Best of Wines, grapes: Furmint",
+          "url": "https://bestofwines.com/wine/grapes/furmint",
+          "kind": "secondary",
+          "says": "Furmint's thick skin makes it very susceptible to Botrytis cinerea.",
+          "read": "search summary"
+        },
+        {
+          "title": "Vinovoss, grapes: Furmint",
+          "url": "https://vinovoss.com/grapes/furmint/",
+          "kind": "secondary",
+          "says": "A thick skinned grape giving golden wines.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The sources split on the skin and agree on the rot; a clue or a trap must not rest on a split, so the skin goes everywhere it stands, the stem of i-2zibe7e9 included (its clue was the disputed fact; the stem still keys Furmint alone, and the integrator keeps the pinned id).",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Searched for a Hungarian variety description to settle the skin and found the split wider than the entry says: a Hungarian grape dictionary and a wine glossary call the skin thicker (the dictionary adds that botrytis takes hold more slowly in dry years), a Hungarian tour journal and an importer call it thin, and no ampelographic text was found. Botrytis prone, late ripening and high acid are agreed by all. So the skin goes and the rot stays. All three olds occur once at the paths named. The stem of i-2zibe7e9 still keys Furmint alone (Hárslevelű also rots nobly but is not the mainstay and carries less acid), its options and explanation stay true, and the text stays ASCII; the stem change moves the minted id, so the integrator pins i-2zibe7e9 (it is named by id in .scripts/cms/map/hungary.json and the CMS review notes, and check-ids.py needs it logged). Built in a scratch copy: python3 rewrite/build.py r1_dessert_sweet passes with the new stem. Completeness: no other line in js/, the region fragments, the CMS, rewrite/categories or the grape fragments gives Furmint a skin (the Sémillon lines that say thin skinned are another grape; the rewrite pilot file and js/data-intro.js follow from the module).",
+        "sources": [
+          {
+            "title": "Hungarian Wines: grape dictionary, Furmint",
+            "url": "https://hungarianwines.eu/grapes/",
+            "kind": "secondary",
+            "says": "Its thicker skin means botrytis takes hold more slowly in dry vintages.",
+            "read": "search summary"
+          },
+          {
+            "title": "Taste Hungary journal: Furmint, Hungary's flagship white",
+            "url": "https://tastehungary.com/journal/furmint-hungarys-flagship-white/",
+            "kind": "secondary",
+            "says": "A late ripening, thin skinned variety prone to botrytis.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-06",
+      "topic": "Tannat and Petit Verdot rows: the climate and the acid dials",
+      "verdict": "change",
+      "claim": "The Régionale rows (INTRO_GRAPES) give Tannat climate Warm and acid 3, and Petit Verdot acid 2; TASTE gives Tannat a moderate climate and acid medium plus, and the profiles give Tannat medium to high acid and Petit Verdot medium plus.",
+      "finding": "The acid dial runs 1 to 3, and the rows read TASTE's medium plus as 3 for most reds (Pinot Noir, Cabernet Franc, Blaufränkisch, Aglianico, Mencía and Tannat) and as 2 for a few (Cabernet Sauvignon, Zinfandel, Touriga Nacional), so medium plus sits on either side of the line; the sources read put Tannat's acidity at moderately high to high (and one chart at medium) and the profile says medium to high, so Tannat's 3 holds, and Petit Verdot's 2 is a defensible reading of medium plus that no source or profile shows wrong. The climate is another matter: every other grape TASTE calls moderate reads Moderate, Cool to moderate, Moderate to warm or wider in the rows, never Warm alone; Tannat's homes are Madiran under the Atlantic's rain and mild, damp autumns and Uruguay's humid, maritime Canelones, which the Codex's own records describe so, and the grape page's ladder sets them moderate with only Cafayate and Paso Robles warm. So the climate moves to Moderate to warm and both acid dials stay.",
+      "targets": [
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Tannat",
+          "path": "INTRO_GRAPES tannat.clim",
+          "old": "\"n\":\"Tannat\",\"c\":\"red\",\"clim\":\"Warm\",",
+          "new": "\"n\":\"Tannat\",\"c\":\"red\",\"clim\":\"Moderate to warm\","
+        }
+      ],
+      "sources": [
+        {
+          "title": "OENO One, viticulture research article on the climate of Uruguay's vineyards",
+          "url": "https://oeno-one.eu/article/view/9663",
+          "kind": "secondary",
+          "says": "The main wine regions of Uruguay fall in the humid subtropical class, coastal.",
+          "read": "search summary"
+        },
+        {
+          "title": "The World of Fine Wine: Uruguay, its climate and its Tannat",
+          "url": "https://worldoffinewine.com/?p=31386",
+          "kind": "secondary",
+          "says": "Around 1,000 mm of rain a year, a climate far wetter than the vineyards of Argentina or Chile.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wine Folly: Tannat, the grape page and the subscriber page",
+          "url": "https://winefolly.com/grapes/tannat/",
+          "kind": "secondary",
+          "says": "High tannin; acidity medium on the chart and moderately high in the text.",
+          "read": "search summary"
+        },
+        {
+          "title": "Académie du Vin Library: Madiran",
+          "url": "https://academieduvinlibrary.com/madiran/",
+          "kind": "secondary",
+          "says": "Madiran is powerful on the palate with relatively high acidity.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Warm alone is the one place the Régionale row parts from TASTE, the grape page and the Codex's own Madiran and Uruguay records; the acid dials read medium plus the way the other rows do and stay, and TASTE is not touched.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Tested the dials against the shipped data: TASTE (not touched) gives Tannat acid 2 and clim moderate, and its acid 2 (medium plus) reads as 3 in the Régionale rows for Pinot Noir, Cabernet Franc, Blaufränkisch, Aglianico, Mencía and Tannat and as 2 for Cabernet Sauvignon, Zinfandel and Touriga Nacional, so neither acid dial is shown wrong. The climate is: the grape page (tannat.json) puts Madiran, Irouléguy, Canelones and Maldonado on the moderate rung and only Cafayate, northern Uruguay and Paso Robles on the warm one, and Uruguay's humid, maritime climate and Madiran's Atlantic autumns are moderate. Moderate to warm is a value nine rows already use (Merlot among them) and codex53 only prints it, so nothing parses it. The old occurs once in INTRO_GRAPES. The same row's trap, one of the most tannic grapes, is hedged in the form L2-06 accepted for Sagrantino and stays.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L3-07",
+      "topic": "Zweigelt row: Austria's most planted red (report only)",
+      "verdict": "leave",
+      "claim": "The Régionale row for Zweigelt (INTRO_GRAPES) gives reg Austria, starred, (most-planted red) and the trap Austria's most-planted red: a Blaufränkisch × St. Laurent cross; juicy and approachable.",
+      "finding": "The rank holds today: the Austrian figures put Zweigelt at about 13.4 per cent of the vineyard in 2023/2024, some 6,130 hectares, ahead of Blaufränkisch at 5.8 per cent, with all red grapes about 30 per cent; it is the most planted red by a wide margin. The hyphen in most-planted is a compound modifier, not a dash.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Advantage Austria (the Austrian Economic Chamber): wine, beer and spirits, figures and facts",
+          "url": "https://www.advantageaustria.org/dm/zentral/branchen/wein_bier_spirituosen/zahlen-und-fakten/Zahlen_und_Fakten.en.html",
+          "kind": "secondary",
+          "says": "Share of the area used for wine in 2023/2024: Zweigelt 13.4 per cent, Blaufränkisch 5.8 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Decanter: Expert's choice, Zweigelt",
+          "url": "https://www.decanter.com/premium/experts-choice-zweigelt-488863/",
+          "kind": "secondary",
+          "says": "Of the 30 per cent of Austria's vineyard that is red, by far the most widely planted grape is Zweigelt, 6,130 hectares on Austrian Wine's figures to May 2022.",
+          "read": "search summary"
+        }
+      ],
+      "why": "A true rank the owner keeps, and the row writes it with a hyphen, not a dash: nothing to change.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "The national rank holds on the national body's current page (Zweigelt 5,940 ha, about 13 per cent, Blaufränkisch 2,550 ha, about 5.8 per cent) and on the census of 2020 (Zweigelt 6,145 ha, Blaufränkisch 2,714 ha). Completeness turned up the same rank stated of Burgenland, which the g8 note named and this entry did not test: the Burgenland record says Zweigelt is the most planted grape of Burgenland as a whole, and the national body's figures put Blaufränkisch first there, narrowly. That is a change and stands as its own entry, L3-11. The Austria-wide rank also stands in four lines of the Austria country record, in r1_austria.py and the CMS Austria questions: all true, nothing to change.",
+        "sources": [
+          {
+            "title": "Austrian Wine: grape varieties, the red wine pages",
+            "url": "https://www.austrianwine.com/our-wine/grape-varieties/red-wine",
+            "kind": "primary",
+            "says": "An Austria wide table on the national body's pages: Zweigelt 5,940 ha, about 13 per cent of the vineyard; Blaufränkisch 2,550 ha, about 5.8 per cent.",
+            "read": "search summary"
+          },
+          {
+            "title": "Statistik Austria: Weingartengrunderhebung 2020",
+            "url": "https://www.statistik.at/web_de/statistiken/wirtschaft/land_und_forstwirtschaft/126776.html",
+            "kind": "primary",
+            "says": "Zweigelt 6,145 ha, the most planted red; Blaufränkisch next, 2,714 ha.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-08",
+      "topic": "Viognier and Gewürztraminer: ginger is Gewürztraminer's",
+      "verdict": "change",
+      "claim": "The Viognier profile in js/reference.js lists Honeysuckle, violet, jasmine, musk and ginger among its other notes, while the Gewürztraminer profile's confuse line says Viognier is apricot and honeysuckle without the lychee or spice, and the Codex's grape table makes ginger Gewürztraminer's lead note.",
+      "finding": "The references read give Viognier apricot, peach, tangerine, honeysuckle, violet and rose, with musk; a grape guide's primary list (tangerine, peach, mango, honeysuckle, rose) and a merchant's guide have no ginger. Ginger does turn up in Viognier, but as a secondary hint: one guide lists it among the layers, and several Condrieu tasting notes give it (spiced ginger on a merchant's page for one Condrieu, a whisper of ginger spice on another, ginger in drinkers' notes on a third). Ginger, with clove and allspice, is what the Codex and the guides give Gewürztraminer as a lead note, and the Gewürztraminer profile's confuse line and the grape table both teach Viognier without that spice. Cutting the two words from the Viognier profile makes the records agree, and the confuse line stays as it is.",
+      "targets": [
+        {
+          "file": "js/reference.js",
+          "record": "GRAPES Viognier",
+          "path": "GRAPES viognier.other",
+          "old": "other:\"Honeysuckle, violet, jasmine, musk and ginger;",
+          "new": "other:\"Honeysuckle, violet, jasmine and musk;"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wine Folly: Viognier, the wine guide",
+          "url": "https://winefolly.com/deep-dive/viognier-vee-own-yay-wine-guide/",
+          "kind": "secondary",
+          "says": "Rich aromas of tangerine, mango, honeysuckle, rose and peach; no ginger among the primary notes.",
+          "read": "search summary"
+        },
+        {
+          "title": "Total Wine: Viognier wine guide",
+          "url": "https://www.totalwine.com/wine-guide/white-grape-varietals/viognier",
+          "kind": "secondary",
+          "says": "Peach, apricot, tangerine, melon, with honeysuckle, orange blossom and chamomile.",
+          "read": "search summary"
+        },
+        {
+          "title": "Vinofyi: Viognier, the golden, perfumed white of Condrieu and the New World",
+          "url": "https://vinofyi.com/guide/viognier-grape-guide",
+          "kind": "secondary",
+          "says": "Apricot, white peach and honeysuckle, layered with orange blossom, jasmine, ginger and a hint of musk: the one guide read that names ginger, among the layers.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Two Codex records pulled apart on one note; the sources make ginger Gewürztraminer's and at most a passing hint in Viognier, so two words leave the Viognier profile and nothing else moves.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "The finding understated ginger in Viognier: a search of Condrieu notes found it on several, as a secondary hint, so ginger is not false of the grape, and the finding now says so. The cut still stands, for the reason the second sommeliers gave: a profile's other notes are what a blind taster steers by, and ginger is the lead note the Codex teaches for Gewürztraminer; the Gewürztraminer confuse line and the grape table (whose Gewürztraminer entry says Viognier has no lychee or ginger) already teach Viognier without it, so one record pulled against two. Softening the confuse line instead would leave the grape table disagreeing. The old occurs once in GRAPES (js/reference.js, hand held), and the line keeps four notes and its rhythm. Completeness: no other Viognier line in js/reference.js, js/data-grapes-plus.js, INTRO_GRAPES, the CMS or the banks names ginger.",
+        "sources": [
+          {
+            "title": "Delectable: E. Guigal Condrieu 2011, drinkers' notes",
+            "url": "https://www.delectable.com/wine/e-guigal/condrieu-viognier/2011",
+            "kind": "secondary",
+            "says": "Notes of ginger, stone fruit, star jasmine and a touch of wet stone.",
+            "read": "search summary"
+          },
+          {
+            "title": "Vinovoss: Lieu-dit L'Aléau Condrieu",
+            "url": "https://vinovoss.com/wine/lieu-dit-l-aleau-condrieu/",
+            "kind": "secondary",
+            "says": "Honeysuckle, ripe apricot and a whisper of ginger spice.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L3-09",
+      "topic": "Superlatives of judgement: Naoussa's producers and Touriga Nacional",
+      "verdict": "change",
+      "claim": "The Naoussa record calls the oldest house's Grande Reserve the classic old-school Naoussa on any list (producers[0].why) and another estate's old vine wine the top old-vine bottling (producers[2].why), and calls a third house's Ramnista the modern reference for structured Naoussa (producers[1].why); the Régionale row for Touriga Nacional (INTRO_GRAPES) opens its trap on Portugal's top red.",
+      "finding": "Each is a ranking of the Codex's own, which the house rules keep out of the Codex. The facts beside them stand and are kept: the house founded at Naoussa in 1879 and its long aged Grande Reserve in the old style (the record's own wines and places notes describe that style), the estate's old vine bottling, and Touriga Nacional's deep colour, floral lift and firm structure and its place among the Port grapes. Nobody living is named in the new words; the 1879 founder named in the first line is long dead.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "producers[0].why",
+          "old": "and whose Grande Reserve is the classic old-school Naoussa on any list.",
+          "new": "and whose Grande Reserve shows the long-aged, old-school style of Naoussa."
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "producers[2].why",
+          "old": "and whose Earth and Sky is the top old-vine bottling.",
+          "new": "and whose Earth and Sky is its old-vine bottling."
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "producers[1].why",
+          "old": "Ramnista is the modern reference for structured Naoussa",
+          "new": "Ramnista is a structured Naoussa in the modern style"
+        },
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Touriga Nacional",
+          "path": "INTRO_GRAPES touriga-nacional.trap",
+          "old": "Portugal’s top red: deep colour, floral lift, firm structure.",
+          "new": "Portugal’s signature red: deep colour, floral lift, firm structure."
+        }
+      ],
+      "sources": [],
+      "why": "The house rule: no superlative of judgement (top, classic on any list); the lines keep their facts and lose the ranking, and the grape row reads signature as the other rows do (Rueda, South Africa, Uruguay).",
+      "refuter": {
+        "verdict": "changed",
+        "note": "The three original olds occur once each and read well in place; the founder of 1879 is long dead and the house of 1997 is named by its house, not its founder. Completeness within the record: the producers list carried a third ranking the entry left, Ramnista as the modern reference for structured Naoussa, a benchmark claim of the same kind as the classic on any list; it is added as a target (the old occurs once) and keeps its fact, a structured Naoussa in the modern style. The record's other words (the classic style of the old houses, much classic Grande Reserve, the reference appellation for Xinomavro) describe a style or the appellation's standing, not a ranking of a producer, and stay. Touriga Nacional: no other line ranks it Portugal's top red (the Douro question's most prized and the Régionale stem generally rated the finest for Port report a reputation and stay). Not added, since no second sommelier flagged them: Dão's Encruzado is Portugal's noblest white and the other judgement words across the L3 records (see unsettled).",
+        "sources": []
+      }
+    },
+    {
+      "id": "L3-10",
+      "topic": "Source titles that name the living authors of Wine Grapes",
+      "verdict": "change",
+      "claim": "Thirty four source titles in the region fragments cite Wine Grapes with its three living authors named in the title (Wine Grapes, Robinson, Harding and Vouillamoz, entry on ...; Wine Grapes (Robinson, Harding, Vouillamoz); Wine Grapes (Robinson, Harding and Vouillamoz): ...).",
+      "finding": "The codex56 articles cite the book as Wine Grapes (Penguin, 2012), and other records already write Wine Grapes, entries on ...; each title below takes that form and keeps its own entries (for example Wine Grapes (Penguin, 2012), entry on Xinomavro). Where the same title stands more than once in a file, the old runs back to the source before it so that each old occurs once. The hand files (js/data-service-ref.js, js/reference.js, js/data-grapes-plus.js, js/data-intro.js, the primers, the Advanced and Master banks, the grape fragments and the CMS subjects) name none of the three in a shown source; js/regions/*.json carry the same titles and follow from the fragments by the build.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "greece (country)",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on the Greek varieties\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on the Greek varieties\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "naoussa",
+          "path": "sources[3].title",
+          "old": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Naoussa, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Xinomavro\",",
+          "new": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Naoussa, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012), entry on Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "amyndeon",
+          "path": "sources[3].title",
+          "old": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Amyndeon, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Xinomavro\",",
+          "new": "\"title\": \"The Oxford Companion to Wine, fifth edition, entries on Amyndeon, Xinomavro and Greece\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012), entry on Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "goumenissa",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Negoska and Xinomavro\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Negoska and Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "rapsani",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Krassato, Stavroto and Xinomavro\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Krassato, Stavroto and Xinomavro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.1.json",
+          "record": "nemea",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Agiorgitiko\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Agiorgitiko\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "mantinia",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Moschofilero\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Moschofilero\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "santorini",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Assyrtiko, Athiri, Aidani and Mavrotragano\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Assyrtiko, Athiri, Aidani and Mavrotragano\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "crete",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Vidiano, Vilana, Kotsifali, Mandilaria and Liatiko\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Vidiano, Vilana, Kotsifali, Mandilaria and Liatiko\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "kefalonia",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Robola, Mavrodaphne, Vostilidi and Tsaousi\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Robola, Mavrodaphne, Vostilidi and Tsaousi\","
+        },
+        {
+          "file": ".scripts/regions/fragments/greece.2.json",
+          "record": "samos",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Muscat Blanc à Petits Grains\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Muscat Blanc à Petits Grains\","
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "hungary (country)",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on the Hungarian varieties\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on the Hungarian varieties\","
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "matra",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Irsai Olivér, Olaszrizling and Szürkebarát\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Irsai Olivér, Olaszrizling and Szürkebarát\","
+        },
+        {
+          "file": ".scripts/regions/fragments/hungary.1.json",
+          "record": "badacsony",
+          "path": "sources[3].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Kéknyelű, Budai Zöld and Olaszrizling\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Kéknyelű, Budai Zöld and Olaszrizling\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "piedmont",
+          "path": "sources[4].title",
+          "old": "\"asOf\": \"2025\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2025\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "friuli",
+          "path": "sources[4].title",
+          "old": "\"asOf\": \"2017\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2017\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.2.json",
+          "record": "trentino-alto-adige",
+          "path": "sources[6].title",
+          "old": "\"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.2.json",
+          "record": "tuscany",
+          "path": "sources[7].title",
+          "old": "\"asOf\": \"2010\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2010\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"url\": \"https://www.federdoc.com/new/wp-content/uploads/2023/11/booklet-2023.pdf\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Consorzio Vini di Orvieto: Orvieto DOC rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio Vini di Orvieto: Orvieto DOC rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "abruzzo",
+          "path": "sources[5].title",
+          "old": "\"asOf\": \"2024\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"asOf\": \"2024\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "campania",
+          "path": "sources[5].title",
+          "old": "\"title\": \"Consorzio Tutela Vini del Sannio: Aglianico del Taburno DOCG and Falanghina del Sannio DOC\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio Tutela Vini del Sannio: Aglianico del Taburno DOCG and Falanghina del Sannio DOC\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "puglia",
+          "path": "sources[5].title",
+          "old": "\"title\": \"Consorzio Castel del Monte: the Castel del Monte DOC and DOCG rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio Castel del Monte: the Castel del Monte DOC and DOCG rules\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "sources[7].title",
+          "old": "\"url\": \"https://www.decanter.com/wine-news/etna-docg-status-sicily-517085/\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"url\": \"https://www.decanter.com/wine-news/etna-docg-status-sicily-517085/\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sardinia",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Consorzio di Tutela del Cannonau di Sardegna DOC: rules and sub-zones\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Robinson, Harding, Vouillamoz)\",",
+          "new": "\"title\": \"Consorzio di Tutela del Cannonau di Sardegna DOC: rules and sub-zones\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Federdoc, Italian wine denominations booklet\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"The Oxford Companion to Wine, 5th edition\",\n     \"asOf\": \"2023\"\n    },\n    {\n     \"title\": \"Wine Grapes (Penguin, 2012)\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.1.json",
+          "record": "switzerland (country)",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Chasselas, Petite Arvine, Cornalin and Humagne Rouge\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Chasselas, Petite Arvine, Cornalin and Humagne Rouge\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.1.json",
+          "record": "mexico (country)",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Listán Prieto\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Listán Prieto\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.2.json",
+          "record": "eastern-europe (country)",
+          "path": "sources[1].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Saperavi, Rkatsiteli, Tribidrag, Plavac Mali, Fetească and Mavrud\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Saperavi, Rkatsiteli, Tribidrag, Plavac Mali, Fetească and Mavrud\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.2.json",
+          "record": "lebanon (country)",
+          "path": "sources[1].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Obaideh and Merwah\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Obaideh and Merwah\","
+        },
+        {
+          "file": ".scripts/regions/fragments/mapless.2.json",
+          "record": "uruguay (country)",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Tannat and Marselan\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Tannat and Marselan\","
+        },
+        {
+          "file": ".scripts/regions/fragments/portugal.2.json",
+          "record": "alentejo",
+          "path": "sources[5].title",
+          "old": "\"title\": \"Wine Grapes (Robinson, Harding and Vouillamoz): Alicante Bouschet, Aragonez, Antão Vaz, Roupeiro\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012): Alicante Bouschet, Aragonez, Antão Vaz, Roupeiro\","
+        },
+        {
+          "file": ".scripts/regions/fragments/south-africa.1.json",
+          "record": "south-africa (country)",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entries on Pinotage, Chenin Blanc and Crouchen\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entries on Pinotage, Chenin Blanc and Crouchen\","
+        },
+        {
+          "file": ".scripts/regions/fragments/south-africa.1.json",
+          "record": "stellenbosch",
+          "path": "sources[4].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, entry on Pinotage\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), entry on Pinotage\","
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rias-baixas",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, Albariño entry\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), Albariño entry\","
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "bierzo",
+          "path": "sources[2].title",
+          "old": "\"title\": \"Wine Grapes, Robinson, Harding and Vouillamoz, Mencía and Godello entries\",",
+          "new": "\"title\": \"Wine Grapes (Penguin, 2012), Mencía and Godello entries\","
+        }
+      ],
+      "sources": [],
+      "why": "The house rule: nobody living is named, in a title as in prose; a mechanical change that needs no source.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Counted: the three surnames stand in thirty four source titles across the region fragments, and the entry has a target for each; every old occurs once, and none of the multi line olds overlaps a target of L1 or L2 in the same file. The form Wine Grapes (Penguin, 2012) is the one already shipped in js/regions/france.json and italy.json. A sweep of the living writers list in .scripts/grapes/schema.cjs over every fragment's titles finds no other living name in a title; the grape fragments, the CMS, rewrite/categories and the hand files name none of the three in a shown source. js/regions/*.json follow by the build.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L3-11",
+      "topic": "Burgenland: Zweigelt leads the Seewinkel, not the whole state",
+      "verdict": "change",
+      "claim": "The Burgenland record calls Zweigelt the most planted grape of the Seewinkel and of Burgenland as a whole (grapes[1].styles) and says so again in a trap (traps[6]).",
+      "finding": "Austrian Wine's figures put Blaufränkisch first in Burgenland and Zweigelt a close second: 2,437 ha against 2,337 ha in its documentation of 2021, and 2,394 ha (21 per cent) against 2,239 ha (19 per cent) on its current Burgenland page; the census of 2020 also gives Blaufränkisch, 2,534 ha, as Burgenland's leading red. In the Neusiedlersee area, the lake's east and north shores, Zweigelt is first, about 1,398 ha or 23 per cent. Austria-wide Zweigelt still leads the reds (L3-07).",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/austria.json",
+          "record": "burgenland",
+          "path": "grapes[1].styles (Zweigelt)",
+          "old": "The most planted grape of the Seewinkel and of Burgenland as a whole:",
+          "new": "The most planted grape of the Seewinkel:"
+        },
+        {
+          "file": ".scripts/regions/fragments/austria.json",
+          "record": "burgenland",
+          "path": "traps[6]",
+          "old": "Zweigelt is the most planted grape of Burgenland and of the Seewinkel; Blaufränkisch leads Mittelburgenland and the south.",
+          "new": "Zweigelt is the most planted grape of the Seewinkel, not of Burgenland as a whole, where Blaufränkisch is narrowly ahead; Blaufränkisch also leads Mittelburgenland and the south."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Austrian Wine: Burgenland, the wine growing region",
+          "url": "https://www.austrianwine.com/our-wine/winegrowing-regions/burgenland",
+          "kind": "primary",
+          "says": "Blaufränkisch 21 per cent, 2,394 ha, first; Zweigelt 19 per cent, 2,239 ha, second.",
+          "read": "search summary"
+        },
+        {
+          "title": "Österreich Wein, Dokumentation 2021 (Austrian Wine)",
+          "url": "https://www.oesterreichwein.at/fileadmin/user_upload/PDF/Doku/Dokumentation_OEsterreich_Wein_2021_Gesamtdokument_20221018.pdf",
+          "kind": "primary",
+          "says": "Blaufränkisch, 2,437 ha, is first in Burgenland, closely followed by Zweigelt, 2,337 ha; Zweigelt leads Niederösterreich.",
+          "read": "search summary"
+        },
+        {
+          "title": "Austrian Wine: Neusiedlersee",
+          "url": "https://www.austrianwine.com/our-wine/winegrowing-regions/burgenland/neusiedlersee",
+          "kind": "primary",
+          "says": "About 5,959 ha; Zweigelt first, about 1,398 ha or 23 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Statistik Austria: Weingartengrunderhebung 2020",
+          "url": "https://www.statistik.at/web_de/statistiken/wirtschaft/land_und_forstwirtschaft/126776.html",
+          "kind": "primary",
+          "says": "Burgenland 11,986 ha; Blaufränkisch, 2,534 ha, the leading red variety of Burgenland.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The g8 note named the Burgenland record beside the Régionale row; the national body's figures put Blaufränkisch narrowly first there, so the state wide rank goes, the Seewinkel rank (true) stays, and the trap turns on the real confusion.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Added by the second reader under L3-07's completeness. Both olds occur once in austria.json at the paths named; check-fragment passes on austria.json with both edits applied in a scratch copy. The Seewinkel claim rests on the Neusiedlersee figures (the Seewinkel is the larger part of that area). No figure is written into the Codex, so the trap stays true while the two grapes stay close; if a later census reverses them, only the clause narrowly ahead moves. No other line in js/, the fragments, the CMS, rewrite/categories or the grape fragments ranks Zweigelt in Burgenland.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L3-12",
+      "topic": "Douro and Greek planting ranks (report only)",
+      "verdict": "leave",
+      "claim": "The Douro record and the Portugal country record call Touriga Franca the most planted grape of the Douro (grapes, exam, trap, card and question r-ksi8jaas); the Greece country record and the Nemea record call Agiorgitiko Greece's most planted red and Nemea Greece's largest red appellation (summary, grapes, law, exam, cards and questions).",
+      "finding": "Each rank holds. The Douro's own institute gives Touriga Franca 10,727 ha in 2023, 25 per cent of 42,980 ha, ahead of Tinta Roriz (14.3 per cent) and Touriga Nacional (10.3 per cent). The Greek national wine body gives Agiorgitiko as the most planted red variety and third overall, and calls Nemea Greece's largest PDO zone for red wine.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Instituto dos Vinhos do Douro e do Porto: castas, the planting table",
+          "url": "https://www.ivdp.pt/pt/vinha/castas/",
+          "kind": "primary",
+          "says": "Touriga Franca 10,727 ha, 25 per cent of 42,980 ha (2023); Tinta Roriz 6,163 ha; Touriga Nacional 4,432 ha.",
+          "read": "search summary"
+        },
+        {
+          "title": "ADVID: Touriga Franca, the variety sheet",
+          "url": "https://www.advid.pt/uploads/TourigaFranca_Final_25.10.pdf",
+          "kind": "secondary",
+          "says": "The most cultivated variety of the Douro Demarcated Region, about 23 per cent of the vineyard.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wines of Greece: the Greek vineyard today",
+          "url": "https://winesofgreece.org/articles/key-production-figures/",
+          "kind": "primary",
+          "says": "Agiorgitiko is the most planted red variety and third overall.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wines of Greece: Nemea",
+          "url": "https://winesofgreece.org/?p=1086",
+          "kind": "primary",
+          "says": "Greece's largest PDO zone for red wines, seventeen villages, the only Greek PDO spread over two prefectures.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The g12 note named these ranks as volatile; each is true on the governing body's current figures, so, as with Zweigelt in Austria, nothing changes.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Added by the second reader: the g12 note named the Douro and Nemea ranks and no entry tested them. Each holds on a primary body's figures. One fact turned up in passing and is left for the owner, since no second sommelier flagged it: the Nemea zone takes in two villages of Argolida (Gymno and Malandreni) beside fifteen of Corinthia, while the record's law.classification says villages in the Corinthia regional unit and its first tier the delimited villages of Corinthia (see unsettled).",
+        "sources": []
+      }
+    }
+  ]
+}

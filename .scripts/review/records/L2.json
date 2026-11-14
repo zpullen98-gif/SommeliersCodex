@@ -1,0 +1,721 @@
+{
+  "lane": "L2",
+  "checked": "2026-11-11",
+  "entries": [
+    {
+      "id": "L2-01",
+      "topic": "Dolcetto's DOCGs: Ovada",
+      "verdict": "change",
+      "claim": "The Piedmont record names Dogliani and Diano d'Alba as Dolcetto's DOCGs, and its DOCG tier lists Dogliani alone of the three.",
+      "finding": "Dolcetto di Ovada Superiore, or Ovada, is a third Dolcetto DOCG, 100 per cent Dolcetto, approved by ministerial decree of 17 September 2008 (Gazzetta Ufficiale no. 229, 30 September 2008) and amended in 2011; it lies in the Alto Monferrato, not the Langhe. Diano d'Alba has been a DOCG since a decree of 2 August 2010, so the tier list should name it too.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "piedmont",
+          "path": "grapes[2].styles",
+          "old": "Dogliani and Diano d'Alba give it DOCG status",
+          "new": "Dogliani, Diano d'Alba and Ovada give it DOCG status"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Regione Piemonte: disciplinare di produzione della DOCG Dolcetto di Ovada Superiore o Ovada",
+          "url": "https://www.regione.piemonte.it/web/sites/default/files/media/documenti/2019-01/docg_dolcetto_di_ovada_superiore.pdf",
+          "kind": "primary",
+          "says": "The DOCG Dolcetto di Ovada Superiore or Ovada, 100 per cent Dolcetto, once a type of the Dolcetto di Ovada DOC, approved as DOCG by DM 17.09.2008 (G.U. 229, 30.09.2008) and amended by DM 30.11.2011.",
+          "read": "search summary"
+        },
+        {
+          "title": "Gazzetta Ufficiale, serie generale no. 224 of 26 September 2025: decree of 19 September 2025 on the Ovada DOCG consortium",
+          "url": "https://www.gazzettaufficiale.it/eli/gu/2025/09/26/224/sg/html",
+          "kind": "primary",
+          "says": "Confirms the consortium's role for the sole DOCG Dolcetto di Ovada Superiore or Ovada, correcting a 2024 decree that had named the DOC too.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Barolo Barbaresco Alba Langhe e Dogliani: disciplinare della DOCG Dolcetto di Diano d'Alba o Diano d'Alba",
+          "url": "https://www.langhevini.it/wp-content/uploads/2019/05/DOCG-Dolcetto-di-Diano-d-Alba-o-Diano-d-Alba.pdf",
+          "kind": "primary",
+          "says": "Diano d'Alba approved as DOCG by ministerial decree of 2 August 2010, G.U. of 19 August 2010.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Ovada has been a third Dolcetto DOCG since 2008; the record named two, and its DOCG list left out Diano d'Alba and Ovada.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Tested the decrees: the region's disciplinare and a second Piedmont text give the Ovada DOCG by ministerial decree of 17 September 2008 (G.U. 229, 30 September 2008), amended by decree of 30 November 2011, 100 per cent Dolcetto; one EU eAmbrosia file prints DM 17.2.2008, which no other text repeats, and no target carries a date. Diano d'Alba by decree of 2 August 2010 stands. grapes[2].styles gave Dolcetto's DOCG status as Dogliani and Diano d'Alba alone, wrong by omission: kept (its old string occurs once, at regions[0].grapes[2].styles of the piedmont record). Two targets dropped as not wrong. places[0].note is the Langhe's note (Langhe DOC is the broad net; Dogliani and Diano d'Alba are its Dolcetto DOCGs): both are the Langhe's, Ovada lies in the Alto Monferrato, and the Dolcetto grape page's card says the same (its two DOCGs in the Langhe); the proposed tail (and Ovada in the Alto Monferrato is the third) would also read as the Langhe's third. law.tiers[0][1] ends among them and already leaves out Barbera del Monferrato Superiore, so it is not wrong for leaving out Diano d'Alba and Ovada. Proposed text kept for the owner should the list be wanted fuller: Nizza, Dogliani, Diano d'Alba, Ovada, Gattinara. Completeness: c-q0ep0os0 already names Diano d'Alba and Ovada beside Dogliani, the Dolcetto grape page names all three, i-mawpxgs8 uses Ovada only as a distractor; no other place lists Dolcetto's DOCGs.",
+        "sources": [
+          {
+            "title": "Regione Piemonte: disciplinare of Dolcetto di Ovada (the DOC), with the DOCG's decree",
+            "url": "https://www.regione.piemonte.it/web/media/6446/download",
+            "kind": "primary",
+            "says": "Gives the same decree, 17.09.2008 in G.U. 229 of 30.09.2008, and the amendment of 30.11.2011 (G.U. 295 of 20.12.2011).",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L2-02",
+      "topic": "Roero DOCG year",
+      "verdict": "leave",
+      "claim": "The Piedmont record (places[1].note and r-7a090n11's explanation) and the Arneis grape fragment give Roero its DOCG in 2004.",
+      "finding": "Roero was raised to DOCG by the decree of 7 December 2004, published in the Gazzetta Ufficiale no. 301 of 24 December 2004. The consortium's history page says acknowledged in 2005, which reads as the first harvest under the new rule; the decree year is 2004.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Regione Piemonte: disciplinare di produzione della DOCG Roero",
+          "url": "https://www.regione.piemonte.it/web/sites/default/files/media/documenti/2019-01/docg_roero_disciplinare_con_revisioni_accettate.pdf",
+          "kind": "primary",
+          "says": "Approvato DOCG con DI 07.12.2004, G.U. 301 of 24.12.2004.",
+          "read": "search summary"
+        },
+        {
+          "title": "Gazzetta Ufficiale, serie generale no. 301 of 24 December 2004",
+          "url": "https://www.gazzettaufficiale.it/eli/gu/2004/12/24/301/sg/pdf",
+          "kind": "primary",
+          "says": "The issue's contents list a decree of 7 December 2004 on the Roero wines.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Tutela Roero: history",
+          "url": "https://www.consorziodelroero.it/en/history/",
+          "kind": "primary",
+          "says": "The Roero DOCG acknowledged in 2005: the source of the one page that reads 2005.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The decree is dated 7 December 2004; 2004 stands in the record, the question and the Arneis fragment.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Looked for a later or different year: the region's disciplinare and a second copy read Approvato DOCG con DI 07.12.2004, G.U. 301 of 24 December 2004, with amendments of 23 March 2006 and 17 September 2010, and the Gazzetta's own index of issue 301 lists the decree on the Roero wines. Only the consortium's history page reads 2005. Every place that dates it says 2004: the piedmont places note (places[1].note), r-7a090n11's explanation, the Arneis page's label row, card and report, and the CMS Piedmont review's list of DOCG years. Nothing to change.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L2-03",
+      "topic": "Trebbiano d'Abruzzo: the vines the rule names",
+      "verdict": "change",
+      "claim": "Question c-ndvwbnke says the denomination permits Bombino Bianco as well as Trebbiano Abruzzese; the Italy country record says Trebbiano d'Abruzzo is a different grape from Trebbiano Toscano, while the Abruzzo record says the wine may be made from Trebbiano Abruzzese and Trebbiano Toscano, at least 85 per cent together.",
+      "finding": "The rule of 1972 named Trebbiano d'Abruzzo with Bombino Bianco, the two long confused in the vineyard. The disciplinare approved by ministerial decree of 19 January 2023 (Gazzetta Ufficiale of 6 February 2023) names Trebbiano Abruzzese and/or Trebbiano Toscano, at least 85 per cent, and no longer Bombino Bianco; the region's comparison of texts of December 2024 says Article 2 no longer provides for Bombino, and reports of the ordinary amendment approved in August 2026 give the same base. Trebbiano Abruzzese the vine is distinct from Trebbiano Toscano; the wine Trebbiano d'Abruzzo may be made from either.",
+      "targets": [
+        {
+          "file": "rewrite/categories/r2_italy_central_south.py",
+          "record": "c-ndvwbnke",
+          "path": "questions c-ndvwbnke exp (the SA in Lazio, Abruzzo and Molise, about line 206)",
+          "old": "The denomination permits Bombino Bianco as well as the distinct local Trebbiano Abruzzese, and the two have been confused in the vineyard for generations.",
+          "new": "Bombino Bianco and the distinct local Trebbiano Abruzzese have been confused in the vineyard for generations, and the old rule named both; the rule as amended in January 2023 names Trebbiano Abruzzese and Trebbiano Toscano, at least 85 per cent together."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "the Italy country record",
+          "path": "country.grapes[10].styles",
+          "old": "Trebbiano d'Abruzzo is a different grape.",
+          "new": "Trebbiano Abruzzese is a different grape, though the wine Trebbiano d'Abruzzo may be made from either."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "the Italy country record",
+          "path": "country.traps[6]",
+          "old": "Trebbiano d'Abruzzo and Trebbiano di Soave are not Trebbiano Toscano;",
+          "new": "Trebbiano Abruzzese and Trebbiano di Soave are not Trebbiano Toscano, though the wine Trebbiano d'Abruzzo may be made from Abruzzese or Toscano;"
+        },
+        {
+          "file": "rewrite/categories/r1_grapes_labels.py",
+          "record": "the Ugni Blanc and Trebbiano Toscano question (Whites under other names, about line 147)",
+          "path": "exp",
+          "old": "Trebbiano Romagnolo and Trebbiano d'Abruzzo look like one family",
+          "new": "Trebbiano Romagnolo and Trebbiano Abruzzese look like one family"
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "questions[1].exp",
+          "old": "but it is a different vine.",
+          "new": "but it is made from other vines."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Regione Abruzzo, Bollettino Ufficiale of 2 December 2024: texts compared for the amendment of the Trebbiano d'Abruzzo DOC disciplinare",
+          "url": "https://bura.regione.abruzzo.it/sites/bura.regione.abruzzo.it/files/bollettini/2024-12-02/alleagto-2-testi-confronto-x-modifica-disciplinare-doc-trebbiano-dabruzzo-signed.pdf",
+          "kind": "primary",
+          "says": "Compares the disciplinare approved by DM 19 January 2023, in force, with the proposal; Article 2 no longer provides for Bombino, and Trebbiano Abruzzese was long confused with Bombino Bianco, which is why the 1972 rule named them together.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Tutela Vini d'Abruzzo: disciplinare of Trebbiano d'Abruzzo DOC (DM 19 January 2023)",
+          "url": "https://www.vinidabruzzo.it/wp-content/uploads/2024/04/TREBBIANO-DABRUZZO-DOC.pdf",
+          "kind": "primary",
+          "says": "The base type: Trebbiano Abruzzese and/or Trebbiano Toscano, at least 85 per cent; the sub-zones at least 90.",
+          "read": "search summary"
+        },
+        {
+          "title": "AIS Lombardia, Vini Plus: changes to the production rules, first four months of 2023",
+          "url": "https://www.aislombardia.it/viniplus/diritto-divino/novita-dai-disciplinari-di-produzione-le-modifiche-del-primo-quadrimestre-2023.htm",
+          "kind": "secondary",
+          "says": "The 2023 rule asks at least 85 per cent Trebbiano Abruzzese and/or Trebbiano Toscano, with Bombino left out.",
+          "read": "search summary"
+        },
+        {
+          "title": "Qualivita: Trebbiano d'Abruzzo DOP, approval of an ordinary amendment, GURI no. 196 of 25 August 2026",
+          "url": "https://www.qualivita.it/normativa/trebbiano-dabruzzo-dop-approvazione-modifica-ordinaria-disciplinare-guri-n-196/",
+          "kind": "secondary",
+          "says": "Lists the approval of an ordinary amendment to the Trebbiano d'Abruzzo rule, GURI no. 196 of 25 August 2026.",
+          "read": "search summary"
+        },
+        {
+          "title": "Disciplinare.it: Trebbiano d'Abruzzo DOC, approval of an ordinary amendment, 2026",
+          "url": "https://www.disciplinare.it/trebbiano-dabruzzo-doc-approvazione-modifica-ordinaria-al-disciplinare-di-produzione-2026.html",
+          "kind": "secondary",
+          "says": "Gives the vineyard base after the 2026 amendment as Trebbiano Abruzzese and/or Trebbiano Toscano, at least 85 per cent, and recalls that the 1972 rule named Trebbiano Abruzzese with Bombino Bianco after long confusion.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The explanation gave the pre 2023 rule as current and two lines called the wine a grape; c-ndvwbnke's stem, answer and accept list stay (Bombino Bianco is still what old vineyards planted as Trebbiano often hold, and the accept list takes Trebbiano Abruzzese).",
+      "refuter": {
+        "verdict": "changed",
+        "note": "The base of the rule holds: the region's own bulletin of December 2024 sets out the text in force, the disciplinare as amended by the decree of 19 January 2023 (G.U. no. 30 of 6 February 2023), and it reads Trebbiano Abruzzese and/or Trebbiano Toscano at least 85 per cent, the sub-zones 90; Federdoc's listing of 2020 still read Trebbiano Abruzzese and/or Bombino Bianco and/or Trebbiano Toscano. So Bombino left the named base between 2020 and the 2023 text, but nothing read shows the 2023 decree itself made that cut, and the search summaries did not show the bulletin's own words on Bombino that the finding quotes. The new explanation of c-ndvwbnke therefore says the rule as amended in January 2023 names the two Trebbianos (true whichever decree dropped Bombino) in place of since January 2023. Its stem, answer and accept list stay true: the stem speaks of what reaches the bottle, the explanation keeps the vineyard confusion that puts Bombino Bianco there, and the accept list takes Trebbiano Abruzzese. country.grapes[10].styles: may use either read loosely and now reads may be made from either. The other three targets read well in place; the r1 Ugni Blanc question still answers a single vine, and the Verdicchio page's question still answers Verdicchio di Matelica. Every old string occurs once in its file. Completeness: the Abruzzo record's tier, trap and card, the Trebbiano page's home line, label row and card already give Abruzzese and Toscano at 85 per cent; no other place says the DOC permits Bombino Bianco, and the Puglia record's Bombino Bianco row makes no Abruzzo claim. bura.regione.abruzzo.it and www.vinidabruzzo.it refused a fetch, so both were read by search summary.",
+        "sources": [
+          {
+            "title": "Regione Abruzzo, Bollettino Ufficiale: texts compared for the Trebbiano d'Abruzzo DOC, the text in force as amended by the decree of 19 January 2023",
+            "url": "https://bura.regione.abruzzo.it/sites/bura.regione.abruzzo.it/files/bollettini/2024-12-02/alleagto-2-testi-confronto-x-modifica-disciplinare-doc-trebbiano-dabruzzo-signed.pdf",
+            "kind": "primary",
+            "says": "The text in force: Trebbiano Abruzzese and/or Trebbiano Toscano at least 85 per cent, the sub-zones at least 90; the decree of 19 January 2023 published in G.U. no. 30 of 6 February 2023.",
+            "read": "search summary"
+          },
+          {
+            "title": "Federdoc: the denominations of Abruzzo (2020)",
+            "url": "https://www.federdoc.com/new/wp-content/uploads/2020/07/abruzzo.pdf",
+            "kind": "secondary",
+            "says": "Trebbiano d'Abruzzo: Trebbiano Abruzzese and/or Bombino Bianco and/or Trebbiano Toscano, at least 85 per cent: the wording before the 2023 text.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L2-04",
+      "topic": "Turbiana and Verdicchio",
+      "verdict": "change",
+      "claim": "The Lombardy, Marche and Italy records, two questions, a producer note and the Trebbiano and Verdicchio grape pages say Lugana's Turbiana (once Trebbiano di Lugana) is Verdicchio, the same vine as Trebbiano di Soave.",
+      "finding": "For Trebbiano di Soave every source agrees it is Verdicchio. For Turbiana the studies differ: the Vitis study of 2001 found Trebbiano di Soave identical to Verdicchio and Trebbiano di Lugana very similar; a study in Advances in Horticultural Science (2012) found one DNA profile across 25 accessions, a Turbiana among them; the Lugana consortium treats Turbiana as a distinct vine closely related to Verdicchio, which is why Lugana took the name. So Turbiana is so close to Verdicchio that it is often taught as the same vine, but not proven identical.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "grapes[4].styles",
+          "old": "once labelled Trebbiano di Lugana and now known to be Verdicchio:",
+          "new": "once labelled Trebbiano di Lugana and so close to Verdicchio in DNA studies that it is often taught as the same vine:"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "traps[4]",
+          "old": "Lugana's grape was called Trebbiano di Lugana but it is Verdicchio, not the Trebbiano Toscano of Tuscany.",
+          "new": "Lugana's grape was called Trebbiano di Lugana but DNA ties it to Verdicchio, not to the Trebbiano Toscano of Tuscany."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "cards[5].b",
+          "old": "(once Trebbiano di Lugana, genetically Verdicchio)",
+          "new": "(once Trebbiano di Lugana, tied by DNA to Verdicchio)"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "lombardy",
+          "path": "questions[3].exp (r-uf2jj6ug)",
+          "old": "shown by DNA to be the same vine as Verdicchio,",
+          "new": "so close to Verdicchio in DNA studies that it is often taught as the same vine,"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.1.json",
+          "record": "the Italy country record",
+          "path": "country.grapes[13].styles",
+          "old": "the same vine as Trebbiano di Soave and Lugana's Turbiana.",
+          "new": "the same vine as Trebbiano di Soave, and so close to Lugana's Turbiana that the two are often taught as one."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.more.json",
+          "record": "marche",
+          "path": "exam[2]",
+          "old": "Verdicchio is the same variety as Trebbiano di Soave and Lugana's Turbiana, and no relation of Trebbiano Toscano.",
+          "new": "Verdicchio is the same variety as Trebbiano di Soave and so close to Lugana's Turbiana in DNA studies that the two are often taught as one; no relation of Trebbiano Toscano."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.more.json",
+          "record": "marche",
+          "path": "cards[2].b",
+          "old": "The same variety as Trebbiano di Soave in the Veneto and Turbiana at Lugana; no relation of Trebbiano Toscano.",
+          "new": "The same variety as Trebbiano di Soave in the Veneto, and so close to Turbiana at Lugana that it is often taught as the same vine; no relation of Trebbiano Toscano."
+        },
+        {
+          "file": "rewrite/categories/r2_italy_central_south.py",
+          "record": "c-lhywvj93",
+          "path": "exp (Umbria and Marche, about line 169)",
+          "old": "Verdicchio, Trebbiano di Soave and Trebbiano di Lugana proved to be one variety under three regional names.",
+          "new": "Verdicchio and Trebbiano di Soave proved to be one variety under two regional names, and Lugana's Trebbiano di Lugana is so close that it is often taught as the same vine."
+        },
+        {
+          "file": "rewrite/categories/r2_italy_north.py",
+          "record": "c-7zyl7br8",
+          "path": "exp (Lombardy, about line 188)",
+          "old": "It does not: the grape is Verdicchio, and the heavy clay",
+          "new": "It does not: the grape is so close to Verdicchio in DNA studies that it is often taught as the same vine, and the heavy clay"
+        },
+        {
+          "file": "js/data-producers.js",
+          "record": "the Bucci record (Marche)",
+          "path": "traps[1]",
+          "old": "but it is the same variety as Trebbiano di Soave and as Turbiana in Lugana'",
+          "new": "but it is the same variety as Trebbiano di Soave, and so close to Turbiana in Lugana that the two are often taught as one'"
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "labels[4].means",
+          "old": "Names of Verdicchio in the Veneto and on Lake Garda, no Trebbiano at all; Lugana's is now Turbiana.",
+          "new": "Verdicchio in the Veneto, and on Lake Garda a vine DNA ties to it, now Turbiana; no Trebbiano at all."
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "compare[1].tell",
+          "old": "Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio.",
+          "new": "Trebbiano di Soave is Verdicchio; Trebbiano di Lugana its near twin."
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "profile.confuse",
+          "old": "Trebbiano di Soave and Trebbiano di Lugana are Verdicchio\"",
+          "new": "Trebbiano di Soave is Verdicchio, Lugana's Turbiana nearly so\""
+        },
+        {
+          "file": ".scripts/grapes/fragments/trebbiano.json",
+          "record": "trebbiano",
+          "path": "cards[1].back",
+          "old": "Trebbiano di Soave and Trebbiano di Lugana are no Trebbiano at all, but Verdicchio.",
+          "new": "Trebbiano di Soave and Trebbiano di Lugana are no Trebbiano at all: the first is Verdicchio, the second its near twin."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "worlds.home.abroad",
+          "old": "and on the clay shore of Lake Garda it makes Lugana under the name Turbiana, typically a little rounder.",
+          "new": "and on the clay shore of Lake Garda its near twin, Turbiana, makes Lugana, typically a little rounder."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "compare[1].tell",
+          "old": "a bitter almond finish. Trebbiano di Soave, and the old Trebbiano di Lugana, are Verdicchio.",
+          "new": "a bitter almond finish. Trebbiano di Soave is Verdicchio; Trebbiano di Lugana its near twin."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdicchio.json",
+          "record": "verdicchio",
+          "path": "cards[1].back",
+          "old": "\"back\": \"They are its other names.",
+          "new": "\"back\": \"One is its other name, the other its near twin."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Consorzio Tutela Lugana DOC: the region and its grape",
+          "url": "https://www.consorziolugana.it/region-eng",
+          "kind": "primary",
+          "says": "Turbiana was long considered related to, if not confused with, the Verdicchio of the Castelli di Jesi; the consortium describes it as closely related but a vine of its own.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consorzio Tutela Lugana DOC: production regulations",
+          "url": "https://www.consorziolugana.it/production-regulations-eng",
+          "kind": "primary",
+          "says": "Lugana is at least 90 per cent Turbiana, the rule's Trebbiano di Soave known locally as Turbiana or Trebbiano di Lugana.",
+          "read": "search summary"
+        },
+        {
+          "title": "Genetic studies on Trebbiano and morphologically related varieties by SSR and AFLP markers, Vitis 40 (2001)",
+          "url": "https://ojs.openagrar.de/index.php/VITIS/article/view/4527",
+          "kind": "primary",
+          "says": "The original study: Verdicchio identical with Trebbiano di Soave, which is very similar to Trebbiano di Lugana; most vines called Trebbiano share no common ancestor.",
+          "read": "search summary"
+        },
+        {
+          "title": "Verdello, Verdicchio and Verduschia: an integrated multidisciplinary study to clarify grapevine cultivar identity, Advances in Horticultural Science 26(2), 2012",
+          "url": "https://oaj.fupress.net/index.php/ahs/article/view/2980",
+          "kind": "primary",
+          "says": "One DNA profile across all 25 accessions, a Turbiana from Vicenza among them, with Turbiana and Trebbiano di Lugana listed as regional synonyms.",
+          "read": "search summary"
+        },
+        {
+          "title": "Italian Wine Central: profile of Lugana",
+          "url": "https://italianwinecentral.com/profile-lugana/",
+          "kind": "secondary",
+          "says": "Turbiana and Verdicchio described as close relatives; the trade sources split between near identity and a distinct biotype.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Only the Turbiana half was overstated: Trebbiano di Soave stays Verdicchio everywhere (the Veneto record and friuli's r-ls1a2rd8 are right), the accept list of r-uf2jj6ug keeps Verdicchio, the Marche styles line already says DNA ties it and stays, and the Verdicchio page's aliases and regions list keep Turbiana by the grape plan.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Tried to refute the softening from both sides. Towards identity: the national register files Turbiana and Trebbiano di Lugana as synonyms of Trebbiano di Soave, itself filed under Verdicchio Bianco, and the 2012 study found one profile across 25 accessions, a Turbiana among them. Towards a separate vine: the consortium has held since its announcement of 2021 that Turbiana is a distinct vine closely related to Verdicchio, has registered Turbiana clones of its own, and two trade reports call it a biotype. Identity is unproven either way, so so close to Verdicchio in DNA studies that it is often taught as the same vine, and tied by DNA, are true on every reading; Trebbiano di Soave stays Verdicchio. Paths: three targets in trebbiano.json named the wrong index; the strings sit at labels[4].means, compare[1].tell and cards[1].back, now corrected. profile.confuse: Lugana's its near twin read as a fragment and now reads Trebbiano di Soave is Verdicchio, Lugana's Turbiana nearly so, which keeps the line at the page's cap of 30 words. Every old string occurs once in its file. Answers stay true: r-uf2jj6ug answers Turbiana and may keep Verdicchio in its accept list while the register files the names as one vine; c-7zyl7br8 answers Turbiana; c-lhywvj93 answers Trebbiano di Soave. Left for the owner: the Verdicchio page's questions[1] stem asks for a wine of the same grape as a Lugana; not shown wrong while the register treats them as one, so it stays. Completeness: a grep of js/, the region fragments, the CMS, the rewrite banks and the grape pages finds no further place that states Turbiana is Verdicchio; the Marche styles line, the Verdicchio page's label row, guest answer and profile, and friuli's r-ls1a2rd8 already say tied, as near as makes no difference, or Lugana's grape; the Trebbiano page's notIn line sits in its report, which never ships.",
+        "sources": [
+          {
+            "title": "Decanter: Lugana, regional profile",
+            "url": "https://www.decanter.com/premium/lugana-regional-profile-12-spectacular-whites-478157",
+            "kind": "secondary",
+            "says": "The national register gives Turbiana and Trebbiano di Lugana as synonyms of Trebbiano di Soave, itself a synonym of Verdicchio Bianco; later study set Trebbiano di Lugana slightly apart, and the consortium registered Turbiana clones; a biotype in its own right.",
+            "read": "search summary"
+          },
+          {
+            "title": "Wine Folly: Lugana",
+            "url": "https://winefolly.com/update/lugana-wine-region-removal-plan/",
+            "kind": "secondary",
+            "says": "In March 2021 it was announced that Verdicchio and Turbiana are close relatives but genetically distinct vines.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L2-05",
+      "topic": "Sicily: the 2017 rule and Grillo's billing",
+      "verdict": "change",
+      "claim": "The Sicily record says in six places that varietal Nero d'Avola and Grillo must be Sicilia DOC since 2017, while its card cards[6] and question r-ih3gzpr1 say the names belong to the island's DOCs, Sicilia above all; three lines call Grillo the island's best dry or varietal white.",
+      "finding": "The change in force from the 2017 harvest amended the Terre Siciliane IGT rule: Grillo and Calabrese (Nero d'Avola) may no longer be named on an IGT label, in varietal or optional information. It reserves nothing to Sicilia DOC alone: the island's other DOCs still name the grapes, Noto DOC for one keeps a Noto Nero d'Avola of at least 85 per cent, and Eloro and Vittoria name it too. A challenge before the regional administrative court was overturned by the Council of State, which upheld the change. Calling Grillo the island's best white is a judgement the house rules keep out.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "law.tiers[3][1]",
+          "old": "since the 2017 vintage a varietal Grillo or Nero d'Avola must be Sicilia DOC, never Terre Siciliane IGT.",
+          "new": "since the 2017 vintage a varietal Grillo or Nero d'Avola must carry a DOC, Sicilia or a local one, never Terre Siciliane IGT."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "law.classification",
+          "old": "has reserved varietal Grillo and Nero d'Avola to itself since the 2017 vintage, with Terre Siciliane IGT beneath it for everything else.",
+          "new": "has shared varietal Grillo and Nero d'Avola only with the island's other DOCs since the 2017 vintage, with Terre Siciliane IGT beneath it for everything else."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "exam[3]",
+          "old": "varietal Nero d'Avola and Grillo must be Sicilia DOC since 2017.",
+          "new": "since 2017 varietal Nero d'Avola and Grillo must carry a DOC, Sicilia above all, never Terre Siciliane IGT."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "traps[7]",
+          "old": "those two words mean Sicilia DOC.",
+          "new": "those two words mean a DOC: Sicilia, or a local one such as Erice for Grillo or Noto for Nero d'Avola."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "grapes[5].styles",
+          "old": "A cross of Catarratto and Zibibbo, the backbone of fine Marsala and now the island's best dry white: citrus, herbs and a saline bite, reserved to Sicilia DOC as a varietal since 2017.",
+          "new": "A cross of Catarratto and Zibibbo, the backbone of fine Marsala and now a dry white in its own right: citrus, herbs and a saline bite, reserved as a varietal to the island's DOCs, Sicilia above all, since 2017."
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "wines[4].note",
+          "old": "the island's best varietal white and a Sicilia DOC wine by rule;",
+          "new": "a varietal white of the west and a DOC wine by rule, Sicilia above all;"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "sicily",
+          "path": "cards[8].b",
+          "old": "once the backbone of fine Marsala, now the island's best dry white, and since 2017",
+          "new": "once the backbone of fine Marsala, now a dry white in its own right, and since 2017"
+        },
+        {
+          "file": ".scripts/cms/questions/sicily-sardinia.json",
+          "record": "e-l2zcmjow",
+          "path": "exp",
+          "old": "has held varietal Grillo and Nero d'Avola to itself since the 2017 vintage, with Terre Siciliane IGT left beneath it for everything else.",
+          "new": "has shared varietal Grillo and Nero d'Avola only with the island's smaller DOCs, such as Erice for Grillo and Noto for Nero d'Avola, since the 2017 vintage, with Terre Siciliane IGT left beneath it for everything else."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Ministero dell'agricoltura (MASAF): disciplinare of the Terre Siciliane IGT",
+          "url": "https://masaf.gov.it/flex/cm/pages/ServeAttachment.php/L/IT/D/1/e/b/D.71bd75dc36837ba8dd16/P/BLOB:ID=23264/E/pdf?mode=download",
+          "kind": "primary",
+          "says": "A varietal label is allowed at 85 per cent of the grape, but Grillo and Calabrese or its synonym Nero d'Avola are excluded, and neither name may appear in optional varietal information on a Terre Siciliane label.",
+          "read": "search summary"
+        },
+        {
+          "title": "AIS: disciplinare of the Noto DOC",
+          "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Noto.pdf",
+          "kind": "primary",
+          "says": "The Noto DOC keeps a Noto Nero d'Avola type, at least 85 per cent Nero d'Avola, beside its Rosso and the Moscato types.",
+          "read": "search summary"
+        },
+        {
+          "title": "MeteoWeb: the Sicilia DOC consortium on the 2017 harvest",
+          "url": "https://www.meteoweb.eu/2017/08/vendemmia-consorzio-tutela-vini-doc-sicilia-uve-sane-e-in-ottime-condizioni/944837/",
+          "kind": "secondary",
+          "says": "The ministry approved the change to the Terre Siciliane IGT rule barring Grillo and Nero d'Avola from IGT labels from the 2017 harvest; such wines must go under a Sicilian DOC.",
+          "read": "search summary"
+        },
+        {
+          "title": "BlogSicilia: the Council of State on Grillo and Nero d'Avola",
+          "url": "https://www.blogsicilia.it/palermo/nero-davola-e-grillo-igt-solo-nei-vini-doc-siciliani-lo-ha-deciso-il-consiglio-di-stato/560832/",
+          "kind": "secondary",
+          "says": "The Council of State upheld the change: the two names on Sicilian DOC wines only, not on the IGT.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The rule bars the IGT and admits every Sicilian DOC, as cards[6] and r-ih3gzpr1 already say; the CMS question's stem (unless a smaller DOC applies) and answer stay, only its explanation moves. Best is a superlative of judgement and is cut.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "The rule holds as the entry gives it: the amended Terre Siciliane text bars IGT Grillo and Nero d'Avola from the 2017 vintage, the Council of State upheld it, and the consortium's director said the two belong to every Sicilian DOC that names them, not to Sicilia alone; the trade reports of 2017 agree. Two new texts named Noto and Vittoria as DOCs for both grapes, but those name Nero d'Avola and no Grillo type was found in either; Erice DOC has a Grillo type of its own. traps[7] and the CMS explanation now name Erice for Grillo and Noto for Nero d'Avola. Nothing else moves: the other six read well in place, cards[6] and r-ih3gzpr1 already agree, e-l2zcmjow still answers Sicilia DOC on a stem that says unless a smaller DOC applies, and every old string occurs once. Grillo as a cross of Catarratto and Zibibbo stands. Completeness: the Nero d'Avola page already says a DOC, most often Sicilia DOC; no other file says Sicilia DOC alone since 2017, and no other place calls Grillo the island's best. Also tested and left: Nero d'Avola as the island's most planted red (still so on the 2021 register figures, see L2-09), and Etna's DOCG, which the record gives as applied for and pending; a report of September 2026 still calls it the next milestone. Left for the owner: the same record's Gulfi line (the grape's best case for terroir) is a superlative of judgement no reviewer flagged.",
+        "sources": [
+          {
+            "title": "AIS: disciplinare of the Erice DOC",
+            "url": "https://aisitalia.it/Disciplinari/Sicilia/DOC/Erice.pdf",
+            "kind": "primary",
+            "says": "Lists an Erice Grillo type among the denomination's wines, with its own vineyard base.",
+            "read": "search summary"
+          },
+          {
+            "title": "BlogSicilia: Grillo and Nero d'Avola admitted in the DOCs",
+            "url": "https://www.blogsicilia.it/palermo/via-libera-ai-vini-grillo-e-nero-davola-nelle-doc/397502/",
+            "kind": "secondary",
+            "says": "The change confines the two grapes to the Sicilian DOCs: not only Sicilia DOC but the other Sicilian DOCs that may name Nero d'Avola.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L2-06",
+      "topic": "Sagrantino's tannin, without a ranking",
+      "verdict": "change",
+      "claim": "The Umbria record says Sagrantino has the highest tannin and polyphenol load measured in any Italian variety and is the most tannic grape in Italy; GRAPES_PLUS says often called Italy's highest and often called the most tannic grape in the world; a producer note says the highest tannin load of any Italian variety.",
+      "finding": "No measurement across Italy's varieties was found that ranks Sagrantino first. One study of Sagrantino wines found the highest mean oligomeric procyanidins among the wines it compared, 1.2 g/L against 0.8 g/L for Nebbiolo, a result inside one study's sample. Trade and grape references agree on the substance: small, thick skinned berries and a tannin and polyphenol load that puts it among the most tannic of all grapes.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "grapes[0].styles",
+          "old": "with the highest tannin and polyphenol load measured in any Italian variety:",
+          "new": "with more tannin and polyphenols than almost any other grape:"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "cards[5].b",
+          "old": "It carries the highest tannin and polyphenol content measured in an Italian variety;",
+          "new": "It carries more tannin and polyphenols than almost any other grape;"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "summary",
+          "old": "made entirely from the most tannic grape in Italy,",
+          "new": "made entirely from a grape with more tannin than almost any other,"
+        },
+        {
+          "file": ".scripts/regions/fragments/italy.3.json",
+          "record": "umbria",
+          "path": "exam[0]",
+          "old": "dry or passito; the most tannic grape in Italy.",
+          "new": "dry or passito; more tannin than almost any other grape."
+        },
+        {
+          "file": "js/data-grapes-plus.js",
+          "record": "Sagrantino",
+          "path": "GRAPES_PLUS Sagrantino.st",
+          "old": "Tannin EXTREME, often called Italy's highest",
+          "new": "Tannin EXTREME, more than almost any other grape"
+        },
+        {
+          "file": "js/data-grapes-plus.js",
+          "record": "Sagrantino",
+          "path": "GRAPES_PLUS Sagrantino.tell",
+          "old": "Often called the most tannic grape in the world, black-fruited and incense-dark",
+          "new": "More tannin than almost any other grape, black-fruited and incense-dark"
+        },
+        {
+          "file": "js/data-producers.js",
+          "record": "p-arnaldo-caprai",
+          "path": "style",
+          "old": "to tame the highest tannin load of any Italian variety.",
+          "new": "to tame a grape with more tannin than almost any other."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Improving the Phloroglucinolysis Protocol and Characterization of Sagrantino Wines Proanthocyanidins (MDPI)",
+          "url": "https://mdpi.com/1003628",
+          "kind": "primary",
+          "says": "Among the wines compared, Sagrantino had the highest mean oligomeric procyanidins, 1.2 g/L, ahead of Nebbiolo at 0.8 g/L: a measurement inside one study, not a ranking of every Italian variety.",
+          "read": "search summary"
+        },
+        {
+          "title": "WineMaker: Sagrantino",
+          "url": "https://winemakermag.com/articles/sagrantino",
+          "kind": "secondary",
+          "says": "Small grapes with very thick skins, which make it one of the most tannic of all grape varieties.",
+          "read": "search summary"
+        }
+      ],
+      "why": "A ranking needs a measurement to cite and none ranks it first; the substance (among the most tannic of all grapes) stays. Left: ADV a-dq2mo3wg, whose stem asks for Sagrantino's claim to fame, a reputation, so its answer stands; i-70avillq (one of Italy's most tannic) and the CMS's two of Italy's most tannic reds are already hedged.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "The finding says no measurement ranks Sagrantino first across Italy's varieties; one does, within its sample. A survey of 110 single variety wines of eleven Italian red grapes from one vintage (Food Research International, 2021) found Sagrantino highest in total phenolics, 3578 mg/L, and richest in proanthocyanidins and vanillin reactive flavanols, with Corvina lowest at 1065. So the record's measured claim was nearer the truth than the finding allows, but in any Italian variety and the most tannic grape in Italy still reach past eleven grapes and one vintage, and the change stands. The new texts said among the most tannic of all grapes, the very shape of the house rule's own example of a forbidden superlative (most tannic in the world); they now use the comparative the reviewed Sagrantino grape page already uses (more tannin than almost any grape), which both sources bear out. cards[5].b still answers its front (why Sagrantino is famous among grapes). Every old string occurs once; the producer style line sits in a single quoted string, so its new text carries no apostrophe. Should the owner want the measured rank kept, it would need the survey added to the Umbria record's sources: the highest tannin and polyphenol load of eleven Italian reds measured side by side in 2021. Left, and agreed: ADV a-dq2mo3wg, whose stem asks the grape's claim to fame; i-70avillq (one of Italy's most tannic red grapes) and the CMS's two of Italy's most tannic reds, both hedged and both now borne out by the survey. Completeness: Aglianico's and Tannat's GRAPES_PLUS rows compare grip without a rank; no other place ranks Sagrantino.",
+        "sources": [
+          {
+            "title": "Food Research International 143 (2021) 110277: a survey of the diversity of Italian red wines by their oenological parameters, colour and phenolic indices",
+            "url": "https://www.pubmed.gov/33992377/",
+            "kind": "primary",
+            "says": "110 monovarietal wines of eleven Italian red varieties, one vintage: Sagrantino highest in total phenolics (3578 mg/L) and richest in proanthocyanidins and vanillin reactive flavanols; Corvina lowest (1065 mg/L).",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L2-07",
+      "topic": "Garganega's acidity dial",
+      "verdict": "leave",
+      "claim": "INTRO_GRAPES gives Garganega acid 2 of 3, medium, beside a trap line of gentle almond and stone fruit.",
+      "finding": "References place Garganega's acidity from medium to high, centred on medium plus: the Soave consortium describes a late ripener harvested well into October whose blend partner, Trebbiano di Soave, brings freshness with its malic acid; a sommelier body's study of the Veneto gives the best dry Soave moderate plus acidity; some grape profiles say high. On this dial 3 is the mark of the grapes taught as high acid (Riesling, Sauvignon Blanc, Chenin Blanc, Albariño, Assyrtiko, Furmint, Melon, Cortese, Verdejo, Grüner Veltliner) and 2 covers medium to medium plus (Chardonnay, Vermentino, Pinot Blanc, Silvaner, Glera).",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Consorzio Tutela Vini Soave: the grapes",
+          "url": "https://www.ilsoave.com/en/the-grapes/",
+          "kind": "primary",
+          "says": "Garganega ripens late and is harvested well into October; Trebbiano di Soave ripens earlier and its high malic acid adds freshness to the blend.",
+          "read": "search summary"
+        },
+        {
+          "title": "GuildSomm: Italy's Adriatic Coast, Part 1, Veneto and the DOCG",
+          "url": "https://www.guildsomm.com/public_content/features/articles/b/stamp/posts/italy-39-s-adriatic-coast-wines-of-veneto",
+          "kind": "secondary",
+          "says": "The best dry Soave and Gambellara are crisp, with moderate plus acidity, yet textural.",
+          "read": "search summary"
+        },
+        {
+          "title": "Primal Wine: Garganega, grape varietal profile",
+          "url": "https://primalwine.com/blogs/grape-varietals/garganega-grape-varietal-profile",
+          "kind": "secondary",
+          "says": "Acidity medium to high.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Medium plus sits in 2 on this three step dial, which keeps 3 for the sharp whites and keeps Soave the softer foil to Gavi (Cortese 3) and Verdicchio, as the Garganega and Verdicchio grape pages teach it (medium to medium plus); 2 stands.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Read the dial against itself: INTRO_GRAPES gives acid 3 to Riesling, Sauvignon Blanc, Chenin Blanc, Grüner Veltliner, Albariño, Verdejo, Cortese, Furmint, Assyrtiko and Melon de Bourgogne, and 2 to Chardonnay, Pinot Gris, Sémillon, Torrontés, Roussanne, Vermentino, Glera, Silvaner and Pinot Blanc. Decanter's guide to ageing Italian whites puts Garganega with Fiano and Vermentino among the whites less aggressive in acidity, with Verdicchio between the groups; a wine school's guide gives the grape good acidity. With Vermentino at 2, Garganega at 2 is the consistent mark, and the Garganega page's medium to medium plus and its compare line (Verdicchio sharper) agree. The trap line's gentle almond and stone fruit speaks of flavour, not acidity. Leave stands.",
+        "sources": [
+          {
+            "title": "Decanter: ageing Italian whites, a patient wine lover's guide (May 2020)",
+            "url": "https://www.pressreader.com/uk/decanter/20200501/281547997971408",
+            "kind": "secondary",
+            "says": "Groups Fiano, Garganega and Vermentino as more phenolic, less aggressive in acidity and richer in body; Verdicchio shares traits with both groups.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L2-08",
+      "topic": "Lambrusco at the table: cold, and the flute",
+      "verdict": "leave",
+      "claim": "The Emilia-Romagna record says serve Lambrusco cold in a flute or a white wine glass (exam[6], cards[7].b), the Sorbara cold (wines[0].note) and the amabile well chilled (wines[3].note); the grape table gives 10 to 14 degrees Celsius after Gambero Rosso.",
+      "finding": "The Court's own Certified syllabus cell, transcribed in .scripts/cms/subjects/lombardy-emilia-romagna.json, says Lambrusco is served as any other sparkling wine, cold and in a flute or wine glass, and the CMS question e-ltbv1b5r teaches it so. The Consorzio Tutela Lambrusco serves Lambrusco DOC at 8 to 10 degrees Celsius; Gambero Rosso's guidelines for restaurateurs give 10 for Sorbara and the rosés and 14 for the dark wines; a producer's sheet gives 6 to 8 for an amabile rosato. So cold holds for the run of Lambrusco and the pale Sorbara, the flute stands on the Court's word, and well chilled holds for the sweet amabile; only the dark Grasparossa runs warmer, which the grape table already says.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Court of Master Sommeliers Americas: Introductory Sommelier Course and Certified Sommelier Theory Exam Curriculum Guide (CMS-A 8.2023), pages 28 and 29, Lombardy and Emilia-Romagna, Service of Beverage",
+          "url": "https://www.mastersommeliers.org",
+          "kind": "primary",
+          "says": "Certified cell: Lambrusco is served as you would any other sparkling wine, cold and in a flute or wine glass, with the Court's published sparkling wine service standards (read in the Codex's transcription, .scripts/cms/subjects/lombardy-emilia-romagna.json).",
+          "read": "page"
+        },
+        {
+          "title": "Consorzio Tutela Lambrusco: Lambrusco DOC a spicchi, the pizza tour",
+          "url": "https://lambrusco.net/news/lambrusco-a-spicchi-il-tour-che-unisce-la-pizza-alle-bollicine-emiliane/",
+          "kind": "primary",
+          "says": "Serve the Emilian bubbles at the right temperature, between 8 and 10 degrees Celsius.",
+          "read": "search summary"
+        },
+        {
+          "title": "Gambero Rosso: Lambrusco at the restaurant, a decalogue for restaurateurs",
+          "url": "https://www.gamberorosso.it/attualita/lambrusco-al-ristorante-rosso-frizzante-pieno-di-energia-un-decalogo-per-i-ristoratori/",
+          "kind": "secondary",
+          "says": "14 degrees for the dark Lambruscos, 10 for Sorbara and the rosés.",
+          "read": "search summary"
+        },
+        {
+          "title": "Ceci 1938: technical sheet of a Lambrusco Emilia IGT rosato amabile",
+          "url": "https://www.lambrusco.it/wp-content/uploads/2020/09/15-scheda-tecnica-27-opere-lambrusco-rosato-amabile-gold-edition-ceci-1938.pdf",
+          "kind": "secondary",
+          "says": "Serving temperature 6 to 8 degrees for the amabile rosato.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The sources do not agree on cool: the Court and the consortium put Lambrusco cold, 8 to 10 degrees, and the Court names the flute; the record follows the Court word for word and stays. For the owner: the grape table's 10 to 14 is Gambero Rosso's figure and misses the consortium's 8; widening it to 8 to 14 would need the consortium among that page's sources, which already stand at their cap of four.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Searched for a consortium text that puts Lambrusco cool or bans the flute and found none: trade pages split (a Lambrusco writer prefers a tumbler or a Bordeaux stem to a flute, one product sheet gives 6 to 8 degrees for a rosé, one article 15 to 18 for a dark red), which is a spread of habit, not a fault in the record. The record follows the Court's Certified cell word for word (cold, a flute or a wine glass), the Sorbara and amabile notes sit at the cold end every source gives for those styles, and the Grasparossa note names no temperature. The grape page's 10 to 14, pale Sorbara cooler and dark Grasparossa warmer, does not contradict cold for the run of Lambrusco. Leave stands.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L2-09",
+      "topic": "Planting ranks: Montepulciano in Abruzzo and Italy, Nero d'Avola in Sicily",
+      "verdict": "leave",
+      "claim": "The Abruzzo record calls Montepulciano one of the most planted reds of Italy and almost the whole of Abruzzo's red vineyard (grapes[0].styles); the Sicily record calls Nero d'Avola the island's most planted red (grapes[0].styles).",
+      "finding": "A survey of the Abruzzo vineyard reported by the regional consortium puts Montepulciano at over 52 per cent of all 33,964 hectares, with Trebbiano Toscano second at about 14 per cent and the rest spread over 118 varieties, most of them white; no figure for the red share alone was found, but almost the whole reads true. Italian planting tables of 2015 and later put Montepulciano second of the reds, behind Sangiovese, at about 27,000 hectares. The Sicilian register figures of 2021 give Nero d'Avola 15,387 hectares, second on the island to Catarratto and first of the reds.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Consorzio Tutela Vini d'Abruzzo: brochure of the vineyard survey (2025)",
+          "url": "https://www.vinidabruzzo.it/wp-content/uploads/2025/03/Brochure-SM-16.1_compressed.pdf",
+          "kind": "primary",
+          "says": "Montepulciano over 52 per cent of the Abruzzo vineyard.",
+          "read": "search summary"
+        },
+        {
+          "title": "Gambero Rosso: a vineyard map defines the Abruzzo territory's suitability",
+          "url": "https://www.gamberorossointernational.com/?p=540701",
+          "kind": "secondary",
+          "says": "Over 155,000 parcels, 33,964 hectares and 118 varieties; Montepulciano over 52 per cent of the whole vineyard, Trebbiano Toscano second at about 14.",
+          "read": "search summary"
+        },
+        {
+          "title": "BKWine: the most popular grape varieties in Italy",
+          "url": "https://www.bkwine.com/news/popular-grape-varieties-italy/",
+          "kind": "secondary",
+          "says": "Sangiovese about 54,000 hectares; Montepulciano and Glera about 27,000 each, then Pinot Grigio and Merlot (24,000): Montepulciano the second red.",
+          "read": "search summary"
+        },
+        {
+          "title": "QdS: Nero d'Avola, the king of Sicilian wines (SIAN figures of 2021)",
+          "url": "https://qds.it/sua-maesta-nero-avola-re-vini-siciliani/",
+          "kind": "secondary",
+          "says": "Of 97,080 hectares of Sicilian vineyard in 2021, Nero d'Avola holds 15,387; another count puts it second to Catarratto.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Both ranks were flagged as volatile (check-g10, check-g11) and both still hold on the figures read; one of the most planted is already hedged, and almost the whole fits a grape holding over half of all the region's vines. Left, as L1-12 and L3-07 left the ranks that hold.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Added by the second reader so that every Italy flag in the codexRecords notes has an entry: check-g10 flagged the Abruzzo share and check-g11 the Sicily rank. Tested both against current figures and found them true; nothing is written. The Abruzzo record's other strong words (the most reliable value in a wines note, the two most celebrated and most famous estates) and Umbria's the most famous of them were not flagged and are left for the owner.",
+        "sources": []
+      }
+    }
+  ]
+}

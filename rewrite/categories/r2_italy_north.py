@@ -185,7 +185,7 @@ BANK = [
        "Turbiana",
        ["turbiana", "trebbiano di lugana", "turbiana or trebbiano di lugana",
         "trebbiano di lugana or turbiana"],
-       "Lugana was long labelled Trebbiano di Lugana, which invited the assumption that it belonged with the undistinguished Trebbiano Toscano. It does not: the grape is Verdicchio, and the heavy clay is what gives the wine its weight and its capacity to age."),
+       "Lugana was long labelled Trebbiano di Lugana, which invited the assumption that it belonged with the undistinguished Trebbiano Toscano. It does not: the grape is so close to Verdicchio in DNA studies that it is often taught as the same vine, and the heavy clay is what gives the wine its weight and its capacity to age."),
     SA("Lombardy",
        "Dried Moscato grapes make a sweet red with a DOCG of its own in a single commune near Bergamo. Name the wine.",
        "Moscato di Scanzo",

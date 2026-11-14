@@ -176,9 +176,9 @@ BANK = [
     # ----------------------------------- Eger, Bikaver and the north (4) ------
     Q("Eger, Bikaver and the north",
       "No single grape may take over an Egri Bikaver: the rules cap what any one variety may contribute to the blend. Where does that ceiling sit?",
-      ["Fifty per cent", "Thirty per cent", "Seventy-five per cent",
+      ["Sixty-five per cent", "Thirty per cent", "Seventy-five per cent",
        "Ten per cent"], 0,
-      "The cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for more varieties, lower yields and, at the top, fruit from one named site."),
+      "The ceiling is Kekfrankos's, which must also be the largest share, and with three more varieties required beside it the cap makes the wine a blend by construction rather than by custom, which is the whole point of a name that has been sold as a blend for well over a century. Above the everyday version sit stricter tiers asking for lower yields, longer ageing and, at the top, fruit from one named site."),
     SA("Eger, Bikaver and the north",
        "One red variety is compulsory in every Egri Bikaver and supplies the acid and the peppery frame the blend is built on. Name it.",
        "Kekfrankos",

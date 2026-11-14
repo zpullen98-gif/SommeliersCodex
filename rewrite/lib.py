@@ -98,8 +98,31 @@ def b36(n, width):
     return out.rjust(width, "0")[-width:]
 
 
+# A stem is the identity, so rewording one moves its id and orphans the progress filed under it.
+# When a stem must change because it is wrong, the question may keep the id it already ships under:
+# PINNED_IDS maps (category, the stem as it now reads) to that id, and mint() returns it. ship.py,
+# build-preview.py, emit(), structural() and check-ids.py all mint through mint(), so a pin holds in
+# each, and check-ids.py reads the old stem's mint and the pin as the same id. A later rewording of a
+# pinned stem misses the table, mints afresh and is named by check-ids.py as a move; ship.py still
+# refuses an id that two questions would share. Add a row only for a stem corrected in place, with the
+# id the old stem minted (the records edition of 11 November 2026 added the first).
+PINNED_IDS = {
+    # Tokaji, the mainstay grape: the stem's thin skins went, the sources split on the skin
+    # (.scripts/review/records/L3.json, L3-05).
+    ("Dessert & Sweet Wines",
+     "High acidity and a readiness to rot nobly make one variety the mainstay of the Tokaj vineyard. Which?"):
+        "i-2zibe7e9",
+}
+
+
 def mint(cat, q, prefix="i"):
-    """Same scheme as .scripts/mint-ids.py, so these are the real minter's ids."""
+    """Same scheme as .scripts/mint-ids.py, so these are the real minter's ids,
+    save a stem corrected in place, which keeps its pinned id (PINNED_IDS)."""
+    pinned = PINNED_IDS.get((cat, q))
+    if pinned is not None:
+        if not pinned.startswith(prefix + "-"):
+            raise ValueError("pinned id %s does not carry the prefix %s" % (pinned, prefix))
+        return pinned
     return prefix + "-" + b36(fnv1a64(json.dumps([cat, q])), 8)
 
 

@@ -48,7 +48,7 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v116`; its two teaching imports have query versions which
+Source worker is `codex-v118`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
 (codex58: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
@@ -60,6 +60,64 @@ codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
 codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
 codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course,
 codex57 the Grapes tab at the table).
+
+## The records edition (11 November 2026)
+
+The owner asked, in these words: "fix those out of date Codex records", meaning the older Codex records the codex57
+second sommeliers flagged as out of date or wrong (`.scripts/grapes/reviews/check-g1.json` to `check-g12.json` under
+`codexRecords`, `worlds.json` and `voice.json` under `unsettled`). Three research lanes tested each flag against the
+governing bodies' own texts (`.scripts/review/records/L1.json` France and Spain, `L2.json` Italy, `L3.json` Hungary,
+Austria, Greece, the source titles and the hand held rows), every entry read by an adversarial refuter. The 23 entries
+whose final verdict is change were applied, 129 targets; the ten left stand with their reasons. Every applied change
+(entry, file, record, path, old, new, why, sources), every entry left, the respellings, the pinned ids and the gates
+with their last lines are in `.scripts/review/applied-records.json`.
+
+- **What was corrected**: Muscadet (Melon alone in Sèvre et Maine and the two smaller zones, plain Muscadet admitting a
+  little Chardonnay), Melon in Nantes before 1709, Bouzeron decreed in 1998, Rueda (one white category since the 2019
+  vintage, the main whites at 75 per cent since August 2024), Verdejo and Verdelho different grapes rather than
+  unrelated ones, Roussanne's Marsanne in Hermitage, Navarra's Garnacha and Tempranillo neck and neck; Ovada the third
+  Dolcetto DOCG, Trebbiano Abruzzese the grape and Trebbiano d'Abruzzo the wine, Turbiana tied by DNA to Verdicchio
+  rather than the same vine, Sicily's 2017 rule shared with the island's other DOCs and Grillo without a ranking,
+  Sagrantino's tannin without a ranking; Egri Bikavér from at least four varieties, Kékfrankos the largest share and at
+  most 65 per cent (`c-98c4i3oo` keyed Sixty-five per cent, `a-ih3g5con`'s gloss), dry single vineyard Furmint from the
+  turn of the century, Furmint's disputed thin skin dropped, Tokaji Aszú served at 10 to 12 C, Tannat's row Moderate to
+  warm, ginger left to Gewürztraminer, Naoussa's producers and Touriga Nacional without a ranking, Zweigelt leading the
+  Seewinkel rather than all Burgenland, and the 34 source titles that named the living authors of Wine Grapes now read
+  Wine Grapes (Penguin, 2012). The respellings: one form per grape across every region record's say field and the sous
+  voile technique's, the grape table's (GRID_SAY agrees for the Court's grapes), for Sangiovese, Verdicchio, Trebbiano,
+  Fiano, Carmenère, Blaufränkisch, Kékfrankos, Pinotage, Grenache, Monastrell, Carignan, Savagnin, Godello, Palomino and
+  Pedro Ximénez, 24 entries moved; Tannat stays two ways, tah-NAH in France and tah-NAHT in Uruguay.
+- **The paths**: each file through its own. The region fragments by a parse, the old asserted once in its field and
+  the fragment written back in its one space layout, then `build-regions.cjs` (`--check` passes); the rewrite modules,
+  then `build.py`, `ship.py --dry-run`, `ship.py` and the rewrite checks (`check-ids.py` all stable across 3061,
+  `check-regression.py` 0 lost, `check-cross-category.py` 0 pairs for review); the CMS questions through `build-cms.cjs`;
+  the grape fragments through `build-grapes.cjs` (`keys.v1.json` unchanged, the data now 644,478 bytes and 58,651
+  reading words); the hand held files (INTRO_GRAPES after INTRO_QUESTIONS, `js/data-grapes-plus.js`, `js/reference.js`,
+  `js/data-service-ref.js`, `js/data-producers.js`, `js/data-advanced.js`) by exact replacement asserted once. No
+  question id moved.
+- **The ids**: `node .scripts/regions/pin-ids.cjs` pinned the 112 codex56 question ids left unpinned (eight a region
+  in the five `.more` fragments), so `pin-ids.cjs --check` now passes, 1524 pinned, and a reworded region stem keeps its
+  id (`r-zd9qzdui`, Rueda's, was reworded here). The rewrite gains `PINNED_IDS` in `rewrite/lib.py`: a stem corrected
+  in place keeps the id it ships under, and every minting path reads it (`i-2zibe7e9`, the Tokaji mainstay stem, the
+  first; `rewrite/README.md`). A Régionale or Village stem reworded without a pin still moves its id, as before.
+- **Section 8's new base**: `check-grapes-table.js` compares the 59 old pages with the same jsDir's chain less
+  `data-grapes-table.js` and `codex57.js` (the same data, the layers up to codex56; `loadChain`'s new `skip` option in
+  `.scripts/cms/chain.cjs`), never with git, so a deliberate data correction no longer trips it while it still proves
+  that codex57 changes only what it says it changes. `GRAPES_BASE=<ref>` (7d14d1c, the codex56 master) or
+  `GRAPES_BASE_DIR` compares with a git base, and with 7d14d1c it now fails by the corrected rows, as it should. 86
+  checks (the base loads less exactly the two files); `--mutations` seeds 31 faults, the new one codex57 changing an
+  old section it does not own.
+- **Left on purpose**: TASTE (`js/data-tasting.js`, ChatGPT's, its hash pinned by `check-teaching-accuracy.cjs`), with
+  the Riesling age line (ages further than any other white) and the dials the checkers listed (Zinfandel's tannin,
+  Corvina's acid, Barbera's tannin and body, Sangiovese's tannin, Aglianico's acid and climate, Nerello Mascalese's body
+  and alcohol, Xinomavro's body); the planting ranks, true today on the governing bodies' figures (France's Ugni Blanc
+  and Merlot, the 2024 Merlot question open; Montepulciano; Nero d'Avola; Zweigelt in Austria; the Douro and Nemea);
+  the Régionale rows' bare family words, which codex57 masks at display; GRID_SAY; and the notes the refuters left for
+  the owner, listed in the log.
+- **The shell**: `index.html` moved the `?v=` of every data file this edition changed (data-questions, reference,
+  data-intro, data-grapes-plus, data-advanced, data-producers, data-regions, data-service-ref, data-cms and
+  data-grapes-table), and `sw.js` is `codex-v117`; the two gate pins that named the old values exactly moved with them
+  (check-grapes-table's worker and swapped tags mutations).
 
 ## The Grapes tab at the table (codex57, 9 November 2026)
 
@@ -153,9 +211,10 @@ CSS in its own `v57-style` element, every selector under `.wrap`. It is a displa
   grape once before any returns). The decks are `#/flashcards/grapecards`, `#/flashcards/grapecards:{slug}` and
   `#/flashcards/grapesdue`.
 - **Gate**: `node .scripts/check-grapes-table.js [jsDir] [--mutations]` (with `OOT_SHARED` and `OOT_HOUSE_PACK`; a
-  tree with no codex57.js is skipped; the base is read from git, `GRAPES_BASE` or `GRAPES_BASE_DIR`) loads the shipped
-  chain three times (chain.cjs's sandbox, check-card's loader with the engine and the pack, and the base `7d14d1c`) and
-  runs 85 checks in fifteen sections: the load; the roster whole, every record through `schema.cjs`, the data the
+  tree with no codex57.js is skipped; the base, since the records edition, is the same jsDir's chain less
+  `data-grapes-table.js` and `codex57.js`, and `GRAPES_BASE` or `GRAPES_BASE_DIR` names a git base such as `7d14d1c`)
+  loads the shipped chain three times (chain.cjs's sandbox, check-card's loader with the engine and the pack, and the
+  base) and runs 86 checks in fifteen sections: the load; the roster whole, every record through `schema.cjs`, the data the
   build, the ids against the frozen keys; every cap, the two sentence sale, no bare family word; both worlds on the 24
   and home and abroad on the 51; the names; compare; all 75 pages at four levels with At the table first, the family
   heads, the stock rows and The regions that name it; the 59 old pages section by section against the base, but for
@@ -163,7 +222,7 @@ CSS in its own `v57-style` element, every selector under `.wrap`. It is a displa
   `notIn` phrases plus the new names and the table's three; the root; On our list split by world; the decks and the
   schedule on seeded grades; the drill; the three views warm and cold; the shell and the chain rule (every list in a
   gate that names `codex56.js` names `data-grapes-table.js` and `codex57.js` straight after it); the layer's file in the
-  strictest voice. `--mutations` seeds 30 faults, each caught by the check that names it.
+  strictest voice. `--mutations` seeds 31 faults, each caught by the check that names it.
 - **The pins that moved**: `index.html` (two tags after codex56), `sw.js` (`codex-v116`, two assets); the nine script
   order lists (`check-atlas-ui.js`, `check-brennans.js`, `check-cms.js` and its chain list, `check-components.js`,
   `check-nav.js`, `check-videos.js`, `check-winelist.js`, `check-regions.js`, `check-atlas-course.js`, which now holds
@@ -179,10 +238,11 @@ CSS in its own `v57-style` element, every selector under `.wrap`. It is a displa
   rows' qualified words (baking spice, sweet spice, earth, herbs) and the tell, trap, confuse and regions prose of the
   earlier data; the Court's grid wording. The Codex records the checkers believe out of date or in tension (the Rueda
   categories after 2019, the Muscadet rule, the Eger count, several respellings given two ways, volatile ranks in
-  region records) are listed in `.scripts/grapes/reviews/` for the owner and were not changed here.
+  region records) are listed in `.scripts/grapes/reviews/`; they were corrected in the records edition of 11 November
+  2026 (above), logged in `.scripts/review/applied-records.json`, and the ranks that hold were left.
 
-The shell loads `js/data-grapes-table.js?v=1` then `js/codex57.js?v=1` after codex56.js and before boot.js; the source
-worker is `codex-v116` and lists both. The next layer is codex58.
+The shell loads `js/data-grapes-table.js` then `js/codex57.js` after codex56.js and before boot.js; the source worker
+lists both (`codex-v116` at codex57, `codex-v117` since the records edition). The next layer is codex58.
 
 ## The Wine Atlas as a course (codex56, 2 November 2026)
 
@@ -1124,7 +1184,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v105`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v118`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 

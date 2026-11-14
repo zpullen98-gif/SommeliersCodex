@@ -39,7 +39,7 @@
  *  10. the views warm and cold: lit Wine Atlas, named, an address naming nothing falling to the root, Back climbing a
  *      house to its group, the group to the root, the root to the Wine Atlas root; each address cold, the decks' too,
  *      climbing to Home
- *  11. the shell and the chain rule: the two tags in order, codex-v117 or later listing both; every list in a gate here
+ *  11. the shell and the chain rule: the two tags in order, codex-v118 or later listing both; every list in a gate here
  *      that names codex57.js names data-flagships.js and codex58.js straight after it (or in the list that follows it)
  *  12. the layer's file: no dash, nobody named, no key, no fl- literal, var and function only, every wrapper typeof
  *      guarded, every selector under .wrap, every colour on its own ground (the parchment's tokens under a card, the
@@ -805,7 +805,7 @@ async function main() {
     check('index.html loads js/data-flagships.js then js/codex58.js, each once with ?v=, after codex57.js and before boot.js', i57 > 0 && iData > i57 && i58 > iData && iBoot > i58 && index.split('js/codex58.js').length === 2 && index.split('js/data-flagships.js').length === 2);
     const v = Number((sw.match(/const CACHE = '(?:oot-)?codex-v(\d+)';/) || [])[1]);
     const s57 = sw.indexOf("'./js/codex57.js'"), sData = sw.indexOf("'./js/data-flagships.js'"), s58 = sw.indexOf("'./js/codex58.js'");
-    check('sw.js is codex-v117 or later (' + v + ') and lists ./js/data-flagships.js and ./js/codex58.js once each, after ./js/codex57.js', v >= 117 && s57 > 0 && sData > s57 && s58 > sData && sw.split("'./js/codex58.js'").length === 2 && sw.split("'./js/data-flagships.js'").length === 2, 'v' + v);
+    check('sw.js is codex-v118 or later (' + v + ') and lists ./js/data-flagships.js and ./js/codex58.js once each, after ./js/codex57.js', v >= 118 && s57 > 0 && sData > s57 && s58 > sData && sw.split("'./js/codex58.js'").length === 2 && sw.split("'./js/data-flagships.js'").length === 2, 'v' + v);
     const gates = fs.readdirSync(GATES).filter((f) => /^(check-|list-harness)[\w-]*\.c?js$/.test(f));
     const short = [];
     gates.forEach((f) => {
@@ -940,7 +940,7 @@ function mutations() {
     ['a group climbing to Home', 'js/codex58.js', "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'flagships' }; }", "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'home' }; }", 'the parents: a house its group'],
     ['the cold address left unread', 'js/codex58.js', "    v32Apply(r, typeof v32CurState === 'function' ? v32CurState() : null);\n    V32.pend = 'replace';\n", '', 'each address answers cold'],
     ['the two tags swapped in index.html', 'index.html', '<script src="js/data-flagships.js?v=1"></script>\n<script src="js/codex58.js?v=1"></script>', '<script src="js/codex58.js?v=1"></script>\n<script src="js/data-flagships.js?v=1"></script>', 'index.html loads js/data-flagships.js then js/codex58.js'],
-    ['the worker left at codex-v116', 'sw.js', "const CACHE = 'codex-v117';", "const CACHE = 'codex-v116';", 'sw.js is codex-v117 or later'],
+    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v118';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
     ['a let in the layer', 'js/codex58.js', 'var V58_SLOT = ', 'let V58_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex58.js', "if (typeof prodProfileView === 'function') {\n  var _v58ProfileView", "if (true) {\n  var _v58ProfileView", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex58.js', "'.wrap .v58-sec{", "'.v58-sec{", 'every selector of the v58-style element'],

@@ -1,0 +1,791 @@
+{
+  "lane": "L1",
+  "checked": "2026-11-11",
+  "entries": [
+    {
+      "id": "L1-01",
+      "topic": "Muscadet: Melon alone only in the three named zones",
+      "verdict": "change",
+      "claim": "The Loire record calls Melon de Bourgogne Muscadet's only grape and says Muscadet is Melon de Bourgogne alone, and the Régionale question i-r0p7056l says Melon has been the sole grape of Muscadet ever since the winter of 1709.",
+      "finding": "The specification of the plain Muscadet AOC names Melon B as principal grape and Chardonnay B as an accessory grape, at no more than 10 per cent of a holding's plantings. INAO's standing committee took up the change in 2017, it went to national opposition in November 2018, it stands in the specification homologated by the arrêté of 5 February 2021 (amended 27 May 2021), and the arrêté of 26 November 2025 (JORF of 3 December 2025) keeps it. Muscadet Sèvre et Maine, Muscadet Coteaux de la Loire and Muscadet Côtes de Grandlieu remain Melon B alone. The history in the question stands: the specification's link to origin says the hard winter of 1709 destroyed most of the Nantes vineyard and Melon, which bears frost better, was replanted, and InterLoire says the same.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/france.1.json",
+          "record": "loire",
+          "path": "grapes[0].styles",
+          "old": "Muscadet's only grape: neutral, bone dry",
+          "new": "Muscadet's grape, alone in Sèvre et Maine and the two smaller zones: neutral, bone dry"
+        },
+        {
+          "file": ".scripts/regions/fragments/france.1.json",
+          "record": "loire",
+          "path": "questions[0].exp (r-hksiq6zd)",
+          "old": "Muscadet is Melon de Bourgogne alone, a neutral, acid grape brought from Burgundy.",
+          "new": "Muscadet is Melon de Bourgogne, a neutral, acid grape brought from Burgundy, alone in Sèvre et Maine and the two smaller zones; plain Muscadet may add a little Chardonnay."
+        },
+        {
+          "file": "rewrite/categories/r1_loire.py",
+          "record": "i-r0p7056l",
+          "path": "Q(\"Pays Nantais and Muscadet\", \"A hard winter in 1709 ...\").exp",
+          "old": "It has been the sole grape of Muscadet ever since, and is scarcely grown in Burgundy today.",
+          "new": "It has been Muscadet's grape ever since, still alone in Sevre et Maine and the other two named zones though plain Muscadet now admits a little Chardonnay, and is scarcely grown in Burgundy today."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Bulletin officiel du ministère de l'Agriculture, cahier des charges de l'AOC Muscadet homologué par l'arrêté du 5 février 2021 modifié par l'arrêté du 27 mai 2021 (BO du 24 juin 2021)",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-7f89900b-3f0e-4f8d-b028-4066234091f5/telechargement",
+          "kind": "primary",
+          "says": "Encépagement: cépage principal melon B, cépage accessoire chardonnay B.",
+          "read": "search summary"
+        },
+        {
+          "title": "Bulletin officiel du ministère de l'Agriculture, cahier des charges de l'AOC Muscadet homologué par l'arrêté du 26 novembre 2025 (JORF du 3 décembre 2025), publié au BO le 11 décembre 2025",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-e435f8dc-85b9-4172-ac00-637750581682/telechargement",
+          "kind": "primary",
+          "says": "Still white wines only, from melon B as principal grape and chardonnay B as accessory grape.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahier des charges de l'AOC Muscadet, modification adoptée par le Comité national le 12 juin 2025",
+          "url": "https://extranet.inao.gouv.fr/fichier/2f-PRJ-CDC-Muscadet-post-CE.pdf",
+          "kind": "primary",
+          "says": "The accessory grape is at most 10 per cent of the plantings, judged across all the parcels of the holding; the link to origin says the winter of 1709 destroyed most of the vineyard and frost hardy Melon was replanted.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahiers des charges of Muscadet Sèvre et Maine, Muscadet Coteaux de la Loire and Muscadet Côtes de Grandlieu (2025 drafts after the national committee)",
+          "url": "https://extranet.inao.gouv.fr/fichier/2e-PRJ-CDC-Muscadet-Sevre-et-Maine-post-CE.pdf",
+          "kind": "primary",
+          "says": "The three named Muscadet appellations admit melon B alone; the Chardonnay allowance belongs to the regional Muscadet only.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, Commission permanente du Comité national, dossier 2017-CP127, Muscadet",
+          "url": "https://extranet.inao.gouv.fr/fichier/ComPer-CNAOV-2017-127-Muscadet.pdf",
+          "kind": "primary",
+          "says": "In 2017 the committee examined the request to add chardonnay B as an accessory grape at up to 10 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Légifrance, avis relatif à l'ouverture d'une procédure nationale d'opposition pour la modification du cahier des charges de l'AOC Muscadet (2018)",
+          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037809428",
+          "kind": "primary",
+          "says": "Opens the national opposition on the modified Muscadet specification, the text that first carries the accessory Chardonnay.",
+          "read": "search summary"
+        },
+        {
+          "title": "InterLoire, Vins de Loire: Melon B",
+          "url": "https://vinsdeloire.fr/en/grape-varieties/melon-b",
+          "kind": "secondary",
+          "says": "Melon was planted massively in the Pays Nantais after the frost of 1709 because it bears cold well.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The plain appellation has admitted an accessory Chardonnay since its specification was revised, so only the three named zones are Melon alone; the 1709 story is the rule's own and stays.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Searched for a stricter or newer text: the regional Muscadet rule names melon B as principal and chardonnay B as accessory at no more than 10 per cent of the holding's plantings, in the specification of 2021 and in the version adopted by the national committee on 12 June 2025; the named zones' texts (Coteaux de la Loire, Cotes de Grandlieu) read melon B alone, and a secondary page reads the same for all three. A 2024 committee paper speaks of a request to lift the accessory share to 20 per cent for a time; whether it was granted was not found, and the new texts give no figure, so they hold either way. The three old strings occur once each, in the Loire record's Melon row, r-hksiq6zd's explanation and i-r0p7056l's explanation in r1_loire.py; the stem, answer and options of both questions stay right (Melon de Bourgogne). One correction: i-r0p7056l's new text named Sevre et Maine alone, which leaves a reader to wonder about Coteaux de la Loire and Cotes de Grandlieu; it now says the other two named zones, the phrase the same bank uses in its Sevre et Maine question. ASCII kept, as r1_loire.py is. Completeness: no other line in js/, the region fragments, the CMS banks, rewrite/categories or the grape fragments calls Melon Muscadet's only or sole grape (the Melon grape fragment already says the rule loosened; MASTER m-zf6jp55w says replanted almost to the exclusion of everything else, true of 1709). The CP127 dossier and the Legifrance id were not opened from here.",
+        "sources": [
+          {
+            "title": "Cahier des charges de l'AOC Muscadet, as updated November 2018 (copy of the opposition text)",
+            "url": "https://winewitandwisdomswe.com/wp-content/uploads/2019/02/Cahier-des-Charges-Muscadet-AOC-updated-November-2018.pdf",
+            "kind": "secondary",
+            "says": "The opposition text of 2018 carries chardonnay B as accessory grape of the regional Muscadet.",
+            "read": "search summary"
+          },
+          {
+            "title": "Ministère de l'Agriculture, Bulletin officiel, cahier des charges de l'AOC Muscadet (2021)",
+            "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-7f89900b-3f0e-4f8d-b028-4066234091f5/telechargement",
+            "kind": "primary",
+            "says": "Cepage principal melon B, cepage accessoire chardonnay B; the accessory at or below 10 per cent of the plantings, judged over all the holding's parcels.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L1-02",
+      "topic": "Melon came to Nantes before 1709",
+      "verdict": "change",
+      "claim": "The CMS Loire question e-ddtr2ora says the Melon variety came from Burgundy after the hard winter of 1709.",
+      "finding": "Melon was already in the Pays Nantais before 1709: the Muscadet specification puts the first written traces of plantings under the name Muscadet in the middle of the seventeenth century (a lease of 1635 kept at Gorges), and after the winter of 1709 Melon was replanted across the vineyard. The frost made it the grape of the region; it did not bring it.",
+      "targets": [
+        {
+          "file": ".scripts/cms/questions/loire.json",
+          "record": "e-ddtr2ora",
+          "path": "questions[e-ddtr2ora].exp",
+          "old": "the variety came from Burgundy after the hard winter of 1709.",
+          "new": "the variety came from Burgundy and took over the Pays Nantais after the hard winter of 1709."
+        }
+      ],
+      "sources": [
+        {
+          "title": "INAO, cahier des charges de l'AOC Muscadet, procédure nationale d'opposition of November 2018",
+          "url": "https://extranet.inao.gouv.fr/fichier/CDC-Muscadet-PNO.pdf",
+          "kind": "primary",
+          "says": "The first written traces of plantings under the name Muscadet date from the middle of the seventeenth century; after the hard winter of 1709 Melon, more resistant to frost, was replanted.",
+          "read": "search summary"
+        },
+        {
+          "title": "InterLoire, Vins de Loire: Melon B",
+          "url": "https://vinsdeloire.fr/en/grape-varieties/melon-b",
+          "kind": "secondary",
+          "says": "Melon was planted massively after the frost of 1709.",
+          "read": "search summary"
+        },
+        {
+          "title": "Wikipedia, Muscadet",
+          "url": "https://en.wikipedia.org/wiki/Muscadet",
+          "kind": "secondary",
+          "says": "The name Muscadet first appears in 1635 in a lease at Gorges; Melon became dominant after the frost of 1709 killed most of the vines.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The frost of 1709 spread the grape across the Pays Nantais; the grape itself was there before it, so the explanation should not date its arrival to 1709.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Tested whether Melon arrived only after 1709. Search summaries of the Muscadet Sevre et Maine specification put the first written record of the Burgundian plant under the name Muscadet in the middle of the seventeenth century (a lease of 1635 at Gorges) and say melon B was established in the Nantes vineyard well before the frost; one secondary source puts Melon at Nantes as early as 1616. All agree the winter of 1709 is what made it the grape of the whole vineyard. So came from Burgundy after the hard winter of 1709 misdates the arrival, and the new text (came from Burgundy and took over the Pays Nantais after it) is right. The old string occurs once, in e-ddtr2ora's explanation; the answer Melon B and the other three rationales stay true. The stem of i-r0p7056l (growers replanted with a Burgundian white) speaks of the replanting, not the arrival, and L1-10 rightly leaves it. No other place dates the arrival to 1709.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-03",
+      "topic": "Bouzeron: decreed in 1998",
+      "verdict": "change",
+      "claim": "The Burgundy record says Bouzeron, the one village appellation for Aligoté, was created in 1997, in its places note and in question r-rkgv0zwg.",
+      "finding": "INAO's specification for Bouzeron says the appellation was initially recognised by the decree of 17 February 1998, replacing the regional Bourgogne Aligoté Bouzeron of 1979, and the WIPO Lisbon register of 1998 cites the same decree. The 1997 date found on many trade pages is not the legal one; whether 1997 or 1998 was the first vintage sold under the village name, the pages read disagree.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/france.2.json",
+          "record": "burgundy",
+          "path": "places[3].places[0].note",
+          "old": "The one village appellation for Aligoté, created in 1997.",
+          "new": "The one village appellation for Aligoté, decreed in 1998."
+        },
+        {
+          "file": ".scripts/regions/fragments/france.2.json",
+          "record": "burgundy",
+          "path": "questions[5].exp (r-rkgv0zwg)",
+          "old": "became a village appellation for Aligoté in 1997;",
+          "new": "became a village appellation for Aligoté by a decree of February 1998;"
+        }
+      ],
+      "sources": [
+        {
+          "title": "INAO, cahier des charges de l'AOC Bouzeron",
+          "url": "https://extranet.inao.gouv.fr/fichier/PNOCDC-Bouzeron.pdf",
+          "kind": "primary",
+          "says": "L'appellation d'origine contrôlée Bouzeron, initialement reconnue par le décret du 17 février 1998.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, fiche produit Bouzeron",
+          "url": "https://www.inao.gouv.fr/node/1878/printable/pdf",
+          "kind": "primary",
+          "says": "In 1998 the regional appellation Aligoté de Bouzeron was raised to communal rank.",
+          "read": "search summary"
+        },
+        {
+          "title": "World Intellectual Property Organization, Lisbon Agreement bulletin no. 27 (1998)",
+          "url": "https://www.wipo.int/export/sites/www/lisbon/en/docs/bulletin_1998_27.pdf",
+          "kind": "primary",
+          "says": "Registers Bouzeron on the decree of 17 February 1998.",
+          "read": "search summary"
+        },
+        {
+          "title": "Bourgogne-info, Bouzeron",
+          "url": "https://www.bourgogne-info.eu/html/bouzeron.html",
+          "kind": "secondary",
+          "says": "1997 was the first vintage of the village appellation Bouzeron; from 1979 the village had the regional Bourgogne Aligoté Bouzeron.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The legal date is the decree of 17 February 1998; the first vintage is disputed, so the record gives the decree alone.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "The decree of 17 February 1998 holds: INAO's specification, INAO's product page, the WIPO bulletin and two trade pages agree, and the one page giving an INAO decision of 24 September 1997 stands alone. The added clause with 1997 as its first vintage does not hold up: a Guide Hachette note and the founding domain's own page give 1997, while an iDealwine page says the village rank applied from the 1998 vintage and another dates it 1998. A figure goes in only with its source, and here the sources split, so both new texts now give the decree and nothing about the first vintage. The two old strings occur once each, in the Burgundy record's Bouzeron place note and in r-rkgv0zwg's explanation; the answer Bouzeron and its accept list stay right. No other place in js/, the fragments, the CMS banks or rewrite/categories dates Bouzeron (the Aligote grape fragment gives no year).",
+        "sources": [
+          {
+            "title": "iDealwine, Bouzeron, une appellation a decouvrir",
+            "url": "https://www.idealwine.net/bouzeron-une-appellation-a-decouvrir-durgence/",
+            "kind": "secondary",
+            "says": "Created by the appellation decree of 17 February 1998, replacing the regional Bourgogne Aligote Bouzeron.",
+            "read": "search summary"
+          },
+          {
+            "title": "iDealwine, Bouzeron",
+            "url": "https://www.idealwine.net/?p=49455",
+            "kind": "secondary",
+            "says": "Recognition as a village appellation applied from the 1998 vintage.",
+            "read": "search summary"
+          },
+          {
+            "title": "Guide Hachette des Vins 2001, La P'tiote Cave 1997, Bouzeron",
+            "url": "https://www.hachette-vins.com/guide-vins/les-vins/la-p-tiote-cave-1997-2001/20016478/",
+            "kind": "secondary",
+            "says": "Treats the 1997 wines as the first to carry the communal appellation.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L1-04",
+      "topic": "Rueda: one white category since 2019, the main grapes at 75 per cent since 2024",
+      "verdict": "change",
+      "claim": "The Rueda and Toro record teaches Rueda Verdejo and Rueda Sauvignon as label categories at 85 per cent of their grape and plain Rueda as at least 50 per cent Verdejo, with Viura merely permitted in that blend; the Spain module question c-lalvjliu and the Verdejo grape fragment repeat the half.",
+      "finding": "The Consejo Regulador merged Rueda Verdejo, Rueda Sauvignon and Rueda into one white category, Rueda, from the 2019 vintage; the amended pliego (published nationally on 29 October 2019, in force at EU level from 3 March 2020) asked at least 50 per cent of the main whites, then Verdejo and Sauvignon Blanc, and admitted Chardonnay and Viognier as secondary. From 30 August 2024 (BOCYL of that day; EU communication of 12 June 2025) a Rueda white needs at least 75 per cent from the main whites, now Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, and may be all of them. A grape named on the label must still make at least 85 per cent, by EU rule. Plain Rueda therefore has no Verdejo floor of its own. The wines notes for Rueda Verdejo and Rueda Sauvignon and the Verdejo label line say at least 85 per cent of a named grape, which is still true, and are left.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.classification",
+          "old": "Its labels are grape rules: Rueda Verdejo needs at least 85 per cent Verdejo, Rueda Sauvignon at least 85 per cent Sauvignon Blanc, and plain Rueda at least 50 per cent Verdejo with Viura, Palomino and the other permitted whites.",
+          "new": "Its labels were grape rules until the 2019 vintage folded Rueda Verdejo and Rueda Sauvignon into one Rueda: a grape named on the label must make at least 85 per cent, and since August 2024 a Rueda white draws at least 75 per cent from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, with Palomino and the other permitted whites in the rest."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.tiers[1][1]",
+          "old": "At least 85 per cent Verdejo; the label most guests will know.",
+          "new": "At least 85 per cent Verdejo when a Rueda names the grape; no longer a category of its own since the 2019 vintage, but the label most guests will know."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.tiers[2][1]",
+          "old": "At least 85 per cent Sauvignon Blanc.",
+          "new": "At least 85 per cent Sauvignon Blanc when a Rueda names the grape; a category of its own before the 2019 vintage."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "law.tiers[3][1]",
+          "old": "At least 50 per cent Verdejo, the balance from the other permitted whites.",
+          "new": "Since August 2024 at least 75 per cent from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier; the other permitted whites may make up the balance."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "exam[2]",
+          "old": "The label percentages: Rueda Verdejo 85, Rueda Sauvignon 85, plain Rueda 50; Toro reds 75 per cent Tinta de Toro.",
+          "new": "The label percentages: a grape named on a Rueda label 85, the main whites in any Rueda white 75 since August 2024; Toro reds 75 per cent Tinta de Toro."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "traps[4]",
+          "old": "Rueda Verdejo needs 85 per cent, plain Rueda only 50; the grape name on the label is the clue.",
+          "new": "A Rueda naming Verdejo needs 85 per cent of it, a Rueda naming no grape has no set share of Verdejo at all; the grape name on the label is the clue."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "grapes[1].styles",
+          "old": "Planted in Rueda from the 1970s and allowed its own varietal label at 85 per cent; grassier",
+          "new": "Planted in Rueda from the 1970s, a main grape of the DO since the revision of 2019 and named on a label at 85 per cent; grassier"
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "grapes[4].styles",
+          "old": "Macabeo, a neutral white permitted in the basic Rueda blend, which needs only half Verdejo.",
+          "new": "Macabeo, a neutral white of the basic Rueda blend, counted among its main grapes since 2024."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "cards[1].b",
+          "old": "Rueda Verdejo at least 85 per cent Verdejo; Rueda Sauvignon at least 85 per cent Sauvignon Blanc; plain Rueda at least 50 per cent Verdejo.",
+          "new": "One Rueda since the 2019 vintage: a grape named on the label makes at least 85 per cent; since August 2024 at least 75 per cent comes from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "questions[0].exp (r-99qkjr18)",
+          "old": "Rueda Verdejo requires at least 85 per cent of the grape, as does Rueda Sauvignon for Sauvignon Blanc. Plain Rueda needs only half Verdejo, the rest from Viura, Palomino and the other permitted whites.",
+          "new": "A Rueda that names Verdejo needs at least 85 per cent of the grape, as one naming Sauvignon Blanc does. A Rueda that names no grape has no Verdejo floor: since August 2024 it needs at least three quarters from the main whites, Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier, the rest open to Palomino and the other permitted whites."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "questions[4].q (r-zd9qzdui, the stem now wrong)",
+          "old": "Which white grape other than Verdejo may carry its own varietal label in Rueda at 85 per cent?",
+          "new": "Which white grape other than Verdejo had a varietal category of its own in Rueda, at 85 per cent, before the 2019 vintage?"
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "questions[4].exp (r-zd9qzdui)",
+          "old": "Rueda Sauvignon is the varietal label for Sauvignon Blanc, planted on the plateau since the 1970s. Godello is a Galician grape, Garnacha Blanca belongs to Rioja and Catalonia, and Chardonnay has no varietal label in Rueda.",
+          "new": "Rueda Sauvignon was the category for Sauvignon Blanc, planted on the plateau since the 1970s, until the 2019 vintage folded the varietal categories into one Rueda, where a named grape must still make 85 per cent. Godello is a Galician grape, Garnacha Blanca belongs to Rioja and Catalonia, and Chardonnay entered Rueda's rules only with that revision."
+        },
+        {
+          "file": "rewrite/categories/r2_spain.py",
+          "record": "c-lalvjliu",
+          "path": "SA(\"The Duero and its denominations\", \"Putting Verdejo on a Rueda label ...\").exp",
+          "old": "Plain Rueda needs half the blend to be Verdejo and the rest may be Viura or another permitted white; naming the grape lifts the floor.",
+          "new": "Plain Rueda sets no share for Verdejo itself, only at least three quarters from the main whites, Sauvignon Blanc and Viura among them; naming the grape lifts the floor."
+        },
+        {
+          "file": ".scripts/grapes/fragments/verdejo.json",
+          "record": "verdejo",
+          "path": "questions[2].exp",
+          "old": "A Rueda that names no grape needs only half from the denomination's main grapes, with other permitted whites such as Viura making up the rest.",
+          "new": "A Rueda that names no grape needs at least three quarters from the denomination's main grapes, Viura now among them, and may take the rest from other permitted whites such as Palomino."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Consejo Regulador de la DO Rueda, nota sobre el pliego de condiciones (November 2019)",
+          "url": "https://www.dorueda.com/wp-content/uploads/2019/11/Nota-Pliego-condiciones-DO-Rueda.pdf",
+          "kind": "primary",
+          "says": "For still white wines of the 2019 vintage there is one category only, Rueda, into which the old Rueda Verdejo, Rueda Sauvignon and Rueda are merged; Gran Vino de Rueda is introduced.",
+          "read": "search summary"
+        },
+        {
+          "title": "Official Journal of the European Union C 69 (3 March 2020), approval of a standard amendment to the PDO Rueda, PDO-ES-A0889-AM03",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020XC0303(03)",
+          "kind": "primary",
+          "says": "White wine is made with at least 50 per cent of the white varieties considered main; Sauvignon Blanc becomes a main variety; Chardonnay, Viognier and Syrah are new secondary varieties.",
+          "read": "search summary"
+        },
+        {
+          "title": "Official Journal of the European Union C/2025/3217 (12 June 2025), standard amendment to the PDO Rueda, PDO-ES-A0889-AM05",
+          "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=OJ:C_202503217",
+          "kind": "primary",
+          "says": "White wine moves from at least 50 to at least 75 per cent of the main white varieties; Chardonnay and Viognier become main; Riesling, Garnacha Blanca, the two Moscatels and Gewürztraminer are added.",
+          "read": "search summary"
+        },
+        {
+          "title": "Ministerio de Agricultura, Pesca y Alimentación, pliego de condiciones de la DOP Rueda (version of 12 June 2025)",
+          "url": "https://www.mapa.gob.es/dam/mapa/contenido/alimentacion/temas/calidad-agroalimentaria/2017-calidad-diferenciada/nuevo_denominaciones/pliegos-de-condiciones/pliego-condiciones-vinos/dops/rueda_2025_06_12.pdf",
+          "kind": "primary",
+          "says": "Vino blanco: elaborado con un mínimo del 75 por ciento de las variedades blancas principales, which are Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consejo Regulador de la DO Rueda, variedades de uva, and its press note on eight new varieties (August 2024)",
+          "url": "https://dorueda.com/variedades-de-uva/",
+          "kind": "primary",
+          "says": "From 30 August 2024 the main varieties must make 75 per cent and the secondary at most 25, and a wine may be all main varieties; Viura, Viognier and Chardonnay join Verdejo and Sauvignon Blanc as main. Published in the BOCYL of 30 August 2024 on an ITACYL resolution of 23 August; Godello's entry was suspended on 28 October 2024.",
+          "read": "search summary"
+        },
+        {
+          "title": "Commission Delegated Regulation (EU) 2019/33, Article 50",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0033",
+          "kind": "primary",
+          "says": "Where one wine grape variety is named on the label, at least 85 per cent of the product comes from it.",
+          "read": "search summary"
+        },
+        {
+          "title": "Boletín Oficial del Estado, Orden ARM/560/2009 publishing the Reglamento de la Denominación de Origen Rueda",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2009-4064",
+          "kind": "primary",
+          "says": "The old rule the Codex teaches: Rueda Verdejo and Rueda Sauvignon at 85 per cent of their grape, Rueda at 50 per cent Verdejo.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Two revisions of the pliego (2019 to 2020 and August 2024) replaced the varietal categories and the half Verdejo rule; the stem of r-zd9qzdui now has two right options, Sauvignon Blanc and Chardonnay, so it is reworded to the old category and keeps its pinned id, its answer, options and accept list.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Tried to refute on four points. One: the merge of the varietal categories from the 2019 vintage stands on the council's note of November 2019 and on the ministry's text of the request (Sauvignon Blanc made a main variety, Chardonnay and Viognier admitted as secondary, Gran Vino de Rueda new). Two: the August 2024 change stands on the council's own press note (75 per cent main, at most 25 secondary, a wine may be all main varieties; Viura, Viognier and Chardonnay made main) and on the EU notice C/2025/3217 (from at least 50 to at least 75 per cent). Three: Palomino is still permitted, as a secondary white, on the council's variety page and in the Decanter report it hosts, so the new texts may name it in the remainder; Godello's entry as a secondary was suspended on 28 October 2024 and no new text names it. Four: the stem of r-zd9qzdui is wrong today, since Chardonnay, now a main white, may be named at 85 per cent beside Sauvignon Blanc, while Garnacha Blanca and Godello, secondary, cannot reach 85 per cent under the 75 per cent rule; the reworded stem has one right option, Sauvignon Blanc, and its id stays pinned. Corrections to the new texts: a share of three quarters is a floor, so r-99qkjr18, c-lalvjliu and the Verdejo grape question now say at least three quarters; the remainder may be any permitted white, main ones included, so the texts that said the rest from Palomino or the balance from the other whites now say the rest open to, may take or may make up; the trap's elided verb is restored (has no set share). Every old string occurs once in its file and sits in the record and path named. r-99qkjr18 still answers 85 per cent (its 75 per cent option is now explained by the text rather than made right by it), c-lalvjliu still answers at least eighty five per cent, and the Verdejo grape question still answers at least 85 per cent. Completeness: no other place in js/, the fragments, the CMS banks or rewrite/categories states the half Verdejo rule; the 85 per cent lines L1-09 leaves are true of a label naming the grape. r-99qkjr18 is held to the 60 word cap of a region question (60 words, at the cap; check-fragment passes on a copy with every spain.1 edit applied).",
+        "sources": [
+          {
+            "title": "Ministerio de Agricultura, Pesca y Alimentacion, solicitud de modificacion del pliego de condiciones de la DOP Rueda (October 2019)",
+            "url": "https://www.mapa.gob.es/images/es/rueda_2019_10_29_tcm30-211417.pdf",
+            "kind": "primary",
+            "says": "Sauvignon Blanc becomes a main variety; Chardonnay and Viognier are admitted as secondary; white wine from at least 50 per cent of the main whites.",
+            "read": "search summary"
+          },
+          {
+            "title": "Consejo Regulador de la DO Rueda, nota de prensa: la D.O. Rueda abre sus puertas a 8 nuevas variedades de uva (August 2024)",
+            "url": "https://dorueda.com/wp-content/uploads/2024/08/25_NdP-La-D.O.-Rueda-abre-sus-puertas-a-8-nuevas-variedades-de-uva-2.pdf",
+            "kind": "primary",
+            "says": "Main varieties at 75 per cent and secondary at 25, wines of 100 per cent main varieties allowed; Viura, Viognier and Chardonnay become main beside Verdejo and Sauvignon Blanc; published in the BOCYL.",
+            "read": "search summary"
+          },
+          {
+            "title": "Decanter Rueda Report 2026, hosted by the Consejo Regulador de la DO Rueda",
+            "url": "https://dorueda.com/wp-content/uploads/Decanter-Rueda-Report-2026.pdf",
+            "kind": "secondary",
+            "says": "Palomino stands among the secondary whites, which may make up to 25 per cent of a white.",
+            "read": "search summary"
+          },
+          {
+            "title": "wein.plus magazine, D.O. Rueda opens grape variety portfolio: six white and two new red grape varieties added",
+            "url": "https://magazine.wein.plus/news/d-o-rueda-opens-grape-variety-portfolio-six-white-and-two-new-red-grape-varieties-added",
+            "kind": "secondary",
+            "says": "Main whites Verdejo, Sauvignon Blanc, Viura, Chardonnay and Viognier; 75 per cent main varieties, up from 50.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L1-05",
+      "topic": "Verdejo and Verdelho: a different grape, not unrelated",
+      "verdict": "change",
+      "claim": "The Rueda trap says Verdejo is not Verdelho and that the Madeira grape is unrelated.",
+      "finding": "They are different varieties, but not shown unrelated: the institutes' catalogue makes Verdejo a probable cross of Savagnin and Castellana Blanca on genetic analyses at Montpellier, and a DNA study of 2018 makes Verdelho an offspring of Savagnin with an unknown other parent, which would make the two half siblings. Both results rest on small marker sets, so the safe wording is a different grape, as the Verdejo and Godello grape fragments already say.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/spain.1.json",
+          "record": "rueda-toro",
+          "path": "traps[0]",
+          "old": "Verdejo is not Verdelho; the Madeira grape is unrelated.",
+          "new": "Verdejo is not Verdelho; the Madeira grape is a different grape."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Plantgrape, the catalogue of vines grown in France (IFV, INRAE, Institut Agro Montpellier): Verdejo",
+          "url": "https://plantgrape.plantnet-project.org/en/cepage/Verdejo",
+          "kind": "primary",
+          "says": "On genetic analyses carried out at Montpellier, Verdejo would come from a cross of Savagnin and Castellana Blanca.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Verdejo",
+          "url": "https://glossary.wein.plus/verdejo",
+          "kind": "secondary",
+          "says": "A presumably natural cross of Castellana Blanca and Savagnin Blanc, on DNA analysis of only 20 markers.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Verdelho",
+          "url": "https://glossary.wein.plus/verdelho",
+          "kind": "secondary",
+          "says": "DNA analyses of 2018 give Verdelho as a presumably natural cross of Savagnin Blanc and an unknown variety.",
+          "read": "search summary"
+        }
+      ],
+      "why": "Unrelated says more than the DNA allows; a different grape is true on every reading.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Looked for proof that the two are unrelated and found the reverse: the catalogue of the French institutes gives Verdejo as a probable Savagnin and Castellana Blanca cross, and two independent pages give Verdelho as an offspring of Savagnin (one a glossary on DNA of 2018, one a wine reference that lists Verdelho among Savagnin's close relations). Both rest on few markers, so a different grape is the claim true on every reading. The old string occurs once, in the Rueda record's traps[0]; it sits beside nothing it would contradict. Completeness: the Godello and Verdejo grape fragments already read a different grape; no other record calls Verdelho unrelated to Verdejo (L1-06 takes the one other unrelated, in i-fw8igegc).",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-06",
+      "topic": "Verdejo, Verdelho and Verdicchio: different vines, not unrelated ones",
+      "verdict": "change",
+      "claim": "The Régionale question i-fw8igegc explains that the verd- root has attached itself to unrelated vines right around the Mediterranean, Verdejo and Verdelho among them.",
+      "finding": "The same DNA summaries make Verdejo and Verdelho possible half siblings through Savagnin; Verdicchio is of another line. The names still prove nothing, which is the question's point, but unrelated is the over-claim. The answer option (There is none; the resemblance is in the names alone) is left by rule: the three as a set share no relation the options name, and no option speaks of half siblings.",
+      "targets": [
+        {
+          "file": "rewrite/categories/r1_grapes_labels.py",
+          "record": "i-fw8igegc",
+          "path": "Q(\"Names that mislead\", \"Three whites reach one table ...\").exp",
+          "old": "attached themselves to unrelated vines right around the Mediterranean.",
+          "new": "attached themselves to quite different vines right around the Mediterranean."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Plantgrape, the catalogue of vines grown in France (IFV, INRAE, Institut Agro Montpellier): Verdejo",
+          "url": "https://plantgrape.plantnet-project.org/en/cepage/Verdejo",
+          "kind": "primary",
+          "says": "Verdejo would come from a cross of Savagnin and Castellana Blanca.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Verdelho",
+          "url": "https://glossary.wein.plus/verdelho",
+          "kind": "secondary",
+          "says": "Verdelho is given as an offspring of Savagnin Blanc and an unknown variety, which also refuted its supposed identity with Verdicchio Bianco.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The explanation should not assert what the DNA leaves open; the owner may want the answer option softened if the Savagnin results firm up.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Same evidence as L1-05. The old string occurs once, in r1_grapes_labels.py, and the question ships as i-fw8igegc in js/data-intro.js. The answer (There is none; the resemblance is in the names alone) is still the one option of the four that holds: the three share no relation as a set (Verdicchio is Trebbiano di Soave, of another line), and no option speaks of half siblings. With quite different vines the explanation no longer asserts what the DNA leaves open, and it does not contradict the answer. No other place says the verd- grapes are unrelated.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-07",
+      "topic": "Savagnin: kin to Sauvignon Blanc and Petit Manseng, not only to Gewürztraminer",
+      "verdict": "leave",
+      "claim": "The Jura record says Savagnin is not Sauvignon Blanc and belongs to the Traminer family, kin to Gewürztraminer (traps[0]), and its vin jaune question calls Sauvignon Blanc a different grape despite the similar name; neither says the two are kin.",
+      "finding": "True as far as it goes. DNA analyses (reported from 2013) show a parent and offspring tie between Savagnin and Sauvignon Blanc, and Savagnin, recorded far earlier, is taken as the likely parent; analyses reported in 2021 give Petit Manseng as a cross of Savagnin and an unknown variety, and the Oxford Companion says Savagnin may well be its parent. DNA alone cannot say which way a parent and offspring tie runs, hence likely. The grapes[1].styles line names the Traminer family and nothing about Sauvignon Blanc, so it is left; the Savagnin grape fragment already carries the likely parent on its card.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "The Oxford Companion to Wine, fifth edition: Sauvignon Blanc",
+          "url": "https://origin.ckbk.com/reference/wine05383c19s001e085",
+          "kind": "secondary",
+          "says": "Sauvignon Blanc has a parent and offspring relationship with the historic Savagnin Blanc.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: White Sauvignon (Sauvignon Blanc)",
+          "url": "https://glossary.wein.plus/white-sauvignon",
+          "kind": "secondary",
+          "says": "DNA analyses of 2013 show a parent and offspring relationship with Savagnin Blanc, the Traminer; Savagnin is probably the parent, being recorded much earlier; the supposed Savagnin and Chenin Blanc parentage was disproved.",
+          "read": "search summary"
+        },
+        {
+          "title": "The Oxford Companion to Wine, fifth edition: Petit Manseng",
+          "url": "https://app.ckbk.com/reference/wine05383c19s001e088",
+          "kind": "secondary",
+          "says": "Savagnin may well be a parent of Petit Manseng.",
+          "read": "search summary"
+        },
+        {
+          "title": "wein.plus wine glossary: Petit Manseng",
+          "url": "https://glossary.wein.plus/petit-manseng",
+          "kind": "secondary",
+          "says": "DNA analyses of 2021 give a presumably natural cross of an unknown variety and Savagnin Blanc.",
+          "read": "search summary"
+        }
+      ],
+      "why": "True as written: the trap says Savagnin is not Sauvignon Blanc and belongs to the Traminer family, and the vin jaune explanation calls Sauvignon Blanc a different grape; neither denies kinship, and the Savagnin grape page already carries the likely parent.",
+      "refuter": {
+        "verdict": "dropped",
+        "note": "The kinship stands (two references each give Savagnin as a likely parent of Sauvignon Blanc and of Petit Manseng, and both hedge it), but nothing in the Jura record is wrong or out of date, and the brief says edit only what is wrong. The second sommelier's own flag reads true, and it stops short; the record could. The Traminer family is the clonal group of Savagnin, Traminer and Gewurztraminer, and Sauvignon Blanc, an offspring, is not in it, so the trap's contrast holds. Petit Manseng would also widen a trap about a name. Dropped to leave; the proposed texts are kept here should the owner want them: traps[0] Savagnin is not Sauvignon Blanc: it belongs to the Traminer family, kin to Gewurztraminer, and DNA makes it a likely parent of Sauvignon Blanc and of Petit Manseng. questions[0].exp Sauvignon Blanc is a different grape despite the similar name, though DNA makes Savagnin its likely parent, and Chardonnay goes into other Jura whites.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-08",
+      "topic": "Roussanne row: no Marsanne in Châteauneuf-du-Pape blanc",
+      "verdict": "change",
+      "claim": "The Régionale Roussanne row (INTRO_GRAPES) lists its wines as White Rhône blends: Hermitage, Châteauneuf-du-Pape blanc (with Marsanne).",
+      "finding": "The Châteauneuf-du-Pape specification (homologated by decree no. 2011-1567, as published by the appellation's own federation) lists eighteen varieties: Bourboulenc, Brun Argenté (Vaccarèse), Cinsaut, Clairette, Clairette Rose, Counoise, Grenache Blanc, Grenache Gris, Grenache, Mourvèdre, Muscardin, Picardan, Piquepoul Blanc, Gris and Noir, Roussanne, Syrah and Terret Noir. Marsanne is not among them. White Hermitage is Marsanne and Roussanne. The row's reg string, N. Rhône blanc (with Marsanne), Châteauneuf blanc, Savoie, already ties Marsanne to the northern Rhône only, so it is left; Hermitage and Savoie stay where they are.",
+      "targets": [
+        {
+          "file": "js/data-intro.js",
+          "record": "INTRO_GRAPES Roussanne",
+          "path": "INTRO_GRAPES roussanne.wines",
+          "old": "White Rhône blends: Hermitage, Châteauneuf-du-Pape blanc (with Marsanne)",
+          "new": "White Rhône blends: Hermitage (with Marsanne), Châteauneuf-du-Pape blanc"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Fédération des Syndicats de Producteurs de Châteauneuf-du-Pape, cahier des charges de l'AOC Châteauneuf-du-Pape",
+          "url": "https://www.chateauneuf.com/wp-content/uploads/2023/10/CDC-Chateauneuf-du-Pape.pdf",
+          "kind": "primary",
+          "says": "The encépagement lists eighteen varieties, red and white, from bourboulenc to terret noir; marsanne is not one of them.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahier des charges de l'AOC Châteauneuf-du-Pape (decree no. 2011-1567)",
+          "url": "https://www2.inao.gouv.fr/var/inao_site/storage/repository/editeur/files/pdf/CDC-AOP/AOC%20Ch%C3%A2teaneuf-du-Pape_20111116.pdf",
+          "kind": "primary",
+          "says": "The same list of permitted varieties, with roussanne B among the whites and no marsanne.",
+          "read": "search summary"
+        },
+        {
+          "title": "iDealwine, les 13 cépages de Châteauneuf-du-Pape",
+          "url": "https://www.idealwine.net/les-13-cepages-a-chateauneuf-mythes-ou-realite/",
+          "kind": "secondary",
+          "says": "Of the thirteen grapes the appellation speaks of, the whites are Roussanne, Clairette, Bourboulenc, Picpoul and Picardan; Marsanne is absent.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The bracket sat on the wrong appellation: Marsanne partners Roussanne in Hermitage, and Châteauneuf-du-Pape does not permit it.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Searched for any Chateauneuf-du-Pape text that admits Marsanne and found none: the ministry's copy of the 2011 specification lists bourboulenc, clairette, picardan and roussanne among the permitted varieties with no marsanne in the extract returned, two trade lists of the appellation's grapes omit it, and the Codex's own Roussanne grape page already says Marsanne is not permitted there. White Hermitage is Marsanne and Roussanne. The old string occurs once, in INTRO_GRAPES' Roussanne row, wines field; the new text moves the bracket to Hermitage and changes nothing else. The row's reg string ties Marsanne to the northern Rhone and stays true. No other place puts Marsanne in Chateauneuf (Cassis's Marsanne is right and is in Provence). I could not open the researcher's two PDF links (the hosts are refused here); the sources below are the ones the searches returned.",
+        "sources": [
+          {
+            "title": "Ministere de l'Agriculture, Bulletin officiel, cahier des charges de l'AOC Chateauneuf-du-Pape (decree of 2011)",
+            "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-dc972687-14a5-4be7-96fd-a01742f70956/telechargement",
+            "kind": "primary",
+            "says": "The permitted varieties include bourboulenc, clairette, picardan and roussanne; marsanne does not appear in the extract returned.",
+            "read": "search summary"
+          },
+          {
+            "title": "Provence Winezine, the grapes of Chateauneuf-du-Pape",
+            "url": "https://www.provencewinezine.com/?p=5644",
+            "kind": "secondary",
+            "says": "Lists the appellation's grapes without marsanne.",
+            "read": "search summary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "L1-09",
+      "topic": "Rueda label lines that still hold: 85 per cent of a named grape",
+      "verdict": "leave",
+      "claim": "The CMS Castilla y León question e-5d1isaa8 says a Rueda Verdejo label needs at least 85 per cent Verdejo and a Rueda Sauvignon at least 85 per cent Sauvignon Blanc; the Rueda record's labels[0] (on a Rueda Verdejo label it is at least 85 per cent) and its wines notes for Rueda Verdejo and Rueda Sauvignon (at least 85 per cent of the grape) say the same.",
+      "finding": "Since the 2019 vintage Rueda Verdejo and Rueda Sauvignon are no longer categories, but a Rueda that names one grape on its label must still hold at least 85 per cent of it, by Article 50 of Delegated Regulation (EU) 2019/33. Each of these lines speaks of a label that names the grape, so each is still true; none repeats the old half Verdejo rule, which L1-04 corrects wherever it stands.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Commission Delegated Regulation (EU) 2019/33, Article 50",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0033",
+          "kind": "primary",
+          "says": "Where one wine grape variety is named on the label, at least 85 per cent of the product comes from it.",
+          "read": "search summary"
+        },
+        {
+          "title": "Consejo Regulador de la DO Rueda, nota sobre el pliego de condiciones (November 2019)",
+          "url": "https://www.dorueda.com/wp-content/uploads/2019/11/Nota-Pliego-condiciones-DO-Rueda.pdf",
+          "kind": "primary",
+          "says": "From the 2019 vintage the still whites are one category, Rueda, merging the old Rueda Verdejo, Rueda Sauvignon and Rueda.",
+          "read": "search summary"
+        }
+      ],
+      "why": "True of a label that names the grape, which is what each line describes; editing them would change wording, not facts.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Each line speaks of a label that names the grape, and a Rueda naming one grape must hold at least 85 per cent of it (EU rule, repeated in the pliego). e-5d1isaa8 still answers Sauvignon Blanc and its explanation is true of a Rueda labelled Verdejo or Sauvignon Blanc; labels[0] and the two wines notes likewise. None repeats the half Verdejo rule. A reader might take Rueda Verdejo for a category name, but the record's law lines (L1-04) now say the categories went in 2019, so the leave stands.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-10",
+      "topic": "Muscadet lines that still hold: the grape implied, the 1709 replanting",
+      "verdict": "leave",
+      "claim": "The Loire record says the grape is implied by the appellation (Muscadet is Melon), its exam and trap lines match Muscadet to Melon de Bourgogne, and the stem of i-r0p7056l says a hard winter in 1709 killed most of the vineyard around Nantes and growers replanted with a hardy Burgundian white.",
+      "finding": "Melon B is the principal grape of every Muscadet appellation and the only grape of the three named ones; the plain appellation's accessory Chardonnay, at most 10 per cent of a holding's plantings, does not change which grape the name implies. The specification's own link to origin tells the 1709 replanting as the stem does.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "Bulletin officiel du ministère de l'Agriculture, cahier des charges de l'AOC Muscadet homologué par l'arrêté du 26 novembre 2025, publié au BO le 11 décembre 2025",
+          "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-e435f8dc-85b9-4172-ac00-637750581682/telechargement",
+          "kind": "primary",
+          "says": "Melon B is the principal grape and chardonnay B the accessory grape of the regional Muscadet.",
+          "read": "search summary"
+        },
+        {
+          "title": "INAO, cahier des charges de l'AOC Muscadet, procédure nationale d'opposition of November 2018",
+          "url": "https://extranet.inao.gouv.fr/fichier/CDC-Muscadet-PNO.pdf",
+          "kind": "primary",
+          "says": "After the hard winter of 1709 the vineyard was replanted with frost resistant Melon, mainly on the better sites.",
+          "read": "search summary"
+        }
+      ],
+      "why": "These lines are true as they stand; L1-01 corrects only the lines that call Melon the sole grape of every Muscadet.",
+      "refuter": {
+        "verdict": "upheld",
+        "note": "Melon B is the principal grape of every Muscadet appellation and the only one of the three named zones, so the grape is implied (Muscadet is Melon), the exam line and the trap stay true, and the stem of i-r0p7056l tells the 1709 replanting as the specification's link to origin does. Nothing here calls Melon the sole grape; L1-01 takes the lines that do.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-11",
+      "topic": "Navarra: Garnacha and Tempranillo neck and neck, not Tempranillo ahead",
+      "verdict": "change",
+      "claim": "The Navarra record says Tempranillo has overtaken Garnacha in the plantings and is now the most planted grape (summary, the Tempranillo row, a trap, a card back and the explanation of r-fib9fgz3).",
+      "finding": "Tempranillo led in the denomination's register for 2022 (30.1 per cent against 27.6 for red and white Garnacha together), but the council wrote in December 2025 that Garnacha Tinta is currently the most important variety by vineyard surface, and the reports of the 2025 harvest give Garnacha Tinta 29 per cent of the vineyard and Tempranillo 26. The lead has changed hands and the two are close, so a rank either way is the volatile kind the house rules keep out.",
+      "targets": [
+        {
+          "file": ".scripts/regions/fragments/spain.2.json",
+          "record": "navarra",
+          "path": "summary",
+          "old": "Tempranillo has since overtaken it in the plantings",
+          "new": "Tempranillo has since come to rival it in the plantings"
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.2.json",
+          "record": "navarra",
+          "path": "grapes[1].styles",
+          "old": "Now the most planted red, giving Crianza and Reserva reds in the Rioja mould",
+          "new": "Garnacha's rival in the plantings, giving Crianza and Reserva reds in the Rioja mould"
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.2.json",
+          "record": "navarra",
+          "path": "traps[2]",
+          "old": "Tempranillo, not Garnacha, is now the most planted grape, though Garnacha is the one the exam associates with the region.",
+          "new": "Garnacha is the grape the exam associates with the region, though Tempranillo rivals it in the plantings and the lead between the two has changed hands."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.2.json",
+          "record": "navarra",
+          "path": "cards[3].b (front: Most planted red grape in Navarra today)",
+          "old": "Tempranillo. Garnacha was the historic grape and still defines rosado and the old-vine reds of Baja Montaña.",
+          "new": "A close call: Garnacha Tinta by the council's own count in 2025, Tempranillo in its register for 2022. Garnacha was the historic grape and still defines rosado and the old-vine reds of Baja Montaña."
+        },
+        {
+          "file": ".scripts/regions/fragments/spain.2.json",
+          "record": "navarra",
+          "path": "questions[0].exp (r-fib9fgz3)",
+          "old": "Tempranillo has overtaken it in the red plantings, but the rosado tradition belongs to Garnacha.",
+          "new": "Tempranillo rivals it in the red plantings, but the rosado tradition belongs to Garnacha."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Consejo Regulador de la DO Navarra, Masters of Wine highlight the potential of Garnacha D.O. Navarra (December 2025)",
+          "url": "https://navarrawine.com/en/?p=9862",
+          "kind": "primary",
+          "says": "Garnacha Tinta is currently the most important variety in terms of vineyard surface area, documented in Navarra since 1746 by the regional station EVENA.",
+          "read": "search summary"
+        },
+        {
+          "title": "Forbes Espana, La vendimia en Navarra cierra con un historico descenso de produccion de uva pero de excelente calidad (2025)",
+          "url": "https://forbes.es/economia/815519/la-vendimia-en-navarra-cierra-con-un-historico-descenso-de-produccion-de-uva-pero-de-excelente-calidad/",
+          "kind": "secondary",
+          "says": "About 8,500 hectares in the DO; Garnacha Tinta 29 per cent of the vineyard, Tempranillo 26; reds 84 per cent.",
+          "read": "search summary"
+        },
+        {
+          "title": "Vinetur, Navarra registra la menor vendimia de su historia (October 2025)",
+          "url": "https://www.vinetur.com/2025101792317/navarra-registra-la-menor-vendimia-de-su-historia-con-solo-337-millones-de-kilos-de-uva-recogidos.html",
+          "kind": "secondary",
+          "says": "Garnacha Tinta 29 per cent of the surface, Tempranillo 26.",
+          "read": "search summary"
+        },
+        {
+          "title": "Decanter, Expert's Choice: Navarra's native Garnacha rises once more",
+          "url": "https://www.decanter.com/premium/experts-choice-navarras-native-garnacha-rises-once-more-521472/",
+          "kind": "secondary",
+          "says": "On the DO's register for 2022, Tempranillo 30.1 per cent, Garnacha red and white 27.6.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The council's own count of 2025 puts Garnacha Tinta ahead again, so Tempranillo is no longer the most planted; the record says the two rival each other, and the card that asks for the rank answers it with both counts and their years. The card's front, the question's stem, answer and options are untouched.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Added by the second reader. The Navarra record's ranks were flagged in check-g12 (codexRecords) as a volatile share; read against the council and the 2025 harvest reports they are now out of date. Each old string occurs once in spain.2.json and sits in the navarra record at the path named. r-fib9fgz3 still answers Garnacha. The card front asks a rank, and its new back answers it with sources and years rather than leaving the rank unanswered; fronts are not changed by these records. Completeness: three other records already say Garnacha leads in Navarra (spain.1.json Bierzo question, spain.more.json Ribeira Sacra question, spain.2.json Jumilla question) and now agree; nothing in js/, the CMS banks, rewrite/categories or the grape fragments ranks Tempranillo first in Navarra.",
+        "sources": []
+      }
+    },
+    {
+      "id": "L1-12",
+      "topic": "France: Ugni Blanc the most planted white, Merlot the most planted grape",
+      "verdict": "leave",
+      "claim": "The France record's grape rows call Ugni Blanc the most planted white grape of France and Merlot the most planted grape in France.",
+      "finding": "FranceAgriMer's key figures for 2023 list Merlot at 117,369 hectares, Ugni Blanc at 106,879, Grenache at 87,862 and Chardonnay at 49,595: Ugni Blanc leads the whites by more than double, and Merlot led all grapes in 2023. Ugni Blanc gained a further 3 per cent in 2024 while Bordeaux grubbed up red vines; one trade report puts Ugni Blanc ahead of Merlot on the 2024 figures, and another, giving different 2023 hectares, implies the same turn. The 2024 varietal table itself was not read.",
+      "targets": [],
+      "sources": [
+        {
+          "title": "FranceAgriMer, Les chiffres-cles de la filiere viti-vinicole 2023",
+          "url": "https://www.franceagrimer.fr/sites/default/files/rdd/documents/CC-VIN-2023-chiffres-cles_vin_2023_0.pdf",
+          "kind": "primary",
+          "says": "Principal varieties planted in 2023: Merlot 117,369 ha, Ugni Blanc 106,879, Grenache 87,862, Chardonnay 49,595.",
+          "read": "search summary"
+        },
+        {
+          "title": "FranceAgriMer, Les chiffres-cles de la filiere viti-vinicole 2024 (November 2025)",
+          "url": "https://www.franceagrimer.fr/sites/default/files/2025-12/20251121_CC%20VITI%20VINICOLE%20%202025.pdf",
+          "kind": "primary",
+          "says": "Ugni Blanc up 3 per cent on 2023; the ranking was cut off in the summary.",
+          "read": "search summary"
+        },
+        {
+          "title": "Meininger, Frankreichs Reblandschaft im Wandel",
+          "url": "https://www.meininger.de/weinwirtschaft/wein/frankreichs-reblandschaft-im-wandel",
+          "kind": "secondary",
+          "says": "Merlot held first place for about a quarter century after Ugni Blanc led in the early 2000s; in 2023 still 103,873 ha of Merlot against 97,310 of Ugni Blanc, and Merlot down about a fifth on its five year average in the latest year.",
+          "read": "search summary"
+        }
+      ],
+      "why": "The Ugni Blanc line is true on every figure read; the Merlot line is true to 2023 and may have turned in 2024, which only FranceAgriMer's 2024 table can settle, so it is left and flagged.",
+      "refuter": {
+        "verdict": "changed",
+        "note": "Added by the second reader for completeness: check-g5 flagged the Ugni Blanc rank as volatile, and the Merlot row beside it is the one at risk. Both old lines sit in .scripts/regions/fragments/france.1.json, country.grapes[0].styles (Merlot) and country.grapes[15].styles (Ugni Blanc). If the 2024 table confirms Ugni Blanc first, the Merlot row could read One of France's two most planted grapes, true on both years' figures; no Bordeaux line changes, since Merlot leads Bordeaux on any count.",
+        "sources": []
+      }
+    }
+  ]
+}
