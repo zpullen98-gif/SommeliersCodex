@@ -9,7 +9,9 @@
  *
  *   1. the load: data-flagships.js then codex58.js straight after codex57.js and before boot.js; the layer ran
  *   2. the data: the roster in the plan's order (51 groups of five when whole; with --partial the groups written, each
- *      its picks in the plan's order); every shipped record through schema.cjs; the data equal to the build of the
+ *      its picks in the plan's order); when whole the counts pinned exact (WHOLE: 255 records, 510 cards and 510
+ *      questions with the deal, 43 regions in 16 countries, 206 houses joined to the library and 49 outside it);
+ *      every shipped record through schema.cjs; the data equal to the build of the
  *      fragments byte for byte; every id fl- and eight digits, once, and held by keys.v1.json (frozen or not); fl- the
  *      tab's alone; nobody living of people.json in any string a record ships; the people check's own test
  *   3. the caps, read again from schema.cjs's CAPS on the shipped records
@@ -41,7 +43,8 @@
  *      this gate dash free
  *
  *   node .scripts/check-flagships.js [jsDir] [--partial]               every check above
- *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 27 faults in a scratch copy, one at
+ *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 28 faults in a scratch copy (27 with
+ *                                                                       --partial, where no count is pinned), one at
  *                                                                       a time, and expects each caught by the check
  *                                                                       that names it (FLAGSHIPS_MUTATION=word|word
  *                                                                       runs only the ones whose names hold a word)
@@ -93,6 +96,10 @@ const ROSTER = S.roster(PLAN);
 const PICK = {}; ROSTER.forEach((x) => { PICK[x.pick.key] = x; });
 const NOW = Date.parse('2026-11-12T14:02:00.000Z');
 const SECTIONS = ['v58-s-wine', 'v58-s-story', 'v58-s-others', 'v58-s-traps', 'v58-s-list', 'v58-s-study', 'v58-s-codex'];
+/* the whole build of wave one, pinned exact (without --partial): the groups and records, the cards and questions, the
+   answers as the build deals them, the regions and their countries, the houses the library joins (its producers and
+   its wines) and those outside it. A pin moves only with the plan, in the same commit. */
+const WHOLE = { groups: 51, records: 255, cards: 510, questions: 510, deal: [128, 128, 127, 127], regions: 43, countries: 16, joined: 206, producers: 201, wines: 5, outside: 49 };
 
 let passed = 0, failed = 0;
 function check(what, ok, detail) {
@@ -431,6 +438,17 @@ async function main() {
       if (whole) note('the data is whole: run this gate without --partial');
     } else {
       check('the roster whole and in the plan\'s order: ' + S.GROUPS + ' groups of five, the ' + ROSTER.length + ' records of plan.json, FLAGSHIP_META ' + META.built + ' of ' + META.roster + ', not partial', whole && rosterBad.length === 0 && metaOk && META.partial === false && JSON.stringify(REC.map((r) => r.key)) === JSON.stringify(ROSTER.map((x) => x.pick.key)), GROUPS.length + ' groups, ' + IDS.length + ' records; ' + few(rosterBad, 4) + ' ' + JSON.stringify(META));
+      const deal = [0, 0, 0, 0];
+      let cards = 0, qs = 0;
+      REC.forEach((r) => { cards += (r.cards || []).length; (r.questions || []).forEach((q) => { qs++; if (deal[q.a] !== undefined) deal[q.a]++; }); });
+      const got = {
+        groups: GROUPS.length, records: IDS.length, cards, questions: qs, deal,
+        regions: new Set(REC.map((r) => r.region)).size, countries: new Set(GROUPS.map((g) => g.country)).size,
+        joined: REC.filter((r) => r.producerId).length, producers: REC.filter((r) => /^p-/.test(r.producerId)).length,
+        wines: REC.filter((r) => /^w-/.test(r.producerId)).length, outside: REC.filter((r) => !r.producerId).length
+      };
+      const pinsOk = JSON.stringify(got) === JSON.stringify(WHOLE) && ROSTER.length === WHOLE.records && PLAN.groups.length === WHOLE.groups && META.cards === WHOLE.cards && META.questions === WHOLE.questions;
+      check('the counts pinned exact: ' + WHOLE.groups + ' groups, ' + WHOLE.records + ' records, ' + WHOLE.cards + ' cards and ' + WHOLE.questions + ' questions (the answers dealt A ' + WHOLE.deal[0] + ', B ' + WHOLE.deal[1] + ', C ' + WHOLE.deal[2] + ', D ' + WHOLE.deal[3] + '), ' + WHOLE.regions + ' regions in ' + WHOLE.countries + ' countries, ' + WHOLE.joined + ' houses joined to the library (' + WHOLE.producers + ' producers, ' + WHOLE.wines + ' wines) and ' + WHOLE.outside + ' outside it', pinsOk, JSON.stringify(got) + ' against ' + JSON.stringify(WHOLE));
     }
     const facts = S.facts(JS);
     const schemaBad = [];
@@ -871,12 +889,15 @@ function mutations() {
     ['a shown word outside V58_WORDS', 'js/codex58.js', "v58Esc(v58W('fiveH'))", "'Five houses to know'", 'every word the layer shows is V58_WORDS'],
     ['a superlative in V58_WORDS', 'js/codex58.js', "tab: 'Producers and flagships',", "tab: 'Producers and their finest flagships',", 'in the strictest voice'],
     ['a gate list naming codex57.js without the new files', 'gates', "'codex57.js', 'data-flagships.js', 'codex58.js'", "'codex57.js'", 'the chain rule']
-  ];
+  ].concat(PARTIAL ? [] : [
+    ['an answer dealt again by hand', 'js/data-flagships.js', '"a":1,"exp":"', '"a":2,"exp":"', 'the counts pinned exact']
+  ]);
   const repoRoot = path.join(JS, '..');
   let held = 0;
   const problems = [];
   const only = process.env.FLAGSHIPS_MUTATION || '';
-  for (const [name, file, from, to, by] of MUT.filter((m) => !only || only.split('|').some((w) => m[0].indexOf(w) >= 0))) {
+  const RUN = MUT.filter((m) => !only || only.split('|').some((w) => m[0].indexOf(w) >= 0));
+  for (const [name, file, from, to, by] of RUN) {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'flagships-mut-'));
     copyTree(JS, path.join(dir, 'js'));
     fs.writeFileSync(path.join(dir, 'index.html'), fs.readFileSync(path.join(repoRoot, 'index.html')));
@@ -901,7 +922,7 @@ function mutations() {
     else if (!hit) problems.push('the mutation "' + name + '" was caught, but not by "' + by + '": ' + (fails[0] || String(r.stderr || '').split('\n')[0] || '').trim().slice(0, 200));
     else { held++; console.log('  mutation held: ' + name + ' :: ' + hit.trim().slice(6, 150)); }
   }
-  console.log('  ' + held + ' of ' + MUT.length + ' mutations caught, each by its own check');
+  console.log('  ' + held + ' of ' + RUN.length + ' mutations caught, each by its own check' + (RUN.length < MUT.length ? ' (' + RUN.length + ' of the ' + MUT.length + ' run, by FLAGSHIPS_MUTATION)' : ''));
   problems.forEach((p) => console.log('  FAIL  ' + p));
   return problems.length;
 }
