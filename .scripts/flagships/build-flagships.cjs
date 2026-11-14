@@ -6,7 +6,8 @@
 
    Usage:
      node .scripts/flagships/build-flagships.cjs --lint <group> [<group> ...]   validate the named fragments; WRITES NOTHING
-     node .scripts/flagships/build-flagships.cjs --lint --chunk <pilots|f1..f17> the same, for a chunk of the plan
+     node .scripts/flagships/build-flagships.cjs --lint --chunk <chunk>          the same, for a chunk of plan.chunks
+     node .scripts/flagships/build-flagships.cjs --lint --batch <one|A|B|C>      the same, for every written fragment of a batch
      node .scripts/flagships/build-flagships.cjs --lint --all                    the same, for every fragment on disk
      node .scripts/flagships/build-flagships.cjs [--partial]                     the writing build: the data file and keys.v1.json
      node .scripts/flagships/build-flagships.cjs --check                         prove the shipped file and the keys are the build; writes nothing
@@ -20,9 +21,16 @@
    The lint. Each named fragment is read, held to schema.cjs and printed with every problem (the field, then the rule)
    and every note (what a second reader should look at: never a failure). Exit 1 while a problem stands.
 
-   The writing build. The plan is proved first (its shape and the app's regions and producers). Without --partial
-   every one of the 255 records needs a sound fragment AND a checker's record (checked, by the refuter): a missing,
-   refused or unchecked record refuses the whole build and nothing is written. With --partial a missing group is
+   The batches. A group of plan.json with no batch is wave one's ("one"); wave two's groups carry batch A, B or C.
+   plan.built names the batches the whole build ships (["one"], then ["one", "A"], and so on, each batch published
+   whole), and FLAGSHIP_META names them once a letter is among them (with wave one alone the file is as wave one
+   shipped it, byte for byte).
+
+   The writing build. The plan is proved first, every group of every batch (its shape and the app's regions and
+   producers). Without --partial every record of every group of plan.built, in the plan's order, needs a sound
+   fragment AND a checker's record (checked, by the refuter): a missing, refused or unchecked record refuses the whole
+   build and nothing is written. A written fragment of a batch not built is linted, its problems printed as notes,
+   and never shipped. With --partial (scratch copies only) every group of every batch is in scope: a missing group is
    listed, a failing or unchecked record is shipped only when sound (an unsound one is skipped with its problems),
    and the file says in its header that it is a partial build.
 
@@ -37,14 +45,16 @@
 
    The deal. Authors key the answer where they like and the engine never shuffles, so the build deals the shipped
    copies as build-grapes.cjs does: the answer positions round robin over a record's two questions, the start carried
-   from record to record by the plan's order (twice the record's place among the 255, so a partial build deals a
-   record exactly as the whole build will), that deal shuffled from 'deal:flagship:' + key and the distractors ordered
-   from the stem. Ids come from the key and the text, never the options, so the deal moves no id.
+   from record to record by the plan's order (twice the record's place among its own batch's picks, so wave one is
+   dealt as it always was however wave two's groups sit in the plan, and a partial build deals a record exactly as
+   the whole build will), that deal shuffled from 'deal:flagship:' + key and the distractors ordered from the stem.
+   Ids come from the key and the text, never the options, so the deal moves no id.
 
    The output. js/data-flagships.js declares FLAGSHIPS (one record per id, in the plan's order, one line a record),
    FLAGSHIP_GROUPS (the plan's groups in order, each with key, title, region, country and the ids of its built
-   records, a group with none left out) and FLAGSHIP_META (edition, wave, the roster's size, how many are built,
-   whether the build is partial, the counts, the id prefix). A record ships its fields in schema.cjs's order with its
+   records, a group with none left out) and FLAGSHIP_META (edition, wave, the batches built once a letter is among
+   them, the roster's size (the picks of the batches built, or of the whole plan in a partial build), how many are
+   built, whether the build is partial, the counts, the id prefix). A record ships its fields in schema.cjs's order with its
    id first; the provenance (report, checked) and a source's read never ship. Raw UTF-8, as the Codex's other generated
    data files. --check builds in memory and compares with the file and with keys.v1.json; it builds as the shipped
    file was built (partial when its header says so). Exits 1 with every problem named. */
@@ -66,12 +76,13 @@ function recordId(key) { return mint(['flagship', key]); }
 function itemId(id, text) { return mint(['flagship:' + id, text]); }
 
 function parseArgs(argv) {
-  const o = { lint: false, all: false, chunk: null, groups: [], check: false, partial: false, plan: false, freeze: false, fragments: null, out: null, keys: null, jsDir: null, help: false };
+  const o = { lint: false, all: false, chunk: null, batch: null, groups: [], check: false, partial: false, plan: false, freeze: false, fragments: null, out: null, keys: null, jsDir: null, help: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--lint') o.lint = true;
     else if (a === '--all') o.all = true;
     else if (a === '--chunk') o.chunk = argv[++i];
+    else if (a === '--batch') o.batch = argv[++i];
     else if (a === '--check') o.check = true;
     else if (a === '--partial') o.partial = true;
     else if (a === '--plan') o.plan = true;
@@ -164,6 +175,15 @@ function readKeys(file) {
   return { about: typeof k.about === 'string' ? k.about : KEYS_ABOUT, frozen: k.frozen === true, keys: (k.keys && typeof k.keys === 'object') ? k.keys : {} };
 }
 
+/* The batches a build ships: the whole build plan.built, a partial build every batch the plan holds a group of. */
+function shippedBatches(plan, partial) {
+  const built = S.builtOf(plan);
+  if (!partial) return built;
+  return S.BATCHES.filter((b) => built.indexOf(b) >= 0 || (Array.isArray(plan.groups) ? plan.groups : []).some((g) => S.batchOf(g) === b));
+}
+/* FLAGSHIP_META's batches and wave: wave one alone names none and is wave 1, as wave one shipped */
+function metaBatches(batches) { return batches.some((b) => b !== 'one') ? batches.slice() : null; }
+
 /* Reads the plan and the fragments and builds the file in memory. have is keys.v1.json as it stands. */
 function build(opts, have) {
   const problems = [];
@@ -171,18 +191,20 @@ function build(opts, have) {
   const missing = [];
   const skipped = [];
   const unchecked = [];
+  const lintedOnly = [];
   const plan = S.loadPlan(opts.planFile);
   const f = S.facts(opts.jsDir);
   S.planProblems(plan, f).forEach((p) => problems.push(rel(opts.planFile || path.join(S.DIR, 'plan.json')) + ': ' + p));
   prefixProblems(opts.jsDir, opts.out).forEach((p) => problems.push(p));
   if (!fs.existsSync(opts.fragments)) problems.push('no fragments folder at ' + rel(opts.fragments));
-  if (problems.length) return { problems, notes, missing, skipped, unchecked, plan, text: '', keys: {}, stats: {} };
+  if (problems.length) return { problems, notes, missing, skipped, unchecked, lintedOnly, plan, text: '', keys: {}, stats: {} };
   const gkeys = plan.groups.map((g) => g.key);
   fs.readdirSync(opts.fragments).filter((x) => /\.json$/.test(x)).forEach((x) => {
     const g = x.replace(/\.json$/, '');
     if (gkeys.indexOf(g) < 0) (opts.partial ? notes : problems).push('fragments/' + x + ': ' + g + ' is no group of the plan');
   });
-  const all = S.roster(plan);
+  const batches = shippedBatches(plan, opts.partial);
+  const all = S.roster(plan, batches);
   const records = [];
   const groups = [];
   const ids = {};
@@ -190,6 +212,16 @@ function build(opts, have) {
   plan.groups.forEach((g) => {
     const rf = readFragment(opts.fragments, g.key);
     const name = 'fragments/' + g.key + '.json';
+    const batch = S.batchOf(g);
+    /* a group of a batch not built: its fragment, when written, is linted and never shipped */
+    if (batches.indexOf(batch) < 0) {
+      if (rf.missing) return;
+      lintedOnly.push(g.key);
+      const at = name + ' (batch ' + batch + ', not built: linted, never shipped)';
+      if (rf.broken) { notes.push(at + ': ' + rf.broken); return; }
+      S.validateFragment(rf.frag, plan, { facts: f, jsDir: opts.jsDir }).forEach((p) => notes.push(at + ': ' + p));
+      return;
+    }
     if (rf.missing) { g.picks.forEach((p) => missing.push(p.key)); return; }
     if (rf.broken) { (opts.partial ? notes : problems).push(name + ': ' + rf.broken); g.picks.forEach((p) => skipped.push(p.key)); return; }
     const frag = rf.frag;
@@ -213,7 +245,7 @@ function build(opts, have) {
       const held = have.keys[pick.key];
       const id = held && typeof held.id === 'string' ? held.id : recordId(pick.key);
       if (!S.ID_RE.test(id)) { problems.push(rel(opts.keys) + ': ' + pick.key + ' holds ' + JSON.stringify(id) + ', no fl- id'); return; }
-      const out = ship(rec, id, at.index);
+      const out = ship(rec, id, at.place);
       [out.id].concat(out.cards.map((c) => c.id), out.questions.map((q) => q.id)).forEach((x) => {
         if (ids[x]) problems.push(name + ': the id ' + x + ' is minted twice (also ' + ids[x] + ')');
         ids[x] = pick.key;
@@ -225,7 +257,7 @@ function build(opts, have) {
     if (built.length) groups.push({ key: g.key, title: g.title, region: g.region, country: g.country, ids: built });
   });
   if (!opts.partial) {
-    if (missing.length) problems.push('the roster is not whole: ' + missing.length + ' record(s) have no fragment (' + missing.join(', ') + '); pass --partial to build what exists');
+    if (missing.length) problems.push('the built set (' + S.builtKey(batches) + ') is not whole: ' + missing.length + ' record(s) have no fragment (' + missing.join(', ') + '); pass --partial in a scratch copy to build what exists');
     if (skipped.length) problems.push(skipped.length + ' record(s) refused (' + skipped.join(', ') + '): nothing is written');
   } else {
     if (skipped.length) notes.push('skipped, failing the schema: ' + skipped.join(', '));
@@ -233,21 +265,23 @@ function build(opts, have) {
   }
   const pos = [0, 0, 0, 0];
   records.forEach((r) => r.questions.forEach((q) => { pos[q.a]++; }));
+  const shipped = metaBatches(opts.partial ? S.BATCHES.filter((b) => groups.some((x) => S.batchOf(S.groupOf(plan, x.key)) === b)) : batches);
   const stats = {
+    batches: shipped || ['one'], lintedOnly: lintedOnly.length,
     roster: all.length, built: records.length, partial: !!opts.partial && records.length < all.length, groups: groups.length,
     whole: groups.filter((g) => g.ids.length === S.PICKS).length,
     cards: records.reduce((n, r) => n + r.cards.length, 0), questions: records.reduce((n, r) => n + r.questions.length, 0),
     words: records.reduce((n, r) => n + S.readingWords(r), 0), positions: pos, unchecked: unchecked.length,
     library: records.filter((r) => r.producerId).length
   };
-  const meta = { version: 1, edition: plan.edition, wave: plan.wave, roster: stats.roster, built: stats.built, groups: stats.groups, partial: stats.partial, prefix: S.ID_PREFIX, cards: stats.cards, questions: stats.questions };
+  const meta = Object.assign({ version: 1, edition: plan.edition, wave: shipped ? 2 : 1 }, shipped ? { batches: shipped } : {}, { roster: stats.roster, built: stats.built, groups: stats.groups, partial: stats.partial, prefix: S.ID_PREFIX, cards: stats.cards, questions: stats.questions });
   const text = header(rel(opts.fragments), stats)
     + 'var FLAGSHIPS = {\n' + records.map((r) => JSON.stringify(r.id) + ': ' + line(r)).join(',\n') + '\n};\n'
     + 'var FLAGSHIP_GROUPS = [\n' + groups.map((g) => line(g)).join(',\n') + '\n];\n'
     + 'var FLAGSHIP_META = ' + line(meta) + ';\n';
   CMS.dashProblems(text, rel(opts.out)).forEach((p) => problems.push(p + ' (the built file itself)'));
   stats.bytes = Buffer.byteLength(text, 'utf8');
-  return { problems, notes, missing, skipped, unchecked, plan, text, keys: keyIds, stats, records, groups };
+  return { problems, notes, missing, skipped, unchecked, lintedOnly, plan, text, keys: keyIds, stats, records, groups };
 }
 
 /* What keys.v1.json should hold after this build, and what a frozen file forbids. */
@@ -287,12 +321,20 @@ function provePlan(jsDir, outFile) {
 }
 
 function summary(s) {
-  return s.built + ' of ' + s.roster + ' records in ' + s.groups + ' group(s), ' + s.whole + ' whole, ' + s.library + ' joined to WINE_PRODUCERS, '
+  return 'the batches ' + S.builtKey(s.batches) + ': ' + s.built + ' of ' + s.roster + ' records in ' + s.groups + ' group(s), ' + s.whole + ' whole, ' + s.library + ' joined to WINE_PRODUCERS, '
     + s.cards + ' cards, ' + s.questions + ' questions (answers A ' + s.positions[0] + ', B ' + s.positions[1] + ', C ' + s.positions[2] + ', D ' + s.positions[3] + '), '
-    + s.words + ' reading words, ' + s.bytes + ' bytes' + (s.unchecked ? ', ' + s.unchecked + ' not yet refuted' : '') + (s.partial ? ', ' + PARTIAL_MARK : '');
+    + s.words + ' reading words, ' + s.bytes + ' bytes' + (s.unchecked ? ', ' + s.unchecked + ' not yet refuted' : '') + (s.partial ? ', ' + PARTIAL_MARK : '')
+    + (s.lintedOnly ? '; ' + s.lintedOnly + ' fragment(s) of a batch not built linted and not shipped' : '');
+}
+/* the batches a shipped file names: FLAGSHIP_META's, wave one alone when it names none */
+function fileBatches(text) {
+  const m = /\nvar FLAGSHIP_META = (\{.*\});\n/.exec(String(text || ''));
+  let meta = null;
+  try { meta = m ? JSON.parse(m[1]) : null; } catch (e) { meta = null; }
+  return meta && Array.isArray(meta.batches) ? meta.batches : (meta ? ['one'] : null);
 }
 
-module.exports = { build, ship, deal, mint, recordId, itemId, nextKeys, readKeys, keysText, prefixProblems, provePlan, header, summary, PARTIAL_MARK, KEYS_ABOUT, PREFIX_ALLOWED };
+module.exports = { build, ship, deal, mint, recordId, itemId, nextKeys, readKeys, keysText, prefixProblems, provePlan, header, summary, shippedBatches, metaBatches, fileBatches, PARTIAL_MARK, KEYS_ABOUT, PREFIX_ALLOWED };
 
 if (require.main === module) {
   let opts;
@@ -309,7 +351,8 @@ if (require.main === module) {
     if (r.problems.length) { r.problems.forEach((p) => console.log('build-flagships --plan: ' + p)); console.log('\nbuild-flagships --plan: ' + r.problems.length + ' problem(s)'); process.exit(1); }
     const picks = S.roster(r.plan);
     const regions = new Set(r.plan.groups.map((g) => g.region));
-    console.log('build-flagships --plan: plan.json is proved against the app: ' + r.plan.groups.length + ' groups over ' + regions.size + ' region records of REGIONS, each on its own country\'s sheet, '
+    const per = S.BATCHES.map((b) => { const n = r.plan.groups.filter((g) => S.batchOf(g) === b).length; return (b === 'one' ? 'wave one ' + n : 'batch ' + b + ' ' + n + ' of ' + S.BATCH_GROUPS[b]); }).join(', ');
+    console.log('build-flagships --plan: plan.json is proved against the app, every group of every batch: ' + r.plan.groups.length + ' groups (' + per + '; built ' + S.builtKey(S.builtOf(r.plan)) + ') over ' + regions.size + ' region records of REGIONS, each on its own country\'s sheet, '
       + picks.length + ' picks with unique keys and producers, ' + picks.filter((x) => x.pick.producerId).length + ' producerIds each a record of WINE_PRODUCERS, '
       + picks.filter((x) => !x.pick.producerId).length + ' not in the library; ' + r.plan.chunks.length + ' chunks; the prefix ' + S.ID_PREFIX + ' is the tab\'s alone under ' + rel(opts.jsDir)
       + ' (allowed: ' + PREFIX_ALLOWED.map((a) => a.file).join(', ') + ')');
@@ -324,12 +367,16 @@ if (require.main === module) {
     let groups = opts.groups.slice();
     if (opts.chunk) {
       const inChunk = plan.groups.filter((g) => g.chunk === opts.chunk).map((g) => g.key);
-      if (!inChunk.length) { console.error('build-flagships --lint: ' + JSON.stringify(opts.chunk) + ' is no chunk of the plan (' + S.CHUNKS.join(', ') + ')'); process.exit(2); }
+      if (!inChunk.length) { console.error('build-flagships --lint: ' + JSON.stringify(opts.chunk) + ' is no chunk of the plan (' + plan.chunks.join(', ') + ')'); process.exit(2); }
       groups = groups.concat(inChunk);
+    }
+    if (opts.batch) {
+      if (S.BATCHES.indexOf(opts.batch) < 0) { console.error('build-flagships --lint: ' + JSON.stringify(opts.batch) + ' is no batch (' + S.BATCHES.join(', ') + ')'); process.exit(2); }
+      groups = groups.concat(plan.groups.filter((g) => S.batchOf(g) === opts.batch).map((g) => g.key).filter((k) => fs.existsSync(path.join(opts.fragments, k + '.json'))));
     }
     if (opts.all) groups = groups.concat(plan.groups.map((g) => g.key).filter((k) => fs.existsSync(path.join(opts.fragments, k + '.json'))));
     groups = groups.filter((g, i) => groups.indexOf(g) === i);
-    if (!groups.length) { console.error('usage: node .scripts/flagships/build-flagships.cjs --lint <group> [<group> ...] | --chunk <chunk> | --all'); process.exit(2); }
+    if (!groups.length) { console.error('usage: node .scripts/flagships/build-flagships.cjs --lint <group> [<group> ...] | --chunk <chunk> | --batch <one|A|B|C> | --all (a batch with no fragment written lints nothing)'); process.exit(2); }
     let bad = 0;
     groups.forEach((g) => {
       const name = 'fragments/' + g + '.json';
@@ -365,7 +412,12 @@ if (require.main === module) {
   if (opts.check) {
     const diffs = [];
     if (!fs.existsSync(opts.out)) diffs.push(rel(opts.out) + ' is missing');
-    else if (fs.readFileSync(opts.out, 'utf8') !== r.text) diffs.push(rel(opts.out) + ' differs from the build of the fragments');
+    else {
+      const was = fs.readFileSync(opts.out, 'utf8');
+      const named = fileBatches(was);
+      if (!opts.partial && named && S.builtKey(named) !== S.builtKey(r.stats.batches)) diffs.push(rel(opts.out) + ' ships the batches ' + S.builtKey(named) + ', and plan.built names ' + S.builtKey(r.stats.batches));
+      if (was !== r.text) diffs.push(rel(opts.out) + ' differs from the build of the fragments');
+    }
     if (!fs.existsSync(opts.keys)) diffs.push(rel(opts.keys) + ' is missing');
     else if (fs.readFileSync(opts.keys, 'utf8') !== kt) diffs.push(rel(opts.keys) + ' does not hold the ids this build mints');
     if (diffs.length) { diffs.forEach((d) => console.log('build-flagships --check: ' + d)); console.log('build-flagships --check: the files are not the build of the fragments; run the writing build'); process.exit(1); }

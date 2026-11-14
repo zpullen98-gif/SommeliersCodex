@@ -35,11 +35,21 @@ const DIR = __dirname;
 const ROOT = path.join(__dirname, '..', '..');
 const JS_DIR = path.join(ROOT, 'js');
 
-/* the plan's own words */
+/* the plan's own words. CHUNKS and GROUPS are wave one's: its chunks open plan.chunks in this order and its 51 groups
+   never change. */
 const CHUNKS = ['pilots', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12', 'f13', 'f14', 'f15', 'f16', 'f17'];
 const GROUPS = 51;
 const PICKS = 5;
-const GROUP_FIELDS = ['key', 'title', 'region', 'country', 'chunk', 'swaps', 'picks'];
+/* The batches. A group with no batch is wave one's ("one"); wave two's groups carry batch A, B or C, each a set of the
+   atlas's sheets the owner chose, and each batch at most the groups named here (one a region record). plan.built names
+   the batches the whole build ships, always wave one first and the letters in order: ["one"], then ["one", "A"],
+   ["one", "A", "B"], ["one", "A", "B", "C"]. */
+const BATCHES = ['one', 'A', 'B', 'C'];
+const BATCH_GROUPS = { one: 51, A: 32, B: 27, C: 27 };
+const BATCH_SHEETS = { A: ['france', 'italy', 'spain', 'portugal'], B: ['germany', 'austria', 'hungary', 'greece'], C: ['new-york', 'argentina', 'chile', 'australia', 'new-zealand', 'south-africa'] };
+const GROUP_FIELDS = ['key', 'title', 'region', 'country', 'batch', 'chunk', 'swaps', 'picks'];
+/* batch is the one field a group may leave out (wave one's groups do) */
+const GROUP_NEEDS = GROUP_FIELDS.filter((k) => k !== 'batch');
 const PICK_FIELDS = ['key', 'producer', 'producerId', 'wine', 'why', 'note'];
 const SWAP_FIELDS = ['from', 'to', 'why', 'agreed', 'date'];
 /* the id prefix of a record, a card and a question: fl- and eight base36 digits (build-flagships proves no other mint) */
@@ -100,11 +110,27 @@ function pickOf(plan, key) {
   (plan && isList(plan.groups) ? plan.groups : []).forEach((g) => (isList(g.picks) ? g.picks : []).forEach((p, i) => { if (p && p.key === key) hit = { group: g, pick: p, index: i }; }));
   return hit;
 }
-/* the plan's picks in order, each with its group and its place in the roster (0 to 254) */
-function roster(plan) {
+/* a group's batch: "one" when it names none (wave one), else its own */
+function batchOf(g) { return g && g.batch !== undefined ? g.batch : 'one'; }
+/* the batches the whole build ships: plan.built when it is a list, else wave one alone */
+function builtOf(plan) { return plan && isList(plan.built) && plan.built.length ? plan.built.slice() : ['one']; }
+/* the built set's own name, the key of the gate's pins: "one", "one+A", "one+A+B", "one+A+B+C" */
+function builtKey(list) { return (isList(list) ? list : ['one']).join('+'); }
+/* the plan's picks in order, each with its group, its batch, its place in the whole plan (index) and its place among
+   its own batch's picks (place, from 0: the deal's start, so a record is dealt alike however the batches interleave) */
+function roster(plan, batches) {
   const out = [];
-  (plan && isList(plan.groups) ? plan.groups : []).forEach((g) => (isList(g.picks) ? g.picks : []).forEach((p) => out.push({ group: g, pick: p, index: out.length })));
-  return out;
+  const seen = {};
+  (plan && isList(plan.groups) ? plan.groups : []).forEach((g) => {
+    const b = batchOf(g);
+    (isList(g.picks) ? g.picks : []).forEach((p) => {
+      const place = seen[b] || 0;
+      seen[b] = place + 1;
+      const x = { group: g, pick: p, index: out.length, batch: b, place };
+      out.push(x);
+    });
+  });
+  return batches ? out.filter((x) => batches.indexOf(x.batch) >= 0) : out;
 }
 /* the words of a name that a sentence must carry to name it: the estate words and the particles left out */
 const ESTATE_WORDS = ['chateau', 'domaine', 'domaines', 'maison', 'bodega', 'bodegas', 'weingut', 'tenuta', 'cantina', 'azienda', 'quinta', 'fattoria', 'podere', 'castello', 'marchesi', 'vina', 'vinedo', 'vinedos', 'schloss', 'kloster', 'estate', 'wines', 'winery', 'vineyard', 'vineyards', 'cellars', 'cellar', 'family', 'familia', 'famille', 'vintners', 'company', 'the', 'and', 'des', 'del', 'della', 'de', 'du', 'la', 'le', 'les', 'di', 'do', 'da', 'dos', 'von', 'van', 'et', 'fils', 'pere', 'erben', 'dr', 'wwe', 'h', 'sa', 'cie', 'co', 'e'];
@@ -535,31 +561,62 @@ function adviseRecord(rec, i) {
   return out;
 }
 
-/* the plan itself.
-   f, when given, is facts(jsDir): every region slug real, its country the region's sheet, every producerId real. */
+/* the plan itself, every group of every batch.
+   f, when given, is facts(jsDir): every region slug real, its country the region's sheet, every producerId real.
+   Wave one is its 51 groups with no batch, in wave one's chunks. A group of wave two names its batch (A, B or C), is
+   keyed by its region slug and headed as the region page is, sits on one of its batch's sheets, gives its region
+   record the one group it holds, and is written in one of wave two's chunks (named in plan.chunks after wave one's,
+   each chunk holding one batch); a batch holds at most its share of the owner's 86 region records. plan.built names
+   the batches the whole build ships. Five picks a group, every key and every producer once in the whole plan. */
 function planProblems(plan, f) {
   const out = people().problems.slice();
   if (!isObj(plan) || !isList(plan.groups)) return out.concat(['plan.json: { groups: [...] }']);
   if (plan.prefix !== ID_PREFIX) out.push('plan.prefix: ' + ID_PREFIX);
-  if (JSON.stringify(plan.chunks) !== JSON.stringify(CHUNKS)) out.push('plan.chunks: ' + CHUNKS.join(', '));
+  /* the chunks: wave one's in their order, then wave two's (lower case words and hyphens, each once) */
+  const chunks = isList(plan.chunks) ? plan.chunks : [];
+  if (JSON.stringify(chunks.slice(0, CHUNKS.length)) !== JSON.stringify(CHUNKS)) out.push('plan.chunks: wave one\'s first, ' + CHUNKS.join(', ') + ', then wave two\'s');
+  const extra = chunks.slice(CHUNKS.length);
+  extra.forEach((c, i) => {
+    if (!isStr(c) || !KEY_RE.test(c)) out.push('plan.chunks[' + (CHUNKS.length + i) + ']: lower case words and hyphens');
+    else if (CHUNKS.indexOf(c) >= 0 || extra.indexOf(c) !== i) out.push('plan.chunks: ' + c + ' twice');
+  });
   if (!isStr(plan.edition) || !/^\d{4}-\d{2}-\d{2}$/.test(plan.edition)) out.push('plan.edition: a date, YYYY-MM-DD');
-  if (plan.wave !== 1) out.push('plan.wave: 1');
-  if (plan.groups.length !== GROUPS) out.push('plan.groups: ' + GROUPS + ' groups (' + plan.groups.length + ')');
+  if (plan.wave !== 1 && plan.wave !== 2) out.push('plan.wave: 1 or 2');
+  /* the built set: wave one first, then the letters in order, each once */
+  if (!isList(plan.built) || !plan.built.length || plan.built.some((b, i) => b !== BATCHES[i])) out.push('plan.built: the batches the whole build ships, wave one first and the letters in order: ' + BATCHES.map((b, i) => JSON.stringify(BATCHES.slice(0, i + 1))).join(', ') + ' (found ' + JSON.stringify(plan.built) + ')');
+  const perBatch = {};
+  plan.groups.forEach((g) => { if (isObj(g)) { const b = batchOf(g); perBatch[b] = (perBatch[b] || 0) + 1; } });
+  if ((perBatch.one || 0) !== GROUPS) out.push('plan.groups: wave one\'s ' + GROUPS + ' groups, never more or fewer (' + (perBatch.one || 0) + ')');
+  BATCHES.slice(1).forEach((b) => { if ((perBatch[b] || 0) > BATCH_GROUPS[b]) out.push('plan.groups: batch ' + b + ' holds at most ' + BATCH_GROUPS[b] + ' groups, one a region record of ' + BATCH_SHEETS[b].join(', ') + ' (' + perBatch[b] + ')'); });
+  const regionOf = {};
+  plan.groups.forEach((g) => { if (isObj(g) && isStr(g.region)) (regionOf[g.region] = regionOf[g.region] || []).push(g.key); });
+  const chunkBatch = {};
   const gkeys = {}; const pkeys = {}; const producers = {}; const ids = {};
   plan.groups.forEach((g, gi) => {
     const at = 'plan.groups[' + gi + '] ' + JSON.stringify(g && g.key);
     if (!isObj(g)) { out.push(at + ': an object'); return; }
     unknown(out, g, GROUP_FIELDS, at, 'a group');
-    GROUP_FIELDS.filter((k) => !(k in g)).forEach((k) => out.push(at + '.' + k + ': missing'));
+    GROUP_NEEDS.filter((k) => !(k in g)).forEach((k) => out.push(at + '.' + k + ': missing'));
     if (!isStr(g.key) || !KEY_RE.test(g.key)) out.push(at + '.key: lower case words and hyphens');
     if (gkeys[g.key]) out.push(at + '.key: twice'); gkeys[g.key] = 1;
     if (!isStr(g.title) || !g.title.trim()) out.push(at + '.title: the heading');
-    if (CHUNKS.indexOf(g.chunk) < 0) out.push(at + '.chunk: ' + CHUNKS.join(', '));
+    const b = batchOf(g);
+    if (b === 'one') {
+      if (CHUNKS.indexOf(g.chunk) < 0) out.push(at + '.chunk: one of wave one\'s, ' + CHUNKS.join(', '));
+    } else if (BATCHES.indexOf(b) < 1) out.push(at + '.batch: A, B or C for a group of wave two; a group of wave one names no batch');
+    else {
+      if (extra.indexOf(g.chunk) < 0) out.push(at + '.chunk: one of wave two\'s chunks in plan.chunks, after wave one\'s (' + (extra.join(', ') || 'none yet') + ')');
+      if (g.key !== g.region) out.push(at + '.key: a group of wave two is keyed by its region slug, ' + JSON.stringify(g.region));
+      if (BATCH_SHEETS[b].indexOf(g.country) < 0) out.push(at + '.country: batch ' + b + ' is the sheets ' + BATCH_SHEETS[b].join(', ') + ' (' + JSON.stringify(g.country) + ')');
+      if (isStr(g.region) && regionOf[g.region].length > 1) out.push(at + '.region: ' + g.region + ' is the region of ' + regionOf[g.region].filter((k) => k !== g.key).join(', ') + ' too (wave two gives a region record one group)');
+    }
+    if (isStr(g.chunk)) { if (chunkBatch[g.chunk] && chunkBatch[g.chunk] !== b) out.push(at + '.chunk: ' + g.chunk + ' holds groups of batch ' + chunkBatch[g.chunk] + ', and a chunk holds one batch'); chunkBatch[g.chunk] = chunkBatch[g.chunk] || b; }
     if (f && Object.keys(f.regions).length) {
       const r = f.regions[g.region];
       if (!r) out.push(at + '.region: ' + JSON.stringify(g.region) + ' is no region slug of REGIONS');
       else if (r.sheet !== g.country) out.push(at + '.country: the region ' + g.region + ' is on the ' + r.sheet + ' sheet');
       if (!f.countries[g.country]) out.push(at + '.country: ' + JSON.stringify(g.country) + ' is no country key of REGIONS');
+      if (r && b !== 'one' && g.title !== r.name) out.push(at + '.title: a group of wave two is headed as its region page is, ' + JSON.stringify(r.name));
     }
     if (!isList(g.swaps)) out.push(at + '.swaps: a list ([] for none)');
     else g.swaps.forEach((s, si) => {
@@ -600,8 +657,8 @@ function planProblems(plan, f) {
     });
   });
   [g => g.title].forEach((get) => plan.groups.forEach((g, gi) => { if (isObj(g) && isStr(get(g))) CMS.dashProblems(get(g), 'plan.groups[' + gi + '].title').forEach((x) => out.push(x)); }));
-  CHUNKS.forEach((c) => { if (!plan.groups.some((g) => g && g.chunk === c)) out.push('plan.chunks: ' + c + ' holds no group'); });
-  if (Object.keys(pkeys).length !== GROUPS * PICKS) out.push('plan: ' + (GROUPS * PICKS) + ' picks (' + Object.keys(pkeys).length + ')');
+  chunks.forEach((c) => { if (isStr(c) && !plan.groups.some((g) => g && g.chunk === c)) out.push('plan.chunks: ' + c + ' holds no group'); });
+  if (Object.keys(pkeys).length !== plan.groups.length * PICKS) out.push('plan: ' + (plan.groups.length * PICKS) + ' picks, five a group (' + Object.keys(pkeys).length + ')');
   return out;
 }
 
@@ -635,7 +692,8 @@ module.exports = {
   validateFragment, validateRecord, recordProblems, adviseRecord, planProblems, loadPlan, groupOf, pickOf, roster, facts, people, livingIn,
   readingWords, words, fold, hasPhrase, names, nameWords, sentenceList, voiceProblems, tastePath, pathKind, idPath, ID_PATH,
   CAPS, FIELDS, PROVENANCE, COPIED, WINE_FIELDS, COLOURS, QUESTION_FIELDS, QUESTION_TAGS, SOURCE_FIELDS, SOURCE_KINDS, SOURCE_READS,
-  CHECKED_FIELDS, VERDICTS, GROUP_FIELDS, PICK_FIELDS, SWAP_FIELDS, CHUNKS, GROUPS, PICKS, ID_PREFIX, ID_RE, KEY_RE,
+  CHECKED_FIELDS, VERDICTS, GROUP_FIELDS, GROUP_NEEDS, PICK_FIELDS, SWAP_FIELDS, CHUNKS, GROUPS, PICKS, ID_PREFIX, ID_RE, KEY_RE,
+  BATCHES, BATCH_GROUPS, BATCH_SHEETS, batchOf, builtOf, builtKey,
   JUDGE, SCORE, VOLATILE, AMERICAN_MORE, DIR, ROOT, JS_DIR
 };
 
