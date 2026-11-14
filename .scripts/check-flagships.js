@@ -17,7 +17,8 @@
  *   3. the caps, read again from schema.cjs's CAPS on the shipped records
  *   4. the pages: every house drawn clean (cleanProblem, the house voice, no dash, no undefined), At the table first
  *      with the line in it, the sections in their order with their chips, the flagship in full, the sources closed at
- *      the foot, the houses before and after
+ *      the foot, the houses before and after; In the Codex's grapes each a grape page named in the first statement of
+ *      the wine's grapes, none denied, a crossing's parent, read short of a longer name or of another vintage or wine
  *   5. the root and the groups: every house once under its group, in the plan's order; the partial line only while the
  *      build is partial; Study with the due count; each group's five as cards opening their houses, its doors, Study the
  *      five, the groups before and after
@@ -44,8 +45,9 @@
  *      (and V58_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-flagships.js [jsDir] [--partial]               every check above
- *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 30 faults in a scratch copy (29 with
- *                                                                       --partial, where no count is pinned), one at
+ *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 34 faults in a scratch copy (29 with
+ *                                                                       --partial, where no count and no grape is
+ *                                                                       pinned), one at
  *                                                                       a time, and expects each caught by the check
  *                                                                       that names it (FLAGSHIPS_MUTATION=word|word
  *                                                                       runs only the ones whose names hold a word)
@@ -501,8 +503,10 @@ async function main() {
   const LISTED = {};
   try {
     const bad = [], order = [], secBad = [], wineBad = [], footBad = [];
+    const PAGE = {};
     REC.forEach((r, i) => {
       const h = String(D.G('v58PageHtml(' + JSON.stringify(r.id) + ')') || '');
+      PAGE[r.id] = h;
       const prob = pageProblem(h);
       if (prob) bad.push(r.key + ': ' + prob);
       const headAt = h.indexOf('<h2 tabindex="-1" class="v32-h">' + esc(r.producer) + '</h2>');
@@ -539,6 +543,28 @@ async function main() {
     check('the sources closed at the foot, every https source a link, then the houses before and after in the roster\'s order', footBad.length === 0, few(footBad, 6));
     const none = D.J('(function () { return { a: V58_VIEWS.flagship.accept("fl-00000000"), b: V58_VIEWS.flaggroup.accept("no-such-group"), c: v58PageHtml("fl-00000000").indexOf("v58-root") > 0 }; })()');
     check('an address naming nothing the device holds falls to the root', none.a === '' && none.b === '' && none.c === true, JSON.stringify(none));
+    /* In the Codex's grapes, by the gate's own reading: every door a page draws is a grape page the Codex holds, named
+       in the first statement of the wine's grapes (up to a semicolon or a full stop: what follows tells of other
+       vintages or another wine); and the wines whose grapes name a grape the bottle does not hold are pinned by name, a
+       grape denied (Climens), a crossing's parents (Lanzerac, Muller-Catoir), a name read short of a longer one
+       (Donnafugata's Muscat of Alexandria), a first vintage or another wine (Simonsig, Chave), beside two read whole */
+    const grams = D.J('(function (texts) { return texts.map(function (t) { var w = v58Fold(t).split(" ").filter(Boolean), out = []; for (var i = 0; i < w.length; i++) for (var n = 1; n <= 3 && i + n <= w.length; n++) { var k = ""; try { k = String(v53GrapeKey(w.slice(i, i + n).join(" ")) || ""); } catch (e) { k = ""; } if (k && out.indexOf(k) < 0) out.push(k); } return out; }); })(' + JSON.stringify(REC.map((r) => String((r.wine || {}).grapes || '').split(/;|\.(?:\s|$)/)[0])) + ')');
+    const GRAPE_PIN = { climens: { not: ['sauvignon-blanc'], has: ['semillon'] }, lanzerac: { not: ['pinot-noir'], has: ['pinotage'] }, 'muller-catoir': { not: ['silvaner', 'riesling'], has: [] }, donnafugata: { not: ['muscat-blanc'], has: [] }, simonsig: { not: ['chenin-blanc'], has: ['chardonnay', 'pinot-noir'] }, chave: { not: ['marsanne', 'roussanne'], has: ['syrah'] }, krug: { not: [], has: ['pinot-noir', 'chardonnay', 'meunier'] }, latour: { not: [], has: ['cabernet-sauvignon', 'merlot', 'cabernet-franc', 'petit-verdot'] } };
+    const grapeBad = [];
+    let grapeDoors = 0, pinned = 0;
+    REC.forEach((r, i) => {
+      const h = PAGE[r.id];
+      const at = h.indexOf('aria-labelledby="v58-s-codex"');
+      const doors = at >= 0 ? attrs(h.slice(at, h.indexOf('</section>', at)), /data-go="grape" data-arg="([^"]+)"/g) : [];
+      grapeDoors += doors.length;
+      doors.forEach((s) => { if (grams[i].indexOf(s) < 0) grapeBad.push(r.key + ': ' + s + ' is not named in the first statement of its grapes'); else if (!D.G('!!v53GrapeFind(' + JSON.stringify(s) + ')')) grapeBad.push(r.key + ': ' + s + ' opens no grape page'); });
+      const pin = GRAPE_PIN[r.key];
+      if (!pin) return;
+      pinned++;
+      pin.not.forEach((s) => { if (doors.indexOf(s) >= 0) grapeBad.push(r.key + ': a door to ' + s + ', a grape its bottle does not hold'); });
+      pin.has.forEach((s) => { if (doors.indexOf(s) < 0) grapeBad.push(r.key + ': no door to ' + s); });
+    });
+    check('In the Codex\'s grapes (' + grapeDoors + ' doors): each a grape page the Codex holds, named in the first statement of the wine\'s grapes; none to a grape denied, a crossing\'s parent, a name read short of a longer one, or another vintage or wine (' + pinned + ' pinned by name)', grapeDoors > REC.length && grapeBad.length === 0 && (PARTIAL || pinned === Object.keys(GRAPE_PIN).length), few(grapeBad, 5));
   } catch (e) { check('section 4 ran to its end', false, e && e.stack); }
 
   /* ================================================================ */
@@ -914,7 +940,11 @@ function mutations() {
     ['the sources left claret on the page\'s own ground', 'js/codex58.js', "'.wrap .v58-sources a{color:var(--gold-hi)}',", "'.wrap .v58-sources a{text-underline-offset:3px}',", 'every colour on its own ground'],
     ['a parchment colour on the page\'s own ground', 'js/codex58.js', "'.wrap .v58-oname{display:block;font-weight:700;color:var(--gold-hi);", "'.wrap .v58-oname{display:block;font-weight:700;color:var(--claret);", 'every colour on its own ground']
   ].concat(PARTIAL ? [] : [
-    ['an answer dealt again by hand', 'js/data-flagships.js', '"a":1,"exp":"', '"a":2,"exp":"', 'the counts pinned exact']
+    ['an answer dealt again by hand', 'js/data-flagships.js', '"a":1,"exp":"', '"a":2,"exp":"', 'the counts pinned exact'],
+    ['grapes read past their first statement', 'js/codex58.js', "  var first = String(text == null ? '' : text).split(/;|\\.(?:\\s|$)/)[0];", "  var first = String(text == null ? '' : text);", 'In the Codex\'s grapes'],
+    ['a denied grape given a door', 'js/codex58.js', "      if (v58Own(V58_DENY, words[i])) return;\n", '', 'In the Codex\'s grapes'],
+    ['a crossing\'s parents given doors', 'js/codex58.js', "    if (words.some(function (w) { return v58Own(V58_PARENTS, w); })) return;\n", '', 'In the Codex\'s grapes'],
+    ['a grape read short of a longer name', 'js/codex58.js', "      if (hit && words[i + len] === 'of') hit = '';\n", '', 'In the Codex\'s grapes']
   ]);
   const repoRoot = path.join(JS, '..');
   let held = 0;

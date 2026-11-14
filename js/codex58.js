@@ -616,20 +616,35 @@ function v58GroupHtml(key) {
 /* 3.3 a house, #/v/flagship/{id}: the house (its name, how to say it, where and since when); At the table first,
    the line for the table large as codex57 draws its forty-five second line; the flagship in full; the story; the
    house's other wines; the traps; In the Codex; the sources closed at the foot; the houses before and after it. */
+/* The grapes in the flagship's bottle, each a door to the Codex's own grape page (v53GrapeKey, the longest name
+   first). Only the first statement of the grapes is read, up to a semicolon or a full stop, since what follows it
+   tells of other vintages or another wine (the first vintage, of 1971, was Chenin Blanc; the family keeps its
+   Marsanne and Roussanne for the white Hermitage). Within it a clause naming a crossing names the parents, not the
+   wine (a crossing of Silvaner and Riesling); a grape after a word of denial is not in the bottle (with no Sauvignon
+   Blanc); and a name read short of a longer one the Codex does not know is no match (Muscat of Alexandria is never
+   the Codex's Muscat Blanc). A grape left out is a door missing; a grape not in the wine would be a wrong fact. */
+var V58_DENY = { no: 1, not: 1, nor: 1, never: 1, without: 1 };
+var V58_PARENTS = { crossing: 1, crossed: 1, cross: 1, parent: 1, parents: 1, bred: 1 };
 function v58GrapeSlugs(text) {
   var out = [];
   if (typeof v53GrapeKey !== 'function') return out;
-  var words = v58Fold(text).split(' ').filter(Boolean);
-  var i = 0;
-  while (i < words.length) {
-    var hit = '', len = 0;
-    for (var n = Math.min(3, words.length - i); n >= 1 && !hit; n--) {
-      var k = '';
-      try { k = v58Str(v53GrapeKey(words.slice(i, i + n).join(' '))); } catch (e) { k = ''; }
-      if (k) { hit = k; len = n; }
+  var first = String(text == null ? '' : text).split(/;|\.(?:\s|$)/)[0];
+  first.split(/[,:]/).forEach(function (clause) {
+    var words = v58Fold(clause).split(' ').filter(Boolean);
+    if (words.some(function (w) { return v58Own(V58_PARENTS, w); })) return;
+    var i = 0;
+    while (i < words.length) {
+      if (v58Own(V58_DENY, words[i])) return;
+      var hit = '', len = 0;
+      for (var n = Math.min(3, words.length - i); n >= 1 && !hit; n--) {
+        var k = '';
+        try { k = v58Str(v53GrapeKey(words.slice(i, i + n).join(' '))); } catch (e) { k = ''; }
+        if (k) { hit = k; len = n; }
+      }
+      if (hit && words[i + len] === 'of') hit = '';
+      if (hit) { if (out.indexOf(hit) < 0) out.push(hit); i += len; } else i++;
     }
-    if (hit) { if (out.indexOf(hit) < 0) out.push(hit); i += len; } else i++;
-  }
+  });
   return out.filter(function (s) { try { return typeof v53GrapeFind !== 'function' || !!v53GrapeFind(s); } catch (e) { return false; } });
 }
 function v58GrapeName(slug) {
