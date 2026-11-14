@@ -88,8 +88,8 @@
       each is due, the group's cards and the group's quiz).
 
    9. THE SHELL: index.html loads js/data-flagships.js then js/codex58.js
-      after codex57.js and before boot.js; the worker is codex-v117 and lists
-      both.
+      after codex57.js and before boot.js; the worker is codex-v118 (past the
+      records edition's codex-v117) and lists both.
 */
 
 /* =========== 1. the words =========== */
@@ -167,8 +167,8 @@ var V58_WORDS = {
   listHOwn: 'On {house} list',
   listHAt: 'On the list at {house}',
   listChip: 'On our list',
-  listOne: 'One wine of {name} is on the list. It opens its card.',
-  listMany: '{n} wines of {name} are on the list. Each opens its card.',
+  listOne: 'The list holds one wine of {name}. It opens its card.',
+  listMany: 'The list holds {n} wines of {name}. Each opens its card.',
   /* study: the cards */
   cardsDeck: 'Flagship cards',
   groupDeck: 'Flagship cards: {title}',
@@ -198,7 +198,7 @@ var V58_WORDS = {
   quizRowDue: '{d} due today · ten a round from {qs}',
   quizRowLine: 'Ten a round from {qs}, the ones due first · {r} answered right',
   groupStudyH: 'Study the five',
-  groupCardsRow: 'The five\'s cards',
+  groupCardsRow: 'Cards of the five',
   groupCardsNone: '{cards}, none studied yet',
   groupCardsDue: '{cards} · {d} due today',
   groupCardsLearnt: '{cards} · {m} learnt, none due today',
@@ -209,7 +209,7 @@ var V58_WORDS = {
   pageCardsNone: 'The two cards of {name}, not studied yet.',
   pageCardsDue: 'The two cards of {name}: {d} due today.',
   pageCardsLearnt: 'The two cards of {name}: {m} learnt, none due today.',
-  pageCardsDoor: 'Study the five\'s cards',
+  pageCardsDoor: 'Cards of the five',
   pageQuizDoor: 'Quiz on the five'
 };
 
