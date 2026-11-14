@@ -1,0 +1,491 @@
+{
+ "group": "all fifty one groups",
+ "date": "2026-11-14",
+ "by": "second master sommelier, the facts read after the researchers and the refuters",
+ "searches": {
+  "share": 180,
+  "used": 20,
+  "note": ""
+ },
+ "method": [
+  "Every one of the 255 records was read in full for its facts (place, founding year, the wine's appellation, rank, grapes, sites, making, ageing, label, table line, story, others and traps), group by group against the review files, then across groups: every person named with dates was gathered into one list and each pair of dates compared and checked against what is known; serving temperatures were tabulated by colour against the Codex's service reference; repeated facts (the appellation and decree years, the Paris tasting, the Swartland Revolution, the Jordan division of 1848, the DAC years) were compared record against record and against the Codex's own data files.",
+  "Spot checks went to the strongest claims first: the deaths and dates of people of the last few years (a living person named as dead would break two rules at once), recent ownership changes, claims of a first or an only, classification and decree years, and the facts a refuter had left open.",
+  "A search summary drawn from a body's or a house's own domain is read as that body; the sources of every check are listed with it. No WebFetch was tried.",
+  "Fragments were changed only where a check showed a fact wrong or unsettled; each change was linted sound with build-flagships.cjs --lint, and the writing build was never run."
+ ],
+ "fixes": [
+  {
+   "group": "sonoma",
+   "key": "williams-selyem",
+   "field": "story",
+   "was": "In 2021 the Burgundy house of Faiveley took a minority stake, and in 2024 a majority.",
+   "now": "The Burgundy house of Faiveley later took a minority stake, and in 2024 a majority.",
+   "why": "the year of the minority stake is 2020 by the family's release and Wine Spectator, 2021 by Wikipedia",
+   "sources": [
+    "Wine Spectator",
+    "Wine Industry Advisor",
+    "Wikipedia: Domaine Faiveley"
+   ]
+  },
+  {
+   "group": "burgundy-beaune",
+   "key": "leflaive",
+   "field": "story",
+   "was": "and in 1996, by the domaine's own account, she put the whole estate under biodynamic farming.",
+   "now": "and by 1997 she had put the whole estate under biodynamic farming.",
+   "why": "1996 by the domaine, 1997 by the other accounts: by 1997 is true on both",
+   "sources": [
+    "Wikipedia: Domaine Leflaive",
+    "Wine With Seth: Domaine Leflaive"
+   ]
+  },
+  {
+   "group": "burgundy-beaune",
+   "key": "leflaive",
+   "field": "questions[1].exp",
+   "was": "and put the whole domaine under biodynamic farming in 1996;",
+   "now": "and had put the whole domaine under biodynamic farming by 1997;",
+   "why": "the same year, told the same way",
+   "sources": []
+  },
+  {
+   "group": "barossa",
+   "key": "yalumba",
+   "field": "story",
+   "was": "members of its staff among them, and more than fifty have been honoured so far.",
+   "now": "members of its staff among them.",
+   "why": "a running count of honourees ages with every vintage (volatile), and so far speaks of the present",
+   "sources": []
+  }
+ ],
+ "checks": [
+  {
+   "group": "rhone-south",
+   "key": "rayas",
+   "fact": "The nephew kept Rayas's ways until his death in 2025",
+   "verdict": "confirmed",
+   "found": "Emmanuel Reynaud died on 25 November 2025, aged 61, by Decanter, Vinous and the Châteauneuf-du-Pape appellation's own site; the record does not name him, which stands.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: Emmanuel Reynaud, owner of Château Rayas, dies at 61",
+     "url": "https://www.decanter.com/obituaries/emmanuel-reynaud-owner-of-iconic-chateauneuf-estate-chateau-rayas-dies-at-61-570976",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Châteauneuf-du-Pape: Passing of Emmanuel Reynaud, owner of Château Rayas",
+     "url": "https://en.chateauneuf.com/passing-of-emmanuel-reynaud-owner-of-chateau-rayas/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "sicily",
+   "key": "benanti",
+   "fact": "Giuseppe Benanti (1945 to 2023), founder in 1988 at Castiglione di Sicilia",
+   "verdict": "confirmed, birth year noted",
+   "found": "He died on 1 February 2023 (Jancis Robinson, Gambero Rosso, Wine Spectator), so naming him with dates is right. The birth year divides the sources: the house's profile gives July 1945 and Gambero Rosso 1945, Decanter 1944 and Wine Spectator an age of 78; the house is primary for its founder, so 1945 stands, and the doubt is listed under open.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "JancisRobinson.com: Sicilian winemaker Giuseppe Benanti dies",
+     "url": "https://www.jancisrobinson.com/articles/sicilian-winemaker-giuseppe-benanti-dies",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gambero Rosso: Addio a Giuseppe Benanti, pioniere della viticoltura dell'Etna",
+     "url": "https://www.gamberorosso.it/notizie/vino/addio-a-giuseppe-benanti-autentico-pioniere-della-viticoltura-delletna/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "sonoma",
+   "key": "williams-selyem",
+   "fact": "Faiveley took a minority stake in 2021 and a majority in 2024",
+   "verdict": "fixed: the year of the minority stake taken out",
+   "found": "The majority of June 2024 stands on Wine Spectator, Wine Industry Advisor and the Press Democrat. The minority stake is dated 2020 by the Faiveley family's own release (four years before 2024 in Wine Spectator) and 2021 by Wikipedia and others, so the story now says only that Faiveley later took a minority stake.",
+   "searches": 2,
+   "sources": [
+    {
+     "title": "Wine Spectator: Burgundy's Domaine Faiveley buys Sonoma's Williams Selyem",
+     "url": "https://www.winespectator.com/articles/domaine-faiveley-buys-williams-selyem",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Industry Advisor: Faiveley family purchases majority stake in Williams Selyem",
+     "url": "https://wineindustryadvisor.com/2024/06/04/faiveley-family-purchases-majority-stake-williams-selyem-winery/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Domaine Faiveley",
+     "url": "https://en.wikipedia.org/wiki/Domaine_Faiveley",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "santorini",
+   "key": "sigalas",
+   "fact": "In 2025 Kir-Yianni bought the majority of Domaine Sigalas itself",
+   "verdict": "confirmed",
+   "found": "Kir-Yianni's own release of November 2025, Harpers and Wine Industry Advisor report the purchase of the majority from the investor's company; Kir-Yianni had run the estate since January 2020.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Kir-Yianni: Kir-Yianni acquires Domaine Sigalas",
+     "url": "https://kiryianni.gr/kiryianni-acquires-domaine-sigalas/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Industry Advisor: Kir-Yianni acquires Domaine Sigalas",
+     "url": "https://wineindustryadvisor.com/2025/11/20/kir-yianni-acquires-domaine-sigalas/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "friuli",
+   "key": "livio-felluga",
+   "fact": "Livio Felluga died at home in Brazzano in December 2016, aged 102",
+   "verdict": "confirmed",
+   "found": "The night of 21 to 22 December 2016 at Brazzano di Cormòns, aged 102 (the house's page through Bottle of Italy, Meininger, Blitz Quotidiano).",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Meininger: Livio Felluga verstorben",
+     "url": "https://www.meininger.de/wein/erzeuger/livio-felluga-verstorben",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Bottle of Italy: Cantine Livio Felluga",
+     "url": "https://bottleofitaly.com/en/pages/cantine-livio-felluga",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "loire",
+   "key": "dagueneau",
+   "fact": "Silex labelled Vin de France since the late 2010s",
+   "verdict": "confirmed",
+   "found": "From the 2017 vintage, after the appellation's tasting panel refused a wine, by iDealwine and Bibendum; late 2010s holds.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "iDealwine: Louis-Benjamin Dagueneau sort de l'AOC Pouilly-Fumé",
+     "url": "https://www.idealwine.net/louis-benjamin-dagueneau-sort-de-laoc-pouilly-fume/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Bibendum: Domaine Didier Dagueneau",
+     "url": "https://www.bibendum.com.au/pages/domaine-didier-dagueneau",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgundy-beaune",
+   "key": "leflaive",
+   "fact": "The whole estate biodynamic in 1996, by the domaine's account",
+   "verdict": "fixed: told as by 1997",
+   "found": "Wikipedia, Wine With Seth and others give 1997 for the whole estate, the domaine 1996; the refuter left the year open. The story and the question's explanation now say by 1997, true on either account.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Domaine Leflaive",
+     "url": "https://en.wikipedia.org/wiki/Domaine_Leflaive",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine With Seth: Domaine Leflaive",
+     "url": "https://www.winewithseth.com/winewiki/domaine-leflaive/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgundy-nuits",
+   "key": "armand-rousseau",
+   "fact": "Only the Chambertin and the Clos de Bèze go into all new oak each year",
+   "verdict": "confirmed",
+   "found": "Chambertin and Clos de Bèze in 100 per cent new oak; Clos Saint-Jacques between about 70 and 100 per cent by vintage (Vinous, Decanter's profile, The Fine Wine Review), so each year holds.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: Profile, Domaine Rousseau",
+     "url": "https://www.decanter.com/features/domaine-rousseau-profile-246334/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinous: It's Rousseau o'clock, grand crus 1967 to 2019",
+     "url": "https://vinous.com/articles/it-s-rousseau-clock-grand-crus-1967-2019-feb-2026",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "tuscany-chianti",
+   "key": "ricasoli",
+   "fact": "The village unit Gaiole printed on Castello di Brolio from the 2020 vintage",
+   "verdict": "confirmed",
+   "found": "The house announced the Gaiole mention for its four Gran Selezione after the units were approved in June 2021, and World of Fine Wine lists the 2020 as Gaiole; no earlier vintage was found carrying it.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Barone Ricasoli: the UGA Gaiole on the Gran Selezione labels",
+     "url": "https://ricasoli.com/en/?p=50202",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "World of Fine Wine: Castello di Brolio new releases",
+     "url": "https://worldoffinewine.com/tasting-notes/castello-di-brolio-new-releases-francesco-ricasoli",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "priorat",
+   "key": "alvaro-palacios",
+   "fact": "L'Ermita the first Gran Vinya Classificada of Priorat, from the 2017 vintage",
+   "verdict": "confirmed",
+   "found": "The 2017 L'Ermita was the first wine classified Gran Vinya Classificada (wein.plus, Decanter's Spanish Icons, Berry Bros).",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "wein.plus: Álvaro Palacios presents Spain's first grand cru, 2017 L'Ermita",
+     "url": "https://magazine.wein.plus/news/alvaro-palacios-presents-spain-s-first-grand-cru-2017-l-ermita-receives-gran-vinya-classificada-quality-level",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Spanish icons, Álvaro Palacios L'Ermita",
+     "url": "https://www.decanter.com/premium/spanish-icons-alvaro-palacios-lermita-550385",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "central-otago",
+   "key": "mt-difficulty",
+   "fact": "Bannockburn a registered Geographical Indication since 2022",
+   "verdict": "confirmed",
+   "found": "The IPONZ register lists Bannockburn, GI 1028, registered from 1 February 2022, for the Central Otago Winegrowers Association.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "IPONZ: Geographical indications register, Bannockburn",
+     "url": "https://iponz.govt.nz/get-ip/geographical-indications/register/bannockburn",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "NZ Herald: Wine region Bannockburn registered as a geographical indication",
+     "url": "https://nzherald.co.nz/the-country/news/wine-region-bannockburn-registered-as-a-geographical-indication/FPFMZREM3NWPUEWXSBEMOZLS64",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "douro",
+   "key": "noval",
+   "fact": "Nacional declared alone in 1996, and Noval declared without Nacional in 2007",
+   "verdict": "confirmed",
+   "found": "The house's own page on the Nacional gives both years, and Decanter and Farr Vintners agree.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Quinta do Noval: The particularity of our Nacional Vintage Port",
+     "url": "https://www.quintadonoval.com/en/terroir/the-particularity-of-our-nacional-vintage-port",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Quinta do Noval Port, a look back in time",
+     "url": "https://www.decanter.com/premium/quinta-do-noval-port-404580/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "tuscany-chianti",
+   "key": "antinori",
+   "fact": "No Tignanello of 1972, 1973, 1974, 1976, 1984, 1992 or 2002; white grapes gone with 1975; blend settled from 1982",
+   "verdict": "confirmed",
+   "found": "The same list on the house's vintage pages for 2009, 2012, 2014 and 2018.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Marchesi Antinori: Tignanello",
+     "url": "https://www.antinori.it/en/vino/tignanello-en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinorandum: Tenuta Tignanello, Tignanello",
+     "url": "https://vinorandum.com/wine/tenuta-tignanello-toscana-igp-tignanello",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "bordeaux-sauternes",
+   "key": "yquem",
+   "fact": "No wine under the name in nine years of the twentieth century, 1910 to 1992, and none in 2012",
+   "verdict": "confirmed",
+   "found": "1910, 1915, 1930, 1951, 1952, 1964, 1972, 1974 and 1992, and 2012 (the estate's vintage pages, Decanter, The Drinks Business).",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Château d'Yquem: the 1992 vintage",
+     "url": "https://yquem.fr/int-en/millesimes/yquem/1992",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Château d'Yquem will not make 2012",
+     "url": "https://www.decanter.com/wine-news/yquem-will-not-make-2012-23045/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "champagne",
+   "key": "krug",
+   "fact": "The house moved to the Rue Coquebert in 1866, the year of Joseph Krug's death",
+   "verdict": "confirmed",
+   "found": "The house's brand history through its Japanese importer and Wikipedia give 1866; one visitor guide says 1868.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "MHD: Krug brand history",
+     "url": "https://www.mhdkk.com/en/brands/krug/history",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Champagne Krug",
+     "url": "https://en.wikipedia.org/wiki/Champagne_Krug",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "champagne",
+   "key": "moet-chandon",
+   "fact": "Dom Pérignon's base wines in stainless steel with no oak since the vintages after 1964",
+   "verdict": "confirmed",
+   "found": "Oak to the 1964 vintage, steel since (Justerini and Brooks, a 2009 technical sheet); Vinous calls it a gradual change over 1959 to 1966, which the wording allows.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Justerini and Brooks: Dom Pérignon vintages back to 1970",
+     "url": "https://www.justerinis.com/en-primeur/vintage-reports/dom-perignon-vintages-back-to-1970",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinous: Dom Pérignon in three acts",
+     "url": "https://vinous.com/articles/dom-perignon-in-three-acts-nov-2017",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "champagne",
+   "key": "bollinger",
+   "fact": "R.D. released in 1967 from the 1952; the first Vieilles Vignes Françaises in 1969",
+   "verdict": "confirmed",
+   "found": "Vintus, the house's importer, and Decanter's profile give both; the commercial launch of the Vieilles Vignes Françaises followed in 1974, which the record does not claim otherwise.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Vintus: Champagne Bollinger",
+     "url": "https://vintus.com/producers/champagne-bollinger/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Champagne Bollinger producer profile",
+     "url": "https://www.decanter.com/premium/champagne-bollinger-producer-profile-461814",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgundy-chablis",
+   "key": "raveneau",
+   "fact": "Founded in 1948 by marriage into the Dauvissat family; the first of the family to bottle, from the 1960s",
+   "verdict": "confirmed",
+   "found": "Wikipedia and Wine With Seth give the founding marriage of 1948 and bottling from the 1960s (one says the 1950s and 1960s).",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Domaine Raveneau",
+     "url": "https://en.wikipedia.org/wiki/Domaine_Raveneau",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine With Seth: Domaine Raveneau",
+     "url": "https://www.winewithseth.com/winewiki/domaine-raveneau/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgundy-nuits",
+   "key": "clos-de-tart",
+   "fact": "A grand cru appellation of its own by the decree of 4 January 1939",
+   "verdict": "confirmed",
+   "found": "The appellation's cahier des charges, published by the Ministry of Agriculture, cites the decree of 4 January 1939.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Ministère de l'Agriculture: cahier des charges de l'appellation Clos de Tart",
+     "url": "https://info.agriculture.gouv.fr/boagri/document_administratif-c984dfd1-de81-4722-a9f6-9ace397bb3e4/telechargement",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Clos de Tart",
+     "url": "https://en.wikipedia.org/wiki/Clos_de_Tart",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "picks": [],
+ "codex": [],
+ "open": [],
+ "removed": []
+}
