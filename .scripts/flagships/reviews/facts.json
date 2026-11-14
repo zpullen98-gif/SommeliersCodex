@@ -4,14 +4,14 @@
  "by": "second master sommelier, the facts read after the researchers and the refuters",
  "searches": {
   "share": 180,
-  "used": 20,
-  "note": ""
+  "used": 75,
+  "note": "Each search is counted on the check it served; four checks took more than one (Thanisch three; Williams Selyem, Dr. Loosen and Huet two each), for a second question or where a first search drifted (Thanisch to another branch of the family, Faiveley to a railway, Huet's camp to other camps) and was run again more narrowly. Every check that confirmed a fact rests on two independent sources or on one primary; none went unsourced, so nothing was removed for want of a search."
  },
  "method": [
-  "Every one of the 255 records was read in full for its facts (place, founding year, the wine's appellation, rank, grapes, sites, making, ageing, label, table line, story, others and traps), group by group against the review files, then across groups: every person named with dates was gathered into one list and each pair of dates compared and checked against what is known; serving temperatures were tabulated by colour against the Codex's service reference; repeated facts (the appellation and decree years, the Paris tasting, the Swartland Revolution, the Jordan division of 1848, the DAC years) were compared record against record and against the Codex's own data files.",
-  "Spot checks went to the strongest claims first: the deaths and dates of people of the last few years (a living person named as dead would break two rules at once), recent ownership changes, claims of a first or an only, classification and decree years, and the facts a refuter had left open.",
+  "Every one of the 255 records was read in full for its facts (place, founding year, the wine's appellation, rank, grapes, sites, making, ageing, label, table line, story, others and traps), group by group against the review files, then across groups: every person named with dates was gathered into one list and each pair of dates compared and checked against what is known; serving temperatures were tabulated by colour against the Codex's service reference; founding years were read against the library; repeated facts (the appellation and decree years, the Paris tasting, the Swartland Revolution, the Jordan division of 1848, the DAC years) were compared record against record and against the Codex's own data files.",
+  "Spot checks went to the strongest claims first: the deaths and dates of people of the last few years (a living person named as dead would break two rules at once), recent ownership changes, claims of a first or an only, classification and decree years, the facts a refuter had left open, and then the dated milestones a guest is likeliest to ask about.",
   "A search summary drawn from a body's or a house's own domain is read as that body; the sources of every check are listed with it. No WebFetch was tried.",
-  "Fragments were changed only where a check showed a fact wrong or unsettled; each change was linted sound with build-flagships.cjs --lint, and the writing build was never run."
+  "Fragments were changed only where a check showed a fact wrong, unsettled or volatile, or a serving temperature out of line; each change was linted sound with build-flagships.cjs --lint, and the writing build was never run. plan.json, people.json and the Codex's own files were not edited: what they need is listed under planWhys and codex."
  ],
  "fixes": [
   {
@@ -56,6 +56,30 @@
    "now": "members of its staff among them.",
    "why": "a running count of honourees ages with every vintage (volatile), and so far speaks of the present",
    "sources": []
+  },
+  {
+   "group": "mosel",
+   "key": "jj-prum",
+   "field": "wine.serve",
+   "was": "8 to 10 degrees Celsius; decant a young bottle briefly so the struck match can clear; a white wine glass.",
+   "now": "6 to 8 degrees Celsius; decant a young bottle briefly so the struck match can clear; a white wine glass.",
+   "why": "an Auslese is a sweet white: the Codex's service reference and the WSET give 6 to 8, and every other sweet white of the roster stands there",
+   "sources": [
+    "WSET Level 1 workbook",
+    "Codex service reference"
+   ]
+  },
+  {
+   "group": "mosel",
+   "key": "dr-loosen",
+   "field": "wine.serve",
+   "was": "8 to 10 degrees Celsius; no need to decant; a white wine glass and a modest pour, with blue cheese or a fruit tart.",
+   "now": "6 to 8 degrees Celsius; no need to decant; a white wine glass and a modest pour, with blue cheese or a fruit tart.",
+   "why": "the same as Prüm's Auslese",
+   "sources": [
+    "WSET Level 1 workbook",
+    "Codex service reference"
+   ]
   }
  ],
  "checks": [
@@ -482,10 +506,1432 @@
      "read": "search"
     }
    ]
+  },
+  {
+   "group": "burgundy-beaune",
+   "key": "coche-dury",
+   "fact": "Corton-Charlemagne a grand cru by the decree of 31 July 1937; Charlemagne's gift of 775 to Saint-Andoche at Saulieu; the beard told as legend",
+   "verdict": "confirmed",
+   "found": "Wikipedia's Corton-Charlemagne and Farr Vintners give the decree of 31 July 1937 and the gift of 775; the beard is folklore, as the record says.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Corton-Charlemagne",
+     "url": "https://en.wikipedia.org/wiki/Corton-Charlemagne",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Farr Vintners: Corton-Charlemagne, the grand cru of the future?",
+     "url": "https://www.frw.co.uk/editorial/corton-charlemagne-grand-cru-of-the-future",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "rhone-north",
+   "key": "jaboulet",
+   "fact": "Founded in 1834 by Antoine Jaboulet (1807 to 1864); the chapel of Saint-Christophe bought in 1919",
+   "verdict": "confirmed",
+   "found": "The house's own history gives Antoine Jaboulet's dates and the chapel of 1919; The Wine Society gives 1834. One trade site's 1929 is the outlier.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Paul Jaboulet Aîné: Our history",
+     "url": "https://jaboulet.com/our-history/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The Wine Society: Paul Jaboulet Aîné",
+     "url": "https://www.thewinesociety.com/producer/paul-jaboulet-aine",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "rhone-north",
+   "key": "chave",
+   "fact": "Growers since 1481 by the family's account; first parcels on the hill of Hermitage bought in 1865",
+   "verdict": "confirmed",
+   "found": "The label's Vignerons de père en fils depuis 1481 and Decanter through Grand Cru Selections; 1865 for the first Hermitage parcels in two accounts.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Grand Cru Selections: Domaine Jean-Louis Chave",
+     "url": "https://grandcruselections.com/domaine-jeanlouis-chave",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Thienpont Wine: Jean-Louis Chave",
+     "url": "https://www.thienpontwine.com/en/producer/jean-louis-chave",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "rhone-north",
+   "key": "clape",
+   "fact": "Came to Cornas by marriage in 1949; the first grower of the village to bottle, in the 1950s; died in 2018 aged 93",
+   "verdict": "confirmed",
+   "found": "Wine Spectator and Decanter: died 13 July 2018 aged 93; married in 1949; first to bottle in Cornas in 1957 by most accounts, within the record's 1950s.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wine Spectator: Legendary Northern Rhône vintner Auguste Clape dies at 93",
+     "url": "https://www.winespectator.com/webfeature/show/id/Auguste-Clape-Dies-at-93",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Cornas pioneer Pierre-Auguste Clape dies",
+     "url": "https://www.decanter.com/wine-news/opinion/cornas-pierre-auguste-clape-has-died-397786",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "rhone-south",
+   "key": "clos-des-papes",
+   "fact": "An Avril first bottled the estate's wine as Clos des Papes in 1896; the family's records back to 1600, as the family tells it",
+   "verdict": "confirmed",
+   "found": "Decanter's producer profile dates the first bottled vintage to 1896 (the name registered in 1902); 1600 rests on the family and the record hedges it.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: Producer profile, Clos des Papes",
+     "url": "https://www.decanter.com/premium/producer-profile-clos-des-pape-420365/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "The Wine Cellar Insider: Clos des Papes",
+     "url": "https://www.thewinecellarinsider.com/rhone-wines-cote-rotie-hermitage-chateauneuf-du-pape/chateauneuf-du-pape-wine-producer-profiles/clos-des-papes-chateauneuf-du-pape-wine",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "mosel",
+   "key": "dr-loosen",
+   "fact": "A son of the family took over in 1988 and the estate joined the VDP in 1993; an estate in the Pfalz",
+   "verdict": "confirmed",
+   "found": "The estate's own pages give its leadership since 1988 and VDP membership since 1993; Wikipedia gives the J.L. Wolf estate in the Pfalz from 1996.",
+   "searches": 2,
+   "sources": [
+    {
+     "title": "Weingut Dr. Loosen: About us",
+     "url": "https://drloosen.de/en/pages/uber-uns",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Ernst Loosen",
+     "url": "https://en.wikipedia.org/wiki/Ernst_Loosen",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "mosel",
+   "key": "thanisch",
+   "fact": "The head of the family died in 1895 at forty one; the holdings divided between heirs in 1988",
+   "verdict": "confirmed",
+   "found": "Wein.plus gives Dr Hugo Thanisch's dates as 1853 to 1895 and the division of 1988; the estate's own site tells the division under Napoleonic inheritance law without a year.",
+   "searches": 3,
+   "sources": [
+    {
+     "title": "wein.plus: Wwe. Dr. H. Thanisch Erben Thanisch",
+     "url": "https://glossary.wein.plus/wwe-dr-h-thanisch-erben-thanisch-2",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Weingut Dr. H. Thanisch: Welcome",
+     "url": "https://www.dr-thanisch.de/en/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "napa",
+   "key": "montelena",
+   "fact": "The Paris Chardonnay of 1973 drew most of its fruit from Sonoma County",
+   "verdict": "confirmed",
+   "found": "The winery's own figures of 2014 give 39 per cent Belle Terre in Alexander Valley and 35 per cent Bacigalupi in the Russian River Valley, both Sonoma, against 23 per cent Oak Knoll and 3 per cent Calistoga; Decanter's Wine Legend agrees on the Sonoma lead.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: Wine Legend, Chateau Montelena 1973",
+     "url": "https://www.decanter.com/learn/wine-legend-chateau-montelena-1973-305096/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Prince of Pinot: Bacigalupi family celebrates the Judgment of Paris",
+     "url": "https://www.princeofpinot.com/article/1811/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "bordeaux-sauternes",
+   "key": "climens",
+   "fact": "Bought in 1971 by a Bordeaux family; a daughter ran it from 1992; a majority sold in 2022",
+   "verdict": "confirmed",
+   "found": "A majority stake was sold on 4 July 2022 to the Moitry family's Patrimonia Développement (Decanter, Vert de Vin).",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: Château Climens gets new majority owner after stake sale",
+     "url": "https://www.decanter.com/wine-news/chateau-climens-gets-new-majority-owner-after-stake-sale-483504",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vert de Vin: A majority stake at Château Climens is sold",
+     "url": "https://vertdevin.com/en/a-majority-stake-at-chateau-climens-is-sold-to-patrimonia-developpement/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "alsace",
+   "key": "trimbach",
+   "fact": "Citizen of Riquewihr in 1626; the house moved to Ribeauvillé in 1920; the first Clos Ste Hune label of the 1919 vintage",
+   "verdict": "confirmed",
+   "found": "The house's own history page gives 1626, 1920 and the label of 1919; Wikipedia agrees on 1626.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Trimbach: Notre histoire",
+     "url": "https://www.trimbach.fr/en/notre-histoire",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Maison Trimbach",
+     "url": "https://en.wikipedia.org/wiki/Maison_Trimbach",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgenland",
+   "key": "kracher",
+   "fact": "Every Trockenbeerenauslese of the year numbered since 1995, the denser the higher",
+   "verdict": "confirmed",
+   "found": "The estate's own definitions page.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Weinlaubenhof Kracher: Definitions",
+     "url": "https://www.kracher.at/en/news_press/definitions",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "margaret-river",
+   "key": "vasse-felix",
+   "fact": "Dr Tom Cullity (1925 to 2008)",
+   "verdict": "kept on the house's page",
+   "found": "The search found the founding of 1967 (Wikipedia) but no second source for the year of death; the dates rest on the house's own history, primary for its founder, as the record's report says.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Vasse Felix",
+     "url": "https://en.wikipedia.org/wiki/Vasse_Felix",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vasse Felix: Our story (the record's source, not re-read here)",
+     "url": "https://www.vassefelix.com.au/our-story",
+     "kind": "primary",
+     "read": "record"
+    }
+   ]
+  },
+  {
+   "group": "ribera-del-duero",
+   "key": "vega-sicilia",
+   "fact": "Prodes bought the estate in 1950 and it passed to a Venezuelan buyer in 1965",
+   "verdict": "kept on the house's history",
+   "found": "The house's group gives 1950 for Prodes; other accounts give 1952 for Prodes and 1964 or 1966 for the Neumann purchase. The record rests these years on the house's own history page, primary for its own dates, and they are kept with the doubt listed under open.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Tempos Vega Sicilia: the wineries",
+     "url": "https://temposvegasicilia.com/en/presentation/wineries/4/alion",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "El Español: Pablo Álvarez at the head of Vega Sicilia",
+     "url": "https://www.elespanol.com/reportajes/20241116/anos-pablo-alvarez-frente-vega-sicilia-mejores-bodegas-mundo-ano-facturaremos-millones/900910412_0.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "rioja",
+   "key": "muga",
+   "fact": "The first Prado Enea at the end of the 1960s",
+   "verdict": "confirmed",
+   "found": "Decanter's Spanish Icons gives 1969 as the first vintage.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: Spanish icons, Muga Prado Enea Gran Reserva",
+     "url": "https://www.decanter.com/premium/spanish-icons-muga-prado-enea-gran-reserva-550671",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine With Seth: Bodegas Muga",
+     "url": "https://www.winewithseth.com/winewiki/muga/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "douro",
+   "key": "barca-velha",
+   "fact": "The 2015, released after nine years, was the twenty first Barca Velha since 1952",
+   "verdict": "confirmed",
+   "found": "Sogrape's own release of 2024 calls the 2015 the twenty first vintage since 1952, on the market from June 2024.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Sogrape: Barca Velha 2015, the 21st vintage",
+     "url": "https://sogrape.com/press/barca-velha-2015-21st-vintage-of-douros-most-iconic-wine",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The Drinks Business: Casa Ferreirinha Barca Velha 2015 released",
+     "url": "https://www.thedrinksbusiness.com/2024/07/outstanding-casa-ferreirinha-barca-velha-2015-released/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "veneto",
+   "key": "quintarelli",
+   "fact": "No Amarone declared in 2008 and 2010; the wine went out as Rosso del Bepi",
+   "verdict": "confirmed",
+   "found": "Lea and Sandeman and Nick's give 2008 and 2010 as Rosso del Bepi years, with Amarone in 2009 and 2011.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Lea and Sandeman: 2008 Rosso del Bepi, Quintarelli",
+     "url": "https://www.leaandsandeman.co.uk/wine/2008-ROSSO-DEL-BEPI-Quintarelli-28033-00.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Nick's: 2010 Quintarelli Rosso del Bepi",
+     "url": "https://www.nicks.com.au/2010-quintarelli-rosso-del-bepi",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "friuli",
+   "key": "jermann",
+   "fact": "Founded 1881; trials from the 1973 harvest, the first Vintage Tunina of 1975; Antinori took a majority in 2021",
+   "verdict": "confirmed",
+   "found": "Gambero Rosso and Decanter report the majority of March 2021; Bottle of Italy and others give 1881 and the 1973 harvest released as 1975.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Gambero Rosso: Antinori acquisisce la maggioranza della cantina Jermann",
+     "url": "https://www.gamberorosso.it/attualita/antinori-acquisisce-la-maggioranza-della-cantina-jermann/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Antinori begins Friuli white wine venture with Jermann",
+     "url": "https://www.decanter.com/wine-news/antinori-jermann-friuli-white-wine-455958",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "pfalz",
+   "key": "burklin-wolf",
+   "fact": "Albert Bürklin (1844 to 1924) married into the Wolf family in 1875; his great nephew Albert Bürklin (1907 to 1979) inherited in 1924; the eldest daughter took over in 1990",
+   "verdict": "confirmed",
+   "found": "Wein.plus gives the great nephew's dates and the inheritance of 1924, Skurnik the marriage of 1875 and the takeover of 1990.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "wein.plus: Dr. Bürklin-Wolf",
+     "url": "https://glossary.wein.plus/dr-buerklin-wolf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Skurnik: Dr. Bürklin-Wolf",
+     "url": "https://www.skurnik.com/producer/weingut-dr-burklin-wolf-e-k/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "wachau",
+   "key": "hirtzberger",
+   "fact": "The Singerriedel first recorded in 1486; the son of the house led the Vinea Wachau from 1988 to 2012",
+   "verdict": "confirmed",
+   "found": "The Vinea Wachau's own vineyard sheet (1486) and company page (24 years as president from 1988).",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Vinea Wachau: Ried Singerriedel",
+     "url": "https://www.vinea-wachau.at/en/mywachau/vineyards/vineyard-details/myw_vineyard/singerriedel/PDF",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinea Wachau: Weingut Franz Hirtzberger",
+     "url": "https://www.vinea-wachau.at/en/mywachau/companies/company-details/myw_company/weingut-franz-hirtzberger",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "napa",
+   "key": "heitz",
+   "fact": "Martha's Vineyard bottled apart from the 1966 vintage; none made from 1993 to 1995 after phylloxera",
+   "verdict": "confirmed",
+   "found": "Wikipedia's Heitz article and Wine Business International give both.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Heitz Wine Cellars",
+     "url": "https://en.wikipedia.org/wiki/Heitz_Wine_Cellars",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Business International: California with restraint",
+     "url": "https://www.wine-business-international.com/wine/power-lists/california-restraint",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "barossa",
+   "key": "penfolds",
+   "fact": "The 1951 Grange experimental and never sold; the 1952 the first released; 1957 to 1959 made in secret; open again from the 1960 vintage",
+   "verdict": "confirmed",
+   "found": "The house's own story of Grange and Langton's history agree.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Penfolds: The story of Grange",
+     "url": "https://www.penfolds.com/en/about-us/the-story-of-grange.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Langton's: The story of Penfolds Grange",
+     "url": "https://www.langtons.com.au/the-story-of-penfolds-grange.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "barossa",
+   "key": "seppeltsfield",
+   "fact": "The Centennial Cellar finished in 1878; a puncheon of that year laid down for a century and released in 1978, a cask of every vintage since",
+   "verdict": "confirmed",
+   "found": "The estate's own pages on the Centennial Cellar and the provenance of Para, and Decanter.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Seppeltsfield: Centennial Cellar, birthplace of Para",
+     "url": "https://seppeltsfield.com.au/centennial-cellar-birthplace-of-para/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Seppeltsfield releases 1923 100 Year Old Para Vintage Tawny",
+     "url": "https://www.decanter.com/wine-news/seppeltsfield-releases-1923-100-year-old-para-vintage-tawny-497506/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "stellenbosch",
+   "key": "kanonkop",
+   "fact": "The first wines under the Kanonkop label in 1973; the first Paul Sauer of 1981",
+   "verdict": "confirmed",
+   "found": "The estate's own story pages and Club Oenologique.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Kanonkop: Our story",
+     "url": "https://kanonkop.co.za/our-story/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Anorak: 50 years of Kanonkop",
+     "url": "https://wineanorak.com/?p=17609",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "stellenbosch",
+   "key": "meerlust",
+   "fact": "Bought by the Myburgh family in 1756; the homestead of 1776; Rubicon from the 1980 vintage, named on the suggestion of a Stellenbosch professor",
+   "verdict": "confirmed",
+   "found": "World of Fine Wine and Wine Anorak give 1756, 1776, the 1980 first vintage (released 1984) and Professor Opperman's suggestion. The father's death in 1988 was not in these results and rests on the refuter's sources.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "World of Fine Wine: Meerlust, beyond the Rubicon",
+     "url": "https://worldoffinewine.com/news-features/meerlust-beyond-the-rubicon",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Anorak: Meerlust, tasting right back to the beginning",
+     "url": "https://wineanorak.com/2025/05/15/meerlust-visiting-this-important-stellenbosch-winery-and-tasting-right-back-to-the-beginning/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "willamette",
+   "key": "domaine-serene",
+   "fact": "Ken Evenstad (1943 to 2020), of Upsher-Smith, founded the estate with his wife in 1989",
+   "verdict": "confirmed",
+   "found": "The Oregon Wine Press tribute (1943 to 2020), Wine Industry Advisor's obituary (died 21 October 2020) and Drug Store News.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Oregon Wine Press: Ken Evenstad, 1943 to 2020",
+     "url": "https://www.oregonwinepress.com/ken-evenstad-1943-2020",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Industry Advisor: Ken Evenstad obituary",
+     "url": "https://wineindustryadvisor.com/2020/10/26/ken-evenstad-obituary",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "alsace",
+   "key": "zind-humbrecht",
+   "fact": "Biodynamic farming from 1997, certified in 2002; the founders' son France's first Master of Wine in 1989",
+   "verdict": "confirmed",
+   "found": "Biodyvin's member page and Alliance Wine give the biodynamic years; several sources give the MW of 1989.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Biodyvin: Domaine Zind-Humbrecht",
+     "url": "https://www.biodyvin.com/en/our-members/98-domaine-zind-humbrecht.html",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Alliance Wine: Domaine Zind-Humbrecht",
+     "url": "https://www.alliancewine.com/our-producers/domaine-zind-humbrecht",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "santorini",
+   "key": "sigalas",
+   "fact": "The Santorini PDO asks a dry white for at least 85 per cent Assyrtiko (Gaia's label line says the same); Vinsanto at least 51 per cent",
+   "verdict": "confirmed",
+   "found": "Wines of Greece and Wine With Seth give 85 per cent, raised from 75 per cent by the amendment of 2022; Vinsanto's 51 per cent agrees across sources.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wines of Greece: PDO Santorini",
+     "url": "https://winesofgreece.org/?p=1094",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine With Seth: Santorini PDO rules",
+     "url": "https://www.winewithseth.com/winewiki/santorini-pdo-rules-assyrtiko-indigenous-white-wines/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "central-otago",
+   "key": "gibbston-valley",
+   "fact": "The Reserve Pinot Noir of 2000 won the Pinot Noir trophy at the International Wine Challenge in London",
+   "verdict": "confirmed",
+   "found": "Scoop's releases of 2004 and 2010 record the London trophy for the Reserve 2000.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Scoop: Gibbston Valley Wines strikes hat trick",
+     "url": "https://www.scoop.co.nz/stories/BU0411/S00188/gibbston-valley-wines-strikes-hat-trick.htm",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Scoop: Major trophy for Gibbston Valley Pinot Noir",
+     "url": "https://scoop.co.nz/stories/BU1002/S00659/major-trophy-for-gibbston-valley-pinot-noir.htm",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "coonawarra",
+   "key": "lindemans",
+   "fact": "St George's 1980 vintage won the Jimmy Watson Trophy",
+   "verdict": "confirmed",
+   "found": "Melbourne Royal's own list of past winners gives Lindemans St George Vineyard Cabernet Sauvignon 1980 at the show of 1981.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Melbourne Royal: Past Jimmy Watson Memorial Trophy winners",
+     "url": "https://www.melbourneroyal.com.au/melbourne-royal-wine-awards/results/past-jimmy-watson-memorial-trophy-winners/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Jimmy Watson Memorial Trophy",
+     "url": "https://en.wikipedia.org/wiki/Jimmy_Watson_Memorial_Trophy",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "margaret-river",
+   "key": "cape-mentelle",
+   "fact": "The Jimmy Watson Trophy in 1983 for the 1982 and in 1984 for the 1983",
+   "verdict": "confirmed",
+   "found": "Melbourne Royal's list and Decanter's Wine Legend.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Melbourne Royal: Past Jimmy Watson Memorial Trophy winners",
+     "url": "https://www.melbourneroyal.com.au/melbourne-royal-wine-awards/results/past-jimmy-watson-memorial-trophy-winners/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Wine Legend, Cape Mentelle Cabernet Sauvignon 1983",
+     "url": "https://www.decanter.com/learn/wine-legend-cape-mentelle-cabernet-sauvignon-1983-450885/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "maipo",
+   "key": "concha-y-toro",
+   "fact": "Don Melchor first made in 1987; DM/01 from Parcel 1, planted in 1979, first released with the 2022 vintage",
+   "verdict": "confirmed",
+   "found": "Moodie Davitt and El Dínamo on the release of DM/01 2022 from Parcel 1, planted in 1979; the first vintage of 1987 in the same reports.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Moodie Davitt Report: Viña Don Melchor unveils the first release of The Parcels",
+     "url": "https://moodiedavittreport.com/?p=455633",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "El Dínamo: Viña Don Melchor inaugura una nueva era con DM/01",
+     "url": "https://www.eldinamo.cl/economia/negocios-economia/2025/08/14/vina-don-melchor-inaugura-una-nueva-era-con-dm-01-el-alma-de-una-parcela-legendaria/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "tuscany-montalcino",
+   "key": "biondi-santi",
+   "fact": "The 1888 kept at Greppo, topped up and recorked in 1927, 1970 and 1985",
+   "verdict": "kept on the estate's pages",
+   "found": "Club Oenologique confirms the topping and recorking programme from 1927 and the bottles of 1888 and 1891 in the estate's cellar; the later years rest on the estate's own pages, as the record's report says.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Club Oenologique: Behind the bottle, Biondi-Santi Brunello di Montalcino",
+     "url": "https://cluboenologique.com/story/behind-the-bottle-biondi-santi-brunello-di-montalcino-wine/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Biondi-Santi: Brunello di Montalcino Riserva 1888 (the record's source, not re-read here)",
+     "url": "https://www.biondisanti.it/en/prodotti/vini/7/vini/79/index.php?p=prodotti&lg=en&id_cat=7&id_prod=79&a=1888",
+     "kind": "primary",
+     "read": "record"
+    }
+   ]
+  },
+  {
+   "group": "rheingau",
+   "key": "kloster-eberbach",
+   "fact": "The Steinberg named in 1211; its wall finished in 1767; Cabinet first written at Eberbach in 1712",
+   "verdict": "confirmed",
+   "found": "KuLaDig (the Hessian monument office) for 1211, Wikipedia and others for the wall of 1767 (one entry says 1766), wein.plus for the Cabinet of 1712.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Steinberg, Kloster Eberbach",
+     "url": "https://en.wikipedia.org/wiki/Steinberg,_Kloster_Eberbach",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "KuLaDig: Steinberg vineyard wall",
+     "url": "https://www.kuladig.de/Objektansicht/Drucken/P-TB-20100918-0022",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "pfalz",
+   "key": "muller-catoir",
+   "fact": "Rieslaner bred in Franconia in 1921 and approved for the Pfalz in 1968",
+   "verdict": "confirmed",
+   "found": "Wikipedia and the German encyclopedia entries give the crossing of 1921 at Würzburg and the release for Franconia and the Pfalz in 1968.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Rieslaner",
+     "url": "https://en.wikipedia.org/wiki/Rieslaner",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "wein.plus: Rieslaner",
+     "url": "https://glossary.wein.plus/rieslaner",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "veneto",
+   "key": "bisol",
+   "fact": "Conegliano Valdobbiadene a DOC on 2 April 1969 with Cartizze a subzone of its own; DOCG in 2009",
+   "verdict": "confirmed",
+   "found": "Italian Wine Central gives the DOC of 2 April 1969 and the DOCG of 2009; the consorzio's own pages agree on the years.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Italian Wine Central: Conegliano Valdobbiadene Prosecco DOCG",
+     "url": "https://italianwinecentral.com/denomination/conegliano-valdobbiadene-prosecco-docg/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Consorzio Conegliano Valdobbiadene: types of wine",
+     "url": "https://www.prosecco.it/en/conegliano-valdobbiadene-prosecco-superiore-docg/types-of-wine/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgundy-beaune",
+   "key": "bouchard",
+   "fact": "Michel Bouchard (1692 to 1755) settled in Beaune in 1731; his son his partner in 1746; the first vines in Volnay Les Caillerets in 1775",
+   "verdict": "confirmed",
+   "found": "The house's own heritage page gives the dates and the years; Fells and Grand Cru Wijnen agree on 1775.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Bouchard Père et Fils: Our heritage",
+     "url": "https://bouchard-pereetfils.com/en/le-domaine",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Fells: Bouchard Père et Fils",
+     "url": "https://fells.co.uk/our-producers/bouchard-pere-fils/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "pfalz",
+   "key": "bassermann-jordan",
+   "fact": "Ludwig Bassermann-Jordan (1869 to 1914) and Friedrich von Bassermann-Jordan (1872 to 1959); the history of viticulture of 1907",
+   "verdict": "confirmed",
+   "found": "Wein.plus gives both brothers' dates and the three volumes of 1907; the founding of the natural wine auctioneers' association in 1910 was not in these results and rests on the refuter's sources.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "wein.plus: Bassermann-Jordan",
+     "url": "https://glossary.wein-plus.eu/bassermann-jordan",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Rheinpfalz: Weingut Bassermann-Jordan prägt pfälzische Weinkultur",
+     "url": "https://www.rheinpfalz.de/wirtschaft_artikel,-weingut-bassermann-jordan-pr%C3%A4gt-pf%C3%A4lzische-weinkultur-_arid,922509.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "hunter",
+   "key": "tyrrells",
+   "fact": "Dan Tyrrell (1871 to 1959) made his first wine in 1885, at fourteen; the house and the Australian Dictionary of Biography date his father's first vintage to 1864",
+   "verdict": "confirmed",
+   "found": "The Australian Dictionary of Biography gives Dan Tyrrell's dates, his first vintage at fourteen in 1885 and his father's first vintage of 1864; the land of 1858 rests on the house's own history, as the record says.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Australian Dictionary of Biography: Tyrrell, Edward George Young (Dan)",
+     "url": "https://adb.anu.edu.au/biography/tyrrell-edward-george-young-dan-11897",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "tuscany-montalcino",
+   "key": "soldera",
+   "fact": "He left the consorzio in March 2013, and from the 2006 vintage, which the attack did not reach, his wine has been labelled Toscana IGT",
+   "verdict": "confirmed",
+   "found": "The estate's own page for its Toscana IGT 2006 gives the resignation from the consorzio and the IGT label taking effect in 2013 with the 2006 vintage; Wine With Seth and Justerini and Brooks tell the same, and the sabotage of 2 December 2012 agrees across them.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Soldera: Toscana IGP 100 per cent Sangiovese Soldera Case Basse 2006",
+     "url": "https://www.soldera.it/en/toscana-sangiovese-igt-soldera-2006-2/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine With Seth: Case Basse, Soldera",
+     "url": "https://www.winewithseth.com/winewiki/case-basse-soldera/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Justerini and Brooks: Case Basse di Gianfranco Soldera",
+     "url": "https://www.justerinis.com/fine-wines/italy/case-basse-di-gianfranco-soldera",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "veneto",
+   "key": "masi",
+   "fact": "Campofiorin made by the Ripasso method in 1964 and first sold in 1967",
+   "verdict": "confirmed",
+   "found": "The Drinks Business and Decanter give the wine made in 1964 and on the market in 1967; the Codex's own card says the same.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "The Drinks Business: Why Masi is revamping Campofiorin",
+     "url": "https://www.thedrinksbusiness.com/2023/10/why-masi-is-revamping-campofiorin/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Masi's Campofiorin, the evolution of a groundbreaking wine",
+     "url": "https://www.decanter.com/sponsored/masis-campofiorin-the-evolution-of-a-groundbreaking-wine-516304/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "piedmont",
+   "key": "giacomo-conterno",
+   "fact": "Monfortino only from Cascina Francia from the 1978 vintage; the 2015 the first to add a selection from Arione",
+   "verdict": "confirmed",
+   "found": "Merchants' notes on the 2015 (Farr Vintners, Grand Cru Wijnen, Rare Wine Co) give the first Arione fruit in Monfortino with that vintage, about a fifth of the blend, and a single vineyard wine from 1978 to 2014; one technical sheet says since 2019, against the rest, so the record stands and the Codex's holdings line for Monfortino (Cascina Francia since 1978) is out of date.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Farr Vintners: Giacomo Conterno Barolo Riserva Monfortino 2015",
+     "url": "https://farrvintners.com/wine.php?wine=72437",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grand Cru Wijnen: 2015 Giacomo Conterno Barolo Riserva Monfortino",
+     "url": "https://www.grandcruwijnen.nl/en/2015-giacomo-conterno-barolo-riserva-monfortino",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Rare Wine Co: Giacomo Conterno technical sheet",
+     "url": "https://www.rarewineco.com/media/167311/conterno-tech-sheet.pdf",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "napa",
+   "key": "stags-leap",
+   "fact": "From the 1990 vintage Cask 23 blended S.L.V. and FAY; by the house's count that 1990 was only the tenth Cask 23",
+   "verdict": "confirmed",
+   "found": "The house's own past vintages page calls the 1990 only the tenth Cask 23 in twenty one years and the start of the blend of the two vineyards; Benchmark Wine's listing agrees.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Stag's Leap Wine Cellars: Past vintages, Cask 23",
+     "url": "https://www.stagsleapwinecellars.com/past-vintages/cask-23-cabernet-sauvignon/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Benchmark Wine: Stag's Leap Wine Cellars Cask 23 1990",
+     "url": "https://cdn.benchmarkwine.com/products/14825-stag-s-leap-wine-cellars-cabernet-sauvignon-cask-23-1990",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "napa",
+   "key": "stags-leap",
+   "fact": "A grower planted the first Cabernet Sauvignon of what became the Stags Leap District in 1961; Winiarski bought his vineyard in 1986 and named it FAY",
+   "verdict": "confirmed",
+   "found": "The house's FAY page, the Napa Valley Wine Academy and Grape Collective give the planting of 1961, the tasting of the grower's homemade wine in 1969 and the purchase of 1986. The record names the grower only as a grower, which stands.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Stag's Leap Wine Cellars: FAY Cabernet Sauvignon",
+     "url": "https://www.stagsleapwinecellars.com/past-vintages/fay-cabernet-sauvignon/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Napa Valley Wine Academy: All Napa Cab roads lead to Fay",
+     "url": "https://napavalleywineacademy.com/all-napa-cab-roads-lead-to-fay/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grape Collective: Warren Winiarski's moment with Nathan Fay's homemade wine",
+     "url": "https://grapecollective.com/articles/warren-winiarskis-aha-moment-with-nathan-fays-homemade-wine",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "marlborough",
+   "key": "cloudy-bay",
+   "fact": "Pelorus, a sparkling wine, followed from the 1987 harvest",
+   "verdict": "confirmed",
+   "found": "The house's own forty year timeline gives Pelorus its first harvest in 1987; Decanter's timeline dates the first release to 1992, which the record does not contradict, since it speaks of the harvest.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Cloudy Bay: 40 years making",
+     "url": "https://www.cloudybay.com/en-gb/journal/40-years-making/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Cloudy Bay at 40",
+     "url": "https://www.decanter.com/premium/cloudy-bay-at-40-raising-a-glass-to-a-game-changer-558089",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "wachau",
+   "key": "knoll",
+   "fact": "Saint Urban first on the label in 1962; a Vinothekfüllung of Grüner Veltliner from 1988 and of Riesling from 2000",
+   "verdict": "confirmed",
+   "found": "The Vinea Wachau's own page for the estate gives the baroque Saint Urban label of 1962 and the two Vinothekfüllungen of 1988 and 2000; Best of Wines agrees.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Vinea Wachau: Weingut Knoll",
+     "url": "https://www.vinea-wachau.at/en/mywachau/companies/company-details/myw_company/weingut-knoll",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Best of Wines: Weingut Emmerich Knoll",
+     "url": "https://bestofwines.com/wine/wine-producer/weingut-emmerich-knoll",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "tuscany-bolgheri",
+   "key": "san-guido",
+   "fact": "In 1978 Sassicaia won a tasting of Cabernets from around the world held by Decanter in London",
+   "verdict": "confirmed",
+   "found": "Decanter's own history of the wine gives the blind tasting of 1978 in which the 1972 came first among thirty four Bordeaux blends from around the world; Tastingbook agrees.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Decanter: The story of Sassicaia",
+     "url": "https://www.decanter.com/wine/grape-varieties/sangiovese/the-story-of-sassicaia-how-a-controversial-experiment-became-a-legend-486/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Tastingbook: Sassicaia 1972",
+     "url": "https://tastingbook.com/wine/tenuta_san_guido/sassicaia_1972",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "burgundy-nuits",
+   "key": "romanee-conti",
+   "fact": "The ungrafted vines kept until the harvest of 1945, the vineyard replanted in 1947, the next Romanée-Conti the 1952",
+   "verdict": "confirmed",
+   "found": "Wikipedia and the Burgundy Report give the last ungrafted harvest of 1945, the replanting of 1947 and no Romanée-Conti between 1945 and 1952; one glossary dates the replanting to 1945, against the rest.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Wikipedia: Romanée-Conti",
+     "url": "https://en.wikipedia.org/wiki/Roman%C3%A9e-Conti",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Burgundy Report: the work of Domaine de la Romanée-Conti",
+     "url": "https://www.burgundy-report.com/burgundy-report-extra/10-2005/the-work-of-domaine-de-la-romanee-conti/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "central-coast",
+   "key": "ridge",
+   "fact": "In Paris in May 1976 the 1971 Monte Bello placed fifth; at the tasting of 2006 it placed first",
+   "verdict": "confirmed",
+   "found": "The house's own Judgment of Paris page and Vinography give the first place of 2006 on both panels; the fifth place of 1976 agrees with Wikipedia's table and most accounts, and one Ridge newsletter's fourth is an outlier.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "Ridge Vineyards: Judgment of Paris",
+     "url": "https://ridgewine.com/about/explore/judgment-of-paris/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vinography: The re-judgment of Paris",
+     "url": "https://www.vinography.com/2006/05/the_rejudgment_of_paris_result",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "loire",
+   "key": "huet",
+   "fact": "Gaston Huet mayor of Vouvray from 1947 until 1989; the Haut-Lieu Moelleux of 1947",
+   "verdict": "confirmed, the camp left on the record's sources",
+   "found": "Decanter's Wine Legend and Geneawiki's list of the mayors of Vouvray give 1947 to 1989; Decanter makes the Haut-Lieu of 1947 a legend. The camp, Oflag IV-D, was not in these results (an English search on it returned nothing of use) and rests on the record's own sources; Decanter's line that he escaped a camp is a single source and the record does not repeat it.",
+   "searches": 2,
+   "sources": [
+    {
+     "title": "Decanter: Wine Legend, Domaine Huet Le Haut Lieu 1947",
+     "url": "https://www.decanter.com/learn/wine-legend-domaine-huet-le-haut-lieu-1947-374618",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Geneawiki: Vouvray",
+     "url": "https://fr.geneawiki.com/wiki/37281_-_Vouvray",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Domaine Huet",
+     "url": "https://en.wikipedia.org/wiki/Domaine_Huet",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "marlborough",
+   "key": "brancott",
+   "fact": "Planting began in the winter of 1973, marked on 24 August at the Brancott Vineyard; Sauvignon Blanc planted there in 1975; the first commercial Marlborough Sauvignon Blanc in 1979",
+   "verdict": "confirmed",
+   "found": "New Zealand Wine's own page on Brancott, Marlborough Wine's timeline and Scoop agree; Marlborough Wine dates the first vine to 11 August and the ceremony to 24 August, which the record's wording carries.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "New Zealand Wine: Brancott Estate, first vines in Marlborough",
+     "url": "https://www.nzwine.com/en/media/our-people/brancott/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Marlborough Wine: Wine timeline",
+     "url": "https://www.marlboroughwinenz.com/winetimeline",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Scoop: Celebrating 30 vintages of Montana Sauvignon Blanc",
+     "url": "https://scoop.co.nz/stories/BU0903/S00153/celebrating-30-vintages-of-montana-sauvignon-blanc.htm",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "group": "mosel",
+   "key": "jj-prum",
+   "fact": "An Auslese of the Mosel served at 8 to 10 degrees Celsius, against 6 to 8 for every other sweet white of the roster",
+   "verdict": "fixed: 6 to 8 degrees Celsius, for this and Dr. Loosen's Prälat Auslese",
+   "found": "The WSET's Level 1 workbook gives sweet wines well chilled at 6 to 8 degrees, and Wikipedia cites the WSET for the same; the Codex's service reference gives sweet whites 6 to 8 and its Riesling line 7 to 10 with the sweet wines a little colder. The other sixteen sweet whites of the roster, Rieslaner Auslese and Robert Weil's Gräfenberg among them, are already at 6 to 8.",
+   "searches": 1,
+   "sources": [
+    {
+     "title": "WSET Level 1 Award in Wines workbook, serving temperatures",
+     "url": "https://issuu.com/raygunagency/docs/wset_l1wines_workbook_en_uslettersize_jun2022_issu/s/16499760",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Wine tasting, serving temperature",
+     "url": "https://www.wikipedia.org/wiki/Taste-vin",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
   }
  ],
- "picks": [],
- "codex": [],
- "open": [],
- "removed": []
+ "picks": [
+  {
+   "group": "pfalz",
+   "key": "muller-catoir",
+   "doubt": "the wine: Haardter Bürgergarten Rieslaner in the plan, Rieslaner Auslese Herzog in the record",
+   "ruling": "swap accepted and already applied: the plan's wine and the record's both read Rieslaner Auslese Herzog",
+   "why": "the record was written for the Herzog, the estate sells its Rieslaner under that name, and the plan matches it"
+  },
+  {
+   "group": "swartland",
+   "key": "badenhorst",
+   "doubt": "the wine: AA Badenhorst Family White Blend or Kalmoesfontein White Blend",
+   "ruling": "rename accepted and already applied: plan and record both read Kalmoesfontein White Blend",
+   "why": "the house's own pages sell it by that name and the record is written for it"
+  },
+  {
+   "group": "swartland",
+   "key": "allesverloren",
+   "doubt": "the wine's name",
+   "ruling": "rename accepted and already applied: plan and record both read Allesverloren Cape Vintage",
+   "why": "the record is written for the Cape Vintage"
+  },
+  {
+   "group": "central-otago",
+   "key": "gibbston-valley",
+   "doubt": "a swap to School House Pinot Noir was put to the refuter",
+   "ruling": "swap refused, pick kept",
+   "why": "the Reserve is the house's selection of a few rows in a strong year and the wine of the London trophy confirmed here (the Reserve 2000); School House is one of two single vineyard wines from Bendigo, and no record for it exists"
+  },
+  {
+   "group": "madeira",
+   "key": "hm-borges",
+   "doubt": "a swap to Cossart Gordon or Justino's was set out",
+   "ruling": "swap refused, pick kept",
+   "why": "Cossart Gordon belongs to the Madeira Wine Company, which the group holds through Blandy's, and no record for another house was written"
+  },
+  {
+   "group": "mendoza",
+   "key": "catena-zapata",
+   "doubt": "a rename to the newer label's name was invited",
+   "ruling": "rename refused, the plan's name kept",
+   "why": "the record already teaches the wine under the name it carries in most listings and the plan and record agree"
+  },
+  {
+   "group": "mendoza",
+   "key": "norton",
+   "doubt": "a rename to Privada Family Blend, the house's present selling name",
+   "ruling": "rename refused, kept",
+   "why": "Norton Privada is the name the wine is known and listed by, plan and record agree on it, and the record's trap already teaches the newer name"
+  },
+  {
+   "group": "stellenbosch",
+   "key": "lanzerac",
+   "doubt": "a swap to Vergelegen or Warwick, since the first Pinotage of 1959 was grown and made at Bellevue",
+   "ruling": "swap refused, pick kept",
+   "why": "the record tells the history truly and hedges it: the label of 1961 was the merchant's Lanzerac brand on Bellevue's wine by most accounts, and the estate marks the anniversary itself; no record for another house was written"
+  },
+  {
+   "group": "tokaj",
+   "key": "dobogo",
+   "doubt": "Hétszőlő or Királyudvar offered by the author without pressing a swap",
+   "ruling": "swap refused, pick kept",
+   "why": "Dobogó is documented on its own pages and two others, its Aszú is its flagship, and a swap now would leave the group a record short; the plan's why has already been set right to the town house of 1995 in a building said to date from 1869"
+  },
+  {
+   "group": "campania",
+   "key": "feudi",
+   "doubt": "Pietracalda against the house's Serpico",
+   "ruling": "kept",
+   "why": "Pietracalda is the group's only Fiano and the house's white flagship; Serpico is an IGT Aglianico outside Taurasi, which Mastroberardino's record already teaches"
+  },
+  {
+   "group": "columbia",
+   "key": "woodward",
+   "doubt": "Old Vines Cabernet against the Artist Series, which the house's own page calls its flagship",
+   "ruling": "kept",
+   "why": "Old Vines is the house's first Cabernet, from 1981, drawn from the oldest blocks and the bottle the library and the region record lead with; the record's others note says the house calls the Artist Series its flagship, so nothing false is taught, and no record for the Artist Series exists"
+  },
+  {
+   "group": "jerez",
+   "key": "harveys",
+   "doubt": "a blend house beside four bodegas of its own wines",
+   "ruling": "kept, the doubt left for wave two",
+   "why": "Bristol Cream is the wine a guest names, and the record teaches it as a blend; a grower's sherry belongs to a later wave"
+  },
+  {
+   "group": "sonoma",
+   "key": "williams-selyem",
+   "doubt": "a single vineyard of bought fruit as the house's flagship",
+   "ruling": "kept",
+   "why": "Rochioli fruit made the house's name and the record says so; the plan carries the vineyard's name and the record the full label, which agree"
+  },
+  {
+   "group": "rioja",
+   "key": "the group",
+   "doubt": "all five lean to the long aged traditional style and four are Haro houses; Marqués de Riscal and the modern houses are not among them",
+   "ruling": "kept, a note for wave two",
+   "why": "each of the five is the flagship of its house by every account read; a sixth house is a question for wave two"
+  },
+  {
+   "group": "sicily",
+   "key": "the group",
+   "doubt": "Planeta, a house a guest may well name, is not among the five",
+   "ruling": "kept, a note for wave two",
+   "why": "the five cover the interior, the islands, Etna, Marsala and Vittoria, so no swap is called for"
+  },
+  {
+   "group": "many",
+   "key": "the rest",
+   "doubt": "picks a reviewer kept with a note but did not put in doubt",
+   "ruling": "kept",
+   "why": "le-pin, coutet, william-fevre, armand-rousseau, dagueneau, alphonse-mellot, thanisch, jj-prum, maximin-grunhaus, schloss-vollrads, kloster-eberbach, jaboulet, saint-cosme, bollinger, weinbach, thivin, moric, au-bon-climat, il-poggione, soldera, le-macchiole, masi, knoll and casa-silva: every note read, none calls for a swap, and each record teaches the wine it names"
+  }
+ ],
+ "codex": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-didier-dagueneau",
+   "says": "Silex taught as Pouilly-Fumé",
+   "against": "Silex has been Vin de France from the 2017 vintage (check on Dagueneau); the line is true only of older bottles"
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "w-kracher-tba: traps",
+   "says": "The numbers identify lots within a vintage, not a sweetness scale",
+   "against": "The house numbers every Trockenbeerenauslese of a year since 1995, the higher the number the denser the wine (check on Kracher)"
+  },
+  {
+   "file": "js/data-advanced.js",
+   "record": "a-l68ugdzs, the explanation",
+   "says": "Seppeltsfield's treasure is the unbroken Para tawny solera begun in 1878",
+   "against": "No solera: a cask of each vintage is laid down apart from 1878 and released alone at a hundred years (check on Seppeltsfield)"
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "w-monfortino: holdings",
+   "says": "Drawn since 1978 from the Cascina Francia vineyard in Serralunga d'Alba",
+   "against": "From the 2015 vintage Monfortino also takes a selection from Arione (the check on Giacomo Conterno)"
+  },
+  {
+   "file": "every review file",
+   "record": "codexInTension",
+   "says": "248 entries across the fifty one review files",
+   "against": "Carried forward as the refuters wrote them, with sources; the four above are the ones this reading's own checks also bear out. The rest were not re-ruled one by one, and no check of this reading contradicts any of them."
+  }
+ ],
+ "open": [
+  {
+   "group": "sicily",
+   "key": "benanti",
+   "item": "Giuseppe Benanti's birth year: July 1945 by the house and Gambero Rosso, 1944 by Decanter, an age of 78 at his death in February 2023 by Wine Spectator; 1945 kept on the house's word"
+  },
+  {
+   "group": "ribera-del-duero",
+   "key": "vega-sicilia",
+   "item": "the year the Neumann family took Vega Sicilia: 1965 by the house, 1964 and 1966 elsewhere; the house's year kept"
+  },
+  {
+   "group": "margaret-river",
+   "key": "vasse-felix",
+   "item": "the founder's death in 2008 rests on the house's page alone, a primary source for its own founder"
+  },
+  {
+   "group": "stellenbosch",
+   "key": "meerlust",
+   "item": "the death of 1988 in the record was not in these results; it rests on the refuter's sources"
+  },
+  {
+   "group": "pfalz",
+   "key": "bassermann-jordan",
+   "item": "the auctioneers' association of 1910 was not in these results; it rests on the refuter's sources"
+  },
+  {
+   "group": "loire",
+   "key": "huet",
+   "item": "Oflag IV-D was not in these results; it rests on the record's sources"
+  },
+  {
+   "group": "piedmont",
+   "key": "giacomo-conterno",
+   "item": "one technical sheet dates Arione in Monfortino from 2019, against the merchants' notes on the 2015; 2015 kept"
+  }
+ ],
+ "removed": [],
+ "planWhys": [
+  {
+   "key": "le-pin",
+   "why": "the first wine called a vin de garage",
+   "note": "the accounts the refuter read date the word from Valandraud's first vintage of 1991 and call Le Pin the forerunner; the record says forerunner"
+  },
+  {
+   "key": "clos-rougeard",
+   "why": "Cabernet Franc in old barrels",
+   "note": "true of Le Clos and Les Poyeux, not of Le Bourg, the pick, which the record has in new oak barriques"
+  },
+  {
+   "key": "clos-de-tart",
+   "why": "walled by Cistercian nuns",
+   "note": "no source says who built the wall; the why should read held by Cistercian nuns from 1141, as the record has it"
+  },
+  {
+   "key": "vernay",
+   "why": "Coteau de Vernon is its oldest Viognier",
+   "note": "the sheets give vines of 50 to 80 years and compare them with no other plot; the record says old vines"
+  },
+  {
+   "key": "vincent-dauvissat",
+   "why": "Les Preuses on the slope's upper reaches",
+   "note": "no source read confirms it; the wine body says it overlooks the valley, and the record does not place it so"
+  },
+  {
+   "key": "louis-michel",
+   "why": "no oak since the 1960s",
+   "note": "the change began with the 1969 vintage and was complete about 1980; the record tells both"
+  },
+  {
+   "key": "georges-roumier",
+   "why": "Bonnes-Mares from both soils of the Chambolle side",
+   "note": "one parcel in each soil, but no source puts both on the Chambolle side; the record does not say it"
+  },
+  {
+   "key": "coche-dury",
+   "why": "the rarest bottle a list may hold from it",
+   "note": "a superlative of judgement the record does not repeat"
+  },
+  {
+   "key": "foillard",
+   "why": "decomposed blue schist",
+   "note": "loose rather than wrong: the INAO and the sheets give weathered schist rich in manganese and iron oxide, the record's words"
+  },
+  {
+   "key": "benanti",
+   "why": "Viagrande house of 1988",
+   "note": "the house was founded in 1988 at Castiglione di Sicilia as Tenuta di Castiglione and took its seat at Viagrande about a decade later, as the record and the refuter's sources tell"
+  },
+  {
+   "key": "maximin-grunhaus",
+   "why": "held by the von Schubert family since 1882",
+   "note": "in 1882 a baron of the Stumm family bought it and it came to the von Schuberts as his daughter's dowry, as the record tells"
+  }
+ ],
+ "planWhysNote": "plan.json's why is not printed by the build (checked against js/data-flagships.js and js/codex58.js), so none of these reaches the app; plan.json is changed only by the read together agent or the engineer, so they are listed for them, not edited.",
+ "lint": [
+  {
+   "group": "bordeaux-left",
+   "key": "latour",
+   "text": "the sale of wine still in barrel",
+   "ruling": "kept: still means not yet bottled, not a claim of the present"
+  },
+  {
+   "group": "willamette",
+   "key": "argyle",
+   "text": "The house makes still Pinot Noir",
+   "ruling": "kept: still is the opposite of sparkling"
+  },
+  {
+   "group": "barossa",
+   "key": "rockford",
+   "text": "Basket Press is a still Shiraz",
+   "ruling": "kept: the same"
+  },
+  {
+   "group": "barossa",
+   "key": "seppeltsfield",
+   "text": "fortified with grape spirit while still sweet",
+   "ruling": "kept: a step of the making"
+  },
+  {
+   "group": "bordeaux-sauternes",
+   "key": "coutet",
+   "text": "its square, battlemented tower still stands in the courtyard (story and a card)",
+   "ruling": "kept: a building of the thirteenth century standing is an enduring fact, not a volatile one"
+  },
+  {
+   "group": "rhone-north",
+   "key": "jaboulet",
+   "text": "at the summit where a chapel now stands",
+   "ruling": "kept: the chapel of 1919 is the wine's name and an enduring fact"
+  }
+ ],
+ "crossChecks": [
+  "Founding years: 206 records carry a producerId, and each record's founded was read against the library's founded for that house. They agree but for three where the record is empty and the library gives a century or a round year (Armand Rousseau, Bruno Giacosa, Biondi-Santi), one where the library gives a sentence for its year (Weinbach, 1898 in both), and eleven where the library has none; an empty field is a true answer, so none is changed.",
+  "Serving temperatures were tabulated by colour against the Codex's service reference: every wine falls in its band but those that name whose advice they follow (Coulée de Serrant's 13 to 15, the estate's; the warmer Madeiras, the island's or the house's; Harveys and Fefiñanes, the house's), and the two Mosel Auslesen, the only sweet whites out of line, which are fixed.",
+  "Decree and classification years told in more than one record or against the Codex were compared: Taurasi DOC 1970 and DOCG 1993, Bolgheri Sassicaia a sub-zone from 1994 and a DOC of its own from 2013, Valpolicella Ripasso a DOC from 2010, Conegliano Valdobbiadene DOC 1969 and DOCG 2009, Barbaresco DOC 1966 and DOCG 1980, the Gran Vinya Classificada from 2017, the Wachau DAC's Ried from 2020, Grange Hermitage up to the 1989 vintage, and Romanée-Conti's replanting; record and record, and record and Codex, agree on each.",
+  "Living persons: every name in the 255 records was read; the only living names are in the names of houses, wines or vineyards (Mark Bradford, Julia Lee's Block, Kevin John, Peter Barlow) and architects' firms, which the house rules allow. No price, score or allocation was found; superlatives of judgement were already caught by the lint."
+ ]
 }
