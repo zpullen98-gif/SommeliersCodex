@@ -1,0 +1,1284 @@
+{
+ "group": "central-otago",
+ "chunk": "f15",
+ "date": "2026-11-13",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 25,
+  "perRecord": {
+   "felton-road": 3,
+   "rippon": 6,
+   "gibbston-valley": 6,
+   "mt-difficulty": 5,
+   "quartz-reef": 3
+  },
+  "shared": 2,
+  "note": "Twenty five searches of a share of twenty eight, three left unspent, none of them the author's. Two were shared: the IPONZ register for Bannockburn (Mt Difficulty and the Felton Road label) and New Zealand Winegrowers' own pages on the sub-regions (Gibbston, Bendigo, Wanaka, Bannockburn), restricted to its domains. One was restricted to the house's domain (Rippon's history) and one to the host of Mt Difficulty's sheets, which returned nothing of the house; the others kept the house's own domain out where the author had leant on it, so that each second source would be independent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "Where a search contradicted the record it was set right with its source; where a detail stood in only one page that is not the house speaking of itself, it was cut or said with less; the house's own claims are told as its account.",
+  "Writers' own sites met among the results (Wine with Seth, Wine Anorak, a critic's blog on Rippon, a Gibbston founder page whose address names him) are cited neither in the fragment nor here. Pages whose addresses name a living person (New Zealand Winegrowers' people pages for two founders, a winemaker profile, a feature on Felton Road's owner) were read in summaries and not cited.",
+  "The serving temperatures, 15 to 17 degrees Celsius for every record, agree with the service reference for medium reds; no air is promised to soften tannin."
+ ],
+ "records": [
+  {
+   "key": "felton-road",
+   "searches": 3,
+   "tested": [
+    "The founding of 1991, the first vines of 1992, Block 5 of 1993, the first vintage of 1997 and the sale of 2000: confirmed by the Sommelier Academy profile, Winestar and The Grape Reset with the house domain kept out; the founder researched the site in 1991 and planted in 1992. Sound.",
+    "Block 5 lies on a gentle north facing slope at the heart of The Elms (two merchants quoting the house). The record said only a north facing slope; set right.",
+    "The making: about a fifth whole bunch (a quarter in 2010), destemmed by gravity, a soak of eight to ten days, indigenous yeasts, twenty one to twenty five days on skins, sixteen to seventeen months in French oak, a quarter to a third or so new, unfined and unfiltered (House of Townend, Skurnik, Canterbury Wines, all with the house domain kept out). Sound.",
+    "The winemaker of 1997 as the founder's laboratory partner at Lincoln: one secondary calls them Lincoln contemporaries or classmates, none a laboratory partner; New Zealand Winegrowers alone says laboratory partner. Said with less.",
+    "Demeter certification (2010 in two accounts) and BioGro (2020 in one): both certifiers stand, without years. Sound.",
+    "Bannockburn on the south bank of the Kawarau, by New Zealand Winegrowers: the label line had set The Elms on the sluicings themselves; set right.",
+    "Cards and questions: one right answer each, distractors of one kind, the explanation teaches. Rules: nobody living named, no price, no score, nothing volatile, British, no dash. Sound."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "Block 5 of The Elms Vineyard at Bannockburn, planted in 1993 on a north facing slope whose soils run from heavy loess and silt to clay and angular schist gravel, with old lake bed sediments reaching into its centre.",
+     "now": "Block 5 of The Elms Vineyard at Bannockburn, planted in 1993 on a gentle north facing slope at the heart of the vineyard whose soils run from heavy loess and silt to clay and angular schist gravel, with old lake bed sediments reaching into its centre.",
+     "why": "Two merchants quoting the house place Block 5 on a gentle north facing slope at the heart of The Elms.",
+     "sources": [
+      {
+       "title": "Winestar: Felton Road Block 5 Pinot Noir 2023",
+       "url": "https://winestar.com.au/felton-road-block-5-pinot-noir-2023",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Canterbury Wines: Felton Road Block 5 Pinot Noir 2023",
+       "url": "https://canterburywines.au/products/felton-road-block-5-pinot-noir-2023",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "The sub-region of The Elms, on old gold sluicings above the Kawarau arm of Lake Dunstan.",
+     "now": "The sub-region of The Elms, on the south bank of the Kawarau, a district of old gold diggings.",
+     "why": "New Zealand Winegrowers sets Bannockburn on the south bank of the Kawarau; no source sets The Elms on the old sluicings themselves, and the Kawarau arm of Lake Dunstan was not in any page read.",
+     "sources": [
+      {
+       "title": "New Zealand Winegrowers: Central Otago wine region",
+       "url": "https://www.nzwine.com/en/regions/centralotago/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "New Zealand Winegrowers: Central Otago regional sheet",
+       "url": "https://www.nzwine.com/media/ntabmd3s/central-otago.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1990, by New Zealand Winegrowers' account, Felton Road's founder enrolled in the viticulture course at Lincoln University, and in 1991, the year the house dates its beginning to, he chose and laid out a vineyard just off Felton Road at Bannockburn, a district of old gold sluicings above the Kawarau. The first vines went in in 1992, and Block 5 followed in 1993 in what became The Elms Vineyard. In 1997 a young winemaker who had been the founder's laboratory partner at Lincoln made the first official Felton Road Pinot Noir, and in 2000 the founder sold the estate to a British wine lover. The house came to bottle the blocks of The Elms apart, Block 3 and Block 5 above all, and to farm its vineyards biodynamically, certified by Demeter and by BioGro, with wild yeasts in the cellar and no fining or filtering before bottling. Block 5's soils run from loess and silt to clay and schist gravel, with old lake bed sediments at its heart, and its wine is the darker and spicier of the two. For a sommelier the pair is a lesson in how far soil alone can move Pinot Noir within one vineyard.",
+     "now": "In 1990, by New Zealand Winegrowers' account, Felton Road's founder enrolled in the viticulture course at Lincoln University, and in 1991, the year the house dates its beginning to, he chose and laid out a vineyard just off Felton Road at Bannockburn, a district of old gold sluicings above the Kawarau. The first vines went in in 1992, and Block 5 followed in 1993 in what became The Elms Vineyard. In 1997 a young winemaker who had studied beside the founder at Lincoln made the first official Felton Road Pinot Noir, and in 2000 the founder sold the estate to a British wine lover. The house came to bottle the blocks of The Elms apart, Block 3 and Block 5 above all, and to farm its vineyards biodynamically, certified by Demeter and by BioGro, with wild yeasts in the cellar and no fining or filtering before bottling. Block 5's soils run from loess and silt to clay and schist gravel, with old lake bed sediments at its heart, and its wine is the darker and spicier of the two. For a sommelier the pair is a lesson in how far soil alone can move Pinot Noir within one vineyard.",
+     "why": "Only New Zealand Winegrowers calls the winemaker of 1997 the founder's laboratory partner; another account makes them Lincoln contemporaries, so the story says he studied beside the founder.",
+     "sources": [
+      {
+       "title": "The Grape Reset: Felton Road",
+       "url": "https://thegrapereset.com/felton-road",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Sommelier Academy: Central Otago GI, region of production",
+       "url": "https://sommelier-academy.de/?p=2415",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts[0]",
+     "was": "His former laboratory partner from Lincoln University",
+     "now": "A fellow student of his at Lincoln University",
+     "why": "The key follows the story: a fellow student at Lincoln, which two accounts support.",
+     "sources": [
+      {
+       "title": "The Grape Reset: Felton Road",
+       "url": "https://thegrapereset.com/felton-road",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "By New Zealand Winegrowers' account the first Felton Road Pinot Noir was made in 1997 by a young winemaker who had been the founder's lab partner at Lincoln; the sale came three years later.",
+     "now": "By New Zealand Winegrowers' account the first Felton Road Pinot Noir was made in 1997 by a young winemaker who had studied beside the founder at Lincoln; the buyer came only in 2000.",
+     "why": "The explanation follows the story, and the nearest wrong option, the buyer, is answered with his year.",
+     "sources": [
+      {
+       "title": "The Grape Reset: Felton Road",
+       "url": "https://thegrapereset.com/felton-road",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [],
+   "open": [
+    "Block 5's first bottling on its own is the 1999 vintage in the Sommelier Academy profile and in one merchant listing the author found; neither is the house, so the record gives no first year for the block.",
+    "The founder's name is spelt Stewart and Stuart in the sources; he is described, never named."
+   ],
+   "extraSources": [
+    {
+     "title": "Sommelier Academy: Central Otago GI, region of production",
+     "url": "https://sommelier-academy.de/?p=2415",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "House of Townend: Felton Road Pinot Noir Block 5 2024",
+     "url": "https://www.houseoftownend.com/product/specsheet/felton-road-pinot-noir-block-5-2024",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Skurnik Wines: Pinot Noir Block 5, Felton Road",
+     "url": "https://www.skurnik.com/sku/pinot-noir-block-5-felton-road-2-2-2/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "rippon",
+   "searches": 6,
+   "tested": [
+    "The family's land since 1912: the house says the Mills family has farmed it for four generations from 1912, and that Wanaka Station was bought by the founder's grandfather; one secondary dates his purchase to 1912. The record now says the founder's family and the grandfather, by its own account.",
+    "The war: the founder served in submarines in the Second World War (the house, RNZ, the Otago Daily Times); no source read gives him the rank of lieutenant. Said with less.",
+    "The move home in 1973, the trial of some thirty varieties in 1975 and the first commercial block of 1982 against the doubts of the DSIR and other experts: the house's history. Two secondaries give 1974 for the first vines; the house's 1975 stands as its account.",
+    "The founding presidency: one secondary has him founding president of the region's winegrowers' association; the association's name in the record (Central Otago Grape Growers Association) was in no source read. Said without the name.",
+    "Mature Vine: two winters in barrel, fifteen to twenty per cent new in the first and none in the second, two years in bottle, unfined and unfiltered, hand picked and wild fermented (Berry Bros and Rudd, Wine.com, Caro's, the New Zealand Wine Catalogue). The share of whole bunches the record claimed was in no source read; cut.",
+    "Jeunesse Young Vine Pinot Noir: the house's Pinot Noir of its younger parcels, in Prince of Pinot, United Cellars and Delectable (a search of its own); added to others, which also explains Mature Vine.",
+    "Tinker's Field as the oldest vines on the property: two Lea and Sandeman pages and another listing. Sound.",
+    "The site: a north facing escarpment where terminal moraines meet an ancient cone of coarse schist gravels on the western edge of Roy's Bay (the house). The record's all of schist went further; set right.",
+    "Wanaka as the northernmost sub-region, moderated by the lake: New Zealand Winegrowers places Wanaka some eighty kilometres north of Queenstown and calls it cooler and slightly wetter, but no page read calls it the northernmost or says the lake moderates it. The label term keeps Lake Wanaka, which the trade copies from the labels (Jeunesse Young Vine Lake Wanaka Pinot Noir, Mature Vines Wanaka Pinot Noir), with a plainer meaning, and the trap is rewritten."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "The Mills family has farmed the land at Roy's Bay on Lake Wanaka since 1912, by its own account. The founder had thought of growing grapes there since coming home from the Second World War, in which he served as a submarine lieutenant, and in 1973 he and his wife moved back to the family farm. In 1975 he planted a trial of some thirty grape varieties beside the lake, among the first vines of modern Central Otago, and in 1982, against the doubts of research bodies and local experts, he planted the first commercial block, the year from which the house dates its winegrowing. He became the first president of the Central Otago Grape Growers Association, the forerunner of the region's winegrowers' association. After his death his widow carried on the business they had founded, and their son went on to lead the vineyard and the cellar. The estate is farmed biodynamically, and Mature Vine gathers all of its fully grown Pinot Noir, while two single blocks, Tinker's Field and Emma's Block, are bottled apart. For a sommelier, Rippon carries the modern region's story back to its trials of the 1970s: Pinot Noir from a lakeside farm where the vines began as an experiment.",
+     "now": "By its own account the founder's family has farmed the land at Roy's Bay on Lake Wanaka since 1912, part of the Wanaka Station his grandfather had bought. The founder had thought of growing grapes there since the Second World War, in which he served in submarines, and in 1973 he and his wife moved back to the family farm. In 1975 he planted a trial of some thirty grape varieties beside the lake, among the first vines of modern Central Otago, and in 1982, against the doubts of research bodies and local experts, he planted the first commercial block, the year from which the house dates its winegrowing. He became the founding president of the region's winegrowers' association. After his death his widow carried on the business they had founded, and their son went on to lead the vineyard and the cellar. The estate is farmed biodynamically. Mature Vine gathers all of its fully grown Pinot Noir and Jeunesse the younger vines, while two single blocks, Tinker's Field and Emma's Block, are bottled apart. For a sommelier, Rippon carries the modern region's story back to its trials of the 1970s: Pinot Noir from a lakeside farm where the vines began as an experiment.",
+     "why": "The house dates the family's farming to 1912 and the station's purchase to the founder's grandfather; no source gives the rank of lieutenant; the association's name in the record was in none; and Jeunesse takes the younger vines.",
+     "sources": [
+      {
+       "title": "Rippon: Our History",
+       "url": "https://rippon.co.nz/pages/our-history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Otago Daily Times: a proud family of winegrowers",
+       "url": "https://www.odt.co.nz/regions/queenstown-lakes/proud-family-winegrowers",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "RNZ Country Life: the roots go deep at a Wanaka vineyard",
+       "url": "https://www.rnz.co.nz/national/programmes/countrylife/audio/2018836635/the-roots-go-deep-at-wanaka-vineyard",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "The north facing escarpment above Roy's Bay on the western shore of Lake Wanaka, where terminal moraines and coarse gravels, all of schist, meet; by the house's account its blocks include some of the oldest commercial vines in Central Otago.",
+     "now": "The north facing escarpment on the western edge of Roy's Bay, Lake Wanaka, where glacial terminal moraines meet an ancient cone of coarse schist gravels; by the house's account its blocks include some of the oldest commercial vines in Central Otago.",
+     "why": "The house describes terminal moraines meeting an ancient cone of coarse schist gravels on the western edge of Roy's Bay; the record's all of schist was its own gloss.",
+     "sources": [
+      {
+       "title": "Rippon: Our History",
+       "url": "https://rippon.co.nz/pages/our-history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Rural News Group, WineGrower: Rippon profile",
+       "url": "https://ruralnewsgroup.co.nz/wine-grower/wg-profiles/rippon-vineyards-world-class",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented with a share of whole bunches that the house sets by each vintage's fruit, the wine spends two winters in barrel, about eighteen months, and then two more years in bottle before it is released. It goes to bottle without fining or filtering.",
+     "now": "The fruit is picked by hand and fermented with wild yeasts; the wine then spends two winters in barrel, about eighteen months, with only a small share of new oak, and two years in bottle before it is released. It goes to bottle without fining or filtering.",
+     "why": "Two winters in barrel, a small share of new oak in the first, two years in bottle, unfined and unfiltered, hand picked and wild fermented: four merchants' and the catalogue's notes; whole bunches were in no source read.",
+     "sources": [
+      {
+       "title": "Berry Bros and Rudd: 2020 Rippon Mature Vine Pinot Noir",
+       "url": "https://www.bbr.com/products-20208137571-2020-rippon-mature-vine-pinot-noir-central-otago-new-zealand",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Rippon Vineyard Mature Vine Pinot Noir 2020",
+       "url": "https://www.wine.com/product/rippon-vineyard-mature-vine-pinot-noir-2020/1979213",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Caro's: 2023 Rippon Mature Vine Pinot Noir",
+       "url": "https://www.caros.co.nz/2023-rippon-mature-vine-pinot-noir.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "New Zealand Wine Catalogue: Rippon Mature Vine Pinot Noir 2017",
+       "url": "https://nzwinecatalog.bottlebooks.me/products/by-exhibitor/600a0b116dc30319cf335500/600a0b8bc83b3519c9ba7f79/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label",
+     "was": [
+      {
+       "term": "Mature Vine",
+       "means": "Drawn from all the estate's fully grown Pinot Noir vines, the younger ones left out."
+      },
+      {
+       "term": "Lake Wanaka",
+       "means": "The northernmost sub-region of Central Otago, moderated by the lake, and the estate's address."
+      },
+      {
+       "term": "Central Otago",
+       "means": "The registered Geographical Indication that covers every sub-region of the inland south."
+      }
+     ],
+     "now": [
+      {
+       "term": "Mature Vine",
+       "means": "Drawn from all the estate's fully grown Pinot Noir vines, the younger ones left out."
+      },
+      {
+       "term": "Lake Wanaka",
+       "means": "The lake below the estate, which names Wanaka, a sub-region of Central Otago north of Queenstown."
+      },
+      {
+       "term": "Central Otago",
+       "means": "The registered Geographical Indication that covers every sub-region of the inland south."
+      }
+     ],
+     "why": "No source calls Wanaka the northernmost sub-region or says the lake moderates it, so the term Lake Wanaka now means only the lake below the estate that names the sub-region, as the names the trade copies from the labels show.",
+     "sources": [
+      {
+       "title": "New Zealand Winegrowers: Central Otago regional sheet",
+       "url": "https://www.nzwine.com/media/ntabmd3s/central-otago.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Delectable: Rippon Jeunesse Young Vine Lake Wanaka Pinot Noir",
+       "url": "https://delectable.com/wine/rippon-vineyard/jeunesse-young-vine-lake-wanaka-pinot-noir",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "PlumpJack Wines: Rippon Mature Vines Wanaka Pinot Noir",
+       "url": "https://plumpjackwines.com/products/rippon-wanaka-pinot-noir",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].name",
+     "was": "Rippon Tinker's Field Mature Vine Pinot Noir",
+     "now": "Rippon Jeunesse Young Vine Pinot Noir",
+     "why": "Jeunesse is the house's young vine Pinot Noir, the counterpart that gives Mature Vine its meaning.",
+     "sources": [
+      {
+       "title": "Prince of Pinot: Rippon Pinot Noir in 2008",
+       "url": "https://www.princeofpinot.com/article/918/index.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "United Cellars: Rippon Jeunesse Young Vine Pinot Noir 2018",
+       "url": "https://www.unitedcellars.com/au/rippon-jeunesse-young-vine-pinot-noir-2018/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Delectable: Rippon Jeunesse Young Vine Lake Wanaka Pinot Noir",
+       "url": "https://delectable.com/wine/rippon-vineyard/jeunesse-young-vine-lake-wanaka-pinot-noir",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "From the block that holds the oldest vines on the property, bottled on its own.",
+     "now": "Pinot Noir from the estate's younger vines, not yet held mature enough to go into Mature Vine.",
+     "why": "Prince of Pinot describes Jeunesse as from vines not yet mature enough to show the site fully.",
+     "sources": [
+      {
+       "title": "Prince of Pinot: Rippon Pinot Noir in 2008",
+       "url": "https://www.princeofpinot.com/article/918/index.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].name",
+     "was": "Rippon Emma's Block Mature Vine Pinot Noir",
+     "now": "Rippon Tinker's Field Mature Vine Pinot Noir",
+     "why": "Tinker's Field moves to second place to make room for Jeunesse.",
+     "sources": [
+      {
+       "title": "Lea and Sandeman: 2020 Rippon Tinker's Field Mature Vine Pinot Noir",
+       "url": "https://www.leaandsandeman.co.uk/wine/2020-RIPPON-Tinker-s-Field-Pinot-Noir-Mature-Vine-73660-00.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "A second single block of the estate's fully grown Pinot Noir, bottled apart.",
+     "now": "From the block that holds the oldest vines on the property, bottled on its own; Emma's Block is the estate's other single block.",
+     "why": "Tinker's Field holds the oldest vines on the property by two merchants' pages; Emma's Block is folded into the note.",
+     "sources": [
+      {
+       "title": "Lea and Sandeman: 2020 Rippon Tinker's Field Mature Vine Pinot Noir",
+       "url": "https://www.leaandsandeman.co.uk/wine/2020-RIPPON-Tinker-s-Field-Pinot-Noir-Mature-Vine-73660-00.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2]",
+     "was": "Lake Wanaka is Central Otago's northernmost sub-region, moderated by the lake, and no part of Gibbston or the Cromwell Basin.",
+     "now": "Wanaka is a sub-region of its own, some eighty kilometres north of Queenstown, cooler and slightly wetter than the Cromwell Basin, and no part of Gibbston.",
+     "why": "New Zealand Winegrowers places Wanaka some eighty kilometres north of Queenstown, cooler and slightly wetter than the Cromwell side, and calls no sub-region the northernmost.",
+     "sources": [
+      {
+       "title": "New Zealand Winegrowers: Central Otago regional sheet",
+       "url": "https://www.nzwine.com/media/ntabmd3s/central-otago.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "New Zealand Winegrowers: New Zealand Wine, a guide to the regions and varieties",
+       "url": "https://www.nzwine.com/media/zfvekiln/new-zealand-wine-textbook.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "Mature Vine gathers every fully developed Pinot Noir vine of the estate; the oldest vines' block, Tinker's Field, is bottled apart, and the wine is released after about three and a half years, not ten.",
+     "now": "Mature Vine gathers every fully grown Pinot Noir vine of the estate, the younger going to Jeunesse; Tinker's Field, the oldest vines' block, is bottled apart, and release comes after some three and a half years, not ten.",
+     "why": "The explanation names Jeunesse, which takes the younger vines, so the key is taught against the house's own range.",
+     "sources": [
+      {
+       "title": "Prince of Pinot: Rippon Pinot Noir in 2008",
+       "url": "https://www.princeofpinot.com/article/918/index.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "The trial of some thirty varieties went in in 1975; 1912 is when the family began farming the land, 1982 the first commercial block and 1987 the region's first commercial vintage.",
+     "now": "By the house's account the trial of some thirty varieties went in in 1975; 1912 is when the family began farming the land, 1982 the first commercial block and 1987 the region's first commercial vintage.",
+     "why": "Two secondaries give 1974 for the first vines, so the year of 1975 is told as the house's account; the options do not offer 1974.",
+     "sources": [
+      {
+       "title": "Rippon: Our History",
+       "url": "https://rippon.co.nz/pages/our-history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "RNZ Country Life: the roots go deep at a Wanaka vineyard",
+       "url": "https://www.rnz.co.nz/national/programmes/countrylife/audio/2018836635/the-roots-go-deep-at-wanaka-vineyard",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The rank of submarine lieutenant.",
+    "The association's name, Central Otago Grape Growers Association.",
+    "A share of whole bunches set by each vintage.",
+    "The claim that Wanaka is the northernmost sub-region, moderated by the lake."
+   ],
+   "open": [
+    "The trial vines are 1975 by the house and New Zealand Winegrowers and 1974 in two secondary pages; the record keeps 1975 as the house's account.",
+    "The founder died in 2000, but no source gave his birth year, so he is still described rather than named; his grandfather, the buyer of Wanaka Station, is described too."
+   ],
+   "extraSources": [
+    {
+     "title": "Rural News Group, WineGrower: Rippon profile",
+     "url": "https://ruralnewsgroup.co.nz/wine-grower/wg-profiles/rippon-vineyards-world-class",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Lea and Sandeman: 2020 Rippon Tinker's Field Mature Vine Pinot Noir",
+     "url": "https://www.leaandsandeman.co.uk/wine/2020-RIPPON-Tinker-s-Field-Pinot-Noir-Mature-Vine-73660-00.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "gibbston-valley",
+   "searches": 6,
+   "tested": [
+    "The Home Block of 1983 as the first commercial vineyard: Vind and a tour page with the house domain kept out. Sound. The first vines are 1980, 1981 and 1984 by different accounts; the record's early 1980s stands.",
+    "The region's first commercial wine of 1987: two accounts besides New Zealand Winegrowers. Sound.",
+    "The winery and restaurant of 1990: no source outside the house dates them; hedged as the house's account.",
+    "The cave: blasted into the schist behind the winery between 1993 and 1995 and finished in 1995 (Winetitles, a thirtieth year report of 2025), the largest wine cave in New Zealand by Broadsheet and others as well as the house. Sound.",
+    "The trophy: the 2000 Reserve won the Pinot Noir trophy at the International Wine Challenge of 2001 (Broadsheet, Preferred Magazine, a Queenstown Lakes directory). The year added; the claim of a first outside Burgundy, in one source, stays out.",
+    "The Reserve's making: no technical sheet found in a search of its own; the house's GV Collection sheets (ten to eleven months, a fifth to a quarter new French oak) name another wine and are not used.",
+    "The glass: no second source for cola, pomegranate, cranberry, roses or the three barrel spices; a 2006 review (violets, dark cherries, anise, dark plums, cedar, toast) and a 2021 note (blackberry, black cherry) share the dark fruit and violets. Rewritten to the shared notes.",
+    "The Bendigo sites: China Terrace lies about 320 metres above the sea and School House at 350 to 420 by the house's own notes and a merchant. The record's higher China Terrace was wrong; set right.",
+    "Gibbston as the highest and coolest sub-region: New Zealand Winegrowers calls it the highest, with a cooler climate and later ripening, never the coolest. Set right."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "A few low yielding rows chosen in a strong vintage from the house's vineyards: the Home Block at Gibbston in the Kawarau Gorge, planted in 1983, and its sites at Bendigo, among them the higher China Terrace and School House.",
+     "now": "A few low yielding rows chosen in a strong vintage from the house's vineyards: the Home Block at Gibbston in the Kawarau Gorge, planted in 1983, and its sites at Bendigo, among them China Terrace and the higher School House.",
+     "why": "China Terrace lies about 320 metres above the sea and School House at 350 to 420, so School House is the higher of the two.",
+     "sources": [
+      {
+       "title": "Gibbston Valley: School House Single Vineyard Pinot Noir 2020 tasting note",
+       "url": "https://b2bwebstorage.blob.core.windows.net/web/SAP/New_Zealand_Brands/Gibbston_Valley/Tasting_Notes/Gibbston_Valley_School_House_Single_Vineyard_Pinot_Noir_2020.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Gibbston Valley: China Terrace Pinot Noir 2017 tasting note",
+       "url": "https://b2bwebstorage.blob.core.windows.net/web/SAP/New_Zealand_Brands/Gibbston_Valley/Tasting_Notes/Gibbston_Valley_China_Terrace_Pinot_Noir_2017.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Black Market: Gibbston Valley China Terrace Pinot Noir 2015",
+       "url": "https://www.blackmarket.co.nz/8874/gibbston-valley-china-terrace-central-otago-single-vineyard-pinot-noir-2015",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "As the house tells it, a Reserve takes only a few rows of fruit in a great vintage and is made in small quantities, apart from its other Pinot Noirs. The house publishes no fixed recipe for it; its barrels of Pinot Noir and Chardonnay rest in the cave blasted into the schist behind the winery in 1995.",
+     "now": "As the house tells it, a Reserve takes only a few rows of fruit in a great vintage and is made in small quantities, apart from its other Pinot Noirs. The house ages its Pinot Noir in barrel in the cave blasted into the schist behind the winery in 1995.",
+     "why": "The sentence that the house publishes no fixed recipe could age; the cave of 1995 that holds the house's Pinot Noir barrels is confirmed by two accounts.",
+     "sources": [
+      {
+       "title": "Winetitles: the Queenstown wine cave that ignited wine tourism",
+       "url": "https://winetitles.com.au/the-queenstown-wine-cave-that-ignited-the-regions-wine-tourism/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Travel And Tour World: thirty years of the Gibbston Valley wine cave",
+       "url": "https://www.travelandtourworld.com/news/article/gibbston-valley-winery-celebrates-thirty-years-of-the-iconic-wine-cave-in-queenstown-a-landmark-in-new-zealands-wine-tourism-industry/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Black cherry and wild strawberry over pomegranate and cranberry, with violets and roses, a creamy cola note and clove, nutmeg and cinnamon from the barrel; more textured and lush than the house's other Pinot Noirs.",
+     "now": "Black cherry, dark plum and blackberry over violets and anise, with cedar and toast from the barrel; deep and layered, the fruit dark rather than red, with a long finish.",
+     "why": "The record's notes rested on one site; the dark fruit, violets, anise, cedar and toast are shared by a 2006 review and a 2021 note.",
+     "sources": [
+      {
+       "title": "Nick's Wine Merchants: 2006 Gibbston Valley Reserve Pinot Noir",
+       "url": "https://www.nicks.com.au/products/2006-gibbston-valley-reserve-pinot-noir",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "United Cellars: Gibbston Valley Reserve Pinot Noir 2021",
+       "url": "https://unitedcellars.co.nz/products/gibbston-valley-reserve-pinot-noir-2021",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "The house's name, from Gibbston, the highest and coolest sub-region of Central Otago, in the Kawarau Gorge.",
+     "now": "The house's name, from Gibbston in the Kawarau Gorge, the highest sub-region of Central Otago, where the vines ripen late.",
+     "why": "New Zealand Winegrowers calls Gibbston the highest sub-region, its vines ripening later than its neighbours', but not the coolest.",
+     "sources": [
+      {
+       "title": "New Zealand Winegrowers: Central Otago wine region",
+       "url": "https://www.nzwine.com/en/regions/centralotago/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "New Zealand Winegrowers: Central Otago regional sheet",
+       "url": "https://www.nzwine.com/media/ntabmd3s/central-otago.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Gibbston Valley released Central Otago's first commercial vintage in 1987, and its Reserve Pinot Noir is the house's pick of a few rows in a strong year. Its 2000 vintage took the Pinot Noir trophy at the International Wine Challenge in London.",
+     "now": "Gibbston Valley released Central Otago's first commercial vintage in 1987, and its Reserve Pinot Noir is the house's pick of a few rows in a strong year. Its 2000 vintage took the Pinot Noir trophy at the International Wine Challenge in London in 2001.",
+     "why": "The trophy was awarded at the Challenge of 2001.",
+     "sources": [
+      {
+       "title": "Broadsheet: New Zealand's largest wine cave near Queenstown",
+       "url": "https://www.broadsheet.com.au/new-zealand/travel/article/visit-new-zealands-largest-wine-cave-luxurious-lodge-and-spa-near-queenstown",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Preferred Magazine: wines in Gibbston Valley",
+       "url": "https://preferredmagazine.ca/thrilling-wines-gibbston-valley/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Queenstown Lakes directory: Gibbston Valley Winery",
+       "url": "https://queenstown-lakes.infodats.co.nz/card/gibbston-valley-winery/71294",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Gibbston lies in the Kawarau Gorge between Queenstown and Cromwell, the highest and coolest corner of Central Otago. The house's founder planted his first vines there in the early 1980s, and in 1983, by the house's account, he planted its first commercial vineyard, the Home Block. In 1987 Gibbston Valley released the region's first commercial vintage, a date New Zealand Winegrowers gives for Gibbston's first commercial bottling. In 1990 the founder established Gibbston Valley Wines as a boutique winery with a tasting room and a restaurant, and by 1995 the barrels had outgrown their store; rather than build another, he had a cave blasted into the schist mountainside behind the winery, New Zealand's largest wine cave by the house's own account. The house came to grow at Bendigo too, on the warmer terraces by Lake Dunstan, where China Terrace and School House give its single vineyard wines. The Reserve is its selection of a few rows in a strong year, and the Reserve Pinot Noir of 2000 won the Pinot Noir trophy at the International Wine Challenge in London. For a sommelier the Reserve carries the region's early history: the first commercial vintage, the cave and a London trophy.",
+     "now": "Gibbston lies in the Kawarau Gorge between Queenstown and Cromwell, the highest of Central Otago's sub-regions, where the vines ripen later than in neighbouring districts. The house's founder planted his first vines there in the early 1980s, and in 1983, by the house's account, he planted its first commercial vineyard, the Home Block. In 1987 Gibbston Valley released the region's first commercial vintage, a date New Zealand Winegrowers gives for Gibbston's first commercial bottling. In 1990, as the house tells it, the founder established Gibbston Valley Wines as a boutique winery with a tasting room and a restaurant, and by 1995 the barrels had outgrown their store; rather than build another, he had a cave blasted into the schist mountainside behind the winery, New Zealand's largest wine cave by the house's own account. The house came to grow at Bendigo too, on the warmer terraces by Lake Dunstan, where China Terrace and School House give its single vineyard wines. The Reserve is its selection of a few rows in a strong year, and the Reserve Pinot Noir of 2000 won the Pinot Noir trophy at the International Wine Challenge in London in 2001. For a sommelier the Reserve carries the region's early history: the first commercial vintage, the cave and a London trophy.",
+     "why": "Gibbston is the highest sub-region by New Zealand Winegrowers, not called the coolest; the winery of 1990 is the house's date alone; the trophy came in 2001.",
+     "sources": [
+      {
+       "title": "New Zealand Winegrowers: Central Otago wine region",
+       "url": "https://www.nzwine.com/en/regions/centralotago/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Broadsheet: New Zealand's largest wine cave near Queenstown",
+       "url": "https://www.broadsheet.com.au/new-zealand/travel/article/visit-new-zealands-largest-wine-cave-luxurious-lodge-and-spa-near-queenstown",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Preferred Magazine: wines in Gibbston Valley",
+       "url": "https://preferredmagazine.ca/thrilling-wines-gibbston-valley/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "Single vineyard Pinot Noir from the School House vineyard at Bendigo, some four hundred metres above the sea.",
+     "now": "Single vineyard Pinot Noir from the School House vineyard at Bendigo, some 350 to 420 metres above the sea.",
+     "why": "The house's own notes give School House 350 to 420 metres.",
+     "sources": [
+      {
+       "title": "Gibbston Valley: School House Single Vineyard Pinot Noir 2020 tasting note",
+       "url": "https://b2bwebstorage.blob.core.windows.net/web/SAP/New_Zealand_Brands/Gibbston_Valley/Tasting_Notes/Gibbston_Valley_School_House_Single_Vineyard_Pinot_Noir_2020.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "Single vineyard Pinot Noir from the higher China Terrace site at Bendigo.",
+     "now": "Single vineyard Pinot Noir from the China Terrace site at Bendigo, about 320 metres above the sea.",
+     "why": "China Terrace lies about 320 metres above the sea, lower than School House, by the house's note and a merchant.",
+     "sources": [
+      {
+       "title": "Gibbston Valley: China Terrace Pinot Noir 2017 tasting note",
+       "url": "https://b2bwebstorage.blob.core.windows.net/web/SAP/New_Zealand_Brands/Gibbston_Valley/Tasting_Notes/Gibbston_Valley_China_Terrace_Pinot_Noir_2017.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Black Market: Gibbston Valley China Terrace Pinot Noir 2015",
+       "url": "https://www.blackmarket.co.nz/8874/gibbston-valley-china-terrace-central-otago-single-vineyard-pinot-noir-2015",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "The Reserve Pinot Noir of the 2000 vintage.",
+     "now": "The Reserve Pinot Noir of the 2000 vintage, at the Challenge of 2001.",
+     "why": "The card now carries the year of the Challenge, 2001.",
+     "sources": [
+      {
+       "title": "Broadsheet: New Zealand's largest wine cave near Queenstown",
+       "url": "https://www.broadsheet.com.au/new-zealand/travel/article/visit-new-zealands-largest-wine-cave-luxurious-lodge-and-spa-near-queenstown",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Preferred Magazine: wines in Gibbston Valley",
+       "url": "https://preferredmagazine.ca/thrilling-wines-gibbston-valley/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Cola, pomegranate, cranberry, wild strawberry, roses, a creamy note, clove, nutmeg and cinnamon, and more textured and lush than the house's other Pinot Noirs (one site only).",
+    "The coolest sub-region.",
+    "The higher China Terrace.",
+    "The house publishes no fixed recipe for the Reserve."
+   ],
+   "open": [
+    "No technical sheet of the Reserve was found in this check's search or the author's: its fermentation, oak and months stay unsaid.",
+    "The ageing line is the author's judgement; reviews of the 2001 and 2006 Reserves drunk years on are its only support."
+   ],
+   "extraSources": [
+    {
+     "title": "Vind: Gibbston Valley Winery",
+     "url": "https://vind.wine/new-zealand/gibbston-valley-winery/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Winetitles: the Queenstown wine cave that ignited wine tourism",
+     "url": "https://winetitles.com.au/the-queenstown-wine-cave-that-ignited-the-regions-wine-tourism/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "mt-difficulty",
+   "searches": 5,
+   "tested": [
+    "The first vintage of 1998: The Real Review and others besides the author's Otago Daily Times. Sound.",
+    "The founding: a handshake among the owners of four new Bannockburn vineyards dated 1992 in one account, five owners in another, the first vintage 1998, the company 2004 in most accounts and 2003 in one. No founding year is sure, so founded is now empty.",
+    "The Gang of Four: two accounts call the group so; that they named themselves so is in none. Said as came to be known.",
+    "The company of 2004: most of the individual vineyards passed into it (one account). The record's the founding vineyards came into it went further; set right.",
+    "The clones 5, 6 and 10/5: found in no source of two searches, one of them restricted to the host of the house's sheets; a Pipeclay Terrace note of 2009 lists clones 5, 6, 13, 113, 115, 667 and 777. Cut to a blend of several clones.",
+    "The making: about twelve months on full lees in barrel, malolactic in spring, filtered but not fined (the house's 2016 sheet on another host, a 2024 merchant); ten months with a fifth new and a tenth whole bunch in 2021 (the Wine Advocate through Wine.com); twelve months with a fifth new and a fifth whole bunch in 2022 (two merchants). Rewritten with the bunches and the new oak.",
+    "Pipeclay Terrace: vines of 1996 on coarse, drought prone Bannockburn soils and heavy Scotland Point clay (the house's sheets of 2010, 2017 and 2018). That they grow on one of the four original vineyards along Felton Road was in no source read; cut, with the third trap that leant on it.",
+    "Bannockburn's Geographical Indication: registered on 1 February 2022 by the IPONZ register. That it was the first sub-region of Central Otago to be registered is in one blog only; cut.",
+    "Roaring Meg: the second label, launched in 2004 by most accounts (2001 in one), named for a stream of the gold rush in the Kawarau Gorge, drawing on vineyards about Cromwell beyond Bannockburn, while the Mt Difficulty label comes from the south side of the Kawarau at Bannockburn (Specialist Cellars, Vitis Cellars). The note now says so, and the label line no longer calls Bannockburn the sub-region of all the house's vineyards."
+   ],
+   "changed": [
+    {
+     "field": "founded",
+     "was": "1998",
+     "now": "",
+     "why": "The venture began with a handshake dated 1992 in one account, made its first vintage in 1998 and became a company in 2004 (2003 in one): no founding year is sure, and an empty field is a true answer.",
+     "sources": [
+      {
+       "title": "The Real Review: Mt Difficulty Wines",
+       "url": "https://www.therealreview.com/wineries/4dnn8yk59m92/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mt Difficulty: About",
+       "url": "https://www.mtdifficulty.nz/about",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.grapes",
+     "was": "Pinot Noir alone, a blend of clones, chiefly 5, 6 and 10/5.",
+     "now": "Pinot Noir alone, a blend of several clones grown across the house's Bannockburn vineyards.",
+     "why": "The clones 5, 6 and 10/5 were found in no source of two searches, and the house's notes list other clones for other wines.",
+     "sources": [
+      {
+       "title": "Mt Difficulty: Pipeclay Terrace Pinot Noir 2009 tasting note",
+       "url": "https://cdn.shopify.com/s/files/1/1453/4032/files/MtD_TN_PIPECLAY_TCE_PINOT_NOIR_2009.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "The wine rests about twelve months in barrel on its full lees and goes through its malolactic fermentation there in the spring; it is racked out of barrel in late autumn and filtered, but not fined, before bottling.",
+     "now": "Part of the fruit goes into the ferments as whole bunches, from about a tenth to a fifth or more by vintage. The wine then rests ten to twelve months in barrel on its full lees, about a fifth of the barrels new in vintages such as 2021 and 2022, with the malolactic fermentation in the spring; it is racked in late autumn and filtered, but not fined, before bottling.",
+     "why": "The house's 2016 sheet gives twelve months on full lees, malolactic in spring and filtered but not fined; the 2021 had ten months and the 2022 twelve, each with a fifth new oak and a tenth to a fifth whole bunch.",
+     "sources": [
+      {
+       "title": "Mt Difficulty: Pinot Noir 2016 fact sheet",
+       "url": "https://static1.squarespace.com/static/68ffb827f51417642b1d514f/t/6930efc1d619f1795974c24b/1764814786011/Mt_Difficulty_Pinot_Noir_2016.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Mt Difficulty Bannockburn Pinot Noir 2021",
+       "url": "https://www.wine.com/product/mt-difficulty-bannockburn-pinot-noir-2021/2923895",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Woods Wholesale Wine: 2022 Mt Difficulty Pinot Noir, Bannockburn",
+       "url": "https://www.woodswholesalewine.com/products/2022-mt-difficulty-pinot-noir-bannockburn-new-zealand-750ml",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Noble Green Wines: Mount Difficulty Bannockburn Pinot Noir 2022",
+       "url": "https://noblegreenwines.co.uk/products/mount-difficulty-bannockburn-pinot-noir-358845b0-a653-40da-b828-4fa8c2c4c21f",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Black Market: Mt Difficulty Bannockburn Pinot Noir 2024",
+       "url": "https://www.blackmarket.co.nz/products/mt-difficulty-bannockburn-pinot-noir-2024",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means",
+     "was": "The sub-region of all its vineyards, a registered Geographical Indication of its own since 2022.",
+     "now": "The sub-region where the wine's vineyards lie, a registered Geographical Indication of its own since 2022.",
+     "why": "Roaring Meg draws on vineyards beyond Bannockburn, so Bannockburn is the sub-region of this wine's vineyards, not of all the house's.",
+     "sources": [
+      {
+       "title": "Specialist Cellars: Mt Difficulty Wines",
+       "url": "https://www.specialistcellars.co.uk/producer/mt-difficulty-wines/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vitis Cellars: Mt Difficulty Roaring Meg Pinot Noir 2019",
+       "url": "https://www.vitiscellars.co.nz/shop/Wine/Mt+Difficulty+Roaring+Meg+Pinot+Noir+2019.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Bannockburn's terraces on the south side of the Kawarau were worked for gold in the nineteenth century, and its vineyards lie on the old sluicings. Vines came in the 1990s, when the owners of a handful of newly planted vineyards there, who called themselves the Gang of Four, chose to make wine together under one label rather than each alone. Mt Difficulty's first vintage was 1998. The growers' handshake held until 2004, when the company Mt Difficulty Wines was formed and the founding vineyards came into it. The house went on to bottle some of its vineyards apart: Pipeclay Terrace, from vines planted in 1996 on one of the four original vineyards along Felton Road, is released only in strong vintages, and Mansons Farm is made in small quantities. A second label, Roaring Meg, came to stand beside the first. In 2022 Bannockburn became a registered Geographical Indication of its own, the first sub-region of Central Otago to do so. For a sommelier, the Bannockburn Pinot Noir is the house's map of the sub-region in one bottle: fruit from many vineyards on gravel and clay, blended to show the place rather than one site.",
+     "now": "Bannockburn's terraces on the south side of the Kawarau were worked for gold in the nineteenth century, and its vineyards came to share the slopes with the old sluicings. In the 1990s the owners of a handful of newly planted vineyards there, who came to be known as the Gang of Four, chose to make wine together under one label rather than each alone. Mt Difficulty's first vintage was 1998. The growers' handshake held until 2004, when the company Mt Difficulty Wines was formed and most of the founding vineyards passed into it. The house went on to bottle some of its vineyards apart: Pipeclay Terrace, from vines planted in 1996 on coarse soils and heavy clay, is released only in strong vintages, and Mansons Farm is made in small quantities. A second label, Roaring Meg, came to stand beside the first. In 2022 Bannockburn became a registered Geographical Indication of its own, within Central Otago. For a sommelier, the Bannockburn Pinot Noir is the house's map of the sub-region in one bottle: fruit from several vineyards on gravel and clay, blended to show the place rather than one site.",
+     "why": "The vineyards sit beside the sluicings rather than on them; the growers came to be known as the Gang of Four; most, not all, founding vineyards passed into the company; the Felton Road placing of Pipeclay Terrace and the first registered sub-region were in no second source.",
+     "sources": [
+      {
+       "title": "The Real Review: Mt Difficulty Wines",
+       "url": "https://www.therealreview.com/wineries/4dnn8yk59m92/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mt Difficulty: Pipeclay Terrace Pinot Noir 2018 fact sheet",
+       "url": "https://cdn.shopify.com/s/files/1/1042/9896/files/Mt_Difficulty_2018_Pipeclay_Terr_PN_Fact_Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mt Difficulty: Pipeclay Terrace Pinot Noir 2010 tasting note",
+       "url": "https://cdn.shopify.com/s/files/1/1453/4032/files/MtD_TN_PIPECLAY_TCE_PINOT_NOIR_2010.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "IPONZ: the register of geographical indications, Bannockburn",
+       "url": "https://iponz.govt.nz/get-ip/geographical-indications/register/bannockburn",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "NZ Herald, The Country: Bannockburn registered as a geographical indication",
+       "url": "https://nzherald.co.nz/the-country/news/wine-region-bannockburn-registered-as-a-geographical-indication/FPFMZREM3NWPUEWXSBEMOZLS64",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "Mt Difficulty's second label, named for Roaring Meg, a stream of the Kawarau Gorge.",
+     "now": "Mt Difficulty's second label, drawn from vineyards beyond Bannockburn too, and named for Roaring Meg, a stream of the Kawarau Gorge.",
+     "why": "Roaring Meg draws on vineyards about Cromwell beyond Bannockburn, and is named for a stream of the Kawarau Gorge.",
+     "sources": [
+      {
+       "title": "Specialist Cellars: Mt Difficulty Wines",
+       "url": "https://www.specialistcellars.co.uk/producer/mt-difficulty-wines/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vitis Cellars: Mt Difficulty Roaring Meg Pinot Noir 2019",
+       "url": "https://www.vitiscellars.co.nz/shop/Wine/Mt+Difficulty+Roaring+Meg+Pinot+Noir+2019.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "From vines planted in 1996 on one of the four founding vineyards along Felton Road, released only in strong vintages.",
+     "now": "From vines planted in 1996 on coarse Bannockburn soils and heavy Scotland Point clay, released only in strong vintages.",
+     "why": "The house's sheets give coarse Bannockburn soils and heavy Scotland Point clay for Pipeclay Terrace, not a place along Felton Road.",
+     "sources": [
+      {
+       "title": "Mt Difficulty: Pipeclay Terrace Pinot Noir 2018 fact sheet",
+       "url": "https://cdn.shopify.com/s/files/1/1042/9896/files/Mt_Difficulty_2018_Pipeclay_Terr_PN_Fact_Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mt Difficulty: Pipeclay Terrace Pinot Noir 2010 tasting note",
+       "url": "https://cdn.shopify.com/s/files/1/1453/4032/files/MtD_TN_PIPECLAY_TCE_PINOT_NOIR_2010.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps",
+     "was": [
+      "Mt Difficulty Bannockburn Pinot Noir is a blend of several Bannockburn vineyards; Pipeclay Terrace and Mansons Farm are the single vineyard wines.",
+      "Roaring Meg is Mt Difficulty's second label, not a separate winery or a sub-region of Central Otago.",
+      "Mt Difficulty's founding vineyards and Felton Road's estate both lie along Felton Road at Bannockburn, but they are separate houses."
+     ],
+     "now": [
+      "Mt Difficulty Bannockburn Pinot Noir is a blend of several Bannockburn vineyards; Pipeclay Terrace and Mansons Farm are the single vineyard wines.",
+      "Roaring Meg is Mt Difficulty's second label, not a separate winery or a sub-region of Central Otago."
+     ],
+     "why": "The third trap set the founding vineyards along Felton Road, which no source read confirms; cut.",
+     "sources": [
+      {
+       "title": "Mt Difficulty: Pipeclay Terrace Pinot Noir 2018 fact sheet",
+       "url": "https://cdn.shopify.com/s/files/1/1042/9896/files/Mt_Difficulty_2018_Pipeclay_Terr_PN_Fact_Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "About twelve months on its full lees, through the malolactic fermentation in spring; filtered but not fined.",
+     "now": "About a year on its full lees, through the malolactic fermentation in spring; filtered but not fined.",
+     "why": "The time in barrel is ten to twelve months by vintage, so the card says about a year.",
+     "sources": [
+      {
+       "title": "Mt Difficulty: Pinot Noir 2016 fact sheet",
+       "url": "https://static1.squarespace.com/static/68ffb827f51417642b1d514f/t/6930efc1d619f1795974c24b/1764814786011/Mt_Difficulty_Pinot_Noir_2016.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Mt Difficulty Bannockburn Pinot Noir 2021",
+       "url": "https://www.wine.com/product/mt-difficulty-bannockburn-pinot-noir-2021/2923895",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "founded 1998 (the first vintage, not a founding).",
+    "The clones 5, 6 and 10/5.",
+    "Pipeclay Terrace on one of the four original vineyards along Felton Road.",
+    "Bannockburn as the first sub-region of Central Otago to be registered.",
+    "The trap that set the founding vineyards and Felton Road's estate along one road."
+   ],
+   "open": [
+    "The company's formation is 2004 in most accounts and 2003 in one; the question keys 2004 and does not offer 2003.",
+    "Whether four or five growers made the first wine together is disputed; the record says a handful.",
+    "The sites line (estate and managed vineyards, the earlier plantings above all, open gravels to heavier clays) rests on the house's sheets as the author read them; this check confirmed only the south side of the Kawarau."
+   ],
+   "extraSources": [
+    {
+     "title": "IPONZ: the register of geographical indications, Central Otago",
+     "url": "https://iponz.govt.nz/get-ip/geographical-indications/register/central-otago",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The Real Review: Mt Difficulty Wines",
+     "url": "https://www.therealreview.com/wineries/4dnn8yk59m92/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "quartz-reef",
+   "searches": 3,
+   "tested": [
+    "The founding of 1996 by an Austrian born winemaker with partners, the owner of Bendigo Station among them: The Real Review, QT magazine and The Cork and Cap with the house domain kept out; one adds a partner from Champagne. That the other partner was a Cromwell businessman was in no source read; cut.",
+    "The first look at Bendigo in 1990 (two accounts), the first vines of 1998, the first harvest of 2001, the conversion begun in 2007 and Demeter certification in 2011. Sound.",
+    "The name from the quartz reef beneath the vineyard and New Zealand's largest quartz deposit: the house and one secondary; hedged as the house's account. BioGro organic certification: several accounts. Sound.",
+    "The making: hand picked, destemmed, a cold soak of five to seven days, indigenous yeasts, a maceration after fermentation, twenty two days on skins in 2021, twelve to fourteen months in French barriques, fifteen per cent new in 2010 and sixteen in 2021 (Vino Fino, Prince of Pinot, a profile of 2013, Wine.com). The record's small share of whole bunches is contradicted by the profile's destemmed and was in no second source; cut. The new oak widened to a sixth to a half.",
+    "The Single Ferment: the one parcel ferment of a vintage the house judges the most expressive, bottled on its own (Vino Fino). The record's single blocks bottled apart and block 6 of Velvet were set right and cut.",
+    "Bendigo as the warmest sub-region: New Zealand Winegrowers calls it the warmest on one page and possibly the warmest in its textbook; hedged. Under the Dunstan Mountains was in no source read; cut."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Picked by hand and cold soaked, the fruit is fermented with indigenous yeasts and a small share of whole bunches, some twenty four days on skins in a vintage such as 2014. It then spends about fourteen months in French oak barriques, a quarter to a half of them new by vintage, and the 2017 went to bottle unfined and unfiltered.",
+     "now": "Picked by hand and destemmed, the fruit is cold soaked for some days, fermented with indigenous yeasts and left on its skins after fermentation, about three weeks in all in vintages such as 2014 and 2021. It then spends twelve to fourteen months in French oak barriques, from about a sixth to a half of them new by vintage, and the 2017 went to bottle unfined and unfiltered.",
+     "why": "A profile of 2013 has the fruit destemmed, so the small share of whole bunches is cut; a cold soak, indigenous yeasts, a maceration after fermentation and twelve to fourteen months in barriques, fifteen to fifty per cent new by vintage, are in four accounts.",
+     "sources": [
+      {
+       "title": "Vino Fino: Quartz Reef Bendigo Estate Single Ferment Pinot Noir 2021",
+       "url": "https://vinofino.co.nz/product/quartz-reef-bendigo-estate-single-ferment-pinot-noir-2021/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Prince of Pinot: 2010 Quartz Reef Bendigo Pinot Noir",
+       "url": "https://www.princeofpinot.com/winery/677/index.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine.com: Quartz Reef Bendigo Single Vineyard Pinot Noir 2014",
+       "url": "https://www.wine.com/product/quartz-reef-bendigo-single-vineyard-pinot-noir-2014/154631",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "The sub-region on the east bank of Lake Dunstan, under the Dunstan Mountains, with the warmest terraces of Central Otago.",
+     "now": "The sub-region on the east bank of Lake Dunstan, by New Zealand Winegrowers' account perhaps the warmest in Central Otago.",
+     "why": "New Zealand Winegrowers calls Bendigo the warmest sub-region on one page and possibly the warmest in its textbook, so the line hedges; the Dunstan Mountains were in no source read.",
+     "sources": [
+      {
+       "title": "New Zealand Winegrowers: Central Otago regional sheet",
+       "url": "https://www.nzwine.com/media/ntabmd3s/central-otago.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "New Zealand Winegrowers: New Zealand Wine, a guide to the regions and varieties",
+       "url": "https://www.nzwine.com/media/zfvekiln/new-zealand-wine-textbook.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1996, by the house's account, an Austrian born winemaker founded Quartz Reef with two partners, a Cromwell businessman and the farmer of Bendigo Station, who had marked out the slopes of Bendigo, on the east bank of Lake Dunstan, as new ground for Central Otago. The house took its name from the quartz reef that runs beneath the vineyard, by its own account the largest quartz deposit in New Zealand. The first vines went into Bendigo Station in 1998, and the first harvest came in 2001. Beside its Pinot Noir the house made sparkling wine by the traditional method, with a second fermentation in bottle, and became known for both. In 2007 it began to convert the vineyard to biodynamic farming, and in 2011 it gained Demeter certification, with its winery certified organic by BioGro. The estate bottles single blocks of the vineyard apart as its Single Ferment Pinot Noirs, beside the Bendigo Estate Pinot Noir. For a sommelier it is the warm end of Central Otago in a glass: dark, dense Pinot Noir from a slope that faces the sun.",
+     "now": "In 1996, by the house's account, an Austrian born winemaker who had first looked at the slopes of Bendigo, on the east bank of Lake Dunstan, in 1990 founded Quartz Reef with partners, among them the farmer of Bendigo Station. The house took its name from the quartz reef that runs beneath the vineyard, by its own account the largest quartz deposit in New Zealand. The first vines went into Bendigo Station in 1998, and the first harvest came in 2001. Beside its Pinot Noir the house made sparkling wine by the traditional method, with a second fermentation in bottle, and became known for both. In 2007 it began to convert the vineyard to biodynamic farming, and in 2011 it gained Demeter certification, with its winery certified organic by BioGro. The house also bottles one chosen parcel ferment of a vintage on its own, as its Single Ferment Pinot Noir, beside the Bendigo Estate Pinot Noir. For a sommelier it is the warm end of Central Otago in a glass: dark, dense Pinot Noir from a slope that faces the sun.",
+     "why": "The founding partners are the owner of Bendigo Station and others, no Cromwell businessman in any source read; the founder first looked at Bendigo in 1990; the Single Ferment is one chosen parcel ferment of a vintage.",
+     "sources": [
+      {
+       "title": "The Real Review: Quartz Reef",
+       "url": "https://www.therealreview.com/wineries/4dnn8ykfjn22/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "QT magazine: Quartz Reef comes of age",
+       "url": "https://qt.co.nz/quartz-reef-comes-of-age/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Cork and Cap: Quartz Reef",
+       "url": "https://www.thecorkandcap.co.nz/quartz-reef",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vino Fino: Quartz Reef Bendigo Estate Single Ferment Pinot Noir 2021",
+       "url": "https://vinofino.co.nz/product/quartz-reef-bendigo-estate-single-ferment-pinot-noir-2021/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "Pinot Noir from a single block of the estate, such as block 6 for the Velvet bottling, fermented on its own.",
+     "now": "The one parcel ferment of a vintage that the house chooses to bottle on its own, from a single block of the estate.",
+     "why": "Vino Fino's note: each parcel is fermented apart and the one ferment of the vintage the house judges the most expressive is bottled on its own.",
+     "sources": [
+      {
+       "title": "Vino Fino: Quartz Reef Bendigo Estate Single Ferment Pinot Noir 2021",
+       "url": "https://vinofino.co.nz/product/quartz-reef-bendigo-estate-single-ferment-pinot-noir-2021/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "A Cromwell businessman as a founding partner.",
+    "A small share of whole bunches.",
+    "Block 6 for the Velvet bottling.",
+    "Under the Dunstan Mountains."
+   ],
+   "open": [
+    "The house's own timeline puts the start of the biodynamic conversion in 2001 against 2007 elsewhere; the record keeps 2007, which two independent accounts give.",
+    "The Otago Daily Times and a property listing of the Bendigo estate report a sale of the winery; the record says nothing of owners, so nothing volatile stands."
+   ],
+   "extraSources": [
+    {
+     "title": "New Zealand Winegrowers: Quartz Reef winery page",
+     "url": "https://www.nzwine.com/en/winery/quartz-reef",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Vind: Quartz Reef",
+     "url": "https://vind.wine/new-zealand/quartz-reef/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "NZ Herald: the organic wineries of Central Otago",
+     "url": "https://www.nzherald.co.nz/travel/go-nz-the-best-organic-wineries-in-central-otago/G66VQDSGDYQGJCSBX7NAS4EDEY/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "shared": [
+  {
+   "search": "IPONZ: Bannockburn geographical indication",
+   "finding": "Registered on 1 February 2022 (deemed from 6 August 2021), GI 1028, registrant the Central Otago Winegrowers Association; Central Otago itself registered in 2018. The first sub-region claim rests on a blog alone.",
+   "sources": [
+    {
+     "title": "IPONZ: the register of geographical indications, Bannockburn",
+     "url": "https://iponz.govt.nz/get-ip/geographical-indications/register/bannockburn",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "IPONZ: the register of geographical indications, Central Otago",
+     "url": "https://iponz.govt.nz/get-ip/geographical-indications/register/central-otago",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "NZ Herald, The Country: Bannockburn registered as a geographical indication",
+     "url": "https://nzherald.co.nz/the-country/news/wine-region-bannockburn-registered-as-a-geographical-indication/FPFMZREM3NWPUEWXSBEMOZLS64",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "search": "New Zealand Winegrowers: the sub-regions",
+   "finding": "Gibbston the highest sub-region with a cooler climate and later ripening; Bendigo the warmest on one page and possibly the warmest in the textbook; Wanaka some eighty kilometres north of Queenstown, cooler and slightly wetter, never called the northernmost; Bannockburn on the south bank of the Kawarau, among the warmest and driest sites.",
+   "sources": [
+    {
+     "title": "New Zealand Winegrowers: Central Otago wine region",
+     "url": "https://www.nzwine.com/en/regions/centralotago/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "New Zealand Winegrowers: Central Otago regional sheet",
+     "url": "https://www.nzwine.com/media/ntabmd3s/central-otago.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "New Zealand Winegrowers: New Zealand Wine, a guide to the regions and varieties",
+     "url": "https://www.nzwine.com/media/zfvekiln/new-zealand-wine-textbook.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Stewart Elms",
+   "where": "every account of Felton Road's founding in 1991, also spelt Stuart Elms",
+   "believed": "not known to be dead, a precaution; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Nick Mills",
+   "where": "Rippon's history and New Zealand Winegrowers, as the founder's son who leads the estate",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Lois Mills",
+   "where": "Rippon's history, as the founder's wife and widow",
+   "believed": "not known to be dead, a precaution; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Alan Brady",
+   "where": "every account of Gibbston Valley's founding, and as the founder of Mount Edward",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Matt Dicey",
+   "where": "accounts of Mt Difficulty, as its winemaker from 1998 for twenty vintages",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Greg Lane",
+   "where": "accounts of Mt Difficulty, as its winemaker from 2021",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Rudi Bauer",
+   "where": "every account of Quartz Reef, as its Austrian born founding winemaker",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "John Perriam",
+   "where": "accounts of Quartz Reef's founding, as the owner of Bendigo Station",
+   "believed": "living; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Trevor Scott",
+   "where": "accounts of Quartz Reef's founding, as a partner",
+   "believed": "not known to be dead, a precaution; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Clotilde Chauvet",
+   "where": "one account of Quartz Reef's founding, as a partner from Champagne",
+   "believed": "living, a precaution; not in people.json",
+   "inFragment": false
+  },
+  {
+   "name": "Nigel Greening and Blair Walter",
+   "where": "Felton Road's buyer of 2000 and its winemaker of 1997",
+   "believed": "living; already in people.json",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Rolfe Mills",
+   "note": "Rippon's founder, died in 2000 by several accounts; no birth year found, so described, not named."
+  },
+  {
+   "name": "Percy Sargood",
+   "note": "The founder's grandfather who bought Wanaka Station, by the house; no dates found in this check, so described."
+  }
+ ],
+ "swaps": [
+  {
+   "pick": "gibbston-valley",
+   "proposal": "The author did not propose a swap but asked the refuter to weigh one to Gibbston Valley School House Pinot Noir, whose sheets are published.",
+   "ruling": "refused: the Reserve is the house's selection of a few rows in a strong year and the wine of the London trophy of 2001, while School House is one of two single vineyard wines from Bendigo, not from Gibbston; the thin making is said with less, not swapped."
+  }
+ ],
+ "picks": [
+  {
+   "pick": "felton-road",
+   "ruling": "kept: no swap proposed; Block 5 is the house's single block Pinot Noir the library and the region line name."
+  },
+  {
+   "pick": "rippon",
+   "ruling": "kept: no swap proposed; Mature Vine is the estate's main Pinot Noir, its younger vines going to Jeunesse."
+  },
+  {
+   "pick": "gibbston-valley",
+   "ruling": "kept: the swap the author asked the refuter to weigh is refused (above)."
+  },
+  {
+   "pick": "mt-difficulty",
+   "ruling": "kept: no swap proposed; the Bannockburn Pinot Noir is the house's main Pinot Noir under its own label."
+  },
+  {
+   "pick": "quartz-reef",
+   "ruling": "kept: no swap proposed; the Bendigo Estate Pinot Noir is the house's estate Pinot Noir beside its sparkling wine."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-regions (the region producers line for Gibbston Valley, through show.cjs), the region record's milestone card and js/data-field-atlas.js",
+   "record": "Gibbston Valley planted in 1981",
+   "says": "Gibbston Valley planted in 1981",
+   "against": "The first vines are 1980, 1981 and 1984 by different accounts and the Home Block, the first commercial vineyard, 1983 by the house and two others. The library's 1981 is one of the accounts, not wrong; the record says the early 1980s and 1983. Not edited.",
+   "sources": [
+    {
+     "title": "Vind: Gibbston Valley Winery",
+     "url": "https://vind.wine/new-zealand/gibbston-valley-winery/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Winetitles: the Queenstown wine cave that ignited wine tourism",
+     "url": "https://winetitles.com.au/the-queenstown-wine-cave-that-ignited-the-regions-wine-tourism/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "plan.json",
+   "record": "the gibbston-valley pick's why",
+   "says": "Central Otago's first commercial winery, 1987",
+   "against": "1987 is the region's first commercial vintage; the house dates its winery and restaurant to 1990. For the read-together agent.",
+   "sources": [
+    {
+     "title": "Vind: Gibbston Valley Winery",
+     "url": "https://vind.wine/new-zealand/gibbston-valley-winery/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Preferred Magazine: wines in Gibbston Valley",
+     "url": "https://preferredmagazine.ca/thrilling-wines-gibbston-valley/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers (p-felton-road traps) against the region summary",
+   "record": "semi-continental against continental",
+   "says": "Central Otago is semi-continental (the library's trap); the only region in New Zealand with a continental climate (the region summary)",
+   "against": "The author's note, carried forward: a small tension in the Codex's own wording for the integrator. Not edited.",
+   "sources": [
+    {
+     "title": "New Zealand Winegrowers: Central Otago wine region",
+     "url": "https://www.nzwine.com/en/regions/centralotago/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
