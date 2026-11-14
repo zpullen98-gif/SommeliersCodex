@@ -25,7 +25,8 @@
  *      maps, with its readiness line; codex55's country chips and Field maps chip gone, its search, sheets and full
  *      list below, in that order; every region's district count from the index, equal to its reading's; the first
  *      search reads every reading; the whole course as its own page and address
- *   5. the region page: on Burgundy and Rioja the study row, its jumps landing, the order of the page, the lazy map
+ *   5. the region page: on Burgundy and Rioja the study row (with Producers after Read where codex58 holds a group of
+ *      the region), its jumps landing, the order of the page, the lazy map
  *      and The districts eight with Show all; on every region with a reading, In one minute drawn from the record's
  *      own fields (the climate in a line, the main grapes, the ladder, one exam line, one trap) and its step
  *   6. the drills: the map quiz on Burgundy answered both ways and kept for the chooser; on every field map the quiz
@@ -509,10 +510,13 @@ async function main() {
     const near2 = A.J('v56Near("region", ' + JSON.stringify(slug) + ')');
     const row = (/<nav class="v56-srow v56"[^>]*>([\s\S]*?)<\/nav>/.exec(html) || ['', ''])[1];
     const labels = attr(row, />([^<]+)<\/button>/g);
-    check(slug + ': the study row reads ' + labels.join(', '), JSON.stringify(labels) === JSON.stringify(['Summary', 'Map', 'Districts', 'Read', 'Flash', 'Drill', 'Map quiz', 'Previous', 'Next']) && html.indexOf('aria-label="Study ' + A.G('v39Find(' + JSON.stringify(slug) + ').name') + '"') > 0, row.slice(0, 300));
+    /* one layer on (codex58): a region with a group of producers gains the Producers chip straight after Read, its jump landing on Five producers */
+    const five = A.G('typeof v58GroupsOf === "function" ? v58GroupsOf(' + JSON.stringify(slug) + ').length : 0') > 0;
+    const wantRow = ['Summary', 'Map', 'Districts', 'Read'].concat(five ? ['Producers'] : [], ['Flash', 'Drill', 'Map quiz', 'Previous', 'Next']);
+    check(slug + ': the study row reads ' + labels.join(', '), JSON.stringify(labels) === JSON.stringify(wantRow) && html.indexOf('aria-label="Study ' + A.G('v39Find(' + JSON.stringify(slug) + ').name') + '"') > 0, row.slice(0, 300));
     const targets = attr(row, /data-to="([^"]*)"/g);
     check(slug + ': its jumps land on the page (' + targets.join(', ') + '), Flash and Drill are the region\'s, Map quiz its field map, Previous and Next the course\'s',
-      targets.length === 4 && targets.every((t) => html.indexOf('id="' + t + '"') > 0) && row.indexOf('data-v39="flash" data-slug="' + slug + '"') > 0 && row.indexOf('data-v39="drill" data-slug="' + slug + '"') > 0
+      targets.length === (five ? 5 : 4) && (!five || targets[4] === 'v58-five-h') && targets.every((t) => html.indexOf('id="' + t + '"') > 0) && row.indexOf('data-v39="flash" data-slug="' + slug + '"') > 0 && row.indexOf('data-v39="drill" data-slug="' + slug + '"') > 0
       && row.indexOf('data-go="v56mapquiz" data-arg="' + m.id + '"') > 0 && row.indexOf('data-key="' + near2.prev.key + '" id="v56-s-prev" aria-label="Previous: ' + near2.prev.name + '"') > 0 && row.indexOf('data-key="' + near2.next.key + '" id="v56-s-next" aria-label="Next: ' + near2.next.name + '"') > 0, targets.join(' '));
     const at = (x) => html.indexOf(x);
     check(slug + ': the order: the title, the study row, the lead, In one minute, the map, The districts, the reading', at('class="viewhead"') < at('v56-srow') && at('v56-srow') < at('class="v39-lead"') && at('class="v39-lead"') < at('<section class="card v56 v56-minute"') && at('<section class="card v56 v56-minute"') < at('class="v55-map"') && at('class="v55-map"') < at('class="v55-districts"') && at('class="v55-districts"') < at('id="v56-read"'));
