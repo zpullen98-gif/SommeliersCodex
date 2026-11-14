@@ -1,0 +1,1138 @@
+{
+ "group": "provence",
+ "chunk": "w1",
+ "batch": "A",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 27,
+  "perRecord": {
+   "tempier": 8,
+   "chateau-simone": 4,
+   "trevallon": 5,
+   "domaines-ott": 4,
+   "esclans": 6
+  },
+  "note": "Twenty seven searches of a share of twenty eight, one left unspent, none of them the author's. Sixteen were restricted to a house's own domain (domainetempier.com five times, chateau-simone.fr three times, domainedetrevallon.com three times, domaines-ott.com twice, esclans.com twice) or to an appellation body (the INAO and the Vins de Bandol together once), and are read as primary through their summaries; the other eleven went to the open web for second sources (Lulu Peyraud's dates, the first red of 1951, the Palette decree, the Les Baux decrees and Trévallon's year, Roederer's share, the Château de Selle method, Patrick Léon, the Côtes de Provence rule, the sale of 2019, the buyer's father). No WebFetch was tried. Every record was tested; no fact that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own pages for their own dates, vineyards and methods, then to the INAO's texts for the three appellations the records lean on (Bandol, Palette, Les Baux), then to the open web for the second source of each date and person.",
+  "Where a house's own pages disagree with each other (Tempier's soil, Simone's 1946 or 1947, Trévallon's 1950 or 1960) the record either gives both as the house's account or gives no date.",
+  "Sources whose title or address names a living person, or that are a writer's own site, were read in the results but never cited in the fragment or here; the fragment's own sources were left as the author wrote them."
+ ],
+ "records": [
+  {
+   "key": "tempier",
+   "searches": 8,
+   "tested": [
+    "The family since 1834: Wikipedia's page on Lucie Peyraud and the importers' accounts in the results give 1834; the domaine's own story page dates only the replanting of 1880 by Lulu's great grandmother: kept on the two secondary sources.",
+    "The marriage of 1936, the father's gift, the settling in 1940 and Lucien Peyraud's farming studies at Aix: the domaine's story page in English and French, with Wikipedia for the gift of 1936: confirmed.",
+    "Lucie Peyraud (1917 to 2020): Wikipedia (born 11 December 1917, died 7 October 2020, aged 102) and an obituary headed with both years; the domaine's page says 103, which those dates do not bear out: kept as 1917 to 2020.",
+    "The decree of 11 November 1941 and the spiritual father of the appellation: the domaine's story page and the INAO's page for Bandol: confirmed.",
+    "The first wine a rosé bottled in 1943 and the first red in 1951: the domaine's story page (27 October 1943; the label of the first red Bandol of 1951 drawn by Lulu's father) and Primal Wine: confirmed.",
+    "The foudre cellar of 1968, built by the sons with their father, and the sons at the head of the domaine (one from 1963 to 2000, the other from 1974 to 1999): the domaine's story pages: confirmed in words that name neither.",
+    "La Tourtine: about 85 per cent Mourvèdre with Grenache and Cinsault, vines of 45 to 50 years, a slope by Le Castellet in sun from dawn to dusk and very windy, sorted by hand, destemmed, crushed, three or four weeks in concrete with indigenous yeasts, eighteen months in large oak vats, five to twenty years of keeping: the domaine's cuvée page: the making and the keeping changed, the rest confirmed.",
+    "The soil: Santonian sandstone and marl with gypsum on the cuvée page, fairly deep with much clay on the terroir page: both now given.",
+    "Cabassaou at the foot of La Tourtine, out of the mistral, 92 to 94 per cent Mourvèdre, and La Migoua 55 per cent: the domaine's cuvée pages: the trap and the first question confirmed.",
+    "The appellation's rules (Mourvèdre 50 to 95 per cent, eighteen months at the least in casks or foudres, eight communes round Bandol): the INAO's cahier des charges and its Bandol page: confirmed.",
+    "The rules of the house: nobody living named (the director since 2000 and the sons described), no price, no score, nothing volatile, no judging superlative, British, no dash; the closing line's claim that the house taught the wine world Bandol rouge reworded."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "La Tourtine, a slope by Le Castellet open to the sun from dawn to dusk and much exposed to the wind, on Santonian sandstone and marl with gypsum at the surface; Cabassaou lies below it, out of the mistral.",
+     "now": "La Tourtine, a windswept slope by Le Castellet in sun from dawn to dusk; the domaine gives its soil as Santonian sandstone and marl with gypsum at the surface, and elsewhere as fairly deep and rich in clay. Cabassaou lies at its foot, out of the mistral.",
+     "why": "The domaine's own pages give the soil two ways: the cuvée page Santonian sandstone and marl with gypsum, the terroir page a soil relatively deep with much clay; the record now gives both, as the domaine's account.",
+     "sources": [
+      {
+       "title": "Domaine Tempier: Cuvée La Tourtine",
+       "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-la-tourtine-en/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine Tempier: Terroirs",
+       "url": "https://www.domainetempier.com/en/terroirs/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented with the grapes' own yeasts in concrete vats, with the long maceration of the house style, then aged for about eighteen months in large oak foudres before bottling, where the appellation asks a red for at least eighteen months in wood.",
+     "now": "Sorted by hand, destemmed and crushed, the grapes are fermented with their own yeasts in concrete vats for three or four weeks; the wine is then aged for about eighteen months in large oak foudres before bottling, where the appellation asks a red for at least eighteen months in wood.",
+     "why": "The domaine's La Tourtine page, read through search, gives the grapes sorted by hand, destemmed and crushed, three or four weeks in concrete vats with indigenous yeasts, then eighteen months in large oak vats; the long maceration is now the measured three or four weeks.",
+     "sources": [
+      {
+       "title": "Domaine Tempier: Cuvée La Tourtine",
+       "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-la-tourtine-en/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Tannic and closed in its first years, it opens after eight to ten into leather, game and dried herbs, and keeps for twenty years and more in a cool cellar.",
+     "now": "Tannic and closed in its first years, it then opens into leather, game and dried herbs; the domaine gives it five to twenty years in a cool cellar.",
+     "why": "The eight to ten years to open and twenty years and more rest on no source searched; the domaine's own page gives five to twenty years of keeping.",
+     "sources": [
+      {
+       "title": "Domaine Tempier: Cuvée La Tourtine",
+       "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-la-tourtine-en/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "For a sommelier, Tempier is the house that taught the wine world Bandol rouge, and La Tourtine is its parcel red in full.",
+     "now": "For a sommelier, Tempier is the historical answer for Bandol rouge, and La Tourtine is its parcel red in full.",
+     "why": "That the house taught the wine world Bandol rouge is a claim of rank no source searched states; the library's own words, the style reference and the historical answer, are kept.",
+     "sources": [
+      {
+       "title": "Domaine Tempier: The story of Domaine Tempier",
+       "url": "https://www.domainetempier.com/en/the-story-of-domaine-tempier/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "Bandol Cuvée Classique: The domaine's main red, a Mourvèdre led blend from across its vineyards.",
+     "now": "Bandol Cuvée Lulu & Lucien: The domaine's main red, a Mourvèdre led blend from across its vineyards, called Cuvée Classique until the family renamed it for the founding couple with the 2020 reds.",
+     "why": "The domaine's own announcement, read through search, says the Cuvée Classique was renamed Lulu & Lucien from the release of the 2020 red wines, after Lulu's death; the label a guest meets now carries the new name.",
+     "sources": [
+      {
+       "title": "Domaine Tempier: Lulu & Lucien",
+       "url": "https://www.domainetempier.com/en/cuvee-classique-devient-cuvee-lulu-lucien/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The eight to ten years before La Tourtine opens, and twenty years and more of keeping.",
+    "The claim that Tempier taught the wine world Bandol rouge."
+   ],
+   "open": [
+    "The INAO's cahier gives the 50 to 95 per cent of Mourvèdre for the encépagement; the record, the library and the trap give it as a share of the blend, as it is taught. The integrator may want the cahier's assemblage clause read whole.",
+    "No source gave the first vintage bottled apart for La Tourtine (the author's report says the same).",
+    "Whether either of the founders' sons is living was not settled; neither is named."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaine Tempier: Cuvée La Tourtine",
+     "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-la-tourtine-en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Tempier: Terroirs",
+     "url": "https://www.domainetempier.com/en/terroirs/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Tempier: Cuvée La Migoua",
+     "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-la-migoua-en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Tempier: Cuvée Cabassaou",
+     "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-cabassaou-en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Tempier: Lulu & Lucien",
+     "url": "https://www.domainetempier.com/en/cuvee-classique-devient-cuvee-lulu-lucien/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "INAO: Bandol",
+     "url": "https://www.inao.gouv.fr/node/67",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "INAO: Cahier des charges de l'AOC Bandol",
+     "url": "https://extranet.inao.gouv.fr/fichier/PNO2022AOPBANDOL.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Primal Wine: Domaine Tempier producer page",
+     "url": "https://primalwine.com/blogs/natural-wine-producers-primal-wine/domaine-tempier",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "chateau-simone",
+   "searches": 4,
+   "tested": [
+    "The Rougier family since 1830, the bastide of the Grands Carmes of Aix at Meyreuil, the cellars dug in the sixteenth century and enlarged by later generations, their steady temperature and humidity: the estate's history and cellars pages: confirmed.",
+    "The recognition for Château Simone: 21 July 1946 on the estate's Palette page, an application of 1947 on its family page: the estate contradicts itself, so the story says the 1940s and the second question no longer counts two years.",
+    "The decree of 28 April 1948, for white, red and rosé, over Meyreuil, Le Tholonet and Aix: the INAO's cahier des charges for Palette and the estate's page: confirmed.",
+    "The white's grapes: the estate's French sheet gives Clairette about 80 per cent, Grenache Blanc 10, Bourboulenc 5, Ugni Blanc 3 and Muscat Blanc 2, the whole of the blend: the sprinkling of old local varieties cut.",
+    "The élevage, eighteen months in small foudres with six on fine lees, then a year in barrels: the French sheet: confirmed, as the estate's account; the press and native yeasts added from the English sheet.",
+    "The north facing slopes of the Montaiguet, the sheltered bowl crossed by the Arc, limestone scree of Tertiary lakes mixed with clay, stones and gravel, the replanting after phylloxera and plots of more than 125 years: the estate's terroir and vineyard pages: confirmed.",
+    "Palette's grape rule (at least 80 per cent Clairette in the white) appears in Wikipedia; the record does not state it.",
+    "The rules of the house: the member of the family of 1946 not named, no share of the appellation stated, nothing volatile, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Clairette, the great majority, with Grenache Blanc, Bourboulenc, Ugni Blanc, a little Muscat Blanc and a sprinkling of old local varieties.",
+     "now": "Clairette, the great majority, with Grenache Blanc, Bourboulenc, Ugni Blanc and a little Muscat Blanc.",
+     "why": "The estate's technical sheet for the white, read through search, lists five grapes only (Clairette with Grenache Blanc, Bourboulenc, Ugni Blanc and Muscat Blanc, which make the whole); the sprinkling of old local varieties is not in the white's sheet, so it is cut.",
+     "sources": [
+      {
+       "title": "Château Simone: Château Simone Blanc",
+       "url": "https://chateau-simone.fr/chateau-simone-blanc",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Simone: Château Simone White",
+       "url": "https://chateau-simone.fr/en/chateau-simone-white",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "By the estate's account the white is raised for eighteen months in small oak foudres, six of them on its fine lees, and then for a year in barrels before bottling, all in the cellars that Carmelite friars dug in the sixteenth century.",
+     "now": "Picked by hand and sorted, pressed in a vertical press and fermented with native yeasts; by the estate's account the white is then raised for eighteen months in small oak foudres, six of them on its fine lees, and for a year in barrels before bottling, in the cellars that Carmelite friars dug in the sixteenth century.",
+     "why": "The author found nothing on the fermentation; the estate's English sheet for the white gives hand picking and sorting, a vertical hydraulic press and native yeasts, so making now opens with them. The élevage stands as the French sheet gives it.",
+     "sources": [
+      {
+       "title": "Château Simone: Château Simone White",
+       "url": "https://chateau-simone.fr/en/chateau-simone-white",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Simone: Château Simone Blanc",
+       "url": "https://chateau-simone.fr/chateau-simone-blanc",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "raised for well over two years in small foudres and barrels",
+     "now": "raised long in small oak foudres and then in barrels",
+     "why": "The estate's sheet gives eighteen months in small foudres and a year in barrels, but its English wording leaves open whether the year is added to the eighteen months; the table line no longer sums them.",
+     "sources": [
+      {
+       "title": "Château Simone: Château Simone Blanc",
+       "url": "https://chateau-simone.fr/chateau-simone-blanc",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Simone: Château Simone White",
+       "url": "https://chateau-simone.fr/en/chateau-simone-white",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "On 21 July 1946, as the estate tells it, a member of the family won from the INAO recognition of an appellation for Château Simone itself, and on 28 April 1948 that recognition was extended into the appellation of Palette,",
+     "now": "In the 1940s, as the estate tells it, a member of the family won from the INAO recognition of an appellation for Château Simone itself, and by a decree of 28 April 1948 that recognition was extended into the appellation of Palette,",
+     "why": "The estate's own pages disagree: its Palette page gives the recognition of Château Simone on 21 July 1946, its family page says the application was made in 1947. The decree of 28 April 1948 stands on the INAO's cahier des charges for Palette.",
+     "sources": [
+      {
+       "title": "Château Simone: AOC Palette",
+       "url": "https://chateau-simone.fr/en/aoc-palette",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Simone: The family",
+       "url": "https://chateau-simone.fr/en/familly",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "INAO: Cahier des charges de l'AOC Palette",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNOCDCPalette.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q",
+     "was": "The appellation of Palette, recognised in 1948, grew out of a recognition the INAO had granted two years earlier. For which estate was that first recognition won?",
+     "now": "The appellation of Palette, recognised in 1948, grew out of a recognition the INAO had first given to a single estate. Which estate was it?",
+     "why": "The stem said two years earlier, which rests on the 1946 date the estate's own family page contradicts (an application of 1947).",
+     "sources": [
+      {
+       "title": "Château Simone: AOC Palette",
+       "url": "https://chateau-simone.fr/en/aoc-palette",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château Simone: The family",
+       "url": "https://chateau-simone.fr/en/familly",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "The INAO recognised an appellation for Château Simone in July 1946 and extended it to Palette in April 1948; Tempier lies in Bandol, whose appellation dates from 1941.",
+     "now": "By the estate's account the INAO first recognised an appellation for Château Simone, which the decree of April 1948 extended to Palette; Tempier lies in Bandol, whose appellation dates from 1941.",
+     "why": "The July 1946 date is cut with the stem's two years.",
+     "sources": [
+      {
+       "title": "Château Simone: AOC Palette",
+       "url": "https://chateau-simone.fr/en/aoc-palette",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "INAO: Cahier des charges de l'AOC Palette",
+       "url": "https://extranet.inao.gouv.fr/fichier/PNOCDCPalette.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Reserved in its first few years, it gains honey, nut and wax with bottle age and keeps for well over a decade in a cool cellar.",
+     "now": "Reserved in its first few years, it gains honey, nut and wax with bottle age and keeps for many years in a cool cellar.",
+     "why": "Well over a decade is a figure no source searched gives; the estate's habit of long ageing and the library's white of fennel and wax bear out only that it keeps.",
+     "sources": []
+    }
+   ],
+   "takenOut": [
+    "A sprinkling of old local varieties in the white's grapes.",
+    "Well over a decade of keeping.",
+    "The date 21 July 1946 in the story and in the second question."
+   ],
+   "open": [
+    "Whether the year in barrels follows the eighteen months in foudres or falls within them: the French sheet reads as following, the English sheet is unclear; the table line no longer adds them up.",
+    "The estate's own pages give its vineyard as 23 hectares and the appellation about fifty, about half, against the library's most of it and the region record's nearly the whole (reported below, not edited)."
+   ],
+   "extraSources": [
+    {
+     "title": "Château Simone: History",
+     "url": "https://chateau-simone.fr/en/history",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Simone: The cellars",
+     "url": "https://chateau-simone.fr/en/cellars",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Simone: The family",
+     "url": "https://chateau-simone.fr/en/familly",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Simone: Château Simone Blanc",
+     "url": "https://chateau-simone.fr/chateau-simone-blanc",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Simone: Château Simone White",
+     "url": "https://chateau-simone.fr/en/chateau-simone-white",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Simone: Terroir",
+     "url": "https://chateau-simone.fr/terroir",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "INAO: Cahier des charges de l'AOC Palette",
+     "url": "https://extranet.inao.gouv.fr/fichier/PNOCDCPalette.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Palette AOC",
+     "url": "https://en.wikipedia.org/wiki/Palette_AOC",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "trevallon",
+   "searches": 5,
+   "tested": [
+    "The purchase: the estate's French history page says 1960, its English page 1950, a secondary source 1955: no year is told.",
+    "The couple: the estate says they worked with Picasso, the wife a tapestry weaver whom he commissioned to weave his works; a friend of Picasso became worked with Picasso. The father's death in 1999 at 89 is the estate's; he is described.",
+    "The son drawn to architecture, the first vines in 1973 and the first vintage in 1976: the estate's history page and its 2008 sheet: confirmed; Paris is in no source searched and is cut.",
+    "The appellation: the decree of 24 December 1985 made Les Baux a complementary name within Coteaux d'Aix-en-Provence, the decree of 20 April 1995 an appellation of its own (French Wikipedia and ABC du vin, with the INAO's page for the white of 2010); the estate's 2014 press piece says the INAO allowed no more than 20 per cent Cabernet and the wine stayed a vin de pays; BBR says it was downgraded; the year 1993 rests on one blog and the author's iDealwine piece: the story now dates the decrees and says the 1990s for the wine.",
+    "Labels drawn by the father from the 1996 vintage: the estate's history page: confirmed.",
+    "The making: whole bunches without destemming, no yeast or sulphur added at fermentation, a light sulphiting during more than two years in large foudres of 25 to 35 hectolitres, egg white fining, no filtration: the estate's page for the red and its 2008 sheet: changed.",
+    "The sites: forty plots in three small valleys on very stony clay and limestone of the Lower Cretaceous (Hauterivian and Barremian) on the north side of the Alpilles: the estate's terroir page and tasting sheets: confirmed, terraces cut.",
+    "The founder's death in 2021: the Wine Scholar Guild and the author's iDealwine obituary; the month is in one source only, so the year alone is told.",
+    "The trap's never Coteaux d'Aix-en-Provence: iDealwine lists a 1989 as Coteaux d'Aix-en-Provence: cut.",
+    "The rules of the house: the founder, his father, his mother and his daughter described, nothing volatile, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "Terraces cleared from limestone scrub on the north side of the Alpilles at Saint-Étienne-du-Grès, on very stony clay and limestone of the Lower Cretaceous.",
+     "now": "Plots cleared from limestone scrub across three small valleys on the north side of the Alpilles at Saint-Étienne-du-Grès, on very stony clay and limestone of the Lower Cretaceous.",
+     "why": "The estate's pages describe some forty plots in three small valleys among pines, oaks and scrub, on very stony clay and limestone of the Lower Cretaceous; no source searched called them terraces.",
+     "sources": [
+      {
+       "title": "Domaine de Trévallon: Le terroir et les vignes",
+       "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-le-terroir-et-la-vigne.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked by hand and fermented in whole bunches without destemming, by the estate's account with no added yeast or sulphur; the wine is then raised slowly, for about two years, in large oak foudres before bottling.",
+     "now": "Picked by hand and fermented in whole bunches without destemming, by the estate's account with no yeast or sulphur added at fermentation; the wine is then raised slowly for two years and more in large oak foudres, lightly sulphited, fined with fresh egg white and bottled unfiltered.",
+     "why": "The estate's page for the red says no yeast and no sulphur are added at fermentation but that a light sulphiting accompanies the long élevage; the record said no sulphur without that limit. The page gives over two years in foudres, egg white fining and no filtration.",
+     "sources": [
+      {
+       "title": "Domaine de Trévallon: Le Rouge",
+       "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-rouge.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine de Trévallon: Trévallon rouge 2008",
+       "url": "http://www.domainedetrevallon.com/documents/trevallon_rouge_2008.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In the 1950s a painter and sculptor, a friend of Picasso, bought the property at Saint-Étienne-du-Grès on the north side of the Alpilles. His son was studying architecture in Paris when, in 1973, he turned to the land, cleared the limestone scrub and planted the first vines, choosing Cabernet Sauvignon and Syrah in equal measure against local custom. The first wine came with the 1976 vintage. When the rules for an appellation of Les Baux were drawn up in 1993, they capped Cabernet Sauvignon well below Trévallon's half, and the INAO refused the wine the appellation. The founder kept his blend, and the red was sold as a vin de pays, labelled Vin de Pays des Bouches-du-Rhône and later IGP Alpilles. From the 1996 vintage each label has carried a drawing by his father. The founder died in November 2021, and the next generation of the family took the estate on. Trévallon became the case every student meets of a wine kept out of its appellation by its grapes rather than its quality, and for a sommelier it answers why a serious Provence red can carry an IGP.",
+     "now": "A painter and sculptor who worked with Picasso, and his wife, a weaver who made tapestries of Picasso's work, bought the wild property at Saint-Étienne-du-Grès on the north side of the Alpilles. Their son, drawn first to architecture, turned to the land in 1973: he cleared the limestone scrub and planted the first vines, choosing Cabernet Sauvignon and Syrah in equal measure. The first wine came with the 1976 vintage. In 1985 Les Baux became a named part of the Coteaux d'Aix-en-Provence appellation, and in 1995 an appellation of its own. Its rules for the red capped Cabernet Sauvignon well below Trévallon's half; the founder would not change his blend, and in the 1990s the red left the appellation for a vin de pays, labelled Vin de Pays des Bouches-du-Rhône and later IGP Alpilles. From the 1996 vintage each label has carried a drawing by his father. The founder died in 2021, and the next generation of the family took the estate on. Trévallon became the case every student meets of a wine kept out of its appellation by its grapes rather than its quality, and for a sommelier it answers why a serious Provence red can carry an IGP.",
+     "why": "Against local custom rests on no source searched, so the clause is cut. Against local custom rests on no source searched; the estate's own sheet says a neighbour at Vignelaure advised the founder, who also grew Cabernet, so the clause is cut.",
+     "sources": [
+      {
+       "title": "Domaine de Trévallon: L'histoire du domaine",
+       "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-l-histoire.php",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine de Trévallon: Trévallon rouge 2008",
+       "url": "http://www.domainedetrevallon.com/documents/trevallon_rouge_2008.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipédia: Les Baux-de-Provence (AOC)",
+       "url": "https://fr.wikipedia.org/wiki/Les-baux-de-provence",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "ABC du vin: Baux-de-Provence",
+       "url": "https://www.abcduvin.com/index.php/term/,6c53ad9f5fa7aa706e53aaafaa.xhtml",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: Domaine de Trévallon producer guide",
+       "url": "https://www.winescholarguild.com/producer-guide/france/provence/868-domaine-de-trevallon",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "Trévallon is sold as IGP Alpilles, earlier as Vin de Pays des Bouches-du-Rhône, never as Les Baux-de-Provence or Coteaux d'Aix-en-Provence, though its vines lie in the Alpilles.",
+     "now": "Trévallon's red is labelled IGP Alpilles, earlier Vin de Pays des Bouches-du-Rhône, and not Les Baux-de-Provence, though its vines lie within the Alpilles.",
+     "why": "Never as Coteaux d'Aix-en-Provence is not true of the early vintages: iDealwine lists a 1989 Trévallon as Coteaux d'Aix-en-Provence, from before the rules that kept it out; the trap now holds only what every source agrees on.",
+     "sources": [
+      {
+       "title": "iDealwine: Trévallon 1989, Coteaux d'Aix-en-Provence",
+       "url": "https://www.idealwine.com/uk/acheter-vin/B2115662-576-1-Bottle-Coteaux-dAix-en-Provence-Trevallon-Domaine-de-Eloi-Durrbach-1989-Red.jsp",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Berry Bros. & Rudd: 2012 Domaine de Trévallon Rouge",
+       "url": "https://www.bbr.com/products-25091-2012-domaine-de-trevallon-rouge-alpilles",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "The Les Baux rules of 1993 capped Cabernet Sauvignon well below its half share, and the founder kept his blend.",
+     "now": "The rules of the Les Baux appellation capped Cabernet Sauvignon well below its half share, and the founder kept his blend.",
+     "why": "The rules of 1993 are undated now (see the story).",
+     "sources": [
+      {
+       "title": "Domaine de Trévallon: press article of July 2014",
+       "url": "http://www.domainedetrevallon.com/documents/2014_07_31ale_point.pdf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "ABC du vin: Baux-de-Provence",
+       "url": "https://www.abcduvin.com/index.php/term/,6c53ad9f5fa7aa706e53aaafaa.xhtml",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The rules for Les Baux cap Cabernet Sauvignon well below the estate's half share, so the wine was refused the appellation in 1993; its vines do lie in the Alpilles.",
+     "now": "The rules for Les Baux cap Cabernet Sauvignon well below the estate's half share, so the red is sold outside the appellation; its vines do lie in the Alpilles.",
+     "why": "The refusal in 1993 is undated now (see the story).",
+     "sources": [
+      {
+       "title": "Domaine de Trévallon: press article of July 2014",
+       "url": "http://www.domainedetrevallon.com/documents/2014_07_31ale_point.pdf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "ABC du vin: Baux-de-Provence",
+       "url": "https://www.abcduvin.com/index.php/term/,6c53ad9f5fa7aa706e53aaafaa.xhtml",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].opts",
+     "was": [
+      "1973",
+      "1985",
+      "1993",
+      "1996"
+     ],
+     "now": [
+      "1973",
+      "1985",
+      "1995",
+      "1996"
+     ],
+     "why": "The distractor 1993 rested on the undated refusal; 1995, the decree of Les Baux-de-Provence, takes its place.",
+     "sources": [
+      {
+       "title": "Wikipédia: Les Baux-de-Provence (AOC)",
+       "url": "https://fr.wikipedia.org/wiki/Les-baux-de-provence",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "ABC du vin: Baux-de-Provence",
+       "url": "https://www.abcduvin.com/index.php/term/,6c53ad9f5fa7aa706e53aaafaa.xhtml",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "The vines were planted in 1973; 1985 is the year of the Coteaux d'Aix-en-Provence appellation, the wine was refused the Les Baux appellation in 1993, and the drawn labels began with 1996.",
+     "now": "The first vines were planted in 1973; Les Baux became a named part of Coteaux d'Aix-en-Provence in 1985 and an appellation of its own in 1995, and the drawn labels began with 1996.",
+     "why": "The explanation follows the new options and the decrees of 1985 and 1995.",
+     "sources": [
+      {
+       "title": "Wikipédia: Les Baux-de-Provence (AOC)",
+       "url": "https://fr.wikipedia.org/wiki/Les-baux-de-provence",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "ABC du vin: Baux-de-Provence",
+       "url": "https://www.abcduvin.com/index.php/term/,6c53ad9f5fa7aa706e53aaafaa.xhtml",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine de Trévallon: Trévallon rouge 2008",
+       "url": "http://www.domainedetrevallon.com/documents/trevallon_rouge_2008.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "from limestone terraces in the Alpilles",
+     "now": "from stony limestone plots in the Alpilles",
+     "why": "No source searched calls the vineyards terraces; the estate gives some forty plots on very stony clay and limestone, as the sites field now says.",
+     "sources": [
+      {
+       "title": "Domaine de Trévallon: Le terroir et les vignes",
+       "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-le-terroir-et-la-vigne.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Firm and reserved for its first eight to ten years in a strong vintage, it then opens into leather, cedar and dried herbs and lasts for decades.",
+     "now": "Firm and reserved in its youth, it then opens into leather, cedar and dried herbs and lasts for decades.",
+     "why": "The eight to ten years before it opens rest on no source searched; the library's long lived and the decades stand.",
+     "sources": []
+    }
+   ],
+   "takenOut": [
+    "The purchase in the 1950s.",
+    "A friend of Picasso.",
+    "Studying architecture in Paris.",
+    "The rules of 1993 and the refusal in 1993, in the story, the card, both explanations and an option.",
+    "No sulphur, without the limit to fermentation.",
+    "Terraces, in the sites and the table.",
+    "Eight to ten years before it opens.",
+    "Against local custom.",
+    "November in the founder's death.",
+    "Never Coteaux d'Aix-en-Provence, in the trap."
+   ],
+   "open": [
+    "The year the red left the appellation: 1993 in a blog and the author's iDealwine piece, while the appellation of its own dates from 1995; a 1995 bottle is listed as Bouches-du-Rhône.",
+    "The Cabernet share: the estate's page gives half and half, its 2014 press piece nearly 60 per cent; the estate's page says Cinsault is a new grape since 2020, entering the red with the 2024 harvest; the grapes field keeps the founding blend.",
+    "The year the label moved from Vin de Pays des Bouches-du-Rhône to IGP Alpilles (2009 in one blog only)."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaine de Trévallon: L'histoire du domaine",
+     "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-l-histoire.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine de Trévallon: Le Rouge",
+     "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-rouge.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine de Trévallon: Trévallon rouge 2008",
+     "url": "http://www.domainedetrevallon.com/documents/trevallon_rouge_2008.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine de Trévallon: press article of July 2014",
+     "url": "http://www.domainedetrevallon.com/documents/2014_07_31ale_point.pdf",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine de Trévallon: Le terroir et les vignes",
+     "url": "https://www.domainedetrevallon.com/fr/domaine-de-trevallon-le-terroir-et-la-vigne.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipédia: Les Baux-de-Provence (AOC)",
+     "url": "https://fr.wikipedia.org/wiki/Les-baux-de-provence",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "ABC du vin: Baux-de-Provence",
+     "url": "https://www.abcduvin.com/index.php/term/,6c53ad9f5fa7aa706e53aaafaa.xhtml",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "INAO: Les Baux de Provence blanc",
+     "url": "https://www.inao.gouv.fr/produit/les-baux-de-provence-blanc-18173",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "iDealwine: Trévallon 1989, Coteaux d'Aix-en-Provence",
+     "url": "https://www.idealwine.com/uk/acheter-vin/B2115662-576-1-Bottle-Coteaux-dAix-en-Provence-Trevallon-Domaine-de-Eloi-Durrbach-1989-Red.jsp",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Berry Bros. & Rudd: 2012 Domaine de Trévallon Rouge",
+     "url": "https://www.bbr.com/products-25091-2012-domaine-de-trevallon-rouge-alpilles",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Scholar Guild: Domaine de Trévallon producer guide",
+     "url": "https://www.winescholarguild.com/producer-guide/france/provence/868-domaine-de-trevallon",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "domaines-ott",
+   "searches": 4,
+   "tested": [
+    "1896, the young agricultural engineer from Alsace, the search as far as Algeria and his wife's persuasion: the house's history page: confirmed as the house tells it.",
+    "Château de Selle at Taradeau bought in 1912, the first estate: the house's Château de Selle page: confirmed.",
+    "The bottle: 1932 on the house's history page, designed by the founder's son, hoped for all of Provence and used by the family alone: the 1930s became 1932, as the house tells it.",
+    "The shipment of 1933 after Prohibition: the house's history page: kept as the house tells it.",
+    "Clos Mireille in 1936 (the house's own page) and Château Romassan in 1956 (several of the house's pages): confirmed and dated.",
+    "The 1955 classification with Selle and Clos Mireille: Wikipedia and the author's Decanter guide: confirmed.",
+    "Roederer in 2004: the house's history page gives the Roederer Collection since 2004; Decanter gives 66 per cent and Wine Spectator two thirds: a majority became two thirds. Wikipedia's 2018 is against every other source and is not followed.",
+    "The making: no maceration, direct pressing with short skin contact, temperature controlled stainless steel, no malolactic, four to six months: the house's own technical sheet and its importer's: confirmed, now on two sources beside Millesima.",
+    "The grapes: Grenache 55 per cent, Cinsault 25 to 30, Mourvèdre 12 to 14, Syrah 3 to 6 across the 2023 and 2024 sheets: confirmed in words.",
+    "The soil: gypsum, red clay, gravel and stones on restanques and terraces, the high limestone hills of the Var: the house's page: sandstone cut.",
+    "The rules of the house: the founder, his wife and his son described, no living member of the family named, nothing volatile, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "very stony soils of gypsum, sandstone and red clay.",
+     "now": "very stony soils of gypsum, red clay and gravel.",
+     "why": "The house's page for Château de Selle gives gypsum, red clay, gravel and stones; sandstone is in no source searched.",
+     "sources": [
+      {
+       "title": "Domaines Ott: Le Château de Selle",
+       "url": "https://www.domaines-ott.com/en/domaine-chateau-de-selle",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The house begins in 1896 with a young agricultural engineer from Alsace who set out to find vineyards of his own; by the house's telling his search took him as far as Algeria before his wife persuaded him to settle in Provence. In 1912 he bought Château de Selle, on the limestone hills of Taradeau in the Var, the first of the family's three estates. In the 1930s the family gave its wines the curved bottle, a shape said to recall an amphora, by which guests know the house, and in 1933, after the end of Prohibition, the first bottles of Château de Selle red and rosé were shipped to the United States. Clos Mireille, by the sea at La Londe, followed, and then Château Romassan in Bandol in 1956. When estates of Côtes de Provence were classified in 1955, Château de Selle and Clos Mireille were among those named Cru Classé. In 2004 the family sold a majority of the house to Champagne Louis Roederer. Domaines Ott shows a sommelier how Provence rosé reached the wine list long before the pale rosé fashion of the twenty-first century: a rosé from a classified estate, made to be served with food.",
+     "now": "The house begins in 1896 with a young agricultural engineer from Alsace who set out to find vineyards of his own; by the house's telling his search took him as far as Algeria before his wife persuaded him to settle in Provence. In 1912 he bought Château de Selle, on the limestone hills of Taradeau in the Var, the first of the family's three estates. In 1932, as the house tells it, he had his son design a curved bottle, a shape said to recall an amphora, which he hoped all of Provence would take up; in the end only the family used it, and guests know the house by it. In 1933, after the end of Prohibition, the first bottles of Château de Selle red and rosé were shipped to the United States. Clos Mireille, by the sea at La Londe, followed in 1936, and Château Romassan in Bandol in 1956. When estates of Côtes de Provence were classified in 1955, Château de Selle and Clos Mireille were among those named Cru Classé. In 2004 the family sold two thirds of the house to Champagne Louis Roederer. Domaines Ott shows a sommelier how Provence rosé reached the wine list long before the pale rosé fashion of the twenty-first century: a rosé from a classified estate, made to be served with food.",
+     "why": "Three beats are firmer for the house's own pages. The bottle: its history page gives 1932, when the founder had his son design it hoping all of Provence would use it, so the 1930s is now 1932, as the house tells it. Clos Mireille: its own page gives 1936, which the author's two secondary sources also gave, against 1930 in Wikipedia alone. Roederer: Decanter and Wine Spectator both report two thirds, so a majority is now two thirds.",
+     "sources": [
+      {
+       "title": "Domaines Ott: The history of Domaines Ott",
+       "url": "https://www.domaines-ott.com/en/the-history-of-domaines-ott",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaines Ott: Le Clos Mireille",
+       "url": "https://www.domaines-ott.com/en/domaine-le-clos-mireille",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Roederer buys Domaines Ott",
+       "url": "https://www.decanter.com/wine-news/roederer-buys-domaines-ott-102902/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Spectator: Champagne Roederer buys stake in wine company in Provence",
+       "url": "https://www.winespectator.com/articles/champagne-roederer-buys-stake-in-wine-company-in-provence-21900",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "Sandstone in the soil."
+   ],
+   "open": [
+    "The house's 2024 sheet also names spherical ceramic vessels for part of the rosé; making keeps chiefly stainless steel and says nothing of them, which may be a recent change.",
+    "Cœur de Grain on the label stays unconfirmed, as the author reported.",
+    "The founder's dates were found in no source searched; he is described."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaines Ott: The history of Domaines Ott",
+     "url": "https://www.domaines-ott.com/en/the-history-of-domaines-ott",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaines Ott: Le Clos Mireille",
+     "url": "https://www.domaines-ott.com/en/domaine-le-clos-mireille",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaines Ott: Le Château de Selle",
+     "url": "https://www.domaines-ott.com/en/domaine-chateau-de-selle",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaines Ott: Château de Selle rosé technical sheet",
+     "url": "https://www.domaines-ott.com/wp-content/uploads/2025/04/domaines-ott-tech-sheet-vin-de-provence-chateau-de-selle-rose-2024-en.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Maisons Marques et Domaines: Château de Selle Côtes de Provence Rosé",
+     "url": "https://mmdusa.net/portfolio/domaines-ott/chateau-de-selle-cotes-de-provence-rose",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: Roederer buys Domaines Ott",
+     "url": "https://www.decanter.com/wine-news/roederer-buys-domaines-ott-102902/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Spectator: Champagne Roederer buys stake in wine company in Provence",
+     "url": "https://www.winespectator.com/articles/champagne-roederer-buys-stake-in-wine-company-in-provence-21900",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Domaines Ott",
+     "url": "https://en.wikipedia.org/wiki/Domaines_Ott",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "esclans",
+   "searches": 6,
+   "tested": [
+    "The lookout of the Gauls over the Gulf of Fréjus: the estate's home page; the residence of the Counts of Provence: a Forbes profile the estate publishes on its press page: both kept as the estate's account.",
+    "The Gorges de Pennafort: in no source searched; the reports of 2019 place the estate in the Esclans valley, perched on the heights of La Motte: changed.",
+    "The purchase of 2006: the estate's pages: confirmed; the buyer is living and is now not described beyond the new owner.",
+    "Patrick Léon (1943 to 2018): born in 1943 by Wikipedia, died in Bordeaux in December 2018 aged 75 by Decanter, Wine Spectator and The Drinks Business; technical director at Mouton from 1984 or 1985 to 2004; the estate's founding consultant oenologist: confirmed. His work for the buyer's father is in Wikipedia alone: cut.",
+    "The first Whispering Angel with the 2006 vintage: the estate counts its twentieth vintage in 2025: confirmed.",
+    "The making: night picking, optical sorting, soft crushing and cooling, free run and press juice, temperature controlled stainless steel, lees stirred twice a week during fermentation: the estate's process and Whispering Angel pages: confirmed.",
+    "The grapes: Grenache, Cinsault and Rolle on the wine's page, Syrah also on the estate's product listing: confirmed.",
+    "Moët Hennessy's 55 per cent in late November 2019: Decanter and FoodBev: confirmed.",
+    "The label's rule that a Côtes de Provence rosé must be blended from more than one grape: the interprofession's guide gives only that the principal grapes make at least half: cut.",
+    "The rules of the house: the buyer and Patrick Léon's son left out, nothing volatile (the later steps of ownership left out), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.label[1].means",
+     "was": "The broad rosé appellation of the Var, where a rosé must be blended from more than one grape.",
+     "now": "The broad appellation that covers most of the Var, La Motte and the Esclans valley among it.",
+     "why": "That a Côtes de Provence rosé must be blended from more than one grape is in no source searched: the interprofession's guide gives only that the principal grapes make at least half the blend, and the two grape rule found belongs to Coteaux d'Aix-en-Provence.",
+     "sources": [
+      {
+       "title": "Vins de Provence: guide pratique of the interprofession",
+       "url": "https://www.vinsdeprovence.com/files/8e14ba12/guide_pratique_civp_16x24_5_fr_complet_sans_traits_de_coupe_compressed_1_.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The château of Esclans stands on high ground near the Gorges de Pennafort above La Motte in the Var; by the estate's account the site was a lookout in the time of the Gauls, and the house was once a residence of the Counts of Provence. In 2006 it was bought by the son of a Bordeaux wine merchant, who set out to make rosé of a new ambition. As consultant winemaker he brought in Patrick Léon (1943 to 2018), for some twenty years the technical director of Château Mouton Rothschild, who had once worked for his father. The first Whispering Angel was made with that 2006 vintage, a rosé blended from the estate's own fruit and grapes from vineyards nearby, and it grew into the rosé guests ask for by name. Beside it the estate made wines from its own old vines, Les Clans and Garrus, fermented and aged in large oak, with Rock Angel between the two styles. In late 2019 Moët Hennessy, the wine and spirits arm of LVMH, bought a majority of the estate. For a sommelier, Château d'Esclans is the house that took Provence rosé from the summer terrace onto the luxury wine list, and Whispering Angel is the bottle that did it.",
+     "now": "The château of Esclans stands in the Esclans valley, perched on the heights of La Motte in the Var; by the estate's account the site was a lookout in the time of the Gauls, watching for boats in the Gulf of Fréjus, and the house was once a residence of the Counts of Provence. In 2006 the estate changed hands, and its new owner set out to make rosé of a new ambition. As consultant winemaker he brought in Patrick Léon (1943 to 2018), for some twenty years the technical director of Château Mouton Rothschild. The first Whispering Angel was made with that 2006 vintage, a rosé blended from the estate's own fruit and grapes from vineyards nearby, and it grew into the rosé guests ask for by name. Beside it the estate made wines from its own old vines, Les Clans and Garrus, fermented and aged in large oak, with Rock Angel between the two styles. In late 2019 Moët Hennessy, the wine and spirits arm of LVMH, bought a majority of the estate. For a sommelier, Château d'Esclans is the house that took Provence rosé from the summer terrace onto the luxury wine list, and Whispering Angel is the bottle that did it.",
+     "why": "The Gorges de Pennafort are in no source searched; the reports of 2019 place the estate in the Esclans valley on the heights of La Motte, and the estate's home page gives the lookout over the Gulf of Fréjus. That Patrick Léon had once worked for the buyer's father rests on Wikipedia alone, so it is cut. The buyer as the son of a Bordeaux wine merchant was not confirmed in those words, and every account that names his father names the living buyer in its title or address, so the record says only that the estate changed hands in 2006, as the estate's own pages date it.",
+     "sources": [
+      {
+       "title": "Château d'Esclans: home page",
+       "url": "https://www.esclans.com/en-int",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: LVMH buys control of Whispering Angel producer Château d'Esclans",
+       "url": "https://www.decanter.com/wine-news/lvmh-d-esclans-whispering-angel-rose-428460",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "FoodBev: Moët Hennessy acquires Château d'Esclans",
+       "url": "https://archive.foodbev.com/news/moet-hennessy-acquires-chateau-desclans-cotes-de-provence/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Patrick Léon",
+       "url": "https://en.wikipedia.org/wiki/Patrick_L%C3%A9on",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "Patrick Léon (1943 to 2018), who had once worked for the new owner's father.",
+     "now": "Patrick Léon (1943 to 2018).",
+     "why": "The clause on the buyer's father rests on Wikipedia alone (see the story).",
+     "sources": [
+      {
+       "title": "Wikipedia: Patrick Léon",
+       "url": "https://en.wikipedia.org/wiki/Patrick_L%C3%A9on",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Drinks Business: Former Mouton winemaker Patrick Léon dies",
+       "url": "https://www.thedrinksbusiness.com/2018/12/former-mouton-winemaker-patrick-leon-dies/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The Gorges de Pennafort.",
+    "That Patrick Léon had once worked for the buyer's father, in the story and on the card.",
+    "The son of a Bordeaux wine merchant.",
+    "The blending rule of Côtes de Provence on the label."
+   ],
+   "open": [
+    "That the house was a residence of the Counts of Provence rests on a magazine profile the estate publishes; no independent source was searched.",
+    "That Patrick Léon worked for the buyer's father in the 1970s is likely but rests on Wikipedia alone."
+   ],
+   "extraSources": [
+    {
+     "title": "Château d'Esclans: home page",
+     "url": "https://www.esclans.com/en-int",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château d'Esclans: Our process",
+     "url": "https://www.esclans.com/en-int/our-process",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château d'Esclans: Whispering Angel",
+     "url": "https://www.esclans.com/en-int/our-wines/whispering-angel",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château d'Esclans: press page, Forbes",
+     "url": "https://www.esclans.com/en-us/journal/news/forbes-0",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Decanter: LVMH buys control of Whispering Angel producer Château d'Esclans",
+     "url": "https://www.decanter.com/wine-news/lvmh-d-esclans-whispering-angel-rose-428460",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "FoodBev: Moët Hennessy acquires Château d'Esclans",
+     "url": "https://archive.foodbev.com/news/moet-hennessy-acquires-chateau-desclans-cotes-de-provence/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vins de Provence: guide pratique of the interprofession",
+     "url": "https://www.vinsdeprovence.com/files/8e14ba12/guide_pratique_civp_16x24_5_fr_complet_sans_traits_de_coupe_compressed_1_.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The Drinks Business: Former Mouton winemaker Patrick Léon dies",
+     "url": "https://www.thedrinksbusiness.com/2018/12/former-mouton-winemaker-patrick-leon-dies/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Patrick Léon",
+     "url": "https://en.wikipedia.org/wiki/Patrick_L%C3%A9on",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Sacha Lichine",
+   "where": "the estate's own press pages, Decanter's reports of 2019 and an interview whose address carries his name, as the buyer of Château d'Esclans in 2006 and its president",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Bertrand Léon",
+   "where": "Wikipedia's page on Patrick Léon, read through search, as his son and the technical director of Château d'Esclans from 2011",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Daniel Ravier",
+   "where": "search summaries of Grape Collective and other accounts, as the director of Domaine Tempier since 2000",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "François Peyraud and Jean-Marie Peyraud",
+   "where": "the domaine's story page, as the founders' sons who led the domaine (1963 to 2000 and 1974 to 1999)",
+   "believed": "not settled; not named in the record, described as the couple's two sons",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Lucie Peyraud, called Lulu",
+   "note": "1917 to 2020, by Wikipedia (11 December 1917 to 7 October 2020) and an obituary headed with both years; named with her dates. The domaine's own page says she died at 103."
+  },
+  {
+   "name": "Lucien Peyraud",
+   "note": "Died in 1996 by Wikipedia; his birth year conflicts (1911 or 1912) in the author's sources; described as a young man who had studied farming at Aix."
+  },
+  {
+   "name": "Alphonse Tempier",
+   "note": "Lulu's father, a leather importer of Marseille who drew the label of the first red of 1951, by the domaine; no dates; described as her father."
+  },
+  {
+   "name": "Jean Rougier",
+   "note": "The member of the family who won the recognition of the 1940s, by the estate; no dates found and whether he is living not checked, though the recognition is eighty years old; described, not named."
+  },
+  {
+   "name": "René Dürrbach and Jacqueline de la Baume",
+   "note": "The founder's parents, who worked with Picasso; his death in 1999 at 89 is the estate's alone, and hers was not checked; both described, not named."
+  },
+  {
+   "name": "Éloi Dürrbach",
+   "note": "The founder of Trévallon, died in 2021 by the Wine Scholar Guild and iDealwine; no birth year; described."
+  },
+  {
+   "name": "Marcel, Elisabeth and René Ott",
+   "note": "The founder, his wife and the son who designed the bottle in 1932, by the house; no dates; described."
+  },
+  {
+   "name": "Patrick Léon",
+   "note": "1943 to 2018, by Wikipedia and Decanter, Wine Spectator and The Drinks Business (died in December 2018 aged 75); named with his dates."
+  },
+  {
+   "name": "Alexis Lichine",
+   "note": "The buyer's father, owner of Château Prieuré-Lichine, died in 1989; not named or described now, since every account of him read names the living buyer."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "tempier",
+   "ruling": "kept: no swap proposed. The plan's merge note asked whether the rosé or the Classique is the wine the domaine is known by; no source searched says so, and the domaine's own pages present La Tourtine as one of its three parcel reds, the one between Cabassaou and La Migoua in Mourvèdre. The Classique is now Lulu & Lucien and stands first in others."
+  },
+  {
+   "pick": "chateau-simone",
+   "ruling": "kept: no swap proposed; the white is the wine of the estate on its own pages and in the library."
+  },
+  {
+   "pick": "trevallon",
+   "ruling": "kept: no swap proposed; the red is the estate's wine and the case the library teaches."
+  },
+  {
+   "pick": "domaines-ott",
+   "ruling": "kept: no swap proposed; Château de Selle is the house's first estate and a cru classé of 1955. Whether its rosé label still prints Cœur de Grain stays open."
+  },
+  {
+   "pick": "esclans",
+   "ruling": "kept: no swap proposed; Whispering Angel is the estate's widely blended rosé of 2006 onward."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-tempier: wines, Bandol Cuvée Classique",
+   "says": "Bandol Cuvée Classique, the estate red",
+   "against": "The domaine renamed the Classique Lulu & Lucien from the release of the 2020 reds. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Domaine Tempier: Lulu & Lucien",
+     "url": "https://www.domainetempier.com/en/cuvee-classique-devient-cuvee-lulu-lucien/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js and plan.json",
+   "record": "p-tempier: wines, Bandol La Tourtine; the plan's why",
+   "says": "limestone parcel, the structured one; a limestone slope",
+   "against": "The domaine's cuvée page gives Santonian sandstone and marl with gypsum, its terroir page a fairly deep soil with much clay; neither says limestone. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Domaine Tempier: Cuvée La Tourtine",
+     "url": "https://www.domainetempier.com/en/vins-tempier/cuvee-la-tourtine-en/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine Tempier: Terroirs",
+     "url": "https://www.domainetempier.com/en/terroirs/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js and .scripts/regions/fragments (the region's producers line)",
+   "record": "p-chateau-simone: why; the region's line",
+   "says": "Simone is most of Palette; nearly the whole of Palette",
+   "against": "The estate's own pages give its vineyard as 23 hectares and the appellation about fifty: about half. The author reported the same from a secondary source. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Château Simone: Terroir",
+     "url": "https://chateau-simone.fr/terroir",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château Simone: AOC Palette",
+     "url": "https://chateau-simone.fr/en/aoc-palette",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-trevallon: traps",
+   "says": "It is IGP Alpilles, not Coteaux d'Aix-en-Provence",
+   "against": "iDealwine lists a 1989 Trévallon as Coteaux d'Aix-en-Provence, from before the Les Baux rules kept it out; true of the wine since the 1990s, not of its first vintages. One source; reported, not edited.",
+   "sources": [
+    {
+     "title": "iDealwine: Trévallon 1989, Coteaux d'Aix-en-Provence",
+     "url": "https://www.idealwine.com/uk/acheter-vin/B2115662-576-1-Bottle-Coteaux-dAix-en-Provence-Trevallon-Domaine-de-Eloi-Durrbach-1989-Red.jsp",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-ott: wines, Coeur de Grain Rosé",
+   "says": "Coeur de Grain Rosé, the brand that carried Provence rosé onto wine lists",
+   "against": "The author found the name on none of the house's current pages; this refuter did not search it. Reported again, not edited.",
+   "sources": []
+  }
+ ]
+}
