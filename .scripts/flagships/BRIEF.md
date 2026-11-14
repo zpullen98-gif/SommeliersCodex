@@ -15,6 +15,28 @@ a word.
 Outside Of Time is the owner's own study tool, never sold and used by the owner alone. No legal notice, no price, no
 gating, ever.
 
+## Wave two (14 November 2026)
+
+Wave two is the other 86 region records, one group of five producers each, published in three batches that each ship
+whole: A (France, Italy, Spain, Portugal: 32 regions), B (Germany, Austria, Hungary, Greece: 27) and C (the New York
+sheet, Argentina, Chile, Australia, New Zealand, South Africa: 27). Wave one's 255 records and their ids never change.
+
+- **A group is keyed by its region slug** (`jura`, `finger-lakes`, `hawkes-bay`): its fragment is
+  `fragments/<region slug>.json`, its `title` is the region page's own heading, it carries its `batch` and a chunk of
+  wave two's, and it is the one group of its region record. Each record is written exactly as wave one's.
+- **The thin region rule.** Where a region has few houses a guest would know, the group is still five: five real
+  producers of the appellation itself, each with a real wine it makes there (its flagship where it has one, else the
+  wine it is known by), and the `why` and the story say plainly what each is (a co-operative, a young estate, a house
+  known at home and little abroad). Never inflated: no house grander than its sources make it. Where five cannot be
+  sourced, tell the merge agent; a group never ships short.
+- The whole build ships only the batches `plan.json`'s `built` names: a fragment of a batch not yet built is linted
+  and never shipped. `node .scripts/flagships/build-flagships.cjs --lint --batch <A|B|C>` lints every written fragment
+  of a batch.
+- Wave two works on the branch `flagships-w2`: pull inside the lock before you start
+  (`git pull -q --no-rebase origin flagships-w2`) and push there.
+- Every other rule of this brief is unchanged: the house rules, the fragment and its caps, the sources, the
+  checker's record and the swap.
+
 ## What you may run, and what you may not
 
 | You run | What it does |
