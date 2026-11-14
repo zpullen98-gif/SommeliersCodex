@@ -1,0 +1,929 @@
+{
+ "group": "lazio",
+ "chunk": "w5",
+ "batch": "A",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 28,
+  "perRecord": {
+   "fontana-candida": 5,
+   "castel-de-paolis": 6,
+   "falesco": 5,
+   "casale-della-ioria": 6,
+   "casale-del-giglio": 6
+  },
+  "note": "Twenty eight searches of a share of twenty eight, none of them the author's. Nine were restricted to a house's own domain and are read as primary through their summaries: gruppoitalianovini.it twice (Santa Teresa's grapes and vineyard; the cellar's 1958 and its sixty years abroad), casteldepaolis.com twice (the story; the cellar and the cisterns), famigliacotarella.it twice (the history; the Montiano and Sodale sheets), casaledellaioria.com twice (the estate; Torre del Piano's sheet) and casaledelgiglio.it once (Mater Matuta's page, the Satricum page). Twelve blocked the author's own sources so that an independent account would show. The Frascati rules search is counted with Fontana Candida and serves Castel de Paolis too. No WebFetch was tried. Every record was tested; no fact that rests on no source was kept in a record marked checked."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own pages and sheets for their own dates and methods and to the appellation texts, then to the press and the merchants, with the author's sources blocked where they would only have repeated themselves.",
+  "Where the sources corrected the record (Santa Teresa's making, Vigna Adriana's early Frascati label, the research partner's institution, one brother and not two, the rank of the first Montiano, the DOC of 1973, Cesanese di Affile's own DOC, the dig of 1896, the research of 1985) it was set right with its source; where a detail rested on one merchant or on nothing the refuter read (the fermentation temperature and hand picking of Santa Teresa, the old vines pulled up at Castel de Paolis, the Merlot clone of 1990, the next generation) it was cut.",
+  "A writer's own blog, met in several results, was read for orientation only and is cited nowhere; prices, scores, rankings, hectares and bottle counts were read and not used."
+ ],
+ "records": [
+  {
+   "key": "fontana-candida",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The founding: the house's page (Gruppo Italiano Vini, read through search) dates its cellars to 1958 and says it has spread Frascati abroad for more than sixty years; Vinicum and DoctorWine give 1958 too. Confirmed, hedged as the house's account.",
+    "The hill and the cellar: Vinicum places the farmstead on the Fontana Candida hill at Monte Porzio Catone; the Roman villa said to be Horace's stays out (one account, told as perhaps).",
+    "Santa Teresa: the house's own wine page gives Malvasia del Lazio (Puntinata), Malvasia di Candia and Greco from its 13 hectare vineyard in the Santa Teresa district, on deep, sandy volcanic ash at 200 to 400 metres; the vineyard's size is volatile and stays out. Trebbiano in older vintages: Italian Wine Shop's 2015 notes (Trebbiano and Greco made off the skins, the Malvasia macerated cold for twelve hours) and the author's i-Italy for 2004. Confirmed.",
+    "The making: no technical sheet of the house gives a fermentation temperature; Etilika's 2024 listing gives steel at a controlled temperature, no skin maceration and no malolactic, Italian Wine Shop's 2015 notes keep the wine in temperature controlled steel until bottling. The 15 to 16 degrees Celsius and the hand picking rested on one merchant's sheet and were cut.",
+    "The rules: Italian Wine Central, Drink Italian and Accademia del Vino give the DOC of 1966 (D.P.R. of 16 May 1966), the DOCGs of Frascati Superiore and Cannellino by the decree of 20 September 2011 and at least seven tenths Malvasia di Candia and Malvasia del Lazio in every tier. Confirmed: the label term, the card and the traps stand.",
+    "Luna Mater: the house lists it as a Frascati Superiore DOCG Riserva among its grandi selezioni. Confirmed.",
+    "The serving temperature: listings give 8 to 10 and 10 to 12 degrees Celsius; 8 to 10 is kept, within the Codex's range for a light white.",
+    "The house rules: nobody living named (the group's manager of 2026, met on its page, is not named); no price, no score; the house page's claim to be the largest Frascati maker is not used; British; no dash. The questions: one key each, distractors of one kind (four methods; four years, 1932 the year of Littoria and 2011 the DOCG), the explanations teach."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "The grapes are picked by hand and the must is fermented cool in stainless steel, at some 15 to 16 degrees Celsius by a merchant's sheet for one vintage, which keeps the scent of the Malvasia. No account of its making names oak.",
+     "now": "The must is fermented cool, at a controlled temperature, in stainless steel, and the wine stays in steel tanks until it is bottled, which keeps the scent of the Malvasia; it sees no wood.",
+     "why": "The temperature and the hand picking rested on one merchant's sheet for one vintage; two listings give steel at a controlled temperature and steel until bottling, with no wood.",
+     "sources": [
+      {
+       "title": "Etilika: Frascati Superiore Vigneto Santa Teresa 2024, Fontana Candida",
+       "url": "https://etilika.com/frascati-superiore-docg-vigneto-santa-teresa-2024-fontana-candida",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Italian Wine Shop: Vigneto Santa Teresa, Fontana Candida, Frascati Superiore 2015",
+       "url": "https://www.italianwineshop.it/Vini/vigneto-santa-teresa-fontana-candida-frascati-superiore-doc-2015/?Vino=5370",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "no account of its making names oak, so the vanilla of new barriques is absent.",
+     "now": "it stays in steel until bottling and sees no wood, so the vanilla of new barriques is absent.",
+     "why": "To match the making as the two listings give it.",
+     "sources": [
+      {
+       "title": "Etilika: Frascati Superiore Vigneto Santa Teresa 2024, Fontana Candida",
+       "url": "https://etilika.com/frascati-superiore-docg-vigneto-santa-teresa-2024-fontana-candida",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Italian Wine Shop: Vigneto Santa Teresa, Fontana Candida, Frascati Superiore 2015",
+       "url": "https://www.italianwineshop.it/Vini/vigneto-santa-teresa-fontana-candida-frascati-superiore-doc-2015/?Vino=5370",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[3]",
+     "was": "Vino.com: Frascati Superiore Vigneto Santa Teresa, Fontana Candida, 2015",
+     "now": "Italian Wine Shop: Vigneto Santa Teresa, Fontana Candida, Frascati Superiore 2015",
+     "why": "The Vino.com sheet was the one source of the cut temperature; Italian Wine Shop's notes bear out the steel and the Trebbiano of older vintages.",
+     "sources": [
+      {
+       "title": "Italian Wine Shop: Vigneto Santa Teresa, Fontana Candida, Frascati Superiore 2015",
+       "url": "https://www.italianwineshop.it/Vini/vigneto-santa-teresa-fontana-candida-frascati-superiore-doc-2015/?Vino=5370",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The first vintage of Santa Teresa: no source read gives it.",
+    "The year Trebbiano left the blend: present in 2004 and 2015 by two listings, absent from the house's page."
+   ]
+  },
+  {
+   "key": "castel-de-paolis",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The house's story (read through search): the first parcel bought in 1974, the plots beside it in 1977, the grapes sold to the local co-operatives until 1985, many varieties native and international trialled from 1985 to 1993, the whole estate replanted between 1988 and 1993, and three whites released in 1993: Frascati DOC Campovecchio, Frascati Superiore and Donna Adriana. Confirmed; founded stays empty, since the house dates its land to 1974 and its wines to 1993 and others give 1985.",
+    "The research: Castelli Notizie and Gli Scomunicati say the founder was then an under secretary in the government, at the ministry of agriculture, and began the project in 1985 with a professor of viticulture; one account puts the professor at the Istituto Agrario di San Michele all'Adige in 1985, others at the University of Milan, so the record names no institution. The research is given as 1985 to 1992 by several accounts and 1985 to 1993 by the house; the record keeps the house's replanting years.",
+    "The old vines of Malvasia di Candia and Trebbiano pulled up: no source read names the varieties; Castelli Notizie speaks of a total uprooting, so the record says the whole estate was replanted and names no old vines.",
+    "Donna Adriana: the house's page gives Viognier with Malvasia Puntinata and a small share fermented in wood; a listing of the 2022 vintage gives Viognier about 80 per cent, Malvasia del Lazio the rest, 85 per cent in steel and 15 in barriques. The making keeps the house's 18 degrees Celsius and about a seventh in barriques; the taste of new oak denied was a judgement no source gave and was cut.",
+    "Vigna Adriana: Lavinium's producer profile lists Frascati Superiore Vigna Adriana for 1997 and 1998 and CellarTracker a 1998 Frascati Vigna Adriana; World of Fine Wine lists a Vigna Adriana Lazio Bianco IGT; WineNews gives the 2000 vintage as Malvasia Puntinata about four fifths with Viognier, a 2001 listing gives Viognier about four fifths. So the early vintages carried the Frascati name and the Viognier lead belongs to the later IGT wine; the record says so in the grapes, the label, the story and a new trap, and leaves the early blend out because the two listings disagree.",
+    "The cisterns: the house's cellar page tells of Roman water cisterns found beneath part of the cellar floor during works. Confirmed. The altitude of 250 to 270 metres stands on the house's sheet as the author read it; the house's I Quattro Mori page gives 250 metres on volcanic soil, which agrees.",
+    "The house rules: nobody living named (the founder, the professor, the founder's son and a writer met in the sources and not named; a writer's own blog read and never cited); no price, no score (a ranking of 2023 on the house's page was read and not used); British; no dash. The story question asked for the professor's university, which the sources do not settle; it now asks what became of the grapes before 1985, the house's own account, with four fates of one kind."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "and over the following years added the land around it, by the house's account. In 1985, then an under secretary for agriculture, he began a project with a professor of viticulture at the University of Milan to study the native grapes of the hills beside international ones and to plant in the close rows of modern vineyards. The old vines of Malvasia di Candia and Trebbiano were pulled up, and between 1988 and 1993 the estate was replanted.",
+     "now": "and in 1977 added the plots beside it, by the house's account. Until 1985 the grapes went to the local co-operatives. That year, then an under secretary in the government, he began a project with a professor of viticulture to trial the native grapes of the hills beside international ones, and between 1988 and 1993 the whole estate was replanted in close rows.",
+     "why": "The house's story gives 1977 and the co-operatives; one account puts the professor at San Michele all'Adige in 1985, so no university is named; no source read names the old vines pulled up.",
+     "sources": [
+      {
+       "title": "Castel de Paolis: Our story",
+       "url": "https://www.casteldepaolis.com/our-story/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Castelli Notizie: Racconti enologici, Castel de Paolis of Grottaferrata",
+       "url": "https://www.castellinotizie.it/2021/02/21/racconti-enologici-una-visione-deleganza-con-lazienda-agricola-castel-de-paolis-di-grottaferrata/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gli Scomunicati: the wine growers of Grottaferrata and Castel de Paolis",
+       "url": "https://www.gliscomunicati.it/2020/07/31/itinerari-del-vino-i-vignaioli-di-grottaferrata-e-castel-de-paolis/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a Frascati, a Frascati Superiore, and a white of Viognier with Malvasia del Lazio, sold as Vigna Adriana in earlier vintages and as Donna Adriana in later ones. Because Viognier leads it, the wine stands outside the Malvasia led rules of Frascati and carries the regional Lazio IGT.",
+     "now": "a Frascati, a Frascati Superiore and the white the house calls Donna Adriana. Sold first as Vigna Adriana, its early vintages were labelled Frascati; in later ones Viognier leads, about four fifths, and the wine carries the regional Lazio IGT, since Frascati's rules ask for Malvasia.",
+     "why": "Vigna Adriana of 1997 and 1998 is listed as a Frascati Superiore and a Frascati; the Viognier led Lazio IGT is the later wine.",
+     "sources": [
+      {
+       "title": "Castel de Paolis: Our story",
+       "url": "https://www.casteldepaolis.com/our-story/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Lavinium: Castel de Paolis, producer profile",
+       "url": "https://www.lavinium.it/portfolio/castel-de-paolis/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "CellarTracker: 1998 Castel de Paolis Frascati Vigna Adriana",
+       "url": "https://www.cellartracker.com/wine.asp?iWine=965439",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Castel de Paolis: IGT Donna Adriana",
+       "url": "https://www.casteldepaolis.com/prodotto/igt-donna-adriana-13-2/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.grapes",
+     "was": "Viognier, about four fifths, with Malvasia del Lazio, the Puntinata, for the rest.",
+     "now": "Viognier, about four fifths, with Malvasia del Lazio, the Puntinata, for the rest, in the vintages sold as Donna Adriana.",
+     "why": "The early Vigna Adriana was labelled Frascati and one listing gives Malvasia about four fifths for 2000, so the Viognier lead is tied to the later wine.",
+     "sources": [
+      {
+       "title": "Castel de Paolis: IGT Donna Adriana",
+       "url": "https://www.casteldepaolis.com/prodotto/igt-donna-adriana-13-2/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "WineNews: Vigna Adriana 2000, Castel de Paolis",
+       "url": "https://winenews.it/it/vigna-adriana-2000-castel-de-paolis_286163/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Lavinium: Castel de Paolis, producer profile",
+       "url": "https://www.lavinium.it/portfolio/castel-de-paolis/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Fermented in stainless steel at about 18 degrees Celsius; a small part of the wine is fermented in barrels, by the house's account, which lends it a light touch of wood without the taste of new oak.",
+     "now": "Fermented in stainless steel at about 18 degrees Celsius, by the house's account; a small part, about a seventh by the house's sheet, is fermented in barriques, which lends it a light touch of wood.",
+     "why": "The house gives about 15 per cent fermented in barriques; the taste of new oak denied rested on no source.",
+     "sources": [
+      {
+       "title": "Castel de Paolis: IGT Donna Adriana",
+       "url": "https://www.casteldepaolis.com/prodotto/igt-donna-adriana-13-2/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means",
+     "was": "The name the white carries on later labels; earlier vintages were sold as Vigna Adriana.",
+     "now": "The name the white carries on later labels; early vintages were sold as Vigna Adriana, some labelled Frascati.",
+     "why": "Two listings give the early Vigna Adriana as a Frascati.",
+     "sources": [
+      {
+       "title": "Lavinium: Castel de Paolis, producer profile",
+       "url": "https://www.lavinium.it/portfolio/castel-de-paolis/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "CellarTracker: 1998 Castel de Paolis Frascati Vigna Adriana",
+       "url": "https://www.cellartracker.com/wine.asp?iWine=965439",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2]",
+     "was": "(none)",
+     "now": "An old bottle of Vigna Adriana may read Frascati: the white's early vintages carried that name before Viognier came to lead it as a Lazio IGT.",
+     "why": "A guest with an old bottle meets a Frascati label; the trap teaches it.",
+     "sources": [
+      {
+       "title": "Lavinium: Castel de Paolis, producer profile",
+       "url": "https://www.lavinium.it/portfolio/castel-de-paolis/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "CellarTracker: 1998 Castel de Paolis Frascati Vigna Adriana",
+       "url": "https://www.cellartracker.com/wine.asp?iWine=965439",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "World of Fine Wine: Castel de Paolis Vigna Adriana, Lazio Bianco IGT",
+       "url": "https://worldoffinewine.com/wines/14729/castel-de-paolis-vigna-adriana-lazio-bianco-igt",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "A project begun in 1985 with a professor of viticulture of the University of Milan, then replanting from 1988.",
+     "now": "A project begun in 1985 with a professor of viticulture, trialling native and international grapes, then the replanting of the whole estate from 1988.",
+     "why": "The professor's institution in 1985 is not settled; the house gives the trials of native and international grapes. The front is unchanged.",
+     "sources": [
+      {
+       "title": "Castel de Paolis: Our story",
+       "url": "https://www.casteldepaolis.com/our-story/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Castelli Notizie: Racconti enologici, Castel de Paolis of Grottaferrata",
+       "url": "https://www.castellinotizie.it/2021/02/21/racconti-enologici-una-visione-deleganza-con-lazienda-agricola-castel-de-paolis-di-grottaferrata/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": "Castel de Paolis replanted its Grottaferrata vineyards between 1988 and 1993 after research begun in 1985. With whom was that research made? (key: A University of Milan professor of viticulture)",
+     "now": "Castel de Paolis bought its first parcel at Grottaferrata in 1974. Until 1985, what became of its grapes, by the house's account? (key: They were sold to the local co-operatives; distractors: the estate's own Frascati, a merchant house in Rome, dried for a sweet Cannellino)",
+     "why": "The key rested on an institution the sources do not settle; the new stem asks a fact of the house's own story, with one right answer.",
+     "sources": [
+      {
+       "title": "Castel de Paolis: Our story",
+       "url": "https://www.casteldepaolis.com/our-story/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "DiWineTaste: the estate of Castel de Paolis",
+     "now": "Lavinium: Castel de Paolis, producer profile",
+     "why": "Lavinium bears out the early Frascati label of Vigna Adriana; DiWineTaste's facts used by the author (the old name) are borne out by World of Fine Wine and WineNews.",
+     "sources": [
+      {
+       "title": "Lavinium: Castel de Paolis, producer profile",
+       "url": "https://www.lavinium.it/portfolio/castel-de-paolis/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The professor's institution in 1985 (the University of Milan by the house's account as the author read it and by several others, San Michele all'Adige by one) and the end of the research (1992 or 1993).",
+    "Whether the white the house lists among its whites of 1993 as Donna Adriana is in words the Vigna Adriana of the 1990s: no source read says the name was changed, and the year of the change is unknown; the house's story and the listings make it the same line.",
+    "The blend of the early Vigna Adriana: Malvasia about four fifths with Viognier for 2000 (WineNews), Viognier about four fifths for 2001 (one listing); Sauvignon Blanc is in one account of 2005.",
+    "The altitude of 250 to 270 metres rests on the house's sheet as the author read it; not re-read."
+   ]
+  },
+  {
+   "key": "falesco",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The founding: the house's history (read through search) gives 1979, two brothers at Montefiascone, to revive the old grapes of the area; Wikipedia and Simpatico Melograno agree; one shop gives 1989. Confirmed.",
+    "The 1960s: the house's history has two growers of the family at Monterubiaglio building the family's first cellar in the Sixties. Confirmed; they are described, not named, for want of dates.",
+    "The journey of 1988: the house's history says a visit to Bordeaux in 1988 gave one of the two brothers the wish to make a red in Lazio, not both; fixed.",
+    "The Merlot clone of 1990: neither the house's history nor its Montiano and Sodale pages and sheets, read through two searches, mention a clone or 1990; the history says small lots of Merlot were tried in vineyard and cellar before the first Montiano of 1993. Cut from the grapes, the story, the card and both explanations.",
+    "The first Montiano of 1993: the house's history, DoctorWine's vertical and La Famiglia agree. Confirmed. Its rank: Vinelog lists the 1993 and 1994 vintages as Vino da Tavola, and the Lazio IGT was not yet in being; the house's sheets read Lazio IGT (1999, 2013) and Lazio IGP (2017). The story now says sold outside the DOC rules, later under the regional Lazio IGT.",
+    "The sites and the making: the house's sheets give 300 metres on volcanic soil at Montefiascone and Castiglione in Teverina, and BWined agrees on the two places and the volcanic soil; about a year in new barriques by the house and a merchant. Confirmed.",
+    "Marciliano: Simpatico Melograno and the house give the purchase of 1999 in the hills south of Orvieto, in the communes of Montecchio and Baschi in Umbria, and DoctorWine and Hellotaste the newer cellar at Montecchio, opened in 2004 by one. Confirmed.",
+    "The handover of 2016 to the founders' daughters and the trade name Famiglia Cotarella: the house's sustainability report of 2024 and its history. Confirmed.",
+    "Poggio dei Gelsi: Tannico and Xtrawine give it as Est! Est!! Est!!! di Montefiascone Classico DOC; the legend of the bishop and his servant is told as a legend, the bishop not named. Sodale: the house's sheet calls it the second wine of several Merlot vineyards, so it now stands first among the others.",
+    "The house rules: nobody living named (the founders, on people.json, and the daughters, not named); no price, no score (the house's line that the 1993 was named among the world's best Merlots in 1995 is not used); British; no dash. The questions: one key each; the explanations teach."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "Merlot alone, from a clone the house began to study in 1990.",
+     "now": "Merlot alone, after trials of small lots of the grape in vineyard and cellar, by the house's account.",
+     "why": "No page or sheet of the house read names a clone or 1990; the history tells of small lots of Merlot tried in vineyard and cellar.",
+     "sources": [
+      {
+       "title": "Famiglia Cotarella: History",
+       "url": "https://www.famigliacotarella.it/gb/estates/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Famiglia Cotarella: Montiano Rosso Lazio IGP 2017, technical sheet",
+       "url": "https://www.famigliacotarella.it/wp-content/uploads/2018/12/Montiano-Rosso-Lazio-IGP-2017.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "turned the brothers towards a red. From 1990 they worked on a clone of Merlot in vineyard and cellar, and in 1993 they made the first Montiano, Merlot alone, aged in new barriques and sold under the regional Lazio IGT rather than a DOC.",
+     "now": "turned one of the brothers towards a red of his own. He tried small lots of Merlot in vineyard and cellar, and in 1993 came the first Montiano, Merlot alone, aged in new barriques and sold outside the DOC rules, later under the regional Lazio IGT.",
+     "why": "The house gives the wish to one brother; no clone or 1990 is sourced; the first vintages are listed as Vino da Tavola, so Lazio IGT is the later rank.",
+     "sources": [
+      {
+       "title": "Famiglia Cotarella: History",
+       "url": "https://www.famigliacotarella.it/gb/estates/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinelog: Falesco",
+       "url": "https://vinelog.com/winery/falesco",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "DoctorWine: Montiano Falesco, a vertical tasting",
+       "url": "https://www.doctorwine.it/en/tastings/vertical-tastings/montiano-falesco-a-vertical-tasting-1",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1979 two brothers of the next generation founded Falesco",
+     "now": "In 1979 two brothers of the family founded Falesco",
+     "why": "No source read says whose sons the founders were.",
+     "sources": [
+      {
+       "title": "Famiglia Cotarella: History",
+       "url": "https://www.famigliacotarella.it/gb/estates/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": "Poggio dei Gelsi, then Sodale (A second Merlot of the Montiano estate, labelled Lazio IGP), then Marciliano",
+     "now": "Sodale first (The second Merlot of the Montiano estate, drawn from several vineyards and labelled Lazio IGP), then Poggio dei Gelsi and Marciliano",
+     "why": "The brief puts the second wine first; the house's sheet gives Sodale as the second wine from several Merlot vineyards.",
+     "sources": [
+      {
+       "title": "Famiglia Cotarella: Sodale",
+       "url": "https://www.famigliacotarella.it/gb/wines/cotarella/tenuta-montiano/sodale/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards",
+     "was": "card 0 back: first made in 1993 after work on a clone of Merlot from 1990; card 1 front: What turned Falesco's founders towards a red",
+     "now": "card 0 back: first made with the 1993 vintage after trials of small lots of Merlot in vineyard and cellar; card 1 front: What turned one of Falesco's founders towards a red",
+     "why": "As the story.",
+     "sources": [
+      {
+       "title": "Famiglia Cotarella: History",
+       "url": "https://www.famigliacotarella.it/gb/estates/history/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions",
+     "was": "exp 0: from a clone the house studied from 1990; exp 1: after work on a Merlot clone from 1990 ... turned the founders towards a red",
+     "now": "exp 0: from vineyards between Montefiascone and Castiglione in Teverina; exp 1: after trials of Merlot in vineyard and cellar ... turned one founder towards a red",
+     "why": "As the story; the stems, options and keys are unchanged.",
+     "sources": [
+      {
+       "title": "Famiglia Cotarella: History",
+       "url": "https://www.famigliacotarella.it/gb/estates/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "BWined: Il Montiano di Falesco e il Merlot nel Lazio",
+       "url": "https://www.bwined.it/il-montiano-di-falesco-e-il-merlot-nel-lazio/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "K&D Wines: Famiglia Cotarella Falesco Montiano 2019",
+     "now": "BWined: Il Montiano di Falesco e il Merlot nel Lazio",
+     "why": "An independent source for the two places of the vineyards and their volcanic soil.",
+     "sources": [
+      {
+       "title": "BWined: Il Montiano di Falesco e il Merlot nel Lazio",
+       "url": "https://www.bwined.it/il-montiano-di-falesco-e-il-merlot-nel-lazio/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The rank of the first vintages: Vino da Tavola for 1993 and 1994 in one listing; the record says outside the DOC rules, later Lazio IGT, and the label term speaks only of earlier and later labels.",
+    "The year the trading name became Famiglia Cotarella, tied loosely to the handover of 2016."
+   ]
+  },
+  {
+   "key": "casale-della-ioria",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "Torre del Piano: the house's sheet (read through search) gives Cesanese di Affile alone, Acuto at 335 metres, Guyot, planted in 1986, maceration on the skins and fifteen days of fermentation in steel, eight months in oak barriques; Cantina Consolare and Larcimboldo agree on the grape, the place and the height. Confirmed; the fifteen days added to the making.",
+    "The barrels: the house's sheets give six to eight and eight months in barriques, and a listing says small French barriques, a choice of 1999; Bernabei gives half in barriques for about six months and half in 350 litre vats, Quattrocalici eight months in large casks. The house is kept, hedged as its sheets; the others go to open.",
+    "The rules: Wine with Seth, the Ministry's text and ARSIAL (the author's) give the Superiore Riserva at least 14 degrees and twenty months, six in bottle; the name Cesanese del Piglio or Piglio is the Ministry's. Confirmed.",
+    "The dates: Accademia del Vino and Disciplinare.it give the DOC by D.P.R. of 29 May 1973 and the DOCG by D.M. of 1 August 2008; Visit Lazio calls it the first DOCG wine of Lazio, and Frascati's two DOCGs date from 2011. The DOC year is now in the story and in the story question's explanation; the first in Lazio stands on Visit Lazio and the dates.",
+    "The estate: the house's pages place it between Anagni and Paliano in the Ciociaria, farmed since the Roman Empire by its own claim, organic, growing Cesanese, Olivella and Passerina; Quattrocalici and others give the vines at Anagni, Acuto and Piglio and Tenuta della Ioria as the Cesanese del Piglio Superiore DOCG. Confirmed.",
+    "The founding: 1921 is not on the house's pages read; it appears in the importer's profile and in one other summary that places it at Paliano. Founded stays empty, as the author left it.",
+    "The trap on Cesanese di Affile: Wine with Seth and Wikipedia give Cesanese di Affile also as a DOC of the province of Rome, beside Cesanese di Olevano Romano; the trap that called it a vine and not a place half misled, and now says both.",
+    "The house rules: nobody living named (the owner met on the house's pages); no price, no score (a listing's points read and not used); British; no dash. The questions: one key each, four ageing rules of one kind and four years; the explanations teach."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in stainless steel, the wine then ages",
+     "now": "Fermented on its skins in stainless steel for some fifteen days, the wine then ages",
+     "why": "The house's sheet gives maceration on the skins and fifteen days of fermentation in steel.",
+     "sources": [
+      {
+       "title": "Casale della Ioria: Torre del Piano, technical sheet",
+       "url": "https://www.casaledellaioria.com/images/schede/torre-del-piano.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The appellation had long been a DOC, and in 2008",
+     "now": "The appellation had been a DOC since 1973, and in 2008",
+     "why": "The DOC's decree is dated 29 May 1973 by two sources.",
+     "sources": [
+      {
+       "title": "Accademia del Vino: Cesanese del Piglio DOCG, the production rules",
+       "url": "https://www.accademiavino.it/disciplinare/cesanese-piglio-docg",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Disciplinare.it: Cesanese del Piglio o Piglio DOCG",
+       "url": "https://www.disciplinare.it/cesanese-del-piglio-piglio-docg.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "Cesanese di Affile is a vine, not the place on this label: Torre del Piano comes from Acuto, within the Cesanese del Piglio DOCG.",
+     "now": "Cesanese di Affile names the vine here, though it is also a separate DOC of the province of Rome: Torre del Piano comes from Acuto, within the Cesanese del Piglio DOCG.",
+     "why": "Cesanese di Affile is also a DOC; the old trap could teach a candidate that it is not a place.",
+     "sources": [
+      {
+       "title": "Wine with Seth: Lazio wine classification",
+       "url": "https://www.winewithseth.com/winewiki/lazio-wine-classification/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Cesanese Comune",
+       "url": "https://en.wikipedia.org/wiki/Cesanese_Comune",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "Cesanese del Piglio became a DOCG in 2008, three years before Frascati; 2011 is the year of Frascati Superiore and Cannellino, and 1986 the year the vineyard at Acuto was planted.",
+     "now": "Cesanese del Piglio became a DOCG in 2008, the first in Lazio; 1973 is the year it became a DOC, and 2011 the year of Frascati Superiore and Cannellino.",
+     "why": "The distractor 1973 was left unexplained; it is the DOC's year, the nearest wrong option.",
+     "sources": [
+      {
+       "title": "Accademia del Vino: Cesanese del Piglio DOCG, the production rules",
+       "url": "https://www.accademiavino.it/disciplinare/cesanese-piglio-docg",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Visit Lazio: Cesanese del Piglio DOCG wine",
+       "url": "https://www.visitlazio.com/vino-cesanese-del-piglio-docg/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "Tuttilili: About Casale della Ioria",
+     "now": "Visit Lazio: Cesanese del Piglio DOCG wine",
+     "why": "The importer was the source of the year 1921, which is not used; Visit Lazio bears out the first DOCG of the region.",
+     "sources": [
+      {
+       "title": "Visit Lazio: Cesanese del Piglio DOCG wine",
+       "url": "https://www.visitlazio.com/vino-cesanese-del-piglio-docg/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founding year: 1921 in the importer's profile and one other account, not on the house's pages.",
+    "The vessels: half in barriques and half in 350 litre vats by one merchant, large casks by another, barriques by the house's sheets; and six to eight months or eight."
+   ]
+  },
+  {
+   "key": "casale-del-giglio",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The founding: Vinoway, MangiaeBevi and the house give 1967 at Le Ferriere, the founder from Amatrice; one account places Le Ferriere in the commune of Aprilia, so the place stays near Latina. Confirmed.",
+    "Mater Matuta: the house's page (read through search) gives Syrah on native yeasts for 18 to 20 days under a submerged cap with several délestages, the Petit Verdot punched down, 22 to 24 months in oak, first fill barriques, the two apart, then 10 to 12 months in bottle; Ferrowine and Etilika agree on about 85 per cent Syrah, 22 to 24 months in new French oak and 10 to 12 in bottle. Confirmed; others give 6 to 8 or 18 to 24 months in bottle, so about a year stands on the house.",
+    "The goddess and the temple: the house's page names the Italic goddess of the dawn, of fertility and of birth and her temple at Satricum close to Le Ferriere; the University of Amsterdam's pages say the dig of 1896 began under a French archaeologist of the École française de Rome and, after two weeks, was taken over by the Italian state's own officials, and another account names an Italian director for 1896 to 1898. The story and the explanation now say digging begun by a French archaeologist uncovered the temple; the card says near Le Ferriere.",
+    "The Lapis Satricanus: the University of Amsterdam gives the Dutch return of 1977 and the find in the first week, and Wikipedia agrees. Confirmed.",
+    "The reclamation: a paper in Social and Cultural Geography dates the groundwork to 1927 and Britannica the national law to 1928; Littoria was inaugurated in December 1932 and renamed Latina after 1945. Confirmed as the record has it.",
+    "The research of 1985: Vinoway and Wine Meridian give a project authorised by the Lazio region's department of agriculture, fifty seven varieties planted, Italian and foreign, and, by the estate's account, Chardonnay, Sauvignon, Syrah, Petit Verdot and Cabernet Sauvignon admitted as recommended varieties from 1990, about twenty kept; MangiaeBevi gives 1988 for the start, against most. The record's close to sixty and early results were loose (the house's own pages differ on which reds came first); now fifty seven and the recommended grapes of 1990, by the house's account.",
+    "Anthium: WineNews and Wine Meridian give the Bellone project at Anzio from 2012 and the ungrafted vines. Confirmed.",
+    "The house rules: nobody living named (the founder's son, the house's chief, met in an interview's title, not named); no price, no score (the house's awards page with scores read and not used); British; no dash. The questions: one key each; the story question's explanation fixed to the dig's account."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "where a French archaeologist found the temple of Mater Matuta, goddess of the dawn and of birth, in 1896.",
+     "now": "where digging begun in 1896 by a French archaeologist, and soon taken over by the Italian state, uncovered the temple of Mater Matuta, goddess of the dawn and of birth.",
+     "why": "The dig of 1896 began under a French archaeologist and was taken over by the Italian state after two weeks; one account names an Italian director for 1896 to 1898.",
+     "sources": [
+      {
+       "title": "University of Amsterdam: Satricum, the acropolis",
+       "url": "https://www.uva.nl/en/discipline/archaeology/research/satricum/acropolis/acropolis.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Casale del Giglio: Satrico",
+       "url": "https://www.casaledelgiglio.it/en/satrico/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Satricum",
+       "url": "https://en.wikipedia.org/wiki/Satricum",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1985 the house began a research project with ampelographers and university researchers, planting close to sixty varieties in trial rows; Syrah and Petit Verdot were among the reds that gave early results, and of the fifty seven planted for study it kept some twenty.",
+     "now": "In 1985, with the region's leave, the house began a research project, planting fifty seven varieties in trial rows; from 1990, by the house's account, grapes such as Syrah and Petit Verdot were admitted as recommended for the province, and some twenty were kept.",
+     "why": "Two accounts give the region's authorisation, fifty seven varieties and the recommended grapes from 1990; the early results of Syrah differ between the house's pages (Cabernet Sauvignon on another).",
+     "sources": [
+      {
+       "title": "Vinoway: Casale del Giglio, a reference of Lazio's wine growing",
+       "url": "https://www.vinoway.com/recensioni/recensioni-vino/casale-del-giglio-importante-riferimento-della-vitivinicoltura-laziale/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Meridian: Research and terroir, Casale del Giglio in the Agro Pontino",
+       "url": "https://www.winemeridian.com/news/ricerca_e_terroir_casale_del_giglio_avanguardia_dell_agro_pontino/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1977 Dutch archaeologists returned to the temple and in their first week found the Lapis Satricanus, an early inscription in Latin.",
+     "now": "In 1977 Dutch archaeologists returned and in their first week found the Lapis Satricanus, an early Latin inscription.",
+     "why": "Wording only, to bring the story within 230 words; the fact is the University of Amsterdam's.",
+     "sources": [
+      {
+       "title": "University of Amsterdam: Satricum, the acropolis",
+       "url": "https://www.uva.nl/en/discipline/archaeology/research/satricum/acropolis/acropolis.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[0].back",
+     "was": "her temple stood at Satricum, at Le Ferriere, beside",
+     "now": "her temple stood at Satricum, near Le Ferriere, beside",
+     "why": "The house places Satricum close to Le Ferriere, on a hillside near the village.",
+     "sources": [
+      {
+       "title": "Casale del Giglio: Mater Matuta",
+       "url": "https://www.casaledelgiglio.it/en/mater-matuta/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Casale del Giglio: Satrico",
+       "url": "https://www.casaledelgiglio.it/en/satrico/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards[1].back",
+     "was": "A research project planting close to sixty varieties; Syrah and Petit Verdot gave early results and became Mater Matuta.",
+     "now": "A research project planting fifty seven varieties in trial rows; Syrah and Petit Verdot, among the grapes it brought in, became Mater Matuta.",
+     "why": "As the story; the front is unchanged.",
+     "sources": [
+      {
+       "title": "Vinoway: Casale del Giglio, a reference of Lazio's wine growing",
+       "url": "https://www.vinoway.com/recensioni/recensioni-vino/casale-del-giglio-importante-riferimento-della-vitivinicoltura-laziale/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Meridian: Research and terroir, Casale del Giglio in the Agro Pontino",
+       "url": "https://www.winemeridian.com/news/ricerca_e_terroir_casale_del_giglio_avanguardia_dell_agro_pontino/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "A French archaeologist found the temple at Le Ferriere in 1896;",
+     "now": "Digging begun by a French archaeologist in 1896 uncovered the temple near Le Ferriere;",
+     "why": "As the story; the key, 1896, is unchanged.",
+     "sources": [
+      {
+       "title": "University of Amsterdam: Satricum, the acropolis",
+       "url": "https://www.uva.nl/en/discipline/archaeology/research/satricum/acropolis/acropolis.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": "Callmewine: Mater Matuta, Casale del Giglio, 2019",
+     "now": "Wine Meridian: Research and terroir, Casale del Giglio in the Agro Pontino",
+     "why": "The blend and the months now rest on the house's own page; Wine Meridian bears out the research and Anthium.",
+     "sources": [
+      {
+       "title": "Wine Meridian: Research and terroir, Casale del Giglio in the Agro Pontino",
+       "url": "https://www.winemeridian.com/news/ricerca_e_terroir_casale_del_giglio_avanguardia_dell_agro_pontino/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The first vintage of Mater Matuta (the oldest seen is 2004).",
+    "The French archaeologist's name and dates, and whether the temple's find belongs to him or to the Italian state's dig that followed.",
+    "Which reds the trials favoured first: Syrah and Petit Verdot on one house page, Cabernet Sauvignon and Petit Verdot on another."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Giulio Santarelli",
+   "role": "the politician who bought Castel de Paolis's first parcel in 1974 and led its research from 1985",
+   "where": "the house's story and Castelli Notizie in the refuter's results",
+   "believed": "living, unsettled; described, never named",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Fabrizio Santarelli",
+   "role": "the founder's son at Castel de Paolis",
+   "where": "a podcast listing's title in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Attilio Scienza",
+   "role": "the professor of viticulture of Castel de Paolis's research",
+   "where": "Castelli Notizie and Gli Scomunicati in the refuter's results; the author's report",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Paolo Nardo",
+   "role": "the manager of Fontana Candida named on its group's page in 2026",
+   "where": "Gruppo Italiano Vini's page in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Riccardo Cotarella",
+   "role": "a founder of Falesco in 1979",
+   "where": "the house's history in the refuter's results",
+   "believed": "living",
+   "inPeople": true,
+   "inFragment": false
+  },
+  {
+   "name": "Renzo Cotarella",
+   "role": "a founder of Falesco in 1979",
+   "where": "the house's history in the refuter's results",
+   "believed": "living",
+   "inPeople": true,
+   "inFragment": false
+  },
+  {
+   "name": "Dominga Cotarella",
+   "role": "a founder's daughter who took the lead of the house in 2016",
+   "where": "the house's sustainability report and news pages",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Marta Cotarella",
+   "role": "a founder's daughter who took the lead of the house in 2016",
+   "where": "the house's sustainability report",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Enrica Cotarella",
+   "role": "a founder's daughter who took the lead of the house in 2016",
+   "where": "the house's sustainability report; a podcast's title",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Paolo Perinelli",
+   "role": "the owner of Casale della Ioria",
+   "where": "the house's contact pages and a merchant's profile in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Antonio Santarelli",
+   "role": "the son of Casale del Giglio's founder and the head of the house",
+   "where": "an interview's title on the house's site; Vinoway and Wine Meridian",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Marco Antonelli",
+   "role": "the president of the Cesanese di Olevano Romano consortium formed in 2025",
+   "where": "Wine with Seth and Vinerra in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": false
+  },
+  {
+   "name": "Marianne Maaskant-Kleibrink",
+   "role": "a leader of the Groningen team at Satricum from 1977",
+   "where": "a paper in the refuter's results",
+   "believed": "believed living, unsettled",
+   "inPeople": false,
+   "inFragment": false
+  }
+ ],
+ "livingNote": "None of these is named in the fragment; the read together agent adds those it judges living to people.json. Of unsettled status and described, never named: Antonio and Domenico Cotarella, the growers of Monterubiaglio who built the family's first cellar in the 1960s; Berardino (Dino) Santarelli, Casale del Giglio's founder of 1967, and Ernesta D'Orazio, his wife; Hector (Henri) Graillot, the French archaeologist of 1896, and Raniero Mengarelli, named as director of the dig of 1896 to 1898, both long dead but undated in two sources; Conrad Stibbe, of the Dutch dig of 1977; and the bishop of the Est! Est!! Est!!! legend. Luciano Pignataro, a writer whose blog appeared in several results, is already in people.json and is cited nowhere.",
+ "swaps": [
+  {
+   "pick": "castel-de-paolis",
+   "proposed": "The author kept the plan's words, Vigna Adriana, in a wine name reading Donna Adriana, earlier labelled Vigna Adriana, and proposed a swap of the wine's name alone to Donna Adriana, keeping the house and the key, since the house's own pages name the white Donna Adriana.",
+   "ruling": "accepted",
+   "why": "The house's own story lists Donna Adriana among its three whites of 1993 and its product page sells it as Lazio IGT, Viognier about four fifths with Malvasia del Lazio; Vigna Adriana is the name of listings from 1997 to the early 2000s, some of them labelled Frascati (Lavinium, CellarTracker), one Lazio Bianco IGT (World of Fine Wine). The wine a guest meets and the house leads with is Donna Adriana, so the brief's ground for a swap, a flagship the house does not lead with under that name, is met. Every fact of the record already stands on the house's pages for Donna Adriana or on the facts the refuter checked; the old name stays in the label term, the story and a trap, hedged as the early vintages. The house, the producerId and the key are kept, as in the Capichera and Mas Amiel rulings; no id of wave two is frozen.",
+   "planEntry": {
+    "from": "castel-de-paolis",
+    "to": "castel-de-paolis",
+    "why": "the house names its white Donna Adriana and counts it among its whites of 1993; Vigna Adriana is the older name; house and key kept",
+    "agreed": true,
+    "date": "2026-11-14"
+   },
+   "planWine": "Donna Adriana",
+   "planWhy": "Grottaferrata estate whose first wines of 1993 followed eight years of research and the replanting of the whole estate; Donna Adriana, Viognier with Malvasia del Lazio sold as Lazio IGT, is its white, sold in its early vintages as Vigna Adriana, some labelled Frascati.",
+   "patch": {
+    "wine.name": "Donna Adriana"
+   },
+   "forReadTogether": "Apply in one commit: the plan's pick castel-de-paolis takes the wine Donna Adriana and the why above, its swaps gain the planEntry, and the record's wine.name becomes Donna Adriana (the lint holds the name to the plan's words, so the two move together). Nothing else in the record need change; the table, the story, the label and the traps already carry the old name as history.",
+   "sources": [
+    {
+     "title": "Castel de Paolis: Our story",
+     "url": "https://www.casteldepaolis.com/our-story/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Castel de Paolis: IGT Donna Adriana",
+     "url": "https://www.casteldepaolis.com/prodotto/igt-donna-adriana-13-2/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Lavinium: Castel de Paolis, producer profile",
+     "url": "https://www.lavinium.it/portfolio/castel-de-paolis/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "CellarTracker: 1998 Castel de Paolis Frascati Vigna Adriana",
+     "url": "https://www.cellartracker.com/wine.asp?iWine=965439",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "World of Fine Wine: Castel de Paolis Vigna Adriana, Lazio Bianco IGT",
+     "url": "https://worldoffinewine.com/wines/14729/castel-de-paolis-vigna-adriana-lazio-bianco-igt",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "swapNote": "One swap proposed, by the author, of the wine's name only; accepted with its patch. No other pick is in doubt: Fontana Candida, Falesco, Casale della Ioria and Casale del Giglio are real houses of their appellations, each making the wine the record tells, which their own pages and independent accounts bear out.",
+ "planNotes": [
+  "fontana-candida: the note is answered in part: the blend by the house is Malvasia del Lazio (Puntinata), Malvasia di Candia and Greco, with Trebbiano in older vintages (2004 and 2015 by two listings); no source gives the vineyard's first vintage; Luna Mater is the house's Frascati Superiore DOCG Riserva. The why stands.",
+  "castel-de-paolis: the note is answered: the research from 1985 (to 1993 by the house, to 1992 by others), the replanting of 1988 to 1993, the first wines of 1993, Donna Adriana a Lazio IGT. The why is loose: Vigna Adriana is the older name, its early vintages labelled Frascati, and the Viognier led white is Donna Adriana; the swap's planWhy replaces it.",
+  "falesco: the note is answered: founded in 1979 at Montefiascone, the first Montiano of 1993, Lazio IGT on the house's sheets and IGP on later ones, with Vino da Tavola for 1993 and 1994 in one listing. The why stands; sold as a Lazio IGT holds for all but the first vintages.",
+  "casale-della-ioria: the note is answered: 1921 is not on the house's pages and stays out; the vineyard (Acuto, 335 metres, planted 1986, Guyot) and the ageing (six to eight months in barriques by the house) are the house's sheets. The why's roots it dates to 1921 is loose: the house does not date itself on its pages read, and the importer gives the year; the why's Acuto family estate is loose too, since the cellar stands on the road between Anagni and Paliano and the vines lie at Anagni, Acuto and Piglio.",
+  "casale-del-giglio: the note is answered: 1967, Syrah about 85 per cent with Petit Verdot, the temple at Satricum close to Le Ferriere. The why's a sanctuary found on the estate is loose: the house places the temple beside its vineyards, near Le Ferriere, not on the estate."
+ ],
+ "codexInTension": [
+  {
+   "record": "REGIONS lazio, the region fragment's producers line for Castel de Paolis",
+   "holds": "A Grottaferrata estate that led the revival of quality Frascati from the 1980s, with whites built on Malvasia del Lazio.",
+   "found": "The estate's research began in 1985 and its first wines came in 1993; its white Donna Adriana is Viognier about four fifths with Malvasia del Lazio, a Lazio IGT; led the revival is a claim of rank no source read makes. From the author's report and the refuter's results.",
+   "sources": [
+    {
+     "title": "Castel de Paolis: Our story",
+     "url": "https://www.casteldepaolis.com/our-story/",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Castel de Paolis: IGT Donna Adriana",
+     "url": "https://www.casteldepaolis.com/prodotto/igt-donna-adriana-13-2/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "REGIONS lazio, the region fragment's producers line for Falesco",
+   "holds": "A Montefiascone estate known for Est! Est!! Est!!! and for Montiano, a Merlot sold as IGT.",
+   "found": "One listing gives the 1993 and 1994 Montiano as Vino da Tavola, before the Lazio IGT; later labels read Lazio IGP. A small looseness, reported only.",
+   "sources": [
+    {
+     "title": "Vinelog: Falesco",
+     "url": "https://vinelog.com/winery/falesco",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Famiglia Cotarella: Montiano Rosso Lazio IGP 2017, technical sheet",
+     "url": "https://www.famigliacotarella.it/wp-content/uploads/2018/12/Montiano-Rosso-Lazio-IGP-2017.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "codexNote": "Reported and not edited: the region record and its fragment are left to the owner, as wave one's codexInTension entries are. None of the five houses is in WINE_PRODUCERS, so no library record is in tension."
+}
