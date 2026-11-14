@@ -1,0 +1,1192 @@
+{
+ "group": "jura",
+ "chunk": "w1",
+ "batch": "A",
+ "date": "2026-11-14",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "perRecord": {
+   "jean-macle": 7,
+   "overnoy": 4,
+   "tissot": 4,
+   "chateau-darlay": 5,
+   "domaine-du-pelican": 3
+  },
+  "note": "Twenty three searches of a share of twenty eight, five left unspent, none of them the author's. Seven were restricted to a house's own domain (arlay.com with domaine-arlay.com twice, domainedupelican.fr twice) or to the Jura wine council and the INAO (jura-vins.com and inao.gouv.fr three times: the serving advice, the years of the four decrees, the soils of Château-Chalon), and are read as primary through their summaries; the other sixteen went to the open web for the second source of a date, a person or a place. The search for the years of the decrees served three records and is counted once, under Tissot. One search, on the adoption at Pupillin, returned nothing on the house and is counted. No WebFetch was tried. Every record was tested; no fact that rests on no source was kept."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the Jura wine council's and the INAO's texts for the appellation rules the records lean on (Château-Chalon, vin de paille, the years of the decrees), then to the houses' own pages for their own dates and methods (Arlay, Pélican), then to the open web for the second source of each date, person and place.",
+  "Where two pages of one house disagree (Arlay's 1269 and 1266, its three and four years in cask) the record gives the span or both as the house's account; where the sources disagree on a year (Macle's son, Overnoy's handover) the record gives no year.",
+  "Sources whose title or address names a living person (the Wine Scholar Guild's and Raisin's Overnoy entries, the Tissot merchants whose addresses carry the son's name, the domaine's own Tissot address) were read in the results but never cited here; the fragment's own sources were left as the author wrote them."
+ ],
+ "records": [
+  {
+   "key": "jean-macle",
+   "searches": 7,
+   "tested": [
+    "The four years without Château-Chalon (1974, 1980, 1984, 2001): The Oxford Companion to Wine on ckbk and a Swiss merchant's account both give them; neither says the wine went unmade, so the story, the card and the key now say no wine was released under the name.",
+    "The appellation of 1936, its four communes (Château-Chalon, Domblans, Ménétru-le-Vignoble, Nevy-sur-Seille) and Savagnin alone: the cahier and the INAO's page, through search: confirmed.",
+    "Sixty months under the veil and held until December of the sixth year: a sommelier school's summary of the cahier (until 15 December of the sixth year, at least sixty months under the veil, released from 1 January of the seventh) and the INAO's more than six years: kept, with the clause left open for the integrator.",
+    "The grey and blue marl slopes: the cahier (grey marls of the Lower Jurassic below a limestone cliff, slopes up to 45 per cent) and the INAO's page (scree over the blue marls): confirmed.",
+    "The family since 1850: Gault et Millau, the Wine Scholar Guild and two merchants: confirmed. The domaine as the father built it in the 1960s (1964 by Hachette, 1966 by another guide) and its reputation his (the Wine Scholar Guild): confirmed, with the mayoralty cut and the son's year cut.",
+    "Serving at 14 to 16 degrees, opened hours ahead or decanted, with Comté: the Jura wine council's guide and its recipe sheets: confirmed.",
+    "The cellars: in the heart of the village and of the sixteenth century in the results, not beneath the village: reworded.",
+    "The house rules: nobody living named (the son, his wife and his sister described or left out), no price, no score, nothing volatile, no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "in the family's old cellars beneath the village,",
+     "now": "in the family's old cellars in the heart of the village,",
+     "why": "No source read puts the cellars beneath the village; the Jura tourist board and a merchant describe cellars nestled in the heart of the village, one of them dating them to the sixteenth century.",
+     "sources": [
+      {
+       "title": "Jura Tourisme: Domaine Macle",
+       "url": "https://www.jura-tourism.com/produit-regional/domaine-macle/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clos des Spiritueux: Domaine Jean Macle, Château-Chalon 2014",
+       "url": "https://www.closdesspiritueux.com/26511-clos-des-millesimes-domaine-jean-macle---chateau-chalon---vin-jaune-2014.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "By the Jura wine council's account they declined to make it at all in years such as 1974, 1980, 1984 and 2001, when the harvest fell short of their standard.",
+     "now": "In years such as 1974, 1980, 1984 and 2001, when the harvest fell short of their standard, no wine was released under its name at all.",
+     "why": "The four years stand (The Oxford Companion to Wine and a Swiss merchant's account of the appellation), but neither says the wine went unmade: the Oxford Companion says no wine was bottled under the name, the merchant that the vintage was declassified, so the wine was made and sold otherwise.",
+     "sources": [
+      {
+       "title": "The Oxford Companion to Wine (on ckbk): Château-Chalon",
+       "url": "https://app.ckbk.com/reference/wine05383c03s001e189",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cavesa blog: De Petrus à Château-Chalon",
+       "url": "https://blog.cavesa.ch/de-petrus-a-chateau-chalon/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In the 1960s the father of the present grower, who also served as mayor of the village, built up the family domaine, and he became known for his grasp of how vin jaune forms under the veil.",
+     "now": "In the 1960s the father of the present grower built the family's vines into the domaine that bears his name, and made its reputation.",
+     "why": "That he was mayor rests on the Guide Hachette alone among the sources read, and his grasp of the veil on none; the 1960s (1964 by Hachette, 1966 by another guide) and the reputation he made (the Wine Scholar Guild) stand on two.",
+     "sources": [
+      {
+       "title": "Guide Hachette des Vins: Domaine Macle",
+       "url": "https://www.hachette-vins.com/guide-vins/producteurs/1667/dom-macle",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: Domaine Jean Macle producer guide",
+       "url": "https://www.winescholarguild.com/producer-guide/france/jura/348-domaine-jean-macle",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "His son took the domaine on in 1995 and has kept its ways: Savagnin from the marl slopes below the village, old barrels, cool cellars beneath the streets, and long patience before release.",
+     "now": "His son later took the domaine on and has kept its ways: Savagnin from the marl slopes below the village, old barrels, old cellars in the heart of the village, and long patience before release.",
+     "why": "The son's year is 1995 in two merchants' pages and 2003 in a French account, so no year is said; the cellars are placed as the sources place them.",
+     "sources": [
+      {
+       "title": "Clos des Spiritueux: Domaine Jean Macle, Château-Chalon 2014",
+       "url": "https://www.closdesspiritueux.com/26511-clos-des-millesimes-domaine-jean-macle---chateau-chalon---vin-jaune-2014.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gault et Millau: Domaine Jean Macle",
+       "url": "https://fr.gaultmillau.com/fr/artisans/domaine-jean-macle",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.back",
+     "was": "Declined to make it at all, as in 1974, 1980, 1984 and 2001.",
+     "now": "Released no wine under the name at all, as in 1974, 1980, 1984 and 2001.",
+     "why": "In those years the wine was declassified and no wine bottled as Château-Chalon (The Oxford Companion to Wine, a Swiss merchant); it was not left unmade.",
+     "sources": [
+      {
+       "title": "The Oxford Companion to Wine (on ckbk): Château-Chalon",
+       "url": "https://app.ckbk.com/reference/wine05383c03s001e189",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cavesa blog: De Petrus à Château-Chalon",
+       "url": "https://blog.cavesa.ch/de-petrus-a-chateau-chalon/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1.opts.0",
+     "was": "Declined to make Château-Chalon at all",
+     "now": "Released no wine as Château-Chalon",
+     "why": "The key now says what the sources say happened: no wine under the name, not no wine made.",
+     "sources": [
+      {
+       "title": "The Oxford Companion to Wine (on ckbk): Château-Chalon",
+       "url": "https://app.ckbk.com/reference/wine05383c03s001e189",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cavesa blog: De Petrus à Château-Chalon",
+       "url": "https://blog.cavesa.ch/de-petrus-a-chateau-chalon/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The father's term as mayor of Château-Chalon (the Guide Hachette alone).",
+    "The year 1995 for the son's start (1995 against 2003).",
+    "His grasp of how vin jaune forms under the veil (no source read)."
+   ],
+   "open": [
+    "That the father was mayor of Château-Chalon and led the growers' syndicate rests on the Guide Hachette alone among the sources read (a second page in the same results may be Hachette's own), so it is cut; a second independent source would restore it.",
+    "The year the son took the domaine on is 1995 in two merchants' pages and 2003 in a French account; it is not said.",
+    "The sixty months under the veil rest on the author's reading of the cahier through search and a sommelier school's summary of it (held until 15 December of the sixth year, at least sixty months under the veil); the INAO's own page read gives only more than six years under the veil. A modification of the cahier was opened to national opposition in February 2026, and whether it touches the ageing rule was not read.",
+    "The father has no dates in any source read, though one guide calls him the late Jean Macle; he stays described, never named in prose."
+   ],
+   "extraSources": [
+    {
+     "title": "INAO: Château-Chalon",
+     "url": "https://www.inao.gouv.fr/produit/chateau-chalon-12233",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Sommelier Academy: AOC and AOP regulations, Château-Chalon",
+     "url": "https://sommelier-academy.de/?p=4271",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Comité Interprofessionnel des Vins du Jura: Vins du Jura, the guide",
+     "url": "https://www.jura-vins.com/medias/nos-vins/3-guide-vins-jura/VDJ-guide2015new-V2-Francais.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "The Oxford Companion to Wine (on ckbk): Château-Chalon",
+     "url": "https://app.ckbk.com/reference/wine05383c03s001e189",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cavesa blog: De Petrus à Château-Chalon",
+     "url": "https://blog.cavesa.ch/de-petrus-a-chateau-chalon/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gault et Millau: Domaine Jean Macle",
+     "url": "https://fr.gaultmillau.com/fr/artisans/domaine-jean-macle",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Clos des Spiritueux: Domaine Jean Macle, Château-Chalon 2014",
+     "url": "https://www.closdesspiritueux.com/26511-clos-des-millesimes-domaine-jean-macle---chateau-chalon---vin-jaune-2014.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Jura Tourisme: Domaine Macle",
+     "url": "https://www.jura-tourism.com/produit-regional/domaine-macle/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "overnoy",
+   "searches": 4,
+   "tested": [
+    "The takeover of 1968: several importers' and merchants' accounts: confirmed.",
+    "No added sulphur since the early 1980s: one guide gives 1984, the grower's own account in an importer's interview part of 1985 and all of 1986: now the mid 1980s in the making, the table line, the story and the card.",
+    "The Chauvet line: the usual telling credits a follower of Chauvet in the early 1980s and Chauvet behind him, another account calls Chauvet a mentor and friend, and the grower's own account starts with his father: the story and the stem now say as the story is usually told.",
+    "Jules Chauvet (1907 to 1989): the author's Wikipedia and More Than Organic, and well attested; kept.",
+    "The adopted son: called his successor and adopted son in several accounts, his spiritual son in another, working beside him since 1989 or 1990: reworded to often called his adopted son, since about 1990.",
+    "Pupillin, the capital of Ploussard, some three kilometres from Arbois: the Jura wine council's Pupillin sheet and Wikipedia: confirmed. Arbois Pupillin as a mention of the Arbois appellation: Wikipedia, and the author's reading: kept.",
+    "Ageing past ten years: notes on the 1995 Poulsard and the 1999 and 2003 Ploussards in the results: kept.",
+    "The question on the grape: one key, and the explanation's gravel clause cut for want of a source. The house rules: the grower and his successor described, never named."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "the house's custom since the early 1980s,",
+     "now": "the house's custom since the mid 1980s,",
+     "why": "By the grower's own account in an importer's interview, part of the 1985 vintage and all of 1986 were made without sulphur; guides give 1983 and 1984. The mid 1980s holds for all of them; the early 1980s for one.",
+     "sources": [
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vins et Millésimes: how Domaine Pierre Overnoy works without sulphur",
+       "url": "https://www.vinsetmillesimes.com/en/faq/faqs/comment-le-domaine-pierre-overnoy-pratique-t-il-la-viticulture-et-la-vinification-sans-soufre-",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Louis/Dressner Selections: Maison Pierre Overnoy",
+       "url": "https://louisdressner.com/producers/overnoy",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "made with no added sulphur since the early 1980s.",
+     "now": "made with no added sulphur since the mid 1980s.",
+     "why": "As for the making: 1985 in part and 1986 in full by the grower's own account, 1984 in one guide.",
+     "sources": [
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vins et Millésimes: how Domaine Pierre Overnoy works without sulphur",
+       "url": "https://www.vinsetmillesimes.com/en/faq/faqs/comment-le-domaine-pierre-overnoy-pratique-t-il-la-viticulture-et-la-vinification-sans-soufre-",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "He found his way in the cellar through the ideas of Jules Chauvet",
+     "now": "As the story is usually told, he found his way in the cellar through the ideas of Jules Chauvet",
+     "why": "The Chauvet line is the usual telling (an importer's and a merchant's accounts, one of them through a follower of Chauvet in the early 1980s), but the grower's own account starts closer to home, so it is told as the usual telling.",
+     "sources": [
+      {
+       "title": "More Natural Wine: the Overnoy collection",
+       "url": "https://morenaturalwine.com/en-jp/collections/pierre-overnoy",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In the early 1980s he stopped adding sulphur to his wines, and the house has made them without it ever since.",
+     "now": "By the mid 1980s he had stopped adding sulphur to his wines, and the house has made them without it ever since.",
+     "why": "1985 in part and 1986 in full by the grower's own account, 1984 in one guide: the mid 1980s.",
+     "sources": [
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vins et Millésimes: how Domaine Pierre Overnoy works without sulphur",
+       "url": "https://www.vinsetmillesimes.com/en/faq/faqs/comment-le-domaine-pierre-overnoy-pratique-t-il-la-viticulture-et-la-vinification-sans-soufre-",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "He later adopted a young man who came to work beside him, and that adopted son and his wife have carried the domaine on, with the same vines and the same ways.",
+     "now": "He passed the domaine to the young man who had worked beside him since about 1990, often called his adopted son, and that successor and his wife have carried it on, with the same vines and the same ways.",
+     "why": "Several accounts call the successor his adopted son, another his spiritual son, and none read records an adoption; he joined for the 1989 harvest by one account and in 1990 by another, so about 1990. The handover year (1999 or 2001) is not said.",
+     "sources": [
+      {
+       "title": "Vins et Millésimes: the wines of Domaine Pierre Overnoy",
+       "url": "https://vinsetmillesimes.com/en/7597-overnoy",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.0.back",
+     "was": "Added sulphur, at every stage, since the early 1980s.",
+     "now": "Added sulphur, at every stage, since the mid 1980s.",
+     "why": "As for the making and the story.",
+     "sources": [
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vins et Millésimes: how Domaine Pierre Overnoy works without sulphur",
+       "url": "https://www.vinsetmillesimes.com/en/faq/faqs/comment-le-domaine-pierre-overnoy-pratique-t-il-la-viticulture-et-la-vinification-sans-soufre-",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1.q",
+     "was": "Whose teaching, a Beaujolais négociant and chemist's, led the grower behind Domaine Pierre Overnoy to make wine without added sulphur?",
+     "now": "As the story is usually told, whose ideas, those of a Beaujolais négociant and chemist, led the grower behind Domaine Pierre Overnoy to give up added sulphur?",
+     "why": "The stem now hedges the Chauvet line as the usual telling, as the story does, so the one key stays right against the grower's own account.",
+     "sources": [
+      {
+       "title": "More Natural Wine: the Overnoy collection",
+       "url": "https://morenaturalwine.com/en-jp/collections/pierre-overnoy",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+       "url": "https://blog.lescaves.co.uk/?p=3799",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.0.exp",
+     "was": "Trousseau is the Jura's darker, firmer red, grown mostly on warmer gravels.",
+     "now": "Trousseau is the Jura's other native red, darker and firmer.",
+     "why": "That Trousseau grows mostly on warmer gravels was read in no source, and Wikipedia gives the limestone of Montigny-lès-Arsures, the village that calls itself the capital of Trousseau, as the soil said to suit it; the clause is cut and the grape kept.",
+     "sources": [
+      {
+       "title": "Wikipedia: Montigny-lès-Arsures",
+       "url": "https://en.wikipedia.org/wiki/Montigny-l%C3%A8s-Arsures",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The early 1980s for the end of added sulphur (now the mid 1980s).",
+    "That the grower adopted his successor, as a plain fact (now often called his adopted son).",
+    "That Trousseau grows mostly on warmer gravels, in the explanation of the wine question."
+   ],
+   "open": [
+    "By the grower's own account in an importer's interview, his father made wine without sulphur before him; that rests on the one account, so the story tells the Chauvet line only as the usual telling and says nothing of the father.",
+    "The guides read call the house Maison Pierre Overnoy; the plan's name Domaine Pierre Overnoy is kept, for the read-together agent.",
+    "The handover year (1999 or 2001) and whether the adoption was a legal one were not settled; neither is said.",
+    "The record still cites no primary source; the Jura wine council's Pupillin sheet, read through search, bears out the capital of Ploussard and is listed in the review."
+   ],
+   "extraSources": [
+    {
+     "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+     "url": "https://blog.lescaves.co.uk/?p=3799",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vins et Millésimes: the wines of Domaine Pierre Overnoy",
+     "url": "https://vinsetmillesimes.com/en/7597-overnoy",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vins et Millésimes: how Domaine Pierre Overnoy works without sulphur",
+     "url": "https://www.vinsetmillesimes.com/en/faq/faqs/comment-le-domaine-pierre-overnoy-pratique-t-il-la-viticulture-et-la-vinification-sans-soufre-",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "More Natural Wine: the Overnoy collection",
+     "url": "https://morenaturalwine.com/en-jp/collections/pierre-overnoy",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Comité Interprofessionnel des Vins du Jura: Pupillin",
+     "url": "https://www.jura-vins.com/medias/02_Fiche-Pupillin.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Pupillin",
+     "url": "https://en.wikipedia.org/wiki/Pupillin",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "tissot",
+   "searches": 4,
+   "tested": [
+    "Founded in 1962 by André and Mireille Tissot at Montigny-lès-Arsures: three merchants' and guides' histories: confirmed.",
+    "Organic certification by 1999 (Ecocert) and Demeter from 2004 across all its appellations: Gault et Millau and two merchants: confirmed.",
+    "Les Bruyères: south facing, Triassic clay over blue marl, plantings from 1938 to 1973, 228 litre barrels with a fifth new, about 24 months on the lees, a spontaneous fermentation with its own yeasts: two merchants' sheets: confirmed, and the yeasts added.",
+    "Montigny-lès-Arsures the capital of Trousseau: Wikipedia and the Jura tourist board's trail: confirmed; its bearing from Arbois not read, so beside Arbois.",
+    "Arbois an appellation of 1936: the Jura wine council's pages through search (the decree of 15 May 1936): confirmed.",
+    "The house rules: the son and his wife never named; nothing volatile (no hectares); no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in 228 litre oak barrels,",
+     "now": "Fermented with its own yeasts in 228 litre oak barrels,",
+     "why": "The spontaneous fermentation with the grapes' own yeasts is now in two merchants' sheets (Comptoir des Millésimes, and the author's Vino al Vino), so it is added.",
+     "sources": [
+      {
+       "title": "Vino al Vino: Tissot Arbois Chardonnay Les Bruyères",
+       "url": "https://www.vinoalvino.ca/wines-france/tissot-les-bruy%C3%A8res",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Gourmet Hunters: Tissot Chardonnay Les Bruyères 2022",
+       "url": "https://www.gourmethunters.com/fr/Tissot+Chardonnay+Les+Bruy%C3%A8res+2022",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the village just north of Arbois that claims Trousseau as its own grape,",
+     "now": "the village beside Arbois that calls itself the capital of Trousseau,",
+     "why": "Wikipedia and the Jura tourist board's Trousseau trail give the title capital of Trousseau and a village adjoining Arbois; no source read gave its bearing from the town.",
+     "sources": [
+      {
+       "title": "Wikipedia: Montigny-lès-Arsures",
+       "url": "https://en.wikipedia.org/wiki/Montigny-l%C3%A8s-Arsures",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Jura Tourisme: Sentier du Trousseau",
+       "url": "https://www.jura-tourism.com/?p=1559584",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "That Montigny-lès-Arsures lies just north of Arbois (no bearing read)."
+   ],
+   "open": [
+    "The son's start is 1990 in three accounts read here, against 1980 and 1989 in the author's; it is still not said. 1990 is a distractor in the story question, which asks the founding year, so it is not a second right answer.",
+    "Montigny-lès-Arsures lies north of Arbois on the map, but no source read gave the bearing, so the record says beside Arbois.",
+    "The record cites no primary source: the domaine's own sheet, whose address names the living son, agrees with the merchants for the soil, the barrels and the lees."
+   ],
+   "extraSources": [
+    {
+     "title": "Gourmet Hunters: Tissot Chardonnay Les Bruyères 2022",
+     "url": "https://www.gourmethunters.com/fr/Tissot+Chardonnay+Les+Bruy%C3%A8res+2022",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: Montigny-lès-Arsures",
+     "url": "https://en.wikipedia.org/wiki/Montigny-l%C3%A8s-Arsures",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Jura Tourisme: Sentier du Trousseau",
+     "url": "https://www.jura-tourism.com/?p=1559584",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "chateau-darlay",
+   "searches": 5,
+   "tested": [
+    "Arlay south of Château-Chalon: refuted. The two lie at about the same latitude, Arlay to the west, and the Jura tourist board puts Arlay some ten kilometres from Château-Chalon: the sites, the story and the trap now say so.",
+    "The history: the estate's history page and its visit page through search (1269 on the one and 1266 to 1315 on the other for the first lord of the Chalon-Arlay line, the countess's purchase of about 1770, her death in 1794, her Arenberg grandson in 1825, the Laguiche father and son from 1960): confirmed save the year, now the 1260s.",
+    "The salt: Wikipedia's history of Jura salt (Salins bought by the house of Chalon in 1237) and a heritage synthesis (the family's prosperity on the salt of Salins, a fortress at Arlay): the fortune now the house of Chalon's.",
+    "The vin de paille: Poulsard, Trousseau, Chardonnay and Savagnin, three to four months on racks, more than three kilograms to a half bottle, the grapes ripe and free of rot: the estate's product page and its older wine page: confirmed; the ageing four years on one page and three on the other: now three or four.",
+    "The rules of vin de paille: at least six weeks of drying (the Jura tourist board, with the author's cahier) and the four grapes (the INAO's opposition text for Arbois): confirmed. The Côtes du Jura of 1937: the Jura wine council's pages: confirmed.",
+    "The oldest château vineyard in France: the estate's own two pages, hedged as what it calls itself: kept.",
+    "The house rules: the Laguiche father, son and grandson never named; the countess and the Arenberg grandson described; no hectares."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "south of Château-Chalon in the Côtes du Jura.",
+     "now": "some ten kilometres from Château-Chalon in the Côtes du Jura.",
+     "why": "Arlay is not south of Château-Chalon: the two lie at about the same latitude, Arlay to the west, and the Jura tourist board puts Arlay some ten kilometres from Château-Chalon.",
+     "sources": [
+      {
+       "title": "Jura Tourisme: Arlay",
+       "url": "https://www.jura-tourism.com/vivre-le-jura/visiter/villes-et-villages/arlay/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cartes France: carte d'Arlay",
+       "url": "https://www.cartesfrance.fr/Arlay-39140/carte-Arlay.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Bunches picked fully ripe are sorted by hand, one by one, then laid on racks",
+     "now": "Bunches picked ripe and free of rot are laid on racks",
+     "why": "The estate's pages read say the grapes are picked ripe and always free of rot; the sorting one by one was not read in them or elsewhere.",
+     "sources": [
+      {
+       "title": "Domaine du Château d'Arlay: Vin de Paille",
+       "url": "https://www.domaine-arlay.com/product-page/vin-de-paille-du-jura-2018",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine du Château d'Arlay: les vins du Jura",
+       "url": "http://www.domaine-arlay.com/fr/domaine-chateau-arlay-les-vins-du-jura.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "The pressed juice ferments and the wine is then aged for some four years in oak casks before bottling.",
+     "now": "The pressed juice ferments and the wine is then aged for three or four years in small oak casks before bottling, by the estate's pages.",
+     "why": "The estate's product page gives four years in oak casks and its older page on the wines three years in small casks; both are now given as the estate's.",
+     "sources": [
+      {
+       "title": "Domaine du Château d'Arlay: Vin de Paille",
+       "url": "https://www.domaine-arlay.com/product-page/vin-de-paille-du-jura-2018",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine du Château d'Arlay: les vins du Jura",
+       "url": "http://www.domaine-arlay.com/fr/domaine-chateau-arlay-les-vins-du-jura.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "then aged some four years in oak.",
+     "now": "then aged three or four years in oak.",
+     "why": "As for the making: the estate's pages give three and four years.",
+     "sources": [
+      {
+       "title": "Domaine du Château d'Arlay: Vin de Paille",
+       "url": "https://www.domaine-arlay.com/product-page/vin-de-paille-du-jura-2018",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Domaine du Château d'Arlay: les vins du Jura",
+       "url": "http://www.domaine-arlay.com/fr/domaine-chateau-arlay-les-vins-du-jura.php",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a medieval fortress south of Château-Chalon,",
+     "now": "a medieval fortress some ten kilometres from Château-Chalon,",
+     "why": "As for the sites: Arlay lies west of Château-Chalon, not south, some ten kilometres from it.",
+     "sources": [
+      {
+       "title": "Jura Tourisme: Arlay",
+       "url": "https://www.jura-tourism.com/vivre-le-jura/visiter/villes-et-villages/arlay/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cartes France: carte d'Arlay",
+       "url": "https://www.cartesfrance.fr/Arlay-39140/carte-Arlay.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1269 the lordship passed to the Chalon-Arlay line, whose wealth from the salt works of Salins-les-Bains built the fortress and widened the vineyard, and it later came down through the princes of Orange.",
+     "now": "In the 1260s the lordship passed to the first of the Chalon-Arlay line, a branch of the house of Chalon whose fortune rested on the salt works of Salins-les-Bains; the fortress grew under them, and the estate later came down through the princes of Orange.",
+     "why": "The estate's history page gives 1269, its own visit page and Wikipedia's account of the first lord of the line 1266, so the 1260s. The salt fortune of the house of Chalon stands on Wikipedia's history of Jura salt and a heritage synthesis; that it widened the vineyard was read in no second source.",
+     "sources": [
+      {
+       "title": "Château d'Arlay: L'Histoire du Château d'Arlay",
+       "url": "https://www.arlay.com/histoire-chateau-arlay",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château d'Arlay: Visite du Château d'Arlay",
+       "url": "https://www.arlay.com/visiter-le-domaine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: John I of Chalon-Arlay",
+       "url": "https://en.wikipedia.org/wiki/John_I_of_Chalon-Arlay",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: History of Jura salt",
+       "url": "https://en.wikipedia.org/wiki/History_of_Jura_salt",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Ancient History Sites: Château d'Arlay",
+       "url": "https://www.ancient-history-sites.com/sites/chateau-d-arlay/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps.2",
+     "was": "Arlay lies in the Côtes du Jura, south of Château-Chalon;",
+     "now": "Arlay lies in the Côtes du Jura, some ten kilometres from Château-Chalon;",
+     "why": "As for the sites: not south of Château-Chalon.",
+     "sources": [
+      {
+       "title": "Jura Tourisme: Arlay",
+       "url": "https://www.jura-tourism.com/vivre-le-jura/visiter/villes-et-villages/arlay/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cartes France: carte d'Arlay",
+       "url": "https://www.cartesfrance.fr/Arlay-39140/carte-Arlay.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.front",
+     "was": "Which line took the lordship of Château d'Arlay in 1269, and where did its wealth come from?",
+     "now": "Which line took the lordship of Château d'Arlay in the 1260s, and where did its fortune come from?",
+     "why": "1269 and 1266 are both the estate's; the card asks for the decade. Wave two holds no frozen id, so the new front orphans nothing.",
+     "sources": [
+      {
+       "title": "Château d'Arlay: L'Histoire du Château d'Arlay",
+       "url": "https://www.arlay.com/histoire-chateau-arlay",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château d'Arlay: Visite du Château d'Arlay",
+       "url": "https://www.arlay.com/visiter-le-domaine",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.back",
+     "was": "The Chalon-Arlay line, enriched by the salt works of Salins-les-Bains.",
+     "now": "The Chalon-Arlay line, a branch of the house of Chalon grown rich on the salt works of Salins-les-Bains.",
+     "why": "The salt fortune was the house of Chalon's, from Salins, which the line shared as its branch.",
+     "sources": [
+      {
+       "title": "Wikipedia: History of Jura salt",
+       "url": "https://en.wikipedia.org/wiki/History_of_Jura_salt",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Ancient History Sites: Château d'Arlay",
+       "url": "https://www.ancient-history-sites.com/sites/chateau-d-arlay/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1.q",
+     "was": "In 1269 its lordship passed to which line, enriched by salt?",
+     "now": "In the 1260s its lordship passed to which line, enriched by salt?",
+     "why": "1269 and 1266 are both given by the estate; the stem asks for the decade.",
+     "sources": [
+      {
+       "title": "Château d'Arlay: L'Histoire du Château d'Arlay",
+       "url": "https://www.arlay.com/histoire-chateau-arlay",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Château d'Arlay: Visite du Château d'Arlay",
+       "url": "https://www.arlay.com/visiter-le-domaine",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: John I of Chalon-Arlay",
+       "url": "https://en.wikipedia.org/wiki/John_I_of_Chalon-Arlay",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1.exp",
+     "was": "In 1269 the estate passed to the Chalon-Arlay line, whose salt wealth from Salins built its fortress; the princes of Orange came later, by descent.",
+     "now": "In the 1260s the estate passed to the Chalon-Arlay line, a branch of a house grown rich on the salt of Salins; the princes of Orange came later, by descent.",
+     "why": "As for the story and the stem.",
+     "sources": [
+      {
+       "title": "Château d'Arlay: L'Histoire du Château d'Arlay",
+       "url": "https://www.arlay.com/histoire-chateau-arlay",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: History of Jura salt",
+       "url": "https://en.wikipedia.org/wiki/History_of_Jura_salt",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "That Arlay lies south of Château-Chalon (refuted by the map).",
+    "The year 1269 as the one year (the estate also gives 1266).",
+    "That the Chalon-Arlay line widened the vineyard.",
+    "That the bunches are sorted by hand one by one."
+   ],
+   "open": [
+    "The ninth century tradition and the eleventh century archives are the estate's alone and are hedged as its account; the claim to be the oldest château vineyard in France is the estate's (premier château vignoble de France, and the oldest wine château in France, on its pages), told as what it calls itself.",
+    "That the Chalon-Arlay line widened the vineyard, the author's reading of the estate's history page, is cut for want of a second source.",
+    "The countess, comtesse de Lauraguais and baroness of Arlay from 1767 to 1789 by the estate, guillotined in 1794, could be named with her dates if a second source gives her birth year; she stays described.",
+    "The six weeks of drying the appellation asks rest on the author's reading of the cahier and the Jura tourist board's account of vin de paille; the INAO's opposition text for Arbois lists the four grapes allowed."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaine du Château d'Arlay: les vins du Jura",
+     "url": "http://www.domaine-arlay.com/fr/domaine-chateau-arlay-les-vins-du-jura.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Domaine du Château d'Arlay: premier château vignoble de France",
+     "url": "http://www.domaine-arlay.com/fr/domaine-chateau-arlay-le-vignoble.php",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Château d'Arlay: Visite du Château d'Arlay",
+     "url": "https://www.arlay.com/visiter-le-domaine",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Jura Tourisme: Arlay",
+     "url": "https://www.jura-tourism.com/vivre-le-jura/visiter/villes-et-villages/arlay/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cartes France: carte d'Arlay",
+     "url": "https://www.cartesfrance.fr/Arlay-39140/carte-Arlay.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "France Voyage: Arlay",
+     "url": "https://www.france-voyage.com/tourism/arlay-commune-13561.htm",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: John I of Chalon-Arlay",
+     "url": "https://en.wikipedia.org/wiki/John_I_of_Chalon-Arlay",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Wikipedia: History of Jura salt",
+     "url": "https://en.wikipedia.org/wiki/History_of_Jura_salt",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Ancient History Sites: Château d'Arlay",
+     "url": "https://www.ancient-history-sites.com/sites/chateau-d-arlay/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Patrimoine Bourgogne Franche-Comté: dossier on Arlay",
+     "url": "https://patrimoine.bourgognefranchecomte.fr/dossier/pdf/IA39002111",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "INAO: cahier des charges of the AOC Arbois, national opposition text of 2022",
+     "url": "https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Jura Tourisme: vin de paille",
+     "url": "https://www.jura-tourism.com/?p=862",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "key": "domaine-du-pelican",
+   "searches": 3,
+   "tested": [
+    "The founding of 2012, the Château de Chavannes at Montigny-lès-Arsures and the Grand Curoulet at Arbois, the search from 2007 with a soil geologist, the retiring grower's vines entrusted in 2015 and bought in 2018: the domaine's history page: confirmed.",
+    "The pelican: the domaine's page calls it the emblem of the town of Arbois; the arms were read in no source: reworded.",
+    "The cellar of 2020: the domaine's page for the year, and two importers' pages (built into the slope on the first purchase at Montigny, by the Château de Chavannes, with the Clos Saint Laurent behind it): reworded from in the Clos Saint Laurent.",
+    "The Savagnin Ouillé: lightly crushed and pressed, fermented in barrels and foudres, about twelve months in 500 litre barrels and foudres, made since the domaine's founding; new oak at most about five per cent across the domaine: the domaine's cuvée and philosophy pages: confirmed.",
+    "The Grand Curoulet Savagnin: grey and mottled marls, a third left overnight on its skins: the domaine's cuvée page: confirmed. Biodynamic: the Wine Scholar Guild and the domaine: confirmed.",
+    "The house rules: the Volnay family by its domaine, the founders, the manager, the geologist and the retiring grower never named."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "It took its name from the pelican on the arms of the town of Arbois.",
+     "now": "It took its name from the pelican, the emblem of the town of Arbois.",
+     "why": "The domaine's history page calls the pelican the emblem of the town of Arbois; no source read described the town's arms.",
+     "sources": [
+      {
+       "title": "Domaine du Pélican: Histoire du Domaine du Pélican",
+       "url": "https://domainedupelican.fr/pages/histoire",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "entrusted his old vines to the estate,",
+     "now": "entrusted his vines to the estate,",
+     "why": "The domaine's page gives the vines entrusted in 2015 and bought in 2018, about five hectares; their age was read in no source.",
+     "sources": [
+      {
+       "title": "Domaine du Pélican: Histoire du Domaine du Pélican",
+       "url": "https://domainedupelican.fr/pages/histoire",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and in 2020 opened a new cellar in the Clos Saint Laurent at Montigny-lès-Arsures.",
+     "now": "and in 2020 built a new cellar into the slope beside the Château de Chavannes at Montigny-lès-Arsures.",
+     "why": "The domaine's page dates the new cellar to 2020; two importers place it on the first purchase at Montigny, built into the slope by the Château de Chavannes, with the Clos Saint Laurent behind it, not in it.",
+     "sources": [
+      {
+       "title": "Domaine du Pélican: Histoire du Domaine du Pélican",
+       "url": "https://domainedupelican.fr/pages/histoire",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Scholar Guild: Domaine du Pélican producer guide",
+       "url": "https://www.winescholarguild.com/producer-guide/france/jura/361-domaine-du-pelican",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Grand Cru Selections: Domaine du Pélican",
+       "url": "https://grandcruselections.com/domaine-pelican-new",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps.2",
+     "was": "the emblem on the arms of the town of Arbois,",
+     "now": "the emblem of the town of Arbois,",
+     "why": "As for the story: the domaine says emblem, and no source read described the arms.",
+     "sources": [
+      {
+       "title": "Domaine du Pélican: Histoire du Domaine du Pélican",
+       "url": "https://domainedupelican.fr/pages/histoire",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "takenOut": [
+    "The arms of Arbois (only the emblem read).",
+    "That the retiring grower's vines were old.",
+    "That the new cellar stands in the Clos Saint Laurent."
+   ],
+   "open": [
+    "The domaine's page says the search outside Burgundy began in 2006 and turned to the Jura after a blind tasting in 2007; the record's 2007 stands for the Jura.",
+    "Whether the soil geologist who guided the search is living was not settled; he stays described."
+   ],
+   "extraSources": [
+    {
+     "title": "Domaine du Pélican: Arbois Grand Curoulet Savagnin Ouillé",
+     "url": "https://domainedupelican.fr/products/arbois-gcs",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Wine Scholar Guild: Domaine du Pélican producer guide",
+     "url": "https://www.winescholarguild.com/producer-guide/france/jura/361-domaine-du-pelican",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Grand Cru Selections: Domaine du Pélican",
+     "url": "https://grandcruselections.com/domaine-pelican-new",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Laurent Macle",
+   "where": "Gault et Millau, the Guide Hachette and merchants' pages, as the son who runs Domaine Macle",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Béatrice Macle and Christelle Macle",
+   "where": "a French account in the results, as the son's wife and sister at the domaine",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Pierre Overnoy",
+   "where": "every account read, the grower whose name the house bears, born in 1937 by one account and still at the vines by another",
+   "believed": "living; the house keeps its name, the man is never named in prose; for the read-together agent to weigh against the house name",
+   "inFragment": false
+  },
+  {
+   "name": "Emmanuel Houillon and Anne Houillon",
+   "where": "importers' and merchants' pages, as the successor and his wife",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Jacques Néauport",
+   "where": "an importer's account, as the follower of Chauvet who met the grower in the early 1980s",
+   "believed": "not settled; not named in the record",
+   "inFragment": false
+  },
+  {
+   "name": "Stéphane Tissot and Bénédicte Tissot",
+   "where": "merchants' pages and Gault et Millau, as the son who took over and his wife",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "André Tissot and Mireille Tissot",
+   "where": "the founders, whose names the house bears; one account has André retiring in 2002",
+   "believed": "not settled; the house keeps its name, the couple described",
+   "inFragment": false
+  },
+  {
+   "name": "Renaud de Laguiche and Alain de Laguiche",
+   "where": "the estate's history page, as the father and son who developed the wine estate from 1960",
+   "believed": "the son living, the father not settled; neither named",
+   "inFragment": false
+  },
+  {
+   "name": "Yves Hérody",
+   "where": "the domaine's history page, as the Jura geologist who guided the search",
+   "believed": "not settled; described",
+   "inFragment": false
+  },
+  {
+   "name": "Jacques Puffeney",
+   "where": "the domaine's history page, as the retiring Arbois grower whose vines were entrusted in 2015 and bought in 2018",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Jean-Marc Brignot",
+   "where": "the domaine's history page, as the grower from whom the Grand Curoulet was bought in 2012",
+   "believed": "living; not in people.json, for the read-together agent",
+   "inFragment": false
+  },
+  {
+   "name": "Guillaume d'Angerville and François Duvivier",
+   "where": "the domaine's history page, as the founders of 2012",
+   "believed": "living; both already in people.json",
+   "inFragment": false
+  }
+ ],
+ "notLiving": [
+  {
+   "name": "Jean Macle",
+   "note": "The father who built the domaine in the 1960s; called the late Jean Macle by the Wine Scholar Guild; no dates in any source read; described, and his name stands only in the house name."
+  },
+  {
+   "name": "Jules Chauvet",
+   "note": "1907 to 1989, as the author gives him (Wikipedia, More Than Organic); named with his dates."
+  },
+  {
+   "name": "Élisabeth-Pauline de Gand de Mérode de Montmorency, comtesse de Lauraguais",
+   "note": "Baroness of Arlay from 1767 to 1789 and guillotined in 1794, by the estate; no birth year in two sources; described."
+  },
+  {
+   "name": "Pierre d'Arenberg",
+   "note": "Her grandson, who took the estate back in 1825 and held it to 1877, by the estate; no dates of his life read; described."
+  },
+  {
+   "name": "Jean I of Chalon-Arlay",
+   "note": "1258 to 1315 by Wikipedia, lord of Arlay from 1266 by Wikipedia and the estate's visit page and from 1269 by its history page; the record says the first of the Chalon-Arlay line, in the 1260s."
+  },
+  {
+   "name": "Louis Pasteur",
+   "note": "Named in the explanation of the story question for Overnoy as the scientist who grew up in Arbois; long dead (1822 to 1895, not shown)."
+  }
+ ],
+ "swaps": [],
+ "picks": [
+  {
+   "pick": "jean-macle",
+   "ruling": "kept: no swap proposed; the Château-Chalon is the house's wine in every source read and in the library."
+  },
+  {
+   "pick": "overnoy",
+   "ruling": "kept: no swap proposed; the Ploussard is the wine the house is known by. The house's label name, Maison Pierre Overnoy in the guides, is left for the read-together agent."
+  },
+  {
+   "pick": "tissot",
+   "ruling": "kept: no swap proposed; Les Bruyères is one of the house's single parcel Chardonnays and teaches the topped up idiom as the plan asks."
+  },
+  {
+   "pick": "chateau-darlay",
+   "ruling": "kept: no swap proposed; the vin de paille is on the estate's own pages and the plan's confirmations (the label, the grapes, the drying) are borne out."
+  },
+  {
+   "pick": "domaine-du-pelican",
+   "ruling": "kept: no swap proposed; the Savagnin Ouillé has been made since the founding, by the domaine's own page."
+  }
+ ],
+ "codexInTension": [
+  {
+   "file": "js/data-producers.js",
+   "record": "p-macle: holdings",
+   "says": "with cellars cut into the rock",
+   "against": "The sources read place the cellars in the heart of the village, one dating them to the sixteenth century; none says cut into the rock. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Jura Tourisme: Domaine Macle",
+     "url": "https://www.jura-tourism.com/produit-regional/domaine-macle/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Clos des Spiritueux: Domaine Jean Macle, Château-Chalon 2014",
+     "url": "https://www.closdesspiritueux.com/26511-clos-des-millesimes-domaine-jean-macle---chateau-chalon---vin-jaune-2014.html",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-overnoy: style",
+   "says": "No added sulphur at any stage and long élevage",
+   "against": "The first half is borne out from the mid 1980s; a long élevage is not confirmed for the Ploussard, though one importer speaks of long ageing in barrels, foudres and concrete eggs across the range. Reported, not edited.",
+   "sources": [
+    {
+     "title": "More Natural Wine: the Overnoy collection",
+     "url": "https://morenaturalwine.com/en-jp/collections/pierre-overnoy",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Les Caves de Pyrene blog: an audience at Maison Pierre Overnoy",
+     "url": "https://blog.lescaves.co.uk/?p=3799",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-tissot: holdings",
+   "says": "single-vineyard Chardonnays including La Tour de Curon and Les Bruyères on marl and limestone",
+   "against": "For Les Bruyères two merchants' sheets give Triassic clay over blue marl, south facing; the author reported the same. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Vino al Vino: Tissot Arbois Chardonnay Les Bruyères",
+     "url": "https://www.vinoalvino.ca/wines-france/tissot-les-bruy%C3%A8res",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Gourmet Hunters: Tissot Chardonnay Les Bruyères 2022",
+     "url": "https://www.gourmethunters.com/fr/Tissot+Chardonnay+Les+Bruy%C3%A8res+2022",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "file": "js/data-producers.js",
+   "record": "p-tissot: founded",
+   "says": "\"\" (no year)",
+   "against": "Three merchants' and guides' histories give 1962, the record's year; the library could carry it. Reported, not edited.",
+   "sources": [
+    {
+     "title": "Gault et Millau: Domaine André et Mireille Tissot",
+     "url": "https://fr.gaultmillau.com/en/wineries/domaine-andre-et-mireille-tissot",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Cavissima: Domaine André et Mireille Tissot",
+     "url": "https://www.cavissima.com/en/collections/jura-domaine-andre-et-mireille-tissot",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ]
+}
