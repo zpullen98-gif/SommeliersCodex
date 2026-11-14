@@ -8,9 +8,11 @@
  * the shared house engine and the pack, and asserts:
  *
  *   1. the load: data-flagships.js then codex58.js straight after codex57.js and before boot.js; the layer ran
- *   2. the data: the roster in the plan's order (51 groups of five when whole; with --partial the groups written, each
- *      its picks in the plan's order); when whole the counts pinned exact (WHOLE: 255 records, 510 cards and 510
- *      questions with the deal, 43 regions in 16 countries, 206 houses joined to the library and 49 outside it);
+ *   2. the data: the roster in the plan's order (the built set whole: every group of the batches plan.built names,
+ *      five a group, and none of a batch it does not name, FLAGSHIP_META naming the batches; with --partial the groups
+ *      written of every batch, each its picks in the plan's order); when whole the counts pinned exact, one line of
+ *      WHOLE a built set (wave one's: 51 groups, 255 records, 510 cards and 510 questions with the deal, 43 regions in
+ *      16 countries, 206 houses joined to the library and 49 outside it; each batch's gates agent adds its line);
  *      every shipped record through schema.cjs; the data equal to the build of the
  *      fragments byte for byte; every id fl- and eight digits, once, and held by keys.v1.json (frozen or not); fl- the
  *      tab's alone; nobody living of people.json in any string a record ships; the people check's own test
@@ -19,11 +21,13 @@
  *      with the line in it, the sections in their order with their chips, the flagship in full, the sources closed at
  *      the foot, the houses before and after; In the Codex's grapes each a grape page named in the first statement of
  *      the wine's grapes, none denied, a crossing's parent, read short of a longer name or of another vintage or wine
- *   5. the root and the groups: every house once under its group, in the plan's order; the partial line only while the
- *      build is partial; Study with the due count; each group's five as cards opening their houses, its doors, Study the
+ *   5. the root and the groups: every house once under its group, in the plan's order; every country of the data a
+ *      section in the atlas's order with its regions under their names (a country new since wave one named); the
+ *      partial line only while the build is partial; Study with the due count; each group's five as cards opening their houses, its doors, Study the
  *      five, the groups before and after
  *   6. the doors: Producers and flagships last of the Wine Atlas root's study doors; Five producers on every region
- *      page with a group, its chip after Read, and on no other; Its flagship on every library producer page with a
+ *      page with a group, a mapless region's among them (REGIONS' mapless records, read from the mapless part), its
+ *      chip after Read, and on no other, with a map or without; Its flagship on every library producer page with a
  *      record, opening the house, and Back
  *   7. On Brennan's list, on the fixture house: every row a wine of the house by the record's producer, once, producer
  *      and wine alone, no price; none left off (a producer the library joins, or whose name reads as the record's
@@ -47,21 +51,25 @@
  *      (and V58_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-flagships.js [jsDir] [--partial]               every check above
- *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 36 faults in a scratch copy (29 with
- *                                                                       --partial, where no count, no grape and no
- *                                                                       house is pinned), one at
+ *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 39 faults in a scratch copy (29 with
+ *                                                                       --partial, where no count, no grape, no
+ *                                                                       house and no built set is pinned; a group of
+ *                                                                       an unbuilt batch is not run once every batch
+ *                                                                       is built), one at
  *                                                                       a time, and expects each caught by the check
  *                                                                       that names it (FLAGSHIPS_MUTATION=word|word
  *                                                                       runs only the ones whose names hold a word)
  *
- * --partial while the data is a partial build: the roster then counts only the groups FLAGSHIP_GROUPS holds, and the
- * data is held to the partial build of those groups' fragments. Without it the roster must be whole.
+ * --partial while the data is a partial build (scratch copies only): the roster then counts only the groups
+ * FLAGSHIP_GROUPS holds, of any batch, and the data is held to the partial build of those groups' fragments. Without it
+ * the built set must be whole.
  *
  * A section that throws fails as "section N ran to its end" and the next one runs, so a seeded fault is always named.
  * jsDir defaults to this repo's js/; the site's check-wings may pass the wing's codex/js. Needs the shared engine
  * (OOT_SHARED, else ../worldtable/static/shared) and the pack (OOT_HOUSE_PACK, else the pack beside the engine). The
  * plan, the fragments, the schema and the gates the chain rule reads are this checkout's (.scripts/flagships/;
- * FLAGSHIPS_KEYS names another keys file, FLAGSHIPS_GATES another folder of gates). A tree with no codex58.js is
+ * FLAGSHIPS_KEYS names another keys file, FLAGSHIPS_PLAN another plan, FLAGSHIPS_GATES another folder of gates: the
+ * mutations' scratch copies use them). A tree with no codex58.js is
  * SKIPPED. Exits non-zero if any check fails. The last line is the verdict.
  */
 'use strict';
@@ -96,15 +104,28 @@ const S = require(path.join(__dirname, 'flagships', 'schema.cjs'));
 const BF = require(path.join(__dirname, 'flagships', 'build-flagships.cjs'));
 const GATES = path.resolve(process.env.FLAGSHIPS_GATES || __dirname);
 const KEYS_FILE = path.resolve(process.env.FLAGSHIPS_KEYS || path.join(S.DIR, 'keys.v1.json'));
-const PLAN = S.loadPlan();
+const PLAN_FILE = path.resolve(process.env.FLAGSHIPS_PLAN || path.join(S.DIR, 'plan.json'));
+const PLAN = S.loadPlan(PLAN_FILE);
+/* the built set: the batches plan.built names, the whole build's scope (wave one first, then A, B and C in turn) */
+const BUILT = S.builtOf(PLAN);
+const BUILT_KEY = S.builtKey(BUILT);
+const BUILT_GROUPS = PLAN.groups.filter((g) => BUILT.indexOf(S.batchOf(g)) >= 0);
+/* every pick of every batch, and the picks of the built set */
 const ROSTER = S.roster(PLAN);
+const BUILT_ROSTER = S.roster(PLAN, BUILT);
 const PICK = {}; ROSTER.forEach((x) => { PICK[x.pick.key] = x; });
+/* wave one's countries, so a country new to the root is named */
+const WAVE_ONE_COUNTRIES = [...new Set(PLAN.groups.filter((g) => S.batchOf(g) === 'one').map((g) => g.country))];
 const NOW = Date.parse('2026-11-12T14:02:00.000Z');
 const SECTIONS = ['v58-s-wine', 'v58-s-story', 'v58-s-others', 'v58-s-traps', 'v58-s-list', 'v58-s-study', 'v58-s-codex'];
-/* the whole build of wave one, pinned exact (without --partial): the groups and records, the cards and questions, the
-   answers as the build deals them, the regions and their countries, the houses the library joins (its producers and
-   its wines) and those outside it. A pin moves only with the plan, in the same commit. */
-const WHOLE = { groups: 51, records: 255, cards: 510, questions: 510, deal: [128, 128, 127, 127], regions: 43, countries: 16, joined: 206, producers: 201, wines: 5, outside: 49 };
+/* the whole build pinned exact (without --partial), one line a built set, keyed as plan.built joins it ("one",
+   "one+A", "one+A+B", "one+A+B+C"): the groups and records, the cards and questions, the answers as the build deals
+   them, the regions and their countries, the houses the library joins (its producers and its wines) and those outside
+   it. The gates agent of each batch adds its line in the commit that moves plan.built; a built set with no line fails.
+   Wave one's line never moves. */
+const WHOLE = {
+  'one': { groups: 51, records: 255, cards: 510, questions: 510, deal: [128, 128, 127, 127], regions: 43, countries: 16, joined: 206, producers: 201, wines: 5, outside: 49 }
+};
 
 let passed = 0, failed = 0;
 function check(what, ok, detail) {
@@ -368,7 +389,7 @@ function sameHouse(a, b) {
   const has = (text, name) => { const ws = S.nameWords(name); return ws.length > 0 && ws.every((w) => t(text).indexOf(' ' + w + ' ') >= 0); };
   return has(a, b) || has(b, String(a).replace(/\([^)]*\)/g, ' '));
 }
-/* the build of the fragments the data was made from: the whole roster, or with --partial the groups the data holds */
+/* the build of the fragments the data was made from: the built set, or with --partial the groups the data holds */
 function buildNow(groups) {
   let dir = path.join(S.DIR, 'fragments'), tmp = '';
   if (PARTIAL) {
@@ -377,7 +398,7 @@ function buildNow(groups) {
     dir = tmp;
   }
   let b;
-  try { b = BF.build({ jsDir: JS, out: path.join(JS, 'data-flagships.js'), fragments: dir, keys: KEYS_FILE, partial: PARTIAL }, BF.readKeys(KEYS_FILE)); }
+  try { b = BF.build({ jsDir: JS, out: path.join(JS, 'data-flagships.js'), fragments: dir, keys: KEYS_FILE, partial: PARTIAL, planFile: PLAN_FILE }, BF.readKeys(KEYS_FILE)); }
   catch (e) { b = { problems: [e.message], text: '' }; }
   if (tmp) {
     const shownDir = path.relative(S.ROOT, tmp);
@@ -435,14 +456,27 @@ async function main() {
       if (!p) { rosterBad.push(r.id + ': ' + r.key + ' is no pick'); return; }
       if (r.group !== p.group.key || r.region !== p.group.region || r.producer !== p.pick.producer || r.producerId !== p.pick.producerId) rosterBad.push(r.key + ': group, region, producer or producerId not the plan\'s');
     });
-    const whole = GROUPS.length === S.GROUPS && IDS.length === S.GROUPS * S.PICKS;
-    const metaOk = META.roster === ROSTER.length && META.built === IDS.length && META.groups === GROUPS.length && META.prefix === S.ID_PREFIX && META.wave === PLAN.wave && META.edition === PLAN.edition
-      && META.cards === IDS.length * S.CAPS.cards.n && META.questions === IDS.length * S.CAPS.questions.n && META.partial === (IDS.length < ROSTER.length);
+    const whole = GROUPS.length === BUILT_GROUPS.length && IDS.length === BUILT_ROSTER.length;
+    /* the scope the data was built over: the built set's picks, or with --partial every pick of every batch; and the
+       batches FLAGSHIP_META names (none with wave one alone, as wave one shipped) and its wave */
+    const scope = PARTIAL ? ROSTER : BUILT_ROSTER;
+    const shippedBatches = PARTIAL ? S.BATCHES.filter((b) => GROUPS.some((g) => { const pg = S.groupOf(PLAN, g.key); return pg && S.batchOf(pg) === b; })) : BUILT;
+    const wantBatches = BF.metaBatches(shippedBatches);
+    const metaOk = META.roster === scope.length && META.built === IDS.length && META.groups === GROUPS.length && META.prefix === S.ID_PREFIX && META.edition === PLAN.edition
+      && META.wave === (wantBatches ? 2 : 1) && JSON.stringify(META.batches === undefined ? null : META.batches) === JSON.stringify(wantBatches)
+      && META.cards === IDS.length * S.CAPS.cards.n && META.questions === IDS.length * S.CAPS.questions.n && META.partial === (IDS.length < scope.length);
     if (PARTIAL) {
-      check('the roster in the plan\'s order, the groups written (' + GROUPS.length + ' of ' + PLAN.groups.length + ', ' + IDS.length + ' of ' + ROSTER.length + ' houses): every group a group of the plan in its order, its records its picks in their order, each record\'s group, region, producer and producerId the plan\'s; FLAGSHIP_META says so', GROUPS.length > 0 && rosterBad.length === 0 && metaOk, few(rosterBad, 5) + ' ' + JSON.stringify(META));
-      if (whole) note('the data is whole: run this gate without --partial');
+      check('the roster in the plan\'s order, the groups written (' + GROUPS.length + ' of ' + PLAN.groups.length + ', ' + IDS.length + ' of ' + ROSTER.length + ' houses, every batch): every group a group of the plan in its order, its records its picks in their order, each record\'s group, region, producer and producerId the plan\'s; FLAGSHIP_META says so', GROUPS.length > 0 && rosterBad.length === 0 && metaOk, few(rosterBad, 5) + ' ' + JSON.stringify(META));
+      if (whole && GROUPS.every((g) => BUILT_GROUPS.some((x) => x.key === g.key))) note('the data is the built set whole: run this gate without --partial');
     } else {
-      check('the roster whole and in the plan\'s order: ' + S.GROUPS + ' groups of five, the ' + ROSTER.length + ' records of plan.json, FLAGSHIP_META ' + META.built + ' of ' + META.roster + ', not partial', whole && rosterBad.length === 0 && metaOk && META.partial === false && JSON.stringify(REC.map((r) => r.key)) === JSON.stringify(ROSTER.map((x) => x.pick.key)), GROUPS.length + ' groups, ' + IDS.length + ' records; ' + few(rosterBad, 4) + ' ' + JSON.stringify(META));
+      check('the roster whole and in the plan\'s order: the built set ' + BUILT_KEY + ', ' + BUILT_GROUPS.length + ' groups of five, the ' + BUILT_ROSTER.length + ' records of its batches in plan.json, FLAGSHIP_META ' + META.built + ' of ' + META.roster + ', not partial', whole && rosterBad.length === 0 && metaOk && META.partial === false && JSON.stringify(REC.map((r) => r.key)) === JSON.stringify(BUILT_ROSTER.map((x) => x.pick.key)), GROUPS.length + ' groups, ' + IDS.length + ' records; ' + few(rosterBad, 4) + ' ' + JSON.stringify(META));
+      /* the built set, group by group: every group of its batches shipped, none of a batch it does not name */
+      const setBad = [];
+      GROUPS.forEach((g) => { const pg = S.groupOf(PLAN, g.key); if (pg && BUILT.indexOf(S.batchOf(pg)) < 0) setBad.push(g.key + ' is a group of batch ' + S.batchOf(pg) + ', which plan.built (' + BUILT_KEY + ') does not name'); });
+      BUILT_GROUPS.forEach((g) => { if (!GROUPS.some((x) => x.key === g.key)) setBad.push(g.key + ' (batch ' + S.batchOf(g) + ') is not shipped'); });
+      const named = META.batches === undefined ? ['one'] : META.batches;
+      if (!Array.isArray(named) || S.builtKey(named) !== BUILT_KEY) setBad.push('FLAGSHIP_META names the batches ' + JSON.stringify(META.batches) + ', plan.built ' + BUILT_KEY);
+      check('the built set (' + BUILT_KEY + ') shipped whole: every group of its batches (' + BUILT_GROUPS.length + ' of the plan\'s ' + PLAN.groups.length + '), none of a batch plan.built does not name, FLAGSHIP_META naming its batches' + (wantBatches ? '' : ' (none with wave one alone, as it shipped)'), setBad.length === 0, few(setBad, 5));
       const deal = [0, 0, 0, 0];
       let cards = 0, qs = 0;
       REC.forEach((r) => { cards += (r.cards || []).length; (r.questions || []).forEach((q) => { qs++; if (deal[q.a] !== undefined) deal[q.a]++; }); });
@@ -452,8 +486,10 @@ async function main() {
         joined: REC.filter((r) => r.producerId).length, producers: REC.filter((r) => /^p-/.test(r.producerId)).length,
         wines: REC.filter((r) => /^w-/.test(r.producerId)).length, outside: REC.filter((r) => !r.producerId).length
       };
-      const pinsOk = JSON.stringify(got) === JSON.stringify(WHOLE) && ROSTER.length === WHOLE.records && PLAN.groups.length === WHOLE.groups && META.cards === WHOLE.cards && META.questions === WHOLE.questions;
-      check('the counts pinned exact: ' + WHOLE.groups + ' groups, ' + WHOLE.records + ' records, ' + WHOLE.cards + ' cards and ' + WHOLE.questions + ' questions (the answers dealt A ' + WHOLE.deal[0] + ', B ' + WHOLE.deal[1] + ', C ' + WHOLE.deal[2] + ', D ' + WHOLE.deal[3] + '), ' + WHOLE.regions + ' regions in ' + WHOLE.countries + ' countries, ' + WHOLE.joined + ' houses joined to the library (' + WHOLE.producers + ' producers, ' + WHOLE.wines + ' wines) and ' + WHOLE.outside + ' outside it', pinsOk, JSON.stringify(got) + ' against ' + JSON.stringify(WHOLE));
+      const pin = Object.prototype.hasOwnProperty.call(WHOLE, BUILT_KEY) ? WHOLE[BUILT_KEY] : null;
+      const pinsOk = !!pin && JSON.stringify(got) === JSON.stringify(pin) && BUILT_ROSTER.length === pin.records && BUILT_GROUPS.length === pin.groups && META.cards === pin.cards && META.questions === pin.questions;
+      check(pin ? 'the counts pinned exact for the built set ' + BUILT_KEY + ': ' + pin.groups + ' groups, ' + pin.records + ' records, ' + pin.cards + ' cards and ' + pin.questions + ' questions (the answers dealt A ' + pin.deal[0] + ', B ' + pin.deal[1] + ', C ' + pin.deal[2] + ', D ' + pin.deal[3] + '), ' + pin.regions + ' regions in ' + pin.countries + ' countries, ' + pin.joined + ' houses joined to the library (' + pin.producers + ' producers, ' + pin.wines + ' wines) and ' + pin.outside + ' outside it'
+        : 'the counts pinned exact: WHOLE holds no line for the built set ' + BUILT_KEY + ' (its gates agent adds it with plan.built)', pinsOk, JSON.stringify(got) + ' against ' + JSON.stringify(pin));
     }
     const facts = S.facts(JS);
     const schemaBad = [];
@@ -465,7 +501,7 @@ async function main() {
     });
     check('every shipped record through schema.cjs (' + REC.length + ' records, the minted ids taken off)', REC.length > 0 && schemaBad.length === 0, few(schemaBad, 4));
     const built = buildNow(GROUPS.map((g) => g.key));
-    check('the data is the build: js/data-flagships.js equals the ' + (PARTIAL ? 'partial build of the ' + GROUPS.length + ' groups it holds' : 'whole build of the 51 fragments') + ', byte for byte', built.problems.length === 0 && built.text === TEXT, built.problems.length ? few(built.problems, 3) : 'the file differs from the build (' + TEXT.length + ' against ' + String(built.text).length + ' bytes)');
+    check('the data is the build: js/data-flagships.js equals the ' + (PARTIAL ? 'partial build of the ' + GROUPS.length + ' groups it holds' : 'whole build of the ' + BUILT_GROUPS.length + ' fragments of the built set ' + BUILT_KEY) + ', byte for byte', built.problems.length === 0 && built.text === TEXT, built.problems.length ? few(built.problems, 3) : 'the file differs from the build (' + TEXT.length + ' against ' + String(built.text).length + ' bytes)');
     const KEYS = BF.readKeys(KEYS_FILE);
     const idsBad = [];
     const seen = {};
@@ -580,7 +616,23 @@ async function main() {
     const countries = D.J('v58Countries().map(function (c) { return c.key; })');
     const order = D.J('v56Countries().map(function (c) { return c.key; })');
     const inOrder = countries.filter((k) => order.indexOf(k) >= 0);
-    check('the countries in the atlas\'s own order (' + countries.join(', ') + '), each a section with its chip when there are more than one', JSON.stringify(inOrder) === JSON.stringify(order.filter((k) => inOrder.indexOf(k) >= 0)) && countries.every((k) => root.indexOf('id="v58-c-' + k + '"') > 0) && (countries.length < 2 || countries.every((k) => root.indexOf('data-to="v58-c-' + k + '"') > 0)), countries.join(' '));
+    /* by the data, not the layer: every country the shipped groups name is a section of the root, holding its regions
+       in the plan's order, each under its own heading with its groups; a country new since wave one (the New York
+       sheet, say) is named in the check */
+    const dataCountries = [...new Set(GROUPS.map((g) => g.country))];
+    const fresh = dataCountries.filter((k) => WAVE_ONE_COUNTRIES.indexOf(k) < 0);
+    const secBad = [];
+    if (countries.slice().sort().join() !== dataCountries.slice().sort().join()) secBad.push('the root draws ' + countries.join(',') + ' for ' + dataCountries.join(','));
+    dataCountries.forEach((k) => {
+      const at = root.indexOf('<section class="v32-sec v58-country" aria-labelledby="v58-c-' + k + '">');
+      const sec = at >= 0 ? root.slice(at, root.indexOf('</section>', at)) : '';
+      const want = [...new Set(GROUPS.filter((g) => g.country === k).map((g) => g.region))];
+      const got = attrs(sec, /<div class="v58-region" data-v58-region="([^"]+)">/g);
+      if (JSON.stringify(got) !== JSON.stringify(want)) secBad.push(k + ': regions ' + got.join(',') + ' for ' + want.join(','));
+      want.forEach((slug) => { const name = D.G('v58RegionName(' + JSON.stringify(slug) + ')'); if (!name || name === slug || sec.indexOf('<h3 class="secgroup v32-gh v58-region-h">' + esc(name) + '</h3>') < 0) secBad.push(k + ': ' + slug + ' not headed by its region\'s name'); });
+      GROUPS.filter((g) => g.country === k).forEach((g) => { if (sec.indexOf('data-v58-group="' + g.key + '"') < 0) secBad.push(k + ': ' + g.key + ' not under its country'); });
+    });
+    check('the countries in the atlas\'s own order (' + countries.join(', ') + '), each a section with its chip when there are more than one, every country of the data drawn (' + dataCountries.length + (fresh.length ? ', new since wave one: ' + fresh.join(', ') : '') + ') with its regions in the plan\'s order under their names and its groups', JSON.stringify(inOrder) === JSON.stringify(order.filter((k) => inOrder.indexOf(k) >= 0)) && countries.every((k) => root.indexOf('id="v58-c-' + k + '"') > 0) && (countries.length < 2 || countries.every((k) => root.indexOf('data-to="v58-c-' + k + '"') > 0)) && secBad.length === 0, countries.join(' ') + ' ' + few(secBad, 4));
     const partialLine = root.indexOf('class="v32-line v58-partial"') > 0;
     check('the partial line shows only while the build is partial (' + (META.partial ? 'partial: ' + IDS.length + ' of ' + META.roster : 'whole') + ')', partialLine === !!(META.partial && META.roster > IDS.length));
     const studyAt = root.indexOf('<section class="v32-sec v58-study" aria-labelledby="v58-study-h">');
@@ -640,9 +692,14 @@ async function main() {
       const p = pageProblem(five + '</section>');
       if (p) fiveBad.push(slug + ': ' + p);
     });
-    const bare = A.G('(function () { var s = ' + JSON.stringify(slugs) + '; var r = v39Regions().filter(function (a) { return s.indexOf(a.slug) < 0; })[0]; return r ? r.slug : ""; })()');
-    if (bare) { const h = A.page('S.view = "region"; S._v39region = ' + JSON.stringify(bare) + '; v39RegionView();'); if (h.indexOf('v58-five') >= 0 || h.indexOf('v58-s-five') >= 0) fiveBad.push(bare + ' has no group, yet shows Five producers'); }
-    check('Five producers on every region page with a group (' + slugs.length + ' regions), drawn clean, each group a door with its houses named, before In the Codex, its chip straight after Read; none on a region with no group (' + (bare || 'none to try') + ')', fiveBad.length === 0, few(fiveBad, 4));
+    /* a region with no group shows none: one with a map and, read from REGIONS, one with none (the mapless records,
+       jura, savoie or virginia among them, read from the mapless part) */
+    const mapless = A.J('(function () { try { return REGIONS.regions.filter(function (r) { return r && r.mapless; }).map(function (r) { return r.slug; }); } catch (e) { return []; } })()');
+    const bare = A.J('(function () { var s = ' + JSON.stringify(slugs) + ', m = ' + JSON.stringify(mapless) + '; var free = v39Regions().filter(function (a) { return s.indexOf(a.slug) < 0; }); var a = free.filter(function (x) { return m.indexOf(x.slug) < 0; })[0], b = free.filter(function (x) { return m.indexOf(x.slug) >= 0; })[0]; return [a ? a.slug : "", b ? b.slug : ""].filter(Boolean); })()');
+    if (bare.some((x) => mapless.indexOf(x) >= 0)) await A.load(['mapless']);
+    bare.forEach((slug) => { const h = A.page('S.view = "region"; S._v39region = ' + JSON.stringify(slug) + '; v39RegionView();'); if (h.indexOf('v58-five') >= 0 || h.indexOf('v58-s-five') >= 0) fiveBad.push(slug + ' has no group, yet shows Five producers'); });
+    const withMapless = slugs.filter((x) => mapless.indexOf(x) >= 0);
+    check('Five producers on every region page with a group (' + slugs.length + ' regions, ' + (withMapless.length ? withMapless.length + ' of them mapless: ' + few(withMapless, 4) : 'none of them mapless') + '), drawn clean, each group a door with its houses named, before In the Codex, its chip straight after Read; none on a region with no group (' + (bare.join(', ') || 'none to try') + ')', mapless.length > 0 && fiveBad.length === 0, few(fiveBad, 4));
     A.G('var __v58Gate = function (pid) { var put = []; var mk = function () { var o = { className: "", _h: "" }; Object.defineProperty(o, "innerHTML", { get: function () { return this._h; }, set: function (v) { this._h = String(v); } }); return o; }; var row = {}; var host = { insertBefore: function (box, before) { put.push({ html: box.innerHTML, cls: box.className, before: before === row }); }, appendChild: function (box) { put.push({ html: box.innerHTML, cls: box.className, before: false }); } }; row.parentNode = host; var view = { querySelector: function (s) { return s === ".centerrow" ? row : null; }, firstElementChild: host }; var wasMake = document.createElement, wasView = _v58ProfileView; document.createElement = mk; _v58ProfileView = function () { return view; }; try { prodProfileView(prodById(pid)); } finally { document.createElement = wasMake; _v58ProfileView = wasView; } return put; };');
     const libBad = [];
     let libN = 0;
@@ -903,6 +960,68 @@ function firstId(re) {
   const m = re.exec(t);
   return m ? m[1] : 'none';
 }
+/* the shipped data read again, as the device reads it */
+function shippedData() {
+  const ctx = {}; vm.createContext(ctx);
+  vm.runInContext(fs.readFileSync(path.join(JS, 'data-flagships.js'), 'utf8') + '\n;this.__d = { r: FLAGSHIPS, g: FLAGSHIP_GROUPS, m: FLAGSHIP_META };', ctx);
+  return JSON.parse(JSON.stringify(ctx.__d));
+}
+/* the data with one more line in a declaration: before the line that closes it (\n}; or \n];) */
+function addLines(text, closing, lines) {
+  const at = text.indexOf(closing);
+  return at < 0 ? text : text.slice(0, at) + ',\n' + lines.join(',\n') + text.slice(at);
+}
+/* a group of a batch plan.built does not name, shipped: the first group of the first batch not built (a fixture group
+   on a free region of that batch's first sheet, in a scratch plan, while the plan holds none), its five records those
+   of the built set's first group, re-keyed to its picks with the ids minted as the build mints them */
+function unbuiltShipped(dir, env) {
+  const X = S.BATCHES.slice(1).find((b) => BUILT.indexOf(b) < 0);
+  if (!X) return 'every batch is built, so no group of an unbuilt batch can be shipped';
+  const plan = JSON.parse(JSON.stringify(PLAN));
+  let g = plan.groups.find((x) => S.batchOf(x) === X);
+  const D0 = shippedData();
+  const donor = D0.g[0];
+  if (!g) {
+    const facts = S.facts(JS);
+    const used = new Set(plan.groups.map((x) => x.region));
+    const reg = Object.keys(facts.regions).map((k) => facts.regions[k]).find((r) => r.sheet === S.BATCH_SHEETS[X][0] && !used.has(r.slug));
+    if (!reg) return 'no free region on the ' + S.BATCH_SHEETS[X][0] + ' sheet for a fixture group';
+    const chunk = 'fixture-' + X.toLowerCase();
+    g = { key: reg.slug, title: reg.name, region: reg.slug, country: reg.sheet, batch: X, chunk, swaps: [], picks: donor.ids.map((id, i) => ({ key: 'fixture-' + reg.slug + '-' + (i + 1), producer: D0.r[id].producer + ' fixture', producerId: '', wine: D0.r[id].wine.name, why: 'a fixture pick of the gate, never shipped' })) };
+    plan.chunks.push(chunk);
+    plan.groups.push(g);
+    const pp = S.planProblems(plan, S.facts(JS));
+    if (pp.length) return 'the fixture plan is unsound: ' + pp.slice(0, 2).join(' | ');
+    fs.writeFileSync(path.join(dir, 'plan.json'), JSON.stringify(plan));
+    env.FLAGSHIPS_PLAN = path.join(dir, 'plan.json');
+  }
+  const recs = donor.ids.slice(0, g.picks.length).map((id, i) => {
+    const r = JSON.parse(JSON.stringify(D0.r[id]));
+    const p = g.picks[i];
+    r.id = BF.recordId(p.key); r.key = p.key; r.group = g.key; r.region = g.region; r.producer = p.producer; r.producerId = p.producerId;
+    r.cards.forEach((c) => { c.id = BF.itemId(r.id, c.front); });
+    r.questions.forEach((q) => { q.id = BF.itemId(r.id, q.q); });
+    return r;
+  });
+  const file = path.join(dir, 'js', 'data-flagships.js');
+  let t = fs.readFileSync(file, 'utf8');
+  t = addLines(t, '\n};\nvar FLAGSHIP_GROUPS', recs.map((r) => JSON.stringify(r.id) + ': ' + JSON.stringify(r)));
+  t = addLines(t, '\n];\nvar FLAGSHIP_META', [JSON.stringify({ key: g.key, title: g.title, region: g.region, country: g.country, ids: recs.map((r) => r.id) })]);
+  fs.writeFileSync(file, t);
+  return '';
+}
+/* a group of the built set left out: the built set's last group and its records taken off the data */
+function builtGroupMissing(dir) {
+  const D0 = shippedData();
+  const last = D0.g[D0.g.length - 1];
+  const file = path.join(dir, 'js', 'data-flagships.js');
+  const lines = fs.readFileSync(file, 'utf8').split('\n');
+  const gone = lines.filter((l) => !last.ids.some((id) => l.indexOf(JSON.stringify(id) + ': ') === 0) && l.indexOf('{"key":' + JSON.stringify(last.key) + ',') !== 0);
+  for (let i = 1; i < gone.length; i++) if (gone[i] === '};' || gone[i] === '];') gone[i - 1] = gone[i - 1].replace(/,$/, '');
+  if (gone.length !== lines.length - last.ids.length - 1) return 'the group ' + last.key + ' was not found line by line in the data';
+  fs.writeFileSync(file, gone.join('\n'));
+  return '';
+}
 /* a copy of a tree with every link followed: a scratch tree may link its files to a checkout, and a mutation written
    through a link would land in that checkout (fs.cpSync keeps links even when told to follow them) */
 function copyTree(from, to) {
@@ -919,8 +1038,11 @@ function mutations() {
   const table = firstId(/"table":"([^"]{20,60})/);
   const house = firstId(/"producer":"([^"]+)"/);
   const living = S.people().names.find((n) => S.nameWords(house).every((w) => fold(n).split(' ').indexOf(w) < 0)) || S.people().names[0];
+  const wave = firstId(/"wave":(\d+)/);
+  /* the gate's own pin of the built set, one count moved */
+  const pinLine = new RegExp("(\\n  '" + BUILT_KEY.replace(/\+/g, '\\+') + "': \\{ groups: \\d+, records: )(\\d+)");
   const MUT = [
-    ['the data file edited by hand', 'js/data-flagships.js', '"wave":1', '"wave":2', 'the data is the build'],
+    ['the data file edited by hand', 'js/data-flagships.js', '"wave":' + wave, '"wave":9', 'the data is the build'],
     ['a card id moved in the data', 'js/data-flagships.js', '{"id":"' + card + '"', '{"id":"fl-00000000"', 'ids frozen against keys.v1.json'],
     ['a living name in a table line', 'js/data-flagships.js', '"table":"' + table, '"table":"' + living + ' says ' + table, 'nobody living of people.json'],
     ['At the table set after the chips', 'js/codex58.js', "  var secs = v58Sections(r);\n", "  var secs = v58Sections(r);\n  html = html.replace(/<section class=\"v58-table\"[\\s\\S]*?<\\/section>/, '');\n", 'At the table first'],
@@ -956,31 +1078,61 @@ function mutations() {
     ['a crossing\'s parents given doors', 'js/codex58.js', "    if (words.some(function (w) { return v58Own(V58_PARENTS, w); })) return;\n", '', 'In the Codex\'s grapes'],
     ['a grape read short of a longer name', 'js/codex58.js', "      if (hit && words[i + len] === 'of') hit = '';\n", '', 'In the Codex\'s grapes'],
     ['the initials before a house\'s name kept', 'js/codex58.js', ".replace(/^(?:[a-z] )+/, '')", '', 'no wine of the house left off'],
-    ['a house\'s longer name taken for the record\'s', 'js/codex58.js', "  return a === b || b.indexOf(a + ' ') === 0;", "  return a === b || b.indexOf(a + ' ') === 0 || a.indexOf(b + ' ') === 0;", 'the house\'s name read whole']
+    ['a house\'s longer name taken for the record\'s', 'js/codex58.js', "  return a === b || b.indexOf(a + ' ') === 0;", "  return a === b || b.indexOf(a + ' ') === 0 || a.indexOf(b + ' ') === 0;", 'the house\'s name read whole'],
+    /* the built set: a group of a batch not built shipped, a group of the built set left out, its pin wrong */
+    ['a group of an unbuilt batch shipped', 'prep', unbuiltShipped, null, 'shipped whole: every group of its batches'],
+    ['a group of the built set left out', 'prep', builtGroupMissing, null, 'shipped whole: every group of its batches'],
+    ['the WHOLE line of the built set wrong', 'self', (src) => src.replace(pinLine, (m, a, n) => a + (Number(n) + 1)), null, 'the counts pinned exact']
   ]);
   const repoRoot = path.join(JS, '..');
   let held = 0;
   const problems = [];
   const only = process.env.FLAGSHIPS_MUTATION || '';
   const RUN = MUT.filter((m) => !only || only.split('|').some((w) => m[0].indexOf(w) >= 0));
+  let skippedN = 0;
   for (const [name, file, from, to, by] of RUN) {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'flagships-mut-'));
     copyTree(JS, path.join(dir, 'js'));
     fs.writeFileSync(path.join(dir, 'index.html'), fs.readFileSync(path.join(repoRoot, 'index.html')));
     fs.writeFileSync(path.join(dir, 'sw.js'), fs.readFileSync(path.join(repoRoot, 'sw.js')));
-    const env = Object.assign({}, process.env, { FLAGSHIPS_KEYS: KEYS_FILE });
-    let target;
-    if (file === 'gates') {
+    const env = Object.assign({}, process.env, { FLAGSHIPS_KEYS: KEYS_FILE, FLAGSHIPS_PLAN: PLAN_FILE });
+    /* this gate run on the scratch copy, or (self) this gate's own source with the fault in it, as this file */
+    let argv = [__filename, path.join(dir, 'js')].concat(PARTIAL ? ['--partial'] : []);
+    if (file === 'prep' || file === 'self') {
+      let why = '';
+      if (file === 'prep') why = from(dir, env);
+      else {
+        const src = fs.readFileSync(__filename, 'utf8');
+        const out = from(src);
+        if (out === src) why = 'found nothing to change in this gate';
+        else {
+          fs.writeFileSync(path.join(dir, 'gate.js'), out);
+          const loader = "const M = require('module'), fs = require('fs'), path = require('path'); const f = process.argv[1]; const src = fs.readFileSync(process.argv[2], 'utf8'); process.argv.splice(1, 2, f); const m = new M(f, null); m.filename = f; m.paths = M._nodeModulePaths(path.dirname(f)); m._compile(src, f);";
+          argv = ['-e', loader, __filename, path.join(dir, 'gate.js'), path.join(dir, 'js')].concat(PARTIAL ? ['--partial'] : []);
+        }
+      }
+      if (why) {
+        if (/^every batch is built/.test(why)) { skippedN++; console.log('  mutation not run: ' + name + ' (' + why + ')'); }
+        else problems.push('the mutation "' + name + '" could not be made: ' + why);
+        fs.rmSync(dir, { recursive: true, force: true });
+        continue;
+      }
+    }
+    let target = null;
+    if (file === 'prep' || file === 'self') target = null;
+    else if (file === 'gates') {
       fs.mkdirSync(path.join(dir, 'gates'));
       fs.readdirSync(GATES).filter((f) => /^(check-|list-harness)[\w-]*\.c?js$/.test(f)).forEach((f) => fs.writeFileSync(path.join(dir, 'gates', f), fs.readFileSync(path.join(GATES, f))));
       target = path.join(dir, 'gates', 'check-cms.js');
       env.FLAGSHIPS_GATES = path.join(dir, 'gates');
-    } else target = path.join(dir, file);
-    if (fs.lstatSync(target).isSymbolicLink() || fs.realpathSync(target).indexOf(fs.realpathSync(dir) + path.sep) !== 0) { problems.push('the mutation "' + name + '" would write outside its scratch copy (' + target + '): refused'); fs.rmSync(dir, { recursive: true, force: true }); continue; }
-    const src = fs.readFileSync(target, 'utf8');
-    if (src.indexOf(from) < 0) { problems.push('the mutation "' + name + '" found nothing to change in ' + file); fs.rmSync(dir, { recursive: true, force: true }); continue; }
-    fs.writeFileSync(target, src.replace(from, to));
-    const r = cp.spawnSync(process.execPath, [__filename, path.join(dir, 'js')].concat(PARTIAL ? ['--partial'] : []), { env, encoding: 'utf8', maxBuffer: 1 << 26 });
+    } else if (file !== 'prep' && file !== 'self') target = path.join(dir, file);
+    if (target) {
+      if (fs.lstatSync(target).isSymbolicLink() || fs.realpathSync(target).indexOf(fs.realpathSync(dir) + path.sep) !== 0) { problems.push('the mutation "' + name + '" would write outside its scratch copy (' + target + '): refused'); fs.rmSync(dir, { recursive: true, force: true }); continue; }
+      const src = fs.readFileSync(target, 'utf8');
+      if (src.indexOf(from) < 0) { problems.push('the mutation "' + name + '" found nothing to change in ' + file); fs.rmSync(dir, { recursive: true, force: true }); continue; }
+      fs.writeFileSync(target, src.replace(from, to));
+    }
+    const r = cp.spawnSync(process.execPath, argv, { env, encoding: 'utf8', maxBuffer: 1 << 26 });
     fs.rmSync(dir, { recursive: true, force: true });
     const fails = String(r.stdout || '').split('\n').filter((l) => /^\s+FAIL\s/.test(l));
     const hit = fails.find((l) => l.indexOf(by) >= 0);
@@ -988,7 +1140,7 @@ function mutations() {
     else if (!hit) problems.push('the mutation "' + name + '" was caught, but not by "' + by + '": ' + (fails[0] || String(r.stderr || '').split('\n')[0] || '').trim().slice(0, 200));
     else { held++; console.log('  mutation held: ' + name + ' :: ' + hit.trim().slice(6, 150)); }
   }
-  console.log('  ' + held + ' of ' + RUN.length + ' mutations caught, each by its own check' + (RUN.length < MUT.length ? ' (' + RUN.length + ' of the ' + MUT.length + ' run, by FLAGSHIPS_MUTATION)' : ''));
+  console.log('  ' + held + ' of ' + (RUN.length - skippedN) + ' mutations caught, each by its own check' + (RUN.length < MUT.length ? ' (' + RUN.length + ' of the ' + MUT.length + ' run, by FLAGSHIPS_MUTATION)' : '') + (skippedN ? '; ' + skippedN + ' not run, its fault impossible on this plan' : ''));
   problems.forEach((p) => console.log('  FAIL  ' + p));
   return problems.length;
 }
