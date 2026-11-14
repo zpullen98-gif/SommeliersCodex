@@ -6,7 +6,7 @@
      node .scripts/flagships/show.cjs <producerId>     one producer (a p- or w- id of WINE_PRODUCERS)
      node .scripts/flagships/show.cjs <pick key>       one pick of the plan, by its key
 
-   Printed: the plan's group (title, region, country, chunk, swaps) and pick (producer, producerId, wine, why, note);
+   Printed: the plan's group (title, region, country, batch, chunk, swaps) and pick (producer, producerId, wine, why, note);
    the region record's summary (REGIONS in js/data-regions.js); the region fragment's producers line for the house
    (.scripts/regions/fragments/*.json, a one line why under its p- id); the WINE_PRODUCERS record (js/data-producers.js:
    sub, founded, holdings, style, why, wines, traps; an empty field there is a true answer); and the house wines on
@@ -77,7 +77,7 @@ function showRegion(g) {
 
 const group = S.groupOf(plan, arg);
 if (group) {
-  say('The group (plan.json)', { key: group.key, title: group.title, region: group.region, country: group.country, chunk: group.chunk, swaps: group.swaps, picks: group.picks.map((p) => p.producer + ': ' + p.wine) });
+  say('The group (plan.json)', { key: group.key, title: group.title, region: group.region, country: group.country, batch: S.batchOf(group), chunk: group.chunk, swaps: group.swaps, picks: group.picks.map((p) => p.producer + ': ' + p.wine) });
   showRegion(group);
   group.picks.forEach((p) => showPick(group, p));
   process.exit(0);
