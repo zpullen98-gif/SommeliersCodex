@@ -1,0 +1,987 @@
+{
+ "group": "alentejo",
+ "chunk": "w11",
+ "batch": "A",
+ "date": "2026-11-15",
+ "by": "refuter",
+ "searches": {
+  "share": 45,
+  "used": 22,
+  "perRecord": {
+   "mouchao": 6,
+   "cartuxa": 5,
+   "esporao": 6,
+   "adega-de-borba": 2,
+   "cortes-de-cima": 3
+  },
+  "note": "Twenty two searches of a share of forty five, none of them the author's, twenty three left unspent for the run's shared allowance. Five were restricted to a house's or a body's own domain (mouchao.pt three times, esporao.com, cortesdecima.pt, fea.pt), each read as primary through its summary; the rest blocked the author's sources (the houses where the account had to be independent, the CVRA, Agroportal, Observador, Entrée Cuvée, Decanter, Wine Disclosures, Wine Enthusiast and Portugal Get Wine for Cortes de Cima). Writers' own sites that came up were read and never cited. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash, no spoken list longer than three in a table line).",
+  "The searches went first to the dates the stories turn on (Mouchão's 1901, 1949, 1954 and the return, the Pêra-Manca cession and 1990, the founder's dates, Esporão's 1267, 1973 and 1985, Borba's 1955 and 1964, Cortes de Cima's 1988, 1991 and 1998), then to the making of each flagship against sheets of other vintages, then to the others.",
+  "Where a house's own page met an independent account that contradicted it, the house's fact was hedged as its own (the return of 1986, the board of 30 April 1955) and a question keyed on it replaced; where figures differed by vintage they were widened or tied to the vintage (Esporão's oak, Incógnito's making); where a claim rested on nothing read it was cut (the oldest plot, the minty note the house calls its own, the label reading Borba beside Alentejo)."
+ ],
+ "records": [
+  {
+   "key": "mouchao",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The dates, the house first blocked: 1901 for the winery on Cave Lusa, Salt of Portugal and others among Portugal by Wine, Winexp and Alentasia (one naming John and Rafael Reynolds as its builders), 1904 on Wine Enthusiast; the first bottling of 1949 on the house and Wine Searcher; the Mouchão label of 1954 on the house and a merchant (first sold as Mouchão in 1954); the expropriation after 1974 everywhere; the return 1986 by the house and one account, 1985 by two others among the same pages. The house read afresh on its own domain: 1832, the 1890s, 1901, 1949, 1954 and 1986, the restorers a daughter, her husband and their son.",
+    "The family and the grape: an independent account has Thomas Reynolds in Portugal from 1820, in cork from 1838 at Alburquerque in Spain and at Estremoz from 1850; Wine Enthusiast has a later Reynolds, on the phylloxera commission, bring Alicante Bouschet cuttings from Montpellier in the 1880s. The cork trade borne out; the house's around 1832 kept as its own; nobody of the family named, no two sources giving anyone's dates.",
+    "The sites and the making, on the house's own sheets: Carrapetos on well drained alluvial loams, planted in 1988 and field grafted in 1989 (2013 sheet), 27 years old at the 2015 harvest, the house's oldest vineyard by its own word; trodden twice a day, four to six days in 2015 and four to seven in other years, malolactic in 5,000 litre tonéis, about three years in them and 24 to 36 months in bottle; 85 per cent Alicante Bouschet and 15 Trincadeira in 2015, as merchants give for 2017. Merchants give two to four years in wood and up to four in bottle, so the figures are tied to the house.",
+    "Tonel 3 and 4 on the house's sheet and product page: Carrapetos fruit alone, made only in years of full ripeness, two 5,000 litre casks numbered three and four, three years and two in bottle on the 2013 sheet against at least four and four on the product page.",
+    "The questions: the wine question has one right answer and options of one kind; the story question keyed on 1986 rested on the house alone against two accounts of 1985, so it was replaced by one on the cork trade (four trades of the Alentejo or of Portugal, Port removed since the Reynolds patriarch is said to have come to Portugal as a merchant). The house rules: nobody living named, no price, no score, no production (the 2015 bottle count met and not used), no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The estate's own vineyards at Casa Branca, grown and bottled at Mouchão; the oldest plot is of Alicante Bouschet, the grape the family is thought to have brought from France.",
+     "now": "The estate's own vineyards at Casa Branca, grown and bottled at Mouchão: by the house's sheets the fruit comes from the Carrapetos vineyard, on well drained alluvial loams, planted in 1988 after the family's return.",
+     "why": "The house's sheets put the flagship's fruit in the Carrapetos vineyard, planted in 1988 after the return, so the oldest plot of the grape the family brought implied old vines that are not there; the grape's coming stays in the story.",
+     "sources": [
+      {
+       "title": "Herdade do Mouchão: Mouchão 2013 technical sheet",
+       "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2013-Technical-Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Herdade do Mouchão: Mouchão 2015 technical sheet",
+       "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2015-Technical-Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Herdade do Mouchão: Mouchão Tonel 3 and 4, 2013",
+       "url": "https://mouchao.pt/en/product/mouchao-tonel-no-3-4-2013/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Picked by hand and trodden by foot twice a day in the stone lagares of the winery built in 1901, through a fermentation of four to seven days. After the malolactic in large wooden tonéis of five thousand litres, the wine rests about three years before bottling, then two to three years more in bottle before release.",
+     "now": "Picked by hand and trodden by foot twice a day in the stone lagares of the winery built in 1901, through a fermentation of four to seven days by vintage. After the malolactic in large wooden tonéis of five thousand litres, the wine rests about three years, by the house's sheets, before bottling, then two to three years more in bottle before release.",
+     "why": "The 2015 sheet gives four to six days and other sheets four to seven; merchants give two to four years in wood, so the three years are the house's.",
+     "sources": [
+      {
+       "title": "Herdade do Mouchão: Mouchão 2015 technical sheet",
+       "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2015-Technical-Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Portugal Get Wine: Mouchão red",
+       "url": "https://portugalgetwine.com/en/red-wine/mouchao",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Merchant of Wine: Herdade do Mouchão, Mouchão 2017",
+       "url": "https://merchantofwine.com/products/herdade-do-mouchao-mouchao-tinto-alentejo-portugal-2017",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Deep garnet; dark plum, black olive and the stemmy, minty note the house calls its own, turning with age towards dried fig, leather and tar. Firm, generous tannin and a dry, savoury finish.",
+     "now": "Deep garnet; dark plum, black olive and a fresh, minty note, turning with age towards dried fig, leather and tar. Firm, generous tannin and a dry, savoury finish.",
+     "why": "No source read says the house calls a stemmy, minty note its own.",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "The Reynolds family came to the Alentejo for cork: by the house's own account its forebear moved there around 1832, drawn by the cork trade, and Mouchão, by Casa Branca, was one of the estates where the family worked the cork oaks. There were probably vines there already. In the early 1890s a grandson of the founder of the cork business built the family house and the farm buildings, and in 1901 came the winery, its stone lagares and its layout little changed since. The family is thought to have brought the first Alicante Bouschet vines from France, and that grape, red in its flesh as well as its skin, became the heart of the estate. For decades the wine was sold in bulk; the first bottling came in 1949, and the Mouchão label was born with the harvest of 1954. After the revolution of 1974 the estate was expropriated, and it came back to the family only in 1986, run down, to be restored by a daughter of the family, her husband and a grandson. Mouchão is the Alentejo before modern winemaking: grapes trodden by foot, years in large old wood, and a red that asks for patience.",
+     "now": "The Reynolds family came to the Alentejo for cork: by the house's own account its forebear moved there around 1832, drawn by the cork trade, and Mouchão, by Casa Branca, was one of the estates where the family worked the cork oaks. There were probably vines there already. As the house tells it, a grandson of the founder of the cork business built the family house and the farm buildings in the early 1890s, and in 1901 came the winery, its stone lagares and its layout little changed since. The family is thought to have brought the first Alicante Bouschet vines from France, and that grape, red in its flesh as well as its skin, became the heart of the estate. For decades the wine was sold in bulk; the first bottling came in 1949, and the Mouchão label was born with the harvest of 1954. After the revolution of 1974 the estate was expropriated, and by the house's account it came back to the family only in 1986, run down, to be restored by a daughter of the family, her husband and their son. Mouchão is the Alentejo before modern winemaking: grapes trodden by foot, years in large old wood, and a red that asks for patience.",
+     "why": "The house of the 1890s rests on the house alone and Wine Enthusiast dates the farmstead to the 1880s and the winery to 1904; the return is 1986 by the house and 1985 by two other accounts in the results; the house names the restorers as a daughter, her husband and their son.",
+     "sources": [
+      {
+       "title": "Herdade do Mouchão: History",
+       "url": "https://mouchao.pt/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Enthusiast: 5 Alentejo estates where Portugal's past meets the present",
+       "url": "https://www.wineenthusiast.com/culture/wine/five-alentejo-estates-where-portugals-past-meets-the-present/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Portugal by Wine: Mouchão",
+       "url": "https://www.portugalbywine.com/conteudos/parceiros/info.aspx?id=5921&title=mouchao&idioma=en",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cave Lusa: Mouchão Tinto",
+       "url": "https://www.cavelusa.pt/en/shop/wine/portuguese/mouchao-red/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Salt of Portugal: Mouchão's timeless wines",
+       "url": "https://saltofportugal.com/2023/10/17/mouchaos-timeless-wines/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others.1.note",
+     "was": "Alicante Bouschet alone from the Carrapetos vineyard, aged at least three years in the two great casks numbered three and four, then two in bottle.",
+     "now": "Alicante Bouschet alone from the Carrapetos vineyard, made only in years of full ripeness and aged for years in the two great casks numbered three and four, then in bottle.",
+     "why": "The house's sheet says made only in years of optimum ripeness; its sheet and its product page differ on the years in cask and bottle (three and two against four and four).",
+     "sources": [
+      {
+       "title": "Herdade do Mouchão: Mouchão Tonel 3 and 4, 2013 technical sheet",
+       "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-Tonel-No-3-4-2013-Technical-Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Herdade do Mouchão: Mouchão Tonel 3 and 4, 2013",
+       "url": "https://mouchao.pt/en/product/mouchao-tonel-no-3-4-2013/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1",
+     "was": {
+      "q": "Herdade do Mouchão was expropriated after the revolution of 1974. In which year did it come back to the family?",
+      "opts": [
+       "1986",
+       "1975",
+       "1954",
+       "2001"
+      ],
+      "a": 0,
+      "exp": "By the house's own account the estate returned to the family only in 1986, run down, and was then restored; 1954 is the first harvest under the Mouchão label.",
+      "tag": "story"
+     },
+     "now": {
+      "q": "Long before Mouchão was a wine, which trade first brought the Reynolds family to the Alentejo?",
+      "opts": [
+       "Cork, stripped from the oaks",
+       "Marble, cut at Estremoz",
+       "Olive oil, pressed locally",
+       "Wool, from the plain's sheep"
+      ],
+      "a": 0,
+      "exp": "By the house's account its forebear moved to the Alentejo around 1832 for the cork trade, and Mouchão was one of the estates where the family worked the cork oaks; the marble of Estremoz is the town's own trade, not the family's.",
+      "tag": "story"
+     },
+     "why": "The key 1986 rested on the house against two accounts of 1985; the cork trade is borne out by the house and by independent accounts of the family, and the explanation says why the marble of Estremoz is not it.",
+     "sources": [
+      {
+       "title": "Herdade do Mouchão: History",
+       "url": "https://mouchao.pt/en/history/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "USA Trade Tasting: Reynolds Wine Growers since 1850",
+       "url": "https://usatradetasting.com/en/blog/producer-profiles-76/reynolds-wine-growers-since-1850-360.htm",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.2",
+     "was": {
+      "title": "Herdade do Mouchão: Mouchão 2016",
+      "url": "https://mouchao.pt/en/product/mouchao-2016/",
+      "kind": "primary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Herdade do Mouchão: Mouchão 2013 technical sheet",
+      "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2013-Technical-Sheet.pdf",
+      "kind": "primary",
+      "read": "search"
+     },
+     "why": "The 2013 sheet dates the planting of Carrapetos; the 2016 page added nothing the 2015 sheet does not give.",
+     "sources": [
+      {
+       "title": "Herdade do Mouchão: Mouchão 2013 technical sheet",
+       "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2013-Technical-Sheet.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The year the estate came back to the family: 1986 by the house, 1985 by two other accounts.",
+    "The forebear's coming: around 1832 by the house; an independent account has Thomas Reynolds in Portugal from 1820, in cork from 1838 at Alburquerque in Spain and settled at Estremoz in 1850.",
+    "Tonel 3 and 4's years in cask and bottle: three and two on the 2013 sheet, at least four and four on the house's product page."
+   ]
+  },
+  {
+   "key": "cartuxa",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The founder, the author's sources blocked: Vasco Maria Eugénio de Almeida, born 30 August 1913 and died 11 August 1975, an agronomist trained at the Instituto Superior de Agronomia, second Count of Vilalva, by the Portuguese Wikipedia and the foundation's own page (which has him die a few days before his sixty second birthday, consistent); the foundation of 1963 and its statutes his, by the foundation; he inherited Scala Coeli in 1940, restored it from 1948 to 1960 and opened the way for the Carthusians to return in 1960, and the community left on 31 October 2019, by the foundation's pages.",
+    "The name: Público and a Brazilian account give the cession of the Pêra-Manca name in 1987 by José António de Oliveira Soares, the heir of Casa Soares, on the condition that it mark the foundation's exceptional wine; Casa Soares ceased after phylloxera; the first Pêra-Manca of the new era the 1990 harvest, made since only in years judged exceptional. Borne out; the record keeps the late 1980s for the author's 1989.",
+    "The making, the house blocked where merchants could answer: Aragonez and Trincadeira (one merchant 55 and 45), fermentation in French oak balseiros at a controlled temperature with a long maceration after it, eighteen months in French oak tonéis and four years (48 months) in bottle in the monastery's cellars, on four merchants (Sommelier Vinhos, Garrafeira Imperial, Garrafeira Pepe, Vinhos 14 Regiões). Borne out; the casks of 3,000 litres stand on the house's sheet alone.",
+    "The Cartuxa Reserva: first made in 1987 on the house's 2019 sheet and Creative Gourmet; Alicante Bouschet, Aragonez and Cabernet Sauvignon on the 2019 sheet, Alicante Bouschet and Aragonez alone on the 2017 sheet and a merchant; fifteen months in new French oak and 48 in bottle for the 2019.",
+    "The questions: one right answer each, options of one kind (four pairs of grapes, four ways a name was got); the house rules: nobody living named (the heir of 1987 and the winemaking team met, not named), no price (a merchant's price met), no score, no production (a bottle count met and not used), no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "The name is older than the wine. In the nineteenth century a farming house of Évora made a wine called Pêra-Manca, and Portuguese writers like to tell, as legend, that the navigator who reached Brazil in 1500 carried a wine of that name in his ships. The farming house later ceased trading. The Fundação Eugénio de Almeida was set up on 25 September 1963, endowed by an engineer of that family as a private charitable foundation, and its wines are made at the Cartuxa winery, named for the Carthusian monks of the monastery of Santa Maria Scala Coeli outside the city; the first Cartuxa Reserva came in 1987. In the late 1980s an heir of the old farming house offered the Pêra-Manca name to the foundation, on the condition, as the press tells it, that it be kept for the exceptional wine made there. The first Pêra-Manca of the foundation followed in 1990, and the red has since been bottled only in the years the house judges worthy, after eighteen months in large casks and years in the monastery's cellars. For a sommelier, Pêra-Manca is the Alentejo's red of occasion, and its vintages are read one by one.",
+     "now": "The name is older than the wine. In the nineteenth century a farming house of Évora made a wine called Pêra-Manca, and Portuguese writers like to tell, as legend, that the navigator who reached Brazil in 1500 carried a wine of that name in his ships. The farming house later ceased trading. Vasco Maria Eugénio de Almeida (1913 to 1975), an agronomist, restored the monastery of Santa Maria Scala Coeli outside the city, and in 1960 Carthusian monks returned to it. In 1963 he set up the Fundação Eugénio de Almeida, a private charitable foundation, whose wines are made at the Cartuxa winery, named for those monks; the first Cartuxa Reserva came in 1987. In the late 1980s an heir of the old farming house offered the Pêra-Manca name to the foundation, on the condition, as the press tells it, that it be kept for the exceptional wine made there. The first Pêra-Manca of the foundation followed in 1990, and the red has since been bottled only in the years the house judges worthy, after eighteen months in large casks and years in the monastery's cellars. For a sommelier, Pêra-Manca is the Alentejo's red of occasion, and its vintages are read one by one.",
+     "why": "Two sources give the founder's dates, so he is named, an agronomist rather than an engineer; the foundation's pages give the restoration of Scala Coeli and the monks' return of 1960; the day of 25 September 1963 gave way with its source for want of room.",
+     "sources": [
+      {
+       "title": "Fundação Eugénio de Almeida: Vasco Maria Eugénio de Almeida, the founder",
+       "url": "https://www.fea.pt/a-fundacao/fundador-e-historia/vasco-maria-eugenio-de-almeida",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipédia: Vasco Vilalva",
+       "url": "https://pt.wikipedia.org/wiki/Vasco_Vilalva",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Fundação Eugénio de Almeida: Fundador e história",
+       "url": "https://www.fea.pt/fea/fundador-e-historia",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Fundação Eugénio de Almeida: Mosteiro de Santa Maria Scala Coeli",
+       "url": "https://www.fea.pt/patrimonio/mosteiro-de-santa-maria-scala-coeli",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "It is released young, after years in cask and bottle; the house speaks of great longevity, and it needs years more to show its depth.",
+     "now": "Released only after some five and a half years in cask and bottle, it is young even then; the house speaks of great longevity, and it needs years more to show its depth.",
+     "why": "Eighteen months in cask and four years in bottle is no young release.",
+     "sources": [
+      {
+       "title": "Cartuxa: Pêra-Manca Red 2019 technical sheet",
+       "url": "https://www.cartuxa.pt/wp-content/uploads/Pera-Manca-Red-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Garrafeira Pepe: Pêra-Manca Tinto 2019",
+       "url": "https://garrafeirapepe.pt/loja/garrafeira/vinhos/vinho-pera-manca-tinto-2019/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Garrafeira Imperial: 2018 Pêra-Manca Tinto",
+       "url": "https://garrafeiraimperial.com/product/2018-pera-manca-tinto/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others.0.note",
+     "was": "Alicante Bouschet, Aragonez and Cabernet Sauvignon, first made in 1987 and aged in new French oak barrels.",
+     "now": "Alicante Bouschet and Aragonez, with Cabernet Sauvignon in some vintages, first made in 1987 and aged in new French oak barrels.",
+     "why": "Cabernet Sauvignon is on the 2019 sheet and not on the 2017 sheet or a merchant's listing.",
+     "sources": [
+      {
+       "title": "Cartuxa: Cartuxa Red Reserva 2019 technical sheet",
+       "url": "https://www.cartuxa.pt/wp-content/uploads/Cartuxa-tinto-reserva-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cartuxa: Cartuxa Tinto Reserva 2017 technical sheet",
+       "url": "https://www.cartuxa.pt/wp-content/uploads/cartuxa-tinto-reserva-2017.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Creative Gourmet: Cartuxa Reserva Tinto",
+       "url": "https://www.creative-gourmet.com/products/vinho-tinto-reserva-cartuxa-alentejo",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.0.exp",
+     "was": "The red is Aragonez and Trincadeira from old vines near Évora; Alicante Bouschet and Cabernet Sauvignon belong to the Cartuxa Reserva, and Antão Vaz and Arinto are white grapes.",
+     "now": "The red is Aragonez and Trincadeira from old vines near Évora; Alicante Bouschet goes into the Cartuxa Reserva, with Cabernet Sauvignon in some vintages, and Antão Vaz and Arinto are white grapes.",
+     "why": "The explanation follows the Reserva's grapes by vintage.",
+     "sources": [
+      {
+       "title": "Cartuxa: Cartuxa Red Reserva 2019 technical sheet",
+       "url": "https://www.cartuxa.pt/wp-content/uploads/Cartuxa-tinto-reserva-2019.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cartuxa: Cartuxa Tinto Reserva 2017 technical sheet",
+       "url": "https://www.cartuxa.pt/wp-content/uploads/cartuxa-tinto-reserva-2017.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.2",
+     "was": {
+      "title": "Diário da República: Decreto-Lei 108/82, the Fundação Eugénio de Almeida",
+      "url": "https://diariodarepublica.pt/dr/detalhe/decreto-lei/108-1982-607141",
+      "kind": "primary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Fundação Eugénio de Almeida: Vasco Maria Eugénio de Almeida, the founder",
+      "url": "https://www.fea.pt/a-fundacao/fundador-e-historia/vasco-maria-eugenio-de-almeida",
+      "kind": "primary",
+      "read": "search"
+     },
+     "why": "The foundation's own page carries the founder's dates and the foundation of 1963.",
+     "sources": [
+      {
+       "title": "Fundação Eugénio de Almeida: Vasco Maria Eugénio de Almeida, the founder",
+       "url": "https://www.fea.pt/a-fundacao/fundador-e-historia/vasco-maria-eugenio-de-almeida",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.4",
+     "was": {
+      "title": "Agroportal: Pêra-Manca and the Fundação Eugénio de Almeida",
+      "url": "https://www.agroportal.pt/?p=827597",
+      "kind": "secondary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Público: O fenómeno Pêra-Manca",
+      "url": "https://www.publico.pt/2017/11/30/fugas/noticia/o-fenomeno-peramanca-1794153",
+      "kind": "secondary",
+      "read": "search"
+     },
+     "why": "Público gives the cession of 1987, its condition and the first vintage of 1990, independently of the house.",
+     "sources": [
+      {
+       "title": "Público: O fenómeno Pêra-Manca",
+       "url": "https://www.publico.pt/2017/11/30/fugas/noticia/o-fenomeno-peramanca-1794153",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The year the name was ceded: 1987 by Público, Agroportal and a Brazilian account, 1989 by one the author read, so the record keeps the late 1980s.",
+    "The monastery's date, 1587 or 1598 on the house's own sheets, and the monks' departure on 31 October 2019 by the foundation's page, left out."
+   ]
+  },
+  {
+   "key": "esporao",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The estate, the house blocked: the bounds of 1267 as the Defesa do Esporão on the Wikipedia castle page and the parish of Reguengos de Monsaraz; the tower built between 1457 and 1490 (the Portuguese Wikipedia); the Counts of Alcáçovas the last family before 1973, when two partners bought it and formed a company of another name (two accounts in the results, among them The Portuguese Wine and Cellar Tours); the occupation of 1975 in the land reform and the return of 1978 with its grapes owed to the co-operative (Blend); the first harvest of 1985 and the Esporão Reserva red its first wine (several). Borne out, save the company carrying the estate's name.",
+    "The labels: Shopping Spirit says every label since the first carries a work of art and names a painter for the first that the house's own article address names otherwise, one of the two having died in 1976; so the record says a different artist on each vintage and names no painter.",
+    "The Private Selection: the CVRA's page and two merchants call it the continuation of the Esporão Garrafeira of 1987, first a selection of the Reserva's barrels; the house's 2000 for the name stands as its own.",
+    "The making, on the house's sheets for 2013, 2017, 2019, 2020, 2021, 2022 and 2023: concrete vats, marble lagares and steel, malolactic in steel, twelve months in oak, 60 per cent American and 40 French to 2020, a fifth new in 2021 and 2022, half and half in 2023, four to eight months in bottle; the 2023 blend six grapes with Syrah and Touriga Nacional; merchants list DOC Alentejo.",
+    "The questions: one right answer each, options of one kind (four ageing regimes, four customs); the house rules: nobody living named (the founding partners and the founder's son met, not named), no price (a merchant's price met), no score, nothing volatile, no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.grapes",
+     "was": "A blend of Alicante Bouschet, Aragonez, Trincadeira and Cabernet Sauvignon, with Touriga Nacional in later vintages.",
+     "now": "A blend of Alicante Bouschet, Aragonez, Trincadeira and Cabernet Sauvignon in its earlier vintages, with Touriga Nacional and Syrah in some later ones.",
+     "why": "The house's 2023 sheet adds Syrah; the 2019 and 2020 pages add Syrah or Touriga Franca by the author's reading.",
+     "sources": [
+      {
+       "title": "Esporão: Esporão Reserva Red 2023",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2023",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Garrafeira 5 Estrelas: Esporão Reserva Tinto 2022",
+       "url": "https://garrafeira5estrelas.com/vinho-do-alentejo/3076-esporao-reserva-tinto-2022.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Each grape is destemmed, crushed and fermented apart at a controlled temperature in stainless steel vats, concrete tanks and small marble lagares, with the malolactic in steel. The blend then ages twelve months in American and French oak barrels, most of them used, and at least six months in bottle before release.",
+     "now": "Each grape is destemmed, crushed and fermented apart at a controlled temperature in stainless steel vats, concrete tanks and small marble lagares, with the malolactic in steel. The blend then ages twelve months in American and French oak barrels, the share of each and of new wood changing by vintage, and several months in bottle before release.",
+     "why": "Only the 2021 and 2022 sheets give a fifth new and four fifths used, and the months in bottle run from four to eight by vintage.",
+     "sources": [
+      {
+       "title": "Esporão: Esporão Reserva Red 2023",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2023",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Esporão: Esporão Reserva Red 2022",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2022",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Esporão: Esporão Reserva Red 2020",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2020",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Esporão: Esporão Reserva Red 2017",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2017",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Esporão Reserva has been the red of Herdade do Esporão since its first harvest of 1985: Alicante Bouschet, Aragonez, Trincadeira and Cabernet Sauvignon from the estate by Reguengos, a year in oak. Each vintage carries a different artist's work on its label.",
+     "now": "Esporão Reserva has been the red of Herdade do Esporão since its first harvest of 1985: the Alentejo's own grapes with Cabernet Sauvignon, from the estate by Reguengos, and a year in oak. Each vintage carries a different artist's work on its label.",
+     "why": "The brief allows no spoken list longer than three.",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "Herdade do Esporão is far older than its wine. By the house's account its bounds were fixed in 1267, when it was the Defesa do Esporão, and have hardly moved since; the Reconquista had taken Monsaraz and Reguengos in 1232. Its tower, raised in the fifteenth century by a holder of the entailed estate, stands on the estate, and the Counts of Alcáçovas held the land until 1973. That year two partners bought it, founding the company that carries its name. After the revolution of April 1974 the estate was occupied in the land reform, and only in 1985 did it give the harvest of its first wine, Esporão Reserva red. With that wine came a custom: each year an invited artist, almost always Portuguese, makes the work that fills its label, a painting on the first of them. A winery was built in 1987, the wines went abroad from 1989, and in 2000 came a second winery, the Adega dos Lagares, and the first Private Selection red. For a sommelier, Esporão Reserva is the Alentejo's own grapes blended with Cabernet Sauvignon, under a label that has been a gallery since 1985.",
+     "now": "Herdade do Esporão is far older than its wine. By the house's account its bounds were fixed in 1267, when it was the Defesa do Esporão, and have hardly moved since; the Reconquista had taken Monsaraz in 1232. Its tower, raised in the fifteenth century by a holder of the entailed estate, stands on the estate, and the Counts of Alcáçovas held the land until 1973. That year two partners bought it and formed a company to make wine there. After the revolution of April 1974 the estate was occupied in the land reform, and only in 1985 did it give the harvest of its first wine, Esporão Reserva red. With that wine came a custom: each vintage's label carries the work of a different artist, almost always Portuguese, a painting on the first of them. A winery was built in 1987, the wines went abroad from 1989, and in 2000 came a second winery, the Adega dos Lagares, and the first Private Selection red. For a sommelier, Esporão Reserva is the Alentejo's own grapes blended with Cabernet Sauvignon, under a label that has been a gallery since 1985.",
+     "why": "The partners of 1973 formed a company of another name by two accounts; Reguengos was no town to take in 1232; the first label was a painting by an artist the sources do not agree on, one of them dead before 1985, so no invited artist made it.",
+     "sources": [
+      {
+       "title": "The Portuguese Wine: Herdade do Esporão",
+       "url": "http://www.theportuguesewine.com/wine-tourism-in-portugal/herdade-do-espor-o/37",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cellar Tours: Herdade do Esporão",
+       "url": "https://www.cellartours.com/portugal/portuguese-wineries/herdade-do-esporao",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Castle of Esporão",
+       "url": "https://en.wikipedia.org/wiki/Castle_of_Espor%C3%A3o",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Shopping Spirit: Herdade do Esporão, 750 anos de história",
+       "url": "https://shoppingspirit.pt/herdade-do-esporao-750-anos-de-historia/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.back",
+     "was": "A new work by an invited artist each year, a custom since the first vintage of 1985.",
+     "now": "The work of a different artist on each vintage, a custom since the vintage of 1985.",
+     "why": "As the story.",
+     "sources": [
+      {
+       "title": "Shopping Spirit: Herdade do Esporão, 750 anos de história",
+       "url": "https://shoppingspirit.pt/herdade-do-esporao-750-anos-de-historia/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.0.exp",
+     "was": "The house ages the blend a year in American and French barrels, most of them used, then at least six months in bottle; talhas belong to the Alentejo's older tradition.",
+     "now": "The house ages the blend a year in American and French oak barrels, then some months in bottle; large old tonéis are Mouchão's way, and talhas the Alentejo's older tradition.",
+     "why": "As the making.",
+     "sources": [
+      {
+       "title": "Esporão: Esporão Reserva Red 2023",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2023",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Esporão: Esporão Reserva Red 2017",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2017",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions.1.exp",
+     "was": "Since 1985 an invited artist has made the work on each Esporão Reserva label; the cork label is Adega de Borba's and the hidden grape is Cortes de Cima's Incógnito.",
+     "now": "Since 1985 each Esporão Reserva label has carried the work of a different artist; the cork label is Adega de Borba's and the hidden grape is Cortes de Cima's Incógnito.",
+     "why": "As the story.",
+     "sources": [
+      {
+       "title": "Shopping Spirit: Herdade do Esporão, 750 anos de história",
+       "url": "https://shoppingspirit.pt/herdade-do-esporao-750-anos-de-historia/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.1",
+     "was": {
+      "title": "Esporão: Esporão Reserva Red 2021",
+      "url": "https://esporao.com/en/wine/esporao-reserva-red/2021",
+      "kind": "primary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Esporão: Esporão Reserva Red 2023",
+      "url": "https://esporao.com/en/wine/esporao-reserva-red/2023",
+      "kind": "primary",
+      "read": "search"
+     },
+     "why": "The 2023 sheet carries the Syrah and the half and half oak.",
+     "sources": [
+      {
+       "title": "Esporão: Esporão Reserva Red 2023",
+       "url": "https://esporao.com/en/wine/esporao-reserva-red/2023",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The appellation: merchants list the wine as DOC Alentejo, the house's sheets read through search did not say, so the field stays Alentejo.",
+    "The year the estate came back after the occupation of 1975: 1978 by Blend, with its grapes sold to the local co-operative, not in the record.",
+    "The painter of the first label of 1985."
+   ]
+  },
+  {
+   "key": "adega-de-borba",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "The co-operative, the house blocked: founded in 1955 on Alentejo Ilustrado and Clube de Vinhos Portugueses, the first of a series of Alentejo co-operative wineries with the help of the Junta Nacional do Vinho (Alentejo Ilustrado), the day given as 24 April for a founding meeting and 7 May for the co-operative of twelve growers; the house's 30 April for its first board kept as its own.",
+    "The cork label: made since 1964 only in special vintages, twenty five harvests in more than sixty years, the 1964 still alive when tasted (Alentejo Ilustrado); twelve months in French oak barrels and exotic wood vats and six months in the old cellar; Aragonez, Trincadeira, Castelão and Alicante Bouschet on Cave Lusa, Clube de Vinhos Portugueses and others (a five litre listing without Castelão, a 1999 with Periquita, which is Castelão); clay limestone and schist; DOC Alentejo on Vinha. Borne out.",
+    "The questions: one right answer each, options of one kind (four blends, four years); the house rules: nobody living named (the winemaker who signs the 2018 met, not named), no production (the co-operative's litres and growers met and not used), no score, no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Adega de Borba is a co-operative. Its first board took office on 30 April 1955, and by its own account it was the first of a series of co-operative wineries set up across the Alentejo with the support of the Junta Nacional do Vinho, the national wine board of the time. The growers of Borba brought their grapes to one shared cellar. In 1964 the co-operative made the first vintage of its Reserva red and dressed it in a label made of cork, in homage, as the house tells it, to the Alentejo's other harvest, the bark of its cork oaks. The wine became known by its label: the house's own pages call its Reserva the Rótulo de Cortiça, the cork label. It has been made since only in the years the co-operative judges exceptional, so that the vintage of 2018 was only the twenty fifth edition of the wine. For a sommelier, the cork label teaches two things: that a co-operative's red can be made to keep for a decade, and that a label can become a wine's name.",
+     "now": "Adega de Borba is a co-operative. By its own account its first board took office on 30 April 1955, and it was the first of a series of co-operative wineries set up across the Alentejo with the support of the Junta Nacional do Vinho, the national wine board of the time. The growers of Borba brought their grapes to one shared cellar. In 1964 the co-operative made the first vintage of its Reserva red and dressed it in a label made of cork, in homage, as the house tells it, to the Alentejo's other harvest, the bark of its cork oaks. The wine became known by its label: the house's own pages call its Reserva the Rótulo de Cortiça, the cork label. It has been made since only in the years the co-operative judges exceptional, so that the vintage of 2018 was only the twenty fifth edition of the wine. For a sommelier, the cork label teaches two things: that a co-operative's red can be made to keep for a decade, and that a label can become a wine's name.",
+     "why": "Other accounts give 24 April and 7 May 1955; the house's 30 April is its own.",
+     "sources": [
+      {
+       "title": "Alentejo Ilustrado: Adega Cooperativa de Borba, sete décadas",
+       "url": "https://alentejoilustrado.pt/adega-cooperativa-de-borba-sete-decadas-de-vinhos-com-alma/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clube de Vinhos Portugueses: Adega Cooperativa de Borba",
+       "url": "https://www.clubevinhosportugueses.pt/vinhos/regioes/alentejo/adega-cooperativa-de-borba-uma-dinamica-impar/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "cards.1.back",
+     "was": "1955, on 30 April; by its own account the first of a series of co-operative wineries across the Alentejo.",
+     "now": "1955, on 30 April by its own account, the first of a series of co-operative wineries across the Alentejo.",
+     "why": "As the story.",
+     "sources": [
+      {
+       "title": "Alentejo Ilustrado: Adega Cooperativa de Borba, sete décadas",
+       "url": "https://alentejoilustrado.pt/adega-cooperativa-de-borba-sete-decadas-de-vinhos-com-alma/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label.0.means",
+     "was": "The cork label, made of cork itself, first used for the vintage of 1964 in homage to the Alentejo's cork.",
+     "now": "The name the wine goes by, for its label made of cork itself, first used for the vintage of 1964.",
+     "why": "No source shows the words Rótulo de Cortiça printed on the label; the label is cork and the name is what the wine is called.",
+     "sources": [
+      {
+       "title": "Vinha: Borba Reserva Rótulo de Cortiça",
+       "url": "https://www.vinha.co.uk/wine/red-wine-borba-res-rotulo-de-cortica-2015-75cl-alentejo-doc-4454/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clube de Vinhos Portugueses: Adega de Borba Reserva Tinto 2018",
+       "url": "https://www.clubevinhosportugueses.pt/vinhos/adega-de-borba-reserva-tinto-2018-um-verdadeiro-ex-libris-para-apreciadores-de-vinho-tinto/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Adega de Borba Reserva, the red the Borba co-operative has dressed in a label of cork since its vintage of 1964, blends Aragonez, Trincadeira, Castelão and Alicante Bouschet and spends a year in oak. Soft and balanced, it is made only in years judged exceptional.",
+     "now": "Adega de Borba Reserva, the red the Borba co-operative has dressed in a label of cork since its vintage of 1964, blends the Alentejo's own grapes, Aragonez and Trincadeira among them, with a year in oak. Soft and balanced, it is made only in years judged exceptional.",
+     "why": "The brief allows no spoken list longer than three.",
+     "sources": []
+    },
+    {
+     "field": "traps.2",
+     "was": "Borba is a sub-region of the DOC Alentejo, so the label reads Alentejo with Borba beside it.",
+     "now": "Borba is one of the sub-regions of the DOC Alentejo, so the Reserva is a DOC wine, not a Vinho Regional Alentejano.",
+     "why": "No source read shows how the label sets Borba beside Alentejo; DOC Alentejo is on the merchants' listings.",
+     "sources": [
+      {
+       "title": "Vinha: Borba Reserva Rótulo de Cortiça",
+       "url": "https://www.vinha.co.uk/wine/red-wine-borba-res-rotulo-de-cortica-2015-75cl-alentejo-doc-4454/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cave Lusa: Adega de Borba Reserva Tinto",
+       "url": "https://www.cavelusa.pt/loja/vinho/portugueses/adega-de-borba-reserva-tinto/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The day of the founding: 24 April, 30 April or 7 May 1955.",
+    "One merchant lists a five litre Reserva without Castelão; the grapes stay the house's four."
+   ]
+  },
+  {
+   "key": "cortes-de-cima",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The founding and the Syrah, the author's sources blocked: 1988 for the couple's start on Portugal Wine Expert and Wine and Earth, the Danish and American couple arriving by sailing boat, the vines of 1991, the first Incógnito of 1998, so named because Syrah was not allowed; one account has the first wine labelled only as a table wine, another the grape spelt in an acrostic on the back label.",
+    "The year Syrah was admitted: 2002 by two accounts, the late 1990s by one and a year after the first Incógnito by another; unsettled, so the record keeps later.",
+    "The making, on the house's sheets: the 2021 with half whole bunches, two and a half weeks on the skins and six months in used 500 litre barrels; the 2023 with a quarter whole bunches, two weeks, twelve months in used 500 litre oak and eight in steel, 12.5 per cent alcohol, on sandy, silty limestone; the first Incógnito of biodynamic vines. The older reviews (Wine Enthusiast) found the wine powerful, so the glass, ageing and serving are told by vintage.",
+    "The questions: one right answer each, options of one kind (four categories, four rules); the house rules: nobody living named (the founders and their daughter not named), no price, no score, nothing volatile (recent vintages refused by the lint and dated instead), no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "By the house's sheet for the 2021, the grapes are picked by hand at night and fermented with their own yeasts, half of them as whole bunches, with some two and a half weeks on the skins and a gentle extraction, then aged six months in used barrels of five hundred litres.",
+     "now": "By the house's sheets for the 2021 and the 2023, the grapes are picked by hand at night and fermented with their own yeasts, a quarter to a half as whole bunches, with two weeks or a little more on the skins and a gentle extraction, then aged six to twelve months in used oak barrels of five hundred litres.",
+     "why": "The 2023 sheet gives a quarter whole bunches, two weeks and twelve months in used 500 litre oak against the 2021's half, two and a half weeks and six months.",
+     "sources": [
+      {
+       "title": "Cortes de Cima: Incógnito 2021 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2023/02/Tech-Sheet-Incognito-2021-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "The estate's own vineyards near Vidigueira, the first of them planted in 1991, Syrah among them, when the grape was not yet allowed in the Alentejo.",
+     "now": "The estate's own vineyards near Vidigueira, the first of them planted in 1991, Syrah among them, when the grape was not yet allowed in the Alentejo; the house's sheet for the 2023 gives sandy, silty limestone.",
+     "why": "The 2023 sheet gives the soil.",
+     "sources": [
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Deep in colour, with blackberry and plum over black pepper, smoke and a toasted note; powerful and peppery in the mouth, with firm tannin and a long finish.",
+     "now": "Blackberry and plum over black pepper and a smoky note; the older vintages powerful and dense, with firm tannin and a long finish, the later ones, made partly with whole bunches and lower in alcohol, lighter in frame.",
+     "why": "The powerful wine of the reviews is the older wine; the 2023 sheet gives 12.5 per cent.",
+     "sources": [
+      {
+       "title": "Wine Enthusiast: Cortes de Cima 2012 Incógnito Syrah, Alentejano",
+       "url": "https://www.wineenthusiast.com/buying-guide/cortes-de-cima-2012-incognito-syrah-alentejano/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "Powerful and firm when young, it is made to age and gains from several years in bottle.",
+     "now": "The older, more powerful vintages gained from several years in bottle; the later ones, lower in alcohol, are lighter in frame, so read the vintage.",
+     "why": "As the glass.",
+     "sources": [
+      {
+       "title": "Wine Enthusiast: Cortes de Cima 2012 Incógnito Syrah, Alentejano",
+       "url": "https://www.wineenthusiast.com/buying-guide/cortes-de-cima-2012-incognito-syrah-alentejano/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.serve",
+     "was": "16 to 18 degrees Celsius; decant a young bottle for an hour; a large red wine glass.",
+     "now": "15 to 17 degrees Celsius for the lighter later vintages, 16 to 18 for the older; decant a young bottle for an hour; a large red wine glass.",
+     "why": "The Codex's service reference: medium reds 15 to 17, full reds 16 to 18.",
+     "sources": [
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Incógnito is Cortes de Cima's Syrah from Vidigueira, named in disguise because the grape was not yet allowed in the Alentejo when its first vintage, 1998, was made. Blackberry, plum and black pepper over firm tannin: decant it for an hour.",
+     "now": "Incógnito is Cortes de Cima's Syrah from Vidigueira, named in disguise because the grape was not yet allowed in the Alentejo when its first vintage, 1998, was made. Blackberry, plum and black pepper, it is lighter in its later vintages than in its early ones.",
+     "why": "Firm tannin and an hour's decanting fit the older wine, not the later.",
+     "sources": [
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Enthusiast: Cortes de Cima 2012 Incógnito Syrah, Alentejano",
+       "url": "https://www.wineenthusiast.com/buying-guide/cortes-de-cima-2012-incognito-syrah-alentejano/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps.1",
+     "was": "Incógnito is Vinho Regional Alentejano, not DOC Alentejo: the house keeps it outside the DOC.",
+     "now": "Incógnito is Vinho Regional Alentejano, not DOC Alentejo: the house labels it outside the DOC.",
+     "why": "Keeps reads as a claim about the present; labels is the habit the sources show.",
+     "sources": [
+      {
+       "title": "Wine Enthusiast: Cortes de Cima 2012 Incógnito Syrah, Alentejano",
+       "url": "https://www.wineenthusiast.com/buying-guide/cortes-de-cima-2012-incognito-syrah-alentejano/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources.4",
+     "was": {
+      "title": "Portugal Get Wine: Cortes de Cima Incógnito red",
+      "url": "https://portugalgetwine.com/en/red-wine/cortes-de-cima-incognito-red-wine",
+      "kind": "secondary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+      "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+      "kind": "primary",
+      "read": "search"
+     },
+     "why": "The house's own 2023 sheet in place of a merchant.",
+     "sources": [
+      {
+       "title": "Cortes de Cima: Incógnito 2023 technical sheet",
+       "url": "https://cortesdecima.pt/wp-content/uploads/2025/12/Ficha-Tecnica-Incognito-2023-1.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The year Syrah was admitted in the Alentejo: 2002 by two accounts, the late 1990s by one and a year after the first Incógnito by another, so the record keeps later.",
+    "One account says the first Incógnito could be labelled only as a table wine, the grape spelt in an acrostic on the back label; not carried over.",
+    "The gold medal of the first vintage in Brussels, the house's alone."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "José Roquette",
+   "role": "one of the two partners who bought Herdade do Esporão in 1973, its sole shareholder from 1992 by one account",
+   "where": "the refuter's results on the purchase (The Portuguese Wine, Cellar Tours)",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as one of two partners"
+  },
+  {
+   "name": "Joaquim Bandeira",
+   "role": "the other partner of 1973",
+   "where": "the same results",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as one of two partners"
+  },
+  {
+   "name": "João Roquette",
+   "role": "the founder's son, who led Esporão into organic farming from 2007 by one account",
+   "where": "the same results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Óscar Gato",
+   "role": "the winemaker who signs Adega de Borba Reserva 2018",
+   "where": "a merchant's listing in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Babette Richardson",
+   "role": "the daughter of the Reynolds family who restored Mouchão after 1986",
+   "where": "the house's History page",
+   "believed": "living or status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as a daughter of the family"
+  },
+  {
+   "name": "Iain Richardson",
+   "role": "her husband, beside her in the restoration",
+   "where": "the same page",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as her husband"
+  },
+  {
+   "name": "Iain Reynolds Richardson",
+   "role": "their son, the sixth generation of the family in the Alentejo",
+   "where": "the same page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as their son"
+  },
+  {
+   "name": "José António de Oliveira Soares",
+   "role": "the heir of Casa Soares who ceded the Pêra-Manca name to the foundation in 1987",
+   "where": "Público and a Brazilian account in the refuter's results",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as an heir of the old farming house"
+  }
+ ],
+ "livingNote": "None of these is named in the fragment's prose, titles or addresses. The Cortes de Cima founders and their daughter, whom the author met, did not appear by name in the refuter's results and are never named. The dead met: Vasco Maria Eugénio de Almeida (1913 to 1975) is now named with his dates in the Pêra-Manca story; Thomas, William, John, Rafael and Albert Reynolds of the Mouchão family, the painters put forward for Esporão's first label (one of them dead in 1976) and Álvaro Mendes de Vasconcelos of the tower of the fifteenth century are described or left out, their dates in one source or none. Dom Rafael is the house's own label name and is kept, the lint's note on a title answered. The refuter did not edit people.json; the read together agent adds those it judges living.",
+ "swaps": [],
+ "swapNote": "The author proposed no swap, and the refuter proposes none. The five picks stand: each is a real house of the Alentejo with the wine it is known by (Mouchão, Pêra-Manca Tinto, Esporão Reserva red, Adega de Borba Reserva with its cork label, Incógnito). Nothing read rules any of them out.",
+ "planNotes": [
+  "mouchao: answered. No member of the family is named, no two sources giving any one's dates; no year without a Mouchão red was found (the library's accepted years is not borne out, while Tonel 3 and 4 is made only in years of full ripeness by the house); Tonel 3 and 4 is in others. The why's Alicante Bouschet planted since the nineteenth century is the grape's coming, not the vines of the flagship, which grow in a vineyard of 1988.",
+  "cartuxa: answered. The founder is now named with his dates from two sources; the red's first vintage of 1990 is borne out by Público and a second account; the older story is told as legend; the Cartuxa Reserva is in others.",
+  "esporao: answered. 1973 and the first Reserva of 1985 are borne out by independent accounts; the grapes are in words and by vintage; the founding partners and the founder's son are living and never named; the white Reserva is in others. The why's winery of the 1980s that led the revival is not said in the record.",
+  "adega-de-borba: answered. 1955 and the cork label of 1964 are borne out by two independent accounts; the grapes are the house's four. The why's taught a generation is unsourced (the author found the same) and is not in the record; the marble country is not said in the record either.",
+  "cortes-de-cima: answered in part. 1998 is borne out; the year of the rule change is not settled (2002 by two accounts, the late 1990s by one, a year after the first Incógnito by another); the founders are never named; the label is Vinho Regional Alentejano, while one account says the first vintage could only be a table wine."
+ ],
+ "codexInTension": [
+  {
+   "record": "WINE_PRODUCERS p-herdade-do-mouchao (wines: Mouchão)",
+   "says": "the traditional Alentejo red, made only in accepted years",
+   "read": "No source read names a year without a Mouchão red; the house reserves the made only in years of optimum ripeness for Tonel 3 and 4.",
+   "sources": [
+    {
+     "title": "Herdade do Mouchão: Mouchão Tonel 3 and 4, 2013 technical sheet",
+     "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-Tonel-No-3-4-2013-Technical-Sheet.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Herdade do Mouchão: Mouchão 2015 technical sheet",
+     "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2015-Technical-Sheet.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported, not edited, as the author found it too."
+  },
+  {
+   "record": "WINE_PRODUCERS p-herdade-do-mouchao (wines: Tonel 3-4)",
+   "says": "a single-cask bottling from the estate's oldest wood",
+   "read": "The house racks it into two 5,000 litre tonéis, numbers three and four, with fruit from the Carrapetos vineyard alone.",
+   "sources": [
+    {
+     "title": "Herdade do Mouchão: Mouchão Tonel 3 and 4, 2013 technical sheet",
+     "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-Tonel-No-3-4-2013-Technical-Sheet.pdf",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Herdade do Mouchão: Mouchão Tonel 3 and 4, 2013",
+     "url": "https://mouchao.pt/en/product/mouchao-tonel-no-3-4-2013/",
+     "kind": "primary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported, not edited."
+  },
+  {
+   "record": "WINE_PRODUCERS p-herdade-do-mouchao (holdings) and plan.json mouchao (why)",
+   "says": "Alicante Bouschet planted since the nineteenth century",
+   "read": "True of the grape's coming to the estate (the 1880s by Wine Enthusiast, the late nineteenth century by others), but the flagship's vines grow in the Carrapetos vineyard, planted in 1988 after the family's return.",
+   "sources": [
+    {
+     "title": "Wine Enthusiast: 5 Alentejo estates where Portugal's past meets the present",
+     "url": "https://www.wineenthusiast.com/culture/wine/five-alentejo-estates-where-portugals-past-meets-the-present/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Herdade do Mouchão: Mouchão 2013 technical sheet",
+     "url": "https://mouchao.pt/wp-content/uploads/2024/01/EN-Mouchao-2013-Technical-Sheet.pdf",
+     "kind": "primary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported for the library's editor and the read together agent; the sentence may stand as history."
+  },
+  {
+   "record": "plan.json adega-de-borba (why) and the region record's producers line",
+   "says": "taught a generation of Portuguese what an Alentejo red tastes like",
+   "read": "No source read says it.",
+   "sources": [],
+   "note": "Reported for the read together agent, not edited."
+  }
+ ],
+ "codexNote": "The library holds Mouchão alone of the five houses, so the other four needed their own two sources or one primary for every fact. The region record's summary read in the course of the check agrees with what was read. The Codex's own records were a starting point only and the second source of no fact."
+}
