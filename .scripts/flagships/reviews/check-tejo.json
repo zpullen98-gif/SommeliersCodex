@@ -1,0 +1,698 @@
+{
+ "group": "tejo",
+ "chunk": "w10",
+ "batch": "A",
+ "date": "2026-11-15",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 24,
+  "perRecord": {
+   "quinta-da-alorna": 8,
+   "casal-branco": 3,
+   "casa-cadaval": 4,
+   "quinta-da-lagoalva": 4,
+   "companhia-das-lezirias": 4,
+   "shared": 1
+  },
+  "note": "Twenty four searches of a share of twenty eight, none of them the author's, four left unspent for the run's shared allowance. The shared search went to the law of the DOC (Portaria 140/2010 of 5 March, read through a Diário da República mirror and the CVR Tejo's own page, with Decreto-Lei 45/2000 for the Ribatejo's statutes). One search was restricted to a house's own domain (alorna.pt, read as primary through its summary) and one to the house and four Portuguese wine magazines; every other search blocked the author's sources (the house itself where the account had to be independent, Wikipedia, Infopedia, Continente, Firstleaf, Tanners, the CVR Tejo, Visit Lisboa, Cave Lusa, Vinoscout, Wine House Portugal, the MG club and Enotur). Writers' own sites that came up were read and never cited. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the law and its year, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the dates the stories turn on (the founder of Alorna and his titles, 1723 and 1918, 1775, 1648 and 1926, 1834 and the Palmela marriage, 1836, 1881 and 1975), then to the making of each flagship against sheets the author had not read, then to the others and the places.",
+  "Where the house's own page met an independent account that contradicted it, the house's fact was cut or narrowed (the dovecote's century, the marriage of 1846); where figures differed by vintage they were widened and tied to the vintage (Falcoaria's oak, the 1836's oak); where a fact rested on one listing it was taken out (Terra de Lobos, the Reserva's DOC, a varietal Merlot)."
+ ],
+ "records": [
+  {
+   "key": "quinta-da-alorna",
+   "searches": 8,
+   "verdict": "changed",
+   "tested": [
+    "The founder and his titles, the author's Infopedia and Wikipedia blocked: Pedro Miguel de Almeida Portugal, third Count of Assumar, 1688 to 1756 (Portugal, Dicionário Histórico at arqnet, Geni, Geneall: the days differ, the years agree); viceroy of India from 1744 (the FCSH NOVA list gives 1744 to 1750, with the titles Marquis of Castelo Novo and Marquis of Alorna); the fortress of Alorna taken in 1746 and the title redesignated in 1748 by a royal letter of 9 November (Grokipedia, arqnet). Borne out. One magazine says the title came from King José I, which is wrong for 1748, so the record keeps the king.",
+    "The estate's dates, the house blocked: 1723, the first name Quinta de Vale de Nabais, the renaming after Alorna, the sale by the poet's daughters to the Counts of Junqueira and the public auction (Revista de Vinhos, Clube de Vinhos Portugueses, Rota dos Vinhos do Tejo); 1918 and the five generations (the state heritage inventory SIPA on monumentos.gov.pt, which names the house Palácio dos Marqueses de Alorna, Casa da Quinta de Vale de Nabais, and Portugal by Wine). Borne out, save the heirs' auction.",
+    "The poet and the range: the house's Undiscovered wines page names its Marquesa de Alorna wine a tribute to Leonor de Almeida Portugal (1750 to 1839), the fourth Marquise, a pre-Romantic poet, and Revista de Vinhos says the Grande Reserva white honours the fourth Marquise, the poet Alcipe. Borne out.",
+    "The making: fourteen months in new French oak and about twelve months in bottle on Diwines, Garrafeira 5 Estrelas and others (one 2019 listing gives twelve months in oak); the blend secret on two listings; the house's own sheet on its domain gives fourteen months, grapes from the Lezíria and the Charneca on sandy clays and sandy loams, floral and black fruit over cedar, and 16 to 18 degrees Celsius; its bottle time reads twelve months on one page and two years on another.",
+    "The others: 1723 is a Grande Reserva red made for the tricentenary in a limited edition (the house's shop, Diário de Notícias, Clube de Vinhos Portugueses); the Reserva Touriga Nacional and Cabernet Sauvignon is DOC do Tejo from the Charneca only, by the house's own sheets for the 2020 and the 2022.",
+    "The questions: one right answer each, options of one kind (four oak regimes, four deeds); the Brazil distractor names a real post of the founder, so the explanation now says so and why it is wrong. The house rules: nobody living named, no price (the 1723's price met and not used), no score, nothing volatile (the 2019's bottle count met and not used), no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "The estate's own vineyards at Almeirim, on the left bank of the Tejo, which run from the fertile, flood prone Campo beside the river to the sandy, stony Charneca to the south; the house names no single parcel for this wine.",
+     "now": "The estate's own vineyards at Almeirim, on the left bank of the Tejo, drawn from both its zones by the house's sheet: the fertile Lezíria beside the river and the sandier Charneca beyond it, on sandy clays and sandy loams; no single parcel is named.",
+     "why": "The house's sheet for this wine gives its fruit as Lezíria and Charneca on sandy clays and sandy loams; the Campo and the stones were the house's general Property page.",
+     "sources": [
+      {
+       "title": "Quinta da Alorna: Marquesa de Alorna Grande Reserva Tinto",
+       "url": "https://alorna.pt/portfolio-items/marquesa-de-alorna-grande-reserva-tinto/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Aged for fourteen months in new French oak barrels, by the house's own pages and a merchant's sheet, then rested in bottle at the estate for a year or two, by vintage, before release.",
+     "now": "Aged for fourteen months in new French oak barrels, by the house's own pages and the merchants' sheets, then rested in bottle at the estate for at least a year, two in some vintages, before release.",
+     "why": "Two merchants give fourteen months in new French oak and about a year in bottle; the house's pages give at least twelve months in bottle on its category page and two years on its 2021 page.",
+     "sources": [
+      {
+       "title": "Diwines: Marquesa de Alorna Grande Reserva Tinto 2016",
+       "url": "https://diwines.pt/produto/marquesa-de-alorna-grande-reserva-tinto-2016/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Garrafeira 5 Estrelas: Marquesa de Alorna Grande Reserva Tinto 2019",
+       "url": "https://garrafeira5estrelas.com/vinho-do-tejo/925-marquesa-de-alorna-grande-reserva-tinto-2019.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Quinta da Alorna: Marquesa de Alorna Grande Reserva Tinto 2021",
+       "url": "https://alorna.pt/produto/marquesa-de-alorna-grande-reserva-tinto-2021/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "Blackberry and raspberry with a perfume of wild flowers, then chocolate, white pepper and the toast of new oak; medium to full bodied, with firm tannin, balanced acidity and a dry finish.",
+     "now": "Blackberry and raspberry with a perfume of wild flowers, then cedar, chocolate, white pepper and the toast of new oak; medium to full bodied, with firm tannin, balanced acidity and a dry finish.",
+     "why": "The house's own note gives floral and black fruit over cedar.",
+     "sources": [
+      {
+       "title": "Quinta da Alorna: Marquesa de Alorna Grande Reserva Tinto",
+       "url": "https://alorna.pt/portfolio-items/marquesa-de-alorna-grande-reserva-tinto/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2].means",
+     "was": "The region of the Tagus; merchants list this wine as DOC do Tejo, and one vintage as Vinho Regional Tejo.",
+     "now": "The region of the Tagus; listings give this wine as DOC do Tejo or as Vinho Regional Tejo by vintage, so read the label.",
+     "why": "The Vinho Regional listing was a critic's database, not a merchant; the line now tells a guest to read the label for the tier.",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "he then gave the farm the name it bears. ... Two of her daughters later sold the quinta to the Counts of Junqueira, whose heirs sold it at public auction, and in 1918 another family arrived",
+     "now": "he then gave the farm the name it bears, as the house tells it. ... Two of her daughters later sold the quinta to the Counts of Junqueira, after whom it was sold at public auction, and in 1918 another family arrived",
+     "why": "The renaming is the house's and Clube de Vinhos Portugueses' account, while another has the family move to Vale de Nabais later, so it is hedged; Portugal by Wine says the last Countess of Junqueira died in 1913 without heirs, so the auction is no longer given to her heirs; 1918 stands on the state heritage inventory and Portugal by Wine.",
+     "sources": [
+      {
+       "title": "SIPA: Palácio dos Marqueses de Alorna, Casa da Quinta de Vale de Nabais",
+       "url": "http://www.monumentos.gov.pt/Site/APP_PagesUser/SIPA.aspx?id=27265",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Portugal by Wine: Quinta da Alorna",
+       "url": "https://www.portugalbywine.com/conteudos/parceiros/info.aspx?id=500&title=quinta-da-alorna&idioma=pt",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Clube de Vinhos Portugueses: Quinta da Alorna",
+       "url": "https://www.clubevinhosportugueses.pt/enoturismo/quinta-da-alorna/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2].note",
+     "was": "A wine made only for the estate's three hundredth year, in a small limited edition.",
+     "now": "A Grande Reserva red made for the estate's three hundredth year, in a limited edition.",
+     "why": "The 1723 is labelled Grande Reserva and is red, by the house's shop and two articles.",
+     "sources": [
+      {
+       "title": "Quinta da Alorna: 1723",
+       "url": "https://alorna.pt/produto/1723/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Clube de Vinhos Portugueses: 1723, o Grande Reserva Tinto da Quinta da Alorna",
+       "url": "https://www.clubevinhosportugueses.pt/vinhos/quinta-da-alorna-lanca-o-1723-grande-reserva-tinto/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "As viceroy of Portuguese India he took the fortress of Alorna in 1746 and was made Marquis of Alorna in 1748; the title came from India, not from Brazil or the estate.",
+     "now": "As viceroy of India he took the fortress of Alorna in 1746 and was made Marquis of Alorna in 1748; his earlier post in Brazil, governing São Paulo and Minas, came while he was Count of Assumar.",
+     "why": "He had governed São Paulo and Minas do Ouro in Brazil as Count of Assumar, so the distractor names a true post; the explanation now teaches why it is not the answer.",
+     "sources": [
+      {
+       "title": "Portugal, Dicionário Histórico: D. Pedro Miguel de Almeida, 1.º marquês de Alorna",
+       "url": "https://www.arqnet.pt/dicionario/alorna1.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "FCSH NOVA: India, governors and viceroys, 1505 to 1821",
+       "url": "https://eve.fcsh.unl.pt/en/lists/india-governors-and-vice-roys-1505-1821",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "The house's Who we are and red pages, Infopedia, Wikipedia and Continente.",
+     "now": "The house's Who we are, red and Undiscovered wines pages, the FCSH NOVA list of viceroys and Revista de Vinhos.",
+     "why": "The record now cites what the refuter read beside the house.",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The buyers from the poet's daughters: the Counts of Junqueira by the house and two magazines, José Dias Leite Sampaio, Viscount of Junqueira, in the first half of the nineteenth century by one account.",
+    "The Grande Reserva red's grapes, which the house keeps secret; one listing gives five varieties from old Charneca vines for the 2016 and the 1723 is Tinta Miúda, Castelão and Alicante Bouschet, neither carried over.",
+    "The fermentation of the red, found nowhere."
+   ]
+  },
+  {
+   "key": "casal-branco",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The house's story, the house and the CVR Tejo blocked: 1775 and the family ever since (Grandes Escolhas, Revista de Vinhos and others; one account gives 1755); a royal hunting ground for four centuries (two accounts; one puts its end in the late eighteenth century); the royal falcon hunts and the range named for them (Grandes Escolhas). Borne out. The dovecote: one account calls it centuries old and used to train the falcons, another dates the surviving tower to the nineteenth century, and none but the house gives the sixteenth.",
+    "The making, the house, the CVR Tejo and Tanners blocked: Castelão, Alicante Bouschet, Touriga Nacional and Cabernet Sauvignon, Petit Verdot in some listings; cement tanks with temperature control; part of the oldest vines trodden in cement lagares in exceptional years on one sheet; twelve months in French oak, half new and half of second or third use, on the 2021 sheet at Casa do Vinho de Almeirim and on Wineclick, against the author's thirteen on the CVR Tejo's sheet.",
+    "The law, the IVV blocked: Portaria 140/2010 of 5 March recognised the DO do Tejo in place of Ribatejo (a Diário da República mirror and the CVR Tejo's DOC page); Decreto-Lei 45/2000 of 21 March approved the Ribatejo region's statutes; the regional wine's name changed in 2009 (Portaria 445/2009 by DFJ Vinhos and Wine Searcher).",
+    "The others: the Falcoaria Vinhas Velhas white is Fernão Pires of old vines (Wineclick, Grandes Escolhas); the Colheita Tardia comes in half bottles (The Wine Jungle, Wineexpert); Terra de Lobos was not found.",
+    "The questions: one right answer each; a lagar distractor was too near the truth for some vintages and was replaced. The house rules: the family and its winemakers never named; no price (met and not used), no award, nothing volatile (hectares met and not used), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Fermented in temperature controlled cement tanks, then aged for about thirteen months in French oak barrels, half of them new and half in their second or third use, and given time in bottle before release, by the house's sheets.",
+     "now": "Fermented in temperature controlled cement tanks, then aged for about a year, twelve or thirteen months by vintage, in French oak barrels, half of them new and half in their second or third use, and given time in bottle before release.",
+     "why": "Two independent listings of the 2021 sheet give twelve months; the CVR Tejo's sheet gives thirteen.",
+     "sources": [
+      {
+       "title": "Casa do Vinho de Almeirim: Falcoaria Tinto",
+       "url": "https://casadovinhodealmeirim.pt/catalogo/casal-branco/falcoaria-tinto",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wineclick: Falcoaria Tinto 2021",
+       "url": "https://wineclick.pt/produto/falcoaria-tinto-2021/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and a dovecote of the sixteenth century survives from that time. ... and gives it more than a year in French oak. ... in place of the DOC Ribatejo, first recognised in 2000.",
+     "now": "(the dovecote cut) ... and gives it about a year in French oak. ... in place of the DOC Ribatejo, whose statutes date from 2000.",
+     "why": "The sixteenth century stands on the house's page alone and another account dates the tower to the nineteenth century; the oak as above; Portaria 140/2010 names Decreto-Lei 45/2000 as the act that approved the Ribatejo's statutes.",
+     "sources": [
+      {
+       "title": "Grandes Escolhas: Enoturismo, Quinta do Casal Branco",
+       "url": "https://grandesescolhas.com/enoturismo-quinta-do-casal-branco/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Diário da República: Portaria 140/2010 of 5 March, the DO do Tejo",
+       "url": "https://dre.tretas.org/dre/270827/portaria-140-2010-de-5-de-marco",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "CVR Tejo: DOC do Tejo",
+       "url": "https://www.cvrtejo.pt/doc-do-tejo",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": "Terra de Lobos: The estate's everyday range, its white a blend of Fernão Pires and Sauvignon Blanc.",
+     "now": "(cut)",
+     "why": "Found on one merchant's list only; the refuter's search found neither the range nor the blend.",
+     "sources": []
+    },
+    {
+     "field": "questions[0]",
+     "was": "Key: Cement tanks, then about thirteen months in French oak; distractor: Open lagares, then two years in large old tonéis.",
+     "now": "Key: Cement tanks, then about a year in French oak; distractor: Large wooden vats, then two years in old tonéis.",
+     "why": "The oak as above; one sheet treads part of the oldest vines in cement lagares in exceptional years, so a lagar option was too near the truth.",
+     "sources": [
+      {
+       "title": "Casa do Vinho de Almeirim: Falcoaria Tinto",
+       "url": "https://casadovinhodealmeirim.pt/catalogo/casal-branco/falcoaria-tinto",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "The house's About, Falcoaria and Falcoaria Tinto pages, the CVR Tejo's sheet and the IVV's caderno.",
+     "now": "The house's About and Falcoaria Tinto pages, the CVR Tejo's sheet, Grandes Escolhas and Portaria 140/2010.",
+     "why": "An independent account of the house's story and the decree itself.",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The age of the dovecote: sixteenth century by the house, nineteenth century by one article, so it is out of the record.",
+    "1775 by the house and most accounts, 1755 by one.",
+    "Foot treading in cement lagares for part of the oldest vines in exceptional years, one sheet only, left out."
+   ]
+  },
+  {
+   "key": "casa-cadaval",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The estate's history, the house and Wikipedia blocked: the palace tied to Queen Leonor of Austria until 1530, when she married Francis I of France (Público's Fugas); the Counts of Odemira, Maria de Faro's marriage to the first Duke of Cadaval and the dukedom of 1648 (Fugas, e-cultura, Clube de Vinhos Portugueses); the stud founded in 1648; five generations of women. Borne out, the queen's dwelling narrowed.",
+    "The marquise, Visit Lisboa, Time Out and the house blocked: Olga Maria Nicolis di Robilant, born in Turin on 17 January 1900, married in Venice in July 1926 to António Caetano Álvares Pereira de Melo, Marquis of Cadaval (1894 to 1939), settled at the Quinta da Piedade, Colares, in 1929, died in Lisbon on 21 December 1996 and buried in the family mausoleum at Muge (the Portuguese Wikipedia, Geneall, Geni, the Centro Cultural Olga Cadaval, the Almeirim library's page). Borne out, and her dates now let her be named.",
+    "The flagship, Cave Lusa and Continente blocked: Touriga Nacional, Trincadeira and Alicante Bouschet, each fermented apart in stainless steel at 26 degrees, about three weeks' maceration, the malolactic in new French oak, sixteen months there and twelve in bottle (the house's sheet, Gota a Gota, Degostar); the vines fifty years old on the house's sheet and twenty on Gota a Gota. Whether the wine was named for the marquise was not found.",
+    "The others: the Reserva is Touriga Nacional, Trincadeira, Alicante Bouschet and Alfrocheiro, with Merlot in the 2020 (granvine, Tesouros de Baco); varietal Cabernet Sauvignon and Pinot Noir listed, a varietal Trincadeira only on a blog of 2006 and the author's listing, no varietal Merlot found.",
+    "The questions: one right answer each, four blends and four years; the wine question's explanation claimed a varietal Merlot and was rewritten. The house rules: the woman who has chaired the house since 1998 is not named; no score (met and not used), no price, nothing volatile (the estate's hectares and bottle counts met and not used), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "by the house's history a Portuguese queen lived in its palace until 1530 ... In 1926 the Marquis of Cadaval married a noblewoman of an old European family devoted to music ... As the Marquesa de Cadaval she became a patron of musicians, the Sintra festival among the chief beneficiaries, it is said, ... The house's flagship red bears her title.",
+     "now": "by the house's history its palace was held by a Portuguese queen until 1530 ... In 1926 the Marquis of Cadaval married an Italian noblewoman, Olga Nicolis di Robilant (1900 to 1996) ... As the Marquesa de Cadaval she became a patron of music at Sintra ... The house's flagship red bears the title she was known by.",
+     "why": "The queen is Leonor of Austria by Público, and her dwelling at Muge until 1530 is narrowed to the house's holding; the marquise's birth year is now in three sources, so she is named with her dates; the festival clause was hedged on two tourism pages only; that the red was named for her was not found, so the record says only that it bears her title.",
+     "sources": [
+      {
+       "title": "Wikipedia (Portuguese): Olga Cadaval",
+       "url": "https://pt.wikipedia.org/wiki/Olga_Cadaval",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Geneall: Olga Nicolis di Robilant, marquesa de Cadaval",
+       "url": "https://geneall.net/B/pt/nome/6611/olga-nicolis-di-robilant-marquesa-de-cadaval/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Centro Cultural Olga Cadaval: Marquesa de Cadaval",
+       "url": "https://ccolgacadaval.pt/historia/marquesa-de-cadaval",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Público Fugas: Os cavalos lusitanos, as castas francesas e 400 anos de uma história ribatejana",
+       "url": "https://fugas.publico.pt/Vinhos/359238_os-cavalos-lusitanos-as-castas-francesas-e-400-anos-de-uma-historia-ribatejana?pagina=2",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "Vines of about fifty years on average at the Herdade de Muge, ...",
+     "now": "Vines of about fifty years on average by the house's sheet, at the Herdade de Muge, on the old soils of the Tejo's former delta on the left bank of the river.",
+     "why": "Fifty years is the house's sheet for the 2015; one merchant gives twenty, so the figure is hedged.",
+     "sources": [
+      {
+       "title": "Casa Cadaval: Ficha Marquesa de Cadaval Tinto",
+       "url": "https://www.casacadaval.pt/ficha-marquesa-de-cadaval-tinto/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Gota a Gota: Marquesa de Cadaval Tinto 2015",
+       "url": "https://www.gotaagotawinehouse.pt/marquesa-de-cadaval-tinto-2015",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means and traps[0]",
+     "was": "The title of the marquise who married into the family in 1926 and died in 1996. / one wine, named for the marquise who married into the family in 1926.",
+     "now": "The title by which Olga Cadaval, who married into the family in 1926 and died in 1996, was known. / Labels and merchants write both Marquesa de Cadaval and Marquesa do Cadaval: one wine, bearing the title of the marquise who married into the family in 1926.",
+     "why": "The naming for her is not in the sources read; that she was known as the Marquesa de Cadaval is (the cultural centre and the Almeirim library bear the title).",
+     "sources": [
+      {
+       "title": "Centro Cultural Olga Cadaval: Marquesa de Cadaval",
+       "url": "https://ccolgacadaval.pt/historia/marquesa-de-cadaval",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Município de Almeirim: Biblioteca Municipal Marquesa de Cadaval",
+       "url": "https://www.cm-almeirim.pt/conhecer-almeirim/locais-de-interesse/a-biblioteca-municipal-marquesa-de-cadaval",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note and others[2].note",
+     "was": "A DOC do Tejo red of Touriga Nacional, Alicante Bouschet, Trincadeira and Alfrocheiro, by the house's sheet. / A red of the Trincadeira grape alone, labelled under its name Trincadeira Preta.",
+     "now": "A red of Touriga Nacional, Trincadeira, Alicante Bouschet and Alfrocheiro, with Merlot in some vintages. / A red of the Trincadeira grape alone, a grape also known as Trincadeira Preta.",
+     "why": "The Reserva's DOC was not confirmed and Merlot joins it in the 2020; the label wording Trincadeira Preta rests on one listing, while Trincadeira Preta is a common synonym of the grape.",
+     "sources": [
+      {
+       "title": "Granvine: Casa Cadaval Reserva Tinto 2021",
+       "url": "https://granvine.com/pt/casa-cadaval-reserv-tinto-2021",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Tesouros de Baco: Casa Cadaval Reserva Tinto 2020",
+       "url": "https://tesourosdebaco.com/vinho/vinho-tinto/casa-cadaval-reserva-tinto-2020/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The house's sheet names Touriga Nacional, Trincadeira and Alicante Bouschet; Pinot Noir, Merlot and Cabernet Sauvignon are bottled by Casa Cadaval on their own.",
+     "now": "The house's sheet names Touriga Nacional, Trincadeira and Alicante Bouschet, each fermented apart; Alfrocheiro joins them in the house's Reserva, not in the Marquesa.",
+     "why": "No varietal Merlot was found; the new explanation teaches the nearest wrong option, the Alfrocheiro blend, from the Reserva's listings.",
+     "sources": []
+    },
+    {
+     "field": "sources",
+     "was": "The house's history and sheet, Wikipedia on the dukes, Visit Lisboa and Cave Lusa.",
+     "now": "The house's history and sheet, Wikipedia on the dukes, the Portuguese Wikipedia on Olga Cadaval and Público's Fugas.",
+     "why": "The sources of the marquise's dates and of the queen.",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The queen: Público names her as Leonor of Austria, widow of King Manuel I, who left Portugal some years before her marriage to Francis I in 1530, so the house's until 1530 is kept only as the house's and as held, not lived.",
+    "Whether the red was named for Olga Cadaval herself, as the author read on the house's history page; the refuter's searches did not find it.",
+    "Vines of fifty years (the house's sheet for the 2015) against twenty (Gota a Gota)."
+   ]
+  },
+  {
+   "key": "quinta-da-lagoalva",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The estate's history, the house and the CVR Tejo blocked: bought in 1834 by Henrique Teixeira de Sampaio, first Count of Póvoa, after the orders' lands were sold (Grandes Escolhas, Clube de Vinhos Portugueses); the property passed to the heiress Maria Luísa de Noronha e Sampaio in 1841 to 1842 and to the house of Palmela in 1842 (Enotur, a magazine); the marriage given as 1846 by the MG club page and Enotur, which follow the house.",
+    "The marriage, the house, the MG club and Enotur blocked: Geni gives 3 July 1836 for the marriage of Domingos de Sousa Holstein (1818 to 1864), later second Duke of Palmela, to Luísa Maria de Noronha e Sampaio, daughter of the Count of Póvoa; the Capet genealogy gives the same, or France 1840; a betrothal deed of 6 September 1834 is reported; their daughter, later third Duchess of Palmela, was born in 1841. The house's 1846 does not stand against a daughter born in 1841, and the marriage year is left out.",
+    "The flagship, Vinoscout, Wine House Portugal and Continente blocked: the Grande Escolha Alfrocheiro made only in exceptional years, its malolactic in new and one year old French oak and ten to twelve months there (VelvetBull, Garrafeira 5 Estrelas); Grandes Escolhas calls it the estate's flagship, the 2016 the last of fifteen editions, from a lagar with mechanical treading and new and used French oak; the name since moved to Grande Reserva, with an organic bottling (Viva o Vinho). The house's making page belongs to that later bottling.",
+    "The others: Dona Isabel Juliana is a Grande Reserva white and red and a Grande Reserva Bruto sparkling wine the trade press calls the top of the range (Viva o Vinho, Hipersuper, Gazeta Rural, Garrafinhas); the Reserva Alfrocheiro and Syrah is borne out by Hipersuper.",
+    "The questions: one right answer each; the story question no longer rests on 1846. The house rules: the family that holds the estate is not named; no price (met and not used), no score, nothing volatile (bottle counts met and not used), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story, table, cards[1], questions[1]",
+     "was": "between 1841 and 1842 the whole of its property passed to the family's heiress, who in 1846 married the second Duke of Palmela / passed to the house of Palmela in 1846 / pass by a marriage of 1846 / through a marriage in 1846",
+     "now": "whose heiress married the future second Duke of Palmela, and between 1841 and 1842 the whole of its property passed to her / in the 1840s / through the marriage of its heiress / of its nineteenth century heiress",
+     "why": "Two genealogies give the marriage as 1836, with the third Duchess born to the couple in 1841, against the house's 1846; the transfer of 1841 to 1842 and the house of Palmela by 1842 stand.",
+     "sources": [
+      {
+       "title": "Geni: Domingos António Maria Pedro de Sousa Holstein, 2.º Duque de Palmela",
+       "url": "https://www.geni.com/people/Domingos-Ant%C3%B3nio-de-Sousa-Holstein-2-%C2%BA-Duque-de-Palmela/6000000015982292632",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Genealogy EU: Capet 75",
+       "url": "http://genealogy.euweb.cz/capet/capet75.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Ler História: Dotar, partilhar e legar, o património da Casa Palmela",
+       "url": "https://journals.openedition.org/lerhistoria/2566?lang=en",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "By the house's account of its Alfrocheiro, picked by hand into boxes, given three days of maceration before fermentation, then fermented at about 24 degrees Celsius in open stainless steel vats and pressed in a hydraulic press; the malolactic fermentation and ten to twelve months follow in French oak barrels, new or a year old. Merchants give the Grande Escolha twelve months in barrique.",
+     "now": "Picked by hand and fermented in open vats, by the house's account of its single grape Alfrocheiro; the malolactic fermentation then takes place in French oak barrels, new or a year old, where the wine ages for ten to twelve months, as the merchants' sheets for the Grande Escolha give it.",
+     "why": "The maceration, the temperature and the press are the house's page for its later organic Grande Reserva, not the Grande Escolha, and a wine magazine gives the 2016 a lagar; the oak regime is borne out by two merchants for the Grande Escolha.",
+     "sources": [
+      {
+       "title": "VelvetBull: Quinta Lagoalva de Cima Grande Escolha Alfrocheiro",
+       "url": "https://www.velvetbull.pt/quinta-lagoalva-de-cima-grande-escolha-alfrocheiro-vinho-tinto",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Garrafeira 5 Estrelas: Lagoalva de Cima Grande Escolha Alfrocheiro 2016",
+       "url": "https://garrafeira5estrelas.com/vinho-do-tejo/1600-quinta-da-lagoalva-de-cima-grande-escolha-alfrocheiro-2016.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "By the house's account the grapes are picked by hand into small boxes and reach the cellar in the morning, then go to open steel vats, a hydraulic press and French oak, new or a year old, for the malolactic fermentation and the ageing.",
+     "now": "By the house's account its Alfrocheiro is picked by hand into small boxes that reach the cellar in the morning, then fermented in open vats and taken into French oak, new or a year old, for the malolactic fermentation and the ageing.",
+     "why": "As for the making: open vats is common to the house's page and the magazine's lagar.",
+     "sources": [
+      {
+       "title": "Grandes Escolhas: Lagoalva de Cima, um Tejo diverso e pioneiro",
+       "url": "https://grandesescolhas.com/lagoalva-de-cima-um-tejo-diverso-e-pioneiro/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The marriage year itself, 1836 by two genealogies or 1846 by the house; neither is printed.",
+    "The flagship: Grandes Escolhas calls the Alfrocheiro Grande Escolha the estate's flagship, in fifteen editions to the 2016, while trade press calls the Dona Isabel Juliana Grande Reserva red, first made in 2009, the top of the range; the pick is kept and the read together agent may look again.",
+    "A lagar with mechanical treading for the 2016 (Grandes Escolhas only) and the vineyard of the early 1970s on a José Maria da Fonseca clone (the same), left out."
+   ]
+  },
+  {
+   "key": "companhia-das-lezirias",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The company's history, its domains, the CVR Tejo and Wikipedia blocked: formed in 1836 to buy the Crown's and the royal house's lands put up for sale, between the Tejo and the Sado, first as the Companhia das Lezírias do Tejo e Sado (Público, Hispania Nova, Restos de Colecção); the first vineyard of 1881 (Rota dos Vinhos do Tejo, Vinalda, Enoturismo); nationalised on 13 November 1975, a public company in 1978 and a public limited company in the 1980s. Borne out.",
+    "The flagship, the company and the CVR Tejo blocked: Alicante Bouschet (Vivino, Saven), hand picked and trodden in lagares for the 2020 with thirteen months in new French oak (Portugal Vineyards), fourteen months in new French oak for the 2012 by a critic's review hosted by a merchant; the author's eighteen months half new is the company's own sheet for the 2016.",
+    "The place: the Adega do Catapereiro on the EN 118 between Porto Alto and Alcochete, Samora Correia, Benavente (the company's contact page, Eco-Freguesias XXI); the lezíria lies between the Tejo and the Sorraia, the Charneca and Catapereiro beyond it.",
+    "The others: the 1836 Grande Reserva white is Fernão Pires of old vines (Vivino, Tesouros de Baco); the 1836 Espumante Bruto is a sparkling wine of the range (Tesouros de Baco, Arinto by its listing).",
+    "The questions: one right answer each, four methods and four events; the explanations now hold the oak to more than a year. The house rules: nobody named, no price (met and not used), no score (met and not used), nothing volatile (hectares met and not used), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "place",
+     "was": "Herdade de Catapereiro, between the Tejo and the Sorraia, Portugal",
+     "now": "Herdade de Catapereiro, Samora Correia, Benavente, on the Tejo's left bank, Portugal",
+     "why": "The winery's address is on the EN 118 between Porto Alto and Alcochete, south of the Sorraia; the land between the two rivers is the lezíria, not Catapereiro.",
+     "sources": [
+      {
+       "title": "Companhia das Lezírias: Contacts",
+       "url": "https://vinhoazeite.cl.pt/contactos/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Eco-Freguesias XXI: Roteiro Samora Correia",
+       "url": "https://ecofreguesias21.abaae.pt/roteiro-samora-correia/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "...; the malolactic fermentation follows in stainless steel, then eighteen months in French oak barrels, half new and half in their second use, by the company's sheet.",
+     "now": "Picked by hand and wholly destemmed, it ferments with its own yeasts in a lagar at about 25 degrees Celsius, with a punch down each day, by the company's sheet for the 2016; the malolactic fermentation follows in stainless steel, then thirteen to eighteen months in French oak barrels by vintage, all new in some years and half new in others.",
+     "why": "The oak differs by vintage: thirteen months in new oak for the 2020, fourteen in new oak for the 2012, eighteen half new for the 2016.",
+     "sources": [
+      {
+       "title": "Portugal Vineyards: Companhia das Lezírias 1836 Grand Reserve Red 2020",
+       "url": "https://www.portugalvineyards.com/en/tejo/24305-companhia-das-lezirias-1836-grand-reserve-red-2020-5602394009512.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Companhia das Lezírias: 1836 Grande Reserva",
+       "url": "https://vinhoazeite.cl.pt/vinhos/1836-grande-reserva-tinto/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table, story, cards[0].back, questions[0].exp",
+     "was": "aged eighteen months in French oak / given a year and a half in French oak / eighteen months in French oak barrels, half new and half in their second use / then ages it eighteen months in French oak",
+     "now": "aged more than a year in French oak / given more than a year in French oak / aged thirteen to eighteen months in French oak barrels by vintage / then ages it more than a year in French oak",
+     "why": "As for the making.",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "nationalised, in 1975 by its own account,",
+     "now": "nationalised, in 1975,",
+     "why": "An independent account gives 13 November 1975, so the hedge is no longer needed.",
+     "sources": [
+      {
+       "title": "Restos de Colecção: Companhia das Lezírias do Tejo e Sado",
+       "url": "https://restosdecoleccao.blogspot.com/2012/04/companhia-das-lezirias-do-tejo-e-sado.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Companhia das Lezírias: Presentation",
+       "url": "https://www.cl.pt/the-cl/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "The company's history, 1836, presentation and statutes pages and the CVR Tejo's tourism guide.",
+     "now": "The company's history, 1836, presentation, statutes and contact pages.",
+     "why": "The place now rests on the company's own address.",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The month of June 1836, on the company's history page and the author's reading, not met in the refuter's searches.",
+    "Whether Catapereiro lies inside the Tagus Estuary nature reserve (one account), which the plan's note gives for Tyto Alba and the record leaves out."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Martta Simões",
+   "role": "the winemaker named for the Marquesa de Alorna Grande Reserva 2016",
+   "where": "a merchant's listing in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "the Lopo de Carvalho family",
+   "role": "Quinta da Alorna's family, descendants of the buyer of 1918",
+   "where": "Grandes Escolhas, Portugal by Wine, SIPA",
+   "believed": "living members",
+   "inPeople": false,
+   "inFragment": "as another family that arrived in 1918"
+  },
+  {
+   "name": "Maria João de Almeida",
+   "role": "the author of the book of the tricentenary of Quinta da Alorna, with a writer's own site in the results",
+   "where": "the refuter's results on the 1723 wine",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all; her site never cited"
+  },
+  {
+   "name": "António Barreto",
+   "role": "the writer of the preface to that book",
+   "where": "the same results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "José Lobo de Vasconcelos",
+   "role": "the family member who runs Quinta do Casal Branco, named by the author",
+   "where": "the author's report",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "in the author's report only, never shipped"
+  },
+  {
+   "name": "Manuel Lobo",
+   "role": "a winemaker of Quinta do Casal Branco",
+   "where": "a merchant's listing of the Colheita Tardia",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Joana Silva Lopes",
+   "role": "a winemaker of Quinta do Casal Branco",
+   "where": "the same listing",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "the Braamcamp Sobral Lobo de Vasconcelos family",
+   "role": "the family of Quinta do Casal Branco since 1775",
+   "where": "Grandes Escolhas and others",
+   "believed": "living members",
+   "inPeople": false,
+   "inFragment": "as the family"
+  },
+  {
+   "name": "Teresa Schönborn",
+   "role": "the head of Casa Cadaval since 1998",
+   "where": "the refuter's results on the house",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  }
+ ],
+ "livingNote": "None of these is named in the fragment's prose, titles or addresses. The dead met are named only where two sources give their dates: Olga Nicolis di Robilant (1900 to 1996) is now named in the Cadaval story; Pedro Miguel de Almeida Portugal (1688 to 1756) and Leonor de Almeida Portugal (1750 to 1839) stand as the author named them. Manuel Caroça (1872 to 1945, by SIPA), the Marquis of Cadaval (1894 to 1939), Domingos de Sousa Holstein (1818 to 1864), the first Count of Póvoa and his daughter are dead and are described, not named, their dates in one source or none. The refuter did not edit people.json; the read together agent adds those it judges living.",
+ "swaps": [],
+ "swapNote": "The author proposed no swap, and the refuter proposes none. The author's suggestion that the plan's wine for quinta-da-lagoalva be renamed Grande Reserva Alfrocheiro is refused: the Grande Escolha Alfrocheiro is the label a guest meets on bottles to the 2016, in fifteen editions by Grandes Escolhas, which calls it the estate's flagship, and the record already teaches the later Grande Reserva name in its label and its story. The read together agent may weigh the Dona Isabel Juliana Grande Reserva red, which trade press calls the house's top red, first made in 2009, if it judges the pick should follow the house's present range. The other four picks stand: each is a real house of the Tejo with the wine it leads with (the Marquesa de Alorna Grande Reserva red, Falcoaria Tinto, the Marquesa de Cadaval red, the 1836 Grande Reserva red).",
+ "planNotes": [
+  "quinta-da-alorna: answered. 1723 and the marquisate of 1748 after Alorna in 1746 are borne out; the red is taught, its grapes the house's secret; the white is in others.",
+  "casal-branco: answered, with a correction to the why: the house's page and Grandes Escolhas say the Falcoaria range is named for the royal falcon hunts once held on the land, not for the house's own falconry. Falcoaria Tinto is taught. The living family is never named.",
+  "casa-cadaval: answered. 1648 is the dukedom and the stud, not a founding, so founded stays empty; de and do Cadaval both appear; the red's grapes are the house's sheet; the Trincadeira is in others.",
+  "quinta-da-lagoalva: answered. The Alfrocheiro is taught; Dona Isabel Juliana is in others, a sparkling Grande Reserva Bruto among its wines. The why's horses and cork rest on one listing each by the author and are not in the prose.",
+  "companhia-das-lezirias: answered. The 1836 range is made red, white and sparkling; Tyto Alba is in others. The note's vines in the estuary's nature reserve rest on one account that places Catapereiro in the protected area, not settled."
+ ],
+ "codexInTension": [
+  {
+   "record": "REGIONS tejo (summary)",
+   "says": "until 2009 it was called the Ribatejo",
+   "read": "The regional wine took the name Tejo in 2009 (Portaria 445/2009, by DFJ Vinhos and Wine Searcher), but the DOC took the name DO do Tejo only with Portaria 140/2010 of 5 March, replacing Ribatejo.",
+   "sources": [
+    {
+     "title": "Diário da República: Portaria 140/2010 of 5 March, the DO do Tejo",
+     "url": "https://dre.tretas.org/dre/270827/portaria-140-2010-de-5-de-marco",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "CVR Tejo: DOC do Tejo",
+     "url": "https://www.cvrtejo.pt/doc-do-tejo",
+     "kind": "primary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported, not edited: the summary holds for the Vinho Regional; it might say the regional name changed in 2009 and the DOC in 2010."
+  },
+  {
+   "record": "REGIONS tejo (summary)",
+   "says": "It is a region of value",
+   "read": "No fact is wrong, but value is a price word the flagships record may not use.",
+   "sources": [],
+   "note": "Reported for the region's editor, not edited."
+  },
+  {
+   "record": "plan.json casal-branco (why)",
+   "says": "named for the house's falconry",
+   "read": "Named for the royal falcon hunts once held on the land, by the house's page and Grandes Escolhas.",
+   "sources": [
+    {
+     "title": "Grandes Escolhas: Enoturismo, Quinta do Casal Branco",
+     "url": "https://grandesescolhas.com/enoturismo-quinta-do-casal-branco/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ],
+   "note": "For the read together agent, who sets the whys."
+  }
+ ],
+ "codexNote": "The library holds none of the five houses, so every fact needed its own two sources or one primary. The region record's lines read in the course of the check agree with what was read, save the two reported above. The Codex's own records were a starting point only and the second source of no fact."
+}
