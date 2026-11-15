@@ -1,0 +1,766 @@
+{
+ "group": "dao",
+ "chunk": "w9",
+ "batch": "A",
+ "date": "2026-11-15",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 25,
+  "perRecord": {
+   "quinta-dos-roques": 6,
+   "quinta-da-pellada": 5,
+   "quinta-dos-carvalhais": 3,
+   "casa-de-santar": 5,
+   "casa-da-passarella": 3,
+   "shared": 3
+  },
+  "note": "Twenty five searches of a share of twenty eight, none of them the author's, three left unspent. The three shared searches went to the law of 18 September 1908 and the decree of 25 May 1910 (the CCDR Centro and Decree Law 376/93 by FAOLEX), to the CVR Dão's own account of the co-operatives, and to the origin of Touriga Nacional. The houses' own domains were searched by restriction six times (quintaroques.pt three times, quintadapellada.com, sogrape.com, casadesantar.pt), each read as primary through its summary, and the consolidated portaria through its summary on the Diário da República; the rest went to the open web with the author's sources blocked (Raymond Reynolds, Fareham, Wine House Portugal, The Wine Society, Center of Portugal, Wine Paris, Oleobrigado, En Primeur Club, Evaton, Liberty Wines, Loja do Vinho, Drinkfinder, Essential Algarve, Cave Lusa, Portugal Get Wine and, where the account had to be independent, the house itself). No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the law and the rules, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the houses' own pages for their own dates and methods (three of the five houses' pages the author had not reached: the Roques sheets, the Pellada history, the Santar legend), then to independent accounts of each house's history, then to merchants' sheets of each wine with the author's sources blocked, and to the governing texts for the Dão and the mention Reserva.",
+  "Where the sheets disagreed and none was primary, the figure was widened or hedged; where a fact rested on one account and the refuter found it nowhere (hand picking at Passarella, Primus from one high parcel, a claim made for Sogrape of renewing the region, a fifth of the Roques Encruzado in oak), it was taken out or corrected to the house's own sheet."
+ ],
+ "records": [
+  {
+   "key": "quinta-dos-roques",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The founding and the dates, the author's merchants and importer blocked: the house's own About page, searched on its domain, gives roots in the nineteenth century, the hamlet of Abrunhosa do Mato between Mangualde and Nelas, varietal reds from 1996, Touriga Nacional among them, an Encruzado made alone from 1998, and varietal wines made only when the house judges the quality good enough. Borne out, now on the house itself rather than its importer.",
+    "The making of the Touriga Nacional: the house's 2019 sheet gives wholly destemmed grapes fermented in stainless steel at 28 to 30 degrees with some thirteen days of maceration, fourteen months in 225 litre French oak and a light filtration, served at 16 degrees. The author's well over a year stands, the fifteen to seventeen months of the merchants widens to fourteen to seventeen.",
+    "The sites: the house's page gives granite and, at times, schist on gentle south facing slopes; a writer's profile (read, not cited) gives mostly granitic sand with a little schist and clay at about 450 metres, the figure the author took from two merchants. The 450 metres stands on three accounts, none of them the house; the soils were widened.",
+    "The Encruzado in others: the house's sheets of 2017, 2019 and 2022 give half the wine fermented in French oak barrels (500 litres in 2022) for six or seven months with the lees stirred twice a week and half in steel, with selected yeasts in 2022. The author's fifth in oak with its own yeasts was not borne out.",
+    "Quinta das Maias: Fareham's listing names it Gouveia, Decanter files it under the Serra da Estrela subregion, and the accounts read put it higher than Roques at about 600 metres, bought by the family in 1997 by a writer's profile and The Wine Society. The note in others stands; the story's holds, a present ownership, became took on, with no year.",
+    "The law of 18 September 1908 and the decree of 25 May 1910: the CCDR Centro and Decree Law 376/93 by FAOLEX. The co-operatives of the 1960s and 1970s: the CVR Dão's own page. Touriga Nacional said to be born in the Dão: Falstaff and the accounts read give it as the prevailing view on DNA evidence, the Douro also claiming it, so the hedge stands.",
+    "The house rules: nobody living named (the family and its son in law are never named), no price, no score, nothing volatile once holds became took on, no judging superlative, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Made from the estate's Touriga Nacional alone, fermented on its skins and then aged for well over a year in French oak barrels before bottling. The merchants' sheets give fifteen to seventeen months, in used barrels for some vintages and new ones for others.",
+     "now": "Made only in years the house judges good enough: the grapes are wholly destemmed and fermented on their skins in stainless steel vats, then the wine is aged for fourteen to seventeen months, by vintage, in 225 litre French oak barrels, new in some years and used in others, and lightly filtered before bottling.",
+     "why": "The house's own 2019 sheet gives the destemming, the steel, fourteen months in 225 litre French oak and the light filtration; its About page makes the varietal wines only in years it judges good enough; Fareham gives seventeen months in new barrels.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: Touriga Nacional 2019 technical sheet",
+       "url": "https://www.quintaroques.pt/uploads/9/0/1/6/9016401/2019_quinta_dos_roques_touriga_nacional_red_wine.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Quinta dos Roques: About",
+       "url": "https://www.quintaroques.pt/about.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "The estate's vineyards around Abrunhosa do Mato on the Dão plateau, at about 450 metres on sandy soils over granite, sheltered by the mountains that ring the region.",
+     "now": "The estate's vineyards around Abrunhosa do Mato on the Dão plateau, at about 450 metres on gentle south facing slopes of sandy granite with schist in places, sheltered by the mountains that ring the region.",
+     "why": "The house's About page gives granite and, at times, schist on gentle southern slopes.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: About",
+       "url": "https://www.quintaroques.pt/about.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The family behind Quinta dos Roques has grown grapes at Abrunhosa do Mato, between Mangualde and Nelas, for more than a century.",
+     "now": "The family behind Quinta dos Roques has grown grapes at Abrunhosa do Mato, between Mangualde and Nelas, since the nineteenth century, as the house tells it.",
+     "why": "The house's own words, hedged as its claim.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: About",
+       "url": "https://www.quintaroques.pt/about.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "With the 1996 vintage, as its importer tells it, the estate began to bottle reds of a single grape, Touriga Nacional among them,",
+     "now": "With the 1996 vintage, by the house's own account, the estate began to bottle reds of a single grape, made only in years it judges good enough, Touriga Nacional among them,",
+     "why": "The house's own About page gives 1996 and the rule of making them only in good years, a primary source for its own dates.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: About",
+       "url": "https://www.quintaroques.pt/about.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The family also holds Quinta das Maias, a higher estate near Gouveia in the foothills of the Serra da Estrela, whose wines carry their own name.",
+     "now": "The family later took on Quinta das Maias, a higher estate near Gouveia in the foothills of the Serra da Estrela, whose wines carry their own name.",
+     "why": "A present holding is a volatile fact; told as history it stands. The year 1997 rests on The Wine Society and a writer's profile only, so no year is given.",
+     "sources": [
+      {
+       "title": "Fareham Wine Cellar: Quinta das Maias Tinto, Gouveia, Dão",
+       "url": "https://farehamwinecellar.co.uk/Products/wine/red/quinta-das-maias-tinto-gouveia-dao-2/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Quinta das Maias Branco, Serra da Estrela, Dão 2018",
+       "url": "https://www.decanter.com/wine-reviews/portugal/serra-da-estrela/quinta-das-maias-branco-serra-da-estrela-dao-2018-38274/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The white of Encruzado alone, about a fifth of it fermented in oak barrels with its own yeasts, then kept for some months on its lees.",
+     "now": "The white of Encruzado alone, about half of it fermented in French oak barrels and stirred on its lees for six months or so, the rest in steel.",
+     "why": "The house's sheets of 2017, 2019 and 2022 each give half in French oak barrels for six or seven months with stirring twice a week and half in steel; the 2022 names selected yeasts.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: Encruzado 2022 technical sheet",
+       "url": "https://www.quintaroques.pt/uploads/9/0/1/6/9016401/2022_quinta_dos_roques_encruzado_white_wine.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Quinta dos Roques: Encruzado 2019 technical sheet",
+       "url": "https://www.quintaroques.pt/uploads/9/0/1/6/9016401/2019_quinta_dos_roques_encruzado_white_wine.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Quinta dos Roques: Encruzado 2017 technical sheet",
+       "url": "http://www.quintaroques.pt/uploads/9/0/1/6/9016401/2017_quinta_dos_roques_encruzado_white_wine.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[1]",
+     "was": "Quinta dos Roques Touriga Nacional is a Dão red from granite, not a Douro red, though the same grape leads the dry reds of both regions.",
+     "now": "Quinta dos Roques Touriga Nacional is a Dão red from granite, not a Douro red, though the same grape is grown in both regions.",
+     "why": "No source read makes Touriga Nacional the leading grape of the Douro's dry reds, where Touriga Franca is the more planted; the claim was cut to what is sure.",
+     "sources": [
+      {
+       "title": "Falstaff: Touriga Nacional",
+       "url": "https://www.falstaff.com/nordics/grape-varieties/touriga-nacional",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].exp",
+     "was": "Its importer dates the single grape reds to the 1996 vintage",
+     "now": "The house dates its single grape reds to the 1996 vintage",
+     "why": "The date now rests on the house itself.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: About",
+       "url": "https://www.quintaroques.pt/about.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Raymond Reynolds: Quinta dos Roques; Wine House Portugal: Quinta dos Roques Touriga Nacional; The Wine Society: Quinta dos Roques Encruzado, Dão",
+     "now": "Quinta dos Roques: About; Quinta dos Roques: Touriga Nacional 2019 technical sheet; Quinta dos Roques: Encruzado 2022 technical sheet",
+     "why": "The importer's title carries its founder's name, a person believed living, and the house's own pages now carry the 1996, the making and the Encruzado; The Wine Society's fifth in oak was not borne out.",
+     "sources": [
+      {
+       "title": "Quinta dos Roques: About",
+       "url": "https://www.quintaroques.pt/about.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Quinta dos Roques: Touriga Nacional 2019 technical sheet",
+       "url": "https://www.quintaroques.pt/uploads/9/0/1/6/9016401/2019_quinta_dos_roques_touriga_nacional_red_wine.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Quinta dos Roques: Encruzado 2022 technical sheet",
+       "url": "https://www.quintaroques.pt/uploads/9/0/1/6/9016401/2022_quinta_dos_roques_encruzado_white_wine.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The altitude of about 450 metres rests on two merchants and a writer's profile, never the house; the house gives no figure.",
+    "The first varietal Encruzado: 1998 at Roques by The Wine Society and the importer, 1992 at Carvalhais by Sogrape; neither first is told.",
+    "Quinta das Maias's year, 1997, and its wines made at Roques from 1992, rest on a writer's profile and one merchant, so the story gives no year.",
+    "The Wine Society's fifth in oak may be true of the 2024; the house's sheets read (2017, 2019, 2022) give half."
+   ]
+  },
+  {
+   "key": "quinta-da-pellada",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The history, the author's sources blocked: the estate's own history page, which the author did not find, gives the first records in 1527, a royal tax of eighty barrels of wine, a civil engineer of the family who inherited in 1980 and revived a tradition lapsed for a generation; Clube de Vinhos Portugueses and two guides give about 1570 for the first records and the first label, Quinta de Saes, with the 1989 vintage. Borne out: the record of 1527 is the house's own, the sixteenth century the hedge, the 1980 inheriting now primary.",
+    "The place: the estate's terroir page sets its vineyards at 450 to 600 metres on granite in the Serra da Estrela subregion and names Vila Nova de Tazém nearby; Clube de Vinhos Portugueses and two guides give Pinhanços, Seia. The place stands.",
+    "Carrocel, the author's merchants blocked: Leon and Son, Vivino and Mistral give Touriga Nacional alone from a single parcel of about half a hectare at about 500 metres on granite, planted in 1950; fermentation in stainless steel with up to twelve days of maceration on three sheets; 24 months in used 400 litre French oak (Leon and Son), 30 months in 400 litre casks of two or three years (Mistral), about two years (Vinogrande); made only in the strong vintages by Garrafeira Nacional. Borne out, with the steel fermentation now on three sheets.",
+    "Primus: Vinogrande, Mistral and Cave Lusa give a field blend of old vines led by Encruzado and Bical with Cerceal, Terrantez, Malvasia Fina and others planted among them, the musts fermented together. The author's one high parcel was not borne out.",
+    "Pape and Doda, for the library: Doda, called Dado from the 2000 to the 2004 vintage, is the Douro and Dão blend made with the Douro house; Pape is a red of Quinta da Pellada alone. The author's reading stands, and the library's line is reported.",
+    "The house rules: the winemaker of the library's producer name, his daughter and the two who joined in 2005 are never named; nothing volatile, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Made only in years when the parcel gives fruit good enough, then aged for eighteen months to two years and more in used French oak barrels of 400 to 500 litres, large enough that the wood frames the wine rather than marking it.",
+     "now": "Made only in years when the parcel gives fruit good enough, the wine is fermented in stainless steel with up to about twelve days on its skins, then aged for eighteen months to two years and more in used French oak barrels of 400 to 500 litres, large enough that the wood frames the wine rather than marking it.",
+     "why": "The steel fermentation and its twelve days, left out by the author on one source, stand on three sheets read by the refuter.",
+     "sources": [
+      {
+       "title": "Leon and Son: Quinta da Pellada Carrocel, Dão",
+       "url": "https://leonandsonwine.com/products/2019-quinta-da-pellada-carrocel-dao-portugal",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mistral: Carrocel 2018",
+       "url": "https://www.mistral.com.br/p/vinho/carrocel-2018-quinta-da-pellada",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinogrande: Quinta da Pellada Carrocel Tinto 2022",
+       "url": "https://vinogrande.pt/en/products/quinta-da-pellada-carrocel-tinto-2022",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "The white: an old vine field blend led by Encruzado, with Bical, Cerceal and other old grapes, from one high parcel.",
+     "now": "The white: a field blend of old vines led by Encruzado and Bical, with Cerceal and other grapes planted among them, fermented together.",
+     "why": "The sheets read give old vineyards, Bical beside Encruzado at the head of the blend and the musts fermented together; no sheet gives one high parcel.",
+     "sources": [
+      {
+       "title": "Vinogrande: Quinta da Pellada Primus Branco 2024",
+       "url": "https://vinogrande.pt/products/quinta-da-pellada-primus-branco-2024",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mistral: Primus Branco 2021",
+       "url": "https://www.mistral.com.br/produto/quinta-da-pellada-primus-dao-branco-2021-quinta-da-pellada",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Cave Lusa: Quinta da Pellada Primus white",
+       "url": "https://www.cavelusa.pt/en/shop/wine/portuguese/quinta-da-pellada-primus-white/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Center of Portugal: Quinta da Pellada; En Primeur Club: Quinta da Pellada, Pinhanços, Seia",
+     "now": "Quinta da Pellada: História; Leon and Son: Quinta da Pellada Carrocel, Dão",
+     "why": "The estate's own history page is primary for 1527 and the inheriting of 1980 (Center of Portugal said bought); Leon and Son carries the parcel, the altitude, the steel and the barrels.",
+     "sources": [
+      {
+       "title": "Quinta da Pellada: História",
+       "url": "https://www.quintadapellada.com/historia",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Leon and Son: Quinta da Pellada Carrocel, Dão",
+       "url": "https://leonandsonwine.com/products/2019-quinta-da-pellada-carrocel-dao-portugal",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The estate's terroir summary names Vila Nova de Tazém, the neighbouring parish in Gouveia, while three accounts give Pinhanços, Seia; the record keeps Pinhanços.",
+    "Carrocel's planting year (1950 on three sheets) and its age (45 or 85 years) disagree, so neither is given; the Wine Advocate's old clones of Talhão 5 rest on one source.",
+    "The barrel months run from eighteen (the winemaker's notes, by the author) to thirty (Mistral's 2018); the record's eighteen months to two years and more holds them.",
+    "One guide ties the record of 1527 to Quinta de Saes rather than Pellada; the estate's own page claims it for itself."
+   ]
+  },
+  {
+   "key": "quinta-dos-carvalhais",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The dates: Sogrape's Dão page gives the company in the Dão since 1957 and the estate bought and planted in 1988, near Mangualde, its plots growing Touriga Nacional, Alfrocheiro and Encruzado; its Gouveio press note claims the Dão's first Encruzado in 1992. The house's own dates stand; the first is left out, as the author left it.",
+    "The making of the Encruzado, the author's sheets and merchants blocked: Garrafeira Portela's 2021 (begun in steel, moved midway into new French oak, about twenty days at up to 19 degrees, about six months in new barrels of various sizes, the rest in steel), Winestuff's 2023 (the same move, about six months in new 225 litre barrels from five coopers, frequent stirring), Continente (seven tenths in new barrels of 225, 500, 1,000 and 2,000 litres for about six months), Gota a Gota's 2021 (four tenths for eight months), Portugal Vineyards's 2018 (fermented in barrels from four coopers, then six months in new oak). The share and the move stand; the 225 litres alone did not.",
+    "Parcela 45: Sogrape's page and two merchants' copies of its note give the fire of 15 October 2017 at Mangualde, the parcel burnt days after its Alfrocheiro was picked, and the 2017 its last wine. Borne out, with the detail added.",
+    "The story's claim that Sogrape, by its own account, helped to renew a region dulled by co-operative rule: not found on the Sogrape pages read; the CVR Dão's own page gives the co-operatives' rule of the 1960s and 1970s, which now carries the sentence.",
+    "The house rules: the estate's winemakers and the family that leads Sogrape are never named; nothing volatile, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Part of the must, most of it in some vintages, is moved into new French oak barrels of 225 litres during fermentation, the rest kept in stainless steel; the wine then rests on its fine lees, stirred, for six to eight months before the two are blended and bottled.",
+     "now": "Fermentation begins in stainless steel, and part of the must, most of it in some vintages, is moved partway through into new French oak barrels, mostly of 225 litres and in some years larger, the rest kept in steel; the wine then rests on its fine lees, stirred, for six to eight months before the two are blended and bottled.",
+     "why": "The 2021 and 2023 sheets begin the fermentation in steel and move it midway; Garrafeira Portela and Continente give new barrels of several sizes, up to 2,000 litres.",
+     "sources": [
+      {
+       "title": "Garrafeira Portela: Quinta dos Carvalhais Encruzado 2021",
+       "url": "https://www.garrafeiraportela.pt/products/quinta-dos-carvalhais-vinho-branco-encruzado-2021-0-75",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Winestuff: Quinta dos Carvalhais Encruzado Branco",
+       "url": "https://winestuff.pt/products/quinta-dos-carvalhais-encruzado-branco",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Continente: Quinta dos Carvalhais Encruzado, Dão",
+       "url": "https://www.continente.pt/produto/quinta-dos-carvalhais-encruzado-dao-vinho-branco-2851496.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "Part of the must goes into new 225 litre French barrels during fermentation, which gives the toast;",
+     "now": "Part of the must goes into new French oak barrels during fermentation, which gives the toast;",
+     "why": "To agree with the making: not every barrel is of 225 litres.",
+     "sources": [
+      {
+       "title": "Garrafeira Portela: Quinta dos Carvalhais Encruzado 2021",
+       "url": "https://www.garrafeiraportela.pt/products/quinta-dos-carvalhais-vinho-branco-encruzado-2021-0-75",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Continente: Quinta dos Carvalhais Encruzado, Dão",
+       "url": "https://www.continente.pt/produto/quinta-dos-carvalhais-encruzado-dao-vinho-branco-2851496.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "giving the company an estate of its own on the granite of the plateau and, by its own account, helping to renew a region dulled by decades of co-operative rule.",
+     "now": "giving the company an estate of its own on the granite of the plateau as the Dão, after decades in which the co-operatives ruled its market, began to turn towards estates that made and bottled their own wine.",
+     "why": "The claim was attributed to Sogrape and not found on its pages read; the co-operatives' rule is the CVR Dão's own account, and the turn to estates the region record's and two accounts' of the years after the co-operatives' monopoly.",
+     "sources": [
+      {
+       "title": "CVR Dão: the demarcated region",
+       "url": "https://www.cvrdao.pt/pt/regiao-demarcada/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "IntoWine: Portugal's Dão wine region, history and producers",
+       "url": "https://www.intowine.com/portugals-d%C3%A3o-wine-region-history-producers-recommendations?page=0%2C1",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The forest fires of that same year, 2017, took one of the estate's vineyards, Parcela 45, whose Alfrocheiro became a wine that can never be made again.",
+     "now": "In October of that same year a forest fire reached Mangualde and burnt one of the estate's vineyards, Parcela 45, days after its Alfrocheiro was picked, so its 2017 is a wine that can never be made again.",
+     "why": "Sogrape's note and two merchants' copies give the fire of 15 October 2017 and the harvest picked days before it.",
+     "sources": [
+      {
+       "title": "Sogrape: Quinta dos Carvalhais Parcela 45",
+       "url": "https://sogrape.com/article/quinta-dos-carvalhais-parcela-45-o-melhor-alfrocheiro-de-sempre-num-vinho-irrepet",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Garrafeira Soares: Quinta dos Carvalhais Parcela 45 2017",
+       "url": "https://www.garrafeirasoares.pt/en/portugal/vinhos/red-wine-quinta-carvalhais-parcela-45-2017-75-cl/item_10259.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Liberty Wines: Quinta dos Carvalhais, Dão Encruzado",
+     "now": "Garrafeira Portela: Quinta dos Carvalhais Encruzado 2021",
+     "why": "The sheet that carries the steel start, the move midway and the barrels of several sizes.",
+     "sources": [
+      {
+       "title": "Garrafeira Portela: Quinta dos Carvalhais Encruzado 2021",
+       "url": "https://www.garrafeiraportela.pt/products/quinta-dos-carvalhais-vinho-branco-encruzado-2021-0-75",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Sogrape's first Encruzado of the Dão in 1992 against Roques's first varietal Encruzado of 1998; neither is told.",
+    "Eight months on the lees rests on Liberty Wines and Gota a Gota; most sheets read give about six, so six to eight stands.",
+    "The estate's 1957 and 1988 rest on Sogrape's own pages, a house's own dates, with no second account read."
+   ]
+  },
+  {
+   "key": "casa-de-santar",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The founding and the library, the house's domain blocked: Revista de Vinhos gives the end of the eighteenth century, one guide 1790 and another 1765; the old cellar of the Condes de Santar with wines from 1955 on two accounts; the title of Conde de Santar created in 1904, the family on the estate from the sixteenth century. The house's end of the eighteenth century and the library of 1955 stand; founded stays empty.",
+    "The Vinha dos Amores and the Reserva, on the house's domain: the vineyard named for the village's young couples who met in secret in a pine grove that stood there, a slope of Encruzado and Touriga Nacional; the Reserva sheet gives half Touriga Nacional and a quarter each of Alfrocheiro and Aragonez, part aged in French oak. Borne out.",
+    "The plan's and the region record's early estate bottling: not found by the refuter either; one account calls the house one of the few private wineries to ride out the years of the co-operatives, and a writer's profile calls it the first of the region to use barriques, each on one source. Left out, as the author left it.",
+    "Reserva on the label: the consolidated portaria on traditional mentions gives a wine with its year of harvest, marked qualities and an alcohol at least 0.5 per cent by volume above the legal minimum, as the UK's register of the term does under the portaria of 2004; the Dão's own text was not reached. The label line was reworded to the national rule.",
+    "The law of 18 September 1908 and the decree of 25 May 1910: the CCDR Centro and Decree Law 376/93 by FAOLEX. Borne out.",
+    "The house rules: the winemaker and the family are never named, nothing volatile (the vineyard's hectares met in results are not used), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.classification",
+     "was": "Reserva, a traditional mention under the rules of the Dão",
+     "now": "Reserva, a traditional mention of Portugal's wine law",
+     "why": "The mention is set by Portugal's portaria on traditional mentions, which the Dão applies; the CVR Dão's own clause was not reached.",
+     "sources": [
+      {
+       "title": "Diário da República: the portaria on traditional mentions, consolidated",
+       "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/portaria/2024-898982350",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "GOV.UK: protected food and drink names, Reserva (Portuguese)",
+       "url": "https://gov.uk/protected-food-drink-names/reserva-portuguese",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "A traditional mention; the Dão's rules ask, among other things, 0.5 per cent more alcohol than the minimum.",
+     "now": "A traditional mention for a vintage wine of marked quality, with at least 0.5 per cent more alcohol than the legal minimum.",
+     "why": "The portaria's three conditions: the year of harvest, marked qualities and at least 0.5 per cent by volume above the minimum.",
+     "sources": [
+      {
+       "title": "Diário da República: the portaria on traditional mentions, consolidated",
+       "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/portaria/2024-898982350",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "GOV.UK: protected food and drink names, Reserva (Portuguese)",
+       "url": "https://gov.uk/protected-food-drink-names/reserva-portuguese",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "CVR Dão: internal rules, the traditional mentions",
+     "now": "Diário da República: the portaria on traditional mentions, consolidated",
+     "why": "The refuter's search did not reach the Reserva clause of the CVR's document; the national text carries the rule.",
+     "sources": [
+      {
+       "title": "Diário da República: the portaria on traditional mentions, consolidated",
+       "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/portaria/2024-898982350",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Founded stays empty: the end of the eighteenth century (the house, Revista de Vinhos), 1790 and 1765 in two guides.",
+    "The early estate bottling of the plan and the region record is not borne out; the barriques and the private winery of the co-operative years rest on one source each.",
+    "The Condessa de Santar white was not found; the partnership with Dão Sul of 2006 was not borne out and is not told.",
+    "Whether the Dão's own rules add an ageing to Reserva was not settled; the label line gives only the national rule."
+   ]
+  },
+  {
+   "key": "casa-da-passarella",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The founding, the first bottling and the war, the author's sources blocked: PREM1UM and a second account give the house founded in 1892 at Lagarinhos, Gouveia, and its first recorded bottling a Villa Oliveira of 1893, the brand off the market for decades and taken up again in 2009; Público's Fugas tells of a Jew from Burgundy who took refuge on the estate in the Second World War, nicknamed the fugitive, who worked its musts to start the fermentations, and Wine Disclosures of the manor as a refuge for French Jews in flight. Borne out, with the refugee's origin added.",
+    "Villa Oliveira Touriga Nacional, the author's merchants blocked: a single vineyard of about eighty years at the 2009 harvest, from whose mixed plantings only the Touriga Nacional is picked; native yeasts in concrete vats, about a month on the skins after fermentation, twelve to eighteen months in 225 litre French oak and an unfiltered bottling on the sheets of Garrafeira 5 Estrelas, PREM1UM and Tourinto. Hand picking appears on no sheet read and was cut.",
+    "The sale and the restoring: Grandes Escolhas gives the family that bought it in 2008 and restored the house and the vineyards, DrinksCo 2007. The story's 2007 or 2008 stands.",
+    "The house rules: the owner and the winemaker, met in the results, are never named; the founder, named two ways with no dates, is not named; nothing volatile once the lint's recent vintages was reworded, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "Picked by hand, the Touriga Nacional is fermented and macerated at length, in concrete vats for the later vintages on its merchants' sheets, then aged for one to two years in French oak barrels, much of the wood used, before bottling.",
+     "now": "The Touriga Nacional is fermented with its own yeasts in concrete vats, by the merchants' sheets, and left on its skins for about a month after fermentation, then aged for one to two years in 225 litre French oak barrels, much of the wood used, and bottled unfiltered.",
+     "why": "Hand picking is on no sheet read; the native yeasts, the month after fermentation, the 225 litre barrels and the unfiltered bottling are on three sheets; the later vintages wording was refused by the lint as volatile.",
+     "sources": [
+      {
+       "title": "Garrafeira 5 Estrelas: Villa Oliveira Touriga Nacional 2017",
+       "url": "https://garrafeira5estrelas.com/vinho-do-dao/859-villa-oliveira-touriga-nacional-2017.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "PREM1UM: Villa Oliveira and Casa da Passarella",
+       "url": "https://www.premiumwines.com.br/produtores/villa-oliveira-casa-da-passarella/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Tourinto: Villa Oliveira Touriga Nacional",
+       "url": "https://www.tourinto.pt/en/product/villa-oliveira-touriga-nacional/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "During the Second World War, by the house's account, it sheltered a winemaker who had fled the war.",
+     "now": "During the Second World War, by the house's account and the Portuguese press, it sheltered a refugee from Burgundy who had fled the war, a winemaker as the house tells it.",
+     "why": "Público's Fugas gives the refugee from Burgundy who worked the musts; whether he was a winemaker by trade is the house's word.",
+     "sources": [
+      {
+       "title": "Público Fugas: Casa da Passarella and the historic wines of the Dão",
+       "url": "https://fugas.publico.pt/Vinhos/341822_casa-da-passarella-a-raca-e-elegancia-dos-historicos-vinhos-do-dao",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine Disclosures: Casa da Passarella",
+       "url": "https://www.winedisclosures.com/dao-wines/casa-da-passarella",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Essential Algarve: Once upon a time, there was Casa da Passarella; Cave Lusa: Villa Oliveira Touriga Nacional",
+     "now": "Público Fugas: Casa da Passarella and the historic wines of the Dão; PREM1UM: Villa Oliveira and Casa da Passarella",
+     "why": "The refugee from Burgundy and an independent account of 1893 and the revival of 2009.",
+     "sources": [
+      {
+       "title": "Público Fugas: Casa da Passarella and the historic wines of the Dão",
+       "url": "https://fugas.publico.pt/Vinhos/341822_casa-da-passarella-a-raca-e-elegancia-dos-historicos-vinhos-do-dao",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "PREM1UM: Villa Oliveira and Casa da Passarella",
+       "url": "https://www.premiumwines.com.br/produtores/villa-oliveira-casa-da-passarella/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The sale: 2008 at Grandes Escolhas, 2007 at DrinksCo; the story keeps both.",
+    "The founder: named two ways in two accounts with no dates, so not named.",
+    "The refugee: a Jew from Burgundy by Público, French Jews in flight by a guide; a winemaker by trade only in the house's telling.",
+    "The vineyard's age: about eighty years at the 2009 harvest on one sheet, more than eighty on two, about ninety on one."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Manuel Lopes de Oliveira",
+   "role": "the elder of the family of Quinta dos Roques",
+   "where": "the refuter's results on the house (a writer's profile and a wine encyclopaedia)",
+   "believed": "living or undated",
+   "inPeople": false,
+   "inFragment": "as the family"
+  },
+  {
+   "name": "Luís Lourenço",
+   "role": "the son in law who left teaching to make the wines of Quinta dos Roques",
+   "where": "the same results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the family"
+  },
+  {
+   "name": "Raymond Reynolds",
+   "role": "the founder whose name the UK importer of Quinta dos Roques carries",
+   "where": "the author's source title, now replaced",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all: the source was replaced by the house's own page"
+  },
+  {
+   "name": "Álvaro de Castro",
+   "role": "the civil engineer who inherited Quinta da Pellada in 1980, also printed Álvaro Castro, the library's producer name",
+   "where": "the estate's history page and every merchant",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a civil engineer of the family"
+  },
+  {
+   "name": "Maria Castro",
+   "role": "his daughter, an oenologist at the estates since 2001",
+   "where": "the refuter's results on the history",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Ataíde Semedo",
+   "role": "one of two who have worked with the Pellada estates since 2005",
+   "where": "the same results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Tiago Félix",
+   "role": "the other, an oenologist",
+   "where": "the same results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Dirk Niepoort",
+   "role": "the Douro partner of Doda, named in the library's record p-alvaro-castro",
+   "where": "the refuter's results on Doda",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Rolf Niepoort",
+   "role": "his father, to whom the idea of Doda is credited",
+   "where": "the same results",
+   "believed": "undated",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Pedro Vasconcellos e Souza",
+   "role": "the winemaker of Casa de Santar",
+   "where": "the refuter's results on the house",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Ricardo Cabral",
+   "role": "the owner who bought Casa da Passarella in 2007 or 2008",
+   "where": "the refuter's results on the house (PREM1UM, Grandes Escolhas, DrinksCo)",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as new owners"
+  },
+  {
+   "name": "Paulo Nunes",
+   "role": "the winemaker of Casa da Passarella since 2008",
+   "where": "the same results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  }
+ ],
+ "livingNote": "None of these is named in the fragment's prose, titles or addresses; the read together agent adds those it judges living to people.json (none of the twelve is there today). Álvaro de Castro is inside the library's producer name for Quinta da Pellada, which people.json allows on that record alone; listing him keeps him out of every other. Described, never named, for want of dates in two sources: the founder of Casa da Passarella (named two ways in two accounts) and the refugee of the Second World War. The long dead of Santar met in the results (the first Conde de Santar of 1904) are not used.",
+ "swaps": [],
+ "swapNote": "The author proposed no swap, and the refuter proposes none. Each pick is a real house of the Dão with a real wine it is known by, and each now stands on the house's own pages or two sheets: Roques's Touriga Nacional (its varietal of 1996 by its own page), Pellada's Carrocel (the library's old vine flagship, a parcel of old Touriga Nacional on three sheets), Carvalhais's Encruzado (Sogrape's white of the estate), Santar's Reserva (the house's sheet) and Passarella's Villa Oliveira Touriga Nacional (the line of 1893 revived in 2009). The author's four points for the checker are ruled: no first is claimed for Roques or Carvalhais, agreed; the early estate bottling at Santar and its Condessa white are not borne out, agreed, by the refuter's own search as well; the library's Spain and Portugal is wrong and its Pape a Pellada red, while Doda is borne out as the collaboration, reported below; the source title carrying an importer's name is replaced by the house's own page, which carries the 1996 itself.",
+ "planNotes": [
+  "quinta-dos-roques: answered. The varietal Touriga Nacional from the 1996 vintage is on the house's own page (primary), with the Encruzado of 1998; no first is claimed, since Sogrape claims the Dão's first Encruzado in 1992. The why's barrel fermented Encruzado is loose: the house's sheets give half in barrel. The family is never named.",
+  "quinta-da-pellada: answered. The label is Quinta da Pellada Carrocel, Touriga Nacional alone; Primus and Quinta de Saes are in others; Pape is left out, and the note's Pape without its living partner is loose, since Pape is a Pellada red and Doda the collaboration. The winemaker is never named.",
+  "quinta-dos-carvalhais: answered. The making rests on the house's 2016 sheet as its importer hosts it and the refuter's three sheets of 2021 and 2023; the year 1988 is Sogrape's own; Único is in others.",
+  "casa-de-santar: answered. Founded stays empty; the early estate bottling is not borne out in the author's searches or the refuter's, so the why needs a change; the Reserva's grapes are on the house's sheet in words; the Condessa de Santar white was not found and the Vinha dos Amores Encruzado stands in others.",
+  "casa-da-passarella: answered. The house of 1892 stands on the house and two independent accounts; the vineyard of more than eighty years on two sheets, about eighty at the 2009 harvest on another; those who revived it are never named; the Villa Oliveira Encruzado is in others."
+ ],
+ "codexInTension": [
+  {
+   "record": "WINE_PRODUCERS p-alvaro-castro (country)",
+   "says": "Spain and Portugal",
+   "read": "Both estates, Quinta da Pellada and Quinta de Saes, are at Pinhanços near Seia in the Dão, Portugal, by the estate's own pages and every account read.",
+   "sources": [
+    {
+     "title": "Quinta da Pellada: História",
+     "url": "https://www.quintadapellada.com/historia",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Quinta da Pellada: Terroir",
+     "url": "https://www.quintadapellada.com/terroir",
+     "kind": "primary",
+     "read": "search"
+    },
+    {
+     "title": "Clube de Vinhos Portugueses: Quinta da Pellada",
+     "url": "https://www.clubevinhosportugueses.pt/vinhos/regioes/dao/quinta-da-pellada-a-boa-heranca-de-alvaro-de-castro/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported, not edited: the country should read Portugal."
+  },
+  {
+   "record": "WINE_PRODUCERS p-alvaro-castro (why, and wines[2] Pape)",
+   "says": "Pape and Doda are the Niepoort collaborations; Pape, a Dão field blend, a collaboration with the Douro house.",
+   "read": "Doda, called Dado from the 2000 to the 2004 vintage, is the collaboration, a blend of Douro and Dão wine, its first vintage half from Quinta da Pellada; Pape is a red of Quinta da Pellada alone, and no source read ties it to the Douro house.",
+   "sources": [
+    {
+     "title": "Vinha: Doda, Douro and Dão",
+     "url": "https://vinha.co.uk/wine/red-wine-doda-projectos-niepoort-2012-75cl-douro-e-dao-4640",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Garrafeira Nacional: Doda red 2008",
+     "url": "https://www.garrafeiranacional.com/en/2008-alvaro-de-castro-dirk-niepoort-doda-red.html",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Humble Grape: Quinta de Pellada Pape, Dão",
+     "url": "https://shop.humblegrape.co.uk/products/quinta-de-pellada-pape-2012-dao-portugal",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported, not edited: the why should name Doda alone, and Pape should be a Pellada red."
+  },
+  {
+   "record": "REGIONS dao, the producers line for Casa de Santar (.scripts/regions/fragments) and plan.json's why",
+   "says": "among the first houses to bottle estate Dão",
+   "read": "No source read by the author or the refuter says so; one account calls the house one of the few private wineries to ride out the co-operative years, another the first of the region to use barriques, each on one source.",
+   "sources": [
+    {
+     "title": "IntoWine: Portugal's Dão wine region, history and producers",
+     "url": "https://www.intowine.com/portugals-d%C3%A3o-wine-region-history-producers-recommendations?page=0%2C1",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Revista de Vinhos: Casa de Santar",
+     "url": "https://www.revistadevinhos.pt/beber/casa-de-santar",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ],
+   "note": "Reported, not edited: unconfirmed rather than refuted."
+  }
+ ],
+ "codexNote": "The region record's lines read in the course of the check agree with what was read: the demarcation of 1908 and its seven subregions, Touriga Nacional said to be born in the Dão (the prevailing view on DNA evidence, the Douro also claiming it), and decades of co-operative rule until the estates' revival (the CVR Dão's own account). The Codex's own records were a starting point only and the second source of no fact."
+}
