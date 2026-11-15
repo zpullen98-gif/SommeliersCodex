@@ -1026,7 +1026,7 @@ function mutations() {
     ['the table\'s questions left out of the drill', 'js/codex57.js', 'return v57NotIn(out, r, t).concat(v57Questions(r.slug));', 'return v57NotIn(out, r, t);', 'holds the table\'s three'],
     ['a view climbing to Home', 'js/codex57.js', "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'grapes' }; }", "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'home' }; }", 'grapecompare: Chardonnay and Sauvignon Blanc'],
     ['the two tags swapped in index.html', 'index.html', '<script src="js/data-grapes-table.js?v=2"></script>\n<script src="js/codex57.js?v=1"></script>', '<script src="js/codex57.js?v=1"></script>\n<script src="js/data-grapes-table.js?v=2"></script>', 'index.html loads js/data-grapes-table.js then js/codex57.js'],
-    ['the worker left at codex-v115', 'sw.js', "const CACHE = 'codex-v118';", "const CACHE = 'codex-v115';", 'sw.js is codex-v116 or later'],
+    ['the worker left at codex-v115', 'sw.js', "const CACHE = 'codex-v119';", "const CACHE = 'codex-v115';", 'sw.js is codex-v116 or later'],
     ['a let in the layer', 'js/codex57.js', 'var V57_SLOT = ', 'let V57_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex57.js', "if (typeof v53GrapeShort === 'function') {\n  var _v57GrapeShort", "if (true) {\n  var _v57GrapeShort", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex57.js', "'.wrap .v57-rule{", "'.v57-rule{", 'every selector of the v57-style element'],
