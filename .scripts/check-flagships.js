@@ -14,7 +14,10 @@
  *      WHOLE a built set (wave one's: 51 groups, 255 records, 510 cards and 510 questions with the deal, 43 regions in
  *      16 countries, 206 houses joined to the library and 49 outside it; each batch's gates agent adds its line);
  *      every shipped record through schema.cjs; the data equal to the build of the
- *      fragments byte for byte; every id fl- and eight digits, once, and held by keys.v1.json (frozen or not); fl- the
+ *      fragments byte for byte; every id fl- and eight digits, once, and held by keys.v1.json (frozen or not; frozen,
+ *      every key it holds a pick of the plan and shipped); the build refusing to lose a frozen id (its own test, a
+ *      pick renamed in a copy of the plan); the published sets as published, one line of PUBLISHED a set, a sha256
+ *      over its records and groups in the data and another over its picks' entries of the keys file; fl- the
  *      tab's alone; nobody living of people.json in any string a record ships; the people check's own test
  *   3. the caps, read again from schema.cjs's CAPS on the shipped records
  *   4. the pages: every house drawn clean (cleanProblem, the house voice, no dash, no undefined), At the table first
@@ -51,7 +54,7 @@
  *      (and V58_WORDS in the strictest voice); this gate dash free
  *
  *   node .scripts/check-flagships.js [jsDir] [--partial]               every check above
- *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 39 faults in a scratch copy (29 with
+ *   node .scripts/check-flagships.js [jsDir] [--partial] --mutations   then seeds 43 faults in a scratch copy (29 with
  *                                                                       --partial, where no count, no grape, no
  *                                                                       house and no built set is pinned; a group of
  *                                                                       an unbuilt batch is not run once every batch
@@ -68,8 +71,9 @@
  * jsDir defaults to this repo's js/; the site's check-wings may pass the wing's codex/js. Needs the shared engine
  * (OOT_SHARED, else ../worldtable/static/shared) and the pack (OOT_HOUSE_PACK, else the pack beside the engine). The
  * plan, the fragments, the schema and the gates the chain rule reads are this checkout's (.scripts/flagships/;
- * FLAGSHIPS_KEYS names another keys file, FLAGSHIPS_PLAN another plan, FLAGSHIPS_GATES another folder of gates: the
- * mutations' scratch copies use them). A tree with no codex58.js is
+ * FLAGSHIPS_KEYS names another keys file, FLAGSHIPS_PLAN another plan, FLAGSHIPS_GATES another folder of gates,
+ * FLAGSHIPS_BUILD another build file and FLAGSHIPS_FRAGMENTS another folder of fragments: the mutations' scratch
+ * copies use them). A tree with no codex58.js is
  * SKIPPED. Exits non-zero if any check fails. The last line is the verdict.
  */
 'use strict';
@@ -101,10 +105,12 @@ for (const f of [ENGINE, UI_FILE, PACK_FILE]) {
 }
 const CH = require(path.join(__dirname, 'cms', 'chain.cjs'));
 const S = require(path.join(__dirname, 'flagships', 'schema.cjs'));
-const BF = require(path.join(__dirname, 'flagships', 'build-flagships.cjs'));
+const BUILD_FILE = path.resolve(process.env.FLAGSHIPS_BUILD || path.join(__dirname, 'flagships', 'build-flagships.cjs'));
+const BF = require(BUILD_FILE);
 const GATES = path.resolve(process.env.FLAGSHIPS_GATES || __dirname);
 const KEYS_FILE = path.resolve(process.env.FLAGSHIPS_KEYS || path.join(S.DIR, 'keys.v1.json'));
 const PLAN_FILE = path.resolve(process.env.FLAGSHIPS_PLAN || path.join(S.DIR, 'plan.json'));
+const FRAG_DIR = path.resolve(process.env.FLAGSHIPS_FRAGMENTS || path.join(S.DIR, 'fragments'));
 const PLAN = S.loadPlan(PLAN_FILE);
 /* the built set: the batches plan.built names, the whole build's scope (wave one first, then A, B and C in turn) */
 const BUILT = S.builtOf(PLAN);
@@ -127,6 +133,34 @@ const WHOLE = {
   'one': { groups: 51, records: 255, cards: 510, questions: 510, deal: [128, 128, 127, 127], regions: 43, countries: 16, joined: 206, producers: 201, wines: 5, outside: 49 },
   'one+A': { groups: 83, records: 415, cards: 830, questions: 830, deal: [208, 208, 207, 207], regions: 75, countries: 16, joined: 263, producers: 258, wines: 5, outside: 152 }
 };
+/* the sets as they were published, byte for byte, one line a batch: a sha256 over its records' lines in the data
+   file (its picks in the plan's order) and its groups' lines, and a sha256 over its picks' entries of keys.v1.json
+   (each JSON.stringify([key, entry]), one a line). WHOLE counts a set; this holds its words and its ids, so a later
+   batch's writing build can never carry a change to a published record, and a frozen id can never leave the keys
+   file unseen (a pick renamed or swapped under a new key, a key dropped by hand). Wave one was published at master
+   6f65960 and is frozen: wave two never changes it, save by the integrator where a fact is found wrong, who moves its
+   line in that commit and reports it. The publisher of each batch adds its line when the batch ships. */
+const PUBLISHED = {
+  one: { records: '38f1d333523e4262b1a24a73d11f0e460e26e88d978631cef2b37bb996d93ac8', keys: '499df04baed82ab6d1a1645e84c210bf9c876fba178cc95d621377b477c0e67a' }
+};
+const sha256 = (s) => require('crypto').createHash('sha256').update(String(s), 'utf8').digest('hex');
+/* a batch's two prints, from the data file's text and the keys as read; a line missing is named in the text hashed,
+   so a set not whole in the data never matches */
+function setPrints(text, keys, batch) {
+  const rec = {}, grp = {};
+  String(text || '').split('\n').forEach((l) => {
+    let m = /^"(fl-[0-9a-z]{8})": (\{.*\}),?$/.exec(l);
+    if (m) { try { rec[JSON.parse(m[2]).key] = l.replace(/,$/, ''); } catch (e) { } return; }
+    m = /^(\{"key":.*\}),?$/.exec(l);
+    if (m) { try { grp[JSON.parse(m[1]).key] = l.replace(/,$/, ''); } catch (e) { } }
+  });
+  const picks = ROSTER.filter((x) => x.batch === batch);
+  const groups = PLAN.groups.filter((g) => S.batchOf(g) === batch);
+  const missing = picks.filter((x) => !rec[x.pick.key]).map((x) => x.pick.key).concat(groups.filter((g) => !grp[g.key]).map((g) => g.key));
+  const records = picks.map((x) => rec[x.pick.key] || ('missing ' + x.pick.key)).concat(groups.map((g) => grp[g.key] || ('missing ' + g.key))).join('\n');
+  const ks = picks.map((x) => JSON.stringify([x.pick.key, (keys && keys.keys && keys.keys[x.pick.key]) || null])).join('\n');
+  return { records: sha256(records), keys: sha256(ks), picks: picks.length, missing };
+}
 
 let passed = 0, failed = 0;
 function check(what, ok, detail) {
@@ -392,7 +426,7 @@ function sameHouse(a, b) {
 }
 /* the build of the fragments the data was made from: the built set, or with --partial the groups the data holds */
 function buildNow(groups) {
-  let dir = path.join(S.DIR, 'fragments'), tmp = '';
+  let dir = FRAG_DIR, tmp = '';
   if (PARTIAL) {
     tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'flagships-frag-'));
     groups.forEach((k) => { const f = path.join(dir, k + '.json'); if (fs.existsSync(f)) fs.copyFileSync(f, path.join(tmp, k + '.json')); });
@@ -401,12 +435,14 @@ function buildNow(groups) {
   let b;
   try { b = BF.build({ jsDir: JS, out: path.join(JS, 'data-flagships.js'), fragments: dir, keys: KEYS_FILE, partial: PARTIAL, planFile: PLAN_FILE }, BF.readKeys(KEYS_FILE)); }
   catch (e) { b = { problems: [e.message], text: '' }; }
-  if (tmp) {
-    const shownDir = path.relative(S.ROOT, tmp);
-    const as = (!shownDir.startsWith('..') && !path.isAbsolute(shownDir) ? shownDir : tmp).split(path.sep).join('/');
+  /* the header names the folder built from: a scratch folder (the partial copy, or FLAGSHIPS_FRAGMENTS) is shown as
+     the checkout's own, as the writing build names it */
+  if (dir !== path.join(S.DIR, 'fragments')) {
+    const shownDir = path.relative(S.ROOT, dir);
+    const as = (!shownDir.startsWith('..') && !path.isAbsolute(shownDir) ? shownDir : dir).split(path.sep).join('/');
     b.text = String(b.text || '').split(as).join('.scripts/flagships/fragments');
-    fs.rmSync(tmp, { recursive: true, force: true });
   }
+  if (tmp) fs.rmSync(tmp, { recursive: true, force: true });
   return b;
 }
 
@@ -516,7 +552,42 @@ async function main() {
       if (KEYS.frozen ? !(k.id === got.id && k.cards.every((id) => got.cards.indexOf(id) >= 0) && k.questions.every((id) => got.questions.indexOf(id) >= 0)) : JSON.stringify(k) !== JSON.stringify(got)) idsBad.push(r.key + ': ' + JSON.stringify(got) + ' against ' + JSON.stringify(k));
     });
     if (!KEYS.frozen && Object.keys(KEYS.keys).sort().join() !== REC.map((r) => r.key).sort().join()) idsBad.push('keys.v1.json holds ' + Object.keys(KEYS.keys).length + ' records, the data ' + REC.length);
-    check('ids frozen against keys.v1.json (' + (KEYS.frozen ? 'frozen: every kept id still minted' : 'not yet frozen: the file holds exactly the ids the data ships') + '), each fl- and eight digits, once among ' + n, idsBad.length === 0 && n === REC.length * 5, few(idsBad, 4));
+    /* frozen: every key the file holds is a pick of the plan, and (the built set whole) a record the data ships */
+    if (KEYS.frozen) Object.keys(KEYS.keys).forEach((k) => {
+      if (!PICK[k]) idsBad.push('the frozen key ' + k + ' (' + (KEYS.keys[k] || {}).id + ') is no pick of plan.json, so its ids are shipped no longer');
+      else if (!PARTIAL && !REC.some((r) => r.key === k)) idsBad.push('the frozen key ' + k + ' (' + (KEYS.keys[k] || {}).id + ') is a pick the data does not ship');
+    });
+    check('ids frozen against keys.v1.json (' + (KEYS.frozen ? 'frozen: every kept id still minted, every frozen key a pick of the plan' + (PARTIAL ? '' : ' and shipped') : 'not yet frozen: the file holds exactly the ids the data ships') + '), each fl- and eight digits, once among ' + n, idsBad.length === 0 && n === REC.length * 5, few(idsBad, 4));
+    /* the build's own test: a frozen key the plan no longer holds (a pick renamed in a copy of the plan, the keys as
+       the build would mint them for it) is refused by the build's nextKeys, never dropped from the file */
+    const lostBad = [];
+    const first = BUILT_ROSTER[0];
+    if (!first) lostBad.push('no pick of the built set to rename');
+    else {
+      const have = { about: KEYS.about, frozen: true, keys: JSON.parse(JSON.stringify(KEYS.keys)) };
+      if (!have.keys[first.pick.key]) have.keys[first.pick.key] = { id: BF.recordId(first.pick.key), cards: [], questions: [] };
+      const plan2 = JSON.parse(JSON.stringify(PLAN));
+      const g2 = plan2.groups.find((g) => g.key === first.group.key);
+      const renamed = first.pick.key + '-renamed';
+      g2.picks.find((p) => p.key === first.pick.key).key = renamed;
+      const built2 = {};
+      Object.keys(have.keys).forEach((k) => { built2[k === first.pick.key ? renamed : k] = k === first.pick.key ? { id: BF.recordId(renamed), cards: [], questions: [] } : have.keys[k]; });
+      let got2 = null;
+      try { got2 = BF.nextKeys(have, built2, plan2, false); } catch (e) { lostBad.push('nextKeys threw: ' + e.message); }
+      if (got2 && !got2.problems.some((p) => p.indexOf(first.pick.key + ' (' + have.keys[first.pick.key].id + ')') >= 0)) lostBad.push('the build took ' + first.pick.key + ' renamed ' + renamed + ' with no problem named, and its keys file would hold ' + (got2.file.keys[first.pick.key] ? 'the old key still' : 'no ' + first.pick.key + ' (' + have.keys[first.pick.key].id + ') at all'));
+    }
+    check('the build refuses to lose a frozen id: ' + (first ? first.pick.key : 'a pick') + ' renamed in a copy of the plan is refused by its nextKeys, the frozen key and its id named, never left out of keys.v1.json', lostBad.length === 0, lostBad.join(' | '));
+    /* the published sets byte for byte: each line of PUBLISHED a batch built, its records and groups as the data holds
+       them (when the data holds the set whole: with --partial a set not whole is a note) and its picks' keys */
+    const pubBad = [];
+    Object.keys(PUBLISHED).forEach((b) => {
+      if (BUILT.indexOf(b) < 0) { pubBad.push('batch ' + b + ' is published, and plan.built (' + BUILT_KEY + ') does not name it'); return; }
+      const pr = setPrints(TEXT, KEYS, b);
+      if (pr.keys !== PUBLISHED[b].keys) pubBad.push('batch ' + b + ': its ' + pr.picks + ' picks\' entries of keys.v1.json are not as published (sha256 ' + pr.keys.slice(0, 12) + ' for ' + PUBLISHED[b].keys.slice(0, 12) + '): a frozen key renamed, dropped or edited');
+      if (pr.missing.length && PARTIAL) note('batch ' + b + ' is not whole in this partial data (' + pr.missing.length + ' missing), so its records are not held to their published print');
+      else if (pr.records !== PUBLISHED[b].records) pubBad.push('batch ' + b + ': its records and groups are not as published (sha256 ' + pr.records.slice(0, 12) + ' for ' + PUBLISHED[b].records.slice(0, 12) + (pr.missing.length ? '; missing ' + few(pr.missing, 3) : '') + '): only the integrator changes a published record, moving its line here and reporting it');
+    });
+    check('the published sets as published (' + Object.keys(PUBLISHED).map((b) => b === 'one' ? 'wave one' : 'batch ' + b).join(', ') + '): their records and groups byte for byte in the data and their picks\' entries of keys.v1.json, each a sha256 pinned here', pubBad.length === 0, pubBad.join(' | '));
     const pre = BF.prefixProblems(JS, path.join(JS, 'data-flagships.js'));
     check('fl- is the tab\'s alone: no other file under js/ mints or names it (codex21\'s keyOwned guard the one allowed)', pre.length === 0, few(pre, 3));
     const living = [];
@@ -1023,6 +1094,54 @@ function builtGroupMissing(dir) {
   fs.writeFileSync(file, gone.join('\n'));
   return '';
 }
+/* the build with its refusal of a lost frozen key taken out: a copy of the build file in the scratch folder
+   (FLAGSHIPS_BUILD), the folder it reads its neighbours from named in full */
+function buildLosesKeys(dir, env) {
+  const src = fs.readFileSync(BUILD_FILE, 'utf8');
+  const from = 'const problems = frozenLost(have, plan);';
+  if (src.indexOf(from) < 0) return 'found nothing to change in the build';
+  const file = path.join(dir, 'build-flagships.cjs');
+  fs.writeFileSync(file, src.replace(from, 'const problems = [];').split('__dirname').join(JSON.stringify(path.dirname(BUILD_FILE))));
+  env.FLAGSHIPS_BUILD = file;
+  return '';
+}
+/* a copy of the keys file with one change (FLAGSHIPS_KEYS) */
+function keysWith(change) {
+  return (dir, env) => {
+    const k = JSON.parse(fs.readFileSync(KEYS_FILE, 'utf8'));
+    if (k.frozen !== true) return 'the keys file is not frozen';
+    const why = change(k);
+    if (why) return why;
+    fs.writeFileSync(path.join(dir, 'keys.json'), JSON.stringify(k));
+    env.FLAGSHIPS_KEYS = path.join(dir, 'keys.json');
+    return '';
+  };
+}
+/* a published record changed as a later batch's writing build would carry it: the founding year of wave one's first
+   house outside the library moved in a copy of its fragment and the data built again from the copy
+   (FLAGSHIPS_FRAGMENTS), so the data is still the build, every id still frozen, and only the published print tells */
+function publishedRebuilt(dir, env) {
+  const D0 = shippedData();
+  const x = ROSTER.find((p) => p.batch === 'one' && D0.r[BF.recordId(p.pick.key)] && !p.pick.producerId && /^\d{4}$/.test(D0.r[BF.recordId(p.pick.key)].founded));
+  if (!x) return 'no house of wave one outside the library with a founding year';
+  const frag = path.join(dir, 'fragments');
+  copyTree(FRAG_DIR, frag);
+  const f = path.join(frag, x.group.key + '.json');
+  const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+  const rec = (j.records || []).find((r) => r.key === x.pick.key);
+  if (!rec || !/^\d{4}$/.test(rec.founded)) return 'the fragment of ' + x.group.key + ' holds no founding year for ' + x.pick.key;
+  rec.founded = String(Number(rec.founded) - 1);
+  fs.writeFileSync(f, JSON.stringify(j));
+  let b;
+  try { b = BF.build({ jsDir: path.join(dir, 'js'), out: path.join(dir, 'js', 'data-flagships.js'), fragments: frag, keys: KEYS_FILE, partial: false, planFile: PLAN_FILE }, BF.readKeys(KEYS_FILE)); }
+  catch (e) { return 'the build of the changed fragment threw: ' + e.message; }
+  if (b.problems.length) return 'the build of the changed fragment is unsound: ' + b.problems.slice(0, 2).join(' | ');
+  const shownDir = path.relative(S.ROOT, frag);
+  const as = (!shownDir.startsWith('..') && !path.isAbsolute(shownDir) ? shownDir : frag).split(path.sep).join('/');
+  fs.writeFileSync(path.join(dir, 'js', 'data-flagships.js'), String(b.text).split(as).join('.scripts/flagships/fragments'));
+  env.FLAGSHIPS_FRAGMENTS = frag;
+  return '';
+}
 /* a copy of a tree with every link followed: a scratch tree may link its files to a checkout, and a mutation written
    through a link would land in that checkout (fs.cpSync keeps links even when told to follow them) */
 function copyTree(from, to) {
@@ -1083,7 +1202,13 @@ function mutations() {
     /* the built set: a group of a batch not built shipped, a group of the built set left out, its pin wrong */
     ['a group of an unbuilt batch shipped', 'prep', unbuiltShipped, null, 'shipped whole: every group of its batches'],
     ['a group of the built set left out', 'prep', builtGroupMissing, null, 'shipped whole: every group of its batches'],
-    ['the WHOLE line of the built set wrong', 'self', (src) => src.replace(pinLine, (m, a, n) => a + (Number(n) + 1)), null, 'the counts pinned exact']
+    ['the WHOLE line of the built set wrong', 'self', (src) => src.replace(pinLine, (m, a, n) => a + (Number(n) + 1)), null, 'the counts pinned exact'],
+    /* the frozen ids and the published sets: the build letting a frozen key go, a frozen key the plan never held,
+       a published card id gone from the keys file, a published record changed through its fragment and the build */
+    ['the build left to lose a frozen id', 'prep', buildLosesKeys, null, 'the build refuses to lose a frozen id'],
+    ['a frozen key that is no pick of the plan', 'prep', keysWith((k) => { k.keys['a-house-the-plan-never-held'] = { id: BF.recordId('a-house-the-plan-never-held'), cards: [], questions: [] }; return ''; }), null, 'ids frozen against keys.v1.json'],
+    ['a published card id dropped from the keys file', 'prep', keysWith((k) => { const x = ROSTER.find((p) => p.batch === 'one'); const e = x && k.keys[x.pick.key]; if (!e || !Array.isArray(e.cards) || !e.cards.length) return 'no card id of wave one to drop'; e.cards = e.cards.slice(1); return ''; }), null, 'the published sets as published'],
+    ['a published record changed through its fragment and the build', 'prep', publishedRebuilt, null, 'the published sets as published']
   ]);
   const repoRoot = path.join(JS, '..');
   let held = 0;

@@ -41,7 +41,8 @@
    in the Codex mints with (--plan and every writing build scan js/: the one literal allowed is codex21's keyOwned
    guard, which already keeps fl- keys out of a level's progress). While keys.v1.json says frozen: false it follows
    the build. Once the integrator has run --freeze, a build may add ids and may never lose one: an id is a learner's
-   saved record, and a reworded front or stem is a new card or a new question.
+   saved record, and a reworded front or stem is a new card or a new question; a frozen key the plan no longer holds
+   (a pick renamed, or swapped under a new key) refuses the build rather than leave the file.
 
    The deal. Authors key the answer where they like and the engine never shuffles, so the build deals the shipped
    copies as build-grapes.cjs does: the answer positions round robin over a record's two questions, the start carried
@@ -284,9 +285,17 @@ function build(opts, have) {
   return { problems, notes, missing, skipped, unchecked, lintedOnly, plan, text, keys: keyIds, stats, records, groups };
 }
 
-/* What keys.v1.json should hold after this build, and what a frozen file forbids. */
+/* What keys.v1.json should hold after this build, and what a frozen file forbids. A frozen key the plan no longer
+   holds is refused, never dropped: the keys below are read from the plan's roster, so without this a pick renamed
+   (or swapped under a new key) after the freeze would leave its record's id, its cards and its questions out of
+   the file with no problem named, and every learner's grades of that house orphaned. */
+function frozenLost(have, plan) {
+  if (!have || !have.frozen) return [];
+  const picks = new Set(S.roster(plan).map((x) => x.pick.key));
+  return Object.keys(have.keys || {}).filter((k) => !picks.has(k)).map((k) => 'keys.v1.json: the frozen key ' + k + ' (' + ((have.keys[k] || {}).id || 'no id') + ') is no pick of plan.json, so its record\'s id and its cards and questions would be lost: a pick\'s key seeds its frozen id, so a swap or a rename keeps the key (restore it in plan.json)');
+}
 function nextKeys(have, built, plan, freeze) {
-  const problems = [];
+  const problems = frozenLost(have, plan);
   const keys = {};
   S.roster(plan).forEach(({ pick }) => {
     const b = built[pick.key];
@@ -334,7 +343,7 @@ function fileBatches(text) {
   return meta && Array.isArray(meta.batches) ? meta.batches : (meta ? ['one'] : null);
 }
 
-module.exports = { build, ship, deal, mint, recordId, itemId, nextKeys, readKeys, keysText, prefixProblems, provePlan, header, summary, shippedBatches, metaBatches, fileBatches, PARTIAL_MARK, KEYS_ABOUT, PREFIX_ALLOWED };
+module.exports = { build, ship, deal, mint, recordId, itemId, nextKeys, frozenLost, readKeys, keysText, prefixProblems, provePlan, header, summary, shippedBatches, metaBatches, fileBatches, PARTIAL_MARK, KEYS_ABOUT, PREFIX_ALLOWED };
 
 if (require.main === module) {
   let opts;
