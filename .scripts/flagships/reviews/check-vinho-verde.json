@@ -1,0 +1,896 @@
+{
+ "group": "vinho-verde",
+ "chunk": "w9",
+ "batch": "A",
+ "date": "2026-11-15",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 24,
+  "perRecord": {
+   "soalheiro": 4,
+   "palacio-da-brejoeira": 5,
+   "anselmo-mendes": 5,
+   "aveleda": 4,
+   "quinta-do-ameal": 3,
+   "shared": 3
+  },
+  "note": "Twenty four searches of a share of twenty eight, none of them the author's, four left unspent. The three shared searches went to the orders that drew and renamed the sub-region (Portaria 28/2001 on the open web, then Portaria 291/2009 restricted to the Diário da República, the IVV and the CVRVV) and to the Monção co-operative's first bottling, for the plan's why and the region's line on the Brejoeira. The houses' own domains were searched by restriction three times (soalheiro.com, the Aveleda and Casal Garcia domains twice), each read as primary through its summary; the rest went to the open web with the author's sources blocked (the houses' domains, Palm Bay, Skurnik, VinoVoss, Portugal Vineyards, the Portuguese Wikipedia, the DGPC, Esporão, Wine Industry Advisor, Harpers) so that an independent account could be heard. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the orders and their years, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the governing texts (the Diário da República's orders of 2001 and 2009, the CVRVV's press kit), then to independent accounts of each house's dates and people, then to merchants' sheets of each wine for the blend, the months and the vessels, with the author's sources blocked.",
+  "Where a fact rested on the Codex alone (Soalheiro's added carbon dioxide) or on no source the refuter could find (the royal household, the slowing by the plan, the visitors since 2010, the estate given over to one grape), it was taken out; where accounts disagree and the record tells the house's version, the tension is named (the Brejoeira's companion) or left open."
+ ],
+ "records": [
+  {
+   "key": "soalheiro",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The founding, the open web with the house's domain and Palm Bay blocked: Thorman Hunt and Decanter's vertical give the founder planting Melgaço's first continuous Alvarinho vineyard in 1974 on a family plot named Soalheiro for its sun, and the brand launched in 1982; Decanter calls him the local tax collector and a self taught grower, and Monção e Melgaço's fourth producer with that launch. Borne out: the 1974 vineyard, the 1982 brand, the finance office, the name of the plot. The garage is on the house's page and Different Drop only, told as the house's account.",
+    "The making and the service, the house and Palm Bay blocked: Holy Wines gives the must clarified at a low temperature between pressing and fermentation, fermentation in stainless steel and maturing on fine lees before bottling; Different Drop gives steel at a low temperature, fine lees, no oak, no skin contact and no malolactic. Rasch Vin gives 8 to 10 degrees Celsius, Holy Wines 8. Borne out, save the carbon dioxide.",
+    "The carbon dioxide, twice: once on soalheiro.com (the Granit, 9%, Revirado and other pages, which say nothing of added gas) and once on the open web (Vivino, Wine Spectator's still white for Primeiras Vinhas, Vinum Lector's dry white). No source read says whether the Classic is given carbon dioxide or not; the claim rested on the library's style line alone and is taken out.",
+    "Granit, on the house's page: small vineyards on granite at around 400 metres in Monção e Melgaço, fermented in stainless steel at 22 degrees Celsius, warmer than usual; the house's 2022 harvest page calls the 2015 Granit its first bet on altitude. Borne out.",
+    "Primeiras Vinhas: Different Drop and Garrafeira Nacional give it from the original plot of 1974. Borne out.",
+    "The label: K&L Wines notes that the front label names Monção e Melgaço rather than Vinho Verde, and the house's Granit page gives Monção and Melgaço, Vinho Verde DOC; the label term was changed to the sub-region the bottle shows.",
+    "The house rules: nobody living named (the founder, his wife and their children are described; the founder's name met in Thorman Hunt and Decanter is not used), no price, no score (Decanter's medals and Wine Spectator's listing are not used), nothing volatile, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "After pressing, the must is clarified at a low temperature, then fermented in stainless steel tanks. The wine matures on its fine lees until bottling, without oak, and no carbon dioxide is added, so it carries none of the prickle of a light Vinho Verde.",
+     "now": "After pressing, the must is clarified at a low temperature, then fermented cool in stainless steel tanks. The wine matures on its fine lees until bottling and sees no oak.",
+     "why": "No source read says no carbon dioxide is added; the library's no added spritz is a starting point only. The cool steel fermentation, the fine lees and the absence of oak are in two sheets.",
+     "sources": [
+      {
+       "title": "Holy Wines: Soalheiro Alvarinho Clássico",
+       "url": "https://www.holywines.com.mt/product/soalheiro-alvarinho-classico/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Different Drop: 2024 Soalheiro Classic Alvarinho",
+       "url": "https://www.differentdrop.com/products/2024-soalheiro-classic-alvarinho-vinho-verde",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1]",
+     "was": {
+      "term": "Vinho Verde",
+      "means": "The DOC of Portugal's far north west; verde means young, not green, and the wine may be red or rosé too."
+     },
+     "now": {
+      "term": "Monção e Melgaço",
+      "means": "The sub-region of DOC Vinho Verde on the Minho, Alvarinho's home, which the bottle names beside the DOC."
+     },
+     "why": "The bottle's front label names the sub-region, Monção e Melgaço, a sub-region of DOC Vinho Verde by the orders of 2001 and 2009; a guest meets that word first.",
+     "sources": [
+      {
+       "title": "K&L Wines: 2019 Soalheiro Alvarinho Monção e Melgaço",
+       "url": "https://www.klwines.com/products/details/1474970?i=1474970",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Soalheiro: Soalheiro Granit",
+       "url": "https://soalheiro.com/en/pages/soalheiro-granit-alvarinho",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Diário da República: Portaria 291/2009 of 23 March 2009",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2009-605551",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "Soalheiro Alvarinho is the wine a Melgaço family first bottled in its garage in 1982, by its own account the first Alvarinho brand of the municipality. Ripe peach and orange blossom over a salty edge, it is Vinho Verde with weight and no prickle.",
+     "now": "Soalheiro Alvarinho is the wine a Melgaço family first bottled in its garage in 1982, by its own account the first Alvarinho brand of the municipality. Ripe peach and orange blossom over a salty edge, it is Alvarinho of Monção e Melgaço with weight and length.",
+     "why": "The prickle claim rested on the unsourced carbon dioxide; weight and length are the library's and the importers' words.",
+     "sources": [
+      {
+       "title": "Decanter: Vinho Verde vertical, aged Alvarinhos from Quinta de Soalheiro",
+       "url": "https://www.decanter.com/premium/vinho-verde-vertical-aged-alvarinhos-from-quinta-de-soalheiro-440524/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Holy Wines: Soalheiro Alvarinho Clássico",
+       "url": "https://www.holywines.com.mt/product/soalheiro-alvarinho-classico/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1974 a Melgaço family planted a vineyard of Alvarinho near the town, by its own account the first continuous vineyard of the grape in the municipality. The founder, who worked in the local finance office while his wife taught at the primary school, planted it with his parents, and following the local custom of naming land the plot was called Soalheiro, a place that takes the sun. In 1982, again by the house's account, he made and bottled the first wine in the family garage, and Soalheiro became the first Alvarinho brand of Melgaço. The vineyard of 1974 gives the house its Primeiras Vinhas. The next generation of the family, an oenologist among them, later joined the house, which also draws on a circle of local growing families beside its own vines. The range widened to wines such as Granit, from high granite plots, while the plain Soalheiro Alvarinho, made in steel and kept on its fine lees, remained its core. For a sommelier it is the plain lesson in what Melgaço gives Alvarinho: ripeness, weight and length from a sheltered valley, without the prickle of a light Vinho Verde.",
+     "now": "In 1974 a Melgaço family planted a vineyard of Alvarinho near the town, by its own account the first continuous vineyard of the grape in the municipality. The founder, who worked in the local finance office while his wife taught at the primary school, planted it with his parents, and following the local custom of naming land the plot was called Soalheiro, a place that takes the sun. In 1982, again by the house's account, he made and bottled the first wine in the family garage, and Soalheiro became the first Alvarinho brand of Melgaço. The vineyard of 1974 gives the house its Primeiras Vinhas. The next generation of the family, an oenologist among them, later joined the house, which also draws on a circle of local growing families beside its own vines. The range widened to wines such as Granit, from high granite plots, while the plain Soalheiro Alvarinho, made in steel and kept on its fine lees, remained its core. For a sommelier it is the plain lesson in what Melgaço gives Alvarinho: ripeness, weight and length from a sheltered valley, a world away from a light, blended Vinho Verde.",
+     "why": "The closing contrast no longer rests on the unsourced absence of added carbon dioxide.",
+     "sources": [
+      {
+       "title": "Decanter: Vinho Verde vertical, aged Alvarinhos from Quinta de Soalheiro",
+       "url": "https://www.decanter.com/premium/vinho-verde-vertical-aged-alvarinhos-from-quinta-de-soalheiro-440524/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[0]",
+     "was": "Soalheiro Alvarinho has no carbon dioxide added: the prickle of a light, blended Vinho Verde is no part of its style.",
+     "now": "The label's Monção e Melgaço is a sub-region of DOC Vinho Verde, not an appellation of its own.",
+     "why": "The no carbon dioxide trap was unsourced; the sub-region on the label is a confusion a candidate makes, and the orders give it as a sub-region of the DOC.",
+     "sources": [
+      {
+       "title": "Diário da República: Portaria 28/2001 of 16 January 2001",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/28-2001-338021",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Diário da República: Portaria 291/2009 of 23 March 2009",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2009-605551",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "K&L Wines: 2019 Soalheiro Alvarinho Monção e Melgaço",
+       "url": "https://www.klwines.com/products/details/1474970?i=1474970",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0]",
+     "was": {
+      "q": "A guest who knows Vinho Verde as light and prickly is surprised by the weight of Soalheiro Alvarinho. Which explanation fits?",
+      "opts": [
+       "Ripe Alvarinho from the sheltered Melgaço valley",
+       "A long ageing in new French oak barrels",
+       "A blend of Loureiro and Arinto picked late",
+       "Carbon dioxide added at bottling"
+      ],
+      "a": 0,
+      "exp": "Melgaço lies in the warm, sheltered lee of the hills and ripens Alvarinho fully; the wine is made in steel on its fine lees, with no new oak and no added carbon dioxide.",
+      "tag": "wine"
+     },
+     "now": {
+      "q": "A guest who knows Vinho Verde as light and prickly is surprised by the weight of Soalheiro Alvarinho. Which explanation fits?",
+      "opts": [
+       "Ripe Alvarinho from the sheltered Melgaço valley",
+       "A long ageing in new French oak barrels",
+       "A blend of Loureiro and Arinto picked late",
+       "Grapes from the cool, rainy coast"
+      ],
+      "a": 0,
+      "exp": "Melgaço lies inland in the warm, sheltered lee of the hills and ripens Alvarinho fully, where the coast is cooler and wetter; the wine is made in steel on its fine lees, with no oak.",
+      "tag": "wine"
+     },
+     "why": "A distractor must be wrong, and Carbon dioxide added at bottling could not be shown wrong; the coast is cooler and wetter than inland Melgaço by the CVRVV's account of the sub-region and the region record.",
+     "sources": [
+      {
+       "title": "CVRVV: Monção e Melgaço press kit, the origin of Alvarinho",
+       "url": "https://www.vinhoverde.pt/fotos/documentacao/moncyayo_e_melgacyo_press_kit_pt_236729489686e91c2567d4.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Holy Wines: Soalheiro Alvarinho Clássico",
+       "url": "https://www.holywines.com.mt/product/soalheiro-alvarinho-classico/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": {
+      "title": "Palm Bay International: Soalheiro, a family's Alvarinho for the ages",
+      "url": "https://www.palmbay.com/pbi-journal/soalheiro-a-fearless-familys-alvarinho-for-the-ages/",
+      "kind": "secondary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Decanter: Vinho Verde vertical, aged Alvarinhos from Quinta de Soalheiro",
+      "url": "https://www.decanter.com/premium/vinho-verde-vertical-aged-alvarinhos-from-quinta-de-soalheiro-440524/",
+      "kind": "secondary",
+      "read": "search"
+     },
+     "why": "Palm Bay is the house's importer; Decanter's vertical is an independent account of 1974, 1982 and the founder's work.",
+     "sources": [
+      {
+       "title": "Decanter: Vinho Verde vertical, aged Alvarinhos from Quinta de Soalheiro",
+       "url": "https://www.decanter.com/premium/vinho-verde-vertical-aged-alvarinhos-from-quinta-de-soalheiro-440524/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Whether carbon dioxide is added to Soalheiro Alvarinho: the library's style line says no added spritz and no source read says either way; restore the claim only from the house's own sheet.",
+    "The first Alvarinho brand of Melgaço stays the house's claim, hedged; Decanter calls the founder the sub-region's fourth producer in 1982, which agrees for the municipality, not for the sub-region.",
+    "The garage of 1982 and the wife's teaching rest on the house's story page, with Different Drop for the garage; told as the house's account."
+   ]
+  },
+  {
+   "key": "palacio-da-brejoeira",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The palace, the house's domain, both Wikipedias' Portuguese page and the DGPC blocked: the DGLAB's archive of Viana do Castelo gives the building begun about 1806 by Luís Pereira Velho de Moscoso, finished about 1834, and the national monument by the decree of 16 June 1910, published on 23 June; the English Wikipedia gives 1805, National Geographic Portugal the last decade of the eighteenth century and a plan of four façades round a closed court with four towers that was never finished. Borne out: around the turn of the century, about 1834, the decree. Not borne out: a nobleman of the royal household (one account says he was not of the high nobility and asked leave of the Prince Regent for a third tower) and the slowing by the plan's scale.",
+    "The plan and the towers: SIPA's record and Portugal by Wine give an L shaped plan, granite and three towers, neoclassical with baroque touches. Borne out.",
+    "The family: Executiva, Portugal by Wine, Observador and the Diário de Notícias give the purchase in 1937 by the father, a comendador, as a gift for his daughter, her birth on 21 January 1918, the first Alvarinho in 1964, the cellar of 1974, the launch of 1976 and her death on 30 December 2015 in the private part of the palace. Borne out.",
+    "The companion, the house's domain and the Portuguese Wikipedia blocked: Geneall's forum and the Porto de Antanho blog tell of an auction after the father's bankruptcy, the estate bought by her companion, who planted the Alvarinho and built the cellar; one source gives 1977 for the launch. The record now says other accounts give much of that work to him; he is not named, for want of dates.",
+    "The making and the service, the house and Portugal Vineyards blocked: Mistral gives fermentation in temperature controlled stainless steel, no oak barrel, six months in the cellars before release and 9 to 12 degrees Celsius; Wine & Stuff whole bunch pressing and steel throughout; Bin Ends steel and lees; Santa Luzia six to eight months in bottle and 8 to 10 degrees Celsius. Borne out, and steel and no oak now stand on two sheets.",
+    "The house rules: the woman is named with her dates, which three sources give; the builder, his son, her father, the agronomist of 1964 and the companion are described, not named, for want of dates; the sale of the estate in 2025 (Público) is left out as recent; the visitors since 2010 cut as unsourced and volatile; British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "The Palácio da Brejoeira stands at Pinheiros, just south of Monção: an L shaped palace of granite with three towers, built in the neoclassical style for a nobleman of the royal household. Work began around the turn of the nineteenth century and was finished only about 1834, slowed in part by the sheer scale of the plan. A decree of 16 June 1910 classed it a national monument. In 1937 the palace changed hands again, bought by a father as a gift for his daughter, Maria Hermínia d'Oliveira Paes (1918 to 2015). By the house's account she restructured the estate and in 1964 began planting its first Alvarinho; in 1974 she had a cellar built, and in 1976 the Palácio da Brejoeira Alvarinho was launched, bottled at the estate. She lived in the private part of the palace until her death on 30 December 2015. Since 2010 the palace and its gardens have been open to visitors, and the estate also distils its Alvarinho into an old brandy aged in French oak. For a sommelier, Brejoeira is the estate Alvarinho of Monção: one grape and one estate, with a palace on the label and bottlings that go back to 1976.",
+     "now": "The Palácio da Brejoeira stands at Pinheiros, just south of Monção: an L shaped palace of granite with three towers, built in the neoclassical style for the owner of the Brejoeira estate. Work began around the turn of the nineteenth century and was finished only about 1834. A decree of 16 June 1910 classed it a national monument. In 1937 the palace changed hands again, bought by a father as a gift for his daughter, Maria Hermínia d'Oliveira Paes (1918 to 2015). By the house's account she restructured the estate and in 1964 began planting its first Alvarinho; in 1974 she had a cellar built, and in 1976 the Palácio da Brejoeira Alvarinho was launched, bottled at the estate; other accounts give much of that work to her companion. She lived in the private part of the palace until her death on 30 December 2015. The estate also distils its Alvarinho into an old brandy aged in French oak. For a sommelier, Brejoeira is the estate Alvarinho of Monção: one grape and one estate, with a palace on the label and bottlings that go back to 1976.",
+     "why": "The builder is undated in the sources read and one account says he was not of the high nobility, so he is the owner of the estate; the slowing by the plan's scale is in no source read; the opening to visitors since 2010 was found in no source read and is volatile after the sale of 2025; the companion's part is told as other accounts.",
+     "sources": [
+      {
+       "title": "DGLAB, Arquivo Distrital de Viana do Castelo: 110 years of the Brejoeira as a national monument",
+       "url": "https://advct.dglab.gov.pt/2020/06/24/110-anos-da-classificacao-do-palacio-da-brejoeira-em-moncao-como-monumento-nacional/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "National Geographic Portugal: Palácio da Brejoeira, a palette of history and art",
+       "url": "https://www.nationalgeographic.pt/viagens/palacio-brejoeira-paleta-historia-e-arte-moncao_5521",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia: Brejoeira Palace",
+       "url": "https://en.wikipedia.org/wiki/Brejoeira_Palace",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Público: Saudi investors buy the Palácio da Brejoeira",
+       "url": "https://www.publico.pt/2025/04/30/fugas/noticia/investidores-sauditas-compram-palacio-brejoeira-2131455",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Geneall forum: Palácio da Brejoeira, Monção",
+       "url": "https://geneall.net/pt/forum/67896/palacio-da-brejoeira-moncao/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Porto de Antanho: continuation 9, the Brejoeira",
+       "url": "http://portodeantanho.blogspot.com/2017/09/continuacao-9_26.html",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wikipedia (Portuguese): Palácio da Brejoeira",
+       "url": "https://pt.wikipedia.org/wiki/Pal%C3%A1cio_da_Brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "The vineyard of the walled estate around the palace at Pinheiros, just south of the town of Monção, planted to Alvarinho from 1964 and given over to that one grape.",
+     "now": "The vineyard of the walled estate around the palace at Pinheiros, just south of the town of Monção, planted to Alvarinho from 1964.",
+     "why": "That the estate is given over to one grape was not confirmed; the Alvarinho from 1964 is in three sources.",
+     "sources": [
+      {
+       "title": "Executiva: O adeus da Senhora da Brejoeira",
+       "url": "https://executiva.pt/adeus-da-senhora-da-brejoeira/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Portugal by Wine: Palácio da Brejoeira",
+       "url": "https://www.portugalbywine.com/conteudos/parceiros/info.aspx?id=119&title=palacio-da-brejoeira&idioma=pt",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "Made and bottled in the estate's own cellar, built in 1974. The must is fermented slowly at a low temperature and the wine rests on its fine lees before bottling, then spends some months in bottle before it is released.",
+     "now": "Made and bottled in the estate's own cellar, built in 1974. The must is fermented at a controlled low temperature in stainless steel, without oak, and the wine rests on its lees before bottling, then spends some months in bottle at the estate before it is released.",
+     "why": "Steel with temperature control and no oak are in two sheets, the months in bottle before release in two; fermented slowly is in no sheet read, and the fine lees of the 2009 sheet become lees.",
+     "sources": [
+      {
+       "title": "Mistral: Palácio da Brejoeira Alvarinho",
+       "url": "https://www.mistral.com.br/produto/palacio-da-brejoeira-alvarinho-2024-palacio-da-brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wine & Stuff: Palácio da Brejoeira Alvarinho 2022",
+       "url": "https://www.winenstuff.com/palacio-da-brejoeira-alvarinho-branco-2022/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Bin Ends: Palácio da Brejoeira Alvarinho, estate bottled",
+       "url": "https://binendswine.com/products/palacio-da-brejoeira-vinho-verde-alvarinho-estate-bottled-vinho-verde-portugal",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[1].means",
+     "was": "The grape, named alone: the estate's vineyard is planted to Alvarinho.",
+     "now": "The grape, named alone: the wine is Alvarinho from the estate's own vines.",
+     "why": "The same doubt as the sites: the wine is Alvarinho alone, the whole planting of the estate was not confirmed.",
+     "sources": [
+      {
+       "title": "Mistral: Palácio da Brejoeira Alvarinho",
+       "url": "https://www.mistral.com.br/produto/palacio-da-brejoeira-alvarinho-2024-palacio-da-brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Executiva: O adeus da Senhora da Brejoeira",
+       "url": "https://executiva.pt/adeus-da-senhora-da-brejoeira/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The estate's vineyard is planted to Alvarinho and its flagship is a varietal Alvarinho; Loureiro and Trajadura make many blended Vinho Verdes elsewhere in the region.",
+     "now": "The flagship is a varietal Alvarinho from the estate's own vines, planted from 1964; Loureiro and Trajadura make many blended Vinho Verdes elsewhere in the region.",
+     "why": "The same doubt as the sites.",
+     "sources": [
+      {
+       "title": "Mistral: Palácio da Brejoeira Alvarinho",
+       "url": "https://www.mistral.com.br/produto/palacio-da-brejoeira-alvarinho-2024-palacio-da-brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Executiva: O adeus da Senhora da Brejoeira",
+       "url": "https://executiva.pt/adeus-da-senhora-da-brejoeira/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q",
+     "was": "In 1937 the Palácio da Brejoeira was bought as a gift for the woman who later planted its vineyard. By the house's account, when did she begin planting Alvarinho?",
+     "now": "In 1937 the Palácio da Brejoeira was bought as a gift for a daughter of the buyer. By the house's account, in which year did its Alvarinho planting begin?",
+     "why": "Who planted the vineyard is contested, so the stem no longer says she did; the key, 1964 by the house's account, stands.",
+     "sources": [
+      {
+       "title": "Executiva: O adeus da Senhora da Brejoeira",
+       "url": "https://executiva.pt/adeus-da-senhora-da-brejoeira/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Geneall forum: Palácio da Brejoeira, Monção",
+       "url": "https://geneall.net/pt/forum/67896/palacio-da-brejoeira-moncao/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": [
+      {
+       "title": "Wikipedia (Portuguese): Palácio da Brejoeira",
+       "url": "https://pt.wikipedia.org/wiki/Pal%C3%A1cio_da_Brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Portugal Vineyards: Palácio da Brejoeira Alvarinho",
+       "url": "https://www.portugalvineyards.com/en/vinho-verde/1537-palacio-da-brejoeira-alvarinho-white-2023-5601876000016.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ],
+     "now": [
+      {
+       "title": "Executiva: O adeus da Senhora da Brejoeira",
+       "url": "https://executiva.pt/adeus-da-senhora-da-brejoeira/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mistral: Palácio da Brejoeira Alvarinho",
+       "url": "https://www.mistral.com.br/produto/palacio-da-brejoeira-alvarinho-2024-palacio-da-brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ],
+     "why": "Executiva carries the dates of 1937, 1918, 1964, 1974, 1976 and 2015 independently of the house; Mistral carries the making and the service. The Portuguese Wikipedia is kept in this review for the tension; Portugal Vineyards, the glass's source, is kept here too.",
+     "sources": [
+      {
+       "title": "Executiva: O adeus da Senhora da Brejoeira",
+       "url": "https://executiva.pt/adeus-da-senhora-da-brejoeira/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Mistral: Palácio da Brejoeira Alvarinho",
+       "url": "https://www.mistral.com.br/produto/palacio-da-brejoeira-alvarinho-2024-palacio-da-brejoeira",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Who planted the Alvarinho, built the cellar and launched the wine: the house and Executiva credit the daughter; the Portuguese Wikipedia, Geneall's forum and the Porto de Antanho blog credit her companion after an auction; the record tells the house's account and names the tension.",
+    "The first release: 1976 by the house and most sources, 1977 in one.",
+    "The sale of the estate in 2025 to Saudi investors (Público) is history the integrator may add; the refuter left it out as recent and on one source.",
+    "The glass rests on the author's retailer sheet (Portugal Vineyards); the refuter read no tasting note of the wine."
+   ]
+  },
+  {
+   "key": "anselmo-mendes",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The renaming of the sub-region, two shared searches, the second restricted to the Diário da República, the IVV and the CVRVV: Portaria 28/2001 of 16 January 2001 (the Diário da República and FAOLEX) recognised the sub-regions of Vinho Verde, among them Monção, made up of the municipalities of Monção and Melgaço, and reserved Vinho Verde Alvarinho to it; Portaria 291/2009 of 23 March 2009 renamed that sub-region Monção e Melgaço and had every Monção of the 2001 order read as Monção e Melgaço; Portaria 668/2010 cites the 2001 order as amended in 2009, and the CVRVV's press kit says the sub-region was first Monção and later Monção e Melgaço. Not borne out: a decree law of 16 January 2001 that renamed it.",
+    "The founding, the house's domain and Skurnik blocked: Winekeller, Blend All About Wine and others give the first Muros de Melgaço Alvarinho of 1998 from a small property in Penso, between Monção and Melgaço, the project begun in 1997 by some accounts; Quinta dos Muros by that name was found in none. Borne out: 1998 and Penso; the quinta's name stays the house's account.",
+    "The founder, the same blocks: Jornal de Vinhos and Enoteca give his birth in Monção in a family that had lived from farming and wine for generations, a degree in agro-industrial engineering and a post-graduate course in oenology, and work as an oenologist from 1988. The story's family that made wine for its own table and its agronomy were changed.",
+    "Muros Antigos's making, the same blocks: the house's sheet hosted elsewhere, Center Gourmet and Nelsons give destemming, cold settling of 48 to 72 hours, a long fermentation at 14 to 18 degrees Celsius in stainless steel, and at least three months on fine lees with regular stirring, four in other vintages. Borne out.",
+    "Parcela Única, the same blocks: Vinha Alvarinho, Estado Líquido and Bodeboca give fermentation in new 400 litre French oak barrels and nine months in them with stirring on the lees, one retailer used barrels in one line. Borne out.",
+    "Muros Antigos Escolha: the house's page and Aged Cork give Alvarinho of Monção e Melgaço, Loureiro of the Lima and Avesso of Baião. Borne out.",
+    "The house rules: the founder is living and is never named in prose (the house keeps its name); no price (a title met with a price in it is not cited), no score, nothing volatile (the hectares met in two results are not used), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "The house of Anselmo Mendes carries the name of its founder, an oenologist born in Monção to a farming family that made wine for its own table. He studied agronomy, specialised in wine and worked as an oenologist on several projects before setting out on his own. In 1998, by the house's account, he launched wines under his own signature in Monção e Melgaço and made his first Alvarinhos in a small cellar at Quinta dos Muros in Penso, Melgaço; the walled quinta gave its name to the Muros de Melgaço and Muros Antigos ranges. Three years later a decree law of 16 January 2001 renamed the sub-region, until then named for Monção alone, as Monção e Melgaço. The house became known for testing what Alvarinho can take: long ageing on the lees, fermentation and ageing in new oak barrels for Parcela Única, and Curtimenta, made with time on the skins. Muros Antigos stayed the unoaked core of the range, joined by Escolha, a blend of Alvarinho, Loureiro and Avesso. For a sommelier it is the measure of the house without wood: Alvarinho kept fresh and dry, and given texture by its lees rather than by oak.",
+     "now": "The house of Anselmo Mendes carries the name of its founder, an oenologist born in Monção to a farming family with vines of its own. He studied agro-industrial engineering and then oenology, and worked as an oenologist for other houses before setting out on his own. In 1998, by the house's account, he launched wines under his own signature in Monção e Melgaço and made his first Alvarinhos in a small cellar at Quinta dos Muros in Penso, Melgaço; the walled quinta gave its name to the Muros de Melgaço and Muros Antigos ranges. An order of 16 January 2001 drew the sub-regions of Vinho Verde, among them one named Monção that took in Melgaço too, and an order of 23 March 2009 renamed it Monção e Melgaço. The house became known for testing what Alvarinho can take: long ageing on the lees, fermentation and ageing in new oak barrels for Parcela Única, and Curtimenta, made with time on the skins. Muros Antigos stayed the unoaked core of the range, joined by Escolha, a blend of Alvarinho, Loureiro and Avesso. For a sommelier it is the measure of the house without wood: Alvarinho kept fresh and dry, and given texture by its lees rather than by oak.",
+     "why": "The order of 16 January 2001 is a portaria that drew the sub-regions and named this one Monção; the renaming to Monção e Melgaço is the order of 23 March 2009. The founder's family and his studies follow Jornal de Vinhos and Enoteca.",
+     "sources": [
+      {
+       "title": "Diário da República: Portaria 28/2001 of 16 January 2001",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/28-2001-338021",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "FAOLEX: Portaria 28/2001, the sub-regions of Vinho Verde",
+       "url": "https://faolex.fao.org/docs/pdf/por25558.pdf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Diário da República: Portaria 291/2009 of 23 March 2009",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2009-605551",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Diário da República: Portaria 668/2010 of 11 August 2010",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/668-2010-343091",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "CVRVV: Monção e Melgaço press kit, the origin of Alvarinho",
+       "url": "https://www.vinhoverde.pt/fotos/documentacao/moncyayo_e_melgacyo_press_kit_pt_236729489686e91c2567d4.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Jornal de Vinhos: thirty years of the house's founder",
+       "url": "https://www.jornaldevinhos.com/novidades/2018/anselmo-20-anos-de-carreira/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Enoteca: A Torre, the house's founder",
+       "url": "https://enoteca.pt/vinhos/branco/vinhos-verdes/a-torre-anselmo-mendes/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": {
+      "q": "Until a decree law of 2001, the sub-region where Anselmo Mendes makes its Alvarinho carried the name of one town alone. Which town?",
+      "opts": [
+       "Monção",
+       "Melgaço",
+       "Ponte de Lima",
+       "Penafiel"
+      ],
+      "a": 0,
+      "exp": "A decree law of 16 January 2001 renamed the sub-region of Monção as Monção e Melgaço; Melgaço joined the name only then, and Ponte de Lima and Penafiel lie in the Lima and Sousa sub-regions.",
+      "tag": "story"
+     },
+     "now": {
+      "q": "Until an order of 2009, the sub-region where Anselmo Mendes makes its Alvarinho carried the name of one town alone, though it took in two. Which town?",
+      "opts": [
+       "Monção",
+       "Melgaço",
+       "Ponte de Lima",
+       "Penafiel"
+      ],
+      "a": 0,
+      "exp": "An order of 23 March 2009 renamed the sub-region of Monção, drawn in 2001, as Monção e Melgaço; Melgaço joined the name only then, and Ponte de Lima and Penafiel lie in the Lima and Sousa sub-regions.",
+      "tag": "story"
+     },
+     "why": "The stem and the explanation dated the renaming to a decree law of 2001; it is the order of 2009, and the stem now says the sub-region took in both towns, so that Monção, not Melgaço, is the one right answer.",
+     "sources": [
+      {
+       "title": "Diário da República: Portaria 291/2009 of 23 March 2009",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2009-605551",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Diário da República: Portaria 28/2001 of 16 January 2001",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/28-2001-338021",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means",
+     "was": "Old walls, in Portuguese: the house's unoaked range, named from Quinta dos Muros at Penso.",
+     "now": "Old walls, in Portuguese: the house's unoaked range, named, by its account, from Quinta dos Muros at Penso.",
+     "why": "Quinta dos Muros by that name is on the house's page only, so the derivation is hedged as the house's account.",
+     "sources": [
+      {
+       "title": "Winekeller: Discovering Vinho Verde Alvarinho at the Melgaço house",
+       "url": "https://www.winekeller.com/blog/vinho-verde-alvarinho-anselmo-mendes",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Blend All About Wine: the producer and oenologist of Melgaço",
+       "url": "https://blend-allaboutwine.com/anselmo-mendes-producer-and-oenologist/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[4]",
+     "was": {
+      "title": "CVRVV: Historical review of the Vinho Verde region",
+      "url": "https://www.vinhoverde.pt/en/historical-review",
+      "kind": "primary",
+      "read": "search"
+     },
+     "now": {
+      "title": "Diário da República: Portaria 291/2009 of 23 March 2009",
+      "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2009-605551",
+      "kind": "primary",
+      "read": "search"
+     },
+     "why": "The CVRVV's historical review as the author read it dated the renaming to 2001; the Diário da República's own record of the order of 2009 replaces it.",
+     "sources": [
+      {
+       "title": "Diário da República: Portaria 291/2009 of 23 March 2009",
+       "url": "https://diariodarepublica.pt/dr/detalhe/portaria/291-2009-605551",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Quinta dos Muros by that name: on the house's page only; independent accounts speak of a small property at Penso and the first Muros de Melgaço of 1998.",
+    "The founding: 1998 for the first wines by the house and most accounts, 1997 for the start of the project in some; founded stays 1998.",
+    "Muros Antigos's lees: at least three months on the 2023 sheet, at least four in other vintages; the record's at least three holds for both."
+   ]
+  },
+  {
+   "key": "aveleda",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The founding and the French winemaker, the house's domains and VinoVoss blocked: Jornal de Negócios, its Must and Mutante give the founding in 1870, the estate's history back to the sixteenth century, a French winemaker who had worked the Douro harvest stopping on the train home at the sight of the vines, and Casal Garcia launched in 1939 and named for a vineyard of the estate; one piece gives 1938 for his visit, another 1939 for his hiring. Borne out, with the late 1930s.",
+    "The house's own timeline, searched on its domain: the cellar for 300 barrels built in 1870 when the quinta made 30, the founder's grandson at the estate from 1922, the wine launched with the French winemaker in 1939 and named for its vineyard, the fourth generation from 1961 and the fifth leading the company from 2013. Borne out: the 300 and the 30, the third generation, the five generations.",
+    "The blend and the making: the house's sheet and its English page give Trajadura, Loureiro, Arinto and Fernão Pires, gentle pressing at low pressure, fermentation at 16 to 18 degrees Celsius, granite, 9.5 per cent and 8 to 10 degrees Celsius; Garrafinhas and Nelsons give Azal in place of Fernão Pires. Borne out, and the table's three grapes as the whole blend was changed.",
+    "The Sweet White, on the house's domains: the same four grapes, 9 per cent, Minho Regional Wine on the page and IG Minho on the sheet. Borne out.",
+    "The house rules: the founder, the third generation and the winemaker are described, not named, for want of dates; the living fourth and fifth generations are not named; the largest producer and the seventy countries met are not used, as a ranking and volatile; no price; British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "table",
+     "was": "Casal Garcia is the Vinho Verde of Aveleda, the Guedes family's house at Penafiel, first made in 1939. A blend of Trajadura, Loureiro and Arinto, medium dry, low in alcohol and lightly prickling, it is poured young and well chilled.",
+     "now": "Casal Garcia is the Vinho Verde of Aveleda, the Guedes family's house at Penafiel, first made in 1939. A blend of four white grapes, Trajadura and Loureiro among them, medium dry, low in alcohol and lightly prickling, it is poured young and well chilled.",
+     "why": "The house's sheet gives four grapes, Fernão Pires the fourth; naming three as the blend taught a wrong whole.",
+     "sources": [
+      {
+       "title": "Casal Garcia: Casal Garcia Branco, technical sheet",
+       "url": "https://casalgarcia.com/wp-content/uploads/2025/03/FT-Casal-Garcia-Branco_Rolha_PT.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Casal Garcia: Casal Garcia White",
+       "url": "https://casalgarcia.com/en/wine-white/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "The house ferments its blend of Trajadura, Loureiro and Arinto at 16 to 18 degrees Celsius and bottles it medium dry at a modest strength; neither ageing in oak nor fortification appears in the making it describes.",
+     "now": "The house ferments its blend of Trajadura, Loureiro, Arinto and Fernão Pires at 16 to 18 degrees Celsius and bottles it medium dry at a modest strength; neither ageing in oak nor fortification appears in the making it describes.",
+     "why": "The same: the explanation now names the sheet's four grapes.",
+     "sources": [
+      {
+       "title": "Casal Garcia: Casal Garcia Branco, technical sheet",
+       "url": "https://casalgarcia.com/wp-content/uploads/2025/03/FT-Casal-Garcia-Branco_Rolha_PT.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Casal Garcia: Casal Garcia White",
+       "url": "https://casalgarcia.com/en/wine-white/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Azal or Fernão Pires: the house's sheet and English page give Fernão Pires, Garrafinhas, Nelsons and older accounts Azal; the vintage of the change was not found.",
+    "The year of the French winemaker's visit: 1936 or 1937 on the house's pages as the author read them, 1938 or 1939 in Jornal de Negócios; the record says the late 1930s."
+   ]
+  },
+  {
+   "key": "quinta-do-ameal",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The history, Esporão's domain, Wine Industry Advisor and Harpers blocked: Público, Visão and Blue Travel give records from 1710 (the convent of Refóios is believed to have held it), the father's purchase in 1990 and the son's running of it, wine made from the 1990s and the Loureiro chapter from 1999; Público and Visite Ponte de Lima give Esporão's purchase in 2019. Borne out: 1710, the 1990s, 2019.",
+    "The making, the same blocks: Harrogate Fine Wine, The Source and Wine Dispensary give pneumatic pressing of whole bunches, fermentation in stainless steel and about seven months on fine lees in steel at a controlled temperature; Esporão's own Reserva sheet in its Cultivamos library gives the Loureiro along 800 metres of the riverbank. Borne out; the 30 kilometres to the Atlantic was found in no result read.",
+    "The Reserva: Revista RUA gives the wine known first as Escolha and now Reserva, begun in 2000 with the first trial of Loureiro in French oak, from the Marinhas plot on sandy granite; its time in oak varies by source (six months, nine in used oak and foudres, a year in 500 litre barrels). Borne out; the others note's aged in oak holds.",
+    "The house rules: the former owner and his father are living or undated and are never named; Christy Canterbury's page, a writer's own site, is not used; the hectares met are not used; British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Quinta do Ameal lies along the bank of the Lima at Refóios do Lima, by Ponte de Lima, and its records go back to 1710. In the 1990s the estate passed to a family that set out to show what Loureiro, the Lima valley's own white grape, could do on its own, and by the house's own account Ameal became a pioneer in showing that the grape could make white wine of real quality on its own. In 2000 the estate made its first trials of Loureiro aged in French oak barrels, the beginning of the wine first called Escolha and later Reserva, which comes from its Marinhas plot. In 2019 the estate was sold to Esporão, the Alentejo house, which kept its work on Loureiro and bottles its wines under the name Ameal. The flagship stayed what it had been: Loureiro alone from the estate, fermented in steel and kept on its fine lees for months. For a sommelier, Ameal Loureiro is the lesson in the Lima's grape, made with the care Monção e Melgaço gives Alvarinho, and the proof that a serious Vinho Verde can rest on a single grape other than Alvarinho.",
+     "now": "Quinta do Ameal lies along the bank of the Lima at Refóios do Lima, by Ponte de Lima, and its records go back to 1710. In the 1990s the estate passed to a family that set out to show what Loureiro, the Lima valley's own white grape, could do alone, and by the house's own account Ameal became a pioneer of Loureiro bottled as a single grape. In 2000 the estate made its first trials of Loureiro aged in French oak barrels, the beginning of the wine first called Escolha and later Reserva, which comes from its Marinhas plot. In 2019 the estate was sold to Esporão, the Alentejo house, which kept its work on Loureiro, and the wines came to carry the name Ameal on their labels. The flagship stayed what it had been: Loureiro alone from the estate, fermented in steel and kept on its fine lees for months. For a sommelier, Ameal Loureiro is the lesson in the Lima's grape, made with the care Monção e Melgaço gives Alvarinho, and the proof that a serious Vinho Verde can rest on a single grape other than Alvarinho.",
+     "why": "The pioneer sentence said on its own twice and carried a claim of real quality; it now keeps the house's claim, hedged, as a pioneer of Loureiro bottled as a single grape. The present tense of the bottling under the name Ameal is told as history.",
+     "sources": [
+      {
+       "title": "Público: Quinta do Ameal, a Loureiro of the Lima valley",
+       "url": "https://www.publico.pt/2025/09/24/edicoes-publico/noticia/quinta-ameal-loureiro-vale-lima-2148335",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Visão: Quinta do Ameal in Ponte de Lima",
+       "url": "https://visao.pt/visaose7e/escapar/2021-09-09-a-quinta-do-ameal-em-ponte-de-lima-e-o-melhor-de-tres-mundos/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Blue Travel: Ponte de Lima",
+       "url": "https://revistabluetravel.com/area/ponte-de-lima-uma-vila-de-encantamentos/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Visite Ponte de Lima: Quinta do Ameal",
+       "url": "https://www.visitepontedelima.pt/pt/turismo/quinta-do-ameal/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The father's purchase in 1990 (Blue Travel) and the first Loureiro of 1999 (Público) are each on one source; the story says the 1990s.",
+    "About 30 kilometres from the Atlantic rests on Esporão's page as the author read it; the refuter found the 800 metres of riverbank on Esporão's own sheet but not the distance."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "João António Cerdeira",
+   "role": "the founder of Soalheiro, who planted the vineyard of 1974 and launched the brand in 1982",
+   "where": "Thorman Hunt and Decanter's vertical in the refuter's results",
+   "believed": "not confirmed; treated as living",
+   "inPeople": false,
+   "inFragment": "as the founder, never named"
+  },
+  {
+   "name": "Anselmo Mendes",
+   "role": "the founder of the Melgaço house that keeps his name, born in Monção in 1962",
+   "where": "every result on the house",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the house only; in prose the founder, an oenologist born in Monção"
+  },
+  {
+   "name": "Feliciano dos Anjos Pereira",
+   "role": "the companion of the Brejoeira's owner, credited by family accounts with the purchase at auction, the planting and the cellar",
+   "where": "Geneall's forum and the Porto de Antanho blog",
+   "believed": "dead before 2015 by one account; no dates found",
+   "inPeople": false,
+   "inFragment": "as her companion, never named"
+  },
+  {
+   "name": "João Simões de Vasconcelos",
+   "role": "the agronomist the Brejoeira's owner consulted in 1964",
+   "where": "the refuter's results on the family (Portugal by Wine and others)",
+   "believed": "not known",
+   "inPeople": false,
+   "inFragment": "absent"
+  },
+  {
+   "name": "Martim Andresen Guedes",
+   "role": "of Aveleda's fifth generation, leading the company with his cousin from 2013",
+   "where": "Aveleda's own timeline",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "absent; the record says five generations"
+  },
+  {
+   "name": "António Azevedo Guedes",
+   "role": "of Aveleda's fifth generation, leading the company with his cousin from 2013",
+   "where": "Aveleda's own timeline",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "absent"
+  },
+  {
+   "name": "Luís Guedes",
+   "role": "of Aveleda's fourth generation, at the company from 1961",
+   "where": "Aveleda's own timeline",
+   "believed": "not known",
+   "inPeople": false,
+   "inFragment": "absent"
+  },
+  {
+   "name": "António Guedes",
+   "role": "of Aveleda's fourth generation, at the company from 1966",
+   "where": "Aveleda's own timeline",
+   "believed": "not known",
+   "inPeople": false,
+   "inFragment": "absent"
+  },
+  {
+   "name": "Roberto Guedes",
+   "role": "of Aveleda's fourth generation, on its board from 1997",
+   "where": "Aveleda's own timeline",
+   "believed": "not known",
+   "inPeople": false,
+   "inFragment": "absent"
+  },
+  {
+   "name": "Pedro Araújo",
+   "role": "the son who ran Quinta do Ameal after his father bought it in 1990, until the sale to Esporão in 2019",
+   "where": "Blue Travel and Visão",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the family of the 1990s, never named"
+  }
+ ],
+ "livingNote": "None of these is named in the fragment's prose; the read together agent adds those it judges living to people.json. Anselmo Mendes is the producer's own name, which people.json allows on the house's own record; listing him keeps him out of every other record. Named with dates in the fragment: Maria Hermínia d'Oliveira Paes (1918 to 2015), her birth on 21 January 1918 and her death on 30 December 2015 in Executiva, Portugal by Wine and the house's page. Described, never named, for want of dates in two sources: the Brejoeira's builder, Luís Pereira Velho de Moscoso, and his son; her father, a comendador; Aveleda's founder of 1870, Manoel Pedro Guedes; his grandson of the third generation, Roberto van Zeller Guedes, at the estate from 1922; and the French winemaker Eugène Hélisse.",
+ "swaps": [],
+ "swapNote": "The author proposed no swap, and the refuter proposes none. Each of the five is a real house of the DOC with a real wine it leads with, and each stands on its own pages or two sheets: Soalheiro's Alvarinho, the Brejoeira's estate Alvarinho, Muros Antigos as the wide release of Anselmo Mendes, Casal Garcia as the light blended style and Ameal's Loureiro for the Lima. The Adega de Monção, which the region record also lists, would teach the co-operative's part, but nothing found rules out a pick, so the five stand.",
+ "planNotes": [
+  "soalheiro: answered. The 1974 vineyard and the 1982 brand are borne out by Thorman Hunt and Decanter beside the house; the first Alvarinho brand of Melgaço is hedged as the house's claim; the family is never named; Primeiras Vinhas and Granit are in others, Granit's 400 metres and warm fermentation on the house's page. The why's carried the grape abroad was not tested.",
+  "palacio-da-brejoeira: answered. 1976, the cellar of 1974 and the Alvarinho of 1964 are the house's and Executiva's; the building about 1806 to about 1834 and the decree of 16 June 1910 are the DGLAB's; the purchase of 1937 is in four accounts; the woman is named with her dates. The plan's why, made the grape's name before most growers bottled it, found no source in the refuter's reading either, and the read together agent may soften it.",
+  "anselmo-mendes: answered. The founder is described, never named; Muros Antigos's making is on the house's sheet and two merchants; Curtimenta and Parcela Única are in others, Parcela Única's new 400 litre barrels and nine months on three merchants.",
+  "aveleda: answered. 1939 is on the house's timeline and in Jornal de Negócios; the blend on the house's sheet is Trajadura, Loureiro, Arinto and Fernão Pires, Azal on several retailers', and the record says so; the living generations are never named.",
+  "quinta-do-ameal: answered. The label is Ameal on Esporão's sheets, Quinta do Ameal on older bottles; the history before 2019 is the 1990s in the record, the father's purchase of 1990 on one source; the former owner is never named; the Reserva of the Marinhas plot is in others, borne out by Revista RUA."
+ ],
+ "codexInTension": [
+  {
+   "record": "WINE_PRODUCERS p-soalheiro (style)",
+   "says": "Varietal Alvarinho with real ripeness and no added spritz.",
+   "read": "No source read says whether carbon dioxide is added to Soalheiro Alvarinho: the house's pages searched, Holy Wines, Different Drop, Vinum Lector and Wine Spectator are silent. The claim may be true; it is not sourced, so the record no longer makes it.",
+   "sources": [
+    {
+     "title": "Holy Wines: Soalheiro Alvarinho Clássico",
+     "url": "https://www.holywines.com.mt/product/soalheiro-alvarinho-classico/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Different Drop: 2024 Soalheiro Classic Alvarinho",
+     "url": "https://www.differentdrop.com/products/2024-soalheiro-classic-alvarinho-vinho-verde",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Vinum Lector: Soalheiro Alvarinho",
+     "url": "https://vinumlector.com/our-wine/portugal/vinho-verde/moncao-and-melgaco/soalheiro-alvarinho/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "WINE_PRODUCERS p-anselmo-mendes (holdings)",
+   "says": "Parcels across the Minho, worked with an emphasis on lees contact, skin maceration and old wood.",
+   "read": "Parcela Única, the house's oaked Alvarinho, is fermented and aged nine months in new 400 litre French oak barrels by three merchants and the house's page as the author read it; old wood fits no wine read.",
+   "sources": [
+    {
+     "title": "Vinha Alvarinho: Parcela Única Alvarinho 2021",
+     "url": "https://www.vinhalvarinho.pt/anselmo-mendes-parcela-unica-alvarinho",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Estado Líquido: Parcela Única Alvarinho 2022",
+     "url": "https://estadoliquido.pt/vinho-verde-branco-anselmo-mendes-parcela-unica-alvarinho",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Bodeboca: Parcela Única Alvarinho 2019",
+     "url": "https://www.bodeboca.pt/vino/anselmo-mendes-parcela-unica-alvarinho-2019",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "Region record vinho-verde, producers line for Palácio da Brejoeira (js/regions/portugal.json)",
+   "says": "The Monção manor whose varietal Alvarinho from the 1970s made the grape's reputation before anyone else bottled it.",
+   "read": "No source read says the Brejoeira bottled Alvarinho before anyone else; Decanter calls Soalheiro the sub-region's fourth producer in 1982, and the Field Atlas's own line on Monção gives the co-operative, the Adega de Monção, a share in putting varietal Alvarinho on the map. The co-operative's first bottling year was not found.",
+   "sources": [
+    {
+     "title": "Decanter: Vinho Verde vertical, aged Alvarinhos from Quinta de Soalheiro",
+     "url": "https://www.decanter.com/premium/vinho-verde-vertical-aged-alvarinhos-from-quinta-de-soalheiro-440524/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Agroportal: the Adega de Monção's Alvarinho Deu La Deu",
+     "url": "https://www.agroportal.pt/ex-libris-da-adega-cooperativa-de-moncao-alvarinho-deu-la-deu-%ef%bf%bd-mesa-na-ceia-de-natal/",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  },
+  {
+   "record": "Region record vinho-verde, producers lines for Quinta de Soalheiro and Anselmo Mendes (js/regions/portugal.json)",
+   "says": "Soalheiro became the grape's most widely poured name abroad; Anselmo Mendes's bottlings set the grape's benchmark.",
+   "read": "Both are rankings no source read supports, and benchmark is a word of judgement under the house rules of the Flagships tab; the flagship records do not repeat them.",
+   "sources": [
+    {
+     "title": "Decanter: Vinho Verde vertical, aged Alvarinhos from Quinta de Soalheiro",
+     "url": "https://www.decanter.com/premium/vinho-verde-vertical-aged-alvarinhos-from-quinta-de-soalheiro-440524/",
+     "kind": "secondary",
+     "read": "search"
+    },
+    {
+     "title": "Winekeller: Discovering Vinho Verde Alvarinho at the Melgaço house",
+     "url": "https://www.winekeller.com/blog/vinho-verde-alvarinho-anselmo-mendes",
+     "kind": "secondary",
+     "read": "search"
+    }
+   ]
+  }
+ ],
+ "codexNote": "The region record's other lines read in the course of the check agree with what was read: demarcated in 1908, nine sub-regions, Monção e Melgaço inland and sheltered as Alvarinho's home, Loureiro leading in the Lima, Penafiel in the Sousa sub-region. The Codex's own records were a starting point only and the second source of no fact."
+}
