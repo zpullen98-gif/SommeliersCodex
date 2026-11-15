@@ -13,6 +13,12 @@ or permission gating, and none may be added. codex25's non-affiliation line (`V2
 out of codex32's More (its About group, which held it alone, leaves whole) and codex53's CMS root, and `check-card.js`
 holds home, the level page, the CMS root, the Library and More free of it.
 
+**Who maintains what, 15 November 2026.** On 15 November 2026 the owner said he no longer works with ChatGPT, so from
+that date Claude maintains every file, test and gate in this repository, including those this document calls ChatGPT's.
+They are changed with care, a pin moving only with the fact it pins. The rule that published layers are never edited
+(`js/codex1.js` to `js/codex58.js`, `boot.js` and `core.js`) is unchanged. Where a section below says a layer edits
+none of ChatGPT's files or that no gate of ChatGPT's changed, it records how that edition was built.
+
 ## The review edition, 11 October 2026
 
 Every question of the four banks was read line by line (the Régionale and Village banks in their rewrite modules, the
@@ -48,7 +54,7 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v118`; its two teaching imports have query versions which
+Source worker is `codex-v119`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
 (codex59: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
@@ -61,28 +67,34 @@ codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-s
 codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course,
 codex57 the Grapes tab at the table, codex58 the producers and their flagships).
 
-## Producers and their flagships (codex58, 14 November 2026)
+## Producers and their flagships (codex58, 14 November 2026; wave two's batch A, 15 November 2026)
 
-The owner asked, in these words: "add a tab under Study in Wine Atlas section of the Sommelier Codex that will contain
-5 of the most famous and well known producers in each wine region such as Champagne, Piedmont, Napa etcetera. Also
-list their most famous flagship wine with deep full details and backstory on each." The owner chose all 129 region
-records in two waves, and asked for the best wine resource possible: a wrong fact is worse than a missing one. Wave
-one, built here, is 43 classic regions in 51 groups of five (Burgundy, Bordeaux and Tuscany in three groups each, the
-Rhône and Napa and Sonoma in two), each producer with the one flagship wine a sommelier is expected to know, in
-depth, and its story. codex58 is two pieces: one record a producer in `js/data-flagships.js`, built by a pipeline,
-and one layer, `js/codex58.js`, loaded after the data and codex57 and before boot. The layer
-edits no earlier layer, no data file and none of ChatGPT's files; it declares with var and function only, every
-wrapper is typeof guarded and outermost (23 of them, v25NavWord and v32ParentRoute wrapped twice), every registry is
-extended key by key, every string it shows lives in `V58_WORDS` (read by `v58W`) and its CSS in its own `v58-style`
-element, every selector under `.wrap`, every colour a house token on its own ground. It is a display overlay:
-`REGIONS`, `WINE_PRODUCERS`, the house and every earlier view are never changed, and no question id is touched.
+The owner asked, in these words: "add a tab under Study in Wine Atlas section of the Sommelier Codex that will contain 5
+of the most famous and well known producers in each wine region such as Champagne, Piedmont, Napa etcetera. Also list
+their most famous flagship wine with deep full details and backstory on each." The owner chose all 129 region records in
+two waves, and asked for the best wine resource possible: a wrong fact is worse than a missing one. Wave one, built
+here, is 43 classic regions in 51 groups of five (Burgundy, Bordeaux and Tuscany in three groups each, the Rhône and
+Napa and Sonoma in two), each producer with the one flagship wine a sommelier is expected to know, in depth, and its
+story. Wave two's batch A, published on 15 November 2026, adds the 32 region records of France, Italy, Spain and
+Portugal that wave one left, one group of five each, so the built set is one and A: 83 groups, 415 records, 830 cards
+and 830 questions. The batches B and C are still to come (the foot of this section). codex58 is two pieces: one record a
+producer in `js/data-flagships.js`, built by a pipeline, and one layer, `js/codex58.js`, loaded after the data and
+codex57 and before boot. The layer edits no earlier layer, no data file and none of ChatGPT's files; it declares with
+var and function only, every wrapper is typeof guarded and outermost (23 of them, v25NavWord and v32ParentRoute wrapped
+twice), every registry is extended key by key, every string it shows lives in `V58_WORDS` (read by `v58W`) and its CSS
+in its own `v58-style` element, every selector under `.wrap`, every colour a house token on its own ground. It is a
+display overlay: `REGIONS`, `WINE_PRODUCERS`, the house and every earlier view are never changed, and no question id is
+touched.
 
-- **The data** (`FLAGSHIPS` by id, `FLAGSHIP_GROUPS` in the plan's order, `FLAGSHIP_META`; 1,516,535 bytes, one line a
-  record, precached as a classic script so every page, the decks and the quiz work offline): 255 records in 51 groups
-  over 43 region records in 16 countries of the atlas; 206 joined to `WINE_PRODUCERS` (201 producers, 5 wine records)
-  and 49 outside the library; 510 cards and 510 questions (answers A 128, B 128, C 127, D 127); 145,602 reading words;
-  1,274 sources, 666 of them primary, every record with four or five and 240 with at least one primary; 67 founding
-  years left empty where nobody is sure, and 42 houses with no respelling because a guest would not stumble.
+- **The data** (`FLAGSHIPS` by id, `FLAGSHIP_GROUPS` in the plan's order, `FLAGSHIP_META` naming the wave and the
+  batches built; 2,468,513 bytes, one line a record, precached as a classic script so every page, the decks and the quiz
+  work offline): 415 records in 83 groups over 75 region records in 16 countries of the atlas (wave one's 255 in 51
+  groups over 43 regions, batch A's 160 in 32 groups over 32, no country new to the root); 263 joined to
+  `WINE_PRODUCERS` (258 producers, 5 wine records) and 152 outside the library; 830 cards and 830 questions (answers A
+  208, B 208, C 207, D 207); 237,312 reading words; 2,074 sources, 1,126 of them primary, every record with four or five
+  and 394 with at least one primary; 130 founding years left empty where nobody is sure, and 44 houses with no
+  respelling because a guest would not stumble. Wave one alone was 1,516,535 bytes: 206 joined and 49 outside, 510 cards
+  and 510 questions (answers A 128, B 128, C 127, D 127), 145,602 reading words, 1,274 sources, 666 of them primary.
 - **The record** (`.scripts/flagships/schema.cjs`, the one validator; `node .scripts/flagships/schema.cjs --caps`
   prints the caps): `key`, `group`, `region`, `producer`, `producerId` (the library's id or ""), `say` (at most ten
   words, else ""), `place` (2 to 14 words), `founded` (a year or ""); `wine` (`name` holding the plan's words, the
@@ -95,30 +107,41 @@ element, every selector under `.wrap`, every colour a house token on its own gro
   least one https address); and, never shipped, the author's `report` and the refuter's `checked` block (date, by,
   verdict sound or changed, what changed, what stays open), which the whole build requires. At most 680 reading words
   a record. The build holds the house voice: no dash, British spelling, never the retired word, levels named, nobody
-  living (`people.json`, 745 names, a house keeping its own name), no price, no score, no allocation, nothing volatile
+  living (`people.json`, 1,142 names, a house keeping its own name), no price, no score, no allocation, nothing volatile
   (no current owner, hectares, winemaker or recent vintage report) and no superlative of judgement.
-- **The pipeline** (`.scripts/flagships/`: `BRIEF.md` the authors' and checkers' contract, `plan.json` the 51 groups
-  and 255 picks in order with their chunk (pilots, f1 to f17), key, producer, producerId, wine, why and the swaps
-  agreed, `fragments/<group>.json`, `people.json`, `keys.v1.json`, `build-flagships.cjs`, `show.cjs`, and `reviews/`
-  with the 38 refuters' files (`check-<group>.json`, the three Burgundy groups together in `check-f1.json`) and the
-  fourteen rechecks of the French and German groups (`recheck-<group>.json`), `facts.json` (the facts read: all 255
-  records read again, 70 facts checked afresh, six fixes, the picks in doubt and their rulings, the Codex records in
-  tension) and `voice.json` (the voice pass, 129 records and 157 fields reworded, wording only)).
-  `node .scripts/flagships/show.cjs <group|producerId|key>` prints what the Codex holds on a house; `node
+- **The pipeline**, under `.scripts/flagships/`: `BRIEF.md` the authors' and checkers' contract, `plan.json` the roster
+  in order, 129 groups and 645 picks (wave one's 51 groups, then wave two's 78, each carrying its batch: A 32, B 21, C
+  25), each group with its chunk (pilots, f1 to f17, then w1 to w27), each pick with its key, producer, producerId,
+  wine, why and the swaps agreed, and `built` naming the batches the whole build ships (`["one","A"]` today); `plan-w2/`
+  the nine lanes wave two's roster was merged from, kept as the record, where a region short of five houses waits;
+  `fragments/<group>.json`, one a group written (83), `people.json`, `keys.v1.json`, `build-flagships.cjs`, `show.cjs`
+  and `reviews/`. Wave one's reviews are the 38 refuters' files (`check-<group>.json`, the three Burgundy groups
+  together in `check-f1.json`), the fourteen rechecks of the French and German groups (`recheck-<group>.json`),
+  `facts.json` (the facts read: all 255 records read again, 70 facts checked afresh, six fixes, the picks in doubt and
+  their rulings, the Codex records in tension) and `voice.json` (the voice pass, 129 records and 157 fields reworded,
+  wording only). Batch A's are its 32 refuters' files, one a group (`check-provence.json` to `check-alentejo.json`: the
+  searches, per record what was tested, every change with was, now, why and its sources, what stays open, the living
+  names met, the swaps ruled, the plan notes answered and the Codex records in tension); its eleven chunks (w1 to w11,
+  three groups a chunk and the last of two) were each written, refuted and read together, the read together agent
+  setting the names into `people.json` and the whys right in `plan.json`. Batch A has no facts read and no voice pass of
+  its own yet: what its refuters left open stays in each record's `checked.open` in the fragments (449 questions) for a
+  later read. `node .scripts/flagships/show.cjs <group|producerId|key>` prints what the Codex holds on a house; `node
   .scripts/flagships/build-flagships.cjs --lint <group> [...]` (or `--chunk <name>`, `--all`) validates fragments and
   writes nothing; `node .scripts/flagships/build-flagships.cjs` is the writing build (the data file and the keys;
   `--partial` for a roster not yet whole); `--check` proves the shipped file and the keys are the build; `--plan` proves
-  `plan.json` against the app (every region a record of REGIONS on its own country's sheet, every producerId a record
-  of WINE_PRODUCERS) and the prefix against the Codex; `--freeze` freezes the keys. Authors and checkers run `--lint`
-  alone; only the spec agent, the gates agent, the voice editor and the integrator run the writing build. The roster
-  is changed in `plan.json` by a chunk's read together agent or the engineer, never by two agents at once; a refuter
+  `plan.json` against the app (every region a record of REGIONS on its own country's sheet, every producerId a record of
+  WINE_PRODUCERS) and the prefix against the Codex; `--freeze` freezes the keys. Authors and checkers run `--lint`
+  alone; only the spec agent, the gates agent, the voice editor and the integrator run the writing build. The roster is
+  changed in `plan.json` by a chunk's read together agent or the engineer, never by two agents at once; a refuter
   records a living name or a swap ruling in its review file for them.
-- **The ids**: `fl-` and eight base36 digits of FNV-1a 64 (build-regions.cjs's mint) over
-  `JSON.stringify(['flagship', key])` for a record, `['flagship:' + id, front]` for a card and its stem for a
-  question, a prefix nothing else under js mints (codex21's keyOwned guard the one allowed). The answer positions are
-  dealt by the build round robin in the plan's order and shuffled from the key, so a deal moves no id. `keys.v1.json`
-  is frozen over its 1,275 ids (255 records, 510 cards, 510 questions): a build may add ids and never lose one, so
-  reword a front or a stem only as a new card or question, which orphans its record.
+- **The ids**: `fl-` and eight base36 digits of FNV-1a 64 (build-regions.cjs's mint) over `JSON.stringify(['flagship',
+  key])` for a record, `['flagship:' + id, front]` for a card and its stem for a question, a prefix nothing else under
+  js mints (codex21's keyOwned guard the one allowed). The answer positions are dealt by the build round robin in the
+  plan's order and shuffled from the key, so a deal moves no id. `keys.v1.json` is frozen over its 2,075 ids (415
+  records, 830 cards, 830 questions; wave one's 1,275 as master 6f65960 published them, batch A's 800 frozen with its
+  publish): a build may add ids and never lose one, so reword a front or a stem only as a new card or question, which
+  orphans its record. A frozen key the plan no longer holds refuses the build (`frozenLost` in `nextKeys`), so a swap or
+  a rename keeps the pick's key.
 - **The layer** (`js/codex58.js`, the producers and their flagships): the tab is Producers and flagships, owned by the
   Wine Atlas and lit Wine Atlas. Three views (`V58_VIEWS`, `V58_ARGS`, one listener on `[data-v58]`, `V58_ACTS`;
   `v32Arg`, `v32Apply`, `v32ParentRoute`, `v25NavWord`, `v25MainName` wrapped), each answering its address warm and
@@ -134,17 +157,19 @@ element, every selector under `.wrap`, every colour a house token on its own gro
   parent, a name read short of a longer one, or another vintage or wine), the group and the root. Back climbs a house
   to its group, a group to the root, the root to the Wine Atlas root.
 - **The doors** (`v55HubHtml`, `v55RegionHtml`, `prodProfileView` wrapped): Producers and flagships is the last of
-  codex56's study doors on the Wine Atlas root, counting 255 houses across 43 regions; a region page with a group
-  gains Five producers before In the Codex, each group a door with its houses named, and a Producers chip in codex56's
-  study row straight after Read (none on a region with no group); a library producer page with a record gains Its
-  flagship before its drill (201 pages), opening the house, Back returning to the producer.
+  codex56's study doors on the Wine Atlas root, counting the houses and the regions of the data (415 across 75 with
+  batch A); a region page with a group gains Five producers before In the Codex, each group a door with its houses
+  named, and a Producers chip in codex56's study row straight after Read (none on a region with no group); a library
+  producer page with a record gains Its flagship before its drill (258 pages), opening the house, Back returning to the
+  producer. Twelve of the 75 regions are mapless records of `REGIONS` (Jura, Savoie, South West France and Corsica among
+  them), and their pages gain Five producers as any other.
 - **On the house's list**: on a house page after Traps, the house's wines of that producer (`v53House()`, `v28Wines`;
   the producer over the wine, never a price), matched by codex38's own rule to the library, else by the house's name
   read whole (F.E. Trimbach is Trimbach; Latour-Martillac is never Latour), each opening its wine card through the
   list's own door and Back returning to the house; headed On {name} list where the name is already a possessive, else
-  On the list at {name}; nothing drawn when no house is loaded or it pours none. On the fixture house 72 of the 255
-  houses pour 110 wines.
-- **Study**: the decks `flagcards` (all 510), `flagcards:{group}` (a group's ten) and `flagsdue` on codex32's card
+  On the list at {name}; nothing drawn when no house is loaded or it pours none. On the fixture house 77 of the 415
+  houses pour 115 wines.
+- **Study**: the decks `flagcards` (all 830), `flagcards:{group}` (a group's ten) and `flagsdue` on codex32's card
   screen (`v32DeckDef`, `v32StartRun`, `v32CardFace`, `v32CardHtml`, `v32Learnt`, `v32Grade` wrapped), the card kind
   `flag` (the question over the house's name, then the answer with a door to the house); each grade a due date by the
   Codex's own steps (codex56's `v56Step`, `v56Today`, `v56AddDays`, typeof guarded), kept per device in
@@ -160,50 +185,79 @@ element, every selector under `.wrap`, every colour a house token on its own gro
   `#/v/flagship/{id}` (a house, by its `fl-` id); an address naming nothing the device holds falls to the root. The
   decks are `#/flashcards/flagcards`, `#/flashcards/flagcards:{group}` and `#/flashcards/flagsdue`.
 - **Gate**: `node .scripts/check-flagships.js [jsDir] [--partial] [--mutations]` (with `OOT_SHARED` and
-  `OOT_HOUSE_PACK`; a tree with no codex58.js is skipped) loads the shipped chain in check-card's loader with the
-  house engine and the pack and runs 63 checks in twelve sections: the load; the data (the roster whole, the counts
-  pinned exact in one constant, WHOLE, every record through `schema.cjs`, the data the build byte for byte, the ids
-  against the frozen keys, the prefix, nobody living of `people.json` and that check's own test); the caps; the 255
-  pages drawn clean with every section and In the Codex's grapes (421 doors, 8 pinned by name); the root and the
-  groups; the doors; On Brennan's list on the fixture house; the decks, the card face and the schedule on seeded
-  grades; the quiz; the views warm and cold; the shell and the chain rule (every list in a gate that names
+  `OOT_HOUSE_PACK`; a tree with no codex58.js is skipped) loads the shipped chain in check-card's loader with the house
+  engine and the pack and runs 66 checks in twelve sections: the load; the data (the roster whole, the built set shipped
+  whole, every group of the batches `plan.built` names and none of another, the counts pinned exact in one constant,
+  WHOLE, a line a built set (`one`, `one+A`), every record through `schema.cjs`, the data the build byte for byte, the
+  ids against the frozen keys with every frozen key a pick of the plan and shipped, the build's own refusal to lose a
+  frozen id, the published sets as published (PUBLISHED, a line a published set, `one` and `A`: a sha256 over its
+  records' and groups' lines in the data and one over its picks' entries of the keys file, so a later batch's build can
+  carry no change to a published record unseen), the prefix, nobody living of `people.json` and that check's own test);
+  the caps; the 415 pages drawn clean with every section and In the Codex's grapes (586 doors, 8 pinned by name); the
+  root and the groups; the doors; On Brennan's list on the fixture house; the decks, the card face and the schedule on
+  seeded grades; the quiz; the views warm and cold; the shell and the chain rule (every list in a gate that names
   `codex57.js` names `data-flagships.js` and `codex58.js` straight after it, or in the list that follows it); the
-  layer's file in the strictest voice, its colours on their own ground (codex39's claret sources given the dark
-  page's gold). `--mutations` seeds 36 faults (29 with `--partial`), each caught by the check that names it.
+  layer's file in the strictest voice, its colours on their own ground (codex39's claret sources given the dark page's
+  gold). `--mutations` seeds 43 faults (29 with `--partial`), each caught by the check that names it
+  (`FLAGSHIPS_MUTATION=word|word` runs only those whose names hold a word; `FLAGSHIPS_KEYS`, `FLAGSHIPS_PLAN`,
+  `FLAGSHIPS_GATES`, `FLAGSHIPS_BUILD` and `FLAGSHIPS_FRAGMENTS` name the scratch copies the mutations use).
 - **The pins that moved**: `index.html` (two tags after codex57); `sw.js` (`codex-v117` on the branch, `codex-v118`
-  since the merge with the records edition, two assets after codex57); the order lists of `check-atlas-ui.js`,
-  `check-brennans.js`, `check-cms.js` (its order list and its chain list), `check-components.js`, `check-nav.js`,
-  `check-videos.js`, `check-winelist.js`, `check-regions.js`, `check-atlas-course.js` and `check-grapes-table.js`
-  (section 1), each holding the data and codex58 between codex57 and boot where the chain carries them;
-  `check-atlas-course.js` (the root's study doors gain Producers and flagships, last, and a region with a group its
-  Producers chip after Read with the jump landing on Five producers); `check-atlas-nav.cjs` (the root's study doors
-  six where codex58 holds a record); `check-grapes-table.js` (its section 8 base, the chain less codex57's two files,
-  also leaves out codex58's two where the chain carries them, so it stays the layers up to codex56, and the base's
-  load check proves no `V58_WORDS` in it; its worker mutation starts from `codex-v118`). No gate of ChatGPT's changed.
+  since the merge with the records edition, `codex-v119` with batch A, two assets after codex57); the order lists of
+  `check-atlas-ui.js`, `check-brennans.js`, `check-cms.js` (its order list and its chain list), `check-components.js`,
+  `check-nav.js`, `check-videos.js`, `check-winelist.js`, `check-regions.js`, `check-atlas-course.js` and
+  `check-grapes-table.js` (section 1), each holding the data and codex58 between codex57 and boot where the chain
+  carries them; `check-atlas-course.js` (the root's study doors gain Producers and flagships, last, and a region with a
+  group its Producers chip after Read with the jump landing on Five producers); `check-atlas-nav.cjs` (the root's study
+  doors six where codex58 holds a record); `check-grapes-table.js` (its section 8 base, the chain less codex57's two
+  files, also leaves out codex58's two where the chain carries them, so it stays the layers up to codex56, and the
+  base's load check proves no `V58_WORDS` in it; its worker mutation starts from the worker's name of the day). No gate
+  of ChatGPT's changed. With batch A: `index.html` (the data tag at `?v=2`), `sw.js` (`codex-v119`),
+  `check-flagships.js` (WHOLE's `one+A` line, PUBLISHED's `A` line, the swapped tags mutation reading `?v=2` and the
+  worker mutation starting from `codex-v119`, still leaving the worker below `codex-v118`) and `check-grapes-table.js`
+  (its worker mutation starts from `codex-v119`); every other gate counts from the data and the layer and needed no new
+  number.
 - **Left alone on purpose**: `REGIONS`, `WINE_PRODUCERS` and every library producer record (the Codex records the
   refuters found in tension with what they read, 248 entries across the review files under `codexInTension`, four of
   them borne out again by the facts read: Dagueneau's Silex a Vin de France from the 2017 vintage, Kracher's numbered
   Trockenbeerenauslesen a density scale since 1995, Seppeltsfield's 1878 tawny a single vintage cask rather than a
   solera, and Monfortino taking a selection from Arione from the 2015 vintage), listed for the owner and not changed
-  here; `plan.json`'s whys, which no page shows, eleven of them loose by `facts.json`'s `planWhys` and left for the
-  roster's editor; the picks the facts read kept with a note for wave two (Rioja's five all long aged and four of them
-  Haro houses, Sicily without Planeta, Jerez's Harveys a blend beside four bodegas); and the house's own list wording.
+  here, and 112 more entries across batch A's 32 review files, listed and not changed; `plan.json`'s whys, which no page
+  shows, eleven of them loose by `facts.json`'s `planWhys` and left for the roster's editor; the picks the facts read
+  kept with a note for wave two (Rioja's five all long aged and four of them Haro houses, Sicily without Planeta,
+  Jerez's Harveys a blend beside four bodegas); and the house's own list wording.
 
-The shell loads `js/data-flagships.js?v=1` then `js/codex58.js?v=1` after codex57.js and before boot.js; the source
-worker is `codex-v118` and lists both. Wave two is the other 86 region records, by sheet: France 6 (Provence,
-Languedoc-Roussillon, Jura, Savoie and Bugey, South West France, Corsica); Italy 10 (Lombardy, Umbria, Abruzzo,
-Puglia, Sardinia, Emilia-Romagna, Marche, Liguria and Valle d'Aosta, Lazio, Calabria and Basilicata); Spain 9 (Bierzo,
-Rueda and Toro, Navarra, Penedès and Cava, La Mancha, Jumilla and Yecla, the Canary Islands, Txakoli and the Basque
-Country, Ribeiro, Ribeira Sacra and Valdeorras); Portugal 7 (Vinho Verde, Dão, Bairrada, Lisboa, Tejo, Setúbal,
-Alentejo); Germany 7 (Ahr, Nahe, Rheinhessen, Franken, Württemberg, Baden, Mittelrhein); Austria 3 (Wien, Weinviertel,
-Steiermark); the New York sheet 3 (the Finger Lakes, Long Island, Virginia); Argentina 4 (Salta and Cafayate, La Rioja,
-San Juan, Patagonia); Chile 4 (Elqui and Limarí, Aconcagua and Casablanca, Curicó and Maule, Itata and Bío Bío);
-Australia 5 (Clare Valley, McLaren Vale, Yarra Valley, Rutherglen, Tasmania); New Zealand 5 (Gisborne, Hawke's Bay,
-Martinborough, Nelson, Canterbury and Waipara); South Africa 6 (Paarl, Franschhoek, Constantia, Elgin, Walker Bay and
-Hemel-en-Aarde, Robertson); Hungary 8 (Eger, Mátra, Sopron, Badacsony, Somló, Szekszárd, Villány, Kunság); Greece 9
-(Naoussa, Amyndeon, Goumenissa, Rapsani, Nemea, Mantinia, Crete, Kefalonia, Samos). Wave two extends `plan.json` and
-the fragments, adds ids to the frozen keys and moves WHOLE in the gate; the layer reads the data as it grows. The next
-layer is codex59.
+The shell loads `js/data-flagships.js?v=2` then `js/codex58.js?v=1` after codex57.js and before boot.js (the data
+stamp moved with batch A; the layer is unchanged and keeps its stamp); the source worker is `codex-v119` and lists
+both. Wave two is the other 86 region records, in three batches that each ship whole once `plan.built` names them.
+
+**Batch A, built and published on 15 November 2026** (32 regions, one group of five each, 160 records, 320 cards and
+320 questions; 57 houses joined to the library and 103 outside it): France 6 (Provence, Languedoc-Roussillon, Jura,
+Savoie and Bugey, South West France, Corsica); Italy 10 (Lombardy, Umbria, Abruzzo, Puglia, Sardinia, Emilia-Romagna,
+Marche, Liguria and Valle d'Aosta, Lazio, Calabria and Basilicata); Spain 9 (Bierzo, Rueda and Toro, Navarra, Penedès
+and Cava, La Mancha, Jumilla and Yecla, the Canary Islands, Txakoli and the Basque Country, Ribeiro, Ribeira Sacra and
+Valdeorras); Portugal 7 (Vinho Verde, Dão, Bairrada, Lisboa, Tejo, Setúbal, Alentejo).
+
+**Batch B, still to come** (21 groups in the plan, none written): Germany 7 (Ahr, Nahe, Rheinhessen, Franken,
+Württemberg, Baden, Mittelrhein); Austria 3 (Wien, Weinviertel, Steiermark); Hungary 7 (Eger, Mátra, Sopron, Badacsony,
+Somló, Szekszárd, Villány); Greece 4 (Naoussa, Mantinia, Crete, Kefalonia).
+
+**Batch C, still to come** (25 groups in the plan, none written): the New York sheet 3 (the Finger Lakes, Long Island,
+Virginia); Argentina 3 (Salta and Cafayate, San Juan, Patagonia); Chile 3 (Aconcagua and Casablanca, Curicó and Maule,
+Itata and Bío Bío); Australia 5 (Clare Valley, McLaren Vale, Yarra Valley, Rutherglen, Tasmania); New Zealand 5
+(Gisborne, Hawke's Bay, Martinborough, Nelson, Canterbury and Waipara); South Africa 6 (Paarl, Franschhoek, Constantia,
+Elgin, Walker Bay and Hemel-en-Aarde, Robertson).
+
+**The eight thin regions** are in no batch yet: their lanes could not source five houses a guest would know, a group
+never ships short, and each waits in `plan-w2/` with the houses found so far until five are sourced. They are Hungary's
+Kunság; Greece's Amyndeon, Goumenissa, Rapsani, Nemea and Samos; Argentina's La Rioja; and Chile's Elqui and Limarí.
+Wave two is 86 region records with them and 78 without, so the plan today holds 129 groups (51 and 78) over 121 of the
+129 region records the owner chose.
+
+A batch ships in this order: its chunks are written, refuted and read together; its gates agent names it in
+`plan.built`, runs the writing build and adds its line to WHOLE; its integrator runs `--lint --all`, the writing build,
+`--check`, `--plan` and `--freeze`, adds its line to PUBLISHED from the final data and keys, moves the data stamp in
+`index.html` and `CACHE` in `sw.js` with the two gates' mutation strings that name them, and runs every gate, both
+mutation runs and the phone walk. The layer reads the data as it grows and is not edited. The next layer is codex59.
 
 ## The records edition (11 November 2026)
 
@@ -1329,7 +1383,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v118`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v119`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
