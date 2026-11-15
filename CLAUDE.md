@@ -235,7 +235,10 @@ both. Wave two is the other 86 region records, in three batches that each ship w
 Savoie and Bugey, South West France, Corsica); Italy 10 (Lombardy, Umbria, Abruzzo, Puglia, Sardinia, Emilia-Romagna,
 Marche, Liguria and Valle d'Aosta, Lazio, Calabria and Basilicata); Spain 9 (Bierzo, Rueda and Toro, Navarra, Penedès
 and Cava, La Mancha, Jumilla and Yecla, the Canary Islands, Txakoli and the Basque Country, Ribeiro, Ribeira Sacra and
-Valdeorras); Portugal 7 (Vinho Verde, Dão, Bairrada, Lisboa, Tejo, Setúbal, Alentejo).
+Valdeorras); Portugal 7 (Vinho Verde, Dão, Bairrada, Lisboa, Tejo, Setúbal, Alentejo). At its integration every gate
+passed on the 2 November house engine and pack, the ones WorldTable's `static/shared` held that day (52 run, 0
+failed), `check-flagships.js` caught its 43 mutations and `check-grapes-table.js` its 31, each by name, and the phone
+walk at 375 and 390 px, day and night, was clean (404 ok, 0 failed).
 
 **Batch B, still to come** (21 groups in the plan, none written): Germany 7 (Ahr, Nahe, Rheinhessen, Franken,
 Württemberg, Baden, Mittelrhein); Austria 3 (Wien, Weinviertel, Steiermark); Hungary 7 (Eger, Mátra, Sopron, Badacsony,
