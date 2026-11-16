@@ -1,0 +1,378 @@
+{
+ "group": "baden",
+ "chunk": "w13",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 24,
+  "perRecord": {
+   "huber": 5,
+   "heger": 6,
+   "franz-keller": 6,
+   "schloss-neuweier": 4,
+   "ziereisen": 3
+  },
+  "note": "Twenty four searches of a share of twenty eight; four left for the run's shared allowance. Most read as summaries, several restricted to the VDP's or a house's own domain. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: dates, people, classification, grapes, sites, making, window, temperature, label words, story, cards and questions; then the house rules.",
+  "The findings that matter most: Wildenstein is a Grosse Lage of its own with a GG on the market, not a name barred from the label; the Bocksbeutel list outside Franken is not closed at three villages; Franz Keller the elder is dead and dated; three unsourced details (Heger's walled terraces and wartime recall, Keller's tephrite and massal selection) were cut."
+ ],
+ "records": [
+  {
+   "key": "huber",
+   "searches": 5,
+   "tested": [
+    "1987 and the cooperative: Decanter (the father had sold to the cooperative; estate bottling from 1987) and wein.plus agree with the library. Kept.",
+    "The death in June 2014 at 55: Decanter and a Jancis Robinson obituary (11 June 2014); a blog gives 53. Kept at 55.",
+    "The Bienenberg on the VDP's own page: Grosse Lage, weathered shell limestone and loess, 20 to 40 per cent, 200 to 280 metres, south to south west, Cistercian monks from Burgundy growing Spätburgunder in the fourteenth century (told as the VDP's account). Aspect corrected.",
+    "Wildenstein: the VDP lists Bienenberg Wildenstein as a Grosse Lage of its own (1.65 hectares, red shell limestone, 30 to 40 per cent), with a note that its legal recognition is pending; Falstaff lists a 2020 Wildenstein Spätburgunder GG and a tasting site a 2019 Bienenberg Wildenstein GG. The record's claim that the name may not stand on a GG label was refuted.",
+    "Hecklinger Schlossberg: the VDP has a Grosse Lage page for the Schlossberg at Hecklingen, on shell limestone. Kept."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, cards[1].back",
+     "was": "facing south to west",
+     "now": "at about 200 to 280 metres, facing south to south west",
+     "why": "The VDP's own figures.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Bienenberg, Malterdingen",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/1523-bienenberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, others[2], traps[0]",
+     "was": "Wildenstein is the grower's own name, which German wine law keeps off a Grosses Gewächs label; others: Wildenstein Spätburgunder Reserve",
+     "now": "Wildenstein is ranked, provisionally, a Grosse Lage of its own and its wine became a second GG; others: Bienenberg Wildenstein Spätburgunder GG, older bottles Reserve",
+     "why": "The VDP lists Bienenberg Wildenstein as a Grosse Lage, and the GG is on the market under that name.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Bienenberg Wildenstein",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/1502-bienenberg-wildenstein",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Bernhard Huber 2020 Malterdingen Wildenstein Spätburgunder GG",
+       "url": "https://www.falstaff.com/en/wines/weingut-bernhard-huber-2020-malterdingen-wildenstein-spaetburgunder-gg",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Justerini and Brooks: Wildenstein Spätburgunder Reserve",
+       "url": "https://www.justerinis.com/fine-wines/germany/baden/bernhard-huber/wildenstein-spatburgunder-reserve",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The barrel time (about a year and a half, part new oak) rests on importers' sheets of several vintages, not reread here.",
+    "The founder's birth year was not found in two sources; one blog gives his age at death as 53 against Decanter's 55, so the story keeps 55 with Decanter and the house's 2014 date."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "heger",
+   "searches": 6,
+   "tested": [
+    "1935, the country doctor, plots on the Winklerberg and the Achkarrer Schlossberg, the hand over of 1949: the house's history page and two summaries (wein.plus, a trade blog). Kept; the founder's first name (Max) is in the sources but his dates are not, so he stays described.",
+    "The son's work: two summaries say he expanded the estate in the 1960s; the house says the Häusleboden vines are his selection.",
+    "The recall as a medical officer in the war: not found in the house's history as read, nor anywhere else. Cut.",
+    "1981, 1986 (Weinhaus Heger and VDP membership) and 1992: the house and the VDP's estate page. Kept.",
+    "1813 and the physician of Ihringen: the VDP's Winklerberg Wanne page and wein.plus's Winklerberg entry. Kept, described.",
+    "Winklerberg Wanne on the VDP's page: Grosse Lage, Spätburgunder alone, about 260 metres, south west, 0 to 10 per cent, volcanic rock; the Häusleboden named for the family's vineyard hut. 'Walled terraces' not found and cut.",
+    "Vorderer Winklerberg Spätburgunder GG: the house's shop lists it, barrique, several vintages. Kept."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, table",
+     "was": "walled terraces facing south west; vines more than sixty years old",
+     "now": "near level ground at about 260 metres facing south west; vines of the founder's son's selection",
+     "why": "The VDP's figures; the walls unsourced; a vine age that grows each year is volatile.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Winklerberg Wanne, Ihringen",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/1294-winklerberg-wanne",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Dr. Heger: Unsere Lage Winklerberg Wanne Häusleboden",
+       "url": "https://www.heger-weine.de/de/weingut-dr-heger/lage/winklerberg-wanne-haeusleboden.html",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "walls were later built to hold its terraces; called up again as a medical officer in the Second World War though past fifty; brought it into the front rank of German estates",
+     "now": "cut; cut; built it up through the 1960s and planted the Häusleboden's Spätburgunder selection",
+     "why": "The first two found in no source; the third a judgement.",
+     "sources": [
+      {
+       "title": "Weingut Dr. Heger: History",
+       "url": "https://www.heger-weine.de/en/wine-estate-heger/history.html",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus: Weingut Dr. Heger",
+       "url": "https://wineguide.wein.plus/weingut-dr-heger",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0].means",
+     "was": "The Grosse Lage of walled terraces in the Wanne",
+     "now": "classified for Spätburgunder alone",
+     "why": "The VDP's classification.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Winklerberg Wanne, Ihringen",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/1294-winklerberg-wanne",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The élevage (about a year in barrique, months more in steel) is Falstaff's for 2020 alone, kept hedged to that vintage."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "franz-keller",
+   "searches": 6,
+   "tested": [
+    "Franz Keller the elder: 1927 to 2007 in two sources (vinoscout and wein.plus); dead, so named and dated.",
+    "The Michelin star of 1969 and VDP membership of 2014: the VDP's estate page and wein.plus. Kept.",
+    "The founding: the house says the wine business grew up around the inn at the turn of the century and its tagline says since 1892; one guide says 1969. Kept empty.",
+    "The stand against land consolidation: a winery profile dates it to 1971. Dated in the story.",
+    "The Bergkeller: the house's own page, built in the 1980s, up to 112 metres into the loess. Kept.",
+    "The Schlossberg on the VDP's page: Grosse Lage, 200 to 310 metres, 20 to 60 per cent, south west to south east, volcanic soil; tephrite and massal selection not found, cut.",
+    "The making: the 2020 sheet gives twelve months in large wood and six months on full lees in steel; a seller gives twelve months in wood. Kept, hedged."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "rising to about 310 metres, on calcareous volcanic rock, tephrite, planted with old vines propagated by massal selection",
+     "now": "20 to 60 per cent, about 200 to 310 metres, facing south west to south east, on stony volcanic soil",
+     "why": "The VDP's figures; tephrite and the massal selection unsourced.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Schlossberg, Achkarren",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/1216-schlossberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Franz Keller, the father of the present generation; the father fought",
+     "now": "Franz Keller (1927 to 2007), the father of the present head; in the early 1970s Franz Keller fought it",
+     "why": "He is dead and dated in two sources; the consolidation dated.",
+     "sources": [
+      {
+       "title": "vinoscout: Franz Keller winery page",
+       "url": "https://www.vinoscout.de/en/collections/franz-keller",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus: Keller, Franz",
+       "url": "https://glossary.wein.plus/keller-franz-2",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus: Weingut Franz Keller",
+       "url": "https://wineguide.wein.plus/weingut-franz-keller",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Grauburgunder vom Löss in others was not searched; the house's range lists loess wines, so it stands on the author's reading.",
+    "The founding stays empty: the house says the wine business grew up around the inn at the turn of the century and its tagline says since 1892; one guide says the estate was founded in 1969, which looks like the star's year."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "schloss-neuweier",
+   "searches": 4,
+   "tested": [
+    "1785, Riesling from Nierstein and Laubenheim: wein.plus and a Badischer Wein list, which also says the lord brought the Bocksbeutel from his Franconian home. Kept; the lord's dates stay out (wein.plus alone).",
+    "The Bocksbeutel right: the town's page names Varnhalt, Steinbach and Neuweier as the only places outside Franken; another account adds Umweg; the Tauber valley of Baden bottles in it too. The closed list was refuted and softened.",
+    "The sale of 2012: two trade accounts. Kept, unnamed.",
+    "The site: the estate gives arkose rich in feldspar and quartz and up to 60 per cent; the VDP lists Mauerberg Mauerwein a Grosse Lage and Goldenes Loch a Grosse Lage facing south west. Carboniferous not found, cut.",
+    "The making: nothing found beyond the author's one seller's sheet; claim of vessels withdrawn."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "on old rock of the Carboniferous and sandstone rich in feldspar and quartz",
+     "now": "on arkose, a sandstone rich in feldspar and quartz",
+     "why": "The estate's own account; the Carboniferous not confirmed.",
+     "sources": [
+      {
+       "title": "Schloss Neuweier: Weinberge",
+       "url": "https://schloss-neuweier.de/weinberge/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "by a seller's sheet for 2021, two days' settling, wild yeasts, part in wood and part in steel",
+     "now": "accounts differ, so no vessel is claimed",
+     "why": "One seller against wein.plus's steel.",
+     "sources": []
+    },
+    {
+     "field": "story, table, traps[0], questions[0]",
+     "was": "Neuweier, Steinbach and Varnhalt are the villages outside Franken that may use it; the bottle from his estate at Würzburg; distractor 'used under licence from Würzburg'",
+     "now": "Neuweier and a few neighbouring Rebland villages are among the few places outside Franken; from his Franconian home; distractor 'bought in for a single vintage'",
+     "why": "Umweg and the Tauber valley are left out of the closed list; the Franconian home is the Badischer Wein list's wording; the old distractor was half true under the bishop's account.",
+     "sources": [
+      {
+       "title": "Baden-Baden: Wine region Rebland, wineries",
+       "url": "https://baden-baden.com/en/wine-region-rebland/wineries",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wir in Franken: Kulturregion Franken",
+       "url": "https://wir-in-franken.de/kulturregion-franken",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Badischer Wein: Weinhaus sortiment list 2020",
+       "url": "https://dev.badischerwein.de/wp-content/uploads/2020/02/Sortimentsliste-BAD-Weinhaus-2020.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The lord of 1785, Baron Philipp Franz von Knebel-Katzenellenbogen (1733 to 1816), stays undescribed by name: his dates rest on wein.plus alone.",
+    "The exact list of places outside Franken that may use the Bocksbeutel was not read in the Weinverordnung itself; the record names no closed list."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "ziereisen",
+   "searches": 3,
+   "tested": [
+    "The founding: wein.plus 1992 against the author's two sellers' 1991. Kept as a difference.",
+    "Jaspis: sellers say it marks the house's leading wines, Alte Reben on the label; 'prized for its rarity' is one seller's line. Reworded.",
+    "The élevage: Falstaff gives a 500 litre barrel for 2016 and 24 months in wood for 2021; one seller 650 litres. The size is dropped.",
+    "Alcohol: 10.5 per cent for 2021, 12 for 2016 and 2018. 'Light' became 'moderate'.",
+    "Landwein: Falstaff lists Badischer Landwein for the Jaspis and the Steingrüble. Kept.",
+    "10hoch4: no source explains it. Kept as the author left it."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, wine.label[0], story",
+     "was": "wines from its oldest vines; a gemstone prized for its rarity",
+     "now": "its leading wines, from old vines; German for jasper",
+     "why": "'Oldest' unsourced as a rank; the rarity a seller's line.",
+     "sources": [
+      {
+       "title": "Wein Wolf: Ziereisen Jaspis wine sheet",
+       "url": "https://res.cloudinary.com/weinwolf/image/upload/fl_attachment/datasheets/Wein-Wolf-Expertise-51470922.pdf",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Ziereisen 2016 Jaspis Gutedel Landwein 10 hoch 4 Alte Reben",
+       "url": "https://www.falstaff.com/en/wines/weingut-hanspeter-ziereisen-2016-jaspis-gutedel-landwein-10-hoch-4-alte-reben-badischer-landwein",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making, story, cards[1]",
+     "was": "wooden casks of some 650 litres; unfiltered",
+     "now": "wooden casks of a few hundred litres",
+     "why": "Falstaff gives 500 litres for 2016; unfiltered was found only for another wine.",
+     "sources": [
+      {
+       "title": "Falstaff: Ziereisen 2016 Jaspis Gutedel Landwein 10 hoch 4 Alte Reben",
+       "url": "https://www.falstaff.com/en/wines/weingut-hanspeter-ziereisen-2016-jaspis-gutedel-landwein-10-hoch-4-alte-reben-badischer-landwein",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Wein Wolf: Ziereisen Jaspis wine sheet",
+       "url": "https://res.cloudinary.com/weinwolf/image/upload/fl_attachment/datasheets/Wein-Wolf-Expertise-51470922.pdf",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass, table",
+     "was": "light in alcohol",
+     "now": "moderate in alcohol",
+     "why": "10.5 to 12 per cent across vintages.",
+     "sources": [
+      {
+       "title": "Falstaff: Ziereisen 2016 Jaspis Gutedel Landwein 10 hoch 4 Alte Reben",
+       "url": "https://www.falstaff.com/en/wines/weingut-hanspeter-ziereisen-2016-jaspis-gutedel-landwein-10-hoch-4-alte-reben-badischer-landwein",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus: Weingut Ziereisen, Efringen-Kirchen",
+       "url": "https://wineguide.wein.plus/weingut-ziereisen",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The meaning of 10hoch4 is still unsettled, as the author reported.",
+    "No primary source was reached for the house; every kept fact rests on two secondary ones, with 1991 against wein.plus's 1992 told as a difference."
+   ],
+   "verdict": "changed"
+  }
+ ],
+ "livingNamesMet": [
+  "Julian Huber",
+  "Joachim Heger",
+  "Silvia Heger",
+  "Rebecca Heger",
+  "Fritz Keller (Friedrich Keller)",
+  "Friedrich Keller the younger",
+  "Robert Schätzle",
+  "Gisela Joos",
+  "Hanspeter Ziereisen"
+ ],
+ "livingNamesNote": "None is named in prose. Wolfgang (Mimus) Heger's status was not settled; he is not named. Max Heger is not named for want of dates. The VDP and Falstaff addresses of Schloss Neuweier and Ziereisen carry living names and are not cited.",
+ "swaps": [],
+ "swapNote": "The author proposed no swap. The plan's Franz Keller note asked for a swap if the VDP did not list the Achkarren Schlossberg for the house: the VDP's Schlossberg page lists it as a Grosse Lage and Falstaff lists the GG over many vintages, so the pick stands.",
+ "codexTension": [
+  "None found: four of the five houses are not in WINE_PRODUCERS; the library's 1987 for Bernhard Huber agrees with Decanter and wein.plus."
+ ],
+ "questions": "Each record's two questions were read: one key each, distractors of one kind; Schloss Neuweier's distractor 'under licence from Würzburg' was half true under one account and was replaced."
+}
