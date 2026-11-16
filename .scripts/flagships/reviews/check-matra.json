@@ -1,0 +1,398 @@
+{
+ "group": "matra",
+ "chunk": "w15",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 18,
+  "perRecord": {
+   "dubicz": 4,
+   "benedek": 2,
+   "losonci": 2,
+   "bardos-es-fia": 2,
+   "szoke-matyas": 5,
+   "shared": 3
+  },
+  "note": "Eighteen searches of a share of twenty eight, ten left unspent, none of them the author's. Shared: Olaszrizling's rank in Hungary and the Mátra's main grapes (restricted to bor.hu and winesofhungary.hu, read as primary), the Debrői Hárslevelű designation (the national wine authority's product specification) and the Pata Wine Community's festival. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the grapes, the sites, the making and its months, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "Where a search contradicted the record it was set right with its source; where a detail rested on the author's reading alone and no search of this check found it, it was cut (the Wine Palace's capacity, the Hajdú tenure, Farkasmály, the Kis-Benedek trap, Gyöngyözőbor's blend).",
+  "Prices met on the houses' product pages and in search summaries were not used."
+ ],
+ "sharedSources": [
+  "Magyar Bor: Hungary's favourite grape varieties, https://bor.hu/en/magazine/hungarys-favourite-grape-varieties/ (search): Olaszrizling among the most widely planted, Bianca the most planted white.",
+  "Magyar Bor: Irsai Olivér, https://bor.hu/en/irsai-oliver/ (search): bred in 1930; the Mátra grows more of it than anywhere, about 500 hectares.",
+  "Nemzeti Borászati Hatóság: Debrői Hárslevelű OEM product specification, https://boraszat.kormany.hu/download/8/1b/63000/Debr%C5%91i%20H%C3%A1rslevel%C5%B1%20OEM_v4_2.pdf (search): Aldebrő, Feldebrő, Tarnaszentmária, Tófalu and Verpelét, filed by the Eger district's council.",
+  "Magyar Bor and Wines of Hungary: the Gyöngyöspata Kékfrankos festival launched in 2023, its third edition in 2025, https://winesofhungary.hu/events/festival-of-kekfrankos-kadarka-and-ancient-hungarian-grape-varieties-in-gyongyospata (search)."
+ ],
+ "records": [
+  {
+   "key": "dubicz",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The co-operative of 1901, its 256 shares, the share company of 1905, the surname of 1934, the abolition of 1946, nationalisation in 1951, the purchase of 2003 and the name of 2016: the house's own history page (search) gives each; a museum label of 1906 and an architectural history of 2026 add that the founding is dated 1900, 1901 or 1906 by document and that the building has no single year of construction, so founded stays empty.",
+    "The Hajdú family from 1940 and their deaths in 1944: not in the house's history as read here nor in any result; cut.",
+    "Olaszrizling as Hungary's most planted grape and the Mátra's commonest white: refuted by Magyar Bor (Bianca the most planted white; Irsai Olivér the Mátra's grape).",
+    "The Sárhegy's oak: the producer's listings on Magyar Bor's fair sites give 2023 fermented and aged three months in 225 litre Hungarian barrels, new, and 2022 twelve months in 500 litre Hungarian oak.",
+    "The Sár-hegy's soils: the house's own Sárhegy page, primary for its own vineyard; kept, hedged.",
+    "The house rules: the mother and daughter who run the house met in results and not named; British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "table, story",
+     "was": "Hungary's most planted grape; the Mátra's commonest white grape",
+     "now": "one of Hungary's most widely planted white grapes",
+     "why": "Magyar Bor names Bianca the most planted white and Irsai Olivér as the grape the Mátra grows most",
+     "sources": [
+      "https://bor.hu/en/magazine/hungarys-favourite-grape-varieties/",
+      "https://bor.hu/en/irsai-oliver/"
+     ]
+    },
+    {
+     "field": "wine.making, wine.glass, questions[0]",
+     "was": "aged in new oak barrels for a few months to about a year",
+     "now": "Hungarian oak by vintage: about three months in 225 litre barrels for 2023, fermented in them, twelve months in 500 litre casks for 2022",
+     "why": "the producer's own listings; new barrels are named for 2023 only",
+     "sources": [
+      "https://vinexpoasia.bor.hu/wines/dubicz-sarhegy-olaszrizling-2023",
+      "https://wineparis.bor.hu/wines/dubicz-sarhegy-olaszrizling-2022"
+     ]
+    },
+    {
+     "field": "story, cards[0]",
+     "was": "the co-operative raised the Borpalota with a cellar for some 40,000 hectolitres, completed 1906 to 1909",
+     "now": "the share company of 1905 acquired the building; no single year of building can be given",
+     "why": "the house's history says bought; the architectural history ties the building to no one year; the capacity found in no source of this check",
+     "sources": [
+      "https://dubicz.hu/en/winery/history/",
+      "https://real.mtak.hu/247541/7/doi_52-57.pdf"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the Hajdú family from 1940, who lost their lives in 1944",
+     "now": "ownership abolished in 1946, briefly private again, nationalised in 1951, as the house tells it",
+     "why": "the tenure and the deaths were found in no source of this check; the house's own sequence replaces them",
+     "sources": [
+      "https://dubicz.hu/en/winery/history/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "restoration begun in 2023 and completed in 2026",
+     "now": "restored from 2023",
+     "why": "the architectural history gives 2023 to 2025; the completion year rests on one report",
+     "sources": [
+      "https://real.mtak.hu/247541/7/doi_52-57.pdf"
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Vinoport, Hungarianwines and the house's Sárhegy product page",
+     "now": "the two fair listings and the architectural history",
+     "why": "the facts they held are cut or now rest on the new sources",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The fermentation vessel by vintage: the 2023 listing says fermented and aged in barrel, the 2022 aged in cask; the record says some vintages.",
+    "The ageing line rests on one taster's advice, as the record says."
+   ]
+  },
+  {
+   "key": "benedek",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "The cellar of 1947 and the new start after 1990: the house's own history (primary, the author's); an importer's newsletter calls the cellar the grandfather's and the winemaker the third generation, so the generations stay uncounted and 1947 stays hedged as the family's account.",
+    "The Kékfrankos made in tank: confirmed by an importer (six months in tank), which stays out of the record as one source.",
+    "Kis-Benedek Pince in Eger: no source places it in Eger; the trap cut.",
+    "The Pata Wine Community and its Kékfrankos festival from 2023: Magyar Bor and Wines of Hungary agree (third edition in 2025).",
+    "Gyöngyöstarján north west of Gyöngyös, Kékfrankos Hungary's most planted black grape: agree with Magyar Bor and the atlas.",
+    "The house rules: the winemaker, a living member of the family, met in results and not named; serve 15 to 16 degrees Celsius within the Codex's reference for a medium red."
+   ],
+   "changed": [
+    {
+     "field": "traps[1]",
+     "was": "Benedek Pince is a different house from Kis-Benedek Pince, whose tasting room is in Eger",
+     "now": "the Kékfrankos is a wine of the basic series, made in tank; the old vine Hárslevelű is the bottling importers carry abroad",
+     "why": "nothing ties Kis-Benedek to Eger; the new trap rests on the house's own range and the importers already cited",
+     "sources": [
+      "https://www.benedekpince.hu/boraink/",
+      "https://www.astorwines.com/item/47743"
+     ]
+    }
+   ],
+   "open": [
+    "The generation count: the house dates its cellar to 1947 and its builders as the great grandparents of the generation that runs it, while an importer's profile calls the cellar the grandfather's and the winemaker the third generation; the record keeps the house's account, hedged.",
+    "An importer's making (six days on the skins, six months in tank, six months in bottle) appears on one importer and one newsletter only and stays out.",
+    "The rename to the Öregtokék Hárslevelű is refused (the review file says why)."
+   ]
+  },
+  {
+   "key": "losonci",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "2004: Magyar Bor's register (the author's) and an interview whose address names the living founder; kept on the register.",
+    "The Hárslevelű: Magyar Bor's register lists it among the house's whites; no source names a flagship.",
+    "Hárslevelű's own designation at Debrő in the Eger district: the national authority's product specification, filed by the Eger district's council, names Aldebrő, Feldebrő, Tarnaszentmária, Tófalu and Verpelét; confirmed.",
+    "The natural cellar rule and the vineyard at 220 to 340 metres: the house's own pages (primary, the author's); kept, hedged.",
+    "The Pata Wine Community's festival of 2023: confirmed (shared)."
+   ],
+   "changed": [
+    {
+     "field": "others[1]",
+     "was": "Olaszrizling, the Mátra's common white grape",
+     "now": "one of Hungary's most widely planted white grapes",
+     "why": "Magyar Bor names Irsai Olivér as the grape the Mátra grows most",
+     "sources": [
+      "https://bor.hu/en/irsai-oliver/"
+     ]
+    }
+   ],
+   "open": [
+    "No source names a flagship of the house; Magyar Bor's register lists a Hárslevelű among its wines, so the record stands under the thin region rule, saying plainly what the wine is. The swap is refused for now (the review file says why) and left to the integrator with Karner Gábor named as the candidate to research.",
+    "Whether the Hárslevelű carries the Mátra designation on its label could not be confirmed.",
+    "The glass and the ageing are the grape's profile as Magyar Bor gives it, not a note of this bottling."
+   ]
+  },
+  {
+   "key": "bardos-es-fia",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "1999 at Nagyréde: the house's own words (Wine Folly's guide quotes them) and the Borászportál; confirmed.",
+    "The vineyard on brown forest soil at narrow spacing within Nagyréde: the house; confirmed.",
+    "Farkasmály: found in no source of this check; cut.",
+    "The thesis of 2024: real, but written by a living member of the family; cut.",
+    "The Cabernet Franc of 2019: the house's page makes it a memorial to the house's late owner, who died young and had planned a serious Mátra Cabernet Franc; his dates not given, so not named.",
+    "My Mátra: the house's page gives Irsai Olivér, Sauvignon Blanc, Traminer and Ottonel Muscat. Gyöngyözőbor: its page repeats My Mátra's text, so its blend is not trusted.",
+    "Irsai Olivér bred in 1930 at Kecskemét, the Mátra its main home: Magyar Bor."
+   ],
+   "changed": [
+    {
+     "field": "story, wine.making",
+     "was": "oak aged wines matured in a cellar at Farkasmály; grapes pressed and bottled at Nagyréde",
+     "now": "cut",
+     "why": "no source of this check names Farkasmály",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "a university thesis of 2024 on the house's reductive winemaking",
+     "now": "cut",
+     "why": "its author is a living member of the family and it teaches a guest nothing",
+     "sources": []
+    },
+    {
+     "field": "story, others[2]",
+     "was": "dedicated to the late founder or head",
+     "now": "made in memory of the house's late owner, the red he had planned",
+     "why": "the house's page calls him the owner",
+     "sources": [
+      "https://bardosbor.hu/borok/cabernet-franc/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "",
+     "now": "the Mátra grows more Irsai Olivér than any other district",
+     "why": "Magyar Bor's page for the grape",
+     "sources": [
+      "https://bor.hu/en/irsai-oliver/"
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "a semi dry, lightly sparkling wine of Irsai Olivér, Ottonel Muskotály, Tramini and Sauvignon Blanc",
+     "now": "a lightly sparkling white of the house",
+     "why": "the page for Gyöngyözőbor copies My Mátra's text, so its blend and sweetness cannot be read from it",
+     "sources": [
+      "https://bardosbor.hu/borok/gyongyozobor/"
+     ]
+    }
+   ],
+   "open": [
+    "No source names the house's flagship; the Irsai Olivér stays as the wine the house is known by under the thin region rule.",
+    "Whether the late owner founded the house in 1999 or his son did with him is not said by any source read; the record says the family."
+   ]
+  },
+  {
+   "key": "szoke-matyas",
+   "searches": 5,
+   "verdict": "sound",
+   "tested": [
+    "Winemaker of the Year 2017, the first from the Mátra in the award's 27 years, wine since the 1970s, working with his son: Daily News Hungary, with Trade Magazin; confirmed.",
+    "Gyöngyöstarján: the house and an importer's listing give the address there; confirmed.",
+    "Peres Cuvée the flagship: the house's own page for the 2015 calls it the cellar's flagship, a big red of Cabernet Sauvignon and Cabernet Franc aged in barrique, selected from one site; an article on the Mátra's growers places the Peres vineyard at Gyöngyöspata beside the Hajnal-hegy, Kisdomb and Száraz-völgy at Gyöngyöstarján.",
+    "The Muscat Ottonel from Száraz-völgy among the flagship wines: the house's vineyard page; confirmed.",
+    "The Irsai Olivér as a light, dry, scented white: the house's own page for the 2020; the record teaches it truly."
+   ],
+   "changed": [],
+   "open": [
+    "The rename to Peres Cuvée, the wine the house calls its flagship, is accepted and waits for the read together agent: the patch in reviews/check-matra.json, with the plan changed, makes this record the Peres Cuvée's; until then it teaches the Irsai Olivér truly.",
+    "The label term Szőke Mátyás & Zoltán carries the son's first name, as the house's own name does; the read together agent may prefer to cut it.",
+    "The founder's status is unknown; he is named only as the house."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "The mother and daughter who run Dubicz, and a member of the family named as owner in one listing",
+  "The winemaker of Benedek Pince, of the family",
+  "The founder of Losonci, whose first name is in two sources' addresses",
+  "A member of the Bárdos family, author of the 2024 thesis",
+  "The son of the Szőke Mátyás founder, whose first name is in the house's full name"
+ ],
+ "swaps": [
+  {
+   "group": "matra",
+   "key": "benedek",
+   "proposal": "The wine's name alone, Kékfrankos to Öregtokék Hárslevelű; house and key kept",
+   "ruling": "refused",
+   "why": "No source names the old vine Hárslevelű the house's flagship; it is the bottling importers carry, while the house's own site gives no flagship. Its vine age rests on one importer and its barrel ageing on another, so the record would rest on single sources, and it would double Losonci's grape in this group. The Kékfrankos is a true wine of the house, made in tank by the house's own account, and speaks for the plan's why, the Mátra as a new home of the grape."
+  },
+  {
+   "group": "matra",
+   "key": "losonci",
+   "proposal": "Rename the wine to Rajnai Rizling, or replace the house with Karner Gábor",
+   "ruling": "refused for now, left to the integrator",
+   "why": "The Rajnai Rizling rests on one profile whose address names the living founder, so it cannot be cited; Karner Gábor would need a whole record researched afresh. Magyar Bor's register lists the house's Hárslevelű, so the record stands under the thin region rule, telling plainly that no flagship is named."
+  },
+  {
+   "group": "matra",
+   "key": "szoke-matyas",
+   "proposal": "The wine to Peres Cuvée, which the house calls its flagship (or to its Muscat Ottonel); house and key kept",
+   "ruling": "accepted, to Peres Cuvée",
+   "why": "The house's own page for the Peres Cuvée calls it the cellar's flagship, the brief's ground for a swap: a flagship the house leads with. It also ends the plan's doubling of Irsai Olivér with Bárdos és Fia. The Muscat Ottonel is only among the house's flagship wines, so the Peres Cuvée is preferred. Every fact of the patched record stands on the house's own pages, the article placing the Peres vineyard at Gyöngyöspata and Daily News Hungary; the barrique months are not published and are not given.",
+   "planEntry": {
+    "from": "szoke-matyas",
+    "to": "szoke-matyas",
+    "why": "the house's own page calls the Peres Cuvée, Cabernet Sauvignon and Cabernet Franc in barrique, its flagship; house and key kept",
+    "agreed": true,
+    "date": "2026-11-16"
+   },
+   "planWine": "Peres Cuvée",
+   "planWhy": "Gyöngyöstarján family cellar whose founder was Hungary's Winemaker of the Year for 2017, the first from the Mátra; its Peres Cuvée, Cabernet Sauvignon and Cabernet Franc from the Peres vineyard at Gyöngyöspata aged in barrique, is the wine the house calls its flagship.",
+   "patch": {
+    "say": "SUR-keh MAH-tyahsh, PEH-resh",
+    "wine.name": "Peres Cuvée",
+    "wine.colour": "red",
+    "wine.grapes": "Cabernet Sauvignon and Cabernet Franc, as the house gives the blend, in no fixed share.",
+    "wine.sites": "The Peres vineyard at Gyöngyöspata, on the Mátra's southern foothills near the family's home village of Gyöngyöstarján; the house calls the wine a selection from that single site.",
+    "wine.making": "Aged in barrique, the small oak barrel, as the house describes its flagship; the house publishes no months of ageing and no detail of its fermentation, so the record gives none.",
+    "wine.glass": "Blackcurrant with vanilla and dark chocolate from the barrels, as the house's notes for its barrique aged Cabernets describe them; dry and full, a big red wine, as the house calls it.",
+    "wine.ageing": "Open it a few years after the vintage, once the oak has settled into the fruit; the house gives no drinking window of its own.",
+    "wine.serve": "16 to 18 degrees Celsius; decant a young bottle for an hour; a Bordeaux glass.",
+    "wine.label": [
+     {
+      "term": "Peres",
+      "means": "The Peres vineyard at Gyöngyöspata, from which the house selects the wine."
+     },
+     {
+      "term": "Cuvée",
+      "means": "A blend, here of Cabernet Sauvignon and Cabernet Franc."
+     },
+     {
+      "term": "Mátra",
+      "means": "The protected designation of origin of the district, written Mátrai in the adjective."
+     }
+    ],
+    "table": "Peres Cuvée is the wine Szőke Mátyás calls its flagship: Cabernet Sauvignon and Cabernet Franc from the Peres vineyard at Gyöngyöspata, aged in barrique. Expect blackcurrant, vanilla and dark chocolate; decant a young bottle and pour it at 16 to 18 degrees.",
+    "story": "The family has made wine at Gyöngyöstarján since the 1970s, as the house tells it: its head, an engineer by training, took up winemaking in earnest then, and his son, trained as a winemaker, later joined him in the cellar, so the house carries both their names, family name first in the Hungarian order. The family vineyards lie around the village on the Mátra's southern foothills, among them Hajnal-hegy and Száraz-völgy, and at Gyöngyöspata to the west, where the Peres vineyard gives the house its red flagship. In 2017 the Hungarian Wine Academy named the founder Winemaker of the Year, chosen from the nominations of hundreds of sommeliers, restaurateurs and other professionals, and he was the first from the Mátra in the award's history; his reds had more than once been judged the district's leading red at its own competition. The house is known for a broad range, from Irsai Olivér, a Hungarian crossing first bred in 1930, and a semi sweet Muscat Ottonel to Chardonnay and Merlot, but it names Peres Cuvée, a Cabernet Sauvignon and Cabernet Franc aged in barrique and selected from one site, as its flagship. For a sommelier, the wine answers a guest who thinks of the Mátra as white wine country: a Bordeaux pair of grapes grown on volcanic foothills, from a cellar whose founder put the district on the national map.",
+    "others": [
+     {
+      "name": "Mátrai Irsai Olivér",
+      "note": "A light, dry, scented white for the summer after the vintage."
+     },
+     {
+      "name": "Mátrai Muscat Ottonel",
+      "note": "A semi sweet Muscat from Száraz-völgy beside Hajnal-hegy, which the house counts among its flagship wines."
+     }
+    ],
+    "traps": [
+     "Peres Cuvée is a red Cabernet blend; the Irsai Olivér is the house's light, early white.",
+     "Peres is a vineyard at Gyöngyöspata, though the house's cellar is at Gyöngyöstarján.",
+     "Irsai Olivér and Muscat Ottonel are two different grapes, though both smell of Muscat."
+    ],
+    "cards": [
+     {
+      "front": "Szőke Mátyás: which honour came to the house's founder in 2017?",
+      "back": "Hungary's Winemaker of the Year, from the Hungarian Wine Academy, the first from the Mátra."
+     },
+     {
+      "front": "Szőke Mátyás's flagship red: which two grapes, from which vineyard?",
+      "back": "Cabernet Sauvignon and Cabernet Franc from the Peres vineyard at Gyöngyöspata: the Peres Cuvée, aged in barrique."
+     }
+    ],
+    "questions": [
+     {
+      "q": "A guest orders Szőke Mátyás's Peres Cuvée and asks what is in the bottle. Which answer fits?",
+      "opts": [
+       "Cabernet Sauvignon with Cabernet Franc",
+       "Kékfrankos with Kadarka and Portugieser",
+       "Merlot with Pinot Noir and Zweigelt",
+       "Syrah with Grenache and Cabernet Franc"
+      ],
+      "a": 0,
+      "exp": "The house blends Cabernet Sauvignon and Cabernet Franc and ages them in barrique; Kékfrankos and Kadarka belong to the Bikavér of nearby Eger, not to this wine.",
+      "tag": "wine"
+     },
+     {
+      "q": "In which year was the founder of Szőke Mátyás named Hungary's Winemaker of the Year, the first from the Mátra?",
+      "opts": [
+       "2017",
+       "1997",
+       "2004",
+       "2023"
+      ],
+      "a": 0,
+      "exp": "The Hungarian Wine Academy gave him the title for 2017; he had made wine at Gyöngyöstarján since the 1970s.",
+      "tag": "story"
+     }
+    ],
+    "sources": [
+     {
+      "title": "Szőke Mátyás & Zoltán: Peres Cuvée 2015",
+      "url": "https://www.szokematyas.hu/borok/birtokbor/peresi-matrai-cuvee-2015/",
+      "kind": "primary",
+      "read": "search"
+     },
+     {
+      "title": "Szőke Mátyás & Zoltán: Ültetvények, the vineyards",
+      "url": "https://www.szokematyas.hu/ultetvenyek/",
+      "kind": "primary",
+      "read": "search"
+     },
+     {
+      "title": "Szőke Mátyás & Zoltán: Mátrai Cabernet Sauvignon & Cabernet Franc Barrique 2017",
+      "url": "https://www.szokematyas.hu/borok/vorosbor/cabernet-sauvignon-franc-barrique-2017/",
+      "kind": "primary",
+      "read": "search"
+     },
+     {
+      "title": "Eger archive: an article on the Mátra wine district and its growers",
+      "url": "https://archiveger.dspace.qulto.eu/bitstreams/69668961-ed94-4737-825c-e3d8f8992a59/download",
+      "kind": "secondary",
+      "read": "search"
+     },
+     {
+      "title": "Daily News Hungary: Hungarian Vintner of the Year 2017 has been selected",
+      "url": "https://dailynewshungary.com/hungarian-vintner-year-2017-selected",
+      "kind": "secondary",
+      "read": "search"
+     }
+    ]
+   },
+   "forReadTogether": "Set the pick's wine to Peres Cuvée in plan.json (and, if you agree, the why above), record the swap in the group's swaps, and in the same commit apply the patch above to records[4] of fragments/matra.json: each key a field path set to its value (wine.label, others, traps, cards, questions and sources replaced whole). Set its checked block to verdict changed, with changed: the wine replaced by Peres Cuvée, house and key kept; and open: the barrique months and fermentation not published. Tested in memory with the plan so changed: no problem, 539 reading words."
+  }
+ ],
+ "tension": [
+  "The region record's or plan's description of Olaszrizling as the Mátra's lead white grape, if it says so (the plan's why for Dubicz calls it the district's lead white grape), stands against Magyar Bor, which gives Irsai Olivér as the grape the Mátra grows most; reported, never edited.",
+  "The plan's note for Benedek calls the family third generation; the house says fourth. Reported for the read together agent."
+ ]
+}
