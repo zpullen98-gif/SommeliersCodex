@@ -1,0 +1,679 @@
+{
+ "group": "mittelrhein",
+ "chunk": "w14",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 15,
+  "perRecord": {
+   "toni-jost": 4,
+   "ratzenberger": 4,
+   "matthias-muller": 3,
+   "weingart": 2,
+   "lanius-knab": 2
+  },
+  "note": "Fifteen searches of a share of twenty eight, thirteen left unspent for the run's shared allowance. Two searches served the whole group (the VDP Mittelrhein association's founding and chairs; the members' years of joining) and are counted with Toni Jost and Ratzenberger. One wasted search for the Bernstein outside the VDP's domain returned nothing and is counted with Lanius-Knab. Most were restricted to the VDP's own domain and read as summaries. No fetch tried. The wein.plus magazine address carries the living grower's name and is listed here only, never in the fragment."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people, the classification, the grapes, the sites with their heights, aspects and soils, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the dates the stories turn on (the VDP Mittelrhein association of 1987 and its chairs, each house's year of joining, Toni Jost's 1831 and 1953, Lanius-Knab's 1991 and 1995, Weingart's 1960s and 1996, Matthias Müller's handover), then to the sites on the VDP's own pages, then to tasting notes for the two glasses the author had written from the style of the site.",
+  "Where a site's figures differed from the VDP's own page (the Bernstein Am Lauerbaum, the Feuerlay) the VDP's figures were taken; where a claim rested on nothing read (the Schönburg opposite the Lauerbaum, the Walkenberg's soil, the Engelstein's iron, the Feuerlay as the warmest exposure, the etymologies of Hahnenhof and Feuerlay) it was cut."
+ ],
+ "records": [
+  {
+   "key": "toni-jost",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1831: the VDP's Weinberg.online and Weinpaket pages, written from the house (grown Riesling at Bacharach since 1831, seventh generation); kept, hedged as the house's account.",
+    "1953: the VDP's Weinpaket page gives the joining of Toni Jost of Bacharach with Weller of Walluf, through the marriage of the grandparents of the present owner; kept, spouses unnamed.",
+    "1987: the VDP's region page gives seven Bacharach estates founding the association in 1987, and the VDP gives Toni Jost a member since 1987; worded as membership since that year.",
+    "The Hahn: the VDP lists the Bacharacher Hahn as the estate's monopole, Erste Lage, and Im Hahn as Grosse Lage, about two hectares of dark weathered Devonian slate, south to south east, 65 to 70 per cent.",
+    "The label: Falstaff lists Bacharach Im Hahn Riesling GG for 2017 to 2023, and a critic's database prints Bacharacher Hahn Riesling Grosses Gewächs for 2015 and Bacharacher Im Hahn for 2023, so the plan's words are the older form.",
+    "Others: Falstaff lists a Walluf Walkenberg Riesling VDP Grosses Gewächs (2012) and a Bacharach Im Hahn Spätburgunder GG (2018, 2020, 2021); both stand.",
+    "The questions: one right answer each, options of one kind; the distractors 1831 and 1987 are the record's own dates and teach. House rules: no living name, no price, no score, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "steep slate on slopes of 65 to 70 per cent",
+     "now": "dark weathered Devonian slate facing south to south east, on slopes of 65 to 70 per cent",
+     "why": "The VDP's Im Hahn page gives the slate and the aspect.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Im Hahn, Bacharach",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/3070-im-hahn",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "lime, green apple and white peach over wet slate and a faint smoky note",
+     "now": "wet slate and a wisp of smoke, then white peach, tangerine and a hint of pineapple",
+     "why": "The author wrote it from the style of the site; Falstaff's note of the 2020 gives these things, and a critic's note of the 2023 opens on smoke and wet stone.",
+     "sources": [
+      {
+       "title": "Falstaff: Toni Jost Hahnenhof, Bacharach Im Hahn Riesling GG 2020",
+       "url": "https://www.falstaff.com/en/wines/weingut-toni-jost-hahnenhof-2020-bacharach-im-hahn-riesling-gg",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[2]",
+     "was": "Hahnenhof: the estate's other name, taken from its holding in the Hahn",
+     "now": "the estate's other name, printed beside Toni Jost on its labels",
+     "why": "No source gave the derivation; Falstaff and the VDP print the estate as Toni Jost Hahnenhof.",
+     "sources": [
+      {
+       "title": "Falstaff: Toni Jost Hahnenhof, Bacharach Im Hahn Riesling GG 2020",
+       "url": "https://www.falstaff.com/en/wines/weingut-toni-jost-hahnenhof-2020-bacharach-im-hahn-riesling-gg",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Weinberg.online, Toni Jost",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/weingut/toni-jost",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "seven generations have since worked the Hahn ... that gives the house its other name, the Hahnenhof",
+     "now": "the family has grown Riesling at Bacharach since 1831, and the estate, which also goes by the name Hahnenhof, has passed through seven generations",
+     "why": "The VDP's pages say Riesling since 1831 and the seventh generation, not that the Hahn was worked from 1831 or named the house.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Toni Jost",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/weingut/toni-jost",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the Walkenberg, a slope of loess loam over gravel in the Taunus foothills",
+     "now": "the Walkenberg at Walluf, a site the VDP ranks Grosse Lage",
+     "why": "The soil was not in anything read; the Grosse Lage stands on Falstaff's Walkenberg Grosses Gewächs listing.",
+     "sources": [
+      {
+       "title": "Falstaff: Toni Jost Hahnenhof, Walluf Walkenberg Riesling VDP Grosses Gewächs 2012",
+       "url": "https://www.falstaff.com/en/wines/weingut-toni-jost-hahnenhof-2012-riesling-walkenberg-walluf-vdp-grosses-gewaechs",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Toni Jost was one of them",
+     "now": "the VDP has counted Toni Jost a member since that year",
+     "why": "No source read lists the seven founders by name; the VDP gives Toni Jost a member since 1987.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Toni Jost",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/weingut/toni-jost",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Mittelrhein, the VDP region",
+       "url": "https://www.vdp.de/en/the-wines/the-vdpregions/mittelrhein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The swap to Bacharach Im Hahn Riesling GG is accepted; the read together agent changes plan.json and wine.name in one commit.",
+    "The stainless steel maturing rests on Falstaff's listings alone and is hedged as theirs."
+   ]
+  },
+  {
+   "key": "ratzenberger",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1987 and the chair: the VDP's region page gives the association's founding in 1987 by seven Bacharach estates and the father of the house as chairman from 1998 to 2010, and the son as chairman since; the VDP gives Ratzenberger a member since 1987.",
+    "The St. Jost: the VDP's page gives 170 to 200 metres, about 60 per cent falling south, Devonian slate under windblown sand from volcanic eruptions in the Neuwied Basin more than ten thousand years ago.",
+    "The Wolfshöhle as a second Grosse Lage of the house: the VDP's Weinberg.online lists both; Falstaff lists a Wolfshöhle Grosses Gewächs (2012) and Vinous one for 2020.",
+    "The Sekt: the house's own words on its VDP page (traditional method, long lees ageing, for many years) and Falstaff's Riesling brut listings.",
+    "Stainless steel: Vinous and a Swiss importer's profile (only Pinot Noir sees wood).",
+    "The three hundred years: the tourism and importer pages give the family as the third generation in the old Hütwohl estate, so the long history belongs to the building, not the family.",
+    "The questions: one answer each; the explanations teach the Boppard loop and the chair's years."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "by its own account it carries more than three hundred years of history",
+     "now": "works from a historic vaulted cellar",
+     "why": "The family is in its third generation by the tourism and importer pages; the old years are the building's, and no source read sets them out.",
+     "sources": [
+      {
+       "title": "Mittelrhein Wein: Weingut Ratzenberger",
+       "url": "https://www.mittelrhein-wein.com/en/a-weingut-ratzenberger",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Baur au Lac Vins: Weingut Ratzenberger",
+       "url": "https://www.bauraulacvins.ch/en/weingut-ratzenberger-fam-ratzenberger-_content---1--844.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Ratzenberger was one of them",
+     "now": "the VDP has counted Ratzenberger a member since that year",
+     "why": "No source read names the seven founders; the VDP gives a member since 1987.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.online, Ratzenberger",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/weingut/ratzenberger",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Mittelrhein, the VDP region",
+       "url": "https://www.vdp.de/en/the-wines/the-vdpregions/mittelrhein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites and cards[1]",
+     "was": "Devonian slate under a layer of windblown sand like loess",
+     "now": "Devonian slate under windblown sand that the VDP traces to volcanic eruptions in the Neuwied Basin; the slope falls south",
+     "why": "The VDP's page gives the sand's origin and the aspect; like loess was the author's gloss.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, St. Jost, Bacharach",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/3050-st-jost",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "ripe lemon, yellow apple and peach over wet slate and a smoky, herbal edge",
+     "now": "white peach, apricot and ripe yellow apple over wet stone, with lime leaf and dried lemon peel",
+     "why": "The author wrote it from the style of the site; Falstaff's notes of the 2019 and 2022 and Vinous's of the 2023 give these things.",
+     "sources": [
+      {
+       "title": "Falstaff: Ratzenberger, Steeg St. Jost Riesling GG 2022",
+       "url": "https://www.falstaff.com/en/wines/weingut-ratzenberger-steeg-st-jost-riesling-gg-1",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Vinous: Ratzenberger, Riesling Steeger St. Jost Grosses Gewächs",
+       "url": "https://vinous.com/wines/ratzenberger-riesling-steeger-st-jost-grosses-gewachs/2021",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "also made in sweet Prädikat styles",
+     "now": "which gives a second dry Grosses Gewächs",
+     "why": "No source read showed a sweet Wolfshöhle; Falstaff lists its Grosses Gewächs.",
+     "sources": [
+      {
+       "title": "Falstaff: Ratzenberger, Riesling Wolfshöhle VDP Grosses Gewächs 2012",
+       "url": "https://www.falstaff.com/en/wines/weingut-ratzenberger-2012-riesling-wolfshoehle-bacharach-vdp-grosses-gewaechs",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": []
+  },
+  {
+   "key": "matthias-muller",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "2007: the VDP's Weinberg.online (in the VDP since 2007).",
+    "The three hundred years, the mixed farm, the turn to wine in the twentieth century and the handover shortly before 2000 to the son and his wife: the Wines of Germany profile and a tourism page (the late 1990s); kept, the people unnamed.",
+    "The Mandelstein: the VDP's page gives south south east, 70 to 170 metres, 45 to 70 per cent, weathered Devonian slate; the house's own words on its VDP page name the Mandelstein GG the wine closest to its heart, from its oldest parcel directly below a wall.",
+    "The sites the house works: the VDP lists the Fässerlay, Feuerlay, Mandelstein, Ohlenberg, Engelstein and An der Rabenlei; the Grosse Lage rank of the Ohlenberg and the Engelstein was not shown.",
+    "The glass: left as the author wrote it on a Meininger note and a critic's note; not re-tested.",
+    "The questions: one answer each; the 1995 distractor is Lanius-Knab's year, confirmed."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Among the sites of the Hamm that the VDP ranks Grosse Lage, the house works the Feuerlay, the Mandelstein, the Ohlenberg and the Engelstein",
+     "now": "In the Hamm the house works the Feuerlay, the Mandelstein, the Ohlenberg, the Engelstein and An der Rabenlei",
+     "why": "The rank of every site was not shown; the list is the VDP's own for the house.",
+     "sources": [
+      {
+       "title": "VDP: VDP.Weingut Matthias Müller",
+       "url": "https://www.vdp.de/de/die-winzer/mittelrhein/matthias-mueller",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Vineyard.Online, Ohlenberg",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/3044-ohlenberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "Bopparder Hamm Engelstein Riesling GG: slate with a reddish hue from its iron",
+     "now": "Bopparder Hamm An der Rabenlei Riesling GG: a small steep slope of Devonian slate facing south",
+     "why": "The iron and the Engelstein GG were not in anything read; wein.plus records the An der Rabenlei Grosses Gewächs for 2017 and 2018 and the VDP gives the site's slope and slate.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, An der Rabenlei",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/3075-an-der-rabenlei",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus wine guide: 2018 Boppard Hamm An der Rabenlei Riesling GG",
+       "url": "https://wineguide.wein.plus/weingut-matthias-mueller/2018-boppard-hamm-an-der-rabenlei-riesling-grosses-gewaechs-dry-mittelrhein",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": []
+  },
+  {
+   "key": "weingart",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "1996: the Deutsches Weininstitut listing and a wein.plus interview (the son has run the estate with his wife since 1996); kept.",
+    "The 1960s: the Deutsches Weininstitut (rebuilt by the father into a pure wine estate only in the 1960s) and the interview (his parents); a glossary's second half of the twentieth century agrees. Around 1960 by the usual account became the 1960s.",
+    "Geisenheim: a profile and the interview; kept.",
+    "Spätlese trocken: Falstaff (2023, 2024) and Meininger (2015) list Bopparder Hamm Feuerlay Riesling Spätlese trocken; kept.",
+    "The Feuerlay: the VDP's own page gives south, 70 to 150 metres, 35 to 65 per cent, weathered Devonian slate under loess loam; the glossary's quartzite rests on one source and is cut.",
+    "Not a VDP member: the VDP's Mittelrhein member pages name Toni Jost, Ratzenberger, Lanius-Knab and Matthias Müller and not Weingart, whose labels carry no GG.",
+    "The questions: one answer each; the 1960 distractor matches the 1960s of the story."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "on slopes of 40 to 65 per cent of grey green weathered slate mixed with loess and quartzite",
+     "now": "facing south at 70 to 150 metres on slopes of 35 to 65 per cent: weathered Devonian slate under a cover of loess loam",
+     "why": "The VDP's own Feuerlay page.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Feuerlay, Bopparder Hamm",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/3005-feuerlay",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.label[0]",
+     "was": "its name drawn from its sunny, stony slopes",
+     "now": "a south facing slope of slate",
+     "why": "No source gave the derivation.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Feuerlay, Bopparder Hamm",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/3005-feuerlay",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Around 1960, by the usual account, the family turned it wholly to wine",
+     "now": "the family has farmed and grown vines since the early eighteenth century ... in the 1960s the parents of the present grower turned it wholly to wine",
+     "why": "Two sources give the 1960s and the parents; the interview and a profile give the early eighteenth century.",
+     "sources": [
+      {
+       "title": "Deutsches Weininstitut: Weingut Weingart, Spay",
+       "url": "https://www.deutscheweine.de/weinerzeuger/7460/weingut-weingart-spay",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus magazine: interview with the Weingart estate",
+       "url": "https://magazine.wein.plus/there-are-no-corked-bottles-hanging-on-vines-interview-florian-weingart",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the VDP's five Mittelrhein estates are those of Bacharach, Oberwesel and that one house of Spay",
+     "now": "cut",
+     "why": "A count of the present, volatile, and not borne out as five by anything read.",
+     "sources": [
+      {
+       "title": "VDP: Mittelrhein, the VDP region",
+       "url": "https://www.vdp.de/en/the-wines/the-vdpregions/mittelrhein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and table",
+     "was": "the Feuerlay, counted among the warmest exposures in the middle of the Hamm; the warm middle of the Hamm",
+     "now": "a south facing slope of slate under loess loam; a steep south facing slope of slate in the Hamm",
+     "why": "A judgement no source read made; the aspect is the VDP's.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Feuerlay, Bopparder Hamm",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/3005-feuerlay",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "wein.plus wine guide: Weingut Florian Weingart; wein.plus glossary: Feuerlay",
+     "now": "Deutsches Weininstitut: Weingut Weingart, Spay; VDP: Vineyard.Online, Feuerlay",
+     "why": "The first title and address carried the living grower's first name; the VDP's page is the primary for the site.",
+     "sources": [
+      {
+       "title": "Deutsches Weininstitut: Weingut Weingart, Spay",
+       "url": "https://www.deutscheweine.de/weinerzeuger/7460/weingut-weingart-spay",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Vineyard.Online, Feuerlay, Bopparder Hamm",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/3005-feuerlay",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Weingart's standing outside the VDP is a present state that has held for the life of its labels; the integrator may word it as history."
+   ]
+  },
+  {
+   "key": "lanius-knab",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "1995: the VDP's Vineyard.Online (member since 1995).",
+    "1991 and the two hundred and fifty years: the VDP's page and the Mittelrhein tourism pages (in the family about 250 years; continuously enlarged since 1991 by the present head); kept, hedged.",
+    "Am Lauerbaum: the VDP's page gives S, 80 to 170 metres, 65 to 70 per cent, Devonian slate, Riesling and Spätburgunder, and the house's words: the Lauerbaum is the choice part of the Bernstein, which lies in a hollow like an amphitheatre facing due south.",
+    "Riesling's share: about 85 per cent on the tourism page and the VDP's.",
+    "The label: Falstaff lists Engehöll Bernstein Am Lauerbaum Riesling GG (2015 to 2023), Engehöller Bernstein Riesling EL trocken (2018) and Oberwesel Oelsberg Riesling GG (2016).",
+    "The Schönburg opposite the Lauerbaum: nothing read sets it there.",
+    "The questions: one answer each; the story question re-worded to what the sources say of 1991."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, table and story",
+     "was": "south south east, 60 to 70 per cent, across from the Schönburg castle",
+     "now": "a hollow like an amphitheatre facing south at 80 to 170 metres, 65 to 70 per cent, Devonian slate",
+     "why": "The VDP's own page; no source read places the Schönburg opposite.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Bernstein Am Lauerbaum, Engehöll",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/3055-bernstein-am-lauerbaum",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 1991 the estate passed to a new generation of the family, who over the following years enlarged it and raised its wines",
+     "now": "From 1991 a new generation of the family steadily enlarged the estate",
+     "why": "The sources speak of continuous enlarging since 1991; raised its wines is a judgement.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Lanius-Knab",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/weingut/lanius-knab",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Mittelrhein Wein: Weingut Lanius-Knab",
+       "url": "https://www.mittelrhein-wein.com/en/a-weingut-lanius-knab",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the house says the earlier generations laid its ground; a dry Riesling that faces the Schönburg across the valley",
+     "now": "a hollow like an amphitheatre that faces due south",
+     "why": "Neither claim was in anything read; the hollow is the house's own words on the VDP page.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Bernstein Am Lauerbaum, Engehöll",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/3055-bernstein-am-lauerbaum",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the town of towers and walls",
+     "now": "cut",
+     "why": "Not sourced, as the author said.",
+     "sources": [
+      {
+       "title": "VDP: Mittelrhein, the VDP region",
+       "url": "https://www.vdp.de/en/the-wines/the-vdpregions/mittelrhein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Riesling taking the great majority",
+     "now": "Riesling taking well over three quarters",
+     "why": "About 85 per cent, in words.",
+     "sources": [
+      {
+       "title": "Mittelrhein Wein: Weingut Lanius-Knab",
+       "url": "https://www.mittelrhein-wein.com/en/a-weingut-lanius-knab",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "made dry, feinherb and as a Spätlese",
+     "now": "the dry wine of the wider Bernstein",
+     "why": "Only the dry wine was shown, in Falstaff's listing.",
+     "sources": [
+      {
+       "title": "Falstaff: Lanius-Knab, Engehöller Bernstein Riesling EL trocken 2018",
+       "url": "https://www.falstaff.com/en/wines/weingut-lanius-knab-2018-engehoeller-bernstein-riesling-el-trocken",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": "In which year did a new generation take on the estate?",
+     "now": "From which year did a new generation steadily enlarge the estate?",
+     "why": "To match what the sources say of 1991.",
+     "sources": [
+      {
+       "title": "Mittelrhein Wein: Weingut Lanius-Knab",
+       "url": "https://www.mittelrhein-wein.com/en/a-weingut-lanius-knab",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The swap to Engehöll Bernstein Am Lauerbaum Riesling GG is accepted; the read together agent changes plan.json and wine.name in one commit."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Cecilia Jost",
+   "role": "owner and cellar master of Toni Jost",
+   "where": "the VDP's pages and Falstaff",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Peter Jost",
+   "role": "owner of Toni Jost beside his daughter",
+   "where": "the VDP's Weinpaket page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Jochen Ratzenberger",
+   "role": "the son, chairman of the VDP Mittelrhein, back at the estate since 1994",
+   "where": "the VDP's region and estate pages",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a later generation"
+  },
+  {
+   "name": "Jochen Ratzenberger senior",
+   "role": "the father, chairman of the VDP Mittelrhein from 1998 to 2010",
+   "where": "the VDP's region page",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as the father of the house"
+  },
+  {
+   "name": "Fritz Bastian",
+   "role": "chairman of the VDP Mittelrhein from 1987 to 1998",
+   "where": "the VDP's region page",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Matthias Müller",
+   "role": "head of the Spay estate that carries his name, with his wife since the late 1990s",
+   "where": "the VDP and Wines of Germany",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the house's name only, as the son of the story"
+  },
+  {
+   "name": "Marianne Müller",
+   "role": "his wife",
+   "where": "Wines of Germany",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as his wife"
+  },
+  {
+   "name": "Johannes Müller",
+   "role": "their son, in the cellar",
+   "where": "tourism pages and a writer's blog",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Christoph Müller",
+   "role": "named on the VDP's English page of the estate",
+   "where": "the VDP's estate page title",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Heinrich Müller",
+   "role": "the father who handed the estate on shortly before 2000",
+   "where": "Wines of Germany",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as the parents"
+  },
+  {
+   "name": "Hilde Müller",
+   "role": "his wife",
+   "where": "Wines of Germany",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as the parents"
+  },
+  {
+   "name": "Florian Weingart",
+   "role": "the son who has run the Weingart estate since 1996",
+   "where": "the Deutsches Weininstitut and wein.plus",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the son of the house"
+  },
+  {
+   "name": "Ulrike Weingart",
+   "role": "his wife",
+   "where": "the same",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Adolf Weingart",
+   "role": "the father who turned the farm to wine",
+   "where": "the wein.plus glossary",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as the parents"
+  },
+  {
+   "name": "Jörg Lanius",
+   "role": "head of Lanius-Knab, enlarging it since 1991",
+   "where": "the VDP's page and tourism pages",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a new generation"
+  }
+ ],
+ "swaps": [
+  {
+   "pick": "toni-jost",
+   "proposed": "keep the house and the key; rename the wine to Bacharach Im Hahn Riesling GG",
+   "ruling": "accepted",
+   "why": "Falstaff prints Bacharach Im Hahn Riesling GG for 2017 to 2023 and the VDP ranks only Im Hahn Grosse Lage, while the wider Bacharacher Hahn is an Erste Lage whose dry wine is labelled Erste Lage; the plan's words are an older label form that now names the wrong rank. The read together agent changes plan.json and the fragment's wine.name together."
+  },
+  {
+   "pick": "lanius-knab",
+   "proposed": "keep the house and the key; rename the wine to Engehöll Bernstein Am Lauerbaum Riesling GG",
+   "ruling": "accepted",
+   "why": "No label reading Oberweseler Engehöll Riesling was found by the author or by this check; Falstaff lists Engehöll Bernstein Am Lauerbaum Riesling GG for 2015 to 2023 and the VDP ranks Bernstein Am Lauerbaum Grosse Lage. The Oelsberg GG alternative is refused: the Engehöll is the region record's choice and the Lauerbaum is the house's own pick of its sites. The read together agent changes plan.json and the fragment's wine.name together."
+  }
+ ],
+ "codexInTension": [],
+ "codexNote": "None of the five houses is in the library, and no Codex record in tension was found. The region summary's slate, steep slopes and Riesling agree with every record."
+}
