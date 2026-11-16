@@ -1,0 +1,482 @@
+{
+ "group": "rheinhessen",
+ "chunk": "w12",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 20,
+  "perRecord": {
+   "keller": 5,
+   "wittmann": 5,
+   "gunderloch": 3,
+   "kuhling-gillot": 3,
+   "battenfeld-spanier": 4
+  },
+  "note": "Twenty searches of a share of twenty eight, eight left for the run's shared allowance; one on Wittmann's cellar returned nothing on the house and is counted with it. Most were restricted to the VDP's own domain, a house's own domain or wein.plus and read as summaries. Writers' own sites that came up were read and never cited. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites with their heights, aspects and soils, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "The searches went first to the VDP's own site pages for every flagship vineyard and the sites named in others, then to the dates the stories turn on (1789, 1921, 2001 and 2000 for Keller; 1663, 1990 and 2004 for Wittmann; 1364, 1890 and 1925 for Gunderloch; 1934 and 1970 for Kühling-Gillot; 1991 and 2005 for Battenfeld-Spanier), then to the cellars.",
+  "Where the cellar rested on one trade account (a single Fuder for G-Max, cask sizes at Gunderloch, a parcel to a cask at Wittmann) it was replaced by the house's own words or cut back; where a site's place was wrong (the Zellerweg am Schwarzen Herrgott in Rheinhessen, not the Pfalz) it was corrected from the VDP."
+ ],
+ "records": [
+  {
+   "key": "keller",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "G-Max's name: the G for the present head's great grandfather Georg, who first bottled the family's Riesling in 1921, and Max for a son (elder or younger is disputed): Tastingbook and two trade accounts.",
+    "The first G-Max with the 2001 vintage: a wine wiki and a critic's vertical (writers' own sites, read, never cited), with Tastingbook's listing of a 2001.",
+    "1789 and the ancestor from Switzerland at the time of the Revolution, with property in the Hubacker: wein.plus and a trade directory.",
+    "VDP membership since 2000: the VDP's own estate pages, English and German. The takeover: 2000 vintage by German Wikipedia, 2001 by a trade profile.",
+    "The cellar: one wine wiki says wild yeast and an increasing turn to large old Fuder for the GGs; nothing read puts G-Max in one cask.",
+    "The Hubacker: the VDP's site page now names it Oberer Hubacker."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "largely in a single old Fuder, a 1,000 litre oak cask",
+     "now": "the house's dry Rieslings ferment slowly with their own yeasts, more and more in large old Fuder rather than steel, by trade accounts",
+     "why": "One critic's report alone put G-Max in one cask; the wine wiki read speaks of the house's GGs in general.",
+     "sources": [
+      {
+       "title": "Tastingbook: Weingut Keller Riesling G-Max 2022",
+       "url": "https://tastingbook.com/wine/weingut_keller/riesling_gmax_2022?locale=en",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus wine guide: Weingut Keller",
+       "url": "https://wineguide.wein.plus/weingut-keller",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites and table",
+     "was": "old vines on Wonnegau limestone",
+     "now": "by most accounts on Wonnegau limestone (sites); parcels kept secret (table)",
+     "why": "The house names no parcel and one trade source places G-Max across the estate's sites.",
+     "sources": [
+      {
+       "title": "Tastingbook: Weingut Keller Riesling G-Max 2022",
+       "url": "https://tastingbook.com/wine/weingut_keller/riesling_gmax_2022?locale=en",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Georg Keller (no dates)",
+     "now": "a forebear named Georg",
+     "why": "No dates found for him.",
+     "sources": [
+      {
+       "title": "Tastingbook: Weingut Keller Riesling G-Max 2022",
+       "url": "https://tastingbook.com/wine/weingut_keller/riesling_gmax_2022?locale=en",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and cards[1]",
+     "was": "the 2001 vintage gave the first Grosses Gewächs and the first G-Max, made by the generation then taking over",
+     "now": "the first G-Max with 2001, a new generation taking the cellar around the turn of the century",
+     "why": "Only G-Max's first vintage is in two sources; the takeover is the 2000 vintage by German Wikipedia and 2001 by a trade profile.",
+     "sources": [
+      {
+       "title": "Wikipedia (German): Weingut Keller",
+       "url": "https://de.wikipedia.org/wiki/Weingut_Keller",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Tastingbook: Weingut Keller Riesling G-Max 2022",
+       "url": "https://tastingbook.com/wine/weingut_keller/riesling_gmax_2022?locale=en",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "Dalsheimer Hubacker Riesling GG, a Grosses Gewächs since the 2001 vintage",
+     "now": "Dalsheim Hubacker Riesling GG, the Grosse Lage the VDP names the Oberer Hubacker",
+     "why": "The VDP's site page and the wine guide's recent listings use Oberer Hubacker; the GG since 2001 is not in two sources.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Oberer Hubacker",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/8081-hubacker",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus wine guide: Weingut Keller",
+       "url": "https://wineguide.wein.plus/weingut-keller",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Whether Max is the elder or the younger son stays unsettled, so the record says only a son of the family named Max.",
+    "The theft from the Hubacker as the reason for the secret parcels rests on one account and stays hedged.",
+    "The comparison with Franz Keller of Baden was not searched; it is common knowledge of the trade."
+   ]
+  },
+  {
+   "key": "wittmann",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The Morstein on the VDP's pages: due south, 180 to 240 metres, 20 to 25 per cent, clay marl with limestone over limestone rock with an aquifer; first recorded as Marsten in 1282 in a gift to Otterberg. All in the record, confirmed.",
+    "1663, organic from 1990 and biodynamic from 2004: the house's page, Wikipedia and merchants; the VDP interview says the end of the 1980s for organic.",
+    "The cellar: the house's sheet says most wines ferment in traditional old oak; a German magazine notes wild fermentation and wood across the house. Parcel to a cask not found.",
+    "Aulerde and Brunnenhäuschen on the VDP's site pages."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "old oak in the vaulted cellar, each cask holding one parcel, on its lees",
+     "now": "the house's sheet: most wines in traditional old oak; by trade accounts wild yeast",
+     "why": "Parcel to a cask, the vaulted cellar and the lees were in nothing read.",
+     "sources": [
+      {
+       "title": "Weingut Wittmann: Morstein Riesling GG wine sheet",
+       "url": "https://www.weingutwittmann.de/uploads/weinbeschreibungen/16119-Morstein_en.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: VDP.Estate Wittmann",
+       "url": "https://www.vdp.de/en/die-winzer/rheinhessen/vdpweingut-wittmann",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0]",
+     "was": "cooler and saltier than the Morstein",
+     "now": "clay marl and limestone",
+     "why": "The comparison was unsourced; the VDP's estate page gives the soils.",
+     "sources": [
+      {
+       "title": "VDP: VDP.Estate Wittmann",
+       "url": "https://www.vdp.de/en/die-winzer/rheinhessen/vdpweingut-wittmann",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "the name's meaning alone",
+     "now": "spring and well house, first recorded in 1721, clay marl with red terra rossa",
+     "why": "The VDP's site page.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Brunnenhäuschen",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/8077-brunnenhaeuschen",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[2]",
+     "was": "lighter soils near the village, open earlier",
+     "now": "lower than the Morstein at about 90 to 100 metres, clay marl over sandy, gravelly subsoil",
+     "why": "The VDP's site pages.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Aulerde",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/8084-aulerde",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Vineyard.Online, Morstein",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/8074-morstein",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Organic certification is 1990 on the house's page and several merchants, the end of the 1980s in the VDP's interview; the record follows 1990 as the house's account."
+   ]
+  },
+  {
+   "key": "gunderloch",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The Rothenberg on the VDP's pages: the northernmost Roter Hang site, up to 75 per cent, coarse red clayey slate, little topsoil, bedrock near the surface, first recorded as in dem Rode in 1364.",
+    "1890, a banker of Mainz, the manor house; Zuckmayer's Der fröhliche Weinberg of 1925 with Jean Baptist Gunderloch, and the Jean Baptiste Kabinett: Wikipedia, wein.plus and a German blog's anniversary piece.",
+    "The cellar on the house's own page: long skin contact, slow natural fermentation in oak and stainless steel, long on the full lees, no additives; no cask sizes.",
+    "The Geisenheim Rothenberg exists as a separate VDP site."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "wild yeast in large old oak of 1,200 to 2,400 litres after slow pressing, no clarification",
+     "now": "long skin contact, slow natural fermentation in oak and stainless steel, long on full lees, no additives",
+     "why": "The house's own page says so; the cask sizes rested on trade accounts and a third account disagreed.",
+     "sources": [
+      {
+       "title": "Weingut Gunderloch: The estate",
+       "url": "https://www.gunderloch.de/en/weingut/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Rheinhessen's one stretch of steep riverside rock",
+     "now": "a stretch of steep red rock above the river",
+     "why": "A claim of the only one, unsourced; Bingen's Scharlachberg is steep riverside rock too.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Rothenberg, Nackenheim",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/8061-rothenberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "given skin contact before fermenting in old oak",
+     "now": "red slate facing east to south east over the Rhine",
+     "why": "The cellar note was unsourced; the VDP's Pettenthal page gives slate and aspect.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Pettenthal",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/8030-pettenthal",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founder's dates (1846 to 1935) are in one source read, so he stays described, not named."
+   ]
+  },
+  {
+   "key": "kuhling-gillot",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The Pettenthal on the VDP's pages: east to south east, a small part due south, up to 70 per cent in its upper reaches, iron rich fine grained red clayey slate. Confirmed.",
+    "1970 for the Gillot marriage: a German listing; the early 1970s by a merchant; a blog dates it to the 1970 marriage of the parents of the present generation.",
+    "The 1934 ungrafted Rothenberg vines on the house's own pages: planted before the phylloxera protection laws, spared the land consolidation of the 1960s by their isolated position. The house does not say they escaped the louse.",
+    "Holdings in Pettenthal, Hipping, Ölberg and Rothenberg: wein.plus and the house."
+   ],
+   "changed": [
+    {
+     "field": "story and cards[0]",
+     "was": "the 1934 vines escaped both phylloxera and the land consolidation of the 1960s",
+     "now": "by the house's account, its isolated position spared it the land consolidation of the 1960s",
+     "why": "The house says only that the vines were planted before the phylloxera protection laws.",
+     "sources": [
+      {
+       "title": "Kühling-Gillot and BattenfeldSpanier: Rothenberg",
+       "url": "https://www.kuehlingandbattenfeld.com/en/kuehling-gillot/rothenberg",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Kühling-Gillot and BattenfeldSpanier: Kühling-Gillot booklet 2019",
+       "url": "https://www.kuehlingandbattenfeld.com/fileadmin/user_upload/Media_Downloads/kg_booklet2019_ENGL.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "warmer and broader than the Pettenthal",
+     "now": "worked beside the Pettenthal and the Hipping",
+     "why": "The comparison was unsourced.",
+     "sources": [
+      {
+       "title": "wein.plus wine guide: Kühling-Gillot",
+       "url": "https://wineguide.wein.plus/kuehling-gillot",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The double name's year is 1970 by wein.plus and a German listing, the early 1970s by a merchant; the question keys 1970 as the wine guide's account.",
+    "The marriage that joined the two estates' work is given as the 2000s; sources say 2005 and 2006."
+   ]
+  },
+  {
+   "key": "battenfeld-spanier",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1991 and organic from the start: the house's fact sheets of 2024 and 2025 and its thirtieth anniversary piece of 2021; one trade profile says 1998. Biodynamic from 2005: the house.",
+    "The Frauenberg on the VDP's page: south east, 190 to 270 metres, 10 to 40 per cent, shell limestone, limestone rock, loess, loam and marl; the house says south, 190 to 200 metres, limestone gravel over pure limestone.",
+    "The Zellerweg am Schwarzen Herrgott on the VDP's page: at Mölsheim in Rheinhessen near the Pfalz border, south south east, limestone; the Schwarzer Herrgott of the Zellertal is a separate Pfalz Grosse Lage. The record had it in the Pfalz: wrong.",
+    "The Kirchenstück at Hohen-Sülzen as a VDP Grosse Lage worked by the house: the VDP's listing."
+   ],
+   "changed": [
+    {
+     "field": "story, others[1], traps[0]",
+     "was": "the Zellerweg am Schwarzen Herrgott across the border in the Zellertal of the Pfalz, a Pfalz wine",
+     "now": "at Mölsheim on the Rheinhessen side of the border; the trap now parts it from the Schwarzer Herrgott of the Zellertal, a separate Pfalz Grosse Lage",
+     "why": "The VDP's site pages place the Zellerweg at Mölsheim in Rheinhessen and list the Schwarzer Herrgott of the Zellertal separately in the Pfalz.",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Zellerweg am Schwarzen Herrgott, Mölsheim",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/8037-zellerweg-am-schwarzen-herrgott",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Weinberg.Online, Schwarzer Herrgott, Zellertal",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/6021-schwarzer-herrgott",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites and cards[0]",
+     "was": "facing south at about 190 to 200 metres",
+     "now": "facing south east to south, about 190 to 270 metres, with loess and marl beside the limestone",
+     "why": "The VDP's site page (the house's figures are narrower).",
+     "sources": [
+      {
+       "title": "VDP: Weinberg.Online, Frauenberg, Nieder-Flörsheim",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/8089-frauenberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founding year 1991 stands on the house's fact sheets and its thirtieth anniversary piece of 2021; wein.plus and one trade profile say 1998.",
+    "The joining with a Battenfeld estate rests on wein.plus alone and is told as its account, with no year."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Klaus Peter Keller",
+   "role": "head of Weingut Keller, maker of the first G-Max",
+   "where": "the VDP, German Wikipedia and trade profiles in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the present head and the generation taking the cellar"
+  },
+  {
+   "name": "Klaus Keller",
+   "role": "his father, from whom he took the cellar",
+   "where": "German Wikipedia",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Maximilian Keller",
+   "role": "the son of the house for whom the Max of G-Max is named",
+   "where": "trade accounts and Tastingbook",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a son of the family named Max"
+  },
+  {
+   "name": "Philipp Wittmann",
+   "role": "head of Weingut Wittmann",
+   "where": "a German magazine's review and the VDP's page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Fritz Hasselbach",
+   "role": "owner and winemaker of Gunderloch, of the founder's line",
+   "where": "a German wine blog in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Agnes Hasselbach",
+   "role": "of the Gunderloch family, beside him",
+   "where": "a German wine blog",
+   "believed": "living or status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Hans Oliver Spanier",
+   "role": "founder of Battenfeld-Spanier in 1991, grower of both estates",
+   "where": "the house's fact sheets and the VDP's page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a young grower, the grower of Battenfeld-Spanier"
+  },
+  {
+   "name": "Carolin Spanier-Gillot",
+   "role": "the daughter of the house at Kühling-Gillot, his wife",
+   "where": "the VDP's page and the Rheinhessen producers' listing",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the daughter of the house"
+  },
+  {
+   "name": "Roland Gillot",
+   "role": "the Gillot who married into the Kühling family in 1970",
+   "where": "a German listing",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as a son in law, a Gillot"
+  }
+ ],
+ "livingNote": "No living person is named in the fragment. None of the nine names met is in people.json; the read-together agent may add them.",
+ "swaps": [
+  {
+   "from": "Kühling-Gillot: Niersteiner Pettenthal Riesling GG",
+   "to": "Kühling-Gillot: Nackenheimer Rothenberg Riesling GG wurzelecht",
+   "ruling": "refused",
+   "why": "The house gives each of its Grosse Lagen its own page and nothing read sets the wurzelecht above the Pettenthal as its flagship; Gunderloch's record already teaches the Nackenheim Rothenberg, so a second Rothenberg would cost the group the Pettenthal, a third Roter Hang site; the wurzelecht keeps first place in others and a card.",
+   "date": "2026-11-16"
+  }
+ ],
+ "swapNote": "No change to plan.json is needed.",
+ "codexInTension": [
+  {
+   "record": "w-g-max (WINE_PRODUCERS)",
+   "field": "traps[1]",
+   "says": "The name honours the head of the house's grandfather Georg and son Maximilian, naming both",
+   "tension": "The sources read make Georg the present head's great grandfather, who first bottled in 1921; the trap also names two living people.",
+   "sources": [
+    "Tastingbook: Weingut Keller Riesling G-Max 2022"
+   ]
+  },
+  {
+   "record": "p-keller and w-g-max (WINE_PRODUCERS)",
+   "field": "wines and why",
+   "says": "Germany's most expensive dry Riesling",
+   "tension": "A price claim, which the flagship rules refuse; reported, not edited.",
+   "sources": []
+  }
+ ],
+ "codexNote": "Reported for the integrator; no Codex record was edited."
+}
