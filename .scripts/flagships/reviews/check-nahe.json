@@ -1,0 +1,420 @@
+{
+ "group": "nahe",
+ "chunk": "w12",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 19,
+  "perRecord": {
+   "donnhoff": 5,
+   "emrich-schonleber": 3,
+   "schafer-frohlich": 2,
+   "gut-hermannsberg": 6,
+   "diel": 3
+  },
+  "note": "Nineteen searches of a share of twenty eight, nine left unspent for the run's shared allowance; the GG dryness rule (one search) serves two records and is counted with Emrich-Schönleber, one wasted search returned nothing on Schäfer-Fröhlich and is counted with it, two on Gut Hermannsberg returned nothing. Most were restricted to the VDP's, wein.plus's or a house's own domain and read as summaries. Writers' own sites that came up were read and never cited. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites with their heights and aspects, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile, no judging superlative, no bare family word, British spelling, no dash).",
+  "The searches went first to the dates the stories turn on (Dönnhoff's 1750, 1971 and 2007; Emrich-Schönleber's 1994; Schäfer-Fröhlich's 1995 and 2001; Gut Hermannsberg's 1901, 1902, 1946, 1998 and 2009 and the five year release; Diel's 1802, 1989 and February 2023; the VDP's 2006 dryness rule), then to the sites' heights, aspects and soils on the VDP's own pages, then to the others.",
+  "Where sources disagreed on a year (the state's takeover of the Nahe domain, 1946 or 1950) the year was taken out and the question re-keyed on what both agree; where a claim rested on nothing read (the Felsenberg's vessels, the Burgberg's soil, the river between Oberhausen and the Hermannshöhle) it was cut or narrowed; where a house's range did not hold a wine (Dönnhoff's Kupfergrube) it was replaced from the house's own lists."
+ ],
+ "records": [
+  {
+   "key": "donnhoff",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The family's dates: 1750 against the house's press piece, which has the family's records begin in 1761 with a chronicle of 1781 and 1784; Wikipedia gives 1750. Both kept, as the story already says.",
+    "1971: the son took on the parents' estate from his father Hermann, whose name it carries, confirmed on the house's own press piece and on Wikipedia. 2007: the son of the next generation responsible for the wines for fourteen years in December 2021, on the house's press piece.",
+    "The Hermannshöhle on the VDP's page and the house's sheets: 130 to 175 metres, S to SW, 40 to 70 per cent, black grey weathered slate with volcanic rock, limestone and porphyry, the Nahe's reference site for over a century. The aspect was due south in the record; corrected.",
+    "The parcels bought from a former VDP Nahe chairman: the house's own press piece; no year.",
+    "The Oberhäuser Brücke as the house's monopole beside the Luitpoldbrücke, the source of Spätlese, Auslese and Eiswein: Skurnik and the house's sheets. Whether the Hermannshöhle lies across the river from Oberhausen was not borne out by anything read, so the wording now says the neighbouring village.",
+    "The others against the house's price lists and shop: Hermannshöhle, Dellchen, Felsenberg Felsentürmchen, Krötenpfuhl, Höllenpfad im Mühlenberg and Brücke appear; no Kupfergrube GG does, so it was replaced.",
+    "The VDP's release rule (1 September of the year after the harvest) and the legal dryness of GG from the 2006 vintage by the VDP's own statement.",
+    "The questions: one right answer each, options of one kind; the story question's distractors 1750 and 2007 are the record's own dates and teach. House rules: no living name, no price, no score, British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "a steep slope facing due south above the Nahe",
+     "now": "a steep slope facing south to south west in a bend of the Nahe",
+     "why": "The VDP's site page gives S to SW and the bend of the river.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Hermannshöhle",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/5034-hermannshoehle",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story and traps[1]",
+     "was": "across the river (twice)",
+     "now": "in the neighbouring village of Niederhausen",
+     "why": "No source read sets Oberhausen and the Hermannshöhle on opposite banks; the neighbouring village is what all agree.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Hermannshöhle",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/5034-hermannshoehle",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Dönnhoff: press piece, Öffentlicher Anzeiger, December 2021",
+       "url": "https://content.doennhoff.com/fileadmin/user_upload/Aktuelles/2021-12-27_OEffentlicher_Anzeiger_HD.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "Schlossböckelheimer Kupfergrube Riesling GG: volcanic soil on a former copper mine",
+     "now": "Felsenberg Felsentürmchen Riesling GG: the Felsentürmchen parcel of the Felsenberg at Schlossböckelheim, on volcanic rock",
+     "why": "The house's price lists and shop show the Felsenberg Felsentürmchen GG and no Kupfergrube GG.",
+     "sources": [
+      {
+       "title": "Weingut Dönnhoff: price list 2021",
+       "url": "https://www.doennhoff.com/assets/downloads/Doennhoff_Preisliste2021_Webdownload_en.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founding year 1750 rests on the library, Skurnik and Wikipedia; wein.plus dates the family's records as growers to 1761, and the story says both.",
+    "The purchase of Hermannshöhle parcels from a former VDP Nahe chairman is the house's own newspaper piece; no year found.",
+    "The 2007 handover of the cellar rests on one press piece on the house's site (fourteen years before December 2021)."
+   ]
+  },
+  {
+   "key": "emrich-schonleber",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "The Halenberg on the VDP's page: east of Monzingen, 160 to 220 metres, 20 to 70 per cent, south to south west, weathered Waderner Schichten, a conglomerate of blue grey slate and quartzite. The record's south south west widened to the VDP's range.",
+    "VDP admission in 1994: wein.plus, beside the author's Sommelier Academy; 2001 for Schäfer-Fröhlich and 1989 for Diel, the distractors of the story question, both confirmed on the VDP's own pages.",
+    "The family's vines since the middle of the eighteenth century and the turn to a pure wine estate between 1965 and 1985: wein.plus and a second guide give the mid eighteenth century and the 1960s start; the 1965 to 1985 span is in two results.",
+    "The legal dryness of GG from the 2006 vintage: the VDP's own statement, read through two summaries; GG as a dry wine defined in 2002 (wein.plus magazine).",
+    "The questions: the wine question's distractors are the soils of other Nahe sites in this group and teach; the story question's three wrong years are the other houses' admissions. House rules: the living father and sons are not named."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites and cards[0].back",
+     "was": "south south west",
+     "now": "south to south west",
+     "why": "The VDP's site page gives south to south west.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Halenberg",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/5032-halenberg",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The vessels and the time on lees of the Halenberg GG are still unsourced and left out.",
+    "The recovery of the Halenberg from scrub is the house's own words on its VDP page; an independent account dates the purchase and restoration of parcels to the early 1990s, which the record does not date."
+   ]
+  },
+  {
+   "key": "schafer-frohlich",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "The VDP's estate page: admitted in 2001, the cellar in the son's hands since the 1995 vintage, the Felseneck and the Stromberg at Bockenau held alone. All borne out.",
+    "The Felseneck on the VDP's page: 250 to 310 metres, 35 to 70 per cent, due south, soils dominated by Upper Rotliegend with Devonian slate, quartzite and basalt rubble; wein.plus gives 200 to 300 metres and a blue Devonian slate conglomerate in the Ellerbach valley. The record follows the VDP for height and aspect and names the soils both give.",
+    "The upper Nahe: no source read places the Ellerbach valley in the upper valley, so the word was taken out of place, sites and table.",
+    "The wine question's explanation contradicted the record's own basalt scree by calling the Felseneck no volcanic site; rewritten.",
+    "Spontaneous fermentation as the source of the struck match reduction: the house's own words on the VDP page and two merchants, as the author read them; not refuted."
+   ],
+   "changed": [
+    {
+     "field": "place, wine.sites, table",
+     "was": "the Ellerbach valley of (off) the upper Nahe",
+     "now": "the Ellerbach valley of (off) the Nahe",
+     "why": "No source read calls Bockenau's valley the upper Nahe; wein.plus and the VDP name only the Ellerbach valley.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Felseneck",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/5025-felseneck",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus glossary: Felseneck",
+       "url": "https://glossary.wein.plus/felseneck",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[0].exp",
+     "was": "the Felseneck is slate and quartzite, not a volcanic site",
+     "now": "the struck match comes from the cellar, not from the slate, quartzite or basalt scree of the Felseneck",
+     "why": "The VDP and wein.plus both name basalt rubble in the Felseneck, which the record's own sites field gives.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Felseneck",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/5025-felseneck",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus glossary: Felseneck",
+       "url": "https://glossary.wein.plus/felseneck",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The Felseneck's dominant layer is Upper Rotliegend by the VDP and blue Devonian slate by wein.plus; the record names the slate, quartzite and basalt both give.",
+    "The family's first records (1780 or 1800) stay unsettled and founded stays empty."
+   ]
+  },
+  {
+   "key": "gut-hermannsberg",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "The founding: 1902 on the house's history and lexicon and Wines of Germany; one summary has the mine stop and the land pass to Prussia in 1901. Kept at 1902, open.",
+    "The copper mine worked until 1901, the terraces cut with convict labour and the first vintage of 1907: the house and wein.plus. The story's some years later stands.",
+    "The state after the war: one account gives 1946, the house's own lexicon 1950 (when it became the Nahe State Domain). Neither year can stand, so the story and the question now say after the Second World War.",
+    "The privatisation of 1998 and the sale of 2009: the house's own history page and wein.plus, several accounts. The buyers of 2009 are living and not named.",
+    "The Kupfergrube held back for five years: release moved from two years to five after the harvest, the 2017 vintage released on 1 September 2022, a partial hold back of the 2015 before it, and the bottling labelled Reserve. The record's a vintage of the middle 2010s stands.",
+    "The Felsenberg's note on vessels was found in nothing read and was cut."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "After the Second World War, in 1946, it passed to the new state of Rhineland-Palatinate",
+     "now": "After the Second World War it passed to the new state of Rhineland-Palatinate",
+     "why": "One account gives 1946, the house's own lexicon 1950.",
+     "sources": [
+      {
+       "title": "Gut Hermannsberg: lexicon, Royal Prussian Wine Domain",
+       "url": "https://www.gut-hermannsberg.de/en/lexicon/royal-prussian-wine-domain",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus glossary: Gut Hermannsberg",
+       "url": "https://glossary.wein.plus/gut-hermannsberg-2",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1].q and exp",
+     "was": "from 1946 until it was privatised in 1998",
+     "now": "after the Second World War until it was privatised in 1998",
+     "why": "The year of the transfer is in conflict between the sources; the 1998 privatisation is on the house's history page.",
+     "sources": [
+      {
+       "title": "Gut Hermannsberg: History",
+       "url": "https://gut-hermannsberg.de/en/winery/history",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Gut Hermannsberg: lexicon, Royal Prussian Wine Domain",
+       "url": "https://www.gut-hermannsberg.de/en/lexicon/royal-prussian-wine-domain",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "On volcanic rock beside the Kupfergrube, fermented spontaneously partly in large oak casks and partly in steel.",
+     "now": "The Grosses Gewächs of the house's other Grosse Lage at Schlossböckelheim, on volcanic rock beside the Kupfergrube.",
+     "why": "The fermentation and vessels of the Felsenberg rested on no source read.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: Gut Hermannsberg",
+       "url": "https://glossary.wein.plus/gut-hermannsberg-2",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "1902 is the house's founding year and Wines of Germany's; a summary has the mine stop and the state take the land in 1901, so the integrator may weigh it.",
+    "The first five year release of the Kupfergrube is the 2017 vintage by one account, with a partial hold back of the 2015; the record keeps a vintage of the middle 2010s."
+   ]
+  },
+  {
+   "key": "diel",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "1802: the house's own pages and wein.plus, which names the buyer Johann Peter Diel (1750 to 1811), during the Napoleonic occupation; one source only for the name and dates, so the story keeps a forebear.",
+    "VDP admission in 1989: the house and the VDP's own listing.",
+    "The Verband traditioneller Sektmacher: the house's own press page of 16 February 2023 quotes the unanimous admission. Borne out.",
+    "The Goldloch on the VDP's page: 140 to 210 metres, 15 to 55 per cent, rocky loam slope wash and a thin pebbly loam over Upper Rotliegend conglomerate, facing south or south south west; wein.plus agrees on the soil and gives other heights. The record's aspect widened.",
+    "The making in native yeasts and old Stückfass casks of local oak: the house's page for the 2024 GG, as the author read it; not refuted.",
+    "The story set the Goldloch against both other sites as not slate; the Burgberg's soil was not read, so it now names the Pittermännchen alone."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "facing south south west",
+     "now": "facing south to south south west",
+     "why": "The VDP and wein.plus give south or south south west.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Goldloch",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/5031-goldloch",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus glossary: Goldloch",
+       "url": "https://glossary.wein.plus/goldloch",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The Goldloch differs from the other two",
+     "now": "The Goldloch differs from the Pittermännchen beside it",
+     "why": "The Burgberg's soil was found in nothing read; the Pittermännchen's Devonian slate is the house's and wein.plus's.",
+     "sources": [
+      {
+       "title": "VDP: Vineyard.Online, Goldloch",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/5031-goldloch",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "wein.plus wine guide: Schlossgut Diel",
+       "url": "https://wineguide.wein.plus/schlossgut-diel",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The buyer of 1802 is named Johann Peter Diel (1750 to 1811) by wein.plus alone; the story keeps a forebear of the Diels.",
+    "The Goldloch stays the pick over the Pittermännchen, which one guide calls the house's leading dry wine; the house presents its three GGs as equals."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Helmut Dönnhoff",
+   "role": "the son who took the estate on from his father in 1971",
+   "where": "the house's press piece and Wikipedia in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a son of the house"
+  },
+  {
+   "name": "Cornelius Dönnhoff",
+   "role": "the next generation, responsible for the wines since 2007, owner and cellar master by the VDP",
+   "where": "the house's press piece and the VDP's page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the next generation"
+  },
+  {
+   "name": "Egon Anheuser",
+   "role": "the former VDP Nahe chairman who sold the house Hermannshöhle parcels",
+   "where": "the house's press piece",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as a former head of the VDP on the Nahe"
+  },
+  {
+   "name": "Tim Fröhlich",
+   "role": "owner and cellar master of Schäfer-Fröhlich, in charge of the cellar since 1995",
+   "where": "the VDP's estate page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a new generation"
+  },
+  {
+   "name": "Hans Fröhlich",
+   "role": "his father, beside him at the admission of 2001",
+   "where": "the VDP's estate page",
+   "believed": "living or status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Karin Fröhlich",
+   "role": "his mother, beside him at the admission of 2001",
+   "where": "the VDP's estate page",
+   "believed": "living or status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Werner Schönleber",
+   "role": "the son who with his father made Emrich-Schönleber a pure wine estate",
+   "where": "a wine guide summary in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as father and son"
+  },
+  {
+   "name": "Wilhelm Schönleber",
+   "role": "his father, who began the turn in the 1960s",
+   "where": "the same summary",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as father and son"
+  },
+  {
+   "name": "Jens Reidel",
+   "role": "one of the buyers of the Niederhausen domain in 2009",
+   "where": "several accounts in the refuter's results",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as new owners"
+  },
+  {
+   "name": "Christine Dinse",
+   "role": "his partner in the purchase of 2009",
+   "where": "the same accounts",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as new owners"
+  },
+  {
+   "name": "Gudrun Maurer",
+   "role": "interviewed on the house's site, of the family of the first private owner after 1998 by the result's context",
+   "where": "a result title on gut-hermannsberg.de",
+   "believed": "living or status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  }
+ ],
+ "livingNote": "None of these is named in the fragment's prose, titles or addresses; the people of Schlossgut Diel did not appear by name in the refuter's results and are never named. Hermann Dönnhoff appears only inside the estate's formal name, Weingut Hermann Dönnhoff; his dates were not found. The one dead person met with dates is Johann Peter Diel (1750 to 1811), on wein.plus alone, so the story keeps a forebear of the Diels. The read together agent may add the living names above to people.json.",
+ "swaps": [
+  {
+   "pick": "diel",
+   "proposed": "none; the author invited a swap of the Goldloch GG for the Pittermännchen GG",
+   "ruling": "refused",
+   "why": "No source found ranks either above the other: the house presents its three Dorsheim Grosse Lage wines as equals, the Goldloch carries the plan's key and is as well known for its Prädikat wines and its Sekt, and the Pittermännchen stands first among the others, so the guest meets both."
+  }
+ ],
+ "swapNote": "No other swap was proposed. Plan notes answered: Dönnhoff's 1750 is in two sources beside wein.plus's 1761; the Hermannshöhle's soils are the VDP's and the house's; the Halenberg's soils are the VDP's in two pages; the Felseneck's soil is named only where the VDP and wein.plus agree, the Kupfergrube in others; Gut Hermannsberg's 1902 and the mine to 1901 are the house's and wein.plus's, the holding back is told as a habit begun in the middle 2010s; Diel's Goldloch kept, with the Pittermännchen first among the others.",
+ "codexInTension": [],
+ "codexNote": "No Codex record in tension was found. The library's Dönnhoff record gives 1750, which the record keeps beside wein.plus's 1761; the library's Emrich-Schönleber holdings line puts the Frühlingsplätzchen on volcanic soils, which the record does not contradict because it names no soil for it."
+}
