@@ -1,0 +1,176 @@
+{
+ "group": "weinviertel",
+ "chunk": "w14",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 20,
+  "perRecord": {
+   "pfaffl": 4,
+   "ebner-ebenauer": 7,
+   "zull": 5,
+   "setzer": 1,
+   "gruber-roschitz": 3
+  },
+  "note": "Twenty searches of a share of twenty eight, eight left unspent for the run's shared allowance. The group's shared searches are counted where they were spent: the two on the DAC rules with Pfaffl, the ÖTW founders with Ebner-Ebenauer, the three on the ÖTW Erste Lagen with Zull. No fetch tried. Several pages read name living people; none is named in the fragment."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people, the classification, the grapes, the sites, the making, the window, the serving temperature, the label, every beat of the story, the cards and the questions; then the house rules.",
+  "The group's common facts went first: the Weinviertel DAC (Austrian Wine and the Weinviertel DAC's own pages: the 2002 vintage, Reserve from 2009 at 13 per cent and dry, Große Reserve, the classic tier at most 6 grams), then the ÖTW's Weinviertel association (2024, thirteen founders) and its Erste Lagen.",
+  "The author's DAC year of 2003 was wrong in four stories and three questions: Austrian Wine gives the 2002 vintage, as does the Codex's own region record; corrected everywhere."
+ ],
+ "records": [
+  {
+   "key": "pfaffl",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1978 and the farm before it: Wine Align's profile, wein.plus's glossary and the house give 1978, a mixed farm of grain, potatoes and livestock; kept.",
+    "The Hundsleiten: the house's own pages say the family long owned it and its Grüner Veltliner always stood out, so the founder's planting of it was refuted; Falstaff lists Hundsleitensandtal 2003 and Weinviertel DAC Reserve Hundsleiten 2010, so the label printed the full name before Hund.",
+    "The Weinviertel DAC: Austrian Wine gives the 2002 vintage, the Reserve from 2009, at least 13 per cent and dry, a subtle note of oak or botrytis allowed, the classic tier at most 6 grams of sugar; the record's 2003 corrected.",
+    "The trap's second Pfaffl estate: Weinviertel tourism lists a Weingut Heinz u. Theresia Pfaffl, but its village was not confirmed and the name is of living people; reworded."
+   ],
+   "changed": [
+    "wine.sites: was planted by the founder in the years after 1978; now a slope the family had long owned, whose Grüner Veltliner always stood out, as the house's own page tells it.",
+    "story: was a farm of cereals, pigs and cows and a founder who first planted the Hundsleiten; now grain, potatoes and livestock and a slope the family already owned, its wine labelled Hundsleiten in earlier vintages (Falstaff lists Hundsleitensandtal 2003 and Weinviertel DAC Reserve Hundsleiten 2010).",
+    "story and questions: was the Weinviertel DAC created in 2003; now from the 2002 vintage, as Austrian Wine gives it and the region record agrees.",
+    "story: the Bisamberg ridge cut, since the sources read place Stetten just north of Vienna and no source put the Hundsleiten on the ridge itself.",
+    "others: Grüner Veltliner Haiden cut, its site and soil unconfirmed.",
+    "traps: was the separate Heinz and Theresia Pfaffl estate in the same village, which names living people and whose village was not confirmed; now another Weinviertel winery of the family name, read the initials.",
+    "sources: the Discover Germany and Enotria features replaced by Falstaff's Hundsleiten listing and Wine Align's profile of the house."
+   ],
+   "open": [
+    "The swap of the wine's name alone to Grüner Veltliner Hund is accepted; the read together agent must change plan.json and wine.name in one commit.",
+    "The flysch of the Hundsleiten and the eight hours on the skins rest on the house's own fact sheet, read through its search summary."
+   ]
+  },
+  {
+   "key": "ebner-ebenauer",
+   "searches": 7,
+   "verdict": "changed",
+   "tested": [
+    "1945, fourteen generations, the cellar of about four hundred years on three levels, gravity: the house's own pages; kept, the grandparents' studies reworded to the house's ties to France and Italy.",
+    "2007: Roberson alone; Falstaff quotes a first vintage of 2006; founded emptied.",
+    "Falstaff 2022: Falstaff's own article and the Lower Austrian government's notice; kept.",
+    "The ÖTW: Meininger and wein.plus give 2024 and thirteen founders, the house among them; Falstaff lists Ried Sauberg 1ÖTW and Ried Hermannschachern 1ÖTW and the Bürsting with no 1ÖTW.",
+    "The Bürsting: the house's page and fact sheet give the plateau, loam, early 1960s vines, 24 hours on skins, wild yeasts, used 500 litre barrels and small steel tanks; the Sauberg sheet puts its gravel against the Bürsting's loam, neighbouring, not behind."
+   ],
+   "changed": [
+    "founded: was 2007; now empty, since only one importer gives 2007 for the label and Falstaff quotes a first vintage of 2006.",
+    "story and questions: the launch in 2007 is now the early years of this century, and the story question asks instead for Falstaff's title of 2022, confirmed by Falstaff and the Lower Austrian government.",
+    "story: grandparents who had studied in France and Italy are now grandparents with ties to France and Italy, the house's own words; the ÖTW founding now carries its year, 2024.",
+    "wine.sites, others and story: the Sauberg was behind the Bürsting; the house's Sauberg sheet says its gravel meets the loam of the neighbouring Bürsting, so now beside it; older vines cut, since both sites were planted in the early 1960s.",
+    "wine.making: the brief settling and the bottling in late spring were unconfirmed and are cut; the barrel and tank share now varies with the vintage, as the house and a critic's note on 2019 differ.",
+    "sources: Roberson and Wein.plus replaced by the Lower Austrian government's notice and Falstaff's Sauberg 1ÖTW listing."
+   ],
+   "open": [
+    "The appellation Niederösterreich rests on the author's note of 2015; the house's sheet for 2021 gives the origin as Poysdorf only, and Falstaff lists 2011 as a Weinviertel DAC Reserve. The integrator may wish to confirm against a recent label.",
+    "The swap of the wine to Ried Sauberg 1ÖTW is refused (see the review file)."
+   ]
+  },
+  {
+   "key": "zull",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The Äussere Bergen: the house's page gives the south easternmost site of Schrattenthal, granite under loess at about 280 metres, an early October harvest, 18 hours on skins, a large wooden cask and 15 months; the Hüttberg shelter not found, cut.",
+    "The roots page: the great grandfather married into the house at Schrattenthal 9, the turn to wine alone in the 1980s, the village first named in 1220; kept, 1220 hedged.",
+    "1ÖTW: the house's product name and a Weinviertel DAC exhibitor list (a Roter Muskateller Ried Äussere Bergen 1 ÖTW); the ÖTW's own list was not reached (shared search with Setzer).",
+    "The ÖTW founders of 2024 (shared search) list Zull."
+   ],
+   "changed": [
+    "wine.sites: the shelter of the Hüttberg to the west was unconfirmed and is cut; the granite under loess at about 280 metres, south easternmost of Schrattenthal, stands on the house's page.",
+    "story and questions: was the Weinviertel DAC of 2003; now from the 2002 vintage, as Austrian Wine gives it.",
+    "story: the document of 1220 is now hedged as the house's account, the one source read for it.",
+    "others: Riesling Ried Innere Bergen and Grüner Veltliner Schrattenthal were unconfirmed; now the Riesling Schrattenthal vom Urgestein the house lists."
+   ],
+   "open": [
+    "The Äussere Bergen as an ÖTW Erste Lage rests on the house's own product name and a Weinviertel DAC exhibitor list printing a Roter Muskateller Ried Äussere Bergen 1 ÖTW; no ÖTW list of Weinviertel sites was reached.",
+    "The share of steel in some vintages rests on the author's Decanter note only."
+   ]
+  },
+  {
+   "key": "setzer",
+   "searches": 1,
+   "verdict": "changed",
+   "tested": [
+    "The house's history page: 1360, 1705, the farm leased out in 2001, the Laa very chalky with white lines of chalk, 8000 vines per hectare planted over twenty years ago, roots forced deep; the house names the 8000 and the Roter Veltliner Ried Kreimelberg its flagships; a Große Reserve Ried Laa product page exists.",
+    "Not found and cut: 400 metres, twice the usual density, the 1909 photograph, the Ried Kronberg and the village wine.",
+    "The ÖTW founders of 2024 and the DAC rules came from the shared searches."
+   ],
+   "changed": [
+    "wine.sites and story: the height of about 400 metres was unconfirmed and is cut, with high from the western edge.",
+    "story: the family photograph of 1909 was unconfirmed and is cut; was giving up crops and livestock in 2001, now leasing out the farmland, the house's words.",
+    "story and questions: was the Weinviertel DAC of 2003; now from the 2002 vintage, as Austrian Wine gives it.",
+    "story: more than twice the density usual in the region was unconfirmed and is cut; the founders' year 2024 added; the flagship now one of two, as the house names the 8000 and the Roter Veltliner Ried Kreimelberg.",
+    "others: Grüner Veltliner Ried Kronberg and Grüner Veltliner Hohenwarth unconfirmed; now the Roter Veltliner Ried Kreimelberg, beside the Große Reserve Ried Laa the house lists."
+   ],
+   "open": [
+    "The Laa as an ÖTW Erste Lage rests on the house's own product name, Ried Laa 8000 1ÖTW; no ÖTW list of Weinviertel sites was reached.",
+    "Wild yeast and some ten months in steel rest on Falstaff's sheet and the importer, as the author read them."
+   ]
+  },
+  {
+   "key": "gruber-roschitz",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "2012: the WKNÖ report and the company register (entered 18 April 2012); three siblings, not three of six.",
+    "Organic from 2013: neither the house's pages nor the chamber's report give a year; cut. Organic itself and certification confirmed by the house, the chamber and an importer.",
+    "Since 1814 by the chamber; the grandfather's mixed farm of 1970; the house a member of the ÖTW since May 2024.",
+    "Making: an importer's listing gives steel tank; another says only Röschitz fruit; the press, the temperature, the lees and the heights were not confirmed and are cut. The house's DAC product is named Grüner Veltliner Röschitz; a Dutch importer still lists a Klassik."
+   ],
+   "changed": [
+    "story and questions: organic farming from 2013 was unconfirmed (neither the house's pages nor the chamber's report give a year) and is cut from the story, the label and the story question; the question now asks the year of the takeover, 2012, which the chamber's report and the company register confirm.",
+    "story: three of six siblings now three siblings; wine made largely for the household now the grandfather's mixed farm of 1970, the chamber's words; Grüner Veltliner as about half the vineyards cut as volatile; the ÖTW founding dated 2024.",
+    "story: was the Weinviertel DAC of 2003; now from the 2002 vintage, as Austrian Wine gives it.",
+    "wine.sites and wine.making: the 280 to 340 metres, the pneumatic press, the twenty degrees and the weeks on the lees were not confirmed and are cut; steel fermentation stands on an importer's listing and the Röschitz fruit on another.",
+    "others: the Reipersberg's terraces and sixty year old vines and the Mühlberg's mill were unconfirmed; now the house's own granite for the Reipersberg and a plain Reserve listing for the Mühlberg.",
+    "cards: the second card now asks for the ÖTW membership of May 2024, the house's own date, since the question asks for 2012.",
+    "sources: the house's family page and Falstaff blog post replaced by the chamber's report and an importer's listing."
+   ],
+   "open": [
+    "The swap of the wine's name to Grüner Veltliner Röschitz is accepted; the read together agent must change plan.json and wine.name in one commit. Some export listings still print Klassik.",
+    "The family's more than two hundred years: the chamber gives wine growing since 1814; founded stays empty."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "The founders and heirs of R&A Pfaffl (the initials of the house stand as its name, never spelt out)",
+  "The couple of Ebner-Ebenauer",
+  "Heinz and Theresia Pfaffl (another estate's name; cut from the trap)",
+  "The present generation of Zull, father and son (named on the house's page)",
+  "The Setzer family's present generation",
+  "The three Gruber siblings and their married names",
+  "A Falstaff taster named on its listings"
+ ],
+ "swaps": [
+  {
+   "group": "weinviertel",
+   "key": "pfaffl",
+   "proposal": "The wine's name alone, Grüner Veltliner Ried Hund to Grüner Veltliner Hund",
+   "ruling": "accepted",
+   "why": "The house names the wine Grüner Veltliner Hund and earlier labels printed Hundsleiten; no label read prints Ried Hund, and Hund is a short name for the Hundsleiten rather than a registered Ried."
+  },
+  {
+   "group": "weinviertel",
+   "key": "gruber-roschitz",
+   "proposal": "The wine's name alone, Grüner Veltliner Weinviertel DAC to Grüner Veltliner Röschitz",
+   "ruling": "accepted",
+   "why": "The house's own product page names its Weinviertel DAC Grüner Veltliner Röschitz; Weinviertel DAC stays in the appellation field. A Dutch importer still lists a Klassik, noted in open."
+  },
+  {
+   "group": "weinviertel",
+   "key": "ebner-ebenauer",
+   "proposal": "The wine to Grüner Veltliner Ried Sauberg 1ÖTW",
+   "ruling": "refused",
+   "why": "The Bürsting is the house's single Ried Grüner Veltliner with the longer record (Falstaff lists it from 2011, as a DAC Reserve then), while the 1ÖTW label dates only from the association of 2024; the Sauberg stands in others and in a trap, and a swap would need a new record researched from nothing."
+  }
+ ],
+ "tension": [
+  "The region record (REGIONS: weinviertel) calls Poysdorf the Sekt town and Pfaffl the southern Weinviertel's leading estate (the producers line); neither is repeated in the fragment. Its 2002 for the first DAC agrees with the corrected records.",
+  "The region record's Klassik and Reserve omit the Große Reserve tier, which Austrian Wine gives as permitted since 2020; reported, never edited."
+ ]
+}
