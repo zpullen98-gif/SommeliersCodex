@@ -1,0 +1,378 @@
+{
+ "group": "wurttemberg",
+ "chunk": "w13",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 22,
+  "perRecord": {
+   "neipperg": 6,
+   "aldinger": 5,
+   "schnaitmann": 5,
+   "dautel": 5,
+   "haidle": 3
+  },
+  "note": "Twenty two searches of a share of twenty eight; six left unspent for the run's shared allowance. Most were read as summaries, several restricted to the VDP's or a house's own domain. Writers' own sites that came up were read and never cited. No fetch tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the dates, the people and their dates, the classification, the grapes, the sites, the making, the window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "The finding that matters most: the Aldinger site figures belonged to the VDP's other page, Gips, not Gips Marienglas; and three story beats (a teacher of 1858 at Fellbach, Dautel's takeover of 2013, Kreation of 1990) rested on nothing found and were cut or corrected."
+ ],
+ "records": [
+  {
+   "key": "neipperg",
+   "searches": 6,
+   "tested": [
+    "The Ruthe on the VDP's own pages: first named 1385, south facing, partly terraced, 20 to 40 per cent, 246 to 307 metres, Gipskeuper with coloured marl above, sheltered by the Siegelsberg, a monopole of the house. Kept, with the height and soil added.",
+    "The palace of 1702 over the moats, its vaulted cellars, the castle of the thirteenth century, the count's rank of 1726 and the Lemberger tradition: the house's own pages (Lemberger told there as a reputation, as the record does); 1702 and 1726 also in Wikipedia's Schwaigern and County of Neipperg articles.",
+    "Wilhelm Reinhard (1684 to 1774), count from 1726; the county taken into Württemberg in 1806: Wikipedia's county article and its succession list.",
+    "Adam Albert (8 April 1775 to 22 February 1829), Austrian general, grandson of Wilhelm Reinhard, morganatic marriage to Marie Louise in 1821: Wikipedia and Britannica.",
+    "1971: the purchase of Canon-La-Gaffelière and La Mondotte, with Clos de l'Oratoire and Peyreau months later, by the family's own Bordeaux site and trade pages. Kept, buyer unnamed.",
+    "The wine: Falstaff lists Schwaigern Ruthe Lemberger GG across vintages with 18 months in barrique; the house's lists give the Ruthe and Schlossberg Rieslings as dry Qualitätswein, so the others entry was corrected."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "steep and partly terraced, at 20 to 40 per cent, on Keuper",
+     "now": "partly terraced, at 20 to 40 per cent and some 250 to 310 metres, on Gipskeuper with coloured marl above, sheltered from north and west winds",
+     "why": "The VDP's figures, more exact and teaching more.",
+     "sources": [
+      {
+       "title": "VDP: Ruthe, Schwaigern, VDP.Grosse Lage",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/9313-ruthe",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[1]",
+     "was": "Schwaigerner Ruthe Riesling GG",
+     "now": "Ruthe Riesling, given below Grosses Gewächs",
+     "why": "The house's 2024 and 2025 lists give the Ruthe Riesling as a dry Qualitätswein; no Ruthe Riesling GG was found.",
+     "sources": [
+      {
+       "title": "Weingut Graf Neipperg: Weinliste Herbst 2024",
+       "url": "https://www.graf-neipperg.de/wp-content/uploads/2024/10/Weinliste-Herbst-2024-GRAF-NEIPPERG.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The time in barrique is 18 months on Falstaff's sheets for 2018 and 2020; the record keeps 'well over a year' as the vintages differ.",
+    "The palace of 1702 and the Lemberger tradition rest on the house's own pages and the Schwaigern article; the tradition is told as a tradition."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "aldinger",
+   "searches": 5,
+   "tested": [
+    "1492 and Bentz der Aldinger: the VDP's estate page and the house's own page agree; told as the family's account.",
+    "Gips Marienglas: the VDP lists GIPS MARIENGLAS as a Grosse Lage (5.66 hectares classified) and has a separate page GIPS whose figures (S to SW, 240 to 320 metres, 10 to 30 per cent, 6.63 hectares) the author had used; the figures were cut.",
+    "The house's page: Gips bought in 1973, replanted from 1974, named for gypsum quarried there some two centuries ago, its flagship site (Flaggschifflage), held alone; a cooperage turned into a wine estate in 1955 (not added).",
+    "The making: the house's sheet of 2024 gives wild yeast fermentation in wooden casks and ten months on the lees; that of 2018 a large wooden cask.",
+    "The swap: Falstaff lists the Lämmler Lemberger GG across many vintages; only a writer's wiki calls it the flagship, and the house calls the Gips its flagship site."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "a slope of 10 to 30 per cent at 240 to 320 metres on Gipskeuper",
+     "now": "facing south to south west on Gipskeuper, where gypsum was once quarried; held alone",
+     "why": "The figures belong to the VDP's separate page for Gips, not Gips Marienglas.",
+     "sources": [
+      {
+       "title": "VDP: Gips, Untertürkheim",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/9471-gips",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "VDP: Gips Marienglas, Untertürkheim",
+       "url": "https://www.vdp.de/de/die-weine/weinbergonline/lage/9448-gips-marienglas",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "picked by hand, raised in large wooden casks, by the critics' sheets for about ten months",
+     "now": "by the house's sheets fermented with wild yeasts in large wooden casks and raised on its lees about ten months",
+     "why": "The house's own sheet; hand picking unsourced.",
+     "sources": [
+      {
+       "title": "Weingut Aldinger: Untertürkheimer Gips Marienglas Riesling GG",
+       "url": "https://www.weingut-aldinger.de/en/wines/untertuerkheimer-gips-marienglas-riesling-en/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "There the house holds Gips, which it calls the oldest documented vineyard of Stuttgart",
+     "now": "by its own account the family bought the Gips in 1973 ... named for the gypsum once quarried there",
+     "why": "A dated turning point and the name's origin, from the house.",
+     "sources": [
+      {
+       "title": "Weingut Aldinger: Das Weingut",
+       "url": "https://www.weingut-aldinger.de/de/weingut/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "traps[2], others[1]",
+     "was": "sweet wines from the same vineyard carry a Prädikat",
+     "now": "the Gips Riesling, labelled VDP.Erstes Gewächs, a step below",
+     "why": "No sweet wine from the site was found; the house titles the Gips Riesling VDP.Erstes Gewächs.",
+     "sources": [
+      {
+       "title": "Weingut Aldinger: Untertürkheimer Gips Riesling VDP.Erstes Gewächs",
+       "url": "https://www.weingut-aldinger.de/de/weine/21-125-gips-riesling/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "That Gips is the oldest documented vineyard of Stuttgart and Aldinger the oldest estate of Fellbach are the house's claims, told as such.",
+    "The house's page gives the Gips bought in 1973 and replanted from 1974; the story keeps 1973."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "schnaitmann",
+   "searches": 5,
+   "tested": [
+    "1997: the house, the VDP and two trade pages; one directory gives 1996. Kept.",
+    "The making and the Brenner: the house's shop sheet of 2024 (whole bunches in part, wild yeast, 18 months in 300 litre casks, half new, unfiltered) and its vineyard page (old Spätburgunder vines for the GG in the Brenner). Kept.",
+    "1858: the co-operative's own price list and Meininger give 1858 for Weingärtner Fellbach; no source names a teacher.",
+    "Hans Schnaitmann of 1550: no source but the house; kept as its account.",
+    "Simonroth: Falstaff's notes give the house's account, Immenrod, a hamlet between Fellbach and Rotenberg, the name altered."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "in 1858 a Fellbach teacher founded the town's growers' society, the Weingärtner Gesellschaft Fellbach",
+     "now": "like most of Fellbach's growers, brought them to the town's co-operative, founded in 1858",
+     "why": "The year is in two sources, the teacher and the name in none independent.",
+     "sources": [
+      {
+       "title": "Fellbacher Weingärtner: Preisliste 2026",
+       "url": "https://fellbacher-weine.de/wp-content/uploads/2026/03/FEWG_Preisliste_2026_Inhalt_klein.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Meininger: WG Fellbach, alt und erfolgreich",
+       "url": "https://www.meininger.de/weinbau/wg-fellbach-alt-und-erfolgrei",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, wine.label",
+     "was": "the Lämmler took its present shape in the land consolidation of the 1960s; a gathering of the town's leading parcels",
+     "now": "cut; Fellbach's VDP.Grosse Lage on the Kappelberg above the town",
+     "why": "One secondary source only.",
+     "sources": []
+    },
+    {
+     "field": "others[0]",
+     "was": "named for a lost hamlet at the foot of the Kappelberg",
+     "now": "by the house's account drawn from Immenrod, a lost hamlet between Fellbach and Rotenberg",
+     "why": "The house's own account as Falstaff records it.",
+     "sources": [
+      {
+       "title": "Falstaff: Schnaitmann Simonroth Spätburgunder",
+       "url": "https://www.falstaff.com/en/wines/weingut-schnaitmann-2022-simonroth-spaetburgunder",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Hans Schnaitmann of 1550 rests on the house's page alone, told as its account; no church register was found.",
+    "The founding year is 1996 in one directory against 1997 in the house, the VDP and two others; 1997 kept."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "dautel",
+   "searches": 5,
+   "tested": [
+    "1510: the house and a Danish importer; told as the house's dating of the family's vines; founded left empty, rightly.",
+    "Leaving the co-operative: one trade account says the mid 1970s, another that the parents delivered to it; the late 1970s and Geisenheim for the father not found.",
+    "VDP in 1999 and the first Lemberger GG in 2010: the VDP's estate page and the Eichelmann article on the house's site.",
+    "The son's return in 2010 from Geisenheim: Skurnik and a trade profile; 2013 for the takeover found nowhere; a 2015 report has the formal transfer then recent.",
+    "The Michaelsberg: the VDP (south, 335 to 385 metres, 40 to 50 per cent, coloured marl), the house (coloured marl over the Gipskeuper, sheltered by the Stromberg), Wines of Germany and local guides (Romanesque Michaelskirche at the summit, 'guardian of the Zabergäu').",
+    "St. Michaelsfeder: Falstaff's listing of the 2011 Lemberger GG; Decanter's 2018 is Cleebronner Michaelsberg alone.",
+    "Steingrüben Riesling GG: Falstaff and wein.plus listings. Kreation Rot of 1990: not found."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "In the late 1970s an heir, newly returned from study at Geisenheim, left the co-operative",
+     "now": "In the 1970s an heir of the family left the co-operative",
+     "why": "Sources differ on the decade's half; the Geisenheim study is unsourced.",
+     "sources": [
+      {
+       "title": "Skurnik Wines: Weingut Dautel",
+       "url": "https://www.skurnik.com/producer/weingut-dautel/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "his son came home in 2010 and took over in 2013",
+     "now": "his son came home from Geisenheim in 2010 and later took the estate on",
+     "why": "2013 found in no source.",
+     "sources": [
+      {
+       "title": "Skurnik Wines: Weingut Dautel",
+       "url": "https://www.skurnik.com/producer/weingut-dautel/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites, table, label, cards[0]",
+     "was": "a cone shaped hill crowned by an old church",
+     "now": "a lone hill crowned by a Romanesque church, south, 40 to 50 per cent, 335 to 385 metres",
+     "why": "The church's period and the VDP's figures teach more; the cone shape was unsourced.",
+     "sources": [
+      {
+       "title": "VDP: Michaelsberg, Cleebronn",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/9222-michaelsberg",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wines of Germany: Michaelsberg Cleebronn",
+       "url": "https://www.winesofgermany.com/our-regions/winesight/138/michaelsberg-cleebronn",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others",
+     "was": "Kreation Rot, a red blend first made in 1990",
+     "now": "cut",
+     "why": "1990 found nowhere.",
+     "sources": []
+    },
+    {
+     "field": "questions[1]",
+     "was": "distractor 2013",
+     "now": "distractor 2010, explained",
+     "why": "2013 is no longer a fact of the record.",
+     "sources": []
+    }
+   ],
+   "open": [
+    "1985 for barriques is the house's; another account dates 1985 to the house's fight for Chardonnay and the barriques to the mid 1980s. Kept as the house's account.",
+    "St. Michaelsfeder is printed on Falstaff's 2011 listing and absent from Decanter's 2018; the claim that it was the early name rests on those two listings."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "haidle",
+   "searches": 3,
+   "tested": [
+    "1949 and the founder: the house, Eichelmann on its site and the Stuttgarter Zeitung.",
+    "1968 for the son: wein.plus and the house's Eichelmann article.",
+    "2014 for the grandson and organic farming, biodynamic since 2020, Demeter: the VDP's estate and wine parcel pages.",
+    "The Pulvermächer: the VDP (side valley below the Yburg, first named 1650, an old word for a blaster, the quarry, Kieselsandstein and Schilfsandstein with coloured marl, 330 to 370 metres across its two pages).",
+    "The making: the house's GG sheets of 2017 and 2019."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "his son took over the estate early, by one account in 1968",
+     "now": "in 1968 his son took the estate over; the early death hedged as the house's",
+     "why": "Two sources now.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: Haidle Karl",
+       "url": "https://glossary.wein.plus/haidle-karl",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story, label, traps[1]",
+     "was": "Pulvermächer means powder maker; the rock was blasted with powder",
+     "now": "an old word for a blaster, tied to the neighbouring quarry",
+     "why": "The VDP's own reading.",
+     "sources": [
+      {
+       "title": "VDP: Pulvermächer, Stetten",
+       "url": "https://www.vdp.de/en/the-wines/vineyardonline/lage/9273-pulvermaecher",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The house's Riesling from it brought the estate early notice",
+     "now": "cut",
+     "why": "Unsourced.",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The VDP's English page gives 330 to 360 metres and its German page 350 to 370; the record says about 330 to 370.",
+    "The VDP's German page says the old Gewann was enlarged in the 1971 consolidation into a single vineyard of 37 hectares; the Grosse Lage is the classified core. Not added."
+   ],
+   "verdict": "changed"
+  }
+ ],
+ "living": [
+  "Stephan (Stefan) von Neipperg",
+  "Karl Eugen von Neipperg",
+  "Joseph-Hubert von Neipperg (status unsettled; treat as living)",
+  "Gert (Gerhard) Joachim Aldinger",
+  "Hansjörg Aldinger",
+  "Matthias Aldinger",
+  "Rainer Schnaitmann",
+  "Ernst Dautel",
+  "Christian Dautel",
+  "Hans Haidle",
+  "Susanne Haidle",
+  "Wolfgang Haidle",
+  "Moritz Haidle"
+ ],
+ "livingNote": "None is named in any shown field; the names are for people.json, which the read together agent changes. Gerhard Aldinger, who turned a cooperage into the estate in 1955 by the house's page, may be the father of Gert Joachim; his status is unknown, so he is not named.",
+ "swaps": [
+  {
+   "pick": "aldinger",
+   "proposed": "Change the wine from Untertürkheimer Gips Marienglas Riesling GG to Fellbacher Lämmler Lemberger GG, keeping the key and the producer.",
+   "ruling": "refused",
+   "why": "The house's own page calls the Gips its flagship site (Flaggschifflage) and holds it alone; only a writer's wiki calls the Lämmler Lemberger the flagship, and Falstaff merely lists both GGs across vintages. Neither the house nor two sources lead with the Lämmler Lemberger, so the merge read's condition for a swap is not met. The Lämmler Lemberger stays in others."
+  }
+ ],
+ "swapNote": "No change to plan.json is needed.",
+ "codexInTension": [
+  {
+   "record": "The region record's producers line for Aldinger",
+   "tension": "It names the Lämmler Lemberger and Riesling GG as setting 'the standard for modern Württemberg', a judging phrase, and leads with the red where the house leads with the Gips; reported, not edited."
+  }
+ ],
+ "codexNote": "No library record holds these houses; no other tension met."
+}
