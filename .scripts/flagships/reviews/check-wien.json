@@ -1,0 +1,591 @@
+{
+ "group": "wien",
+ "chunk": "w14",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 24,
+  "perRecord": {
+   "wieninger": 4,
+   "mayer-am-pfarrplatz": 6,
+   "cobenzl": 3,
+   "christ": 3,
+   "zahel": 6
+  },
+  "note": "Twenty four searches of a share of twenty eight, four unspent. Two searches served the whole group (WienWein and the DAC rules; the ÖTW's Vienna sites) and are counted with Wieninger. One search for Zahel's Kaasgraben aspect and Demeter year returned nothing on the house and is counted with Zahel; one for the decline of the field blend is counted with Wieninger. No fetch tried. A Falstaff portrait whose title names the living buyer of Mayer am Pfarrplatz was read but is listed nowhere."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the classification, the grapes, the sites, the making, the window, the service, the label, every beat of the story, the cards and the questions; then the house rules.",
+  "The searches went first to the dates the stories turn on (WienWein's founders and later members, the DAC, the count's 1773, the city's 1907, the Mayer sale, Christ's 1927 and 1959, Zahel's 1930, 1966 and 1989), then to the house sheets for sites and making.",
+  "Where a house's two pages disagreed (Christ's barrel months and vine age) the record says less; where an account was not found (the 1989 label, the destemming, the decline of the 1980s, the marine terrace) it was cut."
+ ],
+ "records": [
+  {
+   "key": "wieninger",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "WienWein of 2006 and its four founders (Wieninger, Christ, Edlmoser, Zahel): wein.plus and the Vienna Tourist Board's press text; stands.",
+    "The DAC of the 2013 vintage and its rules (three varieties, none above half, the third at least a tenth): Austrian Wine's region page; stands.",
+    "Ried Ulm as an Erste Lage of the ÖTW on the Nussberg, labelled since the 2017 vintage: Meininger and the Vienna press text list Ulm among Vienna's twelve; stands.",
+    "Biodynamic since 2008, certified with the 2011 harvest; nine varieties; three quarters steel, a quarter large old oak, ten months on fine lees, then assembled: the house's sheets for 2018 and 2023; stand.",
+    "The soil: the house's sheets give extremely calcareous shell limestone, a former Tertiary coral reef; the author's marine terrace over Vienna sandstone was not found and is replaced.",
+    "The story's decline of the late 1980s: no source dated it; replaced.",
+    "Rules: no living person named (the houses Christ, Edlmoser and Zahel appear as house names only); no price, score or volatile figure; British; no dash. The questions: one key each; the year distractors are the record's own dates and teach."
+   ],
+   "changed": [
+    {
+     "field": "say",
+     "was": "VEE-ning-er, ROOT OOLM",
+     "now": "VEE-ning-er, REET OOLM",
+     "why": "Ried is said with a long i; ROOT misleads.",
+     "sources": []
+    },
+    {
+     "field": "wine.sites and cards[0].back",
+     "was": "an ancient marine terrace over Vienna sandstone",
+     "now": "calcareous shell limestone, a former coral reef by the house's account",
+     "why": "The house's sheets for 2018 and 2023 describe the Ulm so.",
+     "sources": [
+      {
+       "title": "Weingut Wieninger: Ried Ulm Nussberg 2018, wine sheet",
+       "url": "https://www.wieninger.at/wp-content/uploads/2020/06/Ried-Ulm_-Wiener-Gemischter-Satz-DAC-Nussberg_2018_E.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Wieninger: Ried Ulm 1ÖTW Nussberg 2023, wine sheet",
+       "url": "https://www.wieninger.at/wp-content/uploads/2025/10/Ried-Ulm-1OeTW-Nussberg-Wiener-Gemischter-Satz-DAC-2023_engl.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "by the late 1980s many such vineyards had been grubbed up, left fallow or replanted with a single variety",
+     "now": "its standing had slipped: beside wines of one variety it was taken for a blend of leftovers",
+     "why": "No source dated a decline; two sources tell of its image as a blend of leftovers before the revival.",
+     "sources": [
+      {
+       "title": "The Drinks Business: Gemischter Satz, the next big thing",
+       "url": "https://www.thedrinksbusiness.com/2016/06/gemischter-satz-the-next-big-thing/",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Punch: Can a wine go global without being globalised",
+       "url": "https://punchdrink.com/articles/can-a-wine-go-global-without-being-globalized-gemischter-satz-vienna/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Its Nussberg field blend, once labelled with the hill alone,",
+     "now": "Its field blend from the Nussberg",
+     "why": "The 2018 sheet already names Ried Ulm; the earlier label was not found.",
+     "sources": [
+      {
+       "title": "Weingut Wieninger: Ried Ulm Nussberg 2018, wine sheet",
+       "url": "https://www.wieninger.at/wp-content/uploads/2020/06/Ried-Ulm_-Wiener-Gemischter-Satz-DAC-Nussberg_2018_E.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The swap of the wine's name is accepted (below)."
+   ]
+  },
+  {
+   "key": "mayer-am-pfarrplatz",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "1683: the house's own pages and the wein.plus glossary; stands as the house's account.",
+    "Beethoven, May to the end of June 1817, from his letters: the house, the Österreichische Mediathek and the Beethoven-Haus Bonn's holdings as summarised; stands. The Ninth Symphony claim (wein.plus, the house) is disputed and stays out.",
+    "The Heiligenstadt Testament of 6 October 1802 at Probusgasse 6: the Wien Geschichte Wiki; the trap stands.",
+    "The sale: Falstaff and wein.plus give the head of the Mayer family, with no successor, handing the estate to an advertising man who had first bought the Rotes Haus; one gives 2006, the other 2007. The author's 'later added the Rotes Haus' had the order wrong.",
+    "The label: the house's awards page prints Riesling Nussberg Weißer Marmor; a single vineyard about fifty years old in 2016 by the house's account.",
+    "The soil: the house's vineyards page gives 25 to 65 per cent lime with loam, clay and sand; the south facing aspect was not found and is cut.",
+    "The steel: not on any house page found; Falstaff's listings only, now hedged."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "the house later added the Rotes Haus ... In 2006 the estate was sold to new owners",
+     "now": "in the middle of the 2000s its head, with no heir to follow, handed both to a new owner who had already bought the Rotes Haus estate",
+     "why": "The order was wrong and the year is 2006 or 2007 by source.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: Mayer am Pfarrplatz",
+       "url": "https://glossary.wein.plus/mayer-am-pfarrplatz-2",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Weingut Mayer am Pfarrplatz, winery page",
+       "url": "https://www.falstaff.com/en/wineries/weingut-mayer-am-pfarrplatz",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "When Vienna's growers argued for their field blend, the house stood with them",
+     "now": "The house later joined WienWein",
+     "why": "wein.plus gives Mayer joining WienWein in 2010, after its founding; the year rests on one source and is not printed.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: WienWein",
+       "url": "https://glossary.wein.plus/wienwein",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "south facing slopes of calcareous soil, the lime from fossil shells of an old sea",
+     "now": "one old vineyard of the Nussberg on soil of 25 to 65 per cent lime with loam, clay and sand",
+     "why": "The house's own figures; no aspect found.",
+     "sources": [
+      {
+       "title": "Weingut Mayer am Pfarrplatz: Vineyards",
+       "url": "https://weingut-mayer-am.pfarrplatz.at/en/vineyards/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Mayer am Pfarrplatz: Awards",
+       "url": "https://weingut-mayer-am.pfarrplatz.at/en/awards/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "fermented and matured in stainless steel",
+     "now": "the same, hedged as Falstaff's listings",
+     "why": "No house sheet gives it.",
+     "sources": []
+    },
+    {
+     "field": "questions[1]",
+     "was": "distractor 2006",
+     "now": "distractor 1802, the Heiligenstadt Testament",
+     "why": "The sale year is in doubt; 1802 teaches the trap.",
+     "sources": [
+      {
+       "title": "Wien Geschichte Wiki: Heiligenstädter Testament",
+       "url": "https://www.geschichtewiki.wien.gv.at/Heiligenst%C3%A4dter_Testament",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Vinous listing",
+     "now": "wein.plus glossary: Mayer am Pfarrplatz",
+     "why": "A source for the history, not a tasting.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: Mayer am Pfarrplatz",
+       "url": "https://glossary.wein.plus/mayer-am-pfarrplatz-2",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Franz Mayer, who handed the estate on, has dates of 1928 to 2011 in one source and a death in 2013 in another, so he is not named.",
+    "The swap of the wine's name is accepted (below)."
+   ]
+  },
+  {
+   "key": "cobenzl",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "Count Johann Philipp Cobenzl, 28 May 1741 to 30 August 1810: the Wien Geschichte Wiki; stands.",
+    "His taking of the hill: the Wien Geschichte Wiki and the Austria-Forum give the Jesuits' estates on the Reisenberg, after the order was dissolved in 1773; the 1770s is now 1773.",
+    "The city's purchase in 1907 under the mayor of the day: the Wien Geschichte Wiki and the estate; one Falter article of 2000 gives 1905, left as open.",
+    "1988: the estate's account; a regional press article confirms its manager since 1988, who is living and unnamed.",
+    "The Reisenberg: the house's vineyard page gives a south facing slope, limestone with a shell limestone cover, calcareous flysch sandstone and marl; the shop page gives the nine varieties; stand.",
+    "That the Reisenberg is no ÖTW Erste Lage and the Steinberg is: the ÖTW list of Vienna's twelve as Falstaff and Meininger give it; the trap stands.",
+    "WienWein: Cobenzl joined in 2010 (wein.plus), not as a founder."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "In the 1770s the hill passed to Count Johann Philipp Cobenzl",
+     "now": "When the Jesuits who held the hill were dissolved in 1773, it passed to the count; the hill was once the Reisenberg",
+     "why": "The Wien Geschichte Wiki gives the year and the earlier owners.",
+     "sources": [
+      {
+       "title": "Wien Geschichte Wiki: Philipp Johann Cobenzl",
+       "url": "https://www.geschichtewiki.wien.gv.at/Philipp_Johann_Cobenzl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Wien Geschichte Wiki: Cobenzl",
+       "url": "https://www.geschichtewiki.wien.gv.at/Cobenzl",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Austria-Forum: Grinzing",
+       "url": "https://austria-forum.org/af/AustriaWiki/Grinzing",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "The estate stood with the private houses of WienWein",
+     "now": "The estate later joined the private houses of WienWein",
+     "why": "Cobenzl joined in 2010, after the founding of 2006.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: WienWein",
+       "url": "https://glossary.wein.plus/wienwein",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "questions[1]",
+     "was": "distractor A Jesuit who planted its first vines",
+     "now": "distractor A Habsburg general of the siege of 1683",
+     "why": "The Jesuits did hold the hill, so the old distractor was half true.",
+     "sources": [
+      {
+       "title": "Wien Geschichte Wiki: Cobenzl",
+       "url": "https://www.geschichtewiki.wien.gv.at/Cobenzl",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources",
+     "was": "Britannica",
+     "now": "Wien Geschichte Wiki: Philipp Johann Cobenzl",
+     "why": "The city's own history wiki carries the dates and 1773.",
+     "sources": [
+      {
+       "title": "Wien Geschichte Wiki: Philipp Johann Cobenzl",
+       "url": "https://www.geschichtewiki.wien.gv.at/Philipp_Johann_Cobenzl",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "1907 against 1905 for the city's purchase; 1907 stands on two sources."
+   ]
+  },
+  {
+   "key": "christ",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "About four hundred years of the family at Jedlersdorf: the house and the city's Heuriger listing; stands hedged.",
+    "1927 (two tables in the family kitchen) and 1959 (a room of its own): the house's history of the Heuriger in two languages; stand.",
+    "The Petershof joining and the whole estate organic in 2014: the house's English timeline; stands as the house's own history.",
+    "WienWein of 2006 with Christ a founder: wein.plus and the Vienna press text; stands.",
+    "The Wiesthalen: 1ÖTW on the Bisamberg (Meininger's list of Vienna's twelve), flysch, coral limestone and clay (the house); stands.",
+    "The making: the house's wine page gives a wild ferment in French oak and about thirteen months on the lees, the shop sheet about eighteen months in barrel; reworded to more than a year.",
+    "The vine age: over eighty years on one house page, a replanting of 2002 on another; old vines cut from the table."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "about eighteen months in barrel, by the 2024 sheet",
+     "now": "a wild ferment in French oak barrels and more than a year on the lees, thirteen months on one house page and about eighteen on the 2024 sheet",
+     "why": "The house's two pages disagree.",
+     "sources": [
+      {
+       "title": "Weingut Christ: White wines",
+       "url": "https://weingut-christ.at/weine/weissweine/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Weingut Christ shop: Ried Wiesthalen Wiener Gemischter Satz DAC",
+       "url": "https://shop.weingut-christ.at/en/white-wine/wiesthalen-gemischter-satz-dac-1lage-en",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "table",
+     "was": "old Bisamberg vines above Jedlersdorf",
+     "now": "a Bisamberg slope above Jedlersdorf",
+     "why": "The vine age is in conflict on the house's own pages.",
+     "sources": [
+      {
+       "title": "Weingut Christ: Ried Wiesthalen, vineyard page",
+       "url": "https://weingut-christ.at/weingut/lagen/ried-wiesthalen/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Organic from 2014 on the house's timeline alone."
+   ]
+  },
+  {
+   "key": "zahel",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "1930, the great grandparents and the bar room: the house's Heuriger page and the importer; stand.",
+    "1966: the house says a member of the family selected the Orangetraube and replanted a vineyard of it alone; the importer says it was bottled alone from 1954; the claim that it has been bottled alone since 1966 is cut.",
+    "1989: the house's page gives the son taking the estate over; the first Wiener Gemischter Satz label that year was not found (an importer says about thirty years ago) and is cut.",
+    "WienWein: a founder in 2006 (wein.plus, the Vienna press text); wein.plus has Zahel leaving in 2011, so the story no longer ties the house to the DAC campaign's end.",
+    "The Kaasgraben making: 36 hours on the skins in the press, a wild ferment in 1,200 litre Stockinger casks, eighteen months on fine lees, on the house's pages for 2021 and 2024; destemming not found and cut.",
+    "Organic from 2017 and Demeter from 2018: one search found nothing further; they rest on the author's reading of the house and its importer."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "picked the Orangetraube out of the Gemischter Satz and planted it on its own, and the house has bottled it alone since",
+     "now": "selected the Orangetraube and planted a vineyard of it alone, by the house's account",
+     "why": "The importer dates the first bottling alone to 1954.",
+     "sources": [
+      {
+       "title": "Zahel: About us",
+       "url": "https://www.zahel.at/en/about-us/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "France and Western: Weingut Zahel, importer's profile",
+       "url": "https://franceandwestern.squarespace.com/newsletter/weingut-zahel",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "that year, by the house's account, Wiener Gemischter Satz appeared on a Zahel label for the first time",
+     "now": "cut",
+     "why": "Not found on the house's pages read; one importer says only about thirty years ago.",
+     "sources": [
+      {
+       "title": "Zahel: About us",
+       "url": "https://www.zahel.at/en/about-us/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the group that argued for the city's field blend until it became a DAC",
+     "now": "a group that argued for the city's field blend, and Wiener Gemischter Satz became a DAC",
+     "why": "Zahel left WienWein in 2011 by wein.plus.",
+     "sources": [
+      {
+       "title": "wein.plus glossary: WienWein",
+       "url": "https://glossary.wein.plus/wienwein",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "picked by hand and fully destemmed",
+     "now": "picked by hand; adds about eighteen months on its fine lees",
+     "why": "Destemming not found; the lees time is on the house's sheets.",
+     "sources": [
+      {
+       "title": "Zahel: Ried Kaasgraben Wiener Gemischter Satz DAC",
+       "url": "https://www.zahel.at/en/produkt/ried-kaasgraben-wiener-gemischter-satz-dac/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Zahel: Ried Kaasgraben Wiener Gemischter Satz DAC Demeter 2021",
+       "url": "https://www.zahel.at/en/produkt/demeter-ried-kaasgraben-wiener-gemischter-satz-2021/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "others[0].note and questions[1].exp",
+     "was": "picked out in 1966, bottled alone; 1989 the first Gemischter Satz label",
+     "now": "planted alone in 1966 by the house's account; 1989 the year a new generation took over",
+     "why": "To match the story.",
+     "sources": [
+      {
+       "title": "Zahel: About us",
+       "url": "https://www.zahel.at/en/about-us/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Zahel: Heuriger",
+       "url": "https://www.zahel.at/en/heuriger/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Organic from 2017 and Demeter from 2018 not independently confirmed by this checker."
+   ]
+  }
+ ],
+ "living": [
+  {
+   "name": "Fritz Wieninger",
+   "role": "head of Weingut Wieninger, a founder of WienWein",
+   "where": "wein.plus, the Vienna press text, Punch",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the house's name only"
+  },
+  {
+   "name": "Rainer Christ",
+   "role": "head of Weingut Christ, a founder of WienWein",
+   "where": "wein.plus, the Herold listing, weekend.at",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as the house's name only"
+  },
+  {
+   "name": "Michael Edlmoser",
+   "role": "head of Weingut Edlmoser, a founder of WienWein",
+   "where": "wein.plus and a blog",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "Edlmoser as a house name only, in the Wieninger story"
+  },
+  {
+   "name": "Richard Zahel",
+   "role": "took over Zahel in 1989, a founder of WienWein",
+   "where": "the house's About us page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a new generation"
+  },
+  {
+   "name": "Alexander Zahel",
+   "role": "of the present generation at Zahel",
+   "where": "the importer's profile title",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Franziska Zahel, Florian Zahel, Valentin Zahel",
+   "role": "the children working at Zahel",
+   "where": "the house's About us page",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Irmhilde Zahel",
+   "role": "born 1932, mother of Richard Zahel",
+   "where": "the house's About us page",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Karl Georg Zahel",
+   "role": "selected the Orangetraube in 1966",
+   "where": "the house's About us page",
+   "believed": "status unknown, kept as a precaution",
+   "inPeople": false,
+   "inFragment": "as a member of the family"
+  },
+  {
+   "name": "Hans Schmid",
+   "role": "advertising man who bought the Rotes Haus and then Mayer am Pfarrplatz",
+   "where": "Falstaff and wein.plus",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a new owner"
+  },
+  {
+   "name": "Gerhard J. Lobner",
+   "role": "head of Mayer am Pfarrplatz for about two decades",
+   "where": "Meininger",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "not at all"
+  },
+  {
+   "name": "Thomas Podsednik",
+   "role": "manager of Weingut Cobenzl since 1988, head of Mayer am Pfarrplatz from 2025",
+   "where": "Meininger and the regional press",
+   "believed": "living",
+   "inPeople": false,
+   "inFragment": "as a winemaker the city engaged"
+  },
+  {
+   "name": "Franz Mayer",
+   "role": "head of the Mayer family who handed on Mayer am Pfarrplatz",
+   "where": "wein.plus and Falstaff",
+   "believed": "dead (2011 or 2013 by source), not named for want of agreed dates",
+   "inPeople": false,
+   "inFragment": "as its head"
+  }
+ ],
+ "swaps": [
+  {
+   "pick": "wieninger",
+   "proposal": "plan wine Wiener Gemischter Satz Ried Nussberg to read Ried Ulm Nussberg Wiener Gemischter Satz, house and key kept",
+   "ruling": "accepted",
+   "why": "The house's sheets for 2018, 2022 and 2023 print Ried Ulm 1ÖTW Nussberg Wiener Gemischter Satz DAC; the Nussberg is a hill of several Rieden and no label reads Ried Nussberg. Tested in memory: with both renames the fragment lints sound."
+  },
+  {
+   "pick": "mayer-am-pfarrplatz",
+   "proposal": "plan wine Riesling Ried Nussberg Weisser Marmor to read Riesling Nussberg Weisser Marmor, house and key kept",
+   "ruling": "accepted",
+   "why": "The house's awards page prints Riesling Nussberg Weißer Marmor with no Ried, as Falstaff's listings do."
+  }
+ ],
+ "codexInTension": [
+  {
+   "record": "WINE_PRODUCERS p-wieninger, wines",
+   "tension": "The library lists Wiener Gemischter Satz Ried Nussberg, a label not found; the wine is Ried Ulm Nussberg. Its Grand Select as a barrel aged white blend may mean the house's Chardonnay Grand Select, as the author reports.",
+   "action": "reported, not edited"
+  },
+  {
+   "record": "WINE_PRODUCERS p-wieninger, why",
+   "tension": "Calls Wiener Gemischter Satz DAC the only appellation in the world built on co-planting rules, a superlative claim this checker did not test.",
+   "action": "reported, not edited"
+  },
+  {
+   "record": "REGIONS wien, summary",
+   "tension": "None found: the DAC of the 2013 vintage and its three varieties agree with Austrian Wine.",
+   "action": "none"
+  }
+ ],
+ "codexNote": "No Codex record was edited. plan.json and people.json are untouched: the two accepted renames and the twelve names above are for the read together agent."
+}
