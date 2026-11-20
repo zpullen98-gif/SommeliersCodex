@@ -1,0 +1,157 @@
+{
+ "group": "crete",
+ "chunk": "w18",
+ "batch": "B",
+ "date": "2026-11-16",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 21,
+  "perRecord": { "lyrarakis": 5, "douloufakis": 4, "economou": 4, "alexakis": 5, "manousakis": 2, "appellation": 1 },
+  "note": "Twenty one searches of a share of twenty eight, none the author's. Eleven were restricted to a producer's or a wine body's domain (lyrarakis.com four times, douloufakis.wine three times, alexakiswines.com twice with winesofcrete.gr, manousakiswinery.com, winesofgreece.org) and read as primary for the house's own facts. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "What a search contradicted was set right with its source; what rested on no source was cut; sources whose address names a living critic were met and are not cited."
+ ],
+ "records": [
+  {
+   "key": "lyrarakis",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "Founding 1966 by two brothers at Alagni: lyrarakis.com about page, Berry Bros and Wines of Crete; kept.",
+    "Plyto and Dafni planted at Psarades in 1992, first single grape bottlings 1996: about page and the house's sustainability report; story set to 1996.",
+    "Altitude: about page and the labels of 2022 to 2025 all give 480 metres; set to about 480.",
+    "Melissaki: the house's Melissaki page, found at the foot of Psiloritis and planted in the Gerodeti vineyard in 2010; reworded.",
+    "Aggelis: the house's page, ungrafted old Liatiko in eastern Crete; note reworded.",
+    "Glass and serving: the house's sheets of 2023, 2024 and 2025 (white peach, pear, quince, chalky and shellfish notes, rich and full, a herbal finish; 10 to 12 degrees Celsius; 40 per cent of the 2024 a month and a half in oak); glass rewritten, serve and making kept.",
+    "The obstacles from state agencies: the house's sustainability report; kept as its own telling."
+   ],
+   "changed": [
+    { "field": "wine.sites", "was": "about 450 to 480 metres, Plyto first planted in 1992", "now": "about 480 metres, Plyto and Dafni first planted in 1992", "why": "every house figure read gives 480", "sources": ["lyrarakis.com about page (search)", "mib.lyrarakis.com Plyto and Dafni Psarades labels (search)"] },
+    { "field": "story", "was": "first single grape wines in the 1990s", "now": "1996, the first time either name was printed on a label", "why": "the house's sustainability report dates it", "sources": ["lyrarakis.com sustainability report (search)"] },
+    { "field": "story", "was": "a second generation took the work on, and Melissaki later joined", "now": "Melissaki found in the foothills of Psiloritis and planted in the Gerodeti vineyard in 2010", "why": "the generation claim was untested; the Melissaki year is the house's", "sources": ["lyrarakis.com Melissaki Gerodeti page (search)"] },
+    { "field": "wine.glass", "was": "white peach, pear and lemon, lively acidity, slightly creamy", "now": "white peach, pear and quince, a chalky, faintly salty edge, rich and full with a herbal finish", "why": "the house's notes", "sources": ["mib.lyrarakis.com Plyto Psarades 2023 and 2025 (search)"] },
+    { "field": "others", "was": "a red of Liatiko from the Aggelis vineyard", "now": "from Aggelis, an old vineyard of ungrafted vines in eastern Crete", "why": "the house's page", "sources": ["lyrarakis.com Liatiko Aggelis (search)"] },
+    { "field": "sources", "was": "Berry Bros 2018 Plyto listing", "now": "the house's sustainability report", "why": "a primary source for 1992 and 1996", "sources": [] }
+   ],
+   "open": [
+    "PGI Crete on the Plyto label was not seen in the house's summaries read; it rests on the author's trade sources.",
+    "Wineanorak gives 1992 as the first bottling under the family name, against the house's 1996 for the single grape wines; the record follows the house."
+   ]
+  },
+  {
+   "key": "douloufakis",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1930, 1960, phylloxera around 1977, replanting from 1980, first bottles 1997, Vidiano in 2000: douloufakis.wine history page, with gtp.gr and two trade listings for 1930 and the third generation; kept, the 1997 wines set right.",
+    "Dafnios white: 100 per cent Vidiano, tank vinified at 18 degrees Celsius with no barrel, by the house's sheet and a Wine Enthusiast review; kept.",
+    "PGI Crete: Falstaff's listing; kept.",
+    "Sites, soil, serving: the house's sheets (about 350 metres, clay loam over 40 per cent lime, 9 to 10 degrees Celsius for the Dafnios); set right.",
+    "Aspros Lagos: the house's sheet, barrel fermented at 20 degrees, named for the White Hare placename; note reworded."
+   ],
+   "changed": [
+    { "field": "story", "was": "the first bottles of 1997 included a Liatiko first released under the name Dafnes", "now": "a dry red Liatiko of the Dafnes appellation and a dry white Sauvignon Blanc", "why": "the house's history names those two wines", "sources": ["douloufakis.wine winery history (search)"] },
+    { "field": "story, card, grapes", "was": "the grandson sought out surviving vines and planted new vineyards", "now": "Vidiano, then in danger of extinction, drew the grandson in 2000 and became the heart of the whites", "why": "the house says only that Vidiano drew his attention in 2000", "sources": ["douloufakis.wine winery history (search)", "Vinorandum producer page (search)"] },
+    { "field": "story", "was": "the grandfather of the present winemaker", "now": "grandfather of the family's third generation", "why": "the present is volatile", "sources": [] },
+    { "field": "wine.sites", "was": "350 to 450 metres", "now": "about 350 metres on lime rich clay loam", "why": "the house's sheets", "sources": ["douloufakis.wine vineyards and Vidiano pages (search)"] },
+    { "field": "wine.glass, table", "was": "yellow peach, orange zest, honey blossom", "now": "peach, apricot, chamomile, jasmine and herbs, a stony edge", "why": "the house's Dafnios sheet, a reviewer's stony note", "sources": ["douloufakis.wine Dafnios white (search)"] },
+    { "field": "wine.serve", "was": "9 to 11 degrees Celsius", "now": "9 to 10", "why": "the house's figure for this wine", "sources": ["douloufakis.wine Dafnios white (search)"] },
+    { "field": "others", "was": "Dafnios red first released in 1997 as Dafnes; Aspros Lagos a second Vidiano", "now": "Dafnios red a Liatiko of the village's grape; Aspros Lagos barrel fermented, named for the White Hare", "why": "the 1997 link was untested; the barrel and the name are the house's sheet", "sources": ["douloufakis.wine Aspros Lagos (search)"] }
+   ],
+   "open": [
+    "Aspros Lagos as pure Vidiano rests on the author's reading; the sheet summary read gave its barrel and its name, not its grape.",
+    "Phylloxera around 1977 and the replanting from 1980 are the house's history only, told as such.",
+    "One trade source calls the estate organic since 2006 and one review says it is not; left out."
+   ]
+  },
+  {
+   "key": "economou",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "PDO Sitia red: Liatiko at least 80 per cent, Mandilaria the rest, Wines of Greece PDO Sitia and Liatiko pages; kept.",
+    "Founding 1994 and the founder's path: Keeling Andrew, Grape magazine, Shrine to the Vine, Cream Wine (agriculture in Milan, oenology at Alba, cellars in Piedmont and Baden, then Margaux, home in 1994); story and explanation set right.",
+    "Ziros, Katsidoni and Etia at 600 to 650 metres, the local Liatiko clone: En Primeur Club, Keeling Andrew; kept.",
+    "Making and release: K and L's account (the 2004 Antigone nearly eighteen years in steel, used oak and bottle, a spontaneous fermentation), a sheet of sixteen months in 350 litre casks, a visitor's three years and more; making hedged.",
+    "Late Harvest Liatiko: found in no source read; cut.",
+    "Own roots: one account has the founder planting on American rootstock in 1994; the claim kept only for Odyssey."
+   ],
+   "changed": [
+    { "field": "wine.grapes", "was": "with a little Mandilaria in some vintages", "now": "cut", "why": "no source read gives Mandilaria for this wine", "sources": ["Wines of Greece: PDO Sitia (search)"] },
+    { "field": "wine.sites, story", "was": "old vines, many on their own roots", "now": "vineyards around Ziros, Katsidoni and Etia; own roots only for Odyssey", "why": "a Greek magazine has American rootstock planted in 1994", "sources": ["Grape magazine: Domaine Economou (search)", "En Primeur Club (search)"] },
+    { "field": "wine.making", "was": "about a week on the skins, two dated élevages", "now": "spontaneous fermentation in steel, years in oak, steel and bottle, the two figures hedged", "why": "the week rested on no source; the figures conflict", "sources": ["K and L: Economou, more myth than man (search)", "SommSelect Sitia sheet (search)"] },
+    { "field": "story, questions[1].exp", "was": "Italy, Germany, Margaux, then Piedmont", "now": "Milan, Alba and Piedmont's cellars, Baden, then Margaux, home in 1994", "why": "the merchants and Grape magazine give that order", "sources": ["Grape magazine (search)", "Shrine to the Vine (search)", "Keeling Andrew (search)"] },
+    { "field": "story", "was": "the 2004 Sitia two years in oak and more in steel; the 2006 reached America after earlier vintages", "now": "the 2004 Antigone nearly eighteen years in steel, old oak and bottle before release", "why": "each rested on one blog; the Antigone figure is K and L's", "sources": ["K and L (search)"] },
+    { "field": "others, traps, story", "was": "a Late Harvest Liatiko", "now": "cut; the trap tells the Sitia from Antigone", "why": "no source", "sources": [] }
+   ],
+   "open": [
+    "The glass rests on the author's two notes, not confirmed by a second here.",
+    "Which red leads, the Sitia or Antigone, is unsettled; the plan's Sitia stands."
+   ]
+  },
+  {
+   "key": "alexakis",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "The 1970s founding by a chemical engineer and oenologist with his wife, two oenologist sons, the largest private winery claim, Peridi Metochi and contract growers: alexakiswines.com and the Wines of Crete profile; kept, the place added.",
+    "Making: the house's Vidiano page (cryo maceration about eight hours after destemming, free run juice without pressing, 15 to 20 days in steel at no more than 16 degrees Celsius); set right.",
+    "Altitude: 550 metres on the house's wine page, 300 to 500 across Crete on its variety page; kept, noted open.",
+    "Export to the United States: Wines of Crete confirms the Alexakis brand there, but no year; 2008 cut.",
+    "Decanter 2021 silver: only a Wines of Crete table, with a score of 90; cut under the rule against scores."
+   ],
+   "changed": [
+    { "field": "wine.making, cards[1], questions[0]", "was": "a day chilled and eight hours of cold skin contact", "now": "about eight hours of cold maceration after destemming, free run juice without pressing", "why": "the house's Vidiano page", "sources": ["alexakiswines.com Vidiano (search)"] },
+    { "field": "story, table, questions[1]", "was": "exports to America under its own name from 2008", "now": "sells in America under its own name, no year; the question asks who founded the house", "why": "2008 found nowhere", "sources": ["Wines of Crete: Alexakis Winery (search)"] },
+    { "field": "story", "was": "a silver medal at the Decanter World Wine Awards of 2021", "now": "cut", "why": "its only source gives a score of 90", "sources": ["Wines of Crete: Decanter 2021 (search)"] },
+    { "field": "story", "was": "no place, no second year", "now": "Peridi Metochi on the Malades road, contract growers, the founding set beside Lyrarakis of 1966, the sons counted among Vidiano's revivers by one trade account beside Douloufakis of 2000", "why": "the lint's two dated points once 2008 and 2021 went; each beat sourced", "sources": ["alexakiswines.com (search)", "Vinorandum (search)"] },
+    { "field": "questions[0].exp", "was": "its orange Vidiano is a separate wine", "now": "no oak and no long skin contact", "why": "the orange wine was found in no source read", "sources": [] },
+    { "field": "sources", "was": "Decanter awards table and a reprinted review in price terms", "now": "the house's home page and a trade page", "why": "primary for the house's facts; no price", "sources": [] }
+   ],
+   "open": [
+    "The soil and the 550 metres rest on the house's page alone; its variety page gives 300 to 500 metres.",
+    "The glass is not confirmed by a second note here.",
+    "No founding year beyond the 1970s; founded stays empty."
+   ]
+  },
+  {
+   "key": "manousakis",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "1993 planting of Roussanne, Syrah, Grenache and Mourvèdre on an American adviser's advice, the first harvest and the winery of 1997, the Roussanne's unexpected yield: manousakiswinery.com history, team and harvests pages, with Wines of Crete and Insights Greece; kept.",
+    "The daughter's arrival in 2007: the house's history and a trade source; kept.",
+    "Romeiko first planted at Gouverneto in 2018, Assyrtiko from growers: the house's pages; story and explanation set right.",
+    "Seven months in French oak: Greek merchants' sheets; kept, hedged.",
+    "The founder's birthplace: sources say a return to his Cretan heritage, not a birth in Vatolakkos; reworded.",
+    "1983 and 1984 in two sources: the house says the dream began in 1984 and the vines went in 1993; founded kept at 1993."
+   ],
+   "changed": [
+    { "field": "story", "was": "born in Vatolakkos", "now": "the founder's family came from Vatolakkos", "why": "no source read gives his birthplace", "sources": ["Insights Greece (search)", "The Greek Foundation (search)"] },
+    { "field": "story, questions[1].exp", "was": "Romeiko and Assyrtiko added later, undated", "now": "Romeiko first planted at Gouverneto in 2018, Assyrtiko bought from growers", "why": "the house's pages", "sources": ["manousakiswinery.com history (search)"] },
+    { "field": "story", "was": "farmed organically", "now": "farmed organically by the house's account", "why": "a house claim, hedged", "sources": [] }
+   ],
+   "open": [
+    "The appellation differs by vintage, PGI Crete or Wine of Greece; the field keeps both.",
+    "No sheet of the house was read for the oak; the merchants' seven months stands hedged."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "Lyrarakis: the founding brothers Manolis and Sotiris Lyrarakis (living or dead not settled; not named).",
+  "Douloufakis: the founder Dimitris, his son George and the grandson Nikos Douloufakis (no dates found; not named).",
+  "Economou: the founder Yiannis (Giannis) Economou.",
+  "Alexakis: the founders Stelios and Sofia Alexakis and their sons Lazaros and Apostolos.",
+  "Manousakis: the founder Theodore (Ted) Manousakis, his daughter Alexandra, and the advisers Lucie Morton, Pascal Marchand, Laurence Feraud, Bruce Zoecklein and Yves Herody.",
+  "Others met in sources: Franz Keller (the Baden estate where Economou worked), the critics Yiannis Karakasis, Jancis Robinson and Jamie Goode; none is named in the fragment."
+ ],
+ "swaps": [
+  "No swap proposed. The author noted Alexakis as thin and named Idaia, Silva Daskalaki or Diamantakis as alternatives without proposing; the refuter rules Alexakis stays: the house, the producers' association and two trade sources confirm its Vidiano, its making is on its own page, and the thin region rule allows a large house said plainly to be one."
+ ],
+ "codexTension": [
+  "The region summary calls Vidiano the rising star of apricot and herbs; it agrees with the records. No library record exists for any of the five houses. No Codex record was edited."
+ ]
+}
