@@ -1,0 +1,300 @@
+{
+ "group": "martinborough",
+ "chunk": "w24",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 20,
+  "perRecord": {
+   "ata-rangi": 5,
+   "dry-river": 5,
+   "martinborough-vineyard": 3,
+   "escarpment": 4,
+   "palliser": 4
+  },
+  "note": "Twenty searches of twenty eight, eight unspent. Five were restricted to a house's own domain (atarangi.co.nz twice, dryriver.co.nz twice, martinborough-vineyard.co.nz, palliser.co.nz, escarpment.co.nz) and read as primary through their summaries; others blocked the house's domain or Wine Anorak so the second source was independent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: founding, people and dates, grapes, sites, making and its months, ageing, serving, label words, every beat of the story, cards and questions; then the house rules.",
+  "Where a search contradicted the record it was set right with its source; where a detail stood in one secondary source, or none, it was cut or said with less.",
+  "Writers' own sites met among the results (Wine with Seth, Wine Anorak, Rebecca Gibb, Joelle Thomson, Prince of Pinot) are not cited as a second source; the author's Wine Anorak source for Palliser was replaced."
+ ],
+ "records": [
+  {
+   "key": "ata-rangi",
+   "searches": 5,
+   "tested": [
+    "Founding of 1980 on a stony sheep paddock at the edge of the village: the house's story page, NZ Wine's profile, Rural News. Sound.",
+    "The Abel clone: a customs officer seized canes a traveller brought from a Burgundy estate, sent them to Te Kauwhata, planted them in West Auckland; the founder bought cuttings from him, and Ata Rangi became the mother block after the Abel vineyard was lost (the house, NZ Wine, Rural News). Sound; Romanée-Conti kept as the usual telling.",
+    "The founder's sister joining three years after 1980 and the marriage of 1987: the house's pages. Sound (one house page gives a share bought in 1986, the record keeps the marriage of 1987).",
+    "First Pinot Noir of 1986 and the first Célèbre of 1986: the house's journal on the first 1986 Célèbre and its 2021 note, a Decanter summary. Sound.",
+    "Craighall divided with Dry River in 2004: Dry River's Four Decades page. McCrone first under Ata Rangi with 2013: the house (bought October 2012) and Decanter. Sound."
+   ],
+   "changes": [],
+   "open": [
+    "The first varietal Pinot Noir is 1985 in one account and 1986 by the house; the record keeps the house's 1986.",
+    "The Abel clone's Romanée-Conti origin stands as legend only; sources say only one of Burgundy's leading estates."
+   ]
+  },
+  {
+   "key": "dry-river",
+   "searches": 5,
+   "tested": [
+    "Founding of 1979, ungrafted vines of Pinot Gris, Gewürztraminer and Sauvignon Blanc: the house, Rural News, Te Ara. Sound.",
+    "First whites of 1984 named by grape: Rural News gives 1983 a little wine and 1984 the first commercial vintage of Gewürztraminer and Sauvignon Blanc; a merchant gives Chardonnay, Gewürztraminer and Pinot Gris. Changed.",
+    "Mulch after the eruptions of 1991, taken up from 2014: the house's repost of Jancis Robinson gives ultraviolet, not warmth, and removal in 2014 and 2015. Changed.",
+    "Craighall 1997 and 2004: the house's Four Decades page (first planted 1983, part ownership 1997, the rest divided 2004). Sound, the planting year added.",
+    "Sale of 2003: the house's page and Wine Spectator name two American investors; the founder stayed as winemaker (to 2011 by Rural News). Changed to two investors.",
+    "Mission clone of 1886: no second source in one search. Kept hedged as the house's account, open."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "Their first whites, Gewürztraminer, Pinot Gris and Sauvignon Blanc, were made in 1984.",
+     "now": "After a little wine in 1983, their first commercial vintage was 1984.",
+     "why": "the grapes of 1984 differ between sources",
+     "sources": [
+      "https://www.ruralnewsgroup.co.nz/wine-grower/wg-profiles/pinot-pioneers",
+      "https://vinabonus.com/dry-river-wines/"
+     ]
+    },
+    {
+     "field": "story, cards[1].back",
+     "was": "more light and warmth; taken up again from 2014",
+     "now": "more ultraviolet light, which can make up for a lack of heat; taken up in 2014 and 2015",
+     "why": "the house's own repost gives ultraviolet and a removal over two years",
+     "sources": [
+      "https://dryriver.co.nz/four-decades-of-dry-river/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "new owners, among them an American investor; that investor's family",
+     "now": "two American investors; the family of one of them",
+     "why": "the sale of 2003 was to two American investors",
+     "sources": [
+      "https://dryriver.co.nz/four-decades-of-dry-river/",
+      "https://www.winespectator.com/articles/cult-new-zealand-winery-sold-to-american-buyers-21556"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "Part of the Craighall vineyard was bought in 1997",
+     "now": "A part share in the Craighall vineyard, first planted in 1983, was bought in 1997",
+     "why": "the house's timeline",
+     "sources": [
+      "https://dryriver.co.nz/four-decades-of-dry-river/"
+     ]
+    },
+    {
+     "field": "others[2].note, traps[2]",
+     "was": "first whites of 1984",
+     "now": "first commercial wines, or vintage, of 1984",
+     "why": "follows the story",
+     "sources": [
+      "https://www.ruralnewsgroup.co.nz/wine-grower/wg-profiles/pinot-pioneers"
+     ]
+    }
+   ],
+   "open": [
+    "The Mission import of 1886 behind the house's Pinot Gris clone rests on the house's own page alone, hedged as its account.",
+    "The vessels and length of the élevage of the Pinot Gris were not found; making stays as the house's own words."
+   ]
+  },
+  {
+   "key": "martinborough-vineyard",
+   "searches": 3,
+   "tested": [
+    "Founding of 1980 and the Home Block: the house's Our Story and Home Block notes. Sound.",
+    "The soil study: the house dates it 1978, Dry River's timeline 1977, the region record 1979; the publication of 1979 found nowhere. Changed.",
+    "Clones: the 10/5 block of 1980 and Abel and UCD5 blocks of 2002 come from the house's 40th Pinot Noir 2018 note, not a Home Block sheet. Changed.",
+    "Making: twelve months in French oak in the house's 2014 and 2019 sheets, 10 per cent whole bunch in 2020 (Jancis Robinson). Changed.",
+    "Marie Zélie named in 2003: the house's timeline is ambiguous (1997 or 2003); the house names the wine for a French settler who planted near Masterton from 1882. Changed.",
+    "The winemaker of 1986: winetenquestions and Wine Anorak (chief winemaker 1986 to 1999). Sound. The takeover of 2014: the Takeovers Panel register. Sound."
+   ],
+   "changes": [
+    {
+     "field": "wine.grapes, wine.sites",
+     "was": "among them the 10/5 clone of the first planting and the Abel clone",
+     "now": "the several clones of the Home Block; the 10/5 block of 1980 and the Abel and UCD5 blocks of 2002 by the house's account",
+     "why": "no sheet ties those clones to the Home Block wine itself",
+     "sources": [
+      "https://cdn.shopify.com/s/files/1/1042/9896/files/Martinborough_Vineyard_40th_Pinot_Noir_2018_Taste_Note.pdf"
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "a tenth to a fifth whole bunch; eleven to twelve months",
+     "now": "a small share varying by vintage, about a tenth in some years; about twelve months",
+     "why": "the house's sheets give twelve months; the fifth rested on one summary",
+     "sources": [
+      "https://cdn.shopify.com/s/files/1/1042/9896/files/MV19PN_Fact_Sheet.pdf",
+      "https://www.jancisrobinson.com/tastings/267124"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "accounts date the study to 1978 and its publication to 1979",
+     "now": "the house dates the work to 1978, other accounts a year either side; the soil scientist among the founding partners",
+     "why": "no source for a publication of 1979; the house names the scientist among its founders",
+     "sources": [
+      "https://www.martinborough-vineyard.co.nz/our-story",
+      "https://dryriver.co.nz/four-decades-of-dry-river/"
+     ]
+    },
+    {
+     "field": "story, others[0].note, cards[1]",
+     "was": "renamed Marie Zélie in 2003",
+     "now": "named for a French settler who planted vines near Masterton in the 1880s",
+     "why": "the year of naming is unsettled; the name's origin is the house's own",
+     "sources": [
+      "https://www.martinborough-vineyard.co.nz/marie-zelie"
+     ]
+    },
+    {
+     "field": "questions[0]",
+     "was": "the clone named on the original block of the Home Block",
+     "now": "the clone on the original block of 1980",
+     "why": "follows the house's note",
+     "sources": [
+      "https://cdn.shopify.com/s/files/1/1042/9896/files/Martinborough_Vineyard_40th_Pinot_Noir_2018_Taste_Note.pdf"
+     ]
+    }
+   ],
+   "open": [
+    "The first Home Block vintage and whether it renamed the estate Pinot Noir were not settled.",
+    "The soil study's year differs across the Codex's own sources (1977, 1978, 1979); the region record's 1979 is reported, not edited."
+   ]
+  },
+  {
+   "key": "escarpment",
+   "searches": 4,
+   "tested": [
+    "Land bought late 1998, planted 1999, the joint venture with Australian partners: winetenquestions, Wine Anorak, a winery directory. Sound; the Kupe block's own year conflicts (1998, 2000), open.",
+    "Kupe first in 2003 from a tiny crop: the house's own page. Sound as its account.",
+    "All Abel clone, open fermenters, indigenous yeasts, hand plunged daily, about thirty days, unfined and unfiltered: the house's posted reviews and Voyageurs du Vin. Sound.",
+    "Whole bunch about half: 30, 45 and 60 per cent across recent notes. Changed. Barrel time a year and a half: 18 months (2018, 2019) and 19 to 20 months (2021, 2022), 42 to 50 per cent new. Changed.",
+    "Torbreck: announced in March 2018 (The Shout, Gourmet on the Road), OIO consent of 5 June 2019 (LINZ), completion July 2019. Sound."
+   ],
+   "changes": [
+    {
+     "field": "wine.making, table, questions[0].exp",
+     "was": "about half whole bunch; about a year and a half in barriques",
+     "now": "a share varying from about a third to more than a half; eighteen to twenty months",
+     "why": "the share and the months vary by vintage",
+     "sources": [
+      "https://escarpment.co.nz/blogs/news-and-reviews/james-suckling-january-2026",
+      "https://www.voyageursduvin.com/en/escarpment-kupe-pinot-noir-2022-w1509",
+      "https://www.seckfordagencies.co.uk/wines/kupe-pinot-noir-escarpment/"
+     ]
+    }
+   ],
+   "open": [
+    "The planting year of the Kupe block itself is 1998, 1999 or 2000 in the house's own notes; the record keeps 1999 for the vineyard, the year the land bought late in 1998 was first planted.",
+    "Kupe is likely named for the Polynesian navigator, as two secondary accounts say; left out for want of a primary."
+   ]
+  },
+  {
+   "key": "palliser",
+   "searches": 4,
+   "tested": [
+    "Om Santi planted and the business begun in 1984, the partnership of 1986, the company of 1988, an unlisted public company: the house's Our Company and Our Land pages. Sound.",
+    "First wine of 1989: Wine-Searcher and Village Cellars. Sound.",
+    "Hua Nui bottled alone from 2018: Wine-Searcher and Fareham Wine Cellar give Wharekauhau as its earlier name, bottled so up to and including 2018 and the house's first single vineyard wines; BioGro in 2020, conversion from 2017 by the house. Changed.",
+    "Pencarrow mostly from the Pencarrow vineyard: Nick's names East Base and Clouston for 2020, the catalogue sixty per cent Pencarrow. Changed.",
+    "Ten months in French oak with the malolactic there, wild yeasts, some whole bunch: Vino Fino and the New Zealand Wine Catalogue. Sound.",
+    "Cape Palliser named by Cook for a naval officer, Cook 1728 to 1779: standard history. Sound."
+   ],
+   "changes": [
+    {
+     "field": "story, others[1].note, cards[1]",
+     "was": "From the 2018 vintage Hua Nui was also bottled on its own",
+     "now": "Wharekauhau, planted 1998, gave the first single vineyard wines and took the name Hua Nui after the 2018 vintage; organic from 2017, BioGro 2020",
+     "why": "the vineyard was bottled alone before 2018 under its earlier name",
+     "sources": [
+      "https://www.wine-searcher.com/merchant/2269-palliser-estate-wines-of-martinborough",
+      "https://farehamwinecellar.co.uk/Products/wine/red/palliser-estate-single-vineyard-hua-nui-pinot-noir/",
+      "https://www.palliser.co.nz/sustainability"
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "most of the fruit from its organically farmed Hua Nui, Winery and Pencarrow vineyards, planted in 1998 and 2000",
+     "now": "drawn in large part from those it farms organically, Pencarrow among them",
+     "why": "Hua Nui is bottled alone; the planting years rest on one page",
+     "sources": [
+      "https://vinofino.co.nz/product-pdf/palliser-estate-pinot-noir-2022"
+     ]
+    },
+    {
+     "field": "wine.label[2], others[0].note, traps[0]",
+     "was": "mostly from the Pencarrow vineyard",
+     "now": "named for one vineyard, drawn from several that vary by vintage",
+     "why": "the fruit's sources vary by vintage",
+     "sources": [
+      "https://nicks.com.au/products/2020-pencarrow-pinot-noir",
+      "https://nzwinecatalog.bottlebooks.me/products/by-exhibitor/5a9852d0acd2b8b8c04fda8d/65a6fcee43135c7c59b4979c"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "it grew into one of the larger houses of the district",
+     "now": "cut",
+     "why": "a size claim, volatile",
+     "sources": []
+    },
+    {
+     "field": "sources",
+     "was": "Wine Anorak",
+     "now": "Wine-Searcher: Palliser Estate Wines of Martinborough",
+     "why": "a writer's own site is no source",
+     "sources": [
+      "https://www.wine-searcher.com/merchant/2269-palliser-estate-wines-of-martinborough"
+     ]
+    }
+   ],
+   "open": [
+    "The planting years of Pencarrow (1998) and the Winery vineyard (2000) rest on the house's Our Land page alone and are no longer told.",
+    "Traditional method sparkling, given in the region record, was not confirmed; the record leaves it out."
+   ]
+  }
+ ],
+ "swaps": [
+  {
+   "ruling": "none proposed",
+   "why": "The author proposed no swap. The picks in doubt (Dry River's Pinot Gris against its Pinot Noir, Home Block against Marie Zélie, the Estate Pinot Noir against Hua Nui) stand: each is a real wine the house is known by and the plan's spread is served; no swap is recommended."
+  }
+ ],
+ "livingNamesMet": [
+  "Clive Paton",
+  "Phyll Pattie",
+  "Alison Paton",
+  "Helen Masters",
+  "Neil McCallum",
+  "Dawn McCallum",
+  "Wilco Lam",
+  "Reg Oliver",
+  "Derek Milne",
+  "Duncan Milne",
+  "Claire Campbell",
+  "Russell Schultz",
+  "Sue Schultz",
+  "Larry McKenna",
+  "Sue McKenna",
+  "Robert Kirby",
+  "Mem Kirby",
+  "Tim Bourne",
+  "Pete Kight"
+ ],
+ "deadMet": [
+  "Malcolm Abel (the customs officer, dead by Ata Rangi's own page; no dates found, so described and his surname kept only as the clone's)",
+  "Julian Robertson (1932 to 2022 by the news of the 2022 sale; described, not named)",
+  "Marie Zélie Hermance Frère (the settler of 1882; no dates found, so described)",
+  "James Cook (1728 to 1779), named with dates"
+ ],
+ "codexTension": [
+  "js/data-regions.js, the Martinborough region record: 'A soil survey of 1979'. Martinborough Vineyard dates the soil scientist's work to 1978 and Dry River's timeline to 1977. Reported, not edited.",
+  "js/data-regions.js, the Martinborough producers line: Palliser's traditional method sparkling was not confirmed by any source read here. Reported, not edited."
+ ]
+}
