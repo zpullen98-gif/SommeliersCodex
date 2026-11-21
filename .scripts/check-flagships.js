@@ -143,11 +143,13 @@ const WHOLE = {
    6f65960 and is frozen: wave two never changes it, save by the integrator where a fact is found wrong, who moves its
    line in that commit and reports it. The publisher of each batch adds its line when the batch ships: batch A's is of
    the data and the keys its integrator froze and published on 15 November 2026, batch B's of the data and the keys
-   its integrator froze on 21 November 2026 for its publish. */
+   its integrator froze on 21 November 2026 for its publish, batch C's of the data and the keys its integrator froze
+   on 21 November 2026 for its publish. */
 const PUBLISHED = {
   one: { records: '38f1d333523e4262b1a24a73d11f0e460e26e88d978631cef2b37bb996d93ac8', keys: '499df04baed82ab6d1a1645e84c210bf9c876fba178cc95d621377b477c0e67a' },
   A: { records: '9e892010e413a68abd4e33c3a2f9364d88ce479d5b494f9748b17de2aca19ee7', keys: '89174abdd5e6ec11fb017acbea50fd8af60eb8eb32c1da514091d37fb7b7bff6' },
-  B: { records: 'e638106f4b3b6266531ae27863ae0a79b6853449d7d01926de9c95c5e0693770', keys: 'c1438c1e3f2d88af99e4b16038884bc63d347b5733c38cb49d7670b4b190458d' }
+  B: { records: 'e638106f4b3b6266531ae27863ae0a79b6853449d7d01926de9c95c5e0693770', keys: 'c1438c1e3f2d88af99e4b16038884bc63d347b5733c38cb49d7670b4b190458d' },
+  C: { records: 'b613b509a4be3e85146b96673a21bb5b59fd8bf699e348d1b88ae14d1bd26e4a', keys: '4cb88684f7dcd5135f5a1474f22929e32aee1f1c84e9bbd411ed4c02ae4eeee3' }
 };
 const sha256 = (s) => require('crypto').createHash('sha256').update(String(s), 'utf8').digest('hex');
 /* a batch's two prints, from the data file's text and the keys as read; a line missing is named in the text hashed,
@@ -1187,8 +1189,8 @@ function mutations() {
     ['a flagship key the ledger cannot find', 'js/codex58.js', '    if (v58IsQKey(k)) return v58QById(v58BareKey(k));\n', '', 'found by its key in its group'],
     ['a group climbing to Home', 'js/codex58.js', "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'flagships' }; }", "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'home' }; }", 'the parents: a house its group'],
     ['the cold address left unread', 'js/codex58.js', "    v32Apply(r, typeof v32CurState === 'function' ? v32CurState() : null);\n    V32.pend = 'replace';\n", '', 'each address answers cold'],
-    ['the two tags swapped in index.html', 'index.html', '<script src="js/data-flagships.js?v=3"></script>\n<script src="js/codex58.js?v=1"></script>', '<script src="js/codex58.js?v=1"></script>\n<script src="js/data-flagships.js?v=3"></script>', 'index.html loads js/data-flagships.js then js/codex58.js'],
-    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v120';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
+    ['the two tags swapped in index.html', 'index.html', '<script src="js/data-flagships.js?v=4"></script>\n<script src="js/codex58.js?v=1"></script>', '<script src="js/codex58.js?v=1"></script>\n<script src="js/data-flagships.js?v=4"></script>', 'index.html loads js/data-flagships.js then js/codex58.js'],
+    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v121';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
     ['a let in the layer', 'js/codex58.js', 'var V58_SLOT = ', 'let V58_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex58.js', "if (typeof prodProfileView === 'function') {\n  var _v58ProfileView", "if (true) {\n  var _v58ProfileView", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex58.js', "'.wrap .v58-sec{", "'.v58-sec{", 'every selector of the v58-style element'],
