@@ -246,7 +246,8 @@
   "The winemaker of Benedek Pince, of the family",
   "The founder of Losonci, whose first name is in two sources' addresses",
   "A member of the Bárdos family, author of the 2024 thesis",
-  "The son of the Szőke Mátyás founder, whose first name is in the house's full name"
+  "The son of the Szőke Mátyás founder, whose first name is in the house's full name",
+  "A winemaker who once worked at the Szőke Mátyás cellar, and a 2017 nominee from Hajós-Baja (second reading of 21 November)"
  ],
  "swaps": [
   {
@@ -394,5 +395,78 @@
  "tension": [
   "The region record's or plan's description of Olaszrizling as the Mátra's lead white grape, if it says so (the plan's why for Dubicz calls it the district's lead white grape), stands against Magyar Bor, which gives Irsai Olivér as the grape the Mátra grows most; reported, never edited.",
   "The plan's note for Benedek calls the family third generation; the house says fourth. Reported for the read together agent."
+ ],
+ "secondReading": [
+  {
+   "key": "szoke-matyas",
+   "date": "2026-11-21",
+   "by": "refuter",
+   "role": "adversarial second reader of the repair agent's rewrite for Peres Cuvée",
+   "searches": {
+    "share": 12,
+    "used": 8,
+    "note": "Eight searches of a share of twelve, none of them the author's; no WebFetch tried. Two were restricted to the house's own domain and read as primary."
+   },
+   "verdict": "changed",
+   "tested": [
+    "Peres Cuvée the flagship, Cabernet Sauvignon for the acid backbone and Cabernet Franc for the fruit, fiery ruby, an intense nose, blackcurrant with vanilla from the new oak barrel and dark chocolate, sugar nil, a big red aged in barrique: the house's own page for the 2015 (search, its domain); confirmed.",
+    "The first Peresi Mátrai Cuvée from the 2003 vintage, and Hajnal-hegy planted from 2006 with Sauvignon Blanc, Merlot and Cabernet Franc: the house's vineyard page (search, its domain); confirmed, 2003 a vintage, not a planting.",
+    "The Peres vineyard at Gyöngyöspata, with Hajnal-hegy, Kisdomb and Száraz-völgy at Gyöngyöstarján: the Eger archive's Bor és Piac article and a second house's profile on Magyar Bor and Wines of Hungary; confirmed by two.",
+    "Winemaker of the Year for 2017 from the Hungarian Wine Academy, the first from the Mátra in the award's 27 years, wine since the 1970s, working with his son: Daily News Hungary, Trade Magazin and a Székelyhon list of the winners; confirmed.",
+    "The nominations of hundreds of sommeliers, restaurateurs and other professionals for 2017: not found; Trade Magazin and Székelyhon describe the method only for other years (a first round of some 900 of the trade, then the Academy's ballot); cut.",
+    "The broad range (Chardonnay, Muscat Ottonel, Irsai Olivér, Merlot) and the Muscat Ottonel semi sweet: Daily News Hungary and the house's own wine pages; confirmed.",
+    "The questions: one right answer each, distractors plausible (Bikavér grapes, Pinot and Zweigelt, a Rhône pair; 1997 the year the Academy took the award over), explanations teach; kept.",
+    "The plan's pick (key, producer, wine, why, note) and the group's swap of 21 November agree with the record; unchanged.",
+    "The house rules: no living person named in prose (the founder and son only as the house, family name first), no price, score or volatile fact, no judging superlative (the awards the 2015 page lists, Pannon Bormustra and VinAgora, left out as scores of a vintage), British, no dash."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "named the founder Winemaker of the Year, chosen from the nominations of hundreds of sommeliers, restaurateurs and other professionals",
+     "now": "named the founder Winemaker of the Year, the first from the Mátra in the award's history, which the Academy had then given for twenty seven years",
+     "why": "no source of this check gives the 2017 nominations; the twenty seven years is in Daily News Hungary",
+     "sources": [
+      "https://dailynewshungary.com/hungarian-vintner-year-2017-selected",
+      "https://trademagazin.hu/en/szoke-matyas-lett-2017-ben-az-ev-bortermeloje"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "its head took up winemaking in earnest then",
+     "now": "its head has made wine since then",
+     "why": "the sources say producing wine since the 1970s; in earnest was the author's gloss",
+     "sources": [
+      "https://dailynewshungary.com/hungarian-vintner-year-2017-selected"
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "the Cabernet Sauvignon giving a firm, fresh line and the Cabernet Franc the fruit; dry and full, a big red",
+     "now": "the Cabernet Sauvignon giving a firm backbone of acidity and the Cabernet Franc the fruit; a dry, big red, in the house's words",
+     "why": "the house writes határozott savgerinc and nagy vörösbor, with sugar nil; fresh and full are not its words",
+     "sources": [
+      "https://www.szokematyas.hu/borok/birtokbor/peresi-matrai-cuvee-2015/"
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "a barrique aged Cabernet blend of this weight is usually opened a few years after the vintage",
+     "now": "no drinking window given",
+     "why": "a general rule no source of this record gives; an empty answer is a true one",
+     "sources": []
+    }
+   ],
+   "open": [
+    "The founder's status is unsettled: one Transylvanian paper's list of the award's winners sets a cross beside his name for 2017, yet no notice of his death was found; he stays named only as the house and listed in people.json.",
+    "The barrel months, the share of the two grapes and the fermentation are not published by the house; the serving line is the general service of a barrique aged Cabernet blend, not the house's own.",
+    "The house's own page for the Peres Cuvée is a page for the 2015; whether later vintages are made the same way was not found."
+   ],
+   "livingNamesMet": [
+    "The founder, whose name is the house's (already listed; a cross beside it in one list of winners, no death notice found)",
+    "The son, whose first name is in the house's full name (already listed)",
+    "A winemaker who worked at the cellar for four years, named in a 2021 article",
+    "Two other nominees of 2017, one already listed"
+   ]
+  }
  ]
 }
