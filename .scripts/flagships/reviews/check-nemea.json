@@ -1,0 +1,134 @@
+{
+ "group": "nemea",
+ "chunk": "w29",
+ "batch": "B",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 21,
+  "perRecord": { "skouras": 4, "papaioannou": 4, "driopi": 3, "aivalis": 4, "palivou": 4 },
+  "note": "Twenty one searches of a share of twenty eight, none the author's. The appellation search and the Wines of Greece altitude search are counted with Skouras. Three were restricted to a house's own domain (tselepos.gr once, palivos.gr twice) and read as primary for that house's own facts; one to winesofgreece.org. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "What a search contradicted was set right with its source; what rested on no second source was cut; a claim of a house about itself stays hedged as its account."
+ ],
+ "appellation": {
+  "tested": "PDO Nemea of 1971, red from Agiorgitiko alone, seventeen villages, fifteen in Corinthia and Gymno and Malandreni in Argolida (Wines of Greece, a wine encyclopaedia and the Skouras appellation page, by search). Every record's appellation lines stand.",
+  "note": "A Greek source counts sixteen villages of Corinthia; the records keep seventeen in all, the Wines of Greece count. The Wines of Greece PDO page gives the zone from about 200 to 850 metres, against the Skouras vineyard at 1,040 metres (open)."
+ },
+ "records": [
+  {
+   "key": "skouras",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "Founded 1986 at Pyrgela outside Argos by a Dijon trained oenologist, Megas Oenos that year, Malandreni in 2004 inside the Nemea zone: the house's history page and a London critic's and a Greek guide's profiles, by search; kept.",
+    "Gymno before Malandreni: one source dates the Gymno site to 1996; the story gives no year for it, so it stands.",
+    "Grande Cuvée first bottled 1996, Agiorgitiko alone, vines planted 1991 at 1,040 metres: the house's product page; a merchant gives 1,050 metres and another about 1,000; kept as the house's figure, open against the appellation's 850.",
+    "Megas Oenos about four fifths Agiorgitiko, a fifth Cabernet Sauvignon, PGI Peloponnese: a London critic's notes and several merchants; one vintage 75 to 25, so about a fifth stands.",
+    "Saint George a Nemea of Agiorgitiko alone: the house's own technical sheet, PDO Nemea; kept."
+   ],
+   "changed": [
+    { "field": "others[0].note", "was": "aged in new French barriques", "now": "aged in French oak", "why": "A merchant gives half new oak for the 2019 and a critic foudre and barrique for the Agiorgitiko of the 2023.", "sources": ["https://www.skurnik.com/sku/megas-oenos-domaine-skouras-4/", "https://www.jancisrobinson.com/tastings/259678"] }
+   ],
+   "open": [
+    "The vineyard at 1,040 metres against the PDO page's 850.",
+    "The house's claim that Megas Oenos was among the first such blends in Greece has no second source; hedged as the house's."
+   ]
+  },
+  {
+   "key": "papaioannou",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1876 and early organic farming: a Greek guide, a Greek tour site and merchants, all apparently from the house's own marketing; founded stays empty and 1876 stays a merchants' claim.",
+    "Among the first producers to argue for wine that shows grape and site: the Greek gastronomy guide, beside Wines of Greece; kept.",
+    "Palaia Klimata: forty year old vines, about a year in oak, then six to twelve months in bottle by vintage across merchants; making amended.",
+    "Terroir: two years in oak and a year in bottle by two merchants; Achladia and new oak not found.",
+    "The founder of the modern estate: described in Greek sources as at work beside his son; no report of his death found."
+   ],
+   "changed": [
+    { "field": "wine.making", "was": "each followed by about a year in bottle", "now": "then six months to a year in bottle", "why": "Merchants give six months in bottle for the 2015 and 2020, others twelve.", "sources": ["https://www.greeceandgrapes.com/en/red-old-vines-2020-papaioannou-vineyards", "https://www.botilia.gr/en/p/red-wine/Nemea-Palaia-Klimata-2015-Estate-Papaioannou"] },
+    { "field": "story", "was": "is remembered by Wines of Greece as", "now": "is described by Wines of Greece as", "why": "Remembered implies a death not found; the Greek guide places him at work beside his son.", "sources": ["https://www.greekgastronomyguide.gr/en/item/ktima-papaioannou-nemea/"] },
+    { "field": "story, others, traps", "was": "Terroir from old vines at Achladia in new oak; Microclima from a single plot", "now": "Terroir given about two years in oak; Microclima named without a site", "why": "Neither Achladia, the new oak nor the single plot was found in a second source; two years in oak was.", "sources": ["https://www.greeceandgrapes.com/en/red-terroir-nemea-2014-papaioannou-vineyards", "https://thequirkycork.com/ktima-papaioannou-terroir-agiorgitiko/"] }
+   ],
+   "open": [
+    "Whether the founder of the modern estate is living; treated as living and not named."
+   ]
+  },
+  {
+   "key": "driopi",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "Tselepos founded 1989 near Rizes in Mantinia; Driopi bought at Koutsi in 2003, about fifty year old vines, about 380 metres: Decanter, a merchant listing, a Greek wine encyclopaedia and the house's pages; kept.",
+    "Ktima Driopi Reserve: Dourmiza area of Koutsi, twelve months in French oak, seven tenths new and three tenths second use, six months in bottle, ageing five to ten years by vintage: the house's Reserve page, by search on its own domain; kept and the ageing set to the house's figure.",
+    "Driopi Classic eight to ten months in used French oak and the rosé PGI Peloponnese: the house's Classic page and a critic's review title; kept and the Classic note amended."
+   ],
+   "changed": [
+    { "field": "wine.ageing", "was": "it opens some years after the vintage", "now": "by the house's account it ages five to ten years by vintage", "why": "The house's own figure.", "sources": ["https://tselepos.gr/wines/ktima-driopi-reserve/?lang=en"] },
+    { "field": "others[0].note", "was": "made to drink younger than the Reserve", "now": "aged eight to ten months in used French oak", "why": "The author's clause rested on no sheet; the house's Classic page gives the oak.", "sources": ["https://tselepos.gr/wines/driopi-classic/?lang=en"] }
+   ],
+   "open": [
+    "Vine age about fifty years by the house and thirty five by one merchant."
+   ]
+  },
+  {
+   "key": "aivalis",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "Founded 1997 by a Greek guide and two Greek directories, 1996 by a British critic: founded stays empty, the decade question stands.",
+    "Monopati: Agiorgitiko alone, old vines on stony ground, the founder's first premium wine by one Greek merchant; twelve months in French oak in two critic's notes (2012, 2021), sixteen on merchants' later sheets.",
+    "Tessera: vines 120 to 150 years old by merchant and critic, last fruit in 2022 (the Ave Atque Vale bottling); the Fliasian plain not found.",
+    "Aivalis Nemea from Gerakina, fourteen months in French oak, without fining or filtration: two merchant sheets and a critic's note; kept.",
+    "Dry farming and no fertiliser: a Greek merchant; the record's little fertiliser stays as the guide's words."
+   ],
+   "changed": [
+    { "field": "wine.making, table", "was": "about sixteen months in French oak; its merchants describe the making as following French ways", "now": "twelve to sixteen months by vintage; the French ways clause cut", "why": "Critics give twelve for 2012 and 2021; the French ways clause was found in no search.", "sources": ["https://www.jancisrobinson.com/tastings/87857", "https://www.botilia.gr/en/p/red-wine/Monopati-Aivalis-Winery"] },
+    { "field": "story, others[1].note", "was": "an even older vineyard on the Fliasian plain", "now": "an even older vineyard, its vines more than a century old", "why": "The plain is in no source on Tessera; the age and the last fruit of 2022 are.", "sources": ["https://www.botilia.gr/en/p/red-wine/Tessera-Ave-Atque-Vale-Aivalis", "https://karakasis.mw/aivalis-4-agiorgitiko"] },
+    { "field": "story", "was": "by its Greek merchants' account", "now": "by a Greek merchant's account", "why": "One merchant only calls Monopati the house's first premium wine.", "sources": ["https://www.botilia.gr/en/p/red-wine/Monopati-Aivalis-Winery"] }
+   ],
+   "open": [
+    "Monopati as the house's first premium wine rests on one merchant.",
+    "The karakasis.mw address cited in a change names a living Master of Wine and is not used as a source in the fragment."
+   ]
+  },
+  {
+   "key": "palivou",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "Founded 1995 at Ancient Nemea, a modern winery replacing the old treading tank, 800 metres from the archaeological site, Fliasion Pedion as the old name of the district: the house's history and winery pages by search on its own domain, a Greek guide and a merchant; kept.",
+    "Ammos Terra Leone: eighteen months in new oak, four fifths French and a fifth American, six in bottle (the house's page, a merchant for the 2022, a blog for the 2014); fourteen months in new French oak and amphorae and eight in bottle (the house's other page); both kept.",
+    "The two daughters joining the founders: a merchant's and a Greek guide's profile, as the next generation; third generation not found."
+   ],
+   "changed": [
+    { "field": "story", "was": "had grown vines around Ancient Nemea long before it built a winery, treading its grapes in a traditional stone tank", "now": "before it built a winery, the family trod its grapes in a traditional treading tank", "why": "The house names the treading tank, not its stone; a family account read through a merchant says the parents began in 1995 without much land, so the long growing is not sourced.", "sources": ["https://palivos.gr/en/our-history/", "https://www.wine.com/list/wine/palivou/7155-5253"] },
+    { "field": "story", "was": "the founders' daughters, the third generation by the house's account", "now": "the founders' two daughters later joined them", "why": "The sources read call them the next generation.", "sources": ["https://www.greekgastronomyguide.gr/en/item/ktima-palyvou-nemea/"] }
+   ],
+   "open": [
+    "Which of the house's two oak regimes is current."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "George Skouras (the Skouras founder)",
+  "Thanasis Papaioannou, also Athanasios (the founder of the modern Papaioannou estate, treated as living)",
+  "George Papaioannou, also Giorgos (his son)",
+  "Yiannis Tselepos and Amalia Tselepos (already in people.json)",
+  "Christos Aivalis (the Aivalis founder)",
+  "Sotiris Aivalis, also Sotirios (his son, the winemaker)",
+  "George Palivos, also Giorgos Palivos and George Palyvos (the Palivou founder)",
+  "Angeliki Palivou, also Aggeliki (his wife)",
+  "Evangelia Palivou and Vassiliki Palivou (their daughters)"
+ ],
+ "swaps": [],
+ "swapNote": "The author proposed no swap; none is called for: each house is a real producer of the appellation with a real Nemea, and the thin region rule is stated plainly in each why and story.",
+ "codexTension": [
+  "None found: no house of the group is in WINE_PRODUCERS. The appellation's 850 metres on the Wines of Greece PDO page sits against Skouras's own 1,040 metres; reported, not edited."
+ ],
+ "questions": "All ten read: one right answer each, four options of one kind, the key never the longest by much, and explanations that say why the key is right and the nearest wrong option wrong. The Aivalis wine question and the Papaioannou wine question both turn on the appellation's Agiorgitiko alone rule, which a read together agent may want to vary."
+}
