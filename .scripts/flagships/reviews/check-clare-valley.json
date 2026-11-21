@@ -1,0 +1,324 @@
+{
+ "group": "clare-valley",
+ "chunk": "w22",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "perRecord": {
+   "grosset": 6,
+   "jim-barry": 6,
+   "wendouree": 5,
+   "sevenhill": 3,
+   "mount-horrocks": 3
+  },
+  "note": "Twenty three searches of twenty eight, five unspent. Five were restricted to a house's own domain (grosset.com.au twice, jimbarry.com, sevenhill.com.au and mounthorrocks.com once each) and are read as primary through their summaries; others blocked the house or the author's main source so the second source would be independent. One Wendouree search returned only Lake Wendouree's own history and is counted. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: founding, people and dates, grapes, sites, making, ageing, serving, label words, every beat of the story, cards and questions; then the house rules.",
+  "Where a search contradicted the record it was set right with its source; where a detail was in one source only, or none, it was cut or said with less.",
+  "Writers' own sites met among the results (Wine with Seth, Campbell Mattinson, Chris Shanahan, Wine Anorak, The Wandering Palate) are cited neither in the fragment nor here as a second source."
+ ],
+ "records": [
+  {
+   "key": "grosset",
+   "searches": 6,
+   "tested": [
+    "Founding 1981 and the Auburn building: the house's Our story page (an old milk depot) against Wikipedia (a butter and ice factory); the house wins.",
+    "The 1981 Rieslings from Watervale and Polish Hill: Wikipedia and CellarTracker. Sound.",
+    "The Polish Hill vineyard planted 1996 by the house: its vineyard page and two secondary accounts; Gourmet Traveller Wine gives 2000 as the first vintage with its fruit. Added as 1996.",
+    "Fourteen producers and the screwcap of 2000: the Clare Valley Wine and Grape Association, Australian Wine Review and others; one Scotsman piece says thirteen. Sound.",
+    "The Polish settlers: the ship August at Port Adelaide on 17 August 1856, the largest group at Hill River, by the Clare Museum, the Polish Council and the South Australian history hub. Sound.",
+    "The making: free run juice, hand picked and unfined by the house's sheets; stainless steel and no malolactic by two secondary accounts. Batches by clone and neutral yeast cut."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "in a building that the house says had served early in the twentieth century as a butter and ice factory",
+     "now": "in an old milk depot, by the house's own account",
+     "why": "the house's own story says milk depot",
+     "sources": [
+      {
+       "title": "Grosset: Our story",
+       "url": "https://www.grosset.com.au/about/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the house has made both in every vintage since. It came to farm its own vineyard at Polish Hill",
+     "now": "In 1996 the house planted its own vineyard at Polish Hill",
+     "why": "the every vintage claim was in no source; the planting year is the house's",
+     "sources": [
+      {
+       "title": "Grosset: Polish Hill vineyard",
+       "url": "https://grosset.com.au/polish-hill-riesling/grosset-polish-hill-vineyard",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Gourmet Traveller Wine: Nothing left to chance, Grosset's Polish Hill vineyard",
+       "url": "https://gourmettravellerwine.com/app-sub/editions/dec-jan-22/article/grosset.html",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "pressed gently, neutral yeast for about two weeks, in batches by clone and vine age",
+     "now": "picked by hand, free run juice only, bottled young and unfined",
+     "why": "the cut details rested on one importer's sheet",
+     "sources": [
+      {
+       "title": "Grosset: Polish Hill",
+       "url": "https://www.grosset.com.au/wine/polish-hill/52025/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The fruit of the 1981 to 1999 Polish Hill wines, before the house's own vineyard, is not named."
+   ]
+  },
+  {
+   "key": "jim-barry",
+   "searches": 6,
+   "tested": [
+    "Founder at Roseworthy in 1947, Clarevale, the first qualified winemaker of Clare, the land of 1959: Wine Companion, Australia's First Families of Wine and Decanter. Sound.",
+    "Armagh land of 1964, Shiraz of 1968 (1969 by Decanter) from Wendouree cuttings: Falstaff, World of Fine Wine. Sound as the late 1960s.",
+    "First vintage 1985, launch in 1985 or 1989: James Suckling and Falstaff disagree. The launch year cut.",
+    "The son in charge from 1985, another son making the first vintage in six new American barrels: World of Fine Wine and a second trade account. Told.",
+    "La Place de Bordeaux in 2020 with the 2016: James Suckling, World of Fine Wine and Berry Bros. Sound.",
+    "Florita bought from Lindemans in 1986: Wine Business Magazine, Wine Republic and Halliday. Sound.",
+    "The oak: the house's vintage journal (French and American in 2016, French alone in 2017) and the house's note that the wine began in new American oak alone."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "For years that Shiraz went into a port style blend ... that vintage, launched in 1989, became the first The Armagh",
+     "now": "one of the founder's sons took charge, another son made the first The Armagh, aged in new American oak",
+     "why": "the port blend and Cabernet first were in no second source, the 1989 launch is Falstaff's alone",
+     "sources": [
+      {
+       "title": "World of Fine Wine: Jim Barry The Armagh Shiraz",
+       "url": "https://worldoffinewine.com/homepage-featured-articles/jim-barry-the-armagh-shiraz",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Falstaff: Armagh Shiraz, 50 years of the Armagh vineyard",
+       "url": "https://www.falstaff.com/en/news/armagh-shiraz-50-years-of-the-armagh-vineyard-in-clare-valley",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "small open fermenters with heading down boards ... first vintages fermented in stainless steel ... American oak given up for French",
+     "now": "fermented on skins, sixteen to twenty months in oak by vintage, French oak joining and sometimes replacing new American",
+     "why": "the house's vintage journal shows French and American oak in 2016",
+     "sources": [
+      {
+       "title": "Jim Barry Wines: The Armagh vintage journal",
+       "url": "https://www.jimbarry.com/vintage-journal",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The founder's birth year."
+   ]
+  },
+  {
+   "key": "wendouree",
+   "searches": 5,
+   "tested": [
+    "Founding 1892 or 1893 by Alfred Percy Birks and his brother, first wines 1895: Decanter, Langton's, Museum Wines. Sound.",
+    "The name from Lake Wendouree at Ballarat: in no source of this check; one account gives an Aboriginal word for a place of water. Cut.",
+    "1917 handover for failing health, the son's long tenure, cask sales to hotels: the Clare Museum and Museum Wines. Sound, told.",
+    "1974: a mortgagee sale, the buyer's son in law and daughter running it: Museum Wines and Decanter. The Sydney family cut.",
+    "Making: open fermenters, hand plunging, basket press on rails in cement: Decanter and Museum Wines; stainless steel lining in none. Cut.",
+    "Phylloxera: never found in South Australia, by the state's legislation and Vinehealth Australia."
+   ],
+   "changes": [
+    {
+     "field": "wine.label[0], story, traps[1], cards[1]",
+     "was": "named for Lake Wendouree at Ballarat, where the founder had grown up",
+     "now": "given by the Birks family; the name's source not told",
+     "why": "no source of this check gives the Ballarat link",
+     "sources": [
+      {
+       "title": "Museum Wines: Birks Wendouree producer profile",
+       "url": "https://mwwines.com.au/museum-wine-shop/wine-resources/winery-profiles/winery/producer-profile---birks-wendouree",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "Decanter: Wendouree, taking it slowly",
+       "url": "https://www.decanter.com/features/wendouree-taking-it-slowly-2-248539/",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "passed to a Sydney family",
+     "now": "bought at a mortgagee sale and passed into the care of the buyer's daughter and son in law",
+     "why": "Museum Wines tells the sale so; Sydney was in no source",
+     "sources": [
+      {
+       "title": "Museum Wines: Birks Wendouree producer profile",
+       "url": "https://mwwines.com.au/museum-wine-shop/wine-resources/winery-profiles/winery/producer-profile---birks-wendouree",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "South Australia kept phylloxera out with its quarantine of 1899",
+     "now": "phylloxera has never been found in South Australia",
+     "why": "the Act of 1899 founded a board; the safe fact is that the pest was never found",
+     "sources": [
+      {
+       "title": "South Australian legislation: Phylloxera and Grape Industry Act 1995",
+       "url": "https://www.legislation.sa.gov.au/_legislation-documents/lz/c/a/phylloxera-and-grape-industry-act-1995/current/1995.19.auth.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Vinehealth Australia: Cheers to 120 years",
+       "url": "https://vinehealth.com.au/2019/05/cheers-to-120-years/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "When the son's winemaking ended (1970 or 1983)."
+   ]
+  },
+  {
+   "key": "sevenhill",
+   "searches": 3,
+   "tested": [
+    "Austrian Jesuits as chaplains to Silesian migrants in 1848, land of 1851, the seven hills of Rome: Jesuits Australia, Adelaide AZ and the house. Sound, now Austrian.",
+    "First vines of 1851 from Bungaree Station by a Jesuit brother, wine five years on, first prize at Auburn in 1858: the Jesuits, the house. Sound, told.",
+    "The seventh Jesuit winemaker 1972 to 2003: the house's Jesuits page. Sound; he died in August 2021 by the house and is not named in prose.",
+    "St Ignatius: Cabernet Sauvignon about half, then Merlot, Malbec, Cabernet Franc, French oak: the house's sheets for 2018 and 2021. Sound."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "Catholic migrants from German speaking Europe, where the revolutions of that year had driven the order out of many states",
+     "now": "two Austrian Jesuit priests, chaplains to a party of Silesian migrants",
+     "why": "the Jesuits' own account; the revolutions in no source of this check",
+     "sources": [
+      {
+       "title": "Jesuits Australia: Sevenhill",
+       "url": "https://jesuit.org.au/ministries/sevenhill/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "in 1856 by the house's account and in 1858 by others ... churches across Asia and the Pacific ... seven Jesuits in turn ... last in Australia owned by the Jesuits",
+     "now": "five years later by the house, first prize at Auburn in 1858; parishes in Australia and overseas; the seventh Jesuit winemaker",
+     "why": "the house and Jesuits' words; the rest in no second source",
+     "sources": [
+      {
+       "title": "Sevenhill Cellars: The Jesuits",
+       "url": "https://www.sevenhill.com.au/jesuits",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "The Society of Jesus: A Jesuit vineyard",
+       "url": "https://www.jesuits.global/2024/02/05/a-jesuit-vineyard/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "The first vintage of St Ignatius and its months in oak."
+   ]
+  },
+  {
+   "key": "mount-horrocks",
+   "searches": 3,
+   "tested": [
+    "Bought in 1993 by a buyer who had sold fine wine in Perth, the railway station cellar door of April 1998: Liberty Wines and the house's About page. Sound.",
+    "The method, canes cut, no botrytis, half bottles, the Auburn vineyard near the cellar door, frost of 2017 sending the fruit to Watervale: the house's pages and Liberty Wines. Sound.",
+    "John Ainsworth Horrocks, 22 March 1818 to 23 September 1846, Penwortham of 1840, the camel and the gun: the ADB and Wikipedia. Sound.",
+    "The house among the screwcap fourteen of 2000: the house's pages give no year; cut."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "In 2000 the house was among the Clare makers who sealed their Riesling under screwcap together.",
+     "now": "cut",
+     "why": "in no source of this check",
+     "sources": [
+      {
+       "title": "Mount Horrocks: About",
+       "url": "https://www.mounthorrocks.com/about/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "In 2012 the house's newsletter told of a Decanter trophy for its 2011.",
+     "now": "cut; the frost of 2017 told instead",
+     "why": "an award sits near a score and had one source",
+     "sources": [
+      {
+       "title": "Mount Horrocks: Cordon Cut Riesling 2017",
+       "url": "https://www.mounthorrocks.com/mount-horrocks-cordon-cut-riesling-2017/",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Founded and the first vintage of Cordon Cut."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "Jeffrey Grosset, the founder of Grosset",
+  "Peter Barry and Mark Barry, the founder's sons, and Nancy Barry (Jim Barry Wines), who may be living",
+  "Tony Brady and Lita Brady, who have run Wendouree since 1974",
+  "Stephanie Toole, who bought Mount Horrocks in 1993",
+  "None is named in the fragment. Max Liberman, the buyer of Wendouree in 1974, is not named either, his dates not being found. Brother John May of Sevenhill died in August 2021 by the house; he is named only in the wine's name."
+ ],
+ "swaps": [
+  {
+   "ruling": "none proposed",
+   "why": "The author proposed no swap. The author weighed Sevenhill's Brother John May Reserve Shiraz against St Ignatius in report; refused as a swap: St Ignatius is the house's long running blend named for the order's founder, the pick of the plan, and no source of this check calls the reserve Shiraz the house's flagship."
+  }
+ ],
+ "rules": "No living person named, no price, no score (the Decanter trophy cut), nothing volatile, no judging superlative, British spelling, no dash: read across all five records after the edits. The notes on oldest and first stand on the house's claims, hedged.",
+ "codexTension": [
+  "The library record p-grosset's traps and p-jim-barry's trap call Watervale and Polish Hill Clare subregions; the region has no legally registered subregions, so the fragment says localities (the author's report, confirmed). Reported, not edited.",
+  "The region record calls Clare Australia's Riesling capital and the screwcap switch by the Riesling makers together for 2000; the second stands on fourteen producers, the first is a ranking. Reported, not edited.",
+  "The library holdings line of p-grosset names the founder, a living person. Reported, not edited."
+ ]
+}
