@@ -344,6 +344,114 @@
    "open": [
     "The swap to Alazán is accepted in the review file and awaits the read together agent; until then the record teaches Tobiano truly as the second Pinot Noir."
    ]
+  },
+  {
+   "key": "kingston",
+   "pass": "second reader of the Alazán rewrite",
+   "date": "2026-11-21",
+   "by": "refuter",
+   "searches": 8,
+   "tested": [
+    "Alazán as the flagship: the house's 2021 sheet calls it our flagship Pinot Noir; its winemaking page calls Tobiano and Alazán the original labels and the most approachable Pinot Noirs, blended from blocks and lots selected by barrel. Sound as flagship; the tiering of lots changed.",
+    "The first choice of lots for Alazán and the next tier for Tobiano: three searches of the house's own site (its winemaking and Pinot Noir pages, its wine pages) found it nowhere. Changed, cut.",
+    "The making: the sheets of 2019 (ten months, French oak, concrete egg, Austrian foudres), 2021 (eleven months) and 2022 (ten months, half foudre, two fifths barrel, a tenth egg; released September 2023), Skurnik's eight months for 2017, about 30 per cent new on the house's site. Changed to eight to eleven months.",
+    "The history: Wikipedia, the Almanac and the house's history page (the patriarch from Michigan in about 1906, no gold found, a dairy and cattle ranch, planting 1998, the first harvest of 2001 sold to other winemakers, 400 cases of Pinot Noir and Syrah under the family label in 2003). Sound, save copper, which no source names as his quarry.",
+    "Casablanca planted from 1982: several accounts credit the first vines of 1982 to the valley's pioneer winemaker. Sound.",
+    "The label word: alazán a horse of reddish coat; the house's winemaking page says the founders chose it for the flagship to match its deep red colour; a critic's note dates the family horse to the 1950s. Sound.",
+    "Serving: no sheet gives a serving temperature. Left as general service, open.",
+    "Rules: no living person named, no price, no score, nothing volatile; no judging superlative; British; no dash. Cards and questions: one right answer each, distractors plausible (1906 the patriarch's arrival, 1982 the valley's first vines, 2003 the first own label); the first question's explanation set to eight to eleven months."
+   ],
+   "changes": [
+    {
+     "field": "wine.making, table, story, others[0].note, traps[1], traps[2]",
+     "was": "Alazán from the winemaker's first choice of lots, Tobiano from the next tier, Tobiano in mostly used oak, the single block Cuartel 8D",
+     "now": "Alazán blended from barrel selected lots and the flagship by the house's sheet; Tobiano the other original, lighter label; no single block named",
+     "why": "no page of the house nor any other source found gives the tiering, the used oak or Cuartel 8D",
+     "sources": [
+      {
+       "title": "Kingston Family Vineyards: Winemaking",
+       "url": "https://www.kingstonvineyards.com/winemaking/",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Kingston Family Vineyards: 2021 Alazán Pinot Noir",
+       "url": "https://kingstonvineyards.com/assets/client/File/2021%20Alazan%20Pinot%20Noir.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "wine.making, questions[0].exp",
+     "was": "about eight to ten months",
+     "now": "about eight to eleven months, with the 2022 proportions",
+     "why": "the 2021 sheet gives eleven months, the 2022 sheet ten with half in foudre",
+     "sources": [
+      {
+       "title": "Kingston Family Vineyards: 2021 Alazán Pinot Noir",
+       "url": "https://kingstonvineyards.com/assets/client/File/2021%20Alazan%20Pinot%20Noir.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Kingston Family Vineyards: 2022 Alazán Pinot Noir tasting notes",
+       "url": "https://kingstonvineyards.com/assets/client/File/2022-Alazan-Pinot-Noir-Tasting-Notes.pdf",
+       "kind": "primary",
+       "read": "search"
+      },
+      {
+       "title": "Skurnik Wines: Kingston Alazán Pinot Noir",
+       "url": "https://www.skurnik.com/?p=374742",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "story",
+     "was": "to prospect for gold and copper; the family took over a dairy and cattle farm",
+     "now": "to prospect for gold; the family ended with a dairy and cattle ranch",
+     "why": "the sources name gold alone and say the search ended in a ranch",
+     "sources": [
+      {
+       "title": "Wikipedia: Kingston Family Vineyards",
+       "url": "https://en.wikipedia.org/wiki/Kingston_Family_Vineyards",
+       "kind": "secondary",
+       "read": "search"
+      },
+      {
+       "title": "The Almanac: Kingston Family Vineyards",
+       "url": "https://www.almanacnews.com/?p=69316",
+       "kind": "secondary",
+       "read": "search"
+      }
+     ]
+    },
+    {
+     "field": "sources[3]",
+     "was": "the house blog Wine Named After a Horse",
+     "now": "the house's 2021 Alazán sheet",
+     "why": "the sheet carries the flagship claim and the eleven months; the name rests on the house's winemaking page as well",
+     "sources": [
+      {
+       "title": "Kingston Family Vineyards: 2021 Alazán Pinot Noir",
+       "url": "https://kingstonvineyards.com/assets/client/File/2021%20Alazan%20Pinot%20Noir.pdf",
+       "kind": "primary",
+       "read": "search"
+      }
+     ]
+    }
+   ],
+   "open": [
+    "Serving temperature is general service; no sheet of the house gives one.",
+    "The Almanac gives 1997 for the planting against the house's 1998.",
+    "The first vintage of Alazán stays undated."
+   ],
+   "living": [
+    "Pablo Morandé, credited with the first Casablanca vines of 1982, not named in the record; added to people.json.",
+    "The family member who led the move into wine (already in people.json), not named."
+   ]
   }
  ],
  "living": [
@@ -352,7 +460,8 @@
   "The fourth generation Matetic family member credited with planting the Rosario valley",
   "The Kingston family member who led the move into wine, and the house's consulting winemaker",
   "Viña Leyda's winemaker, named in a Grape Collective title",
-  "For the read together agent: these names are given in the sources as María Luz Marín, Felipe Marín, Jorge Matetic Hartard, Courtney Kingston, Byron Kosuge and Viviana Navarrete; none is in people.json and none is in the fragment."
+  "For the read together agent: these names are given in the sources as María Luz Marín, Felipe Marín, Jorge Matetic Hartard, Courtney Kingston, Byron Kosuge and Viviana Navarrete; none is in people.json and none is in the fragment.",
+  "Pablo Morandé, the Casablanca pioneer met by the second reader of kingston; added to people.json. Peter Kingston, whose horse of the 1950s a critic names, state unknown, not named and not added."
  ],
  "notLiving": [
   "Maximiano Errázuriz Valdivieso (1832 to 1890), named with his dates",
