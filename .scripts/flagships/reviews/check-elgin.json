@@ -1,0 +1,284 @@
+{
+ "group": "elgin",
+ "chunk": "w26",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 20,
+  "perRecord": {
+   "paul-cluver": 4,
+   "oak-valley": 5,
+   "iona": 4,
+   "shannon": 4,
+   "kershaw": 2
+  },
+  "note": "Twenty searches of twenty eight, eight unspent. Most searches blocked the author's own domains so the second source would be independent; four were held to a house's own domain to read its pages (cluver.com, oakvalley.co.za, iona.co.za, shannonwines.com twice), and one search was wasted on a query that returned only general biodynamic pages. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: founding, people and dates, grapes, sites, making, label words, every beat of the story, the cards and the questions; then the house rules.",
+  "Where a search contradicted the record it was set right with its source; where a detail stood in one source or none it was cut or hedged as the house's account."
+ ],
+ "records": [
+  {
+   "key": "paul-cluver",
+   "searches": 4,
+   "tested": [
+    "De Rust since 1896, SFW's joint venture, the planting of 1986 or 1987, the maiden Riesling of 1990 at Nederburg (not in the record): Wine with Seth, Cellar Tours, In The Vineyard With. Sound, hedged.",
+    "The Seven Flags Chardonnay's debut of 2014 from vines of 1987, clones 175 and 270, wild yeasts: bottlebooks sheet of 2024, Saratoga, wine.co.za 2018 listing. Sound; clones widened.",
+    "The Seven Flags Pinot Noir of 2006: Winemag, Decanter, Firstleaf, the house in search. Not found; cut."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the first Seven Flags Pinot Noir is no longer dated 2006: no source read (Winemag, Decanter, Firstleaf listings, the house's own Seven Flags and Pinot Noir pages in search) names 2006 or any first vintage, and the earliest bottling found is 2008; now the Pinot Noir simply came first.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "others[1], traps[0], questions[1]",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the 2006 date taken out of the note, the trap and the explanation; the story question's distractor 2006 now 2008, the earliest Seven Flags Pinot Noir found.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the joint venture's terms (land and water against training and supervision) now told as the house tells it, and SFW's viticulturists looking for cool sites added (Cellar Tours, Wine with Seth); the soils sampled and mapped, the climate zones dropped.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.sites",
+     "was": "see the author's commit bfdd9ac",
+     "now": "clones 175 and 270 now among those planted, since a listing of 2018 adds clones 95 and 548 to the Seven Flags blocks.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://www.winewithseth.com/winewiki/paul-cluver-estate/",
+    "https://cellartours.com/south-africa/wineries/paul-cluver",
+    "https://www.inthevineyardwith.com/episode-40-paul-cluver-elgin-south-africa-how-a-wine-region-is-born/",
+    "https://cluver.com/seven-flags/ (search)",
+    "https://winemag.co.za/wine/review/paul-cluver-seven-flags-pinot-noir-2007/",
+    "https://wine.co.za/wine/wine.aspx?WINEID=44716"
+   ],
+   "open": [
+    "The first Seven Flags Pinot Noir vintage is not settled: 2008 is the earliest found, not shown to be the first.",
+    "The planting of the first commercial vines is 1987 by the house and Cellar Tours, 1986 by Wine with Seth and In The Vineyard With; the story gives both."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "oak-valley",
+   "searches": 5,
+   "tested": [
+    "Viljoen's dates, Edinburgh, the Legislative Council of 1903, the knighthood of 1916, the purchase of 1898: Wikipedia, Wikidata, Geni, the house. Sound.",
+    "The cellar of 1907 and closure of 1944: the house gives both; Southern Wines and Wine with Seth give 1908 and the early 1940s. Hedged.",
+    "Wines made at Paul Cluver and the estate winery for the 2017 harvest: Winemag's history part three. Sound.",
+    "Experimental block harvested 1988, Bouchard Finlayson: swirlandspice, Southern Wines. Sound; 1992 hedged.",
+    "Groenlandberg altitude, Bokkeveld shale, whole bunches, clones: wine.co.za 2021, elid.wine 2020. Altitude changed."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the cellar of 1907 now hedged as the house's account, with 1908 by another (Southern Wines, Wine with Seth give 1908; the house's history gives 1907).",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the closure of 1944 and the new vineyards of 1992 now hedged as the house's account; other sources give the early 1940s, and the only independent 1992 reference concerns Chardonnay alone.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.sites",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the altitude was three hundred to four hundred and thirty metres; now the highest Pinot Noir blocks at about four hundred and thirty to four hundred and seventy metres (wine.co.za on the 2021 vintage, elid.wine on 2020), Bokkeveld shale over clay rich soils.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.making",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the single vintage figures (2023, ten months, a third new) removed as a one vintage report; whole bunches now a small share in most years, since the 2021 used none (wine.co.za), with gentle punching down; under a year in French oak, some new.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "table",
+     "was": "see the author's commit bfdd9ac",
+     "now": "a share of whole bunches now a little whole bunch fruit.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://oakvalley.co.za/history-of-wine-on-oak-valley-part-i/ (search)",
+    "https://www.southernwines.com/oakvalley/wineestate.cfm",
+    "https://www.winewithseth.com/winewiki/oak-valley-estate/",
+    "https://winemag.co.za/wine/history-of-oak-valley-part-three/",
+    "https://en.wikipedia.org/wiki/Antonie_Viljoen",
+    "https://www.wikidata.org/wiki/Q19996407",
+    "https://news.wine.co.za/news.aspx?NEWSID=40309",
+    "https://elid.wine/wine/ZA-ELG-OAKV02-2020"
+   ],
+   "open": [
+    "Bouchard Finlayson took Oak Valley's grapes from 1990 to 1998 by one secondary source; the story's for some years is kept undated.",
+    "The house's first own label wine (the 2003 Sauvignon Blanc, made in rented space at Paul Cluver) is not in the story; it could be added by the read-together agent."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "iona",
+   "searches": 4,
+   "tested": [
+    "Purchase of 1997, the island name, vines of 1998, first vintage 2001, 420 metres near the sea: Wine Anorak, The Buyer, Wine with Seth. Sound save the forebears.",
+    "Brocha, its reds of 2004 and first wines of 2007, biodynamic lines: the house's Brocha page in search, Alliance Wine. Sound.",
+    "Chardonnay of 2003 and Pinot Noir of 2009: not found. Cut."
+   ],
+   "changes": [
+    {
+     "field": "story and cards[0]",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the island of the buyer's forebears is now the island of Iona off the west coast of Scotland: Wine Anorak and others give the island, no source read gives the forebears.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the clause that the farm had no cellar of its own in 2001 cut (one source); the house counts its vintages from 2001 kept.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story and others[1]",
+     "was": "see the author's commit bfdd9ac",
+     "now": "Chardonnay and Pinot Noir from vines of 2003 and 2009 cut: no source found for either year (the house's own search turned up a 2003 Syrah planting on Brocha instead).",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "Brocha now a farm lower in the valley worked on biodynamic lines (not certified, by the house's and Alliance Wine's account), with Shiraz, Mourvedre and Petit Verdot planted in 2004 and first made in 2007, on the house's Brocha page.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://www.wineanorak.com/southafrica/southafrica_15_Iona.htm",
+    "https://www.the-buyer.net/people/producer/andrew-gunn-iona-south-africa-elgin",
+    "https://iona.co.za/wines-of-brocha/ (search)",
+    "https://www.alliancewine.com/our-producers/wines-of-brocha"
+   ],
+   "open": [
+    "The Semillon's older 500 litre French barrels rest on the house's sheet for 2024 alone; kept as the house's own method."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "shannon",
+   "searches": 4,
+   "tested": [
+    "The founding, the Irish name, the brothers: Wine Anorak, sa-venues, southernwines. Founding in conflict; emptied.",
+    "Five clones made apart, Table Mountain sandstone over kaolin clay, the Peninsula Dam, oldest Merlot claim: the house's wines and about pages in search. Sound, hedged.",
+    "Shannon Black from 2013 and RocknRolla's block of 2000: Winemag. Sound; oldest cut."
+   ],
+   "changes": [
+    {
+     "field": "founded",
+     "was": "see the author's commit bfdd9ac",
+     "now": "was 2000, now empty: one account gives 1998 (the farm established by one brother), others 2000; an empty field is a true answer.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "the founding now around the turn of the century, 1998 by one account and 2000 by others; the brothers who run it and the outside winemakers (a present fact, and volatile) cut; a Pinot Noir block planted in 2000 kept on Winemag's review.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "others[1] and questions[1]",
+     "was": "see the author's commit bfdd9ac",
+     "now": "RocknRolla's block no longer called the oldest Pinot Noir block (no source found beyond the author's); now one block planted in 2000 to a single clone (Winemag).",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://www.wineanorak.com/southafrica/southafrica_20_Shannon.htm",
+    "https://shannonwines.com/wines/ (search)",
+    "https://www.shannonwines.com/about-us/ (search)",
+    "https://winemag.co.za/wine/review/shannon-black-2015/",
+    "https://winemag.co.za/wine/review/shannon-vineyards-black-2016/"
+   ],
+   "open": [
+    "The first vintage of Mount Bullet is not found; Wine Anorak's account of the second own vintage in 2008 suggests own wines from 2007, which is left out.",
+    "Mount Bullet as the oldest Merlot vineyard of the valley is the house's claim alone and is hedged as such."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "kershaw",
+   "searches": 2,
+   "tested": [
+    "Master of Wine in 2011, the Cape from 1999, founded January 2012, no vineyards of its own: alexmartonfinewines, wine.co.za, Kysela, GRAPE. Sound.",
+    "Clones, months, new oak, parcels: Wine Republic 2021 and 2023, Wine Menu, Gismondi 2019, Dunells. New oak and clones changed."
+   ],
+   "changes": [
+    {
+     "field": "wine.making",
+     "was": "see the author's commit bfdd9ac",
+     "now": "about a third new was refuted: the new oak was 53 per cent for 2019, 54 for 2021 and 34 for 2023 (Gismondi, Wine Republic); now a third to over half by vintage.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.grapes, table, story, cards[0], questions[0]",
+     "was": "see the author's commit bfdd9ac",
+     "now": "four Dijon clones now several clones with CY95, CY96, CY76 and CY548 among them, since CY548 is an ENTAV clone (Wine Menu) and 2023 added CY277 (Wine Republic); the muddled French nursery body wording cut.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.sites",
+     "was": "see the author's commit bfdd9ac",
+     "now": "eleven parcels in 2023 now eight to eleven by vintage (listings of 2018 to 2020 give eight).",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit bfdd9ac",
+     "now": "September 2011 now 2011 (alexmartonfinewines, wine.co.za); the warm greeting by critics cut as unsourced praise.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://alexmartonfinewines.com/blogs/news/richard-kershaw-wines-clonal-selected-cool-climate-wines-from-south-africas-elgin-valley",
+    "https://wine.co.za/page/page.aspx?PAGEID=3575",
+    "https://www.wine-republic.co.uk/products/2023-chardonnay-clonal-selection-kershaw",
+    "https://www.winemenu.co.za/product/kershaw-clonal-selection-chardonnay/",
+    "https://gismondionwine.com/tasting-notes/202411/kershaw-wines-clonal-selection-chardonnay-2019/"
+   ],
+   "open": [],
+   "verdict": "changed"
+  }
+ ],
+ "livingNamesMet": [
+  "Dr Paul Cluver (founder of the wine estate, living by the house's pages; named only in the house's name)",
+  "Andries Burger (Paul Cluver winemaker from 1996)",
+  "James Downes and Stuart Downes (Shannon Vineyards)",
+  "Gordon Newton Johnson and Nadia Newton Johnson (Shannon's winemakers; check people.json, they may be there from walker-bay)",
+  "Andrew Gunn (Iona, the buyer of 1997) and his wife, named variously Rozy or Rosie",
+  "Richard Kershaw (founder; named only in the house's name Richard Kershaw Wines)",
+  "Jacques du Plessis (Oak Valley, a podcast title)",
+  "Antonie Viljoen of the living family, the founder's descendant who shares his name (an address in a business listing); the founder Sir Antonie Viljoen (1858 to 1918) is dead and dated",
+  "None of these is named in any shipped string; the read-together agent may add them to people.json."
+ ],
+ "swaps": [
+  {
+   "pick": "oak-valley",
+   "ruling": "none proposed; the author left open whether the Groenlandberg Chardonnay leads. Refused as a swap: the plan's Pinot Noir is kept, since the house sells the two as a pair, the plan's why rests on the district's red side, and the group already holds two Chardonnay flagships (Paul Cluver and Kershaw)."
+  },
+  {
+   "pick": "all others",
+   "ruling": "none proposed, none made."
+  }
+ ],
+ "codexTensions": [
+  "The region record's summary says fruit farmers began planting vines in the 1980s; Oak Valley's own history and Viljoen's cellar of 1907 show wine in Elgin long before, closed in 1944. The summary's modern sense holds, but a reader may meet the older history here. Reported, not edited.",
+  "The region record's producers line calls Paul Cluver the family estate that pioneered wine in Elgin in the 1980s; one source credits Oak Valley's experimental block of 1985 as the first planting and Cluver the first commercial one. Reported, not edited."
+ ]
+}
