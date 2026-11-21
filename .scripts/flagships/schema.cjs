@@ -182,15 +182,34 @@ function people() {
   PEOPLE = out;
   return out;
 }
-/* the living named in a string: the record's own producer name, written whole, is a house and is taken out first */
-function livingIn(s, producer) {
+/* the words that make a person's name a house's in an address: the name a merchant or a body files the house under */
+const HOUSE_NOUNS = ['winery', 'wines', 'weingut', 'domaine', 'estate', 'family', 'cellar', 'cellars', 'vineyard', 'vineyards', 'bodega', 'bodegas', 'tenuta', 'cantina', 'azienda', 'chateau', 'maison', 'quinta'];
+/* a listed name standing against one of those words every time the folded address f holds it */
+function houseNamed(f, name) {
+  const ws = f.trim().split(' '); const ns = name.split(' '); let seen = 0; let all = true;
+  for (let i = 0; i + ns.length <= ws.length; i++) {
+    if (ns.some((w, j) => ws[i + j] !== w)) continue;
+    seen++;
+    if (HOUSE_NOUNS.indexOf(ws[i + ns.length]) < 0 && HOUSE_NOUNS.indexOf(ws[i - 1]) < 0) all = false;
+  }
+  return seen > 0 && all;
+}
+/* the living named in a string: the record's own producer name, written whole, is a house and is taken out first. In
+   a source's address (address true, its separators already spaces) a listed name is the house's as well, and kept,
+   where it carries a word of the producer's own name and stands against a house word: ioannis hatzis winery for Hatzis
+   Winery, karoly kolonics family winery for Kolonics. A house keeps its name, and a page about the house is filed
+   under the name it trades by; the same person anywhere else in an address, or in any prose or title, is refused. */
+function livingIn(s, producer, address) {
   let t = String(s || '');
   if (producer) t = t.split(producer).join(' ');
   const f = ' ' + fold(t) + ' ';
+  const own = address && producer ? nameWords(producer) : [];
   const hits = [];
   people().names.forEach((n) => {
     if (producer && fold(n) === fold(producer)) return;
-    if (f.indexOf(' ' + fold(n) + ' ') >= 0) hits.push(n);
+    if (f.indexOf(' ' + fold(n) + ' ') < 0) return;
+    if (own.length && fold(n).split(' ').some((w) => own.indexOf(w) >= 0) && houseNamed(f, fold(n))) return;
+    hits.push(n);
   });
   const m = t.match(GS.LIVING);
   if (m) hits.push(m[0]);
@@ -243,7 +262,7 @@ function voiceProblems(rec, at) {
     const kind = pathKind(where);
     if (kind === 'url') {
       if (s) CF.urlProblems(s, where).forEach((p) => out.push(p));
-      const lv = livingIn(s.replace(/[-_/.]+/g, ' '), producer);
+      const lv = livingIn(s.replace(/[-_/.]+/g, ' '), producer, true);
       if (lv.length) out.push(where + ': the address names a living person (' + lv[0] + ')');
       return;
     }
@@ -684,6 +703,19 @@ function peopleTest() {
     const got = people0(r);
     if (!got.some((p) => p.indexOf('records[0].' + x[0] + ':') === 0)) out.push('peopleTest: ' + name + ' in ' + x[0] + ' was not refused');
   });
+  /* a house's trading name in an address: kept beside a house word where the producer carries the name, refused
+     without the word, under another house, and in prose */
+  const two = people().names.find((n) => { const w = fold(n).split(' '); return w.length === 2 && w[1].length >= 3 && ESTATE_WORDS.indexOf(w[1]) < 0 && people().names.filter((m) => (' ' + fold(n) + ' winery ').indexOf(' ' + fold(m) + ' ') >= 0).length === 1; });
+  if (!two) out.push('peopleTest: no two word name of people.json to test a trading name with');
+  else {
+    const slug = fold(two).split(' ').join('-'); const sur = fold(two).split(' ')[1];
+    const at = (producer, url, story) => { const r = JSON.parse(JSON.stringify(base)); r.producer = producer; r.producerId = ''; r.sources[0].url = url; if (story) r.story = story; return people0(r); };
+    const houseOf = sur.charAt(0).toUpperCase() + sur.slice(1) + ' Winery';
+    if (at(houseOf, 'https://example.org/wineries/' + slug + '-winery').length) out.push('peopleTest: the trading name ' + slug + '-winery in an address of ' + houseOf + ' was refused');
+    if (!at(houseOf, 'https://example.org/people/' + slug).length) out.push('peopleTest: ' + two + ' in an address with no house word was not refused');
+    if (!at('Another House', 'https://example.org/wineries/' + slug + '-winery').length) out.push('peopleTest: ' + two + ' in the address of another house was not refused');
+    if (!at(houseOf, 'https://example.org/page', 'In 1977 ' + two + ' took the winery on.').length) out.push('peopleTest: ' + two + ' in the prose of ' + houseOf + ' was not refused');
+  }
   return out;
 }
 
@@ -702,7 +734,7 @@ if (require.main === module) {
   if (arg === '--test') {
     const bad = peopleTest();
     bad.forEach((p) => console.log('schema --test: ' + p));
-    console.log(bad.length ? 'schema --test: FAILED' : 'schema --test: the people check passes a producerId copied from the plan and a minted id, and refuses a living name in the table, the story, a card, an option and an address');
+    console.log(bad.length ? 'schema --test: FAILED' : 'schema --test: the people check passes a producerId copied from the plan and a minted id, and refuses a living name in the table, the story, a card, an option and an address, and keeps a house\'s trading name in an address');
     process.exit(bad.length ? 1 : 0);
   }
   if (arg !== '--caps') { console.log('usage: node .scripts/flagships/schema.cjs --caps   (the caps; the validator is required by build-flagships.cjs)\n       node .scripts/flagships/schema.cjs --test   (the people check\'s own test)'); process.exit(arg === '--help' || arg === '-h' ? 0 : 2); }

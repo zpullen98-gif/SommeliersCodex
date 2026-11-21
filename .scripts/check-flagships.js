@@ -593,7 +593,7 @@ async function main() {
     const pre = BF.prefixProblems(JS, path.join(JS, 'data-flagships.js'));
     check('fl- is the tab\'s alone: no other file under js/ mints or names it (codex21\'s keyOwned guard the one allowed)', pre.length === 0, few(pre, 3));
     const living = [];
-    REC.forEach((r) => walk(r, r.key, (s, where) => { if (S.idPath(where)) return; const hit = S.livingIn(/\.url$/.test(where) ? s.replace(/[-_/.]+/g, ' ') : s, r.producer); if (hit.length) living.push(where + ': ' + hit.join(', ')); }));
+    REC.forEach((r) => walk(r, r.key, (s, where) => { if (S.idPath(where)) return; const hit = S.livingIn(/\.url$/.test(where) ? s.replace(/[-_/.]+/g, ' ') : s, r.producer, /\.url$/.test(where)); if (hit.length) living.push(where + ': ' + hit.join(', ')); }));
     Object.keys(WORDS).forEach((k) => { const hit = S.livingIn(WORDS[k], ''); if (hit.length) living.push('V58_WORDS.' + k + ': ' + hit.join(', ')); });
     check('nobody living of people.json (' + S.people().names.length + ' names) in any string a record ships or the layer shows, a house\'s own name kept, an id never read as prose', living.length === 0 && S.people().names.length > 100, few(living, 5));
     const pt = S.peopleTest();

@@ -91,7 +91,9 @@ a file. Commit after each group, so nothing is lost if you are cut off.
 - **Nobody living is named.** A house keeps its name (Gaja, Harlan Estate, Krug, Egon Müller, Álvaro Palacios), but a
   living person is never named in prose: say the family, the founder's great grandson, the cellar master, the
   founder's heir, the new owners. Never name a living owner, winemaker, consultant or critic, not in a source's title
-  and not in its address either. `people.json` lists names the lint refuses; it grows as checkers find more.
+  and not in its address either, save where the address files the house under the name it trades by: a listed name
+  that carries the house's own name and stands against a house word (ioannis-hatzis-winery for Hatzis Winery) is the
+  house's and is kept. `people.json` lists names the lint refuses; it grows as checkers find more.
 - **The long dead are named with their dates**, once, where the story first meets them: "Joseph Krug (1800 to
   1866)", "Baron James de Rothschild (1792 to 1868)". Elsewhere in the record the name alone will do. If you cannot
   find a person's dates in two sources, describe the person instead ("a nephew of its owner").
