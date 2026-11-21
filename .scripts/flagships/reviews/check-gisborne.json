@@ -1,0 +1,116 @@
+{
+ "group": "gisborne",
+ "chunk": "w23",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 17,
+  "perRecord": { "millton": 4, "matawhero": 4, "vinoptima": 2, "tw-wines": 2, "lindauer": 3, "swap candidates": 2 },
+  "note": "Seventeen searches of twenty eight, eleven unspent. Two were restricted to a house's own domain (millton.co.nz, lindauer.co.nz) and one to matawhero.co.nz with Rural News and Raymond Chan; they are read as primary through their summaries. Others blocked the author's main sources so the second source would be independent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: founding, people and dates, grapes, sites, making, ageing, serving, label words, every beat of the story, cards and questions; then the house rules.",
+  "Where a search contradicted the record it was set right with its source; where a detail was in one source only, or none, it was cut or said with less.",
+  "Writers' own sites met among the results (Wine with Seth, Wine Anorak, Vinography, Raymond Chan Wine Reviews, Celia Hay) are not cited in the fragment as a second source; the author's Vinography source was cut."
+ ],
+ "records": [
+  {
+   "key": "millton",
+   "searches": 4,
+   "tested": [
+    "Founding of 1984 on the Te Arai River near Manutuke: the house's history page and Rural News. Sound.",
+    "Opou planted in 1969 by the father of one founder: Wine Anorak, Grokipedia and the house; replanted 1983. The parents, the sheep station and the 1984 handover not found. Changed.",
+    "BioGro certification of 1989 as the country's first: the house (first organic and biodynamic wine estate), Rural News (first grape land to gain BioGro). Sound. Demeter year: 1990 or 2009. Left out.",
+    "Hand picking in passes and botrytis from the river's autumn mists: the house's notes of 2025 (three selections), an older listing (up to four), the 2007 note. Changed to up to four.",
+    "Demi-muids of 600 litres beside steel: bottlebooks and a merchant's note. Sound, reworded.",
+    "Retirement and last harvest of 2025: Vino Fino and Advintage quoting the family, 41 vintages. Sound, the last harvest added."
+   ],
+   "changes": [
+    { "field": "wine.sites", "was": "planted from 1984, silt loam a few kilometres from the sea, farmed without irrigation", "now": "the home block by the river where the house was founded in 1984, its autumn mists", "why": "planting year, soil and dry farming in no source read", "sources": ["https://www.millton.co.nz/our-history"] },
+    { "field": "wine.making", "was": "as many as four passes; 600 litre casks of the Loire size", "now": "up to four passes; demi-muids of 600 litres", "why": "the number of passes varies by year; the cask named as the sources name it", "sources": ["https://nzwinecatalog.bottlebooks.me/products/by-exhibitor/57a1f219d5d44bac0b72e50b/5fe37ad4a206bc7f9daa46c0/", "https://www.differentdrop.com/products/2025-millton-te-arai-vineyard-chenin-blanc"] },
+    { "field": "story", "was": "the parents planting Opou on their sheep station, among the region's early growers; the couple taking over Opou in 1984", "now": "the father of one founder planting Opou in 1969; the settlers' planting of 1871 as the house's account; the 2025 harvest as the last", "why": "the parents, the sheep station and the handover in no source read; 1871 is the house's own claim", "sources": ["https://www.millton.co.nz/our-history", "https://www.wineanorak.com/newzealand/newzealandsvineyards_part5_MilltonEstate.htm", "https://vinofino.co.nz/product/millton-te-arai-chenin-blanc-2025"] },
+    { "field": "traps, cards, sources", "was": "Te Arai planted from 1984; the cask borrowed from the Loire; Glengarry", "now": "Te Arai where the house began; the demi-muid; the house's history page", "why": "follows the changes above", "sources": ["https://www.millton.co.nz/our-history"] }
+   ],
+   "open": ["The retirement rests on merchants quoting the family; no first hand statement read.", "Demeter year left out."]
+  },
+  {
+   "key": "matawhero",
+   "searches": 4,
+   "tested": [
+    "Vineyard planted by the father in the 1960s (1968 in one source), first wines under the label in 1975 by the son: Matawhero, Rural News, Glengarry, NZ Herald. Sound.",
+    "Sale of 2008 to a local family: Glengarry, Raymond Chan, Matawhero. Sound.",
+    "The son's death in 2023: the Gisborne Herald alone dates it (March 2023). Cut.",
+    "The Irwin Chardonnay first released in 2017: Raymond Chan gives an inaugural 2016 vintage, a 2017 news item a release that month, the house timeline 2011. Cut the year.",
+    "The Gewürztraminer's vineyard and soil: Riverpoint, silt loam over clay (the winery's sheet via Black Market, Reserve Wines). Hexton Hills and Patutahi not found. Changed.",
+    "Glass: lychee, nashi pear, Turkish delight, spice and ginger (the winery's notes of 2023 and 2024); Cuisine notes sweetness balanced by acid. Changed to nearly dry."
+   ],
+   "changes": [
+    { "field": "wine.sites", "was": "estate fruit from the flats; Single Vineyard sites at Riverpoint, Hexton Hills and Patutahi", "now": "the home vineyard at Riverpoint, planted in the 1960s, silt loam over clay", "why": "only Riverpoint is tied to the Gewürztraminer in the sources read", "sources": ["https://www.blackmarket.co.nz/10200/matawhero-single-vineyard-gisborne-gewurztraminer-2017", "https://www.reservewines.co.uk/products/matawhero-single-vineyard-gewurztraminer-2020"] },
+    { "field": "wine.glass", "was": "dry or nearly dry", "now": "nearly dry", "why": "Cuisine notes sweetness balanced by the acid line", "sources": ["https://www.cuisine.co.nz/wine/matawhero-single-vineyard-gewurtztraminer-2025/"] },
+    { "field": "story", "was": "the son died in 2023; the first Irwin Chardonnay in 2017; a house found run down", "now": "the death cut; the Irwin Chardonnay without a year, of the Mendoza clone the father imported; the estate revitalised and replanted; the father's imported vines", "why": "the death rests on one source; the Irwin year conflicts three ways", "sources": ["https://matawhero.co.nz/about-us/", "https://raymondchanwinereviews.co.nz/features/50-years-of-inspired-vision-behind-new-zealands-best-kept-secret/", "https://grape-to-glass.com/index.php/matawhero-irwin-chardonnay-21/"] },
+    { "field": "others, questions, sources", "was": "Irwin barrel fermented, made in fit years, first released 2017; a 2017 distractor; Glengarry", "now": "Irwin of the Mendoza clone from the Golden Slope; a 2001 distractor; the house's About us page", "why": "unsourced details cut and the unsettled year kept out of the question", "sources": ["https://glengarrywines.co.nz/items/10780/matawhero+irwin+chardonnay"] }
+   ],
+   "open": ["The first Gewürztraminer planting of the country stays untold (Matawhero against Nobilo).", "The making rests on the house's vintage notes alone."]
+  },
+  {
+   "key": "vinoptima",
+   "searches": 2,
+   "tested": [
+    "Founded 2000, blocks of 2000 and 2007, receivership in 2018 by a secured creditor, about 100,000 litres for tender: Stuff, NZ Herald, Scoop. Changed where the record said otherwise.",
+    "First harvest 2003: Stuff gives 2003, the NZ Herald quotes 2004. Cut the year.",
+    "Glass: Delectable (off dry, seeming sweeter), Wine.com's winemaker note of the 2004 (honey), a tasting of the 2006 (rose, Turkish delight). No lychee or ginger found. Changed."
+   ],
+   "changes": [
+    { "field": "story", "was": "Nobilo's first commercial Gewürztraminer of 1972; rare outside Alsace; first harvest 2003; well over a hundred thousand litres; creditors' claims of millions", "now": "the family winery alone; the first wines a few years after planting; about a hundred thousand litres; a secured creditor calling in the receivers; the stock offered by tender", "why": "the first is contested; Alsace is no single variety region; the first vintage conflicts; the claims in no source read", "sources": ["https://www.stuff.co.nz/business/108186943/receiver-of-top-priced-gewrztraminer-vineyard-has-100000-litres-available", "https://www.nzherald.co.nz/business/vinoptima-receivership-set-to-lead-to-sale-of-100000-litres-of-premium-gewurztraminer/CSXATIEOWHHVNWTHLFLYCNH6I4/"] },
+    { "field": "wine.glass", "was": "lychee, rose water, ginger, honey, orange peel, oily", "now": "rose, Turkish delight, honey, ripe pear, seeming sweeter than it is", "why": "notes found for the wine itself", "sources": ["https://delectable.com/wine/vinoptima/ormond-reserve-gewurztraminer", "https://www.wine.com/product/vinoptima-ormond-gewurztraminer-reserve-2004/517475"] },
+    { "field": "table, sites, making, cards, questions", "was": "its one wine; ripe alcohol; story question on 2003", "now": "its principal wine; the 2007 block; the receivership year as the story question", "why": "a late harvest wine was made beside it; first vintage unsettled", "sources": ["https://www.scoop.co.nz/stories/BU1810/S00786/pioneering-vineyard-on-market-in-receivership-sale.htm"] },
+    { "field": "sources", "was": "The Drinks Business (address names the living founder), Vinography (a writer's site), The Real Review", "now": "Stuff, NZ Herald, Wine.com", "why": "the house rules on sources", "sources": [] }
+   ],
+   "open": ["Swap accepted: the record stands only until the swap is applied."]
+  },
+  {
+   "key": "tw-wines",
+   "searches": 2,
+   "tested": [
+    "Fishing trip to Lake Waikaremoana in 1997 and first wines of the 1998 vintage: the house's page, the Food and Wine school's tour, Glengarry. Sound.",
+    "The Golden Slope: the Hexton and Waiharere foothills likened to the Côte d'Or; neighbouring vineyards on Back Ormond Road. Changed.",
+    "The Reserve's making: French and American barriques (2024), French, Hungarian and American (2025, and the 2014), indigenous and selected yeast, full malolactic. Changed."
+   ],
+   "changes": [
+    { "field": "wine.sites", "was": "a strip of about five kilometres; picked by hand", "now": "neighbouring vineyards on Back Ormond Road, named the Golden Slope after the Côte d'Or", "why": "length and hand picking in no source read", "sources": ["https://twwines.co.nz/", "https://www.foodandwine.co.nz/about-us/news/gisborne-wine-and-food-tour/"] },
+    { "field": "wine.making", "was": "French, American and Hungarian oak, wild yeast, every barrel through malolactic", "now": "French and American, Hungarian in some years, partly indigenous yeast, full malolactic", "why": "the oak mix varies by vintage and the yeast is a mix", "sources": ["https://www.blackmarket.co.nz/products/tw-reserve-gisborne-chardonnay-2025", "https://www.blackmarket.co.nz/products/tw-wines-gisborne-chardonnay-2024"] },
+    { "field": "story, others", "was": "grapes winning prizes for others; a consultant and new French barrels; remains small; equal parts in the cool of the morning; made in fit years", "now": "advised by local winemakers, a company formed, winery space found; built as a small grower's label; plain notes", "why": "in no source read; present tense reworded as history", "sources": ["https://twwines.co.nz/"] },
+    { "field": "sources", "was": "Caro's (address names both living founders), Frommer's", "now": "Black Market, the house's own page", "why": "the house rules on sources", "sources": [] }
+   ],
+   "open": ["Plan's wine stays TW Chardonnay; the record teaches the Reserve, as the author proposed. The read together agent may set the label's words."]
+  },
+  {
+   "key": "lindauer",
+   "searches": 3,
+   "tested": [
+    "Launch for Christmas 1981 by Montana; Gottfried Lindauer 1839 to 1926: Drinks International, Wine Searcher's brand page, Te Ara. Sound.",
+    "The 2010 sale: a consortium of Lion Nathan and Indevin, Indevin taking the Gisborne winery and vineyards and making the wine under contract: Drinks International, Harpers, City AM. Changed in wording.",
+    "The Classic's fruit: the brand's Classic Brut page gives South Australia; Falstaff and Cuisine list Gisborne and Hawke's Bay. The author's Brut Cuvée page is the Special Reserve's. Changed.",
+    "The method: the brand gives bottle fermentation and 24 months on lees for the Special Reserve; Cuisine says many Lindauer wines are made in tank. The Classic's method not found. Changed."
+   ],
+   "changes": [
+    { "field": "wine.sites, appellation, making, glass", "was": "Gisborne and Hawke's Bay fruit; traditional method, a year or more on lees; toast and vanilla", "now": "both accounts of the fruit, read the back label; the method unsettled; toast and vanilla cut", "why": "the brand's own page contradicts the record", "sources": ["https://www.lindauer.co.nz/wine/classic-brut/", "https://www.lindauer.co.nz/wine/brut-cuvee/", "https://www.cuisine.co.nz/wine/lindauer-vintage-series-brut-cuvee-2017-gisborne-2/"] },
+    { "field": "table, story", "was": "bottle fermented from Gisborne and Hawke's Bay; Gisborne's role as source of sparkling base wine; renamed Brancott in 2010", "now": "a dry blend; the Indevin share of 2010; the rename without a year; the lesson of the back label", "why": "the fruit and method unsettled; the base wine role in no source read", "sources": ["https://drinksint.com/news/fullstory.php/aid/1892/Pernod_completes_sale_of_Lindauer.html"] },
+    { "field": "questions, traps, sources", "was": "the bubbles question; Tastingbook, Wikipedia", "now": "the grapes question; a trap on the Special Reserve; the brand's two pages, Drinks International, Cuisine", "why": "the method is not settled", "sources": [] }
+   ],
+   "open": ["Swap accepted: the record stands only until the swap is applied.", "Which bottling the New Zealand Classic Brut Cuvée is, and its method."]
+  }
+ ],
+ "swaps": [
+  { "from": "vinoptima", "ruling": "accepted", "why": "Vinoptima went into receivership in 2018, was sold and its Gewürztraminer vines were reported pulled out in 2022 (NZ Herald, The Country); the plan's own note says drop the pick if it no longer makes the wine. A guest will not meet a new Ormond Reserve.", "to": "Bushmere Estate, flagship its Chardonnay (Classic Chardonnay on the label as met in one review), recommended: New Zealand Winegrowers' own winery listing gives Chardonnay planted in 1972 on the estate, with Montepulciano planted by a mislabelling; Cuisine gives its own label from 2004 or 2005 after grape contracts ended. Kirkpatrick Estate of the Patutahi Plateau is the second choice, its founding year (2003) in one directory only. Either needs its own author and refuter before it stands." },
+  { "from": "lindauer", "ruling": "accepted", "why": "The brand's own Classic Brut page gives South Australian fruit, its method is unsettled, and its Gisborne tie is history (the winery Indevin took in 2010). The flagship no longer speaks for Gisborne.", "to": "Kirkpatrick Estate of Patutahi, or another Gisborne grower's label, at the read together agent's choice; if Bushmere takes Vinoptima's place, Kirkpatrick takes this one. If the agent prefers to keep a sparkling voice, the Lindauer Special Reserve Brut Cuvée, which the brand gives as Gisborne and Hawke's Bay and bottle fermented, would be the honest pick, but it is still a brand of Lion's, not a Gisborne house." }
+ ],
+ "livingNamesMet": ["James Millton", "Annie Millton", "Richard Searle", "Kirsten Searle", "Kim Crawford", "Nick Nobilo", "Andrew McKay", "Paul Tietjen", "Geordie Witters", "Geoff Sinnott", "David Egan", "Shona Egan", "Simon Kirkpatrick"],
+ "deadMet": ["Bill Irwin (the Matawhero founder, called the late in several sources; no dates found)", "Denis Irwin (death in March 2023 by the Gisborne Herald alone; not named)", "Gottfried Lindauer (1839 to 1926, Te Ara)"],
+ "codexTension": [
+  "js/data-regions.js, the Gisborne region record: 'Early-picked Chardonnay and Pinot Noir from the flats feed the big companies' sparkling lines, Lindauer above all'. The brand's own Classic Brut page gives South Australian fruit; the Special Reserve names Gisborne and Hawke's Bay. Reported, not edited.",
+  "js/data-regions.js, the Gisborne producers line for Lindauer: 'built on Gisborne base wine'. Not confirmed for the Classic by any source read. Reported, not edited.",
+  "The region's producers line for Millton speaks of the country's first certified organic estate: the house and Rural News support it (BioGro, 1989). No tension."
+ ]
+}
