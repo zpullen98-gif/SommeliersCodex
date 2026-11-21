@@ -1,0 +1,229 @@
+{
+ "group": "samos",
+ "chunk": "w29",
+ "batch": "B",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 25,
+  "perRecord": {
+   "samos-union": 7,
+   "nopera": 4,
+   "vakakis": 4,
+   "coutsodontis": 4,
+   "hatziioannou": 4
+  },
+  "note": "Twenty five searches of a share of twenty eight, none the author's. The appellation searches (types, Grand Cru, dry wine, pezoules) are counted with the union. Searches restricted to samoswine.gr, winesofgreece.org, vakakiswines.gr (twice), coutsodontiswinery.gr (twice), hatziioannouestate.gr (twice), samoswineroutes.gr and two merchants' domains; the house domains read as primary for the houses' own facts. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "What a search contradicted was set right with its source; what rested on one secondary source was cut; a house's claim about itself stays hedged as its account."
+ ],
+ "appellation": {
+  "tested": "PDO Samos: White Muscat alone, sweet only (vin naturellement doux of sun dried grapes, vin doux naturel or vin de liqueur, fortified, Grand Cru above 400 metres), zone of 1970, the grape name optional on the label: Wines of Greece and the British register of protected names, by search. Every record's appellation lines and every 'dry wine stands outside the appellation' line stand.",
+  "note": "Two secondary glossaries claim the PDO covers dry styles; Wines of Greece lists only the sweet types and the PGI Slopes of Ambelos for dry Muscat, so the records keep Wines of Greece."
+ },
+ "records": [
+  {
+   "key": "samos-union",
+   "searches": 7,
+   "verdict": "changed",
+   "tested": [
+    "1934 and twenty six local co-operatives: Wines of Greece's EOSS page and a Greek travel guide, by search; kept.",
+    "Law 6085 of 1934 binding growers through their co-operatives to deliver must and grapes to the union: the Ministry of Agriculture's own copy of the law (title, by search), BeverageDaily and a Samos regional source; kept.",
+    "Merchants who bought must and made the wine before 1934, the growers squeezed: Samosin and a Greek travel guide, by search; kept.",
+    "The two wineries at Malagari and Karlovasi since the founding: Wines of Greece's EOSS page; kept.",
+    "The only producer until 2016, private and co-operative wineries since: the Wines of Greece PDO page; kept. The European Commission's request of July 2016: BeverageDaily and a Greek farm paper; kept.",
+    "The appellation zone of 1970: the British register of protected names and Samosin; kept, the PDO label line reworded so the European mark is not dated to 1970.",
+    "The Vin Doux filed among the union's vins de liqueur and served at 8 to 10 degrees: the union's own pages, by search on its domain; kept. Fermentation stopped at about 200 grams a litre: a London critic's article and a Decanter review; about 15 per cent: a Greek travel guide and a Canadian monopoly listing; kept.",
+    "Grand Cru from vineyards above 400 metres: Wines of Greece; kept. Pezoules on Karvounis, also called Ampelos: a wine encyclopaedia, Wines of Greece and a Greek news site; kept."
+   ],
+   "changed": [
+    {
+     "field": "wine.label[2].means",
+     "was": "held by Samos since its recognition in 1970",
+     "now": "Samos was recognised as an appellation in 1970",
+     "why": "The European Protected Designation of Origin dates from 2009; what dates from 1970 is the Greek appellation zone.",
+     "sources": [
+      "https://www.gov.uk/protected-food-drink-names/oinos-phusikos-glukus-vin-naturellement-doux"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the one a server meets most often ... It is the measure of the appellation, the bottle against which the union's own Grand Cru and Nectar and the newer private houses are tasted.",
+     "now": "It keeps its sweetness by fortification, where the union's Nectar takes its sugar from grapes dried in the sun.",
+     "why": "The measure of the appellation is a judgement no source makes; the replacement is the appellation's own distinction of types.",
+     "sources": [
+      "https://winesofgreece.org/pdo/pdo-samos/"
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "about 200 grams a litre in the reviews read",
+     "now": "about 200 grams a litre by a critic's account and a Decanter review",
+     "why": "Names the two sources; a Canadian listing gives a lower sugar figure, so the figure stays attributed.",
+     "sources": [
+      "https://www.jancisrobinson.com/articles/bitter-sweet-samos",
+      "https://www.decanter.com/wine-reviews/greece/aegean-islands/uwc-samos-samos-vin-doux-aegean-islands-greece-2022-81758/"
+     ]
+    }
+   ],
+   "open": [
+    "The union's own Vin Doux page is headed Vin Doux Naturel while filing the wine among its vins de liqueur; the record keeps the union's category. A Canadian listing gives 87 grams a litre of sugar against the critic's 200.",
+    "Serve keeps the union's 8 to 10 degrees, above the Codex's 6 to 8 for sweet whites; the integrator may prefer the Codex figure."
+   ]
+  },
+  {
+   "key": "nopera",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "The family from Malta in the middle of the nineteenth century, the Noilly Prat sale, Karlovasi: a Greek merchant, a British importer and a travel guide, all relaying the house; kept, hedged as the house's account.",
+    "2013: a British importer (the first modern private winery in 2013) and the wine routes guide; kept in the story with founded empty, as the author left it.",
+    "Three organic vineyards: two merchants; kept.",
+    "Sun drying and nineteen months in small French oak of light and medium toast: a Greek merchant for the 2014 and a British importer for the 2017; kept. A Decanter entry calls the 2017 unoaked and a critic gives about two years for the 2014 (open).",
+    "The tasting note: the British importer's own note was found and the author's candied apricot, dried fig, acacia and rose petal were not; rewritten."
+   ],
+   "changed": [
+    {
+     "field": "wine.glass",
+     "was": "Amber gold, with candied apricot, dried fig and candied orange peel over honey, acacia and rose petal, and a nutty note of ripe hazelnut",
+     "now": "Deep gold, with ripe hazelnut and candied orange peel over baked Muscat grapes and a note of pain perdu, by a British importer's sheet",
+     "why": "Acacia, rose petal and dried fig were found in no note of the Vintage; the importer's own note was.",
+     "sources": [
+      "https://www.maltbyandgreek.com/nopera-vintage-sweet-muscat"
+     ]
+    },
+    {
+     "field": "table",
+     "was": "with candied apricot, dried fig and hazelnut over honey",
+     "now": "with hazelnut and candied orange peel",
+     "why": "The table follows the corrected glass.",
+     "sources": [
+      "https://www.maltbyandgreek.com/nopera-vintage-sweet-muscat"
+     ]
+    }
+   ],
+   "open": [
+    "The house's own page was not reached; the family history is two merchants and a guide relaying the house.",
+    "A Decanter entry marks the 2017 unoaked, against the importer's nineteen months in French oak."
+   ]
+  },
+  {
+   "key": "vakakis",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "2011, against the law of 1934: Greek merchant, a gastronomy tour operator and travel guides; kept. One British tour operator gives 1976 and a second generation (open).",
+    "M. Lakka, four kilometres south of Karlovasi, with winemaking and bottling: the house's own winery page, by search; kept.",
+    "Organic vineyards planted 2004 to 2012, the first large scale vineyards in straight rows on Samos, Black Muscat near extinction promoted: the house's vineyards and winery pages, by search; kept, hedged as the house's claims.",
+    "Epogdoon the nine to eight interval of Pythagorean music: a Greek merchant quoting the house; it is the standard sense of the Greek word; kept.",
+    "Pythagorean Epogdoon Barrel under Samos: a London critic's tasting record of the 2017 and the house's page; kept. Sun dried Muscat aged 24 to 36 months in French oak: the house's English and Greek pages; kept.",
+    "Eight kilos of grapes to a litre: one Greek merchant only, not found on the house's pages; cut."
+   ],
+   "changed": [
+    {
+     "field": "wine.making",
+     "was": "partly dried in the sun ... about eight kilos of grapes give one litre, by the house as a Greek merchant quotes it",
+     "now": "laid in the sun after picking, by the house's account ... (the yield figure cut)",
+     "why": "The yield figure rests on one merchant; the house's pages say sun dried, not partly.",
+     "sources": [
+      "https://vakakiswines.gr/en/products/pythagorean-epogdoon-barrel/"
+     ]
+    },
+    {
+     "field": "table, story",
+     "was": "partly dried in the sun; partly sun dried Muscat",
+     "now": "dried in the sun; sun dried Muscat",
+     "why": "Matches the house's own words.",
+     "sources": [
+      "https://vakakiswines.gr/en/products/pythagorean-epogdoon-barrel/"
+     ]
+    }
+   ],
+   "open": [
+    "A tour operator dates the house to 1976 with a second generation at work; founded keeps 2011, the year the house and the merchants give for its first wine.",
+    "The tasting note rests on one Greek merchant's sheet, hedged as its note."
+   ]
+  },
+  {
+   "key": "coutsodontis",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "2016 at Marathokampos among stone terraces: the house's own pages and a travel listing; kept.",
+    "The founders: the house's own page says two brothers who studied oenology, following their father, an oenologist; the record's father and two sons founding together was set right.",
+    "PDO Samos, Muscat Blanc, sun dried, pressed, fermented in stainless steel, at least three years in barrel: the house's product page, by search on its domain; kept.",
+    "The range: dry White Muscat, orange wine and pétillant naturel all on the house's pages; kept.",
+    "A tasting note: the house's sheet gives dark amber and only general scents, which the house rules refuse as family words."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "A family of oenologists, a father and his two sons as the island's wine routes guide tells it, founded the winery in 2016",
+     "now": "Two brothers who studied oenology, following their father, himself an oenologist, founded the winery in 2016, by the house's account",
+     "why": "The house's own page names the brothers as founders.",
+     "sources": [
+      "https://www.coutsodontiswinery.gr/"
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "No tasting note from the house, a critic or a merchant was found",
+     "now": "Dark amber, by the house's own sheet, which names its scents only in general",
+     "why": "The house's sheet was found; its colour stands and its general scents are not taught.",
+     "sources": [
+      "https://www.coutsodontiswinery.gr/about-3-3"
+     ]
+    }
+   ],
+   "open": [
+    "No merchant, critic or competition listing of the wine was found; the record rests on the house's pages."
+   ]
+  },
+  {
+   "key": "hatziioannou",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "2019 at Rizovrachos, Mytilinii, a father and his two sons, one an oenologist: the island's wine routes guide and the estate's own home page; kept.",
+    "The family tradition since the nineteenth century: the estate's own page only; kept, hedged as the estate's account.",
+    "Organic, dry farmed, own vineyards only: the estate's own page; kept.",
+    "Anavasis listed as P.O.P. Samos with notes of orange peel, bergamot and peach: the estate's own page, by search; glass filled with the estate's note. Unoaked: the Concours Mondial de Bruxelles result; kept.",
+    "Which sweet type Anavasis is: not stated on any page read (open)."
+   ],
+   "changed": [
+    {
+     "field": "wine.glass",
+     "was": "No tasting note from the estate, a critic or a merchant was found",
+     "now": "Orange peel, bergamot and peach, by the estate's own note",
+     "why": "The estate's own page gives the note.",
+     "sources": [
+      "https://hatziioannouestate.gr/en/"
+     ]
+    }
+   ],
+   "open": [
+    "Whether Anavasis is sun dried or fortified is still unknown; the estate's page gives no sugar or type.",
+    "The estate writes its founders' surname Hatzigiannis on one page; the house name follows the estate's and the guide's Hatziioannou."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "Georgios Hatziioannou, also Hatzigiannis (the Hatziioannou father and co-founder)",
+  "Themistocles Hatziioannou, also Themistoklis (his son)",
+  "Evangelos Hatziioannou (his son)",
+  "The Vakakis founder, named on merchants' and travel pages (Triantafillio Chatzistamatiou Vakaki on one listing)",
+  "The Coutsodontis brothers and their father, not named on the pages read",
+  "The Nopera descendant who founded the winery, not named on the pages read"
+ ],
+ "swaps": [],
+ "swapNote": "The author proposed no swap; none is called for. Each house is a real producer of PDO Samos with a wine under the appellation, and the thin region rule is stated plainly. Hatziioannou remains the weakest on sources, but the estate's own page lists Anavasis as P.O.P. Samos, so the pick stands.",
+ "codexTension": [
+  "The region record (REGIONS samos) calls the union's Vin Doux fortified early and the Vin Doux Naturel a separate type; the union's own Vin Doux page is headed Vin Doux Naturel while filing it among its vins de liqueur. Reported, not edited.",
+  "The region record has the terraces climbing Mount Ampelos to about 800 metres; a wine encyclopaedia gives 900 metres and the Hatziioannou estate up to 1,000. Reported, not edited.",
+  "The region record's 'the great Greek name for sweet Muscat' reads as a judgement under the flagship house rules. Reported, not edited."
+ ],
+ "nopeopleAdded": "people.json not edited by this refuter: the task reserves it for the merge agent, the read-together agent, the gates agent and the integrator; the read-together agent should add the three Hatziioannou names above."
+}
