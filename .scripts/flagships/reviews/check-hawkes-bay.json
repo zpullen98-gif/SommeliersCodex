@@ -1,0 +1,140 @@
+{
+ "group": "hawkes-bay",
+ "chunk": "w24",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 22,
+  "perRecord": { "te-mata": 6, "craggy-range": 4, "mission-estate": 3, "trinity-hill": 2, "church-road": 6, "swap": 1 },
+  "note": "Twenty two searches of twenty eight, six unspent. Searches restricted to temata.co.nz, craggyrange.com and missionestate.co.nz are read as the house through their summaries; teara.govt.nz as the national encyclopedia. Some searches blocked the author's own sources (decanter.com, craggyrange.com, Wine Anorak, Wine With Seth) so the second source would be independent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: founding, people and dates, grapes, sites, making, ageing, serving, label words, every beat of the story, the cards and the questions; then the house rules.",
+  "Where a search contradicted the record it was set right with its source; where a detail stood in one source or none it was cut or said with less.",
+  "Writers' own sites (Wine Anorak, Wine With Seth, Cameron Douglas, Raymond Chan, Jane Anson) met among the results are not cited in the fragment; the author's Wine Anorak and Wine With Seth sources were replaced."
+ ],
+ "records": [
+  {
+   "key": "te-mata",
+   "searches": 6,
+   "tested": [
+    "Bernard Chambers 1859 to 1931, born at Te Mata, sheep farmer: Te Ara biography. Sound.",
+    "Vines from 1892, Pinot Noir cuttings among the first: Te Ara and the house; the cuttings came from the Marist mission at Taradale. Sharpened.",
+    "First wine by 1895: Te Ara (March 1895); the house gives 1894 for its first official vintage and 1896 as its founding. Kept as Te Ara, 1896 as the founding (the library's year).",
+    "Largest producer by 1910: Te Ara's Wine entry (1910) and the house (1909). Sound.",
+    "Sale of 1917: Te Ara, October 1917, the winery, stocks and part of the vineyard, most of the station five months later; the house and Wikipedia say 1919. Changed to Te Ara's terms.",
+    "Revival of 1974: Te Ara and the house. Sound.",
+    "First Coleraine 1982, single vineyard until 1989, named for the vineyard and family home, itself named for the Northern Irish town an ancestor was born in: the house, Wilson Daniels, Hawke's Bay Today. Changed.",
+    "Oak: the house's own article gives 18 to 20 months with around 30 per cent new; a critic's summary predominantly new. Mostly new cut.",
+    "Decanter Wine Legend for the 1998 in 2017: the house's release (August 2017 issue) and Hawke's Bay Today; first or only New Zealand wine so named in both, told as the house's account. Sound, hedged."
+   ],
+   "changes": [
+    { "field": "story", "was": "in 1917 Chambers sold the winery and most of the vineyard", "now": "sold the winery, its stocks and part of the vineyard, and most of the station soon after", "why": "Te Ara's own terms", "sources": ["https://teara.govt.nz/en/biographies/3c9/chambers-joseph-bernard"] },
+    { "field": "story", "was": "Pinot Noir cuttings among the first", "now": "Pinot Noir cuttings from the Marist mission at Taradale among the first", "why": "the source of the cuttings in Te Ara", "sources": ["https://teara.govt.nz/en/biographies/3c9/chambers-joseph-bernard"] },
+    { "field": "wine.label[0].means and story", "was": "named for the town in Northern Ireland from which one founding family came", "now": "the vineyard and family home it first came from, named for the Northern Irish town where an ancestor was born; a single vineyard wine until 1989", "why": "the name is the vineyard's and the home's; the ancestor was a grandfather born there", "sources": ["https://www.temata.co.nz/coleraine-a-new-era/", "https://wilsondaniels.com/wine/coleraine-hawke-s-bay/", "https://www.nzherald.co.nz/hawkes-bay-today/news/havelock-north-wine-coleraine-98-gains-legend-status/ELY2UXX623L5YNB3QMROYAAI4Q/"] },
+    { "field": "wine.sites", "was": "free draining slopes, no word of the single vineyard", "now": "north facing slopes; until 1989 from the Coleraine vineyard alone", "why": "free draining in no source read; the single vineyard history in the house and a merchant", "sources": ["https://www.temata.co.nz/coleraine-a-new-era/", "https://wilsondaniels.com/wine/coleraine-hawke-s-bay/"] },
+    { "field": "wine.making", "was": "French oak barriques, mostly new", "now": "French oak barriques, new and seasoned", "why": "the house gives around 30 per cent new", "sources": ["https://www.temata.co.nz/coleraine-a-new-era/"] },
+    { "field": "story, cards[1].back", "was": "the first New Zealand wine it so named", "now": "by the house's account the first New Zealand wine it so named", "why": "a claim of a first resting on the house and the local press", "sources": ["https://www.temata.co.nz/decanter-uk-names-te-mata-coleraine-98-new-zealands-first-wine-legend/"] },
+    { "field": "sources", "was": "Wikipedia: Te Mata Estate; Wilson Daniels", "now": "the house's Wine Legend release; Hawke's Bay Today", "why": "Wikipedia carries the 1919 sale the record does not follow; five sources at most", "sources": [] }
+   ],
+   "open": ["The house's 1919 against Te Ara's 1917 for the sale.", "The house's first vintage of 1894 against Te Ara's 1895."]
+  },
+  {
+   "key": "craggy-range",
+   "searches": 4,
+   "tested": [
+    "Founded 1998, an Australian family with a Master of Wine as partner: Decanter, Kobrand, Ratcliffe and the house's vineyard page (bought and first planted 1998). Sound; the region record's 1997 should read 1998.",
+    "First commercial vintage 2001 with Le Sol, Sophia and The Quarry: Decanter and a merchant. Sound.",
+    "Gimblett Gravels association of 2001, trademark, soil defined, the 1867 flood, a first for the New World as the association believes: the association, geotrips and others. Sound, hedged as written.",
+    "Making: the house's sheets of 2021 to 2024 give whole bunches from none to 65 per cent, indigenous and inoculated yeast by vintage, a French oak cuve and open steel, 24 to 28 days on skins, 17 months in French and Austrian barriques, demi-muids and puncheons, 32 to 45 per cent new. Changed.",
+    "Ageing: no source gave the house's fifteen years. Changed."
+   ],
+   "changes": [
+    { "field": "wine.making", "was": "native yeast; a share of whole bunches every vintage; French oak, concrete and wooden vats; some three weeks on skins", "now": "often native yeast and a share of whole bunches from none to about two thirds; French oak vats and open steel; three to four weeks on skins; Austrian barriques, demi-muids or puncheons", "why": "the house's vintage sheets", "sources": ["https://craggyrange.com/cdn/shop/files/2023_Le_Sol_Tasting_Note.pdf", "https://craggyrange.com/product/le-sol-gimblett-gravels-hawkes-bay/"] },
+    { "field": "wine.glass", "was": "a smoky, savoury edge from the whole bunches", "now": "a smoky, savoury edge", "why": "some vintages have no whole bunches", "sources": ["https://craggyrange.com/product/le-sol-gimblett-gravels-hawkes-bay/"] },
+    { "field": "wine.ageing", "was": "more open on release than it once was; the house expects fifteen years and more", "now": "open within a few years of release, savoury depth over a decade and more", "why": "neither claim found", "sources": [] },
+    { "field": "questions[0].exp", "was": "fermented with a share of whole bunches that changes by vintage", "now": "in many vintages fermented with a share of whole bunches", "why": "as the making", "sources": ["https://craggyrange.com/product/le-sol-gimblett-gravels-hawkes-bay/"] }
+   ],
+   "open": []
+  },
+  {
+   "key": "mission-estate",
+   "searches": 3,
+   "tested": [
+    "Pakowhai 1851, Meeanee 1858: Te Ara and the Cyclopedia of New Zealand (Meeanee founded 1858). Sound.",
+    "The move to Greenmeadows: the house says its main house was cut into eleven sections in late 1910 and hauled nearly five kilometres by traction engine; Te Ara says the seminary moved in 1911. Changed: the record had the seminary sawn into eleven pieces in 1911.",
+    "The cottage carried to Meeanee in 1858: in no source read. Cut.",
+    "A French brother trained in the Loire selling wine beyond the mission: not found; the house says Brother Cyprien Huchet arrived at Meeanee in 1871 and extended the vineyards. Changed, his dates not found, so described.",
+    "Jewelstone Syrah from Mere Road, about 12 months in French oak, 23 to 30 per cent new: the house's sheets and a critic's summary. Changed to a quarter to a third.",
+    "Huchet as the house's top range made only in exceptional years: the house's Huchet pages. Sound."
+   ],
+   "changes": [
+    { "field": "story", "was": "in 1911 the great wooden seminary was sawn into eleven pieces and carried there; the cottage carried to Meeanee some five kilometres; a Loire trained brother selling wine beyond the mission", "now": "in late 1910 the main house cut into eleven sections and hauled nearly five kilometres by traction engine, the seminary moving there in 1911; the brother who arrived in 1871 and extended the vineyards", "why": "the house's own history and Te Ara", "sources": ["https://www.missionestate.co.nz/pages/history", "https://teara.govt.nz/en/photograph/29284/greenmeadows-seminary-hawkes-bay"] },
+    { "field": "wine.making", "was": "around a third of them new", "now": "a quarter to a third of them new", "why": "23 and 30 per cent across the sheets read", "sources": ["https://missionestate.co.nz/wp-content/uploads/2018/06/2020-Mission-Jewelstone-Syrah.pdf"] },
+    { "field": "others[0].note, traps[0], questions[1].exp", "was": "the nineteenth century cellar master; the seminary of 1911", "now": "the French brother of 1871; the main house of 1910 and the seminary of 1911", "why": "as the story", "sources": ["https://www.missionestate.co.nz/pages/history"] }
+   ],
+   "open": ["The swap to Huchet Syrah, refused below, for the integrator to weigh."]
+  },
+  {
+   "key": "trinity-hill",
+   "searches": 2,
+   "tested": [
+    "Founded 1993 on the Gimblett Gravels by its partners, first commercial vintage 1996: M2 Magazine and Wine Searcher, with the house's page. Sound, 1996 added.",
+    "The founding winemaker's harvest of 1996 at Paul Jaboulet Aîné and the Syrah cuttings from Hermitage (La Chapelle in one account) with Viognier from Côte-Rôtie: M2 Magazine and Wine Searcher. Sound.",
+    "First Homage 2002, only in select years: Wine Searcher and others (Wine Searcher gives a launch of 2004). Sound.",
+    "Named for Gérard Jaboulet, who died in 1997 by one account: two accounts name him. Changed to the family member and his house.",
+    "That the first Homage came from the Jaboulet vines: one account has them planted only in 2002. Cut.",
+    "The first Syrah of the mid 1990s, the parcels Gimblett Stones and Roy's Hill, large ovals: in no source read. Cut."
+   ],
+   "changes": [
+    { "field": "story", "was": "The house's first Syrah went in during the mid 1990s; from them came Homage, named as a tribute to the Rhône house", "now": "its first commercial vintage of 1996; Homage, first made with the 2002 vintage, named in tribute to the Rhône house and the family member who gave the vines", "why": "the mid 1990s rested on one blog; the planting year of the vines makes their part in the 2002 unsettled; the name honours the man", "sources": ["https://m2now.com/the-holy-trinity/", "https://wine-searcher.com/merchant/2246"] },
+    { "field": "wine.label[0].means, questions[1].exp", "was": "tribute to the Hermitage house of Paul Jaboulet Aîné", "now": "tribute to Paul Jaboulet Aîné of Hermitage and to the member of its family who gave the cuttings", "why": "as the story", "sources": ["https://wine-searcher.com/merchant/2246"] },
+    { "field": "wine.sites", "was": "the oldest Syrah plantings, from parcels such as Gimblett Stones and Roy's Hill", "now": "the vineyards off Gimblett Road planted from 1993, whose oldest block holds the vines from Hermitage budwood", "why": "the parcel names not found", "sources": ["https://trinityhill.com/news/why-gimblett-gravels-syrah-stands-apart/"] },
+    { "field": "wine.making", "was": "barriques and in some years large ovals", "now": "barriques", "why": "the ovals not found", "sources": [] },
+    { "field": "sources", "was": "Wine Anorak; Wine With Seth", "now": "M2 Magazine; Wine Searcher", "why": "writers' own sites are no source", "sources": [] }
+   ],
+   "open": ["Gérard Jaboulet's dates: one source for his death in 1997, none for his birth.", "Whether the 2002 Homage came from the Jaboulet vines."]
+  },
+  {
+   "key": "church-road",
+   "searches": 6,
+   "tested": [
+    "Founded 1897 by a settler from Luxembourg: Hawke's Bay Today (120th year in 2017) and the author's merchant account. Sound.",
+    "Tom McDonald 1907 to 1987, born at Greenmeadows, in the cellar from 1921, bought the business in 1927 at nineteen by his own account: Te Ara; one Herald account has the founder dying in 1936 and the purchase after. Changed: the founder's return to Europe and the lease cut, the 1927 hedged as his account.",
+    "Sold to Ballins Breweries in 1944, McDonald staying as manager; the new winery of 1948: Te Ara. Added.",
+    "The 1949 Cabernet Sauvignon told as among the first commercial wines of the grape: Wikipedia and the Herald. Sound as hedged.",
+    "Merged with McWilliam's in 1962, McDonald production director: Te Ara and a winery history. Sound, sharpened.",
+    "Montana in 1988 or 1989, the Church Road brand of 1989 to 1990, Allied Domecq 2001, Pernod Ricard 2005: Te Ara, Wikipedia, the Herald. Sound.",
+    "TOM first of 1995, unveiled in 1999 with the Tom McDonald Cellar, only in exceptional years: the Waikato Times, the house's note quoted by a merchant. Sound.",
+    "Blend: Cabernet predominant in the mid 1990s, Merlot important from 1998, the 2007 at 51 to 49, the 2018 at 85 to 15: changed.",
+    "Barrel time 15 to 27 months across the notes; malolactic in barrique: changed.",
+    "TOM Chardonnay and TOM Syrah (from 2013) beside the red, only in exceptional years: the Listener and the press. Sound; the McDonald Series' launch of 2012 not found, cut."
+   ],
+   "changes": [
+    { "field": "story", "was": "When he went back to Europe, a local boy took over the lease and in 1927 bought the business; he built a new winery in 1948; in 1962 his firm merged with McWilliam's", "now": "McDonald, born at Greenmeadows, started in the cellar in 1921 and bought the business in 1927 by his own account; sold to Ballins Breweries in 1944 and stayed on; a new winery went up in 1948; in 1962 McDonald's Wines merged with McWilliam's and he became production director", "why": "Te Ara's biography; the return to Europe and the lease in no source read", "sources": ["https://teara.govt.nz/en/biographies/5m10/mcdonald-thomas-bayne"] },
+    { "field": "wine.grapes, wine.label[1].means", "was": "Cabernet Sauvignon, usually the larger part; the larger share named first", "now": "the balance moving with each vintage, the early releases mostly Cabernet and Merlot weighing more since 1998", "why": "the 2007 near even; the label does not rank the grapes", "sources": ["https://www.pressreader.com/new-zealand/waikato-times/20170524/281943132825269"] },
+    { "field": "wine.making", "was": "around a year and a half", "now": "fifteen months to over two years by vintage, after the malolactic", "why": "15, 18 and 27 months across the notes", "sources": ["https://www.cellartracker.com/m/articles/wine/1084440", "https://admin.blackmarket.co.nz/23253/church-road-tom-hawke-s-bay-cabernet-sauvignon-merlot-2020"] },
+    { "field": "others", "was": "Church Road 1 just below TOM; the McDonald Series launched in 2012", "now": "Church Road 1 one of the prestige wines beside TOM; the McDonald Series with no year; the TOM Syrah first made in 2013", "why": "the tiering differs between sources; no launch year found", "sources": ["https://www.decanter.com/sponsored/church-road-enduring-legacy-built-upon-heritage-and-craftsmanship-469196/", "https://www.nzherald.co.nz/the-listener/life/weekend-wine-guide-127-year-old-hawkes-bay-winerys-top-selections/DY6HBLHG7FBMVPO2UVU77TIR4Q/"] },
+    { "field": "questions[1]", "was": "In which year did Tom McDonald, aged nineteen, buy the winery", "now": "In which year, by his own account, did he buy it; the explanation adds the sale of 1944", "why": "the purchase year rests on his account in Te Ara", "sources": ["https://teara.govt.nz/en/biographies/5m10/mcdonald-thomas-bayne"] }
+   ],
+   "open": ["Montana's purchase, 1988 or 1989."]
+  }
+ ],
+ "livingNamesMet": [
+  "Te Mata: John Buck, Wendy Buck, Toby Buck, Michael Morris (the reviving families).",
+  "Craggy Range: Terry Peabody, Mary Peabody, Steve Smith MW, Julian Grounds and Ben Tombs (winemakers).",
+  "Trinity Hill: John Hancock (founding winemaker), Robert and Robyn Wilson, Trevor and Hanne Janes (founding partners), Charles Banks (a later owner).",
+  "Critics met in results: Stephen Brook, Michael Cooper, Cameron Douglas, Jane Anson.",
+  "None is named in the fragment."
+ ],
+ "swaps": [
+  { "key": "mission-estate", "proposed": "wine: Jewelstone Syrah to Huchet Syrah", "ruling": "refused", "why": "The house does call Huchet its highest range, made only in exceptional years, but the record is written whole for Jewelstone and says plainly where it stands; Huchet's first vintage, its making and its sites were not found in this run, so a rewrite could not be refuted here. Jewelstone Syrah is the single vineyard wine of the house most reviewed and met. The integrator may revisit with a rewritten and refuted record." }
+ ],
+ "codexTension": [
+  "The region record's producers line gives Craggy Range as founded in 1997; the library, the house and Decanter give 1998.",
+  "The library's wine note calls Coleraine New Zealand's most collected red: a ranking the flagships record does not repeat; Decanter's own words are the most avidly collected.",
+  "The library's note that Coleraine is made only in the better years was not confirmed (author's report, unchanged).",
+  "The region summary calls Mission Estate the country's oldest winery; the house says first winery and Te Ara oldest surviving winemaker: consistent, but a claim of a first."
+ ]
+}
