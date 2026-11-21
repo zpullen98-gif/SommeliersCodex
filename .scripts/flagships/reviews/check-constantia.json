@@ -1,0 +1,273 @@
+{
+ "group": "constantia",
+ "chunk": "w26",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 21,
+  "perRecord": {
+   "klein-constantia": 6,
+   "groot-constantia": 5,
+   "steenberg": 2,
+   "buitenverwachting": 4,
+   "constantia-glen": 4
+  },
+  "note": "Twenty one searches of twenty eight, seven unspent. Most searches blocked the author's own domains so the second source would be independent; four were held to a house's own domain to read its sheets. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: founding, people and dates, grapes, sites, making, label words, every beat of the story, the cards and the questions; then the house rules.",
+  "Where a search contradicted the record it was set right with its source; where a detail stood in one source or none it was cut or hedged."
+ ],
+ "records": [
+  {
+   "key": "klein-constantia",
+   "searches": 6,
+   "tested": [
+    "Purchase of 1980, the 1986 vintage and its release (Wine Anorak, Vinfolio, Wine With Seth, The Buyer, Vinous): 1980 by most, 1979 and 1985 by others; 1986 sound.",
+    "Making (the house's own sheets for 1998 to 2022, read in search on kleinconstantia.com): two weeks on skins, 18 months in 500 litre barrels half new, 16 to 20 months more in foudres. Changed.",
+    "Bottle and two barrels (Decanter, Strauss and Co, wine-pages, Wine Goggle): designed in Italy after the antique, two barrels; Decanter says the 1986 was never sold commercially. Changed.",
+    "The division of 1712 and the farm's later making, the granite (Wikipedia, Wine Spectator, Wine With Seth, Qualla). Changed.",
+    "Austen and Napoleon (Wikipedia, the novel's summaries, Decanter); the tariff of 1861 and phylloxera (Wikipedia, GuildSomm, a Cambridge review). Austen line changed; the rest sound."
+   ],
+   "changes": [
+    {
+     "field": "wine.sites",
+     "was": "see the author's commit 2ff37c1",
+     "now": "decomposed Table Mountain granite now decomposed granite, as Wine With Seth and Wine Spectator describe it.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.making",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the oak no longer French and Hungarian alone; the 2022 sheet gives French, Hungarian and Austrian 500 litre barrels, and the further foudre ageing is 16 to 20 months on the 2019 to 2022 sheets, so now well over a year more in foudres.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "Klein Constantia no longer said to be a portion made by the division of 1712; Wikipedia, Wine With Seth and Wine Spectator place its making as a farm early in the nineteenth century, from a split of the Cloete estate.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "Jane Austen no longer prescribes the wine; in the novel Mrs Jennings offers it to Marianne, as the novel's summaries tell it.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story and cards[0]",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the release of 1990 cut, since Decanter says the 1986 was never sold commercially while others give 1990; the two barrels now rest on Decanter and Strauss and Co and stand unhedged.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the closing line shortened to keep the story within its cap.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://www.wineanorak.com/southafrica/southafrica_14_kleinconstantia.htm",
+    "https://www.kleinconstantia.com/wp-content/uploads/2026/04/Klein-Constantia-Vin-de-Constance-2022.pdf",
+    "https://www.decanter.com/learn/wine-legend-klein-constantia-vin-de-constance-1986-316130/",
+    "https://www.straussart.co.za/auctions/lot/8-jun-2019-wine/183",
+    "https://top100.winespectator.com/2015/article/klein-constantia-wakes-up/",
+    "https://www.winewithseth.com/winewiki/klein-constantia/"
+   ],
+   "open": [
+    "The release of the 1986: 1990 in some accounts, never commercially released by Decanter; left out.",
+    "The founding year stays empty as the library leaves it."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "groot-constantia",
+   "searches": 5,
+   "tested": [
+    "Grand Constance's revival (WOSA, Wine With Seth, Imbibe, Wineland, Top Wine SA): 2003 vintage, released 2005; one estate page gives 2010. Changed.",
+    "Cloete and the cellar (Wikipedia, Iziko, Winemag, HIPSA): Cloete 1725 to 1799, cellar 1791, the state from 1 October 1885; Iziko puts the purchase eleven months after Serrurier's of 1778. Changed.",
+    "The fire (Heritage Portal, HSRC, South African History Online): 19 December 1925, restored 1926 to 1927. Changed.",
+    "The museum of 1969 and the trust of 1993 (Wikipedia, Iziko, Western Cape Government). Sound.",
+    "Making and block (the estate's sheets of 2015, 2017, 2019 and its product page, read in search): a week on skins, 24 months in barrel, 18 on an older page, the block by the Manor House. Sound.",
+    "The name Grand Constance (the estate's legacy pages). Label changed."
+   ],
+   "changes": [
+    {
+     "field": "story, traps[2], cards[1], questions[1].exp",
+     "was": "see the author's commit 2ff37c1",
+     "now": "Cloete's purchase now December 1778 by the house, 1779 by others, since Iziko tells that Serrurier bought in 1778 and sold to Cloete eleven months later.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the fire dated December 1925 (19 December 1925 by the Heritage Portal and the HSRC) and the restoration from 1926, Kendall's work running into 1927 by South African History Online.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story and cards[0]",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the revival told by vintage, with the 2003 vintage, since the 2003 was released in 2005 and the estate elsewhere speaks of a launch in 2010.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.label[0]",
+     "was": "see the author's commit 2ff37c1",
+     "now": "Grand Constance now explained as the French form of Groot Constantia used on the historic labels, by the estate's own legacy pages.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://www.iziko.org.za/museums/groot-constantia/",
+    "https://www.theheritageportal.co.za/article/rising-ashes-1926-restoration-groot-constantia",
+    "https://sahistory.org.za/place/groot-constantia-constantia-valley",
+    "https://www.winewithseth.com/winewiki/groot-constantia/",
+    "https://grootconstantia.co.za/grand-constance/"
+   ],
+   "open": [
+    "The launch of the modern Grand Constance: the 2003 vintage released in 2005 by two sources, a launch of 2010 on one estate page.",
+    "Wine of Origin Constantia on the label is still inferred from the estate's own fruit, not seen on a label."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "steenberg",
+   "searches": 2,
+   "tested": [
+    "Maiden 2007, the gap from 2017 to 2021, the blend (Wine Anorak, WineTourismZA, Wanted Online, wine.co.za, Out of the Press): sound; blend widened.",
+    "Barrels and the 2007 making (wine.co.za sheets for 2007, 2009, 2010, 2011, 2021; Bizcommunity). Changed.",
+    "Catharina Ras, 1682, 1688, Swaaneweide, Russouw 1695 (a family history at morkel.net, a travel history blog, wine.co.za Heritage Month, the house's brand story): sound as hedged; the seller of 1695 differs."
+   ],
+   "changes": [
+    {
+     "field": "wine.grapes",
+     "was": "see the author's commit 2ff37c1",
+     "now": "three fifths widened to three fifths to seven tenths, since the 2010 is 65 per cent and the 2021 70 per cent Sauvignon Blanc on wine.co.za's sheets.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "wine.making",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the 500 and 600 litre barrels tied to the later vintages read, since the maiden 2007 was fermented in new 225 litre barrels by one listing.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://wine.co.za/wine/wine.aspx?WINEID=31468",
+    "https://wine.co.za/wine/wine.aspx?WINEID=50644",
+    "https://wine.co.za/wine/wine.aspx?WINEID=18669",
+    "https://www.wantedonline.co.za/food-and-drink/2023-12-01-a-star-is-born-steenberg-magna-carta-2021/"
+   ],
+   "open": [
+    "Catharina Ras from Lübeck and as the first woman to hold land rest on the house's account, hedged; the seller of 1695 (Ras or another) differs between the family history and other accounts."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "buitenverwachting",
+   "searches": 4,
+   "tested": [
+    "1773, 200 morgen, the purchase of 1980, the first vintage of 1985, Christine named for the owner's wife (Wine With Seth, Capreo, Swig, Hout Bay Manor): sound.",
+    "Christine's oak and bottle years (the house's wines page and shop, read in search; retailers): sound as the house's account.",
+    "The planter of 1825 and the Louws and Lategans of 1866 (wine.co.za, Constantia Wine Route, a podcast): the planter a brother of a Hendrik Cloete of Groot Constantia, so not of the elder Hendrik (1725 to 1799). Changed.",
+    "The 1769 and its name (Swig, Hay Wines, Winemag). Changed."
+   ],
+   "changes": [
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the planter of 1825 is no longer a brother of Hendrik Cloete (1725 to 1799), who was dead by then; the sources call him a brother of the Hendrik Cloete of Groot Constantia, so he is now a member of the Cloete family, and the elder Cloete's dates leave the record.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the sweet Muscat of 2007 cut, since it rests on Wikipedia alone.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "others[2]",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the 1769 no longer claims the year the first vineyard of the region was planted, a claim at odds with the vines of the 1680s and 1690s; now the house's wine in the manner of old Constantia.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://wine.co.za/page/page.aspx?PAGEID=691",
+    "https://constantiawineroute.com/buitenverwachting/",
+    "https://buitenverwachting.com/wines/",
+    "https://swig.co.uk/products/buitenverwachting-1769-muscat-de-frontignac-2021"
+   ],
+   "open": [
+    "No first vintage of Christine was found; by the middle of the 1990s stands on the 1995 review in Winemag.",
+    "The oak: two years in new French oak on the house's page, older menus give second and third fill oak, retailers 18 months; the record keeps the house's account and its earlier eighteen months."
+   ],
+   "verdict": "changed"
+  },
+  {
+   "key": "constantia-glen",
+   "searches": 4,
+   "tested": [
+    "The family, Glen Alpine of 1960, the stud from 1995, the fire of January 2000, vines from September 2000, the slopes (the house's About page, brochure and German page, read in search). Changed.",
+    "First white 2005, first reds 2007, Five's blend (Secret Cape Town, Eat Play Drink, Wine Spectator, Berry Bros, Out of the Press). Changed.",
+    "Five as the label from 2008 (Berry Bros 2008 listing, Winemag, Falstaff). Sound."
+   ],
+   "changes": [
+    {
+     "field": "wine.sites",
+     "was": "see the author's commit 2ff37c1",
+     "now": "north and north east now north east, the house's brochure saying predominantly north east facing slopes.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the purchase now 1960 by the house's account (constantiaglen.com, About), not the 1960s.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the fires of summer 1999 and 2000 now the wildfire of January 2000, by the house's About page.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    },
+    {
+     "field": "story and questions[1]",
+     "was": "see the author's commit 2ff37c1",
+     "now": "the maiden 2007 no longer called Five by name, since Wine Spectator names the 2007 flagship otherwise and its blend was Merlot led; the story says the first reds came in 2007 among them the five grape blend, and the question asks the year of the first reds.",
+     "why": "refuted, unconfirmed or told otherwise by the sources listed"
+    }
+   ],
+   "sources": [
+    "https://constantiaglen.com/about/",
+    "https://constantiaglen.com/wp-content/uploads/2025/04/Constantia-Glen-Digital-Brochure.pdf",
+    "https://www.eatplaydrink.capetown/drink/constantia-glen-flagship-red-marks-a-decade-of-wine-evolution/",
+    "https://www.winespectator.com/articles/a-sit-down-with-south-africas-constantia-glen-40648",
+    "https://www.bbr.com/products-10745-2008-constantia-glen-five-constantia-wine-valley"
+   ],
+   "open": [
+    "Whether the 2007 red was labelled Five: one account names it otherwise; the Five label is certain from the 2008 vintage at Berry Bros."
+   ],
+   "verdict": "changed"
+  }
+ ],
+ "livingNamesMet": [
+  "Klein Constantia: the buyer of 1980 and his family, the winemaker of the 1986, the buyers of 2011 (none named in prose; whether the buyer of 1980 and the winemaker of 1986 are living was not settled, so neither is named).",
+  "Steenberg: the winemaker named on the 2021 sheet.",
+  "Buitenverwachting: the buyer of 1980, his wife for whom Christine is named, and her son who has run the farm since 1991.",
+  "Constantia Glen: the owning family's present head and the grandfather named on the German page.",
+  "None is named in the fragment; the chunk's read-together agent may add the confirmed living ones to people.json."
+ ],
+ "swaps": [
+  {
+   "ruling": "none proposed, none made",
+   "note": "The author proposed no swap; the five picks stand. Constantia Glen's Five is the house's flagship by the house, Berry Bros and Winemag."
+  }
+ ],
+ "codexTension": [
+  "The region summary and the library record of Klein Constantia say Klein Constantia is a portion of the 1685 estate; true of the land, but Wikipedia, Wine With Seth and Wine Spectator date its making as a separate farm to the early nineteenth century, not to the division of 1712. Reported, not edited.",
+  "The library's 'Constantia was the first non-European wine to hold European fame' is a claim of a first not tested here. Reported, not edited."
+ ]
+}
