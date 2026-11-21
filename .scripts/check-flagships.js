@@ -132,7 +132,8 @@ const SECTIONS = ['v58-s-wine', 'v58-s-story', 'v58-s-others', 'v58-s-traps', 'v
 const WHOLE = {
   'one': { groups: 51, records: 255, cards: 510, questions: 510, deal: [128, 128, 127, 127], regions: 43, countries: 16, joined: 206, producers: 201, wines: 5, outside: 49 },
   'one+A': { groups: 83, records: 415, cards: 830, questions: 830, deal: [208, 208, 207, 207], regions: 75, countries: 16, joined: 263, producers: 258, wines: 5, outside: 152 },
-  'one+A+B': { groups: 110, records: 550, cards: 1100, questions: 1100, deal: [276, 276, 274, 274], regions: 102, countries: 16, joined: 275, producers: 270, wines: 5, outside: 275 }
+  'one+A+B': { groups: 110, records: 550, cards: 1100, questions: 1100, deal: [276, 276, 274, 274], regions: 102, countries: 16, joined: 275, producers: 270, wines: 5, outside: 275 },
+  'one+A+B+C': { groups: 137, records: 685, cards: 1370, questions: 1370, deal: [344, 344, 341, 341], regions: 129, countries: 17, joined: 299, producers: 294, wines: 5, outside: 386 }
 };
 /* the sets as they were published, byte for byte, one line a batch: a sha256 over its records' lines in the data
    file (its picks in the plan's order) and its groups' lines, and a sha256 over its picks' entries of keys.v1.json
