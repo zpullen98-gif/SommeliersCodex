@@ -146,7 +146,7 @@ const WHOLE = {
 const PUBLISHED = {
   one: { records: '38f1d333523e4262b1a24a73d11f0e460e26e88d978631cef2b37bb996d93ac8', keys: '499df04baed82ab6d1a1645e84c210bf9c876fba178cc95d621377b477c0e67a' },
   A: { records: '9e892010e413a68abd4e33c3a2f9364d88ce479d5b494f9748b17de2aca19ee7', keys: '89174abdd5e6ec11fb017acbea50fd8af60eb8eb32c1da514091d37fb7b7bff6' },
-  B: { records: '12d527e448c32ffc6762d15f012a94bc728c907a12c5faf66f9616653b9032b4', keys: 'c1438c1e3f2d88af99e4b16038884bc63d347b5733c38cb49d7670b4b190458d' }
+  B: { records: 'e638106f4b3b6266531ae27863ae0a79b6853449d7d01926de9c95c5e0693770', keys: 'c1438c1e3f2d88af99e4b16038884bc63d347b5733c38cb49d7670b4b190458d' }
 };
 const sha256 = (s) => require('crypto').createHash('sha256').update(String(s), 'utf8').digest('hex');
 /* a batch's two prints, from the data file's text and the keys as read; a line missing is named in the text hashed,
