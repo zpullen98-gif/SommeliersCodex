@@ -1,0 +1,306 @@
+{
+ "group": "rapsani",
+ "chunk": "w29",
+ "batch": "B",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 17,
+  "perRecord": {
+   "tsantali": 6,
+   "dougos": 4,
+   "liapis": 3,
+   "terra-olympus": 2,
+   "chrisohoou": 3
+  },
+  "note": "Seventeen searches of a share of twenty eight, none the author's. The appellation searches (Wines of Greece once, the Ministry once, the zone once) are counted with Tsantali and Dougos; the Wine Route search with Liapis. Two were restricted to rapsaniwine.gr and one to dougos.gr, read as primary for those houses' own facts; one to winesofgreece.org and one to minagric.gr. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "What a search contradicted was set right with its source; what rested on no second source was cut; a house's claim about itself stays hedged as its account."
+ ],
+ "appellation": {
+  "tested": [
+   "Rapsani made an appellation in 1971: Wines of Greece, the Ministry's technical file (a royal decree of 1971) and a wine reference; kept.",
+   "Tsantali the only producer until 2005: Wines of Greece and the Chrysochoou house's own PDO page; kept in all four records that say it.",
+   "The three grapes Xinomavro, Krassato and Stavroto, Krassato at least a third: Wines of Greece and the Chrysochoou page; kept.",
+   "Reserve two years, at least a year in oak and six months in bottle: the Ministry's file by the author and two study sets by this reader; one German wine guide gives three years with six months in barrel, so open. Grande Reserve four years with eighteen months in oak: study sets; kept as the importers' figure in others."
+  ]
+ },
+ "records": [
+  {
+   "key": "tsantali",
+   "searches": 6,
+   "verdict": "changed",
+   "tested": [
+    "Founded 1890 at Sidirochori in Eastern Thrace, tsipouro and wine: wein-plus, gtp.gr, Wikipedia by search; kept.",
+    "Evangelos Tsantalis 1913 to 1996, to Thessaloniki in 1945: wein-plus and Wikipedia agree; one encyclopedia gives a distillery of 1938 under a brother; kept as 1945.",
+    "Twelve months in French oak barrels of 300 litres, part new, and a year in bottle: Wine and Beyond, Decanter and a Canadian critic's notes for several vintages; kept.",
+    "Production stopped in 2023: Powergame (September) and Moneyandlife (August); kept as 2023.",
+    "The bankruptcy: Powergame reports it formal and Protothema of 13 January 2026 headlines the formal end; the day of 12 January was not found; changed.",
+    "Rapsani Reserve and Rapsani Grande Reserve as the labels' words: Decanter and a London critic's reviews; kept."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "Growers' vineyards on the south eastern slopes ... by the house's account",
+     "now": "Vineyards on the southern slopes ... by the Greek wine body's account",
+     "why": "Wines of Greece's Tsantali page gives the southern slopes at 250 to 600 metres and calls the vineyards the house's own.",
+     "sources": [
+      "https://winesofgreece.org/wineries/tsantali-rapsani/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "south eastern slopes",
+     "now": "southern slopes",
+     "why": "As above.",
+     "sources": [
+      "https://winesofgreece.org/wineries/tsantali-rapsani/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "and Rapsani owes its survival to it",
+     "now": "the house to which, in that body's words, the zone owes its survival",
+     "why": "A claim of the Greek wine body, now hedged as its words.",
+     "sources": [
+      "https://winesofgreece.org/pdo/pdo-rapsani/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the bankruptcy was entered in the commercial registry on 12 January 2026",
+     "now": "in January 2026 the bankruptcy was made formal",
+     "why": "The exact day of the registry entry was not found by this reader; the month rests on two reports.",
+     "sources": [
+      "https://en.protothema.gr/2026/01/13/and-formally-the-end-of-the-line-for-tsantali-the-historic-winery-in-bankruptcy/",
+      "https://www.powergame.gr/epichirisis/1273092/tsantalis-episima-ptochefsi-gia-tin-oinopoiia-sto-stochastro-agoras-apo-antetokounbo-kai-georgiadi/"
+     ]
+    }
+   ],
+   "open": [
+    "Whether the house owned vines at Rapsani (Wines of Greece yes, GuildSomm no).",
+    "The year Tsantali came to Rapsani stays untold."
+   ]
+  },
+  {
+   "key": "dougos",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "Winery at Rapsani since 1991, one listing 1992, home wine from 1983: Botilia, Greece and Grapes, Cava Oinos; founded stays empty, the story's 1991 by most accounts kept.",
+    "Old Vines eighteen months in French and American oak, six months in bottle: Hedonism and a Greek critic's notes; kept.",
+    "Vines over sixty years on poor schist: Hedonism; over fifty by a Greek critic; kept.",
+    "Toasting of the barrels: in no source found; cut.",
+    "The nursery: the house's nursery page speaks of sixty years and of a founder about forty years ago, nothing of the three grapes; a British critic dates it to 1956 in the mother's family.",
+    "The Ministry's file naming the house: not found in a search of minagric.gr; cut."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "high on the north eastern slopes of Mount Olympus",
+     "now": "high on the slopes of Mount Olympus",
+     "why": "Direction given differently across sources (north east by Cava Oinos and winedering, southern by Wines of Greece for the zone's large house); left out.",
+     "sources": [
+      "https://cavaoinos.com/?p=8155",
+      "https://winesofgreece.org/wineries/tsantali-rapsani/"
+     ]
+    },
+    {
+     "field": "wine.making, cards[0].back",
+     "was": "lightly toasted or not toasted at all so the wood stays behind the fruit",
+     "now": "(cut)",
+     "why": "No source found.",
+     "sources": [
+      "https://www.hedonism.co.uk/product/dougos-rapsani-old-vines-2019",
+      "https://karakasis.mw/node/516"
+     ]
+    },
+    {
+     "field": "wine.glass",
+     "was": "a stony, schist laid note",
+     "now": "a stony note",
+     "why": "Wording; the soil is told in sites.",
+     "sources": []
+    },
+    {
+     "field": "story, cards[1].back, questions[1].exp",
+     "was": "has propagated the local grapes, Xinomavro, Krassato and Stavroto among them, for some sixty years",
+     "now": "by its own account its vine nursery near Rapsani has worked for some sixty years",
+     "why": "The nursery's own page gives sixty years and names none of the three grapes.",
+     "sources": [
+      "https://dougos.gr/nursery/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the appellation's own technical file names the house as making Rapsani from its own vineyard in the zone",
+     "now": "(cut)",
+     "why": "Not confirmed by a search of the Ministry's own domain.",
+     "sources": [
+      "https://www.minagric.gr/images/stories/docs/agrotis/POP-PGE/TEXNIKOI%20FAKELOI%20OINON%20POP-PGE%20ENGLISH/PDO%2027/Technical%20file%20related%20to%20PDO%2027%20Rapsani.pdf"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "A brother and sister of the next generation, a viticulturist and a chemist who makes the wine, carry it on.",
+     "now": "Among them are bush vines of sixty years and more, the fruit of Old Vines.",
+     "why": "The current winemaker and the present tense are volatile; the new sentence repeats the sourced vine age to keep the story at length.",
+     "sources": [
+      "https://www.hedonism.co.uk/product/dougos-rapsani-old-vines-2019"
+     ]
+    },
+    {
+     "field": "others[1].note",
+     "was": "A further Rapsani named for a single place, reviewed by British critics.",
+     "now": "A further Rapsani of the house, sold under a name of its own.",
+     "why": "Neither the single place nor the critics was confirmed beyond the plan's note; Botilia lists Tourtoura Dougos.",
+     "sources": [
+      "https://www.botilia.gr/en/p/red-wine/Tourtoura-Dougos"
+     ]
+    }
+   ],
+   "open": [
+    "The slopes' direction, left out."
+   ]
+  },
+  {
+   "key": "liapis",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "First vineyard about 1935 and the third generation's winery of 2002: Greece and Grapes and Botilia, both reading as the house's words; kept hedged.",
+    "Wild yeasts and twelve months in old oak: Botilia; Wolt by the author; no house sheet; kept, open.",
+    "The Route of the Gods of Olympus with Tsantali, Dougos, Chrysochoou and Liapis: the Tempi municipality's page and Wines of Greece; kept.",
+    "Altitude 200 to 550 metres: Botilia; kept as the house's account."
+   ],
+   "changed": [
+    {
+     "field": "wine.ageing",
+     "was": "a strong year keeps for about a decade",
+     "now": "a strong year keeps for about eight years",
+     "why": "Botilia gives eight years; no source gave a decade.",
+     "sources": [
+      "https://www.botilia.gr/en/p/red-wine/Rapsani-Konstantinos-Liapis"
+     ]
+    }
+   ],
+   "open": [
+    "Wild yeasts and old oak on merchants' sheets only."
+   ]
+  },
+  {
+   "key": "terra-olympus",
+   "searches": 2,
+   "verdict": "changed",
+   "tested": [
+    "Seven hectares bought in 2015, four more in 2016, near or past 500 metres, many old bush vines: the importer's catalogue and a Greek critic's piece of 2016 (480 metres); kept.",
+    "Terra Petra grapes about half Xinomavro: a US merchant's 2016 sheet (half, 35 and 15 per cent) and Decanter; kept.",
+    "Earth and Sky's first year: 2003 vintage bottled for the family, released 2004 or 2005 by different sources; changed."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "Earth and Sky, came out in 2005",
+     "now": "Earth and Sky, came in the early 2000s",
+     "why": "Sources disagree between the 2003 vintage and releases of 2004 and 2005.",
+     "sources": [
+      "https://wineanorak.com/greece/thymiopoulos.htm",
+      "https://www.thewinesociety.com/product/earth-and-sky-naoussa-thymiopoulos-2023-en.aspx"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "raised in large barrels",
+     "now": "raised gently in oak",
+     "why": "The record's own making gives 500 litre barrels, which are not large casks.",
+     "sources": [
+      "https://www.decanter.com/wine-reviews/greece/thessaly/thymiopoulos-terra-petra-rapsani-thessaly-greece-2017-40275/"
+     ]
+    }
+   ],
+   "open": [
+    "Schist named for the zone, not for these vineyards.",
+    "No primary source in the record: every fact stands on two secondary ones."
+   ]
+  },
+  {
+   "key": "chrisohoou",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "Equal thirds, fifteen days on skins, twelve months in French and American oak of 225 and 300 litres, a third new, twelve months in bottle: the house's product page; kept.",
+    "Four generations, the station site from the late 1990s, Tsantali alone until 2005: the house's history and PDO pages; kept.",
+    "The station: opened 1916, closed 2004, reopened 7 September 2008, formerly called Pyrgetos: Wikipedia and a Greek rail site; the name at opening not confirmed.",
+    "Markets: the house names the Netherlands, Belgium and Germany beside Greece."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites",
+     "was": "on slate",
+     "now": "on schist",
+     "why": "The zone's soil is given as schist by the sources; the Greek word covers both.",
+     "sources": [
+      "https://www.winewithseth.com/winewiki/rapsani-pdo/"
+     ]
+    },
+    {
+     "field": "wine.ageing",
+     "was": "a good year keeps for six to eight more",
+     "now": "by the house's account it drinks well for about three years and often keeps longer",
+     "why": "No source for six to eight; the house's grape page gives the window.",
+     "sources": [
+      "https://www.rapsaniwine.gr/oinopeioio/poikilies-stafilion/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "opened in 1916 ... under the name of the nearby village of Pyrgetos, and reopened rebuilt in 2008",
+     "now": "once called Pyrgetos for the nearby village, opened in 1916 ... and reopened in 2008",
+     "why": "The sources say formerly called Pyrgetos, not that it opened under that name.",
+     "sources": [
+      "https://en.wikipedia.org/wiki/Rapsani_railway_station",
+      "https://www.greekrailtickets.airticketshistory.com/S.S.RAPSANIe.htm"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "a house known at home and little seen abroad",
+     "now": "a small house sold mostly in Greece, with a few bottles in northern Europe",
+     "why": "The house's page names three northern European markets.",
+     "sources": [
+      "https://www.rapsaniwine.gr/oinopeioio/"
+     ]
+    },
+    {
+     "field": "others[0].note",
+     "was": "and longer in bottle",
+     "now": "then a year in oak and at least a year in bottle",
+     "why": "The house's Special Edition page gives at least twelve months in bottle, as the plain red's twelve.",
+     "sources": [
+      "https://www.rapsaniwine.gr/krasi/etiketes/rapsani-special-edition-chrisochoou/"
+     ]
+    }
+   ],
+   "open": [
+    "The Special Edition's 2009 as its first, on the house's page and one critic's note."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "The two brothers of the Chrysochoou family who run the house, named on its own history page (rapsaniwine.gr); not written in any record. The read-together agent may add them to people.json.",
+  "The Dougos nursery's founder, named on dougos.gr, alive or dead not known; not written.",
+  "The Liapis house's own name is a living man's, kept as the house name only, as the author ruled.",
+  "The heads of the Thymiopoulos and Tsantali families met in search results; not written."
+ ],
+ "swaps": [],
+ "swapNote": "The author proposed no swap, and none is made.",
+ "codexTension": [
+  "The Codex's Rapsani region record teaches equal thirds of the three grapes; Wines of Greece gives at least a third of Krassato and of Xinomavro, and Dougos and Terra Petra run near two thirds and a half Xinomavro. Reported, not edited."
+ ],
+ "questions": [
+  "All ten questions have one right answer and four options of one kind. The Tsantali card and the Chrisohoou story question both ask the year 2005; the read-together agent may vary one."
+ ]
+}
