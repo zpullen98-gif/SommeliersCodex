@@ -1,0 +1,296 @@
+{
+ "group": "salta",
+ "chunk": "w20",
+ "batch": "C",
+ "date": "2026-11-21",
+ "by": "refuter",
+ "searches": {
+  "share": 28,
+  "used": 21,
+  "perRecord": {
+   "colome": 5,
+   "el-esteco": 4,
+   "etchart": 5,
+   "yacochuya": 3,
+   "el-porvenir": 3
+  },
+  "note": "Twenty one searches of a share of twenty eight, none the author's; one more (Yacochuya's oak) counted to that record. Four were restricted to a house's own domain (bodegacolome.com, elesteco.com.ar, bodegasetchart.com twice, elporvenirwines.com with elporvenirdecafayate.com) and read as primary for the house's own facts. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year, the people and their dates, the grapes, the sites, the making, the drinking window, the serving temperature, the label words, every beat of the story, the cards and the questions; then the house rules.",
+  "What a search contradicted was set right with its source; what rested on one source or none was cut or hedged as the house's claim."
+ ],
+ "records": [
+  {
+   "key": "colome",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "Altura Máxima at 3,111 metres at Payogasta and the first vintage 2012: the house's vineyards page, Decanter's sponsored profiles, Liberty Wines, a wine writer's article; agreed. Planting 2004 by one guide, 2007 to 2009 by Decanter: not in the record.",
+    "1831 and the founder as governor of Salta in 1809 and 1810: the house's brochure, Wikipedia's list of the intendancy's heads, a Redalyc paper, the argentina.travel page; agreed, his dates not found, so he stays described.",
+    "Ownership by the founder's heirs until 2001 and the purchase by a Swiss family: the house and a writer's profile; agreed.",
+    "El Arenal and the winery's height: the house's own El Arenal page and sheets give 2,600 and 2,300 metres.",
+    "The élevage: the house's sheets for 2016, 2017 and 2019, twenty four months in third and fourth use French oak; no ferment detail anywhere."
+   ],
+   "changed": [
+    {
+     "field": "story",
+     "was": "later added El Arenal at about 2,700 metres",
+     "now": "planted El Arenal, its first new vineyard, at about 2,600 metres",
+     "why": "the house's own pages give 2,600 metres and call it the first vineyard the new owners planted",
+     "sources": [
+      "https://bodegacolome.com/en/shop/colome-el-arenal-malbec/",
+      "https://www.bodegacolome.com/wp-content/uploads/2021/02/FT-Estate-Malbec-2022-English.pdf"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the house says some of its vines are close to two centuries old",
+     "now": "the house dates its oldest vines to 1854, brought by the founder's daughter",
+     "why": "the house's own dated claim, repeated in a writer's profile, is more exact and true; 1854 vines are about 170 years old, not close to two centuries",
+     "sources": [
+      "https://bodegacolome.com/en/about-us/"
+     ]
+    },
+    {
+     "field": "wine.making and questions[0].exp",
+     "was": "two years in most vintages and one year in the 2020",
+     "now": "twenty four months by the sheets for 2016, 2017 and 2019",
+     "why": "the 2020 figure was confirmed in no source read",
+     "sources": [
+      "https://www.bodegacolome.com/wp-content/uploads/2020/09/FT-Altura-Maxima-Malbec-2019-English.pdf"
+     ]
+    }
+   ],
+   "open": [
+    "The Altura Máxima vineyard's planting is 2004 by one guide and 2007 to 2009 by Decanter; the record names no planting year, and the integrator may keep it so."
+   ]
+  },
+  {
+   "key": "el-esteco",
+   "searches": 4,
+   "verdict": "changed",
+   "tested": [
+    "1945, Finca Las Mercedes, six to eight months and three years: the house's Old Vines page, restricted search; agreed.",
+    "The Old Vines range and its planting years (Torrontés 1945, Malbec 1946, Cabernet Sauvignon 1947): The Drinks Business, South America Wine Guide's old vine register; agreed.",
+    "Pergola vines over seventy years and 239 vines: Decanter alone; the register gives the parcel as more than two hectares, so the count is cut.",
+    "Concrete eggs: two writers' notes and The Drinks Business for the old vine wines in general; left out, as the author did.",
+    "1892 and the Michel and Torino families, the La Rosa estate, the sales of 1994 and about 2000, Peñaflor in 2004: Wine With Seth, Welcome Argentina, Mercado, a Polish importer's history."
+   ],
+   "changed": [
+    {
+     "field": "story and questions[1].exp",
+     "was": "the Michel brothers took over the La Rosa estate in 1892",
+     "now": "the Michel brothers began making wine in the valley in 1892",
+     "why": "Mercado dates the La Rosa estate to the next generation in 1925, and the guides tie 1892 to the founding, not to a purchase",
+     "sources": [
+      "https://mercado.com.ar/revista/2016-marzo-no1178/la-seduccion-de-las-uvas/",
+      "https://www.winewithseth.com/winewiki/el-esteco/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "bought from the family by a larger Argentine group around the turn of the century and renamed",
+     "now": "sold by the family in the 1990s or about 2000, the accounts differing, and bought by the Peñaflor group in 2004, which gave it the name El Esteco",
+     "why": "the sources show an intermediate owner and put the group's purchase and the new name in 2004",
+     "sources": [
+      "https://www.winewithseth.com/winewiki/el-esteco/",
+      "https://wina-mp.pl/en/producenci/el%E2%80%93esteco",
+      "https://welcomeargentina.com/cafayate/el-esteco-cafayate-winery.html"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "among the early bottlers of Cafayate Torrontés for sale abroad",
+     "now": "cut",
+     "why": "confirmed in no source read",
+     "sources": []
+    },
+    {
+     "field": "story",
+     "was": "from 239 vines by one critic's count",
+     "now": "cut",
+     "why": "one review only, and the register's parcel of more than two hectares puts the count in doubt",
+     "sources": [
+      "https://southamericawineguide.com/old-vines-of-south-america-old-vine-register-the-heroic-growers-of-south-america/"
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "picked by hand",
+     "now": "cut; the house's six to eight months kept",
+     "why": "hand picking confirmed in no source read",
+     "sources": [
+      "https://elesteco.com.ar/en/old-vines-en/torrontes-3/"
+     ]
+    }
+   ],
+   "open": [
+    "The vessel, concrete eggs by Jancis Robinson's and another writer's notes and by The Drinks Business for the house's old vine wines in general, is left out: a citable second source for this wine would let the integrator restore it."
+   ]
+  },
+  {
+   "key": "etchart",
+   "searches": 5,
+   "verdict": "changed",
+   "tested": [
+    "1850 at La Florida, 1938 and the launch of Arnaldo B. in 1990: the house's English and Spanish pages and its sheets, Bichos de Campo, MDZ; agreed.",
+    "The sale to Pernod Ricard in 1996: Bichos de Campo, CellarTracker; agreed beside La Gaceta's 1995.",
+    "The buyer of 1938 and his dates: no dates in any source; one piece reports a Don Arnaldo dead in 2017, generation unclear.",
+    "The blend: retailers' listings for 2018 and 2019 and MDZ (the rest varying among Tannat, Syrah, Bonarda, Ancellotta, Petit Verdot); the record's wording holds.",
+    "The élevage and altitude: the house's sheets, fifteen months in French and American oak (English sheet), first use French oak and 1,750 metres (2020 sheet)."
+   ],
+   "changed": [
+    {
+     "field": "story, wine.label[0], cards and questions[1]",
+     "was": "Arnaldo Benito Etchart named, without dates",
+     "now": "the man who bought the winery from his wife's family in 1938, whom the house calls its founder",
+     "why": "the brief describes a person whose dates are not found in two sources; the wine's name carries his",
+     "sources": [
+      "https://bodegasetchart.com/en/our-wines/arnaldo-b/"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "his son built the brand, much of it on Torrontés, and the son went on to Yacochuya",
+     "now": "the family built the brand and the family went on to Yacochuya",
+     "why": "the sources do not keep father and son apart (one has the same Arnaldo buying in 1938 and bringing the consultant in 1987)",
+     "sources": [
+      "https://bichosdecampo.com/?p=274154"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "made to be laid down rather than drunk young",
+     "now": "the wine the house calls its icon, born of its trials of European red grapes",
+     "why": "the house's sheet and MDZ say so; the laying down claim had no source",
+     "sources": [
+      "https://bodegasetchart.com/wp-content/uploads/2020/04/Arnaldo-B-EN.pdf",
+      "https://www.mdzol.com/estilo/2023/10/3/una-reconocida-bodega-cambio-su-imagen-la-de-un-vino-iconico-351871.html"
+     ]
+    },
+    {
+     "field": "wine.sites",
+     "was": "La Florida and around Cafayate at about 1,750 metres on the sandy, stony soils of the valley floor",
+     "now": "the Cafayate Valley around La Florida at about 1,750 metres by the 2020 sheet",
+     "why": "the soils confirmed in no source read",
+     "sources": [
+      "https://bodegasetchart.com/wp-content/uploads/2023/09/Arnaldo-FT-2020.pdf"
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "each variety made apart and blended after ageing",
+     "now": "the two sheets' élevage only",
+     "why": "the separate making confirmed in no source read",
+     "sources": [
+      "https://bodegasetchart.com/wp-content/uploads/2020/04/Arnaldo-B-EN.pdf",
+      "https://bodegasetchart.com/wp-content/uploads/2023/09/Arnaldo-FT-2020.pdf"
+     ]
+    }
+   ],
+   "open": [
+    "One Bichos de Campo piece reports a Don Arnaldo Etchart dead in 2017; which generation is meant could not be settled, so neither man is named or dated.",
+    "A later sale of Bodegas Etchart to an Argentine food group is reported by the press; it is ownership after 1996 and left out, for the integrator to judge."
+   ]
+  },
+  {
+   "key": "yacochuya",
+   "searches": 3,
+   "verdict": "changed",
+   "tested": [
+    "Building in 1998 and the first vintage in February 1999: CellarTracker, Welcome Argentina; agreed.",
+    "The partnership of 1987 or 1988 with a Bordeaux consultant and the sale of Etchart in 1996: CellarTracker, Bichos de Campo, La Gaceta's headline; agreed.",
+    "Height: 6,700 feet (Wine and Spirits Magazine) and more than 2,000 metres (Welcome Argentina); 2,035 found nowhere.",
+    "Vine age: more than sixty years (Welcome Argentina), more than ninety, pre 1950 French material (others); trellised, watered by furrows from springs.",
+    "The blend and oak: all Malbec by most, a little Cabernet Sauvignon by one; eighteen months in new French oak for the 2006 and 2015; the second wine 85 per cent Malbec, 15 Cabernet Sauvignon."
+   ],
+   "changed": [
+    {
+     "field": "wine.sites, story, cards[0]",
+     "was": "about 2,035 metres, some eight kilometres north west of Cafayate",
+     "now": "about 2,000 metres, north west of Cafayate",
+     "why": "two sources give 6,700 feet and more than 2,000 metres; the exact figure and distance were found nowhere",
+     "sources": [
+      "https://www.wineandspiritsmagazine.com/wine/wine-of-the-week/an-argentine-malbec-from-cafayate",
+      "https://www.welcomeargentina.com/cafayate/bodega-yacochuya.html"
+     ]
+    },
+    {
+     "field": "wine.grapes and questions[0]",
+     "was": "Malbec on its own",
+     "now": "all or nearly all Malbec, a small share of Cabernet Sauvignon in some vintages by one account",
+     "why": "one account gives a little Cabernet Sauvignon; the key no longer claims a purity a vintage may break",
+     "sources": [
+      "https://www.winewithseth.com/winewiki/yacochuya/"
+     ]
+    },
+    {
+     "field": "wine.making",
+     "was": "between one year and two, a high share of new wood",
+     "now": "about eighteen months in French oak, all or most new",
+     "why": "listings of the 2006 and 2015 agree on eighteen months in new French oak",
+     "sources": [
+      "https://www.wine.com/product/yacochuya-malbec-2006/130365",
+      "https://www.mrdwine.com/products/san-pedro-de-yacochuya-yacochuya-cafayate-argentina-2013"
+     ]
+    },
+    {
+     "field": "story",
+     "was": "the son brought the consultant in the late 1980s and turned to the new estate; vague dates for the first bottles",
+     "now": "the family, in 1987 or 1988; first vintage February 1999, building from 1998",
+     "why": "the sources do not keep the generations apart; the first vintage is dated by two",
+     "sources": [
+      "https://www.cellartracker.com/m/articles/producer/184196",
+      "https://www.welcomeargentina.com/cafayate/bodega-yacochuya.html"
+     ]
+    },
+    {
+     "field": "sources[3]",
+     "was": "Banville Wine Merchants",
+     "now": "CellarTracker producer article",
+     "why": "it carries the dates the story now gives",
+     "sources": [
+      "https://www.cellartracker.com/m/articles/producer/184196"
+     ]
+    }
+   ],
+   "open": [
+    "No site of the estate's own was found; the record stands on secondary sources throughout, and its present ownership is left untold."
+   ]
+  },
+  {
+   "key": "el-porvenir",
+   "searches": 3,
+   "verdict": "sound",
+   "tested": [
+    "Finca El Retiro at 1,650 metres, pergola, sandy alluvial soil, planted 1945 (Torrontés page) or 1950 (vineyards page): the house's two sites, restricted search; agreed as the record gives it.",
+    "Concrete eggs and eight months on lees: the de Parcela retailer and the house's sheet, with tasting notes of the El Retiro wine; agreed.",
+    "The purchase of 2000, the cellar built by Italian immigrants early in the twentieth century, Tolombón in the late 1970s or the 1980s: Fodor's, ANB Bariloche, Cream Wine, La Gaceta; agreed and hedged as written."
+   ],
+   "changed": [],
+   "open": [
+    "The flagship stays the Laborum Torrontés of Finca El Retiro; the integrator may weigh the Porvenir blend, which heads the range, though the El Retiro Torrontés is the wine met abroad."
+   ]
+  }
+ ],
+ "livingNamesMet": [
+  "Donald Hess and Ursula Hess (Colomé's buyers of 2001; Ursula Hess may be dead, kept as a guard)",
+  "Michel Rolland (listed already)",
+  "Pablo Etchart (the Etchart family's present generation)",
+  "Arnaldo Etchart (the name of the father of 1938 and of the son of Yacochuya; one source has a Don Arnaldo dead in 2017; a guard for prose, the wine's name Arnaldo B. stays)",
+  "Lucía Romero Marcuzzi (El Porvenir)",
+  "Roberto Romero (El Porvenir's founder, a former governor of Salta, dead in 1992 by common knowledge, not searched; not named in the record)",
+  "Félix Lávaque (El Esteco's buyer of 1994 by one account; not named)"
+ ],
+ "swaps": [
+  {
+   "proposed": "none formally; the author's report invites a checker to weigh Porvenir against the Laborum Torrontés of Finca El Retiro",
+   "ruling": "refused: the pick stands. The plan names Laborum, the El Retiro Torrontés is the wine importers and critics abroad meet, and a thin region's group is served by teaching the valley's grape from its old pergola vines."
+  }
+ ],
+ "codexTension": [
+  "The library's Colomé record (p-bodega-colome) speaks of pre-phylloxera vines dating to the 1850s; the house dates its oldest to 1854, so the library is near right but its word pre-phylloxera rests on no source read. Reported, not edited.",
+  "The library and the region record give Altura Máxima as roughly 3,100 metres; the house's 3,111 agrees."
+ ]
+}
