@@ -140,7 +140,8 @@ function line(v) { return JSON.stringify(v).split(String.fromCharCode(0x2028)).j
 /* hc- is the tab's alone: no file under js/ but the data and its layer holds an hc- id or the prefix as a literal. */
 function prefixProblems(jsDir, outFile) {
   const out = [];
-  const skip = new Set([path.resolve(outFile || path.join(jsDir, DATA_FILE)), path.resolve(path.join(jsDir, LAYER_FILE))]);
+  /* the data file as shipped, the file being written when --out names another, and the layer */
+  const skip = new Set([path.resolve(path.join(jsDir, DATA_FILE)), path.resolve(outFile || path.join(jsDir, DATA_FILE)), path.resolve(path.join(jsDir, LAYER_FILE))]);
   const idRe = /\bhc-[0-9a-z]{8}\b/;
   const litRe = /["'`]hc-|\^hc-/;
   const walk = (dir) => {
