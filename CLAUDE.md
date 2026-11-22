@@ -54,7 +54,7 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v122`; its two teaching imports have query versions which
+Source worker is `codex-v123`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
 (codex60: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
@@ -66,72 +66,138 @@ codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
 codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
 codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course,
 codex57 the Grapes tab at the table, codex58 the producers and their flagships,
-codex59 the Champagne houses of the house tab, in the making: its section follows).
+codex59 the Champagne houses of the house tab: its section follows).
 
-## The Champagne houses of the house tab (codex59, in the making, 22 November 2026)
+## The Champagne houses of the house tab (codex59, 22 November 2026)
 
 The owner asked, in these words: "Also add a Champagne House tab under Brennan's Tab in the Sommelier's codex and do a
 deep dive research and tableside description of each house and prestige cuvee", with a class sheet he photographed: two
 columns, Champagne House and Prestige Cuvée, 23 rows. He will say the lines to guests and be asked in class to match
-each house to its cuvée, so a wrong fact is worse than a missing one. The work is on the branch `champagne-wip` and is
-not published: what stands is the spec step, the pipeline, the brief, two pilots and the shell.
+each house to its cuvée, so a wrong fact is worse than a missing one. codex59 is two pieces, like codex58: one record a
+house in `js/data-champagne.js`, built by a pipeline, and one layer, `js/codex59.js`, loaded after the data and
+codex58 and before boot. The layer edits no earlier layer, no data file and none of the published gates' facts beyond
+the pins below; it declares with var and function only, every wrapper is typeof guarded and outermost (18 of them),
+every registry is extended key by key, every string it shows lives in `V59_WORDS` (read by `v59W`) and its CSS in its
+own `v59-style` element, every selector under `.wrap`, every colour a house token on its own ground. It is built on
+the branch `champagne-wip` and integrated on 22 November 2026 for its publish.
 
+- **The data** (`CHAMPAGNE_HOUSES = { meta, houses }`, one line a record in the sheet's order, 269,425 bytes): the 23
+  houses of the sheet, the whole build (`meta.partial` false), 19 joined to `WINE_PRODUCERS` and 4 outside the library
+  (Ayala, Delamotte, Duval-Leroy, Henriot), 7 with the library's own record of the cuvée, 4 with a record in Producers
+  and flagships (Krug, Moët & Chandon, Louis Roederer, Bollinger), 4 with a second cuvée (Ayala's Grande Cuvée before
+  Perle d'Ayala, Billecart-Salmon's Le Clos Saint-Hilaire beside Nicolas François, Henriot's Cuvée des Enchanteleurs
+  before Hemera, Piper-Heidsieck's Hors-Série after Rare); 69 cards and 69 questions (answers A 18, B 17, C 17, D 17);
+  30,139 reading words; 230 sources, 142 of them primary. Every record was written by an author, refuted by a refuter
+  (its `checked` block and `reviews/check-<key>.json`) and read together by the integrator.
+- **The record** (`.scripts/champagne/schema.cjs`, the one validator; `--caps` prints the caps, `--test` proves the
+  pilots sound and 40 seeded faults refused by the rule that names each): the house (how to say it, the year it dates
+  from and what that year is, its village, its letters in the appellation's terms with what they mean, its story as
+  dated history, its style as the house states it and the non vintage a guest knows); the prestige cuvée in depth (the
+  name as the label prints it, the first vintage or release, its kind and rhythm, blend in words, sites, making, lees,
+  bottle, the glass young and aged, forms, service); the second cuvée where the plan gives one; six lines for the table
+  (the house and the cuvée in forty five seconds of 90 to 110 words, ten second lines, a twenty, and the sale in exactly
+  two sentences, each held to the Grapes tab's rules of a spoken line); what guests ask; the traps; what the sheet
+  prints beside what the label prints; three cards (the house to its cuvée, the cuvée to its house, one number or term)
+  and three questions (tagged match, house, cuvee); three to ten sources; and, never shipped, the report and the
+  refuter's `checked` block. At most 1,700 reading words a record. The house voice is the Flagships tab's: no dash,
+  British spelling, never the retired word, nobody living (`.scripts/champagne/people.json` beside the Flagships tab's
+  list, a house or a cuvée keeping its own name), the dead with their dates, no price, no score, nothing volatile told
+  as a present state (ownership as dated history), no superlative of judgement.
 - **The pipeline**, under `.scripts/champagne/`, modelled on `.scripts/flagships/`: `BRIEF.md` (the authors', refuters'
-  and layer engineer's contract, with the layer's ruling under "The layer"); `plan.json` (the sheet's 23 houses in the
-  sheet's order, each with the cuvée as the label prints it, the sheet's own wording kept, a second cuvée for Ayala,
-  Billecart-Salmon, Henriot and Piper-Heidsieck, the library ids, the flagships pick for Krug, Moët & Chandon, Louis
-  Roederer and Bollinger, and its chunk: pilots, then h1 to h5); `schema.cjs` (the one validator: the sheet as a
-  constant no one corrects, the caps, the appellation's own terms for a producer, the Flagships tab's refusals and the
-  Grapes tab's rules of a spoken line reused; `--caps`, and `--test`, which proves the pilots sound and 40 seeded faults
-  each refused by the rule that names it); `people.json` (the living of Champagne, beside the Flagships tab's list);
-  `fragments/<key>.json`, one a house; `keys.v1.json`; `build-champagne.cjs` (`--lint <key>`, `--chunk`, `--all`; the
-  writing build, whole or `--partial`; `--check`; `--plan`; `--freeze`); `show.cjs <key|chunk|--sheet>`; `reviews/`
-  for the refuters' files.
-- **The record**, about two and a half times a Flagships record and at most 1,700 reading words: the house (how to say
-  it, the year it dates from and what that year is, its village, what it is in the appellation's terms, its story as
-  dated history, its style as the house states it and the non vintage wine a guest knows); the prestige cuvée in depth;
-  the second cuvée where the plan gives one; six lines for the table (the house and the cuvée in forty five seconds of
-  90 to 110 words, ten second lines, a twenty, and the sale in exactly two sentences); what guests ask; the traps; what
-  the sheet prints beside what the label prints; three cards (the house to its cuvée, the cuvée to its house, one
-  number or term) and three questions (tagged match, house, cuvee); the sources; and, never shipped, the report and the
-  refuter's `checked` block.
-- **The data**: `js/data-champagne.js`, `var CHAMPAGNE_HOUSES = { meta, houses }`, one line a record in the sheet's
-  order; a partial build of the two pilots, Ayala and Bollinger, today (6 cards, 6 questions, not yet refuted). The
-  ids are `hc-` and eight base36 digits, a prefix nothing else under `js/` mints.
-- **The shell**: `index.html` loads `js/data-champagne.js?v=1` then `js/codex59.js?v=1` after codex58.js and before
-  boot.js; the source worker is `codex-v122` and lists both.
-- **The layer** (`js/codex59.js`, built at the layer step): Champagne houses is the fifth room of the house tab
-  (`V48_ROOMS` extended once, last; the row of rooms restyled for five, two columns on a phone with the fifth across
-  both). Three views owned and lit by the house tab, warm and cold: `champagne` (`#/v/champagne`, the root: the lesson
-  of what a prestige cuvée is, Study, a filter by a word typed, the houses in the sheet's order with the cuvée as the
-  label prints it; `#/v/champagne/<key>`, a house: the name, Say it, Founded, Where, the appellation's term, At the
-  table for the house then for the cuvée, forty five first, then the sale, the ten and the twenty, then the cuvée in
-  full, the second cuvée, the style, the story, guests, traps, the sheet beside the label, On the list, Study, In the
-  Codex, the sources closed, the houses before and after and All); `champdrill` (`#/v/champdrill[/house|cuvee]`, the
-  matching drill both ways, the wrong answers the other houses', never a name the shown house answers to);
-  `champpresent` (`#/v/champpresent/<key>`, Present it). A tap on the current room from a house page climbs to the
-  root; Back climbs a house, the drill and Present it to the root, the root to the Wine list. The decks `champcards`,
-  `champmatch`, `champcards:{key}` and `champdue`, the quiz (a house's three, the matching questions, ten from every
-  house) and Present it keep their due dates in `oot-codex-champrs-v1` (`{ c, q, p }`). A door from the Producers and
-  flagships page of a house with a pick, through `V58_SECS`. 18 wrappers, each typeof guarded and outermost.
+  and layer engineer's contract, with the layer's ruling under "The layer"); `plan.json` (the sheet's 23 houses in its
+  order, the cuvée as the label prints it, the sheet's own wording kept, the second cuvées and their standing, the
+  library ids, the flagships picks and the chunks pilots and h1 to h5, its notes ruled at the integration for Henriot,
+  Billecart-Salmon and Piper-Heidsieck); `schema.cjs`; `people.json`; `fragments/<key>.json`, one a house (23);
+  `reviews/check-<key>.json`, one a house (23: the searches, what was tested per field, every change with was, now, why
+  and its sources, what stays open, the living names met and the published Codex records in tension under
+  `codexInTension`); `keys.v1.json`; `build-champagne.cjs` (`--lint <key>`, `--chunk`, `--all`; the writing build, whole
+  or `--partial`; `--check`; `--plan`; `--freeze`); `show.cjs <key|chunk|--sheet>`. Authors and refuters run `--lint`
+  alone; only the spec engineer, the layer engineer and the integrator run the writing build. The chunks were written
+  and refuted in order (the pilots Ayala and Bollinger, then h1 to h5), the pilots refuted last, by a refuter of their
+  own; the integrator read the 23 together (wording only: the spoken lines no longer recite one pattern from house to
+  house, sister houses and the group's houses told alike as dated history), ruled the plan's three notes, set
+  `people.json` right and ran the whole build with `--freeze`.
+- **The ids**: `hc-` and eight base36 digits of FNV-1a 64 (build-regions.cjs's mint) over `JSON.stringify(['champagne',
+  key])` for a record, `['champagne:' + id, front]` for a card and its stem for a question, a prefix nothing else under
+  `js/` mints. The answer positions are dealt by the build, round robin from three times the house's place in the sheet
+  and shuffled from the key, so a deal moves no id. `keys.v1.json` is frozen over its 161 ids (23 records, 69 cards, 69
+  questions) since the integration: a build may add ids and never lose one, so a front or a stem reworded from here is
+  a new card or question and orphans a learner's record.
+- **The layer** (`js/codex59.js`): Champagne houses is the fifth room of the house tab (`V48_ROOMS` extended once,
+  last; the row of rooms restyled for five, five columns wide, three then two between, two on a phone with the fifth
+  across both). Three views owned and lit by the house tab, warm and cold: `champagne` (`#/v/champagne`, the root: the
+  lesson of what a prestige cuvée is, Study, a filter by a word typed, the houses in the sheet's order with the cuvée as
+  the label prints it, both names where a record has two; `#/v/champagne/<key>`, a house: the name, Say it, Founded,
+  Where, the appellation's term, At the table for the house then for the cuvée, forty five first, then the sale, the
+  ten and the twenty, then the cuvée in full, the second cuvée headed by its standing, the style, the story, guests,
+  traps, the sheet beside the label, On the list, Study, In the Codex, the sources closed, the houses before and after
+  and All; an address naming no house falls to the root); `champdrill` (`#/v/champdrill[/house|cuvee]`, the matching
+  drill both ways, the answer the record's own, the wrong answers the other houses', never a name the shown house or
+  cuvée answers to, a miss coming back once); `champpresent` (`#/v/champpresent/<key>`, Present it). A tap on the
+  current room from a house page climbs to the root; Back climbs a house, the drill and Present it to the root, the root
+  to the Wine list, the Wine list to Home. The tab needs no house: with none loaded the root and every house page draw
+  whole and only On the list is absent. On the list reads the house's bottles through codex58's matching, by the house
+  and the library's name for its cuvée, the producer over the wine, never a price or a vintage. The decks
+  `champcards`, `champmatch`, `champcards:{key}` and `champdue` on codex32's card screen, the quiz through the core
+  engine (a house's three, the matching questions, ten from every house with the due first) and Present it keep their
+  due dates by codex56's steps in `oot-codex-champrs-v1` (`{ c, q, p }`) under `OOT.profiles.key`, no other slot
+  touched; an `hc-` key is never level progress, never in codex3's rotation, never an orphan. A door from the
+  Producers and flagships page of a house with a pick, through `V58_SECS`, last. No door outside the house tab.
 - **The gate**: `node .scripts/check-champagne.js [jsDir] [--partial] [--mutations]` (with `OOT_SHARED` and
-  `OOT_HOUSE_PACK`), 68 checks in fifteen sections and 38 mutations, each caught by its own check. While the data is
-  a partial build it runs with `--partial` (`GATE_ARGS_check_champagne=--partial` for the runner); without it the
-  roster must be the sheet's 23 and `WHOLE`, the counts of the whole build, filled by the gates agent.
-- **The pins that moved with the layer**: `check-flagships.js` (section 4's sections gain `v58-s-champ` on the page of
-  a house with a pick; section 12's outermost check reads codex58's wrapper straight under codex59's where codex59
-  wraps the same function); `check-house-flow.cjs` (the fifth room in every walk of the rooms, five routes on a
-  no-house page, the root drawn whole with no house); `check-house-only.cjs` (`HOUSE_DOOR` and `HOUSE_DECK` gain the
-  tab's views and decks, the owners and the cold chains gain its addresses); `check-card.js` (its parents table gains
-  the Champagne decks).
-- **The pins that moved with the shell**: the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
-  `check-cms.js` (and its chain list and two descriptions), `check-components.js`, `check-nav.js`, `check-videos.js`
-  and `check-winelist.js`; the conditional lists of `check-regions.js`, `check-atlas-course.js`,
-  `check-grapes-table.js` (section 1 and its section 8 base, which also leaves out codex59's two files and proves no
-  `V59_WORDS` in it) and `check-flagships.js` (section 1); and the worker mutation strings of `check-flagships.js` and
-  `check-grapes-table.js`, which start from `codex-v122`.
-- **Still to come**: the houses not yet written, refuted and read; the whole build, `WHOLE` in the gate and the freeze;
-  and this section rewritten at the integration. The next layer is codex60.
+  `OOT_HOUSE_PACK`; a tree with no codex59.js is skipped), 69 checks in fifteen sections (the load; the data, the roster
+  whole and `WHOLE` pinned exact, every record through `schema.cjs`, the data the build byte for byte, the ids against
+  the keys, nobody living, `schema.cjs --test`; the spoken lines; the pages; the root; the room; the addresses warm and
+  cold; On the list on the fixture house; study; the drill; the quiz; Present it; the door from Producers and
+  flagships; the shell and the chain rule; the layer's file in the strictest voice) and 38 mutations, each caught by
+  the check that names it (`CHAMPAGNE_MUTATION=word|word` runs only those whose names hold a word). `--partial` stays
+  for a partial build and is no longer passed: the data is whole. At the integration the drill's fixture check was
+  made to read every name Ayala answers to, since with Krug written its Krug Grande Cuvée stands ahead of the fixture
+  and was the wrong answer the house way mutation offered, unseen.
+- **The pins that moved with the layer**: `check-flagships.js` (section 4's sections gain `v58-s-champ`, last, on the
+  page of a house of the sheet whose key is its pick; section 12's outermost check reads codex58's wrapper straight
+  under codex59's where codex59 wraps the same function); `check-house-flow.cjs` (the fifth room in every walk of the
+  rooms, five routes on a no-house page, the root drawn whole with no house); `check-house-only.cjs` (`HOUSE_DOOR` and
+  `HOUSE_DECK` gain the tab's views and decks, the owners and the cold chains its addresses); `check-card.js` (its
+  parents table gains the Champagne decks).
+- **The pins that moved with the shell**: `index.html` (two tags after codex58); the literal order lists of
+  `check-atlas-ui.js`, `check-brennans.js`, `check-cms.js` (and its chain list and two descriptions),
+  `check-components.js`, `check-nav.js`, `check-videos.js` and `check-winelist.js`; the conditional lists of
+  `check-regions.js`, `check-atlas-course.js`, `check-grapes-table.js` (section 1 and its section 8 base, which also
+  leaves out codex59's two files and proves no `V59_WORDS` in it) and `check-flagships.js` (section 1).
+- **The pins that moved with the whole build**: `index.html`'s data tag at `data-champagne.js?v=2` (the layer keeps
+  `?v=1`); `sw.js` at `codex-v123` (`codex-v122` since the spec step, listing both files); `check-champagne.js`
+  (`WHOLE`, its worker check reading `codex-v123` or later, its swapped tags mutation reading `?v=2`); and the worker
+  mutations of `check-flagships.js` and `check-grapes-table.js`, which start from `codex-v123`.
+- **At its integration**: every gate passed on the 2 November house engine and pack (53 run, 0 failed), `check-champagne.js`
+  caught its 38 mutations by name, `check-grapes-table.js` its 31 (run whole, its worker mutation among them) and
+  `check-flagships.js` its worker mutation (the only one of its 43 that names a value moved here; the whole run is the
+  lead's before the publish), and the phone walk at 320, 375 and 390 px, day and
+  night, was clean (564 ok, 0 failed); six houses were read on screen at 390 px, day and night (Krug, Salon, Delamotte,
+  Piper-Heidsieck with Rare, Armand de Brignac, Billecart-Salmon).
+- **Left open for the owner** (each in the record's `checked.open`, its report and its review file; nothing here
+  edits a published record): the letters on the label (NM, CM) were read on a label for only a few houses (Nicolas
+  Feuillatte's CM, Moët & Chandon's, Piper-Heidsieck's and Taittinger's NM, Perrier-Jouët's by a guide and a code) and
+  inferred for the rest from the library or a guide; the malolactic conversion and some dosages are empty where no
+  house page states them; Perle d'Ayala's first vintage (the house created it in 1995, its leaflet lists a 1990 and a
+  1993) and how Grande Cuvée stands to it; Cuvée des Enchanteleurs' first vintage. The sheet's spellings are kept and
+  taught beside the label in each record's sheet note and a trap: La Grand Année, Grand Cuvée (for Ayala and for
+  Krug), Clos St. Hilaire and the cut off Franco, Cuvée Femme, Grand Sendrée, Cuvée Palms d'Or, Clos de Goisses,
+  Formerly Rare, Comtes de Chamoagne, Belle Époque for the label's Belle Epoque, the NV of Brut Gold and the (Salon)
+  of Delamotte's row. Tensions with published Codex records, listed and not changed: Krug's rosé decided at the 1976
+  harvest and first shown in 1983 (Producers and flagships: in the 1970s, 1976 by its own account); Cristal six to
+  seven years on lattes and six to twelve months after disgorging by the house's 2015 sheet, and first sold to the
+  public in 1945 (the flagships record: about six years and eight months, the 1945 sale left out); Bollinger's
+  Vieilles Vignes Françaises drawing on a third plot at Bouzy until the 2004 vintage (the flagships record: two plots
+  in Aÿ); the library's Ruinart Brut for the house's R de Ruinart; Taittinger's purchase of Forest-Fourneaux in 1932
+  by the library and most accounts, 1931 by the Union des Maisons de Champagne; the library's nine years for Palmes
+  d'Or against the house's ten; the library's p-krug placing the Édition number on the back label where it is on the
+  front; the Champagne region record's producers line calling Laurent-Perrier's rosé a saignée where the house says
+  maceration.
+
+The shell loads `js/data-champagne.js?v=2` then `js/codex59.js?v=1` after codex58.js and before boot.js; the source
+worker is `codex-v123` and lists both. To publish: the lead runs `check-flagships.js --mutations` and
+`check-grapes-table.js --mutations` whole, merges `champagne-wip` to master, and syncs the wing on the site
+(`node tools/sync-wing.mjs codex`, then `bump-shared` and `check-all` there). The next layer is codex60.
 
 ## Producers and their flagships (codex58, 14 November 2026; wave two's batch A, 15 November 2026; batches B and C, 21 November 2026)
 
@@ -1512,7 +1578,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v122`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v123`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
