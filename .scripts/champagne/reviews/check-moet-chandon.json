@@ -1,0 +1,101 @@
+{
+ "key": "moet-chandon",
+ "house": "Moët & Chandon",
+ "chunk": "h4",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 26,
+  "forRecord": 6,
+  "run": [
+   "Dom Pérignon's Plénitudes and their years on the lees, on the house's own domain",
+   "the Plénitudes' years on the lees in critics' and merchants' accounts",
+   "Moët Impérial's dosage, reserve wines and the letters on its label",
+   "a Brut Impérial label through Open Food Facts",
+   "Moët Impérial's dosage on the house's own domain",
+   "Dom Pérignon Rosé's first vintage, 1959, and the first sold",
+   "Dom Pérignon 2015: its disgorgement, dosage and release"
+  ],
+  "note": "Twenty six searches of a share of twenty eight for chunk h4, none of them the author's; two left unspent. Six were restricted to a house's own domain or to Open Food Facts and read through their summaries. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries."
+ ],
+ "tested": {
+  "founded": "1743, Moët & Chandon from 1833: the published flagships record and the library, which need no new source. Confirmed.",
+  "kind": "NM read on a Brut Impérial label's producer line, Épernay, France, NM 549 002, as Open Food Facts records it.",
+  "story": "Brut Impérial of 1869 rests on the house's 150 years page; Moët Hennessy 1971 and LVMH 1987 on the group's own history; P2 from the 1998 on Decanter, confirmed by the same Decanter title in this refuter's own search. Confirmed.",
+  "style": "Moët Impérial: more than 100 wines, 20 to 30 per cent reserve and 7 grams a litre, all on the house's own pages (one distributor's sheet gives 9 grams, an older figure). Pinot Noir and Meunier 30 to 40 per cent each, Chardonnay 20 to 30: the house. Confirmed.",
+  "cuvee": "First vintage 1921, released 1936: published. The rosé's first vintage 1959: Vinous, Wikipedia; several accounts add that the 1959 was never sold and the 1962 was the first sold, which the record leaves out. The first release's time on the lees: critics give eight to nine years from the harvest; the 2015 was disgorged early in 2023 and released in July 2024, so about eight years on the lees was too long, and the record now says the better part of a decade, as the flagships record does. P2: twelve to fifteen years and more, by Decanter and merchants; P3 about twenty five years. The 2015's dosage: 5 grams a litre in most accounts, 4.5 in some merchants', so about 4.5 to 5 stands.",
+  "table": "house45 opened on the house of Épernay, which reads as a rank; now an Épernay house. cuvee45 and the sale said about eight years; now the better part of a decade. The sale's first sentence ran to 35 words and was cut to 29.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones (Dom Ruinart, La Grande Dame, Cristal; 1743, 1869, 1936), no length clue, explanations that teach."
+ },
+ "changes": [
+  {
+   "field": "style.lees, cuvee.lees, cuvee.making, table.cuvee45, table.sale",
+   "was": "about seven to eight years before the first release; the 2015 was disgorged in 2023, after about eight",
+   "now": "the better part of a decade before the first release; the 2015 was disgorged early in 2023 and released in 2024",
+   "why": "Critics give eight to nine years from the harvest for the first Plénitude, and the 2015, harvested in 2015 and disgorged in January 2023, spent nearer seven years on its lees than eight; the published flagships record already words it as the better part of a decade.",
+   "sources": [
+    "The Buyer: Dom Pérignon 2015 and 2006 Plénitude 2",
+    "The World of Fine Wine: Dom Pérignon 2015 and 2006 P2"
+   ]
+  },
+  {
+   "field": "style.lees, cuvee.lees, cuvee.forms[1], guests[2].a, questions[2].exp",
+   "was": "about fifteen years before P2",
+   "now": "twelve to fifteen years and more before P2",
+   "why": "Accounts range from twelve to fifteen and more; the flagships refuter refused the single figure of fifteen for the same reason.",
+   "sources": [
+    "Decanter: Dom Pérignon replaces Oenothèque with P2 1998 launch",
+    "merchants' P2 pages read through one search summary (Berry Bros. and Rudd, Harrods, Tatler Asia)"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm",
+   "was": "the 2006 has come back as P2, and the 2013 and 2015 followed as first releases",
+   "now": "the 2015 was released in 2024, with the 2006 as P2 beside it",
+   "why": "A dated release in place of a list that reads as the current range.",
+   "sources": [
+    "The World of Fine Wine: Dom Pérignon 2015 and 2006 P2"
+   ]
+  },
+  {
+   "field": "kind.means, report",
+   "was": "NM inferred from the Union's listing",
+   "now": "NM read on a Brut Impérial label; the means says the labels carry the letters",
+   "why": "The brief asks the refuter to read the letters where the author could not.",
+   "sources": [
+    "Open Food Facts: Brut Impérial, Moët & Chandon"
+   ]
+  },
+  {
+   "field": "table.house45",
+   "was": "Moët & Chandon is the house of Épernay",
+   "now": "Moët & Chandon is an Épernay house",
+   "why": "The definite article ranks it among the town's houses.",
+   "sources": []
+  },
+  {
+   "field": "sources",
+   "was": "Moët & Chandon: the house",
+   "now": "Open Food Facts: Brut Impérial, Moët & Chandon",
+   "why": "The cap is ten; the house's history page carries only facts the published flagships record already holds.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "The Dom Pérignon Rosé's first vintage, 1959, stands; several accounts say the 1959 was never sold and the 1962 was the first sold, which the record does not tell.",
+  "The 2015's dosage stays about 4.5 to 5 grams a litre: most accounts give 5 and some merchants 4.5.",
+  "style.malolactic stays empty: no source read states it."
+ ],
+ "livingNamesMet": [],
+ "codexInTension": [
+  "WINE_PRODUCERS p-moet-chandon, holdings and why: the largest vineyard holdings and the volume benchmark are present states and superlatives this record does not repeat.",
+  "The Champagne region record's producers line for p-moet-chandon: the largest house, a superlative this record does not repeat.",
+  "WINE_PRODUCERS w-dom-perignon, holdings: Hautvillers as the symbolic home, where two accounts put the abbey's Premier Cru fruit in each blend (already listed by the flagships refuter)."
+ ]
+}
