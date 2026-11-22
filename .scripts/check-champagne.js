@@ -95,10 +95,9 @@ const NOW = Date.parse('2026-11-22T15:02:00.000Z');
 /* the sections of a house page in their order; the second cuvée and On the list only where the record has them */
 const SECTIONS = ['v59-s-cuvee', 'v59-s-also', 'v59-s-style', 'v59-s-story', 'v59-s-guests', 'v59-s-traps', 'v59-s-sheet', 'v59-s-list', 'v59-s-study', 'v59-s-codex'];
 /* the whole build pinned exact: the houses, the cards and the questions, the answers as the build deals them, the
-   houses the library joins, those with a record in Producers and flagships and those with a second cuvée. The gates
-   agent fills it in the commit of the whole build; while it is null a whole build fails here, and a partial one is
-   held without it. */
-const WHOLE = null;
+   houses the library joins, those with a record in Producers and flagships and those with a second cuvée. Filled by
+   the integrator in the commit of the whole build, 22 November 2026; a partial build is held without it. */
+const WHOLE = { houses: 23, cards: 69, questions: 69, deal: [18, 17, 17, 17], joined: 19, cuvees: 7, picks: 4, also: 4 };
 
 let passed = 0, failed = 0;
 function check(what, ok, detail) {
@@ -745,7 +744,7 @@ async function main() {
     check('index.html loads js/data-champagne.js then js/codex59.js, each once with ?v=, after codex58.js and before boot.js', i58 > 0 && iData > i58 && i59 > iData && iBoot > i59 && index.split('js/codex59.js').length === 2 && index.split('js/data-champagne.js').length === 2);
     const v = Number((sw.match(/const CACHE = '(?:oot-)?codex-v(\d+)';/) || [])[1]);
     const s58 = sw.indexOf("'./js/codex58.js'"), sData = sw.indexOf("'./js/data-champagne.js'"), s59 = sw.indexOf("'./js/codex59.js'");
-    check('sw.js is codex-v122 or later (' + v + ') and lists ./js/data-champagne.js and ./js/codex59.js once each, after ./js/codex58.js', v >= 122 && s58 > 0 && sData > s58 && s59 > sData && sw.split("'./js/codex59.js'").length === 2 && sw.split("'./js/data-champagne.js'").length === 2, 'v' + v);
+    check('sw.js is codex-v123 or later (' + v + ') and lists ./js/data-champagne.js and ./js/codex59.js once each, after ./js/codex58.js', v >= 123 && s58 > 0 && sData > s58 && s59 > sData && sw.split("'./js/codex59.js'").length === 2 && sw.split("'./js/data-champagne.js'").length === 2, 'v' + v);
     const gates = fs.readdirSync(GATES).filter((f) => /^(check-|list-harness)[\w-]*\.c?js$/.test(f));
     const short = [];
     gates.forEach((f) => {
@@ -885,7 +884,7 @@ function mutations() {
     ['a key left an orphan in the ledger', 'js/codex59.js', '          if (left.length) orph[name] = left; else delete orph[name];\n', '', 'never an orphan in the ledger'],
     ['Present it keeping no mark', 'js/codex59.js', "    v59Sched('p', key, ok);\n", '', 'Present it: the house shown'],
     ['no door from Producers and flagships', 'js/codex59.js', "      var r = v59ForPick(f && f.key);\n      if (!r) return null;", "      return null;", 'a door from Producers and flagships'],
-    ['the two tags swapped in index.html', 'index.html', '<script src="js/data-champagne.js?v=1"></script>\n<script src="js/codex59.js?v=1"></script>', '<script src="js/codex59.js?v=1"></script>\n<script src="js/data-champagne.js?v=1"></script>', 'index.html loads js/data-champagne.js then js/codex59.js'],
+    ['the two tags swapped in index.html', 'index.html', '<script src="js/data-champagne.js?v=2"></script>\n<script src="js/codex59.js?v=1"></script>', '<script src="js/codex59.js?v=1"></script>\n<script src="js/data-champagne.js?v=2"></script>', 'index.html loads js/data-champagne.js then js/codex59.js'],
     ['a let in the layer', 'js/codex59.js', 'var V59_SLOT = ', 'let V59_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex59.js', "if (typeof v32CardFace === 'function') {\n  var _v59CardFace", "if (true) {\n  var _v59CardFace", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex59.js', "'.wrap .v59-sec{", "'.v59-sec{", 'every selector of the v59-style element'],

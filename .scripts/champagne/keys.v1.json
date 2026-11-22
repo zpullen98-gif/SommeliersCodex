@@ -1,6 +1,6 @@
 {
  "about": "Every id of the Champagne houses tab, house by house in the sheet's order: the record's id (hc- and eight base36 digits, minted once from the house's key by build-champagne.cjs and read from here ever after), its three cards and its three questions (minted from the record's id and the text). While frozen is false the file follows the writing build. Once the integrator has frozen it (build-champagne.cjs --freeze, the roster whole) a build may add ids and may never lose one: an id is a learner's saved record, and a reworded front or stem is a new id that orphans it.",
- "frozen": false,
+ "frozen": true,
  "keys": {
   "armand-de-brignac": {"id":"hc-9z0bg1ot","cards":["hc-26pm5wky","hc-chcea3h1","hc-o5mgc8vb"],"questions":["hc-hj42xrth","hc-mp4mfgjf","hc-ltapd7nd"]},
   "ayala": {"id":"hc-nad6uw9d","cards":["hc-9nbuso4i","hc-o5k3dmhd","hc-1wvmkyvs"],"questions":["hc-4taw0dk4","hc-hhlufogv","hc-be519fk0"]},
@@ -11,6 +11,19 @@
   "deutz": {"id":"hc-nmvk2uyb","cards":["hc-z4u5hzz6","hc-fl8y5w65","hc-71qe1klk"],"questions":["hc-737ba1bx","hc-gipgw4ke","hc-6j6p05li"]},
   "duval-leroy": {"id":"hc-k9cbdel3","cards":["hc-qnf2f9mz","hc-q3l947f6","hc-j6shv5bk"],"questions":["hc-1x5pcy4f","hc-81ny9p64","hc-pua5d08i"]},
   "drappier": {"id":"hc-5jwo2e28","cards":["hc-cpw7qmkd","hc-ni3ttj9m","hc-5s93geu6"],"questions":["hc-s3a0oeis","hc-8ssxt2uv","hc-j9u6iy2h"]},
-  "gosset": {"id":"hc-3v9bg882","cards":["hc-5zsqei3n","hc-nmdiuemo","hc-8bqnej2o"],"questions":["hc-3ui2olq5","hc-vhcrgllw","hc-y6n76ki8"]}
+  "gosset": {"id":"hc-3v9bg882","cards":["hc-5zsqei3n","hc-nmdiuemo","hc-8bqnej2o"],"questions":["hc-3ui2olq5","hc-vhcrgllw","hc-y6n76ki8"]},
+  "henriot": {"id":"hc-h6vfzulu","cards":["hc-agmaiacl","hc-yxeow2ic","hc-vsv1vols"],"questions":["hc-th76d0nt","hc-psighmzo","hc-fxeyfhks"]},
+  "krug": {"id":"hc-x0cvpicq","cards":["hc-yoitqnr1","hc-3rjstvun","hc-avupbmjb"],"questions":["hc-7gy46eid","hc-yl3n4ou9","hc-a7zqvemk"]},
+  "laurent-perrier": {"id":"hc-ntdzibbi","cards":["hc-twxlwwoy","hc-h9vwvkyx","hc-al7x0ym5"],"questions":["hc-j2gsmlru","hc-91xtp6sy","hc-mjsi7iqq"]},
+  "louis-roederer": {"id":"hc-gv5qn7j2","cards":["hc-iyndynmw","hc-qwomsrb5","hc-iv5j92ot"],"questions":["hc-5z2nh3yf","hc-8blu3mix","hc-y89pf30q"]},
+  "moet-chandon": {"id":"hc-c5p7syoy","cards":["hc-0d9mx5bz","hc-dgvbjy2w","hc-s9eujl71"],"questions":["hc-2h3ubyem","hc-n6334kxv","hc-8ebpc3ix"]},
+  "nicolas-feuillatte": {"id":"hc-o50776g2","cards":["hc-u6ngind3","hc-wb9fxa3w","hc-d7qpz8tv"],"questions":["hc-b77ix0yi","hc-4xofbjuk","hc-7xk5qtfc"]},
+  "perrier-jouet": {"id":"hc-msxbalpo","cards":["hc-bmk7s5dy","hc-uarts2a5","hc-ibm2uw27"],"questions":["hc-mj64w90m","hc-70e25fta","hc-op2774l6"]},
+  "philipponnat": {"id":"hc-pgx3785n","cards":["hc-9m4x04c8","hc-l4pnvuz6","hc-llrlt86e"],"questions":["hc-t8cv2li9","hc-0posn1pq","hc-caaps8p2"]},
+  "piper-heidsieck": {"id":"hc-wrzu31tr","cards":["hc-2cenkbix","hc-2h6vw3sm","hc-73r3jpfq"],"questions":["hc-7zwcpsf2","hc-scbxt0g1","hc-xm7nno28"]},
+  "pol-roger": {"id":"hc-ofb4wr1a","cards":["hc-bblrvtfn","hc-qpl4sg5t","hc-79jtg1ax"],"questions":["hc-fyrqtmvx","hc-gf4hq0hu","hc-i58x6hnq"]},
+  "ruinart": {"id":"hc-g12t96yg","cards":["hc-utk7y4oc","hc-92s649p3","hc-udzirski"],"questions":["hc-ioeg48nc","hc-o2aopvs9","hc-f4vmy28y"]},
+  "taittinger": {"id":"hc-i83l9bwa","cards":["hc-kva42zqw","hc-zq7iqruw","hc-naxb3bb9"],"questions":["hc-duzugx4f","hc-vhoa4una","hc-erkjb0b7"]},
+  "veuve-clicquot": {"id":"hc-a0eerdwd","cards":["hc-r69qv78m","hc-qf5vfxqd","hc-yb3xlpag"],"questions":["hc-fpfcmrld","hc-g8ertjb6","hc-ulpj6mr3"]}
  }
 }

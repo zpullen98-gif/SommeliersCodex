@@ -1200,7 +1200,7 @@ function mutations() {
     ['a group climbing to Home', 'js/codex58.js', "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'flagships' }; }", "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'home' }; }", 'the parents: a house its group'],
     ['the cold address left unread', 'js/codex58.js', "    v32Apply(r, typeof v32CurState === 'function' ? v32CurState() : null);\n    V32.pend = 'replace';\n", '', 'each address answers cold'],
     ['the two tags swapped in index.html', 'index.html', '<script src="js/data-flagships.js?v=4"></script>\n<script src="js/codex58.js?v=1"></script>', '<script src="js/codex58.js?v=1"></script>\n<script src="js/data-flagships.js?v=4"></script>', 'index.html loads js/data-flagships.js then js/codex58.js'],
-    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v122';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
+    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v123';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
     ['a let in the layer', 'js/codex58.js', 'var V58_SLOT = ', 'let V58_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex58.js', "if (typeof prodProfileView === 'function') {\n  var _v58ProfileView", "if (true) {\n  var _v58ProfileView", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex58.js', "'.wrap .v58-sec{", "'.v58-sec{", 'every selector of the v58-style element'],
