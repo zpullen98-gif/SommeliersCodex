@@ -1,0 +1,8 @@
+{
+ "about": "Every id of the Champagne houses tab, house by house in the sheet's order: the record's id (hc- and eight base36 digits, minted once from the house's key by build-champagne.cjs and read from here ever after), its three cards and its three questions (minted from the record's id and the text). While frozen is false the file follows the writing build. Once the integrator has frozen it (build-champagne.cjs --freeze, the roster whole) a build may add ids and may never lose one: an id is a learner's saved record, and a reworded front or stem is a new id that orphans it.",
+ "frozen": false,
+ "keys": {
+  "ayala": {"id":"hc-nad6uw9d","cards":["hc-9nbuso4i","hc-o5k3dmhd","hc-1wvmkyvs"],"questions":["hc-4taw0dk4","hc-hhlufogv","hc-be519fk0"]},
+  "bollinger": {"id":"hc-6ycouwy5","cards":["hc-xc8dsf3y","hc-bu2ec35b","hc-8vsgt59d"],"questions":["hc-ndt4qeqp","hc-qqxta8f5","hc-jxe3ailm"]}
+ }
+}

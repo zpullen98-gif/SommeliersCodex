@@ -122,7 +122,7 @@ function ship(rec, id, index) {
 }
 
 function header(from, stats) {
-  return '/* The Champagne houses tab of Brennan\'s: built by .scripts/champagne/build-champagne.cjs from ' + from + ', never edited by hand.\n'
+  return '/* The Champagne houses tab of the house tab (codex59): built by .scripts/champagne/build-champagne.cjs from ' + from + ', never edited by hand.\n'
     + '   CHAMPAGNE_HOUSES.houses holds one record a house, in the order of the class sheet of 22 November 2026, each\n'
     + '   with its id (hc- and eight base36 digits, minted once from the plan\'s key and kept in\n'
     + '   .scripts/champagne/keys.v1.json): the house (its WINE_PRODUCERS id or "", the id of the library\'s own record of\n'

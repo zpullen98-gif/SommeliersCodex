@@ -129,10 +129,10 @@ const CAPS = {
   sheet: { label: [1, 14], note: [8, 50] },
   cards: { n: 3, front: [5, 20], back: [2, 40] },
   questions: { n: 3, stem: [8, 55], option: [1, 14], exp: [12, 50] },
-  sources: { n: [3, 8], title: [2, 20], web: 1 },
+  sources: { n: [3, 10], title: [2, 20], web: 1 },
   serveDegrees: [6, 13], /* the Codex's service reference: sparkling 8 to 10 degrees Celsius, a fuller oak aged Champagne 9 to 12 */
   report: 12,
-  entry: 1500 /* the reading words a record shows: everything above the cards, the questions and the sources */
+  entry: 1700 /* the reading words a record shows: everything above the cards, the questions and the sources */
 };
 
 /* small readers */
@@ -701,8 +701,10 @@ function adviseRecord(rec, plan) {
       if (TITLED.test(bare) && !/\b1\d{3}\b|\b20[0-2]\d\b/.test(bare)) out.push(where + ': "' + bare.match(TITLED)[0] + '..." names a titled person with no date in the sentence: the long dead carry their dates once in the story, the living are never named');
     });
     const e = s.match(EST);
-    if (e) out.push(where + ': "' + e[0] + '" is a claim of rank or of a first: two sources, or cut it');
-    const nw = s.match(NOW);
+    /* a first vintage and a first release are this tab's daily bread, each dated in cuvee.first: no note for those */
+    if (e && !/^the\s+first\s+(?:vintage|release)\b/i.test(e[0])) out.push(where + ': "' + e[0] + '" is a claim of rank or of a first: two sources, or cut it');
+    /* a still wine is a wine without bubbles, not a word of the present */
+    const nw = s.replace(/\bstill\s+(?:red|white|ros[eé]|wines?)\b/gi, ' ').match(NOW);
     if (nw) out.push(where + ': "' + nw[0] + '" speaks of the present: keep only what will not age');
     if (/^table\./.test(where) || where === 'also.line') { const soft = s.match(GS.LINE_JARGON_SOFT); if (soft && !/^cuv[eé]e$/i.test(soft[0])) out.push(where + ': "' + soft[0] + '" is a cellar word in a spoken line: fine when the same breath says what it does'); }
   });
@@ -828,7 +830,7 @@ function selfTest() {
     ['a second cuvée the plan does not give', 'bollinger', (r) => { r.also = JSON.parse(JSON.stringify(pilots.ayala.also)); }, 'also: the plan gives Bollinger no second cuvée'],
     ['a story with one date', 'ayala', (r) => { let seen = false; r.story = r.story.replace(/\b(?:1\d{3}|20[0-2]\d)\b/g, (m) => { if (!seen) { seen = true; return m; } return 'that year'; }); }, 'story: at least'],
     ['a kind the appellation does not have', 'ayala', (r) => { r.kind.code = 'XX'; }, 'kind.code'],
-    ['two sources only', 'bollinger', (r) => { r.sources = r.sources.slice(0, 2); }, 'sources: 3 to 8'],
+    ['two sources only', 'bollinger', (r) => { r.sources = r.sources.slice(0, 2); }, 'sources: 3 to 10'],
     ['a copied field changed', 'bollinger', (r) => { r.pick = ''; }, 'pick: copied from plan.json exactly'],
     ['a checker who is not the refuter', 'ayala', (r) => { r.checked = { date: '2026-11-22', by: 'author', verdict: 'sound', changed: [], open: [] }; }, 'checked.by: refuter']
   ];
