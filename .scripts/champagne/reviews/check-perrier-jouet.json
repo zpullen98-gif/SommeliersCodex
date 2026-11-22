@@ -1,0 +1,95 @@
+{
+ "key": "perrier-jouet",
+ "house": "Perrier-Jouët",
+ "chunk": "h4",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 26,
+  "forRecord": 7,
+  "run": [
+   "a Grand Brut label for its letters, through Open Food Facts",
+   "the founders, the cork trade, the son and the year he took charge",
+   "Fleur de Champagne, its end in the United States, Duke Ellington's party, the first vintage",
+   "Belle Epoque 2014's dosage and blend, on the house's own domain",
+   "Grand Brut's blend, reserve, time in the cellar and dosage",
+   "Gallé's four magnums of 1902 and their finding again, on the house's own domain",
+   "the letters NM and the label code quoted for the house"
+  ],
+  "note": "Twenty six searches of a share of twenty eight for chunk h4, none of them the author's; two left unspent. Three were restricted to the house's own domain or to Open Food Facts and read through their summaries. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries."
+ ],
+ "tested": {
+  "founded": "1811 at Épernay by a couple married a year before, a cork supplier and a woman of a Calvados family: the house, Wikipedia. Confirmed.",
+  "kind": "NM: the Hachette guide lists the house as NM, and one reader of a review quotes its bottles' code as NM 267 001; no label photograph was read.",
+  "story": "The son took charge in 1848 by the house, where one account gives the founder's death in 1854: the record now follows the house. Four magnums enamelled by Gallé with Japanese white anemones in 1902, found again later by the cellar master: the house. Belle Epoque's first vintage 1964: the house and merchants. The party of 1969 for Duke Ellington's seventieth birthday: the house's press kit and a review; one history calls it one version and another ties the 5,000 bottles to 1964, so it is told as the house's account. Fleur de Champagne until 2011 by two merchants and until the 2000s by another: the year cut. Seagram's sale of August 1999, Pernod Ricard in 2005: confirmed by the author's sources.",
+  "style": "Grand Brut: 40 per cent each Pinot Noir and Meunier, 20 Chardonnay, up to 15 per cent reserve, at least three years, 8 to 10 grams a litre: the house's pages (merchants give 10 or 11 grams). Belle Epoque 2014: 50, 45 and 5, at least six years, 8 grams a litre: the house. Confirmed.",
+  "cuvee": "The rosé of the 2013 and the 2014 on the house's own pages. The young glass, a merchant's note of the 2012, was not found again; it stays, listed open.",
+  "table": "house45, cuvee45, the sale, the ten and twenty second lines read aloud: Gallé's anemones of 1902 and the first vintage of 1964 stand on the house; nothing told that will not hold.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones (La Grande Dame, Palmes d'Or, Cristal; 1743, 1902, 1964; 1902, 1969, 1811), no length clue, explanations that teach."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "On the founder's death in 1854 his son took charge.",
+   "now": "Their son took charge of the house in 1848, by its own account.",
+   "why": "The house's history gives 1848; 1854 is one account's year of the founder's death.",
+   "sources": [
+    "Perrier-Jouët: an inspiring maison since 1811"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "the jazz composer Duke Ellington, born in 1899",
+   "now": "the jazz composer Duke Ellington (1899 to 1974)",
+   "why": "The long dead are named with their dates once, where the story meets them.",
+   "sources": []
+  },
+  {
+   "field": "story, guests[0].a",
+   "was": "merchants date the move to the one name worldwide to 2011",
+   "now": "cut",
+   "why": "One account says the United States label read Fleur de Champagne until the 2000s; the house gives no year.",
+   "sources": [
+    "Sur la Pointe: Perrier-Jouët Belle Epoque 2014"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "By the house's press kit and one history, its first bottles were opened in Paris in 1969",
+   "now": "By the house's own account, its first bottles were opened in Paris in 1969",
+   "why": "One history calls the party one version of the launch, and another ties the first 5,000 bottles to 1964; the house's account is told as its own.",
+   "sources": [
+    "Sur la Pointe: Perrier-Jouët Belle Epoque 2014",
+    "Quill and Pad: Perrier-Jouët Belle Epoque Blanc de Blancs"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm, cuvee.forms[0].note",
+   "was": "its own pages show the 2014, 2016 and 2018 vintages; the 2013 among those the house shows",
+   "now": "the 2014, 2016 and 2018 are among its vintages; the 2013 and the 2014 among its vintages",
+   "why": "What a website shows is a present state; the vintages themselves do not move. The rosé of the 2014 is on the house's pages.",
+   "sources": [
+    "Perrier-Jouët: Belle Epoque Rosé 2014"
+   ]
+  }
+ ],
+ "open": [
+  "NM was not read on a label photograph: the code NM 267 001 is quoted by one reader of a review.",
+  "The young glass, a merchant's note of the 2012 on Wine.com, was not found by this refuter; it stays as the author read it.",
+  "style.vessels and style.malolactic stay empty: no source read states either."
+ ],
+ "livingNamesMet": [
+  "Séverine Frerson (already listed)",
+  "Hervé Deschamps (already listed)"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-perrier-jouet, traps[0]: Belle Epoque is sold as Fleur de Champagne in some markets, a present state the sources do not hold beyond the 2000s or 2011; kept word for word here as a shared trap, for the owner to rule on.",
+  "WINE_PRODUCERS p-perrier-jouet and the Champagne region record: the house called Chardonnay led, where Grand Brut is 40 per cent each Pinot Noir and Meunier (already in the author's report)."
+ ]
+}
