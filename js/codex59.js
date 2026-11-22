@@ -102,7 +102,7 @@ var V59_WORDS = {
   housesH: 'The houses of the class sheet',
   housesLine: 'In the order of the sheet. Each row names the house, its prestige cuvée as the label prints it, and the cuvée in a line.',
   findLabel: 'Find a house or a cuvée',
-  findHint: 'A house, a cuvée, a village or a grape',
+  findHint: 'A house, a cuvée or a village',
   findCount: '{n} of {m} houses',
   findNone: 'No house or cuvée holds those words.',
   findClear: 'Clear',
@@ -417,7 +417,6 @@ function v59Fold(s) {
     /* the matching drill and Present it, on the page\'s own ground */
     '.wrap .v59-ways{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}',
     '.wrap .v59-ways .v28-chip{min-height:44px}',
-    '.wrap .v59-ways .v28-chip[aria-pressed="true"]{border-color:var(--gold-hi);color:var(--gold-hi);font-weight:700}',
     '.wrap .v59-ask{margin:16px 0 0;padding:16px 18px;border:1px solid var(--gold);border-radius:6px;background:var(--bg2)}',
     '.wrap .v59-ask .v59-askh{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:13px;letter-spacing:.07em;color:var(--gold-soft);margin:0}',
     '.wrap .v59-ask .v59-askname{font-family:var(--house-display,\'Cinzel\',Georgia,serif);font-size:26px;line-height:1.3;font-weight:600;color:var(--gold-hi);margin:6px 0 0;overflow-wrap:anywhere}',
@@ -765,7 +764,7 @@ function v59PageHtml(key) {
   if (!r) return v59RootHtml();
   var list = v59Houses();
   var at = v59At(r.key);
-  var html = '<div class="v25page v32-root v48-flow v59 v59-view v59-page" data-v59-house="' + v59Esc(r.key) + '">' + v59Head(v59TabWord(), v59W('tab')) + v59Nav();
+  var html = '<div class="v25page v32-root v48-flow v59 v59-view v59-page" data-v59-house="' + v59Esc(r.key) + '">' + v59Head(v59TabWord(), v59Str(r.house)) + v59Nav();
   html += '<h3 class="v59-name" id="v59-name" tabindex="-1">' + v59Esc(v59Str(r.house)) + '</h3>';
   html += v59RowsHtml([[v59W('sayIt'), v59Txt(r.say)], [v59W('founded'), v59Dated(r.founded)], [v59W('where'), v59Txt(r.place)], [v59W('kindH'), v59KindLine(r)]], 'v59-facts');
   html += v59TableHtml(r);

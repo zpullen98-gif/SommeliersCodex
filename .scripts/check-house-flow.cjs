@@ -51,6 +51,10 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     async function marks(page) { return page.evaluate(() => JSON.stringify({ stats:ST, saved:localStorage.getItem('codexStats'), house:v28House() })); }
     const { context, page } = await device();
     await boot(page);
+    /* codex59: Champagne houses is the fifth room where the page carries the layer; it joins every walk of the rooms
+       below (its address, the lit tab, the current button adding no history entry, cold Back to the Wine list) */
+    const ROOMS = (await page.evaluate(() => typeof V59_WORDS !== 'undefined')) ? 5 : 4;
+    if (ROOMS === 5) { views.push('champagne'); words.push('Champagne houses'); }
     const original = await page.evaluate(() => ({
       ids: v28MealRows(v28Rows(), '').map(row => row.id),
       menu: v28Rows().filter(row => !row.bottle).length,
@@ -266,7 +270,9 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
       check('no-house list gives a usable recovery page', await page.locator('.v48-flow').innerText().then(text => text.length > 100) && await page.locator('.v28-row').count() === 0);
       for (const view of views.slice(1)) {
         await mainView(page, view);
-        check('no-house ' + view + ' explains the missing collection and remains navigable', await page.locator('.v48-flow').innerText().then(text => /not loaded/.test(text)) && await page.locator('.v48-nav [data-v48-route]').count() === 4);
+        /* the Champagne houses need no house: their root draws whole and never says the collection is missing */
+        if (view === 'champagne') check('no-house champagne draws its houses whole, says nothing is missing and remains navigable', await page.locator('.v48-flow').innerText().then(text => !/not loaded/.test(text) && text.length > 400) && await page.locator('.v59-houses [data-go="champagne"]').count() > 0 && await page.locator('.v48-nav [data-v48-route]').count() === ROOMS);
+        else check('no-house ' + view + ' explains the missing collection and remains navigable', await page.locator('.v48-flow').innerText().then(text => /not loaded/.test(text)) && await page.locator('.v48-nav [data-v48-route]').count() === ROOMS);
       }
     } finally {
       await page.evaluate(() => { v27Current = window.__houseFlowOriginal; delete window.__houseFlowOriginal; delete window.__houseFlowHouse; v32Go({view:'brennans'}, 'replace'); });

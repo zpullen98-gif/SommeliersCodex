@@ -638,7 +638,10 @@ async function main() {
       const chips = attrs(h.slice(navAt, h.indexOf('</nav>', navAt)), /data-to="(v58-s-[a-z]+)"/g);
       const listed = h.indexOf('aria-labelledby="v58-s-list"') > 0;
       if (listed) LISTED[r.id] = 1;
-      const want = SECTIONS.filter((s) => s !== 'v58-s-list' || listed);
+      /* codex59 (the Champagne houses) adds, through V58_SECS, a section last on the page of a house of its class
+         sheet whose key is that house's pick: held to exactly those pages where the chain carries codex59 */
+      const champ = FILES.indexOf('codex59.js') >= 0 && D.G('typeof v59ForPick === "function" && !!v59ForPick(' + JSON.stringify(r.key) + ')') === true;
+      const want = SECTIONS.filter((s) => s !== 'v58-s-list' || listed).concat(champ ? ['v58-s-champ'] : []);
       if (JSON.stringify(secs) !== JSON.stringify(want) || JSON.stringify(chips) !== JSON.stringify(want)) secBad.push(r.key + ': ' + secs.join(',') + ' / chips ' + chips.join(','));
       const W = r.wine || {};
       const wine = h.slice(h.indexOf('aria-labelledby="v58-s-wine"'), h.indexOf('</section>', h.indexOf('aria-labelledby="v58-s-wine"')));
@@ -973,8 +976,14 @@ async function main() {
     check('codex58.js declares with var and function only (no let, const, class or arrow)', !/(^|[^\w.'"])(let|const|class)\s/.test(code) && code.indexOf('=>') < 0);
     const wrappers = SRC.split('\n').filter((l) => /^\s*var _v58\w+ = \w+;$/.test(l));
     const unguarded = wrappers.filter((line) => { const m = /var (_v58\w+) = (\w+);$/.exec(line); const i = SRC.indexOf(line); const before = SRC.slice(Math.max(0, i - 200), i); return !new RegExp('if \\(typeof ' + m[2] + ' === \'function\'\\) \\{\\s*$').test(before); });
-    const outer = D.J('(function () { var out = []; [["v32Arg", "_v58Arg"], ["v32Apply", "_v58Apply"], ["v25MainName", "_v58MainName"], ["v55HubHtml", "_v58HubHtml"], ["v55RegionHtml", "_v58RegionHtml"], ["prodProfileView", "_v58ProfileView"], ["v32DeckDef", "_v58DeckDef"], ["v32Learnt", "_v58Learnt"], ["v32Grade", "_v58Grade"], ["v32StartRun", "_v58StartRun"], ["v32CardFace", "_v58CardFace"], ["v32CardHtml", "_v58CardHtml"], ["startDrill", "_v58StartDrill"], ["keyOwned", "_v58KeyOwned"], ["srsRecord", "_v58SrsRecord"], ["qidAudit", "_v58QidAudit"], ["findByKey", "_v58FindByKey"], ["graderDisputes", "_v58GraderDisputes"], ["badReports", "_v58BadReports"], ["v25NavWord", "_v58StudyNavWord"], ["v32ParentRoute", "_v58StudyParentRoute"]].forEach(function (p) { var f = this[p[0]]; if (typeof f !== "function" || typeof this[p[1]] !== "function" || f === this[p[1]] || String(f).indexOf("_v58") < 0) out.push(p[0]); }, this); return out; }).call(this)');
-    check('codex58.js edits no earlier layer: every wrapper (' + wrappers.length + ') is typeof guarded, the guard on the line above it, and the outermost of its function on the chain', wrappers.length >= 20 && unguarded.length === 0 && outer.length === 0, unguarded.concat(outer).join(' | '));
+    /* codex59 wraps several of the same functions on the chain above codex58: there codex58's wrapper must be the one
+       codex59 saved (the live function's source holds _v59, the function codex59 saved under it holds _v58); where
+       codex59 does not wrap, codex58's is the outermost */
+    const above = {};
+    const c59 = path.join(JS, 'codex59.js');
+    if (FILES.indexOf('codex59.js') >= 0 && fs.existsSync(c59)) fs.readFileSync(c59, 'utf8').split('\n').forEach((l) => { const m = /^\s*var (_v59\w+) = (\w+);$/.exec(l); if (m && !above[m[2]]) above[m[2]] = m[1]; });
+    const outer = D.J('(function (above) { var out = []; [["v32Arg", "_v58Arg"], ["v32Apply", "_v58Apply"], ["v25MainName", "_v58MainName"], ["v55HubHtml", "_v58HubHtml"], ["v55RegionHtml", "_v58RegionHtml"], ["prodProfileView", "_v58ProfileView"], ["v32DeckDef", "_v58DeckDef"], ["v32Learnt", "_v58Learnt"], ["v32Grade", "_v58Grade"], ["v32StartRun", "_v58StartRun"], ["v32CardFace", "_v58CardFace"], ["v32CardHtml", "_v58CardHtml"], ["startDrill", "_v58StartDrill"], ["keyOwned", "_v58KeyOwned"], ["srsRecord", "_v58SrsRecord"], ["qidAudit", "_v58QidAudit"], ["findByKey", "_v58FindByKey"], ["graderDisputes", "_v58GraderDisputes"], ["badReports", "_v58BadReports"], ["v25NavWord", "_v58StudyNavWord"], ["v32ParentRoute", "_v58StudyParentRoute"]].forEach(function (p) { var f = this[p[0]]; if (typeof f === "function" && above[p[0]] && String(f).indexOf("_v59") >= 0) f = this[above[p[0]]]; if (typeof f !== "function" || typeof this[p[1]] !== "function" || f === this[p[1]] || String(f).indexOf("_v58") < 0) out.push(p[0]); }, this); return out; }).call(this, ' + JSON.stringify(above) + ')');
+    check('codex58.js edits no earlier layer: every wrapper (' + wrappers.length + ') is typeof guarded, the guard on the line above it, and the outermost of its function on the chain' + (Object.keys(above).length ? ' save straight under codex59\'s own wrapper of it' : ''), wrappers.length >= 20 && unguarded.length === 0 && outer.length === 0, unguarded.concat(outer).join(' | '));
     const cssAt = SRC.indexOf('css.textContent = ['), cssEnd = SRC.indexOf("].join('\\n')", cssAt);
     const rules = [...SRC.slice(cssAt, cssEnd).matchAll(/^\s*'((?:[^'\\]|\\.)*)',?$/gm)].map((m) => m[1]);
     const selBad = [];

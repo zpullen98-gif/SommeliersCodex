@@ -52,8 +52,8 @@ const base = (process.env.CODEX_URL || 'http://codex.test/codex/').replace(/\/?$
 const SHOTS = process.env.CODEX_SHOTS || '';
 const mime = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
 const WORDS = 'home,brennans,cms,grapes,worldmap,more';
-const HOUSE_DECK = /data-deck="(list|list:[^"]*|list-weak|one:[^"]*|bottles|bottles:[^"]*|menu-words|misses|due|cellar-compass|cellar-path:[^"]*|producers|producers:[^"]*|components|components:[^"]*|components-all|item-[^"]*|v51-recovery)"/;
-const HOUSE_DOOR = /data-(go|v32|v48-route)="(brennans|houseproducers|housestudies|houserehearsal|housereference|cellarcompass|fullwine|housevideos|drilllist|cellarrecite|houserecite|housepair|housesay|houseguest|cellardrill|house|housereview|culinary)"/;
+const HOUSE_DECK = /data-deck="(list|list:[^"]*|list-weak|one:[^"]*|bottles|bottles:[^"]*|menu-words|misses|due|cellar-compass|cellar-path:[^"]*|producers|producers:[^"]*|components|components:[^"]*|components-all|item-[^"]*|v51-recovery|champcards|champcards:[^"]*|champmatch|champdue)"/;
+const HOUSE_DOOR = /data-(go|v32|v48-route)="(brennans|houseproducers|housestudies|houserehearsal|housereference|cellarcompass|fullwine|housevideos|drilllist|cellarrecite|houserecite|housepair|housesay|houseguest|cellardrill|house|housereview|culinary|champagne|champdrill|champpresent)"/;
 const HOUSE_ID = /data-id="w-|data-q="h-|"h-[a-z0-9]{8}|data-v28="open"/;
 const HOUSE_WORDS = /our list|My restaurant/;
 const results = [], errors = [];
@@ -159,7 +159,11 @@ async function step(name, fn) {
         ['#/flashcards/grapecards', 'deck', 'grapes'],
         ['#/v/brennans', 'brennans', 'brennans'], ['#/v/housestudies', 'housestudies', 'brennans'], ['#/v/houserehearsal', 'houserehearsal', 'brennans'],
         ['#/v/housereference', 'housereference', 'brennans'], ['#/flashcards/list', 'deck', 'brennans']
-      ];
+      ].concat(await page.evaluate(() => typeof V59_WORDS !== 'undefined') ? [
+        /* codex59: the fifth room of the house tab, a house of the class sheet, the drill and a deck of its cards */
+        ['#/v/champagne', 'champagne', 'brennans'], ['#/v/champagne/ayala', 'champagne', 'brennans'], ['#/v/champdrill', 'champdrill', 'brennans'],
+        ['#/flashcards/champmatch', 'deck', 'brennans']
+      ] : []);
       const wrong = [];
       for (const [hash, v, word] of owners) {
         await go(hash);
@@ -190,7 +194,10 @@ async function step(name, fn) {
         /* codex57: each view climbs to the Grapes root, the call drill to its index first */
         ['#/v/grapeworlds', 'grapeworlds', ['grapes', 'home']], ['#/v/grapeworlds/call', 'grapeworlds', ['grapeworlds', 'grapes', 'home']],
         ['#/v/grapecompare', 'grapecompare', ['grapes', 'home']], ['#/v/grapepresent', 'grapepresent', ['grapes', 'home']]
-      ];
+      ].concat(await page.evaluate(() => typeof V59_WORDS !== 'undefined') ? [
+        /* codex59: a house of the class sheet climbs to the root, the root to the Wine list, the Wine list to Home */
+        ['#/v/champagne/ayala', 'champagne', ['champagne', 'brennans', 'home']]
+      ] : []);
       for (const [hash, first, parents] of chains) {
         const cold = watch(await context.newPage());
         try {
