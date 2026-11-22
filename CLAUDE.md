@@ -54,9 +54,9 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v121`; its two teaching imports have query versions which
+Source worker is `codex-v122`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex59: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex60: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
@@ -65,7 +65,52 @@ codex48 the focused house learning flow, codex49 the house answer readings,
 codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
 codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
 codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course,
-codex57 the Grapes tab at the table, codex58 the producers and their flagships).
+codex57 the Grapes tab at the table, codex58 the producers and their flagships,
+codex59 the Champagne houses of the house tab, in the making: its section follows).
+
+## The Champagne houses of the house tab (codex59, in the making, 22 November 2026)
+
+The owner asked, in these words: "Also add a Champagne House tab under Brennan's Tab in the Sommelier's codex and do a
+deep dive research and tableside description of each house and prestige cuvee", with a class sheet he photographed: two
+columns, Champagne House and Prestige Cuvée, 23 rows. He will say the lines to guests and be asked in class to match
+each house to its cuvée, so a wrong fact is worse than a missing one. The work is on the branch `champagne-wip` and is
+not published: what stands is the spec step, the pipeline, the brief, two pilots and the shell.
+
+- **The pipeline**, under `.scripts/champagne/`, modelled on `.scripts/flagships/`: `BRIEF.md` (the authors', refuters'
+  and layer engineer's contract, with the layer's ruling under "The layer"); `plan.json` (the sheet's 23 houses in the
+  sheet's order, each with the cuvée as the label prints it, the sheet's own wording kept, a second cuvée for Ayala,
+  Billecart-Salmon, Henriot and Piper-Heidsieck, the library ids, the flagships pick for Krug, Moët & Chandon, Louis
+  Roederer and Bollinger, and its chunk: pilots, then h1 to h5); `schema.cjs` (the one validator: the sheet as a
+  constant no one corrects, the caps, the appellation's own terms for a producer, the Flagships tab's refusals and the
+  Grapes tab's rules of a spoken line reused; `--caps`, and `--test`, which proves the pilots sound and 40 seeded faults
+  each refused by the rule that names it); `people.json` (the living of Champagne, beside the Flagships tab's list);
+  `fragments/<key>.json`, one a house; `keys.v1.json`; `build-champagne.cjs` (`--lint <key>`, `--chunk`, `--all`; the
+  writing build, whole or `--partial`; `--check`; `--plan`; `--freeze`); `show.cjs <key|chunk|--sheet>`; `reviews/`
+  for the refuters' files.
+- **The record**, about two and a half times a Flagships record and at most 1,700 reading words: the house (how to say
+  it, the year it dates from and what that year is, its village, what it is in the appellation's terms, its story as
+  dated history, its style as the house states it and the non vintage wine a guest knows); the prestige cuvée in depth;
+  the second cuvée where the plan gives one; six lines for the table (the house and the cuvée in forty five seconds of
+  90 to 110 words, ten second lines, a twenty, and the sale in exactly two sentences); what guests ask; the traps; what
+  the sheet prints beside what the label prints; three cards (the house to its cuvée, the cuvée to its house, one
+  number or term) and three questions (tagged match, house, cuvee); the sources; and, never shipped, the report and the
+  refuter's `checked` block.
+- **The data**: `js/data-champagne.js`, `var CHAMPAGNE_HOUSES = { meta, houses }`, one line a record in the sheet's
+  order; a partial build of the two pilots, Ayala and Bollinger, today (6 cards, 6 questions, not yet refuted). The
+  ids are `hc-` and eight base36 digits, a prefix nothing else under `js/` mints.
+- **The shell**: `index.html` loads `js/data-champagne.js?v=1` then `js/codex59.js?v=1` after codex58.js and before
+  boot.js; the source worker is `codex-v122` and lists both. `js/codex59.js` is a shell: the head comment,
+  `V59_WORDS`, `v59W` and the `v59-style` element; it draws nothing and wraps nothing yet.
+- **The pins that moved with the shell**: the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
+  `check-cms.js` (and its chain list and two descriptions), `check-components.js`, `check-nav.js`, `check-videos.js`
+  and `check-winelist.js`; the conditional lists of `check-regions.js`, `check-atlas-course.js`,
+  `check-grapes-table.js` (section 1 and its section 8 base, which also leaves out codex59's two files and proves no
+  `V59_WORDS` in it) and `check-flagships.js` (section 1); and the worker mutation strings of `check-flagships.js` and
+  `check-grapes-table.js`, which start from `codex-v122`.
+- **Still to come**: the 21 other houses in five chunks, each written, refuted and read; the layer (a fifth room of
+  the house tab, one view `champagne` with an optional argument, `#/v/champagne` and `#/v/champagne/<key>`); its gate
+  `check-champagne.js`; the whole build and the freeze; and this section rewritten at the integration. The next layer
+  is codex60.
 
 ## Producers and their flagships (codex58, 14 November 2026; wave two's batch A, 15 November 2026; batches B and C, 21 November 2026)
 
@@ -1446,7 +1491,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v121`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v122`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 

@@ -465,8 +465,9 @@ async function main() {
   section('1. the load');
   try {
     const i57 = FILES.indexOf('codex57.js');
-    const want = ['codex57.js', 'data-flagships.js', 'codex58.js', 'boot.js'];
-    check('the chain index.html loads holds data-flagships.js then codex58.js straight after codex57.js, then boot.js', i57 > 0 && JSON.stringify(FILES.slice(i57, i57 + want.length)) === JSON.stringify(want), FILES.slice(i57, i57 + want.length).join(' '));
+    /* one layer on (codex59, the Champagne houses): its data and the layer stand between codex58.js and boot.js where the chain carries them */
+    const want = ['codex57.js', 'data-flagships.js', 'codex58.js'].concat(FILES.indexOf('codex59.js') >= 0 ? ['data-champagne.js', 'codex59.js'] : [], ['boot.js']);
+    check('the chain index.html loads holds data-flagships.js then codex58.js straight after codex57.js, then ' + want.slice(3).join(', then '), i57 > 0 && JSON.stringify(FILES.slice(i57, i57 + want.length)) === JSON.stringify(want), FILES.slice(i57, i57 + want.length).join(' '));
     check('codex58 ran: V58_WORDS, v58W, the three views registered and owned by the Wine Atlas, its acts and its sections', D.G('typeof V58_WORDS === "object" && typeof v58W === "function" && ["flagships", "flaggroup", "flagship"].every(function (k) { return !!V58_VIEWS[k] && typeof V25_VIEWS[k] === "function" && V32_OWNER[k] === "worldmap"; }) && ["producer", "open", "wine", "cards", "quiz"].every(function (k) { return typeof V58_ACTS[k] === "function"; }) && !!V58_SECS.list && !!V58_SECS.study') === true);
     check('the style element is written by the layer, id v58-style', SRC.indexOf("css.id = 'v58-style'") > 0);
     WORDS = D.J('V58_WORDS');
@@ -1190,7 +1191,7 @@ function mutations() {
     ['a group climbing to Home', 'js/codex58.js', "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'flagships' }; }", "  name: function (arg) { var g = v58Group(arg); return g ? g.title : v58W('tab'); },\n  parent: function () { return { view: 'home' }; }", 'the parents: a house its group'],
     ['the cold address left unread', 'js/codex58.js', "    v32Apply(r, typeof v32CurState === 'function' ? v32CurState() : null);\n    V32.pend = 'replace';\n", '', 'each address answers cold'],
     ['the two tags swapped in index.html', 'index.html', '<script src="js/data-flagships.js?v=4"></script>\n<script src="js/codex58.js?v=1"></script>', '<script src="js/codex58.js?v=1"></script>\n<script src="js/data-flagships.js?v=4"></script>', 'index.html loads js/data-flagships.js then js/codex58.js'],
-    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v121';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
+    ['the worker left at codex-v117', 'sw.js', "const CACHE = 'codex-v122';", "const CACHE = 'codex-v117';", 'sw.js is codex-v118 or later'],
     ['a let in the layer', 'js/codex58.js', 'var V58_SLOT = ', 'let V58_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex58.js', "if (typeof prodProfileView === 'function') {\n  var _v58ProfileView", "if (true) {\n  var _v58ProfileView", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex58.js', "'.wrap .v58-sec{", "'.v58-sec{", 'every selector of the v58-style element'],
