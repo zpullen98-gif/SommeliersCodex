@@ -168,7 +168,7 @@ summary. Words are counted as the lint counts them.
 | `report` | never shipped: sentences for the refuter, the integrator and the owner | at most 12 |
 | `checked` | never shipped: `null` until the refuter writes it | |
 
-A record reads in at most 1,700 words above its cards, questions and sources. The pilots measure 1,527 (Ayala, with
+A record reads in at most 1,700 words above its cards, questions and sources. The pilots measure 1,536 (Ayala, with
 a second cuvée) and 1,413 (Bollinger).
 
 ### The house
