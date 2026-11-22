@@ -1,0 +1,76 @@
+{
+ "key": "taittinger",
+ "house": "Taittinger",
+ "chunk": "h5",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 32,
+  "used": 30,
+  "forRecord": 4,
+  "run": [
+   "Comtes de Champagne: oak, lees, dosage of the 2013",
+   "Comtes de Champagne Rosé: blend, red wine of Bouzy, first vintage",
+   "the Château de la Marquetterie and the purchase of 1932",
+   "a label of the house for its letters (with Pol Roger)"
+  ],
+  "note": "Thirty searches of a share of thirty two for chunk h5, none of them the author's; two left unspent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the rhythm, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the lint was run after every change."
+ ],
+ "tested": {
+  "founded": "1734 as Forest-Fourneaux: the library and the Union. Confirmed.",
+  "kind": "NM 162 001 on a Brut label in the Open Food Facts database.",
+  "story": "The officer at the château in the First World War and the purchase of 1932 with the château: the house and Wikipedia (1931 by one account). The sale of 2005 and the return of 2006 rest on the author's sources.",
+  "cuvee": "Five Grand Cru villages, ten years in the Saint-Nicaise chalk, 9 grams a litre for the 2013 disgorged December 2023, about 5 per cent in oak for three to four months: Kobrand, K and L, the house's press room. The rosé: changed.",
+  "table": "Read aloud: cuvee45's new oak cut.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones (Ruinart, Salon, Delamotte; 1734, 1952, 2006; Chardonnay, Meunier, Pinot Blanc), no length clue."
+ },
+ "changes": [
+  {
+   "field": "cuvee.forms[0].note, guests[1].a, questions[2].exp",
+   "was": "about three fifths Grand Cru Pinot Noir, two fifths Chardonnay",
+   "now": "three fifths to seven tenths Grand Cru Pinot Noir by the house's sheets, with Chardonnay and some red wine of Bouzy",
+   "why": "The house's pages give 70 per cent Pinot Noir and 30 Chardonnay, with 12 to 15 per cent red wine of Bouzy; the author read three fifths on the 2013 sheet, so the range is given.",
+   "sources": [
+    "Taittinger: Comtes de Champagne Rosé",
+    "Taittinger: Comtes de Champagne Grands Crus Rosé 2013 sheet"
+   ]
+  },
+  {
+   "field": "cuvee.making, table.cuvee45",
+   "was": "about a twentieth of the wine in new oak casks; aged in new oak",
+   "now": "about a twentieth aged three to four months in oak casks, a third of them renewed each year; aged in oak",
+   "why": "Two importers say a third of the casks are renewed each year, so they are not all new.",
+   "sources": [
+    "Kobrand: Comtes de Champagne Grands Crus Blanc de Blancs 2013",
+    "Blackwell's: Comtes de Champagne"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "the Château de la Marquetterie, near Épernay, the army's headquarters",
+   "now": "then a command post of the French army",
+   "why": "Accounts call it a command post, or the French army's headquarters in the battle of 1915: the record keeps what all say.",
+   "sources": [
+    "Taittinger: Château de la Marquetterie",
+    "Wikipedia: Taittinger"
+   ]
+  }
+ ],
+ "open": [
+  "The family's purchase of Forest-Fourneaux is 1932 by the library and the house's history, 1931 by the Union and one account: the record keeps 1932.",
+  "Comtes de Champagne Rosé's first vintage, 1966 by one account and 1970 by another, stays out.",
+  "The share of Pinot Noir in the rosé moves between three fifths and seven tenths by the house's sheets and is given as a range.",
+  "Vessels and malolactic as the house states them were not found."
+ ],
+ "livingNamesMet": [
+  "Pierre-Emmanuel Taittinger and Vitalie Taittinger (already listed)"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-taittinger and w-comtes-de-champagne: their trap prints Rose without its accent, kept word for word here."
+ ]
+}

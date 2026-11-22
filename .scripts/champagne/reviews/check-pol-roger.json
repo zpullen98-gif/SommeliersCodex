@@ -1,0 +1,85 @@
+{
+ "key": "pol-roger",
+ "house": "Pol Roger",
+ "chunk": "h5",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 32,
+  "used": 30,
+  "forRecord": 7,
+  "run": [
+   "the founder's death, the sons' surname and the collapse of 1900",
+   "the 1975, its launch of 1984 at Blenheim and the 1979",
+   "the black border of 1965",
+   "the Édition Vinothèque, the 2015's dosage and disgorging",
+   "Brut Réserve's dosage, reserve, lees, cellars and riddling",
+   "the launch in magnum and for Britain alone",
+   "a label of the house for its letters (with Taittinger)"
+  ],
+  "note": "Thirty searches of a share of thirty two for chunk h5, none of them the author's; two left unspent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the rhythm, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the lint was run after every change."
+ ],
+ "tested": {
+  "founded": "January 1849 and the move to Épernay in 1851: the house. Confirmed.",
+  "story": "Death in December 1899 and the sons' succession: the house and Gentleman's Gazette; the surname of 1900 by the sources closest to the house (one gives 1899); the collapse of 23 February 1900. The black border of 1965 on labels bound for Britain: Decanter, the Churchill society, Wikipedia. Launch at Blenheim in 1984 in magnum: several accounts.",
+  "style": "Brut Réserve: 8 grams a litre, about a quarter reserve, four years on lees, 33 metres down, hand riddled: Frederick Wildman, Berry Bros. and Rudd, K and L (one critic gives 30 per cent reserve for a 2021 base). Confirmed.",
+  "cuvee": "21st vintage for the 2015: the house's release. 7 grams a litre for the 2015: Frederick Wildman and the house's sheet. Édition Vinothèque: the house's sheets for the 2002 and 2004. Lees: changed.",
+  "table": "Read aloud: no claim beyond the sources; house45's hand turned bottles rest on the importer.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones (Louis Roederer, Moët & Chandon, Veuve Clicquot; the founder's mourning, the collapse, the war's end; equal thirds, Chardonnay alone, Meunier), no length clue."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "When he died of pneumonia in 1899",
+   "now": "When he died in December 1899",
+   "why": "Pneumonia rests on one account; December on two.",
+   "sources": [
+    "Gentleman's Gazette: Pol Roger",
+    "Pol Roger: History"
+   ]
+  },
+  {
+   "field": "story, cards[2].back",
+   "was": "in magnum alone and for Britain alone; standard bottles and other markets followed from the 1979 vintage",
+   "now": "in magnum alone",
+   "why": "No source read restricts the 1975 to Britain (the black border concerned British labels), and the house's own list shows the 1979 still in magnum, so both clauses are cut; magnum alone and Blenheim in 1984 stand on several accounts (one gives 1985).",
+   "sources": [
+    "The World of Fine Wine: Sir Winston Churchill 1975 to 2004, on the house's press pages",
+    "The Finest Bubble: the history of Sir Winston Churchill"
+   ]
+  },
+  {
+   "field": "cuvee.lees, report",
+   "was": "At least eight years by Decanter and The World of Fine Wine; about a decade in the house's own words.",
+   "now": "The house gives no figure on the pages read; the 2015 was disgorged in 2022 or 2023 by two accounts, some seven years after the harvest.",
+   "why": "A 2015 disgorged in September 2022 or in 2023 cannot have spent eight years on its lees, so the general figure does not hold for the vintage the record quotes.",
+   "sources": [
+    "Frederick Wildman: Cuvée Sir Winston Churchill 2015",
+    "Decanter: a 20 year vertical of Cuvée Sir Winston Churchill"
+   ]
+  },
+  {
+   "field": "traps[3]",
+   "was": "Dom Pérignon, the other prestige cuvée named for a man, is Moët & Chandon's",
+   "now": "Sir Winston Churchill is Pol Roger's, of Épernay, named for a statesman; Dom Pérignon, named for a monk, is Moët & Chandon's",
+   "why": "Dom Ruinart and Cuvée Nicolas François on the same sheet are named for men too, so the other was false.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "NM was not read on a label: the Open Food Facts listing of Brut Réserve shows no code; the letters rest on the house buying from some thirty crus.",
+  "The launch year is 1984 by most accounts and 1985 by one; the record keeps 1984.",
+  "The family member Churchill met stays undescribed by name; the meeting stays undated (1944 or 1945).",
+  "The black border ended in 1990 by the house's site as quoted by the Churchill society, in 2003 by a member of the house: not told."
+ ],
+ "livingNamesMet": [
+  "James Simpson (added: a member of the house's British arm, quoted on the black border)",
+  "Christian Pol-Roger (already listed)"
+ ],
+ "codexInTension": []
+}

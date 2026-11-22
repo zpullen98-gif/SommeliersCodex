@@ -1,0 +1,91 @@
+{
+ "key": "veuve-clicquot",
+ "house": "Veuve Clicquot",
+ "chunk": "h5",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 32,
+  "used": 30,
+  "forRecord": 6,
+  "run": [
+   "La Grande Dame's 1962 and its launch of 1972",
+   "La Grande Dame 2015: blend, dosage, villages",
+   "Louis Vuitton's purchase of 1986 and the partner of 1841",
+   "malolactic, reserve and Yellow Label's dosage",
+   "La Grande Dame Rosé 2015 and Clos Colin",
+   "a label of the house for its letters (with Ruinart)"
+  ],
+  "note": "Thirty searches of a share of thirty two for chunk h5, none of them the author's; two left unspent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the rhythm, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the lint was run after every change."
+ ],
+ "tested": {
+  "founded": "1772 by the house; Barbe-Nicole Clicquot Ponsardin's dates by the house, Wikipedia and Decanter. Confirmed.",
+  "story": "The partner head of the company from 1841: Wikipedia and Decanter. Louis Vuitton 1986 and LVMH 1987: Wikipedia and LVMH. The riddling table and the blended rosé stay the house's claims.",
+  "style": "Yellow Label's dosage changed; reserve 26 to 45 per cent by source; malolactic: open.",
+  "cuvee": "1962 first vintage, launched 1972 for the bicentenary: several accounts (1966 or 1969 for the first wide release). About nine tenths Pinot Noir since the 2008 and 6 grams a litre for the 2015: The World of Fine Wine and Decanter. Eight Grand Crus: a merchant and the house. The rosé's 13 per cent red Pinot Noir of Clos Colin, a parcel of 1.3 hectares at Bouzy: the drinks business and Decanter.",
+  "table": "Read aloud: no claim beyond the sources.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones (La Grande Année, Grand Siècle, Femme de Champagne; the wire cage, Cristal's bottle, the crown cap; half, Blanc de Blancs, a fifth), no length clue."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "His family kept the house, by the Oxford Companion, until Louis Vuitton bought it in 1986",
+   "now": "Louis Vuitton bought the house in 1986",
+   "why": "The family's keeping rests on one book read through a search summary; the purchase of 1986 and the group of 1987 stand on Wikipedia, LVMH's history and Decanter.",
+   "sources": [
+    "Wikipedia: Veuve Clicquot",
+    "LVMH: our history"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "the grape the widow's own Grand Cru vineyards were known for",
+   "now": "with Chardonnay for the rest",
+   "why": "No source read says the widow's vineyards were known for Pinot Noir; one says only that the share respects her vision of the grape.",
+   "sources": [
+    "The World of Fine Wine: La Grande Dame 2015"
+   ]
+  },
+  {
+   "field": "style.dosage, guests[3].a",
+   "was": "9 grams a litre for Yellow Label; drier than the 9 of Yellow Label",
+   "now": "9 to 10 grams a litre for Yellow Label by the house's pages and the trade; drier than Yellow Label",
+   "why": "Wine Spectator gives 10 grams and the author's report found 9 or 10 on the house's pages.",
+   "sources": [
+    "Wine Spectator: the building blocks of blending Champagne"
+   ]
+  },
+  {
+   "field": "cuvee.lees",
+   "was": "one merchant's sheet dates the 2015's disgorging to October 2021, about six years after the harvest",
+   "now": "reviews date disgorgings of the 2015 to October 2021 and July 2023, six to eight years after the harvest",
+   "why": "Two disgorgings of the 2015 are reported.",
+   "sources": [
+    "Decanter: First taste, La Grande Dame 2015",
+    "The World of Fine Wine: La Grande Dame 2015"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm",
+   "was": "its pages show the 1990, 2004, 2006, 2008, 2012 and 2015 among them",
+   "now": "the 1990, 2004, 2006, 2008, 2012 and 2015 are among them",
+   "why": "What the house's pages show today is a present state; the vintages are named instead.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "NM was not read on a label: no listing with the code was found; the letters rest on the house buying from fifty to sixty crus.",
+  "Malolactic stopped in some wineries since 2018 rests on the house's own page as the author read it; an older Wine Spectator article has every wine through malolactic, so a refuter's second source was not found.",
+  "Which vintage of La Grande Dame was first sold widely (1962, 1966 or 1969) stays unsettled, as first.what says.",
+  "Yellow Label's reserve share moves by source (26 to 45 per cent)."
+ ],
+ "livingNamesMet": [
+  "Didier Mariotti and Dominique Demarville (already listed)"
+ ],
+ "codexInTension": []
+}

@@ -1,0 +1,95 @@
+{
+ "key": "ruinart",
+ "house": "Ruinart",
+ "chunk": "h5",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 32,
+  "used": 30,
+  "forRecord": 6,
+  "run": [
+   "the 1931 protection and the purchase of the chalk pits",
+   "Dom Ruinart 2010 under cork and the 2013",
+   "Dom Ruinart Rosé's first vintage and its red Pinot Noir",
+   "Dom Ruinart 2010: dosage, villages, first vintage and launch",
+   "the sale of 1963, Dom Thierry Ruinart's dates and the charter of 1729",
+   "a label of the house for its letters (with Veuve Clicquot)"
+  ],
+  "note": "Thirty searches of a share of thirty two for chunk h5, none of them the author's; two left unspent. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the rhythm, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the lint was run after every change."
+ ],
+ "tested": {
+  "founded": "1 September 1729 by the nephew: the house, the brand's Japanese distributor and Millesima; first bottles January 1730. Confirmed.",
+  "story": "Dom Thierry Ruinart 1657 to 1709, died at Hautvillers: the house and Wikipedia. 1963 to Moët & Chandon and LVMH in 1987: Wikipedia, VinePair, Millesima. The 1931 protection: changed. The purchase of the pits, 1768 or 1877: unsettled, left undated as the author did.",
+  "cuvee": "1959 launched in 1966, twenty seven vintages at the 2010's release, nine tenths Côte des Blancs and one tenth Sillery, 4 grams a litre: the house, Millesima and the drinks business (one merchant gives 3 grams, one another split). Cork: changed.",
+  "table": "Read aloud: cuvee45 and cuvee20 no longer claim cork for every vintage since the 2010.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones (Dom Pérignon, Comtes de Champagne, Le Mesnil; Gosset's and Veuve Clicquot's claims; Pinot Noir, multi vintage, new oak), no length clue."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "listed as a historic monument in 1931",
+   "now": "protected by the French state in 1931",
+   "why": "The regional environment office lists them as a classified site of 11 September 1931, the heritage mission and the culture ministry's inventory as a historic monument: the year holds, the category does not, so the record names neither.",
+   "sources": [
+    "DREAL Grand Est: the chalk pits of Reims",
+    "Champagne hillsides, houses and cellars: the oldest Champagne house"
+   ]
+  },
+  {
+   "field": "story, cuvee.forms[0].note",
+   "was": "the first Dom Ruinart Rosé followed with the 1966 vintage; first made with the 1966 vintage",
+   "now": "cut",
+   "why": "1966 by Decanter and one more account, 1962 by Wikipedia: unsettled, so out.",
+   "sources": []
+  },
+  {
+   "field": "story, cuvee.making, table.cuvee45, table.cuvee20, cards[2], questions[2]",
+   "was": "went back to ageing under natural cork from the 2010, and the 2013 was the second so aged; since the 2010 it has aged under natural cork",
+   "now": "the 2010 was the first vintage aged under natural cork in place of a metal crown cap",
+   "why": "Decanter, The World of Fine Wine and the house confirm the 2010 as the first; no source read says the 2013 or any later vintage was aged under cork, so nothing is told past the 2010. The card front and the question stem are reworded before the freeze.",
+   "sources": [
+    "Decanter: First taste, Dom Ruinart 2010",
+    "The World of Fine Wine: Dom Ruinart, an almost complete vertical",
+    "Ruinart: Dom Ruinart Blanc de Blancs 2010"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm",
+   "was": "one of its pages counts twenty seven vintages, and the 2009, 2010 and 2013 are among those it has shown",
+   "now": "by the house, twenty seven vintages had been shown to the public when the 2010 was released, and the 2013 followed",
+   "why": "The house's 2010 page dates the count; undated it would not hold.",
+   "sources": [
+    "Ruinart: Dom Ruinart Blanc de Blancs 2010"
+   ]
+  },
+  {
+   "field": "cuvee.forms[0].note",
+   "was": "Chardonnay coloured with a little red wine of Pinot Noir",
+   "now": "Chardonnay coloured with red wine of Pinot Noir, about a sixth to a fifth of the blend by the vintage",
+   "why": "16 per cent for the 1976 and 20 for the 2002 and 2007, by Decanter, Vinous and merchants.",
+   "sources": [
+    "Decanter: Dom Ruinart Rosé 2007",
+    "Vinous: Dom Ruinart at Cru"
+   ]
+  }
+ ],
+ "open": [
+  "NM was not read on a label: no listing with the code was found; the letters rest on the house buying from 40 to 50 crus.",
+  "Dom Ruinart Rosé's first vintage, 1966 or 1962, is unsettled and left out.",
+  "Whether the 2013 was aged under cork was not found.",
+  "Vessels and malolactic were not found by this refuter either."
+ ],
+ "livingNamesMet": [
+  "Frédéric Panaïotis (already listed)"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-ruinart: names the non vintage Brut Ruinart Brut, formerly R de Ruinart (already in the author's report).",
+  "Champagne region record: its producers line for Ruinart says the crayères are open to visitors, a present state."
+ ]
+}
