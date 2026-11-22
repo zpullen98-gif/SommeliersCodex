@@ -115,7 +115,7 @@ not published: what stands is the spec step, the pipeline, the brief, two pilots
   house) and Present it keep their due dates in `oot-codex-champrs-v1` (`{ c, q, p }`). A door from the Producers and
   flagships page of a house with a pick, through `V58_SECS`. 18 wrappers, each typeof guarded and outermost.
 - **The gate**: `node .scripts/check-champagne.js [jsDir] [--partial] [--mutations]` (with `OOT_SHARED` and
-  `OOT_HOUSE_PACK`), 68 checks in fifteen sections and 37 mutations, each caught by its own check. While the data is
+  `OOT_HOUSE_PACK`), 68 checks in fifteen sections and 38 mutations, each caught by its own check. While the data is
   a partial build it runs with `--partial` (`GATE_ARGS_check_champagne=--partial` for the runner); without it the
   roster must be the sheet's 23 and `WHOLE`, the counts of the whole build, filled by the gates agent.
 - **The pins that moved with the layer**: `check-flagships.js` (section 4's sections gain `v58-s-champ` on the page of
