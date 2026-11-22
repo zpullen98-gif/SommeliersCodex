@@ -1,0 +1,150 @@
+{
+ "about": "The roster of the Champagne houses tab of Brennan's (codex59): the 23 houses of the class sheet the owner photographed on 22 November 2026, in the sheet's order, each with its prestige cuvée. For each house: key (it seeds the record's frozen id), house (as the house writes itself), cuvee (the words the LABEL prints for the prestige cuvée: a record's cuvee.name must hold them), sheet (what the class sheet prints for the row, spellings kept, never corrected here), also (the second cuvée, where the sheet prints two or the row cannot be taught without it: name as the label prints it, sheet as the sheet prints it or \"\", standing beside, before or after), producerId (the library's WINE_PRODUCERS id or \"\"), cuveeId (the library's own record of the cuvée or \"\"), pick (the key of the house's record in Producers and flagships, codex58, or \"\"), chunk, why (what a planner knows, to be confirmed like any fact) and note (what the author must settle). Changed only by the spec engineer or a chunk's read together agent, never by two agents at once.",
+ "edition": "2026-11-22",
+ "prefix": "hc-",
+ "chunks": ["pilots", "h1", "h2", "h3", "h4", "h5"],
+ "houses": [
+  {
+   "key": "armand-de-brignac", "house": "Armand de Brignac", "cuvee": "Brut Gold", "sheet": "Brut Gold NV",
+   "producerId": "p-armand-de-brignac", "cuveeId": "", "pick": "", "chunk": "h1",
+   "why": "A prestige brand first released in 2006 and made by the Cattier family's house at Chigny-les-Roses; Brut Gold is its first wine, a blend of three harvests in a metallised gold bottle.",
+   "note": "The label prints Brut Gold and no vintage; the sheet's NV is the trade's shorthand for non vintage. Teach who makes it (the Cattier house, by the appellation's own terms: confirm the letters on the label), the name's origin as the family tells it, the three harvests, and the ownership of the brand as dated history only (2014 and 2021 are the years to confirm). The gold bottle and the pewter ace of spades are the bottle's story. Ace of Spades is a nickname, never the name on the label."
+  },
+  {
+   "key": "ayala", "house": "Ayala", "cuvee": "Perle d'Ayala", "sheet": "Grand Cuvée/Perle d'Ayala",
+   "also": { "name": "Grande Cuvée", "sheet": "Grand Cuvée", "standing": "before" },
+   "producerId": "", "cuveeId": "", "pick": "", "chunk": "pilots",
+   "why": "The house of Aÿ founded in 1860, a sister of Bollinger since 2005; Perle d'Ayala is its vintage prestige cuvée, first made in 1995, Chardonnay led and aged under natural cork.",
+   "note": "A pilot. The label has printed Perle d'Ayala, La Perle and Perle in turn: the record says which vintages carry which. The sheet's Grand Cuvée is the house's earlier vintage wine, Grande Cuvée: confirm what it was and when it was made, and teach it as history. Not in the library."
+  },
+  {
+   "key": "billecart-salmon", "house": "Billecart-Salmon", "cuvee": "Nicolas François", "sheet": "Clos St. Hilaire/Cuvée Nicolas Franco",
+   "also": { "name": "Le Clos Saint-Hilaire", "sheet": "Clos St. Hilaire", "standing": "beside" },
+   "producerId": "p-billecart-salmon", "cuveeId": "", "pick": "", "chunk": "h1",
+   "why": "The family house of Mareuil-sur-Aÿ founded in 1818; Cuvée Nicolas François is the vintage prestige cuvée named for the founder, first made in 1964 by the house's own account, and Le Clos Saint-Hilaire a single walled vineyard of Pinot Noir beside the house, first made in 1995.",
+   "note": "The sheet's second name is cut off at the page edge after Franco: the cuvée is Nicolas François. The house writes Cuvée Nicolas François; older labels read Cuvée Nicolas François Billecart: print what the labels a guest meets print and say when the name changed, if two sources agree. One account says a 1955 wine came before the name: hedge it. The record's cuvée in depth is Nicolas François, the one a guest meets; Le Clos Saint-Hilaire is the second, made beside it: a Blanc de Noirs, its first vintage 1995 (the library), its size and its making from the house's own page. Mareuil-sur-Aÿ is Premier Cru, not Grand Cru. The rosé form is Cuvée Elisabeth Salmon: confirm its first vintage."
+  },
+  {
+   "key": "bollinger", "house": "Bollinger", "cuvee": "La Grande Année", "sheet": "La Grand Année",
+   "producerId": "p-bollinger", "cuveeId": "", "pick": "bollinger", "chunk": "pilots",
+   "why": "The house of Aÿ founded in 1829; La Grande Année is its vintage wine, Pinot Noir led, fermented entirely in old oak barrels and aged under natural cork, and the base of R.D.",
+   "note": "A pilot. Start from the published flagships record (codex58, refuted on 12 November 2026) and contradict none of it without saying so in report. The sheet drops the e of Grande. Whether La Grande Année or Vieilles Vignes Françaises is the house's prestige cuvée is a fair question a guest may ask: answer it in guests. The name La Grande Année dates from the 1976 vintage by most accounts, the vintage wine before it being Bollinger Vintage: confirm."
+  },
+  {
+   "key": "delamotte", "house": "Delamotte", "cuvee": "Blanc de Blancs", "sheet": "(Salon) Blanc de Blancs",
+   "producerId": "", "cuveeId": "", "pick": "", "chunk": "h1",
+   "why": "The house of Le Mesnil-sur-Oger dated to 1760, the sister house of Salon since Laurent-Perrier took on both at the end of the 1980s; it is known by its Blanc de Blancs from Grand Cru Chardonnay of the Côte des Blancs.",
+   "note": "The sheet fills this row with (Salon) Blanc de Blancs: Delamotte has no cuvée with a prestige name, and the class files it beside Salon. The record's cuvée is the Blanc de Blancs, the non vintage and the vintage (Blanc de Blancs Millésimé) both told, with the late releases the house calls Collection if two sources give them. Say plainly that Salon is a separate house with its own record. Where the house was founded differs by source (Reims or Le Mesnil-sur-Oger in 1760): hedge it. The year the group took on Delamotte and the year it took on Salon differ by source (1988, 1989): give what two sources agree on. The library says Salon's fruit can go to Delamotte in years Salon is not declared: confirm it before repeating it. Not in the library."
+  },
+  {
+   "key": "salon", "house": "Salon", "cuvee": "Le Mesnil", "sheet": "Le Mesnil",
+   "producerId": "p-salon", "cuveeId": "w-salon-le-mesnil", "pick": "", "chunk": "h1",
+   "why": "One wine alone: a vintage Blanc de Blancs from the one Grand Cru village of Le Mesnil-sur-Oger, declared only in the years the house chooses, its first commercial vintage 1921 by the library.",
+   "note": "The label prints Salon, the letter S, Le Mesnil and Blanc de Blancs; the library calls the wine Cuvée S Le Mesnil Blanc de Blancs. Salon makes no non vintage wine: style.nv.name is empty and its note says so. Eugène-Aimé Salon (confirm his dates in two sources) and the first vintage of 1905 made for himself are the story; the number of vintages declared in the twentieth century is a figure to source before it is printed. Le Mesnil is a village, never a single vineyard. Delamotte is the sister house, with its own record."
+  },
+  {
+   "key": "deutz", "house": "Deutz", "cuvee": "Amour de Deutz", "sheet": "Amour de Deutz",
+   "producerId": "p-deutz", "cuveeId": "", "pick": "", "chunk": "h2",
+   "why": "The house of Aÿ founded in 1838; Amour de Deutz is its vintage Blanc de Blancs prestige cuvée, and Cuvée William Deutz the Pinot Noir led one named for a founder.",
+   "note": "The house has two prestige cuvées and the sheet prints one: the record's cuvée is Amour de Deutz, and a trap and a guest's question keep Cuvée William Deutz apart from it. Confirm the first vintage of each from the house's own pages (1993 for Amour and 1959 for William Deutz are the planner's memory, not a source). The link to Louis Roederer is dated history: the year it took a majority (1993 by most accounts, to confirm)."
+  },
+  {
+   "key": "duval-leroy", "house": "Duval-Leroy", "cuvee": "Femme de Champagne", "sheet": "Cuvée Femme",
+   "producerId": "", "cuveeId": "", "pick": "", "chunk": "h2",
+   "why": "The family house of Vertus in the Côte des Blancs, dated to 1859; Femme de Champagne is its prestige cuvée, Chardonnay led from Grand Cru villages, its first vintage 1990 by two accounts.",
+   "note": "The sheet's Cuvée Femme is short for Femme de Champagne, the name on the label. One merchant dates the cuvée to 1911: two sources give the 1990 vintage, released at the end of the decade, so 1911 is left out or said to be one account. The cuvée has a vintage form, a non vintage form and a rosé: say which the record teaches in depth. The woman who led the house from 1991 is living and is never named: say the founder's descendant by marriage, or the head of the house. Not in the library."
+  },
+  {
+   "key": "drappier", "house": "Drappier", "cuvee": "Grande Sendrée", "sheet": "Grand Sendrée",
+   "producerId": "p-drappier", "cuveeId": "", "pick": "", "chunk": "h2",
+   "why": "The family house of Urville in the Côte des Bar founded in 1808; Grande Sendrée is its vintage prestige cuvée, named for a parcel covered in cinders after a fire that burned Urville in 1838.",
+   "note": "The sheet drops the e of Grande. Sendrée is the house's own spelling, with an S, from a slip in the land register by its account: tell it as the house tells it. Confirm the first vintage (1974 by the planner's memory), the blend and the oak. Urville is in the Aube, far south of Reims. The Cistercian cellars of 1152 and General de Gaulle are the house's story."
+  },
+  {
+   "key": "gosset", "house": "Gosset", "cuvee": "Celebris", "sheet": "Celebris",
+   "producerId": "p-gosset", "cuveeId": "", "pick": "", "chunk": "h2",
+   "why": "The oldest wine house in Champagne, founded at Aÿ in 1584 as a maker of still wine; Celebris is its vintage prestige cuvée, an Extra Brut made without malolactic conversion.",
+   "note": "Confirm the first vintage of Celebris (1988 by the planner's memory, released in the middle of the 1990s) and its forms (a rosé, a Blanc de Blancs). Gosset is the oldest wine house and Ruinart the oldest Champagne house: the trap of the two firsts belongs in both records and must read alike. The move of the cellars to Épernay and the sale to the Renaud-Cointreau family are dated history (2009 and 1993 or 1994 by memory: confirm)."
+  },
+  {
+   "key": "henriot", "house": "Henriot", "cuvee": "Hemera", "sheet": "Cuvée des Enchanteleurs/Hemera",
+   "also": { "name": "Cuvée des Enchanteleurs", "sheet": "Cuvée des Enchanteleurs", "standing": "before" },
+   "producerId": "", "cuveeId": "", "pick": "", "chunk": "h3",
+   "why": "The house of Reims founded in 1808; Cuvée Hemera, first made in the 2005 vintage from six Grand Cru villages in equal parts of Chardonnay and Pinot Noir, took the place of Cuvée des Enchanteleurs as its prestige cuvée.",
+   "note": "The sheet prints both names: Hemera is the cuvée made since the 2005 vintage (released in 2018 by Decanter's account: confirm the year) and Cuvée des Enchanteleurs the one before it, history. Confirm the last vintage of Enchanteleurs and its earlier name (Cuvée Baccarat by one account). The six villages by one merchant: Chouilly, Avize and Le Mesnil-sur-Oger for Chardonnay, Mailly, Verzy and Verzenay for Pinot Noir: confirm on the house's own page. The head of the house who made the change died in 2015 and may be named with his dates if two sources give them. Ownership since 2022 and 2023 is dated history only. Not in the library."
+  },
+  {
+   "key": "krug", "house": "Krug", "cuvee": "Grande Cuvée", "sheet": "Grand Cuvée",
+   "producerId": "p-krug", "cuveeId": "", "pick": "krug", "chunk": "h3",
+   "why": "The house of Reims founded in 1843; Krug Grande Cuvée is the multi vintage blend it re-creates each year as a numbered Édition, every base wine fermented in small old oak casks.",
+   "note": "Start from the published flagships record (codex58) and contradict none of it without saying so in report. The sheet drops the e of Grande. Grande Cuvée is multi vintage, never a vintage wine: Krug Vintage, Clos du Mesnil and Clos d'Ambonnay are its other wines, not forms of it, and the rosé is a blend of its own. The name before Grande Cuvée was Private Cuvée, the change dated to the end of the 1970s: confirm."
+  },
+  {
+   "key": "laurent-perrier", "house": "Laurent-Perrier", "cuvee": "Grand Siècle", "sheet": "Grand Siècle",
+   "producerId": "p-laurent-perrier", "cuveeId": "", "pick": "", "chunk": "h3",
+   "why": "The house of Tours-sur-Marne founded in 1812; Grand Siècle is the prestige cuvée blended on purpose from three declared vintages of Grand Cru fruit, each release numbered as an Itération.",
+   "note": "Grand Siècle here is correct on the sheet, with no e: siècle is masculine. It is multi vintage by design, never an undeclared vintage wine. Confirm the year of the first release (1959 by most accounts, from the 1952, 1953 and 1955 vintages) and the numbering of the Itérations from the house's own pages. Bernard de Nonancourt (confirm his dates in two sources) is the figure of the story. No oak anywhere, by the library."
+  },
+  {
+   "key": "louis-roederer", "house": "Louis Roederer", "cuvee": "Cristal", "sheet": "Cristal",
+   "producerId": "p-louis-roederer", "cuveeId": "w-cristal", "pick": "louis-roederer", "chunk": "h3",
+   "why": "The family house of Reims founded in 1776; Cristal was created in 1876 for Tsar Alexander II, in a clear flat bottomed bottle, and is a vintage wine from the house's own Grand Cru vineyards.",
+   "note": "Start from the published flagships record (codex58) and the library's record of the wine, and contradict neither without saying so in report. The bottle is the story: clear crystal, a flat base, the cellophane against light. The first commercial release to the public was the 1945 vintage by most accounts: confirm. Cristal Rosé and the late release (Vinothèque) are its forms."
+  },
+  {
+   "key": "moet-chandon", "house": "Moët & Chandon", "cuvee": "Dom Pérignon", "sheet": "Dom Pérignon",
+   "producerId": "p-moet-chandon", "cuveeId": "w-dom-perignon", "pick": "moet-chandon", "chunk": "h4",
+   "why": "The house of Épernay founded in 1743; Dom Pérignon, its prestige cuvée, was first made in the 1921 vintage and released in 1936, a vintage wine of Chardonnay and Pinot Noir named for the monk of Hautvillers.",
+   "note": "Start from the published flagships record (codex58) and the library's record of the wine, and contradict neither without saying so in report. Say how the label names its maker and how Dom Pérignon is presented beside Moët & Chandon, as the house's own pages state it, without a present tense claim of structure. Dom Pierre Pérignon (1638 to 1715) did not invent sparkling Champagne: a trap. The Plénitudes (P2, P3) and the rosé are its forms. Moët Impérial is the non vintage wine a guest knows."
+  },
+  {
+   "key": "nicolas-feuillatte", "house": "Nicolas Feuillatte", "cuvee": "Palmes d'Or", "sheet": "Cuvée Palms d'Or",
+   "producerId": "p-nicolas-feuillatte", "cuveeId": "", "pick": "", "chunk": "h4",
+   "why": "The brand of a growers' co-operative union at Chouilly, launched by one man in 1976 and passed to the co-operative in 1986; Palmes d'Or is its vintage prestige cuvée in a dimpled black bottle.",
+   "note": "The sheet's Palms is Palmes on the label. This is a co-operative's brand, not a house in the sense of a négociant: the appellation's own term for it (confirm the letters on the label) is the lesson of the record. Nicolas Feuillatte (confirm his dates, 1926 to 2014, in two sources) may be named. Confirm the first vintage of Palmes d'Or (1985 by memory) and the story of the bottle. The union's merger of 2021 and 2022 and its new name are dated history only."
+  },
+  {
+   "key": "perrier-jouet", "house": "Perrier-Jouët", "cuvee": "Belle Epoque", "sheet": "Belle Époque",
+   "producerId": "p-perrier-jouet", "cuveeId": "", "pick": "", "chunk": "h4",
+   "why": "The house of Épernay founded in 1811; Belle Epoque is its vintage prestige cuvée, Chardonnay led, in the bottle painted with anemones that Émile Gallé designed in 1902.",
+   "note": "The house writes Belle Epoque with no accent on its own pages and the sheet and the library write Belle Époque: print the cuvée as the label prints it and say so in sheet.note. Émile Gallé (1846 to 1904) designed the anemones in 1902; the cuvée itself came with the 1964 vintage, released in 1969 by most accounts: confirm both. It was sold as Fleur de Champagne in the United States for years: the same wine. Belle Epoque Blanc de Blancs and Rosé are its forms."
+  },
+  {
+   "key": "philipponnat", "house": "Philipponnat", "cuvee": "Clos des Goisses", "sheet": "Clos de Goisses",
+   "producerId": "p-philipponnat", "cuveeId": "w-clos-des-goisses", "pick": "", "chunk": "h4",
+   "why": "The house of Mareuil-sur-Aÿ founded in 1910 by a family at Aÿ since 1522; Clos des Goisses is the walled, steep, south facing vineyard above the Marne, bottled alone since the 1935 vintage.",
+   "note": "The sheet prints Clos de Goisses; the label prints Clos des Goisses. It is a single vineyard, a lieu-dit the house owns, in a Premier Cru village, and not a Blanc de Noirs: Chardonnay is part of the blend. Start from the library's two records. Juste Rosé and the late releases (L.V.) are its forms: confirm. The house joined the Lanson-BCC group in 1997: dated history, to confirm."
+  },
+  {
+   "key": "piper-heidsieck", "house": "Piper-Heidsieck", "cuvee": "Rare", "sheet": "Formerly Rare",
+   "also": { "name": "Hors-Série", "sheet": "", "standing": "after" },
+   "producerId": "p-piper-heidsieck", "cuveeId": "p-rare-champagne", "pick": "", "chunk": "h5",
+   "why": "The house of Reims founded in 1785; Rare, first made in the 1976 vintage, was its prestige cuvée until it became a house of its own, which is what the sheet's Formerly Rare means.",
+   "note": "The class answer is Rare, and the sheet says Formerly: the record teaches both sides. In depth, Rare as the cuvée that was Piper-Heidsieck's (the 1976 vintage, the bottle and its tiara, Chardonnay led, the few vintages declared); then, as the second, what the house has made since: Hors-Série, a collection whose first release, in 2021, was the 1971 vintage, the house itself saying it no longer had a prestige cuvée once Rare stood alone (Decanter: confirm the wording). The library dates Rare's standing alone to 2018: no search of the planner's confirmed the year, so source it or say about. Three houses carry the name Heidsieck: a trap. The library holds Rare as its own record, p-rare-champagne."
+  },
+  {
+   "key": "pol-roger", "house": "Pol Roger", "cuvee": "Sir Winston Churchill", "sheet": "Sir Winston Churchill",
+   "producerId": "p-pol-roger", "cuveeId": "w-sir-winston-churchill", "pick": "", "chunk": "h5",
+   "why": "The family house of Épernay founded in 1849; Cuvée Sir Winston Churchill, first made in the 1975 vintage and released in 1984 in magnum, is the Pinot Noir led vintage wine whose blend the house has never published.",
+   "note": "The label prints Cuvée Sir Winston Churchill. Sir Winston Churchill (1874 to 1965) may be named: he is the label and long dead. The blend has never been published, so the record gives no proportion at all, by the library's own trap. Confirm 1975 and the year of release from the house's own pages, and the story of the black border on the label after 1965."
+  },
+  {
+   "key": "ruinart", "house": "Ruinart", "cuvee": "Dom Ruinart", "sheet": "Dom Ruinart",
+   "producerId": "p-ruinart", "cuveeId": "", "pick": "", "chunk": "h5",
+   "why": "The oldest Champagne house, founded at Reims in 1729; Dom Ruinart is its vintage Blanc de Blancs prestige cuvée, first made in the 1959 vintage and named for the monk Dom Thierry Ruinart.",
+   "note": "Dom Thierry Ruinart (1657 to 1709: confirm) is the uncle of the founder, not the founder. Confirm the first vintage (1959, released in 1966 by memory), the villages (Côte des Blancs with Montagne de Reims Chardonnay) and the return to ageing under cork from the 2010 vintage, from the house's own pages. Dom Ruinart Rosé is its form. Ruinart is the oldest Champagne house and Gosset the oldest wine house: the trap must read as it does in Gosset's record."
+  },
+  {
+   "key": "taittinger", "house": "Taittinger", "cuvee": "Comtes de Champagne", "sheet": "Comtes de Chamoagne",
+   "producerId": "p-taittinger", "cuveeId": "w-comtes-de-champagne", "pick": "", "chunk": "h5",
+   "why": "The house of Reims dated to 1734 as Forest-Fourneaux, the Taittinger family's from 1932; Comtes de Champagne is its vintage Blanc de Blancs prestige cuvée from Grand Cru villages of the Côte des Blancs, first made in 1952.",
+   "note": "The sheet's Chamoagne is a typing slip for Champagne. The label prints Comtes de Champagne Blanc de Blancs; the rosé of the same name is Pinot Noir led, a trap the library already teaches. The counts of Champagne and Thibaud IV are the name's story: tell it as the house tells it. A small share aged in oak, the chalk cellars of Saint-Nicaise, and the sale of 2005 and the family's return in 2006 as dated history."
+  },
+  {
+   "key": "veuve-clicquot", "house": "Veuve Clicquot", "cuvee": "La Grande Dame", "sheet": "La Grande Dame",
+   "producerId": "p-veuve-clicquot", "cuveeId": "", "pick": "", "chunk": "h5",
+   "why": "The house of Reims founded in 1772; La Grande Dame is its vintage prestige cuvée, Pinot Noir led, named for Barbe-Nicole Clicquot Ponsardin, the widow who ran the house from 1805.",
+   "note": "The sheet prints this one as the label does. Barbe-Nicole Clicquot Ponsardin (1777 to 1866) is named with her dates; the riddling table of 1816 and the first known blended rosé of 1818 are the house's story. Confirm the first vintage of La Grande Dame (1962, released in 1972 for the house's bicentenary, by memory) and the share of Pinot Noir in recent vintages as the house states it, in words. Yellow Label is the non vintage wine a guest knows."
+  }
+ ]
+}
