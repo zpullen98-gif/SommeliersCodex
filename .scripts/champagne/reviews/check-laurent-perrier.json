@@ -1,0 +1,94 @@
+{
+ "key": "laurent-perrier",
+ "house": "Laurent-Perrier",
+ "chunk": "h3",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 24,
+  "forRecord": 7,
+  "run": [
+   "1812, the cooper, Eugène Laurent's death in a cellar accident of 1887 and the widow's name",
+   "Grand Siècle first released in 1959 and the Itération number on the bottle from 2019",
+   "the first Grand Siècle a blend of 1952, 1953 and 1955",
+   "Itération 26: 2012, 2008 and 2007, the shares, the dosage, the lees",
+   "Itération 26 on the house's domain: the crus and the grapes",
+   "the Cuvée Rosé of 1968, Ultra Brut of 1981 and the Grand Vin Sans Sucre",
+   "Les Réserves, Itération 20: 1999, 1997 and 1996, 21 years in magnum, after Itération 17"
+  ],
+  "note": "Twenty four searches of a share of twenty eight for chunk h3, none of them the author's; four left unspent. Five were restricted to a house's own domain and read through their summaries: champagne-henriot.com three times (the Enchanteleurs 2015 page and sheets, the meaning of the name, the Hemera 2013 sheet), laurent-perrier.com (the Itération 26 pages) and louis-roederer.com (the Cristal 2015 press file and the Cristal page). No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every dated change of hands, the grapes and shares, the villages, the first vintage, vintage or multi vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the forty five second lines were counted inside 90 to 110 words by the lint."
+ ],
+ "tested": {
+  "founded": "1812 and a cooper: Wikipedia, Vinepair and others; the founder is Alphonse Pierlot in some and André Michel Pierlot, his father, in others, so he stays described.",
+  "story": "The cellar master's accident of 1887 and the widow's name: Wikipedia and Vinepair. The Grand Vin Sans Sucre at the end of the nineteenth century: the Union des Maisons de Champagne. The decline between the wars told as debt and the slump had no source: replaced by the daughter who ran the house after the widow's death in 1925, as two accounts give it. The buyer of 1939 is described, her dates not found. Bernard de Nonancourt at the head from October 1948: two accounts. The Cuvée Rosé of 1968 and Ultra Brut of 1981 as the Grand Vin Sans Sucre reborn: Nicolas, Difford's Guide and the Union.",
+  "cuvee": "Grand Siècle released in 1959 as 1952, 1953 and 1955: The Gentleman's Journal, Elite Traveler and The Finest Bubble, beside Decanter's 1960. The number on the bottle from 2019 with Itération 24 (2007, 2006 and 2004): The Finest Bubble, K and L. Itération 26: 65, 25 and 10 parts of 2012, 2008 and 2007, 58 per cent Chardonnay, 7 grams a litre, ten years on lees: Decanter, Wine.com and the house's magazine. The same shares for Itération 25 were not searched again and are cut. Les Réserves Itération 20: 21 years under natural cork in magnum, the second after Itération 17 (1995, 1993 and 1990): Decanter and Falstaff.",
+  "sites": "Eight Grand Cru villages for Itération 26 by the house's magazine page, the record's eight; the house's product page gives 52 and 48 and eleven villages, so the record's source is now the magazine page and the conflict is open.",
+  "table": "house45 credited Bernard de Nonancourt with the Champagne with no added sugar, which the widow first made in the nineteenth century: now a revived one.",
+  "cards": "Three cards and three questions read; one right answer each, the wrong ones of the sheet, no length clue."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "Debt and the slump between the wars wore the house down, and in 1939 it was sold to Marie-Louise de Nonancourt, born into the Lanson family. Her son",
+   "now": "Her daughter ran it after her death in 1925, and in 1939 the house was sold to a woman born into the Lanson family, whose son",
+   "why": "The cause of the decline had no source; the daughter's years are in two accounts; the buyer of 1939 is dead and her dates were not found, so the brief asks that she be described.",
+   "sources": [
+    "Wikipedia: Laurent-Perrier",
+    "Vinepair: Laurent-Perrier champagne guide"
+   ]
+  },
+  {
+   "field": "cuvee.making",
+   "was": "65, 25 and 10 parts of the three for both Itérations 25 and 26",
+   "now": "65, 25 and 10 parts of the three for Itération 26",
+   "why": "Itération 26's shares stand on Decanter and the house's magazine; Itération 25's were not confirmed.",
+   "sources": [
+    "Decanter: First taste, Grand Siècle Itération 26",
+    "Laurent-Perrier Magazine: Grand Siècle Iteration 26"
+   ]
+  },
+  {
+   "field": "table.house45",
+   "was": "a Champagne with no added sugar",
+   "now": "a revived Champagne with no added sugar",
+   "why": "The Grand Vin Sans Sucre was the widow's, at the end of the nineteenth century; Ultra Brut of 1981 is its rebirth.",
+   "sources": [
+    "Union des Maisons de Champagne: special cuvées with minimum dosage",
+    "Nicolas: Laurent-Perrier, innovator in Champagne"
+   ]
+  },
+  {
+   "field": "sources[0]",
+   "was": "Laurent-Perrier: Grand Siècle Iteration 26, the product page",
+   "now": "Laurent-Perrier Magazine: Grand Siècle Iteration 26",
+   "why": "The product page gives other shares and villages than the record; the magazine page gives the record's eight crus and 58 per cent Chardonnay.",
+   "sources": []
+  },
+  {
+   "field": "report[2], report[6]",
+   "was": "Marie-Louise de Nonancourt named without dates; the sites from the product page",
+   "now": "the buyer described; the sites from the magazine page, the product page's figures said",
+   "why": "To match the record.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "Itération 26's villages and shares: the house's magazine page gives eight Grands Crus and 58 per cent Chardonnay, its product page 52 and 48 with Chouilly, Mailly and Verzenay added; a back label should settle it.",
+  "The founder's first name, Alphonse or André Michel Pierlot.",
+  "Whether the couple's combined name dates from 1881 or from the widow's time after 1887; the record does not date it.",
+  "NM was not read on a label."
+ ],
+ "livingNamesMet": [
+  "Alexandra Pereyre de Nonancourt (already listed)",
+  "Stéphanie Meneux de Nonancourt (already listed)"
+ ],
+ "codexInTension": [
+  "The Champagne region record's producers line calls the Laurent-Perrier rosé a saignée, where the library and the house say maceration (the author's finding, confirmed in reading)."
+ ]
+}

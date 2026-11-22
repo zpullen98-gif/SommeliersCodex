@@ -1,0 +1,135 @@
+{
+ "key": "henriot",
+ "house": "Henriot",
+ "chunk": "h3",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 24,
+  "forRecord": 7,
+  "run": [
+   "the vintages sold as Hemera, 2005, 2006, 2008 and 2013, and the Enchanteleurs of 2015",
+   "Cuvée des Enchanteleurs 2015 on the house's domain: 2.5 grams a litre, at least ten years",
+   "1808, the founder as a widow, the marriage of 1880 that brought the Côte des Blancs vines",
+   "the meaning of the name Enchanteleurs on the house's domain",
+   "Joseph Henriot, Charles Heidsieck, Veuve Clicquot and the buyback of 1994",
+   "Terroirs et Vignerons de Champagne and Artémis Domaines, 2022 and 2023",
+   "Hemera 2013 on the house's domain: 3.5 grams a litre, at least ten years, the six crus"
+  ],
+  "note": "Twenty four searches of a share of twenty eight for chunk h3, none of them the author's; four left unspent. Five were restricted to a house's own domain and read through their summaries: champagne-henriot.com three times (the Enchanteleurs 2015 page and sheets, the meaning of the name, the Hemera 2013 sheet), laurent-perrier.com (the Itération 26 pages) and louis-roederer.com (the Cristal 2015 press file and the Cristal page). No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every dated change of hands, the grapes and shares, the villages, the first vintage, vintage or multi vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the forty five second lines were counted inside 90 to 110 words by the lint."
+ ],
+ "tested": {
+  "founded": "1808, a widow of the Henriot family founding the house at Reims: Wikipedia, Fells and the house's history page; she stays described, her dates not found.",
+  "story": "The marriage of 1880 that brought the Chardonnay vines: Falstaff names the spouses, and no source gives the generation, so the fourth generation is cut. Charles Heidsieck: taken over in 1975 by one account and 1976 by others, sold in 1985 by all, so the record no longer gives 1976. The trade for a share in Veuve Clicquot: 1985 or 1987, undated as before. The buyback of the name without the vineyards in 1994: several accounts. Artémis Domaines bought Maisons et Domaines Henriot in the autumn of 2022, which the record now says joined, not merged; Terroirs et Vignerons de Champagne signed on 29 September 2023 by one trade report and announced the purchase final in early October by others, so the record says the autumn of 2023.",
+  "cuvee": "Hemera 2005 the first, twelve years on lees, 5 grams a litre: Decanter and a search summary of Gault and Millau. A Hemera 2008 exists, the third under the name (Decanter, World of Fine Wine, The Drinks Business), so the rhythm stands. Hemera 2013: at least ten years, 3.5 grams, equal parts from the six crus, by the house's sheet. Enchanteleurs 2015: 2.5 grams, at least ten years, equal parts, only in exceptional years, by the house. The aged glass told the 2015 as a wine kept longer, which it is not: reworded.",
+  "also": "The meaning of the name Enchanteleurs as a tribute to cellar hands was found on no house page and no second source: cut from also.note and from the guests' answers.",
+  "table": "The sale called Hemera fine, a word of judgement, and more than ten years where the 2013 has at least ten: reworded. The other spoken lines carry only sourced facts.",
+  "cards": "Three cards and three questions read: one right answer each, plausible wrong ones, no length clue; the house question's explanation carried the 1976 start, now cut."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "He ran Charles Heidsieck from 1976 until its sale in 1985",
+   "now": "He ran Charles Heidsieck from the middle of the 1970s until its sale in 1985",
+   "why": "The takeover is dated 1975 by one account and 1976 by others; the sale of 1985 stands on all.",
+   "sources": [
+    "Wikipedia: Champagne Henriot",
+    "The Drinks Business: Joseph Henriot obituary of May 2015",
+    "Decanter: Champagne and Burgundy great Joseph Henriot dies"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "In 1880 a marriage in the fourth generation brought",
+   "now": "In 1880 a marriage brought",
+   "why": "No source read gives the generation; Falstaff dates the marriage and the Chardonnay vines it brought.",
+   "sources": [
+    "Falstaff: Champagne Henriot"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "In 2022 the family's group merged into Artémis Domaines, and in October 2023",
+   "now": "In 2022 the family's group joined Artémis Domaines, and in the autumn of 2023",
+   "why": "Artémis Domaines bought Maisons et Domaines Henriot; the sale to Terroirs et Vignerons de Champagne was signed on 29 September and announced complete in October, so the season is what two sources share.",
+   "sources": [
+    "The Drinks Business: Terroirs et Vignerons de Champagne finalises acquisition of Henriot",
+    "Réussir Vigne: the union of co-operatives buys Champagne Henriot",
+    "Just Drinks: Terroirs et Vignerons de Champagne buys Henriot from Artémis Domaines"
+   ]
+  },
+  {
+   "field": "traps[1], questions[1].exp",
+   "was": "ran Charles Heidsieck from 1976 to 1985",
+   "now": "ran Charles Heidsieck until its sale in 1985",
+   "why": "As in the story.",
+   "sources": []
+  },
+  {
+   "field": "guests[1]",
+   "was": "What does Enchanteleurs mean? By the house's account the name honours the cellar hands who watched over the wines; the house renders it the enchanters' cuvée.",
+   "now": "Is it a vintage Champagne? Yes, the wine of one harvest, made only in years the house chooses, with the vintages named.",
+   "why": "No house page read and no second source gives the meaning of the name; a guest's answer must not carry an unsourced etymology.",
+   "sources": [
+    "Henriot: Cuvée des Enchanteleurs 2015",
+    "Henriot: Hemera 2013 technical sheet"
+   ]
+  },
+  {
+   "field": "also.note",
+   "was": "The name honours the cellar hands who watched over the wines, by the house's account.",
+   "now": "The house makes it only in years it judges exceptional, by its own page.",
+   "why": "As above; the replacement is the house's own words on its 2015 page.",
+   "sources": [
+    "Henriot: Cuvée des Enchanteleurs 2015"
+   ]
+  },
+  {
+   "field": "table.sale",
+   "was": "Henriot's Hemera is a fine and quiet choice, all from six Grand Cru villages",
+   "now": "Henriot's Hemera did exactly that, from six Grand Cru villages alone",
+   "why": "Fine judges; the hook now promises only the time in the cellar, ten years and more, which the house's sheets give.",
+   "sources": [
+    "Henriot: Hemera 2013 technical sheet"
+   ]
+  },
+  {
+   "field": "cuvee.aged",
+   "was": "Kept longer, as the 2015 released under the old name shows in the house's notes",
+   "now": "No note of a bottle kept long after release was sourced; the house's notes on the 2015, after more than ten years in its cellars",
+   "why": "The 2015 is the next release, not an older bottle; the field now says what was and was not found.",
+   "sources": [
+    "Henriot: Cuvée des Enchanteleurs 2015"
+   ]
+  },
+  {
+   "field": "report[4], report[6]",
+   "was": "the exchange dated 1985 or 1987; the meaning of the name Hemera left out",
+   "now": "the takeover of Charles Heidsieck in 1975 or 1976 added to the undated points; the meaning of either name and the name Premier Cuvée added to what is left out",
+   "why": "To match the record.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "The meaning of the name Cuvée des Enchanteleurs, and of Hemera: no house page read gives either.",
+  "The release year of Hemera 2005 (the plan's 2018) and the first vintage of Cuvée des Enchanteleurs.",
+  "The year Joseph Henriot took over Charles Heidsieck (1975 or 1976) and the year of the trade for a share in Veuve Clicquot (1985 or 1987).",
+  "One account names Cuvée Baccarat and Premier Cuvée as earlier names of the same wine; not followed.",
+  "NM was not read on a label."
+ ],
+ "livingNamesMet": [
+  "Thomas Henriot (already listed)",
+  "Stanislas Henriot (already listed)"
+ ],
+ "codexInTension": [
+  "plan.json henriot: also.standing is before, while by the house's own page the wine that was Hemera took the name Cuvée des Enchanteleurs again with the 2015 vintage; the record teaches both, and the ruling is the lead's.",
+  "plan.json henriot why: a release year of 2018 for Hemera 2005 that no source read confirms.",
+  "The Nicolas Feuillatte record of chunk h4 leaves out the date of the Henriot purchase; this record gives the autumn of 2023, signed 29 September and announced in October."
+ ]
+}

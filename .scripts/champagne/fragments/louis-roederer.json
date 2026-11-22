@@ -36,7 +36,7 @@
    "what": "The year Cristal was first made, for the court of Tsar Alexander II; it was first sold to the public in 1945, by two accounts."
   },
   "kind": "vintage",
-  "rhythm": "Made only in the years the house judges ripe enough, since 1876 for the Tsar and since 1945 for the public; the 2012, 2014, 2015, 2016 and 2018 are among the vintages sold.",
+  "rhythm": "Made for the Tsar's court from 1876 and sold to the public from 1945, by more than one account, in the years the house declares; the 2008, 2012, 2014 and 2015 are among the vintages sold.",
   "blend": "Pinot Noir and Chardonnay, in shares that change with the year: about three fifths Pinot Noir in 2015 by the house's sheet; no Meunier.",
   "sites": "Only the house's own Grand Cru vineyards: Verzenay, Verzy and Beaumont-sur-Vesle on the Montagne de Reims, Aÿ in the Marne valley, and Avize, Cramant and Le Mesnil-sur-Oger in the Côte des Blancs; 45 plots in the seven crus for the 2015.",
   "making": "Estate parcels are vinified apart, a quarter of them in oak casks for the 2015, with the malolactic conversion blocked to keep its tension. The wine rests six to seven years on its lattes in the Reims cellars and six to twelve months more after disgorging, with a dosage of 7 grams a litre for the 2015, by the house.",
@@ -51,7 +51,7 @@
    },
    {
     "name": "Cristal Vinothèque",
-    "note": "Cristal held back by the house for about two decades, some ten years on its lattes and ten more after disgorging, before a late release."
+    "note": "Cristal held back in the house's cellars for some twenty years before a late release, by the house's sheet for the 1995."
    }
   ],
   "serve": "8 to 10 degrees Celsius; no need to decant; a tulip or a white wine glass, the cellophane left on until the bottle is opened."
@@ -135,12 +135,12 @@
    "q": "Which was the first Cristal made wholly from biodynamically farmed vines?",
    "opts": [
     "2012",
-    "1876",
-    "1974",
+    "2008",
+    "2002",
     "2015"
    ],
    "a": 0,
-   "exp": "Cristal 2012 was the first from vines farmed biodynamically throughout. 1876 is the year Cristal was first made, 1974 the harvest of the first Cristal Rosé and 2015 a later vintage.",
+   "exp": "Cristal 2012, released in 2019, was the first from vines farmed biodynamically throughout, by the trade press. The 2008 and 2002 came before that change, and the 2015 after it.",
    "tag": "cuvee"
   }
  ],
@@ -215,10 +215,26 @@
   "Louis Roederer himself carries no dates, as in the published record, because accounts give 1798 and 1809 for his birth.",
   "The sixty per cent of Deutz on 5 July 1993 is the Union des Maisons de Champagne's, as the Deutz record of chunk h2 tells it.",
   "Cristal 2012 as the first from biodynamically farmed vines throughout is in The Drinks Business, Quill and Pad and Berry Bros; the certification of the whole estate came later and is left out.",
-  "Cristal Vinothèque: about ten years on lattes and ten after disgorging is one critic's account with Decanter's feature; the 2002 Late Release, a separate tier, is left out of forms; the start of the Vinothèque with the 1995 in 2017 rests on one account and is left out.",
+  "Cristal Vinothèque: the house's sheet for the 1995 gives some twenty years in its cellars; the split between lattes and time after disgorging differs by account (ten and ten in one report, eight on lattes, six on points and eight after disgorging in another), so the record gives only the whole; the 2002 Late Release, a separate tier, is left out of forms.",
   "style.reserve is empty: no house page read gives Collection's reserve figure (a critic's third of a perpetual reserve was not followed); Collection 242 as the first and as Brut Premier's successor is Jancis Robinson's and Tatler Asia's.",
   "kind.code: the letters NM were not read on a label; the library calls Roederer a house among the grandes marques, and a refuter should read a label.",
   "The aged glass adds the house's own note on the 2008 Late Release to the published ageing line; a living name met in the research is added to people.json."
  ],
- "checked": null
+ "checked": {
+  "date": "2026-11-22",
+  "by": "refuter",
+  "verdict": "changed",
+  "changed": [
+   "cuvee.rhythm: No source says the Tsar's wine was made only in ripe years; the 2016 and 2018 were not confirmed as sold.",
+   "cuvee.forms[1].note: The split is ten and ten in a pre release report and eight on lattes, six on points and eight after disgorging in a tasting report of the 1995; the house gives twenty years as a whole.",
+   "questions[2].opts, questions[2].exp: Plausible wrong answers: three real vintages either side of the change.",
+   "report[8]: To match the record."
+  ],
+  "open": [
+   "One merchant says Cristal Rosé was wholly biodynamic from the 2007; the record keeps the trade press's first biodynamic Cristal, the 2012.",
+   "Whether the widow took over in 1932 (several accounts) or 1933 (the house's site).",
+   "Whether Cristal ceased after 1917 or went on being made before its sale to the public in 1945: accounts differ, and the record says neither.",
+   "NM was not read on a label."
+  ]
+ }
 }
