@@ -539,6 +539,18 @@ no `V59_WORDS` in it) and `check-flagships.js` (section 1: codex59's two files s
 the chain carries them); and the two worker mutation strings that name the worker's name of the day
 (`check-flagships.js`, `check-grapes-table.js`). Every gate is green on that tree.
 
+The ruling was tried at the spec step on a scratch copy of this tree, with a probe layer that did only what the
+ruling says (the room pushed onto `V48_ROOMS`, the view registered, `v32Arg`, `v32Apply` and `v32ParentRoute`
+wrapped, the cold address re-applied). In a browser at 390 px: every room's nav drew five buttons, the tab lit the
+house tab, `#/v/champagne` and `#/v/champagne/<key>` answered warm and cold, Back climbed a house to the root to
+the Wine list to Home, an unknown key fell to the root, and no page error was raised. Two things it showed that the
+layer must settle: a tap on the Champagne houses button from a house page did nothing (ruling 3), and the fifth
+button stood alone on a row at 320 px (where its two words wrapped to a second line), at 390 px and at 1,024 px
+(ruling 6). Of the gates, exactly two failed, both named below: `check-house-flow.cjs` at its no-house count, and
+`check-flagships.js` at its outermost check, which named `v32Arg`, `v32Apply` and `v32ParentRoute`. `check-card.js`,
+`check-house-only.cjs`, `check-nav.js`, `check-brennans.js`, `check-home.js`, `check-house.js`, `check-study.js`,
+`check-cms.js`, `check-grapes-table.js` and the learning and training gates passed untouched.
+
 To move with the layer, each in the commit that changes the fact:
 
 - `check-house-flow.cjs:269`: with no house loaded each hub's nav holds exactly four routes. It holds five once the
@@ -547,13 +559,15 @@ To move with the layer, each in the commit that changes the fact:
   and `:121` asks for at least four: both stand as they are, which is why the room is pushed last. `:14` and `:15`
   list the four rooms the gate walks; add the fifth to that walk (its address, the lit tab, the current button
   adding no history entry, cold Back to the Wine list) rather than loosening a check.
-- `check-house-only.cjs:160` to `161`: the owners table gains `#/v/champagne` and `#/v/champagne/ayala`, each
+- `check-house-only.cjs:160` to `161` (it passed in the probe, so these are additions, not repairs): the owners
+  table gains `#/v/champagne` and `#/v/champagne/ayala`, each
   lighting `brennans`; its cold Back chains (section 3) gain a house to the root to the Wine list to Home. `:56`,
   `HOUSE_DOOR`, is the list of doors that may not appear outside the house tab: add `champagne` to it, so the sweep
   proves the tab did not leak.
 - `check-card.js:543` to `562`: it reads the rows of the Service rehearsal and Wine studies hubs through
-  `v48HubHtml` and knows the attribute `data-v48-route`; a fifth nav button is a new row in both. Run it and move
-  only what the fifth room really changes.
+  `v48HubHtml` and knows the attribute `data-v48-route`. It passed with the fifth button in the probe, so nothing
+  of it moves for the room alone; run it again once the decks and their parents exist (its Back table, `:654` to
+  `672`, is where a house deck's parent is pinned).
 - `check-flagships.js:975` to `976`: codex58's wrappers are proved outermost by finding `_v58` in the source of the
   live function. codex59 will wrap several of the same functions (`v32Arg`, `v32Apply`, `v32ParentRoute`,
   `v25NavWord`, `v25MainName`, `v32DeckDef`, `v32StartRun`, `v32CardFace`, `v32CardHtml`, `v32Learnt`, `v32Grade`,
