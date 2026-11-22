@@ -1,0 +1,96 @@
+{
+ "key": "delamotte",
+ "house": "Delamotte",
+ "chunk": "h1",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "forRecord": 6,
+  "run": [
+   "Laurent-Perrier's purchases of Delamotte and Salon, 1988 and 1989",
+   "the founding of 1760 at Reims, 1786 and the move to Le Mesnil-sur-Oger",
+   "the Union's chronology and the house's story on 1927 and 1939 (maisons-champagne.com, champagne-delamotte.com)",
+   "the Blanc de Blancs' villages, lees, dosage and reserve",
+   "the Collection 1970, 1985 and 1999",
+   "the letters NM"
+  ]
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile as a present state, no superlative, British spelling, no dash).",
+  "Every search was the refuter's own; all were read as search summaries, and WebFetch was not tried. A fact the refuter could not confirm from two sources or one primary was cut where it carried weight, or left with the author's primary source and listed as open.",
+  "The six spoken lines of each record were read aloud as a captain would say them; each stays within 90 to 110 words where the schema asks it."
+ ],
+ "tested": {
+  "founded": "1760 at Reims, by the house, Wikipedia and Corney and Barrow. Confirmed.",
+  "story": "Delamotte Père et Fils in 1786: Wikipedia and the house. The move to Le Mesnil-sur-Oger: 1927 by the house, Wikipedia and Corney and Barrow; 22 May 1939 by the Union, the buyer the woman who took over Veuve Laurent-Perrier the same day. The group: 1988 by the house and Laurent-Perrier's document, 1989 by the Union. Salon's fruit to Delamotte: confirmed by the brief's sources and World of Fine Wine's summary.",
+  "kind": "NM: the Hachette guide and a rating site; no label read.",
+  "style": "Le Mesnil, Avize, Oger and Cramant: merchants' listings. Four to five years, 48 months: merchants. Dosage: 6, 6.5 to 7, 8 grams a litre by release, so a range. Reserve: 20 per cent on 2017, 15 on 2019; the less than a tenth not found. Steel: not found by the refuter.",
+  "cuvee": "The Collection 1970, 1985 and 1999, held long and disgorged on demand: Jancis Robinson, Hedonism, Harvey Nichols. Confirmed.",
+  "table": "house45 said since 1939, now between the two world wars, and from 1988 the two have been, now in 1988 the two became.",
+  "cards and questions": "The cuvee card's back and the house question's explanation lost the single year 1939; one key each."
+ },
+ "changes": [
+  {
+   "field": "founded.what, story, table.house45, traps[3], cards[1].back, questions[1].exp",
+   "was": "made at Le Mesnil-sur-Oger since 1939",
+   "now": "1927 by the house, 22 May 1939 by the Union; between the two world wars in the spoken lines and the cards",
+   "why": "The house's own story dates the move to 1927; the Union dates the purchase to 1939.",
+   "sources": [
+    "https://www.champagne-delamotte.com/en/page/story",
+    "https://maisons-champagne.com/fr/encyclopedies/chronologie-des-evenements/?id_maison=56&s_senstri=1",
+    "https://en.wikipedia.org/wiki/Champagne_Delamotte"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "the family that ran Laurent-Perrier bought the brand",
+   "now": "the woman who took over Laurent-Perrier that same day; and the 1988 joining told of Delamotte, then of Salon",
+   "why": "The Union's entry of 22 May 1939 records both purchases on one day.",
+   "sources": [
+    "https://maisons-champagne.com/fr/encyclopedies/chronologie-des-evenements/?id_maison=56&s_senstri=1"
+   ]
+  },
+  {
+   "field": "style.dosage, cuvee.making",
+   "was": "7 grams a litre",
+   "now": "about 6 to 7 grams a litre by release",
+   "why": "Releases read give 6, 6.5 to 7 and 8.",
+   "sources": [
+    "https://www.millesima-usa.com/champagne-delamotte-blanc-de-blancs-0000.html",
+    "https://www.harveynichols.com/delamotte/blanc-de-blancs-nv-259894-na-76603/"
+   ]
+  },
+  {
+   "field": "style.reserve",
+   "was": "less than a tenth in one release, a fifth in another",
+   "now": "a fifth on the 2017 harvest, 15 per cent on the 2019",
+   "why": "The less than a tenth was not found.",
+   "sources": [
+    "https://www.danmurphys.com.au/product/210037/delamotte-champagne-blanc-de-blancs",
+    "https://thefinestbubble.com/champagne-delamotte-blanc-de-blancs-nv-75cl"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "Chardonnay became the house's mark, and its Blanc de Blancs, from the Grand Cru villages of the Côte des Blancs, the wine to know.",
+   "now": "Chardonnay became the house's mark, its Blanc de Blancs the wine to know.",
+   "why": "The story ran over 230 words after the dating was made exact; the villages stand in style.grapes and cuvee.sites.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "NM was not read on a label; the Hachette guide and a rating site list it.",
+  "Stainless steel for the Blanc de Blancs rests on the author's reading of the house; no search of the refuter's stated the vessel.",
+  "The library's shared trap, Salon and Delamotte share an owner, is a present state; it is kept word for word because a shared trap must read alike, and is listed in codexInTension."
+ ],
+ "livingNamesMet": [
+  "Alexandra de Nonancourt and Stéphanie de Nonancourt (added): Wikipedia's Delamotte page, as heads of the house from 2010",
+  "Didier Depond (already listed): Decanter's tasting of Salon 2012"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-salon, the shared trap: 'Salon and Delamotte share a village and an owner' is a present state; this record keeps it word for word, as a shared trap must read alike, and dates the joining to 1988."
+ ]
+}

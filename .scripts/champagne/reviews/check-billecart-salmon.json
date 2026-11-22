@@ -1,0 +1,117 @@
+{
+ "key": "billecart-salmon",
+ "house": "Billecart-Salmon",
+ "chunk": "h1",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "forRecord": 8,
+  "run": [
+   "the founding of 1818, the founders, Louis Salmon and the cold settling of 1958",
+   "Nicolas François: 1964, 1959 and 1955",
+   "Nicolas François 2008: blend, oak, malolactic, Grand Cru share, dosage, lees",
+   "Le Clos Saint-Hilaire: one hectare, the planting of 1964, the first vintage 1995, oak",
+   "the Frey share of 45 per cent and the supermarkets",
+   "the buying back of stock in 1993",
+   "Cuvée Elisabeth Salmon's first vintage",
+   "the letters NM"
+  ]
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile as a present state, no superlative, British spelling, no dash).",
+  "Every search was the refuter's own; all were read as search summaries, and WebFetch was not tried. A fact the refuter could not confirm from two sources or one primary was cut where it carried weight, or left with the author's primary source and listed as open.",
+  "The six spoken lines of each record were read aloud as a captain would say them; each stays within 90 to 110 words where the schema asks it."
+ ],
+ "tested": {
+  "founded": "1818 on the marriage of Nicolas François Billecart and Elisabeth Salmon at Mareuil-sur-Aÿ: the house, Decanter, Wikipedia. Confirmed.",
+  "story": "The brother's part: given both ways by the house's partners and guides, so cut. Cold settling and long cool fermentation from 1958: the house's history and Relais and Châteaux. 1964 as the first Cuvée Nicolas François, an homage to the founder: the house's history and its 2008 sheet. 1955: Quill & Pad alone. The Clos planted in 1964, first vintage 1995: the house and Decanter. Elisabeth Salmon first vintage 1988, released 2001: Decanter, Falstaff. 1993 stock bought back from supermarkets: the house. 45 per cent to the Frey company: Agra (undated).",
+  "kind": "NM: a merchant states it; no label read.",
+  "style": "Cold settling, steel, oak for part of Nicolas François and all of the Clos: the house and Decanter. Partial malolactic for the 2008: the house's page. 2.9 grams a litre for the 2008 and about 2 for the Clos 2009: the house's sheets. Confirmed.",
+  "cuvee": "2008: 40 per cent Chardonnay by the house, so about three fifths Pinot Noir; 83 per cent Grand Cru by Quill & Pad, five sixths in words; 17 per cent in oak; 150 months on the lees by the sheet. Confirmed.",
+  "also": "One hectare (0.97 by a merchant), Pinot Noir planted in 1964, Blanc de Noirs from 1995, wholly in oak casks: the house and Decanter. Confirmed.",
+  "table": "Read aloud; nothing unsourced. The guest answer on Elisabeth Salmon now dates its first vintage and release.",
+  "cards and questions": "One key each; the match explanation no longer calls the Clos des Goisses walled."
+ },
+ "changes": [
+  {
+   "field": "story",
+   "was": "her brother made the wine while he sold it, by the house's account",
+   "now": "her brother joined them in the business, and accounts differ over which of the two men made the wine and which sold it",
+   "why": "Sources read give the division of labour both ways.",
+   "sources": [
+    "https://www.champagne-billecart.fr/en/la-maison/histoire-en",
+    "https://www.enviedechamp.com/en/blog/63-Once-upon-a-time-the-Billecart-Salmon-family"
+   ]
+  },
+  {
+   "field": "story, cuvee.first.what",
+   "was": "made from 1955 by Decanter's account",
+   "now": "the house's 1964 homage to the founder; one account traces the blend to the 1955",
+   "why": "The 1955 rests on Quill & Pad; the house dates the cuvée from 1964.",
+   "sources": [
+    "https://www.champagne-billecart.fr/en/la-maison/histoire-en",
+    "https://quillandpad.com/2024/01/26/billecart-salmon-nicolas-francois-2008-absolutely-sensational-champagne/"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm",
+   "was": "bottles of the 1959 and 1961 were made before the wine had its name",
+   "now": "a 1959 is known under the name too, though the house dates the cuvée from 1964",
+   "why": "Decanter's Wine Legend heads the 1959 with the cuvée's name; the claim that it predates the name was not sourced.",
+   "sources": [
+    "https://www.decanter.com/?p=447637"
+   ]
+  },
+  {
+   "field": "story, guests[2].a",
+   "was": "created in 1988",
+   "now": "first made with the 1988 vintage and released in 2001",
+   "why": "Decanter and Falstaff give both years.",
+   "sources": [
+    "https://www.decanter.com/premium/first-taste-masterclass-billecart-salmons-elisabeth-salmon-rose-2008-458919",
+    "https://www.falstaff.com/en/news/champagne-billecart-salmon-releases-cuvee-elisabeth-salmon-2008"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "bought its bottles back from supermarkets and turned to independent merchants and restaurants",
+   "now": "by the house's account, it bought its stock back from the supermarkets",
+   "why": "The house's history gives the buying back and no more.",
+   "sources": [
+    "https://www.champagne-billecart.fr/en/la-maison/histoire-en"
+   ]
+  },
+  {
+   "field": "questions[0].exp",
+   "was": "Philipponnat's walled vineyard is the Clos des Goisses",
+   "now": "Philipponnat's single vineyard is the Clos des Goisses",
+   "why": "Walls round the Clos des Goisses were not sourced.",
+   "sources": []
+  },
+  {
+   "field": "sources",
+   "was": "Decanter: Billecart-Salmon producer profile",
+   "now": "Decanter: Billecart-Salmon's Elisabeth Salmon Rosé 2008",
+   "why": "The profile backed only the 1955 claim, now given to Quill & Pad; the masterclass backs the 1988 and 2001.",
+   "sources": [
+    "https://www.decanter.com/premium/first-taste-masterclass-billecart-salmons-elisabeth-salmon-rose-2008-458919"
+   ]
+  }
+ ],
+ "open": [
+  "NM was not read on a label; a merchant says the house buys grapes and is a négociant manipulant.",
+  "The Frey share of 45 per cent is confirmed by Agra (undated); its year, 2004 or 2005, stays unsettled.",
+  "How the 1959 was labelled, and whether a 1955 was made as the same wine, is not settled.",
+  "The 60 per cent of Pinot Noir in the 2008 rests on the house's 40 per cent of Chardonnay as the remainder."
+ ],
+ "livingNamesMet": [
+  "Mathieu Roland-Billecart and François Roland-Billecart (already listed): the house's history, Decanter",
+  "Jean Roland-Billecart (added; living or not is not settled): the house's history, as the man of the 1958 change, whom the record describes"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-billecart-salmon, t: 'the reference rose of Champagne' is a superlative of judgement; this record does not repeat it."
+ ]
+}

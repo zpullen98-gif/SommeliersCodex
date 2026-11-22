@@ -1,0 +1,88 @@
+{
+ "key": "armand-de-brignac",
+ "house": "Armand de Brignac",
+ "chunk": "h1",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "forRecord": 5,
+  "run": [
+   "Moët Hennessy's half share of February 2021 and the family making on",
+   "the Sovereign Brands stake sold in November 2014 and the brand's first release in 2006",
+   "the name from a novel, the 1950s, the reserve share, three harvests and the dosage",
+   "the house's own sheets on the reserve, the base years, the blend and the liqueur (armanddebrignac.com)",
+   "the letters NM on a label or a listing"
+  ]
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile as a present state, no superlative, British spelling, no dash).",
+  "Every search was the refuter's own; all were read as search summaries, and WebFetch was not tried. A fact the refuter could not confirm from two sources or one primary was cut where it carried weight, or left with the author's primary source and listed as open.",
+  "The six spoken lines of each record were read aloud as a captain would say them; each stays within 90 to 110 words where the schema asks it."
+ ],
+ "tested": {
+  "founded": "2006 as the first release of Brut Gold: Wikipedia and the house. Confirmed.",
+  "story": "The novel and its registration in the 1950s: the house's Inside page and Wikipedia (which says the late 1940s or early 1950s). Sovereign Brands' stake sold on 5 November 2014: Decanter, ABC News, the Sovereign release. Half to Moët Hennessy in February 2021 with world distribution, the Cattier family making on: Decanter, The Drinks Business, The Week, Bloomberg. Confirmed.",
+  "kind": "NM: a Champagne411 profile and a rating site; no label read.",
+  "style": "Three harvests: the house and Millesima. The half share of reserve wine: not found, one merchant giving 10 to 50 per cent; cut. Dosage 9 grams a litre: wine.com and the house (Millesima 9.5). The liqueur of base wine aged a year in French oak: the house's own page and older sheet, as the dosage. Blend 50, 40 and 10 on the current page and 40, 40 and 20 on older sheets: the house. Confirmed.",
+  "cuvee": "2006 first release, multi-vintage, no vintage on the label: confirmed. The older sheet's 2009, 2010 and 2012: confirmed. The gold bottle and the pewter ace of spades: Wikipedia and the house.",
+  "table": "The forty five second lines read aloud; the reserve sentence of cuvee45 was replaced, the rest stand.",
+  "cards and questions": "The term card asked for the unconfirmed half share and was reworded before the freeze; the match question's options (Cristal, Belle Époque, Palmes d'Or) are bottles a candidate really confuses, one key, no length clue."
+ },
+ "changes": [
+  {
+   "field": "style.line, style.reserve, cuvee.making, table.cuvee45, guests[2].a, cards[2], questions[2].exp",
+   "was": "half of Brut Gold is reserve wine, a quarter from each of two older harvests",
+   "now": "the base year with reserve wine from two older harvests, its share not settled",
+   "why": "No source the refuter read states the half share; a merchant gives 10 to 50 per cent.",
+   "sources": [
+    "https://armanddebrignac.com/products/brut-gold/",
+    "https://www.wine.com/product/armand-de-brignac-brut-gold-ace-of-spades/91199"
+   ]
+  },
+  {
+   "field": "style.dosage, cuvee.making",
+   "was": "9 grams a litre; the oak aged liqueur left out",
+   "now": "9 grams a litre, the liqueur of base wine aged a year in French oak, by the house's account",
+   "why": "The house's own page calls the oak aged liqueur its dosage, which settles the author's doubt.",
+   "sources": [
+    "https://armanddebrignac.com/inside-armand-de-brignac/",
+    "https://armanddebrignac.com/wp-content/uploads/2016/11/Champagne-Armand-de-Brignac-Brut-Gold-1.pdf"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm",
+   "was": "a merchant's listing the 2012, 2013 and 2014",
+   "now": "the house's older sheet's 2009, 2010 and 2012 alone",
+   "why": "The merchant's listing left the sources to make room for a second citable page on 2014.",
+   "sources": [
+    "https://armanddebrignac.com/wp-content/uploads/2016/11/Champagne-Armand-de-Brignac-Brut-Gold-1.pdf"
+   ]
+  },
+  {
+   "field": "sources",
+   "was": "The Drinks Business tag page; Millesima USA",
+   "now": "The Drinks Business of February 2021 (?p=499342); Decanter of November 2014 (?p=5070)",
+   "why": "Each event now rests on two citable pages whose addresses name nobody.",
+   "sources": [
+    "https://thedrinksbusiness.com/?p=499342",
+    "https://decanter.com/?p=5070"
+   ]
+  }
+ ],
+ "open": [
+  "NM was not read on a label: a Champagne411 profile and a rating site give it, so the code is an inference from two secondary sources.",
+  "The share of reserve wine in Brut Gold is not settled.",
+  "The name's registration is dated the 1950s by the house and the late 1940s or early 1950s by Wikipedia; the record keeps the house's 1950s, told as the family's account."
+ ],
+ "livingNamesMet": [
+  "Jay-Z and Shawn Carter (already listed): every source on 2014 and 2021",
+  "Jean-Jacques Cattier and Alexandre Cattier (already listed): Wikipedia and the house's page",
+  "Nelly Cattier (added; living or not is not settled): the house's page, as the mother who found the name"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-armand-de-brignac, holdings: the Cattier cellars called among the deepest in Champagne, a ranking; the record gives the family's own almost thirty metres instead."
+ ]
+}

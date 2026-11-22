@@ -1,0 +1,76 @@
+{
+ "key": "salon",
+ "house": "Salon",
+ "chunk": "h1",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "forRecord": 6,
+  "run": [
+   "Eugène-Aimé Salon, 1867 to 1943, the fur trade, 1905, 1911 (no result)",
+   "the 2015 as the forty fifth and the 2013 as the forty fourth",
+   "Laurent-Perrier and Salon, 1988 or 1989",
+   "the founder, Pocancy, the founding year and 1921",
+   "steel, malolactic blocked, the dosage of the 2012",
+   "the letters NM"
+  ]
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile as a present state, no superlative, British spelling, no dash).",
+  "Every search was the refuter's own; all were read as search summaries, and WebFetch was not tried. A fact the refuter could not confirm from two sources or one primary was cut where it carried weight, or left with the author's primary source and listed as open.",
+  "The six spoken lines of each record were read aloud as a captain would say them; each stays within 90 to 110 words where the schema asks it."
+ ],
+ "tested": {
+  "founded": "1920 by the house; other accounts give 1910, 1911, 1914 (the Union) and 1921. The house's year is kept, the others in the report.",
+  "story": "Born 7 October 1867 at Pocancy, died 1943, a career in a Paris fur company: Club Oenologique, the Sotheby's and Decanter summaries. 1905 first vintage, 1921 first sold: confirmed by several. Laurent-Perrier: 1988 by its own registration document, 1989 by Wikipedia and Quill & Pad. The fortieth for 2006: Decanter.",
+  "kind": "NM: not found on a label or in a listing for Salon.",
+  "style": "Steel, no malolactic, eight to ten years on the lees, dosage 5 to 7 grams a litre: World of Fine Wine. 6 grams a litre for the 2012 and no malolactic: Decanter's first taste. Confirmed.",
+  "cuvee": "The 2013 the forty fourth (The Drinks Business 2023), the 2015 the forty fifth (The Finest Bubble, Hedonism), the 2015 released ahead of the 2014 by one merchant, so told as the forty fifth to be released.",
+  "table": "Read aloud; the forty fifth vintage became the forty fifth release.",
+  "cards and questions": "The match question's options (Delamotte, Krug, Taittinger) are the confusions of the class; one key each."
+ },
+ "changes": [
+  {
+   "field": "story, cuvee.rhythm, table.house45, guests[2].a",
+   "was": "the 2015 its forty fifth vintage",
+   "now": "the 2015 the forty fifth to be released",
+   "why": "A merchant reports the 2015 released ahead of the 2014, so the count is of releases.",
+   "sources": [
+    "https://thefinestbubble.com/news-and-reviews/champagne-salon-the-45-vintages-from-1905-2015/"
+   ]
+  },
+  {
+   "field": "style.lees",
+   "was": "about ten years before release, by the house",
+   "now": "the same, with World of Fine Wine's eight to ten years on the lees",
+   "why": "A second account of the time on lees.",
+   "sources": [
+    "https://worldoffinewine.com/homepage-featured-articles/salon-delamotte-complete-chardonnay-champagne"
+   ]
+  },
+  {
+   "field": "sources",
+   "was": "Corney and Barrow: Champagne Salon 2013 (issuu)",
+   "now": "The Drinks Business: Champagne Salon releases its 2013 vintage",
+   "why": "A press report the refuter's search returned, for the forty fourth.",
+   "sources": [
+    "https://www.thedrinksbusiness.com/2023/09/champagne-salon-releases-2013-vintage/"
+   ]
+  }
+ ],
+ "open": [
+  "NM was not read on a label, and no listing of the code for Salon was found.",
+  "The founding year: the house gives 1920, the Union 1914, other accounts 1910, 1911 and 1921; the record keeps the house's.",
+  "Whether a 2014 will be released, which would change the count, is not settled."
+ ],
+ "livingNamesMet": [
+  "Didier Depond (already listed): Decanter's first taste of the 2012"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-salon: founded 1921 is the first commercial vintage; this record dates the house from 1920 by its own site, as its report says.",
+  "WINE_PRODUCERS p-salon: the only house making a single wine from one village in one variety is a claim of an only, not repeated here."
+ ]
+}
