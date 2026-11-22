@@ -2,7 +2,15 @@
  "about": "Every id of the Champagne houses tab, house by house in the sheet's order: the record's id (hc- and eight base36 digits, minted once from the house's key by build-champagne.cjs and read from here ever after), its three cards and its three questions (minted from the record's id and the text). While frozen is false the file follows the writing build. Once the integrator has frozen it (build-champagne.cjs --freeze, the roster whole) a build may add ids and may never lose one: an id is a learner's saved record, and a reworded front or stem is a new id that orphans it.",
  "frozen": false,
  "keys": {
+  "armand-de-brignac": {"id":"hc-9z0bg1ot","cards":["hc-26pm5wky","hc-chcea3h1","hc-o5mgc8vb"],"questions":["hc-hj42xrth","hc-mp4mfgjf","hc-ltapd7nd"]},
   "ayala": {"id":"hc-nad6uw9d","cards":["hc-9nbuso4i","hc-o5k3dmhd","hc-1wvmkyvs"],"questions":["hc-4taw0dk4","hc-hhlufogv","hc-be519fk0"]},
-  "bollinger": {"id":"hc-6ycouwy5","cards":["hc-xc8dsf3y","hc-bu2ec35b","hc-8vsgt59d"],"questions":["hc-ndt4qeqp","hc-qqxta8f5","hc-jxe3ailm"]}
+  "billecart-salmon": {"id":"hc-4s98tdt8","cards":["hc-6bjbbeek","hc-n1sl8zxe","hc-y137pczg"],"questions":["hc-qls0ilr8","hc-3yk01a5t","hc-8eyt58s3"]},
+  "bollinger": {"id":"hc-6ycouwy5","cards":["hc-xc8dsf3y","hc-bu2ec35b","hc-8vsgt59d"],"questions":["hc-ndt4qeqp","hc-qqxta8f5","hc-jxe3ailm"]},
+  "delamotte": {"id":"hc-0jytikes","cards":["hc-02947tfk","hc-a2cx4g4f","hc-mdcf0xwr"],"questions":["hc-cm36w0si","hc-qhbhmfz5","hc-czpcelfw"]},
+  "salon": {"id":"hc-zmctxcdm","cards":["hc-3lkut5xn","hc-al30wdcs","hc-hpjsct1b"],"questions":["hc-gso8e3az","hc-voavc1wn","hc-vqog0kmh"]},
+  "deutz": {"id":"hc-nmvk2uyb","cards":["hc-z4u5hzz6","hc-fl8y5w65","hc-71qe1klk"],"questions":["hc-737ba1bx","hc-gipgw4ke","hc-6j6p05li"]},
+  "duval-leroy": {"id":"hc-k9cbdel3","cards":["hc-qnf2f9mz","hc-q3l947f6","hc-j6shv5bk"],"questions":["hc-1x5pcy4f","hc-81ny9p64","hc-pua5d08i"]},
+  "drappier": {"id":"hc-5jwo2e28","cards":["hc-cpw7qmkd","hc-ni3ttj9m","hc-5s93geu6"],"questions":["hc-s3a0oeis","hc-8ssxt2uv","hc-j9u6iy2h"]},
+  "gosset": {"id":"hc-3v9bg882","cards":["hc-5zsqei3n","hc-nmdiuemo","hc-8bqnej2o"],"questions":["hc-3ui2olq5","hc-vhcrgllw","hc-y6n76ki8"]}
  }
 }
