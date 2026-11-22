@@ -1,0 +1,143 @@
+{
+ "key": "ayala",
+ "house": "Ayala",
+ "chunk": "pilots",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 24,
+  "used": 10,
+  "forRecord": 10,
+  "run": [
+   "the founder, the son of a Colombian diplomat, the Château d'Aÿ and the dry wine of 1865",
+   "the house's own history on champagne-ayala.fr: 1860, the dry Champagne of 1865 at 21 grams, Brut Nature in 2007",
+   "the Union des Maisons de Champagne: the founding of 1860, the 1865 vintage and the Prince of Wales, the Frey group's sale to the Bollinger holding company on 7 January 2005",
+   "the riots of 1911, the rebuilding to 1913, the niece of the Vicomte de Mareuil and her dowry",
+   "Perle 2015: four fifths Chardonnay of Chouilly, Cramant, Oger and Le Mesnil-sur-Oger, a fifth Pinot Noir of Aÿ, 5 grams, Extra Brut, eight years at least under cork",
+   "the thirteenth vintage and the first vintage of 1995",
+   "the Groupe Bollinger leaflet's list of the twelve vintages before 2015",
+   "the house's craftsmanship: 120 small stainless steel vats, 70 crus, Brut Majeur's dosage, reserve and lees, the Perle riddled and disgorged by hand",
+   "La Perle 2012 and 2013 sheets: the crus, Verzy in 2012, 6 grams, 12 degrees",
+   "the letters NM on an Ayala label"
+  ],
+  "note": "Ten searches of a share of twenty four for the two pilots, none of them the author's. Four were restricted to a domain and read through their summaries: champagne-ayala.fr twice, maisons-champagne.com once; the leaflet and the sheets came through open searches. No WebFetch was tried."
+ },
+ "method": [
+  "The record was read with one instruction, refute it: the founding year and what it is the year of, the founder and the marriage, the village, the kind of producer, every dated change of hands, the grapes and shares, the villages, the first vintage, the rhythm, the lees, the dosage, the bottle, the second cuvée, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries; the forty five second lines were counted inside 90 to 110 words by the lint."
+ ],
+ "tested": {
+  "founded": "1860 at Aÿ by the son of a Colombian diplomat: the house, the Union des Maisons de Champagne and the world heritage mission. The mission dates a partnership with the Vicomte de Mareuil, Ayala-Albrecht, to 1861; the house and the Union say 1860, which stands.",
+  "story": "The niece of the Vicomte de Mareuil and the Château d'Aÿ with vines in Aÿ and Mareuil-sur-Aÿ as her dowry: the mission and Wikipedia; a merchant's blog has him marry his employer's daughter, so the record tells it as the usual account. 1865: the house's heritage page says it launched dry Champagne that year at 21 grams of sugar a litre; no page found calls it the first dry Champagne. The Prince of Wales: the Union. The riots of 1911 and the rebuilding to 1913: the mission and the newspapers of April 1911, which name the Ayala premises at Aÿ set on fire. 7 January 2005, the Frey group selling to the Bollinger holding company: the Union's chronology. Brut Nature in 2007: the house.",
+  "kind": "NM was searched for on a label and not found.",
+  "style": "120 small stainless steel vats, each cru, grape and year apart, 70 crus, at least three years on the lees, 6 grams, a minimum of 40 per cent reserve wines on one sheet: the house's Brut Majeur page and sheets; the Chardonnay share moves between 45 and 55 per cent on its sheets, which the record gives in words.",
+  "cuvee": "Perle 2015: 80 per cent Chardonnay of Chouilly, Cramant, Le Mesnil-sur-Oger and Oger, 20 per cent Pinot Noir of Aÿ, Extra Brut at 5 grams, at least eight years under cork, hand riddled on pupitres and disgorged by hand: the house's page and sheet. 2013: Chouilly and Le Mesnil-sur-Oger with Aÿ, 6 grams, eight years on average. 2012: Verzy for the Pinot Noir, 12 degrees. The first vintage: the house says its bottle came with the first edition of the cuvée in 1995, while the Groupe Bollinger leaflet lists 1990 and 1993 among its vintages and calls the 2015, released in January 2025, the thirteenth and the thirtieth anniversary; the record now says 1995 is the year the cuvée was created. Perle d'Ayala Nature 2005: a merchant's listing.",
+  "also": "Grande Cuvée Millésimé 1993 at a merchant; the leaflet lists a 1993 among Perle's vintages too, so the standing stays the plan's and is reported open.",
+  "table": "The six spoken lines read aloud: the first vintage made the creation year in cuvee45 and cuvee20; eight years and more in the sale and cuvee10. Deutz is of Aÿ and Clos des Goisses is Philipponnat's, as their own records hold.",
+  "cards": "Three cards and three questions read; one right answer each, wrong options of the sheet's houses, no length clue. cards[0] asks for the year of the first vintage: its front is unchanged, so its id holds, and its back now gives the creation year with the leaflet's two earlier vintages."
+ },
+ "changes": [
+  {
+   "field": "cuvee.first.what",
+   "was": "The first vintage of the cuvée, by the house's own account, and the year its bottle shape was first used.",
+   "now": "The year the house created the cuvée and its bottle, by its own account; its leaflet counts the 1990 and 1993 among the vintages.",
+   "why": "The house dates the cuvée and its bottle to 1995, but its own leaflet lists the 1990 and 1993 among Perle's vintages, so 1995 is not certainly the first vintage.",
+   "sources": [
+    "Groupe Bollinger: Ayala Perle 2015 leaflet",
+    "Champagne Ayala: Perle 2015, the authentic craftsmanship"
+   ]
+  },
+  {
+   "field": "cuvee.rhythm",
+   "was": "the house counts the 2015 as the thirteenth vintage since 1995, and 2002, 2005, 2006, 2012 and 2013 are among those released before it.",
+   "now": "the house's leaflet counts the 2015 as the thirteenth, after 1990, 1993, 1995, 1997, 1999, 2000, 2001, 2002, 2005, 2006, 2012 and 2013.",
+   "why": "Thirteen counted from 1995 would be eleven; the count is the leaflet's and includes two earlier vintages.",
+   "sources": [
+    "Groupe Bollinger: Ayala Perle 2015 leaflet"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "With the 1865 vintage, by the house's own account, he released a Champagne with far less sugar than the sweet wines then in fashion, and the house calls it the first dry Champagne.",
+   "now": "In 1865, by the house's own account, he launched a dry Champagne, at 21 grams of sugar a litre when the sweet wines then in fashion carried far more.",
+   "why": "The house's heritage page gives the year and the figure; no page found makes it the first dry Champagne.",
+   "sources": [
+    "Champagne Ayala: 160 years of Heritage, 160 years of History",
+    "Union des Maisons de Champagne: Maison Ayala"
+   ]
+  },
+  {
+   "field": "story",
+   "was": "who married a niece of the Vicomte de Mareuil",
+   "now": "who married, by the usual account, a niece of the Vicomte de Mareuil",
+   "why": "The mission and Wikipedia tell the niece and her dowry; a merchant's blog tells a different marriage.",
+   "sources": [
+    "Champagne Hillsides, Houses and Cellars: symbol regions history",
+    "Wikipedia: Ayala & Co."
+   ]
+  },
+  {
+   "field": "story, cuvee.bottle, also.note, also.line, table.cuvee45, table.cuvee20, traps[0], cards[0].back",
+   "was": "first made in the 1995 vintage; made since 1995; listed from 1993",
+   "now": "created in 1995; found as a 1993 vintage",
+   "why": "The same finding as cuvee.first.",
+   "sources": [
+    "Groupe Bollinger: Ayala Perle 2015 leaflet"
+   ]
+  },
+  {
+   "field": "cuvee.bottle",
+   "was": "came with the first vintage in 1995, by the house's account.",
+   "now": "came with the cuvée's first edition in 1995, by the house's account, and became the model for the house's other bottles.",
+   "why": "The house's words: launched with the first edition of the cuvée and made the template of its bottles.",
+   "sources": [
+    "Champagne Ayala: Perle 2015, the authentic craftsmanship"
+   ]
+  },
+  {
+   "field": "cuvee.serve",
+   "was": "the house's own sheet for the 2013 vintage advising 12",
+   "now": "the house's own sheet for the 2012 vintage advising 12",
+   "why": "The 12 degrees is on the 2012 sheet; no figure was found on the 2013.",
+   "sources": [
+    "Champagne Ayala: La Perle 2012 technical sheet"
+   ]
+  },
+  {
+   "field": "style.vessels",
+   "was": "the house's pages speak of no oak.",
+   "now": "the pages read speak of no oak.",
+   "why": "Not every page of the house was read; the record claims only what was.",
+   "sources": []
+  },
+  {
+   "field": "table.sale, table.cuvee10",
+   "was": "eight years under natural cork",
+   "now": "eight years and more under natural cork",
+   "why": "The house gives at least eight years.",
+   "sources": [
+    "Champagne Ayala: Perle 2015, the authentic craftsmanship"
+   ]
+  },
+  {
+   "field": "sources",
+   "was": "Champagne Ayala: Brut Nature; Wikipedia: Ayala & Co.; K&L Wine Merchants' blog",
+   "now": "Champagne Ayala: 160 years of Heritage; Champagne Hillsides, Houses and Cellars: symbol regions history; Groupe Bollinger: Ayala Perle 2015 leaflet",
+   "why": "The new three carry the facts the refuter tested; the heritage page holds Brut Nature's 2007 as well.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "Perle d'Ayala's first vintage: the house created the cuvée and its bottle in 1995, while its own leaflet lists the 1990 and 1993 among its vintages; whether those two were first sold as Perle or under another name, Grande Cuvée perhaps, was not found.",
+  "How Grande Cuvée stands to Perle d'Ayala: a 1993 is listed under both names, so the plan's standing of before is not settled.",
+  "NM was not read on a label; it rests on the Union des Maisons de Champagne listing the house and on the definition.",
+  "Malolactic conversion: not stated on any page read."
+ ],
+ "livingNamesMet": [
+  "Jean-Jacques Frey, of the Frey group that sold the house in 2005 (already listed); the record names only the group"
+ ],
+ "codexInTension": [
+  "None: Ayala has no library record and no flagships record. The Bollinger record dates the purchase of Ayala to January 2005, as this one does."
+ ]
+}
