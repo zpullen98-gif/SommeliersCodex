@@ -675,6 +675,13 @@ async function main() {
     ['bank', 'S.view = "bank"', '{"view":"library"}'],
     ['courttasting', 'S.view = "courttasting"', '{"view":"grapes"}']
   ];
+  /* codex59, the Champagne houses of the house tab: a house's deck climbs to the house, the whole deck's screen and
+     the due run to the tab's root (rows only where the chain carries the layer) */
+  if (FILES.indexOf('codex59.js') >= 0) PARENTS.push(
+    ['deck champcards (codex59)', 'S.view = "deck"; S._v32deck = "champcards"', '{"view":"champagne"}'],
+    ['deck champcards:ayala (its house, codex59)', 'S.view = "deck"; S._v32deck = "champcards:ayala"', '{"view":"champagne","arg":"ayala"}'],
+    ['the Champagne due run (codex59)', 'S.view = "housedeck"; S._v32run = { v32: true, deckId: "champdue", kind: "champ" }', '{"view":"champagne"}']
+  );
   const wrongP = [];
   PARENTS.forEach(([label, setup, want, fn]) => {
     const got = fn ? fn() : parent(setup);

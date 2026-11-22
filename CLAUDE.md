@@ -99,18 +99,39 @@ not published: what stands is the spec step, the pipeline, the brief, two pilots
   order; a partial build of the two pilots, Ayala and Bollinger, today (6 cards, 6 questions, not yet refuted). The
   ids are `hc-` and eight base36 digits, a prefix nothing else under `js/` mints.
 - **The shell**: `index.html` loads `js/data-champagne.js?v=1` then `js/codex59.js?v=1` after codex58.js and before
-  boot.js; the source worker is `codex-v122` and lists both. `js/codex59.js` is a shell: the head comment,
-  `V59_WORDS`, `v59W` and the `v59-style` element; it draws nothing and wraps nothing yet.
+  boot.js; the source worker is `codex-v122` and lists both.
+- **The layer** (`js/codex59.js`, built at the layer step): Champagne houses is the fifth room of the house tab
+  (`V48_ROOMS` extended once, last; the row of rooms restyled for five, two columns on a phone with the fifth across
+  both). Three views owned and lit by the house tab, warm and cold: `champagne` (`#/v/champagne`, the root: the lesson
+  of what a prestige cuvée is, Study, a filter by a word typed, the houses in the sheet's order with the cuvée as the
+  label prints it; `#/v/champagne/<key>`, a house: the name, Say it, Founded, Where, the appellation's term, At the
+  table for the house then for the cuvée, forty five first, then the sale, the ten and the twenty, then the cuvée in
+  full, the second cuvée, the style, the story, guests, traps, the sheet beside the label, On the list, Study, In the
+  Codex, the sources closed, the houses before and after and All); `champdrill` (`#/v/champdrill[/house|cuvee]`, the
+  matching drill both ways, the wrong answers the other houses', never a name the shown house answers to);
+  `champpresent` (`#/v/champpresent/<key>`, Present it). A tap on the current room from a house page climbs to the
+  root; Back climbs a house, the drill and Present it to the root, the root to the Wine list. The decks `champcards`,
+  `champmatch`, `champcards:{key}` and `champdue`, the quiz (a house's three, the matching questions, ten from every
+  house) and Present it keep their due dates in `oot-codex-champrs-v1` (`{ c, q, p }`). A door from the Producers and
+  flagships page of a house with a pick, through `V58_SECS`. 18 wrappers, each typeof guarded and outermost.
+- **The gate**: `node .scripts/check-champagne.js [jsDir] [--partial] [--mutations]` (with `OOT_SHARED` and
+  `OOT_HOUSE_PACK`), 68 checks in fifteen sections and 37 mutations, each caught by its own check. While the data is
+  a partial build it runs with `--partial` (`GATE_ARGS_check_champagne=--partial` for the runner); without it the
+  roster must be the sheet's 23 and `WHOLE`, the counts of the whole build, filled by the gates agent.
+- **The pins that moved with the layer**: `check-flagships.js` (section 4's sections gain `v58-s-champ` on the page of
+  a house with a pick; section 12's outermost check reads codex58's wrapper straight under codex59's where codex59
+  wraps the same function); `check-house-flow.cjs` (the fifth room in every walk of the rooms, five routes on a
+  no-house page, the root drawn whole with no house); `check-house-only.cjs` (`HOUSE_DOOR` and `HOUSE_DECK` gain the
+  tab's views and decks, the owners and the cold chains gain its addresses); `check-card.js` (its parents table gains
+  the Champagne decks).
 - **The pins that moved with the shell**: the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
   `check-cms.js` (and its chain list and two descriptions), `check-components.js`, `check-nav.js`, `check-videos.js`
   and `check-winelist.js`; the conditional lists of `check-regions.js`, `check-atlas-course.js`,
   `check-grapes-table.js` (section 1 and its section 8 base, which also leaves out codex59's two files and proves no
   `V59_WORDS` in it) and `check-flagships.js` (section 1); and the worker mutation strings of `check-flagships.js` and
   `check-grapes-table.js`, which start from `codex-v122`.
-- **Still to come**: the 21 other houses in five chunks, each written, refuted and read; the layer (a fifth room of
-  the house tab, one view `champagne` with an optional argument, `#/v/champagne` and `#/v/champagne/<key>`); its gate
-  `check-champagne.js`; the whole build and the freeze; and this section rewritten at the integration. The next layer
-  is codex60.
+- **Still to come**: the houses not yet written, refuted and read; the whole build, `WHOLE` in the gate and the freeze;
+  and this section rewritten at the integration. The next layer is codex60.
 
 ## Producers and their flagships (codex58, 14 November 2026; wave two's batch A, 15 November 2026; batches B and C, 21 November 2026)
 
