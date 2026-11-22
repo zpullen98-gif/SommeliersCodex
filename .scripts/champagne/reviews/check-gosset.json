@@ -1,0 +1,91 @@
+{
+ "key": "gosset",
+ "house": "Gosset",
+ "chunk": "h2",
+ "date": "2026-11-22",
+ "by": "refuter",
+ "verdict": "changed",
+ "searches": {
+  "share": 28,
+  "used": 23,
+  "forRecord": 6,
+  "run": [
+   "1584, the founder and the change of hands of 1993 or 1994",
+   "Celebris first vintage 1988, release 1995, the ninth with the 2012",
+   "the clear rosé bottle and the woman who led the house 1955 to 1965",
+   "Celebris 2008 dosage, no malolactic, no oak, the move to Épernay"
+  ],
+  "note": "Twenty three searches of a share of twenty eight for chunk h2, none of them the author's; five left unspent. Five were restricted to a primary body's or a house's own domain and read through their summaries: maisons-champagne.com with champagne-deutz.com (the chronology), champagne-deutz.com (the philosophy page, the vats), champagne-drappier.com twice (the Charles de Gaulle sheet and the history page; the Grande Sendrée sheets) and one with dreyfusashby.com. No WebFetch was tried."
+ },
+ "method": [
+  "Each record was read with one instruction, refute it: the founding year and what it is the year of, the people and their dates, the village, the kind of producer, every change of hands, the grapes, the sites, the first vintage, the lees, the dosage, the bottle, the other cuvées, the traps, the cards and the questions; then the house rules (nobody living named, no price, no score, nothing volatile told as a present state, no judging superlative, British spelling, no dash).",
+  "Every table line was read aloud as a captain would say it, for a claim no source carries."
+ ],
+ "tested": {
+  "founded": "1584, an alderman of Aÿ making still wines, mostly red: the house, Wilson Daniels, Hachette. The founder is Pierre in most accounts and Jean in one, so he stays described.",
+  "story": "The end of 1993 for the Renaud-Cointreau group: the house and Wilson Daniels; Hachette and LSA give 1994, said in the report. The clear rosé bottle: the house's claim, credited by two trade accounts to Suzanne Gosset in 1947; her presidency of 1955 to 1965 is consistent across them. The move to Épernay in 2009 stands on the library and the house.",
+  "cuvee": "First vintage 1988 released 1995: the Drinks Business, World of Fine Wine. The 2012 the ninth since 1988, 70 per cent Chardonnay: the same. 2008: 54 and 46, 4.8 grams a litre, steel, no malolactic, no oak (Wilson Daniels, Falstaff, Millesima; two merchants give 8 and 3 grams, outliers). The Blanc de Blancs 2012: Falstaff. The 1988's 9 grams rested on one report: cut.",
+  "table": "cuvee45 said the house counts only nine vintages, true only until the next; house45's never was an absolute: both fixed.",
+  "cards": "Three cards and three questions read; the third explanation taught a claim with no source: fixed."
+ },
+ "changes": [
+  {
+   "field": "cuvee.making",
+   "was": "9 grams a litre for the 1988 by one report, 4.8 for the 2008",
+   "now": "4.8 grams a litre for the 2008",
+   "why": "One report is not two sources.",
+   "sources": [
+    "Wilson Daniels: Celebris Extra Brut 2008",
+    "Falstaff: Champagne Gosset launches Celebris 2008"
+   ]
+  },
+  {
+   "field": "table.cuvee45",
+   "was": "The house counts only nine vintages in thirty five years.",
+   "now": "The 2012 was only the ninth vintage in thirty five years.",
+   "why": "A count told in the present ages with the next release.",
+   "sources": [
+    "The Drinks Business: Gosset Celebris 2012",
+    "World of Fine Wine: 2012 Gosset Celebris"
+   ]
+  },
+  {
+   "field": "table.house45",
+   "was": "it never lets its wines soften their sharp natural acid",
+   "now": "it keeps its wines from softening their sharp natural acid",
+   "why": "The house avoids the conversion; never is more than any source says of every wine.",
+   "sources": [
+    "Champagne Gosset: Charter of excellence"
+   ]
+  },
+  {
+   "field": "questions[2].exp",
+   "was": "the seven grapes of the appellation are a lesson of the Aube, not of Gosset",
+   "now": "Meunier goes into Grande Réserve, the non vintage Brut, and not into Celebris",
+   "why": "The Aube clause had no source; the new one teaches the record's own fact.",
+   "sources": []
+  },
+  {
+   "field": "report[1]",
+   "was": "one report gives 9 grams for the 1988",
+   "now": "removed with the fact",
+   "why": "As above.",
+   "sources": []
+  }
+ ],
+ "open": [
+  "The founder is Pierre Gosset in the house's and the importer's accounts and Jean Gosset in one merchant's, which is why he stays described, not named.",
+  "The clear rosé bottle is dated 1947 by two trade accounts, before the woman's presidency of 1955 to 1965; the record keeps it undated as the house's claim.",
+  "Whether the 2012 label reads Brut or Extra Brut: the importer and one critic say Brut, a merchant Extra Brut.",
+  "NM was not read on a label."
+ ],
+ "livingNamesMet": [
+  "Béatrice Cointreau (already listed)",
+  "Jean-Pierre Cointreau (already listed)",
+  "Odilon de Varine (already listed)"
+ ],
+ "codexInTension": [
+  "WINE_PRODUCERS p-gosset, wines: 'Celebris Extra Brut' holds for the 2008 but the 2012 is labelled Brut by the importer; the record says the dosage has moved.",
+  "plan.json gosset why: 'an Extra Brut' carries the same refinement."
+ ]
+}
