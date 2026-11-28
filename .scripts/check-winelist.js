@@ -473,6 +473,18 @@ async function main60() {
   drawn.push(pres);
   const printed = (pres.match(/<h3 class="secgroup v60-printed">[^<]*<\/h3>/g) || []).map((x) => x.replace(/<[^>]+>/g, ''));
   check('pressed, each group under the date it was last printed, newest first', GA('v29State().past') === true && JSON.stringify(printed) === JSON.stringify(['Last printed 1 September 2026', 'Last printed 1 August 2026']), JSON.stringify(printed));
+  /* the owner's ruling of 28 November: pressed, the section chips and Every section count the past rows drawn */
+  const secChips = (html) => (html.match(/data-v29="sec" data-v="[^"]*" aria-pressed="(?:true|false)">[^<]*<\/button>/g) || []).map((x) => x.replace(/^.*>([^<]*)<\/button>$/, '$1'));
+  const pressedChips = secChips(GA('v29ViewHtml()'));
+  check('pressed, the section chips and Every section count the past rows drawn',
+    pressedChips[0] === 'Every section 6' && pressedChips.indexOf('Champagne 3') > 0 && pressedChips.indexOf('Half-bottles 1') > 0
+    && !pressedChips.some((c) => /^Every section 130$|^Half-bottles 20$/.test(c)), JSON.stringify(pressedChips));
+  const relabel = GA('(function () { var b = [{ v: "", t: "stale" }, { v: "Half-bottles", t: "stale" }].map(function (x) { return { textContent: x.t, getAttribute: function (k) { return k === "data-v" ? x.v : ""; }, setAttribute: function () { } }; });'
+    + ' var box = { querySelector: function () { return null; }, querySelectorAll: function (s) { return s === \'[data-v29="sec"]\' ? b : []; } };'
+    + ' var node = { getAttribute: function () { return ""; }, setAttribute: function () { } };'
+    + ' v29Act("past", node, box); var off = b.map(function (x) { return x.textContent; }).join("|"); v29Act("past", node, box); return off + "/" + b.map(function (x) { return x.textContent; }).join("|"); })()');
+  check('and the chips already drawn take the counts again in place, the past\'s pressed and the live list\'s unpressed',
+    relabel === 'Every section 130|Half-bottles 20/Every section 6|Half-bottles 1' && GA('v29State().past') === true, relabel);
   const g1 = pres.slice(0, pres.indexOf('Last printed 1 August'));
   const secs = (g1.match(/<h4 class="v60-sechead">[^<]*<\/h4>/g) || []).map((x) => x.replace(/<[^>]+>/g, ''));
   check('its rows under the list\'s sections in the list\'s order', JSON.stringify(secs) === JSON.stringify(['Champagne · 2', 'Burgundy Red · 2', 'Half-bottles · 1']), JSON.stringify(secs));
@@ -586,6 +598,15 @@ async function main60Chain() {
   const cards = ids.map((id) => GW('v28CardHtml(' + JSON.stringify(id) + ')'));
   check('the whole chain: a past card offers no practice (no Practise this wine, no Guest at the table, no producer or component deck)',
     cards.every((c) => /v60-why/.test(c) && c.indexOf('v54-practise') < 0 && !/data-v28="(cardsone|say|drillsec|drill|edit|guest|v38flash|v35flash)"/.test(c)));
+  /* a dish filed as past is no first pick of a served wine on its card (codex54's Where we pour it), as the pack's own
+     firstPickIds hold: one served dish that names a served wine first is filed as past here, its card drawn, then put back */
+  const wp = JW('(function () { var h = v28House(); var d = (h.dishes || []).filter(function (x) { var p = x && x.pairing && (x.pairing.value || x.pairing); return !v60IsPast(x) && p && p.wineId && v28Wines(h).some(function (w) { return w.id === p.wineId; }); })[0];'
+    + ' if (!d) return null; var p = d.pairing.value || d.pairing; var was = d.section; var wid = p.wineId;'
+    + ' var on = v28CardHtml(wid).indexOf(d.id) >= 0 && v54Pairings(h, wid).first.some(function (x) { return x.dish.id === d.id; });'
+    + ' d.section = "Past menu items"; V60_LIVE = { h: null, out: null };'
+    + ' var off = v28CardHtml(wid).indexOf(d.id) < 0 && !v54Pairings(h, wid).first.some(function (x) { return x.dish.id === d.id; });'
+    + ' d.section = was; V60_LIVE = { h: null, out: null }; return { dish: d.id, wine: wid, on: on, off: off }; })()');
+  check('the whole chain: a card\'s Where we pour it names no past dish, as the pack\'s firstPickIds hold', !!wp && wp.on && wp.off, JSON.stringify(wp));
   const S0 = bootDevice('ok', { pack: PAST.served, files });
   await settle(S0);
   const S9 = bootDevice('ok', { pack: PAST.served, files, no60: true });
@@ -890,6 +911,9 @@ function mutations() {
     ['the whole list never read from Our List', C60, '    v60ReadWhole();\n    return box;', '    return box;', 'drawing Our List reads the list once'],
     ['the Past chip drawn for a file with no past', C60, "    var ix = v60PastIndex();\n    if (!ix || typeof html !== 'string') return html;", "    var ix = v60PastIndex() || { rows: [] };\n    if (typeof html !== 'string') return html;", 'a list file with no past key draws exactly as before'],
     ['the Past chip never drawn', C60, "    var ix = v60PastIndex();\n    if (!ix || typeof html !== 'string') return html;", '    return html;\n    var ix = null;', 'the Past chip is drawn when the file carries past groups'],
+    ['the section chips counting the live list while Past is pressed', C60, '    if (v60PastOn(st)) html = v60SecChips(html, st);\n', '', 'pressed, the section chips and Every section count the past rows drawn'],
+    ['the drawn chips never taking the counts again', C60, '      v60RelabelSecs(box, st);\n', '', 'and the chips already drawn take the counts again in place'],
+    ['a card\'s Where we pour it reading past dishes', C60, '    return _v60Pairings54.call(this, v60Live(h), id);', '    return _v60Pairings54.call(this, h, id);', 'a card\'s Where we pour it names no past dish'],
     ['the Past chip pressing nothing', C60, '      st.past = !st.past;', '      st.past = false;', 'pressed, each group under the date it was last printed'],
     ['the past groups oldest first', C60, '    groups.push({ date: date', '    groups.unshift({ date: date', 'pressed, each group under the date it was last printed'],
     ['past rows in the order the file gives', C60, '    var keys = order.slice();', '    var keys = [];', 'its rows under the list\'s sections in the list\'s order'],
@@ -913,7 +937,7 @@ function mutations() {
     ['a word written outside V60_WORDS', C60, "'<p class=\"v60-pasttag\">' + v60Esc(v60W('pastCard')) + '</p>'", "'<p class=\"v60-pasttag\">No longer on the list, kept to be read.</p>'", 'every word codex60 shows is V60_WORDS'],
     ['a selector outside .wrap', C60, "    '.wrap .v60-whole{margin:14px 0 10px}',", "    '.v60-whole{margin:14px 0 10px}',", 'every selector of the v60-style element'],
     ['the tag left out of index.html', 'index.html', '<script src="js/codex60.js?v=1"></script>\n', '', 'index.html loads js/codex60.js once'],
-    ['the worker left at codex-v123', 'sw.js', "const CACHE = 'codex-v124';", "const CACHE = 'codex-v123';", 'sw.js is codex-v124 or later'],
+    ['the worker left at codex-v123', 'sw.js', "const CACHE = 'codex-v125';", "const CACHE = 'codex-v123';", 'sw.js is codex-v124 or later'],
     ['the worker not listing codex60.js', 'sw.js', "  './js/codex60.js',\n", '', 'sw.js is codex-v124 or later'],
     ['a gate list going from codex59.js to boot.js', 'gates', "'codex59.js', 'codex60.js', 'boot.js'];", "'codex59.js', '" + "boot.js'];", 'the chain rule']
   ];

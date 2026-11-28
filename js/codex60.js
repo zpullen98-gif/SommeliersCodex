@@ -26,8 +26,9 @@
       list (codex36) and the culinary Study buttons (codex37) reach no past
       wine; the videos (codex30) name served items only; Our List's search
       names no past dish under Elsewhere and its line under the list counts
-      the dishes and drinks served. A past wine is read whole only while its
-      own card is drawn.
+      the dishes and drinks served; a card's Where we pour it names served
+      dishes only, as the pack's firstPickIds do. A past wine is read whole
+      only while its own card is drawn.
 
    2. THE PAST WINE LIST, a door at the foot of Our List in place of the
       past chips: the past glass wines, the past tasting pours and the past
@@ -43,8 +44,10 @@
       opening in place to the producer's line and tell and the section's
       line, and to Open the full card where the group's cards names a wine
       the house holds. The search and the price and size chips work on the
-      past rows while the chip is pressed. A past row's element id carries
-      its group's date, since a row's number is unique only in its group.
+      past rows while the chip is pressed, and the section chips and Every
+      section count the past rows then, not the live list's. A past row's
+      element id carries its group's date, since a row's number is unique
+      only in its group.
 
    4. A list file with no past key and a pack with no past section draw
       exactly as before.
@@ -215,6 +218,16 @@ if (typeof v30VideosHtml === 'function') {
   var _v60Videos30 = v30VideosHtml;
   v30VideosHtml = function (h) {
     return _v60Videos30.call(this, V60_WHOLE > 0 ? h : v60Live(h));
+  };
+}
+
+/* A card's Where we pour it reads the dishes served, past card or not, as the
+   pack's own firstPickIds, secondFor and offeredWith do: a past dish is no
+   first pick, second choice or bottle tier of any wine. */
+if (typeof v54Pairings === 'function') {
+  var _v60Pairings54 = v54Pairings;
+  v54Pairings = function (h, id) {
+    return _v60Pairings54.call(this, v60Live(h), id);
   };
 }
 
@@ -503,6 +516,40 @@ function v60PastIndex() {
 
 function v60PastOn(st) { return !!(st && st.past && v60PastIndex()); }
 
+/* While the chip is pressed the section chips and Every section count the
+   past rows, the rows drawn under them; unpressed, the live list's own. */
+function v60SecCounts(st) {
+  if (!v60PastOn(st)) return { all: V29_LIST.rows.length, by: V29_LIST.secCount || {} };
+  var by = {};
+  V60_PAST.rows.forEach(function (r) { if (r.section) by[r.section] = (by[r.section] || 0) + 1; });
+  return { all: V60_PAST.rows.length, by: by };
+}
+
+function v60SecLabel(value, counts) {
+  if (typeof v29W !== 'function') return '';
+  if (!value) return v29W('allSections', { n: counts.all });
+  return (typeof v29PlaceTitle === 'function' ? v29PlaceTitle(value) : value) + ' ' + (counts.by[value] || 0);
+}
+
+function v60Unesc(s) { return String(s).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); }
+
+function v60SecChips(html, st) {
+  var counts = v60SecCounts(st);
+  return html.replace(/(<button type="button" class="v28-chip" data-v29="sec" data-v=")([^"]*)(" aria-pressed="(?:true|false)">)[^<]*(<\/button>)/g, function (m, a, v, b, c) {
+    return a + v + b + v60Esc(v60SecLabel(v60Unesc(v), counts)) + c;
+  });
+}
+
+/* The section chips already drawn take the counts again, in place. */
+function v60RelabelSecs(box, st) {
+  try {
+    var counts = v60SecCounts(st);
+    Array.prototype.forEach.call(box.querySelectorAll('[data-v29="sec"]'), function (b) {
+      b.textContent = v60SecLabel(b.getAttribute('data-v') || '', counts);
+    });
+  } catch (e) { }
+}
+
 /* While the chip is pressed the search and the chips run over the past rows. */
 if (typeof v29Filtered === 'function') {
   var _v60Filtered = v29Filtered;
@@ -584,6 +631,7 @@ if (typeof v29BarHtml === 'function') {
     var html = _v60BarHtml.apply(this, arguments);
     var ix = v60PastIndex();
     if (!ix || typeof html !== 'string') return html;
+    if (v60PastOn(st)) html = v60SecChips(html, st);
     var chip = '<button type="button" class="v28-chip v60-pastchip" data-v29="past" aria-pressed="' + (st && st.past ? 'true' : 'false') + '">' + v60Esc(v60W('pastChip', { n: ix.rows.length })) + '</button>';
     var at = html.indexOf('<div class="v28-chips"');
     var end = at >= 0 ? html.indexOf('</div>', at) : -1;
@@ -600,6 +648,7 @@ if (typeof v29Act === 'function') {
     if (act === 'past' && st) {
       st.past = !st.past; st.shown = (typeof V29_PAGE === 'number' ? V29_PAGE : 40); st.open = null;
       try { if (node && typeof node.setAttribute === 'function') node.setAttribute('aria-pressed', st.past ? 'true' : 'false'); } catch (e) { }
+      v60RelabelSecs(box, st);
       if (typeof v29Repaint === 'function') v29Repaint(box);
       return;
     }
