@@ -54,9 +54,9 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v123`; its two teaching imports have query versions which
+Source worker is `codex-v124`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
-(codex60: codex34 is the colour/bottle-shape layer, codex35 the components layer,
+(codex61: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
 codex39 the regions in depth, codex40 The Cellar Compass, codex41 Brennan's, the house tab,
 codex42 the Learning Compass, codex43 short study rounds, codex44 unified library search,
@@ -66,7 +66,69 @@ codex50 explicit spoken assessment, codex51 exact missed-skill recovery,
 codex52 contextual Wine Atlas links, codex53 the CMS edition, codex54 the five-star card and the flow,
 codex55 the Wine Atlas tab and More's Library, codex56 the Wine Atlas as a course,
 codex57 the Grapes tab at the table, codex58 the producers and their flagships,
-codex59 the Champagne houses of the house tab: its section follows).
+codex59 the Champagne houses of the house tab, codex60 the past wine list: their sections follow).
+
+## The past wine list (codex60, 28 November 2026)
+
+The owner asked, in these words: "I want to do a deep dive review of the Brennan's wine list and wine by the glass
+under the Sommelier's Codex and make sure it matches with current list. Any that are no longer there put in a past tab
+like we did with the food." The list of 28 November moves seven floor bottles and two glass wines to the past (with
+the two tasting pours already there); the pack files them under sections that begin "Past " (Past wines by the glass,
+Past tasting pours, Past bottles) and the list file gains `past`, an array of groups, each the bottles last printed on
+one date (WorldTable's spec, section 5a). codex60 is one layer, `js/codex60.js`, loaded after codex59 and before boot.
+It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (16) typeof
+guarded and outermost, none of a function codex57, codex58 or codex59 wraps; every shown string in `V60_WORDS` (read by
+`v60W`); its CSS in its own `v60-style` element, every selector under `.wrap`, every colour a house token.
+
+- **The past rule is the engine's own**: `v60IsPast` asks `OOT.houseLib.isPast` and, on an engine without it, the same
+  rule written out (a section that, trimmed, begins "Past "). `v28Wines` reads the served wines, so every deck, drill,
+  weak list, progress line, header sentence and chip count the Codex builds through codex28 (Our List, its chips and the
+  floor chip, codex28's, codex29's and codex32's decks, the Wine list room, the cellar compass's rows, the Grapes tab's
+  and the flagships' On the list) leaves past wines out; a cellar copy of a past wine leaves Our List's own rows; the
+  producers (`v38Rows`) and the component cards the card screen deals (`v35Cards`) read the served house
+  (`OOT.houseLib.liveHouse`, or the same rule); Our list by heart, Guest at the table and Say the pour deal none. A past
+  wine is read whole only while its own card is drawn (`V60_WHOLE`).
+- **The Past wine list** is a door at the foot of Our List (in the cellar view and the Wine list room), drawn on the
+  whole list in place of the past chips: "Past wine list (n)", its rows drawn only while it is open (so the list's own
+  rows are the room's only rows until then), one group a past section in the house's order. A row opens the whole card
+  read only: no Flash cards, Say the pour, drill or edit, its neighbours its own section's, a line that it is kept to be
+  read and never dealt, and the note "Why did it leave the list?" (a pour's "Why did it leave the pairing?") first under
+  the name, not drawn again among the card's notes. Back returns to the list with the door open.
+- **The whole list, one tap from the room**: a plain door at the top of Our List, above the progress line, the search
+  and the carded wines, "The whole list (3,560 bottles)", the count read from the list file. Drawing Our List starts the
+  file's read once in the background (never at load); until it is read the door says "The whole list".
+- **The past of the full list**: where the list file carries past groups, a chip "Past (n)" after the list's sections.
+  Pressed, each group under "Last printed <date>", newest first, its rows under the list's sections in the list's order,
+  each with its name, vintage, size (none for a glass), bin and last price; a row opens in place to the producer's line
+  and tell and the section's line, and to Open the full card where the group's `cards` names a wine the house holds; a
+  past row never says its bin is shared. The search and the price and size chips run over the past rows while the chip
+  is pressed. A past row's element id carries its group's date (`v60-d2026-10-03-15`), since n is unique only within a
+  group.
+- **A list file with no past key and a pack with no past section draw exactly as before**: the gate holds the views,
+  rows, details, decks, header sentence and served cards equal to the chain without codex60, save the whole list door.
+- **The gate**: `.scripts/check-winelist.js` gains six codex60 sections on its fixtures (the bottled pack with three
+  wines filed as past, the edition's own past wines taken off first, and the fixture list with two past groups):
+  the rule; decks, drills and counts held equal to the house with its past wines taken off; the door and the past card;
+  the whole list door; the full list's Past chip; a list and a house with no past against the chain without codex60;
+  plus the layer's file, its tag, its worker and the chain rule (no gate's list goes from codex59.js to boot.js).
+  `node .scripts/check-winelist.js --mutations` then seeds 40 faults in a scratch copy, each caught by the check that
+  names it (`WINELIST_MUTATION=word|word` runs only those). 132 checks.
+- **The pins that moved with the layer and the shell**: `index.html` (`js/codex60.js?v=1` after codex59.js), `sw.js`
+  (`codex-v124`, `./js/codex60.js` in ASSETS), the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
+  `check-cms.js` (its tail, its chain list and two descriptions), `check-components.js`, `check-nav.js`,
+  `check-videos.js` and `check-winelist.js`, the list of `check-regions.js`, the conditional lists of
+  `check-atlas-course.js`, `check-champagne.js`, `check-flagships.js` and `check-grapes-table.js` (and its base, which
+  leaves codex60 out with the layers after codex57), and the worker mutations of `check-flagships.js` and
+  `check-grapes-table.js`, which start from `codex-v124`.
+- **Not moved, for the cut**: the gates still pin the pack of 2 November (271 wines, 34 and 237: check-house-flow,
+  check-cellar-compass-ui, check-visual-study-data, check-atlas-context, check-card's comment), and
+  `js/data-visual-studies.js` wineGuides holds its 271 ids. With codex60, a count made through codex28 counts served
+  wines (275: 36 and 239 at the cut) and a count made from the pack file counts every wine (286: 40 and 246). Every line,
+  its value at the cut and the fifteen wineGuides keys to add (the six wines of 15 and 22 November and the nine new
+  cards) are in the engineer's PINS.md, handed to the finisher of the cut.
+
+The shell loads `js/codex60.js?v=1` after codex59.js and before boot.js; the source worker is `codex-v124`. The next
+layer is codex61.
 
 ## The Champagne houses of the house tab (codex59, 22 November 2026)
 
@@ -1578,7 +1640,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v123`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v124`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
