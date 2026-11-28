@@ -54,7 +54,7 @@ See `assets/teach/README.md` for the exact image budget,
 caption and versioning contract, separate future zoom-map collection and source
 checks. Current atlas-v3 artwork retains the reviewed geometry, joins and
 installation-specific offline map keys.
-Source worker is `codex-v124`; its two teaching imports have query versions which
+Source worker is `codex-v125`; its two teaching imports have query versions which
 must follow the matching index versions. New work belongs in the next layer
 (codex61: codex34 is the colour/bottle-shape layer, codex35 the components layer,
 codex36 the illustrated study index, codex37 the culinary companion, codex38 the producers layer,
@@ -76,7 +76,7 @@ like we did with the food." The list of 28 November moves seven floor bottles an
 the two tasting pours already there); the pack files them under sections that begin "Past " (Past wines by the glass,
 Past tasting pours, Past bottles) and the list file gains `past`, an array of groups, each the bottles last printed on
 one date (WorldTable's spec, section 5a). codex60 is one layer, `js/codex60.js`, loaded after codex59 and before boot.
-It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (19) typeof
+It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (20) typeof
 guarded and outermost, none of a function codex57, codex58 or codex59 wraps; every shown string in `V60_WORDS` (read by
 `v60W`); its CSS in its own `v60-style` element, every selector under `.wrap`, every colour a house token.
 
@@ -92,7 +92,11 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   reach no past wine, and the videos of Our List and of the Videos view (`v30VideosHtml`) name served items only. A
   past wine is read whole only while its own card is drawn (`V60_WHOLE`); the served house is one object per house.
   Our List's search names no past dish or drink under Elsewhere (`v28Elsewhere`), and the line under it counts the
-  dishes and drinks served (drawn again in codex28's words and links only when the house has a past item).
+  dishes and drinks served (drawn again in codex28's words and links only when the house has a past item). A card's
+  Where we pour it (codex54's `v54Pairings`) reads the dishes served, past card or not, as the pack's own
+  `firstPickIds`, `secondFor` and `offeredWith` do: on the cut, eleven served wines (the house Champagne among them)
+  were still offered as first pick for a dish filed as past (a Thanksgiving dish or a past menu item), found by
+  check-card at the cut (20 wrappers).
 - **The Past wine list** is a door at the foot of Our List (in the cellar view and the Wine list room), drawn on the
   whole list in place of the past chips: "Past wine list (n)", its rows drawn only while it is open (so the list's own
   rows are the room's only rows until then), one group a past section in the house's order. A row opens the whole card
@@ -108,8 +112,11 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   each with its name, vintage, size (none for a glass), bin and last price; a row opens in place to the producer's line
   and tell and the section's line, and to Open the full card where the group's `cards` names a wine the house holds; a
   past row never says its bin is shared. The search and the price and size chips run over the past rows while the chip
-  is pressed. A past row's element id carries its group's date (`v60-d2026-10-03-15`), since n is unique only within a
-  group.
+  is pressed, and so do the section chips and Every section: pressed, they count the past rows drawn under them
+  (Every section 60 on the cut), unpressed the live list's (Every section 3560), drawn so in the bar and taken again
+  in place on the chips already drawn when Past is pressed (the owner's ruling of 28 November on the reviewer's first
+  open fault). A past row's element id carries its group's date (`v60-d2026-10-03-15`), since n is unique only within
+  a group.
 - **A list file with no past key and a pack with no past section draw exactly as before**: the gate holds the views,
   rows, details, decks, header sentence and served cards equal to the chain without codex60, save the whole list door.
 - **The gate**: `.scripts/check-winelist.js` gains six codex60 sections on its fixtures (the bottled pack with three
@@ -121,8 +128,8 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   our wine list, Our List's videos, a past card without Practise this wine, and a pack with no past section against the
   whole chain without codex60). The fixture also files one dish as past, and the served fixture takes every past item
   off, the edition's past dishes and drinks with the three wines and that dish. `node .scripts/check-winelist.js
-  --mutations` then seeds 46 faults in a scratch copy, each caught by the check that names it
-  (`WINELIST_MUTATION=word|word` runs only those). 141 checks.
+  --mutations` then seeds 49 faults in a scratch copy, each caught by the check that names it
+  (`WINELIST_MUTATION=word|word` runs only those). 144 checks.
 - **The pins that moved with the layer and the shell**: `index.html` (`js/codex60.js?v=1` after codex59.js), `sw.js`
   (`codex-v124`, `./js/codex60.js` in ASSETS), the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
   `check-cms.js` (its tail, its chain list and two descriptions), `check-components.js`, `check-nav.js`,
@@ -130,20 +137,47 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   `check-atlas-course.js`, `check-champagne.js`, `check-flagships.js` and `check-grapes-table.js` (and its base, which
   leaves codex60 out with the layers after codex57), and the worker mutations of `check-flagships.js` and
   `check-grapes-table.js`, which start from `codex-v124`.
-- **Not moved, for the cut**: the gates still pin the pack of 2 November (271 wines, 34 and 237: check-house-flow,
-  check-cellar-compass-ui, check-visual-study-data, check-atlas-context, check-card's comment), and
-  `js/data-visual-studies.js` wineGuides holds its 271 ids. With codex60, a count made through codex28 counts served
-  wines (275: 36 and 239 at the cut) and a count made from the pack file counts every wine (286: 40 and 246). Every line,
-  its value at the cut and the fifteen wineGuides keys to add (the six wines of 15 and 22 November and the nine new
-  cards) are in the engineer's PINS.md, handed to the finisher of the cut.
+- **The pins that moved at the cut** (the edition of 28 November 2026, WorldTable brennans-nov 1e5bba7: 293 wines, 40
+  from the menus and 253 floor bottles, 282 served and 11 past, 4 menu and 7 floor; 86 dishes, 20 past; 3,560 list
+  entries and 60 past rows). A count made through codex28 with codex60 loaded counts served wines (282: 36 and 246); a
+  count made from the pack file counts every wine (293: 40 and 253). `check-house-flow.cjs` (282, 36, 246 in its words
+  and values, the result count, the rows, the floor bottles, the wines kind), `check-cellar-compass-ui.cjs` (282, 36,
+  246: the rows, the directory, floor and menu filters, Show more, Back, the reloads and the path filter),
+  `check-visual-study-data.cjs` (293 joins, 40 menu wines, and the two past menu sections, Past wines by the glass and
+  Past tasting pours, in its reviewed still set), `check-atlas-context.cjs` (293 resolve) and `check-card.js`'s
+  comment (293). `js/data-visual-studies.js` wineGuides gains 22 keys by the file's own pattern, 293 in all: the six
+  wines of 15 and 22 November (the Lemelson Pinot Gris, the Weinbach Sylvaner, the Vieux Lazaret blanc and the Kokomo
+  with the bottle check and the still opening; the Jadot Les Pucelles 2008 by Coravin with the crystals and the
+  ullage; the Courcel Pommard 2007 by Coravin with Pinot Noir, the crystals and the ullage) and the sixteen new floor
+  cards (the bottle check each; the Charleux Maranges, a Red Burgundy, the crystals too; the magnums as the standing
+  magnums). Shell: `index.html` `js/data-visual-studies.js?v=3`, `sw.js` `codex-v125`; the worker mutations of
+  `check-flagships.js`, `check-grapes-table.js` and `check-winelist.js` start from `codex-v125`. The gates the cut
+  pack's other facts moved (the Thanksgiving edition's 20 past dishes, the past wines, the new producers):
+  `check-card.js` reads a wine's pairings from the dishes served, as the pack's derived fields do; `check-house.js`
+  holds Say the pour to the served wines (282); `check-study.js` holds every served glass wine priced or poured (a past
+  tasting pour is neither) and the rows in codex28's order, the menus' wines and then the floor's bottles (the pack
+  files its past sections last); `check-producers-house.js` serves its three fixture wines the cut filed as past
+  (Leflaive Mâcon-Verzé, Fichet Château London, Jadot Beaune), names Domaine du Vieux Lazaret beside the three the Codex
+  files as wines (no record in the corpus yet), holds Banfi's list rows to no profile (its one house wine, the Florus,
+  is past) and the seventeen glasses to a profile each but Lemelson, Kokomo and Courcel, which the house does not
+  profile yet.
 - **Results**: every gate on the 2 November shared layer (SITE_ROOT site-2nov): 53 run, 0 failed; check-winelist all
   132 checks pass on it and on the fixture layer (the scratch pack with its 11 past wines and the dry list with 60 past
   rows), 40 of 40 mutations caught by name; check-flagships' worker mutation 1 of 1, check-grapes-table's mutations
   31 of 31. The phone walk at 375 and 390 px, day and night, on the fixture layer: 84 ok, 0 failed (the whole list
   door at the top of the room, the Past wine list door at its foot, a past card with its note first, the full list's
   Past chip pressed with a row opened and a search, the decks dealt with no past wine, a clean console).
+- **Results at the cut** (SITE_ROOT site-cut: the site's own shared scripts of 2 November with WorldTable's engine, UI,
+  pack and list of brennans-nov 1e5bba7; the pack md5 a49ab3c2e68ef5d3a054bb5981963d1c, the list
+  5b87b6d139b5c39fd0e178c5253a8d55): every gate 53 run, 0 failed (`check-visual-study-data` 293 wine joins and 40 menu
+  service routes, `check-card` 223, `check-house` 282, `check-study` 105, `check-producers-house` 139); check-winelist
+  all 144 checks pass and 49 of 49 mutations caught by name; check-flagships' worker mutation 1 of 1,
+  check-grapes-table's mutations 31 of 31; the phone walk at 320, 375 and 390 px, day and night, on the cut: 138 ok,
+  0 failed (The whole list (3,560 bottles), Past wine list (11), Past (60) with Every section 60 and the section chips
+  counting the past rows, Every section 3560 again unpressed, the decks dealing no past wine with 246 floor bottles
+  and 23 glass wines served).
 
-The shell loads `js/codex60.js?v=1` after codex59.js and before boot.js; the source worker is `codex-v124`. The next
+The shell loads `js/codex60.js?v=1` after codex59.js and before boot.js; the source worker is `codex-v125`. The next
 layer is codex61.
 
 ## The Champagne houses of the house tab (codex59, 22 November 2026)
@@ -1656,7 +1690,7 @@ editing. `LEVELS = {intro, certified, advanced, master}`; active level in `local
 
 1. Edit files.
 2. Bump `?v=N` on the changed files' URLs in `index.html` (any new number).
-3. **Bump `CACHE` in `sw.js`** (currently `codex-v124`). This is the whole update
+3. **Bump `CACHE` in `sw.js`** (currently `codex-v125`). This is the whole update
    mechanism — installed clients show a "new edition is pressed" toast, tap to refresh.
 4. If you add a file, add it to `ASSETS` in `sw.js` AND a `<script>`/`<link>` tag.
 
