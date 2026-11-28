@@ -21,14 +21,17 @@
       through it lose them; the producers (codex38) and the component cards
       (codex35) read the served house (OOT.houseLib.liveHouse, or the same
       rule); Our list by heart, Guest at the table and Say the pour deal no
-      past wine. The floor chip counts served bottles only. A past wine is
-      read whole only while its own card is drawn.
+      past wine. The floor chip counts served bottles only. codex35's house
+      is the served house, so the component decks, Practise with our wine
+      list (codex36) and the culinary Study buttons (codex37) reach no past
+      wine; the videos (codex30) name served items only. A past wine is read
+      whole only while its own card is drawn.
 
    2. THE PAST WINE LIST, a door at the foot of Our List in place of the
       past chips: the past glass wines, the past tasting pours and the past
       bottles, one group a past section in the house's order, each row
       opening the whole card read only (no Flash cards, no Say the pour, no
-      drill, no edit), the note "Why did it leave the list?" (or the pour's
+      drill, no edit, no Practise this wine), the note "Why did it leave the list?" (or the pour's
       "Why did it leave the pairing?") drawn first under the name.
 
    3. THE PAST OF THE FULL LIST. Where the list file carries past groups, a
@@ -121,6 +124,8 @@ var V60_LIVE = { h: null, out: null };
 function v60Live(h) {
   if (!h || typeof h !== 'object') return h;
   if (V60_LIVE.h === h) return V60_LIVE.out;
+  /* the served house read again is itself */
+  if (V60_LIVE.out === h) return h;
   var out = h;
   var lib = v60Lib();
   var any = [h.dishes, h.wines, h.cocktails].some(function (list) { return Array.isArray(list) && list.some(v60IsPast); });
@@ -184,6 +189,26 @@ if (typeof v35Cards === 'function') {
   v35Cards = function (h, scope) {
     if (scope === 'all' || V60_WHOLE > 0) return _v60Cards35.apply(this, arguments);
     return _v60Cards35.call(this, v60Live(h), scope);
+  };
+}
+
+/* codex35's house is the served house, whole only while a past card is drawn:
+   so the component decks (every component, one wine's own), Practise with our
+   wine list (codex36) and the culinary lessons' Study buttons (codex37) reach
+   no past wine, and a served card compares with served wines only. */
+if (typeof v35House === 'function') {
+  var _v60House35 = v35House;
+  v35House = function () {
+    var h = _v60House35.apply(this, arguments);
+    return V60_WHOLE > 0 ? h : v60Live(h);
+  };
+}
+
+/* The videos of Our List and of the Videos view name served wines only. */
+if (typeof v30VideosHtml === 'function') {
+  var _v60Videos30 = v30VideosHtml;
+  v30VideosHtml = function (h) {
+    return _v60Videos30.call(this, V60_WHOLE > 0 ? h : v60Live(h));
   };
 }
 
@@ -362,6 +387,8 @@ var V60_STUDY_ACTS = ['cardsone', 'say', 'drillsec', 'drill', 'edit'];
 function v60ReadOnly(html, item) {
   var out = html;
   out = out.replace(/<div class="v28-btnrow v28-acts">[\s\S]*?<\/div>/g, '');
+  /* codex54's Practise this wine goes whole: a past card deals nothing */
+  out = out.replace(/<section class="v28-block v54-block v54-practise"[\s\S]*?<\/section>/g, '');
   V60_STUDY_ACTS.forEach(function (a) {
     out = out.replace(new RegExp('<button type="button" class="[^"]*" data-v28="' + a + '"[^>]*>[\\s\\S]*?<\\/button>', 'g'), '');
   });

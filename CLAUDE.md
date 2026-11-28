@@ -76,7 +76,7 @@ like we did with the food." The list of 28 November moves seven floor bottles an
 the two tasting pours already there); the pack files them under sections that begin "Past " (Past wines by the glass,
 Past tasting pours, Past bottles) and the list file gains `past`, an array of groups, each the bottles last printed on
 one date (WorldTable's spec, section 5a). codex60 is one layer, `js/codex60.js`, loaded after codex59 and before boot.
-It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (16) typeof
+It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (18) typeof
 guarded and outermost, none of a function codex57, codex58 or codex59 wraps; every shown string in `V60_WORDS` (read by
 `v60W`); its CSS in its own `v60-style` element, every selector under `.wrap`, every colour a house token.
 
@@ -86,12 +86,16 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   floor chip, codex28's, codex29's and codex32's decks, the Wine list room, the cellar compass's rows, the Grapes tab's
   and the flagships' On the list) leaves past wines out; a cellar copy of a past wine leaves Our List's own rows; the
   producers (`v38Rows`) and the component cards the card screen deals (`v35Cards`) read the served house
-  (`OOT.houseLib.liveHouse`, or the same rule); Our list by heart, Guest at the table and Say the pour deal none. A past
-  wine is read whole only while its own card is drawn (`V60_WHOLE`).
+  (`OOT.houseLib.liveHouse`, or the same rule); Our list by heart, Guest at the table and Say the pour deal none.
+  codex35's house (`v35House`) is the served house too, so the component decks (every component, one wine's own),
+  Practise with our wine list (codex36), the culinary lessons' Study buttons (codex37) and a served card's comparisons
+  reach no past wine, and the videos of Our List and of the Videos view (`v30VideosHtml`) name served items only. A
+  past wine is read whole only while its own card is drawn (`V60_WHOLE`); the served house is one object per house.
 - **The Past wine list** is a door at the foot of Our List (in the cellar view and the Wine list room), drawn on the
   whole list in place of the past chips: "Past wine list (n)", its rows drawn only while it is open (so the list's own
   rows are the room's only rows until then), one group a past section in the house's order. A row opens the whole card
-  read only: no Flash cards, Say the pour, drill or edit, its neighbours its own section's, a line that it is kept to be
+  read only: no Flash cards, Say the pour, drill or edit, and no Practise this wine (codex54's block, with Guest at the
+  table, Its producers and Its components, goes whole), its neighbours its own section's, a line that it is kept to be
   read and never dealt, and the note "Why did it leave the list?" (a pour's "Why did it leave the pairing?") first under
   the name, not drawn again among the card's notes. Back returns to the list with the door open.
 - **The whole list, one tap from the room**: a plain door at the top of Our List, above the progress line, the search
@@ -110,9 +114,12 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   wines filed as past, the edition's own past wines taken off first, and the fixture list with two past groups):
   the rule; decks, drills and counts held equal to the house with its past wines taken off; the door and the past card;
   the whole list door; the full list's Past chip; a list and a house with no past against the chain without codex60;
-  plus the layer's file, its tag, its worker and the chain rule (no gate's list goes from codex59.js to boot.js).
-  `node .scripts/check-winelist.js --mutations` then seeds 40 faults in a scratch copy, each caught by the check that
-  names it (`WINELIST_MUTATION=word|word` runs only those). 132 checks.
+  plus the layer's file, its tag, its worker and the chain rule (no gate's list goes from codex59.js to boot.js); and a
+  seventh, the whole chain of index.html over the same fixtures (codex35's house, the component decks, Practise with
+  our wine list, Our List's videos, a past card without Practise this wine, and a pack with no past section against the
+  whole chain without codex60). The served fixture takes every past item off, the edition's past dishes and drinks
+  with the three wines. `node .scripts/check-winelist.js --mutations` then seeds 44 faults in a scratch copy, each
+  caught by the check that names it (`WINELIST_MUTATION=word|word` runs only those). 139 checks.
 - **The pins that moved with the layer and the shell**: `index.html` (`js/codex60.js?v=1` after codex59.js), `sw.js`
   (`codex-v124`, `./js/codex60.js` in ASSETS), the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
   `check-cms.js` (its tail, its chain list and two descriptions), `check-components.js`, `check-nav.js`,

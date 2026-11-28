@@ -246,14 +246,14 @@ function makeSandbox(opts) {
   return { sandbox, ctx, G, listeners, hist, fetched };
 }
 
-function loadChain(H, withOOT, skip) {
+function loadChain(H, withOOT, skip, files) {
   if (withOOT) {
     vm.runInContext(fs.readFileSync(ENGINE, 'utf8'), H.ctx, { filename: 'oot-house.js' });
     vm.runInContext(fs.readFileSync(UI_FILE, 'utf8'), H.ctx, { filename: 'oot-house-ui.js' });
     const lib = H.G('OOT.houseLib');
     H.sandbox.OOT.house = lib.createHouseApi(lib.mapStorage(new Map()), { win: H.sandbox, now: () => NOW, rand: seeded(21), from: 'codex' });
   }
-  for (const f of FILES) {
+  for (const f of (files || FILES)) {
     if (skip && skip.indexOf(f) >= 0) continue;
     const p = path.join(JS, f);
     if (!fs.existsSync(p)) { if (OPTIONAL.has(f)) continue; console.error('missing ' + f + ' in ' + JS); process.exit(1); }
@@ -295,7 +295,8 @@ function pastFixtures() {
   const past = [one, two, t];
   h.wines = h.wines.filter((w) => past.indexOf(w) < 0).concat(past);
   const served = JSON.parse(JSON.stringify(p));
-  served.house.wines = served.house.wines.filter((w) => !/^Past /.test(w.section));
+  /* every past item off, the edition's past dishes and drinks with the three: the house as it is served */
+  ['dishes', 'wines', 'cocktails'].forEach((k) => { served.house[k] = (served.house[k] || []).filter((x) => !/^\s*Past /.test(x.section || '')); });
   return { pack: JSON.stringify(p), served: JSON.stringify(served), ids: { glass: one.id, pour: two.id, bottle: t.id }, names: { glass: one.name, pour: two.name } };
 }
 const PAST = pastFixtures();
@@ -338,7 +339,7 @@ function bootDevice(listMode, opts) {
     const pack = (opts && opts.pack) || PACK_TEXT;
     return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(pack), json: () => Promise.resolve(JSON.parse(pack)) });
   };
-  loadChain(D, !(opts && opts.noOOT), opts && opts.no60 ? ['codex60.js'] : null);
+  loadChain(D, !(opts && opts.noOOT), opts && opts.no60 ? ['codex60.js'] : null, opts && opts.files);
   return D;
 }
 async function settle(D) {
@@ -529,6 +530,66 @@ async function main60() {
   check('no checked attribute, no allergen box where codex60 draws', !drawn.some((h) => CHECKED.test(h)));
 }
 
+/* The whole chain of index.html, every layer the Codex ships, over the same fixtures: the readers of the house that
+   codex60 reaches through layers this gate's own chain leaves out (codex30's videos, codex35's house and its decks,
+   codex36's Practise with our wine list, codex54's Practise this wine). */
+function wholeFiles() {
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  return (html.match(/src="js\/[^"?]+/g) || []).map((x) => x.slice('src="js/'.length)).filter((f) => f !== 'oot-service.js' && f !== 'rewrite-preview.js');
+}
+async function main60Chain() {
+  if (!fs.existsSync(path.join(JS, 'codex60.js'))) return;
+  section('the whole chain: past wines leave every reader of the house (codex60)');
+  const files = wholeFiles();
+  /* a shell without the layer is the shell check's to name: the whole chain is not drawn without it */
+  if (files.indexOf('codex60.js') < 0) { check('the whole chain loads codex60.js', false, 'index.html does not load it'); return; }
+  const W = bootDevice('ok', { pack: PAST.pack, list: PAST_LIST_TEXT, files });
+  await settle(W);
+  const GW = W.G;
+  const JW = (e) => JSON.parse(GW('JSON.stringify(' + e + ')'));
+  const ids = [PAST.ids.glass, PAST.ids.pour, PAST.ids.bottle];
+  const named = (html) => ids.filter((id) => String(html).indexOf(id) >= 0);
+  check('the whole chain loads, the three past wines held whole', files.indexOf('codex60.js') > files.indexOf('codex59.js') && GW('v28House().wines.filter(v60IsPast).length') === 3);
+  check('the whole chain: codex35\'s house is the served house, whole only while a past card is drawn, one object per house',
+    GW('v35House().wines.some(v60IsPast)') === false && GW('v60Whole(function () { return v35House().wines.filter(v60IsPast).length; })') === 3
+    && GW('v35House() === v35House() && v60Live(v35House()) === v35House()'));
+  const pastOnly = JW('(function () { var p = {}; v28House().wines.filter(v60IsPast).forEach(function (w) { p[w.id] = 1; }); return (v28House().components || []).filter(function (c) { return Array.isArray(c.itemIds) && c.itemIds.length && c.itemIds.every(function (i) { return p[i]; }); }).map(function (c) { return c.id; }); })()');
+  const allDeck = JW('v32DeckDef("components-all").cards.map(function (c) { return c.id; })');
+  const oneDeck = JW('v32DeckDef("item-components:' + PAST.ids.glass + '").cards.length');
+  check('the whole chain: the component decks deal no past wine\'s components (every component, one wine\'s own)',
+    pastOnly.length > 0 && allDeck.length > 0 && allDeck.every((id) => pastOnly.indexOf(id) < 0) && oneDeck === 0, JSON.stringify([pastOnly.length, allDeck.length, oneDeck]));
+  const guide = JW('(function () { var w = v28House().wines.filter(v60IsPast).filter(function (x) { return v36WineGuides(x).length; })[0]; return w ? v36WineGuides(w)[0] : ""; })()');
+  GW('var __v60t = []; var __v60n = v33Node; v33Node = function (t, c, x) { __v60t.push(String(x == null ? "" : x)); return __v60n.apply(this, arguments); }');
+  GW('v36Related(' + JSON.stringify(guide) + ')');
+  const said = JW('__v60t.filter(function (x) { return /^Practise with our wine list/.test(x); })');
+  GW('v33Node = __v60n');
+  const served = GW('v28Wines(v28House()).filter(function (w) { return v36WineGuides(w).indexOf(' + JSON.stringify(guide) + ') >= 0; }).length');
+  check('the whole chain: Practise with our wine list counts and lists served wines only',
+    guide !== '' && said.length === 1 && said[0] === 'Practise with our wine list (' + served + ')', JSON.stringify([guide, said, served]));
+  const vids = JW('(v28House().videos || []).filter(function (v) { return (v.itemIds || []).some(function (i) { return ' + JSON.stringify(ids) + '.indexOf(i) >= 0; }); }).length');
+  GW('S.view = "cellar"; S._v28 = null;');
+  const study = GW('v28StudyHtml()');
+  const before = study.slice(0, Math.max(0, study.indexOf('<details class="v28-q v60-past"')));
+  check('the whole chain: Our List names no past wine outside its Past wine list door, its videos naming served wines only',
+    vids > 0 && before.length > 0 && named(before).length === 0 && named(GW('v30VideosHtml(v28House())')).length === 0, JSON.stringify([vids, named(before)]));
+  const cards = ids.map((id) => GW('v28CardHtml(' + JSON.stringify(id) + ')'));
+  check('the whole chain: a past card offers no practice (no Practise this wine, no Guest at the table, no producer or component deck)',
+    cards.every((c) => /v60-why/.test(c) && c.indexOf('v54-practise') < 0 && !/data-v28="(cardsone|say|drillsec|drill|edit|guest|v38flash|v35flash)"/.test(c)));
+  const S0 = bootDevice('ok', { pack: PAST.served, files });
+  await settle(S0);
+  const S9 = bootDevice('ok', { pack: PAST.served, files, no60: true });
+  await settle(S9);
+  const noDoor = (h) => String(h).replace(/<div class="v60-whole">[\s\S]*?<\/button><\/div>/, '');
+  const both = (e) => [S0.G(e), S9.G(e)];
+  [S0, S9].forEach((X) => X.G('S.view = "cellar"; S._v28 = null; V28_QUOTE = function () { return ""; };'));
+  const st = both('v28StudyHtml()');
+  const dk = both('JSON.stringify(v32DeckDef("components-all").cards.map(function (c) { return c.id; }))');
+  const vd = both('v30VideosHtml(v28House())');
+  const cd = both('v28CardHtml(v28Wines(v28House())[0].id)');
+  check('the whole chain: a pack with no past section draws as the chain without codex60 draws it, save the whole list door',
+    noDoor(st[0]) === st[1] && dk[0] === dk[1] && vd[0] === vd[1] && cd[0] === cd[1]);
+}
+
 async function main() {
   const drawn = [];
 
@@ -689,6 +750,7 @@ async function main() {
     bare.G('v29ListUrl(v28House())') + ' ' + JSON.stringify(bare.fetched));
 
   await main60();
+  await main60Chain();
 
   /* ================================================================ */
   section('the worker, the shell and the gates');
@@ -828,6 +890,10 @@ function mutations() {
     ['the search ignoring past rows', C60, '      for (var i = 0; i < tokens.length; i++) if (r.hay.indexOf(tokens[i]) < 0) return false;\n', '', 'the search works on past rows'],
     ['the price chips ignoring past rows', C60, '      if (st.band && r.band !== st.band) return false;\n', '', 'the price chips work on past rows'],
     ['the size chips ignoring past rows', C60, '      if (st.size && r.sizeKind !== st.size) return false;\n', '', 'the size chips work on past rows'],
+    ['codex35\'s house read whole', C60, '    return V60_WHOLE > 0 ? h : v60Live(h);\n  };\n}\n\n/* The videos', '    return h;\n  };\n}\n\n/* The videos', 'codex35\'s house is the served house'],
+    ['the served house copied anew when it is read again', C60, '  if (V60_LIVE.out === h) return h;\n', '', 'one object per house'],
+    ['the videos naming past wines', C60, '    return _v60Videos30.call(this, V60_WHOLE > 0 ? h : v60Live(h));', '    return _v60Videos30.call(this, h);', 'its videos naming served wines only'],
+    ['a past card keeping Practise this wine', C60, "  out = out.replace(/<section class=\"v28-block v54-block v54-practise\"[\\s\\S]*?<\\/section>/g, '');\n", '', 'a past card offers no practice'],
     ['a let in the layer', C60, "var V60_PREFIX = 'Past ';", "let V60_PREFIX = 'Past ';", 'codex60.js declares with var and function only'],
     ['an unguarded wrapper', C60, "if (typeof v28NotesFor === 'function') {", 'if (true) {', 'codex60.js edits no earlier layer'],
     ['a dash in the words', C60, "  pastCard: 'No longer on the list: kept to be read, never dealt.',", "  pastCard: 'No longer on the list \\u2014 kept to be read, never dealt.',", 'codex60.js: no long dash'],
