@@ -24,8 +24,10 @@
       past wine. The floor chip counts served bottles only. codex35's house
       is the served house, so the component decks, Practise with our wine
       list (codex36) and the culinary Study buttons (codex37) reach no past
-      wine; the videos (codex30) name served items only. A past wine is read
-      whole only while its own card is drawn.
+      wine; the videos (codex30) name served items only; Our List's search
+      names no past dish under Elsewhere and its line under the list counts
+      the dishes and drinks served. A past wine is read whole only while its
+      own card is drawn.
 
    2. THE PAST WINE LIST, a door at the foot of Our List in place of the
       past chips: the past glass wines, the past tasting pours and the past
@@ -70,7 +72,11 @@ var V60_WORDS = {
   lastPrinted: 'Last printed {date}',
   lastPrice: 'last {price}',
   pastNone: 'Nothing on the past list matches. Clear a chip or the search.',
-  otherPlace: 'Elsewhere on the list'
+  otherPlace: 'Elsewhere on the list',
+  dishOne: '1 dish',
+  dishMany: '{n} dishes',
+  drinkOne: '1 drink',
+  drinkMany: '{n} drinks'
 };
 
 function v60W(key, vars) {
@@ -212,6 +218,14 @@ if (typeof v30VideosHtml === 'function') {
   };
 }
 
+/* Our List's search names served dishes and drinks only under Elsewhere. */
+if (typeof v28Elsewhere === 'function') {
+  var _v60Elsewhere = v28Elsewhere;
+  v28Elsewhere = function (h, q) {
+    return _v60Elsewhere.call(this, V60_WHOLE > 0 ? h : v60Live(h), q);
+  };
+}
+
 /* Our list by heart and Guest at the table deal from the served house. */
 if (typeof v27ReciteDeck === 'function') {
   var _v60ReciteDeck = v27ReciteDeck;
@@ -289,6 +303,31 @@ function v60WholeDoorHtml() {
     + '<span class="v60-wholeline">' + v60Esc(v60W('wholeLine')) + '</span></button></div>';
 }
 
+/* The line under Our List that counts the house's dishes and drinks, counted
+   served: drawn again only when the house has a past item, in codex28's words
+   and links. */
+function v60AlsoHtml(h) {
+  var dishes = h && Array.isArray(h.dishes) ? h.dishes.length : 0;
+  var drinks = h && Array.isArray(h.cocktails) ? h.cocktails.length : 0;
+  if ((!dishes && !drinks) || typeof v28W !== 'function') return '';
+  var d = dishes === 1 ? v60W('dishOne') : v60W('dishMany', { n: dishes });
+  var k = drinks === 1 ? v60W('drinkOne') : v60W('drinkMany', { n: drinks });
+  var online = true;
+  try { online = typeof v28Online === 'function' ? v28Online() : true; } catch (e) { online = true; }
+  if (typeof V28_SUITE !== 'undefined' && V28_SUITE && online) { d = '<a class="v28-link" href="/table/menu">' + d + '</a>'; k = '<a class="v28-link" href="/ledger/#/menu">' + k + '</a>'; }
+  return '<p class="v28-soft v28-also">' + v28W('alsoHouse', { dishes: d, drinks: k }) + '</p>';
+}
+function v60AlsoServed(html) {
+  var h = v60House();
+  var live = v60Live(h);
+  if (!h || live === h) return html;
+  var at = html.indexOf('<p class="v28-soft v28-also">');
+  if (at < 0) return html;
+  var end = html.indexOf('</p>', at);
+  if (end < 0) return html;
+  return html.slice(0, at) + v60AlsoHtml(live) + html.slice(end + '</p>'.length);
+}
+
 /* Our List: the whole list's door at the top, above the progress line, the
    search and the carded wines; the past wine list at the foot of the whole
    list, in place of the past chips (not while a chip or a search narrows it). */
@@ -297,6 +336,7 @@ if (typeof v28StudyHtml === 'function') {
   v28StudyHtml = function () {
     var html = _v60StudyHtml.apply(this, arguments);
     if (!html || typeof html !== 'string') return html;
+    html = v60AlsoServed(html);
     var door = v60WholeDoorHtml();
     if (door) {
       var top = html.indexOf('<div class="v28-progrow"');

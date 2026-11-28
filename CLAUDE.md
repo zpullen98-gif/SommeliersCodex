@@ -76,7 +76,7 @@ like we did with the food." The list of 28 November moves seven floor bottles an
 the two tasting pours already there); the pack files them under sections that begin "Past " (Past wines by the glass,
 Past tasting pours, Past bottles) and the list file gains `past`, an array of groups, each the bottles last printed on
 one date (WorldTable's spec, section 5a). codex60 is one layer, `js/codex60.js`, loaded after codex59 and before boot.
-It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (18) typeof
+It edits no earlier layer, no data file and no published gate's facts; var and function only; every wrapper (19) typeof
 guarded and outermost, none of a function codex57, codex58 or codex59 wraps; every shown string in `V60_WORDS` (read by
 `v60W`); its CSS in its own `v60-style` element, every selector under `.wrap`, every colour a house token.
 
@@ -91,6 +91,8 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   Practise with our wine list (codex36), the culinary lessons' Study buttons (codex37) and a served card's comparisons
   reach no past wine, and the videos of Our List and of the Videos view (`v30VideosHtml`) name served items only. A
   past wine is read whole only while its own card is drawn (`V60_WHOLE`); the served house is one object per house.
+  Our List's search names no past dish or drink under Elsewhere (`v28Elsewhere`), and the line under it counts the
+  dishes and drinks served (drawn again in codex28's words and links only when the house has a past item).
 - **The Past wine list** is a door at the foot of Our List (in the cellar view and the Wine list room), drawn on the
   whole list in place of the past chips: "Past wine list (n)", its rows drawn only while it is open (so the list's own
   rows are the room's only rows until then), one group a past section in the house's order. A row opens the whole card
@@ -117,9 +119,10 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   plus the layer's file, its tag, its worker and the chain rule (no gate's list goes from codex59.js to boot.js); and a
   seventh, the whole chain of index.html over the same fixtures (codex35's house, the component decks, Practise with
   our wine list, Our List's videos, a past card without Practise this wine, and a pack with no past section against the
-  whole chain without codex60). The served fixture takes every past item off, the edition's past dishes and drinks
-  with the three wines. `node .scripts/check-winelist.js --mutations` then seeds 44 faults in a scratch copy, each
-  caught by the check that names it (`WINELIST_MUTATION=word|word` runs only those). 139 checks.
+  whole chain without codex60). The fixture also files one dish as past, and the served fixture takes every past item
+  off, the edition's past dishes and drinks with the three wines and that dish. `node .scripts/check-winelist.js
+  --mutations` then seeds 46 faults in a scratch copy, each caught by the check that names it
+  (`WINELIST_MUTATION=word|word` runs only those). 141 checks.
 - **The pins that moved with the layer and the shell**: `index.html` (`js/codex60.js?v=1` after codex59.js), `sw.js`
   (`codex-v124`, `./js/codex60.js` in ASSETS), the literal order lists of `check-atlas-ui.js`, `check-brennans.js`,
   `check-cms.js` (its tail, its chain list and two descriptions), `check-components.js`, `check-nav.js`,

@@ -294,10 +294,14 @@ function pastFixtures() {
   /* the pack's own order: the past sections last, as the builder sorts them */
   const past = [one, two, t];
   h.wines = h.wines.filter((w) => past.indexOf(w) < 0).concat(past);
+  /* and one dish filed as past, as the Table files them: a dish no wine names */
+  const named = JSON.stringify(h.wines);
+  const dish = (h.dishes || []).find((d) => d && d.id && d.name && named.indexOf(d.id) < 0 && !/^\s*Past /.test(d.section || ''));
+  dish.section = 'Past menu items';
   const served = JSON.parse(JSON.stringify(p));
   /* every past item off, the edition's past dishes and drinks with the three: the house as it is served */
   ['dishes', 'wines', 'cocktails'].forEach((k) => { served.house[k] = (served.house[k] || []).filter((x) => !/^\s*Past /.test(x.section || '')); });
-  return { pack: JSON.stringify(p), served: JSON.stringify(served), ids: { glass: one.id, pour: two.id, bottle: t.id }, names: { glass: one.name, pour: two.name } };
+  return { pack: JSON.stringify(p), served: JSON.stringify(served), ids: { glass: one.id, pour: two.id, bottle: t.id, dish: dish.id }, names: { glass: one.name, pour: two.name, dish: dish.name } };
 }
 const PAST = pastFixtures();
 
@@ -400,6 +404,13 @@ async function main60() {
   check('the header sentence counts glasses, menu bottles and the floor\'s bottles served only', lede(studyA) !== '' && lede(studyA) === lede(studyB), lede(studyA) + ' against ' + lede(studyB));
   check('the chips count served wines only, and no past section has a chip', chips(studyA) !== '' && chips(studyA) === chips(studyB) && chips(studyA).indexOf('Past ') < 0, chips(studyA) + ' AGAINST ' + chips(studyB));
   check('the floor chip counts served bottles only', /data-s="#bottles" aria-pressed="false">The floor(&#39;|')s bottles \(3\)</.test(studyA));
+  const also = (h) => (h.match(/<p class="v28-soft v28-also">[\s\S]*?<\/p>/) || [''])[0];
+  check('the line under Our List counts the dishes and drinks served, as the house with its past items taken off counts them',
+    also(studyA) !== '' && also(studyA) === also(studyB) && JA('v28House().dishes.length') === JB('v28House().dishes.length') + 1 + JA('v28House().dishes.filter(function (d) { return /^Past /.test(d.section) && d.id !== ' + JSON.stringify(P.dish) + '; }).length'),
+    also(studyA) + ' AGAINST ' + also(studyB));
+  const dq = JSON.stringify(PAST.names.dish);
+  check('the search names no past dish under Elsewhere', JA('v28Elsewhere(v28House(), ' + dq + ')').every((x) => x.id !== P.dish) && JSON.stringify(JA('v28Elsewhere(v28House(), ' + dq + ')')) === JSON.stringify(JB('v28Elsewhere(v28House(), ' + dq + ')'))
+    && GA('v60Whole(function () { return v28Elsewhere(v28House(), ' + dq + ').some(function (x) { return x.id === ' + JSON.stringify(P.dish) + '; }); })') === true);
 
   section('the past wine list on Our List (codex60)');
   const closed = (studyA.match(/<details class="v28-q v60-past" id="v60-past">[\s\S]*?<\/details>/) || [''])[0];
@@ -890,6 +901,8 @@ function mutations() {
     ['the search ignoring past rows', C60, '      for (var i = 0; i < tokens.length; i++) if (r.hay.indexOf(tokens[i]) < 0) return false;\n', '', 'the search works on past rows'],
     ['the price chips ignoring past rows', C60, '      if (st.band && r.band !== st.band) return false;\n', '', 'the price chips work on past rows'],
     ['the size chips ignoring past rows', C60, '      if (st.size && r.sizeKind !== st.size) return false;\n', '', 'the size chips work on past rows'],
+    ['the also line counting past dishes', C60, '    html = v60AlsoServed(html);\n', '', 'the line under Our List counts the dishes and drinks served'],
+    ['the search naming past dishes', C60, '    return _v60Elsewhere.call(this, V60_WHOLE > 0 ? h : v60Live(h), q);', '    return _v60Elsewhere.call(this, h, q);', 'the search names no past dish under Elsewhere'],
     ['codex35\'s house read whole', C60, '    return V60_WHOLE > 0 ? h : v60Live(h);\n  };\n}\n\n/* The videos', '    return h;\n  };\n}\n\n/* The videos', 'codex35\'s house is the served house'],
     ['the served house copied anew when it is read again', C60, '  if (V60_LIVE.out === h) return h;\n', '', 'one object per house'],
     ['the videos naming past wines', C60, '    return _v60Videos30.call(this, V60_WHOLE > 0 ? h : v60Live(h));', '    return _v60Videos30.call(this, h);', 'its videos naming served wines only'],
