@@ -1,6 +1,6 @@
 /* The Sommelier's Codex — service worker.
    Bump CACHE on every deploy; that string is the whole update mechanism. */
-const CACHE = 'codex-v123';
+const CACHE = 'codex-v124';
 importScripts('./js/data-teaching-images.js?v=4', './js/teaching-cache.js?v=1');
 
 /* Both the reviewed SVG atlas and original JPG maps stay out of ASSETS.
@@ -167,6 +167,7 @@ const ASSETS = [
   './js/codex58.js',
   './js/data-champagne.js',
   './js/codex59.js',
+  './js/codex60.js',
   './js/boot.js',
   './fonts/cinzel-normal-400-900-latin.woff2',
   './fonts/cinzel-normal-400-900-latin-ext.woff2',

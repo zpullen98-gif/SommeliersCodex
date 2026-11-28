@@ -100,12 +100,14 @@ const GATES = path.resolve(process.env.GRAPES_TABLE_GATES || __dirname);
 /* the base: the chain without the layer (the default), or a git ref or an extracted copy when one is named. One layer
    on (codex58, the producers and their flagships), the base also leaves out the layer after codex57 where the chain
    carries it, so it stays what it says, the same data and the layers up to codex56; two layers on (codex59, the
-   Champagne houses), it leaves that layer's two files out as well */
+   Champagne houses), it leaves that layer's two files out as well, and three on (codex60, the past wine list), that
+   layer too */
 const BASE = process.env.GRAPES_BASE || '';
 const BASE_LATER = (function () { try { return CH.chainFiles(JS).indexOf('codex58.js') >= 0; } catch (e) { return false; } })();
 const BASE_LATER59 = (function () { try { return CH.chainFiles(JS).indexOf('codex59.js') >= 0; } catch (e) { return false; } })();
-const BASE_SKIP = ['data-grapes-table.js', 'codex57.js'].concat(BASE_LATER ? ['data-flagships.js', 'codex58.js'] : [], BASE_LATER59 ? ['data-champagne.js', 'codex59.js'] : []);
-const BASE_NAME = process.env.GRAPES_BASE_DIR ? 'the base at ' + process.env.GRAPES_BASE_DIR : (BASE ? 'the base ' + BASE : 'the base (this chain without codex57' + (BASE_LATER59 ? ' and the two layers after it' : (BASE_LATER ? ' and the layer after it' : '')) + ')');
+const BASE_LATER60 = (function () { try { return CH.chainFiles(JS).indexOf('codex60.js') >= 0; } catch (e) { return false; } })();
+const BASE_SKIP = ['data-grapes-table.js', 'codex57.js'].concat(BASE_LATER ? ['data-flagships.js', 'codex58.js'] : [], BASE_LATER59 ? ['data-champagne.js', 'codex59.js'] : [], BASE_LATER60 ? ['codex60.js'] : []);
+const BASE_NAME = process.env.GRAPES_BASE_DIR ? 'the base at ' + process.env.GRAPES_BASE_DIR : (BASE ? 'the base ' + BASE : 'the base (this chain without codex57' + (BASE_LATER60 ? ' and the three layers after it' : (BASE_LATER59 ? ' and the two layers after it' : (BASE_LATER ? ' and the layer after it' : ''))) + ')');
 const PLAN = S.loadPlan();
 const ROSTER = PLAN.grapes.map((g) => g.slug);
 const ROW = {}; PLAN.grapes.forEach((g) => { ROW[g.slug] = g; });
@@ -450,7 +452,7 @@ async function main() {
   const i56 = FILES.indexOf('codex56.js');
   /* one layer on (codex58, the producers and their flagships): its data and the layer stand between codex57.js and boot.js where the chain carries them;
      two on (codex59, the Champagne houses): its data and the layer stand after codex58.js */
-  const want56 = ['codex56.js', 'data-grapes-table.js', 'codex57.js'].concat(FILES.indexOf('codex58.js') >= 0 ? ['data-flagships.js', 'codex58.js'] : [], FILES.indexOf('codex59.js') >= 0 ? ['data-champagne.js', 'codex59.js'] : [], ['boot.js']);
+  const want56 = ['codex56.js', 'data-grapes-table.js', 'codex57.js'].concat(FILES.indexOf('codex58.js') >= 0 ? ['data-flagships.js', 'codex58.js'] : [], FILES.indexOf('codex59.js') >= 0 ? ['data-champagne.js', 'codex59.js'] : [], FILES.indexOf('codex60.js') >= 0 ? ['codex60.js'] : [], ['boot.js']);
   check('the chain index.html loads holds data-grapes-table.js then codex57.js straight after codex56.js, then ' + want56.slice(3).join(', then '), i56 > 0 && JSON.stringify(FILES.slice(i56, i56 + want56.length)) === JSON.stringify(want56), FILES.slice(i56, i56 + want56.length).join(' '));
   check('codex57 ran: V57_WORDS, v57W, the three views registered and the join decorated once', D.G('typeof V57_WORDS === "object" && typeof v57W === "function" && ["grapeworlds", "grapecompare", "grapepresent"].every(function (k) { return !!V57_VIEWS[k] && typeof V25_VIEWS[k] === "function"; }) && v53GrapeJoin().v57 === 1') === true);
   const SRC = fs.readFileSync(path.join(JS, 'codex57.js'), 'utf8');
@@ -1029,7 +1031,7 @@ function mutations() {
     ['the table\'s questions left out of the drill', 'js/codex57.js', 'return v57NotIn(out, r, t).concat(v57Questions(r.slug));', 'return v57NotIn(out, r, t);', 'holds the table\'s three'],
     ['a view climbing to Home', 'js/codex57.js', "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'grapes' }; }", "  name: function () { return v57W('compareRow'); },\n  parent: function () { return { view: 'home' }; }", 'grapecompare: Chardonnay and Sauvignon Blanc'],
     ['the two tags swapped in index.html', 'index.html', '<script src="js/data-grapes-table.js?v=2"></script>\n<script src="js/codex57.js?v=1"></script>', '<script src="js/codex57.js?v=1"></script>\n<script src="js/data-grapes-table.js?v=2"></script>', 'index.html loads js/data-grapes-table.js then js/codex57.js'],
-    ['the worker left at codex-v115', 'sw.js', "const CACHE = 'codex-v123';", "const CACHE = 'codex-v115';", 'sw.js is codex-v116 or later'],
+    ['the worker left at codex-v115', 'sw.js', "const CACHE = 'codex-v124';", "const CACHE = 'codex-v115';", 'sw.js is codex-v116 or later'],
     ['a let in the layer', 'js/codex57.js', 'var V57_SLOT = ', 'let V57_SLOT = ', 'declares with var and function only'],
     ['an unguarded wrapper', 'js/codex57.js', "if (typeof v53GrapeShort === 'function') {\n  var _v57GrapeShort", "if (true) {\n  var _v57GrapeShort", 'every wrapper'],
     ['a selector outside .wrap', 'js/codex57.js', "'.wrap .v57-rule{", "'.v57-rule{", 'every selector of the v57-style element'],

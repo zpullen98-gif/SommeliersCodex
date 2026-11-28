@@ -335,7 +335,7 @@ async function main() {
   /* one layer on (codex57, the Grapes tab at the table): its data and the layer stand between codex56.js and boot.js where the chain carries them */
   /* and two layers on (codex58, the producers and their flagships): its data and the layer straight after codex57.js;
      three on (codex59, the Champagne houses): its data and the layer straight after codex58.js */
-  const after56 = (FILES.indexOf('codex57.js') >= 0 ? ['data-grapes-table.js', 'codex57.js'] : []).concat(FILES.indexOf('codex58.js') >= 0 ? ['data-flagships.js', 'codex58.js'] : [], FILES.indexOf('codex59.js') >= 0 ? ['data-champagne.js', 'codex59.js'] : [], ['boot.js']);
+  const after56 = (FILES.indexOf('codex57.js') >= 0 ? ['data-grapes-table.js', 'codex57.js'] : []).concat(FILES.indexOf('codex58.js') >= 0 ? ['data-flagships.js', 'codex58.js'] : [], FILES.indexOf('codex59.js') >= 0 ? ['data-champagne.js', 'codex59.js'] : [], FILES.indexOf('codex60.js') >= 0 ? ['codex60.js'] : [], ['boot.js']);
   check('the chain index.html loads holds codex56.js straight after codex55.js, then ' + after56.join(', then '), FILES.indexOf('codex56.js') === FILES.indexOf('codex55.js') + 1 && JSON.stringify(FILES.slice(FILES.indexOf('codex56.js') + 1, FILES.indexOf('codex56.js') + 1 + after56.length)) === JSON.stringify(after56), FILES.slice(-6).join(' '));
   check('codex56 ran: V56_WORDS, v56W, the course, the schedule, the views and the drills are defined',
     A.G('typeof V56_WORDS === "object" && typeof v56W === "function" && typeof v56Course === "function" && typeof v56Step === "function" && typeof v56Due === "function" && typeof V56_VIEWS === "object" && typeof v56QuizView === "function" && typeof v56DistrictCards === "function" && typeof v56CmpHtml === "function"'));

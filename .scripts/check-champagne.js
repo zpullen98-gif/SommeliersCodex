@@ -342,7 +342,7 @@ async function main() {
   section('1. the load');
   try {
     const i58 = FILES.indexOf('codex58.js');
-    const want = ['codex58.js', 'data-champagne.js', 'codex59.js', 'boot.js'];
+    const want = ['codex58.js', 'data-champagne.js', 'codex59.js'].concat(FILES.indexOf('codex60.js') >= 0 ? ['codex60.js'] : [], ['boot.js']);
     check('the chain index.html loads holds data-champagne.js then codex59.js straight after codex58.js, then boot.js', i58 > 0 && JSON.stringify(FILES.slice(i58, i58 + want.length)) === JSON.stringify(want), FILES.slice(i58, i58 + want.length).join(' '));
     check('codex59 ran: V59_WORDS, v59W, its three views registered, owned by the house tab, parented and drawn, its acts', D.G('typeof V59_WORDS === "object" && typeof v59W === "function" && ["champagne", "champdrill", "champpresent"].every(function (k) { return !!V59_VIEWS[k] && typeof V25_VIEWS[k] === "function" && V32_OWNER[k] === "brennans" && V25_HUB[k] === "brennans" && V41_REDRAW[k] === 1; }) && V32_PARENT.champagne === "brennans" && V32_PARENT.champdrill === "champagne" && V32_PARENT.champpresent === "champagne" && ["producer", "wine", "cards", "quiz", "findclear", "dway", "dpick", "dnext", "dagain", "reveal", "mark", "pnext"].every(function (k) { return typeof V59_ACTS[k] === "function"; })') === true);
     check('the style element is written by the layer, id v59-style', SRC.indexOf("css.id = 'v59-style'") > 0);
