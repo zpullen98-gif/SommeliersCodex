@@ -126,6 +126,12 @@ guarded and outermost, none of a function codex57, codex58 or codex59 wraps; eve
   wines (275: 36 and 239 at the cut) and a count made from the pack file counts every wine (286: 40 and 246). Every line,
   its value at the cut and the fifteen wineGuides keys to add (the six wines of 15 and 22 November and the nine new
   cards) are in the engineer's PINS.md, handed to the finisher of the cut.
+- **Results**: every gate on the 2 November shared layer (SITE_ROOT site-2nov): 53 run, 0 failed; check-winelist all
+  132 checks pass on it and on the fixture layer (the scratch pack with its 11 past wines and the dry list with 60 past
+  rows), 40 of 40 mutations caught by name; check-flagships' worker mutation 1 of 1, check-grapes-table's mutations
+  31 of 31. The phone walk at 375 and 390 px, day and night, on the fixture layer: 84 ok, 0 failed (the whole list
+  door at the top of the room, the Past wine list door at its foot, a past card with its note first, the full list's
+  Past chip pressed with a row opened and a search, the decks dealt with no past wine, a clean console).
 
 The shell loads `js/codex60.js?v=1` after codex59.js and before boot.js; the source worker is `codex-v124`. The next
 layer is codex61.
