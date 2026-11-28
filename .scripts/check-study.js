@@ -252,14 +252,23 @@ async function main() {
   const priced = glass.filter((w) => (w.prices || []).some((p) => p && p.printed)).length;
   const poured = glass.filter((w) => !(w.prices || []).some((p) => p && p.printed)
     && (house.tastings || []).some((t) => (t.courses || []).some((c) => c.pourId === w.id))).length;
+  /* every glass wine served is priced or poured on a tasting; a wine filed under a section that begins "Past " (a glass
+     no longer poured, a tasting pour taken off the pairing) may be neither, and this chain (no codex60) still counts it */
+  const pastSec = (w) => /^\s*Past /.test(w.section || '');
+  const servedGlass = glass.filter((w) => !pastSec(w));
+  const servedPriced = servedGlass.filter((w) => (w.prices || []).some((p) => p && p.printed)).length;
+  const servedPoured = servedGlass.filter((w) => !(w.prices || []).some((p) => p && p.printed)
+    && (house.tastings || []).some((t) => (t.courses || []).some((c) => c.pourId === w.id))).length;
   const study = G('v28StudyHtml()');
   const want = 'By the glass, as the house menus print it: ' + glass.length + ' wines, ' + priced + ' with a glass price and ' + poured + ' poured on the tastings.'
     + (menuBottles ? ' Bottles the menus print: ' + menuBottles + ', half bottles, large formats and the Bubbles rosés among them.' : '');
-  check('the header sentence counts the list from the house (' + glass.length + ', ' + priced + ', ' + poured + ', ' + menuBottles + ' bottles)', study.indexOf(G('v28Esc(' + JSON.stringify(want) + ')')) >= 0 && glass.length === priced + poured && priced >= 14 && poured === 6, want);
+  check('the header sentence counts the list from the house (' + glass.length + ', ' + priced + ', ' + poured + ', ' + menuBottles + ' bottles)', study.indexOf(G('v28Esc(' + JSON.stringify(want) + ')')) >= 0 && servedGlass.length === servedPriced + servedPoured && priced >= 14 && poured === 6, want);
   check('one row per house wine, each a button that opens its card', (study.match(/class="v28-row" data-v28="open"/g) || []).length === house.wines.length);
-  const order = house.wines.map((w) => w.id);
+  /* codex28 draws the menus' wines, then the floor's bottles, each in the house's order (the pack files its past sections
+     last, so a past glass wine comes after the floor's bottles in the file and before them on the list) */
+  const order = house.wines.filter((w) => w.list !== 'bottle').concat(house.wines.filter((w) => w.list === 'bottle')).map((w) => w.id);
   const drawnOrder = (study.match(/class="v28-row" data-v28="open" data-id="([^"]+)"/g) || []).map((m) => m.replace(/.*data-id="/, '').replace('"', ''));
-  check('in the house\'s order', JSON.stringify(drawnOrder) === JSON.stringify(order));
+  check('in the house\'s order, the menus\' wines and then the floor\'s bottles', JSON.stringify(drawnOrder) === JSON.stringify(order));
   check('the search box is labelled and the chips carry aria-pressed', /<label class="sr-only" for="v28-q">Find a wine<\/label>/.test(study) && study.indexOf('data-v28="sec" data-s="" aria-pressed="true">All ' + house.wines.length + '<') >= 0);
   check('the house and the menus\' date in the sub line', study.indexOf('menus read ' + READ_ON(house.menusReadOn)) >= 0);
   check('the edit switch is a quiet text button', /class="v28-switch" data-v28="editall">Edit the list</.test(study));

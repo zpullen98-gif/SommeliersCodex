@@ -30,7 +30,7 @@ function check(name,value){results.push({name,pass:!!value});assert.ok(value,nam
   }
   const d=await device('#/level'),p=d.page;
   const info=await p.evaluate(()=>({rows:v40Rows().length,menu:v40Rows().filter(r=>!r.bottle).length,floor:v40Rows().filter(r=>r.bottle).length,paths:v40Paths().length,prompts:v40Paths().reduce((n,x)=>n+x.prompts.length,0),workshops:v40Workshops().length}));
-  check('current house contains every 271 study wine',info.rows===271&&info.menu===34&&info.floor===237);
+  check('current house contains every 282 study wine',info.rows===282&&info.menu===36&&info.floor===246);
   check('authored 12 paths and 60 recall prompts are loaded',info.paths===12&&info.prompts===60);
   check('eight fall workshops are loaded',info.workshops===8);
   /* since codex53 the house is studied under its own tab: the level page (Today, My restaurant) draws no Compass
@@ -48,29 +48,29 @@ function check(name,value){results.push({name,pass:!!value});assert.ok(value,nam
    check('study wine collection is not gated by '+lv,same);
   }
   await p.evaluate(()=>v40Go('wines'));
-  check('directory shows 271 and starts with 30 rows',await p.locator('#v40-result-count').textContent().then(t=>t.includes('271 of 271'))&&await p.locator('.v40-wine-row').count()===30);
+  check('directory shows 282 and starts with 30 rows',await p.locator('#v40-result-count').textContent().then(t=>t.includes('282 of 282'))&&await p.locator('.v40-wine-row').count()===30);
   await p.getByLabel('Collection',{exact:true}).selectOption('bottle');
-  check('floor filter exposes all 237',await p.locator('#v40-result-count').textContent().then(t=>t.startsWith('237 of 271')));
+  check('floor filter exposes all 246',await p.locator('#v40-result-count').textContent().then(t=>t.startsWith('246 of 282')));
   await p.getByLabel('Collection',{exact:true}).selectOption('menu');
-  check('menu filter exposes all 34',await p.locator('#v40-result-count').textContent().then(t=>t.startsWith('34 of 271')));
+  check('menu filter exposes all 36',await p.locator('#v40-result-count').textContent().then(t=>t.startsWith('36 of 282')));
   await p.getByRole('button',{name:'Show more wines',exact:true}).click();
-  check('show more reaches remaining menu wines',await p.locator('.v40-wine-row').count()===34);
+  check('show more reaches remaining menu wines',await p.locator('.v40-wine-row').count()===36);
   const chosen=await p.locator('.v40-wine-row').last().getAttribute('data-v40-wine');
   await p.locator('.v40-wine-row').last().click();
   check('directory opens exact existing wine card',await p.evaluate(id=>S.view==='cellar'&&v28State().open===id,chosen));
   check('wine card retains producer and component connections',await p.locator('.v38-who,.v35-madeof').count()>0);
   await p.locator('#v32-back').click();await p.waitForFunction(()=>S.view==='cellarcompass');
-  check('Back restores directory filter and expanded rows',await p.getByLabel('Collection',{exact:true}).inputValue()==='menu'&&await p.locator('.v40-wine-row').count()===34);
+  check('Back restores directory filter and expanded rows',await p.getByLabel('Collection',{exact:true}).inputValue()==='menu'&&await p.locator('.v40-wine-row').count()===36);
   await p.getByRole('button',{name:'Clear filters',exact:true}).click();
   await p.getByLabel('Find a wine',{exact:true}).fill('A&B / Côte + ?');
-  const filteredHash=await p.evaluate(()=>location.hash);await p.reload();await p.waitForFunction(()=>typeof v40Rows==='function'&&V32.booted&&v40Rows().length===271);
+  const filteredHash=await p.evaluate(()=>location.hash);await p.reload();await p.waitForFunction(()=>typeof v40Rows==='function'&&V32.booted&&v40Rows().length===282);
   check('reload preserves punctuation and accented search text',await p.getByLabel('Find a wine',{exact:true}).inputValue()==='A&B / Côte + ?'&&await p.evaluate(()=>location.hash)===filteredHash);
   await p.getByLabel('Find a wine',{exact:true}).fill('zzzz-no-such-wine');
   check('no-match state is actionable',await p.locator('.v40-empty').textContent().then(t=>t.includes('clear the filters')));
   await p.getByRole('button',{name:'Clear filters',exact:true}).click();
   const pathInfo=await p.evaluate(()=>({id:v40Paths()[0].id,n:v40WineIds(v40Paths()[0].wineIds).length}));
   await p.getByLabel('Study path',{exact:true}).selectOption(pathInfo.id);
-  check('path filter uses exact authored wine identities',await p.locator('#v40-result-count').textContent().then(t=>t.startsWith(pathInfo.n+' of 271')));
+  check('path filter uses exact authored wine identities',await p.locator('#v40-result-count').textContent().then(t=>t.startsWith(pathInfo.n+' of 282')));
   await p.evaluate(id=>v40Go('path/'+id),pathInfo.id);
   check('all five recall answers start concealed',await p.locator('.v40-prompt:not([open])').count()===5);
   const unchanged=await p.evaluate(()=>JSON.stringify(ST));
@@ -112,7 +112,7 @@ function check(name,value){results.push({name,pass:!!value});assert.ok(value,nam
    ST=JSON.parse(saved);stSave();return{exportedOK,mergeOlder,clean,mergeNewer,rename,reset,noHouseSrs:Object.keys(ST.srs).every(k=>!k.includes('h-w-'))};
   });
   for(const key of Object.keys(portability))check('recency portability '+key,portability[key]);
-  await p.reload();await p.waitForFunction(()=>typeof v40Rows==='function'&&V32.booted&&v40Rows().length===271);
+  await p.reload();await p.waitForFunction(()=>typeof v40Rows==='function'&&V32.booted&&v40Rows().length===282);
   check('recency survives reload and next selection still advances',await p.evaluate(ids=>v40DailyIds().every(id=>!ids.includes(id)),runIds));
   const lessons=await p.evaluate(()=>v40Paths().map(x=>({id:x.id,prompts:x.prompts.length,sections:x.sections.length})));
   for(const item of lessons){await p.evaluate(id=>v40Go('path/'+id),item.id);check(item.id+' renders all reading sections and hidden prompts',await p.locator('.v40-reading-section').count()===item.sections&&await p.locator('.v40-prompt:not([open])').count()===item.prompts);}

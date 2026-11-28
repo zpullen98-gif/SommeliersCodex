@@ -78,7 +78,7 @@ const before = JSON.stringify(banks), report = {wine:{total:house.wines.length,l
 for(const w of house.wines){const ts=c.v52WineTargets(w);if(ts.length)report.wine.linked++;else report.wine.unresolved.push({id:w.id,name:w.name,region:w.region});ts.forEach(t=>assert.ok(valid(t),'wine target '+JSON.stringify(t)));}
 for(const [key,qs] of Object.entries(banks)){const unlinked=[];let linked=0;for(const q of qs){const ts=c.v52QuestionTargets(q);if(ts.length)linked++;else unlinked.push({id:q.id,cat:q.cat,q:q.q});ts.forEach(t=>assert.ok(valid(t),'course target '+JSON.stringify(t)));}report.banks[key]={total:qs.length,linked,unlinked:unlinked.length,unlinkedByCategory:Object.fromEntries([...new Set(unlinked.map(q=>q.cat))].map(cat=>[cat,unlinked.filter(q=>q.cat===cat).length]))};}
 for(const [family,rows] of [['regional',c.REGIONS.regions],['country',Object.values(c.REGIONS.countries)]])for(const r of rows)for(const q of r.questions||[]){report[family].total++;const ts=c.v52QuestionTargets(q);if(ts.length)report[family].linked++;ts.forEach(t=>assert.ok(valid(t),'owned target '+JSON.stringify(t)));}
-check('all 271 canonical Brennan wines resolve', report.wine.linked === report.wine.total && report.wine.total === 271);
+check('all 293 canonical Brennan wines resolve', report.wine.linked === report.wine.total && report.wine.total === 293);
 check('every regional and country-owned question resolves', report.regional.total===report.regional.linked && report.country.total===report.country.linked);
 check('course questions and all existing identities are unchanged', JSON.stringify(banks) === before);
 console.log(JSON.stringify(report,null,2));

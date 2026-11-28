@@ -45,13 +45,15 @@
  *   7. codex38.js: no dash, no glyph, var and function only, nobody named;
  *      index.html, sw.js and every gate that names codex35 carry it
  *   8. the shipped house as it ships: every wine producer linked to its
- *      record but the three the Codex files as wines (et read as and, a
+ *      record but the three the Codex files as wines and Domaine du Vieux
+ *      Lazaret, not in the corpus yet (et read as and, a
  *      record's aside, its aka); the full list's rows of the estates the
  *      list prints under other names (Droin, Duckhorn, Caymus, Matrot and
  *      the rest) offering their profile, by name or by the list's own key,
- *      and no row another house's; every glass on the list offering its
- *      producer's profile (an aside, a family word, a label filed as the
- *      producer); the quiz dealing one of two wines a reader cannot tell
+ *      and no row another house's, and none for Banfi, whose one house
+ *      wine is past; every glass on the list offering its producer's
+ *      profile but the three the house does not profile yet (an aside, a
+ *      family word, a label filed as the producer); the quiz dealing one of two wines a reader cannot tell
  *      apart; a producer told once on a card (never
  *      again in Stories); a door and Back reopening the card's disclosures;
  *      the producers view drawn again when the house lands; a learnt count
@@ -284,6 +286,10 @@ function packWith(extra) {
   for (const c of h.components || []) {
     if (c.producer && (c.itemIds || []).some((id) => wines.has(id))) delete c.producer;
   }
+  /* the fixture's three menu wines are served here: the edition of 28 November filed them as past (a past card is read
+     only and deals nothing, codex60, so its producer block draws no deck), and this gate reads a served card's block */
+  const served = { [LEFLAIVE]: 'Chardonnay & fuller whites', [FICHET]: 'Chardonnay & fuller whites', [JADOT_BEAUNE]: 'Light reds, Pinot Noir' };
+  h.wines.forEach((w) => { if (served[w.id] && /^\s*Past /.test(w.section || '')) w.section = served[w.id]; });
   /* the second name: the list's own Jadot half bottle, spelt the house's way */
   h.wines.find((w) => w.id === JADOT_MEURSAULT).producer = 'Maison Louis Jadot';
   const comp = (id, name, producer, itemIds) => ({ id, kind: 'story', name, producer: mark(producer), itemIds, termIds: [], ts });
@@ -617,8 +623,9 @@ async function main() {
   S8.G('render()');
   const rows8 = JSON.parse(S8.G('JSON.stringify(v38Rows(v28House()).map(function (r) { return { id: r.id, short: r.short, lib: r.lib ? r.lib.id : null }; }))'));
   const unlinked = rows8.filter((r) => !r.lib).map((r) => r.short).sort();
-  check('every wine producer of the house reaches its record in the Codex\'s producers but the three the Codex files as wines',
-    rows8.length >= 150 && JSON.stringify(unlinked) === JSON.stringify(['Dom Pérignon', 'Masseto', 'Opus One']), rows8.length + ': ' + unlinked.join(', '));
+  /* the edition of 22 November brought Domaine du Vieux Lazaret, a producer the Codex's corpus does not hold yet */
+  check('every wine producer of the house reaches its record in the Codex\'s producers but the three the Codex files as wines and Domaine du Vieux Lazaret',
+    rows8.length >= 150 && JSON.stringify(unlinked) === JSON.stringify(['Dom Pérignon', 'Domaine du Vieux Lazaret', 'Masseto', 'Opus One']), rows8.length + ': ' + unlinked.join(', '));
   const libOf = (short) => (rows8.find((r) => r.short === short) || {}).lib;
   check('et is read as and: Bouchard Père & Fils is Bouchard Père et Fils, Jean-Paul and Benoît Droin is Jean-Paul et Benoît Droin',
     libOf('Bouchard Père & Fils') === 'p-maison-bouchard' && libOf('Jean-Paul and Benoît Droin') === 'p-dom-droin');
@@ -637,10 +644,13 @@ async function main() {
     prof8('Caymus "50th Anniversary"', '2022') + ' / ' + prof8('Duckhorn "Three Palms"', '2015'));
   const reach = (pk) => S8.G('(function () { var rs = V29_LIST.rows.filter(function (x) { return x.pk === ' + JSON.stringify(pk) + '; }); var hit = {}; rs.forEach(function (r) { var p = v38ListRowProducer(r); hit[p ? p.short : "none"] = (hit[p ? p.short : "none"] || 0) + 1; }); return JSON.stringify(hit); })()');
   const counts8 = {};
-  ['droin', 'duckhorn', 'joseph-phelps', 'caymus', 'veuve-fourny', 'grgich-hills', 'banfi', 'schramsberg', 'silver-oak', 'lopez-de-heredia', 'gainey', 'matrot', 'domaine-matrot', 'bouchard-pere-et-fils'].forEach((pk) => { counts8[pk] = JSON.parse(reach(pk)); });
+  ['droin', 'duckhorn', 'joseph-phelps', 'caymus', 'veuve-fourny', 'grgich-hills', 'schramsberg', 'silver-oak', 'lopez-de-heredia', 'gainey', 'matrot', 'domaine-matrot', 'bouchard-pere-et-fils'].forEach((pk) => { counts8[pk] = JSON.parse(reach(pk)); });
   const none8 = Object.keys(counts8).filter((pk) => !Object.keys(counts8[pk]).length || counts8[pk].none);
-  check('every row of those estates offers its profile: Droin, Duckhorn, Phelps, Caymus, Veuve Fourny, Grgich Hills, Banfi, Schramsberg, Silver Oak, López de Heredia, Gainey, Matrot, Bouchard',
+  check('every row of those estates offers its profile: Droin, Duckhorn, Phelps, Caymus, Veuve Fourny, Grgich Hills, Schramsberg, Silver Oak, López de Heredia, Gainey, Matrot, Bouchard',
     !none8.length && Object.keys(counts8).every((pk) => Object.keys(counts8[pk]).length === 1), JSON.stringify(counts8));
+  /* Banfi's one house wine, the Florus, is a past bottle since the edition of 28 November: the producers read the served
+     house (codex60), so the list's Banfi rows offer no profile until a Banfi wine is served again */
+  check('a producer whose only house wine is past offers no profile on its list rows: Banfi', reach('banfi') === '{"none":2}', reach('banfi'));
   check('the list\'s own key: a Domaine Matrot row the list prints as Thierry & Pascale Matrot is the Matrot profile', counts8['domaine-matrot'] && counts8['domaine-matrot']['Thierry et Pascale Matrot'] >= 3);
   check('no other house\'s profile on a row by its key alone: a Taittinger row is Taittinger\'s, a Pierre Sparr row Pierre Sparr\'s, never the house Champagne\'s',
     Object.keys(JSON.parse(reach('taittinger'))).join() === 'Champagne Taittinger of Reims' && Object.keys(JSON.parse(reach('pierre-sparr'))).join() === 'Pierre Sparr', reach('taittinger') + ' ' + reach('pierre-sparr'));
@@ -650,7 +660,11 @@ async function main() {
      producer each offer the profile, so every glass whose producer the house profiles shows it. */
   const glass8 = JSON.parse(S8.G('JSON.stringify(V29_LIST.rows.filter(function (x) { return /^By the Glass/.test(x.section); }).map(function (x) { var p = v38ListRowProducer(x); return [x.name, x.vintage, p ? p.short : ""]; }))'));
   const glassOf = (re) => (glass8.find((g) => re.test(g[0])) || [])[2];
-  check('every one of the fourteen glasses offers its producer\'s profile', glass8.length === 14 && glass8.every((g) => g[2]), glass8.filter((g) => !g[2]).map((g) => g[0]).join(' | '));
+  /* the list of 28 November prints seventeen glasses; three of the new ones (Lemelson, Kokomo, Courcel) carry a story in
+     the house but no producer profile yet, and offer none: named here, so a fourth glass without one fails */
+  const bare8 = glass8.filter((g) => !g[2]).map((g) => g[0]);
+  check('every one of the seventeen glasses offers its producer\'s profile, but the three the house does not profile yet (Lemelson, Kokomo, Courcel)',
+    glass8.length === 17 && bare8.length === 3 && /Lemelson/.test(bare8.join('|')) && /Kokomo/.test(bare8.join('|')) && /Courcel/.test(bare8.join('|')), bare8.join(' | '));
   check('a name the house prints with an aside is read up to it: the list\'s Pazo das Bruxas is the house\'s Pazo das Bruxas (Familia Torres)', glassOf(/Pazo das Bruxas/) === 'Familia Torres', String(glassOf(/Pazo das Bruxas/)));
   check('a family word stands in for the estate word: the list\'s Domaine Durand is the house\'s Famille Durand', glassOf(/Domaine Durand/) === 'Famille Durand'
     && S8.G('v38Bare("Famille Durand") === v38Bare("Domaine Durand") && v38Bare("Familia Torres") === "torres"') === true, String(glassOf(/Domaine Durand/)));

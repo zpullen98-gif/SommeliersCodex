@@ -1047,6 +1047,84 @@ var CODEX_VISUAL_STUDIES = {
     ],
     "w-ay6nux07": [
       "service-bottle-check"
+    ],
+    "w-4cjw44md": [
+      "service-bottle-check",
+      "service-still-opening"
+    ],
+    "w-u1gmkouj": [
+      "service-bottle-check",
+      "service-still-opening"
+    ],
+    "w-juqk4273": [
+      "service-bottle-check",
+      "service-still-opening",
+      "glass-crystals-sediment-cork",
+      "bottle-ullage"
+    ],
+    "w-haxbm89b": [
+      "service-bottle-check",
+      "service-still-opening"
+    ],
+    "w-3yc5tjh0": [
+      "service-bottle-check",
+      "service-still-opening",
+      "pinot-noir",
+      "glass-crystals-sediment-cork",
+      "bottle-ullage"
+    ],
+    "w-af3v92ea": [
+      "service-bottle-check",
+      "service-still-opening"
+    ],
+    "w-alt43yex": [
+      "service-bottle-check"
+    ],
+    "w-gnj2jh83": [
+      "service-bottle-check"
+    ],
+    "w-xxoa9z7b": [
+      "service-bottle-check"
+    ],
+    "w-0nsk1g4a": [
+      "service-bottle-check"
+    ],
+    "w-ahjozfd1": [
+      "service-bottle-check"
+    ],
+    "w-7d8ok78c": [
+      "service-bottle-check"
+    ],
+    "w-ht606i8l": [
+      "service-bottle-check"
+    ],
+    "w-vy50ws53": [
+      "service-bottle-check",
+      "glass-crystals-sediment-cork"
+    ],
+    "w-saldkh5f": [
+      "service-bottle-check"
+    ],
+    "w-9vcq7far": [
+      "service-bottle-check"
+    ],
+    "w-vea2csvj": [
+      "service-bottle-check"
+    ],
+    "w-4ecs4p1h": [
+      "service-bottle-check"
+    ],
+    "w-ni8zorwr": [
+      "service-bottle-check"
+    ],
+    "w-qpuu2m6z": [
+      "service-bottle-check"
+    ],
+    "w-4m9i8mgh": [
+      "service-bottle-check"
+    ],
+    "w-ssxlfz3w": [
+      "service-bottle-check"
     ]
   },
   "componentGuides": {

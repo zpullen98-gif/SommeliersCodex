@@ -1158,7 +1158,9 @@ async function main() {
   const sapi = dev2.api;
   SD.G('var GRADED = []; var _realSaid = OOT.houseLib.drills.gradeSaid; OOT.houseLib.drills.gradeSaid = function (h, id, len, said) { var g = _realSaid(h, id, len, said); GRADED.push({ id: id, len: len, said: said, verdict: g && g.verdict }); return g; };');
   const sayItems = SD.G('v27SayItems()');
-  check('every wine of the edition has a kept timed line to say back', sayItems.length === packJson.house.wines.length && sayItems.every((x) => x.kind === 'wine' && x.lengths.join(',') === 's10,s20,s45'), String(sayItems.length));
+  /* Say the pour offers the served wines: a wine filed under a section that begins "Past " is read, never dealt (codex60) */
+  const servedWines = packJson.house.wines.filter((w) => !/^\s*Past /.test(w.section || ''));
+  check('every served wine of the edition has a kept timed line to say back', sayItems.length === servedWines.length && sayItems.every((x) => x.kind === 'wine' && x.lengths.join(',') === 's10,s20,s45'), String(sayItems.length));
   const sayLine = SD.G('V25_MINE.filter(function (r) { return r.key === "housesay"; })[0].line()');
   check('the row counts them', sayLine.indexOf(sayItems.length + ' wines with kept lines') === 0, sayLine);
   SD.G('S.view = "mine"; v25Go("housesay")');

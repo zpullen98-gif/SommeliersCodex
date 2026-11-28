@@ -25,7 +25,7 @@
  *      box off the card; no per component film list; no library link under
  *      Who makes it; Pronounced: for the respellings; Practise this wine one
  *      chip row; the footer Edit, Previous and Next
- *   3. every card the house holds (271 on the shipped pack): drawn whole and
+ *   3. every card the house holds (293 on the shipped pack): drawn whole and
  *      dash free; Where we pour it equal to the dishes' own pairings (first
  *      pick, second choice, the bottle tiers with their words, the tastings
  *      and the drink without alcohol), each list the pack's derived fields
@@ -295,12 +295,14 @@ const WINES = [
   ['a floor bottle in Red Burgundy', pick('floor', (w) => /Red Burgundy/.test(w.section))]
 ].filter((x) => x[1]);
 
-/* what the dishes say of a wine, read from the pack alone */
+/* what the dishes served say of a wine, read from the pack alone: a dish filed under a section that begins "Past "
+   is no pairing of any wine, as the pack's own firstPickIds, secondFor and offeredWith hold (codex60) */
+const pastSection = (x) => /^\s*Past /.test((x && x.section) || '');
 function pairingsOf(id) {
   const out = { first: [], second: [], bottles: [], pours: [], zero: [] };
   (house.dishes || []).forEach((d) => {
     const p = kv(d, 'pairing');
-    if (!p || typeof p !== 'object') return;
+    if (!p || typeof p !== 'object' || pastSection(d)) return;
     if (p.wineId === id) {
       out.first.push(d);
       if (p.zeroProofId) out.zero.push(d);

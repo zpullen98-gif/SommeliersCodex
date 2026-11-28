@@ -63,7 +63,7 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
       prompts: v40Paths().reduce((n, item) => n + item.prompts.length, 0),
       workshops: v40Workshops().length
     }));
-    check('all 271 study wines remain, including 34 menu wines and 237 floor bottles', original.ids.length === 271 && original.menu === 34 && original.floor === 237 && new Set(original.ids).size === 271);
+    check('all 282 study wines remain, including 36 menu wines and 246 floor bottles', original.ids.length === 282 && original.menu === 36 && original.floor === 246 && new Set(original.ids).size === 282);
     check('all 12 readings, 60 recall prompts and eight pairing workshops remain', original.paths === 12 && original.prompts === 60 && original.workshops === 8);
     await page.evaluate(() => {
       const id = v28Rows()[0].id, key = 'h-' + id + '-card';
@@ -76,7 +76,7 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     check('four named sections replace the scattered jump row', await page.locator('[data-v48-route]').evaluateAll((nodes, words) => nodes.slice(0,4).map(node => node.textContent.trim()).every((word,index) => word === words[index]), words) && await page.locator('.v41-jumps').count() === 0);
     check('five compact wine groups start closed', await page.locator('details.v48-wine-group').count() === 5 && await page.locator('details.v48-wine-group[open]').count() === 0);
     check('all wine rows are retained once in their established order', await page.locator('.v28-row').evaluateAll((nodes, ids) => nodes.length === ids.length && nodes.map(n => n.dataset.id).join('|') === ids.join('|'), original.ids));
-    check('list has one labelled section selector and visible result count', await page.locator('#v48-section').count() === 1 && await page.locator('#v48-count').isVisible() && /271/.test(await page.locator('#v48-count').textContent()) && await page.locator('.v28-chips').count() === 0);
+    check('list has one labelled section selector and visible result count', await page.locator('#v48-section').count() === 1 && await page.locator('#v48-count').isVisible() && /282/.test(await page.locator('#v48-count').textContent()) && await page.locator('.v28-chips').count() === 0);
     check('the list no longer appends the Compass, producer, video and editor sections', await page.locator('#v41-compass-h,#v41-producers-h,#v41-videos-h,#v41-house-h').count() === 0);
 
     // A real user opens a folder and a wine, then returns to the same button.
@@ -107,14 +107,14 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     await page.locator('#v28-q').fill('qzz-no-such-wine');
     check('no-match search offers a visible clear action', await page.locator('.v28-row').count() === 0 && await page.locator('#v48-clear').isVisible() && /no|0/i.test(await page.locator('#v48-count').textContent()));
     await page.locator('#v48-clear').click();
-    check('clear restores the collection and input focus', await page.locator('#v28-q').inputValue() === '' && await page.locator('.v28-row').count() === 271 && await page.evaluate(() => document.activeElement.id === 'v28-q'));
+    check('clear restores the collection and input focus', await page.locator('#v28-q').inputValue() === '' && await page.locator('.v28-row').count() === 282 && await page.evaluate(() => document.activeElement.id === 'v28-q'));
     await page.locator('#v48-section').selectOption('#bottles');
-    check('bottle filter includes every one of the 237 floor bottles', await page.locator('.v28-row').count() === 237 && await page.locator('.v28-row:visible').count() === 237);
+    check('bottle filter includes every one of the 246 floor bottles', await page.locator('.v28-row').count() === 246 && await page.locator('.v28-row:visible').count() === 246);
     const nested = await page.locator('#v48-section option').evaluateAll(nodes => nodes.map(n => n.value).find(value => value.startsWith('#bottles|')));
     check('floor sections remain individually selectable', !!nested);
     await page.locator('#v48-section').selectOption(nested);
     const nFloor = await page.locator('.v28-row').count();
-    check('a floor section narrows the list without losing its original wines', nFloor > 0 && nFloor < 237 && await page.locator('.v28-row').evaluateAll((nodes, ids) => nodes.every(n => ids.includes(n.dataset.id)), original.ids));
+    check('a floor section narrows the list without losing its original wines', nFloor > 0 && nFloor < 246 && await page.locator('.v28-row').evaluateAll((nodes, ids) => nodes.every(n => ids.includes(n.dataset.id)), original.ids));
     await page.locator('.v28-row').last().click(); await back(page, 'brennans');
     check('Back retains the precise floor section', await page.locator('#v48-section').inputValue() === nested && await page.locator('.v28-row').count() === nFloor);
     await page.locator('#v48-section').selectOption('');
@@ -132,7 +132,7 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     // The new rooms lead to the original content, and Back remembers the
     // precise door even when several doors share a route or deck action.
     await mainView(page, 'housestudies');
-    for (const [arg, kind, expected] of [['','paths',12],['workshops','workshops',8],['wines','wines',271]]) {
+    for (const [arg, kind, expected] of [['','paths',12],['workshops','workshops',8],['wines','wines',282]]) {
       const selector = '[data-v48-route="cellarcompass"][data-v48-arg="' + arg + '"]';
       const opener = await page.locator(selector).getAttribute('id');
       await page.locator(selector).click();
@@ -277,7 +277,7 @@ const words = ['Wine list', 'Wine studies', 'Service rehearsal', 'House referenc
     } finally {
       await page.evaluate(() => { v27Current = window.__houseFlowOriginal; delete window.__houseFlowOriginal; delete window.__houseFlowHouse; v32Go({view:'brennans'}, 'replace'); });
     }
-    check('restoring the house recovers all 271 wines without changing its saved records', await page.locator('.v28-row').count() === 271 && await marks(page) === before);
+    check('restoring the house recovers all 282 wines without changing its saved records', await page.locator('.v28-row').count() === 282 && await marks(page) === before);
     check('no JavaScript errors during the complete interaction run', errors.length === 0);
     await context.close();
     console.log('Brennan\'s learning flow: all ' + checks.length + ' checks pass.');

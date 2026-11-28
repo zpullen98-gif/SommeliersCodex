@@ -24,16 +24,16 @@ for (const name of ['wineGuides', 'componentGuides', 'grapeGuides', 'primerGuide
   check(name + ': every join is nonempty, unique and registered', Object.values(data[name]).every(list => Array.isArray(list) && list.length && new Set(list).size === list.length && list.every(id => ids.includes(id))));
 }
 const wines = house.wines, wineIds = wines.map(w => w.id), components = new Set(house.components.map(x => x.id));
-check('all 271 current house wines are joined by their exact IDs', wineIds.length === 271 && equalSet(Object.keys(data.wineGuides), wineIds));
+check('all 293 current house wines are joined by their exact IDs', wineIds.length === 293 && equalSet(Object.keys(data.wineGuides), wineIds));
 check('every mapped component exists in the current pack', Object.keys(data.componentGuides).length > 0 && Object.keys(data.componentGuides).every(id => components.has(id)));
 check('every house wine gets the bottle verification guide', wineIds.every(id => data.wineGuides[id].includes('service-bottle-check')));
 
 // Independently read the pack's menu classifications, not the implementation's
 // generator or name-matching rules. Unknown sections require editorial review.
 const sparklingSections = new Set(['Champagne & sparkling', 'Birthday Bubbles: Champagne half bottles', 'Birthday Bubbles: Champagne large formats', "Bubbles at Brennan's: rosé bottles"]);
-const stillSections = new Set(['Riesling & aromatic whites', 'Dry & crisp whites', 'Chardonnay & fuller whites', 'Dry rosé', 'Light reds, Pinot Noir', 'Medium-bodied reds', 'Full-bodied reds', 'Dessert wines']);
+const stillSections = new Set(['Riesling & aromatic whites', 'Dry & crisp whites', 'Chardonnay & fuller whites', 'Dry rosé', 'Light reds, Pinot Noir', 'Medium-bodied reds', 'Full-bodied reds', 'Dessert wines', 'Past wines by the glass', 'Past tasting pours']);
 const menu = wines.filter(w => w.list !== 'bottle');
-check('the focused menu and featured selection contains 34 wines', menu.length === 34);
+check('the focused menu and featured selection contains 40 wines', menu.length === 40);
 check('all menu sections have a reviewed still or sparkling classification', menu.every(w => sparklingSections.has(w.section) || stillSections.has(w.section)));
 for (const wine of menu) {
   const sparkling = sparklingSections.has(wine.section), expected = sparkling ? 'service-sparkling-control' : 'service-still-opening';
@@ -56,4 +56,4 @@ check('all current wine joins round-trip through the runtime helper', wines.ever
 check('missing wine or identity draws no door', c.v36WineGuides(null).length === 0 && c.v36WineGuides({ name: wines[0].name }).length === 0);
 const oldLayer = fs.readFileSync(path.join(root, 'js', 'codex33.js'), 'utf8');
 check('reference wine cards delegate to the exact mapping helper', /v36WineGuides\(item\)/.test(oldLayer) && !/Rubicon\.\*2010|Chardonnay\|Burgundy\|Bourgogne\|Chablis\|Rubicon/.test(oldLayer));
-console.log('Visual study data: ' + checks + ' checks passed; 14 guides, 271 wine joins, ' + Object.keys(data.componentGuides).length + ' component joins, 34 menu service routes.');
+console.log('Visual study data: ' + checks + ' checks passed; 14 guides, 293 wine joins, ' + Object.keys(data.componentGuides).length + ' component joins, 40 menu service routes.');
